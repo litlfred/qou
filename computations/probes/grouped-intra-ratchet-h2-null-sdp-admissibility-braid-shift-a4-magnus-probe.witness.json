@@ -1,0 +1,73 @@
+{
+  "probe": "grouped-intra-ratchet-h2-null-sdp-admissibility-braid-shift-a4-magnus-probe",
+  "beans": [
+    "qou-t29k",
+    "qou-u8w5",
+    "qou-vd7j",
+    "qou-yaqm",
+    "qou-z9xt"
+  ],
+  "dps": 50,
+  "scriptCommitSha": "291dd36ab34a42866efb444b586e05f0b621971e",
+  "scriptHash": "f9f1c05d78df",
+  "allPassed": true,
+  "results": {
+    "qou_t29k": {
+      "passed": true,
+      "concatSites": 11,
+      "loopSites": 7,
+      "initialSites": 18,
+      "drainedSites": 15,
+      "remainingSites": 3,
+      "trHe4Grouped": "0.16097414544240738182587344098071600000000000000000",
+      "trHe4Canonical": "0.011237417659767421564199549374410000000000000000000",
+      "he4AbsoluteTraceRatio": "14.324834256070449318002034452690119547583841150111",
+      "ratioTnpnOverPnn": "1.2589766249091730000000000000000000000000000000000",
+      "ratioHe3PnpOverPpn": "0.82939090848801510000000000000000000000000000000000"
+    },
+    "qou_u8w5": {
+      "passed": true,
+      "cKnotDeuteronTarget": "5.8528000000000000000000000000000000000000000000000",
+      "abelianH2Commutator": "0.0",
+      "unweightedTwoBlockSum": "0.0",
+      "eigenphaseWeightedTwoBlockSum": "5.8528000000000000000000000000000000000000000000000"
+    },
+    "qou_vd7j": {
+      "passed": true,
+      "totalAmeNuclides": 3558,
+      "scalarLpPermitted": 2221,
+      "frobeniusLpPermitted": 0,
+      "netImpliedProton": "0.59600000000000000000000000000000000000000000000000",
+      "netImplied2H": "0.43700000000000000000000000000000000000000000000000",
+      "netImplied4He": "0.80200000000000000000000000000000000000000000000000",
+      "netImplied12C": "2.3400000000000000000000000000000000000000000000000",
+      "netResidual2H": "1.5630000000000000000000000000000000000000000000000",
+      "netResidual4He": "3.1980000000000000000000000000000000000000000000000",
+      "conventionDRank": 5,
+      "conventionDNullity": 1,
+      "candidateWordsTested": 4238,
+      "survivingWords": 0
+    },
+    "qou_yaqm": {
+      "passed": true,
+      "writheNaive": 17,
+      "writheCorrect": 9,
+      "writheInflation": 8,
+      "maxGenNaive": 4,
+      "maxGenCorrect": 5,
+      "detNaiveSplitLink": 0,
+      "detCorrectLink": 3472
+    },
+    "qou_z9xt": {
+      "passed": true,
+      "totalPartitionsA4": 77,
+      "bankedPartitionsA4": 48,
+      "unbankedPartitionsA4": 29,
+      "pBankedA4": "-105757211820.00000000000000000000000000000000000000",
+      "tailBoundA4": "72972476.155800000000000000000000000000000000000000",
+      "pLowerBoundA4": "-105830184296.15580000000000000000000000000000000000",
+      "pUpperBoundA4": "-105684239343.84420000000000000000000000000000000000",
+      "safetyMarginPercent": "99.931000000000000000000000000000000000000000000000"
+    }
+  }
+}
