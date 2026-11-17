@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0",
+  "brick": "QOU.QBeta.FaithfulWindowAndPretzelWronskianBrick",
+  "beans": [
+    "qou-uir6",
+    "qou-upbq",
+    "qou-v1eu",
+    "qou-v4in",
+    "qou-v7ro"
+  ],
+  "scriptPath": "computations/probes/faithful_window_and_pretzel_wronskian_brick_probe.py",
+  "scriptHash": "acc408c8cd13",
+  "scriptCommitSha": "d39ec346bfb4ed8b269a3c18a97b9b308a30ba60",
+  "dirty": false,
+  "generatedAt": "2026-11-17T12:53:18.474541+00:00",
+  "precisionDps": 80,
+  "allPassed": true,
+  "checks": {
+    "qou_uir6_faithful_window_partition": {
+      "theorem": "faithfulWindowBandLengths_sum_and_coincident_roots",
+      "molienBandLength": "7.5743535e-4",
+      "intermediateBandLength": "1.22770494e-3",
+      "negativeBandShare": "9.899791e-1",
+      "bandSumConservationResidual": "0.0",
+      "coincidentRootResidual": "0.0",
+      "scaleHomogeneityResidual": "0.0",
+      "passed": true
+    },
+    "qou_upbq_simplex_m234_decomposition": {
+      "theorem": "simplexResidualM234_uniform_mode_and_exact_zero",
+      "baseSimplexResidual": "2.1875e-1",
+      "uniformModeCollapseResidual": "0.0",
+      "channelPerturbationResidual": "0.0",
+      "passed": true
+    },
+    "qou_v1eu_pretzel_wronskian_pairing": {
+      "theorem": "wronskianPairingJ3_symmetry_and_reversal",
+      "wronskianPairingUV": "-9.15625",
+      "wronskianDiagonalUU": "2.2375e+1",
+      "symmetryResidual": "0.0",
+      "reversalResidual": "0.0",
+      "diagonalQuadraticResidual": "0.0",
+      "passed": true
+    },
+    "qou_v4in_gram_recurrence_residual": {
+      "theorem": "gramRecurrenceResidual_superposition_and_exact_locus",
+      "exactTrajectoryResidual": "0.0",
+      "superpositionResidual": "0.0",
+      "coeffShiftResidual": "0.0",
+      "passed": true
+    },
+    "qou_v7ro_doubled_degree_and_step": {
+      "theorem": "doubledDegreeAndStepPair_degree_step_and_a4_six",
+      "a4DoubledOrder": "6.0",
+      "a5LeadingCoeff": "3.0",
+      "degreeStepResidual": "0.0",
+      "twoStepFourfoldResidual": "0.0",
+      "passed": true
+    }
+  }
+}
