@@ -1,13 +1,13 @@
 ---
 # qou-ips1
 title: 'HARD: Part B cross-cusp uniformity (q→1⁺, x→1⁻) — the two-sided/complex analytic successor to B3.1-B3.5; iπ branch-phase assembly (algebraic pieces log_neg_factor_split + LiTwo_one already sorry-free)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-24T20:47:13Z
-updated_at: 2026-10-04T15:13:05Z
+updated_at: 2026-11-17T10:23:09Z
 parent: b9cj
 ---
 
@@ -31,3 +31,11 @@ meromorphic uniformity, not just the per-factor identity. Bean stays open.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-25 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 83 Execution Note (2026-11-17T10:23:09Z)
+
+- **Status**: `in-progress` (PR awaiting merge; no unilateral closure).
+- **PR**: [`litlfred/qou#8301`](https://github.com/litlfred/qou/pull/8301) (`feat/qou-b9cj-1gkf-gz37-ips1-ized-m1nz`, HEAD `8def28bdd6676a091a84204c0314f39da9ee6d5c`).
+- **Lean Module**: `folio/quantum-observable-universe/lean/QOU/QBeta/GaroufalidisZagierS3BlockAndFiveTwoDiscBrick.lean` (wired into `QOU.lean`, compiled with Lean 4.24.0, 0 findings across all 7 static Lean audits).
+- **80-dps Probe & Witness**: `computations/probes/garoufalidis_zagier_s3_block_and_five_two_disc_brick_probe.py` & `computations/probes/garoufalidis-zagier-s3-block-and-five-two-disc-brick.witness.json` (`scriptCommitSha = d726ce17152d0bdd416fbd50d86ba08930c726e7`, `scriptHash = 1b13751c9d60`, `outputHash = 36c8353af8986ccd33f16fae6cef94ba4dab83e96f5a0e688d772b07b9d32e72`).
