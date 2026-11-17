@@ -155,8 +155,10 @@ theorem nonzero_cluster_needs_second_bond
     g_b ≠ g₀ ∨ gₐᵦ ≠ gₐ := by
   by_cases hb : g_b = g₀
   · by_cases hab : gₐᵦ = gₐ
-    · subst hb; subst hab
-      exact absurd (secondDiff_single_bond_vanishes g₀ gₐ) h
+    · have h0 : secondDiff g₀ gₐ g_b gₐᵦ = 0 := by
+        rw [hb, hab]
+        exact secondDiff_single_bond_vanishes g₀ gₐ
+      exact absurd h0 h
     · exact Or.inr hab
   · exact Or.inl hb
 
