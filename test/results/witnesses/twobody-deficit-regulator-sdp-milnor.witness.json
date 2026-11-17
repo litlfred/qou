@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "twobody-deficit-regulator-sdp-milnor",
+  "scriptPath": "computations/probes/twobody_deficit_regulator_sdp_milnor_probe.py",
+  "scriptCommitSha": "70bec575bb493c7f91cf1b39cb54e58ef8343777",
+  "scriptHash": "39a564805d3e",
+  "generatedAt": "2026-11-17T08:39:13Z",
+  "dps": "80",
+  "beans": [
+    "qou-tbpl",
+    "qou-v0yw",
+    "qou-uh5f",
+    "qou-sv7h",
+    "qou-ix0x"
+  ],
+  "theorems": [
+    "QOU.Mass.TwoBodyInterfaceBond.cross_difference_eq_zero",
+    "QOU.Mass.CoordinationSurfaceDeficit.bondCount_deficit_and_uniform_eq",
+    "QOU.MobiusRegulator.bfhwRegulator_sub_msRegulator_eq_neg_four",
+    "QOU.MassTheory.BlockSDPNondegeneracy.net_and_obj_add",
+    "QOU.Mass.MilnorCarriesOrderNotMagnitude.geometric_order_step_diff_and_hankel_zero"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "cross_difference_eq_zero",
+      "bean": "qou-tbpl",
+      "exactCrossDiff": "0",
+      "logTraceCrossResidual80dps": "4.21687917729220928973943e-81",
+      "passed": true
+    },
+    {
+      "name": "bondCount_deficit_and_uniform_eq",
+      "bean": "qou-v0yw",
+      "bondDeficit": "24",
+      "uniformBondCount": "168",
+      "semfSurfaceLawResidual80dps": "1.686751670916883715895772e-80",
+      "passed": true
+    },
+    {
+      "name": "bfhwRegulator_sub_msRegulator_eq_neg_four",
+      "bean": "qou-uh5f",
+      "exactDifference": "-4",
+      "regulatorResidual80dps": "2.159042138773611156346588e-78",
+      "passed": true
+    },
+    {
+      "name": "net_and_obj_add",
+      "bean": "qou-sv7h",
+      "netSum": "3.0",
+      "additivityResidual80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "geometric_order_step_diff_and_hankel_zero",
+      "bean": "qou-ix0x",
+      "exactStepProduct": "-11664/390625",
+      "exactHankelDefect": "0",
+      "hankelResidual80dps": "1.054219794323052322434857e-81",
+      "passed": true
+    }
+  ]
+}
