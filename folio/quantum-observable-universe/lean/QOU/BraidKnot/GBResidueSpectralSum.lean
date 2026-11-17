@@ -97,15 +97,36 @@ def gradedMarkovTrace (S : GBResidueSpectralSum R)
   S.gradedTrace ℓ
 
 /-- Classical limit: when every cyclotomic residue vanishes, the
-    mass reduces to the descended Markov trace.
-
-    Ref: [leitner2026] `prop:categorical-mass-markov`. -/
+    mass reduces to the descended trace magnitude. -/
+-- Ref: [leitner2026] `prop:categorical-mass-markov`
 theorem classical_limit_descended
     (S : GBResidueSpectralSum R)
     (hres : ∀ ℓ : Fin S.levelBound, S.residue ℓ = 0) :
     S.mass = |S.descended| := by
   rw [S.spectral_decomposition]
   simp [hres]
+
+/-- The total cyclotomic residue sum equals the excess of `S.mass` over the descended
+    contribution `|S.descended|`. -/
+theorem residue_sum_eq_mass_sub_abs_descended
+    (S : GBResidueSpectralSum R) :
+    (∑ ℓ : Fin S.levelBound, S.residue ℓ) = S.mass - |S.descended| := by
+  rw [S.spectral_decomposition]
+  exact (add_sub_cancel_left |S.descended| (∑ ℓ : Fin S.levelBound, S.residue ℓ)).symm
+
+/-- When the descended trace is non-negative (`0 ≤ S.descended`), the spectral decomposition
+    expresses `S.mass` directly as `S.descended + ∑ ℓ, S.residue ℓ`. -/
+theorem mass_eq_descended_add_residues_of_nonneg [AddLeftMono R]
+    (S : GBResidueSpectralSum R) (hd : 0 ≤ S.descended) :
+    S.mass = S.descended + ∑ ℓ : Fin S.levelBound, S.residue ℓ := by
+  rw [S.spectral_decomposition, abs_of_nonneg hd]
+
+/-- When the descended trace is non-positive (`S.descended ≤ 0`), the spectral decomposition
+    expresses `S.mass` as `-S.descended + ∑ ℓ, S.residue ℓ`. -/
+theorem mass_eq_neg_descended_add_residues_of_nonpos [AddLeftMono R]
+    (S : GBResidueSpectralSum R) (hd : S.descended ≤ 0) :
+    S.mass = -S.descended + ∑ ℓ : Fin S.levelBound, S.residue ℓ := by
+  rw [S.spectral_decomposition, abs_of_nonpos hd]
 
 /-- **GB residue spectral sum proposition.**  Conditional on a
     `[GBResidueSpectralSum]` instance, the spectral decomposition

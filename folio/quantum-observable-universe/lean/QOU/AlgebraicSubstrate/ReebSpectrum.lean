@@ -88,4 +88,34 @@ def reebSpectrumExample : ReebSpectrum ℂ where
   mode_ne_zero := by intro i; norm_num
   is_eigen := by intro i; simp
 
+/-! ## Operator-spectral consequences (bean `qou-qspc`) -/
+
+/-- Each fundamental mode lies in the kernel of the shifted action `v ↦ R.op v - R.spec i • v`. -/
+theorem sub_spec_smul_mode_eq_zero {H : Type*} [AddCommGroup H] [Module ℂ H]
+    (R : ReebSpectrum H) (i : Fin 8) :
+    R.op (R.mode i) - R.spec i • R.mode i = 0 :=
+  sub_eq_zero.mpr (R.is_eigen i)
+
+/-- Iterated action of `R.op` on the `i`-th fundamental mode scales by `(R.spec i) ^ n`. -/
+theorem op_iterate_mode {H : Type*} [AddCommGroup H] [Module ℂ H]
+    (R : ReebSpectrum H) (n : ℕ) (i : Fin 8) :
+    (R.op ^[n]) (R.mode i) = (R.spec i) ^ n • R.mode i := by
+  induction n with
+  | zero =>
+      simp
+  | succ k ih =>
+      rw [Function.iterate_succ_apply', ih, LinearMap.map_smul, R.is_eigen i,
+        ← mul_smul, pow_succ, mul_comm]
+
+/-- Under `[HasReebSpectralCoords Z R]`, the product of any pair of spectral coordinates
+factors as the product of the corresponding complex `q`-powers of `R.spec`. -/
+theorem eigenvalues_mul_of_hasReebSpectralCoords (Z : LocalQZetaFunction)
+    {H : Type*} [AddCommGroup H] [Module ℂ H] (R : ReebSpectrum H)
+    [h : HasReebSpectralCoords Z R] (i j : Fin 8) :
+    Z.eigenvalues i * Z.eigenvalues j =
+      ((Z.q : ℂ) ^ (R.spec i)) * ((Z.q : ℂ) ^ (R.spec j)) := by
+  have hi := h.coords i
+  have hj := h.coords j
+  rw [hi, hj]
+
 end QOU.AlgebraicSubstrate

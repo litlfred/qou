@@ -1,63 +1,64 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.AppendixSurreals.VacuumEpsilon — conjectural class (placeholder)
+# QOU.AppendixSurreals.VacuumEpsilon — conjectural link-energy vacuum carrier (`qou-ffwk`)
 
 **§3b-cond class axiomatisation** for content block
-[`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md): *Infinitesimal vacuum: $\\mathrm{Geom}(\\bigcirc) = \\varepsilon$*.
+[`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md): *Infinitesimal vacuum: $\mathrm{Geom}(\bigcirc) = \varepsilon$*.
 
 This is a **conjecture**: the class `VacuumEpsilon` is a primary conjecture
 carrier with **no instance** — the honest open state per AGENTS.md §3b-tax.
-(The field schema is still a structural placeholder; see the note at the
-bottom of the file and bean `qou-ffwk`.)  Downstream theorems may take
-`[VacuumEpsilon]` as an explicit `[Instance]` hypothesis to derive
-conditional Lean theorems against this named input (per §3b-cond).
+Per bean `qou-ffwk`, the trivially-inhabited `residual = 0` placeholder has been
+replaced by the actual link-energy vacuum structure: a link carrier `Link` with
+chosen `unknot`, disjoint-union operation `disjointUnion`, geometric energy
+functional `geom : Link → ℝ` satisfying `geom unknot = 0` and additivity under
+disjoint union, and vacuum residual `residual = geom unknot`.
 
-The field schema below is a structural placeholder; refine the
-fields to match the conjecture's actual content as the
-formalisation matures.
+Downstream theorems take `[VacuumEpsilon]` as an explicit `[Instance]` hypothesis
+to derive conditional Lean theorems against this named input (per §3b-cond).
 -/
 
 namespace QOU.AppendixSurreals
 
-/-- Infinitesimal vacuum: $\\mathrm{Geom}(\\bigcirc) = \\varepsilon$
+/-- Infinitesimal vacuum carrier (`conj:vacuum-epsilon`, bean `qou-ffwk`).
 
-    Conjectural class — see [`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md). -/
+Carries the link type `Link`, the unknot `unknot`, disjoint union `disjointUnion`,
+and the real-valued geometric energy functional `geom : Link → ℝ` normalized on
+the unknot and additive under disjoint union. -/
 class VacuumEpsilon where
-  -- Witness: computations/none
-  /-- **Content statement** (from manuscript):
-
-      The Hoefsmit scattering pipeline assigns to each link $L$ a
-*geometric energy* $\mathrm{Geom}(L) \in \mathbb{R}$
-([Hoefsmit scattering pipeline](#prop:hoefsmit-scattering-pipeline)).
-The vacuum normalisation requires $\mathrm{Geom}(\bigcirc) = 0$
-on the unknot, so that the empty link contributes nothing to
-particle masses.
-
-      Field schema below is a structural placeholder; refine per §3b
-      to match the conjecture's actual content. The placeholder is
-      trivially inhabited; the conjectural content is carried by the
-      narrative block, not by this field. -/
+  /-- Carrier of topological links in the scattering pipeline. -/
+  Link : Type
+  /-- The unknot (empty vacuum link). -/
+  unknot : Link
+  /-- Disjoint union of two links. -/
+  disjointUnion : Link → Link → Link
+  /-- Geometric energy functional `Geom(L) ∈ ℝ`. -/
+  geom : Link → ℝ
+  /-- Vacuum normalisation on the unknot: `Geom(◯) = 0`. -/
+  geom_unknot : geom unknot = 0
+  /-- Additivity of geometric energy under disjoint union of links. -/
+  geom_disjointUnion : ∀ L₁ L₂ : Link, geom (disjointUnion L₁ L₂) = geom L₁ + geom L₂
+  /-- Vacuum energy residual, identified with the unknot geometric energy. -/
   residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
+  /-- Identification of the vacuum residual with `geom unknot`. -/
+  residual_eq_geom_unknot : residual = geom unknot
 
+/-- Under `[VacuumEpsilon]`, the vacuum residual vanishes as a consequence of
+`residual = geom unknot` and the unknot normalization `geom unknot = 0`. -/
+theorem VacuumEpsilon.residual_eq_zero [v : VacuumEpsilon] :
+    v.residual = 0 :=
+  v.residual_eq_geom_unknot.trans v.geom_unknot
+
+/-- Adjoining a vacuum unknot component on the right leaves the geometric link energy invariant. -/
+theorem VacuumEpsilon.geom_disjointUnion_unknot_right [v : VacuumEpsilon] (L : v.Link) :
+    v.geom (v.disjointUnion L v.unknot) = v.geom L := by
+  rw [v.geom_disjointUnion L v.unknot, v.geom_unknot, add_zero]
+
+/-- Adjoining a vacuum unknot component on the left leaves the geometric link energy invariant. -/
+theorem VacuumEpsilon.geom_disjointUnion_unknot_left [v : VacuumEpsilon] (L : v.Link) :
+    v.geom (v.disjointUnion v.unknot L) = v.geom L := by
+  rw [v.geom_disjointUnion v.unknot L, v.geom_unknot, zero_add]
 
 -- **No instance is provided — the honest open state** (AGENTS.md §3b-tax).
--- Previously: `axiom conj_vacuum_epsilon` plus
--- `noncomputable instance : VacuumEpsilon := conj_vacuum_epsilon`, i.e. the
--- conjecture was asserted by `axiom` and installed globally, so every
--- downstream `[VacuumEpsilon]` resolved for free.  Consumers
--- (`CasimirModeCountFunctor`, `CasimirEpsilonVacuum`, `Conjectures`) already
--- declare `[VacuumEpsilon]`, so the global instance was silently satisfying a
--- hypothesis they had correctly written down.  Removed, not completed.
---
--- SEPARATE OPEN DEFECT (bean `qou-ffwk`): the field schema above is still a
--- placeholder — `residual : ℝ` with `residual_eq_zero : residual = 0` is
--- inhabited by `⟨0, rfl⟩`, so the class carries no content yet.  De-laundering
--- the axiom does not fix that; the fields must be refined to the actual claim
--- (`geom : Link → ℝ` with `geom unknot = 0`) before `[VacuumEpsilon]` means
--- anything downstream.
 
 end QOU.AppendixSurreals

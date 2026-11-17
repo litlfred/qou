@@ -136,9 +136,9 @@ def secondMomentKernel (k : ℕ) : ℤ :=
   ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * omega3 k l)).sum
 
 /-- **The dim²-weighted 3-cycle content-spread total VANISHES** (Lean-verified, `3 ≤ k ≤ 7`):
-`Σ_{λ⊢k} (f^λ)² ω₃(λ) = 0`. This is `k!·E_Planch[ω₃] = 0` (the Plancherel content mean is `C(k,2)`) —
+`Σ_{λ⊢k} (f^λ)² ω₃(λ) = 0`. This is `k!·E_dim2[ω₃] = 0` (the dim-squared content mean is `C(k,2)`) —
 an **exact** identity, not conjectural. It isolates the open kernel as the *first-order response to the
-extra dimension factor*: `cov(k) = Σ (f^λ)³ ω₃ = k!·Cov_Planch(f^λ, ω₃)`, a genuine dimension-tilt
+extra dimension factor*: `cov(k) = Σ (f^λ)³ ω₃ = k!·Cov_dim2(f^λ, ω₃)`, a genuine dimension-tilt
 covariance (Ivanov–Olshanski Prop 5.1; the `dim³` weight has one surplus `dim` beyond column
 orthogonality, so — unlike this `dim²` total — it lies outside the polynomial-function algebra `A`).
 
@@ -208,15 +208,15 @@ set_option maxHeartbeats 8000000 in
 /-- **Extended machine-checked base for the dim²-weighted vanishing: `k ≤ 20`.** Extends
 `secondMomentKernel_eq_zero_of_le_seven` over the same range as the kernel base
 `kernelValue_nonpos_of_le_twenty`. Unlike the kernel conjecture, this identity is **not**
-conjectural — it is `k!·E_Planch[ω₃] = 0`, exact for every `k` (the identity coefficient of
+conjectural — it is `k!·E_dim2[ω₃] = 0`, exact for every `k` (the identity coefficient of
 `Σ_i X_i²` in the Jucys–Murphy calculus is `C(k,2)`); what the `decide` supplies is a certified
 floor pending the general character-orthogonality proof, which needs the JM-eigenvalue ⇒
-Plancherel-mean bridge (Sₙ representation-theory infrastructure, not yet in the corpus).
+dim-squared-mean bridge (Sₙ representation-theory infrastructure, not yet in the corpus).
 
 **Superseded 2026-08-23 — the general-`k` proof exists.**
 `SecondMomentKernelVanishes.secondMomentKernel_eq_zero` proves this for **every** `k`, with no
 bound and no `decide`.  The sentence above — *"pending the general character-orthogonality proof,
-which needs the JM-eigenvalue ⇒ Plancherel-mean bridge (Sₙ representation-theory infrastructure,
+which needs the JM-eigenvalue ⇒ dim-squared-mean bridge (Sₙ representation-theory infrastructure,
 not yet in the corpus)"* — named exactly what was missing, and it has since landed: that bridge is
 Identity (ii) (`OVTopAssembly.identityB_general`, transported to the list model by
 `PlancherelSnDataGeneral`), built from the three inputs the `k ≤ 7` docstring lists.  This lemma
@@ -251,23 +251,23 @@ theorem omega3_conj_invariant_of_le_six (k : ℕ) (hk : k ≤ 6) :
 /-- **Hook-sum decomposition** (Lean-verified, `λ ⊢ k`, `k ≤ 7`, `decide`):
 `Σ_□ h(□) = n_λ + n_{λ'} + |λ|`, splitting the total hook length into the row-content `n_λ`, the
 column-content `n_{λ'} = n_λ` of the transpose, and the cell count `|λ|`. This is the algebraic key to
-the first-odd-moment **transpose identity** `M₁ = 2·Cov_Planch(n_λ, Σ_□ c(□)²)` (companion probe/audit
+the first-odd-moment **transpose identity** `M₁ = 2·Cov_dim2(n_λ, Σ_□ c(□)²)` (companion probe/audit
 `wlambda_covariance_epic_A2_odd_moment_structure`): substituting `Σ_□ h = n_λ + n_{λ'} + |λ|` into
-`Cov_Planch(Σ_□ h, Σ_□ c²)`, the `|λ|` term is constant (zero covariance) and transpose-invariance of
-Plancherel measure together with the conjugation-symmetry of `contentSq`
+`Cov_dim2(Σ_□ h, Σ_□ c²)`, the `|λ|` term is constant (zero covariance) and transpose-invariance of
+the dim-squared measure together with the conjugation-symmetry of `contentSq`
 (`contentSq_conj_invariant_of_le_six`) equate the `n_λ` and `n_{λ'}` covariances — collapsing the sum
-to `2·Cov_Planch(n_λ, Σc²)`. -/
+to `2·Cov_dim2(n_λ, Σc²)`. -/
 theorem hookSum_eq_nLambda_add_conj_add_card_of_le_seven (k : ℕ) (hk : k ≤ 7) :
     ∀ l ∈ partsOf k, hookSum l = nLambda l + nLambda (conj l) + l.sum := by
   interval_cases k <;> decide
 
 /-- **First-odd-moment transpose identity** (Lean-verified, `k ≤ 5`, `decide`), the `(k!)²`-scaled form
-of `M₁ = Cov_Planch(Σ_□ h, Σ_□ h²) = 2·Cov_Planch(n_λ, Σ_□ c²)`:
+of `M₁ = Cov_dim2(Σ_□ h, Σ_□ h²) = 2·Cov_dim2(n_λ, Σ_□ c²)`:
 `scaledCov k (Σh) (Σh²) = 2·scaledCov k n_λ (Σc²)`. This is the odd-`k=1` companion of the *even*-moment
 result: unlike the even moments (exact polynomials, positivity proved — `threeM4_pos`, `M6_pos`), `M₁`
 is non-polynomial, but the hook-sum decomposition (`hookSum_eq_nLambda_add_conj_add_card_of_le_seven`)
-together with Plancherel transpose-invariance collapses it to twice a *content*-spread covariance
-`Cov_Planch(n_λ, Σc²)` — the same difficulty class as the open kernel `Cov_Planch(f^λ, Σc²) ≤ 0`. The
+together with dim-squared transpose-invariance collapses it to twice a *content*-spread covariance
+`Cov_dim2(n_λ, Σc²)` — the same difficulty class as the open kernel `Cov_dim2(f^λ, Σc²) ≤ 0`. The
 identity is verified computationally to `n ≤ 14` (`wlambda_covariance_epic_A2_odd_moment_structure.py`);
 this `decide` machine-checks it over the full partition/dimension machinery for `k ≤ 5`. -/
 theorem m1_transpose_identity_scaled_of_le_five (k : ℕ) (hk : k ≤ 5) :
@@ -281,7 +281,7 @@ def rowSqSum (l : List ℕ) : ℤ := (l.map (fun x => (x : ℤ) ^ 2)).sum
 /-- **Per-partition hook-square / content-square identity** `Σ_□ h(□)² = Σ_□ c(□)² + |λ|²`, verified
 for all `λ ⊢ k`, `k ≤ 8` (`decide`). Classical (`Σh² = Σc² + n²`); the exact reason `M₁` can be
 written against `contentSq` rather than `hookSqSum`: at fixed `n` the two differ by the `λ`-independent
-constant `n²`, so they have the same Plancherel covariance with any statistic. -/
+constant `n²`, so they have the same dim-squared covariance with any statistic. -/
 theorem hookSqSum_eq_contentSq_add_sq_card_of_le_eight (k : ℕ) (hk : k ≤ 8) :
     ∀ l ∈ partsOf k, hookSqSum l = contentSq l + (l.sum : ℤ) ^ 2 := by
   interval_cases k <;> decide
@@ -307,7 +307,7 @@ theorem m1_eq_cov_rowSq_contentSq_of_le_five (k : ℕ) (hk : k ≤ 5) :
 set_option maxRecDepth 1000000 in
 set_option maxHeartbeats 120000000 in
 /-- **`M₁ > 0` — the first odd hook-power moment, Lean-verified base cases `3 ≤ k ≤ 8`** (`decide`).
-The `(k!)²`-scaled Plancherel covariance `scaledCov k (Σ□ h) (Σ□ c²) = (k!)²·Cov_Planch(Σ□ h, Σ□ c²)`
+The `(k!)²`-scaled dim-squared covariance `scaledCov k (Σ□ h) (Σ□ c²) = (k!)²·Cov_dim2(Σ□ h, Σ□ c²)`
 (same sign as `M₁`, since `(k!)² > 0`) is **strictly positive** for every `3 ≤ k ≤ 8`. Machine-checked
 over the full partition / SYT-dimension / hook / content machinery. (`k = 8` decides in ≈40 s cold;
 the `k ≤ 8` range matches `hookSqSum_eq_contentSq_add_sq_card_of_le_eight` above.)
@@ -317,7 +317,7 @@ This certifies the **finite base** of the one-sided reduction of the all-`n` con
 `κ_n = M₁/n^{5/2} → κ = 128/(225π²)` (derived). Unlike the **even** moments (`threeM4_pos`, `M6_pos`,
 exact polynomials with manifest-positive factorisations), `M₁` is **non-polynomial**, so its all-`n`
 positivity is **open**: the remaining content is the *sign* `κ_n → κ` from above, a **second-order
-Plancherel-fluctuation** statement whose asymptotic order is **undetermined** at reachable `n` — the
+dim-squared-fluctuation** statement whose asymptotic order is **undetermined** at reachable `n` — the
 edge (Tracy–Widom) contributes at relative order `n^{-2/3}` (a valid scaling estimate) and a bulk CLT
 correction at `n^{-1/2}`, but the measured effective exponent of `κ_n − κ` is still rising (`≈ 0.25 →
 0.36` over `n = 40 … 64`, not converged), so edge vs bulk **cannot be ranked**. Not settled here; see
@@ -380,7 +380,47 @@ theorem M6_pos (n : ℤ) (hn : 3 ≤ n) : 0 < M6 n := by
   have h7 : (0 : ℤ) < (7 : ℤ) := by omega
   exact mul_pos (mul_pos h7 (mul_pos (mul_pos h1 h2) h3)) (pow_pos h4 2)
 
-/-- **CONJECTURE (OPEN).** The covariance kernel `Cov_Planch(f^λ, Σ_□ c(□)²) ≤ 0`, in its
+/-- Exact polynomial syzygy relating the fourth and sixth even hook-power moments for all `n : ℤ`:
+`7 · (3 M₄(n))² = 25 · n(n−1)(n−2) · M₆(n)`. -/
+theorem even_moment_cross_syzygy (n : ℤ) :
+    7 * (threeM4 n) ^ 2 = 25 * (n * (n - 1) * (n - 2)) * M6 n := by
+  change 7 * (5 * (n * (n - 1) * (n - 2)) * (3 * n - 8)) ^ 2 =
+    25 * (n * (n - 1) * (n - 2)) * (7 * (n * (n - 1) * (n - 2)) * (3 * n - 8) ^ 2)
+  have h1 : (3 * n - 8) ^ 2 = (3 * n - 8) * (3 * n - 8) := sq (3 * n - 8)
+  have h2 : 7 * 5 ^ 2 = (175 : ℤ) := by norm_num
+  have h3 : 25 * 7 = (175 : ℤ) := by norm_num
+  ring
+
+/-- Helper: list-sum symmetry for the squared-dimension cross term. -/
+theorem map_sytDim_sq_mul_comm (L : List (List ℕ)) (X Y : List ℕ → ℤ) :
+    (L.map (fun l => (sytDim l : ℤ) ^ 2 * X l * Y l)).sum =
+      (L.map (fun l => (sytDim l : ℤ) ^ 2 * Y l * X l)).sum := by
+  induction L with
+  | nil => rfl
+  | cons a t ih =>
+      simp only [List.map_cons, List.sum_cons]
+      rw [ih]
+      ring
+
+/-- General-`k` symmetry of the `(k!)²`-scaled dim-squared covariance `scaledCov k X Y = scaledCov k Y X`. -/
+theorem scaledCov_symm (k : ℕ) (X Y : List ℕ → ℤ) :
+    scaledCov k X Y = scaledCov k Y X := by
+  change (Nat.factorial k : ℤ) * ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * X l * Y l)).sum
+      - ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * X l)).sum
+        * ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * Y l)).sum =
+    (Nat.factorial k : ℤ) * ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * Y l * X l)).sum
+      - ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * Y l)).sum
+        * ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * X l)).sum
+  have hcross := map_sytDim_sq_mul_comm (partsOf k) X Y
+  have hprod :
+      ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * X l)).sum
+        * ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * Y l)).sum =
+      ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * Y l)).sum
+        * ((partsOf k).map (fun l => (sytDim l : ℤ) ^ 2 * X l)).sum :=
+    mul_comm _ _
+  rw [hcross, hprod]
+
+/-- **CONJECTURE (OPEN).** The covariance kernel `Cov_dim2(f^λ, Σ_□ c(□)²) ≤ 0`, in its
 elementary content form: for every `k`, `Σ_{λ⊢k} (f^λ)³ (Σ_□c(□)² − C(k,2)) ≤ 0`. This is the sole
 open input of the Δ_λ super-exponential growth bound (`WstdSuperExpBound.lean`, via the reduction
 `DeltaLambdaDReduction.D_of_T3_nonpos`). It is a Biane–Śniady / Kerov-CLT character-ratio
@@ -390,7 +430,7 @@ class CovarianceKernelConjecture : Prop where
   /-- The covariance kernel value is non-positive for all k. -/
   nonpos : ∀ k : ℕ, kernelValue k ≤ 0
 
-/-- **CONJECTURE (OPEN).** The covariance kernel `Cov_Planch(f^λ, Σ_□ c(□)²) ≤ 0`, in its
+/-- **CONJECTURE (OPEN).** The covariance kernel `Cov_dim2(f^λ, Σ_□ c(□)²) ≤ 0`, in its
 elementary content form: for every `k`, `Σ_{λ⊢k} (f^λ)³ (Σ_□c(□)² − C(k,2)) ≤ 0`. This is the sole
 open input of the Δ_λ super-exponential growth bound (`WstdSuperExpBound.lean`, via the reduction
 `DeltaLambdaDReduction.D_of_T3_nonpos`). It is a Biane–Śniady / Kerov-CLT character-ratio
@@ -414,10 +454,19 @@ theorem covariance_kernel_conjecture (k : ℕ) [hi : CovarianceKernelConjecture]
     `qou-octr`, where eight sibling `sorry`s all turned out to be refutable.
 
     The general case is real mathematics: `Σ_{λ⊢k} (f^λ)³ · ω₃(λ) ≤ 0` carries
-    a *cubed* dimension, so it is not the Plancherel expectation of `ω₃` and
-    the standard `E_Planch[ω₃] = 0` identity does not reach it. -/
+    a *cubed* dimension, so it is not the dim-squared expectation of `ω₃` and
+    the standard `E_dim2[ω₃] = 0` identity does not reach it. -/
 theorem covariance_kernel_le_zero_of_le_eight (k : ℕ) (hk : k ≤ 8) :
     kernelValue k ≤ 0 := by
   interval_cases k <;> decide
+
+/-- **Extended unconditional bound (`0 ≤ k ≤ 20`, bean `qou-085a`).** Combines the degenerate base
+`k ∈ {0, 1, 2}` (`kernelValue k = 0`) with `kernelValue_nonpos_of_le_twenty` (`3 ≤ k ≤ 20`) to
+establish `kernelValue k ≤ 0` across the entire `k ≤ 20` window. -/
+theorem covariance_kernel_le_zero_of_le_twenty (k : ℕ) (hk : k ≤ 20) :
+    kernelValue k ≤ 0 := by
+  rcases lt_or_ge k 3 with hk3 | hk3
+  · interval_cases k <;> decide
+  · exact kernelValue_nonpos_of_le_twenty k hk3 hk
 
 end QOU.BraidsAndKnots.YoungDiagramKernel
