@@ -1,0 +1,63 @@
+{
+  "probe": "round64_twisted_nz_teichmuller_qisospin_modular_qholonomic_qborel_probe.py",
+  "precisionDps": 80,
+  "scriptCommitSha": "aa5ed78d599a0504fe86ec0c73f8d11df2347ef5",
+  "scriptHash": "b5fcd2adac27601ee63e86a530888fd2f6f766f616947ce74c3593b93a205398",
+  "scriptSha256": "b5fcd2adac27601ee63e86a530888fd2f6f766f616947ce74c3593b93a205398",
+  "beans": [
+    "qou-c9uj",
+    "qou-epkn",
+    "qou-godb",
+    "qou-hnuw",
+    "qou-il2c"
+  ],
+  "allPassed": true,
+  "results": {
+    "qou_c9uj_klein_kreisler_qisospin_meson": {
+      "beanId": "qou-c9uj",
+      "referenceKey": "kleinkreisler1996",
+      "qChargeSymmetryResidual": "0.0",
+      "qTripletShiftUnitResidual": "0.0",
+      "empiricalPionSplittingMeV": "4.59359",
+      "passed": true
+    },
+    "qou_epkn_garoufalidis_yoon_twisted_nz": {
+      "beanId": "qou-epkn",
+      "referenceKey": "garoufalidis2021",
+      "symplecticOffDiagDefect": 0,
+      "oneLoopTorsionSample": "-0.55165481360351853641350993547549677514440851527886 + -0.15386736791588901045699493519880596298415504857245i",
+      "reciprocalSymmetryResidual": "1.08666489115271751889866609335070098261904148087937955816604e-81",
+      "tauAtMeridianOne": "0.5",
+      "unhalvedAtMeridianOne": "1.0",
+      "equilateralShapeResidual": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+      "passed": true
+    },
+    "qou_godb_garoufalidis_wheeler_modular_qholonomic": {
+      "beanId": "qou-godb",
+      "referenceKey": "garoufalidis-wheeler-modular",
+      "monodromyEntryM21": "0.2128 + -0.0846i",
+      "unipotentDetResidual": "0.0",
+      "signedSquareInvolutionResidual": "0.0",
+      "thetaSecondRatioGrowthResidual": "5.27109897161526161217428702563500950385498069118425377503888e-82",
+      "passed": true
+    },
+    "qou_hnuw_morita_higher_order_qborel": {
+      "beanId": "qou-hnuw",
+      "referenceKey": "morita2014",
+      "kOrder": 2,
+      "qBorelRegularizedSeries": "0.70880106199078618452340559818606704861242242678915 + -0.095078871420928699013010188250361933328827981991923i",
+      "qBorelEulerProductResidual": "1.69542872482307387101275811246376569405196856008065496446964e-80",
+      "slopeStepAtM9": 36,
+      "passed": true
+    },
+    "qou_il2c_baseilhac_benedetti_teichmuller_6j": {
+      "beanId": "qou-il2c",
+      "referenceKey": "baseilhac-benedetti-fibred",
+      "diagonalExchangeTetrahedraDelta": 1,
+      "twoTetrahedraVolumeSum": "1.54321387738990026687684953255838966984944121257748572304787",
+      "threeTetrahedraVolumeSum": "1.54321387738990026687684953255838966984944121257748572304787",
+      "pentagonIntertwinerResidual": "2.10843958864610464486971481025400380154199227647370151001555e-81",
+      "passed": true
+    }
+  }
+}
