@@ -78,3 +78,28 @@ mpmath 40 dps); components of the closure; writhe; χ₍₆₎ = q^{writhe}; the
 
 **What does not count.** Choosing e or the pattern because it passes. Any energy or CODATA/AME
 comparison is out of scope for this stage.
+
+## Stage 6 — n-strand chains, rings and Brunnian loops (owner card 2026-11-16, option 2; pre-registered before the probe was written)
+
+**Assumption.** One strand per site, as in stage 5. Exact Jones polynomial via the Temperley–Lieb
+bracket; `F(T) = log(δ·V_T) − |T| log δ`; connected part `φ(T)` by Möbius inversion over subsets.
+
+**Words.**
+- Chain on n strands: bonds σ_i^e, i = 0..n−2, e ∈ {+2, −2}.
+- Ring on n strands: the chain plus the closing band ρ σ_{n−2}^e ρ⁻¹, ρ = σ₀⋯σ_{n−2}, in front.
+- Brunnian loop on n strands: the iterated commutator c₂ = A₀₁, c_k = [c_{k−1}, A_{0,k−1}],
+  A_{0,j} = σ_{j−1}⋯σ₁ σ₀² σ₁⁻¹⋯σ_{j−1}⁻¹. Deleting any one strand trivialises it by construction.
+- n = 3..8 for chains and rings; n = 3..6 for Brunnian (word length grows as ~2^n).
+
+**Reported, not selected on.** Exact `φ(full set)` for each word (zero or not, the ratio, its
+leading order in log t); for chains, every connected part of size ≥ 3; for Brunnian words, that
+every proper sublink is an unlink and so `φ(full) = F(full)`.
+
+**Questions, no predicted answer for 2 and 3.**
+1. Chains: is every connected part of size ≥ 3 exactly 0 for every n? (Lean
+   `connected_eq_zero_of_bonds` says yes if F is bond-additive; the probe tests the hypothesis.)
+2. Rings: is `φ(full)` nonzero for every n, and at what order in log t does it first appear?
+3. Brunnian: is the closure a nontrivial link, i.e. `φ(full) ≠ 0`, for every n?
+
+**What does not count.** Choosing n, e or a word because its φ is nonzero. No energy or
+measurement comparison.
