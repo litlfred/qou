@@ -1,7 +1,8 @@
 ---
 # qou-il2c
 title: Cite 4GEO-DEDI-REV.pdf at rem:q-dilogarithm-pentagon-associator
-status: todo
+status: in-progress
+pr: 8355
 type: task
 priority: normal
 tags:

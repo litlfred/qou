@@ -1,7 +1,8 @@
 ---
 # qou-c9uj
 title: Cross-check 9612303v1.pdf at computations/gmo_meson_crosscheck.py
-status: todo
+status: in-progress
+pr: 8355
 type: task
 priority: normal
 tags:

@@ -1,7 +1,8 @@
 ---
 # qou-hnuw
 title: Cite 1404.2541v1.pdf at folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernelLevel…
-status: todo
+status: in-progress
+pr: 8355
 type: task
 priority: normal
 tags:

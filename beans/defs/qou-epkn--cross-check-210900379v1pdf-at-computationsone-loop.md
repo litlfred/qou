@@ -1,7 +1,8 @@
 ---
 # qou-epkn
 title: Cross-check 2109.00379v1.pdf at computations/one_loop_torsion.py
-status: todo
+status: in-progress
+pr: 8355
 type: task
 priority: normal
 tags:

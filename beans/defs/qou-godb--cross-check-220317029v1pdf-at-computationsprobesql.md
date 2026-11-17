@@ -1,7 +1,8 @@
 ---
 # qou-godb
 title: Cross-check 2203.17029v1.pdf at computations/probes/qlift_routeB_connection_matrix_probe.py
-status: todo
+status: in-progress
+pr: 8355
 type: task
 priority: normal
 tags:
