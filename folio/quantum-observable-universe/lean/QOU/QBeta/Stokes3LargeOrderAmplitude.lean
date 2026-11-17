@@ -140,4 +140,10 @@ theorem action_recip_tendsto (κ : ℕ → ℝ) (A : ℝ)
   have h := inst.action_limit.inv₀ (ne_of_gt inst.hA)
   exact h.congr (fun n => inv_div ((n : ℝ) * κ n) (κ (n + 1)))
 
+/-- Two-sided interval bound `-A_amp ≤ A_amp * Real.cos (θ n) ∧ A_amp * Real.cos (θ n) ≤ A_amp`
+for a conjugate-pair oscillation term with `0 ≤ A_amp`. -/
+theorem cos_envelope_interval_bounds (A_amp : ℝ) (hA : 0 ≤ A_amp) (θ : ℕ → ℝ) (n : ℕ) :
+    -A_amp ≤ A_amp * Real.cos (θ n) ∧ A_amp * Real.cos (θ n) ≤ A_amp :=
+  abs_le.mp (cos_envelope A_amp hA θ n)
+
 end QOU.QBeta.Stokes3LargeOrderAmplitude
