@@ -1,7 +1,7 @@
 ---
 # qou-yb2b
 title: 'Sewing: does the knot-as-operator action extend across the complement, or degenerate there?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -52,3 +52,6 @@ ALSO RELEVANT, and it complicates the premise: fundamental-knots-operator-basis.
 OWNER DIRECTION 2026-09-04: 'try both skein and knots.' Both readings are in scope; do not pick one. They are two faces of one correspondence rather than rivals - the KBSM of a complement quantizes the SL(2,C) character variety, which is what the quantum torus quantizes on the peripheral torus. See qou-zhep and docs/audits/2026-09-04-quantum-functions-on-the-knot-complement.md.
 
 ALSO FROM THE OWNER: the Frobenius dual is a QOU axiom, and the operator basis acts on knots via KNOT CONVOLUTION - so the action to extend is the convolution, not an abstract module action. That reframes step 1: the object is bowtie_K, 'a strict depth-0 convolution in the Hecke algebra' (frobenius-su2.md), carried in 44 files.
+
+## Round 78 progress (PR #8351)
+- Advanced in PR #8351 (`5905e086a748f98972bca5ebd225e0c19c3a6223`).

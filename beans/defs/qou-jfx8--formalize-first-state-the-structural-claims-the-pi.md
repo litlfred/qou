@@ -1,7 +1,7 @@
 ---
 # qou-jfx8
 title: 'Formalize-first: state the structural claims the picture needs (shadow prices as directions of entanglement history; phase-space measure from the dual; relative Reeb angle as a jet-level datum) as Lean scaffolds or conjecture classes before any probe'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -115,3 +115,6 @@ BringResidueEnergy (exit 0): μ'(0) = ln q·(w_S − w_A) (hasDerivAt_mu_zero); 
 (0) Owner question 'what collision? doesn't it depend on the knots?': at TRACE level t* = 0.021794 is identical for pp, pn, nn — Part A universality; the 63.92° is knot-blind. Block level it depends on the knots and even flips sign: t*_(5,1) = −0.0058 (pp), −0.0102 (pn), −0.0123 (nn); t*_(3,3) = 0.0076, 0.0160, 0.0271; (4,2) 0.0024, 0.0139, 0.0034.
 (1) Non-abelian step: group law, (σ^{2ℓ})⁶ = σ^{−2}, far commutativity and the trace-level fractional Markov property hold on all H₃/H₆ blocks; the BRAID RELATION FAILS for fractional t on the (2,1) block (defect 0.5688 at t = ±1/3, 0 at t = 1). σ^{2ℓ} is consistent only as a single-bridge object, not a braid action. Trace value of σ₂^{−1/3} on the deuteron: 0.854998 − 0.221746i (real part = μ).
 (2) Cross-check: 63.92° = 60° (residue: 180°·|2ℓ|) + 3.92° (t*). Corpus Reeb angles A 0°, T₁ 57.36°, H 90°, T₂ 101.89°, G 104.48°; C₅ rotations 72°, 144°. Nearest T₁ (Δ 6.56°); no match within 1°. Recorded, not fitted.
+
+## Round 78 progress (PR #8351)
+- Advanced in PR #8351 (`5905e086a748f98972bca5ebd225e0c19c3a6223`).
