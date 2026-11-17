@@ -1,7 +1,7 @@
 ---
 # qou-pj82
 title: 'GAP: CKM sector (4) — categorical flavour basis unposed; no mixing-matrix object'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -14,6 +14,7 @@ parent: qou-20sx
 blocked_by:
     - qou-y7vg
     - qou-x4qm
+pr: 8232
 ---
 
 ## 🔥 Roast (2026-09-03, qou-bsu0)
@@ -28,3 +29,6 @@ Tower status [reading: qou-ggdk]: no attack at any order; under the ruling a mix
 ## 2026-10-10 — reparented under qou-20sx
 
 Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.
+
+## Implementation Note (PR #8232)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/HeavyQuarkDoubletObstructionFreezeOutTruncationWeinbergBlockNormCkmParameterCountAndNeutrinoZeroVolume.lean` and `computations/probes/heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py` (witness `computations/probes/heavy-quark-doublet-obstruction-freeze-out-truncation-weinberg-block-norm-ckm-parameter-count-and-neutrino-zero-volume.witness.json`, `5c9df8778eb7e1128541cebe1318fc29ba5b5b7e`).

@@ -1,7 +1,7 @@
 ---
 # qou-db6w
 title: 'GAP: truncation/freeze-out mechanism — no derivation of suppression of high-action morphisms'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -13,6 +13,7 @@ updated_at: 2026-10-10T12:01:52Z
 parent: qou-8lxd
 blocked_by:
     - qou-qhrw
+pr: 8232
 ---
 
 **Title-only until 2026-10-10 (294 chars, no body), which is why it has never
@@ -56,3 +57,6 @@ named rather than restated as fact. There is no version of this that is a
 repair.
 
 Tagged `8f-open`.
+
+## Implementation Note (PR #8232)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/HeavyQuarkDoubletObstructionFreezeOutTruncationWeinbergBlockNormCkmParameterCountAndNeutrinoZeroVolume.lean` and `computations/probes/heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py` (witness `computations/probes/heavy-quark-doublet-obstruction-freeze-out-truncation-weinberg-block-norm-ckm-parameter-count-and-neutrino-zero-volume.witness.json`, `5c9df8778eb7e1128541cebe1318fc29ba5b5b7e`).

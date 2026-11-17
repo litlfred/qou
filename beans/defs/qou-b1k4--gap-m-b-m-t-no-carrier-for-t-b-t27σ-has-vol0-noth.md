@@ -1,7 +1,7 @@
 ---
 # qou-b1k4
 title: 'GAP: m_b, m_t — no carrier for t; b = T(2,7)^σ has Vol=0; nothing derived at any order'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -14,6 +14,7 @@ parent: qou-8lxd
 blocked_by:
     - qou-qpj9
     - qou-x4qm
+pr: 8232
 ---
 
 Per-term bean for the bottom and top masses (session qou-ggdk, bean qou-bsu0). The dictionary assigns b = T(2,7)^σ (`unmapped-torus-knots.md`) and reassigns the top's T_{3,4} slot to "Hopf² colour binding; 'top quark' label deprecated" (`knot-formula-table-table2-data.md:13`); `signedWrithe .top = 7` survives only in `MesonOperatorSelectionT3.lean`. Gate: qou-qpj9 (4-C) for b; for t additionally qou-x4qm (a carrier presupposes the generation structure). Sibling of the m_s/m_c bean.
@@ -26,3 +27,6 @@ Per-term bean for the bottom and top masses (session qou-ggdk, bean qou-bsu0). T
 (iv) Next: not near-term. In order: the 4-C braid map, the doublet-pairing ruling, then a top carrier.
 (v) Forecast: the last two of the 26 to move.
 Tower status [reading: qou-ggdk]: no attack of either kind exists; by construction any b/t mass must be a tower object (the order-zero volume term is identically zero on the carrier) — no full-tower formulation in the corpus.
+
+## Implementation Note (PR #8232)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/HeavyQuarkDoubletObstructionFreezeOutTruncationWeinbergBlockNormCkmParameterCountAndNeutrinoZeroVolume.lean` and `computations/probes/heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py` (witness `computations/probes/heavy-quark-doublet-obstruction-freeze-out-truncation-weinberg-block-norm-ckm-parameter-count-and-neutrino-zero-volume.witness.json`, `5c9df8778eb7e1128541cebe1318fc29ba5b5b7e`).

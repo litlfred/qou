@@ -1,7 +1,7 @@
 ---
 # qou-qydm
 title: 'GAP: neutrino masses (3) — unknot carrier gives zero Vol; no mechanism for nonzero splittings'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -13,6 +13,7 @@ updated_at: 2026-10-10T07:15:53Z
 parent: qou-8lxd
 blocked_by:
     - qou-x4qm
+pr: 8232
 ---
 
 ## 🔥 Roast (2026-09-03, qou-bsu0)
@@ -23,3 +24,6 @@ blocked_by:
 (iv) Next: decide the carrier repair (framing = `def:strand-twist-datum`, the same object hypercharge wants); three masses then need three generations (`qou-x4qm`). Not near-term.
 (v) Forecast: no splitting number without a new mechanism class; the carrier obstruction is the only tractable piece.
 Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY — the exclusion is of the leading volume term on a Vol = 0 carrier; a tower-level correction (per-braid q-volume / Habiro tail of the unknot) is exactly the "mechanism outside the chain", and none is formulated.
+
+## Implementation Note (PR #8232)
+- Implemented in `folio/quantum-observable-universe/lean/QOU/Eightfold/HeavyQuarkDoubletObstructionFreezeOutTruncationWeinbergBlockNormCkmParameterCountAndNeutrinoZeroVolume.lean` and `computations/probes/heavy_quark_doublet_obstruction_freeze_out_truncation_weinberg_block_norm_ckm_parameter_count_and_neutrino_zero_volume_probe.py` (witness `computations/probes/heavy-quark-doublet-obstruction-freeze-out-truncation-weinberg-block-norm-ckm-parameter-count-and-neutrino-zero-volume.witness.json`, `5c9df8778eb7e1128541cebe1318fc29ba5b5b7e`).
