@@ -4,7 +4,7 @@ Released under Apache 2.0 license as described in the file LICENSE.
 -/
 
 /-!
-# Fibre q-Difference Cassini Invariant, Vassiliev-Milnor Degree Bridge, Neumann-Zagier Norm, Milnor Orthoschemes & Rosso-Jones Collapse Brick
+# Fibre q-Difference Cassini Invariant, Vassiliev-Milnor Degree Bridge, Neumann-Zagier Norm, Milnor Orthoschemes & cabling Collapse Brick
 
 This self-contained Lean 4 module formalizes exact algebraic and structural identities for five
 items in the `b9cj` formalization arc:
@@ -35,7 +35,7 @@ items in the `b9cj` formalization arc:
    orthoschemes sums to `lob = 2 * half`, and evaluating the regular ideal tetrahedron specialization
    `alpha = beta = gamma = pi/3`.
 
-5. **Rosso-Jones Two-Shell Cross-Ratio Collapse (`qou-xq3f`)**:
+5. **cabling Two-Shell Cross-Ratio Collapse (`qou-xq3f`)**:
    Formalizes the cross-multiplied discrepancy `(dAct * dInact) * pAct - dAct * (pAct * pInact)`
    between a two-shell Markov-trace product and the single active-shell term, proving it factors
    as `dAct * pAct * (dInact - pInact)` and vanishes identically whenever the inactive shell's
@@ -159,48 +159,48 @@ theorem quadraticSqrtNegThreeNorm_twice_regular_shape :
 def sixOrthoschemeTwiceVolumeSum (halfLobAlpha halfLobBeta halfLobGamma : Int) : Int :=
   2 * halfLobAlpha + 2 * halfLobBeta + 2 * halfLobGamma
 
-/-- Milnor's Lobachevsky triple sum `Lambda(alpha) + Lambda(beta) + Lambda(gamma)`. -/
-def milnorLambdaTripleSum (lobAlpha lobBeta lobGamma : Int) : Int :=
+/-- the Lobachevsky triple sum `Lambda(alpha) + Lambda(beta) + Lambda(gamma)`. -/
+def lobachevskyTripleSum (lobAlpha lobBeta lobGamma : Int) : Int :=
   lobAlpha + lobBeta + lobGamma
 
-/-- Exact assembly of the 6 orthoschemes into Milnor's Lobachevsky triple sum. -/
-theorem sixOrthoschemeTwiceVolumeSum_eq_milnorSum (halfA halfB halfC : Int) :
+/-- Exact assembly of the 6 orthoschemes into the Lobachevsky triple sum. -/
+theorem sixOrthoschemeTwiceVolumeSum_eq_tripleSum (halfA halfB halfC : Int) :
     sixOrthoschemeTwiceVolumeSum halfA halfB halfC =
-      milnorLambdaTripleSum (2 * halfA) (2 * halfB) (2 * halfC) := by
-  dsimp [sixOrthoschemeTwiceVolumeSum, milnorLambdaTripleSum]
+      lobachevskyTripleSum (2 * halfA) (2 * halfB) (2 * halfC) := by
+  dsimp [sixOrthoschemeTwiceVolumeSum, lobachevskyTripleSum]
 
 /-- Regular ideal tetrahedron specialization (`alpha = beta = gamma = pi/3`):
-Milnor's triple sum equals `3 * lobPiOver3`. -/
-theorem milnorLambdaTripleSum_regular (lobPiOver3 : Int) :
-    milnorLambdaTripleSum lobPiOver3 lobPiOver3 lobPiOver3 = 3 * lobPiOver3 := by
-  dsimp [milnorLambdaTripleSum]
+the Lobachevsky triple sum equals `3 * lobPiOver3`. -/
+theorem lobachevskyTripleSum_regular (lobPiOver3 : Int) :
+    lobachevskyTripleSum lobPiOver3 lobPiOver3 lobPiOver3 = 3 * lobPiOver3 := by
+  dsimp [lobachevskyTripleSum]
   omega
 
-/-! ## 5. Rosso-Jones Two-Shell Cross-Ratio Collapse (`qou-xq3f`) -/
+/-! ## 5. cabling Two-Shell Cross-Ratio Collapse (`qou-xq3f`) -/
 
 /-- Cross-multiplied discrepancy `(dAct * dInact) * pAct - dAct * (pAct * pInact)` between a
 two-shell product ratio `(dAct * dInact) / (pAct * pInact)` and the active shell ratio `dAct / pAct`. -/
-def rossoJonesTwoShellCrossDiff (pAct dAct pInact dInact : Int) : Int :=
+def cablingTwoShellCrossDiff (pAct dAct pInact dInact : Int) : Int :=
   (dAct * dInact) * pAct - dAct * (pAct * pInact)
 
 /-- Factored form `(dAct * pAct) * (dInact - pInact)` of the two-shell cross-multiplied discrepancy. -/
-def rossoJonesTwoShellFactoredDiff (pAct dAct pInact dInact : Int) : Int :=
+def cablingTwoShellFactoredDiff (pAct dAct pInact dInact : Int) : Int :=
   (dAct * pAct) * (dInact - pInact)
 
-/-- Exact factorization of the two-shell Rosso-Jones cross-multiplied discrepancy. -/
-theorem rossoJonesTwoShellCrossDiff_eq_factored (pAct dAct pInact dInact : Int) :
-    rossoJonesTwoShellCrossDiff pAct dAct pInact dInact =
-      rossoJonesTwoShellFactoredDiff pAct dAct pInact dInact := by
-  dsimp [rossoJonesTwoShellCrossDiff, rossoJonesTwoShellFactoredDiff]
+/-- Exact factorization of the two-shell cabling cross-multiplied discrepancy. -/
+theorem cablingTwoShellCrossDiff_eq_factored (pAct dAct pInact dInact : Int) :
+    cablingTwoShellCrossDiff pAct dAct pInact dInact =
+      cablingTwoShellFactoredDiff pAct dAct pInact dInact := by
+  dsimp [cablingTwoShellCrossDiff, cablingTwoShellFactoredDiff]
   rw [Int.mul_sub, Int.mul_assoc dAct dInact pAct, Int.mul_comm dInact pAct, ← Int.mul_assoc dAct pAct dInact]
   rw [← Int.mul_assoc dAct pAct pInact]
 
-/-- When the inactive shell's parent and daughter Markov traces coincide (`dInact = pInact`),
+/-- When the inactive shell's parent and daughter braid traces coincide (`dInact = pInact`),
 the cross-multiplied discrepancy vanishes identically. -/
-theorem rossoJonesTwoShellCrossDiff_unchanged_zero (pAct dAct pInact : Int) :
-    rossoJonesTwoShellCrossDiff pAct dAct pInact pInact = 0 := by
-  rw [rossoJonesTwoShellCrossDiff_eq_factored]
-  dsimp [rossoJonesTwoShellFactoredDiff]
+theorem cablingTwoShellCrossDiff_unchanged_zero (pAct dAct pInact : Int) :
+    cablingTwoShellCrossDiff pAct dAct pInact pInact = 0 := by
+  rw [cablingTwoShellCrossDiff_eq_factored]
+  dsimp [cablingTwoShellFactoredDiff]
   rw [Int.sub_self, Int.mul_zero]
 
 end QOU.QBeta.NeumannZagierDeterminantAndVassilievMilnorBrick
