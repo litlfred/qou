@@ -250,6 +250,8 @@ def main() -> int:
             continue
         if py.name == "hardcoded_literal_audit.py":
             continue
+        if py.name in ("witness_float64_padding_audit.py", "strip_float64_padding.py"):
+            continue
         result = _classify_script(py, registry)
         if result is None:
             continue

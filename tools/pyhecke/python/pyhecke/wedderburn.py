@@ -141,7 +141,7 @@ def wedderburn_weight(partition):
     return q_dimension(partition)**2 / q_factorial(n)
 
 
-# partition_jet_depth (EXPLORATORY, in _deprecated/hecke_core_legacy.py)
+# partition_jet_depth (EXPLORATORY, in computations/hecke_core_legacy.py)
 # is re-exported here for back-compat with the previous package surface.
 # Delegate-only — this symbol is NOT inverted; legacy keeps ownership.
 from . import _legacy  # noqa: F401, E402 — keeps the sys.path bridge alive

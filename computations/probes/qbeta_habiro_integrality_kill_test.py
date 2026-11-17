@@ -408,12 +408,12 @@ def print_rows(rows, label):
         res = "EXACT" if r["exact_from_proved_c2"] else (
             "yes" if r["resolvable_sigma_exp"] else
             ("anchor-only" if r["resolvable_anchor_only"] else "NO"))
-        # The row fields are `fmt` strings (lossless); float() is display only.
+        # The row fields are `fmt` strings (lossless); render via mp.nstr.
         print(f"    {r['n']:>2}  {r['A'][:24]:>24}  {r['B'][:24]:>24}  "
-              f"{float(r['dist_to_Z']):>10.4g}  "
-              f"{float(r['dist_to_ZSqrt3']):>10.4g}  "
-              f"{float(r['sigma_exp']):>9.3g}  "
-              f"{float(r['sigma_anchor']):>9.3g}  {res}")
+              f"{mp.nstr(mp.mpf(r['dist_to_Z']), 4):>10}  "
+              f"{mp.nstr(mp.mpf(r['dist_to_ZSqrt3']), 4):>10}  "
+              f"{mp.nstr(mp.mpf(r['sigma_exp']), 3):>9}  "
+              f"{mp.nstr(mp.mpf(r['sigma_anchor']), 3):>9}  {res}")
 
 
 RESULTS = {}
@@ -583,14 +583,17 @@ ASSERTIONS = [
 ]
 
 try:
-    from witness_base import WitnessBuilder  # noqa: E402
+    from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
     builder = WitnessBuilder.wrap_legacy(
         "qbeta-habiro-integrality-kill-test", payload,
         script_path=__file__, engine="sympy+mpmath")
     for name, computed, expected, tol, source in ASSERTIONS:
         builder.add_assertion(name, computed, expected,
                               tolerance=tol, source=source)
-    out_path = builder.save()
+    out_path = builder.save(q0_comparison(
+        muon=Q0_MUON, proton=Q0_PROTON,
+        reason="computes empirical c_3 and Habiro integrality tests at BOTH pins on purpose (CH['proton'], CH['muon'], and |c_3(proton) - c_3(muon)| anchor spread); bean qou-fl0a",
+    ))
 except Exception as exc:  # fall back to plain JSON (exemplar probe pattern)
     from datetime import datetime, timezone
     payload.update({

@@ -1,6 +1,6 @@
 """Φ_q tower and symbolic V̂ infrastructure.
 
-Re-exports from hecke_core (canonical) + _deprecated/hecke_core_legacy
+Re-exports from hecke_core (canonical) + computations/hecke_core_legacy
 (exploratory `knot_factor`) + tower_binding_symbolic (optional).
 """
 

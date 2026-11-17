@@ -62,8 +62,12 @@ def main() -> int:
     print(f"⁴He n={n}: {len(shapes)} partitions via Rust chi_q_via_gp", flush=True)
     for i, shape in enumerate(shapes):
         shape_t = tuple(shape)
+        # Convention D (Wenzl level r = 2) vanishes identically on >2-row
+        # shapes (QOU.MassTheory.TwoRowCapDerived.traceSum_eq_twoRow_of_wenzl);
+        # _load_y_lambda carries ~1e-73 solver residue there, so filter by
+        # row count explicitly (bean qou-e9le, matching block_swap_binding).
         y_lam = y_table.get(shape_t)
-        if y_lam is None:
+        if len(shape_t) > 2 or y_lam is None:
             continue
         t1 = time.time()
         chi = chi_rust_at_q_mpf(shape_t, n_strands, word, q)

@@ -110,7 +110,7 @@ import sympy as sp  # noqa: E402
 from mpmath import mp, mpc, mpf, exp, log, pi, sqrt, cosh, sinh  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, q0_comparison  # noqa: E402
 
 # Reuse the committed validator's machinery (η-product, t₅, gate + ladder).
 from tau_dictionary_hauptmodul_validator import (  # noqa: E402
@@ -547,8 +547,8 @@ def main():
     wb.add_assertion(
         "cusp_form_matches_eta_product_both_pins",
         computed=max(mpf(pin_results[p]["rel_agreement"]) for p in pin_results),
-        expected=0.0,
-        tolerance=1e-60,
+        expected=mpf("0"),
+        tolerance=mpf("1e-60"),
         source="t5(i|ln q0|/(2pi)) direct eta-product vs 125*qt*sum(c_k qt^k) at "
                "dps 120, both q0 pins — the nome dictionary is exponentially "
                "cusp-suppressed at theorem level.",
@@ -556,15 +556,15 @@ def main():
     wb.add_assertion(
         "fricke_fixed_point_exact_value",
         computed=fix_dev,
-        expected=0.0,
-        tolerance=1e-40,
+        expected=mpf("0"),
+        tolerance=mpf("1e-40"),
         source="|t5(i/sqrt5) - 5*sqrt5| (Fricke-fixed => t5^2 = 125).",
     )
     wb.add_assertion(
         "w5_circle_family_excluded",
         computed=circle_dev,
-        expected=0.0,
-        tolerance=1e-40,
+        expected=mpf("0"),
+        tolerance=mpf("1e-40"),
         source="||t5|^2 - 125| on the bar<->Fricke-equivariant circle family "
                "(both pins) — |t5| = 5*sqrt5 != 10 excludes every "
                "parametrization of the W5-fixed circle (proved invariant).",
@@ -602,7 +602,10 @@ def main():
             "compared against itself and passed regardless (bean qou-26f2)."
         ),
     )
-    wb.save()
+    wb.save(q0_comparison(
+        muon=Q0_MUON, proton=Q0_PROTON,
+        reason="evaluates the Fricke cusp factorization and bar-Fricke candidate family at BOTH pins on purpose (task1_cusp_factorization.per_pin, task2_candidates); bean qou-fl0a",
+    ))
     n_failed = sum(1 for a in wb.assertions if not a.passed)
     print("\nwitness saved; "
           + ("all assertions passed." if n_failed == 0
