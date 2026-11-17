@@ -1,0 +1,59 @@
+{
+  "probe": "round54-devacuify-6qbv-uot9",
+  "scriptPath": "computations/probes/round54_devacuify_6qbv_uot9_probe.py",
+  "scriptHash": "0fae59143b68",
+  "scriptCommitSha": "75f95fdefe14f1f7427c4fc8b00d14fdcb1efe29",
+  "generatedAt": "2026-11-17T07:05:35Z",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "operator_selection_lp_h2_certificate_and_gram_det",
+      "bean": "operator_selection_lp",
+      "dps": 80,
+      "q": "2.0",
+      "det_G_H2": "0.84",
+      "primal_objective": "2.0",
+      "dual_objective": "2.0",
+      "duality_gap": "0.0",
+      "passed": true
+    },
+    {
+      "id": "joint_galois_braid_discharged_word_commutation",
+      "bean": "9tyj",
+      "dps": 80,
+      "lhs_a": "15.7079632679489661923132169163975144209858469968755",
+      "lhs_b": "10.71828182845904523536028747135266249775724709369995",
+      "commutation_error": "0.0",
+      "passed": true
+    },
+    {
+      "id": "joint_galois_braid_figure_8_tensor_commutation",
+      "bean": "mvy6",
+      "dps": 80,
+      "p1": "1.25",
+      "p2": "-0.75",
+      "tensor_commutation_error": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_obstruction_reduction_cy3_drinfeld_kummer",
+      "bean": "qou-f36z",
+      "dps": 80,
+      "hh_coh_2": "1.0",
+      "vdb_duality_max_mismatch": "0.0",
+      "chi_A": "6.0",
+      "kummer_vanishing_divisors_count": "4.0",
+      "passed": true
+    },
+    {
+      "id": "confinement_level_local_constancy_stratum",
+      "bean": "g5t4",
+      "dps": 80,
+      "level_q1": "2.0",
+      "level_q2": "2.0",
+      "stratum_jump": "0.0",
+      "passed": true
+    }
+  ]
+}
