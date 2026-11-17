@@ -1,7 +1,8 @@
 ---
 # qou-fcn8
 title: Derive the magic-shell coordination regime switch (chain z=A-1 -> magic M~2); fill BondExtensiveBinding
-status: todo
+status: in-progress
+pr: 8306
 type: task
 priority: normal
 tags:

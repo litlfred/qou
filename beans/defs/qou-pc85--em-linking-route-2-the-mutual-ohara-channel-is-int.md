@@ -1,7 +1,8 @@
 ---
 # qou-pc85
 title: 'EM-linking route 2: the MUTUAL O''Hara channel is integrable WITHOUT O''Hara''s theorem — no diagonal singularity, so bounded+measurable suffices (qou-o6ml)'
-status: todo
+status: in-progress
+pr: 8306
 type: task
 priority: normal
 tags:

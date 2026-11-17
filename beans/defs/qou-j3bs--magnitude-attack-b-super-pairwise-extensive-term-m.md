@@ -1,7 +1,8 @@
 ---
 # qou-j3bs
 title: 'MAGNITUDE ATTACK B: super-pairwise extensive term - measure what shape closes R/A = B_AME/A - 2.998 across A=2..238'
-status: todo
+status: in-progress
+pr: 8306
 type: task
 priority: normal
 tags:

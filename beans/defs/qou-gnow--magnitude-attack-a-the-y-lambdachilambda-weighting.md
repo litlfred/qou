@@ -1,7 +1,8 @@
 ---
 # qou-gnow
 title: 'MAGNITUDE ATTACK A: the y_lambda*chi^lambda weighting is NOT applied in B_sym - measure the gap between the chain and the full Frobenius pairing'
-status: todo
+status: in-progress
+pr: 8306
 type: task
 priority: normal
 tags:
