@@ -1,0 +1,65 @@
+{
+  "probe": "convention_d_rescoped_radius_four_atom_trace_producer_assembly_pair_separation_shift_gram_delta_staleness_and_active_partition_exact_h_probe",
+  "round": "81",
+  "beans": [
+    "qou-9ov8",
+    "qou-9xla",
+    "qou-a2w5",
+    "qou-a71h",
+    "qou-abd7"
+  ],
+  "leanModule": "QOU.Eightfold.ConventionDRescopedRadiusFourAtomTraceProducerAssemblyPairSeparationShiftGramDeltaStalenessAndActivePartitionExactH",
+  "scriptPath": "computations/probes/convention_d_rescoped_radius_four_atom_trace_producer_assembly_pair_separation_shift_gram_delta_staleness_and_active_partition_exact_h_probe.py",
+  "scriptCommitSha": "7a5607259beb8f1bdd116e0990257f7ca9aa2289",
+  "scriptHash": "02eecadb0124",
+  "scriptSha256": "02eecadb0124cfb172e69db8784bee10f63a674f8513bbd154b33c522f492645",
+  "dps": "80",
+  "generatedAt": "2026-11-17T10:49:36Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-9ov8-convention-d-rescoped-radius",
+      "bean": "qou-9ov8",
+      "description": "Rescoping r* ~ 1.585 from convention C to canonical convention D shifts the window to [2.04, 2.16] with spread 0.12",
+      "rStarConvC": "1.585",
+      "rStarConvDLow": "2.04",
+      "rStarConvDHigh": "2.16",
+      "passed": true
+    },
+    {
+      "id": "qou-9xla-four-atom-interface-trace-producer",
+      "bean": "qou-9xla",
+      "description": "Four-atom interface trace normalization under convention D satisfies (q^1/2 + q^-1/2)^2 = (q + q^-1) + 2 and exact linear table difference",
+      "zConvC": "4.9831043159086673562070527192191746830168412325841604896574580332653597846635799e-1",
+      "zConvD": "4.9329835992343738655287412174702264303070765153134181444818037630255755177398618e-1",
+      "squareBridgeResidual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-a2w5-assembly-pair-separation-shift",
+      "bean": "qou-a2w5",
+      "description": "Mutual-channel three-body response vanishes for unmoved pair separations and composes additively across assembly stages",
+      "totalMutualResponse": "9.918e-2",
+      "additivityResidual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-a71h-gram-delta-witness-staleness",
+      "bean": "qou-a71h",
+      "description": "3He gram-delta fresh evaluation reduces residual miss from 827.014 to 421.137 with exact drift identity miss_committed - miss_fresh = s_fresh - s_committed",
+      "missCommitted": "8.27014e+2",
+      "missFresh": "4.211371001e+2",
+      "driftDelta": "4.058768999e+2",
+      "passed": true
+    },
+    {
+      "id": "qou-abd7-atom-braid-active-partitions-exact-h",
+      "bean": "qou-abd7",
+      "description": "At exact h = q0 - q0^-1, deuteron (A=2, Z=1) activates all 7 partitions of 6, exceeding the exterior bound 3A - Z + 1 = 6 by 1",
+      "hExact": "3.3078875163394597646473689312722538399344106894144413372834700689453291013986057e-1",
+      "hRelMismatch": "3.6799446487458673011585779896562446839905699543080308604339007460186393383107306e-1",
+      "deuteronSurplus": "1",
+      "passed": true
+    }
+  ]
+}
