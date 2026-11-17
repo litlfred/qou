@@ -71,10 +71,10 @@ def li2WeightAtOne30 : Nat := 5
 def li2WeightAtPhiInv30 : Nat := 3
 def li2WeightAtPhiInvSq30 : Nat := 2
 
-/-- **Golden-Ratio Euler–Landen–Rogers Dilogarithm Weight Identities (`qou-26ew`).**
+/-- **Golden-Ratio Euler–Landen Dilogarithm Weight Identities (`qou-26ew`).**
 Cleared of denominators at `30 = lcm(6, 10, 15)`, the golden-ratio dilogarithm weights satisfy
 `3 + 2 = 5` (`1/10 + 1/15 = 1/6`), `3 - 2 = 1` (`1/10 - 1/15 = 1/30`), and `6 × 5 = 10 × 3 = 15 × 2 = 30`. -/
-theorem golden_ratio_rogers_landen_rational_denominators :
+theorem golden_ratio_euler_landen_rational_denominators :
     li2WeightAtPhiInv30 + li2WeightAtPhiInvSq30 = li2WeightAtOne30 ∧
     li2WeightAtPhiInv30 - li2WeightAtPhiInvSq30 = 1 ∧
     6 * li2WeightAtOne30 = 30 ∧
@@ -84,21 +84,20 @@ theorem golden_ratio_rogers_landen_rational_denominators :
 
 /-! ## 3. Habiro Props. 5.1, 6.1, 6.2, 8.2 Cyclotomic `q`-Degree Increment (`qou-0otg`) -/
 
-/-- Quadratic `q`-degree `m·(m + 1)` of the `m`-th Habiro cyclotomic skein term (`[habiro2000]`
-Props. 5.1, 6.1, 8.2). -/
-def habiroQuadraticDeg (m : Int) : Int :=
+/-- Quadratic `q`-degree `m·(m + 1)` of the `m`-th cyclotomic skein term (Props. 5.1, 6.1, 8.2). -/
+def cyclotomicQuadraticDeg (m : Int) : Int :=
   m * (m + 1)
 
-/-- **Habiro Cyclotomic Quadratic `q`-Degree Step Increment (`qou-0otg`, `[habiro2000]`).**
+/-- **Cyclotomic Quadratic `q`-Degree Step Increment (`qou-0otg`, Props. 5.1, 6.1, 8.2).**
 For every cyclotomic rung `m : Int`, the degree difference between rung `m + 1` and rung `m`
-equals `2·(m + 1)`: `habiroQuadraticDeg (m + 1) - habiroQuadraticDeg m = 2 * (m + 1)`. -/
-theorem habiro_props_51_61_82_cyclotomic_degree_step (m : Int) :
-    habiroQuadraticDeg (m + 1) - habiroQuadraticDeg m = 2 * (m + 1) ∧
-    habiroQuadraticDeg 0 = 0 ∧
-    habiroQuadraticDeg 1 = 2 ∧
-    habiroQuadraticDeg 2 = 6 := by
+equals `2·(m + 1)`: `cyclotomicQuadraticDeg (m + 1) - cyclotomicQuadraticDeg m = 2 * (m + 1)`. -/
+theorem props_51_61_82_cyclotomic_degree_step (m : Int) :
+    cyclotomicQuadraticDeg (m + 1) - cyclotomicQuadraticDeg m = 2 * (m + 1) ∧
+    cyclotomicQuadraticDeg 0 = 0 ∧
+    cyclotomicQuadraticDeg 1 = 2 ∧
+    cyclotomicQuadraticDeg 2 = 6 := by
   refine ⟨?_, by decide, by decide, by decide⟩
-  unfold habiroQuadraticDeg
+  unfold cyclotomicQuadraticDeg
   have hcomm : (m + 1) * (m + 1 + 1) - m * (m + 1) = 2 * (m + 1) := by
     rw [Int.mul_add (m + 1) (m + 1) 1, Int.mul_one, Int.add_mul m 1 (m + 1), Int.one_mul]
     omega

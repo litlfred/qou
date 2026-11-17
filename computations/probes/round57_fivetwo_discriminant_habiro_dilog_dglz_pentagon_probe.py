@@ -40,7 +40,7 @@ def main() -> None:
     )
 
     script_bytes = script_path.read_bytes()
-    script_hash = hashlib.sha256(script_bytes).hexdigest()[:12]
+    script_hash = hashlib.sha256(script_bytes).hexdigest()
 
     commit_sha = (
         subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo_root)
@@ -169,6 +169,7 @@ def main() -> None:
         "probe": "round57-fivetwo-discriminant-habiro-dilog-dglz-pentagon",
         "scriptPath": "computations/probes/round57_fivetwo_discriminant_habiro_dilog_dglz_pentagon_probe.py",
         "scriptHash": script_hash,
+        "scriptSha256": script_hash,
         "scriptCommitSha": commit_sha,
         "precisionDps": 80,
         "beans": ["qou-yq50", "qou-26ew", "qou-0otg", "qou-5isd", "qou-zlr6"],
