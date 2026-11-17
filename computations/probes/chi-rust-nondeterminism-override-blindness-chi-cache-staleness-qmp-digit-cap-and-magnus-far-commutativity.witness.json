@@ -1,0 +1,63 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "dps": "80",
+  "computedAt": "2026-11-17T08:04:20.027945+00:00",
+  "commitSha": "e7b85e53d7a8855337daf870617a2e9a6b0acc11",
+  "scriptCommitSha": "e7b85e53d7a8855337daf870617a2e9a6b0acc11",
+  "scriptHash": "faf17c121dfa",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou_07ts_he3_eight_run_nondeterminism_and_he4_ulp_margin",
+      "computed": "4:35",
+      "expected": "4:35",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ChiRustNondeterminismOverrideBlindnessChiCacheStalenessQmpDigitCapAndMagnusFarCommutativity.he3_eight_run_nondeterminism_and_he4_ulp_margin"
+    },
+    {
+      "name": "qou_324i_independent_disposition_audit_partition_counts",
+      "computed": "37:7",
+      "expected": "37:7",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ChiRustNondeterminismOverrideBlindnessChiCacheStalenessQmpDigitCapAndMagnusFarCommutativity.independent_disposition_audit_partition_counts"
+    },
+    {
+      "name": "qou_49vn_deuteron_chi_cache_vs_fresh_discrepancy_and_ratio",
+      "computed": "4232039047:2",
+      "expected": "4232039047:2",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ChiRustNondeterminismOverrideBlindnessChiCacheStalenessQmpDigitCapAndMagnusFarCommutativity.deuteron_chi_cache_vs_fresh_discrepancy_and_ratio"
+    },
+    {
+      "name": "qou_4pdh_q_mp_fifty_digit_cap_under_sixty_output_dps",
+      "computed": "50:10:97",
+      "expected": "50:10:97",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ChiRustNondeterminismOverrideBlindnessChiCacheStalenessQmpDigitCapAndMagnusFarCommutativity.q_mp_fifty_digit_cap_under_sixty_output_dps"
+    },
+    {
+      "name": "qou_5mxd_triton_h9_magnus_pair_reduction_and_partition_overlap",
+      "computed": "8:14:5:11",
+      "expected": "8:14:5:11",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.ChiRustNondeterminismOverrideBlindnessChiCacheStalenessQmpDigitCapAndMagnusFarCommutativity.triton_h9_magnus_pair_reduction_and_partition_overlap"
+    }
+  ],
+  "invocation": {
+    "argv": [
+      "computations/probes/chi_rust_nondeterminism_override_blindness_chi_cache_staleness_qmp_digit_cap_and_magnus_far_commutativity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/chi_rust_nondeterminism_override_blindness_chi_cache_staleness_qmp_digit_cap_and_magnus_far_commutativity_probe.py"
+  },
+  "description": "Exact 80-dps mpmath and Fraction verification for qou-07ts, qou-324i, qou-49vn, qou-4pdh, and qou-5mxd in the qou-10v9 subtree.",
+  "data": {
+    "cached_over_fresh_deuteron_ratio_80dps": "3.78481627771685231083254470176538269751442093",
+    "proton_minus_muon_q0_anchor_diff_80dps": "0.0000016733489463995790843014594264091338444732463"
+  }
+}
