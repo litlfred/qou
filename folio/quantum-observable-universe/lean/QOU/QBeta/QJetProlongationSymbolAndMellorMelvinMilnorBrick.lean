@@ -51,27 +51,27 @@ namespace QOU.QBeta.QJetProlongationSymbolAndMellorMelvinMilnorBrick
 /-- Raw integer lift of Mellor-Melvin's triple-linking formula
 `(e_ijk + e_jki + e_kij) - t_ijk`, where `e_pqr` are degree-2 Magnus coefficients
 and `t_ijk` is the signed count of triple intersection points `F_i ∩ F_j ∩ F_k`. -/
-def mellorMelvinMilnorRaw (eIjk eJki eKij tIjk : Int) : Int :=
+def mellorMelvinTripleLinkingRaw (eIjk eJki eKij tIjk : Int) : Int :=
   (eIjk + eJki + eKij) - tIjk
 
 /-- Disjoint-outer-surface reduction: when `eJki = 0`, `eKij = 0`, and `tIjk = 0`,
-`mellorMelvinMilnorRaw` reduces identically to `eIjk`. -/
-theorem mellorMelvinMilnorRaw_disjoint_outer (eIjk : Int) :
-    mellorMelvinMilnorRaw eIjk 0 0 0 = eIjk := by
-  dsimp [mellorMelvinMilnorRaw]
+`mellorMelvinTripleLinkingRaw` reduces identically to `eIjk`. -/
+theorem mellorMelvinTripleLinkingRaw_disjoint_outer (eIjk : Int) :
+    mellorMelvinTripleLinkingRaw eIjk 0 0 0 = eIjk := by
+  dsimp [mellorMelvinTripleLinkingRaw]
   omega
 
 /-- Borromean rings positive control: `e_123 = -1` with `e_231 = 0, e_312 = 0, t_123 = 0`
 yields `-1`. -/
-theorem mellorMelvinMilnorRaw_borromean_control :
-    mellorMelvinMilnorRaw (-1) 0 0 0 = -1 := by
+theorem mellorMelvinTripleLinkingRaw_borromean_control :
+    mellorMelvinTripleLinkingRaw (-1) 0 0 0 = -1 := by
   rfl
 
-/-- Additivity of `mellorMelvinMilnorRaw` under simultaneous scaling of all four components. -/
-theorem mellorMelvinMilnorRaw_scale (c eIjk eJki eKij tIjk : Int) :
-    mellorMelvinMilnorRaw (c * eIjk) (c * eJki) (c * eKij) (c * tIjk) =
-      c * mellorMelvinMilnorRaw eIjk eJki eKij tIjk := by
-  dsimp [mellorMelvinMilnorRaw]
+/-- Additivity of `mellorMelvinTripleLinkingRaw` under simultaneous scaling of all four components. -/
+theorem mellorMelvinTripleLinkingRaw_scale (c eIjk eJki eKij tIjk : Int) :
+    mellorMelvinTripleLinkingRaw (c * eIjk) (c * eJki) (c * eKij) (c * tIjk) =
+      c * mellorMelvinTripleLinkingRaw eIjk eJki eKij tIjk := by
+  dsimp [mellorMelvinTripleLinkingRaw]
   rw [← Int.mul_add, ← Int.mul_add, ← Int.mul_sub]
 
 /-- Symmetrized degree-2 Magnus sum discrepancy `(epsIj + epsJi) - muIk * muJk`. -/
