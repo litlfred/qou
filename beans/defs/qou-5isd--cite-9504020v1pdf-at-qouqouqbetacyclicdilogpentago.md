@@ -1,7 +1,8 @@
 ---
 # qou-5isd
 title: Cite 9504020v1.pdf at qou:QOU.QBeta.CyclicDilogPentagon
-status: todo
+status: in-progress
+pr: 8289
 type: task
 priority: normal
 tags:
@@ -27,3 +28,9 @@ Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-v
      Unrelated beans that collided on a random id; the older three-generation
      bean keeps `qou-x4qm`, this newer citation task takes a fresh id.
      Flagged in bean `qou-xqno`. -->
+
+## Round 57 Implementation Progress (PR #8289)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8289 (head `b1d29c3ac9e8ff1013e87a6f368591fb977a1ff3`, Commit 1 `85cf34f4dd33fa831b7480e3f2c9e1ff2e2f5c6d`)
+- **Lean 4 Module & Theorems:** `QOU/QBeta/CyclicDilogPentagonAndDGLZStateIntegralLattice.lean` (`kashaev_cyclic_dilog_rmatrix_pentagon_charge_conservation` citing `9504020v1.pdf`, `[faddeev_kashaev1994]`, `[kashaev1997]`)
+- **80-dps Witness:** `computations/probes/round57-fivetwo-discriminant-habiro-dilog-dglz-pentagon.witness.json` (`scriptHash: 3ee733fedb99`, `allPassed: true`, `0` raw `float64`)

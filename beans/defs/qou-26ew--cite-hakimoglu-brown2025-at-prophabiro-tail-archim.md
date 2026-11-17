@@ -1,7 +1,8 @@
 ---
 # qou-26ew
 title: Cite [hakimoglu-brown2025] at prop:habiro-tail-archimedean-action
-status: todo
+status: in-progress
+pr: 8289
 type: task
 priority: normal
 tags:
@@ -21,3 +22,9 @@ Source: `library/arxiv-2506.10206v2/2506.10206v2-analytic-dilogarithm-identities
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+## Round 57 Implementation Progress (PR #8289)
+- **Status:** `in-progress` (per no-unilateral-closure policy)
+- **PR:** https://github.com/litlfred/qou/pull/8289 (head `b1d29c3ac9e8ff1013e87a6f368591fb977a1ff3`, Commit 1 `85cf34f4dd33fa831b7480e3f2c9e1ff2e2f5c6d`)
+- **Lean 4 Module & Theorems:** `QOU/AlphaEM/FiveTwoDiscriminantGluingAndHabiroDilogLadder.lean` (`golden_ratio_rogers_landen_rational_denominators` citing `[hakimoglu-brown2025]`, Lewin 1981, Zagier 2007)
+- **80-dps Witness:** `computations/probes/round57-fivetwo-discriminant-habiro-dilog-dglz-pentagon.witness.json` (`scriptHash: 3ee733fedb99`, `allPassed: true`, `0` raw `float64`)
