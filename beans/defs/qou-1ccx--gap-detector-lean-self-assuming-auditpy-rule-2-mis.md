@@ -1,7 +1,8 @@
 ---
 # qou-1ccx
 title: 'GAP (detector): lean-self-assuming-audit.py rule 2 misses the ANONYMOUS instance binder - [C X] + ClassName.field. Successor cause to qou-24m2, which fixed the NAMED [ctx : C] case'
-status: todo
+status: in-progress
+pr: 8350
 type: task
 priority: normal
 tags:
@@ -71,3 +72,7 @@ Cross-ref: `qou-24m2` (the named-binder cause, fixed), `qou-sa5c` (adjudication
 of the 5 that fix surfaced), `qou-qf8t` (type-equality half, completed),
 `qou-h0ou` (the branch this was found on),
 `docs/audits/2026-09-15-rank-two-field-space-for-the-variational-derivative.md` §4.
+
+
+## Round 57 Implementation (PR #8350)
+- Implemented on branch `claude/round57-trd0-9nnz-fixes` (commit `35175f892e4827e826a23a3d007073dd800ff733`, https://github.com/litlfred/qou/pull/8350).

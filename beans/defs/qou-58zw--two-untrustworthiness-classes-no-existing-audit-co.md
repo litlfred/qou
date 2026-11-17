@@ -1,7 +1,8 @@
 ---
 # qou-58zw
 title: 'Two untrustworthiness classes no existing audit covers: tolerance-below-arithmetic-floor, and producers that SHRANK'
-status: todo
+status: in-progress
+pr: 8350
 type: task
 priority: normal
 tags:
@@ -704,3 +705,7 @@ committed but this note.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 57 Implementation (PR #8350)
+- Implemented on branch `claude/round57-trd0-9nnz-fixes` (commit `35175f892e4827e826a23a3d007073dd800ff733`, https://github.com/litlfred/qou/pull/8350).

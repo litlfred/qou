@@ -1,7 +1,8 @@
 ---
 # qou-v5sr
 title: 'GAP: he4_link_volume_braid_closure''s baked CLOSURE table is stale for the NUCLEON rows, and its own comment is now false'
-status: todo
+status: in-progress
+pr: 8350
 type: task
 priority: normal
 tags:
@@ -82,3 +83,7 @@ is the default here.
 
 Cross-links: `qou-mbbf` (the A+1 component law and the carrier question),
 `qou-sikd` (the same commit, on the trace side), `qou-o6ml` (the arc).
+
+
+## Round 57 Implementation (PR #8350)
+- Implemented on branch `claude/round57-trd0-9nnz-fixes` (commit `35175f892e4827e826a23a3d007073dd800ff733`, https://github.com/litlfred/qou/pull/8350).

@@ -1,7 +1,8 @@
 ---
 # qou-coyy
 title: 'GAP: witness-reproducibility-check reports allPassed true while recording 4 drifting builders'
-status: todo
+status: in-progress
+pr: 8350
 type: task
 priority: normal
 tags:
@@ -85,3 +86,7 @@ Either way the assertion to add is:
       guarded on len(registry) > 0
 
 Re-measure first: the recorded verdicts are from 2026-07-07.
+
+
+## Round 57 Implementation (PR #8350)
+- Implemented on branch `claude/round57-trd0-9nnz-fixes` (commit `35175f892e4827e826a23a3d007073dd800ff733`, https://github.com/litlfred/qou/pull/8350).

@@ -1,7 +1,8 @@
 ---
 # qou-381n
 title: 'SCREEN: 46 Lean files carry numeric literals citing a producer whose witness no longer matches its source — 1 confirmed (JetOrderIndependence), 45 unverified'
-status: todo
+status: in-progress
+pr: 8350
 type: task
 priority: normal
 tags:
@@ -536,3 +537,7 @@ exactly (`grep -oE '^\| *[0-9]+ *\|'`) gives **45**, contiguous 1-45, highest 45
 **AGENTS.md is correct; the discrepancy was my own regex.** Recorded because the
 near-miss is the point: I was two minutes from "correcting" a current figure in
 the document that exists to warn against exactly that.
+
+
+## Round 57 Implementation (PR #8350)
+- Implemented on branch `claude/round57-trd0-9nnz-fixes` (commit `35175f892e4827e826a23a3d007073dd800ff733`, https://github.com/litlfred/qou/pull/8350).
