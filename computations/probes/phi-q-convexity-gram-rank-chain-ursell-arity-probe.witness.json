@@ -1,0 +1,61 @@
+{
+  "probe": "phi-q-convexity-gram-rank-chain-ursell-arity-probe",
+  "beans": [
+    "qou-oooq",
+    "qou-fadg",
+    "qou-h7mh",
+    "qou-m8f3",
+    "qou-x0su"
+  ],
+  "dps": 50,
+  "scriptHash": "30afb5aab982",
+  "scriptCommitSha": "a5e984bb49e5793d916046bba331b55247c55e11",
+  "generatedAt": "2026-11-17T08:35:02Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-oooq-phi-q-tower-order2-vs-order5",
+      "passed": true,
+      "hbar0": "0.10434072031951950789958194233517035",
+      "c2Cleared630": "-1260",
+      "c5Cleared630": "840",
+      "twoTermFactorResidual": "2.13821176807e-50"
+    },
+    {
+      "id": "qou-fadg-h3-gram-rank5-square-system",
+      "passed": true,
+      "h3NormalFormDim": "6",
+      "conventionDRadicalNullity": "1",
+      "independentFrobeniusRows": "5",
+      "totalRowsWithNet": "6"
+    },
+    {
+      "id": "qou-h7mh-chain-ordering-spread-vs-complete-pairs",
+      "passed": true,
+      "contiguous3HeMeV": "4.8841699846495086299269816471301533",
+      "contiguous3HMeV": "6.6312432274104282850603887206626406",
+      "alternating3HeMeV": "5.6669205845361496175654217756881202",
+      "contiguousMirrorSplitMeV": "1.7470732427609196551334070735324872",
+      "alternatingMirrorSplitMeV": "0.0",
+      "splitFormulaResidual": "5.34552942018e-51"
+    },
+    {
+      "id": "qou-m8f3-one-row-dominant-ursell-missing-edge",
+      "passed": true,
+      "b2Pn": "0.67689271555620781210480012866164293",
+      "b3UrsellPpn": "-0.67689271555620781210480012866164293",
+      "b3UrsellPnn": "-0.67689271555620781210480012866164293",
+      "b3OverB2PnRatio": "-1.0",
+      "ursellPpnResidual": "1.33638235505e-51"
+    },
+    {
+      "id": "qou-x0su-coordination-channel-arity-separation",
+      "passed": true,
+      "massNumberTested": "16",
+      "observeEarlyChain": "0.99996105619052074609667126513880338",
+      "observeEarlyComplete": "0.99999999999999999999999999999999999",
+      "observeEarlyDiffAtA16": "0.00003894380947925390332873486",
+      "observeEarlyFormulaResidual": "3.94291522479e-52"
+    }
+  ]
+}
