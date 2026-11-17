@@ -1,0 +1,60 @@
+{
+  "probeId": "garoufalidis_zagier_s3_block_and_five_two_disc_brick_probe",
+  "beans": [
+    "qou-1gkf",
+    "qou-gz37",
+    "qou-ips1",
+    "qou-ized",
+    "qou-m1nz"
+  ],
+  "scriptPath": "computations/probes/garoufalidis_zagier_s3_block_and_five_two_disc_brick_probe.py",
+  "scriptCommitSha": "d726ce17152d0bdd416fbd50d86ba08930c726e7",
+  "scriptHash": "1b13751c9d60",
+  "generatedAt": "2026-11-17T10:22:10.805875+00:00",
+  "environment": {
+    "pythonVersion": "3.13.12",
+    "mpmathVersion": "1.3.0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "precisionDps": "80"
+  },
+  "allPassed": true,
+  "outputHash": "36c8353af8986ccd33f16fae6cef94ba4dab83e96f5a0e688d772b07b9d32e72",
+  "results": {
+    "precisionDps": "80",
+    "allPassed": true,
+    "checks": [
+      {
+        "id": "whitehead_shifted_logsine_quarter_assembly",
+        "passed": true,
+        "fourCatalanG80dps": "3.663862376708876060218414059729536443097",
+        "quarterAssemblyResidual": "4.743989074453735450956858e-81"
+      },
+      {
+        "id": "garoufalidis_zagier_w0_s3_block_orthogonality",
+        "passed": true,
+        "sixScaledSignInner": "0",
+        "sixScaledStdInner": "6",
+        "sixScaledTrivInner": "12"
+      },
+      {
+        "id": "cross_cusp_pole_phase_subtracted_regularization",
+        "passed": true,
+        "splitResidual": "1.054219794323052322434857e-81",
+        "subtractedTailResidual": "1.054219794323052322434857e-81"
+      },
+      {
+        "id": "five_two_trace_field_discriminant_neg_23",
+        "passed": true,
+        "exactDiscriminant": "-23",
+        "vandermondeRootProductResidual": "0.0"
+      },
+      {
+        "id": "route_c_m1_descendant_tower_discrepancy_anchors",
+        "passed": true,
+        "discrepancyQ0": "0",
+        "discrepancyQ1": "6",
+        "discrepancyQ3": "-14"
+      }
+    ]
+  }
+}
