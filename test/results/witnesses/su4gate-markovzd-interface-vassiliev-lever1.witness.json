@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "probeId": "su4gate-markovzd-interface-vassiliev-lever1",
+  "timestamp": "2026-11-17T10:53:23Z",
+  "scriptPath": "computations/probes/su4gate_markovzd_interface_vassiliev_lever1_probe.py",
+  "scriptHash": "76cbc395d96a",
+  "scriptCommitSha": "3a2b83e14a2c600fdbbd770661f3d8c90a141612",
+  "precisionDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-04ub-su4-supermultiplet-boundary",
+      "bean": "qou-04ub",
+      "description": "Wigner SU(4) antisymmetric supermultiplet boundary C(4,4)=1 and C(4,5)=0",
+      "choose44": "1",
+      "choose45": "0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-dwf4-markovzd-anchor-and-odd-parity",
+      "bean": "qou-dwf4",
+      "description": "Convention-D Markov parameter z_D(1)=1/2 and odd parity z_D(-q)=-z_D(q) at q=3/5",
+      "zDAtOne": "0.5",
+      "zDAtQ": "0.1588235294117647058823529411764705882353",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-foh0-interface-block-linearity",
+      "bean": "qou-foh0",
+      "description": "Isotypic compression interfaceBlock P 0 = 0 and interfaceBlock P (I+J) = interfaceBlock P I + interfaceBlock P J",
+      "block00Sum": "3.666666666666666666666666666666666666667",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-tnvz-borromean-deficit-sub-leading-tail",
+      "bean": "qou-tnvz",
+      "description": "(borrDeficit(h) - leadingWeight(h)) * (h^2 + 4) = (1/4)*h^6 at h = 3/5 - 5/3",
+      "lhs": "0.3682242194787379972565157750342935528121",
+      "rhs": "0.3682242194787379972565157750342935528121",
+      "residual": "4.21687917729220928973943e-81",
+      "passed": true
+    },
+    {
+      "id": "z2bn-lever1-depth2-seed-residual",
+      "bean": "z2bn",
+      "description": "Classical lever-1 depth-2 recurrence residual lw(4) - ((21/8)*lw(3) - lw(2)) = -7/240",
+      "lhs": "-0.02916666666666666666666666666666666666667",
+      "rhs": "-0.02916666666666666666666666666666666666667",
+      "residual": "1.120108531468243092587036e-81",
+      "passed": true
+    }
+  ]
+}
