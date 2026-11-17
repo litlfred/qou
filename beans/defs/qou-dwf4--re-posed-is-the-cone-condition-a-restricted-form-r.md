@@ -1,7 +1,7 @@
 ---
 # qou-dwf4
 title: 'Re-posed: is the cone condition a RESTRICTED-form relation in the 8x8 entries?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -479,3 +479,6 @@ Was in-progress with no bean update since 2026-09-04 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under carrier M8 (qou-n1dj) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+### Progress (Round 72 — PR litlfred/qou#8311)
+- Formalized in PR `litlfred/qou#8311` (`feat/round72-su4gate-markovzd-interface-vassiliev-lever1-43c1`, Commit 1 `120f8595e20646e98de0e5ba129245b973aa1574`, Head `be2282b84c903a928b1e78fc59abcd496c8ceea5`, `scriptHash: 3cfc48bf2b24`).

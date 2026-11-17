@@ -1,7 +1,7 @@
 ---
 # z2bn
 title: 'Lever 1 [FOCUS]: derive/test fibre q-difference kernel R(q,x) for binding genfun; kill-switch = magic-A ⁴He +5.87%'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -397,3 +397,6 @@ a nontrivial outer automorphism (S₆). Ties binding arithmetic to s5-so3 keysto
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-06-28 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+### Progress (Round 72 — PR litlfred/qou#8311)
+- Formalized in PR `litlfred/qou#8311` (`feat/round72-su4gate-markovzd-interface-vassiliev-lever1-43c1`, Commit 1 `120f8595e20646e98de0e5ba129245b973aa1574`, Head `be2282b84c903a928b1e78fc59abcd496c8ceea5`, `scriptHash: 3cfc48bf2b24`).

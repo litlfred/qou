@@ -1,7 +1,7 @@
 ---
 # qou-04ub
 title: Pre-register free-choice classifications for live open binding candidates, before outcomes
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -20,3 +20,6 @@ Effect on the rule: both halves hold (no free choice; definite prediction). What
 Process error named: classified from a secondary summary with the primary source one grep away. Surfaced in under an hour -- the pre-registration working. Retrospective scoring would have logged 'testable, confirmed' and learned nothing.
 
 Registry untouched, outcome still null, guard still green. PR #5877.
+
+### Progress (Round 72 — PR litlfred/qou#8311)
+- Formalized in PR `litlfred/qou#8311` (`feat/round72-su4gate-markovzd-interface-vassiliev-lever1-43c1`, Commit 1 `120f8595e20646e98de0e5ba129245b973aa1574`, Head `be2282b84c903a928b1e78fc59abcd496c8ceea5`, `scriptHash: 3cfc48bf2b24`).

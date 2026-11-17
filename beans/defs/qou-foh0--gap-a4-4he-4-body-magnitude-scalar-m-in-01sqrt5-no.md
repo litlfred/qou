@@ -1,7 +1,7 @@
 ---
 # qou-foh0
 title: 'GAP: A=4 (4He) >=4-body magnitude scalar m in (0,1/sqrt5) not fixed by a categorical driver'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -45,3 +45,6 @@ Audit: docs/audits/2026-08-28-a4-interface-operator-driver-search.md
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-28 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+### Progress (Round 72 — PR litlfred/qou#8311)
+- Formalized in PR `litlfred/qou#8311` (`feat/round72-su4gate-markovzd-interface-vassiliev-lever1-43c1`, Commit 1 `120f8595e20646e98de0e5ba129245b973aa1574`, Head `be2282b84c903a928b1e78fc59abcd496c8ceea5`, `scriptHash: 3cfc48bf2b24`).

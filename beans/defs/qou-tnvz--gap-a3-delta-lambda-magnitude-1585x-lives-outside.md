@@ -1,7 +1,7 @@
 ---
 # qou-tnvz
 title: 'GAP: A=3 Delta_lambda magnitude 1.585x lives OUTSIDE the finite-type filtration of the single Borromean deficit'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -35,3 +35,6 @@ of comparable size (the +0.36 % single-deficit tower measures the size of the MI
 term, per the "compositional object is already many-body" discipline). Do NOT re-probe a single
 weight of `1−τ_Borr` — that route is closed. Anti-fit still gates: a Δ_λ obtained by inverting
 μ₃ is a fit, not a derivation.
+
+### Progress (Round 72 — PR litlfred/qou#8311)
+- Formalized in PR `litlfred/qou#8311` (`feat/round72-su4gate-markovzd-interface-vassiliev-lever1-43c1`, Commit 1 `120f8595e20646e98de0e5ba129245b973aa1574`, Head `be2282b84c903a928b1e78fc59abcd496c8ceea5`, `scriptHash: 3cfc48bf2b24`).
