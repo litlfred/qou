@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "probeId": "delta-bar-anchor-writhe-layout-isospin-probe",
+  "scriptPath": "computations/probes/delta_bar_anchor_writhe_layout_isospin_probe.py",
+  "scriptHash": "d63b1172f47d",
+  "scriptCommitSha": "9827f55332528e63693911190bf399e27ebd2b10",
+  "timestamp": "2026-11-17T08:03:32Z",
+  "precisionDps": "50",
+  "summary": {
+    "totalChecks": "5",
+    "passedChecks": "5",
+    "allPassed": true
+  },
+  "checks": [
+    {
+      "id": "qou-gw96",
+      "passed": true,
+      "halfHSquared": "0.0218531042662609947047476208043",
+      "counitNetEpsNPq": "-0.18720719452937832074397837623",
+      "chi111DeltaS": "0.210199349900502936586966352142"
+    },
+    {
+      "id": "qou-nlw5",
+      "passed": true,
+      "canonicalH": "0.209060298795639315448725997035",
+      "impliedH": "0.208916495539452",
+      "impliedQ0": "1.10989920850641762349940844211",
+      "absDiffFromProtonPin": "0.000079374244963184102129969784438",
+      "absDiffFromMuonPin": "0.0000793870509170964003547783695251"
+    },
+    {
+      "id": "qou-pjx4",
+      "passed": true,
+      "muRawPos2": "1.12808874411435378560626576971",
+      "muEffPos2": "0.892250174201809480977434263133",
+      "muRawNeg2": "0.9156174644181682038032294719",
+      "muEffNeg2": "1.15763245039281906495446512452"
+    },
+    {
+      "id": "qou-u5qs",
+      "passed": true,
+      "layoutsByMassNumber": {
+        "A=2": {
+          "contiguousSpan": "2",
+          "interleavedSpan": "4",
+          "pathCycleRank": "0",
+          "cycleGraphRank": "1"
+        },
+        "A=3": {
+          "contiguousSpan": "2",
+          "interleavedSpan": "6",
+          "pathCycleRank": "0",
+          "cycleGraphRank": "1"
+        },
+        "A=4": {
+          "contiguousSpan": "2",
+          "interleavedSpan": "8",
+          "pathCycleRank": "0",
+          "cycleGraphRank": "1"
+        },
+        "A=6": {
+          "contiguousSpan": "2",
+          "interleavedSpan": "12",
+          "pathCycleRank": "0",
+          "cycleGraphRank": "1"
+        }
+      }
+    },
+    {
+      "id": "qou-xwur",
+      "passed": true,
+      "selfConjugateTwoRowMassNumbers": [
+        "1",
+        "3",
+        "4"
+      ],
+      "maxSelfConjugateTwoRowA": "4"
+    }
+  ]
+}
