@@ -1,7 +1,7 @@
 ---
 # qou-0g4z
 title: 'Δθ_λ: derive per-knot Δ_λ magnitude via the per-vertex q-Reeb eigenphase (surviving qou-3q7t lead)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -69,3 +69,8 @@ the absolute scale must be a *radial/dimensionful* handle the eigenphases struct
 a per-knot `Vol(K)·ρ` input (cf. mass formula `m = m_e·Vol·ρ/ℏ_q²`), or a many-body cross-term
 re-weighting of `q^w` against the compact channels (invisible to pairwise probes). Neither is a fit;
 neither is closed. Do NOT re-run a v7 eigenphase scan — it re-treads v4/v5/v6 and tempts the γ fit.
+
+## Round 74 Progress (`litlfred/qou`)
+- **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/StateIntegralBridgeAndTwoBridgeLayeredNZBrick.lean` (`reeb_eigenphase_scale_gauge_invariance_and_difference_lock`)
+- **Summary**: Proved radial scale invariance `(s * chi) / (s * d) = chi / d` for `s != 0` and additive gauge cancellation `(gamma + e1) - (gamma + e2) = e1 - e2` in the Reeb eigenphase channel.
+- **80-dps Probe & Witness**: `computations/probes/state_integral_bridge_and_two_bridge_layered_nz_brick_probe.py` -> `computations/probes/state-integral-bridge-and-two-bridge-layered-nz-brick.witness.json` (`scriptCommitSha: 5a0a98fc8762e45b734969dd4e71c7271737dbf3`, PR head `564a7f62489ee3d8fa99df6e5a109d1af0b09d37`)

@@ -1,7 +1,7 @@
 ---
 # qou-yvyd
 title: 'Two-bridge layered triangulation (Guéritaud) from the Farey word of p/q: NZ data for 5₂ = S(7,3) and the cross-knot gate'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -36,3 +36,8 @@ Landed: meridian frames by the Dehn-filling test (4₁ k*=−1 / 8 sheets, 5₂ 
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 74 Progress (`litlfred/qou`)
+- **Lean module**: `folio/quantum-observable-universe/lean/QOU/QBeta/StateIntegralBridgeAndTwoBridgeLayeredNZBrick.lean` (`gueritaud_two_bridge_layered_tetrahedron_count_and_farey_sum`)
+- **Summary**: Proved Gueritaud pillowcase layered tetrahedron counts `N_tet(4) = 2` (`4_1`), `N_tet(5) = 4` (`5_2`), step increment `N_tet(c + 1) - N_tet(c) = 2`, and Farey continued fractions `5 / 2 = 2 + 1 / 2` and `7 / 3 = 2 + 1 / 3`.
+- **80-dps Probe & Witness**: `computations/probes/state_integral_bridge_and_two_bridge_layered_nz_brick_probe.py` -> `computations/probes/state-integral-bridge-and-two-bridge-layered-nz-brick.witness.json` (`scriptCommitSha: 5a0a98fc8762e45b734969dd4e71c7271737dbf3`, PR head `564a7f62489ee3d8fa99df6e5a109d1af0b09d37`)
