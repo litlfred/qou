@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "brick": "QOU.QBeta.HookEvenMomentAndBorromeanTripleBrick",
+  "beans": [
+    "qou-ogrk",
+    "qou-ohaz",
+    "qou-omr7",
+    "qou-ooqh",
+    "qou-po72"
+  ],
+  "scriptPath": "computations/probes/hook_even_moment_and_borromean_triple_brick_probe.py",
+  "scriptHash": "6e7ec354e840",
+  "scriptCommitSha": "5a0020ee7af0e698e2c098cff5a488708ed46d5b",
+  "dirty": false,
+  "generatedAt": "2026-11-17T12:35:05.355245+00:00",
+  "precisionDps": 80,
+  "allPassed": true,
+  "checks": {
+    "qou_ogrk_hook_even_moment_cofactor": {
+      "theorem": "hookContentAndMomentPair_classical_locus_and_even_cofactor",
+      "staircase321HookContentResidual": "0.0",
+      "sixthMomentCofactorAtN6": "2.52e+5",
+      "reflectionSymmetryResidual": "0.0",
+      "c3LinearityResidual": "0.0",
+      "passed": true
+    },
+    "qou_ohaz_pair_collision_viscous_core_race": {
+      "theorem": "pairCoreApproachGap_combined_rate_and_initial",
+      "crossingTimeBeforeCollision": "5.3638877746234516847529077756537343413734676402385242292282161599553693884389722",
+      "inviscidCollisionTime": "6.283185307179586476925286766559005768394338798750211641949889184615632812572418",
+      "combinedRateResidual": "0.0",
+      "initialMarginResidual": "0.0",
+      "timeStepDecrementResidual": "-1.5813296914845784836522861076905028511564942073552761325116644537662216436454639e-81",
+      "passed": true
+    },
+    "qou_omr7_magnus_weighted_trace": {
+      "theorem": "magnusWeightedTrace_sector_additivity_and_control_zero",
+      "sectorAdditivityResidual": "0.0",
+      "controlArmZeroResidual": "0.0",
+      "weightCorrectionShiftResidual": "0.0",
+      "passed": true
+    },
+    "qou_ooqh_borromean_triple_count": {
+      "theorem": "orderedTripleCount_fourfold_ratio_identity",
+      "deuteronOrderedTriples": "0.0",
+      "tritonOrderedTriples": "6.0",
+      "alphaOrderedTriples": "2.4e+1",
+      "maxStepRecurrenceResidual": "0.0",
+      "maxFourfoldIdentityResidual": "0.0",
+      "passed": true
+    },
+    "qou_po72_de_poissonized_cs_margin": {
+      "theorem": "csCorrelationMarginScaled_diagonal_and_sign_even",
+      "dePoissonizedVarianceVA": "9.0063274348744685727892856186424567914985577486441376751652472794820551966431503e-2",
+      "dePoissonizedCovarianceP": "1.6976527263135502482014268093068198617009028878982021199751183366282325080984164e-1",
+      "rhoPSquared80dps": "9.6e-1",
+      "rhoPSquaredMinus24Over25": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "scaledCSIdentityResidual": "0.0",
+      "diagonalUnitResidual": "0.0",
+      "perturbationLinearityResidual": "0.0",
+      "passed": true
+    }
+  }
+}
