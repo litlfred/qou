@@ -1,11 +1,11 @@
 ---
 # qou-4pdh
 title: 'AUDIT: Q_MP is a 50-digit cap under OUTPUT_DPS=60 — 366 files publish ~10 digits the source does not carry'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:36:49Z
-updated_at: 2026-10-10T08:39:07Z
+updated_at: 2026-11-17T08:04:32Z
 parent: qou-9nnz
 ---
 
@@ -215,3 +215,8 @@ for lbl, v in (("Q_MP", Q_MP), ("mpf(Q_50_DIGIT_STR)", mp.mpf(Q_50_DIGIT_STR))):
 print("COMPUTE_DPS", P.COMPUTE_DPS, " OUTPUT_DPS", P.OUTPUT_DPS)
 PY
 ```
+
+## Implementation & Witness Progress (PR #8269)
+- Branch: `qou-10v9-07ts-324i-49vn-4pdh-5mxd` (`7a961cf268c0cf36c3f70fd39f92645c16c9a30a`), PR: `litlfred/qou#8269`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/ChiRustNondeterminismOverrideBlindnessChiCacheStalenessQmpDigitCapAndMagnusFarCommutativity.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/chi_rust_nondeterminism_override_blindness_chi_cache_staleness_qmp_digit_cap_and_magnus_far_commutativity_probe.py` -> `computations/probes/chi-rust-nondeterminism-override-blindness-chi-cache-staleness-qmp-digit-cap-and-magnus-far-commutativity.witness.json` (`allPassed: true`, `scriptCommitSha: e7b85e53d7a8855337daf870617a2e9a6b0acc11`)

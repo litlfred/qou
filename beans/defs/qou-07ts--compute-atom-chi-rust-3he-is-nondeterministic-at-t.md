@@ -1,13 +1,13 @@
 ---
 # qou-07ts
 title: 'compute_atom_chi_rust 3He is nondeterministic at the 50th digit: 4 distinct outputs in 8 runs'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T08:33:29Z
-updated_at: 2026-10-04T15:18:01Z
+updated_at: 2026-11-17T08:04:32Z
 parent: qou-v2om
 ---
 
@@ -172,3 +172,8 @@ Standing checks now live in
 the wobble stays ~1 ulp, and it does not reach tr_M. Deliberately NOT a
 fingerprint-count assertion — the wobble is stochastic (2 in 8 vs 4 in 8), so
 asserting 'unstable' would itself be flaky.
+
+## Implementation & Witness Progress (PR #8269)
+- Branch: `qou-10v9-07ts-324i-49vn-4pdh-5mxd` (`7a961cf268c0cf36c3f70fd39f92645c16c9a30a`), PR: `litlfred/qou#8269`
+- Lean 4 module: `folio/quantum-observable-universe/lean/QOU/Eightfold/ChiRustNondeterminismOverrideBlindnessChiCacheStalenessQmpDigitCapAndMagnusFarCommutativity.lean` (0 sorry, 0 axioms, 0 vacuity findings)
+- Probe & witness: `computations/probes/chi_rust_nondeterminism_override_blindness_chi_cache_staleness_qmp_digit_cap_and_magnus_far_commutativity_probe.py` -> `computations/probes/chi-rust-nondeterminism-override-blindness-chi-cache-staleness-qmp-digit-cap-and-magnus-far-commutativity.witness.json` (`allPassed: true`, `scriptCommitSha: e7b85e53d7a8855337daf870617a2e9a6b0acc11`)
