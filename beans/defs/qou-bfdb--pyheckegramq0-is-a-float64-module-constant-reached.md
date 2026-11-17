@@ -1,13 +1,13 @@
 ---
 # qou-bfdb
 title: pyhecke.gram.q0 is a float64 module constant reached by ~1027 witness-writing producers
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-03T12:47:15Z
-updated_at: 2026-10-04T15:15:47Z
+updated_at: 2026-11-17T11:39:37Z
 parent: qou-9nnz
 ---
 

@@ -1,13 +1,13 @@
 ---
 # qou-bvk7
 title: Convention-C derived TRACE VALUES in live witnesses — invisible to both convention-C witness detectors
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T12:49:41Z
-updated_at: 2026-10-10T07:47:06Z
+updated_at: 2026-11-17T11:39:37Z
 parent: qou-cdx1
 ---
 

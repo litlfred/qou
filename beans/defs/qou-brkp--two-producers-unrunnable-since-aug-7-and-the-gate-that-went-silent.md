@@ -1,7 +1,7 @@
 ---
 # qou-brkp
 title: 'BUG (fixed) + stale witness: a dps remediation broke 2 producers, and its own gate reported them clean'
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - precision
     - probes
 created_at: 2026-08-08T09:40:00Z
-updated_at: 2026-10-04T15:10:43Z
+updated_at: 2026-11-17T11:39:37Z
 parent: qou-9nnz
 ---
 

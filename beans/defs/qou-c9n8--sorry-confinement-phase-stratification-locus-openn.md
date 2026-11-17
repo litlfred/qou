@@ -1,14 +1,14 @@
 ---
 # qou-c9n8
 title: 'Sorry: confinement-phase-stratification locus openness and local constancy of mu'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - close-candidate
 created_at: 2026-08-04T01:56:49Z
-updated_at: 2026-10-04T15:24:26Z
+updated_at: 2026-11-17T11:39:37Z
 parent: qou-10v9
 ---
 
