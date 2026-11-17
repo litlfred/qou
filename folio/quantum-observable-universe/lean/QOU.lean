@@ -1737,3 +1737,15 @@ import QOU.KZ.Drinfeld.HeckeStrands
 import QOU.Mass.LagrangianKZInputs
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
+-- qou-g5sp: wire the 9-module Bruhat / Coxeter-order component into the root
+-- build closure so `lake build QOU` and root-starting sweeps reach it.
+import QOU.Machinery.CoxeterBruhat
+import QOU.Machinery.CoxeterDeletion
+import QOU.Machinery.CoxeterBruhatOrder
+import QOU.Machinery.CoxeterRankTwo
+import QOU.IwahoriHecke.BruhatSubword
+import QOU.IwahoriHecke.BruhatReflection
+import QOU.Machinery.BruhatRankCriterion
+import QOU.BraidKnot.TwInverseBruhat
+import QOU.BraidKnot.DominanceIsBruhat
+
