@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "probe": "five_two_adjoint_torsion_and_sniady_genus_covariance_brick_probe",
+  "beans": [
+    "qou-b5w7",
+    "qou-v0pn",
+    "qou-w4hf",
+    "qou-yh28",
+    "qou-z7sb"
+  ],
+  "precisionDps": 80,
+  "qCanonical": "1.0670442670094260999209120230611007313991569425981",
+  "commitSha": "f9d16753dbb36bbe177e31872e1864ef809ebf0e",
+  "scriptCommitSha": "f9d16753dbb36bbe177e31872e1864ef809ebf0e",
+  "scriptSha256": "7df4494eaa4da68ac510149fcef1bf6633e760a346d5cbdaa9857b5f2672780c",
+  "generatedAt": "2026-11-17T08:12:08.241404+00:00",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-b5w7-drinfeld-jimbo-weyl-reflection",
+      "bean": "qou-b5w7",
+      "passed": true,
+      "maxAbsError": "0.0"
+    },
+    {
+      "id": "qou-v0pn-sniady-paired-covariance-nsd",
+      "bean": "qou-v0pn",
+      "passed": true,
+      "maxAbsError": "4.2168791772922092897e-81",
+      "pairedCovariance": "-3.7106663290304829703408058661531147"
+    },
+    {
+      "id": "qou-w4hf-chord-4t-defect-low-degree",
+      "bean": "qou-w4hf",
+      "passed": true,
+      "maxAbsError": "0.0"
+    },
+    {
+      "id": "qou-yh28-five-two-adjoint-reidemeister-torsion-80dps",
+      "bean": "qou-yh28",
+      "passed": true,
+      "maxAbsError": "2.1084395886461046449e-81",
+      "y52Re": "0.2150798545009733670443000209402156755801012804355298897",
+      "y52Im": "1.307141278682045480492352573513765428738006087802608514",
+      "tauAdj52Re": "-3.417236644869065773029963323597577362261808646223659826",
+      "tauAdj52Im": "-0.9274440211771872292871587122994116729824831669178652086",
+      "tauAdj52Abs": "3.540855645102367126698327974592394874206759327246287884"
+    },
+    {
+      "id": "qou-z7sb-sniady-genus-euler-step",
+      "bean": "qou-z7sb",
+      "passed": true,
+      "maxAbsError": "0.0"
+    }
+  ]
+}
