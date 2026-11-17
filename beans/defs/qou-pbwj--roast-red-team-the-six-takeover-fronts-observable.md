@@ -1,7 +1,8 @@
 ---
 # qou-pbwj
 title: 'ROAST: red-team the six takeover fronts (observable C, #7092 coboundary, Z-resolved b3, REV Σβ, SandwichReduces, Option B) — fit signatures, hidden DOF, what a referee says'
-status: todo
+status: in-progress
+pr: 8359
 type: task
 priority: normal
 tags:

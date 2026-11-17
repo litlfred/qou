@@ -1,7 +1,8 @@
 ---
 # qou-orvl
 title: Re-scope the log_2 3 dismissal in option-e.md (scope-limited)
-status: todo
+status: in-progress
+pr: 8359
 type: task
 priority: normal
 tags:

@@ -1,7 +1,8 @@
 ---
 # qou-onte
 title: 'Research doc: groupoid + derived-category attack routes on the binding gap, with lit requests'
-status: todo
+status: in-progress
+pr: 8359
 type: task
 priority: normal
 tags:

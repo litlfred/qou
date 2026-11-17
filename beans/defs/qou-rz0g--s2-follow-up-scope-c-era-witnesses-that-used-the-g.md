@@ -1,7 +1,8 @@
 ---
 # qou-rz0g
 title: 'S2 follow-up: scope C-era witnesses that used the Gram inverse'
-status: todo
+status: in-progress
+pr: 8359
 type: task
 priority: normal
 tags:

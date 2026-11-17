@@ -1,7 +1,8 @@
 ---
 # qou-pnhy
 title: 'Amend bw-mass-decomposition-dictionary: exponents are not numerology'
-status: todo
+status: in-progress
+pr: 8359
 type: task
 priority: normal
 tags:
