@@ -1,7 +1,7 @@
 ---
 # qou-g158
 title: Read the 232 class-D NARROW witness-copy findings
-status: todo
+status: in-progress
 type: task
 tags:
     - reorg-2026-10-04

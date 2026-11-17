@@ -1,7 +1,7 @@
 ---
 # qou-hah0
 title: 'precision-gates.sh: preflight let 4 phantom REDs through; the 6 real reds diagnosed'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

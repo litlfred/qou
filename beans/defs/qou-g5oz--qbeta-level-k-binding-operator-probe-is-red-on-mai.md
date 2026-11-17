@@ -1,7 +1,7 @@
 ---
 # qou-g5oz
 title: 'qbeta_level_k_binding_operator_probe is RED on main since the ordering ruling: both headline findings are grouped-only, and its witness still says allPassed'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

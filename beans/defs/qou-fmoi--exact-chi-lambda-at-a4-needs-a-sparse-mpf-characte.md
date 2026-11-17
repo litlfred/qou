@@ -1,7 +1,7 @@
 ---
 # qou-fmoi
 title: Exact chi_lambda at A=4 needs a sparse-mpf character product (dense mpmath is ~571 h)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
