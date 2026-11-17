@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "radical-branching-bond-habiro-cusp",
+  "scriptPath": "computations/probes/radical_branching_bond_habiro_cusp_probe.py",
+  "scriptCommitSha": "20143712c434683951cbe6f568953fd4a98454bc",
+  "scriptHash": "949a90321cd5",
+  "generatedAt": "2026-11-17T08:02:50Z",
+  "dps": "80",
+  "beans": [
+    "qou-egqr",
+    "qou-hlbx",
+    "qou-nial",
+    "qou-qb8e",
+    "qou-qmnb"
+  ],
+  "theorems": [
+    "QOU.QBeta.signRepValue_inv_mul_and_mul_inv",
+    "QOU.MassTheory.BlockMeasure.BranchingData.trM_eq_tensor\u2083_add_weighted_deviation",
+    "QOU.MassTheory.BlockMeasure.BranchingData.weighted_deviation\u2083_eq_of_trM_eq_mul",
+    "QOU.MassTheory.BondChargeRule.sumRule_sub_prodRule_and_total_deficit",
+    "QOU.QBeta.HabiroEvaluationTrichotomy.qPoch_one_two_and_eval_one",
+    "QOU.Knot.CuspShapeBarParity.cusp_holonomy_hyperbola_and_reconstruct"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "signRepValue_inv_mul_and_mul_inv",
+      "bean": "qou-egqr",
+      "writheRangeTested": "[-8, 8]",
+      "passed": true
+    },
+    {
+      "name": "trM_eq_tensor3_add_weighted_deviation_and_bond_pin",
+      "bean": "qou-hlbx",
+      "weightedDeviation": "-66/1729",
+      "passed": true
+    },
+    {
+      "name": "sumRule_sub_prodRule_and_total_deficit",
+      "bean": "qou-nial",
+      "nucleiVerified": "78",
+      "passed": true
+    },
+    {
+      "name": "qPoch_one_two_and_eval_one",
+      "bean": "qou-qb8e",
+      "qSamplesVerified": "4",
+      "passed": true
+    },
+    {
+      "name": "cusp_holonomy_hyperbola_and_reconstruct",
+      "bean": "qou-qmnb",
+      "hyperbolaResidual80dps": "0.0",
+      "reconstructResidual80dps": "0.0",
+      "passed": true
+    }
+  ]
+}
