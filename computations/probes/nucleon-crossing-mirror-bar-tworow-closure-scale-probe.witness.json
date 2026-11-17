@@ -1,0 +1,87 @@
+{
+  "beans": [
+    "qou-im4m",
+    "qou-kgsx",
+    "qou-lr57",
+    "qou-mbbf",
+    "qou-qlma"
+  ],
+  "checks": [
+    {
+      "crossing_difference": "2",
+      "gen0_plus_gen1": "11",
+      "id": "qou-im4m-nucleon-typed-crossing-count-split",
+      "k1_proton_crossings": "11",
+      "k2_derived_neutron_crossings": "13",
+      "passed": true,
+      "pure_plus_inverted_plus_averaged": "11"
+    },
+    {
+      "id": "qou-kgsx-mirror-bar-bond-cancellation-and-exponent-12",
+      "interface_mirror_bar_quotient": "0.99850273838185985850116162024087511624736974374888",
+      "max_quotient_residual_across_nuclides": "1.3363823550460978230702682335757409394075984400525e-51",
+      "passed": true,
+      "universal_exponent_sum": "12"
+    },
+    {
+      "complement_identity_residual": "3.3409558876152445576756705839393523485189961001313e-52",
+      "gt2_row_share": "0.0704959065337274385116950105713532866087332585859",
+      "id": "qou-lr57-two-row-cap-violation-share",
+      "passed": true,
+      "t_all_june": "0.885616401506468",
+      "t_gt2_june": "0.062432331065335999999999999999999999999999999999999",
+      "t_le2_june": "0.823184070441132"
+    },
+    {
+      "id": "qou-mbbf-atom-strand-letter-component-law",
+      "passed": true,
+      "table": [
+        {
+          "A": "2",
+          "components": "3",
+          "letters": "23",
+          "strands": "6"
+        },
+        {
+          "A": "3",
+          "components": "4",
+          "letters": "35",
+          "strands": "9"
+        },
+        {
+          "A": "4",
+          "components": "5",
+          "letters": "47",
+          "strands": "12"
+        },
+        {
+          "A": "6",
+          "components": "7",
+          "letters": "71",
+          "strands": "18"
+        }
+      ]
+    },
+    {
+      "alpha_mev": "4.1858990275766496509965334494160010629020085696394",
+      "am_gm_square_identity_residual": "6.4731020322545363304966117563824951752555549440044e-52",
+      "denom_identity_residual": "8.3523897190381113941891764598483808712974902503283e-52",
+      "id": "qou-qlma-scale-denom-zm-bound-and-ratio-cancellation",
+      "passed": true,
+      "ratio_cancellation_residual": "1.069105884036878258456214586860592751526078752042e-50",
+      "z_m": "0.49932031110852063283548440545803348825364186664835"
+    }
+  ],
+  "generatedAt": "2026-11-17T07:39:55.441004+00:00",
+  "precisionDps": "50",
+  "probeId": "nucleon-crossing-mirror-bar-tworow-closure-scale-probe",
+  "schema": "qou-probe-witness-v1",
+  "scriptCommitSha": "fd921f529edf8426ee3690d7cd04f07e0acaed4d",
+  "scriptHash": "17fdae4ff3fc",
+  "scriptPath": "computations/probes/nucleon_crossing_mirror_bar_tworow_closure_scale_probe.py",
+  "summary": {
+    "allPassed": true,
+    "passedChecks": "5",
+    "totalChecks": "5"
+  }
+}
