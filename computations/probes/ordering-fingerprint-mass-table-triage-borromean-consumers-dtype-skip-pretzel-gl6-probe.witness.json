@@ -1,0 +1,75 @@
+{
+  "probe": "ordering-fingerprint-mass-table-triage-borromean-consumers-dtype-skip-pretzel-gl6-probe",
+  "beans": [
+    "qou-4383",
+    "qou-53p1",
+    "qou-nmuz",
+    "qou-nz8e",
+    "qou-v1eu"
+  ],
+  "scriptCommitSha": "fbecd8d2287490df79a6c1e2decfc14d252a2aaa",
+  "scriptHash": "1f873d23380b",
+  "timestamp": "2026-11-17T12:52:19.405652+00:00",
+  "durationMs": 0,
+  "dps": 50,
+  "allPassed": true,
+  "results": {
+    "qou_4383_ordering_fingerprint_taxonomy": {
+      "scannedWitnesses": 3548,
+      "liveFingerprints": 312,
+      "initialHits": 89,
+      "computationOriginals": 83,
+      "epochTotal": 83,
+      "residualCandidates": 46,
+      "actionableProducers": 28,
+      "downstreamReflections": 16,
+      "unresolvedRecords": 2,
+      "bPnCanonical": "0.50822978937673896257799579765642180319451287360419",
+      "deuteronIdentityResidual": "0.0",
+      "passed": true
+    },
+    "qou_53p1_mass_table_triage": {
+      "preDurationMs": 57274,
+      "postDurationMs": 656759,
+      "durationRatio": "11.466965813458113629220937947410692460802458358068",
+      "durationExcessAbove11xMs": 26745,
+      "mulsPerRow": 6811,
+      "convsPerRow": 2815,
+      "totalRows": 14972,
+      "shiftedRows": 14970,
+      "invariantRows": 2,
+      "zConventionC": "0.49966096710627520276413875215176245371118684198877",
+      "zConventionD": "0.57780772380235945092192591416621460387986551701219",
+      "zShiftDelta": "0.078146756696084248157787162014452150168678675023421",
+      "passed": true
+    },
+    "qou_nmuz_borromean_cache_consumers": {
+      "li5TrmGrouped": "3.348",
+      "li5TrmBorromean": "1.224",
+      "li5AreqPctShift": "123.71294851794071762870514820592823712948517940718",
+      "li6TrmGrouped": "3.865",
+      "li6TrmBorromean": "1.156",
+      "li6AreqPctShift": "98.37054918527459263729631864815932407966203983102",
+      "redCountBefore": 3,
+      "redCountAfter": 3,
+      "passed": true
+    },
+    "qou_nz8e_dtype_benchmark_skip_guard": {
+      "fullBenchmarkMs": 408402,
+      "skipBenchmarkMs": 32485,
+      "speedupMarginAbove12xMs": 18582,
+      "speedupRatio": "12.572017854394335847314144989995382484223487763583",
+      "skipAwareVerdictCode": 2,
+      "conflatedVerdictCode": 0,
+      "passed": true
+    },
+    "qou_v1eu_pretzel_casoratian_gl6": {
+      "pretzelGlRank": 6,
+      "detQExp52": 0,
+      "detQExp41": 3,
+      "detQExpPretzel": 12,
+      "detQRatioPretzelAtM5L2": "2.4207233835943083926875627805610423456561844412699",
+      "passed": true
+    }
+  }
+}
