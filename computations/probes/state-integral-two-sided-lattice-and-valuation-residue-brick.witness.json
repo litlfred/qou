@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0",
+  "probe": "state_integral_two_sided_lattice_and_valuation_residue_brick_probe",
+  "beans": [
+    "qou-0a8e",
+    "qou-0ml9",
+    "qou-523q",
+    "qou-5el3",
+    "qou-5g8u"
+  ],
+  "precisionDps": 80,
+  "qCanonical": "1.0670442670094260999209120230611007313991569425981",
+  "commitSha": "10898ce23cb1e64bafb36d0437d31d88a2b0d683",
+  "scriptCommitSha": "10898ce23cb1e64bafb36d0437d31d88a2b0d683",
+  "scriptSha256": "eb8c9eab900bb15cef0ba3802b92a4c28566c85bac55f44f2460682517ac276e",
+  "generatedAt": "2026-11-17T07:54:46.013564+00:00",
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-0a8e-qdiff-wronskian-residual",
+      "bean": "qou-0a8e",
+      "passed": true,
+      "maxAbsError": "0.0",
+      "wronskian": "-1.3755205189511110167060037886610663"
+    },
+    {
+      "id": "qou-0ml9-two-row-rsk-content-step",
+      "bean": "qou-0ml9",
+      "passed": true,
+      "maxAbsError": "0.0"
+    },
+    {
+      "id": "qou-523q-fw-row0-two-sided-inversion",
+      "bean": "qou-523q",
+      "passed": true,
+      "maxAbsError": "0.0"
+    },
+    {
+      "id": "qou-5el3-haar-forcing-cross-defect",
+      "bean": "qou-5el3",
+      "passed": true,
+      "maxAbsError": "1.3494013367335069727e-79"
+    },
+    {
+      "id": "qou-5g8u-valuation-vs-residue-separation",
+      "bean": "qou-5g8u",
+      "passed": true,
+      "maxAbsError": "0.0",
+      "productResidue": "6.3627317356949696674022852723400716",
+      "productValuationDeg": 2
+    }
+  ]
+}
