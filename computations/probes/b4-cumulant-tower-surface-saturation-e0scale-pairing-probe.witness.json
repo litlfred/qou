@@ -1,0 +1,72 @@
+{
+  "probe": "b4-cumulant-tower-surface-saturation-e0scale-pairing-probe",
+  "beans": [
+    "qou-j16x",
+    "qou-hu1f",
+    "qou-onfk",
+    "qou-v8ct",
+    "qou-nvoq"
+  ],
+  "scriptPath": "computations/probes/b4_cumulant_tower_surface_saturation_e0scale_pairing_probe.py",
+  "scriptHash": "a35d44bf7f66",
+  "scriptCommitSha": "7a624fce74973b75bf7244f94a955b2b97436466",
+  "computedAt": "2026-11-17T10:12:59.176337+00:00",
+  "dps": 50,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou_j16x_b4_multiplicative_cumulant_factorization_and_additive_zero",
+      "passed": true,
+      "b4PolyProd": "2.381292666282770208892024803735587905024",
+      "b4PolyBar": "3.003388878262397901888681029510115843291",
+      "factoredDiffProd": "5.34552942018439e-51",
+      "factoredDiffBar": "0.0",
+      "b4AtZero": "3",
+      "b4AtOne": "0",
+      "additiveFourthDiff": "1.06910588403688e-50",
+      "b4TargetMeV": "9.243"
+    },
+    {
+      "id": "qou_hu1f_full_tower_vs_h3_surface_split_and_oxygen16",
+      "passed": true,
+      "strandsA1": "3",
+      "strandsA4": "12",
+      "strandsA16": "48",
+      "nfH3Components": "6",
+      "oxygen16DiscardedStrandExcess": "42",
+      "partitionCounts_p3_p6_p9_p12": [
+        "3",
+        "11",
+        "30",
+        "77"
+      ]
+    },
+    {
+      "id": "qou_onfk_coordination_relaxation_a2_ceiling_and_a3_flavour_saturation",
+      "passed": true,
+      "satRatioPP": "0.659916",
+      "satRatioPPN": "0.650555",
+      "satRatioPNN": "0.640829",
+      "satRatioNN": "0.625186",
+      "mirrorSaturationGapPPNminusPNN": "0.009726",
+      "a2GapNNminusPN": "0.23005776318989720886005493344284013",
+      "a2GapPNminusPP": "0.18690461432874476739183582867958638"
+    },
+    {
+      "id": "qou_v8ct_e0_full_tower_denominator_and_bond_double_counting",
+      "passed": true,
+      "e0N0MeV": "4.1906350922070945126386439897663421",
+      "e0FullMeV": "4.2321068543837777964569660655880371",
+      "e0SeriesMinusClosed": "1.06910588403688e-50",
+      "e0FullOverE0N0": "1.0098962952545794735056465790950657",
+      "bPPtimesBNNMinusInvTwoQ2": "0.0",
+      "lPPplusLNNMinus2LnTwoQ": "0.0"
+    },
+    {
+      "id": "qou_nvoq_bw_pairing_single_bit_impossibility_and_two_bit_a_parity",
+      "passed": true,
+      "twoBitIdentityAllFourParitySectors": true,
+      "singleBitSurjectiveCountOutOf16": "0"
+    }
+  ]
+}
