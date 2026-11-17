@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "probeId": "kashaev-stokes3-stokesamp-ohtsukinz-pauli",
+  "timestamp": "2026-11-17T11:29:42Z",
+  "scriptPath": "computations/probes/kashaev_stokes3_stokesamp_ohtsukinz_pauli_probe.py",
+  "scriptHash": "79ed375a0246",
+  "scriptCommitSha": "82ec77a3b69cc6d79a85c01e64b63d422fa51c45",
+  "precisionDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "fybg-kashaev-rising-arc-multiplier",
+      "bean": "fybg",
+      "description": "Step multiplier (2*sin(theta))^2 >= 1 across rising arc [pi/6, 5*pi/6]",
+      "multLo": "1.0",
+      "multMid": "4.0",
+      "multHi": "1.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-fgte-cos-envelope-interval-bounds",
+      "bean": "qou-fgte",
+      "description": "Two-sided interval bound -A_amp <= A_amp * cos(theta_n) <= A_amp",
+      "oscVal": "0.5738887038391880733328306319109496807403",
+      "aAmp": "1.857142857142857142857142857142857142857",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-wiub-stokes-amplitude-add-right",
+      "bean": "qou-wiub",
+      "description": "Coordinate linearity stokesAmplitude(coeff, v+w) = stokesAmplitude(coeff, v) + stokesAmplitude(coeff, w)",
+      "lhs": "-0.3717171717171717171717171717171717171717",
+      "rhs": "-0.3717171717171717171717171717171717171717",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-yh67-order-two-match-neg-invariance",
+      "bean": "qou-yh67",
+      "description": "Sign-inversion invariance OrderTwoMatch(kappa_A, -c) <-> OrderTwoMatch(kappa_A, c)",
+      "rhsTarget": "3.482244796411367782632827803067718891537",
+      "residual": "1.686751670916883715895772e-80",
+      "passed": true
+    },
+    {
+      "id": "w5tg-pauli-eigenvalue-mul-q-and-unit",
+      "bean": "w5tg",
+      "description": "Pauli channel product pauliEigenvalue(q)*q = -1 and unit value pauliEigenvalue(1) = -1",
+      "pauliAtQ": "-0.9009182699558351845702250475819984277174",
+      "pauliAtOne": "-1.0",
+      "residual": "0.0",
+      "passed": true
+    }
+  ]
+}
