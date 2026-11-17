@@ -1,11 +1,11 @@
 ---
 # qou-xyxc
 title: 'KZ Step 2: ribbon lemma (q−q⁻¹)·dim_q V = a−a⁻¹ from the curl identities, instantiated to dim_q V = [2]_q'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-17T11:53:03Z
 parent: qou-59vq
 ---
 
@@ -27,3 +27,9 @@ Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the b
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Progress 2026-11-17 (Round 65 — PR #8331)
+
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/CumulativeSwapCentralityTabloidTransitionCellProductFactorialCurlTrace.lean` (Lean 4.24.0, `0` `sorry`, `0` `axiom`, `0` warnings, `0` directory-mode static vacuity & borrowed-name advisories).
+- 80-dps `mpmath` numerical witness stamped in `computations/probes/cumulative-swap-centrality-tabloid-transition-cell-product-factorial-curl-trace.witness.json` (`scriptHash = 9e4c62bb8c28`, `scriptCommitSha = 4331c3d6858037c7a16d08f2202e77af0fee8a52`, `HEAD = 69f8f329d2048eae2ceddcc8d14985dd544d587f`).
+- PR: https://github.com/litlfred/qou/pull/8331 (`ready: 69f8f329d2048eae2ceddcc8d14985dd544d587f`).
