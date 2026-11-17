@@ -1,0 +1,74 @@
+{
+  "probe": "magic-coordination-mirror-volume-frobenius-residual-ohara-probe",
+  "beans": [
+    "qou-fcn8",
+    "qou-fmfw",
+    "qou-gnow",
+    "qou-j3bs",
+    "qou-pc85"
+  ],
+  "scriptPath": "computations/probes/magic_coordination_mirror_volume_frobenius_residual_ohara_probe.py",
+  "scriptHash": "781d5746d707",
+  "scriptCommitSha": "19ff4cea024ea4eaa2cb8c1609b4f605bf453525",
+  "computedAt": "2026-11-17T10:45:57.297902+00:00",
+  "dps": 50,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou_fcn8_magic_shell_coordination_deficit_and_i3_zero",
+      "passed": true,
+      "magicShellSummary": {
+        "4": {
+          "mChain": "3",
+          "mMagic": "8",
+          "deficit": "5",
+          "netI3": "0"
+        },
+        "16": {
+          "mChain": "15",
+          "mMagic": "32",
+          "deficit": "17",
+          "netI3": "0"
+        },
+        "40": {
+          "mChain": "39",
+          "mMagic": "80",
+          "deficit": "41",
+          "netI3": "0"
+        }
+      }
+    },
+    {
+      "id": "qou_fmfw_mirror_pair_volume_ratio_and_hopf_zero_blocker",
+      "passed": true,
+      "volRatioTritonOver3He": "1.130817139857654042902921245077326",
+      "ameRatioTritonOver3He": "1.099",
+      "ratioOfRatios": "1.028950991681213869793376929096748",
+      "relativeMiss": "0.028950991681213869793376929096747996",
+      "volHopfDeuteron": "0.0"
+    },
+    {
+      "id": "qou_gnow_h3_frobenius_weighting_gap_decomposition",
+      "passed": true,
+      "plancherelWeightSum": "1.0",
+      "oneRowMinusFrobeniusAtSigma1": "0.9453633870499623530206217810450243950206",
+      "decompositionDifference": "1.3363823550461e-51"
+    },
+    {
+      "id": "qou_j3bs_extensive_residual_sign_flip_and_interior_peak",
+      "passed": true,
+      "residualA2MeV": "-1.886",
+      "residualA4MeV": "4.076",
+      "residualA56MeV": "5.792",
+      "residualA238MeV": "4.572"
+    },
+    {
+      "id": "qou_pc85_mutual_ohara_uniform_separation_bound_and_guard",
+      "passed": true,
+      "uniformUpperCap": "16.0",
+      "maxSampleIntegrand": "11.111111111111111111",
+      "nonCompactGuardDistAtM100": "0.009803921568627450980392156862745098",
+      "proposedThresholdAtM100": "0.01"
+    }
+  ]
+}
