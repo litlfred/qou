@@ -5,7 +5,9 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 /-!
 # QOU.Experimental.skein_mass_relation — Skein-mass relation
 
-The mass functional M(H) for a composite hadron obeys the quantum
+(Corrected 2026-11-16: the mass does NOT obey a skein relation; see
+`no_skein_on_volume_triple`.  The structure below records the former
+claim.)  The mass functional M(H) was claimed to obey the quantum
 Skein relation at every crossing:
 
   q · M(L₊) - q⁻¹ · M(L₋) = (q^{1/2} - q^{-1/2}) · M(L₀)
@@ -92,5 +94,29 @@ theorem predicted_ratio_pos (lmr : LeptonMassRatio) :
   apply div_pos lmr.vol_pos
   apply sq_pos_of_pos
   exact hbar_q_pos_of_gt_one lmr.q_gt_one
+
+/-- **The mass functional obeys no skein relation (4₁ counterexample).**
+    For a crossing of 4₁, the crossing change is the unknot and the
+    smoothing is the Hopf link; both have hyperbolic volume 0, so the
+    volume form of the mass vanishes on them.  Any relation
+    `a·M(L₊) + b·M(L₋) = c·M(L₀)` with `a ≠ 0` then forces `M(4₁) = 0`,
+    contradicting `M(4₁) > 0`. -/
+-- Ref: [leitner2026] rem:skein-mass-relation (owner ruling 2026-11-16)
+theorem no_skein_on_volume_triple (a b c mPlus : ℝ) (ha : a ≠ 0)
+    (hpos : 0 < mPlus) : a * mPlus + b * 0 ≠ c * 0 := by
+  intro h
+  simp only [mul_zero, add_zero] at h
+  rcases mul_eq_zero.mp h with h1 | h1
+  · exact ha h1
+  · exact absurd h1 (ne_of_gt hpos)
+
+/-- In particular the formerly claimed form fails at every `q > 1`. -/
+-- Ref: [leitner2026] rem:skein-mass-relation
+theorem old_skein_mass_fails (q mPlus : ℝ) (hq : 1 < q) (hpos : 0 < mPlus) :
+    q * mPlus - q⁻¹ * 0 ≠ (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))) * 0 := by
+  intro h
+  simp only [mul_zero, sub_zero] at h
+  have := mul_pos (by linarith : (0 : ℝ) < q) hpos
+  linarith
 
 end QOU.Experimental

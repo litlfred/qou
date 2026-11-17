@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "prop:topological-mass-formula",
   label: "rem:skein-mass-relation",
-  title: "$q$-Deformed Skein Relation (Observation)",
+  title: "The Jones polynomial obeys the skein relation; the mass does not",
   uses: [
     "rem:skein-decomposition",
     "thm:weight-decomposition-exists",
@@ -17,6 +17,11 @@ export default remark({
     status: "verified",
   },
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-16",
+      body: "Corrected on owner ruling (decision card, 2026-11-16, \"say Jones obeys skein, mass not\"). The remark previously stated $q\\mathfrak{m}(L_+) - q^{-1}\\mathfrak{m}(L_-) = (q^{1/2}-q^{-1/2})\\mathfrak{m}(L_0)$ for the mass. That is false: on a crossing of $4_1$ the crossing change (unknot) and smoothing (Hopf link) have volume $0$, which would force $\\mathfrak{m}(4_1) = 0$. Lean: `no_skein_on_volume_triple`, `old_skein_mass_fails`. The $m_\\mu/m_e$ pin of $q$ is unchanged.",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "caveat",
