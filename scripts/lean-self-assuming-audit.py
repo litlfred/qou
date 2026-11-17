@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Find self-assuming projections: `theorem f (h : P) ... : P := h`.
+r"""Find self-assuming projections: `theorem f (h : P) ... : P := h`.
 
 The triviality probe (folio-assistant lean-triviality-probe.ts) surfaces
 these, but costs a `lean` elaboration per declaration (~11 min / 40
@@ -59,6 +59,13 @@ BINDER = re.compile(r"\((?P<names>[^():]+?)\s*:\s*(?P<type>(?:[^()]|\([^()]*\))*
 # an `[ctx : C]` binder never entered the binder map at all (bean qou-24m2).
 BINDER_INST = re.compile(
     r"\[(?P<names>[^\[\]:]+?)\s*:\s*(?P<type>(?:[^\[\]]|\[[^\[\]]*\])*)\]"
+)
+# Anonymous instance-implicit binder `[HasClaim X]` (no `:`). With no binder
+# name, Lean projects fields through the class name (`HasClaim.claim`), so
+# keying the binder map by the head class identifier lets Rule 2 (`qou-1ccx`)
+# resolve `binders.get("HasClaim")` identically to `[ctx : HasClaim X]`.
+BINDER_INST_ANON = re.compile(
+    r"\[(?P<type>[^\[\]:]+?)\]"
 )
 BINDER_IMPL = re.compile(
     r"\{(?P<names>[^{}:]+?)\s*:\s*(?P<type>(?:[^{}]|\{[^{}]*\})*)\}"
@@ -387,15 +394,24 @@ def _same_prop(a: str, b: str) -> bool:
     return strip_binder_types(a) == strip_binder_types(b)
 
 
-def analyze(path: Path):
-    raw = path.read_text(encoding="utf-8", errors="replace")
+def analyze_text(raw: str, file_str: str = "<mem>"):
     src = strip_comments(raw)
     classes = parse_classes(src)
     out = []
     for m in DECL.finditer(src):
         body = m.group("rest")
-        # split at the LAST top-level `:=` that starts the proof term
-        idx = body.rfind(":=")
+        # split at the LAST top-level `:=` (depth == 0) that starts the proof
+        # term, so named arguments like `(vd := vd)` inside the proof term do
+        # not steal the split (`GaugeTheory.variational_transport`).
+        idx = -1
+        d_eq = 0
+        for i_eq, ch_eq in enumerate(body):
+            if ch_eq in _OPEN:
+                d_eq += 1
+            elif ch_eq in _CLOSE:
+                d_eq = max(0, d_eq - 1)
+            elif d_eq == 0 and body.startswith(":=", i_eq):
+                idx = i_eq
         if idx < 0:
             continue
         proof = norm(body[idx + 2 :])
@@ -442,6 +458,12 @@ def analyze(path: Path):
             for b in rx.finditer(sig[:concl_at]):
                 for nm in b.group("names").split():
                     binders[nm] = norm(b.group("type"))
+        for b in BINDER_INST_ANON.finditer(sig[:concl_at]):
+            t_anon = norm(b.group("type"))
+            if t_anon:
+                cname = t_anon.split()[0].lstrip("@")
+                if cname in classes:
+                    binders.setdefault(cname, t_anon)
 
         def _hit(hypothesis: str, variant: str, **extra) -> None:
             out.append(
@@ -451,7 +473,7 @@ def analyze(path: Path):
                     "hypothesis": hypothesis,
                     "statement": conclusion,
                     "variant": variant,
-                    "file": str(path),
+                    "file": file_str,
                     "line": src[: m.start()].count("\n") + 1,
                     **extra,
                 }
@@ -555,6 +577,11 @@ def analyze(path: Path):
     return out
 
 
+def analyze(path: Path):
+    raw = path.read_text(encoding="utf-8", errors="replace")
+    return analyze_text(raw, str(path))
+
+
 VARIANTS = (
     "hypothesis-is-conclusion",
     "class-field-is-conclusion",
@@ -640,6 +667,12 @@ def selftest() -> int:
          bool(TUPLE_COMPONENT.match("h.hγ₁")), True),
         ("applied component is rejected",
          TUPLE_COMPONENT.match("ctx.field s t"), None),
+        ("anonymous instance binder [HasClaim X] + HasClaim.claim caught (qou-1ccx)",
+         [h["variant"] for h in analyze_text(
+             "class HasClaim (X : Type) : Prop where\n"
+             "  claim : X = X\n"
+             "theorem probeB (X : Type) [HasClaim X] : X = X := HasClaim.claim\n"
+         )], ["class-field-is-conclusion"]),
     ]
     for label, got, want in units:
         if got != want:

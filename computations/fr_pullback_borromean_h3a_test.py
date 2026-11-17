@@ -196,23 +196,26 @@ def make_qdim(q: mp.mpf):
 # (structure is q-independent); coefficients use the target q.
 # ────────────────────────────────────────────────────────────────────
 
-_RATIO_TOL = 1e-5
+_RATIO_TOL = mp.mpf("1e-5")
 
 
 def word_to_terms(word, q: mp.mpf, delta: mp.mpf):
     """[(coeff_mpf, [(sign, gen1)])] for a (c, d, gen0) word at q."""
     h = q - 1 / q
-    delta_ratio = -(0.5 - float(delta) / 4)
+    delta_ratio = -(mp.mpf("0.5") - delta / 4)
     terms = [(mp.mpf(1), [])]
+    h_baked = mp.mpf(str(H_BAKED_F64))
     for c, d, g in word:
-        if abs(float(c) - 1.0) > _RATIO_TOL:
+        c_mp = c if isinstance(c, mp.mpf) else mp.mpf(str(c))
+        d_mp = d if isinstance(d, mp.mpf) else mp.mpf(str(d))
+        if abs(c_mp - 1) > _RATIO_TOL:
             raise ValueError(f"unsupported crossing c={c} at gen={g}")
-        r = float(d) / float(H_BAKED_F64)
+        r = d_mp / h_baked
         if abs(r) < _RATIO_TOL:                      # σ
             terms = [(co, w + [(1, g + 1)]) for co, w in terms]
-        elif abs(r + 1.0) < _RATIO_TOL:              # σ⁻¹
+        elif abs(r + 1) < _RATIO_TOL:                # σ⁻¹
             terms = [(co, w + [(-1, g + 1)]) for co, w in terms]
-        elif abs(r + 0.5) < _RATIO_TOL:              # averaged (σ+σ⁻¹)/2
+        elif abs(r + mp.mpf("0.5")) < _RATIO_TOL:    # averaged (σ+σ⁻¹)/2
             terms = [(co, w + [(0, g + 1)]) for co, w in terms]
         elif abs(r - delta_ratio) < _RATIO_TOL:      # color-weighted pn
             id_coeff = h * delta / 4
@@ -471,46 +474,46 @@ def main() -> int:
             per_atom[atom] = {
                 "B_MeV": mp.nstr(B, 25),
                 "B_AME_MeV": mp.nstr(B_AME[atom], 15),
-                "ratio_pred_over_AME": float(ratio),
+                "ratio_pred_over_AME": mp.nstr(ratio, 20),
                 "sign": "+" if B > 0 else "-",
             }
-        ratios = [abs(v["ratio_pred_over_AME"]) for v in per_atom.values()]
-        mom = max(ratios) / min(ratios) if min(ratios) > 0 else float("inf")
+        ratios = [abs(mp.mpf(v["ratio_pred_over_AME"])) for v in per_atom.values()]
+        mom = max(ratios) / min(ratios) if min(ratios) > 0 else mp.mpf("inf")
         results[vname] = {
             "per_atom": per_atom,
-            "max_over_min": float(mom),
+            "max_over_min": mp.nstr(mom, 20),
             "all_signs_correct": all(v["sign"] == "+"
                                      for v in per_atom.values()),
         }
-        _log(f"variant {vname:22s}: max/min = {mom:8.4f}, signs + : "
+        _log(f"variant {vname:22s}: max/min = {mp.nstr(mom, 5):>8s}, signs + : "
              f"{results[vname]['all_signs_correct']}  ratios "
-             + " ".join(f"{atom}:{per_atom[atom]['ratio_pred_over_AME']:7.4f}"
+             + " ".join(f"{atom}:{mp.nstr(mp.mpf(per_atom[atom]['ratio_pred_over_AME']), 5):>7s}"
                         for atom in ATOMS))
 
-    base_mom = results["uniform"]["max_over_min"]
-    bor_k3 = results["fr_borromean_k3"]["max_over_min"]
-    bor_all = results["fr_borromean_all"]["max_over_min"]
-    k41_k3 = results["fr_4_1_k3"]["max_over_min"]
+    base_mom = mp.mpf(results["uniform"]["max_over_min"])
+    bor_k3 = mp.mpf(results["fr_borromean_k3"]["max_over_min"])
+    bor_all = mp.mpf(results["fr_borromean_all"]["max_over_min"])
+    k41_k3 = mp.mpf(results["fr_4_1_k3"]["max_over_min"])
 
     # tiered verdict (derive-or-refute; (a)-scoped unless invariant)
     best_bor = min(bor_k3, bor_all)
-    if best_bor < 1.10:
+    if best_bor < mp.mpf("1.10"):
         tier = "derived-candidate"
         verdict = (f"Borromean FR projector closes the light-series "
-                   f"variance to {best_bor:.3f}× (uniform {base_mom:.3f}×)"
+                   f"variance to {mp.nstr(best_bor, 4)}× (uniform {mp.nstr(base_mom, 4)}×)"
                    f" — candidate for the missing per-λ content; needs "
                    f"A ≥ 5 extension + structural derivation.")
-    elif best_bor < base_mom * 0.75:
+    elif best_bor < base_mom * mp.mpf("0.75"):
         tier = "near-match"
         verdict = (f"Borromean FR projector reduces the light-series "
-                   f"variance to {best_bor:.3f}× from uniform "
-                   f"{base_mom:.3f}× — partial FR support, not closure.")
+                   f"variance to {mp.nstr(best_bor, 4)}× from uniform "
+                   f"{mp.nstr(base_mom, 4)}× — partial FR support, not closure.")
     else:
         tier = "refuted-(a)"
         verdict = (f"Borromean FR projector (K* = β_Bor, this "
                    f"redistribution form, alone, as-is) does not improve "
-                   f"the light-series variance ({best_bor:.3f}× vs "
-                   f"uniform {base_mom:.3f}×) — scope-(a): constrains "
+                   f"the light-series variance ({mp.nstr(best_bor, 4)}× vs "
+                   f"uniform {mp.nstr(base_mom, 4)}×) — scope-(a): constrains "
                    f"THIS projector proxy |χ^λ(β_Bor ⊂ H_3A)| with "
                    f"stratum-preserving redistribution only; the "
                    f"knot-ideal projector e_{{K*}} itself (idempotent, "
@@ -588,10 +591,10 @@ def main() -> int:
 
     wb.add_assertion(
         "borromean_chi21_closed_form",
-        computed=float(dev_chi21 + dev_triv), expected=0.0,
-        tolerance=1e-45,
+        computed=mp.nstr(dev_chi21 + dev_triv, 20), expected="0",
+        tolerance="1e-45",
         source="χ^λ((σ1σ2⁻¹)³) at H_3: native MPFR kernel vs proved "
-               "closed forms {1, 2−3h⁴−h⁶, 1} at witness q₀",
+               "closed forms {1, 2−3h⁴−h⁶, 1} at witness q₀ (bean qou-58zw)",
     )
     # RETIRED 2026-09-03 (arc close-out, bean yfvb): this was the
     # assertion `committed_atomchi_is_proton_q`. Its subject vanished
@@ -620,9 +623,9 @@ def main() -> int:
     })
     wb.add_assertion(
         "plancherel_completeness",
-        computed=float(plancherel_dev), expected=0.0, tolerance=1e-40,
+        computed=mp.nstr(plancherel_dev, 20), expected="0", tolerance="1e-40",
         source="Σ_λ w(λ) = 1 for the SELF-NORMALIZED measure "
-               "w = dim_q²/Σ dim_q² at the proton q₀, every H_{3A}. "
+               "w = dim_q²/Σ dim_q² at the proton q₀, every H_{3A} (bean qou-58zw). "
                "(The textbook balanced-convention form dim_q²/[n]_q! "
                "fails this — c_n up to 1.517 at H_12; see "
                "plancherel_convention_gap.)",
@@ -645,9 +648,9 @@ def main() -> int:
     })
     wb.add_assertion(
         "fr_stratum_mass_preserved",
-        computed=float(stratum_mass_dev), expected=0.0, tolerance=1e-40,
+        computed=mp.nstr(stratum_mass_dev, 20), expected="0", tolerance="1e-40",
         source="FR redistribution preserves each depth stratum's "
-               "uniform-Plancherel total (all atoms, all variants)",
+               "uniform-Plancherel total (all atoms, all variants; bean qou-58zw)",
     )
     # `data_loaded` was computed=float(B_AME["D"]), expected=2.22456607 —
     # the module literal against a second copy of itself typed 470 lines
@@ -682,9 +685,9 @@ def main() -> int:
     # variance measured from this run's own per-atom ratios, so it is
     # recorded rather than asserted — which is what it always was.
     wb.add_data("fr_borromean_variance_recorded", {
-        "best_borromean_max_over_min": float(best_bor),
-        "uniform_baseline_max_over_min": float(base_mom),
-        "fr_4_1_k3_max_over_min": float(k41_k3),
+        "best_borromean_max_over_min": mp.nstr(best_bor, 20),
+        "uniform_baseline_max_over_min": mp.nstr(base_mom, 20),
+        "fr_4_1_k3_max_over_min": mp.nstr(k41_k3, 20),
         "tier": tier,
         "recorded_not_gated": True,
         "has_independent_expected_value": False,

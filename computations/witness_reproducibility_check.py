@@ -198,9 +198,9 @@ def _check_one(script: str, output: str) -> dict:
         result["status"] = "timeout"
         result["note"] = f"timed out after {PER_BUILDER_TIMEOUT_S}s"
         shutil.move(str(snapshot_path), str(output_path))
-        result["rerun_seconds"] = PER_BUILDER_TIMEOUT_S
+        result["rerun_seconds"] = f"{PER_BUILDER_TIMEOUT_S:.3f}"
         return result
-    result["rerun_seconds"] = round(time.monotonic() - t0, 3)
+    result["rerun_seconds"] = f"{time.monotonic() - t0:.3f}"
 
     if proc.returncode != 0:
         result["status"] = "error"
@@ -297,7 +297,39 @@ def main() -> int:
         default=None,
         help="Limit run to specific builder script(s). Repeatable.",
     )
+    parser.add_argument(
+        "--self-test",
+        action="store_true",
+        help="Run built-in unit self-test for non-vacuous assertion gating (bean qou-coyy).",
+    )
     args = parser.parse_args()
+
+    if args.self_test:
+        try:
+            from witness_base import WitnessBuilder
+        except ImportError:
+            sys.path.insert(0, str(HERE))
+            from witness_base import WitnessBuilder
+        w_fail = WitnessBuilder("witness-reproducibility-check-test", engine="python")
+        w_fail.add_assertion(
+            "all_checked_builders_byte_reproducible",
+            computed="4",
+            expected="0",
+            tolerance="0",
+            source="self-test: 4 drifting builders must fail allPassed (bean qou-coyy)",
+        )
+        assert w_fail.build()["allPassed"] is False, "Expected allPassed=False when fail_count=4"
+        w_pass = WitnessBuilder("witness-reproducibility-check-test", engine="python")
+        w_pass.add_assertion(
+            "all_checked_builders_byte_reproducible",
+            computed="0",
+            expected="0",
+            tolerance="0",
+            source="self-test: 0 drifting builders passes allPassed (bean qou-coyy)",
+        )
+        assert w_pass.build()["allPassed"] is True, "Expected allPassed=True when fail_count=0"
+        print("SELF-TEST PASSED (2/2 cases, bean qou-coyy)")
+        return 0
 
     registry = BUILDER_REGISTRY
     if args.only:
@@ -331,7 +363,9 @@ def main() -> int:
             "skip": "?",
         }.get(r["status"], "?")
         secs = r.get("rerun_seconds")
-        secs_str = f"{secs:6.2f}s" if isinstance(secs, (int, float)) else "  -- "
+        secs_str = f"{secs:>6s}s" if isinstance(secs, str) else (
+            f"{secs:6.2f}s" if isinstance(secs, (int, float)) else "  -- "
+        )
         print(f"  {marker} {r['status']:7s}  {secs_str}")
         if r["note"]:
             print(f"      note: {r['note']}")
@@ -354,7 +388,9 @@ def main() -> int:
         + by_status.get("timeout", 0)
     )
     total_checkable = pass_count + fail_count
-    pass_ratio = (pass_count / total_checkable) if total_checkable else None
+    pass_ratio = (
+        f"{pass_count / total_checkable:.16f}" if total_checkable else None
+    )
 
     # Emit witness
     try:
@@ -382,6 +418,17 @@ def main() -> int:
         .add_data("by_status", by_status)
         .add_data("pass_ratio", pass_ratio)
         .add_data("results", results)
+        .add_assertion(
+            "all_checked_builders_byte_reproducible",
+            computed=str(fail_count),
+            expected="0",
+            tolerance="0",
+            source=(
+                "Every checked builder in BUILDER_REGISTRY must reproduce "
+                "its committed *.derivation.json byte-for-byte across runs "
+                "(drift + error + timeout == 0; bean qou-coyy)."
+            ),
+        )
         .add_caveat(
             "Per-builder timeout = 600s. A timeout means the builder "
             "is too slow for routine reproducibility checking, NOT "

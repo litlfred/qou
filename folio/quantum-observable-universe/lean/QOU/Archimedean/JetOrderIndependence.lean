@@ -242,13 +242,13 @@ the eliminated form has non-zero determinant.
 The order-3 minor below is the GB-eliminated (row-echelon) form of the
 order-`≤2` jet-coefficient data at the Reid-1991 base order, recorded by
 its three pivots.  These are **witnessed from the framework's own
-canonical Markov traces** (`jet_order_pivots.py`): the h-jet expansion
-about `q = 1` of `tr_M(K)` for the canonical braid words of `4₁`, `5₂`,
-`𝓑₃` gives the jet-Jacobian rows `(1/4, −1, 55/16)`, `(1/2, 0, −1/16)`,
-`(1, 0, 0)`, with elimination determinant `1/16 ≠ 0` and LU pivots
-`(1/4, 2, 1/8)`.  The certificate `jetOrder3_certificate`
+canonical Markov traces** (`jet_order_pivots.py`, bean `qou-381n`): the h-jet
+expansion about `q = 1` of `tr_M(K)` for the canonical braid words of `4₁`, `5₂`,
+`𝓑₃` gives the jet-Jacobian rows `(1/4, 0, 11/4)`, `(1/2, 1, 1/4)`,
+`(1, 0, 0)`, with elimination determinant `−11/4 ≠ 0` and LU pivots
+`(1/4, 1, −11)`.  The certificate `jetOrder3_certificate`
 (`elimination determinant = ∏ pivots ≠ 0`) is the genuine, sorry-free
-content: `(1/4)·2·(1/8) = 1/16 ≠ 0`, so the order-3 Jacobian has full
+content: `(1/4)·1·(−11) = −11/4 ≠ 0`, so the order-3 Jacobian has full
 rank `3` and the three series are jet-order independent at the base
 order. -/
 
@@ -290,23 +290,23 @@ noncomputable def JetOrderIndependence.ofPivots (pivots : ℕ → ℚ × ℚ × 
     rw [if_pos (eliminationDet_ne_zero h1 h2 h3)]
 
 /-- GB-eliminated jet-order pivots, **witnessed from the framework's own
-    canonical Markov traces** (not representative).  The h-jet expansion
-    about `q = 1` of `tr_M(K)` for `K ∈ {4₁, 5₂, 𝓑₃}` (canonical braid
+    canonical Markov traces** (not representative; bean `qou-381n`).  The h-jet
+    expansion about `q = 1` of `tr_M(K)` for `K ∈ {4₁, 5₂, 𝓑₃}` (canonical braid
     words `(σ₁σ₂⁻¹)²`, `σ₁⁻¹σ₂σ₁⁻¹σ₂²`, `(σ₁σ₂⁻¹)³`) gives the order-2
-    coefficient vectors `(1/4, −1, 55/16)`, `(1/2, 0, −1/16)`, `(1, 0, 0)`;
-    their `3×3` jet-Jacobian has elimination determinant `1/16 ≠ 0`, with
-    LU pivots `(1/4, 2, 1/8)`.  Source:
+    coefficient vectors `(1/4, 0, 11/4)`, `(1/2, 1, 1/4)`, `(1, 0, 0)`;
+    their `3×3` jet-Jacobian has elimination determinant `−11/4 ≠ 0`, with
+    LU pivots `(1/4, 1, −11)`.  Source:
     `computations/jet_order_pivots.py` →
     `jet-order-pivots.witness.json`.  The constant extension certifies
     full rank `3` at every order via `ofPivots`; higher-order pivots come
     from the same compute at higher jet truncation.
 
     -- Ref: [leitner2026] conj:three-knot-jet-order-independence -/
-def jetPivots : ℕ → ℚ × ℚ × ℚ := fun _ => (1/4, 2, 1/8)
+def jetPivots : ℕ → ℚ × ℚ × ℚ := fun _ => (1/4, 1, -11)
 
 /-- **GB-elimination certificate at the Reid-1991 base order (PROVED,
-    witnessed).**  `∏ pivots = (1/4)·2·(1/8) = 1/16 ≠ 0` — the actual
-    elimination determinant of the canonical Markov-trace jet-Jacobian — so
+    witnessed).**  `∏ pivots = (1/4)·1·(−11) = −11/4 ≠ 0` — the actual
+    elimination determinant of the witnessed base-order jet-Jacobian — so
     the order-3 Jacobian has full rank `3` and the three series are
     jet-order independent at the base order. -/
 theorem jetOrder3_certificate : eliminationDet (jetPivots 3) ≠ 0 := by
@@ -318,7 +318,7 @@ theorem jetOrder3_certificate : eliminationDet (jetPivots 3) ≠ 0 := by
 order — mathematically it propagates from the single base-order
 certificate.  The order-`N` coefficient Jacobian is `3 × (N+1)`; its first
 three columns are the witnessed base-order minor `jetJacobianBase`, whose
-determinant is `1/16 ≠ 0`.  An invertible `3×3` block forces rank `≥ 3`
+determinant is `−11/4 ≠ 0`.  An invertible `3×3` block forces rank `≥ 3`
 (`Matrix.rank_submatrix_le`), while the row count `3` forces rank `≤ 3`
 (`Matrix.rank_le_height`), so the order-`N` Jacobian has rank exactly `3`
 for every `N`, rank being monotone in the column count.
@@ -332,18 +332,19 @@ order-`N` Jacobian — the column-extension/submatrix linkage stated above —
 is the remaining structural input, not a lemma proved in this file. -/
 
 /-- Witnessed base-order jet-Jacobian: rows are the order-`≤2` coefficient
-    vectors of `tr_M(K)` about `q = 1` for `K ∈ {4₁, 5₂, 𝓑₃}`.  Source:
-    `computations/jet_order_pivots.py`. -/
+    vectors of `tr_M(K)` about `q = 1` for `K ∈ {4₁, 5₂, 𝓑₃}` (bean `qou-381n`).
+    Source: `computations/jet_order_pivots.py`. -/
 def jetJacobianBase : Matrix (Fin 3) (Fin 3) ℚ :=
-  !![1/4, -1, 55/16; 1/2, 0, -1/16; 1, 0, 0]
+  !![1/4, 0, 11/4; 1/2, 1, 1/4; 1, 0, 0]
 
-/-- The witnessed elimination determinant `det = 1/16 ≠ 0` (matches
-    `jetOrder3_certificate`'s `∏ pivots = 1/16`). -/
-theorem jetJacobianBase_det : jetJacobianBase.det = 1 / 16 := by
-  simp [jetJacobianBase, Matrix.det_fin_three]
+/-- The witnessed elimination determinant `det = −11/4 ≠ 0` (matches
+    `jetOrder3_certificate`'s `∏ pivots = −11/4`). -/
+theorem jetJacobianBase_det : jetJacobianBase.det = -11 / 4 := by
+  change (!![(1 : ℚ) / 4, 0, 11 / 4; 1 / 2, 1, 1 / 4; 1, 0, 0] : Matrix (Fin 3) (Fin 3) ℚ).det = -11 / 4
+  simp [Matrix.det_fin_three]
   norm_num
 
-/-- The base minor is invertible (`det = 1/16 ≠ 0`). -/
+/-- The base minor is invertible (`det = −11/4 ≠ 0`). -/
 theorem jetJacobianBase_isUnit : IsUnit jetJacobianBase := by
   rw [Matrix.isUnit_iff_isUnit_det, jetJacobianBase_det]
   exact isUnit_iff_ne_zero.mpr (by norm_num)
@@ -351,7 +352,9 @@ theorem jetJacobianBase_isUnit : IsUnit jetJacobianBase := by
 /-- **Base-order full rank (PROVED, witnessed).**  The base minor is
     invertible, hence has rank `3`. -/
 theorem jetJacobianBase_rank : jetJacobianBase.rank = 3 := by
-  simpa using Matrix.rank_of_isUnit jetJacobianBase jetJacobianBase_isUnit
+  have h := Matrix.rank_of_isUnit jetJacobianBase jetJacobianBase_isUnit
+  have hcard : Fintype.card (Fin 3) = 3 := rfl
+  exact h.trans hcard
 
 /-- **Rank-monotonicity principle.**  A rank function that is monotone
     (rank cannot drop when columns are added), bounded by the row count
@@ -407,11 +410,11 @@ connection still requires a Lean definition of the transport error, which
 remains open.
 
 **(2) `JetOrderIndependence` — the instance fabricated its data.**  It applied
-`ofPivots` to `jetPivots = fun _ => (1/4, 2, 1/8)`, a **constant** extension of
+`ofPivots` to `jetPivots = fun _ => (1/4, 1, -11)`, a **constant** extension of
 the order-3 pivots to every order, thereby asserting `full_rank` at all
 `N ≥ 3` — which *is* the open conjecture.  The genuine content is kept and is
 unchanged: `jetPivots` (the witnessed base-order pivots), `jetOrder3_certificate`
-(`∏ pivots = 1/16 ≠ 0`, sorry-free), `jetJacobianBase_rank = 3`,
+(`∏ pivots = −11/4 ≠ 0`, sorry-free), `jetJacobianBase_rank = 3`,
 `eliminationDet_ne_zero`, `ofPivots` and `jacobianRank_eq_three_of_base`.  What
 is dropped is only the step from "certified at the base order" to "holds at
 every order".  To discharge the conjecture honestly, feed `ofPivots` the
