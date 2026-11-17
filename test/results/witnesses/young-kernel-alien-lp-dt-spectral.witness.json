@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "young-kernel-alien-lp-dt-spectral",
+  "scriptPath": "computations/probes/young_kernel_alien_lp_dt_spectral_probe.py",
+  "scriptCommitSha": "efa6ab9e44128d259563d9e6208d6ab9d32edd74",
+  "scriptHash": "68202cff458f",
+  "generatedAt": "2026-11-17T08:14:45Z",
+  "dps": "80",
+  "beans": [
+    "qou-2fdj",
+    "qou-dk8a",
+    "qou-fr4d",
+    "qou-nmpr",
+    "qou-rdg8"
+  ],
+  "theorems": [
+    "QOU.BraidsAndKnots.YoungDiagramKernel.five_mul_M6_eq_seven_mul_threeM4",
+    "QOU.Mass.BindingNoAlienPlane.isoformalDim_two_slope_closed_form",
+    "QOU.Mathlib.LPDuality.duality_gap_eq_zero_of_zero_residuals",
+    "QOU.BraidsAndKnots.even_shifted_dt_realization",
+    "QOU.BraidKnot.mass_sub_abs_descended_eq_sum_residue"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "five_mul_M6_eq_seven_mul_threeM4",
+      "bean": "qou-2fdj",
+      "threeM4_3": "30",
+      "M6_3": "42",
+      "passed": true
+    },
+    {
+      "name": "isoformalDim_two_slope_closed_form",
+      "bean": "qou-dk8a",
+      "gridTested": "1225",
+      "passed": true
+    },
+    {
+      "name": "duality_gap_eq_zero_of_zero_residuals",
+      "bean": "qou-fr4d",
+      "optimalObjective": "44/25",
+      "passed": true
+    },
+    {
+      "name": "even_shifted_dt_realization",
+      "bean": "qou-nmpr",
+      "shiftsVerified": "12",
+      "passed": true
+    },
+    {
+      "name": "mass_sub_abs_descended_eq_sum_residue",
+      "bean": "qou-rdg8",
+      "residual80dps": "1.054219794323052322434857e-81",
+      "passed": true
+    }
+  ]
+}
