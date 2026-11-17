@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T07:00:22.088709+00:00",
-  "commitSha": "c163685180ca862574e36d7aedf782f27b63e9b0",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T11:57:19.757528+00:00",
+  "commitSha": "8afcfc0f9af48b69466f326f67215d2b873f0b3b",
   "assertions": [
     {
       "name": "closed_form_ratio_hardcodes_canonical_ordering",
@@ -138,11 +138,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "canonical-ordering-dof",
   "scriptFile": "canonical_ordering_dof_probe.py",
-  "scriptHash": "90067a088722",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "c4f9c668b703",
+  "scriptCommitSha": "8afcfc0f9af48b69466f326f67215d2b873f0b3b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -150,14 +150,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -517,8 +517,8 @@
           "Z": 3,
           "N": 3,
           "in_production_table": true,
-          "B_pred_MeV_production": "11.60759",
-          "B_AME_MeV": "31.994",
+          "B_pred_MeV_production": "11.607590",
+          "B_AME_MeV": "31.994000",
           "n_reachable_multisets": 7,
           "ratio_min": "0.8295082629",
           "ratio_max": "1.315161061",
@@ -533,7 +533,7 @@
           "N": 4,
           "in_production_table": true,
           "B_pred_MeV_production": "15.050974",
-          "B_AME_MeV": "39.2445",
+          "B_AME_MeV": "39.244500",
           "n_reachable_multisets": 8,
           "ratio_min": "0.8295082629",
           "ratio_max": "1.373658479",
@@ -548,7 +548,7 @@
           "N": 5,
           "in_production_table": true,
           "B_pred_MeV_production": "19.819265",
-          "B_AME_MeV": "58.165",
+          "B_AME_MeV": "58.165000",
           "n_reachable_multisets": 11,
           "ratio_min": "0.8295082629",
           "ratio_max": "1.43475782",
@@ -563,7 +563,7 @@
           "N": 6,
           "in_production_table": true,
           "B_pred_MeV_production": "25.912465",
-          "B_AME_MeV": "92.162",
+          "B_AME_MeV": "92.162000",
           "n_reachable_multisets": 16,
           "ratio_min": "0.8295082629",
           "ratio_max": "1.498574815",
@@ -578,7 +578,7 @@
           "N": 8,
           "in_production_table": true,
           "B_pred_MeV_production": "35.449048",
-          "B_AME_MeV": "127.619",
+          "B_AME_MeV": "127.619000",
           "n_reachable_multisets": 22,
           "ratio_min": "0.8295082629",
           "ratio_max": "1.634850664",
@@ -593,7 +593,7 @@
           "N": 20,
           "in_production_table": true,
           "B_pred_MeV_production": "92.668545",
-          "B_AME_MeV": "342.052",
+          "B_AME_MeV": "342.052000",
           "n_reachable_multisets": 58,
           "ratio_min": "0.8295082629",
           "ratio_max": "2.755979854",
@@ -608,7 +608,7 @@
           "N": 30,
           "in_production_table": true,
           "B_pred_MeV_production": "135.051829",
-          "B_AME_MeV": "492.254",
+          "B_AME_MeV": "492.254000",
           "n_reachable_multisets": 77,
           "ratio_min": "0.8295082629",
           "ratio_max": "3.737445283",
@@ -631,15 +631,15 @@
         "ratio": "T_npn_over_pnn",
         "measured": "1.258976624909173",
         "closed_form": "1.258976624909173",
-        "rel_diff": "4.92315e-17"
+        "rel_diff": "1.43956e-50"
       },
       {
         "source": "wenzl_bridge_y_cache",
         "convention": "strict_averaged",
         "ratio": "He3_pnp_over_ppn",
-        "measured": "0.8293909084880151",
+        "measured": "0.8293909084880152",
         "closed_form": "0.8293909084880152",
-        "rel_diff": "4.92315e-17"
+        "rel_diff": "6.83087e-51"
       },
       {
         "source": "wenzl_bridge_y_closed_form",
@@ -647,15 +647,15 @@
         "ratio": "T_npn_over_pnn",
         "measured": "1.258976624909173",
         "closed_form": "1.258976624909173",
-        "rel_diff": "4.92315e-17"
+        "rel_diff": "4.80178e-50"
       },
       {
         "source": "wenzl_bridge_y_closed_form",
         "convention": "strict_averaged",
         "ratio": "He3_pnp_over_ppn",
-        "measured": "0.8293909084880151",
+        "measured": "0.8293909084880152",
         "closed_form": "0.8293909084880152",
-        "rel_diff": "4.92315e-17"
+        "rel_diff": "8.15763e-51"
       }
     ],
     "two_live_conventions": {
