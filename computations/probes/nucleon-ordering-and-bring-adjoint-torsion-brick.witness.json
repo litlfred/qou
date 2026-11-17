@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "brick": "QOU.QBeta.NucleonOrderingAndBringAdjointTorsionBrick",
+  "beans": [
+    "qou-q6h7",
+    "qou-qd27",
+    "qou-qint",
+    "qou-r91v",
+    "qou-tvok"
+  ],
+  "scriptPath": "computations/probes/nucleon_ordering_and_bring_adjoint_torsion_brick_probe.py",
+  "scriptHash": "203c877d6829",
+  "scriptCommitSha": "91adb50275070ba4907f97a5fb6c4cd6a51a39f7",
+  "dirty": false,
+  "generatedAt": "2026-11-17T12:43:53.014207+00:00",
+  "precisionDps": 80,
+  "allPassed": true,
+  "checks": {
+    "qou_q6h7_nucleon_ordering_factorization": {
+      "theorem": "nucleonOrderingTrace_expanded_and_z_shift",
+      "baseNucleonOrderingTrace": "6.4453125e-2",
+      "expansionResidual": "0.0",
+      "zShiftResidual": "0.0",
+      "passed": true
+    },
+    "qou_qd27_bring_sigma4_adjoint_h1_rank": {
+      "theorem": "adjointSurfaceH1Rank_genus_step_and_bring_four",
+      "bringSigma4Sl2H1Rank": "1.8e+1",
+      "genusStepResidual": "0.0",
+      "bringGenusFourResidual": "0.0",
+      "torusGenusOneRank": "0.0",
+      "fibreAdditivityResidual": "0.0",
+      "passed": true
+    },
+    "qou_qint_balanced_q_integer_bar_parity": {
+      "theorem": "balancedQPair_bar_parity",
+      "balancedQ5AtExp0175": "5.6340936495738567189545658429513451327465038422427081202844033673428359065567801",
+      "barNumeratorResidual": "0.0",
+      "barSymmetricResidual": "0.0",
+      "barBalancedQIntResidual": "0.0",
+      "doublingProductResidual": "0.0",
+      "passed": true
+    },
+    "qou_r91v_hook_log_dimension_reduction": {
+      "theorem": "logDimFromHooks_diff_negation_and_involution",
+      "logDimPartition41": "1.3862943611198906188344642429163531361510002687205105082413600189867872439393894",
+      "logDimPartition32": "1.6094379124341003746007593332261876395256013542685177219126478914741789877076578",
+      "differenceNegationResidual": "0.0",
+      "involutionResidual": "0.0",
+      "conjugateOddModeCancellationResidual": "0.0",
+      "passed": true
+    },
+    "qou_tvok_poisson_depoisson_variance_ratio": {
+      "theorem": "poissonDePoissonGap_ninefold_locus_and_remainder",
+      "poissonizedLeadingVariance": "8.1056946913870217155103570567782111123487019737797239076487225515338496769788353e-1",
+      "dePoissonizedLeadingVariance": "9.0063274348744685727892856186424567914985577486441376751652472794820551966431503e-2",
+      "ninefoldRatioResidual": "0.0",
+      "remainderPropagationResidual": "6.5888737145190770152178587820437618798187258639803172187986018906925901818560997e-82",
+      "maxPartialFractionResidual": "3.2944368572595385076089293910218809399093629319901586093993009453462950909280499e-83",
+      "passed": true
+    }
+  }
+}
