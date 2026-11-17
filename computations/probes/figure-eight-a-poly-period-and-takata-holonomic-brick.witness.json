@@ -1,0 +1,58 @@
+{
+  "probe": "computations/probes/figure_eight_a_poly_period_and_takata_holonomic_brick_probe.py",
+  "beans": [
+    "qou-3jgd",
+    "qou-5b23",
+    "qou-d8as",
+    "qou-j1ld",
+    "qou-s8gi"
+  ],
+  "precisionDps": 80,
+  "scriptHash": "eee26c60b73f09b3903f853699380b2a7b5314e97cc9268945b7a0372e1cd3d4",
+  "scriptCommitSha": "5c4e30462ed53f77f251c4ddf47409b4459308ef",
+  "generatedAt": "2026-11-17T07:22:02.098218+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-3jgd",
+      "theorem": "figure_eight_a_poly_discriminant_and_amphicheiral_recip",
+      "passed": true,
+      "cusp_residual": "8.4337583545844185794788592410160152061679691058948060400622104200865154327758077e-81",
+      "recip_residual": "0.0",
+      "vol_4_1": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488",
+      "borel_period_omega_plus": "0.32306594721945051409363651072380639407224184078058701613086847036101511280726984"
+    },
+    {
+      "bean": "qou-5b23",
+      "theorem": "lifted_volume_triple_epsilon_grade_separation",
+      "passed": true,
+      "grade_residual": "0.0",
+      "p_1_slope": "2.4257872617490456899088012659175852725535383480551102150389421621725327784444451",
+      "p_lifted_magnitude": "0.0000000000024257872617490456899088012659175852725535383480551102150389421621725327784444451"
+    },
+    {
+      "bean": "qou-d8as",
+      "theorem": "prolongation_symbol_growth_prune_and_degree_cap",
+      "passed": true,
+      "diff2_residual": "6.7470066836675348635830873928128121649343752847158448320497683360692123462206461e-80",
+      "pruned_residual": "0.0",
+      "diff2_value": "4.5000000000000000000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "bean": "qou-j1ld",
+      "theorem": "garoufalidis_le_q_holonomic_second_order_step_elimination",
+      "passed": true,
+      "elim_residual": "0.0",
+      "a0_c3_value": "-100.81640625"
+    },
+    {
+      "bean": "qou-s8gi",
+      "theorem": "takata_twist_knot_recurrence_order_jump_and_chiral_defect",
+      "passed": true,
+      "order_4_1": "2.0",
+      "order_5_2": "3.0",
+      "factor_residual": "0.0",
+      "chiral_defect_value": "16.875"
+    }
+  ]
+}
