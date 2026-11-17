@@ -156,4 +156,12 @@ theorem addSeparable_of_traceFactorisation (E₀ : ℝ) (tL0 tR0 tL tR : N → �
     field_simp [(hL a).ne', (hR b).ne']
   rw [e, Real.log_mul (div_pos (h0L a) (hL a)).ne' (div_pos (h0R b) (hR b)).ne', mul_add]
 
+omit [LinearOrder α] [IsOrderedAddMonoid α] in
+/-- **Two-body Ursell cross-difference vanishes on additively separable functionals (`qou-tbpl`).**
+For any additively separable pair functional `f`, the mixed-minus-like cross difference
+`(f p n + f n p) - (f p p + f n n)` is identically zero. -/
+theorem cross_difference_eq_zero (f : N → N → α) (p n : N) (h : AddSeparable f) :
+    (f p n + f n p) - (f p p + f n n) = 0 := by
+  rw [cross_sum f p n h, sub_self]
+
 end QOU.Mass.TwoBodyInterfaceBond

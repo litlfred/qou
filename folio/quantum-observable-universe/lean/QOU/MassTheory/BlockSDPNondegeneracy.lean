@@ -184,5 +184,16 @@ theorem feasible_smul (y t : Λ → ℝ) {c : ℝ} (hc : 0 ≤ c)
   · simp [obj, Finset.mul_sum]
     exact Finset.sum_congr rfl fun lam _ => by ring
 
-end QOU.MassTheory.BlockSDPNondegeneracy
+/-- **Additivity of the O3′ block objective and net trace functional (`qou-sv7h`).**
+For any block weight vector `y` and trace vectors `t₁, t₂`, both `net` and `obj y`
+distribute additively over `t₁ + t₂`. -/
+theorem net_and_obj_add (y t₁ t₂ : Λ → ℝ) :
+    net (t₁ + t₂) = net t₁ + net t₂ ∧
+    obj y (t₁ + t₂) = obj y t₁ + obj y t₂ := by
+  refine ⟨?_, ?_⟩
+  · rw [net, net, net, ← Finset.sum_add_distrib]
+    rfl
+  · rw [obj, obj, obj, ← Finset.sum_add_distrib]
+    exact Finset.sum_congr rfl fun lam _ => by ring
 
+end QOU.MassTheory.BlockSDPNondegeneracy
