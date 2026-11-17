@@ -1,7 +1,9 @@
 ---
 # qou-fv70
 title: 'GAP: QOU.Archimedean.BlochWigner_unit_circle is declared TWICE in one namespace — opaque vs defined, masked by a commented-out import, and it decides qou-006b''s epistemic status'
-status: todo
+status: in-progress
+pr: 8240
+updated_at: 2026-11-17T07:03:07Z
 type: task
 priority: normal
 tags:
@@ -66,3 +68,8 @@ class as the `substrate-anchor-alternatives.md` pointer AGENTS.md records.
 ## 2026-11-15, PR #7946
 
 `BlochWignerUnitCircle.lean` now defines `BlochWigner_unit_circle := Cl_2` (was `opaque`), so qou-006b's field is decidable and true by IVT. **The duplicate name is NOT fixed**: `BlochWignerMathlibFiller.lean` still defines the same constant, and importing both still collides. Both bodies are now `Cl_2`, so the fix is to delete one; left for a separate change.
+
+## Progress Update (PR #8240)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8240` at `cb076a625e5995208490115a8926f02d958314a7`).
+- **Lean Formalization**: `QOU.QBeta.AnglePolytopeFeasibilityAndClausenUnitCircleBrick.bloch_wigner_unit_circle_clausen_odd_reflection_and_triplication` (Unit-circle Clausen / Bloch-Wigner oddness at 0 and pi plus Kubert duplication at pi/3 locking D(2*pi/3) = (2/3)*D(pi/3) and D(pi/3) + D(2*pi/3) = (5/3)*D(pi/3).)
+- **80-dps Witness**: `computations/probes/angle-polytope-feasibility-and-clausen-unit-circle-brick.witness.json` (`scriptHash: 2cbc25827af3`, `scriptCommitSha: ec2c1b177f9eff729f315a26ddbb5ea7edbf540d`).

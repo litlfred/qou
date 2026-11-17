@@ -1,7 +1,9 @@
 ---
 # qou-mokg
 title: BringHyperbolicDecomposition is a renaming sold as a decomposition — identical field to BringZeroModeBlochClass, and its docstring promises three things the field does not encode
-status: todo
+status: in-progress
+pr: 8240
+updated_at: 2026-11-17T07:03:07Z
 type: task
 priority: normal
 tags:
@@ -37,3 +39,8 @@ Two things to fix:
 Either encode what the docstring promises, or say plainly that the class is a
 named alias for the one field it carries and let the theorem read as the
 projection it is.
+
+## Progress Update (PR #8240)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8240` at `cb076a625e5995208490115a8926f02d958314a7`).
+- **Lean Formalization**: `QOU.QBeta.AnglePolytopeFeasibilityAndClausenUnitCircleBrick.bring_hyperbolic_five_fold_tetrahedron_sum_decomposition` (C_5-orbit five-tetrahedron Bring volume decomposition V_Bring = 5 * D_tet and orbit mean V_Bring / 5 = D_tet under zero-sum cyclic perturbations.)
+- **80-dps Witness**: `computations/probes/angle-polytope-feasibility-and-clausen-unit-circle-brick.witness.json` (`scriptHash: 2cbc25827af3`, `scriptCommitSha: ec2c1b177f9eff729f315a26ddbb5ea7edbf540d`).

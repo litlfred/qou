@@ -1,7 +1,9 @@
 ---
 # qou-0y6l
 title: Sweep L6a4 obstruction classes 2-13 with the saturated msolve pipeline
-status: todo
+status: in-progress
+pr: 8240
+updated_at: 2026-11-17T07:03:07Z
 type: task
 priority: normal
 tags:
@@ -216,3 +218,8 @@ expensive question turned out not to be the one that had to be answered.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress Update (PR #8240)
+- **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8240` at `cb076a625e5995208490115a8926f02d958314a7`).
+- **Lean Formalization**: `QOU.QBeta.AnglePolytopeFeasibilityAndClausenUnitCircleBrick.fkr_denominator_clearing_spurious_locus_split` (Torus saturation A_denom * u_sat = 1 eliminates the spurious denominator locus A_denom = 0 from the cleared FKR polynomial P_cleared = A_denom * Q_true.)
+- **80-dps Witness**: `computations/probes/angle-polytope-feasibility-and-clausen-unit-circle-brick.witness.json` (`scriptHash: 2cbc25827af3`, `scriptCommitSha: ec2c1b177f9eff729f315a26ddbb5ea7edbf540d`).
