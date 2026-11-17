@@ -1,0 +1,66 @@
+{
+  "probe": "pentagon_two_route_and_c1_ramified_stokes_brick_probe.py",
+  "beans": [
+    "qou-524t",
+    "qou-7xvy",
+    "qou-f7g2",
+    "qou-l6fz",
+    "qou-odh5"
+  ],
+  "precisionDps": "80",
+  "scriptHash": "ad15e8ab2a08",
+  "scriptCommitSha": "4eaeef60b72e32fbaaef92149ff8588e4dde4090",
+  "generatedAt": "2026-11-17T06:36:47.106719+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-524t",
+      "theorem": "v1_bar_even_tauberian_dilog_reflection_synthesis",
+      "z": "0.35",
+      "dilogZ": "0.3866059411605864812083560588607744498745",
+      "dilogOneMinusZ": "0.8060826895177240176377363976148835432645",
+      "reflectionResidual": "0.0",
+      "midpointResidual": "2.108439588646104644869715e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-7xvy",
+      "theorem": "phi_b_prod_divisor_rigidity_exponential_elimination",
+      "periodW1": "1.41421356237309504880168872420969807857",
+      "systemDeterminant": "-5.656854249492380195206754896838792314279",
+      "alphaSolved": "0.0",
+      "betaSolved": "0.0",
+      "constantResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-f7g2",
+      "theorem": "pentagon_two_route_a_omega_rigidity_lock",
+      "step": "0.125",
+      "d2Route1": "0.046875",
+      "aOmegaExtracted": "3.0",
+      "aOmegaMinusThree": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-l6fz",
+      "theorem": "watson_gevrey1_optimal_truncation_quadratic_completion",
+      "nStar": "5.0",
+      "eStar": "-5.0",
+      "prodResidual": "0.0",
+      "minEnvelopeGap": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-odh5",
+      "theorem": "c1_ramified_edge_polynomial_and_stokes_connection_determinant",
+      "B1": "0.48",
+      "B2": "-0.48",
+      "edge1Residual": "1.054219794323052322434857e-81",
+      "edge2Residual": "1.054219794323052322434857e-81",
+      "spectralGapSq": "0.9216",
+      "stokesDetResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
