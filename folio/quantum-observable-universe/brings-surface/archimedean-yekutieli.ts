@@ -12,6 +12,12 @@ export default example({
   ],
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-11-17",
+      body:
+        "**OPEN — trace identity.** The block attaches `chi(A) = -6` to the lifting obstruction classes `kappa_n`. Whether the obstruction pairs with the genus or with a trace of `A` decides whether this is a rename or a substantive claim. Under the owner ruling of 2026-09-15, `tr(id_A) = dim_q(A)` is a q-dependent quantum dimension, and `-6` is `chi_eu(M_0)`, the topological Euler characteristic of the base curve (`rem:three-euler-characteristics`). Flagged open on owner instruction 2026-11-17 (Bring foundations cleanup); the bare `chi(A)` here was not renamed because the step uses a trace identity, not only the genus. Bean `qou-qhcr`.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-11-15",
       body:

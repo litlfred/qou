@@ -110,7 +110,7 @@ all but three real parameters:
    It controls all dimensionless ratios: mass ratios, coupling
    constants, crossing asymmetries.  The observability condition
    forces $q \neq 1$ (otherwise $\mathrm{Ad}(A)$ has invariants),
-   and the Descartes condition $\chi(A) = -6$ constrains $q$ to
+   and the Descartes condition $\chi_{\mathrm{eu}}(M_0) = -6$ constrains $q$ to
    a one-parameter family, but does not fix a specific value.
    The value $q_0 \approx 1.110$ is fixed by one dimensionless
    measurement.
