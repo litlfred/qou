@@ -67,3 +67,6 @@ route (a) and is welcome; reverse-engineering it is not.
 ## Progress 2026-11-17 (lane-e925)
 
 Formalized in Lean 4 (`v4.24.0`, zero `sorry`) under `QOU.MassTheory` (`AlphaClusterContactCeilingAndDOFCount.lean`, `ExpansionParameterMismatchAndIMMEIsoscalarBlindness.lean`, `NonMonotoneBorromeanWordAndDisjointBlockEpsilonProduct.lean`) and verified at 50 dps in `computations/probes/alpha_contact_expansion_hierarchy_imme_blindness_nonmonotone_block_probe.py` (`computations/probes/alpha-contact-expansion-hierarchy-imme-blindness-nonmonotone-block-probe.witness.json`, `allPassed = true`). Opened PR #8327 (`ready: 826901651d0315e3267e85bf8f3b7fc2527847c3`).
+
+## Round 75 Progress (2026-11-17T11:49:05Z)
+- Advanced in PR `litlfred/qou#8329` (branch `feat/round75-blocklen-equilateral-bondletter-descent-framing-43c1`, head `d2c6d3d8e433b1ecf3e00634b44d230b097bc7d3`).

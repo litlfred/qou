@@ -1,7 +1,7 @@
 ---
 # qou-gba1
 title: 'Magnus Omega2 option E: derive the Omega2 pairing from what Omega2 is'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -268,3 +268,6 @@ the law says what a letter contributes, not which letter a flavour pair gets.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-13 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 75 Progress (2026-11-17T11:49:05Z)
+- Advanced in PR `litlfred/qou#8329` (branch `feat/round75-blocklen-equilateral-bondletter-descent-framing-43c1`, head `d2c6d3d8e433b1ecf3e00634b44d230b097bc7d3`).

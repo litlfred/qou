@@ -1,7 +1,7 @@
 ---
 # qou-5jqv
 title: lem:bond-order-eq-jet-degree cites prop:gb-spectral-sequence for a filtration that block does not name
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-14T20:06:19Z
@@ -136,3 +136,6 @@ Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bea
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Round 75 Progress (2026-11-17T11:49:05Z)
+- Advanced in PR `litlfred/qou#8329` (branch `feat/round75-blocklen-equilateral-bondletter-descent-framing-43c1`, head `d2c6d3d8e433b1ecf3e00634b44d230b097bc7d3`).
