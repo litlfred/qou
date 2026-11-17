@@ -1,0 +1,63 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "dps": "80",
+  "computedAt": "2026-11-17T07:51:30.683923+00:00",
+  "commitSha": "7d111fc9111a5ac911879c633afd63652e0f6384",
+  "scriptCommitSha": "7d111fc9111a5ac911879c633afd63652e0f6384",
+  "scriptHash": "e7d87b167c3f",
+  "allPassed": true,
+  "assertions": [
+    {
+      "name": "qou_e58e_bar_parity_interface_defect_and_mirror_split",
+      "computed": "0:3245051220525556946557446762664475147886540810240000000000",
+      "expected": "0:3245051220525556946557446762664475147886540810240000000000",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.bar_parity_interface_defect_vanishes_at_one_and_pos_at_q0"
+    },
+    {
+      "name": "qou_gcmn_bpp_per_bond_decline_and_eighty_percent_confound_share",
+      "computed": "5147:100000",
+      "expected": "5147:100000",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.bpp_per_bond_decline_and_eighty_percent_confound_share"
+    },
+    {
+      "name": "qou_vbyi_singlet_tensor_vanishes_and_triplet_level_repulsion",
+      "computed": "0:-655360000",
+      "expected": "0:-655360000",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.triplet_secular_residual_negative_at_uncoupled_energy"
+    },
+    {
+      "name": "qou_vtlj_neutron_crossing_count_eleven_and_four_delta_net_spread",
+      "computed": "11:459905",
+      "expected": "11:459905",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.neutron_crossing_count_eleven_and_four_delta_net_spread"
+    },
+    {
+      "name": "qou_xy5f_ordering_dof_part6_pipeline_agreement_vs_closed_form_shift",
+      "computed": "135501474931992000:10115:3859",
+      "expected": "135501474931992000:10115:3859",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.BarParityIsospinSplitBppConfoundSingletTensorInvarianceDeltaFourValuesAndOrderingDofShift.ordering_dof_part6_pipeline_agreement_vs_closed_form_shift"
+    }
+  ],
+  "invocation": {
+    "argv": [
+      "computations/probes/bar_parity_isospin_split_bpp_confound_singlet_tensor_invariance_delta_four_values_and_ordering_dof_shift_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bar_parity_isospin_split_bpp_confound_singlet_tensor_invariance_delta_four_values_and_ordering_dof_shift_probe.py"
+  },
+  "description": "Exact 80-dps mpmath and Fraction verification for qou-e58e, qou-gcmn, qou-vbyi, qou-vtlj, and qou-xy5f under epic qou-10v9.",
+  "data": {
+    "bar_parity_interface_defect_at_q0_80dps": "0.0001604976236250884501512158954792646312674363",
+    "bpp_confound_share_3_to_4": "0.80241842610364683301343570057581573896353167"
+  }
+}
