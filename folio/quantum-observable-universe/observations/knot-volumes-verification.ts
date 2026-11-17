@@ -8,11 +8,19 @@ import { proof } from "../../schema/builders";
  * The witness file records computed values, expected values, and error bounds.
  *
  * Trust chain:
- *   SnapPy computation → witness JSON → Lean axiom (with -- Ref: [computation])
+ *   SnapPy computation → witness JSON.  A numerical check, not a proof;
+ *   it supplies no step of the mass chain (scope note, 2026-11-16).
  */
 export default proof({
   label: "prf:knot-volumes-verification",
-  title: "Knot volume verification (SnapPy)",
+  title: "Knot volume check (SnapPy; a numerical check, not a proof)",
+  authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-16",
+      body: "Scope note added on owner ruling (decision card, 2026-11-16, \"scope note, cite exact volumes\"). The block stays a proof block for reference stability, but it is a numerical check of volumes and derives no step of the mass chain. Exact closed forms are now cited where they exist.",
+    },
+  ],
   tags: ["computation", "snappea", "hyperbolic", "verification"],
   uses: [
     "prop:topological-mass-formula",
