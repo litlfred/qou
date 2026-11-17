@@ -1,13 +1,14 @@
 ---
 # qou-oots
 title: 'Phi_k weight family is unjustified: dim_q^2 misuses a quantum dimension where f^lambda*dim_q (Molien, Lean-proved exactly normalized) or y_lambda (Markov, canonical Frobenius pairing) may belong'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-10-10T08:01:23Z
+updated_at: 2026-11-17T06:36:38Z
+pr: 8228
 parent: qou-3l2l
 ---
 
@@ -811,3 +812,9 @@ invariant under Molien (it *is* invariant under the `d_q²/D²` comparison arm,
 the same asymmetry recorded for `beta_ew_delta_I_321_and_wedderburn.py`);
 `alpha_em_b2_canonical_scale_ratio_probe` reports `y_(4,1)` vs `w_(4,1)` as an
 explicit two-arm comparison with Molien absent as a third arm.
+
+## Round 51 Formalization & 50-dps Witness (PR #8228)
+- [x] **Lean 4 Module (`0 sorry`, `0 axiom`, `0 vacuity`):** `folio/quantum-observable-universe/lean/QOU/AlphaEM/TwoLoopFlatTorusThetaAndWeightTriage.lean` (`jucysMurphy_n5_symmetric_weight_sum_eq_zero`, `jucysMurphy_n5_molien_strictly_negative`, `weight_families_41_strict_ordering`).
+- [x] **50-dps Witness:** `computations/probes/round51-two-loop-flat-torus-theta-weight-and-peripheral-slope.witness.json` (`scriptHash: 879cd7fbcdb2`, `scriptCommitSha: bffc9aa954100eaed1adf1a81eb35fe56e86a5f2`).
+- [x] **PR:** `litlfred/qou#8228` (`https://github.com/litlfred/qou/pull/8228`, head SHA `8335ad54a1e5c4f7a61669fed19de6b0184f0a4d`).
+- [ ] **Reviewer-separated closure:** Kept at `status: in-progress`.
