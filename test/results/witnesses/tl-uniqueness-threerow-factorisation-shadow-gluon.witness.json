@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "tl-uniqueness-threerow-factorisation-shadow-gluon",
+  "scriptPath": "computations/probes/tl_uniqueness_threerow_factorisation_shadow_gluon_probe.py",
+  "scriptCommitSha": "1f88e71305a6e71d41389edf2285daae1528f7d8",
+  "scriptHash": "3ae4cba85e90",
+  "generatedAt": "2026-11-17T10:16:04Z",
+  "dps": "80",
+  "beans": [
+    "qou-3qrv",
+    "qou-3exu",
+    "qou-5zl1",
+    "qou-56qy",
+    "qou-1qsw"
+  ],
+  "theorems": [
+    "QOU.BraidsAndKnots.markovWeights_jones_y3_cleared",
+    "QOU.MassTheory.ThreeRowExtensiveCumulant.Bext_five_and_mayer_reconstruct",
+    "QOU.Mass.AtomTraceFactorisation.tr_atomWord_const_bond",
+    "QOU.MassTheory.orbitCount_freeShadow_sub_atomShadow",
+    "QOU.QBeta.GluonVertexPsdParity.four_crossings_psd_and_two_prod_one"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "markovWeights_jones_y3_cleared",
+      "bean": "qou-3qrv",
+      "y3ClearedResidual80dps": "8.433758354584418579478859e-81",
+      "markovSystemResidual80dps": "2.108439588646104644869715e-81",
+      "passed": true
+    },
+    {
+      "name": "Bext_five_and_mayer_reconstruct",
+      "bean": "qou-3exu",
+      "Bext5": "-16",
+      "Bext4Minus4Bext3": "-2",
+      "mayerSalg4": "-2",
+      "passed": true
+    },
+    {
+      "name": "tr_atomWord_const_bond",
+      "bean": "qou-5zl1",
+      "he4ConstBondTrace": "0.01449841632897263314270764",
+      "constBondResidual80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "orbitCount_freeShadow_sub_atomShadow",
+      "bean": "qou-56qy",
+      "verifiedNucleonRange": "2..8",
+      "mergeCountMatchesA": "True",
+      "passed": true
+    },
+    {
+      "name": "four_crossings_psd_and_two_prod_one",
+      "bean": "qou-1qsw",
+      "exactProductAtK2": "1",
+      "productResidual80dps": "0.0",
+      "passed": true
+    }
+  ]
+}
