@@ -1,0 +1,57 @@
+{
+  "probe": "computations/probes/habiro_cyclotomic_recurrence_and_hopf_cs_brick_probe.py",
+  "beans": [
+    "qou-2w6j",
+    "qou-c9fh",
+    "qou-dku0",
+    "qou-n5vg",
+    "qou-pwgw"
+  ],
+  "precisionDps": 80,
+  "scriptHash": "2daedb4cc606d91748a280f0afe39736e0e6c91f3da81b27bb6f22f7d3393852",
+  "scriptCommitSha": "aee44290d86add18624df3d3bce0a730246dc422",
+  "generatedAt": "2026-11-17T07:30:01.359804+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-2w6j",
+      "theorem": "habiro_cyclotomic_one_step_inhomogeneous_recurrence",
+      "passed": true,
+      "cheb_residual": "8.4337583545844185794788592410160152061679691058948060400622104200865154327758077e-81",
+      "rec_residual": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-80",
+      "inhomogeneous_rhs": "-0.03253979972010077108372408617640768785439258313099694184894830665445767864531876"
+    },
+    {
+      "bean": "qou-c9fh",
+      "theorem": "hopf_link_chern_simons_pairing_nonzero_criterion",
+      "passed": true,
+      "pol_residual": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "sym_residual": "0.0",
+      "cs_hopf_value": "0.56397739434796334964768519999292292201792568041375946436647710721257398985252601"
+    },
+    {
+      "bean": "qou-dku0",
+      "theorem": "figure_eight_habiro_tail_geometric_majorant_identity",
+      "passed": true,
+      "tel_residual": "0.0",
+      "cubic_tail_remainder": "0.041961669921875"
+    },
+    {
+      "bean": "qou-n5vg",
+      "theorem": "twist_knot_distinguished_trace_field_quadratic_lock",
+      "passed": true,
+      "sum_residual": "0.0",
+      "prod_residual": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "root_l1": "3.7320508075688772935274463415058723669428052538103806280558069794519330169088",
+      "discriminant": "12.0"
+    },
+    {
+      "bean": "qou-pwgw",
+      "theorem": "figure_eight_branch_discriminant_and_norm_one_phase_lock",
+      "passed": true,
+      "diff_sq_residual": "0.0",
+      "sum_sq_residual": "0.0",
+      "elliptic_discriminant": "-3.0"
+    }
+  ]
+}
