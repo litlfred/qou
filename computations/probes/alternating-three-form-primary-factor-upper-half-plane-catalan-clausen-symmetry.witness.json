@@ -1,0 +1,65 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T10:32:03.587858+00:00",
+  "commitSha": "0caff4971a8a2c0d7aec04c9a5a8e20f7218d2b3",
+  "assertions": [
+    {
+      "name": "qou_jvua_alternating_three_form_antisym_diag_and_unit_frame",
+      "computed": "4.21687917729220928973942962050800760308398455294740302003111e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "det_3 swap/diag/unit residual = 4.21687917729220928973943e-81, det_3(u,v,w) = 19.93179745524718519276768"
+    },
+    {
+      "name": "qou_kp89_weierstrass_primary_factor_cancellation_and_pair_product",
+      "computed": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "E_1(u)*E_1(-u) - (1-u^2) + cubic truncation residual = 1.054219794323052322434857e-81"
+    },
+    {
+      "name": "qou_m8xt_upper_half_plane_cyclic_shape_closure_and_im_pos",
+      "computed": "1.94519547438576782600960322621677893399386871329236122721775e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "|T^3(z)-z| + |z*z'*z'' + 1| = 1.945195474385767826009603e-81, im(z')=0.74852817493692178301 > 0, im(z'')=0.9580193756727664155 > 0"
+    },
+    {
+      "name": "qou_mame_lobachevsky_pi_div_four_eq_half_catalan_and_whitehead_vol",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "|Lambda(pi/4) - G/2| + |8*Lambda(pi/4) - 4*G| = 0.0, 8*Lambda(pi/4) = 3.66386237670887606021841405973"
+    },
+    {
+      "name": "qou_u4mx_clausen_two_pi_periodicity_and_odd_antisymmetry",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "unit": "absolute",
+      "source": "|Cl_2(theta+2*pi) - Cl_2(theta)| + |Cl_2(-theta) + Cl_2(theta)| = 0.0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "alternating-three-form-primary-factor-upper-half-plane-catalan-clausen-symmetry",
+  "scriptFile": "alternating_three_form_primary_factor_upper_half_plane_catalan_clausen_symmetry_probe.py",
+  "scriptHash": "0ee532c9f9a2",
+  "scriptCommitSha": "0caff4971a8a2c0d7aec04c9a5a8e20f7218d2b3",
+  "precisionMetadata": {
+    "compute_dps": 80,
+    "output_dps": 60,
+    "guard_digits": 20,
+    "truncation_bound": "1e-75"
+  }
+}
