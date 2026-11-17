@@ -1,0 +1,50 @@
+{
+  "probe": "blocklen_equilateral_bondletter_descent_framing_probe",
+  "scriptPath": "computations/probes/blocklen_equilateral_bondletter_descent_framing_probe.py",
+  "scriptHash": "e306bb6356ee",
+  "scriptCommitSha": "cbca7e7da66ade42311f408ff6ec5e3f47643a4a",
+  "executedAt": "2026-11-17T11:47:03Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-5jqv",
+      "theorem": "QOU.Knot.BlockLengthAdditive.length_mul_of_supportedIn",
+      "len_u": "2",
+      "len_v": "3",
+      "len_uv": "5",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-ebs6",
+      "theorem": "QOU.Mass.EquilateralBound.equidistant_directed_bonds_le_twelve_in_R3",
+      "gram_lhs": "2.6368274846033087791329549571307813066054824296582538340780099021857263615505374",
+      "gram_rhs": "2.6368274846033087791329549571307813066054824296582538340780099021857263615505374",
+      "gram_residual": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "directed_bonds_at_r3_cap": "12",
+      "passed": true
+    },
+    {
+      "bean": "qou-gba1",
+      "theorem": "QOU.Hecke.BondLetterIdentification.tr_bond_interp_sub",
+      "trace_diff_lhs": "0.00004575876232906104555265148532314866844667060314859941036430162834744203319482391",
+      "trace_diff_rhs": "0.000045758762329061045552651485323148668446670603148599410364301628347442033194823326",
+      "residual": "5.8353999723606942823252696576518434070386743027770993024691914596378027694582977e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-fn04",
+      "theorem": "QOU.Torsion.mem_desc_iff_tau_eq",
+      "idempotent_residual": "0.0",
+      "transverse_norm": "9.52",
+      "passed": true
+    },
+    {
+      "bean": "qou-m4fp",
+      "theorem": "QOU.StandardModel.TwistBattery.framing_split_spectrum_dichotomy",
+      "cases_checked": "392",
+      "passed": true
+    }
+  ]
+}
