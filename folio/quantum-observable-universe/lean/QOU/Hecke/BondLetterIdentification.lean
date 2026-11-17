@@ -422,4 +422,17 @@ theorem likePairBondProduct_zD (q : ℝ) (hq : 0 < q) (a b : ℕ) :
 
 end ProductionWeight
 
+/-- The difference of interior bond traces at two colour-mixing weights `t₁` and `t₂`
+is proportional to `h * (t₂ - t₁)`, isolating the weight difference from `S.z`. -/
+theorem tr_bond_interp_sub {g : ℕ} (t₁ t₂ h : R)
+    (hq : S.g g * S.g g = h • S.g g + 1) {a b : A}
+    (ha : a ∈ S.H g) (hb : b ∈ upper (toTowerB S) g) :
+    S.tr (a * ((1 - t₁) • S.g g + t₁ • S.ginv g) * b) -
+      S.tr (a * ((1 - t₂) • S.g g + t₂ • S.ginv g) * b)
+      = h * (t₂ - t₁) * S.tr (a * b) := by
+  have h1 := tr_bond_interp S t₁ h hq ha hb
+  have h2 := tr_bond_interp S t₂ h hq ha hb
+  rw [h1, h2]
+  ring
+
 end QOU.Hecke.BondLetterIdentification

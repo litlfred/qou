@@ -276,4 +276,15 @@ case rather than the only one. -/
 theorem supportedIn_one {a b : ℕ} : SupportedIn a b (1 : Equiv.Perm (Fin m)) :=
   fun _ _ => rfl
 
+/-- For two permutations supported in separated intervals `[a₁, b₁)` and `[a₂, b₂)`
+with `b₁ ≤ a₂`, the length of their product is the sum of their lengths. -/
+theorem length_mul_of_supportedIn {a₁ b₁ a₂ b₂ : ℕ} {u v : Equiv.Perm (Fin m)}
+    (hu : SupportedIn a₁ b₁ u) (hv : SupportedIn a₂ b₂ v) (hsep : b₁ ≤ a₂) :
+    length (u * v) = length u + length v := by
+  have hu_low : LowerOnly a₂ u :=
+    lowerOnly_mono (lowerOnly_of_supportedIn hu) hsep
+  have hv_up : UpperOnly a₂ v :=
+    upperOnly_of_supportedIn hv
+  exact length_mul hu_low hv_up
+
 end QOU.Knot.BlockLengthAdditive

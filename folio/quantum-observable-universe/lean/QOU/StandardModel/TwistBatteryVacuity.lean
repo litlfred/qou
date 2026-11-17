@@ -185,4 +185,20 @@ theorem ambiguous_multisets_are_d_and_neutrino :
     withSum 0 = [[-1, 0, 1], [0, 0, 0]] := by
   constructor <;> decide
 
+/-- Under the additive framing split `lk = T + wr`, fixing `lk = 0` forces
+`T = -wr` (reducing the spectrum equation to `-wr = threeQ`), whereas fixing
+`lk = wr` forces `T = 0` (reducing the spectrum equation to `0 = threeQ`). -/
+theorem framing_split_spectrum_dichotomy (lk T wr threeQ twoI₃ : ℤ)
+    (hsplit : lk = T + wr) :
+    (lk = 0 → (2 * T - 3 * twoI₃ = 2 * threeQ - 3 * twoI₃ ↔ -wr = threeQ)) ∧
+    (lk = wr → (2 * T - 3 * twoI₃ = 2 * threeQ - 3 * twoI₃ ↔ 0 = threeQ)) := by
+  rw [spectrum_iff_total_twist]
+  constructor
+  · intro hlk0
+    have hT : T = -wr := by omega
+    rw [hT]
+  · intro hlkw
+    have hT : T = 0 := by omega
+    rw [hT]
+
 end QOU.StandardModel.TwistBattery

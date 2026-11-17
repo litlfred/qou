@@ -74,6 +74,18 @@ theorem bosonic_modes_in_desc {M : Type*} (b : Boson M) :
     b.toReebDecomposition.isPurelyHorizontal := by
   exact b.purely_horizontal
 
+/-- An element lies in the descended subspace of an eigenspace decomposition
+if and only if it is a fixed point of the descent projector `di.tau`. -/
+theorem mem_desc_iff_tau_eq (V : Type*) (di : DescentInvolution V)
+    (ed : EigenspaceDecomposition V di) (v : V) :
+    v ∈ ed.desc ↔ di.tau v = v := by
+  rw [ed.desc_eq_image, Set.mem_range]
+  constructor
+  · rintro ⟨w, rfl⟩
+    exact di.idempotent w
+  · intro hv
+    exact ⟨v, hv⟩
+
 /-! ## §10  Defining Boundary of the Brane -/
 
 /-- **Defining boundary**: `∂E_n ⊆ E_n`.

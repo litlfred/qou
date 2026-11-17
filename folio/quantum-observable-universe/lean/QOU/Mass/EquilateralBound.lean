@@ -177,4 +177,16 @@ theorem equidistant_card_le_three_in_R3 {ι : Type*} [Fintype ι] [DecidableEq �
   have := equidistant_card_le_finrank hd hp₀ hpp
   simpa [finrank_euclideanSpace_fin] using this
 
+/-- In `ℝ³`, any family of points at common non-zero distance `d` from each other
+and from an apex `p₀` has at most `3` members, so the total number of directed bonds
+`(card + 1) * card` among the `card + 1` centres is at most `12` (at most `6`
+undirected nearest-neighbour bonds, reached at `¹⁶O` with `4` centres). -/
+theorem equidistant_directed_bonds_le_twelve_in_R3 {ι : Type*} [Fintype ι] [DecidableEq ι]
+    {p : ι → EuclideanSpace ℝ (Fin 3)} {p₀ : EuclideanSpace ℝ (Fin 3)} {d : ℝ} (hd : d ≠ 0)
+    (hp₀ : ∀ i, ‖p i - p₀‖ = d) (hpp : ∀ i j, i ≠ j → ‖p i - p j‖ = d) :
+    (Fintype.card ι + 1) * Fintype.card ι ≤ 12 := by
+  have hcard : Fintype.card ι ≤ 3 :=
+    equidistant_card_le_three_in_R3 hd hp₀ hpp
+  nlinarith
+
 end QOU.Mass.EquilateralBound
