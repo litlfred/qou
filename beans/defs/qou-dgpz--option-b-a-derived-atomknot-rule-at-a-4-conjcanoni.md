@@ -1,7 +1,7 @@
 ---
 # qou-dgpz
 title: 'Option B: a DERIVED atom→knot rule at A ≥ 4 (conj:canonical-knot-id-sdp) — the one route that unblocks the EM-linking exponent p'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

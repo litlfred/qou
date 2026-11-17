@@ -1,7 +1,7 @@
 ---
 # qou-epxx
 title: 'raw-float64 drain: two float() casts on full-precision inputs — q0_proton in bn_minus_bp_brane_tower_parity_probe (~44 digits lost) and CAL-1 m_e + AME_B in atom_vhyp_bar_trace_test (~2e-17, in the arithmetic not just the witness)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

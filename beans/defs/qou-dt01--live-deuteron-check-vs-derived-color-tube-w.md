@@ -1,7 +1,7 @@
 ---
 # qou-dt01
 title: 'STILL LIVE (re-opened; ml1i was bulk-closed by hygiene sweep 43a8ec43): the deuteron binding check against the DERIVED color-tube W. Of ml1i''s two tests only (2) is genuinely moot — test (1) was never run.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

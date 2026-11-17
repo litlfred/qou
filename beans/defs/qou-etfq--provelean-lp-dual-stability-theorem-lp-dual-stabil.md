@@ -1,7 +1,7 @@
 ---
 # qou-etfq
 title: 'PROVE(lean): lp_dual_stability — theorem lp_dual_stability [ctx : LpDualStabilityContext] : (∀ i : Fin ctx.channels, 0 ≤ (F [cited bertsimas1997,manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
