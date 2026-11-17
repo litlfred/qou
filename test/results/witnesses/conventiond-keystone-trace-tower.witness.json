@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "witnessId": "conventiond-keystone-trace-tower",
+  "scriptPath": "computations/probes/conventiond_keystone_trace_tower_probe.py",
+  "scriptCommitSha": "20d95e8b247ffb7388bed67341692f53a77f4390",
+  "scriptHash": "18f375ade1e4",
+  "generatedAt": "2026-11-17T08:44:59Z",
+  "dps": "80",
+  "beans": [
+    "qou-u2jg",
+    "qou-yk03",
+    "qou-nzi9",
+    "qou-r765",
+    "qou-t2ot"
+  ],
+  "theorems": [
+    "QOU.Foundations.ConventionDKeystoneTraceTower.h3_antisym_and_mixed_vanish_at_trivial_branch",
+    "QOU.Foundations.ConventionDKeystoneTraceTower.h3_antisym_vanishes_at_conventionD",
+    "QOU.Foundations.ConventionDKeystoneTraceTower.conventionD_h3_normalisation_identity",
+    "QOU.Foundations.ConventionDKeystoneTraceTower.ocneanu_n2_vs_n3_channel_ratio_det",
+    "QOU.Foundations.ConventionDKeystoneTraceTower.wedderburn_E32_branching_trace_split",
+    "QOU.Foundations.ConventionDKeystoneTraceTower.wedderburn_E32_target_correction_residual",
+    "QOU.Foundations.ConventionDKeystoneTraceTower.iteratedTowerTrace_markov_step",
+    "QOU.Foundations.ConventionDKeystoneTraceTower.traceBilinearForm_symmetric_and_associative"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "conventionD_h3_keystone_and_normalisation",
+      "bean": "qou-u2jg",
+      "antisymAtConventionD80dps": "0.0",
+      "normalisationResidual80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "ocneanu_n2_vs_n3_channel_ratio_det",
+      "bean": "qou-yk03",
+      "channelDetValue": "6.108523693076268362830116",
+      "detResidual80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "wedderburn_E32_branching_trace_split",
+      "bean": "qou-nzi9",
+      "deltaTarget": "7/9",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "iteratedTowerTrace_markov_step",
+      "bean": "qou-r765",
+      "iteratedTraceValue": "0.2725535797440158719880933",
+      "markovResidual80dps": "0.0",
+      "passed": true
+    },
+    {
+      "name": "traceBilinearForm_symmetric_and_associative",
+      "bean": "qou-t2ot",
+      "pairingAB": "143/6",
+      "triplePairingABC": "3055/72",
+      "passed": true
+    }
+  ]
+}
