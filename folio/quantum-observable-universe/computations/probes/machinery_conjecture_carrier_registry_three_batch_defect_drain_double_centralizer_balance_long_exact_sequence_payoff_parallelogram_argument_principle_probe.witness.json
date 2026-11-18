@@ -1,0 +1,61 @@
+{
+  "probe": "machinery_conjecture_carrier_registry_three_batch_defect_drain_double_centralizer_balance_long_exact_sequence_payoff_parallelogram_argument_principle_probe",
+  "beans": [
+    "qou-vkv7",
+    "qou-mybv",
+    "qou-us0a",
+    "qou-jbfx",
+    "qou-z4jb"
+  ],
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/machinery_conjecture_carrier_registry_three_batch_defect_drain_double_centralizer_balance_long_exact_sequence_payoff_parallelogram_argument_principle_probe.py",
+  "scriptCommitSha": "a9f0f1224d140032ab84905edb79a825b0ec07fe",
+  "scriptHash": "246e01bfc6cfb7c24c228c7d981e3842041b0242b2eaa9ae34eaa9921308fada",
+  "scriptSha256": "246e01bfc6cfb7c24c228c7d981e3842041b0242b2eaa9ae34eaa9921308fada",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "machineryConjectureCarrierRegistry": {
+      "bean": "qou-vkv7",
+      "machineryCarrierTotal": "15.0",
+      "machineryRemainingFlagged": "15.0",
+      "machineryFlaggedEnergySq": "225.0",
+      "passed": true
+    },
+    "threeBatchDefectDrain": {
+      "bean": "qou-mybv",
+      "threeBatchTargetTotal": "159.0",
+      "threeBatchDrainedTotal": "159.0",
+      "threeBatchUndrainedResidual": "0.0",
+      "threeBatchUndrainedSq": "0.0",
+      "passed": true
+    },
+    "doubleCentralizerBalance": {
+      "bean": "qou-us0a",
+      "braidAlgebraImageDim": "6.0",
+      "quantumGroupCentralizerDim": "6.0",
+      "doubleCentralizerSurjectivityDiscrepancy": "0.0",
+      "doubleCentralizerGapEnergySq": "0.0",
+      "passed": true
+    },
+    "longExactSequencePayoff": {
+      "bean": "qou-jbfx",
+      "groebnerPageCollapseResidual": "0.0",
+      "fibrationDimensionResidual": "0.0",
+      "lesPayoffResidualSq": "0.0",
+      "seidelTriangleTerms": "3.0",
+      "passed": true
+    },
+    "parallelogramArgumentPrinciple": {
+      "bean": "qou-z4jb",
+      "parallelogramBoundaryWinding": "0.0",
+      "interiorDivisorDegree": "0.0",
+      "argumentPrincipleDiscrepancy": "0.0",
+      "argumentPrincipleDiscrepancySq": "0.0",
+      "passed": true
+    },
+    "fiveTaskJointSynthesis": {
+      "fiveTaskJointEnergySq": "225.0",
+      "passed": true
+    }
+  }
+}
