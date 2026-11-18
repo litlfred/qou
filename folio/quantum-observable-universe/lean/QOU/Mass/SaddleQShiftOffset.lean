@@ -62,4 +62,9 @@ offset vanishes: the saddle configuration is centred. -/
 theorem hbarQ_one {K : Type*} [Field K] : hbarQ (1 : K) = 0 := by
   unfold hbarQ; simp
 
+/-- Additive residual form of the offset identity: `(w / q - w) + hbarQ q * w = 0`. -/
+theorem saddle_offset_add_eq_zero {K : Type*} [Field K] (q w : K) (hq : q ≠ 0) :
+    (w / q - w) + hbarQ q * w = 0 := by
+  rw [saddle_offset_eq q w hq, neg_mul, neg_add_cancel]
+
 end QOU.Mass

@@ -135,4 +135,10 @@ theorem complete_minimal_clasp_per_nucleon (E : Finset C) (isInter : C → Prop)
   have hA0 : (A : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr (by omega)
   field_simp
 
+/-- Sum of `binding` and `mutualEnergy` vanishes identically. -/
+theorem binding_add_mutualEnergy_eq_zero (E : Finset C) (energy : C → ℝ) (isInter : C → Prop)
+    [DecidablePred isInter] :
+    binding E energy isInter + mutualEnergy E energy isInter = 0 := by
+  rw [binding_eq_neg_mutualEnergy E energy isInter, neg_add_cancel]
+
 end QOU.Mass.SelfMutualPartition

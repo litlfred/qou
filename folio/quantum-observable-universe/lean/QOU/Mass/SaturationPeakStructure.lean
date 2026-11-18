@@ -124,4 +124,9 @@ theorem peak_is_not_bulk (aV aS aC uPeak : ℝ) (haS : 0 < aS) (haC : 0 ≤ aC) 
       ∧ aV - perNucleon aV aS aC uPeak = aS / uPeak + aC * uPeak ^ 2 :=
   ⟨perNucleon_lt_volume aV aS aC uPeak haS haC hu, volume_gap aV aS aC uPeak⟩
 
+/-- Positivity of the gap `aV - perNucleon aV aS aC u` for `0 < aS`, `0 ≤ aC`, and `0 < u`. -/
+theorem sub_perNucleon_pos (aV aS aC u : ℝ) (haS : 0 < aS) (haC : 0 ≤ aC) (hu : 0 < u) :
+    0 < aV - perNucleon aV aS aC u :=
+  sub_pos.mpr (perNucleon_lt_volume aV aS aC u haS haC hu)
+
 end QOU.Mass.SaturationPeakStructure

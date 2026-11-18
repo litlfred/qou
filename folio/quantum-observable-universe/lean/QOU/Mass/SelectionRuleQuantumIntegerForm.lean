@@ -72,4 +72,9 @@ theorem tau_anchors_assemble_quantum_integer (q : ℝ) (hq : 0 < q) :
   field_simp
   ring
 
+/-- Vanishing difference form of `tau_from_quantum_integer_anchors`. -/
+theorem tau_from_quantum_integer_anchors_sub_eq_zero (b : ℝ) (hb : b + 2 ≠ 0) :
+    (1 + (3 * b ^ 2 - 2) / 4) / ((b + 2) / 3) - 3 * (3 * b ^ 2 + 2) / (4 * (b + 2)) = 0 := by
+  rw [tau_from_quantum_integer_anchors b hb, sub_self]
+
 end QOU.Mass

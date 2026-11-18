@@ -105,4 +105,9 @@ theorem ratios_are_scale_free (γ f₂ f₃ f₄ : R) :
   · unfold b3Contrib; ring
   · unfold b4Contrib; ring
 
+/-- Sum of the third and fourth contributions for the complete-graph values `1, 3, 6` vanishes. -/
+theorem complete_b3_add_b4_eq_zero :
+    b3Contrib (1 : R) 3 + b4Contrib (1 : R) 3 6 = 0 := by
+  rw [complete_b3_eq_zero, complete_b4_eq_zero, add_zero]
+
 end QOU.Mass.SaturationInvisibleToCumulants
