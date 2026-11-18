@@ -18,7 +18,7 @@
  * Like `run-validate-references.ts`, the registry must be configured BEFORE the
  * platform module is imported: `export-bibtex.ts` does its work at module scope.
  */
-import { mkdtempSync, readFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { configureReferenceRegistry } from "../folio-assistant/cat-harness-tools/pipeline/references-registry-di";
@@ -34,8 +34,10 @@ try {
     referenceMap: bib.referenceMap,
     CSLEntrySchema: bib.CSLEntrySchema,
   });
-  process.argv.push("--out", out);
-  await import("../folio-assistant/cat-harness-tools/pipeline/export-bibtex");
+  // The platform module runs its CLI only under `import.meta.main`, so an
+  // import writes nothing (it used to run at module scope). Call the export.
+  const { buildBibtex } = await import("../folio-assistant/cat-harness-tools/pipeline/export-bibtex");
+  writeFileSync(out, buildBibtex(bib.references, ROOT));
 } catch (e) {
   console.error(`? could not regenerate references.bib: ${(e as Error).message}`);
   process.exit(2);
