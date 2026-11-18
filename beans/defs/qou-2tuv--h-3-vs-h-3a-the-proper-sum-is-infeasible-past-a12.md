@@ -1683,3 +1683,11 @@ Tracked under carrier M7 (qou-g16t) of epic `qou-d8c7` "Mass endomorphism" (issu
 ## 2026-11-17 sibling sweep
 H3/H3A layer straddle in computations/mass_formula_6term.py (two inputs on different layers in one quantity). Left: move the whole quantity to one layer, re-run the producer.
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+
+## 2026-11-18 measurement (session_0151ZZJxLhUX4zjeYHxiouec), measure only
+Re-ran `computations/pyhecke_h3_vs_h3a_impact_comparison.py` on main 313af682e (A <= 4; ⁶Li at n=18 was stopped because its seminormal cache filled the disk).
+- max|ΔV̂_full| = 0.4088294 (37.85 %) for p, D, T, ³He and ⁴He, the same figure each time. The neutron gives 0.3894355 (41.38 %).
+- **The gap is already present at A = 1, where H_3 = H_{3A}.** So this script does NOT measure the H_3-vs-H_{3A} straddle. It measures a difference of definition between `pyhecke.atom.atom_per_generator_volumes` and `mass_at_3A_proper.per_generator_V_hat_3A`. At A=1 the legacy proton generator 0 gives full = 1.0802 and the proper one gives 0.6714.
+- The legacy weights are `pyhecke.gram` W_SYM = W_ALT = 0.165461, W_STD = 0.669077. These are not the convention-D Markov weights y_λ·dim_λ = (0.5054, 0.4946, 0). The alternating block carries weight 0.165 where D gives it 0. The proper arm defaults to `normalized_plancherel`. Neither arm uses the D Markov trace.
+- Consequence: the "straddle" inside `mass_formula_6term.py` (terms 2+3 legacy, term 4 σ_3A) cannot be priced by this script. Pricing it needs the two arms on one weight family first. Whether that family is D or Plancherel is the owner's call (`y_lambda_conflation_audit`, qou-za3q). Overlaps PR #8215. No code changed.
