@@ -399,3 +399,11 @@ Neutron expansion in `signed_candidates_probe.py` was wrong (uu→dd instead of 
 ## 2026-11-17 sibling sweep
 Route-1 sign-erasure fix is on PR #7603 / #7893 (open). Left: review and merge on owner tap; re-run the Route-1 witness after merge.
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+
+## 2026-11-18 correction to the 2026-11-17 sweep line (session_0151ZZJxLhUX4zjeYHxiouec)
+The line "Route-1 sign-erasure fix is on PR #7603 / #7893 (open)" was wrong on three counts:
+- **#7603 is not a sign-erasure fix.** It is the Lean result χ_(2,1)(Δ_S) = 0 (`QBeta/DeltaSTwoRowCharacterVanishes.lean`, bean qou-cds1). It is unrelated to this bean.
+- **#7893 is merged, not open** (2026-11-15). It ported #7603's Lean to main, where the file now lives. #7603 itself is still open and fully superseded.
+- **No route-1 sign-erasure fix exists anywhere.** On main 313af682e, `computations/probes/ohara_link_energy/braid_topology.py` still takes "positive letters, verbatim" from `qbeta_candidate_closures_are_links_probe.py`. Only route 2 was redone on signed candidates (`bring_route2/signed_candidates_probe.py`, PR #7695).
+So route 1's seen-candidate results stand withdrawn, per the 2026-10-11 correction. Redoing them on the signed nucleon runs into the same B4 problem: the signed nucleon is a sum of four braids, and nothing defines an energy for a sum. Nothing changed.
