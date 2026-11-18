@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "declaration_reference_partition_conjugation_real_part_invariance_polynomial_leading_degree_genus_opaque_axiom_surface_anchored_precedence_rank_probe",
+  "beans": [
+    "qou-2u26",
+    "qou-42ls",
+    "qou-5po6",
+    "qou-8s7o",
+    "qou-aqyf"
+  ],
+  "leanModule": "QOU.Foundations.DeclarationReferencePartitionConjugationRealPartInvariancePolynomialLeadingDegreeGenusOpaqueAxiomSurfaceAnchoredPrecedenceRank",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/declaration_reference_partition_conjugation_real_part_invariance_polynomial_leading_degree_genus_opaque_axiom_surface_anchored_precedence_rank_probe.py",
+  "scriptHash": "fb95ce43085cae00b6b695e7f00260a609ddb5cdbc4c508bd1386b2116d0ed89",
+  "scriptSha256": "fb95ce43085cae00b6b695e7f00260a609ddb5cdbc4c508bd1386b2116d0ed89",
+  "scriptCommitSha": "2d249f2cbef505d7e8a7b5eef2bf7f229d3154dd",
+  "generatedAt": "2026-11-18T11:32:24.018676+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-2u26",
+      "theorem": "contentBlock_ref_partition_identity",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-42ls",
+      "theorem": "conjugation_antisymmetry_and_real_invariance",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-5po6",
+      "theorem": "degree_eq_genus_unit_leading_and_spin_multiplicity",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-8s7o",
+      "theorem": "liveAxiom_partition_and_rebuilt_cone_phantom_elimination",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-aqyf",
+      "theorem": "anchored_braid_descent_and_free_tag_cancellation",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
