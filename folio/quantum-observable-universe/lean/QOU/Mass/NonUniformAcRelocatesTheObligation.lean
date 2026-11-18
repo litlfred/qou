@@ -113,4 +113,11 @@ theorem mirrorSplit_eq_zero_of_equal_weight (C m φp φn : R) (a : ι → R)
     fhBoundNonuniform C m a φp φn P - fhBoundNonuniform C m a φp φn Q = 0 := by
   rw [mirrorSplit_nonuniform_eq, hw, sub_self, mul_zero, mul_zero]
 
+/-- **Self-difference specialization of `mirrorSplit_eq_zero_of_equal_weight` (`qou-8jfh`).**
+For any finite set `P : Finset ι`,
+`fhBoundNonuniform C m a φp φn P - fhBoundNonuniform C m a φp φn P = 0`. -/
+theorem mirrorSplit_self_eq_zero (C m φp φn : R) (a : ι → R) (P : Finset ι) :
+    fhBoundNonuniform C m a φp φn P - fhBoundNonuniform C m a φp φn P = 0 :=
+  mirrorSplit_eq_zero_of_equal_weight C m φp φn a P P rfl
+
 end QOU.Mass.NonUniformAcRelocatesTheObligation

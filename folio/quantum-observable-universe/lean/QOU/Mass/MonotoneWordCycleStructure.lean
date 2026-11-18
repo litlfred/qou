@@ -168,4 +168,10 @@ theorem allOdd_posAfter (i N : ℕ) (hiN : i + 1 ≤ N) :
     posAfter (fun _ => 1) N i = i + 1 :=
   posAfter_of_odd _ (by norm_num) hiN
 
+/-- **Vanishing difference form of `allEven_posAfter` (`qou-87ms`).**
+For `i + 1 ≤ N`, `posAfter (fun _ => 2) N i - i = 0`. -/
+theorem allEven_posAfter_sub_eq_zero (i N : ℕ) (hiN : i + 1 ≤ N) :
+    posAfter (fun _ => 2) N i - i = 0 := by
+  rw [allEven_posAfter i N hiN, Nat.sub_self]
+
 end QOU.Mass.MonotoneWordCycleStructure

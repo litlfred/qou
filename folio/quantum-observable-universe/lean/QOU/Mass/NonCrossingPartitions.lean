@@ -192,4 +192,10 @@ theorem card_ncpart_eq_catalan :
   · rw [h3]; exact card_ncpart_three
   · rw [h4]; exact card_ncpart_four
 
+/-- **Sum of `Fintype.card (NCPart 3)` and `Fintype.card (NCPart 4)` (`qou-8foz`).**
+`Fintype.card (NCPart 3) + Fintype.card (NCPart 4) = 19`. -/
+theorem card_ncpart_three_add_four :
+    Fintype.card (NCPart 3) + Fintype.card (NCPart 4) = 19 := by
+  rw [card_ncpart_three, card_ncpart_four]
+
 end QOU.Mass

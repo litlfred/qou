@@ -63,4 +63,11 @@ inequality is genuinely one-sided — cancellation is real, and the multiplicity
 channel is an upper bound on what many summands can supply, never a value. -/
 example : |((1 : ℤ) + (-1))| < ((2 : ℕ) : ℤ) * 1 := by norm_num
 
+/-- **Non-negative difference form of `abs_sum_le_card_mul_dominant` (`qou-8fl1`).**
+If `∀ i ∈ s, |a i| ≤ |a i₀|`, then `0 ≤ (s.card : R) * |a i₀| - |∑ i ∈ s, a i|`. -/
+theorem sub_nonneg_of_dominant {ι : Type*} (s : Finset ι) (a : ι → R)
+    (i₀ : ι) (hdom : ∀ i ∈ s, |a i| ≤ |a i₀|) :
+    0 ≤ (s.card : R) * |a i₀| - |∑ i ∈ s, a i| :=
+  sub_nonneg.mpr (abs_sum_le_card_mul_dominant s a i₀ hdom)
+
 end QOU.Mass.MultiplicityCountingBound
