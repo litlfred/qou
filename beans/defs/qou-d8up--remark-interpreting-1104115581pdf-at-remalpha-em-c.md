@@ -1,7 +1,7 @@
 ---
 # qou-d8up
 title: Remark interpreting 1104115581.pdf at rem:alpha-em-categorical-trace
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

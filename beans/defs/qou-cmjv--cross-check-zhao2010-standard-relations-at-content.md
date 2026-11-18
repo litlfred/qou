@@ -1,7 +1,7 @@
 ---
 # qou-cmjv
 title: Cross-check [zhao2010-standard-relations] at folio/quantum-observable-universe/mass-theory/cl3-…
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

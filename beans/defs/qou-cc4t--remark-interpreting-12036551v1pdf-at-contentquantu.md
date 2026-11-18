@@ -1,7 +1,7 @@
 ---
 # qou-cc4t
 title: Remark interpreting 1203.6551v1.pdf at folio/quantum-observable-universe/information-theory/qua…
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
