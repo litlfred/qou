@@ -1,7 +1,7 @@
 ---
 # qou-umev
 title: prop:unit-modulus-eigenvalue is false in both clauses; its proof derives -2 from a theorem that gives +1.994
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

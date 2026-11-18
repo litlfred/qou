@@ -1,7 +1,7 @@
 ---
 # qou-tvrx
 title: 'GAP: BW table fixes the H/V axes but not the dictionary lambda in [phi1 : lambda phi0]'
-status: todo
+status: in-progress
 type: task
 tags:
     - quark-state

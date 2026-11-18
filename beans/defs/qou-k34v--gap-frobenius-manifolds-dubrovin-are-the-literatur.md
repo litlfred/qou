@@ -1,7 +1,7 @@
 ---
 # qou-k34v
 title: 'GAP: Frobenius manifolds (Dubrovin) are the literature for the metric-from-pairing step and are uncited'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

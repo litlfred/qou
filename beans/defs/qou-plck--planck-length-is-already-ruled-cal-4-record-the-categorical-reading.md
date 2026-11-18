@@ -1,7 +1,7 @@
 ---
 # qou-plck
 title: 'Planck length: already ruled a CAL-4 violation in the corpus — the live reading is categorical, not metric'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

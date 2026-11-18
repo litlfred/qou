@@ -1,7 +1,7 @@
 ---
 # qou-ogj5
 title: 'Assess: is the quantum-gravity claim GR or analogue/acoustic gravity'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
