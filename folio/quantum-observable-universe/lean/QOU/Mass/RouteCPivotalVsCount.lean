@@ -104,4 +104,9 @@ theorem ordinary_partial_trace_scalar_iff (q : K) (hq : q ≠ 0) :
         _ = q := by field_simp
     rw [hinv]; ring
 
+/-- At `q = 1`, the difference between the two parameters vanishes. -/
+theorem zJ_sub_zD_at_one (h2 : (2 : K) ≠ 0) (h4 : (4 : K) ≠ 0) :
+    zJ (1 : K) - zD (1 : K) = 0 := by
+  rw [zJ_one h2 h4, zD_one, sub_self]
+
 end QOU.Mass.RouteCPivotalVsCount

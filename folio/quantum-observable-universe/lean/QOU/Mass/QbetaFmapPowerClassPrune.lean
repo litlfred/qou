@@ -152,4 +152,11 @@ theorem exp_pow_even_not_isZeta4Faithful {m : ℕ} (hm : Even m) (_hm0 : 0 < m) 
   rw [Complex.exp_zero, one_pow] at hzero
   exact one_ne_zero hzero
 
+/-- Specialisation to the exponential eigenfunction: if an even power `(Complex.exp ·) ^ m`
+    satisfies `IsZeta4Faithful`, then `(Complex.exp z) ^ m = 0` at every `z : ℂ`. -/
+theorem exp_pow_even_isZeta4Faithful_apply_eq_zero {m : ℕ} (hm : Even m)
+    (hfaith : IsZeta4Faithful (fun z => (Complex.exp z) ^ m)) (z : ℂ) :
+    (Complex.exp z) ^ m = 0 :=
+  pow_even_isZeta4Faithful_eq_zero exp_isEigen hm hfaith z
+
 end QOU.Mass.QbetaFmapPowerClassPrune

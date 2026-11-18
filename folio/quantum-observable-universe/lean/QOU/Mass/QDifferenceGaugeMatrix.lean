@@ -119,4 +119,9 @@ theorem det_charMatrix_conj (X : K) (A F : Matrix n n K) (hF : IsUnit F.det) :
   rw [hconj, Matrix.det_mul, Matrix.det_mul, Matrix.det_nonsing_inv,
     mul_right_comm, Ring.mul_inverse_cancel _ hF, one_mul]
 
+/-- Vanishing difference form of conjugation invariance for the characteristic determinant. -/
+theorem det_charMatrix_conj_sub_eq_zero (X : K) (A F : Matrix n n K) (hF : IsUnit F.det) :
+    (X • (1 : Matrix n n K) - F * A * F⁻¹).det - (X • (1 : Matrix n n K) - A).det = 0 := by
+  rw [det_charMatrix_conj X A F hF, sub_self]
+
 end QOU.Mass.QDifferenceGaugeMatrix

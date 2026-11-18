@@ -87,4 +87,9 @@ theorem zSL3_ne_zD (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) (h3 : q ^ 4 + q
   have hq3 : q ^ 3 = 0 := by linear_combination -h
   exact pow_ne_zero 3 hq hq3
 
+/-- Vanishing difference form of the equality `zSL2 q = zD q`. -/
+theorem zSL2_sub_zD_eq_zero (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) :
+    zSL2 q - zD q = 0 := by
+  rw [zSL2_eq_zD q hq h2, sub_self]
+
 end QOU.Mass.SL2QuantumTraceIsZD

@@ -140,4 +140,9 @@ theorem bar_distinguishes_at_two (q : R) (hq : q ≠ 0) :
 -- #print axioms qIntPoly_bar_even_forces_degenerate
 -- #print axioms bar_distinguishes_at_two
 
+/-- Vanishing difference form of bar invariance for balanced quantum integers. -/
+theorem qIntBal_bar_sub_eq_zero (q : R) (n : ℕ) :
+    qIntBal q⁻¹ n - qIntBal q n = 0 := by
+  rw [qIntBal_bar_even q n, sub_self]
+
 end QOU.Mass.QIntegerBarParity
