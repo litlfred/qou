@@ -1,0 +1,124 @@
+{
+  "probe": "zeta4_cl3orbit_clambda_colsuper_coloredjones_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/zeta4_cl3orbit_clambda_colsuper_coloredjones_probe.py",
+  "scriptCommitSha": "6f7161bc316dee1b43ad07f8decd793f2cbb3e1b",
+  "scriptHash": "ad0bed91e75147f1301da97709e876a0ca535f737e7ba09b3505b7f13bbe4bc7",
+  "scriptSha256": "ad0bed91e75147f1301da97709e876a0ca535f737e7ba09b3505b7f13bbe4bc7",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "theorem": "cosh_zeta4_rotation_sub_eq_zero",
+      "bean": "qou-f8rr",
+      "passed": true,
+      "samples": [
+        {
+          "z": "3/5+i*2/7",
+          "residual_abs": "5.27109897161526161217428702564e-82",
+          "passed": true
+        },
+        {
+          "z": "11/9+i*-4/5",
+          "residual_abs": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "orbit_sum_identity_add_eq_zero",
+      "bean": "qou-fjcd",
+      "passed": true,
+      "residual": "0.0"
+    },
+    {
+      "theorem": "two_mul_card_rowClass_sub_dimHLF_eq_zero",
+      "bean": "qou-fs4r",
+      "passed": true,
+      "samples": [
+        {
+          "shape": "[2,1]",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "shape": "[3,1,1]",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "shape": "[3,2,1]",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "shape": "[4,1,1,1]",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "labelAt_col_ne",
+      "bean": "qou-geqa",
+      "passed": true,
+      "samples": [
+        {
+          "label_i": "0",
+          "label_i1": "1",
+          "diff": "1.0",
+          "passed": true
+        },
+        {
+          "label_i": "1",
+          "label_i1": "2",
+          "diff": "1.0",
+          "passed": true
+        },
+        {
+          "label_i": "2",
+          "label_i1": "3",
+          "diff": "1.0",
+          "passed": true
+        },
+        {
+          "label_i": "3",
+          "label_i1": "4",
+          "diff": "1.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "trace_recurrence_of_relation_sub_eq_zero",
+      "bean": "qou-gjkv",
+      "passed": true,
+      "samples": [
+        {
+          "n": "1",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "3",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "4",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "5",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
