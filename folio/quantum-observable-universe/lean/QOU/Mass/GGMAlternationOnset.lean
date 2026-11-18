@@ -120,4 +120,11 @@ theorem ggm_full_alternation_impossible_of_lt_two (q : K) (hq : q < 2) (y : ℕ 
   rw [zero_add, pow_one] at this
   exact absurd hq (not_lt.mpr this)
 
+
+/-- **Level-zero specialization of `ggm_no_double_flip` (`qou-0exp`).**
+For `q ^ (0 + 1) < 2` and `a * b < 0`, `0 < step (ggmCoeff q 0) a b * b`. -/
+theorem ggm_no_double_flip_zero (q : K) (hq : q ^ (0 + 1) < 2) (a b : K)
+    (hab : a * b < 0) : 0 < step (ggmCoeff q 0) a b * b :=
+  ggm_no_double_flip q 0 hq a b hab
+
 end QOU.Mass.GGMAlternationOnset

@@ -95,4 +95,12 @@ theorem not_isRoot_of_irreducible_cubic
   exact no_root_of_irreducible_cubic hp hp3 hg0 hg2 hga
     (by simpa [aeval_def, eval_map] using hroot)
 
+
+/-- **Degree-three specialization of `degree_minpoly_eq_of_irreducible` (`qou-2szo`).**
+For an irreducible cubic `p : F[X]` (`p.degree = 3`) and root `aeval a p = 0`, `(minpoly F a).degree = 3`. -/
+theorem degree_minpoly_eq_three_of_irreducible_cubic {p : F[X]} (hp : Irreducible p)
+    (hp3 : p.degree = 3) {a : L} (ha : aeval a p = 0) :
+    (minpoly F a).degree = 3 := by
+  rw [degree_minpoly_eq_of_irreducible hp ha, hp3]
+
 end QOU.Mass.IrreducibleCubicNoQuadraticRoot

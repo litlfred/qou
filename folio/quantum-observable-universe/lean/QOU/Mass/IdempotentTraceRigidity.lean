@@ -118,4 +118,12 @@ theorem rank_eq_of_isPreconnected {n m : Type*} [Fintype n] [DecidableEq n]
 
 end Topology
 
+
+/-- **Vanishing difference between trace and rank for an idempotent matrix (`qou-16yn`).**
+Over any field `K`, an idempotent matrix `P` satisfies `P.trace - (P.rank : K) = 0`. -/
+theorem trace_sub_rank_eq_zero {K : Type*} [Field K] {n : Type*} [Fintype n] [DecidableEq n]
+    (P : Matrix n n K) (hP : IsIdempotentElem P) :
+    P.trace - (P.rank : K) = 0 :=
+  sub_eq_zero.mpr (trace_eq_rank P hP)
+
 end QOU.Mass.IdempotentTraceRigidity

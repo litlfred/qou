@@ -134,4 +134,17 @@ theorem markov_factorising_order_blind (τ : A → R) (S : Set A) (b : A) (z : R
 
 end Markov
 
+
+section ZeroFree
+
+variable {R : Type*} [CommRing R]
+
+/-- **Zero-baseline specialization of `diff_sub_dir_eq_free` (`qou-03fc`).**
+When the free baseline `Φfree = 0`, the difference reading minus the direct reading vanishes. -/
+theorem diff_sub_dir_zero_free (me Φatom : R) :
+    me * ((0 : R) - Φatom) - (-me * Φatom) = 0 := by
+  rw [diff_sub_dir_eq_free me 0 Φatom, mul_zero]
+
+end ZeroFree
+
 end QOU.Mass.DeltaLambdaReadingAndExchange

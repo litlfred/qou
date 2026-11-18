@@ -152,4 +152,11 @@ theorem selected_bond_unbinds_of_ratio_gt_one {α μ : ℝ} (hα : 0 < α) (hμ 
   refine ⟨(unbound_iff_ratio_gt_one hα (by linarith)).mpr hμ, fun c => ?_⟩
   exact obstruction_conclusion_false_of_ratio_gt_one (interfaceBond_gammaGamma 3) hμ
 
+
+/-- **Zero-power specialization of `interfaceBond_ne_singleCrossing` (`qou-0gqn`).**
+The empty interface bond `interfaceBond 0` is not a single crossing `[c]`. -/
+theorem interfaceBond_ne_singleCrossing_zero (c : Crossing) :
+    interfaceBond 0 ≠ [c] :=
+  interfaceBond_ne_singleCrossing 0 c
+
 end QOU.Mass.GammaGammaEscapesSingleCrossing
