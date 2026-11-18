@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/104171-rmi-1356/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Handlebody Hecke and Ariki–Koike algebras",
+  "pageStart": 43,
+  "pageEnd": 49,
+  "contains": [
+    "library/104171-rmi-1356/blocks/prose-sec-005",
+    "library/104171-rmi-1356/blocks/def-sec-005-01",
+    "library/104171-rmi-1356/blocks/rem-sec-005-02",
+    "library/104171-rmi-1356/blocks/prop-sec-005-03",
+    "library/104171-rmi-1356/blocks/cor-sec-005-04",
+    "library/104171-rmi-1356/blocks/rem-sec-005-05",
+    "library/104171-rmi-1356/blocks/ex-sec-005-06",
+    "library/104171-rmi-1356/blocks/prop-sec-005-07",
+    "library/104171-rmi-1356/blocks/thm-sec-005-08",
+    "library/104171-rmi-1356/blocks/ex-sec-005-09",
+    "library/104171-rmi-1356/blocks/lem-sec-005-10",
+    "library/104171-rmi-1356/blocks/lem-sec-005-11",
+    "library/104171-rmi-1356/blocks/rem-sec-005-12",
+    "library/104171-rmi-1356/blocks/lem-sec-005-13",
+    "library/104171-rmi-1356/blocks/prop-sec-005-14",
+    "library/104171-rmi-1356/blocks/prop-sec-005-15",
+    "library/104171-rmi-1356/blocks/rem-sec-005-16",
+    "library/104171-rmi-1356/blocks/prop-sec-005-17",
+    "library/104171-rmi-1356/blocks/thm-sec-005-18",
+    "library/104171-rmi-1356/blocks/ex-sec-005-19"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1356/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1356/manifest.jsonld",
+  "provenance": "ingested"
+}

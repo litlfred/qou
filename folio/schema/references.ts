@@ -2810,6 +2810,22 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "pati2017" },
   { id: "rosso1988" },
   { id: "milnor1950" },
+  // 2026-11-18: owner uploads Batch A ingested into library/ (commit 521b87dca7, epic qou-s4ws).
+  { id: "morton-2001-skein-murphy" },
+  { id: "morton-lukac-2001" },
+  { id: "lukac-2001" },
+  { id: "hadji-morton-2009" },
+  { id: "kauffman-lomonaco-2007" },
+  { id: "geer-patureau-mirand-turaev-2013" },
+  { id: "tubbenhauer-vaz-2023" },
+  { id: "dudek-edwards-thomas-2012" },
+  { id: "horsley-et-al-2012-octet-baryon" },
+  { id: "walker-loud-carlson-miller-2012" },
+  { id: "borsanyi-et-al-2015" },
+  { id: "gasser-hoferichter-leutwyler-rusetsky-2020" },
+  { id: "horsley-et-al-2016-qcd-qed" },
+  { id: "giusti-et-al-2017" },
+  { id: "bakshi-gupta-2020" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-rmi-1356/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Handlebody diagram algebras",
+  "contains": [
+    "library/104171-rmi-1356/sections/sec-front-matter",
+    "library/104171-rmi-1356/sections/sec-000",
+    "library/104171-rmi-1356/sections/sec-001",
+    "library/104171-rmi-1356/sections/sec-002",
+    "library/104171-rmi-1356/sections/sec-003",
+    "library/104171-rmi-1356/sections/sec-004",
+    "library/104171-rmi-1356/sections/sec-005",
+    "library/104171-rmi-1356/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "104171-rmi-1356",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Handlebody diagram algebras",
+      "basis": "Printed title on page 1 (Tubbenhauer and Vaz, Rev. Mat. Iberoam. 39 (2023), no. 3, 845-896); the extracted title was the DOI and copyright header",
+      "extracted_title": "DOI 10.4171/RMI/1356 © 2022 Real Sociedad Matemática Española",
+      "corrected_on": "2026-11-18",
+      "extracted": "Handlebody diagram algebras"
+    },
+    "source_file": "10.4171-rmi-1356.pdf",
+    "source_sha256": "148119374f06be9f04a240948f25978efaf88dd8f401c149779ab51d3ecdfd68",
+    "pages": 52,
+    "arxiv": null,
+    "doi": "10.4171/RMI/1356",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,1 @@
+As shown in [4], the term mdisp γ is equally sensitive, but the sum of the two contributions is nearly independent of Λ, because the Cottingham formula only contains the very weak logarithmic divergence that is related to the electromagnetic renormalization of the quark masses mu and md.
