@@ -59,4 +59,9 @@ theorem neg_inv_eigen_ne_one {q : K} (hq : 1 < q) {k : ℕ} (hk : 1 ≤ k) :
   rw [← habs] at hlt
   exact lt_irrefl _ hlt
 
+/-- Subtracting one from a positive power of a strictly-greater-than-one element yields a nonzero difference (`qou-ddo8`). -/
+theorem finite_order_eigen_sub_one_ne_zero {l : K} (hl : 1 < l) {k : ℕ} (hk : 1 ≤ k) :
+    l ^ k - 1 ≠ 0 :=
+  sub_ne_zero.mpr (finite_order_eigen_ne_gt_one hl hk)
+
 end QOU.Mass.UntwistedMonodromyPrune

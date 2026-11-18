@@ -97,4 +97,9 @@ theorem coeffs_inconsistent_of_ne (q b₂ b₃ : R) (hq : q ≠ 0) (hqq : q - q�
   rintro ⟨h₂, h₃⟩
   exact hne (beta3_of_beta2 q b₂ b₃ hq hqq h₂ h₃)
 
+/-- Subtracting the Laurent expansion from the third balanced quotient cancels to zero (`qou-dld9`). -/
+theorem qIntBal_three_sub_eq_zero (q : R) (hq : q ≠ 0) (hqq : q - q⁻¹ ≠ 0) :
+    qIntBal q 3 - (q ^ 2 + 1 + (q⁻¹) ^ 2) = 0 := by
+  rw [qIntBal_three_eq q hq hqq, sub_self]
+
 end QOU.Mass.WedderburnMassFormulaCoefficients

@@ -219,4 +219,9 @@ theorem no_superlinear_selection_wStd (M : ℝ) (kA : ℕ → ℕ) (A₀ : ℕ)
     (hext : ∀ A, A₀ ≤ A → wStd (kA A) ≤ M * (A : ℝ)) : False :=
   QOU.Mass.LevelSelection.no_superlinear_selection wStd (Real.sqrt 2) (1/30) 3 M kA A₀ hsuper hext
 
+/-- Subtracting the geometric lower bound from the standard sequence value at index at least three yields a nonnegative difference (`qou-dke6`). -/
+theorem wStd_geometric_sub_nonneg (k : ℕ) (hk : 3 ≤ k) :
+    0 ≤ wStd k - (1 / 30 : ℝ) * Real.sqrt 2 ^ k :=
+  sub_nonneg.mpr (wStd_geometric_from_three k hk)
+
 end QOU.Mass.WStd

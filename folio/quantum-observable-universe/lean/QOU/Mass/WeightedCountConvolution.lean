@@ -55,4 +55,9 @@ theorem weighted_pow (P : K[X]) (n : ℕ) (x : K) (m : ℕ) :
   | succ m ih =>
     rw [pow_succ, Nat.succ_mul, weighted_mul, ih, pow_succ]
 
+/-- Subtracting the product of weighted evaluations from the weighted evaluation of the product polynomial cancels to zero (`qou-drag`). -/
+theorem weighted_mul_sub_eq_zero (P Q : K[X]) (n₁ n₂ : ℕ) (x : K) :
+    weighted (P * Q) (n₁ + n₂) x - weighted P n₁ x * weighted Q n₂ x = 0 := by
+  rw [weighted_mul P n₁ Q n₂ x, sub_self]
+
 end QOU.Mass.WeightedCountConvolution

@@ -274,4 +274,10 @@ theorem no_uniform_bond_model_reproduces_b3 (n3 : ℕ) (h : n3 ≤ 3) :
   rw [heq] at hle
   linarith
 
+/-- Adding the two-edge value to the three-edge additive discrepancy cancels to zero (`qou-dgkf`). -/
+omit [CharZero R] in
+theorem chainAdditive_b3_add_b2_eq_zero (b : R) :
+    (chainBinding b 3 - 3 * chainBinding b 2) + chainBinding b 2 = 0 := by
+  rw [chainAdditive_b3_eq_neg_b2 b, neg_add_cancel]
+
 end QOU.Mass.UrsellChainMismatch
