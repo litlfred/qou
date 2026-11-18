@@ -1,7 +1,7 @@
 ---
 # qou-jgg0
 title: 'qou-atbr: def:atomic-braid and the mass law''s atomic braid are DIFFERENT objects sharing a name and a symbol'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

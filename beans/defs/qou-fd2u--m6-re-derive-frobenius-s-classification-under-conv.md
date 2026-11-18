@@ -1,7 +1,7 @@
 ---
 # qou-fd2u
 title: 'M6: re-derive frobenius-s classification under convention D'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:52:03Z

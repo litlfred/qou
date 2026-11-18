@@ -1,7 +1,7 @@
 ---
 # qou-j11h
 title: 'prop:mass-endomorphism-tower: tr_M vs tr_reg, and classical vs q weights (from #2481)'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-11-17T23:08:24Z
 updated_at: 2026-11-17T23:08:24Z

@@ -1,7 +1,7 @@
 ---
 # qou-nzp3
 title: 'GAP: convention-D closed form for the constit per-Z step tr_M(proton)'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-10-10T14:13:02Z
 updated_at: 2026-10-10T14:13:02Z

@@ -1,7 +1,7 @@
 ---
 # qou-y6h7
 title: 'LP degenerates under convention D: dual runs to solver bound because det G = 0 -- re-pose on H_n/rad = TL_n'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
