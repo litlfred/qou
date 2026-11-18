@@ -1,0 +1,51 @@
+{
+  "probe": "round76_quadratic_gravity_normal_surface_magnus_probe",
+  "beans": [
+    "qou-ztha",
+    "qou-zyr2",
+    "qou-09yi",
+    "qou-0a0n",
+    "qou-0irt"
+  ],
+  "scriptPath": "computations/probes/round76_quadratic_gravity_normal_surface_magnus_probe.py",
+  "scriptCommitSha": "5b6ec53427ec960c93fdf23551abd14de8f5eb68",
+  "scriptHash": "c851e75af9fd5e71a2bc186eebda3bdb9bfef638e7a9efd085efba0ff4a4c32b",
+  "scriptSha256": "c851e75af9fd5e71a2bc186eebda3bdb9bfef638e7a9efd085efba0ff4a4c32b",
+  "mpmathDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-ztha",
+      "citation": "liu-quintin-afshordi",
+      "description": "Quadratic-gravity action density vs Einstein-Hilbert coupling difference",
+      "passed": true
+    },
+    {
+      "bean": "qou-zyr2",
+      "citation": "garoufalidis-hodgson-hoffman-rubinstein2016",
+      "description": "3D-index normal-surface Haken sum additivity and non-negative q-power series",
+      "figureEight3dIndexTruncAt0p1": "0.7728",
+      "passed": true
+    },
+    {
+      "bean": "qou-09yi",
+      "citation": "meissner2004",
+      "description": "Black-hole horizon puncture-area entropy additivity and spin-1/2 Immirzi reference",
+      "gammaSpinHalf": "0.1273840231409480328676041665067666694841",
+      "passed": true
+    },
+    {
+      "bean": "qou-0a0n",
+      "citation": "blanes-casas-oteo-ros2009",
+      "description": "Path-ordered Magnus convergence radius pi and path-subdivision norm slack",
+      "magnusConvergenceRadius": "3.141592653589793238462643383279502884197",
+      "passed": true
+    },
+    {
+      "bean": "qou-0irt",
+      "citation": "dappiaggi2024",
+      "description": "Two-mode Fock occupation mixing exchange sum identity",
+      "passed": true
+    }
+  ]
+}
