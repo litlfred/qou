@@ -2,9 +2,8 @@ import { proof } from "../../schema/builders";
 
 export default proof({
   label: "prf:hecke-satisfies-blitvic-hypothesis",
-  title: "Proof: Hecke generators satisfy Blitvić's pair-partition hypothesis",
+  title: "Proof: the third centred moment of a Hecke generator",
   uses: [
     "prop:hecke-satisfies-blitvic-hypothesis",
-    "prop:trace-locality-meets-gs-non-locality",
   ],
 });
