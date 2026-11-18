@@ -1,0 +1,136 @@
+{
+  "probe": "precision_gates_baseline_progression_ungated_sign_gate_drop_sweep_denominator_growth_sparse_triton_speedup_and_lossless_character_cost_ratio_probe",
+  "beans": [
+    "qou-z23u",
+    "qou-21oc",
+    "qou-6q7q",
+    "qou-bimg",
+    "qou-d9wf"
+  ],
+  "dps": 80,
+  "generatedAt": "2026-11-18T08:26:28.089431+00:00",
+  "scriptPath": "computations/probes/precision_gates_baseline_progression_ungated_sign_gate_drop_sweep_denominator_growth_sparse_triton_speedup_and_lossless_character_cost_ratio_probe.py",
+  "scriptHash": "c9820d4efee48c0bd387cb6b1d46475940a653e3dee3ee503604050e37039d2d",
+  "scriptSha256": "c9820d4efee48c0bd387cb6b1d46475940a653e3dee3ee503604050e37039d2d",
+  "scriptCommitSha": "f41781b2cb627e3d59f784590a8484536387c360",
+  "allPassed": true,
+  "results": {
+    "qou_z23u": {
+      "passed": true,
+      "q0FlipsTotal": 18,
+      "q0FlipsReal": 1,
+      "q0AnchorUnrecognised": 17,
+      "towerWalkTraces": 77,
+      "inheritedDps": 15,
+      "fmtDigits": 60,
+      "paddedFields": 22,
+      "paddingRatchetBefore": 70,
+      "paddingRatchetNewDrained": 58,
+      "paddingRatchetAfter": 12,
+      "magnusExplicitDps": 140,
+      "magnusConstructions": 34,
+      "selftestBefore": 9,
+      "selftestAfter": 13,
+      "baselineCommitsSpan": 683,
+      "blockingProgression": [
+        10,
+        9,
+        10,
+        11
+      ]
+    },
+    "qou_21oc": {
+      "passed": true,
+      "k4": {
+        "totalPartitions": 10,
+        "deuteronGatedBlocks": 4,
+        "deuteronNewlyAdmitted": 6,
+        "deuteronGatedMev": "-0.0895596830589507",
+        "deuteronUngatedMev": "-0.412212192245027",
+        "he4GatedBlocks": 2,
+        "he4NewlyAdmitted": 8,
+        "he4GatedMev": "-0.0805867484776914",
+        "he4UngatedMev": "-0.2742397716174"
+      },
+      "k6": {
+        "totalPartitions": 28,
+        "deuteronGatedBlocks": 15,
+        "deuteronNewlyAdmitted": 13,
+        "deuteronGatedMev": "-1.3656848170878801",
+        "deuteronUngatedMev": "-2.251131977321312",
+        "he4GatedBlocks": 10,
+        "he4NewlyAdmitted": 18,
+        "he4GatedMev": "-0.8387490758934286",
+        "he4UngatedMev": "-1.448199112790757"
+      },
+      "k11": {
+        "totalPartitions": 193,
+        "deuteronGatedBlocks": 94,
+        "deuteronNewlyAdmitted": 99,
+        "deuteronGatedMev": "-9.14773623102088",
+        "deuteronUngatedMev": "-17.6908290020795",
+        "he4GatedBlocks": 90,
+        "he4NewlyAdmitted": 103,
+        "he4GatedMev": "-8.20155846836239",
+        "he4UngatedMev": "-15.9926510049258"
+      },
+      "bindingEnergyDeuteronK11": {
+        "term1UngatedMev": "-17.6908290020795447079223359605544029429608374879103157233577",
+        "term2UngatedMev": "0.0",
+        "term3PairingMev": "1.876634106144136334334544823923110976193880197699474143353897399142905884",
+        "totalUngatedComputedMev": "-15.814194895935408373587791136631291966766957290210841580003802600857094116",
+        "totalUngatedExpectedMev": "-15.8141948959354083735877911366312919667669572902108415800038",
+        "totalGatedRefMev": "-7.27110212487674490878",
+        "ame2020EmpiricalMev": "2.2245662"
+      }
+    },
+    "qou_6q7q": {
+      "passed": true,
+      "auditedPathsTotal": 111,
+      "byteIdenticalPaths": 108,
+      "movedPaths": 3,
+      "preRebaseSweepTotal": 47,
+      "postRebaseSweepTotal": 142,
+      "denominatorGrowth": 95,
+      "retainedEntries": 46,
+      "resumedAfterBatchOne": 55,
+      "resumedAfterBatchTwo": 62,
+      "remainingAfterBatchOne": 87,
+      "remainingAfterBatchTwo": 80,
+      "q0OkDelta": 6,
+      "q0AnchorMissingDelta": 1
+    },
+    "qou_bimg": {
+      "passed": true,
+      "tritonN": 9,
+      "tritonPartitions": 30,
+      "staleCachedRows": 14,
+      "uncachedRows": 16,
+      "denseSeconds": "2400.0",
+      "sparseSeconds": "27.5",
+      "speedupRatio": "87.272727272727272727272727272727272727272727272727272727272727272727272727272727",
+      "speedupFloor": 87,
+      "relativeDifferenceRoutes": "9.08e-60",
+      "docstringRerunMinutes": 80
+    },
+    "qou_d9wf": {
+      "passed": true,
+      "he4Partitions": 77,
+      "he4DocumentedSeconds": 2,
+      "li5Partitions": 176,
+      "li5DocumentedSeconds": 4,
+      "li6Partitions": 385,
+      "li6DocumentedSeconds": 8,
+      "combinedLi5Li6Partitions": 561,
+      "li5UnderestimationAt10Min": 150,
+      "li5UnderestimationAt30Min": 450,
+      "perPartitionUnderestimationFactor": 500,
+      "rssMegabytesCheckpoints": [
+        198,
+        247,
+        310
+      ],
+      "rssTotalGrowthMegabytes": 112
+    }
+  }
+}
