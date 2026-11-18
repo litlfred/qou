@@ -1,0 +1,58 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-wpca",
+    "qou-wrtk",
+    "qou-wupb",
+    "qou-x0aa",
+    "qou-x8ek"
+  ],
+  "checks": {
+    "qou_wpca_anisotropic_content": {
+      "bean": "qou-wpca",
+      "cite": "dolega-feray2014",
+      "contentDiffResidual": "0.0",
+      "partition21WeightResidual": "0.0",
+      "passed": true
+    },
+    "qou_wrtk_hyperbolic_helicity_margin": {
+      "bean": "qou-wrtk",
+      "cite": "deturck-gluck2008",
+      "passed": true,
+      "spectralMargin": "9.64",
+      "splitResidual": "1.686751670916883715895772e-80"
+    },
+    "qou_wupb_ohtsuki_sigma235_slope": {
+      "barInvolutionResidual": "1.317774742903815403043572e-82",
+      "bean": "qou-wupb",
+      "cite": "jacoby-lawrence2004",
+      "orbifoldNumerator": -1,
+      "passed": true,
+      "pi2SigmaResidual": "0.0",
+      "productP": 30,
+      "sigmaAbs": "3.039635509270133143316383896291829167131"
+    },
+    "qou_x0aa_qborel_level_step": {
+      "bean": "qou-x0aa",
+      "cite": "ramis-sauloy2006",
+      "isoclinicStep": "0.0",
+      "passed": true,
+      "stepIncrement": 54,
+      "stepResidual": "0.0"
+    },
+    "qou_x8ek_birkhoff_connection_gauge": {
+      "bean": "qou-x8ek",
+      "cite": "birkhoff1913",
+      "equalGaugeResidual": "0.0",
+      "passed": true,
+      "shiftResidual": "0.0"
+    }
+  },
+  "generatedAt": "2026-11-18T10:35:58.934766+00:00",
+  "mpmathDps": 80,
+  "probe": "round72_anisotropic_content_helicity_ohtsuki_qborel_probe",
+  "scriptCommitSha": "cb16a749df72b2672e83e92d2b3d642d80339f2e",
+  "scriptHash": "99da9d9763bb9326d2cdbe1ae97539b5078bcb893e3fbe319ab73a8843d00adb",
+  "scriptPath": "computations/probes/round72_anisotropic_content_helicity_ohtsuki_qborel_probe.py",
+  "scriptSha256": "99da9d9763bb9326d2cdbe1ae97539b5078bcb893e3fbe319ab73a8843d00adb"
+}
