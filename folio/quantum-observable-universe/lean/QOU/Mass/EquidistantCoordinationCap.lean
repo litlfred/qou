@@ -120,4 +120,15 @@ theorem equidistant_card_le_finrank
   have hli : LinearIndependent ℝ v := linearIndependent_of_equidistant_gram v d hd hg
   simpa using hli.fintype_card_le_finrank
 
+/-- **All-mutually-adjacent cluster cap `n + 1 ≤ finrank + 1` (`qou-lzoh`).**
+If the `n` difference vectors `v : Fin n → V` from a reference centre satisfy the
+equidistant Gram identity with `d ≠ 0`, then the total cluster size `n + 1` is at most
+`Module.finrank ℝ V + 1` (in ℝ³, `n + 1 ≤ 4`, excluding `A ≥ 5`). -/
+theorem equidistant_cluster_size_le_finrank_succ
+    [Module.Finite ℝ V] {n : ℕ} (v : Fin n → V) (d : ℝ) (hd : d ≠ 0)
+    (hg : ∀ i j, ⟪v i, v j⟫ = (d ^ 2 / 2) * (1 + if i = j then 1 else 0)) :
+    n + 1 ≤ Module.finrank ℝ V + 1 := by
+  have hcap := equidistant_card_le_finrank v d hd hg
+  omega
+
 end QOU.Mass

@@ -94,4 +94,12 @@ theorem one_sub_tauBorromean_lt {h : ℝ} (hh : h ≠ 0) : 1 - tauBorromean h < 
         mul_lt_mul_of_pos_left (brunnian_factor_lt_one h) h4
     _ = h ^ 4 := mul_one _
 
+/-- **Adding one cycle doubles the order-zero component trace (`qou-o7c0`).**
+For any strand count `n` and component count `c`, `componentTrace n (c + 1) = 2 * componentTrace n c`. -/
+theorem componentTrace_succ_components (n c : ℕ) :
+    componentTrace n (c + 1) = 2 * componentTrace n c := by
+  dsimp [componentTrace]
+  rw [pow_succ']
+  ring
+
 end QOU.Mass.CrossTermOrderZeroComponentCount

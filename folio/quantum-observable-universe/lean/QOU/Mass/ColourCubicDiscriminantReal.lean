@@ -35,4 +35,13 @@ theorem colourDiscriminant_pos (z : ℝ) : 0 < colourDiscriminant z := by
 theorem no_real_branch_point (z : ℝ) : colourDiscriminant z ≠ 0 :=
   ne_of_gt (colourDiscriminant_pos z)
 
+/-- **Lower bound `2 * z^2 * (z^2 + 1) ≤ D(z)` on the colour cubic discriminant (`qou-3e6w`).**
+For every real `z`, dropping the non-negative square `(4z^3 + 3z^2 + 3z + 4)^2`
+from `colourDiscriminant_sos` yields `2 * z^2 * (z^2 + 1) ≤ colourDiscriminant z`. -/
+theorem colourDiscriminant_ge_two_z_sq (z : ℝ) :
+    2 * z ^ 2 * (z ^ 2 + 1) ≤ colourDiscriminant z := by
+  rw [colourDiscriminant_sos]
+  have h1 : 0 ≤ (4 * z ^ 3 + 3 * z ^ 2 + 3 * z + 4) ^ 2 := sq_nonneg _
+  linarith
+
 end QOU.Mass.ColourCubicDiscriminantReal

@@ -91,6 +91,14 @@ theorem interface_rescues_iff [IsDomain R] (Φ : A →ₗ[R] R) (Wpn Wnp s : A) 
       ↔ b = 0 ∨ Φ (Wpn * s) = Φ (Wnp * s) := by
   rw [← sub_eq_zero, interface_bond_difference Φ Wpn Wnp s a b hfree, mul_eq_zero, sub_eq_zero]
 
+/-- **Pure-scalar interface `b = 0` annihilates the bond difference (`qou-2002`).**
+When `Φ Wpn = Φ Wnp`, setting `b = 0` in `interface_bond_difference` makes the
+interface bond difference vanish identically. -/
+theorem interface_bond_difference_zero_slope (Φ : A →ₗ[R] R) (Wpn Wnp s : A) (a : R)
+    (hfree : Φ Wpn = Φ Wnp) :
+    Φ (Wpn * (algebraMap R A a + (0 : R) • s)) - Φ (Wnp * (algebraMap R A a + (0 : R) • s)) = 0 := by
+  rw [interface_bond_difference Φ Wpn Wnp s a 0 hfree, zero_mul]
+
 end Interface
 
 section DiagonalConjugation
