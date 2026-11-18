@@ -1,0 +1,92 @@
+{
+  "probe": "shadow_stub_drain_residue_sqrt_ratio_detector_blind_spot_deprecated_import_backlog_retired_pin_surface_and_index_order_guard_classification_probe",
+  "beans": [
+    "qou-enyo",
+    "qou-l7j1",
+    "qou-n7mj",
+    "qou-ng5n",
+    "qou-omiu"
+  ],
+  "dps": 80,
+  "generatedAt": "2026-11-18T08:42:57.723613+00:00",
+  "scriptPath": "computations/probes/shadow_stub_drain_residue_sqrt_ratio_detector_blind_spot_deprecated_import_backlog_retired_pin_surface_and_index_order_guard_classification_probe.py",
+  "scriptHash": "4c7d45ac3ef15cef6edf01f5725d45a4fd6fce1d8c68b3f1d584939212eecbf6",
+  "scriptSha256": "4c7d45ac3ef15cef6edf01f5725d45a4fd6fce1d8c68b3f1d584939212eecbf6",
+  "scriptCommitSha": "67e724e3f102de2b7f2f0de73f4bd670edf2e8d5",
+  "allPassed": true,
+  "results": {
+    "qou_enyo": {
+      "passed": true,
+      "manifestTotal": 147,
+      "priorCleared": 134,
+      "residualPool": 13,
+      "passOneDeleted": 7,
+      "passTwoDeleted": 4,
+      "remainingStubs": 2,
+      "verifiedStayStubs": 1,
+      "remainingToInspect": 1
+    },
+    "qou_l7j1": {
+      "passed": true,
+      "q0": "1.10997859555733474945565025797391504458643163414855",
+      "zRecipSum": "0.49932033403356127142246197303912570846241283736939230156219059271418505675540935",
+      "zDirectRatio": "0.49932033403356127142246197303912570846241283736939230156219059271418505675540935",
+      "absDiffSpellings": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "fNnConventionC": "0.29026001203796753889556617502413124277284012315481744910745310276994093766359489",
+      "fPnConventionC": "0.39479017303576440515901407403162847561762648026210487533482184774206299720950212",
+      "censusTotal": 92,
+      "actionableHits": 27,
+      "deliberateHits": 15,
+      "unflaggedHits": 50,
+      "confirmedUnseenCSites": 3,
+      "legitimateUnflagged": 47
+    },
+    "qou_n7mj": {
+      "passed": true,
+      "initialWiringBroken": 72,
+      "afterPyheckeBridge": 40,
+      "afterProducerBootstrap": 15,
+      "residualWiringBroken": 11,
+      "fixedPass1": 32,
+      "fixedPass2": 25,
+      "fixedPass3": 4,
+      "staircaseImporters": 10,
+      "skeinDirectImporters": 1
+    },
+    "qou_ng5n": {
+      "passed": true,
+      "grepFilesTotal": 209,
+      "liveCodeFiles": 97,
+      "nonLiveGrepFiles": 112,
+      "grepOvercountRatio": "2.1546391752577319587628865979381443298969072164948453608247422680412371134020619",
+      "computeCandidates": 83,
+      "unclearCandidates": 2,
+      "referenceCandidates": 12,
+      "threeDirReportedCompute": 44,
+      "unreportedCompute": 39,
+      "topLevelComputations": 35,
+      "otherSubdirsCompute": 4
+    },
+    "qou_omiu": {
+      "passed": true,
+      "initialLeanScanned": 2086,
+      "initialReclassified": 252,
+      "initialRealTouching": 98,
+      "initialPureGeneric": 154,
+      "fullLeanScanned": 2129,
+      "archOldLogic": 1381,
+      "archMainFix": 943,
+      "archRevertedRegex": 1119,
+      "natOnlyDroppedByMain": 438,
+      "realFilesDroppedByReverted": 45,
+      "natFilesKeptByReverted": 221,
+      "pyTotalSurface": 3683,
+      "pyCurrentlyScanned": 2790,
+      "pySuffixClassInScanned": 742,
+      "pyRemainingIfSuffixExcluded": 2048,
+      "pySuffixFraction": "0.26594982078853046594982078853046594982078853046594982078853046594982078853046595",
+      "neutralisedGuardHits": 11,
+      "suffixScannedGuardHits": 0
+    }
+  }
+}
