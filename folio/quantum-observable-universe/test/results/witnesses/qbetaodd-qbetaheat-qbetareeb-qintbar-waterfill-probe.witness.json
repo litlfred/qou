@@ -1,0 +1,51 @@
+{
+  "probe": "qbetaodd_qbetaheat_qbetareeb_qintbar_waterfill_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/qbetaodd_qbetaheat_qbetareeb_qintbar_waterfill_probe.py",
+  "scriptCommitSha": "42c37d1e81e396563e6ecd4d925ad303c164410f",
+  "scriptHash": "b31254a77e2f5ffb5e06ebae897ac37dc7f6107af57d4d7e7ad00fd942ee4ac6",
+  "scriptSha256": "b31254a77e2f5ffb5e06ebae897ac37dc7f6107af57d4d7e7ad00fd942ee4ac6",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "bean": "qou-sof3",
+      "theorem": "QOU.BraidKnot.qbeta_odd_parity_c3_content_sub_g_eq_zero",
+      "lhs": "-0.39897840489556465887826834572396702574217367116775400799069438122692560562383047",
+      "rhs": "-0.39897840489556465887826834572396702574217367116775400799069438122692560562383048",
+      "residual": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-srvu",
+      "theorem": "QOU.BraidKnot.heat_two_mode_composition_sub_eq_zero",
+      "lhs": "0.60550407657845674374599994434705178506831399393382864457244622533878732225839664",
+      "rhs": "0.60550407657845674374599994434705178506831399393382864457244622533878732225839664",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-ss52",
+      "theorem": "QOU.BraidKnot.qbeta_phase_leading_sq_sub_two_eq_zero",
+      "phi1": "1.414213562373095048801688724209698078569671875376948073176679737990732478462107",
+      "c2Val": "-1.0",
+      "residual": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-supr",
+      "theorem": "QOU.BraidKnot.QuantumIntBarSymmetric.denominator_bar_add_self_eq_zero",
+      "denom": "0.61381074168797953964194373401534526854219948849104859335038363171355498721227622",
+      "denomBar": "-0.61381074168797953964194373401534526854219948849104859335038363171355498721227622",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-sxyr",
+      "theorem": "QOU.BraidKnot.RoundedWaterfillExchange.extra_rows_tradeoff_sub_nonneg",
+      "ceiling": "10.336111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "netGain": "8.6",
+      "margin": "1.7361111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "passed": true
+    }
+  ]
+}
