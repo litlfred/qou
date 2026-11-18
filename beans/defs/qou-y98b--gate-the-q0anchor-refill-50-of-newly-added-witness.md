@@ -430,3 +430,5 @@ first ("my re-run silently UNDID main's float64 drain", branch
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- **Round 96 PR (`litlfred/qou#8510`)**: Formalized `AnchorRefillArrivalPartitionLedger`, `canonicalAnchorRefillArrivalPartitionLedger`, `anchor_arrival_parallelogram_identity`, `anchor_arrival_diff_sq_nonneg`, and `anchor_undeclared_strict_majority_and_scope_recovery` in `QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy` with 80-dps witness (`HEAD = 9861bd624187df98849a08e324f09311a00ff969`, `scriptCommitSha = 15379e53d1b9bac713c00fbaf43892298d9b9d02`, `scriptHash = bb01f014870e55a2a6bc99543595bc2bb3a7547a564788080acc73044e8f088b`).

@@ -119,3 +119,5 @@ The newly-visible backlog -- 106 critical / 2571 major / 8829 minor -- is
 content-repo work. Nothing was written (every run used --dry-run). 568 of 3814
 are under `_deprecated/` and the top-15 output cap means the full severity
 split is UNMEASURED; do not quote a breakdown off that sample.
+
+- **Round 96 PR (`litlfred/qou#8510`)**: Formalized `ScriptSweeperRootDiscrepancyLedger`, `canonicalScriptSweeperRootDiscrepancyLedger`, `script_sweeper_two_square_composition`, and `round_ninety_six_joint_certificate` in `QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy` with 80-dps witness (`HEAD = 9861bd624187df98849a08e324f09311a00ff969`).

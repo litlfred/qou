@@ -53,3 +53,5 @@ qou-ck0g is in-progress under another session and touching its file
 would collide. This follows the qou-mnrd idiom -- a 'main is red'
 report that its owner can act on -- rather than editing a sibling's
 bean or its code.
+
+- **Round 96 PR (`litlfred/qou#8510`)**: Formalized `NoncommutativeTacticSiteLedger`, `canonicalNoncommutativeTacticSiteLedger`, `noncommutative_tactic_double_and_cascade_recovery`, and `noncommutative_site_cubic_factorization` in `QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy` with 80-dps witness (`HEAD = 9861bd624187df98849a08e324f09311a00ff969`).

@@ -52,3 +52,5 @@ witnesses are wrong.
 Found while checking whether my v-hat conversion broke a consumer control arm
 (PR #5669's detector, merged). It did not: the only Python file naming
 v-hat-z-transfer-phase5d-4.witness.json is its own producer.
+
+- **Round 96 PR (`litlfred/qou#8510`)**: Formalized `EnvironmentVersionCensusLedger`, `canonicalEnvironmentVersionCensusLedger`, `environment_census_polarization`, and `environment_census_diff_sq` in `QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy` with 80-dps witness (`HEAD = 9861bd624187df98849a08e324f09311a00ff969`).

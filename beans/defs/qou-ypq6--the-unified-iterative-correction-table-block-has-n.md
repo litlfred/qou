@@ -68,3 +68,5 @@ anyway (`binding_energy` is >50 min for the SMALLEST bound atom, bean
 Related: `qou-21oc` (the gate drop), `qou-sv7h` (the accumulator's scaling
 wall), `qou-bm4i` (blocks claiming `computation.status: verified` on failing
 witnesses — same family of defect, different mechanism).
+
+- **Round 96 PR (`litlfred/qou#8510`)**: Formalized `UnifiedIterativeTableOrphanLedger`, `canonicalUnifiedIterativeTableOrphanLedger`, `unified_table_trinomial_square`, and `unified_table_citing_recovery` in `QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy` with 80-dps witness (`HEAD = 9861bd624187df98849a08e324f09311a00ff969`).
