@@ -1,0 +1,54 @@
+{
+  "probe": "round74_mirror3d_information_concentration_whitehead_chain_probe",
+  "beans": [
+    "qou-y5rr",
+    "qou-y90u",
+    "qou-yaw8",
+    "qou-yhvj",
+    "qou-ykgx"
+  ],
+  "scriptPath": "computations/probes/round74_mirror3d_information_concentration_whitehead_chain_probe.py",
+  "scriptCommitSha": "dc7a8049a476af1e6e23eafa20cb766adbd737ba",
+  "scriptHash": "0dc84431a1e14499953d82039c87e7fc2e705dc34bcf69e4651b58a29777f91e",
+  "scriptSha256": "0dc84431a1e14499953d82039c87e7fc2e705dc34bcf69e4651b58a29777f91e",
+  "mpmathDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-y5rr",
+      "citation": "arxiv-1803.04009v2",
+      "description": "T^DGG flat-connection vacuum deficit and Dehn-filling surgery slope pairing",
+      "borromeanThreeCuspDeficitSample": 9,
+      "passed": true
+    },
+    {
+      "bean": "qou-y90u",
+      "citation": "lloyd2000",
+      "description": "Margolus-Levitin vs Bremermann dimensionless prefactor 2/pi and gate budget",
+      "twoOverPi": "0.6366197723675813430755350534900574481378",
+      "passed": true
+    },
+    {
+      "bean": "qou-yaw8",
+      "citation": "biane2000",
+      "description": "Disjoint-support character factorization defect and concentration scale",
+      "concentrationScaleSample": "1.144874646321820586794322428136438698661",
+      "passed": true
+    },
+    {
+      "bean": "qou-yhvj",
+      "citation": "fuji2012",
+      "description": "Three-term Hochschild cochain Euler characteristic direct-sum additivity",
+      "passed": true
+    },
+    {
+      "bean": "qou-ykgx",
+      "citation": "vanderveen2008",
+      "description": "Whitehead-chain hyperbolic volume family (Whitehead link 4*G, Borromean 8*G)",
+      "volWhiteheadLink": "3.663862376708876060218414059729536443097",
+      "volBorromeanRings": "7.327724753417752120436828119459072886193",
+      "regularIdealTetV0": "1.014941606409653625021202554274520285942",
+      "passed": true
+    }
+  ]
+}
