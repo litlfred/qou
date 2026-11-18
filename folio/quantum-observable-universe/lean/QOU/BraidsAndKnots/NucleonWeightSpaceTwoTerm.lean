@@ -773,4 +773,92 @@ theorem borromeanV3B_nf_expansion (q : R) (hq : q ≠ 0) :
       Matrix.mul_apply, Fin.sum_univ_three] <;>
     field_simp <;> ring
 
+/-! ## Section 9: Switched Four-Term Photon Factorisation `γ'(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁(σ₀σ₁⁻¹)` (`qou-99qc`)
+
+Under the `qou-99qc` working assumption where the fourth photon term is switched from
+`L₊ = σ₀σ₁` to the elementary Borromean step `V = σ₀σ₁⁻¹`:
+1. The Borromean nucleon `V³ = (σ₀σ₁⁻¹)³` is the exact product of two pure fourth-term
+   switched photons (`φ₀ = φ₁ = 0`, `φ₀₁⁺ = +q h`, `φ₀₁⁻ = -q⁻¹ h`, `h = q - q⁻¹`):
+   `V³ = (1 + q h V) (1 - q⁻¹ h V) = 1 + h² V - h² V²`
+   (`borromeanV3A_eq_switched_photon_product`, `borromeanV3B_eq_switched_photon_product`,
+    `borromeanV3A_eq_one_add_h_sq_V_sub_V_sq`, `borromeanV3B_eq_one_add_h_sq_V_sub_V_sq`).
+2. Tracing `(Q₁₂ + Q₂₃)` against a single switched step `V` and its square `V²` yields
+   `O(h²)` on both proton and connected neutron (`trace_QAdjp_borromeanVA`,
+   `trace_QAdjn_borromeanVB_connected`), which multiplied by the two-photon factor `h²`
+   in `V³ = 1 + h² (V - V²)` immediately produces the `O(h⁴) = O((q - 1)⁴)` fourth-order
+   scaling without ever invoking `L₊` or `L₋` separately. -/
+
+/-- Switched four-term photon `γ'(φ₀, φ₁, φ₀₁) = 1 + φ₀ σ₀ + φ₁ σ₁ + φ₀₁ (σ₀ σ₁⁻¹)` on the
+proton `(2,1)` weight space (`V_p = A₁ A₂⁻¹`). -/
+def switchedPhotonA (q φ₀ φ₁ φ₀₁ : R) : Matrix (Fin 3) (Fin 3) R :=
+  (1 : Matrix (Fin 3) (Fin 3) R) + φ₀ • A₁ q + φ₁ • A₂ q + φ₀₁ • borromeanVA q
+
+/-- Switched four-term photon `γ'(φ₀, φ₁, φ₀₁) = 1 + φ₀ σ₀ + φ₁ σ₁ + φ₀₁ (σ₀ σ₁⁻¹)` on the
+neutron `(1,2)` weight space (`V_n = B₁ B₂⁻¹`). -/
+def switchedPhotonB (q φ₀ φ₁ φ₀₁ : R) : Matrix (Fin 3) (Fin 3) R :=
+  (1 : Matrix (Fin 3) (Fin 3) R) + φ₀ • B₁ q + φ₁ • B₂ q + φ₀₁ • borromeanVB q
+
+/-- Exact two-photon factorisation of the Borromean proton braid `V_p³ = (A₁ A₂⁻¹)³` into two
+pure fourth-term switched photons (`φ₀ = φ₁ = 0`) with weights `+q(q - q⁻¹)` and `-q⁻¹(q - q⁻¹)`. -/
+theorem borromeanV3A_eq_switched_photon_product (q : R) (hq : q ≠ 0) :
+    borromeanV3A q =
+      switchedPhotonA q 0 0 (q * (q - q⁻¹)) *
+        switchedPhotonA q 0 0 (-q⁻¹ * (q - q⁻¹)) := by
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [borromeanV3A, borromeanVA, switchedPhotonA, A₁, A₂, A₂Inv,
+      Matrix.mul_apply, Fin.sum_univ_three] <;>
+    field_simp <;> ring
+
+/-- Exact two-photon factorisation of the Borromean neutron braid `V_n³ = (B₁ B₂⁻¹)³` into two
+pure fourth-term switched photons (`φ₀ = φ₁ = 0`) with weights `+q(q - q⁻¹)` and `-q⁻¹(q - q⁻¹)`. -/
+theorem borromeanV3B_eq_switched_photon_product (q : R) (hq : q ≠ 0) :
+    borromeanV3B q =
+      switchedPhotonB q 0 0 (q * (q - q⁻¹)) *
+        switchedPhotonB q 0 0 (-q⁻¹ * (q - q⁻¹)) := by
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [borromeanV3B, borromeanVB, switchedPhotonB, B₁, B₂, B₂Inv,
+      Matrix.mul_apply, Fin.sum_univ_three] <;>
+    field_simp <;> ring
+
+/-- Expanded cubic identity `V_p³ = I₃ + h² V_p - h² V_p²` (`h = q - q⁻¹`) on `(2,1)`. -/
+theorem borromeanV3A_eq_one_add_h_sq_V_sub_V_sq (q : R) (hq : q ≠ 0) :
+    borromeanV3A q =
+      (1 : Matrix (Fin 3) (Fin 3) R) +
+        (q - q⁻¹) ^ 2 • borromeanVA q -
+        (q - q⁻¹) ^ 2 • (borromeanVA q * borromeanVA q) := by
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [borromeanV3A, borromeanVA, A₁, A₂Inv,
+      Matrix.mul_apply, Fin.sum_univ_three] <;>
+    field_simp <;> ring
+
+/-- Expanded cubic identity `V_n³ = I₃ + h² V_n - h² V_n²` (`h = q - q⁻¹`) on `(1,2)`. -/
+theorem borromeanV3B_eq_one_add_h_sq_V_sub_V_sq (q : R) (hq : q ≠ 0) :
+    borromeanV3B q =
+      (1 : Matrix (Fin 3) (Fin 3) R) +
+        (q - q⁻¹) ^ 2 • borromeanVB q -
+        (q - q⁻¹) ^ 2 • (borromeanVB q * borromeanVB q) := by
+  ext i j; fin_cases i <;> fin_cases j <;>
+    simp [borromeanV3B, borromeanVB, B₁, B₂Inv,
+      Matrix.mul_apply, Fin.sum_univ_three] <;>
+    field_simp <;> ring
+
+/-- On a single switched-photon fourth term `V_p = A₁ A₂⁻¹`, the proton adjacent-charge trace
+is strictly `O(h²)`: `tr((Q₁₂^{(p)} + Q₂₃^{(p)}) V_p) = -2(q - 1)²(q + 1)² / (9 q²)`. -/
+theorem trace_QAdjp_borromeanVA (q : R) (hq : q ≠ 0) (h3 : (3 : R) ≠ 0) :
+    trace ((Q12p + Q23p) * borromeanVA q) =
+      -2 * (q - 1) ^ 2 * (q + 1) ^ 2 / (9 * q ^ 2) := by
+  have h9 : (9 : R) = 3 * 3 := by ring
+  simp [Q12p, Q23p, borromeanVA, A₁, A₂Inv, Matrix.trace_fin_three]
+  rw [h9]; field_simp; ring
+
+/-- On a single switched-photon fourth term `V_n = B₁ B₂⁻¹`, the connected neutron adjacent-charge
+trace has the exact opposite sign `O(h²)`:
+`tr((Q₁₂^{(n)} + Q₂₃^{(n)}) V_n) + (2/9) tr(V_n) = +2(q - 1)²(q + 1)² / (9 q²)`. -/
+theorem trace_QAdjn_borromeanVB_connected (q : R) (hq : q ≠ 0) (h3 : (3 : R) ≠ 0) :
+    trace ((Q12n + Q23n) * borromeanVB q) + (2 / 9 : R) * trace (borromeanVB q) =
+      2 * (q - 1) ^ 2 * (q + 1) ^ 2 / (9 * q ^ 2) := by
+  have h9 : (9 : R) = 3 * 3 := by ring
+  simp [Q12n, Q23n, borromeanVB, B₁, B₂Inv, Matrix.trace_fin_three]
+  rw [h9]; field_simp; ring
+
 end QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
