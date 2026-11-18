@@ -1,0 +1,42 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-oq5r",
+    "qou-prjo",
+    "qou-qb9e",
+    "qou-qqm4",
+    "idt1"
+  ],
+  "dps": "80",
+  "probe": "coldisc_fixlt_comptr_w1ltw3_intzero_probe",
+  "results": {
+    "colourDiscriminant_nonneg": {
+      "D_z": "4.6562521770028671428220308311401384621477435317808129628106154399286901479231708",
+      "passed": true,
+      "z": "-0.7639320225002103035908263312687237645593816403884742757291027545894790743621951"
+    },
+    "componentTrace_self_sub_eq_zero": {
+      "componentTrace": "0.5",
+      "passed": true,
+      "self_diff": "0.0"
+    },
+    "fixedColourings_interleaved_lt_sequential": {
+      "interleaved": "2.0",
+      "passed": true,
+      "sequential": "8.0"
+    },
+    "interface_bond_difference_zero": {
+      "lhs": "0.0",
+      "passed": true
+    },
+    "w1_lt_w3_of_b3_b4_pos": {
+      "passed": true,
+      "w1": "1.113",
+      "w2": "1.5884073333333333333333333333333333333333333333333333333333333333333333333333333",
+      "w3": "3.6043791666666666666666666666666666666666666666666666666666666666666666666666667"
+    }
+  },
+  "scriptCommitSha": "ec0e09e935f5610607b7c054f90a3c011c0a668a",
+  "scriptHash": "8ff017b0caa2cf9aba716b9579574986c351aa0a05378f7cd35b0041d17a576b",
+  "scriptSha256": "8ff017b0caa2cf9aba716b9579574986c351aa0a05378f7cd35b0041d17a576b"
+}
