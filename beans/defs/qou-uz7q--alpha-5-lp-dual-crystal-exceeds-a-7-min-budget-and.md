@@ -699,3 +699,5 @@ dict), not compared against. That is the legitimate case.
 **Result: 1 further candidate, 0 further confirmed.** Reported as a count rather
 than a list of alarms, because the first detector's 20 hits were the alarm and
 they were all mine.
+
+- **Round 95 PR (`litlfred/qou#8505`)**: Formalized `DualCrystalProgressLoggingLedger`, `canonicalDualCrystalProgressLoggingLedger`, `dual_crystal_two_square_composition`, and `round_ninety_five_joint_certificate` in `QOU.Foundations.CyclicShiftExploratoryWitnessAuditInteriorMaximumConeObstructionAnchorScriptlessWitnessPartitionSlugDriftDuplicateReconciliationDualCrystalProgressLogging` with 80-dps witness (`HEAD = 420a7c37f74e9880c86f0d911e737f7383abb435`).

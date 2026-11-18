@@ -48,3 +48,5 @@ old-slug and new-slug filenames. Neither is in scope for #5531 or #5494.
 Risk if left: every duplicate silently starves the §4 idle-backlog policy
 of signal (the 14,688-duplicate incident of 2026-08-04 is the precedent),
 and re-landing a duplicate can *undo* a hand fix, as it nearly did here.
+
+- **Round 95 PR (`litlfred/qou#8505`)**: Formalized `SlugDriftDuplicateReconciliationLedger`, `canonicalSlugDriftDuplicateReconciliationLedger`, `slug_drift_duplicate_excess_and_recovery`, and `slug_drift_cubic_factorization` in `QOU.Foundations.CyclicShiftExploratoryWitnessAuditInteriorMaximumConeObstructionAnchorScriptlessWitnessPartitionSlugDriftDuplicateReconciliationDualCrystalProgressLogging` with 80-dps witness (`HEAD = 420a7c37f74e9880c86f0d911e737f7383abb435`).

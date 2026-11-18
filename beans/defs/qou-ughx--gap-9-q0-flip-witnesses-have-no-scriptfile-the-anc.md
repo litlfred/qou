@@ -11,3 +11,4 @@ updated_at: 2026-10-04T15:19:39Z
 parent: qou-5vkl
 ---
 
+- **Round 95 PR (`litlfred/qou#8505`)**: Formalized `AnchorScriptlessWitnessLedger`, `canonicalAnchorScriptlessWitnessLedger`, `anchor_scriptless_polarization`, and `anchor_scriptless_diff_sq` in `QOU.Foundations.CyclicShiftExploratoryWitnessAuditInteriorMaximumConeObstructionAnchorScriptlessWitnessPartitionSlugDriftDuplicateReconciliationDualCrystalProgressLogging` with 80-dps witness (`HEAD = 420a7c37f74e9880c86f0d911e737f7383abb435`).

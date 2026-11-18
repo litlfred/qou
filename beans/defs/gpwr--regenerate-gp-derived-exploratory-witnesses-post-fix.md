@@ -41,3 +41,5 @@ in this sandbox. Run in a dev/CI env: rebuild the wheel, re-run each producer
 `2>&1 | tee /tmp/<script>.log` per the long-compute logging discipline, and
 diff the witness. Each GP result can be pre-screened for free with the new
 `pyhecke_native.chi_gp_trivial_rep_consistent(n, word)` (χ_[n]=q^writhe).
+
+- **Round 95 PR (`litlfred/qou#8505`)**: Formalized `CyclicShiftExploratoryWitnessLedger`, `canonicalCyclicShiftExploratoryWitnessLedger`, `cyclic_shift_witness_quadratic_balance`, `cyclic_shift_witness_diff_sq_nonneg`, and `cyclic_shift_exploratory_recovery` in `QOU.Foundations.CyclicShiftExploratoryWitnessAuditInteriorMaximumConeObstructionAnchorScriptlessWitnessPartitionSlugDriftDuplicateReconciliationDualCrystalProgressLogging` with 80-dps witness (`HEAD = 420a7c37f74e9880c86f0d911e737f7383abb435`, `scriptCommitSha = d704f443921c13d8784b9596ab759935d4d924a5`, `scriptHash = 4eb2afa633ca8746d20ab0222a78a41d73e277dc6132a4d1b3d4f66a6a76f479`).
