@@ -219,3 +219,15 @@ def run(G, name):
             print(name, sig, int(g), chi, [h.order() for h in reps])
 run(AlternatingGroup(5), "A5"); run(SymmetricGroup(5), "S5")
 ```
+
+### Lean (2026-11-18)
+
+`QOU/BringsSurface/IrreducibleH1ForcesGenusFour.lean`, sorry-free, core Lean only.
+`lean -DautoImplicit=false` exit 0; `#print axioms` shows `propext` and `Quot.sound`
+only. It proves the arithmetic step: Riemann–Hurwitz (hypothesis `RH`) plus the
+irreducible dimensions of `A_5` (hypothesis `hdim`) give `g ∈ {4,5}`
+(`genus_four_or_five_of_A5_irreducible`); an `S_5` action excludes `g = 5`
+(`s5_genus_ne_five`), so `g = 4` (`genus_eq_four_of_A5_irreducible_and_S5`).
+`genus_four_attained` checks that the hypotheses hold for Bring's signatures, so the
+conclusion is not vacuous. Riemann–Hurwitz and the `A_5` character table are not in
+Mathlib and enter as hypotheses, not axioms. G2 and G3 are untouched.
