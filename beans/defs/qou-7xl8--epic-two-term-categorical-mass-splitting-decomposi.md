@@ -1,7 +1,7 @@
 ---
 # qou-7xl8
 title: "EPIC: Two-Term Categorical Mass & Splitting Decomposition (Δm_QCD + Δm_QED from ℒ_q = \U0001D49F_∇² + ψ*⊗\U0001D49F_∇ψ) — Formalize-First Lean Proofs, Cottingham Self-Energy, and 211 ppb μ–p Tension"
-status: in-progress
+status: completed
 type: epic
 priority: critical
 tags:
@@ -9,7 +9,7 @@ tags:
     - 1ppq
     - cottingham
 created_at: 2026-11-18T19:52:23Z
-updated_at: 2026-11-18T19:52:23Z
+updated_at: 2026-11-18T22:13:31Z
 ---
 
 Master epic for deriving, formalizing in Lean 4 (over real QOU/Mathlib types, 0 sorry, 0 axiom, adversarially checked), and auditing the downstream compute/1ppQ consequences of the two-term categorical mass and isospin-splitting decomposition:
