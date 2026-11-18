@@ -1,6 +1,7 @@
 import QOU.FeynmanPathIntegrals.markov_identification
 import QOU.SchurWeyl.MarkovTraceInstance
 import Mathlib.Algebra.BigOperators.Fin
+import QOU.SchurWeyl.OcneanuWeight
 
 /-!
 # QOU.FeynmanPathIntegrals.MarkovIdentificationInstance — the branching identity, derived
@@ -122,5 +123,33 @@ theorem markov_identification_of_markovTrace (hq21 : q ^ 2 + 1 ≠ 0)
         (indexed n fun ν => (seminormalRep q hq0 hq2 n ν.2 x).trace)
       = T.tr n x :=
   markov_identification (markovTrace_branching_of_markovTrace q hq0 hq2 n hq21 hgen T x)
+
+/-- **Only diagrams with at most two rows contribute.** At `z_D` the Ocneanu weight of a diagram
+with a nonempty third row is zero (`ocneanuWeight_conventionD_eq_zero_of_three_rows`), so the
+Markov trace is the weighted sum over the diagrams with `rowLen 2 = 0` alone. -/
+theorem markovTrace_eq_two_row_sum (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1)
+    (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ (q ^ 3 / (q ^ 2 + 1)))
+    (x : Hecke ℝ q q⁻¹ n) :
+    T.tr n x = ∑ ν ∈ Finset.univ.filter (fun ν : Diag n => ν.1.rowLen 2 = 0),
+      ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 * (seminormalRep q hq0 hq2 n ν.2 x).trace := by
+  rw [markovTrace_eq_weighted_sum q hq0 hq2 n hq21 hgen T x, Finset.sum_filter]
+  refine Finset.sum_congr rfl fun ν _ => ?_
+  split_ifs with h
+  · rfl
+  · rw [ocneanuWeight_conventionD_eq_zero_of_three_rows q hq21 ν.1 (Nat.pos_of_ne_zero h),
+      zero_mul]
+
+/-- `prop:feynman-categorical-trace` at convention D: the absolute value of the eigenbasis
+amplitude equals the absolute value of the Markov trace, `|amplitude| = |tr_M(x)|`. -/
+theorem abs_amplitude_eq_abs_markovTrace (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1)
+    (T : HeckeCoset.MarkovTraceFamily ℝ q q⁻¹ (q ^ 3 / (q ^ 2 + 1)))
+    (x : Hecke ℝ q q⁻¹ n) :
+    |amplitudeEigenbasis (Fintype.card (Diag n))
+        (indexed n fun ν => ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1)
+        (indexed n fun ν => (seminormalRep q hq0 hq2 n ν.2 x).trace)|
+      = |T.tr n x| := by
+  rw [markov_identification_of_markovTrace q hq0 hq2 n hq21 hgen T x]
 
 end QOU.FeynmanPathIntegrals
