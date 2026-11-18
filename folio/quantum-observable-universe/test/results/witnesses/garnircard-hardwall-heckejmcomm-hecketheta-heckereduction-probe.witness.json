@@ -1,0 +1,108 @@
+{
+  "probe": "garnircard_hardwall_heckejmcomm_hecketheta_heckereduction_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/garnircard_hardwall_heckejmcomm_hecketheta_heckereduction_probe.py",
+  "scriptCommitSha": "72e726ee912d04fdb99ee95472d90527a683ab26",
+  "scriptHash": "e7e7b70aa2d4d17e9677d63a1c5ce12491f1cf45cdab27c057b0221d4e3512e8",
+  "scriptSha256": "e7e7b70aa2d4d17e9677d63a1c5ce12491f1cf45cdab27c057b0221d4e3512e8",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "theorem": "card_garnirShape_sub_eq_zero",
+      "bean": "qou-k9yt",
+      "passed": true,
+      "samples": [
+        {
+          "rows": "[3, 3]",
+          "node": "(0,1)",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "rows": "[4, 3, 2]",
+          "node": "(1,1)",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "rows": "[5, 4, 2]",
+          "node": "(0,2)",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "linear_sub_excess_slack_nonneg",
+      "bean": "qou-kt8o",
+      "passed": true,
+      "samples": [
+        {
+          "y": "1",
+          "slack": "3.54166666666666666666666666667",
+          "passed": true
+        },
+        {
+          "y": "2",
+          "slack": "1.04166666666666666666666666667",
+          "passed": true
+        },
+        {
+          "y": "11/4",
+          "slack": "4.51041666666666666666666666667",
+          "passed": true
+        },
+        {
+          "y": "4",
+          "slack": "14.0416666666666666666666666667",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "jmRaw_comm_sub_eq_zero",
+      "bean": "qou-l1gv",
+      "passed": true,
+      "samples": [
+        {
+          "q": "3/2",
+          "comm_norm": "1.8282063357489232672703546766e-81",
+          "passed": true
+        },
+        {
+          "q": "7/5",
+          "comm_norm": "8.73373459926642996918627056096e-84",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "stdTwoBelow3_twist_sub_one_eq_zero",
+      "bean": "qou-lsib",
+      "passed": true,
+      "samples": [
+        {
+          "q": "2",
+          "residual_norm": "0.0",
+          "passed": true
+        },
+        {
+          "q": "5/3",
+          "residual_norm": "0.0",
+          "passed": true
+        },
+        {
+          "q": "9/7",
+          "residual_norm": "1.49089193085383538923363765956e-81",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "jmRaw_one_comm_sub_eq_zero",
+      "bean": "qou-m8s9",
+      "passed": true,
+      "residual_norm": "8.79650416714923526512347258364e-81"
+    }
+  ]
+}
