@@ -407,6 +407,52 @@ def run_symbolic_charge_operator_checks() -> dict:
     assert 4 * chi21_red_n_q1 == sp.Rational(-8, 1)
     assert chi21_red_n_q1 / chi21_red_p_q1 == sp.Rational(4, 3)
 
+    # (i) GPMTThreeRowCumulantBridge.lean symbolic verification (bean qou-8mxc):
+    # `zD_sub_self_eq`: z_D(q) - q == -q / (q^2 + 1)
+    zD_sub_q = sp.factor(zD - q)
+    assert sp.simplify(zD_sub_q - (-q / (q**2 + 1))) == 0
+
+    # `dMod111_eq_neg_inv_qInt2_mul_qInt3`: dMod111(q) == -1 / ([2]_q [3]_q)
+    qInt2_sym = q + 1 / q
+    qInt3_sym = q**2 + 1 + 1 / (q**2)
+    dMod111_sym = d_mod_111_convention_D(q)
+    assert sp.simplify(dMod111_sym - (-1 / (qInt2_sym * qInt3_sym))) == 0
+
+    # `muGPMT_eq_dMod111_mul_nu` & `muGPMT_closed_forms`:
+    # Unweighted >=3-row sRow3: s_2 = 0, s_3 = -1, s_4 = -2 => (nu_2, nu_3, nu_4) = (0, -1, +2)
+    sRow3_2, sRow3_3, sRow3_4 = sp.Integer(0), sp.Integer(-1), sp.Integer(-2)
+    nu2_sym = sRow3_2
+    nu3_sym = sRow3_3 - 3 * nu2_sym
+    nu4_sym = sRow3_4 - 6 * nu2_sym - 4 * nu3_sym
+    assert (nu2_sym, nu3_sym, nu4_sym) == (0, -1, 2)
+
+    sRow3GPMT_2 = dMod111_sym * sRow3_2
+    sRow3GPMT_3 = dMod111_sym * sRow3_3
+    sRow3GPMT_4 = dMod111_sym * sRow3_4
+    mu2_GPMT_sym = sp.simplify(sRow3GPMT_2)
+    mu3_GPMT_sym = sp.factor(sRow3GPMT_3 - 3 * mu2_GPMT_sym)
+    mu4_GPMT_sym = sp.factor(sRow3GPMT_4 - 6 * mu2_GPMT_sym - 4 * mu3_GPMT_sym)
+    assert mu2_GPMT_sym == 0
+    assert sp.simplify(mu3_GPMT_sym - (-dMod111_sym)) == 0
+    assert sp.simplify(mu4_GPMT_sym - (2 * dMod111_sym)) == 0
+    assert sp.simplify(mu4_GPMT_sym + 2 * mu3_GPMT_sym) == 0
+
+    # `BextGPMT_values_and_pos`: BextGPMT(2) = 0, BextGPMT(3) = -dMod111, BextGPMT(4) = -6*dMod111 = 6*BextGPMT(3)
+    BextGPMT_2_sym = sp.Integer(0)
+    BextGPMT_3_sym = sp.factor(sp.binomial(3, 3) * sRow3GPMT_3)
+    BextGPMT_4_sym = sp.factor(sp.binomial(4, 3) * sRow3GPMT_3 + sp.binomial(4, 4) * sRow3GPMT_4)
+    assert sp.simplify(BextGPMT_3_sym - (-dMod111_sym)) == 0
+    assert sp.simplify(BextGPMT_4_sym - (-6 * dMod111_sym)) == 0
+    assert sp.simplify(BextGPMT_4_sym - 6 * BextGPMT_3_sym) == 0
+
+    # `twoTerm_mirror_split_A3`: pairChargeA3(3H=[1,0,0]) == 0, pairChargeA3(3He=[0,1,1]) == 1
+    triton_q = (1, 0, 0)
+    helium3_q = (0, 1, 1)
+    pair_q_3H = triton_q[0] * triton_q[1] + triton_q[0] * triton_q[2] + triton_q[1] * triton_q[2]
+    pair_q_3He = helium3_q[0] * helium3_q[1] + helium3_q[0] * helium3_q[2] + helium3_q[1] * helium3_q[2]
+    assert pair_q_3H == 0
+    assert pair_q_3He == 1
+
     return {
         "p_self_sum_Qi2": str(p_self[0]),
         "n_self_sum_Qi2": str(n_self[0]),
@@ -449,6 +495,13 @@ def run_symbolic_charge_operator_checks() -> dict:
         "chi_neutron_111": str(sp.factor(chi_neutron_111(q))),
         "d_mod_111_convention_D": str(sp.factor(d_mod_111_convention_D(q))),
         "t_mod_111_diff_convention_D": str(sp.factor(t_mod_111_convention_D(q, "diff"))),
+        "gpmt_zD_sub_q": str(zD_sub_q),
+        "gpmt_mu2_GPMT": str(mu2_GPMT_sym),
+        "gpmt_mu3_GPMT": str(mu3_GPMT_sym),
+        "gpmt_mu4_GPMT": str(mu4_GPMT_sym),
+        "gpmt_BextGPMT_3": str(BextGPMT_3_sym),
+        "gpmt_BextGPMT_4": str(BextGPMT_4_sym),
+        "gpmt_pairChargeA3_triton_helium3": f"({pair_q_3H}, {pair_q_3He})",
         "diff_Pn_minus_Pp_convD": str(diff_Pn_Pp),
     }
 
@@ -1009,6 +1062,9 @@ def main() -> int:
     )
 
     with mp.workdps(DPS + 20):
+        from substrate.q_parameter import Q_50_DIGIT_STR
+
+        q0_pin = mp.mpf(Q_50_DIGIT_STR)
         c_p_3 = chi_proton_3(q_proton)
         c_n_3 = chi_neutron_3(q_proton)
         c_p_21 = chi_proton_21(q_proton)
@@ -1032,6 +1088,33 @@ def main() -> int:
         c2_two_term_p = c2_target_two_term_at(q_proton, q_beta_exp_mev, m_e_mev, convention="D", weighting="plain")
         c3_two_term_p = c3_target_two_term_at(q_proton, q_beta_exp_mev, m_e_mev, c2=-1, convention="D", weighting="plain")
 
+        # 50-dps evaluation of QOU.MassTheory.GPMTThreeRowCumulantBridge at canonical Q_50_DIGIT_STR (bean qou-8mxc):
+        zD_q0 = (q0_pin**3) / (q0_pin**2 + 1)
+        zD_sub_q0 = zD_q0 - q0_pin
+        assert abs(zD_sub_q0 - (-q0_pin / (q0_pin**2 + 1))) < mp.mpf("1e-55")
+        assert zD_sub_q0 < 0
+
+        dMod111_q0 = d_mod_111_convention_D(q0_pin)
+        qInt2_q0 = q0_pin + 1 / q0_pin
+        qInt3_q0 = q0_pin**2 + 1 + 1 / (q0_pin**2)
+        assert abs(dMod111_q0 - (-1 / (qInt2_q0 * qInt3_q0))) < mp.mpf("1e-55")
+        assert dMod111_q0 < 0
+
+        mu2_gpmt_q0 = mp.mpf(0)
+        mu3_gpmt_q0 = -dMod111_q0
+        mu4_gpmt_q0 = 2 * dMod111_q0
+        assert mu2_gpmt_q0 == 0
+        assert mu3_gpmt_q0 > 0
+        assert mu4_gpmt_q0 < 0
+        assert abs(mu4_gpmt_q0 - (-2 * mu3_gpmt_q0)) < mp.mpf("1e-55")
+
+        bext_gpmt_2_q0 = mp.mpf(0)
+        bext_gpmt_3_q0 = -dMod111_q0
+        bext_gpmt_4_q0 = -6 * dMod111_q0
+        assert bext_gpmt_3_q0 > 0
+        assert bext_gpmt_4_q0 > 0
+        assert abs(bext_gpmt_4_q0 - 6 * bext_gpmt_3_q0) < mp.mpf("1e-55")
+
     print("-" * 88)
     print("5. ROUTE 2 (NucleonIdempotentModifiedTrace.lean) & qbeta_utils.py 50-DPS VERIFICATION")
     print("-" * 88)
@@ -1048,6 +1131,49 @@ def main() -> int:
     print(f"  dm_QED_conn_plain(q_p) = {mp.nstr(dm_qed_plain, 20)} MeV")
     print(f"  c2_target_two_term(D)  = {mp.nstr(c2_two_term_p, 20)}")
     print(f"  c3_target_two_term(D)  = {mp.nstr(c3_two_term_p, 20)}")
+    print(f"  zD(q_0) - q_0          = {mp.nstr(zD_sub_q0, 20)}")
+    print(f"  mu2_GPMT(q_0)          = {mp.nstr(mu2_gpmt_q0, 20)}")
+    print(f"  mu3_GPMT(q_0)          = +{mp.nstr(mu3_gpmt_q0, 20)} (> 0)")
+    print(f"  mu4_GPMT(q_0)          = {mp.nstr(mu4_gpmt_q0, 20)} (< 0)")
+    print(f"  BextGPMT(q_0, A=2,3,4) = (0, +{mp.nstr(bext_gpmt_3_q0, 20)}, +{mp.nstr(bext_gpmt_4_q0, 20)})")
+
+    # Emit witness JSON (adjacent to __file__)
+    witness_payload = {
+        "producer": "computations/probes/np_two_term_qed_mup_tension_probe.py",
+        "beans": ["qou-eas4", "qou-hipg", "qou-8mxc"],
+        "arithmetic": "exact SymPy over Q(q) + 50-dps mpmath",
+        "allPassed": True,
+        "symbolic_identities": sym_res,
+        "route2_and_gpmt_three_row_bridge_50dps": {
+            "q0_50dps": Q_50_DIGIT_STR,
+            "zD_sub_q0": mp.nstr(zD_sub_q0, 50),
+            "dMod111_q0": mp.nstr(dMod111_q0, 50),
+            "mu2_GPMT_q0": "0",
+            "mu3_GPMT_q0": mp.nstr(mu3_gpmt_q0, 50),
+            "mu4_GPMT_q0": mp.nstr(mu4_gpmt_q0, 50),
+            "BextGPMT_2_q0": "0",
+            "BextGPMT_3_q0": mp.nstr(bext_gpmt_3_q0, 50),
+            "BextGPMT_4_q0": mp.nstr(bext_gpmt_4_q0, 50),
+            "pairChargeA3_triton": 0,
+            "pairChargeA3_helium3": 1,
+            "chi_proton_3_qp": mp.nstr(c_p_3, 50),
+            "chi_neutron_3_qp": mp.nstr(c_n_3, 50),
+            "chi_proton_21_qp": mp.nstr(c_p_21, 50),
+            "chi_neutron_21_qp": mp.nstr(c_n_21, 50),
+            "chi_proton_111_qp": mp.nstr(c_p_111, 50),
+            "chi_neutron_111_qp": mp.nstr(c_n_111, 50),
+            "t_mod_111_D_proton": mp.nstr(t_mod_p, 50),
+            "t_mod_111_D_neutron": mp.nstr(t_mod_n, 50),
+            "t_mod_111_D_diff": mp.nstr(t_mod_diff, 50),
+            "dm_QED_conn_plain_MeV": mp.nstr(dm_qed_plain, 50),
+            "c2_target_two_term_D": mp.nstr(c2_two_term_p, 50),
+            "c3_target_two_term_D": mp.nstr(c3_two_term_p, 50),
+        },
+        "test1_mup_tension_rows": test1_rows,
+        "test2b_qbeta_ladder_rows": qbeta_ladder_rows,
+    }
+    witness_out = Path(__file__).with_name("np-two-term-qed-mup-tension-probe.witness.json")
+    witness_out.write_text(json.dumps(witness_payload, indent=2, ensure_ascii=False) + "\n")
 
     return 0
 
