@@ -1,7 +1,7 @@
 ---
 # qou-mtx9
 title: the chi bottleneck is the Geck-Pfeiffer reduction, it scales with WORD LENGTH, and a batched entry point already exists unused in 9 producers
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-n7ue
 title: Two in-scope producers CRASH and cannot be regenerated — and one crashes only when it has a finding to report
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-n4r9
 title: 'EPIC: migrate qou onto the cat-harness platform (folio-assistant post-split)'
-status: todo
+status: in-progress
 type: epic
 priority: high
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-mfps
 title: 'GAP: folio-assistant checkBaseRingMinimal — union skip + algebraic gate (321->137 hits, measured)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-m8zb
 title: 'GAP: deprecated aliases + call-site migration for the 10 cellContent / 3 axialDistance copies (cdup follow-up)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
