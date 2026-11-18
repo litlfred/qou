@@ -1,7 +1,7 @@
 ---
 # qou-4r5y
 title: 'AUDIT: LWC-2 namespace sweep (22728b8801) touched 20+ Lean files; 2 confirmed breaks (ext_toSsyt, Partition.*) — audit the rest for stripped type-name prefixes'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -137,3 +137,5 @@ before declaring it absent" and "verify the full dependents cone"): *an axiom qu
 is only as trustworthy as the olean tree under it.* Before publishing a sorry-status
 claim, rebuild the cone from source with the lakefile's flags — a restored cache can
 report both phantom sorries and phantom cleanliness.
+
+- **Round 94 (`litlfred/qou#8424`)**: Advanced in `feat/round94-parity-level-lever1depth2-tauclosed-chainlog-43c1` (Commit 1 `c1698951b30460bb111c1e97552482f0b0622bd0`, Commit 2 `5a166eac86b999ab31c9bdd39f5908e1c848e122`, probe sha256 `1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb`).

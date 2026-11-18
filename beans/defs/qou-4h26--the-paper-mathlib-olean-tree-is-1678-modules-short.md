@@ -1,7 +1,7 @@
 ---
 # qou-4h26
 title: The paper mathlib olean tree is ~1678 modules short of the root tree, so scripts/lean-content-sweep.sh emits ~855 phantom MISSING-OLEAN REDs
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -59,3 +59,5 @@ Consequences for this bean:
   story when they see the counts move.
 
 Recorded in `.claude/agent-memory/lean-verifier/verification-harness.md` §17a.
+
+- **Round 94 (`litlfred/qou#8424`)**: Advanced in `feat/round94-parity-level-lever1depth2-tauclosed-chainlog-43c1` (Commit 1 `c1698951b30460bb111c1e97552482f0b0622bd0`, Commit 2 `5a166eac86b999ab31c9bdd39f5908e1c848e122`, probe sha256 `1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb`).

@@ -1,7 +1,7 @@
 ---
 # qou-4kc0
 title: Detector-report witnesses contaminate the witness-copy index — measured, only the self case fixed
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -106,3 +106,5 @@ list first rather than trusted on its face.
 
 Option 4. The gate stays correct in the strict direction for the self case and
 keeps under-reporting by an unmeasured amount for the rest.
+
+- **Round 94 (`litlfred/qou#8424`)**: Advanced in `feat/round94-parity-level-lever1depth2-tauclosed-chainlog-43c1` (Commit 1 `c1698951b30460bb111c1e97552482f0b0622bd0`, Commit 2 `5a166eac86b999ab31c9bdd39f5908e1c848e122`, probe sha256 `1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb`).

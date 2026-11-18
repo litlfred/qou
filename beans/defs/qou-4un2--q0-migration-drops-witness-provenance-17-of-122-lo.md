@@ -1,7 +1,7 @@
 ---
 # qou-4un2
 title: 'q0 migration DROPS witness provenance: 17 of 122 lost scriptFile/commitSha, and the audit is blind to it by construction'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
@@ -208,3 +208,5 @@ scopes.
   1. tree-level provenance ratchet in precision-gates.sh   (was steps 1 + 2)
   2. restore the 17 from git (JSON merge, not a re-run)     (was step 3)
   3. route the 281 through WitnessBuilder                   (was step 4, the real fix)
+
+- **Round 94 (`litlfred/qou#8424`)**: Advanced in `feat/round94-parity-level-lever1depth2-tauclosed-chainlog-43c1` (Commit 1 `c1698951b30460bb111c1e97552482f0b0622bd0`, Commit 2 `5a166eac86b999ab31c9bdd39f5908e1c848e122`, probe sha256 `1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb`).

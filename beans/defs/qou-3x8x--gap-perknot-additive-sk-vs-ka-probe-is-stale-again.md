@@ -1,7 +1,7 @@
 ---
 # qou-3x8x
 title: 'GAP: perknot-additive-sk-vs-kA probe is stale against a 31x upstream move, and its verdict prose hardcodes the OLD numbers'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -63,3 +63,5 @@ That is worth stating plainly because it is the useful half: a 31× move in the 
 Fixing the hardcoded literals to interpolate the computed values falls under the ASK-FIRST rule's exemption 2 (derived from the corpus — the producer computes the quantity one line above the literal that contradicts it), and regenerating a stale witness is ordinary upkeep. Both ride the raw-float64 drain of this producer.
 
 **Not** in scope here, and left for the owner: whether the ⁴He `mu_ext_target` of 290 is itself right. It is 31× its previous value and 43× the next-largest isotope, which is a large enough discontinuity that it deserves its own look; this bean does not assume either value is correct, only that the consumer and the upstream disagree.
+
+- **Round 94 (`litlfred/qou#8424`)**: Advanced in `feat/round94-parity-level-lever1depth2-tauclosed-chainlog-43c1` (Commit 1 `c1698951b30460bb111c1e97552482f0b0622bd0`, Commit 2 `5a166eac86b999ab31c9bdd39f5908e1c848e122`, probe sha256 `1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb`).
