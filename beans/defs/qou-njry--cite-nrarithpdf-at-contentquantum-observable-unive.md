@@ -1,7 +1,8 @@
 ---
 # qou-njry
 title: Cite nrarith.pdf at folio/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-vol…
-status: todo
+status: in-progress
+pr: 8386
 type: task
 priority: normal
 tags:
@@ -28,3 +29,8 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Arithmetic of hyperbolic manifolds
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [neumann-reid] as the citation key when you do it.
+
+## Progress (2026-11-18, PR #8386)
+- [x] Non-vacuous Lean 4.24.0 theorems proved (`0` `sorry`, `0` `axiom`, `0` directory-mode audit advisories)
+- [x] 80-dps `mpmath` probe and 2-commit witness stamped (`dc2e35b36f4ebb7e9b1575a73bdbe33cb67ee130`, `scriptHash: 2ebaf0631eb0504b9d6d5bd79a3a8425d49d4ffed0fadf6b52c241edb18846dc`)
+- [ ] Awaiting Merge Manager merge of `litlfred/qou#8386`
