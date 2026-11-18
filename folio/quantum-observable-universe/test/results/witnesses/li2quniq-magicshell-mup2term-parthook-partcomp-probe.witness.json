@@ -1,0 +1,53 @@
+{
+  "probe": "li2quniq_magicshell_mup2term_parthook_partcomp_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/li2quniq_magicshell_mup2term_parthook_partcomp_probe.py",
+  "scriptCommitSha": "b13d8d1f02617a3ef86d9d506f0f1f9e476d519b",
+  "scriptHash": "af0c78844d829b15119ded4f6ce0aa482c376243d00f26affdef038a13ebb5e5",
+  "scriptSha256": "af0c78844d829b15119ded4f6ce0aa482c376243d00f26affdef038a13ebb5e5",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "bean": "qou-pz4m",
+      "theorem": "QOU.BraidKnot.li2q_unique_from_ftc_sub_eq_zero",
+      "FV": "1.0987761199573677729564453657353920726538817939354211957228842945718266149330931",
+      "GV": "1.0987761199573677729564453657353920726538817939354211957228842945718266149330931",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-q7lf",
+      "theorem": "QOU.BraidKnot.br3_sub_br2_sq_sub_one_eq_zero",
+      "br3": "3.6042387188775426576406759658411054106771132128046681637135504597682309167499877",
+      "br2SqSubOne": "3.6042387188775426576406759658411054106771132128046681637135504597682309167499877",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-r4w5",
+      "theorem": "QOU.BraidKnot.MuPTwoTermSum.neg_four_fifths_sub_c4_nonneg",
+      "wGen": "0.01089148385062390197756655705211946484075859272940222532546511104103788458939592",
+      "tVal": "0.00000021095685034786785377917004976557017260850824745041485900784020105408639575406024",
+      "c4": "-3.5",
+      "margin": "2.7",
+      "passed": true
+    },
+    {
+      "bean": "qou-rc7b",
+      "theorem": "QOU.BraidKnot.numSYT_mul_hookProduct_partition_sub_eq_zero",
+      "partition": "[4, 2, 1]",
+      "numSYT": "35.0",
+      "hookProduct": "144.0",
+      "nFactorial": "5040.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-rj0m",
+      "theorem": "QOU.BraidKnot.PartitionOfComposition.colLen_sub_countP_rowLens_eq_zero",
+      "partition": "[6, 4, 4, 2, 1]",
+      "maxResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
