@@ -1,13 +1,14 @@
 ---
 # qou-uwcc
 title: Cite Invariant_eigendistributions_2.pdf at alg:delta-lambda-closure
-status: todo
+status: in-progress
+pr: 8420
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:40Z
-updated_at: 2026-10-04T15:17:50Z
+updated_at: 2026-11-18T10:09:26Z
 parent: qou-19m0
 ---
 
@@ -30,3 +31,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [rossmann-invariant-eigendistributions-2] as the citation key when you do it.
+
+
+## Implementation Progress (PR #8420)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/HyperbolicGreenConormalFoldedTraceRound70.lean` (wired into `folio/quantum-observable-universe/lean/QOU.lean`).
+- Verified at 80-dps precision in `computations/probes/round70_hyperbolic_green_conormal_folded_trace_probe.py` with 2-commit witness `computations/probes/round70-hyperbolic-green-conormal-folded-trace.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8420 (`ready: f49a1cf2981f96f2f1ad64b7c08e14fa43ef96ca`).
