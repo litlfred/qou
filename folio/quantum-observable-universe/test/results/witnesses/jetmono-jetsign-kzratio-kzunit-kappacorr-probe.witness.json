@@ -1,0 +1,53 @@
+{
+  "probe": "jetmono-jetsign-kzratio-kzunit-kappacorr-probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/jetmono_jetsign_kzratio_kzunit_kappacorr_probe.py",
+  "scriptCommitSha": "b85484a2b9309c11a8832becee2e728a03219677",
+  "scriptHash": "7a5dfeb80aacf1b23a7e663221ecc9f97b20abf96256db6ae736e9dd7742c6f9",
+  "scriptSha256": "7a5dfeb80aacf1b23a7e663221ecc9f97b20abf96256db6ae736e9dd7742c6f9",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "jetBinding_self_le_qou_172h",
+      "bean": "qou-172h",
+      "theorem": "QOU.Mass.jetBinding_self_le",
+      "jetBinding_val": "0.12151155864149240423035353686512515214335119214140890242389599764546905528271787",
+      "self_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "partialSum_zero_lt_zero_of_term_neg_qou_1w90",
+      "bean": "qou-1w90",
+      "theorem": "QOU.Mass.partialSum_zero_lt_zero_of_term_neg",
+      "term_n": "-0.40665401060350319359350242235936069023975659694119595056569529191329660053130147",
+      "zero_plus_term": "-0.40665401060350319359350242235936069023975659694119595056569529191329660053130147",
+      "passed": true
+    },
+    {
+      "id": "ratio_invariant_sub_eq_zero_qou_26f2",
+      "bean": "qou-26f2",
+      "theorem": "QOU.Mass.ratio_invariant_sub_eq_zero",
+      "lhs_ratio": "0.52900593603909724351650751229493378303617718223166571674267247017282633102948943",
+      "rhs_ratio": "0.52900593603909724351650751229493378303617718223166571674267247017282633102948943",
+      "abs_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "unit_modulus_zero_ne_real_gt_one_qou_2cyi",
+      "bean": "qou-2cyi",
+      "theorem": "QOU.Mass.unit_modulus_zero_ne_real_gt_one",
+      "modulus_exp_zero": "1.0",
+      "q_val": "1.3490658503988659153847381536977225426885743777083450912194382880342018229206899",
+      "gap_q_minus_modulus": "0.34906585039886591538473815369772254268857437770834509121943828803420182292068989",
+      "passed": true
+    },
+    {
+      "id": "correction_zero_of_eps_self_qou_2cz1",
+      "bean": "qou-2cz1",
+      "theorem": "QOU.Mass.correction_zero_of_eps_self",
+      "one_minus_e": "0.75833902664693898165671973974773054736944850774037647530961964674555258413183008",
+      "correction_val": "0.0",
+      "passed": true
+    }
+  ]
+}
