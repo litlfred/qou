@@ -1,13 +1,13 @@
 ---
 # qcz15
 title: 'TIER C: q-Collatz-on-QOU derivation gaps (map from QOU, obstruction, Kummer)'
-status: todo
+status: in-progress
 type: feature
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-10-04T15:14:29Z
+updated_at: 2026-11-18T11:37:12Z
 parent: qcz14
 ---
 
@@ -59,3 +59,7 @@ C11 LOCALISED 2026-08-29 (bean qou-7kfp, commits d7a5da7355 + 369528b64d). The r
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 69 Update (2026-11-18T11:37:12Z)
+- Addressed in PR `litlfred/qou#8454` (HEAD `23a754272622fa31774e4f5d1455018224c86d36`, C1 `bcdf148ad3ef8ce5d5b1c640e65680b5b11b62b6`).

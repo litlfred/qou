@@ -1,13 +1,13 @@
 ---
 # qcz8
 title: 'Attack B: full nontrivial-cycle exclusion (affine A≠1 case)'
-status: todo
+status: in-progress
 type: task
 priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-24T16:46:17Z
-updated_at: 2026-10-04T15:14:33Z
+updated_at: 2026-11-18T11:37:12Z
 parent: qcz14
 ---
 
@@ -46,3 +46,7 @@ PERIOD-2 CLOSED: qcollatz_period2_eveneven (EE => q(q+2)P=0 => P=0), _oddodd (OO
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-07-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## Round 69 Update (2026-11-18T11:37:12Z)
+- Addressed in PR `litlfred/qou#8454` (HEAD `23a754272622fa31774e4f5d1455018224c86d36`, C1 `bcdf148ad3ef8ce5d5b1c640e65680b5b11b62b6`).
