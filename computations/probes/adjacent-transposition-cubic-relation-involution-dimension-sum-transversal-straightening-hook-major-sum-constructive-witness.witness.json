@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "adjacent_transposition_cubic_relation_involution_dimension_sum_transversal_straightening_hook_major_sum_constructive_witness_probe",
+  "beans": [
+    "qou-36vh",
+    "qou-3xjy",
+    "qou-73kb",
+    "qou-anpu",
+    "qou-gjnc"
+  ],
+  "leanModule": "QOU.Foundations.AdjacentTranspositionCubicRelationInvolutionDimensionSumTransversalStraighteningHookMajorSumConstructiveWitness",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/adjacent_transposition_cubic_relation_involution_dimension_sum_transversal_straightening_hook_major_sum_constructive_witness_probe.py",
+  "scriptHash": "a0c911e409e04bd978c286aa2f965a1d976cceeb8269e851ecc38f2b6e89b43c",
+  "scriptSha256": "a0c911e409e04bd978c286aa2f965a1d976cceeb8269e851ecc38f2b6e89b43c",
+  "scriptCommitSha": "c2f43250f36bb1472f334747f1e3f42a638aaf1a",
+  "generatedAt": "2026-11-18T09:08:29.299303+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-36vh",
+      "theorem": "swap01_swap12_involutive_and_cubic_braid_eq_rev012",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-3xjy",
+      "theorem": "invPoly3_and_invPoly4_expansion_and_classical_eval",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-73kb",
+      "theorem": "cosetMultipliedSum_factorization_and_transversal_zero",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-anpu",
+      "theorem": "majGen21_factorization_and_clearedHook_identity",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-gjnc",
+      "theorem": "constructive_unimodular_witness_identities",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
