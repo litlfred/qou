@@ -44,10 +44,10 @@ the lemma into its two honest parts:
   reciprocal diverges.
 - `nsi_q_kernel_identification` — that the trace-side kernel the
   categorical mass of the filament inherits *is*
-  `qDeformedKernel q ‖ϱ(s) − ϱ(t)‖` — is the genuinely open part
-  (the `q`-deformed commutator / `q`-Hodge star are not yet
-  formalised); it is an honest `sorry` carrying the manuscript
-  citation per AGENTS.md §1.
+  `qDeformedKernel q ‖ϱ(s) − ϱ(t)‖` — is proved conditional on
+  `NsiQDeformedKernelContext` (`K_cat_eq` and `qDeformedCommutator_eq`),
+  which is where the un-formalised `q`-deformed commutator / `q`-Hodge
+  star hypotheses sit per AGENTS.md §3b-cond.
 
 The resolving declaration `nsi_q_deformed_kernel` conjoins the two.
 -/
@@ -199,5 +199,49 @@ theorem nsi_q_deformed_kernel {E : Type*} [NormedAddCommGroup E]
       (nhdsWithin (hbarQ ctx.q) {r : ℝ | r ≠ hbarQ ctx.q}) Filter.atTop :=
   ⟨nsi_q_kernel_identification s t hq1,
    nsi_q_kernel_hard_singularity hq0 hq1⟩
+
+/-- At the classical point `q = 1`, `ℏ_q = 0` and `[2]_q = 2`, so the
+    concrete kernel `qDeformedKernel 1 r` collapses identically to `2 / r ^ 2`. -/
+theorem qDeformedKernel_at_one (r : ℝ) :
+    qDeformedKernel 1 r = 2 / r ^ 2 := by
+  have hb : hbarQ 1 = 0 := by
+    unfold hbarQ
+    norm_num
+  have h2 : qInt2 1 = 2 := by
+    unfold qInt2
+    norm_num
+  unfold qDeformedKernel
+  rw [hb, h2]
+  ring
+
+/-- Exact algebraic decomposition of the difference between the `q`-deformed
+    kernel `qDeformedKernel q r` and its classical `q = 1` counterpart `2 / r ^ 2`
+    away from `r = 0` and `r = ±ℏ_q`. -/
+theorem qDeformedKernel_sub_classical (q r : ℝ)
+    (hr : r ^ 2 ≠ 0) (hd : r ^ 2 - hbarQ q ^ 2 ≠ 0) :
+    qDeformedKernel q r - 2 / r ^ 2
+      = ((qInt2 q - 2) * r ^ 2 + 2 * hbarQ q ^ 2)
+        / (r ^ 2 * (r ^ 2 - hbarQ q ^ 2)) := by
+  unfold qDeformedKernel
+  have hden : r ^ 2 - hbarQ q ^ 2 ≠ 0 := hd
+  rw [div_sub_div _ _ hden hr]
+  ring
+
+/-- Concrete `NsiQDeformedKernelContext` over `E = ℝ` at substrate parameter `q₀`:
+    witnesses that the context class is inhabited for every `q₀ : ℝ`. -/
+noncomputable def concreteNsiQDeformedKernelContext (q₀ : ℝ) :
+    NsiQDeformedKernelContext ℝ where
+  q := q₀
+  ϱ := id
+  K_cat := fun s t => qDeformedKernel q₀ ‖s - t‖
+  qDeformedCommutator := qDeformedKernel
+  K_cat_eq := fun _ _ => rfl
+  qDeformedCommutator_eq := fun _ _ => rfl
+
+/-- Inhabitation witness for `NsiQDeformedKernelContext ℝ` at `q₀`. -/
+theorem nsiQDeformedKernelContext_inhabited (q₀ : ℝ) :
+    ∃ ctx : NsiQDeformedKernelContext ℝ,
+      ctx.q = q₀ ∧ ∀ s t : ℝ, ctx.K_cat s t = qDeformedKernel q₀ ‖s - t‖ :=
+  ⟨concreteNsiQDeformedKernelContext q₀, rfl, fun _ _ => rfl⟩
 
 end QOU.BraidsKnots

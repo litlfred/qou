@@ -140,11 +140,17 @@ def δq (q : Rˣ) : F →ₗ[R] F :=
 
 theorem dq_apply (q : Rˣ) (α : F) :
     A.dq q α = ((q⁻¹ : Rˣ) : R) • A.d α
-      + (1 - ((q⁻¹ : Rˣ) : R)) • A.thetaWedge (A.lieReeb α) := rfl
+      + (1 - ((q⁻¹ : Rˣ) : R)) • A.thetaWedge (A.lieReeb α) := by
+  change (((q⁻¹ : Rˣ) : R) • A.d + (1 - ((q⁻¹ : Rˣ) : R)) • (A.thetaWedge ∘ₗ A.lieReeb)) α = _
+  rw [LinearMap.add_apply]
+  rfl
 
 theorem δq_apply (q : Rˣ) (β : F) :
     A.δq q β = ((q⁻¹ : Rˣ) : R) • A.δ β
-      + (1 - ((q⁻¹ : Rˣ) : R)) • A.lieReebStar (A.iotaReeb β) := rfl
+      + (1 - ((q⁻¹ : Rˣ) : R)) • A.lieReebStar (A.iotaReeb β) := by
+  change (((q⁻¹ : Rˣ) : R) • A.δ + (1 - ((q⁻¹ : Rˣ) : R)) • (A.lieReebStar ∘ₗ A.iotaReeb)) β = _
+  rw [LinearMap.add_apply]
+  rfl
 
 /-- `θ ∧ L_ξ` and `L_ξ* ∘ ι_ξ` are adjoint — the composite of the two
     adjointness fields, and the step the closed formula turns on. -/
@@ -288,6 +294,62 @@ theorem degenerate_not_nondegenerate (R : Type u) [CommRing R] (F : Type v)
   intro h
   obtain ⟨x, y, hxy⟩ := exists_pair_ne F
   exact hxy (h x y fun _ => rfl)
+
+/-- At the classical point `q = 1`, the `q`-exterior derivative `d_q` collapses
+    to the classical exterior derivative `d`. -/
+theorem dq_one (α : F) :
+    A.dq 1 α = A.d α := by
+  rw [dq_apply]
+  simp
+
+/-- At the classical point `q = 1`, the `q`-codifferential `δ_q` collapses
+    to the classical codifferential `δ`. -/
+theorem δq_one (β : F) :
+    A.δq 1 β = A.δ β := by
+  rw [δq_apply]
+  simp
+
+/-- A **non-degenerate** `ContactFormAlgebra` model over `F = R`: the pairing
+    is ring multiplication `LinearMap.mul R R` and all six geometric operators
+    are the identity linear map `LinearMap.id`. Unlike `degenerate`, this model
+    satisfies the right non-degeneracy hypothesis of `δq_unique`. -/
+def unitModel (R : Type u) [CommRing R] : ContactFormAlgebra R R where
+  inner := LinearMap.mul R R
+  d := LinearMap.id
+  δ := LinearMap.id
+  lieReeb := LinearMap.id
+  lieReebStar := LinearMap.id
+  iotaReeb := LinearMap.id
+  thetaWedge := LinearMap.id
+  δ_adjoint_d := by
+    intro α β
+    rfl
+  iota_adjoint_theta := by
+    intro α β
+    rfl
+  lieStar_adjoint_lie := by
+    intro α β
+    rfl
+
+/-- The multiplication pairing of `unitModel R` is right non-degenerate:
+    evaluating `z * x = z * y` at `z = 1` yields `x = y`. -/
+theorem unitModel_nondegenerate (R : Type u) [CommRing R] :
+    ∀ x y : R,
+      (∀ z : R, (unitModel R).inner z x = (unitModel R).inner z y) → x = y := by
+  intro x y h
+  have h1 := h 1
+  change (1 : R) * x = (1 : R) * y at h1
+  simpa using h1
+
+/-- In `unitModel R`, the formal adjoint of `d_q` is unconditionally unique:
+    any function `L : R → R` satisfying the adjoint identity against
+    `(unitModel R).inner` agrees pointwise with `(unitModel R).δq q`. -/
+theorem unitModel_δq_unique (R : Type u) [CommRing R] (q : Rˣ) (L : R → R)
+    (hL : ∀ α β : R,
+      (unitModel R).inner ((unitModel R).dq q α) β
+        = (unitModel R).inner α (L β)) (β : R) :
+    L β = (unitModel R).δq q β :=
+  (unitModel R).δq_unique (unitModel_nondegenerate R) q L hL β
 
 end ContactFormAlgebra
 

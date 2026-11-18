@@ -83,17 +83,23 @@ def hookProd311 (q : R) : R :=
 
 /-- **`d_q(5) = [1]_q = 1`** (multiplicative form): `[5]_q! = ∏ hooks(5)`. -/
 theorem shape_row5 (q : R) : qFactorial q 5 = hookProdRow5 q := by
-  rw [qFactorial_five, hookProdRow5]; ring
+  rw [qFactorial_five]
+  rw [hookProdRow5]
+  ring_nf
 
 /-- **`d_q(4,1) = [4]_q`** (multiplicative form): `[5]_q! = [4]_q · ∏ hooks(4,1)`.
 The standard-representation family `d_q(n−1,1) = [n−1]_q` at `n = 5`. -/
 theorem shape_41 (q : R) : qFactorial q 5 = qIntGeo q 4 * hookProd41 q := by
-  rw [qFactorial_five, hookProd41, qIntGeo_one]; ring
+  rw [qFactorial_five]
+  rw [hookProd41, qIntGeo_one]
+  ring
 
 /-- **`d_q(3,2) = [5]_q`** (multiplicative form): `[5]_q! = [5]_q · ∏ hooks(3,2)`.
 The muon block. -/
 theorem shape_32 (q : R) : qFactorial q 5 = qIntGeo q 5 * hookProd32 q := by
-  rw [qFactorial_five, hookProd32, qIntGeo_one]; ring
+  rw [qFactorial_five]
+  rw [hookProd32, qIntGeo_one]
+  ring
 
 /-- **`d_q(3,1,1) = [4]_q[3]_q/[2]_q`** (multiplicative form):
 `[5]_q! · [2]_q = [4]_q · [3]_q · ∏ hooks(3,1,1)`.  The electron block — the sole
@@ -101,7 +107,30 @@ self-conjugate class at `n = 5` and the only `d_q` that is NOT a single balanced
 q-integer.  The realization difficulty is concentrated here (value-map screen #3197). -/
 theorem shape_311 (q : R) :
     qFactorial q 5 * qIntGeo q 2 = qIntGeo q 4 * qIntGeo q 3 * hookProd311 q := by
-  rw [qFactorial_five, hookProd311, qIntGeo_one]; ring
+  rw [qFactorial_five]
+  rw [hookProd311, qIntGeo_one]
+  ring
+
+/-- The division form of the trivial row partition `λ = (5)`:
+`d_q(5) = [5]_q! / ∏ hooks(5) = 1`. -/
+theorem dq_row5_div (q : R) (hrow5 : hookProdRow5 q ≠ 0) :
+    qFactorial q 5 / hookProdRow5 q = 1 := by
+  rw [shape_row5 q]
+  exact div_self hrow5
+
+/-- The division form of the standard representation `λ = (4,1)`:
+`d_q(4,1) = [5]_q! / ∏ hooks(4,1) = [4]_q`. -/
+theorem dq_41_div (q : R) (h41 : hookProd41 q ≠ 0) :
+    qFactorial q 5 / hookProd41 q = qIntGeo q 4 := by
+  rw [shape_41 q]
+  exact mul_div_cancel_right₀ (qIntGeo q 4) h41
+
+/-- The division form of the two-row block `λ = (3,2)`:
+`d_q(3,2) = [5]_q! / ∏ hooks(3,2) = [5]_q`. -/
+theorem dq_32_div (q : R) (h32 : hookProd32 q ≠ 0) :
+    qFactorial q 5 / hookProd32 q = qIntGeo q 5 := by
+  rw [shape_32 q]
+  exact mul_div_cancel_right₀ (qIntGeo q 5) h32
 
 /-- The division form of the discriminating block:
 `d_q(3,1,1) = [5]_q!/∏hooks = [4]_q[3]_q/[2]_q`. -/
@@ -170,5 +199,21 @@ theorem realization_discriminating_block (q a : R) (h : VerlindeModularData R)
     (hdim : h.qDim p * qIntGeo q 2 = qIntGeo q 4 * qIntGeo q 3) :
     r.weight (r.latticePt p) * h.D * qIntGeo q 2 = qIntGeo q 4 * qIntGeo q 3 := by
   rw [r.realizes p hp, h.S0_eq p hp, div_mul_cancel₀ _ h.D_ne, hdim]
+
+/-- Transpose-invariance of the radial weight under any `QBesselRadialPartRealization`:
+    since `λ` and `λ′` share a lattice point, their radial weights coincide. -/
+theorem realization_weight_conj (q a : R) (h : VerlindeModularData R)
+    [r : QBesselRadialPartRealization q a h]
+    (p : h.Part) (hp : p ∈ h.parts) :
+    r.weight (r.latticePt (h.conj p)) = r.weight (r.latticePt p) := by
+  rw [r.latticePt_conj p hp]
+
+/-- Any `QBesselRadialPartRealization` forces the vacuum row `S0` to be invariant
+    under partition conjugation `p ↦ h.conj p`. -/
+theorem realization_S0_conj (q a : R) (h : VerlindeModularData R)
+    [r : QBesselRadialPartRealization q a h]
+    (p : h.Part) (hp : p ∈ h.parts) (hcp : h.conj p ∈ h.parts) :
+    h.S0 (h.conj p) = h.S0 p := by
+  rw [← r.realizes (h.conj p) hcp, ← r.realizes p hp, r.latticePt_conj p hp]
 
 end QOU.BraidKnot.Keystone

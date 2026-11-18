@@ -518,29 +518,37 @@ def qi3 : R := a.q ^ 2 + a.q + 1
 
 /-- **Skein divisibility** `[3]_q = q·[2]_q + 1` — holds by construction. -/
 theorem skein_divisibility : a.qi3 = a.q * a.qi2 + 1 := by
-  simp only [qi2, qi3]; ring
+  rw [qi2]
+  rw [qi3]
+  ring
 
 /-- **Contraction gap** `[2]_q² − [3]_q = q` — holds by construction. -/
 theorem contraction_gap : a.qi2 ^ 2 - a.qi3 = a.q := by
-  simp only [qi2, qi3]; ring
+  rw [qi2]
+  rw [qi3]
+  ring
 
 /-- **Bézout coprimality** `[3]_q − q·[2]_q = 1` — holds by construction. -/
 theorem coprime : a.qi3 - a.q * a.qi2 = 1 := by
-  simp only [qi2, qi3]; ring
+  rw [qi2]
+  rw [qi3]
+  ring
 
 /-- The odd-branch defining equation at `q⁻¹` (the fundamental cycle) follows
     from the induced arithmetic whenever `q` is invertible — so the fundamental
     2-cycle is likewise determined by the substrate parameter. -/
 theorem fundamental_odd_step (qinv : R) (hq : a.q * qinv = 1) :
     (1 + qinv) * a.qi2 = a.qi3 * qinv + 1 := by
-  simp only [qi2, qi3]; linear_combination (-a.q) * hq
+  rw [qi2]
+  rw [qi3]
+  linear_combination (-a.q) * hq
 
 end SkeinCollatzArith
 
 /-! ### The Markov-trace observable: `reaches_cycle` as observed halting (Tier C #12)
 
 In the QOU, *observation* is the Markov trace `tr_M` — an orbit's observed output
-is the Jones/Skein value of its current state, the degree-0 section an observer
+is the skein value of its current state, the degree-0 section an observer
 reads. Coupling any observation map `obs : Skein → V` to the Skein-Collatz
 dynamics turns the convergence conjecture into an **observational halting
 statement**: the observed output stabilises to the value of the fundamental
@@ -560,7 +568,7 @@ theorem reaches_cycle_observed {Skein : Type u} [CommRing Skein] [QCollatz Skein
 
 /-- **`reaches_cycle` ⇒ observed output `→` the trivial invariant.** If the
     observation map assigns the fundamental cycle the unknot value `u`
-    (`obs attractor = u`, e.g. the trivial Jones polynomial `tr_M = 1`), then
+    (`obs attractor = u`, e.g. the trivial skein polynomial `tr_M = 1`), then
     every positive braid-computation in the domain halts to the observed output
     `u`. This is the observational reading of the conjecture: *the halting output
     is the trivial invariant.* -/
@@ -570,5 +578,37 @@ theorem reaches_cycle_observed_unknot {Skein : Type u} [CommRing Skein]
     ∃ k : ℕ, obs (QCollatz.C^[k] P) = u := by
   obtain ⟨k, hk⟩ := reaches_cycle_observed obs P hP
   exact ⟨k, hk.trans hu⟩
+
+/-- Even iterates `C^[2m]` fix the fundamental 2-cycle representative `attractor`. -/
+theorem QCollatz.iterate_two_attractor {Skein : Type u} [CommRing Skein]
+    [QCollatz Skein] (m : ℕ) :
+    (QCollatz.C^[2 * m] QCollatz.attractor : Skein) = QCollatz.attractor := by
+  induction m with
+  | zero => rfl
+  | succ m ih =>
+    have hstep : 2 * (m + 1) = 2 * m + 1 + 1 := by omega
+    rw [hstep, Function.iterate_succ_apply', Function.iterate_succ_apply',
+      ih, QCollatz.attractor_period_two]
+
+/-- Odd iterates `C^[2m+1]` map `attractor` to its period-2 partner `C attractor`. -/
+theorem QCollatz.iterate_two_add_one_attractor {Skein : Type u} [CommRing Skein]
+    [QCollatz Skein] (m : ℕ) :
+    (QCollatz.C^[2 * m + 1] QCollatz.attractor : Skein)
+      = QCollatz.C QCollatz.attractor := by
+  rw [Function.iterate_succ_apply', QCollatz.iterate_two_attractor m]
+
+/-- The fundamental 2-cycle lies in the domain-stable cone `D∞` whenever both
+    cycle vertices `attractor` and `C attractor` lie in `inDomain`. -/
+theorem QCollatz.attractor_domainStable {Skein : Type u} [CommRing Skein]
+    [QCollatz Skein]
+    (h0 : QCollatz.inDomain (QCollatz.attractor : Skein))
+    (h1 : QCollatz.inDomain (QCollatz.C (QCollatz.attractor : Skein))) :
+    QCollatz.domainStable (QCollatz.attractor : Skein) := by
+  intro k
+  rcases Nat.even_or_odd' k with ⟨m, rfl | rfl⟩
+  · rw [QCollatz.iterate_two_attractor m]
+    exact h0
+  · rw [QCollatz.iterate_two_add_one_attractor m]
+    exact h1
 
 end QOU.AppendixSurreals

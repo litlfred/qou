@@ -56,7 +56,9 @@ bar-even quantity.  The `q ≠ 1` hypothesis is `geom_sum_eq`'s and is real —
 at `q = 1` the closed form is `0/0 = 0` while the sum is `k`. -/
 theorem qInt_eq_canonical (q : ℝ) (k : ℕ) (hq : q ≠ 1) :
     qInt q k = QOU.QInteger.qIntGeo q k := by
-  rw [qInt, QOU.QInteger.qIntGeo_def, geom_sum_eq hq]
+  rw [qInt]
+  rw [QOU.QInteger.qIntGeo_def]
+  rw [geom_sum_eq hq]
 
 /-- `[2]_q = q + 1` for `q ≠ 1`. -/
 theorem qInt_two (q : ℝ) (hq : q ≠ 1) :
@@ -267,5 +269,45 @@ theorem contact_threshold_lt_two (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
   rw [h2cast]
   have hsq : qInt q 3 < (qInt q 2) ^ 2 := qInt3_lt_qInt2_sq q hq hq1
   exact Real.log_lt_log h3pos hsq
+
+/-- Exact algebraic margin for a 3-step `OEE` block (`[2]_q³` versus `[2]_q · [3]_q`):
+    `(qInt q 2)^3 - qInt q 2 * qInt q 3 = q * (q + 1)`. -/
+theorem two_halvings_beat_tripling_margin (q : ℝ) (hq : q ≠ 1) :
+    (qInt q 2) ^ 3 - qInt q 2 * qInt q 3 = q * (q + 1) := by
+  rw [qInt_two q hq, qInt_three q hq]
+  ring
+
+/-- Three-step contraction bound (`qcz7` A2): one odd step followed by two even
+    halvings (`[3]_q / [2]_q³`) is strictly smaller than `1 / [2]_q` for all `q > 0`. -/
+theorem contraction_ratio_three_steps (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+    qInt q 3 / (qInt q 2) ^ 3 < 1 / qInt q 2 := by
+  have h2pos : qInt q 2 > 0 := qInt_two_pos q hq hq1
+  have h2cube : (0 : ℝ) < (qInt q 2) ^ 3 := by positivity
+  rw [div_lt_div_iff₀ h2cube h2pos]
+  have hmargin := two_halvings_beat_tripling_margin q hq1
+  have hq_pos : q * (q + 1) > 0 := by positivity
+  linarith
+
+/-- Lower half of the contact threshold (`1 < v*`): a single halving does not
+    compensate one tripling (`[2]_q < [3]_q`, hence `1 < log[3]_q / log[2]_q`). -/
+theorem one_lt_contact_threshold (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+    1 < Real.log (qInt q 3) / Real.log (qInt q 2) := by
+  have h2pos : qInt q 2 > 0 := qInt_two_pos q hq hq1
+  have h2gt1 : qInt q 2 > 1 := by
+    rw [qInt_two q hq1]
+    linarith
+  have hlog2pos : Real.log (qInt q 2) > 0 := Real.log_pos h2gt1
+  rw [lt_div_iff₀ hlog2pos, one_mul]
+  have hlt : qInt q 2 < qInt q 3 := by
+    rw [qInt_two q hq1, qInt_three q hq1]
+    nlinarith
+  exact Real.log_lt_log h2pos hlt
+
+/-- Two-sided contact-threshold bound (`1 < log[3]_q / log[2]_q < 2`):
+    pins the integer threshold for `q`-Collatz contraction to `⟨v_[2]⟩ ≥ 2`. -/
+theorem contact_threshold_mem_Ioo (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+    1 < Real.log (qInt q 3) / Real.log (qInt q 2) ∧
+    Real.log (qInt q 3) / Real.log (qInt q 2) < 2 :=
+  ⟨one_lt_contact_threshold q hq hq1, contact_threshold_lt_two q hq hq1⟩
 
 end QOU.Substrate
