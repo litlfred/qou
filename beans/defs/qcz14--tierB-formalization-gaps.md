@@ -1,11 +1,11 @@
 ---
 # qcz14
 title: 'TIER B: achievable q-Collatz-on-QOU Lean formalization gaps'
-status: todo
+status: in-progress
 type: epic
 priority: medium
 created_at: 2026-07-25T03:10:00Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-18T12:11:25Z
 parent: b9cj
 ---
 
@@ -44,3 +44,7 @@ Now the epic for P2.QCOLL under UMBRELLA: open conjectures (formal mathematics o
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+
+## Round 70 Update (2026-11-18T12:11:25Z)
+- Addressed in PR `litlfred/qou#8466` (HEAD `57eaba11f749480e8b98e9c5a6020b79b2d5a529`, C1 `ac0018f69fff5e2dec418784b19d5c431d4ed5f3`).
