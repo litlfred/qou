@@ -3913,3 +3913,13 @@ Neutron word = β_Bor with γ(φ_a)_lep inserted at slot i and γ(φ_b)_lep at s
 reference = both inserted adjacent at slot i. Split = tr₅(word)/tr₅(reference) − 1, Markov
 trace at z_D (y = 0 on three-row shapes), proton pin, exact. Report all (a,b) ∈ {+,−}² and all
 slot pairs; no selection. Proton = β_Bor with the same two photons adjacent (= reference).
+
+## PRE-REGISTRATION 2026-11-18 17:55Z — charge-weighted EM dressing (step 2)
+Both nucleons = β_Bor (closure permutation is the identity, so strand k = component k).
+Photon strand = strand 3 in H₄. Pure-braid generators A₂₃ = σ₂², A₁₃ = σ₂σ₁²σ₂⁻¹,
+A₀₃ = σ₂σ₁σ₀²σ₁⁻¹σ₂⁻¹. Loop matrix D_ij := tr₄(β·A_i3·A_j3) − tr₄(β) (ordered, i,j ∈ {0,1,2}).
+EM term E(Q) := Σ_ij Q_iQ_j D_ij / tr(β), quark charges u = +2/3, d = −1/3.
+Report E for p (uud) and n (udd) at every placement of the odd quark, and
+ΔE = E(n) − E(p) for all 3×3 placement pairs. The photon weight w multiplies ΔE; its sign is
+not derived (the γγ mixed pairing gave w = −h⁴; same-photon pairings give w > 0), so the
+sign test is reported for both signs of w. No selection.
