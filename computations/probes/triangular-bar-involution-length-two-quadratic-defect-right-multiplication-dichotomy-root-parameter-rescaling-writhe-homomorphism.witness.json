@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "triangular_bar_involution_length_two_quadratic_defect_right_multiplication_dichotomy_root_parameter_rescaling_writhe_homomorphism_probe",
+  "beans": [
+    "qou-gmfz",
+    "qou-img9",
+    "qou-phir",
+    "qou-siin",
+    "qou-l25z"
+  ],
+  "leanModule": "QOU.Foundations.TriangularBarInvolutionLengthTwoQuadraticDefectRightMultiplicationDichotomyRootParameterRescalingWritheHomomorphism",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/triangular_bar_involution_length_two_quadratic_defect_right_multiplication_dichotomy_root_parameter_rescaling_writhe_homomorphism_probe.py",
+  "scriptHash": "b5b4b562fbd04cd73aa5a68e31eebc858e55abd805cb24915d3a249d657d689c",
+  "scriptSha256": "b5b4b562fbd04cd73aa5a68e31eebc858e55abd805cb24915d3a249d657d689c",
+  "scriptCommitSha": "1d514d8cc14cab86cdbfe50f0bca4313a91a6db7",
+  "generatedAt": "2026-11-18T08:58:25.696453+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-gmfz",
+      "theorem": "triBar_involutive_and_classical_limit",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-img9",
+      "theorem": "simple_refl_quad_zero_vs_wordLen2_residual",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-phir",
+      "theorem": "rightDichotomyOp_basis_and_quadratic_identity",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-siin",
+      "theorem": "rescaledQuadPoly_eq_mul_rootQuadPoly_and_euler_invariance",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-l25z",
+      "theorem": "writhe_relators_and_uniform_generator_vanishing",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
