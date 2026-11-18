@@ -213,3 +213,5 @@ measured and blind to how the tree was spelled.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- **Round 94 PR (`litlfred/qou#8500`)**: Formalized `FamilyChainErrorPartitionLedger`, `canonicalFamilyChainErrorPartitionLedger`, `family_chain_three_way_decomposition`, and `family_chain_cubic_factorization` in `QOU.Foundations.LeafOleanConeBatchingDeferredStructuralCleanupSiblingVerificationClassificationFamilyChainErrorPartitionSubstrateProbeCancelHotspot` with 80-dps witness (`HEAD = 37841388326f8fad43c7ffaa9f1c59e901153736`).

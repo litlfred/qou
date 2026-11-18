@@ -11,3 +11,4 @@ updated_at: 2026-10-04T15:20:43Z
 parent: qou-5vkl
 ---
 
+- **Round 94 PR (`litlfred/qou#8500`)**: Formalized `SiblingVerificationClassificationLedger`, `canonicalSiblingVerificationClassificationLedger`, `sibling_classification_polarization`, and `sibling_classification_diff_sq` in `QOU.Foundations.LeafOleanConeBatchingDeferredStructuralCleanupSiblingVerificationClassificationFamilyChainErrorPartitionSubstrateProbeCancelHotspot` with 80-dps witness (`HEAD = 37841388326f8fad43c7ffaa9f1c59e901153736`).

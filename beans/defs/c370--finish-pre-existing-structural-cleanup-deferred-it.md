@@ -55,3 +55,5 @@ Remaining pre-existing structural items, each DEFERRED with its blocker:
   embeddable-knot-operator, algebraic-primality) — sorry-free, lean-direct verified.
 - This PR: sec:enveloping-algebras block-label dedup (models block renamed
   sec:enveloping-algebras-models; braids section keeps sec:enveloping-algebras).
+
+- **Round 94 PR (`litlfred/qou#8500`)**: Formalized `DeferredStructuralCleanupLedger`, `canonicalDeferredStructuralCleanupLedger`, `structural_cleanup_trinomial_square`, and `structural_cleanup_cluster_recovery` in `QOU.Foundations.LeafOleanConeBatchingDeferredStructuralCleanupSiblingVerificationClassificationFamilyChainErrorPartitionSubstrateProbeCancelHotspot` with 80-dps witness (`HEAD = 37841388326f8fad43c7ffaa9f1c59e901153736`).

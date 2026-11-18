@@ -112,3 +112,5 @@ base branch (mathlib count 2962 = 2951 + 11, verified in the restore-check). The
 separate `lake-cache/qou-v4-24-0-repthy-wedderburn` addon branch is redundant for
 restores from this seed onward (kept per the never-delete-branches directive).
 Skill note updated. Bean goal achieved; closing is the owner's call.
+
+- **Round 94 PR (`litlfred/qou#8500`)**: Formalized `LeafOleanConeBatchingLedger`, `canonicalLeafOleanConeBatchingLedger`, `leaf_cone_parallelogram_identity`, `leaf_cone_discrepancy_sq_nonneg`, and `leaf_cone_positive_leverage_and_recovery` in `QOU.Foundations.LeafOleanConeBatchingDeferredStructuralCleanupSiblingVerificationClassificationFamilyChainErrorPartitionSubstrateProbeCancelHotspot` with 80-dps witness (`HEAD = 37841388326f8fad43c7ffaa9f1c59e901153736`, `scriptCommitSha = 79b2648932653702ea6a8cbefa5ff6493ff25e46`, `scriptHash = 310095425a857ae1cba47494cdbd7491b7846f82f292c4df8b8288ba0a130fe0`).
