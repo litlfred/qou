@@ -1,7 +1,8 @@
 ---
 # qou-ystb
 title: Cite 0305423v3.pdf at prop:q-plancherel-asymptotic-skeleton
-status: todo
+status: in-progress
+pr: 8440
 type: task
 priority: normal
 tags:

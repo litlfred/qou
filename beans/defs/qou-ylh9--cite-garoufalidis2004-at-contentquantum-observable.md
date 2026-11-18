@@ -1,7 +1,8 @@
 ---
 # qou-ylh9
 title: Cite [garoufalidis2004] at folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-mach…
-status: todo
+status: in-progress
+pr: 8440
 type: task
 priority: normal
 tags:

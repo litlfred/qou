@@ -1,7 +1,8 @@
 ---
 # qou-z7v7
 title: Remark interpreting 0307092v2.pdf at rem:quantum-bloch-group-framework-connection
-status: todo
+status: in-progress
+pr: 8440
 type: task
 priority: normal
 tags:

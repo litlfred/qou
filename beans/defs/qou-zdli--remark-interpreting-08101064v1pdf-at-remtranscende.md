@@ -1,7 +1,8 @@
 ---
 # qou-zdli
 title: Remark interpreting 0810.1064v1.pdf at rem:transcendental-accounting
-status: todo
+status: in-progress
+pr: 8440
 type: task
 priority: normal
 tags:
