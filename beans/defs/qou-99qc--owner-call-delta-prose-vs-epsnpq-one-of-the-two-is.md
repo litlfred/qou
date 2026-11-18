@@ -3891,3 +3891,17 @@ reference = same two crossings adjacent. Scripts /tmp/claude-0/np/loop4.py, dsym
   (φ = h², assignment), and the swap moves the proton anchor m_p = 2(m_μF_Bor − 6m_e) by
   ≈ −1.35 MeV. Needs: derived φ = h², a reason the closed loop sits on the charged nucleon,
   and an anchor fix from the same reason. Near-match only.
+
+## PRE-REGISTRATION 2026-11-18 17:35Z — photon–electron crossing weight from the γγ factorisation
+Rule (stated before evaluating): β_Bor = γ(φ⁺)γ(φ⁻), φ⁺=(−qh²,0,qh), φ⁻=(q⁻¹h²,0,−q⁻¹h)
+(PR #8502). An e⁻–nucleon crossing σ₂ is the single-crossing (φ₀) term of one of the two
+photon factors, so it carries weight φ₀⁺ = −qh² or φ₀⁻ = q⁻¹h². A loop has two crossings, so
+the split is φ_aφ_b·D/tr(β_Bor) with D the exact sign-independent loop coefficient.
+All three pairings are reported: (+,+), (−,−), (+,−). Neutron = loop-dressed (no swap).
+Known before registration: the φ = h² magnitude match (16:40–17:05Z). NOT known: the sign
+under this rule. Caveat: the φ₀₁ (σ₂σ₃) pair term needs a 5th strand (e⁺) and is not included.
+RESULT 17:40Z (exact): weights φ_aφ_b = q²h⁴ (+,+), q⁻²h⁴ (−,−), −h⁴ (+,−).
+Split (neutron = loop-dressed): (+,+) −0.1764 %, (−,−) −0.1162 %, (+,−) +0.1432 %.
+Only the mixed pairing gives a heavier neutron, and it is the bar-symmetric product (q-powers cancel).
+Measured (m_n−m_p)/m_p = +0.1378 %; mass-level (+,−) ≈ +0.144 %. Mixed pairing NOT derived:
+open whether a closed loop must take one crossing from each factor. Near-match status unchanged.
