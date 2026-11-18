@@ -3785,3 +3785,12 @@ Words that are non-split and three-component appear in the run list at cost 4 an
 Owner card posted: whether the nucleon closure must be non-split / three-component. Any filter is to be pre-registered before use. Script: /tmp scratch (ruleC.py); to be committed with the probe if adopted.
 
 Bean stays OPEN.
+
+## 2026-11-18 — γγ as Hecke elements: reachability (measurement, no selection)
+
+Owner asked to explore reading γ(φ)γ(ψ) as an H₃ element rather than as braid words (braid-word reading is positive-only, so β_Bor unreachable). Measured at proton q₀, mp.dps 40 + exact sympy Gröbner (scratch scripts, not committed):
+1. β_Bor = λ·γ(φ)γ(ψ) has REAL solutions, e.g. φ=(2.5,−2.124435039,−2.285617294), ψ=(−0.8224825298,0.5366867306,0.7224010393), λ=−2.20056601312; residual 3.9e-37 by direct multiplication.
+2. Solutions form a 1-parameter curve: for fixed φ, membership in γ(φ)·span{1,σ₀,σ₁,σ₀σ₁} is 2 equations in φ's 3 weights; λ drops out.
+3. Product map has generic rank 6 = dim H₃, so a generic H₃ element is a scalar times some γγ. Reachability does NOT select β_Bor.
+4. γ(φ)² = λβ_Bor has no solution (Gröbner reduces to (q²−1)²(q²+1)²(q⁴+1)=0): two different photons are needed.
+Implication: any nucleon selection in this reading must come from a pre-registered rule on (φ,ψ), the SDP, or the trace functional; p and n on one element cannot be split by moving along the curve. Stays open.
