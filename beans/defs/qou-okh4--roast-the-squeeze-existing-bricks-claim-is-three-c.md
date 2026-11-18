@@ -70,3 +70,6 @@ Composites 1 and 4 both refuted for ~10–13 sessions saved). The preflight
 discipline should apply here too: **before budgeting any new squeeze
 discharge, first establish that a positive sum exists at the Kashaev point.**
 That is a cheap, decisive gate and it is the whole question.
+
+## Round 73 Progress (PR #8503)
+- De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8503` (C1 `7012166c0cf66b2883aa7183a77bd000b539ef13`, C2 `d9fae15d67f0d833c14c2b32b05fb5476e3d714f`, 80-dps mpmath witness verified, 0 static audit findings).
