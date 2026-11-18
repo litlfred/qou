@@ -1,7 +1,7 @@
 ---
 # c370
 title: Finish pre-existing structural cleanup — deferred items (blocked by active PRs / author judgment)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

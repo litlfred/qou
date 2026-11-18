@@ -1,7 +1,7 @@
 ---
 # bnyo
 title: 'Cache infra: add 4 Mathlib leaf oleans to lake-cache cone (5 cache-artifact files genuinely use them)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

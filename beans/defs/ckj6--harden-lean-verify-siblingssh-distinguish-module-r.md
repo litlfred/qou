@@ -1,7 +1,7 @@
 ---
 # ckj6
 title: 'Harden lean-verify-siblings.sh: distinguish ''module removed from Mathlib'' (FAIL) from ''olean outside cache cone'' (neutral-skip) — this class was masked as neutral-skip'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # f273
 title: 'Compute infra: audit substrate probes for BlockCache/LaurentQ wiring + slow sympy simplify/cancel hotspots (compute-audit)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
