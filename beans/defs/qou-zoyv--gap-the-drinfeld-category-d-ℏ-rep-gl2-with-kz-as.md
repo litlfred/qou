@@ -1,11 +1,11 @@
 ---
 # qou-zoyv
 title: 'GAP: the Drinfeld category D_ℏ (Rep gl2 with KZ associator) is a ribbon category'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:09Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-18T07:46:25Z
 parent: qou-59vq
 ---
 
@@ -129,3 +129,5 @@ Do not close.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+- Round 72 (`lane-e667`): Formalized `qou-sx5r`, `qou-slck`, `qou-dgsw`, `qou-jfr8`, `qou-zoyv` in `QOU.Foundations.SandwichTraceCyclicityVectorBraidingReducedWordSeparationRibbonMonodromy` with 80-dps `mpmath` 2-commit witness stamp (`c95261a9c444144dd0cc07d50ddaabb0b496a13f` -> `c3e4ad1f706f5fd2e70cbb90c8c9bd7753ec1e10`, `scriptHash=e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8`) in PR `litlfred/qou#8390` (`status: in-progress`).

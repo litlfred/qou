@@ -1,13 +1,13 @@
 ---
 # qou-sx5r
 title: 'opt1-inductive: Ocneanu cyclicity via induction — abstract bricks (gen-trace-commute, one-g coset); two-g core residual'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-19T18:09:26Z
-updated_at: 2026-10-04T15:21:49Z
+updated_at: 2026-11-18T07:46:25Z
 parent: qou-59vq
 ---
 
@@ -53,3 +53,5 @@ Needed [Algebra R A], which MarkovInductiveCyclicity deliberately lacks. That ab
 STILL OPEN, unchanged: cyclic_two_g remains conditional. Instantiating needs a concrete tower (algebra, memB, a trace with the Markov property, and a coset decomposition of each w). Conditional-proved is not premise-established.
 
 CORRECTION to my own framing in PR #5820: I called MarkovInductiveCyclicity 'an ORPHAN -- 0 importers corpus-wide' as if notable. True, but the base rate guts it: 86 modules on disk under QOU/Machinery/, only 23 registered in QOU.lean. Being unregistered is the local norm, not evidence of abandonment. The new module is left unregistered for consistency.
+
+- Round 72 (`lane-e667`): Formalized `qou-sx5r`, `qou-slck`, `qou-dgsw`, `qou-jfr8`, `qou-zoyv` in `QOU.Foundations.SandwichTraceCyclicityVectorBraidingReducedWordSeparationRibbonMonodromy` with 80-dps `mpmath` 2-commit witness stamp (`c95261a9c444144dd0cc07d50ddaabb0b496a13f` -> `c3e4ad1f706f5fd2e70cbb90c8c9bd7753ec1e10`, `scriptHash=e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8`) in PR `litlfred/qou#8390` (`status: in-progress`).

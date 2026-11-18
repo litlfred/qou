@@ -1,11 +1,11 @@
 ---
 # qou-dgsw
 title: Explicit weight-preserving KZ→Jimbo intertwiner ⊕U_k; linear independence of Jones words in Pres
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T20:03:36Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-18T07:46:25Z
 parent: qou-59vq
 ---
 
@@ -20,3 +20,5 @@ Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the b
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+- Round 72 (`lane-e667`): Formalized `qou-sx5r`, `qou-slck`, `qou-dgsw`, `qou-jfr8`, `qou-zoyv` in `QOU.Foundations.SandwichTraceCyclicityVectorBraidingReducedWordSeparationRibbonMonodromy` with 80-dps `mpmath` 2-commit witness stamp (`c95261a9c444144dd0cc07d50ddaabb0b496a13f` -> `c3e4ad1f706f5fd2e70cbb90c8c9bd7753ec1e10`, `scriptHash=e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8`) in PR `litlfred/qou#8390` (`status: in-progress`).
