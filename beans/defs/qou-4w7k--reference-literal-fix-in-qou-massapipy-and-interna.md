@@ -1,7 +1,7 @@
 ---
 # qou-4w7k
 title: Reference-literal fix in qou_mass/api.py and _internal/y_lambda_su_n.py
-status: todo
+status: in-progress
 type: task
 tags:
     - reorg-2026-10-04

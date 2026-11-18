@@ -1,7 +1,7 @@
 ---
 # qou-4bmc
 title: 'OWNER RULING: historical convention-C material is deprecated and leaves the corpus; audit-only'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

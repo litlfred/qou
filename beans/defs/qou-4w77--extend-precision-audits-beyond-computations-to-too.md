@@ -1,7 +1,7 @@
 ---
 # qou-4w77
 title: Extend precision audits beyond computations/ to tools/ and qou-mass/
-status: todo
+status: in-progress
 type: task
 tags:
     - reorg-2026-10-04

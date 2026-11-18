@@ -1,7 +1,7 @@
 ---
 # qou-sp88
 title: 'Anti-fit identifiability cert: (s,t)↦(3s−t,6s−4t) linear iso det=−6'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
