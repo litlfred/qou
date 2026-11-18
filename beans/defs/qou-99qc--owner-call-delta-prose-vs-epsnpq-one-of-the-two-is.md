@@ -3837,3 +3837,13 @@ Outputs, all exact in q:
 3. tr_M at z_D = q³/(q²+1), evaluated at the proton q₀ with mpmath; the ratio n/p.
 
 No outcome changes the corpus. The corpus nucleon (β_Bor × Δ₃, def:typed-crossing-operator) is untouched.
+
+## NOTE 2026-11-18 16:20Z — one-sided β-flip on β_Bor (exploratory, scope (a))
+Owner idea: p and n as conjugate Borromean words differing by a quark/β-decay flip.
+Conjugates have equal traces (Δ=0), so the split must be a single one-sided vertex
+W ∈ {qJ_i, q⁻¹J_i} (audit 2026-11-15 one-sided weak vertex). Replacing one crossing of
+β_Bor=(σ₀σ₁⁻¹)³ by W, Markov trace at z_D, proton pin, exact sympy (2-dim + 1-dim irreps,
+y_(1³)=0): Δtr/tr = σ₀: +5.81% (qJ) / −14.12% (q⁻¹J); σ₁⁻¹: +17.56% / −4.58%.
+Identical across the three positions of each letter type (cyclic conjugacy), so no uud/udu
+asymmetry from position. All 30–125× larger than (m_n−m_p)/m_p ≈ 0.14%. No row selected.
+Scratch script /tmp/claude-0/np/flip.py, not committed. Not pre-registered as a selection rule.
