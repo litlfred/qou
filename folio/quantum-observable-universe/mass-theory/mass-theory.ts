@@ -170,6 +170,7 @@ export default chapter({
             "borromean-markov-trace-closed-form",
             "borromean-markov-trace-closed-form-proof",
             "borromean-two-photon-factorisation",
+            "trace-flavour-no-go",
             // Re-homed orphan: H_3 Jones/Temperley–Lieb Markov–Wenzl weights
             // feed the Borromean trace; sit with the Markov corrections.
             "h3-markov-wenzl-weights",
