@@ -1,0 +1,71 @@
+{
+  "allAssertionsPassed": true,
+  "allPassed": true,
+  "beanIds": [
+    "qou-gpwr",
+    "qou-ufmo",
+    "qou-ughx",
+    "qou-uoad",
+    "qou-uz7q"
+  ],
+  "invariants": {
+    "qou_gpwr_cyclic_shift_exploratory_witness_audit": {
+      "cleanSeminormalProducers": 2,
+      "exploratoryCatalogueSets": 1,
+      "exploratoryDeltaLambdaWitnesses": 4,
+      "quadraticBalanceLhs80dps": "53.540239093249860060631839400593146272610196575651309012531043753318193504401183",
+      "quadraticBalanceRhs80dps": "53.540239093249860060631839400593146272610196575651309012531043753318193504401183",
+      "residualAbs80dps": "0.0",
+      "totalAtRiskExploratoryItems": 5
+    },
+    "qou_ufmo_interior_maximum_cone_obstruction": {
+      "obstructionPropertyCount": 2,
+      "residualAbs80dps": "0.0",
+      "totalLadderPropertyChecks": 6,
+      "trinomialSquareLhs80dps": "131.42583115312799324554715927172654282214720194775232518430758123112633420383728",
+      "trinomialSquareRhs80dps": "131.42583115312799324554715927172654282214720194775232518430758123112633420383728",
+      "validatedLadderCount": 3
+    },
+    "qou_ughx_anchor_scriptless_witness_partition": {
+      "polarizationLhs80dps": "1736.8503709603439569646647227952335167231396266545955054785590734119889162164845",
+      "polarizationRhs80dps": "1736.8503709603439569646647227952335167231396266545955054785590734119889162164845",
+      "residualAbs80dps": "0.0",
+      "scriptBackedFlipWitnesses": 45,
+      "scriptlessFlipWitnesses": 9,
+      "totalFlipWitnesses": 54
+    },
+    "qou_uoad_slug_drift_duplicate_reconciliation": {
+      "cubicFactorizationLhs80dps": "1510.5053042378993657002676507377157993591535600080723168485070345064421271955474",
+      "cubicFactorizationRhs80dps": "1510.5053042378993657002676507377157993591535600080723168485070345064421271955474",
+      "documentedSeparatorExamples": 4,
+      "extraDuplicateFiles": 10,
+      "intendedUpdatedFiles": 1,
+      "residualAbs80dps": "2.1590421387736111563465879657000998927790000911090703462559258675421479507906068e-78",
+      "totalDiffFiles": 11
+    },
+    "qou_uz7q_dual_crystal_progress_logging": {
+      "budgetIncrementSeconds": 120,
+      "firstTimeoutBudgetSeconds": 300,
+      "initialMiscountedPrintSites": 3,
+      "measuredPrintSites": 20,
+      "printSiteUnderestimate": 17,
+      "residualAbs80dps": "2.2108591501041778240989060768769022902056960932956880345660680883631595016095813e-75",
+      "secondTimeoutBudgetSeconds": 420,
+      "timingCallSites": 0,
+      "twoSquareCompositionLhs80dps": "1131598.9295055964926397337987700153749391348112307983351473132244255014978150268",
+      "twoSquareCompositionRhs80dps": "1131598.9295055964926397337987700153749391348112307983351473132244255014978150268"
+    }
+  },
+  "leanModule": "QOU.Foundations.CyclicShiftExploratoryWitnessAuditInteriorMaximumConeObstructionAnchorScriptlessWitnessPartitionSlugDriftDuplicateReconciliationDualCrystalProgressLogging",
+  "parameters": {
+    "phi_inv_80dps": "0.61803398874989484820458683436563811772030917980576286213544862270526046281890245",
+    "q0_80dps": "0.47567938488603014898510765511005414430281415477659621149525635187082778421987066"
+  },
+  "precisionDps": 80,
+  "probeId": "cyclic_shift_exploratory_witness_audit_interior_maximum_cone_obstruction_anchor_scriptless_witness_partition_slug_drift_duplicate_reconciliation_dual_crystal_progress_logging_probe",
+  "schemaVersion": "1.0.0",
+  "scriptCommitSha": "d704f443921c13d8784b9596ab759935d4d924a5",
+  "scriptHash": "4eb2afa633ca8746d20ab0222a78a41d73e277dc6132a4d1b3d4f66a6a76f479",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/cyclic_shift_exploratory_witness_audit_interior_maximum_cone_obstruction_anchor_scriptless_witness_partition_slug_drift_duplicate_reconciliation_dual_crystal_progress_logging_probe.py",
+  "scriptSha256": "4eb2afa633ca8746d20ab0222a78a41d73e277dc6132a4d1b3d4f66a6a76f479"
+}
