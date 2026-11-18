@@ -3885,3 +3885,9 @@ reference = same two crossings adjacent. Scripts /tmp/claude-0/np/loop4.py, dsym
 - **Three-term photon pairs** (φ₀₁ = 0): reach ONLY the placements with the odd quark in the middle (p:d@1, n:u@1). There are two real pairs each, with the same λ for p and n. Exact Gröbner computation at q = 11/10, 13/10 and 3; for the other four placements the Gröbner basis is {1}. The bare β_Bor is NOT reachable this way.
 - **One-term photons:** reach none (only λ = 0).
 - **Scope (a):** this is a measurement under one typing rule, and the C⁻¹ choice for negative crossings is mine. The middle-placement result is not a selection of the nucleon.
+
+- 17:30Z owner asked: p/n backwards? Swapping (proton = loop-dressed, neutron = bare β_Bor)
+  gives m_n/m_p − 1 = +0.144 % vs measured +0.138 % (4.5 % off). Now TWO post-hoc choices
+  (φ = h², assignment), and the swap moves the proton anchor m_p = 2(m_μF_Bor − 6m_e) by
+  ≈ −1.35 MeV. Needs: derived φ = h², a reason the closed loop sits on the charged nucleon,
+  and an anchor fix from the same reason. Near-match only.
