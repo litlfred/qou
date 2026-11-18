@@ -1,7 +1,7 @@
 ---
 # qou-brt1
 title: 'PROVE(lean): volume_perturbation — theorem volume_perturbation [ctx : VolumePerturbationContext] : ∀ k : ℕ, 4 ≤ k → ctx.δΦ k  [cited manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -24,3 +24,9 @@ parent: qou-t5uj
   - [manuscript] quantum-observable-universe/mass-theory/volume-perturbation-formula.md
 - **Tractability:** δΦ_k = z²·Vol(4₁)·qIntSym identity over a context class; repo compute identity.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+## Round 69 Update (lane-e667)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/DescendedTraceNormCentralChannelSplitPairSkeinChiralityLinkingVolumePerturbation.lean`
+- 80-dps mpmath probe: `computations/probes/descended_trace_norm_central_channel_split_pair_skein_chirality_linking_volume_perturbation_probe.py`
+- Witness: `computations/probes/descended-trace-norm-central-channel-split-pair-skein-chirality-linking-volume-perturbation.witness.json` (`scriptHash = 95d51dea43d2`, `scriptCommitSha = 64331862e639c45c7af4076683d01a06c6112e41`)
+- PR: https://github.com/litlfred/qou/pull/8377 (`395a22d2b9a8d9ca11ced0eeab9414dd76df1c20`)

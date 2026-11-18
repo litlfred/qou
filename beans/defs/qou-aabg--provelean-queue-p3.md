@@ -1,7 +1,7 @@
 ---
 # qou-aabg
 title: PROVE(lean) queue (P3)
-status: todo
+status: in-progress
 type: feature
 tags:
     - reorg-2026-10-04

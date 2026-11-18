@@ -1,7 +1,7 @@
 ---
 # qou-0w3s
 title: 'Descent inputs of CatDescendedInputs (cat_descended_is_base_mass.lean): no sorries remain, two open inputs'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -40,3 +40,9 @@ Former title: 'PROVE(lean): cat_descended_is_base_mass.lean — 2 cited sorries 
 The body above describes a file that no longer exists in that form. Checked on `main` 2026-10-10: `QOU/TopologicalMass/cat_descended_is_base_mass.lean` has **no `sorry`**. The two identities are now fields of `class CatDescendedInputs : Prop` (documented as "Open input 1" and "Open input 2"), and the two theorems project them (`ctx.trace_compat` and its sibling). So the open item is the two class inputs, not two sorries. `qou-50p7` recorded the structural wall: as stated the inputs relate independent opaque constants, so nothing in the repo forces them.
 
 Tracked under carrier M2 (`tmvac`) of epic `qou-d8c7`. Stays open: the inputs are conjectural (rule 13a).
+
+## Round 69 Update (lane-e667)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/DescendedTraceNormCentralChannelSplitPairSkeinChiralityLinkingVolumePerturbation.lean`
+- 80-dps mpmath probe: `computations/probes/descended_trace_norm_central_channel_split_pair_skein_chirality_linking_volume_perturbation_probe.py`
+- Witness: `computations/probes/descended-trace-norm-central-channel-split-pair-skein-chirality-linking-volume-perturbation.witness.json` (`scriptHash = 95d51dea43d2`, `scriptCommitSha = 64331862e639c45c7af4076683d01a06c6112e41`)
+- PR: https://github.com/litlfred/qou/pull/8377 (`395a22d2b9a8d9ca11ced0eeab9414dd76df1c20`)

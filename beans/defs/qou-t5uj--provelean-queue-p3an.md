@@ -1,7 +1,7 @@
 ---
 # qou-t5uj
 title: PROVE(lean) queue (P3.AN)
-status: todo
+status: in-progress
 type: feature
 tags:
     - reorg-2026-10-04
