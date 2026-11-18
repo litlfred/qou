@@ -1,7 +1,7 @@
 ---
 # qou-nok3
 title: 'Unrecorded argv provenance: 4 confirmed producers whose flag changes the payload'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

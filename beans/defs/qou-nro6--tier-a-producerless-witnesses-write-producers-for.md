@@ -1,7 +1,7 @@
 ---
 # qou-nro6
 title: 'Tier-A producerless witnesses: write producers for the 4 paper-consumed ones (2 are computation.witness manifest contracts)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

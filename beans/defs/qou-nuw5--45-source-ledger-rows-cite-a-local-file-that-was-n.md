@@ -1,7 +1,7 @@
 ---
 # qou-nuw5
 title: 45 source-ledger rows cite a local file that was never committed (43 'verified-clean') — re-fetch or downgrade
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

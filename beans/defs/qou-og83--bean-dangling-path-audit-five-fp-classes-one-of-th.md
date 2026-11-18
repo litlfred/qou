@@ -1,7 +1,7 @@
 ---
 # qou-og83
 title: 'bean-dangling-path-audit: five FP classes, one of them a bug in the extractor'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
