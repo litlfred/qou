@@ -1,14 +1,14 @@
 ---
 # qou-zzwm
 title: The C->D excision left published accuracy figures behind — my mass table was the first, not the only
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-30T08:06:31Z
-updated_at: 2026-10-10T07:47:10Z
+updated_at: 2026-11-18T08:30:27Z
 parent: qou-cdx1
 ---
 
@@ -323,3 +323,8 @@ value-based detector"*. The sequel: **a label is not a fix, it is a second
 artifact that can go stale** — and this one went stale in the direction that
 makes the corpus look worse than it is, by asserting three published rows are
 unreproducible under the convention they are actually computed in.
+
+## Round 86 Progress (PR #8398)
+- Branch: `feat/round86-irrcubic-resolvent3-dimsum5-tau1-satdiff-43c1`
+- Commit 1 (code + probe): `b5de63778dc1a1dd5f06089955f845fb94bba20f`
+- Commit 2 (witness): `cda43c1b21fb03c917cb1d6c4ebc184aeff1e706` (`scriptSha256 = d48339de07d62c85bc2a014c14ff39ca61b8c6091d44dbc01d9abdb15245ae18`)

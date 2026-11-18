@@ -1,14 +1,14 @@
 ---
 # qou-gl58
 title: 30 files use the CLASSICAL q-integer (q^n-1)/(q-1) under names q_int/qint — check each consumer expects it, not the symmetric one; several are in deltalambda/ (Track A)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - needs-owner
     - reorg-2026-10-04
 created_at: 2026-09-07T14:02:18Z
-updated_at: 2026-10-10T07:55:53Z
+updated_at: 2026-11-18T08:30:27Z
 parent: qou-4cu3
 ---
 
@@ -256,3 +256,8 @@ names. The bean's own worked note says 0 of 363 files carry both conventions,
 i.e. no internal inconsistency. Keep open, re-home.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## Round 86 Progress (PR #8398)
+- Branch: `feat/round86-irrcubic-resolvent3-dimsum5-tau1-satdiff-43c1`
+- Commit 1 (code + probe): `b5de63778dc1a1dd5f06089955f845fb94bba20f`
+- Commit 2 (witness): `cda43c1b21fb03c917cb1d6c4ebc184aeff1e706` (`scriptSha256 = d48339de07d62c85bc2a014c14ff39ca61b8c6091d44dbc01d9abdb15245ae18`)
