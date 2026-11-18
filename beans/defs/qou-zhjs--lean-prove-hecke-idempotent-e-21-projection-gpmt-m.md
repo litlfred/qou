@@ -1,14 +1,14 @@
 ---
 # qou-zhjs
 title: Lean-prove Hecke idempotent e_(2,1) projection & GPMT modified quantum dimension trace on H₃(q) nucleon weight spaces
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - lean
     - convention-d
 created_at: 2026-11-18T19:52:23Z
-updated_at: 2026-11-18T19:52:23Z
+updated_at: 2026-11-18T20:19:50Z
 parent: qou-7xl8
 ---
 
@@ -16,3 +16,13 @@ In `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/NucleonIdempotentM
 1. Prove the orthogonal idempotent decomposition `1 = e_(3) + e_(2,1)` on the 3-dimensional weight spaces `(2,1)` and `(1,2)` using `FEp_sector` and `EFn_sector` (`e_(3) = [3]_q⁻¹ • FE`, `e_(2,1) = 1 - [3]_q⁻¹ • FE`), verifying `e_(3)² = e_(3)`, `e_(2,1)² = e_(2,1)`, `e_(3) * e_(2,1) = 0`, and that both commute with `A₁, A₂` / `B₁, B₂` (`[aiston-morton-1997]`, `[hadji-morton-2009]`).
 2. Prove the Jucys-Murphy and full-twist content eigenvalues on the symmetric `e_(3)` (`I=3/2` Δ-decuplet) vs mixed-symmetry `e_(2,1)` (`I=1/2` nucleon) sectors.
 3. Formalize the Convention-D Wedderburn trace decomposition `tr_D = w_(3)(z_D) χ_(3) + w_(2,1)(z_D) χ_(2,1) + 0 · χ_(1³)` and the Geer-Patureau-Mirand-Turaev (`[geer-patureau-mirand-turaev-2009]`, `[geer-patureau-mirand-turaev-2013]`) first-order modified trace `t_(1³) = d/dz|_{z=z_D} tr_z` on the killed `(1³)` ideal.
+
+
+
+## Completion & Adversarial Verification Record (2026-11-18)
+- **Lean Module:** `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/NucleonIdempotentModifiedTrace.lean`
+- **Verification:**
+  - `bash scripts/lean-verify.sh folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/NucleonIdempotentModifiedTrace.lean`: `✓ exit 0 — checks` (`0` sorries, `0` warnings)
+  - `python3 scripts/lean-borrowed-name-audit.py --strict`: `0 CRITICAL, 0 major, 0 advisory`
+  - `python3 scripts/lean-definition-collapsed-audit.py --strict`: `0 CRITICAL, 0 advisory`
+  - Adversarial review (`qou-gt6w`, `lane-7b4f`): **PASS** (includes machine-checked 11-crossing word fold bridges `protonWord_foldl_eq_protonCoord` and `neutronWord_foldl_eq_neutronCoord`; `#print axioms`: strictly `[propext, Classical.choice, Quot.sound]`).
