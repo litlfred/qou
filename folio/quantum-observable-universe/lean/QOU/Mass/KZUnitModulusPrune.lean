@@ -43,4 +43,11 @@ theorem exp_I_ne_real_gt_one (θ : ℝ) {q : ℝ} (hq : 1 < q) :
   exact (ne_of_lt hq) this
 
 
+/-- **Strict norm gap between unit-circle KZ monodromy and real substrate `q > 1` (`qou-qqyb`).**
+For any real phase `θ` and real substrate parameter `q > 1`, `‖Complex.exp (θ * Complex.I)‖ < q`. -/
+theorem unit_modulus_lt_real_gt_one (θ : ℝ) {q : ℝ} (hq : 1 < q) :
+    ‖Complex.exp (θ * Complex.I)‖ < q := by
+  rw [Complex.norm_exp_ofReal_mul_I]
+  exact hq
+
 end QOU.Mass.KZUnitModulusPrune

@@ -120,4 +120,12 @@ theorem ggm_full_alternation_impossible_of_lt_two (q : K) (hq : q < 2) (y : ℕ 
   rw [zero_add, pow_one] at this
   exact absurd hq (not_lt.mpr this)
 
+/-- **Exact recovery of the middle term `c * b` from `step c a b + a` (`qou-9nnz`).**
+For any coefficient `c` and consecutive iterates `a, b : K`, `step c a b + a = c * b`. -/
+theorem step_add_prev_eq_mul (c a b : K) :
+    step c a b + a = c * b := by
+  have h : step c a b = c * b - a := rfl
+  rw [h]
+  ring
+
 end QOU.Mass.GGMAlternationOnset

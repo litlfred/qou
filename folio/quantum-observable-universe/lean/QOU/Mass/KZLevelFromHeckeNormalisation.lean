@@ -85,4 +85,10 @@ theorem eigen_pair_of_product_ratio {a b q : K} (hq : q ≠ 0) (hb : b ≠ 0)
     refine ⟨?_, hbv⟩
     rw [ha, hbv]; field_simp
 
+/-- **Square of the first Hecke eigenvalue from product `-1` and ratio `-q^2` (`qou-l2vh`).**
+If `a * b = -1` and `a / b = -(q ^ 2)` with `q ≠ 0` and `b ≠ 0`, then `a ^ 2 = q ^ 2`. -/
+theorem eigen_first_sq_of_product_ratio {a b q : K} (hq : q ≠ 0) (hb : b ≠ 0)
+    (hprod : a * b = -1) (hratio : a / b = -(q ^ 2)) : a ^ 2 = q ^ 2 := by
+  rcases eigen_pair_of_product_ratio hq hb hprod hratio with ⟨rfl, _⟩ | ⟨rfl, _⟩ <;> ring
+
 end QOU.Mass.KZLevelFromHeckeNormalisation

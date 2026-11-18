@@ -47,6 +47,16 @@ theorem trace_eq_rank (P : Matrix n n K) (hP : IsIdempotentElem P) :
   rw [← Matrix.trace_toLin'_eq]
   exact hproj
 
+/-- **Equal rank implies equal trace for idempotent matrices over `K` (`qou-cdx1`).**
+If `P : Matrix n n K` and `Q : Matrix m m K` are idempotent with `P.rank = Q.rank`,
+then `P.trace = Q.trace`. -/
+theorem trace_eq_of_rank_eq {m : Type*} [Fintype m] [DecidableEq m]
+    (P : Matrix n n K) (Q : Matrix m m K)
+    (hP : IsIdempotentElem P) (hQ : IsIdempotentElem Q)
+    (hrank : P.rank = Q.rank) :
+    P.trace = Q.trace := by
+  rw [trace_eq_rank P hP, trace_eq_rank Q hQ, hrank]
+
 end Field
 
 section Topology

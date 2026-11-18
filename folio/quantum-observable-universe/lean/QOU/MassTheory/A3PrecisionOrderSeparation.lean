@@ -72,4 +72,15 @@ theorem a3_precision_needs_leading_channel :
     ((3.3420311 : ℝ) / 3.8128 > 0.87) :=
   ⟨bounded_tail_lt_miss, required_coeff_gt_thirteen, graded_baseline_dominates⟩
 
+/-- **Two-term bounded higher-order sum inequality (`qou-ijoi`).**
+If two higher-order cluster coefficients satisfy `|a₁| ≤ B₁` and `|a₂| ≤ B₂` with
+`0 ≤ c` and `0 ≤ h2`, then `|a₁ * c * h2 + a₂ * c * h2| ≤ (B₁ + B₂) * c * h2`. -/
+theorem bounded_two_order_sum_le {a₁ a₂ c h2 B₁ B₂ : R}
+    (hc : 0 ≤ c) (hh : 0 ≤ h2) (ha₁ : |a₁| ≤ B₁) (ha₂ : |a₂| ≤ B₂) :
+    |a₁ * c * h2 + a₂ * c * h2| ≤ (B₁ + B₂) * c * h2 := by
+  have h1 := bounded_order_term_le hc hh ha₁
+  have h2' := bounded_order_term_le hc hh ha₂
+  have htri := abs_add_le (a₁ * c * h2) (a₂ * c * h2)
+  linarith
+
 end QOU.MassTheory.A3PrecisionOrderSeparation
