@@ -1,7 +1,7 @@
 ---
 # qou-q425
 title: 'M6: redo rj-canonical-inner-product in convention D'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z

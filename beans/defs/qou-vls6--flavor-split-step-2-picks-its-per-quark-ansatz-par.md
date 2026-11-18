@@ -1,7 +1,7 @@
 ---
 # qou-vls6
 title: Flavor-split Step 2 picks its per-quark ansatz partly by agreement with experiment (-0.67%)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T10:30:38Z

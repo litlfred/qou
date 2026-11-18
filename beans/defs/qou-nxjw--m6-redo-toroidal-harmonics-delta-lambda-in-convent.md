@@ -1,7 +1,7 @@
 ---
 # qou-nxjw
 title: 'M6: redo toroidal-harmonics-delta-lambda in convention D'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:08Z

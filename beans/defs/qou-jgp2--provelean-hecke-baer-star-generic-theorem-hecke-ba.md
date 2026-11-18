@@ -1,7 +1,7 @@
 ---
 # qou-jgp2
 title: 'De-axiomatise hecke_baer_star_generic: claim rests on two axioms in the sibling .lean'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
