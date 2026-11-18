@@ -201,7 +201,191 @@ def run_symbolic_charge_operator_checks() -> dict:
     ratio_conn_q1 = sp.limit(diff_conn_Bor_norm / (-tr_conn_Bor_p_norm), q, 1)
     assert ratio_conn_q1 == sp.Rational(3, 2)
 
-    # Also check QOU/Mass/NucleonWordTraceClosedForm.lean convention-D polynomials P_p(q) and P_n(q)
+    # (e) Section 7 of NucleonWeightSpaceTwoTerm.lean:
+    # Central Idempotent Projections e_{(3)} (I=3/2 decuplet, dim 1) and e_{(2,1)} (I=1/2 nucleon, dim 2)
+    qInt3 = q**2 + 1 + q**(-2)
+    FEp = sp.Matrix([
+        [q**(-2), q**(-1), 1],
+        [q**(-1), 1, q],
+        [1, q, q**2],
+    ])
+    EFn = sp.Matrix([
+        [q**(-2), q**(-1), 1],
+        [q**(-1), 1, q],
+        [1, q, q**2],
+    ])
+    e3p = (1 / qInt3) * FEp
+    e21p = sp.eye(3) - e3p
+    e3n = (1 / qInt3) * EFn
+    e21n = sp.eye(3) - e3n
+
+    # Verify idempotency, orthogonality, and traces (`e3p_mul_self`, `e21p_mul_self`, `e3p_mul_e21p`, `trace_e3p`, `trace_e21p`)
+    assert sp.simplify(e3p * e3p - e3p) == sp.zeros(3, 3)
+    assert sp.simplify(e21p * e21p - e21p) == sp.zeros(3, 3)
+    assert sp.simplify(e3p * e21p) == sp.zeros(3, 3)
+    assert sp.simplify(e3n * e3n - e3n) == sp.zeros(3, 3)
+    assert sp.simplify(e21n * e21n - e21n) == sp.zeros(3, 3)
+    assert sp.simplify(e3n * e21n) == sp.zeros(3, 3)
+    assert sp.simplify(sp.trace(e3p) - 1) == 0
+    assert sp.simplify(sp.trace(e21p) - 2) == 0
+    assert sp.simplify(sp.trace(e3n) - 1) == 0
+    assert sp.simplify(sp.trace(e21n) - 2) == 0
+
+    # `trace_e3p_borromeanV3` and `trace_e3n_borromeanV3`: tr(e_{(3)} V^3) == 1
+    tr_e3p_Bor = sp.simplify(sp.trace(e3p * Bor_p))
+    tr_e3n_Bor = sp.simplify(sp.trace(e3n * Bor_n))
+    assert tr_e3p_Bor == 1
+    assert tr_e3n_Bor == 1
+
+    # `trace_e21p_borromeanV3` and `trace_e21n_borromeanV3`:
+    # tr(e_{(2,1)} V^3) == -(q^4 - q^2 + 1)*(q^8 - 2*q^6 - 2*q^2 + 1) / q^6 == 2 - 3*h^4 - h^6
+    tr_e21p_Bor = sp.factor(sp.trace(e21p * Bor_p))
+    tr_e21n_Bor = sp.factor(sp.trace(e21n * Bor_n))
+    expected_tr_e21_Bor = sp.factor(-(q**4 - q**2 + 1) * (q**8 - 2 * q**6 - 2 * q**2 + 1) / (q**6))
+    assert sp.simplify(tr_e21p_Bor - expected_tr_e21_Bor) == 0
+    assert sp.simplify(tr_e21n_Bor - expected_tr_e21_Bor) == 0
+    assert sp.simplify(tr_e21p_Bor - (2 - 3 * h**4 - h**6)) == 0
+    assert sp.simplify(tr_e3p_Bor + tr_e21p_Bor - tr_Bor_p) == 0
+
+    # `trace_e21_strong_cartan_diff_borromeanV3`:
+    # (q^-1)*tr(e21n * V_n^3) - q*tr(e21p * V_p^3) == (q^-1 - q)*tr(e21 * V^3)
+    tr_e21_strong_cartan_diff = sp.factor((1 / q) * sp.trace(e21n * Bor_n) - q * sp.trace(e21p * Bor_p))
+    expected_e21_strong_cartan_diff = sp.factor((1 / q - q) * expected_tr_e21_Bor)
+    assert sp.simplify(tr_e21_strong_cartan_diff - expected_e21_strong_cartan_diff) == 0
+
+    # `trace_FEp_QAdjp_borromeanV3` and `trace_EFn_QAdjn_borromeanV3`:
+    tr_FEp_QAdjp_Bor = sp.factor(sp.trace(FEp * (Q12_p + Q23_p) * Bor_p))
+    expected_FEp_QAdjp_Bor = sp.factor(2 * (q - 1)**2 * (q + 1)**2 / (9 * q**2))
+    assert sp.simplify(tr_FEp_QAdjp_Bor - expected_FEp_QAdjp_Bor) == 0
+
+    tr_EFn_QAdjn_Bor = sp.factor(sp.trace(EFn * (Q12_n + Q23_n) * Bor_n))
+    expected_EFn_QAdjn_Bor = sp.factor(-(q**4 + 4 * q**2 + 1) / (9 * q**2))
+    assert sp.simplify(tr_EFn_QAdjn_Bor - expected_EFn_QAdjn_Bor) == 0
+
+    # `trace_e21p_QAdjp_borromeanV3`, `trace_e21n_QAdjn_borromeanV3`, `trace_e21_QAdj_diff_borromeanV3`:
+    tr_e21p_QAdjp_Bor = sp.factor(sp.trace(e21p * (Q12_p + Q23_p) * Bor_p))
+    expected_e21p_QAdjp_Bor = sp.factor(
+        -2 * (q - 1)**2 * (q + 1)**2 * (q**12 - q**6 + 1) / (9 * q**6 * (q**4 + q**2 + 1))
+    )
+    assert sp.simplify(tr_e21p_QAdjp_Bor - expected_e21p_QAdjp_Bor) == 0
+
+    tr_e21n_QAdjn_Bor = sp.factor(sp.trace(e21n * (Q12_n + Q23_n) * Bor_n))
+    expected_e21n_QAdjn_Bor = sp.factor(
+        (4 * q**16 - 11 * q**14 + 13 * q**12 - 22 * q**10 + 20 * q**8 - 22 * q**6 + 13 * q**4 - 11 * q**2 + 4)
+        / (9 * q**6 * (q**4 + q**2 + 1))
+    )
+    assert sp.simplify(tr_e21n_QAdjn_Bor - expected_e21n_QAdjn_Bor) == 0
+
+    diff_e21_QAdj_Bor = sp.factor(tr_e21n_QAdjn_Bor - tr_e21p_QAdjp_Bor)
+    expected_diff_e21_QAdj_Bor = sp.factor(
+        (2 * q**16 - 5 * q**14 + 5 * q**12 - 8 * q**10 + 8 * q**8 - 8 * q**6 + 5 * q**4 - 5 * q**2 + 2)
+        / (3 * q**6 * (q**4 + q**2 + 1))
+    )
+    assert sp.simplify(diff_e21_QAdj_Bor - expected_diff_e21_QAdj_Bor) == 0
+
+    # `hadronicScaleE0_mul_hbar_eq_me`: E_0(m_e, q) * q^2 * (1 - q^-1) == m_e
+    me_sym = sp.Symbol("m_e", positive=True)
+    E0_sym = me_sym / (q * (q - 1))
+    assert sp.simplify(E0_sym * (q**2 * (1 - 1 / q)) - me_sym) == 0
+
+    # (f) Section 8 of NucleonWeightSpaceTwoTerm.lean:
+    # Gröbner Normal-Form Channel Collapse on Borromean V^3 (`trace_diag_LminusA_eq_LplusA`, `borromeanV3_nf_cL_sum`, `borromeanV3A_nf_expansion`, `borromeanV3B_nf_expansion`)
+    d0, d1, d2 = sp.symbols("d0 d1 d2")
+    D_diag = sp.diag(d0, d1, d2)
+    assert sp.simplify(sp.trace(D_diag * (A2 * A1)) - sp.trace(D_diag * (A1 * A2))) == 0
+    assert sp.simplify(sp.trace(D_diag * (B2 * B1)) - sp.trace(D_diag * (B1 * B2))) == 0
+
+    nfBorC1 = -(q**2 - q - 1) * (q**2 + q - 1) * (q**4 - q**2 + 1) / (q**4)
+    nfBorCs0 = -(q - 1)**3 * (q + 1)**3 * (q**4 - q**2 + 1) / (q**5)
+    nfBorCs1 = (q - 1)**3 * (q + 1)**3 / (q**3)
+    nfBorCLplus = (q - 1)**2 * (q + 1)**2 * (q**4 - q**2 + 1) / (q**4)
+    nfBorCLminus = -(q - 1)**2 * (q + 1)**2 / (q**2)
+
+    cL_sum = sp.factor(nfBorCLplus + nfBorCLminus)
+    expected_cL_sum = sp.factor((q - 1)**4 * (q + 1)**4 / (q**4))
+    assert sp.simplify(cL_sum - expected_cL_sum) == 0
+
+    Bor_p_nf = (
+        nfBorC1 * sp.eye(3)
+        + nfBorCs0 * A1
+        + nfBorCs1 * A2
+        + nfBorCLplus * (A1 * A2)
+        + nfBorCLminus * (A2 * A1)
+    )
+    Bor_n_nf = (
+        nfBorC1 * sp.eye(3)
+        + nfBorCs0 * B1
+        + nfBorCs1 * B2
+        + nfBorCLplus * (B1 * B2)
+        + nfBorCLminus * (B2 * B1)
+    )
+    assert sp.simplify(Bor_p - Bor_p_nf) == sp.zeros(3, 3)
+    assert sp.simplify(Bor_n - Bor_n_nf) == sp.zeros(3, 3)
+
+    # (g) Section 9 of NucleonWeightSpaceTwoTerm.lean (`qou-99qc` switched 4-term photon):
+    # `borromeanV3A_eq_switched_photon_product`: V^3 = (I_3 + q*h*V) * (I_3 - q^-1*h*V)
+    sw_plus_p = sp.eye(3) + q * h * Vp
+    sw_minus_p = sp.eye(3) - (1 / q) * h * Vp
+    assert sp.simplify(Bor_p - sw_plus_p * sw_minus_p) == sp.zeros(3, 3)
+
+    sw_plus_n = sp.eye(3) + q * h * Vn
+    sw_minus_n = sp.eye(3) - (1 / q) * h * Vn
+    assert sp.simplify(Bor_n - sw_plus_n * sw_minus_n) == sp.zeros(3, 3)
+
+    # `borromeanV3A_eq_one_add_h_sq_V_sub_V_sq`: V^3 = I_3 + h^2*V - h^2*V^2
+    assert sp.simplify(Bor_p - (sp.eye(3) + (h**2) * Vp - (h**2) * (Vp * Vp))) == sp.zeros(3, 3)
+    assert sp.simplify(Bor_n - (sp.eye(3) + (h**2) * Vn - (h**2) * (Vn * Vn))) == sp.zeros(3, 3)
+
+    # `trace_QAdjp_borromeanVA` and `trace_QAdjn_borromeanVB_connected`:
+    tr_QAdjp_VA = sp.factor(sp.trace((Q12_p + Q23_p) * Vp))
+    expected_QAdjp_VA = sp.factor(-2 * (q - 1)**2 * (q + 1)**2 / (9 * q**2))
+    assert sp.simplify(tr_QAdjp_VA - expected_QAdjp_VA) == 0
+
+    tr_QAdjn_VB_conn = sp.factor(sp.trace((Q12_n + Q23_n) * Vn) + sp.Rational(2, 9) * sp.trace(Vn))
+    expected_QAdjn_VB_conn = sp.factor(2 * (q - 1)**2 * (q + 1)**2 / (9 * q**2))
+    assert sp.simplify(tr_QAdjn_VB_conn - expected_QAdjn_VB_conn) == 0
+
+    # (h) Route 2 NucleonIdempotentModifiedTrace.lean & qbeta_utils.py verification:
+    # Import the Route 2 helpers from computations/qbeta/qbeta_utils.py
+    for _p in Path(__file__).resolve().parents:
+        _cand_dir = _p / "computations"
+        if (_cand_dir / "qbeta" / "qbeta_utils.py").exists():
+            _comp_dir = str(_cand_dir)
+            if _comp_dir not in sys.path:
+                sys.path.insert(0, _comp_dir)
+            break
+    from qbeta.qbeta_utils import (
+        chi_block_3,
+        chi_block_21,
+        chi_block_111,
+        chi_proton_3,
+        chi_neutron_3,
+        chi_proton_21,
+        chi_neutron_21,
+        chi_proton_111,
+        chi_neutron_111,
+        d_mod_111_convention_D,
+        t_mod_111_convention_D,
+    )
+
+    # Verify difference identities: chi_neutron_lambda - chi_proton_lambda == chi_block_lambda
+    assert sp.simplify(chi_neutron_3(q) - chi_proton_3(q) - chi_block_3(q)) == 0
+    assert sp.simplify(chi_neutron_21(q) - chi_proton_21(q) - chi_block_21(q, intra_order="borromean")) == 0
+    assert sp.simplify(chi_neutron_111(q) - chi_proton_111(q) - chi_block_111(q)) == 0
+
+    # Verify `chi3_proton_eq_q_sq_mul_neutron` and `tMod111_neutron_eq_q_sq_mul_proton`:
+    assert sp.simplify(chi_proton_3(q) - (q**2) * chi_neutron_3(q)) == 0
+    assert sp.simplify(t_mod_111_convention_D(q, "neutron") - (q**2) * t_mod_111_convention_D(q, "proton")) == 0
+    assert sp.simplify(
+        t_mod_111_convention_D(q, "neutron")
+        - t_mod_111_convention_D(q, "proton")
+        - t_mod_111_convention_D(q, "diff")
+    ) == 0
+
+    # Verify `trM_eq_wedderburn_sum` under Convention D (`w111_conventionD == 0`):
+    # w3_D = (q^4 + 1) / (q^2 + 1)^2, w21_D = q^2 / (q^2 + 1)^2, w111_D = 0
+    w3_D = (q**4 + 1) / ((q**2 + 1)**2)
+    w21_D = (q**2) / ((q**2 + 1)**2)
     Pp_convD = (
         (q**4 + 1)
         * (q**18 - 3 * q**16 + 7 * q**14 - 8 * q**12 + 10 * q**10 - 9 * q**8 + 10 * q**6 - 6 * q**4 + 3 * q**2 - 1)
@@ -212,7 +396,16 @@ def run_symbolic_charge_operator_checks() -> dict:
         * (q**14 - 3 * q**12 + 4 * q**10 - 4 * q**8 + 5 * q**6 - 4 * q**4 + 3 * q**2 - 1)
         / (4 * q**9)
     )
+    assert sp.simplify(w3_D * chi_proton_3(q) + w21_D * chi_proton_21(q) - Pp_convD) == 0
+    assert sp.simplify(w3_D * chi_neutron_3(q) + w21_D * chi_neutron_21(q) - Pn_convD) == 0
     diff_Pn_Pp = sp.factor(Pn_convD - Pp_convD)
+
+    # Verify classical q -> 1 anchor ratio `chi21Reduced_ratio_at_one` (4/3):
+    chi21_red_p_q1 = sp.limit(chi_proton_21(q) / (q**2 - 1), q, 1)
+    chi21_red_n_q1 = sp.limit(chi_neutron_21(q) / (q**2 - 1), q, 1)
+    assert 4 * chi21_red_p_q1 == sp.Rational(-6, 1)
+    assert 4 * chi21_red_n_q1 == sp.Rational(-8, 1)
+    assert chi21_red_n_q1 / chi21_red_p_q1 == sp.Rational(4, 3)
 
     return {
         "p_self_sum_Qi2": str(p_self[0]),
@@ -237,6 +430,25 @@ def run_symbolic_charge_operator_checks() -> dict:
         "tr_conn_Bor_p_norm": str(tr_conn_Bor_p_norm),
         "tr_conn_Bor_n_norm": str(tr_conn_Bor_n_norm),
         "diff_conn_Bor_norm_n_minus_p": str(diff_conn_Bor_norm),
+        "tr_e3_Bor_V3": str(tr_e3p_Bor),
+        "tr_e21_Bor_V3": str(tr_e21p_Bor),
+        "tr_e21_strong_cartan_diff_Bor_V3": str(tr_e21_strong_cartan_diff),
+        "tr_FEp_QAdjp_Bor_V3": str(tr_FEp_QAdjp_Bor),
+        "tr_EFn_QAdjn_Bor_V3": str(tr_EFn_QAdjn_Bor),
+        "tr_e21p_QAdjp_Bor_V3": str(tr_e21p_QAdjp_Bor),
+        "tr_e21n_QAdjn_Bor_V3": str(tr_e21n_QAdjn_Bor),
+        "diff_e21_QAdj_Bor_V3_n_minus_p": str(diff_e21_QAdj_Bor),
+        "borromeanV3_nf_cL_sum": str(cL_sum),
+        "tr_QAdjp_single_photon_VA": str(tr_QAdjp_VA),
+        "tr_QAdjn_single_photon_VB_conn": str(tr_QAdjn_VB_conn),
+        "chi_proton_3": str(sp.factor(chi_proton_3(q))),
+        "chi_neutron_3": str(sp.factor(chi_neutron_3(q))),
+        "chi_proton_21": str(sp.factor(chi_proton_21(q))),
+        "chi_neutron_21": str(sp.factor(chi_neutron_21(q))),
+        "chi_proton_111": str(sp.factor(chi_proton_111(q))),
+        "chi_neutron_111": str(sp.factor(chi_neutron_111(q))),
+        "d_mod_111_convention_D": str(sp.factor(d_mod_111_convention_D(q))),
+        "t_mod_111_diff_convention_D": str(sp.factor(t_mod_111_convention_D(q, "diff"))),
         "diff_Pn_minus_Pp_convD": str(diff_Pn_Pp),
     }
 
@@ -480,6 +692,31 @@ def main() -> int:
         dm_S8_BorV3_alpha = alpha_bind_mev * h * tr_V3
         dm_S8_BorV3_E0 = E0 * h * tr_V3
 
+        # S9 (SECTION 7 e_{(2,1)}-PROJECTED BORROMEAN V^3 STRONG CARTAN DIFFERENCE):
+        # tr(e_{(2,1)} V^3) = -(q^4 - q^2 + 1)*(q^8 - 2*q^6 - 2*q^2 + 1) / q^6 = 2 - 3*h^4 - h^6
+        # Delta tr_QCD(e_{(2,1)} V^3) = (q - 1/q) * tr(e_{(2,1)} V^3) (`trace_e21_strong_cartan_diff_borromeanV3`)
+        tr_e21_V3 = -(q**4 - q**2 + 1) * (q**8 - 2 * q**6 - 2 * q**2 + 1) / (q**6)
+        dm_S9_e21_E0_full = E0_full * h * tr_e21_V3
+        dm_S9_e21_E0 = E0 * h * tr_e21_V3
+        dm_S9_e21_alpha = alpha_bind_mev * h * tr_e21_V3
+
+        # Section 7 e_{(2,1)}-projected adjacent-charge QED traces (`trace_e21p_QAdjp_borromeanV3`,
+        # `trace_e21n_QAdjn_borromeanV3`, `trace_e21_QAdj_diff_borromeanV3`):
+        tr_e21_QAdjp_V3 = (
+            -2 * (q - 1)**2 * (q + 1)**2 * (q**12 - q**6 + 1)
+            / (9 * q**6 * (q**4 + q**2 + 1))
+        )
+        tr_e21_QAdjn_V3 = (
+            (4 * q**16 - 11 * q**14 + 13 * q**12 - 22 * q**10 + 20 * q**8 - 22 * q**6 + 13 * q**4 - 11 * q**2 + 4)
+            / (9 * q**6 * (q**4 + q**2 + 1))
+        )
+        diff_e21_QAdj_V3 = (
+            (2 * q**16 - 5 * q**14 + 5 * q**12 - 8 * q**10 + 8 * q**8 - 8 * q**6 + 5 * q**4 - 5 * q**2 + 2)
+            / (3 * q**6 * (q**4 + q**2 + 1))
+        )
+        dm_QED_e21_me = m_e_mev * diff_e21_QAdj_V3
+        dm_QED_e21_alpha_over_3 = (alpha_bind_mev / 3) * diff_e21_QAdj_V3
+
         # Exact Lean-proved Borromean V^3 adjacent-crossing & connected 4th-order QED traces
         # (`trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`, `trace_QAdj_connected_diff_borromeanV3`):
         tr_adj_V3_p = -2 * (q - 1)**4 * (q + 1)**4 * (q**4 + q**2 + 1) / (9 * q**6)
@@ -507,6 +744,8 @@ def main() -> int:
             "DERIVED-Bor-V3-Conn (K_n/K_p-wt): -m_e * (q^-1 tr_n - q tr_p)_conn": -m_e_mev * diff_conn_V3_KnKp_norm,
             "DERIVED-Bor-V3-Conn (K_p^3-wt): -m_e * (tr_n - q tr_p)_conn": -m_e_mev * diff_conn_V3_Kwt_norm,
             "DERIVED-Bor-V3-Conn (q-wt): -q * m_e * Delta tr_conn(V^3)": -m_e_mev * diff_conn_V3_qwt_norm,
+            "DERIVED-Bor-V3-e21 (m_e): m_e * Delta tr_{e21}(Q_adj V^3)": dm_QED_e21_me,
+            "DERIVED-Bor-V3-e21 (alpha_bind/3): (alpha_bind/3) * Delta tr_{e21}(Q_adj V^3)": dm_QED_e21_alpha_over_3,
             "DERIVED-Bor-V3-Full (alpha_bind): alpha_bind * (1/3)*Delta tr_adj(V^3)": alpha_bind_mev * diff_adj_V3_norm,
             "DERIVED-Bor-V3-Full (alpha_bind, K^3-wt): alpha_bind * (1/3)*Delta tr_adj^K(V^3)": alpha_bind_mev * diff_adj_V3_Kwt_norm,
             "DERIVED-Bor-V3-Full (E0): E0 * (1/3)*Delta tr_adj(V^3)": E0 * diff_adj_V3_norm,
@@ -536,6 +775,9 @@ def main() -> int:
         strong_cands = {
             "DERIVED-S8a: alpha_bind * (q - 1/q) * tr(V^3) (Borromean Cartan)": dm_S8_BorV3_alpha,
             "DERIVED-S8b: E0 * (q - 1/q) * tr(V^3) (Borromean Cartan at E0)": dm_S8_BorV3_E0,
+            "DERIVED-S9a: E0_full * (q - 1/q) * tr(e21 V^3) (e21 Cartan at E0_full)": dm_S9_e21_E0_full,
+            "DERIVED-S9b: E0 * (q - 1/q) * tr(e21 V^3) (e21 Cartan at E0)": dm_S9_e21_E0,
+            "DERIVED-S9c: alpha_bind * (q - 1/q) * tr(e21 V^3) (e21 Cartan at alpha)": dm_S9_e21_alpha,
             "S1: alpha_bind * |Delta Phi_D| (published transfer product)": dm_S1_alpha,
             "S1b: E0_full * |Delta Phi_D| (transfer product with E0_full)": dm_S1_E0,
             "S2: alpha_bind * 4*ln(q) (adjacent / oriented D closed form)": dm_S2_alpha_4lnq,
@@ -568,6 +810,11 @@ def main() -> int:
             "Q_N1": Q_N1,
             "Q_N2": Q_N2,
             "Q_convD_base": Q_convD_base,
+            "tr_V3": tr_V3,
+            "tr_e21_V3": tr_e21_V3,
+            "tr_e21_QAdjp_V3": tr_e21_QAdjp_V3,
+            "tr_e21_QAdjn_V3": tr_e21_QAdjn_V3,
+            "diff_e21_QAdj_V3": diff_e21_QAdj_V3,
             "strong_cands": strong_cands,
             "qed_cands": qed_cands,
         }
@@ -690,6 +937,7 @@ def main() -> int:
     bor_combos = [
         c for c in test2_combinations
         if ("DERIVED-S8" in c["strong_term"] and "DERIVED-Bor-V3-Full" in c["qed_term"])
+        or ("DERIVED-S9" in c["strong_term"] and "DERIVED-Bor-V3-e21" in c["qed_term"])
         or ("S5:" in c["strong_term"] and "DERIVED-Bor-V3-Conn" in c["qed_term"])
         or ("DERIVED-S8" in c["strong_term"] and "QED-Lit" in c["qed_term"])
     ]
@@ -738,6 +986,68 @@ def main() -> int:
             f"{r['Q_N2_plus_QED_err_ppm']:>17s} | {r['c2_emp_convD_proton']:>11s} | "
             f"{r['c3_emp_convD_proton']:>12s} | {r['c3_swing_pct']:>10s}%"
         )
+    print()
+
+    # =========================================================================
+    # 5. ROUTE 2 (NucleonIdempotentModifiedTrace.lean) & qbeta_utils 50-DPS CHECK
+    # =========================================================================
+    from qbeta.qbeta_utils import (
+        borromean_v3_connected_qed_diff_mev,
+        c2_target_two_term_at,
+        c3_target_two_term_at,
+        chi_block_3,
+        chi_block_21,
+        chi_block_111,
+        chi_neutron_3,
+        chi_neutron_21,
+        chi_neutron_111,
+        chi_proton_3,
+        chi_proton_21,
+        chi_proton_111,
+        d_mod_111_convention_D,
+        t_mod_111_convention_D,
+    )
+
+    with mp.workdps(DPS + 20):
+        c_p_3 = chi_proton_3(q_proton)
+        c_n_3 = chi_neutron_3(q_proton)
+        c_p_21 = chi_proton_21(q_proton)
+        c_n_21 = chi_neutron_21(q_proton)
+        c_p_111 = chi_proton_111(q_proton)
+        c_n_111 = chi_neutron_111(q_proton)
+        d_mod_D = d_mod_111_convention_D(q_proton)
+        t_mod_p = t_mod_111_convention_D(q_proton, "proton")
+        t_mod_n = t_mod_111_convention_D(q_proton, "neutron")
+        t_mod_diff = t_mod_111_convention_D(q_proton, "diff")
+
+        assert abs((c_n_3 - c_p_3) - chi_block_3(q_proton)) < mp.mpf("1e-55")
+        assert abs((c_n_21 - c_p_21) - chi_block_21(q_proton, intra_order="borromean")) < mp.mpf("1e-55")
+        assert abs((c_n_111 - c_p_111) - chi_block_111(q_proton)) < mp.mpf("1e-55")
+        assert abs((t_mod_n - t_mod_p) - t_mod_diff) < mp.mpf("1e-55")
+        assert abs(t_mod_n - (q_proton**2) * t_mod_p) < mp.mpf("1e-55")
+
+        dm_qed_plain = borromean_v3_connected_qed_diff_mev(q_proton, m_e_mev, weighting="plain")
+        assert abs(dm_qed_plain - ev_p["qed_cands"]["DERIVED-Bor-V3-Conn (plain): -m_e * Delta tr_conn(V^3)"]) < mp.mpf("1e-55")
+
+        c2_two_term_p = c2_target_two_term_at(q_proton, q_beta_exp_mev, m_e_mev, convention="D", weighting="plain")
+        c3_two_term_p = c3_target_two_term_at(q_proton, q_beta_exp_mev, m_e_mev, c2=-1, convention="D", weighting="plain")
+
+    print("-" * 88)
+    print("5. ROUTE 2 (NucleonIdempotentModifiedTrace.lean) & qbeta_utils.py 50-DPS VERIFICATION")
+    print("-" * 88)
+    print(f"  chi_proton_3(q_p)      = {mp.nstr(c_p_3, 20)}")
+    print(f"  chi_neutron_3(q_p)     = {mp.nstr(c_n_3, 20)}")
+    print(f"  chi_proton_21(q_p)     = {mp.nstr(c_p_21, 20)}")
+    print(f"  chi_neutron_21(q_p)    = {mp.nstr(c_n_21, 20)}")
+    print(f"  chi_proton_111(q_p)    = {mp.nstr(c_p_111, 20)}")
+    print(f"  chi_neutron_111(q_p)   = {mp.nstr(c_n_111, 20)}")
+    print(f"  d_mod_111_D(q_p)       = {mp.nstr(d_mod_D, 20)}")
+    print(f"  t_mod_111_D(p)         = {mp.nstr(t_mod_p, 20)}")
+    print(f"  t_mod_111_D(n)         = {mp.nstr(t_mod_n, 20)}")
+    print(f"  t_mod_111_D(n - p)     = {mp.nstr(t_mod_diff, 20)}")
+    print(f"  dm_QED_conn_plain(q_p) = {mp.nstr(dm_qed_plain, 20)} MeV")
+    print(f"  c2_target_two_term(D)  = {mp.nstr(c2_two_term_p, 20)}")
+    print(f"  c3_target_two_term(D)  = {mp.nstr(c3_two_term_p, 20)}")
 
     return 0
 
