@@ -1,0 +1,40 @@
+{
+  "probe": "saddle_satinvis_satpeak_selrule_selfmutual_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/saddle_satinvis_satpeak_selrule_selfmutual_probe.py",
+  "scriptCommitSha": "21bdba6d45d8e4a3a72f5d9c3023186a8f48ed9d",
+  "scriptHash": "ad3d51cd2f18b0ca5992e5556b13dfe96baaa85202ba669d3fecdd453fcf0268",
+  "scriptSha256": "ad3d51cd2f18b0ca5992e5556b13dfe96baaa85202ba669d3fecdd453fcf0268",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "saddleOffsetAddEqZero": {
+      "offset": "-0.12727272727272727272727272727272727272727272727272727272727272727272727272727273",
+      "hbarQMulW": "0.12727272727272727272727272727272727272727272727272727272727272727272727272727273",
+      "residual": "-2.6355494858076308060871435128175047519274903455921268875194407562770360727424399e-82",
+      "passed": true
+    },
+    "completeB3AddB4EqZero": {
+      "b3Contrib": "0.0",
+      "b4Contrib": "0.0",
+      "sum": "0.0",
+      "passed": true
+    },
+    "subPerNucleonPos": {
+      "perNucleon": "0.30000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "gap": "15.7",
+      "passed": true
+    },
+    "tauFromQuantumIntegerAnchorsSubEqZero": {
+      "lhs": "2.785975609756097560975609756097560975609756097560975609756097560975609756097561",
+      "rhs": "2.785975609756097560975609756097560975609756097560975609756097560975609756097561",
+      "residual": "0.0",
+      "passed": true
+    },
+    "bindingAddMutualEnergyEqZero": {
+      "binding": "0.71428571428571428571428571428571428571428571428571428571428571428571428571428572",
+      "mutualEnergy": "-0.71428571428571428571428571428571428571428571428571428571428571428571428571428571",
+      "residual": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "passed": true
+    }
+  }
+}
