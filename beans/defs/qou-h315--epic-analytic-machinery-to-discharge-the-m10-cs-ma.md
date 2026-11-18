@@ -1,7 +1,7 @@
 ---
 # qou-h315
 title: Analytic machinery to discharge the M1>0 (CS)-margin input (hCS)
-status: todo
+status: in-progress
 type: feature
 priority: normal
 tags:
@@ -38,3 +38,6 @@ closes (CS) (30-300x headroom).
 
 
 Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: analytic machinery to discharge the M1>0 (CS)-margin input (hCS)
+
+## Round 71 Update (PR #8483)
+- De-vacuified and extended in PR `litlfred/qou#8483` (`claude/round71-devacuify-6qbv-b9cj`, HEAD `ccf4b5dbe70005deb5de8ba21a4dcf809c5178db`, C1 `7580772c921dba1792c7df67cfdeb7db65a5b8f8`), compiled with Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all 6 directory-mode static audit scripts) and verified with 80-dps `mpmath` witness `computations/probes/round71-devacuify-6qbv-b9cj.witness.json`.

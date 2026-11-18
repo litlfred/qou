@@ -1,7 +1,7 @@
 ---
 # qou-r16m
 title: 'PROVE(lean): instance:VacuumEpsilon — noncomputable instance : VacuumEpsilon  [cited manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -24,3 +24,6 @@ parent: qou-gdcu
   - [manuscript] quantum-observable-universe/appendix-surreals/vacuum-epsilon.ts
 - **Tractability:** §3b conjecture-instance: open QOU conjecture (vacuum-epsilon surreal infinitesimal).
 - **Next step:** This sorry IS the open QOU conjecture (§3b instance). No proof attempt — it is the honest open marker. Close only by a genuine derivation, never a fabricated instance.
+
+## Round 71 Update (PR #8483)
+- De-vacuified and extended in PR `litlfred/qou#8483` (`claude/round71-devacuify-6qbv-b9cj`, HEAD `ccf4b5dbe70005deb5de8ba21a4dcf809c5178db`, C1 `7580772c921dba1792c7df67cfdeb7db65a5b8f8`), compiled with Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all 6 directory-mode static audit scripts) and verified with 80-dps `mpmath` witness `computations/probes/round71-devacuify-6qbv-b9cj.witness.json`.

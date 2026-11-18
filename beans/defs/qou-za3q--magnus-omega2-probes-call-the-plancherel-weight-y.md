@@ -1,7 +1,7 @@
 ---
 # qou-za3q
 title: magnus-Omega2 probes call the Plancherel weight y_lambda; 91% of their work is on shapes tr_M annihilates
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T10:49:41Z
@@ -595,3 +595,6 @@ Rebuilt scan (bean `qou-uir6`): (−,−,−) over A = 2,3,4 on 98.998 % of the 
 (−,+,+) only for `z < 0.0038h` at the Molien (z = 0) end. So the decision-1 conclusion above — no sign
 change at the production weight — holds across essentially the whole faithful window, not only at z_D.
 Status set back to `todo` per the ruling.
+
+## Round 71 Update (PR #8483)
+- De-vacuified and extended in PR `litlfred/qou#8483` (`claude/round71-devacuify-6qbv-b9cj`, HEAD `ccf4b5dbe70005deb5de8ba21a4dcf809c5178db`, C1 `7580772c921dba1792c7df67cfdeb7db65a5b8f8`), compiled with Lean 4.24.0 (`0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all 6 directory-mode static audit scripts) and verified with 80-dps `mpmath` witness `computations/probes/round71-devacuify-6qbv-b9cj.witness.json`.
