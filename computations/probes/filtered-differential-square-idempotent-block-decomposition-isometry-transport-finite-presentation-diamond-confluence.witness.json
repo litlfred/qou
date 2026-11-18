@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "filtered_differential_square_idempotent_block_decomposition_isometry_transport_finite_presentation_diamond_confluence_probe",
+  "beans": [
+    "qou-pan0",
+    "qou-tgci",
+    "qou-ykt7",
+    "qou-bq5e",
+    "qou-ch3j"
+  ],
+  "leanModule": "QOU.Foundations.FilteredDifferentialSquareIdempotentBlockDecompositionIsometryTransportFinitePresentationDiamondConfluence",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/filtered_differential_square_idempotent_block_decomposition_isometry_transport_finite_presentation_diamond_confluence_probe.py",
+  "scriptHash": "f8a29b2aeceb36b8f640091b101ca03046313573b1d604a9e680784ae71f9af4",
+  "scriptSha256": "f8a29b2aeceb36b8f640091b101ca03046313573b1d604a9e680784ae71f9af4",
+  "scriptCommitSha": "0869f3f0f137dac72b436e92a747c174449acb33",
+  "generatedAt": "2026-11-18T10:14:53.754567+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-pan0",
+      "theorem": "filteredDiff_nilpotency_and_norm_multiplicativity",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-tgci",
+      "theorem": "complementary_projection_decomposition_and_orthogonality",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-ykt7",
+      "theorem": "isoMap_bijection_and_displacement_transport",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-bq5e",
+      "theorem": "overlapDefect_formula_and_commuting_vanishing",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-ch3j",
+      "theorem": "diamondJoin_confluence_and_normal_form_uniqueness",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
