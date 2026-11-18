@@ -7,15 +7,13 @@
 # to main) and in an agent session (when Actions billing blocks CI, an agent
 # runs this after its merge, or after any commit it wants published).
 #
-# Writes exactly two files on gh-pages, and nothing else in that tree:
-#   papers/<slug>/<slug>.pdf     the PDF the root README's "full PDF" link serves
-#   papers/<slug>/<slug>.json    {commit, date, pages, bytes, errors, ...}
+# Writes exactly three files on gh-pages, and nothing else in that tree:
+#   papers/<slug>/<slug>.pdf       the PDF the root README's "full PDF" link serves
+#   papers/<slug>/<slug>.json      {commit, date, pages, bytes, errors, ...}
+#   papers/<slug>/<slug>.flat.tex  flattened source: the baseline for branch diffs
 #
-# gh-pages is large (~17k files), so it is never checked out: the commit is
-# built with git plumbing on a shallow fetch (read-tree into a temp index,
-# update-index the two blobs, write-tree, commit-tree), then pushed with a
-# fast-forward-only push. A concurrent publish makes the push fail rather than
-# overwrite; re-run it.
+# Written with scripts/lib/gh-pages-put.sh (git plumbing, no checkout of the
+# ~17k-file tree, fast-forward-only push).
 #
 # Refuses to publish a PDF whose final-pass log has LaTeX errors or undefined
 # citations/references (the gate in build-paper-pdf.sh), or from a dirty tree
@@ -63,7 +61,7 @@ bytes=$(wc -c < "$PDF" | tr -d ' ')
 date=$(git show -s --format=%cI HEAD)
 
 META=$(mktemp)
-trap 'rm -f "$META" "${IDX:-}"' EXIT
+trap 'rm -f "$META"' EXIT
 python3 -I - "$META" <<PY
 import json, sys
 json.dump({
@@ -80,27 +78,22 @@ json.dump({
 }, open(sys.argv[1], "w"), indent=2)
 PY
 
-echo "==> gh-pages: papers/$PAPER/$PAPER.pdf (${pages} pp, $bytes bytes, from $SHORT)"
-git fetch -q --depth 1 origin gh-pages
-PARENT=$(git rev-parse FETCH_HEAD)
-IDX=$(mktemp)
-export GIT_INDEX_FILE="$IDX"
-git read-tree "$PARENT"
-pdf_blob=$(git hash-object -w "$PDF")
-meta_blob=$(git hash-object -w "$META")
-git update-index --add --cacheinfo 100644 "$pdf_blob" "papers/$PAPER/$PAPER.pdf"
-git update-index --add --cacheinfo 100644 "$meta_blob" "papers/$PAPER/$PAPER.json"
-TREE=$(git write-tree)
-unset GIT_INDEX_FILE
-if [ "$TREE" = "$(git rev-parse "$PARENT^{tree}")" ]; then
-  echo "gh-pages already has this PDF; nothing to publish"; exit 0
-fi
-COMMIT=$(printf 'paper PDF: %s at %s (%s pages)\n\nBuilt by scripts/publish-paper-pdf.sh from %s.\n' \
-  "$PAPER" "$SHORT" "$pages" "$SHA" | git commit-tree "$TREE" -p "$PARENT")
-echo "    commit $COMMIT (parent $PARENT)"
-if $PUSH; then
-  git push origin "$COMMIT:refs/heads/gh-pages"
-  echo "published: https://github.com/litlfred/qou/blob/gh-pages/papers/$PAPER/$PAPER.pdf"
-else
-  echo "--no-push: not pushed"
-fi
+# The flattened, self-contained LaTeX source (chapters inlined, bibliography
+# inlined from main.bbl). Published beside the PDF, it is the cached baseline a
+# branch diff runs latexdiff against (scripts/paper-diff-pdf.sh), so a diff
+# never rebuilds main.
+FLAT="$(dirname "$PDF")/main-flat.tex"
+( cd "$(dirname "$PDF")" && latexpand --expand-bbl main.bbl main.tex > main-flat.tex )
+
+echo "==> gh-pages: papers/$PAPER/ (${pages} pp, $bytes bytes, from $SHORT)"
+args=(-m "paper PDF: $PAPER at $SHORT (${pages} pages)
+
+Built by scripts/publish-paper-pdf.sh from $SHA."
+  "papers/$PAPER/$PAPER.pdf=$PDF"
+  "papers/$PAPER/$PAPER.json=$META"
+  "papers/$PAPER/$PAPER.flat.tex=$FLAT")
+$PUSH || args=(--no-push "${args[@]}")
+res=$(bash "$ROOT/scripts/lib/gh-pages-put.sh" "${args[@]}")
+echo "    gh-pages commit: $res"
+$PUSH && [ "$res" != unchanged ] && echo "published: https://github.com/litlfred/qou/blob/gh-pages/papers/$PAPER/$PAPER.pdf"
+exit 0
