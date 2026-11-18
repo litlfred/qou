@@ -1,0 +1,74 @@
+{
+  "allPassed": true,
+  "assertions": [
+    {
+      "computed": "adj=0.000030000000000000000000000000000000000000000000000000000000000000000000000000000083, total=0.00019000000000000000000000000000000000000000000000000000000000000000000000000000004",
+      "detail": "Hardcoded hbar_q spreads across table (0.09905), proof (0.09908), and terminal-resolution-cz (0.09889)",
+      "expected": "adj=0.00003, total=0.00019",
+      "name": "qou_q2xx_hbar_q_spreads",
+      "passed": true
+    },
+    {
+      "computed": "dq=0.00028000000000000000000000000000000000000000000000000000000000000000000000000000042, dmu=0.79999999999999999999999999999999999999999999999999999999999999999999999999999984, dcq2=0.50000000000000000000000000000000000000000000000000000000000000000000000000000000, q0_count=43",
+      "detail": "Central q|_U spread 0.00028, muon spread 0.8, c_q^2 spread 0.5, and 43 stale q0 occurrences",
+      "expected": "dq=0.00028, dmu=0.8, dcq2=0.5, q0_count=43",
+      "name": "qou_q2xx_q_central_muon_cq2_and_stale_q0",
+      "passed": true
+    },
+    {
+      "computed": "files=153, sites=309, gaps=[48, 70, 12, 97], sum_gaps=227",
+      "detail": "153 candidate files / 309 sites with digit-gap >= 8 and 4 sampled false-positive input literals",
+      "expected": "files=153, sites=309, gaps=[48, 70, 12, 97], sum_gaps=227",
+      "name": "qou_q5pf_second_laundering_surface_counts",
+      "passed": true
+    },
+    {
+      "computed": "grid=16, confirmed=734, unconfirmed=745, top11_sum=496",
+      "detail": "Pass 2 exact 16-pair (B, O) grid confirms 734 fields across 94 witnesses (496 in top 11 carriers)",
+      "expected": "grid=16, confirmed=734, unconfirmed=745, top11_sum=496",
+      "name": "qou_rj7d_short_decimal_two_pass_accounting",
+      "passed": true
+    },
+    {
+      "computed": "first_pass=(980,29023), drainable=(958,24175)",
+      "detail": "Corrected on-disk queue leaves 958 drainable entries and 24,175 drainable fields after 21 orphans (1,550 fields)",
+      "expected": "first_pass=(980,29023), drainable=(958,24175)",
+      "name": "qou_sa14_raw_float64_backlog_triage_and_correction",
+      "passed": true
+    },
+    {
+      "computed": "rel_diffs=['0.3249214029', '0.5462384006', '0.4884652789'], he4_bridge=0.0, empty_all=True",
+      "detail": "Deuteron (32.5%), Tritium (54.6%), Helium-3 (48.8%) disagree and Helium-4 bridge is 0.0 under vacuous all([])",
+      "expected": "all 4 atoms fail 1e-3 relative bar while all([]) is True",
+      "name": "qou_tfj0_three_path_bridge_peel_disagreement",
+      "passed": true
+    }
+  ],
+  "beans": [
+    "qou-q2xx",
+    "qou-q5pf",
+    "qou-rj7d",
+    "qou-sa14",
+    "qou-tfj0"
+  ],
+  "generatedAt": "2026-11-18T07:37:09.078354+00:00",
+  "measurements": {
+    "cq_sq_spread": "0.50000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "deuteron_peel_bridge_ratio": "0.67507859707414954882293116445230772659415881857671343186339125527518696204313642",
+    "hbar_q_spread_adjacent": "0.000030000000000000000000000000000000000000000000000000000000000000000000000000000083",
+    "hbar_q_spread_total": "0.00019000000000000000000000000000000000000000000000000000000000000000000000000000004",
+    "helium3_peel_bridge_ratio": "0.51153472113673220501598883570377858780090226035722200483973909999653773028744197",
+    "muon_spread": "0.79999999999999999999999999999999999999999999999999999999999999999999999999999984",
+    "q_central_spread": "0.00028000000000000000000000000000000000000000000000000000000000000000000000000000042",
+    "raw_float64_scalar_field_share": "0.71601833028977018226923474485752678909830134720738724459911104985700995761981876",
+    "raw_float64_scalar_file_share": "0.84387755102040816326530612244897959183673469387755102040816326530612244897959184",
+    "second_surface_mean_sites_per_file": "2.0196078431372549019607843137254901960784313725490196078431372549019607843137255",
+    "short_decimal_top11_confirmed_share": "0.67574931880108991825613079019073569482288828337874659400544959128065395095367847",
+    "tritium_peel_bridge_ratio": "0.45376159944561132037508290838928083460098133145936368480298805540584679250179122"
+  },
+  "probe": "witnessed_values_pin_spread_second_laundering_surface_short_decimal_record_raw_float64_backlog_triage_and_three_path_bridge_peel_disagreement_probe",
+  "scriptCommitSha": "2a2f5b0ba9e629d8cda903bfb1f366d5cef4dd31",
+  "scriptHash": "5a1e0d96908176295aacf188bbfe8590773c2faee128e76045e9c177a269d8e2",
+  "scriptSha256": "5a1e0d96908176295aacf188bbfe8590773c2faee128e76045e9c177a269d8e2",
+  "workingDps": "80"
+}
