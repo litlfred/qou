@@ -1,7 +1,7 @@
 ---
 # qou-a31p
 title: Witness regeneration flipped 29 assertions PASS->FAIL and every blocking gate stayed green
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -143,3 +143,5 @@ passes back into the tree for one commit.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-23 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+In-progress in Round 99 PR litlfred/qou#8444.

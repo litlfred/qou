@@ -1,7 +1,7 @@
 ---
 # qou-ad4t
 title: 111 committed witnesses carry a recorded assertion failure and nothing reads them
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
@@ -410,3 +410,5 @@ What it demonstrates is worth more than the number: **this audit's headline
 count depends on the state of unrelated files**, so two honest runs days apart
 can disagree without anything relevant having changed. A gate cannot be built on
 it until that is understood. Committing the reproducible 55/227.
+
+In-progress in Round 99 PR litlfred/qou#8444.

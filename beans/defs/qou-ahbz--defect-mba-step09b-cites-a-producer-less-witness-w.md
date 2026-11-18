@@ -1,7 +1,7 @@
 ---
 # qou-ahbz
 title: 'DEFECT: mba-step09b cites a producer-less witness whose numbers contradict the live pipeline by 38-226%'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -66,3 +66,5 @@ numbers are now demonstrably inconsistent with the live pipeline and that the
 Either regenerate from a real producer at the canonical convention-D / proton pin,
 or retire the witness and have the block cite the live dashboard forms. Do NOT
 hand-edit the numbers.
+
+In-progress in Round 99 PR litlfred/qou#8444.

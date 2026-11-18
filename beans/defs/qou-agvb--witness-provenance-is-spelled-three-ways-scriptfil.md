@@ -1,7 +1,7 @@
 ---
 # qou-agvb
 title: Witness provenance is spelled THREE ways (scriptFile / computation / producer) — 139 live witnesses carry none; every orphan count so far keyed on one field
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -112,3 +112,5 @@ heredoc and were never affected.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+In-progress in Round 99 PR litlfred/qou#8444.

@@ -1,7 +1,7 @@
 ---
 # qou-a3lh
 title: 'OWNER CALL: is a Z-clustered SnapPy pseudo-volume the right geometric input to A(K) at all?'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -86,3 +86,5 @@ anyone re-attempts the trend.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+In-progress in Round 99 PR litlfred/qou#8444.
