@@ -1,7 +1,7 @@
 ---
 # qou-tvsp
 title: 'Remark at cor:pbw: freeness is necessary — PBW fails for Lie algebras over a general commutative ring'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

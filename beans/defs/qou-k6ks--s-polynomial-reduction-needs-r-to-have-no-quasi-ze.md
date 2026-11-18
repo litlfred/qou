@@ -1,7 +1,7 @@
 ---
 # qou-k6ks
 title: S-polynomial reduction needs R to have no quasi-zeros (Lei-Pawlowski); check the QOU assumption is stated and used
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

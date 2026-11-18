@@ -1,7 +1,7 @@
 ---
 # qou-v1jg
 title: 'q-gradient interface: matter/antimatter boundary forced through q=1; branch swap s -> -s'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

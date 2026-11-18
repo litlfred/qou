@@ -1,7 +1,7 @@
 ---
 # qou-pwd4
 title: Add the missing 'free as an R-module' hypothesis to cor:pbw and cor:ugb-pbw, and cite [bokutchen2015pbw] §3.7
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
