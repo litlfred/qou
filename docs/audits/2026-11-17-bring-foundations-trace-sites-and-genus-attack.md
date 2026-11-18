@@ -256,3 +256,23 @@ level of `RH`. Gaps G2 and G3 unchanged.
 `farkas-kra1992` added to `folio/references/` and `references.ts`. `references.bib` was
 appended by hand in the generator's style, because `check-references-bib.ts` needs the
 folio-assistant pipeline, which is not installed here. Run it once the pipeline is back.
+
+### Riemann-surface layer, milestone M1 (2026-11-18)
+
+`QOU/RiemannSurface/TangentJetRigidity.lean`, sorry-free on Mathlib (lean-direct exit 0;
+axioms `propext`, `Classical.choice`, `Quot.sound`). It targets the hypothesis that point
+stabilisers are cyclic.
+
+- `jet_comp`, `jet_iterate`: order-`k` jets `X + aXᵏ` add under composition, so the `n`-fold
+  iterate is `X + n·a·Xᵏ`.
+- `jet_step`, `eq_X_of_finite_order`: over a characteristic-zero domain, a map tangent to the
+  identity with finite compositional order is the identity (shown for polynomial maps).
+- `isCyclic_of_injective_derivative`: an injective `g ↦ g'(0)` into a domain's units makes
+  the stabiliser cyclic (Mathlib `isCyclic_of_subgroup_isDomain`).
+
+Roadmap to discharge the remaining hypotheses of `genus_eq_four_of_cellular`:
+- M1b: analytic germs (Taylor jets of compositions, then the identity theorem).
+- M2: globalise on a connected Riemann surface.
+- M3: an equivariant triangulation with `χ = 2 − 2g`. This is the largest, since Mathlib has
+  no surface topology.
+- M4: the irreducible dimensions of `A₅`.
