@@ -3860,3 +3860,20 @@ P±_i; σ₀σ₁, σ₁σ₀; V^±1). Markov trace at z_D, proton pin, exact sy
 None reaches (m_n−m_p)/m_p ≈ 0.14 %. A split that small needs X of size ~h⁴ or a first-order
 zero tr(V²X)=0; no parameter-free X here supplies either. Setting X's size from CAL-2 would be
 circular for Δ_pn (Q_β = Δ_pn − m_e). No row selected.
+
+## NOTE 2026-11-18 17:05Z — entangled electron loop on β_Bor in H₄ (exploratory, scope (a))
+Owner reading: −X = remainder of a previously entangled e⁻ strand (BFPP / γγ→HH̄ topologies).
+H₄ Markov trace at z_D (seminormal reps (4),(3,1),(2,2); y=0 on three-row shapes; checked
+Markov property and tr₄(β_Bor) = closed form). Loop = σ₂^a … σ₂^b around nucleon letters,
+reference = same two crossings adjacent. Scripts /tmp/claude-0/np/loop4.py, dsym.py (not committed).
+- Enclosed σ₀ letters commute with σ₂, so only loops enclosing ≥1 σ₁⁻¹ differ from reference.
+- Exact: D := tr₄(loop) − tr₄(adjacent) is the SAME for all four (a,b) ∈ {±1}²:
+  D = (q²−q+1)(q²+q+1)(q⁶−3q⁴+2q²−2)/(q²+1)³;  D/tr(β_Bor) = −3/4 − ε²/4 + … at q = 1+ε;
+  −0.74957 at the proton pin.
+- Unweighted loops: O(1) shifts (−66 %, −75 %, −82 % of the reference trace).
+- Photon-weighted crossings (1+φσ₂^a)…(1+φσ₂^b): single-crossing terms cancel (Markov z),
+  so Δtr/tr(β) = φ²·D/tr(β) exactly. φ = h → −3.28 %; φ = h² → −0.1432 % (≈ −0.144 % in m);
+  φ = qh → −4.04 %; φ = q⁻¹h → −2.66 %.
+  ⚠ φ = h² lands within ~4 % of |m_n−m_p|/m_p = 0.138 %, but φ is NOT derived; picking φ = h²
+  because it matches would be selection against the target. Sign: entangled element is
+  LIGHTER, so "neutron = entangled" gives the wrong sign. Recorded as near-match, not a result.
