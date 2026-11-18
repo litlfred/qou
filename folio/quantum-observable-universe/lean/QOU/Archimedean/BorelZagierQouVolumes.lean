@@ -47,8 +47,6 @@ The three QOU hyperbolic volumes are $\mathbb{Q}$-linearly independent.
       (a : ℝ) * vol41 + (b : ℝ) * vol52 + (c : ℝ) * volBorromean = 0 →
       a = 0 ∧ b = 0 ∧ c = 0
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
 -- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/borel-zagier-qou-volumes.ts
 -- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
 -- History: this file previously carried
@@ -57,5 +55,43 @@ The three QOU hyperbolic volumes are $\mathbb{Q}$-linearly independent.
 -- i.e. the conjecture was asserted by `axiom` and installed as a global instance, so
 -- every downstream `[BorelZagierQouVolumes]` resolved for free.  Removed, not completed — downstream
 -- results must take `[BorelZagierQouVolumes]` as an explicit hypothesis.
+
+/-- Under `[BorelZagierQouVolumes]`, the figure-eight volume `vol41` is non-zero. -/
+theorem vol41_ne_zero [bz : BorelZagierQouVolumes] : bz.vol41 ≠ 0 := by
+  intro h
+  have hrel : ((1 : ℚ) : ℝ) * bz.vol41 + ((0 : ℚ) : ℝ) * bz.vol52 + ((0 : ℚ) : ℝ) * bz.volBorromean = 0 := by
+    rw [h]
+    norm_num
+  have ⟨h1, _, _⟩ := bz.qLinearIndependent 1 0 0 hrel
+  exact one_ne_zero h1
+
+/-- Under `[BorelZagierQouVolumes]`, the `5₂` knot volume `vol52` is non-zero. -/
+theorem vol52_ne_zero [bz : BorelZagierQouVolumes] : bz.vol52 ≠ 0 := by
+  intro h
+  have hrel : ((0 : ℚ) : ℝ) * bz.vol41 + ((1 : ℚ) : ℝ) * bz.vol52 + ((0 : ℚ) : ℝ) * bz.volBorromean = 0 := by
+    rw [h]
+    norm_num
+  have ⟨_, h2, _⟩ := bz.qLinearIndependent 0 1 0 hrel
+  exact one_ne_zero h2
+
+/-- Under `[BorelZagierQouVolumes]`, the Borromean rings volume `volBorromean` is non-zero. -/
+theorem volBorromean_ne_zero [bz : BorelZagierQouVolumes] : bz.volBorromean ≠ 0 := by
+  intro h
+  have hrel : ((0 : ℚ) : ℝ) * bz.vol41 + ((0 : ℚ) : ℝ) * bz.vol52 + ((1 : ℚ) : ℝ) * bz.volBorromean = 0 := by
+    rw [h]
+    norm_num
+  have ⟨_, _, h3⟩ := bz.qLinearIndependent 0 0 1 hrel
+  exact one_ne_zero h3
+
+/-- Under `[BorelZagierQouVolumes]`, `vol41` is not a rational multiple of `vol52`:
+    for every `q : ℚ`, `vol41 ≠ (q : ℝ) * vol52`. -/
+theorem vol41_ne_rat_mul_vol52 [bz : BorelZagierQouVolumes] (q : ℚ) :
+    bz.vol41 ≠ (q : ℝ) * bz.vol52 := by
+  intro h
+  have hrel : ((1 : ℚ) : ℝ) * bz.vol41 + ((-q : ℚ) : ℝ) * bz.vol52 + ((0 : ℚ) : ℝ) * bz.volBorromean = 0 := by
+    push_cast
+    linarith
+  have ⟨h1, _, _⟩ := bz.qLinearIndependent 1 (-q) 0 hrel
+  exact one_ne_zero h1
 
 end QOU.Archimedean

@@ -237,4 +237,48 @@ theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
      fun t ht => q_ns_energy_inequality sol hsol t ht,
      fun k t ht => q_ns_spectral_decay sol hsol k t ht⟩⟩
 
+/-- **Uniqueness of global q-NS trajectories**: any two trajectories satisfying
+    `ctx.IsSolution` are identical. -/
+theorem q_ns_solution_eq_of_isSolution [ctx : QNsWellposednessContext]
+    (sol₁ sol₂ : ℝ → ctx.Velocity × ctx.Pressure)
+    (hsol₁ : ctx.IsSolution sol₁) (hsol₂ : ctx.IsSolution sol₂) :
+    sol₁ = sol₂ := by
+  obtain ⟨sol, _, huniq⟩ := ctx.existence_uniqueness
+  exact (huniq sol₁ hsol₁).trans (huniq sol₂ hsol₂).symm
+
+/-- **Kinetic energy bound**: when cumulative dissipation at time `t ≥ 0` is
+    non-negative, the kinetic energy `‖v(t)‖_A²` never exceeds its initial value
+    `‖v₀‖_A²`. -/
+theorem q_ns_kinetic_energy_bounded [ctx : QNsWellposednessContext]
+    (sol : ℝ → ctx.Velocity × ctx.Pressure) (hsol : ctx.IsSolution sol)
+    (t : ℝ) (ht : 0 ≤ t)
+    (hdiss : 0 ≤ ctx.dissipation (fun s => (sol s).1) t) :
+    ctx.norm_sq (sol t).1 ≤ ctx.norm_sq ctx.v₀ := by
+  have h_en := q_ns_energy_inequality sol hsol t ht
+  have h_visc : 0 ≤ 2 * ctx.ν_q * ctx.dissipation (fun s => (sol s).1) t := by
+    have hpos := ctx.ν_q_pos
+    nlinarith
+  linarith
+
+/-- **Spectral mode monotonicity bound**: for any mode `k`, non-negative time `t ≥ 0`,
+    and non-negative initial mode amplitude `0 ≤ |v̂_k(0)|`, the `k`-th eigencomponent
+    at time `t` never exceeds its initial amplitude. -/
+theorem q_ns_spectral_mode_nonincreasing [ctx : QNsWellposednessContext]
+    (sol : ℝ → ctx.Velocity × ctx.Pressure) (hsol : ctx.IsSolution sol)
+    (k : ℕ) (t : ℝ) (ht : 0 ≤ t)
+    (hv₀ : 0 ≤ ctx.v_hat k ctx.v₀) :
+    ctx.v_hat k (sol t).1 ≤ ctx.v_hat k ctx.v₀ := by
+  have h_dec := q_ns_spectral_decay sol hsol k t ht
+  have h_prod_nonneg : 0 ≤ (ctx.ν_q * (ctx.q_int k) ^ 2) * t :=
+    mul_nonneg (mul_nonneg (le_of_lt ctx.ν_q_pos) (sq_nonneg (ctx.q_int k))) ht
+  have h_rate_nonpos : -(ctx.ν_q * (ctx.q_int k) ^ 2) * t ≤ 0 := by
+    linarith
+  have h_exp : Real.exp (-(ctx.ν_q * (ctx.q_int k) ^ 2) * t) ≤ 1 :=
+    Real.exp_le_one_iff.mpr h_rate_nonpos
+  have h_mul :
+      ctx.v_hat k ctx.v₀ * Real.exp (-(ctx.ν_q * (ctx.q_int k) ^ 2) * t)
+        ≤ ctx.v_hat k ctx.v₀ * 1 :=
+    mul_le_mul_of_nonneg_left h_exp hv₀
+  linarith
+
 end QOU.FluidDynamics

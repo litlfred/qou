@@ -160,10 +160,77 @@ theorem preceq_of_prec {x y : K} (h : prec (S := S) (Γ := Γ) x y) :
 /-- Rescaling by a nonzero real preserves the Big-O class. -/
 theorem preceq_algebraMap_mul_left (r : S) (hr : algebraMap S K r ≠ 0) (x y : K) :
     preceq (S := S) (Γ := Γ) (algebraMap S K r * x) y ↔ preceq (S := S) (Γ := Γ) x y := by
-  unfold preceq
+  change Ow (S := S) (Γ := Γ) (algebraMap S K r * x) ≤ Ow (S := S) (Γ := Γ) y ↔
+    Ow (S := S) (Γ := Γ) x ≤ Ow (S := S) (Γ := Γ) y
+  rw [Ow_algebraMap_mul (S := S) r x hr]
+
+/-- `prec` is irreflexive: no surreal element is strictly smaller in ω-order than itself. -/
+theorem prec_irrefl (x : K) : ¬ prec (S := S) (Γ := Γ) x x :=
+  lt_irrefl (Ow (S := S) (Γ := Γ) x)
+
+/-- `prec` is transitive. -/
+theorem prec_trans {x y z : K}
+    (hxy : prec (S := S) (Γ := Γ) x y) (hyz : prec (S := S) (Γ := Γ) y z) :
+    prec (S := S) (Γ := Γ) x z :=
+  lt_trans hxy hyz
+
+/-- Rescaling the left argument by a nonzero scalar preserves strict little-o dominance `≺`. -/
+theorem prec_algebraMap_mul_left (r : S) (hr : algebraMap S K r ≠ 0) (x y : K) :
+    prec (S := S) (Γ := Γ) (algebraMap S K r * x) y ↔ prec (S := S) (Γ := Γ) x y := by
+  change Ow (S := S) (Γ := Γ) (algebraMap S K r * x) < Ow (S := S) (Γ := Γ) y ↔
+    Ow (S := S) (Γ := Γ) x < Ow (S := S) (Γ := Γ) y
   rw [Ow_algebraMap_mul (S := S) r x hr]
 
 end OmegaOrder
+
+/-- **Non-degenerate cosmological endpoint evaluation carrier** (`qou-g4x1`):
+    separates the ultraviolet/Big-Bang endpoint `q_bb : K` from the infrared/Heat-Death
+    endpoint `q_hd : K` via strict ω-adic valuation dominance `prec (evalQ q_bb) (evalQ q_hd)`. -/
+class BigBangHeatDeathEndpointValuation
+    (K : Type u) [CommRing K] (S : Type s) [CommRing S] [Algebra S K]
+    (Γ : Type w) [AddCommMonoid Γ] [PartialOrder Γ] [OmegaOrder K S Γ]
+    (evalQ : K → K) (q_bb q_hd : K) : Prop where
+  /-- The ultraviolet endpoint valuation strictly precedes the infrared endpoint valuation. -/
+  uv_prec_ir : OmegaOrder.prec (S := S) (Γ := Γ) (evalQ q_bb) (evalQ q_hd)
+
+/-- Under `[BigBangHeatDeathEndpointValuation K S Γ evalQ q_bb q_hd]`, the surreal evaluation
+    at the Big-Bang endpoint `q_bb` is strictly distinct from the evaluation at the
+    Heat-Death endpoint `q_hd`. -/
+theorem endpoint_eval_ne_of_valuation
+    {K : Type u} [CommRing K] {S : Type s} [CommRing S] [Algebra S K]
+    {Γ : Type w} [AddCommMonoid Γ] [PartialOrder Γ] [OmegaOrder K S Γ]
+    {evalQ : K → K} {q_bb q_hd : K}
+    [h : BigBangHeatDeathEndpointValuation K S Γ evalQ q_bb q_hd] :
+    evalQ q_bb ≠ evalQ q_hd := by
+  intro heq
+  have hlt := h.uv_prec_ir
+  rw [heq] at hlt
+  exact OmegaOrder.prec_irrefl (S := S) (Γ := Γ) (evalQ q_hd) hlt
+
+/-- **Non-degenerate Hahn-substrate higher-order residual carrier** (`qou-g4x1`):
+    given a coefficient sequence `α : ℕ → S`, a truncated mass prediction `massPred : ℕ → S`,
+    and reference data `codata : ℕ → S`, at least one higher-order coefficient `α (k + 2)` is
+    non-zero and determines the `(k + 2)`-th truncation residual `massPred k - codata k`. -/
+class HahnSubstrateHigherOrderFit
+    {S : Type s} [CommRing S] (α massPred codata : ℕ → S) : Prop where
+  /-- At least one higher-order Hahn coefficient `α (k + 2)` is non-zero. -/
+  exists_nonzero_coeff : ∃ k : ℕ, α (k + 2) ≠ 0
+  /-- The `k`-th truncation residual equals the `(k + 2)`-th Hahn coefficient. -/
+  residual_eq_coeff : ∀ k : ℕ, massPred k - codata k = α (k + 2)
+
+/-- Under `[HahnSubstrateHigherOrderFit α massPred codata]`, there exists a truncation order `k`
+    at which the higher-order Hahn series prediction strictly differs from the uncorrected
+    reference value. -/
+theorem exists_nontrivial_hahn_residual
+    {S : Type s} [CommRing S] {α massPred codata : ℕ → S}
+    [h : HahnSubstrateHigherOrderFit α massPred codata] :
+    ∃ k : ℕ, massPred k ≠ codata k := by
+  obtain ⟨k, hk⟩ := h.exists_nonzero_coeff
+  refine ⟨k, ?_⟩
+  intro heq
+  have hsub : massPred k - codata k = 0 := sub_eq_zero.mpr heq
+  rw [h.residual_eq_coeff k] at hsub
+  exact hk hsub
 
 /- **Note on the classical Big-O bridge.**
 

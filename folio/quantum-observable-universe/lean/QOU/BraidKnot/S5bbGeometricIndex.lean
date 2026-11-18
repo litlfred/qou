@@ -55,4 +55,39 @@ class S5bbClosure (M : Manifold5) (ξ : VectorField M) (W : WenzlWeights) : Prop
   to equal `4143/90` — a fit-tier value; see the class docstring. -/
   index_evaluates_to_c4 : EquivariantIndex ξ W = 4143 / 90
 
+/-- **Parameterized colour-Reeb pairing carrier** (`qou-d838`): replaces the removed
+    `: True` marker fields with caller-supplied 1-form pairing `contactPairing`,
+    exterior-derivative contraction `dContract`, and isotropy norm `isotropyNorm` on
+    `VectorField M`, constraining `ξ` to satisfy `contactPairing ξ = 1`, `dContract ξ = 0`,
+    and `0 < isotropyNorm ξ`. -/
+class ColourReebPairing
+    (M : Manifold5)
+    (contactPairing dContract isotropyNorm : VectorField M → ℝ)
+    (ξ : VectorField M) : Prop where
+  /-- Normalization on the contact 1-form: `θ(ξ) = 1`. -/
+  contact_one : contactPairing ξ = 1
+  /-- Vanishing contraction against the contact 2-form: `ι_ξ dθ = 0`. -/
+  d_contract_zero : dContract ξ = 0
+  /-- Strict avoidance of the isotropy locus: `0 < isotropyNorm ξ`. -/
+  isotropy_pos : 0 < isotropyNorm ξ
+
+/-- Under `[ColourReebPairing M contactPairing dContract isotropyNorm ξ]`, the difference
+    `contactPairing ξ - dContract ξ` equals `1`. -/
+theorem colourReeb_contact_sub_dContract
+    {M : Manifold5} {contactPairing dContract isotropyNorm : VectorField M → ℝ}
+    {ξ : VectorField M}
+    [h : ColourReebPairing M contactPairing dContract isotropyNorm ξ] :
+    contactPairing ξ - dContract ξ = 1 := by
+  rw [h.contact_one, h.d_contract_zero, sub_zero]
+
+/-- Under `[S5bbClosure M ξ W]`, the posited fit-tier value `4143 / 90` (`= 46.0333…`)
+    exceeds the bare integer `46` by `1 / 30` (`EquivariantIndex ξ W - 46 = 1 / 30`
+    and `90 * (EquivariantIndex ξ W - 46) = 3`). -/
+theorem s5bb_index_ninety_mul_gap
+    {M : Manifold5} {ξ : VectorField M} {W : WenzlWeights}
+    [h : S5bbClosure M ξ W] :
+    90 * (EquivariantIndex ξ W - 46) = 3 := by
+  rw [h.index_evaluates_to_c4]
+  ring
+
 end QOU.BraidKnot.S5bbGeometricIndex

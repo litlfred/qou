@@ -9,10 +9,12 @@ import QOU.Archimedean.HyperbolicVolumeTranscendence
 The class `HyperbolicVolumeIndependence` itself (field `no_relation`)
 is declared in `QOU.Archimedean.HyperbolicVolumeTranscendence` §7,
 where the volumes `vol_4_1`, `vol_5_2`, `vol_B3` live.  This file
-holds only the **global conjectural witness**: per AGENTS.md §3b the
-`sorry` in the instance below *is* the open conjecture, not a missing
-proof.  Downstream theorems that want the conditional form bind
-`[HyperbolicVolumeIndependence]` explicitly per §3b-cond.
+holds the **conditional bridge**: per AGENTS.md §3b-cond the
+`HyperbolicVolumeIndependenceAxiom` typeclass carries the open
+conjecture as an explicit hypothesis rather than an unconditional axiom.
+Downstream theorems that want the conditional form bind
+`[HyperbolicVolumeIndependence]` or `[HyperbolicVolumeIndependenceAxiom]`
+explicitly per §3b-cond.
 
 **History (2026-06-10).** This file previously declared a *duplicate*
 `HyperbolicVolumeIndependence` class with a placeholder shape
@@ -22,10 +24,8 @@ encoding: the trivial instance silently discharged every
 `[HyperbolicVolumeIndependence]` hypothesis with no mathematical
 content, and the duplicate declaration collided with the real class
 when both files were imported (e.g. via `QOU.Archimedean`).  The
-placeholder shape was replaced by the real class's witness per the
-original intent recorded in this file's own docstring ("the
-`noncomputable instance` is the conjectural witness whose `sorry`
-represents the open conjecture itself").
+placeholder shape was replaced by the real class's conditional bridge
+`HyperbolicVolumeIndependenceAxiom` with no unconditional global instance.
 -/
 
 namespace QOU.Archimedean
@@ -40,5 +40,28 @@ class HyperbolicVolumeIndependenceAxiom : Prop where
 -- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md
 noncomputable instance [HyperbolicVolumeIndependenceAxiom] : HyperbolicVolumeIndependence :=
   HyperbolicVolumeIndependenceAxiom.independence
+
+/-- **Conditional Borel–Zagier ℚ-linear independence** of `{vol_4_1, vol_5_2, vol_B3}`
+    from `[HyperbolicVolumeIndependenceAxiom]`. -/
+theorem borel_zagier_of_axiom [HyperbolicVolumeIndependenceAxiom] : BorelZagierQOU :=
+  implies_borel_zagier
+
+/-- **Conditional single-volume irrationality** of `vol_4_1`, `vol_5_2`, and `vol_B3`
+    from `[HyperbolicVolumeIndependenceAxiom]`. -/
+theorem single_irrational_of_axiom [HyperbolicVolumeIndependenceAxiom] : SingleVolumeIrrational :=
+  implies_single_irrational
+
+/-- Any rational linear combination `(a₁ : ℝ) * vol_4_1 + (a₂ : ℝ) * vol_5_2 + (a₃ : ℝ) * vol_B3`
+    with at least one non-zero rational coefficient is strictly non-zero under
+    `[HyperbolicVolumeIndependenceAxiom]`. -/
+theorem linear_combination_ne_zero_of_axiom [HyperbolicVolumeIndependenceAxiom]
+    (a₁ a₂ a₃ : ℚ) (h_not_all_zero : a₁ ≠ 0 ∨ a₂ ≠ 0 ∨ a₃ ≠ 0) :
+    (a₁ : ℝ) * vol_4_1 + (a₂ : ℝ) * vol_5_2 + (a₃ : ℝ) * vol_B3 ≠ 0 := by
+  intro hzero
+  have ⟨h1, h2, h3⟩ := (borel_zagier_of_axiom).linear_independent a₁ a₂ a₃ hzero
+  rcases h_not_all_zero with ha₁ | ha₂ | ha₃
+  · exact ha₁ h1
+  · exact ha₂ h2
+  · exact ha₃ h3
 
 end QOU.Archimedean
