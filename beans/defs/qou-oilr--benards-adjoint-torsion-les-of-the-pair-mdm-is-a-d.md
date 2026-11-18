@@ -1,13 +1,13 @@
 ---
 # qou-oilr
 title: Benard's adjoint-torsion LES of the pair (M,dM) is a dim-H1 machine — and Reidemeister torsion is genuinely ABSENT from the corpus
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T17:34:25Z
-updated_at: 2026-10-04T15:16:40Z
+updated_at: 2026-11-18T11:12:15Z
 parent: 08a2
 ---
 
@@ -233,3 +233,5 @@ Citation key is ready: `benard2018` in `content/schema/references.ts` (docId
 and its hypotheses is the whole edit, in whichever file carries the mechanism
 sentence. NOT done here: `qou-m3ad` is in-progress and owned by a sibling, and a
 citation is not worth stepping on a live claim for.
+
+- Round 82 (`lane-e667`): Formalized `qou-71ma`, `qou-n226`, `qou-oilr`, `qou-omuz`, `qou-wxmm` in `QOU.Foundations.ValuationGradeSelectionUpperHalfPlaneNonDegeneracyTwistedPairCohomologyDimensionLaurentRingUnitDivisionLinearDualityCertificate` with 80-dps `mpmath` 2-commit witness stamp (`84401456f07c58b1279d96f566c292313ce4c028` -> `0c9aa2b99fc76a7fc726e889fc36119e8f63d65c`, `scriptHash=f07174204f482f7a01972e149c17324ec39a978434a088c3f7d45077e7857c97`) in PR `litlfred/qou#8441` (`status: in-progress`).
