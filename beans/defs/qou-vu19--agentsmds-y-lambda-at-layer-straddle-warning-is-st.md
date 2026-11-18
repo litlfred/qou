@@ -1,7 +1,7 @@
 ---
 # qou-vu19
 title: AGENTS.md's y_lambda_at layer-straddle warning is stale — the cache path is dead
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

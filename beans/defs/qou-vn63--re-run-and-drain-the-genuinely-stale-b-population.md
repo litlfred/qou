@@ -1,7 +1,7 @@
 ---
 # qou-vn63
 title: Re-run and drain the genuinely-stale B-population producers
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

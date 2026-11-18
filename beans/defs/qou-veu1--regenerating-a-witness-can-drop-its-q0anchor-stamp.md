@@ -1,7 +1,7 @@
 ---
 # qou-veu1
 title: Regenerating a witness can DROP its q0Anchor stamp, removing it from the audit's scope
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-vstf
 title: Agent-kind QA verdicts are never recomputed — some quote prose that was never in the block
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T22:05:10Z
