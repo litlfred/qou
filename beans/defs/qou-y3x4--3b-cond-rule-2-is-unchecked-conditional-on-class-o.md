@@ -1,7 +1,7 @@
 ---
 # qou-y3x4
 title: '§3b-cond rule 2 is unchecked: conditional_on_class opens no downstream Lean'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -85,3 +85,8 @@ item-1-pass / item-2-fail. That is a folio-assistant change.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-03 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 89 Formalization (`litlfred/qou#8474`)
+- Formalized in `QOU.Foundations.AxiomDischargedScopeUnencodedCarrierFilterDownstreamInstanceBindingDeLaunderedEnrichmentSiblingPreservationRebuild` (`folio/quantum-observable-universe/lean/QOU/Foundations/AxiomDischargedScopeUnencodedCarrierFilterDownstreamInstanceBindingDeLaunderedEnrichmentSiblingPreservationRebuild.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`849ef0b15f72606c848eb897a5fda003d289f504` -> `2fff5cb2db76633d952c403baec2a6519c2cf61d`, `scriptHash = scriptSha256 = 2a824ebc8929957fb1b4acfb6fc295d57631c4e806a1217ab45cd79c79b1902b`).
+- PR: https://github.com/litlfred/qou/pull/8474

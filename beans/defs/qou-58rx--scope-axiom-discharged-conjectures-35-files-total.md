@@ -1,7 +1,7 @@
 ---
 # qou-58rx
 title: 'SCOPE: axiom-discharged conjectures — 35 files total, 9+9 done, 17 remain (8 have consumers)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -79,3 +79,8 @@ inputs, and at least `SDPRankEquality` documents its axioms deliberately as
 Mathlib-gap inputs. They may be legitimate or may not; each needs reading. Do
 not batch-process them: an earlier loose grep flagged `SDPRankEquality` as
 laundered and it is not.
+
+## Round 89 Formalization (`litlfred/qou#8474`)
+- Formalized in `QOU.Foundations.AxiomDischargedScopeUnencodedCarrierFilterDownstreamInstanceBindingDeLaunderedEnrichmentSiblingPreservationRebuild` (`folio/quantum-observable-universe/lean/QOU/Foundations/AxiomDischargedScopeUnencodedCarrierFilterDownstreamInstanceBindingDeLaunderedEnrichmentSiblingPreservationRebuild.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`849ef0b15f72606c848eb897a5fda003d289f504` -> `2fff5cb2db76633d952c403baec2a6519c2cf61d`, `scriptHash = scriptSha256 = 2a824ebc8929957fb1b4acfb6fc295d57631c4e806a1217ab45cd79c79b1902b`).
+- PR: https://github.com/litlfred/qou/pull/8474
