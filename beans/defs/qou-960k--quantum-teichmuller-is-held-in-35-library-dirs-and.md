@@ -1,7 +1,7 @@
 ---
 # qou-960k
 title: Quantum Teichmuller is held in 35 library dirs and used in ZERO content blocks
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

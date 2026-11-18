@@ -1,7 +1,7 @@
 ---
 # qou-rbdz
 title: Update Mass Theory docs with H3 Delta Baryon and Quaternionic Shift
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

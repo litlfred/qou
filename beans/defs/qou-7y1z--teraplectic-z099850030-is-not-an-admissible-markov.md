@@ -1,7 +1,7 @@
 ---
 # qou-7y1z
 title: Teraplectic z=0.99850030 is not an admissible Markov parameter under convention D
-status: todo
+status: in-progress
 type: task
 created_at: 2026-11-17T23:08:23Z
 updated_at: 2026-11-17T23:08:23Z
