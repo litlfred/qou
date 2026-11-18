@@ -1,0 +1,59 @@
+{
+  "probe": "round80_biotsavart_icosahedral_tracefield_planck_eigenspace_probe",
+  "beans": [
+    "qou-6wu0",
+    "qou-7mhu",
+    "qou-7neb",
+    "qou-7srp",
+    "qou-7vmi"
+  ],
+  "scriptPath": "computations/probes/round80_biotsavart_icosahedral_tracefield_planck_eigenspace_probe.py",
+  "scriptCommitSha": "ad28fc031419ccc92e5fdb7d4055ea8298a50191",
+  "scriptHash": "6ada0f987e2f54b525da2bc922dc6d5ebbbffbc0e26afc94896dd1232063a26b",
+  "scriptSha256": "6ada0f987e2f54b525da2bc922dc6d5ebbbffbc0e26afc94896dd1232063a26b",
+  "mpmathDps": 80,
+  "allPassed": true,
+  "generatedAt": "2026-11-18T12:08:39.347606+00:00",
+  "checks": [
+    {
+      "bean": "qou-6wu0",
+      "euclideanSpectralMargin": 170,
+      "curvedSpectralMargin": 370,
+      "unitBallFirstCurlEigenvalue": "4.49340945790906417530788092728",
+      "curlEigenvalueResidual": "2.63554948580763e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-7mhu",
+      "alternatingSubgroupOrder": 60,
+      "fullAutomorphismOrder": 120,
+      "totalHomologyRank": 8,
+      "icosahedralCharacterResidual": "2.1084395886461e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-7neb",
+      "invariantTraceFieldDeg": 2,
+      "fullTraceFieldDegree": 8,
+      "traceFieldExtensionExcess": 6,
+      "eisensteinMinPolyResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-7srp",
+      "planckStepNumerator": 1097,
+      "shiftedConnectionLevel": 7,
+      "hbarQValue": "0.0988555465441110209966657655222",
+      "planckIdentityResidual": "2.63554948580763e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-7vmi",
+      "nonTrivialIsotypicDim": 7,
+      "totalEigenvalueMultiplicity": 7,
+      "secondarySectorRemainder": 4,
+      "bringAreaRatioResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
