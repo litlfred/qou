@@ -1,0 +1,50 @@
+{
+  "probe": "cemetery_boundary_exclusion_candidate_resolution_alignment_vacuity_gate_completeness_detector_seeded_disjointness_sibling_field_drift_masking_probe",
+  "beans": [
+    "qou-p68e",
+    "qou-qe41",
+    "qou-si72",
+    "qou-sycn",
+    "qou-u87j"
+  ],
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/cemetery_boundary_exclusion_candidate_resolution_alignment_vacuity_gate_completeness_detector_seeded_disjointness_sibling_field_drift_masking_probe.py",
+  "scriptCommitSha": "8c2d0febf29bb89e22f415f36e99b433db4a6e8c",
+  "scriptHash": "c68b728f98350112bedd3f85302ce46d7d3318d556c2797c1bfab1197342b290",
+  "scriptSha256": "c68b728f98350112bedd3f85302ce46d7d3318d556c2797c1bfab1197342b290",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "cemeteryBoundaryExclusion": {
+      "bean": "qou-p68e",
+      "displacement": "4.0",
+      "quadraticDistance": "25.0",
+      "passed": true
+    },
+    "candidateResolutionAlignment": {
+      "bean": "qou-qe41",
+      "resolvedCount": "29.0",
+      "deficitSq": "0.0",
+      "passed": true
+    },
+    "vacuityGateCompleteness": {
+      "bean": "qou-si72",
+      "detectedTotal": "24.0",
+      "blindSpotPenalty": "0.0",
+      "passed": true
+    },
+    "detectorSeededDisjointness": {
+      "bean": "qou-sycn",
+      "baselineTotal": "23.0",
+      "ledgerTotal": "268.0",
+      "unionCount": "291.0",
+      "passed": true
+    },
+    "siblingFieldDriftMasking": {
+      "bean": "qou-u87j",
+      "totalColocatedSiblings": "147.0",
+      "driftedFieldSetSiblings": "46.0",
+      "discrepancySq": "0.0",
+      "passed": true
+    }
+  }
+}
