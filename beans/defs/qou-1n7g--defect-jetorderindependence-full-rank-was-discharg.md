@@ -1,7 +1,7 @@
 ---
 # qou-1n7g
 title: 'DEFECT: JetOrderIndependence full_rank was discharged by fabricated constant jetPivots = fun _ => (1/4,2,1/8) across ALL orders; the constant extension IS the open conjecture (instance removed PR #4884)'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
@@ -198,3 +198,8 @@ Recorded here only so a reader of this bean does not take "verified three times"
 to mean the file's numbers were checked — they were not, until now. Full
 measurement, the options and the recommendation are in **`qou-xc8t`**, which owns
 the discharge routes; nothing is proposed here.
+
+## Round 88 Formalization (`litlfred/qou#8471`)
+- Formalized in `QOU.Foundations.BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit` (`folio/quantum-observable-universe/lean/QOU/Foundations/BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`e47fb91c9186e83c35ba5f8afe823fc02682f7fa` -> `eb5a105f27408ec654ee82cac266aca18e9361f3`, `scriptHash = scriptSha256 = 76b0a54b7612529d0460197f1a503d128d9ca3acb85f7c16e201490dd4b263d6`).
+- PR: https://github.com/litlfred/qou/pull/8471

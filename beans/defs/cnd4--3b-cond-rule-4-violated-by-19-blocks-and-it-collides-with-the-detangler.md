@@ -1,7 +1,7 @@
 ---
 # cnd4
 title: §3b-cond rule 4 is violated by 19 blocks — and obeying it collides with the detangler
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -129,3 +129,8 @@ both in question.
 This is **not** the `prn1` prune damage. These edges were never pruned — the
 scan compares each block's own conditional banner against its manifest. Two
 independent defects on the same field.
+
+## Round 88 Formalization (`litlfred/qou#8471`)
+- Formalized in `QOU.Foundations.BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit` (`folio/quantum-observable-universe/lean/QOU/Foundations/BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`e47fb91c9186e83c35ba5f8afe823fc02682f7fa` -> `eb5a105f27408ec654ee82cac266aca18e9361f3`, `scriptHash = scriptSha256 = 76b0a54b7612529d0460197f1a503d128d9ca3acb85f7c16e201490dd4b263d6`).
+- PR: https://github.com/litlfred/qou/pull/8471

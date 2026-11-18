@@ -1,7 +1,7 @@
 ---
 # 95jh
 title: qou/lean/BraidKnot — track 5 intentional TODO markers (0 actionable sorries; §3b excluded) [re-scoped from 213]
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -26,3 +26,8 @@ resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited 
 [2026-06-26 grep-inflated] Claimed 213; naive 316; refined actionable ~23 (many are §3b open-conjecture sorries, NOT to-resolve). Re-scope excluding §3b. Audit: docs/audits/2026-06-26-lean-placeholder-bean-grep-inflation.md
 
 [2026-06-26 RE-SCOPED — owner-authorized, rsseq-even-part session] Title now reflects verified scope: 0 actionable sorries (JucysMurphy already cited/drained #2656; Helium3/Tritium/Deuteron/QBeta sorries are §3b or witness-dep markers, not missing proofs); residual is 5 intentional `-- TODO` markers. Kept open as low-priority tracking, NOT a drainable count.
+
+## Round 88 Formalization (`litlfred/qou#8471`)
+- Formalized in `QOU.Foundations.BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit` (`folio/quantum-observable-universe/lean/QOU/Foundations/BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`e47fb91c9186e83c35ba5f8afe823fc02682f7fa` -> `eb5a105f27408ec654ee82cac266aca18e9361f3`, `scriptHash = scriptSha256 = 76b0a54b7612529d0460197f1a503d128d9ca3acb85f7c16e201490dd4b263d6`).
+- PR: https://github.com/litlfred/qou/pull/8471

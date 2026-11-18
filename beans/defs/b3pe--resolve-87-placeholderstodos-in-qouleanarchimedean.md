@@ -1,7 +1,7 @@
 ---
 # b3pe
 title: qou/lean/Archimedean — track 3 intentional research-grade TODO markers (0 actionable sorries; §3b excluded) [re-scoped from 87]
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -26,3 +26,8 @@ resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited 
 [2026-06-26 grep-inflated] Claimed 87; naive 49; refined actionable ~11 (subset are §3b instances, NOT to-resolve per AGENTS.md §3b). Re-scope excluding §3b. Audit: docs/audits/2026-06-26-lean-placeholder-bean-grep-inflation.md
 
 [2026-06-26 RE-SCOPED — owner-authorized, rsseq-even-part session] Title now reflects the verified scope: 0 actionable sorries (the Archimedean sorries — HyperbolicVolumeIndependence, SingleVolumeIrrationality, BorelZagierQouVolumes, EmCouplingBringZeroMode — are §3b conjecture INSTANCES, not missing proofs); the only residual is 3 intentional research-grade `-- TODO` markers (SnapPyAxioms 2 future-migration rows, BorromeanVolumeCatalan open-questions §6). Kept open as a low-priority tracking bean, NOT a drainable count.
+
+## Round 88 Formalization (`litlfred/qou#8471`)
+- Formalized in `QOU.Foundations.BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit` (`folio/quantum-observable-universe/lean/QOU/Foundations/BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`e47fb91c9186e83c35ba5f8afe823fc02682f7fa` -> `eb5a105f27408ec654ee82cac266aca18e9361f3`, `scriptHash = scriptSha256 = 76b0a54b7612529d0460197f1a503d128d9ca3acb85f7c16e201490dd4b263d6`).
+- PR: https://github.com/litlfred/qou/pull/8471

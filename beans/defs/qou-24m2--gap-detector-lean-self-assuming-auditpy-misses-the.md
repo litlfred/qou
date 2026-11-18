@@ -1,7 +1,7 @@
 ---
 # qou-24m2
 title: 'GAP (detector): lean-self-assuming-audit.py misses the CLASS-INSTANCE self-assuming variant - the exact pattern AGENTS.md 3b-cond rule 5 names. DeltaLambdaSignRule.burnside was ''class C where claim : <conclusion>'' + ''theorem burnside [ctx : C] ... := ctx.claim ...'' and the detector scored 0 candidates on it. Two independent causes: (1) BINDER regex only matches round-bracket ''(h : T)'', so instance-implicit ''[ctx : C]'' never enters the binder map; (2) the bare-identifier guard re.fullmatch(''[A-Za-z_][A-Za-z0-9_]*'', proof) rejects a projection APPLICATION like ''ctx.claim n ps hc hn''. Fix: also parse ''[name : Type]'' binders, and match proofs of the form ''<binder>.<field> <args>'' where the class field''s declared type equals the conclusion. Cross-ref PR #4695 (8 P->P theorems), PR #4712 (triviality sweep), bean qou-q407, qou-z3k1.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -35,3 +35,8 @@ theorem does real work (`Nat.le_of_lt ctx.positive`) and a projection whose fiel
 the conclusion are both correctly NOT flagged (1 of 3 fixture theorems flagged). Corpus: 0 -> 5
 candidates over 3031 files. Adjudication of those 5 is bean qou-sa5c; spot-check of one (LpDuality)
 confirms a genuine, already-documented instance rather than noise.
+
+## Round 88 Formalization (`litlfred/qou#8471`)
+- Formalized in `QOU.Foundations.BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit` (`folio/quantum-observable-universe/lean/QOU/Foundations/BraidPlaceholderResweepArchimedeanMarkerPartitionConditionalEdgeCollisionBaseOrderPivotExtensionInstanceProjectionAudit.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`e47fb91c9186e83c35ba5f8afe823fc02682f7fa` -> `eb5a105f27408ec654ee82cac266aca18e9361f3`, `scriptHash = scriptSha256 = 76b0a54b7612529d0460197f1a503d128d9ca3acb85f7c16e201490dd4b263d6`).
+- PR: https://github.com/litlfred/qou/pull/8471
