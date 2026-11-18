@@ -1,0 +1,100 @@
+{
+  "probe": "cyclolval_deltalambda_dressed_edgedecouple_f3eps6_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/cyclolval_deltalambda_dressed_edgedecouple_f3eps6_probe.py",
+  "scriptCommitSha": "2cb7c61a67ff936e1cf32ed43d96d5f50e596dcb",
+  "scriptHash": "18b1582d364dc78a0c4fd0a94e960b1605e3f3e993b76e29024348fe5623f5ab",
+  "scriptSha256": "18b1582d364dc78a0c4fd0a94e960b1605e3f3e993b76e29024348fe5623f5ab",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "theorem": "beta_3_from_jonquiere_sub_eq_zero",
+      "bean": "qou-jvav",
+      "passed": true,
+      "residual": "0.0"
+    },
+    {
+      "theorem": "constant_b_from_writhe_proportional_sub_eq_zero",
+      "bean": "qou-k3er",
+      "passed": true,
+      "samples": [
+        {
+          "Z": "4",
+          "N": "5",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "Z": "7",
+          "N": "9",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "Z": "12",
+          "N": "10",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "dressing_composes_three",
+      "bean": "qou-k448",
+      "passed": true,
+      "samples": [
+        {
+          "level": "1",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "level": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "level": "3",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "level": "4",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "sum_heads_sub_sum_min_eq_zero",
+      "bean": "qou-k54t",
+      "passed": true,
+      "samples": [
+        {
+          "ell": "3",
+          "N": "6",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "ell": "4",
+          "N": "8",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "ell": "5",
+          "N": "7",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "F3_eps6_leading_add_eq_zero",
+      "bean": "qou-k6s6",
+      "passed": true,
+      "residual": "0.0"
+    }
+  ]
+}
