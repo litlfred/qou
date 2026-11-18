@@ -1,7 +1,7 @@
 ---
 # qou-9f4h
 title: 'GAP: derive a structural per-partition truncation selector lambda -> k_lambda, or prove none exists (the rule in the compute is FITTED)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T18:19:11Z

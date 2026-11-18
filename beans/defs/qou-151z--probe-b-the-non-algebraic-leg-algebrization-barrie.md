@@ -1,7 +1,7 @@
 ---
 # qou-151z
 title: 'PROBE B: the non-algebraic leg (algebrization barrier) — the Millennium-hard clause'
-status: todo
+status: in-progress
 type: task
 priority: deferred
 tags:

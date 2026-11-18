@@ -1,7 +1,7 @@
 ---
 # qou-0jcd
 title: 'Step-2 plan: close cheat-sheet §2a (the stipulated Hecke curvature) — conjecture class + Picard–Lefschetz classical shadow + KZ real-q prune'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

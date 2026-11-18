@@ -1,7 +1,7 @@
 ---
 # qou-f1wk
 title: 'GAP: two defects in conj:brane-tower-z-habiro''s own STATEMENT — the cyclotomic projection is undefined at generic eigenvalues, and the dimensionless-to-MeV map is unspecified'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-11T07:00:20Z

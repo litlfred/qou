@@ -1,7 +1,7 @@
 ---
 # qou-joia
 title: 'q-NS probe arithmetic: 16 of 17 compute in float64 — wider than the two witness-tier beans, and the directive that scopes it postdates them'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
