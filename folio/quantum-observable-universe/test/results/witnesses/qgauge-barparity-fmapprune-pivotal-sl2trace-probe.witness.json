@@ -1,0 +1,40 @@
+{
+  "probe": "qgauge_barparity_fmapprune_pivotal_sl2trace_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/qgauge_barparity_fmapprune_pivotal_sl2trace_probe.py",
+  "scriptCommitSha": "9f6131604fdd72aad9d7bd087ad2b7a83e14e177",
+  "scriptHash": "0b6da42e752f71b7fd1e0f3df5c4bebf60785733ece21b253a966756235e80ce",
+  "scriptSha256": "0b6da42e752f71b7fd1e0f3df5c4bebf60785733ece21b253a966756235e80ce",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "detCharMatrixConjSubEqZero": {
+      "detConj": "-20.555555555555555555555555555555555555555555555555555555555555555555555555555556",
+      "detOrig": "-20.555555555555555555555555555555555555555555555555555555555555555555555555555556",
+      "residual": "0.0",
+      "passed": true
+    },
+    "qIntBalBarSubEqZero": {
+      "qIntBalInv": "13.87455910297792586422324031653477717617659308621407746772178259058725531028738",
+      "qIntBal": "13.87455910297792586422324031653477717617659308621407746772178259058725531028738",
+      "residual": "0.0",
+      "passed": true
+    },
+    "expPowEvenIsZeta4FaithfulApplyEqZero": {
+      "expZeroSq": "1.0",
+      "signOrbitAtZero": "4.0",
+      "passed": true
+    },
+    "zJSubZDAtOne": {
+      "zJAtOne": "0.5",
+      "zDAtOne": "0.5",
+      "residual": "0.0",
+      "passed": true
+    },
+    "zSL2SubZDEqZero": {
+      "zSL2": "1.3754716981132075471698113207547169811320754716981132075471698113207547169811321",
+      "zD": "1.3754716981132075471698113207547169811320754716981132075471698113207547169811321",
+      "residual": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "passed": true
+    }
+  }
+}
