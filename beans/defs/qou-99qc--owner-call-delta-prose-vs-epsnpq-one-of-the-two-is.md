@@ -3741,3 +3741,22 @@ Owner asked for a single `def:photon` block: γ(φ) = 1 + φ₀σ₀ + φ₁σ�
 ## 2026-11-17 sibling sweep
 Scope note only (bean stays OPEN): a sibling measured that the reading-3 whole-word search space is about 1024 candidate words. No word selected.
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+### PRE-REGISTRATION 2026-11-18 04:30Z — canonical-word reselection from γ(φ)γ(ψ) (γγ thread)
+Trigger: owner tapped "Re-derive from γ(φ)γ(ψ)" (n–p thread, 2026-11-17 23:18Z), after audit finding C8 (docs/audits/2026-11-17-photon-usage-audit.md): the vertex V = σᵢσᵢ₊₁⁻¹ came from a script that takes photon = σ₀ plus an "anti-photon" σ₁⁻¹, both rejected by def:photon (PR #8367). Written before any computation.
+
+**Expansion (exact, braid words before any Hecke reduction).** With γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁:
+- degree 0: 1
+- one photon bare (coefficient has a factor 1): σ₀ (φ₀ + ψ₀), σ₁ (φ₁ + ψ₁), σ₀σ₁ (φ₀₁ + ψ₀₁)
+- both photons dressed (bilinear φ·ψ): σ₀² (φ₀ψ₀), σ₀σ₁ (φ₀ψ₁), σ₁σ₀ (φ₁ψ₀), σ₁² (φ₁ψ₁), σ₀²σ₁ (φ₀ψ₀₁), σ₀σ₁σ₀ (φ₀₁ψ₀), σ₁σ₀σ₁ = σ₀σ₁σ₀ (φ₁ψ₀₁), σ₀σ₁² (φ₀₁ψ₁), (σ₀σ₁)² (φ₀₁ψ₀₁).
+- **No inverse letter occurs.** V = σ₀σ₁⁻¹ and V⁻¹ are not terms of γ(φ)γ(ψ). Every word built from these terms is a positive braid.
+
+**Letter set (rule A, primary).** The letters are the nine bilinear terms above, i.e. the words that need BOTH photons dressed (a pair-production event). Reason: a term with a factor 1 is one photon passing through unchanged, not γγ. Rule B (comparison arm, labelled, not selectable): all eleven non-identity terms, which generate every positive B₃ word. Rule A is the rule unless the owner picks otherwise on the card.
+
+**Selection (unchanged from qou-ales, FrobeniusSelected).** Candidates: non-empty products of letters on 3 strands, by crossing count up to 12. Feasible: reading 3, χ_λ(w) ≥ 0 on every level with y_λ > 0, convention D, proton pin. Exact zero counts as feasible (≥ 0); a value under 1e-30 is decided by re-evaluating at 120 dps and calling it zero only if it stays under 1e-100 there. Cost: crossing count. Selected: every feasible word of minimal cost — all ties reported, none broken by any residual or measured value.
+- Sectors: the nucleon (3 strands; closure has 3 components, any word); recorded, not filtered by, split vs non-split closure.
+- Reported per word: letters, braid word, writhe, components, level characters χ₃, χ₂₁, χ₁₁₁.
+- Questions, no predicted answer: 1. Which words are selected, and is the minimum split (e.g. σ₀² = Hopf ⊔ unknot)? 2. Does any selected word equal β_Bor up to conjugacy? (It cannot: β_Bor has writhe 0 and every rule-A word has writhe > 0.) 3. Does rule B select a different minimum?
+- Not allowed: changing letters, cost, sector or the floor after seeing results; choosing among tied words by Q_β or any mass.
+- Downstream: χ₃/χ₂₁/χ₁₁₁ of the selected element go to the Q_β ε thread; the words go to the n–p thread. Q_β = 0.4491 MeV stays provisional.
+Bean stays OPEN.
