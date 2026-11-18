@@ -1,0 +1,81 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-u800",
+    "qou-udpt",
+    "qou-ukzc",
+    "qou-uoge",
+    "qou-urt1"
+  ],
+  "checks": {
+    "qou_u800_non_ideal_tetrahedron_potential": {
+      "bean": "qou-u800",
+      "channelExcess": 7,
+      "cite": "terashima-yamazaki2013",
+      "dofExcess": 5,
+      "passed": true,
+      "potentialUnshifted": "-0.1597683781094573652847501438154536464992",
+      "shiftResidual": "6.325318765938313934609144e-81"
+    },
+    "qou_udpt_horizon_causal_patch_balance": {
+      "balanceDiff": "0.0",
+      "bean": "qou-udpt",
+      "cite": "susskind-thorlacius1993",
+      "infallingPatchEntropy": "177.4456782233459992108114230932932014273",
+      "noSinglePatchXeroxExcess": "2.024102005100260459074926e-79",
+      "passed": true
+    },
+    "qou_ukzc_1efficient_3d_index_degree_floor": {
+      "bean": "qou-ukzc",
+      "cite": "garoufalidis-hodgson-hoffman-rubinstein2016",
+      "degreeExcess": "15.1",
+      "factorResidual": "1.686751670916883715895772e-80",
+      "figureEightIndexAtTenth": "0.82786",
+      "passed": true
+    },
+    "qou_uoge_rectangle_diagram_hook_decomposition": {
+      "bean": "qou-uoge",
+      "cite": "marsh2000",
+      "maxHookDecompositionResidual": "0.0",
+      "passed": true,
+      "samples": [
+        {
+          "c": 4,
+          "cells": 12,
+          "hook": 6,
+          "inner": 6,
+          "r": 3
+        },
+        {
+          "c": 7,
+          "cells": 35,
+          "hook": 11,
+          "inner": 24,
+          "r": 5
+        },
+        {
+          "c": 11,
+          "cells": 88,
+          "hook": 18,
+          "inner": 70,
+          "r": 8
+        }
+      ]
+    },
+    "qou_urt1_borromean_triple_linking": {
+      "bean": "qou-urt1",
+      "cite": "mellor-melvin2003",
+      "muBar123": -1,
+      "muBar123Mirror": 1,
+      "passed": true,
+      "t123": 1
+    }
+  },
+  "generatedAt": "2026-11-18T09:02:35.444670+00:00",
+  "mpmathDps": 80,
+  "probe": "round69_modular_sixj_normal_surface_triple_linking_probe",
+  "scriptCommitSha": "16b9a4fc327417200f516ed0342398263fcb587e",
+  "scriptHash": "17de95da42974d754cbfa5b01c00fab79958842d2c4dfec6b94aaeb26d797b40",
+  "scriptPath": "computations/probes/round69_modular_sixj_normal_surface_triple_linking_probe.py",
+  "scriptSha256": "17de95da42974d754cbfa5b01c00fab79958842d2c4dfec6b94aaeb26d797b40"
+}
