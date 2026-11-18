@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "tableau_square_sum_promotion_binder_obligation_visibility_log_determinant_boundary_standalone_axiom_distribution_non_hyperbolic_volume_vanishing_probe",
+  "beans": [
+    "qou-ep4e",
+    "qou-fpjy",
+    "qou-i6bn",
+    "qou-i6cn",
+    "qou-mkm8"
+  ],
+  "leanModule": "QOU.Foundations.TableauSquareSumPromotionBinderObligationVisibilityLogDeterminantBoundaryStandaloneAxiomDistributionNonHyperbolicVolumeVanishing",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/tableau_square_sum_promotion_binder_obligation_visibility_log_determinant_boundary_standalone_axiom_distribution_non_hyperbolic_volume_vanishing_probe.py",
+  "scriptHash": "0e68280fe3476a3f8543bf6de4770766624506d689b2ae34edd201278173e989",
+  "scriptSha256": "0e68280fe3476a3f8543bf6de4770766624506d689b2ae34edd201278173e989",
+  "scriptCommitSha": "dfc69944cbe55f3b2622843a90dea18c98e576d7",
+  "generatedAt": "2026-11-18T11:43:25.143259+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-ep4e",
+      "theorem": "threeStrand_tableau_square_sum_and_promotion_clearance",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-fpjy",
+      "theorem": "classBinder_blindSpot_separation",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-i6bn",
+      "theorem": "boundaryNormalizedLogDet_vanishes_at_origin_and_factors",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-i6cn",
+      "theorem": "standaloneAxiom_distribution_reconciliation",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-mkm8",
+      "theorem": "zero_hyperbolic_closures_forces_trivial_volume_and_full_trace_gap",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
