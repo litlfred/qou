@@ -1,7 +1,7 @@
 ---
 # qou-tpdg
 title: The library sweep points at the wrong Mathlib tree — 22 false REDs, and the 2.3GB shadow is redundant
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

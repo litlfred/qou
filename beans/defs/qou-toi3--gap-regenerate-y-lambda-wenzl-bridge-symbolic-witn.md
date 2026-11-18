@@ -1,7 +1,7 @@
 ---
 # qou-toi3
 title: 'GAP: regenerate y-lambda-wenzl-bridge-symbolic-witness under D; 3 consumers still sympify its C strings past the gate'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

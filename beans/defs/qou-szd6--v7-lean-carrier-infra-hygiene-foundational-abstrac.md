@@ -1,7 +1,7 @@
 ---
 # qou-szd6
 title: 'V7 Lean carrier + infra hygiene (foundational): abstract keystone carriers (#3773), de-fabricate vacuous carriers (#3793 needs reconcile vs current main), sign audit (#4054). Formalization spine + olean cone growth.'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

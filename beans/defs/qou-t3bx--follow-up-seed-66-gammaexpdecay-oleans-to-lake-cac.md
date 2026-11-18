@@ -1,7 +1,7 @@
 ---
 # qou-t3bx
 title: 'Follow-up: seed +66 Gamma/ExpDecay oleans to lake-cache/qou-v4-24-0 (optional; standard Mathlib cache covers CI)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

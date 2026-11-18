@@ -1,7 +1,7 @@
 ---
 # qou-u0qy
 title: 'Skill: local/paper-relevance-triage (per-paper relevance + key results + linkage options + auto-beans)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
