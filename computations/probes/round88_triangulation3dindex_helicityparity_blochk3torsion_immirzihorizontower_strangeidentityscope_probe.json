@@ -1,0 +1,59 @@
+{
+  "probe": "round88_triangulation3dindex_helicityparity_blochk3torsion_immirzihorizontower_strangeidentityscope_probe",
+  "beans": [
+    "qou-dyby",
+    "qou-eodz",
+    "qou-ir19",
+    "qou-jdxo",
+    "qou-jeae"
+  ],
+  "scriptCommitSha": "c1c4ba248a405e006b16b37638c007e3c250a8aa",
+  "scriptSha256": "e8c0186a16a08b1cbcd34d71d6eb909955f79887b84acde7f93c7c54406279f9",
+  "scriptHash": "e8c0186a16a08b1cbcd34d71d6eb909955f79887b84acde7f93c7c54406279f9",
+  "dps": 80,
+  "mpmathDps": 80,
+  "precisionDps": 80,
+  "allPassed": true,
+  "allAssertionsPassed": true,
+  "checks": {
+    "oneEfficient3dIndex": {
+      "tetrahedraCount": 8,
+      "efficiencyObstructionCount": 0,
+      "pachnerTwoToThreeDelta": 1,
+      "borromeanHyperbolicVolume80dps": "7.327724753417752120436828119459072886193",
+      "passed": true
+    },
+    "helicityLinkingParity": {
+      "ambientDim": 3,
+      "submanifoldDim": 1,
+      "linkingMagnitude": 3,
+      "netSignedLinking": 0,
+      "totalAsymptoticCrossing": 6,
+      "passed": true
+    },
+    "algebraicK3DilogTorsion": {
+      "kGroupIndex": 3,
+      "fiveTermLength": 5,
+      "rogersHalfOverBaselRatio": "1/2",
+      "rogersHalfResidual": "1.054219794e-81",
+      "rogersGoldenOverBaselRatio": "2/5",
+      "rogersGoldenResidual": "1.054219794e-81",
+      "passed": true
+    },
+    "domagalaLewandowskiHigherSpinPole": {
+      "gammaSpinHalf80dps": "0.1273840231409480328676041665067666694841",
+      "gammaDomagalaLewandowski80dps": "0.2375329579659206643583771469602444938725",
+      "dlPoleResidual": "2.108439589e-81",
+      "higherSpinShift80dps": "0.1101489348249726314907729804534778243885",
+      "passed": true
+    },
+    "strangeIdentityResurgenceScope": {
+      "dictionaryStepCount": 4,
+      "fourOneActionPiSqOver5_80dps": "1.973920880217871723766898199975230227063",
+      "trefoilStrangeActionPiSqOver6_80dps": "1.644934066848226436472415166646025189219",
+      "actionGapPiSqOver30_80dps": "0.3289868133696452872944830333292050378438",
+      "fourOneInStrangeIdentityClass": false,
+      "passed": true
+    }
+  }
+}
