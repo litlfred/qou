@@ -1,0 +1,57 @@
+{
+  "probe": "rigid_gap_braided_three_strand_closure_window_cumulative_commutant_bilinear_cyclicity_probe",
+  "beans": [
+    "qou-lyq2",
+    "qou-pbjv",
+    "qou-e6db",
+    "qou-su6h",
+    "qou-svnb"
+  ],
+  "parents": [
+    "qou-o9ge",
+    "qou-0cyu",
+    "qou-1oif",
+    "qou-59vq",
+    "qou-rtxm"
+  ],
+  "leanModule": "QOU.Foundations.RigidGapBraidedThreeStrandClosureWindowCumulativeCommutantBilinearCyclicity",
+  "precisionDps": 80,
+  "scriptPath": "computations/probes/rigid_gap_braided_three_strand_closure_window_cumulative_commutant_bilinear_cyclicity_probe.py",
+  "scriptHash": "bb0e9e32b9629d9789227d338ed551e0d79651afa39f07ae980772f540b2ef6a",
+  "scriptSha256": "bb0e9e32b9629d9789227d338ed551e0d79651afa39f07ae980772f540b2ef6a",
+  "scriptCommitSha": "b704b4dd3d9c5480efb9471bb8860000327215d9",
+  "generatedAt": "2026-11-18T07:32:59.702320+00:00",
+  "allPassed": true,
+  "results": [
+    {
+      "beanId": "qou-lyq2",
+      "claim": "Rigid structural gap cross-residual factors as w1 w2 (lam1 - lam2), scales by s^2 under dual rescaling, and vanishes at lam1 = lam2",
+      "maxResidual": "1.054219794323052322434857e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-pbjv",
+      "claim": "2D 3-strand representation satisfies quadratic relations T_i^2 = (q-1)T_i + q I_2 and braid relation T1 T2 T1 = T2 T1 T2",
+      "maxResidual": "6.588873714519077015217859e-82",
+      "passed": true
+    },
+    {
+      "beanId": "qou-e6db",
+      "claim": "Crossing switch shifts degree window by -2 with invariant width 2(n-c), and smoothing shifts e-(n-c) by 0 or -2 (preserving parity)",
+      "maxResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-su6h",
+      "claim": "Cumulative transposition elements L2 and L3 commute and have central scalar symmetric sum (q^2-q)I_2 and product -q^3 I_2",
+      "maxResidual": "2.108439588646104644869715e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-svnb",
+      "claim": "Bilinear trace form satisfies B(u,v)-B(v,u) = (u1 v2 - u2 v1)(g12 - g21) and is cyclic when g12 = g21",
+      "maxResidual": "3.294436857259538507608929e-83",
+      "passed": true
+    }
+  ]
+}
