@@ -1,7 +1,7 @@
 ---
 # qou-7p7d
 title: 'Motivate reading (B): where does Geom(K) x trace come from, and what in the lit justifies pairing an algebraic invariant with a geometric one?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -52,3 +52,5 @@ supported. Corrected in the audit.
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-v2om`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+- **Round 88 (`https://github.com/litlfred/qou/pull/8405`, head `094b162d955cf25f57c026bb5dce25006b9627d4`)**: Formalized theorem + 80-dps witness (`status: in-progress`).

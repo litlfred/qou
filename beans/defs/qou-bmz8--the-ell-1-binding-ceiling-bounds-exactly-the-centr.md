@@ -1,7 +1,7 @@
 ---
 # qou-bmz8
 title: The ell-1 binding ceiling bounds exactly the CENTRE of H_n, not the family tr_M(.w) — qou-fvzm's 'not a Hecke-trace object at all' is broader than its evidence
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -431,3 +431,5 @@ Hecke-trace object at all" overstated — is untouched and remains open.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- **Round 88 (`https://github.com/litlfred/qou/pull/8405`, head `094b162d955cf25f57c026bb5dce25006b9627d4`)**: Formalized theorem + 80-dps witness (`status: in-progress`).
