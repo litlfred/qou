@@ -1,7 +1,7 @@
 ---
 # qou-eggf
 title: 17 witnesses put free text in q0Anchor instead of the token; the vocabulary cannot parse it
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

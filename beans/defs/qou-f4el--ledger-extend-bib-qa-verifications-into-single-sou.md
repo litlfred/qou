@@ -1,7 +1,7 @@
 ---
 # qou-f4el
 title: 'Ledger: extend bib-qa-verifications into single source ledger (discriminated source union + relevance block)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

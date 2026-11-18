@@ -1,7 +1,7 @@
 ---
 # qou-f1rs
 title: '5 bare producers the qou-4un2 AST migration cannot handle: 3 inline dict literals at the write site, 2 with no write call'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

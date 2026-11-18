@@ -1,7 +1,7 @@
 ---
 # qou-e9pp
 title: 'Witness-refresh advice is unsafe: ZERO of ~700 self-stale witnesses are safe to re-run'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

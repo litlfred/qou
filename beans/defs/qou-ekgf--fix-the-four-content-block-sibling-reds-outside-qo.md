@@ -1,7 +1,7 @@
 ---
 # qou-ekgf
 title: fix the four content-block sibling reds outside qou-e7xv's sweep (confinement-level-exists, euler-char-stability, localized-knot, qz-bicompletion)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
