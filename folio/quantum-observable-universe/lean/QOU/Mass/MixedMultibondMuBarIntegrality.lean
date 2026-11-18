@@ -90,4 +90,15 @@ theorem qweighted_matches_any_single_level
   · intro b _ hb; dsimp only; rw [if_neg hb, zero_mul]
   · intro h'; exact absurd hi₀ h'
 
+/-- **Difference formula for common-weight integer-count models (`qou-rx2u`).**
+Under `channel m = w * (S m : R)` with `S 2 = 1`, the difference between levels `m` and `k`
+equals `((S m : R) - (S k : R)) * channel 2`. -/
+theorem mubar_common_weight_diff
+    (channel : ℕ → R) (w : R) (S : ℕ → ℤ)
+    (hmodel : ∀ m, channel m = w * (S m : R)) (hunit : S 2 = 1) (m k : ℕ) :
+    channel m - channel k = ((S m : R) - (S k : R)) * channel 2 := by
+  rw [mubar_common_weight_forces_integer_multiple channel w S hmodel hunit m,
+    mubar_common_weight_forces_integer_multiple channel w S hmodel hunit k]
+  ring
+
 end QOU.Mass.MixedMultibondMuBarIntegrality

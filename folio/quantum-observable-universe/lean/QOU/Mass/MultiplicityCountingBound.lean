@@ -63,4 +63,12 @@ inequality is genuinely one-sided — cancellation is real, and the multiplicity
 channel is an upper bound on what many summands can supply, never a value. -/
 example : |((1 : ℤ) + (-1))| < ((2 : ℕ) : ℤ) * 1 := by norm_num
 
+/-- **Zero-bound specialisation of the multiplicity counting bound (`qou-sa60`).**
+If every summand on `s` satisfies `|a i| ≤ 0`, then `|∑ i ∈ s, a i| ≤ 0`. -/
+theorem abs_sum_le_zero_of_le_zero {ι : Type*} (s : Finset ι) (a : ι → R)
+    (h0 : ∀ i ∈ s, |a i| ≤ 0) :
+    |∑ i ∈ s, a i| ≤ 0 := by
+  have h := abs_sum_le_card_mul s a 0 h0
+  simpa using h
+
 end QOU.Mass.MultiplicityCountingBound

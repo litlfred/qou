@@ -116,4 +116,13 @@ theorem not_integralSlopeSetting_bindingKernel :
     ¬ IntegralSlopeSetting 1 (fun _ => 1) :=
   not_integralSlopeSetting_one _
 
+/-- **Non-vanishing of the two-slope isoformal dimension (`qou-ontj`).**
+For positive ranks `0 < r₀`, `0 < r₁` and distinct slopes `μ₀ < μ₁`,
+`rszIsoformalDim 2 ![r₀, r₁] ![μ₀, μ₁] ≠ 0`. -/
+theorem isoformalDim_two_slope_ne_zero {r₀ r₁ μ₀ μ₁ : ℤ}
+    (hr₀ : 0 < r₀) (hr₁ : 0 < r₁) (hμ : μ₀ < μ₁) :
+    rszIsoformalDim 2 ![r₀, r₁] ![μ₀, μ₁] ≠ 0 := by
+  have hpos := isoformalDim_two_slope_pos hr₀ hr₁ hμ
+  exact ne_of_gt hpos
+
 end QOU.Mass.BindingNoAlienPlane

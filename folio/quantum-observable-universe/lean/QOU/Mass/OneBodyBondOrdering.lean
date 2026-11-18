@@ -97,4 +97,14 @@ theorem strict_max_witness_not_oneBody :
     ¬ OneBody (fun a b : Bool => if a = b then (0 : ℕ) else 1) := fun h =>
   not_pn_strict_max _ true false h ⟨by decide, by decide⟩
 
+omit [LinearOrder α] in
+/-- **All pair evaluations agree under a charge-independent one-body functional (`qou-zrbv`).**
+For any two pairs `(a₁, b₁)` and `(a₂, b₂)` on a two-element nucleon type `{p, n}`,
+a charge-independent one-body functional satisfies `f a₁ b₁ = f a₂ b₂`. -/
+theorem chargeIndependent_eq_pairs (f : N → N → α) (p n : N) (hpn : ∀ x : N, x = p ∨ x = n)
+    (h : OneBody f) (hci : f p p = f n n) (a₁ b₁ a₂ b₂ : N) :
+    f a₁ b₁ = f a₂ b₂ := by
+  rw [chargeIndependent_const f p n hpn h hci a₁ b₁,
+    chargeIndependent_const f p n hpn h hci a₂ b₂]
+
 end QOU.Mass.OneBodyBondOrdering
