@@ -1,0 +1,24 @@
+%% macros.tex — qou paper macros that the shared paper preamble no longer carries.
+%%
+%% The shared template (folio-assistant-sci/adapters/paper/latex/paper-preamble.tex)
+%% dropped these as paper-specific during the platform refactor. qou's last
+%% committed render (main.tex, 2026-11-17) still defined them, and the content
+%% uses them (\pp: 186 sites, 47 in models-of-qous alone). Copied verbatim from
+%% that render. They live here, not in the manifest's `macros`, because the
+%% manifest emits \newcommand and \varTheta is already defined by amsmath.
+%%
+%% Composed into the preamble by scripts/build-paper-pdf.sh.
+
+\newunicodechar{𝓑}{\unimathsafe{\mathcal{B}}}      % U+1D4D1 script B (braid word)
+\providecommand{\bigbowtie}{\mathop{\triangleright\!\!\!\triangleleft}}
+% \varTheta is the upright capital theta, distinct from the lowercase
+% contact-form letter θ and from italic \Theta.
+\providecommand{\varTheta}{}
+\renewcommand{\varTheta}{\mathrm{\Theta}}
+% prime p (\mathbb{Q}_\pp, \mathbb{F}_\pp, v_\pp); not \mathfrak{p}, which is the
+% proton (AGENTS.md §7aa).
+\providecommand{\pp}{p}
+% \unicode{codepoint}, ConTeXt-style; used in appendix-surreals for ☉ (U+2609)
+\providecommand{\unicode}[1]{\ensuremath{\odot}}
+% Young-diagram stub (ytableau not loaded; renders a partition as a list)
+\providecommand{\yng}[1]{{\scriptsize[#1]}}

@@ -22,9 +22,9 @@ $$
   F_{\mathrm{Bor}}(q) = \frac{|\mathrm{tr}_M(\beta_{\mathrm{Bor}})|\,[3]_q!}{q^3},
 $$
 
-whose Borromean weight $y_{(2,1)} = 1/[2]_q^2$ forces $z = q^3/(q^2+1)$, so it is convention D. Its tower term is $\mathfrak m^{\mathrm{tower}} = 2\,m_e\,(\mathrm{Vol}(4_1)/\hbar_q^2)\,F_{\mathrm{Bor}}$, and the residual against it is:
+whose Borromean weight $y_{(2,1)} = 1/[2]_q^2$ forces $z = q^3/(q^2+1)$, so it is convention D. Its tower term is $\mathfrak{m}^{\mathrm{tower}} = 2\,m_e\,(\mathrm{Vol}(4_1)/\hbar_q^2)\,F_{\mathrm{Bor}}$, and the residual against it is:
 
-| pin | $q_0$ from | $\mathfrak m^{\mathrm{tower}}$ (MeV) | $\Delta m_{\mathfrak p}/m_e$ | $m_{\mathfrak p}$ (MeV) |
+| pin | $q_0$ from | $\mathfrak{m}^{\mathrm{tower}}$ (MeV) | $\Delta m_{\mathfrak p}/m_e$ | $m_{\mathfrak p}$ (MeV) |
 |---|---|---|---|---|
 | proton | the identity above, solved with CODATA $m_{\mathfrak p}/m_e$ | $944.404$ | $-12$ (by construction) | $938.272089$ (round trip) |
 | muon | $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$, CODATA 2022 | $944.404$ | $-11.99955$ | $938.271861$ ($-244$ ppb) |

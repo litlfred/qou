@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+# build-paper-pdf.sh — build the qou paper PDF with LaTeX (traditional math
+# typesetting), from the content blocks, and verify the log.
+#
+#   scripts/build-paper-pdf.sh [--out-dir DIR] [--paper SLUG] [--engine pdf|lua]
+#
+# Pipeline (one command, the same locally and in CI):
+#   1. compose the preamble: the shared paper template
+#      (folio-assistant-sci/adapters/paper/latex/paper-preamble.tex)
+#      + this folio's latex/layout.tex (page geometry, spacing)
+#   2. content blocks -> chapters/*.tex + main.tex
+#      (cat-harness-tools/pipeline/build.ts)
+#   3. latexmk
+#   4. gate on the FINAL-pass log: errors, undefined refs/citations
+#
+# Why not the platform's document-export (pandoc -> .docx -> LibreOffice)?
+# It is the document-folio route and has no TeX. On this paper it gave a
+# 2,641-page, 43 MB PDF with 92,544 equations as Word math objects, and
+# dropped every equation when LibreOffice Math was absent (2026-11-18).
+#
+# Needs: bun, scripts/setup-folio-assistant.sh run once, latexmk + TeX Live.
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+PAPER="quantum-observable-universe"
+OUT="$ROOT/build/paper"
+ENGINE="pdf"
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --out-dir) OUT="$2"; shift 2 ;;
+    --paper)   PAPER="$2"; shift 2 ;;
+    --engine)  ENGINE="$2"; shift 2 ;;
+    -h|--help) sed -n 2,21p "$0"; exit 0 ;;
+    *) echo "unknown option: $1" >&2; exit 2 ;;
+  esac
+done
+
+FA="$ROOT/folio-assistant"
+TEMPLATE="$FA/folio-assistant-sci/adapters/paper/latex/paper-preamble.tex"
+LAYOUT="$ROOT/folio/$PAPER/latex/layout.tex"
+[ -f "$TEMPLATE" ] || { echo "missing $TEMPLATE — run scripts/setup-folio-assistant.sh" >&2; exit 2; }
+command -v latexmk >/dev/null || { echo "latexmk not found — install TeX Live" >&2; exit 2; }
+
+mkdir -p "$OUT"
+PRE="$OUT/preamble.tex"
+# The layout must follow the template's own \geometry call, so it is inserted
+# just before the line that marks the end of the template's preamble body.
+cp "$TEMPLATE" "$PRE"
+for f in macros layout; do
+  src="$ROOT/folio/$PAPER/latex/$f.tex"
+  [ -f "$src" ] && printf '\n%% ── folio %s: %s ──\n\\input{%s}\n' "$f" "folio/$PAPER/latex/$f.tex" "$src" >> "$PRE"
+done
+
+echo "==> content -> LaTeX"
+( cd "$ROOT" && bun run --preload ./scripts/preload-registry.ts \
+    "$FA/cat-harness-tools/pipeline/build.ts" \
+    "folio/$PAPER/$PAPER.ts" \
+    --out-dir "$OUT/chapters" --generate-main --main-out "$OUT/main.tex" \
+    --preamble "$PRE" ) | tee "$OUT/content-build.log" | grep -E 'Issues:|preflight' || true
+
+# The template carries \IfFileExists{print-mode.tex}; chapters are \input as
+# chapters/<x>, so latexmk runs inside $OUT.
+cd "$OUT"
+for d in figures assets; do [ -e "$ROOT/$d" ] && [ ! -e "$d" ] && ln -s "$ROOT/$d" "$d"; done
+[ -e references.bib ] || ln -s "$ROOT/references.bib" references.bib
+
+echo "==> latexmk ($ENGINE)"
+set +e
+latexmk -"$ENGINE" -interaction=nonstopmode -file-line-error main.tex > latexmk.log 2>&1
+rc=$?
+set -e
+
+L=main.log
+[ -f "$L" ] || { echo "no main.log (latexmk exit $rc)"; tail -30 latexmk.log; exit 1; }
+errs=$(grep -c '^! \|:[0-9]*: ' "$L" || true)
+cites=$(grep -c 'Citation .* undefined' "$L" || true)
+refs=$(grep -c 'LaTeX Warning: Reference' "$L" || true)
+pages=$( { grep -oE '\(([0-9]+) pages' "$L" || true; } | tail -1 | tr -dc 0-9)
+echo "==> pages=$pages errors=$errs undefined-citations=$cites undefined-refs=$refs latexmk-exit=$rc"
+[ -f main.pdf ] || { echo "no PDF produced"; exit 1; }
+echo "PDF: $OUT/main.pdf ($(du -h main.pdf | cut -f1))"

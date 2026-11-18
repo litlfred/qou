@@ -1,0 +1,28 @@
+%% layout.tex — qou page layout, applied AFTER the shared paper preamble
+%% (folio-assistant-sci/adapters/paper/latex/paper-preamble.tex).
+%%
+%% Owner, 2026-11-18: traditional LaTeX math typesetting, but wide content,
+%% narrow margins and little line spacing.
+%%
+%% The shared preamble sets left=0.8in, right=1.5in (a wide right margin for
+%% the \blockannot Lean-status icons). Here the text block is widened and the
+%% icon margin kept just wide enough for the compact icon strip.
+%%
+%% Composed into the preamble by scripts/build-paper-pdf.sh; the platform
+%% template is not edited.
+
+\geometry{
+  left=0.55in, right=0.9in, top=0.6in, bottom=0.65in,
+  marginparwidth=0.7in, marginparsep=0.08in,
+  headsep=0.15in, footskip=0.3in,
+}
+
+% Single spacing, and tight paragraph / display spacing.
+\linespread{1.0}\selectfont
+\setlength{\parskip}{0.2em plus 0.1em minus 0.1em}
+\AtBeginDocument{%
+  \setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}%
+  \setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}%
+  \setlength{\abovedisplayshortskip}{2pt plus 1pt}%
+  \setlength{\belowdisplayshortskip}{3pt plus 1pt minus 1pt}%
+}
