@@ -693,7 +693,7 @@
 | [prop:crossing-energy-pair-cancellation](#prop:crossing-energy-pair-cancellation) | Mirror pairing cancels the symmetric channel | Ch 15 | `qou:QOU.Braiding.pair_cancellation` |
 | [prop:mirror-baseline-cancellation](#prop:mirror-baseline-cancellation) | Mirror-pair cancellation of the bar-even binding baseline | Mass and Binding Algorithms | `qou:QOU.BraidKnot.mirror_baseline_cancels` |
 | [prop:molecular-bond-binding-from-trefoil-insertion](#prop:molecular-bond-binding-from-trefoil-insertion) | Molecular bond binding energy from inverse-trefoil insertion | Ch 12 | `qou:QOU.BraidKnot.bondEnergy` |
-| [prop:pieri-photon-shift](#prop:pieri-photon-shift) | Multiplication by a degree-one Hecke element is a non-commutative Fourier shift (Pieri rule) | Ch 12 | `qou:QOU.Photon.pieri_one_box_shift` |
+| [prop:pieri-photon-shift](#prop:pieri-photon-shift) | Multiplication by a degree-one Hecke element is a non-commutative Fourier shift (Pieri rule) | Ch 12 | `qou:QOU.SchurWeyl.SeminormalRep.pieri_support` |
 | [prop:alpha-em-shift-multiplicative-chain](#prop:alpha-em-shift-multiplicative-chain) | Multiplicative-chain form: $\alpha_{EM}^{-1} = q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q \cdot [\alpha_{\mathrm{shift}}(T_{3,5})]_q$ | Ch 14 | `qou:QOU.Archimedean.AlphaEmShiftChain.alpha_em_shift_chain` |
 | [prop:neutron-proton-splitting](#prop:neutron-proton-splitting) | Neutron--proton mass splitting | Ch 12 | `qou:QOU.Torsion.neutron_proton_splitting` |
 | [prop:neutron-proton-mass-splitting](#prop:neutron-proton-mass-splitting) | Neutron--proton mass splitting from quark crossing change | Ch 15 | `qou:QOU.NeutronProtonSplitting.splitting_value` |
