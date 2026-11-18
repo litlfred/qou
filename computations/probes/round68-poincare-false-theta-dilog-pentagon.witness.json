@@ -1,0 +1,62 @@
+{
+  "probe": "round68-poincare-false-theta-dilog-pentagon",
+  "beans": [
+    "qou-t8mi",
+    "qou-tcgv",
+    "qou-tiwv",
+    "qou-u33z",
+    "qou-u8cp"
+  ],
+  "scriptCommitSha": "36bbb3e76ad1bcee65e565b7621ed1807f67b18b",
+  "scriptHash": "4675cfb87ded5fc49d38e3a75aa5a72abf7feb7e607443c2e64995779687323a",
+  "scriptSha256": "4675cfb87ded5fc49d38e3a75aa5a72abf7feb7e607443c2e64995779687323a",
+  "timestamp": "2026-11-18T08:44:16.214883+00:00",
+  "durationMs": 6,
+  "dps": 80,
+  "allPassed": true,
+  "results": {
+    "qou_t8mi_poincare_false_theta_and_slope": {
+      "positiveSupportMod30": [
+        1,
+        11,
+        19,
+        29
+      ],
+      "shiftedIntegerExponents": [
+        0,
+        1,
+        3,
+        7
+      ],
+      "falseThetaOffsetResidual": "1.265063753187662786921828886e-80",
+      "piSquaredSigmaSlope": "30.0",
+      "slopeResidual": "1.012051002550130229537463109e-78",
+      "passed": true
+    },
+    "qou_tcgv_quantum_dilog_pentagon_channel": {
+      "dilogExpPochhammerResidual": "3.162659382969156967304572215e-81",
+      "pentagonDegree11Residual": "0.0",
+      "pentagonDegree21Residual": "1.054219794323052322434857405e-81",
+      "passed": true
+    },
+    "qou_tiwv_five_two_cyclotomic_and_determinant": {
+      "symmetrizedLaurentResidual": "2.10843958864610464486971481e-81",
+      "firstCyclotomicCoeffAtOne": 2,
+      "signedDeterminantAtMinusTwo": -7,
+      "twoBridgeDenominatorAbs": 7,
+      "passed": true
+    },
+    "qou_u33z_flattening_parity_lattice_separation": {
+      "evenFlatteningParityMod2": 0,
+      "unitShiftFlatteningParityMod2": 1,
+      "unitModulusMonomialResidual": "1.054219794323052322434857405e-81",
+      "passed": true
+    },
+    "qou_u8cp_four_body_n3lo_vs_srg_multiplier": {
+      "n3loOverSrgBoundRatio": 6,
+      "marginAbove34xN3loKeV": 12,
+      "marginAbove204xSrgKeV": 12,
+      "passed": true
+    }
+  }
+}
