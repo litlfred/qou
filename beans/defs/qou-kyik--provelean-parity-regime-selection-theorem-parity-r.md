@@ -1,7 +1,7 @@
 ---
 # qou-kyik
 title: 'PROVE(lean): parity_regime_selection — theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] : ctx.sign_val = (-(1 [cited manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - lean
     - cited-sorry
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-10-04T15:22:42Z
+updated_at: 2026-11-18T07:45:11Z
 parent: qou-l2vh
 ---
 
@@ -24,3 +24,8 @@ parent: qou-l2vh
   - [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
 - **Tractability:** sign_val = (−1)^{A−1} + parity-split Q-value regimes; arithmetic/parity over context class.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+## Round 82 Progress (PR #8389)
+- Branch: `feat/round82-confdiff-gevreypos-hyproot-tracesq-normchain-43c1`
+- Commit 1 (code + probe): `9fc5597f0f6558c185cf46ffd6acdc86ad1d4b21`
+- Commit 2 (witness): `4a084d4105014f8457a64297f35613ebb0f95d6b` (`scriptSha256 = 0b271ed473fcb7e2f06260119e75930af659f57c2419e9542b05b4df69271355`)

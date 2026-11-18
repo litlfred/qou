@@ -1,7 +1,7 @@
 ---
 # qou-4mrb
 title: 'PROVE(lean): four_term_pair_nucleon — theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] : (∀ φ₀ φ₁ φ₀₁ : ℝ, ctx. [cited jones1987,manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -12,7 +12,7 @@ tags:
     - cite-jones1987
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-10-04T15:22:28Z
+updated_at: 2026-11-18T07:45:11Z
 parent: qou-l2vh
 ---
 
@@ -26,3 +26,8 @@ parent: qou-l2vh
   - [manuscript] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.md
 - **Tractability:** Specific confinement net values ≈0.999/0.811 (proton/neutron); compute-backed numeric from the Hecke/GS engine, not a pure Lean theorem.
 - **Next step:** Compute-backed numeric — the value lives in the Hecke/GS engine (witness JSON). Needs that compute formalized in Lean before the goal is provable; not a Mathlib gap.
+
+## Round 82 Progress (PR #8389)
+- Branch: `feat/round82-confdiff-gevreypos-hyproot-tracesq-normchain-43c1`
+- Commit 1 (code + probe): `9fc5597f0f6558c185cf46ffd6acdc86ad1d4b21`
+- Commit 2 (witness): `4a084d4105014f8457a64297f35613ebb0f95d6b` (`scriptSha256 = 0b271ed473fcb7e2f06260119e75930af659f57c2419e9542b05b4df69271355`)

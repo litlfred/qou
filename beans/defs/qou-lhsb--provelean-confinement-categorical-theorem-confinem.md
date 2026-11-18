@@ -1,7 +1,7 @@
 ---
 # qou-lhsb
 title: 'PROVE(lean): confinement_categorical — theorem confinement_categorical [ctx : ConfinementCategoricalContext] : ctx.E_infinity_00  [cited manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - repo-infra
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:09Z
-updated_at: 2026-10-04T15:22:25Z
+updated_at: 2026-11-18T07:45:11Z
 parent: qou-l2vh
 ---
 
@@ -26,3 +26,8 @@ parent: qou-l2vh
   - [manuscript] prop:confinement-categorical
 - **Tractability:** E∞ = Σ block energies + central-integral invariance; repo Wedderburn/center infra.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+## Round 82 Progress (PR #8389)
+- Branch: `feat/round82-confdiff-gevreypos-hyproot-tracesq-normchain-43c1`
+- Commit 1 (code + probe): `9fc5597f0f6558c185cf46ffd6acdc86ad1d4b21`
+- Commit 2 (witness): `4a084d4105014f8457a64297f35613ebb0f95d6b` (`scriptSha256 = 0b271ed473fcb7e2f06260119e75930af659f57c2419e9542b05b4df69271355`)
