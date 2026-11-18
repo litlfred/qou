@@ -1,7 +1,7 @@
 ---
 # qou-pg2r
 title: durationSec is NOT in _EPHEMERAL_META_FIELDS — serializing seconds makes wall-clock substantive witness content
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

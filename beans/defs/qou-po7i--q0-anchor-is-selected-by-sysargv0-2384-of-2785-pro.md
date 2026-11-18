@@ -1,7 +1,7 @@
 ---
 # qou-po7i
 title: q0 anchor is selected by sys.argv[0] — 2384 of 2785 producers undeclared, 1887 witnesses carry no anchor
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

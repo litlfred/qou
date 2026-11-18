@@ -1,7 +1,7 @@
 ---
 # qou-py7e
 title: 'GAP: lake-cache/qou-v4-24-0-new olean set is incomplete (missing Mathlib.Algebra.Module.LinearMap.Polynomial)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

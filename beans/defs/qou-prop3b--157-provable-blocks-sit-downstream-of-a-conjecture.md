@@ -1,7 +1,7 @@
 ---
 # qou-prop3b
 title: 'CORRECTED: 34 propagation violators, not ~150 — my screen inverted the answer; 9 platform scripts unrunnable'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

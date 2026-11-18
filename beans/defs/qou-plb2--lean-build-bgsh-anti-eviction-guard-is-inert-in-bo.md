@@ -1,7 +1,7 @@
 ---
 # qou-plb2
 title: lean-build-bg.sh anti-eviction guard is INERT in both directions on a trace-paired restore
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
