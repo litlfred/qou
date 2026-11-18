@@ -3923,3 +3923,15 @@ Report E for p (uud) and n (udd) at every placement of the odd quark, and
 ΔE = E(n) − E(p) for all 3×3 placement pairs. The photon weight w multiplies ΔE; its sign is
 not derived (the γγ mixed pairing gave w = −h⁴; same-photon pairings give w > 0), so the
 sign test is reported for both signs of w. No selection.
+
+RESULT 2026-11-18 19:05Z (H₅ full four-term photons, pre-registered 17:45Z). Exact sympy, convention D,
+evaluated at proton q₀. Quantity: tr(β with photons a,b at slots i<j)/tr(β with a,b adjacent at i) − 1.
+All 4 pairings × 21 slot pairs reported in /tmp scratch (h5.out); the value takes only two forms:
+  0 when β[i:j] is a single σ₀ (commutes with σ₂,σ₃) or the separation is cyclically trivial;
+  otherwise a pairing-only constant, the same for every slot pair:
+    (+,+)  +0.30145 %    (−,−)  +0.24474 %    (+,−) = (−,+)  −0.27684 %
+Target m_n/m_p − 1 = +0.1378 %. No pairing matches; the mixed pairing that gave +0.1432 % with the
+h⁴-only H₄ loop weight changes sign and doubles once the full four-term photon is used, so that
+earlier near-match does not survive. None of these splits p from n: slot position does not enter.
+Scope (a): this construction alone; not an exclusion of photon dressing.
+EM D_ij run (pre-registered 17:55Z) produced no output the first time; re-running.
