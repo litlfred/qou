@@ -1,0 +1,99 @@
+{
+  "probe": "cosetmirror_cosetsum_eigenpower_intertwine_murphy_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/cosetmirror_cosetsum_eigenpower_intertwine_murphy_probe.py",
+  "scriptCommitSha": "5e8a828112019febcfabea55615f8686d4b49413",
+  "scriptHash": "069f101e9565571161fff01be58b201d988e0e216651833ebe2d90dfa50e61b2",
+  "scriptSha256": "069f101e9565571161fff01be58b201d988e0e216651833ebe2d90dfa50e61b2",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "theorem": "Tw_mul_xComp_sub_eq_zero",
+      "bean": "qou-grph",
+      "passed": true,
+      "samples": [
+        {
+          "length_v": "0",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "length_v": "1",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "length_v": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "length_v": "3",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "xComp_mul_Tw_sub_sum_eq_zero",
+      "bean": "qou-gwe9",
+      "passed": true,
+      "residual": "8.43375835458441857947885924102e-81"
+    },
+    {
+      "theorem": "xComp_mul_Tw_sub_eq_zero",
+      "bean": "qou-hrwd",
+      "passed": true,
+      "samples": [
+        {
+          "length_v": "0",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "length_v": "1",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "length_v": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "length_v": "3",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "Tw_sortPerm_mul_xComp_sub_eq_zero",
+      "bean": "qou-i2ed",
+      "passed": true,
+      "residual": "0.0"
+    },
+    {
+      "theorem": "sigma_mul_xComp_sub_eq_zero",
+      "bean": "qou-ip2a",
+      "passed": true,
+      "samples": [
+        {
+          "q": "3/2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "q": "7/4",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "q": "13/5",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
