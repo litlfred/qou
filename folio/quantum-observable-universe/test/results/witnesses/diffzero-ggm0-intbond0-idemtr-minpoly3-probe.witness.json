@@ -1,0 +1,43 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-03fc",
+    "qou-0exp",
+    "qou-0gqn",
+    "qou-16yn",
+    "qou-2szo"
+  ],
+  "dps": "80",
+  "probe": "diffzero_ggm0_intbond0_idemtr_minpoly3_probe",
+  "results": {
+    "degree_minpoly_eq_three_of_irreducible_cubic": {
+      "a_root": "1.2599210498948731647672106072782283505702514647015079800819751121552996765139595",
+      "degree": "3.0",
+      "eval_residual": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "passed": true
+    },
+    "diff_sub_dir_zero_free": {
+      "lhs": "0.0",
+      "passed": true
+    },
+    "ggm_no_double_flip_zero": {
+      "ggm_c0": "0.89",
+      "passed": true,
+      "step_mul_b": "37.25"
+    },
+    "interfaceBond_ne_singleCrossing_zero": {
+      "len_bond0": "0.0",
+      "len_single": "1.0",
+      "passed": true
+    },
+    "trace_sub_rank_eq_zero": {
+      "passed": true,
+      "rank_P": "1.0",
+      "residual": "0.0",
+      "trace_P": "1.0"
+    }
+  },
+  "scriptCommitSha": "d30ea9c7122dec075284246721c2d10fc999ad9e",
+  "scriptHash": "ed35a94f82ed158edbc080d56522fc2a76cc382ba66c0f161cee3caaf7bd0986",
+  "scriptSha256": "ed35a94f82ed158edbc080d56522fc2a76cc382ba66c0f161cee3caaf7bd0986"
+}
