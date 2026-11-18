@@ -1,0 +1,1 @@
+We performed lattice quantum-chromodynamics and quantum-electrodynamics computations with four nondegenerate Wilson fermion ﬂavors and computed the neutron-proton mass-splitting with an accuracy of 300 kilo-electron volts, which is greater than 0 by 5 standard deviations.

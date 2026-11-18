@@ -1,0 +1,1 @@
+For any braid β ∈Bn we have anβ = ϕs(β)an = βan, where ϕs(β) = swr(β). Similar results, with s replaced by −s−1, hold for bn. The element an then satisﬁes a2 n = ϕs(an)an = ϕs(an−1)ϕs(γn)an. Since ϕs(γn) = 1 + s2 + · · · + s2n−2 = sn−1[n], we have an immediate corollary.

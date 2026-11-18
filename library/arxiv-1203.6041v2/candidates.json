@@ -1,0 +1,178 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1203.6041v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "1113e87534ffd6e0c2c36d1f2a01ca1eef8ba6c0ad199c199394d2c1eb3fa7d0",
+  "file": "1203.6041v2.pdf"
+ },
+ "provenance": {
+  "title": "S and D-wave phase shifts in isospin-2 \u03c0\u03c0 scattering from lattice QCD",
+  "authors": "S and D-wave phase shifts in isospin-2 \u03c0\u03c0 scattering from lattice QCD",
+  "arxiv": {
+   "id": "1203.6041",
+   "version": "2",
+   "primary_class": "hep-ph",
+   "stamp_date": "19 Sep 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "proposition": 7
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 7
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 6,
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 6,
+   "elsewhere": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Direct access to the matrix elements related to decays is missing in the Euclidean formulations of lattice QCD.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-i-introduction.md (p. 1-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-i-introduction.md",
+   "section_title": "I Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-i-introduction.md (p. 1-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "The price to be paid is that the relevant symmetry group in the lattice calculation is signi\ufb01cantly reduced.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-i-introduction.md (p. 1-3)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-i-introduction.md",
+   "section_title": "I Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-i-introduction.md (p. 1-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Other studies of \u03c0\u03c0 I = 2 scattering in lattice QCD ([23\u201325]) have largely limited themselves to the threshold behavior of the scat- tering amplitude in S-wave, as expressed by the scatter- ing length.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [23\u201325] in sections/sec-001-i-introduction.md",
+   "external_refs": [
+    "[23\u201325]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-i-introduction.md",
+   "section_title": "I Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: elsewhere \u2014 Cites external source [23\u201325] in sections/sec-001-i-introduction.md). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "In order to demonstrate the formalism, we will brie\ufb02y break away from analysis of lattice QCD obtained \ufb01nite- volume spectra to consider a simple toy-model of \u03c0\u03c0 scat- tering in which the scattering amplitudes are known to us.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-015-a-a-toy-model-of-scattering.md (p. 19-22)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-015-a-a-toy-model-of-scattering.md",
+   "section_title": "A A toy model of scattering",
+   "pages": "19-22",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-015-a-a-toy-model-of-scattering.md (p. 19-22)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "The problem to be solved in lattice QCD is actually the inverse of that just described - we start with the \ufb01nite-volume spectrum determined through analysis of correlation functions and want to \ufb01nd the phase-shifts as a function of scattering momentum.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-015-a-a-toy-model-of-scattering.md (p. 19-22)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-015-a-a-toy-model-of-scattering.md",
+   "section_title": "A A toy model of scattering",
+   "pages": "19-22",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-015-a-a-toy-model-of-scattering.md (p. 19-22)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "We do not present this trivial result here, but we will return to this \u201cglobal \ufb01tting\u201d method in the next section when we consider the \ufb01nite-volume spectrum obtained from lattice QCD computations.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-015-a-a-toy-model-of-scattering.md (p. 19-22)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-015-a-a-toy-model-of-scattering.md",
+   "section_title": "A A toy model of scattering",
+   "pages": "19-22",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-015-a-a-toy-model-of-scattering.md (p. 19-22)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "We associated a systematic error with our imperfect knowledge of them that was found to be always smaller than the statistical uncertainty.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-016-b-lattice-qcd-data.md (p. 22-27)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-016-b-lattice-qcd-data.md",
+   "section_title": "B Lattice QCD data",
+   "pages": "22-27",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-016-b-lattice-qcd-data.md (p. 22-27)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check"
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+Let N ⊂P ⊂M be as in Lemma 3.8. Suppose P/N has a two-sided basis {λi : 1 ≤i ≤m} and M/P has a two-sided basis {µj : 1 ≤j ≤n} contained in NM(P) ∩NM(N). Then, {µjλi : 1 ≤i ≤m, 1 ≤j ≤n} is a two-sided basis for M/N.

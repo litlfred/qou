@@ -1,0 +1,1 @@
+Let N ⊂M be an irreducible subfactor of type II1 with [M : N] < ∞ and f ∈N ′ ∩M1 be a projection. Then, for any orthogonal system {λi} with support f, we have P i λiλ∗ i = q [M1 : N]f. K C BAKSHI AND V P GUPTA

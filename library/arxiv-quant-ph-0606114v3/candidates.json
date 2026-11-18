@@ -1,0 +1,199 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-quant-ph-0606114v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "a8e08c457b65c728aa4755e8e8d85845d0ef48afa3ec50af6db194d9950c1cd1",
+  "file": "0606114v3.pdf"
+ },
+ "provenance": {
+  "title": "q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation",
+  "authors": "Polynomials and Anyonic Topological",
+  "arxiv": {
+   "id": "quant-ph/0606114",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "9 Feb 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "remark": 4,
+   "theorem": 2,
+   "lemma": 2
+  },
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 8
+  },
+  "by_evidence_kind": {
+   "explanatory": 4,
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 7,
+   "elsewhere": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "A two-qubit pure state |\u03c6\u27e9= a|00\u27e9+ b|01\u27e9+ c|10\u27e9+ d|11\u27e9 is entangled exactly when (ad \u2212bc)\u0338 = 0. It is easy to use this fact to check when a speci\ufb01c matrix is, or is not, entangling.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-010-22-universal-gates.md (p. 14-15)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-010-22-universal-gates.md",
+   "section_title": "Universal Gates",
+   "pages": "14-15",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "There are many gates other than CNOT that can be used as universal gates in the presence of local unitary transformations. Some of these are themselves topological (unitary solutions to the Yang-Baxter equation, see [52, 81]) and themselves generate representations of the Artin Braid Group. Replacing CNOT by a solution to the Yang-Baxter equation does not place the local unitary transformations as part of the corresponding representation of the braid group. Thus such substitutions connote only a partial solution to creating topological quantum computation. In this paper we are concerned with braid group representations that include all aspect",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [52, 81] in sections/sec-010-22-universal-gates.md",
+   "external_refs": [
+    "[52, 81]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-010-22-universal-gates.md",
+   "section_title": "Universal Gates",
+   "pages": "14-15",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "If g = a + bu and h = c + dv are pure unit quaternions,then, without loss of generality, the braid relation ghg = hgh is true if and only if h = a + bv, and \u03c6g(v) = \u03c6h\u22121(u). Furthermore, given that g = a + bu and h = a+bv, the condition \u03c6g(v) = \u03c6h\u22121(u) is satis\ufb01ed if and only if u\u00b7v = a2\u2212b2 2b2 when u\u0338 = v. If u = v then then g = h and the braid relation is trivially satis\ufb01ed.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-011-3-su2-representations-of-the-artin-braid-group.md (p. 15-21)",
+   "external_refs": [],
+   "proof_excerpt": "We have proved the \ufb01rst sentence of the Theorem in the discussion prior to its statement. Therefore assume that g = a + bu, h = a + bv, and \u03c6g(v) = \u03c6h\u22121(u). We have already stated the formula for \u03c6g(v) in the discussion about quaternions: \u03c6g(v) = gvg\u22121 = (a2 \u2212b2)v + 2ab(v \u00d7 u) + ",
+   "section_file": "sections/sec-011-3-su2-representations-of-the-artin-braid-group.md",
+   "section_title": "SU(2) Representations of the Artin Braid Group",
+   "pages": "15-21",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-011-3-su2-representations-of-the-artin-braid-group.md (p. 15-21)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "eaiebjeci = cos(b)ei(a+c) +sin(b)ei(a\u2212c)j. Hence any element of SU(2) can be written in the form eaiebjeci. for appropriate choices of angles a, b, c. In fact, if u and v are linearly independent unit vectors in R3, then any element of SU(2) can be written in the form eauebvecu for appropriate choices of the real numbers a, b, c.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-011-3-su2-representations-of-the-artin-braid-group.md (p. 15-21)",
+   "external_refs": [],
+   "proof_excerpt": "It is easy to check that eaiebjeci = cos(b)ei(a+c) + sin(b)ei(a\u2212c)j. This completes the veri\ufb01cation of the identity in the statement of the Lemma. Let v be any unit direction in R3 and \u03bb an arbitrary angle. We have ev\u03bb = cos(\u03bb) + sin(\u03bb)v, and v = r + si + (p + qi)j where r2 + s2 ",
+   "section_file": "sections/sec-011-3-su2-representations-of-the-artin-braid-group.md",
+   "section_title": "SU(2) Representations of the Artin Braid Group",
+   "pages": "15-21",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-011-3-su2-representations-of-the-artin-braid-group.md (p. 15-21)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "By a change of variables one obtains the original Jones polynomial, VK(t), for oriented knots and links from the normalized bracket: VK(t) = fK(t\u22121 4).",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-013-or.md (p. 23-26)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-013-or.md",
+   "section_title": "or",
+   "pages": "23-26",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The bracket polynomial provides a connection between knot theory and physics, in that the state summation expression for it exhibits it as a generalized partition function de\ufb01ned on the knot diagram. Partition functions are ubiquitous in statistical mechanics, where they express the summation over all states of the physical system of probability weighting functions for the individual states. Such physical partition functions contain large amounts of information about the corresponding physical system. Some of this information is directly present in the properties of the function, such as the location of critical points and phase transition. S",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-013-or.md (p. 23-26)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-013-or.md",
+   "section_title": "or",
+   "pages": "23-26",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "For the bracket evaluation at the root of unity A = ei\u03c0/2r the factor f(a, b, c) = q\u221a\u2206a\u2206b\u2206c q \u0398(a, b, c) is real, and can be taken to be a positive real number for (a, b, c) admissible (i.e. a + b + c \u22642r \u22124).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-027-72-symmetry-and-unitarity.md (p. 58-64)",
+   "external_refs": [],
+   "proof_excerpt": "By the results from the previous subsection, \u0398(a, b, c) = (\u22121)(a+b+c)/2 \u02c6\u0398(a, b, c) where \u02c6\u0398(a, b, c) is positive real, and \u2206a\u2206b\u2206c = (\u22121)(a+b+c)[a + 1][b + 1][c + 1] where the quantum integers in this formula can be taken to be positive real. It follows from this that f(a, b, c) ",
+   "section_file": "sections/sec-027-72-symmetry-and-unitarity.md",
+   "section_title": "Symmetry and Unitarity",
+   "pages": "58-64",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-027-72-symmetry-and-unitarity.md (p. 58-64)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "In the Temperley-Lieb theory we obtain unitary (in fact real orthogonal) recoupling transformations when the bracket variable A has the form A = ei\u03c0/2r for r a positive integer. Thus we obtain families of unitary representations of the Artin braid group from the recoupling theory at these roots of unity.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-027-72-symmetry-and-unitarity.md (p. 58-64)",
+   "external_refs": [],
+   "proof_excerpt": "The proof is given the discussion above. \u2737 In Section 9 we shall show explictly how these methods work in the case of the Fibonacci model where A = e3i\u03c0/5.",
+   "section_file": "sections/sec-027-72-symmetry-and-unitarity.md",
+   "section_title": "Symmetry and Unitarity",
+   "pages": "58-64",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-027-72-symmetry-and-unitarity.md (p. 58-64)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}
