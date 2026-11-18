@@ -1,0 +1,103 @@
+{
+  "probe": "qou_mub3_io8n_ixu7_j28s_k0ff_k9fc_probe.py",
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/Eightfold/QouMub3Io8nIxu7J28sK0ffK9fc.lean",
+  "beans": [
+    "qou-io8n",
+    "qou-ixu7",
+    "qou-j28s",
+    "qou-k0ff",
+    "qou-k9fc"
+  ],
+  "dps": 80,
+  "scriptCommitSha": "985ba518b7730454a49546f7ff3b59e35efaf8b9",
+  "scriptHash": "95e784560daf15668b60dcd6f4a3d9eda47768d71c870abfa93ec305128d40cc",
+  "scriptSha256": "95e784560daf15668b60dcd6f4a3d9eda47768d71c870abfa93ec305128d40cc",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-io8n",
+      "theorem": "QOU.Eightfold.QouMub3Io8nIxu7J28sK0ffK9fc.shared_increment_uniqueness_and_base_offset",
+      "zTest": "0.3",
+      "li2AtZ": "0.32612951007547606953003569417499604570558867999791781495505253923180352286878999",
+      "integralIncrementAtZ": "0.32612951007547606953003569417499604570558867999791781495505253923180352286878999",
+      "absResidualSameBase": "0.0",
+      "shiftedBaseDifference": "10",
+      "passed": true
+    },
+    {
+      "beanId": "qou-ixu7",
+      "theorem": "QOU.Eightfold.QouMub3Io8nIxu7J28sK0ffK9fc.polarization_shift_pure_imaginary_and_sign_flip",
+      "shiftPositiveURe": "7.8539816339744830961566084581987572104929234984377645524373614807695410157155225",
+      "shiftNegativeURe": "-7.8539816339744830961566084581987572104929234984377645524373614807695410157155225",
+      "shiftPureImaginary": "0.0",
+      "signFlipSum": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-j28s",
+      "theorem": "QOU.Eightfold.QouMub3Io8nIxu7J28sK0ffK9fc.parabolic_longitude_and_torsion_holonomy_pin",
+      "parabolicTranslationC": "-2",
+      "torsionParamU": "-1.0",
+      "clearedTorsionProduct": "4.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-k0ff",
+      "theorem": "QOU.Eightfold.QouMub3Io8nIxu7J28sK0ffK9fc.spin_multiplicity_quadratic_scale_difference_one",
+      "samples": [
+        {
+          "twiceSpinM": "0",
+          "multiplicity": "1",
+          "quadrupleQuadraticScale": "0",
+          "identityDifference": "1",
+          "qDimClassicalLimitError": "0.0"
+        },
+        {
+          "twiceSpinM": "1",
+          "multiplicity": "2",
+          "quadrupleQuadraticScale": "3",
+          "identityDifference": "1",
+          "qDimClassicalLimitError": "8.4337583545844185794788592410160152061679691058948060400622104200865154327758077e-81"
+        },
+        {
+          "twiceSpinM": "2",
+          "multiplicity": "3",
+          "quadrupleQuadraticScale": "8",
+          "identityDifference": "1",
+          "qDimClassicalLimitError": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-80"
+        },
+        {
+          "twiceSpinM": "3",
+          "multiplicity": "4",
+          "quadrupleQuadraticScale": "15",
+          "identityDifference": "1",
+          "qDimClassicalLimitError": "1.0120510025501302295374631089219218247401562927073767248074652504103818519330969e-79"
+        },
+        {
+          "twiceSpinM": "4",
+          "multiplicity": "5",
+          "quadrupleQuadraticScale": "24",
+          "identityDifference": "1",
+          "qDimClassicalLimitError": "1.9397644215544162732801376254336834974186328943558053892143083966198985495384358e-79"
+        },
+        {
+          "twiceSpinM": "7",
+          "multiplicity": "8",
+          "quadrupleQuadraticScale": "63",
+          "identityDifference": "1",
+          "qDimClassicalLimitError": "8.3494207710385743936840706486058550541062894148358579796615883158856502784480496e-79"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "beanId": "qou-k9fc",
+      "theorem": "QOU.Eightfold.QouMub3Io8nIxu7J28sK0ffK9fc.extended_flattening_branch_cancellation",
+      "uImag": "1.0471975511965977461542144610931676280657231331250352736583148641026054687620697",
+      "vImag": "1.0471975511965977461542144610931676280657231331250352736583148641026054687620697",
+      "baseRegulatorImag": "1.014941606409653625021202554274520285941689307530299792017489106776597476258244",
+      "symmetricBranchCancellationResidual": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "passed": true
+    }
+  ]
+}
