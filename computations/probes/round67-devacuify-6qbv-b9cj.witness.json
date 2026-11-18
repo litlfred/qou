@@ -1,0 +1,71 @@
+{
+  "probe": "round67_devacuify_6qbv_b9cj_probe",
+  "beans": [
+    "qou-y7ea",
+    "ne0m",
+    "rt2f",
+    "cj317",
+    "qcz7"
+  ],
+  "scriptPath": "computations/probes/round67_devacuify_6qbv_b9cj_probe.py",
+  "scriptHash": "33016f917e977bd9e4a22e14e192b44ea617b7cd335221741598e8aee1a1a640",
+  "scriptSha256": "33016f917e977bd9e4a22e14e192b44ea617b7cd335221741598e8aee1a1a640",
+  "scriptCommitSha": "202ce0a6f5124bc5df548850fb8706709c33eae1",
+  "executedAt": "2026-11-18T10:35:08.732033+00:00",
+  "pythonVersion": "3.13.12",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "mpmathVersion": "1.3.0",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-y7ea-unit-model-adjoint-and-q1-limit",
+      "bean": "qou-y7ea",
+      "description": "Verify ContactFormAlgebra.unitModel formal adjoint identity and q = 1 classical collapse",
+      "lhs": "8.539734222673567065463550869546574495035",
+      "rhs": "8.539734222673567065463550869546574495035",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "ne0m-nsi-q-deformed-kernel-sub-classical",
+      "bean": "ne0m",
+      "description": "Verify qDeformedKernel_sub_classical and qDeformedKernel_at_one at 80 dps",
+      "lhs": "0.005646041137315437586977194359661648208878",
+      "rhs": "0.005646041137315437586977194359661648208878",
+      "residual": "3.376797778691026970299153e-82",
+      "passed": true
+    },
+    {
+      "id": "rt2f-keystone-n5-hook-division-identities",
+      "bean": "rt2f",
+      "description": "Verify dq_row5_div, dq_41_div, dq_32_div, and dq_311_div at n = 5",
+      "dq_41": "4.707877382286948368609395307732239233337",
+      "dq_32": "6.224481937869660918731127259596805806527",
+      "dq_311": "7.455986934036023432657159056963861493841",
+      "residual": "1.897595629781494180382743e-80",
+      "passed": true
+    },
+    {
+      "id": "cj317-fundamental-two-cycle-periodicity",
+      "bean": "cj317",
+      "description": "Verify 2-periodic orbit {q^-1, 1 + q^-1} under C_odd and C_even",
+      "attractor": "0.901118510557361855576543645643692378985",
+      "step1": "1.901118510557361855576543645643692378985",
+      "step2": "0.901118510557361855576543645643692378985",
+      "residual": "5.271098971615261612174287e-81",
+      "passed": true
+    },
+    {
+      "id": "qcz7-three-step-contraction-and-contact-threshold",
+      "bean": "qcz7",
+      "description": "Verify two_halvings_beat_tripling_margin, contraction_ratio_three_steps, and 1 < v* < 2",
+      "margin": "2.341236944055744724409979900305531297608",
+      "ratio_3step": "0.355815969801731835106916989788138963505",
+      "inv_qi2": "0.4739938649554128824263023341398816136752",
+      "contact_threshold": "1.615864265256646115875820799019692208374",
+      "residual": "2.951815424104546502817601e-80",
+      "passed": true
+    }
+  ]
+}
