@@ -1,7 +1,7 @@
 ---
 # qou-us0a
 title: 'SW-9 (Phase 3): U_q(gl_N) + V^⊗n + Jimbo double centralizer End_{U_q}(V^⊗n)=im H_n(q)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -63,3 +63,9 @@ statement, not the general one; the general one wants `N ≥ n`.
 ## Re-scoped 2026-11-15 (owner tap, E1 bean triage)
 
 Generic q over an ordered field is done: `range_jimbo_eq_commutant` / `_cartan` (#7864), plus the Jantzen coproduct identification (#7898). **Still open:** the any-field case, tracked as issue #7874 (O2–O6). This bean now tracks only that.
+
+## Round 90 Lean 4 + 80-dps Witness Formalization (PR #8481)
+- Module: `QOU.Foundations.MachineryConjectureCarrierRegistryThreeBatchDefectDrainDoubleCentralizerBalanceLongExactSequencePayoffParallelogramArgumentPrinciple`
+- Commit 1 (code + probe): `a9f0f1224d140032ab84905edb79a825b0ec07fe`
+- Commit 2 (`.witness.json`): `2e6c78442e063cad6ad9aa9c49b55c365f4be789`
+- PR: https://github.com/litlfred/qou/pull/8481

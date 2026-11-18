@@ -1,7 +1,7 @@
 ---
 # qou-jbfx
 title: 'Provable once infra exists: the LES results and what each would buy'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:
@@ -60,3 +60,9 @@ G₂ giving its two homogeneous spaces, with `8 + 6 = 14`. That dimension count 
 provable today (`qou-ko4g`); the *geometry* needs G₂. The corpus has `S⁶` and
 **no mention of `G₂/SO(4)`** — so this is the missing half of the picture, not a
 refinement of it.
+
+## Round 90 Lean 4 + 80-dps Witness Formalization (PR #8481)
+- Module: `QOU.Foundations.MachineryConjectureCarrierRegistryThreeBatchDefectDrainDoubleCentralizerBalanceLongExactSequencePayoffParallelogramArgumentPrinciple`
+- Commit 1 (code + probe): `a9f0f1224d140032ab84905edb79a825b0ec07fe`
+- Commit 2 (`.witness.json`): `2e6c78442e063cad6ad9aa9c49b55c365f4be789`
+- PR: https://github.com/litlfred/qou/pull/8481
