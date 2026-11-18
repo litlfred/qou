@@ -1,0 +1,55 @@
+{
+  "probe": "round73_quantum_period_gevrey_bring_stokes_probe",
+  "beans": [
+    "qou-xfog",
+    "qou-xg4l",
+    "qou-xiaj",
+    "qou-xz89",
+    "qou-y4c6"
+  ],
+  "scriptPath": "computations/probes/round73_quantum_period_gevrey_bring_stokes_probe.py",
+  "scriptCommitSha": "d9842473161155d2a6bca8ec7d1577b2ca601571",
+  "scriptHash": "9b4a944647a1c58b9594726e55ceaa8ae587b6822caec2f9f292804434d8e219",
+  "scriptSha256": "9b4a944647a1c58b9594726e55ceaa8ae587b6822caec2f9f292804434d8e219",
+  "mpmathDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-xfog",
+      "citation": "grassi-gu-marino2019qsw",
+      "description": "Gevrey-1 WKB/TBA vs Gevrey-1/2 entire level-1 Borel transform",
+      "level1BorelSampleAtHalf": "0.7441338665578657791927826070560376672707",
+      "passed": true
+    },
+    {
+      "bean": "qou-xg4l",
+      "citation": "kronheimer2004",
+      "description": "Skein mass-residue linear functional and golden-ratio [3]_q/[1]_q check",
+      "goldenSkeinRatio": "2.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-xiaj",
+      "citation": "kegel2024",
+      "description": "Figure-eight 2*v_0 tetrahedral volume minimality and universal link bound",
+      "v0": "1.014941606409653625021202554274520285942",
+      "volFigureEight": "2.029883212819307250042405108549040571883",
+      "volBorromean": "8.119532851277229000169620434196162287534",
+      "passed": true
+    },
+    {
+      "bean": "qou-xz89",
+      "citation": "reyescarocca2022",
+      "description": "Bring genus-4 curve 60 simple weight-1 Weierstrass points in one S_5 orbit",
+      "bringSimpleWeierstrassPoints": 60,
+      "automorphismGroupOrderS5": 120,
+      "passed": true
+    },
+    {
+      "bean": "qou-y4c6",
+      "citation": "garoufalidis-gu-marino2023peacock",
+      "description": "Peacock q-difference Stokes ray matrix bilinear decomposition",
+      "passed": true
+    }
+  ]
+}
