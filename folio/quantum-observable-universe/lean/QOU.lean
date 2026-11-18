@@ -1812,3 +1812,4 @@ import QOU.Machinery.SpectralSequenceBasicInstances
 import QOU.Machinery.StrongAJFigureEightInstances
 import QOU.MathlibExt.RSZIsoformalInterfaceInstances
 import QOU.MathlibExt.WenzlSchurElementInstances
+import QOU.QBeta.BringRiemannHurwitzRozanskyOhtsukiLoopTripleLinkingHopfSeifertBorelPolesTransseriesPartialConvergenceBridge
