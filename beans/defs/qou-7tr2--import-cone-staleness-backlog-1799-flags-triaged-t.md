@@ -1,7 +1,7 @@
 ---
 # qou-7tr2
 title: 'Import-cone staleness backlog: 1799 flags triaged to 7 module questions — one real class'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -91,3 +91,5 @@ here"* — publishing "121 witnesses this PR has not re-run" on PR #6144. That
 conflates **the module changed** with **the changed symbol reaches these
 consumers**. The module diff is half the test; the other half is the symbol's
 importers. Withdrawn same day.
+
+- **Round 96 (`litlfred/qou#8428`)**: Advanced in `feat/round96-milnororder-signrep-mirrorsplit-multibond-moebius-43c1` (Commit 1 `22d991a251c6bf1bcf86f7ea08f935c2c280b7b3`, Commit 2 `391eb320415cc99c2e005cd0ffab67710cb6bc1d`, probe sha256 `94f6f6be6af6f9daa73f3911e2df79962cba2a56eed95434d4d929e3d5348851`).

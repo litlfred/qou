@@ -1,7 +1,7 @@
 ---
 # qou-6irj
 title: 'wrap_legacy never stamps q0Anchor: 1,924 of 3,477 witnesses (55.3%) are invisible to every q0-anchor audit; 384 of them carry a q0 value'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -83,3 +83,5 @@ witnesses. It counts witnesses whose payload contains a q0 LITERAL. A witness
 that consumes q0 and publishes only derived quantities is q0-dependent and is
 not in the 384 -- the same detector-blindness class this bean is about, one
 level down.
+
+- **Round 96 (`litlfred/qou#8428`)**: Advanced in `feat/round96-milnororder-signrep-mirrorsplit-multibond-moebius-43c1` (Commit 1 `22d991a251c6bf1bcf86f7ea08f935c2c280b7b3`, Commit 2 `391eb320415cc99c2e005cd0ffab67710cb6bc1d`, probe sha256 `94f6f6be6af6f9daa73f3911e2df79962cba2a56eed95434d4d929e3d5348851`).

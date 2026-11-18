@@ -1,7 +1,7 @@
 ---
 # qou-7sin
 title: '13a sweep: 103 completed beans assert their own subject is still open (candidates, NOT a violation count)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -156,3 +156,5 @@ question is CLOSED" and answers it with a scope-(b) exclusion, backed by a 23/23
 witness. Re-closed, with the evidence appended there. The discriminator should read the
 **last** word a bean has on its own openness, not any paragraph that asserts it, because
 these beans are append-only ledgers and supersession is always by a later section.
+
+- **Round 96 (`litlfred/qou#8428`)**: Advanced in `feat/round96-milnororder-signrep-mirrorsplit-multibond-moebius-43c1` (Commit 1 `22d991a251c6bf1bcf86f7ea08f935c2c280b7b3`, Commit 2 `391eb320415cc99c2e005cd0ffab67710cb6bc1d`, probe sha256 `94f6f6be6af6f9daa73f3911e2df79962cba2a56eed95434d4d929e3d5348851`).
