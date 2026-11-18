@@ -1,7 +1,7 @@
 ---
 # qou-xumu
 title: 'GAP: lean-library-sweep.py ABORTS on one slow module — 101 modules never attempted'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

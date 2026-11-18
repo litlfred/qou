@@ -1,7 +1,7 @@
 ---
 # qou-x5mi
 title: 'MEASURED: the environment staleness hazard is REAL here — 4 producers do not reproduce in this container'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

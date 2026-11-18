@@ -1,7 +1,7 @@
 ---
 # qou-wsha
 title: 'Witness provenance: scriptCommitSha dies on every rebase-merge — key staleness detection on scriptHash instead'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

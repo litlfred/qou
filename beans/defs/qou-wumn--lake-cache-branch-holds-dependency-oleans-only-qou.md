@@ -1,7 +1,7 @@
 ---
 # qou-wumn
 title: lake-cache branch holds DEPENDENCY oleans only — QOU's own modules are absent, blocking per-file lean-direct
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

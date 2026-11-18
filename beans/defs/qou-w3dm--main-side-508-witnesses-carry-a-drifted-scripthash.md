@@ -1,7 +1,7 @@
 ---
 # qou-w3dm
 title: 'MAIN-SIDE: ~508 of 2749 witnesses carry a drifted scriptHash (18%)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
