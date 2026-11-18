@@ -1,7 +1,7 @@
 ---
 # qou-ozts
 title: 'GAP: universal-ilp.py calls apply_atom_nf, which is defined nowhere'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

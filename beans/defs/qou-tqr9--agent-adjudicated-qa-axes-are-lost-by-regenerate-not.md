@@ -1,7 +1,7 @@
 ---
 # qou-tqr9
 title: Agent-adjudicated QA axes are silently lost by "regenerate rather than merge" conflict resolution
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-rug0
 title: Fixed-.parent-count path resolution is wrong in the vendored layout — audit the remaining shims
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
