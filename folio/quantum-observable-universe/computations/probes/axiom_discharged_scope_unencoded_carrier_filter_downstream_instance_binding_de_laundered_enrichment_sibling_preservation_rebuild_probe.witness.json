@@ -1,0 +1,50 @@
+{
+  "probe": "axiom_discharged_scope_unencoded_carrier_filter_downstream_instance_binding_de_laundered_enrichment_sibling_preservation_rebuild_probe",
+  "beans": [
+    "qou-58rx",
+    "qou-hprp",
+    "qou-y3x4",
+    "qou-yl86",
+    "qou-zatj"
+  ],
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/axiom_discharged_scope_unencoded_carrier_filter_downstream_instance_binding_de_laundered_enrichment_sibling_preservation_rebuild_probe.py",
+  "scriptCommitSha": "849ef0b15f72606c848eb897a5fda003d289f504",
+  "scriptHash": "2a824ebc8929957fb1b4acfb6fc295d57631c4e806a1217ab45cd79c79b1902b",
+  "scriptSha256": "2a824ebc8929957fb1b4acfb6fc295d57631c4e806a1217ab45cd79c79b1902b",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "axiomDischargedScope": {
+      "bean": "qou-58rx",
+      "deLaunderedFixedTotal": "18.0",
+      "remainingAxiomDischargedTotal": "17.0",
+      "axiomScopeDeficitSq": "289.0",
+      "passed": true
+    },
+    "unencodedCarrierFilter": {
+      "bean": "qou-hprp",
+      "liveCodeCarriers": "23.0",
+      "proseFalsePositives": "15.0",
+      "unencodedCarrierAuditSq": "529.0",
+      "passed": true
+    },
+    "downstreamInstanceBinding": {
+      "bean": "qou-y3x4",
+      "nonCompliantInstanceBindingCount": "130.0",
+      "ruleTwoComplianceGapSq": "16900.0",
+      "passed": true
+    },
+    "deLaunderedEnrichment": {
+      "bean": "qou-yl86",
+      "honestRemediationTotal": "15.0",
+      "deLaunderingCampaignPenaltySq": "0.0",
+      "passed": true
+    },
+    "siblingPreservationRebuild": {
+      "bean": "qou-zatj",
+      "retainedRebuildTotal": "25.0",
+      "siblingPreservationPenaltySq": "0.0",
+      "passed": true
+    }
+  }
+}
