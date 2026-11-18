@@ -1,7 +1,7 @@
 ---
 # qou-shdv
 title: 'MEASURED: the 3-branch stack shares 24 files; 2 have diverged, both benign, both invisible to per-PR CI'
-status: todo
+status: in-progress
 type: task
 priority: medium
 tags:

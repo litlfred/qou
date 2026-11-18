@@ -1,7 +1,7 @@
 ---
 # qou-s5ik
 title: the matrix-m chi producer and chi_via_rust_lossless write the SAME witness filename
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

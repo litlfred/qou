@@ -1,7 +1,7 @@
 ---
 # qou-rjyt
 title: 'GAP-row sentinel scoring: audit other producers for the 0.0-means-no-prediction pattern'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

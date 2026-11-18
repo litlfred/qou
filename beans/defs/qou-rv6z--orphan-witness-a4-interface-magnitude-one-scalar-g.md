@@ -1,7 +1,7 @@
 ---
 # qou-rv6z
 title: 'Orphan witness a4-interface-magnitude-one-scalar-gate: no provenance, no producer, carries stale z_C; needs a producer before its number can be regenerated'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-sibdup
 title: 'Detector: a content-block theorem assuming what a sibling block proves'
-status: todo
+status: in-progress
 type: task
 priority: medium
 tags:
