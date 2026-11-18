@@ -1,7 +1,7 @@
 ---
 # qou-augu
 title: Fourteen of 57 committed LP/SDP witnesses report a zero net-constraint dual — the cause is t = G e0, not the radical
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -416,3 +416,5 @@ witnesses. Validator 6 → **1**.
 - [x] Test the trace-form scripts against `y_0_eq_zero_of_radical`'s
       hypotheses — done; the radical is not the operative hypothesis.
 - [x] The non-trace scripts — one of the two was miscounted; see above.
+
+In-progress in Round 100 PR litlfred/qou#8447.

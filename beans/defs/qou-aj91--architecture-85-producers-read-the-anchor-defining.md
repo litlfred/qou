@@ -1,7 +1,7 @@
 ---
 # qou-aj91
 title: 'ARCHITECTURE: 85 producers read the anchor-defining witness directly, bypassing q_parameter'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -977,3 +977,5 @@ that, and nothing here needs it settled.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+In-progress in Round 100 PR litlfred/qou#8447.

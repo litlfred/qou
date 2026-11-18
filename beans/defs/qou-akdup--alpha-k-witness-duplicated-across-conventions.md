@@ -1,7 +1,7 @@
 ---
 # qou-akdup
 title: alpha-k witnesses duplicated at root and alpha/, in DIFFERENT conventions
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -120,3 +120,5 @@ under each name. Doing it in the other order bakes the C copies in.
 Left undone deliberately on #5584: retiring a witness that something might
 read is not a drive-by, and the four are the last of tier C precisely because
 they need this decision rather than more authoring.
+
+In-progress in Round 100 PR litlfred/qou#8447.
