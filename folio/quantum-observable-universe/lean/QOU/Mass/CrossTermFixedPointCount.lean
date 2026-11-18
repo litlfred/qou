@@ -64,4 +64,11 @@ theorem crossTerm_q_one_eq_fixedPoint_diff :
 /-- The sequential word's permutation is the single transposition `s₂` (the two squares cancel). -/
 theorem sequential_eq_s2 : sequential = s 2 := by decide
 
+/-- **Fourfold fixed-colouring ratio between sequential and interleaved words (`qou-4cu3`).**
+The transposition `sequential` fixes `8 = 4 * 2` colourings, empathetically `4 = 2^(3 - 1)`
+times the `2` colourings fixed by the 4-cycle `interleaved`. -/
+theorem fixedColourings_sequential_eq_four_mul_interleaved :
+    fixedColourings sequential = 4 * fixedColourings interleaved := by
+  rw [fixedColourings_sequential, fixedColourings_interleaved]
+
 end QOU.Mass.CrossTermFixedPointCount
