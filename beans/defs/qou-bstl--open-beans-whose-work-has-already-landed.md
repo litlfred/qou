@@ -1,7 +1,7 @@
 ---
 # qou-bstl
 title: Open beans whose work has already landed — measured, and it cost this session three times
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -354,3 +354,5 @@ Generalisation for the tool's caveat block: **a completion verb over a claim the
 bean later retracted looks identical to a completion verb over work the bean
 later absorbed.** Only the body separates them, which is the argument for the
 read queue rather than a filter.
+
+In-progress in Round 101 PR litlfred/qou#8450.

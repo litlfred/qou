@@ -1,7 +1,7 @@
 ---
 # qou-bake
 title: 'GAP: five keystone witnesses are hand-written — no script emits them, and probes read them as inputs'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -84,3 +84,5 @@ pinned to the witness's own q₀ and comparing. Result:
 This changes the emitter plan: do **not** regenerate that one into a committed
 witness until it is established which computation is correct. Emitting would
 silently overwrite a recorded conclusion with a different one.
+
+In-progress in Round 101 PR litlfred/qou#8450.

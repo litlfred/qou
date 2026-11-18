@@ -1,7 +1,7 @@
 ---
 # qou-bg3w
 title: Which element is Delta? Two nucleon-word models (1-/2-crossing vs 11-crossing) both carry the name, and a possible third in pyhecke
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -386,3 +386,5 @@ had reached that probe's code and not its prose.
 
 NOT closing this bean; only recording the correction. Status left as the owning
 agent set it.
+
+In-progress in Round 101 PR litlfred/qou#8450.

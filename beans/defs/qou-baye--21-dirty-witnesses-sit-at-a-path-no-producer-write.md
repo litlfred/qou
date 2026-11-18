@@ -1,7 +1,7 @@
 ---
 # qou-baye
 title: 21 dirty witnesses sit at a path NO producer writes — 1550 baseline fields undrainable, and the paper cites two of them
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -221,3 +221,5 @@ be drained by any producer run. They can only be drained by deleting the orphan 
 which is exactly the owner decision this bean is waiting on, and is why a drain
 session keeps rediscovering them by size ranking. Until it is made, **skip these
 four when picking a target**; the size ranking will keep offering them.
+
+In-progress in Round 101 PR litlfred/qou#8450.

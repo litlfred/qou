@@ -1,7 +1,7 @@
 ---
 # qou-bi43
 title: 'PORT PLAN: mu_p-isotypic chi block-decomposition to hecke-engine (derived-chi catalogue phase 2)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -113,3 +113,5 @@ mu_p is ~17-27x faster and consistent. A Laurent-poly identity holding at >
 (deg+1) distinct exact-rational points IS a proof. This needs NO Rust but
 is a numerical-sampling change, not a Rust port; note it as an option, keep
 the Rust kernel as the canonical route.
+
+In-progress in Round 101 PR litlfred/qou#8450.
