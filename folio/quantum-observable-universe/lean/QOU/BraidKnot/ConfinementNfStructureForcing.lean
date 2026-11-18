@@ -20,11 +20,12 @@ class carries the conjecture's two-part content:
    the LP duality gap, `|Δ| ≤ duality_gap(β)`.
 
 Matured from a degenerate `residual : ℝ` / `residual = 0` placeholder to
-the faithful two-part statement above (bean `cj421`). Two consequences
-are **derived, sorry-free** (`shiftNF_mem_band`, `shiftNF_eq_of_zero_gap`):
-the NF shift is trapped in the band `α_shift ± duality_gap`, and an exact
-zero gap forces `shift_NF = α_shift` — matching the benchmark's observed
-exact-zero-gap outcome.
+the faithful two-part statement above (bean `cj421`). Consequences are
+derived unconditionally from the class below (`shiftNF_mem_band`,
+`shiftNF_eq_of_zero_gap`, `activeSet_nonempty`, `one_lt_nFactorial`,
+`dualityGap_nonneg`): the NF shift is trapped in the band
+`α_shift ± duality_gap`, and an exact zero gap forces `shift_NF = α_shift`
+— matching the benchmark's observed exact-zero-gap outcome.
 
 Per AGENTS.md §3b-cond we provide **no global instance**: supplying one
 means exhibiting the actual QOU objects (the NF shift, interface shift,
@@ -75,7 +76,7 @@ namespace ConfinementNfStructureForcing
 
 variable [C : ConfinementNfStructureForcing]
 
-/-- **Derived, sorry-free.** The NF shift is trapped in the duality band
+/-- **Duality-band enclosure:** the NF shift is trapped in the duality band
     `α_shift(I) ± duality_gap(β)`. -/
 theorem shiftNF_mem_band :
     C.alphaShift - C.dualityGap ≤ C.shiftNF ∧
@@ -83,7 +84,7 @@ theorem shiftNF_mem_band :
   have hb := abs_le.mp C.delta_bounded
   refine ⟨?_, ?_⟩ <;> rw [C.shift_decomp] <;> linarith [hb.1, hb.2]
 
-/-- **Derived, sorry-free.** An exact zero duality gap forces `Δ = 0`,
+/-- **Exact zero duality gap forces `Δ = 0`,**
     so the NF shift equals the interface base shift exactly — the
     benchmark's observed exact-zero-gap outcome. -/
 theorem shiftNF_eq_of_zero_gap (h0 : C.dualityGap = 0) :
@@ -91,6 +92,25 @@ theorem shiftNF_eq_of_zero_gap (h0 : C.dualityGap = 0) :
   have hb : |C.delta| ≤ 0 := h0 ▸ C.delta_bounded
   have hd : C.delta = 0 := abs_eq_zero.mp (le_antisymm hb (abs_nonneg _))
   rw [C.shift_decomp, hd, add_zero]
+
+/-- **Non-emptiness of the active LP/SDP set.**
+    Part 1 (`localisation`) places `lambdaStar` inside `activeSet`, so the
+    confined active set is necessarily non-empty. -/
+theorem activeSet_nonempty : C.activeSet.Nonempty :=
+  ⟨C.lambdaStar, C.localisation⟩
+
+/-- **Strict lower bound on the channel-space cardinality `nFactorial`.**
+    Combining Part 1 (`localisation`, giving `1 ≤ activeSet.card`) with the
+    confinement inequality (`activeSet.card < nFactorial`) forces
+    `1 < nFactorial`. -/
+theorem one_lt_nFactorial : 1 < C.nFactorial := by
+  have hpos : 0 < C.activeSet.card := Finset.card_pos.mpr (activeSet_nonempty (C := C))
+  have hlt := C.confinement
+  omega
+
+/-- **Non-negativity of the LP/SDP duality gap.** -/
+theorem dualityGap_nonneg : 0 ≤ C.dualityGap :=
+  le_trans (abs_nonneg C.delta) C.delta_bounded
 
 end ConfinementNfStructureForcing
 

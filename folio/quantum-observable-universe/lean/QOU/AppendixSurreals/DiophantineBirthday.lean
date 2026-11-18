@@ -198,6 +198,33 @@ theorem not_of_quadratic :
   have := hbound n hn1
   push_cast at this
   linarith
+
+/-- **Every rational number has a logarithmically bounded birthday trajectory.**
+    Since `(q : ℝ) = algebraMap ℚ ℝ q` is algebraic over `ℚ`, Part 1 applies
+    immediately to every rational target. -/
+theorem rat_trajectory_logarithmic [h : DiophantineBirthday trajectory] (q : ℚ) :
+    ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, 1 ≤ n →
+      (trajectory (q : ℝ) n : ℝ) ≤ C * Real.log n + C :=
+  h.algebraic_logarithmic (q : ℝ) (isAlgebraic_algebraMap q)
+
+/-- **The trajectory at `0` is logarithmically bounded.** -/
+theorem zero_trajectory_logarithmic [h : DiophantineBirthday trajectory] :
+    ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, 1 ≤ n →
+      (trajectory 0 n : ℝ) ≤ C * Real.log n + C :=
+  h.algebraic_logarithmic 0 isAlgebraic_zero
+
+/-- **Unit-denominator birthday bound for algebraic numbers.**
+    Evaluating the logarithmic bound at `n = 1` (`Real.log 1 = 0`) bounds
+    `trajectory α 1` directly by the implied constant `C`. -/
+theorem trajectory_at_one_le [h : DiophantineBirthday trajectory]
+    (α : ℝ) (hα : IsAlgebraic ℚ α) :
+    ∃ C : ℝ, 0 < C ∧ (trajectory α 1 : ℝ) ≤ C := by
+  obtain ⟨C, hCpos, hbound⟩ := h.algebraic_logarithmic α hα
+  refine ⟨C, hCpos, ?_⟩
+  have h1 := hbound 1 le_rfl
+  rw [Nat.cast_one, Real.log_one, mul_zero, zero_add] at h1
+  exact h1
+
 end DiophantineBirthday
 
 end QOU.AppendixSurreals

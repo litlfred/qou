@@ -21,7 +21,7 @@ Two layers, mirroring the block's chippable/conjectural split:
    NOT a Proof" pattern (AGENTS.md). **Both are removed here.** The transfer is a
    class hypothesis, never an axiom, never an instance.
 
-2. **The chippable kernel** — two sorry-free lemmas in the sibling module
+2. **The chippable kernel** — two proved lemmas in the sibling module
    [`ObstructionGenericity`](ObstructionGenericity.lean) formalising *why* a
    concrete non-vanishing $\chi(A) \neq 0$ cannot by itself discharge the
    conjecture.
@@ -62,12 +62,11 @@ def PNeqNPInQOU (decisionCost : M → ℕ → ℕ) : Prop := ¬ FamilyPolyBounde
     no computational-complexity input. -/
 def chiResidual : ℝ := -6
 
-/-- **Non-vanishing of the residue — derived, not conjectural
-    (sorry-free).**  $\chi(A) = -6 \neq 0$; this leg of the conjecture
-    is an axiom consequence, so the open content is entirely the
-    faithfulness (below). -/
+/-- **Non-vanishing of the residue — derived by definition, not conjectural.**
+    $\chi(A) = -6 \neq 0$; this leg of the conjecture is an axiom consequence,
+    so the open content is entirely the faithfulness (below). -/
 theorem chiResidual_ne_zero : chiResidual ≠ 0 := by
-  unfold chiResidual; norm_num
+  change (-6 : ℝ) ≠ 0; norm_num
 
 /-- **Conjecture (P ≠ NP in the QOU), §3b-cond carrier.**
 
@@ -95,10 +94,10 @@ class QouPNeqNp (decisionCost : M → ℕ → ℕ) (residual : ℝ) : Prop where
       no known result supplies. -/
   faithful : residual ≠ 0 → PNeqNPInQOU decisionCost
 
-/-- **Given a QOU, P ≠ NP in that QOU (conditional; sorry-free from the
-    hypotheses).**  Composes the faithfulness of a QOU instance with a
-    non-vanishing residue; the conclusion `PNeqNPInQOU decisionCost` is explicitly
-    QOU-scoped — never an unconditional $\mathrm{P} \neq \mathrm{NP}$. -/
+/-- **Given a QOU, P ≠ NP in that QOU (conditional on the hypotheses).**
+    Composes the faithfulness of a QOU instance with a non-vanishing residue;
+    the conclusion `PNeqNPInQOU decisionCost` is explicitly QOU-scoped — never
+    an unconditional $\mathrm{P} \neq \mathrm{NP}$. -/
 theorem qou_implies_p_neq_np {decisionCost : M → ℕ → ℕ} {r : ℝ}
     [Q : QouPNeqNp decisionCost r] (hr : r ≠ 0) :
     PNeqNPInQOU decisionCost :=
@@ -113,5 +112,28 @@ theorem qou_implies_p_neq_np {decisionCost : M → ℕ → ℕ} {r : ℝ}
 theorem qou_implies_p_neq_np_at_chi (decisionCost : M → ℕ → ℕ)
     [QouPNeqNp decisionCost chiResidual] : PNeqNPInQOU decisionCost :=
   qou_implies_p_neq_np chiResidual_ne_zero
+
+/-- **Explicit witness of polynomial-bound violation at $\chi(A) = -6$.**
+    For every candidate polynomial budget $c \cdot n^k$, there exist a moduli
+    point $m \in M$ and an input size $n \in \mathbb{N}$ where
+    `decisionCost m n` strictly exceeds $c \cdot n^k$. -/
+theorem exists_exceeds_poly_at_chi (decisionCost : M → ℕ → ℕ)
+    [QouPNeqNp decisionCost chiResidual] (c k : ℕ) :
+    ∃ m n, c * n ^ k < decisionCost m n := by
+  have hnot : ¬ FamilyPolyBounded decisionCost :=
+    qou_implies_p_neq_np_at_chi decisionCost
+  unfold FamilyPolyBounded at hnot
+  push_neg at hnot
+  exact hnot c k
+
+/-- **Inhabitation depends on the decision-cost family.**
+    The identically-zero decision cost is uniformly bounded by $0 \cdot n^0$,
+    so `QouPNeqNp` is refuted at the zero cost family. -/
+theorem not_qouPNeqNp_of_const_zero :
+    ¬ QouPNeqNp (fun (_ : M) (_ : ℕ) => 0) chiResidual := by
+  intro h
+  have hsep : ¬ FamilyPolyBounded (fun (_ : M) (_ : ℕ) => 0) :=
+    @qou_implies_p_neq_np_at_chi M (fun _ _ => 0) h
+  exact hsep ⟨0, 0, fun _ _ => Nat.zero_le _⟩
 
 end QOU.Information

@@ -183,6 +183,38 @@ theorem not_infinitesimal_and_not_finite [h : SpectralNormalForm K Γ]
   have hpos : (0 : WithTop Γ) < Ow (S := ℝ) (Γ := Γ) x := (h.not_finite_iff_Ow_pos x hx).mp hnfin
   exact absurd (hneg.trans hpos) (lt_irrefl _)
 
+/-- **Every non-zero infinitesimal element is finite under `SpectralNormalForm`.** -/
+theorem isFinite_of_isInfinitesimal [h : SpectralNormalForm K Γ]
+    (x : K) (hx : x ≠ 0) (hinf : IsInfinitesimal x) : IsFinite x := by
+  by_contra hnfin
+  exact not_infinitesimal_and_not_finite (h := h) x hx ⟨hinf, hnfin⟩
+
+/-- **Complete valuation characterisation of the finite non-infinitesimal regime.**
+    A non-zero surreal element has leading exponent `Ow x = 0` if and only if it
+    is finite and not infinitesimal. -/
+theorem Ow_zero_iff_finite_and_not_infinitesimal [h : SpectralNormalForm K Γ]
+    (x : K) (hx : x ≠ 0) :
+    Ow (S := ℝ) (Γ := Γ) x = (0 : WithTop Γ) ↔ (IsFinite x ∧ ¬ IsInfinitesimal x) := by
+  have h1 := h.infinitesimal_iff_Ow_neg x hx
+  have h3 := h.not_finite_iff_Ow_pos x hx
+  constructor
+  · intro h0
+    refine ⟨?_, ?_⟩
+    · by_contra hnfin
+      have hpos := h3.mp hnfin
+      rw [h0] at hpos
+      exact lt_irrefl _ hpos
+    · intro hinf
+      have hneg := h1.mp hinf
+      rw [h0] at hneg
+      exact lt_irrefl _ hneg
+  · rintro ⟨hfin, hninf⟩
+    have hlt : ¬ (Ow (S := ℝ) (Γ := Γ) x < (0 : WithTop Γ)) :=
+      fun hc => hninf (h1.mpr hc)
+    have hgt : ¬ ((0 : WithTop Γ) < Ow (S := ℝ) (Γ := Γ) x) :=
+      fun hc => (h3.mpr hc) hfin
+    exact le_antisymm (not_lt.mp hgt) (not_lt.mp hlt)
+
 end SpectralNormalForm
 
 end QOU.AppendixSurreals

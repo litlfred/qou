@@ -19,12 +19,8 @@ hypothesis was not a meaningful conditional. The compared quantities are now
 class **parameters**, so an instance must discharge the claim for the caller's
 data.
 
-Two stale statements in the old header are also corrected. It said "the
-`noncomputable instance` is the conjectural witness whose `sorry` represents the
-open conjecture" while the body two paragraphs later said no instance is
-provided — the axiom-and-instance pair had been removed without the header being
-updated. And what was removed was an `axiom`, not a `sorry`; the distinction
-matters, because a `sorry` at least surfaces as `sorryAx`.
+Two stale statements in the old header are also corrected: the axiom-and-instance
+pair had been removed without the header being updated.
 
 ## Which half is the conjecture
 
@@ -153,6 +149,32 @@ differ. Under the previous shape no choice of anything could fail, so a wrong
 identification had nothing to fail against. -/
 theorem not_of_ne {x y : ℝ} (hxy : x ≠ y) : ¬ BringFigureEightDepth2Witness x y :=
   fun h => hxy h.identifies
+
+/-- **Zero-residual form of the depth-2 identification.** -/
+theorem volume_sub_grouplikeStd_eq_zero {figureEightVolume grouplikeStd : ℝ}
+    [h : BringFigureEightDepth2Witness figureEightVolume grouplikeStd] :
+    figureEightVolume - grouplikeStd = 0 :=
+  sub_eq_zero.mpr h.identifies
+
+/-- **Single-tetrahedron volume identification:**
+    when the depth-2 standard part evaluates to $2\,\mathrm{Cl}_2(\pi/3)$,
+    half the figure-8 volume equals $\mathrm{Cl}_2(\pi/3)$. -/
+theorem half_volume_eq_clausen {figureEightVolume grouplikeStd clausenPi3 : ℝ}
+    [h : BringFigureEightDepth2Witness figureEightVolume grouplikeStd]
+    (hClausen : grouplikeStd = 2 * clausenPi3) :
+    figureEightVolume / 2 = clausenPi3 := by
+  have h1 := evaluates_to (h := h) hClausen
+  linarith
+
+/-- **Positivity transfer from the Clausen evaluation:**
+    when $\mathrm{Cl}_2(\pi/3) > 0$ and the depth-2 standard part evaluates
+    to $2\,\mathrm{Cl}_2(\pi/3)$, the figure-8 volume is strictly positive. -/
+theorem pos_of_clausen_pos {figureEightVolume grouplikeStd clausenPi3 : ℝ}
+    [h : BringFigureEightDepth2Witness figureEightVolume grouplikeStd]
+    (hClausen : grouplikeStd = 2 * clausenPi3) (hPos : 0 < clausenPi3) :
+    0 < figureEightVolume := by
+  have h1 := evaluates_to (h := h) hClausen
+  linarith
 
 end BringFigureEightDepth2Witness
 
