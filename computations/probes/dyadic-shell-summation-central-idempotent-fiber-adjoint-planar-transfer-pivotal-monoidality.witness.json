@@ -1,0 +1,57 @@
+{
+  "probe": "dyadic_shell_summation_central_idempotent_fiber_adjoint_planar_transfer_pivotal_monoidality_probe",
+  "beans": [
+    "qou-c3if",
+    "qou-7028",
+    "qou-bt3u",
+    "qou-mp3m",
+    "qou-ga7i"
+  ],
+  "parents": [
+    "qou-t5uj",
+    "qou-k4oq",
+    "qou-o9ge",
+    "qou-0cyu",
+    "qou-rtxm",
+    "qou-c8p8"
+  ],
+  "leanModule": "QOU.Foundations.DyadicShellSummationCentralIdempotentFiberAdjointPlanarTransferPivotalMonoidality",
+  "precisionDps": 80,
+  "scriptPath": "computations/probes/dyadic_shell_summation_central_idempotent_fiber_adjoint_planar_transfer_pivotal_monoidality_probe.py",
+  "scriptHash": "65da05b0114c",
+  "scriptCommitSha": "e3073696f062c7ba6a16becdc35a768b99bba3c2",
+  "generatedAt": "2026-11-18T07:21:21.716658+00:00",
+  "allPassed": true,
+  "results": [
+    {
+      "beanId": "qou-c3if",
+      "claim": "Discrete dyadic shell summation-by-parts identity and telescoping uniform-weight shell sum hold to 80-dps",
+      "maxResidual": "3.373503341833767431791544e-80",
+      "passed": true
+    },
+    {
+      "beanId": "qou-7028",
+      "claim": "Spectral projectors e_+ and e_- in the quadratic algebra satisfy e_+^2=e_+, e_-^2=e_-, e_+ e_-=0, e_+ + e_-=1 and P_4(1)=24",
+      "maxResidual": "5.271098971615261612174287e-82",
+      "passed": true
+    },
+    {
+      "beanId": "qou-bt3u",
+      "claim": "Fiber adjoint involution satisfies (AB)^dagger = B^dagger A^dagger and tr(A^dagger A) = sum_{i,j} A_{ij}^2 > 0 for nonzero A",
+      "maxResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-mp3m",
+      "claim": "Two-strand planar state-sum transfer square (A I + A^{-1} U)^2 equals A^2 I + (1 - A^{-4}) U at loop weight d = -A^2 - A^{-2}",
+      "maxResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-ga7i",
+      "claim": "Weighted pivotal trace is strictly multiplicative on tensor products tr_{p otimes q}(A otimes B) = tr_p(A) tr_q(B)",
+      "maxResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
