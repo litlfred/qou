@@ -1,7 +1,8 @@
 ---
 # qou-xfog
 title: Remark interpreting 1908.07065v3.pdf at docs/audits/2026-07-12-alien-calculus-review-binding-gevr…
-status: todo
+status: in-progress
+pr: 8435
 type: task
 priority: normal
 tags:

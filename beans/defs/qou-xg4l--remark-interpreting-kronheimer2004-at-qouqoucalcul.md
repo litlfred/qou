@@ -1,7 +1,8 @@
 ---
 # qou-xg4l
 title: Remark interpreting [kronheimer2004] at qou:QOU.Calculations.skein_mass_residue
-status: todo
+status: in-progress
+pr: 8435
 type: task
 priority: normal
 tags:

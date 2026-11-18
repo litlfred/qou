@@ -1,7 +1,8 @@
 ---
 # qou-xz89
 title: Remark interpreting 2211.08164v2.pdf at ex:chi-minus-six-derivation
-status: todo
+status: in-progress
+pr: 8435
 type: task
 priority: normal
 tags:

@@ -1,7 +1,8 @@
 ---
 # qou-y4c6
 title: Remark interpreting [garoufalidis-gu-marino2023peacock] at prop:stokes-dt-bps-bridge
-status: todo
+status: in-progress
+pr: 8435
 type: task
 priority: normal
 tags:

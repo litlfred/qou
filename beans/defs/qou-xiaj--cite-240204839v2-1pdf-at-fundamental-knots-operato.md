@@ -1,7 +1,8 @@
 ---
 # qou-xiaj
 title: Cite 2402.04839v2 (1).pdf at fundamental-knots-operator-basis
-status: todo
+status: in-progress
+pr: 8435
 type: task
 priority: normal
 tags:
