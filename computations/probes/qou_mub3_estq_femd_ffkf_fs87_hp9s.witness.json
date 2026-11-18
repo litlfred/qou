@@ -1,0 +1,60 @@
+{
+  "probe": "qou_mub3_estq_femd_ffkf_fs87_hp9s_probe",
+  "beans": [
+    "qou-estq",
+    "qou-femd",
+    "qou-ffkf",
+    "qou-fs87",
+    "qou-hp9s"
+  ],
+  "precisionDps": "80",
+  "scriptPath": "computations/probes/qou_mub3_estq_femd_ffkf_fs87_hp9s_probe.py",
+  "scriptCommitSha": "7e15a7f8732f5863bb5266cf3b70d090a30a0898",
+  "scriptHash": "9da083cea47a98eba4ec5961c31746b81b2a0f313bf20354610982a0eb7eb748",
+  "scriptSha256": "9da083cea47a98eba4ec5961c31746b81b2a0f313bf20354610982a0eb7eb748",
+  "computedAt": "2026-11-18T13:24:48Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-estq",
+      "description": "Few-body triplet cluster activation and 4He/3H binding ratio",
+      "tripletScaled6A2": "0",
+      "tripletScaled6A3": "6",
+      "tripletScaled6A4": "24",
+      "he4ToH3BindingRatio": "3.336045022529421238279902445212677783649",
+      "passed": true
+    },
+    {
+      "bean": "qou-femd",
+      "description": "Disjoint-support character concentration fourth-root scale",
+      "concentrationScale": "0.5001998801118769476529817865973002392873",
+      "fourthPower": "0.0626",
+      "absError": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-ffkf",
+      "description": "Isoclinic Newton-Hodge slope collapse and height additivity",
+      "polygonHeight": "2.5",
+      "absError": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-fs87",
+      "description": "Kerov limiting profile Omega(x) endpoint value and kernel reflection symmetry",
+      "omegaAt1_2": "1.510190271066050432878930919705337392455",
+      "omegaAt2": "2.0",
+      "absError": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-hp9s",
+      "description": "Figure-eight cusp shape modulus norm-squared ratio to tetrahedron parameter omega",
+      "omegaNormSq": "1.0",
+      "cuspModulusNormSq": "12.0",
+      "normSqRatio": "12.0",
+      "absError": "0.0",
+      "passed": true
+    }
+  ]
+}
