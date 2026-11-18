@@ -1,7 +1,7 @@
 ---
 # qou-8lxd
 title: 'EPIC: eightfold way / SM derived from QOU'
-status: todo
+status: in-progress
 type: epic
 priority: high
 tags:
@@ -498,3 +498,5 @@ own front tables, which are listings too.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+- **Round 89 (`https://github.com/litlfred/qou/pull/8408`, head `10a16c52a2f1ad211bfb233927428389e8e4dd3e`)**: Formalized theorem + 80-dps witness (`status: in-progress`).

@@ -396,7 +396,7 @@ Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved; **tightness OP
 ---
 # qou-hok7
 title: 'Deuteron-wall resummation: classical Borel on q=1 period is the WRONG transform (substrate object is q-Gevrey) -> reopen; needs q-Borel of Z_n(q0)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
@@ -2177,3 +2177,5 @@ machine-checked fact.
 Discharged the prose-only caveat above: `QOU/BraidKnot/SupergradientCertificate.lean` now imports `QOU.BraidKnot.SearchCoercivity` and proves `antitone_step_box_bound` (composing `SearchCoercivity.sub_le_mul_of_antitone_step` with `SupergradientCertificate.box_mul_sub_le`) and `sup_ghatBot_frame_certificate` (composing `SearchCoercivity.sum_ghatBot_frame_bound` and `SearchCoercivity.ghatBot` with `SupergradientCertificate.box_mul_sub_le`), sorry-free (`lean -DautoImplicit=false -s 65536` exit 0, 0 warnings, standard axioms `[propext, Classical.choice, Quot.sound]`).
 
 **Do not close this bean.**
+
+- **Round 89 (`https://github.com/litlfred/qou/pull/8408`, head `10a16c52a2f1ad211bfb233927428389e8e4dd3e`)**: Formalized theorem + 80-dps witness (`status: in-progress`).
