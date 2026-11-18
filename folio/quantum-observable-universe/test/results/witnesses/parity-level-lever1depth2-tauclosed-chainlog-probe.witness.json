@@ -1,0 +1,54 @@
+{
+  "probe": "parity-level-lever1depth2-tauclosed-chainlog-probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/parity_level_lever1depth2_tauclosed_chainlog_probe.py",
+  "scriptCommitSha": "c1698951b30460bb111c1e97552482f0b0622bd0",
+  "scriptHash": "1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb",
+  "scriptSha256": "1438398dfd335d3f6e9ebdcaa8df8fdc4613a507b4d480b0c9dde22e4b3c8bcb",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "dim_3_add_dim_21_qou_3x8x",
+      "bean": "qou-3x8x",
+      "theorem": "QOU.Mass.ParitySplit.dim_3_add_dim_21",
+      "dim_3": "1.0",
+      "dim_21": "2.0",
+      "sum_dims": "3.0",
+      "passed": true
+    },
+    {
+      "id": "linear_selection_bound_at_threshold_qou_4h26",
+      "bean": "qou-4h26",
+      "theorem": "QOU.Mass.LevelSelection.linear_selection_bound_at_threshold",
+      "geom_k0": "0.76424311626298369667592895596634145951342505560072177714300948746037772384164152",
+      "ext_k0": "2.373355891000148021147764592356902138363074564242649165530187616575534365587591",
+      "gap_k0": "1.6091127747371643244718356363905606788496495086419273883871781291151566417459495",
+      "passed": true
+    },
+    {
+      "id": "depth2_no_zero_tau_qou_4kc0",
+      "bean": "qou-4kc0",
+      "theorem": "QOU.Mass.Lever1Depth2.depth2_no_zero_tau",
+      "zero_tau_gap3": "3.5",
+      "seed_residual_c4": "-0.029166666666666666666666666666666666666666666666666666666666666666666666666666668",
+      "passed": true
+    },
+    {
+      "id": "tau_kernel_closed_form_sub_eq_zero_qou_4r5y",
+      "bean": "qou-4r5y",
+      "theorem": "QOU.Mass.Lever1Tau.tau_kernel_closed_form_sub_eq_zero",
+      "lhs_tau": "2.6418937640402104781634155453693251235557505648030757346177352761520693558216379",
+      "rhs_tau": "2.6418937640402104781634155453693251235557505648030757346177352761520693558216379",
+      "abs_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "log_chainRatio_succ_neutron_sub_eq_zero_qou_4un2",
+      "bean": "qou-4un2",
+      "theorem": "QOU.Mass.LinearChainBond.log_chainRatio_succ_neutron_sub_eq_zero",
+      "log_ratio_N1": "1.5413515938062271637472078042186623251139312727325927864450961376094020059525464",
+      "abs_diff": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    }
+  ]
+}
