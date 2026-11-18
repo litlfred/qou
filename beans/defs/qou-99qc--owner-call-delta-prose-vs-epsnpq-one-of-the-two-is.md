@@ -3945,3 +3945,16 @@ What changes and what does not:
 - **Same three-term photon.** With φ₀₁ = 0 the last term is absent, so the three-term variant is identical.
 - **What changes:** β_Bor = γ′(0,0,qh)·γ′(0,0,−q⁻¹h). The Borromean core is a product of two photons that each carry ONLY the switched last term, weighted by h·q and −h·q⁻¹ (the two Hecke eigenvalues). Under the old photon the same factors needed φ₀ = ∓q^{±1}h².
 - **Mass / L2:** there is no numerical impact on any scored quantity. confinement-universality says the nucleon NF does not depend on the photon coefficients once flavours are supplied. The 16:35Z result shows the Markov trace is identical for p and n under typed crossings. So Δ_pn and the L2 dashboard do not move, and the assumption buys no ppQ by itself. Its effect is on which word class the γγ re-derivation selects. That is the ansatz, and any selection under it still needs pre-registration here.
+
+## 2026-11-18 19:20Z — PRE-REGISTRATION: flavour ingredient A (down quark = reversed strand), then B
+
+Owner tapped "A and B, A first" (19:13Z). Registered before any computation.
+
+Model A, as fixed now:
+- u strand oriented +, d strand oriented − (corpus's own motivation in def:typed-crossing-operator). The typed-crossing shifts are NOT used; the orientation replaces them.
+- Word: beta_Bor = (s0 s1^-1)^3, unchanged. Its closure is 3 components, one per strand, so a placement = an orientation pattern on the Borromean rings.
+- p = uud (one component reversed), n = udd (two reversed). All 3 placements per nucleon are computed.
+- Invariants reported, all as functions of the free HOMFLY variable v (no specialisation chosen here, so no selection): (T1) oriented HOMFLY of the closure for every orientation pattern; (T2) the open element in the walled Brauer / oriented skein algebra (H_{2,1} for p, H_{1,2} for n), compared through a quantity that is not a closure invariant, to be named in a second registration before it is computed.
+- Prediction stated in advance: if the oriented Borromean rings with different orientation patterns are isotopic (linking numbers are all 0, so at least Jones is orientation-blind by Morton's reversal formula), then T1 gives p = n and only T2 can split them. T1 is run to settle this, not to score.
+- Nothing is scored against m_n − m_p until a v-specialisation is derived, not chosen.
+- B (one-strand blob / Ariki–Koike generator) follows A, with its own registration.
