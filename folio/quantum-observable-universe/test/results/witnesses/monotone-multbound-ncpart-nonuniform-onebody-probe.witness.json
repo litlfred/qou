@@ -1,0 +1,52 @@
+{
+  "probe": "monotone-multbound-ncpart-nonuniform-onebody-probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/monotone_multbound_ncpart_nonuniform_onebody_probe.py",
+  "scriptCommitSha": "e883e42fdde30a6d22e385b72041c6f52899312f",
+  "scriptHash": "e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259",
+  "scriptSha256": "e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "allEven_posAfter_sub_eq_zero_qou_87ms",
+      "bean": "qou-87ms",
+      "theorem": "QOU.Mass.MonotoneWordCycleStructure.allEven_posAfter_sub_eq_zero",
+      "N_runs": "7",
+      "max_diff_pos": "0.0",
+      "passed": true
+    },
+    {
+      "id": "sub_nonneg_of_dominant_qou_8fl1",
+      "bean": "qou-8fl1",
+      "theorem": "QOU.Mass.MultiplicityCountingBound.sub_nonneg_of_dominant",
+      "dom_abs": "1.3591409142295226176801437356763312488786235468499797874834838138620383151767738",
+      "slack_dom": "4.8700925274740942317654460915995923703550091951639150469343518008672246003237072",
+      "passed": true
+    },
+    {
+      "id": "card_ncpart_three_add_four_qou_8foz",
+      "bean": "qou-8foz",
+      "theorem": "QOU.Mass.card_ncpart_three_add_four",
+      "c3": "5.0",
+      "c4": "14.0",
+      "sum_c3_c4": "19.0",
+      "passed": true
+    },
+    {
+      "id": "mirrorSplit_self_eq_zero_qou_8jfh",
+      "bean": "qou-8jfh",
+      "theorem": "QOU.Mass.NonUniformAcRelocatesTheObligation.mirrorSplit_self_eq_zero",
+      "fh_P": "3.1732029348450789454854525314870938376878202943079592209143396515866869210284135",
+      "self_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "chargeIndependent_symm_qou_8jjo",
+      "bean": "qou-8jjo",
+      "theorem": "QOU.Mass.OneBodyBondOrdering.chargeIndependent_symm",
+      "common_val": "8.5397342226735670654635508695465744950348885357651149618796011301792286111573308",
+      "max_asym": "0.0",
+      "passed": true
+    }
+  ]
+}
