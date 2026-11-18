@@ -1,7 +1,7 @@
 ---
 # qou-v2om
 title: 'EPIC: close the low-isotope binding defect — five fronts, formalize-first'
-status: todo
+status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-26T03:37:39Z
@@ -69,3 +69,5 @@ Now the epic for P1.BIND under PROGRAM: L2 at 1 ppQ (mass and binding accuracy).
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+- **Round 87 (`https://github.com/litlfred/qou/pull/8401`, head `e8b8112ae090b9f21e8140c9696e25d7da0297c6`)**: Formalized theorem + 80-dps witness (`status: in-progress`).
