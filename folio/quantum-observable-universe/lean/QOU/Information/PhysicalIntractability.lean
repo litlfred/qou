@@ -154,7 +154,7 @@ theorem no_poly_bandwidth_decider_of_exp (B : ℕ) (hB : 0 < B)
     through `info / B`: if `info n ≤ steps n * B` and `info` is
     super-polynomial, so is `steps` — cancel the constant `B` by scaling the
     polynomial witness.  This avoids `Nat`-division artifacts. -/
-theorem steps_superPoly_of_info (B : ℕ) (hB : 0 < B) (info steps : ℕ → ℕ)
+theorem steps_superPoly_of_info (B : ℕ) (_hB : 0 < B) (info steps : ℕ → ℕ)
     (correct : ∀ n, info n ≤ steps n * B) (hinfo : SuperPolynomial info) :
     SuperPolynomial steps := by
   intro c k
@@ -222,5 +222,19 @@ theorem qou_physical_intractability_unconditional (B : ℕ) (hB : 0 < B)
     (correct : ∀ n, resolutionTreeSize (3 * n) ≤ steps n * B) :
     SuperPolynomial steps :=
   qou_physical_intractability B hB steps superPoly_two_pow correct
+
+/-- **The boundary-family resolution-tree size `n ↦ resolutionTreeSize (3n)` is
+    unconditionally super-polynomial (`bean qou-j0kz`).** -/
+theorem superPoly_resolutionTreeSize_three_mul :
+    SuperPolynomial (fun n => resolutionTreeSize (3 * n)) :=
+  superPoly_two_pow.of_le two_pow_le_resolutionTreeSize
+
+/-- **Direct exponential lower bound on total accessed bits `steps n * B` (`bean qou-j0kz`).**
+    Any device satisfying `resolutionTreeSize (3 * n) ≤ steps n * B` accesses at least
+    `2 ^ n` bits on instance size `n`. -/
+theorem two_pow_le_steps_mul_bandwidth (B : ℕ) (steps : ℕ → ℕ)
+    (correct : ∀ n, resolutionTreeSize (3 * n) ≤ steps n * B) (n : ℕ) :
+    2 ^ n ≤ steps n * B :=
+  le_trans (two_pow_le_resolutionTreeSize n) (correct n)
 
 end QOU.Information

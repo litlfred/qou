@@ -114,4 +114,13 @@ theorem borromean_pair_within_radius (h q : ℚ)
     |trM_borromean h * trM_borromean h| < q :=
   pair_trace_lt_radius _ q (abs_trM_borromean_lt_one h hh hsmall) hq
 
+/-- **Interface-dressed Borromean nucleon pair convergence bound (`bean moqg`).**
+    On the physical domain (`h ≠ 0`, `h² ≤ 1`), for any bond factor `|f| ≤ 1`
+    and any `q > 1`, the dressed pair argument `|tr_M(β_Bor)² · f|` lies strictly
+    inside the `Li₂^q` convergence radius `q`. -/
+theorem borromean_dressed_pair_within_radius (h f q : ℚ)
+    (hh : h ≠ 0) (hsmall : h ^ 2 ≤ 1) (hf : |f| ≤ 1) (hq : 1 < q) :
+    |trM_borromean h * trM_borromean h * f| < q :=
+  pair_trace_dressed_lt_radius _ f q (abs_trM_borromean_lt_one h hh hsmall) hf hq
+
 end QOU.BraidsAndKnots

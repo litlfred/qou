@@ -143,4 +143,20 @@ theorem not_polyObservable_or_not_horizon_cost {S V : Type*}
   · exact Or.inr (no_horizon_cost_of_polyObservable sys poly P h hbudget)
   · exact Or.inl h
 
+/-- Iterating `n ↦ n + 1` from an arbitrary starting leaf `m` reaches `m + k`
+    after `k` steps (`bean qou-4hbq`). -/
+theorem succ_iterate_add (m k : ℕ) : (fun n => n + 1)^[k] m = m + k := by
+  induction k with
+  | zero => rfl
+  | succ n ih =>
+    rw [Function.iterate_succ_apply', ih]
+    omega
+
+/-- For any depth `d`, the filtration length `(treeSearch d).len 0 = d` is strictly
+    dominated by the normal-form leaf index `3 ^ d`. -/
+theorem treeSearch_len_lt_normalForm (d : ℕ) :
+    (treeSearch d).len 0 < (treeSearch d).normalForm := by
+  change d < 3 ^ d
+  exact Nat.lt_pow_self (by norm_num : 1 < 3)
+
 end QOU.Information

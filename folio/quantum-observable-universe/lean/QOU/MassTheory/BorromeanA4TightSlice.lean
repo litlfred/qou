@@ -64,4 +64,27 @@ theorem borromean4_tight_slice :
   have := borromean4_deficit_factor h
   rwa [leadingOrder_four] at this
 
+/-- **Strict positivity of the `A = 4` trace excess away from `h = 0` (`1 < tauL4 h`,
+    `bean qou-okh4`).** Because `A = 4` has `(−1)^(A−1) = −1`, the deficit `1 − tauL4 h`
+    is strictly negative for every `h ≠ 0`, so `tauL4 h > 1`. -/
+theorem one_lt_tauL4_of_ne_zero (h : ℝ) (hh : h ≠ 0) : 1 < tauL4 h := by
+  have hd : (0 : ℝ) < h ^ 2 + 4 := by positivity
+  have h6 : (0 : ℝ) < h ^ 6 := by positivity
+  have hnum : (0 : ℝ) < h ^ 6 * (h ^ 4 + 5 * h ^ 2 + 6) := by positivity
+  have hdiff : tauL4 h - 1 = (h ^ 6 * (h ^ 4 + 5 * h ^ 2 + 6)) / (h ^ 2 + 4) := by
+    unfold tauL4
+    have hd_ne : (h : ℝ) ^ 2 + 4 ≠ 0 := ne_of_gt hd
+    field_simp
+    ring
+  have hpos : 0 < tauL4 h - 1 := by
+    rw [hdiff]
+    exact div_pos hnum hd
+  linarith
+
+/-- **Strict negativity of the `A = 4` trace deficit away from `h = 0` (`1 - tauL4 h < 0`).** -/
+theorem borromean4_deficit_neg_of_ne_zero (h : ℝ) (hh : h ≠ 0) :
+    1 - tauL4 h < 0 := by
+  have hlt : 1 < tauL4 h := one_lt_tauL4_of_ne_zero h hh
+  linarith
+
 end QOU.MassTheory.MilnorOrderLawGeneral

@@ -146,4 +146,22 @@ theorem norm_eq_one_of_abs_le_two (w : ℝ) (hw : |w| ≤ 2) :
     rw [← Complex.normSq_eq_norm_sq] at *; exact h
   nlinarith [norm_nonneg (⟨w / 2, Real.sqrt (4 - w ^ 2) / 2⟩ : ℂ), this]
 
+/-- **Palindromic self-reciprocality of the colour sextic** over an arbitrary field:
+    for `z ≠ 0`, `colourSextic z = z^6 · colourSextic z⁻¹` (`bean qou-ok7t`). -/
+theorem colourSextic_recip_identity {R : Type*} [Field R] (z : R) (hz : z ≠ 0) :
+    colourSextic z = z ^ 6 * colourSextic z⁻¹ := by
+  unfold colourSextic
+  field_simp
+  ring
+
+/-- **The conjugate solution `(w − i√(4−w²))/2` also has unit norm-squared** for
+    every real `w` with `|w| ≤ 2` (`bean qou-ok7t`). -/
+theorem normSq_conj_eq_one_of_abs_le_two (w : ℝ) (hw : |w| ≤ 2) :
+    Complex.normSq (⟨w / 2, -(Real.sqrt (4 - w ^ 2) / 2)⟩ : ℂ) = 1 := by
+  have h4 : (0 : ℝ) ≤ 4 - w ^ 2 := by
+    nlinarith [abs_le.mp hw |>.1, abs_le.mp hw |>.2]
+  have hsq : Real.sqrt (4 - w ^ 2) ^ 2 = 4 - w ^ 2 := Real.sq_sqrt h4
+  simp only [Complex.normSq_mk]
+  nlinarith [hsq]
+
 end QOU.Brings
