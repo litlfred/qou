@@ -1,0 +1,69 @@
+{
+  "probe": "round87_rationalstateintegral_cusptorsion_bringhomology_goldendilog_costintransseries_probe",
+  "beans": [
+    "qou-fadm",
+    "qou-fiaf",
+    "qou-fkmt",
+    "qou-hrq0",
+    "qou-i3uy"
+  ],
+  "scriptCommitSha": "e7075d5f9d1f3726d7f92d5ff5ae65c16f63b5a4",
+  "scriptSha256": "1f27c3d374db062e30798d51c2f2ab2282b71c82fc4ee6be278def432ac1d4b7",
+  "scriptHash": "1f27c3d374db062e30798d51c2f2ab2282b71c82fc4ee6be278def432ac1d4b7",
+  "dps": 80,
+  "mpmathDps": 80,
+  "precisionDps": 80,
+  "allPassed": true,
+  "allAssertionsPassed": true,
+  "checks": {
+    "rationalStateIntegral": {
+      "levelP": 2,
+      "levelQ": 3,
+      "continuumFactorCount": 2,
+      "classicalDilogTermCount": 2,
+      "cyclicDilogTermCount": 4,
+      "finiteStateSumDim": 6,
+      "totalDecomposedWeight": 12,
+      "vol41_80dps": "2.029883212819307250042405108549040571883",
+      "passed": true
+    },
+    "multiCuspTorsionFactor": {
+      "verifiedLowCuspCases": 3,
+      "unverifiedGapAtC4": 1,
+      "perCuspFactors80dps": {
+        "1": "1.0",
+        "2": "1.41421356237309504880168872420969807857",
+        "3": "2.0",
+        "4": "2.828427124746190097603377448419396157139"
+      },
+      "passed": true
+    },
+    "bringPolygonHomology": {
+      "genus": 4,
+      "homologyRank": 8,
+      "matrixEntryCount": 64,
+      "polygonSides": 20,
+      "automorphismOrder": 120,
+      "sourceSection": 2,
+      "hyperbolicTriangleArea80dps": "0.1570796326794896619231321691639751442099",
+      "gaussBonnetArea80dps": "37.69911184307751886155172059935403461037",
+      "passed": true
+    },
+    "goldenDilogQuarticVsClassical": {
+      "classicalGoldenLi2_80dps": "0.4264088061620961820920369954268773156712",
+      "classicalGoldenResidual": "5.271098972e-82",
+      "quarticPiSqOver100_80dps": "0.09869604401089358618834490999876151135314",
+      "quarticRootResidual": "0.0",
+      "passed": true
+    },
+    "costinClassicalTransseriesAnchor": {
+      "irregularSingularityRank": 1,
+      "classicalGevreyOrder": 1,
+      "anchorWeight": 6,
+      "borelLaplaceAtX4_80dps": "0.2063456499010558331020457588768578086434",
+      "borelLaplaceResidual": "0.0",
+      "stokesJumpMagnitudeAtX4_80dps": "0.1150805531573016505108415614896595010187",
+      "passed": true
+    }
+  }
+}
