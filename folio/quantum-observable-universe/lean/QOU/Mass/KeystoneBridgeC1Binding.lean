@@ -165,4 +165,12 @@ theorem keystone_bridge_involution (me : ℚ) (n : ℕ) :
       = involutionNumber (m + 1) + (m + 1) * involutionNumber m := rfl
   rw [hI]; push_cast; ring
 
+/-- **Vanishing difference form of `period_carrier_strip` (`qou-2wtx`).**
+For any `f : ℕ → ℚ` and `m : ℕ`,
+`f (m + 1) / ((m : ℚ) + 1) - (f (m + 1) / ((m + 1).factorial : ℚ)) * (m.factorial : ℚ) = 0`. -/
+theorem period_carrier_strip_sub_eq_zero (f : ℕ → ℚ) (m : ℕ) :
+    f (m + 1) / ((m : ℚ) + 1)
+      - (f (m + 1) / ((m + 1).factorial : ℚ)) * (m.factorial : ℚ) = 0 :=
+  sub_eq_zero.mpr (period_carrier_strip f m)
+
 end QOU.Mass.KeystoneBridgeC1Binding

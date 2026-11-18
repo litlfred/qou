@@ -167,4 +167,12 @@ theorem kind_ratios_eq_of_q_pow_four_eq_one (q : R) (hq0 : q ≠ 0)
     _ = q ^ 4 := by ring
   rw [h8]
 
+/-- **Vanishing difference form of `rho_pp_div_rho_nn` (`qou-306p`).**
+When `q ≠ 0`, `q ^ 2 + 1 ≠ 0`, and `bondPoly q ≠ 0`,
+`(bPP q / bPN q) / (bNN q / bPN q) - q ^ 4 = 0`. -/
+theorem rho_pp_div_rho_nn_sub_eq_zero (q : R) (hq0 : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0)
+    (hP : bondPoly q ≠ 0) :
+    (bPP q / bPN q) / (bNN q / bPN q) - q ^ 4 = 0 :=
+  sub_eq_zero.mpr (rho_pp_div_rho_nn q hq0 hq2 hP)
+
 end QOU.Mass.KindRatioFromBondLetters

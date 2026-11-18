@@ -53,4 +53,12 @@ theorem colourResolvent_cyclic_eigenvalue {R : Type*} [CommRing R]
     w * (x1 + w * x2 + w ^ 2 * x0) = x0 + w * x1 + w ^ 2 * x2 := by
   linear_combination x0 * hw
 
+/-- **Vanishing difference form of `colourResolvent_cyclic_eigenvalue` (`qou-3ral`).**
+For `w ^ 3 = 1` in a commutative ring `R`,
+`w * (x1 + w * x2 + w ^ 2 * x0) - (x0 + w * x1 + w ^ 2 * x2) = 0`. -/
+theorem colourResolvent_cyclic_eigenvalue_sub_eq_zero {R : Type*} [CommRing R]
+    (w x0 x1 x2 : R) (hw : w ^ 3 = 1) :
+    w * (x1 + w * x2 + w ^ 2 * x0) - (x0 + w * x1 + w ^ 2 * x2) = 0 :=
+  sub_eq_zero.mpr (colourResolvent_cyclic_eigenvalue w x0 x1 x2 hw)
+
 end QOU.Mass

@@ -278,4 +278,11 @@ theorem cluster_residue (h2 : (2 : K) ≠ 0) {M : Fin n → Fin n → A} (hM : �
 
 end Cluster
 
+/-- **Zero-translation specialization of `affineNormalize_affine` (`qou-3wc5`).**
+For `c ≠ 0` in a field `K`, `affineNormalize (fun k => c * z k + 0) = affineNormalize z`. -/
+theorem affineNormalize_scale {K : Type*} [Field K] {n : ℕ}
+    (z : Fin (n + 2) → K) {c : K} (hc : c ≠ 0) :
+    affineNormalize (fun k => c * z k + 0) = affineNormalize z :=
+  affineNormalize_affine z hc 0
+
 end QOU.Mass.LagrangianKZ

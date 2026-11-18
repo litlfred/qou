@@ -47,4 +47,23 @@ theorem massClass_kz (c κ : ℂ) (hκ : GenericParameter.NotRootOfUnity (qC κ)
                 BalancedHecke (coxA m) (qC κ)))).trace) := by
   rw [massClass_classOf, jonesFn, braidTrace_eq_kz c κ hκ w wi β]
 
+/-- **Vanishing difference form of `massClass_kz` (`qou-37kk`).**
+Under the hypotheses of `massClass_kz`, the difference between the left-hand and right-hand
+sides of `massClass_kz` is zero. -/
+theorem massClass_kz_sub_eq_zero (c κ : ℂ) (hκ : GenericParameter.NotRootOfUnity (qC κ))
+    (w : Fin 2 → ℂ) (wi : ℂ) (hw : (1 + qC κ ^ 2) * wi = 1) (h0 : w 0 = 1)
+    (h1 : w 1 = qC κ ^ 2) {m : ℕ} (β : BraidGroupN m) :
+    massClass (qC κ) (qC κ)⁻¹ wi (mul_inv_cancel₀ (qC_ne_zero κ)) w hw h0 h1
+        (QOU.MathlibExt.MarkovMoves.classOf artinTower ⟨m, β⟩)
+      - ((strandFactor (qC κ) (qC κ)⁻¹ wi (mul_inv_cancel₀ (qC_ne_zero κ)) hw ^ (m + 1) : ℂˣ) : ℂ)
+        * ((writheFactor (qC κ) (qC κ)⁻¹ (mul_inv_cancel₀ (qC_ne_zero κ))
+            ^ braidWritheZ β : ℂˣ) : ℂ)
+        * (wi ^ (m + 1) * (QOU.IwahoriHecke.QuantumTrace.siteWeight w *
+            kzHeckeC m c κ ((JimboActionKernel.skeinCoxAEquiv (qC κ)
+              (qC_ne_zero κ) m).symm
+              ((heckeRep (coxA m) (mul_inv_cancel₀ (qC_ne_zero κ))
+                coxA_symm β : (BalancedHecke (coxA m) (qC κ))ˣ) :
+                BalancedHecke (coxA m) (qC κ)))).trace) = 0 :=
+  sub_eq_zero.mpr (massClass_kz c κ hκ w wi hw h0 h1 β)
+
 end QOU.Mass.KohnoWeightedClass
