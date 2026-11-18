@@ -1,7 +1,7 @@
 ---
 # qou-anjl
 title: Remark interpreting 1204.4824v2.pdf at prop:mi-sw-abelianisation
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

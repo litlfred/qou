@@ -1,7 +1,7 @@
 ---
 # qou-eqi3
 title: Remark interpreting 2312.00624v1.pdf at conj:stokes-dt-bps-bridge
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

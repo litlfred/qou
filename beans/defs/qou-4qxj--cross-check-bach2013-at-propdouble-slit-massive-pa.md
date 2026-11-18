@@ -1,7 +1,7 @@
 ---
 # qou-4qxj
 title: Cross-check [bach2013] at prop:double-slit-massive-pattern
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

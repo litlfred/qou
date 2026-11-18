@@ -1,7 +1,7 @@
 ---
 # qou-dmar
 title: Remark interpreting 2302.08363v2.pdf at rem:st-is-median-resummation
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

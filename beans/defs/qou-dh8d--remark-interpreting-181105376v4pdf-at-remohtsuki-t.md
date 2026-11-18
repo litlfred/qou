@@ -1,7 +1,7 @@
 ---
 # qou-dh8d
 title: Remark interpreting 1811.05376v4.pdf at rem:ohtsuki-tower-bar-parity
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
