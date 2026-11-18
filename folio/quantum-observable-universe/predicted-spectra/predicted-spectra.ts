@@ -53,6 +53,7 @@ export default chapter({
         "q-value-transition",
         "q-value-transition-properties",
         "photon",
+        "borromean-two-photon-factorisation",
         "breit-wheeler-pair-production",
         "breit-wheeler-pair-production-derivation",
         "breit-wheeler-pair-production-table-data",
