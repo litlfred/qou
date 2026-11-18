@@ -1,0 +1,70 @@
+{
+  "probe": "qou_10v9_k34v_ogj5_plck_tvrx_umev_probe.py",
+  "beans": [
+    "qou-k34v",
+    "qou-ogj5",
+    "qou-plck",
+    "qou-tvrx",
+    "qou-umev"
+  ],
+  "dps": 80,
+  "scriptHash": "07b2ef7e298f1f34cef2d97cd076d777e769141d51389ef2e4b9ff4577da4547",
+  "scriptSha256": "07b2ef7e298f1f34cef2d97cd076d777e769141d51389ef2e4b9ff4577da4547",
+  "scriptCommitSha": "04e8b242258f6a8efeb4b9b01cfa000ece053e28",
+  "generatedAt": "2026-11-18T11:59:19.316489+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-k34v-prepotential-associativity-residual",
+      "bean": "qou-k34v",
+      "description": "Prepotential associativity commutator matches factored form to 80 dps and is non-zero off the constant slice",
+      "residualExpanded": "0.873875",
+      "residualFactored": "0.873875",
+      "absError": "3.1626593829691569673045722153810057023129884147105522650233289075324432872909279e-81",
+      "flatSliceResidual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-ogj5-spectral-prefactor-glyph-collision",
+      "bean": "qou-ogj5",
+      "description": "8 * m_e * Catalan = 3.7444596599... MeV differs from 8 * m_e * 1 = 4.0879916... MeV by 0.3435319... MeV",
+      "alphaCatalanMeV": "3.7444596599416103247617416734754722152449524306820362648703466555806320223480952",
+      "alphaUnitMeV": "4.08799160552",
+      "glyphCollisionGapMeV": "0.34353194557838967523825832652452778475504756931796373512965334441936797765190475",
+      "postHocIdentityError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-plck-symbolic-q-forms-and-three-scales",
+      "bean": "qou-plck",
+      "description": "G_q * (hbar_q / c_q)^2 = 1 identically and the three q-length candidates (1, hbar_q, sqrt(q)) are distinct",
+      "gPlanckUnits": "1.0",
+      "ellNormalised": "1.0",
+      "ellPerStepShare": "0.099096570501210357931391317833812141524547656871291690304386210838464800884909271",
+      "ellDimensional": "1.0535638967444194015728480534423204078602039995388888325296167838417785432308466",
+      "ratioDimensionalToShare": "10.631688780103154556027406779976498140457629226220612500783785467484441489439869",
+      "absError": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "passed": true
+    },
+    {
+      "id": "qou-tvrx-polarization-dictionary-phase-unfixed",
+      "bean": "qou-tvrx",
+      "description": "Real mixed state (phi0, phi1) is purely linear at lambda = 1 and purely circular at lambda = i",
+      "linearStokesAtLambdaOne": "0.96",
+      "circularStokesAtLambdaImag": "-0.96",
+      "absError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-umev-unit-modulus-eigenvalue-refutation",
+      "bean": "qou-umev",
+      "description": "Borromean trace is 2 - 3*h^4 - h^6 = +1.9941858... != -2 (disc < 0), while sigma_1^2 has trace 2 + h^2 > 2 (disc > 0)",
+      "borromeanTraceClosed": "1.9941820971628402270655731699942058626681060829851738525204311921757313610056338",
+      "borromeanDiscriminant": "-0.023237763355216460002321339157266721091412409482040513220204164585134337277480049",
+      "squareWordTrace": "2.0437200729340809250425224582315027201153796421904222939625667314420557377939267",
+      "squareWordDiscriminant": "0.17679173651368505563596837732530192288291907063431791590153893774449245031098337",
+      "absError": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    }
+  ]
+}
