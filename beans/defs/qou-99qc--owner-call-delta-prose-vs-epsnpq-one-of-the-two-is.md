@@ -3815,3 +3815,25 @@ Result. This is exact, needs no numerics, and holds at any q.
 3. Both photon versions give the same answer, because φ₀₁ = 0 makes the last-term switch inert.
 
 Scope (a): this construction alone carries no information about BFPP vs γγ → HH̄. A non-vacuous test needs a crossing that links the electron and positron strands (σ₃, pair creation), and nothing in the corpus fixes how that crossing is weighted. Do NOT read this as evidence for or against crossing symmetry.
+
+## 2026-11-18 16:05Z — PRE-REGISTRATION: typed crossings on the six crossings of β_Bor (owner asked for this in the thread, 15:59Z)
+
+Recorded before any computation. This is a measurement only. Nothing is selected and no residual is used.
+
+Construction:
+- β_Bor = (σ₀σ₁⁻¹)³ in H₃. Strand positions 0, 1, 2 carry flavours. Each crossing permutes the flavours (the permutation is the braid's image in S₃).
+- A positive crossing σ_k between flavours (f, f′) is replaced by C(f, f′; σ_k) from def:typed-crossing-operator: uu → σ_k, dd → σ_k − h, ud → σ_k − h/2.
+- A negative crossing σ_k⁻¹ is replaced by C(f, f′; σ_k)⁻¹. This choice is mine; the corpus types σ only.
+- Every placement is reported: uud with d at position 0, 1 or 2, and udd with u at 0, 1 or 2. No placement is chosen.
+
+Outputs, all exact in q:
+1. The six H₃ coefficients of each typed element, and whether the p and n elements differ.
+2. Reachability as λ·γ(φ)γ(ψ) for each photon variant:
+   - four-term (def:photon);
+   - switched last term σ₀σ₁⁻¹;
+   - three-term (φ₀₁ = 0, as in prop:gamma-gamma-generates-particles);
+   - one-term (one nonzero weight).
+   Report existence only, not which (φ, ψ) is "best".
+3. tr_M at z_D = q³/(q²+1), evaluated at the proton q₀ with mpmath; the ratio n/p.
+
+No outcome changes the corpus. The corpus nucleon (β_Bor × Δ₃, def:typed-crossing-operator) is untouched.
