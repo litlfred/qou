@@ -1,0 +1,38 @@
+{
+  "probe": "torusinfl_twisted_twobody_tworow_uiccurv_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/torusinfl_twisted_twobody_tworow_uiccurv_probe.py",
+  "scriptCommitSha": "38a8bf97d26dd229a78a1a1573fca0fc175abf92",
+  "scriptHash": "1be877abdb1582d777890cc10fc02e0bc0e7920aac0d3b0d7a2ad2a68e8751b9",
+  "scriptSha256": "1be877abdb1582d777890cc10fc02e0bc0e7920aac0d3b0d7a2ad2a68e8751b9",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "cosQMulInflectionAddOneEqZero": {
+      "cosValue": "-1.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    "normExpTwoPiIMulSubEqZero": {
+      "normExp": "12.345283939187368579546362975259193426256726581361642020670359449936534578481187",
+      "realExp": "12.345283939187368579546362975259193426256726581361642020670359449936534578481187",
+      "residual": "0.0",
+      "passed": true
+    },
+    "crossSumSubEqZero": {
+      "crossSum": "10.083333333333333333333333333333333333333333333333333333333333333333333333333333",
+      "diagSum": "10.083333333333333333333333333333333333333333333333333333333333333333333333333333",
+      "residual": "0.0",
+      "passed": true
+    },
+    "twoRowSumSqSubCatalanEqZero": {
+      "sqSum": "132.0",
+      "catalan": "132.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    "symmetryCurvatureNeZero": {
+      "curvature": "0.16211884947643517780367272413032224534485595418091866291553095909011705559977421",
+      "passed": true
+    }
+  }
+}
