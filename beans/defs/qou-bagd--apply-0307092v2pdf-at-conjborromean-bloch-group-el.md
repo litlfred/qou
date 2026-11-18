@@ -1,7 +1,7 @@
 ---
 # qou-bagd
 title: Apply 0307092v2.pdf at conj:borromean-bloch-group-element
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

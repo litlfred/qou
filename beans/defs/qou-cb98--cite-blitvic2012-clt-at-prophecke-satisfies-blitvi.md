@@ -1,7 +1,7 @@
 ---
 # qou-cb98
 title: Cite [blitvic2012-clt] at prop:hecke-satisfies-blitvic-hypothesis
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

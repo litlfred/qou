@@ -1,7 +1,7 @@
 ---
 # qou-c9pt
 title: Cite [webster-williamson-2014-markov] at thm:markov-trace-factorization
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
