@@ -92,4 +92,11 @@ theorem tau_bar_even {K : Type*} [Field K] (q : K)
   field_simp
   ring
 
+/-- Vanishing difference form of `tau_quantum_integer_form`. -/
+theorem tau_quantum_integer_form_sub_eq_zero {K : Type*} [Field K] (q : K)
+    (hq : q ≠ 0) (hq1 : q + 1 ≠ 0) (h2 : (2 : K) ≠ 0) :
+    3 * (3 * q ^ 4 + 8 * q ^ 2 + 3) / (4 * q * (q + 1) ^ 2)
+      - 3 * (3 * (q + q⁻¹) ^ 2 + 2) / (4 * ((q + q⁻¹) + 2)) = 0 := by
+  rw [tau_quantum_integer_form q hq hq1 h2, sub_self]
+
 end QOU.Mass.TauQuantumInteger

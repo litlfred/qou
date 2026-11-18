@@ -162,4 +162,9 @@ theorem spuriousBinding_absorbed_eq_zero {δ : ℝ} (hδ : δ ≠ 0) (s : Finset
   rw [Real.log_prod s t (fun i hi => ne_of_gt (ht i hi))]
   ring
 
+/-- Vanishing difference form of `freeEnergy_absorb`. -/
+theorem freeEnergy_absorb_sub_eq_zero {δ : ℝ} (hδ : δ ≠ 0) (k : ℕ) (t : ℝ) :
+    freeEnergy (δ ^ k * closureNorm δ k t) - freeEnergy t = 0 := by
+  rw [freeEnergy_absorb hδ k t, sub_self]
+
 end QOU.Mass.SpuriousClosureBinding

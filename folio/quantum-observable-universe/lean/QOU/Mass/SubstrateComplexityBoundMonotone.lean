@@ -115,4 +115,9 @@ is exactly why it carries no information about which was chosen. -/
 example : Admissible 2 ⟨6, 3⟩ ∧ Admissible 3 ⟨8, 5⟩ ∧ Admissible 3 ⟨6, 3⟩ := by
   refine ⟨?_, ?_, ?_⟩ <;> rw [admissible_iff] <;> exact ⟨by decide, by decide⟩
 
+/-- Step monotonicity of `Admissible`: any link admissible at `A` is admissible at `A + 1`. -/
+theorem admissible_succ (A : ℕ) {L : LinkData} (hL : Admissible A L) :
+    Admissible (A + 1) L :=
+  admissible_mono (Nat.le_succ A) hL
+
 end QOU.Mass.SubstrateComplexityBound

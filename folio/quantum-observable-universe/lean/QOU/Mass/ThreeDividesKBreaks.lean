@@ -180,4 +180,10 @@ theorem three_dvd_becomes_infeasible (m : ℕ) (δ : ℝ)
     linarith [Real.pi_pos]
   linarith
 
+/-- Vanishing residual form of the Chebyshev recursion for `2 * cos (k * θ)`. -/
+theorem two_cos_recursion_sub_eq_zero (θ : ℝ) (k : ℕ) :
+    2 * cos ((k + 2) * θ)
+      - ((2 * cos θ) * (2 * cos ((k + 1) * θ)) - 2 * cos (k * θ)) = 0 := by
+  rw [two_cos_recursion θ k, sub_self]
+
 end QOU.Mass.ThreeDividesKBreaks

@@ -176,4 +176,10 @@ theorem sum_dimSYT_eq_involution_keystone (k : ℕ) :
     (∑ p : Nat.Partition k, dimSYT p) = involutionNumber k :=
   sum_dimSYT_eq_involutionNumber k
 
+/-- Equality of the total standard Young tableau counts at sizes `0` and `1`. -/
+theorem sum_numSYT_size_zero_eq_size_one :
+    (∑ μ : {μ : YoungDiagram // μ.cells.card = 0}, numStandardYoungTableaux μ.1)
+      = ∑ μ : {μ : YoungDiagram // μ.cells.card = 1}, numStandardYoungTableaux μ.1 := by
+  rw [sum_numSYT_size_zero, sum_numSYT_size_one]
+
 end QOU.Mass
