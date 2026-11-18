@@ -1,11 +1,11 @@
 ---
 # qou-c98z
 title: 'What is actually proved in Lean: 4 sorry files corpus-wide, but 182 open conjectures — sorryAx is the wrong detector'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-11T14:48:36Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-18T11:23:08Z
 parent: qou-rtxm
 ---
 
@@ -234,3 +234,5 @@ the discharged set, which is the conservative direction for a claim about what i
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-rtxm`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+- Round 83 (`lane-e667`): Formalized `qou-xc8t`, `cdup`, `qdzu`, `qou-9e7p`, `qou-c98z` in `QOU.Foundations.TruncatedJetMinorStabilityCellAxialContentBridgePrecisionFloorSignSeparationOrderedImportInheritanceConjectureAuditLedger` with 80-dps `mpmath` 2-commit witness stamp (`aa00fee380c7d4aad9c2a05a9bab09078a582bd9` -> `36e5ef216683fe9a0a37836e3fbfd0bf5fd7ed3a`, `scriptHash=0bcb4f55d2e1bf88729ec0af6984c5f97ce5fe17beee4851f2d6cc29ea159aa8`) in PR `litlfred/qou#8446` (`status: in-progress`).

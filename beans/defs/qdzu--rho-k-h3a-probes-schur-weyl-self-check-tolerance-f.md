@@ -1,13 +1,13 @@
 ---
 # qdzu
 title: 'rho_k_h3a probes: Schur-Weyl self-check tolerance floor (~1e-8) + crystal WRONG_SIGN'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T11:51:01Z
-updated_at: 2026-10-04T15:13:49Z
+updated_at: 2026-11-18T11:23:08Z
 parent: qou-59vq
 ---
 
@@ -92,3 +92,5 @@ colour-blind chi (ctype "averaged", abs_tr_M 0.388... vs the colour-weighted
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- Round 83 (`lane-e667`): Formalized `qou-xc8t`, `cdup`, `qdzu`, `qou-9e7p`, `qou-c98z` in `QOU.Foundations.TruncatedJetMinorStabilityCellAxialContentBridgePrecisionFloorSignSeparationOrderedImportInheritanceConjectureAuditLedger` with 80-dps `mpmath` 2-commit witness stamp (`aa00fee380c7d4aad9c2a05a9bab09078a582bd9` -> `36e5ef216683fe9a0a37836e3fbfd0bf5fd7ed3a`, `scriptHash=0bcb4f55d2e1bf88729ec0af6984c5f97ce5fe17beee4851f2d6cc29ea159aa8`) in PR `litlfred/qou#8446` (`status: in-progress`).

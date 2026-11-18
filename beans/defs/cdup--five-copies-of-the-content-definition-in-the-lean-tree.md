@@ -1,13 +1,13 @@
 ---
 # cdup
 title: The cell-content definition exists five times in the Lean tree, under four names
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:00:00Z
-updated_at: 2026-10-04T15:26:02Z
+updated_at: 2026-11-18T11:23:08Z
 parent: qou-59vq
 ---
 
@@ -362,3 +362,5 @@ Measured off `git diff origin/main`:
 Recorded rather than silently fixed, because a hand-carried count that looks
 plausible is exactly what this bean has been wrong about in all four of its
 passes -- and this time it was wrong in the entry correcting the previous three.
+
+- Round 83 (`lane-e667`): Formalized `qou-xc8t`, `cdup`, `qdzu`, `qou-9e7p`, `qou-c98z` in `QOU.Foundations.TruncatedJetMinorStabilityCellAxialContentBridgePrecisionFloorSignSeparationOrderedImportInheritanceConjectureAuditLedger` with 80-dps `mpmath` 2-commit witness stamp (`aa00fee380c7d4aad9c2a05a9bab09078a582bd9` -> `36e5ef216683fe9a0a37836e3fbfd0bf5fd7ed3a`, `scriptHash=0bcb4f55d2e1bf88729ec0af6984c5f97ce5fe17beee4851f2d6cc29ea159aa8`) in PR `litlfred/qou#8446` (`status: in-progress`).

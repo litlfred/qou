@@ -1,13 +1,13 @@
 ---
 # qou-9e7p
 title: '§7c checker: an inherited archimedean construct reads as gratuitous R'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T16:45:03Z
-updated_at: 2026-10-04T15:25:43Z
+updated_at: 2026-11-18T11:23:08Z
 parent: qou-rtxm
 ---
 
@@ -260,3 +260,5 @@ probed.
 It also does **not** revive "the ℝ is gratuitous". The retraction above stands as written:
 the stated *reason* for the pin is a phantom lemma; whether ℝ is *needed* remains open, and
 this probe narrows where that question actually lives.
+
+- Round 83 (`lane-e667`): Formalized `qou-xc8t`, `cdup`, `qdzu`, `qou-9e7p`, `qou-c98z` in `QOU.Foundations.TruncatedJetMinorStabilityCellAxialContentBridgePrecisionFloorSignSeparationOrderedImportInheritanceConjectureAuditLedger` with 80-dps `mpmath` 2-commit witness stamp (`aa00fee380c7d4aad9c2a05a9bab09078a582bd9` -> `36e5ef216683fe9a0a37836e3fbfd0bf5fd7ed3a`, `scriptHash=0bcb4f55d2e1bf88729ec0af6984c5f97ce5fe17beee4851f2d6cc29ea159aa8`) in PR `litlfred/qou#8446` (`status: in-progress`).

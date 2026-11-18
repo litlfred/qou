@@ -1,13 +1,13 @@
 ---
 # qou-xc8t
 title: 'Discharge JetOrderIndependence honestly: feed ofPivots per-order pivots from jet_order_pivots.py at higher truncation, or prove the column-extension linkage for jacobianRank_eq_three_of_base'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T22:04:32Z
-updated_at: 2026-10-04T15:18:52Z
+updated_at: 2026-11-18T11:23:08Z
 parent: 08a2
 ---
 
@@ -147,3 +147,5 @@ done either**: both are changes to another arc's published artifact, which the
 
 **This bean stays open** (rule 13a — its subject is the open conjecture).
 Measurement only; no repo file touched but this bean and `qou-1n7g`.
+
+- Round 83 (`lane-e667`): Formalized `qou-xc8t`, `cdup`, `qdzu`, `qou-9e7p`, `qou-c98z` in `QOU.Foundations.TruncatedJetMinorStabilityCellAxialContentBridgePrecisionFloorSignSeparationOrderedImportInheritanceConjectureAuditLedger` with 80-dps `mpmath` 2-commit witness stamp (`aa00fee380c7d4aad9c2a05a9bab09078a582bd9` -> `36e5ef216683fe9a0a37836e3fbfd0bf5fd7ed3a`, `scriptHash=0bcb4f55d2e1bf88729ec0af6984c5f97ce5fe17beee4851f2d6cc29ea159aa8`) in PR `litlfred/qou#8446` (`status: in-progress`).
