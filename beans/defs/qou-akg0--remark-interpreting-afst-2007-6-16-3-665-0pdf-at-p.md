@@ -1,7 +1,7 @@
 ---
 # qou-akg0
 title: Remark interpreting AFST_2007_6_16_3_665_0.pdf at prop:binding-genfun-qdifference
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-a707
 title: Cite [mcspirit-rolen2025] at conj:stokes-dt-bps-bridge
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

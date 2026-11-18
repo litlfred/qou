@@ -1,7 +1,7 @@
 ---
 # qou-aiyd
 title: Remark interpreting [bufetov2020] at rem:hecke-markov-interpretation
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

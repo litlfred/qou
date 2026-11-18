@@ -1,7 +1,7 @@
 ---
 # qou-9s4f
 title: Remark interpreting modular.qholonomic.modules.pdf at rem:phi-q-aj-machinery-identification-details
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

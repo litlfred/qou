@@ -1,7 +1,7 @@
 ---
 # qou-afzu
 title: Cite 1511.00400v2.pdf at folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean (--…
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
