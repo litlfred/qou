@@ -1,7 +1,7 @@
 ---
 # qou-iqjk
 title: Missing-hypotheses queue (P6)
-status: todo
+status: in-progress
 type: feature
 tags:
     - reorg-2026-10-04

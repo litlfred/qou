@@ -1,7 +1,7 @@
 ---
 # qou-jjge
 title: 'REFRESH: witnesses downstream of y_lambda_at are stale in their last ~20 digits after the 30->50 cap raise'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

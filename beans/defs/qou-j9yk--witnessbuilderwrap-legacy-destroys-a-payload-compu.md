@@ -1,7 +1,7 @@
 ---
 # qou-j9yk
 title: WitnessBuilder.wrap_legacy destroys a payload 'computation' method-description (same bug already fixed one key over for assertions)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

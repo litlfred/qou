@@ -1,7 +1,7 @@
 ---
 # qou-ircb
 title: Producers that INHERIT a q0 from another witness are stamped from a manifest that cannot know it
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-jtge
 title: 'ordering-cache.json: 9 of 11 checkable entries are stale, and a plain re-run TRUNCATES it 270 to 11'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
