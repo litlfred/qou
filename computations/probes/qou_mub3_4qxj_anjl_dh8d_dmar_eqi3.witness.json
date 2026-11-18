@@ -1,0 +1,60 @@
+{
+  "probe": "qou_mub3_4qxj_anjl_dh8d_dmar_eqi3_probe",
+  "beans": [
+    "qou-4qxj",
+    "qou-anjl",
+    "qou-dh8d",
+    "qou-dmar",
+    "qou-eqi3"
+  ],
+  "precisionDps": "80",
+  "scriptPath": "computations/probes/qou_mub3_4qxj_anjl_dh8d_dmar_eqi3_probe.py",
+  "scriptCommitSha": "23a103637b2a3adb1f5e5a5dec3f9d83b7b12d12",
+  "scriptHash": "6494792ede77e8162bf37df0f8b9d66b66d615a474c204950e3802100c8889b8",
+  "scriptSha256": "6494792ede77e8162bf37df0f8b9d66b66d615a474c204950e3802100c8889b8",
+  "computedAt": "2026-11-18T13:15:48Z",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-4qxj",
+      "description": "Double-slit sinc^2 envelope and q-deformation residual factorization",
+      "envelope": "0.9883963846605995554044211723487573987258",
+      "classicalMod": "0.5373150373767507736184236382374479137009",
+      "residual": "-0.007232976261862995189273199747694766808742",
+      "absError": "9.8833105717786155228e-83",
+      "passed": true
+    },
+    {
+      "bean": "qou-anjl",
+      "description": "Sheeted-cover off-diagonal channel count K(K-1) and ramification increment",
+      "offDiagonalRankK2": "2",
+      "offDiagonalRankK3": "6",
+      "ramifiedDegreeStep": "1",
+      "passed": true
+    },
+    {
+      "bean": "qou-dh8d",
+      "description": "Three-fiber homology sphere Sigma(2,3,5) action scale and Betti transfer gap",
+      "bettiTransferGap": "1",
+      "sigma235ActionScale": "8",
+      "vol4_1OverPi": "0.6461318944389010281872730214476127881445",
+      "passed": true
+    },
+    {
+      "bean": "qou-dmar",
+      "description": "Transseries partial-series factorization and figure-eight conjugate parity",
+      "symmetricSum": "1.52280006875834265160067146668911872428",
+      "parityAbsError": "0.0",
+      "partialDiffError": "1.0542197943230523224e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-eqi3",
+      "description": "Dual WKB block residue cancellation at rational coupling and regular sum",
+      "netResidue": "0.0",
+      "regularSum": "2.032247551122989897",
+      "absError": "0.0",
+      "passed": true
+    }
+  ]
+}
