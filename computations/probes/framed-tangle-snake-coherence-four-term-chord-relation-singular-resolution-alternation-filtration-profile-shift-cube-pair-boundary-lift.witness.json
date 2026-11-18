@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "framed_tangle_snake_coherence_four_term_chord_relation_singular_resolution_alternation_filtration_profile_shift_cube_pair_boundary_lift_probe",
+  "beans": [
+    "rttg",
+    "qou-50vf",
+    "qou-aezg",
+    "qou-dcvv",
+    "qou-fwah"
+  ],
+  "leanModule": "QOU.Foundations.FramedTangleSnakeCoherenceFourTermChordRelationSingularResolutionAlternationFiltrationProfileShiftCubePairBoundaryLift",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/framed_tangle_snake_coherence_four_term_chord_relation_singular_resolution_alternation_filtration_profile_shift_cube_pair_boundary_lift_probe.py",
+  "scriptHash": "08594954abfff6ef5f50f03f78c3a5e07152d5280835430790282602d58a4a45",
+  "scriptSha256": "08594954abfff6ef5f50f03f78c3a5e07152d5280835430790282602d58a4a45",
+  "scriptCommitSha": "202f38f5def66efc61fb7c2f38594348be909ef6",
+  "generatedAt": "2026-11-18T10:56:52.770170+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "rttg",
+      "theorem": "snakeZigZag_and_doubleCrossing_identity",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-50vf",
+      "theorem": "fourTermCombination_antisymmetry_and_balanced_vanishing",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-aezg",
+      "theorem": "doubleSingularResolution_transpose_invariance",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-dcvv",
+      "theorem": "freshGenerator_profile_promotion_and_inverseCrossing_reconstruction",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-fwah",
+      "theorem": "cubePair_retraction_endpoints_and_connecting_boundary",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
