@@ -13,6 +13,12 @@ Owner ruling 2026-06-24: there is ONE correct [now: m_e-scaled] nucleon mass, th
 **muon-anchored Hecke energy** (the production substrate-identity):
 
     m_p = dim V_{(2,1)} · (m_μ · F_Bor − |S_3| · m_e) = 2·(m_μ·F_Bor − 6·m_e)
+
+    FIT (owner ruling 2026-11-18): the integer 12 = 2·6 in the −12·m_e term is
+    SELECTED against m_p, not derived. It was read off the gap 2·m_μ·F_Bor − m_p
+    ≈ 12·m_e (docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md);
+    dim V_(2,1)·|S_3| is a factorisation of the integer, not a proof. At the
+    proton pin q₀ is solved from this identity, so m_p is a round trip there.
     m_μ   = m_e · Vol(4₁) / ℏ_q²                      (muon = figure-8 knot 4₁)
     F_Bor = |tr_M(β_Bor)| · [3]_q! / q³               (dimensionless Hecke factor)
         → m_p ≈ 938.27 MeV, m_n ≈ 939.56 MeV  (matches CODATA; m_n predicted)
