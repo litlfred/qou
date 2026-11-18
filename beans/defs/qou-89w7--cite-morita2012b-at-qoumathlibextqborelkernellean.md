@@ -1,7 +1,7 @@
 ---
 # qou-89w7
 title: 'Cite [morita2012b] at QOU/MathlibExt/QBorelKernel.lean — Thm 1/Cor 1: first-kind q-Borel–Laplace of a bilateral series yields a q-elliptic theta-quotient connection coefficient (qou-wgnx route (a) precedent)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

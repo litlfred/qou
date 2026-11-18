@@ -1,7 +1,7 @@
 ---
 # qou-83il
 title: Remark interpreting 2402.04839v2 (1).pdf at conj:borromean-bloch-group-element
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

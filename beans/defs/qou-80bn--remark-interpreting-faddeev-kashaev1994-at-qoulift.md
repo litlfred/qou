@@ -1,7 +1,7 @@
 ---
 # qou-80bn
 title: Remark interpreting [faddeev_kashaev1994] at QOU.LiftingDescent.tm_dilogarithm_evaluation
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

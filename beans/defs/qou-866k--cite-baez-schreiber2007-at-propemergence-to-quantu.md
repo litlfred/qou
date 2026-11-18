@@ -1,7 +1,7 @@
 ---
 # qou-866k
 title: Cite [baez-schreiber2007] at prop:emergence-to-quantum-flat
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

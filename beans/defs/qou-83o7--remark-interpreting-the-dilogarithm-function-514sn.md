@@ -1,7 +1,7 @@
 ---
 # qou-83o7
 title: Remark interpreting the-dilogarithm-function-514sniwxl7.pdf at content/quantum-observable-univers…
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
