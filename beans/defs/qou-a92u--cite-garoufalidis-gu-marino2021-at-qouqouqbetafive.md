@@ -1,7 +1,7 @@
 ---
 # qou-a92u
 title: Cite [garoufalidis-gu-marino2021] at qou:QOU.QBeta.FiveTwoDTSpectrumSplit
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

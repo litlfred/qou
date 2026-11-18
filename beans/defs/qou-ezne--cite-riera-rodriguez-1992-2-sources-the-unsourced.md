@@ -1,7 +1,7 @@
 ---
 # qou-ezne
 title: 'CITE: Riera-Rodriguez 1992 §2 sources the unsourced 240 and B = Delta/Gamma — M — EmCouplingBringZeroMode.lean, em-coupling-bring-zero-mode.md'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

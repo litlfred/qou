@@ -1,7 +1,7 @@
 ---
 # qou-73y1
 title: 'Garoufalidis characteristic/deformation varieties (characteristic.pdf): A-poly vs SL2(C) character variety — two rho_inf faces bridge'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-jbbk
 title: 'The building-block-knots Jones tables do not hold together: two printed values are unattainable by their own polynomials, and seven rows carry a q^{1-g^2} shift'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

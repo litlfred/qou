@@ -1,7 +1,7 @@
 ---
 # qou-aucv
 title: 'CITE: hyperbolic-triangle area = angle defect (B1) is docstring-asserted with no source — M — EmCouplingBringZeroMode.lean:88-89, em-coupling-bring-zero-mode.md:20'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
