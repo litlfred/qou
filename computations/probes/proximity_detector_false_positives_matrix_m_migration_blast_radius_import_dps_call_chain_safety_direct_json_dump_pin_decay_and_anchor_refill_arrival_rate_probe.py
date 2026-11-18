@@ -227,7 +227,7 @@ def check_qou_q0rf_anchor_refill_arrival_rate() -> dict:
 def main() -> None:
     script_bytes = SCRIPT_PATH.read_bytes()
     script_sha256 = hashlib.sha256(script_bytes).hexdigest()
-    script_hash_12 = script_sha256[:12]
+    script_hash_12 = script_sha256
     commit_sha = get_git_commit_sha()
 
     checks = [
