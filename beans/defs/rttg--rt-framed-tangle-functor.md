@@ -1,13 +1,13 @@
 ---
 # rttg
 title: 'RT-2: framed-tangle category + Reshetikhin-Turaev ribbon functor'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-02T09:20:00Z
-updated_at: 2026-10-04T15:13:53Z
+updated_at: 2026-11-18T10:57:30Z
 parent: qou-o9ge
 ---
 
@@ -65,3 +65,5 @@ Does NOT close `bwse` or `rttg`. Nothing wired to production; L2 unchanged (2/7)
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- Round 81 (`lane-e667`): Formalized `rttg`, `qou-50vf`, `qou-aezg`, `qou-dcvv`, `qou-fwah` in `QOU.Foundations.FramedTangleSnakeCoherenceFourTermChordRelationSingularResolutionAlternationFiltrationProfileShiftCubePairBoundaryLift` with 80-dps `mpmath` 2-commit witness stamp (`202f38f5def66efc61fb7c2f38594348be909ef6` -> `8be6d39b672d7e4c20d56580366adaf778190be7`, `scriptHash=08594954abfff6ef5f50f03f78c3a5e07152d5280835430790282602d58a4a45`) in PR `litlfred/qou#8437` (`status: in-progress`).
