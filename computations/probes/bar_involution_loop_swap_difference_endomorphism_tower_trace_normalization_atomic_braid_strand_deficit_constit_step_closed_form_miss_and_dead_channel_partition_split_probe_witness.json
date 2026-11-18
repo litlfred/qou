@@ -1,0 +1,50 @@
+{
+  "probe": "bar_involution_loop_swap_difference_endomorphism_tower_trace_normalization_atomic_braid_strand_deficit_constit_step_closed_form_miss_and_dead_channel_partition_split_probe",
+  "beans": [
+    "qou-fd2u",
+    "qou-j11h",
+    "qou-jgg0",
+    "qou-nzp3",
+    "qou-y6h7"
+  ],
+  "dps": 80,
+  "scriptHash": "7c5b6b900d9d756b8f9592a8448f3681d6842c47673490bc2ddd47d9074d68de",
+  "scriptSha256": "7c5b6b900d9d756b8f9592a8448f3681d6842c47673490bc2ddd47d9074d68de",
+  "scriptCommitSha": "77e508eb2f43162e245d1036901984579893f313",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-fd2u-bar-involution-loop-swap-difference",
+      "passed": true,
+      "swapDiffError": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "scaledDiff": "2091.0"
+    },
+    {
+      "id": "qou-j11h-endomorphism-tower-trace-normalization-gap",
+      "passed": true,
+      "gapN3": "5.0",
+      "gapN4": "23.0",
+      "twoLevelSum": "30.0"
+    },
+    {
+      "id": "qou-jgg0-atomic-braid-strand-deficit",
+      "passed": true,
+      "deficitH1": "1.0",
+      "deficitHe4": "6.0",
+      "deficitFe56": "86.0"
+    },
+    {
+      "id": "qou-nzp3-constit-step-closed-form-miss",
+      "passed": true,
+      "discrepancyAlternating": "59062877.0",
+      "discrepancyGrouped": "7419748.0"
+    },
+    {
+      "id": "qou-y6h7-dead-channel-partition-split-and-corank-gap",
+      "passed": true,
+      "deadN6": "7.0",
+      "corankN4": "10.0",
+      "corankN5": "78.0"
+    }
+  ]
+}
