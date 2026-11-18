@@ -1,7 +1,7 @@
 ---
 # qou-cvx9
 title: migrate-uploads-to-library keys on filename while pdf-structure keys on the arXiv stamp — divergence silently creates orphan doc dirs
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -411,3 +411,5 @@ this explicitly). So "N agents ingest the same drop" recurs every time the owner
 drops PDFs, and nothing in the pipeline claims ownership of a drain. Worth a
 claim mechanism — a bean claimed before draining, or a marker file — but that is a
 process proposal, not written here.
+
+In-progress in Round 102 PR litlfred/qou#8453.

@@ -1,7 +1,7 @@
 ---
 # qou-cdj8
 title: sync-qou-mass-vendor checks 42 .py and ignores 157 .witness.json — 122 disagree with source on the q0 pin
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -226,3 +226,5 @@ Two facts for whoever picks up step 3:
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+In-progress in Round 102 PR litlfred/qou#8453.

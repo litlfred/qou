@@ -1,7 +1,7 @@
 ---
 # qou-cdjd
 title: 'Sweep verdicts depend on an unrecorded environment: mpmath absent made 55 producers unrunnable and the harness did not say so'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -51,3 +51,5 @@ artifact of the environment, and nothing in the output said so.
 The failure mode is asymmetric: a corpus-wide "nothing is pre-existing stale"
 is precisely the conclusion PR #5519 exists to establish, so this bug fails
 towards the answer that gets believed.
+
+In-progress in Round 102 PR litlfred/qou#8453.

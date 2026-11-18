@@ -1,7 +1,7 @@
 ---
 # qou-cm7l
 title: 'Vacuous-pass assertions: 8 producers compare two zero-initialised counters with no guard'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -263,3 +263,5 @@ needs, and that one of the eight is not really at risk.
 on this container's data. That needs a run each. It does not change which fix
 applies — the fix follows from what zero MEANS, not from whether zero happens
 today.
+
+In-progress in Round 102 PR litlfred/qou#8453.
