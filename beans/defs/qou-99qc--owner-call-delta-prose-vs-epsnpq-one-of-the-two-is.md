@@ -3794,3 +3794,10 @@ Owner asked to explore reading γ(φ)γ(ψ) as an H₃ element rather than as br
 3. Product map has generic rank 6 = dim H₃, so a generic H₃ element is a scalar times some γγ. Reachability does NOT select β_Bor.
 4. γ(φ)² = λβ_Bor has no solution (Gröbner reduces to (q²−1)²(q²+1)²(q⁴+1)=0): two different photons are needed.
 Implication: any nucleon selection in this reading must come from a pre-registered rule on (φ,ψ), the SDP, or the trace functional; p and n on one element cannot be split by moving along the curve. Stays open.
+
+## 2026-11-18 (later) — exact factorisation of β_Bor into two photons (measurement)
+
+Exact in H₃ for generic q (sympy, symbolic; numerically found first at proton q₀, then identified and verified):
+  β_Bor = (σ₀σ₁⁻¹)³ = γ(−qh², 0, qh) · γ(q⁻¹h², 0, −q⁻¹h),  λ = 1,
+and each factor is 1 + ε·h·V with V = σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ (a four-term photon with φ₁ = 0) and ε ∈ {q, −q⁻¹}, the two eigenvalues of σᵢ. Reason: V³ + h²V² − h²V − 1 = (V−1)(V² + (1+h²)V + 1) = 0 in H₃.
+Consequences: the old γγ vertex V lies inside the photon (it is the φ₁=0 direction), so the old grammar is partly recovered from def:photon; the two factors commute (both polynomials in V), so photon order cannot split p from n. No three-term (φ₀₁=0) point found numerically. Not formalised in Lean yet. Stays open.
