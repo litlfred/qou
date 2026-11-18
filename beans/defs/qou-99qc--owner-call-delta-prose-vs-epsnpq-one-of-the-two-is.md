@@ -3905,3 +3905,11 @@ Split (neutron = loop-dressed): (+,+) −0.1764 %, (−,−) −0.1162 %, (+,−
 Only the mixed pairing gives a heavier neutron, and it is the bar-symmetric product (q-powers cancel).
 Measured (m_n−m_p)/m_p = +0.1378 %; mass-level (+,−) ≈ +0.144 %. Mixed pairing NOT derived:
 open whether a closed loop must take one crossing from each factor. Near-match status unchanged.
+
+## PRE-REGISTRATION 2026-11-18 17:45Z — H₅ with e⁺ strand (full four-term photons)
+Strands 0–2 nucleon (β_Bor on σ₀,σ₁), strand 3 e⁻, strand 4 e⁺. The two photon factors act
+on the lepton pair generators: γ(φ)_lep = 1 + φ₀σ₂ + φ₁σ₃ + φ₀₁σ₂σ₃, φ ∈ {φ⁺, φ⁻} from PR #8502.
+Neutron word = β_Bor with γ(φ_a)_lep inserted at slot i and γ(φ_b)_lep at slot j (i<j);
+reference = both inserted adjacent at slot i. Split = tr₅(word)/tr₅(reference) − 1, Markov
+trace at z_D (y = 0 on three-row shapes), proton pin, exact. Report all (a,b) ∈ {+,−}² and all
+slot pairs; no selection. Proton = β_Bor with the same two photons adjacent (= reference).
