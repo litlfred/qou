@@ -3877,3 +3877,11 @@ reference = same two crossings adjacent. Scripts /tmp/claude-0/np/loop4.py, dsym
   ⚠ φ = h² lands within ~4 % of |m_n−m_p|/m_p = 0.138 %, but φ is NOT derived; picking φ = h²
   because it matches would be selection against the target. Sign: entangled element is
   LIGHTER, so "neutron = entangled" gives the wrong sign. Recorded as near-match, not a result.
+
+### Result (2026-11-18 16:35Z) — for the pre-registration above
+- **tr_M at z_D:** identical for all six placements, q²(3q⁴+2q²+3)²/(q²+1)⁶, which is 0.99991206734 at the proton q₀. Reason: n = (σ₀↔σ₁ flip ∘ word reversal)(p), and the trace is invariant under that map. Under this rule the trace cannot split p from n.
+- **Elements:** they differ as elements. For each placement, n is the flip-reverse image of p.
+- **Four-term and switched photon pairs** (the same set): reach all six placements. Measured numerically at q = 11/10; n:u@0 follows from p:d@2 because flip-reverse maps photons to photons. Nothing is selected.
+- **Three-term photon pairs** (φ₀₁ = 0): reach ONLY the placements with the odd quark in the middle (p:d@1, n:u@1). There are two real pairs each, with the same λ for p and n. Exact Gröbner computation at q = 11/10, 13/10 and 3; for the other four placements the Gröbner basis is {1}. The bare β_Bor is NOT reachable this way.
+- **One-term photons:** reach none (only λ = 0).
+- **Scope (a):** this is a measurement under one typing rule, and the C⁻¹ choice for negative crossings is mine. The middle-placement result is not a selection of the nucleon.
