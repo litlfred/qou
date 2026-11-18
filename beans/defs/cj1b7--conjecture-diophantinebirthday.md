@@ -1,7 +1,7 @@
 ---
 # cj1b7
 title: 'Conjecture carrier: DiophantineBirthday (DiophantineBirthday.lean) — §3b, famous-open (aspirational §3b encoding)'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

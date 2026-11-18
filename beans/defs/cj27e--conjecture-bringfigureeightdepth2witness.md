@@ -1,7 +1,7 @@
 ---
 # cj27e
 title: 'Conjecture carrier: BringFigureEightDepth2Witness (BringFigureEightDepth2Witness.lean) — §3b, framework/substrate §3b carrier'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

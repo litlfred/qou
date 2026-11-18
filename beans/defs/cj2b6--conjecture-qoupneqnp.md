@@ -1,7 +1,7 @@
 ---
 # cj2b6
 title: 'Conjecture carrier: QouPNeqNp (QouPNeqNp.lean) — §3b, framework/substrate §3b carrier'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

@@ -1,7 +1,7 @@
 ---
 # cj421
 title: 'Conjecture carrier: ConfinementNfStructureForcing (ConfinementNfStructureForcing.lean) — §3b, framework/substrate §3b carrier'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:
