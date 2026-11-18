@@ -3760,3 +3760,15 @@ Trigger: owner tapped "Re-derive from γ(φ)γ(ψ)" (n–p thread, 2026-11-17 23
 - Not allowed: changing letters, cost, sector or the floor after seeing results; choosing among tied words by Q_β or any mass.
 - Downstream: χ₃/χ₂₁/χ₁₁₁ of the selected element go to the Q_β ε thread; the words go to the n–p thread. Q_β = 0.4491 MeV stays provisional.
 Bean stays OPEN.
+
+### RESULT 2026-11-18 — stage 7 reselection from γ(φ)γ(ψ) (γγ thread, branch claude/gg-photon-product-selection-2026-11-18, commit 68ef4b266)
+Run under the 04:30Z pre-registration: proton pin, convention D, words up to 12 crossings. Near-zero characters were decided exactly with symbolic q. This replaces the pre-registered 120 dps check, which the engine cannot do; the exact test is stronger.
+
+Rule A (pair terms): 8007 braids, 2578 feasible, minimum cost 2. Selected: σ₀² and σ₁², a tie. Both close to a split link (Hopf link plus unknot).
+- χ₍₃₎ = q² ≈ 1.2321, χ₍₂₁₎ ≈ 2.0437, χ₍₁₁₁₎ = q⁻² ≈ 0.8117. The last is unconstrained, since y₍₁³₎ = 0.
+
+Rule B (all terms, comparison): minimum is σ₁ (cost 1).
+
+So this grammar and this rule select no nucleon-like element, and β_Bor (writhe 0) cannot be reached. Scope (a). The nucleon element stays underived, and Q_β 0.4491 MeV stays provisional. The owner's card on which letters to use (pair terms / all terms / keep V) is open.
+
+Bean stays OPEN.
