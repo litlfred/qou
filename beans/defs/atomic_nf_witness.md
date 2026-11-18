@@ -1,7 +1,7 @@
 ---
 # atomic_nf_witness
 title: atomic nf witness missing hypotheses
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

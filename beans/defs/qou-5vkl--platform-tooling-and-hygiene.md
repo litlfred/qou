@@ -1,7 +1,7 @@
 ---
 # qou-5vkl
 title: Platform, tooling and hygiene
-status: todo
+status: in-progress
 type: milestone
 tags:
     - reorg-2026-10-04

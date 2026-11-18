@@ -1,7 +1,7 @@
 ---
 # 3t8p
 title: CI live lake build to score proof-build-green/no-axiom-growth/lean-compiles
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

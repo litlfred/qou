@@ -1,7 +1,7 @@
 ---
 # adhb
 title: 'Data-integrity: He3 R5 witness multi-term-cost re-run (regen winner diverged)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

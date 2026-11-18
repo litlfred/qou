@@ -1,7 +1,7 @@
 ---
 # b0vf
 title: 'Data-integrity: chi-helium-4-h12-at-q0-50dps.witness.json only 17/77 complete (22%) — needs He4 H12 chi producer re-run'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
