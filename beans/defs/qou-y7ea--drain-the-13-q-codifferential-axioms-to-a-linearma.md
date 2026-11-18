@@ -1,13 +1,13 @@
 ---
 # qou-y7ea
 title: Drain the 13 q-codifferential axioms to a LinearMap-bundled structure
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T12:09:52Z
-updated_at: 2026-10-04T15:12:24Z
+updated_at: 2026-11-18T10:36:00Z
 parent: qou-6qbv
 ---
 
@@ -81,3 +81,10 @@ context — nothing imports `QOU.QuantumGeometry`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-11-18 — Round 67 PR #8429 (`claude/round67-devacuify-6qbv-b9cj`)
+
+- PR: https://github.com/litlfred/qou/pull/8429 (`309fbd8f12dcf4d789f3437e4bedf0425965e331`, C1 `202ce0a6f5124bc5df548850fb8706709c33eae1`)
+- Probe: `computations/probes/round67_devacuify_6qbv_b9cj_probe.py` (`scriptHash = scriptSha256 = 33016f917e977bd9e4a22e14e192b44ea617b7cd335221741598e8aee1a1a640`, `dps = 80`, `allPassed = true`)
+- Directory-mode static audits: `0 CRITICAL, 0 major, 0 advisory` across all 6 scripts; `0` `sorry` and `0` `axiom`.
