@@ -1,0 +1,63 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-80bn",
+    "qou-83il",
+    "qou-83o7",
+    "qou-866k",
+    "qou-89w7"
+  ],
+  "checks": {
+    "qou_80bn_pentagon_provenance": {
+      "beanId": "qou-80bn",
+      "cleanedUploadCount": 1,
+      "passed": true,
+      "pentagonFactorInsertion": 1,
+      "qDilogShiftResidual": "4.290363725160525117801545e-81",
+      "reconciledDoiChecksum": 199409427,
+      "reference": "faddeev_kashaev1994"
+    },
+    "qou_83il_universal_octahedral_link": {
+      "beanId": "qou-83il",
+      "lobachevskyPiOver4": "0.4579827970886095075273017574661920553871",
+      "passed": true,
+      "quarterBlockVolume": "0.9159655941772190150546035149323841107741",
+      "reference": "kegel2024",
+      "residualVsEightCatalan": "0.0",
+      "singleOctahedronVolume": "3.663862376708876060218414059729536443097",
+      "universalLinkComplementVolume": "7.327724753417752120436828119459072886193"
+    },
+    "qou_83o7_single_valued_dilog": {
+      "D_z": "0.9669091268883244761214847752658013460511",
+      "beanId": "qou-83o7",
+      "fiveTermResidual": "0.0",
+      "inversionResidual": "1.054219794323052322434857e-81",
+      "passed": true,
+      "reference": "zagier-dilogarithm",
+      "reflectionResidual": "0.0",
+      "totalAuditedLocators": 4
+    },
+    "qou_866k_fake_curvature_transport": {
+      "beanId": "qou-866k",
+      "flatHolonomyDrift": "0.0",
+      "nonflatHolonomyDrift": "0.176776695296636875",
+      "passed": true,
+      "reference": "baez-schreiber2007"
+    },
+    "qou_89w7_bilateral_theta_ellipticity": {
+      "beanId": "qou-89w7",
+      "passed": true,
+      "qShiftEllipticResidual1": "2.052516124756011732375059e-80",
+      "qShiftEllipticResidual2": "1.494846866853497123646191e-80",
+      "reference": "morita2012b",
+      "stokesThetaRatioAbs": "0.9394592900035552629154499291387927628696"
+    }
+  },
+  "dps": 80,
+  "mpmathDps": 80,
+  "round": 81,
+  "scriptCommitSha": "01bd396c2694d18adb16922b2eead5903dd4a322",
+  "scriptHash": "cd86c707aa678e80b1b6631a404920b5327a8ffda1aba3866049473984466395",
+  "scriptPath": "computations/probes/round81_pentagon_octahedral_dilog_fakecurv_bilateral_probe.py",
+  "scriptSha256": "cd86c707aa678e80b1b6631a404920b5327a8ffda1aba3866049473984466395"
+}
