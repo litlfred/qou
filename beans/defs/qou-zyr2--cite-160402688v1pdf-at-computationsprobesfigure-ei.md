@@ -1,7 +1,8 @@
 ---
 # qou-zyr2
 title: Cite 1604.02688v1.pdf at computations/probes/figure_eight_3d_index.py
-status: todo
+status: in-progress
+pr: 8445
 type: task
 priority: normal
 tags:

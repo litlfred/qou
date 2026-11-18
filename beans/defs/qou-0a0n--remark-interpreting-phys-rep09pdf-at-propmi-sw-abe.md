@@ -1,7 +1,8 @@
 ---
 # qou-0a0n
 title: Remark interpreting phys-rep09.pdf at prop:mi-sw-abelianisation
-status: todo
+status: in-progress
+pr: 8445
 type: task
 priority: normal
 tags:

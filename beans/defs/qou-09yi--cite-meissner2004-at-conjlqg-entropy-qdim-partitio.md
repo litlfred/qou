@@ -1,7 +1,8 @@
 ---
 # qou-09yi
 title: Cite [meissner2004] at conj:lqg-entropy-qdim-partition-pole
-status: todo
+status: in-progress
+pr: 8445
 type: task
 priority: normal
 tags:

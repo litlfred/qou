@@ -1,7 +1,8 @@
 ---
 # qou-ztha
 title: Remark interpreting 6gtx-j455.pdf at content/bib-qa-verifications.json
-status: todo
+status: in-progress
+pr: 8445
 type: task
 priority: normal
 tags:

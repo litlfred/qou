@@ -1,7 +1,8 @@
 ---
 # qou-0irt
 title: Remark interpreting [dappiaggi2024] at rem:cfs-comparison-summary
-status: todo
+status: in-progress
+pr: 8445
 type: task
 priority: normal
 tags:
