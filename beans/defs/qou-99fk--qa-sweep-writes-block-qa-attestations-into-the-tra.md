@@ -1,7 +1,7 @@
 ---
 # qou-99fk
 title: qa-sweep writes block-qa attestations into the TRACKED test/attestations store -- undeclared and unignored
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-10-10T07:37:59Z
@@ -170,3 +170,5 @@ Owner decision 6a (ofri, 2026-10-10): leave `test/attestations/` and the in-tree
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-5vkl`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+In-progress in Round 98 PR litlfred/qou#8442.

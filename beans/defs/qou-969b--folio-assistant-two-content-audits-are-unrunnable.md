@@ -1,7 +1,7 @@
 ---
 # qou-969b
 title: 'folio-assistant: two content audits are unrunnable against a multi-paper folio'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -71,3 +71,5 @@ than per-block sidecar entries. Those witnesses cannot be regenerated from a mul
 
 The bug and its one-argument fix are unchanged. Only the impact claim shrinks: it costs the
 corpus-wide witnesses, not the per-block verdicts.
+
+In-progress in Round 98 PR litlfred/qou#8442.

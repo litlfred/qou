@@ -1,7 +1,7 @@
 ---
 # qou-8vyi
 title: Evaluate user request for mathematical derivation vs empirical fit
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -16,3 +16,5 @@ parent: qou-5vkl
 ## Parented 2026-11-15 (owner-approved bean triage)
 
 Parent `(none)` → `qou-5vkl`. The old parent was missing or absent, so the bean had no epic; this attaches it to the subtree its subject belongs to. No other field changed.
+
+In-progress in Round 98 PR litlfred/qou#8442.

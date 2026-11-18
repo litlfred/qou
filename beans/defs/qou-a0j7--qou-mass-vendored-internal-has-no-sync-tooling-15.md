@@ -1,7 +1,7 @@
 ---
 # qou-a0j7
 title: 'qou-mass vendored _internal has no sync tooling: 15 hand-copied files, canonical_braid_crossings confirmed stale'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -128,3 +128,5 @@ it is not shipping wrong physics, it is unreachable.
 (6.88e-4, every mixed nuclide) for a code path I had never executed. The
 grep showed a stale classifier and I inferred the rest. One import would have
 corrected it, and I escalated to the owner twice instead.
+
+In-progress in Round 98 PR litlfred/qou#8442.

@@ -1,7 +1,7 @@
 ---
 # qou-a28x
 title: 'AXIS: witness-substitution -- 217 blocks quote numbers no declared witness carries'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -490,3 +490,5 @@ scoped as its own bean rather than pursued by tightening this one.
 **No further declarations made.** Batch-declaring the WEAK bucket would have
 attached eleven false sources that this axis could never afterwards detect,
 which is the failure mode the whole triage exists to prevent.
+
+In-progress in Round 98 PR litlfred/qou#8442.
