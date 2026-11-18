@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0",
+  "probeId": "torus-knot-flavor-confinement-mirror-word-readout-mass-endomorphism-probe",
+  "beans": [
+    "qou-25nb",
+    "qou-33tf",
+    "qou-hlxt",
+    "qou-qs1x",
+    "qou-urh2"
+  ],
+  "scriptFile": "computations/probes/torus_knot_flavor_confinement_mirror_word_readout_mass_endomorphism_probe.py",
+  "scriptHash": "badce38a5946476fd04e9d0c3fc06576fd9b24507a974e63607d822194650d4a",
+  "scriptSha256": "badce38a5946476fd04e9d0c3fc06576fd9b24507a974e63607d822194650d4a",
+  "scriptCommitSha": "f494d01896da75c84373202c0627a3b1723fa3dd",
+  "dps": 80,
+  "durationMs": 8,
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-25nb-torus-knot-qint-alexander-identity-and-reading-split",
+      "bean": "qou-25nb",
+      "description": "[n]_q - [n-1]_q matches Delta_{T(2,2n-1)}(q) to <1e-75 at q0 for n=2,3,4; crossing sum 3+5+7=15; dictionary readings 3+4+2=9",
+      "rungs": [
+        {
+          "n": 2,
+          "torusKnot": "T(2,3)",
+          "qIntDiffAtQ0": "1.000002571581951808841861580065586491202",
+          "alexanderAtQ0": "1.000002571581951808841861580065586491202",
+          "absError": "6.198812390619547655916961542146771176533e-79"
+        },
+        {
+          "n": 3,
+          "torusKnot": "T(2,5)",
+          "qIntDiffAtQ0": "1.000007714752468460260453712863318772772",
+          "alexanderAtQ0": "1.000007714752468460260453712863318772772",
+          "absError": "4.807242262113118590302949767379128667516e-79"
+        },
+        {
+          "n": 4,
+          "torusKnot": "T(2,7)",
+          "qIntDiffAtQ0": "1.000015429524776038731472543018383419076",
+          "alexanderAtQ0": "1.000015429524776038731472543018383419076",
+          "absError": "6.240981182392469748814355838351851252564e-79"
+        }
+      ],
+      "maxAbsError": "6.240981182392469748814355838351851252564e-79",
+      "threeRungCrossingSum": 15,
+      "dictionaryReadingTotal": 9,
+      "passed": true
+    },
+    {
+      "id": "qou-33tf-confinement-universality-reading-b-empty-sigma-preimage",
+      "bean": "qou-33tf",
+      "description": "Proton net flavour +1 and neutron -1 vs sigma-photon pair net flavour 0 give target gap 2 and preimage size 0",
+      "protonNetFlavour": 1,
+      "neutronNetFlavour": -1,
+      "sigmaPhotonNetFlavour": 0,
+      "targetGap": 2,
+      "sigmaPreimageCount": 0,
+      "passed": true
+    },
+    {
+      "id": "qou-hlxt-mirror-inversion-positron-vs-d-flavour-tension",
+      "bean": "qou-hlxt",
+      "description": "Colour-tube contact sign span 2*(1-0)+(0-(-1))=3, mixed vs anti gap 1, source balance 1, and half-step shift ratio 2",
+      "contactSignSpan": 3,
+      "mixedMinusAntiSign": 1,
+      "sourceBalance": 1,
+      "sigmaInvShiftAtQ0": "0.003207231581951808841861580065586491202448",
+      "avgCrossingShiftAtQ0": "0.001603615790975904420930790032793245601224",
+      "passed": true
+    },
+    {
+      "id": "qou-qs1x-word-readout-alternating-vs-builder-distinct-vectors",
+      "bean": "qou-qs1x",
+      "description": "Alternating word sigma_0 sigma_1 sigma_0 yields 8 distinct h^1 NF vectors vs 6 for builder word sigma_0 sigma_0 sigma_1 (2 merged pairs)",
+      "alternatingDistinctCount": 8,
+      "builderDistinctCount": 6,
+      "mergedPairCount": 2,
+      "wordPlacementReadoutLoss": 4,
+      "passed": true
+    },
+    {
+      "id": "qou-urh2-mass-endomorphism-regular-vs-module-trace-difference",
+      "bean": "qou-urh2",
+      "description": "Regular trace minus module trace on 3-strand algebra equals 2*t_std both symbolically (12 - 6 = 6) and at q0 (<1e-75)",
+      "trRegInt": 12,
+      "trModInt": 6,
+      "trRegAtQ0": "-0.01924339773936970446976161319125122878387",
+      "trModAtQ0": "-0.01282893457546608678603845306007824637897",
+      "trDiffAtQ0": "-0.006414463163903617683723160131172982404897",
+      "expectedTwoTStdAtQ0": "-0.006414463163903617683723160131172982404897",
+      "passed": true
+    }
+  ]
+}
