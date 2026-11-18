@@ -1,0 +1,68 @@
+{
+  "probe": "qou_10v9_fi93_k6ks_pwd4_tvsp_v1jg_probe.py",
+  "beans": [
+    "qou-fi93",
+    "qou-k6ks",
+    "qou-pwd4",
+    "qou-tvsp",
+    "qou-v1jg"
+  ],
+  "dps": 80,
+  "scriptHash": "32cd5195e0b793e3a2ed4b027a4e80fc95adcddbc6bfbed0f44ad7f0cd0b9ba0",
+  "scriptSha256": "32cd5195e0b793e3a2ed4b027a4e80fc95adcddbc6bfbed0f44ad7f0cd0b9ba0",
+  "scriptCommitSha": "632c28181f26fab222a76f25e7c16476f40a49bc",
+  "generatedAt": "2026-11-18T12:11:19.930152+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-fi93-colour-curve-bar-defect-and-half-step-split",
+      "bean": "qou-fi93",
+      "description": "r(z) - r(-z) = (10/27)*z*(4*z^2 + 3) and q - q^{-1} = (u - u^{-1})*(u + u^{-1}) to 80 dps",
+      "barDefect": "0.11769106565270168271943297808085695723645256419370855178851633612211964597787549",
+      "factoredDefect": "0.11769106565270168271943297808085695723645256419370855178851633612211964597787549",
+      "relativeAsymmetry": "0.078289407495070682983434960582655987316679731378885032776370266499062486542823076",
+      "absError": "2.7673269600980123463915006884583799895238648628717332318954127940908878763795619e-81",
+      "passed": true
+    },
+    {
+      "id": "qou-k6ks-quasi-zero-context-discharge",
+      "bean": "qou-k6ks",
+      "description": "Context (1, -1) recovers -a exactly over characteristic != 2 while Fin 2 has a = 1 as a quasi-zero",
+      "sampleValue": "3.75",
+      "contextProductAtNegOne": "-3.75",
+      "absError": "0.0",
+      "fin2QuasiZeroVerified": 1,
+      "passed": true
+    },
+    {
+      "id": "qou-pwd4-nonfree-module-syzygy",
+      "bean": "qou-pwd4",
+      "description": "Non-free module relation y3*x3 - (y2*x2 + y1*x1) vanishes on non-zero generator triple (1,1,1)",
+      "syzygyResidual": "0.0",
+      "rankDefect": 1,
+      "passed": true
+    },
+    {
+      "id": "qou-tvsp-truncated-polynomial-ring-dimensions",
+      "bean": "qou-tvsp",
+      "description": "Truncated 3-variable ground ring K_p has basis dimension p^3 = 8, 27, 125 at p = 2, 3, 5",
+      "dimP2": 8,
+      "dimP3": 27,
+      "dimP5": 125,
+      "annihilatorExpP2": 1,
+      "annihilatorExpP3": 2,
+      "annihilatorExpP5": 4,
+      "passed": true
+    },
+    {
+      "id": "qou-v1jg-interface-polynomial-and-barrier-divergence",
+      "bean": "qou-v1jg",
+      "description": "4*q^2 - 5*q + 4 = ((8*q - 5)^2 + 39)/16 >= 39/16 > 0 and Vol(4_1)/hbar_q^2 diverges as q -> 1",
+      "quadraticFactorAtQ0": "3.3783879119891730114990032274073104512756477127650170434816916584551855201398481",
+      "completedSquareAtQ0": "3.3783879119891730114990032274073104512756477127650170434816916584551855201398481",
+      "barrierRatioAt1p0001": "203028920.97607032396854860899948014654881610096173978545577810495456877270389225",
+      "absError": "4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "passed": true
+    }
+  ]
+}
