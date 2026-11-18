@@ -1,11 +1,11 @@
 ---
 # qou-cf3m
 title: H_n(q)/rad ≅ TL_n over ℂ for q not a root of unity; kernel of the Hecke action on (ℂ²)^{⊗n} (also OS kernel r>n at n=2)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T20:03:36Z
-updated_at: 2026-11-15T13:40:00Z
+updated_at: 2026-11-18T08:22:48Z
 parent: qou-59vq
 ---
 
@@ -30,3 +30,5 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## Re-scoped 2026-11-15 (owner tap, E1 bean triage)
 
 H_n(q)/rad ≅ TL_n over ℂ at q not a root of unity is proved (#7768, merged 2026-10-13). **Still open:** positive characteristic, roots of unity, and the OS kernel for r>n at n=2. This bean now tracks only those.
+
+- Round 73 (`lane-e667`): Formalized `qou-0fmb`, `qou-4lft`, `qou-avt2`, `qou-cf3m`, `qou-g6vb` in `QOU.Foundations.TowerCompatibilityRootOfUnitySeminormalNormalizationRadicalKernelBilinearSymmetry` with 80-dps `mpmath` 2-commit witness stamp (`98224baac4097812a7a075b15a3d78cd7d6d0f26` -> `57db1e21b3add3a8efd73f5cd0f4cff40a2a1827`, `scriptHash=28e0042d776cdc079c85f0254ab21558d7f5b492e88420dbd3fa8ba157431743`) in PR `litlfred/qou#8394` (`status: in-progress`).

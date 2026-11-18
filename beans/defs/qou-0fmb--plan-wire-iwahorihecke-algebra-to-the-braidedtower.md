@@ -1,13 +1,13 @@
 ---
 # qou-0fmb
 title: 'PLAN: wire IwahoriHecke algebra to the BraidedTower theorem (#7153) -- discharge qou-301d instance (growing filtration + h!=0)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T11:54:27Z
-updated_at: 2026-10-12T20:35:49Z
+updated_at: 2026-11-18T08:22:48Z
 parent: qou-59vq
 ---
 
@@ -421,3 +421,5 @@ Verification: lean-direct `-DautoImplicit=false -s 65536` exit 0, 0 warnings, ag
 Hypotheses `[Field K]`, `q ≠ 0`, `q²+1 ≠ 0`. lean-direct `-DautoImplicit=false -s 65536` exit 0, 0 warnings, against a shadow with every cone module rebuilt from branch source (27 + the 3 new). `#print axioms` on 28 decls: ⊆ `[propext, Classical.choice, Quot.sound]`; 0 sorry.
 
 **What this does NOT close, so the bean stays `todo` (§13a):** (1) faithfulness — the trace is the tensor-model (two-row TL) trace, not faithful; (2) the level maps into `CoxLim` are not shown injective (`H n` is an image; cf. qou-ejde); (3) the `Set.univ`-indexed `Defn.IwahoriHecke` / `TypeA.IwahoriHeckeOfSn` are not touched — the Coxeter tower here is the `HeckeAlgebra K Q (Aₙ n)` family. If the owner reads the title as satisfied by the `HeckeAlgebra (Aₙ n)` tower, the remaining items are (1)–(2), which are the subjects of other beans.
+
+- Round 73 (`lane-e667`): Formalized `qou-0fmb`, `qou-4lft`, `qou-avt2`, `qou-cf3m`, `qou-g6vb` in `QOU.Foundations.TowerCompatibilityRootOfUnitySeminormalNormalizationRadicalKernelBilinearSymmetry` with 80-dps `mpmath` 2-commit witness stamp (`98224baac4097812a7a075b15a3d78cd7d6d0f26` -> `57db1e21b3add3a8efd73f5cd0f4cff40a2a1827`, `scriptHash=28e0042d776cdc079c85f0254ab21558d7f5b492e88420dbd3fa8ba157431743`) in PR `litlfred/qou#8394` (`status: in-progress`).

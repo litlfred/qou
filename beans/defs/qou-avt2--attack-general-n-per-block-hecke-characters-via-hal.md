@@ -1,13 +1,13 @@
 ---
 # qou-avt2
 title: 'ATTACK 2: general-n per-block Hecke characters via Halverson-Ram / Jing-Liu'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-10-04T15:11:55Z
+updated_at: 2026-11-18T08:22:48Z
 parent: qou-59vq
 ---
 
@@ -110,3 +110,5 @@ qou-kwoa — that probe asserts the identity and will fail loudly.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-02 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- Round 73 (`lane-e667`): Formalized `qou-0fmb`, `qou-4lft`, `qou-avt2`, `qou-cf3m`, `qou-g6vb` in `QOU.Foundations.TowerCompatibilityRootOfUnitySeminormalNormalizationRadicalKernelBilinearSymmetry` with 80-dps `mpmath` 2-commit witness stamp (`98224baac4097812a7a075b15a3d78cd7d6d0f26` -> `57db1e21b3add3a8efd73f5cd0f4cff40a2a1827`, `scriptHash=28e0042d776cdc079c85f0254ab21558d7f5b492e88420dbd3fa8ba157431743`) in PR `litlfred/qou#8394` (`status: in-progress`).

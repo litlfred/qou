@@ -1,13 +1,13 @@
 ---
 # qou-4lft
 title: 'SW-10: the root-of-unity regime — H_n(q) at q^2 = 1, where seminormal form fails'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T13:43:42Z
-updated_at: 2026-10-04T15:24:39Z
+updated_at: 2026-11-18T08:22:48Z
 parent: qou-59vq
 ---
 
@@ -102,3 +102,5 @@ generalising to twenty. The true count is **1**. It does not change the conclusi
 one hit is a comment saying the stack is the q = 1 specialisation, which supports it —
 but the number I gave was wrong, and the `(q :` binder count is the measurement that
 actually decides the question.
+
+- Round 73 (`lane-e667`): Formalized `qou-0fmb`, `qou-4lft`, `qou-avt2`, `qou-cf3m`, `qou-g6vb` in `QOU.Foundations.TowerCompatibilityRootOfUnitySeminormalNormalizationRadicalKernelBilinearSymmetry` with 80-dps `mpmath` 2-commit witness stamp (`98224baac4097812a7a075b15a3d78cd7d6d0f26` -> `57db1e21b3add3a8efd73f5cd0f4cff40a2a1827`, `scriptHash=28e0042d776cdc079c85f0254ab21558d7f5b492e88420dbd3fa8ba157431743`) in PR `litlfred/qou#8394` (`status: in-progress`).
