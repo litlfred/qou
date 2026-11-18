@@ -1,7 +1,7 @@
 ---
 # qou-l7j1
 title: 'GAP (detector): the sqrt(q)/(q+1) spelling is unseen, and a fully-C file hides its own C closed forms'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-omiu
 title: 'check-sidecars JUST regex: bare ≤/≥ make ℕ index comparisons read as archimedean (§7c false positive)'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

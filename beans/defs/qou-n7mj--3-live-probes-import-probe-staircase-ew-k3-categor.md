@@ -1,7 +1,7 @@
 ---
 # qou-n7mj
 title: 3 live probes import probe_staircase_ew_k3_categorical from _deprecated/
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

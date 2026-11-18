@@ -1,7 +1,7 @@
 ---
 # qou-enyo
 title: Inspect the residual shadow stubs the mechanical drain cannot clear
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

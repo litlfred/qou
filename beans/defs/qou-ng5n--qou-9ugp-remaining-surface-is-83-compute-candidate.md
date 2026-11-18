@@ -1,7 +1,7 @@
 ---
 # qou-ng5n
 title: qou-9ugp remaining surface is 83 COMPUTE candidates, not the 48 reported — 35 in computations/ top level are counted nowhere
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
