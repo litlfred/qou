@@ -1,7 +1,7 @@
 ---
 # qou-fs87
 title: Cite 0304010v1.pdf at prop:q-plancherel-asymptotic-skeleton
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

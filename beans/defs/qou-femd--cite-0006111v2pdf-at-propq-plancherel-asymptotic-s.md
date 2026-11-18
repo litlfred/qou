@@ -1,7 +1,7 @@
 ---
 # qou-femd
 title: Cite 0006111v2.pdf at prop:q-plancherel-asymptotic-skeleton
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

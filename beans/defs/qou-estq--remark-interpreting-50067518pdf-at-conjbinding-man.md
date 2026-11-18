@@ -1,7 +1,7 @@
 ---
 # qou-estq
 title: Remark interpreting 50067518.pdf at conj:binding-manybody-eq-jet-filtration
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

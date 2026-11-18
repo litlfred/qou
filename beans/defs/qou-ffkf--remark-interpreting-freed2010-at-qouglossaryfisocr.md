@@ -1,7 +1,7 @@
 ---
 # qou-ffkf
 title: Remark interpreting [freed2010] at QOU.Glossary.FIsocrystal
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-hp9s
 title: Remark interpreting CuspShapes.pdf at prop:cusp-shape-bar-parity
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
