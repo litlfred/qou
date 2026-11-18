@@ -1,7 +1,7 @@
 ---
 # qou-5m9w
 title: Remark interpreting 2402.04839v2.pdf at fundamental-knots-operator-basis
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

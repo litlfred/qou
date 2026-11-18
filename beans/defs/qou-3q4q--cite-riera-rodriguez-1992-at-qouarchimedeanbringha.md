@@ -1,7 +1,7 @@
 ---
 # qou-3q4q
 title: Cite [riera-rodriguez-1992] at QOU.Archimedean.BringHauptmodulGate
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

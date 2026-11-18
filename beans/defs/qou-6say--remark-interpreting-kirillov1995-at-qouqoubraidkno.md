@@ -1,7 +1,7 @@
 ---
 # qou-6say
 title: Remark interpreting [kirillov1995] at qou:QOU.BraidKnot.Li2qUniqueness
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
