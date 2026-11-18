@@ -1,7 +1,7 @@
 ---
 # moqg
 title: 'Borromean stage 1 colored-Jones tower (ref: Habiro [H1] simple links, NOT Masbaum math/0306345 which is twist knots) — BLOCKED on R-matrix inverse at color>=3'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

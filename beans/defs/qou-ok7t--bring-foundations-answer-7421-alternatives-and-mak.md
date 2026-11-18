@@ -1,7 +1,7 @@
 ---
 # qou-ok7t
 title: 'Bring foundations: answer #7421-alternatives and make 3 content edits'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-11-17T23:08:25Z
 updated_at: 2026-11-17T23:08:25Z
