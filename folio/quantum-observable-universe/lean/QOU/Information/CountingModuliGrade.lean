@@ -87,9 +87,11 @@ def physicalCost : ℕ → ℕ := fun n => resolutionTreeSize (3 * n)
 /-- **The physical cost is ω-super-polynomial (sorry-free, unconditional).**
     Directly from `qou_physical_intractability_unconditional` at bandwidth
     `B = 1`: the `3^{3n}` tree dominates every polynomial. -/
-theorem physicalCost_superPoly : SuperPolynomial physicalCost :=
-  qou_physical_intractability_unconditional 1 (by norm_num) physicalCost
-    (fun n => by simp [physicalCost])
+theorem physicalCost_superPoly : SuperPolynomial physicalCost := by
+  refine qou_physical_intractability_unconditional 1 ?_ physicalCost ?_
+  · norm_num
+  · intro n
+    simp [physicalCost]
 
 /-- **The boundary moduli point is in the hard stratum (sorry-free).**  Any cost
     family whose fiber at `m` is the physical boundary cost has `m` in its hard
@@ -147,5 +149,32 @@ class PhotonicDecisionHard (decisionCost : M → ℕ → ℕ) : Prop where
 theorem not_familyPolyBounded_decision_of_bridge (decisionCost : M → ℕ → ℕ)
     [H : PhotonicDecisionHard decisionCost] : ¬ FamilyPolyBounded decisionCost :=
   not_familyPolyBounded_of_hardStratum_nonempty H.hard_point
+
+/-- Any machine `t` with ω-super-polynomial intrinsic cost maps under a
+    `PhotonicEncoding` to a moduli point `enc.encode t` in `HardStratum cost`. -/
+theorem PhotonicEncoding.encode_mem_hardStratum {cost : M → ℕ → ℕ}
+    (enc : PhotonicEncoding M cost) {t : ℕ}
+    (ht : SuperPolynomial (enc.machineCost t)) :
+    enc.encode t ∈ HardStratum cost :=
+  ht.of_le (enc.charges t)
+
+/-- If a `PhotonicEncoding` encodes even a single machine `t` whose intrinsic
+    counting cost is ω-super-polynomial, then the moduli cost family `cost` is
+    not uniformly polynomially bounded. -/
+theorem PhotonicEncoding.not_familyPolyBounded_of_superPoly_machine
+    {cost : M → ℕ → ℕ} (enc : PhotonicEncoding M cost) {t : ℕ}
+    (ht : SuperPolynomial (enc.machineCost t)) :
+    ¬ FamilyPolyBounded cost :=
+  not_familyPolyBounded_of_hardPoint (enc.encode_mem_hardStratum ht)
+
+/-- Specializing `PhotonicEncoding.encode_mem_hardStratum` to any machine `t`
+    whose intrinsic cost is `physicalCost` lands `enc.encode t` in `HardStratum cost`. -/
+theorem PhotonicEncoding.encode_physical_mem_hardStratum
+    {cost : M → ℕ → ℕ} (enc : PhotonicEncoding M cost) {t : ℕ}
+    (ht : enc.machineCost t = physicalCost) :
+    enc.encode t ∈ HardStratum cost := by
+  apply enc.encode_mem_hardStratum
+  rw [ht]
+  exact physicalCost_superPoly
 
 end QOU.Information

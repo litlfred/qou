@@ -60,4 +60,51 @@ theorem qcollatz_period4_EOOO {R : Type*} [CommRing R] (q P0 P1 P2 P3 : R)
   linear_combination -((q + 1) ^ 3 * h1 + (q ^ 2 + q + 1) ^ 2 * h2
     + (q + 1) * (q ^ 2 + q + 1) * h3 + (q + 1) ^ 2 * h4)
 
+/-- Over an integral domain where `2q² + 3q + 2 ≠ 0`, any `EOEO` 4-cycle forces
+    `q · P₁ = 1` (so `P₁ = q⁻¹` is the fundamental 2-cycle traversed twice). -/
+theorem qcollatz_period4_EOEO_reduces_to_two_cycle {R : Type*} [CommRing R] [IsDomain R]
+    (q P0 P1 P2 P3 : R) (hd : 2 * q ^ 2 + 3 * q + 2 ≠ 0)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = (q ^ 2 + q + 1) * P1 + 1)
+    (h3 : P3 * (q + 1) = P2)
+    (h4 : P0 * (q + 1) = (q ^ 2 + q + 1) * P3 + 1) :
+    q * P1 = 1 := by
+  have heq := qcollatz_period4_EOEO q P0 P1 P2 P3 h1 h2 h3 h4
+  have hfac : (2 * q ^ 2 + 3 * q + 2) * (q * P1 - 1) = 0 := by
+    linear_combination heq
+  rcases mul_eq_zero.mp hfac with h0 | h0
+  · exact absurd h0 hd
+  · linear_combination h0
+
+/-- Height obstruction at `q = 1` for word `EEEO`: if `φ : R →+* ℤ` evaluates `q` to `1`,
+    then `qcollatz_period4_EEEO` maps to `13 · φ(P₃) = 1` in `ℤ`, which has no solution. -/
+theorem qcollatz_period4_EEEO_no_cycle_at_one {R : Type*} [CommRing R]
+    (φ : R →+* ℤ) (q : R) (hq1 : φ q = 1) (P0 P1 P2 P3 : R)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = P1) (h3 : P3 * (q + 1) = P2)
+    (h4 : P0 * (q + 1) = (q ^ 2 + q + 1) * P3 + 1) : False := by
+  have heq := congrArg φ (qcollatz_period4_EEEO q P0 P1 P2 P3 h1 h2 h3 h4)
+  simp only [map_mul, map_add, map_pow, map_one, map_ofNat, hq1] at heq
+  omega
+
+/-- Height obstruction at `q = 1` for word `EEOO`: if `φ : R →+* ℤ` evaluates `q` to `1`,
+    then `qcollatz_period4_EEOO` maps to `7 · φ(P₂) = 5` in `ℤ`, which has no solution. -/
+theorem qcollatz_period4_EEOO_no_cycle_at_one {R : Type*} [CommRing R]
+    (φ : R →+* ℤ) (q : R) (hq1 : φ q = 1) (P0 P1 P2 P3 : R)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = P1)
+    (h3 : P3 * (q + 1) = (q ^ 2 + q + 1) * P2 + 1)
+    (h4 : P0 * (q + 1) = (q ^ 2 + q + 1) * P3 + 1) : False := by
+  have heq := congrArg φ (qcollatz_period4_EEOO q P0 P1 P2 P3 h1 h2 h3 h4)
+  simp only [map_mul, map_add, map_pow, map_ofNat, hq1] at heq
+  omega
+
+/-- Height obstruction at `q = 1` for word `EOOO`: if `φ : R →+* ℤ` evaluates `q` to `1`,
+    then `qcollatz_period4_EOOO` maps to `11 · φ(P₁) = -19` in `ℤ`, which has no solution. -/
+theorem qcollatz_period4_EOOO_no_cycle_at_one {R : Type*} [CommRing R]
+    (φ : R →+* ℤ) (q : R) (hq1 : φ q = 1) (P0 P1 P2 P3 : R)
+    (h1 : P1 * (q + 1) = P0) (h2 : P2 * (q + 1) = (q ^ 2 + q + 1) * P1 + 1)
+    (h3 : P3 * (q + 1) = (q ^ 2 + q + 1) * P2 + 1)
+    (h4 : P0 * (q + 1) = (q ^ 2 + q + 1) * P3 + 1) : False := by
+  have heq := congrArg φ (qcollatz_period4_EOOO q P0 P1 P2 P3 h1 h2 h3 h4)
+  simp only [map_mul, map_add, map_sub, map_neg, map_pow, map_one, map_ofNat, hq1] at heq
+  omega
+
 end QOU.AppendixSurreals

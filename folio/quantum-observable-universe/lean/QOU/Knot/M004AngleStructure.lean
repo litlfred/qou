@@ -217,4 +217,34 @@ real degree of freedom, not an empty set. -/
 theorem GA_on_line (t : ℝ) : GA t (1 - 2*t) t (1 - 2*t) t t :=
   { tet₁ := by ring, tet₂ := by ring, edge₁ := by ring, edge₂ := by ring }
 
+/-- **Orbit-averaging identity onto the fixed line.**
+    For any feasible angle structure `GA α₁ β₁ γ₁ α₂ β₂ γ₂`, averaging the four
+    `(1, σ, τ, στ)`-conjugate coordinates `t = (α₁ + γ₁ + β₂ + γ₂) / 4` and the
+    two conjugate middle angles `(β₁ + α₂) / 2` automatically satisfies the
+    fixed-line relation `(β₁ + α₂) / 2 = 1 - 2 * t`. -/
+theorem orbit_average_lies_on_fixed_line {α₁ β₁ γ₁ α₂ β₂ γ₂ : ℝ}
+    (h : GA α₁ β₁ γ₁ α₂ β₂ γ₂) :
+    (β₁ + α₂) / 2 = 1 - 2 * ((α₁ + γ₁ + β₂ + γ₂) / 4) := by
+  linarith [h.tet₁, h.tet₂]
+
+/-- Averaging any feasible positive angle structure over the order-4 symmetry
+    group lands strictly inside the open fixed-line segment `0 < t < 1/2`. -/
+theorem orbit_average_mem_open_segment {α₁ β₁ γ₁ α₂ β₂ γ₂ : ℝ}
+    (hga : GA α₁ β₁ γ₁ α₂ β₂ γ₂) (hpos : Positive α₁ β₁ γ₁ α₂ β₂ γ₂) :
+    0 < (α₁ + γ₁ + β₂ + γ₂) / 4 ∧ (α₁ + γ₁ + β₂ + γ₂) / 4 < 1 / 2 := by
+  constructor
+  · linarith [hpos.hα₁, hpos.hγ₁, hpos.hβ₂, hpos.hγ₂]
+  · linarith [hga.tet₁, hga.tet₂, hpos.hβ₁, hpos.hα₂]
+
+/-- Consequently the 4-group orbit average of any feasible positive point in the
+    m004 polytope is itself both `GA`-feasible and `Positive` on the fixed line. -/
+theorem GA_and_Positive_orbit_average {α₁ β₁ γ₁ α₂ β₂ γ₂ : ℝ}
+    (hga : GA α₁ β₁ γ₁ α₂ β₂ γ₂) (hpos : Positive α₁ β₁ γ₁ α₂ β₂ γ₂) :
+    let t := (α₁ + γ₁ + β₂ + γ₂) / 4
+    GA t (1 - 2 * t) t (1 - 2 * t) t t ∧
+      Positive t (1 - 2 * t) t (1 - 2 * t) t t := by
+  refine ⟨GA_on_line _, ?_⟩
+  rw [fixed_positive_iff]
+  exact orbit_average_mem_open_segment hga hpos
+
 end QOU.Knot.M004AngleStructure

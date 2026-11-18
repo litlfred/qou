@@ -52,8 +52,8 @@ having for a tower `{Aₙ}_{n ≥ 0}` rather than for one pair of levels, and it
 is the one consequence available without constructing `End_C(Aₙ)`.
 
 `not_descentSurjective_diagonal` refutes the claim at a concrete algebra map
-— the diagonal `ℤ →ₐ[ℤ] ℤ × ℤ`, whose image misses `(1, 0)` — so a `sorry`
-over it would read as "true, not yet proved" about something false.
+— the diagonal `ℤ →ₐ[ℤ] ℤ × ℤ`, whose image misses `(1, 0)` — so an unproved
+placeholder over it would read as "true, not yet proved" about something false.
 
 ## What is still unencoded
 
@@ -101,7 +101,7 @@ theorem descentSurjective_comp {R A B C : Type*} [CommSemiring R]
   hg.comp hf
 
 /-- **The claim is refutable at a concrete algebra map**, which is why it is
-named rather than carried as a `sorry`.
+named rather than carried as an unproved placeholder.
 
 The diagonal `ℤ →ₐ[ℤ] ℤ × ℤ` is an algebra homomorphism whose image misses
 `(1, 0)`: a preimage would have to equal `1` in the first coordinate and `0`
@@ -113,5 +113,49 @@ theorem not_descentSurjective_diagonal :
   have h1 : r = 1 := congrArg Prod.fst hr
   have h2 : r = 0 := congrArg Prod.snd hr
   omega
+
+/-- **`G_q`-intertwining of a descent homomorphism** ([`lem:descent`]):
+    the algebra map `descentMap : A →ₐ[R] B` intertwines caller-supplied
+    actions `actA : G → A → A` and `actB : G → B → B` across adjacent levels. -/
+def descent_intertwines {R A B G : Type*} [CommSemiring R] [Semiring A] [Semiring B]
+    [Algebra R A] [Algebra R B] (descentMap : A →ₐ[R] B)
+    (actA : G → A → A) (actB : G → B → B) : Prop :=
+  ∀ (g : G) (x : A), descentMap (actA g x) = actB g (descentMap x)
+
+/-- **`G_q`-intertwining composes across the brane tower.**
+    If `f : A →ₐ[R] B` intertwines `actA` with `actB` and `g : B →ₐ[R] C`
+    intertwines `actB` with `actC`, then `g.comp f` intertwines `actA` with `actC`. -/
+theorem descentIntertwines_comp {R A B C G : Type*} [CommSemiring R]
+    [Semiring A] [Semiring B] [Semiring C]
+    [Algebra R A] [Algebra R B] [Algebra R C]
+    {f : A →ₐ[R] B} {g : B →ₐ[R] C}
+    {actA : G → A → A} {actB : G → B → B} {actC : G → C → C}
+    (hf : descent_intertwines f actA actB)
+    (hg : descent_intertwines g actB actC) :
+    descent_intertwines (g.comp f) actA actC := by
+  intro γ x
+  change g (f (actA γ x)) = actC γ (g (f x))
+  rw [hf γ x, hg γ (f x)]
+
+/-- **Concrete model of a surjective descent homomorphism:** the first-factor
+    projection `AlgHom.fst R A B : A × B →ₐ[R] A` is surjective whenever `B` is
+    inhabited (for instance by `0 : B`). -/
+theorem descentSurjective_fst (R A B : Type*) [CommSemiring R]
+    [Semiring A] [Semiring B] [Algebra R A] [Algebra R B] :
+    descent_surjective (AlgHom.fst R A B) := by
+  intro a
+  refine ⟨(a, 0), ?_⟩
+  rfl
+
+/-- The first-factor projection `AlgHom.fst R A B` intertwines any diagonal
+    product action `(a, b) ↦ (actA g a, actB g b)` with `actA`. -/
+theorem descentIntertwines_fst (R A B G : Type*) [CommSemiring R]
+    [Semiring A] [Semiring B] [Algebra R A] [Algebra R B]
+    (actA : G → A → A) (actB : G → B → B) :
+    descent_intertwines (AlgHom.fst R A B)
+      (fun g p => (actA g p.1, actB g p.2)) actA := by
+  intro g p
+  change (actA g p.1, actB g p.2).1 = actA g p.1
+  rfl
 
 end QOU

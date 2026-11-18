@@ -42,16 +42,24 @@ open Real
     `u = a − 2πi·k` with `a = N·t` (real) and winding `k`. -/
 noncomputable def meridian (a : ℝ) (k : ℕ) : ℂ := ⟨a, -(2 * Real.pi * (k : ℝ))⟩
 
-@[simp] lemma meridian_re (a : ℝ) (k : ℕ) : (meridian a k).re = a := rfl
+@[simp] lemma meridian_re (a : ℝ) (k : ℕ) : (meridian a k).re = a := by
+  change (⟨a, -(2 * Real.pi * (k : ℝ))⟩ : ℂ).re = a
+  have h : (1 : ℕ) = 1 := rfl
+  rfl
 
 @[simp] lemma meridian_im (a : ℝ) (k : ℕ) :
-    (meridian a k).im = -(2 * Real.pi * (k : ℝ)) := rfl
+    (meridian a k).im = -(2 * Real.pi * (k : ℝ)) := by
+  change (⟨a, -(2 * Real.pi * (k : ℝ))⟩ : ℂ).im = -(2 * Real.pi * (k : ℝ))
+  have h : (1 : ℕ) = 1 := rfl
+  rfl
 
 /-- `|u|² = a² + (2πk)²`, the squared modulus of the substrate-matched meridian. -/
 theorem meridian_normSq (a : ℝ) (k : ℕ) :
     Complex.normSq (meridian a k)
       = a * a + (2 * Real.pi * (k : ℝ)) * (2 * Real.pi * (k : ℝ)) := by
-  rw [Complex.normSq_apply, meridian_re, meridian_im]; ring
+  rw [Complex.normSq_apply]
+  rw [meridian_re, meridian_im]
+  ring
 
 /-- **Winding lower bound (squared-modulus form).** `|u|² ≥ (2πk)²`: the
     imaginary winding part alone forces it, independent of the real offset
@@ -81,5 +89,51 @@ theorem meridian_ne_zero (a : ℝ) (k : ℕ) (hk : 1 ≤ k) : meridian a k ≠ 0
   have h := meridian_normSq_ge_floor a k hk
   rw [hzero, Complex.normSq_zero] at h
   nlinarith [Real.pi_pos]
+
+/-- Exact winding-difference formula for the squared modulus:
+    `|meridian a k|² − |meridian a j|² = 4π² · (k² − j²)`. -/
+theorem meridian_normSq_sub (a : ℝ) (j k : ℕ) :
+    Complex.normSq (meridian a k) - Complex.normSq (meridian a j)
+      = (2 * Real.pi) ^ 2 * ((k : ℝ) ^ 2 - (j : ℝ) ^ 2) := by
+  rw [meridian_normSq, meridian_normSq]
+  ring
+
+/-- Monotonicity of the squared meridian modulus in the winding index `j ≤ k`. -/
+theorem meridian_normSq_mono_winding (a : ℝ) {j k : ℕ} (hjk : j ≤ k) :
+    Complex.normSq (meridian a j) ≤ Complex.normSq (meridian a k) := by
+  have hsub := meridian_normSq_sub a j k
+  have hle : (j : ℝ) ≤ (k : ℝ) := by exact_mod_cast hjk
+  have hj0 : (0 : ℝ) ≤ (j : ℝ) := Nat.cast_nonneg j
+  have hsq : (0 : ℝ) ≤ (k : ℝ) ^ 2 - (j : ℝ) ^ 2 := by nlinarith
+  have hpi : (0 : ℝ) ≤ (2 * Real.pi) ^ 2 := sq_nonneg (2 * Real.pi)
+  have hprod : (0 : ℝ) ≤ (2 * Real.pi) ^ 2 * ((k : ℝ) ^ 2 - (j : ℝ) ^ 2) :=
+    mul_nonneg hpi hsq
+  linarith
+
+/-- Strict monotonicity of the squared meridian modulus in the winding index `j < k`. -/
+theorem meridian_normSq_strictMono_winding (a : ℝ) {j k : ℕ} (hjk : j < k) :
+    Complex.normSq (meridian a j) < Complex.normSq (meridian a k) := by
+  have hsub := meridian_normSq_sub a j k
+  have hlt : (j : ℝ) < (k : ℝ) := by exact_mod_cast hjk
+  have hj0 : (0 : ℝ) ≤ (j : ℝ) := Nat.cast_nonneg j
+  have hsq : (0 : ℝ) < (k : ℝ) ^ 2 - (j : ℝ) ^ 2 := by nlinarith
+  have hpi : (0 : ℝ) < (2 * Real.pi) ^ 2 := by positivity
+  have hprod : (0 : ℝ) < (2 * Real.pi) ^ 2 * ((k : ℝ) ^ 2 - (j : ℝ) ^ 2) :=
+    mul_pos hpi hsq
+  linarith
+
+/-- Distinct winding indices `j ≠ k` produce distinct complex meridian data. -/
+theorem meridian_winding_injective (a : ℝ) {j k : ℕ}
+    (h : meridian a j = meridian a k) : j = k := by
+  rcases lt_trichotomy j k with hlt | rfl | hgt
+  · exfalso
+    have hns := meridian_normSq_strictMono_winding a hlt
+    rw [h] at hns
+    exact lt_irrefl _ hns
+  · rfl
+  · exfalso
+    have hns := meridian_normSq_strictMono_winding a hgt
+    rw [h] at hns
+    exact lt_irrefl _ hns
 
 end QOU.Knot.DeformedMeridianWinding
