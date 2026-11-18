@@ -3776,3 +3776,12 @@ Bean stays OPEN.
 ### NOTE 2026-11-18 — merges + teraplectic finding (relayed from sibling sweep, re-measured)
 - Merged: #8130 (rebase, `73205840a`; Lean source-verified 7/7, standard axioms only) and #8124 (rebase, `7642fc6da`; tower E₀, 0.4491 MeV, marked provisional after the L± ruling). Five-block follow-up: PR #8376 (issue #8375).
 - Re-ran `qbeta/qbeta_ruled_base_affine_solve_probe.py` (2/2 pass): reaching CODATA on the ruled assembly needs z = 0.99850030441113. That is not an admissible convention-D root (0.0015 from the excluded z = 1). So the base shortfall cannot be fixed through z; any fix must change the element or the functional. This is consistent with the y₃ reduction: no derived trace reaches y₃ ≈ 0.88.
+
+### NOTE 2026-11-18 09:30Z — option C explored (owner asked for the implications of A/B/C), post-hoc, not a selection
+Same FrobeniusSelected rule over {V, V⁻¹, L₊, L₋, e⁻}, braids free-reduced, at most 12 crossings: 4428 braids, 1535 feasible, minimum cost 2, giving σ₀² / σ₁². This is the SAME minimum as rule A, because V·L₋ = σ₀². β_Bor is feasible at 6 crossings but not minimal. So the letter set does not decide the nucleon: under A, B and C alike, the crossing-count minimum is a split pair.
+
+Words that are non-split and three-component appear in the run list at cost 4 and are also rule-A words: σ₀²σ₁², σ₁²σ₀², L₊L₋, L₋L₊, each a 3-ring chain. The cheapest non-split word of any component count is σ₀σ₁σ₀ (cost 3, χ₍₂₁₎ exactly 0).
+
+Owner card posted: whether the nucleon closure must be non-split / three-component. Any filter is to be pre-registered before use. Script: /tmp scratch (ruleC.py); to be committed with the probe if adopted.
+
+Bean stays OPEN.
