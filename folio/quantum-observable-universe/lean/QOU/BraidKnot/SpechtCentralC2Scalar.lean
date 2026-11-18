@@ -81,4 +81,12 @@ theorem spechtProduct_centralC2 (n : ℕ) (i : PartitionIndex n) :
     JucysMurphy.centralC2_acts_by_contentSqSum (k := k) _ _ x.2]
   rfl
 
+/-- The difference between the Specht product action of `centralC2 n` and the content-square scalar endomorphism vanishes on each block `i`. -/
+theorem spechtProduct_centralC2_sub_eq_zero (n : ℕ) (i : PartitionIndex n) :
+    SpechtActionInjective.spechtProduct (k := k) n (RegularRepTrace.centralC2 n) i -
+      (JucysMurphy.contentSqSum i.diagram) •
+        (1 : Module.End k (SpechtSubmodule (k := k) i.diagram)) = 0 := by
+  rw [spechtProduct_centralC2]
+  exact sub_self _
+
 end QOU.BraidKnot.SpechtCentralC2Scalar
