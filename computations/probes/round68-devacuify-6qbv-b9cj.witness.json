@@ -1,0 +1,50 @@
+{
+  "probe": "round68-devacuify-6qbv-b9cj",
+  "scriptPath": "computations/probes/round68_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "521f874729ea4dcd9cefd6b04c7207a1759bb292",
+  "scriptHash": "1ba5ec927297a3024f9841033dcb0ec735cfd3b52c8aede5dc2dab86c955ec51",
+  "scriptSha256": "1ba5ec927297a3024f9841033dcb0ec735cfd3b52c8aede5dc2dab86c955ec51",
+  "timestamp": "2026-11-18T10:56:18.335329+00:00",
+  "dps": 80,
+  "mpmathDps": 80,
+  "allPassed": true,
+  "results": [
+    {
+      "bean": "qcz19",
+      "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_period4.lean",
+      "maxAbsError": "3.373503341833767431791544e-80",
+      "eeeoCoeffAtOne": 13,
+      "eeooCoeffAtOne": 7,
+      "eeooRhsAtOne": 5,
+      "eoooCoeffAtOne": 11,
+      "eoooRhsAtOne": -19,
+      "passed": true
+    },
+    {
+      "bean": "qou-hbox",
+      "file": "folio/quantum-observable-universe/lifting-and-descent/descent-lemma.lean",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "m015",
+      "file": "folio/quantum-observable-universe/lean/QOU/Knot/M004AngleStructure.lean",
+      "maxAbsError": "0.0",
+      "allInOpenSegment": true,
+      "passed": true
+    },
+    {
+      "bean": "qou-thj7",
+      "file": "folio/quantum-observable-universe/lean/QOU/Knot/FigureEightDeformedMeridianWinding.lean",
+      "maxAbsError": "1.079521069386805578173294e-78",
+      "strictMonoNonneg": true,
+      "passed": true
+    },
+    {
+      "bean": "qou-i0fl",
+      "file": "folio/quantum-observable-universe/lean/QOU/Information/CountingModuliGrade.lean",
+      "superPolyWitnessesPassed": true,
+      "passed": true
+    }
+  ]
+}
