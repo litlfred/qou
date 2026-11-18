@@ -19,7 +19,7 @@ field asserting that it vanishes — the shape `qou-ffwk` catalogues across ten
 carriers — which is **inhabited by `⟨0, rfl⟩`**. Removing the fabricated `axiom` +
 `instance` pair restored the no-instance state, but it did not make the class
 *assert* anything: an instance could always be produced in one line, with no
-`axiom` and no `sorry` to surface in `#print axioms`. A downstream
+postulated assumption to surface in `#print axioms`. A downstream
 `[archimedean_agreement]` hypothesis was therefore not a meaningful
 conditional, and results resting on it must not be reported as conditional
 results.
@@ -98,15 +98,8 @@ class archimedean_agreement (Braid : Type*)
   agree : ∀ K : Braid, |habiroTraceEval K - gbMass K| ≤ ε
 
 -- **No instance is provided — that is the honest open state** (AGENTS.md
--- §3b-tax).  History: this file previously carried
---     axiom conj_archimedean_agreement : archimedean_agreement
---     noncomputable instance : archimedean_agreement := conj_archimedean_agreement
--- so every downstream `[archimedean_agreement]` resolved for free and the
--- assumption was invisible outside `#print axioms`.  (The removed comment
--- called it a `sorry` representing the open conjecture; it was an `axiom`,
--- which is strictly stronger — a `sorry` at least surfaces as `sorryAx`.)
--- Removed, not completed.  The field schema is now content-bearing as well;
--- see the header.
+-- §3b-tax).  Downstream results must take `[archimedean_agreement]` as an
+-- explicit hypothesis.
 
 /-- **Agreement transfers to any single braid.**
 
@@ -119,13 +112,49 @@ theorem archimedean_agreement.at_braid {Braid : Type*}
     0 ≤ ε ∧ |habiroTraceEval K - gbMass K| ≤ ε :=
   ⟨h.tolerance_nonneg, h.agree K⟩
 
+/-- **Interval enclosure at each braid.** Conditional on `archimedean_agreement`,
+    the trace evaluation at `K` lies in the closed interval
+    `[gbMass K - ε, gbMass K + ε]`. -/
+theorem archimedean_agreement.eval_mem_interval {Braid : Type*}
+    {habiroTraceEval gbMass : Braid → ℝ} {ε : ℝ}
+    [h : archimedean_agreement Braid habiroTraceEval gbMass ε] (K : Braid) :
+    gbMass K - ε ≤ habiroTraceEval K ∧ habiroTraceEval K ≤ gbMass K + ε := by
+  have hle := abs_sub_le_iff.mp (h.agree K)
+  constructor <;> linarith
+
+/-- **Exact coincidence at zero tolerance.** When `ε = 0`, `archimedean_agreement`
+    forces exact pointwise equality `habiroTraceEval K = gbMass K` on every braid. -/
+theorem archimedean_agreement.eval_eq_of_zero_tolerance {Braid : Type*}
+    {habiroTraceEval gbMass : Braid → ℝ} {ε : ℝ}
+    [h : archimedean_agreement Braid habiroTraceEval gbMass ε] (hε : ε = 0)
+    (K : Braid) : habiroTraceEval K = gbMass K := by
+  have habs := h.agree K
+  rw [hε] at habs
+  exact sub_eq_zero.mp (abs_nonpos_iff.mp habs)
+
+/-- **Symmetry of the agreement relation.** Interchanging the two evaluation
+    pipelines preserves `archimedean_agreement` at the same tolerance `ε`. -/
+theorem archimedean_agreement.symm_agree {Braid : Type*}
+    {habiroTraceEval gbMass : Braid → ℝ} {ε : ℝ}
+    [h : archimedean_agreement Braid habiroTraceEval gbMass ε] :
+    archimedean_agreement Braid gbMass habiroTraceEval ε :=
+  ⟨h.tolerance_nonneg, fun K => by rw [abs_sub_comm]; exact h.agree K⟩
+
+/-- **Monotonicity in the tolerance.** Any larger tolerance `ε' ≥ ε` also
+    satisfies `archimedean_agreement`. -/
+theorem archimedean_agreement.mono_tolerance {Braid : Type*}
+    {habiroTraceEval gbMass : Braid → ℝ} {ε ε' : ℝ}
+    [h : archimedean_agreement Braid habiroTraceEval gbMass ε] (hle : ε ≤ ε') :
+    archimedean_agreement Braid habiroTraceEval gbMass ε' :=
+  ⟨le_trans h.tolerance_nonneg hle, fun K => le_trans (h.agree K) hle⟩
+
 /-! ### The class is satisfiable, and only at data that satisfies it
 
 Two checks in opposite directions. Tightening a vacuous carrier can overshoot
 into a carrier nobody can ever instantiate, which is not the open state either —
 it is a false claim. And the point of the tightening is lost unless inhabitation
 genuinely depends on the data. Both are stated, neither is an `instance`, so
-typeclass resolution cannot pick either up and close a downstream hypothesis. -/
+typeclass resolution cannot pick either up and silently close a downstream hypothesis. -/
 
 /-- **Not over-corrected**: the class is inhabited when the two pipelines
 literally coincide. Degenerate data, deliberately — the content is that the

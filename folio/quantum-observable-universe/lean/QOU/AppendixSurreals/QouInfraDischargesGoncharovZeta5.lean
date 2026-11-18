@@ -138,6 +138,24 @@ theorem relations_finrank_eq_two [h : QouInfraDischargesGoncharovZeta5 V li3] :
   have hdom : finrank ℚ (Fin 4 → ℚ) = 4 := by simp
   omega
 
+/-- **The spanned subspace is non-trivial.** Since its `ℚ`-dimension is `2`,
+    the submodule spanned by the four generators cannot be `⊥`. -/
+theorem span_ne_bot [h : QouInfraDischargesGoncharovZeta5 V li3] :
+    Submodule.span ℚ (Set.range li3) ≠ ⊥ := by
+  intro hbot
+  have h2 := h.span_finrank_eq_two
+  rw [hbot, finrank_bot] at h2
+  exact absurd h2 (by decide)
+
+/-- **The relation kernel is non-trivial.** Since its `ℚ`-dimension is `2`,
+    the kernel of `Fintype.linearCombination ℚ li3` cannot be `⊥`. -/
+theorem ker_ne_bot [h : QouInfraDischargesGoncharovZeta5 V li3] :
+    LinearMap.ker (Fintype.linearCombination ℚ li3) ≠ ⊥ := by
+  intro hbot
+  have h2 := relations_finrank_eq_two (V := V) (li3 := li3)
+  rw [hbot, finrank_bot] at h2
+  exact absurd h2 (by decide)
+
 /-! ### Inhabitation depends on the data
 
 Not an `instance`, so typeclass resolution cannot pick it up and silently close
@@ -157,6 +175,16 @@ theorem not_of_trivial :
   have hrange : (Set.range fun _ : Fin 4 => (0 : V)) = {0} := Set.range_const
   rw [hrange, Submodule.span_singleton_eq_bot.mpr rfl] at h
   simp at h
+
+/-- **At least one generator is non-zero.** Immediate consequence of
+    `not_of_trivial`: if all four generators vanished, `li3` would coincide with
+    the zero family. -/
+theorem exists_nonzero_generator [h : QouInfraDischargesGoncharovZeta5 V li3] :
+    ∃ k : Fin 4, li3 k ≠ 0 := by
+  by_contra hall
+  push_neg at hall
+  have hfun : li3 = fun _ => (0 : V) := funext hall
+  exact not_of_trivial (V := V) (hfun ▸ h)
 
 end QouInfraDischargesGoncharovZeta5
 
