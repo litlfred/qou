@@ -1,7 +1,7 @@
 ---
 # cj118
 title: 'Conjecture carrier: QBirchSwinnertonDyer (QBirchSwinnertonDyer.lean) — §3b, famous-open (aspirational §3b encoding)'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

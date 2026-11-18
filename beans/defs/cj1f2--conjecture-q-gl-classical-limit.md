@@ -1,7 +1,7 @@
 ---
 # cj1f2
 title: 'Conjecture carrier: q_gl_classical_limit (q_gl_classical_limit.lean) — §3b, framework/substrate §3b carrier'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

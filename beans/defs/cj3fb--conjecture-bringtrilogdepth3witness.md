@@ -1,7 +1,7 @@
 ---
 # cj3fb
 title: 'Conjecture carrier: BringTrilogDepth3Witness (BringTrilogDepth3Witness.lean) — §3b, framework/substrate §3b carrier'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:

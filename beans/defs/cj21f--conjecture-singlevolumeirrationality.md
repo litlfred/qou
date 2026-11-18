@@ -1,7 +1,7 @@
 ---
 # cj21f
 title: 'Conjecture carrier: SingleVolumeIrrationality (SingleVolumeIrrationality.lean) — §3b, famous-open (aspirational §3b encoding)'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:
