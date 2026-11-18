@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "categorical_quantum_dimension_vacuum_row_modular_partition_sum_surgery_slide_invariance_pivotal_dual_trace_ribbon_balancing_probe",
+  "beans": [
+    "bwrt",
+    "bwse",
+    "rtkb",
+    "rtqd",
+    "rtrb"
+  ],
+  "leanModule": "QOU.Foundations.CategoricalQuantumDimensionVacuumRowModularPartitionSumSurgerySlideInvariancePivotalDualTraceRibbonBalancing",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/categorical_quantum_dimension_vacuum_row_modular_partition_sum_surgery_slide_invariance_pivotal_dual_trace_ribbon_balancing_probe.py",
+  "scriptHash": "7b699b4f4747b371a7a9fb79fd09f0b495a31a2b2d536d50c421ec2b24457967",
+  "scriptSha256": "7b699b4f4747b371a7a9fb79fd09f0b495a31a2b2d536d50c421ec2b24457967",
+  "scriptCommitSha": "9665213be334ca01449913d997dcaa05341cba29",
+  "generatedAt": "2026-11-18T10:46:29.564407+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "bwrt",
+      "theorem": "unitObjectDimension_eq_one_and_vacuumRow_balance",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "bwse",
+      "theorem": "modularPartitionSum_factorization_and_vacuum_isolation",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "rtkb",
+      "theorem": "handleSlide_discriminant_invariance",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "rtqd",
+      "theorem": "swappedDualQuantumTrace_eq_rightQuantumTrace",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "rtrb",
+      "theorem": "ribbonTwist_tensor_symmetry_and_doubleMate_fixed",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
