@@ -60,4 +60,10 @@ theorem correction_zero_of_eps_eq (e₁ e₂ D : ℝ) (h : e₁ = e₂) (hne : 1
     Real.log ((1 - e₁) / (1 - e₂)) / D = 0 := by
   rw [h, div_self hne, Real.log_one, zero_div]
 
+/-- **Self-equality specialization of `correction_zero_of_eps_eq` (`qou-2cz1`).**
+When `1 - e ≠ 0`, `Real.log ((1 - e) / (1 - e)) / D = 0`. -/
+theorem correction_zero_of_eps_self (e D : ℝ) (hne : 1 - e ≠ 0) :
+    Real.log ((1 - e) / (1 - e)) / D = 0 :=
+  correction_zero_of_eps_eq e e D rfl hne
+
 end QOU.Mass.KappaWrithe

@@ -72,4 +72,11 @@ theorem jetBinding_lt_succ {me : ℝ} {aD w : ℕ → ℝ}
   rw [Finset.sum_Icc_succ_top hA]
   linarith
 
+/-- **Reflexive specialization of `jetBinding_mono` (`qou-172h`).**
+For non-negative `me`, `aD`, and `w`, `jetBinding me aD w A ≤ jetBinding me aD w A`. -/
+theorem jetBinding_self_le {me : ℝ} {aD w : ℕ → ℝ}
+    (hme : 0 ≤ me) (haD : ∀ n, 0 ≤ aD n) (hw : ∀ n, 0 ≤ w n) (A : ℕ) :
+    jetBinding me aD w A ≤ jetBinding me aD w A :=
+  jetBinding_mono hme haD hw (le_refl A)
+
 end QOU.Mass

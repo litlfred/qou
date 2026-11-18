@@ -85,4 +85,10 @@ theorem eigen_pair_of_product_ratio {a b q : K} (hq : q ≠ 0) (hb : b ≠ 0)
     refine ⟨?_, hbv⟩
     rw [ha, hbv]; field_simp
 
+/-- **Vanishing difference of rescaled ratios (`qou-26f2`).**
+For `c ≠ 0` and `b ≠ 0`, `(c * a) / (c * b) - a / b = 0`. -/
+theorem ratio_invariant_sub_eq_zero (c a b : K) (hc : c ≠ 0) (hb : b ≠ 0) :
+    (c * a) / (c * b) - a / b = 0 :=
+  sub_eq_zero.mpr (ratio_invariant c a b hc hb)
+
 end QOU.Mass.KZLevelFromHeckeNormalisation

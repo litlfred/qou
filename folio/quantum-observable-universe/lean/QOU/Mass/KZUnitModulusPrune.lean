@@ -42,5 +42,10 @@ theorem exp_I_ne_real_gt_one (θ : ℝ) {q : ℝ} (hq : 1 < q) :
   rw [abs_of_pos (lt_trans zero_lt_one hq)] at this
   exact (ne_of_lt hq) this
 
+/-- **Zero-angle specialization of `unit_modulus_ne_real_gt_one` (`qou-2cyi`).**
+For `1 < q`, `‖Complex.exp ((0 : ℝ) * Complex.I)‖ ≠ q`. -/
+theorem unit_modulus_zero_ne_real_gt_one {q : ℝ} (hq : 1 < q) :
+    ‖Complex.exp ((0 : ℝ) * Complex.I)‖ ≠ q :=
+  unit_modulus_ne_real_gt_one 0 hq
 
 end QOU.Mass.KZUnitModulusPrune

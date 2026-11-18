@@ -78,4 +78,11 @@ theorem partialSum_not_monotone_of_term_neg {aD w : ℕ → R} {n : ℕ}
     S + term aD w n < S := by
   linarith
 
+/-- **Zero-baseline specialization of `partialSum_not_monotone_of_term_neg` (`qou-1w90`).**
+When `term aD w n < 0`, `(0 : R) + term aD w n < 0`. -/
+theorem partialSum_zero_lt_zero_of_term_neg {aD w : ℕ → R} {n : ℕ}
+    (hterm : term aD w n < 0) :
+    (0 : R) + term aD w n < 0 :=
+  partialSum_not_monotone_of_term_neg hterm 0
+
 end QOU.Mass.JetFiltrationSignObstruction
