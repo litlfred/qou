@@ -1,7 +1,7 @@
 ---
 # qou-vyij
 title: 'Lean build coverage: 582 block lean.refs resolve only to .lean files no CI Lake target compiles'
-status: todo
+status: in-progress
 type: task
 tags:
     - reorg-2026-10-04

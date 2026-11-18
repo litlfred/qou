@@ -1,7 +1,7 @@
 ---
 # qou-dgw2
 title: Formalize in Lean 4 if found
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

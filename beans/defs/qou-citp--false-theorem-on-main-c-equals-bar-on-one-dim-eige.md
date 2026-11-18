@@ -1,7 +1,7 @@
 ---
 # qou-citp
 title: 'FALSE THEOREM on main: c_equals_bar_on_one_dim_eigenvalue_neg_q_inv is false (-3q = q); Z toy encoding conflates the two Hecke eigenvalues'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
