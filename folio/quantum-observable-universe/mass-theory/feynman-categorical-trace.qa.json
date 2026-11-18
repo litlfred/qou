@@ -1260,6 +1260,23 @@
         "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
         "severity": "major",
         "evidence": "Re-read 2026-11-17. lean.ref is the structure FeynmanCategoricalTrace whose field amplitude_eq_markov is the central identity, so it is assumed. Two content errors in the md, independent of Lean: (1) tr_M(x s_n^{-1}) = z^{-1} tr_M(x) is wrong; it is (z - h) tr_M(x), and z^{-1} = z - h would need z^2 - hz - 1 = 0, which under convention D equals -(q^4+q^2+1)/(q^2+1)^2 != 0. (2) w_l = dim_q(V_l) dim(S_l)/dim_q(V^n) double-counts dim S_l: at x = 1, n = 3 it gives ([4] + 4[2])/[2]^3 != 1; the Schur-Weyl weight is dim_q(V_l)/dim_q(V^n). The |amplitude| = mass identification is not encoded."
+      },
+      {
+        "field_hash": {
+          "md": "9719485ad60c",
+          "ts": "cbd5af44314e",
+          "lean": "9f34f86183c5",
+          "lean_statement": "56b9f0c2cc34"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-18",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-18T04:24:18.043Z",
+        "reviewed_sha": "58fda9aae90fcf186b1e8727b1c68d3224748fcb",
+        "evidence": "Re-read 2026-11-18. lean.ref abs_amplitude_eq_abs_markovTrace proves |amplitude| = |tr_M| at z_D. Not in Lean: the closed-form weight, the term count n/2 + 1, the sigma^-1 rule (one line from the quadratic relation), and the identification with categorical mass (cited prop:categorical-mass-markov). Partial coverage, no mismatch."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2483,6 +2500,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-17T18:13:07.479Z",
+  "updated_at": "2026-11-18T04:24:18.043Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

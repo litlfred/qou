@@ -1372,6 +1372,23 @@
         "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
         "severity": "major",
         "evidence": "Re-read 2026-11-17. markov_identification takes the branching identity as hypothesis h and rewrites by it; the same file proves the identity fails on free data. Not derived. The md weight w_l = dim_q(V_l) dim(S_l)/dim_q(V^n) is also wrong by a factor dim S_l (at x = 1, n = 3 the sum is ([4] + 4[2])/[2]^3 != 1); with w_l = dim_q(V_l)/dim_q(V^n) the identity is the Schur-Weyl formula for the quantum trace."
+      },
+      {
+        "field_hash": {
+          "md": "cfbd083330c9",
+          "ts": "1c3a89e78302",
+          "lean": "9f34f86183c5",
+          "lean_statement": "56b9f0c2cc34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-18",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-18T04:24:16.225Z",
+        "reviewed_sha": "58fda9aae90fcf186b1e8727b1c68d3224748fcb",
+        "evidence": "Re-read 2026-11-18. lean.ref markov_identification_of_markovTrace proves amplitude = tr_M at z_D with Ocneanu weights and seminormal traces; markovTrace_eq_two_row_sum proves the restriction to two rows. The closed form dim_q V/dim_q V^n is derived in the proof from ocneanuWeight_conventionD_eq_schurPrincipal plus a one-line q-integer computation, not in Lean."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2809,6 +2826,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-17T18:13:08.152Z",
+  "updated_at": "2026-11-18T04:24:16.225Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

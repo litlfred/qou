@@ -239,6 +239,21 @@
         "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
         "severity": "major",
         "evidence": "Re-graded 2026-11-17 (was warn). Steps 2-3 use SU_q(2) Schur-Weyl, which only sees two-row shapes, and define lambda-box as (lambda_1, lambda_2+1). The statement covers every lambda; for 3+ rows the branching rule adds a box to any row. The proof does not establish the statement as written. Fix: restrict to two-row lambda, or argue via H_n -> H_{n+1} branching."
+      },
+      {
+        "field_hash": {
+          "md": "f5e16339de07",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-18",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-18T04:24:21.477Z",
+        "reviewed_sha": "58fda9aae90fcf186b1e8727b1c68d3224748fcb",
+        "evidence": "Re-read 2026-11-18. Block preservation of the inclusion plus compression to corner blocks gives vanishing; mirrors the Lean proof step for step."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1602,6 +1617,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-17T18:11:33.031Z",
+  "updated_at": "2026-11-18T04:24:21.477Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
