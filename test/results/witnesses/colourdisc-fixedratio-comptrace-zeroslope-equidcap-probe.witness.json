@@ -1,0 +1,45 @@
+{
+  "probe": "computations/probes/colourdisc_fixedratio_comptrace_zeroslope_equidcap_probe.py",
+  "scriptCommitSha": "02a557115ca6d2779725ccfdca969ee6ef80dff4",
+  "scriptHash": "930736b7600cb1fb1ca87062021ff390088ea82549e2ac7bf6e2fad10cdf9749",
+  "scriptSha256": "930736b7600cb1fb1ca87062021ff390088ea82549e2ac7bf6e2fad10cdf9749",
+  "executedAt": "2026-11-18T07:54:38Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "colourDiscriminant_ge_two_z_sq",
+      "bean": "qou-3e6w",
+      "minSlack": "0.0",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "fixedColourings_sequential_eq_four_mul_interleaved",
+      "bean": "qou-4cu3",
+      "fixedInterleaved": "2",
+      "fixedSequential": "8",
+      "maxAbsError": "0",
+      "passed": true
+    },
+    {
+      "id": "componentTrace_succ_components",
+      "bean": "qou-o7c0",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "interface_bond_difference_zero_slope",
+      "bean": "qou-2002",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "equidistant_cluster_size_le_finrank_succ",
+      "bean": "qou-lzoh",
+      "maxClusterInR3": "4",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
