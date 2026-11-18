@@ -1,0 +1,34 @@
+{
+  "probe": "computations/probes/mirrorsub_reeb2step_reebcosorth_qintsucc_zpow2inj_probe.py",
+  "scriptCommitSha": "c8a1b5e012db5e146d40bba0107bd7f5fc461ddc",
+  "scriptHash": "7b33fea299b6",
+  "dps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "r18k_binding_formula_sub_of_same_re",
+      "residual": "1.317774742903815403043572e-82",
+      "passed": true
+    },
+    {
+      "id": "t886_reeb_tower_sinh_two_step",
+      "residual": "4.21687917729220928973943e-81",
+      "passed": true
+    },
+    {
+      "id": "uer8_reebCos_dim_sq_weighted_sum_zero",
+      "residual": "4.21687917729220928973943e-81",
+      "passed": true
+    },
+    {
+      "id": "xbz0_qInt_succ",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou_yuyz_zpow_two_mul_injective",
+      "residual": "0.0",
+      "passed": true
+    }
+  ]
+}
