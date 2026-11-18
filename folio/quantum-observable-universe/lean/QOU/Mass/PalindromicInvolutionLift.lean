@@ -199,6 +199,12 @@ theorem base_involution_ne_id [CharZero K] : ∃ z : K, z ≠ 0 ∧ z⁻¹ ≠ z
   rw [mul_inv_cancel₀ h2] at hmul
   norm_num at hmul
 
+/-- Difference form of the involution lift identity:
+    `z ^ 3 * colorCubic (X / z) z⁻¹ - colorCubic X z = 0` for every `z ≠ 0`. -/
+theorem colorCubic_inv_lift_sub_eq_zero (X z : K) (hz : z ≠ 0) :
+    z ^ 3 * colorCubic (X / z) z⁻¹ - colorCubic X z = 0 := by
+  rw [colorCubic_inv_lift X z hz, sub_self]
+
 end Lift
 
 /-! ### Part 2 — `z ↦ 1/z` is the ONLY inversion preserving the branch locus -/

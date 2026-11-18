@@ -233,4 +233,10 @@ relation. -/
 theorem chainCarrier_joins_consecutive (i : ℕ) : chainCarrier.joins i (i + 1) :=
   Or.inl rfl
 
+/-- On the chain carrier, the first component of a consecutive triple `{i, i+1, i+2}`
+    does not split off from `{i+1, i+2}`. -/
+theorem consecutive_first_not_splitsOff (i : ℕ) :
+    ¬ SplitsOff chainCarrier.toSummands i (i + 1) (i + 2) :=
+  (consecutive_has_no_separable_component i).1
+
 end QOU.Mass.OneSeparatedComponentSufficesForMilnorVanishing

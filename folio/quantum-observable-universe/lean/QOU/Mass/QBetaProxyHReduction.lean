@@ -61,4 +61,11 @@ theorem qbeta_proxy_over_h_eq_E0_reduction (q : R)
   rw [qbeta_proxy_eq_E0_h_reduction q hq hq1 h2]
   field_simp
 
+/-- Vanishing difference form of the rational reduction:
+    `QbetaProxy q - E0 q * hOf q * (2 - hOf q) / 2 = 0`. -/
+theorem qbeta_proxy_sub_E0_h_reduction_eq_zero (q : R)
+    (hq : q ≠ 0) (hq1 : q - 1 ≠ 0) (h2 : (2 : R) ≠ 0) :
+    QbetaProxy q - E0 q * hOf q * (2 - hOf q) / 2 = 0 := by
+  rw [qbeta_proxy_eq_E0_h_reduction q hq hq1 h2, sub_self]
+
 end QOU.Mass.QBetaProxyHReduction

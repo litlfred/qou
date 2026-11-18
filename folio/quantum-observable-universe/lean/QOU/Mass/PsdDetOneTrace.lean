@@ -165,4 +165,11 @@ theorem card_le_trace_of_det_one {d : ℕ} {A : Matrix (Fin d) (Fin d) ℝ}
   rw [hsum]
   linarith
 
+/-- Nonnegativity of the shifted trace `M.trace - 2` for any positive semidefinite
+    `2×2` real matrix `M` of determinant `1`. -/
+theorem sub_two_nonneg_of_det_one (h : M.PosSemidef) (hdet : M.det = 1) :
+    0 ≤ M.trace - 2 := by
+  have htr : 2 ≤ M.trace := trace_ge_two h hdet
+  linarith
+
 end QOU.Mass.PsdDetOneTrace

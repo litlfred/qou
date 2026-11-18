@@ -235,4 +235,11 @@ theorem binding_carrier_satisfies_kernel (f : ℕ → ℕ)
       = (f (n + 1) : ℚ) / ((n + 1).factorial) + (f n : ℚ) / (n.factorial) :=
   normalized_classical_kernel_exists f hrec n
 
+/-- Vanishing residual form of the depth-2 recurrence on factorial-normalized terms. -/
+theorem normalized_classical_kernel_sub_eq_zero (f : ℕ → ℕ)
+    (hrec : ∀ n, f (n + 2) = f (n + 1) + (n + 1) * f n) (n : ℕ) :
+    ((n : ℚ) + 2) * ((f (n + 2) : ℚ) / (n + 2).factorial)
+      - ((f (n + 1) : ℚ) / (n + 1).factorial + (f n : ℚ) / n.factorial) = 0 := by
+  rw [normalized_classical_kernel_exists f hrec n, sub_self]
+
 end QOU.Mass.QDifferenceConfluentObstruction
