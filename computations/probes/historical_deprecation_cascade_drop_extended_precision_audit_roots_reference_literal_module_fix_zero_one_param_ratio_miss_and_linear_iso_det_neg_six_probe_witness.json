@@ -1,0 +1,49 @@
+{
+  "probe": "historical_deprecation_cascade_drop_extended_precision_audit_roots_reference_literal_module_fix_zero_one_param_ratio_miss_and_linear_iso_det_neg_six_probe",
+  "beans": [
+    "qou-4bmc",
+    "qou-4w77",
+    "qou-4w7k",
+    "qou-d00i",
+    "qou-sp88"
+  ],
+  "dps": 80,
+  "scriptHash": "5287f6899f14d0cc8cefff1d090cfec74f4becf8629a805002638976603ecbd3",
+  "scriptSha256": "5287f6899f14d0cc8cefff1d090cfec74f4becf8629a805002638976603ecbd3",
+  "scriptCommitSha": "45d87f4a5375c6048f532140e56a4ef509adcab6",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-4bmc-historical-deprecation-cascade-drop",
+      "passed": true,
+      "remainingWitnesses": "43.0",
+      "liveConsumers": "4.0"
+    },
+    {
+      "id": "qou-4w77-extended-precision-audit-roots",
+      "passed": true,
+      "addedRoots": "2.0",
+      "totalRoots": "3.0"
+    },
+    {
+      "id": "qou-4w7k-reference-literal-module-fix",
+      "passed": true,
+      "repairedModules": "2.0",
+      "remainingStale": "0.0"
+    },
+    {
+      "id": "qou-d00i-zero-one-param-ratio-miss",
+      "passed": true,
+      "targetScaled": "-1738.0",
+      "residualZeroParam": "1738.0",
+      "residualOneParam": "238.0"
+    },
+    {
+      "id": "qou-sp88-linear-iso-det-neg-six",
+      "passed": true,
+      "det": "-6.0",
+      "recoveredS": "7.0",
+      "recoveredT": "-5.0"
+    }
+  ]
+}
