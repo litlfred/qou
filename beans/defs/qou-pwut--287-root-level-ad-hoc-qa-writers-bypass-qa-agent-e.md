@@ -1,7 +1,7 @@
 ---
 # qou-pwut
 title: 287 root-level ad-hoc QA writers bypass qa-agent-entry.ts and emit no field_hash
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

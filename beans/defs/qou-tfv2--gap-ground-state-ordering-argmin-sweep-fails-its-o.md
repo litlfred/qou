@@ -1,7 +1,7 @@
 ---
 # qou-tfv2
 title: 'GAP: ground_state_ordering_argmin_sweep fails its own cross-check at 28% on main'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

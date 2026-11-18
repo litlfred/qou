@@ -1,7 +1,7 @@
 ---
 # qou-wc8f
 title: 'GAP: topic2 mirror-pair Phi_8 multiplicities do not reproduce on main, and the fresh values violate the documented scaling law'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

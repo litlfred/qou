@@ -1,7 +1,7 @@
 ---
 # qou-rc0b
 title: '6_1 probe: VOL_6_1 is defined to 46 digits and never read — the strongest available anchor is unused'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

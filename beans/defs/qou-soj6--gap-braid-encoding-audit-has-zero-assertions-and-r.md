@@ -1,7 +1,7 @@
 ---
 # qou-soj6
 title: 'GAP: braid_encoding_audit has ZERO assertions and reports allPassed=true'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
