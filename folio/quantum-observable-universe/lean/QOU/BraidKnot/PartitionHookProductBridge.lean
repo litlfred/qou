@@ -166,4 +166,9 @@ theorem dimIrrep_eq_numSYT {n : ℕ} (Λ : Partition n) :
   exact Nat.div_eq_of_eq_mul_left (Nat.pos_of_ne_zero (hookProduct_ne_zero Λ))
     (numSYT_mul_hookProduct_partition Λ).symm
 
+/-- Subtracting the factorial of n from the product of standard tableau count and hook product yields zero. -/
+theorem numSYT_mul_hookProduct_partition_sub_eq_zero {n : ℕ} (Λ : Partition n) :
+    numSYT (toYoungDiagram Λ) * Λ.hookProduct - n.factorial = 0 := by
+  rw [numSYT_mul_hookProduct_partition, Nat.sub_self]
+
 end QOU.BraidKnot

@@ -160,4 +160,9 @@ theorem colLen_ofComposition_garnir_example_high :
   rw [colLen_ofComposition]
   decide
 
+/-- Subtracting the count of row lengths strictly exceeding m from the m-th column length yields zero. -/
+theorem colLen_sub_countP_rowLens_eq_zero (μ : YoungDiagram) (m : ℕ) :
+    μ.colLen m - μ.rowLens.countP (fun x => decide (m < x)) = 0 := by
+  rw [colLen_eq_countP_rowLens, Nat.sub_self]
+
 end QOU.BraidKnot.PartitionOfComposition

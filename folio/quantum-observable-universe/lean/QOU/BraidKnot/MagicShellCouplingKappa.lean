@@ -54,4 +54,9 @@ theorem br3_eq_br2_sq_sub_one {R : Type*} [Field R]
   field_simp
   ring
 
+/-- Subtracting the squared second q-integer minus one from the third q-integer yields zero. -/
+theorem br3_sub_br2_sq_sub_one_eq_zero {R : Type*} [Field R]
+    (M : MagicShellCouplingKappa R) : M.br3 - (M.br2 ^ 2 - 1) = 0 := by
+  rw [br3_eq_br2_sq_sub_one M, sub_self]
+
 end QOU.BraidKnot

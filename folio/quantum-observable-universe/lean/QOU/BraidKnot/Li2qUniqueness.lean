@@ -82,4 +82,14 @@ theorem li2q_unique_from_ftc
     F V = G V :=
   eq_of_has_deriv_right_eq hF hG hFc hGc h0 V (Set.right_mem_Icc.mpr hV)
 
+/-- Subtracting the right endpoint values of two continuous functions with identical right-derivatives and initial values yields zero. -/
+theorem li2q_unique_from_ftc_sub_eq_zero
+    {F G f : ℝ → ℝ} {V : ℝ} (hV : 0 ≤ V)
+    (hF : ∀ x ∈ Set.Ico (0:ℝ) V, HasDerivWithinAt F (f x) (Set.Ici x) x)
+    (hG : ∀ x ∈ Set.Ico (0:ℝ) V, HasDerivWithinAt G (f x) (Set.Ici x) x)
+    (hFc : ContinuousOn F (Set.Icc 0 V)) (hGc : ContinuousOn G (Set.Icc 0 V))
+    (h0 : F 0 = G 0) :
+    F V - G V = 0 := by
+  rw [li2q_unique_from_ftc hV hF hG hFc hGc h0, sub_self]
+
 end QOU.BraidKnot

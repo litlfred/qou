@@ -274,4 +274,14 @@ arity before citing it:
   a **derived** pair now has a sharp prediction to fail.
 -/
 
+/-- Subtracting the quartic coefficient from negative four-fifths yields a non-negative difference under the two-term residual conditions. -/
+theorem neg_four_fifths_sub_c4_nonneg (q c₃ c₄ t : ℝ)
+    (hq0 : (11099 : ℝ) / 10000 ≤ q) (hq1 : q ≤ (111 : ℝ) / 100)
+    (hc30 : (1 : ℝ) / 5 ≤ |c₃|) (hc31 : |c₃| ≤ 5)
+    (hc40 : (1 : ℝ) / 5 ≤ |c₄|) (hc41 : |c₄| ≤ 5)
+    (htlo : (18 : ℝ) / 10 ^ 8 ≤ t) (hthi : t ≤ (24 : ℝ) / 10 ^ 8)
+    (hsum : c₃ * wGen q ^ 3 + c₄ * wGen q ^ 4 = t) :
+    0 ≤ -((4 : ℝ) / 5) - c₄ :=
+  sub_nonneg.mpr (sum_c4_bounded q c₃ c₄ t hq0 hq1 hc30 hc31 hc40 hc41 htlo hthi hsum)
+
 end QOU.BraidKnot.MuPTwoTermSum
