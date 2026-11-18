@@ -1,7 +1,7 @@
 ---
 # qou-1twx
 title: Cross-check [braden-disney-hogg-2022] at computations/alpha_em_b2_bring_period_matrix_probe.py
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

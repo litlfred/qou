@@ -1,7 +1,7 @@
 ---
 # qou-2u6r
 title: 'CITE: Bryant 1987 / Hitchin 2000 (G2 as the generic-3-form stabiliser) is neither held nor registered — U — G2FrameDimensions.lean:75; baez2002 does not contain it'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

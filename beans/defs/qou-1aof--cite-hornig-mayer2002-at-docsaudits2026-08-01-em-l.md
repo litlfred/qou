@@ -1,7 +1,7 @@
 ---
 # qou-1aof
 title: Cite [hornig-mayer2002] at docs/audits/2026-08-01-em-linking-reads-round1.md
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

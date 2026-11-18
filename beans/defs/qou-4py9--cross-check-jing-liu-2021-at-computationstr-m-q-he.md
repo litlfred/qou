@@ -1,7 +1,7 @@
 ---
 # qou-4py9
 title: Cross-check [jing-liu-2021] at computations/tr_m_q_hecke_seminormal.py
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
