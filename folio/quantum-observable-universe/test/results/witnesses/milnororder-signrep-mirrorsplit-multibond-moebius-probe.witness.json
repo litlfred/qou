@@ -1,0 +1,53 @@
+{
+  "probe": "milnororder-signrep-mirrorsplit-multibond-moebius-probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/milnororder_signrep_mirrorsplit_multibond_moebius_probe.py",
+  "scriptCommitSha": "22d991a251c6bf1bcf86f7ea08f935c2c280b7b3",
+  "scriptHash": "94f6f6be6af6f9daa73f3911e2df79962cba2a56eed95434d4d929e3d5348851",
+  "scriptSha256": "94f6f6be6af6f9daa73f3911e2df79962cba2a56eed95434d4d929e3d5348851",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "geometric_order_forces_square_sub_eq_zero_qou_6irj",
+      "bean": "qou-6irj",
+      "theorem": "QOU.Mass.MilnorCarriesOrderNotMagnitude.geometric_order_forces_square_sub_eq_zero",
+      "b3_sq": "0.15990085383415577245171129030760492988672025593098878182488985448256818044089109",
+      "b2_mul_b4": "0.15990085383415577245171129030760492988672025593098878182488985448256818044089109",
+      "abs_diff": "2.6355494858076308060871435128175047519274903455921268875194407562770360727424399e-82",
+      "passed": true
+    },
+    {
+      "id": "equivariant_linearMap_to_trivial_apply_eq_zero_of_neZero_two_qou_7jhl",
+      "bean": "qou-7jhl",
+      "theorem": "QOU.Mass.MilnorSignRepObstructionTripleChannel.equivariant_linearMap_to_trivial_apply_eq_zero_of_neZero_two",
+      "x_val": "2.4898526301456267019599942245699846644266445592956175356243385136471066401125813",
+      "t_apply": "-1.4056263924307364299131432068360025343613281843158010066770350700144192387959679e-81",
+      "passed": true
+    },
+    {
+      "id": "interval_width_sub_eq_zero_qou_7sin",
+      "bean": "qou-7sin",
+      "theorem": "QOU.Mass.MirrorSplitIsASmallFractionOfTheEnergy.interval_width_sub_eq_zero",
+      "lhs_width": "7.4689872567860027982947664910227260608040660017169927843290903491470496783857061",
+      "rhs_width": "7.4689872567860027982947664910227260608040660017169927843290903491470496783857061",
+      "abs_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "mubar_common_weight_sub_integer_multiple_eq_zero_qou_7tr2",
+      "bean": "qou-7tr2",
+      "theorem": "QOU.Mass.MixedMultibondMuBarIntegrality.mubar_common_weight_sub_integer_multiple_eq_zero",
+      "chan_m": "3.1134992453861953944549871313282968993835742323088892406359600986853980915736843",
+      "abs_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "quadratic_coeff_sum_zero_of_three_roots_qou_7vh1",
+      "bean": "qou-7vh1",
+      "theorem": "QOU.Mass.MoebiusThreePointRigidity.quadratic_coeff_sum_zero_of_three_roots",
+      "vandermonde_det": "0.10816754349144797619042793991848305403077336854779599044685884726841179239364021",
+      "abs_coeff_sum": "0.0",
+      "passed": true
+    }
+  ]
+}
