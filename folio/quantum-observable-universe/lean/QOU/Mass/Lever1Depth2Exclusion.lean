@@ -90,4 +90,11 @@ theorem depth2_no_fixed_tau :
   rw [hτ] at hnext
   norm_num at hnext
 
+/-- **Super-doubling of the classical hook-dimension sum from `m = 4` to `m = 5` (`qou-u5z0`).**
+`dimSum 5 - 2 * dimSum 4 = 6` (`26 - 20 = 6`), witnessing strict super-doubling at `m = 5`. -/
+theorem dimSum_five_sub_two_mul_four :
+    dimSum 5 - 2 * dimSum 4 = 6 := by
+  obtain ⟨_, _, h4, h5⟩ := dimSum_values
+  rw [h4, h5]
+
 end QOU.Mass.Lever1Depth2

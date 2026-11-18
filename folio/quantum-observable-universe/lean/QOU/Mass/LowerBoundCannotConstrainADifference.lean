@@ -115,4 +115,11 @@ theorem diff_eq_of_bounds_saturated {E₁ E₂ B₁ B₂ : R}
     E₁ - E₂ = B₁ - B₂ :=
   diff_of_saturated (le_antisymm h₁' h₁) (le_antisymm h₂' h₂)
 
+omit [LinearOrder R] [IsOrderedAddMonoid R] in
+/-- **Symmetric saturation implies zero mirror split (`qou-zzwm`).**
+If `E₁ = B` and `E₂ = B` share the same saturated lower bound `B`, then `E₁ - E₂ = 0`. -/
+theorem diff_eq_zero_of_equal_saturated {E₁ E₂ B : R} (h₁ : E₁ = B) (h₂ : E₂ = B) :
+    E₁ - E₂ = 0 := by
+  rw [diff_of_saturated h₁ h₂, sub_self]
+
 end QOU.Mass.LowerBoundCannotConstrainADifference

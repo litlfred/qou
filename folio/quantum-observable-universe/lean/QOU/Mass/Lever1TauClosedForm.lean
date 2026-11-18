@@ -45,4 +45,12 @@ theorem tau_kernel_closed_form (q : ℝ) (hq : q ≠ 0) (hq1 : q + 1 ≠ 0) :
   field_simp
   ring
 
+/-- **Classical `q = 1` specialization of the depth-2 binding trace (`qou-vnqx`).**
+Evaluating `tau_kernel_closed_form` at `q = 1` gives `21 / 8 = 2.625`. -/
+theorem tau_kernel_at_one :
+    (1 + (3 * (1 : ℝ) ^ 2 + 4 + 3 / (1 : ℝ) ^ 2) / 4) / (((1 : ℝ) + 1) ^ 2 / (3 * (1 : ℝ)))
+      = 21 / 8 := by
+  rw [tau_kernel_closed_form 1 one_ne_zero (by norm_num)]
+  norm_num
+
 end QOU.Mass.Lever1Tau

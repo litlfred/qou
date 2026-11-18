@@ -95,4 +95,14 @@ theorem not_isRoot_of_irreducible_cubic
   exact no_root_of_irreducible_cubic hp hp3 hg0 hg2 hga
     (by simpa [aeval_def, eval_map] using hroot)
 
+/-- **Specialisation to linear annihilators (`degree ≤ 1`, `qou-3f7a`).**
+If `a : L` is annihilated by a nonzero polynomial `g : F[X]` of degree `≤ 1`,
+then `a` is not a root of any irreducible cubic `p : F[X]` (`p.degree = 3`). -/
+theorem no_root_of_irreducible_cubic_degree_le_one
+    {p : F[X]} (hp : Irreducible p) (hp3 : p.degree = 3)
+    {a : L} {g : F[X]} (hg0 : g ≠ 0) (hg1 : g.degree ≤ 1) (hga : aeval a g = 0) :
+    aeval a p ≠ 0 := by
+  have hg2 : g.degree ≤ 2 := le_trans hg1 (by decide)
+  exact no_root_of_irreducible_cubic hp hp3 hg0 hg2 hga
+
 end QOU.Mass.IrreducibleCubicNoQuadraticRoot

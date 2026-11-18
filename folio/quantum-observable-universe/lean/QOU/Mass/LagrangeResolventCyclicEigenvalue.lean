@@ -53,4 +53,12 @@ theorem colourResolvent_cyclic_eigenvalue {R : Type*} [CommRing R]
     w * (x1 + w * x2 + w ^ 2 * x0) = x0 + w * x1 + w ^ 2 * x2 := by
   linear_combination x0 * hw
 
+/-- **Three-step periodicity of the length-3 colour resolvent (`qou-gl58`).**
+For `w^3 = 1`, applying `w^3`-multiplication to `x0 + w * x1 + w ^ 2 * x2`
+returns `x0 + w * x1 + w ^ 2 * x2`. -/
+theorem colourResolvent_cyclic_three_step {R : Type*} [CommRing R]
+    (w x0 x1 x2 : R) (hw : w ^ 3 = 1) :
+    w ^ 3 * (x0 + w * x1 + w ^ 2 * x2) = x0 + w * x1 + w ^ 2 * x2 := by
+  rw [hw, one_mul]
+
 end QOU.Mass
