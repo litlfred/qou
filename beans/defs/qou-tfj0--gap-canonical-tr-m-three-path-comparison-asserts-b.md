@@ -1,13 +1,13 @@
 ---
 # qou-tfj0
 title: 'GAP: canonical_tr_m_three_path_comparison asserts bridge = markov_peel while its own numbers disagree by 32-55%, and He-4 bridge is 0.0'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T14:23:36Z
-updated_at: 2026-10-04T15:19:48Z
+updated_at: 2026-11-18T07:38:33Z
 parent: qou-9nnz
 ---
 

@@ -1,13 +1,13 @@
 ---
 # qou-sa14
 title: 'raw-float64 backlog triaged by what draining would require: 72 pct is ordinary scalar work, not the solver wall the large entries suggest'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T13:19:30Z
-updated_at: 2026-10-04T15:23:11Z
+updated_at: 2026-11-18T07:38:33Z
 parent: qou-9nnz
 ---
 

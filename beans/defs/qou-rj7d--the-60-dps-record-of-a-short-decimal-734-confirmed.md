@@ -1,13 +1,13 @@
 ---
 # qou-rj7d
 title: 'The 60-dps record of a SHORT decimal: 734 confirmed fields the float64-padding ratchet cannot see, including CAL-1 m_e'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T08:40:07Z
-updated_at: 2026-10-04T15:15:51Z
+updated_at: 2026-11-18T07:38:33Z
 parent: qou-9nnz
 ---
 
