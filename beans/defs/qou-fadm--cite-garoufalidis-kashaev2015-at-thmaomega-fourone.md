@@ -1,7 +1,7 @@
 ---
 # qou-fadm
 title: Cite [garoufalidis-kashaev2015] at thm:aomega-fourone-dt-count
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-hrq0
 title: Cross-check [hakimoglu-brown2025] at prop:habiro-tail-archimedean-action
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

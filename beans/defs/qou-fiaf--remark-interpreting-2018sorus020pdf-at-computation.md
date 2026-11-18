@@ -1,7 +1,7 @@
 ---
 # qou-fiaf
 title: Remark interpreting 2018SORUS020.pdf at computations/whitehead_c_sigma_torsion.py
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

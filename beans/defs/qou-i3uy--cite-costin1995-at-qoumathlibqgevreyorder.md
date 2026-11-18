@@ -1,7 +1,7 @@
 ---
 # qou-i3uy
 title: Cite [costin1995] at QOU.Mathlib.QGevreyOrder
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

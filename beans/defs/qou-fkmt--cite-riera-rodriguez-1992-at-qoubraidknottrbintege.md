@@ -1,7 +1,7 @@
 ---
 # qou-fkmt
 title: Cite [riera-rodriguez-1992] at QOU.BraidKnot.TrBIntegerTracePrune
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
