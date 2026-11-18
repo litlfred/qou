@@ -92,4 +92,11 @@ theorem bwS0Concrete_electron_block_exact
       = (heckeVerlindeData q hq P hsorted hconj hP).S0 [3, 1, 1] :=
   bwS0Concrete_selfConj_exact q hq P hsorted hconj hP [3, 1, 1] hmem (by decide) f
 
+/-- Subtracting one from the twist value on a self-conjugate partition yields zero. -/
+theorem theta_selfConj_sub_one_eq_zero {R : Type*} [CommRing R] [Nontrivial R] [NoZeroDivisors R]
+    [GroupWithZero R] (q : R) (l : List ℕ)
+    (hl : l.Sorted (· ≥ ·)) (hself : Partition.conjugate l = l) :
+    theta q l - 1 = 0 := by
+  rw [theta_selfConj_eq_one q l hl hself, sub_self]
+
 end QOU.BraidKnot.Keystone

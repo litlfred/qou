@@ -84,4 +84,12 @@ theorem bwS0_eq_hecke_of_rigidity
     bwPoly.eval t₀ = valPoly.eval t₀ := by
   rw [eq_of_eval_agree_card bwPoly valPoly s hbw hval hroot]
 
+/-- Subtracting the evaluated value polynomial from the evaluated gauge-row polynomial yields zero under bounded-degree finset agreement. -/
+theorem bwS0_sub_hecke_eq_zero_of_rigidity
+    (bwPoly valPoly : R[X]) (s : Finset R) (t₀ : R)
+    (hbw : bwPoly.natDegree < s.card) (hval : valPoly.natDegree < s.card)
+    (hroot : ∀ x ∈ s, bwPoly.eval x = valPoly.eval x) :
+    bwPoly.eval t₀ - valPoly.eval t₀ = 0 := by
+  rw [bwS0_eq_hecke_of_rigidity bwPoly valPoly s t₀ hbw hval hroot, sub_self]
+
 end QOU.BraidKnot.KeystoneGaugeRowRigidity

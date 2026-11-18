@@ -177,4 +177,9 @@ premise. -/
 example (c : ℤ) : ∀ z : ℂ, IsRootOfUnity z → z ^ ((0 : ℤ) * c) = 1 := by
   intro z _; simp
 
+/-- Adding any integer offset to a product forced to zero by root-of-unity triviality leaves the offset unchanged. -/
+theorem framing_trivial_add_eq_self {f c d : ℤ}
+    (h : ∀ z : ℂ, IsRootOfUnity z → z ^ (f * c) = 1) : f * c + d = d := by
+  rw [framing_trivial_of_gate_on_rootsOfUnity h, zero_add]
+
 end QOU.BraidKnot.Keystone

@@ -81,4 +81,10 @@ theorem qFactorial_shape_311 (q : R) :
     qIntGeo_one']
   ring
 
+/-- Subtracting the five-cell hook-product decomposition from the fifth q-factorial yields zero. -/
+theorem qFactorial_shape_32_sub_eq_zero (q : R) :
+    qFactorial q 5
+      - qIntGeo q 5 * (qIntGeo q 4 * qIntGeo q 3 * qIntGeo q 1 * qIntGeo q 2 * qIntGeo q 1) = 0 := by
+  rw [qFactorial_shape_32, sub_self]
+
 end QOU.BraidKnot.Keystone

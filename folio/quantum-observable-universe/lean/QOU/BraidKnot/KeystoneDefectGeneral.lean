@@ -50,4 +50,11 @@ example :
       = -(20 * (20 - 1) * (2 * 20 - 13)) * (Nat.factorial 20 : ℤ) :=
   defect_closedform_plancherel 20
 
+/-- Subtracting the closed-form cubic factorial product from the Plancherel hook-square defect expression yields zero. -/
+theorem defect_closedform_plancherel_sub_eq_zero (n : ℕ) :
+    (12 * (∑ l ∈ (partitionsOf n).toFinset, (dimHLF l : ℤ) ^ 2 * sumSqHooks l)
+        - (WLambdaDefect.sixS (n : ℤ) + 12 * (n : ℤ)) * (Nat.factorial n : ℤ))
+      - (-((n : ℤ) * ((n : ℤ) - 1) * (2 * (n : ℤ) - 13)) * (Nat.factorial n : ℤ)) = 0 := by
+  rw [defect_closedform_plancherel, sub_self]
+
 end QOU.BraidKnot.KeystoneDefectGeneral
