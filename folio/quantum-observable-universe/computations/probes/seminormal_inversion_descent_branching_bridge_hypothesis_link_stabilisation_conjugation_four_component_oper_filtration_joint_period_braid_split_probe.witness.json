@@ -1,0 +1,57 @@
+{
+  "probe": "seminormal_inversion_descent_branching_bridge_hypothesis_link_stabilisation_conjugation_four_component_oper_filtration_joint_period_braid_split_probe",
+  "beans": [
+    "8ed2",
+    "markov_identification",
+    "60iz",
+    "6chz",
+    "hhl9"
+  ],
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/seminormal_inversion_descent_branching_bridge_hypothesis_link_stabilisation_conjugation_four_component_oper_filtration_joint_period_braid_split_probe.py",
+  "scriptCommitSha": "ac300d2c8e5f49854ec28ab33d09e033225201c1",
+  "scriptHash": "c26c58a7c54a3cd7fa558a4fc88d10c46bf7e4a0052dde0404a277fc13062f01",
+  "scriptSha256": "c26c58a7c54a3cd7fa558a4fc88d10c46bf7e4a0052dde0404a277fc13062f01",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "seminormalInversionDescent": {
+      "bean": "8ed2",
+      "inversionDescentResidual": "0.0",
+      "brickChainResidual": "0.0",
+      "seminormalDescentEnergySq": "0.0",
+      "passed": true
+    },
+    "branchingBridgeHypothesis": {
+      "bean": "markov_identification",
+      "weightedPartialTraceSum": "22.0",
+      "branchingIdentificationDiscrepancy": "0.0",
+      "branchingHypothesisEnergySq": "0.0",
+      "passed": true
+    },
+    "linkStabilisationConjugation": {
+      "bean": "60iz",
+      "moveOneStabilisationDrift": "0.0",
+      "moveTwoConjugationDrift": "0.0",
+      "twoMoveInvarianceEnergySq": "0.0",
+      "wordMapBridgeRemaining": "1.0",
+      "passed": true
+    },
+    "fourComponentOperFiltration": {
+      "bean": "6chz",
+      "operFiltrationComponentTotal": "4.0",
+      "honestAbstractedKeystones": "4.0",
+      "operFiltrationIntegritySq": "16.0",
+      "passed": true
+    },
+    "jointPeriodBraidSplit": {
+      "bean": "hhl9",
+      "jointPeriodBraidResidual": "0.0",
+      "jointPeriodBraidResidualSq": "0.0",
+      "passed": true
+    },
+    "fiveTaskRoundNinetyOneSynthesis": {
+      "fiveTaskRoundNinetyOneEnergySq": "16.0",
+      "passed": true
+    }
+  }
+}
