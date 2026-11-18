@@ -78,4 +78,39 @@ theorem magnus_pairing_sign_indefinite :
       0 < (ρp * (A * B - B * A)).trace ∧ (ρn * (A * B - B * A)).trace < 0 := by
   refine ⟨!![0, 1; 0, 0], !![0, 0; 1, 0], !![1, 0; 0, 0], !![0, 0; 0, 1], ?_, ?_⟩ <;> decide
 
+/-- **Scalar density control.** Any scalar-multiple density `ρ = c • 1` annihilates
+    a commutator `A * B - B * A` in trace, extending the `ρ = I` control to all
+    central scalar weights. -/
+theorem trace_scalar_mul_commutator_eq_zero {R : Type*} [CommRing R]
+    {n : Type*} [Fintype n] [DecidableEq n] (c : R) (A B : Matrix n n R) :
+    ((c • (1 : Matrix n n R)) * (A * B - B * A)).trace = 0 := by
+  rw [smul_mul_assoc, one_mul, Matrix.trace_smul, trace_commutator_eq_zero, smul_zero]
+
+/-- **Row-cap reduction for Wenzl vs. Plancherel weights (bean `qou-za3q`).**
+    If a partition-weight family `w` vanishes on all shapes with more than `r` rows
+    (`∀ i ∈ s, r < rows i → w i = 0`, the Wenzl level-`r` row cap), then the
+    full weighted Magnus pairing sum over `s` equals the sum restricted to
+    shapes with `rows i ≤ r`. -/
+theorem weighted_pairing_annihilated_of_row_cap {R : Type*} [CommRing R]
+    {ι : Type*} (s : Finset ι) (rows : ι → ℕ) (r : ℕ) (w t : ι → R)
+    (hcap : ∀ i ∈ s, r < rows i → w i = 0) :
+    ∑ i ∈ s, w i * t i = ∑ i ∈ s.filter (fun i => rows i ≤ r), w i * t i := by
+  symm
+  refine Finset.sum_subset (Finset.filter_subset _ s) ?_
+  intro i his hnot
+  rw [Finset.mem_filter] at hnot
+  have hgt : r < rows i := Nat.lt_of_not_ge (fun hle => hnot ⟨his, hle⟩)
+  rw [hcap i his hgt, zero_mul]
+
+/-- **Exact tail isolation between uncapped and row-capped weights (bean `qou-za3q`).**
+    For any weight `w` and any level `r`, the full partition sum decomposes as the
+    sum over surviving shapes (`rows i ≤ r`) plus the sum over shapes annihilated by
+    the level-`r` row cap (`r < rows i`). -/
+theorem weighted_pairing_split_by_row_cap {R : Type*} [CommRing R]
+    {ι : Type*} (s : Finset ι) (rows : ι → ℕ) (r : ℕ) (w t : ι → R) :
+    ∑ i ∈ s, w i * t i =
+      (∑ i ∈ s.filter (fun i => rows i ≤ r), w i * t i) +
+      (∑ i ∈ s.filter (fun i => ¬ rows i ≤ r), w i * t i) := by
+  exact (Finset.sum_filter_add_sum_filter_not s (fun i => rows i ≤ r) (fun i => w i * t i)).symm
+
 end QOU.MassTheory

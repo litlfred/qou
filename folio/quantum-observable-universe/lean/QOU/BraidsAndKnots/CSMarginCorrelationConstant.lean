@@ -69,4 +69,45 @@ theorem csMargin_rho_eq {π : ℝ} (hπ : 0 < π) :
     _ = Real.sqrt ((2 * Real.sqrt 6 / 5) ^ 2) := by rw [hsq]
     _ = 2 * Real.sqrt 6 / 5 := Real.sqrt_sq hrhs
 
+/-- **Complementary variance fraction `1 - ρ_P² = 1/25` (bean `qou-h315`).**
+    Over any characteristic-zero field with scale `p ≠ 0`, the unexplained variance
+    fraction `1 - Â₃² / (3 V_A)` is exactly `1/25`. -/
+theorem csMargin_one_sub_rhoSq_eq {K : Type*} [Field K] [CharZero K] (p : K) (hp : p ≠ 0) :
+    1 - (8 / (5 * p)) ^ 2 / (3 * (8 / (9 * p ^ 2))) = 1 / 25 := by
+  rw [csMargin_rhoSq_eq p hp]
+  norm_num
+
+/-- **Strict positivity of the limiting Plancherel correlation `ρ_P > 0` (bean `qou-h315`).** -/
+theorem csMargin_rho_pos {π : ℝ} (hπ : 0 < π) :
+    0 < (8 / (5 * π)) / Real.sqrt (3 * (8 / (9 * π ^ 2))) := by
+  rw [csMargin_rho_eq hπ]
+  positivity
+
+/-- **Strict Cauchy–Schwarz upper bound `ρ_P < 1` (bean `qou-h315`).** -/
+theorem csMargin_rho_lt_one {π : ℝ} (hπ : 0 < π) :
+    (8 / (5 * π)) / Real.sqrt (3 * (8 / (9 * π ^ 2))) < 1 := by
+  rw [csMargin_rho_eq hπ]
+  have hsqrt : Real.sqrt 6 < 5 / 2 := by
+    rw [← Real.sqrt_sq (by norm_num : (0 : ℝ) ≤ 5 / 2)]
+    exact Real.sqrt_lt_sqrt (by norm_num) (by norm_num)
+  linarith
+
+/-- **Strict positivity of the asymptotic Cauchy–Schwarz margin `m∞ = ρ_P - √(V_D/V_A) > 0`
+    whenever `0 ≤ V_D / V_A < 24/25` (bean `qou-h315`).** -/
+theorem csMargin_pos_of_ratio_lt_rhoSq {π vRatio : ℝ}
+    (hπ : 0 < π) (hv0 : 0 ≤ vRatio) (hv : vRatio < (24 : ℝ) / 25) :
+    0 < (8 / (5 * π)) / Real.sqrt (3 * (8 / (9 * π ^ 2))) - Real.sqrt vRatio := by
+  rw [csMargin_rho_eq hπ]
+  have h24 : 2 * Real.sqrt 6 / 5 = Real.sqrt ((24 : ℝ) / 25) := by
+    have hrhs : (0 : ℝ) ≤ 2 * Real.sqrt 6 / 5 := by positivity
+    rw [← Real.sqrt_sq hrhs]
+    congr 1
+    have h6 : (Real.sqrt 6) ^ 2 = 6 := Real.sq_sqrt (by norm_num)
+    rw [div_pow, mul_pow, h6]
+    norm_num
+  rw [h24]
+  have hlt : Real.sqrt vRatio < Real.sqrt ((24 : ℝ) / 25) :=
+    (Real.sqrt_lt_sqrt_iff hv0).mpr hv
+  linarith
+
 end QOU.BraidsAndKnots.CSMarginCorrelationConstant

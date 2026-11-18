@@ -120,4 +120,40 @@ theorem volumeInvariant_eq_of_two_realisations
   ⟨mostow_volume_eq_triangulation_volume compat T₁ m h₁,
    HyperbolicVolumeBridge.vol_eq_of_two_realisations T₁ T₂ m h₁ h₂⟩
 
+/-- **Relabelling invariance of the Mostow–triangulation bridge.**
+    If `T` realises `m`, then relabelling the `i`-th tetrahedron via `rotateAt`
+    still evaluates to `volumeInvariant M`. -/
+theorem mostow_volume_eq_rotateAt
+    [HyperbolicVolumeBridge M] [MR : MostowRigidity M]
+    (compat : ∀ m : M, HyperbolicVolumeBridge.vol m = MR.volume)
+    (T : IdealTriangulation n) (m : M) (i : Fin n)
+    (h : HyperbolicVolumeBridge.Realises T m) :
+    volumeInvariant M = (T.rotateAt i).volume := by
+  rw [mostow_volume_eq_triangulation_volume compat T m h,
+      IdealTriangulation.volume_rotateAt]
+
+/-- **Per-tetrahedron sum expansion of the Mostow volume invariant.**
+    Under the bridge and compatibility hypothesis, `volumeInvariant M` equals the
+    finite sum of Bloch–Wigner volumes `∑ i, (T.tet i).volume`. -/
+theorem mostow_volume_eq_sum_of_realises
+    [HyperbolicVolumeBridge M] [MR : MostowRigidity M]
+    (compat : ∀ m : M, HyperbolicVolumeBridge.vol m = MR.volume)
+    (T : IdealTriangulation n) (m : M)
+    (h : HyperbolicVolumeBridge.Realises T m) :
+    volumeInvariant M = ∑ i, (T.tet i).volume := by
+  rw [mostow_volume_eq_triangulation_volume compat T m h,
+      IdealTriangulation.volume_def]
+
+/-- **Volume-mismatch obstruction to realisation.**
+    If the Mostow volume invariant of `M` differs from `T.volume`, then `T`
+    cannot realise any `m : M` under a compatible `HyperbolicVolumeBridge`. -/
+theorem not_realises_of_mostow_volume_ne
+    [HyperbolicVolumeBridge M] [MR : MostowRigidity M]
+    (compat : ∀ m : M, HyperbolicVolumeBridge.vol m = MR.volume)
+    (T : IdealTriangulation n) (m : M)
+    (hne : volumeInvariant M ≠ T.volume) :
+    ¬ HyperbolicVolumeBridge.Realises T m := by
+  intro h
+  exact hne (mostow_volume_eq_triangulation_volume compat T m h)
+
 end QOU.Encounter.MostowTriangulationBridge

@@ -78,4 +78,41 @@ theorem isSemisimpleRing_of_gram_det_eq_qFactorial_one_lt
   isSemisimpleRing_of_gram_det_eq_qFactorial b hq.ne' hc
     (qGeneric_of_one_lt hq n) hdet
 
+omit [FiniteDimensional K A] in
+/-- **Non-vanishing of the regular-trace Gram determinant at Wenzl-generic `q`.**
+    If the regular-trace Gram determinant in basis `b` equals `c * qFactorial q n`
+    with `q ≠ 1`, `c ≠ 0`, and `QGeneric q n`, then the Gram determinant is non-zero. -/
+theorem regTraceGram_det_ne_zero_of_eq_qFactorial
+    {ι : Type*} [Fintype ι] [DecidableEq ι] (b : Module.Basis ι K A)
+    {q c : K} (hq : q ≠ 1) (hc : c ≠ 0) {n : ℕ} (hgen : QGeneric q n)
+    (hdet : (BilinForm.toMatrix b (regTraceBilin K A)).det = c * qFactorial q n) :
+    (BilinForm.toMatrix b (regTraceBilin K A)).det ≠ 0 := by
+  rw [hdet]
+  exact mul_ne_zero hc ((qFactorial_ne_zero_iff hq n).mpr hgen)
+
+/-- **Exact-factorial substrate specialisation (`c = 1`, `q > 1`).**
+    For any real finite-dimensional algebra `B` with basis `b` whose regular-trace
+    Gram determinant equals `qFactorial q n` at `1 < q`, `B` is semisimple. -/
+theorem isSemisimpleRing_of_gram_det_eq_qFactorial_one_lt_exact
+    {B : Type*} [Ring B] [Algebra ℝ B] [FiniteDimensional ℝ B]
+    {ι : Type*} [Fintype ι] [DecidableEq ι] (b : Module.Basis ι ℝ B)
+    {q : ℝ} (hq : 1 < q) {n : ℕ}
+    (hdet : (BilinForm.toMatrix b (regTraceBilin ℝ B)).det = qFactorial q n) :
+    IsSemisimpleRing B :=
+  isSemisimpleRing_of_gram_det_eq_qFactorial_one_lt b hq one_ne_zero
+    (by rw [hdet, one_mul])
+
+omit [FiniteDimensional K A] in
+/-- **Failure-locus detection from Gram degeneracy.**
+    If the regular-trace Gram determinant equals `c * qFactorial q n` (`q ≠ 1`, `c ≠ 0`)
+    and vanishes, then `q` is not Wenzl-generic at level `n`. -/
+theorem not_qGeneric_of_gram_det_eq_zero
+    {ι : Type*} [Fintype ι] [DecidableEq ι] (b : Module.Basis ι K A)
+    {q c : K} (hq : q ≠ 1) (hc : c ≠ 0) {n : ℕ}
+    (hdet : (BilinForm.toMatrix b (regTraceBilin K A)).det = c * qFactorial q n)
+    (hzero : (BilinForm.toMatrix b (regTraceBilin K A)).det = 0) :
+    ¬ QGeneric q n := by
+  intro hgen
+  exact regTraceGram_det_ne_zero_of_eq_qFactorial b hq hc hgen hdet hzero
+
 end QOU.MathlibExt
