@@ -1,0 +1,106 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-17T06:59:02.537169+00:00",
+  "commitSha": "5a1ee00410da025e017dadafe0229708d60b49c9",
+  "assertions": [
+    {
+      "name": "qou_20sx_gell_mann_nishijima_and_anomaly_cancellation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.standard_generation_hypercharge_anomalies_cancel"
+    },
+    {
+      "name": "qou_20sx_unnormalized_weinberg_trace_ratio_three_eighths",
+      "computed": "3/8",
+      "expected": "3/8",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.weinberg_unnormalized_trace_ratio_three_eighths"
+    },
+    {
+      "name": "qou_8p1x_colour_su3_scoreboard_exact_counts",
+      "computed": "[0, 0, 1]:21:7:168:0:4",
+      "expected": "[0, 0, 1]:21:7:168:0:4",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.colour_su3_route_scoreboard_identities"
+    },
+    {
+      "name": "qou_ha6c_coulomb_to_strong_bond_hyperbolic_identity",
+      "computed": "2.63554948580763080608714351282e-82",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "QOU.Eightfold.WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.coulomb_to_strong_bond_strict_bounds"
+    },
+    {
+      "name": "qou_ha6c_common_mode_shift_invariance_of_md_minus_mu",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.light_quark_difference_common_mode_shift_invariance"
+    },
+    {
+      "name": "qou_pvu4_two_mode_cauchy_schwarz_lagrange_identity",
+      "computed": "2.02410200510026045907492621784e-79",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "QOU.Eightfold.WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.two_mode_tower_log_convexity_and_lepton_bend_exclusion"
+    },
+    {
+      "name": "qou_pvu4_empirical_lepton_log_concavity_sign_and_bend",
+      "computed": "-1:1",
+      "expected": "-1:1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.two_mode_tower_log_convexity_and_lepton_bend_exclusion"
+    },
+    {
+      "name": "qou_y0mq_pmns_unknot_chirality_and_framed_twist_lift",
+      "computed": "[0, 2, 4]:[1, 3, 5]:[2, 2]",
+      "expected": "[0, 2, 4]:[1, 3, 5]:[2, 2]",
+      "passed": true,
+      "tolerance": "0",
+      "source": "QOU.Eightfold.WeakIsospinGradingColourFibreRoutesLightQuarkExtractionTauLogConvexityAndPmnsCarrier.pmns_unknot_chirality_obstruction_and_framed_lift"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "weak-isospin-grading-colour-fibre-routes-light-quark-extraction-tau-log-convexity-and-pmns-carrier",
+  "scriptFile": "weak_isospin_grading_colour_fibre_routes_light_quark_extraction_tau_log_convexity_and_pmns_carrier_probe.py",
+  "scriptHash": "e5c61b0a960e",
+  "scriptCommitSha": "5a1ee00410da025e017dadafe0229708d60b49c9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/weak_isospin_grading_colour_fibre_routes_light_quark_extraction_tau_log_convexity_and_pmns_carrier_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/weak_isospin_grading_colour_fibre_routes_light_quark_extraction_tau_log_convexity_and_pmns_carrier_probe.py"
+  },
+  "description": "Exact 80-dps mpmath and Fraction verification for qou-20sx, qou-8p1x, qou-ha6c, qou-pvu4, and qou-y0mq under epic qou-8lxd.",
+  "data": {
+    "sin2_theta_w0_exact": "3/8",
+    "coulomb_to_strong_bond_at_q0": "0.1037690612743003293061266244126689833053",
+    "empirical_lepton_bend_ratio": "12.2951728810379191537719300803033449959"
+  }
+}
