@@ -1,7 +1,7 @@
 ---
 # qou-k6s6
 title: 'Sweep guard: a witness that DEFINES an anchor is not migratable'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

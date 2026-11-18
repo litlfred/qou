@@ -1,7 +1,7 @@
 ---
 # qou-k448
 title: 'Sweep: ''X = X := rfl'' + non-compiling un-sidecar''d library Lean files'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

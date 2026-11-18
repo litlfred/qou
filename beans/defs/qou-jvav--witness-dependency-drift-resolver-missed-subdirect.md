@@ -1,7 +1,7 @@
 ---
 # qou-jvav
 title: witness_dependency_drift resolver missed subdirectory upstreams — 357 of 688 drift records were false
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

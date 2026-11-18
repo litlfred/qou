@@ -1,7 +1,7 @@
 ---
 # qou-k54t
 title: The carrier table straddles TWO disagreeing chi sources — A<=4 reads a rust chain whose witness records 8ms for a 15-minute computation
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
