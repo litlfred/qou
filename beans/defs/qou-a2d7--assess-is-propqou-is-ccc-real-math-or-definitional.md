@@ -1,7 +1,7 @@
 ---
 # qou-a2d7
 title: 'Assess: is prop:qou-is-ccc real math or definitional restatement'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -18,3 +18,7 @@ MEASURED. `prop:qou-is-ccc` -> Lean `QOU.qou_is_ccc` at folio/quantum-observable
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (PR #8448)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/CuspLatticeUncertaintyTruncationDigitSlopeJetHorizonProjectionSubstrateModelScalarTrace.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_4kgh_5u0i_a2d7_aawz_nnyn_probe.witness.json` (`Commit 1` = `03aab630aaf498438c097ced372d1b9624239334`, `HEAD` = `9712a8a7c54237632ba55faa0a1e31fdd3332e05`).

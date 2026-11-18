@@ -1,7 +1,7 @@
 ---
 # qou-4kgh
 title: 'T3a: off-lattice vs on-lattice — why T4-inverted ϑ values are non-integer in cusp lattice units'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -24,3 +24,7 @@ Evidence: The ϑ values 0.65/2.24 in lattice units come from T4 inversion of the
 
 Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## Progress (PR #8448)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/CuspLatticeUncertaintyTruncationDigitSlopeJetHorizonProjectionSubstrateModelScalarTrace.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_4kgh_5u0i_a2d7_aawz_nnyn_probe.witness.json` (`Commit 1` = `03aab630aaf498438c097ced372d1b9624239334`, `HEAD` = `9712a8a7c54237632ba55faa0a1e31fdd3332e05`).

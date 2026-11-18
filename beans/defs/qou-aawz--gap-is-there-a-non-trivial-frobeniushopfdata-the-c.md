@@ -1,7 +1,7 @@
 ---
 # qou-aawz
 title: 'GAP: is there a NON-TRIVIAL FrobeniusHopfData? the corpus only exhibits A = 1'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -185,3 +185,7 @@ done.
 
 Until then the corpus's consistency proof for this definition still rests
 entirely on the trivial object, exactly as when this bean was opened.
+
+## Progress (PR #8448)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/CuspLatticeUncertaintyTruncationDigitSlopeJetHorizonProjectionSubstrateModelScalarTrace.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_4kgh_5u0i_a2d7_aawz_nnyn_probe.witness.json` (`Commit 1` = `03aab630aaf498438c097ced372d1b9624239334`, `HEAD` = `9712a8a7c54237632ba55faa0a1e31fdd3332e05`).
