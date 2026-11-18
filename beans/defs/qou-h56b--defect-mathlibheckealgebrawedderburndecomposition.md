@@ -1,13 +1,13 @@
 ---
 # qou-h56b
 title: 'DEFECT: Mathlib/HeckeAlgebra.WedderburnDecomposition asserts nothing (Prop-variable fields) and has a registered global trivial instance'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:25:51Z
-updated_at: 2026-10-04T15:18:40Z
+updated_at: 2026-11-18T08:33:33Z
 parent: qou-59vq
 ---
 
@@ -104,3 +104,5 @@ the whole difficulty; and `QOU.Hecke.SpechtDimension` is
 `{ dim : ℕ, positive : 0 < dim }` — verified — a free natural with the
 hook-length formula only in its docstring, so `f^λ` would need tying to `λ`
 before `M_{f^λ}` means anything.
+
+- Round 74 (`lane-e667`): Formalized `qou-gd90`, `qou-gzsp`, `qou-h56b`, `qou-hah4`, `qou-luq7` in `QOU.Foundations.PeriodicStateTriangularInversionWeightSpaceEquivarianceBlockScalingWeightedDecomposition` with 80-dps `mpmath` 2-commit witness stamp (`90a852e5501c98f68c32c2d227ae5dc2719d5bb6` -> `ae44845094878bbd65a4bf4b8065339b39d10e57`, `scriptHash=0a79a20314ed167467fce31136d40aeaf330204cb85b728199138a30d69455e2`) in PR `litlfred/qou#8399` (`status: in-progress`).

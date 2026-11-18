@@ -1,13 +1,13 @@
 ---
 # qou-hah4
 title: 'GAP: WedderburnDecomp needs the IsHeckeOfFullRank companion and a block_scaling field before an instance is worth building'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T16:32:36Z
-updated_at: 2026-10-04T15:20:32Z
+updated_at: 2026-11-18T08:33:33Z
 parent: qou-59vq
 ---
 
@@ -95,3 +95,5 @@ supported. Over `content/**/lean/QOU`, exactly 4 files mention
 `WedderburnDecomp` (its defining file, `Hecke.lean`'s index line, and two
 docstring mentions), and ZERO carry it as a hypothesis binder outside the
 defining file.
+
+- Round 74 (`lane-e667`): Formalized `qou-gd90`, `qou-gzsp`, `qou-h56b`, `qou-hah4`, `qou-luq7` in `QOU.Foundations.PeriodicStateTriangularInversionWeightSpaceEquivarianceBlockScalingWeightedDecomposition` with 80-dps `mpmath` 2-commit witness stamp (`90a852e5501c98f68c32c2d227ae5dc2719d5bb6` -> `ae44845094878bbd65a4bf4b8065339b39d10e57`, `scriptHash=0a79a20314ed167467fce31136d40aeaf330204cb85b728199138a30d69455e2`) in PR `litlfred/qou#8399` (`status: in-progress`).

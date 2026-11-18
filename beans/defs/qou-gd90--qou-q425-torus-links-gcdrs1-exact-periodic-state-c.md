@@ -1,11 +1,11 @@
 ---
 # qou-gd90
 title: 'qou-q425 torus links gcd(r,s)>1: exact periodic-state correction to MiddleWeightTraces, then prove'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-12T18:13:10Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-18T08:33:33Z
 parent: qou-59vq
 ---
 
@@ -55,3 +55,5 @@ Parent `qou-xhci` → `qou-59vq`. The old parent was missing or absent, so the b
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+- Round 74 (`lane-e667`): Formalized `qou-gd90`, `qou-gzsp`, `qou-h56b`, `qou-hah4`, `qou-luq7` in `QOU.Foundations.PeriodicStateTriangularInversionWeightSpaceEquivarianceBlockScalingWeightedDecomposition` with 80-dps `mpmath` 2-commit witness stamp (`90a852e5501c98f68c32c2d227ae5dc2719d5bb6` -> `ae44845094878bbd65a4bf4b8065339b39d10e57`, `scriptHash=0a79a20314ed167467fce31136d40aeaf330204cb85b728199138a30d69455e2`) in PR `litlfred/qou#8399` (`status: in-progress`).

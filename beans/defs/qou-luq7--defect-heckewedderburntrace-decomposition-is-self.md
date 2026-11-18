@@ -1,13 +1,13 @@
 ---
 # qou-luq7
 title: 'DEFECT: Hecke/Wedderburn.trace_decomposition is SELF-ASSUMING -- tr_M = sum y_lambda chi_lambda is a class FIELD, and the class has no instance'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T18:03:43Z
-updated_at: 2026-10-04T15:18:39Z
+updated_at: 2026-11-18T08:33:33Z
 parent: qou-59vq
 ---
 
@@ -353,3 +353,5 @@ FRT takes. So:
 qou-luq7 now carries no free parameter and no cited-but-unproved classical
 input. I previously said the remaining gap was "proving FRT, a standalone
 formalisation" -- that was wrong too, and for the same reason.
+
+- Round 74 (`lane-e667`): Formalized `qou-gd90`, `qou-gzsp`, `qou-h56b`, `qou-hah4`, `qou-luq7` in `QOU.Foundations.PeriodicStateTriangularInversionWeightSpaceEquivarianceBlockScalingWeightedDecomposition` with 80-dps `mpmath` 2-commit witness stamp (`90a852e5501c98f68c32c2d227ae5dc2719d5bb6` -> `ae44845094878bbd65a4bf4b8065339b39d10e57`, `scriptHash=0a79a20314ed167467fce31136d40aeaf330204cb85b728199138a30d69455e2`) in PR `litlfred/qou#8399` (`status: in-progress`).
