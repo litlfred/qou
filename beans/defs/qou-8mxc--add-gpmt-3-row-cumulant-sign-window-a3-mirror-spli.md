@@ -1,11 +1,11 @@
 ---
 # qou-8mxc
 title: Add GPMT 3-Row Cumulant Sign-Window & A=3 Mirror Split Diagnostics to threerow_extensive_cumulant_forward_probe.py
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-11-18T21:57:14Z
-updated_at: 2026-11-18T21:57:14Z
+updated_at: 2026-11-18T22:06:02Z
 parent: qou-7xl8
 ---
 
