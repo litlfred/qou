@@ -1,7 +1,7 @@
 ---
 # qou-4khc
 title: 'Assess: is the TQFT claim a cobordism functor or a braided-category analogy'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -18,3 +18,7 @@ MEASURED (subagent + own verification). NO COBORDISM FUNCTOR EXISTS: grep cobord
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-14 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (PR #8443)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/BarParityReadoutPartitionWeightBraidedTraceSurfaceGenusPolarizationPair.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_2djn_2joi_4khc_51l1_8ava_probe.witness.json` (`Commit 1` = `76eb5ed3bb589e3c0713062c1916ff3df6e16b60`, `HEAD` = `bd4d50a998e0b0519e966f309ff7ef17c810abac`).

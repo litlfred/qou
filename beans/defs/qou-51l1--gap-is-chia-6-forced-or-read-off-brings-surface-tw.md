@@ -1,7 +1,7 @@
 ---
 # qou-51l1
 title: 'GAP: is chi(A) = -6 forced or read off Bring''s surface? two corpus statements disagree'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -207,3 +207,7 @@ The contradiction this bean reported is **real but smaller than stated**: `chapt
 > *"The lifting obstructions reduce the entire obstruction to a single scalar chi(A) = 2 - 2g with g >= 1; the Descartes condition fixes its value at -6."*
 
 Not enacting that edit — it is a content change outside the ask-first exemptions, and the author's reading of the chain is the one that decides it.
+
+## Progress (PR #8443)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/BarParityReadoutPartitionWeightBraidedTraceSurfaceGenusPolarizationPair.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_2djn_2joi_4khc_51l1_8ava_probe.witness.json` (`Commit 1` = `76eb5ed3bb589e3c0713062c1916ff3df6e16b60`, `HEAD` = `bd4d50a998e0b0519e966f309ff7ef17c810abac`).
