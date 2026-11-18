@@ -6,7 +6,7 @@ type: milestone
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:55Z
-updated_at: 2026-11-18T11:34:19Z
+updated_at: 2026-11-18T11:45:08Z
 ---
 
 Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main; open gaps now sit in axioms and instance-less classes. The only item on the L2 critical path is SW-WIRE (WedderburnDecomp instance, markov_trace_unique_axiom), gated by owner decision qou-ar7f.
@@ -155,3 +155,5 @@ Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main
 - Round 83 (`lane-e667`): Formalized `qou-xc8t`, `cdup`, `qdzu`, `qou-9e7p`, `qou-c98z` in `QOU.Foundations.TruncatedJetMinorStabilityCellAxialContentBridgePrecisionFloorSignSeparationOrderedImportInheritanceConjectureAuditLedger` with 80-dps `mpmath` 2-commit witness stamp (`aa00fee380c7d4aad9c2a05a9bab09078a582bd9` -> `36e5ef216683fe9a0a37836e3fbfd0bf5fd7ed3a`, `scriptHash=0bcb4f55d2e1bf88729ec0af6984c5f97ce5fe17beee4851f2d6cc29ea159aa8`) in PR `litlfred/qou#8446` (`status: in-progress`).
 
 - Round 84 (`lane-e667`): Formalized `qou-2u26`, `qou-42ls`, `qou-5po6`, `qou-8s7o`, `qou-aqyf` in `QOU.Foundations.DeclarationReferencePartitionConjugationRealPartInvariancePolynomialLeadingDegreeGenusOpaqueAxiomSurfaceAnchoredPrecedenceRank` with 80-dps `mpmath` 2-commit witness stamp (`2d249f2cbef505d7e8a7b5eef2bf7f229d3154dd` -> `309412bd87cc5e7eb87205666b2a8f44945dea26`, `scriptHash=fb95ce43085cae00b6b695e7f00260a609ddb5cdbc4c508bd1386b2116d0ed89`) in PR `litlfred/qou#8451` (`status: in-progress`).
+
+- Round 85 (`lane-e667`): Formalized `qou-ep4e`, `qou-fpjy`, `qou-i6bn`, `qou-i6cn`, `qou-mkm8` in `QOU.Foundations.TableauSquareSumPromotionBinderObligationVisibilityLogDeterminantBoundaryStandaloneAxiomDistributionNonHyperbolicVolumeVanishing` with 80-dps `mpmath` 2-commit witness stamp (`dfc69944cbe55f3b2622843a90dea18c98e576d7` -> `cbb6c21aa01988c4135bc7451f24b559c8179f67`, `scriptHash=0e68280fe3476a3f8543bf6de4770766624506d689b2ae34edd201278173e989`) in PR `litlfred/qou#8455` (`status: in-progress`).

@@ -1,7 +1,7 @@
 ---
 # qou-fpjy
 title: 'Class-carried external inputs are invisible to #print axioms and the vacuity audit'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -10,7 +10,7 @@ tags:
     - honesty
     - reorg-2026-10-04
 created_at: 2026-08-16T12:55:03Z
-updated_at: 2026-10-04T15:17:57Z
+updated_at: 2026-11-18T11:45:08Z
 parent: qou-6qbv
 ---
 
@@ -89,3 +89,5 @@ This is a **visibility** gap in the audit surface, of exactly the kind AGENTS.md
 `.qa.json` sidecar, so nothing but an agent's own reading covers it.
 
 Surfaced by PR #5230; see `docs/audits/2026-08-16-ocneanu-weight-axiomatisation.md`.
+
+- Round 85 (`lane-e667`): Formalized `qou-ep4e`, `qou-fpjy`, `qou-i6bn`, `qou-i6cn`, `qou-mkm8` in `QOU.Foundations.TableauSquareSumPromotionBinderObligationVisibilityLogDeterminantBoundaryStandaloneAxiomDistributionNonHyperbolicVolumeVanishing` with 80-dps `mpmath` 2-commit witness stamp (`dfc69944cbe55f3b2622843a90dea18c98e576d7` -> `cbb6c21aa01988c4135bc7451f24b559c8179f67`, `scriptHash=0e68280fe3476a3f8543bf6de4770766624506d689b2ae34edd201278173e989`) in PR `litlfred/qou#8455` (`status: in-progress`).
