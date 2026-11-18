@@ -1,13 +1,14 @@
 ---
 # qou-u800
 title: Remark interpreting 1202.4698.pdf at rem:q-dilogarithm-pentagon-associator
-status: todo
+status: in-progress
+pr: 8412
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T00:10:51Z
-updated_at: 2026-10-04T15:23:30Z
+updated_at: 2026-11-18T09:08:19Z
 parent: qou-vva9
 ---
 
@@ -28,3 +29,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [terashima-yamazaki2013] as the citation key when you do it.
+
+
+## Implementation Progress (PR #8412)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/ModularSixJNormalSurfaceTripleLinkingRound69.lean` (wired into `folio/quantum-observable-universe/lean/QOU.lean`).
+- Verified at 80-dps precision in `computations/probes/round69_modular_sixj_normal_surface_triple_linking_probe.py` with 2-commit witness `computations/probes/round69-modular-sixj-normal-surface-triple-linking.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8412 (`ready: 83afa66fc31cdd276e7404f29767f2f41edefe60`).
