@@ -1,0 +1,51 @@
+{
+  "probe": "braid_placeholder_resweep_archimedean_marker_partition_conditional_edge_collision_base_order_pivot_extension_instance_projection_audit_probe",
+  "beans": [
+    "95jh",
+    "b3pe",
+    "cnd4",
+    "qou-1n7g",
+    "qou-24m2"
+  ],
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/braid_placeholder_resweep_archimedean_marker_partition_conditional_edge_collision_base_order_pivot_extension_instance_projection_audit_probe.py",
+  "scriptCommitSha": "e47fb91c9186e83c35ba5f8afe823fc02682f7fa",
+  "scriptHash": "76b0a54b7612529d0460197f1a503d128d9ca3acb85f7c16e201490dd4b263d6",
+  "scriptSha256": "76b0a54b7612529d0460197f1a503d128d9ca3acb85f7c16e201490dd4b263d6",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "braidPlaceholderResweep": {
+      "bean": "95jh",
+      "initialActionableCount": "7.0",
+      "intentionalMarkers": "5.0",
+      "uncitedPenaltySq": "0.0",
+      "passed": true
+    },
+    "archimedeanMarkerPartition": {
+      "bean": "b3pe",
+      "initialActionableCount": "4.0",
+      "intentionalMarkers": "3.0",
+      "resweepPenaltySq": "0.0",
+      "passed": true
+    },
+    "conditionalEdgeCollision": {
+      "bean": "cnd4",
+      "multiEdgeViolationExcess": "12.0",
+      "ruleFourPenaltySq": "1322.0",
+      "passed": true
+    },
+    "baseOrderPivotExtension": {
+      "bean": "qou-1n7g",
+      "scaledPivotCoordinateSum": "19.0",
+      "truncationOrderExtensionGapSq": "1.0",
+      "passed": true
+    },
+    "instanceProjectionAudit": {
+      "bean": "qou-24m2",
+      "totalBinderAuditMatches": "9.0",
+      "totalProofTermAuditMatches": "9.0",
+      "detectorBlindSpotPenaltySq": "0.0",
+      "passed": true
+    }
+  }
+}
