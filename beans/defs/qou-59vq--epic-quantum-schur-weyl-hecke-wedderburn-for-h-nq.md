@@ -113,3 +113,8 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - Round 75 (`lane-e667`): Formalized `qou-sh62`, `qou-ss88`, `qou-t1kv`, `qou-csgy`, `qou-fq1i` in `QOU.Foundations.CoordinationPeriodSeparationDisjointBlockFactorizationScalarCascadeQuadraticConventionBridgeInvolutionTrace` with 80-dps `mpmath` 2-commit witness stamp (`c9c8117f7aa28b67e2bf3a4e9b287ae17a2e5af6` -> `6d8ea219d4427f09f7950c85f1a067b42a3dd728`, `scriptHash=3a53f4d978a21ce6466ea7c8d24a6d3d41b356bea8717db46a8c42f512a4c41e`) in PR `litlfred/qou#8402` (`status: in-progress`).
 
 - Round 83 (`lane-e667`): Formalized `qou-xc8t`, `cdup`, `qdzu`, `qou-9e7p`, `qou-c98z` in `QOU.Foundations.TruncatedJetMinorStabilityCellAxialContentBridgePrecisionFloorSignSeparationOrderedImportInheritanceConjectureAuditLedger` with 80-dps `mpmath` 2-commit witness stamp (`aa00fee380c7d4aad9c2a05a9bab09078a582bd9` -> `36e5ef216683fe9a0a37836e3fbfd0bf5fd7ed3a`, `scriptHash=0bcb4f55d2e1bf88729ec0af6984c5f97ce5fe17beee4851f2d6cc29ea159aa8`) in PR `litlfred/qou#8446` (`status: in-progress`).
+
+## Round 87 Formalization (`litlfred/qou#8469`)
+- Formalized in `QOU.Foundations.VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene` (`folio/quantum-observable-universe/lean/QOU/Foundations/VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`5ba819e89853dd16d98b7a750bedb3288386e5e6` -> `c6ba78e1f151ade6d4ae42cccb2d5eab6465b42f`, `scriptHash = scriptSha256 = af1cbee43424d4e7536db47834cc2df1049ef3dcaa3bf27b824e4d7f5424ee91`).
+- PR: https://github.com/litlfred/qou/pull/8469

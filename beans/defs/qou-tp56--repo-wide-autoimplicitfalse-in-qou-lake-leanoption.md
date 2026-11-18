@@ -1,7 +1,7 @@
 ---
 # qou-tp56
 title: Repo-wide autoImplicit=false in qou Lake leanOptions (Mathlib-standard hygiene; prevents the zeta-notation auto-bound trap) — needs a FULL lake build to validate, CI or non-sandbox
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -47,3 +47,8 @@ the recorded gate.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-19 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 87 Formalization (`litlfred/qou#8469`)
+- Formalized in `QOU.Foundations.VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene` (`folio/quantum-observable-universe/lean/QOU/Foundations/VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`5ba819e89853dd16d98b7a750bedb3288386e5e6` -> `c6ba78e1f151ade6d4ae42cccb2d5eab6465b42f`, `scriptHash = scriptSha256 = af1cbee43424d4e7536db47834cc2df1049ef3dcaa3bf27b824e4d7f5424ee91`).
+- PR: https://github.com/litlfred/qou/pull/8469

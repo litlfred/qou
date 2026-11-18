@@ -1,7 +1,7 @@
 ---
 # qou-wsx3
 title: 'Vacuity ledger: 44 of 149 genuine verdicts are stale and 4 name files that no longer exist — at least 4 are demonstrably already fixed'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -60,3 +60,8 @@ Re-review the 44 and either refresh the verdict or retire the entry; check wheth
 missing-file entries correspond to renames (retarget) or deletions (retire). Not started —
 this bean records the measurement, not the drain. The drain is a per-entry judgement over
 44 files and is **not** a sweep to run unasked.
+
+## Round 87 Formalization (`litlfred/qou#8469`)
+- Formalized in `QOU.Foundations.VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene` (`folio/quantum-observable-universe/lean/QOU/Foundations/VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`5ba819e89853dd16d98b7a750bedb3288386e5e6` -> `c6ba78e1f151ade6d4ae42cccb2d5eab6465b42f`, `scriptHash = scriptSha256 = af1cbee43424d4e7536db47834cc2df1049ef3dcaa3bf27b824e4d7f5424ee91`).
+- PR: https://github.com/litlfred/qou/pull/8469
