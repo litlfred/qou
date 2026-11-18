@@ -3935,3 +3935,13 @@ h⁴-only H₄ loop weight changes sign and doubles once the full four-term phot
 earlier near-match does not survive. None of these splits p from n: slot position does not enter.
 Scope (a): this construction alone; not an exclusion of photon dressing.
 EM D_ij run (pre-registered 17:55Z) produced no output the first time; re-running.
+
+## 2026-11-18 19:05Z — OWNER WORKING ASSUMPTION: photon last term σ₀σ₁⁻¹ (switched)
+Owner, in the n–p thread: "Switched last term seems most promising... let's make a working assumption."
+This is a working assumption, not a ruling to edit def:photon. The new photon is γ′(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹.
+
+What changes and what does not:
+- **Same set of photons.** γ′(φ₀, φ₁, φ₀₁) = γ(φ₀ − hφ₀₁, φ₁, φ₀₁). Every reachability result over the full family is unchanged, including the typed-crossing result of 16:35Z.
+- **Same three-term photon.** With φ₀₁ = 0 the last term is absent, so the three-term variant is identical.
+- **What changes:** β_Bor = γ′(0,0,qh)·γ′(0,0,−q⁻¹h). The Borromean core is a product of two photons that each carry ONLY the switched last term, weighted by h·q and −h·q⁻¹ (the two Hecke eigenvalues). Under the old photon the same factors needed φ₀ = ∓q^{±1}h².
+- **Mass / L2:** there is no numerical impact on any scored quantity. confinement-universality says the nucleon NF does not depend on the photon coefficients once flavours are supplied. The 16:35Z result shows the Markov trace is identical for p and n under typed crossings. So Δ_pn and the L2 dashboard do not move, and the assumption buys no ppQ by itself. Its effect is on which word class the γγ re-derivation selects. That is the ansatz, and any selection under it still needs pre-registration here.
