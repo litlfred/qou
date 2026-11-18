@@ -1,0 +1,67 @@
+{
+  "round": 85,
+  "beans": [
+    "qou-au0u",
+    "qou-bivd",
+    "qou-bore",
+    "qou-cc4t",
+    "qou-cdr1"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/QBeta/StateIntegralBlockFactorizationHabiroPrimePowerRigidityGeneralizedVolumeConjectureVolumeDegeneracyRamanujanQAiryConnectionBridge.lean",
+  "scriptPath": "computations/probes/round85_stateintegral_habiro_apoly_voldeg_qairy_probe.py",
+  "scriptCommitSha": "3167775b295d0c73dcc164de280254e5a9dd3eb2",
+  "scriptHash": "70fd99e1903697b5a9c261156f86b5acf68cf1b5d87dabfa438c6ad6a37ace41",
+  "scriptSha256": "70fd99e1903697b5a9c261156f86b5acf68cf1b5d87dabfa438c6ad6a37ace41",
+  "dps": 80,
+  "mpmathDps": 80,
+  "allPassed": true,
+  "results": [
+    {
+      "beanId": "qou-au0u",
+      "absQ": "0.002254809591472079177798062",
+      "absQTilde": "0.002802531514020582857550517",
+      "bilinearAbs": "0.003584683479969041574463446",
+      "signedBlockDiffResidual": "0.0",
+      "swapAntisymmetryResidual": "0.0",
+      "oneDimFamilyDim": 1,
+      "passed": true
+    },
+    {
+      "beanId": "qou-bivd",
+      "pochhammerVanishingResidual": "1.171905352467833481501524e-80",
+      "primePowerCoeffRecoveryResidual": "9.319167775411020644150839e-80",
+      "recoveredCoeffs": [
+        1,
+        1,
+        3,
+        13
+      ],
+      "passed": true
+    },
+    {
+      "beanId": "qou-bore",
+      "vol41Complete": "2.029883212819307250042405",
+      "vol41Deformed": "2.002819918951043542331039",
+      "aPolynomialLagrangianResidual": "0.0",
+      "m1SpecializationResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-cc4t",
+      "baseBlockVolume": "7.327724753417752120436828",
+      "exponentialGrowthBasePerUnitVolume": "1.09921074195176403468961",
+      "stepVolumeResidual": "6.747006683667534863583087e-80",
+      "exponentialLawResidual": "3.959649547477384523065324e-78",
+      "passed": true
+    },
+    {
+      "beanId": "qou-cdr1",
+      "ramanujanVal": "0.7732634161919684731703228",
+      "qAiryVal": "0.9308775962007697339070323",
+      "twoStageWeightFactorizationResidual": "1.608611746708764751855379e-86",
+      "connectionDecompositionResidual": "0.0",
+      "compositeQGevreyOrderSum": 3,
+      "passed": true
+    }
+  ]
+}
