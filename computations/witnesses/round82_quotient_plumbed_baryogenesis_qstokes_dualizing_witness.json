@@ -1,0 +1,60 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-8d5e",
+    "qou-8dlq",
+    "qou-8j99",
+    "qou-8kn5",
+    "qou-8p52"
+  ],
+  "checks": {
+    "qou_8d5e_extended_quotient_rigidity": {
+      "beanId": "qou-8d5e",
+      "homologicalDimensionDrift": 0,
+      "netTraceVariation": "0.1253734162335477777144231644064707320513",
+      "passed": true,
+      "reference": "arxiv-1108.5286v3",
+      "separationResidual": "0.0"
+    },
+    "qou_8dlq_plumbed_negative_definite": {
+      "beanId": "qou-8dlq",
+      "definitenessDefect": 0,
+      "maxEigenvalue": "-0.7530203962825329389499902319915203787355",
+      "negativeDegreeSumResidual": "1.629997336729076278347999e-81",
+      "negativeEigenvalueCount": 3,
+      "passed": true,
+      "plumbingVertexCount": 3,
+      "reference": "arxiv-2205.01282v2"
+    },
+    "qou_8j99_baryogenesis_scope": {
+      "activeMatterBlockClaims": 3,
+      "beanId": "qou-8j99",
+      "passed": true,
+      "reference": "finster2022",
+      "verifiedExistentSiteCount": 1
+    },
+    "qou_8kn5_confluent_single_slope_qstokes": {
+      "beanId": "qou-8kn5",
+      "determinantResidual": "0.0",
+      "independentStokesMultiplierCount": 1,
+      "passed": true,
+      "reference": "lin2024",
+      "stokesMultiplierAbs": "2.637972366057451940895455224061161995932",
+      "traceResidual": "0.0"
+    },
+    "qou_8p52_rigid_dualizing_attribution": {
+      "beanId": "qou-8p52",
+      "cleanedDualizingCitationCount": 1,
+      "passed": true,
+      "reference": "yekutieli2015",
+      "rigidSquaringNetDegree": 0
+    }
+  },
+  "dps": 80,
+  "mpmathDps": 80,
+  "round": 82,
+  "scriptCommitSha": "702c194a4c7860637d5721144291a15793b144e3",
+  "scriptHash": "e188197f1f61ac65d0ab2b639651b4a4336ca0fcd799908424dd8c0bd58c5548",
+  "scriptPath": "computations/probes/round82_quotient_plumbed_baryogenesis_qstokes_dualizing_probe.py",
+  "scriptSha256": "e188197f1f61ac65d0ab2b639651b4a4336ca0fcd799908424dd8c0bd58c5548"
+}
