@@ -45,4 +45,12 @@ theorem tau_kernel_closed_form (q : ℝ) (hq : q ≠ 0) (hq1 : q + 1 ≠ 0) :
   field_simp
   ring
 
+/-- **Vanishing difference form of `tau_kernel_closed_form` (`qou-4r5y`).**
+For `q ≠ 0` and `q + 1 ≠ 0`, the difference between the left-hand and right-hand sides of
+`tau_kernel_closed_form` is zero. -/
+theorem tau_kernel_closed_form_sub_eq_zero (q : ℝ) (hq : q ≠ 0) (hq1 : q + 1 ≠ 0) :
+    (1 + (3 * q ^ 2 + 4 + 3 / q ^ 2) / 4) / ((q + 1) ^ 2 / (3 * q))
+      - 3 * (3 * q ^ 4 + 8 * q ^ 2 + 3) / (4 * q * (q + 1) ^ 2) = 0 :=
+  sub_eq_zero.mpr (tau_kernel_closed_form q hq hq1)
+
 end QOU.Mass.Lever1Tau

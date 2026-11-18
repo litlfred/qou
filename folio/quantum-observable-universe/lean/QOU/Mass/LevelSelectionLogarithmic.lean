@@ -197,4 +197,12 @@ theorem no_superlinear_selection (w : ℕ → ℝ) (r c : ℝ) (k₀ : ℕ) [T :
       _ = (c/2) * r ^ A := step3
   nlinarith [mul_pos hc hrpos, final]
 
+/-- **Threshold specialization of `linear_selection_bound` (`qou-4h26`).**
+Under `TowerGeometricLowerBound w r c k₀`, if `w k₀ ≤ M * (k₀ : ℝ)` then
+`c * r ^ k₀ ≤ M * (k₀ : ℝ)`. -/
+theorem linear_selection_bound_at_threshold (w : ℕ → ℝ) (r c : ℝ) (k₀ : ℕ)
+    [T : TowerGeometricLowerBound w r c k₀] (M : ℝ) (hext : w k₀ ≤ M * (k₀ : ℝ)) :
+    c * r ^ k₀ ≤ M * (k₀ : ℝ) :=
+  linear_selection_bound w r c k₀ M k₀ (le_refl k₀) hext
+
 end QOU.Mass.LevelSelection

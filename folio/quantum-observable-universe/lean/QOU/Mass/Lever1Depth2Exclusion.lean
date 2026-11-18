@@ -90,4 +90,11 @@ theorem depth2_no_fixed_tau :
   rw [hτ] at hnext
   norm_num at hnext
 
+/-- **Zero-rate specialization of `depth2_no_fixed_tau` (`qou-4kc0`).**
+At `τ = 0`, the pair of equations `lwCl 3 = 0 * lwCl 2 - lwCl 1` and
+`lwCl 4 = 0 * lwCl 3 - lwCl 2` does not hold. -/
+theorem depth2_no_zero_tau :
+    ¬ (lwCl 3 = (0 : ℚ) * lwCl 2 - lwCl 1 ∧ lwCl 4 = (0 : ℚ) * lwCl 3 - lwCl 2) :=
+  depth2_no_fixed_tau 0
+
 end QOU.Mass.Lever1Depth2

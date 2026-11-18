@@ -130,4 +130,14 @@ theorem log_chainRatio_succ_neutron (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N)
       = Real.log (chainRatio Z N fpp fpn fnn) + Real.log fnn := by
   rw [chainRatio_succ_neutron Z N hZ hN, Real.log_mul hchain hnn]
 
+/-- **Vanishing difference form of `log_chainRatio_succ_neutron` (`qou-4un2`).**
+For `1 ≤ Z`, `1 ≤ N`, `fnn ≠ 0`, and `chainRatio Z N fpp fpn fnn ≠ 0`,
+`Real.log (chainRatio Z (N + 1) fpp fpn fnn) - (Real.log (chainRatio Z N fpp fpn fnn) + Real.log fnn) = 0`. -/
+theorem log_chainRatio_succ_neutron_sub_eq_zero (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N)
+    (fpp fpn fnn : ℝ) (hnn : fnn ≠ 0)
+    (hchain : chainRatio Z N fpp fpn fnn ≠ 0) :
+    Real.log (chainRatio Z (N + 1) fpp fpn fnn)
+      - (Real.log (chainRatio Z N fpp fpn fnn) + Real.log fnn) = 0 :=
+  sub_eq_zero.mpr (log_chainRatio_succ_neutron Z N hZ hN fpp fpn fnn hnn hchain)
+
 end QOU.Mass.LinearChainBond

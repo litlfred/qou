@@ -75,4 +75,9 @@ theorem h2_unique_all_one_dim :
     (∀ d ∈ dimsH2, d = 1) ∧ ¬ (∀ d ∈ dimsH3, d = 1) :=
   ⟨h2_all_one_dim, h3_not_all_one_dim⟩
 
+/-- **Sum of `hookDim 3 [3, 2, 1]` and `hookDim 3 [3, 1, 1]` (`qou-3x8x`).**
+`hookDim 3 [3, 2, 1] + hookDim 3 [3, 1, 1] = 3`. -/
+theorem dim_3_add_dim_21 : hookDim 3 [3, 2, 1] + hookDim 3 [3, 1, 1] = 3 := by
+  rw [dim_3, dim_21]
+
 end QOU.Mass.ParitySplit
