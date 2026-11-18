@@ -1,7 +1,7 @@
 ---
 # qou-sxyr
 title: 'Beans citing a Lean declaration go stale silently: 6 of 10 in sp00 were open while proved'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

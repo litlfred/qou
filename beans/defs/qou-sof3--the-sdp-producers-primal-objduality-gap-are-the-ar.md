@@ -1,7 +1,7 @@
 ---
 # qou-sof3
 title: The SDP producer's primal_obj/duality_gap are the arithmetic floor, not a measurement — they track prec_bits
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

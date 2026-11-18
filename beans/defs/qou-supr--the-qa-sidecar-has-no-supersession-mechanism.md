@@ -1,7 +1,7 @@
 ---
 # qou-supr
 title: 'The QA sidecar has no supersession mechanism: 28 criterion-slots carry two contradictory verdicts on identical source'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
