@@ -1,0 +1,53 @@
+{
+  "probe": "keyn5six_keyn5val_keystd_lnatconc_lnatopt_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/keyn5six_keyn5val_keystd_lnatconc_lnatopt_probe.py",
+  "scriptCommitSha": "a30e663e7beaf68ee0338f6f08856c049d8eb189",
+  "scriptHash": "1b7436085d2a79a617a7a57e5606e2e87105c8b494953ad1ed8cf42fedf55b75",
+  "scriptSha256": "1b7436085d2a79a617a7a57e5606e2e87105c8b494953ad1ed8cf42fedf55b75",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "bean": "qou-pg2r",
+      "theorem": "QOU.BraidKnot.KeystoneN5LevelSixSuffices.muon_block_pinned_all_roots_sub_eq_zero",
+      "bwEvalT0": "6.9978143569428317737859435830885868451608496687384741479407144320743118639437198",
+      "poly32EvalT0": "6.9978143569428317737859435830885868451608496687384741479407144320743118639437197",
+      "residual": "6.7470066836675348635830873928128121649343752847158448320497683360692123462206461e-80",
+      "passed": true
+    },
+    {
+      "bean": "qou-plb2",
+      "theorem": "QOU.BraidKnot.KeystoneN5ValueMapRigidity.muon_block_pinned_level7_sub_eq_zero",
+      "bwEvalT0": "6.9978143569428317737859435830885868451608496687384741479407144320743118639437197",
+      "poly32EvalT0": "6.9978143569428317737859435830885868451608496687384741479407144320743118639437197",
+      "residual": "1.6867516709168837158957718482032030412335938211789612080124420840173030865551615e-80",
+      "passed": true
+    },
+    {
+      "bean": "qou-po7i",
+      "theorem": "QOU.BraidKnot.Keystone.qFactorial_standard_hook_sub_eq_zero",
+      "n": "6",
+      "qFactorialN": "6919.9316358594823550795831185124752754775326362819933348155330306241738175790194",
+      "hookProductRhs": "6919.9316358594823550795831185124752754775326362819933348155330306241738175790194",
+      "residual": "8.6361685550944446253863518628003995711160003644362813850237034701685918031624271e-78",
+      "passed": true
+    },
+    {
+      "bean": "qou-prop3b",
+      "theorem": "QOU.BraidKnot.LNaturalConcaveForm.neg_exp_series_concave_sub_nonneg",
+      "valAtCombo": "-0.097209765992232129204265644829745169050950035763369005055790177094911400409234851",
+      "comboOfVals": "-0.18115343162364541794778920337580382638901764995976439539760982592766971374190197",
+      "margin": "0.083943665631413288743523558546058657338067614196395390341819648832758313332667124",
+      "passed": true
+    },
+    {
+      "bean": "qou-py7e",
+      "theorem": "QOU.BraidKnot.LNaturalOptimality.global_of_local_boxDiffDomain_sub_nonneg",
+      "gOpt": "0.0",
+      "gSampleY": "-14.0",
+      "sampleMargin": "14.0",
+      "minDomainMargin": "0.0",
+      "passed": true
+    }
+  ]
+}
