@@ -1,0 +1,89 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-vux7",
+    "qou-vvy7",
+    "qou-w34d",
+    "qou-w5go",
+    "qou-wkai"
+  ],
+  "checks": {
+    "qou_vux7_polylog_truncation_split": {
+      "bean": "qou-vux7",
+      "cite": "besser-dejeu2008",
+      "fullLi2": "0.1291398601099534056689353043446094486235",
+      "passed": true,
+      "splitResidual": "0.0",
+      "tailSumP7": "0.00000001076506408275226863767794278195685527047",
+      "truncSumP7": "0.1291398493448893229166666666666666666667"
+    },
+    "qou_vvy7_self_reciprocal_transform": {
+      "bean": "qou-vvy7",
+      "cite": "koornwinderswarttouw1992",
+      "passed": true,
+      "s2Residual": "3.162659382969156967304572e-81",
+      "s4Residual": "3.162659382969156967304572e-81"
+    },
+    "qou_w34d_perceptual_color_regression": {
+      "bean": "qou-w34d",
+      "beta0": "0.161",
+      "betaDbar": "-0.005",
+      "cite": "bujack2022",
+      "contrastResidual": "0.0",
+      "passed": true,
+      "stepContrast": "0.071"
+    },
+    "qou_w5go_bec_vortex_shell_counts": {
+      "bean": "qou-w5go",
+      "cite": "madison2000",
+      "passed": true,
+      "shells": [
+        {
+          "r": 1,
+          "shellIncrement": 6,
+          "totalVortices": 7
+        },
+        {
+          "r": 2,
+          "shellIncrement": 12,
+          "totalVortices": 19
+        },
+        {
+          "r": 3,
+          "shellIncrement": 18,
+          "totalVortices": 37
+        },
+        {
+          "r": 4,
+          "shellIncrement": 24,
+          "totalVortices": 61
+        },
+        {
+          "r": 5,
+          "shellIncrement": 30,
+          "totalVortices": 91
+        },
+        {
+          "r": 6,
+          "shellIncrement": 36,
+          "totalVortices": 127
+        }
+      ]
+    },
+    "qou_wkai_deformed_cusp_potential_pairing": {
+      "antisymmResidual": "0.0",
+      "bean": "qou-wkai",
+      "cite": "hikami2006",
+      "completePointModulusResidual": "0.0",
+      "omega12": "-0.945465383347157287660447519155440718401",
+      "passed": true
+    }
+  },
+  "generatedAt": "2026-11-18T10:19:42.920246+00:00",
+  "mpmathDps": 80,
+  "probe": "round71_padic_polylog_self_reciprocal_vortex_potential_probe",
+  "scriptCommitSha": "0e14865595710bf621e2ed3c4895317d535729af",
+  "scriptHash": "1ae86fba1047e78f17298c12fef7ed7321216e162caadf1916a09a28ded756f3",
+  "scriptPath": "computations/probes/round71_padic_polylog_self_reciprocal_vortex_potential_probe.py",
+  "scriptSha256": "1ae86fba1047e78f17298c12fef7ed7321216e162caadf1916a09a28ded756f3"
+}
