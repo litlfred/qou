@@ -1,7 +1,7 @@
 ---
 # qou-o0pa
 title: 'nucleon_h3_marshalling_divergence_probe fails on main: the grouped pin is inverted AND its two arms now confound d-dropping with ordering'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

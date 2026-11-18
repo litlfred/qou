@@ -1,7 +1,7 @@
 ---
 # qou-okkz
 title: Consumer-side detector for deliberate convention-C control arms (qou-q0zk drain safety)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-nwhg
 title: 'FALSE STOP: the raw-float64 ratchet is REGRESSED:3 on PRISTINE main — a branch must diff against a main baseline, not the committed baseline JSON'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

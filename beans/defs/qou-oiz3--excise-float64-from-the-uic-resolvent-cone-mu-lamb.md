@@ -1,7 +1,7 @@
 ---
 # qou-oiz3
 title: excise float64 from the UIC resolvent cone (mu_lambda, s_*) -- owner directive 2026-09-12
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
