@@ -1,7 +1,7 @@
 ---
 # qou-ughx
 title: 'GAP: 9 Q0_FLIP witnesses have no scriptFile — the anchor migration cannot recompute them'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # gpwr
 title: Regenerate GP-derived exploratory witnesses after the qou-b2ie GP fix (needs pyhecke_native wheel; canonical chain confirmed clean)
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

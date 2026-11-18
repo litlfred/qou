@@ -1,7 +1,7 @@
 ---
 # qou-uz7q
 title: alpha_5_lp_dual_crystal exceeds a 7-min budget and lacks the required progress logging — but editing it drifts scriptHash for zero payload change
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

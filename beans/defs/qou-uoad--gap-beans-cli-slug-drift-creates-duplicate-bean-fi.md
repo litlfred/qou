@@ -1,7 +1,7 @@
 ---
 # qou-uoad
 title: 'GAP: beans CLI slug drift creates duplicate bean files on --body-append'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
