@@ -1,13 +1,14 @@
 ---
 # qou-ssly
 title: Cite 2203.17029v1.pdf at prop:habiro-tail-archimedean-action
-status: todo
+status: in-progress
+pr: 8397
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:19Z
-updated_at: 2026-10-04T15:17:15Z
+updated_at: 2026-11-18T15:17:15Z
 parent: qou-ysb7
 ---
 
@@ -28,3 +29,5 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Modular q-holonomic modules
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [garoufalidis-wheeler-modular] as the citation key when you do it.
+
+In-progress in PR #8397 (`feat/qou-r6ki-sf0s-spds-ssly-t579-round67`, `QOU.QBeta.ModularDoubleSkeinRibbonRound67`, 80-dps probe `round67_modular_double_skein_ribbon_probe.py`).

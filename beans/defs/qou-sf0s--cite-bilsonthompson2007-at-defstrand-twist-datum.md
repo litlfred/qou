@@ -1,13 +1,14 @@
 ---
 # qou-sf0s
 title: Cite [bilsonthompson2007] at def:strand-twist-datum
-status: todo
+status: in-progress
+pr: 8397
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:49Z
-updated_at: 2026-10-04T15:17:25Z
+updated_at: 2026-11-18T15:17:25Z
 parent: qou-1qhv
 ---
 
@@ -21,3 +22,5 @@ Source: `library/0603022v2/0603022v2.pdf` (`bilsonthompson2007`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+In-progress in PR #8397 (`feat/qou-r6ki-sf0s-spds-ssly-t579-round67`, `QOU.QBeta.ModularDoubleSkeinRibbonRound67`, 80-dps probe `round67_modular_double_skein_ribbon_probe.py`).
