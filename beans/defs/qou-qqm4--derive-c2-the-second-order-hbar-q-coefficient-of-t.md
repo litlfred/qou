@@ -1062,7 +1062,7 @@ form* `q^(4(Z-N))` for the bare bond-product ratio, and its generalisation off
 
 ### B. The orientation is not merely underived — it is reported FALSIFIED
 
-Bean `qou-0pzi` (`status: todo`, live):
+Bean `qou-0pzi` (`status: in-progress`, live):
 
 > So `pp = sigma`, `nn = sigma^-1` **cannot be the right assignment**
 
@@ -2019,3 +2019,5 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 - [x] Formalized pure Lean 4 module(s) (`QOU/MassTheory/BorromeanShadowCycleMerge.lean`, `QOU/MassTheory/SecondOrderContentCancellation.lean`, `QOU/Hecke/DeltaLongEMinusOrderingSplit.lean`, `QOU/MassTheory/LoopValueNormaliserAndFrameDiff.lean`) with `0 sorry` and `0` findings across all 6 static vacuity audits.
 - [x] Added 50-dps `mpmath` + exact rational probe `computations/probes/borromean_shadow_c2_deltal_loop_frame_probe.py` and 2-commit stamped witness `computations/probes/borromean-shadow-c2-deltal-loop-frame-probe.witness.json` (`allPassed: true`, `0` raw `float64`).
 - [x] Opened and signed [PR #8197](https://github.com/litlfred/qou/pull/8197) (`ready: 4a2ed9a21b68b7d23b2e693b68f472d7dcf102a6`).
+
+- **Round 90 (`https://github.com/litlfred/qou/pull/8410`, head `507a878f2b14ab11470e7af5019207b486d15e86`)**: Formalized theorem + 80-dps witness (`status: in-progress`).

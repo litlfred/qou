@@ -1,7 +1,7 @@
 ---
 # qou-prjo
 title: 'GAP: deuteron Delta_lambda magnitude — naive per-pair z dead across A; surviving object is transverse NA-Stokes surface-curvature (not braid-word, not scale, not level, not edge, not DT-count)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -603,3 +603,5 @@ Audit: `docs/audits/2026-08-09-germ-gauge-covariance-verdict.md`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- **Round 90 (`https://github.com/litlfred/qou/pull/8410`, head `507a878f2b14ab11470e7af5019207b486d15e86`)**: Formalized theorem + 80-dps witness (`status: in-progress`).

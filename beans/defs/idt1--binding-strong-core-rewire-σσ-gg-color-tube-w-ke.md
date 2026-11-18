@@ -1,7 +1,7 @@
 ---
 # idt1
 title: 'Binding strong-core rewire: σ/σ⁻¹ → gg color-tube W (keystone-gated, 754x step 5b)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -39,3 +39,5 @@ charge-symmetric core using the full **9-channel color-tube weight `W_{c₁c₂}
 - Bean 754x (parent finding), `inter-nucleon-channel-color-tube.md`
 - Bean s013 / s5bb (the keystone `W` this depends on)
 - `docs/coordination/s5-so3-keystone.md` §"Binding-side test routed in"
+
+- **Round 90 (`https://github.com/litlfred/qou/pull/8410`, head `507a878f2b14ab11470e7af5019207b486d15e86`)**: Formalized theorem + 80-dps witness (`status: in-progress`).
