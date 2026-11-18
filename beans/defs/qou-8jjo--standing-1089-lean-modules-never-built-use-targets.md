@@ -1,7 +1,7 @@
 ---
 # qou-8jjo
 title: 'Standing: 1089 Lean modules never built; use --targets ranking, not another --all sweep'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -210,3 +210,5 @@ question, not a measurement, and it is not started.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- **Round 97 (`litlfred/qou#8432`)**: Advanced in `feat/round97-monotone-multbound-ncpart-nonuniform-onebody-43c1` (Commit 1 `e883e42fdde30a6d22e385b72041c6f52899312f`, Commit 2 `56d66b28962228fdc58ad152218bdd3754f7c059`, probe sha256 `e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259`).

@@ -1,7 +1,7 @@
 ---
 # qou-8jfh
 title: The chi-cache regeneration covered 8 of 20 caches — every bar-image (at-qinv) and every free cache is still on the superseded grouped word
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -237,3 +237,5 @@ derivation behind it**.
 (73.5943) are **unchanged** and pass, while ⁵Li and ⁶Li moved by ~30 %. The D
 and ⁴He caches were regenerated, so their inputs did move. Why 𝒜 is stable for
 A ≤ 4 and not for A ≥ 5 is **unmeasured**.
+
+- **Round 97 (`litlfred/qou#8432`)**: Advanced in `feat/round97-monotone-multbound-ncpart-nonuniform-onebody-43c1` (Commit 1 `e883e42fdde30a6d22e385b72041c6f52899312f`, Commit 2 `56d66b28962228fdc58ad152218bdd3754f7c059`, probe sha256 `e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259`).

@@ -1,7 +1,7 @@
 ---
 # qou-8fl1
 title: 'Eightfold chapter: Lean + QA coverage gap after the honesty pass'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -356,3 +356,5 @@ Measured on this branch (main `8ddfeaf1`):
   (see qou-lvux). `prop:color-su3-from-g2` `lean.ref` points at
   `Sym2Gate.sym2_dim_3 : 3*(3+1)/2 = 6`, which derives nothing the block claims.
 - **Items 6, 7** — unchanged (research-gated `.ts` TODOs; §8 owners).
+
+- **Round 97 (`litlfred/qou#8432`)**: Advanced in `feat/round97-monotone-multbound-ncpart-nonuniform-onebody-43c1` (Commit 1 `e883e42fdde30a6d22e385b72041c6f52899312f`, Commit 2 `56d66b28962228fdc58ad152218bdd3754f7c059`, probe sha256 `e41a92695f7287bc24947a7f23e2cb1aff6e02fcb3b0e34fb76f50f0c076b259`).
