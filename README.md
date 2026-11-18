@@ -1,9 +1,5 @@
 # Quantum Observable Universe
 
-[![Lean CI](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/lean_ci.yml)
-[![Build & Publish](https://github.com/litlfred/qou/actions/workflows/publish.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/publish.yml)
-[![Blueprint](https://github.com/litlfred/qou/actions/workflows/blueprint.yml/badge.svg)](https://github.com/litlfred/qou/actions/workflows/blueprint.yml)
-
 A formal mathematics paper exploring the Quantum Observable Universe (QOU)
 with machine-checked **Lean 4** formalization, **content-object architecture**
 (TypeScript + Markdown + Lean triples), and an interactive **Folio Assistant**
@@ -138,9 +134,9 @@ had drifted badly while this table was maintained by hand.
 
 | Paper | Block kind | Total | With Lean sibling | Fully formalized |
 |-------|------------|------:|------------------:|-----------------:|
-| On the Mechanics of Quantum Observable Universes | Provable claims | 750 | 740 | **739 sorry-free (98.5%)** |
-| | Conjectures (open) | 182 | 177 | **168 class-axiomatised (92.3%)** |
-| | Definitions | 265 | 265 | — |
+| On the Mechanics of Quantum Observable Universes | Provable claims | 736 | 727 | **727 sorry-free (98.8%)** |
+| | Conjectures (open) | 203 | 197 | **175 class-axiomatised (86.2%)** |
+| | Definitions | 271 | 271 | — |
 | Unital Gröbner--Shirshov Bases over Arbitrary Commutative Ground Rings | Provable claims | 10 | 10 | **10 sorry-free (100%)** |
 | | Conjectures (open) | 0 | 0 | **0 class-axiomatised (0%)** |
 | | Definitions | 12 | 12 | — |
@@ -174,7 +170,13 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.BraidKnot` | `BraidKnot.lean` |
 | `QOU.BraidTwistFlip` | `BraidTwistFlip.lean` |
 | `QOU.BringCone` | `BringCone.lean` |
+| `QOU.BringConeGauge` | `BringConeGauge.lean` |
+| `QOU.BringConeIcosahedral` | `BringConeIcosahedral.lean` |
 | `QOU.BringConeSplit` | `BringConeSplit.lean` |
+| `QOU.BringConeSplitChirality` | `BringConeSplitChirality.lean` |
+| `QOU.BringHeckeCommensurability` | `BringHeckeCommensurability.lean` |
+| `QOU.BringLatticeSpan` | `BringLatticeSpan.lean` |
+| `QOU.BringLatticeSpanFiniteQuotient` | `BringLatticeSpanFiniteQuotient.lean` |
 | `QOU.BringsSurface` | `BringsSurface.lean` |
 | `QOU.Calculations` | `Calculations.lean` |
 | `QOU.CategoricalDqSquared` | `CategoricalDqSquared.lean` |
@@ -223,6 +225,7 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.MathlibExt` | `MathlibExt.lean` |
 | `QOU.MobiusEnergy` | `MobiusEnergy.lean` |
 | `QOU.MobiusMutualChannel` | `MobiusMutualChannel.lean` |
+| `QOU.MobiusRegulator` | `MobiusRegulator.lean` |
 | `QOU.MotivesArchimedean` | `MotivesArchimedean.lean` |
 | `QOU.ObservableSubcategory` | `ObservableSubcategory.lean` |
 | `QOU.OneLoopEdgeLattice` | `OneLoopEdgeLattice.lean` |
@@ -260,75 +263,77 @@ by Lean modulo a single, named, axiomatised input.
 | `QOU.volume_from_rigidity` | `volume_from_rigidity.lean` |
 | `QOU.AlgebraicSubstrate.*` | `41 files` |
 | `QOU.AlphaEM.*` | `2 files` |
-| `QOU.Appendix.*` | `1 files` |
 | `QOU.AppendixQValues.*` | `1 files` |
 | `QOU.AppendixSurreals.*` | `50 files` |
-| `QOU.Archimedean.*` | `214 files` |
+| `QOU.Archimedean.*` | `227 files` |
 | `QOU.ArchimedeanUniverse.*` | `5 files` |
 | `QOU.AtomicMass.*` | `1 files` |
 | `QOU.BaryonWeight.*` | `1 files` |
-| `QOU.Braiding.*` | `22 files` |
-| `QOU.BraidKnot.*` | `436 files` |
-| `QOU.BraidsAndKnots.*` | `81 files` |
+| `QOU.Braiding.*` | `27 files` |
+| `QOU.BraidKnot.*` | `445 files` |
+| `QOU.BraidsAndKnots.*` | `89 files` |
 | `QOU.BraidsKnots.*` | `7 files` |
-| `QOU.Brings.*` | `10 files` |
+| `QOU.Brings.*` | `15 files` |
 | `QOU.BringsSurface.*` | `13 files` |
 | `QOU.CategoricalReeb.*` | `3 files` |
 | `QOU.Common.*` | `10 files` |
 | `QOU.CommutativeQOU.*` | `1 files` |
 | `QOU.Conjectures.*` | `5 files` |
 | `QOU.Descent.*` | `1 files` |
-| `QOU.Eightfold.*` | `45 files` |
+| `QOU.Eightfold.*` | `49 files` |
 | `QOU.EightfoldWay.*` | `2 files` |
 | `QOU.Encounter.*` | `4 files` |
 | `QOU.Experimental.*` | `2 files` |
 | `QOU.FeynmanPathIntegrals.*` | `2 files` |
 | `QOU.FlavorDressing.*` | `4 files` |
-| `QOU.FluidDynamics.*` | `37 files` |
+| `QOU.FluidDynamics.*` | `42 files` |
 | `QOU.FrobeniusHopfData.*` | `3 files` |
 | `QOU.GaugeFieldFluidDynamics.*` | `1 files` |
 | `QOU.Geometry.*` | `1 files` |
-| `QOU.Habiro.*` | `3 files` |
+| `QOU.Habiro.*` | `4 files` |
 | `QOU.HadronicMass.*` | `3 files` |
-| `QOU.Hecke.*` | `86 files` |
+| `QOU.Hecke.*` | `98 files` |
 | `QOU.HeckeAlgebra.*` | `14 files` |
 | `QOU.HyperellipticQuintic.*` | `4 files` |
-| `QOU.Information.*` | `42 files` |
+| `QOU.Information.*` | `43 files` |
 | `QOU.Infra.*` | `4 files` |
-| `QOU.Interactions.*` | `35 files` |
-| `QOU.IwahoriHecke.*` | `26 files` |
+| `QOU.Interactions.*` | `36 files` |
+| `QOU.IwahoriHecke.*` | `38 files` |
 | `QOU.Knot.*` | `88 files` |
 | `QOU.Knots.*` | `1 files` |
 | `QOU.KnotTheory.*` | `4 files` |
+| `QOU.KZ.*` | `25 files` |
 | `QOU.LiftingDescent.*` | `24 files` |
-| `QOU.Machinery.*` | `95 files` |
+| `QOU.Machinery.*` | `96 files` |
 | `QOU.MagicShell.*` | `1 files` |
-| `QOU.Mass.*` | `210 files` |
+| `QOU.Mass.*` | `239 files` |
 | `QOU.MassEndomorphism.*` | `9 files` |
-| `QOU.MassTheory.*` | `177 files` |
-| `QOU.Mathlib.*` | `212 files` |
-| `QOU.MathlibExt.*` | `181 files` |
-| `QOU.Molecular.*` | `11 files` |
+| `QOU.MassTheory.*` | `184 files` |
+| `QOU.Mathlib.*` | `218 files` |
+| `QOU.MathlibExt.*` | `213 files` |
+| `QOU.Molecular.*` | `12 files` |
 | `QOU.Observations.*` | `14 files` |
-| `QOU.OneDim.*` | `3 files` |
-| `QOU.Optimization.*` | `4 files` |
+| `QOU.OneDim.*` | `4 files` |
+| `QOU.Optimization.*` | `11 files` |
 | `QOU.OptionE.*` | `5 files` |
+| `QOU.OrientedSkein.*` | `4 files` |
 | `QOU.ParticleInteractions.*` | `36 files` |
 | `QOU.ProofHygiene.*` | `1 files` |
-| `QOU.QBeta.*` | `306 files` |
+| `QOU.QBeta.*` | `316 files` |
 | `QOU.QGeometricLanglands.*` | `4 files` |
 | `QOU.QuantumBloch.*` | `2 files` |
 | `QOU.QuantumComputationalUniversality.*` | `1 files` |
-| `QOU.QuantumObservableUniverse.*` | `28 files` |
-| `QOU.QuantumObservableUniverses.*` | `12 files` |
+| `QOU.QuantumObservableUniverse.*` | `29 files` |
+| `QOU.QuantumObservableUniverses.*` | `13 files` |
 | `QOU.QuantumUniverse.*` | `1 files` |
+| `QOU.QuarkState.*` | `23 files` |
 | `QOU.Resurgence.*` | `4 files` |
-| `QOU.SchurWeyl.*` | `97 files` |
+| `QOU.SchurWeyl.*` | `136 files` |
 | `QOU.Shared.*` | `7 files` |
-| `QOU.StandardModel.*` | `22 files` |
+| `QOU.StandardModel.*` | `29 files` |
 | `QOU.Substrate.*` | `6 files` |
 | `QOU.TopologicalMass.*` | `3 files` |
-| `QOU.Torsion.*` | `21 files` |
+| `QOU.Torsion.*` | `24 files` |
 | `QOU.TransferMatrices.*` | `1 files` |
 | `QOU.WedderburnMass.*` | `4 files` |
 
@@ -341,7 +346,7 @@ by Lean modulo a single, named, axiomatised input.
 | `UGB.Introduction` | `Introduction.lean` |
 | `UGB.UnitalGroebner` | `UnitalGroebner.lean` |
 | `UGB.BuchbergerPBW.*` | `3 files` |
-| `UGB.GrobnerShirshov.*` | `13 files` |
+| `UGB.GrobnerShirshov.*` | `15 files` |
 | `UGB.Introduction.*` | `1 files` |
 | `UGB.UnitalGroebner.*` | `7 files` |
 
@@ -389,9 +394,7 @@ The **Folio Assistant** (`folio-assistant/`) is the platform layer providing:
 | Beta Decay Braid | [`simulators/beta_decay_braid.html`](simulators/beta_decay_braid.html) |
 | Beta Decay Halflife | [`simulators/beta_decay_halflife.html`](simulators/beta_decay_halflife.html) |
 | Brings Surface | [`simulators/brings_surface.html`](simulators/brings_surface.html) |
-| Double Slit | [`fsh-guts/deprecated/simulators/double_slit.html`](fsh-guts/deprecated/simulators/double_slit.html) |
 | Double Slit Simulator | [`simulators/double_slit_simulator.html`](simulators/double_slit_simulator.html) |
-| Empty | [`fsh-guts/deprecated/simulators/empty.html`](fsh-guts/deprecated/simulators/empty.html) |
 | Knot Atom Diagrams | [`simulators/knot_atom_diagrams.html`](simulators/knot_atom_diagrams.html) |
 | Knot Periodic Table | [`simulators/knot_periodic_table.html`](simulators/knot_periodic_table.html) |
 | Q Double Slit | [`simulators/q_double_slit.html`](simulators/q_double_slit.html) |
@@ -523,9 +526,12 @@ The compute pipeline is layered into reusable packages so external researchers c
 
 | Workflow | Purpose |
 |----------|---------|
+| `atomic-mass-gen-check.yml` | Atomic-mass generated-file drift |
 | `build-lean-mcp.yml` | Build Paper Assistant Image |
 | `build.yml` | build |
 | `compute-qa.yml` | compute-QA (all gates, publish to qa-reports) |
+| `deploy-folio.yml` | Deploy Folio |
+| `discussions-maintain.yml` | Maintain discussion archive |
 | `kg-vocabulary-gate.yml` | kg-vocabulary-gate |
 | `lake-cache-refresh.yml` | Lake cache refresh (orphan-branch family) |
 | `lean-axiom-guard.yml` | lean-axiom-guard |
@@ -535,6 +541,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | `paper-builder-image.yml` | Build paper-builder Docker image |
 | `probe-float64-gate.yml` | probe-float64-gate |
 | `pyhecke-native-wheel.yml` | pyhecke-native-wheel |
+| `witness-refresh.yml` | Witness refresh (commit-back to main) |
 | `witness-staleness.yml` | witness-staleness |
 | `word-provenance-gate.yml` | word-provenance-gate |
 
@@ -542,19 +549,22 @@ The compute pipeline is layered into reusable packages so external researchers c
 
 ## Building
 
-### Content validation and LaTeX generation
+### Paper PDF (LaTeX)
+
+One command, from the repository root: content blocks -> LaTeX -> `latexmk`,
+then a gate on the final-pass log (errors, undefined citations and references).
 
 ```bash
-bun install                          # Install dependencies (root + content/)
-bun run scripts/run-validate.ts folio/quantum-observable-universe   # Validate content objects
-bun run build:content                # Generate chapters/*.tex from content objects
+scripts/setup-folio-assistant.sh                       # once: the platform checkout
+bun run scripts/run-validate.ts folio/quantum-observable-universe   # validate content objects
+scripts/build-paper-pdf.sh                             # -> build/paper/main.pdf
 ```
 
-### Paper compilation
-
-```bash
-latexmk -pdf main.tex               # Compile PDF from generated LaTeX
-```
+It needs `latexmk`, TeX Live and `cm-super` (scalable fonts: `microtype` aborts
+on page 1 without them). Page layout (wide text block, narrow margins, single
+spacing) is [`folio/quantum-observable-universe/latex/layout.tex`](folio/quantum-observable-universe/latex/layout.tex);
+macros the shared preamble no longer carries are in
+[`latex/macros.tex`](folio/quantum-observable-universe/latex/macros.tex).
 
 ### Lean formalization
 
