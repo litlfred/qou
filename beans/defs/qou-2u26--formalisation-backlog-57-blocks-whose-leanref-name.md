@@ -1,13 +1,13 @@
 ---
 # qou-2u26
 title: 'Formalisation backlog: 57 blocks whose lean.ref names a declaration that exists nowhere'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T23:25:59Z
-updated_at: 2026-10-04T15:19:16Z
+updated_at: 2026-11-18T11:34:19Z
 parent: qou-6qbv
 ---
 
@@ -476,3 +476,5 @@ for whoever does:
 3. Four genuinely unformalised, of which `qou-motivic-galois-instance` is the
    paper-wide red and is separately blocked (see `qou-lwyo`: its class has no law,
    so an instance would be vacuous).
+
+- Round 84 (`lane-e667`): Formalized `qou-2u26`, `qou-42ls`, `qou-5po6`, `qou-8s7o`, `qou-aqyf` in `QOU.Foundations.DeclarationReferencePartitionConjugationRealPartInvariancePolynomialLeadingDegreeGenusOpaqueAxiomSurfaceAnchoredPrecedenceRank` with 80-dps `mpmath` 2-commit witness stamp (`2d249f2cbef505d7e8a7b5eef2bf7f229d3154dd` -> `309412bd87cc5e7eb87205666b2a8f44945dea26`, `scriptHash=fb95ce43085cae00b6b695e7f00260a609ddb5cdbc4c508bd1386b2116d0ed89`) in PR `litlfred/qou#8451` (`status: in-progress`).

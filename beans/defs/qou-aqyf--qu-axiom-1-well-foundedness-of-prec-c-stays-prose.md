@@ -1,13 +1,13 @@
 ---
 # qou-aqyf
 title: 'QU axiom 1: well-foundedness of prec_c stays prose-only (encoding would be vacuous)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-14T19:52:57Z
-updated_at: 2026-10-04T15:23:06Z
+updated_at: 2026-11-18T11:34:19Z
 parent: qou-6qbv
 ---
 
@@ -35,3 +35,5 @@ the axiom list look fully encoded while constraining nothing.
 Honest disposition: leave it prose-only and say so. Encoding becomes worthwhile
 only if/when the Hecke presentation of `A` lands in the structure, at which
 point `precC` can be *derived* from the braiding rather than posited.
+
+- Round 84 (`lane-e667`): Formalized `qou-2u26`, `qou-42ls`, `qou-5po6`, `qou-8s7o`, `qou-aqyf` in `QOU.Foundations.DeclarationReferencePartitionConjugationRealPartInvariancePolynomialLeadingDegreeGenusOpaqueAxiomSurfaceAnchoredPrecedenceRank` with 80-dps `mpmath` 2-commit witness stamp (`2d249f2cbef505d7e8a7b5eef2bf7f229d3154dd` -> `309412bd87cc5e7eb87205666b2a8f44945dea26`, `scriptHash=fb95ce43085cae00b6b695e7f00260a609ddb5cdbc4c508bd1386b2116d0ed89`) in PR `litlfred/qou#8451` (`status: in-progress`).
