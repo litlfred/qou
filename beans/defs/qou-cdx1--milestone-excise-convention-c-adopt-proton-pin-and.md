@@ -1,11 +1,11 @@
 ---
 # qou-cdx1
 title: 'MILESTONE: excise convention C, adopt proton pin + colour weighting (owner ruling 2026-08-15)'
-status: todo
+status: in-progress
 type: epic
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-11-17T23:08:23Z
+updated_at: 2026-11-18T08:23:55Z
 parent: qou-10v9
 ---
 
@@ -155,3 +155,8 @@ all 41 as a reading queue.
 ## 2026-11-17 sibling sweep
 Remaining convention-C surface is tracked by qou-egqr / qou-ng7j; sibling sessions on it archived with nothing extra left.
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+## Round 85 Progress (PR #8395)
+- Branch: `feat/round85-ggmstep-idemtrace-twoterm-eigensq-unitmod-43c1`
+- Commit 1 (code + probe): `4103b27750247f45abd9da411449897b55423ff9`
+- Commit 2 (witness): `0b78d3fa642f030c9f702df899938c1a0f6021df` (`scriptSha256 = ca001053ab02413fb88b46bac992e2fe195beece1f88e3e47eda2323f11e5732`)
