@@ -1,0 +1,53 @@
+{
+  "probe": "strip-kindratio-kohnokz-resolvent-affinenorm-probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/strip_kindratio_kohnokz_resolvent_affinenorm_probe.py",
+  "scriptCommitSha": "53341df5af4d7e77e4fbee34d9b0bead3b0b6187",
+  "scriptHash": "3d8255f15bbdfc2d9c41114f8ac21a1bec3996e0b1546ef080914210757c628c",
+  "scriptSha256": "3d8255f15bbdfc2d9c41114f8ac21a1bec3996e0b1546ef080914210757c628c",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "period_carrier_strip_sub_eq_zero_qou_2wtx",
+      "bean": "qou-2wtx",
+      "theorem": "QOU.Mass.KeystoneBridgeC1Binding.period_carrier_strip_sub_eq_zero",
+      "lhs_strip": "10.857142857142857142857142857142857142857142857142857142857142857142857142857143",
+      "rhs_strip": "10.857142857142857142857142857142857142857142857142857142857142857142857142857143",
+      "abs_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "rho_pp_div_rho_nn_sub_eq_zero_qou_306p",
+      "bean": "qou-306p",
+      "theorem": "QOU.Mass.KindRatioFromBondLetters.rho_pp_div_rho_nn_sub_eq_zero",
+      "ratio_lhs": "1.5089594855615399739844448986542303680633861876590636690171596435914709940907045",
+      "q_pow_4": "1.5089594855615399739844448986542303680633861876590636690171596435914709940907045",
+      "abs_diff": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    },
+    {
+      "id": "massClass_kz_sub_eq_zero_qou_37kk",
+      "bean": "qou-37kk",
+      "theorem": "QOU.Mass.KohnoWeightedClass.massClass_kz_sub_eq_zero",
+      "abs_mass": "1.5014682899633514716649217388626779693965131257117150010579391368768801192529577",
+      "abs_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "colourResolvent_cyclic_eigenvalue_sub_eq_zero_qou_3ral",
+      "bean": "qou-3ral",
+      "theorem": "QOU.Mass.colourResolvent_cyclic_eigenvalue_sub_eq_zero",
+      "abs_lhs": "0.63235137731059787206100357199425548601182792472649128312709229772621743880601784",
+      "abs_diff": "3.173621840043998901086441233829652022994054548695622255127249151182452588774019e-81",
+      "passed": true
+    },
+    {
+      "id": "affineNormalize_scale_qou_3wc5",
+      "bean": "qou-3wc5",
+      "theorem": "QOU.Mass.LagrangianKZ.affineNormalize_scale",
+      "norm_2_orig": "0.9655203721189481823767910006806717055086534977125415331895426984443867581466714",
+      "max_abs_diff": "0.0",
+      "passed": true
+    }
+  ]
+}
