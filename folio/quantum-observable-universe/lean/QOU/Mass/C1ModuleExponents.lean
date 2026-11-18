@@ -66,4 +66,15 @@ theorem c1_exponent_vieta {q lp lm : R}
   · linear_combination h1 - h0
   · linear_combination -h0
 
+/-- **Two-point evaluation identity for the C1 exponent polynomial (`qou-nalu`).**
+Evaluating `c1ExponentPoly q` at `t = 1` and subtracting its value at `t = 0`
+recovers `q` identically: `c1ExponentPoly q 1 - c1ExponentPoly q 0 = q`. -/
+theorem c1ExponentPoly_eval_one_sub_zero (q : R) :
+    c1ExponentPoly q 1 - c1ExponentPoly q 0 = q := by
+  have h0 : c1ExponentPoly q 0 = q - 1 := by
+    dsimp [c1ExponentPoly]
+    ring
+  dsimp [c1ExponentPoly]
+  ring
+
 end QOU.Mass.C1ModuleExponents

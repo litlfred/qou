@@ -97,4 +97,13 @@ theorem lambdaPlus_gt_one {τ : ℝ} (hτ : 2 < τ) : 1 < lambdaPlus τ := by
   have hs : 0 < Real.sqrt (τ ^ 2 - 4) := Real.sqrt_pos.mpr hpos
   linarith
 
+/-- **Trace identity for the depth-2 binding roots (`qou-jgk6`).**
+For any trace parameter `τ : ℝ`, the sum of the dominant and sub-dominant roots
+`lambdaPlus τ + lambdaMinus τ` equals `τ`. -/
+theorem lambda_sum_eq_tau (τ : ℝ) :
+    lambdaPlus τ + lambdaMinus τ = τ := by
+  dsimp [lambdaPlus]
+  dsimp [lambdaMinus]
+  ring
+
 end QOU.Mass
