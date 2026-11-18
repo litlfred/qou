@@ -1,0 +1,56 @@
+{
+  "probe": "round67-modular-double-skein-ribbon",
+  "beans": [
+    "qou-r6ki",
+    "qou-sf0s",
+    "qou-spds",
+    "qou-ssly",
+    "qou-t579"
+  ],
+  "scriptCommitSha": "f367c9848a12c45ab4add5ac15036bc8ce4e2300",
+  "scriptHash": "16bcef5268fafff54d124731822f96423e4050fde70cfde5e18ff791dde4e3cb",
+  "scriptSha256": "16bcef5268fafff54d124731822f96423e4050fde70cfde5e18ff791dde4e3cb",
+  "timestamp": "2026-11-18T08:28:06.218593+00:00",
+  "durationMs": 41,
+  "dps": 80,
+  "allPassed": true,
+  "results": {
+    "qou_r6ki_modular_double_shift_and_lattice": {
+      "singleShiftResidual": "2.469352968560789895889042223e-81",
+      "dualShiftResidual": "3.462716684752325665076987363e-81",
+      "twoStepShiftResidual": "3.374404040939080746313667573e-81",
+      "halfLatticeTransposeDiffResidual": 0,
+      "passed": true
+    },
+    "qou_sf0s_braided_ribbon_twist_conservation": {
+      "quarkTwistSpread": 18,
+      "slidQuarkTwistSpread": 18,
+      "leptonTwistSpread": 0,
+      "coupledWritheChargeInitial": 18,
+      "coupledWritheChargeSlid": 18,
+      "passed": true
+    },
+    "qou_spds_three_braid_closure_state_sum": {
+      "k1UnknotResidual": "0.0",
+      "k2FigureEightLaurentResidual": "1.317774742903815403043571756e-81",
+      "k2FigureEightPolyResidual": "1.311406419808323429579933448e-81",
+      "k3BorromeanPolyResidual": "6.328260042253552965870841174e-81",
+      "k3ClassicalLimitValue": 4,
+      "passed": true
+    },
+    "qou_ssly_cyclotomic_step_and_truncation": {
+      "stepSquareFormResidual": "4.352861118733034478988304781e-82",
+      "inhomogeneousDiffResidual": "3.532960450449433623269854078e-82",
+      "zeta5TruncationTermModulus": "8.466074054359257156515155349e-160",
+      "zeta5CyclotomicSumReal": "50.47213595499957939281834734",
+      "passed": true
+    },
+    "qou_t579_figure_eight_skein_character_polynomial": {
+      "laurentToTraceResidual": "3.040834819232692608165564082e-80",
+      "traceToAdjointResidual": "2.700120126644563594737754599e-80",
+      "skeinSignFlipResidual": "0.0",
+      "parabolicSpecializationValue": -2,
+      "passed": true
+    }
+  }
+}
