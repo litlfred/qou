@@ -1,0 +1,51 @@
+{
+  "round": 65,
+  "beans": [
+    "cj1b7",
+    "cj27e",
+    "cj2b6",
+    "cj421",
+    "cj46f"
+  ],
+  "scriptPath": "computations/probes/round65_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "501ce94a990cda4075c7026bb66daab054069980",
+  "scriptHash": "f8620230da9b5e03277d9d5932d8d45fd95502ae44cb3b42ecffa9fc9b362b75",
+  "scriptSha256": "f8620230da9b5e03277d9d5932d8d45fd95502ae44cb3b42ecffa9fc9b362b75",
+  "dps": 80,
+  "allPassed": true,
+  "claims": {
+    "cj1b7_diophantine_birthday": {
+      "c_val": "4.0",
+      "bound_at_1": "4.0",
+      "quad_val_at_7": "49.0",
+      "log_bound_at_7": "11.783640596221253220421410973772718918548338918327444753837560599750319451008277",
+      "passed": true
+    },
+    "cj27e_bring_figure_eight_depth2": {
+      "cl2_pi3": "1.014941606409653625021202554274520285941689307530299792017489106776597476258244",
+      "vol_41": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488",
+      "half_vol_residual": "0.0",
+      "passed": true
+    },
+    "cj2b6_qou_p_neq_np": {
+      "chi_residual": "-6.0",
+      "phys_cost_n10": "205891132094649.0",
+      "poly_budget_n10": "10000000.0",
+      "passed": true
+    },
+    "cj421_confinement_nf_structure_forcing": {
+      "active_card": "3.0",
+      "n_factorial_5": "120.0",
+      "shift_nf": "1.375",
+      "duality_gap": "0.25",
+      "passed": true
+    },
+    "cj46f_spectral_normal_form": {
+      "r_real": "3.141592653589793238462643383279502884197169399375105820974944592307816406286209",
+      "ow_of_real": "0.0",
+      "ow_infinitesimal": "-1.0",
+      "ow_divergent": "1.0",
+      "passed": true
+    }
+  }
+}
