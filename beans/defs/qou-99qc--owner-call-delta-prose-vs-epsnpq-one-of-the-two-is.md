@@ -3801,3 +3801,17 @@ Exact in H₃ for generic q (sympy, symbolic; numerically found first at proton 
   β_Bor = (σ₀σ₁⁻¹)³ = γ(−qh², 0, qh) · γ(q⁻¹h², 0, −q⁻¹h),  λ = 1,
 and each factor is 1 + ε·h·V with V = σ₀σ₁⁻¹ = σ₀σ₁ − hσ₀ (a four-term photon with φ₁ = 0) and ε ∈ {q, −q⁻¹}, the two eigenvalues of σᵢ. Reason: V³ + h²V² − h²V − 1 = (V−1)(V² + (1+h²)V + 1) = 0 in H₃.
 Consequences: the old γγ vertex V lies inside the photon (it is the φ₁=0 direction), so the old grammar is partly recovered from def:photon; the two factors commute (both polynomials in V), so photon order cannot split p from n. No three-term (φ₀₁=0) point found numerically. Not formalised in Lean yet. Stays open.
+
+## 2026-11-18 14:10Z — γγ → H H̄ through γp → H e⁺ (owner chose the full-strand hydrogen)
+
+On the card, the owner chose: H = β_Bor on strands 0–2, electron on strand 3, Hopf-linked by σ₂²; H̄ = mirror. Recorded before computing, so this fixes the construction:
+- Layout in H₈: strands 0–2 are the proton, 3 the electron, 4 the positron, 5–7 the antiproton.
+- ρ: σᵢ ↦ σ₆₋ᵢ⁻¹ (reflect strand order, then mirror). H̄ = ρ(H) = (σ₆⁻¹σ₅)³ σ₄⁻².
+- Test: HH̄ = X·ρ(X), with X the γp → He⁺ element. The cofactor is fixed to the mirror, with nothing free.
+
+Result. This is exact, needs no numerics, and holds at any q.
+1. σᵢ² = 1 + hσᵢ, and σᵢ⁻² = (1+h²)(1 − h/(1+h²)·σᵢ). The Hopf link is a one-term (degenerate) photon γ(h,0,0), and its mirror is a scalar times one.
+2. H uses only σ₀, σ₁, σ₂, and H̄ uses only σ₄, σ₅, σ₆. They commute, so HH̄ = H·ρ(H). The factor test holds with X = H. That makes it VACUOUS: the positron strand 4 enters nowhere.
+3. Both photon versions give the same answer, because φ₀₁ = 0 makes the last-term switch inert.
+
+Scope (a): this construction alone carries no information about BFPP vs γγ → HH̄. A non-vacuous test needs a crossing that links the electron and positron strands (σ₃, pair creation), and nothing in the corpus fixes how that crossing is weighted. Do NOT read this as evidence for or against crossing symmetry.
