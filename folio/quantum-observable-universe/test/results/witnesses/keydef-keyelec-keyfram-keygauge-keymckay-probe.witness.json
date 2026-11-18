@@ -1,0 +1,54 @@
+{
+  "probe": "keydef_keyelec_keyfram_keygauge_keymckay_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/keydef_keyelec_keyfram_keygauge_keymckay_probe.py",
+  "scriptCommitSha": "8e5558b3c71aee5f148803e667a670d3e7f8f08e",
+  "scriptHash": "116f9e4c9ef7aa2e90bbafaf970715ae9d001d8f5bf8a54362eda305d189089e",
+  "scriptSha256": "116f9e4c9ef7aa2e90bbafaf970715ae9d001d8f5bf8a54362eda305d189089e",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "bean": "qou-ommr",
+      "theorem": "QOU.BraidKnot.KeystoneDefectGeneral.defect_closedform_plancherel_sub_eq_zero",
+      "n": "6",
+      "plancherelDefect": "21600.0",
+      "cubicClosedForm": "21600.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-orb6",
+      "theorem": "QOU.BraidKnot.Keystone.theta_selfConj_sub_one_eq_zero",
+      "partition": "[3, 2, 1]",
+      "contentSum": "0.0",
+      "thetaVal": "1.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-oyde",
+      "theorem": "QOU.BraidKnot.Keystone.framing_trivial_add_eq_self",
+      "rootPowerAbsResidual": "0.0",
+      "lhs": "37.0",
+      "rhs": "37.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-p30w",
+      "theorem": "QOU.BraidKnot.KeystoneGaugeRowRigidity.bwS0_sub_hecke_eq_zero_of_rigidity",
+      "bwEvalT0": "144.14285714285714285714285714285714285714285714285714285714285714285714285714286",
+      "valEvalT0": "144.14285714285714285714285714285714285714285714285714285714285714285714285714286",
+      "residual": "2.6988026734670139454332349571251248659737501138863379328199073344276849384882585e-79",
+      "passed": true
+    },
+    {
+      "bean": "qou-pdgc",
+      "theorem": "QOU.BraidKnot.Keystone.qFactorial_shape_32_sub_eq_zero",
+      "qFactorial5": "994.16953511832577456801579857704542942860320545526038103897092661107152865228159",
+      "hookProductRhs": "994.16953511832577456801579857704542942860320545526038103897092661107152865228159",
+      "residual": "2.1590421387736111563465879657000998927790000911090703462559258675421479507906068e-78",
+      "passed": true
+    }
+  ]
+}
