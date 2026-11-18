@@ -1,7 +1,7 @@
 ---
 # qou-ldwx
 title: 'main is RED on the raw-float64 ratchet: 11 wall-clock ''seconds'' fields in an otherwise exemplary NO-FLOAT64 witness'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

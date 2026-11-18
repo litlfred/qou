@@ -1,7 +1,7 @@
 ---
 # qou-mhij
 title: 'z-parameter-echo is NOT a safe class: C propagates into payload that never equals z_C'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

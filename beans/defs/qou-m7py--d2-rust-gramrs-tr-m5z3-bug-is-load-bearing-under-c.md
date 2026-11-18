@@ -1,7 +1,7 @@
 ---
 # qou-m7py
 title: 'D2: Rust gram.rs TR_M[5]=z^3 bug is load-bearing under convention D'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

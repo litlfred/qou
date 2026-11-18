@@ -1,7 +1,7 @@
 ---
 # qou-lvx7
 title: mass-formula-validation publishes a Z=1-20 accuracy table at status:verified with NO producer that can make it
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

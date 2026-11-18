@@ -1,7 +1,7 @@
 ---
 # qou-ng7j
 title: Detector is blind to non-y_lambda convention-C quantities (tr_M, z); Schur-Weyl is the real per-weight test
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
