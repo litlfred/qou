@@ -202,4 +202,10 @@ theorem run_pair_sum_eq_sum_min {M : Type*} [AddCommMonoid M] (ell N : ℕ) (fUp
   rw [sum_tails_eq_sum_min, sum_heads_eq_sum_min, ← Finset.sum_add_distrib]
   exact Finset.sum_congr rfl fun d _ => (nsmul_add _ _ _).symm
 
+/-- Subtracting the minimum-weighted distance sum from the double sum of downward straddling pairs yields zero (`qou-k54t`). -/
+theorem sum_heads_sub_sum_min_eq_zero {M : Type*} [AddCommGroup M] (ell N : ℕ) (f : ℕ → M) :
+    (∑ j ∈ range ell, ∑ d ∈ range N, (if ell ≤ j + d then f d else 0))
+      - ∑ d ∈ range N, (min d ell) • f d = 0 := by
+  rw [sum_heads_eq_sum_min ell N f, sub_self]
+
 end QOU.BraidKnot.EdgeDecoupling

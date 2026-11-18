@@ -63,4 +63,9 @@ class LValueDecomposition where
   /-- The full chain β(3) = L(χ_4, 3) = Im Li_3(i) = π³ / 32. -/
   full_decomposition : beta3 = Real.pi ^ 3 / 32
 
+/-- Subtracting the beta-three constant from the predicted value at four cancels to zero (`qou-jvav`). -/
+theorem beta_3_from_jonquiere_sub_eq_zero :
+    imLi3ZetaPredicted 4 - beta3 = 0 := by
+  rw [beta_3_from_jonquiere, sub_self]
+
 end QOU.BraidKnot.CyclotomicLValueDecomposition

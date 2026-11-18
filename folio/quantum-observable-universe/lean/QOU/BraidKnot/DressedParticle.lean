@@ -56,4 +56,12 @@ theorem dressing_composes
     D₂.composite.level = D₁.bare.level := by
   rw [D₂.level_preserved, ← h_chain, D₁.level_preserved]
 
+/-- Three-step chained dressing preserves the level from the first bare core to the third composite (`qou-k448`). -/
+theorem dressing_composes_three
+    (D₁ D₂ D₃ : DressedParticle)
+    (h₁₂ : D₁.composite = D₂.bare)
+    (h₂₃ : D₂.composite = D₃.bare) :
+    D₃.composite.level = D₁.bare.level := by
+  rw [dressing_composes D₂ D₃ h₂₃, dressing_composes D₁ D₂ h₁₂]
+
 end QOU.BraidKnot

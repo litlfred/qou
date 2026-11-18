@@ -76,4 +76,10 @@ This DISCHARGES the leading-order content of the
 `ThreeFoldMarkovHopfExtraction` class for the c_3 = -2 identification
 in `prop:q-beta-c3-hopf-three-fold-markov`. -/
 
+/-- Adding three-fourths of the square root of three to the scaled cube at one cancels to zero (`qou-k6s6`). -/
+theorem F3_eps6_leading_add_eq_zero :
+    -2 * b_at_one^3 + (3 * Real.sqrt 3) / 4 = 0 := by
+  rw [F3_eps6_leading_eq_neg_2b_cubed]
+  ring
+
 end QOU.BraidKnot

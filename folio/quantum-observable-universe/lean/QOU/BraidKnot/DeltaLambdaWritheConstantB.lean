@@ -59,4 +59,10 @@ theorem constant_b_from_writhe_proportional {R : Type*} [CommRing R]
       = 2 * κ * (Z - N) := by
   rw [add_comm N Z]; ring
 
+/-- Subtracting twice the linear difference from the mirror residual cancels to zero (`qou-k3er`). -/
+theorem constant_b_from_writhe_proportional_sub_eq_zero {R : Type*} [CommRing R]
+    (base : Int → R) (κ : R) (Z N : Int) :
+    ((base (Z + N) + κ * (Z - N)) - (base (N + Z) + κ * (N - Z))) - 2 * κ * (Z - N) = 0 := by
+  rw [constant_b_from_writhe_proportional base κ Z N, sub_self]
+
 end QOU.BraidKnot
