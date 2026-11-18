@@ -1,0 +1,76 @@
+{
+  "probe": "qou_10v9_2djn_2joi_4khc_51l1_8ava_probe",
+  "beans": [
+    "qou-2djn",
+    "qou-2joi",
+    "qou-4khc",
+    "qou-51l1",
+    "qou-8ava"
+  ],
+  "dps": 80,
+  "scriptPath": "computations/probes/qou_10v9_2djn_2joi_4khc_51l1_8ava_probe.py",
+  "scriptHash": "97f7968d80078ae3f9ba09333b4afff6d0aa19583a25b2c0599d6e4d765f969c",
+  "scriptSha256": "97f7968d80078ae3f9ba09333b4afff6d0aa19583a25b2c0599d6e4d765f969c",
+  "scriptCommitSha": "76eb5ed3bb589e3c0713062c1916ff3df6e16b60",
+  "allPassed": true,
+  "parameters": {
+    "hbar_q": "0.075100856698104985642231915538183722136592062861599080814761392234584769207476426",
+    "q0": "1.0779928682033721965632294345050472087864357001237181848713941539084983043497708",
+    "h_q": "0.15034294630115994765896408944841669411845604494113583957040434106028102040474663",
+    "two_q": "2.0056427901055844454674947795616777234544153553063005301723839667567155882947949"
+  },
+  "results": {
+    "qou_2djn": {
+      "g_odd_nuc11": "-0.076235508950788222020366261130713759558181703893661446261138343949935601681934715",
+      "f_even_sample": "3.0311309586575075784518179558878651265719232152277928908691534015492314818651769",
+      "f_odd_sample": "0.076870574071148683464380422655568255191909757300997043917364838611631215725586283",
+      "bar_reconstruct_residual": "0.0",
+      "interleaved_odd_denominator": 8,
+      "required_readout_maps": 2,
+      "passed": true
+    },
+    "qou_2joi": {
+      "surveyed_declarations": 211,
+      "surveyed_theorems": 136,
+      "unconditional_theorems": 134,
+      "conditional_theorems": 2,
+      "anchor_insensitive_count": 8,
+      "anchor_sensitive_count": 1,
+      "anchor_non_straddle_count": 2,
+      "anchor_total_candidates": 11,
+      "convention_d_gram_dim": 3,
+      "convention_d_gram_rank": 2,
+      "convention_d_gram_corank": 1,
+      "passed": true
+    },
+    "qou_4khc": {
+      "cobordism_functor_declarations": 0,
+      "cobordism_docstring_hits": 4,
+      "dim_h3_normal_form_basis": 6,
+      "poincare_h3_q0": "7.5942057425215709411215578894662328819342787944279974276664908066593187881394932",
+      "poincare_h3_q1": "6.0000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "classical_ribbon_twist_exponent": 0,
+      "passed": true
+    },
+    "qou_51l1": {
+      "forced_fibre_rank": 2,
+      "exterior_square_dim": 1,
+      "genus_bring": 4,
+      "branch_point_count": 6,
+      "chi_riemann_roch": -6,
+      "chi_tiling_245": -6,
+      "chi_map_54": -6,
+      "passed": true
+    },
+    "qou_8ava": {
+      "bloch_cos_q0": "-0.50280949940797921671792470279011220601990536995478533438689371979813789724414962",
+      "bloch_cos_q1": "-0.50000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "bloch_angle_q0_deg": "120.18604971074036379828914442407054554733954612692390841952072703278907663865748",
+      "bloch_angle_q1_deg": "120.00000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "bloch_angle_q1_residual": "1.3494013367335069727166174785625624329868750569431689664099536672138424692441292e-79",
+      "orthogonal_pair_angle_deg": 180,
+      "quadratic_admissible_axes": 2,
+      "passed": true
+    }
+  }
+}
