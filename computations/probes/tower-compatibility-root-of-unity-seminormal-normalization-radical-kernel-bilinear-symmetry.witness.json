@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "tower_compatibility_root_of_unity_seminormal_normalization_radical_kernel_bilinear_symmetry_probe",
+  "beans": [
+    "qou-0fmb",
+    "qou-4lft",
+    "qou-avt2",
+    "qou-cf3m",
+    "qou-g6vb"
+  ],
+  "leanModule": "QOU.Foundations.TowerCompatibilityRootOfUnitySeminormalNormalizationRadicalKernelBilinearSymmetry",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/tower_compatibility_root_of_unity_seminormal_normalization_radical_kernel_bilinear_symmetry_probe.py",
+  "scriptHash": "28e0042d776cdc079c85f0254ab21558d7f5b492e88420dbd3fa8ba157431743",
+  "scriptSha256": "28e0042d776cdc079c85f0254ab21558d7f5b492e88420dbd3fa8ba157431743",
+  "scriptCommitSha": "98224baac4097812a7a075b15a3d78cd7d6d0f26",
+  "generatedAt": "2026-11-18T08:21:16.170106+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-0fmb",
+      "theorem": "inverseStepNum_unit_and_trace_reduction",
+      "maxAbsError": "6.8482117839225478865e-78",
+      "passed": true
+    },
+    {
+      "beanId": "qou-4lft",
+      "theorem": "seminormal_factorization_and_root_of_unity_vanishing",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-avt2",
+      "theorem": "rescaledStdGen_quadratic_and_character_sum",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-cf3m",
+      "theorem": "signSpectralPoly_two_row_vanishing_and_deficit",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-g6vb",
+      "theorem": "tracePair_symm_and_left_linear",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
