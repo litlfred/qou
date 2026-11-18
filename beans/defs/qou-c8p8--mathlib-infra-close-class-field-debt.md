@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-11-18T09:09:45Z
+updated_at: 2026-11-18T10:16:30Z
 parent: qou-rtxm
 ---
 
@@ -209,3 +209,5 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - PR: https://github.com/litlfred/qou/pull/8331 (`ready: 69f8f329d2048eae2ceddcc8d14985dd544d587f`).
 
 - Round 77 (`lane-e667`): Formalized `qou-36vh`, `qou-3xjy`, `qou-73kb`, `qou-anpu`, `qou-gjnc` in `QOU.Foundations.AdjacentTranspositionCubicRelationInvolutionDimensionSumTransversalStraighteningHookMajorSumConstructiveWitness` with 80-dps `mpmath` 2-commit witness stamp (`c2f43250f36bb1472f334747f1e3f42a638aaf1a` -> `6468c3e40bc53533ddba78077856ee22a25a5470`, `scriptHash=a0c911e409e04bd978c286aa2f965a1d976cceeb8269e851ecc38f2b6e89b43c`) in PR `litlfred/qou#8414` (`status: in-progress`).
+
+- Round 78 (`lane-e667`): Formalized `qou-pan0`, `qou-tgci`, `qou-ykt7`, `qou-bq5e`, `qou-ch3j` in `QOU.Foundations.FilteredDifferentialSquareIdempotentBlockDecompositionIsometryTransportFinitePresentationDiamondConfluence` with 80-dps `mpmath` 2-commit witness stamp (`0869f3f0f137dac72b436e92a747c174449acb33` -> `8147a3388c97af1335cf6c164bd3eb4c9b4bd78a`, `scriptHash=f8a29b2aeceb36b8f640091b101ca03046313573b1d604a9e680784ae71f9af4`) in PR `litlfred/qou#8422` (`status: in-progress`).
