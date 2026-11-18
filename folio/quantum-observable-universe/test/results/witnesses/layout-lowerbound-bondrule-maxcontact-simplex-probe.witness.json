@@ -1,0 +1,54 @@
+{
+  "probe": "layout-lowerbound-bondrule-maxcontact-simplex-probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/layout_lowerbound_bondrule_maxcontact_simplex_probe.py",
+  "scriptCommitSha": "d482ea2750e00fbd6e9e74457e935101b2f8b093",
+  "scriptHash": "8b786124c3dfda15d0d1672a05f3bc16f486d17a5f41250533162305ad901679",
+  "scriptSha256": "8b786124c3dfda15d0d1672a05f3bc16f486d17a5f41250533162305ad901679",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "surface_sub_two_eq_zero_qou_5ax1",
+      "bean": "qou-5ax1",
+      "theorem": "QOU.Mass.LinearLayoutNoBulk.surface_sub_two_eq_zero",
+      "surface_count": "2.0",
+      "surface_minus_two": "0.0",
+      "passed": true
+    },
+    {
+      "id": "diff_unconstrained_zero_qou_5ll9",
+      "bean": "qou-5ll9",
+      "theorem": "QOU.Mass.LowerBoundCannotConstrainADifference.diff_unconstrained_zero",
+      "E1": "10.87312731383618094144114988541064999102898837479983829986787051089630652141419",
+      "E2": "10.87312731383618094144114988541064999102898837479983829986787051089630652141419",
+      "abs_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "b3_add_b4_eq_zero_of_bondRule_qou_5lsb",
+      "bean": "qou-5lsb",
+      "theorem": "QOU.Mass.MarkovBondRuleForcesPairwise.b3_add_b4_eq_zero_of_bondRule",
+      "abs_b3": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "abs_b4": "0.0",
+      "abs_sum": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    },
+    {
+      "id": "maxContact_exponent_sub_inv_dim_eq_zero_qou_63fo",
+      "bean": "qou-63fo",
+      "theorem": "QOU.Mass.MaxContactHasBulk.maxContact_exponent_sub_inv_dim_eq_zero",
+      "lhs_exp": "0.3139915020374421037474090822174482390048201415603803001581651585150504602600438",
+      "rhs_exp": "0.3139915020374421037474090822174482390048201415603803001581651585150504602600438",
+      "abs_diff": "0.0",
+      "passed": true
+    },
+    {
+      "id": "not_six_equidistant_qou_6cm9",
+      "bean": "qou-6cm9",
+      "theorem": "QOU.Mass.MaxContactSimplex.not_six_equidistant",
+      "det_gram_5_spokes": "0.29736335758040892195586511896344353514453512318852148467920429238809584420022106",
+      "abs_diff_det": "5.2710989716152616121742870256350095038549806911842537750388815125540721454848798e-82",
+      "passed": true
+    }
+  ]
+}
