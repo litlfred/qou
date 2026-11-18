@@ -1,13 +1,13 @@
 ---
 # qou-ywie
 title: 'GAP: log_ratio_binding_prototype has the same float64 defect as qou-vsqh, in the log channel'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-31T04:26:46Z
-updated_at: 2026-10-04T15:20:10Z
+updated_at: 2026-11-18T07:50:47Z
 parent: qou-9nnz
 ---
 

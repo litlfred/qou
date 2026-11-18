@@ -1,13 +1,13 @@
 ---
 # qou-u6n2
 title: 'GAP: the 3-way tr_M cross-check diverges 6-90% on 12/12 pairs -- likely a CONVENTION mismatch presented as a precision failure'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T22:04:11Z
-updated_at: 2026-10-04T15:20:24Z
+updated_at: 2026-11-18T07:50:47Z
 parent: qou-9nnz
 ---
 
