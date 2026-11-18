@@ -1,0 +1,72 @@
+{
+  "probe": "round73_devacuify_6qbv_b9cj_probe",
+  "scriptPath": "computations/probes/round73_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "7012166c0cf66b2883aa7183a77bd000b539ef13",
+  "scriptHash": "5f87de7d5accaad21190a7f0bf5b6e9b20ce3f3940b358d953aa4053288d61a3",
+  "scriptSha256": "5f87de7d5accaad21190a7f0bf5b6e9b20ce3f3940b358d953aa4053288d61a3",
+  "dps": 80,
+  "mpmathDps": 80,
+  "generatedAt": "2026-11-18T13:27:15.404527+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-4hbq",
+      "file": "folio/quantum-observable-universe/lean/QOU/Information/SkeinHorizonLowerBound.lean",
+      "theorems": [
+        "succ_iterate_add",
+        "treeSearch_len_lt_normalForm"
+      ],
+      "depth": 12,
+      "normalForm": 531441,
+      "iterateFromSevenByNineteen": 26,
+      "passed": true
+    },
+    {
+      "bean": "qou-j0kz",
+      "file": "folio/quantum-observable-universe/lean/QOU/Information/PhysicalIntractability.lean",
+      "theorems": [
+        "superPoly_resolutionTreeSize_three_mul",
+        "two_pow_le_steps_mul_bandwidth"
+      ],
+      "n": 8,
+      "twoPowN": "256.0",
+      "resolutionTreeSize3N": "282429536481.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-ok7t",
+      "file": "folio/quantum-observable-universe/lean/QOU/Brings/ColourCubicDiscriminant.lean",
+      "theorems": [
+        "colourSextic_recip_identity",
+        "normSq_conj_eq_one_of_abs_le_two"
+      ],
+      "colourSexticValue": "588.053365056544",
+      "recipIdentityResidual": "0.0",
+      "conjUnitCircleResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-okh4",
+      "file": "folio/quantum-observable-universe/lean/QOU/MassTheory/BorromeanA4TightSlice.lean",
+      "theorems": [
+        "one_lt_tauL4_of_ne_zero",
+        "borromean4_deficit_neg_of_ne_zero"
+      ],
+      "h0": "0.20905692653530692",
+      "tauL4AtH0": "1.0001284188031465197048505224630430524535732752938387567772047836668865190343441",
+      "deficitAtH0": "-0.00012841880314651970485052246304305245357327529383875677720478366688651903434406358",
+      "passed": true
+    },
+    {
+      "bean": "moqg",
+      "file": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTowerConvergence.lean",
+      "theorems": [
+        "borromean_dressed_pair_within_radius"
+      ],
+      "trMBorromeanAtH0": "0.99856225677167955773525674187104578246321742868918184440465073524791242601243142",
+      "dressedPairArg": "0.49766587640189079365186279200813449588774696748524824000896212627927154881740934",
+      "q0Radius": "1.1099767213262654341673802627117257130697809482282671380367700191698323630571543",
+      "passed": true
+    }
+  ]
+}
