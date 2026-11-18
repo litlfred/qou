@@ -1,7 +1,7 @@
 ---
 # qou-8kn5
 title: Cite 2412.02281v1.pdf at folio/quantum-observable-universe/lean/QOU/QBeta/C1ConnectionPoles.lean
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

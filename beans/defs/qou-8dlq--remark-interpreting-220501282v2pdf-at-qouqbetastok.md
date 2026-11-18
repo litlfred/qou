@@ -1,7 +1,7 @@
 ---
 # qou-8dlq
 title: Remark interpreting 2205.01282v2.pdf at QOU.QBeta.StokesDTBPSBridge
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

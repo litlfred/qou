@@ -1,7 +1,7 @@
 ---
 # qou-8p52
 title: Remark interpreting [yekutieli2015] at def:rigid-dualizing-complex
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
