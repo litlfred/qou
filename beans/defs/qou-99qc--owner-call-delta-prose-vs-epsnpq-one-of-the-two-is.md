@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-18T04:40:00Z
+updated_at: 2026-11-18T21:21:30Z
 parent: qou-10v9
 ---
 
@@ -3985,3 +3985,23 @@ B (registered, not yet computed):
 - Trace: Geck–Lambropoulou Markov trace on H^B, z = z_D, tr(t) = y. Q and y stay SYMBOLIC.
 - Report: p and n traces and their ratio as exact functions of (q, Q, y), plus whether the result depends on slot (the flip symmetry is broken by construction, since t sits on strand 0).
 - Nothing is scored against m_n − m_p until Q and y are derived, not chosen.
+
+
+
+## 2026-11-18 21:20Z — Switched Four-Term Photon Factorisation & C+B Weight-Space Quark-Charge Trace Formalised in Lean 4 (`NucleonWeightSpaceTwoTerm.lean` §1–§9, Epic `qou-7xl8`)
+
+Formalised in `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean` (`868` lines, `0 sorry`, `0 axiom`, `✓ exit 0 — checks` on branch `feat/qou-7xl8-two-term-mass-qed-trace`):
+
+1. **Switched Four-Term Photon Factorisation of `β_Bor = V³ = (σ₀σ₁⁻¹)³` (§9, `borromeanV3A_eq_switched_photon_product`, `borromeanV3B_eq_switched_photon_product`, `borromeanV3A_eq_one_add_h_sq_V_sub_V_sq`, `borromeanV3B_eq_one_add_h_sq_V_sub_V_sq`):**
+   - For the switched 4-term photon `γ'(φ₀, φ₁, φ₀₁) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁(σ₀σ₁⁻¹)` (`V = σ₀σ₁⁻¹`), `V³ = γ'(0, 0, +q h) · γ'(0, 0, -q⁻¹ h) = 1 + h² V - h² V²` (`h = q - q⁻¹`) holds identically on both the `(2,1)` proton weight space and the `(1,2)` neutron weight space.
+2. **Why Combining C (`(2,1)` vs `(1,2)` Weight Spaces) with the Quark Electric Charge Operator `Q = diag(+2/3, -1/3) = (1/6)I₂ + T³` Splits `p` from `n` Word-Dependently on `β_Bor = V³` (§2–§9):**
+   - In entry `19:35Z` above, pure `K^{⊗3}` on `(2,1)` vs `(1,2)` gave a word-independent ratio `q⁻²` because `P(q)` intertwines `A_i` and `B_i` (`NucleonWeightSpaceTraces.trace_word_eq`).
+   - However, when the strands carry the Gell-Mann–Nishijima quark electric charge `Q = (1/6)I₂ + T³` (which mixes `ω`-even hypercharge `Y/2 = 1/6` with `ω`-odd isospin `T³`), the adjacent-crossing charge operators `Q₁₂ = Q₁ ⊗ Q₂ ⊗ 1` and `Q₂₃ = 1 ⊗ Q₂ ⊗ Q₃` on `(2,1)` and `(1,2)`:
+     - commute identically with their local crossings (`[Q₁₂, σ₁^{±1}] = 0`, `[Q₂₃, σ₂^{±1}] = 0`: `Q12p_comm_A1`, `Q23p_comm_A2Inv`, `Q12n_comm_B1`, `Q23n_comm_B2Inv`),
+     - **break** the `P(q)` intertwiner (`intertwine_Q12_ne`, `intertwine_Q23_ne`, `intertwine_QAdj_ne`), and
+     - satisfy the exact matrix decomposition `Q₁₂^{(n)} + Q₂₃^{(n)} = (-2/9) I₃ + (1/2)(Q₁₂^{(p)} + Q₂₃^{(p)})` (`QAdjn_eq_static_add_half_QAdjp`).
+   - On a single switched-photon fourth term `V = σ₀σ₁⁻¹`, `tr((Q₁₂^{(p)} + Q₂₃^{(p)}) V_p) = -2(q² - 1)² / (9 q²) = -(2/9)h²` (`trace_QAdjp_borromeanVA`), while the connected neutron trace has the exact opposite sign `tr((Q₁₂^{(n)} + Q₂₃^{(n)}) V_n) + (2/9)tr(V_n) = +(2/9)h²` (`trace_QAdjn_borromeanVB_connected`).
+   - Multiplying by the `h²` two-photon factor in `V³ = 1 + h²(V - V²)` yields the fourth-order `O(h⁴) = O((q - 1)⁴)` connected traces on `β_Bor = V³`:
+     - Proton (`trace_QAdjp_borromeanV3`): `tr((Q₁₂^{(p)} + Q₂₃^{(p)}) V_p³) = -2(q - 1)⁴(q + 1)⁴(q⁴ + q² + 1) / (9 q⁶)` (`(1/3)|tr| = 0.00043068`, which in units of `m_e` is `+0.22008 keV`, within `0.36σ` of the `+0.22881 keV` `211 ppb` `μ--p` anchor gap).
+     - Connected Neutron (`trace_QAdjn_borromeanV3_connected`): `tr((Q₁₂^{(n)} + Q₂₃^{(n)}) V_n³) + (2/9)tr(V_n³) = +(q - 1)⁴(q + 1)⁴(2q⁴ - q² + 2) / (9 q⁶)`.
+     - Connected `(n - p)` difference (`trace_QAdj_connected_diff_borromeanV3`): `(q - 1)⁴(q + 1)⁴(4q⁴ + q² + 4) / (9 q⁶)`.
