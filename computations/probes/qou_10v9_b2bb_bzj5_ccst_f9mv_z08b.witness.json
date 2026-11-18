@@ -1,0 +1,67 @@
+{
+  "probe": "qou_10v9_b2bb_bzj5_ccst_f9mv_z08b_probe.py",
+  "beans": [
+    "qou-b2bb",
+    "qou-bzj5",
+    "qou-ccst",
+    "qou-f9mv",
+    "qou-z08b"
+  ],
+  "dps": 80,
+  "scriptHash": "36bd2db2e402b58168d926651353fe0d32f7a0275237ba207bcbf0365be78775",
+  "scriptSha256": "36bd2db2e402b58168d926651353fe0d32f7a0275237ba207bcbf0365be78775",
+  "scriptCommitSha": "87c4c243c3d0a1ad9de250233200546c7172ab13",
+  "generatedAt": "2026-11-18T12:19:26.714965+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-b2bb-mirror-volume-and-writhe-parity",
+      "bean": "qou-b2bb",
+      "description": "Mirror inversion preserves hyperbolic volume and cancels the signed writhe channel w*(q + q^{-1})/2",
+      "hyperbolicVolume": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488",
+      "writheShiftPlus": "3.0163504710331129028713883604085195046845719387270738566275584557785867910014872",
+      "writheShiftMirror": "-3.0163504710331129028713883604085195046845719387270738566275584557785867910014872",
+      "absError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-bzj5-unit-leading-coefficient-cancellation",
+      "bean": "qou-bzj5",
+      "description": "Invertible leading coefficients cancel the overlap leading monomial to 80 dps while 2 in Z/4Z has no inverse",
+      "cancelResidual": "0.0",
+      "fin4TwoNoInverse": 1,
+      "passed": true
+    },
+    {
+      "id": "qou-ccst-parallel-polarization-tree-qed-nonzero",
+      "bean": "qou-ccst",
+      "description": "Tree-level parallel polarization |M|^2 is strictly positive (9/2 along z, 1590912/231361 in x-z) with anisotropy 8/17",
+      "parallelAmpZ": "4.5",
+      "perpAmpZ": "12.5",
+      "parallelAmpXZ": "6.8763188264227765267266306767346268385769425270464771504272543773583274622775662",
+      "anisotropyZ": "0.47058823529411764705882352941176470588235294117647058823529411764705882352941176",
+      "absError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "qou-f9mv-shared-phase-ratio-realness-vs-positivity",
+      "bean": "qou-f9mv",
+      "description": "Shared complex phase forces Im(z_A / z_3) = 0 automatically, while Re(z_A / z_3) > 0 tests same-sign amplitudes",
+      "ratioPosReal": "1.6",
+      "ratioPosImag": "-6.6147124349681714348853797968753060440533091026625929725978120941855023002163197e-82",
+      "ratioNegReal": "-1.6",
+      "absError": "3.4313820756397389318467907696290650103526540970062201045351150238587293182372159e-81",
+      "passed": true
+    },
+    {
+      "id": "qou-z08b-context-trace-odd-closed-form",
+      "bean": "qou-z08b",
+      "description": "g_odd = -h*[2]_q*(q^2 + q^{-2})/8 equals -(q^4 - q^{-4})/8 to 80 dps and is non-zero at q0",
+      "gOddFactored": "-0.10741437463119348373332661337905632545308962552139720765397890532826260098550733",
+      "gOddOctic": "-0.10741437463119348373332661337905632545308962552139720765397890532826260098550733",
+      "fEvenProduct": "-0.02245964271093181713728392153113061009489745181607974829983321184856499301737776",
+      "absError": "1.3177747429038154030435717564087523759637451727960634437597203781385180363712199e-82",
+      "passed": true
+    }
+  ]
+}
