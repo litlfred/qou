@@ -145,4 +145,11 @@ theorem zero_neutron_flux_fraction_is_exactly_one_over_Z (Φp Φn : R) (Z N : �
   subst hzero
   ring
 
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **Vanishing difference form of `interval_width` (`qou-7sin`).**
+For any `B₁, U₁, B₂, U₂ : R`, `((U₁ - B₂) - (B₁ - U₂)) - ((U₁ - B₁) + (U₂ - B₂)) = 0`. -/
+theorem interval_width_sub_eq_zero (B₁ U₁ B₂ U₂ : R) :
+    ((U₁ - B₂) - (B₁ - U₂)) - ((U₁ - B₁) + (U₂ - B₂)) = 0 :=
+  sub_eq_zero.mpr (interval_width B₁ U₁ B₂ U₂)
+
 end QOU.Mass.MirrorSplitIsASmallFractionOfTheEnergy

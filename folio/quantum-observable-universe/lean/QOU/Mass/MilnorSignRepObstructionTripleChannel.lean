@@ -271,4 +271,14 @@ theorem exists_nonzero_equivariant_into_trivial_of_trivial_source :
   have : (1 : ℤ) = 0 := congrFun (congrArg (fun f : ℤ →ₗ[ℤ] ℤ => f.toFun) h) 1
   norm_num at this
 
+/-- **Pointwise vanishing of `equivariant_linearMap_to_trivial_eq_zero_of_neZero_two` (`qou-7jhl`).**
+Under `[NoZeroDivisors R] [NeZero (2 : R)]`, any `T : R →ₗ[R] R` satisfying
+`∀ g x, T (signR g * x) = T x` evaluates to `0` at every `x : R`. -/
+theorem equivariant_linearMap_to_trivial_apply_eq_zero_of_neZero_two
+    [NoZeroDivisors R] [NeZero (2 : R)]
+    (T : R →ₗ[R] R)
+    (hT : ∀ (g : Equiv.Perm (Fin 3)) (x : R), T (signR g * x) = T x) (x : R) :
+    T x = 0 := by
+  rw [equivariant_linearMap_to_trivial_eq_zero_of_neZero_two T hT, LinearMap.zero_apply]
+
 end QOU.Mass.MilnorSignRepObstructionTripleChannel

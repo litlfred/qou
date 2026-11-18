@@ -104,4 +104,11 @@ theorem not_geometric_order_of_lt {b₂ b₃ b₄ : R} (h : b₃ ^ 2 < b₂ * b�
     ¬ ∃ g : R, b₂ = g ^ 2 ∧ b₃ = g ^ 4 ∧ b₄ = g ^ 6 :=
   not_geometric_order (ne_of_lt h)
 
+/-- **Vanishing difference form of `geometric_order_forces_square` (`qou-6irj`).**
+If `b₂ = g ^ 2`, `b₃ = g ^ 4`, and `b₄ = g ^ 6`, then `b₃ ^ 2 - b₂ * b₄ = 0`. -/
+theorem geometric_order_forces_square_sub_eq_zero {g : R} {b₂ b₃ b₄ : R}
+    (h₂ : b₂ = g ^ 2) (h₃ : b₃ = g ^ 4) (h₄ : b₄ = g ^ 6) :
+    b₃ ^ 2 - b₂ * b₄ = 0 :=
+  sub_eq_zero.mpr (geometric_order_forces_square h₂ h₃ h₄)
+
 end QOU.Mass.MilnorCarriesOrderNotMagnitude

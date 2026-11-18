@@ -144,4 +144,16 @@ theorem moebius_proportional_of_three_agree (a b c d a' b' c' d' x y z : K)
       (by linear_combination hx) (by linear_combination hy) (by linear_combination hz)
   exact ⟨by linear_combination hA, by linear_combination hB, by linear_combination hC⟩
 
+/-- **Sum of coefficients vanishes for a quadratic with three distinct roots (`qou-7vh1`).**
+If `A * w ^ 2 + B * w + C = 0` at three pairwise-distinct points `x, y, z : K`, then
+`A + B + C = 0`. -/
+theorem quadratic_coeff_sum_zero_of_three_roots (A B C x y z : K)
+    (hxy : x ≠ y) (hxz : x ≠ z) (hyz : y ≠ z)
+    (hx : A * x ^ 2 + B * x + C = 0)
+    (hy : A * y ^ 2 + B * y + C = 0)
+    (hz : A * z ^ 2 + B * z + C = 0) :
+    A + B + C = 0 := by
+  obtain ⟨hA, hB, hC⟩ := quadratic_zero_of_three_roots A B C x y z hxy hxz hyz hx hy hz
+  rw [hA, hB, hC, add_zero, add_zero]
+
 end QOU.Mass.MoebiusThreePointRigidity

@@ -90,4 +90,13 @@ theorem qweighted_matches_any_single_level
   · intro b _ hb; dsimp only; rw [if_neg hb, zero_mul]
   · intro h'; exact absurd hi₀ h'
 
+/-- **Vanishing difference form of `mubar_common_weight_forces_integer_multiple` (`qou-7tr2`).**
+If `∀ m, channel m = w * (S m : R)` and `S 2 = 1`, then
+`channel m - (S m : R) * channel 2 = 0`. -/
+theorem mubar_common_weight_sub_integer_multiple_eq_zero
+    (channel : ℕ → R) (w : R) (S : ℕ → ℤ)
+    (hmodel : ∀ m, channel m = w * (S m : R)) (hunit : S 2 = 1) (m : ℕ) :
+    channel m - (S m : R) * channel 2 = 0 :=
+  sub_eq_zero.mpr (mubar_common_weight_forces_integer_multiple channel w S hmodel hunit m)
+
 end QOU.Mass.MixedMultibondMuBarIntegrality
