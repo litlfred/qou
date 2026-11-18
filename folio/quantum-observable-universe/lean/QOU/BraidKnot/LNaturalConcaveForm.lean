@@ -215,4 +215,12 @@ theorem midpoint_concave_add {α : Type*} (f g : α → ℝ) (x y p q : α)
     (f x + g x) + (f y + g y) ≤ (f p + g p) + (f q + g q) := by
   linarith
 
+/-- The difference between the negated exponential series at a convex combination and the convex combination of negated series values is non-negative. -/
+theorem neg_exp_series_concave_sub_nonneg (s : Finset ℕ) (c : ℕ → ℝ) (L a b p q : ℝ)
+    (hc : ∀ r ∈ s, 0 ≤ c r) (ha : 0 ≤ a) (hb : 0 ≤ b) (hab : a + b = 1) :
+    0 ≤ -(∑ r ∈ s, c r * Real.exp (-((r : ℝ) * L * (a * p + b * q))))
+      - (a * (-(∑ r ∈ s, c r * Real.exp (-((r : ℝ) * L * p))))
+        + b * (-(∑ r ∈ s, c r * Real.exp (-((r : ℝ) * L * q))))) :=
+  sub_nonneg.mpr (neg_exp_series_concave s c L a b p q hc ha hb hab)
+
 end QOU.BraidKnot.LNaturalConcaveForm

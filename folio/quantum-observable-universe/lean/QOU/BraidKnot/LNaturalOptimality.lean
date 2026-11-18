@@ -209,4 +209,14 @@ theorem global_of_local_boxDiffDomain (lo hi : ι → ℤ) (c : ι → ι → �
     ∀ y ∈ boxDiffDomain lo hi c, g y ≤ g x :=
   global_of_local (boxDiffDomain lo hi c) g (boxDiffDomain_midpoint_closed lo hi c) hmid hx hup hdown
 
+/-- Subtracting any feasible domain evaluation from a locally optimal point evaluation yields a non-negative difference. -/
+theorem global_of_local_boxDiffDomain_sub_nonneg (lo hi : ι → ℤ) (c : ι → ι → ℤ) (g : (ι → ℤ) → V)
+    (hmid : ∀ x ∈ boxDiffDomain lo hi c, ∀ y ∈ boxDiffDomain lo hi c,
+      g x + g y ≤ g (ceilMid x y) + g (floorMid x y))
+    {x y : ι → ℤ} (hx : x ∈ boxDiffDomain lo hi c) (hy : y ∈ boxDiffDomain lo hi c)
+    (hup : ∀ S : Finset ι, x + chi S ∈ boxDiffDomain lo hi c → g (x + chi S) ≤ g x)
+    (hdown : ∀ S : Finset ι, x - chi S ∈ boxDiffDomain lo hi c → g (x - chi S) ≤ g x) :
+    0 ≤ g x - g y :=
+  sub_nonneg.mpr (global_of_local_boxDiffDomain lo hi c g hmid hx hup hdown y hy)
+
 end QOU.BraidKnot.LNaturalOptimality

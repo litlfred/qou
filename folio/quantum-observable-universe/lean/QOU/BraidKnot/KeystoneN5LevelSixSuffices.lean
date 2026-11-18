@@ -181,4 +181,11 @@ theorem electron_block_pinned_all_roots (bwPoly : ℝ[X])
     bwPoly = poly311 :=
   KeystoneHabiroInfiniteRigidity.eq_of_habiro_root_agreement bwPoly poly311 h
 
+/-- Subtracting the five-box partition polynomial from a polynomial agreeing across the full root family yields the zero polynomial. -/
+theorem muon_block_pinned_all_roots_sub_eq_zero (bwPoly : ℝ[X])
+    (h : ∀ N : ℕ, bwPoly.eval (2 * Real.cos (π / ((N : ℝ) + 2)))
+      = poly32.eval (2 * Real.cos (π / ((N : ℝ) + 2)))) :
+    bwPoly - poly32 = 0 := by
+  rw [muon_block_pinned_all_roots bwPoly h, sub_self]
+
 end QOU.BraidKnot.KeystoneN5LevelSixSuffices

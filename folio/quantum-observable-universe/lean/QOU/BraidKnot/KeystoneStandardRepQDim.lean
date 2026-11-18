@@ -78,4 +78,10 @@ theorem qFactorial_standard_hook (q : R) (n : ℕ) (hn : 2 ≤ n) :
   rw [e1, e2, qIntGeo_one', qFactorial_succ, qFactorial_succ, e3]
   ring
 
+/-- Subtracting the hook-product factorisation from the n-th geometric q-factorial yields zero. -/
+theorem qFactorial_standard_hook_sub_eq_zero (q : R) (n : ℕ) (hn : 2 ≤ n) :
+    qFactorial q n
+      - qIntGeo q (n - 1) * (qIntGeo q n * qFactorial q (n - 2) * qIntGeo q 1) = 0 := by
+  rw [qFactorial_standard_hook q n hn, sub_self]
+
 end QOU.BraidKnot.Keystone

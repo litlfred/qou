@@ -96,4 +96,12 @@ theorem electron_block_pinned_level7
     (by rw [natDegree_poly311]; norm_num) (by simpa using hagree)
   exact h
 
+/-- Subtracting the target polynomial from a bounded-degree polynomial agreeing at six level-seven fold points yields the zero polynomial. -/
+theorem muon_block_pinned_level7_sub_eq_zero
+    (bwPoly : ℝ[X]) (hbw : bwPoly.natDegree < 6)
+    (hagree : ∀ k ∈ Finset.Icc 1 6,
+      bwPoly.eval (foldValue 7 k) = poly32.eval (foldValue 7 k)) :
+    bwPoly - poly32 = 0 := by
+  rw [muon_block_pinned_level7 bwPoly hbw hagree, sub_self]
+
 end QOU.BraidKnot.KeystoneN5ValueMapRigidity
