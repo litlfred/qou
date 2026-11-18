@@ -1,0 +1,92 @@
+{
+  "probe": "round71_devacuify_6qbv_b9cj_probe",
+  "round": 71,
+  "beans": [
+    "qou-r16m",
+    "qou-8mtd",
+    "qou-za3q",
+    "qou-yi7h",
+    "qou-h315"
+  ],
+  "scriptPath": "computations/probes/round71_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "7580772c921dba1792c7df67cfdeb7db65a5b8f8",
+  "scriptHash": "9ff5656acf3016652cdb9c164b552a392b173d143b49cef0fb099119ac04a07b",
+  "scriptSha256": "9ff5656acf3016652cdb9c164b552a392b173d143b49cef0fb099119ac04a07b",
+  "dps": 80,
+  "mpmathDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-r16m",
+      "leanFile": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/VacuumEpsilon.lean",
+      "theorems": [
+        "VacuumEpsilon.unknot_geom_pos",
+        "VacuumEpsilon.unknot_geom_ne_zero",
+        "VacuumEpsilon.unknot_geom_lt_trefoil_geom",
+        "VacuumEpsilon.trefoil_geom_pos",
+        "VacuumEpsilon.unknot_ne_trefoil"
+      ],
+      "eps": "0.1099839320487948085199044382829098336580463943462520420069964015386416640468482",
+      "geomUnknot": "0.1099839320487948085199044382829098336580463943462520420069964015386416640468482",
+      "geomTrefoil": "0.15369419270444747624565926199810627577683536431396752723258860233124319196443737",
+      "trefoilMinusUnknotGap": "0.043710260655652667725754823715196442118788969967715485225592200792601527917589165",
+      "passed": true
+    },
+    {
+      "bean": "qou-8mtd",
+      "leanFile": "folio/quantum-observable-universe/lean/QOU/Encounter/MostowTriangulationBridge.lean",
+      "theorems": [
+        "mostow_volume_eq_rotateAt",
+        "mostow_volume_eq_sum_of_realises",
+        "not_realises_of_mostow_volume_ne"
+      ],
+      "volFigureEight": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488",
+      "volFigureEightRotated": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488",
+      "rotateAtResidual": "0.0",
+      "mismatchGap": "1.014941606409653625021202554274520285941689307530299792017489106776597476258244",
+      "passed": true
+    },
+    {
+      "bean": "qou-za3q",
+      "leanFile": "folio/quantum-observable-universe/lean/QOU/MassTheory/MagnusPairingSignStructure.lean",
+      "theorems": [
+        "trace_scalar_mul_commutator_eq_zero",
+        "weighted_pairing_annihilated_of_row_cap",
+        "weighted_pairing_split_by_row_cap"
+      ],
+      "fullPlancherelSum": "0.11718106371123985547493557495774322208343991969217916967171733369815854507602918",
+      "le2RowSum": "-0.29127625799121716786346328991403491190008173393823828357084258430447351513976885",
+      "gt2RowTail": "0.40845732170245702333839886487177813398352165363041745324255991800263206021579804",
+      "splitResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-yi7h",
+      "leanFile": "folio/quantum-observable-universe/lean/QOU/MathlibExt/HeckeGramFactorial.lean",
+      "theorems": [
+        "regTraceGram_det_ne_zero_of_eq_qFactorial",
+        "isSemisimpleRing_of_gram_det_eq_qFactorial_one_lt_exact",
+        "not_qGeneric_of_gram_det_eq_zero"
+      ],
+      "qFactorial5AtQ0": "206.82288716620698542365547923306835266537716013589757497860627110086789872227174",
+      "qFactorial2AtNegOne": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-h315",
+      "leanFile": "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/CSMarginCorrelationConstant.lean",
+      "theorems": [
+        "csMargin_one_sub_rhoSq_eq",
+        "csMargin_rho_pos",
+        "csMargin_rho_lt_one",
+        "csMargin_pos_of_ratio_lt_rhoSq"
+      ],
+      "rhoP": "0.97979589711327123927891362988235655678637899226266805137307702690038415098292601",
+      "rhoSq": "0.96",
+      "oneSubRhoSq": "0.039999999999999999999999999999999999999999999999999999999999999999999999999999999",
+      "sampleMarginAt18Over25": "0.13126775968941420999790039535653770964457586703649920746706918410594466390566179",
+      "residualRho": "1.054219794323052322434857405127001900770996138236850755007776302510814429096976e-81",
+      "passed": true
+    }
+  ]
+}
