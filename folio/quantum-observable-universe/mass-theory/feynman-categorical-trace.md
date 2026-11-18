@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, $V$ the fundamental representation, and $q$ not a root of unity. Let $\varrho \colon \mathbf{1} \to A$ be a closed cycle with braid representative $\beta \in B_n$.
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, $V$ the fundamental representation, $q$ real and not a root of unity, and $\mathrm{tr}_M$ the Markov trace at $z = q^3/(q^2+1)$. Let $\varrho \colon \mathbf{1} \to A$ be a closed cycle with braid representative $\beta \in B_n$.
 
 **Proposition.**
 *The Feynman transition amplitude evaluated on the knot-type eigenbasis equals the Jones--Markov trace of the braid representation in the Hecke algebra:*
@@ -12,14 +12,14 @@ $$
   \mathrm{tr}_M\bigl(\rho(\beta)\bigr),
 $$
 
-*where the sum spans partitions $\lambda \vdash n$ with at most two parts. The Markov weights $w_\lambda$ satisfy the Markov property $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$ and evaluate to $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$, with $\dim_q(V_\lambda) = [2j+1]_q$.*
+*where $w_\lambda = \dim_q(V_\lambda)/\dim_q(V^{\otimes n}) = [\lambda_1 - \lambda_2 + 1]_q/[2]_q^{\,n}$. The trace satisfies $\mathrm{tr}_M(x \sigma_n) = z\,\mathrm{tr}_M(x)$ and $\mathrm{tr}_M(x \sigma_n^{-1}) = (z - h)\,\mathrm{tr}_M(x)$ for $x \in H_n(R, q)$, where $h = q - q^{-1}$.*
 
-*The transition amplitude is a finite sum over $\lfloor n/2 \rfloor + 1$ terms. Its absolute value equals the categorical mass at a single brane level:*
+*The sum has $\lfloor n/2 \rfloor + 1$ terms. The categorical mass at a single brane level is the absolute value of this amplitude:*
 
 $$
   \mathfrak{m}(\varrho)\big|_{\text{single level}}
   =
-  \mathrm{tr}_M\bigl(\rho(\beta)\bigr)
+  \bigl|\mathrm{tr}_M\bigl(\rho(\beta)\bigr)\bigr|
   =
   \bigl|
   \langle\psi_f|\psi_i\rangle_{\mathrm{eigenbasis}}

@@ -1,23 +1,6 @@
 **Proof.**
-The argument proceeds in three steps.  By
-([eigenbasis decomposition](#lem:feynman-eigenbasis-decomposition)),
-the algebraic state space
-$V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ decomposes into the
-finite eigenbasis $\bigoplus_\lambda V_\lambda \otimes S_\lambda$ on
-which the braid $\beta \in B_n$ acts.  By
-([trace collapse](#lem:feynman-trace-collapse)),
-the Feynman path integral on this eigenbasis collapses to a finite
-weighted sum over the irreducible summands, with no regularisation
-needed.  By
-([Markov identification](#lem:feynman-markov-identification)),
-this Markov-weighted sum equals the Jones--Markov trace
-$\mathrm{tr}_M\bigl(\rho(\beta)\bigr)$ in $H_n(R, q)$, and the
-Markov weights are
-$w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$.
+By ([Markov identification](#lem:feynman-markov-identification)), the Markov-weighted sum of seminormal block traces equals $\mathrm{tr}_M\bigl(\rho(\beta)\bigr)$. Only partitions with at most two rows carry nonzero weight, and on those $w_\lambda = \dim_q(V_\lambda)/\dim_q(V^{\otimes n})$. The partitions of $n$ with at most two rows are $(n - k, k)$ for $0 \leq k \leq \lfloor n/2 \rfloor$, so there are $\lfloor n/2 \rfloor + 1$ terms.
 
-By the categorical mass as Markov trace
-([categorical mass as Markov trace](#prop:categorical-mass-markov)),
-the absolute value of this expression is the categorical mass at a
-single brane level:
-$\mathfrak{m}(\varrho)|_{\text{single level}}
-= |\mathrm{tr}_M(\rho(\beta))|$.  $\square$
+The rule for $\sigma_n^{-1}$ follows from the quadratic relation $\sigma_n^{-1} = \sigma_n - h$: $\mathrm{tr}_M(x\sigma_n^{-1}) = \mathrm{tr}_M(x\sigma_n) - h\,\mathrm{tr}_M(x) = (z - h)\,\mathrm{tr}_M(x)$.
+
+By ([categorical mass as Markov trace](#prop:categorical-mass-markov)), the categorical mass at a single brane level is $|\mathrm{tr}_M(\rho(\beta))|$, which by the first step is the absolute value of the eigenbasis amplitude. $\square$

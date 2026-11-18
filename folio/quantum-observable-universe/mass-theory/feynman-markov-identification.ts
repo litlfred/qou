@@ -2,12 +2,12 @@ import { lemma } from "../../schema/builders";
 
 export default lemma({
   label: "lem:feynman-markov-identification",
-  lean: { ref: "qou:QOU.FeynmanPathIntegrals.markov_identification",
+  lean: { ref: "qou:QOU.FeynmanPathIntegrals.markov_identification_of_markovTrace",
     validation: "not_checked",
   },
   title: "Markov-weighted eigenbasis sum equals the Markov trace",
   tags: ["markov-trace", "wedderburn", "feynman", "hecke", "identification"],
-  uses: ["lem:feynman-eigenbasis-decomposition", "thm:jones-markov-trace"],
+  uses: ["thm:jones-markov-trace"],
   proofs: ["prf:feynman-markov-identification"],
   authorNotes: [
     {
@@ -24,14 +24,14 @@ export default lemma({
     },
     {
       kind: "note",
-      date: "2026-08-08",
+      date: "2026-11-18",
       body:
-        "**§7c base-ring note (archimedean specialisation).** " +
-        "The Lean module `lean/QOU/FeynmanPathIntegrals/markov_identification.lean` " +
-        "names specific values via module-level `opaque` constants (`markovTrace`, `markovWeight`, `spechtPartialTrace`); a polymorphic `opaque` would be a family of unrelated constants, so the `ℝ` is load-bearing. " +
-        "The `ℝ` is therefore forced by the statement itself rather than " +
-        "chosen, so the block sits on the archimedean side of the §7c wall " +
-        "by construction.",
+        "**Rewritten 2026-11-18.** The `lean.ref` was `markov_identification`, which takes the branching " +
+        "identity as a hypothesis. It now points to `markov_identification_of_markovTrace`, which proves it at " +
+        "convention D. The weight $\\dim_q(V_\\lambda)\\dim(S_\\lambda)/\\dim_q(V^{\\otimes n})$ was wrong by " +
+        "the factor $\\dim S_\\lambda$ and is replaced by the Ocneanu weight, which equals " +
+        "$\\dim_q(V_\\lambda)/\\dim_q(V^{\\otimes n})$ on two-row partitions and vanishes on the rest. " +
+        "Base ring $\\mathbb{R}$, forced by `seminormalRep`.",
     },
   ],
 
