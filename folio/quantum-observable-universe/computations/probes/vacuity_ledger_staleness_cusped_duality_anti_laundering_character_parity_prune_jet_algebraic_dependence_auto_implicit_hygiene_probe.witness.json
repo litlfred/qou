@@ -1,0 +1,49 @@
+{
+  "probe": "vacuity_ledger_staleness_cusped_duality_anti_laundering_character_parity_prune_jet_algebraic_dependence_auto_implicit_hygiene_probe",
+  "beans": [
+    "qou-wsx3",
+    "qou-6x4m",
+    "pusy",
+    "qou-j4mn",
+    "qou-tp56"
+  ],
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/vacuity_ledger_staleness_cusped_duality_anti_laundering_character_parity_prune_jet_algebraic_dependence_auto_implicit_hygiene_probe.py",
+  "scriptCommitSha": "5ba819e89853dd16d98b7a750bedb3288386e5e6",
+  "scriptHash": "af1cbee43424d4e7536db47834cc2df1049ef3dcaa3bf27b824e4d7f5424ee91",
+  "scriptSha256": "af1cbee43424d4e7536db47834cc2df1049ef3dcaa3bf27b824e4d7f5424ee91",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "vacuityLedgerStaleness": {
+      "bean": "qou-wsx3",
+      "nonLiveCount": "48.0",
+      "residualUnfixedBound": "145.0",
+      "passed": true
+    },
+    "cuspedDualityAntiLaundering": {
+      "bean": "qou-6x4m",
+      "penaltySq": "0.0",
+      "octantVolumeMultiplier": "8.0",
+      "passed": true
+    },
+    "characterParityPrune": {
+      "bean": "pusy",
+      "evenParityDiff": "0.0",
+      "oddParityDiff": "6.0",
+      "passed": true
+    },
+    "jetAlgebraicDependence": {
+      "bean": "qou-j4mn",
+      "transcendenceDegreeExcess": "2.0",
+      "linearRankGapSq": "0.0",
+      "algebraicNullspaceDim": "3.0",
+      "passed": true
+    },
+    "autoImplicitHygiene": {
+      "bean": "qou-tp56",
+      "hygieneDeficitSq": "0.0",
+      "validatedSoakCommits": "964.0",
+      "passed": true
+    }
+  }
+}
