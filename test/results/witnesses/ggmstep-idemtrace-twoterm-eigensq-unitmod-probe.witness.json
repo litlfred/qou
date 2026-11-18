@@ -1,0 +1,42 @@
+{
+  "probe": "computations/probes/ggmstep_idemtrace_twoterm_eigensq_unitmod_probe.py",
+  "scriptCommitSha": "4103b27750247f45abd9da411449897b55423ff9",
+  "scriptHash": "ca001053ab02413fb88b46bac992e2fe195beece1f88e3e47eda2323f11e5732",
+  "scriptSha256": "ca001053ab02413fb88b46bac992e2fe195beece1f88e3e47eda2323f11e5732",
+  "executedAt": "2026-11-18T08:23:46Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "step_add_prev_eq_mul",
+      "bean": "qou-9nnz",
+      "maxAbsError": "2.108439588646104644869715e-81",
+      "passed": true
+    },
+    {
+      "id": "trace_eq_of_rank_eq",
+      "bean": "qou-cdx1",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "bounded_two_order_sum_le",
+      "bean": "qou-ijoi",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "eigen_first_sq_of_product_ratio",
+      "bean": "qou-l2vh",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "unit_modulus_lt_real_gt_one",
+      "bean": "qou-qqyb",
+      "minGap": "0.11",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
