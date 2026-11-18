@@ -3966,3 +3966,8 @@ SnapPy 3.3.2, L6a4 (Borromean rings, vol 7.32772475342), all 48 self-isometries 
 - permutation (0,2,1) with signs (1,1,−1), (−1,1,1), etc.: reverses one component.
 Meridians go to meridians, so each extends to an isotopy of S³. Hence EVERY orientation pattern of the Borromean rings is the same oriented link (up to permuting components). So uud and udd closures are isotopic and every closed-link invariant (HOMFLY at any v, any specialisation) gives p = n. Scope (b): the invariant is the isotopy itself. Model A survives only as an OPEN-element (non-closure) quantity, T2, to be registered before computing.
 Also: sibling PR #8517 `trace_flip_reverse` now proves the reversal invariance my 16:35Z no-go needed (for products of factors α+βσᵢ, any R-linear cyclic trace).
+
+## 2026-11-18 19:30Z — Model A at U_q(sl2): every V-module trace also gives p = n (argument, not yet Lean)
+
+For U_q(sl2) the dual V* is isomorphic to V as a module (φ: V → V*). Braiding is natural, so each crossing satisfies c_{V*,U} = (φ⊗1) c_{V,U} (φ⁻¹⊗1) and likewise for inverse crossings. β_Bor is a pure braid (each strand returns to its slot), so ρ_{uud}(β_Bor) = Φ ρ_{uuu}(β_Bor) Φ⁻¹ with Φ = φ on the d slot, and likewise for udd. Any functional Tr(X·ρ(β)) where X is built from K's on each slot (φ intertwines K) is therefore the same for uuu, uud and udd. That covers the plain trace, the quantum trace and the corpus's K-twisted partial traces. Scope: U_q(sl2) only. A can split p from n only where V* ≇ V, i.e. U_q(gl_N) with N ≥ 3, which introduces N as a choice. Owner decision requested (card), not computed.
+(The corpus's n/p = q^∓2 comes from projecting onto different TOTAL-WEIGHT spaces of V^{⊗3}, an isospin projection, not from orientation.)
