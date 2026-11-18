@@ -1,0 +1,50 @@
+{
+  "probe": "right_annihilator_projection_complement_toroidal_domain_threshold_period_three_character_balance_flavor_split_exponent_shift_and_spectral_qvalue_range_span_probe",
+  "beans": [
+    "qou-jgp2",
+    "qou-nxjw",
+    "qou-q425",
+    "qou-vls6",
+    "qou-wlnx"
+  ],
+  "dps": 80,
+  "scriptHash": "7a4c4e50ffcfb1d66800f938f1e4c10f4b0500a3b18ddb5231c0a09a6cef4041",
+  "scriptSha256": "7a4c4e50ffcfb1d66800f938f1e4c10f4b0500a3b18ddb5231c0a09a6cef4041",
+  "scriptCommitSha": "6ee58cf27b384b889f53aa3985e05ab22b1781a6",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "qou-jgp2-right-annihilator-projection-complement",
+      "passed": true,
+      "remainingAxioms": "0.0",
+      "complementZero": "1.0",
+      "complementOne": "0.0"
+    },
+    {
+      "id": "qou-nxjw-toroidal-domain-threshold-separation",
+      "passed": true,
+      "marginSubThousandths": "-668.0",
+      "marginSuperThousandths": "500.0",
+      "candidateSpanThousandths": "1168.0"
+    },
+    {
+      "id": "qou-q425-period-three-character-balance",
+      "passed": true,
+      "periodSum": "0.0",
+      "branchGap": "3.0"
+    },
+    {
+      "id": "qou-vls6-flavor-split-exponent-shift-and-residual-gap",
+      "passed": true,
+      "inversionExponent": "2.0",
+      "residualHundredthsGap": "57.0"
+    },
+    {
+      "id": "qou-wlnx-spectral-qvalue-factor-shift-and-range-span",
+      "passed": true,
+      "fDeg2ShiftTenThousandths": "30940.0",
+      "bareSpanPercent": "90.0",
+      "combinedSpanPercent": "99.0"
+    }
+  ]
+}
