@@ -1,0 +1,57 @@
+{
+  "probe": "descended_trace_norm_central_channel_split_pair_skein_chirality_linking_volume_perturbation_probe",
+  "beans": [
+    "qou-0w3s",
+    "qou-kr8a",
+    "qou-o3so",
+    "qou-zko1",
+    "qou-brt1"
+  ],
+  "parents": [
+    "qou-aabg",
+    "qou-t5uj",
+    "qou-rtxm",
+    "qou-c8p8"
+  ],
+  "leanModule": "QOU.Foundations.DescendedTraceNormCentralChannelSplitPairSkeinChiralityLinkingVolumePerturbation",
+  "precisionDps": 80,
+  "scriptPath": "computations/probes/descended_trace_norm_central_channel_split_pair_skein_chirality_linking_volume_perturbation_probe.py",
+  "scriptHash": "95d51dea43d2",
+  "scriptCommitSha": "64331862e639c45c7af4076683d01a06c6112e41",
+  "generatedAt": "2026-11-18T07:07:08.714317+00:00",
+  "allPassed": true,
+  "results": [
+    {
+      "beanId": "qou-0w3s",
+      "claim": "Descended trace norm |tr(A) - tr(B)| is well-defined on M_2/ker(tr) and satisfies (tr A)^2 <= 2 ||A||_F^2 with equality iff A = (tr A / 2) I_2",
+      "maxInvarianceResidual": "0.0",
+      "minCauchySchwarzGap": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-kr8a",
+      "claim": "Central channel projection P_Z(A) = (tr A / 2) I_2 is idempotent, central, and Frobenius-orthogonal to the traceless complement A - P_Z(A)",
+      "maxResidual": "4.21687917729220928973943e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-o3so",
+      "claim": "Split-pair product skein chirality z^2 w(K1) w(K2) is invariant under simultaneous mirror while total writhe z(w(K1)+w(K2)) and single-factor mirror negate",
+      "maxResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-zko1",
+      "claim": "Genus-3 handlebody linking matrix quadratic form and writhe-linking asymmetry negate under mirror inversion and satisfy exact trace-off-diagonal decomposition",
+      "maxResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-brt1",
+      "claim": "At the order-4 fixed point 2x^2 - 1 = 0, first and second volume perturbations vanish and the three-term recurrence gives U_2(x)=1, U_3(x)=0, U_4(x)=-1",
+      "xFixedPoint": "0.7071067811865475244008444",
+      "maxResidual": "6.325318765938313934609144e-81",
+      "passed": true
+    }
+  ]
+}
