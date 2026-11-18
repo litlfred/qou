@@ -1,7 +1,7 @@
 ---
 # uer8
 title: 'Delta_lambda gate: s5-so3 keystone W_lambda geometric derivation (Track-A blocker)'
-status: todo
+status: in-progress
 type: task
 priority: deferred
 tags:
@@ -13,3 +13,6 @@ parent: qou-v2om
 ---
 
 OPEN. docs/audits/2026-07-05-delta-lambda-gate-status.md. Sign solved (counit-defect); magnitude proved >=4-body+4He-local. Survivor W_lambda FR-projector; needs Beasley-Witten Seifert-CS DG build. No fit.
+
+## Round 80 progress (PR #8379)
+- Advanced in PR #8379 (`5994bd21cee7c51f8097fd8009ee7f8cd31a1144`).

@@ -1,7 +1,7 @@
 ---
 # t886
 title: 'q-Bessel tower gate: build H6/H9 chi_lambda(B_n - B_p) via canonical A-nucleon braid lift (T2/T3 trace-invariance frontier)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -73,3 +73,6 @@ be fixed before any residual is seen.
 - `docs/audits/2026-06-17-jacobi-anger-physical-weight-n3.md` §"decisive tower test"
 - `docs/audits/2026-06-26-t2t3-trace-invariance-status-synthesis.md` §"Item 4"
 - Producer pattern: `computations/probes/bn_minus_bp_brane_tower_parity_probe.py`
+
+## Round 80 progress (PR #8379)
+- Advanced in PR #8379 (`5994bd21cee7c51f8097fd8009ee7f8cd31a1144`).
