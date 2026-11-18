@@ -1,0 +1,65 @@
+{
+  "probe": "round70_devacuify_6qbv_b9cj_probe",
+  "beans": [
+    "qou-oqpc",
+    "qcz6",
+    "qcz14",
+    "qcz20",
+    "b9gl"
+  ],
+  "scriptPath": "computations/probes/round70_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "ac0018f69fff5e2dec418784b19d5c431d4ed5f3",
+  "scriptHash": "b97cd59afe0a7d1cbfa3cfba594b630636bc77cefea9899dc0e1f7117956e9ae",
+  "scriptSha256": "b97cd59afe0a7d1cbfa3cfba594b630636bc77cefea9899dc0e1f7117956e9ae",
+  "timestamp": "2026-11-18T12:10:07Z",
+  "dps": 80,
+  "mpmathDps": 80,
+  "allPassed": true,
+  "results": {
+    "qou_oqpc": {
+      "bean": "qou-oqpc",
+      "file": "folio/quantum-observable-universe/lean/QOU/Brings/BringConjugationChirality.lean",
+      "phi": "1.61803398874989484820458683437",
+      "fricke245Value": "2.61803398874989484820458683437",
+      "maxResidual": "8.4337583545844185795e-81",
+      "passed": true
+    },
+    "qcz6": {
+      "bean": "qcz6",
+      "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/QCollatz.lean",
+      "affineGapSamplesChecked": 4,
+      "lyapunovSeedsChecked": 24,
+      "passed": true
+    },
+    "qcz14": {
+      "bean": "qcz14",
+      "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_vtwo_obstruction.lean",
+      "P_eval_neg_one": -1,
+      "vTwoJumpOrder": 5,
+      "maxIdentityResidual": "1.7272337110188889251e-77",
+      "passed": true
+    },
+    "qcz20": {
+      "bean": "qcz20",
+      "file": "folio/quantum-observable-universe/lean/QOU/Information/SkeinObservationBridge.lean",
+      "bringGenus": 4,
+      "bringH1Betti": 8,
+      "bringEulerChar": -6,
+      "separatingCycleIndex": 3,
+      "passed": true
+    },
+    "b9gl": {
+      "bean": "b9gl",
+      "file": "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean",
+      "chiBring": -6,
+      "vanishingKummerLevelsUpTo12": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "levels4And5Obstructed": true,
+      "passed": true
+    }
+  }
+}
