@@ -1,0 +1,69 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-nmza",
+    "qou-nwhg",
+    "qou-o0pa",
+    "qou-oiz3",
+    "qou-okkz"
+  ],
+  "checks": [
+    {
+      "beanId": "qou-nmza",
+      "cleanPropagatingFiles": 0,
+      "initialCandidateSites": 71,
+      "measuredMpfrSlowdownFactor": "2.8e+1",
+      "passed": true,
+      "remeasuredActionableFiles": 11,
+      "remeasuredActionableSites": 16,
+      "remeasuredCandidateFiles": 43,
+      "remeasuredCandidateSites": 63,
+      "remeasuredHarmlessFraction": "6.031746031746031746031746031746031746031746031746031746031746031746031746031746e-1"
+    },
+    {
+      "beanId": "qou-nwhg",
+      "cleanBranchNetRegressions": 0,
+      "fullRefreshStaleBaselineWitnesses": 5,
+      "passed": true,
+      "pristineMainRegressedFractionOfBaseline": "4.3478260869565217391304347826086956521739130434782608695652173913043478260869565e-2",
+      "pristineMainStaticRegressions": 3
+    },
+    {
+      "beanId": "qou-o0pa",
+      "neutronGroupedPinRelError": "1.0788760473662091668294908681154957712412624402185007427985839206097780762817737",
+      "neutronMarshalledToCanonicalRatio": "1.1261294641433556368065236812496562739145740075997310573747527282590517076420925",
+      "nucleonCanonicalCrossingCount": 11,
+      "passed": true,
+      "protonGroupedPinRelError": "8.206069969933754972112064486352204017465790360512819061769958528581838168174262e-1",
+      "protonMarshalledToCanonicalRatio": "1.2823692559192933533049476758601916376321557040486502404190038890108992843333475",
+      "restoredThreeArmAssertions": 5
+    },
+    {
+      "beanId": "qou-oiz3",
+      "gatedShiftOverBinary64Eps": "3.8018307190351159697220650715620970828380062986630890797936005979353675589030285",
+      "passed": true,
+      "remainingQIntToRemovedErrorRatio": "4.0936520722992638466481869385692277893721467483674173575186026554881842192015577",
+      "totalExcisedUicSurfaceSites": 10,
+      "ungatedShiftOverBinary64Eps": "2.9983975527114741950607658109380862185346683126638451239632775853521222382907599e+1"
+    },
+    {
+      "beanId": "qou-okkz",
+      "confirmedControlArmEdges": 1,
+      "passed": true,
+      "selfExcludedWeightCensus": 2,
+      "specificityMaxThreshold": 3,
+      "totalForeignReadEdges": 229,
+      "totalForeignTranscriptionEdges": 15,
+      "unmeasuredEdgeFraction": "9.9563318777292576419213973799126637554585152838427947598253275109170305676855895e-1",
+      "unmeasuredForeignReadEdges": 228
+    }
+  ],
+  "generatedAt": "2026-11-18T07:19:41.012061+00:00",
+  "leanModule": "QOU.Eightfold.NativeEngineEntryTriagePristineMainRatchetDiffNucleonMarshallingThreeArmGuardResolventConeFloatExcisionAndConsumerControlArmSpecificity",
+  "probeName": "native_engine_entry_triage_pristine_main_ratchet_diff_nucleon_marshalling_three_arm_guard_resolvent_cone_float_excision_and_consumer_control_arm_specificity_probe",
+  "scriptCommitSha": "a21599ddae8a980e41bb0b6b5ebc6094c5640297",
+  "scriptHash": "41960a8c2d93",
+  "scriptPath": "computations/probes/native_engine_entry_triage_pristine_main_ratchet_diff_nucleon_marshalling_three_arm_guard_resolvent_cone_float_excision_and_consumer_control_arm_specificity_probe.py",
+  "scriptSha256": "41960a8c2d9396ec2cc806c9bb95691274c7a54e7a0a873f2aad6b15e574bfaf",
+  "workingDps": 80
+}
