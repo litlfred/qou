@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "coordination_period_separation_disjoint_block_factorization_scalar_cascade_quadratic_convention_bridge_involution_trace_probe",
+  "beans": [
+    "qou-sh62",
+    "qou-ss88",
+    "qou-t1kv",
+    "qou-csgy",
+    "qou-fq1i"
+  ],
+  "leanModule": "QOU.Foundations.CoordinationPeriodSeparationDisjointBlockFactorizationScalarCascadeQuadraticConventionBridgeInvolutionTrace",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/coordination_period_separation_disjoint_block_factorization_scalar_cascade_quadratic_convention_bridge_involution_trace_probe.py",
+  "scriptHash": "3a53f4d978a21ce6466ea7c8d24a6d3d41b356bea8717db46a8c42f512a4c41e",
+  "scriptSha256": "3a53f4d978a21ce6466ea7c8d24a6d3d41b356bea8717db46a8c42f512a4c41e",
+  "scriptCommitSha": "5ce4faf34b78e0506799815e0726e718ca635dc6",
+  "generatedAt": "2026-11-18T08:50:43.906671+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-sh62",
+      "theorem": "coordPeriod4_factorization_and_eval_two",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-ss88",
+      "theorem": "disjointBlockTraceExpand_eq_mul",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-t1kv",
+      "theorem": "scalar_braid_cascade_and_diagGen2_properties",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-csgy",
+      "theorem": "monicQuadResidual_eq_mul_balancedQuadResidual",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-fq1i",
+      "theorem": "involutionTrace_disjoint_vs_square_residual",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
