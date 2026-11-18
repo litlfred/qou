@@ -62,7 +62,28 @@ echo "==> content -> LaTeX"
 # chapters/<x>, so latexmk runs inside $OUT.
 cd "$OUT"
 for d in figures assets; do [ -e "$ROOT/$d" ] && [ ! -e "$d" ] && ln -s "$ROOT/$d" "$d"; done
-[ -e references.bib ] || ln -s "$ROOT/references.bib" references.bib
+# The PDF's own copy of the bibliography, without `note`. 712 of 971 entries
+# carry internal provenance there ("Cited by …", "Restored … from …",
+# "HUMAN-REVIEW: unreviewed"), which `plain` would print in the published
+# bibliography, and 16 carry raw Unicode/markdown math that breaks LaTeX.
+# The committed references.bib is untouched.
+rm -f references.bib
+python3 -I - "$ROOT/references.bib" references.bib <<'PY'
+import sys
+src, dst = sys.argv[1], sys.argv[2]
+out, skip, depth = [], False, 0
+for line in open(src, encoding="utf-8"):
+    s = line.lstrip()
+    if not skip and s.lower().startswith("note") and "=" in s.split("{", 1)[0]:
+        skip, depth = True, 0
+    if skip:
+        depth += line.count("{") - line.count("}")
+        if depth <= 0:
+            skip = False
+        continue
+    out.append(line)
+open(dst, "w", encoding="utf-8").writelines(out)
+PY
 
 echo "==> latexmk ($ENGINE)"
 set +e
