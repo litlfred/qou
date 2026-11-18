@@ -1,7 +1,7 @@
 ---
 # qcz19
 title: 'Front B (cycle exclusion): period-4 word-elimination + q-Steiner bound'
-status: todo
+status: in-progress
 type: task
 priority: medium
 tags:
@@ -21,3 +21,6 @@ Period-1/2/3 cycle exclusion proved (word-elimination via linear_combination).
 Census (<=period 18) is negative evidence only. Anti-laundering: (a)/(b) scope.
 
 STALE-REFRESH 2026-08-29. B1 LANDED: AppendixSurreals/collatz_period4.lean proves all four primitive period-4 words (EEEO, EEOO, EOEO, EOOO) sorry-free by linear_combination. B2 (q-Steiner) is PARTLY landed and stronger than this bean anticipated: collatz_one_odd_family.lean supplies the reusable engine no_cycle_of_q_one_height (a cycle forcing D*P=n dies if phi(D) does not divide phi(n) at any q=1 evaluation phi : R -> Z) and closes TWO INFINITE families with it -- qcollatz_no_one_odd_cycle (E^{k-1}O, all k>=3) and qcollatz_no_adj_tail_cycle (the whole adjacent-tail family E^{k-m}O^m whenever 2*3^m < 2^k). So the 'height invariant D_w carries that n_w cannot match' that B2 asked to FIND has been found: it is the q=1 height. What is still missing is its GENERAL-WORD form -- every landed forcing lemma is per-word or adjacent-tail-only; there is no theorem for an arbitrary parity word. That is the live chip, opened as qou-gwrd. Re-status: B1 done, B2 partially done + successor bean.
+
+## Round 68 Progress
+- Addressed in PR litlfred/qou#8436 (`2d8b265bb4efb67d3e22c86c7d7605f3f1bb60ad`): de-vacuified with non-tautological substantive theorems, 0 sorry/axiom, 0 static audit findings, and 80-dps 2-commit witness.

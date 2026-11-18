@@ -1,7 +1,7 @@
 ---
 # m015
 title: m015 (5₂) angle-structure polytope — the missing anchor for Casson–Rivin
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -496,3 +496,6 @@ wrong vocabulary. When checking a census-named bean, grep the **knot name** too.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## Round 68 Progress
+- Addressed in PR litlfred/qou#8436 (`2d8b265bb4efb67d3e22c86c7d7605f3f1bb60ad`): de-vacuified with non-tautological substantive theorems, 0 sorry/axiom, 0 static audit findings, and 80-dps 2-commit witness.
