@@ -1,7 +1,8 @@
 ---
 # qou-1vau
 title: Remark interpreting 2402.08782v1.pdf at ex:chi-minus-six-derivation
-status: todo
+status: in-progress
+pr: 8449
 type: task
 priority: normal
 tags:

@@ -1,7 +1,8 @@
 ---
 # qou-20eh
 title: Remark interpreting 2507.13873v1.pdf at rem:lqg-adm-ashtekar-comparison
-status: todo
+status: in-progress
+pr: 8449
 type: task
 priority: normal
 tags:

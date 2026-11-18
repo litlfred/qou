@@ -1,7 +1,8 @@
 ---
 # qou-1buz
 title: Remark interpreting [faddeev1994] at QOU.Archimedean.DilogarithmArchimedeanLimit
-status: todo
+status: in-progress
+pr: 8449
 type: task
 priority: normal
 tags:

@@ -1,7 +1,8 @@
 ---
 # qou-20d3
 title: Remark interpreting 0411647v2.pdf at a remark interpreting QOU.BraidsAndKnots.YoungDiagramKernel,…
-status: todo
+status: in-progress
+pr: 8449
 type: task
 priority: normal
 tags:

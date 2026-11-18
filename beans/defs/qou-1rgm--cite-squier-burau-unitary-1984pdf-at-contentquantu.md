@@ -1,7 +1,8 @@
 ---
 # qou-1rgm
 title: Cite squier-burau-unitary-1984.pdf at folio/quantum-observable-universe/information-theory/q-ga…
-status: todo
+status: in-progress
+pr: 8449
 type: task
 priority: normal
 tags:
