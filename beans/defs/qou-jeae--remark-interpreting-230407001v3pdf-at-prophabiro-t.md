@@ -1,7 +1,7 @@
 ---
 # qou-jeae
 title: Remark interpreting 2304.07001v3.pdf at prop:habiro-tail-archimedean-action
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

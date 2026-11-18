@@ -1,7 +1,7 @@
 ---
 # qou-jdxo
 title: Cite [domagala-lewandowski-2004] at conj:lqg-entropy-qdim-partition-pole
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

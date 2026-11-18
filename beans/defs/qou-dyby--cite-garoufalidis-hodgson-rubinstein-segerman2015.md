@@ -1,7 +1,7 @@
 ---
 # qou-dyby
 title: Cite [garoufalidis-hodgson-rubinstein-segerman2015] at computations/probes/borromean_3d_index.py
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

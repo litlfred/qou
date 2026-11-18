@@ -1,7 +1,7 @@
 ---
 # qou-ir19
 title: Cite [kirillov1995] at conj:borromean-bloch-group-element
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
