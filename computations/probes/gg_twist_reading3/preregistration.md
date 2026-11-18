@@ -113,3 +113,13 @@ Pre-registered before any computation. Re-run of gluon-thread stage 1 over the a
 - Old stage-1 table kept as the record for the inverse reading; this run is reported beside it, not in place of it.
 - Questions, no predicted answer: 1. Does pass ⟺ pure survive? 2. Are passing writhes still symmetric, or one-signed (all letters except V⁻¹ are positive)? 3. Does adding e⁻ let any knot (1 component) pass?
 - Not allowed: choosing a canonical word, letter or length from these results. This run measures admissibility only; selection is a separate, separately pre-registered step.
+
+## Stage 7 — canonical-word reselection from γ(φ)γ(ψ)
+
+Pre-registered in bean `qou-99qc` (entry *PRE-REGISTRATION 2026-11-18 04:30Z*) before `gg_photon_product_selection_probe.py` was written.
+
+- **Letters.** The terms of the product of two four-term photons (`def:photon`), taken as braid words. No inverse letter occurs.
+  - Rule A (primary): the bilinear pair terms. These are eight distinct braids, since σ₁σ₀σ₁ = σ₀σ₁σ₀.
+  - Rule B (labelled comparison): Rule A plus the one-photon terms σ₀ and σ₁.
+- **Selection.** FrobeniusSelected: reading 3 (χ ≥ 0 on every level), convention D, proton pin. Cost is the crossing count, up to 12. Every feasible word of minimal cost is reported.
+- **Deviation from the pre-registration.** The pre-registration said near-zero values would be re-evaluated at 120 dps. The engine cannot do that, because q₀ enters as a stored string. Near-zero values are therefore decided exactly, with q symbolic (`exact_h3_level_chars.py`). This is a stronger test than the one pre-registered. The exact route agrees with the engine to max |diff| 5.7e-39, and the probe checks this.

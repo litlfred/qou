@@ -1,0 +1,170 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-18T04:20:53.756191+00:00",
+  "commitSha": "58f12566d2ae475ba3a1dfafef24351757b5ac53",
+  "assertions": [
+    {
+      "name": "exact_engine_agrees",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "exact_h3_level_chars vs h2_gg_atom_probe.level_chars"
+    },
+    {
+      "name": "ruleA_has_selection",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "pre-registration qou-99qc 2026-11-18 04:30Z"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "gg-photon-product-selection-stage7",
+  "scriptFile": "gg_photon_product_selection_probe.py",
+  "scriptHash": "9d3f9fe73efc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_twist_reading3/gg_photon_product_selection_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_twist_reading3/gg_photon_product_selection_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "reading 3 at the proton pin, convention D",
+  "description": "PROBE stage 7: canonical-word reselection over the letters of gamma(phi)gamma(psi) (def:photon), FrobeniusSelected, cost = crossing count, all ties reported.",
+  "exact_engine_max_diff": "5.670841888e-39",
+  "ruleA_bilinear": {
+    "candidates": 8007,
+    "exact_zero_words": 211,
+    "undecided_words": 0,
+    "feasible": 2578,
+    "min_cost": 2,
+    "selected": [
+      {
+        "braid": "s0s0",
+        "crossings": 2,
+        "letters": [
+          "s0s0"
+        ],
+        "n_spellings": 1,
+        "components": 3,
+        "writhe": 2,
+        "chars": {
+          "1:(1,)": "1.1280887441143537856",
+          "2:(2,)": "1.2320524541667639313",
+          "2:(1, 1)": "0.81165375436575805813",
+          "3:(3,)": "1.2320524541667639313",
+          "3:(2, 1)": "2.0437062085325219894"
+        },
+        "signs": {
+          "1:(1,)": "+",
+          "2:(2,)": "+",
+          "2:(1, 1)": "+",
+          "3:(3,)": "+",
+          "3:(2, 1)": "+"
+        }
+      },
+      {
+        "braid": "s1s1",
+        "crossings": 2,
+        "letters": [
+          "s1s1"
+        ],
+        "n_spellings": 1,
+        "components": 3,
+        "writhe": 2,
+        "chars": {
+          "1:(1,)": "1.1280887441143537856",
+          "2:(2,)": "1.1280887441143537856",
+          "2:(1, 1)": "1.1280887441143537856",
+          "3:(3,)": "1.2320524541667639313",
+          "3:(2, 1)": "2.0437062085325219894"
+        },
+        "signs": {
+          "1:(1,)": "+",
+          "2:(2,)": "+",
+          "2:(1, 1)": "+",
+          "3:(3,)": "+",
+          "3:(2, 1)": "+"
+        }
+      }
+    ],
+    "feasible_by_cost": {
+      "1": 0,
+      "2": 2,
+      "3": 2,
+      "4": 6,
+      "5": 5,
+      "6": 22,
+      "7": 39,
+      "8": 86,
+      "9": 220,
+      "10": 342,
+      "11": 488,
+      "12": 1366
+    }
+  },
+  "ruleB_all_terms": {
+    "candidates": 8190,
+    "exact_zero_words": 228,
+    "undecided_words": 0,
+    "feasible": 2628,
+    "min_cost": 1,
+    "selected": [
+      {
+        "braid": "s1",
+        "crossings": 1,
+        "letters": [
+          "s1"
+        ],
+        "n_spellings": 1,
+        "components": 2,
+        "writhe": 1,
+        "chars": {
+          "1:(1,)": "0.6126880371464652516",
+          "2:(2,)": "0.6126880371464652516",
+          "2:(1, 1)": "0.6126880371464652516",
+          "3:(3,)": "1.1099785827513808076",
+          "3:(2, 1)": "0.20906029879563931543"
+        },
+        "signs": {
+          "1:(1,)": "+",
+          "2:(2,)": "+",
+          "2:(1, 1)": "+",
+          "3:(3,)": "+",
+          "3:(2, 1)": "+"
+        }
+      }
+    ],
+    "feasible_by_cost": {
+      "1": 1,
+      "2": 2,
+      "3": 5,
+      "4": 6,
+      "5": 7,
+      "6": 22,
+      "7": 45,
+      "8": 86,
+      "9": 237,
+      "10": 342,
+      "11": 509,
+      "12": 1366
+    }
+  }
+}

@@ -277,3 +277,19 @@ the inverse reading.
    corrected count.
 
 Scope (a): admissibility only. Nothing here selects a word, letter or length.
+
+## Stage 7 — reselection from γ(φ)γ(ψ) (witness `gg-photon-product-selection-stage7`)
+
+Pre-registered in bean `qou-99qc` (2026-11-18 04:30Z). Proton pin, convention D, words up to 12 crossings.
+
+| rule | candidate braids | feasible | exact zeros | undecided | min cost | selected |
+|---|---|---|---|---|---|---|
+| A (pair terms) | 8007 | 2578 | 211 | 0 | 2 | σ₀², σ₁² |
+| B (all terms) | 8190 | 2628 | 228 | 0 | 1 | σ₁ |
+
+- **Rule A.** σ₀² and σ₁² tie at cost 2.
+  - Both are pure braids. Each closes to a split 3-component link: a Hopf link plus an unknot.
+  - For both, χ₍₃₎ = q² ≈ 1.2321 and χ₍₂₁₎ ≈ 2.0437. χ₍₁₁₁₎ = q⁻² ≈ 0.8117 does not constrain the selection, because y₍₁³₎ = 0 under D.
+  - The level-2 characters differ: (1.2321, 0.8117) for σ₀² against (1.1281, 1.1281) for σ₁².
+- **Rule B.** The selection is the single crossing σ₁, a 2-component link. σ₀ fails at level 2, where χ₍₁₁₎ = −q⁻¹.
+- **Reading.** On the γγ grammar re-derived from `def:photon`, the selection rule does not produce a nucleon-like element. The minimum is a trivial split pair. β_Bor is unreachable, because every word is positive. This is a scope-(a) result for this rule on this grammar, and the nucleon element is still not derived. No value was compared with measurement.
