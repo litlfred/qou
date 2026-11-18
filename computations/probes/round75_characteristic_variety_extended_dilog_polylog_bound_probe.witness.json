@@ -1,0 +1,55 @@
+{
+  "probe": "round75_characteristic_variety_extended_dilog_polylog_bound_probe",
+  "beans": [
+    "qou-ylh9",
+    "qou-ystb",
+    "qou-z7v7",
+    "qou-z959",
+    "qou-zdli"
+  ],
+  "scriptPath": "computations/probes/round75_characteristic_variety_extended_dilog_polylog_bound_probe.py",
+  "scriptCommitSha": "06a4d60be86d5f16b5e0bbf8aa0b259b13573343",
+  "scriptHash": "dbc1d17ab15cbdc245c6baaf06461a2c81a37b72421d509cf3d1f008383d94d8",
+  "scriptSha256": "dbc1d17ab15cbdc245c6baaf06461a2c81a37b72421d509cf3d1f008383d94d8",
+  "mpmathDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-ylh9",
+      "citation": "garoufalidis2004",
+      "description": "Second-order q-difference recurrence operator superposition and coefficient split",
+      "passed": true
+    },
+    {
+      "bean": "qou-ystb",
+      "citation": "fulman2003",
+      "description": "Fulman Berry-Esseen rate 40.1*n^{-1/4} and transposition numerator shift",
+      "fulmanRateAtN16": "20.05",
+      "passed": true
+    },
+    {
+      "bean": "qou-z7v7",
+      "citation": "neumann2004",
+      "description": "Extended Rogers dilogarithm reflection sum pi^2/6 and flattened sheet addition",
+      "rogersReflectionSum": "1.644934066848226436472415166646025189219",
+      "piSquaredOverSix": "1.644934066848226436472415166646025189219",
+      "passed": true
+    },
+    {
+      "bean": "qou-z959",
+      "citation": "arxiv-1803.04009v2",
+      "description": "3d/3d boundary flavour-symmetry enhancement rank step",
+      "borromeanThreeCuspInitialRank": 3,
+      "borromeanThreeCuspEnhancedRank": 9,
+      "passed": true
+    },
+    {
+      "bean": "qou-zdli",
+      "citation": "zhao2008-mpl-roots-of-unity",
+      "description": "Level-4 cyclotomic dilogarithm Im(Li_2(i)) = Catalan G and span defect additivity",
+      "imLi2AtI": "0.9159655941772190150546035149323841107741",
+      "catalanConstant": "0.9159655941772190150546035149323841107741",
+      "passed": true
+    }
+  ]
+}
