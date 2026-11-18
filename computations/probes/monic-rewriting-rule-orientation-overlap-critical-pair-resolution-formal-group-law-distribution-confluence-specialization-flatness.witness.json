@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "monic_rewriting_rule_orientation_overlap_critical_pair_resolution_formal_group_law_distribution_confluence_specialization_flatness_probe",
+  "beans": [
+    "qou-ix9e",
+    "qou-lncp",
+    "qou-ulfe",
+    "qou-znz5",
+    "qou-pso0"
+  ],
+  "leanModule": "QOU.Foundations.MonicRewritingRuleOrientationOverlapCriticalPairResolutionFormalGroupLawDistributionConfluenceSpecializationFlatness",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/monic_rewriting_rule_orientation_overlap_critical_pair_resolution_formal_group_law_distribution_confluence_specialization_flatness_probe.py",
+  "scriptHash": "6f730a2d7a28822fd4184de185390b3fa00ae1e8c3c649430e85284ae55ef0da",
+  "scriptSha256": "6f730a2d7a28822fd4184de185390b3fa00ae1e8c3c649430e85284ae55ef0da",
+  "scriptCommitSha": "0e73e1d84b41af22cbe0a7adb5792bfd6ad829c7",
+  "generatedAt": "2026-11-18T10:36:23.753501+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-ix9e",
+      "theorem": "monicRule_decomposition_and_orientation_antisymmetry",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-lncp",
+      "theorem": "overlap_critical_pair_vanishing_and_context_linearity",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-ulfe",
+      "theorem": "multiplicativeFormalGroupLaw_associativity_and_unit_factorization",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-znz5",
+      "theorem": "dividedPower_normal_weight_additivity_and_exchange_reduction",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-pso0",
+      "theorem": "specializationAtOne_and_difference_factorization",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
