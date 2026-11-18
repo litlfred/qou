@@ -1,11 +1,11 @@
 ---
 # qou-r8hb
 title: 'Lean-prove Gap 1, 2 & 5: Concrete Matrix Instantiation of CategoricalLagrangian on W_p/W_n, Stokes Boundary Commutator, and E_0 * q(q-1) = m_e Scale Bridge'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-18T20:58:52Z
-updated_at: 2026-11-18T20:58:52Z
+updated_at: 2026-11-18T21:15:25Z
 parent: qou-7xl8
 ---
 
@@ -14,3 +14,9 @@ Close Gaps 1, 2, and 5 in `CategoricalLagrangianTwoTermBridge.lean` and `Nucleon
 2. Gap 1 (Non-Abelian Stokes Seifert Boundary Factorisation): Prove that the Borromean word `V^3 = (σ₁ σ₂⁻¹)^3` is the 3-period boundary holonomy product `borromeanVA^3` / `borromeanVB^3` whose cyclic trace derivative across all 6 boundary crossings reduces to `3 * tr((Q12 + Q23) V^3)`.
 3. Gap 5 (Lagrangian Scale Hierarchy `E_0 * q(q-1) = m_e`): Prove over any `[Field R]` that with `E₀(q) = m_e / (q * (q - 1))` and `ħ_q = (q - 1) / q = 1 - q⁻¹`, the ratio between the `O(ħ_q^2)` strong prefactor and the `O(ħ_q^1)` matter prefactor satisfies `E₀(q) * (q ^ 2 * (1 - q⁻¹)) = m_e` (and `E₀(q) * (q * (q - 1)) = m_e`), deriving the `m_e` scale of the matter term directly from `E₀` with zero free parameters.
 4. Verify with `scripts/lean-verify.sh` and strict vacuity audits, then submit to adversarial review.
+
+
+
+## Completion Record (2026-11-18)
+- Formalized Section 5 (Concrete 3-Strand Weight-Space Matrix Specialization on Borromean V^3, 6-Crossing Cyclic Stokes Boundary Sum Bridge, and E_0 * q^2 * (1 - q^-1) = m_e Scale Hierarchy) in `CategoricalLagrangianTwoTermBridge.lean` (459 lines, `0 sorry`, `0 warnings`).
+- Adversarially verified (`qou-kyfx`, `lane-7b4f`): PASS (`0` vacuity defects).
