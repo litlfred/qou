@@ -1,7 +1,7 @@
 ---
 # qou-t28w
 title: 'PROVE(lean): q_ns_wellposedness — theorem q_ns_wellposedness [ctx : QNsWellposednessContext] : (∃! sol : ℝ → ctx.Velocity ×  [cited manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

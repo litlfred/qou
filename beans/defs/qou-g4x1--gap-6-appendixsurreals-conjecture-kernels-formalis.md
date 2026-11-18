@@ -1,7 +1,7 @@
 ---
 # qou-g4x1
 title: 'GAP: 6 AppendixSurreals conjecture kernels formalise nothing — statement-level, not instance-level'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

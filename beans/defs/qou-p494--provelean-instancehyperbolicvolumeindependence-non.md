@@ -1,7 +1,7 @@
 ---
 # qou-p494
 title: 'PROVE(lean): instance:HyperbolicVolumeIndependence — noncomputable instance : HyperbolicVolumeIndependence where no_relation  [cited manuscript,zagier1986]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
