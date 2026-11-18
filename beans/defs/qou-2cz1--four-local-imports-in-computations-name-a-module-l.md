@@ -1,7 +1,7 @@
 ---
 # qou-2cz1
 title: Four local imports in computations/ name a module-level name that does not exist -- two producers cannot be imported, and scriptHash reports them IN SYNC
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-10-10T07:57:44Z
@@ -240,3 +240,5 @@ the four being fixed — a gate is about the next rename, not this one.
 
 `local_import_resolution_audit.py` on this branch: **UNRESOLVED: 0** (5998
 bindings checked). Stays `todo` until merged.
+
+- **Round 92 (`litlfred/qou#8416`)**: Advanced in `feat/round92-jetmono-jetsign-kzratio-kzunit-kappacorr-43c1` (Commit 1 `b85484a2b9309c11a8832becee2e728a03219677`, Commit 2 `de3ca907bd3d3c7bb260ce5aa08259ade30c6cc9`, probe sha256 `7a5dfeb80aacf1b23a7e663221ecc9f97b20abf96256db6ae736e9dd7742c6f9`).
