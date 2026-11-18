@@ -63,4 +63,12 @@ theorem no_branch_section {C : K[X]} (hirr : Irreducible C) (hdeg : 1 < C.natDeg
   rintro ⟨a, ha⟩
   exact no_root_of_irreducible hirr hdeg a ha
 
+/-- **Polynomial `IsRoot` form of the S₃ no-branch obstruction (`qou-2q85`).**
+If `p : K[X]` is irreducible with `1 < p.natDegree`, then `¬ p.IsRoot a` for every `a : K`. -/
+theorem not_isRoot_of_irreducible {p : K[X]} (hp : Irreducible p) (hdeg : 1 < p.natDegree)
+    (a : K) : ¬ p.IsRoot a := by
+  intro hr
+  have heval : p.eval a = 0 := hr
+  exact no_root_of_irreducible hp hdeg a heval
+
 end QOU.Mass.ColorCubicNoBranch

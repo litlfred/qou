@@ -114,4 +114,12 @@ re-deriving the translation. -/
 theorem clusterTriple_brunnian_iff (t : MilnorIndeterminacyGate.ClusterTriple) :
     t.Brunnian ↔ (t.l12 = 0 ∧ t.l13 = 0 ∧ t.l23 = 0) := Iff.rfl
 
+/-- **Strict positivity of mutual pair energy for a balanced crossing pair (`qou-ygyx`).**
+For `0 < m` and `1 < q`, `0 < pairEnergy m m q` even though `signedChannel m m q = 0`. -/
+theorem pairEnergy_pos_for_crossing_pair
+    (m : ℕ) (hm : 0 < m) (q : ℝ) (hq : 1 < q) :
+    0 < pairEnergy m m q := by
+  rw [brunnian_energy_is_count_channel]
+  exact brunnian_binding_survives m hm q hq
+
 end QOU.Mass.BrunnianTierDisambiguation

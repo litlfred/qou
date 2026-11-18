@@ -97,4 +97,11 @@ theorem aD5_closed_form {q : ℝ} (hq : 0 < q) :
   field_simp
   ring
 
+/-- **Strict positivity of the wired binding trace (`qou-k6ub`).**
+For every substrate parameter `q > 0`, `0 < tauAnchor q`, following from
+`2 < tauAnchor q` (`tauAnchor_gt_two`). -/
+theorem tauAnchor_pos {q : ℝ} (hq : 0 < q) : 0 < tauAnchor q := by
+  have h2 : 2 < tauAnchor q := tauAnchor_gt_two hq
+  linarith
+
 end QOU.Mass
