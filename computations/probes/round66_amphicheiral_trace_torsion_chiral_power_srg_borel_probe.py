@@ -149,8 +149,8 @@ def run_probe() -> dict:
     action_2pi = vol_41 / (2 * mp.pi)
     action_pi = vol_41 / mp.pi
     period_ratio_residual = abs(action_pi - 2 * action_2pi)
-    scaled_2pi_1e7 = int(mp.nint(action_2pi * mp.mpf("1e7")))
-    scaled_pi_1e7 = int(mp.nint(action_pi * mp.mpf("1e7")))
+    scaled_2pi_1e7 = int(mp.floor(action_2pi * mp.mpf("1e7")))
+    scaled_pi_1e7 = int(mp.floor(action_pi * mp.mpf("1e7")))
 
     check_r0fd = bool(
         period_ratio_residual < mp.mpf("1e-78")
