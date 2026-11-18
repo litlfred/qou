@@ -1,7 +1,7 @@
 ---
 # qou-fs4r
 title: 'Owner-decision queue: 51 in-progress beans are blocked on a ruling, uncounted until now'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

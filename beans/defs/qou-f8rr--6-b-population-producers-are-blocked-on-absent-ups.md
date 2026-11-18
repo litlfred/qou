@@ -1,7 +1,7 @@
 ---
 # qou-f8rr
 title: 6 B-population producers are blocked on absent upstream witnesses
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

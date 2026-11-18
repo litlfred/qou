@@ -1,7 +1,7 @@
 ---
 # qou-fjcd
 title: 'METHOD DEFECT: lean-direct consumer verification reads STALE oleans'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

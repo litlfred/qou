@@ -1,7 +1,7 @@
 ---
 # qou-geqa
 title: '24 producers on main cannot complete: 14 crash, 10 exceed 240s'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
