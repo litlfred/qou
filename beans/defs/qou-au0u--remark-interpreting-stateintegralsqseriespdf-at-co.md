@@ -1,7 +1,7 @@
 ---
 # qou-au0u
 title: Remark interpreting state.integrals.qseries.pdf at conj:stokes-dt-bps-bridge
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

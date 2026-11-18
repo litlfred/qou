@@ -1,7 +1,7 @@
 ---
 # qou-bore
 title: Remark interpreting 0306165v1.pdf at conj:kashaev-volume-conjecture
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

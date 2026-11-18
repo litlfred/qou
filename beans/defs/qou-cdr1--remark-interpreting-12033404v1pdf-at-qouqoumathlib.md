@@ -1,7 +1,7 @@
 ---
 # qou-cdr1
 title: Remark interpreting 1203.3404v1.pdf at qou:QOU.MathlibExt.QBorelKernelLevel
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
