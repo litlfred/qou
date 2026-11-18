@@ -1,0 +1,40 @@
+{
+  "probe": "spurious_complexity_sumsyt_tauqint_threedivk_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/spurious_complexity_sumsyt_tauqint_threedivk_probe.py",
+  "scriptCommitSha": "4990acf74604eeef23808a4555cc3fe96956582a",
+  "scriptHash": "95b689ab1be7d26e2ce20476b209f92e01edb7deac340aeda153baa3e9bf325b",
+  "scriptSha256": "95b689ab1be7d26e2ce20476b209f92e01edb7deac340aeda153baa3e9bf325b",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "freeEnergyAbsorbSubEqZero": {
+      "freeEnergyAbsorbed": "-0.95551144502743636145272810833913096527966659049168939450639761918928567961675242",
+      "freeEnergyBare": "-0.95551144502743636145272810833913096527966659049168939450639761918928567961675242",
+      "residual": "0.0",
+      "passed": true
+    },
+    "admissibleSucc": {
+      "admissibleAtA": true,
+      "admissibleAtASucc": true,
+      "passed": true
+    },
+    "sumNumSYTSizeZeroEqSizeOne": {
+      "sumSYTZero": "1.0",
+      "sumSYTOne": "1.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    "tauQuantumIntegerFormSubEqZero": {
+      "lhs": "2.8092261904761904761904761904761904761904761904761904761904761904761904761904762",
+      "rhs": "2.8092261904761904761904761904761904761904761904761904761904761904761904761904762",
+      "residual": "-4.2168791772922092897394296205080076030839845529474030200311052100432577163879038e-81",
+      "passed": true
+    },
+    "twoCosRecursionSubEqZero": {
+      "twoCosKPlus2": "-1.2862906792282345472425580510547762787496275225356301111716106453372423451777998",
+      "rhs": "-1.2862906792282345472425580510547762787496275225356301111716106453372423451777998",
+      "residual": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    }
+  }
+}
