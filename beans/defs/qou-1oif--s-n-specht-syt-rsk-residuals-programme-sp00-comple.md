@@ -6,7 +6,7 @@ type: epic
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:06Z
-updated_at: 2026-11-17T13:00:03Z
+updated_at: 2026-11-18T09:09:45Z
 parent: qou-rtxm
 ---
 
@@ -46,3 +46,5 @@ Sub-epic P3.SN of Lean / Mathlib foundations (work-plan reorganisation 2026-10-0
 - **PR:** https://github.com/litlfred/qou/pull/8356 (`2c058b5e380e076d0aec9233aad57fa6af43d018`)
 - **Lean 4 Module:** `QOU.Foundations.BringCurveHochschildStaleWeightCyclicityThreeCellComparabilityQuadraticRescaling` (`LEAN_EXIT=0`, `0` warnings, `0` `sorry`, `0` `axiom`, `0 CRITICAL, 0 major, 0 advisory` across all directory-mode static vacuity & borrowed-name audits)
 - **Numerical Probe & Witness:** `computations/probes/bring_curve_hochschild_stale_weight_cyclicity_three_cell_comparability_quadratic_rescaling_probe.py` & `computations/probes/bring-curve-hochschild-stale-weight-cyclicity-three-cell-comparability-quadratic-rescaling.witness.json` (`COMMIT1 = 8ee314938e6a9bac9ee46faedf9aebdee8b895fb`, `scriptHash = 326bd13833f0`, `allPassed = True`, `dps = 80`)
+
+- Round 77 (`lane-e667`): Formalized `qou-36vh`, `qou-3xjy`, `qou-73kb`, `qou-anpu`, `qou-gjnc` in `QOU.Foundations.AdjacentTranspositionCubicRelationInvolutionDimensionSumTransversalStraighteningHookMajorSumConstructiveWitness` with 80-dps `mpmath` 2-commit witness stamp (`c2f43250f36bb1472f334747f1e3f42a638aaf1a` -> `6468c3e40bc53533ddba78077856ee22a25a5470`, `scriptHash=a0c911e409e04bd978c286aa2f965a1d976cceeb8269e851ecc38f2b6e89b43c`) in PR `litlfred/qou#8414` (`status: in-progress`).

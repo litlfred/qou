@@ -6,7 +6,7 @@ type: milestone
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:09:55Z
-updated_at: 2026-11-18T08:59:30Z
+updated_at: 2026-11-18T09:09:45Z
 ---
 
 Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main; open gaps now sit in axioms and instance-less classes. The only item on the L2 critical path is SW-WIRE (WedderburnDecomp instance, markov_trace_unique_axiom), gated by owner decision qou-ar7f.
@@ -139,3 +139,5 @@ Foundational Lean infrastructure. Measured 2026-10-04: 9-15 real `sorry` on main
 - Round 75 (`lane-e667`): Formalized `qou-sh62`, `qou-ss88`, `qou-t1kv`, `qou-csgy`, `qou-fq1i` in `QOU.Foundations.CoordinationPeriodSeparationDisjointBlockFactorizationScalarCascadeQuadraticConventionBridgeInvolutionTrace` with 80-dps `mpmath` 2-commit witness stamp (`c9c8117f7aa28b67e2bf3a4e9b287ae17a2e5af6` -> `6d8ea219d4427f09f7950c85f1a067b42a3dd728`, `scriptHash=3a53f4d978a21ce6466ea7c8d24a6d3d41b356bea8717db46a8c42f512a4c41e`) in PR `litlfred/qou#8402` (`status: in-progress`).
 
 - Round 76 (`lane-e667`): Formalized `qou-gmfz`, `qou-img9`, `qou-phir`, `qou-siin`, `qou-l25z` in `QOU.Foundations.TriangularBarInvolutionLengthTwoQuadraticDefectRightMultiplicationDichotomyRootParameterRescalingWritheHomomorphism` with 80-dps `mpmath` 2-commit witness stamp (`1d514d8cc14cab86cdbfe50f0bca4313a91a6db7` -> `8fbc40e0a853ba6aa21eab5cf4d1947155a2d115`, `scriptHash=b5b4b562fbd04cd73aa5a68e31eebc858e55abd805cb24915d3a249d657d689c`) in PR `litlfred/qou#8409` (`status: in-progress`).
+
+- Round 77 (`lane-e667`): Formalized `qou-36vh`, `qou-3xjy`, `qou-73kb`, `qou-anpu`, `qou-gjnc` in `QOU.Foundations.AdjacentTranspositionCubicRelationInvolutionDimensionSumTransversalStraighteningHookMajorSumConstructiveWitness` with 80-dps `mpmath` 2-commit witness stamp (`c2f43250f36bb1472f334747f1e3f42a638aaf1a` -> `6468c3e40bc53533ddba78077856ee22a25a5470`, `scriptHash=a0c911e409e04bd978c286aa2f965a1d976cceeb8269e851ecc38f2b6e89b43c`) in PR `litlfred/qou#8414` (`status: in-progress`).

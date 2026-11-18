@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-11-17T11:53:03Z
+updated_at: 2026-11-18T09:09:45Z
 parent: qou-rtxm
 ---
 
@@ -207,3 +207,5 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - Formalized in `folio/quantum-observable-universe/lean/QOU/Foundations/CumulativeSwapCentralityTabloidTransitionCellProductFactorialCurlTrace.lean` (Lean 4.24.0, `0` `sorry`, `0` `axiom`, `0` warnings, `0` directory-mode static vacuity & borrowed-name advisories).
 - 80-dps `mpmath` numerical witness stamped in `computations/probes/cumulative-swap-centrality-tabloid-transition-cell-product-factorial-curl-trace.witness.json` (`scriptHash = 9e4c62bb8c28`, `scriptCommitSha = 4331c3d6858037c7a16d08f2202e77af0fee8a52`, `HEAD = 69f8f329d2048eae2ceddcc8d14985dd544d587f`).
 - PR: https://github.com/litlfred/qou/pull/8331 (`ready: 69f8f329d2048eae2ceddcc8d14985dd544d587f`).
+
+- Round 77 (`lane-e667`): Formalized `qou-36vh`, `qou-3xjy`, `qou-73kb`, `qou-anpu`, `qou-gjnc` in `QOU.Foundations.AdjacentTranspositionCubicRelationInvolutionDimensionSumTransversalStraighteningHookMajorSumConstructiveWitness` with 80-dps `mpmath` 2-commit witness stamp (`c2f43250f36bb1472f334747f1e3f42a638aaf1a` -> `6468c3e40bc53533ddba78077856ee22a25a5470`, `scriptHash=a0c911e409e04bd978c286aa2f965a1d976cceeb8269e851ecc38f2b6e89b43c`) in PR `litlfred/qou#8414` (`status: in-progress`).
