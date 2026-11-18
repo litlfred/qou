@@ -1,0 +1,145 @@
+{
+  "probe": "untwisted_ursell_wstd_wedderburn_weighted_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/untwisted_ursell_wstd_wedderburn_weighted_probe.py",
+  "scriptCommitSha": "8a487a199bfb7c548aacbf4dbfbc4114b3885d6c",
+  "scriptHash": "d1d59231e70ab7c645f09de446d0d08b81a2bbdf2af94f1949e38b63a743bd37",
+  "scriptSha256": "d1d59231e70ab7c645f09de446d0d08b81a2bbdf2af94f1949e38b63a743bd37",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "theorem": "finite_order_eigen_sub_one_ne_zero",
+      "bean": "qou-ddo8",
+      "passed": true,
+      "samples": [
+        {
+          "k": "1",
+          "diff": "0.75",
+          "passed": true
+        },
+        {
+          "k": "2",
+          "diff": "2.0625",
+          "passed": true
+        },
+        {
+          "k": "3",
+          "diff": "4.359375",
+          "passed": true
+        },
+        {
+          "k": "4",
+          "diff": "8.37890625",
+          "passed": true
+        },
+        {
+          "k": "5",
+          "diff": "15.4130859375",
+          "passed": true
+        },
+        {
+          "k": "6",
+          "diff": "27.722900390625",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "chainAdditive_b3_add_b2_eq_zero",
+      "bean": "qou-dgkf",
+      "passed": true,
+      "samples": [
+        {
+          "b": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "b": "5/3",
+          "residual": "2.10843958864610464486971481025e-81",
+          "passed": true
+        },
+        {
+          "b": "11/4",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "wStd_geometric_sub_nonneg",
+      "bean": "qou-dke6",
+      "passed": true,
+      "samples": [
+        {
+          "k": "3",
+          "diff": "0.905719095841793663413220751719",
+          "passed": true
+        },
+        {
+          "k": "4",
+          "diff": "2.36666666666666666666666666667",
+          "passed": true
+        },
+        {
+          "k": "5",
+          "diff": "3.24000962025501589825501293201",
+          "passed": true
+        },
+        {
+          "k": "6",
+          "diff": "10.6708333333333333333333333333",
+          "passed": true
+        },
+        {
+          "k": "7",
+          "diff": "17.9085906690814603679385972926",
+          "passed": true
+        },
+        {
+          "k": "8",
+          "diff": "68.3729166666666666666666666667",
+          "passed": true
+        },
+        {
+          "k": "9",
+          "diff": "132.232765753747336320292779001",
+          "passed": true
+        },
+        {
+          "k": "10",
+          "diff": "567.409895833333333333333333333",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "qIntBal_three_sub_eq_zero",
+      "bean": "qou-dld9",
+      "passed": true,
+      "samples": [
+        {
+          "q": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "q": "3/2",
+          "residual": "-4.21687917729220928973942962051e-81",
+          "passed": true
+        },
+        {
+          "q": "7/5",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "weighted_mul_sub_eq_zero",
+      "bean": "qou-drag",
+      "passed": true,
+      "residual": "-8.43375835458441857947885924102e-81"
+    }
+  ]
+}
