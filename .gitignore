@@ -302,3 +302,7 @@ folio/*/lean/blocks-shadow/
 /beans/**
 /fsh-guts/**
 # END state mounts
+
+# lean-axiom-guard.py scratch file (NamedTemporaryFile prefix="AxiomGuard" in the
+# Lean root; removed when the guard finishes, visible while it runs)
+folio/quantum-observable-universe/lean/AxiomGuard*.lean
