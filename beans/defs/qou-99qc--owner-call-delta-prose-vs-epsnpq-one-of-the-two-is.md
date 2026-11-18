@@ -3958,3 +3958,11 @@ Model A, as fixed now:
 - Prediction stated in advance: if the oriented Borromean rings with different orientation patterns are isotopic (linking numbers are all 0, so at least Jones is orientation-blind by Morton's reversal formula), then T1 gives p = n and only T2 can split them. T1 is run to settle this, not to score.
 - Nothing is scored against m_n − m_p until a v-specialisation is derived, not chosen.
 - B (one-strand blob / Ariki–Koike generator) follows A, with its own registration.
+
+## 2026-11-18 19:20Z — RESULT T1 (model A, closure): p = n, as predicted
+
+SnapPy 3.3.2, L6a4 (Borromean rings, vol 7.32772475342), all 48 self-isometries with their cusp maps. Among the ambient-orientation-preserving ones (det +1 on every cusp), with meridians sent to meridians:
+- identity permutation with meridian signs (1,−1,−1), (−1,1,−1), (−1,−1,1): reverses two components;
+- permutation (0,2,1) with signs (1,1,−1), (−1,1,1), etc.: reverses one component.
+Meridians go to meridians, so each extends to an isotopy of S³. Hence EVERY orientation pattern of the Borromean rings is the same oriented link (up to permuting components). So uud and udd closures are isotopic and every closed-link invariant (HOMFLY at any v, any specialisation) gives p = n. Scope (b): the invariant is the isotopy itself. Model A survives only as an OPEN-element (non-closure) quantity, T2, to be registered before computing.
+Also: sibling PR #8517 `trace_flip_reverse` now proves the reversal invariance my 16:35Z no-go needed (for products of factors α+βσᵢ, any R-linear cyclic trace).
