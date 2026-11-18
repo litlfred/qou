@@ -1,7 +1,7 @@
 ---
 # qou-25nb
 title: Remark interpreting 0103325v4.pdf at rem:dictionary-flavor-layer
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

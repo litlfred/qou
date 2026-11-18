@@ -1,7 +1,7 @@
 ---
 # qou-qs1x
 title: 'GAP: flavour readout from γγ needs a word (product) of letters, and the photon letter orientation is underived'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

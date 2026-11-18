@@ -1,7 +1,7 @@
 ---
 # qou-33tf
 title: 'Reading (b) of prop:confinement-universality: universality over the photon states that produce the nucleon flavours'
-status: todo
+status: in-progress
 type: task
 tags:
     - quark-state

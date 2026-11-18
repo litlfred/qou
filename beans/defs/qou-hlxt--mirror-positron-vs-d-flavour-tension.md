@@ -1,7 +1,7 @@
 ---
 # qou-hlxt
 title: 'Tension: σ ↦ σ⁻¹ is the positron (BW) and the d flavour (quark_template / 6a) — which reading is derivable?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
