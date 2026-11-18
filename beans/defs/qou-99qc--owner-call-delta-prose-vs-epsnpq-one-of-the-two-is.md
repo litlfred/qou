@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-17T23:08:21Z
+updated_at: 2026-11-18T04:40:00Z
 parent: qou-10v9
 ---
 
@@ -3772,3 +3772,7 @@ Rule B (all terms, comparison): minimum is σ₁ (cost 1).
 So this grammar and this rule select no nucleon-like element, and β_Bor (writhe 0) cannot be reached. Scope (a). The nucleon element stays underived, and Q_β 0.4491 MeV stays provisional. The owner's card on which letters to use (pair terms / all terms / keep V) is open.
 
 Bean stays OPEN.
+
+### NOTE 2026-11-18 — merges + teraplectic finding (relayed from sibling sweep, re-measured)
+- Merged: #8130 (rebase, `73205840a`; Lean source-verified 7/7, standard axioms only) and #8124 (rebase, `7642fc6da`; tower E₀, 0.4491 MeV, marked provisional after the L± ruling). Five-block follow-up: PR #8376 (issue #8375).
+- Re-ran `qbeta/qbeta_ruled_base_affine_solve_probe.py` (2/2 pass): reaching CODATA on the ruled assembly needs z = 0.99850030441113. That is not an admissible convention-D root (0.0015 from the excluded z = 1). So the base shortfall cannot be fixed through z; any fix must change the element or the functional. This is consistent with the y₃ reduction: no derived trace reaches y₃ ≈ 0.88.
