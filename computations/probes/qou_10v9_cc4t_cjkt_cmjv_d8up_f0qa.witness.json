@@ -1,0 +1,61 @@
+{
+  "probe": "qou_10v9_cc4t_cjkt_cmjv_d8up_f0qa_probe",
+  "beans": [
+    "qou-cc4t",
+    "qou-cjkt",
+    "qou-cmjv",
+    "qou-d8up",
+    "qou-f0qa"
+  ],
+  "precisionDps": "80",
+  "scriptCommitSha": "859f2ca0846134ab9891583b9e379004d875d4e9",
+  "scriptHash": "a52a73cc02bd088ce895e487a31365072bb7d9d1f9b05f460c6a05a6e4a4a801",
+  "scriptSha256": "a52a73cc02bd088ce895e487a31365072bb7d9d1f9b05f460c6a05a6e4a4a801",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-cc4t",
+      "description": "Belted-sum hyperbolic volume additivity and zero mutation volume difference",
+      "beltVol4G": "3.6638623767088760602184140597295364430965974971266885370659924784870520791050191",
+      "vol2Belts": "7.3277247534177521204368281194590728861931949942533770741319849569741041582100382",
+      "vol3Belts": "10.991587130126628180655242179188609329289792491380065611197977435461156237315057",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-cjkt",
+      "description": "One-loop invariant scaling S_1 = 6*lambda_CW and 3-fibre Seifert sine ratio",
+      "s1Loop": "1.2",
+      "seifertSineRatioK13": "10.482076169425349253431207032530545477537600434338801926838009154972588662461106",
+      "residual": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-cmjv",
+      "description": "Weight-3 level-5 cyclotomic trilogarithm distribution sum (-24/25)*zeta(3)",
+      "reLi3Zeta5": "0.18936791501083168387944480476641361363127422974423388985398284236102343803339634",
+      "reLi3Zeta5Sq": "-0.76635522852743694087131912229190960919846765006767335311427318892510577681082662",
+      "sumPrimitive": "-1.1539746270332105139837486350509919911343868406468789265205806931281646775548606",
+      "residual": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-d8up",
+      "description": "Genus-4 period symmetric dim 10, skew dim 6, and Sp(8) dim 36",
+      "symDimG4": "10.0",
+      "skewDimG4": "6.0",
+      "spDimG4": "36.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-f0qa",
+      "description": "Neutron-proton mass difference 2022 vs 2018 revision shift +4.1e-7 MeV",
+      "delta2022MeV": "1.29333251",
+      "delta2018MeV": "1.2933321",
+      "shiftMeV": "0.00000040999999999999999999999999999999999999999999999999999999999999999999999999974083",
+      "residual": "2.5917148157098171223311164982152849005541846132206758025066815029759195975335584e-82",
+      "passed": true
+    }
+  ]
+}
