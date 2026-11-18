@@ -1,7 +1,7 @@
 ---
 # qou-i2ed
 title: 'LATENT: the lean.ref package registry is never configured in production, so 8 lookup sites can never resolve — masked today because every block also has a sibling .lean'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

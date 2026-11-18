@@ -1,7 +1,7 @@
 ---
 # qou-ip2a
 title: 'Convention-slip checker: auto-extract decompositions from .md display math so R1/R2 detect rather than only verify hand-curated entries'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

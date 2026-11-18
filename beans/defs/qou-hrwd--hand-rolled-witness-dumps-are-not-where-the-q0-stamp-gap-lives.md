@@ -1,7 +1,7 @@
 ---
 # qou-hrwd
 title: Hand-rolled witness dumps are a real class (280 producers) but NOT where the q0Anchor gap lives — the canonical serializer misses 1,158
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

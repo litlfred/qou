@@ -1,7 +1,7 @@
 ---
 # qou-gwe9
 title: 'MEASURED: Copilot review does not arrive — AGENTS.md rule 10''s last surviving Phase-4 gate'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

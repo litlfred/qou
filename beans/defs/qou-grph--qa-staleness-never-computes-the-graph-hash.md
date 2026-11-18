@@ -1,7 +1,7 @@
 ---
 # qou-grph
 title: qa-staleness never computes the `graph` hash, so all 9 graph-invalidated criteria are permanently stale by construction
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
