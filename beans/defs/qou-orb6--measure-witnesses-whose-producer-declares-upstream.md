@@ -1,7 +1,7 @@
 ---
 # qou-orb6
 title: 'MEASURE: witnesses whose producer declares upstreams but that record no edge are invisible to witness_dependency_drift'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

@@ -1,7 +1,7 @@
 ---
 # qou-oyde
 title: 'GAP: 253 producers import inside a truncating with-open(w); one has already destroyed its witness on main'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

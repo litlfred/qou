@@ -1,7 +1,7 @@
 ---
 # qou-p30w
 title: 'P30 raw-witness-write surfaced by the #5111 gate (pre-existing, not branch-introduced)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
