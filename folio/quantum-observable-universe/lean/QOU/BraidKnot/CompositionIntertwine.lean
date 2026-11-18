@@ -81,4 +81,10 @@ theorem Tw_sortPerm_mul_xComp {c c' : Composition (n + 1)} (m : BlockMatch c c')
     congr 1
     group
 
+/-- Subtracting the right-intertwined product from the left-intertwined product cancels to zero (`qou-i2ed`). -/
+theorem Tw_sortPerm_mul_xComp_sub_eq_zero {c c' : Composition (n + 1)} (m : BlockMatch c c')
+    [DecidablePred (· ∈ youngOfComp c)] [DecidablePred (· ∈ youngOfComp c')] :
+    Tw K q n (sortPerm m) * xComp K q c - xComp K q c' * Tw K q n (sortPerm m) = 0 := by
+  rw [Tw_sortPerm_mul_xComp K q m, sub_self]
+
 end QOU.BraidKnot.CompositionIntertwine

@@ -161,4 +161,12 @@ theorem linearIndependent_xComp_mul_Tw (c : Composition (n + 1))
   · intro hns
     exact absurd hi₀ hns
 
+/-- Subtracting the coset basis sum from the product of the Murphy element and a left-distinguished basis element cancels to zero (`qou-gwe9`). -/
+theorem xComp_mul_Tw_sub_sum_eq_zero (c : Composition (n + 1)) [DecidablePred (· ∈ youngOfComp c)]
+    {e : Perm (Fin (n + 1))} (he : IsDistinguishedL c e) :
+    xComp K q c * Tw K q n e
+      - ∑ v ∈ ({w | w ∈ youngOfComp c} : Finset (Perm (Fin (n + 1)))),
+          Tw K q n (e * v) = 0 := by
+  rw [xComp_mul_Tw K q c he, sub_self]
+
 end QOU.BraidKnot.CompositionCosetSum

@@ -100,4 +100,12 @@ theorem Tw_mul_xComp_reduce (c : Composition (n + 1))
     exact h.symm
   rw [hTw, mul_assoc, Tw_mul_xComp_of_mem K q c hv, mul_smul_comm]
 
+/-- Subtracting the length-scaled Murphy element from the left product cancels to zero (`qou-grph`). -/
+theorem Tw_mul_xComp_sub_eq_zero (c : Composition (n + 1))
+    [DecidablePred (· ∈ youngOfComp c)] {v : Perm (Fin (n + 1))}
+    (hv : v ∈ youngOfComp c) :
+    Tw K q n v * xComp K q c
+      - q ^ ((permCoxeterSystem n).length v) • xComp K q c = 0 := by
+  rw [Tw_mul_xComp_of_mem K q c hv, sub_self]
+
 end QOU.BraidKnot.CompositionCosetReduceMirror

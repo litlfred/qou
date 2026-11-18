@@ -70,4 +70,10 @@ theorem xComp_mul_σ (c : Composition (n + 1)) [DecidablePred (· ∈ youngOfCom
     xComp K q c * QOU.Hecke.IwahoriHecke.σ K q n i = q • xComp K q c :=
   murphySum_mul_σ_subgroup K q n i _ (mem_youngOfComp_sw.mpr hblock)
 
+/-- Subtracting the scalar multiple of the Murphy element from the generator product cancels to zero (`qou-ip2a`). -/
+theorem σ_mul_xComp_sub_eq_zero (c : Composition (n + 1)) [DecidablePred (· ∈ youngOfComp c)]
+    (i : Fin n) (hblock : c.index i.castSucc = c.index i.succ) :
+    QOU.Hecke.IwahoriHecke.σ K q n i * xComp K q c - q • xComp K q c = 0 := by
+  rw [σ_mul_xComp K q c i hblock, sub_self]
+
 end QOU.BraidKnot.CompositionMurphy
