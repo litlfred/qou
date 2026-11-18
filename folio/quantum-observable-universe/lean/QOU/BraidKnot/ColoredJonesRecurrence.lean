@@ -60,4 +60,10 @@ theorem trace_recurrence_of_relation {d : ℕ} {M : Matrix (Fin m) (Fin m) R} {c
   intro k _
   rw [Matrix.trace_smul, smul_eq_mul]
 
+/-- Subtracting the linear combination of lower power traces from the shifted power trace cancels to zero (`qou-gjkv`). -/
+theorem trace_recurrence_of_relation_sub_eq_zero {d : ℕ} {M : Matrix (Fin m) (Fin m) R} {c : ℕ → R}
+    (h : M ^ d = ∑ k ∈ range d, c k • M ^ k) (n : ℕ) :
+    (M ^ (n + d)).trace - ∑ k ∈ range d, c k * (M ^ (n + k)).trace = 0 := by
+  rw [trace_recurrence_of_relation h n, sub_self]
+
 end QOU.BraidKnot.ColoredJonesRecurrence
