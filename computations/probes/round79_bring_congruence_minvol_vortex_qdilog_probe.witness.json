@@ -1,0 +1,59 @@
+{
+  "probe": "round79_bring_congruence_minvol_vortex_qdilog_probe",
+  "beans": [
+    "qou-3q4q",
+    "qou-4kmu",
+    "qou-5m9w",
+    "qou-6m79",
+    "qou-6say"
+  ],
+  "scriptPath": "computations/probes/round79_bring_congruence_minvol_vortex_qdilog_probe.py",
+  "scriptCommitSha": "a26f475a5fcfaa805006150b5c398414bf3cde7d",
+  "scriptHash": "9e0af082154afa7256af6321364bf1f951a59a961ba1a16753bf87af0c870b42",
+  "scriptSha256": "9e0af082154afa7256af6321364bf1f951a59a961ba1a16753bf87af0c870b42",
+  "mpmathDps": 80,
+  "allPassed": true,
+  "generatedAt": "2026-11-18T11:55:58.654268+00:00",
+  "checks": [
+    {
+      "bean": "qou-3q4q",
+      "unimodularDeterminantDefect": 0,
+      "stabiliserShiftedTrace": -3,
+      "congruenceGaugeBalance": 2,
+      "moebiusImaginaryResidual": "4.61221160016335e-82",
+      "passed": true
+    },
+    {
+      "bean": "qou-4kmu",
+      "totalCuspedManifoldCount": 2,
+      "minimalCuspedVolume": "2.02988321281930725004240510855",
+      "pairStratumVolumeSum": "4.0597664256386145000848102171",
+      "clausenIntegralResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-5m9w",
+      "drilledLinkVolumeIncrement": 3645,
+      "unifiedManifoldVolume": 3645,
+      "whiteheadLinkVolume": "3.66386237670887606021841405973",
+      "catalanResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-6m79",
+      "netClusterWinding": 5,
+      "totalVortexPopulation": 13,
+      "clusterCirculation": 507,
+      "circulationResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-6say",
+      "normalisationExponentGap": 9,
+      "twoFactorLeftExponent": 14,
+      "threeFactorRightExponent": 14,
+      "denominatorIdentityResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
