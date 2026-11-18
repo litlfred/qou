@@ -74,4 +74,9 @@ theorem monodromy_powTrace_recurrence {is_seifert_gauss_manin : Prop}
     (self.M ^ (n + 2)).trace = self.M.trace * (self.M ^ (n + 1)).trace - (self.M ^ n).trace :=
   powTrace_recurrence self.M self.unimodular n
 
+/-- Rearranging the two-step matrix trace recurrence yields zero residual (`qou-ekgf`). -/
+theorem powTrace_recurrence_sub_eq_zero (M : Matrix (Fin 2) (Fin 2) ℝ) (hdet : M.det = 1) (n : ℕ) :
+    (M ^ (n + 2)).trace - (M.trace * (M ^ (n + 1)).trace - (M ^ n).trace) = 0 := by
+  rw [powTrace_recurrence M hdet n, sub_self]
+
 end QOU.BraidKnot

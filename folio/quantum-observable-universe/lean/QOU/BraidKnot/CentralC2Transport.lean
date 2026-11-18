@@ -53,4 +53,11 @@ theorem mapDomain_centralC2 {a b : ℕ} (h : a = b) :
       finCongr_apply, Fin.coe_cast]) (fun i _ => ?_)
   rw [MonoidAlgebra.mapDomainAlgHom_apply, Finsupp.mapDomain_single, transportPermHom_swap]
 
+/-- Subtracting the target element from the mapped element under an index equality cancels to zero (`qou-f4el`). -/
+theorem mapDomain_centralC2_sub_eq_zero {a b : ℕ} (h : a = b) :
+    MonoidAlgebra.mapDomainAlgHom R R (SpechtClassification.transportPermHom h)
+        (RegularRepTrace.centralC2 (R := R) a)
+      - RegularRepTrace.centralC2 (R := R) b = 0 := by
+  rw [mapDomain_centralC2 h, sub_self]
+
 end QOU.BraidKnot.CentralC2Transport

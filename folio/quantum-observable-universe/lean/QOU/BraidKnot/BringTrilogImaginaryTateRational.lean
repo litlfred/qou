@@ -30,4 +30,9 @@ theorem im_li3_zeta5_closed_form :
   field_simp
   ring
 
+/-- Subtracting the closed-form value from the predicted value at five cancels to zero (`qou-eggf`). -/
+theorem im_li3_zeta5_sub_eq_zero :
+    imLi3ZetaPredicted 5 - imLi3Zeta5Value = 0 := by
+  rw [im_li3_zeta5_closed_form, sub_self]
+
 end QOU.BraidKnot.BringTrilogImaginaryTateRational

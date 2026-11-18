@@ -286,4 +286,9 @@ theorem sqWritheReadout_not_fourfold
     · nlinarith
   nlinarith
 
+/-- Subtracting four times the word writhe from the cabled word writhe cancels to zero (`qou-f1rs`). -/
+theorem writhe_cable_sub_eq_zero (w : Word) (hw : ∀ g ∈ w, g ≠ 0) :
+    writhe (cable w) - 4 * writhe w = 0 := by
+  rw [writhe_cable w hw, sub_self]
+
 end QOU.BraidKnot

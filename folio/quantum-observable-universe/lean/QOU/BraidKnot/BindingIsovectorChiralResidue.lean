@@ -77,4 +77,10 @@ theorem binding_isovector_A_independent {R : Type*} [CommRing R]
     rw [← Int.cast_sub, ← Int.cast_sub, h]
   rw [hR]
 
+/-- Subtracting the scaled difference from the antisymmetrized evaluation cancels to zero (`qou-e9pp`). -/
+theorem binding_isovector_mirror_sub_eq_zero {R : Type*} [CommRing R]
+    [c : WLambdaChiralBinding R] (Z N : Int) :
+    (c.bindingOdd Z N - c.bindingOdd N Z) - 4 * c.kappa * (Z - N) = 0 := by
+  rw [binding_isovector_mirror_from_chiral, sub_self]
+
 end QOU.BraidKnot
