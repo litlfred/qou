@@ -1,0 +1,59 @@
+{
+  "probe": "round78_depth_filtration_angled_gluing_mpv_helicity_probe",
+  "beans": [
+    "qou-25oc",
+    "qou-2hc7",
+    "qou-2rad",
+    "qou-2vx4",
+    "qou-30vq"
+  ],
+  "scriptPath": "computations/probes/round78_depth_filtration_angled_gluing_mpv_helicity_probe.py",
+  "scriptCommitSha": "76738b5f25ad50dab3abaa4f399f57a2792deab6",
+  "scriptHash": "cd7c133a618997b0b18fee4be3c519a89f633da6872a6079d3ab744101c6de85",
+  "scriptSha256": "cd7c133a618997b0b18fee4be3c519a89f633da6872a6079d3ab744101c6de85",
+  "mpmathDps": 80,
+  "allPassed": true,
+  "generatedAt": "2026-11-18T11:44:21.957568+00:00",
+  "checks": [
+    {
+      "bean": "qou-25oc",
+      "codimensionGap": 2,
+      "filtrationDefect": -6,
+      "totalGradedBalance": -1,
+      "inversionLogResidual": "2.1084395886461e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-2hc7",
+      "tetrahedronClosureResidual": 0,
+      "gluingLoopBalance": 0,
+      "angleSumResidual": "1.26506375318766e-80",
+      "figureEightVolume": "6.08964963845792175012721532565",
+      "passed": true
+    },
+    {
+      "bean": "qou-2rad",
+      "quotientUpperBoundDim": 6,
+      "effectiveIndependentReduction": 18,
+      "cl3Level5DistributionResidual": "2.1084395886461e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-2vx4",
+      "orientedTripleHelicity": 30,
+      "transposedTripleHelicity": -30,
+      "helicityScalingDiscrepancy": -32,
+      "cubicScalingResidual": "8.43375835458442e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-30vq",
+      "complementaryDualDegree": 2,
+      "bidualShiftResidual": 0,
+      "nonabelianHolonomyBalance": 9,
+      "decoupledChannelTotal": 11,
+      "holonomyResidual": "0.0",
+      "passed": true
+    }
+  ]
+}
