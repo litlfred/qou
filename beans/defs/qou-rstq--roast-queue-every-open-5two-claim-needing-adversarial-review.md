@@ -1,7 +1,7 @@
 ---
 # qou-rstq
 title: 'ROAST QUEUE: every open 5₂ claim needing adversarial review, with what specifically to attack'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -566,3 +566,6 @@ rule, does not touch Gap A (`qou-glbl`), and does not perform the assembly
 (`qou-asem`) it unblocks.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+## Round 72 Progress (PR #8491)
+- De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8491` (C1 `0a93eba0e8b5b8ee92b4af6972a325d2dc1a28fd`, C2 `a9b922df9d2baa717878dbac10e60b5a5c341c6e`, 80-dps mpmath witness verified, 0 static audit findings).

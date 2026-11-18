@@ -1,7 +1,7 @@
 ---
 # qou-fav8
 title: 'QOU existence: the sorry is closeable DISHONESTLY, which is the real finding'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -694,3 +694,6 @@ documented as an intended model. Under **A**/**B** it should fail on the new
 field. Building it tests the fix rather than merely embarrassing the axioms.
 
 Owner decision. Not implemented.
+
+## Round 72 Progress (PR #8491)
+- De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8491` (C1 `0a93eba0e8b5b8ee92b4af6972a325d2dc1a28fd`, C2 `a9b922df9d2baa717878dbac10e60b5a5c341c6e`, 80-dps mpmath witness verified, 0 static audit findings).
