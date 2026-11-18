@@ -1,0 +1,1 @@
+The Compton amplitude subtraction function, S1ðQ2Þ, is a critical component in the theoretical determination of the proton-neutron mass difference, and a necessary quantity for the calculation of the proton charge radius.

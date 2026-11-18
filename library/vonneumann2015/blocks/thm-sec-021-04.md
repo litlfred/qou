@@ -1,0 +1,1 @@
+If a ∈B(H), b ∈B(K) and x ∈ℓ2(H, K) then bxa ∈ ℓ2(H, K). If x ∈ℓ2(H, K) and y ∈ℓ2(K, H) then yx is trace class. With the inner product ⟨x, y⟩= Trace(y∗x), ℓ2(H, K) is a Hilbert space in which the ﬁnite rank operators are dense.

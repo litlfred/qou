@@ -1,0 +1,1 @@
+(i) For x ∈M, [x, eN] = 0 iﬀx ∈N. (ii) eNxeN = EN(x)eN for x ∈M. (iii) [M : N] < ∞iﬀ⟨M, eN⟩is a type II1 factor, in which case [⟨M, eN⟩: M] = [M : N]. (iv) M + MeNM is a weakly dense *-subalgebra of ⟨M, eN⟩. (v) eN⟨M, eN⟩eN = NeN (vi) tr(eN) = [M : N]−1 (vii) For x ∈M, tr(eNx) = τtr(x)

@@ -1,0 +1,1 @@
+If φ is state on a von Neumann algebra M on H the fol- lowing are equivalent: (1) φ is normal. (2) φ is completely additive (3) φ is a vector state on H ⊗ℓ2(N) (4) φ is ultraweakly continuous. The only implication that is not obvious from what we have done is (2) =⇒(3). To prove it we will put together some results. The ﬁrst couple actually establish (4) =⇒(3) by 5.1.2.

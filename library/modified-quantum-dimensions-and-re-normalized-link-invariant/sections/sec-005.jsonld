@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Examples",
+  "pageStart": 13,
+  "pageEnd": 18,
+  "contains": [
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-005",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-01",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-005-02",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-03",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-04",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/cor-sec-005-05",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-005-06",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/rem-sec-005-07",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/rem-sec-005-08",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-09",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/cor-sec-005-10",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-11",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-12",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/lem-sec-005-13",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prop-sec-005-14",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/thm-sec-005-15"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "provenance": "ingested"
+}
