@@ -1,7 +1,7 @@
 ---
 # qou-z8x9
 title: script-QA sweeper audits ZERO qou producers — its only root is folio-assistant/computations, which holds no .py
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

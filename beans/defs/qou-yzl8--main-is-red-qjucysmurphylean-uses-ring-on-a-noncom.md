@@ -1,7 +1,7 @@
 ---
 # qou-yzl8
 title: 'main is RED: QJucysMurphy.lean uses ring on a NONCOMMUTATIVE algebra — 6 sites, none compile'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

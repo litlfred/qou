@@ -1,7 +1,7 @@
 ---
 # qou-ypq6
 title: The unified-iterative-correction table block has no live producer -- its numbers reproduce from nothing in the tree
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

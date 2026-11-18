@@ -1,7 +1,7 @@
 ---
 # qou-y98b
 title: 'Gate the q0Anchor refill: ~50% of newly-added witnesses land unstamped'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

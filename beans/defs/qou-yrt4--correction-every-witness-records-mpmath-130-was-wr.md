@@ -1,7 +1,7 @@
 ---
 # qou-yrt4
 title: 'CORRECTION: ''every witness records mpmath 1.3.0'' was wrong -- 703 already record 1.4.1, and a migration is in flight'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
