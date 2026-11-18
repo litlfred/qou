@@ -1,7 +1,7 @@
 ---
 # qou-63fo
 title: 2029 of 2435 open beans have no parent — the epic/story layer is 10 epics deep
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -89,3 +89,5 @@ idle agent works on), `todo-manager` / `bean-coordination` skills, and the
 `work_plan_prime` MCP tool in folio-assistant, which exposes the work plan to any
 MCP agent. A hierarchy change is therefore visible to every future session, which
 is the argument both for doing it well and for not doing it fast.
+
+- **Round 95 (`litlfred/qou#8426`)**: Advanced in `feat/round95-layout-lowerbound-bondrule-maxcontact-simplex-43c1` (Commit 1 `d482ea2750e00fbd6e9e74457e935101b2f8b093`, Commit 2 `8ed5dd0ff69b4804c5e40f393e7c9157a2067a42`, probe sha256 `8b786124c3dfda15d0d1672a05f3bc16f486d17a5f41250533162305ad901679`).

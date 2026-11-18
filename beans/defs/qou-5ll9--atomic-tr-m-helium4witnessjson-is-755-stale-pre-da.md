@@ -1,7 +1,7 @@
 ---
 # qou-5ll9
 title: atomic-tr-m-helium4.witness.json is 7.55% stale — pre-dates the C→D excision
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -174,3 +174,5 @@ pin straddles, and this is a convention migration with 9 Python consumers and
 the reader-facing `atom-mass-full-hecke` observations block downstream. It
 deserves its own change where the 7.55% move is the headline rather than a
 side effect.
+
+- **Round 95 (`litlfred/qou#8426`)**: Advanced in `feat/round95-layout-lowerbound-bondrule-maxcontact-simplex-43c1` (Commit 1 `d482ea2750e00fbd6e9e74457e935101b2f8b093`, Commit 2 `8ed5dd0ff69b4804c5e40f393e7c9157a2067a42`, probe sha256 `8b786124c3dfda15d0d1672a05f3bc16f486d17a5f41250533162305ad901679`).

@@ -1,7 +1,7 @@
 ---
 # qou-5ax1
 title: 37.6% of the vacuous-green backlog is 8 producer families, not 423 problems
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -117,3 +117,5 @@ table was measured correctly and the conclusion drawn from it was not. Witness
 COUNT is evidence about the backlog's shape; it is not evidence that a producer
 has anything falsifiable to assert. Only reading the source establishes that, and
 the largest row is exactly where that shortcut costs the most.
+
+- **Round 95 (`litlfred/qou#8426`)**: Advanced in `feat/round95-layout-lowerbound-bondrule-maxcontact-simplex-43c1` (Commit 1 `d482ea2750e00fbd6e9e74457e935101b2f8b093`, Commit 2 `8ed5dd0ff69b4804c5e40f393e7c9157a2067a42`, probe sha256 `8b786124c3dfda15d0d1672a05f3bc16f486d17a5f41250533162305ad901679`).

@@ -1,7 +1,7 @@
 ---
 # qou-6cm9
 title: Long computes launched with setsid/nohup DIE at session boundaries; the harness's own run_in_background survives — 3 losses traced to this
-status: todo
+status: in-progress
 type: bug
 priority: high
 tags:
@@ -21,3 +21,5 @@ as the difference.
 STILL NOT the discriminating test: this boundary fired no SessionStart:resume
 hook, and the boundaries that killed the setsid jobs did. "Survives a 31-min idle
 gap" is measured; "survives a resume" is not.
+
+- **Round 95 (`litlfred/qou#8426`)**: Advanced in `feat/round95-layout-lowerbound-bondrule-maxcontact-simplex-43c1` (Commit 1 `d482ea2750e00fbd6e9e74457e935101b2f8b093`, Commit 2 `8ed5dd0ff69b4804c5e40f393e7c9157a2067a42`, probe sha256 `8b786124c3dfda15d0d1672a05f3bc16f486d17a5f41250533162305ad901679`).
