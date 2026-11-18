@@ -1,7 +1,7 @@
 ---
 # qou-mumr
 title: 'CORRECTION: the framework DOES have a computational length -- distance is a Reeb step count, ell_P == 1'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -268,3 +268,7 @@ carries no scale and why converting it to fm needs an external datum
 as: ell_P == 1 is the METRIC UNIT, and hbar_q ~ 0.0991 is a different quantity
 (an angular velocity) that was mislabelled a length. TEST THIS before adjudicating
 qou-adwi either way.
+
+## Progress (PR #8452)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/PolarizationArgumentDiscardDecayWindowFractionSurprisalVolumeTermStepUnitDomainWallDilution.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_k6is_kh7e_lsvj_mumr_qjh8_probe.witness.json` (`Commit 1` = `ffa2d78ef5414a49bba12e0efccca6fbb72626d5`, `HEAD` = `078aa49b3db67c82ebbd4ebd6bd00b088ab2f9d9`).

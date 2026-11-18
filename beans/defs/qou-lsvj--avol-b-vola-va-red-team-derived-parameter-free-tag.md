@@ -1,7 +1,7 @@
 ---
 # qou-lsvj
 title: 'avol B_vol=a_V*A red-team: DERIVED-parameter-free tag is dishonest (contradicts own 2026-08-08 deprecation banner)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -20,3 +20,7 @@ VERDICT: derived-candidate-near-match / postdiction-analogy. NOT genuine paramet
 DASHBOARD TAG DISHONEST: mass_binding_dashboard.py line 779 tags B_vol 'DERIVED parameter-free' while lines 92-126 of the SAME file carry a 2026-08-08 deprecation banner saying B_vol 'has no basis in the derivation chain' and 'Removed from the dashboard'. Also fails the file's own DERIVED def ('through the Markov trace') and is absent from its own provenance table (line 671-679). Live self-contradiction on main.
 
 Already assessed (in-file banner + probe's own honest verdict lines 245-254 + beans qou-78pt, qou-qlma) -> do NOT re-declare open. LIVE action = hygiene: reconcile code+legend with the 2026-08-08 deprecation (remove or demote DERIVED->EXPLORATORY). Not done here (read-only).
+
+## Progress (PR #8452)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/PolarizationArgumentDiscardDecayWindowFractionSurprisalVolumeTermStepUnitDomainWallDilution.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_k6is_kh7e_lsvj_mumr_qjh8_probe.witness.json` (`Commit 1` = `ffa2d78ef5414a49bba12e0efccca6fbb72626d5`, `HEAD` = `078aa49b3db67c82ebbd4ebd6bd00b088ab2f9d9`).

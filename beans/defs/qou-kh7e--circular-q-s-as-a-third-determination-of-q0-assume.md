@@ -1,7 +1,7 @@
 ---
 # qou-kh7e
 title: 'CIRCULAR: q*_S as a ''third determination of q0'' assumes (H1)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -119,3 +119,7 @@ script is committed, and the conclusion still did not reach the block that
 depends on it. Same shape as the 2026-08-09 correction not reaching the 1ppQ
 ledger (`qou-tdp0`): a correction landing at one site and never propagating to
 what restates it.
+
+## Progress (PR #8452)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/PolarizationArgumentDiscardDecayWindowFractionSurprisalVolumeTermStepUnitDomainWallDilution.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_k6is_kh7e_lsvj_mumr_qjh8_probe.witness.json` (`Commit 1` = `ffa2d78ef5414a49bba12e0efccca6fbb72626d5`, `HEAD` = `078aa49b3db67c82ebbd4ebd6bd00b088ab2f9d9`).
