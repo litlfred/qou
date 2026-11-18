@@ -1,0 +1,64 @@
+{
+  "allPassed": true,
+  "assertions": [
+    {
+      "computed": "blocking=9, review=14, gA_miss=0.21593225654696565783283675709581307824996079661282734828289164183785479065391250",
+      "detail": "9 zero/negative mass assertions pass via tolerance >= expected; slack audit finds 9 blocking + 14 review",
+      "expected": "blocking=9, review=14, gA_miss>0.215",
+      "name": "qou_tol0_unfalsifiable_tolerance_and_slack_tiers",
+      "passed": true
+    },
+    {
+      "computed": "total=12, asserted=5, scope=7, max_rel_diff=4.4000000000000000000000000000000000000000000000000000000000000000000000000000000e-50",
+      "detail": "5 same-object pairs agree to 4.4e-50 (< 1e-9) while 7 disjoint-braid pairs are classified as SCOPE",
+      "expected": "total=12, asserted=5, scope=7, max_rel_diff=4.4e-50 < 1e-9",
+      "name": "qou_u6n2_three_way_trace_scope_partition",
+      "passed": true
+    },
+    {
+      "computed": "digits=46, lost=31, gap=0.00000000000000013174813739811901093432353721395312499999999999999999999999999999803479690573872, backlog_plus_new=289",
+      "detail": "46-digit VOL_6_1 built at default mp.dps=15 loses 31 digits and trips 2 precision gates",
+      "expected": "digits=46, lost=31, 1e-18 < gap < 1e-14, backlog_plus_new=289",
+      "name": "qou_xbh4_vol61_module_scope_dps15_truncation",
+      "passed": true
+    },
+    {
+      "computed": "initial=5, added=1, total=6",
+      "detail": "6 qns exploratory probe witnesses carry raw float64 summary fields on the ratchet",
+      "expected": "initial=5, added=1, total=6",
+      "name": "qou_xwjs_qns_exploratory_probe_ratchet_count",
+      "passed": true
+    },
+    {
+      "computed": "producers=6, math_calls=1, float_casts=46, log_ratio_sites=6",
+      "detail": "log_ratio_binding_prototype has 1 math.log call + 5 float() casts and is the sole binding producer importing float64 Q",
+      "expected": "producers=6, math_calls=1, float_casts=46, log_ratio_sites=6",
+      "name": "qou_ywie_log_ratio_binding_float64_audit",
+      "passed": true
+    }
+  ],
+  "beans": [
+    "qou-tol0",
+    "qou-u6n2",
+    "qou-xbh4",
+    "qou-xwjs",
+    "qou-ywie"
+  ],
+  "generatedAt": "2026-11-18T07:49:23.551340+00:00",
+  "measurements": {
+    "disjoint_braid_ratio_deuteron": "5.1430000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "disjoint_braid_ratio_helium3": "9.6620000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "disjoint_braid_ratio_tritium": "6.8510000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "g_A_relative_miss": "0.21593225654696565783283675709581307824996079661282734828289164183785479065391250",
+    "log_ratio_binding_float64_site_share": "0.12765957446808510638297872340425531914893617021276595744680851063829787234042553",
+    "same_object_max_rel_diff": "4.4000000000000000000000000000000000000000000000000000000000000000000000000000000e-50",
+    "vol61_exact_80dps": "3.1639632288831439839917575291673848123257039620000000000000000000000000000000000",
+    "vol61_truncated_15dps": "3.1639632288831438522436201310483738780021667480468750000000000000000000000000000",
+    "vol61_truncation_gap": "0.00000000000000013174813739811901093432353721395312499999999999999999999999999999803479690573872"
+  },
+  "probe": "unfalsifiable_tolerance_tautology_three_way_trace_scope_partition_module_scope_dps_truncation_exploratory_probe_ratchet_and_log_ratio_binding_float64_audit_probe",
+  "scriptCommitSha": "d72ebd67e79dd75bb70ded2eb0ecba406568bd77",
+  "scriptHash": "2c30770d7780d52e105ca40c186e1b62631f5856fdd0eed8554fd616e9f8c6f4",
+  "scriptSha256": "2c30770d7780d52e105ca40c186e1b62631f5856fdd0eed8554fd616e9f8c6f4",
+  "workingDps": "80"
+}
