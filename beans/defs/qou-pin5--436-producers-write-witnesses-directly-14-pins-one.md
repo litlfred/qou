@@ -1,7 +1,7 @@
 ---
 # qou-pin5
 title: 436 producers write witnesses with a raw json.dump — 14 pinned witnesses are one rerun away from losing their pin
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

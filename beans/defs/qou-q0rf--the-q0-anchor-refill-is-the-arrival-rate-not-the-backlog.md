@@ -1,7 +1,7 @@
 ---
 # qou-q0rf
 title: The q0-anchor refill ratchet is RED on main (NEW 147) — and the arrival rate, not the backlog, is the thing to fix
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

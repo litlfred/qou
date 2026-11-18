@@ -1,7 +1,7 @@
 ---
 # qou-p6sj
 title: 'Laundering sweep: the qou-00c5 defect class is NOT mechanically detectable — two detectors, both failed'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

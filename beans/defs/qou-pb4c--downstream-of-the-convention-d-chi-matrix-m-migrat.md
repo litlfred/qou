@@ -1,7 +1,7 @@
 ---
 # qou-pb4c
 title: 'Downstream of the convention-D chi-matrix-m migration: 23 consumers, 14 witnesses, tr_M moved 15.4%'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

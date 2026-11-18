@@ -1,7 +1,7 @@
 ---
 # qou-pgr1
 title: Precision-gate residue — the 20 dps sites are all safe; qou-wlaf's blind spot is 72% closable
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
