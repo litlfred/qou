@@ -1,7 +1,7 @@
 ---
 # qou-d2s7
 title: Cite [dgkmsv2009] at conj:brunnian-property-of-borromean
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

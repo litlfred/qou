@@ -1,7 +1,7 @@
 ---
 # qou-b5ly
 title: 'CITE: Riemann-Hurwitz has no reference key anywhere in references.ts — M — brings-is-qou-verification.md:15 (no cites at all), CoveringDegreeRamification.lean:88-91'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
