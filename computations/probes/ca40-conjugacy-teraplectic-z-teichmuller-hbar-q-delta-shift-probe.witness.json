@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0",
+  "probeId": "ca40-conjugacy-teraplectic-z-teichmuller-hbar-q-delta-shift-probe",
+  "beans": [
+    "qou-3nva",
+    "qou-7y1z",
+    "qou-960k",
+    "qou-r5up",
+    "qou-rbdz"
+  ],
+  "scriptFile": "computations/probes/ca40_conjugacy_teraplectic_z_teichmuller_hbar_q_delta_shift_probe.py",
+  "scriptHash": "8ee03ea623d697ca4b4c03dd8bc352ebed7f921090107dab30273e79968d1e13",
+  "scriptSha256": "8ee03ea623d697ca4b4c03dd8bc352ebed7f921090107dab30273e79968d1e13",
+  "scriptCommitSha": "0579ef2587dd57270ece7f8843a9b6b12f3ba869",
+  "dps": 80,
+  "durationMs": 7,
+  "allPassed": true,
+  "assertions": [
+    {
+      "id": "qou-3nva-ca40-partition-not-self-conjugate-and-su2-rank",
+      "bean": "qou-3nva",
+      "description": "Partition (5,4,4,4,3) of 20 has conjugate (5,5,5,4,1) with L1 discrepancy 4 > 0, and rank(SU(2)) = 1 < 2 = rank(SU(3))",
+      "partition": [
+        5,
+        4,
+        4,
+        4,
+        3
+      ],
+      "conjugatePartition": [
+        5,
+        5,
+        5,
+        4,
+        1
+      ],
+      "weight": 20,
+      "conjugateWeight": 20,
+      "l1Discrepancy": 4,
+      "su2Rank": 1,
+      "su3Rank": 2,
+      "passed": true
+    },
+    {
+      "id": "qou-7y1z-teraplectic-z-inadmissible-under-convention-d",
+      "bean": "qou-7y1z",
+      "description": "Teraplectic z=0.99850030 exceeds convention-D z_D(q0)=q0^3/(q0^2+1) < 1/2 by 0.49970140 and differs from q0 by +0.00010263",
+      "q0": "0.99839767",
+      "zTeraplectic": "0.9985003",
+      "zConventionDAtQ0": "0.4983983128946613240564777942588638307906",
+      "zConventionDAtZTera": "0.4985008631188986569329773817601490531773",
+      "excessOverZD": "0.5001019871053386759435222057411361692094",
+      "excessOverQ0": "0.00010263",
+      "passed": true
+    },
+    {
+      "id": "qou-960k-quantum-teichmuller-library-vs-rank2-source-census",
+      "bean": "qou-960k",
+      "description": "35 rank-1 quantum Teichmuller library dirs (0 content blocks) vs 1 substantive Fock-Goncharov rank-2 source (109 of 112 PGL(n,C) hits across 4 dirs)",
+      "teichmullerRank1Dirs": 35,
+      "teichmullerContentBlocks": 0,
+      "fockGoncharovSubstantiveDirs": 1,
+      "fockGoncharovIncidentalDirs": 3,
+      "fockGoncharovTotalDirs": 4,
+      "fockGoncharovTotalHits": 112,
+      "rank1VsRank2DirExcess": 34,
+      "passed": true
+    },
+    {
+      "id": "qou-r5up-hbar-q-dimensionless-and-borromean-triple-signature",
+      "bean": "qou-r5up",
+      "description": "Dimensionless hbar_q = q - q^-1 (|hbar_q| ~ 0.00320723, dim=0) vs 1.25 MeV (dim=1) and Borromean triple signature 1 - (0+0+0) = 1",
+      "hbarQAtQ0": "-0.003207231581951808841861580065586491202448",
+      "absHbarQAtQ0": "0.003207231581951808841861580065586491202448",
+      "inverseSquareHbarQ": "97216.36096426260776578599879812980272864",
+      "energyDimensionMismatch": 1,
+      "borromeanPairwiseSum": 0,
+      "borromeanTripleMilnor": 1,
+      "borromeanSignature": 1,
+      "passed": true
+    },
+    {
+      "id": "qou-rbdz-h3-delta-baryon-and-quaternionic-shift",
+      "bean": "qou-rbdz",
+      "description": "H_3(q) Wedderburn sum 1^2+2^2+1^2=6, content shift c_(3)-c_(2,1)=3, spin multiplicity shift 4-2=2 (dim_R H = 4)",
+      "wedderburnDimSum": 6,
+      "contentSym": 3,
+      "contentStd": 0,
+      "contentAnti": -3,
+      "contentShift": 3,
+      "deltaMultiplicity": 4,
+      "nucleonMultiplicity": 2,
+      "multiplicityShift": 2,
+      "qCasimirGapAtQ0": "-0.009606310553507996390774063173695263974072",
+      "passed": true
+    }
+  ]
+}
