@@ -1,0 +1,78 @@
+{
+  "allAssertionsPassed": true,
+  "allPassed": true,
+  "beanIds": [
+    "qou-y98b",
+    "qou-ypq6",
+    "qou-yrt4",
+    "qou-yzl8",
+    "qou-z8x9"
+  ],
+  "invariants": {
+    "qou_y98b_anchor_refill_arrival_partition": {
+      "declaredStaleCount": 59,
+      "deprecatedBookkeepingGap": 388,
+      "liveAuditMissingCount": 1678,
+      "noProducerCount": 55,
+      "notBuilderCount": 365,
+      "parallelogramLhs80dps": "335.16663446425655257078574564870580455407559363185484126691216940257254290639358",
+      "parallelogramRhs80dps": "335.16663446425655257078574564870580455407559363185484126691216940257254290639358",
+      "rawMissingCount": 2066,
+      "residualAbs80dps": "0.0",
+      "undeclaredPinCount": 1199
+    },
+    "qou_ypq6_unified_iterative_table_orphan_audit": {
+      "numericTableBlocks": 1,
+      "partitionCutoffMax": 11,
+      "proseOnlyCitingBlocks": 8,
+      "residualAbs80dps": "5.3976053469340278908664699142502497319475002277726758656398146688553698769765169e-79",
+      "tabulatedIsotopeRows": 7,
+      "totalCitingBlocks": 9,
+      "trinomialSquareLhs80dps": "271.06693684961366406781647648751123437379972317070455460972851354726599228779041",
+      "trinomialSquareRhs80dps": "271.06693684961366406781647648751123437379972317070455460972851354726599228779041"
+    },
+    "qou_yrt4_environment_version_census": {
+      "noEnvBlockWitnesses": 1176,
+      "polarizationLhs80dps": "379.45653724174714307647993633058784605277563982350829316559688639725467403795005",
+      "polarizationRhs80dps": "379.45653724174714307647993633058784605277563982350829316559688639725467403795005",
+      "residualAbs80dps": "5.3976053469340278908664699142502497319475002277726758656398146688553698769765169e-79",
+      "totalMeasuredWitnesses": 3065,
+      "version000Witnesses": 2,
+      "version130Witnesses": 1184,
+      "version141Witnesses": 703
+    },
+    "qou_yzl8_noncommutative_tactic_site_audit": {
+      "cubicFactorizationLhs80dps": "247.04195397080200982632179632426299510945845999858641021964624781981988437954662",
+      "cubicFactorizationRhs80dps": "247.04195397080200982632179632426299510945845999858641021964624781981988437954662",
+      "forwardProductSites": 3,
+      "hiddenCascadedErrors": 5,
+      "residualAbs80dps": "2.6988026734670139454332349571251248659737501138863379328199073344276849384882585e-79",
+      "reverseProductSites": 3,
+      "surfacedPerBuildErrors": 1,
+      "totalFailureSites": 6
+    },
+    "qou_z8x9_script_sweeper_root_discrepancy": {
+      "auditedProducersInPlatformRoot": 0,
+      "hashFreshSidecars": 708,
+      "hashStaleSidecars": 1086,
+      "missingPathSidecars": 4,
+      "residualAbs80dps": "0.0",
+      "sweptDirectories": 18,
+      "totalSidecars": 1798,
+      "twoSquareCompositionLhs80dps": "3622.8734403460469534704773168146654418376633732385246149466368120121130225505401",
+      "twoSquareCompositionRhs80dps": "3622.8734403460469534704773168146654418376633732385246149466368120121130225505401"
+    }
+  },
+  "leanModule": "QOU.Foundations.AnchorRefillArrivalPartitionUnifiedIterativeTableOrphanAuditEnvironmentVersionCensusNoncommutativeTacticSiteAuditScriptSweeperRootDiscrepancy",
+  "parameters": {
+    "phi_inv_80dps": "0.61803398874989484820458683436563811772030917980576286213544862270526046281890245",
+    "q0_80dps": "0.47567938488603014898510765511005414430281415477659621149525635187082778421987066"
+  },
+  "precisionDps": 80,
+  "probeId": "anchor_refill_arrival_partition_unified_iterative_table_orphan_audit_environment_version_census_noncommutative_tactic_site_audit_script_sweeper_root_discrepancy_probe",
+  "schemaVersion": "1.0.0",
+  "scriptCommitSha": "15379e53d1b9bac713c00fbaf43892298d9b9d02",
+  "scriptHash": "bb01f014870e55a2a6bc99543595bc2bb3a7547a564788080acc73044e8f088b",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/anchor_refill_arrival_partition_unified_iterative_table_orphan_audit_environment_version_census_noncommutative_tactic_site_audit_script_sweeper_root_discrepancy_probe.py",
+  "scriptSha256": "bb01f014870e55a2a6bc99543595bc2bb3a7547a564788080acc73044e8f088b"
+}
