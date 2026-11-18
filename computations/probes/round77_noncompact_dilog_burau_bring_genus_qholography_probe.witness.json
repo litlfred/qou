@@ -1,0 +1,52 @@
+{
+  "probe": "round77_noncompact_dilog_burau_bring_genus_qholography_probe",
+  "beans": [
+    "qou-1buz",
+    "qou-1rgm",
+    "qou-1vau",
+    "qou-20d3",
+    "qou-20eh"
+  ],
+  "scriptPath": "computations/probes/round77_noncompact_dilog_burau_bring_genus_qholography_probe.py",
+  "scriptCommitSha": "305831a48c85455da5a7bd63e5269fd0c4feabb1",
+  "scriptHash": "b72e45024220f709436c7bbc9486461b79ca7bcc382d96101e058b56ebf30432",
+  "scriptSha256": "b72e45024220f709436c7bbc9486461b79ca7bcc382d96101e058b56ebf30432",
+  "mpmathDps": 80,
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-1buz",
+      "citation": "faddeev1994",
+      "description": "Modular-double b <-> b^{-1} symmetry of noncompact Phi_b background charge",
+      "halfSumGolden": "1.11803398874989484820458683436563811772",
+      "passed": true
+    },
+    {
+      "bean": "qou-1rgm",
+      "citation": "squier1984",
+      "description": "Squier invariant Hermitian form on reduced Burau representation",
+      "squierDiagonalAtPiOver3": "1.732050807568877293527446341505872366943",
+      "passed": true
+    },
+    {
+      "bean": "qou-1vau",
+      "citation": "kattan2024",
+      "description": "Bring {5,4} regular map V=30, E=60, F=24 giving chi = -6 and Gauss-Bonnet area 12*pi",
+      "bringRegularMapChi": -6,
+      "bringHyperbolicArea": "37.69911184307751886155172059935403461037",
+      "passed": true
+    },
+    {
+      "bean": "qou-20d3",
+      "citation": "sniady2006asymptotics",
+      "description": "Young-diagram polynomial observable genus-filtration degree additivity",
+      "passed": true
+    },
+    {
+      "bean": "qou-20eh",
+      "citation": "belaey2025",
+      "description": "q-holographic screen area-deformation functional additivity",
+      "passed": true
+    }
+  ]
+}
