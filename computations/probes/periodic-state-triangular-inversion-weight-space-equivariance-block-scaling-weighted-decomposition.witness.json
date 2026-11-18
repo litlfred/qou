@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "periodic_state_triangular_inversion_weight_space_equivariance_block_scaling_weighted_decomposition_probe",
+  "beans": [
+    "qou-gd90",
+    "qou-gzsp",
+    "qou-h56b",
+    "qou-hah4",
+    "qou-luq7"
+  ],
+  "leanModule": "QOU.Foundations.PeriodicStateTriangularInversionWeightSpaceEquivarianceBlockScalingWeightedDecomposition",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/periodic_state_triangular_inversion_weight_space_equivariance_block_scaling_weighted_decomposition_probe.py",
+  "scriptHash": "0a79a20314ed167467fce31136d40aeaf330204cb85b728199138a30d69455e2",
+  "scriptSha256": "0a79a20314ed167467fce31136d40aeaf330204cb85b728199138a30d69455e2",
+  "scriptCommitSha": "90a852e5501c98f68c32c2d227ae5dc2719d5bb6",
+  "generatedAt": "2026-11-18T08:32:20.233725+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-gd90",
+      "theorem": "triangular_weight_inversion_and_two_level_sum",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-gzsp",
+      "theorem": "unipotentIntertwiner_group_and_trace_conj",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-h56b",
+      "theorem": "pinnedTrace3_uniform_three_strand_identities",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-hah4",
+      "theorem": "fullRankDim_partition_sums_and_rankOne_deficits",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-luq7",
+      "theorem": "weightedCharSum3_derived_and_double_weight_defect",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
