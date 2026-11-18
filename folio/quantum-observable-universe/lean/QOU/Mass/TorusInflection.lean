@@ -111,4 +111,9 @@ theorem inflection_params_injective (q : ℕ) :
     linarith
   exact Fin.ext (by exact_mod_cast h2)
 
+/-- Additive residual form of `cos_q_mul_inflection`: `Real.cos ((q : ℝ) * ((2 * k + 1) * Real.pi / q)) + 1 = 0`. -/
+theorem cos_q_mul_inflection_add_one_eq_zero (q : ℕ) (hq : 0 < q) (k : ℕ) :
+    Real.cos ((q : ℝ) * ((2 * k + 1) * Real.pi / q)) + 1 = 0 := by
+  rw [cos_q_mul_inflection q hq k, neg_add_cancel]
+
 end QOU.Mass.TorusInflection

@@ -107,4 +107,9 @@ theorem rescaled_pair (μ : ℂ) (q : ℝ) (hq : q ≠ 0) (c : ℂ) (hc : c ≠ 
   have hq2 : (q : ℂ) ^ 2 ≠ 0 := pow_ne_zero 2 hqC
   field_simp
 
+/-- Vanishing difference form of `norm_exp_two_pi_I_mul`. -/
+theorem norm_exp_two_pi_I_mul_sub_eq_zero (μ : ℂ) :
+    ‖Complex.exp (2 * π * I * μ)‖ - Real.exp (-(2 * π * μ.im)) = 0 := by
+  rw [norm_exp_two_pi_I_mul μ, sub_self]
+
 end QOU.Mass.TwistedPeriodEigenvalueRatio

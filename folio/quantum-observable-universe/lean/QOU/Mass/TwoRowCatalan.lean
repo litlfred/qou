@@ -68,4 +68,9 @@ theorem qint_ne_zero {K : Type*} [Field K] {q : K} (hq : q ≠ 0) (hq2 : q ^ 2 �
   simp only [pow_one] at hden
   exact div_ne_zero (qint_num_ne_zero hq hm h2m) hden
 
+/-- Vanishing difference form of `twoRow_sum_sq_eq_catalan`. -/
+theorem twoRow_sum_sq_sub_catalan_eq_zero (n : ℕ) :
+    (∑ k ∈ Finset.range (n / 2 + 1), (f n k) ^ 2) - (catalan n : ℤ) = 0 := by
+  rw [twoRow_sum_sq_eq_catalan n, sub_self]
+
 end QOU.Mass.TwoRowCatalan

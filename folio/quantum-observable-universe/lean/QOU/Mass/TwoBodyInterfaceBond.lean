@@ -156,4 +156,10 @@ theorem addSeparable_of_traceFactorisation (E₀ : ℝ) (tL0 tR0 tL tR : N → �
     field_simp [(hL a).ne', (hR b).ne']
   rw [e, Real.log_mul (div_pos (h0L a) (hL a)).ne' (div_pos (h0R b) (hR b)).ne', mul_add]
 
+omit [LinearOrder α] [IsOrderedAddMonoid α] in
+/-- Vanishing difference form of `cross_sum`: `(f p n + f n p) - (f p p + f n n) = 0`. -/
+theorem cross_sum_sub_eq_zero (f : N → N → α) (p n : N) (h : AddSeparable f) :
+    (f p n + f n p) - (f p p + f n n) = 0 := by
+  rw [cross_sum f p n h, sub_self]
+
 end QOU.Mass.TwoBodyInterfaceBond

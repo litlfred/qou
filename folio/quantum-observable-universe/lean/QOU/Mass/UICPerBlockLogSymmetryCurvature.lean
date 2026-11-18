@@ -90,4 +90,11 @@ theorem allPairs_additive_secondDiff_pos {bpp bpn bnn A Z : ℝ}
 #print axioms symmetryCurvature_pos
 #print axioms allPairs_additive_secondDiff_pos
 
+/-- Nonvanishing of the logarithmic curvature combination `(-Real.log bpp) + (-Real.log bnn) - 2 * (-Real.log bpn)`. -/
+theorem symmetryCurvature_ne_zero {bpp bpn bnn : ℝ}
+    (hpp : 0 < bpp) (hnn : 0 < bnn) (hne : bpp ≠ bnn)
+    (hmid : (bpp + bnn) / 2 ≤ bpn) :
+    (-Real.log bpp) + (-Real.log bnn) - 2 * (-Real.log bpn) ≠ 0 :=
+  ne_of_gt (symmetryCurvature_pos hpp hnn hne hmid)
+
 end QOU.Mass.UICPerBlockLogSymmetryCurvature
