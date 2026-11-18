@@ -1,0 +1,84 @@
+{
+  "probe": "compmin_contentsq_crossed_crossingbar_cyclocl3_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/compmin_contentsq_crossed_crossingbar_cyclocl3_probe.py",
+  "scriptCommitSha": "5672d6fed05b08558b43a6cc54a8f0ae1a807eaa",
+  "scriptHash": "bcda50f62bb5b9c276460602dfc24276980d2846afca82741caf3ed76e91aed6",
+  "scriptSha256": "bcda50f62bb5b9c276460602dfc24276980d2846afca82741caf3ed76e91aed6",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "theorem": "length_sortPerm_mul_sub_add_eq_zero",
+      "bean": "qou-iqjk",
+      "passed": true,
+      "samples": [
+        {
+          "length_w": "0",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "length_w": "1",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "contentSqSum_ofRowLens_sub_eq_zero",
+      "bean": "qou-ircb",
+      "passed": true,
+      "samples": [
+        {
+          "partition": "[3, 2, 1]",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "partition": "[4, 2]",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "partition": "[2, 2, 2]",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "h2_curvature_trace_fst_sub_eq_zero",
+      "bean": "qou-j9yk",
+      "passed": true,
+      "residual": "0.0"
+    },
+    {
+      "theorem": "eCross_bar_add_eq_zero",
+      "bean": "qou-jjge",
+      "passed": true,
+      "samples": [
+        {
+          "q": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "q": "7/4",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "q": "11/6",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "orbit_sum_at_five_add_eq_zero",
+      "bean": "qou-jtge",
+      "passed": true,
+      "residual": "0.0"
+    }
+  ]
+}
