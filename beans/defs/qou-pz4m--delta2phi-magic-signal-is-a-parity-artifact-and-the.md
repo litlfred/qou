@@ -1,7 +1,7 @@
 ---
 # qou-pz4m
 title: delta2-Phi magic signal is a parity artifact, and the K=10 table has no producer
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

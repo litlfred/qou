@@ -1,7 +1,7 @@
 ---
 # qou-r4w5
 title: 'hadron_knot_table: the cost is brute-force SYT enumeration in hecke_core_legacy._count_syts_by_12_relation, and chi_lambda(sigma_1) has a closed form'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

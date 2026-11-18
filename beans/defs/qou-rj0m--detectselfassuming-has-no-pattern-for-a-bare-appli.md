@@ -1,7 +1,7 @@
 ---
 # qou-rj0m
 title: detectSelfAssuming has no pattern for a bare applied field projection (+27 CRITICAL)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T21:07:51Z

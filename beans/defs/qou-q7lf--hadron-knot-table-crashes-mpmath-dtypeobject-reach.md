@@ -1,7 +1,7 @@
 ---
 # qou-q7lf
 title: 'hadron_knot_table crashes: mpmath dtype=object reaches scipy.sparse (qou-5qwb class)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
