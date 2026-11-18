@@ -1599,6 +1599,7 @@ const ORDER: Array<FileSlot | Reference> = [
   // separately. The 5 baryon-product-from-alt.lean Ref lines need to be
   // re-keyed to `fulton-harris1991` in a follow-up cleanup.
   { id: "fulton-harris1991" },
+  { id: "farkas-kra1992" },
 
   { id: "wald1984" },
 

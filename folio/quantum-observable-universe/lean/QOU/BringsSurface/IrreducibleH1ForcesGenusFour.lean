@@ -15,12 +15,14 @@ If the action extends to `S₅`, then `g = 4`, and the curve is Bring's.
 It proves the **arithmetic step only**. Three classical inputs are not in Mathlib, so they
 enter as explicit hypotheses, never as axioms or `sorry`:
 
-* **Riemann–Hurwitz.** A group of order `n` acting with quotient genus `h` and branch
+* **Riemann–Hurwitz.** Proved in cellular form, from orbit–stabilizer, in
+  `QOU.BringsSurface.RiemannHurwitzCellular`, which also derives `RH` below from it.
+  A group of order `n` acting with quotient genus `h` and branch
   orders `mᵢ` gives `2g − 2 = n(2h − 2) + Σᵢ (n − n/mᵢ)`. It is carried as `RH n g h ts`,
   where `ts` lists the integers `n − n/mᵢ`. The branch orders are element orders of the
   group: `{2,3,5}` for `A₅`, giving `ts ⊆ {30,40,48}`, and `{2,3,4,5,6}` for `S₅`,
   giving `ts ⊆ {60,80,90,96,100}`.
-  Classical (Farkas–Kra, *Riemann Surfaces*, §V.1); no bibliography entry is held yet.
+  Ref: [farkas-kra1992] Farkas–Kra, *Riemann Surfaces*, 2nd ed., §V.1.
 * **Irreducible dimensions of `A₅`** are `1, 3, 3, 4, 5`. This enters as `hdim`.
   Ref: [fulton-harris1991] Fulton–Harris, *Representation Theory*, §5.1.
 * **`g = dim W`** follows from `H¹ ⊗ ℂ = H^{1,0} ⊕ H^{0,1}` of equal dimension `g`.
@@ -43,11 +45,12 @@ namespace QOU.BringsSurface.IrreducibleH1ForcesGenusFour
 def RH (n g h : Nat) (ts : List Nat) : Prop :=
   2 * g + 2 * n = 2 * n * h + 2 + ts.sum
 
-/-- Branch contributions `n − n/m` of `A₅` (`n = 60`, `m ∈ {2,3,5}`). -/
-def A5Branch (t : Nat) : Prop := t = 30 ∨ t = 40 ∨ t = 48
+/-- Branch contributions `n − n/m` of `A₅` (`n = 60`, `m ∈ {1,2,3,5}`; `m = 1` is an
+unbranched point and contributes `0`). -/
+def A5Branch (t : Nat) : Prop := t = 0 ∨ t = 30 ∨ t = 40 ∨ t = 48
 
-/-- Branch contributions `n − n/m` of `S₅` (`n = 120`, `m ∈ {2,3,4,5,6}`). -/
-def S5Branch (t : Nat) : Prop := t = 60 ∨ t = 80 ∨ t = 90 ∨ t = 96 ∨ t = 100
+/-- Branch contributions `n − n/m` of `S₅` (`n = 120`, `m ∈ {1,2,3,4,5,6}`). -/
+def S5Branch (t : Nat) : Prop := t = 0 ∨ t = 60 ∨ t = 80 ∨ t = 90 ∨ t = 96 ∨ t = 100
 
 theorem a5_sum (ts : List Nat) (h : ∀ t ∈ ts, A5Branch t) :
     ∃ a b c : Nat, ts.sum = 30 * a + 40 * b + 48 * c := by
@@ -56,7 +59,8 @@ theorem a5_sum (ts : List Nat) (h : ∀ t ∈ ts, A5Branch t) :
   | cons x xs ih =>
     obtain ⟨a, b, c, hs⟩ := ih (fun t ht => h t (by simp [ht]))
     have hx : A5Branch x := h x (by simp)
-    rcases hx with rfl | rfl | rfl
+    rcases hx with rfl | rfl | rfl | rfl
+    · exact ⟨a, b, c, by simp [List.sum_cons, hs]⟩
     · exact ⟨a + 1, b, c, by simp [List.sum_cons, hs]; omega⟩
     · exact ⟨a, b + 1, c, by simp [List.sum_cons, hs]; omega⟩
     · exact ⟨a, b, c + 1, by simp [List.sum_cons, hs]; omega⟩
@@ -68,7 +72,8 @@ theorem s5_sum (ts : List Nat) (h : ∀ t ∈ ts, S5Branch t) :
   | cons x xs ih =>
     obtain ⟨a, b, c, d, e, hs⟩ := ih (fun t ht => h t (by simp [ht]))
     have hx : S5Branch x := h x (by simp)
-    rcases hx with rfl | rfl | rfl | rfl | rfl
+    rcases hx with rfl | rfl | rfl | rfl | rfl | rfl
+    · exact ⟨a, b, c, d, e, by simp [List.sum_cons, hs]⟩
     · exact ⟨a + 1, b, c, d, e, by simp [List.sum_cons, hs]; omega⟩
     · exact ⟨a, b + 1, c, d, e, by simp [List.sum_cons, hs]; omega⟩
     · exact ⟨a, b, c + 1, d, e, by simp [List.sum_cons, hs]; omega⟩

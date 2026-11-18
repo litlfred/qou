@@ -231,3 +231,28 @@ irreducible dimensions of `A_5` (hypothesis `hdim`) give `g ∈ {4,5}`
 `genus_four_attained` checks that the hypotheses hold for Bring's signatures, so the
 conclusion is not vacuous. Riemann–Hurwitz and the `A_5` character table are not in
 Mathlib and enter as hypotheses, not axioms. G2 and G3 are untouched.
+
+### Lean, Riemann–Hurwitz infrastructure (2026-11-18, later)
+
+`QOU/BringsSurface/RiemannHurwitzCellular.lean`, sorry-free, on Mathlib (lean-direct
+against the restored `lake-cache/qou-v4-24-0` oleans, `-DautoImplicit=false`, exit 0;
+`#print axioms`: `propext`, `Classical.choice`, `Quot.sound`).
+
+- `riemann_hurwitz_cellular`: a finite group acting on a finite cell structure, freely
+  on edges and faces, satisfies
+  `χ(X) = |G|·χ(X/G) − Σ_{vertex orbits} (|G| − |G|/|Stab|)`. The proof is
+  orbit–stabilizer (`MulAction.card_eq_sum_card_group_div_card_stabilizer`).
+- `rh_of_cellular`: with `χ = 2 − 2g` this **proves** the predicate `RH` that the arithmetic
+  file used to assume.
+- `genus_eq_four_of_cellular`: the capstone. `A₅` and `S₅` acting through such cell
+  structures, with cyclic point stabilisers and `g ∈ {1,3,4,5}` from (H_W), give `g = 4`.
+
+Still taken as given (topology and representation theory Mathlib lacks): existence of a
+`G`-equivariant cell structure on a compact Riemann surface with `χ = 2 − 2g`; point
+stabilisers cyclic of element order; the irreducible dimensions of `A₅`. Non-vacuity of the
+capstone at the level of cell structures is not shown; `genus_four_attained` shows it at the
+level of `RH`. Gaps G2 and G3 unchanged.
+
+`farkas-kra1992` added to `folio/references/` and `references.ts`. `references.bib` was
+appended by hand in the generator's style, because `check-references-bib.ts` needs the
+folio-assistant pipeline, which is not installed here. Run it once the pipeline is back.
