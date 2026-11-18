@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "sandwich_trace_cyclicity_vector_braiding_reduced_word_separation_ribbon_monodromy_probe",
+  "beans": [
+    "qou-sx5r",
+    "qou-slck",
+    "qou-dgsw",
+    "qou-jfr8",
+    "qou-zoyv"
+  ],
+  "leanModule": "QOU.Foundations.SandwichTraceCyclicityVectorBraidingReducedWordSeparationRibbonMonodromy",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/sandwich_trace_cyclicity_vector_braiding_reduced_word_separation_ribbon_monodromy_probe.py",
+  "scriptHash": "e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8",
+  "scriptSha256": "e347a9e84468088888c8978781442fc5eb1e2e281357cbff708b7491a3fcbcb8",
+  "scriptCommitSha": "c95261a9c444144dd0cc07d50ddaabb0b496a13f",
+  "generatedAt": "2026-11-18T07:45:11.018359+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-sx5r",
+      "theorem": "genFG_trace_cyclicity_and_zero / genG_sandwich_coset_reduction",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-slck",
+      "theorem": "vectorBraidingMix_trace_det_and_quadratic",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-dgsw",
+      "theorem": "reducedWordCombo3_coordinate_recovery",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-jfr8",
+      "theorem": "threeStrand_character_separation_and_degree_sum",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-zoyv",
+      "theorem": "ribbonMonodromyMix_trace_and_det",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
