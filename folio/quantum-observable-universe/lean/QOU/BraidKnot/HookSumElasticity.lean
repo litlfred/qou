@@ -303,4 +303,11 @@ theorem staircase_hookSum_eq_iff (k : ℕ) (ν : YoungDiagram) {L : ℕ}
     rw [hA, hB, add_zero] at h
     linarith
 
+/-- Subtracting the staircase hook sum from the hook sum of any equinumerous diagram yields a nonnegative difference (`qou-n7ue`). -/
+theorem staircase_hookSum_sub_nonneg (k : ℕ) (ν : YoungDiagram) {L : ℕ}
+    (hLν : ν.colLen 0 ≤ L) (hk : k ≤ L)
+    (hcard : ν.cells.card = (staircaseYD k).cells.card) :
+    0 ≤ (∑ c ∈ ν.cells, hookZ ν c) - ∑ c ∈ (staircaseYD k).cells, hookZ (staircaseYD k) c :=
+  sub_nonneg.mpr (staircase_hookSum_le k ν hLν hk hcard)
+
 end QOU.BraidKnot.HookSum

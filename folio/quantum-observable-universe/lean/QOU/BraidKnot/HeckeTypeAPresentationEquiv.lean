@@ -254,6 +254,11 @@ noncomputable def basisTwOfSn :
     Module.Basis (Equiv.Perm (Fin (n + 1))) K (IwahoriHeckeOfSn K q (n + 1)) :=
   (QOU.Hecke.TwBasis.basisTwOfField K q n).map (algEquiv K q n).toLinearEquiv.symm
 
+/-- Subtracting the factorial of the strand count from the transported algebra dimension cancels to zero (`qou-mfps`). -/
+theorem finrank_IwahoriHeckeOfSn_sub_eq_zero :
+    Module.finrank K (IwahoriHeckeOfSn K q (n + 1)) - Nat.factorial (n + 1) = 0 := by
+  rw [finrank_IwahoriHeckeOfSn K q n, Nat.sub_self]
+
 end FieldTransport
 
 end QOU.BraidKnot.Hecke

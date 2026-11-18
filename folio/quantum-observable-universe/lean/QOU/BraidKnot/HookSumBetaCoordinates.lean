@@ -399,4 +399,10 @@ theorem sum_hookZ_betaForm_of_hookMultiset (μ : YoungDiagram) {L : ℕ}
   rw [ha, Finset.sum_congr rfl hb] at key
   linarith [key, hc2]
 
+/-- Subtracting the size-and-padding formula from twice the beta-coordinate sum cancels to zero (`qou-mtx9`). -/
+theorem two_mul_sum_betaR_sub_eq_zero (μ : YoungDiagram) {L : ℕ} (hL : μ.colLen 0 ≤ L) :
+    2 * (∑ i ∈ range L, ((QOU.SchurWeyl.betaR L μ i : ℕ) : ℤ))
+      - (2 * (μ.cells.card : ℤ) + (L : ℤ) * ((L : ℤ) - 1)) = 0 := by
+  rw [two_mul_sum_betaR μ hL, sub_self]
+
 end QOU.BraidKnot.HookSum

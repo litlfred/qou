@@ -121,4 +121,10 @@ theorem eight_mul_card_mul_sum_hookZ_ge (μ : YoungDiagram) {L : ℕ} (hL : μ.c
     ring
   linarith [hcs, hmul]
 
+/-- Subtracting the Cauchy-Schwarz floor from eight times the frame-scaled hook sum yields a nonnegative excess (`qou-n4r9`). -/
+theorem eight_mul_card_mul_sum_hookZ_sub_nonneg (μ : YoungDiagram) {L : ℕ} (hL : μ.colLen 0 ≤ L) :
+    0 ≤ 8 * (L : ℤ) * (∑ c ∈ μ.cells, hookZ μ c)
+      - ((∑ i ∈ range L, hookDev μ L i) ^ 2 - (L : ℤ) * ∑ i ∈ range L, hookCentre L i ^ 2) :=
+  sub_nonneg.mpr (eight_mul_card_mul_sum_hookZ_ge μ hL)
+
 end QOU.BraidKnot.HookSum

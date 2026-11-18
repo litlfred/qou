@@ -230,6 +230,11 @@ theorem chiralityCount_collapse (Z N : R) :
     2 * (Z * (Z - 1)) - N * (N - 1) - 2 * Z ^ 2 = -2 * Z - N * (N - 1) := by
   ring
 
+/-- Subtracting the collapsed form from the all-pairs count cancels to zero (`qou-m8zb`). -/
+theorem chiralityCount_collapse_sub_eq_zero (Z N : R) :
+    (2 * (Z * (Z - 1)) - N * (N - 1) - 2 * Z ^ 2) - (-2 * Z - N * (N - 1)) = 0 := by
+  rw [chiralityCount_collapse Z N, sub_self]
+
 end ChiralityCount
 
 end QOU.BraidKnot
