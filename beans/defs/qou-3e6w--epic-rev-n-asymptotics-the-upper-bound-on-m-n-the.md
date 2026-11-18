@@ -1,13 +1,13 @@
 ---
 # qou-3e6w
 title: 'EPIC: REV_n asymptotics — the upper bound on M_n (the deuteron-wall q-Borel gate)'
-status: todo
+status: in-progress
 type: epic
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:01:20Z
-updated_at: 2026-10-10T07:01:20Z
+updated_at: 2026-11-18T07:54:48Z
 parent: qou-10v9
 blocking:
     - qou-v2om
@@ -87,3 +87,8 @@ it, splitting on an asserted banner rather than a line number, so the object und
 *the* committed one.  Every "refuted" is scoped (a)/(b) with the invariant named.
 
 **Do not close this epic, and do not close `qou-hok7`** — its subject is an open conjecture.
+
+## Round 84 Progress (PR #8393)
+- Branch: `feat/round84-colourdisc-fixedratio-comptrace-zeroslope-equidcap-43c1`
+- Commit 1 (code + probe): `02a557115ca6d2779725ccfdca969ee6ef80dff4`
+- Commit 2 (witness): `f21ac2e565e6a27158e92746366f1616c0d9fd98` (`scriptSha256 = 930736b7600cb1fb1ca87062021ff390088ea82549e2ac7bf6e2fad10cdf9749`)

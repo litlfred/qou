@@ -1,13 +1,13 @@
 ---
 # qou-o7c0
 title: 'A2: G1 (Xbot(s) <= Xblock(s)) is OPEN — and no enumeration can ever settle it'
-status: todo
+status: in-progress
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:49Z
-updated_at: 2026-10-10T07:03:49Z
+updated_at: 2026-11-18T07:54:48Z
 parent: qou-3e6w
 ---
 
@@ -77,3 +77,8 @@ machinery, pointed at the inequality instead of at the window.  Which is why thi
 **low priority**: A1 makes the arc not need it.
 
 **Do not close this bean, and do not record a capped table as a G1 verdict.**
+
+## Round 84 Progress (PR #8393)
+- Branch: `feat/round84-colourdisc-fixedratio-comptrace-zeroslope-equidcap-43c1`
+- Commit 1 (code + probe): `02a557115ca6d2779725ccfdca969ee6ef80dff4`
+- Commit 2 (witness): `f21ac2e565e6a27158e92746366f1616c0d9fd98` (`scriptSha256 = 930736b7600cb1fb1ca87062021ff390088ea82549e2ac7bf6e2fad10cdf9749`)

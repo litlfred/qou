@@ -1,11 +1,11 @@
 ---
 # qou-4cu3
 title: 'EPIC: the q-integer convention axis — Gaussian bracket vs classical (q^n-1)/(q-1), and qInt naming both'
-status: todo
+status: in-progress
 type: epic
 priority: normal
 created_at: 2026-10-10T07:55:43Z
-updated_at: 2026-10-10T07:56:24Z
+updated_at: 2026-11-18T07:54:48Z
 parent: qou-10v9
 ---
 
@@ -49,3 +49,8 @@ Keep the two apart: conflating them is the defect this epic exists to undo.
 children carry their own evidence, and `qou-gl58`'s "0 of 363 carry both" is the
 most load-bearing figure among them and is worth re-measuring before anyone
 plans work off it.
+
+## Round 84 Progress (PR #8393)
+- Branch: `feat/round84-colourdisc-fixedratio-comptrace-zeroslope-equidcap-43c1`
+- Commit 1 (code + probe): `02a557115ca6d2779725ccfdca969ee6ef80dff4`
+- Commit 2 (witness): `f21ac2e565e6a27158e92746366f1616c0d9fd98` (`scriptSha256 = 930736b7600cb1fb1ca87062021ff390088ea82549e2ac7bf6e2fad10cdf9749`)
