@@ -1,7 +1,7 @@
 ---
 # qou-m8s9
 title: Measure the real runtime of the 3 B-population producers that exceeded 300s
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

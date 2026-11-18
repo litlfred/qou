@@ -1,7 +1,7 @@
 ---
 # qou-kt8o
 title: The ck-dk registry JSON twin never absorbed the dc_3/dq 3.84e6 correction, and a green probe assertion still pins the stale 4.6e6
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:

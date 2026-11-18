@@ -1,7 +1,7 @@
 ---
 # qou-l1gv
 title: 'GAP: alpha* is 14.7% stale in the corpus and its determining producer cannot run'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

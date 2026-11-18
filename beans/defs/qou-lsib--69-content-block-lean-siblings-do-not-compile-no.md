@@ -1,7 +1,7 @@
 ---
 # qou-lsib
 title: 'Content-block Lean siblings: 34 unverified as of 2026-08-28, and nothing in CI builds them'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
