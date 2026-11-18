@@ -1,0 +1,48 @@
+{
+  "probe": "round69-devacuify-6qbv-b9cj",
+  "scriptPath": "computations/probes/round69_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "bcdf148ad3ef8ce5d5b1c640e65680b5b11b62b6",
+  "scriptHash": "973278ede8fc315ea6fa712cd9373843b86eb28dd5e399ab648b94d5a7e27156",
+  "scriptSha256": "973278ede8fc315ea6fa712cd9373843b86eb28dd5e399ab648b94d5a7e27156",
+  "timestamp": "2026-11-18T11:33:15.144599+00:00",
+  "dps": 80,
+  "mpmathDps": 80,
+  "allPassed": true,
+  "results": [
+    {
+      "bean": "qou-4ocd",
+      "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_one_odd_family.lean",
+      "allRunSumBounded": true,
+      "allLowerBound": true,
+      "nondivWitnessCount": 4,
+      "passed": true
+    },
+    {
+      "bean": "qcz8",
+      "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_general_word.lean",
+      "allContractiveP0Negative": true,
+      "minAbsP0": "1.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-hrom",
+      "file": "folio/quantum-observable-universe/lean/QOU/Information/MagnitudeTraceCommutator.lean",
+      "conjMulError": "2.108439588646104644869715e-81",
+      "traceDiff": "1.054219794323052322434857e-81",
+      "conjugateStateNormDiff": "4.4",
+      "passed": true
+    },
+    {
+      "bean": "qcz15",
+      "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_three_forms.lean",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-i5so",
+      "file": "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/collatz_block_descent.lean",
+      "allStepBoundsSatisfied": true,
+      "passed": true
+    }
+  ]
+}
