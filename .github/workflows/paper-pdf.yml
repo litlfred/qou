@@ -1,0 +1,71 @@
+# Paper PDF: build the paper with LaTeX and publish it to gh-pages on every
+# merge to main (owner, 2026-11-18: "1a"). The same command an agent runs by
+# hand when Actions billing blocks this workflow:
+#
+#     scripts/publish-paper-pdf.sh
+#
+# This is the one automatic trigger in this repository; the 2026-06-30
+# directive that made every other workflow manual-only (Actions billing) is
+# relaxed for this workflow alone, by the same owner decision. The paths filter
+# keeps it to merges that can change the PDF.
+name: Paper PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "folio/**"
+      - "references.bib"
+      - "scripts/build-paper-pdf.sh"
+      - "scripts/publish-paper-pdf.sh"
+      - ".folio-assistant-pin"
+      - ".github/workflows/paper-pdf.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-pdf
+  cancel-in-progress: false
+
+jobs:
+  pdf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+
+      # The package set measured to build the paper cleanly on Ubuntu 24.04
+      # (2026-11-18). cm-super is required: microtype aborts on page 1 without
+      # scalable fonts.
+      - name: Install TeX
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends \
+            latexmk texlive-latex-extra texlive-science texlive-fonts-recommended \
+            texlive-fonts-extra texlive-pictures texlive-bibtex-extra biber \
+            texlive-plain-generic texlive-lang-greek lmodern cm-super
+
+      - name: Platform checkout (at .folio-assistant-pin)
+        run: bash scripts/setup-folio-assistant.sh
+
+      - name: Build and publish
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          bash scripts/publish-paper-pdf.sh
+
+      - name: Upload the PDF and logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: paper-pdf-${{ github.sha }}
+          path: |
+            build/paper/main.pdf
+            build/paper/main.log
+            build/paper/latexmk.log
+            build/paper/content-build.log
+          if-no-files-found: warn
