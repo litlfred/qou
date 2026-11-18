@@ -1,7 +1,8 @@
 ---
 # qou-x0aa
 title: Cite [ramis-sauloy2006] at QOU/MathlibExt/QBorelKernel.lean — Thm 3.8/3.9 tie the level-δ q-Borel invariants to the alien derivations by theta multiplication
-status: todo
+status: in-progress
+pr: 8431
 type: task
 priority: normal
 tags:
@@ -9,7 +10,7 @@ tags:
     - qdiff-stokes
     - reorg-2026-10-04
 created_at: 2026-09-07T08:35:56Z
-updated_at: 2026-10-04T15:17:45Z
+updated_at: 2026-11-18T10:40:05Z
 parent: qou-1qhv
 ---
 
@@ -25,3 +26,9 @@ So the kernel file's object and the alien-derivation file's object are the same 
 What to do: add the `-- Ref:` line with the locators (§3.2, Thm 3.8, Thm 3.9) to QBorelKernel.lean and QBorelKernelLevel.lean.
 
 Caveat carried over from docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md: Ramis–Sauloy §2.3 "case of one level" assumes TWO integral slopes μ < ν with δ = ν − μ; C1 at ∞ is pure isoclinic (one slope), so these theorems constrain the kernel's meaning — they do not supply C1 Stokes data.
+
+
+## Implementation Progress (PR #8431)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/AnisotropicContentHelicityOhtsukiQBorelRound72.lean` (wired into `folio/quantum-observable-universe/lean/QOU.lean`).
+- Verified at 80-dps precision in `computations/probes/round72_anisotropic_content_helicity_ohtsuki_qborel_probe.py` with 2-commit witness `computations/probes/round72-anisotropic-content-helicity-ohtsuki-qborel.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8431 (`ready: 9f16804370f4cb20ca3c9ba012e7448a071f0f7c`).

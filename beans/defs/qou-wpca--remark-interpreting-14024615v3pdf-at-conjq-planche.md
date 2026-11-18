@@ -1,13 +1,14 @@
 ---
 # qou-wpca
 title: Remark interpreting 1402.4615v3.pdf at conj:q-plancherel-asymptotic-skeleton
-status: todo
+status: in-progress
+pr: 8431
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T16:13:10Z
-updated_at: 2026-10-04T15:23:33Z
+updated_at: 2026-11-18T10:40:05Z
 parent: qou-aqfj
 ---
 
@@ -30,3 +31,9 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Gaussian fluctuations of Young diagrams and structure constants of Jack characters
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [dolega-feray2014] as the citation key when you do it.
+
+
+## Implementation Progress (PR #8431)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/QBeta/AnisotropicContentHelicityOhtsukiQBorelRound72.lean` (wired into `folio/quantum-observable-universe/lean/QOU.lean`).
+- Verified at 80-dps precision in `computations/probes/round72_anisotropic_content_helicity_ohtsuki_qborel_probe.py` with 2-commit witness `computations/probes/round72-anisotropic-content-helicity-ohtsuki-qborel.witness.json`.
+- PR: https://github.com/litlfred/qou/pull/8431 (`ready: 9f16804370f4cb20ca3c9ba012e7448a071f0f7c`).
