@@ -1,13 +1,14 @@
 ---
 # qou-u33z
 title: Cross-check cspaper.pdf at computations/one_loop_torsion.py
-status: todo
+status: in-progress
+pr: 8404
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:22Z
-updated_at: 2026-10-04T15:18:28Z
+updated_at: 2026-11-18T15:18:28Z
 parent: qou-8hur
 ---
 
@@ -28,3 +29,5 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Combinatorics of triangulations and the Chern-Simons invariant for hyperbolic 3-manifolds
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [neumann-cspaper] as the citation key when you do it.
+
+In-progress in PR #8404 (`feat/qou-t8mi-tcgv-tiwv-u33z-u8cp-round68`, `QOU.QBeta.PoincareFalseThetaDilogPentagonRound68`, 80-dps probe `round68_poincare_false_theta_dilog_pentagon_probe.py`).

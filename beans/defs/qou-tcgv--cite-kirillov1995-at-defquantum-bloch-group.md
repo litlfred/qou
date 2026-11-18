@@ -1,13 +1,14 @@
 ---
 # qou-tcgv
 title: Cite [kirillov1995] at def:quantum-bloch-group
-status: todo
+status: in-progress
+pr: 8404
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:36:54Z
-updated_at: 2026-10-04T15:17:41Z
+updated_at: 2026-11-18T15:17:41Z
 parent: qou-1qhv
 ---
 
@@ -21,3 +22,5 @@ Source: `library/arxiv-hep-th-9408113v2/9408113v2.pdf` (`kirillov1995`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+In-progress in PR #8404 (`feat/qou-t8mi-tcgv-tiwv-u33z-u8cp-round68`, `QOU.QBeta.PoincareFalseThetaDilogPentagonRound68`, 80-dps probe `round68_poincare_false_theta_dilog_pentagon_probe.py`).
