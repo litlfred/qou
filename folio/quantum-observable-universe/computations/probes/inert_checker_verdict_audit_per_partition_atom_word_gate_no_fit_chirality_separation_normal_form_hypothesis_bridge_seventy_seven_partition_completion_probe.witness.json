@@ -1,0 +1,71 @@
+{
+  "allAssertionsPassed": true,
+  "beanIds": [
+    "qou-3t8p",
+    "qou-7gfc",
+    "qou-adhb",
+    "qou-atomic_nf_witness",
+    "qou-b0vf"
+  ],
+  "invariants": {
+    "qou_3t8p_inert_checker_verdict": {
+      "activeCheckers": 1,
+      "evaluatedBlocks": 0,
+      "inertCheckers": 2,
+      "naBlocks": 1037,
+      "proofObjectsBytes": 114311,
+      "quadraticBalanceLhs80dps": "11.003282373857699266044598573339524169661854416842795884556343210007111988561873",
+      "quadraticBalanceRhs80dps": "11.003282373857699266044598573339524169661854416842795884556343210007111988561873",
+      "residualAbs80dps": "1.6867516709168837158957718482032030412335938211789612080124420840173030865551615e-80",
+      "totalBlocks": 1037,
+      "totalCheckers": 3
+    },
+    "qou_7gfc_per_partition_atom_word": {
+      "atomWordLength": 6,
+      "residualAbs80dps": "5.3976053469340278908664699142502497319475002277726758656398146688553698769765169e-79",
+      "strandCount": 3,
+      "trinomialSquareLhs80dps": "460.70804254609933489008579370329592592545224439365678403514944586340565037174354",
+      "trinomialSquareRhs80dps": "460.70804254609933489008579370329592592545224439365678403514944586340565037174354"
+    },
+    "qou_adhb_no_fit_chirality_separation": {
+      "canonicalChiralityInputs": 2,
+      "fittedInCanonical": 0,
+      "fittedLiquidDropParams": 4,
+      "infeasibleSemidefiniteRank": 1051,
+      "polarizationLhs80dps": "50.555499505232464866491181296820562802214740852232977702950819249936282004634841",
+      "polarizationRhs80dps": "50.555499505232464866491181296820562802214740852232977702950819249936282004634841",
+      "residualAbs80dps": "0.0"
+    },
+    "qou_atomic_nf_witness_bridge": {
+      "cubicReductionLhs80dps": "22.556557270354860474248509611649352325753984920727982816745841369631979036185574",
+      "cubicReductionRhs80dps": "22.556557270354860474248509611649352325753984920727982816745841369631979036185574",
+      "intermediateBasisEvaluation": 189,
+      "normalFormEvaluation": 135,
+      "rawWordEvaluation": 243,
+      "residualAbs80dps": "3.3735033418337674317915436964064060824671876423579224160248841680346061731103231e-80",
+      "stepOneReduction": 54,
+      "stepTwoReduction": 54
+    },
+    "qou_b0vf_seventy_seven_partition_completion": {
+      "boxCount": 12,
+      "completedPartitions": 17,
+      "remainingPartitions": 60,
+      "residualAbs80dps": "0.0",
+      "totalPartitions": 77,
+      "twoSquareCompositionLhs80dps": "647680.07131660859460967024788959878036419619735997502891113926378383340139955423",
+      "twoSquareCompositionRhs80dps": "647680.07131660859460967024788959878036419619735997502891113926378383340139955423"
+    }
+  },
+  "leanModule": "QOU.Foundations.InertCheckerVerdictAuditPerPartitionAtomWordGateNoFitChiralitySeparationNormalFormHypothesisBridgeSeventySevenPartitionCompletion",
+  "parameters": {
+    "phi_inv_80dps": "0.61803398874989484820458683436563811772030917980576286213544862270526046281890245",
+    "q0_80dps": "0.47567938488603014898510765511005414430281415477659621149525635187082778421987066"
+  },
+  "precisionDps": 80,
+  "probeId": "inert_checker_verdict_audit_per_partition_atom_word_gate_no_fit_chirality_separation_normal_form_hypothesis_bridge_seventy_seven_partition_completion_probe",
+  "schemaVersion": "1.0.0",
+  "scriptCommitSha": "b25d0e225db433dedb54ef57a788c05ae89960c1",
+  "scriptHash": "8abb07ac1693146e31fad47a5cfd80a80064de9f2fffcba92912d9ae413ecf74",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/inert_checker_verdict_audit_per_partition_atom_word_gate_no_fit_chirality_separation_normal_form_hypothesis_bridge_seventy_seven_partition_completion_probe.py",
+  "scriptSha256": "8abb07ac1693146e31fad47a5cfd80a80064de9f2fffcba92912d9ae413ecf74"
+}
