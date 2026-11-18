@@ -1,0 +1,66 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-906a",
+    "qou-91qi",
+    "qou-9g14",
+    "qou-9gej",
+    "qou-9mrz"
+  ],
+  "checks": {
+    "qou_906a_seven_site_venue": {
+      "aggregateDiscrepancy": 0,
+      "beanId": "qou-906a",
+      "passed": true,
+      "reconciledVenueChecksum": 200048157,
+      "reference": "diaconis-ram2000",
+      "scanEigenvalueResidual": "0.0",
+      "totalUnifiedVenueSites": 8
+    },
+    "qou_91qi_level_four_exception": {
+      "beanId": "qou-91qi",
+      "d3GoldenRatioResidual": "2.108439588646104644869715e-81",
+      "d4Sqrt3Residual": "0.0",
+      "d5Value": "1.801937735804838252472204639014890102332",
+      "k3Universal": true,
+      "k4Universal": false,
+      "k5Universal": true,
+      "passed": true,
+      "reference": "freedman2003"
+    },
+    "qou_9g14_unipotent_fibre_transpose": {
+      "beanId": "qou-9g14",
+      "partition32Direct": 2,
+      "partition32Transpose": 4,
+      "passed": true,
+      "reference": "arxiv-1909.06744v1",
+      "selfConjugate311Direct": 3,
+      "selfConjugate311Transpose": 3
+    },
+    "qou_9gej_rational_vs_irrational": {
+      "beanId": "qou-9gej",
+      "irrationalSubstrateGap": "1.58054318815352021643867517359776055475",
+      "passed": true,
+      "rationalPointResidual": "3.226003955640559818055314e-80",
+      "reference": "garoufalidis-kashaev2015"
+    },
+    "qou_9mrz_pair_partition_clt": {
+      "beanId": "qou-9mrz",
+      "m4FormulaResidual": "0.0",
+      "m4UnitNestingResidual": "0.0",
+      "m4Value": "2.14",
+      "p4Count": 3,
+      "p6Count": 15,
+      "passed": true,
+      "reference": "blitvic2012-clt",
+      "separatedCltBibKeyCount": 2
+    }
+  },
+  "dps": 80,
+  "mpmathDps": 80,
+  "round": 83,
+  "scriptCommitSha": "f28c479496ffbdacd4771b22f16b4f0a02af34b5",
+  "scriptHash": "bb7c48fc09d000bf80d245a32dab2bcddeb9747b99ca2dc8726845e1f7e6384a",
+  "scriptPath": "computations/probes/round83_venue_levelfour_unipotent_rational_pairpartition_probe.py",
+  "scriptSha256": "bb7c48fc09d000bf80d245a32dab2bcddeb9747b99ca2dc8726845e1f7e6384a"
+}
