@@ -1,0 +1,44 @@
+{
+  "probe": "computations/probes/irrcubic_resolvent3_dimsum5_tau1_satdiff_probe.py",
+  "scriptCommitSha": "b5de63778dc1a1dd5f06089955f845fb94bba20f",
+  "scriptHash": "d48339de07d62c85bc2a014c14ff39ca61b8c6091d44dbc01d9abdb15245ae18",
+  "scriptSha256": "d48339de07d62c85bc2a014c14ff39ca61b8c6091d44dbc01d9abdb15245ae18",
+  "executedAt": "2026-11-18T08:30:17Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "no_root_of_irreducible_cubic_degree_le_one",
+      "bean": "qou-3f7a",
+      "minAbsCubicEval": "0.046875",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "colourResolvent_cyclic_three_step",
+      "bean": "qou-gl58",
+      "maxAbsError": "2.38542708936613662277382e-80",
+      "passed": true
+    },
+    {
+      "id": "dimSum_five_sub_two_mul_four",
+      "bean": "qou-u5z0",
+      "dimSum4": "10",
+      "dimSum5": "26",
+      "maxAbsError": "0",
+      "passed": true
+    },
+    {
+      "id": "tau_kernel_at_one",
+      "bean": "qou-vnqx",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "diff_eq_zero_of_equal_saturated",
+      "bean": "qou-zzwm",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
