@@ -1,0 +1,1 @@
+1. For s ∈(0, 1), p ∈[1, ∞) the seminorms  f W1+s,p := Z R/Z Z 1/2 −1/2 | f ′(u + w) −f ′(u)|p |w|1+sp dw du !1/p , (0.11) f W1+s,p := Z R/Z Z 1/4 −1/4 | f(u + w) −2 f(u) + f(u −w)|p |w|1+(1+s)p dw du !1/p (0.12) are equivalent on W1,p.

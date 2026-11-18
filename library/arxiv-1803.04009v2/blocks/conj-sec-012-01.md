@@ -1,0 +1,1 @@
+the 3d index is topological invariant (A.22) Diﬀerent Dehn surgery representation of a 3-manifold gives diﬀerent expressions for the 3d index and the conjecture says that they are all equivalent. Let us give some non-trivial evidence for the conjecture

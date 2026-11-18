@@ -1,0 +1,1 @@
+Informally, studying the category Rep0(St; F) is a way to simul- taneously study the partition algebras FPn(t) for all n ≥0 (see Deﬁnition 2.13). In this line of thinking, studying Rep(St; F) is a way to simultaneously study all ﬁnitely generated projective right FPn(t)-modules for all n ≥0.

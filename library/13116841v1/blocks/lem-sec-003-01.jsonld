@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/13116841v1/blocks/lem-sec-003-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 4,
+  "pageEnd": 7,
+  "text": "lem-sec-003-01.md",
+  "derivedFrom": "library/13116841v1/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/13116841v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "I",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-003-a-definition-of-uqsu2.md (p. 4-7)",
+    "claim_id": "13116841v1#lemma:I",
+    "lean_status": "unformalized"
+  }
+}

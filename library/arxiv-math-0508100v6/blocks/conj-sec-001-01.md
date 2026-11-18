@@ -1,0 +1,1 @@
+\begin{theorem} \lbl{thm.11} {\rm (Proof in Section \ref{sub.complex})} For every knot $K$ there exists an open neighborhood $U_K$ of $0 \in \BC$ such that in $U_K$, we have \begin{equation*} \slim_{n\to\infty} f_{K,n}(z)=\frac{1}{\D_K(e^{z})}. \end{equation*} \end{theorem}

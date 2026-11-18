@@ -1,1 +1,0 @@
-A special case of the other result of this section (Theorem 4.1) has been already proved by Aubrun [Aub12, Proposition 9.1], and one should be able to prove Theorem 4.1 itself based on the same method, but we give another proof for completeness.

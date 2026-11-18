@@ -1,0 +1,1 @@
+The conditions on tslm, tsl, gsl and hsl in (1), (3)(a), (3)(b), (4)(a) and (4)(b) of the algorithm are of the form c1k −c2 ln(k) > c3 for all k ≥tslm, etc., with positive c1 and c2. Since the left-hand side is increasing for k > c2/c1 it is very easy to ﬁnd the minimum values for tslm, etc.

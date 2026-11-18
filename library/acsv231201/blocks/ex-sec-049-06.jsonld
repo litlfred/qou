@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/acsv231201/blocks/ex-sec-049-06",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "title": "bi-colored supertrees",
+  "pageStart": 280,
+  "pageEnd": 297,
+  "text": "ex-sec-049-06.md",
+  "derivedFrom": "library/acsv231201/sections/sec-049",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "9.32",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [FS09, Exam- ple VI.10] in sections/sec-049-smooth-bivariate-functions.md",
+    "claim_id": "acsv231201#example:9.32"
+  }
+}

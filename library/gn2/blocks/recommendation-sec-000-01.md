@@ -1,1 +1,0 @@
-These formulas are necessary for computing the action of the Kauﬀman bracket skein algebra of the boundary torus, and ultimately they should lead to computation of the noncommutative A-ideal of a twist knot.

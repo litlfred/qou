@@ -1,1 +1,0 @@
-It should be noted that we require the Murnaghan--Nakayama rule in §[\[subsec:omega_proof\]](#subsec:omega_proof){reference-type="ref" reference="subsec:omega_proof"} below, and so our work does not provide a new proof of this result.

@@ -1,1 +1,0 @@
-Note that when $K$ is a two-component link, we shall always choose the two cusp neighborhoods of $K$ to have equal volume, following the same principle as in Section [\[sec:4ps\]](#sec:4ps){reference-type="ref" reference="sec:4ps"}.

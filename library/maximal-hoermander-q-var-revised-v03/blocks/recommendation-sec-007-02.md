@@ -1,1 +1,0 @@
-In this section, we shall prove an analogue of (5.1) and (5.2) for semigroup generators A = A0 ⊗IdY such that the semigroup of exp(−tA0) is positive and contractive on Lp, and such that A has a Hörmander calculus on Lp(Y ).

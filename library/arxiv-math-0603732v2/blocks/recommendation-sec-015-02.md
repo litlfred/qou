@@ -1,1 +1,0 @@
-We shall denote by $N(A)$ the multiplicative subsemigroup of $\mathop{\mathrm{Aut}}_{k{\text{-}}\mathrm{alg}}(A)$ consisting of those automorphisms $\sigma$ such that $A$ contains a $\sigma$-normal element which is not a zero divisor.

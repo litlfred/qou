@@ -1,1 +1,0 @@
-Thus we should expect T, to split into two regular segments, one of them gathering the terms of degrees from (sp+k—1)(p—1) to (sp+k—1)(p—1)+2k—2 and the second gathering terms of degrees from (sp+k—1)(p—1)+2k to (sp+k+1)(p—1).

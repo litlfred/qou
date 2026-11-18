@@ -1,0 +1,1 @@
+Let Kop be a full triangulated subcategory of K(A, M)op, and deﬁne Sop := Kop ∩S(A, M)op, the set of quasi-isomorphisms in Kop. Then: (1) Sop is a denominator set of cohomological origin in Kop. (2) The localized category Dop := (Kop)Sop has a unique triangulated structure s.t. the localization functor Qop : Kop →Dop is a triangulated functor.

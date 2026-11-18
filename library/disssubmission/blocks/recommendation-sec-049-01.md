@@ -1,1 +1,0 @@
-H N a) AN arbitrary b) PSld(q) (qd −1)/(q−1) c) PSU3(q) q3 −1 d) Sz(q) q2 +1 e) R(q) q3 +1 f) Sp2d(q) 2d−1(2d ±1) g) further cases 11,12,15,22,23,24,176,276 We must show that under the assumptions of our lemma, the only possible case is a).

@@ -1,1 +1,0 @@
-Therefore, it is enough to show that #%[4,4(Gn) is free as a Z[q|—module with basis { Ty, | w € Gy } because then .# is R-free with basis {Ty @1 | w € Gy } and, consequently, a must be an isomorphism.

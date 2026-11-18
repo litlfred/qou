@@ -1,1 +1,0 @@
-1 2 3 4 − − + + s type bb 1 3 4 s + + − type ab X 1 3 s + + X X type aa Figure 18: Tiles of type bb, ab, aa The foliation may be used to decompose the surface F into a union of foliated 2–cells, each of which contains exactly one singularity of the foliation.

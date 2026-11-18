@@ -1,0 +1,1 @@
+Suppose P is a pattern with winding number ±1. Then P(K) is smoothly concordant to P(J) in a smooth homology S3×[0, 1] if and only if K#−J is smoothly slice in a smooth homology B4. Similarly, restricting part a. to cable operations yields:

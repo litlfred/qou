@@ -1,1 +1,0 @@
-This means that we must be able to choose $\rho_i,\rho_i',\rho_i''$ for individual tetrahedra in such a way that the sums of these charges around any internal edge $E$ is 2, and all these charges are non-negative.

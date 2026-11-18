@@ -1,0 +1,1 @@
+On the rigid symmetric monoidal abelian subcategory of admissible objects, the nearby cycles deﬁne a tensor functor ACU Ψ : P(Xη)ad −→P(Xs) so that for P ∈Pad η we obtain a closed immersion G(Ψ(P)) ,→G(P).

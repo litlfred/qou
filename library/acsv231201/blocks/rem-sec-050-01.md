@@ -1,0 +1,1 @@
+We have given a formula holding only very near a ﬁxed direction ˆr. Because the results for nondegenerate smooth points hold in neighborhoods of directions, it remains to be seen whether asymptotics can be worked out that “bridge the gap” and hold when the distance δ = ||r −|r| · ˆr|| to the ray {λ · ˆr} satisﬁes |r| ≫δ ≫1. See Section 13.2 for further discussion.

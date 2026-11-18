@@ -1,1 +1,0 @@
-The next step is to observe that the boundary conditions for the operator $D_u$ are essentially the same independent of the map $u$ and of the chosen degree zero generators $q_0, q_1, q_2$, and that hence all of the maps $u$ must contribute with the same sign.

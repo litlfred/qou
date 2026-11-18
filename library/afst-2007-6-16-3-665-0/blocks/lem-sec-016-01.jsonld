@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/afst-2007-6-16-3-665-0/blocks/lem-sec-016-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 47,
+  "pageEnd": 49,
+  "text": "lem-sec-016-01.md",
+  "derivedFrom": "library/afst-2007-6-16-3-665-0/sections/sec-016",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7.1",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-016-7-positive-characteristic.md (p. 47-49)",
+    "claim_id": "afst-2007-6-16-3-665-0#lemma:7.1",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

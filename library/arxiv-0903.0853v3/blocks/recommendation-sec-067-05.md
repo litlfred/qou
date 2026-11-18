@@ -1,1 +1,0 @@
-But, of course, one should above all remember Euler, who used divergent series for numerically computing $\zeta(2) = \pi^{2}/6$, in flat contradiction to the opinion expressed by Bourbaki in "Topologie Générale", IV, p.

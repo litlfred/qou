@@ -1,0 +1,1 @@
+The energy E(2) is continuously diﬀerentiable on  H3/2 ir ∩H1,∞ (R/Z, Rn). The derivative of E(2) at γ ∈H3/2 ir ∩H1,∞in direction ϕ ∈H3/2 ir ∩H1,∞exists and is given by δE(2)(γ; ϕ) = 2 lim εց0 " Uε ( |γ(u + w) −γ(u)|2 − dγ(u + w, u)2 ! * γ′(u) |γ′(u)|2 , ϕ′(u) + −  ⟨γ(u + w) −γ(u), ϕ(u + w) −ϕ(u)⟩ |γ(u + w) −γ(u)|4 − d dτ

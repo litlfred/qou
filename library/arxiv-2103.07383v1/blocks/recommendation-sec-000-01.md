@@ -1,1 +1,0 @@
-One should be able to drop the $C^1$-assumption in the previous result by obtaining sufficient initial regularity via techniques that proved to be successful in showing a geometric Morrey-Sobolev imbedding for $\mathcal{M}^p$ with $p>3$, cf.~\cite[Theorem~1.2]{StrzeleckiSzumanskavonderMosel:2010:RegularizingandselfavoidanceeffectsofintegralMengercurvature}.

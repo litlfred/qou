@@ -1,1 +1,0 @@
-We must show the canonical arrow of~(\ref{exc-compare}), \[ \disk(\cB)_{/X_-}\underset{\disk(\cB)_{/\RR\times X_0}}\bigotimes \disk(\cB)_{/X_+} \xra{\simeq}\disk(\cB)_{/X}~, \] is an equivalence between right fibrations over $\disk(\cB)$.

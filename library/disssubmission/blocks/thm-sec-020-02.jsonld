@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/disssubmission/blocks/thm-sec-020-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 59,
+  "pageEnd": 62,
+  "text": "thm-sec-020-02.md",
+  "derivedFrom": "library/disssubmission/sections/sec-020",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.9",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-020-34-tannakian-categories.md (p. 59-62)",
+    "claim_id": "disssubmission#theorem:3.9",
+    "lean_status": "unformalized"
+  }
+}

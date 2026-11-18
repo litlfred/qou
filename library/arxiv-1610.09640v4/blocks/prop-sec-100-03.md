@@ -1,0 +1,1 @@
+The following conditions are equivalent for a tilting bimodule complex T ∈D(B ⊗Aop), with quasi-inverse S = T ∨. (i) There is an isomorphism T ∼= P in D(B ⊗Aop) for some invertible B-A- bimodule P. (ii) H0(T) is a projective B-module, and Hi(T) = 0 for all i̸ = 0. (iii) Hi(T) = 0 and Hi(S) = 0 for all i̸ = 0.

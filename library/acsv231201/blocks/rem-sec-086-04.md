@@ -1,0 +1,1 @@
+A product called the cup product may be deﬁned on cochains, sat- isfying a product rule with respect to the d operator. The cup product endows cohomology with the structure of a graded C-algebra, and the isomorphism in the de Rham Theorem is in fact a ring isomorphism, mapping the wedge product to the cup product.

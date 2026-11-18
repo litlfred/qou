@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-9808030v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "7889d6481b876b122db7d7b347b534e45a66cc2023da0f777ba1974591251daa",
   "file": "9808030v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/9808030v1 [math.QA] 6 Aug 1998",
+  "title": "Planscherel Measure on Eq(2)",
   "authors": "H. Ahmedov1 and I. H. Duru2,1",
   "arxiv": {
    "id": "math/9808030",
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the left hand side of the above expression is positive definite the operator $\\pi(\\mu_S)$ must be self--adjoint and positive definite in ${\\cal L}^2(Z_0)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-invariant-integral-on-e-q2.md",
-   "section_title": "Invariant Integral on $E_q(2)$",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

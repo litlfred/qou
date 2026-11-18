@@ -1,1 +1,0 @@
-If this deﬁnition and the above hypothetical statements are correct, we deduce—even without knowing the deﬁnitions of C3(F) and B3(F)—that any r1 + r2 + 1 values L3(σ(x)), where σ : F →C is a ﬁxed embedding and x ranges over values in F, should be Q-linearly dependent.

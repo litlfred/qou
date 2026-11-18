@@ -1,1 +1,0 @@
-The Van der waals broadening factor was taken from Barklem et al. \cite{barklem2}, and the oscillator strength was increased by 0.1 dex with respect to the VALD2 recommended value to give a best fit to the observed line Fe~I 3859.9~\AA.

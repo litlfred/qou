@@ -1,1 +1,0 @@
-We also prove some other general results, and show how these, together with the results of §[\[sec:proof\]](#sec:proof){reference-type="ref" reference="sec:proof"}, may be used to calculate the values of an irreducible character of $S_{mn}$ deflated with respect to an arbitrary character of $S_m$.

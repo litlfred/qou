@@ -1,1 +1,0 @@
-Since the algebras $A^{L/R}$ occur on the right hand side of Axioms (A.8a-b) where in ordinary Hopf algebras the trivial representation stands, one expects that the "trivial representation" of WHAs must be a non-trivial representation acting on either one of the algebras $A^{L/R}$ or $\duA^{L/R}$.

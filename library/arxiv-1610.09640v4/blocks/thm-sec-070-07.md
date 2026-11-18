@@ -1,0 +1,1 @@
+Let A be a DG ring, let M be an abelian category, and let K be a full triangulated subcategory of K(A, M). Write S := K ∩S(A, M), and let D := KS be the localization, with localization functor Q : K →D. Then for every M ∈K and I ∈Kinj the homomorphism QM,I : HomK(M, I) →HomD(M, I) is bijective.

@@ -1,1 +1,0 @@
-We shall see that the structure of $D(P)$ leads to a contradiction; to do this we consider various cases:\ Case (a) For $i=1,2$, if $\beta_i\in S_2(x)$, let $\gamma_i$ be the root in $S(P)$ which is 'cut off' to give $\beta_i$.

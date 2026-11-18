@@ -1,1 +1,0 @@
-Geometrically, it should be clear that the Lagrangian submanifold $\mathcal{L}_M$ cannot depend on the coordinates and polarization used to describe the phase space $\mathcal{P}_{\partial M}$ when $M$ has a boundary.

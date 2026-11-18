@@ -1,1 +1,0 @@
-Non-Conservations of B and L: Proton Decay as a Generic Feature As mentioned before, B-L being a local symmetry in G(2, 2, 4), the combination (B-L) and therefore B and/or L must be violated spontaneously13.

@@ -1,1 +1,0 @@
-This one dimensional vector space is spanned by the wedge product of all three basis vectors: $$r \wedge b \wedge g \in \Lambda^3 {\mathbb C}^3.$$ So, up to normalization, this *must* be the color state of a nucleon.

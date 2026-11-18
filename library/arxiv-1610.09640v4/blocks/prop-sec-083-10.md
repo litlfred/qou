@@ -1,0 +1,1 @@
+Let M be an abelian category with enough projectives. The following are equivalent for M ∈M : (i) M is a projective object of M. (ii) Exti M(M, N) = 0 for every N ∈M and every i ≥1. (iii) Ext1 M(M, N) = 0 for every N ∈M.

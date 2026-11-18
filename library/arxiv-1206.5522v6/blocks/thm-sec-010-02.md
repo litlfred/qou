@@ -1,0 +1,1 @@
+For an associative algebra A in a symmetric monoidal ∞-category V which is ⊗-presentable, there is an equivalence Z S1 A ≃HC∗(A) between the factorization homology of the circle with coeﬃcients in A and the Hochschild complex of A.

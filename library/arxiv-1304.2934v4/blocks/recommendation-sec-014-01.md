@@ -1,1 +1,0 @@
-Thus, instead of Equation \eqref{eq:notuseful}, our main tool will be a Berry-Esseen estimate (see Proposition \ref{prop:berryesseen} hereafter), which we shall then combine with techniques of tilting of measures (Lemma \ref{lem:exponchange}) similar to those used in the classical theory of large deviations (see \cite[p.

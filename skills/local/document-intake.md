@@ -197,13 +197,29 @@ Four things that matter here and are not guessable from the table:
 
 **Output**: `extracted-text.md` — raw markdown with preserved structure.
 
-### Stage 3: Structural Analysis (→ `structured`)
+### Stage 3: Structural & Claim Analysis (→ `structured`)
 
-Analyze extracted text for formal environments and document structure:
+Analyze extracted text for formal environments, scientific claims, and document structure:
 
-#### For academic papers:
-Same as paper-importer Phase 2 — detect theorem/definition/lemma
-environments, sections, cross-references.
+#### For academic papers (Math + Deductive Logic vs Science + Empirical Evidence):
+Stage-B extraction (`folio-assistant/cat-harness-tools/scripts/extract-candidates.py`, loading `folio-assistant-sci/scripts/extractors/math-environments.py` scoped to `qou`'s `needs` closure) populates `library/<doc-id>/candidates.json` (`ingest-candidates/v1`) and typed `blocks/*.jsonld` nodes. It explicitly differentiates:
+
+1. **Math Claim + Deductive Logic (`claim_domain: "math"`)**:
+   - Multi-line formal declarations (`Theorem`, `Proposition`, `Lemma`, `Corollary`, `Definition`, `Conjecture`, `Claim`, `Axiom`, `Postulate`, `Property`, `Fact`, `Criterion`, `Hypothesis`, `Remark`, `Example`), supporting both `Theorem 2.1.` and Bourbaki `2.1. Theorem.` headers and filtering out prose cross-references (`"Theorem 2.1 has..."`).
+   - `evidence_kind`: `"deductive-proof"`, `"axiomatic-definition"`, `"conjectural"`, or `"explanatory"`.
+   - `route_to`: `"formalizer"` for formalizable mathematical claims.
+2. **Science Claim + Empirical / Computational / Analytic Evidence (`claim_domain: "science"`)**:
+   - Extracted from physics, lattice-QCD, phenomenological, and experimental papers where load-bearing results are stated outside `Theorem N` blocks.
+   - `evidence_kind`:
+     - `"empirical-measurement"` (experimental observations, detector measurements, physical values with uncertainties `±`, `(stat)(syst)`, `σ`, `% C.L.`) -> `route_to: "compute-check"`.
+     - `"computational-simulation"` (lattice QCD+QED, Monte Carlo, *ab initio* numerical determinations) -> `route_to: "compute-check"`.
+     - `"analytic-derivation"` (theoretical physics derivations, dispersion relations such as Cottingham's formula, Compton sum rules, effective Lagrangians) -> `route_to: "formalizer"` (or `"compute-check"` when numerical).
+   - **Rule**: Empirical and numerical claims (`route_to: "compute-check"`) are cross-checked against computation witnesses and comparison paragraphs, never wired into formal Lean theorems as axioms.
+3. **Evidence Location Provenance (`evidence_location`: `"in-paper" | "elsewhere" | "both" | "none"`)**:
+   - `"in-paper"`: proved, derived, computed, or measured in this document (captures `proof_excerpt` from following `Proof.` blocks, deferred proof pointers `"proved in Section 4"`, or in-paper measurements/simulations).
+   - `"elsewhere"`: attributed to an external paper or dataset (`Theorem 2.2 (Rumer, Teller, Weyl)`, `Proof. See [14, Thm. 3.1].`, `"A previous publication [4] gave the values..."`), with citations listed in `external_refs`.
+   - `"both"`: combines an external theorem/measurement with an in-paper proof or calculation.
+   - `"none"`: stated without proof (`"proof omitted / routine"`) or an open conjecture.
 
 #### For WHO guidelines (L1 → L2):
 WHO guidelines have a specific normative structure:

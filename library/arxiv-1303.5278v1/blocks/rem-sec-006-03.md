@@ -1,0 +1,1 @@
+The small Seifert ﬁbred spaces from the proof of Corollary 3.3 have ﬁnite sheeted coverings with embedded incompressible tori so that the lifted triangulations do not all admit index structures, in contrast with the hyperbolic case.

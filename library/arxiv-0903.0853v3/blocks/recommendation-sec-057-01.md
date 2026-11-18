@@ -1,1 +1,0 @@
-In this section, we shall first prove that the formal power series $\hat F$ is multisummable according to definition [\[defi:msommabilite\]](#defi:msommabilite){reference-type="ref" reference="defi:msommabilite"}.

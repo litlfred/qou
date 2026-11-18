@@ -1,0 +1,1 @@
+spin TQFT is expected to be a refinement of a usual TQFT in the sense that a spin TQFT (V*, Z*) should be related to a usual TQFT (V, Z) such that V(X) for connected © can be described by the direct sum of V*(X, oy) over the spin structures oy on © (see [61]) and Z(M) of a closed manifold can be described by the sum of Z7*(M,o,) over the spin structures oj on M.

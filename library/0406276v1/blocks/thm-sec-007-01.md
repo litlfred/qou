@@ -1,0 +1,1 @@
+MAXWELL'S EQUATIONS in S3 and H3 .

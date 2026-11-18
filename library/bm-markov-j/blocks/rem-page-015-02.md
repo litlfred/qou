@@ -1,0 +1,1 @@
+In our proof of Theorem 1 we only treated the case of knots, but the proof works equally well for links. A detailed discussion of the case of links (and of many other aspects of the construction given here) will appear in the forthcoming manuscript [7].

@@ -1,0 +1,1 @@
+Let T, T ′ ∈D−(Aen, gr) satisfy these conditions: • For every k the graded bimodules Hk(T) and Hk(T ′) are bounded below. • There are isomorphisms T ⊗L A T ′ ∼= T ′ ⊗L A T ∼= A in D(Aen, gr). Then T ∼= A(φ, i)[j], for a unique automorphism φ and unique integers i, j.

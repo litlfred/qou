@@ -1,1 +1,0 @@
-Taking into account this nonadiabatic perturbation we suppose that in the excited bands the q-deformations of the SU(2) symmetry should be generally larger in magnitude than the corresponding ones obtained in the gsb’s.

@@ -1,0 +1,1 @@
+Let γ ∈H 2 (R/Z, Rn), γ′ ∈Sn−1, be a stationary point of the M¨obius energy, i.e. satisfying δE(2)(γ, ϕ) = 0 for all ϕ ∈C∞(R/Z, Rn). Then γ ∈C1,α, for some α > 0, and γ ∈H 2 ,p(R/Z, Rn) for some p > 2.

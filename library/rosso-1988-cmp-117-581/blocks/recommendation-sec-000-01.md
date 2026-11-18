@@ -1,1 +1,0 @@
-There is a coproduct: Δ: Ut^-^Ut^®Ut^ defined by: =ft®k^ + kt®fi9 and Uβ is a Hopf algebra with antipode S and augmentation ε respectively defined by: From now on, we shall assume that t is not a root of 1 and we shall study the finite dimensional representations of Uf§.

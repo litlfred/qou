@@ -1,1 +1,0 @@
-To understand the analogy between this construction and our original construction with number fields, one should think of $C(\mathbb F_q)$ as analogous to the set of infinite places and $H^0(C,L)$ as analogous to the set of elements of the ring of integers with bounded absolute value at each infinite place, with the exact bound depending on the line bundle $L$.

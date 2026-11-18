@@ -1,0 +1,1 @@
+The measurements reveal a large fourth-order angular modulation of cos 4∆φ = (16.8 ± 2.5)% and smooth invariant mass distribution absent of vector mesons (φ, ω and ρ) at the experimental limit of ≤0.2% of the observed yields.

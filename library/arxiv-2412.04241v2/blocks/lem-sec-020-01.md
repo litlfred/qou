@@ -1,0 +1,1 @@
+Fix a prime p and a positive integer m with (m, p) = 1 and f(x) ∈1 + xS[ 1 p, ζm]JxK. Then f(x) ∈1 + xS[ζm]JxK if and only if φp(f)((ζm + x)p −ζp m) f(x)p ∈1 + pxS[ζm]JxK , (184) and f(x) ∈1 + xS[ζm] + O(x2), where φp is the Frobenius of S with φp(ζm) = ζp m and φp(x) = x.

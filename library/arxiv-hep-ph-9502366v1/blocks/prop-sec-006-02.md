@@ -1,0 +1,1 @@
+If one tries to ignore the L9 contribution, using instead some physical cut-oﬀpmax to regularize the loops, one needs pmax ∼60 GeV, in order to reproduce the experimental value; this is clearly nonsense.

@@ -1,1 +1,0 @@
-Although the latter is an analytic function of τ in the cut plane C′ = C \ (−∞, 0], it was well known in the physics literature (see [5]) that it should factorize into a finite sum of products of q-series times ˜q-series, where q = e2πiτ and ˜q = e−2πi/τ.

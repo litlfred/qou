@@ -1,19 +1,25 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-9901120v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "782034b674f958af57632cf8cab5c42015ed7cd01702930740b8d541141c0051",
   "file": "9901120v3.pdf"
  },
  "provenance": {
-  "title": "A table of boundary slopes of Montesinos knots Nathan M. Dunfield! Revised version of June 2010 email: nathan@dunfield.info",
-  "authors": null,
-  "arxiv": null,
+  "title": "A table of boundary slopes of Montesinos knots",
+  "authors": "Nathan M. Dunfield1",
+  "arxiv": {
+   "id": "math/9901120",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "18 Jun 2010"
+  },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 0,
   "by_kind": {},

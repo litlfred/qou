@@ -1,1 +1,0 @@
-As a consequence, we must have j1 = j2 and the scalar operator must be encoded in a square matrix (2j1 + 1) × (2j1 + 1). • The spinor operator t 1 2 matrix elements are given in terms of qC 1 2 j2 j1 mm2m1 .

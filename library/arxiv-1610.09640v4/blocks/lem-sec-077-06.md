@@ -1,0 +1,1 @@
+Let M ∈C(A). (1) There is a homomorphism ψ : Q →M in Cstr(A), such that Z(ψ) : Z(Q) → Z(M) is surjective, and Q = L s∈S T−is(A) for a collection of integers {is}s∈S. Derived Categories | Amnon Yekutieli |

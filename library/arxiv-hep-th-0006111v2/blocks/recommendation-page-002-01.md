@@ -1,1 +1,0 @@
-(6) To get the probability distributions of the Dirac operator eigenvalues we must change the picture back to chiral Gaussian ensembles, and take the microscopic limit xi →0 m2 j →0 , N →∞, with the rescaled variables ζi = πρ(0)√xi = √8N xi µj = πρ(0)mj = √ 8Nmj kept ﬁxed.

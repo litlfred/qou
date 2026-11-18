@@ -1,1 +1,0 @@
-Since $\det(K)=4$, Lemma [\[lemma:determinant\]](#lemma:determinant){reference-type="ref" reference="lemma:determinant"} implies the normal form of $w$ must be one of $C^k \sigma_1^2 \sigma_2^{-2}$, $C^k \sigma_1^4 \sigma_2^{-1}$, or $C^k \sigma_1 \sigma_2^{-4}$.

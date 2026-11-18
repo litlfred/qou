@@ -1,1 +1,0 @@
-Now it follows from Theorems B and B8 together that Image~BS!ùKer~curl!5$0%, ~6.2! and since, by the Hodge Decomposition Theorem, the kernel of curl is HK%CG%HG%GG, the orthogonal projection of the image of BS into FK must be one-to-one.

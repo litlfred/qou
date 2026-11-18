@@ -1,0 +1,1 @@
+Assume that k and k♮are admissible levels for g and g♮, respectively, that f ∈XLk(g) and that χH0 DS,f (Lk(g))(τ) ∼χLk♮(g♮)(τ), as τ ↓0. Then H0 DS,f(Lk(g)) ∼= Wk(g, f) is simple and k is a collapsing level. In this way we discovered a large number of collapsing levels for f̸ = fmin.

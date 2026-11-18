@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "eps-hep2019-615",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b5fb4982d65e9fcd12e812ba1e056d177dac45b3e43a8c5cfad3e9173fcac399",
   "file": "EPS-HEP2019_615.pdf"
@@ -11,31 +14,11 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For higher Cayley-Dickson (n > 3) algebras Aut(An) = Aut(O) \u00d7 (n \u22123)S3, indicating the higher Cayley- Dickson algebras only add additional trialities, and perhaps no new fundamental physics should be expected beyond C\u2297S.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

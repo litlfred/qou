@@ -1,0 +1,1 @@
+Let A be a ring. Assume A admits a noetherian connected ﬁltration F, such that the connected graded ring GrF (A) has a balanced NC dualizing complex. Then the ring A has a rigid NC dualizing complex (R, ρ). Moreover, (R, ρ) is unique up to a unique rigid isomor- phism.

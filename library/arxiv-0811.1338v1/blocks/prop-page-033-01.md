@@ -1,0 +1,1 @@
+One possible scheme to solve the many-body problem is to put the chiral ef- fective potential on the lattice and apply the powerful Monte-Carlo techniques which are already developed to high degree in lattice QCD.

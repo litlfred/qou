@@ -1,1 +1,0 @@
-As above, we shall verify that $\Pi: A_n=X_i(1)\cup X_i(2)\cup \cdots\cup X_i(n)$ is also an equitable partition of $CAG_n$ for each fixed $i$, where $X_i(j)$ is defined in ([\[equ-3\]](#equ-3){reference-type="ref" reference="equ-3"}).

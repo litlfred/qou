@@ -1,1 +1,0 @@
-We therefore get many non-trivial elements of B3(Q), a typical one being [8/9]−3[3/4]−6[2/3], and since B3(Q) is supposed to be of rank 1, each of them should map under L3 to a rational multiple of ζ(3), something that can be checked numerically.

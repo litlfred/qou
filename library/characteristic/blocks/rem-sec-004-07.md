@@ -1,0 +1,1 @@
+Conjecture 1 reveals a close relation between the colored Jones function of a knot and its deformation variety. It does not explain though why we ought to look at characters of SL2(  ) representations. There is a generalization to higher rank groups, which we present in Section 4. We warn the reader that there is no evidence for this generalization.

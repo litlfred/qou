@@ -1,1 +1,0 @@
-We end by listing some possible directions for the future.\ *Other boundary correlation functions in the probe regime*\ It should in principle be possible to apply our probe calculational method to other sinh dilaton gravity boundary correlation functions.

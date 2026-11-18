@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "funaba-2014-j-phys-conf-ser-544-012019",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c95b283a122d67e4eacd7738754dacb964bf62fbfb6c7df1f0c58c77d7d3cd75",
   "file": "Funaba_2014_J._Phys.__Conf._Ser._544_012019.pdf"
@@ -11,46 +14,78 @@
   "arxiv": null,
   "doi": "10.1088/1742-6596/544/1/012019"
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 2,
   "by_kind": {
-   "recommendation": 2
+   "theorem": 1,
+   "corollary": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "theorem",
+   "source_kind": "theorem",
    "number": null,
    "name": null,
-   "statement": "Energy of knots was introduced in (5) motivated to give a functional on the space of knots that can produce a representative con\ufb01guration of a knot for each knot type as an embedding 1 To show it, it su\ufb03ce to show that the Cli\ufb00ord torus gives the minimum energy among all the embedded tori, since the energy blows up if a torus has a double point Flux in QCS IOP Publishing Journal of Physics: Conference Series 544 (2014) 012019 doi:10.1088/1742-6596/544/1/012019 Content from this work may be used under the terms of the Creative Commons Attribution 3.0 licence.",
-   "strength": "may",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "Let TR be a torus of revolution whose generating circle has radius 1 and center at distance R (R > 1) from the axis of revolution. Then the renormalized potential energy is given by E(TR) = \u03c03 \u221a R2 \u22121 \u0012 R2 (3 log 2 \u22121) + 2 \u22122 R2 \u0013 .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-003.md (p. 3-3)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-003.md (p. 3-3)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-003-01",
+   "block_iri": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/thm-page-003-01",
+   "claim_id": "funaba-2014-j-phys-conf-ser-544-012019#thm-page-003-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "corollary",
+   "source_kind": "corollary",
    "number": null,
    "name": null,
-   "statement": "Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-002.md",
-   "section_title": "Page 2",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "Among tori of revolution, a stereographic projection of the Cli\ufb00ord torus gives the minimum energy. Flux in QCS IOP Publishing Journal of Physics: Conference Series 544 (2014) 012019 doi:10.1088/1742-6596/544/1/012019",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-003.md (p. 3-3)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-003.md",
+   "section_title": "Page 3",
+   "pages": "3-3",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-003.md (p. 3-3)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-page-003-02",
+   "block_iri": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/cor-page-003-02",
+   "claim_id": "funaba-2014-j-phys-conf-ser-544-012019#cor-page-003-02",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

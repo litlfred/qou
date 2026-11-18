@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0111022v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "fea7f118014838fe28843b30f7a8f6fb2b913d5198eb668c074eb541ca6ed6b7",
   "file": "0111022v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/0111022v1 [math.QA] 2 Nov 2001",
+  "title": "Some remarks on q-deformed multiple polylogarithms",
   "authors": "Karl-Georg Schlesinger",
   "arxiv": {
    "id": "math/0111022",
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore, the quantum state space of a noncommutative gauge theory over $S^{4,\\theta }$ should always carry a corepresentation of $SU_q\\left( 2\\right)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-motivation.md",
-   "section_title": "Motivation",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "So, at least if we treat the quantum field theories on $S^{4,\\theta }$ perturbatively, starting from a system of free $q$-oscillators, we should, again, be led to expressions in terms of $q$-special functions.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-motivation.md",
-   "section_title": "Motivation",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In conclusion, both arguments suggest that perturbative quantum field theory on $S^{4,\\theta }$ should have a formulation in terms of $q$-special functions.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-motivation.md",
-   "section_title": "Motivation",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since in usual quantum gauge theories on commutative space-time, the weights of Feynman graphs can be calculated as values of so called multiple polylogarithms (see [@BK], [@Kre]) and this fact plays a considerable role for the structural properties of quantum field theory (see [@CK], [@Kon], [@KoSo]), a first step toward perturbative quantum field theory on $S^{4,\\theta }$ should be to look for $q$ -deformations of multiple polylogarithms.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-motivation.md",
-   "section_title": "Motivation",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This means that we should allow the arguments of the $q$-deformed multiple $\\zeta$-values - i.e. the indices of the $q$-deformed multiple polylogarithms - to become noncommuting variabels, too.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-motivation.md",
-   "section_title": "Motivation",
-   "pages": "1-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-But one should keep in mind that all the extra structures can be equally deﬁned in a non-strict category and all commuting diagrams still make sense by inserting some canonical isomorphisms involving α, l, r ′s at appropriate locations.

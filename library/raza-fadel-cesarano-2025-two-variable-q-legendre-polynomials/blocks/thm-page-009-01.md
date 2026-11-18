@@ -1,0 +1,1 @@
+The 2VqLP Rn,q(x, y)/[n]q! are quasi-monomials with respect to the following q-multiplicative and q-derivative operators: ˆMq,R = −D−1 q,xTy + D−1 q,y, (48) or, alternatively, ˆMq,R := −D−1 q,x + D−1 q,yTx (49) and ˆPq,R = −ˆDq,xx ˆDq,x = ∂q ∂qD−1 q,x , (50) or, alternatively, ˆPq,R = ˆDq,yy ˆDq,y = − ∂q ∂qD−1 q,y . (51)

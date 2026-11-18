@@ -1,1 +1,0 @@
-The G in equation (2.1) must be an analytic function (0, 1) > (Ug)®? ;ie., for any # the image of G(x) in (Ug)®3/h"(Ug)®> must be of the form Sy, a;(x)- uj, where u; € (Ug)®3/h"(Ug)®?, the a, are analytic functions (0,1) > C, and N depends in general on 1.

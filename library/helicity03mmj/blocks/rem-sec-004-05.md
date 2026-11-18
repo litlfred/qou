@@ -1,0 +1,1 @@
+The rotation ﬁeld in the three-dimensional ball is an example of an opposite type: all its trajectories are pairwise unlinked. It was suggested by A. Sakharov and Ya. Zeldovich, and proved by M. Freedman [8], that this ﬁeld can be transformed by a volume-preserving diﬀeomorphism to a ﬁeld whose energy is arbitrarily close to 0.

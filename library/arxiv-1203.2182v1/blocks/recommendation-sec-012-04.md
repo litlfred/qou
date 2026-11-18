@@ -1,1 +1,0 @@
-When combined with [\[specN\]](#specN){reference-type="eqref" reference="specN"}, this basic property implies that the differential $d_1$ must be canceling for the $S^r$-colored HOMFLY homology ${\cal H }^{S^r}_{i,j,k} (K)$.

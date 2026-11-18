@@ -13,9 +13,11 @@
   "pageStart": 35,
   "pageEnd": 37,
   "contains": [
-    "library/arxiv-1704.01735v4/blocks/prose-sec-010"
+    "library/arxiv-1704.01735v4/blocks/prose-sec-010",
+    "library/arxiv-1704.01735v4/blocks/ex-sec-010-01",
+    "library/arxiv-1704.01735v4/blocks/ex-sec-010-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.01735v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1704.01735v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
   "provenance": "ingested"
 }

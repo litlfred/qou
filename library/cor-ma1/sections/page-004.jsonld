@@ -13,9 +13,10 @@
   "pageStart": 4,
   "pageEnd": 4,
   "contains": [
-    "library/cor-ma1/blocks/prose-page-004"
+    "library/cor-ma1/blocks/prose-page-004",
+    "library/cor-ma1/blocks/cor-page-004-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cor-ma1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cor-ma1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cor-ma1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cor-ma1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,1 @@
+(Motivic version of the Broadhurst-Kreimer conjecture) Let D denote the increasing ﬁltration on H induced by the depth. Then X N,d≥0 dimQ (grD d HN) sdtN = 1 + E(t)s 1 −O(t)s + S(t)s2 −S(t)s4 , (5.3) where E(t) = t2 1−t2 , O(t) = t3 1−t2 , and S(t) = t12 (1−t4)(1−t6).

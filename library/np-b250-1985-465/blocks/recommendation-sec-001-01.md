@@ -1,1 +1,0 @@
-From the experimental upper bound on the electric dipole moment of the neutron one concludes that ~i must be very close to a multiple of rr (see refs. [4, 11]; a less stringent limit is obtained from r/~ 2~r, see [47]).

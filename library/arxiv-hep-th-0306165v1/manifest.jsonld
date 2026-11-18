@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0306165v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0306165v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-0306165v1",
+  "title": "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial",
   "contains": [
     "library/arxiv-hep-th-0306165v1/sections/sec-front-matter",
     "library/arxiv-hep-th-0306165v1/sections/sec-000",
@@ -54,7 +54,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-0306165v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0306165v1.pdf",
     "source_sha256": "4f187debec912a24c2cbe354107bb61308895f30eb6d608aad5bda2d454775ae",
     "pages": 67,
@@ -65,8 +67,8 @@
       "stamp_date": "17 Jun 2003"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

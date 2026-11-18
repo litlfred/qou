@@ -1,1 +1,0 @@
-Now that we have this Kauffman-bracket type definition of $\hat{J}$, it should not come as much of a surprise that one can categorify this invariant using a homology theory that is practically identical to Khovanov homology.

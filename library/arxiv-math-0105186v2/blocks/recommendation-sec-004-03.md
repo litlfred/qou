@@ -1,1 +1,0 @@
-Because symplectic parallel transport takes the ΣE z into each other, the ball Bc from Lemma 1.13 must be the union of ΣE z for all z ∈[0; r], and the vanishing cycle is Vc = ΣE r = L ⊂M, with the same framing as before.

@@ -1,0 +1,1 @@
+— Let ω = exp(2iπθ) be a root of unity with 0 < θ < 1. The ω-signature of (σ1 · · · σn−1)p is equal to the Dedekind sum signω(σ1 · · · σn−1)p = X 1≤ℓ1≤n−1 1≤ℓ2≤p−1 ϵθ[ℓ1, ℓ2] where ϵθ[ℓ1, ℓ2] =      +1 if 0 < θ + ℓ1/n + ℓ2/p < 1, (mod 2), −1 if 1 < θ + ℓ1/n + ℓ2/p < 2, (mod 2), if θ + ℓ1/n + ℓ2/p ∈Z.

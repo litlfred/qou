@@ -1,0 +1,1 @@
+Let f(A): (A’, d(2)) > (A", d’(A)) be a map of complexes of finite dimensional complex vector spaces with f (A), d(A), d'(A) depending holomorphically on A for small 2. Suppose that f (0) is a quasiisomorphism.

@@ -1,1 +1,0 @@
-Knots and links in $S^3$ have a combinatorial and mildly two-dimensional nature because they can be treated as planar diagrams, but they should be considered as intrinsically three-dimensional objects.

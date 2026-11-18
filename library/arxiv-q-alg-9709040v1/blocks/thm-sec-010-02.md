@@ -1,0 +1,1 @@
+Let α be a Poisson bi-vector ﬁeld in a domain of Rd. The formula f ⋆g := ∞ X n=0 ¯hn X Γ∈Gn wΓBΓ,α(f, g) deﬁnes an associative product. If we change coordinates, we obtain a gauge equivalent star-product.

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0901.1612v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b4f3efcadd1e5caff0aa26ee0210329756a330fe228727e1d895fb08dc6f2392",
   "file": "0901.1612v1.pdf"
@@ -16,46 +19,52 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 2
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "proposition",
    "number": null,
    "name": null,
-   "statement": "Our job is to find the preimage $\\mathbb L'$ in $S^1 \\times S^1 \\times S^1$ of the regular value $i$ of the map $g_{L'}$, which means we must find the points where the vector from the green $\\mathrm{\\wp}_1(zx^{-1})$ to the red $\\mathrm{\\wp}_1(yx^{-1})$ points straight up.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-4-sketch-of-the-topological-proof-of-theorem.md",
-   "section_title": "Sketch of the topological proof of Theorem ??",
-   "pages": "8-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "When a string link moves by a link homotopy, each strand is allowed to cross itself, while different strands must remain disjoint, just as for links.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-5-sketch-of-the-algebraic-proof-of-theorem.md",
-   "section_title": "Sketch of the algebraic proof of Theorem ??",
-   "pages": "13-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "The fundamental solution of the scalar Laplacian on the 3-torus T 3 is given by the formula \u03d5(x, y, z) = \u22121 8\u03c03 X ei(\u2113x+my+nz) \u21132 + m2 + n2 where the sum is over all integers \u2113, m and n (positive and negative) with the exception of \u2113= m = n = 0. Even though we have expressed \u03d5 in terms of complex exponentials, the value of \u03d5 is real for real values of x, y and z because of the symmetry of the coe\ufb03cients, and can therefore also be expressed as a Fourier cosine series. Figure 12 shows the graph of the corresponding fundamental solution of the scalar Laplacian on the 2-torus T 2, displayed over the range \u22123\u03c0 \u2264x, y \u22643\u03c0. If we think of the 2-torus",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-008-61-the-fundamental-solution-of-the-laplacian.md (p. 18-20)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-008-61-the-fundamental-solution-of-the-laplacian.md",
+   "section_title": "The fundamental solution of the Laplacian",
+   "pages": "18-20",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-008-61-the-fundamental-solution-of-the-laplacian.md (p. 18-20)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/arxiv-0901.1612v1/blocks/prop-sec-008-01",
+   "claim_id": "arxiv-0901.1612v1#prop-sec-008-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

@@ -1,0 +1,1 @@
+Furthermore, it was observed above that if $h\in\so(4)$ is an orientation preserving isometry of $S^3$, then $e_{h(L)} = h\cdot e_L$ where $\cdot$ is the diagonal action, and so the integrands in the formulas for Milnor's triple linking number $\mu(L)$ in \thmref{B} are invariant under the action of $\so(4)$.

@@ -1,1 +1,0 @@
-The original algebra structure has been studied in some detail (see §3.1) but it should be quite clear that the operad provides a vast family of algebra structures on a planar algebra which we have only just begun to appreciate.

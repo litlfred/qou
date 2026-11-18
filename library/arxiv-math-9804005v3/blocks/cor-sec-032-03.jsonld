@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-9804005v3/blocks/cor-sec-032-03",
@@ -16,6 +16,16 @@
   "pageEnd": 18,
   "text": "cor-sec-032-03.md",
   "derivedFrom": "library/arxiv-math-9804005v3/sections/sec-032",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.8",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-032-18-amnon-yekutieli-and-james-j-zhang.md (p. 18-18)",
+    "claim_id": "arxiv-math-9804005v3#corollary:3.8",
+    "lean_status": "unformalized"
+  }
 }

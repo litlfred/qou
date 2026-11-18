@@ -1,0 +1,1 @@
+The formula HN .W n L/ D Tr.HN .T 0 s // expresses the quantum hy- perbolic invariants of ﬁbered cusped manifolds as amplitudes between two markings of the ﬁber, identiﬁed with a pleated hyperbolic surface. For a similar construction based on representations of quantum Teichm¨uller spaces, see Bonahon and Liu [9].

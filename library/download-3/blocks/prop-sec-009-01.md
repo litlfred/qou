@@ -1,0 +1,1 @@
+There exist the morphisms of complexes χτ,χτ such that: i) the diagram below commutes in the derived category: :C*-ι(A Λ)) -£+ CCp-r*(Aj(A/)) Ί ii) //ze composition of χτ, rayλ χτ vwY/z ί/z£ morphism CC*(A n(M)) — > C*(M, CC*(A Λ)) ra/λ CC*(£) -> C*(M,CC*(£)), « e^wα/ to χτ, ras/λ χ defined in Theorem 2.3.2.

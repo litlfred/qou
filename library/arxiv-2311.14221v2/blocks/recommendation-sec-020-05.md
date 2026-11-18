@@ -1,1 +1,0 @@
-\begin{defi}\label{definition:H(F)} For any monoidal module functor $F:\Bc\to \vc$ we shall denote by $$H(F)=\oint^{B\in \Bc} F(B)\ot {}^*F(B)\in \vc $$ the bialgebra with product given by Theorem \eqref{hopf-rec} and coproduct \eqref{coproduct-c}. \end{defi}

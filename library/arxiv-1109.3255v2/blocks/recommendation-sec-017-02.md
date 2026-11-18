@@ -1,1 +1,0 @@
-We will classify homotopy classes of maps $u: T\to M$ by their boundary loop $\partial u$, which must be contractible, traverse $L(0),L(n),\dots,\tau^kL(n),L(n+m)$ in order, and hit the intersection points $q_{a,i},x_1,\dots,x_k,q_{b,j},q_{a+b,h}$ in order.

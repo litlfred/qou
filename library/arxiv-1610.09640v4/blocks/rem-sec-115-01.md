@@ -1,0 +1,1 @@
+Deﬁnition 17.2.2 is a bit more sophisticated than the original deﬁnition in [161]. There the condition was that RΓm(R) ∼= RΓmop(R) ∼= A∗in D(Aen, gr), but a balancing isomorphism β was not speciﬁed. The current improved deﬁnition is inﬂuenced by later research, especially [183] and [157]. The next theorem is implicit in [161] and [183]. Derived Categories | Amnon Yekutieli |

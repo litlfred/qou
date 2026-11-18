@@ -1,1 +1,0 @@
-We are going to prove that $(x_{k})_{k \in \N}$ must also be strongly convergent in $\HL$ to a point $x_\infty$; because condition \ref{condL} then implies that $x_\infty$ lies in $\ML$, which proves the theorem.

@@ -1,1 +1,0 @@
-\end{gathered} \end{equation} In this case, there are $3$ distinct complex volumes: \begin{equation} 0.0+1.241598704\dots i,\quad \pm 6.332666642\ldots+1.024134714\dots i \end{equation} According to Conjecture~\ref{newconjecture}, $6.33\dots + 1.02\dots i$ should (up to rational multiples of $\pi^2i$) be an integral linear combination of complex volumes of hyperbolic manifolds.

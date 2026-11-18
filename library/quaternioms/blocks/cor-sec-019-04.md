@@ -1,0 +1,1 @@
+Absent conﬁnement to associative subalgebras, there is no parenthesis-free, platform-independent notion of “tensoring subsystems” over O. Consequence: Universal, scalable octonionic circuit families require associative scaffolding.

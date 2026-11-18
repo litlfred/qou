@@ -1,0 +1,1 @@
+Consider the free DG K-module V := L s∈S Tps(K) and the cofree DG K-module W := V ∗. There are canonical isomorphisms IW ∼= (A ⊗V )∗∼= M s∈S Tps(A) ∗∼= Y s∈S T−ps(A∗) in Cstr(A). Exercise 11.6.13. Prove the lemma above.

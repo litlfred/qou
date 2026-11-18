@@ -1,1 +1,0 @@
-We conclude that Bergman’s second metric (3.4.2), suitably rescaled, should be asymptotically given by (with ω = e−2mQ) (10.3.5) ds④ 2,ω,ǫ(z)2 2m∆Q(z) =  1 + 4 (2 + |ǫ′|2)2 + O(m−1/2)  |dz|2 + 2 Re  [ǫ′]2 (2 + |ǫ′|2)2 + O(m−1/2)  (dz)2  , where z′ = z + ǫ and ǫ′ is the rescaled parameter in accordance with (10.2.6). provided |z −z′| = O(m−1/2).

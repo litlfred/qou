@@ -1,0 +1,1 @@
+Let ρ, σ be oriented normal closed curves on ∂M that intersect transversely, if at all. Then ∂ ∂w(σ)Im(H(ρ)) = 2 ι(ρ, σ). Recall that Im(H(ρ)) is the linear, angled part of the holonomy in Deﬁnition 2.3.

@@ -1,1 +1,0 @@
-We shall then use constantly the bijections described above, and denote for instance $\nu(T)$ for the non-cros\-sing pairing associated to a tree $T$, or $\delta(\nu)$ for the Dyck path associated to a non-cros\-sing pairing $\nu$.

@@ -1,1 +1,0 @@
-It should be noted that a relationship between these polynomials is known for arbitrary knot K based on a slightly diﬀerent expansion as the Melvin– Morton conjecture [16,19], which was proved in Ref.

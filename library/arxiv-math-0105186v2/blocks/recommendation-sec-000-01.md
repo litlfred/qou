@@ -1,1 +1,0 @@
-That line of thought should have a Seiberg-Witten sibling, starting from [@carey-marcolli-wang98], but the corresponding Atiyah-Floer type relationships are only just beginning to be understood [@salamon00], [@ozsvath-szabo01].

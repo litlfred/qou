@@ -1,0 +1,1 @@
+Notice that τµ makes sense only when v is not a critical point of Yµ. If we pull-back this formula on the augmented variety by setting Yµ = Zµ + Z−1 µ then the formula becomes rational : tor(M, Ad ◦ρ) = τµ dZµ Zµ .

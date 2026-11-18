@@ -1,0 +1,1 @@
+1 (Leibniz Rule, cf. [9]). Let pi, qi, r ∈(1, ∞), be such that 1 pi + 1 qi = 1 r , for i = 1, 2 and s > 0. Then ∥f · g∥Hs,r ≤C (∥f∥Lp1 ∥g∥Hs,q1 + ∥f∥Hs,p2 ∥g∥Lq2 ) . We also refer to Runst and Sickel [20, Lem. 5.3.7/1 (i)]. — For the following statement, one mainly has to treat

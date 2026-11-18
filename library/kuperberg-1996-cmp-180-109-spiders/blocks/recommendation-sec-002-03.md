@@ -1,1 +1,0 @@
-If « and $ are two transverse, minimal cut paths that separate c and p and g are two consecutive transverse intersection points along either path, then the weight of the arc of « from p to q must equal the weight of the arc of 6 from p to q, for otherwise one path would provide a short-cut for the other and either « or B would not be minimal.

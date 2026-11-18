@@ -1,1 +1,0 @@
-In fact K = (Z/2Z)9 because K must be a 2-torsion group: If we denote by q! : H2(Y,Z) −→H2(Y +,Z) the Gysin map (i.e. the Poincar´e dual to the pushforward on homology), then q!q∗is multiplication by the degree deg(q) = 2, hence for any α ∈K it follows that 2α = q!q∗(α) = q!(0) = 0 as claimed.

@@ -1,0 +1,1 @@
+— (1) Let M be an indecomposable diﬀerence module over K. Then there are unique integers t, n, m and cn ∈C∗with n, m ⩾1, g.c.d.(t, n) = 1, |q| < |cn| ⩽1 such that M is isomorphic with Res(E(czt/n)) ⊗ K Um. (2) Let M be an indecomposable pure diﬀerence module over K, then there are unique t, n, m, cn as above such that M ∼= Res(E(czt/n)) ⊗K Um.

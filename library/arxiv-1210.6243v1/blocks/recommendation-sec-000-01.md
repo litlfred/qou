@@ -1,1 +1,0 @@
-He went on to describe a thought experiment for which he stated "that you should not try to set up" because "the apparatus would have to be made on an impossibly small scale to show the effects we are interested in." He used these effects to help illustrate the phenomena of wave-particle duality, which is a postulate that all particles exhibit both wave and particle properties.

@@ -1,0 +1,1 @@
+For q →1−, equations (24) and (25) lead to the generating functions of 2VLP Sn(x, y) and Rn(x, y)/n! given by equations (1) and (2) respectively. Further, for q →1−, equa- tions (43) – (51) lead to the respective multiplicative and derivative operators of 2VLP Sn(x, y) and Rn(x, y)/n! (see [4]).

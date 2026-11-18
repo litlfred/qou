@@ -1,0 +1,1 @@
+Technically, in order to deﬁne the diagonal part D, one needs to extend the ground ring to include a D-th root of v, since (λ, µ), with λ, µ ∈X , is in general not an integer, but belonging to DZ. Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic 7.3.3

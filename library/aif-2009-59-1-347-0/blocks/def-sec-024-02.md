@@ -1,0 +1,1 @@
+— We deﬁne the functional space H := ∪n⩾0Hn in the following way: H−1 = {1}, H0 = K, H1 = Eq ∗q K := {φ ∗q r : φ ∈Eq, r ∈K} and, for any integer n ⩾1, H2n = KH2n−1 := {ru : r ∈K, u ∈H2n−1}, H2n+1 = Eq ∗q H2n := {φ ∗q u : φ ∈Eq, u ∈H2n}.

@@ -1,0 +1,1 @@
+As a consequence of this new analysis we have revised our measured value of the abundance ratio U/Th in CS 31082-001 , and simultaneously reduced its uncertainty, from derived observational errors on the order of 0.15 dex to 0.11 dex.

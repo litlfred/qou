@@ -1,0 +1,1 @@
+Sections 5 and 6 present our elementary and somewhat computational proof of Theorem 3. Finally, Section 7 gives a proof of (iii) in Theorem 2 as well as shows that if Problem 2 has a positive answer, then its estimates are tight.

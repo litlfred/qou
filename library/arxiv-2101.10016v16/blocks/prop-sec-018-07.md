@@ -1,0 +1,1 @@
+Properties (a), (b), of Theorem 19.4 hold for the coproduct and Rmatrix of Uq(g). The ribbon element v of Uq(g) acts as the constant vλ = q −⟨λ,λ+2ρ⟩ for λ ∈ Λ+(q), with Λ+(q) := {λ ∈ Λ + : ⟨λ + ρ, θ⟩ ≤ ℓ} the closed Weyl alcove.

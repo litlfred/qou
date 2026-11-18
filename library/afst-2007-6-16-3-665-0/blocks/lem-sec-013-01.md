@@ -1,0 +1,1 @@
+— Let N be a pure module with slope λ < 0. The canonical map a →1 ⊗a from N to Univ ⊗K N induces an injective map coker(Φ −1, N) →coker(Φ −1, Univ ⊗K N) whose image consists of the elements which are invariant under the universal group Guniv.

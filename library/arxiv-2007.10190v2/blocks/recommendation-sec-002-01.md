@@ -1,1 +1,0 @@
-We should point out that the above theory in fact has little to do with knots and 3-manifolds and complex Chern-Simons theory, and little to do with the Bloch group, but appears to be part of a larger combinatorial structure.

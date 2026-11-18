@@ -1,1 +1,0 @@
-In Section [\[subsec:pierwszawzmiankaofppsq\]](#subsec:pierwszawzmiankaofppsq){reference-type="ref" reference="subsec:pierwszawzmiankaofppsq"} we shall define normalized conjugacy class indicators $\Sigma_{\pi}$ which are indexed no longer by sequences of integers but by partitions of finite ordered sets.

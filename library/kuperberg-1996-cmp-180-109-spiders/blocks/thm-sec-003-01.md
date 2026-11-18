@@ -1,0 +1,1 @@
+For n ^ 3, let an be the number of triangulations of a fixed convex n-gon such that at least six triangles meet at each internal vertex, and let A(x)= 1 +x 2 + Σanx n n be a generating function. For n ^ 0, let for n ^ 0, and let G Kuperberg be a generating function. Then B(x)=A(xB(x)). (8)

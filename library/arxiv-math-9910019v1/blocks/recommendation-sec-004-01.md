@@ -1,1 +1,0 @@
-This result should be compared with the results on random permutation and random signed permutation where the limiting distribution was $F_2(x)$ and $F_2(x)^2$ under the same scaling of the above (see \cite{BDJ}, \cite{TW3}, \cite{Bo} and Theorem \ref{thm1} above).

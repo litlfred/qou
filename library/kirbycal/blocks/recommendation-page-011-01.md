@@ -1,1 +1,0 @@
-Note that the same comments hold if we are dealing with the ascending one- manifold of an index 3 critical point, as we shall be after applying Figures 3.12-15, inverted, to the index 3 critical points.

@@ -1,0 +1,1 @@
+Let q be densely deﬁned, symmetric, closed, and bounded from below in H. Then D(Aq) := {ψ ∈D(q) | ∃η ∈H s.t. ∀φ ∈D(q), q(φ, ψ) = (φ, η)} , Aqψ := η is self-adjoint and bounded from below. D(q) is called the form domain of the operator Aq.

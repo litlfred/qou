@@ -1,1 +1,0 @@
-::: rmk []{#rmk:vector-bundle label="rmk:vector-bundle"} One should also note that the mapping $X \mapsto F_{D}(U) X$ defines an isomorphism from the space of solutions of $A_{0}$ holomorphic over $(U_{D},0)$ to the same space for $A_{U}$.

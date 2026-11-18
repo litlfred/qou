@@ -1,1 +1,0 @@
-We now present the definition and some properties of the Legendre-Fenchel transform, a classical tool in large deviation theory (see \emph{e.g.} \cite[Section 2.2]{DZ98}) that we shall use a lot in this paper.

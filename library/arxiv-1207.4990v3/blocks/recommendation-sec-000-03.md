@@ -1,1 +1,0 @@
-Onsager's analysis allows for different interaction constants $J_1 \neq J_2$, in which case equation [\[eq12\]](#eq12){reference-type="eqref" reference="eq12"} for $T_c$ must be replaced by $$\label{eq14} \sinh \left( \frac{2J_1}{k_B\, T_c}\right) \sinh \left(\frac{2J_2}{k_B\, T_c}\right) =1.$$

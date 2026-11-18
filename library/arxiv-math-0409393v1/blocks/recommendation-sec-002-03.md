@@ -1,1 +1,0 @@
-The computations are immediate. $\Box$\ We shall now take two matrices $A_{U}$ and $A_{V}$ in the formal class of $A_{0}$, flatten their slopes through the gauge transformation $\Theta_{D}$, and then link the resulting matrices $A'_{U'}$ and $A'_{V'}$ by an isomorphism defined over ${\mathbf C}^{*}$.

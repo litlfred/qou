@@ -1,0 +1,1 @@
+Let (L, [f]) be a framed exact Lagrangian sphere in M. Fix some r > 0. There is an exact Lefschetz ﬁbration (EL, πL) over ¯D(r) together with an isomorphism φL : EL r →M of exact symplectic manifolds, such that if ρL is the symplectic monodromy around ∂¯D(r), then τL = φL ◦ρL ◦(φL)−1 is a Dehn twist along (L, [f]).

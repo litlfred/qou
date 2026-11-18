@@ -1,1 +1,0 @@
-First, up to replacing the monodromy ϕ with ϕ2 (thus doubling the period m of Ω), we can always assume Ωhas at least 6 letters: that way, all columns of the tables above are neatly distinct, and to recover the original Vϕ we just quotient out by the extra symmetry (which the volume maximizer (wi)i∈Z/mZ must respect, by concavity of the volume functional V ).

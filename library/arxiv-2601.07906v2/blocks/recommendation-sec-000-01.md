@@ -1,1 +1,0 @@
-The resulting set of 3-manifold topologies should be seen as the \emph{minimal} completion of the handlebody sum that is compatible with typicality, crossing symmetry and consistency between higher and lower statistical moments.\footnote{However, this is not the end of the story: in this paper, we focus on OPE statistics and ignore spectral correlations.

@@ -1,1 +1,0 @@
-For any given element in S, every element taken to it by one of the maps in Set must have the same image in M under the map for the corresponding object in MSet, since if there is more than one, they must be taken to some common element by maps in the diagram.

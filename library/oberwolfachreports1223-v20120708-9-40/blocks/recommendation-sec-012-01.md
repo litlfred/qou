@@ -1,1 +1,0 @@
-Conjecturally, this should be isomorphic to the 0-level ﬁltration of the embedded contact homology of Hutchings (see the appendix of [3]), and should give some indication of how the grading on the embedded contact homology diﬀerential carries over to the various homology theories (Heegaard Floer and Monopole Floer in particular) to which it is isomorphic.

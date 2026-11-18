@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2512.02998v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "146ff93cd70baad4d0eb036180471abaaf4324d7b0e795651e73976e93381998",
   "file": "2512.02998v1.pdf"
@@ -16,13 +19,81 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 2,
+  "by_kind": {
+   "lemma": 1,
+   "corollary": 1
+  },
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "elsewhere": 1,
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.1",
+   "name": null,
+   "statement": "Let I \u2282R be an interval and \u03b3 : I \u2192Rn an absolutely continuous immersed curve with positive speed v\u03b3 = essinfI |\u03b3\u2032|. Then one has for all s, t \u2208I with s < t (5.9) |\u03b3(t) \u2212\u03b3(s)|2 \u2265 n v2 \u03b3 \u22121 t \u02c6 s t \u02c6 s |\u03b3\u2032(u) \u2212\u03b3\u2032(v)|2 |u \u2212v|2 dudv o |t \u2212s|2. As an immediate consequence one deduces 9In [21] a bilipschitz constant is defined as any number L > 0 such that L\u22121d\u03b3(u, v)| \u2264|\u03b3(u) \u2212\u03b3(v)| \u2264 Ld\u03b3(u, v) holds for all u, v \u2208R/Z. If \u03b3 is parametrized by arclength then the infimum of those L is biLipI(\u03b3)\u22121.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [21] in sections/sec-009-5-stability-of-knot-equivalence.md",
+   "external_refs": [
+    "[21]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-009-5-stability-of-knot-equivalence.md",
+   "section_title": "Stability of knot equivalence",
+   "pages": "15-17",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [21] in sections/sec-009-5-stability-of-knot-equivalence.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-009-01",
+   "block_iri": "library/arxiv-2512.02998v1/blocks/lem-sec-009-01",
+   "claim_id": "arxiv-2512.02998v1#lemma:5.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "5.2",
+   "name": "Fractional seminorm controls bilipschitz constant",
+   "statement": "If \u03b3 \u2208W 2 ,2(I, Rn) is arc- length parametrized, then (5.10) |\u03b3(t) \u2212\u03b3(s)|2 \u2265 \u00001 \u22121 2\u230a\u03b3\u2032\u230b2 2 ,2,I \u0001 |t \u2212s|2 for all s, t \u2208I.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-009-5-stability-of-knot-equivalence.md (p. 15-17)",
+   "external_refs": [],
+   "proof_excerpt": "For parameters s, t \u2208I with s < t estimate |\u03b3(s) \u2212\u03b3(t)|2 = \u00b4 t s \u00b4 t s \u27e8\u03b3\u2032(\u03c3), \u03b3\u2032(\u03c4)\u27e9Rnd\u03c3d\u03c4 = 1 2 \u00b4 t s \u00b4 t s \u0000|\u03b3\u2032(\u03c4)|2 + |\u03b3\u2032(\u03c3)|2 \u2212|\u03b3\u2032(\u03c4) \u2212\u03b3\u2032(\u03c3)|2\u0001 d\u03c3d\u03c4 \u2265v2 \u03b3|t \u2212s|2 \u22121 2 \u00b4 t s \u00b4 t s |\u03b3\u2032(\u03c4) \u2212\u03b3\u2032(\u03c3)|2d\u03c3d\u03c4 \u2265|t \u2212s|2\b v2 \u03b3 \u22121 2 \u00b4 t s \u00b4 t s |\u03b3\u2032(\u03c4)\u2212\u03b3\u2032(\u03c3)|2 |\u03c4\u2212\u03c3|2 d\u03c3d\u03c4 .",
+   "section_file": "sections/sec-009-5-stability-of-knot-equivalence.md",
+   "section_title": "Stability of knot equivalence",
+   "pages": "15-17",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-009-5-stability-of-knot-equivalence.md (p. 15-17)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-009-02",
+   "block_iri": "library/arxiv-2512.02998v1/blocks/cor-sec-009-02",
+   "claim_id": "arxiv-2512.02998v1#corollary:5.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
 }

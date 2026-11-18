@@ -1,0 +1,1 @@
+The (formal) Borel transform with shift κ ∈C is defined on formal power series by Bκ ∞ X n=0 anzn ! := ∞ X n=0 an Γ(n + κ)un. When κ = 1, we simply call this the Borel transform, dropping the subscript. The subsequent lemma can be readily proven from these definitions.

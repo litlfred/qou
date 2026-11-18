@@ -1,1 +1,0 @@
-In the sequel, families of Hilbert spaces $H = \{ H_o \}_{o \in I}$ will be considered and we shall write $BH = \{ BH_o \}_{o \in I}$ for the corresponding families of *C\**-algebras; no confusion should arise with the case of a single Hilbert space, since it should be clear from the context when a family is being considered.

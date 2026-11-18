@@ -1,1 +1,0 @@
-It should be clear that it would only happen if we can group the plaquettes into pairs, with one copy in the pair oriented one way, while the other the opposite way, and then couple the half-edges as indicated in Figure 4 because any other scenario would produce cases (b) or (c).

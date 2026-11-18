@@ -1,0 +1,1 @@
+If X is a Riemann surface of genus g > 2 with g3−g Weierstrass points on which Aut(X) acts transitively then either • g = 4 and X is Bring’s curve, or • g = 3 and X is Klein’s curve, or • g = 3 and Aut(X) ∼= S4.

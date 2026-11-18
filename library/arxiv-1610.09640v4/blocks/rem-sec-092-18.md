@@ -1,0 +1,1 @@
+We now provide a brief discussion of Local Duality, based on [62, Section V.6]. (There is a weaker variant of this result, for modules instead of complexes, that can be found in [30, Theorem 11.2.6].) Again A is local, with maximal ideal m. Let R be a dualizing complex over A. By translating R we can assume that dimR(m) = 0.

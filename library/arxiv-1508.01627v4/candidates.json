@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1508.01627v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "778e60219862e371fbb004d915345bdfff963fd1f8a0746784e1493af4efd48d",
   "file": "1508.01627v4.pdf"
@@ -16,151 +19,111 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
+  "candidates": 3,
   "by_kind": {
-   "recommendation": 9
+   "theorem": 1,
+   "lemma": 1,
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 3,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 3
+  },
+  "by_evidence_location": {
+   "both": 2,
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 3
+  },
+  "needs_lean_proof": 3
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7.1",
    "name": null,
-   "statement": "If we write $d := d_\\ell(q)$ for the order of $q$ modulo $\\ell$ as in Section [\\[subsec:regss\\]](#subsec:regss){reference-type=\"ref\" reference=\"subsec:regss\"} and then $n = ad+r$, $0\\leq r < d$, for odd $d$ respectively $n=ae+r$, $0\\leq r < e$, for even $d=2e$, then our assumption on $\\ell$ implies $a\\geq 2$ because the cyclotomic polynomial $\\Phi_d(q)$ must divide the order of ${\\mathbf{G}}(q)$ at least twice.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-4-vanishing-of-characters.md",
-   "section_title": "Vanishing of characters",
-   "pages": "9-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the first case one of these subspaces must be of minus- and the other of plus-type.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-41-non-unipotent-characters.md",
-   "section_title": "Non-unipotent characters",
-   "pages": "9-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The argument for the second case is similar, there both subspaces must be of minus-type or both of plus-type.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-41-non-unipotent-characters.md",
-   "section_title": "Non-unipotent characters",
-   "pages": "9-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore ${\\mathcal{S}}$ must have a $d$-hook $h$ and an $(n-d)$-cohook such that ${\\mathcal{S}}\\setminus h$ still has an $(n-d)$-cohook.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-42-unipotent-characters.md",
-   "section_title": "Unipotent characters",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Pairs of partitions corresponding to tori with $\\ell$-singular regular elements must now have an odd multiple of $e$ in the second part or an even multiple of $e$ in the first part.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-42-unipotent-characters.md",
-   "section_title": "Unipotent characters",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the $\\ell$-rank of $G$ is at least 3, it must be of type $F_4$, $E_6,{}^2\\!E_6$, $E_7$ or $E_8$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-6-zeroes-of-characters-of-quasi-simple-groups.md",
-   "section_title": "Zeroes of characters of quasi-simple groups",
-   "pages": "17-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since $G$ has $\\ell$-rank at least 3 we must have $d=d_\\ell(q)\\in\\{1,2,3,4,6\\}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-6-zeroes-of-characters-of-quasi-simple-groups.md",
-   "section_title": "Zeroes of characters of quasi-simple groups",
-   "pages": "17-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(Again note that Sp4(2) \u223c= S6 is not simple.) So \u03c7 must be unipotent.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Let G be a \ufb01nite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let \u2113> 2 be a prime for which Sylow \u2113-subgroups of G are non-cyclic. Then the \u2113-modular projective cover of the trivial character of G has at least three ordinary constituents. In particular c11 \u22653.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22) citing [9]",
+   "external_refs": [
+    "[9]"
+   ],
+   "proof_excerpt": "For \u2113the de\ufb01ning characteristic of G, this was already shown in [9]. Now assume that \u2113\u0338 = 2 is di\ufb00erent from the de\ufb01ning characteristic of G. Assume that the character of the \u2113-modular projective cover of the trivial G module has the form 1G + \u03c7, with \u03c7 \u2208Irr(G). Since projective ",
    "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
    "section_title": "An application to small 1-PIMs",
    "pages": "18-22",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22) citing [9]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-017-01",
+   "block_iri": "library/arxiv-1508.01627v4/blocks/thm-sec-017-01",
+   "claim_id": "arxiv-1508.01627v4#theorem:7.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
    "name": null,
-   "statement": "Thus the p-modular reduction of one of the non-trivial ordinary constituents \u03c7 of \u03c0 must contain the trivial p-modular character of G.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Let G be a \ufb01nite group and p a prime. Assume that H \u2264G is a subgroup such that |G : H| is divisible by p, but |G : H| < |G|p. Then c(p) 11 > 2.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22)",
+   "external_refs": [],
+   "proof_excerpt": "The permutation character \u03c0 of G on the cosets of H has exactly one triv- ial constituent 1G. On the other hand, as |G : H| is divisible by p, the modular reduction of the permutation representation has (at least) two trivial modular con- stituents, one in the socle, one in the h",
    "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
    "section_title": "An application to small 1-PIMs",
    "pages": "18-22",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-017-02",
+   "block_iri": "library/arxiv-1508.01627v4/blocks/lem-sec-017-02",
+   "claim_id": "arxiv-1508.01627v4#lemma:1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2",
+   "name": null,
+   "statement": "Let G be a \ufb01nite simple group of Lie type in characteristic p. Then c(p) 11 > 2 unless G = L2(p).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22) citing [5, \u00a713], [5, Tab. 24.1], [1]",
+   "external_refs": [
+    "[5, \u00a713]",
+    "[5, Tab. 24.1]",
+    "[1]"
+   ],
+   "proof_excerpt": "If the Lie-rank of G is not very small, then we can \ufb01nd a subgroup of G which ful\ufb01lls the condition of Lemma 1. In Table 1 we give a subgroup \u02c6H (see e.g. [5, \u00a713] for the existence) of a suitable central extension \u02c6G of G. From the order formulae for these groups (see for exampl",
+   "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
+   "section_title": "An application to small 1-PIMs",
+   "pages": "18-22",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22) citing [5, \u00a713], [5, Tab. 24.1], [1]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-017-03",
+   "block_iri": "library/arxiv-1508.01627v4/blocks/prop-sec-017-03",
+   "claim_id": "arxiv-1508.01627v4#proposition:2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

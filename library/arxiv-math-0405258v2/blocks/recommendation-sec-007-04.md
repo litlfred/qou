@@ -1,1 +1,0 @@
-For the first term in (\ref{main:eq}), note that the only elements of $S_{NC}^{(\epsilon)}(m,n)$ which connect in this alternating way are pairings, where each block must contain one $U$ and one $U^\ast$.

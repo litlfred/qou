@@ -1,1 +1,0 @@
-We shall consider separately three cases: (a) $z_2=0$; (b) $z_2\neq 0$ and $\left |z_1 - z_2 \right |\leq \rho \left |z_2 \right |$; (c) $z_2\neq 0$ and $\left |z_1 - z_2 \right |> \rho \left |z_2 \right |$.

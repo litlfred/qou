@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1610.05082v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "90c8089953ff2d97dfad3a72635a7fa197076aa563a53eefd6f092af31f11a04",
   "file": "1610.05082v3.pdf"
@@ -16,136 +19,137 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 8,
+  "candidates": 4,
   "by_kind": {
-   "recommendation": 8
+   "theorem": 2,
+   "lemma": 1,
+   "corollary": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "both": 1,
+   "elsewhere": 2,
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.4",
    "name": null,
-   "statement": "Informally, that a family of random variables {Ya, a \u2208A} admits a weighted graph G as weighted dependency graph means the following: \u2022 G has vertex-set A, i.e. we have one vertex in G per variable in {Ya, a \u2208A}; \u2022 the smaller the weight of an edge {a, b} is, the closer to independent Ya and Yb should be.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-weighted-dependency-graphs.md",
+   "statement": "Suppose that, for each n, {Yn,i, 1 \u2264j \u2264Nn} is a family of random variables with \ufb01nite moments de\ufb01ned on the same probability space. Let C = (Cr)r\u22651 be a \ufb01xed sequence that does not depend on n. Assume that, for each n, one has a C-weighted dependency graph Gn for {Yn,i, 1 \u2264j \u2264Nn} and denote \u2206n \u22121 its maximal weighted degree. Let Xn = PNn i=1 Yn,i and v2 n = V ar(Xn). Assume that there exists a sequence (an), an integer s \u22653 and a real number v such that (1) v2 n a2n \u2212\u2212\u2212\u2212\u2192 n\u2192\u221ev2, (2) for all n, a2 n \u2264C2Nn\u2206n, (3) \u0012Nn \u2206n \u0013 1 s \u2206n an \u2212\u2212\u2212\u2212\u2192 n\u2192\u221e0. Then in distribution, Xn \u2212E(Xn) an d \u2212\u2212\u2212\u2212\u2192 n\u2192\u221eN(0, v2).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-009-24-weighted-dependency-graphs.md (p. 7-8) citing [8, Section 4.3]",
+   "external_refs": [
+    "[8, Section 4.3]"
+   ],
+   "proof_excerpt": "The proof is almost identical to the proof of the normality criterion in [8, Section 4.3] replacing \u03c3n by an. Indeed, as noticed in [8, Section 4.3], in the special case \u03a8 \u22611 (to which we restrict ourselves in this article), the quantities Rn and Qn de\ufb01ned there can be replaced r",
+   "section_file": "sections/sec-009-24-weighted-dependency-graphs.md",
    "section_title": "Weighted dependency graphs",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-009-24-weighted-dependency-graphs.md (p. 7-8) citing [8, Section 4.3]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-009-01",
+   "block_iri": "library/arxiv-1610.05082v3/blocks/thm-sec-009-01",
+   "claim_id": "arxiv-1610.05082v3#theorem:2.4",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
    "name": null,
-   "statement": "*Note:* all constants throughout the paper depend on the dimension $d$ of the space and we shall not make it explicit from now on.",
-   "strength": "must-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-14-outline-of-the-paper.md",
-   "section_title": "Outline of the paper",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "Consider the Ising model on Zd, with inverse temperature \u03b2 and magnetic \ufb01eld h, such that either h > h1(d) or (h = 0; \u03b2 < \u03b21(d)) or (h = 0; \u03b2 > \u03b22(d)). Then, for some v, Sn \u2212E(Sn) p |\u039bn| d \u2212\u2212\u2212\u2212\u2192 n\u2192\u221eN(0, v2). JEHANNE DOUSSE AND VALENTIN F\u00b4ERAY Moreover v2 > 0 so the Gaussian law is non-degenerate. We start by a lemma of [6] on the asymptotics of the variance of Sn.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [6] in sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md",
+   "external_refs": [
+    "[6]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md",
+   "section_title": "Weighted dependency graphs and central limit theorems",
+   "pages": "16-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [6] in sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-015-01",
+   "block_iri": "library/arxiv-1610.05082v3/blocks/thm-sec-015-01",
+   "claim_id": "arxiv-1610.05082v3#theorem:4.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.3",
    "name": null,
-   "statement": "Since they are only used for the proof of [\\[thm:bound_joint_cumulants\\]](#thm:bound_joint_cumulants){reference-type=\"ref\" reference=\"thm:bound_joint_cumulants\"} and since the proofs in the different regimes are independent from each other, this should not create any difficulty. :::",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-3-cluster-expansions-and-bounds-on-joint-cumulan.md",
-   "section_title": "Cluster expansions and bounds on joint cumulants",
-   "pages": "8-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "[6, Lemma V.7.1] The limit v2 := lim n\u2192\u221e v2 n |\u039bn| exists as an extended real valued number and v2 = X i\u2208Zd \u27e8\u03c30; \u03c3i\u27e9\u03b2,h. But by Theorem 1.1, in the regimes we consider, the cumulants (so in particular the covariance) are exponentially small, so the sum is absolutely convergent and we actually have the stronger statement:",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [6, Lemma V.7.1] in sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md",
+   "external_refs": [
+    "[6, Lemma V.7.1]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md",
+   "section_title": "Weighted dependency graphs and central limit theorems",
+   "pages": "16-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [6, Lemma V.7.1] in sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-015-02",
+   "block_iri": "library/arxiv-1610.05082v3/blocks/lem-sec-015-02",
+   "claim_id": "arxiv-1610.05082v3#lemma:4.3",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.4",
    "name": null,
-   "statement": "\\end{aligned}$$ This gives the following expression for $Z^A_{\\Lambda; \\beta,0}$: $$Z^A_{\\Lambda; \\beta,0}= (\\cosh\\, \\beta)^{|\\mathcal{E}_\\Lambda|} \\left(\\prod_{j=1}^r \\cosh(t_j) \\right) \\sum_{\\omega \\in \\Omega_{\\Lambda}} \\left[ \\sum_{E \\subseteq \\mathcal{E}_\\Lambda} \\prod_{\\{i,j\\} \\in E} (\\sigma_i \\sigma_j \\tanh(\\beta)) \\right]\\\\ \\cdot\\left[ \\sum_{B \\subseteq A} \\prod_{x_j \\in B} (\\sigma_{x_j} \\tanh(t_j)) \\right].$$ Changing the order of summation we should evaluate, for $E \\subseteq \\mathcal{E}_\\Lambda$ and $B \\subseteq A$, the quantity $$\\sum_{\\omega \\in \\Omega_{\\Lambda}} \\prod_{\\{i,j\\} \\in E} (\\sigma_i \\sigma_j) \\prod_{x_j \\in B} (\\sigma_{x_j}).$$ By an easy symmetry argument, this sum is zero unless all $\\sigma_i$'s appear an even number of times, which corresponds to the condition $(E,B) \\in \\mathcal{E}^{\\text{even}}_{\\Lambda,A}$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-31-at-very-high-temperature-without-magnetic-fie.md",
-   "section_title": "At very high temperature, without magnetic field",
-   "pages": "8-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Pairs $(E,B)$ in $\\mathcal{E}^{\\text{even}}_{\\Lambda,A}$ can be considered as subgraphs of $\\Lambda$, where the vertices are all vertices incident to an edge of $E$ and the edge-set is precisely $E$ (vertices in $B$ must be adjacent to at least one edge in $E$).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-31-at-very-high-temperature-without-magnetic-fie.md",
-   "section_title": "At very high temperature, without magnetic field",
-   "pages": "8-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore using notation of [@Velenik], $$\\Xi^A_{\\Lambda;\\beta,0} = 1 + \\sum_{r \\ge 1} \\frac{1}{r!} \\sum_{(E_1,B_1), \\dots, (E_r,B_r) \\atop \\text{connected}} \\ \\prod_{i=1}^r \\mathop{\\mathrm{wt}}(E_i,B_i) \\, \\prod_{1 \\le i<j \\le r} \\delta\\big[(E_i,B_i),(E_j,B_j) \\big],$$ where $\\delta\\big[(E_i,B_i),(E_j,B_j) \\big]=1$ if the graphs corresponding to $(E_i,B_i)$ and $(E_j,B_j)$ do not share a vertex, and $0$ otherwise (this factor encodes the fact that connected components should not intersect).",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-31-at-very-high-temperature-without-magnetic-fie.md",
-   "section_title": "At very high temperature, without magnetic field",
-   "pages": "8-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Such an expansion will be given by cluster expansion, but we should first check some conditions ensuring convergence, *e.g.* the ones given in [@Velenik Section 5.4].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-31-at-very-high-temperature-without-magnetic-fie.md",
-   "section_title": "At very high temperature, without magnetic field",
-   "pages": "8-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(Edges not in the graph should be seen as edges of weight $0$.) :::",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-42-central-limit-theorem-for-occurrences-of-give.md",
-   "section_title": "Central limit theorem for occurrences of given patterns",
-   "pages": "19-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "Suppose that either h > h1 or (h = 0 and \u03b2 < \u03b21) or (h = 0 and \u03b2 > \u03b22). The limit v2 := lim n\u2192\u221e v2 n |\u039bn| = X i\u2208Zd \u27e8\u03c30; \u03c3i\u27e9\u03b2,h is \ufb01nite.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md (p. 16-19)",
+   "external_refs": [],
+   "proof_excerpt": "We will use Theorem 2.4. Let G be the weighted dependency graph de\ufb01ned in Theorem 1.2. Then for all n, G[\u039bn] is a C-weighted dependency graph for {\u03c3i; i \u2208\u039bn}. The number of vertices of G[\u039bn] is Nn = |\u039bn| = (2n + 1)d, and its maximal weighted degree is \u2206n \u22121 = max i\u2208\u039bn X j\u2208\u039bn \u03b5 \u2225i",
+   "section_file": "sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md",
+   "section_title": "Weighted dependency graphs and central limit theorems",
+   "pages": "16-19",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-015-4-weighted-dependency-graphs-and-central-limit-t.md (p. 16-19)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-015-03",
+   "block_iri": "library/arxiv-1610.05082v3/blocks/cor-sec-015-03",
+   "claim_id": "arxiv-1610.05082v3#corollary:4.4",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

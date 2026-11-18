@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2007.10190v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "37bcbd3a343bb21a191f6fe52776315c4140cdc83c00e7510b6edabe967869e3",
   "file": "2007.10190v2.pdf"
@@ -16,31 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 1,
   "by_kind": {
-   "recommendation": 1
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "We should point out that the above theory in fact has little to do with knots and 3-manifolds and complex Chern-Simons theory, and little to do with the Bloch group, but appears to be part of a larger combinatorial structure.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-resurgence-in-complex-chern-simons-theory.md",
-   "section_title": "Resurgence in complex Chern-Simons theory",
-   "pages": "2-4",
+   "statement": "In~\\cite{GZ:qseries} it was observed that we have an asymptotic expansion",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-007-42-the-q-series-g00g10-and-their-descendants.md (p. 8-9)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-007-42-the-q-series-g00g10-and-their-descendants.md",
+   "section_title": "The q-series (G00,G10) and their descendants",
+   "pages": "8-9",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-007-42-the-q-series-g00g10-and-their-descendants.md (p. 8-9)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-007-01",
+   "block_iri": "library/arxiv-2007.10190v2/blocks/prop-sec-007-01",
+   "claim_id": "arxiv-2007.10190v2#prop-sec-007-01"
   }
  ]
 }

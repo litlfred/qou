@@ -1,1 +1,0 @@
-Relative complexity would then be fairly well defined\footnote{There are still details associated with how precisely a product of gates must approximate a target state.} But then a skeptic may say: Yes, but what happens to your definition of complexity if I decide to allow three qubit gates?

@@ -1,1 +1,0 @@
-\noindent This isomorphism, which is far from being tautological, as we shall see, can be translated into a $\ovl{\Q}_p$-valued pairing between $\mathrm{H}_{1\mathrm{B}}(A_{\C_p}, F)$ and $\mathrm{H}^1_{\mathrm{dR}}(A)$.

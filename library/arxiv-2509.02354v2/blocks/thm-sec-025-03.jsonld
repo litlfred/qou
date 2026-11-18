@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2509.02354v2/blocks/thm-sec-025-03",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 37,
+  "pageEnd": 39,
+  "text": "thm-sec-025-03.md",
+  "derivedFrom": "library/arxiv-2509.02354v2/sections/sec-025",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2509.02354v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "A",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-025-a3-fourier-transform-identities.md (p. 37-39)",
+    "claim_id": "arxiv-2509.02354v2#theorem:A",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

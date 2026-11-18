@@ -1,1 +1,0 @@
-If we are in the case $* = \mathbb{C}$ or $* = \mathrm{point}$, then we must set $y_i^i = 0$ or $x_i^i = y_i^i = 0$ in [\[eqn:chartx\]](#eqn:chartx){reference-type="eqref" reference="eqn:chartx"} and [\[eqn:charty\]](#eqn:charty){reference-type="eqref" reference="eqn:charty"}, respectively.

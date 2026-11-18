@@ -1,1 +1,1 @@
-a) Let A be an Ω-involutive weak quasi-bialgebra and F ∈ A ⊗ A
+a) Let A be an Ω-involutive weak quasi-bialgebra and F ∈ A ⊗ A a twist (Def. 6.8). Then AF is an ΩF -involutive weak quasi-bialgebra with the same involution as A and ΩF := F −1∗ ΩF −1 , (ΩF ) −1 := FΩ −1F∗ (11.6) b) If A is a discrete pre-C ∗ -algebra and Ω is positive in M(A ⊗ A) then ΩF is positive as well. We discuss a useful application of the twist of the unitary structure.

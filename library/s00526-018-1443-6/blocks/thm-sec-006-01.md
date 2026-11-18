@@ -1,0 +1,1 @@
+Let f ∈C∞( , Rn). Then f is analytic on if and only if for every compact set K ⊂ there are constants rK > 0, CK < ∞such that ∥∂α f ∥L∞(K) ≤CK |α|! r|α| K holds for every multiindex α ∈Nm 0 . Combining this with the embedding of the classical Sobolev space W k = W k,2 into C0 for k ∈N with k > m 2 we get the following.

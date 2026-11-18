@@ -1,1 +1,0 @@
-We therefore obtain a sum rule which does not involve unknown low-energy constants: (M~o-M~')QCD M~ ma-m~ 2rh M~-M 2 M2K - m~-rh m~+t~ {1+O(¢a2)}" (10.18) Since the ratio (rod - rno): (rn~- rfi), which compares isospin breaking with SU(3) breaking, is known very accurately (see I) this sum rule may be used to obtain a The ratio FK:F. is given by FK --= I+zlv, F.

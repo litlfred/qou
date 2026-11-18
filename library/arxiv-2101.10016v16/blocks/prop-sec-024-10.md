@@ -1,1 +1,1 @@
-Let C be a fusion category and ω ∈ Z
+Let (C, ϕC) be an slN,ℓ-type tensor category and assume that either ℓ = ∞ or q = q 1/2 C = ±e ±iπ/ℓ (or, more generally q2 = qC of order large enough as in Def. 19.1). Then C admits a braided symmetry if and only if w = 1 for N odd and w = ±1 for N even.

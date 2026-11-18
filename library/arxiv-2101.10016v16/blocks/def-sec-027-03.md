@@ -1,1 +1,1 @@
-A discrete Hermitian coboundary weak quasi-Hopf algebra is defined by
+A discrete Hermitian coboundary weak quasi-Hopf algebra is defined by a discrete weak quasi-Hopf algebra A endowed with data (∗, R, v, w) such that axioms a)-d) hold as before for discrete algebras, that is the ∗-involution makes A into a pre-C ∗ -algebra, and the ribbon and coboundary structure satisfies R ∈ M(A ⊗ A), v, w ∈ M(A). A (discrete) weak Hopf algebra A satisfying axioms a)–d) will be called a (discrete) Hermitian coboundary weak Hopf algebra.

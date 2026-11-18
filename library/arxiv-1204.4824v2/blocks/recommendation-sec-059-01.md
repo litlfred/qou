@@ -1,1 +1,0 @@
-Thus, the ﬁrst thing we should do is choose a nowhere-zero vector ﬁeld on C and, for each homotopy class in π≤1(C), choose an immersion whose initial and ﬁnal tangent vectors match the tangent vector at a point.

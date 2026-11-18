@@ -1,1 +1,0 @@
-40 ANTTI HAIMI AND HAAKAN HEDENMALM Applying the Laplacian ∆z to (10.3.1), we should expect to obtain (10.3.2) ∆zL(z, z′) = 2m∆Q(z) + m∆Q(z) [1 + m|z −z′|2∆Q(z)]2 + O(m1/2), provided that |z −z′| = O(m−1/2) is assumed.

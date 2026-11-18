@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/9511222v1/blocks/cor-page-025-01",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 25,
+  "pageEnd": 25,
+  "text": "cor-page-025-01.md",
+  "derivedFrom": "library/9511222v1/sections/page-025",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9511222v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.14",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/page-025.md (p. 25-25)",
+    "claim_id": "9511222v1#corollary:4.14",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,1 +1,1 @@
-Theorem 3.7 holds for the sporadic simple groups, G2(3), 2F4(2)′, B3(3), G2(2)′ =
+occurs when S = PSL2(q) for 3∤q and when S = PSLϵ 3(q) for 3 | (q + ϵ).

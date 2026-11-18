@@ -1,0 +1,1 @@
+— The Wiener algebra A = A (T) is the algebra of continuous functions on the circle whose Fourier series converges absolutely. It is a Banach algebra for the pointwise product and the norm ∥f∥A := X n∈Z |cn(f)|, where cn(f) denotes the Fourier coeﬃcient R 2π f(eiθ) e−inθ dθ 2π.

@@ -1,1 +1,0 @@
-We shall denote the corresponding $q$-difference operator as: $$L := q^{2} z (\sigma_q- a) (\sigma_q- b) - (\sigma_q- 1) = q^{2} z \sigma_q^{2} - \bigl(1 + (a+b) q^{2} z)\bigr) \sigma_q+ (1 + ab q^{2} z).$$ We are interested in the equation $L f = 0$.

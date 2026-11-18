@@ -1,0 +1,1 @@
+There does not exist a pre-modular fusion category with fusion ring K(psu(2)5) and trivial conformal dimension. In other words, all pre-modular fusion categories with fu- sion ring K(psu(2)5) are modular.

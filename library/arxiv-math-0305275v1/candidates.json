@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0305275v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9b356a9d716a0d3e8e2dfe0c4ba1283a28ed85e5c78d18072484030e71377fbc",
   "file": "0305275v1.pdf"
  },
  "provenance": {
-  "title": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Introduction",
+  "title": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds",
   "authors": "Stefano Francaviglia12",
   "arxiv": {
    "id": "math/0305275",
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It follows that, using Definition [\\[d pd\\]](#d pd){reference-type=\"ref\" reference=\"d pd\"}, in order for a pseudo-developing map to exist, $\\rho($Stab$(p))$ must have a fixed point in $\\partial \\ensuremath{\\mathbb H}^3$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-general-definitions.md",
-   "section_title": "General definitions",
-   "pages": "3-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It follows that for almost all isometries $g$ we have $$\\lim_{n\\to\\infty}{\\rm Strvol}(g(X_n))=v_3.$$ Then $D_\\rho(g(\\gamma(n)))$ must reach the boundary of $\\ensuremath{\\mathbb H}^3$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-rigidity-of-representations.md",
-   "section_title": "Rigidity of representations",
-   "pages": "21-34",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

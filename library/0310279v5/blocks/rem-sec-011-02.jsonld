@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/0310279v5/blocks/rem-sec-011-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 19,
+  "pageEnd": 23,
+  "text": "rem-sec-011-02.md",
+  "derivedFrom": "library/0310279v5/sections/sec-011",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.1.1",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-011-21-the-basic-construction-for-knots.md (p. 19-23)",
+    "claim_id": "0310279v5#remark:2.1.1"
+  }
+}

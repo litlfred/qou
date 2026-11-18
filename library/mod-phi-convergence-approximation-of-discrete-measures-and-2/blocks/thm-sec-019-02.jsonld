@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-019-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 56,
+  "pageEnd": 58,
+  "text": "thm-sec-019-02.md",
+  "derivedFrom": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-019",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.9",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Inline argument in sections/sec-019-45-number-of-distinct-prime-divisors-of-a-random.md",
+    "claim_id": "mod-phi-convergence-approximation-of-discrete-measures-and-2#theorem:4.9",
+    "lean_status": "unformalized"
+  }
+}

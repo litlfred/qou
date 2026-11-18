@@ -1,0 +1,1 @@
+(a) We have: I2,3(q) = −e 3πi ( q ˜q ) 1 8 ∞∑ m,n=0 Rm,n(q, ˜q)tm(q)Tn(˜q) (21) = −e 3πi ( q ˜q ) 1 ( −b2 2 g1(q)G1(˜q) − 1 2πi g3(q)G1(˜q) + 1 2g2(q)G2(˜q) + b−2 2 g3(q)G3(˜q) ) (b) F and ~F satisfy the linear q-diﬀerence equations F (q, q3x) − (3 − q2x)F (q, q2x) + 3F (q, qx) − F (q, x) = 0 ~F (q, q3x) − 3~F (q, q2x) + (3 − q2x)~F (q, qx) − ~F (q, x) = 0 .

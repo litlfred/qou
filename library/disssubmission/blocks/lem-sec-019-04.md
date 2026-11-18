@@ -1,0 +1,1 @@
+Let K,M ∈D. (a) The cone of the morphism K ∗! M −→K ∗∗M lies in T. (b) If K or M lies in T, then K ∗! M and K ∗∗M are also in T. (c) If both K and M are perverse, then pHn(K ∗! M) and pHn(K ∗∗M) lie in the Serre subcategory S for all n̸ = 0.

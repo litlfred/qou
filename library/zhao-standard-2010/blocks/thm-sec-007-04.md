@@ -1,0 +1,1 @@
+For any prime p write L(i, j) = Lp(1, 1|i, j) and D(i) = Lp(2|i). Deﬁne for 1 ≤i, j < p: FDT := −D(0) + p p−1 X j=0 D(j), RDS(i) := D(i) + L(i, 0) −L(i, −i), FDS(i, j) := D(i + j) + L(i, j) + L(j, i) −L(i, j −i) −L(j, i −j). Then one has FDT = X 1≤i<p FDS(i, i) + 2 X 1≤j<i<p FDS(i, j) + 2 p−1 X i=1 RDS(i). (19)

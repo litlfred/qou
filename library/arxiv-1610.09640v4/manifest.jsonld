@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Derived Categories Amnon Yekutieli 14 Apr 2019 DERIVED CATEGORIES",
+  "title": "Derived Categories",
   "contains": [
     "library/arxiv-1610.09640v4/sections/sec-front-matter",
     "library/arxiv-1610.09640v4/sections/sec-000",
@@ -163,8 +163,8 @@
       "stamp_date": "14 Apr 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

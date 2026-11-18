@@ -1,1 +1,0 @@
-Special rate: $212.50 a year to individual members of supporting insti Subscriptions, requests for back issues from the last three years and changes of subscribers address should be sent to Paciﬁc Jou Mathematics, P.O.

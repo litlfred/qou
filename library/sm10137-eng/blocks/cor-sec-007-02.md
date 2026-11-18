@@ -1,0 +1,1 @@
+Let P1 and P2 be two commuting orthogonal projections in a sepa- rable Hilbert space H. Let Qi = I −Pi, i = 1, 2. Then det(P1AP1) det(Q1A−1Q1) = det(P2AP2) det(Q2A−1Q2), (8.2) if A is invertible, A −I ∈J2(H) and all Fredholm determinants are well defined.

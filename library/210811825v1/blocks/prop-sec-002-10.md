@@ -1,0 +1,1 @@
+Let A be bounded operator on a Hilbert space H. Then the following are equivalent [64]: (i) A is compact; (ii) A is the norm limit of a sequence of ﬁnite rank operators; (iii) for any weakly convergent sequence un ⇀u, Aun →u strongly; (iv) for any ﬁnite orthonormal system (en), Aen →0.

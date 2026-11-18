@@ -1,0 +1,1 @@
+— For any (a, b, ℓ, n) ∈C∗× C∗× N × N such that a̸ = b, the following decomposition holds: (x −a)ℓ (x −b)n = ℓ−1 X k=0 (n + k)! (a −b)n+kk! (−1)k (x −a)ℓ−k + n−1 X k=0 (ℓ+ k)! (b −a)ℓ+kk! (−1)k (x −b)n−k .

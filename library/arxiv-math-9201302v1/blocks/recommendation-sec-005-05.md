@@ -1,1 +1,0 @@
-By an Euler characteristic argument, every crossingless C2 freeway without boundary must have a face with positive curvature, and such a face can be reduced by the switching move to one for which one of the other moves applies.

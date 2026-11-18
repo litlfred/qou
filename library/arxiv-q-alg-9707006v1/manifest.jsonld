@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9707006v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9707006v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-q-alg-9707006v1",
+  "title": "Drinfeld twist for quantum su(2) in the adjoint representation",
   "contains": [
     "library/arxiv-q-alg-9707006v1/sections/sec-front-matter",
     "library/arxiv-q-alg-9707006v1/sections/sec-000",
@@ -31,7 +31,9 @@
   "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "arxiv-q-alg-9707006v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9707006v1.pdf",
     "source_sha256": "b9513be9294f56d92ab0094ea4817e962e459af346f424b6ba524381ab52a418",
     "pages": 11,
@@ -42,8 +44,8 @@
       "stamp_date": "4 Jul 1997"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

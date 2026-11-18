@@ -1,0 +1,1 @@
+In any pivotal category, for any morphism f: a  b the following composite is f*: b* www \&1(b*) b*e www 1=(a) b* (aa*) wwww 1 ( f1) b* (ba*) wwwww :&1(b*, b, a*) (b*b)a* wwwww ({(b*) {(b))1 (b***b**)a wwww #(b**, b*)1 (b*b**)*a*wwww =*(b*)1 e*a* ww &&11 ea* ww *(a*) a*

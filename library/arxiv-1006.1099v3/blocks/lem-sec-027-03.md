@@ -1,0 +1,1 @@
+Equip E = P1 with the symplectic form 2ωF S of area 2π, and equip X = O(−1) with the symplectic form Ω1 giving the zero-section area π. Deﬁne ∂νE as the boundary of the sphere of radius √ 2 in C2, viewed via (4.6) as the boundary of the unit disk subbundle O(−1)1 ⊂O(−1). Then the correspondence Γ2 ⊂E−× X associated to νE is a monotone Lagrangian submanifold.

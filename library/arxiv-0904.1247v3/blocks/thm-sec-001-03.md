@@ -1,0 +1,1 @@
+1) (Theorems 3.18, 6.2, 6.3) The Hecke categories HG and e HG are semi-rigid, and carry canonical pivotal and Calabi-Yau structures. 2) (Theorem 6.9) The dg category ChG of unipotent character sheaves is canonically equivalent to the monoidal center and trace of both Hecke categories HG and e HG.

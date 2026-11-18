@@ -1,1 +1,1 @@
-LetR be a balanced dualizing complex over a noe-
+LetR be a balanced dualizing complex over a noe- therian connected graded k-algebra A. Then for any graded k-algebra B and any M ∈ D(GrMod(A ⊗B◦)) there is a functorial isomorphism R Homgr A (M,R ) ∼= (RΓ mM )∗. This is proved by combining [VdB] Theorems 5.1 and 6.3. The theorem wa s ﬁrst proved in [Ye1], but only for M ∈ Db f (GrModA).

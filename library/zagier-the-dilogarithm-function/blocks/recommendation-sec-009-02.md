@@ -1,1 +1,0 @@
-To see that it really has this denominator, we calculate that L(ξ)/L(1) = 13/10 (numerically, but then exactly since we have just shown that 10 L(ξ)/L(1) must be an integer). (c) In example (a), the torsion element in the Bloch group had the form [x] for a single number x = (−1 ± √ 5)/2.

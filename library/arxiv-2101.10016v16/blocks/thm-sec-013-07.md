@@ -1,0 +1,1 @@
+When C is also a C ∗ -category and F factors through a ∗-functor F : C → Hilb then A has a natural pre-C ∗ -algebra involution. If C is rigid and the dimension assumption of Prop. 7.6 (d) hold (e.g. C is a fusion category) then A has an antipode (S, α, β). We note that S may always be chosen commuting with ∗. Indeed, following the proof of

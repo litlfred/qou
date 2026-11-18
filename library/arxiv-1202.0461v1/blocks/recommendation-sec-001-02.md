@@ -1,1 +1,0 @@
-Our model naturally predicts that the masses of high-field magnetic white dwarfs should be larger than average and that they should be observed as single white dwarfs, as observationally found --- see, for instance, Valyavin & Fabrika (1999).

@@ -1,0 +1,1 @@
+Under PI(σ 2), for all a < b, E  b a |Fn(x) −F(x)|dx ≤σ √n  1 + 3  b −a σ/√n 1/3 . The next step is to extend the above inequality to the whole real line. Here, we shall use the exponential integrability of the measure F .

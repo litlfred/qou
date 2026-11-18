@@ -1,1 +1,0 @@
-Elements ˜g that stabilize this portion of the tree must be in the stabilizers (gt−1)H(tg−1) and g′H(g′)−1, which means that there exist h, h′ such that gt−1 h tg−1 = ˜g = g′h′(g′)−1, hence t−1ht = (g−1g′)h(g−1g′)−1.

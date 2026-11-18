@@ -1,1 +1,0 @@
-We take this as the optimal parameter for this approach. {}From Fig.~\ref{mean} we learn, that the necessary condition (\ref{meannumber}) is fulfilled only for the Gaussian approach, polynomial fit with $n\geq3$ and local unfolding with $k\approx100$ for $V=16^4$, all other choices of the parameters must be rejected.
