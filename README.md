@@ -558,7 +558,14 @@ then a gate on the final-pass log (errors, undefined citations and references).
 scripts/setup-folio-assistant.sh                       # once: the platform checkout
 bun run scripts/run-validate.ts folio/quantum-observable-universe   # validate content objects
 scripts/build-paper-pdf.sh                             # -> build/paper/main.pdf
+scripts/publish-paper-pdf.sh                           # build + publish to gh-pages papers/
+scripts/paper-diff-pdf.sh                              # branch vs main diff PDF -> gh-pages drafts/<branch>/
 ```
+
+Every merge to main publishes the PDF ([`paper-pdf.yml`](.github/workflows/paper-pdf.yml));
+when Actions cannot run, the merging agent runs `scripts/publish-paper-pdf.sh`.
+A branch's diff PDF (latexdiff against main's published source) is the PDF
+counterpart of the site's `STAGING/<branch>/` preview.
 
 It needs `latexmk`, TeX Live and `cm-super` (scalable fonts: `microtype` aborts
 on page 1 without them). Page layout (wide text block, narrow margins, single

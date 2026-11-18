@@ -21,6 +21,11 @@ on:
       - ".folio-assistant-pin"
       - ".github/workflows/paper-pdf.yml"
   workflow_dispatch:
+    inputs:
+      diff_branch:
+        description: "Instead of publishing main: build this branch and publish its latexdiff PDF to gh-pages drafts/<branch>/"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -35,6 +40,8 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ inputs.diff_branch || github.ref }}
 
       - uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
 
@@ -47,16 +54,22 @@ jobs:
           sudo apt-get install -y -q --no-install-recommends \
             latexmk texlive-latex-extra texlive-science texlive-fonts-recommended \
             texlive-fonts-extra texlive-pictures texlive-bibtex-extra biber \
-            texlive-plain-generic texlive-lang-greek lmodern cm-super
+            texlive-plain-generic texlive-lang-greek lmodern cm-super latexdiff
 
       - name: Platform checkout (at .folio-assistant-pin)
         run: bash scripts/setup-folio-assistant.sh
 
       - name: Build and publish
+        env:
+          DIFF_BRANCH: ${{ inputs.diff_branch }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          bash scripts/publish-paper-pdf.sh
+          if [ -n "$DIFF_BRANCH" ]; then
+            bash scripts/paper-diff-pdf.sh --branch "$DIFF_BRANCH"
+          else
+            bash scripts/publish-paper-pdf.sh
+          fi
 
       - name: Upload the PDF and logs
         if: always()
@@ -68,4 +81,6 @@ jobs:
             build/paper/main.log
             build/paper/latexmk.log
             build/paper/content-build.log
+            build/paper-diff/main-diff.pdf
+            build/paper-diff/latexmk.log
           if-no-files-found: warn

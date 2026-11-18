@@ -12,6 +12,32 @@ allowed-tools: Bash AskUserQuestion run_command
 
 # /build-pdf
 
+## Current pipeline (2026-11-18) — use these scripts; the steps below are history
+
+Three commands, the same in CI and in an agent session:
+
+```bash
+scripts/build-paper-pdf.sh      # content -> LaTeX -> latexmk -> log gate; build/paper/main.pdf
+scripts/publish-paper-pdf.sh    # build + publish gh-pages papers/<slug>/{pdf,json,flat.tex}
+scripts/paper-diff-pdf.sh       # branch vs main latexdiff -> gh-pages drafts/<branch>/
+```
+
+- **Merge to main**: `.github/workflows/paper-pdf.yml` runs `publish-paper-pdf.sh`
+  (owner 2026-11-18, the one push-triggered workflow). **If Actions billing
+  blocks it, the agent that merged runs `scripts/publish-paper-pdf.sh` itself.**
+- **A branch with paper changes**: run `scripts/paper-diff-pdf.sh` after
+  committing. It is the PDF counterpart of the site's `STAGING/<branch>/`
+  preview: `drafts/<branch>/<slug>.pdf` and `<slug>-diff.pdf`.
+- **Cache**: the diff baseline is main's flattened source as last published
+  (`papers/<slug>/<slug>.flat.tex`), so a diff never rebuilds main. There is no
+  preamble/diagram cache — see `latex-build-cache.md` for why.
+- **Container needs**: TeX Live set + `cm-super` + `latexdiff` (apt), and
+  `scripts/setup-folio-assistant.sh` once. Layout: `folio/<paper>/latex/layout.tex`;
+  restored macros: `folio/<paper>/latex/macros.tex`.
+- The steps below (`../folio-assistant/content/pipeline/build.ts`,
+  `latex/preamble.tex`, `install-tex.sh` at its old path) predate the platform
+  refactor and no longer resolve.
+
 Builds the paper locally (saves CI minutes, and CI auto-triggers are
 disabled repo-wide anyway — see AGENTS.md §"NEVER merge to main without
 `/prepare-merge`", Phase-4 verification gate). Produces `main.pdf` and
