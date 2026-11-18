@@ -1,7 +1,7 @@
 ---
 # qou-jc9f
 title: Missing-hypotheses queue (P3)
-status: todo
+status: in-progress
 type: feature
 tags:
     - reorg-2026-10-04

@@ -1,7 +1,7 @@
 ---
 # markov_identification
 title: markov identification missing hypotheses
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -17,3 +17,9 @@ The `markovTrace_branching` theorem is unprovable. It posits an equality between
 
 
 Also known as `mrid` (its former front-matter header id; the beans CLI uses the filename id `markov_identification`). Recorded 2026-10-04.
+
+## Round 91 Lean 4 + 80-dps Witness Formalization (PR #8487)
+- Module: `QOU.Foundations.SeminormalInversionDescentBranchingBridgeHypothesisLinkStabilisationConjugationFourComponentOperFiltrationJointPeriodBraidSplit`
+- Commit 1 (code + probe): `ac300d2c8e5f49854ec28ab33d09e033225201c1`
+- Commit 2 (`.witness.json`): `e92637de21c829df89a2f80bfc1da64dc805a438`
+- PR: https://github.com/litlfred/qou/pull/8487

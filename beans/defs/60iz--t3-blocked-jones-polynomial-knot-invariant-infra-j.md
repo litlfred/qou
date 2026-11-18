@@ -1,7 +1,7 @@
 ---
 # 60iz
 title: 'T3 [BLOCKED]: Jones polynomial / knot-invariant infra → jet_filtered_knot_factor value side'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -32,3 +32,9 @@ PARTIAL (2026-06-25): built JonesViaMarkovTrace.lean — jonesHopf (Jones value 
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-06-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 91 Lean 4 + 80-dps Witness Formalization (PR #8487)
+- Module: `QOU.Foundations.SeminormalInversionDescentBranchingBridgeHypothesisLinkStabilisationConjugationFourComponentOperFiltrationJointPeriodBraidSplit`
+- Commit 1 (code + probe): `ac300d2c8e5f49854ec28ab33d09e033225201c1`
+- Commit 2 (`.witness.json`): `e92637de21c829df89a2f80bfc1da64dc805a438`
+- PR: https://github.com/litlfred/qou/pull/8487
