@@ -1,0 +1,59 @@
+{
+  "probe": "round66-devacuify-6qbv-b9cj",
+  "scriptPath": "computations/probes/round66_devacuify_6qbv_b9cj_probe.py",
+  "scriptHash": "2f8e1c6cf7b2be0f319e963f87382b71d1d20d6d6e59037f5118c04c4a6f3f52",
+  "scriptSha256": "2f8e1c6cf7b2be0f319e963f87382b71d1d20d6d6e59037f5118c04c4a6f3f52",
+  "scriptCommitSha": "6041de0eb946f7f26ea789e700aa3903b086d465",
+  "executedAt": "2026-11-18T09:12:48Z",
+  "dps": 80,
+  "beans": [
+    "cj151",
+    "cj2d5",
+    "cj434",
+    "cj4df",
+    "cj504"
+  ],
+  "allPassed": true,
+  "checks": [
+    {
+      "name": "cj151_jet_filtered_knot_factor",
+      "partitionZ": "9.25",
+      "zeroWeightAtDqZero": "0.0",
+      "maxRescalingResidual": "0.0",
+      "factorDiffResidual": "0.0",
+      "passed": true
+    },
+    {
+      "name": "cj2d5_borel_zagier_qou_volumes",
+      "vol41": "2.029883212819307250042405108549040571883",
+      "vol52": "2.828122088330783162763900015318949063847",
+      "volBorromean": "7.854977208401626853743396344481565337046",
+      "distinctRatCombGap": "3.28590888178244005733670141729",
+      "passed": true
+    },
+    {
+      "name": "cj434_archimedean_agreement",
+      "inInterval": true,
+      "symmDiffResidual": "0.0",
+      "monoHolds": true,
+      "zeroToleranceResidual": "0.0",
+      "passed": true
+    },
+    {
+      "name": "cj4df_goncharov_zeta5",
+      "spanRank": 2,
+      "relationKernelRank": 2,
+      "maxRelationResidual": "0.0",
+      "maxGeneratorL1Norm": "3.0",
+      "passed": true
+    },
+    {
+      "name": "cj504_classical_riemann_hypothesis",
+      "firstZeroIm": "14.13472514173469379045725198356247027078",
+      "twoMulReResidual": "0.0",
+      "reflectionReResidual": "0.0",
+      "reInOpenUnitInterval": true,
+      "passed": true
+    }
+  ]
+}
