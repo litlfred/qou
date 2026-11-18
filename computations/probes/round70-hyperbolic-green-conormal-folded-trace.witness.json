@@ -1,0 +1,66 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-ut4e",
+    "qou-uwcc",
+    "qou-v56q",
+    "qou-vfl4",
+    "qou-vo5j"
+  ],
+  "checks": {
+    "qou_ut4e_hyperbolic_green_kernel": {
+      "alpha": "1.75",
+      "bean": "qou-ut4e",
+      "cite": "deturck-gluck2008",
+      "cothMinusOne": "0.06227531851559957239027872176814563905037",
+      "decayDiffResidual": "1.581329691484578483652286e-81",
+      "passed": true,
+      "ratioResidual": "7.906648457422892418261431e-82",
+      "shiftedLaplacianResidual": "1.054219794323052322434857e-81"
+    },
+    "qou_uwcc_conormal_signed_characteristic": {
+      "bean": "qou-uwcc",
+      "cite": "rossmann-invariant-eigendistributions-2",
+      "deltaSigned": 9,
+      "diffResidual": "0.0",
+      "mUnsigned": 19,
+      "passed": true,
+      "sumResidual": "0.0"
+    },
+    "qou_v56q_folded_type_b_trace": {
+      "asymmetryDefect": "0.2406028848872389651949914164993292661326",
+      "bean": "qou-v56q",
+      "cite": "geck-lambropoulou-2004",
+      "factorResidual": "1.054219794323052322434857e-81",
+      "passed": true,
+      "symmetricBarResidual": "0.0"
+    },
+    "qou_vfl4_causal_lagrangian_polarization": {
+      "bean": "qou-vfl4",
+      "cite": "finster2021",
+      "normFactorResidual": "1.686751670916883715895772e-80",
+      "passed": true,
+      "polarizationResidual": "6.747006683667534863583087e-80"
+    },
+    "qou_vo5j_sigma_hat3_free_cumulant": {
+      "bean": "qou-vo5j",
+      "cite": "sniady2006asymptotics",
+      "maxResidual": "0.0",
+      "passed": true,
+      "sigmaHat3Values": {
+        "2": 6,
+        "3": 24,
+        "4": 60,
+        "5": 120,
+        "6": 210
+      }
+    }
+  },
+  "generatedAt": "2026-11-18T10:08:36.282952+00:00",
+  "mpmathDps": 80,
+  "probe": "round70_hyperbolic_green_conormal_folded_trace_probe",
+  "scriptCommitSha": "860975b10b60b464c3379eb351990007a7f216d6",
+  "scriptHash": "e1952cb974e95b5149bb589633e48909524466a6a6f378bdee1dad551f8cbe37",
+  "scriptPath": "computations/probes/round70_hyperbolic_green_conormal_folded_trace_probe.py",
+  "scriptSha256": "e1952cb974e95b5149bb589633e48909524466a6a6f378bdee1dad551f8cbe37"
+}
