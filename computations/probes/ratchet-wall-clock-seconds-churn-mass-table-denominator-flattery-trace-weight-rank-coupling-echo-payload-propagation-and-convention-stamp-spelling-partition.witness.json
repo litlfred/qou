@@ -1,0 +1,78 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-ldwx",
+    "qou-lvx7",
+    "qou-m7py",
+    "qou-mhij",
+    "qou-ng7j"
+  ],
+  "checks": [
+    {
+      "beanId": "qou-ldwx",
+      "hok7DrainFractionOfPeak": "9.6e-1",
+      "initialInheritedSecondsFields": 17,
+      "passed": true,
+      "peakSnapshotNewFields": 25,
+      "residualSnapshotNewFields": 1,
+      "revExactMaximiserSecondsFields": 6,
+      "revExcessScalingSecondsFields": 11,
+      "totalHok7DrainedFields": 24
+    },
+    {
+      "beanId": "qou-lvx7",
+      "denominatorCompressionRatio": "1.7512818028380321310245671063324373319997499531162092892417328249046696255547915e+2",
+      "li6AtomicMassMeV": "5.603051e+3",
+      "li6BindingEnergyMeV": "3.1994e+1",
+      "li6DeltaMeV": "2.191",
+      "li6RelErrorOverBindingPct": "6.8481590298180908920422579233606301181471525911108332812402325436019253610051885",
+      "li6RelErrorOverMassPct": "3.9103695468772281387408395890024916781946121853968489667504365032551015509228811e-2",
+      "passed": true,
+      "ratioOverConventionDMeanBindingError": "3.7483081717668806196180941014562835895715120914673416974494978344838124581309187e+1"
+    },
+    {
+      "beanId": "qou-m7py",
+      "buggedRustTraceFormRank": 6,
+      "buggedTrM5AtProtonPin": "2.2999489803410144451150267268812433037009022438600348634824224787867827941875508e-1",
+      "exactTrM5AtProtonPin": "6.9116647835844451100417796407256429959080134722433321729229181737228729129256979e-1",
+      "exactTraceFormRadicalDim": 1,
+      "exactTraceFormRank": 5,
+      "muonVsProtonZRelativeShift": "2.1869406557703139156775467482298774623216699928766904117041599288308388221613201e-8",
+      "passed": true,
+      "threeStrandBasisDim": 6,
+      "trM5RelativeDeficit": "6.672366134128046714583845734287557293513210070882761185957805814614750344983596e-1",
+      "zDAtProtonPin": "6.1268803714646524365055882533574212030119024569427065733805725186621950220248391e-1"
+    },
+    {
+      "beanId": "qou-mhij",
+      "companionPayloadShiftPct": "-3.8804525078868134770913483885779661213756921510160176859127246263861039580679181",
+      "confirmedEchoPayloadWitnesses": 1,
+      "echoClassifiedWitnesses": 40,
+      "nonEchoClassifiedWitnesses": 18,
+      "nullProducerEchoWitnesses": 2,
+      "passed": true,
+      "sigma0PayloadShiftPct": "1.1894152187999964968323404556415002917142851395219479513543059205059279819496394e+1",
+      "totalTriagedConventionCWitnesses": 58,
+      "unverifiedProducerEchoWitnesses": 37
+    },
+    {
+      "beanId": "qou-ng7j",
+      "misclassifiedConventionDSpellings": 10,
+      "misclassifiedDSpellingFraction": "9.0909090909090909090909090909090909090909090909090909090909090909090909090909091e-1",
+      "passed": true,
+      "stampCoveragePct": "1.2535612535612535612535612535612535612535612535612535612535612535612535612535613",
+      "stampedConventionWitnesses": 44,
+      "totalDistinctConventionSpellings": 23,
+      "totalNonDeprecatedWitnesses": 3510,
+      "unstampedConventionWitnesses": 3466
+    }
+  ],
+  "generatedAt": "2026-11-18T07:08:20.491254+00:00",
+  "leanModule": "QOU.Eightfold.RatchetWallClockSecondsChurnMassTableDenominatorFlatteryTraceWeightRankCouplingEchoPayloadPropagationAndConventionStampSpellingPartition",
+  "probeName": "ratchet_wall_clock_seconds_churn_mass_table_denominator_flattery_trace_weight_rank_coupling_echo_payload_propagation_and_convention_stamp_spelling_partition_probe",
+  "scriptCommitSha": "99094ece879d78af4d1c855fc1a126720a2192d3",
+  "scriptHash": "8542dfe4ab61",
+  "scriptPath": "computations/probes/ratchet_wall_clock_seconds_churn_mass_table_denominator_flattery_trace_weight_rank_coupling_echo_payload_propagation_and_convention_stamp_spelling_partition_probe.py",
+  "scriptSha256": "8542dfe4ab6172e5e88d67b5554adc5d7bb9db9601f97c4809490b36c0f63985",
+  "workingDps": 80
+}
