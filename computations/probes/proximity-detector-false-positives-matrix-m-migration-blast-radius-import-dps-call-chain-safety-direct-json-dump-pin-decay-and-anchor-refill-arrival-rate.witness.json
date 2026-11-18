@@ -1,0 +1,70 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-p6sj",
+    "qou-pb4c",
+    "qou-pgr1",
+    "qou-pin5",
+    "qou-q0rf"
+  ],
+  "checks": [
+    {
+      "beanId": "qou-p6sj",
+      "detector1CandidateCount": 22,
+      "detector2CandidateCount": 296,
+      "detector2To3CandidateReduction": 229,
+      "detector2To3ClassReduction": 178,
+      "detector3CandidateCount": 67,
+      "detector3To2CandidateRatio": "2.2635135135135135135135135135135135135135135135135135135135135135135135135135135e-1",
+      "passed": true
+    },
+    {
+      "beanId": "qou-pb4c",
+      "downstreamMatrixMProducers": 23,
+      "downstreamMatrixMWitnesses": 14,
+      "migratedUpstreamMatrixMWitnesses": 8,
+      "passed": true,
+      "protonTrMShiftPct": "1.5379195118116282307647728202486593547978142487628604331841893429518659452628784e+1",
+      "y111SuppressionRatio": "1.5388036263446258437452633700876579485747216111889489278770434350405590165813785e-70"
+    },
+    {
+      "beanId": "qou-pgr1",
+      "blindSpotClosurePct": "7.1910112359550561797752808988764044943820224719101123595505617977528089887640449e+1",
+      "borromeanE0Dps15Vs50Diff": "9.9999999999999999999999999999999999999999999999999999999999999999913094546787424e-16",
+      "passed": true,
+      "residualInvisibleWitnesses": 100,
+      "sourceVerifiedAttributedWitnesses": 256,
+      "totalAttributionScannedWitnesses": 2966,
+      "totalPositionRiskyDpsSites": 20,
+      "unrecordedProducerBlindSpot": 356
+    },
+    {
+      "beanId": "qou-pin5",
+      "passed": true,
+      "q0OkRestoredCount": 566,
+      "rawJsonDumpProducers": 436,
+      "remainingVulnerablePinnedWitnesses": 14,
+      "stalenessStampingProducerFraction": "2.3589743589743589743589743589743589743589743589743589743589743589743589743589744e-1",
+      "stalenessStampingProducers": 184,
+      "totalCorpusProducers": 780
+    },
+    {
+      "afternoonRemeasuredNewUnstamped": 150,
+      "beanId": "qou-q0rf",
+      "fiveDayTotalNewUnstamped": 147,
+      "liveUnstampedNetIncrease": 115,
+      "meanDailyUnstampedArrivalRate": "2.94e+1",
+      "passed": true,
+      "sessionDrainedWitnesses": 4,
+      "sessionNetNewCount": 14
+    }
+  ],
+  "generatedAt": "2026-11-18T07:26:51.408897+00:00",
+  "leanModule": "QOU.Eightfold.ProximityDetectorFalsePositivesMatrixMMigrationBlastRadiusImportDpsCallChainSafetyDirectJsonDumpPinDecayAndAnchorRefillArrivalRate",
+  "probeName": "proximity_detector_false_positives_matrix_m_migration_blast_radius_import_dps_call_chain_safety_direct_json_dump_pin_decay_and_anchor_refill_arrival_rate_probe",
+  "scriptCommitSha": "d0ff0b74f49a2d7ad5666e943bc636f150a70259",
+  "scriptHash": "a0b7f604921c",
+  "scriptPath": "computations/probes/proximity_detector_false_positives_matrix_m_migration_blast_radius_import_dps_call_chain_safety_direct_json_dump_pin_decay_and_anchor_refill_arrival_rate_probe.py",
+  "scriptSha256": "a0b7f604921c614d2990ea0e2dc949d7ed73da88706be976ae9c6f427c752cab",
+  "workingDps": 80
+}
