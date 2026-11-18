@@ -1,7 +1,7 @@
 ---
 # qou-h0ou
 title: 'GAP: HasAction.action is scalar->scalar, so einsteinTensor cannot be rank-2 — wire FrobeniusPairingData'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -289,3 +289,7 @@ no `native_decide`, no `: True`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Progress (PR #8457)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/PairingSpaceActionRetypeRuledOddProjectionLetterInvolutionPullbackQuotientKernelMultiplierSlope.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_h0ou_hlx8_hlxp_i9gk_slpd_probe.witness.json` (`Commit 1` = `6615e05829d98e7dc8f3151a6136022620b0fa75`, `HEAD` = `87f824354a46b08a4af8436ed872967b2f3dfc59`).

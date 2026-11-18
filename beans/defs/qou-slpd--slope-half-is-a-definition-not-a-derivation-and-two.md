@@ -1,7 +1,7 @@
 ---
 # qou-slpd
 title: 'ROAST: slope ½ is a definition, not a derivation — and the two ½s are order vs level'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -278,3 +278,7 @@ Landed with #4672. What remains open here is recorded in the sections above and
 is not being worked on.
 
 Unclaimed. Status moved `in-progress` → `todo`.
+
+## Progress (PR #8457)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/PairingSpaceActionRetypeRuledOddProjectionLetterInvolutionPullbackQuotientKernelMultiplierSlope.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_h0ou_hlx8_hlxp_i9gk_slpd_probe.witness.json` (`Commit 1` = `6615e05829d98e7dc8f3151a6136022620b0fa75`, `HEAD` = `87f824354a46b08a4af8436ed872967b2f3dfc59`).

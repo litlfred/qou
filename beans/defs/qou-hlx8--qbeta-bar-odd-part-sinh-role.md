@@ -1,7 +1,7 @@
 ---
 # qou-hlx8
 title: Does a bar-odd part of the ruled Q_beta trace carry the sinh role (pairing CAL-2 with CAL-3) under z_D?
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -51,3 +51,7 @@ the colour-tube sign rule) read σ⁻¹ as the antiparticle contact, not as d. P
 is the only letter map preserving the D trace exactly (z_D is bar-fixed, n = 2, 3, 4). So a bar-odd
 projection of the ruled cell has no settled flavour meaning until hlxt is decided. No value is proposed.
 Status stays todo.
+
+## Progress (PR #8457)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/PairingSpaceActionRetypeRuledOddProjectionLetterInvolutionPullbackQuotientKernelMultiplierSlope.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_h0ou_hlx8_hlxp_i9gk_slpd_probe.witness.json` (`Commit 1` = `6615e05829d98e7dc8f3151a6136022620b0fa75`, `HEAD` = `87f824354a46b08a4af8436ed872967b2f3dfc59`).

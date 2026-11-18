@@ -1,7 +1,7 @@
 ---
 # qou-hlxp
 title: 'Research: can parity be the map σ ↦ −σ (covering q ↦ q⁻¹), and can P exist at the observable level?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -49,3 +49,7 @@ Bearing on the research questions:
   Markov trace, so tr_D∘P is not ±tr_D at any n ≥ 2.
 P is not a symmetry of the ruled trace. Status stays todo, since Q2 (P at the observable level) is
 open.
+
+## Progress (PR #8457)
+- Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/PairingSpaceActionRetypeRuledOddProjectionLetterInvolutionPullbackQuotientKernelMultiplierSlope.lean` (wired in `QOU.lean`).
+- 80-dps numerical witness stamped in `computations/probes/qou_10v9_h0ou_hlx8_hlxp_i9gk_slpd_probe.witness.json` (`Commit 1` = `6615e05829d98e7dc8f3151a6136022620b0fa75`, `HEAD` = `87f824354a46b08a4af8436ed872967b2f3dfc59`).
