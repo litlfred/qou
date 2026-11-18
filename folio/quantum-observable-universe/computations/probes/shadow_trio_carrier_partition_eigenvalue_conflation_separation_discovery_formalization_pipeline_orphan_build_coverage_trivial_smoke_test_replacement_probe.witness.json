@@ -1,0 +1,58 @@
+{
+  "probe": "shadow_trio_carrier_partition_eigenvalue_conflation_separation_discovery_formalization_pipeline_orphan_build_coverage_trivial_smoke_test_replacement_probe",
+  "beans": [
+    "qou-ar7f",
+    "qou-citp",
+    "qou-dgw2",
+    "qou-vyij",
+    "qou-x6q0"
+  ],
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/shadow_trio_carrier_partition_eigenvalue_conflation_separation_discovery_formalization_pipeline_orphan_build_coverage_trivial_smoke_test_replacement_probe.py",
+  "scriptCommitSha": "bb8f5355df1d1ec800ab4ff7b3f12aec9ebb513e",
+  "scriptHash": "31ea054b2675c31cb4c49fc090034587190b1a4d8041b360948b2c30652cf849",
+  "scriptSha256": "31ea054b2675c31cb4c49fc090034587190b1a4d8041b360948b2c30652cf849",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "shadowTrioCarrierPartition": {
+      "bean": "qou-ar7f",
+      "shadowCarrierPartitionResidual": "0.0",
+      "netLiveShadowImporters": "2.0",
+      "shadowCarrierPartitionEnergySq": "0.0",
+      "passed": true
+    },
+    "eigenvalueConflationSeparation": {
+      "bean": "qou-citp",
+      "additiveToyFalseTheoremResidual": "-8.0",
+      "additiveToyDiscrepancySq": "64.0",
+      "cActionFirstEigenvalue": "5.0",
+      "cActionSecondEigenvalue": "-2.0",
+      "separatedPairInvolutionResidual": "0.0",
+      "passed": true
+    },
+    "discoveryFormalizationPipeline": {
+      "bean": "qou-dgw2",
+      "discoveryPipelineResidual": "0.0",
+      "discoveryPipelineEnergySq": "0.0",
+      "passed": true
+    },
+    "orphanBuildCoverage": {
+      "bean": "qou-vyij",
+      "buildCoveragePartitionResidual": "0.0",
+      "compiledMinusUncompiledRefs": "72.0",
+      "buildCoverageEnergySq": "0.0",
+      "uncompiledChapterFiles": "833.0",
+      "passed": true
+    },
+    "trivialSmokeTestReplacement": {
+      "bean": "qou-x6q0",
+      "remainingTrivialSmokeTests": "0.0",
+      "trivialSmokeTestResidualSq": "0.0",
+      "passed": true
+    },
+    "fiveTaskRoundNinetyTwoSynthesis": {
+      "fiveTaskRoundNinetyTwoEnergySq": "64.0",
+      "passed": true
+    }
+  }
+}
