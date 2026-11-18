@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "probeName": "valuation_grade_selection_upper_half_plane_non_degeneracy_twisted_pair_cohomology_dimension_laurent_ring_unit_division_linear_duality_certificate_probe",
+  "beans": [
+    "qou-71ma",
+    "qou-n226",
+    "qou-oilr",
+    "qou-omuz",
+    "qou-wxmm"
+  ],
+  "leanModule": "QOU.Foundations.ValuationGradeSelectionUpperHalfPlaneNonDegeneracyTwistedPairCohomologyDimensionLaurentRingUnitDivisionLinearDualityCertificate",
+  "mpmathDps": 80,
+  "scriptPath": "computations/probes/valuation_grade_selection_upper_half_plane_non_degeneracy_twisted_pair_cohomology_dimension_laurent_ring_unit_division_linear_duality_certificate_probe.py",
+  "scriptHash": "f07174204f482f7a01972e149c17324ec39a978434a088c3f7d45077e7857c97",
+  "scriptSha256": "f07174204f482f7a01972e149c17324ec39a978434a088c3f7d45077e7857c97",
+  "scriptCommitSha": "84401456f07c58b1279d96f566c292313ce4c028",
+  "generatedAt": "2026-11-18T11:10:54.840049+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "beanId": "qou-71ma",
+      "theorem": "weightedGradeMoment_decomposition_and_singleDegreeSelection",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-n226",
+      "theorem": "im_pos_eliminates_degeneracies_and_holonomy_shift",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-oilr",
+      "theorem": "pair_cohomology_h1_pinning_and_arity_separation",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-omuz",
+      "theorem": "nonUnit_quantumDim_obstruction_and_cleared_normalization",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-wxmm",
+      "theorem": "primalDual_weakDuality_and_strongZeroGap_iff",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
