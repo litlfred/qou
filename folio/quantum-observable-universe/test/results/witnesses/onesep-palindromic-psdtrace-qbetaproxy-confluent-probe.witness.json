@@ -1,0 +1,41 @@
+{
+  "probe": "onesep_palindromic_psdtrace_qbetaproxy_confluent_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/onesep_palindromic_psdtrace_qbetaproxy_confluent_probe.py",
+  "scriptCommitSha": "703989bfc3288df23d9b21fe6d50479c57a3e32a",
+  "scriptHash": "151aa84f5fd60fb7e9c91208e000bbfd4f0a01d237ad853960c7e872b0e920b4",
+  "scriptSha256": "151aa84f5fd60fb7e9c91208e000bbfd4f0a01d237ad853960c7e872b0e920b4",
+  "dps": 80,
+  "allPassed": true,
+  "checks": {
+    "consecutiveFirstNotSplitsOff": {
+      "lkConsecutive": "-2.0",
+      "firstSplitsOff": false,
+      "passed": true
+    },
+    "colorCubicInvLiftSubEqZero": {
+      "lhs": "79.884259259259259259259259259259259259259259259259259259259259259259259259259259",
+      "rhs": "79.884259259259259259259259259259259259259259259259259259259259259259259259259259",
+      "residual": "-1.3494013367335069727166174785625624329868750569431689664099536672138424692441292e-79",
+      "passed": true
+    },
+    "psdDetOneSubTwoNonneg": {
+      "det": "1.0",
+      "trace": "3.6666666666666666666666666666666666666666666666666666666666666666666666666666667",
+      "traceMinusTwo": "1.6666666666666666666666666666666666666666666666666666666666666666666666666666667",
+      "passed": true
+    },
+    "qbetaProxySubE0HReductionEqZero": {
+      "qbetaProxy": "0.64814814814814814814814814814814814814814814814814814814814814814814814814814815",
+      "rhs": "0.64814814814814814814814814814814814814814814814814814814814814814814814814814815",
+      "residual": "0.0",
+      "passed": true
+    },
+    "normalizedClassicalKernelSubEqZero": {
+      "n": 4,
+      "b_n2_scaled": "0.63333333333333333333333333333333333333333333333333333333333333333333333333333333",
+      "b_n1_plus_b_n": "0.63333333333333333333333333333333333333333333333333333333333333333333333333333333",
+      "residual": "0.0",
+      "passed": true
+    }
+  }
+}
