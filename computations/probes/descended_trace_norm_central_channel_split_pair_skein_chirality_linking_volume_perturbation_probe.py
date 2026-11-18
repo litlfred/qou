@@ -34,7 +34,7 @@ def _git_commit_sha(repo_root: Path) -> str:
 
 
 def _script_hash(script_path: Path) -> str:
-    return hashlib.sha256(script_path.read_bytes()).hexdigest()[:12]
+    return hashlib.sha256(script_path.read_bytes()).hexdigest()
 
 
 def run_probe() -> dict:
@@ -229,6 +229,7 @@ def run_probe() -> dict:
         "precisionDps": 80,
         "scriptPath": "computations/probes/descended_trace_norm_central_channel_split_pair_skein_chirality_linking_volume_perturbation_probe.py",
         "scriptHash": _script_hash(script_path),
+        "scriptSha256": _script_hash(script_path),
         "scriptCommitSha": _git_commit_sha(repo_root),
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "allPassed": bool(all_passed),
