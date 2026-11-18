@@ -1,0 +1,64 @@
+{
+  "probe": "round66-amphicheiral-trace-torsion-chiral-power-srg-borel",
+  "beans": [
+    "qou-njry",
+    "qou-ohl6",
+    "qou-otpa",
+    "qou-owbd",
+    "qou-r0fd"
+  ],
+  "scriptCommitSha": "2820639dabd25097babeacefd618bdfb3bed756d",
+  "scriptHash": "fa20b55fbc68f415651dc86394e2ec336cb2158aaaf568da994a653f398cbfa8",
+  "scriptSha256": "fa20b55fbc68f415651dc86394e2ec336cb2158aaaf568da994a653f398cbfa8",
+  "timestamp": "2026-11-18T07:33:36.910266+00:00",
+  "durationMs": 9,
+  "dps": 80,
+  "allPassed": false,
+  "results": {
+    "qou_njry_amphicheiral_trace_field_conjugation": {
+      "shapeMinimalPolyResidual": "0.0",
+      "conjugateMinimalPolyResidual": "0.0",
+      "unitNormSyzygyResidual": "0.0",
+      "secondaryDilogCancellationResidual": "0.0",
+      "hyperbolicVolume41": "2.029883212819307250042405108549040571883378615060599584034978213553194952516488",
+      "passed": true
+    },
+    "qou_ohl6_twist_knot_torsion_conventions": {
+      "tauMeridian": "3.4641016151377545870548926830117447338856105076207612561116139589038660338176001",
+      "tauSymmetric": "1.7320508075688772935274463415058723669428052538103806280558069794519330169088",
+      "tauLongitude": "0.86602540378443864676372317075293618347140262690519031402790348972596650845440002",
+      "quadrupledNormSqMeridian": 48,
+      "quadrupledNormSqSymmetric": 12,
+      "quadrupledNormSqLongitude": 3,
+      "hierarchyResidual": "0.0",
+      "passed": true
+    },
+    "qou_otpa_chiral_many_body_power_counting": {
+      "leadingTreeOrders2NTo5N": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "scaleRatio2NOver3N": "9.0",
+      "scaleRatio3NOver4N": "9.0",
+      "passed": true
+    },
+    "qou_owbd_srg_and_n3lo_four_body_bound": {
+      "simplexMu4EnergyKeV": "10212.982506",
+      "ratioOverN3lo300KeV": "34.04327502",
+      "ratioOverSrg50KeV": "204.25965012",
+      "excessAbove34xN3loKeV": 13,
+      "excessAbove204xSrgKeV": 13,
+      "passed": true
+    },
+    "qou_r0fd_borel_singularity_period_scaling": {
+      "actionTwoPiNormalized": "0.32306594721945051409363651072380639407224184078058701613086847036101511280726984",
+      "actionPiNormalized": "0.64613189443890102818727302144761278814448368156117403226173694072203022561453968",
+      "periodRatioResidual": "0.0",
+      "scaledActionTwoPi1e7": 3230659,
+      "scaledActionPi1e7": 6461319,
+      "passed": false
+    }
+  }
+}
