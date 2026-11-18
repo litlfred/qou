@@ -45,4 +45,9 @@ theorem contentSqSum_ofRowLens (L : List ℕ) (hsort : L.Sorted (· ≥ ·)) :
     QOU.Mathlib.Schensted.rowLen_getD]
   rfl
 
+/-- Subtracting the row-list content-square sum from the cell-indexed content-square sum cancels to zero (`qou-ircb`). -/
+theorem contentSqSum_ofRowLens_sub_eq_zero (L : List ℕ) (hsort : L.Sorted (· ≥ ·)) :
+    JucysMurphy.contentSqSum (ofRowLens L hsort) - IdentityI.sumSqContents L = 0 := by
+  rw [contentSqSum_ofRowLens L hsort, sub_self]
+
 end QOU.BraidKnot.ContentSqSumBridge
