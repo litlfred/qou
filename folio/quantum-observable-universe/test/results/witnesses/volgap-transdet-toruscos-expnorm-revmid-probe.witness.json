@@ -1,0 +1,46 @@
+{
+  "allPassed": true,
+  "beans": [
+    "qou-8lxd",
+    "qou-dap4",
+    "qou-g7f6",
+    "qou-hok7",
+    "qou-i5d7"
+  ],
+  "dps": "80",
+  "probe": "volgap_transdet_toruscos_expnorm_revmid_probe",
+  "results": {
+    "cos_q_mul_inflection_zero": {
+      "cos_val": "-1.0",
+      "passed": true,
+      "q": "5.0",
+      "residual": "0.0"
+    },
+    "exchangeSymmetric_reverse_midpoint": {
+      "lhs": "14.569487150848133678103105493815670572621024318022519898770772741957877170311298",
+      "passed": true,
+      "residual": "0.0",
+      "rhs": "14.569487150848133678103105493815670572621024318022519898770772741957877170311298"
+    },
+    "norm_exp_two_pi_I_mul_zero_im": {
+      "norm_z": "1.0",
+      "passed": true,
+      "residual": "0.0"
+    },
+    "transfer_det_neg": {
+      "det_neg": "1.0",
+      "det_pos": "1.0",
+      "passed": true,
+      "residual": "0.0"
+    },
+    "volume_gap_pos": {
+      "aV": "15.8",
+      "gap": "15.999",
+      "passed": true,
+      "perNucleon": "-0.19899999999999999999999999999999999999999999999999999999999999999999999999999998"
+    }
+  },
+  "scriptCommitSha": "5e79af8c20b785d2579cf369aa92aa2a7e376a7f",
+  "scriptHash": "63aa8a57e8945297ddf56fe47b599650a034ed2c772468c8933c5b630f3b9d86",
+  "scriptSha256": "63aa8a57e8945297ddf56fe47b599650a034ed2c772468c8933c5b630f3b9d86"
+}
