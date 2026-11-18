@@ -75,3 +75,5 @@ auto-triggers are disabled repo-wide (owner directive 2026-06-30), so the
 Full measurement, the two further stub checkers found the same way
 (`detangler-no-xchapter-fwd`, `detangler-archimedean-wall`), and the knock-on
 into `ab_methodology_metrics` M5: bean `qou-306p`.
+
+- **Round 93 PR (`litlfred/qou#8497`)**: Formalized `InertCheckerVerdictLedger`, `canonicalInertCheckerVerdictLedger`, `inert_checker_quadratic_balance`, `inert_checker_imbalance_sq_nonneg`, and `inert_checker_active_and_evaluated_recovery` in `QOU.Foundations.InertCheckerVerdictAuditPerPartitionAtomWordGateNoFitChiralitySeparationNormalFormHypothesisBridgeSeventySevenPartitionCompletion` with 80-dps witness (`HEAD = 25e6a2cd52af041cf68fa20d385161f4542be774`, `scriptCommitSha = b25d0e225db433dedb54ef57a788c05ae89960c1`, `scriptHash = 8abb07ac1693146e31fad47a5cfd80a80064de9f2fffcba92912d9ae413ecf74`).

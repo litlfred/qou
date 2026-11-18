@@ -11,3 +11,4 @@ updated_at: 2026-10-04T15:20:39Z
 parent: qou-5vkl
 ---
 
+- **Round 93 PR (`litlfred/qou#8497`)**: Formalized `PerPartitionAtomWordLedger`, `canonicalPerPartitionAtomWordLedger`, `per_partition_trinomial_square`, and `per_partition_hook_diff_sq` in `QOU.Foundations.InertCheckerVerdictAuditPerPartitionAtomWordGateNoFitChiralitySeparationNormalFormHypothesisBridgeSeventySevenPartitionCompletion` with 80-dps witness (`HEAD = 25e6a2cd52af041cf68fa20d385161f4542be774`).

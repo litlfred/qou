@@ -103,3 +103,5 @@ open T2/T3 trace-invariant reformulation**, not an isolated compute task — the
 57 % residual is a *symptom* of that frontier. **Do NOT wire the pathological Φ_q
 T2/T3 into the solver.** Keep ³He frozen + documented (PR #2836). Re-open when the
 binding-closure frontier resolves T2/T3 at q₀.
+
+- **Round 93 PR (`litlfred/qou#8497`)**: Formalized `NoFitChiralitySeparationLedger`, `canonicalNoFitChiralitySeparationLedger`, `chirality_polarization_identity`, and `no_fit_chirality_strict_separation` in `QOU.Foundations.InertCheckerVerdictAuditPerPartitionAtomWordGateNoFitChiralitySeparationNormalFormHypothesisBridgeSeventySevenPartitionCompletion` with 80-dps witness (`HEAD = 25e6a2cd52af041cf68fa20d385161f4542be774`).

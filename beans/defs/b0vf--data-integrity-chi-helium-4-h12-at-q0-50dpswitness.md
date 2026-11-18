@@ -69,3 +69,5 @@ partitions. So:
 
 Partial witness flagged known-incomplete (benign note field; no numeric/q₀ change). No regen; tree clean.
 Audit: `docs/audits/2026-06-29-b0vf-markov-peel-crosscheck-he4-scalar.md`.
+
+- **Round 93 PR (`litlfred/qou#8497`)**: Formalized `SeventySevenPartitionCompletionLedger`, `canonicalSeventySevenPartitionCompletionLedger`, `partition_two_square_composition`, and `round_ninety_three_joint_certificate` in `QOU.Foundations.InertCheckerVerdictAuditPerPartitionAtomWordGateNoFitChiralitySeparationNormalFormHypothesisBridgeSeventySevenPartitionCompletion` with 80-dps witness (`HEAD = 25e6a2cd52af041cf68fa20d385161f4542be774`).
