@@ -112,4 +112,9 @@ theorem jmRaw_comm_all_of_all_adjacent (H : HeckeGenerators R A q)
     ∀ i j : ℕ, i ≤ j → jmRaw H i * jmRaw H j = jmRaw H j * jmRaw H i :=
   fun i => jmRaw_comm_of_adjacent H i (hadj i)
 
+/-- Subtracting the reversed product from the product of the first Jucys-Murphy element with any higher element yields zero (`qou-m8s9`). -/
+theorem jmRaw_one_comm_sub_eq_zero (H : HeckeGenerators R A q) (j : ℕ) (hj : 1 ≤ j) :
+    jmRaw H 1 * jmRaw H j - jmRaw H j * jmRaw H 1 = 0 := by
+  rw [jmRaw_one_comm_all H j hj, sub_self]
+
 end QOU.BraidKnot.Hecke

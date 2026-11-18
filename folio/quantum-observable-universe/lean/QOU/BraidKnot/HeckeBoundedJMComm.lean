@@ -246,6 +246,11 @@ theorem jmRaw_comm_of_below (H : HeckeGenerators R A q) (i k : ℕ) :
   have := jmRawB_comm (H.toBelow (i + k + 1)) i k (by omega) (by omega)
   rwa [jmRawB_toBelow, jmRawB_toBelow] at this
 
+/-- The commutator difference of two unbounded Jucys-Murphy elements vanishes (`qou-l1gv`). -/
+theorem jmRaw_comm_sub_eq_zero (H : HeckeGenerators R A q) (i k : ℕ) :
+    jmRaw H i * jmRaw H k - jmRaw H k * jmRaw H i = 0 := by
+  rw [jmRaw_comm_of_below H i k, sub_self]
+
 /-! ## §6  The payoff: the JM elements of the 2-dimensional block commute -/
 
 section StdThree

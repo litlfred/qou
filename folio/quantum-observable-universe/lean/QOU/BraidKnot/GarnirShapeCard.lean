@@ -110,4 +110,9 @@ theorem lexGtOn_garnirPartOf (h : (i + 1, j) ∈ μ) :
       (garnirPartOf h) ⟨μ, rfl⟩ :=
   garnirShape_lexGt h
 
+/-- Subtracting the original diagram cell count from the Garnir shape cell count cancels to zero (`qou-k9yt`). -/
+theorem card_garnirShape_sub_eq_zero (h : (i + 1, j) ∈ μ) :
+    (garnirShape μ i j).cells.card - μ.cells.card = 0 := by
+  rw [card_garnirShape h, Nat.sub_self]
+
 end QOU.BraidKnot.GarnirShapeCard

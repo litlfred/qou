@@ -106,6 +106,11 @@ theorem stdTwoBelow3_twist_eq_theta_sq (q : K) (hq : q ≠ 0) :
       = algebraMap K (Matrix (Fin 2) (Fin 2) K) ((theta q [2, 1]) ^ 2) := by
   rw [stdTwoBelow3_twist_trivial q hq, theta_two_one_sq, map_one]
 
+/-- Subtracting the identity matrix from the three-strand Jucys-Murphy product on the two-dimensional module yields zero (`qou-lsib`). -/
+theorem stdTwoBelow3_twist_sub_one_eq_zero (q : K) (hq : q ≠ 0) :
+    jmProdB (stdTwoBelow3 q hq) 3 - 1 = 0 := by
+  rw [stdTwoBelow3_twist_trivial q hq, sub_self]
+
 end StdThree
 
 end QOU.BraidKnot.Hecke

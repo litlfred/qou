@@ -115,4 +115,10 @@ theorem linear_sub_excess_le {F : Type*} [Field F] [LinearOrder F] [IsStrictOrde
       nlinarith [sq_nonneg (L * (y - y0) - c)]
     nlinarith
 
+/-- Rearranging the linear-versus-excess bound yields a nonnegative slack (`qou-kt8o`). -/
+theorem linear_sub_excess_slack_nonneg {F : Type*} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+    (c L y y0 : F) (hc : 0 ≤ c) (hL : 0 < L) (hy : 0 ≤ y) (hy0 : 0 ≤ y0) :
+    0 ≤ (c * y0 + c ^ 2 / (2 * L)) - (c * y - L / 2 * max 0 (y ^ 2 - y0 ^ 2)) :=
+  sub_nonneg.mpr (linear_sub_excess_le c L y y0 hc hL hy hy0)
+
 end QOU.BraidKnot.HardWallProjection
