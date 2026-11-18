@@ -1,7 +1,7 @@
 ---
 # qou-9mrz
 title: Cite [blitvic2012-clt] at QOU.Observations.QCltNonCommutative
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

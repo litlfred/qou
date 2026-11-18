@@ -1,7 +1,7 @@
 ---
 # qou-906a
 title: Remark interpreting [diaconis-ram2000] at folio/quantum-observable-universe/mass-theory/hecke-m…
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

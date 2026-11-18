@@ -1,7 +1,7 @@
 ---
 # qou-9gej
 title: Remark interpreting [garoufalidis-kashaev2015] at conj:stokes-dt-bps-bridge
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

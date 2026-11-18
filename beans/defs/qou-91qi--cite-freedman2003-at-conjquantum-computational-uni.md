@@ -1,7 +1,7 @@
 ---
 # qou-91qi
 title: Cite [freedman2003] at conj:quantum-computational-universality
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
