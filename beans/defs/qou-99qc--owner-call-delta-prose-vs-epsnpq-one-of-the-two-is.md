@@ -3847,3 +3847,16 @@ y_(1³)=0): Δtr/tr = σ₀: +5.81% (qJ) / −14.12% (q⁻¹J); σ₁⁻¹: +17.
 Identical across the three positions of each letter type (cyclic conjugacy), so no uud/udu
 asymmetry from position. All 30–125× larger than (m_n−m_p)/m_p ≈ 0.14%. No row selected.
 Scratch script /tmp/claude-0/np/flip.py, not committed. Not pre-registered as a selection rule.
+
+## NOTE 2026-11-18 16:40Z — owner idea: nucleon = (σ₀σ₁⁻¹ − X)³ (exploratory, scope (a))
+Enumerated 29 parameter-free X (scalars 0,±1,±q,±q⁻¹,±h; σ_i^±1; ±J_i, qJ_i, q⁻¹J_i;
+P±_i; σ₀σ₁, σ₁σ₀; V^±1). Markov trace at z_D, proton pin, exact sympy
+(/tmp/claude-0/np/cubes.py, not committed). tr(V³)=0.998562163837 matches the closed form.
+- Only X ∈ {h, −h, P−₀} keep |tr| within 25 % of tr(V³) (−15.3 %, +21.8 %, −5.7 %);
+  every other X moves m_p by O(1).
+- Natural p/n pairs (bar partners W_L/W_R, J₀/J₁, σ/σ⁻¹, P±): smallest split is P+₁ vs P−₁
+  at +5.9 %; others 26 %–3600 %. Leading order in h is h⁰ or h¹ for all except σ₀σ₁/σ₁σ₀ (h²).
+- tr((V − V⁻¹)³) ≡ 0 exactly (V has eigenvalues λ,1/λ on V_(2,1) and 1 on the 1-dim irreps).
+None reaches (m_n−m_p)/m_p ≈ 0.14 %. A split that small needs X of size ~h⁴ or a first-order
+zero tr(V²X)=0; no parameter-free X here supplies either. Setting X's size from CAL-2 would be
+circular for Δ_pn (Q_β = Δ_pn − m_e). No row selected.
