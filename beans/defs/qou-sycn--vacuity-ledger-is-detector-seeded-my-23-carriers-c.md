@@ -1,7 +1,7 @@
 ---
 # qou-sycn
 title: Vacuity ledger is DETECTOR-SEEDED — my 23 carriers cannot be added, only detected
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -71,3 +71,8 @@ names this detector class explicitly -- *"an inhabitability-by-zero detector
 is structurally blind to it"* -- so the two are complements, not duplicates.
 
 Blocks nothing; enables qou-rq9n's five to enter the tracked population.
+
+## Round 86 Formalization (`litlfred/qou#8463`)
+- Formalized in `QOU.Foundations.CemeteryBoundaryExclusionCandidateResolutionAlignmentVacuityGateCompletenessDetectorSeededDisjointnessSiblingFieldDriftMasking` (`folio/quantum-observable-universe/lean/QOU/Foundations/CemeteryBoundaryExclusionCandidateResolutionAlignmentVacuityGateCompletenessDetectorSeededDisjointnessSiblingFieldDriftMasking.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`8c2d0febf29bb89e22f415f36e99b433db4a6e8c` -> `7db0f2c21353c4c150810bb9822c963b3c0ed80d`, `scriptHash = scriptSha256 = c68b728f98350112bedd3f85302ce46d7d3318d556c2797c1bfab1197342b290`).
+- PR: https://github.com/litlfred/qou/pull/8463

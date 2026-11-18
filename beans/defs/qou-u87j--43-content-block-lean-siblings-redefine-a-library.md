@@ -1,7 +1,7 @@
 ---
 # qou-u87j
 title: 46 content-block .lean siblings mirror a library structure with a different field set, and all 46 mask its lean.ref
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -835,3 +835,8 @@ prose half has no gate at all.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## Round 86 Formalization (`litlfred/qou#8463`)
+- Formalized in `QOU.Foundations.CemeteryBoundaryExclusionCandidateResolutionAlignmentVacuityGateCompletenessDetectorSeededDisjointnessSiblingFieldDriftMasking` (`folio/quantum-observable-universe/lean/QOU/Foundations/CemeteryBoundaryExclusionCandidateResolutionAlignmentVacuityGateCompletenessDetectorSeededDisjointnessSiblingFieldDriftMasking.lean`).
+- 80-dps `mpmath` probe & 2-commit witness (`8c2d0febf29bb89e22f415f36e99b433db4a6e8c` -> `7db0f2c21353c4c150810bb9822c963b3c0ed80d`, `scriptHash = scriptSha256 = c68b728f98350112bedd3f85302ce46d7d3318d556c2797c1bfab1197342b290`).
+- PR: https://github.com/litlfred/qou/pull/8463
