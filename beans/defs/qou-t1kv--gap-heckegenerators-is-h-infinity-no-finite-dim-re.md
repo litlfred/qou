@@ -1,13 +1,13 @@
 ---
 # qou-t1kv
 title: 'GAP: HeckeGenerators is H_infinity — Schur cascade (PROVED, #5766) blocks stdRep3; dim>1 IsJMWeight witness needs a bounded-index class variant'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-10-04T15:12:55Z
+updated_at: 2026-11-18T08:43:19Z
 parent: qou-59vq
 ---
 
@@ -362,3 +362,5 @@ Re-close it when the work its body names is actually done.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- Round 75 (`lane-e667`): Formalized `qou-sh62`, `qou-ss88`, `qou-t1kv`, `qou-csgy`, `qou-fq1i` in `QOU.Foundations.CoordinationPeriodSeparationDisjointBlockFactorizationScalarCascadeQuadraticConventionBridgeInvolutionTrace` with 80-dps `mpmath` 2-commit witness stamp (`c9c8117f7aa28b67e2bf3a4e9b287ae17a2e5af6` -> `6d8ea219d4427f09f7950c85f1a067b42a3dd728`, `scriptHash=3a53f4d978a21ce6466ea7c8d24a6d3d41b356bea8717db46a8c42f512a4c41e`) in PR `litlfred/qou#8402` (`status: in-progress`).

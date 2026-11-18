@@ -1,13 +1,13 @@
 ---
 # qou-csgy
 title: HeckeAlgebra names five declarations across two quadratic conventions
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T13:50:38Z
-updated_at: 2026-10-04T15:20:45Z
+updated_at: 2026-11-18T08:43:19Z
 parent: qou-k4oq
 ---
 
@@ -80,3 +80,5 @@ what I judge to be preference order:
 **Recommendation (my judgement, not a finding):** option 1 now, option 2 only if someone is already
 touching those files. The declarations are correct; it is the prose that is ambiguous, and prose is
 where the near-miss actually happened.
+
+- Round 75 (`lane-e667`): Formalized `qou-sh62`, `qou-ss88`, `qou-t1kv`, `qou-csgy`, `qou-fq1i` in `QOU.Foundations.CoordinationPeriodSeparationDisjointBlockFactorizationScalarCascadeQuadraticConventionBridgeInvolutionTrace` with 80-dps `mpmath` 2-commit witness stamp (`c9c8117f7aa28b67e2bf3a4e9b287ae17a2e5af6` -> `6d8ea219d4427f09f7950c85f1a067b42a3dd728`, `scriptHash=3a53f4d978a21ce6466ea7c8d24a6d3d41b356bea8717db46a8c42f512a4c41e`) in PR `litlfred/qou#8402` (`status: in-progress`).
