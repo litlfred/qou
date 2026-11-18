@@ -1,0 +1,122 @@
+{
+  "probe": "unhashed_sidecar_residue_six_one_volume_anchor_gap_vacuous_braid_trace_census_argmin_sweep_discrepancy_and_mirror_multiplicity_parity_probe",
+  "beans": [
+    "qou-pwut",
+    "qou-rc0b",
+    "qou-soj6",
+    "qou-tfv2",
+    "qou-wc8f"
+  ],
+  "dps": 80,
+  "generatedAt": "2026-11-18T08:51:49.248618+00:00",
+  "scriptPath": "computations/probes/unhashed_sidecar_residue_six_one_volume_anchor_gap_vacuous_braid_trace_census_argmin_sweep_discrepancy_and_mirror_multiplicity_parity_probe.py",
+  "scriptHash": "cc2717cf52fc94c680182cd5619702306ae2e2a51149f602fa8a59e8397cca98",
+  "scriptSha256": "cc2717cf52fc94c680182cd5619702306ae2e2a51149f602fa8a59e8397cca98",
+  "scriptCommitSha": "03ec1d71d7882710ec9bb2354d8200403431ec96",
+  "allPassed": true,
+  "results": {
+    "qou_pwut": {
+      "passed": true,
+      "totalSidecars": 3617,
+      "affectedSidecars": 3389,
+      "unaffectedSidecars": 228,
+      "totalCriterionEntries": 279830,
+      "scriptHashed": 179959,
+      "agentHashed": 46450,
+      "agentUnhashed": 53293,
+      "otherEntries": 128,
+      "topThreeUnhashed": 52867,
+      "residualUnhashed": 426,
+      "topThreeShare": "0.99200645488150413750398739046403842906197812095397144090218227534573020847015555",
+      "cosmeticUnhashed": 8655,
+      "substantiveUnhashed": 44638
+    },
+    "qou_rc0b": {
+      "passed": true,
+      "vol61": "3.163963228883143983991757529167384812325703962",
+      "volOver2Pi": "0.50356038763774619771161922888253694003665990567333958590459549137793087203533616",
+      "sigmaFit": "0.503560387637746199120114",
+      "sigmaPrinted": "0.5035603",
+      "diffVol": "0.0000000000000000014084947711174630599633400943266604140954045086220691279646638438832119960348374",
+      "diffPrinted": "0.000000087637746199120114000000000000000000000000000000000000000000000000000000000375282",
+      "improvementRatio": "62220853066.845686007334798815610623963035840051225374505364237057265008567499977",
+      "updatedAssertions": 7
+    },
+    "qou_soj6": {
+      "passed": true,
+      "trOptionB": "1.884319467254976",
+      "trRecomputed": "1.88431946725497503",
+      "absDiffRecomputed": "0.00000000000000097000000000000000000000000000000000000000000000000000000000000000101244394184659",
+      "relDiffLiveConst": "0.13329263300176274069546750770177787308091929033460413909083919421778928403711331",
+      "relDiffDerivation": "0.43464670025179027827588617806617801389057039059409023453446137345421861888673952",
+      "relDiffDocstring": "0.12644381002554481548267456556902915548421239234124913970885471903559921092678445"
+    },
+    "qou_tfv2": {
+      "passed": true,
+      "ratios": {
+        "pnnpn": "1.3963181680890027201598882742680288118756774825344017312523949795069591050223755",
+        "pne": "0.71474734282957348811960444299135112759808913107194911061288417074163214650316681",
+        "pnpnee": "1.3812285524835077252991275158949838613089101296644375567693191417860934324406955",
+        "npnpnee": "1.3607337953975270505504220256632885638680547285020396333359701642137445840473027"
+      },
+      "relDiffPnnpn": "0.28383084682726910040962578800763245910444009341876982762529653051650607108887945",
+      "zdOverZc": "1.227044"
+    },
+    "qou_wc8f": {
+      "passed": true,
+      "massNumbers": [
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        14
+      ],
+      "committedMults": [
+        2,
+        4,
+        4,
+        6,
+        6,
+        8,
+        8,
+        10,
+        12
+      ],
+      "freshMults": [
+        4,
+        8,
+        9,
+        12,
+        13,
+        16,
+        17,
+        21,
+        25
+      ],
+      "lawMults": [
+        2,
+        4,
+        4,
+        6,
+        6,
+        8,
+        8,
+        10,
+        12
+      ],
+      "evenAFreshOddValues": [
+        9,
+        13,
+        17,
+        21,
+        25
+      ],
+      "mFirstPhi8": 7,
+      "mFirstPhi8Sq": 15
+    }
+  }
+}
