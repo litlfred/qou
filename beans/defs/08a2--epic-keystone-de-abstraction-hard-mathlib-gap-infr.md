@@ -1,14 +1,14 @@
 ---
 # 08a2
 title: 'EPIC: keystone de-abstraction — hard Mathlib-gap infra (tiered)'
-status: todo
+status: in-progress
 type: epic
 priority: normal
 tags:
     - keystone-infra
     - lean
 created_at: 2026-06-25T17:06:53Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-18T10:37:00Z
 parent: qou-rtxm
 ---
 
@@ -82,3 +82,5 @@ Now the epic for P3.GAP under Lean / Mathlib foundations.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+- Round 79 (`lane-e667`): Formalized `qou-ix9e`, `qou-lncp`, `qou-ulfe`, `qou-znz5`, `qou-pso0` in `QOU.Foundations.MonicRewritingRuleOrientationOverlapCriticalPairResolutionFormalGroupLawDistributionConfluenceSpecializationFlatness` with 80-dps `mpmath` 2-commit witness stamp (`0e73e1d84b41af22cbe0a7adb5792bfd6ad829c7` -> `f1e0c5f0a53084f645586bcab55a711f50415015`, `scriptHash=6f730a2d7a28822fd4184de185390b3fa00ae1e8c3c649430e85284ae55ef0da`) in PR `litlfred/qou#8430` (`status: in-progress`).
