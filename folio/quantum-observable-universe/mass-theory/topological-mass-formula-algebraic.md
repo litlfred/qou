@@ -1,4 +1,4 @@
-*Let $\beta \in H_n(R, q)$ be the Hecke normal form of a closed braid. The categorical mass admits the closed form:*
+*Let $\beta \in H_n(R, q)$ be the Hecke normal form of a closed braid with $\mathrm{Vol}_{q_0}(\beta) \neq 0$. The categorical mass admits the closed form:*
 
 $$
   \mathfrak{m}_{\mathrm{alg}}(\beta)

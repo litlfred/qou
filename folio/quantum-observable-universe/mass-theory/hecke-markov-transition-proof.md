@@ -33,10 +33,16 @@ This is the **memorylessness** of a Markov chain: the transition
 at step $n$ depends only on the crossing type at $\sigma_n$,
 not on the history of previous crossings.
 
-**(iv)** Follows from (iii) by induction when each generator occurs
-at most once: then the highest-index letter $\sigma_m$ is the only
-one in $H_m(q) \setminus H_{m-1}(q)$, the Markov property applies to
-it, and peeling gives $\mathrm{tr}_M(\rho(\beta)) = \prod_i \hat{V}_i$.
+**(iv)** Induction on $\ell$ when each generator occurs at most once.
+Let $\sigma_m$ be the letter of highest index, so the word is
+$u\,\sigma_m\,v$ with $u, v$ words in $\sigma_1, \ldots, \sigma_{m-1}$.
+By cyclicity of the trace, $\mathrm{tr}_M(u\,\sigma_m\,v) =
+\mathrm{tr}_M(v u\,\sigma_m)$, and $vu \in H_{m}(q)$ does not involve
+$\sigma_m$, so the Markov property gives
+$\mathrm{tr}_M(vu\,\sigma_m) = z\,\mathrm{tr}_M(vu)$. The word $vu$ has
+$\ell - 1$ letters, each generator still at most once, so by induction
+$\mathrm{tr}_M(\sigma_{i_1}\cdots\sigma_{i_\ell}) = z^{\ell}$, the base
+case being $\mathrm{tr}_M(1) = 1$.
 If a generator repeats, the remaining word is no longer in
 $H_{m-1}(q)$ and the Markov property does not apply; the step fails
 (for $\sigma_1\sigma_2\sigma_1$ one gets $h z^2 + z \neq z^3$).  $\square$

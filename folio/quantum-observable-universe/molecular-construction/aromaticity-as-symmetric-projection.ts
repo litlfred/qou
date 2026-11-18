@@ -6,7 +6,7 @@ export default remark({
   title: "Aromaticity, stability, and why breaking a ring releases a lot",
   uses: [
     "def:molecular-assembly-projector",
-    "prop:ring-closure-barrier",
+    "conj:ring-closure-barrier",
     "def:threading-link",
   ],
   tags: [
