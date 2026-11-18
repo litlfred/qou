@@ -6,7 +6,7 @@ type: epic
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-04T15:10:08Z
-updated_at: 2026-11-17T08:12:13Z
+updated_at: 2026-11-18T08:59:30Z
 parent: qou-rtxm
 ---
 
@@ -18,3 +18,5 @@ Sub-epic P3.CAT of Lean / Mathlib foundations (work-plan reorganisation 2026-10-
 - **Module:** `QOU.Foundations.OcneanuTowerConventionDRibbonClebschGordan` (`folio/quantum-observable-universe/lean/QOU/Foundations/OcneanuTowerConventionDRibbonClebschGordan.lean`), wired into `QOU.lean`.
 - **Theorem:** `ribbon_monodromy_recovery_and_pivotal_trace_cyclic` — proves full braiding monodromy recovery `c_{W,V} · c_{V,W} = (θ_W⁻¹ · θ_V⁻¹) · θ_{V ⊗ W}` from the ribbon twist equation and proves weighted `2 × 2` pivotal trace cyclicity on the weight centralizer, verified at 80 dps in `ocneanu-tower-convention-d-ribbon-clebsch-gordan.witness.json`.
 - **Status:** Kept at `in-progress` pending Merge Manager merge and full dependency verification.
+
+- Round 76 (`lane-e667`): Formalized `qou-gmfz`, `qou-img9`, `qou-phir`, `qou-siin`, `qou-l25z` in `QOU.Foundations.TriangularBarInvolutionLengthTwoQuadraticDefectRightMultiplicationDichotomyRootParameterRescalingWritheHomomorphism` with 80-dps `mpmath` 2-commit witness stamp (`1d514d8cc14cab86cdbfe50f0bca4313a91a6db7` -> `8fbc40e0a853ba6aa21eab5cf4d1947155a2d115`, `scriptHash=b5b4b562fbd04cd73aa5a68e31eebc858e55abd805cb24915d3a249d657d689c`) in PR `litlfred/qou#8409` (`status: in-progress`).

@@ -1,13 +1,13 @@
 ---
 # qou-siin
 title: 'Pull through Solleveld: affine-Hecke HH is nonzero in higher degrees, and nothing cites it'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-10-04T15:22:49Z
+updated_at: 2026-11-18T08:59:30Z
 parent: qou-k4oq
 ---
 
@@ -253,3 +253,5 @@ otherwise search for the wrong object.
 Also carried across: the convention trap in this bean's gate (i) — Solleveld's
 `q` is the corpus's `q²`, so `q_Sol = q₀² ≈ 1.23206` — now recorded on
 `qou-o6ml` too.
+
+- Round 76 (`lane-e667`): Formalized `qou-gmfz`, `qou-img9`, `qou-phir`, `qou-siin`, `qou-l25z` in `QOU.Foundations.TriangularBarInvolutionLengthTwoQuadraticDefectRightMultiplicationDichotomyRootParameterRescalingWritheHomomorphism` with 80-dps `mpmath` 2-commit witness stamp (`1d514d8cc14cab86cdbfe50f0bca4313a91a6db7` -> `8fbc40e0a853ba6aa21eab5cf4d1947155a2d115`, `scriptHash=b5b4b562fbd04cd73aa5a68e31eebc858e55abd805cb24915d3a249d657d689c`) in PR `litlfred/qou#8409` (`status: in-progress`).
