@@ -1,7 +1,7 @@
 ---
 # qou-ixu7
 title: Remark interpreting 0603217v3.pdf at a remark on the polarization convention attached to conj:bin…
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

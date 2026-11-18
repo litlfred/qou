@@ -1,7 +1,7 @@
 ---
 # qou-k0ff
 title: Remark interpreting 1311.6841v1.pdf at folio/quantum-observable-universe/observations/cfs-compa…
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

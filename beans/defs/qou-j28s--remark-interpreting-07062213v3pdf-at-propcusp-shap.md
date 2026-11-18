@@ -1,7 +1,7 @@
 ---
 # qou-j28s
 title: Remark interpreting 0706.2213v3.pdf at prop:cusp-shape-bar-parity
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

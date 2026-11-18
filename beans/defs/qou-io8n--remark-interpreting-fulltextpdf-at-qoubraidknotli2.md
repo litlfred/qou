@@ -1,7 +1,7 @@
 ---
 # qou-io8n
 title: Remark interpreting fulltext.pdf at QOU.BraidKnot.Li2qUniqueness
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

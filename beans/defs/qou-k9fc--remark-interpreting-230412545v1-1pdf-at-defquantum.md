@@ -1,7 +1,7 @@
 ---
 # qou-k9fc
 title: Remark interpreting 2304.12545v1 (1).pdf at def:quantum-bloch-group
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
