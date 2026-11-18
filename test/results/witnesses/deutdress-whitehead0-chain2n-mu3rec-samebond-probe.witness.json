@@ -1,0 +1,40 @@
+{
+  "probe": "computations/probes/deutdress_whitehead0_chain2n_mu3rec_samebond_probe.py",
+  "scriptCommitSha": "90c882870d6d996ed8c4193a9671e449e286ed2b",
+  "scriptHash": "b181b05444ae",
+  "executedAt": "2026-11-18T07:24:23Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "binding_dressing_free_sub_bound_eq_qbeta_over_h",
+      "bean": "qou-6h6p",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "whiteheadLinkPhase_arg_decomp_zero",
+      "bean": "qou-e1dc",
+      "maxAbsError": "1.686751670916883715895772e-80",
+      "passed": true
+    },
+    {
+      "id": "chainRatio_add_two_neutrons",
+      "bean": "qou-l2ob",
+      "maxAbsError": "3.373503341833767431791544e-80",
+      "passed": true
+    },
+    {
+      "id": "solMu3_add_three_solMu2",
+      "bean": "qou-p2d5",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "weighted_deviation_eq_of_same_bond",
+      "bean": "qou-ypc5",
+      "maxAbsError": "0.0",
+      "passed": true
+    }
+  ]
+}
