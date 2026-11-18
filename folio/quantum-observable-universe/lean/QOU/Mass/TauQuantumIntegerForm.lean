@@ -92,4 +92,11 @@ theorem tau_bar_even {K : Type*} [Field K] (q : K)
   field_simp
   ring
 
+
+/-- **Sign-invariance of the transfer determinant (`qou-dap4`).**
+The determinant of `!![-t, -1; 1, 0]` equals the determinant of `!![t, -1; 1, 0]`. -/
+theorem transfer_det_neg {R : Type*} [CommRing R] (t : R) :
+    Matrix.det !![-t, -1; 1, 0] = Matrix.det !![t, -1; 1, 0] := by
+  rw [transfer_det_one (-t), transfer_det_one t]
+
 end QOU.Mass.TauQuantumInteger

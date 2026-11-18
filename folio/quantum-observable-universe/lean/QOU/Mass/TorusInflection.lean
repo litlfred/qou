@@ -111,4 +111,11 @@ theorem inflection_params_injective (q : ℕ) :
     linarith
   exact Fin.ext (by exact_mod_cast h2)
 
+
+/-- **Zero-index specialization of `cos_q_mul_inflection` (`qou-g7f6`).**
+For `0 < q`, `Real.cos ((q : ℝ) * ((2 * (0 : ℕ) + 1) * Real.pi / q)) = -1`. -/
+theorem cos_q_mul_inflection_zero (q : ℕ) (hq : 0 < q) :
+    Real.cos ((q : ℝ) * ((2 * (0 : ℕ) + 1) * Real.pi / q)) = -1 :=
+  cos_q_mul_inflection q hq 0
+
 end QOU.Mass.TorusInflection

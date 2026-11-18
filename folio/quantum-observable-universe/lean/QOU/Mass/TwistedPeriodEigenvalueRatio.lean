@@ -107,4 +107,11 @@ theorem rescaled_pair (μ : ℂ) (q : ℝ) (hq : q ≠ 0) (c : ℂ) (hc : c ≠ 
   have hq2 : (q : ℂ) ^ 2 ≠ 0 := pow_ne_zero 2 hqC
   field_simp
 
+
+/-- **Unit-modulus specialization when `μ.im = 0` (`qou-hok7`).**
+When `μ.im = 0`, `‖Complex.exp (2 * π * I * μ)‖ = 1`. -/
+theorem norm_exp_two_pi_I_mul_zero_im (μ : ℂ) (h0 : μ.im = 0) :
+    ‖Complex.exp (2 * π * I * μ)‖ = 1 := by
+  rw [norm_exp_two_pi_I_mul μ, h0, mul_zero, neg_zero, Real.exp_zero]
+
 end QOU.Mass.TwistedPeriodEigenvalueRatio

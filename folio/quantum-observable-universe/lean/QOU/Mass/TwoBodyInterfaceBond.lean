@@ -156,4 +156,13 @@ theorem addSeparable_of_traceFactorisation (E₀ : ℝ) (tL0 tR0 tL tR : N → �
     field_simp [(hL a).ne', (hR b).ne']
   rw [e, Real.log_mul (div_pos (h0L a) (hL a)).ne' (div_pos (h0R b) (hR b)).ne', mul_add]
 
+
+omit [LinearOrder α] [IsOrderedAddMonoid α] in
+/-- **Equality of opposite-order sums under exchange symmetry (`qou-i5d7`).**
+For an exchange-symmetric additively separable functional, `f n p + f n p = f p p + f n n`. -/
+theorem exchangeSymmetric_reverse_midpoint (f : N → N → α) (p n : N) (h : AddSeparable f)
+    (hsym : f p n = f n p) : f n p + f n p = f p p + f n n := by
+  rw [← hsym]
+  exact exchangeSymmetric_midpoint f p n h hsym
+
 end QOU.Mass.TwoBodyInterfaceBond
