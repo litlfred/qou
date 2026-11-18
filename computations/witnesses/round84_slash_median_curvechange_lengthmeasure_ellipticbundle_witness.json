@@ -1,0 +1,61 @@
+{
+  "round": 84,
+  "beans": [
+    "qou-9s4f",
+    "qou-a707",
+    "qou-afzu",
+    "qou-aiyd",
+    "qou-akg0"
+  ],
+  "leanModule": "folio/quantum-observable-universe/lean/QOU/QBeta/ModularSlashCriterionMedianResummationCurveChangeLawReversibleLengthMeasureEllipticQuotientBundleBridge.lean",
+  "scriptPath": "computations/probes/round84_slash_median_curvechange_lengthmeasure_ellipticbundle_probe.py",
+  "scriptCommitSha": "b2823866bf78a88adaba9d3800da2562d42d8de9",
+  "scriptHash": "c947fccdd83d1d5536889832fd1cea7a2b9f99d05865c2e29c23a3dd088fb851",
+  "scriptSha256": "c947fccdd83d1d5536889832fd1cea7a2b9f99d05865c2e29c23a3dd088fb851",
+  "dps": 80,
+  "mpmathDps": 80,
+  "allPassed": true,
+  "results": [
+    {
+      "beanId": "qou-9s4f",
+      "s2Residual": "0.0",
+      "st3Residual": "2.108439588646104644869715e-81",
+      "selfDualCocycleResidual": "0.0",
+      "twoGeneratorCount": 2,
+      "passed": true
+    },
+    {
+      "beanId": "qou-a707",
+      "holomorphicTargetAbs": "28.14263549584107060226111",
+      "medianResummationResidual": "0.0",
+      "lateralStokesJumpResidual": "2.256747297399334549361831e-80",
+      "passed": true
+    },
+    {
+      "beanId": "qou-afzu",
+      "unimodularDetIdentity": 1,
+      "unimodularDetSlope3243": 1,
+      "wedgeJacobianResidual": "1.135429467074615313551311e-80",
+      "mobiusDerivativeRatioResidual": "2.112553621023737975861835e-81",
+      "passed": true
+    },
+    {
+      "beanId": "qou-aiyd",
+      "q0GoldenRatio": "1.618033988749894848204587",
+      "qInversionParameter": "0.6180339887498948482045868",
+      "poincareS4PartitionZ": "7.236067977499789696409174",
+      "partitionProductVsSumResidual": "8.433758354584418579478859e-81",
+      "probabilityNormalizationResidual": "0.0",
+      "detailedBalanceResidual": "0.0",
+      "passed": true
+    },
+    {
+      "beanId": "qou-akg0",
+      "absQ": "0.0148503156835134925320192",
+      "thetaFunctionalEqResidual": "2.357307123332191882045323e-81",
+      "directSumDegree": 2,
+      "directSumRank": 5,
+      "passed": true
+    }
+  ]
+}
