@@ -235,6 +235,17 @@ theorem trM_tensor₃ (hD : B'.D₁ = B.D) (a : A₁) (b : A₂) (c : A₃) :
 
 end Iterated
 
+/-- **Equal-bond hyperplane invariance for two composite candidates (`qou-ypc5`).**
+If two composite elements `atom₁` and `atom₂` share the same multiplicative bond
+factor `bond` against the free marginals `(a, b)`, their `y`-weighted entangled
+deviations are equal (`∑_l y_l δ_l(atom₁) = ∑_l y_l δ_l(atom₂)`). -/
+theorem weighted_deviation_eq_of_same_bond (atom₁ atom₂ : A) (a : A₁) (b : A₂) (bond : R)
+    (h₁ : B.D.trM atom₁ = B.D₁.trM a * B.D₂.trM b * bond)
+    (h₂ : B.D.trM atom₂ = B.D₁.trM a * B.D₂.trM b * bond) :
+    ∑ l, B.D.y l * B.deviation atom₁ a b l = ∑ l, B.D.y l * B.deviation atom₂ a b l := by
+  rw [B.weighted_deviation_eq_of_trM_eq_mul atom₁ a b bond h₁,
+    B.weighted_deviation_eq_of_trM_eq_mul atom₂ a b bond h₂]
+
 end BranchingData
 
 end QOU.MassTheory.BlockMeasure

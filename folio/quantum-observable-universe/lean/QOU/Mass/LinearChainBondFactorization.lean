@@ -130,4 +130,14 @@ theorem log_chainRatio_succ_neutron (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N)
       = Real.log (chainRatio Z N fpp fpn fnn) + Real.log fnn := by
   rw [chainRatio_succ_neutron Z N hZ hN, Real.log_mul hchain hnn]
 
+/-- **Two-neutron step multiplicativity (`qou-l2ob`).** Appending two neutrons
+to the `(Z, N)` linear chain (`Z, N ≥ 1`) multiplies `chainRatio Z N` by `fnn ^ 2`. -/
+theorem chainRatio_add_two_neutrons (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N)
+    (fpp fpn fnn : M) :
+    chainRatio Z (N + 2) fpp fpn fnn = chainRatio Z N fpp fpn fnn * (fnn * fnn) := by
+  have hN1 : 1 ≤ N + 1 := by omega
+  rw [show N + 2 = (N + 1) + 1 by omega,
+    chainRatio_succ_neutron Z (N + 1) hZ hN1,
+    chainRatio_succ_neutron Z N hZ hN, mul_assoc]
+
 end QOU.Mass.LinearChainBond

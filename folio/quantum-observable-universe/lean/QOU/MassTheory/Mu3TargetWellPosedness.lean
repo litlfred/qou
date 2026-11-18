@@ -87,4 +87,14 @@ theorem forced_free_contrast {R : Type*} [CommRing R] [Nontrivial R] (v m₄ : R
   · simp only [solMu2]; exact zero_ne_one
   · simp only [solMu3, mul_zero, sub_zero]
 
+/-- **Exact reconstruction of the A=3 residual target `m₃` from `(solMu2, solMu3)` (`qou-p2d5`).**
+For any residual targets `(m₂, m₃, m₄)` over a commutative ring `R`,
+`solMu3 m₂ m₃ m₄ + 3 * solMu2 m₂ m₃ m₄ = m₃`. -/
+theorem solMu3_add_three_solMu2 {R : Type*} [CommRing R] (m₂ m₃ m₄ : R) :
+    solMu3 m₂ m₃ m₄ + 3 * solMu2 m₂ m₃ m₄ = m₃ := by
+  have h2 : solMu2 m₂ m₃ m₄ = m₂ := rfl
+  dsimp [solMu3]
+  rw [h2]
+  ring
+
 end QOU.MassTheory.Mu3WellPosedness

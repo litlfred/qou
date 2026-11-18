@@ -82,4 +82,13 @@ theorem binding_dressing_eq_qbeta_over_h [inst : BorromeanQuark]
   rw [qbeta_eq_E0_h_net_p]
   field_simp
 
+/-- **Trace-difference linearity of the deuteron binding dressing (`qou-6h6p`).**
+For any free and bound trace values `trFree trBound : ℝ`, the dressed difference
+`(m_e / (q(q−1))) · net_p · (trFree − trBound)` equals `Q_β · (trFree − trBound) / h`. -/
+theorem binding_dressing_free_sub_bound_eq_qbeta_over_h [inst : BorromeanQuark]
+    (trFree trBound : ℝ) :
+    (inst.m_e / (inst.q * (inst.q - 1))) * inst.net_p * (trFree - trBound)
+      = inst.Q_β * (trFree - trBound) / inst.h :=
+  binding_dressing_eq_qbeta_over_h (trFree - trBound)
+
 end QOU.Mass

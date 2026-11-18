@@ -142,4 +142,15 @@ theorem tendsto_center_linear_phase :
     Complex.continuous_exp.comp (Complex.continuous_ofReal.mul continuous_const)
   exact (hcont.tendsto (π / 4)).comp tendsto_center_linear_arg
 
+/-- **Vanishing of the quadratic-plus-linear Fresnel phase shift at `n = 0` (`qou-e1dc`).**
+Evaluating `whiteheadLinkPhase_arg_decomp` at `n = 0` shows that the Fresnel
+quadratic `-((0 - N/2)² π / (2N))` and constant `+ N π / 8` cancel identically. -/
+theorem whiteheadLinkPhase_arg_decomp_zero {N : ℕ} (hN : 0 < N) :
+    -(((0 : ℝ) - (N : ℝ) / 2) ^ 2 * π / (2 * N)) + (N : ℝ) * π / 8 = 0 := by
+  have hN' : (N : ℝ) ≠ 0 := by
+    have : (0 : ℝ) < N := by exact_mod_cast hN
+    exact ne_of_gt this
+  field_simp
+  ring
+
 end QOU.Knot.FigureEightVolume
