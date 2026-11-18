@@ -115,4 +115,11 @@ theorem diff_eq_of_bounds_saturated {E₁ E₂ B₁ B₂ : R}
     E₁ - E₂ = B₁ - B₂ :=
   diff_of_saturated (le_antisymm h₁' h₁) (le_antisymm h₂' h₂)
 
+/-- **Zero-target specialization of `diff_unconstrained` (`qou-5ll9`).**
+For any lower bounds `B₁, B₂ : R`, there exist `E₁, E₂ : R` with `B₁ ≤ E₁`, `B₂ ≤ E₂`,
+and `E₁ - E₂ = 0`. -/
+theorem diff_unconstrained_zero (B₁ B₂ : R) :
+    ∃ E₁ E₂ : R, B₁ ≤ E₁ ∧ B₂ ≤ E₂ ∧ E₁ - E₂ = 0 :=
+  diff_unconstrained B₁ B₂ 0
+
 end QOU.Mass.LowerBoundCannotConstrainADifference

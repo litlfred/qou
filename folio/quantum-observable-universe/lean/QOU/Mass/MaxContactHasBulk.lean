@@ -195,4 +195,10 @@ theorem maxContact_d2_exponent (ε κ c A : ℝ) (hA : 0 < A) :
   rw [subAffine_perNucleon ε κ c ((1 : ℝ) / 2) A hA]
   norm_num
 
+/-- **Vanishing difference form of `maxContact_exponent_eq_inv_dim` (`qou-63fo`).**
+For `d ≠ 0`, `(1 - (d - 1) / d) - 1 / d = 0`. -/
+theorem maxContact_exponent_sub_inv_dim_eq_zero (d : ℝ) (hd : d ≠ 0) :
+    (1 - (d - 1) / d) - 1 / d = 0 :=
+  sub_eq_zero.mpr (maxContact_exponent_eq_inv_dim d hd)
+
 end QOU.Mass.MaxContactHasBulk

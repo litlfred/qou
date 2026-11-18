@@ -291,6 +291,10 @@ theorem linearLayout_family_not_hasBulk
   rw [surface_eq_two (G ⌊A⌋₊) (hL _) (hc _) hfloor] at hA3
   norm_num at hA3
 
-
+/-- **Vanishing difference form of `surface_eq_two` (`qou-5ax1`).**
+For a connected linear-layout graph `G` on `Fin n` with `2 ≤ n`, `surface G - 2 = 0`. -/
+theorem surface_sub_two_eq_zero (hL : LinearLayout G) (hc : Chained G) (hn : 2 ≤ n) :
+    surface G - 2 = 0 := by
+  rw [surface_eq_two G hL hc hn]
 
 end QOU.Mass.LinearLayoutNoBulk

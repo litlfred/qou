@@ -204,4 +204,12 @@ frontier note. -/
 theorem he4_body_order :
     (Nat.choose 4 2, Nat.choose 4 3, Nat.choose 4 4) = (6, 4, 1) := by decide
 
+/-- **Six-point specialization of `no_complete_contact_of_five_le` (`qou-6cm9`).**
+In a three-dimensional real inner-product space `E`, no six points are pairwise at positive
+distance `c`. -/
+theorem not_six_equidistant [FiniteDimensional ℝ E] (hd : Module.finrank ℝ E = 3)
+    {c : ℝ} (hc : 0 < c) (p : Fin 6 → E) :
+    ¬ (∀ i j, i ≠ j → ‖p i - p j‖ = c) :=
+  no_complete_contact_of_five_le hd (by decide : 5 ≤ 6) hc p
+
 end QOU.Mass.MaxContactSimplex
