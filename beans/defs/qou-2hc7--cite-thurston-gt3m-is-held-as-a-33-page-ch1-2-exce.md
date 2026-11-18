@@ -1,7 +1,7 @@
 ---
 # qou-2hc7
 title: 'CITE: Thurston GT3M is held as a 33-page Ch.1-2 excerpt — M — 113 citers, several at Ch.4 / §4.5 gluing equations'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

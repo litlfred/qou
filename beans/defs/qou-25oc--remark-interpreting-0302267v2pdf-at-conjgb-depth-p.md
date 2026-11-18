@@ -1,7 +1,7 @@
 ---
 # qou-25oc
 title: Remark interpreting 0302267v2.pdf at conj:gb-depth-period-correspondence
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

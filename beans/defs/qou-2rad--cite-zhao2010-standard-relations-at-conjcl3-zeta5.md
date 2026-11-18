@@ -1,7 +1,7 @@
 ---
 # qou-2rad
 title: Cite [zhao2010-standard-relations] at conj:cl3-zeta5-geometric-realization
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
