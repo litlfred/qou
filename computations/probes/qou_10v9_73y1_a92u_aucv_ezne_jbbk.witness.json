@@ -1,0 +1,66 @@
+{
+  "probe": "qou_10v9_73y1_a92u_aucv_ezne_jbbk_probe",
+  "beans": [
+    "qou-73y1",
+    "qou-a92u",
+    "qou-aucv",
+    "qou-ezne",
+    "qou-jbbk"
+  ],
+  "precisionDps": "80",
+  "scriptCommitSha": "74d8a6d6c3db8e1148c4dc815a9fb3e88cc3fdc6",
+  "scriptHash": "16d744386f39a93c5ead310dd7e2af293f095e0a52da09c341ec4d17aad79428",
+  "scriptSha256": "16d744386f39a93c5ead310dd7e2af293f095e0a52da09c341ec4d17aad79428",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-73y1",
+      "description": "Deformation variety trace polynomial difference factorization and parabolic value",
+      "x0": "2.0437062085325219836514078072942294397390915008392971458067478909025141166039224",
+      "traceQuadAtX0": "5.2204412753268982157047007577800284608697198847474706948585203742590729089271666",
+      "traceQuadParabolic": "5.0",
+      "residual": "7.9066484574228924182614305384525142557824710367763806625583222688311082182273197e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-a92u",
+      "description": "Unipotent 3x3 upper-triangular factor ordering corner defect a*b",
+      "ascOffDiagSum": "0.0",
+      "descOffDiagSum": "6.0",
+      "cornerDefect": "-6.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-aucv",
+      "description": "Hyperbolic (2,4,5) triangle angle defect pi/20 and 240-triangle genus-4 area 12*pi",
+      "triangleArea": "0.15707963267948966192313216916397514420985846996875529104874722961539082031431045",
+      "totalArea240": "37.699111843077518861551720599354034610366032792501269851699335107693796875434508",
+      "residual": "2.6988026734670139454332349571251248659737501138863379328199073344276849384882585e-79",
+      "passed": true
+    },
+    {
+      "bean": "qou-ezne",
+      "description": "240-triangle quotient cell characteristic chi=-6, b1=8, and b1/Area = 2/(3*pi)",
+      "eulerChar": "-6.0",
+      "firstBettiRank": "8.0",
+      "zeroModeRatio": "0.21220659078919378102517835116335248271261286098727526499688979207852906351230205",
+      "residual": "1.5813296914845784836522861076905028511564942073552761325116644537662216436454639e-81",
+      "passed": true
+    },
+    {
+      "bean": "qou-jbbk",
+      "description": "Figure-eight symmetric polynomial J_{4_1}(q0) = u0^2 - u0 - 1 > 1 and 1 - g^2 shift",
+      "u0": "2.0108968667071222983226296058360736087277099757725652189530530308294541950476483",
+      "j41AtQ0": "1.0328093418253996853287782014581558310113815250667319268536948600730599215562742",
+      "torusShiftsG1To4": [
+        "0",
+        "-3",
+        "-8",
+        "-15"
+      ],
+      "residual": "2.1084395886461046448697148102540038015419922764737015100155526050216288581939519e-81",
+      "passed": true
+    }
+  ]
+}
