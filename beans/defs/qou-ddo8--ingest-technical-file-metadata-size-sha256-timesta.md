@@ -1,7 +1,7 @@
 ---
 # qou-ddo8
 title: 'INGEST: technical file metadata (size, sha256, timestamps, mimetype) for every asset'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

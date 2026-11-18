@@ -1,7 +1,7 @@
 ---
 # qou-dld9
 title: 'GAP: 12 producers compare results against a q0 reference at the OTHER anchor (11 are the tr_m_q_hecke defect exactly)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

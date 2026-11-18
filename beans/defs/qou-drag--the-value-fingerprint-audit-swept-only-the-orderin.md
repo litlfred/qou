@@ -1,7 +1,7 @@
 ---
 # qou-drag
 title: The value-fingerprint audit swept only the ordering axis; the colour ruling of 2026-08-15 was invisible to it
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

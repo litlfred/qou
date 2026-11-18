@@ -1,7 +1,7 @@
 ---
 # qou-dke6
 title: 'LP/SDP witnesses: 107 of 241 dual records are f64-era or unattributable; re-running moves residuals ~36 orders'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

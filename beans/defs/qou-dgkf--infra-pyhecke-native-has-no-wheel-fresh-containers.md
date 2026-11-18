@@ -1,7 +1,7 @@
 ---
 # qou-dgkf
 title: 'INFRA: pyhecke_native has no wheel — fresh containers cannot run any deltalambda probe without a 3.5-min maturin build'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
