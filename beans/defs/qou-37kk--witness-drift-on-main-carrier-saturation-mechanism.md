@@ -1,7 +1,7 @@
 ---
 # qou-37kk
 title: 'Witness drift on main: carrier-saturation-mechanism flips 5 assertions pass->FAIL on a clean re-run'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -123,3 +123,5 @@ pass by moving the goalposts would be laundering.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+- **Round 93 (`litlfred/qou#8421`)**: Advanced in `feat/round93-strip-kindratio-kohnokz-resolvent-affinenorm-43c1` (Commit 1 `53341df5af4d7e77e4fbee34d9b0bead3b0b6187`, Commit 2 `2f40c0d2d071ec6bb42d20002fb53171245df01c`, probe sha256 `3d8255f15bbdfc2d9c41114f8ac21a1bec3996e0b1546ef080914210757c628c`).

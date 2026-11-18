@@ -1,7 +1,7 @@
 ---
 # qou-2wtx
 title: cross_check_trM_cw_seminormal_leg completes in 996s and FAILS (worst 1.91e+00) where its committed witness says allPassed — the 300s budget hid a pass-to-fail regression
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -619,3 +619,5 @@ Dropping the leg's `QOU_Q0_ANCHOR=ideal` default and its muon assert so both
 legs sit at proton is NOT done here. It is a pin-policy change on an L1
 reference, and this PR's subject is the A→C repin. Its expected value is the
 remaining ~1e-7.
+
+- **Round 93 (`litlfred/qou#8421`)**: Advanced in `feat/round93-strip-kindratio-kohnokz-resolvent-affinenorm-43c1` (Commit 1 `53341df5af4d7e77e4fbee34d9b0bead3b0b6187`, Commit 2 `2f40c0d2d071ec6bb42d20002fb53171245df01c`, probe sha256 `3d8255f15bbdfc2d9c41114f8ac21a1bec3996e0b1546ef080914210757c628c`).

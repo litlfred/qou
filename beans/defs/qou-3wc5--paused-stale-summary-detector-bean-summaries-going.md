@@ -1,7 +1,7 @@
 ---
 # qou-3wc5
 title: 'PAUSED: stale-summary detector — bean summaries going stale against corpus work'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -106,3 +106,5 @@ says the class is real, not that the other 86 are.
 and sweeping 87 beans is not exempt under the 2026-09-07 ASK-THE-OWNER
 directive. The value of this entry is that when the pause lifts, the scope is
 already sized.
+
+- **Round 93 (`litlfred/qou#8421`)**: Advanced in `feat/round93-strip-kindratio-kohnokz-resolvent-affinenorm-43c1` (Commit 1 `53341df5af4d7e77e4fbee34d9b0bead3b0b6187`, Commit 2 `2f40c0d2d071ec6bb42d20002fb53171245df01c`, probe sha256 `3d8255f15bbdfc2d9c41114f8ac21a1bec3996e0b1546ef080914210757c628c`).

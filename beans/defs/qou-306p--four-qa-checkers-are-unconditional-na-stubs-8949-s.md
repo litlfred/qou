@@ -1,7 +1,7 @@
 ---
 # qou-306p
 title: Four QA checkers are unconditional n/a stubs — 8949 sidecar entries with zero information, two of them named proof-build-green / proof-no-axiom-growth; and they dilute the published M5 by 30-47 pp
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -309,3 +309,5 @@ worth a sweep on its own.
 the four checkers are still stubs and that fix is upstream
 (`folio-assistant-89wq`). This entry closes the qou-side blast-radius question
 and leaves the TS surface explicitly unmeasured rather than implicitly clean.
+
+- **Round 93 (`litlfred/qou#8421`)**: Advanced in `feat/round93-strip-kindratio-kohnokz-resolvent-affinenorm-43c1` (Commit 1 `53341df5af4d7e77e4fbee34d9b0bead3b0b6187`, Commit 2 `2f40c0d2d071ec6bb42d20002fb53171245df01c`, probe sha256 `3d8255f15bbdfc2d9c41114f8ac21a1bec3996e0b1546ef080914210757c628c`).
