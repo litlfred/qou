@@ -51,4 +51,15 @@ theorem cLiTwoExt_neg_one : cLiTwoExt (-1) = -((π : ℂ) ^ 2 / 12) := by
   rw [cLiTwoExt_eq_cLiTwo_of_norm_le_one (by norm_num) hnc]
   exact cLiTwo_neg_one
 
+/-- **Cleared-denominator real Landen base identity:** `12 · Li₂(−1) + π² = 0`. -/
+theorem twelve_mul_LiTwo_neg_one : 12 * LiTwo (-1) + π ^ 2 = 0 := by
+  rw [LiTwo_neg_one]
+  ring
+
+/-- **Cleared-denominator complex continuation Landen base identity:**
+    `12 · cLiTwoExt(−1) + π² = 0`. -/
+theorem twelve_mul_cLiTwoExt_neg_one : 12 * cLiTwoExt (-1) + (π : ℂ) ^ 2 = 0 := by
+  rw [cLiTwoExt_neg_one]
+  ring
+
 end QOU.Archimedean

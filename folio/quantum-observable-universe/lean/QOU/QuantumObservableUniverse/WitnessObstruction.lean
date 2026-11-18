@@ -85,4 +85,23 @@ theorem no_qou_on_moduleCat (R : Type) [CommRing R]
     (hnontrivial : incl ≠ 0) : False :=
   qou_needs_nongenerating_unit incl hvanish hnontrivial (moduleCat_unit_generates R)
 
+/-- **Contrapositive form of the unit-generation obstruction.** When the monoidal
+    unit reflects zero objects, any object admitting a nonzero outgoing morphism
+    `incl : adjointObj ⟶ A` cannot have a subsingleton hom-set from `𝟙_ C`. -/
+theorem not_subsingleton_unit_hom_of_nontrivial_incl
+    {C : Type*} [Category C] [MonoidalCategory C] [Limits.HasZeroMorphisms C]
+    {adjointObj A : C} (incl : adjointObj ⟶ A)
+    (hnontrivial : incl ≠ 0)
+    (hgen : ∀ W : C, Subsingleton ((𝟙_ C) ⟶ W) → IsZero W) :
+    ¬ Subsingleton ((𝟙_ C) ⟶ adjointObj) :=
+  fun hvanish => qou_needs_nongenerating_unit incl hvanish hnontrivial hgen
+
+/-- **In `ModuleCat R`, any source of a nonzero morphism has a non-subsingleton
+    hom-set from the monoidal unit.** -/
+theorem moduleCat_not_subsingleton_unit_hom_of_ne_zero (R : Type) [CommRing R]
+    {adjointObj A : ModuleCat R} (incl : adjointObj ⟶ A)
+    (hnontrivial : incl ≠ 0) :
+    ¬ Subsingleton ((𝟙_ (ModuleCat R)) ⟶ adjointObj) :=
+  fun hvanish => no_qou_on_moduleCat R incl hvanish hnontrivial
+
 end QOU.WitnessObstruction

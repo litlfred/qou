@@ -161,4 +161,16 @@ def descartesQOU : QOUFluidUniverse ℤ where
 theorem descartes_internal_ns_singular : descartesQOU.internalBlowup :=
   qou_internal_ns_singular descartesQOU
 
+/-- **Every QOU has nonzero Euler characteristic `χ(A) ≠ 0`.** Extracted as an
+    explicit intermediate lemma on the in-QOU chain (`bean qou-innq`). -/
+theorem qou_eulerChar_nonzero (U : QOUFluidUniverse k) : U.eulerChar ≠ 0 :=
+  U.observability_forces_chi U.observability_holds
+
+/-- **Quantitative Descartes Euler-characteristic and global-obstruction balance.**
+    In `descartesQOU`, both `eulerChar` and the global Euler class `obstruction`
+    equal `-6`, so adding `6` annihilates each. -/
+theorem descartesQOU_eulerChar_add_six :
+    descartesQOU.eulerChar + 6 = 0 ∧ descartesQOU.obstruction + 6 = 0 := by
+  decide
+
 end QOU.FluidDynamics

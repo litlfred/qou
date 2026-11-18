@@ -1,5 +1,5 @@
 import Mathlib.Tactic
-import Mathlib.MeasureTheory.Integral.Bochner
+import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
 /-!
 # QOU.Geometry.MobiusKernel — the classical Möbius-energy integrand
@@ -72,7 +72,7 @@ theorem mobiusKernel_nonneg {γ : ℝ → E} (hγ : LipschitzWith 1 γ) {s t : �
   have hsq : ‖γ s - γ t‖ ^ 2 ≤ (s - t) ^ 2 := by rwa [sq_abs] at habs
   have h0sq : (0 : ℝ) < ‖γ s - γ t‖ ^ 2 := by positivity
   rw [mobiusKernel, sub_nonneg]
-  gcongr <;> assumption
+  gcongr
 
 /-- **Distinct parameters give distinct points, for an embedded curve.**
     Packaged so the non-negativity can be applied from an injectivity
@@ -125,5 +125,20 @@ theorem mobiusEnergy_nonneg {γ : ℝ → E} (hγ : LipschitzWith 1 γ)
     (hinj : Function.Injective γ) : 0 ≤ mobiusEnergy γ :=
   integral_nonneg fun s => integral_nonneg fun t =>
     mobiusKernel_nonneg_all hγ hinj s t
+
+/-- **The classical Möbius integrand is symmetric in its two parameters `s, t`.** -/
+theorem mobiusKernel_symm (γ : ℝ → E) (s t : ℝ) :
+    mobiusKernel γ s t = mobiusKernel γ t s := by
+  simp only [mobiusKernel, norm_sub_rev (γ s) (γ t)]
+  ring
+
+/-- **Squared chord-≤-arc bound (`‖γ s - γ t‖² ≤ (s - t)²`)** for a `1`-Lipschitz
+    curve, eliminating the absolute value via `sq_abs`. -/
+theorem chord_sq_le_arc_sq {γ : ℝ → E} (hγ : LipschitzWith 1 γ) (s t : ℝ) :
+    ‖γ s - γ t‖ ^ 2 ≤ (s - t) ^ 2 := by
+  have hle : ‖γ s - γ t‖ ≤ |s - t| := chord_le_arc hγ s t
+  have habs : ‖γ s - γ t‖ ^ 2 ≤ |s - t| ^ 2 := by
+    nlinarith [norm_nonneg (γ s - γ t), abs_nonneg (s - t)]
+  rwa [sq_abs] at habs
 
 end QOU.Geometry

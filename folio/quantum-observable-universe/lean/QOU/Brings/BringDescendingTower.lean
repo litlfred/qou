@@ -114,6 +114,14 @@ the Euler characteristic). -/
 theorem genus_two_unramified_trivial (d h' : ℕ) (hRH : 1 = d * (h' - 1)) : d = 1 :=
   Nat.eq_one_of_mul_eq_one_right hRH.symm
 
+/-- **Euler-characteristic factorisation of the descending `3 : 1` unramified cover
+    `Σ₄ → C₂` (`bean qou-unob`).** Bring's curve at genus `g = 4` has Euler
+    characteristic `χ(Σ₄) = 2 - 2·4 = -6`, which equals `3 · χ(C₂)` for the
+    genus-`2` quotient `C₂` with `χ(C₂) = 2 - 2·2 = -2`. -/
+theorem bring_descending_euler_char_relation :
+    (2 : ℤ) - 2 * 4 = 3 * (2 - 2 * 2) ∧ (2 : ℤ) - 2 * 4 = -6 := by
+  decide
+
 end Genus
 
 end QOU.Brings.DescendingTower
