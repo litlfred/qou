@@ -166,4 +166,13 @@ theorem c8_superexp_sq_lower_bound {ι : Type*} (s : Finset ι) (f g : ι → �
     nlinarith [hIsq, hkfac, mul_pos hkfac h2K, sq_nonneg Ik]
   linarith [hsq, hstep]
 
+/-- The difference between the squared normalised sum and the super-exponential ratio is non-negative. -/
+theorem c8_superexp_sq_sub_nonneg {ι : Type*} (s : Finset ι) (f g : ι → ℝ)
+    (kfac Ik : ℝ) (K : ℕ)
+    (hg : ∀ i ∈ s, 0 ≤ g i) (hkfac : 0 < kfac) (hIk : 0 < Ik)
+    (hA : ∑ i ∈ s, f i * g i = kfac / 3) (hC : ∑ i ∈ s, g i ≤ Ik)
+    (hIsq : Ik ^ 2 ≤ 2 ^ K * kfac) :
+    0 ≤ ((∑ i ∈ s, f i ^ 2 * g i) / kfac) ^ 2 - kfac / (81 * 2 ^ K) :=
+  sub_nonneg.mpr (c8_superexp_sq_lower_bound s f g kfac Ik K hg hkfac hIk hA hC hIsq)
+
 end QOU.BraidKnot.KeystoneC8SuperExpBound
