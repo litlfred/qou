@@ -1,0 +1,72 @@
+{
+  "probe": "dead_pages_url_residue_undefined_atom_normal_form_arity_vendored_parent_depth_mismatch_sidecar_union_hashless_retention_and_lambda_reservation_broken_sibling_undercount_probe",
+  "beans": [
+    "qou-dkem",
+    "qou-ozts",
+    "qou-rug0",
+    "qou-tqr9",
+    "qou-vexw"
+  ],
+  "dps": 80,
+  "generatedAt": "2026-11-18T09:02:16.368550+00:00",
+  "scriptPath": "computations/probes/dead_pages_url_residue_undefined_atom_normal_form_arity_vendored_parent_depth_mismatch_sidecar_union_hashless_retention_and_lambda_reservation_broken_sibling_undercount_probe.py",
+  "scriptHash": "ab5dbfaf96f16466e878409dd38769038010cfd69af93710a954bcf3fdd14309",
+  "scriptSha256": "ab5dbfaf96f16466e878409dd38769038010cfd69af93710a954bcf3fdd14309",
+  "scriptCommitSha": "1a45923f2b3cc2dc2680fde3e652f9500bd26ee6",
+  "allPassed": true,
+  "results": {
+    "qou_dkem": {
+      "passed": true,
+      "deadGhPagesLinks": 77,
+      "sampleCorpusSize": 500,
+      "liveUrlsInSample": 423
+    },
+    "qou_ozts": {
+      "passed": true,
+      "applyArity": 3,
+      "buildArity": 2,
+      "arityGap": 1,
+      "call1Line": 191,
+      "call2Line": 202,
+      "lineSpan": 11,
+      "call1Nucleons": 1,
+      "call2Nucleons": 12
+    },
+    "qou_rug0": {
+      "passed": true,
+      "sourceSubstrateDepth": 3,
+      "vendoredSubstrateDepth": 5,
+      "substrateDepthOffset": 2,
+      "li2qDepthOffset": 1,
+      "repairedShimsTotal": 7
+    },
+    "qou_tqr9": {
+      "passed": true,
+      "conflictsResolved": 742,
+      "lostVerdictsRestored": 7381,
+      "affectedBlocks": 738,
+      "categoriesPerBlock": 10,
+      "spuriousDeletionsEliminated": 1169,
+      "totalAgentEntries": 126156,
+      "totalWithoutHash": 70307,
+      "totalWithHash": 55849,
+      "overallHashlessFraction": "0.55730207045245568978090617965059133136751323757887060464821332318716509718126764",
+      "localHashlessFraction": "0.86614113352935212410017236135050187569704957923552671600932779073304268478150664"
+    },
+    "qou_vexw": {
+      "passed": true,
+      "preBumpCensus": 382,
+      "massTheoryBroken": 72,
+      "qouChapterBroken": 63,
+      "otherChaptersBroken": 247,
+      "skewSytLambdaSites": 213,
+      "uncoveredErrorLines": [
+        37,
+        38,
+        46,
+        112
+      ],
+      "uncoveredErrorSpan": 75
+    }
+  }
+}
