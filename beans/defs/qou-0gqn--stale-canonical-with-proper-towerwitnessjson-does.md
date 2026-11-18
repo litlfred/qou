@@ -1,7 +1,7 @@
 ---
 # qou-0gqn
 title: 'STALE: canonical-with-proper-tower.witness.json does not reproduce -- E_0 collapses 3.59e6x, taking every B_MeV with it'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -264,3 +264,5 @@ My first draft claimed "0.09 % -> 9.1 %, ~100x". That compared a two-sided Phi_q
 change against a one-sided V_hat window and doubled the factor. The probe's own
 threshold (`amp > 50`) failed at 48.24 and forced the correction. Recorded in the
 module docstring so the wrong figure cannot be re-derived from an old draft.
+
+- **Round 91 (`https://github.com/litlfred/qou/pull/8413`, head `1d95d75db1b41a96e3b4987d5771f9fd945187c9`)**: Formalized theorem + 80-dps witness (`status: in-progress`).

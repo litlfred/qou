@@ -1,7 +1,7 @@
 ---
 # qou-03fc
 title: 'HAZARD: running an audit producer in a sympy-less container silently DEGRADES its witness (two q0 witnesses are also genuinely stale on main)'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 tags:
@@ -198,3 +198,5 @@ environments the owner declined to block on 2026-08-25.
 
 Recommendation 2 (refresh the two genuinely-stale q0 witnesses from a
 sympy-having container) is unchanged and independent of the above.
+
+- **Round 91 (`https://github.com/litlfred/qou/pull/8413`, head `1d95d75db1b41a96e3b4987d5771f9fd945187c9`)**: Formalized theorem + 80-dps witness (`status: in-progress`).

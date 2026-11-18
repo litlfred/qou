@@ -1,7 +1,7 @@
 ---
 # qou-16yn
 title: 'MAIN IS BROKEN: 70ae502091 gutted the deuteron chi witness 2h ago -- consumer crashes, values match nothing'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -100,3 +100,5 @@ it does not fix.
    three weeks, and leaves `qou-49vn`'s question exactly as open as it was.
 3. Do **not** regenerate it from a producer until `qou-49vn` settles which
    kernel is canonical.
+
+- **Round 91 (`https://github.com/litlfred/qou/pull/8413`, head `1d95d75db1b41a96e3b4987d5771f9fd945187c9`)**: Formalized theorem + 80-dps witness (`status: in-progress`).

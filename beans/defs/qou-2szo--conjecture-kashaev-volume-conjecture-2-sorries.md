@@ -1,7 +1,7 @@
 ---
 # qou-2szo
 title: 'Conjecture: kashaev_volume_conjecture (2 sorries)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -12,3 +12,5 @@ parent: qou-n4nr
 ---
 
 kashaev-volume-conjecture.lean: 2 conjectural sorries about calibration algebraic mass. Genuine conjectures.
+
+- **Round 91 (`https://github.com/litlfred/qou/pull/8413`, head `1d95d75db1b41a96e3b4987d5771f9fd945187c9`)**: Formalized theorem + 80-dps witness (`status: in-progress`).
