@@ -1,1 +1,1 @@
-A.5.1. Assume thatC is an abelian category and the Φi’s are exact functors.
+5.1. Assume thatC is an abelian category and the Φi’s are exact functors. Then (i)C[Φ−1 i |i∈I] is an abelian category and the functor Υ : C→C [Φ−1 i |i∈I] is an exact functor. (ii) ForX∈C , Υ(X)≃ 0 if and only if there exists α∈ Z⊕I ≥0 such that Φα(X)≃ 0.

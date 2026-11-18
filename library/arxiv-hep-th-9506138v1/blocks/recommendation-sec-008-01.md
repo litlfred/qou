@@ -1,1 +1,0 @@
-Local quantum ﬁeld theory in Minkowski space provides a very good description of the low-energy world we observe, and any uniﬁed theory should reproduce the structure of local Minkowski ﬁeld theory for kinematic situations appropriate to low-energy Minkowski observers.

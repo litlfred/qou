@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/schechtman-varchenko1991-arrangements/blocks/lem-page-009-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "text": "lem-page-009-01.md",
+  "derivedFrom": "library/schechtman-varchenko1991-arrangements/sections/page-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.8.2",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-009.md (p. 9-9)",
+    "claim_id": "schechtman-varchenko1991-arrangements#lemma:1.8.2",
+    "lean_status": "unformalized"
+  }
+}

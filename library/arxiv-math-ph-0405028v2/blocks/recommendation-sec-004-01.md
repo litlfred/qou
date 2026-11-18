@@ -1,1 +1,0 @@
-We shall show that the WRT invariant for the Brieskorn homology spheres can be expressed in terms of a limiting value of the Eichler integral at $\tau\to 1/N$ which is given in eq. [\[Eichler_fraction\]](#Eichler_fraction){reference-type="eqref" reference="Eichler_fraction"}.

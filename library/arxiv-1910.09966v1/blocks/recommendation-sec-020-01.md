@@ -1,1 +1,0 @@
-Here, we have the surprising result: *if the underlying spacetime is a smooth manifold, then the minimal number of generations must be three!* A spacetime with only one or two generations is not a smooth manifold.

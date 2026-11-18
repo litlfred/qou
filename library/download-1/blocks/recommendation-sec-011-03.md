@@ -1,1 +1,0 @@
-Therefore, by the property (2) of R-trees, we get ½z1; z2T ¼ ½z0;z1ðs0Þ; z1T [ ½z0;z2ðs0Þ; z2T: Hence, since T 0 is convex by virtue of Proposition 2.9, the points z1 and z2 must be included in diﬀerent components in C Tðz0;z1ðs0ÞÞ.

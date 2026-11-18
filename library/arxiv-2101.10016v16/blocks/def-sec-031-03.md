@@ -1,0 +1,1 @@
+We define the projection p2 := P γ∈Λ+(q) pκ,γ and set V ⊗V = p2V ⊗ V . We use pλ,γ to iteratively define projections pn : V ⊗n → V⊗n onto the maximal nonnegligible submodule V ⊗n induced by the decomposition of V ⊗n−1 ⊗ V .

@@ -1,1 +1,0 @@
-In Section [\[sec:proofs\]](#sec:proofs){reference-type="ref" reference="sec:proofs"} we shall define the most important tool of this article: a certain map $\Phi^{\mathop{\mathrm{P}}}_{{\mathbb{C}}(\widetilde{{{S}}_{\infty}})}$ from the set of partitions to ${\mathbb{C}}(\widetilde{{{S}}_{\infty}})$.

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9901120v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9901120v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -32,10 +32,15 @@
     "source_file": "9901120v3.pdf",
     "source_sha256": "782034b674f958af57632cf8cab5c42015ed7cd01702930740b8d541141c0051",
     "pages": 4,
-    "arxiv": null,
+    "arxiv": {
+      "id": "math/9901120",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "18 Jun 2010"
+    },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

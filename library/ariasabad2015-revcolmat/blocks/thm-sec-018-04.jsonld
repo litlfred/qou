@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ariasabad2015-revcolmat/blocks/thm-sec-018-04",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Drinfeld [7]-Jimbo [13]",
+  "pageStart": 31,
+  "pageEnd": 37,
+  "text": "thm-sec-018-04.md",
+  "derivedFrom": "library/ariasabad2015-revcolmat/sections/sec-018",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.19",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-018-52-the-drinfeld-kohno-theorem.md (p. 31-37) citing Drinfeld [7]-Jimbo [13], [7], [13]",
+    "claim_id": "ariasabad2015-revcolmat#theorem:5.19",
+    "lean_status": "unformalized"
+  }
+}

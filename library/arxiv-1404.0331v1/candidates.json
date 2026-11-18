@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1404.0331v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "53d7ce3afaf405e1a8af39565f1c561f715abad4c9e4be70842dba47091445a5",
   "file": "1404.0331v1.pdf"
@@ -16,31 +19,195 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
+  "candidates": 6,
   "by_kind": {
-   "recommendation": 1
+   "lemma": 2,
+   "proposition": 4
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 6,
+  "by_domain": {
+   "math": 6
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 6
+  },
+  "by_evidence_location": {
+   "in-paper": 6
+  },
+  "by_lean_status": {
+   "proved-here": 2,
+   "doc-cited-in-lean-unlinked-claim": 4
+  },
+  "needs_lean_proof": 4
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
    "name": null,
-   "statement": "Since $A_K$ does not have any non-trivial $M$-factors, we must have $h \\in \\BC[M^{\\pm 1}, L^{\\pm 1}]=\\ft$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-2-on-the-strong-aj-conjecture.md",
-   "section_title": "On the strong AJ conjecture",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "For all positive integers m, one has (L2m \u2212t\u22124pqm2M\u22122pqm)JT \u2208R[M\u00b11].",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-009-3-case-s2-is-odd-and-q2.md (p. 6-7)",
+   "external_refs": [],
+   "proof_excerpt": "From (3.1) we have (L2M2pq \u2212t4pq)JT \u2208R[M\u00b11]. It follows that ((L2M2pq)m \u2212t4pqm)JT \u2208R[M\u00b11]. Since (L2M2pq)m = t\u22124pqm(m\u22121)L2mM2pqm, we have (L2mM2pqm \u2212t4pqm2)JT \u2208R[M\u00b11]. The lemma follows since L2mM2pqm = t8pqm2M2pqmL2m.",
+   "section_file": "sections/sec-009-3-case-s2-is-odd-and-q2.md",
+   "section_title": "Case s>2 is odd and q>2",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-009-3-case-s2-is-odd-and-q2.md (p. 6-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-009-01",
+   "block_iri": "library/arxiv-1404.0331v1/blocks/lem-sec-009-01",
+   "claim_id": "arxiv-1404.0331v1#lemma:3.1",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Machinery/AJMinimality.lean:hc3_eq"
+   ],
+   "needs_lean_proof": false
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.2",
+   "name": null,
+   "statement": "One has (L2M2pqs2 + L\u22122M\u22122pqs2 \u2212t4r\u22124pqs \u2212t\u22124r+4pqs+8pqs2)G1 \u2208 R[M\u00b11], (L2M2pqs2 + L\u22122M\u22122pqs2 \u2212t\u22124r+4pqs \u2212t4r\u22124pqs+8pqs2)G2 \u2208 R[M\u00b11].",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-009-3-case-s2-is-odd-and-q2.md (p. 6-7)",
+   "external_refs": [],
+   "proof_excerpt": "From Lemma 3.1 we have JT(s(n + 3) + 1) \u2212t\u22124pqs(sn+2s+1)JT(s(n + 1) + 1) \u2208R[t\u00b12n]. It follows that G1(n + 2) \u2212t4r\u22124pqs(sn+2s+1)G1(n) \u2208R[t\u00b12n]. Hence (L2 \u2212t4r\u22124pqs(2s+1)M\u22122pqs2)G1 \u2208R[M\u00b11], which implies that (L2M2pqs2 \u2212t4r\u22124pqs)G1 \u2208R[M\u00b11]. Hence (1 \u2212t\u22124r+4pqsL\u22122M\u22122pqs2)(L2M2pqs2 \u2212",
+   "section_file": "sections/sec-009-3-case-s2-is-odd-and-q2.md",
+   "section_title": "Case s>2 is odd and q>2",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-009-3-case-s2-is-odd-and-q2.md (p. 6-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-009-02",
+   "block_iri": "library/arxiv-1404.0331v1/blocks/prop-sec-009-02",
+   "claim_id": "arxiv-1404.0331v1#proposition:3.2",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Machinery/AJMinimality.lean:hc3_eq"
+   ],
+   "needs_lean_proof": false
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "When q = 2, for all positive integers m, one has (Lm \u2212(\u22121)mt\u22122pm2M\u22122pm)JT \u2208R[M\u00b11].",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-010-4-case-s2-is-odd-and-q2.md (p. 7-7)",
+   "external_refs": [],
+   "proof_excerpt": "From (4.1) we have (LM2p + t2p)JT \u2208R[M\u00b11]. It follows that ((LM2p)m \u2212(\u2212t2p)m)JT \u2208R[M\u00b11]. Since (LM2p)m = t\u22122pm(m\u22121)LmM2pm, we have (LmM2pm \u2212(\u22121)mt2pm2)JT \u2208R[M\u00b11]. The lemma follows since LmM2pm = t4pm2M2pmLm.",
+   "section_file": "sections/sec-010-4-case-s2-is-odd-and-q2.md",
+   "section_title": "Case s>2 is odd and q=2",
+   "pages": "7-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-010-4-case-s2-is-odd-and-q2.md (p. 7-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-010-01",
+   "block_iri": "library/arxiv-1404.0331v1/blocks/lem-sec-010-01",
+   "claim_id": "arxiv-1404.0331v1#lemma:4.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Machinery/AJMinimality.lean:hc3_eq",
+    "folio/quantum-observable-universe/lean/QOU/Machinery/StrongAJFigureEight.lean:principal_of_division_minimality"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.2",
+   "name": null,
+   "statement": "When q = 2 and s is odd, one has (LM2ps2 + L\u22121M\u22122ps2 + t2r\u22122ps(s+2) + t\u22122r+2ps(3s+2))G1 \u2208 R[M\u00b11], (LM2ps2 + L\u22121M\u22122ps2 + t\u22122r\u22122ps(s\u22122) + t2r+2ps(3s\u22122))G2 \u2208 R[M\u00b11].",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-010-4-case-s2-is-odd-and-q2.md (p. 7-7)",
+   "external_refs": [],
+   "proof_excerpt": "From Lemma 4.1 we have JT(s(n + 2) + 1) + t\u22122ps(2sn+3s+2)JT(s(n + 1) + 1) \u2208R[t\u00b12n]. It follows that G1(n + 1) + t2r\u22122ps(2sn+3s+2)G1(n) \u2208R[t\u00b12n]. Hence (L + t2r\u22122ps(3s+2)M\u22122ps2)G1 \u2208R[M\u00b11], which implies that (LM2ps2 + t2r\u22122ps(s+2))G1 \u2208R[M\u00b11]. Hence (1 + t\u22122r+2ps(s+2)L\u22121M\u22122ps2)(LM2",
+   "section_file": "sections/sec-010-4-case-s2-is-odd-and-q2.md",
+   "section_title": "Case s>2 is odd and q=2",
+   "pages": "7-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-010-4-case-s2-is-odd-and-q2.md (p. 7-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-010-02",
+   "block_iri": "library/arxiv-1404.0331v1/blocks/prop-sec-010-02",
+   "claim_id": "arxiv-1404.0331v1#proposition:4.2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Machinery/AJMinimality.lean:hc3_eq",
+    "folio/quantum-observable-universe/lean/QOU/Machinery/StrongAJFigureEight.lean:principal_of_division_minimality"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.1",
+   "name": null,
+   "statement": "When s is even, one has (LMpqs2 + L\u22121M\u2212pqs2 \u2212t2r\u2212pqs(s+2) \u2212t\u22122r+pqs(3s+2))G1 \u2208 R[M\u00b11], (LMpqs2 + L\u22121M\u2212pqs2 \u2212t\u22122r\u2212pqs(s\u22122) \u2212t2r+pqs(3s\u22122))G2 \u2208 R[M\u00b11]. ANH T. TRAN",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-011-5-case-s2-is-even.md (p. 7-8)",
+   "external_refs": [],
+   "proof_excerpt": "From Lemma 3.1 we have JT(s(n + 2) + 1) \u2212t\u2212pqs(2sn+3s+2)JT(s(n + 1) + 1) \u2208R[t\u00b12n]. It follows that G1(n + 1) \u2212t2r\u2212pqs(2sn+3s+2)G1(n) \u2208R[t\u00b12n]. Hence (L \u2212t2r\u2212pqs(3s+2)M\u2212pqs2)G1 \u2208R[M\u00b11], which implies that (LMpqs2 \u2212t2r\u2212pqs(s+2))G1 \u2208R[M\u00b11]. Hence (1 \u2212t\u22122r+2pq(s+2)L\u22121M\u22122ps2)(LMpqs2 \u2212",
+   "section_file": "sections/sec-011-5-case-s2-is-even.md",
+   "section_title": "Case s>2 is even",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-011-5-case-s2-is-even.md (p. 7-8)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-011-01",
+   "block_iri": "library/arxiv-1404.0331v1/blocks/prop-sec-011-01",
+   "claim_id": "arxiv-1404.0331v1#proposition:5.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Machinery/AJMinimality.lean:hc3_eq",
+    "folio/quantum-observable-universe/lean/QOU/Machinery/StrongAJFigureEight.lean:principal_of_division_minimality"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.1",
+   "name": null,
+   "statement": "One has (LM4pq + L\u22121M\u22124pq \u22121 \u2212t8pq)G \u2208R[M\u00b11].",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-012-6-case-s2.md (p. 8-9)",
+   "external_refs": [],
+   "proof_excerpt": "From [Tr, Lemma 1.1] we have JT(2n + 3) \u2212t\u22128pq(n+1)JT(2n + 1) \u2208R[t\u00b12n], i.e. (L \u2212t\u22128pqM\u22124pq)G \u2208R[M\u00b11]. It follows that (LM4pq \u22121)G \u2208R[M\u00b11]. Hence (1 \u2212L\u22121M\u22124pq)(LM4pq \u22121)G \u2208R[M\u00b11]. The proposition follows.",
+   "section_file": "sections/sec-012-6-case-s2.md",
+   "section_title": "Case s=2",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-012-6-case-s2.md (p. 8-9)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-012-01",
+   "block_iri": "library/arxiv-1404.0331v1/blocks/prop-sec-012-01",
+   "claim_id": "arxiv-1404.0331v1#proposition:6.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Machinery/AJMinimality.lean:hc3_eq",
+    "folio/quantum-observable-universe/lean/QOU/Machinery/StrongAJFigureEight.lean:principal_of_division_minimality"
+   ],
+   "needs_lean_proof": true
   }
  ]
 }

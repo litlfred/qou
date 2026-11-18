@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-gr-qc-0407052v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "4624ea2fb4d318ad118e333446e66a3af77c744d7192cbffe0742915ad33d4ff",
   "file": "0407052v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:gr-qc/0407052v1 14 Jul 2004",
+  "title": "Black hole entropy in loop quantum gravity",
   "authors": "Institute of Theoretical Physics, Warsaw University",
   "arxiv": {
    "id": "gr-qc/0407052",
@@ -16,76 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
-  "by_kind": {
-   "recommendation": 4
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(18) We see that apart from singularities at s = 4\u03c0in, the function G(s) has a well de\ufb01ned limit when Re(s) \u0581 0 and in the domain Re(s) > 0 it is complex analytic so in the whole domain Re(s) \u22650 there can be no points of accumulation of zeroes \u2013 therefore all zeroes of the function G(s) \u22121 2 in the whole domain Re(s) \u22650 must be distinct and of \ufb01nite order.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "5 It is easy to prove that all the complex zeroes (i.e. poles of P(s)) with nonva- nishing imaginary part must have smaller real part than \u02dc\u03b3M so in comparison to the leading behaviour (22) they give exponentially small (and rapidly os- cillating) contribution to N(a).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Then we have P(s) = \u221e Y k=1 1 \u0010 1 \u2212e\u2212s\u221a k(k+2)/4\u00112 (27) and this P(s) does not have a pole with Re(s) > 0 at all so N(a) must have milder growth than ec\u2032a.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(31) where the \ufb01rst term inside the brackets on the RHS corresponds to sequences with at least two elements and m1 = + 1 2, the second to sequences with at 7 least two elements and m1 = \u22121 2 and so on and the last term to sequences consisting of just m1 (which must be equal to p).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

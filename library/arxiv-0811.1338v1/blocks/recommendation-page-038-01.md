@@ -1,1 +1,0 @@
-However, based on this behavior it was conjec- tured that one should be able to reach the critical point by varying the up- and down-quark masses mu and md independently because the spin-triplet and spin-singlet channels have diﬀerent isospin (82).

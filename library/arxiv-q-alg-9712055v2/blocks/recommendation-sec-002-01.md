@@ -1,1 +1,0 @@
-We begin with \begin{lem}\label{l5.1} $$ \int d_{q^2}ze_{q^2}(-i(1-q^2)z)\bg= \left\{ \begin{array}{lcl} \frac2{1-q^2}\Theta_0 & for & s=1\\ 0 & for & s\ne 1.\\ \end{array} \right. $$ where $\Theta_0$ is determined by (\ref{2.17}). \end{lem} {\bf Proof.} In according with our definition of $q^2$-integrals all integrands must by ordered.

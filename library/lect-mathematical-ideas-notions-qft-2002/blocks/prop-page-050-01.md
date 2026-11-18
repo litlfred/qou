@@ -1,0 +1,1 @@
+The Fourier transform of the function Fp (6t,,.-.; 5t, ) is Fr(F1, wy En). Hence, the Fourier transform of the connected Green’s functions is 18 J. (Bh, E, nw Fr(E E (18) Ge (E,, «5. En) = > JA] r(Zy,...,En). TEG$,(n)

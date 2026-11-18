@@ -1,1 +1,0 @@
-- Define the category $\mathcal{T}_H$ of tilting modules over $H$ as the union of the various $\mathcal{T}_A$; this should be a semisimple category.

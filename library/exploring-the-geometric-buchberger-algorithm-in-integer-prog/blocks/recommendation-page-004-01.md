@@ -1,1 +1,0 @@
-A support tree is a binary tree where each internal node has a label i with the interpretation that any vector g such that i ¢ supp g* must be stored in the left subtree of the node, and similarly, if i € supp g* then g must be stored in its right subtree.

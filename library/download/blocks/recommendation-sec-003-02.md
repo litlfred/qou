@@ -1,1 +1,0 @@
-(One should properly modify the conclusion when applying this to the matrix scheme; see Sec- tion 7.) Let (Xn)n≥1 be a random sequence such that for each n, (X1,...,Xn) has distribution on Rn satisfying PI(σ 2) with some common σ.

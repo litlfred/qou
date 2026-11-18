@@ -1,1 +1,0 @@
-As discussed in Sec.(6) if, for example, the matter fields propagate in the bulk, then a full generation of quarks and leptons must arise from split multiplets which have no normal $X$ and $Y$ gauge interactions among them.

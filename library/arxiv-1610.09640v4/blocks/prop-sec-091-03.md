@@ -1,0 +1,1 @@
+Let M ∈D+(A). (1) There exists a minimal injective resolution φ : M →I. (2) If φ′ : M →I′ is another minimal injective resolution, then there is an isomorphism ψ : I →I′ in Cstr(A) such that φ′ = ψ ◦φ. (3) If M has ﬁnite injective dimension, then it has a bounded minimal injective resolution I.

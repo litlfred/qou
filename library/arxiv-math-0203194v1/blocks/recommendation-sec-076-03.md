@@ -1,1 +1,0 @@
-They are classified by a smooth projective Shimura curve $\mathcal{X}^+$ defined over $\Q$, \cf II.\ref{para:7.4.2}, which should actually be considered as an orbifold $(\mathcal{X}^+, (\zeta_i,e_i))$, because the action of $\Gamma^+$ on the Poincar\'e upper half-place $\mathfrak{h}$ has fixed points (the $\zeta_i$'s are their images in $\mathcal{X}^+$).

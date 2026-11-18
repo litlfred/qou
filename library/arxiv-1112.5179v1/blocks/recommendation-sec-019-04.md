@@ -1,1 +1,0 @@
-It should be clear that the same supersymmetry is also preserved by all line defects that lie in the common plane of the parallel and orthogonal line defects, which is a generic plane orthogonal to the boundary, as long as the $\vartheta_i$ parameters are properly chosen.

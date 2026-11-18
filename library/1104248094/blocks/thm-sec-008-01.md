@@ -1,0 +1,1 @@
+Ψ induces an isomorphism for the Hochschild homology, i.e., HHn(C{(G)) s Ω}(H) ® C((Λ)), (6.3) where H is the Cartan subgroup of G. The Hochschild homology may be considered as the E 1 term of the spectral sequence associated with the double complex for the cyclic homology. The above theorem shows that Ψ induces an isomorphism for the E l term. Again by comparison theorem we have

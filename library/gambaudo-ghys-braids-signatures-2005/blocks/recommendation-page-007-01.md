@@ -1,1 +1,0 @@
-All along this paper, we shall say that the orientation of an oriented mani- fold M is compatible with the orientation of one of its boundary components N if a positive basis of the tangent space to N followed with a normal vector to N pointing inward M is a positive basis of the tangent space to M.

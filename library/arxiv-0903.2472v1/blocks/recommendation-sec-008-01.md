@@ -1,1 +1,0 @@
-(Physicists should think of these spaces as "Hilbert" spaces obtained by quantizing the theory on a manifold with boundary.) The elements of $V$ are represented by complex-valued functions in one variable, with adjoints given by conjugation and inner products given by integration.

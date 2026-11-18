@@ -1,1 +1,0 @@
-The reader should not misunderstand the meaning of Observation 1: it claims that whenever we started from a knot diagram with seven crossings or less of a prime knot, our mechanical knot acquired the shape of exactly one of the forms shown in Fig.1.

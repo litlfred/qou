@@ -1,0 +1,1 @@
+8. Consider the decomposition V (n) ⊗V (m) ∼= V (n + m) ⊕V (n + m −2) ⊕· · · ⊕V (n −m + 2) ⊕V (n −m). The maps U : V (n) ⊗V (m) →V (n + 1) ⊗V (m + 1) D : V (n + 1) ⊗V (m + 1) →V (n) ⊗V (m) restrict to SL2(C)-invariant isomorphisms from V (n + m −2r) to V (n + m −2r) for all 0 ≤r ≤m ≤n. Additionally, D restricts to the zero map on V (n + m + 2).

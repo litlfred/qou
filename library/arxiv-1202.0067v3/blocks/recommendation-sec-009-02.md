@@ -1,1 +1,0 @@
-It should be noted that in general there will be several tableaux corresponding to each product of character values χλ(0)/µ(0)(gα0(t)) . . . χλ(n−1)/µ(n−1)(gαn−1(t)); it is a special feature of this example that each f(t) has a single summand, and so the bijection extends all the way to tabloids.

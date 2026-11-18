@@ -1,1 +1,0 @@
-It is worth mentioning that ([@Gerzerlis13a]) up to N$^2$LO (beginning from N$^3$LO, non-local operators cannot be avoided however their effects should be negligible and can be treated perturbatively), one can write down a mostly local version of the chiral interaction[^1].

@@ -1,1 +1,0 @@
-Finally, from the expression (285),(288) of the leading order coeﬃcients α(m) 0 (q), β(m) 0 (q), of Am(eu; q), Bm(eu; q), Cm(eu; q) in the expansion of u, one concludes that the recursion relation (86) should be the u = 0 limit of the recursion relation (254) in m, and one can easily check it is indeed the case. ϕσ1(τ) ϕσ2(τ) ϕσ3(τ) Figure 10.

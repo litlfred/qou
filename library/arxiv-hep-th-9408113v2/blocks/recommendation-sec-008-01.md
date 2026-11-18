@@ -1,1 +1,0 @@
-In other words, if we have a dilogarithm identity X i L(xi) = cπ2 6 , with c ∈Q and xi ∈Q ∩R, then (hypothetically) we must have i) (week form) λ( X i [xi]) = 0; ii) (strong form) the relation X i L(xi) = cπ2 6 is a linear combination over Q of the ﬁve-term relations (1.4) with real-algebraic arguments.

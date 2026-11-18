@@ -1,1 +1,0 @@
-A176 (1971) 413; note that there is an error in equation (4.22) of this paper where it should read −W J LS = 2qq′ J −1 2J −1 h AJ−2,(0) LS −AJ(0) LS i and +W J LS = 2qq′ J + 2 2J + 3 h AJ+2,(0) LS −AJ(0) LS i . [143] E.

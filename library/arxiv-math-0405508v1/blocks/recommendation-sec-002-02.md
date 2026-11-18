@@ -1,1 +1,0 @@
-In fact, we have that \[ g_i^{-1}=q^{-1}g_i+(q^{-1}-1) \cdot 1 \in H_n.\] Thus, the images of the elements $t_i',t_{i,j}' \in \tilde{W}_n$ under the map $A\tilde{W}_n \rightarrow H_n$ are well-defined elements in $H_n$, and we shall denote them by the same symbols.

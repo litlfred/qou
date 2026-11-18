@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9806163v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9806163v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9806163v1",
+  "title": "Weights of Markov traces on Hecke algebras",
   "contains": [
     "library/arxiv-math-9806163v1/sections/sec-front-matter",
     "library/arxiv-math-9806163v1/sections/sec-000",
@@ -35,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9806163v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9806163v1.pdf",
     "source_sha256": "dba44975f29cb017beca484167ac9721da1751533cd1f20335c253b3c84727db",
     "pages": 23,
@@ -46,8 +48,8 @@
       "stamp_date": "30 Jun 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

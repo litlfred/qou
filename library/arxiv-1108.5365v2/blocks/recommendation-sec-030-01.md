@@ -1,1 +1,0 @@
-However, this should be interpreted as a function of $\s$ over $\R$, and then analytic continued to $\R+i\e_\s$, so that the contour for $\s$ will be pushed under the pole for $\s=\a$ in $G_b(-i\t)\mapsto G_b(i\s-i\a)$.

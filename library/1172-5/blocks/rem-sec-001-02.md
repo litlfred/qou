@@ -1,0 +1,1 @@
+Note that $V$ and $\tilde{V}$ satisfy the same algebraic equations (3.5) but diﬀerent partial diﬀerential equations (3.4) and that the extra terms in (3.6) are necessary to choose an appropriate branch since $\mathrm{L}\mathrm{i}_{2}$ and $\log$ are multivalued func- tions. (I learned this from T. Takata.)

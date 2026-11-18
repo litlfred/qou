@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1301.6953v1/blocks/prop-sec-002-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "prop-sec-002-01.md",
+  "derivedFrom": "library/arxiv-1301.6953v1/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1301.6953v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "computational-claim",
+    "claim_domain": "science",
+    "evidence_kind": "computational-simulation",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper computational simulation in sections/sec-002-3-determining-low-energy-constants-in-the-contin.md (p. 5-7)",
+    "claim_id": "arxiv-1301.6953v1#prop-sec-002-01"
+  }
+}

@@ -1,1 +1,0 @@
-\begin{remark}\label{remark2} \normalfont The Theorem should be contrasted with Theorem 3.22 in \cite{HR}, describing the decomposition of $ V_n^{\otimes k } $ as a $ (\CC \Si_n, \ParAlg(n)) $-bimodule.

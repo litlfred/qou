@@ -1,1 +1,0 @@
-Since groupoids naturally form a 2-category, we should weaken the notion of composition, and give an appropriate notion of 2-morphism, for a bicategory $\operatorname{Span}(\boldsymbol{\operatorname{{FinGpd}}})$.

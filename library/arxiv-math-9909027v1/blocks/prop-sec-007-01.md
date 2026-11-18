@@ -1,0 +1,1 @@
+Let P = ∪kPk be a planar algebra with parameters δ1 = Z( ) and δ2 = Z( ). Assume P is presented on itself by Φ. Then λ1(P) is a planar algebra with parameters δ2, δ1, presented on itself by λ1(Φ) where λ1(Φ) is deﬁned by λ1(Φ)(T) = δ−pΦ( ˜T), p being the number of internal boxes in T.

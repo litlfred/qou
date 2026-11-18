@@ -1,0 +1,1 @@
+The following hold in the situation of Deﬁnition 17.4.19. (1) There exists a unique balanced trace morphism trf : RB →RA. (2) The balanced trace morphism trf is a nondegenerate backward morphism on both sides. We shall need several lemmas for the proof. In analogy to Deﬁnition 16.4.2, the dedualizing complex of B is PB := RΓn(B) ∼= RΓnop(B) in D(Ben, gr).

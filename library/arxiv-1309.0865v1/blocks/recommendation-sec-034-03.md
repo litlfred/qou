@@ -1,1 +1,0 @@
-This observation gives us a different inductive way to look at light leaves: \igc{1}{LLinductionAlt} One should think of the top of an $\LL$ map as being a rex labelled with all U1's, for the purpose of further $\LL$ maps. \end{remark}

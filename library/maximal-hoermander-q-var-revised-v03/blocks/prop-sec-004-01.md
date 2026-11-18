@@ -1,0 +1,1 @@
+Let A be a 0-sectorial operator on a Banach space X with property (α). If A has a bounded Hα 2 calculus, then it has an R-bounded Hγ 2 calculus for any parameter γ > α + type X − cotype X such that γ ⩾α + 1 2. If X is a Hilbert space and A has a bounded Hα calclus, then A has an R-bounded Hα 2 calculus.

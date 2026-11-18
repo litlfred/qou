@@ -1,1 +1,0 @@
-Then, the equality $\bigcup_{d\in \Z^k}H_d \cap \M^{W_I} = P \cap \M^{W_I}$ holds since any $x\in P\cap \M^{W_I}$ must be contained in $H_d\cap \M^{W_I}$ for some $d\in \Z^k$, which implies that $P\cap \M^{W_I} \subseteq \bigcup_{d \in \Z^k} H_d\cap \M^{W_I}$ holds.

@@ -1,1 +1,0 @@
-On the other hand, various properties of quivers, their moduli spaces, and other related objects -- in particular Cohomological Hall Algebra -- should shed new light on properties of knot invariants, in particular knot homologies.

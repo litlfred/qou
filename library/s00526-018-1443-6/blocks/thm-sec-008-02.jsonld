@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s00526-018-1443-6/blocks/thm-sec-008-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "thm-sec-008-02.md",
+  "derivedFrom": "library/s00526-018-1443-6/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00526-018-1443-6/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [17,38] in sections/sec-008-3-decomposition-of-the-first-variation-of-mathca.md",
+    "claim_id": "s00526-018-1443-6#theorem:3.1",
+    "lean_status": "unformalized"
+  }
+}

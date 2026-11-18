@@ -1,1 +1,0 @@
-Therefore it is necessary for the path integral measure to be invariant under global diffeomorphisms, i.e., modular transformations (For each spin structure it should be invariant under diffeomorphisms preserving that spin structure.) Note that each spin structure is simply related to a particular one by changing boundary conditions by ±1.

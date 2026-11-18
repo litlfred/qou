@@ -1,1 +1,0 @@
-Referring back to Figure 14, it should now be completely clear that the bottom row of sketches represents the immersion in 3–space of the two foliated tiles in the top row of sketches, and that the motion of X+ across the two illustrated discs is indeed realized by a ﬂype which takes X+ to a new position which is separated from X−by a band of s–arcs.

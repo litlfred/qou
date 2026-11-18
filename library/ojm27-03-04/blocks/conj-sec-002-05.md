@@ -1,0 +1,1 @@
+With the same hypotheses as in Theorem 3.3, M|(μΛ)\ {the adjoining closed geodesic} have the same combinatorial decomposition by means of truncated tetrahedra as that of M\ which was constructed in Proposition 3.1.

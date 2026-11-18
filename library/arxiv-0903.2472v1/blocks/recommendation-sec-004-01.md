@@ -1,1 +1,0 @@
-Assuming that the $\sim \pm\frac{i}{2} {\mbox{Vol\,}}(M;u)$ behavior of the geometric and conjugate branches is unique, their signed and conjugate pairs must coincide for amphicheiral 3-manifolds. $S_0^{(\rm geom)}$, then, is an even analytic function of $u$ with strictly real series coefficients; at $u \in i {\mathbb{R}}$, the Chern-Simons invariant ${\rm CS} (M;u)$ will vanish.

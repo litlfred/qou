@@ -1,1 +1,0 @@
-This means that we only obtain $\big(S_{\mathcal{T},0},\tau_\mathcal{T}=4\pi^3e^{-2S_{\mathcal{T},1}},S_{\mathcal{T},2}\big)$ modulo $\big(\tfrac{\pi^2}{6}\mathbb{Z},\,i,\,\tfrac{1}{24}\mathbb{Z}\big)$, respectively; however, all the higher invariants $S_{\mathcal{T},n\geq 3}$ should be unambiguous.

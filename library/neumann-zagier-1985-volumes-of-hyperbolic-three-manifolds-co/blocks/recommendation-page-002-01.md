@@ -1,1 +1,0 @@
-Neumann and Don Zagier the i-th cusp by the Dehn surgery (with Li = 0 if (pi, qi) = co); then, as we shall see (Proposition 4.3), Li = 2nQi(pi, qJ1 +0 1 (j$&) (2) and hence Theorem 1A is equivalent to: THEOREM 1B.

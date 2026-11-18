@@ -1,1 +1,0 @@
-In Remark [\[BBmotiverem\]](#BBmotiverem){reference-type="ref" reference="BBmotiverem"} we shall make explicit how part (1) of this conjecture is equivalent with Beilinson's conjecture [@bei85 Conjecture 3.4] for an Artin motive associated with $\pi$.

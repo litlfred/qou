@@ -1,0 +1,1 @@
+The following diagram is a pullback diagram: H3(J) γ′ −→ H1(∂K0; Z) yγ′ 2ι yr H1(K0; Z/2) i∗ −→ H1(∂K0; Z/2), where i∗is induced by i: ∂K0 →K0 and r is reduction modulo 2. Equivalently, the following sequence is exact: 0 →H3(J) (γ′,γ′ 2ι) −−−−→H 1(∂K0; Z) ⊕H1(K0; Z/2) r−i∗ −−−→H1(∂K0; Z/2) →0.

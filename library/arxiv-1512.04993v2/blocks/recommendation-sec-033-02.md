@@ -1,1 +1,0 @@
-An example of this is given by the operator shown in Fig.~\ref{fig-localized-tensor-network}.} Thus, we expect that stringy corrections should reduce the computation rate of black hole solutions, pulling them away from saturating the conjectured bound on complexity growth \eqref{eq:LloydBound}.

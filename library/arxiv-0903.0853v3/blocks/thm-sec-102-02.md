@@ -1,0 +1,1 @@
+4.1. — The map u 7→θu from Lσ(E, F) to Ext(M, N) is func- torial in M and in N, C-linear, and its kernel is the image of the C-linear map: tΦ,Ψ : LK(E, F) →Lσ(E, F), f 7→Ψ ◦f −f ◦Φ. A.4. EXTENSIONS OF DIFFERENCE MODULES

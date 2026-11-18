@@ -1,0 +1,1 @@
+If the condition (13) holds for a1, ..., an, b1, ..., bn−2, then for any λ ∈C∗\ [−1; q], and z ∈C∗\ [−λ; q], one has lim m∈N m→+∞ nϕn−1 Å a1, ..., an b1, ..., bn−2, −1/(λqm) ; q, − z λqm ã = nfn−2 Å a1, ..., an b1, ..., bn−2 ; λ; q, z ã . (19)

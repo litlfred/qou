@@ -1,1 +1,0 @@
-When 푧푖∈{0} ∪휇푁, where 휇푁are the 푁-th roots of unity, they should give almost all relations: the results of [G10] suggest that the other relations are sporadic, i.e., cannot be described by universal formulae.

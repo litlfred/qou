@@ -1,1 +1,0 @@
-Indeed, it is clear that we have put together what all textbooks say one should never mix - the group of gauge transformations acting on the \"internal\" particle degrees of freedom, and the Lorentz group that acts by spacetime rotations.

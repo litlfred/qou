@@ -1,1 +1,0 @@
-Inspection shows that the triangulation must be undergoing a diagonal exchange: erase one edge e, thus liberating a quadrilateral space Q of which e was a diagonal, then insert back the other diagonal.

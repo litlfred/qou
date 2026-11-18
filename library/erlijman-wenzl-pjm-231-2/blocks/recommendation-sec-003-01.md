@@ -1,1 +1,0 @@
-We denote the resulting endomorphism by ShiftN⃗ m. (b) We shall extend the map ShiftN⃗ m to M after embedding N in M via ˆu (given by the inductive limit of conjugation of unitaries un or u⃗m,n as in Figures 7 and 3).

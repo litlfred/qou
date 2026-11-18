@@ -1,1 +1,0 @@
-By this we mean that we really want to imagine for a moment that the action of, say, the isospin lowering generator I−on a two-particle state distinguishes between the ﬁrst and the second particles: indeed, since its action on the state is precisely ∆(I−), and ∆is asymmetric, we must have a way of ordering the two particles so that the results we get are physically meaningful.

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13840v2/blocks/prop-sec-023-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "Efficient CCNR negativity moment",
+  "pageStart": 31,
+  "pageEnd": 32,
+  "text": "prop-sec-023-01.md",
+  "derivedFrom": "library/arxiv-2507.13840v2/sections/sec-023",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-023-efficient-algorithm-to-measure-ccnr-negativity-m.md (p. 31-32)",
+    "claim_id": "arxiv-2507.13840v2#proposition:3",
+    "lean_status": "unformalized"
+  }
+}

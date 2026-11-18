@@ -1,1 +1,0 @@
-Since all vertical A-segments either join distinct small inner circles or join a small inner circle to a medium inner circle or a wandering circle, then one of $C_{1}$ and $C_{2}$ must be a small inner circle.

@@ -1,0 +1,1 @@
+The fact that the concept “DG category” refers both to DG rings (Example 3.4.7) and to the categories of DG modules over them (Example 3.4.8) is a source of frequent confusion. See Remarks 3.1.51 and 3.8.21. Derived Categories | Amnon Yekutieli |

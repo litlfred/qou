@@ -1,1 +1,0 @@
-Once-punctured tori and 4–punctured spheres Theorem 1.1 is still true if we replace the once-punctured torus T by the 4–punctured sphere S, and the map ϕ: T →T by an orientation-preserving homeomorphism ϕS : S →S (of course, we must specify how the “eigenvalues” of ϕS are deﬁned).

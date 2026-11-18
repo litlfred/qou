@@ -1,1 +1,0 @@
-Adding the vector $(0,s)$ to $\dot{u}_1(x)_L$, we obtain $\dot{u}_1(x)_R$, the tangent vector from the right, $$\dot{u}_1(x)_R = \dot{u}_1(x)_L + (0,s) = (-a, a(mi-nj+ms)/(ma-nb))$$ which is parallel to $\dot{u}_2(q_{a+b,h})$, as it must be.

@@ -1,1 +1,0 @@
-What this might mean is not yet precise, but since all these theories involve symmetries and representations, the 'reconciliation' must take place at both those levels---and we can see *this* in a precise way.

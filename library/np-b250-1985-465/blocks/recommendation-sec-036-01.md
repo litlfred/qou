@@ -1,1 +1,0 @@
-In order for F, to be less sensitive to ms than FK we must have IL~4[<< ~[L~I , (14.14) i.e. the reference value for the size of the Zweig rule violating quantity L~ is ½ L; = 10 ~ In view of this we consider the estimate for L~ given in table 1 as conservative.

@@ -1,1 +1,1 @@
-Let A be an Ω-involutive weak quasi-bialgebra with quasitriangular
+Let A be an Ω-involutive weak quasi-bialgebra with quasitriangular structure defined by R and satisfying R˜ = RΩ. Then the associated braided symmetry of Reph(A) is unitary. If A is discrete the converse holds.

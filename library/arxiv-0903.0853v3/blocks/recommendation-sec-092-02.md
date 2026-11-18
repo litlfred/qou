@@ -1,1 +1,0 @@
-(As we shall see, the only pairs that matter are those with i < j.) Then, aiming at an induction argument, one invokes a natural onto mapping: F(P1, . . . , Pk) −→F(P1, . . . , Pk−1), sending the class of (M, u) deﬁned as above to the class of (M′, u′) deﬁned by: M′ = (0 = M0 ⊂M1 ⊂· · · ⊂Mk−1 = M′) and u′ = (ui)1≤i≤k−1.

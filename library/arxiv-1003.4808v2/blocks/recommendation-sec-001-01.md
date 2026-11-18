@@ -1,1 +1,0 @@
-In this section, we detail each of them (and one additional generalization) in turn, and begin to explain what kind of new objects one should expect on the right-hand-side of [\[VC\]](#VC){reference-type="eqref" reference="VC"}.

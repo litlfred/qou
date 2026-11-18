@@ -1,1 +1,0 @@
-For any two left modules M′,M′′ over a unitary C-algebra, the linear structure on Ext(M′′, M′) is com- pletely described in [12, §7] (5) and we shall rely on this description to make explicit the corresponding structure of C-module of F(M′, M′′) in the case of arbitrary diﬀerence modules M′ and M′′.

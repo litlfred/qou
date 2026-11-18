@@ -1,0 +1,1 @@
+Let X be an mm-space. Then, for any p  1 and  > 0, we have SepðX; ; Þ  ðmÞ1=p Obs Lp-VarRðXÞ: ð2:5Þ In the case of p ¼ 2, we also have SepðX; ; Þ  ﬃﬃﬃﬃﬃﬃﬃﬃ m r Obs L2-VarRðXÞ: ð2:6Þ K. FUNANO

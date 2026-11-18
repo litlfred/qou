@@ -1,0 +1,1 @@
+Let A be a non-singular symmetric complex n×n matrix, and let ψ(z) and r(z) be holomorphic functions of the forms, ψ(z) = zTA z + r(z), r(z) = r(z1, · · · , zn) = ∑ i,j,k bijkzizjzk + ∑ i,j,k,l cijklzizjzkzl + · · · , (25) deﬁned in a neighborhood of 0 ∈Cn. The restriction of the domain { z ∈Cn

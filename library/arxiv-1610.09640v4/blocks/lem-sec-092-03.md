@@ -1,0 +1,1 @@
+Let a = (a) be a principal ideal in A. (1) For every injective module I the sequence 0 →Γa(I) →I →Ia →0 is exact. (2) For every M ∈D+(A) there is a long exact sequence of A-modules · · · →Hp a(M) →Hp(M) →Hp(Ma) →Hp+1 a (M) →· · · .

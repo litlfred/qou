@@ -1,0 +1,1 @@
+The above analysis properly extends to the larger than P region {Λ = y · (λ′ + kΛ0) , y ∈˜W , λ′ ∈P ; k̸ ∈Q} . It contains a subset with y ∈˜ W(+) , λ′ ∈P+ , providing highest weights of ‘maximally reducible’ g Verma modules. For our purposes it is suﬃcient to choose λ′ = 0 thus restricting to weights Λ parametrised by y ∈˜ W.

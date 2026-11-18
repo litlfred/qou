@@ -1,1 +1,0 @@
-Since the composition $\gamma_2 \circ \gamma_1$ of two paths $\gamma_1:x \to y$ and $\gamma_2:y \to z$ should again be a smooth map we require sitting instants for all paths: a number $0 < \varepsilon <\frac{1}{2}$ with $\gamma(t)=\gamma(0)$ for $0 \leq t < \varepsilon$ and $\gamma(t)=\gamma(1)$ for $1-\varepsilon < t \leq 1$.

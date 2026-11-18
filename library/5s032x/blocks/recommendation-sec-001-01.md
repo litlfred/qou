@@ -1,1 +1,0 @@
-If our world, as is widely believed, is quantum, it is in principle representable as a single vector evolving in Hilbert space, and thus, all spatiotemporal notions must be reducible to this description.

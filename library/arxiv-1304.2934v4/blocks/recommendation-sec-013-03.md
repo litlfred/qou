@@ -1,1 +1,0 @@
-In Section \ref{subsec:arithmetic}, we shall explain how to recover the precise large deviation results of \cite{Rad09} for arithmetic functions whose Dirichlet series can be studied with the Selberg-Delange method. \end{remark}\bigskip

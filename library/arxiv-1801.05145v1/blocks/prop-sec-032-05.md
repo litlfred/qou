@@ -1,0 +1,1 @@
+The map Ωfactors through M(s, 0) ◦X; that is, M(s, 0) ◦M(s+, s) ◦A τ * *❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ ❯ Ω / / ◦t;bt,s<0M(t, 0)◦−bt,s. M(s, 0) ◦X Ω 4 4✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ ✐ Here τ is the canonical surjection.

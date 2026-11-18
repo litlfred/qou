@@ -1,0 +1,1 @@
+For any closed three-manifold $M$ $N arrow\infty 0-\lim\frac{2\pi\sqrt{-1}\log\tau N(M)}{N}=\mathrm{C}\mathrm{S}(M)+\sqrt{-1}\mathrm{V}_{0}1(M)$ , where $\mathrm{V}\mathrm{o}\mathrm{l}(M):=v_{3}||M||$ with $||M||$ the simplicial volume of $M$ . A weaker but more precise conjecture is

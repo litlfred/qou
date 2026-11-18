@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/codata-2022",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/codata-2022/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -30,7 +30,7 @@
     ],
     "note": "CODATA values are published by NIST as Standard Reference Data; whether the SRD Act (15 U.S.C. 290e) or U.S. government-work status governs reuse is NOT established here. Next place to look: NIST's CODATA terms-of-use page, from an environment that can reach physics.nist.gov."
   },
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "title_source": "slug",
     "tabular_record": "folio-tabular-records/v1",

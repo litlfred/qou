@@ -1,1 +1,0 @@
-According to Conjecture 1.3 of [@O], there should be a Verlinde fiber functor $F: \overline{\mathcal{C}}_{\overline{X}}\to \mathrm{Ver}_p$ (this is actually a theorem if $X$ is of finite type, see [@O]).

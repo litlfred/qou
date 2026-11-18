@@ -1,0 +1,1 @@
+The Cauchy-Riemann problem, Dc 1 : W k,p(u∗T vCn, ∂u∗T vTγ)comp →W k−1,p(Hom(TD, (u∗T vCn)comp), splits into direct sum of n −1 one dimensional problem under a change of trivialization, Dc 1 : ⊕n−1 i=1 W k,p(Ei, Fi) →⊕n−1 i=1 W k−1,p(Hom(TD, Ei)) where ⊕Ei ∼= u∗T vCn and ⊕Fi ∼= ∂u∗T vTγ. We can apply Lemma 5.6 to obtain the following transversality result.

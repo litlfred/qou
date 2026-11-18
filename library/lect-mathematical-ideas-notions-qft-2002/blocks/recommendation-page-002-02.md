@@ -1,1 +1,0 @@
-The law of motion can be expressed as the condition that the action must be extremized over any closed region D and fixed boundary conditions; so the equations of motion (also called the field equations) are the Euler- Lagrange equations for this variational problem.

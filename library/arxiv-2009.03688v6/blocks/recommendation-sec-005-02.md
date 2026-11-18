@@ -1,1 +1,0 @@
-In order to deﬁne G-invariant maps from CY to Q18 and E20-singularities, the morphism Φ : X →Y ⊂CP5 given by Φ(z) = (x1(z), . . . , x6(z)) should be revised as follows: near a cusp, for this to extend at the cusp, xi(z) has to be replaced by q− 2 3·13xi(z) for 1 ≤i ≤6.

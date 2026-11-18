@@ -1,1 +1,0 @@
-In particular, all $3$--braids with hyperbolic closures are of this form, as we shall show in Theorem [\[thm:hyperbolic-3braid\]](#thm:hyperbolic-3braid){reference-type="ref" reference="thm:hyperbolic-3braid"}.

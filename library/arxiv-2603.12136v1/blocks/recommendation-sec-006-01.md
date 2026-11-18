@@ -1,1 +1,0 @@
-As far as we are aware, the only other work that treats reflection symmetries computationally for MILP solvers is by Christophel, Güzelsoy and Pólik [@Christophel2014] and explores how reflection symmetries may be used in primal heuristics.

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s00209-021-02825-4/blocks/lem-sec-028-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 30,
+  "pageEnd": 34,
+  "text": "lem-sec-028-01.md",
+  "derivedFrom": "library/s00209-021-02825-4/sections/sec-028",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00209-021-02825-4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7.6",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-028-74-ray-and-interval-stability.md (p. 30-34)",
+    "claim_id": "s00209-021-02825-4#lemma:7.6",
+    "lean_status": "unformalized"
+  }
+}

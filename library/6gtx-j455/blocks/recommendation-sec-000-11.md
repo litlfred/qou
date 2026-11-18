@@ -1,1 +1,0 @@
-It thus appears that two things are phenomenologically preferred: that there must be a (very) large number of matter fields present in the theory; and that the theory must be very close to strong coupling as λ approaches the tachyon divide at λ0 since λtH ≡λ0N =ð4πÞ2 is likely very close to unity.

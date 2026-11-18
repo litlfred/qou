@@ -1,1 +1,0 @@
-By definition, the variable we are interested in writes as a sum $$\SubGraph_{\gamma} = \sum_{A \in \arr(n,k)} \delta_\gamma(A).$$ We shall describe a dependency graph for the variables $\{\delta_\gamma(A)\}_{A \in \arr(n,k)}$.\bigskip

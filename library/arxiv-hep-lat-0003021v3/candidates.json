@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-lat-0003021v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b35dfd9ab88b71d8f0439c1ee11b9747906d758e0f6783f8b9325dd0616ee809",
   "file": "0003021v3.pdf"
@@ -16,151 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 9
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "The low-lying spectrum of the Dirac operator must therefore be quite different in the high temperature phase as compared with zero temperature.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
+   "statement": "In the quenched case we do not see the accumulation of small Dirac operator eigenvalues around $\\lambda=0$ that was observed with overlap fermions.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-004-5-conclusions.md (p. 19-21)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-004-5-conclusions.md",
+   "section_title": "Conclusions",
+   "pages": "19-21",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Also here there is no physical justification for using it in connection with the Dirac operator spectrum at finite temperature, but it is an interesting model that depends on just one deterministic external parameter, and we shall therefore return to it below.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Here $m$ is an integer that labels universality classes classified by their Random Matrix Theory potentials ($m$ parameters in the potentials must be tuned in order to reach each class).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This is a general problem with staggered fermions that also we must face here: at finite lattice spacing, the index theorem is not valid for staggered fermions, and gauge field topology (whichever way one defines it on a discrete lattice) does not give rise to exact zero modes of the staggered Dirac operator.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The present study will in many ways follow the same lines of thought as Ref.~\\cite{Fetal}, but we shall have much larger statistics, and we shall also probe some different aspects.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall try to answer these questions in what follows.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be stressed here that this is a volume-dependent statement.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-quenched-qcd-at-high-temperature.md",
-   "section_title": "Quenched QCD at high temperature",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the infinite-volume limit this contribution from exact zero modes should vanish, and we should be left with the integral over non-zero modes.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-qcd-with-four-dynamical-fermions-at-high-tempe.md",
-   "section_title": "QCD with four dynamical fermions at high temperature",
-   "pages": "9-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The model we shall focus on here was proposed by Jackson and Verbaarschot in the first of Ref.~\\cite{JV} and has also been studied in Ref.~\\cite{Tilo}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-random-matrix-theory.md",
-   "section_title": "Random Matrix Theory",
-   "pages": "14-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-004-5-conclusions.md (p. 19-21)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-hep-lat-0003021v3/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-hep-lat-0003021v3#prop-sec-004-01"
   }
  ]
 }

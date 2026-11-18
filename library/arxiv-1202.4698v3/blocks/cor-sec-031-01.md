@@ -1,0 +1,1 @@
+I(µ) = Sb(µ5 + µ6)Sb(2Q − X i=1 µ6) Y 1≤i<j≤4 Sb(µi + µj)I(ν), (B.6) where we deﬁne the integral I(µ) as I(µ) = 1 Z i∞ −i∞ Q6 i=1 Sb(µi ± u) Sb(±2u) du. (B.7) Here we have [ν1, ν2, ν3, ν4, ν5, ν6] = [µ1 + ξ, µ2 + ξ, µ3 + ξ, µ4 + ξ, µ5 −ξ, µ6 −ξ] and 2ξ = Q − X i=1 µi . Later it will be convenient to write 6 variables µ in the following way [µ] =  µ1 µ2 µ3 µ4 µ5 µ6  .

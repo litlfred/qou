@@ -1,0 +1,1 @@
+In other words, we can choose any maximal tree with 1- or 3- cycle for our set X of excluded edges, and hence choose the remaining edges as our set B of basic edges. This result and its proof were inspired by Je Weeks' argument in [Wee85, pp. 3536].

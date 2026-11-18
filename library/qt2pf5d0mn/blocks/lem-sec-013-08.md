@@ -1,0 +1,1 @@
+For each colored 4-simplex σ ∈S4 and ˜s ∈F4 such that p5(˜s) = s ∈ S5, the following diagram commutes, where and for the rest of the section we drop the subscript F for the ˜Z± F . V ±(∂σ) V ±sgn(s)(∂˜s(σ)) C V (˜s) ˜Z±(σ) ˜Z±sgn(s)(˜s(σ)) (4.21)

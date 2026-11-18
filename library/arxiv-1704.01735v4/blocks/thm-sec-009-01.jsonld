@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1704.01735v4/blocks/thm-sec-009-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 33,
+  "pageEnd": 35,
+  "text": "thm-sec-009-01.md",
+  "derivedFrom": "library/arxiv-1704.01735v4/sections/sec-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1704.01735v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.5",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-009-43-brings-curve-and-frickes-octavic-curve-from-x.md (p. 33-35)",
+    "claim_id": "arxiv-1704.01735v4#theorem:4.5",
+    "lean_status": "unformalized"
+  }
+}

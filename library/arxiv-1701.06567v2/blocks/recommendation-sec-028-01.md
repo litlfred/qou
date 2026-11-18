@@ -1,1 +1,0 @@
-The Wilson lines are expected to form a complete basis of line operators in the IR theory, in the sense that any line operator (not necessarily associate to a knot) should have the following decomposition: $$\begin{aligned}

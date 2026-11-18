@@ -1,1 +1,0 @@
-Therefore, the area deformation of the Gromov-Witten theory of the target space must be patch-dependent: we view the parameter $t$ as an operator which associates its area to the patch under consideration.

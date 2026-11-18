@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2010.12445v1/blocks/thm-sec-004-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "text": "thm-sec-004-02.md",
+  "derivedFrom": "library/arxiv-2010.12445v1/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2010.12445v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.6",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-004-11-monoidal-functors-and-their-sheafification.md (p. 4-6) citing [Ton20, Theorem A], [Ton20, Theorem B], [Ton20, Theorem 6.8]",
+    "claim_id": "arxiv-2010.12445v1#theorem:1.6",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,1 +1,0 @@
-To retain the formulation of Theorem \ref{thm:6.4} one must modify the notions tempered and discrete series, in the sense that everywhere in Section \ref{sec:temp} one must use $\ep \mf a^-$ instead of $\mf a^-$.

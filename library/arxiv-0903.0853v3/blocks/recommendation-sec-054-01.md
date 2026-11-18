@@ -1,1 +1,0 @@
-When studying $q$-difference equations, we shall observe that the function $h$ in the correction term $\dfrac{h}{\theta_\Lambda}$ will have to be determined in some space of asymptotic functions similar to ${\mathbb A}_q^\Lambda$, and that is why we are now going to define a notion of asymptoticity involving more than one divisor level.

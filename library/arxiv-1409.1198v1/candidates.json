@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1409.1198v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "13ecb6c28bab674467cdc2252e9883921ddfc0f0ff225e5f5944a32c58288911",
   "file": "1409.1198v1.pdf"
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "By thinking of a quantum group $\\mathbf{U}_q(\\mf{g})$ as a linear category in this way, we are naturally led to consider a categorification of $\\mathbf{U}_q(\\mf{g})$ given by the structure of a 2-category and our decategorification map must reduce a linear 2-category to a linear 1-category.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-15-quantum-group-categorifications.md",
-   "section_title": "Quantum group categorifications",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\endxy\\;$ has degree $-2$. $\\sym_n$ is non-negatively graded, so this diagram should be 0 in $\\Tr$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-22-hochschild-homology-and-the-trace-of-a-ring.md",
-   "section_title": "Hochschild homology and the trace of a ring",
-   "pages": "9-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Following a recommendation of the first author, the $\\fsl_3$ case of this theorem was studied in \\cite{Marko}.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-023-45-two-categorifications-of-lusztigs-integral-fo.md",
-   "section_title": "Two categorifications of Lusztig's integral form A(sl2)",
-   "pages": "30-32",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To define an isomorphism $h \\maps \\dot {\\bfU}(\\fsl_2[t]) \\longrightarrow \\Tr(\\U^\\ast_\\Z(\\fsl_2))$ we must specify where the generating elements of $ \\dot{\\bfU}(\\fsl_2[t])$ are sent.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-025-51-the-trace-of-2-category-usl2-and-the-current.md",
-   "section_title": "The trace of 2-category U(sl2) and the current algebra of sl2",
-   "pages": "32-35",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To define this map over the integers as was done in \\cite{BHLZ} we must work with the integral basis of the current algebra introduced by Garland.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-025-51-the-trace-of-2-category-usl2-and-the-current.md",
-   "section_title": "The trace of 2-category U(sl2) and the current algebra of sl2",
-   "pages": "32-35",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In order to verify that these assignments define a homomorphism we must verify the current algebra axioms.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-025-51-the-trace-of-2-category-usl2-and-the-current.md",
-   "section_title": "The trace of 2-category U(sl2) and the current algebra of sl2",
-   "pages": "32-35",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

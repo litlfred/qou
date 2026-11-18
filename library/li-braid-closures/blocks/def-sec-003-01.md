@@ -1,0 +1,1 @@
+Let λ ⊢n be a partition. For a box b ∈λ in its Young diagram, the hook length h(b) is the number of boxes directly below or to the right to b, including b itself. Let r(b) be the number of rows below the topmost row that b resides in, and define c(b) analogously but in comparison to the leftmost column.

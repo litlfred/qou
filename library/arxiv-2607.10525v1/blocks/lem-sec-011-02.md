@@ -1,0 +1,1 @@
+Let s denote the non-trivial element of the acting group C2; it acts on Cp by Tt. In the semidirect product D = Cp ⋊C2, let em = [m, s], E∆= ⟨[a, e] (a ∈Ap), em⟩. Then E∆is a Tambara–Yamagami fusion subcategory E∆≃TY(Ap, eχp, p−1), eχp(a, b) = χp(a, t(b)). In coordinates, eχp((x1, x2), (y1, y2)) = ξx1y1+x2y2. Thus eχp is hyperbolic if and only if p ≡1 (mod 4).

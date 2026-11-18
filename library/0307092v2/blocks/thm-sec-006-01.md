@@ -1,0 +1,1 @@
+For each choice of z as in the above deﬁnition, a strong ﬂat- tening of K exists. Recall that our G–labelled ordered 3–cycle K was chosen to represent an ele- ment α ∈H3(G; Z) (G = PSL(2, C)). The following theorem ﬁnally gives the deﬁnition of the map λ: H3(G; Z) →bB(C).

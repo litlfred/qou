@@ -1,0 +1,1 @@
+This inversion between $q$-series and elements of the Habiro ring was observed 10 years ago by the first author in his joint work with Zagier [@GZ:qseries], under the informal name "upside-down cake".

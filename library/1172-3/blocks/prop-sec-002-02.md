@@ -1,0 +1,1 @@
+The element $\omega$ is invertible in $\hat{B}’$ with the inverse $\omega^{-1}=\sum_{n=0}^{\infty}a-\frac{1}{2}n(n+3)R_{n};$ . We have for every $x\in B^{\mathrm{e}\mathrm{v}\mathrm{e}\mathrm{n}}$ $\langle\omega^{\pm 1}, x\rangle=\langle t^{\pm 1}(_{X})\rangle$. KAZUO HABIRO

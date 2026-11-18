@@ -1,1 +1,0 @@
-There are some technical difficulties that one must overcome, stemming from the fact that sometimes the corresponding chain complexes are not acyclic, hence the torsion depends on a choice of peripheral curves, as well as normalization issues, since the torsion is usually well-defined up to a sign.

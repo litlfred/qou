@@ -1,1 +1,1 @@
-and the No-Holes Theorem for Bass numbers (see [Jo1] Th eorems 3.2, 4.5,
+Assume A is a normally separated ﬁltered k-algebra such that grA is a noetherian connected graded k-algebra with enough normal elements. Then SpecA is catenary. This is proved after Corollary 6.22. We generalize some results in [ASZ], two of which are:

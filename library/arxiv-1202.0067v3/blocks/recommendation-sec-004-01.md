@@ -1,1 +1,0 @@
-We shall think of $S_m \wr S_n$ as the group of permutations of \[ \{1,\ldots, m\} \times \{1,\ldots, n\} \] that leaves invariant the set of blocks of the form $\Delta_j = \{(1,j), \ldots, (m,j)\}$, $1 \le j \le n$.

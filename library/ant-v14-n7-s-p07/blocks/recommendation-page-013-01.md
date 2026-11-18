@@ -1,1 +1,0 @@
-If π is an m-cycle, then the coefﬁcients of the Fq-rational divisor D must all be equal to the same constant a, which means am is congruent to 0 mod ℓ, which means m is a multiple of ℓ; but by hypothesis no cycle has length a multiple of ℓ.

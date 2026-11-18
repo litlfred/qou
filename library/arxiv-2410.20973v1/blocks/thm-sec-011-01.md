@@ -1,0 +1,1 @@
+If [a, b] ⊆arg(C\S(V0)) ∩( π 2, 3π 2 ), ϑ ∈[a, b], arg(−1/τ) = θ ∈(a −π 2, b −π 2) and |τ| →∞, then there exists constants C = C(a, b), ε = ε(a, b) > 0 |e(−V0τ)Ip0,V0,ϑ(τ) −Φ(K) Ξ (−2πi/τ)| < C ε−K K! |τ|−K , (63) where Φ(K) Ξ (ℏ) is the truncation of the series ΦΞ(ℏ) to O(ℏK).

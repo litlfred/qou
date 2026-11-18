@@ -1,1 +1,0 @@
-We shall show how the theory of tannakian categories also yields a proof of Theorem [\[thethm\]](#thethm){reference-type="ref" reference="thethm"} when $k = \CX(x)$ and $K = k(C_{\calM(\CX^*)})$.\ We shall assume that the reader is familiar with some basic facts concerning difference modules ([@PuSi], Ch.

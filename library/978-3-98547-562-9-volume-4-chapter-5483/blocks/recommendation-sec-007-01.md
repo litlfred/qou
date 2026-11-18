@@ -1,1 +1,0 @@
-Since the regions VX and V LX where and its inverse are ill-defined have complex codimension 2, it should be possible to show that the above conjecture is true if we restrict ourselves to the subalgebra of H .XIƒ!

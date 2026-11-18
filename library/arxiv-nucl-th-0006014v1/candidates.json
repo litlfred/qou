@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-nucl-th-0006014v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "208c7a6aaf628b3060d594ca7bbb5551bb90e867892358cac24c40bbce9298de",
   "file": "0006014v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:nucl-th/0006014v1 9 Jun 2000",
+  "title": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
   "authors": "Department of Physics, University of Idaho, Moscow, Idaho 83844, U. S. A",
   "arxiv": {
    "id": "nucl-th/0006014",
@@ -16,166 +19,71 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 10
+   "proposition": 2
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1,
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Based upon what we discussed above concerning multi-meson exchange contributions, it is clear now that this $\\sigma$ must approximate more than just the $2\\pi$ exchange.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The total number of (accepted) after-1992 $pp$ data is 1145, which should be compared to the number of $pp$ data in the 1992 base, namely, 1787.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-4-nucleon-nucleon-scattering.md",
-   "section_title": "Nucleon-nucleon scattering",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, the composite structure (quark substructure) of hadrons should provide additional nonlocalities [@VS95] which may be even larger.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Local potentials typically predict 7.62 MeV [@Fri93; @NKG00] and the experimental value is 8.48 MeV.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-007-6-conclusions.md (p. 14-15)",
+   "external_refs": [],
+   "quantitative_values": [
+    "7.62 MeV",
+    "8.48 MeV"
+   ],
    "section_file": "sections/sec-007-6-conclusions.md",
    "section_title": "Conclusions",
    "pages": "14-15",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-007-6-conclusions.md (p. 14-15)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-007-01",
+   "block_iri": "library/arxiv-nucl-th-0006014v1/blocks/prop-sec-007-01",
+   "claim_id": "arxiv-nucl-th-0006014v1#prop-sec-007-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "We shall therefore introduce the real R-matrix (better known as \u2018K-matrix\u2019) de\ufb01ned by T = R \u2212i\u03c0R\u03b4(E \u2212H0)T (A19) The equation for the real R-matrix corresponding to the complex T-matrix of Eq.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-a2-r-matrix-and-partial-wave-decomposition.md",
-   "section_title": "R-matrix and partial wave decomposition",
-   "pages": "18-21",
+   "statement": "(A40)], consistency requires that we determine \u03b3 based upon relativistic kinematics which is, Md \u2261Mp + Mn \u2212Bd = q M2p \u2212\u03b32 + q M2n \u2212\u03b32 , (D4) where Md denotes the deuteron rest mass and Bd the binding energy.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-018-deuteron-calculations-page-33.md (p. 33-33)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-018-deuteron-calculations-page-33.md",
+   "section_title": "Deuteron calculations (page 33)",
+   "pages": "33-33",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In pp scattering, the long-range Coulomb potential must be taken into account.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-a3-phase-shifts.md",
-   "section_title": "Phase shifts",
-   "pages": "21-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The asymptotic wave function associated with VS and \u03b4S L is \u03c7S L(r; q) \u221dFL(\u03b7\u2032 = 0, qr) + tan \u03b4S LGL(\u03b7\u2032 = 0, qr) (A52) which should match smoothly the asymptotic function Eq.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-a3-phase-shifts.md",
-   "section_title": "Phase shifts",
-   "pages": "21-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the case of pp scattering, where the Coulomb potential is involved, a more sophisticated e\ufb00ective range expansion must be applied [46], C2 0(\u03b7\u2032)q cot(\u03b4C pp) + 2q\u03b7\u2032h(\u03b7\u2032) = \u22121 aC pp + 1 2rC ppq2 + O(q4) , (A56) where \u03b4C pp denotes the 1S0 pp phase shift with respect to Coulomb functions and C2 0 and h are the standard functions, C2 0(\u03b7\u2032) = 2\u03c0\u03b7\u2032 e2\u03c0\u03b7\u2032 \u22121 , (A57) h(\u03b7\u2032) = \u2212ln(\u03b7\u2032) + Re[\u03c8(1 + i\u03b7\u2032)] (A58) = \u2212ln(\u03b7\u2032) \u2212\u03b3 + \u03b7\u20322 \u221e X n=1 [n(n2 + \u03b7\u20322)]\u22121 , (A59) where \u03c8 denotes the digamma function and \u03b3 = 0.5772156649 . . ..",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-a4-effective-range-expansion.md",
-   "section_title": "Effective range expansion",
-   "pages": "24-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If the user wants to relate our units and conventions to the ones used by other practitioners, he/she should compare our Eq.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-b3-final-potential-expressions.md",
-   "section_title": "Final potential expressions",
-   "pages": "28-32",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(D23) and (D24) must be enforced by double precision (i. e., to about 15 decimal digits), otherwise the wave function is not reproduced correctly for r \u22640.5 fm.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-021-deuteron-calculations-page-36.md",
-   "section_title": "Deuteron calculations (page 36)",
-   "pages": "36-36",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\u03c1(\u2212Bd, \u2212Bd), we use the values recommended by Klarsfeld et al. based upon their own analysis of the experimental results given in the \ufb01rst three references.",
-   "strength": null,
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-023-deuteron-calculations-page-38.md",
-   "section_title": "Deuteron calculations (page 38)",
-   "pages": "38-38",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-018-deuteron-calculations-page-33.md (p. 33-33)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-018-01",
+   "block_iri": "library/arxiv-nucl-th-0006014v1/blocks/prop-sec-018-01",
+   "claim_id": "arxiv-nucl-th-0006014v1#prop-sec-018-01"
   }
  ]
 }

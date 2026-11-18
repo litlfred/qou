@@ -1,0 +1,1 @@
+Let M and N be monotone symplectic manifolds. The association L♭7→FL♭deﬁnes a Z2-graded A∞-functor Φ : F(M −× N) −→nu-fun(F#(M), F#(N)). IVAN SMITH We will combine this general theory with an argument from [2], which uses properties of Yoneda embeddings to deduce that, in special cases, the Mau-Wehrheim-Woodward functor is actually fully faithful.

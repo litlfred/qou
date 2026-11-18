@@ -1,1 +1,0 @@
-The non-Abelian generalization of Eq.[\[glob.ab.Stok.\]](#glob.ab.Stok.){reference-type="ref" reference="glob.ab.Stok."} should read $${\rm P} \exp \left( i\oint_{\partial S=C} A_i(x) dx^i \right) = {\cal P} \exp \left( \frac{i}{2} \int_S {\cal F}_{ij} (x) dx^i\wedge dx^j \right),$$ where the LHS has been already roughly defined.

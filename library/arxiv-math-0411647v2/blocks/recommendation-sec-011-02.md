@@ -1,1 +1,0 @@
-Then $$\Sigma\Big( \prod_{s} \pi^s \Big)=\prod_{1\leq s\leq r} \Sigma_{\pi^s},$$ where the multiplication on the left hand side should be understood as the $\rho$--ordered product of partitions and on the right hand side it should be understood as the usual product of commuting elements in ${\mathbb{C}}(\widetilde{{{S}}_{\infty}})$. :::

@@ -1,0 +1,1 @@
+Let k be a field of characteristic 0. By a quasitriangular quasi- Hopf QUE-algebra over k{[h]] is meant a topological quasitriangular quasi-Hopf algebra (A, A, ¢, ®, R) over k[[h]] such that A/hA is a universal envelop- ing algebra-with the standard comultiplication, and A, as a topological k[/]]- module, is isomorphic to V[[A]] for some vector space V over k.

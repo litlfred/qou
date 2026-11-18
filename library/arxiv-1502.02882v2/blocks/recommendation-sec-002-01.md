@@ -1,1 +1,0 @@
-This equation should be regarded as an infinite number of equations, one for each fixed parenthesis scheme (this may include insertions of the unit object $1$ of the monoidal category) of the source and target objects, which are taken to be the same on both sides of the equation.

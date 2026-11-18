@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-physics-0203048v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "47204f32280e91a36b4822807acf6d0bd7ccac42b400750746366c3e4782951b",
   "file": "0203048v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:physics/0203048v1 [physics.plasm-ph] 15 Mar 2002",
+  "title": "Towards a third-order topological invariant for magnetic fields",
   "authors": "Gunnar Hornig and Christoph Mayer",
   "arxiv": {
    "id": "physics/0203048",
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "These measures should be topological, i.e. they should be invariant under an arbitrary isotopy of the magnetic field, and therefore invariant under the ideal induction equation.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Both configurations must possess a higher order linkage or knottedness of magnetic flux which is not detected by magnetic helicity.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The problem is that invariants used in physical applications, e.g. in magnetohydrodynamics, should be expressed in terms of observable quantities, in our setting in terms of the magnetic field $\\bB$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In addition, these flux tubes must not possess a linkage lower than the linkage which is measured.",
-   "strength": "must-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Second, the gauge transformations must respect the boundary condition Ai \u00d7 n|\u2202V = Ai\u2032 \u00d7 n|\u2202V = 0, (B.2) where n is a normal vector to the boundary \u2202V of the integration volume V .",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-b-gauge-invariance-of-the-third-order-invariant.md",
-   "section_title": "Gauge invariance of the third-order invariant $H^{(3)}$",
-   "pages": "12-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,0 +1,1 @@
+Theorem 5.2 exhibits the significance of conditions (A) and (B). Indeed, if either of the conditions were dropped, then one could consider arc systems (a1,...,@n) with arbitrarily large n, while with conditions (A),(B), as seen from

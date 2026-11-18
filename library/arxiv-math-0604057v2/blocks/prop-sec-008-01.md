@@ -1,0 +1,1 @@
+(1) The curvature of the line bundle associated to the class r(f, g) is df f ∧dg g ; (2) r(f1f2, g) = r(f1, g) ⊗r(f2, g), r(f, g) = r(g, f)−1, and the Steinberg relation r(f, 1 −f) = 1 holds if f̸ = 0, f̸ = 1; (3) For x ∈S(f) ∪S(g), let γx be a small simple loop around x in X′. Then r(f, g)(γx) is equal to the tame symbol Tx(f, g) of f and g at x.

@@ -1,1 +1,0 @@
-\begin{remark} An alternate presentation of $\murot$ which has the same effect on quivers may be given as roughly ``$\murottwist$ four times'', though we will focus on the above definition. \[ \left(\left[ \prod_{x=1}^{\ell} \prod_{y =1}^{\ell + 1 - x} \mucol(y) \right] \left[ \prod_{x=1}^{\ell} \prod_{y=1}^{\ell + 1 - x} \mucol(\ell+1-y) \right] \right)^2. \] \end{remark}

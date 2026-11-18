@@ -1,1 +1,0 @@
-Recall that by \cref{prop:Phi-Psi-and-rot}, we have \[ \widetilde{u} = h_2^{-1} (w_0(h_1))^{-1} (\Phi \Psi \Phi \Psi)(u) (w_0(h_1)) h_2. \] So we must consider $(\Phi \Psi)^{2}(u)$ in terms of minor coordinates, then show that the result agrees in general with the cluster action of $\murot$.

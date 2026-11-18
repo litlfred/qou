@@ -1,1 +1,0 @@
-The recursion formula for the change in boundary slope and the genus matches the formula in [@Rubinstein-one-sided-1978] and this shows that the canonical quadrilateral surface must be incompressible as it is a minimal genus cobordism surface connecting $C$ and $C'.$ This completes the proof. ◻ :::

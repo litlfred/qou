@@ -1,1 +1,1 @@
-Let K be a cubic ﬁeld. Then X(b5, ns7)(K) consists only of cusps.
+Let K be a cubic ﬁeld. Then X(b5, ns7)(K) consists only of cusps. The remainder of the paper is devoted to the proof of these two theorems. 4. Modularity of elliptic curves over Q(ζ7)+ In this section we prove Theorem 2 for K = Q(ζ7)+.

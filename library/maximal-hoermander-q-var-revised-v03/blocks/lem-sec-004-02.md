@@ -1,0 +1,1 @@
+Let A be a 0-sectorial operator with Hα 2 calculus. Let (ϕn)n∈Z be a dyadic par- tition of R+. Then for any x ∈R(A) (e.g. x = m(A)y for some y ∈X and m ∈Hα 2 with m(0) = 0), we have x = P n∈Z ϕn(A)x (convergence in X).

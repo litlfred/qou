@@ -1,0 +1,1 @@
+The previous result for fusion categories was observed in [125, 165, 82]. More precisely, a semisimple tensor category C with finitely many inequivalent simple objects always admits positive integral weak dimension functions and when C is a fusion category then D may be chosen symmetric. An example is given by the function taking

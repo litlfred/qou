@@ -1,0 +1,1 @@
+When q = ζ−k d , the signature of the intersection form on H1(X, C)q is given by (r, s) = (⌈n(k/d) −1⌉, ⌈n(1 −k/d) −1⌉). Indeed, the signature (r, s) just counts the number of terms of type (1, 0) and (0, 1) in the expression H1(X)q = L j H1(X)jk, or equivalently the number of terms above and below (but not on) the diagonal in the kth row of Figure 6.

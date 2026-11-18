@@ -1,1 +1,0 @@
-(The vertex W′′ should be thought of in a similar manner.) Then W and W′′ contribute to the count of V(0, β) or V(1, β) and we are able to see the interplay between these terms and V(0, 2) and V(0, 3) in equation (7).

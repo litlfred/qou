@@ -1,1 +1,0 @@
-Note that (on-shell) observables must not depend on the choice for the pion fields or, in other words, they must not depend on the (unphysical) parameter $\alpha$ (and there are more such parameters as you continue to higher orders in the above expansion of $U$).

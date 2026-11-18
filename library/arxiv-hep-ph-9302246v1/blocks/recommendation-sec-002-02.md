@@ -1,1 +1,0 @@
-In our calculation of the fermionic determinant we shall disregard the gluonic corrections due to fluctuations below the cut-off scale $\Lambda_\chi$ and shall consider a model that is more like the first alternative envisaged in Ref. [@bbr], where the formal integration over gluon fields has been done in the path-integral of the generating functional for Green functions.

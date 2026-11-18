@@ -1,1 +1,1 @@
-Let (C, ⊗, ι, α) be a semisimple tensor category, F : C → Vec a linear
+Let (C, ⊗, ι, α) be a semisimple tensor category, F : C → Vec a linear faithful functor and (F, G) a weak quasi-tensor structure for F. Then the associator ΦTK defined in (7.2) for A = Nat0(F) by the Tannakian Theorem 7.6 coincides with the preassociator ΦF,G of CFT-type (8.2) with inverse given by (ΦF,G) −1 ρ,σ,τ = (G2,1F2,1)ρ,σ,τ ◦ (G1,2F1,2)ρ,σ,τ . (8.3) if and only if (F, G) is a weak tensor structure. In particular ΦF,G is an associator.

@@ -1,0 +1,1 @@
+The image of the braid group ρq(Bn) is ﬁnite iﬀU(Λn,q) is ﬁnite. Jacobians. When ρq(Bn) is ﬁnite, the Hodge structure on the correspond- ing part of the H1(X) is rigid; equivalently, we have an isogeny Jac(X) →J(X) × A where dim A > 0 and A is independent of X. We refer to A as a rigid factor of the Jacobian of X.

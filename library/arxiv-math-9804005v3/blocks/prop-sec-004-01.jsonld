@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-9804005v3/blocks/prop-sec-004-01",
@@ -16,6 +16,16 @@
   "pageEnd": 4,
   "text": "prop-sec-004-01.md",
   "derivedFrom": "library/arxiv-math-9804005v3/sections/sec-004",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9804005v3",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "0.9",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-004-31-we-now-give-a-complete-proof-of-sz-lemma-61ii.md (p. 4-4)",
+    "claim_id": "arxiv-math-9804005v3#proposition:0.9",
+    "lean_status": "unformalized"
+  }
 }

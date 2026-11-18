@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2101.10016v16/blocks/prop-sec-027-07",
@@ -16,6 +16,16 @@
   "pageEnd": 180,
   "text": "prop-sec-027-07.md",
   "derivedFrom": "library/arxiv-2101.10016v16/sections/sec-027",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2101.10016v16",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "28.7",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-027-28-hermitian-coboundary-wqh-and-relation-with-herm.md (p. 173-180)",
+    "claim_id": "arxiv-2101.10016v16#proposition:28.7",
+    "lean_status": "unformalized"
+  }
 }

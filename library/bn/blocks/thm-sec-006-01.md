@@ -1,0 +1,1 @@
+The values of n ≥3 and q̸ = 1 such that U(Λn,q) is a discrete subgroup of U(H1(X)q) ∼= U(r, s) are those given in table Table 9 and their complex conjugates. In these cases, either: 1. U(Λn,q) is an arithmetic lattice in U(r, s), or 2. We have q = −1, and U(Λn,q) ∼= Sp2g(Z) is a lattice in Sp2g(R) ⊂ U(g, g).

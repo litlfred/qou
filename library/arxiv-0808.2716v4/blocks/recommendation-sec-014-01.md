@@ -1,1 +1,0 @@
-By following the triangulation of a once punctured torus, we see the Euclidean lengths between centers of horospheres must be as in Figure [1](#fig:torus-lengths){reference-type="ref" reference="fig:torus-lengths"}.

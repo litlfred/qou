@@ -1,1 +1,0 @@
-In the subsequent sections of the book (Sections 16 and 17) we shall concentrate on connected graded rings (traditionally known as connected graded algebras), that behave like “complete local rings” within the algebraically graded context.

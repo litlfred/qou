@@ -1,1 +1,0 @@
-If $B$ has a vertical boundary face rather than a corner, the intersection of $L(1)$ with the fiber at that boundary must be a curve that, relative to $L(0)$, makes a number of turns equal to the affine length of the corresponding vertical boundary face.

@@ -1,1 +1,0 @@
-In order to have this vanish whenever R Rn h = 0, the function g +Lg must be constant (within the support of g), so for some constant c we have g + Lg = cχR, where χR is the characteristic function of the ball of radius R about 0.

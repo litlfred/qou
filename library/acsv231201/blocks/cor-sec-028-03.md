@@ -1,0 +1,1 @@
+Assume the hy- potheses of Theorem 5.2 and suppose further that φ has a single critical point on N which lies at the origin. Then the constants in (5.3) satisfy ck = (2π)d/2 √ det H Lk(A, φ) for each k ≥0, where Lk is as deﬁned by (5.14). The fact that Lemma 5.16 requires only smoothness also makes it easy to localize.

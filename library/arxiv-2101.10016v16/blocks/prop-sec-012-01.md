@@ -1,1 +1,1 @@
-Let A be a unitary (discrete) weak quasi bialgebra and t a positive
+Let A be a unitary (discrete) weak quasi bialgebra and t a positive twist for the involutive structure. Then the functor E : Rep+(A) → Rep+(At) taking ρ to ρt, acting identically on morphisms and with identity natural transformations is a unitary tensor equivalence of tensor C ∗ -categories.

@@ -1,0 +1,1 @@
+Recall the side lengths of (2, 3, 8) triangles calculated in Section 2.2.3, and the comment in the introduction regarding the systoles of the Bolza surface. From Figure 3.3, we can see that the systole of the Bolza surface consists of four “medium length” (2, 3, 8) triangle sides, that is, s(B) = 4 arccosh

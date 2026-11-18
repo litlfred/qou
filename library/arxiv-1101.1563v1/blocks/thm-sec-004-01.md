@@ -1,0 +1,1 @@
+Let X, S be deﬁned as the above, the generating set and the relation set of the quotient category C(X|S) respectively. Then with the order ≻1 on C(X), S is a Gr¨obner-Shirshov basis for the category partial algebra kC(X|S).

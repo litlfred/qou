@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0409565v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "236704063f12c05e34426a59d228f8be807d7804dee54123f6de36eaeea93928",
   "file": "0409565v2.pdf"
  },
  "provenance": {
-  "title": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
+  "title": "Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings",
   "authors": "Frederick Leitner, Robert Pawloski\u2217",
   "arxiv": {
    "id": "math/0409565",
@@ -16,46 +19,218 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
+  "candidates": 6,
   "by_kind": {
-   "recommendation": 2
+   "example": 1,
+   "theorem": 2,
+   "lemma": 1,
+   "proposition": 1,
+   "corollary": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 5,
+  "by_domain": {
+   "math": 6
+  },
+  "by_evidence_kind": {
+   "explanatory": 1,
+   "deductive-proof": 5
+  },
+  "by_evidence_location": {
+   "in-paper": 3,
+   "elsewhere": 1,
+   "both": 2
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 5
+  },
+  "needs_lean_proof": 5
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "example",
+   "source_kind": "example",
+   "number": "1",
    "name": null,
-   "statement": "However, in this more general setting, one cannot make use of Gr\u00a8obner basis techniques \u2013 one must prove this by \u201cad-hoc\u201d methods as in [6].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "1.1. Let A be the polynomial algebra k[x1, \u00b7 \u00b7 \u00b7 , xn] and consider the ideal m = (x1, \u00b7 \u00b7 \u00b7 , xn). Taking a graded lexicographic ordering on A with xi < xj if i < j, m2 has a Gr\u00a8obner basis given by {xixj}. Thus the quotient A/m2 is an n + 1-dimensional k-vector space with a basis given by: A/m2 = k{1, x1, \u00b7 \u00b7 \u00b7 , xn} \u2217Both authors were supported under a NSF VIGRE grant. 1.2. If g is a lie algebra with lie bracket [ , ]g over k then one forms the universal enveloping algebra Ug as the quotient of the tensor or free algebra T g on g by the two sided ideal J: J = (xy \u2212yx \u2212[x, y]g |x, y \u2208g\u0592 \u2192T g) If one chooses a total ordering < on the index s",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-000-introduction.md (p. 1-2)",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-000-introduction.md",
    "section_title": "Introduction.",
    "pages": "1-2",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "ex-sec-000-01",
+   "block_iri": "library/arxiv-math-0409565v2/blocks/ex-sec-000-01",
+   "claim_id": "arxiv-math-0409565v2#example:1"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
    "name": null,
-   "statement": "Thus we conclude that for such a minimal representation we must have |T | = 1 as desired. \u25a0 Now we may proceed with the proof of our theorem.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Let R be a commutative algebra with unity. Let A be an R- algebra which is free as an R-module and without quasi-zeros. Let (B, <) be an admissible system on A and let I be a two-sided ideal of A with a unital Gr\u00a8obner basis G. De\ufb01ne \u02dcO(G) to be the free R-module spanned by the monomials which do not occur as leading monomials of members of G. Then: 1. There is a k-module isomorphism A/I \u2243\u02dcO(G) of free R-modules. 2. A = I \u2295\u02dcO(G) For the case of a left ideal I, or for the case where A has quasi-zeros, one only need to combine the techniques in [3] with ours. As a corollary we obtain the PBW theorem over an arbitrary commutative ring with unity",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [3] in sections/sec-000-introduction.md",
+   "external_refs": [
+    "[3]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction.",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [3] in sections/sec-000-introduction.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-000-02",
+   "block_iri": "library/arxiv-math-0409565v2/blocks/thm-sec-000-02",
+   "claim_id": "arxiv-math-0409565v2#theorem:2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-term-data.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/unital.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/admissible-system.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/monomial-basis.lean"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": "[4]",
+   "statement": "Let R be a commutative ring with unity, A an R-algebra which is free as an R-module, (B, <) an admissible system on A, and let I be a two sided ideal of A which is generated by a unital Gr\u00a8obner basis: G = {g\u03b3 | \u03b3 \u2208\u0393}. Then in the division algorithm, we may choose hi \u2208I so that hi = g\u03b3i for some \u03b3i \u2208\u0393.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-001-unital-gr\u00f6bner-bases.md (p. 2-10) citing [4]",
+   "external_refs": [
+    "[4]"
+   ],
+   "proof_excerpt": "Let us set h := hi, f := fi to stop the proliferation of subscripts. Then since G = {g\u03b3 | \u03b3 \u2208G} is a Gr\u00a8obner basis, we may write: h = X k\u2208K \u03bbkuk \u00b7 g\u03b3k \u00b7 vk (1) with \u03bbk \u2208R\u2217, uk, vk \u2208B and \u03b3k \u2208\u0393. Denote: \u03b1 := LM (h) As we are free to choose our representation (Equation 1) of h as ",
    "section_file": "sections/sec-001-unital-gr\u00f6bner-bases.md",
    "section_title": "Unital Gr\u00f6bner Bases.",
    "pages": "2-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-001-unital-gr\u00f6bner-bases.md (p. 2-10) citing [4]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-001-01",
+   "block_iri": "library/arxiv-math-0409565v2/blocks/lem-sec-001-01",
+   "claim_id": "arxiv-math-0409565v2#lemma:6",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-term-data.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/unital.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/admissible-system.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/monomial-basis.lean"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "7",
+   "name": null,
+   "statement": "Let R be a commutative ring with unity, A an R-algebra which is free as an R-module, (B, <) an admissible system on A. Let \u03b1 \u2208B and suppose that f1, \u00b7 \u00b7 \u00b7 , fn \u2208A satisfy LM (fi) = \u03b1 and LC (fi) \u2208R\u00d7. Then if: f := X i cifi ci \u2208R\u2217 satis\ufb01es LM (f) < \u03b1 then we may write: f = X i\u0338=j di,jSi,j where the Si,j are the S-polynomials about fi and fj given by: Si,j := 1 ai fi \u22121 aj fj ai := LC (fi) , aj := LC (fj) \u2208R\u00d7",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-001-unital-gr\u00f6bner-bases.md (p. 2-10)",
+   "external_refs": [],
+   "proof_excerpt": "Because we have a cancellation of the terms of fi involving \u03b1 we have that P i ci = 0. Then: f = c1f1 + \u00b7 \u00b7 \u00b7 + cnfn = c1a1 \u0012 1 a1 f1 \u0013 + \u00b7 \u00b7 \u00b7 + cnan \u0012 1 an fn \u0013 = c1a1 \u0012 1 a1 f1 \u22121 a2 f2 \u0013 + (c1a1 + c2a2) \u0012 1 a2 f2 \u22121 a3 f3 \u0013 + \u00b7 \u00b7 \u00b7 +(c1a1 + \u00b7 \u00b7 \u00b7 cn\u22121an\u22121) \u0012 1 an\u22121 fn\u22121 \u22121 an",
+   "section_file": "sections/sec-001-unital-gr\u00f6bner-bases.md",
+   "section_title": "Unital Gr\u00f6bner Bases.",
+   "pages": "2-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-001-unital-gr\u00f6bner-bases.md (p. 2-10)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-001-02",
+   "block_iri": "library/arxiv-math-0409565v2/blocks/prop-sec-001-02",
+   "claim_id": "arxiv-math-0409565v2#proposition:7",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-term-data.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/unital.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/admissible-system.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/monomial-basis.lean"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "8",
+   "name": "Buchberger",
+   "statement": "Let R be a commutative ring with unity, A an R-algebra which is free as an R-module, (B, <) an admissible system on A. Let I \u2264A be an ideal generated by a unital set: G := {g\u03b3 | \u03b3 \u2208\u0393} for some index set \u0393. Then G is a Gr\u00a8obner basis for I if and only if all S- polynomials for G have zero remainder under the division algorithm.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-001-unital-gr\u00f6bner-bases.md (p. 2-10)",
+   "external_refs": [],
+   "proof_excerpt": "We show that if all S-polynomials reduce to zero and f \u2208I then f has a Gr\u00a8obner basis representation \u2013 i.e a representation satisfying (De\ufb01nition 5.1). As G generates I we may choose a representation of f as: f = X i hi \u00b7 g\u03b3i \u00b7 h\u2032 i hi, h\u2032 i \u2208A \u03b3i \u2208\u0393 (2) As A has an R-basis given",
+   "section_file": "sections/sec-001-unital-gr\u00f6bner-bases.md",
+   "section_title": "Unital Gr\u00f6bner Bases.",
+   "pages": "2-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-001-unital-gr\u00f6bner-bases.md (p. 2-10)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-001-03",
+   "block_iri": "library/arxiv-math-0409565v2/blocks/thm-sec-001-03",
+   "claim_id": "arxiv-math-0409565v2#theorem:8",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-term-data.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/unital.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/admissible-system.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/monomial-basis.lean"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "9",
+   "name": "PBW",
+   "statement": "Let g be a lie algebra over R, a commutative ring with unity, with lie bracket [ , ]g. Then: Ug = T g/J where J = (xy \u2212yx \u2212[x, y]g |x, y \u2208g\u0592 \u2192T g) is isomorphic as an R-module to Sg, the symmetric algebra on g.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-001-unital-gr\u00f6bner-bases.md (p. 2-10) citing [5], [2]",
+   "external_refs": [
+    "[5]",
+    "[2]"
+   ],
+   "proof_excerpt": "Choosing a well ordered basis {xi | i \u2208I} for g then T g has a multi- plicative monomial basis consisting of the words of \ufb01nite length in the xi\u2019s with the graded lexicographic ordering. Also Sg has a basis of words of \ufb01nite length written in non-decreasing order. The ideal J is ",
+   "section_file": "sections/sec-001-unital-gr\u00f6bner-bases.md",
+   "section_title": "Unital Gr\u00f6bner Bases.",
+   "pages": "2-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-001-unital-gr\u00f6bner-bases.md (p. 2-10) citing [5], [2]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-001-04",
+   "block_iri": "library/arxiv-math-0409565v2/blocks/cor-sec-001-04",
+   "claim_id": "arxiv-math-0409565v2#corollary:9",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/leading-term-data.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/unital.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/admissible-system.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial.lean",
+    "folio/unital-groebner-bases/unital-groebner-bases-chapter/monomial-basis.lean"
+   ],
+   "needs_lean_proof": true
   }
  ]
 }

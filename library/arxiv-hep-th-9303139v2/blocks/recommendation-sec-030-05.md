@@ -1,1 +1,0 @@
-We shall present this simple calculation in the last subsection below, but before we take a somewhat more direct (and complicated) approach in order to reveal at least some of ideas, underlying the entire theory of continuum limits.

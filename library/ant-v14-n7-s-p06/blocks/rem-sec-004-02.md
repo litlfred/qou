@@ -1,0 +1,1 @@
+Note that the same upper bound as above holds if we replace L(E ⊗χD, w) with L(E ⊗χDℓ, w) for a ﬁxed polynomial ℓwith (ℓ, 1) = 1. Since the proof of the upper bound for this twisted moment is the same as the proof of Theorem 4.1, we only focus on ℓ= 1. We ﬁrst need the following proposition, whose proof is similar to the proof of Theorem 3.3 in [Altu˘g and Tsimerman 2014].

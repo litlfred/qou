@@ -1,0 +1,1 @@
+Let a ⊆A be an ideal, and deﬁne B := A/a. (1) If I is an injective A-module, then J := HomA(B, I) is an injective B- module. (2) Let I and J be as above. If M ⊆I is an essential A-submodule, then N := HomA(B, M) is an essential B-submodule of J. (3) If I is a minimal complex of injective A-modules, then J := HomA(B, I) is a minimal complex of injective B-modules,

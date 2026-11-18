@@ -1,1 +1,0 @@
-The relation ``between'' in the above definition should also be understood in that sense: a syllable occurring after the last index $i$ syllable $\ap$ and/or before the first index $i$ syllable $\ap'$ is considered to be between $\ap$ and $\ap'$.

@@ -1,1 +1,1 @@
-Let A be an Ω-involutive weak quasi bialgebra A defined by (∗, Ω). A
+Let A be an Ω-involutive weak quasi bialgebra A defined by (∗, Ω). A twist for the involutive structure is an invertible selfadjoint t ∈ A such that ε(t) = 1. If A is discrete in the sense of Def. 11.5 we allow t ∈ M(A).

@@ -1,1 +1,0 @@
-On the other hand, the new singular fibre of $(Y',w')$ leads to a new summand to its derived category of singularities, which should correspond to a new summand in the Fukaya category of $X'$ (and perhaps some bulk deformation of the summands coming from $X$).

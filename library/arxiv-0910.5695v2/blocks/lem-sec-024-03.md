@@ -1,0 +1,1 @@
+1, x is invertible. It follows that xε′x−1 is an idempotent in A with ¯ε = xε′x−1 in A/Au. Therefore, it suﬃces to show ε and ε′ are conjugate in A whenever ¯ε = ε′. To do so, consider the element a := εε′ + (1 −ε)(1 −ε′) ∈A. If ¯ε = ε′, then ¯a = ¯1. Hence a is a unit in A (see Lemma A.1). Moreover, εa = εε′ = aε′ so that ε = aε′a−1. □

@@ -1,0 +1,1 @@
+a) It is known that c2 = c if c(ρ, σ) is a braided symmetry, for a proof in a strict tensor category see [50], Prop. 8.9.3. b) In Prop. 10.9 we have explicitly shown that c2 = c for the braided symmetry associated to the quasitriangular structure of any weak Hopf algebra. We give an example showing that c2 and c 2 may be different tensor structures.

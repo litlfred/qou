@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9612303v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9612303v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-9612303v1",
+  "title": "The q-deformed quark model : quantum isospin and q-hadrons",
   "contains": [
     "library/arxiv-hep-ph-9612303v1/sections/sec-front-matter",
     "library/arxiv-hep-ph-9612303v1/sections/sec-000",
@@ -28,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-9612303v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9612303v1.pdf",
     "source_sha256": "5311d7faf2b3e0050d507e2ad6db2c66d116588c675275ea679a4f56134444cc",
     "pages": 9,
@@ -39,8 +41,8 @@
       "stamp_date": "9 Dec 1996"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

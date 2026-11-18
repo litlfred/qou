@@ -1,0 +1,1 @@
+Fix s ∈N, s > 1. There is an embedding of the factor N := lim ind A⊗s n (inductive limit) in M := lim ind Ans given by ˆu := lim ind ˆun, with un as above. The index of the resulting inclusion is  X λ∈3′ d2 λ s−1 , where 3′ is an indexing set for the simple objects of the subcategory C′ as deﬁned at the beginning of this subsection and dλ = dim(Xλ).

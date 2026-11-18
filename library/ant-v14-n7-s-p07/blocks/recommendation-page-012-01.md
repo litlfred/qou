@@ -1,1 +1,0 @@
-Ellenberg, Wanlin Li and Mark Shusterman the general “minimalist conjecture” philosophy, which holds that positive ranks should be a density 0 phenomenon except when forced by parity considerations from the functional equation (in this setting the functional equation never forces positive rank, and the rank is always even.) Corollary 3.3.

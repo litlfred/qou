@@ -1,1 +1,0 @@
-Special mention should be made of the new field, open in this most recent period, that uses Magnus’ scheme to build novel algorithms [37] for the numerical integration of differential equations within the widest field of geometric integration [38].

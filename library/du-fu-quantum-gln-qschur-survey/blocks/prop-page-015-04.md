@@ -1,0 +1,1 @@
+The set M∞= {e(A+)kλf(A−) | A ∈Ξ±(∞), λ ∈N∞, λ ⩾σ(λ), |λ| ⩽r}. forms a basis for V (∞, r), where λ ⩾σ(λ) means λi ⩾σi(A) for all i. Moreover, the subset {e(A+)kσ(A)f(A−) | A ∈Ξ(∞, r)} of M∞forms a basis for K(∞, r).

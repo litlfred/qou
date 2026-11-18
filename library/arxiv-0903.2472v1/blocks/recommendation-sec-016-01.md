@@ -1,1 +1,0 @@
-In the language of Section [\[sec:symmetries\]](#sec:symmetries){reference-type="ref" reference="sec:symmetries"}, the abelian branch must be its own "signed pair," guaranteeing that all even $S_{2k}^{(\rm abel)}(u)$ vanish.

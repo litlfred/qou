@@ -1,1 +1,0 @@
-In order to analytically continue to independent $\tau,\tilde{\tau}\in{\mathbb{C}}$, one must treat ${\cal A}$ and $\overline{{\cal A}}$ as independent connections and again complexify *each* of them.

@@ -1,0 +1,1 @@
+∈C1(H3/2 ir ∩H1,∞)). The energy E(2) is continuously diﬀerentiable on the space of injective and regular curves belonging to H3/2 ∩H1,∞. Furthermore, if γ ∈H3/2 is injective and parametrized by arc-length and ϕ ∈H3/2 ∩H1,∞the ﬁrst variation δE(2)(γ; ϕ) := lim τ→0 E(2)(γ + τϕ) −E(2)(γ) τ exists and equals 2 lim εց0 " Uε

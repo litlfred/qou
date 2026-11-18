@@ -1,0 +1,1 @@
+Let S be a branched surface and w be a weight of S. Let F0 be a subset of FðSÞ, and let E0 be the set of all edges contained in an element of F0. Suppose that each F0 satisﬁes Interdisciplinary Information Sciences, Vol. 9, No. 1, pp. 81–87 (2003)

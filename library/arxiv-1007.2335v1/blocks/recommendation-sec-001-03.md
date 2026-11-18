@@ -1,1 +1,0 @@
-In section [\[sec-num\]](#sec-num){reference-type="ref" reference="sec-num"} we shall present results for a scheme using fourth-order accurate finite difference approximations to spatial derivatives on a cubic lattice consisting of $151^3$ points with unit lattice spacing (taking advantage of the scale invariance of the continuum problem in $\hbox{\mybb R}^3$).

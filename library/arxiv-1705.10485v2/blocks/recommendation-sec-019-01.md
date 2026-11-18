@@ -1,1 +1,0 @@
-::: remark It should be noticed that if $\delta \to +\infty$, then one essentially recovers the content of Corollary [\[cor:Cumulants_Kol\]](#cor:Cumulants_Kol){reference-type="ref" reference="cor:Cumulants_Kol"} (which can be applied because of Theorem [\[thm:boundcumulant\]](#thm:boundcumulant){reference-type="ref" reference="thm:boundcumulant"}).

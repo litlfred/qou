@@ -1,0 +1,1 @@
+Assume that the pierce-point p\ is in subset #V (or 1"). Then (after a modification of H') we may choose a generic fiber Ή!φ with the property: H'^ n F includes an arc β which is entirely in set°#V (or #1") and joins"p\ to L.

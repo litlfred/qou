@@ -1,1 +1,0 @@
-Furthermore, it should be emphasized that disconnected diagrams calculated e.g. in (169) using time-ordered per- turbation theory do not contribute to the nuclear force in the method of unitary transformation.

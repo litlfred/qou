@@ -1,1 +1,1 @@
-In particular, let v be the specialized quantum Casimir operator of
+In particular, let v be the specialized quantum Casimir operator of Uq0(g) as in Def. 19.5. Then v 1/2 and ∆(v)1/2 are well defined invertible operators of ΠV (q0)End(V (q0)) and ΠV (q0),W(q0)End(V (q0)) ⊗ End(W(q0)) respectively.

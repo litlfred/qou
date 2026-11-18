@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-ph-0405028v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "90a0e4ba456988d608c908778e7474b47792557e4efaba699484ac7ea9cca35a",
   "file": "0405028v2.pdf"
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should note [@RademGross72] that the Dedekind sum satisfies $$\\begin{gathered} s(-b, a )= - s (b,a) \\\\[2mm]",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-the-witten--reshetikhin--turaev-invariant-for-th.md",
-   "section_title": "The Witten--Reshetikhin--Turaev Invariant for the Brieskorn Homology Spheres",
-   "pages": "3-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should remark that there are $D(p_1,p_2,p_3)$ independent Eichler integrals due to the symmetry [\\[symmetry_chi\\]](#symmetry_chi){reference-type=\"eqref\" reference=\"symmetry_chi\"}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-eichler-integral-and-the-chern--simons-invar.md",
-   "section_title": "The Eichler Integral and the Chern--Simons Invariant",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should point out that, with $s$ and $t$ being coprime positive integers. the number, $(s-1) \\, (t-1)/2$, of integral lattice points in the 2-dimensional space has appeared as the number of the irreducible highest weight representation of the Virasoro algebra of the minimal model $\\mathcal{M}(s,t)$ in the conformal field theory [@BPZ84a].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-eichler-integral-and-the-chern--simons-invar.md",
-   "section_title": "The Eichler Integral and the Chern--Simons Invariant",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For our purpose to give an exact asymptotic behavior of the WRT invariant, we shall give an asymptotic expansion of the Eichler integral at $\\tau\\to 1/N$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-eichler-integral-and-the-chern--simons-invar.md",
-   "section_title": "The Eichler Integral and the Chern--Simons Invariant",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It should be noted that the sum in the first term in the right hand side of eq. [\\[asymptotics_Eichler\\]](#asymptotics_Eichler){reference-type=\"eqref\" reference=\"asymptotics_Eichler\"} runs over $D(p_1,p_2,p_3)$ distinct triples, but, as was clarified in the preceding sections, some of them vanish and there are $\\gamma(p_1,p_2,p_3)$ non-zero contributions, which correspond to a sum of the flat connection [\\[asymptotic_Witten\\]](#asymptotic_Witten){reference-type=\"eqref\" reference=\"asymptotic_Witten\"}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-the-eichler-integral-and-the-chern--simons-invar.md",
-   "section_title": "The Eichler Integral and the Chern--Simons Invariant",
-   "pages": "8-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall show that the WRT invariant for the Brieskorn homology spheres can be expressed in terms of a limiting value of the Eichler integral at $\\tau\\to 1/N$ which is given in eq. [\\[Eichler_fraction\\]](#Eichler_fraction){reference-type=\"eqref\" reference=\"Eichler_fraction\"}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-the-witten--reshetikhin--turaev-invariant-and-th.md",
-   "section_title": "The Witten--Reshetikhin--Turaev Invariant and the Eichler Integral",
-   "pages": "14-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-The functions $Z^{\alpha}_{G_{\mathbb{C}}}(M;u;\hbar)$ and $Z^{\alpha}_{G}(M;u;\hbar)$ here and in [\[sumG\]](#sumG){reference-type="eqref" reference="sumG"} should be *identical*, since they both correspond to $G_{\mathbb{C}}$ connections.

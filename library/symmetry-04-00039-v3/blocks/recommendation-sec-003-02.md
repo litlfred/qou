@@ -1,1 +1,0 @@
-Since, by implication, it is only traverse to the right (e.g., as per Figure 1) that has been the subject of the analysis leading to the Sine Gordon equation, we see that Equation 2-8 should really be expressed explicitly as R R R 0 m a F  

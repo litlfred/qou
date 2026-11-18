@@ -1,0 +1,1 @@
+The identities (B1) dh∗F (ρ, h) Ta = (ρ, h) Ra b ∧Sb −Ωa c ∧(ρ, h) Tc and (B2) dh∗F (ρ, h) Ra b = (ρ, h) Ra c ∧Ωc b −Ωa c ∧(ρ, h) Rc b, hold good. We will called these the ﬁrst respectively the second identity of Bianchi type. If the (ρ, h)-torsion is null, then the ﬁrst identity of Bianchi type becomes: ( ˜B1) (ρ, h) Ra b ∧sb = 0.

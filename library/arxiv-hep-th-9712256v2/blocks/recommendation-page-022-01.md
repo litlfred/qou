@@ -1,1 +1,0 @@
-The s-channel conformal blocks should be of the form [T2] Fs = ∞ X n=0 zs+nfn(x), f0(x) = X m=0 xr+mgn (89) It may be shown that for generic (i.e. non-integer) values of 2j1 −t and t there indeed exist three linearly independent solutions of the form (89).

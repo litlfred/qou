@@ -1,0 +1,1 @@
+3. The replacement H(n; fJ.)~E(n; fJ.)=ae"a(nah'a (2·29) in the lattice action (2·7) and/ or (2·26) does not change the naive continuum limit. Therefore we can adopt a new action with the replacement (2·29). But this replacement makes the action unbounded.

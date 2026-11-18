@@ -1,0 +1,1 @@
+By Theorem 2, the quaternionic model is a polynomially . .. plex model; thus, it captures BQP up to polynomial reductions. Note: Fault-tolerant toolchains port through ι with standard gadget overheads. This proposition is consistent with, and can be viewed as a circuit-level reformulation of, the simulation results for quaternionic circuits and dynamics in Refs. [6–8].

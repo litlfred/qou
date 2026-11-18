@@ -1,1 +1,0 @@
-Although breaking symmetries is still very popular for mixed-integer linear programming, a few recent works, such as the work on Orbital Shrinking [@Fischetti2012; @Salvagnin2013; @Fischetti2017], challenge the idea that symmetry handling methods for mixed-integer linear programming must necessarily break symmetry.

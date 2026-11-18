@@ -1,1 +1,0 @@
-It then seems natural that the Stokes automorphism at generic level $k\geq 1$ should still be identified with the 3d BPS invariants, and therefore be independent of the level $k$ of the Chern-Simons theory.

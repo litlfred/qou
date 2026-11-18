@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-nucl-th-0507033v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "57509b3ce5f9f8cc998b7bac4748e8f123d849da9ecfe6d1723d8e2b80ba47e9",
   "file": "0507033v2.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, this should be checked explicitly in future work and Coulomb interactions may be more important when we extend the virial approach to densities where heavy nuclei are present.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-22-virial-equation-of-state.md",
-   "section_title": "Virial Equation of State",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The relation between $S_E$ and the symmetry energy of mean-field models for single nuclei should therefore be investigated in future work.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-35-symmetry-energy.md",
-   "section_title": "Symmetry Energy",
-   "pages": "12-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In some cases, our virial results may be used to constrain model parameters or functional forms for model interactions.",
-   "strength": "may",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-4-conclusions.md",
-   "section_title": "Conclusions",
-   "pages": "13-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

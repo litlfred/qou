@@ -1,0 +1,1 @@
+Let f : X →Y be a negligible morphism of G- modules. Then f is negligible as a morphism of NG(P)-modules. Thus, the restriction functor F : Repk G →Repk NG(P) descends to a tensor functor between semisimpliﬁcations F : Repk G →Repk NG(P). Our main result in this section is the following theorem.

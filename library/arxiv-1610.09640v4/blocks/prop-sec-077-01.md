@@ -1,0 +1,1 @@
+Let P be a DG A-module. (1) If P has a semi-basis (S, F), then P has an induced semi-free ﬁltration {Fj(P)}j≥−1 such that Fj(P)♮= A♮·Fj(S) as graded A♮-modules for every j ≥−1. (2) Every semi-free ﬁltration of P is induced by some semi-basis. Exercise 11.4.9. Prove Proposition 11.4.8.

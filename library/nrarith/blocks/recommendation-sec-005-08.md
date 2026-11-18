@@ -1,1 +1,0 @@
-Implicit differentiation of this equation with respect to p and q gives ∂a ∂p(p −p ∂b ∂a + 4q) = b −a ∂a ∂q (p −p ∂b ∂a + 4q) = 2πi −4a, so we must show that b −a and 2πi −4a are linearly independent over R.

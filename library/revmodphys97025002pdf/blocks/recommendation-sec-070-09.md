@@ -1,1 +1,0 @@
-Finally, it is the dominant contributor to the determination of the adjusted constant μhð3HeÞ=μ0p, which yields the recommended value of μhð3HeÞ with ur ¼ 8.7 × 10−10 when multiplied by the rec- ommended value of μ0p and taking into account the correlation of the two constants.

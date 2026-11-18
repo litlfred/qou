@@ -1,1 +1,0 @@
-In the same vein, though an expansion factor of 2.5 is applied to each of the six items D1–D6, the 1.6 × 10−10 ur of the 2022 recommended value of α does not differ significantly from the 1.5 × 10−10 uncertainty of the 2018 value.

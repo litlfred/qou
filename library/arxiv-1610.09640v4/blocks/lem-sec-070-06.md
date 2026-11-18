@@ -1,0 +1,1 @@
+Let s : I →M be a quasi-isomorphism in K(A, M), and assume I is K-injective. Then s has a left inverse, namely there is a morphism t : M →I in K(A, M) such that t ◦s = idI. Moreover, this morphism t is unique.

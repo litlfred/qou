@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1108.1048v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6f2b83450ba923d0130f9827d9668585e65c2f140ff41e1977aaa49f7be8e91d",
   "file": "1108.1048v3.pdf"
@@ -16,13 +19,106 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 3,
+  "by_kind": {
+   "lemma": 2,
+   "corollary": 1
+  },
+  "formalization_candidates": 3,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 3
+  },
+  "by_evidence_location": {
+   "both": 1,
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 3
+  },
+  "needs_lean_proof": 3
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let a, b, c, d \u2208B with a \u2ab0c \u227bd \u2ab0b. Suppose that one of the following conditions hold: (1) A is of type An, (2) A is of type Bn and one of the following three holds: (i) 0 \u2ab0a and c\u0338 = 0, (ii) b \u2ab00 and d\u0338 = 0, (iii) a \u2ab0n, n \u2ab0b and either c = 0 or d = 0, (3) A is of type Cn and one of the following three holds: (i) b \u2ab0n, (ii) a = c = n, (iii) a = 1 and c = n, (4) A is of type Dn and one of the following three holds: (i) b \u2ab0n \u22121, (ii) a = c = n \u22121, (iii) a = 1 and c = n \u22121. Then Ind \u0000\u2206(a,b) \u22a0\u2206(c,d) \u0001 \u2243Ind \u0000\u2206(c,d) \u22a0\u2206(a,b) \u0001 and these modules are irreducible.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-007-4-proof-of-theorem.md (p. 28-44) citing [15, Lem. 4.1]",
+   "external_refs": [
+    "[15, Lem. 4.1]"
+   ],
+   "proof_excerpt": "Let M = Ind \u0000\u2206(a,b) \u22a0\u2206(c,d) \u0001 , N = Ind \u0000\u2206(c,d) \u22a0\u2206(a,b) \u0001 , and let Q (resp. L) be any nonzero quotient (resp. submodule) of M. We will assume that k is a certain sequence of elements in I such that k \u2208chM, k \u2208chQ, and k \u2208chL. Let 30 GEORGIA BENKART, SEOK-JIN KANG, SE-JIN OH, AND",
+   "section_file": "sections/sec-007-4-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "28-44",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-007-4-proof-of-theorem.md (p. 28-44) citing [15, Lem. 4.1]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-007-01",
+   "block_iri": "library/arxiv-1108.1048v3/blocks/lem-sec-007-01",
+   "claim_id": "arxiv-1108.1048v3#lemma:4.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.3",
+   "name": null,
+   "statement": "Let ti \u2208Z\u22650 be such that t1 \u2265t2 \u2265\u00b7 \u00b7 \u00b7 \u2265tn\u2032\u22121 \u2265tn\u2032 \u2265tn\u2032+1 = 0 (An, Cn), 2t1 \u22652t2 \u2265\u00b7 \u00b7 \u00b7 \u22652tn\u22121 \u2265tn \u22652tn+1 \u2265\u00b7 \u00b7 \u00b7 \u22652tn\u2032\u22121 \u2265tn\u2032 = 0 (Bn), t1 \u2265t2 \u2265\u00b7 \u00b7 \u00b7 \u2265tn\u22122 \u2265tn\u22121, tn \u2265tn+1 \u2265\u00b7 \u00b7 \u00b7 \u2265tn\u2032\u22121 \u2265tn\u2032 = 0 (Dn), where n\u2032 = n (An), n\u2032 = 2n (Bn), n\u2032 = 2n \u22121 (Cn, Dn). Set \u03d1i = \uf8f1 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f2 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f4 \uf8f3 ti \u2212ti+1 if i \u2264n\u2032 (An, Cn), i \u2264n \u22122 (Bn), i \u2264n \u22123 (Dn), tn\u22121 \u2212\u2308tn 2 \u2309 if i = n \u22121 (Bn), \u2308tn 2 \u2309\u2212\u230atn 2 \u230b if i = n (Bn), \u230atn 2 \u230b\u2212tn+1 if i = n + 1 (Bn), tn\u22122 \u2212max{tn\u22121, tn} if i = n \u22122 (Dn), max{0, tn \u2212tn\u22121} if i = n \u22121 (Dn), max{0, tn\u22121 \u2212tn} if i = n (Dn), min{tn\u22121, tn} \u2212tn+1 if i = n + 1 (Dn), ti\u22121 \u2212ti if i \u2265n + 2 (Bn,",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-007-4-proof-of-theorem.md (p. 28-44)",
+   "external_refs": [],
+   "proof_excerpt": "By Lemma 4.1 and (4.6), for k \u2208Z\u22650 we have (4.11) Ind \u0010 \u2206\u22a0k (b1,b) \u22a0\u2206\u22a0k (b,c) \u0011 \u2243Ind \u0010 \u2206\u22a0k\u22121 (b1,b) \u22a0\u2206(b1,b) \u22a0\u2206(b,c) \u22a0\u2206\u22a0k\u22121 (b,c) \u0011 \u0589 Ind \u0010 \u2206\u22a0k\u22121 (b1,b) \u22a0\u2206(b1,c) \u22a0\u2206\u22a0k\u22121 (b,c) \u0011 \u2243Ind \u0010 \u2206\u22a0k\u22121 (b1,b) \u22a0\u2206\u22a0k\u22121 (b,c) \u22a0\u2206(b1,c) \u0011 ... \u0589 Ind \u0010 \u2206\u22a0k (b1,c) \u0011 , where b \u2208B (An), b = [ n + 1 (Bn",
+   "section_file": "sections/sec-007-4-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "28-44",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-007-4-proof-of-theorem.md (p. 28-44)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-007-02",
+   "block_iri": "library/arxiv-1108.1048v3/blocks/lem-sec-007-02",
+   "claim_id": "arxiv-1108.1048v3#lemma:4.3",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.4",
+   "name": null,
+   "statement": "Nn(v) = hd Ind\u2206(a(v); n) for v \u2208B(\u221e), where Nn(v) is the irreducible module given in Proposition 2.3.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-007-4-proof-of-theorem.md (p. 28-44)",
+   "external_refs": [],
+   "proof_excerpt": "Let I(k) = {n \u2212k + 1, n \u2212k + 2, . . . , n} for k = 1, . . . , n. Note that I(k) \u2282I(k+1) and |I(k)| = k. Let Uq(gk) be the subalgebra of Uq(g) generated by ei, fi (i \u2208I(k)) and qh (h \u2208P\u2228), and let Bk be the crystal obtained from B(\u221e) by forgetting the i-arrows for i /\u2208I(k). It fol",
+   "section_file": "sections/sec-007-4-proof-of-theorem.md",
+   "section_title": "Proof of Theorem ??",
+   "pages": "28-44",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-007-4-proof-of-theorem.md (p. 28-44)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-007-03",
+   "block_iri": "library/arxiv-1108.1048v3/blocks/cor-sec-007-03",
+   "claim_id": "arxiv-1108.1048v3#corollary:4.4",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
 }

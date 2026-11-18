@@ -1,0 +1,1 @@
+we see that E2(t, λ, q) = C(q)g(0,0)(t, q). Finally, we note that −C(q) (q; q)2 ∞ = lim r→∞ E2(qrt, λ, q) θ(qrt; q) = 0 (218) which follows from Lemma 5.1. Thus, Equation (31) follows from the residue equation (214) and from a computation of the determinants of U and V . We discuss these in the next sections.

@@ -1,0 +1,1 @@
+If L is not amphicheiral, VL~ ^ VL. There is some evidence for this conjecture, but only $10 hangs on it. In this direction we have the following result, where b is in £?n, 6+ is the sum of the positive exponents of 6, and b- is the (unsigned) sum of the negative ones in some expression for b as a word on the usual generators.

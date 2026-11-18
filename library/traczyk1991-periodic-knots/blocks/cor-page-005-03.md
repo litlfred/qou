@@ -1,0 +1,1 @@
+The area in which T,,, lives is that of T; with exponents shifted by p(p—1) (upwards), e.g. for p=5, k=2 we have T, living between degrees 24 and 32 and Ty lives between degrees 44 and 52, i.e. between 24+5(5—1) and 324+5(5-1).. O

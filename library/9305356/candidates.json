@@ -1,56 +1,24 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "9305356",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8359a99cb477be2bb35f525e2bf0b095e74e0c6034e92ef9ffe243be91efad6e",
   "file": "9305356.pdf"
  },
  "provenance": {
-  "title": "March 31, 1993",
+  "title": "Introduction to Left-Right Symmetric Models",
   "authors": null,
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Of course, for parity to be a symmetry a corresponding transformation also has to be performed in the space of gauge bosons which must be consistent with the transformation in the fermion sector.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-motivation-for-lr-symmetric-models.md",
-   "section_title": "Motivation For LR-Symmetric Models:",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Q is the electric charge matrix and Y must be the same for L and R.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-motivation-for-lr-symmetric-models.md",
-   "section_title": "Motivation For LR-Symmetric Models:",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-Rotational symmetry breaking is caused by the breakdown of the continuum SO(3) group to the SO(3, Z), which consists of a ﬁnite number of irreducible representations and consequently allows a mixing of partial waves, which should not mix in the continuum.

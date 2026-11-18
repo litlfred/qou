@@ -1,0 +1,1 @@
+In the situation above: (1) The sequence Ker(ψ1) ψ2 −−→L2 ϵ2 −→L1 ⊕K L2 π1 −→Coker(ψ1) →0, in which π1 is the morphism induced by the projection L1 ⊕L2 →L1, is exact. (2) Suppose L1 →L′ 1 be a monomorphism. Then the induced morphism L1 ⊕K L2 →L′ 1 ⊕K L2 is a monomorphism. Exercise 11.5.12. Prove Lemma 11.5.11. (Hint: use the ﬁrst sheaf trick, Propo- sition 2.4.9.)

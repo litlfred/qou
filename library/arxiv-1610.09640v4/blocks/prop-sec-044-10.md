@@ -1,0 +1,1 @@
+Let K and L be triangulated categories, let F, G : K →L be triangulated functors, and let ζ : F →G be a morphism of triangulated functors. Denote by K′ the full subcategory of K on the objects M such that ζM : F(M) → G(M) is an isomorphism in L. Then K′ is a saturated full triangulated subcategory of K.

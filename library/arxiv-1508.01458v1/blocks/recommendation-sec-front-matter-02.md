@@ -1,1 +1,0 @@
-For simplicity, we will de- note the particles charged under this gauge group as quarks and gluons, although one must bear in mind that these are not the known QCD ﬁelds but rather novel de- grees of freedom that must decouple from the low-energy eﬀective theory.

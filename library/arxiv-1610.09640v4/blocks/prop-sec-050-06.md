@@ -1,0 +1,1 @@
+Let S be multiplicatively closed set of morphisms in a category A. The two conditions below are equivalent: (i) S is a left denominator set in A. (ii) Sop is a right denominator set in Aop. Exercise 6.2.18. Prove Proposition 6.2.17. Here is the main theorem regarding Ore localization.
