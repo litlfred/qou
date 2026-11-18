@@ -1,0 +1,58 @@
+{
+  "probe": "hookreg_hookthick_jmcoeff_keyc2_keyc8_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/hookreg_hookthick_jmcoeff_keyc2_keyc8_probe.py",
+  "scriptCommitSha": "97bbddb2438b206b4233bea3253586f97b119df0",
+  "scriptHash": "6fbee74e29fdd96bd651830e730ec8eac8fabda1b57697f3e57a343c415d0dec",
+  "scriptSha256": "6fbee74e29fdd96bd651830e730ec8eac8fabda1b57697f3e57a343c415d0dec",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "bean": "qou-nok3",
+      "theorem": "QOU.BraidKnot.HookSumBridge.sum_hookZ_sub_bStat_eq_zero",
+      "partition": "[5, 4, 2, 1]",
+      "sumHookZ": "40.0",
+      "bStatRhs": "40.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-nro6",
+      "theorem": "QOU.BraidKnot.HookSum.sum_hookZ_sub_sq_min_nonneg",
+      "partition": "[5, 4, 2, 1]",
+      "sumHookZ": "40.0",
+      "sqMinDim": "16.0",
+      "margin": "24.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-nuw5",
+      "theorem": "QOU.BraidKnot.JucysMurphyCoeff.centralC2_coeff_one_sub_eq_zero",
+      "n": "7",
+      "jmSqIdentityCoeff": "21.0",
+      "chooseN2": "21.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-o6ml",
+      "theorem": "QOU.BraidKnot.IdentityI.prodHooks_conj_sub_eq_zero",
+      "partition": "[5, 3, 2, 1]",
+      "conjugate": "[4, 3, 2, 1, 1]",
+      "prodHooksConj": "17280.0",
+      "prodHooksLam": "17280.0",
+      "residual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-og83",
+      "theorem": "QOU.BraidKnot.KeystoneC8SuperExpBound.c8_superexp_sq_sub_nonneg",
+      "sumFG": "240.0",
+      "sumG": "76.0",
+      "wStdSq": "1.2544",
+      "superExpBound": "0.13888888888888888888888888888888888888888888888888888888888888888888888888888889",
+      "margin": "1.1155111111111111111111111111111111111111111111111111111111111111111111111111111",
+      "passed": true
+    }
+  ]
+}
