@@ -109,3 +109,6 @@ Two owner decisions, neither an agent's to take:
 recording that its statement has gaps is not closing them. Only an owner
 amendment to the carrier closes this. Sibling bean: `qou-9f4h` (the `k_λ`
 selector itself).
+
+## Round 74 Progress (PR #8509)
+- De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8509` (C1 `ffa6f4009ea1d8bfb9fcdb4c0721e486e42a5dca`, C2 `521dae553af743d7b8435ff34bef6f8099a8afcf`, 80-dps mpmath witness verified, 0 static audit findings).

@@ -98,3 +98,6 @@ small differences at small ε — the same regime where the β fit misled.
 whose conclusion turns on behaviour as ε → 0** — SF5 and SF6 are the two the
 β artifact most resembles. Option 3 is the kind of blanket sweep the
 ask-the-owner rule exists to stop.
+
+## Round 74 Progress (PR #8509)
+- De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8509` (C1 `ffa6f4009ea1d8bfb9fcdb4c0721e486e42a5dca`, C2 `521dae553af743d7b8435ff34bef6f8099a8afcf`, 80-dps mpmath witness verified, 0 static audit findings).

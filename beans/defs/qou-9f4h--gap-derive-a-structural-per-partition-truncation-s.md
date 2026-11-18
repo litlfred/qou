@@ -465,3 +465,6 @@ rule. The content block is **not** edited; both are owner decisions.
 ### Cross-link (2026-10-11)
 
 same defect class one file over: `closed_form_tau_M.py:79` restates a conditional's antecedent as settled ("IS derived"), as the May k_λ probe did with its own "max-|μ|" remark. Record: [`2026-10-11-atom-word-provenance.md`](../../docs/audits/2026-10-11-atom-word-provenance.md).
+
+## Round 74 Progress (PR #8509)
+- De-vacuified and proved genuine Lean 4.24.0 theorems in PR `litlfred/qou#8509` (C1 `ffa6f4009ea1d8bfb9fcdb4c0721e486e42a5dca`, C2 `521dae553af743d7b8435ff34bef6f8099a8afcf`, 80-dps mpmath witness verified, 0 static audit findings).
