@@ -3971,3 +3971,17 @@ Also: sibling PR #8517 `trace_flip_reverse` now proves the reversal invariance m
 
 For U_q(sl2) the dual V* is isomorphic to V as a module (φ: V → V*). Braiding is natural, so each crossing satisfies c_{V*,U} = (φ⊗1) c_{V,U} (φ⁻¹⊗1) and likewise for inverse crossings. β_Bor is a pure braid (each strand returns to its slot), so ρ_{uud}(β_Bor) = Φ ρ_{uuu}(β_Bor) Φ⁻¹ with Φ = φ on the d slot, and likewise for udd. Any functional Tr(X·ρ(β)) where X is built from K's on each slot (φ intertwines K) is therefore the same for uuu, uud and udd. That covers the plain trace, the quantum trace and the corpus's K-twisted partial traces. Scope: U_q(sl2) only. A can split p from n only where V* ≇ V, i.e. U_q(gl_N) with N ≥ 3, which introduces N as a choice. Owner decision requested (card), not computed.
 (The corpus's n/p = q^∓2 comes from projecting onto different TOTAL-WEIGHT spaces of V^{⊗3}, an isospin projection, not from orientation.)
+
+## 2026-11-18 19:35Z — PRE-REGISTRATION: C (weight-space trace) and B (one-strand blob). Owner: "explore B and C" (19:26Z)
+
+C (registered and evaluated now, because it is exact from existing sorry-free Lean):
+- Functional: quantum trace Tr(K^{⊗3} ρ(β)) of the level-2 Jimbo braiding restricted to the (2,1) weight space (p) and to the (1,2) weight space (n), NucleonWeightSpaceTraces.lean.
+- trace_word_eq gives equal plain traces for EVERY word, and K^{⊗3} acts by the scalar q on (2,1) and q⁻¹ on (1,2). So n/p = q⁻² EXACTLY for every word, β_Bor included. It does not depend on the word, the photon or the typing.
+- At the proton q₀: q₀² = 1.23205..., so the ratio is a 23 % effect, not 0.138 %. Scope (a): as a direct mass ratio C misses by ~170×. Any rescaling that brings it to 0.138 % would be a chosen exponent, i.e. selection; not attempted.
+
+B (registered, not yet computed):
+- Algebra: type-B Hecke H₃^B(q,Q): σ₀, σ₁ as in H₃; blob t with (t − Q)(t + Q⁻¹) = 0, tσ₀tσ₀ = σ₀tσ₀t, tσ₁ = σ₁t.
+- Flavour: a d strand at slot k carries the type-B Jucys–Murphy loop t_k (t₀ = t, t₁ = σ₀tσ₀, t₂ = σ₁σ₀tσ₀σ₁). p = β_Bor·t_d for d at each of slots 0,1,2; n = β_Bor·t_{d1}t_{d2} for each pair. β_Bor is pure, so t_k commutes past it up to the JM relations; computed as written anyway.
+- Trace: Geck–Lambropoulou Markov trace on H^B, z = z_D, tr(t) = y. Q and y stay SYMBOLIC.
+- Report: p and n traces and their ratio as exact functions of (q, Q, y), plus whether the result depends on slot (the flip symmetry is broken by construction, since t sits on strand 0).
+- Nothing is scored against m_n − m_p until Q and y are derived, not chosen.
