@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-10-04T15:25:34Z
+updated_at: 2026-11-18T09:58:42Z
 parent: qou-wp3h
 ---
 
@@ -91,3 +91,8 @@ AGENTS.md §"Canonical derivation chain" (CAL-1 = m_e as "the dimensional unit")
 - Defined `protonOverMeDimensionless` in `folio/quantum-observable-universe/lean/QOU/AppendixQValues/ProtonBorromeanAssembly.lean` and proved `proton_mass_factors_mE` (`protonMassFromLoop m_e V_e = m_e * protonOverMeDimensionless V_e`) and `proton_mass_homogeneous_in_scale` (`protonMassFromLoop (λ * m_e) V_e = λ * protonMassFromLoop m_e V_e`) with `0` `sorry`.
 - Verified at 80 dps at $q_0$ in `computations/probes/delta_split_mrel_four_phi_resummation_probe.py` (`computations/probes/delta-split-mrel-four-phi-resummation.witness.json`).
 - Opened PR `litlfred/qou#8171` (`1c72739193707fef67fbebe3aa153f994c73933e`). Keeping status `in-progress` pending owner review.
+
+
+## 2026-11-18 — owner ruling: the 12 is labelled a FIT
+
+Owner tapped "Label as fit + open gap bean". PR #8418 / issue #8417 label the integer 12 (= 2·6 in −|S_3|·m_e) as fitted in `partition-sum-proton-residual` (prose + authorNotes) and in the `canonical_mass.py` docstring. Context: PR #8120 (merged 670bafd) showed the residual vs the live convention-D tower is −12 m_e at the proton pin (round trip, q₀ solved from the identity) and −11.99955 m_e at the muon pin (m_p 244 ppb low). Chance estimate: nearest integer multiple of m_e is always within ~272 ppm, so 244 ppb is ~1e-3 by chance, before look-elsewhere on the formula shape. This bean stays OPEN: the −6·m_e term still has no derivation (open conjecture-level gap, do not close).
