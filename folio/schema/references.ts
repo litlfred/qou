@@ -2826,6 +2826,19 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "horsley-et-al-2016-qcd-qed" },
   { id: "giusti-et-al-2017" },
   { id: "bakshi-gupta-2020" },
+  // 2026-11-18: owner uploads Batch B (commit 521b87dca7) ingested into library/ (epic qou-s4ws).
+  { id: "walker-loud-2019" },
+  { id: "gasser-leutwyler-rusetsky-2020-epjc" },
+  { id: "gasser-leutwyler-rusetsky-2021" },
+  { id: "sutton-tubbenhauer-wedrich-zhu-2023" },
+  { id: "romiti-2022" },
+  { id: "can-qcdsf-2025" },
+  { id: "aiston-morton-1997" },
+  { id: "pimsner-popa-1986" },
+  { id: "kauffman-tlcat" },
+  { id: "geer-patureau-mirand-turaev-2009" },
+  { id: "lickorish1993skeins" },
+  { id: "jones2015vonneumann" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

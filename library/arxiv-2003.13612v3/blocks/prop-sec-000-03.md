@@ -1,0 +1,1 @@
+Keywords: Electromagnetic mass diﬀerences; Dispersion relations; Regge behaviour; Structure functions; Protons and neutrons; Cottingham formula The fact that proton and neutron nearly have the same mass is understood since the 1930s, as consequence of an approximate symmetry: isospin [1].

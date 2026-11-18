@@ -1,0 +1,1 @@
+Let B be a complete subset of the set I, which contains at least one ambidextrous object. Then: (1) all objects in B are ambidextrous; (2) for any object J ∈B, we have A(J) = B; (3) let F ′ J, F ′ J′ be the invariants derived above from arbitrary pairs (J ∈B, d0) and (J′ ∈B, d′ 0), respectively, where d0, d′ 0 ∈F \ {0}; then F ′ J = dJ(J′) d′ F ′ J′.

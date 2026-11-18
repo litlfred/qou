@@ -1,0 +1,1 @@
+(88) On the other hand, combining the lattice result (86) for the magnetic polarizability with the experimental value (83) of (αE + βM)p−n, we obtain a result for the 14 subtraction function at the origin that is even slightly more precise than the prediction: ¯S(0) = −2.22(60) GeV−2 .

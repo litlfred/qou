@@ -1,0 +1,1 @@
+If τ −1 is the Perron Frobenius eigenvalue for an irre- ducible matrix ΛtΛ for an N-valued matrix Λ, there exists a von Neumann algebra M with faithful trace tr containing an inﬁnite sequence of projections ei satisfying the relations of 19.3.2.

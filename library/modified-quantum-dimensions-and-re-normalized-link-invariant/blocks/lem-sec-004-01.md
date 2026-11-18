@@ -1,0 +1,1 @@
+Let J ∈Ob(C) be a simple ambidextrous object such that J ∈A(J). Suppose that d : A(J) →F is a function such that the construction of Theorem 3 with dJ replaced by d yields a well-deﬁned invariant for all L ∈LA(J). Then d = dJ for an appropriate choice of d0.

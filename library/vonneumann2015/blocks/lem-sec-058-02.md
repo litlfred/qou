@@ -1,0 +1,1 @@
+The state φ has the following "freeness" property: let V1 and V2 be orthogonal subspaces of H and suppose x1x2 · · · xn is a product in ℓ(H)′′ such that (i) φ(xi) = 0 ∀i (ii) Each xi is in ℓ(V1)′′ or ℓ(V2)′′ and xi ∈ℓ(V1)′′ ⇐⇒xi±1 ∈ℓ(V2)′′, then φ(x1x2 · · · xn) = 0 .

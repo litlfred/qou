@@ -1,0 +1,1 @@
+Let λ and µ be Young diagrams with n cells. Then eλeµ = for λ̸ = µ, e2 λ = αλeλ for some scalar αλ. Thus distinct Young diagrams determine orthogonal elements, while each eλ is a quasi-idempotent element of Hn.

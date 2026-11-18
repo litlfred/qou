@@ -1,0 +1,1 @@
+Suppose that some of the strings of a tangle T can be enclosed in a ball B′ ⊂B which does not meet the remaining strings of T. A given geometric partition ω of P = T ∩∂B determines a partition ω′ of P ′ = P ∩B′, using disks Dα ∩B′. If λ(ω′) and µ(ω′) are inseparable then S(ω)(T) = 0.
