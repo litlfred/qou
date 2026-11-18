@@ -1,7 +1,7 @@
 ---
 # qou-z23u
 title: 'precision-gates is red on arrival: ten blocking gates, all inherited debt'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

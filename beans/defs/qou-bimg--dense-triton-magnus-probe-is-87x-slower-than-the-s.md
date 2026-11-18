@@ -1,7 +1,7 @@
 ---
 # qou-bimg
 title: Dense triton Magnus probe is 87x slower than the sparse route that already reproduces it
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

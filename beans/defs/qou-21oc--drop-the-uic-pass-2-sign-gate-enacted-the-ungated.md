@@ -1,7 +1,7 @@
 ---
 # qou-21oc
 title: 'Drop the UIC Pass-2 sign gate: enacted; the ungated total is ALSO wrong-signed'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

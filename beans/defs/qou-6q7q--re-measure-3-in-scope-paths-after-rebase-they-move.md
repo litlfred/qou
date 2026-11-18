@@ -1,7 +1,7 @@
 ---
 # qou-6q7q
 title: 'Re-measure 3 in-scope paths after rebase: they moved on main while the sweep ran'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

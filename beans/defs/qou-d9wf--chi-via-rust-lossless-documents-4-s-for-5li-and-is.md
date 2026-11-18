@@ -1,7 +1,7 @@
 ---
 # qou-d9wf
 title: chi_via_rust_lossless documents ~4 s for 5Li and is still running at 10 min — the cost model is off by >150x, with no progress output
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
