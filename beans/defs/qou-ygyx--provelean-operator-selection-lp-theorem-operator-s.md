@@ -1,7 +1,7 @@
 ---
 # qou-ygyx
 title: 'PROVE(lean): operator_selection_lp — theorem operator_selection_lp [ctx : OperatorSelectionLpContext] : OperatorSelectionLpCont [cited bertsimas1997,manuscript]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -12,7 +12,7 @@ tags:
     - cite-bertsimas1997
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:07Z
-updated_at: 2026-10-04T15:22:41Z
+updated_at: 2026-11-18T07:49:45Z
 parent: qou-l2vh
 ---
 
@@ -46,3 +46,8 @@ locals, which that scanner's rule disqualifies.
 
 The original text is kept above, not deleted: the Tractability line is per-item and is accurate;
 only the Next-step verdict is being corrected.
+
+## Round 83 Progress (PR #8392)
+- Branch: `feat/round83-lambdasum-taupos-pairenergy-c1eval-nobranch-43c1`
+- Commit 1 (code + probe): `e226ba66ce53cea91430549ce1efc48cd1eeef24`
+- Commit 2 (witness): `17c21a76b062fd76e16d4f84b23687e02fc0050c` (`scriptSha256 = 0635fcc96bfd3bd66e7452f9553ce1314e6829b0b1a6b7202ea86d48b4b232a6`)

@@ -1,13 +1,13 @@
 ---
 # qou-2q85
 title: Depth-0 to depth-2 bridge - six attack routes for the convolution/volume gap
-status: todo
+status: in-progress
 type: feature
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T20:42:08Z
-updated_at: 2026-10-04T15:46:32Z
+updated_at: 2026-11-18T07:49:45Z
 parent: qou-n4nr
 ---
 
@@ -45,3 +45,8 @@ AND ONE THING THIS EPIC LEARNED THE HARD WAY: three of the four closures came fr
 
 
 Former title (before 2026-10-04, when this became a story under a programme epic): EPIC: depth-0 to depth-2 bridge - six attack routes for the convolution/volume gap
+
+## Round 83 Progress (PR #8392)
+- Branch: `feat/round83-lambdasum-taupos-pairenergy-c1eval-nobranch-43c1`
+- Commit 1 (code + probe): `e226ba66ce53cea91430549ce1efc48cd1eeef24`
+- Commit 2 (witness): `17c21a76b062fd76e16d4f84b23687e02fc0050c` (`scriptSha256 = 0635fcc96bfd3bd66e7452f9553ce1314e6829b0b1a6b7202ea86d48b4b232a6`)

@@ -1,7 +1,7 @@
 ---
 # qou-jgk6
 title: 'PROVE(lean): knot_operator_selection — theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] : ctx.tr_Phi = (Finse [cited manuscript,wenzl1990]'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -12,7 +12,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-01T23:31:01Z
-updated_at: 2026-10-04T15:22:37Z
+updated_at: 2026-11-18T07:49:45Z
 parent: qou-l2vh
 ---
 
@@ -26,3 +26,8 @@ parent: qou-l2vh
   - [manuscript] quantum-observable-universe/predicted-spectra/knot-operator-selection.md
 - **Tractability:** Operator-selection LP identity over a context class (trace = block sum, kernel dim 0); repo compute/LP wiring, no pure Mathlib gap.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+## Round 83 Progress (PR #8392)
+- Branch: `feat/round83-lambdasum-taupos-pairenergy-c1eval-nobranch-43c1`
+- Commit 1 (code + probe): `e226ba66ce53cea91430549ce1efc48cd1eeef24`
+- Commit 2 (witness): `17c21a76b062fd76e16d4f84b23687e02fc0050c` (`scriptSha256 = 0635fcc96bfd3bd66e7452f9553ce1314e6829b0b1a6b7202ea86d48b4b232a6`)
