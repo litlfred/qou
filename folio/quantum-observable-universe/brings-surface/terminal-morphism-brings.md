@@ -1,7 +1,7 @@
 We construct the unique terminal morphism from any Descartes universe $(\mathbf{C}, A, \tau)$ in $\mathbf{C}_{-6}$ to Bring's QOU $(\mathbf{C}_B, A_B, \tau_B)$.
 
-**Step 1: Match the substrate parameters.** 
-Both source and target have $\chi(A) = -6$, so the Descartes condition determines $q + q^{-1} = -6$ in both. By constructive extraction, both algebras are defined over $\mathbb{Z}[q, q^{-1}]/(q^2 + 6q + 1)$. The specialisation maps $\iota, \iota_B \colon \mathbb{Z}[q, q^{-1}] \to k$ agree, yielding an isomorphism of base rings. We define $\phi_0 \colon k \to k$ as the identity.
+**Step 1: Fix the substrate parameter.** 
+Objects of $\mathbf{C}_{-6}$ are taken at a fixed value of the substrate parameter $q$: each carries a specialisation $\iota \colon \mathbb{Z}[q, q^{-1}] \to k$, and morphisms commute with these specialisations. The Descartes condition $\chi_{\mathrm{eu}}(M_0) = -6$ constrains the base curve, not $q$; $q$ ranges over its admissible values, and the local value $q_0$ is one of them. For source and target in $\mathbf{C}_{-6}$ the specialisations $\iota, \iota_B$ therefore agree, which gives an isomorphism of base rings. We define $\phi_0 \colon k \to k$ as the identity. The terminality below is a statement for each value of $q$.
 
 **Step 2: Construct the :refterm[monoidal functor]{#monoidal-functor}.** 
 The fibre functor $\tau \colon \mathbf{C} \to \mathrm{Vect}_k$ is exact, faithful, and monoidal. By Tannaka–Krein reconstruction, the source algebra $A$ is recovered as $\mathrm{coend}(\tau^\vee \otimes \tau)$. Since both $A$ and $A_B$ satisfy the Hecke relation $(T - q)(T + q^{-1}) = 0$ with identical $q$, the reconstructed Hopf algebras are isomorphic. Define:

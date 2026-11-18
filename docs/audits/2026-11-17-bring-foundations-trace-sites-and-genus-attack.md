@@ -117,3 +117,105 @@ genus:
 If none of 3–5 is closed, the paper should say plainly that `g = 4` is an **input**,
 chosen as the maximally symmetric case satisfying (H1)–(H3). That choice is a selection,
 and the §NO FITTING rule asks for it to be stated as one.
+
+## 3. The "real route": genus from an irreducible symmetry on H¹ (2026-11-18)
+
+### What the corpus already says, and where the genus enters
+
+- `thm:descartes` makes Bring **terminal in `C_{-6}`**, the category of QOUs whose base
+  has `χ_eu(M_0) = -6`. The genus is the **input** that defines the category, not an
+  output. `rem:universality-general` expects a terminal object at every admissible `χ_eu`.
+- `calibration-cohomology-alignment` states `H¹ = 2W`, rank 8, `dim W = 4`, opening with
+  "Bring's curve has first cohomology…". `prop:prolonged-periods-fixed-depth` uses
+  "`2g = 8` for the genus-4 Bring curve". Both read the dimension **off Bring**.
+- `klein-bring-icosahedral-bridge` puts an `A_5` action on the **fibre** `P(V) ≅ CP¹`
+  (`ζ₅` pentad plus an order-2 operation), with the EM involution in `S_5 \ A_5`.
+
+So nothing in the corpus derives `rank H¹ = 8` from the axioms. The route below turns the
+statement around and asks what forces it.
+
+### The hypothesis (H_W)
+
+*(H_W): the icosahedral group `A_5` acts faithfully on the base curve `M_0`, and
+`H¹(M_0) ⊗ ℂ = 2W` with `W` an irreducible `A_5`-representation.*
+
+### Result (exact, computed): (H_W) gives `g ∈ {4, 5}`; adding the `S_5` extension gives `g = 4`
+
+Method: enumerate every generating vector of `A_5` and `S_5` with signature `(0; m_1, …, m_r)`
+(Riemann–Hurwitz), compute the character of `H¹` by Lefschetz,
+`χ_{H¹}(h) = 2 − #Fix(h)` for `h ≠ 1`, with `#Fix(h)` counted on cosets `G/⟨c_i⟩`, and
+decompose. Exact integer arithmetic; script at the end of this section.
+
+| group | signature | g | `χ_{H¹}` decomposition | `H¹ = 2W`, W irreducible? |
+|---|---|---|---|---|
+| `A_5` | (2,5,5) | **4** | `2·χ_4` | **yes** |
+| `A_5` | (3,3,5) | 5 | `2·χ_5` | yes |
+| `A_5` | (2,2,2,3) | 6 | `2·(χ_3 + χ_3')` | no |
+| `A_5` | (3,5,5) | 9 | `2·(χ_4 + χ_5)` | no |
+| `A_5` | (2,2,2,5) | 10 | reducible | no |
+| `S_5` | (2,4,5) | **4** | `2·(sign ⊗ std_4)` | **yes** |
+| `S_5` | (2,4,6) | 6 | `2·χ_6` | yes for `S_5`; restricts to `χ_3 + χ_3'` on `A_5` |
+| `S_5` | (2,5,6) | 9 | reducible | no |
+
+Completeness: an irreducible `A_5`-representation has dimension at most 5, so
+`2g = 2 dim W ≤ 10`, i.e. `g ≤ 5`, and the search covers every genus that can occur. The
+same bound for `S_5` is `g ≤ 6`.
+
+Consequences:
+1. (H_W) alone gives **`g ∈ {4, 5}`**.
+2. `S_5` has **no** action on a genus-5 curve: the smallest signatures give `g = 4, 6, 9, 11, …`.
+   So if the `A_5` action extends to `S_5` (the parity-odd EM coset that
+   `klein-bring-icosahedral-bridge` already names), **`g = 4`**. A genus-4 curve with
+   `S_5` action is unique, namely Bring.
+3. This replaces the three inputs H1–H3 of §2 by two: the `A_5`/`S_5` symmetry of `M_0`, and
+   the irreducibility of `H¹` as twice one representation. Order 5 (H3) is automatic.
+
+### What is still open (gaps, named)
+
+- **G2.** The corpus has `A_5`/`S_5` on the **fibre** `CP¹`, not on the base curve `M_0`.
+  A derivation must lift that action to `M_0` from the axioms. Every order-5 structure in
+  the corpus is currently downstream of Bring (§2, item 4), so this must not be chosen
+  because it yields 4 (§NO FITTING).
+- **G3.** Irreducibility of `H¹ = 2W` is an *input* here. A source could be a
+  "no proper invariant subsystem of periods" statement. Note `prop:prolonged-periods-fixed-depth`
+  uses the rank of the Gauss–Manin system, which would be the natural carrier.
+- Not yet in Lean. The finite group computation is decidable and would be a sorry-free
+  lemma over explicit permutation groups.
+
+### Script
+
+```python
+# H^1 character of A5/S5 curves via Lefschetz; exact; sympy permutation groups.
+import itertools
+from fractions import Fraction as F
+from sympy.combinatorics import Permutation, PermutationGroup
+from sympy.combinatorics.named_groups import AlternatingGroup, SymmetricGroup
+def run(G, name):
+    els = list(G.elements); n = len(els)
+    classes, seen = [], set()
+    for e in els:
+        if e in seen: continue
+        c = {x*e*x**-1 for x in els}; seen |= c; classes.append(sorted(c, key=lambda p: p.array_form))
+    reps = [c[0] for c in classes]
+    ords = sorted({e.order() for e in els if e.order() > 1})
+    for r in (3, 4):
+        for sig in itertools.combinations_with_replacement(ords, r):
+            g = 1 + F(n, 2)*(-2 + sum(1 - F(1, m) for m in sig))
+            if g < 2 or g > 10 or g.denominator != 1: continue
+            byord = {m: [e for e in els if e.order() == m] for m in sig}
+            found = None
+            for c in itertools.product(*[byord[m] for m in sig[:-1]]):
+                p = Permutation(list(range(G.degree)))
+                for x in c: p = p*x
+                last = p**-1
+                if last.order() != sig[-1]: continue
+                if PermutationGroup(list(c)+[last]).order() == n: found = list(c)+[last]; break
+            if not found: continue
+            chi = []
+            for h in reps:
+                if h.is_Identity: chi.append(2*int(g)); continue
+                fix = sum(sum(1 for x in els if x**-1*h*x in {c**j for j in range(c.order())})//c.order() for c in found)
+                chi.append(2 - fix)
+            print(name, sig, int(g), chi, [h.order() for h in reps])
+run(AlternatingGroup(5), "A5"); run(SymmetricGroup(5), "S5")
+```
