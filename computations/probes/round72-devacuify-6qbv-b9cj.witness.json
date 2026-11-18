@@ -1,0 +1,73 @@
+{
+  "probe": "round72_devacuify_6qbv_b9cj_probe",
+  "scriptPath": "computations/probes/round72_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "0a93eba0e8b5b8ee92b4af6972a325d2dc1a28fd",
+  "scriptHash": "099edb6f007877b36d6a7463822282799c9b45367274707e561c80e6704aba5e",
+  "scriptSha256": "099edb6f007877b36d6a7463822282799c9b45367274707e561c80e6704aba5e",
+  "dps": 80,
+  "mpmathDps": 80,
+  "generatedAt": "2026-11-18T13:06:02.997317+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-fav8",
+      "file": "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/WitnessObstruction.lean",
+      "theorems": [
+        "not_subsingleton_unit_hom_of_nontrivial_incl",
+        "moduleCat_not_subsingleton_unit_hom_of_ne_zero"
+      ],
+      "imageNormSq": "401.0",
+      "unitHomNormSq": "34.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-innq",
+      "file": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/qou_ns_in_qou.lean",
+      "theorems": [
+        "qou_eulerChar_nonzero",
+        "descartesQOU_eulerChar_add_six"
+      ],
+      "eulerChar": -6,
+      "obstruction": -6,
+      "eulerCharPlusSix": 0,
+      "obstructionPlusSix": 0,
+      "passed": true
+    },
+    {
+      "bean": "qou-rstq",
+      "file": "folio/quantum-observable-universe/lean/QOU/Archimedean/LiTwoNegOne.lean",
+      "theorems": [
+        "twelve_mul_LiTwo_neg_one",
+        "twelve_mul_cLiTwoExt_neg_one"
+      ],
+      "li2NegOne": "-0.82246703342411321823620758332301259460947495060339921886777911468500373520160044",
+      "negPiSqOver12": "-0.82246703342411321823620758332301259460947495060339921886777911468500373520160044",
+      "clearedDenominatorResidual": "1.686751670916883715895772e-80",
+      "passed": true
+    },
+    {
+      "bean": "vta3",
+      "file": "folio/quantum-observable-universe/lean/QOU/Geometry/MobiusKernel.lean",
+      "theorems": [
+        "mobiusKernel_symm",
+        "chord_sq_le_arc_sq"
+      ],
+      "chordSq": "1.8585255966645941798236202971314625818298179448733062611547091656181541308529986",
+      "arcSq": "2.25",
+      "mobiusKernelValue": "0.093616479652943042628054044193136921518540470582582552920873942906098871037787979",
+      "symmetryResidual": "0.0",
+      "passed": true
+    },
+    {
+      "bean": "qou-unob",
+      "file": "folio/quantum-observable-universe/lean/QOU/Brings/BringDescendingTower.lean",
+      "theorems": [
+        "bring_descending_euler_char_relation"
+      ],
+      "chiBring": -6,
+      "chiQuotient": -2,
+      "coveringDegree": 3,
+      "passed": true
+    }
+  ]
+}
