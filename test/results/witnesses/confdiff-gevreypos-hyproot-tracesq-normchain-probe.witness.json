@@ -1,0 +1,42 @@
+{
+  "probe": "computations/probes/confdiff_gevreypos_hyproot_tracesq_normchain_probe.py",
+  "scriptCommitSha": "9fc5597f0f6558c185cf46ffd6acdc86ad1d4b21",
+  "scriptHash": "0b271ed473fcb7e2f06260119e75930af659f57c2419e9542b05b4df69271355",
+  "scriptSha256": "0b271ed473fcb7e2f06260119e75930af659f57c2419e9542b05b4df69271355",
+  "executedAt": "2026-11-18T07:43:44Z",
+  "dps": "80",
+  "allPassed": true,
+  "checks": [
+    {
+      "id": "additive_correction_diff_confined",
+      "bean": "qou-lhsb",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "one_le_four_pow_mul_involution_sq",
+      "bean": "b9ms",
+      "minValue": "1",
+      "maxAbsError": "0.0",
+      "passed": true
+    },
+    {
+      "id": "binding_kernel_eval_root",
+      "bean": "qou-4mrb",
+      "maxAbsError": "2.108439588646104644869715e-81",
+      "passed": true
+    },
+    {
+      "id": "binding_trace_sq_eq_four_add_four_sinh_sq",
+      "bean": "qou-kyik",
+      "maxAbsError": "6.747006683667534863583087e-80",
+      "passed": true
+    },
+    {
+      "id": "normalizations_chain_rule",
+      "bean": "qou-j0j8",
+      "maxAbsError": "8.433758354584418579478859e-81",
+      "passed": true
+    }
+  ]
+}
