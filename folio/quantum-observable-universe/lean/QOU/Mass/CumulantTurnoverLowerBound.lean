@@ -128,4 +128,11 @@ theorem channel_pos_of_b3_pos {u v : ℕ → R} (hv : v 1 = 0) (hu : u 2 ≤ u 1
 
 end Channel
 
+
+/-- **First projection of `max_at_three` (`qou-qqm4`).**
+Under `0 < b3 w` and `0 < b4 w`, `w 1 < w 3`. -/
+theorem w1_lt_w3_of_b3_b4_pos {w : ℕ → R} (h3 : 0 < b3 w) (h4 : 0 < b4 w) :
+    w 1 < w 3 :=
+  (max_at_three h3 h4).1
+
 end QOU.Mass.CumulantTurnoverLowerBound

@@ -122,4 +122,18 @@ theorem diag_conj_necessary (P Q : Matrix (Fin 2) (Fin 2) K) (d : Fin 2 → K)
 
 end DiagonalConjugation
 
+
+section InterfaceZero
+
+variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
+
+/-- **Zero-coefficient specialization of `interface_bond_difference` (`idt1`).**
+When `b = 0` and `Φ Wpn = Φ Wnp`, the interface bond difference vanishes. -/
+theorem interface_bond_difference_zero (Φ : A →ₗ[R] R) (Wpn Wnp s : A) (a : R)
+    (hfree : Φ Wpn = Φ Wnp) :
+    Φ (Wpn * (algebraMap R A a + (0 : R) • s)) - Φ (Wnp * (algebraMap R A a + (0 : R) • s)) = 0 := by
+  rw [interface_bond_difference Φ Wpn Wnp s a 0 hfree, zero_mul]
+
+end InterfaceZero
+
 end QOU.Mass.DeltaLambdaMirrorTransport

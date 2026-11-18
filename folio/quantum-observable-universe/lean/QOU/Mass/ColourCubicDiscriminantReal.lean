@@ -35,4 +35,10 @@ theorem colourDiscriminant_pos (z : ℝ) : 0 < colourDiscriminant z := by
 theorem no_real_branch_point (z : ℝ) : colourDiscriminant z ≠ 0 :=
   ne_of_gt (colourDiscriminant_pos z)
 
+
+/-- **Non-negativity of the colour cubic discriminant (`qou-oq5r`).**
+For every real `z`, `0 ≤ colourDiscriminant z`. -/
+theorem colourDiscriminant_nonneg (z : ℝ) : 0 ≤ colourDiscriminant z :=
+  le_of_lt (colourDiscriminant_pos z)
+
 end QOU.Mass.ColourCubicDiscriminantReal

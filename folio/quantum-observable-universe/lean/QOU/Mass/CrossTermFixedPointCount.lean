@@ -64,4 +64,12 @@ theorem crossTerm_q_one_eq_fixedPoint_diff :
 /-- The sequential word's permutation is the single transposition `s₂` (the two squares cancel). -/
 theorem sequential_eq_s2 : sequential = s 2 := by decide
 
+
+/-- **Strict ordering of the fixed-point counts (`qou-prjo`).**
+The interleaved 4-cycle fixes strictly fewer two-colourings than the sequential transposition (`2 < 8`). -/
+theorem fixedColourings_interleaved_lt_sequential :
+    fixedColourings interleaved < fixedColourings sequential := by
+  rw [fixedColourings_interleaved, fixedColourings_sequential]
+  norm_num
+
 end QOU.Mass.CrossTermFixedPointCount

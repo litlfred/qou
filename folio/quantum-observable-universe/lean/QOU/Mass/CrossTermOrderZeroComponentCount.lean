@@ -94,4 +94,11 @@ theorem one_sub_tauBorromean_lt {h : ℝ} (hh : h ≠ 0) : 1 - tauBorromean h < 
         mul_lt_mul_of_pos_left (brunnian_factor_lt_one h) h4
     _ = h ^ 4 := mul_one _
 
+
+/-- **Self-difference of the component-count trace (`qou-qb9e`).**
+For any strand count `n` and component count `c`, `componentTrace n c - componentTrace n c = 0`. -/
+theorem componentTrace_self_sub_eq_zero (n c : ℕ) :
+    componentTrace n c - componentTrace n c = 0 :=
+  componentTrace_sub_eq_zero_of_eq rfl
+
 end QOU.Mass.CrossTermOrderZeroComponentCount
