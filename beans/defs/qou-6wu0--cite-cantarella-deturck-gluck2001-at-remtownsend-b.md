@@ -1,7 +1,7 @@
 ---
 # qou-6wu0
 title: Cite [cantarella-deturck-gluck2001] at rem:townsend-biot-savart-strain
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

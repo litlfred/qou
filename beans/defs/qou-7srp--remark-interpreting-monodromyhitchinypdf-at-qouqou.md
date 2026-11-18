@@ -1,7 +1,7 @@
 ---
 # qou-7srp
 title: Remark interpreting MonodromyHitchinY.pdf at qou:QOU.MassDerivation.quantum_planck_approx
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
