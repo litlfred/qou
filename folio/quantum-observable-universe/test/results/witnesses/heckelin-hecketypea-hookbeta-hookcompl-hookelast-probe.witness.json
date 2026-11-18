@@ -1,0 +1,161 @@
+{
+  "probe": "heckelin_hecketypea_hookbeta_hookcompl_hookelast_probe",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/heckelin_hecketypea_hookbeta_hookcompl_hookelast_probe.py",
+  "scriptCommitSha": "0fd476023cfd043c2047844edcacae782a1dafbb",
+  "scriptHash": "ce4d70b5ffd6618539d118ec11bf8ac1b060deb679b424639cadce47b81d7e15",
+  "scriptSha256": "ce4d70b5ffd6618539d118ec11bf8ac1b060deb679b424639cadce47b81d7e15",
+  "dps": "80",
+  "allPassed": true,
+  "results": [
+    {
+      "theorem": "chiralityCount_collapse_sub_eq_zero",
+      "bean": "qou-m8zb",
+      "passed": true,
+      "samples": [
+        {
+          "Z": "2",
+          "N": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "Z": "6",
+          "N": "6",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "Z": "8",
+          "N": "10",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "Z": "26",
+          "N": "30",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "finrank_IwahoriHeckeOfSn_sub_eq_zero",
+      "bean": "qou-mfps",
+      "passed": true,
+      "samples": [
+        {
+          "n": "1",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "2",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "3",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "4",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "5",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "n": "6",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "two_mul_sum_betaR_sub_eq_zero",
+      "bean": "qou-mtx9",
+      "passed": true,
+      "samples": [
+        {
+          "rows": "[3, 2, 1]",
+          "L": "4",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "rows": "[4, 2]",
+          "L": "3",
+          "residual": "0.0",
+          "passed": true
+        },
+        {
+          "rows": "[3, 3, 2]",
+          "L": "5",
+          "residual": "0.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "eight_mul_card_mul_sum_hookZ_sub_nonneg",
+      "bean": "qou-n4r9",
+      "passed": true,
+      "samples": [
+        {
+          "rows": "[3, 2, 1]",
+          "L": "3",
+          "excess": "0.0",
+          "passed": true
+        },
+        {
+          "rows": "[4, 2]",
+          "L": "3",
+          "excess": "24.0",
+          "passed": true
+        },
+        {
+          "rows": "[5, 1]",
+          "L": "3",
+          "excess": "72.0",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "theorem": "staircase_hookSum_sub_nonneg",
+      "bean": "qou-n7ue",
+      "passed": true,
+      "samples": [
+        {
+          "nu": "[3, 2, 1]",
+          "diff": "0.0",
+          "passed": true
+        },
+        {
+          "nu": "[4, 2]",
+          "diff": "1.0",
+          "passed": true
+        },
+        {
+          "nu": "[4, 1, 1]",
+          "diff": "1.0",
+          "passed": true
+        },
+        {
+          "nu": "[5, 1]",
+          "diff": "3.0",
+          "passed": true
+        },
+        {
+          "nu": "[6]",
+          "diff": "7.0",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
