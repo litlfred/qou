@@ -1,0 +1,73 @@
+{
+  "allAssertionsPassed": true,
+  "allPassed": true,
+  "beanIds": [
+    "qou-bnyo",
+    "qou-c370",
+    "qou-ckj6",
+    "qou-dgpc",
+    "qou-f273"
+  ],
+  "invariants": {
+    "qou_bnyo_leaf_olean_cone_batching": {
+      "cachedDependencies": 1206,
+      "flippedGreenOrphans": 86,
+      "missingLeafOleans": 1,
+      "parallelogramLhs80dps": "15024.331097493274023409517011881474730447998544993618382255282723241217139756289",
+      "parallelogramRhs80dps": "15024.331097493274023409517011881474730447998544993618382255282723241217139756288",
+      "remainingDeferredOrphans": 6,
+      "residualAbs80dps": "1.7272337110188889250772703725600799142232000728872562770047406940337183606324854e-77",
+      "totalConeOleans": 1207,
+      "totalScannedOrphans": 92
+    },
+    "qou_c370_deferred_structural_cleanup": {
+      "hyperbolicClusterItems": 4,
+      "orphanRemarkItems": 3,
+      "parallelBasisItems": 5,
+      "residualAbs80dps": "2.6988026734670139454332349571251248659737501138863379328199073344276849384882585e-79",
+      "totalDeferredClusterItems": 12,
+      "trinomialSquareLhs80dps": "155.35405229242512741000102271488348113247770619234277106939176769435426582062791",
+      "trinomialSquareRhs80dps": "155.35405229242512741000102271488348113247770619234277106939176769435426582062791"
+    },
+    "qou_ckj6_sibling_verification_classification": {
+      "greenVerifiedModules": 86,
+      "outOfConeNeutralSkips": 6,
+      "polarizationLhs80dps": "69.23051015107560343639876243587588898500263599739300225301978694831781271638277",
+      "polarizationRhs80dps": "69.23051015107560343639876243587588898500263599739300225301978694831781271638277",
+      "removedModuleFailures": 2,
+      "residualAbs80dps": "1.3494013367335069727166174785625624329868750569431689664099536672138424692441292e-79",
+      "totalEvaluatedSiblings": 94
+    },
+    "qou_dgpc_family_chain_error_partition": {
+      "cubicFactorizationLhs80dps": "10.812911730528524106887533781666772023219864729507303244869874973280068818941264",
+      "cubicFactorizationRhs80dps": "10.812911730528524106887533781666772023219864729507303244869874973280068818941264",
+      "excludedToolErrorCandidates": 52,
+      "genuinelyDeadCandidates": 13,
+      "loadBearingCandidates": 121,
+      "rawCandidates": 186,
+      "residualAbs80dps": "1.6867516709168837158957718482032030412335938211789612080124420840173030865551615e-80",
+      "trueCandidates": 134
+    },
+    "qou_f273_substrate_probe_cancel_hotspot": {
+      "depthTwoCancelSites": 6,
+      "duplicateMachineryProbes": 7,
+      "involutionCancelSites": 5,
+      "residualAbs80dps": "1.7272337110188889250772703725600799142232000728872562770047406940337183606324854e-77",
+      "totalCancelSites": 11,
+      "twoSquareCompositionLhs80dps": "10502.091580043897248463330439959182265990957882513206727412840276865649892146415",
+      "twoSquareCompositionRhs80dps": "10502.091580043897248463330439959182265990957882513206727412840276865649892146415"
+    }
+  },
+  "leanModule": "QOU.Foundations.LeafOleanConeBatchingDeferredStructuralCleanupSiblingVerificationClassificationFamilyChainErrorPartitionSubstrateProbeCancelHotspot",
+  "parameters": {
+    "phi_inv_80dps": "0.61803398874989484820458683436563811772030917980576286213544862270526046281890245",
+    "q0_80dps": "0.47567938488603014898510765511005414430281415477659621149525635187082778421987066"
+  },
+  "precisionDps": 80,
+  "probeId": "leaf_olean_cone_batching_deferred_structural_cleanup_sibling_verification_classification_family_chain_error_partition_substrate_probe_cancel_hotspot_probe",
+  "schemaVersion": "1.0.0",
+  "scriptCommitSha": "79b2648932653702ea6a8cbefa5ff6493ff25e46",
+  "scriptHash": "310095425a857ae1cba47494cdbd7491b7846f82f292c4df8b8288ba0a130fe0",
+  "scriptPath": "folio/quantum-observable-universe/computations/probes/leaf_olean_cone_batching_deferred_structural_cleanup_sibling_verification_classification_family_chain_error_partition_substrate_probe_cancel_hotspot_probe.py",
+  "scriptSha256": "310095425a857ae1cba47494cdbd7491b7846f82f292c4df8b8288ba0a130fe0"
+}
