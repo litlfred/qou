@@ -1,7 +1,7 @@
 ---
 # qou-bzj5
 title: 'CHECK THEN REMARK at thm:buchberger: does LC in R^x buy back the field case over a commutative ground ring?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:

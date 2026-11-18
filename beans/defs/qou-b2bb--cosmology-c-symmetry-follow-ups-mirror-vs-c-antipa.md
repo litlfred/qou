@@ -1,7 +1,7 @@
 ---
 # qou-b2bb
 title: 'Cosmology / C-symmetry follow-ups: mirror vs C antiparticle; Vol(mirror) lemma for bare_mass_invariance; density bar-parity; C-equivariance of gamma-gamma production'
-status: todo
+status: in-progress
 type: task
 tags:
     - reorg-2026-10-04

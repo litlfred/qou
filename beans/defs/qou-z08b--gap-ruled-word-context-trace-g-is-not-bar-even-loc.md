@@ -1,7 +1,7 @@
 ---
 # qou-z08b
 title: 'GAP: ruled-word context trace g is not bar-even; locate the bar-breaking part of nuc11_interleaved structurally'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-11-15T09:59:54Z
 updated_at: 2026-11-15T11:30:00Z

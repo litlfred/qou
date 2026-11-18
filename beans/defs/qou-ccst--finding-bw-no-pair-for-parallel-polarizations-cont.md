@@ -1,7 +1,7 @@
 ---
 # qou-ccst
 title: 'FINDING: BW ''no pair for parallel polarizations'' contradicts tree-level QED'
-status: todo
+status: in-progress
 type: task
 tags:
     - quark-state
