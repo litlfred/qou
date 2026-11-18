@@ -1,7 +1,8 @@
 ---
 # qou-ykgx
 title: Cite [vanderveen2008] at qou:QOU.Knot.FigureEightVolume.borromeanKashaev
-status: todo
+status: in-progress
+pr: 8438
 type: task
 priority: normal
 tags:

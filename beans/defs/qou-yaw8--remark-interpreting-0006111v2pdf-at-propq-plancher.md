@@ -1,7 +1,8 @@
 ---
 # qou-yaw8
 title: Remark interpreting 0006111v2.pdf at prop:q-plancherel-asymptotic-skeleton
-status: todo
+status: in-progress
+pr: 8438
 type: task
 priority: normal
 tags:

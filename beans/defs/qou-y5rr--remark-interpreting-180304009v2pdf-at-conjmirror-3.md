@@ -1,7 +1,8 @@
 ---
 # qou-y5rr
 title: Remark interpreting 1803.04009v2.pdf at conj:mirror-3d-3d-correspondence
-status: todo
+status: in-progress
+pr: 8438
 type: task
 priority: normal
 tags:

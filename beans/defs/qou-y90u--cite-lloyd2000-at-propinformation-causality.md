@@ -1,7 +1,8 @@
 ---
 # qou-y90u
 title: Cite [lloyd2000] at prop:information-causality
-status: todo
+status: in-progress
+pr: 8438
 type: task
 priority: normal
 tags:

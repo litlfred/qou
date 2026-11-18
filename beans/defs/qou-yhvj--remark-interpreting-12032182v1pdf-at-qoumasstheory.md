@@ -1,7 +1,8 @@
 ---
 # qou-yhvj
 title: Remark interpreting 1203.2182v1.pdf at QOU.MassTheory.WhiteheadHH
-status: todo
+status: in-progress
+pr: 8438
 type: task
 priority: normal
 tags:
