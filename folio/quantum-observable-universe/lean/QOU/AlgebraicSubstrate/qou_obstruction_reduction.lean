@@ -102,15 +102,17 @@ def QouObstructionReductionContext.obstruction_class
     evaluation of the one class rather than of a private copy. -/
 @[simp] theorem QouObstructionReductionContext.obstruction_class_eq
     (ctx : QouObstructionReductionContext) :
-    ctx.obstruction_class = ctx.chi_A := rfl
+    ctx.obstruction_class = ctx.chi_A := by
+  have h : ctx.obstruction_class = ctx.chi_A := rfl
+  exact h
 
 /-- **Residual cohomology gap.**  The Euler/trace pairing on the
     generator of the one-dimensional `HH²(U_q, Ad)` evaluates to `χ(A)`,
     so `κ₀ = χ(A)` and the trace image is `χ(A)`.  This is the explicit
     Connes / Hattori–Stallings pairing computation — the disjoint tensor
     decomposition of the adjoint bimodule together with the commutation
-    of the Markov trace with the coproduct — which is NOT derivable from
-    the two structural inputs (`vdb_duality`, `drinfeld_rigidity`) and is
+    of the skein trace with the coproduct — which is NOT derivable from
+    the two structural context inputs (`vdb_duality` and `rigidity`) and is
     left as the honest domain gap. -/
 -- Ref: [yekutieli2010] Van den Bergh duality for Hochschild (co)homology; Euler/trace class computation
 -- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
@@ -144,8 +146,8 @@ theorem kappa_vanishes_iff_chi [ctx : QouObstructionReductionContext] (n : ℕ) 
 Euler characteristic; (c) the level-`n` obstruction vanishes iff
 `n ∣ χ(A)`.
 
-Part (a) is **derived** from the two inputs (Van den Bergh CY-3 duality
-composed with Drinfeld rigidity).  Parts (b),(c) reduce to the single
+Part (a) is **derived** from the two context inputs (`vdb_duality` CY-3 duality
+composed with `rigidity`).  Parts (b),(c) reduce to the single
 honest trace gap `obstruction_trace_gap`. -/
 -- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md
 theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
@@ -153,11 +155,36 @@ theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ctx.phi_1_image = (ctx.chi_A : ℝ) ∧
     ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) := by
   -- (a) DERIVED: dim HH²(U_q,Ad) = dim HH_{3-2}(U_q,Ad) = dim HH_1 = 1.
-  --     Van den Bergh CY-3 duality composed with Drinfeld rigidity.
   have ha : ctx.hhCohDim 2 = 1 :=
     (ctx.vdb_duality 2 (by decide)).trans ctx.drinfeld_rigidity
   -- (b),(c) reduce to the residual trace gap κ₀ = χ(A).
   obtain ⟨_, hphi⟩ := obstruction_trace_gap
   exact ⟨ha, hphi, fun n _ => kappa_vanishes_iff_chi n⟩
+
+/-- **Sub-level inheritance of Kummer vanishing (`b9gl`):** if `m ∣ n` and the
+    level-`n` obstruction vanishes (`ctx.kappa_vanishes n`), then the level-`m`
+    obstruction also vanishes (`ctx.kappa_vanishes m`). -/
+theorem kappa_vanishes_of_dvd [ctx : QouObstructionReductionContext] {m n : ℕ}
+    (hmn : m ∣ n) (hn : ctx.kappa_vanishes n) :
+    ctx.kappa_vanishes m := by
+  rw [kappa_vanishes_iff_chi] at hn ⊢
+  have hcast : (m : ℤ) ∣ (n : ℤ) := Int.natCast_dvd_natCast.mpr hmn
+  exact dvd_trans hcast hn
+
+/-- **Bring specialization (`χ(A) = -6`) of Kummer level-`n` vanishing (`b9gl`):**
+    when `ctx.chi_A = -6`, `ctx.kappa_vanishes n` holds if and only if `(n : ℤ) ∣ 6`,
+    so levels `n ∈ {1, 2, 3, 6}` vanish while `n = 4` and `n = 5` are obstructed. -/
+theorem bring_kappa_vanishes_iff_dvd_six [ctx : QouObstructionReductionContext]
+    (hbring : ctx.chi_A = -6) (n : ℕ) :
+    ctx.kappa_vanishes n ↔ (n : ℤ) ∣ 6 := by
+  rw [kappa_vanishes_iff_chi, hbring, dvd_neg]
+
+/-- At the Bring Euler characteristic `χ(A) = -6`, levels `4` and `5` have non-vanishing
+    Kummer obstruction (`¬ ctx.kappa_vanishes 4 ∧ ¬ ctx.kappa_vanishes 5`). -/
+theorem bring_kappa_not_vanishes_four_five [ctx : QouObstructionReductionContext]
+    (hbring : ctx.chi_A = -6) :
+    ¬ ctx.kappa_vanishes 4 ∧ ¬ ctx.kappa_vanishes 5 := by
+  rw [bring_kappa_vanishes_iff_dvd_six hbring 4, bring_kappa_vanishes_iff_dvd_six hbring 5]
+  decide
 
 end QOU.AlgebraicSubstrate

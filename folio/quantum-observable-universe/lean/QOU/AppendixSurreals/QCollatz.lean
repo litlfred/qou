@@ -518,29 +518,41 @@ def qi3 : R := a.q ^ 2 + a.q + 1
 
 /-- **Skein divisibility** `[3]_q = q·[2]_q + 1` — holds by construction. -/
 theorem skein_divisibility : a.qi3 = a.q * a.qi2 + 1 := by
-  simp only [qi2, qi3]; ring
+  have h2 : a.qi2 = a.q + 1 := rfl
+  have h3 : a.qi3 = a.q ^ 2 + a.q + 1 := rfl
+  rw [h2, h3]
+  ring
 
 /-- **Contraction gap** `[2]_q² − [3]_q = q` — holds by construction. -/
 theorem contraction_gap : a.qi2 ^ 2 - a.qi3 = a.q := by
-  simp only [qi2, qi3]; ring
+  have h2 : a.qi2 = a.q + 1 := rfl
+  have h3 : a.qi3 = a.q ^ 2 + a.q + 1 := rfl
+  rw [h2, h3]
+  ring
 
 /-- **Bézout coprimality** `[3]_q − q·[2]_q = 1` — holds by construction. -/
 theorem coprime : a.qi3 - a.q * a.qi2 = 1 := by
-  simp only [qi2, qi3]; ring
+  have h2 : a.qi2 = a.q + 1 := rfl
+  have h3 : a.qi3 = a.q ^ 2 + a.q + 1 := rfl
+  rw [h2, h3]
+  ring
 
 /-- The odd-branch defining equation at `q⁻¹` (the fundamental cycle) follows
     from the induced arithmetic whenever `q` is invertible — so the fundamental
     2-cycle is likewise determined by the substrate parameter. -/
 theorem fundamental_odd_step (qinv : R) (hq : a.q * qinv = 1) :
     (1 + qinv) * a.qi2 = a.qi3 * qinv + 1 := by
-  simp only [qi2, qi3]; linear_combination (-a.q) * hq
+  have h2 : a.qi2 = a.q + 1 := rfl
+  have h3 : a.qi3 = a.q ^ 2 + a.q + 1 := rfl
+  rw [h2, h3]
+  linear_combination (-a.q) * hq
 
 end SkeinCollatzArith
 
 /-! ### The Markov-trace observable: `reaches_cycle` as observed halting (Tier C #12)
 
 In the QOU, *observation* is the Markov trace `tr_M` — an orbit's observed output
-is the Jones/Skein value of its current state, the degree-0 section an observer
+is the skein value of its current state, the degree-0 section an observer
 reads. Coupling any observation map `obs : Skein → V` to the Skein-Collatz
 dynamics turns the convergence conjecture into an **observational halting
 statement**: the observed output stabilises to the value of the fundamental
@@ -560,7 +572,7 @@ theorem reaches_cycle_observed {Skein : Type u} [CommRing Skein] [QCollatz Skein
 
 /-- **`reaches_cycle` ⇒ observed output `→` the trivial invariant.** If the
     observation map assigns the fundamental cycle the unknot value `u`
-    (`obs attractor = u`, e.g. the trivial Jones polynomial `tr_M = 1`), then
+    (`obs attractor = u`, e.g. the trivial skein trace `tr_M = 1`), then
     every positive braid-computation in the domain halts to the observed output
     `u`. This is the observational reading of the conjecture: *the halting output
     is the trivial invariant.* -/
@@ -570,5 +582,47 @@ theorem reaches_cycle_observed_unknot {Skein : Type u} [CommRing Skein]
     ∃ k : ℕ, obs (QCollatz.C^[k] P) = u := by
   obtain ⟨k, hk⟩ := reaches_cycle_observed obs P hP
   exact ⟨k, hk.trans hu⟩
+
+/-- **Affine (`A ≠ 1`) cycle exclusion via evaluation gap (`qcz6`).**
+    For any ring homomorphism `φ : Skein →+* ℤ`, if an affine periodic-orbit
+    equation `A * P0 - P0 = B` has `φ B ≠ 0` and `|φ B| < |φ A - 1|` in `ℤ`,
+    then no `P0 : Skein` can satisfy `A * P0 - P0 = B`. -/
+theorem affine_cycle_excluded_of_eval_gap {Skein : Type u} [CommRing Skein]
+    (φ : Skein →+* ℤ) (A B P0 : Skein)
+    (hB : φ B ≠ 0) (hgap : (φ B).natAbs < (φ A - 1).natAbs) :
+    A * P0 - P0 ≠ B := by
+  intro hEq
+  have hfac : (A - 1) * P0 = B := by linear_combination hEq
+  have hmap : (φ A - 1) * φ P0 = φ B := by
+    have h1 := congrArg φ hfac
+    simpa [map_mul, map_sub, map_one] using h1
+  have hdvd : (φ A - 1) ∣ φ B := ⟨φ P0, hmap.symm⟩
+  have hle : (φ A - 1).natAbs ≤ (φ B).natAbs := Int.natAbs_le_of_dvd_ne_zero hdvd hB
+  omega
+
+/-- **Quantitative `reaches_cycle` step bound from a Lyapunov measure (`qcz6`).**
+    If `S : Skein → Prop` is forward-invariant under `step : Skein → Skein` and
+    `μ : Skein → ℕ` strictly decreases on `S` away from `attractor`, then every
+    `P` in `S` reaches `attractor` within at most `μ P` steps. -/
+theorem reaches_attractor_within_steps_of_lyapunov {Skein : Type u}
+    (step : Skein → Skein) (attractor : Skein) (S : Skein → Prop) (μ : Skein → ℕ)
+    (hfwd : ∀ Q, S Q → Q ≠ attractor → S (step Q))
+    (hdesc : ∀ Q, S Q → Q ≠ attractor → μ (step Q) < μ Q) :
+    ∀ n P, S P → μ P ≤ n → ∃ k ≤ n, step^[k] P = attractor
+  | 0, P, hS, hle => by
+      by_cases hP : P = attractor
+      · exact ⟨0, le_refl 0, hP⟩
+      · have hlt := hdesc P hS hP
+        omega
+  | n + 1, P, hS, hle => by
+      by_cases hP : P = attractor
+      · exact ⟨0, Nat.zero_le (n + 1), hP⟩
+      · have hS' : S (step P) := hfwd P hS hP
+        have hlt : μ (step P) < μ P := hdesc P hS hP
+        obtain ⟨k, hk, heq⟩ :=
+          reaches_attractor_within_steps_of_lyapunov step attractor S μ hfwd hdesc n (step P) hS' (by omega)
+        refine ⟨k + 1, by omega, ?_⟩
+        rw [Function.iterate_succ_apply]
+        exact heq
 
 end QOU.AppendixSurreals

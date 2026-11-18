@@ -387,4 +387,55 @@ theorem regular_iff_bkm {R : Type*} [CommRing R] [ctx : QOU.FluidDynamics.QBKMCo
     noBlowUp ↔ boundedFiltration :=
   hsmooth.symm.trans (QOU.FluidDynamics.q_bkm_criterion.trans hvort)
 
+/-! ### Front C (`qcz20`): `H₁(Σ₄)` non-algebraic residue carrier on `SkeinObservationSystem` -/
+
+/-- Genus of Bring's curve `Σ₄` (`g = 4`). -/
+def bringGenus : ℕ := 4
+
+/-- First Betti number `rank H₁(Σ₄; ℤ) = 2g = 8` of Bring's surface `Σ₄`. -/
+def bringH1Betti : ℕ := 2 * bringGenus
+
+/-- Topological Euler characteristic `χ(Σ₄) = 2 - 2g = -6` of Bring's surface `Σ₄`. -/
+def bringEulerChar : ℤ := 2 - (bringH1Betti : ℤ)
+
+/-- Bring's surface has first Betti number `8` and Euler characteristic `-6`. -/
+theorem bringH1Betti_and_eulerChar :
+    bringH1Betti = 8 ∧ bringEulerChar = -6 := by
+  have hb : bringH1Betti = 8 := rfl
+  have hc : bringEulerChar = -6 := rfl
+  exact ⟨hb, hc⟩
+
+/-- **Front C (`qcz20`): `H₁(Σ₄)` non-algebraic residue carrier.**
+    Packages an `8`-cycle homology residue map `h1Residue : Skein → Fin 8 → ℤ`
+    together with a polynomial/algebraic shadow `algShadow : Skein → W` on a
+    `SkeinObservationSystem`, plus the non-algebraicity separation witness that
+    two states `x, y` have identical algebraic shadow `algShadow x = algShadow y`
+    while differing on a homology cycle `c : Fin 8`. No unconditional instance is
+    declared (§3b-tax open gate). -/
+structure BringH1ResidueCarrier (Skein V W : Type*) where
+  /-- Underlying skein observation system. -/
+  sys : SkeinObservationSystem Skein V
+  /-- `H₁(Σ₄; ℤ) ≅ ℤ⁸` topological residue map. -/
+  h1Residue : Skein → Fin 8 → ℤ
+  /-- Polynomial/algebraic shadow map. -/
+  algShadow : Skein → W
+  /-- Two states indistinguishable by the algebraic shadow but separated by `H₁(Σ₄; ℤ)`. -/
+  separating_pair : ∃ (x y : Skein) (c : Fin 8),
+    algShadow x = algShadow y ∧ h1Residue x c ≠ h1Residue y c
+
+/-- **No algebraic-shadow decoder can compute the `H₁(Σ₄)` residue (`qcz20`).**
+    Given any `C : BringH1ResidueCarrier Skein V W`, no post-processing map
+    `decoder : W → (Fin 8 → ℤ)` can satisfy `decoder (C.algShadow z) = C.h1Residue z`
+    for all `z : Skein`. -/
+theorem no_algebraic_decoder_for_bringH1Residue {Skein V W : Type*}
+    (C : BringH1ResidueCarrier Skein V W)
+    (decoder : W → (Fin 8 → ℤ)) :
+    ¬ (∀ z : Skein, decoder (C.algShadow z) = C.h1Residue z) := by
+  intro hall
+  obtain ⟨x, y, c, hshadow, hne⟩ := C.separating_pair
+  have hx := congrFun (hall x) c
+  have hy := congrFun (hall y) c
+  rw [hshadow] at hx
+  exact hne (hx.symm.trans hy)
+
 end QOU.Information

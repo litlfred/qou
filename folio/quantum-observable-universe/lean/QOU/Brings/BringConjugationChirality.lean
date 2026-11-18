@@ -166,4 +166,58 @@ theorem letterSign_ne_conj {X : Type*} [M : ChiralityMatching X] (x : X) :
   rw [M.letterSign_conj]
   cases M.letterSign x <;> decide
 
+/-! ## Part 4 — Universal triangulation B1 (`qou-oqpc`): `Δ(2,4,5)` traces in `ℤ[φ]` -/
+
+section TriangleGroup245Traces
+
+variable {R : Type*} [CommRing R]
+
+/-- The golden-ratio quadratic relation `φ² = φ + 1` generating the ring of integers
+    `ℤ[φ]` of `ℚ(√5)` for the `(2,4,5)` triangle-group trace field (`qou-oqpc`). -/
+def IsGoldenRatio (φ : R) : Prop := φ ^ 2 = φ + 1
+
+/-- The trace polynomial `κ(x, y, z) = x² + y² + z² - x y z - 2` of a triple of
+    `SL₂` generator traces `(tr x, tr y, tr z)`. -/
+def frickePoly (tx ty tz : R) : R :=
+  tx ^ 2 + ty ^ 2 + tz ^ 2 - tx * ty * tz - 2
+
+/-- Any element `φ` satisfying `IsGoldenRatio φ` (`φ² = φ + 1`) satisfies `(2φ - 1)² = 5`. -/
+theorem golden_discriminant_five {φ : R} (hφ : IsGoldenRatio φ) :
+    (2 * φ - 1) ^ 2 = 5 := by
+  have h : φ ^ 2 = φ + 1 := hφ
+  linear_combination 4 * h
+
+/-- Order-5 `SL₂` trace relation: if `φ² = φ + 1`, then `φ` satisfies the projective
+    order-5 polynomial `t⁴ - 3 t² + 1 = 0`. -/
+theorem projOrder5_of_golden_trace {φ : R} (hφ : IsGoldenRatio φ) :
+    φ ^ 4 - 3 * φ ^ 2 + 1 = 0 := by
+  have h : φ ^ 2 = φ + 1 := hφ
+  linear_combination (φ ^ 2 + φ - 1) * h
+
+/-- Quadratic-conjugate order-5 `SL₂` trace relation: if `φ² = φ + 1`, then the conjugate
+    `1 - φ` also satisfies `IsGoldenRatio (1 - φ)` and `(1 - φ)⁴ - 3 (1 - φ)² + 1 = 0`. -/
+theorem projOrder5_of_conj_golden_trace {φ : R} (hφ : IsGoldenRatio φ) :
+    IsGoldenRatio (1 - φ) ∧ (1 - φ) ^ 4 - 3 * (1 - φ) ^ 2 + 1 = 0 := by
+  have h : φ ^ 2 = φ + 1 := hφ
+  refine ⟨?_, ?_⟩
+  · change (1 - φ) ^ 2 = (1 - φ) + 1
+    linear_combination h
+  · linear_combination (φ ^ 2 - 3 * φ + 1) * h
+
+/-- **Universal triangulation B1 (`qou-oqpc`):** for the `(2,4,5)` triangle group
+    with generator traces `tr(x) = 0` (order 2), `tr(y) = s` with `s² = 2` (order 4),
+    and `tr(z) = φ` with `φ² = φ + 1` (order 5), both the squared order-4 trace `s² = 2`
+    and the commutator trace `frickePoly 0 s φ = φ + 1 = φ²` lie in `ℤ[φ]`. -/
+theorem delta245_fricke_trace_in_Zphi {s φ : R} (hs : s ^ 2 = 2) (hφ : IsGoldenRatio φ) :
+    frickePoly 0 s φ = φ + 1 ∧ frickePoly 0 s φ = φ ^ 2 := by
+  have h : φ ^ 2 = φ + 1 := hφ
+  have hf : frickePoly 0 s φ = (0 : R) ^ 2 + s ^ 2 + φ ^ 2 - 0 * s * φ - 2 := rfl
+  refine ⟨?_, ?_⟩
+  · rw [hf]
+    linear_combination hs + h
+  · rw [hf]
+    linear_combination hs
+
+end TriangleGroup245Traces
+
 end QOU.Brings.ConjugationChirality
