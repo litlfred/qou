@@ -1,83 +1,37 @@
-**Algorithm (Gröbner–Shirshov reduction to Hecke normal form).**
-*Quotient a braid-word $w \in B_n$ by the Hecke relation
-$\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ to produce its canonical
-representative $\mathrm{NF}(w) \in H_n(q)$.*
+**Algorithm (Gröbner–Shirshov reduction to reduced Coxeter normal form).**
+*Reduce an arbitrary braid or affine Hecke word in $B_n$ modulo the quadratic Iwahori–Hecke ideal and Artin braid relations to its unique canonical normal form $\mathrm{NF}(w) = \sum_{u \in S_n} c_u(q)\,T_u \in H_n(q)$ over $\mathbb{Z}[q, q^{-1}]$.*
 
 ### Input
 
-- *Braid word $w \in B_n$ (output of Step 1).*
-- *Substrate parameter $q \in R$ (symbolic or pinned to $q_0$).*
+- *Braid word $w \in B_n$ (from [Step 1](#alg:categorical-action)) or product of affine Hecke letters $\prod_{r=1}^{m} (c_r\,\sigma_{i_r} + d_r)$ with $c_r, d_r \in \mathbb{Z}[q, q^{-1}, \tfrac{1}{2}]$.*
+- *Formal Laurent parameter $q$ with quadratic discriminant $h = q - q^{-1}$.*
 
 ### Output
 
-- *Hecke normal form $\mathrm{NF}(w) = \sum_{i} c_i(q)\, T_{w_i}$ as
-  an $R$-linear combination of basis elements $T_{w_i}$ indexed by
-  permutations $w_i \in S_n$ (the standard $H_n(q)$ basis), with
-  coefficients $c_i(q) \in R[q, q^{-1}]$.*
+- *Canonical normal-form expansion $\mathrm{NF}(w) = \sum_{u \in S_n} c_u(q)\,T_u \in H_n(q)$ indexed by permutations $u \in S_n$ in shortlex-minimal reduced Coxeter expression $T_u = T_{s_{j_1}} \cdots T_{s_{j_{\ell(u)}}}$ ($\ell(u) \le \binom{n}{2}$), with exact Laurent coefficients $c_u(q)$.*
 
 ### Algorithm
 
-```
-1. Initialize NF ← w (read as a formal product of σ_i^{±1}).
-2. Repeat until no rewrite rule applies:
-   a. Apply braid relations σ_iσ_jσ_i = σ_jσ_iσ_j (|i-j| = 1)
-      to canonicalise commuting / braided pairs.
-   b. Apply the Hecke relation σ_i² = (q - q^{-1})σ_i + 1
-      to eliminate self-squares, generating two summands.
-   c. For σ_i^{-1}: rewrite σ_i^{-1} = σ_i − (q − q^{-1}) using
-      the same Hecke quotient.
-3. Collect like terms; output as Σ c_i(q) · T_{w_i}.
-```
+1. **Eliminate inverses:** Replace every negative crossing $\sigma_i^{-1}$ by the affine linear combination $\sigma_i - h \cdot 1$.
+2. **Compress single-generator runs via $2 \times 2$ transfer matrices:** Whenever $m \ge 2$ consecutive affine factors $(c_r\,C + d_r)$ act on the same generator $C = \sigma_i$ ($C^2 = h\,C + 1$), evaluate the $2 \times 2$ matrix product
+   $$
+     \begin{pmatrix} A_m & B_m \\ * & * \end{pmatrix}
+     \;=\;
+     \prod_{r=1}^{m}
+     \begin{pmatrix} c_r h + d_r & c_r \\ c_r & d_r \end{pmatrix},
+   $$
+   replacing the $m$-fold product in one pass by $A_m\,\sigma_i + B_m\cdot 1$. In particular, pure powers satisfy $C^k = a_k(h)\,C + b_k(h)$ with $(a_{k+1}, b_{k+1}) = (h\,a_k + b_k,\; a_k)$ from $(a_0, b_0) = (0, 1)$, and even powers of the bar-fixed achiral crossing $\sigma_i - \tfrac{h}{2}$ collapse to central scalars: $(\sigma_i - \tfrac{h}{2})^2 = \bigl(1 + \tfrac{h^2}{4}\bigr)\cdot 1$.
+3. **Apply Gröbner–Shirshov rewrite rules:** Under shortlex order on $\{s_1 < s_2 < \cdots < s_{n-1}\}$, repeatedly apply:
+   - *Far commutativity:* $T_j T_i \to T_i T_j$ for $j - i \ge 2$;
+   - *Artin braid reduction:* $T_{i+1} T_i T_{i+1} \to T_i T_{i+1} T_i$ (and higher Shirshov overlap words $T_j T_{j-1} \cdots T_i T_j \to T_{j-1} \cdots T_i T_j T_{j-1}$);
+   - *Quadratic Hecke reduction:* $T_i T_u \to h\,T_u + T_{s_i u}$ whenever $\ell(s_i u) < \ell(u)$, and $T_i T_u \to T_{s_i u}$ whenever $\ell(s_i u) > \ell(u)$.
+4. **Collect basis coefficients:** Sum coefficients of identical reduced Coxeter words $T_u$ in $\mathbb{Z}[q, q^{-1}]$ and discard zero terms.
 
-### Correctness conditions
+### Termination and Complexity
 
-*Correctness rests on two upstream definitions.*
+Every rewrite step strictly decreases either the word length or the shortlex rank in a well-founded ordering, guaranteeing finite termination. Compressing an $m$-crossing single-generator run via step 2 requires $O(m)$ ring operations instead of $2^m$ binary-tree splits; full basis reduction in $H_n(q)$ touches at most $|S_n| = n!$ basis elements ($6$ for $n = 3$, $24$ for $n = 4$) and runs in $O(|w|\,n^2\,|\mathrm{supp}|)$ Laurent-ring operations where $|\mathrm{supp}| \le n!$ is the active support size.
 
-1. *[The Hecke normal-form definition](#def:hecke-normal-form) defines
-   $H_n(q)$ as the quotient of the group algebra $R[B_n]$ by the
-   Hecke ideal $\langle \sigma_i^2 - (q-q^{-1})\sigma_i - 1 \rangle$.
-   The standard $T_w$ basis is then well-defined.*
-2. *[The categorical braid-action definition](#def:categorical-action) ensures
-   that the braiding $c_{V,V}$ in $\mathbf{C}$ obeys the Hecke
-   relation (the categorical specialisation that makes $\rho_n$
-   factor through $H_n(q)$).*
+### Mathematical Justification
 
-*The rewriter's confluence is structural. The Diamond Lemma guarantees that any reduction order reaches the same normal form, since the Hecke and braid relations are linear quadratic and mutually compatible.*
-
-### Complexity
-
-*Worst case: exponential in $n$ (the partition count for $H_n(q)$).
-Polynomial in $|w|$ after caching cycle-equivalent words. For
-nucleon-scale knots ($n \leq 9$, $|w| \leq 24$) the reducer
-finishes in milliseconds on the Rust core.*
-
-### Python / Rust API entry point
-
-```python
-# Per-particle Hecke normal forms (the user-facing surface):
-from pyhecke import (
-    build_nucleon_nf, build_atom_nf, build_atom_nf_exact,
-)
-
-nf_proton  = build_nucleon_nf("proton")
-nf_atom    = build_atom_nf(Z=2, N=2)        # ⁴He
-nf_exact   = build_atom_nf_exact(Z=2, N=2)  # symbolic
-```
-
-*The Rust core is at [`tools/hecke-engine/src/gb_nf_reducer.rs`](../../../tools/hecke-engine/src/gb_nf_reducer.rs)
-(canonical implementation, called via the `pyhecke-native` PyO3
-wheel from the builders above).*
-
-### Witness contract
-
-*Canonical witness:
-[`hecke-core-symbolic-migration.witness.json`](../../../computations/hecke-core-symbolic-migration.witness.json).
-Records the input braid, the output basis-decomposition vector,
-the chosen $q$ evaluation, and a hash of the rewriter source for
-reproducibility. Per-particle assemblies are captured in
-`markov-trace-assembly-{proton,neutron,deuteron}.derivation.json`
-(consumed by Step 3).*
-
-### Notes
-
-*The reducer is the **single source** of Hecke normal forms in the pipeline. Every downstream algorithm consumes `NF(w)`, not the raw braid. Treating the normal form as the canonical object makes the subsequent chain $q$-rational.*
+1. **Basis theorem and confluence:** By [the Hecke normal-form definition](#def:hecke-normal-form) and Matsumoto's theorem, $H_n(q)$ is a free $\mathbb{Z}[q, q^{-1}]$-module of rank $n!$ on $\{T_u : u \in S_n\}$. All overlap ambiguities among quadratic and Artin relations resolve by Bergman's Diamond Lemma (equivalently, the Coxeter Gröbner–Shirshov basis of $S_n$), so $\mathrm{NF}(w)$ is independent of reduction order.
+2. **Categorical compatibility:** [The categorical braid-action definition](#def:categorical-action) ensures that $\bar{\rho}_n(w)$ depends only on $\mathrm{NF}(w)$, making $\mathrm{NF}(w)$ the exact algebraic input for trace and representation functionals downstream.

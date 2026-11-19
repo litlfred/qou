@@ -5,12 +5,11 @@ export default prose({
   uses: [
     "prose:pre-archimedean-derivation-chain",
   ],
-  title: "From propositions to compute — the chain map",
+  title: "Canonical evaluation chain: summary map",
   tags: [
     "appendix",
     "algorithms",
     "chain-map",
-    "compute-bridge",
-    "python-api",
+    "canonical-chain",
   ],
 });

@@ -7,8 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "The categorical-coordinate ring $R[i, q^{\\pm 1}]$ of " +
-    "chart-transition data on $\\mathbb{P}_q(V)$",
+    "The categorical-coordinate ring $R[i, q^{\\pm 1}]$ of chart-transition data on $\\mathbb{P}_q(V)$",
   tags: [
     "categorical-coordinate",
     "chart-transition",

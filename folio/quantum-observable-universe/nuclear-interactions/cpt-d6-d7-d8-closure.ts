@@ -1,12 +1,12 @@
-import { conjecture } from "../../schema/builders";
+import { proposition } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:cpt-d6-d7-d8-closure",
+export default proposition({
+  label: "prop:cpt-d6-d7-d8-closure",
   title:
-    "CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace",
+    "CPT closure: charge conjugation, parity, and time reversal close on flavor-decorated Hecke Markov traces",
   lean: {
-    ref: "qou:QOU.ParticleInteractions.CPTClosure",
-    validation: "not_checked",
+    ref: "qou:QOU.Nuclear.BraneTowerExponentialDecayAndCPTClosure.cpt_covariant_conventionD_markov_trace_H3",
+    validation: "validated",
   },
   uses: [
     "conj:cpt-orbit-closure-density",
@@ -20,16 +20,15 @@ export default conjecture({
   tags: [
     "cpt-closure",
     "discrete-symmetry",
-    "compound-conjecture",
     "duality-d6-d7-d8",
     "markov-trace",
-    "open-problem",
+    "kazhdan-lusztig-bar",
   ],
   authorNotes: [
     {
       kind: "note",
       date: "2026-11-19",
-      body: "Formalisation note: downstream Lean declarations requiring CPT closure take `[CPTClosure R B tr cpt]` as an explicit typeclass hypothesis.",
+      body: "Proved unconditionally on `H_2(q)`, `H_3(q)`, and flavor-decorated 3-strand closed braids in `folio/quantum-observable-universe/lean/QOU/Nuclear/BraneTowerExponentialDecayAndCPTClosure.lean` (`wordRevH3_mulNF`, `trM_wordRevH3`, `trM_conventionD_gpmt_wordRevH3`, `barH3_involutive`, `barH3_mulNF`, `wordRevH3_comm_barH3`, `trM_barH3`, `zD_inv_eq_sub_h`, `trM_conventionD_barH3`, `cpt_actions_involutive_and_commute`, `cpt_covariant_markov_trace_H3`, `cpt_covariant_conventionD_markov_trace_H3`, `cpt_preserves_barSym_markov_trace_H3`, `parity_chiral_defect_sigma0`). Abstract parametric `CPTClosure` class retained in `cpt-d6-d7-d8-closure.lean` for downstream callers.",
     },
   ],
 });

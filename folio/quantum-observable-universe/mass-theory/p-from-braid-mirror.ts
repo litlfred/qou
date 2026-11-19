@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:cpt-d6-d7-d8-closure",
+    "prop:cpt-d6-d7-d8-closure",
     "def:bar-involution",
     "conj:cpt-orbit-closure-density",
     "prop:chirality-writhe-ribbon-derivation",

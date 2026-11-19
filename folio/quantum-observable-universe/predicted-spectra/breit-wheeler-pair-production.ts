@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:breit-wheeler-pair-production",
-  title: "Breit--Wheeler pair production (categorical)",
+  title: "Breit--Wheeler pair production",
   tags: [
     "breit-wheeler",
     "pair-production",

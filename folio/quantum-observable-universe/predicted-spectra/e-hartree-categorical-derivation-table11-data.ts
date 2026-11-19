@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:e-hartree-categorical-derivation-table11-data",
-  title: "Data table 11 from conj:e-hartree-categorical-derivation",
+  title: "Candidate $q$-integer expressions in $R$ compared against the dimensionless $H_2$ binding ratio at $q_0$",
   uses: ["conj:e-hartree-categorical-derivation"],
   tags: ["extracted-table"],
 });

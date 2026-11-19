@@ -1,19 +1,16 @@
 **Purpose.**
-This appendix bridges the categorical derivation chain to the executable compute layer that generates every numerical prediction. For each step of the substrate-to-observable chain, this appendix details the algorithm, its justifying propositions, the canonical Python API entry point, and the corresponding witness-JSON record.
+This appendix gives a self-contained mathematical specification of the algorithms that map the categorical data $(\mathbf{C}, A, \tau)$ and the balancing twist parameter $q_0 > 1$ to dimensionless particle mass ratios, electromagnetic and weak decay observables, and nuclear binding energies. Every procedure is stated purely in terms of its algebraic, topological, or variational inputs, its terminating transformation rules, its asymptotic complexity, and the theorems in the main text that establish well-definedness.
 
-**Layered compute stack.**
-The Python API provides a facade over a layered stack:
+**Four arithmetic regimes.**
+Each step of the evaluation chain executes in one of four exact or enclosure-certified regimes:
 
-1. **Layer 1 — Rust core** (`hecke-engine` crate): the Gröbner–Shirshov reducer, Hoefsmit representation, Markov trace, and Clarabel SDP backend.
-2. **Layer 2a — `qou-substrate`** (Python): substrate constant $q_0$, mpmath precision discipline, and the `WitnessBuilder` schema.
-3. **Layer 2b — `pyhecke` / `pyhecke-native`** (Python / PyO3): bindings invoking the Rust core directly.
-4. **Layer 3 — `qou_mass.api`** (Python prediction facade): external-researcher API exposing `predict()`, `compute_tr_M()`, and `canonical_braid()`.
+1. **Exact Laurent and rational algebra over $\mathbb{Z}[q, q^{-1}]$ and $\mathbb{Q}(q)$.** Braid-group actions, Gröbner–Shirshov normal-form reduction, $2 \times 2$ Hecke transfer-matrix recurrences, Specht characters, Convention-D Markov traces ($z_D = q^3/(q^2 + 1)$), and Geer–Patureau-Mirand–Turaev (GPMT) modified-dimension renormalizations are evaluated without rounding in polynomial or rational function rings.
+2. **Exact combinatorial and simplicial topology over $\mathbb{Z}$.** Standard Young tableau dimensions, content sums, 3D compact-ball triangulations $(f_0, f_1, f_2, f_3)$ satisfying Dehn–Sommerville elimination, and $(2j + 1)$ spin–orbit subshell capacities are computed in exact integer arithmetic.
+3. **Convex primal–dual conic optimization.** Confinement operator selection solves a primal–dual linear or semidefinite program over the Frobenius Gram cone $G_{ij} = \mathrm{tr}_M(b_i b_j) \succeq 0$, recovering both the minimal-trace primal state $x^*$ and the active dual shadow-price support $\{i : y_i^* > 0\}$.
+4. **Arbitrary-precision real ball evaluation ($\geq 80$ decimal digits).** Transcendental constants such as the figure-eight hyperbolic volume $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$, the Form-B Bring–Schwinger cubic fixed-point coupling $\alpha_{\mathrm{EM}}^{\mathrm{corr}}(q)$, and partial products of the Convention-D $\beta$-decay generating function $\mathcal{G}_D(u; q)$ are evaluated in arbitrary-precision interval arithmetic with explicit analytic truncation bounds.
 
-**Conventions.**
-*Precision* reports in two legs: L1 (internal compute agreement, target $10^{-15}$) and L2 (per-observable absolute accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$). *Status flags* mirror the canonical derivation table: *proved* (unconditional theorem), *derived* (categorical, no fit), *conditional* (conjecture-conditional), *open* (open question, no derivation yet). Witness filenames refer to the canonical numerical certificates.
+**Epistemic classification.**
+Each step carries one of four structural status designations matching the main derivation tables: *proved* (unconditional theorem of the categorical axioms), *derived* (parameter-free consequence of the categorical chain at $(q_0, m_e)$), *conditional* (resting on an explicitly stated geometric or representation-theoretic hypothesis), or *open* (where a specific coarse-graining or deformation constant awaits first-principles derivation).
 
-**Reading order.**
-A chain-map table maps each step to its propositions and API call. Subsequent sections expand each step into a per-algorithm block in dependency order. Sidecar algorithms appear after the eleven canonical steps.
-
-**Maintenance contract.**
-This appendix is the bridge between the theoretical propositions and the executable compute. A proposition (Steps 9a, 9b, 10, 11), its canonical script, its witness JSON and the algorithm block below are kept in step with one another, so that the algorithm stated here is the algorithm that was run.
+**Organisation.**
+The summary table in the next section records the input-to-output signature and arithmetic complexity of all twelve canonical steps, followed by individual algorithm specifications in dependency order and five auxiliary blocks covering per-partition Springer/Donaldson–Thomas weights, three-body/four-body correlation bounds, mirror-nucleus baseline cancellation, conditional chiral isovector residues, and all-order Convention-D cumulant extraction.

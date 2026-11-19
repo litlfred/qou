@@ -1,4 +1,4 @@
-The Frobenius form $\lambda \colon A \to \mathbf{1}$ of the substrate algebra $A$ induces a quasi-isomorphism between $A$ and its rigid dualizing complex $\omega_A^\bullet$:
+The Frobenius form $\lambda \colon A \to \mathbf{1}$ of the Frobenius--Hopf aether $A$ induces a quasi-isomorphism between $A$ and its rigid dualizing complex $\omega_A^\bullet$:
 
 $$
 A \xrightarrow{ \sim } \omega_A^\bullet \quad\text{in } D(A).

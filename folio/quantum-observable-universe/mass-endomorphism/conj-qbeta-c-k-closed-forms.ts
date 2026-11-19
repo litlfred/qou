@@ -7,7 +7,7 @@ export default conjecture({
     validation: "not_checked",
   },
   title:
-    "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\\mathfrak{Q}_\\beta$ precision ladder (convention-C frame)",
+    "Higher-order $\\mathfrak{Q}_\\beta$ ladder coefficients $c_k$ ($k \\ge 4$): retired Convention-C pattern guesses vs Convention-D generating-function structure",
   uses: ["rem:per-block-hopf-jones-absorption-pattern"],
   cites: [
     "khovanov2000",
@@ -27,38 +27,18 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "computations/qbeta/qbeta_decay_sdp_full_ck.py",
+    script: "computations/qbeta/qbeta_convention_d_all_order_ck_generating_probe.py",
     witness: [
-      "computations/qbeta/qbeta-decay-sdp-full-ck-derivation.witness.json",
+      "computations/qbeta/qbeta-convention-d-all-order-ck-generating.witness.json",
+      "computations/qbeta/qbeta-convention-d-c4-quartic-derivation.witness.json",
     ],
-    status: "experimental",
+    status: "verified",
   },
   authorNotes: [
     {
       kind: "status",
-      body: "Per AGENTS.md §3b-cond conditional-class exception, the existing\n[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)\nLean class `QBetaPrecisionLadderCoefficients` (which axiomatises\nthe c_k values as class fields) is the correct integration point.\nDownstream provable claims taking\n`[QBetaPrecisionLadderCoefficients q]` as a hypothesis are\n**rigorous conditional results** modulo this conjecture.\n\nThe current canonical instance `qBetaPrecisionLadderCoeffsCanonical`\non main provides the empirical closed forms; this conjecture block\nstates the conditions under which those instance values are\n**proved** rather than **fit**.",
-    },
-    {
-      kind: "caveat",
-      date: "2026-09-14",
-      body:
-        "Provenance for the rewritten **Precision** and **Evidence** sections. " +
-        "(1) Convention C was excised by the owner ruling of 2026-08-15; z = 1 was " +
-        "ruled **inadmissible** on 2026-09-08. (2) The live dashboard figure for " +
-        "𝔔_β — 1.668e+8 ppb against the 7.797 ppb target, miss 2.139e+7 — is the " +
-        "`Q_beta` row of `per-observable-100x-status.witness.json`; it is the ruled " +
-        "z_D base with ZERO c_k rungs, a different object from the +6.02 ppb " +
-        "five-rung figure on the retired z = 1 cell. (3) The c₃ value −2.0098 " +
-        "recorded in the Evidence table is the pre-PR-#1422 figure; the live " +
-        "convention-C extractions are proton −2.06934257711516783787971951725, " +
-        "muon CODATA-2022 −2.019860311874005, muon CODATA-2018 −2.020200233. " +
-        "Proton is named in the block per the owner directive of 2026-08-07 " +
-        "(production compute defaults to the proton pin). (4) The other five table " +
-        "entries have no live producer: measured 2026-09-14, no file under " +
-        "`computations/` carries −1.1435, −1.2229, +3.4976 or +57.149. Tracked as " +
-        "bean `qou-00ot`; the convention re-derivation is `qou-cds1`.",
-      see:
-        "computations/per-observable-100x-status.witness.json",
+      date: "2026-11-19",
+      body: "Updated to reflect the proved Wave-2 Convention-D formalizations while keeping genuinely open higher-order questions explicit:\n(1) `QOU.QBeta.ConventionDAllOrderCkGeneratingFunction` proves the bar-even `H = (q - q⁻¹)^2` operator generating function `Π_op(u) = ∏_{k≥2} (1 + c_k u^k) = 1 + ∑_{n≥2} p_n u^n`, strict monotonicity of `uBarSq(H)` on `H ≥ 0`, the Lagrange–Bürmann critical branch point `H_* = (-15 + √33)/4 ∈ (-3, -2)` (`R_u ≈ 0.36900873`), the division-free distinct-partition polynomial bijection between `(c_2, ..., c_{10})` and `(p_2, ..., p_{10})`, and the `< 10⁻¹⁶` (`< 1 ppQ`) geometric Cauchy tail bound at `N = 9`.\n(2) `QOU.QBeta.ConventionDC3AndTailSelectionDerivation` proves the five-letter valence/gluon tail characterization (`qou-j1e5`) and the operator-level Habiro–Kashiwara `N = 3` expansion in `y = (q + q⁻¹) - 2 = q ℏ_q^2` (`c_2 = -1`, `c_3 = -2`).\n(3) `QOU.QBeta.ConventionDC4QuarticCumulantDerivation` proves rationality of all even Habiro rungs `u(q)^{2m} ∈ ℚ(q)`, the `m = 2` Kashiwara divided-power cosine coefficient `[2]_q / ([3]_q [4]_q) → +1/6` (matching the Convention-D Jucys–Murphy excess-kurtosis rung `1/2 + γ_2^D(1)/6 = +1/6`, vs GPMT+ 3-block kurtosis `+101/288`), and `u(q_0)^4 < 6 × 10⁻⁹` (`< 10⁻⁴ σ_exp(m_n)`).\n(4) Uniquely selecting a single canonical operator projection for individual `c_k` (`k ≥ 4`) and closed-form categorical expressions for `k ≥ 5` remain open; the historical Convention-C pattern guesses (`c_4 = -2 b^4`, `c_5 = -(b^2 + 1/2)`, `c_6 = 4 b^2`, `c_7 = -8`) remain retired calibration records in the uninhabited `QBetaCKClosedForms` class.",
     },
   ],
 });

@@ -32,7 +32,7 @@ export default conjecture({
     validation: "validated",
   },
   uses: [
-    "conj:cpt-d6-d7-d8-closure",
+    "prop:cpt-d6-d7-d8-closure",
     "def:bar-involution",
     "conj:cpt-orbit-closure-density",
     "thm:jones-markov-trace",

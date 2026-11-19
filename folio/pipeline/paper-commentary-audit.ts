@@ -50,13 +50,20 @@
  *       (`quantum-universes`), or forward `](#label)` cross-references in
  *       Chapters 1–2 whose target block sits later in monograph reading order.
  *
+ *   commentary-title-placeholder  block `.ts` manifest `title` or `caption`
+ *       carrying raw label prefixes (`rem:…`, `def:…`, `prop:…`, `thm:…`,
+ *       `lem:…`, `cor:…`, `conj:…`, `alg:…`, `ex:…`, `sec:…`, `ch:…`,
+ *       `app:…`, `tbl:…`, `fig:…`), mechanical table-extraction placeholders
+ *       (`Data table …`, `Table N from …`), or truncated titles ending in
+ *       dangling articles/prepositions (`… is a`, `… from`, `… the`, etc.).
+ *
  *   commentary-open-status     work-status speech about an open item
  *       ("remains open", "not discharged here", "pending … infrastructure",
  *       "is not claimed here"). EXCEPTION (owner ruling 2026-10-11): an open
  *       conjecture may carry ONE brief scholarly status/routes remark (up to
  *       BRIEF_STATUS_MAX sentences).
  *
- *   bun run folio/pipeline/paper-commentary-audit.ts [root ...] [--json] [--quiet] [--no-lean-ident] [--no-reading-order]
+ *   bun run folio/pipeline/paper-commentary-audit.ts [root ...] [--json] [--quiet] [--no-lean-ident] [--no-reading-order] [--no-title-placeholder]
  *
  * Exit 1 if any block has a non-advisory hit, else 0.
  */
@@ -157,6 +164,49 @@ const WITNESS_REF_RE = /\b[\w-]+\.witness\.json\b|\bwitness-json\b/i;
 const OPEN_STATUS_RE =
   /\bremains?\s+(?:genuinely\s+)?open\b|\bnot\s+discharged\s+here\b|\bpending\s+[\w-]+(?:\s+[\w-]+)?\s+infrastructure\b|\bis\s+not\s+claimed\s+here\b|\bremains?\s+to\s+be\s+(?:proved|shown|discharged)\b|\bopen\s+problem\b/i;
 
+/** Block `.ts` `title:` / `caption:` mechanical placeholder & truncation checks. */
+const TS_TITLE_OR_CAPTION_FIELD_RE =
+  /\b(title|caption):\s*(?:"((?:[^"\\]|\\.)*)"|'((?:[^'\\]|\\.)*)')/g;
+const TITLE_RAW_LABEL_RE =
+  /\b(?:rem|def|prop|thm|lem|cor|conj|alg|ex|sec|ch|app|tbl|fig):[a-zA-Z0-9_-]*/;
+const TITLE_MECH_PLACEHOLDER_RE = /\bData\s+table\b|\bTable\s+\d+\s+from\b/i;
+const TITLE_DANGLING_TAIL_RE =
+  /\s+(?:a|[Aa]n|[Tt]he|[Ff]rom|[Oo]f|[Ii]n|[Tt]o|[Ff]or|[Ww]ith|[Ii]s\s+a)\s*$/;
+
+export function scanTitleOrCaptionValue(
+  field: "title" | "caption",
+  val: string,
+  lineNo = 1,
+): CommentaryHit[] {
+  if (!val) return [];
+  const hits: CommentaryHit[] = [];
+  const rawLabel = val.match(TITLE_RAW_LABEL_RE);
+  if (rawLabel) {
+    hits.push({
+      criterion: "commentary-title-placeholder",
+      line: lineNo,
+      text: `${field}-raw-label (${rawLabel[0]}): "${val.slice(0, 140)}"`,
+    });
+  }
+  const mech = val.match(TITLE_MECH_PLACEHOLDER_RE);
+  if (mech) {
+    hits.push({
+      criterion: "commentary-title-placeholder",
+      line: lineNo,
+      text: `${field}-mechanical-placeholder (${mech[0]}): "${val.slice(0, 140)}"`,
+    });
+  }
+  const tail = val.match(TITLE_DANGLING_TAIL_RE);
+  if (tail) {
+    hits.push({
+      criterion: "commentary-title-placeholder",
+      line: lineNo,
+      text: `${field}-dangling-tail ("${tail[0].trim()}"): "${val.slice(0, 140)}"`,
+    });
+  }
+  return hits;
+}
+
 interface CleanedLine {
   /** Raw line with fences/display-math blanked, link URLs & inline math stripped, backticks preserved. */
   withBackticks: string;
@@ -223,6 +273,14 @@ export interface ReadingOrderIndex {
 export interface BlockCtx {
   /** block kind from the .ts manifest, if known */
   kind?: string;
+  /** block title from the .ts manifest, if present */
+  title?: string;
+  /** 1-based line number of `title:` in the .ts manifest */
+  titleLine?: number;
+  /** block caption from the .ts manifest, if present */
+  caption?: string;
+  /** 1-based line number of `caption:` in the .ts manifest */
+  captionLine?: number;
   /** true when the block interprets / uses a `conj:` label */
   conjectureContext?: boolean;
   /** chapter directory name (e.g. `quantum-universes`) */
@@ -235,6 +293,8 @@ export interface BlockCtx {
   skipLeanIdent?: boolean;
   /** disable Class L4 reading-order checks */
   skipReadingOrder?: boolean;
+  /** disable block title/caption placeholder checks */
+  skipTitlePlaceholder?: boolean;
 }
 
 export function scanCommentary(src: string, ctx: BlockCtx = {}): CommentaryHit[] {
@@ -243,6 +303,15 @@ export function scanCommentary(src: string, ctx: BlockCtx = {}): CommentaryHit[]
   const openHits: CommentaryHit[] = [];
   const isAuthorsNote =
     ctx.chapter === "introduction" && ctx.blockName === "authors-note";
+
+  if (!ctx.skipTitlePlaceholder) {
+    if (ctx.title) {
+      hits.push(...scanTitleOrCaptionValue("title", ctx.title, ctx.titleLine ?? 1));
+    }
+    if (ctx.caption) {
+      hits.push(...scanTitleOrCaptionValue("caption", ctx.caption, ctx.captionLine ?? 1));
+    }
+  }
 
   prepared.forEach((entry, i) => {
     const lineNo = i + 1;
@@ -440,7 +509,11 @@ function getMonographOrder(paperDir: string): MonographOrderCache | null {
 
 function blockCtx(
   mdPath: string,
-  opts: { skipLeanIdent?: boolean; skipReadingOrder?: boolean } = {},
+  opts: {
+    skipLeanIdent?: boolean;
+    skipReadingOrder?: boolean;
+    skipTitlePlaceholder?: boolean;
+  } = {},
 ): BlockCtx {
   const absMd = resolve(mdPath);
   const chapter = basename(dirname(absMd));
@@ -450,6 +523,10 @@ function blockCtx(
 
   const tsPath = absMd.replace(/\.md$/, ".ts");
   let kind: string | undefined;
+  let title: string | undefined;
+  let titleLine: number | undefined;
+  let caption: string | undefined;
+  let captionLine: number | undefined;
   let conjectureContext = false;
   if (existsSync(tsPath)) {
     const ts = readFileSync(tsPath, "utf8");
@@ -459,10 +536,26 @@ function blockCtx(
     const interp = ts.match(/interprets:\s*"([^"]+)"/)?.[1] ?? "";
     const label = ts.match(/label:\s*"([^"]+)"/)?.[1] ?? "";
     conjectureContext = interp.startsWith("conj:") || label.startsWith("conj:");
+    for (const m of ts.matchAll(TS_TITLE_OR_CAPTION_FIELD_RE)) {
+      const fld = m[1];
+      const val = m[2] ?? m[3] ?? "";
+      const ln = ts.slice(0, m.index ?? 0).split("\n").length;
+      if (fld === "title" && title === undefined) {
+        title = val;
+        titleLine = ln;
+      } else if (fld === "caption" && caption === undefined) {
+        caption = val;
+        captionLine = ln;
+      }
+    }
   }
 
   return {
     kind,
+    title,
+    titleLine,
+    caption,
+    captionLine,
     conjectureContext,
     chapter,
     blockName: basename(absMd, ".md"),
@@ -472,6 +565,7 @@ function blockCtx(
         : undefined,
     skipLeanIdent: opts.skipLeanIdent,
     skipReadingOrder: opts.skipReadingOrder,
+    skipTitlePlaceholder: opts.skipTitlePlaceholder,
   };
 }
 
@@ -510,6 +604,7 @@ if (import.meta.main) {
   const quiet = args.includes("--quiet");
   const skipLeanIdent = args.includes("--no-lean-ident");
   const skipReadingOrder = args.includes("--no-reading-order");
+  const skipTitlePlaceholder = args.includes("--no-title-placeholder");
   const roots = args.filter((a) => !a.startsWith("--"));
   if (roots.length === 0) roots.push("folio/quantum-observable-universe");
 
@@ -523,7 +618,7 @@ if (import.meta.main) {
   for (const f of files) {
     const hits = scanCommentary(
       readFileSync(f, "utf8"),
-      blockCtx(f, { skipLeanIdent, skipReadingOrder }),
+      blockCtx(f, { skipLeanIdent, skipReadingOrder, skipTitlePlaceholder }),
     );
     const nonAdvisory = hits.filter((h) => !h.advisory);
     if (nonAdvisory.length > 0) failing++;

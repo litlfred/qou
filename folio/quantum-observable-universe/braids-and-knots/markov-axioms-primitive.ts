@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:markov-axioms-primitive",
   title:
-    "Primitive Markov-trace axioms (M1–M4 from Jones 1985 / Wenzl 1988) in Lean; discharges the `MarkovDisjointStabilisation` class for `prop:categorical-chain-convergence-mechanisms`",
+    "Primitive Markov-trace axioms (M1–M4 from Jones 1985 and Wenzl 1988) and disjoint-product stabilisation",
   interprets: "prop:markov-trace-frobenius-selection",
   uses: ["prop:categorical-chain-convergence-mechanisms"],
   cites: ["jones1985", "wenzl1988"],

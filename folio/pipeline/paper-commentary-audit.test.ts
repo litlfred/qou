@@ -210,3 +210,50 @@ describe("open-conjecture brief-status exception", () => {
     expect(crit(long, { kind: "conjecture" })).toContain("commentary-open-status");
   });
 });
+
+describe("block title and caption mechanical placeholder & truncation checks", () => {
+  it("flags raw label prefixes and mechanical table-extraction placeholders in title or caption", () => {
+    expect(
+      crit("Clean body prose.", {
+        title: "Data table 2 from rem:linking-relations-table",
+      }),
+    ).toContain("commentary-title-placeholder");
+    expect(
+      crit("Clean body prose.", {
+        title: "Table 3 from def:frobenius-hopf-substrate",
+      }),
+    ).toContain("commentary-title-placeholder");
+    expect(
+      crit("Clean body prose.", {
+        caption: "Summary of prop:coulomb-strong-ratio-q-rational values",
+      }),
+    ).toContain("commentary-title-placeholder");
+  });
+
+  it("flags truncated titles or captions ending in dangling articles or prepositions", () => {
+    expect(
+      crit("Clean body prose.", {
+        title: "Data table 1 from ",
+      }),
+    ).toContain("commentary-title-placeholder");
+    expect(
+      crit("Clean body prose.", {
+        caption: "Representative elements spanning the periodic table, comparing the ",
+      }),
+    ).toContain("commentary-title-placeholder");
+    expect(
+      crit("Clean body prose.", {
+        title: "The q-difference kernel R is a ",
+      }),
+    ).toContain("commentary-title-placeholder");
+  });
+
+  it("passes clean scholarly titles and captions", () => {
+    expect(
+      crit("Clean body prose.", {
+        title: "Linking relations across the two-strand torus family",
+        caption: "Evaluated on the unframed closure over a commutative ring.",
+      }),
+    ).toEqual([]);
+  });
+});

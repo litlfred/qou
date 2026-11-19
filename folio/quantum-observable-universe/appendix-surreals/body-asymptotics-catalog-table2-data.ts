@@ -1,2 +1,2 @@
 import { table } from "../../schema/builders";
-export default table({ label: "tbl:body-asymptotics-catalog-table2-data", title: "Table 2 from rem:body-asymptotics-catalog", uses: ["rem:body-asymptotics-catalog"], tags: ["extracted-table"] });
+export default table({ label: "tbl:body-asymptotics-catalog-table2-data", title: "Navier--Stokes jet blow-up asymptotics and their surreal $\\mathrm{ord}_\\omega$ valuation forms", uses: ["rem:body-asymptotics-catalog"], tags: ["extracted-table"] });

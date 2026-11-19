@@ -1,4 +1,4 @@
-The **electron** corresponds to the trefoil knot $T_{2,3}$ in the lepton sector.
+The **electron** is the positive trefoil closure $T_{2,3} = \widehat{\sigma_1^3}$ in the lepton sector:
 
 $$
   e^- =  T_{2,3} \qquad \text{(trefoil, solid ●)}

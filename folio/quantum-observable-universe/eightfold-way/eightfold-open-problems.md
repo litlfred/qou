@@ -17,16 +17,17 @@ the list cannot silently break the pointers.
 | Quantum Schur–Weyl duality $\mathcal{U}_q(\mathfrak{gl}_N) \leftrightarrow H_n(q)$ | standard \cite{jimbo1986}; the duality itself is cited, only its row-cap consequence is established here | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; decuplet dimension $\binom{5}{3} = 10$; weight tables | standard $\mathrm{SU}(3)$ representation theory, **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
 | $N = 2$ cannot host the eightfold-way decomposition | **standard**, with an explicit *arithmetic* instance: defining $\dim V_{(1^3)} := \binom{N}{3}$ yields $\binom{N}{3} = 0 \iff N < 3$. The hook-content formula and the row cap $\ell(\lambda) \le N$ are cited rather than derived here — same caveat as the Weyl-invariance separation | [Schur–Weyl](#prop:schur-weyl-eightfold) |
-| $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap. The *obstruction* is proved; the *construction* is missing | item *The $N = 3$ problem* |
+| Geer--Patureau-Mirand--Turaev modified trace ($d_{\mathrm{mod}}(1,1,1) \neq 0$) on $H_3(q)$ | **proved** on the Hecke factor: restores the antisymmetric three-strand $S_3$ sector $S^{(1,1,1)}$ (baryon singlet, nuclear three-body cumulants, and axial coupling $g_A$) that bare Convention D projects out ($y_{(1^3)}(z_D) = 0$), while leaving the $\mathfrak{sl}_2$ single-fibre row cap $\ell(\lambda) \le \dim V = 2$ ($\dim \Lambda^2 V = 1$) intact | [Schur–Weyl](#prop:schur-weyl-eightfold), item *The $N = 3$ problem* |
+| $\dim V = N = 3$ for the flavour fundamental | **open**: single-fibre construction supplies $\dim V = 2$ ($\dim \Lambda^2 V = 1$, $\mathfrak{sl}_2$ Schur--Weyl duality); no choice of $q$ raises the row cap. Rank-$2$ colour $\mathrm{SU}(3)_{\mathrm{c}}$, flavour $\mathrm{SU}(3)_{\mathrm{f}}$ octets/decuplets, weak hypercharge $\mathrm{U}(1)_Y$, and CKM/PMNS Yukawa parameters await a multi-fibre or rank-$2$ HOMFLY-PT $(V_2 \oplus V_3)$ extension | item *The $N = 3$ problem* |
 | No object of the single-fibre category reaches $\dim W = 3$ through the $\mathrm{Sym}^2$ gate | **proved**, and at *object* level rather than only for irreducible summands: the Frobenius--Schur count forces a passing $W$ to be a sum of pairwise *distinct* even-dimensional irreps, so $\dim W$ is even, and $3$ is odd | item *The $N = 3$ problem* |
 | Inequivalent fibre functors of the single-fibre category | **standard** \cite{bichon2003}: they exist at every dimension $n \ge 2$ and are real at $q_0$; and **proved** that none of them supplies a one-dimensional summand of $V^{\otimes 3}$ --- the spin-$0$ object is absent by Clebsch--Gordan parity, so the fusion rules, which every fibre functor preserves, exclude $\mathbf{10} \oplus \mathbf{8} \oplus \mathbf{8} \oplus \mathbf{1}$ at every $n$ | item *The $N = 3$ problem* |
 | Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters | [flavour charges](#rem:flavor-charge-assignments) |
 | Hypercharge $Y$ | **open**: writhe map falsified ($p$, $n$ share $Y = +1$, writhes differ); missing a second crossing invariant | item *Hypercharge $Y$* |
 | The baryon octet's weight map is non-injective | **proved**: $\Lambda$ and $\Sigma^0$ share $(2I_3, Y) = (0,0)$, so a weight-only mass formula predicts $m_\Lambda = m_{\Sigma^0}$ and is excluded at $\approx 7\%$ | [baryon octet](#prop:baryon-octet-decomposition) |
-| $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3,\mathbb{F}_2)$, order $168$, irreps $\{1,3,\bar 3,6,7,8\}$ | standard; verified numerically (`psl27_irrep_verification.py`) | [colour from $G_2$](#prop:color-su3-from-g2) |
-| $S_4$ bridge: transitive on local Fano lines | verified numerically (`s4_fano_action.py`) | [colour from $G_2$](#prop:color-su3-from-g2) |
-| The $S_4$ bridge selects the Klein quartic | **refuted**, and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | `s4_genus3_competitor_fermat.py`, `s4_genus3_pencil_infinite_family.py` |
-| Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | `s4_marked_pair_obstruction.py` |
+| $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3,\mathbb{F}_2)$, order $168$, irreps $\{1,3,\bar 3,6,7,8\}$ | standard; verified by exact finite-group character table | [colour from $G_2$](#prop:color-su3-from-g2) |
+| $S_4$ bridge: transitive on local Fano lines | verified by finite-group orbit decomposition on the Fano incidence structure | [colour from $G_2$](#prop:color-su3-from-g2) |
+| The $S_4$ bridge selects the Klein quartic | **refuted**, and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | [colour from $G_2$](#prop:color-su3-from-g2) |
+| Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | [colour from $G_2$](#prop:color-su3-from-g2) |
 | Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition: at dimension three, passing the gate forces a complex-type summand (**proved**), and that the Günaydin--Gürsey triple is complex type is the cited $\mathrm{SU}(3)_{\mathrm{c}}$-irreducibility input, not an internally derived one | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **established**: [definition](#def:octonion-algebra) in [the colour-algebra section](#sec:color-algebra), with $\mathrm{Der}(\mathbb{O}) = \mathfrak{g}_2$ (\cite{baez2002}) under the Baez-convention multiplication | [octonion algebra](#def:octonion-algebra) |
 | Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)_{\mathrm{c}}$) | **open**: continuous Lie-group coset completion beyond the discrete Fano skeleton — infrastructure, not structural | item *Continuous $G_2$ completion* |
@@ -48,16 +49,27 @@ Gell-Mann--Nishijima relation cannot be closed.
    Schur--Weyl duality \cite{jimbo1986}
    ([Proposition](#prop:schur-weyl-eightfold))
    requires the fundamental representation to be $3$-dimensional.  The
-   single-fibre tower has $\dim V = 2$ (the standard single-fibre
+   single-fibre tower has $\dim V = 2$ with exterior square $\dim \Lambda^2 V = 1$
+   (the standard single-fibre
    construction; the Descartes condition $\chi(\mathcal{A}) = -6$ is
-   compatible with but does not uniquely force $N = 2$).  That $N = 2$
-   *cannot* host the decomposition is now proved
+   compatible with but does not uniquely force $N = 2$).  While the
+   Geer--Patureau-Mirand--Turaev modified trace ($d_{\mathrm{mod}}(1,1,1) \neq 0$)
+   on $H_3(q)$ restores the antisymmetric three-strand $S_3$ sector $S^{(1,1,1)}$
+   (baryon singlet, nuclear three-body cumulants, and axial coupling $g_A$) that
+   bare Convention D projects out ($y_{(1^3)}(z_D) = 0$), re-weighting the Hecke
+   trace does not raise the fibre dimension: a single $N = 2$ fundamental strand
+   still realizes only $\mathfrak{sl}_2$ Schur--Weyl duality.  That $N = 2$
+   *cannot* host the $\mathfrak{sl}_3$ decomposition is proved
    (the alternating channel
    $\binom{N}{3}$ vanishes iff $N < 3$, and the decuplet dimension forces
    $N = 3$) --- so the obstruction is settled and only the construction is
    missing.  *Open:* construct a
-   three-dimensional object $W$ in the multi-fibre groupoid whose
-   symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
+   three-dimensional object $W$ in a multi-fibre groupoid or rank-$2$ HOMFLY-PT
+   $(V_2 \oplus V_3)$ extension whose
+   symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet), thereby
+   unlocking rank-$2$ colour $\mathrm{SU}(3)_{\mathrm{c}}$, flavour
+   $\mathrm{SU}(3)_{\mathrm{f}}$ octets and decuplets, weak hypercharge
+   $\mathrm{U}(1)_Y$, and the CKM/PMNS Yukawa mixing parameters.
    The octonion $G_2$ route supplies a colour $\mathrm{SU}(3)_{\mathrm{c}}$ candidate
    that the gate does not exclude --- *not excluded* rather than
    *passes*, since the singlet count $0$ that would make it pass is the
@@ -166,7 +178,7 @@ Gell-Mann--Nishijima relation cannot be closed.
    ([Definition](#def:strand-twist-datum)).
    Battery (exploratory, not wired): of $10{,}000$ helon-style
    assignments, $4$ survive
-   (`strand-twist-y-battery.witness.json`) --- but that ratio
+   --- but that ratio
    carries *no* corroboration, and is not a $2500\!:\!1$ filter.
    By direct algebraic reduction: the spectrum
    battery is exactly $T = 3Q$ (the $-2I_3$ common to candidate and
@@ -182,8 +194,8 @@ Gell-Mann--Nishijima relation cannot be closed.
    A parameter-free repair using the *canonical* ribbon twist
    ($Q = c(\lambda)/3$, $c$ the content sum) was tested and fails: at
    $n = 3$ it gives the integer charges $\{+1,0,-1\}$, and no
-   $n \le 8$ yields both quark charges
-   (`ribbon_twist_charge_quantum_probe.py`); scope-(a) for
+   $n \le 8$ yields both quark charges;
+   scope-(a) for
    that reading only.
    The derivation gap is therefore the entire content: whether the
    twist multisets are forced by the categorical braid words (not

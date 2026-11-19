@@ -5,7 +5,7 @@ Instead $\Phi_n$ forms the global section of the categorical mass
 functor over the rigid :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}$, in
 the strict sense of monoidal-category global sections:
 $\Phi_n \in \mathrm{End}_{\mathbf{C}}(A^{\otimes n})$ is determined
-by its compatibility with the Frobenius-Hopf substrate axioms across
+by its compatibility with the Frobenius–Hopf aether axioms across
 every sub-tensor-factor of $A^{\otimes n}$, not by an additive
 combination of local pieces.
 

@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:type-b-folded-crystal-combinatorics-table-data",
-  title: "Data table from prop:type-b-folded-crystal-combinatorics",
+  title: "Cell-transpose involution and summand-by-summand content cancellation $c(\\lambda) + c(\\lambda^T) = 0$",
   uses: ["prop:type-b-folded-crystal-combinatorics"],
   tags: ["extracted-table"],
   authorNotes: [

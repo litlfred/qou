@@ -4,7 +4,7 @@ The :defterm[$q$-von Mangoldt function]{#q-von-mangoldt-function} is defined ove
 
 $$
 \Lambda_q(\mathfrak{m}) = \begin{cases}
-\dfrac{N(\mathfrak{m})^{\hbar_q} - 1}{\hbar_q} & \text{if } \mathfrak{m} \text{ corresponds to a fundamental defect}, \\[6pt]
+\dfrac{N(\mathfrak{m})^{\hbar_q} - 1}{\hbar_q} & \text{if } \mathfrak{m} \text{ is a fundamental defect}, \\[6pt]
 0 & \text{otherwise}.
 \end{cases}
 $$

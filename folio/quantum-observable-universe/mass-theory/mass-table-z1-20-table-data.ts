@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:mass-table-z1-20-table-data",
-  title: "Data table from rem:mass-table-z1-20",
+  title: "Wedderburn three-invariant atomic mass predictions $\\mathfrak{m}_{\\mathrm{pred}}$ against AME values for $Z = 1$ to $20$",
   uses: ["rem:mass-table-z1-20"],
   computation: {
     engine: "python",

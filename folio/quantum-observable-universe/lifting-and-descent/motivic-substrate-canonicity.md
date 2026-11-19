@@ -6,7 +6,7 @@
 Every algebraic invariant taking values in $\mathbb{R}$, $\mathbb{Q}_p$, or the Habiro ring is the realization at some place $v$ of a single motivic class living in $\widehat{\mathcal{M}}$.
 
 **Relation to existing blocks.**
-- The [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) is the algebraic-place realization. It forms a finite-type structure on $\mathcal{S}_{\mathrm{mot}}$.
+- The [Frobenius–Hopf aether](#def:frobenius-hopf-substrate) is the algebraic-place realization. It forms a finite-type structure on $\mathcal{S}_{\mathrm{mot}}$.
 - The [adelic substrate](#def:adelic-substrate) is the place-decomposition $\mathbb{A} = \mathbb{R} \times \prod_p' \mathbb{Q}_p$ indexing the realization tower. The adelic decomposition of a motivic class is the restricted product $\rho_{\mathrm{tot}}([X]) = (\rho_v([X]))_v$.
 - The [arc space](#def:arc-space) $\mathcal{L}(X)$ provides the measurable space for motivic integration into $\widehat{\mathcal{M}}$, from which the Kontsevich–Denef–Loeser motivic measure \cite{kontsevich1995, denef-loeser2001} is constructed.
 

@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:hydrogen-derived-nf-table2-data",
-  title: "Data table 2 from ex:hydrogen-derived-nf",
+  title: "Decomposition of the hydrogen atomic mass by topological volume and vacuum-drag mechanisms",
   uses: ["ex:hydrogen-derived-nf"],
   tags: ["extracted-table"],
 });

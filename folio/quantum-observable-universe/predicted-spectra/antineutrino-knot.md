@@ -1,4 +1,4 @@
-The **antineutrino** corresponds to the **mirror unknot** $T_{1,0}^{\sigma}$. It serves as the antiparticle of the neutrino.
+The **antineutrino** is the **mirror unknot** $T_{1,0}^{\sigma}$, the antiparticle dual of the neutrino:
 
 $$
   \nu^{\sigma} =  T_{1,0}^{\sigma} \qquad \text{(mirror unknot, dashed circle ⊙)}

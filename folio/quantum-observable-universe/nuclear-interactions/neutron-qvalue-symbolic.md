@@ -43,12 +43,12 @@ $$
 
 Under convention D the sign block $(1^3)$ has trace weight $0$, so $\mathrm{tr}_{z_D}$ sees $\Delta$ only modulo the radical of the trace. $\Delta$ does have a sign-block part: every $\sigma_i$ acts there by $-q^{-1}$, so $\Delta$ acts by $\tfrac{h^2}{2} + \tfrac{h}{q} = \tfrac12(q^2 - q^{-2})$. That part is invisible to $\mathrm{tr}_{z_D}$, and every element with the same image on the surviving blocks gives the same value, so no number depends on the choice of lift.
 
-## Numerical evaluation
+## Numerical evaluation and Convention-D hierarchy
 
-At $q_0 \approx 1.110$ and $m_e \approx 0.511$ MeV:
+At $q_0 \approx 1.110$ and $m_e \approx 0.511$ MeV, the single-wrap bare Convention-D trace evaluates to:
 
 $$
-  \mathfrak{Q}_\beta
+  \mathfrak{Q}_\beta^{z_D,\text{single-wrap}}
   =
   0.4491 \text{ MeV}
   \qquad
@@ -56,7 +56,12 @@ $$
   \quad -42.59\%).
 $$
 
-The $-333.2$ keV miss is reported as it stands. With the order-zero $E_0$ the same trace gives $0.4447$ MeV ($-43.16\%$). The convention-D $c_k$ ladder that would correct this base is not yet derived, and a cosine phase cannot close it, because $\cos\alpha \le 1$ while the base needs a factor above $1$ ([cos-resummation](#prop:q-beta-cos-resummation)).
+With the order-zero $E_0 = m_e/(q_0(q_0-1))$ the same single-wrap trace gives $0.4447$ MeV ($-43.16\%$). Reselecting the nucleon word over the extended $\{V, V^{-1}, L_+, L_-\}$ generator set raises the bare Convention-D trace to $0.6515$ MeV ($-16.72\%$, corresponding to $m_n \approx 939.435$ MeV, $-139$ ppm).
+
+The **all-order Convention-D generating function** $\mathcal{G}_D(u; q)$ and cumulant coefficients $c_2^{(D)} = -1$, $c_3^{(D)}(q) = -\frac{3q^2-1}{2q(q^2+1)}$, and $c_4^{(D)}(q)$ are derived in closed form (converging geometrically with radius $R_u \approx 0.369$), alongside the GPMT-screened axial coupling $g_A(q_0) \approx 1.2690$ ($-0.50\%$ vs.\ PDG). Two structural facts separate the bare trace $\mathrm{tr}_{z_D}(\Delta)$ from the full $0.7823$ MeV decay energy:
+
+1. **Order of the $c_k^{(D)}$ series refinement:** Multiplying a base value by $(1 + c_2^{(D)} u^2 + c_3^{(D)} u^3 + \cdots)$ at $u = b\hbar_q^2 \approx 0.00852$ supplies an $O(10^{-4})$ ($< 0.01\%$) higher-order series refinement, whereas a cosine phase satisfies $\cos\alpha \le 1$ ([cos-resummation](#prop:q-beta-cos-resummation)).
+2. **Unbraided single-wrap $(2,1)$ trace cancellation and GPMT $(1,1,1)$ sign-block closure on the 11-crossing Borromean nucleon words:** On the unbraided single-wrap difference $\Delta = \tfrac{1}{2}h^2\gamma - \tfrac{1}{2}h(\sigma_0 + \sigma_1)$, the two-dimensional Hoefsmit standard representation $(2,1)$ has exact opposite eigenvalues $\pm h/2$, so $\mathrm{tr}_{(2,1)}(\Delta) = 0$ identically while the bare Convention-D trace $\mathrm{tr}_{z_D}$ assigns weight $y_{(1,1,1)}(z_D) = 0$ to the antisymmetric baryon sign block $(1,1,1)$ ($0.4491$ MeV, $-42.59\%$). On the 11-crossing Borromean nucleon normal forms, by contrast, $\chi_{(2,1)}(n - p) < 0$ is non-vanishing and $\chi_{(1,1,1)}(n - p) < 0$ shares the sign of $\chi_{(3)}(n - p) < 0$. Restoring the antisymmetric baryon sign block $(1,1,1)$ via its positive Geer–Patureau-Mirand–Turaev (GPMT) modified quantum dimension $|d_{\mathrm{mod}}(1,1,1)| = \frac{1}{[2]_q[3]_q}$ together with $\mathcal{G}_D(u; q)$ and the connected Borromean $V^3$ QED splitting ($\Delta M_{\mathrm{QED}}^{\mathrm{Bor}} = -0.332$ keV) yields a parameter-free $\mathfrak{Q}_\beta = 0.77065$ MeV ($-1.49\%$; $\Delta m_{np} = 1.28101$ MeV, $-0.95\%$) on the interleaved ordering and $\mathfrak{Q}_\beta = 0.78682$ MeV ($+0.57\%$; $0.78616$ MeV, $+0.49\%$ before $\mathcal{G}_D$; $\Delta m_{np} = 1.29716$ MeV, $+0.30\%$) on the generator-grouped ordering, bracketing CODATA $0.78233$ MeV ($\Delta m_{np} = 1.29333$ MeV) to $\sim 0.5\%\text{--}1.5\%$ with zero fitted parameters (while the Kashiwara $b^2$ Convention-D $N=2$ resummation evaluates to $0.78247$ MeV, $+178$ ppm; $+46.9$ ppm with the connected two-term Borromean $V^3$ QED correction).
 
 ## Retired Form A (historical cross-check only)
 

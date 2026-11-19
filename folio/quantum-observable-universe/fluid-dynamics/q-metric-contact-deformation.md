@@ -1,6 +1,6 @@
 The Cardona–Miranda–Peralta-Salas–Presas \cite{cardona2021} procedure bridges steady Euler flow and contact-Reeb flow through a **conformal change of metric**. Given a divergence-free, non-vanishing Euler field $X$ on $(M^3, g)$, rescaling $X \mapsto X / |X|_g^2$ and factoring the metric maps $X$ to the Reeb vector field of a contact form on $(M^3, \tilde g)$. The dynamical universality derives from the contact structure, not the initial metric.
 
-The QOU executes exactly this operation via the substrate parameter $q$. The [$q$-Navier–Stokes equation](#def:q-navier-stokes) replaces the classical Riemannian inner product with the $q$-deformed Frobenius pairing ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)). This constitutes a one-parameter family of metric adjustments, smoothly modulating between:
+The QOU executes exactly this operation via the substrate parameter $q$. The [$q$-Navier–Stokes equation](#def:q-navier-stokes) replaces the classical Riemannian inner product with the $q$-deformed Frobenius pairing ([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)). This constitutes a one-parameter family of metric adjustments, smoothly modulating between:
 
 - the **full Levi-Civita connection** (the "Euler-side" geometry representing Riemannian fluid flow), and
 - its **Reeb projection** along $\xi_q$ (the "contact-side" geometry isolating pure Reeb flow).

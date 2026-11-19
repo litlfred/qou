@@ -1,63 +1,31 @@
-import { conjecture } from "../../schema/builders";
+import { lemma } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:explicit-central-idempotent",
+export default lemma({
+  label: "lem:explicit-central-idempotent-lagrange",
+  renamedFrom: ["conj:explicit-central-idempotent"],
   title:
-    "The four Murphy–Lagrange cross-checks for $e_\\lambda$ follow from Lagrange interpolation in commuting variables",
+    "Murphy–Lagrange completeness, orthogonality, and transpose pairing from joint-eigenbasis interpolation",
   lean: {
-    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotent.ExplicitCentralIdempotentConjecture",
-    validation: "not_checked",
+    ref: "qou:QOU.MassEndomorphism.MurphyLagrangeCentralIdempotents.shapeCentralEnd_mul",
+    sorryFree: true,
+    validation: "leanok",
   },
   uses: [
     "prop:jucys-murphy-central-elements-qou",
     "prop:hoefsmit-seminormal-form",
   ],
-  cites: [],
+  cites: ["murphy1981", "dipper-james1986", "ram1997"],
   tags: [
     "central-idempotent",
     "murphy-elements",
     "lagrange-interpolation",
     "hecke-algebra",
-    "open-problem",
-    "primary-conjecture",
   ],
   authorNotes: [
     {
-      kind: "refined-framing",
-      date: "2026-09-04",
-      body: "**This replaces an earlier encoding that violated AGENTS.md §3b-cond item 5.**\nUntil 2026-09-04 the class had a single field whose type *was*\n[`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)'s\nconclusion, discharged by a bare projection `exact hi.idempotent lam h` — so\nthe \"conditional theorem\" proved nothing modulo the class. Caught by the\n`--item5` mode of `scripts/conditional-on-class-hypothesis-audit.ts`; the fix\nwas to axiomatise what interpolation actually supplies and let the theorem\ncompose it.",
-    },
-    {
       kind: "note",
-      date: "2026-09-04",
-      body:
-        "Registered to close bean `qou-1bua`. The class " +
-        "`ExplicitCentralIdempotentConjecture` had been declared **only** " +
-        "inside the sibling `.lean` of `prop:explicit-central-idempotent`, " +
-        "with no `conj:` content block anywhere in the corpus. The Lean was " +
-        "honest -- the proposition carries the class as an explicit instance " +
-        "hypothesis (AGENTS.md ss3b-cond item 2) -- but item 4 asks that " +
-        "`uses[]` name the conjecture so the conditional dependency is " +
-        "auditable from the manifest, and there was no label to name. " +
-        "`conjectural-propagation-audit.ts` reads `uses[]`, so the " +
-        "proposition presented as a plain proposition with an EMPTY " +
-        "conjectural cone: the audit could not see the gap, in the opposite " +
-        "direction from the item-2 blindness measured in the same PR. " +
-        "This block supplies the label; the class moved to the library " +
-        "module `QOU.BraidKnot.ExplicitCentralIdempotent` so that both " +
-        "blocks name one declaration rather than two copies (a sibling " +
-        "`.lean` cannot import another sibling). No sibling `.lean` here, " +
-        "per ss0a 'no shadowing stubs' -- the ref resolves to the library " +
-        "declaration. Per ss3b-tax this is a PRIMARY conjecture (its " +
-        "signature binds no other conjecture class) and correctly has NO " +
-        "instance; do not fabricate one. **Re-encoded the same day**: the class " +
-        "first carried a single field equal to the downstream conclusion, " +
-        "discharged by a bare projection -- a ss3b-cond item-5 violation, " +
-        "caught by the --item5 mode of " +
-        "scripts/conditional-on-class-hypothesis-audit.ts. It now carries the " +
-        "interpolation inputs (per-tableau projectors, idempotent and " +
-        "pairwise orthogonal, summing to e_lambda) and the theorem DERIVES " +
-        "idempotency from them.",
+      date: "2026-11-19",
+      body: "Proved unconditionally in `QOU.MassEndomorphism.MurphyLagrangeCentralIdempotents` (`shapeCentralEnd_sum_eq_one`, `shapeCentralEnd_mul`, `shapeCentralEnd_idem`, `qContent_transpose_eq_inv`, `conj_shapeCentralEnd_eq_transpose`, `conj_shapeCentralEnd_self_conjugate`).",
     },
   ],
 });

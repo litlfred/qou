@@ -1,6 +1,6 @@
 In classical analytic number theory, the time variable is the real number $x$, and the fundamental counting function is the logarithmic integral $\mathrm{Li}(x) = \int_2^x \frac{dt}{\ln t}$. Here $\ln t$ converts multiplicative structure into additive structure. Primes are discrete, isolated events scattered along the continuum.
 
-The $q$-deformed Reeb flow modifies this dynamically. The derivation $\xi_q \colon A \to A$ acts on the Frobenius--Hopf substrate $A$ as a continuous dynamical system, generating a flow on the state bundle $\mathcal{S}$ that replaces the classical logarithmic clock with a periodic orbit structure.
+The $q$-deformed Reeb flow modifies this dynamically. The derivation $\xi_q \colon A \to A$ acts on the Frobenius--Hopf aether $A$ as a continuous dynamical system, generating a flow on the state bundle $\mathcal{S}$ that replaces the classical logarithmic clock with a periodic orbit structure.
 
 Under this flow:
 1. Each prime ideal $\mathfrak{m}$ of the coordinate ring $\mathcal{O}_q(\mathcal{B})$ corresponds to a closed orbit of the Reeb flow.

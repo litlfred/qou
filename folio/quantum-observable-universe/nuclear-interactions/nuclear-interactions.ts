@@ -126,6 +126,7 @@ export default chapter({
         "demand-stability",
         "nuclear-operator-regimes",
         "nuclear-operator-regimes-interpretation",
+        "spin-orbit-magic-closures",
         "periodic-table-demand-conjecture",
       ],
     }),

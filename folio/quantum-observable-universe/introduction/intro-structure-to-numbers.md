@@ -43,4 +43,11 @@ algorithm ([derivation chain](#prose:pre-archimedean-derivation-chain)).
 The order matters. The categorical steps fix *shapes* — which knots,
 which blocks, which weights — without reference to any measurement;
 the measured world enters only at step five, in the three numbers
-described next.
+described next. This five-step pipeline defines an ultraviolet
+topological and categorical spectral theory: its outputs are discrete
+rest-mass eigenvalues, threshold gauge couplings, and bound-state
+normal forms — the static constants that local continuum effective
+field theory takes as external renormalization inputs — rather than a
+substitute for infrared $3+1$-dimensional momentum-space perturbative
+scattering cross sections $\sigma(s,t)$, continuous renormalization-group
+evolution, or spacelike detector correlation machinery.

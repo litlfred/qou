@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:hadron-half-life-verification-table4-data",
-  title: "Data table 4 from ex:hadron-half-life-verification",
+  title: "Beta-decay half-life predictions incorporating Skein–Coulomb Fermi enhancement",
   uses: ["ex:hadron-half-life-verification"],
   tags: ["extracted-table"],
 });

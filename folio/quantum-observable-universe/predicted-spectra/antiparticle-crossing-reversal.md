@@ -1,4 +1,4 @@
-The left trefoil $T_{2,3}$ represents the electron generator. Its mirror image $T_{2,3}^{\sigma}$ has all crossings reversed.
+The left trefoil $T_{2,3}$ is the electron generator. Its mirror image $T_{2,3}^{\sigma}$ has all crossings reversed.
 
 **Statement.**
 

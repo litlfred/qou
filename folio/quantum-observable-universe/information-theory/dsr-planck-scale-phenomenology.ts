@@ -4,7 +4,10 @@ export default remark({
   interprets: "def:information-speed-of-light",
   label: "rem:dsr-planck-scale-phenomenology",
   title:
-    "Doubly special relativity and Planck-scale phenomenology: kinship and constraints for $c_q$",
+    "Doubly special relativity and Planck-scale phenomenology: bar-even parity and GRB bounds",
+  lean: {
+    ref: "qou:QOU.Information.BarEvenVacuumDispersionAndLorentzParity.barEvenGroupVelocity_quadratic_dispersion_bound",
+  },
   tags: [
     "dispersion",
     "lorentz-invariance",

@@ -3,8 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-laplacian-spectral-tower",
   title:
-    "The $q$-Laplacian spectral tower $[k]_q^2$ and its " +
-    "root-of-unity (Verlinde/ADE) truncation",
+    "The $q$-Laplacian spectral tower $[k]_q^2$ and its root-of-unity (Verlinde/ADE) truncation",
   uses: ["def:q-harmonic-form"],
   cites: ["verlinde1988", "reshetikhin1991", "kassel1995"],
   computation: {

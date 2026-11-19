@@ -2839,6 +2839,10 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "geer-patureau-mirand-turaev-2009" },
   { id: "lickorish1993skeins" },
   { id: "jones2015vonneumann" },
+  // 2026-11-19: historical vortex-atom and relativistic-aether lineage.
+  { id: "thomson1867" },
+  { id: "tait1877" },
+  { id: "einstein1920" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

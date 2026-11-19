@@ -1,10 +1,15 @@
-*The discrete color symmetry $\mathrm{PSL}(2,7)$ arises from the octonionic
+*The discrete color symmetry $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3,\mathbb{F}_2)$
+and the continuous Lie stabilizer $\mathfrak{su}(3) = \ker(\mathrm{ev}_e) \subset
+\mathfrak{g}_2 = \mathrm{Der}(\mathbb{O})$ of dimension $8$ arise from the octonionic
 automorphism group $G_2$ via the Fano plane, whose incidence structure
-encodes the octonion multiplication table.  The octonion algebra is taken
-as an external input: it is not constructed from the categorical substrate,
-and the attempt to connect the two --- the bridge group
-$S_4 \subset S_5 \cap \mathrm{PSL}(2,7)$ carrying local Fano data from the
-Bring surface to the Klein quartic --- is refuted below.*
+encodes the octonion multiplication table.  While the Hurwitz automorphism
+group $\mathrm{Aut}(\Sigma_4) \cong S_5$, first Betti number $b_1(\Sigma_4) = 8$,
+and Euler characteristic $\chi_{\mathrm{eu}}(\Sigma_4) = -6$ of the genus-$4$
+Bring surface are proved independently, the octonion algebra $\mathbb{O}$ enters
+as an algebraic module not yet generated from the single-fibre ($N = 2$)
+substrate, and the single-node non-separating pinch attempting to degenerate
+Bring's surface directly onto the genus-$3$ Klein quartic via the common subgroup
+$S_4 \subset S_5 \cap \mathrm{PSL}(2,7)$ is structurally excluded below.*
 
 **The $S_4$ bridge mechanism.**
 The Bring surface $\Sigma_4$ (genus 4) has automorphism group $S_5$.
@@ -19,8 +24,7 @@ The group $S_4$ is the maximal common subgroup:
 The point stabilizer $S_4$ preserves the *local Fano structure*
 at the fixed point: the 3 lines through that point, encoding the 3
 octonion multiplication triples involving the corresponding imaginary
-unit.  Computationally verified
-(`s4_fano_action.py`):
+unit.  By finite-group orbit decomposition:
 
 - $S_4$ acts transitively on the 3 lines through the fixed point,
 - $S_4$ acts transitively on the 4 lines not through the fixed point,
@@ -56,9 +60,8 @@ A stronger negative than the Hurwitz error: the $S_4$ datum has no
 separating power at all.  The Fermat quartic $x^4 + y^4 + z^4 = 0$ is a
 genus-3 curve whose automorphism group $(\mathbb{Z}/4)^2 \rtimes S_3$ of
 order $96$ *also* contains $S_4$ --- exhibited as $V_4 \rtimes S_3$
-and machine-verified in exact $\mathbb{Z}[i]$ arithmetic
-(`s4_genus3_competitor_fermat.py`: element-order profile
-$\{1{:}1,\, 2{:}9,\, 3{:}8,\, 4{:}6\}$, $V_4$ normal, $S_3$ inducing the
+in exact $\mathbb{Z}[i]$ arithmetic (element-order profile
+$\{1{:}1,\, 2{:}9,\, 3{:}8,\, 4{:}6\}$, with $V_4$ normal and $S_3$ inducing the
 full symmetric action on $V_4 \setminus \{1\}$).  So even a fully correct
 argument that the normalization has genus $3$ and inherits $S_4$ stops
 short of the Klein quartic, because at least one other genus-3 curve
@@ -78,9 +81,9 @@ partition), smooth --- hence of genus $3$ --- for every $t$ outside
 $\{2,\, -2,\, -1\}$, with Fermat the single member $t = 0$.  The
 fibres of $t \mapsto [C_t]$ in moduli are finite, so
 infinitely many pairwise non-isomorphic genus-3 curves carry a faithful
-$S_4$ action.  All of this is machine-verified in exact rational
-arithmetic (`s4_genus3_pencil_infinite_family.py`), and only
-*finiteness* of the automorphism group is used --- the sharp Hurwitz
+$S_4$ action.  This follows in exact rational
+arithmetic using only
+*finiteness* of the automorphism group --- the sharp Hurwitz
 bound is deliberately avoided here, for the reason given above.  The
 $S_4$ bridge therefore fails not only to choose between two
 candidates, but to cut a $\mathbb{P}^1$ down at all.
@@ -111,9 +114,8 @@ permuting it gives a homomorphism $S_4 \to S_2$ whose kernel has index $1$ or
 $2$, hence is $S_4$ itself or the unique index-2 subgroup $A_4$.  Either way
 the line through $p$ is an invariant $1$-dimensional subspace of
 $\mathbb{C}^3$.  But the $3$-dimensional representation of $S_4$ is absolutely
-irreducible, and so is its restriction to $A_4$ --- each verified two
-independent ways, by commutant dimension and by character norm
-(`s4_marked_pair_obstruction.py`).  An absolutely irreducible
+irreducible, and so is its restriction to $A_4$ --- each established both
+by commutant dimension and by character norm.  An absolutely irreducible
 representation has no invariant line over any extension field, so no such
 pair exists: $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$ at
 all.
@@ -138,20 +140,23 @@ excluded --- but either is a different claim from the one made here.  What
 the argument does not touch at all is the Bring surface: it constrains the
 target, not the source.
 
-**Status:** the $S_4$ bridge mechanism is computationally verified
-(`s4_bridge_verification.py`, `s4_fano_action.py`) --- that
-is, $S_4$ does act on the local Fano data as claimed.  The genus degeneration
-step is a different matter, and it is no longer unproved but excluded: as shown
-above, under its own three premises it is *excluded*.  A pinch of the
+**Status:** the $S_4$ incidence action on the local Fano data holds as an
+exact finite-group identity, and the genus-$4$ Hurwitz and homology invariants
+of $\Sigma_4$ together with the $\dim = 8$ octonionic derivation stabilizer
+$\mathfrak{su}(3) = \ker(\mathrm{ev}_e) \subset \mathfrak{g}_2$ stand
+unconditionally.  The single-node non-separating genus degeneration step is a
+different matter: under its own three premises it is *excluded*.  A pinch of the
 kind described cannot deliver a non-hyperelliptic genus-3 normalization, and
-the Klein quartic is non-hyperelliptic.  Rescuing the colour route therefore
-requires giving up one of the three premises explicitly --- a hyperelliptic
-target, a multi-node or separating pinch, or a non-faithful $S_4$ --- and
-saying which.
+the Klein quartic is non-hyperelliptic.  Rescuing a geometric $\Sigma_4 \to \Sigma_3$
+pinch therefore requires giving up one of the three premises explicitly --- a
+hyperelliptic target, a multi-node or separating pinch, or a non-faithful $S_4$
+--- while coupling the octonionic rank-$2$ color triple $\mathbf{3}$ to the
+three-strand Hecke state space requires a multi-fibre or rank-$2$ HOMFLY-PT
+$(V_2 \oplus V_3)$ extension beyond the single $\dim \Lambda^2 V = 1$ ($N = 2$)
+strand.
 
 **$\mathrm{PSL}(2,7)$ representation theory.**
-Computationally verified (`psl27_irrep_verification.py`):
-the group $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3, \mathbb{F}_2)$ has
+The finite simple group $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3, \mathbb{F}_2)$ has
 6 conjugacy classes and 6 irreducible representations of dimensions
 
 ```tex

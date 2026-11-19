@@ -28,10 +28,21 @@ not make $N = 3$.
 
 This distinction is the chapter's central honesty constraint, and the
 reason [that section](#sec:baryon-multiplets) records the $N = 3$ problem
-as the chapter's principal open problem rather than as a solved step: the
+as the chapter's principal open construction rather than as a solved step: the
 single-fibre construction of the
-[braiding chapter](#chap:path-integrals-braiding) yields a quantum form of
-$\mathrm{SU}(2)$, with $\dim V = 2$, and no choice of $q$ raises it.
+[braiding chapter](#chap:path-integrals-braiding) has exterior square
+$\dim \Lambda^2 V = 1$, yielding a quantum form of
+$\mathrm{SU}(2)$ with $\dim V = N = 2$, and no choice of $q$ raises it.
+Even though the Geer--Patureau-Mirand--Turaev modified trace
+($d_{\mathrm{mod}}(1,1,1) \neq 0$) restores the antisymmetric three-strand
+$S_3$ sector $S^{(1,1,1)}$ of $H_3(q)$ --- supplying the baryon singlet,
+nuclear three-body cumulants, and the axial coupling $g_A$ that bare
+Convention D projects out ($y_{(1^3)}(z_D) = 0$) --- a single $N = 2$
+fundamental strand still realizes only $\mathfrak{sl}_2$ quantum
+Schur--Weyl duality.  Genuine rank-$2$ colour $\mathrm{SU}(3)_{\mathrm{c}}$,
+flavour $\mathrm{SU}(3)_{\mathrm{f}}$ octets and decuplets, weak hypercharge
+$\mathrm{U}(1)_Y$, and the CKM and PMNS Yukawa mixing parameters remain gated on a
+multi-fibre or rank-$2$ HOMFLY-PT $(V_2 \oplus V_3)$ extension.
 Every flavour-$\mathrm{SU}(3)_{\mathrm{f}}$ statement below is therefore *conditional
 on $N = 3$*, and is marked as such.
 

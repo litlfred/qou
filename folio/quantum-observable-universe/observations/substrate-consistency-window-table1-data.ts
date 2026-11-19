@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:substrate-consistency-window-table1-data",
-  title: "Table 1 from prop:substrate-consistency-window",
+  title: "Independent determinations of the substrate parameter $q$ from lepton, electromagnetic, and weak observables",
   uses: ["prop:substrate-consistency-window"],
   tags: ["extracted-table"],
   authorNotes: [

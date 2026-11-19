@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:t-beta-markov-frobenius-collapse-general",
   title:
-    "Min-Frobenius-norm collapse: T_β = S · 1_A — general unital R-algebra lift of [prop:t-beta-markov-frobenius-collapse]",
+    "Min-Frobenius-norm collapse: $T_\\beta = S \\cdot 1_A$ over a general unital $R$-algebra",
   lean: {
     ref: "qou:QOU.QBeta.MarkovFrobeniusCollapse.General.markov_frobenius_min_norm_lift",
     validation: "not_checked",

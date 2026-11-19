@@ -1,4 +1,4 @@
-The QOU framework's algebraic substrate appears through two faces: the [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) and the [adelic substrate](#def:adelic-substrate). Both realize a single underlying object: the **motivic substrate**, a Grothendieck-ring datum equipped with a tower of realization functors.
+The QOU framework's algebraic substrate appears through two faces: the [Frobenius–Hopf aether](#def:frobenius-hopf-substrate) and the [adelic substrate](#def:adelic-substrate). Both realize a single underlying object: the **motivic substrate**, a Grothendieck-ring datum equipped with a tower of realization functors.
 
 **Definition (motivic substrate, axiom).**
 The **motivic substrate** of the QOU framework is the triple

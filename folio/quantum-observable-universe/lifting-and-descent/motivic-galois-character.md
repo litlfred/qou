@@ -1,7 +1,7 @@
-The motivic-Galois layer on the obstruction $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ acts via a single character of the cyclotomic Galois group: the **motivic Galois character of the Frobenius–Hopf substrate**.
+The motivic-Galois layer on the obstruction $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ acts via a single character of the cyclotomic Galois group: the **motivic Galois character of the Frobenius–Hopf aether**.
 
 **Definition.**
-Let $A$ be the Frobenius–Hopf substrate of a quantum observable universe. Let $[A] \in \widehat{\mathcal{M}}$ be its motivic class ([motivic substrate](#def:motivic-substrate)). The **motivic Galois character of $A$** is the homomorphism
+Let $A$ be the Frobenius–Hopf aether of a quantum observable universe. Let $[A] \in \widehat{\mathcal{M}}$ be its motivic class ([motivic substrate](#def:motivic-substrate)). The **motivic Galois character of $A$** is the homomorphism
 $$
   \chi^{\mathrm{mot}}_A
   \;\colon\;

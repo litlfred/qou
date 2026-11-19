@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:fine-structure-observation-table1-data",
-  title: "Table 1 from rem:fine-structure-observation",
+  title: "Bare and Chern–Simons-dressed evaluations of $\\alpha_{\\mathrm{EM}}^{-1}(q_0)$ against CODATA 2022",
   uses: ["rem:fine-structure-observation"],
   tags: ["extracted-table"],
   authorNotes: [

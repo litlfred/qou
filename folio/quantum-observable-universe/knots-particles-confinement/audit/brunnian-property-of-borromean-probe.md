@@ -22,4 +22,4 @@ With these components, the proof of Brunnian sub-link triviality reduces to fini
 
 The energetic cost of the unlinking move defines the bare topological mass. This distinguishes a confined Borromean baryon from three free unknots. This hyperbolic-volume contribution is computed in the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula). The corresponding Bloch-group element appears in [Borromean Bloch-group element](#conj:borromean-bloch-group-element). 
 
-The underlying topological statement is the [Brunnian property of $\mathcal{B}_3$](#conj:brunnian-property-of-borromean). It states that every two-component sub-link of the Borromean rings is the unlink, with the proof gap traced to the absence of constructive Reidemeister-move primitives.
+The underlying topological statement is the [Brunnian property of $\mathcal{B}_3$](#prop:brunnian-property-of-borromean). It states that every two-component sub-link of the Borromean rings is the unlink, proved via strand-slot tracking and Reidemeister II reduction in $B_2$.

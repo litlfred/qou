@@ -1,4 +1,4 @@
-Let $\mathbf{C}$ be a braided [monoidal category](#def:rigid-monoidal-category), with braiding $\beta$. A **Frobenius--Hopf substrate** is a sextuple $(A, \mu, \eta, \Delta, \varepsilon, S)$ in $\mathbf{C}$ equipped with a Frobenius form $\lambda \colon A \to \mathbf{1}$ satisfying the following axioms:
+Let $\mathbf{C}$ be a braided [monoidal category](#def:rigid-monoidal-category), with braiding $\beta$. A **Frobenius--Hopf aether** is a sextuple $(A, \mu, \eta, \Delta, \varepsilon, S)$ in $\mathbf{C}$ equipped with a Frobenius form $\lambda \colon A \to \mathbf{1}$ satisfying the following axioms:
 
 1. **Algebra structure:** The morphisms $\mu \colon A \otimes A \to A$ and $\eta \colon \mathbf{1} \to A$ make $A$ an associative unital algebra object in $\mathbf{C}$.
 2. **Coalgebra structure and antipode:** The morphisms $\Delta \colon A \to A \otimes A$ and $\varepsilon \colon A \to \mathbf{1}$ make $A$ a coassociative counital coalgebra object. The counit is **not** required to be multiplicative: together with the Frobenius relation (axiom 3) and counitality, $\varepsilon(ab) = \varepsilon(a)\,\varepsilon(b)$ forces $x = \varepsilon(x)\cdot 1$ for every $x$, so $A$ would be spanned by its unit.
@@ -37,4 +37,4 @@ Let $\mathbf{C}$ be a braided [monoidal category](#def:rigid-monoidal-category),
 
 5. **Self-duality:** The pair $(\mathrm{ev}, \mathrm{coev})$ *exhibits* $A$ as its own dual. This couples the observer trace $\Phi = \lambda \circ \mu$ to the observed state space intrinsically, and it is what makes the left and right categorical traces on $\mathrm{End}(A)$ available.
 
-**Duals are required of $A$ only, not of $\mathbf{C}$.** Axiom 4 supplies $\mathrm{coev}$ as part of the data, so $A$ carries its own duality datum and no object of $\mathbf{C}$ other than $A$ need have a dual. Consequently a Frobenius--Hopf substrate is defined in a braided monoidal category without assuming ambient rigidity on $\mathbf{C}$.
+**Duals are required of $A$ only, not of $\mathbf{C}$.** Axiom 4 supplies $\mathrm{coev}$ as part of the data, so $A$ carries its own duality datum and no object of $\mathbf{C}$ other than $A$ need have a dual. Consequently a Frobenius--Hopf aether is defined in a braided monoidal category without assuming ambient rigidity on $\mathbf{C}$.

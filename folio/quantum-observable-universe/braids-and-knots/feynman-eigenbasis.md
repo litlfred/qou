@@ -8,7 +8,7 @@ $$
 
 Because this formulation does not privilege any eigenbasis, it requires regularisation and renormalisation to handle divergences.
 
-The present framework supplies a natural eigenbasis from the braided monoidal structure. The braid group acts on $V^{\otimes n}$, and this action completely decomposes the space into irreducible summands. By Alexander's theorem, these summands are labelled by knot types, which span the algebraic direct limit $V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$. Each irreducible summand represents a specific particle identity: the unknot is the neutrino, the trefoil is the electron, and the figure-eight knot corresponds to the Higgs field.
+The present framework supplies a natural eigenbasis from the braided monoidal structure. The braid group acts on $V^{\otimes n}$, and this action completely decomposes the space into irreducible summands. By Alexander's theorem, these summands are labelled by knot types, which span the algebraic direct limit $V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$. Each irreducible summand defines a specific particle identity: the unknot is the neutrino, the trefoil is the electron, and the figure-eight knot is the Higgs field.
 
 This replaces the continuum path integral with a finite algebraic operation: the categorical trace. For a closed cycle $\varrho \colon \mathbf{1} \to A$ representing a particle propagating around a vortex filament, the mass is:
 

@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:polynomial-bar-involution-table-data",
-  title: "Data table from prop:polynomial-bar-involution",
+  title: "Ring-homomorphism and monomial parity identities of the polynomial bar involution $p(X) \\mapsto p(-X)$",
   uses: ["prop:polynomial-bar-involution"],
   tags: ["extracted-table"],
   authorNotes: [

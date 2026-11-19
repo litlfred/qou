@@ -3,7 +3,7 @@
 **Proposition (Conjecture — categorical neutrality of saturated
 shells).**
 *Let $\mathbf{C}$ be a rigid :refterm[braided monoidal category]{#braided-monoidal-category} satisfying the
-QOU substrate axioms ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate))
+QOU axioms ([Frobenius–Hopf aether](#def:frobenius-hopf-substrate))
 and let $\Phi_n$ be the categorical mass endomorphism at level $n$
 ([mass-endomorphism conjecture](#conj:mass-endomorphism)). Then for
 every $n \in \mathfrak{M}$ the full-twist

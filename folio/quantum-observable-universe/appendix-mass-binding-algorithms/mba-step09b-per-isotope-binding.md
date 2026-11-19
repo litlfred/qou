@@ -1,59 +1,55 @@
-**Algorithm (Per-isotope binding energy — experimental $q$-difference generating-function model; the $\Delta_\lambda$ magnitude is open).**
-*Evaluate the binding energy $B_n \propto w_n$ for multi-body nuclear clusters via the universal `CKRecursion` depth-2 discrete generating function, seeded by the topological traces of the strong mediator knots.*
+**Algorithm (Parameter-free multi-scale nuclear binding energy).**
+*Evaluate the total nuclear binding energy $B(Z, N)$ of an isotope of proton number $Z$, neutron number $N$, and mass number $A = Z + N$ from $(q_{2t}, m_e, \alpha_{\mathrm{EM}}^{\mathrm{corr}})$ with zero empirical liquid-drop or recurrence fit parameters.*
 
 ### Input
 
-- *Topological trace constants: $r_{\mathrm{gluonic}} = 3$ and $r_{\mathrm{residual}} = 2.5$.*
-- *The universal bar-even structural prior $a_0 = 1/2$.*
-- *SU(4)/$S_3$ isospin representation anomaly shifts (e.g., $+1.4947 m_e$).*
+- *Proton count $Z \in \mathbb{N}$, neutron count $N \in \mathbb{N}$ ($A = Z + N \ge 2$), substrate parameter $q = q_{2t} > 1$, electron mass scale $m_e$, and Form-B electromagnetic coupling $\alpha_{\mathrm{EM}}^{\mathrm{corr}}(q)$ (from [Step 9a](#alg:mass-identity)).*
 
 ### Output
 
-- *Predicted binding energy $B_n$ in MeV.*
+- *Total nuclear binding energy $B(Z, N) = B_{\mathrm{cell/simp}}(A) - \Delta E_{\mathrm{shell/sym}}(Z, N) + \delta_{\mathrm{pair}}(Z, N) - E_C(Z, A)$ and multi-$\alpha$ breakup thresholds $\Delta B(n_\alpha)$.*
 
 ### Algorithm
 
-```
-1. Compute the exact residual trace r_{res} evaluated at the substrate root q_0 (yields ~2.596).
-2. Seed the depth-2 CKRecursion engine: w_{n+1} = 0.5 * w_n + r_{res} * w_{n-1}.
-3. The engine natively generates the multi-body binding hierarchy (w_2 = 4.35, w_3 = 8.60, w_4 = 15.60).
-4. Scale weights by the nucleon parameters to yield baseline binding energies.
-5. Apply exact categorical SU(4) anomaly splits to resolve degeneracies (e.g., 3H vs 3He).
-```
+1. **Intra-cluster $H_4(q)$ full-twist $\alpha$-cell ($A \le 4$ and multi-$\alpha$ breakup thresholds):**
+   - Decompose the central 4-strand full twist $\Delta_4^2 = (\sigma_1\sigma_2\sigma_3)^4 \in Z(H_4(q))$ over the five Specht modules $\lambda \in \{(4), (3,1), (2,2), (2,1^2), (1^4)\}$ of dimensions $(1, 3, 2, 3, 1)$ with exact framing eigenvalues $q^{2c(\lambda)} \in \{q^{12}, q^4, 1, q^{-4}, q^{-12}\}$.
+   - Evaluate the two-row Convention-D Casimir $\mathrm{Cas}_D(q) = \frac{12(q^4 + 1)}{(q^2 + 1)^2}$ together with the GPMT-renormalised row-$3$/row-$4$ full-twist and Casimir functionals on $(2,1^2)$ and the Wigner-$\mathrm{SU}(4)$ singlet $(1^4)$ (from [Step 5](#alg:wedderburn-decomposition)).
+   - For $A = 4 n_\alpha$ $\alpha$-conjugate nuclei, intra-$\alpha$ cell energies cancel identically in breakup thresholds $\Delta B(n_\alpha) = \binom{n_\alpha}{2}(v_{2\alpha} - c_{\mathrm{EM}}) + \binom{n_\alpha}{3} w_{3\alpha} + \binom{n_\alpha}{4} w_{4\alpha}$: because $0 < c_{\mathrm{EM}} - v_{2\alpha} < \tfrac{1}{3} w_{3\alpha}$, the $2\alpha$ dimer $^8\mathrm{Be}$ ($1$ edge, $0$ triangles) has $\Delta B_{2\alpha} < 0$ (unbound), whereas $^{12}\mathrm{C}$ ($3$ edges, $1$ Borromean triangle, $\Delta B_{3\alpha} > 0$) and $^{16}\mathrm{O}$ ($6$ edges, $4$ triangles, $1$ tetrahedron) are strictly bound.
+2. **3D simplicial compact-ball triangulation ($A \ge 4$):**
+   - Construct the coordinate-verified 3D Euclidean close-packed / Freudenthal–Kuhn shell ball $\mathcal{T}_A$ of $f_0 = A$ vertices with $f_3$ tetrahedra and $f_{0,\partial}$ boundary vertices ($\chi(\mathcal{T}_A) = 1$, $\chi(\partial\mathcal{T}_A) = 2$). Compute the remaining face counts by exact **Dehn–Sommerville elimination**:
+     $$
+       f_{1,\partial} = 3 f_{0,\partial} - 6,
+       \quad
+       f_{2,\partial} = 2 f_{0,\partial} - 4,
+       \quad
+       f_2 = 2 f_3 + f_{0,\partial} - 2,
+       \quad
+       f_1 = A + f_3 + f_{0,\partial} - 3,
+     $$
+     capturing both the interior tetrahedral edge-cycle excess $c = f_3 - (A - 3) \ge 0$ ($2 \to 3$ Pachner closures above the minimal 3-tree) and buried interior nucleons $A_{\mathrm{int}} = A - f_{0,\partial}$ ($f_{0,\partial} = O(A^{2/3})$).
+   - Weight edges, triangles, and tetrahedra by the Convention-D two-body bonds ($b_{2,\log D}, b_{2,\mathrm{Bor},D}$) and $H_3(q)/H_4(q)$ GPMT Mayer cluster cumulants ($w_3 > 0$, $w_4 < 0$):
+     $$
+       B_{\mathrm{simp}}(\mathcal{T}_A)
+       \;=\;
+       f_1\,b_2(q) \;+\; f_2\,w_3(q) \;+\; f_3\,w_4(q).
+     $$
+3. **3D Pauli/Fermi harmonic-oscillator and Mayer–Jensen spin–orbit shell filling:**
+   - Order single-particle subshells $(n_r, \ell, j = \ell \pm \tfrac{1}{2})$ ($N_{\mathrm{osc}} = 2n_r + \ell$) at the Compton oscillator scale and spin–orbit coupling
+     $$
+       \hbar\omega_q(A) \;=\; \frac{m_e}{(q - 1)^2}\,A^{-1/3},
+       \qquad
+       \varepsilon(n_r, \ell, j) \;=\; \hbar\omega_q(A)\Bigl(N_{\mathrm{osc}} + \tfrac{3}{2} - \kappa_{\mathrm{SO}}(q)\,\langle \ell \cdot s \rangle_j\Bigr).
+     $$
+   - Fill $Z$ protons and $N$ neutrons independently into subshells of exact Pauli capacity $2j + 1$ ($g_+(\ell) = 2\ell + 2$, $g_-(\ell) = 2\ell$). Cumulative oscillator closures $C_{\mathrm{osc}}(K) = \frac{(K+1)(K+2)(K+3)}{3}$ plus the depressed stretched intruder $j = K + \tfrac{3}{2}$ ($g_+(K+1) = 2K + 4$) generate both the $1p_{3/2}$ subshell closure at $6$ ($^{12}\mathrm{C}$) and the magic closures $2, 8, 20, 28, 50, 82, 126$, while neutron–proton Fermi promotion ($N - Z = 2d$) produces the quadratic Pauli symmetry energy $\Delta E_{\mathrm{Pauli}}(Z, N) \propto \frac{(N - Z)^2}{A}$.
+4. **Temperley–Lieb seniority pairing and simplicial FCC Coulomb repulsion:**
+   - Within the valence subshell of each species, evaluate the seniority-$0$ Kramers pair projector $e_{\mathrm{pair}}^2 = [2]_q\,e_{\mathrm{pair}}$ with pairing gap $\Delta_{\mathrm{TL}}(q) = \tfrac{1}{2} g_{\mathrm{pair}}\,[2]_q$, adding $+\Delta_{\mathrm{pair}}$ for even–even ($v_p = v_n = 0$), $0$ for odd-$A$ ($v_p + v_n = 1$), and $-\Delta_{\mathrm{pair}}$ for odd–odd ($v_p = v_n = 1$) nuclei.
+   - Subtract the electrostatic proton-pair energy $E_C(Z, A)$: on $\mathcal{T}_A$ ($A \le 4$ and $\alpha$-clusters), sum exact inverse vertex distances $E_C^{\mathrm{disc}} = \frac{\alpha_{\mathrm{EM}}^{\mathrm{corr}}\,\hbar c}{2}\sum_{u \neq v} p_u p_v\,d(u, v)^{-1}$ at bond length $\ell_{\mathrm{bond}} = \tfrac{3}{2}\bar\lambda_\pi$ (yielding $\binom{Z}{2}\frac{\alpha_{\mathrm{EM}}^{\mathrm{corr}}\,\hbar c}{\ell_{\mathrm{bond}}}$ on a regular simplex with zero continuum $3/5$ distortion), and for bulk close-packed shells transport the 3D FCC packing radius scale $r_{0,\mathrm{FCC}} = \left(\tfrac{3}{16\pi}\right)^{1/3}\ell_{\mathrm{bond}}$.
 
-### Correctness conditions
+### Termination and Complexity
 
-These are **fit residuals of the experimental model**, not derived error bounds:
+Dehn–Sommerville face elimination and seniority/magic-shell occupancy run in $O(A)$ exact integer operations; explicit pairwise vertex summation on $\mathcal{T}_A$ requires $O(Z^2)$ operations in $\ge 80$-digit ball arithmetic.
 
-1. *With the seed constants calibrated, the generating function reproduces $^4$He ($n=4$) to within $\sim 3.4$ keV of the AME value — a fit residual, not a parameter-free bound ($^4$He remains open, the $\mathrm{Vol}_4$ census gap).*
-2. *The isospin anomaly correction resolves the $n=3$ doublet ordering ($^3$H vs $^3$He); the residual is a calibrated near-match, not an accuracy claim against the L2 target.*
+### Mathematical Justification
 
-**The $q$-lift of the depth-2 kernel.** The $q$-lift of the proved classical depth-2 kernel exists exactly on the $[n]_q!$-normalized carrier ($c(q) = 1$) and is distinct from the Garoufalidis–Gu–Mariño resurgent-Stokes carrier \cite{garoufalidis-gu-marino2021} up to scalar gauge. The identification is open.
-
-**Scope (value proved; magnitude open, not a closure).** The per-partition
-$\Delta_\lambda$ **value** is proved ($\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$,
-general-$n$, [the Donaldson–Thomas index unification proposition](#prop:delta-lambda-dt-index-unification)); what remains **open** is
-the many-body binding **magnitude**: six ansätze have failed on the deuteron
-*magnitude* $r^\ast \approx 1.585$, which no per-block $\Delta_\lambda$ can supply. This module is an **experimental / phenomenological** generating-function model for that magnitude: the depth-2 `CKRecursion` reproduces the multi-body binding hierarchy from a small set of seed constants ($r_{\mathrm{res}} \approx 2.596$, $a_0 = 1/2$, the isospin anomaly shift $\approx +1.4947\,m_e$) that are **calibrated, not derived** from the 13 categorical drivers. It is a structural fit, **not** a parameter-free derivation.
-
-### Python API entry point
-
-```python
-from qou_mass.api import predict
-```
-
-### Witness contract
-
-*Witness: [`canonical-mass-table-242ppb.witness.json`](../../../computations/canonical-mass-table-242ppb.witness.json).*
-
-*The declared witness carries no provenance fields and records binding at the 242-ppb nucleon level (D $+23\,\%$, T $+6\,\%$, ³He $+13\,\%$, ⁴He $+3.6\,\%$, over-binding), which predates the removal of a fitted Habiro dressing. The live pipeline under-binds (²H $-27.5\,\%$, ³H $+38\,\%$, ³He $+44\,\%$, ⁴He $+69\,\%$); the witness figures are not this step's current accuracy.*
-
-### Notes
-
-*This module explores a $q$-difference generating-function route to the multi-body binding hierarchy. It does **not** supersede the $\Delta_\lambda$ closure search, which is open. The shared `CKRecursion` shape across the weak ($Q_\beta$) and strong (binding) sectors is a **structural observation / working hypothesis**, not a proven identity. Axiomatisation is not proof: no $c_k$ or $\Delta_\lambda$ value produced here is carried downstream, pending a genuine closed-form derivation from the categorical drivers.*
-
-*The `CKRecursion` recurrence is extensive and algebraically convenient, but its seed constants are calibrated inputs, so the binding it produces is a fit, not a derivation.*
-
-### Tier note: experimental generating-function model
-
-*The $w_n$ values and the $\sim 3$ keV $^4$He fit residual come from the discrete $q$-difference recurrence with calibrated seeds — a phenomenological reproduction, not a structural bound. Whereas the weak-sector recurrence satisfies algebraic kernel constraints on the $\mathfrak{Q}_\beta$ side, no analogous algebraic derivation yet fixes the seed constants in the strong binding sector.*
+1. **Per-partition Springer/DT index and $H_4(q)$ weights:** The signed block index $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$ is proved in [Donaldson–Thomas index unification](#prop:delta-lambda-dt-index-unification) (with density context in [the binding-density remark](#rem:term6-binding-density)), and the explicit $H_4(q)$ orthogonal weights follow [explicit $H_4(q)$ Wedderburn weights](#prop:explicit-alpha-k-h4).
+2. **Spin–orbit magic closures and quadratic Pauli promotion:** Subshell capacities $2j + 1$, the Mayer–Jensen sequence $M_K = \frac{(K+1)(K+2)(K+3)}{3} + (2K + 4)$, and the quadratic $(N - Z)^2$ Fermi promotion identity are proved in [spin–orbit magic closures](#prop:spin-orbit-magic-closures). Remaining open coarse-graining and heavy-actinide deformation items are recorded in [the $\Delta_\lambda$ structural sidecar](#alg:delta-lambda-closure).

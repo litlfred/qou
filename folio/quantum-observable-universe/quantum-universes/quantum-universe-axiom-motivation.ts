@@ -8,9 +8,11 @@ export default remark({
     "quantum-universe",
     "braiding",
     "frobenius-hopf",
+    "aether",
     "spherical",
     "motivation",
     "so3",
   ],
+  cites: ["thomson1867", "tait1877", "einstein1920"],
   uses: ["def:quantum-universe", "def:frobenius-hopf-substrate", "def:snake-identity"],
 });

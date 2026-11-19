@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:upstream-mathlib-additions-table1-data",
-  title: "Table 1 from prop:upstream-mathlib-additions",
+  title: "Power-series definitions and origin evaluations for $\\mathrm{Li}_2$, the Bloch–Wigner function $D$, and $\\mathrm{Cl}_2$",
   uses: ["prop:upstream-mathlib-additions"],
   tags: ["extracted-table"],
   authorNotes: [

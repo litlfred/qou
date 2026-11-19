@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe. Let $\mathcal{S} \
 $$
   V_q(U) = \int_U \mathrm{Vol}_{S^3}(\mathcal{S}_p)\; \epsilon_q(p).
 $$
-Here $\epsilon_q$ represents the categorical volume form on $\Lambda^2 V$, uniquely preserved by the rigid duality of $(\mathbf{C}, A, \tau)$.
+Here $\epsilon_q$ is the categorical volume form on $\Lambda^2 V$, uniquely preserved by the rigid duality of $(\mathbf{C}, A, \tau)$.
 
 For a homogeneous gas exhibiting uniform $q$ throughout $U$, all fibres are strictly isometric. This yields
 $$

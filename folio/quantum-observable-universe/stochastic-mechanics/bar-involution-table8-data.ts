@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:bar-involution-table8-data",
-  title: "Data table 8 from def:bar-involution",
+  title: "Summary of bar-involution operators, projections, and averaged crossing notation",
   uses: ["def:bar-involution"],
   tags: ["extracted-table"],
   authorNotes: [

@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:g-action-on-substrate",
   title:
-    "Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate",
+    "Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf aether",
   lean: { ref: "qou:QOU.QuantumObservableUniverses.GActionOnSubstrate", validation: "stub" },
   uses: [
     "def:frobenius-hopf-substrate",
@@ -13,6 +13,7 @@ export default conjecture({
     "tier:S",
     "g-action",
     "electroweak",
+    "frobenius-hopf-aether",
     "frobenius-hopf-substrate",
     "g-equivariance",
     "categorical-higgs",

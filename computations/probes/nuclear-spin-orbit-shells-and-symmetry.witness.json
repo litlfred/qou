@@ -1,0 +1,2106 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-19T11:08:49.207231+00:00",
+  "commitSha": "080017bf8a162fa7a3f320ae2e5cd3e7fc298c23",
+  "assertions": [
+    {
+      "name": "spin_orbit_subshell_degeneracy_identities_2j_plus_1_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "harmonic_oscillator_tetrahedral_closures_2_8_20_40_70_112_168_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "carbon12_1p3half_subshell_closure_6_and_oxygen16_closure_8_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "mayer_jensen_magic_closed_form_28_50_82_126_184_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "discrete_pauli_fermi_asymmetry_nonneg_and_strictly_pos_across_shells",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    },
+    {
+      "name": "quadratic_pauli_symmetry_theorem_4_mul_penalty_eq_N_sub_Z_sq_exact",
+      "computed": "8.63616855509444462538635186280039957111600036443628138502370e-78",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-68"
+    },
+    {
+      "name": "pure_spin_orbit_ls_shift_vanishes_on_saturated_4He_16O_40Ca_and_pos_on_intruder_closures",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "nuclear-spin-orbit-shells-and-symmetry",
+  "scriptFile": "nuclear_spin_orbit_shells_and_symmetry_probe.py",
+  "scriptHash": "a235efa1a269",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nuclear_spin_orbit_shells_and_symmetry_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nuclear_spin_orbit_shells_and_symmetry_probe.py"
+  },
+  "description": "80-dps first-principles evaluation of higher-l spin-orbit Pauli fiber multiplicities (2j+1), 3D harmonic-oscillator cumulative closures, Carbon-12 (Z=N=6) 1p_{3/2} subshell closure, universal Mayer-Jensen magic closures M_K = (K+1)(K+2)(K+3)/3 + (2K+4) in {28, 50, 82, 126, 184}, quadratic Fermi/Pauli symmetry energy E_sym propto (N-Z)^2/A, and spin-orbit shell corrections across 14 benchmark nuclei (4He to 238U). Zero fitting, zero float64.",
+  "contentBlock": "prop:spin-orbit-magic-closures",
+  "data": {
+    "harmonic_oscillator_and_mayer_jensen_table": [
+      {
+        "K": 0,
+        "oscShellDeg": 2,
+        "running_sum": 2,
+        "cumOscClosure_formula": 2,
+        "intruder_ell": 0,
+        "intruder_degPlus": 0,
+        "mayerJensenMagic": 2
+      },
+      {
+        "K": 1,
+        "oscShellDeg": 6,
+        "running_sum": 8,
+        "cumOscClosure_formula": 8,
+        "intruder_ell": 0,
+        "intruder_degPlus": 0,
+        "mayerJensenMagic": 8
+      },
+      {
+        "K": 2,
+        "oscShellDeg": 12,
+        "running_sum": 20,
+        "cumOscClosure_formula": 20,
+        "intruder_ell": 3,
+        "intruder_degPlus": 8,
+        "mayerJensenMagic": 28
+      },
+      {
+        "K": 3,
+        "oscShellDeg": 20,
+        "running_sum": 40,
+        "cumOscClosure_formula": 40,
+        "intruder_ell": 4,
+        "intruder_degPlus": 10,
+        "mayerJensenMagic": 50
+      },
+      {
+        "K": 4,
+        "oscShellDeg": 30,
+        "running_sum": 70,
+        "cumOscClosure_formula": 70,
+        "intruder_ell": 5,
+        "intruder_degPlus": 12,
+        "mayerJensenMagic": 82
+      },
+      {
+        "K": 5,
+        "oscShellDeg": 42,
+        "running_sum": 112,
+        "cumOscClosure_formula": 112,
+        "intruder_ell": 6,
+        "intruder_degPlus": 14,
+        "mayerJensenMagic": 126
+      },
+      {
+        "K": 6,
+        "oscShellDeg": 56,
+        "running_sum": 168,
+        "cumOscClosure_formula": 168,
+        "intruder_ell": 7,
+        "intruder_degPlus": 16,
+        "mayerJensenMagic": 184
+      }
+    ],
+    "spectroscopic_subshell_ladder": [
+      {
+        "subshell": "1s_{1/2}",
+        "N_osc": 0,
+        "n_radial": 0,
+        "ell": 0,
+        "two_j": 1,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 2,
+        "cumulative_occupancy": 2
+      },
+      {
+        "subshell": "1p_{3/2}",
+        "N_osc": 1,
+        "n_radial": 0,
+        "ell": 1,
+        "two_j": 3,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 4,
+        "cumulative_occupancy": 6
+      },
+      {
+        "subshell": "1p_{1/2}",
+        "N_osc": 1,
+        "n_radial": 0,
+        "ell": 1,
+        "two_j": 1,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 2,
+        "cumulative_occupancy": 8
+      },
+      {
+        "subshell": "1d_{5/2}",
+        "N_osc": 2,
+        "n_radial": 0,
+        "ell": 2,
+        "two_j": 5,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 6,
+        "cumulative_occupancy": 14
+      },
+      {
+        "subshell": "2s_{1/2}",
+        "N_osc": 2,
+        "n_radial": 1,
+        "ell": 0,
+        "two_j": 1,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 2,
+        "cumulative_occupancy": 16
+      },
+      {
+        "subshell": "1d_{3/2}",
+        "N_osc": 2,
+        "n_radial": 0,
+        "ell": 2,
+        "two_j": 3,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 4,
+        "cumulative_occupancy": 20
+      },
+      {
+        "subshell": "1f_{7/2}",
+        "N_osc": 3,
+        "n_radial": 0,
+        "ell": 3,
+        "two_j": 7,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 8,
+        "cumulative_occupancy": 28
+      },
+      {
+        "subshell": "2p_{3/2}",
+        "N_osc": 3,
+        "n_radial": 1,
+        "ell": 1,
+        "two_j": 3,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 4,
+        "cumulative_occupancy": 32
+      },
+      {
+        "subshell": "1f_{5/2}",
+        "N_osc": 3,
+        "n_radial": 0,
+        "ell": 3,
+        "two_j": 5,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 6,
+        "cumulative_occupancy": 38
+      },
+      {
+        "subshell": "2p_{1/2}",
+        "N_osc": 3,
+        "n_radial": 1,
+        "ell": 1,
+        "two_j": 1,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 2,
+        "cumulative_occupancy": 40
+      },
+      {
+        "subshell": "1g_{9/2}",
+        "N_osc": 4,
+        "n_radial": 0,
+        "ell": 4,
+        "two_j": 9,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 10,
+        "cumulative_occupancy": 50
+      },
+      {
+        "subshell": "1g_{7/2}",
+        "N_osc": 4,
+        "n_radial": 0,
+        "ell": 4,
+        "two_j": 7,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 8,
+        "cumulative_occupancy": 58
+      },
+      {
+        "subshell": "2d_{5/2}",
+        "N_osc": 4,
+        "n_radial": 1,
+        "ell": 2,
+        "two_j": 5,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 6,
+        "cumulative_occupancy": 64
+      },
+      {
+        "subshell": "2d_{3/2}",
+        "N_osc": 4,
+        "n_radial": 1,
+        "ell": 2,
+        "two_j": 3,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 4,
+        "cumulative_occupancy": 68
+      },
+      {
+        "subshell": "3s_{1/2}",
+        "N_osc": 4,
+        "n_radial": 2,
+        "ell": 0,
+        "two_j": 1,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 2,
+        "cumulative_occupancy": 70
+      },
+      {
+        "subshell": "1h_{11/2}",
+        "N_osc": 5,
+        "n_radial": 0,
+        "ell": 5,
+        "two_j": 11,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 12,
+        "cumulative_occupancy": 82
+      },
+      {
+        "subshell": "1h_{9/2}",
+        "N_osc": 5,
+        "n_radial": 0,
+        "ell": 5,
+        "two_j": 9,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 10,
+        "cumulative_occupancy": 92
+      },
+      {
+        "subshell": "2f_{7/2}",
+        "N_osc": 5,
+        "n_radial": 1,
+        "ell": 3,
+        "two_j": 7,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 8,
+        "cumulative_occupancy": 100
+      },
+      {
+        "subshell": "2f_{5/2}",
+        "N_osc": 5,
+        "n_radial": 1,
+        "ell": 3,
+        "two_j": 5,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 6,
+        "cumulative_occupancy": 106
+      },
+      {
+        "subshell": "3p_{3/2}",
+        "N_osc": 5,
+        "n_radial": 2,
+        "ell": 1,
+        "two_j": 3,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 4,
+        "cumulative_occupancy": 110
+      },
+      {
+        "subshell": "3p_{1/2}",
+        "N_osc": 5,
+        "n_radial": 2,
+        "ell": 1,
+        "two_j": 1,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 2,
+        "cumulative_occupancy": 112
+      },
+      {
+        "subshell": "1i_{13/2}",
+        "N_osc": 6,
+        "n_radial": 0,
+        "ell": 6,
+        "two_j": 13,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 14,
+        "cumulative_occupancy": 126
+      },
+      {
+        "subshell": "1i_{11/2}",
+        "N_osc": 6,
+        "n_radial": 0,
+        "ell": 6,
+        "two_j": 11,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 12,
+        "cumulative_occupancy": 138
+      },
+      {
+        "subshell": "2g_{9/2}",
+        "N_osc": 6,
+        "n_radial": 1,
+        "ell": 4,
+        "two_j": 9,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 10,
+        "cumulative_occupancy": 148
+      },
+      {
+        "subshell": "2g_{7/2}",
+        "N_osc": 6,
+        "n_radial": 1,
+        "ell": 4,
+        "two_j": 7,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 8,
+        "cumulative_occupancy": 156
+      },
+      {
+        "subshell": "3d_{5/2}",
+        "N_osc": 6,
+        "n_radial": 2,
+        "ell": 2,
+        "two_j": 5,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 6,
+        "cumulative_occupancy": 162
+      },
+      {
+        "subshell": "3d_{3/2}",
+        "N_osc": 6,
+        "n_radial": 2,
+        "ell": 2,
+        "two_j": 3,
+        "spin_aligned": false,
+        "degeneracy_2j_plus_1": 4,
+        "cumulative_occupancy": 166
+      },
+      {
+        "subshell": "4s_{1/2}",
+        "N_osc": 6,
+        "n_radial": 3,
+        "ell": 0,
+        "two_j": 1,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 2,
+        "cumulative_occupancy": 168
+      },
+      {
+        "subshell": "1j_{15/2}",
+        "N_osc": 7,
+        "n_radial": 0,
+        "ell": 7,
+        "two_j": 15,
+        "spin_aligned": true,
+        "degeneracy_2j_plus_1": 16,
+        "cumulative_occupancy": 184
+      }
+    ],
+    "substrate_constants_by_anchor": {
+      "proton_pin": {
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "qi": "0.900918283955741492160822882481093936014741626610554180691118",
+        "h": "0.209060298795639315430846213129674943859757495263024555381696",
+        "hbar_q": "0.0990817160442585078391771175189060639852583733894458193088818",
+        "tower_resum_factor": "1.00991451913724993486247234623073204483017462217173614694437",
+        "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
+        "E0_bare_MeV": "4.18598136329447589694506215875900841014348689087960498278367",
+        "E0_inf_MeV": "4.22748335562903055026805602658721115361518419806561475207637",
+        "E_osc_compton_bare_MeV": "42.2477681091499537704667115607435429943591110374304682142479",
+        "E_osc_compton_inf_MeV": "42.6666344145742184820387930465901204359542687018139154125677",
+        "z_D": "0.612688037146465251595829863945899248026308391545064759724287",
+        "z_gg": "0.508157887748645593880406757381061776096429643913552482033439",
+        "b2_log_D_MeV": "2.05070969238143368563095783488465331689032300627310966629006",
+        "b2_log_gg_bare_MeV": "2.83375482411947010855370314674164655959009612888752103608875",
+        "b2_log_gg_inf_MeV": "2.86185014055347691824150495142531980875996427326633426306502",
+        "mu3GPMT_H4": "0.163383228056257391040678662336891623883752446975355023530979",
+        "mu4GPMT_H4": "-0.0843027284038208055720214655058016895285531723261403589986118",
+        "w3_GPMT_bare_MeV": "0.683919147718384577054930095259186586019375343095400547956826",
+        "w4_GPMT_H4_bare_MeV": "-0.352889649973269751677759508882085320142225116000692084215113",
+        "w3_GPMT_inf_MeV": "0.690699877196770166068994049484510428254303106146775376073191",
+        "w4_GPMT_H4_inf_MeV": "-0.356388381161267165595365876965284056228426700239644696927551",
+        "kappa_SO": "0.0640443720571768927965758274996230246417414093776043828180992",
+        "a_sym_cand1_MeV": "25.8847021166141168997369233801196890002761987972245915859429",
+        "a_sym_cand2_MeV": "2.56494790737747569034934874934737292764268476289071270267701",
+        "vol_coeff_3tree_gg_bare_MeV": "10.2001322655402943051481402171204141166861892999480726679216",
+        "bdry_deficit_3tree_gg_bare_MeV": "21.4152131765440880127283811158771160852689041700862543475418",
+        "vol_coeff_3tree_gg_inf_MeV": "10.3012616720894740873361311257642066548143754379996842204871",
+        "bdry_deficit_3tree_gg_inf_MeV": "21.6275347174112213412148844735321501099089303880532744961930",
+        "pauli_bridge_linear_deficit_per_D_MeV": "7.36637744142082419659443707037876755709609317106055163183287",
+        "pauli_triangle_linear_deficit_per_D_MeV": "3.84870346958296951098580382837793441148662169907763004778729"
+      },
+      "muon_pin": {
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "qi": "0.900918273492422300050994867878081866719928391803132443270306",
+        "h": "0.209060322150316746630800261501919885980137169225879113703739",
+        "hbar_q": "0.0990817265075776999490051321219181332800716081968675567296935",
+        "tower_resum_factor": "1.00991452125201557289798520597335718316590121208209363638297",
+        "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
+        "E0_bare_MeV": "4.18598082401017136779972443048525839338975170253696642520986",
+        "E0_inf_MeV": "4.22748281985034987154227704566888462315634168857177243197923",
+        "E_osc_compton_bare_MeV": "42.2477582048394214507892289741090482054746935004675147185336",
+        "E_osc_compton_inf_MeV": "42.6666245014113171840390910699016969964519033547560485873304",
+        "z_D": "0.612688050638272415220888927646110664831964631360779679271089",
+        "z_gg": "0.508157889563114041905488796895150721841896046747840122419219",
+        "b2_log_D_MeV": "2.05070933600824204994609245404476978656650746321220236481634",
+        "b2_log_gg_bare_MeV": "2.83375444409711618324738554178619832062780706339451926070059",
+        "b2_log_gg_inf_MeV": "2.86184976275611061736697792056734580541805921620998212500816",
+        "mu3GPMT_H4": "0.163383227334802102617478830611103271668459593113692643762949",
+        "mu4GPMT_H4": "-0.0843027286003893155051071897373951129540798016870210593344698",
+        "w3_GPMT_bare_MeV": "0.683919056588376060289174854653284647570594106200233800977412",
+        "w4_GPMT_H4_bare_MeV": "-0.352889605332963507697979477994446423897658921563987406837922",
+        "w3_GPMT_inf_MeV": "0.690699786609579955956778301106916475881584106763391929208488",
+        "w4_GPMT_H4_inf_MeV": "-0.356388336824652562445015450965002063174908120917844276145744",
+        "kappa_SO": "0.0640443806220434055606544277096096325483943517234847016129739",
+        "a_sym_cand1_MeV": "25.8846966183601443588832078830675712186153472355109793554049",
+        "a_sym_cand2_MeV": "2.56494763351890722428688722610805356237894846649228233399124",
+        "vol_coeff_3tree_gg_bare_MeV": "10.2001308967235132229117017113240024806975445872202717781961",
+        "bdry_deficit_3tree_gg_bare_MeV": "21.4152103012908150587037736539601278326386184652770237515091",
+        "vol_coeff_3tree_gg_inf_MeV": "10.3012603112724191575262532140577847807240218480022778865042",
+        "bdry_deficit_3tree_gg_inf_MeV": "21.6275318589393456645210475793644004500363037886134953552796",
+        "pauli_bridge_linear_deficit_per_D_MeV": "7.36637645262639703966431616953780416006973752382575251749550",
+        "pauli_triangle_linear_deficit_per_D_MeV": "3.84870295194090479612775577309832119187133635423099945581749"
+      },
+      "two_term_borromean_q2t": {
+        "q": "1.10997859515088599908756520359868262121410348054121621148890",
+        "qi": "0.900918273891636663630991633837692141983635704171726417705305",
+        "h": "0.209060321259249335456573569760990479230467776369489793783600",
+        "hbar_q": "0.0990817261083633363690083661623078580163642958282735822946951",
+        "tower_resum_factor": "1.00991452117132943044303732836321709205972306856806300545647",
+        "m_e_MeV": "0.510998950690000000000000000000000000000000000000000000000000",
+        "E0_bare_MeV": "4.18598084458586196691657518614936431268665308922924624142705",
+        "E0_inf_MeV": "4.22748284029228794563903096289594012068427417858242586463845",
+        "E_osc_compton_bare_MeV": "42.2477585827254754603289240687111134455480416170312862155397",
+        "E_osc_compton_inf_MeV": "42.6666248796351218394886375022197670198753168676610780473415",
+        "z_D": "0.612688050123510016893088183384900674448113162446592812628657",
+        "z_gg": "0.508157889493885349164801398504405434832879274261847915736858",
+        "b2_log_D_MeV": "2.05070934960519718462278740520291719907396603027268750571368",
+        "b2_log_gg_bare_MeV": "2.83375445859637440470633390280735700641321563172345412874078",
+        "b2_log_gg_inf_MeV": "2.86184977717047732667239178051857041217679129032904154816675",
+        "mu3GPMT_H4": "0.163383227362328294331110834129166942296606375738138700794189",
+        "mu4GPMT_H4": "-0.0843027285928894988411923117596781871617189875688290701688593",
+        "w3_GPMT_bare_MeV": "0.683919060065322906252895405793115459607563294380256572573210",
+        "w4_GPMT_H4_bare_MeV": "-0.352889607036156279147855659710871502406911419050172055324281",
+        "w3_GPMT_inf_MeV": "0.690699790065816274608849978086930088256043235855480012276600",
+        "w4_GPMT_H4_inf_MeV": "-0.356388338516258373719520850159811001936223033345687852125878",
+        "kappa_SO": "0.0640443802952620318075441241199588556472654486168991992204738",
+        "a_sym_cand1_MeV": "25.8846968281388566213593156086996517263592498660017346032095",
+        "a_sym_cand2_MeV": "2.56494764396762441187436653101461058881026980591034673143113",
+        "vol_coeff_3tree_gg_bare_MeV": "10.2001309489489356537298322660905458956554253592609600486177",
+        "bdry_deficit_3tree_gg_bare_MeV": "21.4152104109923608408175996840564512081190658882322611870575",
+        "vol_coeff_3tree_gg_inf_MeV": "10.3012603631926224301242044256566904993622805452078768292042",
+        "bdry_deficit_3tree_gg_inf_MeV": "21.6275319680006190357465879573274301733004245287810258308356",
+        "pauli_bridge_linear_deficit_per_D_MeV": "7.36637649035256124902349836328318888924220972753750591987692",
+        "pauli_triangle_linear_deficit_per_D_MeV": "3.84870297169086393806426905468271642322143080143379521856292"
+      }
+    },
+    "benchmark_nuclei": [
+      {
+        "nuclide": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "N_minus_Z": 0,
+        "B_AME_MeV": "28.2956624000000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.000000800000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "0.769933477728566684610939703500743829335672872886113089808610",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "0.0",
+          "linear_pauli_triangle_P2_MeV": "0.0",
+          "quadratic_pauli_compton_cand1_MeV": "0.0",
+          "quadratic_pauli_hecke_cand2_MeV": "0.0",
+          "discrete_shell_pauli_promotion_compton_MeV": "0.0",
+          "discrete_shell_pauli_promotion_inf_MeV": "0.0",
+          "discrete_shell_pauli_promotion_bare_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "0.0"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "26.6144261758976751024870883786972064815062262037383339526080",
+          "hbar_omega_inf_MeV": "2.66314763391861481759961711575515921384063250932205967322374",
+          "hbar_omega_bare_MeV": "2.63700301704117427910606451192166059268123679729520310948138",
+          "E_fill_Z_SO_dimless": "3.00000000000000000000000000000000000000000000000000000000000",
+          "E_fill_N_SO_dimless": "3.00000000000000000000000000000000000000000000000000000000000",
+          "E_fill_total_SO_dimless": "6.00000000000000000000000000000000000000000000000000000000000",
+          "E_fill_total_HO_dimless": "6.00000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "0.0",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "0.0",
+          "pauli_asym_SO_inf_MeV": "0.0",
+          "pauli_asym_SO_bare_MeV": "0.0",
+          "pure_ls_gain_Z_dimless": "0.0",
+          "pure_ls_gain_N_dimless": "0.0",
+          "pure_ls_gain_total_dimless": "0.0",
+          "pure_ls_binding_compton_MeV": "0.0",
+          "pure_ls_binding_inf_MeV": "0.0",
+          "spin_orbit_gain_Z_dimless": "0.0",
+          "spin_orbit_gain_N_dimless": "0.0",
+          "spin_orbit_gain_total_dimless": "0.0",
+          "delta_SO_binding_compton_MeV": "0.0",
+          "delta_SO_binding_inf_MeV": "0.0",
+          "delta_SO_binding_bare_MeV": "0.0",
+          "delta_Weyl_HO_shell_dimless": "0.289423892757351759470396505101097953031639410683219571061187",
+          "delta_Weyl_HO_shell_compton_MeV": "7.70285082733146421352439269960306266113032629843652266974373",
+          "delta_Weyl_shell_dimless": "0.289423892757351759470396505101097953031639410683219571061187",
+          "delta_Weyl_shell_compton_MeV": "7.70285082733146421352439269960306266113032629843652266974373",
+          "delta_Weyl_shell_inf_MeV": "0.770778555196256258036237617867781518143390701460769507548702"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "18.6153824078885225232532400491037965521401801568199232343361",
+            "delta_MeV": "-9.68027999211147747674675995089620344785981984318007676566390",
+            "err_ppQ": "-0.342111799867653123990720215508939753531262793239294400319955",
+            "err_pct": "-34.2111799867653123990720215508939753531262793239294400319955",
+            "err_sigma": "-12100349.9901393468459334499386202543098247748039750959570799"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "18.6153824078885225232532400491037965521401801568199232343361",
+            "delta_MeV": "-9.68027999211147747674675995089620344785981984318007676566390",
+            "err_ppQ": "-0.342111799867653123990720215508939753531262793239294400319955",
+            "err_pct": "-34.2111799867653123990720215508939753531262793239294400319955",
+            "err_sigma": "-12100349.9901393468459334499386202543098247748039750959570799"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "18.6153824078885225232532400491037965521401801568199232343361",
+            "delta_MeV": "-9.68027999211147747674675995089620344785981984318007676566390",
+            "err_ppQ": "-0.342111799867653123990720215508939753531262793239294400319955",
+            "err_pct": "-34.2111799867653123990720215508939753531262793239294400319955",
+            "err_sigma": "-12100349.9901393468459334499386202543098247748039750959570799"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "18.8075784932181083235187003260239326800128984910593492959467",
+            "delta_MeV": "-9.48808390678189167648129967397606731998710150894065070405330",
+            "err_ppQ": "-0.335319377671889797373370544383370481547274239069966098551321",
+            "err_pct": "-33.5319377671889797373370544383370481547274239069966098551321",
+            "err_sigma": "-11860104.8834773645956016245924700841499838768861758133800666"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "18.6153824078885225232532400491037965521401801568199232343361",
+            "delta_MeV": "-9.68027999211147747674675995089620344785981984318007676566390",
+            "err_ppQ": "-0.342111799867653123990720215508939753531262793239294400319955",
+            "err_pct": "-34.2111799867653123990720215508939753531262793239294400319955",
+            "err_sigma": "-12100349.9901393468459334499386202543098247748039750959570799"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "18.8075784932181083235187003260239326800128984910593492959467",
+            "delta_MeV": "-9.48808390678189167648129967397606731998710150894065070405330",
+            "err_ppQ": "-0.335319377671889797373370544383370481547274239069966098551321",
+            "err_pct": "-33.5319377671889797373370544383370481547274239069966098551321",
+            "err_sigma": "-11860104.8834773645956016245924700841499838768861758133800666"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "18.6153824078885225232532400491037965521401801568199232343361",
+            "delta_MeV": "-9.68027999211147747674675995089620344785981984318007676566390",
+            "err_ppQ": "-0.342111799867653123990720215508939753531262793239294400319955",
+            "err_pct": "-34.2111799867653123990720215508939753531262793239294400319955",
+            "err_sigma": "-12100349.9901393468459334499386202543098247748039750959570799"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "18.8075760070413040001392900417985879948130247791643683961724",
+            "delta_MeV": "-9.48808639295869599986070995820141200518697522083563160382761",
+            "err_ppQ": "-0.335319465536127403041842553161130873726673216911000168132753",
+            "err_pct": "-33.5319465536127403041842553161130873726673216911000168132753",
+            "err_sigma": "-11860107.9911983699998258874477517650064837190260445395047845"
+          }
+        }
+      },
+      {
+        "nuclide": "12C",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "N_minus_Z": 0,
+        "B_AME_MeV": "92.1617352000000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.00000240000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "8.00763085924642530522253603253294349467108646531837365388609",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "0.0",
+          "linear_pauli_triangle_P2_MeV": "0.0",
+          "quadratic_pauli_compton_cand1_MeV": "0.0",
+          "quadratic_pauli_hecke_cand2_MeV": "0.0",
+          "discrete_shell_pauli_promotion_compton_MeV": "0.0",
+          "discrete_shell_pauli_promotion_inf_MeV": "0.0",
+          "discrete_shell_pauli_promotion_bare_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "0.0"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "18.4534124494313015694595982682191699147120479958787837173591",
+          "hbar_omega_inf_MeV": "1.84652343723768836681947362710737403572252412138911717513239",
+          "hbar_omega_bare_MeV": "1.82839577236213708316827406331807779726405271299809359601476",
+          "E_fill_Z_SO_dimless": "12.7274157854025000272640757207412739076254827324976435928477",
+          "E_fill_N_SO_dimless": "12.7274157854025000272640757207412739076254827324976435928477",
+          "E_fill_total_SO_dimless": "25.4548315708050000545281514414825478152509654649952871856953",
+          "E_fill_total_HO_dimless": "26.0000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "0.0",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "0.0",
+          "pauli_asym_SO_inf_MeV": "0.0",
+          "pauli_asym_SO_bare_MeV": "0.0",
+          "pure_ls_gain_Z_dimless": "0.256177488228707571186303309998492098566965637510417531272397",
+          "pure_ls_gain_N_dimless": "0.256177488228707571186303309998492098566965637510417531272397",
+          "pure_ls_gain_total_dimless": "0.512354976457415142372606619996984197133931275020835062544793",
+          "pure_ls_binding_compton_MeV": "9.45469770108734601208628507051512571535593201904906425650886",
+          "pure_ls_binding_inf_MeV": "0.946075472213981110415702775304057639303851257061871920339122",
+          "spin_orbit_gain_Z_dimless": "0.272584214597499972735924279258726092374517267502356407152332",
+          "spin_orbit_gain_N_dimless": "0.272584214597499972735924279258726092374517267502356407152332",
+          "spin_orbit_gain_total_dimless": "0.545168429194999945471848558517452184749034535004712814304665",
+          "delta_SO_binding_compton_MeV": "10.0602178783439190414561587181713669857583726251083019112101",
+          "delta_SO_binding_inf_MeV": "1.00666628175062263610438776948329044551120907521104037137976",
+          "delta_SO_binding_bare_MeV": "0.996783651165444968625065474629314891612138241564674844239189",
+          "delta_Weyl_HO_shell_dimless": "-0.535077527651599767060974605127598802242314077108435097901694",
+          "delta_Weyl_HO_shell_compton_MeV": "-9.87400631017695265370718549029959409310665851671227119514997",
+          "delta_Weyl_shell_dimless": "0.0100909015434001784108739533898533825067204578962777164029702",
+          "delta_Weyl_shell_compton_MeV": "0.186211568166966387748973227871772892651714108396030716060168",
+          "delta_Weyl_shell_inf_MeV": "0.0186330862027463920132470647663525183431790463520207090285997"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "92.9787431506930183438267654570349098202942809639722440136316",
+            "delta_MeV": "0.817007950693018343826765457034909820294280963972244013631599",
+            "err_ppQ": "0.00886493672151496496375391006130828383420325362941130923532785",
+            "err_pct": "0.886493672151496496375391006130828383420325362941130923532785",
+            "err_sigma": "340419.979455424309927818940431212425122617068321768339013166"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "92.9787431506930183438267654570349098202942809639722440136316",
+            "delta_MeV": "0.817007950693018343826765457034909820294280963972244013631599",
+            "err_ppQ": "0.00886493672151496496375391006130828383420325362941130923532785",
+            "err_pct": "0.886493672151496496375391006130828383420325362941130923532785",
+            "err_sigma": "340419.979455424309927818940431212425122617068321768339013166"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "103.038961029036937385282924175206276806052653589080545924842",
+            "delta_MeV": "10.8772258290369373852829241752062768060526535890805459248417",
+            "err_ppQ": "0.118023231717939023627269163821106927314587427484552677181383",
+            "err_pct": "11.8023231717939023627269163821106927314587427484552677181383",
+            "err_sigma": "4532177.42876539057720121840633594866918860566211689413535072"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "104.040192366759961443052311721276753238950861027732864406976",
+            "delta_MeV": "11.8784571667599614430523117212767532389508610277328644069759",
+            "err_ppQ": "0.128887082485833680820847996808080423804247785340448585726888",
+            "err_pct": "12.8887082485833680820847996808080423804247785340448585726888",
+            "err_sigma": "4949357.15281665060127179655053198051622952542822202683623997"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "93.9755268018584633124518309316642247119064192055369188578708",
+            "delta_MeV": "1.81379160185846331245183093166422471190641920553691885787079",
+            "err_ppQ": "0.0196805279102260578146301105197097538144704897606671674067047",
+            "err_pct": "1.96805279102260578146301105197097538144704897606671674067047",
+            "err_sigma": "755746.500774359713521596221526760296627674668973716190779495"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "94.9866407701666650377005407725886766987036974778356028671456",
+            "delta_MeV": "2.82490557016666503770054077258867669870369747783560286714556",
+            "err_ppQ": "0.0306516100639418629099394471100265991813020625270909923920959",
+            "err_pct": "3.06516100639418629099394471100265991813020625270909923920959",
+            "err_sigma": "1177043.98756944376570855865524528195779320728243150119464398"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "93.9755268018584633124518309316642247119064192055369188578708",
+            "delta_MeV": "1.81379160185846331245183093166422471190641920553691885787079",
+            "err_ppQ": "0.0196805279102260578146301105197097538144704897606671674067047",
+            "err_pct": "1.96805279102260578146301105197097538144704897606671674067047",
+            "err_sigma": "755746.500774359713521596221526760296627674668973716190779495"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "94.9866278273830979120508581202153064688258577841134088078659",
+            "delta_MeV": "2.82489262738309791205085812021530646882585778411340880786591",
+            "err_ppQ": "0.0306514696283962534599810586054949458983912206561124817869739",
+            "err_pct": "3.06514696283962534599810586054949458983912206561124817869739",
+            "err_sigma": "1177038.59474295746335452421675637769534410741004725366994413"
+          }
+        }
+      },
+      {
+        "nuclide": "16O",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "N_minus_Z": 0,
+        "B_AME_MeV": "127.619315200000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.00000320000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "13.5807755385258135538331621791122373136713704661293322572870",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "0.0",
+          "linear_pauli_triangle_P2_MeV": "0.0",
+          "quadratic_pauli_compton_cand1_MeV": "0.0",
+          "quadratic_pauli_hecke_cand2_MeV": "0.0",
+          "discrete_shell_pauli_promotion_compton_MeV": "0.0",
+          "discrete_shell_pauli_promotion_inf_MeV": "0.0",
+          "discrete_shell_pauli_promotion_bare_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "0.0"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "16.7660378849432965561377790135112853358514823434959349012977",
+          "hbar_omega_inf_MeV": "1.67767788147589425651205646614676215687425960463635698810310",
+          "hbar_omega_bare_MeV": "1.66120780490323220464172490681987716183512576458653364269655",
+          "E_fill_Z_SO_dimless": "17.9753899104468113976755685461096490092886725550120916861801",
+          "E_fill_N_SO_dimless": "17.9753899104468113976755685461096490092886725550120916861801",
+          "E_fill_total_SO_dimless": "35.9507798208936227953511370922192980185773451100241833723602",
+          "E_fill_total_HO_dimless": "36.0000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "0.0",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "0.0",
+          "pauli_asym_SO_inf_MeV": "0.0",
+          "pauli_asym_SO_bare_MeV": "0.0",
+          "pure_ls_gain_Z_dimless": "0.0",
+          "pure_ls_gain_N_dimless": "0.0",
+          "pure_ls_gain_total_dimless": "0.0",
+          "pure_ls_binding_compton_MeV": "0.0",
+          "pure_ls_binding_inf_MeV": "0.0",
+          "spin_orbit_gain_Z_dimless": "0.0246100895531886023244314538903509907113274449879083138199034",
+          "spin_orbit_gain_N_dimless": "0.0246100895531886023244314538903509907113274449879083138199034",
+          "spin_orbit_gain_total_dimless": "0.0492201791063772046488629077807019814226548899758166276398068",
+          "delta_SO_binding_compton_MeV": "0.825227387601214704580386711877952783939071409705140042681339",
+          "delta_SO_binding_inf_MeV": "0.0825756058090509828232273078230790767527995995216388681548985",
+          "delta_SO_binding_bare_MeV": "0.0817649456902488094175097899924835188307769367285223465143635",
+          "delta_Weyl_HO_shell_dimless": "0.915754147605022642671052420473496405465634981086552989094512",
+          "delta_Weyl_HO_shell_compton_MeV": "15.3535687320397652294053650420180483415682650249404845723076",
+          "delta_Weyl_shell_dimless": "0.964974326711399847319915328254198386888289871062369616734318",
+          "delta_Weyl_shell_compton_MeV": "16.1787961196409799339857517538960011255073364346456246149890",
+          "delta_Weyl_shell_inf_MeV": "1.61891608411580873415894297772193819943891877393304192065458"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "128.206127533574807315808700178937272468038754162953576081917",
+            "delta_MeV": "0.586812333574807315808700178937272468038754162953576081917138",
+            "err_ppQ": "0.00459814670416604238140199782969273030575511318018399836952845",
+            "err_pct": "0.459814670416604238140199782969273030575511318018399836952845",
+            "err_sigma": "183378.854242127286190218805917897646262110675922992525599106"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "128.206127533574807315808700178937272468038754162953576081917",
+            "delta_MeV": "0.586812333574807315808700178937272468038754162953576081917138",
+            "err_ppQ": "0.00459814670416604238140199782969273030575511318018399836952845",
+            "err_pct": "0.459814670416604238140199782969273030575511318018399836952845",
+            "err_sigma": "183378.854242127286190218805917897646262110675922992525599106"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "129.031354921176022020389086890815225251977825572658716124598",
+            "delta_MeV": "1.41203972117602202038908689081522525197782557265871612459848",
+            "err_ppQ": "0.0110644671534487439436525584084565378703569910133690807063544",
+            "err_pct": "1.10644671534487439436525584084565378703569910133690807063544",
+            "err_sigma": "441262.412867506881371589653379757891243070491455848788937024"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "130.437103885095765206910438071460871837388777563517480816994",
+            "delta_MeV": "2.81778868509576520691043807146087183738877756351748081699446",
+            "err_ppQ": "0.0220796411630938230180257076905304678941638574434027429806681",
+            "err_pct": "2.20796411630938230180257076905304678941638574434027429806681",
+            "err_sigma": "880558.964092426627159511897331522449183992988599212755310770"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "128.287892479265056125226209968929755986869531099682098428432",
+            "delta_MeV": "0.668577279265056125226209968929755986869531099682098428431501",
+            "err_ppQ": "0.00523884083077305311560087394145299399686428578863035952438257",
+            "err_pct": "0.523884083077305311560087394145299399686428578863035952438257",
+            "err_sigma": "208930.399770330039133190615290548745896728468650655758884844"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "129.694452103303601485153278667405998130202505753333979642468",
+            "delta_MeV": "2.07513690330360148515327866740599813020250575333397964246802",
+            "err_ppQ": "0.0162603670145975010305750227643127028016093425435805789566564",
+            "err_pct": "1.62603670145975010305750227643127028016093425435805789566564",
+            "err_sigma": "648480.282282375464110399583564374415688283047916868638271257"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "128.287892479265056125226209968929755986869531099682098428432",
+            "delta_MeV": "0.668577279265056125226209968929755986869531099682098428431501",
+            "err_ppQ": "0.00523884083077305311560087394145299399686428578863035952438257",
+            "err_pct": "0.523884083077305311560087394145299399686428578863035952438257",
+            "err_sigma": "208930.399770330039133190615290548745896728468650655758884844"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "129.694433921542031101744913590948377975465973230410612002176",
+            "delta_MeV": "2.07511872154203110174491359094837797546597323041061200217611",
+            "err_ppQ": "0.0162602245458689869364297732178112955072961653880635460593359",
+            "err_pct": "1.62602245458689869364297732178112955072961653880635460593359",
+            "err_sigma": "648474.600481884719295285497171368117333116634503316250680034"
+          }
+        }
+      },
+      {
+        "nuclide": "24Mg",
+        "Z": 12,
+        "N": 12,
+        "A": 24,
+        "N_minus_Z": 0,
+        "B_AME_MeV": "198.257047200000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.0000144000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "27.9649076294297436967486131114491036651264252895168388145795",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "0.0",
+          "linear_pauli_triangle_P2_MeV": "0.0",
+          "quadratic_pauli_compton_cand1_MeV": "0.0",
+          "quadratic_pauli_hecke_cand2_MeV": "0.0",
+          "discrete_shell_pauli_promotion_compton_MeV": "0.0",
+          "discrete_shell_pauli_promotion_inf_MeV": "0.0",
+          "discrete_shell_pauli_promotion_bare_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "0.0"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "14.6464831673151583522870438868751880518831451754537448866693",
+          "hbar_omega_inf_MeV": "1.46558662337752103617497496674380878325374628458112407394605",
+          "hbar_omega_bare_MeV": "1.45119868623093249243332646615642025592841290153372743688651",
+          "E_fill_Z_SO_dimless": "31.4138147548830190506540990183319628307320863900154399959955",
+          "E_fill_N_SO_dimless": "31.4138147548830190506540990183319628307320863900154399959955",
+          "E_fill_total_SO_dimless": "62.8276295097660381013081980366639256614641727800308799919910",
+          "E_fill_total_HO_dimless": "64.0000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "0.0",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "0.0",
+          "pauli_asym_SO_inf_MeV": "0.0",
+          "pauli_asym_SO_bare_MeV": "0.0",
+          "pure_ls_gain_Z_dimless": "0.512354976457415142372606619996984197133931275020835062544793",
+          "pure_ls_gain_N_dimless": "0.512354976457415142372606619996984197133931275020835062544793",
+          "pure_ls_gain_total_dimless": "1.02470995291483028474521323999396839426786255004167012508959",
+          "pure_ls_binding_compton_MeV": "15.0083970767473702505153548401015452321798999626971864084374",
+          "pure_ls_binding_inf_MeV": "1.50180119983378468684108202661215887096185637950301152011055",
+          "spin_orbit_gain_Z_dimless": "0.586185245116980949345900981668037169267913609984560004004504",
+          "spin_orbit_gain_N_dimless": "0.586185245116980949345900981668037169267913609984560004004504",
+          "spin_orbit_gain_total_dimless": "1.17237049023396189869180196333607433853582721996912000800901",
+          "delta_SO_binding_compton_MeV": "17.1711046510687431928809260856963893439105965566977829559864",
+          "delta_SO_binding_inf_MeV": "1.71821050812944122126847482314925340892956531448028117425370",
+          "delta_SO_binding_bare_MeV": "1.70134251520343977932061777402263333870928769234611965225531",
+          "delta_Weyl_HO_shell_dimless": "-1.51034848244047528719740028306376489750670809176998550939002",
+          "delta_Weyl_HO_shell_compton_MeV": "-22.1212936248444153125213912806000828670080420836907189738255",
+          "delta_Weyl_shell_dimless": "-0.337977992206513388505598319727690558970880871800865501381012",
+          "delta_Weyl_shell_compton_MeV": "-4.95018897377567211964046519490369352309744552699293601783903",
+          "delta_Weyl_shell_inf_MeV": "-0.495336024373858077486347406327158199656555354722188379563692"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "195.423053566993231614078370983563719050073213739150650867998",
+            "delta_MeV": "-2.83399363300676838592162901643628094992678626084934913200231",
+            "err_ppQ": "-0.0142945417226347572976544816432446137527603924731980429294031",
+            "err_pct": "-1.42945417226347572976544816432446137527603924731980429294031",
+            "err_sigma": "-196805.113403247804577890903919186177078249045892315911944605"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "195.423053566993231614078370983563719050073213739150650867998",
+            "delta_MeV": "-2.83399363300676838592162901643628094992678626084934913200231",
+            "err_ppQ": "-0.0142945417226347572976544816432446137527603924731980429294031",
+            "err_pct": "-1.42945417226347572976544816432446137527603924731980429294031",
+            "err_sigma": "-196805.113403247804577890903919186177078249045892315911944605"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "212.594158218061974806959297069260108393983810295848433823984",
+            "delta_MeV": "14.3371110180619748069592970692601083939838102958484338239841",
+            "err_ppQ": "0.0723157699589806803445587535677778842354503214645296796490578",
+            "err_pct": "7.23157699589806803445587535677778842354503214645296796490578",
+            "err_sigma": "995632.709587637139372173407587507527359986826100585682221120"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "214.808942434375156250984575519056095284420251391120090936904",
+            "delta_MeV": "16.5518952343751562509845755190560952844202513911200909369037",
+            "err_ppQ": "0.0834870460754807219331196390332201784372195138348660472579847",
+            "err_pct": "8.34870460754807219331196390332201784372195138348660472579847",
+            "err_sigma": "1149437.16905383029520726218882333995030696190216111742617387"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "197.124396082196671393398988757586352388782501431496770520253",
+            "delta_MeV": "-1.13265111780332860660101124241364761121749856850322947974700",
+            "err_ppQ": "-0.00571304341409221092545864993803684377287295020554119036504543",
+            "err_pct": "-0.571304341409221092545864993803684377287295020554119036504543",
+            "err_sigma": "-78656.3276252311532361813362787255285567707339238353805379860"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "199.356048291435854279372124256508959349439220148902589155171",
+            "delta_MeV": "1.09900109143585427937212425650895934943922014890258915517097",
+            "err_ppQ": "0.00554331413161415368528763327868710106280257435864095304235407",
+            "err_pct": "0.554331413161415368528763327868710106280257435864095304235407",
+            "err_sigma": "76319.5202386009916230641844797888437110569547849020246646510"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "197.124396082196671393398988757586352388782501431496770520253",
+            "delta_MeV": "-1.13265111780332860660101124241364761121749856850322947974700",
+            "err_ppQ": "-0.00571304341409221092545864993803684377287295020554119036504543",
+            "err_pct": "-0.571304341409221092545864993803684377287295020554119036504543",
+            "err_sigma": "-78656.3276252311532361813362787255285567707339238353805379860"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "199.356019666721364277046468124902164159021707356245387813193",
+            "delta_MeV": "1.09897246672136427704646812490216415902170735624538781319308",
+            "err_ppQ": "0.00554316974978816428698665761678994762624361004931474543414405",
+            "err_pct": "0.554316974978816428698665761678994762624361004931474543414405",
+            "err_sigma": "76317.5324112058525726713975626502888209518997392630425828528"
+          }
+        }
+      },
+      {
+        "nuclide": "28Si",
+        "Z": 14,
+        "N": 14,
+        "A": 28,
+        "N_minus_Z": 0,
+        "B_AME_MeV": "236.536846000000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.00000560000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "36.6264856280698497104890997450626238409467561310465577779511",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "0.0",
+          "linear_pauli_triangle_P2_MeV": "0.0",
+          "quadratic_pauli_compton_cand1_MeV": "0.0",
+          "quadratic_pauli_hecke_cand2_MeV": "0.0",
+          "discrete_shell_pauli_promotion_compton_MeV": "0.0",
+          "discrete_shell_pauli_promotion_inf_MeV": "0.0",
+          "discrete_shell_pauli_promotion_bare_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "0.0"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "13.9129030963496000897052715251347390111599767301683718337186",
+          "hbar_omega_inf_MeV": "1.39218162049036477415899757356274304450731370606593983196554",
+          "hbar_omega_bare_MeV": "1.37851431394379604355725260368822887188684623358631192473585",
+          "E_fill_Z_SO_dimless": "38.1330271771011228771433642544431197414537933075171141509032",
+          "E_fill_N_SO_dimless": "38.1330271771011228771433642544431197414537933075171141509032",
+          "E_fill_total_SO_dimless": "76.2660543542022457542867285088862394829075866150342283018064",
+          "E_fill_total_HO_dimless": "78.0000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "0.0",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "0.0",
+          "pauli_asym_SO_inf_MeV": "0.0",
+          "pauli_asym_SO_bare_MeV": "0.0",
+          "pure_ls_gain_Z_dimless": "0.768532464686122713558909929995476295700896912531252593817190",
+          "pure_ls_gain_N_dimless": "0.768532464686122713558909929995476295700896912531252593817190",
+          "pure_ls_gain_total_dimless": "1.53706492937224542711781985999095259140179382506250518763438",
+          "pure_ls_binding_compton_MeV": "21.3850354151534927766107221292581271111720018423023430401987",
+          "pure_ls_binding_inf_MeV": "2.13987354417236071872181506847011680549056075715390928858214",
+          "spin_orbit_gain_Z_dimless": "0.866972822898877122856635745556880258546206692482885849096804",
+          "spin_orbit_gain_N_dimless": "0.866972822898877122856635745556880258546206692482885849096804",
+          "spin_orbit_gain_total_dimless": "1.73394564579775424571327149111376051709241338496577169819361",
+          "delta_SO_binding_compton_MeV": "24.1242177443214819883462795074191848684014928527720122466218",
+          "delta_SO_binding_inf_MeV": "2.41396725900892956316457332077682599016368018550582357059465",
+          "delta_SO_binding_bare_MeV": "2.39026889233272357121950940572047255066256942792020840606083",
+          "delta_Weyl_HO_shell_dimless": "-1.60430176356272771848937189481807182041695051980427218325277",
+          "delta_Weyl_HO_shell_compton_MeV": "-22.3204949737509985052316535975406255914152621772299687447536",
+          "delta_Weyl_shell_dimless": "0.129643882235026527223899596295688696675462865161499514940841",
+          "delta_Weyl_shell_compton_MeV": "1.80372277057048348311462590987855927698623067554204350186818",
+          "delta_Weyl_shell_inf_MeV": "0.180487830056621244446817103297053488099466063912843843408809"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "227.562004630514302820930445218431855340997640097413222576313",
+            "delta_MeV": "-8.97484136948569717906955478156814465900235990258677742368743",
+            "err_ppQ": "-0.0379426779432312933565942397894666468115600049160492206093229",
+            "err_pct": "-3.79426779432312933565942397894666468115600049160492206093229",
+            "err_sigma": "-1602650.24455101735340527763956574011767899283974763882565847"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "227.562004630514302820930445218431855340997640097413222576313",
+            "delta_MeV": "-8.97484136948569717906955478156814465900235990258677742368743",
+            "err_ppQ": "-0.0379426779432312933565942397894666468115600049160492206093229",
+            "err_pct": "-3.79426779432312933565942397894666468115600049160492206093229",
+            "err_sigma": "-1602650.24455101735340527763956574011767899283974763882565847"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "251.686222374835784809276724725851040209399132950185234822934",
+            "delta_MeV": "15.1493763748357848092767247258510402093991329501852348229344",
+            "err_ppQ": "0.0640465814566403105302111144487444472367706000027802637688607",
+            "err_pct": "6.40465814566403105302111144487444472367706000027802637688607",
+            "err_sigma": "2705245.78122067585879941512961625718024984516967593478980971"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "254.305524217345685382053966810222197252348318597663338146116",
+            "delta_MeV": "17.7686782173456853820539668102221972523483185976633381461157",
+            "err_ppQ": "0.0751201282921718055801503619026956893318359313781639675119188",
+            "err_pct": "7.51201282921718055801503619026956893318359313781639675119188",
+            "err_sigma": "3172978.25309744381822392264468253522363362832101131038323495"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "229.952273522847026392149954624152327891660209525333430982373",
+            "delta_MeV": "-6.58457247715297360785004537584767210833979047466656901762660",
+            "err_ppQ": "-0.0278374071038089922271562096327591689809704762642627314715552",
+            "err_pct": "-2.78374071038089922271562096327591689809704762642627314715552",
+            "err_sigma": "-1175816.51377731671568750810282994144791781972761903018171904"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "232.595273732033132956872260623579838374110505930397149470089",
+            "delta_MeV": "-3.94157226796686704312773937642016162588949406960285052991140",
+            "err_ppQ": "-0.0166636713671529510591670752911796313792460649855915070834732",
+            "err_pct": "-1.66636713671529510591670752911796313792460649855915070834732",
+            "err_sigma": "-703852.190708369114844239174360743147480266798143366166055608"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "229.952273522847026392149954624152327891660209525333430982373",
+            "delta_MeV": "-6.58457247715297360785004537584767210833979047466656901762660",
+            "err_ppQ": "-0.0278374071038089922271562096327591689809704762642627314715552",
+            "err_pct": "-2.78374071038089922271562096327591689809704762642627314715552",
+            "err_sigma": "-1175816.51377731671568750810282994144791781972761903018171904"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "232.595239883833217471166181567434228898094145349650483514665",
+            "delta_MeV": "-3.94160611616678252883381843256577110190585465034951648533531",
+            "err_ppQ": "-0.0166638144662112495100819025572268394155634198756058347262114",
+            "err_pct": "-1.66638144662112495100819025572268394155634198756058347262114",
+            "err_sigma": "-703858.235029782594434610434386744839626045473276699372381306"
+          }
+        }
+      },
+      {
+        "nuclide": "40Ca",
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "N_minus_Z": 0,
+        "B_AME_MeV": "342.052184000000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.0000240000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "67.9005780241417979298604792047937270360406624661120306260133",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "0.0",
+          "linear_pauli_triangle_P2_MeV": "0.0",
+          "quadratic_pauli_compton_cand1_MeV": "0.0",
+          "quadratic_pauli_hecke_cand2_MeV": "0.0",
+          "discrete_shell_pauli_promotion_compton_MeV": "0.0",
+          "discrete_shell_pauli_promotion_inf_MeV": "0.0",
+          "discrete_shell_pauli_promotion_bare_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "0.0"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "12.3533223351058301100562521167950172767680183967039730417306",
+          "hbar_omega_inf_MeV": "1.23612363198589352256358789393453945812308838259349221814109",
+          "hbar_omega_bare_MeV": "1.22398837581015230231700547288345040843650490616917374035439",
+          "E_fill_Z_SO_dimless": "59.8523394626808683860534112766578940557320353300725501170806",
+          "E_fill_N_SO_dimless": "59.8523394626808683860534112766578940557320353300725501170806",
+          "E_fill_total_SO_dimless": "119.704678925361736772106822553315788111464070660145100234161",
+          "E_fill_total_HO_dimless": "120.000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "0.0",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "0.0",
+          "pauli_asym_SO_inf_MeV": "0.0",
+          "pauli_asym_SO_bare_MeV": "0.0",
+          "pure_ls_gain_Z_dimless": "0.0",
+          "pure_ls_gain_N_dimless": "0.0",
+          "pure_ls_gain_total_dimless": "0.0",
+          "pure_ls_binding_compton_MeV": "0.0",
+          "pure_ls_binding_inf_MeV": "0.0",
+          "spin_orbit_gain_Z_dimless": "0.147660537319131613946588723342105944267964669927449882919420",
+          "spin_orbit_gain_N_dimless": "0.147660537319131613946588723342105944267964669927449882919420",
+          "spin_orbit_gain_total_dimless": "0.295321074638263227893177446684211888535929339854899765838841",
+          "delta_SO_binding_compton_MeV": "3.64819642735631304057288198944181804962063383184504261239488",
+          "delta_SO_binding_inf_MeV": "0.365053359383827087359476577723153969565330492855321675312384",
+          "delta_SO_binding_bare_MeV": "0.361469562488996569672146104831417353958071291491234730029461",
+          "delta_Weyl_HO_shell_dimless": "1.79116759069496765124006406154240465670893182775189499927529",
+          "delta_Weyl_HO_shell_compton_MeV": "22.1268706040498415214188141897710026324937840139118513422249",
+          "delta_Weyl_shell_dimless": "2.08648866533323087913324150822661654524486116760679476511413",
+          "delta_Weyl_shell_compton_MeV": "25.7750670314061545619916961792128206821144178457568939546198",
+          "delta_Weyl_shell_inf_MeV": "2.57915794708911283932988267363027311330860926869908493425206"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "318.689499420925886263336748364145721546138005361724621743310",
+            "delta_MeV": "-23.3626845790741137366632516358542784538619946382753782566902",
+            "err_ppQ": "-0.0683015214399979207168671422248667134774441160658555486863670",
+            "err_pct": "-6.83015214399979207168671422248667134774441160658555486863670",
+            "err_sigma": "-973445.190794754739027635484827261602244249776594807427362091"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "318.689499420925886263336748364145721546138005361724621743310",
+            "delta_MeV": "-23.3626845790741137366632516358542784538619946382753782566902",
+            "err_ppQ": "-0.0683015214399979207168671422248667134774441160658555486863670",
+            "err_pct": "-6.83015214399979207168671422248667134774441160658555486863670",
+            "err_sigma": "-973445.190794754739027635484827261602244249776594807427362091"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "322.337695848282199303909630353587539595758639193569664355705",
+            "delta_MeV": "-19.7144881517178006960903696464124604042413608064303356442953",
+            "err_ppQ": "-0.0576359078348051146958628091859003022890839393278960488797677",
+            "err_pct": "-5.76359078348051146958628091859003022890839393278960488797677",
+            "err_sigma": "-821437.006321575029003765401933852516843390033601263985178971"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "326.170550569382257262942763341684207096246058497667106309671",
+            "delta_MeV": "-15.8816334306177427370572366583157929037539415023328936903285",
+            "err_ppQ": "-0.0464304400717340332405456491934452694614396658912515339774253",
+            "err_pct": "-4.64304400717340332405456491934452694614396658912515339774253",
+            "err_sigma": "-661734.726275739280710718194096491370989747562597203903763689"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "319.050968983414882833008894468977138900096076653215856473339",
+            "delta_MeV": "-23.0012150165851171669911055310228610999039233467841435266607",
+            "err_ppQ": "-0.0672447541413304268420958409405240374079994862619679795018082",
+            "err_pct": "-6.72447541413304268420958409405240374079994862619679795018082",
+            "err_sigma": "-958383.959024379881957962730459285879162663472782672646944196"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "322.887407501409771309729357929965543016190755158677385372589",
+            "delta_MeV": "-19.1647764985902286902706420700344569838092448413226146274110",
+            "err_ppQ": "-0.0560288090386530866011679728670712331537378660366121639130099",
+            "err_pct": "-5.60288090386530866011679728670712331537378660366121639130099",
+            "err_sigma": "-798532.354107926195427943419584769040992051868388442276142127"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "319.050968983414882833008894468977138900096076653215856473339",
+            "delta_MeV": "-23.0012150165851171669911055310228610999039233467841435266607",
+            "err_ppQ": "-0.0672447541413304268420958409405240374079994862619679795018082",
+            "err_pct": "-6.72447541413304268420958409405240374079994862619679795018082",
+            "err_sigma": "-958383.959024379881957962730459285879162663472782672646944196"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "322.887357944360017692492632878885406363626129534806942259432",
+            "delta_MeV": "-19.1648260556399823075073671211145936363738704651930577405676",
+            "err_ppQ": "-0.0560289539202006156683606122541658545187767912781198840132755",
+            "err_pct": "-5.60289539202006156683606122541658545187767912781198840132755",
+            "err_sigma": "-798534.418984999262812806963379774734848911269383044072523649"
+          }
+        }
+      },
+      {
+        "nuclide": "48Ca",
+        "Z": 20,
+        "N": 28,
+        "A": 48,
+        "N_minus_Z": 8,
+        "B_AME_MeV": "416.001196800000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.0000192000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "63.8968903025648294325978127368693844738453572138425128995541",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "58.9310195313665935727554965630301404567687453684844130546630",
+          "linear_pauli_triangle_P2_MeV": "30.7896277566637560878864306270234752918929735926210403822983",
+          "quadratic_pauli_compton_cand1_MeV": "34.5129361554854891996492311734929186670349317296327887812572",
+          "quadratic_pauli_hecke_cand2_MeV": "3.41993054316996758713246499912983057019024635052095027023601",
+          "discrete_shell_pauli_promotion_compton_MeV": "3.13733689362027489517010330055844494191519534736533766177436e-78",
+          "discrete_shell_pauli_promotion_inf_MeV": "3.13934678502178929712146135172079175715466306996082710996562e-79",
+          "discrete_shell_pauli_promotion_bare_MeV": "3.10852723228860138505606469780385884395525540631327196503454e-79",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "24.4180833758811043731062653895372217897338136388516242734057",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "-3.72330839882173311176280054646944337514195813701174839895892",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "55.5110889881966259856230315639003098865784990179634627844269",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "27.3696972134937885007539656278936447217027272421000901120623"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "11.6249213937153042631030580104987822917032096361634498772864",
+          "hbar_omega_inf_MeV": "1.16323687384999913077800299119565048882168917135260792604852",
+          "hbar_omega_bare_MeV": "1.15181716056892563648393304882531505489089931930779080701851",
+          "E_fill_Z_SO_dimless": "59.8523394626808683860534112766578940557320353300725501170806",
+          "E_fill_N_SO_dimless": "94.1183938168831141403401397855441335386396219451067784188870",
+          "E_fill_total_SO_dimless": "153.970733279563982526393551062202027594371657275179328535968",
+          "E_fill_total_HO_dimless": "156.000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "2.69880267346701394543323495712512486597375011388633793281991e-79",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "3.13733689362027489517010330055844494191519534736533766177436e-78",
+          "pauli_asym_SO_inf_MeV": "3.13934678502178929712146135172079175715466306996082710996562e-79",
+          "pauli_asym_SO_bare_MeV": "3.10852723228860138505606469780385884395525540631327196503454e-79",
+          "pure_ls_gain_Z_dimless": "0.0",
+          "pure_ls_gain_N_dimless": "1.53706492937224542711781985999095259140179382506250518763438",
+          "pure_ls_gain_total_dimless": "1.53706492937224542711781985999095259140179382506250518763438",
+          "pure_ls_binding_compton_MeV": "17.8682589809889190227945343434572768462723756116097177849778",
+          "pure_ls_binding_inf_MeV": "1.78797060334744047754484334842333698866859216629375520627056",
+          "spin_orbit_gain_Z_dimless": "0.147660537319131613946588723342105944267964669927449882919420",
+          "spin_orbit_gain_N_dimless": "1.88160618311688585965986021445586646136037805489322158111303",
+          "spin_orbit_gain_total_dimless": "2.02926672043601747360644893779797240562834272482067146403245",
+          "delta_SO_binding_compton_MeV": "23.5900661119511529527504658283624832381625478206599929926142",
+          "delta_SO_binding_inf_MeV": "2.36051787608783311105866934670157393077807536389251560508383",
+          "delta_SO_binding_bare_MeV": "2.33734423196962946867947964259848960539599701482194834550896",
+          "delta_Weyl_HO_shell_dimless": "-0.399903532079539475347970103848874549462441505155576289788996",
+          "delta_Weyl_HO_shell_compton_MeV": "-4.64884712549375292588707888355795311293547214375215573459397",
+          "delta_Weyl_shell_dimless": "1.62936318835647799825847883394909785616590121966509517424345",
+          "delta_Weyl_shell_compton_MeV": "18.9412189864574000268633869448045301252270756769078372580202",
+          "delta_Weyl_shell_inf_MeV": "1.89533534159005676981217422720890531649837459633219523145912"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "345.363225735458615629029040006003236585054079645094307758479",
+            "delta_MeV": "-70.6379710645413843709709599939967634149459203549056922415210",
+            "err_ppQ": "-0.169802326550761943315089424266763944595810163676206260956413",
+            "err_pct": "-16.9802326550761943315089424266763944595810163676206260956413",
+            "err_sigma": "-3679060.99294486376932140416635399809452843335181800480424588"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "373.504617510161453113898105942009901749929851420957680430844",
+            "delta_MeV": "-42.4965792898385468861018940579900982500701485790423195691564",
+            "err_ppQ": "-0.102154944785578431504411224948644422385638070787017311699129",
+            "err_pct": "-10.2154944785578431504411224948644422385638070787017311699129",
+            "err_sigma": "-2213363.50467909098365114031552031761719115357182512081089356"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "393.371375223290872954885771223902941612950441104605925024499",
+            "delta_MeV": "-22.6298215767091270451142287760970583870495588953940749755011",
+            "err_ppQ": "-0.0543984530592319849910446910908912519432673874831363825910538",
+            "err_pct": "-5.43984530592319849910446910908912519432673874831363825910538",
+            "err_sigma": "-1178636.54045360036693303274875505512432549785913510807164068"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "398.013265196784369171422831481149949418463349513116259398989",
+            "delta_MeV": "-17.9879316032156308285771685188500505815366504868837406010107",
+            "err_ppQ": "-0.0432400958016081140961207170230190322893240543842679170893451",
+            "err_pct": "-4.32400958016081140961207170230190322893240543842679170893451",
+            "err_sigma": "-936871.437667480772321727527023440134455033879525194822969308"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "403.211658955624871083331551212502036077028575677879718888415",
+            "delta_MeV": "-12.7895378443751289166684487874979639229714243221202811115851",
+            "err_ppQ": "-0.0307439929085683075531681950860627041421324687932250706245686",
+            "err_pct": "-3.07439929085683075531681950860627041421324687932250706245686",
+            "err_sigma": "-666121.762727871297743148374348852287654761683443764641228389"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "407.876722573236570942247801173852128207923562435460620522480",
+            "delta_MeV": "-8.12447422676342905775219882614787179207643756453937947751986",
+            "err_ppQ": "-0.0195299299359213503535579223269866126310058672517246457054420",
+            "err_pct": "-1.95299299359213503535579223269866126310058672517246457054420",
+            "err_sigma": "-423149.699310595263424593688861868322503981123153092681120826"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "406.631589498794838670464016211631866647218822028400669158651",
+            "delta_MeV": "-9.36960730120516132953598378836813335278117797159933084134906",
+            "err_ppQ": "-0.0225230296770270285182409931671815165142841674911242246727812",
+            "err_pct": "-2.25230296770270285182409931671815165142841674911242246727812",
+            "err_sigma": "-488000.380271102152579999155644173612124019686020798481320264"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "407.876662936343427909769273243139836529347888450996963643578",
+            "delta_MeV": "-8.12453386365657209023072675686016347065211154900303635642193",
+            "err_ppQ": "-0.0195300732934251310553699031013464706230674756294427957675095",
+            "err_pct": "-1.95300732934251310553699031013464706230674756294427957675095",
+            "err_sigma": "-423152.805398779796366183685253133514096464143177241476896976"
+          }
+        }
+      },
+      {
+        "nuclide": "56Ni",
+        "Z": 28,
+        "N": 28,
+        "A": 56,
+        "N_minus_Z": 0,
+        "B_AME_MeV": "483.995741600000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.000397600000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "120.754222233015223410107330584364740132286652420446735110599",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "0.0",
+          "linear_pauli_triangle_P2_MeV": "0.0",
+          "quadratic_pauli_compton_cand1_MeV": "0.0",
+          "quadratic_pauli_hecke_cand2_MeV": "0.0",
+          "discrete_shell_pauli_promotion_compton_MeV": "0.0",
+          "discrete_shell_pauli_promotion_inf_MeV": "0.0",
+          "discrete_shell_pauli_promotion_bare_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "0.0",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "0.0"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "11.0426785055384874579924520711887037352887095099343303138918",
+          "hbar_omega_inf_MeV": "1.10497528444859884579555998040134303375579751429133082083665",
+          "hbar_omega_bare_MeV": "1.09412753605380131458525787015587134855024105715101696289762",
+          "E_fill_Z_SO_dimless": "94.1183938168831141403401397855441335386396219451067784188870",
+          "E_fill_N_SO_dimless": "94.1183938168831141403401397855441335386396219451067784188870",
+          "E_fill_total_SO_dimless": "188.236787633766228280680279571088267077279243890213556837774",
+          "E_fill_total_HO_dimless": "192.000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "0.0",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "0.0",
+          "pauli_asym_SO_inf_MeV": "0.0",
+          "pauli_asym_SO_bare_MeV": "0.0",
+          "pure_ls_gain_Z_dimless": "1.53706492937224542711781985999095259140179382506250518763438",
+          "pure_ls_gain_N_dimless": "1.53706492937224542711781985999095259140179382506250518763438",
+          "pure_ls_gain_total_dimless": "3.07412985874449085423563971998190518280358765012501037526876",
+          "pure_ls_binding_compton_MeV": "33.9466277143918558164110035790395178579088793107880583713951",
+          "pure_ls_binding_inf_MeV": "3.39683751509812477155287504000580806322315595406452801005734",
+          "spin_orbit_gain_Z_dimless": "1.88160618311688585965986021445586646136037805489322158111303",
+          "spin_orbit_gain_N_dimless": "1.88160618311688585965986021445586646136037805489322158111303",
+          "spin_orbit_gain_total_dimless": "3.76321236623377171931972042891173292272075610978644316222606",
+          "delta_SO_binding_compton_MeV": "41.5559443083863014309877543107996171549180110053268778497263",
+          "delta_SO_binding_inf_MeV": "4.15825665481964663992252451734486583942638321022890857626692",
+          "delta_SO_binding_bare_MeV": "4.11743427391455202361264511317571179433573317863228393389108",
+          "delta_Weyl_HO_shell_dimless": "-2.59097465485404660193600426924015375563381483806304757885328",
+          "delta_Weyl_HO_shell_compton_MeV": "-28.6113001295517816790822321529698241241480570245659205605352",
+          "delta_Weyl_shell_dimless": "1.17223771137972511738371615967157916708694127172339558337278",
+          "delta_Weyl_shell_compton_MeV": "12.9446441788345197519055221578297930307699539807609572891911",
+          "delta_Weyl_shell_inf_MeV": "1.29529369857318627774597855527528635407626110014555879872334"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "429.037971460697169665460140458501334316871044206559079945471",
+            "delta_MeV": "-54.9577701393028303345398595414986656831289557934409200545294",
+            "err_ppQ": "-0.113550110911353585212080840220141857717388139502260695209657",
+            "err_pct": "-11.3550110911353585212080840220141857717388139502260695209657",
+            "err_sigma": "-138223.767955993034040593208102360829182919908937225654060688"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "429.037971460697169665460140458501334316871044206559079945471",
+            "delta_MeV": "-54.9577701393028303345398595414986656831289557934409200545294",
+            "err_ppQ": "-0.113550110911353585212080840220141857717388139502260695209657",
+            "err_pct": "-11.3550110911353585212080840220141857717388139502260695209657",
+            "err_sigma": "-138223.767955993034040593208102360829182919908937225654060688"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "470.593915769083471096447894769300951471789055211885957795197",
+            "delta_MeV": "-13.4018258309165289035521052306990485282109447881140422048032",
+            "err_ppQ": "-0.0276899664170857839290379930704312802743282334451722006737656",
+            "err_pct": "-2.76899664170857839290379930704312802743282334451722006737656",
+            "err_sigma": "-33706.8054097498211859962405198668222540516720022988989054406"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "476.044840994970405570488882295698299582327452724809184590211",
+            "delta_MeV": "-7.95090060502959442951111770430170041767254727519081540978925",
+            "err_ppQ": "-0.0164276251248521200408659085282780521424169226103596267876528",
+            "err_pct": "-1.64276251248521200408659085282780521424169226103596267876528",
+            "err_sigma": "-19997.2349221066258287502960369761076903233080361942037469549"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "433.155405734611721689072785571677046111206777385191363879362",
+            "delta_MeV": "-50.8403358653882783109272144283229538887932226148086361206384",
+            "err_ppQ": "-0.105042940455053537419237521713606237829744621486166885978731",
+            "err_pct": "-10.5042940455053537419237521713606237829744621486166885978731",
+            "err_sigma": "-127868.047951177762351426595644675437346059413015112263884905"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "438.647153341403750779423652502243548266835824929711215316751",
+            "delta_MeV": "-45.3485882585962492205763474977564517331641750702887846832486",
+            "err_ppQ": "-0.0936962546585270394465312533191024499980108400819218792135931",
+            "err_pct": "-9.36962546585270394465312533191024499980108400819218792135931",
+            "err_sigma": "-114055.805479366823995413348837415623071338468486641812583623"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "433.155405734611721689072785571677046111206777385191363879362",
+            "delta_MeV": "-50.8403358653882783109272144283229538887932226148086361206384",
+            "err_ppQ": "-0.105042940455053537419237521713606237829744621486166885978731",
+            "err_pct": "-10.5042940455053537419237521713606237829744621486166885978731",
+            "err_sigma": "-127868.047951177762351426595644675437346059413015112263884905"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "438.647082918515013873705268937836399770303559735431329763516",
+            "delta_MeV": "-45.3486586814849861262947310621636002296964402645686702364835",
+            "err_ppQ": "-0.0936964001616434596462877868059399476123333731921592391061722",
+            "err_pct": "-9.36964001616434596462877868059399476123333731921592391061722",
+            "err_sigma": "-114055.982599308315206978699854536217881530282355555005624959"
+          }
+        }
+      },
+      {
+        "nuclide": "56Fe",
+        "Z": 26,
+        "N": 30,
+        "A": 56,
+        "N_minus_Z": 4,
+        "B_AME_MeV": "492.259952800000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.000268800000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "103.823074671243247640965297460101959108447518615463462727366",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "29.4655097656832967863777482815150702283843726842422065273315",
+          "linear_pauli_triangle_P2_MeV": "15.3948138783318780439432153135117376459464867963105201911492",
+          "quadratic_pauli_compton_cand1_MeV": "7.39562917617546197135340668003419685722177108492131188169798",
+          "quadratic_pauli_hecke_cand2_MeV": "0.732842259250707340099813928384963693612195646540203629336288",
+          "discrete_shell_pauli_promotion_compton_MeV": "3.28182115441327641414000927038187049393342635295488697608835",
+          "discrete_shell_pauli_promotion_inf_MeV": "0.328392360765410508841885388889713634804502713800876177398205",
+          "discrete_shell_pauli_promotion_bare_MeV": "0.325168471729616907584696074406596228784213505956017209097459",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "22.0698805895078348150243416014808733711626015993208946456335",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "7.99918470215641607258980863347754078872471571138920830945118",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "28.7326675064325894462779343531301065347721770377020028979952",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "14.6619716190811707038434013851267739523342911497703165618129"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "11.0426785055384874579924520711887037352887095099343303138918",
+          "hbar_omega_inf_MeV": "1.10497528444859884579555998040134303375579751429133082083665",
+          "hbar_omega_bare_MeV": "1.09412753605380131458525787015587134855024105715101696289762",
+          "E_fill_Z_SO_dimless": "85.5518802283325527017684576583225736679127252913482213434354",
+          "E_fill_N_SO_dimless": "102.982101709584364153972177645914770492452363311355600215311",
+          "E_fill_total_SO_dimless": "188.533981937916916855740635304237344160365088602703821558746",
+          "E_fill_total_HO_dimless": "192.000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "0.297194304150688575060355733149077083085844712490264720972236",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "3.28182115441327641414000927038187049393342635295488697608835",
+          "pauli_asym_SO_inf_MeV": "0.328392360765410508841885388889713634804502713800876177398205",
+          "pauli_asym_SO_bare_MeV": "0.325168471729616907584696074406596228784213505956017209097459",
+          "pure_ls_gain_Z_dimless": "1.15279869702918407033836489499321444355134536879687889072579",
+          "pure_ls_gain_N_dimless": "1.66515367348659921271097151499019864068527664381771395327058",
+          "pure_ls_gain_total_dimless": "2.81795237051578328304933640998341308423662201261459284399636",
+          "pure_ls_binding_compton_MeV": "31.1177420715258678317100866141195580364164727015557201737788",
+          "pure_ls_binding_inf_MeV": "3.11376772217328104059013545333865739128789295789248400921923",
+          "spin_orbit_gain_Z_dimless": "1.44811977166744729823154234167742633208727470865177865656463",
+          "spin_orbit_gain_N_dimless": "2.01789829041563584602782235408522950754763668864439978468919",
+          "spin_orbit_gain_total_dimless": "3.46601806208308314425936469576265583963491139729617844125382",
+          "delta_SO_binding_compton_MeV": "38.2741231539730250168477450404177466609845846523719908736379",
+          "delta_SO_binding_inf_MeV": "3.82986429405423613108063912845515220462188049642803239886871",
+          "delta_SO_binding_bare_MeV": "3.79226580218493511602794903876911556555151967267626672479363",
+          "delta_Weyl_HO_shell_dimless": "-2.38550297207783964803834549511709428821019300037119684891648",
+          "delta_Weyl_HO_shell_compton_MeV": "-26.3423423946621384996974384582845237119049567079618877421456",
+          "delta_Weyl_shell_dimless": "1.08051509000524349622101920064556155142471839692498159233734",
+          "delta_Weyl_shell_compton_MeV": "11.9317807593108865171503065821332229490796279444101031314923",
+          "delta_Weyl_shell_inf_MeV": "1.19394246892954731596701145817922035674777812231004648778319"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "416.503609256785848648224425301249045112325805327300145801371",
+            "delta_MeV": "-75.7563435432141513517755746987509548876741946726998541986289",
+            "err_ppQ": "-0.153894996154588977061665160706428595114581489621228952831096",
+            "err_pct": "-15.3894996154588977061665160706428595114581489621228952831096",
+            "err_sigma": "-281831.635205409789255117465397138969076168878990698862346089"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "430.574305144137267390658958269252377694763691215231832137553",
+            "delta_MeV": "-61.6856476558627326093410417307476223052363087847681678624465",
+            "err_ppQ": "-0.125311123330247742650295564995527343465093487866535560807145",
+            "err_pct": "-12.5311123330247742650295564995527343465093487866535560807145",
+            "err_sigma": "-229485.296338775046909750899295936094885551743990953005440649"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "476.847613000266708480096511943147665144472991578993031320643",
+            "delta_MeV": "-15.4123397997332915199034880568523348555270084210069686793575",
+            "err_ppQ": "-0.0313093513134007912737594689357235376054889355220507969775222",
+            "err_pct": "-3.13093513134007912737594689357235376054889355220507969775222",
+            "err_sigma": "-57337.5736597220666663076192591232695518117872805318775273715"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "482.298538226153642954137499469545013255011389091916258115656",
+            "delta_MeV": "-9.96141457384635704586250053045498674498861090808374188434352",
+            "err_ppQ": "-0.0202360856640588314903493009282533428646373747998371438602704",
+            "err_pct": "-2.02360856640588314903493009282533428646373747998371438602704",
+            "err_sigma": "-37058.8339800831735337146597115140875929635822473353492721113"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "449.028542565403373210530308693148267212649502037678415424160",
+            "delta_MeV": "-43.2314102345966267894696913068517327873504979623215845758400",
+            "err_ppQ": "-0.0878223182460692479663962038775292646299349703312318372607621",
+            "err_pct": "-8.78223182460692479663962038775292646299349703312318372607621",
+            "err_sigma": "-160831.139265612450853681887302275791619607507300303514047024"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "454.517066283159608699623986309231651962258260374353407893249",
+            "delta_MeV": "-37.7428865168403913003760136907683480377417396256465921067510",
+            "err_ppQ": "-0.0766726732535460302842982227067900292492404830573221314190786",
+            "err_pct": "-7.66726732535460302842982227067900292492404830573221314190786",
+            "err_sigma": "-140412.524244197884301994098551965580497551114678744762301901"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "449.436216352924463643045426547126634677477484178262601844399",
+            "delta_MeV": "-42.8237364470755363569545734528733653225225158217373981556012",
+            "err_ppQ": "-0.0869941505570215793450069445764456777531355498511667637644181",
+            "err_pct": "-8.69941505570215793450069445764456777531355498511667637644181",
+            "err_sigma": "-159314.495710846489423194097666939603134384359455868296709826"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "454.516995927491082634773518537704823949081833982311685758169",
+            "delta_MeV": "-37.7429568725089173652264814622951760509181660176883142418309",
+            "err_ppQ": "-0.0766728161773571708781638705392066499440784207089541537083390",
+            "err_pct": "-7.66728161773571708781638705392066499440784207089541537083390",
+            "err_sigma": "-140412.785984036150912300898297229077570380081911042835721097"
+          }
+        }
+      },
+      {
+        "nuclide": "120Sn",
+        "Z": 50,
+        "N": 70,
+        "A": 120,
+        "N_minus_Z": 20,
+        "B_AME_MeV": "1020.53856000000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.000924000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "303.539728169765695561953050648529945888466457272215624271112",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "147.327548828416483931888741407575351141921863421211032636657",
+          "linear_pauli_triangle_P2_MeV": "76.9740693916593902197160765675586882297324339815526009557458",
+          "quadratic_pauli_compton_cand1_MeV": "86.2823403887137229991230779337322966675873293240819719531431",
+          "quadratic_pauli_hecke_cand2_MeV": "8.54982635792491896783116249782457642547561587630237567559002",
+          "discrete_shell_pauli_promotion_compton_MeV": "26.3469363661653952075176164230984970801439091509454624478017",
+          "discrete_shell_pauli_promotion_inf_MeV": "2.63638151658143219875870665271866348764557603831287553464734",
+          "discrete_shell_pauli_promotion_bare_MeV": "2.61049966766854778667925335759278375005386921887784528436957",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "61.0452084397027609327656634738430544743345340971290606835143",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "-9.30827099705433277940700136617360843785489534252937099739730",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "138.777722470491564964057578909750774716446247544908656961067",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "68.4242430337344712518849140697341118042568181052502252801558"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "8.56531531673313682074078722115578261638943858547542061417190",
+          "hbar_omega_inf_MeV": "0.857080256728674127684303432561018501019870227743888305610154",
+          "hbar_omega_bare_MeV": "0.848666140042090785352438960312349994762307362726553637339835",
+          "E_fill_Z_SO_dimless": "201.511245077876153600583382136811858364203676530351278200060",
+          "E_fill_N_SO_dimless": "313.621834985021438269831838582140344520165663080677134426085",
+          "E_fill_total_SO_dimless": "515.133080062897591870415220718952202884369339611028412626145",
+          "E_fill_total_HO_dimless": "520.000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "3.07600308825691620140281800644677037735350302276037533040216",
+          "pauli_asym_HO_dimless": "0.0",
+          "pauli_asym_SO_compton_MeV": "26.3469363661653952075176164230984970801439091509454624478017",
+          "pauli_asym_SO_inf_MeV": "2.63638151658143219875870665271866348764557603831287553464734",
+          "pauli_asym_SO_bare_MeV": "2.61049966766854778667925335759278375005386921887784528436957",
+          "pure_ls_gain_Z_dimless": "2.56177488228707571186303309998492098566965637510417531272397",
+          "pure_ls_gain_N_dimless": "-2.10843958864610464486971481025400380154199227647370151001555e-81",
+          "pure_ls_gain_total_dimless": "2.56177488228707571186303309998492098566965637510417531272397",
+          "pure_ls_binding_compton_MeV": "21.9424096372757181963255914162864283846548510121392225527722",
+          "pure_ls_binding_inf_MeV": "2.19564667379167579428904464939389388552390381193493914912694",
+          "spin_orbit_gain_Z_dimless": "3.48875492212384639941661786318814163579632346964872179994033",
+          "spin_orbit_gain_N_dimless": "1.37816501497856173016816141785965547983433691932286557391459",
+          "spin_orbit_gain_total_dimless": "4.86691993710240812958477928104779711563066038897158737385492",
+          "delta_SO_binding_compton_MeV": "41.6867038825771312223026343026978673973638382159709338655271",
+          "delta_SO_binding_inf_MeV": "4.17134098916963449759844597228566796144245851302897934074523",
+          "delta_SO_binding_bare_MeV": "4.13039015691459597443941762131923476916535492123425729678753",
+          "delta_Weyl_HO_shell_dimless": "0.448738894487060144117748307587127746849525239782040338123892",
+          "delta_Weyl_HO_shell_compton_MeV": "3.84359012616391122267189573028791921800336270616447470916705",
+          "delta_Weyl_shell_dimless": "5.31565883158946827370252758863492486248018562875362771197881",
+          "delta_Weyl_shell_compton_MeV": "45.5302940087410424449745300329857866153672009221354085746942",
+          "delta_Weyl_shell_inf_MeV": "4.55594623606074541710465981502863654439836455536773149112643"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "751.733381690109049111206652882467280886685491130255808895283",
+            "delta_MeV": "-268.805178309890950888793347117532719113314508869744191104717",
+            "err_ppQ": "-0.263395415759587713068669690557829308393123831469674395355249",
+            "err_pct": "-26.3395415759587713068669690557829308393123831469674395355249",
+            "err_sigma": "-290914.695140574622174018773936723721984106611330891981715062"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "822.086861126866142823379317722483943798874920569914240576195",
+            "delta_MeV": "-198.451698873133857176620682277516056201125079430085759423805",
+            "err_ppQ": "-0.194457815364795091306124368566255895515721698384513525313346",
+            "err_pct": "-19.4457815364795091306124368566255895515721698384513525313346",
+            "err_sigma": "-214774.565880014996944394677789519541343208960422170735307149"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "854.465294012388941266274950659008202758383863443355803444324",
+            "delta_MeV": "-166.073265987611058733725049340991797241616136556644196555676",
+            "err_ppQ": "-0.162731005467947295135741906058886983399839528411982979414002",
+            "err_pct": "-16.2731005467947295135741906058886983399839528411982979414002",
+            "err_sigma": "-179732.971848063916378490313139601512166251230039658221380601"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "866.388501257423381800347356338608273309126173791582169603527",
+            "delta_MeV": "-154.150058742576618199652643661391726690873826208417830396473",
+            "err_ppQ": "-0.151047755356325407439433394521997999459103070253825421742489",
+            "err_pct": "-15.1047755356325407439433394521997999459103070253825421742489",
+            "err_sigma": "-166829.067903221448268022341624882821094019292433352630299213"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "894.641494317515210049703649413537290372297093596398723153138",
+            "delta_MeV": "-125.897065682484789950296350586462709627702906403601276846862",
+            "err_ppQ": "-0.123363359913107829997424448701343249222942547514913377547304",
+            "err_pct": "-12.3363359913107829997424448701343249222942547514913377547304",
+            "err_sigma": "-136252.235587104751028459253881453148947730418185715667583184"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "906.605652394804689106935083444103794115316507536419811356298",
+            "delta_MeV": "-113.932907605195310893064916555896205884683492463580188643702",
+            "err_ppQ": "-0.111639983113617295257383431504926385030158480698250332298764",
+            "err_pct": "-11.1639983113617295257383431504926385030158480698250332298764",
+            "err_sigma": "-123304.012559735184949204455147073815892514602233311892471539"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "900.580821007771581230855558553769083047718840253823253544358",
+            "delta_MeV": "-119.957738992228418769144441446230916952281159746176746455642",
+            "err_ppQ": "-0.117543563461461386396947550366182064646612823474476796306101",
+            "err_pct": "-11.7543563461461386396947550366182064646612823474476796306101",
+            "err_sigma": "-129824.392848732054944961516716700126571732856868156652008270"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "906.605499236831640927228565648211157400722969236223054564334",
+            "delta_MeV": "-113.933060763168359072771434351788842599277030763776945435666",
+            "err_ppQ": "-0.111640133189252897090700261587165155816627870252915230793108",
+            "err_pct": "-11.1640133189252897090700261587165155816627870252915230793108",
+            "err_sigma": "-123304.178315117271723778608605832080735148301692399291597042"
+          }
+        }
+      },
+      {
+        "nuclide": "132Sn",
+        "Z": 50,
+        "N": 82,
+        "A": 132,
+        "N_minus_Z": 32,
+        "B_AME_MeV": "1102.84318320000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.00198000000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "294.047830259301200036772244395030420741752568634889338805554",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "235.724078125466374291021986252120561827074981473937652218652",
+          "linear_pauli_triangle_P2_MeV": "123.158511026655024351545722508093901167571894370484161529193",
+          "quadratic_pauli_compton_cand1_MeV": "200.802537631915573525231890463958799517294148245136225636406",
+          "quadratic_pauli_hecke_cand2_MeV": "19.8977777057161750524070690858462869538341605848491652086459",
+          "discrete_shell_pauli_promotion_compton_MeV": "62.5802424678324688090863539901918385576452156715296179593681",
+          "discrete_shell_pauli_promotion_inf_MeV": "6.26203336328892255473264730070983223082638293825354653733192",
+          "discrete_shell_pauli_promotion_bare_MeV": "6.20055781417862396196092042893576831159340468506932636320962",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "34.9215404935508007657900957881617623097808332288014265822460",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "-77.6440266052605491736861679558648983497222538746520641072125",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "215.826300419750199238614917166274274873240820889088487010006",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "103.260733320938849299138653422247614213737733785634996320547"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "8.29747196374740117123249762359168932918459501636365783400817",
+          "hbar_omega_inf_MeV": "0.830278762416887365426715882913859942859354958479075408777172",
+          "hbar_omega_bare_MeV": "0.822127760997216026538992405711669505629221793271065465054789",
+          "E_fill_Z_SO_dimless": "201.511245077876153600583382136811858364203676530351278200060",
+          "E_fill_N_SO_dimless": "387.040869974995166632304345315452433320321355168383622042402",
+          "E_fill_total_SO_dimless": "588.552115052871320232887727452264291684525031698734900242462",
+          "E_fill_total_HO_dimless": "598.000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "7.54208543773967137409466400276384375371232931264602918541646",
+          "pauli_asym_HO_dimless": "12.0000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_compton_MeV": "62.5802424678324688090863539901918385576452156715296179593681",
+          "pauli_asym_SO_inf_MeV": "6.26203336328892255473264730070983223082638293825354653733192",
+          "pauli_asym_SO_bare_MeV": "6.20055781417862396196092042893576831159340468506932636320962",
+          "pure_ls_gain_Z_dimless": "2.56177488228707571186303309998492098566965637510417531272397",
+          "pure_ls_gain_N_dimless": "3.84266232343061356779454964997738147850448456265626296908595",
+          "pure_ls_gain_total_dimless": "6.40443720571768927965758274996230246417414093776043828180992",
+          "pure_ls_binding_compton_MeV": "53.1406381580232739597428444019664297503909034156503061946596",
+          "pure_ls_binding_inf_MeV": "5.31746819713995133034725508404065165435981775746124058346584",
+          "spin_orbit_gain_Z_dimless": "3.48875492212384639941661786318814163579632346964872179994033",
+          "spin_orbit_gain_N_dimless": "5.95913002500483336769565468454756667967864483161637795759764",
+          "spin_orbit_gain_total_dimless": "9.44788494712867976711227254773570831547496830126509975753797",
+          "delta_SO_binding_compton_MeV": "78.3935604655113179959733100818504500998099287275137495966271",
+          "delta_SO_binding_inf_MeV": "7.84437822135913955619562815686342031719668138740665125875022",
+          "delta_SO_binding_bare_MeV": "7.76736849774220221486655468270571343701222486597805024627608",
+          "delta_Weyl_HO_shell_dimless": "-3.68565084985898024138343374899244104060153756713009233027770",
+          "delta_Weyl_HO_shell_compton_MeV": "-30.5815845948666708185886659461895031476069802426548102000908",
+          "delta_Weyl_shell_dimless": "5.76223409726969952572883879874326727487343073413500742726027",
+          "delta_Weyl_shell_compton_MeV": "47.8119758706446471773846441356609469522029484848589393965363",
+          "delta_Weyl_shell_inf_MeV": "4.78426059503747629411688296551376096800434933353053348016081"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "795.230337490007185939031896896866564748480533314232346793906",
+            "delta_MeV": "-307.612845709992814060968103103133435251519466685767653206094",
+            "err_ppQ": "-0.278927095344077939494460759798014985138568399400492076420619",
+            "err_pct": "-27.8927095344077939494460759798014985138568399400492076420619",
+            "err_sigma": "-155360.023085854956596448536920774462248242154891801845053583"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "907.795904588818535878508160640893225407983620417685837483365",
+            "delta_MeV": "-195.047278611181464121491839359106774592016379582314162516635",
+            "err_ppQ": "-0.176858579336033986487709959450839514961075364955217834923673",
+            "err_pct": "-17.6858579336033986487709959450839514961075364955217834923673",
+            "err_sigma": "-98508.7265713037697583292117975286740363719088799566477356743"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "908.545438449069304700795302766878777158071295270547522972779",
+            "delta_MeV": "-194.297744750930695299204697233121222841928704729452477027221",
+            "err_ppQ": "-0.176178941585473722769622408482708770704154545776996082562557",
+            "err_pct": "-17.6178941585473722769622408482708770704154545776996082562557",
+            "err_sigma": "-98130.1741166316642925276248652127388090549013785113520339497"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "921.682198572693902621123599350204358166351839275393227762768",
+            "delta_MeV": "-181.160984627306097378876400649795641833648160724606772237232",
+            "err_ppQ": "-0.164267220749962828784955036434046339430325782626288052879024",
+            "err_pct": "-16.4267220749962828784955036434046339430325782626288052879024",
+            "err_sigma": "-91495.4467814677259489274750756543645624485660225286728470871"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1018.82400640749958739251336874584655305873357906929888405019",
+            "delta_MeV": "-84.0191767925004126074866312541534469412664209307011159498116",
+            "err_ppQ": "-0.0761841557098907882223437324449460739444741221579517090039639",
+            "err_pct": "-7.61841557098907882223437324449460739444741221579517090039639",
+            "err_sigma": "-42433.9276729800063674174905324007307784173843084349070453594"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1032.03777625474112265417073880332984094719857959557318985265",
+            "delta_MeV": "-70.8054069452588773458292611966701590528014204044268101473495",
+            "err_ppQ": "-0.0642026065209112835778819920230615059695110970373786956979120",
+            "err_pct": "-6.42026065209112835778819920230615059695110970373786956979120",
+            "err_sigma": "-35760.3065380095340130450814124596762892936466689024293673482"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1032.52122629903713848295951740275707170097433496907872289562",
+            "delta_MeV": "-70.3219569009628615170404825972429282990256650309212771043754",
+            "err_ppQ": "-0.0637642395330560914483426283350154258803833761874416934822610",
+            "err_pct": "-6.37642395330560914483426283350154258803833761874416934822610",
+            "err_sigma": "-35516.1398489711421803234760592136001510230631469299379315027"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1032.03760865101538406830254075811578619052559718475966165149",
+            "delta_MeV": "-70.8055745489846159316974592418842138094744028152403383485086",
+            "err_ppQ": "-0.0642027584951251081294233630095345488548642486773819851530353",
+            "err_pct": "-6.42027584951251081294233630095345488548642486773819851530353",
+            "err_sigma": "-35760.3911863558666321704339605475827320577791996163324992468"
+          }
+        }
+      },
+      {
+        "nuclide": "197Au",
+        "Z": 79,
+        "N": 118,
+        "A": 197,
+        "N_minus_Z": 39,
+        "B_AME_MeV": "1559.38399560000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.000551600000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "647.156757624393311425840766813550275776464058392027395706609",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "287.288720215412143667183045744771934726747633671361513641482",
+          "linear_pauli_triangle_P2_MeV": "150.099435313735810928446349306739442047978246264027571863704",
+          "quadratic_pauli_compton_cand1_MeV": "199.850923448579044692892692696254045530051260764358394935123",
+          "quadratic_pauli_hecke_cand2_MeV": "19.8034810513763478427480175013063666139315914941968224404656",
+          "discrete_shell_pauli_promotion_compton_MeV": "69.2702403848978505777182906783205608406326870438766582713186",
+          "discrete_shell_pauli_promotion_inf_MeV": "6.93146174044055595051195615834888321577495876241887053361557",
+          "discrete_shell_pauli_promotion_bare_MeV": "6.86341428813397699704860447511400055493322672417478619668979",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "87.4377967668330989742903530485178891966963729070031187063590",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "-49.7514881348432337644463433895146034820730145003308230714185",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "267.485239164035795824435028243465568112816042177164691201016",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "130.295954262359463085698331805433075434046654769830749423239"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "7.26075354123876591093879746812685761057637347564611195966188",
+          "hbar_omega_inf_MeV": "0.726540504237041879107001368404503730546729468782084538531212",
+          "hbar_omega_bare_MeV": "0.719407920640363809701368161611047729488974845665619486858003",
+          "E_fill_Z_SO_dimless": "368.686111227501734541686218632124411120282432146457000138323",
+          "E_fill_N_SO_dimless": "627.076719441622907317631846488131975478332174849183720087023",
+          "E_fill_total_SO_dimless": "995.762830669124641859318065120256386598614606995640720225346",
+          "E_fill_total_HO_dimless": "1006.50000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "9.54036519645859944647542109881903743430118735616829007730559",
+          "pauli_asym_HO_dimless": "6.00000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_compton_MeV": "69.2702403848978505777182906783205608406326870438766582713186",
+          "pauli_asym_SO_inf_MeV": "6.93146174044055595051195615834888321577495876241887053361557",
+          "pauli_asym_SO_bare_MeV": "6.86341428813397699704860447511400055493322672417478619668979",
+          "pure_ls_gain_Z_dimless": "2.88199674257296017584591223748303610887836342199219722681446",
+          "pure_ls_gain_N_dimless": "2.30559739405836814067672978998642888710269073759375778145157",
+          "pure_ls_gain_total_dimless": "5.18759413663132831652264202746946499598105415958595500826603",
+          "pure_ls_binding_compton_MeV": "37.6658424980553755253388855887668567680791958892947608325485",
+          "pure_ls_binding_inf_MeV": "3.76899725980524719946738433181041297738093688670801098084049",
+          "spin_orbit_gain_Z_dimless": "4.81388877249826545831378136787558887971756785354299986167688",
+          "spin_orbit_gain_N_dimless": "5.92328055837709268236815351186802452166782515081627991297737",
+          "spin_orbit_gain_total_dimless": "10.7371693308753581406819348797436134013853930043592797746543",
+          "delta_SO_binding_compton_MeV": "77.9599402420335272657901081985408124701009259884508589418431",
+          "delta_SO_binding_inf_MeV": "7.80098841973268425919231529088382946506767979304320426297949",
+          "delta_SO_binding_bare_MeV": "7.72440466188852783737109251112061812757387876368655074051758",
+          "delta_Weyl_HO_shell_dimless": "-1.02289580289180105677259061550084004578690451871477545943936",
+          "delta_Weyl_HO_shell_compton_MeV": "-7.42699432316491521100206284401277513977067459641092159132393",
+          "delta_Weyl_shell_dimless": "9.71427352798355708390934426424277335559848848564450431521489",
+          "delta_Weyl_shell_compton_MeV": "70.5329459188686120547880453545280373303302513920399373505191",
+          "delta_Weyl_shell_inf_MeV": "7.05781318731772131868888728487597213329335500330505518663911"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "1053.56536529508843500843142909852225439869869585629515188493",
+            "delta_MeV": "-505.818630304911564991568570901477745601301304143704848115073",
+            "err_ppQ": "-0.324370797527833474060292946937230798908490031538774918099508",
+            "err_pct": "-32.4370797527833474060292946937230798908490031538774918099508",
+            "err_sigma": "-917002.593011079704480726198153512954317079956750733952347848"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "1190.75465019676476774716812553655474707746808326362909366270",
+            "delta_MeV": "-368.629345403235232252831874463445252922531916736370906337296",
+            "err_ppQ": "-0.236394208510135893210030245653141454443776719710468026517750",
+            "err_pct": "-23.6394208510135893210030245653141454443776719710468026517750",
+            "err_sigma": "-668291.054030520725621522615053381531766736614823007444411341"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1218.96310230395506124851189034558095606549599475174912953313",
+            "delta_MeV": "-340.420893296044938751488109654419043934504005248250870466871",
+            "err_ppQ": "-0.218304724337678035581531852457867462247349491296940735683713",
+            "err_pct": "-21.8304724337678035581531852457867462247349491296940735683713",
+            "err_sigma": "-617151.728237934986859115499736075134036446710022209699903682"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1238.67327385327634501105959599075305205210863772994958523987",
+            "delta_MeV": "-320.710721746723654988940404009246947947891362270050414760129",
+            "err_ppQ": "-0.205665007882375149207245335671730904577389111604686533798442",
+            "err_pct": "-20.5665007882375149207245335671730904577389111604686533798442",
+            "err_sigma": "-581419.002441485959008231334316981413973697175979061665627500"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1328.77500912101275867023754985310844063908861679714639382646",
+            "delta_MeV": "-230.608986478987241329762450146891559360911383202853606173539",
+            "err_ppQ": "-0.147884669285871719978913479972932177861138094139648233140773",
+            "err_pct": "-14.7884669285871719978913479972932177861138094139648233140773",
+            "err_sigma": "-418072.854385401090155479423761587308486061245835485145347243"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1348.56176442817819885460647827804374796319506080470350305566",
+            "delta_MeV": "-210.822231171821801145393521721956252036804939195296496944335",
+            "err_ppQ": "-0.135195841285202043114641750477355131344920505220617064119582",
+            "err_pct": "-13.5195841285202043114641750477355131344920505220617064119582",
+            "err_sigma": "-382201.289289017043410793186588028013119660875988572329485742"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1341.71507588425512951593696287930080669808698156716843007024",
+            "delta_MeV": "-217.668919715744870484063037120699193301913018432831569929764",
+            "err_ppQ": "-0.139586477948937127390935393489233520835496907823228893173183",
+            "err_pct": "-13.9586477948937127390935393489233520835496907823228893173183",
+            "err_sigma": "-394613.705068427974046524722843907166972286110284321192766069"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1348.56151192978117053764834104429637674815099206224009529351",
+            "delta_MeV": "-210.822483670218829462351658955703623251849007937759904706492",
+            "err_ppQ": "-0.135196003207087698458838574831211140109926755963532799455449",
+            "err_pct": "-13.5196003207087698458838574831211140109926755963532799455449",
+            "err_sigma": "-382201.747045356833688092202602798446794505090532559653202487"
+          }
+        }
+      },
+      {
+        "nuclide": "208Pb",
+        "Z": 82,
+        "N": 126,
+        "A": 208,
+        "N_minus_Z": 44,
+        "B_AME_MeV": "1636.43022400000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.00114400000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "685.047940142503818993159854410530045108411540247937500087987",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "324.120607422516264650155231096665772512228099526664271800646",
+          "linear_pauli_triangle_P2_MeV": "169.342952661650658483375368448629114105411354759415722102641",
+          "quadratic_pauli_compton_cand1_MeV": "240.926842777716011143705209922652489925647696497244275530700",
+          "quadratic_pauli_hecke_cand2_MeV": "23.8737459071288121947900922054640095572896043315212490018398",
+          "discrete_shell_pauli_promotion_compton_MeV": "69.3076500632072141985656415171900159885283132662966996517933",
+          "discrete_shell_pauli_promotion_inf_MeV": "6.93520510487068828374698156812722099835996472987765763890622",
+          "discrete_shell_pauli_promotion_bare_MeV": "6.86712090325753242001084943427300480037914635731551667060268",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "83.1937646448002535064500211740132825865804030294199962699466",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "-71.5838901160653526603298414740233758202363417378285534280588",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "300.246861515387452455365138891201762954938495195143022798806",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "145.469206754521846288585276243165104548121750427894473100801"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "7.13043446026617584428631622497136858128647042344372704946641",
+          "hbar_omega_inf_MeV": "0.713500247428465554473349690223841644909940441317148017034221",
+          "hbar_omega_bare_MeV": "0.706495682464288908866066209380028264454261137820511766079384",
+          "E_fill_Z_SO_dimless": "387.040869974995166632304345315452433320321355168383622042402",
+          "E_fill_N_SO_dimless": "683.313507075389135598312126059220242555611418739397276924797",
+          "E_fill_total_SO_dimless": "1070.35437705038430223061647137467267587593277390778089896720",
+          "E_fill_total_HO_dimless": "1086.00000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "9.71997575314926763186721903939089627234136754546748224755597",
+          "pauli_asym_HO_dimless": "14.0000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_compton_MeV": "69.3076500632072141985656415171900159885283132662966996517933",
+          "pauli_asym_SO_inf_MeV": "6.93520510487068828374698156812722099835996472987765763890622",
+          "pauli_asym_SO_bare_MeV": "6.86712090325753242001084943427300480037914635731551667060268",
+          "pure_ls_gain_Z_dimless": "3.84266232343061356779454964997738147850448456265626296908595",
+          "pure_ls_gain_N_dimless": "5.37972725280285899491236950996833406990627838771876815672033",
+          "pure_ls_gain_total_dimless": "9.22238957623347256270691915994571554841076295037503112580628",
+          "pure_ls_binding_compton_MeV": "65.7596444403747270983811939276230064930831139340821298015884",
+          "pure_ls_binding_inf_MeV": "6.58017724452428426650922511318802086580739025740439127368679",
+          "spin_orbit_gain_Z_dimless": "5.95913002500483336769565468454756667967864483161637795759764",
+          "spin_orbit_gain_N_dimless": "9.68649292461086440168787394077975744438858126060272307520343",
+          "spin_orbit_gain_total_dimless": "15.6456229496156977693835286253273241240672260922191010328011",
+          "delta_SO_binding_compton_MeV": "111.560089032271102029756768996104334209749282352343246881058",
+          "delta_SO_binding_inf_MeV": "11.1631558457232794257205515203177121842508315978249661650698",
+          "delta_SO_binding_bare_MeV": "11.0535650633676832412934514740851089787758524490266076200337",
+          "delta_Weyl_HO_shell_dimless": "-4.15180202897299209220998344194832070376482147194646871999096",
+          "delta_Weyl_HO_shell_compton_MeV": "-29.6041522595920506339730903976110493936319610024521164907380",
+          "delta_Weyl_shell_dimless": "11.4938209206427056771735451833790034203024046202726323128101",
+          "delta_Weyl_shell_compton_MeV": "81.9559367726790513957836785984932848161173213498911303903201",
+          "delta_Weyl_shell_inf_MeV": "8.20084407077704425319219024651022254036841374879622517480116"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "1091.04375049081704381476969853797320256481883044451108869152",
+            "delta_MeV": "-545.386473509182956185230301462026797435181169555488911308477",
+            "err_ppQ": "-0.333278171907672463146360404464166629468939196001728767451852",
+            "err_pct": "-33.3278171907672463146360404464166629468939196001728767451852",
+            "err_sigma": "-476736.427892642444217858655124149298457326197163888908486431"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "1245.82140525168264998154956118600986097163557521175963838953",
+            "delta_MeV": "-390.608818748317350018450438813990139028364424788240361610472",
+            "err_ppQ": "-0.238695676124542997941139492675362697913824662277956289818851",
+            "err_pct": "-23.8695676124542997941139492675362697913824662277956289818851",
+            "err_sigma": "-341441.275129648033232911222739501869780038832856853462946217"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1285.79760416788839935097648870809081936114851582627433184253",
+            "delta_MeV": "-350.632619832111600649023511291909180638851484173725668157473",
+            "err_ppQ": "-0.214266770858732074267178477199715409704417366086074971050811",
+            "err_pct": "-21.4266770858732074267178477199715409704417366086074971050811",
+            "err_sigma": "-306497.045307789860707188383996424108950045003648361598039749"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1306.62019918925066071759209434834463326717120632304251462749",
+            "delta_MeV": "-329.810024810749339282407905651655366732828793676957485372511",
+            "err_ppQ": "-0.201542369466007454579015344348501452960715295171031676919523",
+            "err_pct": "-20.1542369466007454579015344348501452960715295171031676919523",
+            "err_sigma": "-288295.476233172499372734183261936509381843351116221578122824"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1402.34417706957217951142828890326007449853317808868071911036",
+            "delta_MeV": "-234.086046930427820488571711096739925501466821911319280889637",
+            "err_ppQ": "-0.143046763312792382456370294402934423864238541411417539847172",
+            "err_pct": "-14.3046763312792382456370294402934423864238541411417539847172",
+            "err_sigma": "-204620.670393730612315185062147499934878904564607796574204228"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1423.27636287329003706247099458974649161003084773424726044036",
+            "delta_MeV": "-213.153861126709962937529005410253508389969152265752739559639",
+            "err_ppQ": "-0.130255392500444285938297975001379287889496443488905359865585",
+            "err_pct": "-13.0255392500444285938297975001379287889496443488905359865585",
+            "err_sigma": "-186323.305180690527043294585148822996844378629602930716398286"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1419.35080207344345928620753167445107925544363606288645144160",
+            "delta_MeV": "-217.079421926556540713792468325548920744556363937113548558400",
+            "err_ppQ": "-0.132654248707249824489792892217779595804236602719404153805460",
+            "err_pct": "-13.2654248707249824489792892217779595804236602719404153805460",
+            "err_sigma": "-189754.739446290682442126283501353951699787031413560794194406"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1423.27609648852667769719822819349525380596748371593291180333",
+            "delta_MeV": "-213.154127511473322302801771806504746194032516284067088196671",
+            "err_ppQ": "-0.130255555284508924043682153237047977056938369212170630378598",
+            "err_pct": "-13.0255555284508924043682153237047977056938369212170630378598",
+            "err_sigma": "-186323.538034504652362588961369322330589189262486072629542544"
+          }
+        }
+      },
+      {
+        "nuclide": "238U",
+        "Z": 92,
+        "N": 146,
+        "A": 238,
+        "N_minus_Z": 54,
+        "B_AME_MeV": "1801.69003560000000000000000000000000000000000000000000000000",
+        "sigma_AME_MeV": "0.00149940000000000000000000000000000000000000000000000000000000",
+        "E_C_MeV": "825.556445521216899341090126156564776470481204137061213018558",
+        "symmetry_energies_MeV": {
+          "linear_pauli_bridge_P1_MeV": "397.784381836724506616099601800453448083189031237269788118975",
+          "linear_pauli_triangle_P2_MeV": "207.829987357480353593233406732408458220277571750192022580514",
+          "quadratic_pauli_compton_cand1_MeV": "317.141980554818339830390204102642912289098301229860962456343",
+          "quadratic_pauli_hecke_cand2_MeV": "31.4260004113979794666331972819199136848994486075181438697737",
+          "discrete_shell_pauli_promotion_compton_MeV": "80.5588609233661552685753537512503808509101297303191500382530",
+          "discrete_shell_pauli_promotion_inf_MeV": "8.06104698411763269779934774746705373376968452927757495810384",
+          "discrete_shell_pauli_promotion_bare_MeV": "7.98191018285787813802486707177510360892610172666021214607672",
+          "quadratic_compton_cand1_vs_linear_P1_gain_MeV": "80.6424012819061667857093976978105357940907300074088256626321",
+          "quadratic_compton_cand1_vs_linear_P2_gain_MeV": "-109.311993197337986237156797370234454068820729479668939875829",
+          "quadratic_hecke_cand2_vs_linear_P1_gain_MeV": "366.358381425326527149466404518533534398289582629751644249201",
+          "quadratic_hecke_cand2_vs_linear_P2_gain_MeV": "176.403986946082374126600209450488544535378123142673878710740"
+        },
+        "shell_and_spin_orbit_observables": {
+          "hbar_omega_compton_MeV": "6.81728502234990210106457962955701311999143823797133193283829",
+          "hbar_omega_inf_MeV": "0.682165242152082212304185407456692415197429986314310382852710",
+          "hbar_omega_bare_MeV": "0.675468298777249515209061869464836533166930502096576549190950",
+          "E_fill_Z_SO_dimless": "450.170632221898662400223111684709309757041683149666672140633",
+          "E_fill_N_SO_dimless": "829.858857443326434081631387947170329614057213378277370162886",
+          "E_fill_total_SO_dimless": "1280.02948966522509648185449963187963937109889652794404230352",
+          "E_fill_total_HO_dimless": "1301.00000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_dimless": "11.8168538735377247764207367628436216451147358570232129200298",
+          "pauli_asym_HO_dimless": "20.0000000000000000000000000000000000000000000000000000000000",
+          "pauli_asym_SO_compton_MeV": "80.5588609233661552685753537512503808509101297303191500382530",
+          "pauli_asym_SO_inf_MeV": "8.06104698411763269779934774746705373376968452927757495810384",
+          "pauli_asym_SO_bare_MeV": "7.98191018285787813802486707177510360892610172666021214607672",
+          "pure_ls_gain_Z_dimless": "1.05421979432305232243485740512700190077099613823685075500778e-81",
+          "pure_ls_gain_N_dimless": "2.04941990582966056949042647998793678853572510008334025017917",
+          "pure_ls_gain_total_dimless": "2.04941990582966056949042647998793678853572510008334025017917",
+          "pure_ls_binding_compton_MeV": "13.9714796285182918147444457741207491265935528116231566375420",
+          "pure_ls_binding_inf_MeV": "1.39804302633158792638310470012611432788144926815030659165960",
+          "spin_orbit_gain_Z_dimless": "7.82936777810133759977688831529069024295831685033332785936742",
+          "spin_orbit_gain_N_dimless": "13.1411425566735659183686120528296703859427866217226298371140",
+          "spin_orbit_gain_total_dimless": "20.9705103347749035181455003681203606289011034720559576964814",
+          "delta_SO_binding_compton_MeV": "142.961946016294781122282644768395101468245880793277164420760",
+          "delta_SO_binding_inf_MeV": "14.3053532605744646788427277297143480201359898229510038189011",
+          "delta_SO_binding_bare_MeV": "14.1649149403211332839063687378827336602601367601191157775133",
+          "delta_Weyl_HO_shell_dimless": "-5.70209095367187198398111944078520020028322127504175566664738",
+          "delta_Weyl_HO_shell_compton_MeV": "-38.8727792545441223842470300877445184343656107567559727879898",
+          "delta_Weyl_shell_dimless": "15.2684193811030315341643809273351604286178821970142020298340",
+          "delta_Weyl_shell_compton_MeV": "104.089166761750658738035614680650583033880270036521191632770",
+          "delta_Weyl_shell_inf_MeV": "10.4155850043896947313031265893577318314935030797082526870479"
+        },
+        "branches": {
+          "pauli_bridge_linear_3tree_bare": {
+            "B_pred_MeV": "1182.87543866410455065533926260176321913237391384322403948027",
+            "delta_MeV": "-618.814596935895449344660737398236780867626086156775960519729",
+            "err_ppQ": "-0.343463406417640204961269386396686791371199436829907480962331",
+            "err_pct": "-34.3463406417640204961269386396686791371199436829907480962331",
+            "err_sigma": "-412708.147883083532976297677336425757548103298757353581779198"
+          },
+          "pauli_triangle_linear_3tree_bare": {
+            "B_pred_MeV": "1372.82983314334870367820545766980820899528537333030180501873",
+            "delta_MeV": "-428.860202456651296321794542330191791004714626669698194981268",
+            "err_ppQ": "-0.238032177557019118323304192186537389431025072529239554496245",
+            "err_pct": "-23.8032177557019118323304192186537389431025072529239554496245",
+            "err_sigma": "-286021.210121816257384150021562086028414508888001666129772754"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1406.47978596230549856333130506796885639471052464391002956366",
+            "delta_MeV": "-395.210249637694501436668694932031143605289475356089970436337",
+            "err_ppQ": "-0.219355295210966365982086855102564315700259110294704218786177",
+            "err_pct": "-21.9355295210966365982086855102564315700259110294704218786177",
+            "err_sigma": "-263578.931330995399117426100394845367217079815496925417124408"
+          },
+          "quadratic_sym_compton_cand1_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1430.33626318014315339558663796753644644457879928222655892559",
+            "delta_MeV": "-371.353772419856846604413362032463553555421200717773441074412",
+            "err_ppQ": "-0.206114129002322183129030878030606983257837139984554089562736",
+            "err_pct": "-20.6114129002322183129030878030606983257837139984554089562736",
+            "err_sigma": "-247668.248912803018943853115934682908867160998211133414081907"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1563.39873502975221108871203585817948719092363323309479950699",
+            "delta_MeV": "-238.291300570247788911287964141820512809076366766905200493015",
+            "err_ppQ": "-0.132259875928598263770787301867575757385221322121467140833764",
+            "err_pct": "-13.2259875928598263770787301867575757385221322121467140833764",
+            "err_sigma": "-158924.436821560483467579007697626058962969432284183807184884"
+          },
+          "quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1587.39565056784319731590372774957869160066776093424321691030",
+            "delta_MeV": "-214.294385032156802684096272250421308399332239065756783089701",
+            "err_ppQ": "-0.118940761617073796888626291434889094859426683874677018327903",
+            "err_pct": "-11.8940761617073796888626291434889094859426683874677018327903",
+            "err_sigma": "-142920.091391327732882550535047633258903116072472826986187609"
+          },
+          "discrete_pauli_shell_plus_SO_3tree_bare": {
+            "B_pred_MeV": "1586.84282525829231241732036606832429726689698011395273123068",
+            "delta_MeV": "-214.847210341707687582679633931675702733103019886047268769318",
+            "err_ppQ": "-0.119247598697052863682208197217647809437162333100071716225746",
+            "err_pct": "-11.9247598697052863682208197217647809437162333100071716225746",
+            "err_sigma": "-143288.789076769166054875039303505203903630131976822241409442"
+          },
+          "q2t_quadratic_sym_hecke_cand2_plus_SO_3tree_tower_resummed": {
+            "B_pred_MeV": "1587.39534574964037467932935520554148932521118805819701088905",
+            "delta_MeV": "-214.294689850359625320670644794458510674788811941802989110952",
+            "err_ppQ": "-0.118940930801670924954451496326218850890773507223920947521142",
+            "err_pct": "-11.8940930801670924954451496326218850890773507223920947521142",
+            "err_sigma": "-142920.294684780329012051917296557630168593311952649719295019"
+          }
+        }
+      }
+    ]
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873579"
+  },
+  "q0AnchorReason": "Evaluates parameter-free QOU nuclear spin-orbit shell closures, oscillator spacings, and quadratic Pauli symmetry energies across both the proton and muon q0 pins (plus the 2-term Borromean root q_2t) to verify cross-anchor stability of the Mayer-Jensen and symmetry-energy closure hierarchy."
+}

@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) equipped with [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$ and [Reeb derivation](#def:categorical-reeb) $\xi$.
 
-**The substrate line bundle** represents the trivial $\mathbb{G}_m$-torsor
+**The substrate line bundle** is the trivial $\mathbb{G}_m$-torsor
 
 $$
   \mathcal{Q}

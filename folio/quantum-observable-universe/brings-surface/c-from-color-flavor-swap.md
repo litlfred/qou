@@ -41,7 +41,7 @@ When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry o
 
 ## Consumers / downstream
 
-- [CPT orbit-closure density](#conj:cpt-orbit-closure-density) becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once the charge-conjugation, parity and time-reversal components close jointly—the content of [CPT $D_6$–$D_7$–$D_8$ closure](#conj:cpt-d6-d7-d8-closure).
+- [CPT orbit-closure density](#conj:cpt-orbit-closure-density) becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once the charge-conjugation, parity and time-reversal components close jointly—established at the Markov-trace level in [CPT $D_6$–$D_7$–$D_8$ closure](#prop:cpt-d6-d7-d8-closure).
 - The matter/antimatter sheet structure on Bring's quintic surface ([color tube fibers](color-tube-fibers.md)) acquires a natural C-action that descends to the SO(3) fiber.
 - Type-B folding for chirality and CPT is the symmetric-crystal analogue of this conjecture. Folding the $\mathfrak{sl}_n$ Cartan datum to Type B realises C as a symmetric-crystal structure.
 

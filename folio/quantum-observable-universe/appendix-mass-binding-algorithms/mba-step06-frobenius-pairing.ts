@@ -2,23 +2,22 @@ import { algorithm } from "../../schema/builders";
 
 export default algorithm({
   label: "alg:frobenius-pairing",
-  title: "Frobenius pairing $\\langle a, b\\rangle_F$ and self-duality $\\Psi = S^2 = \\mathrm{id}$",
+  title: "Symmetric Frobenius pairing $\\langle a, b\\rangle_F$ on the Frobenius–Hopf aether and $H_n(q)$",
   uses: [
+    "def:frobenius-hopf-substrate",
     "def:frobenius-pairing",
     "prop:frobenius-pairing-exists",
     "prop:frobenius-pairing-unique",
+    "thm:frobenius-antipode-unifies-chirality-and-tower",
+    "alg:gs-reduce-to-hecke-nf",
+    "alg:markov-trace",
   ],
-  computation: {
-    engine: "python",
-    script: "computations/audit_frobenius_pairing.py",
-    status: "verified",
-  },
   tags: [
     "mba",
     "step-6",
     "frobenius-pairing",
     "self-duality",
-    "rigid-monoidal",
+    "aether",
     "canonical-chain",
   ],
 });

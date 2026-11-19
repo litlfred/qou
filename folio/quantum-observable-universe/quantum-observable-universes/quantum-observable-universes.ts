@@ -221,7 +221,7 @@ export default chapter({
     // ── Algebraic substrate and the Reeb derivation ──────────────────
     // Absorbed from former `algebraic-substrate / sec:algebraic-substrate-reeb`
     // (now dissolved). These 12 blocks deepen the substrate parameter
-    // into the Frobenius--Hopf substrate, Reeb derivation, and Brings
+    // into the Frobenius--Hopf aether, Reeb derivation, and Brings
     // coordinate ring — content that is genuinely foundational and
     // referenced from braids, fluid, info-theory, QOU itself.
     section({

@@ -11,5 +11,6 @@ export default remark({
   // is the honest disposition (AGENTS.md §3a).
   interprets: "prop:calibration-cohomology-alignment",
   uses: ["def:categorical-action", "prop:calibration-cohomology-alignment"],
+  cites: ["einstein1920"],
   tags: ["substrate", "einstein", "ether", "categorical", "foundations"],
 });

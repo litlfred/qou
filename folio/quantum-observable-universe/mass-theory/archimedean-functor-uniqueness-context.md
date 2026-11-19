@@ -30,7 +30,7 @@ illustrates the second point: the $2/(3\pi) = 2g/(4\pi(g-1))$
 correction at $g = 4$ is the archimedean shadow of pentagon
 data on Bring's surface, not a $\pi$-import outside $R$.
 
-The algebraic / archimedean dichotomy establishes a clean separation between categorical structure and continuum measurement. The mass formula evaluates a closed cycle on the Frobenius-Hopf substrate. The non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies $A \cong A^\vee$, making the substrate algebra self-dual. This self-duality drives the descent involution $\hat{\tau}_n$ on the endomorphism algebra, which splits the categorical mass endomorphism into a descended baseline component and a transient component localized at the exceptional divisors of the brane tower.
+The algebraic / archimedean dichotomy establishes a clean separation between categorical structure and continuum measurement. The mass formula evaluates a closed cycle on the Frobenius–Hopf aether. The non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies $A \cong A^\vee$, making the aether algebra self-dual. This self-duality drives the descent involution $\hat{\tau}_n$ on the endomorphism algebra, which splits the categorical mass endomorphism into a descended baseline component and a transient component localized at the exceptional divisors of the brane tower.
 
 Within this purely algebraic substrate, the mass evaluation yields the algebraic quantum volume:
 

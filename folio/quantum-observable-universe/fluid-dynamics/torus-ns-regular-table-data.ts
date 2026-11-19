@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:torus-ns-regular-table-data",
-  title: "Data table from ex:torus-ns-regular",
+  title: "Topological and gauge-theoretic contrast between the genus-1 torus and genus-4 Bring surface",
   uses: ["ex:torus-ns-regular"],
   tags: ["extracted-table"],
   authorNotes: [

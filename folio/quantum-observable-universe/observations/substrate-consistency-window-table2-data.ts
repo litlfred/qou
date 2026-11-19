@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:substrate-consistency-window-table2-data",
-  title: "Table 2 from prop:substrate-consistency-window",
+  title: "Dimensionless couplings, kinematic ratios, and kaon CP-violation scale evaluated in the substrate window",
   uses: ["prop:substrate-consistency-window"],
   tags: ["extracted-table"],
   authorNotes: [

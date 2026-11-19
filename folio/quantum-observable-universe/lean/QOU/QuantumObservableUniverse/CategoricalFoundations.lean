@@ -192,6 +192,13 @@ def rightTrace (f : F.obj ⟶ F.obj) : (𝟙_ C) ⟶ (𝟙_ C) :=
 
 end FrobeniusHopfData
 
+/-- Alias for `FrobeniusHopfData`: the distinguished object `A` of a quantum
+    universe `(C, A, τ)` is called the **Frobenius–Hopf aether** in the
+    monograph (`\label{def:frobenius-hopf-substrate}`, cf. [thomson1867]). -/
+abbrev FrobeniusHopfAether (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] :=
+  FrobeniusHopfData C
+
 /-- **Quantum Universe** over a commutative ring `R`.
 
     A triple `(C, A, ω)` where `C` is a `k`-linear **braided** monoidal

@@ -5,7 +5,7 @@ export default definition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "def:categorical-proton",
-  title: "Proton (categorical)",
+  title: "Proton",
   tags: ["proton", "hadron", "baryon", "color-tube", "knot", "categorical"],
   lean: { ref: "qou:QOU.Torsion.CategoricalProton",
     validation: "not_checked",

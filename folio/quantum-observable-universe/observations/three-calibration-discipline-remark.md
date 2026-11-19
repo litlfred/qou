@@ -33,11 +33,10 @@ Induction along the 19-link derivation chain. At each step:
     \mathfrak{Q}_\beta^{z_D} \;=\; \Bigl\lvert \tfrac{h^2}{2} - h\,z_D \Bigr\rvert\,\frac{m_e}{q_0(q_0-1)(1-\hbar_q^2)}
     \;\approx\; 0.4491\ \text{MeV}\quad(-42.59\%\text{ vs CODATA}),
   $$
-  with $h = q_0 - q_0^{-1}$ and $\hbar_q = 1 - q_0^{-1}$ (tower-summed $E_0$; the order-zero form gives $0.4447$ MeV). The earlier Form A,
+  with $h = q_0 - q_0^{-1}$ and $\hbar_q = 1 - q_0^{-1}$ (tower-summed $E_0$; the order-zero form gives $0.4447$ MeV, and $\{V, V^{-1}, L_+, L_-\}$ reselection gives $0.6515$ MeV, $-16.72\%$). The retired Form A,
   $m_e\lvert q_0^2-2q_0-1\rvert(q_0+1)/(2q_0^3) \approx 0.784$ MeV ($+0.17\%$),
-  is retired as the base and kept only as a historical cross-check
-  ([cos-resummation](#prop:q-beta-cos-resummation)). The convention-D $c_k$
-  ladder that would correct the base is not yet derived. The base uses only fixed scales,
+  is kept only as a historical cross-check
+  ([cos-resummation](#prop:q-beta-cos-resummation)). The all-order Convention-D generating function $\mathcal{G}_D(u; q)$ and cumulants $c_2^{(D)} = -1$, $c_3^{(D)}(q) = -\frac{3q^2-1}{2q(q^2+1)}$, and $c_4^{(D)}(q)$ are derived in closed form ($\mathbb{Q}(q)$-rational functions converging with radius $R_u \approx 0.369$), while the deficit of the bare trace $\mathrm{tr}_{z_D}(\Delta)$ reflects the vanishing bare weight $y_{(1^3)}(z_D) = 0$ on the antisymmetric baryon sign block $(1^3)$ rather than a missing fourth scale. Every step uses only fixed scales in $\mathbb{Q}(q_0)$,
   so the :refterm[descent]{#descent} obstruction
   class
   ([motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction))

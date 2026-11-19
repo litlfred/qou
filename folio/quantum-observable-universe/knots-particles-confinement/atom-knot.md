@@ -20,6 +20,6 @@ $$
 *The decomposition is unique up to normal form rewriting. No positional or temporal ordering is imposed beyond the shortlex-canonical normal form.*
 
 **The atom is a knot.**
-*The atom is the closed braid $\hat K = \hat\beta$ obtained via the Markov closure of any braid representative $\beta$ that realizes $T_w$. Markov-trace invariance guarantees that $\hat K$ forms a well-defined knot or link in $S^3$. No phase or temperature data enters the definition. The atom represents a purely topological object.*
+*The atom is the closed braid $\hat K = \hat\beta$ obtained via the Markov closure of any braid representative $\beta$ that realizes $T_w$. Markov-trace invariance guarantees that $\hat K$ forms a well-defined knot or link in $S^3$. No phase or temperature data enters the definition. The atom is a purely topological object.*
 
-Phase, dynamics, and evolution represent separate structures defined on the space of atom-knots. The same atom $K$ may exhibit different confinement levels at different $q$, but $K$ itself remains independent of $q$.
+Phase, dynamics, and evolution are separate structures defined on the space of atom-knots. The same atom $K$ may exhibit different confinement levels at different $q$, but $K$ itself remains independent of $q$.

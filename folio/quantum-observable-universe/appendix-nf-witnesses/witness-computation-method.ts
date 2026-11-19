@@ -2,9 +2,9 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:witness-computation-method",
-  title: "Witness computation method: inductive Gröbner--Shirshov reduction",
+  title: "Normal-form evaluation method: inductive Gröbner--Shirshov and transfer-matrix reduction",
   tags: [
-    "hecke-engine",
+    "transfer-matrix",
     "groebner-shirshov",
     "symbolic-computation",
     "crossing-convention",

@@ -10,12 +10,23 @@ decuplet, every inter-multiplet mass splitting, the $\eta'$, all four CKM
 angles, all four PMNS angles, $\alpha_s$, the smallness of $\theta_{\mathrm{QCD}}$,
 and the normalisation of $\sin^2\theta_W$.
 
-The obstruction is established: the framework supplies a two-dimensional
-fundamental, and no choice of the deformation parameter raises that, since
-Drinfeld–Jimbo deformation does not change dimensions. What is missing is a
-construction. Several routes are excluded, each against a named invariant —
-among them Frobenius–Schur parity, which rules out every odd-dimensional summand
-of a tensor power of the two-dimensional fibre.
+The obstruction is established: the single-fibre construction supplies a
+two-dimensional fundamental ($\dim \Lambda^2 V = 1$, $N = 2$), and no choice of
+the deformation parameter raises that, since Drinfeld–Jimbo deformation does
+not change dimensions. While the Geer–Patureau-Mirand–Turaev modified trace
+($d_{\mathrm{mod}}(1,1,1) \neq 0$) on $H_3(q)$ restores the antisymmetric
+three-strand $S_3$ sector $S^{(1,1,1)}$ (supplying the baryon singlet, nuclear
+three-body cumulants, and the axial coupling $g_A$) that bare Convention D
+projects out ($y_{(1^3)}(z_D) = 0$), re-weighting the Hecke trace radical does
+not alter the Schur–Weyl fibre row cap $\ell(\lambda) \le N = 2$: a single
+$N = 2$ strand still realizes only $\mathfrak{sl}_2$ Schur–Weyl duality. What
+is missing is a multi-fibre or rank-$2$ HOMFLY-PT $(V_2 \oplus V_3)$
+construction supplying $N = 3$ for rank-$2$ colour $\mathrm{SU}(3)_{\mathrm{c}}$,
+flavour $\mathrm{SU}(3)_{\mathrm{f}}$ octets and decuplets, weak hypercharge
+$\mathrm{U}(1)_Y$, and the CKM/PMNS Yukawa parameters. Several single-fibre
+routes are excluded, each against a named invariant — among them
+Frobenius–Schur parity, which rules out every odd-dimensional summand of a
+tensor power of the two-dimensional fibre.
 
 **A caution about how the surviving question is posed.** It has been recorded as
 asking whether a certain non-abelian cohomology class is non-trivial, and

@@ -3,7 +3,7 @@
 # closed-form computation; no symbolic-q output.
 """Substrate-derived dampening rate `c(K)` for the β-decay sector.
 
-Verifies `conj:archimedean-remainder-exponential-decay` for the
+Verifies `prop:archimedean-remainder-exponential-decay` for the
 free-neutron operator class `K`: the per-braid-mass-tower bound
 
     |R_N|  ≤  ℏ_q^{2(N+1)} / (1 - ℏ_q²)
@@ -126,12 +126,12 @@ def main() -> int:
         bound_ratio = bound_via_geometric / bound_via_exponential
         bound_rows.append({
             "N": N,
-            "bound_geometric": str(bound_via_geometric),
-            "bound_exponential": str(bound_via_exponential),
-            "ratio_geom_over_exp": str(bound_ratio),
-            "bound_pct": float(bound_via_geometric * 100),
-            "bound_ppm": float(bound_via_geometric * 1e6),
-            "bound_ppb": float(bound_via_geometric * 1e9),
+            "bound_geometric": fmt(bound_via_geometric),
+            "bound_exponential": fmt(bound_via_exponential),
+            "ratio_geom_over_exp": fmt(bound_ratio),
+            "bound_pct": fmt(bound_via_geometric * mp.mpf(100)),
+            "bound_ppm": fmt(bound_via_geometric * (mp.mpf(10) ** 6)),
+            "bound_ppb": fmt(bound_via_geometric * (mp.mpf(10) ** 9)),
         })
 
     # ── Observed N=0 residual via the single-wrap symbolic form ──
@@ -168,17 +168,20 @@ def main() -> int:
     print("    N |       bound (%) |       bound (ppm) |       bound (ppb)")
     print("  ─────────────────────────────────────────────────────────────")
     for r in bound_rows:
-        print(f"    {r['N']} | {r['bound_pct']:>15.6f} | {r['bound_ppm']:>17.4f} | {r['bound_ppb']:>17.4f}")
+        print(
+            f"    {r['N']} | {mp.nstr(mp.mpf(r['bound_pct']), 8):>15s} | "
+            f"{mp.nstr(mp.mpf(r['bound_ppm']), 8):>17s} | {mp.nstr(mp.mpf(r['bound_ppb']), 8):>17s}"
+        )
     print()
-    print(f"  Observed N=0 residual (single-wrap Q_β vs CODATA):")
-    print(f"    |Q_β^A - Q_β^CODATA|/Q_β^CODATA = {mp.nstr(r_0_observed_rel, 8)}  ({float(r_0_observed_rel*100):.4f}%)")
+    print("  Observed N=0 residual (single-wrap Q_β vs CODATA):")
+    print(f"    |Q_β^A - Q_β^CODATA|/Q_β^CODATA = {mp.nstr(r_0_observed_rel, 8)}  ({mp.nstr(r_0_observed_rel * mp.mpf(100), 5)}%)")
     print(f"    |Q_β^A - Q_β^CODATA|            = {mp.nstr(r_0_observed_kev, 8)} keV")
     print()
-    print(f"  Bound at N=0                     = {mp.nstr(bound_n0_rel, 8)}  ({float(bound_n0_rel*100):.4f}%)")
+    print(f"  Bound at N=0                     = {mp.nstr(bound_n0_rel, 8)}  ({mp.nstr(bound_n0_rel * mp.mpf(100), 5)}%)")
     print(f"  margin = observed/bound          = {mp.nstr(margin, 6)}  (≤ 1 → inside bound ✓)")
     print(f"  speedup = bound/observed         = {mp.nstr(speedup, 6)}× (actual fall-off faster than ceiling)")
 
-    w.set_content_block("conj:archimedean-remainder-exponential-decay")
+    w.set_content_block("prop:archimedean-remainder-exponential-decay")
     w.set_description(
         "Substrate-derived dampening rate c(K) for the β-decay "
         "operator class. From the per-braid-mass-tower bound "
@@ -193,44 +196,39 @@ def main() -> int:
         "only; no CAL-3 (Q_β) input — N=0 prediction comes from "
         "prop:neutron-qvalue-symbolic."
     )
-    w.add_parameter("q_0_50dps", str(q_0))
-    w.add_parameter("m_e_MeV", str(m_e))
-    w.add_parameter("Q_beta_codata_MeV", str(q_codata))
-    w.add_data("hbar_q", str(hbar_q))
-    w.add_data("hbar_q_sq", str(hbar_q_sq))
-    w.add_data("c_K", str(c_K))
-    w.add_data("C_K", str(C_K))
+    w.add_parameter("q_0_50dps", fmt(q_0))
+    w.add_parameter("m_e_MeV", fmt(m_e))
+    w.add_parameter("Q_beta_codata_MeV", fmt(q_codata))
+    w.add_data("hbar_q", fmt(hbar_q))
+    w.add_data("hbar_q_sq", fmt(hbar_q_sq))
+    w.add_data("c_K", fmt(c_K))
+    w.add_data("C_K", fmt(C_K))
     w.add_data("bound_table", bound_rows)
-    w.add_data("Q_beta_form_a_MeV", str(q_beta_form_a))
-    w.add_data("R_0_observed_relative", str(r_0_observed_rel))
-    w.add_data("R_0_observed_keV", str(r_0_observed_kev))
-    w.add_data("R_0_bound_relative", str(bound_n0_rel))
-    w.add_data("margin_observed_over_bound", str(margin))
-    w.add_data("speedup_bound_over_observed", str(speedup))
+    w.add_data("Q_beta_form_a_MeV", fmt(q_beta_form_a))
+    w.add_data("R_0_observed_relative", fmt(r_0_observed_rel))
+    w.add_data("R_0_observed_keV", fmt(r_0_observed_kev))
+    w.add_data("R_0_bound_relative", fmt(bound_n0_rel))
+    w.add_data("margin_observed_over_bound", fmt(margin))
+    w.add_data("speedup_bound_over_observed", fmt(speedup))
 
     # Geometric and exponential forms must agree (sanity check on
     # the closed-form derivation of c(K)).
     max_ge_ratio_dev = max(
-        abs(mp.mpf(r["ratio_geom_over_exp"]) - 1) for r in bound_rows
+        abs(mp.mpf(r["ratio_geom_over_exp"]) - mp.mpf(1)) for r in bound_rows
     )
     w.add_assertion(
         "geometric_form_equals_exponential_form_to_50dps",
-        # fmt(), not float(): this is a 50-dps residual and the cast collapsed
-        # it to binary64. Harmless while it happened to be exactly 0.0 (which
-        # the raw-float64 ratchet excuses as integral), and a REGRESSED gate
-        # the moment a re-run produced a real residual — 9.96e-71 here. The
-        # witness schema types `computed` as number|string precisely for this.
         computed=fmt(max_ge_ratio_dev),
-        expected=0.0,
-        tolerance=1e-40,
+        expected="0",
+        tolerance="1e-40",
     )
 
     # The observation must sit inside the bound (margin ≤ 1).
     w.add_assertion(
         "N0_observed_residual_within_per_braid_bound",
         computed=fmt(margin),
-        expected=0.0,
-        tolerance=1.0,
+        expected="0",
+        tolerance="1",
     )
     out = w.save()
     print(f"\nWrote {out.name}")

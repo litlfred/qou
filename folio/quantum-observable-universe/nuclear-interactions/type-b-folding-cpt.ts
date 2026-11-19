@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:cpt-d6-d7-d8-closure",
+    "prop:cpt-d6-d7-d8-closure",
     "conj:c-from-color-flavor-swap",
     "conj:p-from-braid-mirror",
     "conj:t-from-trace-cyclicity",

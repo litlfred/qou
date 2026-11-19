@@ -1,6 +1,6 @@
 The $q$-Reeb flow $\phi_t^q$ dynamically reformulates the classical picture of primes. Classically, the natural logarithm $\ln x$ acts as the static clock for prime counting: the prime number theorem assigns roughly one prime per $\ln x$ integers, treating primes as discrete, isolated events.
 
-The $q$-deformation replaces this static counting with a continuous dynamical system. The derivation $\xi_q$ generates a continuous flow on the substrate algebra $A$. The closed orbits of this flow—the periodic trajectories of $\phi_t^q$—map to the prime ideals of the underlying geometry. A prime ceases to be a discrete point; it forms a *closed orbit* winding through the brane tower ([recursive brane tower](#def:recursive-brane-tower)).
+The $q$-deformation replaces this static counting with a continuous dynamical system. The derivation $\xi_q$ generates a continuous flow on the aether algebra $A$. The closed orbits of this flow—the periodic trajectories of $\phi_t^q$—map to the prime ideals of the underlying geometry. A prime ceases to be a discrete point; it forms a *closed orbit* winding through the brane tower ([recursive brane tower](#def:recursive-brane-tower)).
 
 This dynamic shift forces three consequences:
 

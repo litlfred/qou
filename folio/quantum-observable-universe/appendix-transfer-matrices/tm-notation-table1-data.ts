@@ -1,7 +1,7 @@
 import { table } from "../../schema/builders";
 export default table({
   label: "tbl:tm-notation-table1-data",
-  title: "Data table 1 from tm-notation",
+  title: "Algebraic parameters, braid generators, and matrix conventions for nuclear transfer matrices",
   uses: ["tm-notation"],
   tags: ["extracted-table"],
 });

@@ -49,7 +49,7 @@ export default proposition({
     {
       kind: "note",
       date: "2026-11-19",
-      body: "Formalisation note: the commutant exclusion on weight-preserving operators commuting with $F_3$ is proved as `commutant_trace_eq` in `QOU/BraidsAndKnots/NucleonIsospinExclusions.lean`.",
+      body: "Formalisation note: the commutant exclusion on weight-preserving operators commuting with $F_3$ is proved as `commutant_trace_eq` in `QOU/BraidsAndKnots/NucleonIsospinExclusions.lean`. The all-order Convention-D generating function $\\mathcal{G}_D(u; q)$ and cumulants $c_2^{(D)} = -1$, $c_3^{(D)}(q) = -(3q^2-1)/(2q(q^2+1))$, $c_4^{(D)}(q)$ are formalized in `QOU/QBeta/ConventionDCumulantClosedForms.lean` and `QOU/QBeta/AllOrderConventionDGeneratingFunction.lean`, the GPMT-screened axial coupling $g_A(q_0) \\approx 1.2690$ in `QOU/QBeta/WeakCoevaluationAndNeutronLifetimeBridge.lean`, and the unbraided $(2,1)$ trace cancellation ($\\mathrm{tr}_{(2,1)}(\\Delta) = 0$) together with the 11-crossing Borromean GPMT $(1,1,1)$ sign-block closure ($|d_{\\mathrm{mod}}(1,1,1)| = 1/([2]_q[3]_q)$) in `QOU/QBeta/GPMTSignBlockAndTwoTermNucleonSplitting.lean` (80-dps witness `computations/probes/gpmt-sign-block-qbeta-and-np-splitting.witness.json`).",
     },
   ],
   tags: [

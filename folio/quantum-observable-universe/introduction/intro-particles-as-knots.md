@@ -16,7 +16,9 @@ neutrino; a single over–under knot, the trefoil, is the electron; two
 loops linked once, the Hopf link, is the strong binding of quarks;
 three loops linked so that no two are directly joined, the Borromean
 rings, is the proton or neutron. The same objects can be read as
-vortex lines in a fluid, and the later chapters use both pictures.
+vortex lines in an aether — reviving in categorical form Thomson's
+1867 vortex-atom hypothesis \cite{thomson1867} and Tait's subsequent
+knot census \cite{tait1877} — and the later chapters use both pictures.
 
 The algebra that describes how such strands cross is the
 Iwahori–Hecke algebra $H_n(q)$. Its generator $\sigma_i$ crosses

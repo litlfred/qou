@@ -6,7 +6,7 @@ $$
 \varepsilon := \left. \frac{d}{dt} \right|_{t = 0} \Phi_t \;\in\; \mathrm{Der}(A)
 $$
 
-of the derivation algebra of the substrate object $A$.
+of the derivation algebra of the aether object $A$.
 
 **Primitivity.** The Reeb infinitesimal $\varepsilon$ is intrinsic to the categorical structure of $A$. It is the tangent vector at the identity of the Reeb flow. It is well defined before any choice of deformation scale is made.
 

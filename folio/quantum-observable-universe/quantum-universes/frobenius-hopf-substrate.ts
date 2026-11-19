@@ -2,12 +2,12 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:frobenius-hopf-substrate",
-  title: "The quantum vacuum as a Frobenius--Hopf algebra",
+  title: "The Frobenius--Hopf aether",
   lean: { ref: "qou:QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate",
     validation: "not_checked",
   },
   uses: ["def:rigid-monoidal-category", "def:snake-identity"],
-  tags: ["frobenius", "hopf-algebra", "substrate", "vacuum"],
+  tags: ["frobenius", "hopf-algebra", "aether", "substrate", "vacuum"],
   authorNotes: [
     { kind: "note", date: "2026-10-11", body: "Relocated from the block prose by the paper-voice commentary audit: An earlier version of this definition opened *\"Let $\\mathbf{C}$ be a rigid monoidal category\"* and phrased axioms 4--5 as *\"the induced map $A \\to A^\\vee$ is an isomorphism\"*. That notation presupposes an ambient dual $A^\\vee$, which made this definition unusable at the level that actually invokes it: `def:quantum-universe` requires a Frobenius--Hopf object while explicitly stating that rigidity of $\\mathbf{C}$ is *not* required there. The formalization never assumed rigidity either --- `FrobeniusHopfData` is stated over a bare monoidal category and derives self-duality from $\\mathrm{coev}$ plus the snake identities, exactly as axiom 4 now does." },
     {

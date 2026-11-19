@@ -7,8 +7,7 @@ export default conjecture({
     validation: "validated",
   },
   title:
-    "The q-difference kernel R is the jet-prolongation symbol, carried by the " +
-    "binding q-lift module",
+    "The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module",
   authorNotes: [
     {
       kind: "status",

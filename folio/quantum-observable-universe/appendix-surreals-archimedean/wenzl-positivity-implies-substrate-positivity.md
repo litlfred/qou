@@ -1,4 +1,4 @@
-The companion conjecture [OS reflection positivity from Reeb](#conj:os-reflection-positivity-from-reeb) reduces the Wightman-axiom portion of the Yang–Mills millennium statement to a single substrate axiom: $C^*$-Frobenius positivity of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture takes the natural next step. The axiom should be **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$, as a consequence of existing unitarity.
+The companion conjecture [OS reflection positivity from Reeb](#conj:os-reflection-positivity-from-reeb) reduces the Wightman-axiom portion of the Yang–Mills millennium statement to a single positivity axiom: $C^*$-Frobenius positivity of the QOU Frobenius–Hopf aether at $q = q_0$. This conjecture takes the natural next step. The axiom should be **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$, as a consequence of existing unitarity.
 
 **Conjecture (Wenzl positivity at $q_0$ implies substrate
 $C^*$-Frobenius positivity).** *Wenzl's positivity criterion for the
@@ -8,7 +8,7 @@ fusion categories among the q-deformed semisimple ones — implies the
 substrate $C^*$-Frobenius positivity axiom of*
 [OS reflection positivity from Reeb](#conj:os-reflection-positivity-from-reeb).
 *Equivalently, the Müger $C^*$-norm on the
-[Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)
+[Frobenius–Hopf aether](#def:frobenius-hopf-substrate)
 $A$ at $q_0$, induced by the categorical trace of $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$,
 makes the antipode-twisted Frobenius pairing $\langle\theta(\cdot),
 \cdot\rangle_F$ positive-definite on the positive-time Reeb half.*
@@ -22,7 +22,7 @@ and $\langle\cdot,\cdot\rangle_F$ the Frobenius form of $A$.
 
 The OS-reflection-positivity conjecture [OS reflection positivity from Reeb](#conj:os-reflection-positivity-from-reeb) leaves the substrate $C^*$-Frobenius positivity axiom as the sole genuinely new input. That axiom has three free parameters:
 
-1. **Choice of $C^*$-norm** on $A$ at $q_0$. The substrate algebra
+1. **Choice of $C^*$-norm** on $A$ at $q_0$. The aether algebra
    $A$ at $q_0 \in \mathbb{R}_{>1}$ admits several candidate
    $C^*$-completions:
    - the universal $C^*$-norm of $A$ as a $*$-algebra;

@@ -101,25 +101,32 @@ exclusion, and the invariant justifying it is the Schur--Weyl row cap.
 
 **The $N = 2$ half of the duality is established explicitly.**
 Constructing the Jimbo action of $H_n(q)$ on
-$V^{\otimes n}$ with $\dim V = 2$ over an ordered field
+$V^{\otimes n}$ with $\dim V = 2$ ($\dim \Lambda^2 V = 1$) over an ordered field
 at generic $q$ shows that: the induced trace is the Markov trace with
-$z = q^3/(q^2+1)$; the kernel of the action is
-exactly the trace radical, i.e. the blocks with three or more rows; and the image has dimension the Catalan
-number. Surjectivity onto the
+$z_D = q^3/(q^2+1)$; the kernel of the action is
+exactly the trace radical, i.e. the blocks with three or more rows ($y_{(1^3)}(z_D) = 0$); and the image has dimension the Catalan
+number. On $H_3(q)$, the Geer--Patureau-Mirand--Turaev modified trace
+($d_{\mathrm{mod}}(1,1,1) \neq 0$) re-weights the trace radical and restores the
+antisymmetric three-strand $S_3$ sector $S^{(1,1,1)}$ (governing the baryon
+singlet, nuclear three-body cumulants, and the axial coupling $g_A$) that bare
+Convention D projects out. However, restoring the $(1^3)$ Hecke block via the
+modified trace operates on the $H_3(q)$ factor and does not alter the fibre
+row cap $\ell(\lambda) \leq \dim V = 2$: a single $N = 2$ fundamental strand
+still realizes only $\mathfrak{sl}_2$ Schur--Weyl duality. Surjectivity onto the
 $\mathcal{U}_q(\mathfrak{sl}_2)$ commutant is not claimed, and no $N \geq 3$
 action is constructed here, so the $N = 3$ statement above remains cited.
 
 The dimension implications run from an
 *observed* channel dimension to $N = 3$; what the framework requires is
 $N = 3$ *supplied* by a construction.  That is the affirmative half, and it
-remains open.
+awaits a multi-fibre or rank-$2$ HOMFLY-PT $(V_2 \oplus V_3)$ extension.
 
 Therefore, realising the full eightfold way requires $N = 3$.  Within
-QOU, this $N = 3$ cannot arise from a single fibre.  The remaining
+QOU, this $N = 3$ cannot arise from a single $N = 2$ fibre.  The remaining
 construction directions are:
 
-1. **Multi-fibre groupoid:** inequivalent fibre objects
-   whose interaction space is three-dimensional (T3b).
+1. **Multi-fibre groupoid or rank-$2$ HOMFLY-PT $(V_2 \oplus V_3)$ extension:** inequivalent fibre objects
+   or a composite rank-$2$ strand whose interaction space is three-dimensional (T3b).
 2. **Octonionic $G_2$ stabilizer:** the Günaydin--Gürsey
    $\mathbf{7} = \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$
    provides a non-self-dual triple from $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2$

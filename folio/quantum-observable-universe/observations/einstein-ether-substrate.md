@@ -1,6 +1,6 @@
 **Remark (Einstein's ether and the categorical substrate).**
 
-Einstein, in his 1920 Leiden address, characterised the relativistic ether by arguing that physics may retain an ether provided one gives up "ascribing a definite state of motion to it" — abstracting away "the last mechanical characteristic which Lorentz had still left it" — a standpoint "justified by the results of the general theory of relativity."
+Einstein, in his 1920 Leiden address \cite{einstein1920}, characterised the relativistic ether by arguing that physics may retain an ether provided one gives up "ascribing a definite state of motion to it" — abstracting away "the last mechanical characteristic which Lorentz had still left it" — a standpoint "justified by the results of the general theory of relativity."
 
 The QOU substrate $q_0$ is the categorical analogue of this ether-without-mechanical-state. It is a background organisational structure — a deformation parameter that encodes the groupoid symmetry of Bring's curve — but it carries no privileged velocity, no Lorentz-violating medium, and no mechanical degrees of freedom. What it does carry is the algebra: the Hecke parameter governing braid-group representations.
 

@@ -1,59 +1,27 @@
-**Algorithm (Jet-prefix transport, $q \to 1$ limit).**
-*Truncate the Markov-trace Laurent polynomial at jet order $N$
-and transport its leading coefficients to the archimedean fibre
-at $q = q_0$ via the GS filtration of Step 7.*
+**Algorithm (Jet-prefix transport in the $q \to 1$ classical neighbourhood).**
+*Expand a rational Markov-trace observable $P_K(q) = \mathrm{tr}_M(\mathrm{NF}(K)) \in \mathbb{Q}(q)$ around $q = 1$ in powers of the quantum Planck step $\hbar_q = 1 - q^{-1}$, extract its exact order-$N$ jet $P_K^{(N)}(\hbar_q)$, and enclose the truncation remainder at $q = q_0$.*
 
 ### Input
 
-- *Markov-trace polynomial $P_K(q) = \mathrm{tr}_M(\mathrm{NF}(K))$
-  (output of Step 3, evaluated symbolically).*
-- *Target jet order $N \in \mathbb{N}$ (chosen by precision goal —
-  default $N = \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$).*
+- *Symbolic rational trace observable $P_K(q) = A_K(q) / B_K(q) \in \mathbb{Q}(q)$ with $B_K(1) \neq 0$ (from [Step 3](#alg:markov-trace) and [Step 7](#alg:gb-filtration)).*
+- *Target jet order $N \in \mathbb{N}$ (or target enclosure tolerance $\varepsilon > 0$ at $q_0 > 1$).*
 
 ### Output
 
-- *Truncated polynomial
-  $P_K^{(N)}(q) = \sum_{d = -N}^{N} c_d \, q^d$ with
-  $|P_K(q) - P_K^{(N)}(q)| = O(h^{N+1})$ where $h = q - 1$.*
+- *Exact degree-$N$ rational jet polynomial $P_K^{(N)}(\hbar_q) = \sum_{m=0}^{N} a_m\,\hbar_q^m \in \mathbb{Q}[\hbar_q]$ together with an explicit rational remainder polynomial $R_{K,N}(q)$ certifying $P_K(q) - P_K^{(N)}(\hbar_q) = \hbar_q^{N+1}\,R_{K,N}(q) / B_K(q)$.*
 
 ### Algorithm
 
-```
-1. Expand P_K(q) around q = 1 as a Taylor / Laurent series in h.
-2. Retain terms up to order h^N.
-3. Match length levels ℓ to jet orders d via the GS-filtration
-   correspondence (`prop:jet-prefix-gb-filtration`).
-4. Return the truncated polynomial with jet-order metadata.
-```
+1. **Substitute the classical coordinate:** Express $q = (1 - \hbar_q)^{-1}$ in $P_K(q) = A_K(q)/B_K(q)$ and clear powers of $(1 - \hbar_q)$ to obtain coprime polynomials $\tilde{A}_K(\hbar_q), \tilde{B}_K(\hbar_q) \in \mathbb{Q}[\hbar_q]$ with $\tilde{B}_K(0) \neq 0$.
+2. **Truncated Newton series division:** Invert $\tilde{B}_K(\hbar_q) \bmod \hbar_q^{N+1}$ over $\mathbb{Q}$ by Newton iteration in $\mathbb{Q}[\hbar_q] / (\hbar_q^{N+1})$ and multiply by $\tilde{A}_K(\hbar_q) \bmod \hbar_q^{N+1}$ to obtain $P_K^{(N)}(\hbar_q) = \sum_{m=0}^{N} a_m\,\hbar_q^m$.
+3. **Align length filtration and jet order:** Using the filtration correspondence of [Step 7](#alg:gb-filtration), match each $(q - q^{-1})^\ell$ reducer stratum to its leading $\hbar_q^\ell$ jet contribution, verifying that normal-form strata of crossing excess $> N$ enter only in $\hbar_q^{N+1}$ and above.
+4. **Enclose the archimedean tail at $q_0$:** Form the exact algebraic numerator $\tilde{A}_K(\hbar_q) - \tilde{B}_K(\hbar_q)\,P_K^{(N)}(\hbar_q) = \hbar_q^{N+1}\,\tilde{R}_{K,N}(\hbar_q)$ and evaluate $\bigl|\hbar_{q_0}^{N+1}\,\tilde{R}_{K,N}(\hbar_{q_0}) / \tilde{B}_K(\hbar_{q_0})\bigr|$ in real ball arithmetic ($\ge 80$ decimal digits) to verify that the remainder is strictly below $\varepsilon$.
 
-### Correctness conditions
+### Termination and Complexity
 
-1. *[The jet-prefix filtration proposition](#prop:jet-prefix-gb-filtration)
-   gives the length $\leftrightarrow$ jet-order correspondence used in step 3.*
-2. *[The Gröbner–Shirshov spectral-sequence proposition](#prop:gb-spectral-sequence) ($E_2$
-   collapse, Step 7) ensures the truncation does not mix orders.*
+Newton inversion modulo $\hbar_q^{N+1}$ over $\mathbb{Q}$ requires $O(N \log N)$ polynomial operations; forming and bounding the exact algebraic remainder requires $O(N + \deg P_K)$ operations.
 
-### Complexity
+### Mathematical Justification
 
-*$O(N \cdot \dim H_n(q))$ — linear in the target jet order and
-in the Hecke dimension.*
-
-### Python API entry point
-
-*Canonical compute is the script
-[`gb_filtration_jet_order_reader.py`](../../../computations/gb_filtration_jet_order_reader.py),
-which reads the GS-filtered NF and emits the per-jet-order
-truncation witness. The substrate's precision discipline (compute
-at 70 dps, serialise at 60 dps) is configured by
-[`qou_substrate.precision`](../../../tools/qou-substrate/python/qou_substrate/precision.py).*
-
-### Witness contract
-
-*Canonical witness:
-[`gb-filtration-jet-order-reader.witness.json`](../../../computations/gb-filtration-jet-order-reader.witness.json).
-Records the truncated polynomial, the jet-order metadata, and a
-cross-check against the symbolic Taylor expansion.*
-
-### Notes
-
-*The jet-prefix truncation **gates** symbolic ($q$-exact) compute from archimedean evaluation at $q_0$. Target precision determines $N$. See the $c_k$ truncation sidecar for the analogous truncation in the $\mathfrak{Q}_\beta$ ladder.*
+1. **Filtration-to-jet alignment:** [The jet-prefix filtration proposition](#prop:jet-prefix-gb-filtration) identifies the $(q - 1)$-adic jet order on $H_n(q)$ with the Gröbner–Shirshov filtration degree, ensuring that finite jet prefixes depend only on bounded-length Coxeter strata.
+2. **Absence of higher-order mixing:** [Gröbner–Shirshov spectral-sequence collapse](#prop:gb-spectral-sequence) ($E_2$ degeneration) guarantees that no higher differential transports weight from degree $> N$ back into $P_K^{(N)}(\hbar_q)$.

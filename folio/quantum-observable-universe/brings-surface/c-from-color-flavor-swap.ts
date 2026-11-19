@@ -29,7 +29,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "conj:cpt-d6-d7-d8-closure",
+    "prop:cpt-d6-d7-d8-closure",
     "conj:inter-nucleon-channel-color-tube",
     "conj:cpt-orbit-closure-density",
     "def:bar-involution",

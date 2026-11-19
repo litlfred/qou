@@ -1,0 +1,139 @@
+{
+  "engine": "python+mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T12:32:22.232247+00:00",
+  "commitSha": "080017bf8a162fa7a3f320ae2e5cd3e7fc298c23",
+  "assertions": [
+    {
+      "name": "bar_even_q_phase_symbolic_identity_and_zero_linear_slope",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BarEvenVacuumDispersionAndLorentzParity.barEvenQPhase_eq_qPow_diff & hasDerivAt_barEvenGroupVelocity_zero"
+    },
+    {
+      "name": "cosh_sub_one_quadratic_taylor_bounds_on_unit_interval",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BarEvenVacuumDispersionAndLorentzParity.cosh_sub_one_bounds_unit"
+    },
+    {
+      "name": "grb_090510_quadratic_dispersion_below_1e_minus_37_at_planck_scale",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BarEvenVacuumDispersionAndLorentzParity.barEvenGroupVelocity_quadratic_dispersion_bound"
+    },
+    {
+      "name": "noncommutative_observer_covariance_and_vacuum_orientation_null",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BarEvenVacuumDispersionAndLorentzParity.observer_covariant_modular_derivation_and_vacuum_null"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "bar-even-grb-dispersion-and-lorentz-null",
+  "scriptFile": "bar_even_grb_dispersion_and_lorentz_null_probe.py",
+  "scriptHash": "7d6fc85afb64",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bar_even_grb_dispersion_and_lorentz_null_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bar_even_grb_dispersion_and_lorentz_null_probe.py"
+  },
+  "description": "80-dps and symbolic SymPy verification of bar-even symmetric q-phase dispersion, identical vanishing of linear (n=1) Planck dispersion, quadratic GRB 090510 suppression (~3.51e-38 at E_* = E_Pl), and fixed-q observer covariance / vacuum orientation null.",
+  "data": {
+    "dps": 80,
+    "pins_evaluated": {
+      "proton_1term": {
+        "q": "1.109978582751380807591669095610768879874499121873579",
+        "ln_q": "0.10434072031951951231590627997307239705374428082898",
+        "c_phys_over_cq_renorm_factor": "0.99818780438570676522688874172728251557684741610351",
+        "bar_invariance_abs_diff": "0.0",
+        "linear_slope_at_x0": "0",
+        "quadratic_coeff_half_ln_q_sq": "0.0054434929583980960201368880802092469853434112680736",
+        "x_grb_31GeV_over_EPl": "2.5391312894691577455790447951903938929797115219225e-18",
+        "grb_31GeV_frac_dispersion_exact": "3.509522087451635872379948023244409823083034520903e-38",
+        "grb_31GeV_direct_vs_half_angle_abs_diff": "8.99449535124197e-82",
+        "grb_31GeV_quadratic_leading_term": "3.5095220874516358723799480232444098230625066120992e-38",
+        "grb_31GeV_lean_cosh1_half_upper_bound": "5.4154755706029897735149316372385782828978711950661e-38",
+        "uv_cutoff_mode_x1_frac_dispersion": "0.0054484333535611498762459890459314079446203742420665",
+        "uv_cutoff_mode_x2_frac_dispersion": "0.021853104266260994701009667838694154884106980356753"
+      },
+      "proton_2term_borromean": {
+        "q": "1.109978595150885999087565203598682621214103480541216",
+        "ln_q": "0.10434073149046038894373653001000173177021432577847",
+        "c_phys_over_cq_renorm_factor": "0.99818780399816401812610116549356183048103147310266",
+        "bar_invariance_abs_diff": "0.0",
+        "linear_slope_at_x0": "0",
+        "quadratic_coeff_half_ln_q_sq": "0.0054434941239821761292094839740676751279684990607483",
+        "x_grb_31GeV_over_EPl": "2.5391312894691577455790447951903938929797115219225e-18",
+        "grb_31GeV_frac_dispersion_exact": "3.5095228389255709334765117571903777903121716785307e-38",
+        "grb_31GeV_direct_vs_half_angle_abs_diff": "9.87280831559377e-82",
+        "grb_31GeV_quadratic_leading_term": "3.5095228389255709334765117571903777902916437609358e-38",
+        "grb_31GeV_lean_cosh1_half_upper_bound": "5.4154767301878665347010961859059707149186100231236e-38",
+        "uv_cutoff_mode_x1_frac_dispersion": "0.0054484345212613313592784187181873815988695923564713",
+        "uv_cutoff_mode_x2_frac_dispersion": "0.021853108962510269823193061021686069809208029291939"
+      },
+      "muon_ideal": {
+        "q": "1.109978595642739046681795129380001752700065561029012",
+        "ln_q": "0.10434073193357978749249376916387283002993091683672",
+        "c_phys_over_cq_renorm_factor": "0.99818780398279130060725431314978777761247839746761",
+        "bar_invariance_abs_diff": "0.0",
+        "linear_slope_at_x0": "0",
+        "quadratic_coeff_half_ln_q_sq": "0.005443494170217578409577066694768662612472364829293",
+        "x_grb_31GeV_over_EPl": "2.5391312894691577455790447951903938929797115219225e-18",
+        "grb_31GeV_frac_dispersion_exact": "3.509522868734402645993808819366153863850663324455e-38",
+        "grb_31GeV_direct_vs_half_angle_abs_diff": "4.98905416007615e-82",
+        "grb_31GeV_quadratic_leading_term": "3.5095228687344026459938088193661538638301354065114e-38",
+        "grb_31GeV_lean_cosh1_half_upper_bound": "5.4154767761852974967530572698991240488462618271431e-38",
+        "uv_cutoff_mode_x1_frac_dispersion": "0.005448434567580673366394998629041809709996976416072",
+        "uv_cutoff_mode_x2_frac_dispersion": "0.021853109148797109463925079946109675865082917171201"
+      }
+    },
+    "cosh_one_over_two": "0.77154031740762188923895281037853084130076455618293",
+    "symbolic_and_noncommutative_covariance": {
+      "q_pow_equals_sinh_quotient": true,
+      "dphi_dx_at_0": "log(q)/sinh(log(q))",
+      "d2phi_dx2_linear_dispersion_at_0": "0",
+      "d3phi_dx3_over_dphi0_quadratic_vg_coeff": "log(q)**2",
+      "noncommutative_conj_derivation_leibniz_holds": true,
+      "boosted_state_modular_moments_n0_n1_n2_invariant": true,
+      "vacuum_derivation_commutes_with_rotation": true,
+      "vacuum_orientation_modulation_n0_n1_n2_zero": true,
+      "perturbed_state_isolates_delta_tau_identically": true,
+      "anisotropic_state_modulation_formula": "-3*q_nc + (1 - q_nc)*(2*sin(2*theta) - 3*cos(2*theta)) + 3",
+      "anisotropic_state_modulation_at_pi_over_4": "5 - 5*q_nc"
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873579"
+  },
+  "q0AnchorReason": "Evaluates the bar-even c_phys/c_q renormalization factor, quadratic dispersion coefficient (ln q)^2/2, and GRB 090510 Planck-scale bound across 1-term proton, 2-term Borromean proton, and ideal muon substrate pins."
+}

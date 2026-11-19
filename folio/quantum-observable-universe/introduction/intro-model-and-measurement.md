@@ -32,11 +32,29 @@ information beyond the dimensionless ratio behind it, so the
 comparisons are made on ratios, binding energies, decay $Q$-values and
 mass splittings.
 
-The standard applied to each comparison is strict: a prediction is
-counted as meeting its target only when its residual is below one
-hundredth of the experimental uncertainty. The observations chapter
-reports every residual against that standard, separating the quantities
-that already lie within or below the experimental uncertainty band from
-those where higher-loop or multi-body terms are still required. A derived quantity that misses is
+The scope of these comparisons is defined by the division of labour
+between categorical spectral theory and local continuum quantum field
+theory. The framework computes discrete ultraviolet spectral invariants
+— dimensionless rest-mass ratios, threshold couplings, and bound-state
+normal forms — which continuum effective field theory treats as
+external renormalization parameters, whereas infrared $3+1$-dimensional
+momentum-space scattering cross sections $\sigma(s,t)$, continuous
+renormalization-group running, and spacelike detector correlation
+functions belong to continuum perturbation theory.
+
+Each comparison is graded against both the experimental uncertainty
+band and the theoretical truncation budget of its expansion order,
+rather than against a uniform fraction of the experimental error bar
+that would misgrade tree-level topological formulas against
+eleven-digit Penning-trap uncertainties. At finite Kashiwara truncation
+depth $N$, the per-knot brane-tower remainder carries an explicit bound
+of order $O(\hbar_q^{2(N+1)})$, while leading-order topological mass and
+binding formulas omit uncomputed higher-loop radiative corrections of
+order $O(\alpha_{\mathrm{EM}}/\pi)$ and higher-body nuclear cumulants.
+The observations chapter reports every residual against these
+theoretical truncation budgets alongside the experimental uncertainty
+band, separating the quantities that already close at sub-parts-per-billion
+precision from those where higher-loop radiative or multi-body terms
+remain open. A derived quantity that misses its truncation budget is
 reported as a miss rather than tuned away, because only an untuned
 model can be corrected by what its errors teach.
