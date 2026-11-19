@@ -1,3 +1,17 @@
+At $q = 1$: $J_q^2 \to j(j+1)$, the standard Casimir.
+
+**The $q$-deformed angular momentum operators.**
+
+The generators $J_+, J_-, J_z$ of $\mathrm{SU}_q(2)$ satisfy:
+
+$$
+  [J_z, J_{\pm}] = \pm J_{\pm}, \qquad
+  [J_+, J_-] = [2 J_z]_q
+  =  \frac{q^{2J_z} - q^{-2J_z}}{q - q^{-1}}
+$$
+
+This differs from the classical $[J_+, J_-] = 2J_z$: $2J_z$ is replaced by its $q$-number $[2J_z]_q$. The asymmetry at $q \neq 1$ connects directly to parity violation ([parity violation](#prop:parity-violation-skein)). The raising and lowering operators do not relate by a simple conjugation.
+
 **Connection to the Jones polynomial.**
 
 The Jones polynomial $J_K(q)$ of a knot $K$ is the quantum trace over the spin-$\tfrac{1}{2}$ representation:

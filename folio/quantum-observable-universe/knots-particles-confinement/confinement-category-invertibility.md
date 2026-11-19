@@ -1,0 +1,1 @@
+In the [confinement category](#def:confinement-category), unfolding and folding are mutually inverse when restricted to particles whose coarse representation captures the full partition content. The morphism $\mathrm{dress}$ is generally not invertible because the binding subword may not be uniquely reversible.

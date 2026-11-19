@@ -9,3 +9,5 @@
 
 **Categorical interpretation.**
 *Conjecturally, the filtration $J^\bullet(q)$ coincides with the $\mathbb{Z}$-grading filtration on the corresponding KLR module under the Brundan–Kleshchev isomorphism. This identifies the heuristic shadow-price ordering with a rigid homological grading.*
+
+**Degeneracy and per-atom truncation.** The [confinement filtration](#def:confinement-level) is well-defined under degeneracy, since tied operators enter together. Non-magic atoms typically have small $k_{\max}$. Magic configurations have larger $k_{\max}$ because shell closure forces additional operator content. The truncation is computed once per atom-knot and witnessed as part of $K$'s NF data.

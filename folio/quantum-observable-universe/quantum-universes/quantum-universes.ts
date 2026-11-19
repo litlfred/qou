@@ -45,6 +45,7 @@ export default chapter({
       blocks: [
         "quantum-universe-intro",
         "quantum-universe",
+        "quantum-universe-remark",
         // Light-touch physical motivation for each axiom, and the
         // foreshadow of ch:knots-particles-confinement §1 (the braiding's
         // hexagons are what make "an interaction" order-independent).
@@ -79,8 +80,12 @@ export default chapter({
         "simple-objects-V",
         "unit-simplicity",
         "hochschild-homology",
+        "hochschild-homology-remark",
         "grothendieck-group-of-a-qou",
+        "grothendieck-group-of-a-qou-remark",
+        "grothendieck-group-of-a-qou-example",
         "chern-character",
+        "chern-character-remark",
         "su2-characters-and-quantum-dimension",
       ],
     }),

@@ -33,3 +33,5 @@ $$
 The hyperbolic-volume dependence enters through the muon anchor $\mathrm{Vol}(4_1)$, dressed by the dimensionless Borromean factor $F_{\mathrm{Bor}}$.
 
 The Skein corrections isolate the crossing asymmetry between the $\mathfrak{u}$ and $\mathfrak{d}$ components. The pair Skein formula dictates $\mathfrak{m}_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)$.
+
+**Gluon content and colour symmetry.** The Borromean braid $\mathcal{B}_3$ natively carries Hopf link content; this constitutes the intrinsic gluon field binding the components. The $S_3$ permutation symmetry of the color tubes guarantees the invariant structure across all color assignments.

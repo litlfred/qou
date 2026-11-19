@@ -91,6 +91,7 @@ export default chapter({
             "lp-dual-stability-confinement-reading",
             "lp-dual-stability-table-data",
             "algebraic-primality",
+            "algebraic-primality-remark",
             "n-equals-1-vacuous-magic",
             "n-equals-1-vacuous-magic-context",
             "n-equals-1-vacuous-magic-proof",
@@ -142,6 +143,7 @@ export default chapter({
         "markov-stabilisation-needs-a-fresh-generator",
         "binding-functional-is-the-log",
         "nucleon-pair-isospin-channel",
+        "nucleon-pair-isospin-channel-remark",
         "isospin-selection-class-inhabited",
         "branching-identity-isospin-weights",
         "interface-band-between-isospin-weights",
@@ -228,6 +230,8 @@ export default chapter({
         // wedderburn-mass-formula is referenced from braids-and-knots.ts
         // (its canonical home as thm:wedderburn-mass-formula).
         "universal-ilp-algorithm",
+        "universal-ilp-algorithm-example",
+        "universal-ilp-algorithm-remark",
         "gram-matrix-h3-symbolic",
         "gram-matrix-h3-symbolic-eval-role",
         "color-pairing-binding",
@@ -261,7 +265,10 @@ export default chapter({
       blocks: [
         "branching-qvalue-intro",
         "per-nucleon-channel-decomposition",
+        "per-nucleon-channel-decomposition-example",
+        "per-nucleon-channel-decomposition-remark",
         "spectator-normalization",
+        "spectator-normalization-remark",
         "branching-qvalue-factorization",
         "branching-qvalue-factorization-proof",
         "parity-regime-selection",
@@ -297,6 +304,7 @@ export default chapter({
       blocks: [
         "intro-beta-stability-closure",
         "skein-binding-lagrangian",
+        "skein-binding-lagrangian-remark",
         "skein-binding-lagrangian-derivation",
         "beta-stability",
         "beta-stability-interpretation",

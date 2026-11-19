@@ -1,1 +1,3 @@
 The field $\mathbf{No}$ makes every step of the blow-up literal. The cutoff $\Lambda$ is a specific element. The counterterm is a specific surreal-valued function. The standard part is a specific real number.
+
+**Named surreals.** In the [surreal blow-up calculus](#def:surreal-blowup-calculus), $\omega = 1/\varepsilon$; see [Table](#tbl:surreal-blowup-calculus-table-data) for named surreals, each of which corresponds to a unique element under Conway's recursive construction. Procedurally, a surreal blow-up evaluates a divergent expression at a named infinite surreal, then takes the standard part of a renormalised version.

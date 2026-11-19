@@ -40,6 +40,7 @@ export default chapter({
           blocks: [
             "mass-endomorphism-conjecture",
             "mass-identity",
+            "mass-identity-remark",
             "mass-identity-exists",
             "mass-identity-exists-proof",
             "mass-identity-unique",
@@ -126,6 +127,7 @@ export default chapter({
         "categorical-mass-markov",
         "categorical-mass-markov-proof",
         "kz-connection-sl2",
+        "kz-connection-sl2-remark",
         "markov-trace-gibbs-free-energy",
         "atomic-mass-gb-nf",
         "atomic-mass-gb-nf-interpretation",

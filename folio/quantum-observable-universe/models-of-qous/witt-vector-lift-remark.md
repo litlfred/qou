@@ -1,0 +1,1 @@
+The distribution algebra $\mathrm{Dist}(\widehat{G})$ of the [Witt vector lift](#def:witt-vector-lift) $\widehat{G}$ is the $p$-adic completion of the universal enveloping algebra $\mathcal{U}(\mathrm{Lie}(H))$ deformed by $\pi_<$.

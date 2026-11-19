@@ -88,9 +88,11 @@ export default chapter({
       blocks: [
         "surreal-construction-grading-intro",
         "birthday-grading",
+        "birthday-grading-remark",
         "birthday-grading-archimedean",
         "birthday-grading-substrate",
         "sign-sequence-of-braid",
+        "sign-sequence-of-braid-remark",
         "sign-sequence-of-braid-invariant",
         "hoefsmit-is-surreal-construction",
         "hoefsmit-is-surreal-construction-context",
@@ -218,7 +220,9 @@ export default chapter({
             // Collatz family
             "q-collatz-conjecture",
             "two-q-adic-valuation",
+            "two-q-adic-valuation-remark",
             "collatz-contact-boundary-defn",
+            "collatz-contact-boundary-remark",
             // Swapped 2026-08-15: `collatz-parity-to-divisor` declares
             // `interprets: "prop:collatz-contact-boundary"` and was listed
             // immediately BEFORE it, so the remark interpreted a result the

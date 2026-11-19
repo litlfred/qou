@@ -33,3 +33,11 @@ $$
 $$
 
 where $\epsilon_j = \pm 1$ represents the crossing sign. For a positive crossing: $\mathfrak{E}_\times^{(+)} = q$. For a negative crossing: $\mathfrak{E}_\times^{(-)} = q^{-1}$. The asymmetry $q \neq q^{-1}$ at the substrate parameter $q$ forces positive crossings to carry more energy than negative ones. This is the energy signature of parity violation.
+
+**At rest** ($p_q = 0$, $J_q = 0$):
+
+$$
+  \mathfrak{E}_q(K)\big|_{\text{rest}} \;=\; \mathfrak{S}_q(K) \;=\; \mathfrak{m}(K) c^2
+$$
+
+This recovers the topological mass formula.

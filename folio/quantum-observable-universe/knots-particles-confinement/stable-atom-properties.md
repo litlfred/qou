@@ -6,3 +6,5 @@
 
 **Confined operators only.**
 *We solve the ILP within the confinement filtration ([confinement level](#def:confinement-level)) at $q$. We only consider primitives $e_\lambda$ in $J^{\ell(K, q)}(q)$, since operators above the atom's confinement level are unavailable without further phase transitions.*
+
+**Scope of the stability condition.** For a [stable atom](#def:stable-atom), the Frobenius positivity constraint $(\mathrm{G}x)_\gamma \geq 0$ holds for every primitive constraint $\gamma$ at the coefficient vector of $T_w$ itself. The condition is evaluated at the vector $x(K, q)$ fixed by the decomposition of $T_w$, not at an arbitrary vector. The existential form $\exists\, x \in \mathbb{Z}_{\geq 0}^N$ with $\mathrm{G}(q)\,x \geq 0$ holds for every atom, since $x = 0$ satisfies it, and therefore does not distinguish stable from unstable atoms.

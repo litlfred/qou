@@ -46,3 +46,5 @@ $$
 $$
 
 The muon is a Skein excitation of the electron.
+
+**The two operations generate the spectrum.** The particle spectrum is generated from the finite set of [torus knot generators](#def:knot-particle-generation) together with the two :refterm[linking operations]{#linking-operations}, which act on the exceptional divisor and the color-tube fibration; together with the generator family $\mathcal{G}$, they generate the full particle spectrum. We reserve $q$ for the substrate parameter and $p$ for base points; the winding indices are always $(m,n)$.

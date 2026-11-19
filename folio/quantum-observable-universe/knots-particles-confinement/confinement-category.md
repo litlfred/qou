@@ -1,4 +1,3 @@
-**Definition.**
 *The **confinement category** $\mathbf{Conf}$ has:*
 
 - ***Objects:** confined particles $P$ at every level $\ell \ge 0$.*
@@ -12,5 +11,3 @@
 
 - ***Composition:** concatenation of Hecke-algebra embeddings. We right-compose $\mathrm{dress}$ with $\uparrow_\ell$ and $\downarrow_\ell$.*
 - ***Identity:** the identity embedding $\mathrm{id}_P: H_{n_0}(q) \hookrightarrow H_{n_0}(q)$.*
-
-*Unfolding and folding are mutually inverse when restricted to particles whose coarse representation captures the full partition content. The morphism $\mathrm{dress}$ is generally not invertible because the binding subword may not be uniquely reversible.*

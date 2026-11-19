@@ -8,5 +8,3 @@ $$
   |y_{\lambda_1}(q')| \;\leq\; |y_{\lambda_2}(q')|
   \;\;\forall q' \in U.
 $$
-
-*We read this as: "$\lambda_1$ has at most the energy of $\lambda_2$ on a neighborhood of $q$".*

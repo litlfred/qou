@@ -1,4 +1,3 @@
-**Definition.**
 *Fix the substrate parameter $q$. Sort the Wedderburn-block knot operators by energy:*
 
 $$
@@ -14,7 +13,7 @@ $$
   \;\{\lambda : E(\lambda, q) \leq E_\ell(q)\}.
 $$
 
-*Tied operators enter the filtration together at the level of their common energy. The filtration is well-defined under degeneracy.*
+*Tied operators enter the filtration together at the level of their common energy.*
 
 *A closed braid $K$ with Hecke normal form $T_w \in H_n(R, q)$ is **confined at level $\ell$ at $q$** if and only if $\ell$ is the smallest integer with $T_w \in J^\ell(q)$. We write $\ell(K, q) := \min\{\ell : T_w \in J^\ell(q)\}$.*
 
@@ -24,5 +23,3 @@ $$
 1. *Compute the NF $T_w \in H_{n(K)}(q)$.*
 2. *Determine the maximal $k \leq n(K)$ such that the operator $T_w$ has a nonzero projection on some Wedderburn block $\lambda \vdash k$ with $d_\lambda \geq 2$.*
 3. *Set $k_{\max}(K, q)$ to this value.*
-
-*Non-magic atoms typically have small $k_{\max}$. Magic configurations have larger $k_{\max}$ because shell closure forces additional operator content. We compute this once per atom-knot and witness it as part of $K$'s NF data.*

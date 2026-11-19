@@ -8,6 +8,7 @@ import { definition } from "../../schema/builders";
  */
 export default definition({
   label: "def:universal-ilp-algorithm",
+  examples: ["ex:universal-ilp-algorithm"],
   title: "Universal ILP algorithm for operator selection",
   lean: { ref: "qou:QOU.Interactions.UniversalILP",
     validation: "not_checked",
@@ -44,6 +45,7 @@ export default definition({
     status: "error",
   },
   authorNotes: [
+    { kind: "note", body: "Archimedean specialisation (moved from the definition prose 2026-11-19): What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here." },
     {
       kind: "status",
       date: "2026-08-24",

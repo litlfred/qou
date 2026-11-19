@@ -1,1 +1,3 @@
 The $q$-Tate--Shafarevich group $\mathrm{Sha}_q(\mathcal{E}_q)$ measures the failure of the local-global principle at the $q$-scale: torsors trivial at every spectral localization but globally non-trivial.
+
+**Fibre-level facts used in the definition.** In the [categorical Mordell--Weil group](#def:categorical-mordell-weil) construction, the elliptic fiber $\mathcal{E}_q \hookrightarrow \mathcal{B}$ is a genus-$1$ sub-curve, and the Frobenius eigenvalue on $H^1(\mathcal{E}_q)$ satisfies $|\alpha_{\mathcal{E}}| = q^{1/2}$ by the Hasse--Weil bound. The fibre functor atlas of the QOU forms a $G$-gerbe over the spectral base.

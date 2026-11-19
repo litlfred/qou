@@ -6,3 +6,5 @@ The [Coulomb charge](#def:coulomb-charge) $Q = \tfrac{1}{2}(n_+ - n_-)$ is odd u
 
 **Isolation.**
 An isolated up quark does not exist. Removing it from $\mathcal{B}_3$ unlinks the remaining two unknots, which destroys the baryon.
+
+**Environment, not knot type.** The [up quark](#def:up-quark) is not a distinct knot type. It is the unknot distinguished by its environment. It is threaded through a color tube and Borromean-linked with two other unknots.

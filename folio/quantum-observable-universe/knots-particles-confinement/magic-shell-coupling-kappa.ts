@@ -31,7 +31,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:magic-shell-coupling-kappa",
   title:
-    "The expression $\\kappa_{\\mathrm{closed}} = -E_0 \\log(1/h) / [3]_q!$ and its proved properties",
+    "The expression $\\kappa_{\\mathrm{closed}} = -E_0 \\log(1/h) / [3]_q!$",
   lean: {
     ref: "qou:QOU.BraidKnot.MagicShellCouplingKappa",
     validation: "not_checked",
