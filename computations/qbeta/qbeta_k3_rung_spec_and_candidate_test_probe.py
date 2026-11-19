@@ -76,6 +76,7 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR
 from qbeta_utils import c3_proton_extracted
 
+mp.mp.dps = max(50, mp.mp.dps)
 TARGET_PPB = mp.mpf("7.797")
 ERR_TODAY_PPB = mp.mpf("1278.58")
 K_FREEDOM_PPB = mp.mpf("59694.18")     # qou-cds1 entry 12

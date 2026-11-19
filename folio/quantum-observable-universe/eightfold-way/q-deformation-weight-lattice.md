@@ -1,8 +1,10 @@
-A persistent confusion in the literature and in early drafts of this
-framework conflates two occurrences of the number $2$ in the $A_2$
-Serre relation.  Resolving this confusion is essential for
-understanding what the substrate parameter $q_0$ does and does not do
-to the eightfold-way classification.
+Two distinct occurrences of the integer $2$ appear in the classical $A_2$
+Serre relation and root system: one is a binomial coefficient that deforms
+into the Gaussian integer $[2]_q = q + q^{-1}$ under Drinfeld–Jimbo
+quantization, whereas the other is the diagonal Cartan entry $a_{ii} = 2$
+that remains constant for all $q$.  Separating these two roles clarifies
+what the substrate parameter $q_0$ deforms in the eightfold-way
+classification and what remains rigid.
 
 **The two $2$s.**
 The classical Serre relation for $A_2$ reads

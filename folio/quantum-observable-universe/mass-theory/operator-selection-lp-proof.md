@@ -57,7 +57,7 @@ non-degenerate — for $q \neq 0, 1$ — **on the quotient
 $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, not on $H_n$ itself**, so
 that is where the LP is well-posed.
 
-> **The LP dimension is Catalan, not $n!$ (convention D).** Corrected 2026-08-09.
+> **The LP dimension is the Catalan number $C_n$, not $n!$ (Convention D).**
 > Posed on all of $H_n$ with $d = n!$ the statement above is false: under the
 > production convention D the weights $y_\lambda$ vanish for every $\lambda$ with
 > $\ell(\lambda) \geq 3$, so $G \in \mathbb{R}^{n! \times n!}$ is **singular** and

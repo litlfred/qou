@@ -8,4 +8,4 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
     ∀ (λ : lp.Λ), λ ∈ lp.active_set ↔ lp.tight λ
 ```
 
-This isolates standard LP-theory proofs—currently awaiting a full finite-dimensional LP Mathlib module—into cleanly defined conditional fields. Consumer proofs pull this hypothesis class instead of bare `sorry` tags. When the formal Mathlib support lands, a trivial model substitution will unconditionally discharge the class requirements without altering any downstream mathematical commitments.
+This isolates standard LP-theory proofs—currently awaiting a full finite-dimensional LP Mathlib module—into explicit conditional fields. Consumer proofs pull this hypothesis class instead of bare `sorry` tags. When the formal Mathlib support lands, a trivial model substitution will unconditionally discharge the class requirements without altering any downstream mathematical commitments.

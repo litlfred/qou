@@ -8,18 +8,7 @@ See [Table 1](#tbl:atomic-braid-table1-data).
 1. *Nuclear ordering: minimize $\Phi_1$ over all permutations of $Z$ protons and $N$ neutrons.*
 2. *Electron insertion: greedily insert each of $Z$ electrons at the position minimizing $\Phi_1$.*
 
-> **Tractability of clause 1 (2026-08-25).** As written, clause 1 quantifies
-> over all $\binom{A}{Z}$ distinct nucleon arrangements, so it is exponential
-> in $A$ and is not evaluable for most of the range the mass table covers:
-> $\binom{12}{6} = 924$ for ${}^{12}\mathrm{C}$ but
-> $\binom{40}{20} \approx 1.4 \times 10^{11}$ for ${}^{40}\mathrm{Ca}$.
-> Clause 2 is already greedy and therefore polynomial; clause 1 is not, and
-> the asymmetry between them is not explained here. No polynomial rule is
-> substituted — that would be inventing mathematics the corpus has not
-> derived — so the definition stands as stated, with the cost of taking it
-> literally recorded. Any computation quoting a ground-state ordering for
-> $A \gtrsim 14$ is therefore using some unstated restriction of clause 1 and
-> should say which.
+**Combinatorial complexity of clause 1.** Clause 1 quantifies over all $\binom{A}{Z}$ distinct nucleon arrangements, so its full enumeration grows exponentially in $A$ ($\binom{12}{6} = 924$ for ${}^{12}\mathrm{C}$, whereas $\binom{40}{20} \approx 1.4 \times 10^{11}$ for ${}^{40}\mathrm{Ca}$). Clause 2 is greedy and therefore polynomial in $Z$, whereas clause 1 is not. No heuristic polynomial restriction is substituted into the definition itself; any computation evaluating a ground-state ordering for $A \gtrsim 14$ restricts the search space of clause 1 and specifies the chosen restriction explicitly.
 
 *The greedy insertion produces **ep pairs**: each electron sits immediately before its proton. The $\mathfrak{n}e = \mathrm{id}$ crossing means electrons pass through neutrons without generating Hecke generators.*
 

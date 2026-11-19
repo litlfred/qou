@@ -53,7 +53,13 @@ $$
 
 Here $c_{\mathcal{B}}$ is the historical common-scale factor of the [Borromean baryon mass formula](#conj:borromean-baryon-mass-formula) (the purged $\lambda_{\mathrm{scale}}$ literal, since re-expressed there as the common Borromean term $\mathfrak{m}_{\mathcal{B}_3}(q_0)$). It is recorded as a near-form resting on an acknowledged calibration input. The canonical production mass shape absorbs it into the per-block density, $m = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ (no standalone scale factor). This $\sim 125$ GeV heuristic estimate remains exploratory, conditional on that open closure.
 
-The Higgs mass stems from the genus-$3$ Seifert surface volume, determined by the three color tube volumes of the Bring's surface.
+The Higgs mass stems from the genus-$3$ Seifert surface volume, determined by the three color tube volumes of the Bring's surface. In the 2-strand torus-link Plancherel trace hierarchy $P_m(h) = \sum_{j=0}^m \tfrac{1}{2}\binom{m+j}{2j}h^{2j}$ ($h = q - q^{-1}$, with $(q+q^{-1})\cdot 2P_m(h) = q^{2m+1}+q^{-(2m+1)}$ proved in [`QOU/StandardModel/ElectroweakBringSchwingerBridge.lean`](../lean/QOU/StandardModel/ElectroweakBringSchwingerBridge.lean)), dressing the $W \to Z$ step by $([2]_q/2)^2 = 1 + h^2/4$ reconciles the $W$-anchored and $Z$-anchored categorical mass ratios (`higgs_W_Z_anchor_reconciliation`):
+$$
+  m_H^{(W)} \;=\; m_W\,\frac{P_4(h_0)}{P_2(h_0)}\,\frac{6}{5}\,\frac{[2]_{q_0}}{2}\,C_{\mathrm{loop}},
+  \qquad
+  m_H^{(Z)} \;=\; m_Z\,\frac{P_4(h_0)}{P_3(h_0)}\,\frac{6}{5}\,\frac{2}{[2]_{q_0}}\,C_{\mathrm{loop}},
+$$
+so the $W$-anchor and $Z$-anchor evaluations agree to within $21.9\;\mathrm{MeV}$ ($174.7\;\mathrm{ppm}$) and land inside the PDG $125.20 \pm 0.11\;\mathrm{GeV}$ window under the parameter-free 1-loop / Bring zero-mode factors ($125.230\;\mathrm{GeV}$ from $W$ and $125.208\;\mathrm{GeV}$ from $Z$ with $C_{\mathrm{loop}} = 1 - \tfrac{2}{3\pi}\hbar_q^2$; $125.200\;\mathrm{GeV}$ from $W$ and $125.178\;\mathrm{GeV}$ from $Z$ with $C_{\mathrm{loop}} = 1 - \alpha_{\mathrm{EM}}/\pi$; or $125.052\;\mathrm{GeV}$ / $125.030\;\mathrm{GeV}$ with $C_{\mathrm{loop}} = 1 - 2G h_0^4$; see [`electroweak_bring_schwinger_bridge_probe.py`](../../../computations/probes/electroweak_bring_schwinger_bridge_probe.py)). Which 1-loop factor is canonical remains open alongside the C1/C$_{\text{sector}}$ torus-link identification.
 
 **Uniqueness of the Higgs.**
 

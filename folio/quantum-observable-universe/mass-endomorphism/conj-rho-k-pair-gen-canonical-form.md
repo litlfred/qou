@@ -29,9 +29,9 @@ $$
 
 The Kashaev-limit form (six-term $T_3$) provides the anticipated canonical form. Its derivation as a leading-order expansion in $\hbar_q$ remains incomplete. This must parallel the single-generator Kashaev derivation $\alpha \sum \ln|V_i|$.
 
-## Conjecture status
+## Component decomposition and epistemic tiers
 
-| Component | Status | Evidence |
+| Component | Epistemic tier | Evidence |
 |---|---|---|
 | Existence of $f_2$ (any form) | Conjectural | Follows from evaluating mass formula at finite truncation |
 | $f_2 = -\text{Li}_2^q(-\|V_i V_j\|) \cdot z^2$ | Conjectural | Matches six-term $T_3$; derivation pending |

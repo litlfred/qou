@@ -18,7 +18,7 @@ two distinct filtrations:*
   $Z^{(0)}(A) \subseteq Z^{(1)}(A) \subseteq \cdots$ where
   $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_\square h(\square)$.*
 
-*Terminology (2026-11-16).* The statistic $\max_\square h(\square) =
+*Terminology.* The statistic $\max_\square h(\square) =
 \lambda_1+\lambda'_1-1$ used in this block is now called the **max-hook
 depth**. The corpus fixes "GB-depth" to mean Lusztig's $a$-function
 $a(\lambda)=\sum_i\binom{\lambda_i}{2}$; see

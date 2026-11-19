@@ -122,6 +122,9 @@ for _p in ("computations", "computations/substrate", "tools/qou-substrate/python
     sys.path.insert(0, str(_ROOT / _p))
 
 from mpmath import mp  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 import q_parameter as qp  # noqa: E402
 from compound_shift_nf import (  # noqa: E402

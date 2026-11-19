@@ -322,7 +322,8 @@ def _constants():
         q0x = _mp.mpf(str(_Q50))
         mex = _mp.mpf(str(me))
         e0x = mex / (q0x * (q0x - 1))
-    return mex, q0x, e0x                             # me, q0, E0 — all mpf
+    from canonical_mass import _as_formattable_mpf
+    return _as_formattable_mpf(mex), _as_formattable_mpf(q0x), _as_formattable_mpf(e0x)  # me, q0, E0 — all mpf
 
 
 def _bond_type_L():
@@ -456,7 +457,8 @@ def _bond_type_L():
         # this module reports — was back at f64 one line later. The docstring
         # and the internals agreed with each other and both were wrong about
         # what came out.
-        return {k: -_mp.log(zx + v) - de[k] / 2 * lw for k, v in d.items()}
+        from canonical_mass import _as_formattable_mpf
+        return {k: _as_formattable_mpf(-_mp.log(zx + v) - de[k] / 2 * lw) for k, v in d.items()}
 
 
 def _chain_writhe_shift(Z, N, alpha):
@@ -895,7 +897,7 @@ def _print_legend() -> None:
     output is self-documenting when pasted into a PR / issue. Grouped by table;
     every header that appears below is defined here."""
     print("#### Column legend (every header, by table)")
-    print("""
+    print(r"""
 **Shared** — `iso` = isotope label · `A` = mass number A = Z+N (Z protons, N neutrons).
 
 **Table 1 — Binding B + error (MeV)** (values and error in one table)
@@ -1238,6 +1240,60 @@ def main(argv=None) -> int:
     # E_gate above. It reported E_gate / c_lambda / W_lambda, all of which are
     # the same unlicensed construct.
 
+    # 9. TWO-TERM QED & GPMT MODIFIED-DIMENSION DIAGNOSTICS (A=1..4)
+    from canonical_mass import (
+        proton_qed_self_energy_borromean_mev,
+        np_qed_splitting_borromean_conn_mev,
+        neutron_mass_two_term_mev,
+        gpmt_three_row_cumulants,
+        inter_nucleon_pair_charge,
+    )
+    gpmt_c = gpmt_three_row_cumulants(q0)
+    mp_qed_bor = proton_qed_self_energy_borromean_mev(k_weighted=False)
+    dm_qed_bor = np_qed_splitting_borromean_conn_mev(weighting="plain")
+    mn_2term = neutron_mass_two_term_mev(weighting="plain")
+    mn_1term_err_ppb = (mn_can - mn_) / mn_ * 1e9
+    mn_2term_err_ppb = (mn_2term - mn_) / mn_ * 1e9
+
+    print("\n### Table 9 — Two-Term QED & GPMT Modified-Dimension Diagnostics (A=1..4)")
+    print("  Lean modules: `NucleonWeightSpaceTwoTerm`, `USpinColemanGlashowLambdaSigma`, "
+          "`GPMTThreeRowCumulantBridge`, `H4GPMTModifiedDimensionCumulants`, `ThreeRowSpringerSYTDerivation`.")
+    print(f"  A=1 Borromean V³ QED: M_p^QED,conn = +{mp_qed_bor*1e3:.4f} keV | "
+          f"Δm_QED^conn(n−p) = {dm_qed_bor*1e3:+.4f} keV | "
+          f"m_n(1-term) = {mn_can:.7f} MeV ({mn_1term_err_ppb:+.1f} ppb) → "
+          f"m_n^two-term = {mn_2term:.7f} MeV ({mn_2term_err_ppb:+.1f} ppb, −70.4% residual).")
+    print(f"  GPMT ≥3-row modified dimensions at q₀: d_mod(1,1,1) = {gpmt_c['dMod111']:.6f}, "
+          f"d_mod(2,1,1) = {gpmt_c['dMod211']:.6f}, d_mod(1,1,1,1) = +{gpmt_c['dMod1111']:.6f} | "
+          f"μ₃^GPMT = +{gpmt_c['mu3GPMT']:.6f} (>0), μ₄^GPMT,H4 = {gpmt_c['mu4GPMT_H4']:.6f} (<0).")
+    print("| iso | A | Z | N | Q_pair | B_ext^GPMT(H4) | E₀·B_ext(H4) (MeV) | E_C(CAL-3) (MeV) | Δm_QED^V3 (keV) | two-term note |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|---|")
+    for r in rows:
+        if r["A"] > 4:
+            continue
+        A_r, Z_r, N_r = r["A"], r["Z"], r["N"]
+        q_pair = inter_nucleon_pair_charge(Z_r)
+        if A_r == 1:
+            bext_h4 = 0.0
+            qed_v3_kev = (mp_qed_bor * 1e3) if Z_r == 1 else ((mp_qed_bor + dm_qed_bor) * 1e3)
+            note = ("CAL-2 proton pin anchor" if Z_r == 1
+                    else f"m_n^2term err {mn_2term_err_ppb:+.1f} ppb (vs {mn_1term_err_ppb:+.1f} ppb 1-term)")
+        elif A_r == 2:
+            bext_h4 = gpmt_c["BextGPMT_2"]
+            qed_v3_kev = (2 * mp_qed_bor + dm_qed_bor) * 1e3
+            note = "μ₂^GPMT = 0 (no ≥3-row ideal in H₂(q))"
+        elif A_r == 3:
+            bext_h4 = gpmt_c["BextGPMT_3"]
+            qed_v3_kev = (Z_r * mp_qed_bor + N_r * (mp_qed_bor + dm_qed_bor)) * 1e3
+            note = ("mirror lo: Q_pair=0, strong core = ³He" if Z_r == 1
+                    else "mirror hi: B(³H)−B(³He) = +0.764 MeV AME vs +0.847 MeV E_C")
+        else:
+            bext_h4 = gpmt_c["BextGPMT_4_H4"]
+            qed_v3_kev = (2 * (2 * mp_qed_bor + dm_qed_bor)) * 1e3
+            note = f"H₄ cumulant μ₄^H4 = {gpmt_c['mu4GPMT_H4']:.4f} < 0 (4-body saturation)"
+        e0_bext = E0 * bext_h4
+        print(f"| {r['name']} | {A_r} | {Z_r} | {N_r} | {q_pair} "
+              f"| {_fmt(bext_h4,8,4)} | {_fmt(e0_bext,8,4)} "
+              f"| {_fmt(r.get('E_C'),8,4)} | {_fmt(qed_v3_kev,8,4)} | {note} |")
 
     _print_provenance()
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "

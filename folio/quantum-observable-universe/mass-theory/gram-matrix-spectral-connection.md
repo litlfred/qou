@@ -1,8 +1,7 @@
 **Remark (where the Gram matrix fits in the spectral-sequence /
 Frobenius framework).**
 
-> **Read every $G^{-1}$ below on $H_n/\mathrm{rad} \cong \mathrm{TL}_n$, not on
-> $H_n$.** Corrected 2026-08-09. This remark was written under the excised
+> **Domain of $G^{-1}$: the Temperley–Lieb quotient $H_n/\mathrm{rad} \cong \mathrm{TL}_n$.** On the full Hecke algebra $H_n$, non-degeneracy holds only under
 > **convention C**, where the antisymmetric weight
 > $y_{(1^3)} = 0.0227449\ldots$ is small but nonzero and $G$ genuinely inverts.
 > Under the production **convention D** the pin $z(q^2+1) = q^3$ forces
@@ -28,7 +27,7 @@ Frobenius framework).**
 >
 > Proved in
 > [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean):
-> `block_mem_radical` → `gram_det_eq_zero_of_radical_combination` for the
+> `block_mem_radical` `$\to$` `gram_det_eq_zero_of_radical_combination` for the
 > vanishing, `pairing_descends` and `mem_radical_of_pairing_zero` for the
 > descent.
 
@@ -101,8 +100,7 @@ $$
 
 *with off-diagonal entries computed via Hecke relations.*
 
-*~~At $q = q_0$, $\det G \neq 0$ (generically), confirming the Frobenius
-property.~~ **Retracted 2026-08-09 — this is the convention-C reading.** Under
+*Under
 the production convention D, $\det G = 0$ at $q = q_0$ and at every generic $q$:
 the vanishing is forced by the pin $z(q^2+1) = q^3$, not by a coincidence at a
 special point, so "generically" does not rescue it. $H_3$ is **not** a Frobenius

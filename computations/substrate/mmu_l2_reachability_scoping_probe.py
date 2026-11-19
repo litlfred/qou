@@ -55,6 +55,7 @@ import mpmath as mp
 
 from q_parameter import Q_50_DIGIT_STR
 
+mp.mp.dps = max(50, mp.mp.dps)
 SIGMA_P_E_PPB = mp.mpf("0.017")      # CODATA 2022 sigma on m_p/m_e
 SIGMA_P_E_STALE = mp.mpf("0.06")     # the pre-2026-08-21 figure
 TARGET_PPB = mp.mpf("0.2177")        # m_mu 100x target

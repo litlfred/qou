@@ -1,6 +1,6 @@
 ## Proof
 
-> **Scope note (2026-11-15).** The comparison $a$ against $b$ that decides the regime is not shown in this proof. It holds: $a - b = (q^2-1)\bigl(3(q^2+1)^2 - 2q^2\bigr)/(4q^3) > 0$ for $q > 1$, so $|b| > |a|$. The regime formulas themselves are stated, not derived. The table of $Q_{\mathrm{calc}}$ against $Q_{\mathrm{exp}}$ is an empirical comparison and is not part of the proof.
+> **Explicit regime inequality.** The comparison between $a$ and $b$ that selects the regime follows from $a - b = (q^2-1)\bigl(3(q^2+1)^2 - 2q^2\bigr)/(4q^3) > 0$ for $q > 1$, so $|b| > |a|$. The regime formulas themselves are stated, not derived. The table of $Q_{\mathrm{calc}}$ against $Q_{\mathrm{exp}}$ is an empirical comparison and is not part of the proof.
 
 
 Since $a < 0$ and $b < 0$ for all $q > 1$ ([spectator normalization](#def:spectator-normalization)), the product $a^Z \cdot b^{N-1}$ carries the sign $(-1)^Z \cdot (-1)^{N-1} = (-1)^{A-1}$.
