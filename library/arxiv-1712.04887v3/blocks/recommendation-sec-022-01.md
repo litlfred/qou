@@ -1,1 +1,0 @@
-Since a modular function must have an expansion $\,e^{c/h+\text O(1)}$ with $c\in\mathbf Q\pi^2$, this already gives a strong indication of a relation between the modularity of Nahm sums and the vanishing (up to torsion) of the associated elements of Bloch groups.

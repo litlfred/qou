@@ -1,1 +1,0 @@
-We shall also denote ${\mathfrak{U}}$ the covering of ${\mathbf{E}_{q}}$ consisting of the Zariski open subsets $U_{c} := {\mathbf{E}_{q}}\setminus \{c\}$ []{#not88 label="not88"} such that $c \not\in \Sigma_{A_{0}}$ (thus, we drop the upper bar denoting classes in ${\mathbf{E}_{q}}$).

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1905.06064v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "3ffe25c8ee62779d40203906e4599ed5a0bb40406a17c34d128774a90aee37d6",
   "file": "1905.06064v1.pdf"
@@ -16,76 +19,128 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 4,
   "by_kind": {
-   "recommendation": 4
+   "proposition": 1,
+   "lemma": 3
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "A",
    "name": null,
-   "statement": "Knot energies can help to model repulsive forces of fibres, whenever self-interaction of strands should be avoided.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "1. For p \u2208(1, \u221e), \u03b2 \u2208(0, 1) so that \u03b2 > 1 p \u22121 2 we have for any u \u2208C\u221e c (R), for any interval B \u2286R, (A.1) \u27e6u\u27e7W\u03b2,p(S ) \u227e[u]W\u03b2,p(S ). The constant is independent of u and I. For p \u2208(1, \u221e), \u03b2 \u2208(0, 1) so that \u03b2 > 1 p \u2212 2(p\u22121) we have for any u \u2208C\u221e c (R), (A.2) [u]W\u03b2,p(R) \u227e\u27e6u\u27e7W\u03b2,p(R). There is a \ufb01xed number L \u2208N so that for any compact interval B\u03c1 \u2282R of sidelength \u03c1 denoting with B2L\u03c1 the concentric interval with sidelength 2L\u03c1, we have for a \ufb01xed (A.3) [u]W\u03b2,p(B\u03c1) \u227e\u27e6u\u27e7W\u03b2,p(B2L\u03c1). To see this we need the following two Lemmata.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-004-appendix-a-a-new-norm-for-wsp.md (p. 22-26)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-004-appendix-a-a-new-norm-for-wsp.md",
+   "section_title": "Appendix A. A new norm for W(s,p)",
+   "pages": "22-26",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-004-appendix-a-a-new-norm-for-wsp.md (p. 22-26)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-1905.06064v1/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-1905.06064v1#proposition:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
    "name": null,
-   "statement": "\\begin{proof}[Proof of Theorem~\\ref{th:criticalpointchar}: (1) $\\Rightarrow$ (2)] Observe for any $c > 0$, \\[ \\mathcal{E}^{\\alpha,p}(c^{-1}\\sol') = c^{\\alpha p-2}\\mathcal{E}^{\\alpha,p}(\\sol'), \\] and \\[ \\tilde{\\mathcal{E}}^{\\alpha,p}(c^{-1}\\sol') = c^{\\alpha p-2}\\tilde{\\mathcal{E}}^{\\alpha,p}(\\sol'). \\] Thus, we shall assume w.l.o.g. $\\sol' = u$ (i.e. $c \\equiv 1$) without changing anything about the criticality.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-a-new-energy-e.md",
-   "section_title": "A new energy E",
-   "pages": "4-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "2. Let A(s, t) \u2282R2 be the set (A.4) (x, y) \u2208A(s, t) \u21d4min{x, y} < s, t < max{x, y}. Then for any \u00b5 > 0, and any s , t (A.5) Z A(s,t) \u03c1(x, y)\u22122\u2212\u00b5d(x, y) = \u00b5(1 + \u00b5)|t \u2212s|\u2212\u00b5.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-004-appendix-a-a-new-norm-for-wsp.md (p. 22-26)",
+   "external_refs": [],
+   "proof_excerpt": "W.l.o.g. s < t. Then by symmetry we have Z A(s,t) \u03c1(x, y)\u22122\u2212\u00b5dy dx =2 s Z x=\u2212\u221e \u221e Z y=t \u03c1(x, y)\u22122\u2212\u00b5dy dx =2 s Z x=\u2212\u221e \u221e Z y=t\u2212x |y|\u22122\u2212\u00b5dy dx = 2 1 + \u00b5 s Z x=\u2212\u221e (t \u2212x)\u22121\u2212\u00b5dx = 2 1 + \u00b5 \u221e Z \u03c1=t\u2212s (\u03c1)\u22121\u2212\u00b5d\u03c1 = 2 \u00b5(1 + \u00b5)(t \u2212s)\u2212\u00b5.",
+   "section_file": "sections/sec-004-appendix-a-a-new-norm-for-wsp.md",
+   "section_title": "Appendix A. A new norm for W(s,p)",
+   "pages": "22-26",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-004-appendix-a-a-new-norm-for-wsp.md (p. 22-26)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-004-02",
+   "block_iri": "library/arxiv-1905.06064v1/blocks/lem-sec-004-02",
+   "claim_id": "arxiv-1905.06064v1#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "A",
    "name": null,
-   "statement": "\\begin{remark} We shall see that $\\mathcal{R}_i(\\solu,\\cdot)$ are lower order terms which belong to $(L^1)^\\ast$, see Proposition~\\ref{pr:loterms}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-regularity-theory-for-e-critical-maps-proof-of.md",
-   "section_title": "Regularity theory for E-critical maps: Proof of Theorem I",
-   "pages": "10-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "3. Let p > 0, \u03b2 \u2208(0, 1), q \u2208(1, \u221e) so that \u03b2 > pq \u22121 q then for any u \u2208C\u221e c (R) and any interval B \u2286R, (A.6) Z B Z B \u0010 \u03c1(x, y)\u22122 R y x R y x |u(s) \u2212u(t)|q ds dt \u0011p \u03c1(x, y)1+\u03b2pq dx dy \u227e[u]pq W\u03b2,pq(S ). Also for I \u2286R an interval, (A.7) Z R Z R \u0010 \u03c1(x, y)\u22122 R y x R y x \u03c7S (s, t)|u(s) \u2212u(t)|q ds dt \u0011p \u03c1(x, y)1+\u03b2pq dx dy \u227e[u]pq W\u03b2,pq(S ). SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-004-appendix-a-a-new-norm-for-wsp.md (p. 22-26)",
+   "external_refs": [],
+   "proof_excerpt": "The (A.7) follows the same way as (A.6). We just prove the latter one. If p \u22652, with Jensen\u2019s inequality \u0010 \u03c1(x, y)\u22122 R y x R y x |u(s) \u2212u(t)|q ds dt \u0011p \u03c1(x, y)1+\u03b2pq \u2264\u03c1(x, y)\u22123\u2212\u03b2pq y Z x y Z x |u(s) \u2212u(t)|pq ds dt. With Fubini (note that s, t \u2208I if x, y \u2208I), setting A(s, t) as in ",
+   "section_file": "sections/sec-004-appendix-a-a-new-norm-for-wsp.md",
+   "section_title": "Appendix A. A new norm for W(s,p)",
+   "pages": "22-26",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-004-appendix-a-a-new-norm-for-wsp.md (p. 22-26)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-004-03",
+   "block_iri": "library/arxiv-1905.06064v1/blocks/lem-sec-004-03",
+   "claim_id": "arxiv-1905.06064v1#lemma:A",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "B",
    "name": null,
-   "statement": "Rather than providing a rigorous proof of the preceding statement by suitably decomposing the integration domain and carefully estimating based on techniques from~\\cite{blatt-reiter-2008}, we illustrate the situation by providing a numerical experiment that supports the latter conjecture (and which we believe should be possible to be made rigorous with a careful, lengthy computation).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-extremal-cases-p1-and-pinfty-and-no-m\u00f6bius-inv.md",
-   "section_title": "Extremal cases p=1 and p=infty, and no M\u00f6bius invariance for p=2",
-   "pages": "17-22",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "1. For \u03d5 \u2208C\u221e c (B\u03c1), L \u2208N, k \u2208N, we have the estimate \uf8eb\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ed Z B2L\u03c1 Z B2L+k\u03c1\\B2L+k\u22121 \u03c1(x, y)2 \uf8eb\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ed\u03c1(x, y)\u22122 y Z x y Z x |u(s) \u2212u(t)||\u03d5(s)v(s) \u2212\u03d5(t)v(t)| ds dt \uf8f6\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f8 p dx dy \uf8f6\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f8 p \u227e2\u2212s(L+k) \u2225v\u2225\u221e[u]W 1p ,p(B2L+k\u03c1) \u2225|\u2207| p \u03d5\u2225Lp .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-005-appendix-b-computations.md (p. 26-26)",
+   "external_refs": [],
+   "proof_excerpt": "W.l.o.g. B\u03c1 is centered around 0. Note that the support of \u03d5 tells us that whenever x, y > \u03c1 or x, y < \u2212\u03c1, 1 \u03c1(x, y)2 \uf8eb\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ec\uf8ed\u03c1(x, y)\u22122 y Z x y Z x |u(s) \u2212u(t)||\u03d5(s)v(s) \u2212\u03d5(t)v(t)| ds dt \uf8f6\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f7\uf8f8 p 2 \u22610. Thus, it su\ufb03ces to estimate \u03c1 Z \u22122L\u03c1 2L+k\u03c1 Z 2L+k\u22121\u03c1 1 \u03c1(x, y)1+ 1 p \uf8eb\uf8ec\uf8ec",
+   "section_file": "sections/sec-005-appendix-b-computations.md",
+   "section_title": "Appendix B. Computations",
+   "pages": "26-26",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-005-appendix-b-computations.md (p. 26-26)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-005-01",
+   "block_iri": "library/arxiv-1905.06064v1/blocks/lem-sec-005-01",
+   "claim_id": "arxiv-1905.06064v1#lemma:B",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

@@ -1,0 +1,1 @@
+Let A be a connected graded ring, and let M ∈M(A, gr) be a bounded below graded module. Then: (1) M has a minimal graded-free resolution η : P →M. (2) For every i there is an isomorphism P i ∼= A ⊗TorA −i(K, M) in M(A, gr). (3) The minimal graded-free resolution η : P →M in item (1) above is unique, up to a non-unique isomorphism in Cstr(A, gr).

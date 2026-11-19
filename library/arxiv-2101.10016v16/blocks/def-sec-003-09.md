@@ -1,1 +1,1 @@
-A tensor equivalence between tensor categories C and C
+Let C and C ′ be tensor categories with associativity morphisms α and α′ respectively. A weak tensor functor is a weak quasi-tensor functor F : C → C ′ for which the associated natural transformations Fρ,σ, Gρ,σ satisfy for all objects ρ, σ, τ , F(αρ,σ,τ ) = Fρ,σ⊗τ ◦ 1F(ρ) ⊗ Fσ,τ ◦ α ′ F(ρ),F(σ),F(τ) ◦ Gρ,σ ⊗ 1F(τ) ◦ Gρ⊗σ,τ (4.6) F(α −1 ρ,σ,τ ) = Fρ⊗σ,τ ◦ Fρ,σ ⊗ 1F(τ) ◦ α ′−1 F(ρ),F(σ),F(τ) ◦ 1F(ρ) ⊗ Gσ,τ ◦ Gρ,σ⊗τ . (4.7)

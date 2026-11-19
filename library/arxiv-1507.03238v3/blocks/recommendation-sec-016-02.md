@@ -1,1 +1,0 @@
-We shall construct a $\rho$-equivariant lift of $\Gamma$ to a map $\eta\colon V(\scalerel*{\widetilde{\overline\mathcal T}}{\widetilde{T^2}})\to \mathop{\mathrm{SL}}(2,\mathbb C)$ such that $\tilde\tau=\delta\eta$ is a natural cocycle on $\scalerel*{\widetilde{\overline\mathcal T}}{\widetilde{T^2}}$ descending to a natural cocycle $\tau$ on $\overline\mathcal T$.

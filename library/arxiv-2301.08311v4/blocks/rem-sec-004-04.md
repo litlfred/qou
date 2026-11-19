@@ -1,0 +1,1 @@
+As a quick application of the index formula, we compute the index of a disc with only one boundary puncture. The index of a disc u : H →(Cn, Tγ) that is asymptotic to a Reeb chord of length kπ/n is n + k. We can also prove the surjectivity of D2 at this stage by using the identification of kernel and cokernel with compactified problem.

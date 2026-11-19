@@ -1,1 +1,0 @@
-Since we are only interested in the congruence class of the conformal sim- plex T, and are no interested in which way it is pointing, we must further normalize by factoring out the rotation group SO(3).

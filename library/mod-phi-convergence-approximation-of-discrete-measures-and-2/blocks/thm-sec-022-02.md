@@ -1,0 +1,1 @@
+— Consider a general approximation scheme (νn)n∈N of a mod-φ convergent sequence (Xn)n∈N in Zd. We assume that r ⩾⌊d 2⌋and that the hypothesis (H2d) is satisﬁed. Then, dTV(µn, νn) = 1 + o(1) (2π) d 2 (λn) r+1   Z Rd e−∥x∥2

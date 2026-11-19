@@ -1,0 +1,1 @@
+We can use a basis of a subgroup of ﬁnite index of K2n−1(k)/torsion in the deﬁnition of Rn,∞(k) and Rn,p(k), or even a Q-basis of K2n−1(k)Q, without aﬀecting the rationality of q(n, k), qp(n, k) or their equality. Similarly we can replace the Z-basis of Ok with a Q-basis of k in the deﬁnitions of D1/2,∞ k and D1/2,p k .

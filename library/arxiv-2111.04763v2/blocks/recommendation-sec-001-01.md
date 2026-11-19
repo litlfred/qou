@@ -1,1 +1,0 @@
-We should point out that the above series are well-defined (for $\sigma\neq \sigma_0$ via formal Gaussian integration using as input an ideal triangulation of a 3-manifold [@DG], and for $\sigma=\sigma_0$ using the Kashaev invariant itself) and their coefficients are (up to multiplication by a power of $2\pi{\rm i}$) algebraic numbers.

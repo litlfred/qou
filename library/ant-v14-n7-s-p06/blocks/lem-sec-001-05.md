@@ -1,0 +1,1 @@
+(1) If ( f, h) = 1, then G(V, f h) = G(V, f )G(V, h). (2) Write V = V1Pα where P ∤V1. Then G(V, P j) =    if j ≤α and j odd, φ(P j) if j ≤α and j even, −|P| j−1 if j = α + 1 and j even, χP(V1)|P| j−1/2 if j = α + 1 and j odd, if j ≥2 + α. The following Poisson summation formula in function ﬁelds holds.

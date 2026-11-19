@@ -1,0 +1,1 @@
+Let X, Y be well ordered sets, < a monomial ordering on X∗ and ≺the ordering on X∗Y as in (∗). Let S, T ⊂k⟨X⟩be monic sets. Then the following statements hold: (1) S ⊂k⟨X⟩is a Gröbner-Shirshov basis in k⟨X⟩with respect to the ordering < if and only if SX∗Y ⊂modk⟨X⟩⟨Y ⟩is a Gröbner-Shirshov basis in modk⟨X⟩⟨Y ⟩ with respect to the ordering ≺.

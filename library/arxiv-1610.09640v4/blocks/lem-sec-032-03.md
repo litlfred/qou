@@ -1,0 +1,1 @@
+justiﬁes the next deﬁnition. Deﬁnition 3.7.5. Let ¯n ∈Γ(U, Hi(N)). Suppose V ↠U is a covering that admits a connecting triple. We deﬁne δV (¯n) ∈Γ(V, Hi+1(L)) to be the unique section such that δV (¯n) = πL(l) for every connecting triple (n, m, l) for ¯n over V .

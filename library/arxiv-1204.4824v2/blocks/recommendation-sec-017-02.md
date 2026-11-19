@@ -1,1 +1,0 @@
-Based on computer experimentation, we expect that the behavior observed in Figure \ref{fig:network-growth} is indeed generic: whenever there is a defect with sufficiently generic mass parameters, and $\vartheta$ is generic, all $\cS$-walls in $\wnet_\vartheta$ should asymptotically approach punctures.

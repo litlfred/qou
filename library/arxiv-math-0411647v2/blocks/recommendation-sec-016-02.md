@@ -1,1 +1,0 @@
-::: proof *Proof.* Theorem [\[theo:gorneszacowanie\]](#theo:gorneszacowanie){reference-type="ref" reference="theo:gorneszacowanie"} implies that an outcome of the simplification algorithm obtained for an evercrossing partition with genus $1$ must have at most $6$ vertices.

@@ -1,1 +1,0 @@
-6I should comment here on a common impression that exists in the literature, including especially popular writings, as regards the origin of the standard model versus that of the idea of grand uniﬁcation.

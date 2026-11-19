@@ -1,1 +1,0 @@
-It follows that the special sheet looks as it is depicted on Figure [3](#fig:specjalneprzescieradlo){reference-type="ref" reference="fig:specjalneprzescieradlo"}, where points $p_1,p_2,\dots$ all cover $\infty$ and those of them which carry the same labels should be glued together.

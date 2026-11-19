@@ -1,1 +1,0 @@
-We should stress that our invariant $\tau_1(K)$ can be viewed as a non-compact analogue of Kashaev's invariant which coincides with the colored Jones polynomial at a specific value as was proved in Ref.~\citen{MuraMura99a}.

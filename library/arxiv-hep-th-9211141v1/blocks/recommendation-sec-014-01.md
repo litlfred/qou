@@ -1,1 +1,0 @@
-Hence our eigenvalues must satisfy $${\mu_i\over 2 t^{1/2}}= i +{1\over 2} + {\rm o}(1)$$ and $h(y)$ is asymptotically a constant times the parabolic cylinder function $D_i(y)$ (see, e.g. [@erdelyi], Chp.

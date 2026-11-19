@@ -1,0 +1,1 @@
+Let p, q,r ≥1 such that 1 p + 1 q = 1 r + 1. For x ∈ℓp and y ∈ℓq we let (x ∗y)(k) :=  n∈Z x(n)y(k −n) denote the convolution. Then x ∗y ∈ℓr and ∥x ∗y∥ℓr ≤∥x∥ℓp∥y∥ℓq We will use Hölder’s inequality to prove the following version of the Sobolev inequality:

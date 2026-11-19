@@ -1,0 +1,437 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1508.06401v2",
+ "source": {
+  "file": "1508.06401v2.pdf",
+  "sha256": "354f6e4ea835af6d6159171af066ffe804ca6278f193527f049d59ac2c749f09",
+  "bytes": 216229,
+  "pages": 14,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1508.06401",
+   "version": "2",
+   "primary_class": "hep-lat",
+   "stamp_date": "15 Jul 2016"
+  },
+  "doi": null,
+  "title": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+  "authors_raw": "R. Horsleya, Y. Nakamurab, H. Perltc, D. Pleiterd, P. E. L. Rakowe",
+  "title_lines": [
+   "Isospin splittings of meson and baryon masses from",
+   "three-flavor lattice QCD + QED"
+  ],
+  "abstract": "Lattice QCD simulations are now reaching a precision where isospin breaking eﬀects become important. Previously, we have developed a program to systematically investigate the pattern of ﬂavor symmetry beaking within QCD and successfully applied it to meson and baryon masses involving up, down and strange quarks. In this Letter we extend the calculations to QCD + QED and present our ﬁrst results on isospin splittings in the pseu- doscalar meson and baryon octets. In particular, we obtain the nucleon mass diﬀerence of Mn −Mp = 1.35(18)(8) MeV and the electromagnetic contribution to the pion splitting Mπ+ −Mπ0 = 4.60(20) MeV. Further we report ﬁrst determination of the separation between strong and electromagnetic contributions in the MS scheme. 1",
+  "docinfo": {
+   "Title": "nminuspDESY2.tex",
+   "Author": "gsch",
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "Creator": "gnuplot 4.6 patchlevel 4",
+   "CreationDate": "Wed Feb 24 23:17:00 2016"
+  },
+  "title_raw": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "nminuspDESY2.tex",
+   "heading": "Isospin splittings of meson and baryon masses from three-ﬂavor lattice QCD + QED",
+   "outline": "1 Introduction and general strategy",
+   "text": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+   "basis": "Printed title on page 1 (Horsley et al.); the extracted title used the fl ligature",
+   "extracted_title": "Isospin splittings of meson and baryon masses from three-ﬂavor lattice QCD + QED",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and general strategy",
+   "page": 2,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "Lattice matters",
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Results",
+   "page": 7,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion and outlook",
+   "page": 13,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Examples of Feynman diagrams contributing to the meson electromagnetic mass to",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Left panel: The background ﬁeld on the 243 × 48 lattice divided into three bins of",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The neutral pseudoscalar meson masses M2",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The charge eN = +1 (p and Σ+) baryon masses M2",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Fan plots of pseudoscalar meson (top) and baryon masses (bottom) on the 483 × 96",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The QED contribution to the p −n mass splitting on the 323 × 64 and 483 × 96 lattices",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Mass splittings of pseudoscalar meson (top) and baryon masses (bottom) as a function",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Mass splittings ∆M of octet pseudoscalar meson and baryon masses compared to",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Mass splittings in the inﬁnite volume, in units of MeV. The ﬁrst error is the statistical",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The allowed ratio of quark masses mu/md for a range of against αEM. The solid circle is",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1710,
+   "n_words": 251,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-introduction-and-general-strategy",
+   "number": "1",
+   "title": "Introduction and general strategy",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6867,
+   "n_words": 1368,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-001-2-lattice-matters",
+   "number": "2",
+   "title": "Lattice matters",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 9048,
+   "n_words": 1742,
+   "label_start": "4",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-results",
+   "number": "3",
+   "title": "Results",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 13,
+   "n_chars": 14251,
+   "n_words": 2813,
+   "label_start": "7",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-003-4-conclusion-and-outlook",
+   "number": "4",
+   "title": "Conclusion and outlook",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 4510,
+   "n_words": 747,
+   "label_start": "13",
+   "label_end": "14"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "toc_inferred_entries": 0,
+  "figure_entries": 10,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 36386,
+  "furniture_lines_stripped": 0
+ }
+}

@@ -1,0 +1,1 @@
+Let a, b, n ∈Z and assume that (x, y) is a critical point of Ψa,b n . Let l, k ∈Z and put a′ = a + l, b′ = b + 2k, and n′ = n + pk. Then (x + 2k, y + l) is a critical point of Ψa′,b′ n′ and Ψa′,b′ n′ (x + 2k, y + l) −Ψa,b n (x, y) ≡0 (mod Z).

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-hep-th-9811173v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "986bf57947746523a0647891dc9e452d9b60bf99a7257d33140d146056e1bf7e",
   "file": "9811173v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:hep-th/9811173v1 19 Nov 1998",
+  "title": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links",
   "authors": "J. M. Borweina) and D. J. Broadhurstb)",
   "arxiv": {
    "id": "hep-th/9811173",
@@ -16,76 +19,133 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 4,
+  "candidates": 5,
   "by_kind": {
-   "recommendation": 4
+   "proposition": 5
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 5
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 5
+  },
+  "by_evidence_location": {
+   "in-paper": 5
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Then, in Section 5, we shall explain how we were led to Figs.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-41-signpost-integer-sequence-a003657.md",
-   "section_title": "Signpost: integer sequence A003657",
-   "pages": "8-9",
+   "statement": "In [@9806174] it was observed that the 12-crossing 4-component link of Fig.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-014-47-a-12-crossing-4-component-link-at-d-11.md (p. 11-12)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-014-47-a-12-crossing-4-component-link-at-d-11.md",
+   "section_title": "A 12-crossing 4-component link at $D=-11$",
+   "pages": "11-12",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-014-47-a-12-crossing-4-component-link-at-d-11.md (p. 11-12)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-014-01",
+   "block_iri": "library/arxiv-hep-th-9811173v1/blocks/prop-sec-014-01",
+   "claim_id": "arxiv-hep-th-9811173v1#prop-sec-014-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "A little doodling should convince the reader that non-alternating daisy-chain links must have an even number of components.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-410-a-48-crossing-daisy-chain-link-at-d-24.md",
-   "section_title": "A 48-crossing daisy-chain link at $D=-24$",
-   "pages": "12-13",
+   "statement": "Its Dedekind-zeta invariant was measured to be unity.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-015-49-a-self-dual-platonic-link-at-d-20.md (p. 12-12)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-015-49-a-self-dual-platonic-link-at-d-20.md",
+   "section_title": "A self-dual platonic link at $D=-20$",
+   "pages": "12-12",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-015-49-a-self-dual-platonic-link-at-d-20.md (p. 12-12)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-015-01",
+   "block_iri": "library/arxiv-hep-th-9811173v1/blocks/prop-sec-015-01",
+   "claim_id": "arxiv-hep-th-9811173v1#prop-sec-015-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "The rationale for the underlinings in ([\\[iq\\]](#iq){reference-type=\"ref\" reference=\"iq\"}) should now be clear: it was these 10 imaginary-quadratic fields that had been distinguished by the Feynman orthoschemes of Table 22, which initiated our studies.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-021-53-two-of-feynmans-links-are-missing.md",
-   "section_title": "Two of Feynman's links are missing",
-   "pages": "18-19",
+   "statement": "Following work that involved comparable Clausen values [@Sixth; @Ising], it was observed in [@9806174] that light-by-light scattering yields remarkable results at $s=t=n\\in\\{4,5,6,7\\}$, where the dilogs give rational multiples of the volumes of links.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-019-51-hyperbolic-feynman-links.md (p. 16-16)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-019-51-hyperbolic-feynman-links.md",
+   "section_title": "Hyperbolic Feynman links",
+   "pages": "16-16",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-019-51-hyperbolic-feynman-links.md (p. 16-16)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-019-01",
+   "block_iri": "library/arxiv-hep-th-9811173v1/blocks/prop-sec-019-01",
+   "claim_id": "arxiv-hep-th-9811173v1#prop-sec-019-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "If the reader has access to SnapPea, s/he should certainly not miss the opportunity to click in a depiction of the non-alternating knot in Fig.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-024-56-dedekind-zeta-values-from-maximally-symmetric.md",
-   "section_title": "Dedekind zeta values from maximally symmetric knots",
-   "pages": "23-25",
+   "statement": "At large $n$, the behaviour was measured to be $${\\rm vol}(F_{2n})=\\df12Z_7 -\\frac{C}{(\\frac14n-1)^2}+O(1/n^4) \\label{limits}$$ with $C\\approx0.8160$, found from 12-digit SnapPea results, with up to 500 crossings.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-023-55-dedekind-zeta-values-from-12-crossing-feynman.md (p. 21-23)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-023-55-dedekind-zeta-values-from-12-crossing-feynman.md",
+   "section_title": "Dedekind zeta values from 12-crossing Feynman knots",
+   "pages": "21-23",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-023-55-dedekind-zeta-values-from-12-crossing-feynman.md (p. 21-23)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-023-01",
+   "block_iri": "library/arxiv-hep-th-9811173v1/blocks/prop-sec-023-01",
+   "claim_id": "arxiv-hep-th-9811173v1#prop-sec-023-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "It was observed that the positivity criterion of [@BKP; @BGK; @BK15] was more fertile than maximal symmetry, at 10 and 12 crossings.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-025-57-dedekind-zeta-value-from-an-18-crossing-feynm.md (p. 25-26)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-025-57-dedekind-zeta-value-from-an-18-crossing-feynm.md",
+   "section_title": "Dedekind zeta value from an 18-crossing Feynman knot",
+   "pages": "25-26",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-025-57-dedekind-zeta-value-from-an-18-crossing-feynm.md (p. 25-26)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-025-01",
+   "block_iri": "library/arxiv-hep-th-9811173v1/blocks/prop-sec-025-01",
+   "claim_id": "arxiv-hep-th-9811173v1#prop-sec-025-01"
   }
  ]
 }

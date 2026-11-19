@@ -1,0 +1,1 @@
+Let R ∈C∞(R, R) be a function which vanishes for t ≫0 and which satisﬁes R(−t) = R(t) −kt for small |t|, with some k ∈Z. Let (φH t ) be the Hamiltonian ﬂow of H = R(µ), deﬁned on T \ T (0). Then φH 2π extends smoothly over T (0) to a compactly supported symplectic automorphism φ of T . The function K = 2π (R′(µ)µ −R(µ)) also extends smoothly over T (0), and φ∗θT −θT = dK. (1.6)

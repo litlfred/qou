@@ -1,1 +1,0 @@
-In addition, we should regard the conifold flat coordinates as 't Hooft parameters,\footnote{Note that we choose a slightly unusual convention for $g_s$ with an additional minus sign, for reasons explained in footnote \ref{fn:gs}.}

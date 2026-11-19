@@ -1,1 +1,0 @@
-In fact, as we shall see by theorem 3.3.6, the morphisms in a subcategory of Cob(3)S2 are all #g(S2×S1) minus some (interiors of) disks, and g the number of S2×S1-factors is equivalent to the genus of some surfaces as a morphism in Cob(2).

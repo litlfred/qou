@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2102.00255v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b63df73a9d0e1534e21b005f4dc5e6f0adb8eebc5a4297df275bf82b52caaee8",
   "file": "2102.00255v1.pdf"
@@ -16,181 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
-  "by_kind": {
-   "recommendation": 11
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should stress that $\\opn{q}^{\\mrm{res}}_{v}$ and $\\opn{tr}^{\\mrm{res}}_{v}$ are actual homomorphisms of complexes (see Remark \\ref{rem:295} regarding notation).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore I shall only mention my collaborator James J.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-0-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should stress that our $2$-categories are strict, and our pseudofunctors are normalized.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-2-rigid-dualizing-complexes-over-rings.md",
-   "section_title": "Rigid Dualizing Complexes over Rings",
-   "pages": "6-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the next section we shall see how $\\opn{TwInd}$ interacts with rigid traces and rigid \\'etale-localizations.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-2-rigid-dualizing-complexes-over-rings.md",
-   "section_title": "Rigid Dualizing Complexes over Rings",
-   "pages": "6-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Now we enter the zone of \"anticipated results\": many of the results still only have sketchy proofs, and should therefore be regarded with caution.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-rigid-residue-complexes-over-rings.md",
-   "section_title": "Rigid Residue Complexes over Rings",
-   "pages": "9-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If $L \\in \\cat{Rng} \\eftover \\K$ is a field, then its rigid dualizing complex $R_L$ must be isomorphic to $L[d]$ for some integer $d$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-rigid-residue-complexes-over-rings.md",
-   "section_title": "Rigid Residue Complexes over Rings",
-   "pages": "9-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note the unusual {\\em mixed nature} of this definition: a morphism $\\phi$ in $\\cat{C}(A)_{\\mrm{res} / \\K}$ is literally is homomorphism of complexes, but the condition it must satisfy is in the derived category.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-rigid-residue-complexes-over-rings.md",
-   "section_title": "Rigid Residue Complexes over Rings",
-   "pages": "9-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Another advantage of the rigidity approach, as we shall see next, is that it gives rise to a useful duality theory for DM stacks.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-4-rigidity-residues-and-duality-for-schemes.md",
-   "section_title": "Rigidity, Residues and Duality for Schemes",
-   "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "On the down side, we must work with a fixed regular base ring $\\K$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-4-rigidity-residues-and-duality-for-schemes.md",
-   "section_title": "Rigidity, Residues and Duality for Schemes",
-   "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall use the term {\\em map of stacks} for a $1$-morphism $f : \\YY \\to \\XX$ between stacks of groupoids on $(\\cat{Sch} \\ftover \\K)_{\\mrm{et}}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-5-rigidity-residues-and-duality-for-dm-stacks.md",
-   "section_title": "Rigidity, Residues and Duality for DM Stacks",
-   "pages": "14-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As we shall see, the definition of a rigid residue complex on a DM stack $\\XX$ is very similar to the definition for a scheme, with only a minor adjustment.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-5-rigidity-residues-and-duality-for-dm-stacks.md",
-   "section_title": "Rigidity, Residues and Duality for DM Stacks",
-   "pages": "14-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -1,1 +1,0 @@
-Should $\cD$ be an ordinary category, then the $\cD^{\amalg}$ is an ordinary colored operad with one color for each object of $\cD$, while a multi-morphism from $(d_1,\dots,d_n)$ to $d$ is simply a collection of morphisms $d_i\to d$ for each $1\leq i \leq n$.

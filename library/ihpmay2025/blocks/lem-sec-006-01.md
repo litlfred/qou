@@ -1,0 +1,1 @@
+If Γ is a Kleinian group, which is not virtually abelian, then Γ acts on H3 = H3∪∂H3 as a (discrete) convergence group. Specifically, if {γn} is a sequence of distinct elements of Γ, then there exists w, z ∈Λ(Γ) (not necessarily distinct) and a subsequence, still called {γn} so that γn(x) →z uniformly on compact subsets of H3 −{w}.

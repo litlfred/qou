@@ -1,1 +1,0 @@
-Similarly, for the multiplication to be homotopy-associative, we should invert all primes up to $p\leqslant 3\dim(X/\IZ)$, and to get it more and more coherent, we need to invert more and more primes.[]{#enum:AlgebraicvsAnalyticC label="enum:AlgebraicvsAnalyticC"} :::

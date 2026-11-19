@@ -1,1 +1,0 @@
-That is, the probability of setting up a state with energy $m$ and observing the state to have a different energy $n$ should be zero by conservation of energy, if there are no intermediate interactions.

@@ -1,1 +1,0 @@
-::: remark []{#remark6 label="remark6"} Formulae [\[eq103\]](#eq103){reference-type="eqref" reference="eq103"} and [\[eq106\]](#eq106){reference-type="eqref" reference="eq106"} should be compared respectively with formulae [\[eq61\]](#eq61){reference-type="eqref" reference="eq61"} and [\[eq52\]](#eq52){reference-type="eqref" reference="eq52"} in [@FisHart1]. :::

@@ -1,1 +1,0 @@
-It should be noted that the graphs $G\mathcal{K}$ and $G(\overline{\mathcal{K}})$ are usually very different as oriented graphs and thus give rise to very different state-sums calculating the same link polynomial, up to $t\mapsto t^{-1}$.

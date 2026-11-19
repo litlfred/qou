@@ -1,1 +1,0 @@
-For a cyclotomic field $k$ this holds for any $n \geq 2$ as we shall recall in Example [\[cyclo\]](#cyclo){reference-type="ref" reference="cyclo"} below, but it is also known for arbitrary number fields for $n=2$, as mentioned above, or $n=3$ (see [@gonXpam § 3] and [@G3 Appendix]). :::

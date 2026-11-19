@@ -1,0 +1,1 @@
+Let X be a locally compact space and let A = Funo(X) be the C* algebra of continuous functions which vanishes at infinity with norm |||] = sup, cx |f(«)|. The set of bounded multi- pliers of A is identified to the set of continuous bounded functions on X, whereas the affiliated elements are the set of complex continuous functions on X.

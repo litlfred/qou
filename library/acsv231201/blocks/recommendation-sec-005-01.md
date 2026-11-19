@@ -1,1 +1,0 @@
-The class of functions to which the methods described in this book may be applied is larger than the class of rational functions, but similar in spirit: the function must have singularities, and the singularities dictating asymptotics must be poles.

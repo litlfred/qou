@@ -1,1 +1,0 @@
-We should be able to reproduce the well known Chern-Simons wavefunction for the figure-eight knot complement from the theory $T_{\mathbf{4_1},\Pi}$ described in Section [\[sec:gauge41\]](#sec:gauge41){reference-type="ref" reference="sec:gauge41"}.

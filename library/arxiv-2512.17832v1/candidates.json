@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2512.17832v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "7cad0d880361a6c38d727da196bd338b6d30c5581b62de2e97ca6545ec195d36",
   "file": "2512.17832v1.pdf"
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "While both 6Li and 10B are small nuclei, and so should in principle be modeled similarly to He or Ne / O, in this first work we model them with a Woods-Saxon distribution as only the one- and two-nucleon distributions from these more sophisti- cated nucleon configurations are available.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-partonic-energy-loss-predictions.md",
-   "section_title": "Partonic energy loss predictions",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

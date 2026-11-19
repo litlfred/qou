@@ -1,0 +1,1 @@
+Let M be a 3–manifold with boundary consisting of tori. Then any complete hyperbolic metric on the interior of M is locally rigid: there is no local deformation of the metric through other complete hyperbolic metrics. We thank Marc Culler and Feng Luo for a fruitful discussion that produced the following extremely short proof.

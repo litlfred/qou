@@ -1,1 +1,0 @@
-(3.5) Since the in-medium pion velocity ˜v = dω/d|⃗q | = 1 −2ˆρc2/F 2 π must be smaller than the velcoty of light (405; 409), this imposes the constraint c2 ≥0, which is satisﬁed by the actual value of this LEC.

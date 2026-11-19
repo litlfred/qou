@@ -1,1 +1,0 @@
-Here we run into trouble: the operator —d?/dt? is not invertible, since it has eigenfunction 1 with eigenvalue 0; correspondingly, the differential equation in question has no solutions, as f G’'dt must be zero, so —G"(t) cannot equal 6(t) (one may say that the quadratic form in the exponential is degenerate, and therefore the Gaussian integral turns out to be meaningless).

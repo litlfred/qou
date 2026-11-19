@@ -1,1 +1,0 @@
-It must be treated separately because if we only allowed modiﬁcations to X+ then the complexity would be forced to increase as X+ approached X−, if X−happened to be wound up as on the left in Figure 6.

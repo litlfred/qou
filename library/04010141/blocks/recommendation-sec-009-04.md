@@ -1,1 +1,0 @@
-We remark finally is that the results of (18] may be used to discuss aspects of the representation theory of the affine Heeke algebra m(q) over any algebraically closed field of positive characteristic, i.e. the "modular case".

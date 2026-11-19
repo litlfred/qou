@@ -1,1 +1,0 @@
-We shall have use for an explicit description of this structure in terms of matrices: this will be given in section [\[section:extdiffmod\]](#section:extdiffmod){reference-type="ref" reference="section:extdiffmod"} of the appendix. :::

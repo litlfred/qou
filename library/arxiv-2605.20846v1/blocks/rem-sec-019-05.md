@@ -1,0 +1,1 @@
+2.9. A standard result is that Sing : tCat →Cat∆is the adjoint of the geometric realization functor |.| : Cat∆→tCat, which sends a simplicial category C to the topological category |C| whose objects are the same as those of C and whose mapping spaces are given by Map|C|(x, y) = | MapC(x, y)|.

@@ -1,0 +1,1 @@
+Let 𝐺and 𝐻be finite simple graphs on the same finite vertex set Ω, both bipartite with respect to the same parts Ω = 𝐿⊔𝑅and |Ω| ≥3. Assume that 𝐺is 2-connected and all vertex types of 𝐺are pairwise distinct, that is, 𝜏𝐺(𝑥) ≠𝜏𝐺(𝑦) if 𝑥≠𝑦. If D𝐵(𝐺) = D𝐵(𝐻), then 𝐺and 𝐻are bipartite-isomorphic.

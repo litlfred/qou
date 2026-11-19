@@ -1,1 +1,0 @@
-Further, the order of the $y$ values among the paths must be the same approaching $x=1$ as it was leaving $x=0$ since, otherwise, they would have crossed in between and this would have shown itself in [\[eq:disc\]](#eq:disc){reference-type="eqref" reference="eq:disc"}.

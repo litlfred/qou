@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0408078v2/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Construction of Q,",
+  "pageStart": 19,
+  "pageEnd": 23,
+  "contains": [
+    "library/arxiv-math-0408078v2/blocks/prose-sec-013",
+    "library/arxiv-math-0408078v2/blocks/rem-sec-013-01",
+    "library/arxiv-math-0408078v2/blocks/ex-sec-013-02",
+    "library/arxiv-math-0408078v2/blocks/rem-sec-013-03",
+    "library/arxiv-math-0408078v2/blocks/rem-sec-013-04",
+    "library/arxiv-math-0408078v2/blocks/thm-sec-013-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0408078v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0408078v2/manifest.jsonld",
+  "provenance": "ingested"
+}

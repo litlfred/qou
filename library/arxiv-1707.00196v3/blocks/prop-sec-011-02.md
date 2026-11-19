@@ -1,0 +1,1 @@
+Let χ be an extremal S∞-character with Thoma parameters (α, β) satisfying P i(αi +βi) = 1. Then the GNS data (πχ, Hχ, Ωχ) can be described in terms of the previously introduced V, R, and ξ as Ωχ = O n≥1 ξ, Hχ = ρR(C[S∞])Ωχ, πχ = ρR . (5.12)

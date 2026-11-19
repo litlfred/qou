@@ -1,0 +1,1 @@
+5.2. — Let 0 = M0 ⊂M1 ⊂· · · ⊂Mk = M be a k-ﬁltration with associated graded module P1 ⊕· · · ⊕Pk. Then, setting M′ i := C′ ⊗C Mi and P ′ i := C′ ⊗C Pi, we get a k-ﬁltration 0 = M′ 0 ⊂M′ 1 ⊂· · · ⊂M′ k = M′ with associated graded module P ′ 1 ⊕· · · ⊕P ′ k.

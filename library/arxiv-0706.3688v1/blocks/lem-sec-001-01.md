@@ -1,0 +1,1 @@
+Assume conditions (2.2) and (1), (2), then, For any projection e̸ = 1 in the center Z(A) of A, one has (2.3) eJeJ−1 = 0 . For any projections ej in Z(A) such that e1e2 = 0 one has (2.4) e1Je2J−1 + e2Je1J−1 ∈{0, 1} .

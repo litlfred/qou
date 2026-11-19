@@ -1,1 +1,0 @@
-If one crosses a bridge then next this person must cross an- other bridge in order to come back to the original side of the river; these choices can be represented by an element of NC2(2p) for each side of the river.

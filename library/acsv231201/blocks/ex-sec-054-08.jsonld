@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/acsv231201/blocks/ex-sec-054-08",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "title": "queueing partition function",
+  "pageStart": 320,
+  "pageEnd": 340,
+  "text": "ex-sec-054-08.md",
+  "derivedFrom": "library/acsv231201/sections/sec-054",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "10.28",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [BM93; Kog02] in sections/sec-054-main-results-on-coefficient-asymptotics.md",
+    "claim_id": "acsv231201#example:10.28"
+  }
+}

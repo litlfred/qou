@@ -1,0 +1,1 @@
+Let A be a graded ring. (1) The category M(A, gr) is abelian. (2) The category M(A, gr) has inverse limits. (3) The category M(A, gr) has direct limits. Moreover, direct limits in M(A, gr) commute with the ungrading functor (15.1.10).

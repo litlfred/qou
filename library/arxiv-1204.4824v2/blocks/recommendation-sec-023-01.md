@@ -1,1 +1,0 @@
-For each $\gamma \in \Gamma$ we can define a preferred lift $\tilde\gamma$ by the following rule:\footnote{In the first preprint version of this paper we proposed a different lifting rule based on the principle that the product \eqref{eq:Q-exp} should be finite.

@@ -1,0 +1,1 @@
+If the singularities in the non-standard foliation do not include any singularities of type [1 — 4], then W either has syllable length three, or else it has syllable length four and one of the braid generators occurs exactly once.

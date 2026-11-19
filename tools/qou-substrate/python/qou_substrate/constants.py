@@ -471,6 +471,144 @@ try:
         finally:
             _mp.mp.dps = prev
 
+    # ── Borromean V³ = (σ₁σ₂⁻¹)³ 3-strand weight-space traces & two-term pin ──
+    # Backed by sorry-free Lean 4 theorems in
+    # `QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean` (bean qou-7ph7).
+    # Tier A additive helpers: these do NOT modify `q_at()` or `Q_50_DIGIT_STR`.
+
+    def tr_borromean_v3_at(q=None, dps: int = _DPS_DEFAULT):
+        """3D weight-space trace of the Borromean braid V³ = (σ₁σ₂⁻¹)³ on W_p or W_n.
+
+        Lean 4: `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_borromeanV3A`
+        (and `trace_borromeanV3B`):
+            tr(V³) = (-q¹² + 3q¹⁰ - 3q⁸ + 5q⁶ - 3q⁴ + 3q² - 1) / q⁶.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            num = -(q2 ** 6) + 3 * (q2 ** 5) - 3 * (q2 ** 4) + 5 * (q2 ** 3) - 3 * (q2 ** 2) + 3 * q2 - 1
+            val = num / (q2 ** 3)
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def tr_e21_borromean_v3_at(q=None, dps: int = _DPS_DEFAULT):
+        """2D mixed-symmetry (2,1)-projected trace tr(e_{(2,1)} V³) = tr(V³) - 1.
+
+        Lean 4: `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21p_borromeanV3`
+        (and `trace_e21n_borromeanV3`):
+            tr(e_{(2,1)} V³) = -(q⁴ - q² + 1)(q⁸ - 2q⁶ - 2q² + 1) / q⁶.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            val = -(q2 ** 2 - q2 + 1) * (q2 ** 4 - 2 * (q2 ** 3) - 2 * q2 + 1) / (q2 ** 3)
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def tr_conn_borromean_p_at(q=None, dps: int = _DPS_DEFAULT):
+        """Per-strand connected 4th-order Borromean charge trace on the proton W_p:
+            tr_bar_conn(p, V³) = (1/3) tr((Q₁₂^(p) + Q₂₃^(p)) V_p³)
+                               = -2(q² - 1)⁴(q⁴ + q² + 1) / (27 q⁶).
+
+        Lean 4: (1/3) * `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3`.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            val = -2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (27 * (q2 ** 3))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def tr_conn_borromean_n_at(q=None, dps: int = _DPS_DEFAULT):
+        """Per-strand connected 4th-order Borromean charge trace on the neutron W_n
+        (after subtracting the static (-2/9) I₃ background per `QAdjn_eq_static_add_half_QAdjp`):
+            tr_bar_conn(n, V³) = (1/3) (tr((Q₁₂^(n) + Q₂₃^(n)) V_n³) + (2/9) tr(V_n³))
+                               = +(q² - 1)⁴(2q⁴ - q² + 2) / (27 q⁶).
+
+        Lean 4: (1/3) * `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjn_borromeanV3_connected`.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            val = ((q2 - 1) ** 4) * (2 * (q2 ** 2) - q2 + 2) / (27 * (q2 ** 3))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def tr_conn_borromean_diff_at(q=None, dps: int = _DPS_DEFAULT):
+        """Connected 4th-order Borromean charge trace difference (neutron minus proton):
+            Δtr_bar_conn(V³) = tr_bar_conn(n, V³) - tr_bar_conn(p, V³)
+                             = +(q² - 1)⁴(4q⁴ + q² + 4) / (27 q⁶).
+
+        Lean 4: (1/3) * `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3`.
+        """
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            qq = q_at(dps + 15) if q is None else _mp.mpf(q)
+            q2 = qq ** 2
+            val = ((q2 - 1) ** 4) * (4 * (q2 ** 2) + q2 + 4) / (27 * (q2 ** 3))
+            _mp.mp.dps = max(prev, dps)
+            return +val
+        finally:
+            _mp.mp.dps = prev
+
+    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, k_weighted: bool = False):
+        """Parallel two-term connected Borromean proton pin (Tier A diagnostic helper).
+
+        Solves:
+            2·(Vol(4₁)/ℏ_q²)·F_Bor(q) − 12 + w(q)·|tr_bar_conn(p, V³)| = m_p/m_e
+        where w(q) = q if `k_weighted=True` (K_p^⊗3 determinant weight) else 1,
+        via 14 Newton iterations at `dps + 25` guard digits starting from `q_at(dps + 25)`.
+
+        Does NOT modify `q_at()` or `Q_50_DIGIT_STR`.
+        """
+        prev = _mp.mp.dps
+        try:
+            work_dps = max(prev, dps + 25)
+            _mp.mp.dps = work_dps
+            vol = vol_4_1_at(work_dps)
+            mp_me = _mp.mpf(MASS_RATIO_P_E_STR)
+
+            def _f(qq):
+                h = qq - 1 / qq
+                hbar_sq = (1 - 1 / qq) ** 2
+                trM = _mp.fabs((4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4))
+                qf3 = (qq ** 2 + 1 + qq ** (-2)) * (qq + qq ** (-1))
+                qcd_term = 2 * vol / hbar_sq * (trM * qf3 / (qq ** 3)) - 12
+                q2 = qq ** 2
+                tr_conn_p_abs = 2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (27 * (q2 ** 3))
+                w = qq if k_weighted else _mp.mpf(1)
+                return qcd_term + w * tr_conn_p_abs - mp_me
+
+            q = q_at(work_dps)
+            eps = _mp.mpf(10) ** (-(work_dps // 2))
+            for _ in range(14):
+                fq = _f(q)
+                dfq = (_f(q + eps) - _f(q - eps)) / (2 * eps)
+                if dfq == 0:
+                    break
+                q = q - fq / dfq
+            _mp.mp.dps = max(prev, dps)
+            return +q
+        finally:
+            _mp.mp.dps = prev
+
 
 except ImportError:
     HAS_MPMATH = False
@@ -515,6 +653,24 @@ except ImportError:
         raise RuntimeError(
             "q_int_classical_at requires mpmath; install it with `pip install mpmath`"
         )
+
+    def tr_borromean_v3_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("tr_borromean_v3_at requires mpmath; install it with `pip install mpmath`")
+
+    def tr_e21_borromean_v3_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("tr_e21_borromean_v3_at requires mpmath; install it with `pip install mpmath`")
+
+    def tr_conn_borromean_p_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("tr_conn_borromean_p_at requires mpmath; install it with `pip install mpmath`")
+
+    def tr_conn_borromean_n_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("tr_conn_borromean_n_at requires mpmath; install it with `pip install mpmath`")
+
+    def tr_conn_borromean_diff_at(q=None, dps: int = _DPS_DEFAULT):
+        raise RuntimeError("tr_conn_borromean_diff_at requires mpmath; install it with `pip install mpmath`")
+
+    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, k_weighted: bool = False):
+        raise RuntimeError("q_two_term_borromean_at requires mpmath; install it with `pip install mpmath`")
 
 # ── Experimental observable anchors (CODATA 2022) ─────────────
 # Mirrored from `computations/substrate/experimental_constants.py`

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2509.20302v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "59837f5b511c9e073be1d5f1f45fc5e259372e8c93f62f574f1949384fbebce4",
   "file": "2509.20302v1.pdf"
@@ -16,31 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "recommendation": 1
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, following from the resurgence relations ([\\[eq:asymrel\\]](#eq:asymrel){reference-type=\"ref\" reference=\"eq:asymrel\"}), we can say that ${\\cal D}^{\\{j,k\\}}\\equiv{\\cal D}^{\\{0,\\dots0,1,0,\\dots,0,1,0,\\dots\\}}$ must have the same expansion as the perturbative part but with the replacements $I_{n}\\to I_{n}^{\\{j,k\\}}$, where $$\\begin{aligned} I_{n}^{\\{j,k\\}} & =I_{n}^{\\{j\\}}+\\frac{2(-1)^{n}}{(2\\pi x_{k})^{2n-1}}=I_{n}^{\\{k\\}}+\\frac{2(-1)^{n}}{(2\\pi x_{j})^{2n-1}} \\end{aligned}$$ The corresponding Stokes constants are $$\\begin{aligned} S^{\\{j,k\\}} & =S^{\\{j\\}}S^{\\{k\\}}\\frac{(x_{j}-x_{k})^{2}}{(x_{j}+x_{k})^{2}} \\end{aligned}$$ where the extra factor is due to the fact that we need to take $\\frac{e^{i\\pi\\ell_{\\beta}}}{4\\pi x_{k}}\\frac{\\Phi^{\\{j\\}}(2i\\pi x_{k})}{\\Phi^{\\{j\\}\\prime}(-2i\\pi x_{k})}$ rather than the same expression with $\\Phi$, which defines $S^{\\{k\\}}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-32-generic-relations.md",
-   "section_title": "Generic relations",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

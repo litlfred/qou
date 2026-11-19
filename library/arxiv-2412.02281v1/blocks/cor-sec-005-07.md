@@ -1,0 +1,1 @@
+Under the condition of Theorem 2.26, it follows that (note that we denote bn = q here) f (∞) q (z)n = n X i=1 Qn−1 l=1 (bi/al; q)∞ Qn l=1,l̸=i (bi/bl; q)∞ θq Ä −z Qn−1 l=1 al  Qn l=1,l̸=i bl ä θq(−z) z Pn−1 l=1 logq(al/bl) z1−logq bi f (0) q (z)i.

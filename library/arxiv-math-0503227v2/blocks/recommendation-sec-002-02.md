@@ -1,1 +1,0 @@
-Also note that $C_{\alpha}$ must depend on $\alpha$, since by Corollary 5.3 of [@F2], the random variable $T_{n,\alpha}$ has mean 0, variance 1, and third moment $\frac{\alpha-1}{\sqrt{\alpha {n \choose 2}}}$.

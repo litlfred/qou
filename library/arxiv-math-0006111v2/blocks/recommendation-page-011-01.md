@@ -1,1 +1,0 @@
-APPROXIMATE FACTORIZATION AND CONCENTRATION 11 In this last section we shall consider the representation of Sq on H⊗q, given by (i i + 1)(v1 ⊗. . . vi ⊗vi+1 . . . ⊗vq) = (−1)ε(vi)ε(vi+1)v1 ⊗. . . vi+1 ⊗vi . . . ⊗vq where vk are graded vectors, with graduation ε(vk) ∈{0, 1}.

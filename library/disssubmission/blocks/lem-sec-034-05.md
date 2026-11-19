@@ -1,0 +1,1 @@
+Let L1,L2 ⊂LY be sublattices of rank r ≤34 which are primitive in the sense that the quotients LY/L1 and LY/L2 are torsion-free groups. Then any isomorphism ϕ0 : L1 −→L2 of lattices extends to a lattice automorphism ϕ : LY −→LY. 5.4. N´eron-Severi lattices

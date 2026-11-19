@@ -1,1 +1,0 @@
-(The ones we already found suggest that these formulas should not be so complicated.) Substituting these (yet potential) solutions too, gives an even simpler linear system for the still unknown $c(i,Y)$, which then could be solved in $q$.

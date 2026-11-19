@@ -1,1 +1,0 @@
-This summary, which generally follows the order of topics in the paper as given in the Table of Contents, concludes with a brief discussion of the treatment of all the available data to obtain the 2022 set of recommended values.

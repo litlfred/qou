@@ -1,1 +1,0 @@
-\begin{description} \item[D1.] For each singular point $\mathfrak{s}_n$, $o(\mathfrak{s}_n)$ is a \ti{partially ordered subset} of the set of sheets of $\Sigma$ over a neighborhood of $\mathfrak{s}_n$. $o(\mathfrak{s}_n)$ must contain at least two elements, and if $\fs_n$ is a puncture, $o(\mathfrak{s}_n)$ must contain \ti{all} of the sheets over a neighborhood of $\fs_n$.

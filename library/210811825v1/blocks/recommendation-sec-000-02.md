@@ -1,1 +1,0 @@
-Caution must be used with this deﬁnition, since there exists a whole class of results called isoperimetric inequalities that relate the area of a domain to its perimeter, and do not take into account physical properties such as torsional rigidity.

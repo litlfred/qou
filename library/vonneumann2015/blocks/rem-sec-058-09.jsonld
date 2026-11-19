@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/vonneumann2015/blocks/rem-sec-058-09",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 128,
+  "pageEnd": 138,
+  "text": "rem-sec-058-09.md",
+  "derivedFrom": "library/vonneumann2015/sections/sec-058",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "18.5.30",
+    "source_kind": "remark"
+  }
+}

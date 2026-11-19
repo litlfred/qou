@@ -1,1 +1,0 @@
-So a bijection between sets is a full, faithful, essentially surjective functor, and if such a functor exists, we should treat the sets as "the same" - the functor has lost no important information (of which there is very little, for a set), which is reflected in the fact that it is invertible.

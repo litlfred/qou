@@ -1,1 +1,0 @@
-Here the power series $\phi_\alpha(\varepsilon)$ and their completions will have period $N$ rather than 1 with respect to $\alpha$, and more importantly, the number $v$ in [\[DefFkv\]](#DefFkv){reference-type="eqref" reference="DefFkv"} is no longer constant but must be replaced by a number $v_\alpha$ that depends on the $\Gamma$-equivalence class ("cusp") of $\alpha$.

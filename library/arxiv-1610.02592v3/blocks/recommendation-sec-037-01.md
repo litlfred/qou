@@ -1,1 +1,0 @@
-When $g=1$ we must actually specify a couple of things in the definition: the closed geodesic $\gamma$ is unique only up to translations, which do not affect its length; on the other hand rescaling \emph{does} affect lengths, so to get a well-defined length function we always rescale the metric $m$ to have unit area.

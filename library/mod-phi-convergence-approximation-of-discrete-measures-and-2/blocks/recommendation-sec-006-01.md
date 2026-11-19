@@ -1,1 +1,0 @@
-For convenience, until Section 5, we shall focus on the one-dimensional case (d = 1) and the corresponding torus T = R/2πZ, which we view as the ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES 1129 set of complex numbers of modulus 1.

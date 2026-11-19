@@ -1,1 +1,0 @@
-Following them around the bottom right corner, we conclude that the corresponding two half-edges coming from the right edge must also be coupled together, for otherwise, we would have either case (b) or (c) at the bottom right corner.

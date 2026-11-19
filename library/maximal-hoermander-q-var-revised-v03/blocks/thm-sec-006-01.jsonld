@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/maximal-hoermander-q-var-revised-v03/blocks/thm-sec-006-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 16,
+  "pageEnd": 21,
+  "text": "thm-sec-006-01.md",
+  "derivedFrom": "library/maximal-hoermander-q-var-revised-v03/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.2",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-006-q-variation-for-spherical-and-euclidean-ball-mea.md (p. 16-21)",
+    "claim_id": "maximal-hoermander-q-var-revised-v03#theorem:4.2",
+    "lean_status": "unformalized"
+  }
+}

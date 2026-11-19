@@ -1,1 +1,0 @@
-In the remaining part of Section 3.1, we write X to represent a list ((Ei, Bi))1≤i≤s of pairs of subsets of EZd and Zd, where each (Ei, Bi) should correspond to a connected graph and satisfy Bi∆Vo(Ei) ⊆A.

@@ -1,0 +1,1 @@
+Consequently, my = Ty!mT, can be written as a linear combi- nation of terms my, where u and v are row standard \-tableaux by Corollary 3.4 and its left-handed analogue. The general case follows from this and Corollary 3.4 since M5, = Th mula = Ty sla MT Ta: oO

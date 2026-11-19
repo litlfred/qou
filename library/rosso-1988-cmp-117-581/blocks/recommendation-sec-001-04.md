@@ -1,1 +1,0 @@
-We shall use an order relation ^ on β, defined as follows: N for α = Σ n/ αi eδ> l et mί( α) = wίί '( α) = Σ mi( α) e^ For α ^ α', we say that α < α' if: i a) /(α) < /(α') or b) /(α) = /(α') and the smallest index i such that mf(α) / mf(α') verifies: mf(α) < m^α').

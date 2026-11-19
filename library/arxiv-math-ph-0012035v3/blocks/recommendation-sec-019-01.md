@@ -1,1 +1,0 @@
-To this end we should use a generalization of the non-Abelian Stokes theorem to non-Abelian forms of higher degree, e.g. following the approach proposed in Eq.[\[STop\]](#STop){reference-type="ref" reference="STop"}, and yielding the resluts obtained in \[Bro94\].

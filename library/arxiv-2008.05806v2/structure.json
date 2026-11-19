@@ -1,0 +1,1122 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2008.05806v2",
+ "source": {
+  "file": "2008.05806v2.pdf",
+  "sha256": "4e1f9af118ba81b1700f474223c52a27cfb78ee2f1b542398e6d1f683e451617",
+  "bytes": 544846,
+  "pages": 26,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2008.05806",
+   "version": "2",
+   "primary_class": "hep-ph",
+   "stamp_date": "9 Dec 2020"
+  },
+  "doi": null,
+  "title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+  "authors_raw": "J. Gasser1, H. Leutwyler1, A. Rusetsky2",
+  "title_lines": [
+   "Sum rule for the Compton amplitude and implications",
+   "for the proton-neutron mass difference"
+  ],
+  "abstract": "The Cottingham formula expresses the lead- ing contribution of the electromagnetic interaction to the proton-neutron mass diﬀerence as an integral over the forward Compton amplitude. Since quarks and glu- ons reggeize, the dispersive representation of this ampli- tude requires a subtraction. We assume that the asymp- totic behaviour is dominated by Reggeon exchange. This leads to a sum rule that expresses the subtraction function in terms of measurable quantities. The evalua- tion of this sum rule leads to mp−n QED = 0.58 ± 0.16 MeV.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210105103034-05'00'"
+  },
+  "title_raw": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Sum rule for the Compton amplitude and implications for the proton-neutron mass diﬀerence",
+   "outline": "1 Introduction",
+   "text": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+   "basis": "Printed title on page 1 (J. Gasser, H. Leutwyler, A. Rusetsky); the extracted title used the ff ligature",
+   "extracted_title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass diﬀerence",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Lorentz invariance, kinematic zeros",
+   "page": 3,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "Dispersion relations",
+   "page": 3,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "Reggeon dominance",
+   "page": 4,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Sum rule for the subtraction function",
+   "page": 5,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 1,
+   "title": "Wick rotation",
+   "page": 5,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 1,
+   "title": "Decomposition of the mass shift",
+   "page": 6,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Operator product expansion",
+   "page": 6,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "Leading Wilson coefficients",
+   "page": 7,
+   "source": "outline",
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 1,
+   "title": "Difference between proton and neutron",
+   "page": 8,
+   "source": "outline",
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "Perturbation theory",
+   "page": 8,
+   "source": "outline",
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 1,
+   "title": "Moments of the structure functions",
+   "page": 9,
+   "source": "outline",
+   "number": "12",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Prediction for the constant C",
+   "page": 9,
+   "source": "outline",
+   "number": "13",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Renormalization",
+   "page": 10,
+   "source": "outline",
+   "number": "14",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 1,
+   "title": "Subleading divergence",
+   "page": 11,
+   "source": "outline",
+   "number": "15",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 1,
+   "title": "Input used for the structure functions",
+   "page": 11,
+   "source": "outline",
+   "number": "16",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 1,
+   "title": "Polarizabilities S(0)",
+   "page": 13,
+   "source": "outline",
+   "number": "17",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
+  },
+  {
+   "level": 1,
+   "title": "Subtraction function at low Q ^2",
+   "page": 14,
+   "source": "outline",
+   "number": "18",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": "Intermediate values of Q ^2",
+   "page": 14,
+   "source": "outline",
+   "number": "19",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": "Vector Meson Dominance",
+   "page": 16,
+   "source": "outline",
+   "number": "20",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 1,
+   "title": "Asymptotics",
+   "page": 16,
+   "source": "outline",
+   "number": "21",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 1,
+   "title": "Numerical evaluation of the mass difference",
+   "page": 18,
+   "source": "outline",
+   "number": "22",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "Form factors, m_(el)",
+   "page": 18,
+   "source": "outline",
+   "number": "22.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "Contribution from the subtraction function",
+   "page": 18,
+   "source": "outline",
+   "number": "22.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "Contributions from the dispersion integrals",
+   "page": 18,
+   "source": "outline",
+   "number": "22.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "Result for m _ (QED) or mstring(QCD)",
+   "page": 18,
+   "source": "outline",
+   "number": "22.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 1,
+   "title": "Comparison with Lattice calculations",
+   "page": 19,
+   "source": "outline",
+   "number": "23",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 1,
+   "title": "Comparison with other evaluations of the Cottingham formula",
+   "page": 19,
+   "source": "outline",
+   "number": "24",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 2,
+   "title": "Contributions from the elastic part",
+   "page": 20,
+   "source": "outline",
+   "number": "24.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 2,
+   "title": "Contributions from the subtraction function",
+   "page": 20,
+   "source": "outline",
+   "number": "24.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 1,
+   "title": "Summary and conclusions",
+   "page": 21,
+   "source": "outline",
+   "number": "25",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
+  },
+  {
+   "level": 1,
+   "title": "A Form of the Wilson coefficient for spin 2",
+   "page": 23,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
+  },
+  {
+   "level": 1,
+   "title": "B Operator product expansion for free quarks",
+   "page": 24,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
+  },
+  {
+   "level": 1,
+   "title": "C Derivation of the sum rule",
+   "page": 25,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "On the other hand, it is questionable, whether",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "15"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1232,
+   "n_words": 176,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8482,
+   "n_words": 1725,
+   "label_start": null,
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-2-lorentz-invariance-kinematic-zeros",
+   "number": "2",
+   "title": "Lorentz invariance, kinematic zeros",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3794,
+   "n_words": 696,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-3-dispersion-relations",
+   "number": "3",
+   "title": "Dispersion relations",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1946,
+   "n_words": 394,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-4-reggeon-dominance",
+   "number": "4",
+   "title": "Reggeon dominance",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 4466,
+   "n_words": 774,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-5-sum-rule-for-the-subtraction-function",
+   "number": "5",
+   "title": "Sum rule for the subtraction function",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1903,
+   "n_words": 344,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-005-6-wick-rotation",
+   "number": "6",
+   "title": "Wick rotation",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1408,
+   "n_words": 259,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-006-7-decomposition-of-the-mass-shift",
+   "number": "7",
+   "title": "Decomposition of the mass shift",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 3116,
+   "n_words": 592,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-007-8-operator-product-expansion",
+   "number": "8",
+   "title": "Operator product expansion",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2950,
+   "n_words": 552,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-008-9-leading-wilson-coefficients",
+   "number": "9",
+   "title": "Leading Wilson coefficients",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3038,
+   "n_words": 558,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-009-10-difference-between-proton-and-neutron",
+   "number": "10",
+   "title": "Difference between proton and neutron",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1055,
+   "n_words": 175,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-010-11-perturbation-theory",
+   "number": "11",
+   "title": "Perturbation theory",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4095,
+   "n_words": 770,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-011-12-moments-of-the-structure-functions",
+   "number": "12",
+   "title": "Moments of the structure functions",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1145,
+   "n_words": 214,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-012-13-prediction-for-the-constant-c",
+   "number": "13",
+   "title": "Prediction for the constant C",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2043,
+   "n_words": 390,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-013-14-renormalization",
+   "number": "14",
+   "title": "Renormalization",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2210,
+   "n_words": 391,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-014-15-subleading-divergence",
+   "number": "15",
+   "title": "Subleading divergence",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2677,
+   "n_words": 479,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-015-16-input-used-for-the-structure-functions",
+   "number": "16",
+   "title": "Input used for the structure functions",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5170,
+   "n_words": 968,
+   "label_start": "11",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-016-17-polarizabilities-s0",
+   "number": "17",
+   "title": "Polarizabilities S(0)",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 4832,
+   "n_words": 839,
+   "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-017-18-subtraction-function-at-low-q-2",
+   "number": "18",
+   "title": "Subtraction function at low Q ^2",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 3046,
+   "n_words": 579,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-018-19-intermediate-values-of-q-2",
+   "number": "19",
+   "title": "Intermediate values of Q ^2",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 4779,
+   "n_words": 930,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-019-20-vector-meson-dominance",
+   "number": "20",
+   "title": "Vector Meson Dominance",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 630,
+   "n_words": 108,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-020-21-asymptotics",
+   "number": "21",
+   "title": "Asymptotics",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 8195,
+   "n_words": 1515,
+   "label_start": "16",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-021-22-numerical-evaluation-of-the-mass-difference",
+   "number": "22",
+   "title": "Numerical evaluation of the mass difference",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-022-221-form-factors-m-el",
+   "number": "22.1",
+   "title": "Form factors, m_(el)",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 998,
+   "n_words": 169,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-023-222-contribution-from-the-subtraction-function",
+   "number": "22.2",
+   "title": "Contribution from the subtraction function",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1397,
+   "n_words": 253,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-024-223-contributions-from-the-dispersion-integrals",
+   "number": "22.3",
+   "title": "Contributions from the dispersion integrals",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 961,
+   "n_words": 166,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-025-23-comparison-with-lattice-calculations",
+   "number": "23",
+   "title": "Comparison with Lattice calculations",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1746,
+   "n_words": 286,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-026-24-comparison-with-other-evaluations-of-the-cott",
+   "number": "24",
+   "title": "Comparison with other evaluations of the Cottingham formula",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2868,
+   "n_words": 493,
+   "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-027-241-contributions-from-the-elastic-part",
+   "number": "24.1",
+   "title": "Contributions from the elastic part",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 2418,
+   "n_words": 428,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-028-242-contributions-from-the-subtraction-function",
+   "number": "24.2",
+   "title": "Contributions from the subtraction function",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 6430,
+   "n_words": 1133,
+   "label_start": "20",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-029-25-summary-and-conclusions",
+   "number": "25",
+   "title": "Summary and conclusions",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 9782,
+   "n_words": 1670,
+   "label_start": "21",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-030-a-form-of-the-wilson-coefficient-for-spin-2",
+   "number": null,
+   "title": "A Form of the Wilson coefficient for spin 2",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1377,
+   "n_words": 280,
+   "label_start": "23",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-031-b-operator-product-expansion-for-free-quarks",
+   "number": null,
+   "title": "B Operator product expansion for free quarks",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3039,
+   "n_words": 621,
+   "label_start": "24",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-032-c-derivation-of-the-sum-rule",
+   "number": null,
+   "title": "C Derivation of the sum rule",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 10025,
+   "n_words": 1807,
+   "label_start": "25",
+   "label_end": "26"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 34,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [
+   "figure 1",
+   "figure 2"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 5,
+    "items": [
+     "Abstract The Cottingham formula expresses the lead- 22 Numerical evaluation of the mass diﬀerence",
+     "ing contribution of the electromagnetic interaction to 22.1 Form factors, mel",
+     "ons reggeize, the dispersive representation of this ampli- 23 Comparison with Lattice calculations",
+     "tude requires a subtraction. We assume that the asymp- 24 Comparison with other evaluations of the Cotting- totic behaviour is dominated by Reggeon exchange. ham formula",
+     "function in terms of measurable quantities. The evalua- 25 Summary and conclusions"
+    ]
+   },
+   "found_not_listed": {
+    "count": 15,
+    "items": [
+     "2 Lorentz invariance, kinematic zeros",
+     "3 Dispersion relations",
+     "7 Decomposition of the mass shift",
+     "9 Leading Wilson coeﬃcients",
+     "10 Diﬀerence between proton and neutron",
+     "12 Moments of the structure functions",
+     "14 Renormalization",
+     "16 Input used for the structure functions",
+     "19 Intermediate values of Q2",
+     "20 Vector Meson Dominance",
+     "21 Asymptotics",
+     "22 Numerical evaluation of the mass diﬀerence",
+     "23 Comparison with Lattice calculations",
+     "24 Comparison with other evaluations of the Cottingham formula",
+     "25 Summary and conclusions"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 34,
+  "chars_total": 113253,
+  "furniture_lines_stripped": 0
+ }
+}

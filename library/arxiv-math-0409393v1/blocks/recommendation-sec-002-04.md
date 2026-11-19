@@ -1,1 +1,0 @@
-Since $div_{{\mathbf{E}_{q}}}(t_{i}) - div_{{\mathbf{E}_{q}}}(t_{j}) = D_{i,j}$, this proves (and explains) the given condition. $\Box$\ As a matter of notation, we shall write $F_{D}(U,V)$ for the $F$ obtained in the theorem: it does indeed depend solely on $D$.

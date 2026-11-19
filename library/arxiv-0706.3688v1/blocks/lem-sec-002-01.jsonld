@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-0706.3688v1/blocks/lem-sec-002-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "text": "lem-sec-002-01.md",
+  "derivedFrom": "library/arxiv-0706.3688v1/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0706.3688v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.4",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-002-21-the-case-zacc.md (p. 4-6)",
+    "claim_id": "arxiv-0706.3688v1#lemma:2.4",
+    "lean_status": "unformalized"
+  }
+}

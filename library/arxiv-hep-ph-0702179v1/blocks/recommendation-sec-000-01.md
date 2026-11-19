@@ -1,1 +1,0 @@
-The scale that specifies the chiral expansion, $\Lambda_{\chi} \sim M_V$ (being $M_V$ the mass of the $\rho(770)$, the lightest hadron not included in the theory), indicates that LECs in $\chi PT$ should receive contributions from the energy regime at or above that scale [@Georgi:1991ch].

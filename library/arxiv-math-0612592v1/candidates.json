@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0612592v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a5d29fa15a0b74ff6ee94ec5e079d7e36892341d0af54c3716fe1bb297ea476b",
   "file": "0612592v1.pdf"
@@ -16,13 +19,55 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 1
+  },
+  "needs_lean_proof": 1
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "property",
+   "number": null,
+   "name": "iii",
+   "statement": "translates in terms of $M$ into $V:=\\{a\\in R\\otimes _FM|\\ \\Phi (a)=a\\}$ is a vector space over $C$ and the natural map $R\\otimes _CV\\rightarrow R\\otimes _FM$ is an isomorphisms.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-000-difference-equations-in-general.md (p. 2-3)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-000-difference-equations-in-general.md",
+   "section_title": "Difference equations in general",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-000-difference-equations-in-general.md (p. 2-3)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-math-0612592v1/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-math-0612592v1#prop-sec-000-01",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Mass/BindingScalarKernelParityExclusion.lean:riccati_top_degrees_ne",
+    "folio/quantum-observable-universe/lean/QOU/Mathlib/QAlienBridgeEquation.lean:conjDeriv_apply"
+   ],
+   "needs_lean_proof": true
+  }
+ ]
 }

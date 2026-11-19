@@ -1,1 +1,0 @@
-In fact, cases (vi),(viii),(ix),(x) and (xi) also do not occur because each of those presupposes the existence of a negative vertex in A, however if we begin at a negative vertex in A and travel along singular leaves without leaving A we must eventually arrive at a singular leaf in A which has one endpoint at a negative vertex and the other on X, but that is impossible.

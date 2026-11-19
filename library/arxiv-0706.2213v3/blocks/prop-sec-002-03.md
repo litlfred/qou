@@ -1,0 +1,1 @@
+The knot group of J(2, 2m + 1) admits the following presentation: (2) Π(J(2, 2m + 1)) = ⟨x, y | wmx = ywm⟩ where w is the word [x, y−1] = xy−1x−1y. One can easily describe the peripheral–system (µ, λ) of a twist knot. It is expressed in the knot group as: µ = x and λ = ( ←w)mwm, where we let ←w denote the word obtained from w by reversing the order of the letters.

@@ -1,1 +1,0 @@
-For the equivalences (i)⇔(iii)⇔(iv) see [47] and for (i)⇔(ii) see [14]. ■ In order for the category Rep D(H) to be modular it must be semisimple, which by the lemma reduces us to the case where H satisﬁes (i) and (ii).

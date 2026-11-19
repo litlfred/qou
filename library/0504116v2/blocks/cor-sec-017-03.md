@@ -1,0 +1,1 @@
+Fix a boundary edge f lying on a compact lateral hexagon of some tetrahedron of T , and let ℓf : Ω(T ) →R be the function which associates to x ∈Ω(T ) the length of f in the geometric realization parameterized by x. Then dℓf x0 = 0.

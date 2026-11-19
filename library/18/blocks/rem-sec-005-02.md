@@ -1,0 +1,1 @@
+By the results in section 3 everything in this section, with the exception of the preceding Note, translates essentially verbatim to the case of hyperbolic conformal structures on M 3 (those where the simplices of T are hyperbolic confromal simplices).

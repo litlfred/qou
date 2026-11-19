@@ -1,1 +1,0 @@
-We shall call them tamely irregular, in an intended analogy with tamely ramified extensions in algebraic number theory: for us, they are irregular objects without wild monodromy, as follows from [@RSZ].

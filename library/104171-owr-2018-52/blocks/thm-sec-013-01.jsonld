@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/104171-owr-2018-52/blocks/thm-sec-013-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Arakawa-Moreau",
+  "pageStart": 41,
+  "pageEnd": 44,
+  "text": "thm-sec-013-01.md",
+  "derivedFrom": "library/104171-owr-2018-52/sections/sec-013",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-013-nilpotent-slodowy-slices-and-collapsing-levels-f.md (p. 41-44)",
+    "claim_id": "104171-owr-2018-52#theorem:2",
+    "lean_status": "unformalized"
+  }
+}

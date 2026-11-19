@@ -1,0 +1,1 @@
+The two convolution products ∗! and ∗∗descend to the same well-deﬁned bifunctor ∗: D×D −→D which satisﬁes P ∗P ⊂P and with respect to which both D and P become symmetric monoidal Λ-linear triangulated categories.

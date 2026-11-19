@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/0307092v2/blocks/lem-sec-012-03",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 36,
+  "pageEnd": 41,
+  "text": "lem-sec-012-03.md",
+  "derivedFrom": "library/0307092v2/sections/sec-012",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0307092v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "10.3",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-012-10-start-of-the-proof-of-theorem.md (p. 36-41)",
+    "claim_id": "0307092v2#lemma:10.3",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

@@ -1,1 +1,0 @@
-\label{decompositionnumbers} In this section we shall use the results of the previous sections to determine the decomposition numbers for $ \SpheAlg(n) $ when $ \SpheAlg(n) $ is quasi-hereditary and non-semisimple, that is when $ n \in \{1,2,\ldots, 2k-2\} $.

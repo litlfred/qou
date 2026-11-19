@@ -1,1 +1,0 @@
-It is easy to prove that the volume-preserving flow ([\[vpgf\]](#vpgf){reference-type="ref" reference="vpgf"}) indeed preserves the volume $V$ and reduces the energy $E$: the proof is a simple modification of that presented in [@GS] but the result should be obvious from the geometrical aspect of its construction.

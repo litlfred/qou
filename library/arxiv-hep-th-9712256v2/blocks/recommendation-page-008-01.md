@@ -1,1 +1,0 @@
-This implies that the operators Φj(x|z) and Φ−j−1(x|z) must be related by a relation of the form Φ−j−1(x|z) = −R(j)2j + 1 π Z C d2x′ |x −x′|−4j−4Φj(x′|z), (40) thereby deﬁning a “reﬂection” amplitude R(j) not restricted by current algebra symmetry.

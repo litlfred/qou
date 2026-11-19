@@ -1,1 +1,0 @@
-Then quantization with respect to $\omega_{0,s}$ produces operators $\hat \mathcal{L}_{\Delta+}=\hat z''+\hat z^{-1}-1$, $\hat \mathcal{L}_{\Delta-}=\hat{\overline z}''+\hat{\overline z}^{-1}-1$ that must annihilate the tetrahedron wavefunction.

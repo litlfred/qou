@@ -1,0 +1,1 @@
+Let A be a graded ring, let M be a graded right A-module, and let N be a graded left A-module. Then the K-module M ⊗A N has a direct sum decomposition M ⊗A N = M i∈Z (M ⊗A N)i, where (M ⊗A N)i is the K-linear span of the tensors m ⊗n, for all j ∈Z, m ∈M j and n ∈N i−j.

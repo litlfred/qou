@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0006111v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006111v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0006111v2",
+  "title": "Approximate factorization and concentration for characters of symmetric groups",
   "contains": [
     "library/arxiv-math-0006111v2/sections/page-001",
     "library/arxiv-math-0006111v2/sections/page-002",
@@ -35,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0006111v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0006111v2.pdf",
     "source_sha256": "cd99f45d686eb6e235cdb56326775ceded2564111636c87051a933a6a158ca3b",
     "pages": 12,
@@ -46,8 +48,8 @@
       "stamp_date": "16 Jun 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

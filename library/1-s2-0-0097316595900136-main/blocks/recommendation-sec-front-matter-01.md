@@ -1,1 +1,0 @@
-For example, I IJ ~, = (5, 3, o, -2, -3) = It should be noted that any pair of partitions #=(/z 1, ..-,/~l(~)) and v = (Va, ..., vt(v)) with l(#) + l(v) <<. r determines an r-staircase - def 0,0,..~, --V2,--Vl) , (2.1) [~, v/~= (#~,/z2 ..... /~1(~), .. -vl(~) .... , r - l(~) - l(v) where the partitions have been separated by r - l(It) + l(v) zeros.

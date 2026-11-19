@@ -1,1 +1,0 @@
-- The set of irreducible objets in $\operatorname{Rep}H$ (or some appropriate variation) should split as a filtered union $\operatorname{Irr}H = \bigcup_{A\in \mathcal{A}} A$; each $A$ spans an artinian subcategory where tilting modules $\mathcal{T}_A$ can be computed.

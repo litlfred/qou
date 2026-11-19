@@ -1,1 +1,0 @@
-In order $|\lm_{2,3}|=1$, we must have \[ \lm_2+\lm_3=c\cdot \sqrt{\lm_2\lm_3}\,, \] with $c\in [-2,2]$, so $A-\lm_1=c\sqrt{C/\lm_1}$, which is equivalent to \begin{eqn}\label{qw2} \frac{(A-\lm_1)^2\lm_1}{C}\,\in\,[0,4]\,. \end{eqn}

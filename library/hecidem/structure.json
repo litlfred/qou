@@ -1,0 +1,645 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "hecidem",
+ "source": {
+  "file": "hecidem.pdf",
+  "sha256": "60476fdc66d9e2a76a29783d1afb9745dce04b2a02d5b636b16f75f470e6dc9f",
+  "bytes": 856250,
+  "pages": 27,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Idempotents of Hecke algebras of type A",
+  "authors_raw": null,
+  "title_lines": [
+   "Idemp",
+   "algebras",
+   "A\u0000A\u0000K\u0000Aiston",
+   "H\u0000R\u0000Morton",
+   "\u0000Departmen",
+   "Mathematical",
+   "Sciences\u0001"
+  ],
+  "abstract": "W e use a sk ein\u0000theoretic v ersion of the Hec k e algebras of t yp e A to presen t three\u0000dimensional diagrammatic views of Gy o ja\u0001s idemp oten t el\u0000emen ts\u0002 based closely on the corresp onding Y oung diagram \u0000\u0003 In this con text w e giv e straigh tforw ard calculations for the eigen v alues f \u0000and m \u0000of t w o natural cen tral elemen ts in the Hec k e algebras\u0002 namely the full curl and the sum of the Murph y op erators\u0003 W e discuss their calculation also in terms of the framing factor asso ciated to the appropriate irreducible represen tation of the quan tum group\u0002 S U \u0004N \u0005 q \u0003 \u0001 In tro duction The Hec k e algebras of t yp e A ha v e pla y ed a cen tral role in the original disco v ery of the Hom\u0000y p olynomial for links\u0001 as describ ed b y Ocnean u \u0002\u0001\u0007\u0005\u0006 They also relate to the represen tation theory of the quan tum groups S U \u0007N \b q in a v ery direct coun terpart to the classical relations b et w een the symmetric group algebras and the represen tation theory of the linear groups GL\u0007N \b\u0001 \u0002\u0002\u0001 \u0001 \u0002\u0004 \u0005\u0006 As a result they form a natural means of transition b et w een the in v arian ts of a knot determined from quan tum group represen tations and those determined b y using the Hom\u0000y p olynomial of suitable decorations of the knot\u0006 Because of the close connection with the Hom\u0000y p olynomial there are w ell established sk ein theoretic w a ys of viewing the t yp e A Hec k e algebras in terms of linear com binations of braids or tangles\u0001 mo dulo some simple linear relations\u0001 \u0002\u0001\u0006\u0005\u0006 \u0000The \u0000rst author w as supp orted b y EPSR C gran t GR\u0001J\u0007\u0002\u0003\u0003\u0002\u0005 \u0001",
+  "docinfo": {
+   "Producer": "PSNormalizer.framework",
+   "CreationDate": "D:20160126112745Z00'00'"
+  },
+  "title_raw": "Idemp algebras A\u0000A\u0000K\u0000Aiston H\u0000R\u0000Morton \u0000Departmen Mathematical Sciences\u0001",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Idemp oten ts of Hec algebras of yp Aiston and Morton Departmen of Mathematical Sciences \u0001 Univ ersit of Liv erp ol\u0001 Liv erp ol\u0001 \u0003BX\u0000 Jan uary ersion Abstract use sk ein \u0000theoretic ersion of the Hec algebras of yp to presen three \u0000dimensional diagrammatic views of Gy ja\u0001s idemp oten el\u0000 emen ts\u0002 bas",
+   "text": "Idemp algebras A\u0000A\u0000K\u0000Aiston H\u0000R\u0000Morton \u0000Departmen Mathematical Sciences\u0001",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Idempotents of Hecke algebras of type A",
+   "basis": "Printed title on page 1 (A. K. Aiston and H. R. Morton, Version 1.5, January 10, 1997); the extracted title had font encoding artifacts and NUL bytes",
+   "extracted_title": "Idemp algebras A\u0000A\u0000K\u0000Aiston H\u0000R\u0000Morton \u0000Departmen Mathematical Sciences\u0001",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "4 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (4 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1762,
+   "n_words": 371,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3426,
+   "n_words": 788,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2531,
+   "n_words": 595,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2175,
+   "n_words": 535,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2039,
+   "n_words": 538,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2796,
+   "n_words": 718,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1713,
+   "n_words": 451,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2726,
+   "n_words": 736,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 3183,
+   "n_words": 787,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2082,
+   "n_words": 505,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2345,
+   "n_words": 633,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1741,
+   "n_words": 522,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1774,
+   "n_words": 500,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2236,
+   "n_words": 599,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 2668,
+   "n_words": 755,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2660,
+   "n_words": 706,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1883,
+   "n_words": 505,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1667,
+   "n_words": 486,
+   "label_start": "18",
+   "label_end": "18"
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2241,
+   "n_words": 524,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1488,
+   "n_words": 390,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 2991,
+   "n_words": 746,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1644,
+   "n_words": 442,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1748,
+   "n_words": 500,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2235,
+   "n_words": 597,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1930,
+   "n_words": 463,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 2060,
+   "n_words": 441,
+   "label_start": "26",
+   "label_end": "26"
+  },
+  {
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1196,
+   "n_words": 250,
+   "label_start": "27",
+   "label_end": "27"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 27,
+  "chars_total": 58940,
+  "furniture_lines_stripped": 234
+ }
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/blocks/prop-page-017-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 17,
+  "pageEnd": 17,
+  "text": "prop-page-017-01.md",
+  "derivedFrom": "library/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/sections/page-017",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-017.md (p. 17-17)",
+    "claim_id": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co#proposition:4.3",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/blocks/thm-sec-067-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 39,
+  "pageEnd": 40,
+  "text": "thm-sec-067-01.md",
+  "derivedFrom": "library/arxiv-q-alg-9709040v1/sections/sec-067",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9709040v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-067-831-quanization-of-the-kirillov-poisson-bracket.md (p. 39-40)",
+    "claim_id": "arxiv-q-alg-9709040v1#thm-sec-067-01",
+    "lean_status": "unformalized"
+  }
+}

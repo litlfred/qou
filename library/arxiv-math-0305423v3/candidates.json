@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0305423v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "e4554f9084ba49358ac816861a8c2409ea3715666a5fbcccfe659ab8c0009ada",
   "file": "0305423v3.pdf"
  },
  "provenance": {
-  "title": "Stein\u2019s Method and Plancherel Measure of the Symmetric Group Running head: Stein\u2019s Method and Plancherel Measure",
+  "title": "Stein's method and Plancherel measure of the symmetric group",
   "authors": "By Jason Fulman",
   "arxiv": {
    "id": "math/0305423",
@@ -16,106 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "recommendation": 6
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As we shall see in Section \\ref{provebound}, we are quite fortunate in that when $W=\\frac{n-1}{\\sqrt{2}} \\frac{\\chi^{\\lambda}(12)}{dim(\\lambda)}$, it does happen that $E^W(W^*) = (1-\\tau)W$ for some $\\tau$ (in fact $\\tau=\\frac{2}{n+1}$).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Section \\ref{repreview} collects some lemmas we shall need from representation theory.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For the application of Stein's method we shall only need the case $k=1$ of Lemmas \\ref{induced} and \\ref{parents}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-irreducible-characters-of-the-symmetric-group.md",
-   "section_title": "Irreducible characters of the symmetric group",
-   "pages": "8-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall use this formula only once.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-steins-method-and-kerovs-central-limit-theorem.md",
-   "section_title": "Stein's method and Kerov's central limit theorem",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall generalize this observation in Section \\ref{decompose}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-steins-method-and-kerovs-central-limit-theorem.md",
-   "section_title": "Stein's method and Kerov's central limit theorem",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Next we shall use Stein's method to compute $E^{\\lambda}(W^*)^2$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-steins-method-and-kerovs-central-limit-theorem.md",
-   "section_title": "Stein's method and Kerov's central limit theorem",
-   "pages": "10-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

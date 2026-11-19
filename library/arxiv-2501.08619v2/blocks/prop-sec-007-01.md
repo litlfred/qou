@@ -1,0 +1,1 @@
+(18) then reduces to: SL (ff) 1 (Q2) = −∆S(ff) 1 , (19) where SL (ff) 1 (Q2) is the free fermion lattice calculation of the subtraction function, which can be determined from Feynman-Hellmann using a single perturbed prop- agator as in Eq.

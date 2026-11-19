@@ -1,1 +1,0 @@
-Thus, for γ and ω as above, we can use the formula A γ ω eϕ := B−1(a0 δ + bχ) (9) to deﬁne a C-linear operator A γ ω , which clearly maps eRs Ωto itself (because Ωis an additive group and bχ, being the diﬀerence of two branches of bϕ translated by ω, must belong to bRs Ω).

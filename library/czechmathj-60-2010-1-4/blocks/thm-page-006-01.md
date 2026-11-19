@@ -1,0 +1,1 @@
+Let (S, T ) be a pair of subsets of monic elements in k⟨X⟩and A = k⟨X|S⟩the associative algebra deﬁned by S. Let AM =A A/A(T + Id(S)) be a left A-module deﬁned by (S, T ). If (S, T ) is a Gröbner-Shirshov pair for the A-module AM and p ∈k⟨X⟩T +Id(S), then ¯p = a¯sb or ¯p = c¯t, where a, b, c ∈X∗, s ∈S, t ∈T .

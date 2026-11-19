@@ -1,0 +1,1 @@
+Let M be a compact, oriented, irreducible 3-manifold with non-empty boundary such that π1(M) is infinite, non-abelian and does not contain a free abelian subgroup of rank 2. Then CC(M) is the interior of AH(M).

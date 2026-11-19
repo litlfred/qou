@@ -1,0 +1,1 @@
+For f in A or f in L1 b(ΦD), ∥f∥u,b →0 as b →∞ (2.9) where ∥∥u,b is either of the ∥∥u or ∥∥b and D = ∞is allowed in the second case. For ∥∥b, Eq. (2.9) is an immediate consequence of the dominated conver- gence theorem whereas for ∥∥u it follows from the deﬁnition of A.

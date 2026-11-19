@@ -1,1 +1,0 @@
-Due to the relation ($\text{D}$) in $\OS(z, t)$, the morphism $\Bubble\in \Hom_{\widehat\OS(z,t)}(\varnothing,\varnothing)$ maps to $([n]_q 1_\varnothing, 0)$, while the identity element $1_\varnothing \in \Hom_{\widehat\OS(z,t)}(\varnothing,\varnothing)$ must map to the identity element $(1_\varnothing, 1_{\k}) \in \Hom_{\mathcal C}(\varnothing,\varnothing)$.

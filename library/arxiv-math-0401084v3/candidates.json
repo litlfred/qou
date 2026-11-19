@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0401084v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "f56bbd4cee4f3418d4741504d48a78a4a9ec5e1154d88bde650832c13192651d",
   "file": "0401084v3.pdf"
  },
  "provenance": {
-  "title": "THE COLORED JONES POLYNOMIALS OF THE",
+  "title": "Some limits of the colored Jones polynomials of the figure-eight knot",
   "authors": "FIGURE-EIGHT KNOT AND ITS DEHN SURGERY SPACES",
   "arxiv": {
    "id": "math/0401084",
@@ -16,9 +19,7 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 0,
   "by_kind": {},

@@ -1,0 +1,1 @@
+2. Adjacent regions have a segment in common, and the proof of Lemma B.1 works for any pair of corners at one end of the segment. In particular, a choice of h may 1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS 23 ri rj ri rj (1, 0,−1)(−1, 1, 0) (1,−1, 0)(−1, 0, 1) Figure 19. A choice of h. not be not unique. However, regardless of a choice of h, the product ζh is invariant (see

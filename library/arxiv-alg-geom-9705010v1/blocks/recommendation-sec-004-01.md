@@ -1,1 +1,0 @@
-(This is measured in powers of the mass; time and distance are converted to mass-inverse by setting the speed of light c and Planck’s constant h to 1.) Now L, which occurs as an exponent, must have no dimensionality (it is a pure number, independent of units), so each term in L must have dimensionality 4.

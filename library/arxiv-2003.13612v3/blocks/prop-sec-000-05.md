@@ -1,0 +1,1 @@
+Evaluating the Cottingham formula with the scarce experimental information available then, they concluded that the elastic contributions dominate over the inelastic ones and arrived at the estimate mQED = 0.7 ± 0.3 MeV [6].

@@ -1,1 +1,0 @@
-For [\[strongsub\]](#strongsub){reference-type="eqref" reference="strongsub"} to be consistent with the subadditivity inequality $S_A+S_B\geq S_{AB}$ we then must have $$I_{AB}\equiv S_A+S_B-S_{AB}=0.$$ $I_{AB}$ is called the *mutual information* between $A$ and $B$, and it is zero if and only if the density matrix $\rho_{AB}$ is actually a product $\rho_A\otimes \rho_B$.

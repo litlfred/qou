@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2204.12175v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "06b0b7730504855b3f78134a47eb7a748769d4bfeac3febf96cd5c9996214632",
   "file": "2204.12175v1.pdf"
@@ -16,121 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
-  "by_kind": {
-   "recommendation": 7
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Factoring out this dependence, one can see that the limit on the NP e\ufb00ect in ae is so stringent [55\u201357] that the NP e\ufb00ect in a\u2113cannot be \ufb02avour blind, and must therefore break LFU, if one aims at explaining a\u00b53.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the end P i Vui 2 = 0.9985(5) and P i Vid 2 = 0.9970(18) should give a realistic representation of the current situation [58].",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that the fact that there is a de\ufb01cit both in \ufb01rst row and \ufb01rst column CKM unitarity suggests that, if these tensions are due to NP, they should be related to Vud and thus beta decays.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-003.md",
-   "section_title": "Page 3",
-   "pages": "3-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The couplings to electrons should be small because of \u00b5 \u2192e\u03b3 [119] and \u00b5 \u2192e conversion.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "However, also in this case, a solution is not trivial, as constraints from Bs \u2212\u00afBs mixing, B \u2192K\u2217\u03bd\u03bd and LHC searches must be avoided.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-004.md",
-   "section_title": "Page 4",
-   "pages": "4-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "a\u00b5: As the deviation from the SM prediction is of the order of its EW contribution, heavy NP around the TeV scale must posses an enhancement factor5.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that vector-like quarks could also solve the tension between the di\ufb00erent determinations of Vus while vector like leptons have the potential to improve the global EW \ufb01t. q\u00afq \u2192e+e\u2212: As CMS analyzes \u201cnon-resonant\u201d electrons, meaning that they do not originate from the on-shell production of a new particle, NP must be heavier than the LHC energy scale.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-005.md",
-   "section_title": "Page 5",
-   "pages": "5-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

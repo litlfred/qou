@@ -1,0 +1,1 @@
+Let 𝐴⊂ℝ2 be an infinite set for which there exists some 𝜖> 0 such that in any subset of 𝐴of size 𝑛there are always at least 𝜖𝑛with no three on a line. Is it true that 𝐴is the union of a finite number of sets where no three are on a line?

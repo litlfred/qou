@@ -1,0 +1,1 @@
+Let T ∈D(Aen), and consider the triangulated functor G := T ⊗L A (−) : D(A ⊗Bop) →D(A ⊗Bop). For every M ∈D(A ⊗Bop) the diagram Bop hmD M,Bop / hmD G(M),Bop ( EndD(A)(M) G  EndD(A)(G(M)) of ring homomorphisms is commutative.

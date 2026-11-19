@@ -1,0 +1,1 @@
+It is shown, in [116] in terms of set theoretical solutions of the quantum Yang-Baxter equation, that a connected quandle of prime order p is isomorphic to the Alexander quandle Z[t*]/(p,t — a) for some a. It is shown in [11, 308] that two connected Alexander quandles are isomorphic if

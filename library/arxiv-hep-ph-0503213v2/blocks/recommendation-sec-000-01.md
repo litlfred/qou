@@ -1,1 +1,0 @@
-Unfortunately, as originally proposed it also had several problems, including the lack of a dynamical framework, and the lack of an explanation as to why the ordering of rishons within triplets should matter.

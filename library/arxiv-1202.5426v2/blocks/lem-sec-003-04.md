@@ -1,0 +1,1 @@
+Let γ ∈H3/2+β0,q(R/Z, Rn), β0 ≥0, q ∈[2, ∞) and β0 −1 q > −1/2 be a stationary point of the M¨obius energy parametrized by arc length. Then, • if β0 = 0, we have γ ∈Hs for all s < 3/2 + 2(1/2 −1/q), • if 0 < β0 < 1/2, we have γ ∈Hs for all s < 3/2 + 2(β0 + 1/2 −1/q), • if β0 ≥1/2, we have γ ∈H3/2+β0+1/4.

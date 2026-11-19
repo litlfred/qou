@@ -1,1 +1,0 @@
-We shall verify that Rozansky's proposal[^2] matches exactly with the quantum field theory computation if the generators $a_i$ and $\theta_i$ are assigned flavor charges $i$, that is $$\mathrm{deg}_t \, a_i=\mathrm{deg}_t \, \theta_i=i.$$

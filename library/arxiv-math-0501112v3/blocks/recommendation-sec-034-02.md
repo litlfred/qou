@@ -1,1 +1,0 @@
-We shall glue to the hole $\rho_s$ only the first collection of discs that we considered in Section [\[subsec:zaklejanie\]](#subsec:zaklejanie){reference-type="ref" reference="subsec:zaklejanie"}, i.e. the discs which correspond to the blocks of the partition $\pi_s$.

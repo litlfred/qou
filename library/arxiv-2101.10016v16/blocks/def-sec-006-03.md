@@ -1,1 +1,1 @@
-Let ρ be a representation of a weak quasi-Hopf algebra. The contragredient representations ρ
+Let ρ be a representation of a weak quasi-Hopf algebra. The contragredient representations ρ c and cρ are the the representations of A acting on the dual space V ′ ρ respectively as ⟨ρ c (a)ϕ, ξ⟩ = ⟨ϕ, ρ(S(a))ξ⟩, ⟨ c ρ(a)ϕ, ξ⟩ = ⟨ϕ, ρ(S −1 (a))ξ⟩.

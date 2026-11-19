@@ -1,1 +1,0 @@
-It is understood that $\mathcal L$ should project to $\mathcal D\cup\mathcal M$ under the projection $T^3\to T^2$ sending $(s,t,u)$ to $(s,t)$, and so points in $\mathcal M$ correspond to vertical components $\mathrm{*}\times\mathrm{*}\times S^1$ in $\mathcal L$, oriented up or down according to the signs.

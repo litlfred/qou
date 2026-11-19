@@ -1,1 +1,0 @@
-If this is done with two different VMC calculations, one for $^5$He with the specified boundary condition, and one for $^4$He, then the statistical errors of these two calculations must be added in quadrature.

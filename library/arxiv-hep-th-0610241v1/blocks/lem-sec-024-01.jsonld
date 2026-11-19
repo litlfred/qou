@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0610241v1/blocks/lem-sec-024-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 51,
+  "pageEnd": 71,
+  "text": "lem-sec-024-01.md",
+  "derivedFrom": "library/arxiv-hep-th-0610241v1/sections/sec-024",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.12",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-024-47-the-higgs-ﬁeld-self-interaction.md (p. 51-71)",
+    "claim_id": "arxiv-hep-th-0610241v1#lemma:4.12",
+    "lean_status": "unformalized"
+  }
+}

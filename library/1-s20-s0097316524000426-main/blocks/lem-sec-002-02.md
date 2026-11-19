@@ -1,0 +1,1 @@
+Let k ≥1 and n ≥0 be integers and deﬁne F(n, k) := ∞  j=0 (p3(n −6j2 −6kj −j) −p3(n −6j2 −6kj −5j −2k −1) −p3(n −6j2 −6kj −7j −3k −2) + p3(n −6j2 −6kj −11j −5k −5)). (2.6) If (n, k) ̸= (11, 1), then F(n, k) ≥1. (2.7) In addition, F(11, 1) = 0.

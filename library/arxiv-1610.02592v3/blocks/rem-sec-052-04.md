@@ -1,0 +1,1 @@
+The meridian m of the solid torus M = D × S1 may be deﬁned intrinsically as the unique slope in ∂M that is homotopically trivial in M. The longitude l is not intrinsically determined: a twist sends l to m + l. The solid torus contains inﬁnitely many non-isotopic longitudes, and there is no intrinsic way to choose one of them.

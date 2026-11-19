@@ -1,1 +1,0 @@
-Thus in order to determine a diagram of $l_{S,N}$, we must keep track of the "head" and "tail" of the vector $\mathsf{v}_s=L^s_2(t)-L^s_3(u)$, for various values of $s$ and record values of $t$ and $u$ for which $\mathsf{v}_s$ points "North" and "South" (Figure [2](#fig:4-pos){reference-type="ref" reference="fig:4-pos"}).

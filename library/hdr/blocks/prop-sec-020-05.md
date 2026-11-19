@@ -1,0 +1,1 @@
+Set B := {E ∈Irr(W) | KZ(L(E))̸ = 0}. (a) The set {KZ(L(E)) | E ∈B} is a complete set of pairwise non-isomorphic simple Hk(W)-modules. (b) For all E ∈Irr(W), E′ ∈B, we have [∆(E) : L(E′)] = [KZ(∆(E)) : KZ(L(E′))]. (c) If E ∈B, then [KZ(∆(E)) : KZ(L(E))] = 1. (d) If [KZ(∆(E)) : KZ(L(E′))]̸ = 0 for some E ∈Irr(W) and E′ ∈B, then either E = E′ or E′ <O E.

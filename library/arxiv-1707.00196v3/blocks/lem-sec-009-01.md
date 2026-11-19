@@ -1,0 +1,1 @@
+Let λ be a partition of n ∈N. We will identify λ with the corresponding irreducible representation of Sn. On the projection pλ ∈C∗S∞associated to λ the value of ρR∗is given by ρR∗([pλ]) = 1 dn ⟨λ, ρ(n) R ⟩, where ⟨λ, µ⟩denotes the multiplicity of the irreducible representation λ in the repre- sentation µ.

@@ -1,0 +1,1 @@
+The map Cσ[Wo] →Cσ eo,eo [ho ∗× ho], a →fa, is a Wo × Wo −isomorphism. One has ϕa(λ, x) = fa(λ, x) + o(|λ|eo, |x|eo) REPRESENTATIONS OF WEYL GROUPS with o(|λ|eo, |x|eo) indicating a power series in λ and x whose terms are of degree > eo both in λ and in x.

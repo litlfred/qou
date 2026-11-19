@@ -1,1 +1,0 @@
-By analysis of a cohomological kind on any braided tensor category with a generating representation, and further braid group duality properties well studied in the literature for quantum groups, we shall extend this identification to all variables.

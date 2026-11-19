@@ -1,0 +1,1 @@
+The bifunctor (14.2.12) has a triangulated right derived bifunctor RHomA(−, −) : D(A ⊗Bop)op × D(A) →D(B). If I ∈D(A) is a K-injective DG module, then for every M ∈D(A ⊗Bop) the morphism ηR M,I : HomA(M, I) →RHomA(M, I) in D(B) is an isomorphism.

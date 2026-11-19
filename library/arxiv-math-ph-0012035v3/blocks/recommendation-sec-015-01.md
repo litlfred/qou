@@ -1,1 +1,0 @@
-First of all, working in the framework of the path-integral formalism, we should construct a topological field theory of auxiliary topological fields on $\partial N$, the boundary of the $d$-dimensional submanifold $N$, in (an) external (gauge) field(s) we are interested in.

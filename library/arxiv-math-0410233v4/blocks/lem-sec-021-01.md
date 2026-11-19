@@ -1,0 +1,1 @@
+Let K, L be as above, such that we have a cone deformation from S3 −L to S3 −K. Fix R1 ≥0.531. Then R ≥R1 throughout the deformation provided the number of crossings in each twist region is at least I(R1), where I(R1) is deﬁned in equation (24).

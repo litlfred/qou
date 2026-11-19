@@ -1,1 +1,0 @@
-We shall ﬁrst note that pK (n) = fK (n) −fK (n −1) where fK (n) = [1 −(1 −P0)n]K ; for n ≫1, one thus has pK (n) ≃dfK dn (n) and therefore one can calculate the approximate position of the maximum of pK (n) by de- riving dfK dn (n).

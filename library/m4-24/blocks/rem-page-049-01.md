@@ -1,0 +1,1 @@
+Two pairs (M,K) and (M’, kK’) in MK are HL,- equivalent if and only if v(M,K) = v(M’,K’) for any A-valued loop finite type invariant v of loop degree < d for any abelian group A. Thus, the HL- equivalence gives the Goussarov-Habiro theory for loop finite type invariants.

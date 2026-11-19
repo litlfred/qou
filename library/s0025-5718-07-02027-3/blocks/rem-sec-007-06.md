@@ -1,0 +1,1 @@
+(1) For n ≥2 we have Lin(1) = 2n−1Lin(−1)/(1 −2n−1) (see Re- mark 5.7 and Proposition 2.10(1)), which we can compute up to any desired preci- sion using Algorithm 7.10 below. Of course, if n is even, then this value is zero by

@@ -1,0 +1,1 @@
+If M ∈ModG A then the composition (M ⊗R R[G])G −→M ⊗R R[G] idM⊗ε −−−−→M is an isomorphism. This follows from [Jan87, 3.4] applied to G = H. We start with a criterion to ﬁnd a set of generators for QCoh BR G.

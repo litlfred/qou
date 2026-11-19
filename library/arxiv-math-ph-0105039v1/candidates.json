@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-ph-0105039v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "850e6a00721e38d0eadbdc9a3ce14b2e0d732742c8d9bfea0d4621d621c2e71c",
   "file": "0105039v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:math-ph/0105039v1 28 May 2001",
+  "title": "Hyperbolic Structure Arising from a Knot Invariant",
   "authors": "Department of Physics, Graduate School of Science",
   "arxiv": {
    "id": "math-ph/0105039",
@@ -16,151 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "recommendation": 9
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall demonstrate how the hyperbolic structure appears in the classical limit of the non-compact Jones invariant.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should stress that our invariant $\\tau_1(K)$ can be viewed as a non-compact analogue of Kashaev's invariant which coincides with the colored Jones polynomial at a specific value as was proved in Ref.~\\citen{MuraMura99a}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-3-invariant-of-knot-and-link.md",
-   "section_title": "Invariant of Knot and Link",
-   "pages": "10-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall reveal the 3-dimensional picture of the knot invariant $\\tau_1(K)$ by studying an asymptotic behavior in a limit $\\gamma \\to 0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-4-asymptotic-behavior-and-3-dimensional-picture.md",
-   "section_title": "Asymptotic Behavior and 3-dimensional Picture",
-   "pages": "11-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\langle \\vec{p} \\ | \\ \\Check{R}^{-1} \\ | \\ \\vec{p^\\prime} \\rangle & = \\quad \\xygraph{!{0;/r4pc/:/u4pc/::}=\"A\" \"A\" [d(0.5)]!{\\xoverv} !{(-0.09,.4)*+{p_1}} !{(0.09,.6)*+{p_2}} !{(0.91,.6)*+{p_3}} !{(1.1,.38)*+{p_4}} !{(-0.09,-0.4)*+{p_1^\\prime}} !{(0.09,-0.6)*+{p_2^\\prime}} !{(0.91,-0.6)*+{p_3^\\prime}} !{(1.1,-0.38)*+{p_4^\\prime}} } \\end{align} \\end{subequations} We should stress that every 0-simplex of the octahedron is on the link $L$, and that the octahedron is in the complement of the link $L$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-51-r-operators-as-the-braid-operator.md",
-   "section_title": "$R$-Operators as the Braid Operator",
-   "pages": "14-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall check the hyperbolicity consistency condition in constructing the $R$-operator from the ideal tetrahedra in a case of $\\gamma \\to 0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-51-r-operators-as-the-braid-operator.md",
-   "section_title": "$R$-Operators as the Braid Operator",
-   "pages": "14-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall check a correspondence between the hyperbolic condition and the saddle point equation for ridgelines of octahedron.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-53-gluing-around-ridgeline-of-octahedron.md",
-   "section_title": "Gluing Around Ridgeline of Octahedron",
-   "pages": "20-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Generally a set of the saddle point equations (hyperbolicity consistency conditions) has several algebraic solutions, and we are not sure which solutions among them we should choose as dominant in a definition of the invariant $\\Tilde{\\tau}_1(K)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-53-gluing-around-ridgeline-of-octahedron.md",
-   "section_title": "Gluing Around Ridgeline of Octahedron",
-   "pages": "20-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall demonstrate how to decompose the knot complement into tetrahedra in a case of the figure-eight knot.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-6-example-figure-eight-knot.md",
-   "section_title": "Example: Figure-Eight Knot",
-   "pages": "24-28",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In this procedure, we should remember which vertices in the gray faces were glued to each other.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-6-example-figure-eight-knot.md",
-   "section_title": "Example: Figure-Eight Knot",
-   "pages": "24-28",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

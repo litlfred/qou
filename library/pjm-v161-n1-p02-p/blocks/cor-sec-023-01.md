@@ -1,0 +1,1 @@
+We may assume that there is a fiber H^ with the property: H', ΠdT is a union of three arcs μn, μ$4, and μ^y where μn-i,2i joins the pierce points 2/—1 and 2i, crossing L once, without intersecting any digons.

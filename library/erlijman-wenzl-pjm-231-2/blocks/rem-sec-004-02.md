@@ -1,0 +1,1 @@
+The fusion graph from (C′)s to C′ may not be connected. An easy example is obtained for C being the representation category of a ﬁnite abelian group G, where it decomposes into |G| connected components.

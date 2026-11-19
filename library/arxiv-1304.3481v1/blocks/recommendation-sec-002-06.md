@@ -1,1 +1,0 @@
-This in turn implies that the doubly-graded homologies $\CH^{sl(R+k),R\times S}$ and $\CH^{sl(R+k),k\times S}$ categorifying respectively the quantum polynomial invariants $P^{sl(R+k),R\times S}(q)$ and $P^{sl(R+k),k\times S}(q)$, should be isomorphic.

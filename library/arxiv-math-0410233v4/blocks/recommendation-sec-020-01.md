@@ -1,1 +1,0 @@
-If its dual $\gamma$ has an edge with one vertex at both endpoints, then the graph $\Gamma$ must be of the form in Figure [4](#fig:Andr_double_end){reference-type="ref" reference="fig:Andr_double_end"} (a).

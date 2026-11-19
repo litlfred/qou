@@ -1,1 +1,0 @@
-The condition ([\[tempered\]](#tempered){reference-type="ref" reference="tempered"}) states that all roots of face polynomials $f(z)$, constructed for all boundaries of the Newton polygon, must be roots of unity.

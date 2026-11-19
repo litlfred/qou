@@ -1,1 +1,0 @@
-We shall have $\widetilde{F}[x]\equiv b\ ({\rm mod\ } v{\cal L'})$ for a unique $b\in {\bf B}$ from Kashiwara's approach, and $b\equiv F_{\bf i}^{\bf c}\ ({\rm mod\ } v{\cal L'})$ for a unique ${\bf c} \in \mathbb{N}^k$ by Lusztig's approach and the comparison theorem [@lusztig3 §2.3].

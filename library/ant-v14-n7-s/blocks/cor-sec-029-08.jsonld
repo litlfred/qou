@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/blocks/cor-sec-029-08",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 36,
+  "pageEnd": 43,
+  "text": "cor-sec-029-08.md",
+  "derivedFrom": "library/ant-v14-n7-s/sections/sec-029",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "A",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-029-appendix-an-integral-formula-for-the-asai-l-func.md (p. 36-43)",
+    "claim_id": "ant-v14-n7-s#corollary:A",
+    "lean_status": "unformalized"
+  }
+}

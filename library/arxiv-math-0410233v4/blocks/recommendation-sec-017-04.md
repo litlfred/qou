@@ -1,1 +1,0 @@
-Then the image of $\Omega$ under the developing map must contain some portion of the region above the geodesic surface equidistant from a horizontal plane (the lift of $\partial U_a$) and some other horosphere.

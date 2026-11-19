@@ -1,1 +1,0 @@
-We follow the 2020 AMDC recommendation to expand the published uncertainty by a factor 2.5 to account for inconsistencies between data from the University of Washington, the Max Planck Institute in Heidelberg, and Florida State University on related cyclo- tron frequency ratios.

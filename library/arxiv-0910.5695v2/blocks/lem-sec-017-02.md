@@ -1,0 +1,1 @@
+Suppose λ and λ′ are Young diagrams and k > 0 is an integer with λk+1 = λ′ k+1 = 0. (1) If L(λ) and L(λ′) are in the same block in Rep(St; F), then ξλ(t) r,k = ξλ′(t) r,k for every r > 0. (2) If ξλ(t) r,k = ξλ′(t) r,k for every r > 0, then λ t∼λ′.

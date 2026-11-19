@@ -1,1 +1,0 @@
-Since dim(V) is the factorial of a natural number, one of the following cases must occur for some r ∈N. (a) The group H is of type Ar, Cr or Dr and acts on V via its standard representation. (b) The group H is of type Ar and acts on V via the symmetric or via the alternating square of its standard representation.

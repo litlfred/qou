@@ -1,0 +1,1 @@
+The proof of Proposition 6.7 actually shows that we have the slightly better estimate vp(ak) ≥−logp  k! max(0,k−n)!  for all k ≥0. Finally, we consider the series Hn(t) for n ≥2 that were introduced in Proposi- tion 5.8. For this we need a lemma concerning the Gn(t) = logn(1+t)/n! introduced in the same proposition.

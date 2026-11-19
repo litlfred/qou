@@ -1,0 +1,1 @@
+The normalized cownting measures x >, 6(a—X;) converge weakly to a measure u(x) = f(x,g)dxz, where f(x,g) is a continuous function, supported on a finite interval [—2a, 2a], and differentiable on this interval.

@@ -1,1 +1,0 @@
-Hence, two arcs must bound a disc in $T_0.$ The remaining arc now either runs parallel to the first two, or completes each of the other two to an essential curve on $T_0.$ In both cases the complement has three boundary components.

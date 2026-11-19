@@ -1,1 +1,0 @@
-While by nature LP augmentation algorithms cannot have cycling, as can happen for the simplex method, it should be noted that the LP case of the discrete deepest-descent and the discrete Dantzig-descent augmentation algorithms only guarantee that we reach a feasible solution $\vex_k$ with objective value ``close enough'' to the optimal value.

@@ -1,1 +1,0 @@
-In the modular case (by section [\[tilting-modular\]](#tilting-modular){reference-type="ref" reference="tilting-modular"}) we should take a complete discrete valuation ring of characteristic zero with residue field $\Bbbk$ of characteristic $p$.

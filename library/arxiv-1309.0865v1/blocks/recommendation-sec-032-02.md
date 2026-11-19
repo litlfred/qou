@@ -1,1 +1,0 @@
-A careful examination of \eqref{dot2m} and \eqref{twocoloridemp} shows that different choices of Jones-Wenzl projector must be made, depending on the location of the dot and the orientation of the $2m$-valent vertex.

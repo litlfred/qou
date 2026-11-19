@@ -1,1 +1,0 @@
-In view of the calculation [\[eq-calc1\]](#eq-calc1){reference-type="eqref" reference="eq-calc1"}, it is clear that if $A$ can be found, then we must have $\alpha=[2m{\mathbf S}A]^{\langle k\rangle}= 2m[{\mathbf S}A]^{\langle k+1\rangle}$.

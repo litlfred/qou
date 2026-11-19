@@ -1,0 +1,1 @@
+Suppose that z satisﬁes |z| = |z −1| = 1 and belongs to a ﬁxed ﬁnite extension F of Qp with ramiﬁcation index e and residue extension degree f. Then Algorithm 7.10 computes Lin(z) up to precision N with O∼(N 2f(fnp+ne ln(p)+e2 ln(p))) additions and multiplications and O∼(p) divisions, provided that 2n logp(N) < N, 2n logp(2e) < N and 2p logp(N) < N.

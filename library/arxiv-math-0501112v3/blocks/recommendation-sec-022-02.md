@@ -1,1 +1,0 @@
-In fact, to define correctly the notion of the disjoint product $\bullet$ from Section [\[subsec:disjoint\]](#subsec:disjoint){reference-type="ref" reference="subsec:disjoint"} we must use the semigroup algebra corresponding to partial permutations and not the group algebra ${\mathbb{C}}(S_q)$.

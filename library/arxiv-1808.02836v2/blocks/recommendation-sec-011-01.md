@@ -1,1 +1,0 @@
-We now show that there are no edges of degree one or two in a minimal triangulation of a cusped hyperbolic 3--manifold, and that edges of degree three must be contained in layered $\partial$--punctured solid tori.

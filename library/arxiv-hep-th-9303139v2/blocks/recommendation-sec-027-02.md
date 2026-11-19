@@ -1,1 +1,0 @@
-(A proof of the string equation in GKM at the end of the previous subsection is the simplest example of this kind of exersices.) Certainly some simple derivation "in two lines" should exist, but it is not yet found.

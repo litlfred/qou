@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1905.02045v3/blocks/lem-sec-009-02",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 31,
+  "pageEnd": 34,
+  "text": "lem-sec-009-02.md",
+  "derivedFrom": "library/arxiv-1905.02045v3/sections/sec-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1905.02045v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "13",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-009-32-proof-of-lemma.md (p. 31-34)",
+    "claim_id": "arxiv-1905.02045v3#lemma:13",
+    "lean_status": "unformalized"
+  }
+}

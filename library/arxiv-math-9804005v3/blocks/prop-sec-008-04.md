@@ -1,1 +1,1 @@
-Let R ∈ D(Mod(A ⊗B◦)) be a dualizing complex. Then there
+Let R ∈ D(Mod(A ⊗B◦)) be a dualizing complex. Then there are convergent double-Ext spectral sequences Ep,q 2 := Extp B◦ (Ext−q A (M,R ),R ) ⇒M(1.8) RINGS WITH AUSLANDER DUALIZING COMPLEXES 7 for all M ∈ ModfA, and Ep,q 2 := Extp A(Ext−q B◦ (N,R ),R ) ⇒N(1.9) for all N ∈ ModfB◦.

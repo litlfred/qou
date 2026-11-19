@@ -1,0 +1,1 @@
+1. Up to a ﬁnite abelian group, the group SU(AF) is of the form SU(AF) ∼U(1) × SU(2) × SU(3). (2.26) 2. The adjoint action of the U(1) factor is given by multiplication of the basis vectors in Hf by the following powers of λ ∈U(1): ↑⊗10 ↓⊗10 ↑⊗30 ↓⊗30 2L −1 −1 2R −2 −2 (2.27)

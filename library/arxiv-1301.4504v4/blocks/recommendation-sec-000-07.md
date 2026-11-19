@@ -1,1 +1,0 @@
-From our discussion of $U_{dyn}$ in section [\[slowcomp\]](#slowcomp){reference-type="ref" reference="slowcomp"} it seems that in a completely pristine environment Charlie should even be able to test unitarity in polynomial time; we won't address whether or not Charlie would be able to do this in a "noisy" environment.

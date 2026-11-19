@@ -1,0 +1,1 @@
+Let A > 1 be fixed. Let F € Z[x,,...,%n] and suppose F factors as F = GH with G, H EZ[x,..., Xn] and H being A-th power-free over Z. Furthermore, assume that H is nondegenerate over Z, in the sense that there isno A € GL,(Z) such that H (x A) € Z[x2, ..., Xn]. Then for all but finitely many primes q, the reduction of F modulo q is (A, q)-admissible.

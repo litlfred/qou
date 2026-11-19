@@ -1,1 +1,0 @@
-This implies that if i̸ = j that Ei,j(t, a, b, q) has at most has simple poles at q ∈b−1 j−1qZ and must have zeros at t ∈b−1 i−1qZ and there is no such non-zero elliptic function and therefore Ei,j(t, a, b, q) = 0.

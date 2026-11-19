@@ -1,0 +1,1 @@
+Shortly after this work, Harari used “the most successful and least controversial prediction of Regge pole theory” to con- clusively demonstrate that a subtracted dispersion integral was necessary as even in the isovector combination, one of the stucture functions scales as |t∆I=1 1 (ν,Q2)|ν→∞∝ν0.4 at ﬁxed Q2 [14].

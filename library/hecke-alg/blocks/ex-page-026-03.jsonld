@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/hecke-alg/blocks/ex-page-026-03",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "text": "ex-page-026-03.md",
+  "derivedFrom": "library/hecke-alg/sections/page-026",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecke-alg/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.11",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-026.md (p. 26-26)",
+    "claim_id": "hecke-alg#example:3.11"
+  }
+}

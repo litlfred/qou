@@ -1,0 +1,1 @@
+2 (Haagerup, Thorbjørnsen). Let mn l = al and for ϵ > 0 we have Pr ( λmax(˜ρl) ≥1 l "q a−1 l + 1 2 + ϵ #) ≤all exp  − allϵ2 4(a−1 l + 1)  . Here, ˜ρl = Wl lmn and λmax(˜ρ) is the maximum eigenvalue of ˜ρ. A similar phenomenon is also true even when they are normalized to have the Hilbert-Schmidt norm one, and we have the following corollary:

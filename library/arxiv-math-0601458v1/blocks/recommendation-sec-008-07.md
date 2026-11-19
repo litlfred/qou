@@ -1,1 +1,0 @@
-\end{aligned}$$ This cardinality cannot appear as that of any structure type, since the coefficients of $z^n$ in such power series must be of the form $\frac{a_n}{n!}$ for $a_n \in \mathbbm{N}$, which is not the case here unless $k = 1$. :::

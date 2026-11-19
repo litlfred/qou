@@ -13,9 +13,13 @@
   "pageStart": 100,
   "pageEnd": 110,
   "contains": [
-    "library/2018sorus020/blocks/prose-sec-050"
+    "library/2018sorus020/blocks/prose-sec-050",
+    "library/2018sorus020/blocks/thm-sec-050-01",
+    "library/2018sorus020/blocks/rem-sec-050-02",
+    "library/2018sorus020/blocks/lem-sec-050-03",
+    "library/2018sorus020/blocks/lem-sec-050-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

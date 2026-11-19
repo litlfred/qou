@@ -1,1 +1,0 @@
-Since the holomorphic block must reproduce the perturbative expansion of the wave function, it can be identified with the resummed WKB series in Eq. [\[WKB-conj\]](#WKB-conj){reference-type="eqref" reference="WKB-conj"}, that is,

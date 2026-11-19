@@ -1,0 +1,1 @@
+Assume that p ≡1 (mod 4). The unique Tt-invariant indecompos- able rank-two Cp-module category admits a C2-equivariant structure whose non-trivial element acts freely on its two simple objects. Moreover, the case J = C2 contributes exactly one equivalence class of fiber functors on CC2 p .

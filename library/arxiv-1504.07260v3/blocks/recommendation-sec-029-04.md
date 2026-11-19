@@ -1,1 +1,0 @@
-The form of the upper right block in (A.42) suggests that (in the heterotic frame) each unit of NS5 brane wrapping S1 (respectively, ˜S1), must carry E′ g units of momentum along S1 (respectively, E′ g/Nλ units of momentum along ˜S1).

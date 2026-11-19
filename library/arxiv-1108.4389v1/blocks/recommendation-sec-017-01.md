@@ -1,1 +1,0 @@
-In order for the flip to coincide with an $F$ move, each hyper must be coupled by a superpotential to $\mathcal{O}_E$, and hence have four-dimensional gauge charges equal or opposite to the charge associated to the edge itself.

@@ -1,1 +1,0 @@
-We must show that the set of positive roots (defined by $\bf j$) corresponding to $\bf c'$, where $\widetilde{F}[y]=\widetilde{F}_i^{\lambda_i} \widetilde{F}[x]\equiv F_{\bf i}^{\bf c'}\ ({\rm mod\ } v{\cal L'})$ is given by $S_1(y)\cup S_2(y)$, where $i$ is the number labelling position $y$.

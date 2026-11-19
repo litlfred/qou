@@ -1,1 +1,0 @@
-\begin{proof}[Proof of Lemma~\ref{lem:00pi}] By Condition~(2) of Definition~\ref{def:anglestructure}, the angles in a tetrahedron must sum to~$\pi$, so this statement is obviously true if one angle in a tetrahedron is assigned~$\pi$ or if two angles are assigned $0$.

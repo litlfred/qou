@@ -1,0 +1,1 @@
+Among the slN,ℓ-type tensor categories (C, ϕC) with N + 1 < ℓ < ∞ only those equivalent to some (C(slN , q, ℓ))w, ϕq) ((C(slN , q, ℓ), ϕq) resp.) with q = e iπ/ℓ for N odd and q = ±e iπ/ℓ for N even are pseudo-unitary (pseudo-unitary and braided resp.).

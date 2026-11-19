@@ -1,1 +1,0 @@
-Then consider the dual graph $\Gamma$. $\Gamma$ must be of the form shown in Figure [5](#fig:Andr_double_edge){reference-type="ref" reference="fig:Andr_double_edge"} (a), where region $B$ and region $B'$ are the same.

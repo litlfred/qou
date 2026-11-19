@@ -1,1 +1,0 @@
-As a con- straint, the information deduced from the recent candi- date for 6 ΛΛHe with a low binding energy (376), the so- called Nagara event, that suggests that the ΛΛ interac- tion should be only moderately attractive, was imposed.

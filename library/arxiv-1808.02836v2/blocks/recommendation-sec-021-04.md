@@ -1,1 +1,0 @@
-3\) All of the six normal arcs of $\alpha$ are in the boundaries of normal triangles in $\Delta.$ Since 1) and 2) are not possible, this must be the case for all tetrahedra of $\mathcal{T}$ and $S$ contains a boundary parallel torus.

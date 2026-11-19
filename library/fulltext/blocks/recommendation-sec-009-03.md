@@ -1,1 +1,0 @@
-(Compare this list with the special values of the dilogarithm given in §1 of Chapter I.) Indeed, for the element [x] to belong to the Bloch group of C after tensoring with Q), we must have that x ∧(1 −x) = 0 up to torsion, i.e. x = αtp, 1 −x = βtq for some non-zero complex number t, integers p and q, and roots of unity α and β.
