@@ -24,4 +24,22 @@ export default remark({
     "thm:knot-mass-formula-unified",
   ],
   cites: ["kassel1995", "jones1987"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witnesses: rho-k-markov-multiplicativity.witness.json, rho-k-codata-vs-six-term.witness.json, rho-k-scaling-structure.witness.json, atomic-tr-m-mpfr-50dps.witness.json, atom-mass-atomic-braid.witness.json, paper-six-term-isotope-sweep.witness.json.",
+    },
+  ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/rho_k_markov_multiplicativity_probe.py",
+    witness: [
+      "computations/probes/rho-k-markov-multiplicativity.witness.json",
+      "computations/atomic-tr-m-mpfr-50dps.witness.json",
+      "computations/sweeps/paper-six-term-isotope-sweep.witness.json",
+      "computations/rho-k-leading-order-verification.witness.json",
+      "computations/canonical-tr-m-three-path-comparison.witness.json",
+    ],
+    status: "verified",
+  },
 });

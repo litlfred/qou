@@ -67,13 +67,12 @@ the smallest atomic braids:
 
 Observed $m_{\max}$ saturates the Step-3 bound to within one step,
 consistent with the cyclotomic structure of $p(u)$ inherited from
-Markov–Jones integrality. Pointwise agreement with the
-canonical-interpolation pipeline at $q_0 \approx 1.1100$ to 50
-decimal digits cross-validates the two paths:
+Markov–Jones integrality. Evaluating the atomic-polynomial Habiro
+expansion at $q_0 \approx 1.1100$ to 50 decimal digits gives:
 
-- $\mathrm{tr}_M(\mathrm{proton}, q_0) = 2.12258250945\ldots$
-- $\mathrm{tr}_M(\mathrm{neutron}, q_0) = 1.58939344595\ldots$
-- $\mathrm{tr}_M(\mathrm{deuteron}, q_0) = 0.17743692421\ldots$
+- $\mathrm{tr}_M(\mathrm{proton}, q_0) = 0.62932840220\ldots$
+- $\mathrm{tr}_M(\mathrm{neutron}, q_0) = 0.47513351716\ldots$
+- $\mathrm{tr}_M(\mathrm{deuteron}, q_0) = 0.15196833920\ldots$
 
 These finite Habiro expansions realise the atomic-braid Markov
 trace as the **finitely-supported** elements of the Habiro ring

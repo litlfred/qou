@@ -5,8 +5,8 @@ export default proposition({
   title:
     "Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \\geq 5$",
   lean: {
-    ref: "qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound",
-    validation: "not_checked",
+    ref: "qou:QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimensionSynthesisHolds",
+    validation: "leanok",
   },
   computation: {
     engine: "mpmath",

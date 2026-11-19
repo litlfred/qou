@@ -1,6 +1,6 @@
 *Interpretation of the [information speed of light](#def:information-speed-of-light).*
 
-The substrate light speed $c_q = 1/(q - 1)$ and the symmetric bar-even dispersion relation $v_g(\mathfrak{E}_\gamma) = c_{\mathrm{phys}}(q)\,\cosh\!\bigl(\frac{\mathfrak{E}_\gamma}{\mathfrak{E}_*}\ln q\bigr)$ on a [one-dimensional channel](#def:one-dim-qou-channel) ([photon modes](#rem:photon-propagation-1d)) connect directly to doubly special relativity (DSR) and Planck-scale time-of-flight phenomenology \cite{amelinocamelia1998,amelinocamelia2001,amelinocamelia2013}.
+The aether light speed $c_q = 1/(q - 1)$ and the symmetric bar-even dispersion relation $v_g(\mathfrak{E}_\gamma) = c_{\mathrm{phys}}(q)\,\cosh\!\bigl(\frac{\mathfrak{E}_\gamma}{\mathfrak{E}_*}\ln q\bigr)$ on a [one-dimensional channel](#def:one-dim-qou-channel) ([photon modes](#rem:photon-propagation-1d)) connect directly to doubly special relativity (DSR) and Planck-scale time-of-flight phenomenology \cite{amelinocamelia1998,amelinocamelia2001,amelinocamelia2013}.
 
 **Comparison with doubly special relativity and observer covariance at fixed $q_0 \neq 1$.**
 Amelino-Camelia's minimum-length framework \cite{amelinocamelia2001} introduces an observer-independent ultraviolet scale $\mathfrak{E}_{\mathrm{QG}}$ alongside the low-energy speed of light, realised in $\kappa$-Poincaré models by first-order ($n = 1$) energy modifications of the dispersion relation. Two structural features distinguish the bar-even categorical formulation:

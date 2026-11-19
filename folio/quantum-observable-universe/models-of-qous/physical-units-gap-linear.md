@@ -10,4 +10,3 @@ $$
 
 *The gap in physical units vanishes **linearly** in $h = q - 1$ as $q \to 1$. The categorical bound $\Delta_q$ vanishes cubically. Both vanish identically at $q = 1$.*
 
-**Archimedean specialisation.** What follows treats $q$ as a real physical scale near $q = 1$. Generic categorical identities drawn upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

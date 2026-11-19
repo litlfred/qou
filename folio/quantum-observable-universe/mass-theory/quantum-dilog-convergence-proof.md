@@ -27,4 +27,4 @@ physical brane-tower argument $z_i = \lvert\hat V_i^{\mathrm{full}}\rvert
 mass tower [mass-endomorphism tower](#prop:mass-endomorphism-tower)
 evaluates the bounded symmetric form $-\mathrm{Li}_2^q(-\lvert\hat
 V_i\rvert)$ rather than $\Phi_q$. The proposition closes the analytic
-existence question, not the regularization question.*
+existence question while leaving the regularization question separate.*

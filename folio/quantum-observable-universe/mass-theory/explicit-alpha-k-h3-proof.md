@@ -71,9 +71,7 @@ $$
 $\square$
 
 canonical evaluation at $q_0 \approx 1.110$ matches the symbolic
-forms above to $\sim 10^{-16}$; values are tabulated in the witness
-file
-([`alpha-k-jones-markov-h3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/alpha/alpha-k-jones-markov-h3.witness.json)).
+forms above to $\sim 10^{-16}$ across all three partitions of $H_3(q)$.
 
 ## Alternative derivation via Wenzl-bridge
 

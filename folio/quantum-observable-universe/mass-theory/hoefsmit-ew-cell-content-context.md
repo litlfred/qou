@@ -29,4 +29,4 @@ The constrained-PSLQ basis for $N_v$ must use the direct cell-content trace $\ma
 
 ### Historical alignment: quaternionic electroweak theory
 
-The disjoint-strand-pair identification parallels Morita's quaternionic formulation of the electroweak sector. The QOU tetraplectic boundary supplies a geometric home for the $\mathrm{SU}(2)$ structures. The unit-quaternion actions are norm-preserving and commute; identifying these algebraic actions with physical carriers is an interpretive alignment, not a derivation.
+The disjoint-strand-pair identification parallels Morita's quaternionic formulation of the electroweak sector. The QOU tetraplectic boundary supplies a geometric home for the $\mathrm{SU}(2)$ structures. The unit-quaternion actions are norm-preserving and commute; identifying these algebraic actions with physical carriers is an interpretive alignment rather than a derivation.

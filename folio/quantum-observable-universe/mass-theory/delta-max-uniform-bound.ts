@@ -29,7 +29,11 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script: "computations/gram-matrix-dual.py",
-    witness: "computations/gram-matrix-dual.witness.json",
+    witness: [
+      "computations/gram-matrix-dual.witness.json",
+      "computations/jet-tower-delta-max.witness.json",
+      "computations/gram-h3-symbolic-regression.witness.json",
+    ],
     status: "verified",
   },
   authorNotes: [

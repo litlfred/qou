@@ -29,11 +29,13 @@ adjustment of the weights repairs it.
 Independently of the above, the family the rule generates has been scanned for the
 $pn$ binding it would predict. **The figures in this paragraph are provisional: they
 are recorded from an exploratory scan and are not yet reproduced by a committed
-producer, so no witness backs them.** Scanning the mixing parameter on a hundredth
+producer, so no witness backs them.** <!-- literal-source: provisional exploratory hundredth-grid scan over six colour alignments -->
+Scanning the mixing parameter on a hundredth
 grid across the six colour alignments at thirty digits gives a family *floor* of
 $B_{pn} = 2.29580\ \mathrm{MeV}$, against the measured
 $B_{\mathrm{AME}}({}^2\mathrm{H}) = 2.224566\ \mathrm{MeV}$ --- an overshoot of
 $0.0712\ \mathrm{MeV}$, or $3.2\,\%$, by the *most favourable* member of the family.
+<!-- literal-source: provisional exploratory S_3 alignment average and required mixing parameter -->
 The $S_3$ average that confinement demands lands higher still, at
 $2.46755\ \mathrm{MeV}$, some $11\,\%$ above target. Reaching the measured value
 requires a mixing parameter of $0.35768$, which is to say it requires knowing the

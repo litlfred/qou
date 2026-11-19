@@ -24,4 +24,4 @@ The gas constant $R$ requires precisely two inputs: the algebraic parameter $q$ 
 | $k_B$ | $1$ (natural units) | — |
 | $R$ | $12\hbar_q^3 / (12\,\mathrm{Vol}(\mathcal{B}_3) + \cdots)$ | $q$, $\mathrm{Vol}(\mathcal{B}_3)$ |
 
-The first four constants depend strictly on $q$. The gas constant $R$ additionally necessitates the Borromean topological invariant because it formally maps the substrate geometry to the baryonic mass scale.
+The first four constants depend strictly on $q$. The gas constant $R$ additionally necessitates the Borromean topological invariant because it formally maps the aether geometry to the baryonic mass scale.

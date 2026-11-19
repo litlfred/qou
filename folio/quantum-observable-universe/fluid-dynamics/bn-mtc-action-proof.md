@@ -11,7 +11,7 @@ $\sigma_i^{\,2} = e$ would force
 $\rho_n(\sigma_i^{\,2}) = c_{\mathbf{V}, \mathbf{V}}^{\,2}
 = \mathrm{id}_{\mathbf{V} \otimes \mathbf{V}}$
 on the $i$-th factor.  But by the non-symmetric braiding clause of
-[def:observable-mtc](#def:observable-mtc) there exists a simple
+[the observable modular tensor category](#def:observable-mtc) there exists a simple
 $\mathbf{V}$ with $c_{\mathbf{V},\mathbf{V}}^{\,2}
 \neq \mathrm{id}$, which contradicts the symmetric-group relation.
 $\square$
@@ -20,4 +20,4 @@ $\square$
 *fractional statistics*: particle exchange acts by a $B_n$-representation
 that distinguishes the braid $\sigma_i$ from its inverse
 $\sigma_i^{-1}$, in contrast with the symmetric-group action seen by
-$q = 1$ observables ([rem:u1-phase-tube](#rem:u1-phase-tube)).
+$q = 1$ observables ([the single $\mathrm{U}(1)$ phase tube](#rem:u1-phase-tube)).

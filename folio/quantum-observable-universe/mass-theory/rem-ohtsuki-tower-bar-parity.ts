@@ -4,7 +4,7 @@ export default remark({
   interprets: "conj:im-q-physical-role",
   label: "rem:ohtsuki-tower-bar-parity",
   title:
-    "Bar-parity of the Ohtsuki tower at the imaginary substrate: even rungs are $\\mathrm{Re}\\,\\mathfrak{V}$ (mass), odd rungs are $\\mathrm{Im}\\,\\mathfrak{V}$ (the bar-odd $S$)",
+    "Bar-parity of the Ohtsuki tower at the imaginary aether: even rungs are $\\mathrm{Re}\\,\\mathfrak{V}$ (mass), odd rungs are $\\mathrm{Im}\\,\\mathfrak{V}$ (the bar-odd $S$)",
   uses: ["conj:im-q-physical-role", "rem:c3-s-imq-decay-projection"],
   tags: [
     "im-q",
@@ -16,5 +16,11 @@ export default remark({
     "candidate-iii",
     "deuteron-binding",
     "wedderburn-conjugation",
+  ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: computations/qbeta/qbeta_c3_borel_pade_resummation_probe.py.",
+    },
   ],
 });

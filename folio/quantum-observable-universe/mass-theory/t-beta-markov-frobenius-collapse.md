@@ -4,7 +4,7 @@ $$
 $$
 *with $\| T_\beta \|^2_\tau = S^2$. The minimiser is unique up to the radical of $\langle\,\cdot\,,\cdot\,\rangle_\tau$, which under convention D is the sum of the Wedderburn blocks of shapes with three or more rows.*
 
-## Why the twist $Y^\dagger$ is needed
+## Necessity of the adjoint twist $Y^\dagger$
 
 The untwisted form $\mathrm{tr}_M(X \cdot Y)$ is not positive on $H_n$ for $n \ge 3$. In $H_3$ take $X = \sigma_1\sigma_2 - \sigma_2\sigma_1$. Then $\mathrm{tr}_M(X) = 0$ and
 $$
@@ -20,7 +20,7 @@ $$
 c_k^{\,L^2} = c_k^{\,\mathrm{Markov}} = c_k\!\!\left(S(q)\right)
 \quad\text{for all } k.
 $$
-The observables are extracted from the constraint, not from the operator expansion. The norms only differ in selecting the primal-feasible operator $T_\beta \in H_n(R, q)$.
+The observables are extracted from the constraint rather than from the operator expansion. The norms only differ in selecting the primal-feasible operator $T_\beta \in H_n(R, q)$.
 
 ## Categorical reading
 

@@ -19,7 +19,7 @@ The declining amplitude ($+33.2$ at $Z = 8$, $+20.4$ at $Z = 20$, $+4.4$ at $Z =
 
 ## Dependence on $q$
 
-All quantities are functions of the substrate parameter $q$:
+All quantities are functions of the aether parameter $q$:
 
 - Hoefsmit matrix entries: $h/[\rho]_q$ where $[\rho]_q = (q^\rho - q^{-\rho})/(q - q^{-1})$
 - Wedderburn weights: $w_\lambda = \dim_q(\lambda)^2/[k]_q!$

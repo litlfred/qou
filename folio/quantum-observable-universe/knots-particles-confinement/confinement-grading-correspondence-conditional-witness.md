@@ -14,12 +14,7 @@ For every atomic knot $K$ at $k_{\max} \leq 7$, the LP/SDP active set $\{\lambda
 | 6 | $3_1, 4_1, 5_{1,2}, 6_{1,2,3}$ | yes |
 | 7 | $3_1, 4_1, 5_{1,2}, 6_{1,2,3}, 7_{1,\ldots,7}$ | yes |
 
-Witnesses:
-`lp-confinement-nf-forcing.witness.json`,
-`confined-knot-binding.witness.json`,
-`confinement-operator-selection.witness.json`.
-
-These computations provide empirical evidence for the upstream conjecture. Once the upstream conjecture is settled, this witness becomes an unconditional theorem.
+These finite-strand normal-form, confined-knot binding, and operator-selection evaluations corroborate the upstream crystal-realisation hypothesis at small strand counts; discharging that hypothesis promotes the conditional grading correspondence to an unconditional theorem.
 
 ## Computational corollary
 

@@ -31,4 +31,13 @@ export default proposition({
     "isospin",
     "cyclotomic",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/casimir_q_zeta_probe.py",
+    witness: [
+      "computations/probes/casimir-q-zeta-probe.witness.json",
+      "computations/qbeta/qbeta-isospin-class-singleton.witness.json",
+    ],
+    status: "verified",
+  },
 });

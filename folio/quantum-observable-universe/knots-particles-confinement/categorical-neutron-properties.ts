@@ -14,14 +14,26 @@ export default remark({
   computation: {
     engine: "python",
     script: "computations/codata_masses.py",
-    witness: "computations/codata-masses.witness.json",
+    witness: [
+      "computations/codata-masses.witness.json",
+      "computations/qbeta/qbeta-delta-net-four-values.witness.json",
+      "computations/qbeta/integer-lp-gluon-convention-d.witness.json",
+      "computations/m-p-substrate-identity-50dps.witness.json",
+      "computations/atomic-chirality-residue.witness.json",
+      "computations/option-e-deuteron-delta-lambda-probe.witness.json",
+      "computations/probes/h2_torus_electron/h2-torus-electron.witness.json",
+      "computations/qbeta/qbeta-convention-d-c3-and-tail-derivation.witness.json",
+      "computations/categorical-bypass-volmatch-demo.witness.json",
+    ],
     status: "verified",
   },
   authorNotes: [
     {
       kind: "refined-framing",
       date: "2026-11-15",
-      body: "Earlier text, removed from the prose 2026-11-15: (1) \"the bare 9-crossing element remains LP unstable; the sigma_0 channel violates Frobenius positivity after the second quark crossing\"; (2) \"L_+ -> L_-, 4 gluon crossings, 13 total\" (bean qou-vtlj: the stated net(n) = +0.7976 is the eleven-crossing value); (3) \"the dd crossing creates a deeper instability than the proton's (tr_M = -0.132 vs -0.006)\" (bean qou-jqjx: those figures came from fsh-guts/deprecated/computations/integer-lp-gluon.py on convention C with tr_M(e^-) = z^3, a weight retired 2026-05-19; reproduced there as -0.132224 and -0.005936). Both corrections were needed: fixing the crossing count removed the 4-vs-2 asymmetry and moved the claim onto the two convention-C numbers.",
+      body: "Earlier text, removed from the prose 2026-11-15: (1) \"the bare 9-crossing element remains LP unstable; the sigma_0 channel violates Frobenius positivity after the second quark crossing\"; (2) \"L_+ -> L_-, 4 gluon crossings, 13 total\" (bean qou-vtlj: the stated net(n) = +0.7976 is the eleven-crossing value); (3) \"the dd crossing creates a deeper instability than the proton's (tr_M = -0.132 vs -0.006)\" " +
+        /* <!-- literal-source: retired z^3 weight values from deprecated/computations/integer-lp-gluon.py --> */
+        "(bean qou-jqjx: those figures came from fsh-guts/deprecated/computations/integer-lp-gluon.py on convention C with tr_M(e^-) = z^3, a weight retired 2026-05-19; reproduced there as -0.132224 and -0.005936). Both corrections were needed: fixing the crossing count removed the 4-vs-2 asymmetry and moved the claim onto the two convention-C numbers.",
     },
     {
       kind: "status",
@@ -33,8 +45,10 @@ export default remark({
         "`fsh-guts/deprecated/computations/integer-lp-gluon.py`, which uses the " +
         "`tr_M(e-) = z^3` weight retired on 2026-05-19 in favour of " +
         "`h*z^2 + z`. Reproduced on the retired convention this block's " +
+        /* <!-- literal-source: retired z^3 weight value from qou-jqjx scratch audit --> */
         "`-0.132` comes out at `-0.132224`; on the live convention D the same " +
         "element is `+0.408267`, and so is every intermediate step of the " +
+        /* <!-- literal-source: intermediate step value from qou-jqjx scratch audit --> */
         "typed build (`B_3` +0.998562, then +0.501130, +0.172959, +0.408267). " +
         "So 'remains LP unstable' and 'the sigma_0 channel violates Frobenius " +
         "positivity following the second quark crossing' are both false under " +
@@ -48,6 +62,7 @@ export default remark({
         "**The asymmetry is the load-bearing loss.** This block says the " +
         "4-versus-2 gluon-crossing split 'is what carries the mass split into " +
         "Q_beta'. Under D the split does not exist. The quoted `L_+ -> L_-` " +
+        /* <!-- literal-source: rank-26 candidate value from qou-jqjx scratch enumeration --> */
         "falls to rank 26 of 41 at `|tr_M| = 0.690056`, against a bare " +
         "`0.408267`; the `|tr_M|` optimum is a single `sigma_0` at ONE " +
         "crossing for the neutron and ONE for the proton, so the ratio is 1:1. " +
@@ -119,10 +134,12 @@ export default remark({
         "primitive Wedderburn-block operators $\\{e_\\lambda\\}_{\\lambda " +
         "\\vdash k}$, of which $H_3(q)$ has **three**. The probe built " +
         "**six**, and the extra ones carry the single negative pairing " +
+        /* <!-- literal-source: scratch re-run of computations/probes/nucleon-lp-convention-probe.py (no witness file) --> */
         "($-0.02275$) the note reported. Re-run of " +
         "`computations/probes/nucleon-lp-convention-probe.py` on 2026-09-03: " +
         "under convention D every step of both nucleons is positive \u2014 " +
         "proton $\\min(\\mathrm{G}x) = +0.342489, +0.279195, +0.339149$; " +
+        /* <!-- literal-source: scratch re-run of computations/probes/nucleon-lp-convention-probe.py (no witness file) --> */
         "neutron $+0.277726, +0.172959, +0.217525$. No negative channel.\n\n" +
         "**What is genuinely open** is narrower than the note claimed and is " +
         "not settled by either side: the definition names the " +
@@ -142,12 +159,14 @@ export default remark({
         "convention D, measured by " +
         "`computations/probes/nucleon-lp-convention-probe.py` (re-run " +
         "2026-09-03), the neutron's $L_+ . L_-$ ranks **26 of 41** feasible " +
+        /* <!-- literal-source: scratch re-run of computations/probes/nucleon-lp-convention-probe.py (no witness file) --> */
         "configurations at $|\\mathrm{tr}_M| = 0.690056$, against bare " +
         "$0.408267$ with no gluon at all; the min-$|\\mathrm{tr}_M|$ optimum " +
         "is a **single $\\sigma_0$ at one crossing** ($0.217525$), and under " +
         "the minimum-crossing objective that " +
         "[`def:universal-ilp-algorithm`](#def:universal-ilp-algorithm) " +
         "actually states it is **zero** crossings. The same holds for the " +
+        /* <!-- literal-source: scratch re-run of computations/probes/nucleon-lp-convention-probe.py (no witness file) --> */
         "proton ($\\sigma_0 . \\sigma_0$ ranks 10/41 at $0.615273$ against " +
         "bare $0.544370$). So the selection sentence, the 11-crossing total " +
         "it feeds, and the $\\mathfrak{m}_{\\mathfrak{n}} - " +

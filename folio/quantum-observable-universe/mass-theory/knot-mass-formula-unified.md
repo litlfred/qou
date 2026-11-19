@@ -16,8 +16,6 @@ $$
 
 *where $\mathrm{Li}_2^q(z)$ is the symmetric q-dilogarithm. This integrates the Briggs–Klein expansion over each resolved defect.*
 
-The descended piece evaluates the basic topological trace. The brane tower resolves the computational cost of the braid diagram. The Frobenius co-Casimir accounts for the substrate's universal algebra representation overhead.
+The descended piece evaluates the basic topological trace. The brane tower resolves the computational cost of the braid diagram. The Frobenius co-Casimir accounts for the aether's universal algebra representation overhead.
 
 The archimedean specialisation $\Phi_q(|\hat V_i|)$ breaks the exact Markov invariance of the algebraic trace. Replacing it with the rigorous Habiro-coefficient cyclotomic sum eliminates the isospin pathology at $q_0$.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

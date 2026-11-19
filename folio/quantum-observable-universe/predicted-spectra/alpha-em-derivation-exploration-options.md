@@ -1,12 +1,12 @@
 **Remark (exploration options to close the $1/\alpha_{EM}$ derivation).**
 
-The existing infrastructure maps to the open $2/(3\pi)$ derivation. The numerical match $1/\alpha_{EM} \approx q\cdot[9]_q\cdot[10]_q + 2/(3\pi)$ ([Bring-surface zero-mode coupling](#prop:em-coupling-bring-zero-mode)) holds exactly via the algebraic identity $2/(3\pi) = 2g/(4\pi(g{-}1))$ at $g = 4$. A full derivation remains open. The existing infrastructure supports four potential paths forward.
+On Bring's genus-$4$ surface, Hodge theory and Gauss–Bonnet identify the infrared shift $2/(3\pi) = 2g/(4\pi(g{-}1)) = b_1/\mathrm{Area}$ ([Bring-surface photon infrared zero-mode](#prop:photon-ir-zero-mode-bring), [Bring-surface zero-mode coupling](#prop:em-coupling-bring-zero-mode)). Exhibiting the explicit Bloch-group class in $B(\mathbb{C})$ and deriving the two-loop remainder $\Delta_2$ are conjectural; the existing geometric structures suggest four complementary approaches.
 
 ## Existing infrastructure
 
 The missing step connects the current machinery to the coupling side.
 
-### 1. Hopf fibration $S^3 \to S^2$ as the substrate geometry
+### 1. Hopf fibration $S^3 \to S^2$ as the aether geometry
 
 The [Reeb bundle](#def:reeb-bundle) at a brane point $p$ is
 
@@ -22,7 +22,7 @@ Three colour primaries reside on Bring's surface ([$q$-chromaticity](#rem:q-chro
 
 ### 3. Filtration with confinement levels
 
-A depth filtration structures $H_n(R,q)$ via the [confinement-level definition](#def:confinement-level) and the [curvature-rank Gröbner stratification](#prop:curvature-rank-gb-stratification). For $H_3$, depths $\ell = 0,1,2,3$ yield a four-step filtration. The maximum depth of 3 correlates with the denominator $3$.
+A depth filtration structures $H_n(R,q)$ via the [shadow-price confinement level](#def:confinement-level) and the [curvature-rank Gröbner stratification](#prop:curvature-rank-gb-stratification). For $H_3$, depths $\ell = 0,1,2,3$ yield a four-step filtration. The maximum depth of 3 correlates with the denominator $3$.
 
 ### 4. Spectral sequence collapse
 

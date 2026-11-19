@@ -19,8 +19,10 @@ export default remark({
     engine: "python+mpmath",
     script:
       "computations/qbeta/qbeta_direction_sanity_gate_probe.py",
-    witness:
+    witness: [
       "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
+      "computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json",
+    ],
     status: "verified",
   },
   tags: [

@@ -1,7 +1,7 @@
 The incompleteness--horizon identification reframes the black hole information paradox as a question of arithmetic rather than gravity.
 
 **The horizon as syntax boundary.**
-The horizon acts as a syntax boundary. Behind it lie sections that exist as well-defined semantic elements of the full algebra $\Gamma(\mathcal{S}, A_0)$. However, no finite braid computation from outside can derive them. They are syntactically unprovable. This instantiates the categorical reading of Gödel: existence without provability characterises the boundary. The Bekenstein–Hawking entropy counts only the degree-$1$ witnesses that leak across, not the hidden degree-$0$ truth.
+The horizon acts as a syntax boundary. Behind it lie sections that exist as well-defined semantic elements of the full algebra $\Gamma(\mathcal{S}, A_0)$. However, no finite braid computation from outside can derive them. They are syntactically unprovable. This instantiates the categorical reading of Gödel: existence without provability characterises the boundary. The Bekenstein–Hawking entropy counts only the degree-$1$ witnesses that leak across, while the hidden degree-$0$ truth remains uncounted.
 
 **The paradox.**
 A black hole interior is a region where $A_0 = 0$. The degree-$0$ sections describing particle identities, crossing structures, and fibre values inside the horizon exist in $\Gamma(\mathcal{S}, A_0)$. But they do not belong to $\Gamma_{\mathrm{fin}}(\mathcal{S}, A_0)$: no finite braid computation from outside the horizon produces them.
@@ -21,7 +21,7 @@ The QOU framework realises the second position. Two physics references bear on t
 **The Bekenstein--Hawking entropy as a G\"{o}del count.**
 The Bekenstein--Hawking entropy $S = A / (4\ell_P^2)$ counts the dimension of $\Gamma(\mathcal{H}, A_1/A_0)$, the independent degree-$1$ sections on the horizon surface. These are the verifiable partial evidence, thermal leakage, and NP witnesses accessible from the outside.
 
-The degree-$0$ sections behind the horizon remain uncounted by the Bekenstein--Hawking entropy. The entropy counts proof fragments, not theorems.
+The degree-$0$ sections behind the horizon remain uncounted by the Bekenstein--Hawking entropy. The entropy counts proof fragments rather than complete theorems.
 
 $$
   S_{\mathrm{BH}}

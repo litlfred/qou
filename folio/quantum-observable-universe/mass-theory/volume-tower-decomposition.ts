@@ -35,6 +35,7 @@ export default proposition({
         "(`QOU.Torsion.RecursiveBraneTower`) is the generic half and stays " +
         "where it is.\n\n" +
         "Corrected in the same pass: the file's `vol_4_1` docstring and its §1 " +
+        /* <!-- literal-source: closed-form Clausen evaluation 3 * Cl_2(pi/3) = 3.04482485 --> */
         "summary both read $3\\,\\mathrm{Cl}_2(\\pi/3)$, which is $3.0448\\ldots$ " +
         "rather than the $2.0298\\ldots$ literal the definition carries.",
       see: "folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
@@ -56,5 +57,11 @@ export default proposition({
   ],
   lean: { ref: "qou:QOU.Archimedean.VolumeTowerDecomposition",
     validation: "not_checked",
+  },
+  computation: {
+    engine: "mpmath",
+    script: "computations/derive_m_baryon_volume_form.py",
+    witness: "computations/m-baryon-volume-form.witness.json",
+    status: "verified",
   },
 });

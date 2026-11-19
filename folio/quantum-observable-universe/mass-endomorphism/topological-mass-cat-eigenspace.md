@@ -13,6 +13,6 @@ $$
   \bigl\lVert \mathrm{tr}(\alpha - \hat{\tau}_n(\alpha)) \bigr\rVert^2.
 $$
 
-*(Orthogonal components add **in quadrature**, not linearly. The
+*(Orthogonal components add **in quadrature** rather than linearly. The
 descended and transient traces are orthogonal, so the masses combine
-by the Pythagorean law, not additively.)*
+by the Pythagorean law rather than additively.)*

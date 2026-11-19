@@ -1,12 +1,12 @@
 {
-  "generated": "2026-10-05T15:57:10.130Z",
+  "generated": "2026-11-19T14:22:36.091Z",
   "paper": "quantum-observable-universe",
   "entries": [
     {
       "slug": "braided-monoidal-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Monoidal structure",
+      "section": "Monoidal and braided categories",
       "block": "rem:glossary-braided-monoidal-category",
       "kind": "remark",
       "lean": null
@@ -15,7 +15,7 @@
       "slug": "brings-coordinate-ring",
       "chapter": "quantum-observable-universes",
       "chapterTitle": "Quantum Observable Universes",
-      "section": "The algebraic substrate and the Reeb derivation",
+      "section": "The algebraic aether and the Reeb derivation",
       "block": "def:brings-coordinate-ring",
       "kind": "definition",
       "lean": "qou:QOU.AlgebraicSubstrate.BringsCoordinateRing"
@@ -42,19 +42,19 @@
       "slug": "categorical-q-torsion-leaf",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Geometry and transport",
+      "section": "Lifting, descent, and Bring's surface",
       "block": "rem:glossary-categorical-q-torsion-leaf",
       "kind": "remark",
-      "lean": "qou:QOU.CategoricalQTorsionLeaf"
+      "lean": null
     },
     {
       "slug": "categorical-transport",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Geometry and transport",
+      "section": "Lifting, descent, and Bring's surface",
       "block": "rem:glossary-categorical-transport",
       "kind": "remark",
-      "lean": "qou:QOU.CategoricalTransport"
+      "lean": null
     },
     {
       "slug": "cemetery-group",
@@ -78,7 +78,7 @@
       "slug": "compact-closed-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "section": "Duality, rigidity, and pivotal structure",
       "block": "rem:glossary-compact-closed-category",
       "kind": "remark",
       "lean": null
@@ -87,7 +87,7 @@
       "slug": "delta-q-decoration",
       "chapter": "mass-theory",
       "chapterTitle": "Mass Analysis",
-      "section": "Spectral sequence, chirality, and confinement-NF structure",
+      "section": "Spectral Sequence, Chirality, and Confinement Normal-Form Structure",
       "block": "def:delta-q-decoration",
       "kind": "definition",
       "lean": "qou:QOU.BraidKnot.delta_q"
@@ -96,7 +96,7 @@
       "slug": "derived-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Homological algebra",
+      "section": "Triangulated and derived categories",
       "block": "rem:glossary-derived-category",
       "kind": "remark",
       "lean": null
@@ -114,7 +114,7 @@
       "slug": "dg-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Homological algebra",
+      "section": "Triangulated and derived categories",
       "block": "rem:glossary-dg-category",
       "kind": "remark",
       "lean": null
@@ -123,7 +123,7 @@
       "slug": "distinguished-triangle",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Homological algebra",
+      "section": "Triangulated and derived categories",
       "block": "rem:glossary-distinguished-triangle",
       "kind": "remark",
       "lean": null
@@ -141,7 +141,7 @@
       "slug": "fourier-mukai-transform",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Homological algebra",
+      "section": "Triangulated and derived categories",
       "block": "rem:glossary-fourier-mukai-transform",
       "kind": "remark",
       "lean": null
@@ -168,7 +168,7 @@
       "slug": "hom-set",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Basic categorical notions",
+      "section": "Categories and enrichment",
       "block": "rem:glossary-hom-set",
       "kind": "remark",
       "lean": null
@@ -177,7 +177,7 @@
       "slug": "left-dual",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "section": "Duality, rigidity, and pivotal structure",
       "block": "rem:glossary-left-dual",
       "kind": "remark",
       "lean": null
@@ -204,7 +204,7 @@
       "slug": "monoidal-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Monoidal structure",
+      "section": "Monoidal and braided categories",
       "block": "rem:glossary-monoidal-category",
       "kind": "remark",
       "lean": null
@@ -213,7 +213,7 @@
       "slug": "monoidal-functor",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Monoidal structure",
+      "section": "Monoidal and braided categories",
       "block": "rem:glossary-monoidal-functor",
       "kind": "remark",
       "lean": null
@@ -222,7 +222,7 @@
       "slug": "no-quasi-zeros",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Enrichment",
+      "section": "Categories and enrichment",
       "block": "rem:glossary-no-quasi-zeros",
       "kind": "remark",
       "lean": null
@@ -231,10 +231,10 @@
       "slug": "observed-value",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Elliptic and surface geometry",
+      "section": "Lifting, descent, and Bring's surface",
       "block": "rem:glossary-observed-value",
       "kind": "remark",
-      "lean": "qou:QOU.BringsSurface.observedValue"
+      "lean": null
     },
     {
       "slug": "octonion-algebra",
@@ -249,7 +249,7 @@
       "slug": "per-nucleon-channel-decomposition",
       "chapter": "nuclear-interactions",
       "chapterTitle": "Nuclear Interactions and Binding",
-      "section": "Branching Q-value derivation",
+      "section": "Branching $Q$-Value Factorisation",
       "block": "def:per-nucleon-channel-decomposition",
       "kind": "definition",
       "lean": "qou:QOU.ParticleInteractions.PerNucleonChannelDecomposition"
@@ -258,7 +258,7 @@
       "slug": "pivotal-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "section": "Duality, rigidity, and pivotal structure",
       "block": "rem:glossary-pivotal-category",
       "kind": "remark",
       "lean": null
@@ -267,7 +267,7 @@
       "slug": "q-bit",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Information theory",
+      "section": "Dynamics, information, and $q$-geometric Langlands",
       "block": "rem:glossary-q-bit",
       "kind": "remark",
       "lean": null
@@ -276,7 +276,7 @@
       "slug": "q-bit-skein",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Information theory",
+      "section": "Dynamics, information, and $q$-geometric Langlands",
       "block": "rem:glossary-q-bit-skein",
       "kind": "remark",
       "lean": null
@@ -294,7 +294,7 @@
       "slug": "q-dimension-layer",
       "chapter": "mass-theory",
       "chapterTitle": "Mass Analysis",
-      "section": "Spectral sequence, chirality, and confinement-NF structure",
+      "section": "Spectral Sequence, Chirality, and Confinement Normal-Form Structure",
       "block": "def:q-dimension-layer",
       "kind": "definition",
       "lean": "qou:QOU.BraidKnot.qDimensionLayer"
@@ -330,7 +330,7 @@
       "slug": "r-linear-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Enrichment",
+      "section": "Categories and enrichment",
       "block": "rem:glossary-r-linear-category",
       "kind": "remark",
       "lean": null
@@ -339,16 +339,16 @@
       "slug": "reeb-gauge-group",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Geometry and transport",
+      "section": "Lifting, descent, and Bring's surface",
       "block": "rem:glossary-reeb-gauge-group",
       "kind": "remark",
-      "lean": "qou:QOU.ReebGaugeGroup"
+      "lean": null
     },
     {
       "slug": "right-dual",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "section": "Duality, rigidity, and pivotal structure",
       "block": "rem:glossary-right-dual",
       "kind": "remark",
       "lean": null
@@ -357,7 +357,7 @@
       "slug": "rigid-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Duality and rigidity",
+      "section": "Duality, rigidity, and pivotal structure",
       "block": "rem:glossary-rigid-category",
       "kind": "remark",
       "lean": null
@@ -366,10 +366,10 @@
       "slug": "s3-group",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Groups and symmetry",
+      "section": "Lifting, descent, and Bring's surface",
       "block": "rem:glossary-s3-group",
       "kind": "remark",
-      "lean": "qou:QOU.S3Group"
+      "lean": null
     },
     {
       "slug": "strand-twist-datum",
@@ -384,7 +384,7 @@
       "slug": "symmetric-monoidal-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Monoidal structure",
+      "section": "Monoidal and braided categories",
       "block": "rem:glossary-symmetric-monoidal-category",
       "kind": "remark",
       "lean": null
@@ -399,13 +399,22 @@
       "lean": "qou:QOU.Torsion.KnotParticleGeneration"
     },
     {
+      "slug": "torus-knot-top-channel-decoration",
+      "chapter": "mass-theory",
+      "chapterTitle": "Mass Analysis",
+      "section": "Spectral Sequence, Chirality, and Confinement Normal-Form Structure",
+      "block": "def:torus-knot-top-channel-decoration",
+      "kind": "definition",
+      "lean": "qou:QOU.TorusKnotTopChannel.topChannelDecoration"
+    },
+    {
       "slug": "weierstrass-projection",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
-      "section": "Elliptic and surface geometry",
+      "section": "Lifting, descent, and Bring's surface",
       "block": "rem:glossary-weierstrass-projection",
       "kind": "remark",
-      "lean": "qou:QOU.Archimedean.WeierstrassProjection.weierstrassProjection"
+      "lean": null
     }
   ],
   "duplicates": {}

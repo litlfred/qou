@@ -29,4 +29,10 @@ export default proposition({
     "canonical-derivation",
     "z-parameter",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

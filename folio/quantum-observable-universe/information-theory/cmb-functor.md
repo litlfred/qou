@@ -28,7 +28,7 @@ The target category $\mathbf{Mod}_R$ consists of $R$-modules corresponding to se
 | $\varinjlim (A_1/A_0)\vert_{\partial\mathcal{A}}$ | $1$ | Linear transport: winding modes, first-order correlations |
 | $\varinjlim (A_2/A_0)\vert_{\partial\mathcal{A}}$ | $2$ | Curvature: linking modes, power spectrum |
 
-The colimit runs over the directed system of all diagrams in $\mathcal{A}$ converging to boundary objects. This aggregates the degree $\geq 1$ data from every light cone reaching the boundary, not just a single computation sequence.
+The colimit runs over the directed system of all diagrams in $\mathcal{A}$ converging to boundary objects. This aggregates the degree $\geq 1$ data from every light cone reaching the boundary rather than a single computation sequence.
 
 For a single boundary object $\mathcal{S}_0 \in \partial(\mathcal{A})$, the pointwise CMB  $\mathrm{CMB}(\mathcal{S}_0) = (A_1/A_0, A_2/A_0)|_{\mathcal{S}_0}$ is the stalk of the CMB functor at $\mathcal{S}_0$. The full CMB functor is the sheafification over the entire boundary.
 

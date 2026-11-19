@@ -4,7 +4,7 @@ Every algebraic construction possesses a Markov chain counterpart. The Hecke alg
 
 Fix an irrep $\lambda \vdash n$. The Hoefsmit seminormal form builds $\rho_\lambda$ on standard Young tableaux of shape $\lambda$. Each tableau is a saturated chain on the Young graph. The space of all valid SYTs serves as the discrete state space of the chain.
 
-The generator $\sigma_i \in B_n$ acts via $\rho_\lambda(\sigma_i)$, whose non-zero matrix entries are explicit rational functions of $q$. This is a genuine quantum deformation of the classical Young seminormal form. The matrix contains probability amplitudes, not classical probabilities. The entries can be negative and square to weights only after a Markov trace.
+The generator $\sigma_i \in B_n$ acts via $\rho_\lambda(\sigma_i)$, whose non-zero matrix entries are explicit rational functions of $q$. This is a genuine quantum deformation of the classical Young seminormal form. The matrix contains probability amplitudes rather than classical probabilities. The entries can be negative and square to weights only after a Markov trace.
 
 Two compatible pictures coexist:
 1. **Amplitude picture.** Amplitudes evolve a complex state vector on the SYT path space. The Jones polynomial is the closed-path sum over all SYT paths, matching the structure of a Feynman path integral.

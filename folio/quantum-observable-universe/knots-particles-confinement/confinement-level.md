@@ -1,5 +1,5 @@
 **Definition.**
-*Fix the substrate parameter $q$. Sort the Wedderburn-block knot operators by energy:*
+*Fix the aether parameter $q$. Sort the Wedderburn-block knot operators by energy:*
 
 $$
   0 \;<\; E_1(q) \;\leq\; E_2(q) \;\leq\; \cdots \;\leq\; E_m(q),

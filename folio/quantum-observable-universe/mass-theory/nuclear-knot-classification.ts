@@ -15,4 +15,10 @@ export default conjecture({
     "borromean",
     "binding-scale",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

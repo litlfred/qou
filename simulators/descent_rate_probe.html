@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yekutieli Brane-Tower &amp; SYT Descent-Rate Probe</title>
+<style>
+:root {
+  --bg:#020710; --panel:rgba(3,10,30,0.93); --border:rgba(60,120,255,0.20);
+  --accent:#3a90ff; --accent2:#ff5533; --accent3:#33ffaa; --accent4:#ffaa33;
+  --text:#b8ccff; --dim:#5a6e9c;
+}
+body.light {
+  --bg:#f0f4ff; --panel:rgba(235,240,255,0.96); --border:rgba(60,80,180,0.25);
+  --accent:#1a5fcc; --accent2:#cc3300; --accent3:#007744; --accent4:#885500;
+  --text:#1a2855; --dim:#506090;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monospace;font-size:11px;overflow:hidden;user-select:none;}
+#title{position:absolute;top:10px;left:50%;transform:translateX(-50%);font-family:'Rajdhani',sans-serif;font-weight:500;font-size:17px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;pointer-events:none;white-space:nowrap;}
+#subtitle{position:absolute;top:31px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;pointer-events:none;white-space:nowrap;}
+.panel{position:absolute;background:var(--panel);border:1px solid var(--border);border-radius:3px;padding:10px;backdrop-filter:blur(18px);z-index:10;}
+.panel-title{font-family:'Rajdhani',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--border);}
+.row{display:grid;grid-template-columns:58px 1fr 56px;align-items:center;gap:5px;margin:5px 0;}
+.lbl{color:var(--dim);font-size:10px;}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:rgba(58,144,255,0.2);border-radius:2px;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height:9px;border-radius:50%;background:var(--accent);cursor:pointer;}
+.val{color:var(--accent);font-size:10px;text-align:right;}
+select,button.btn{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:3px;padding:3px 6px;font-family:inherit;font-size:10px;cursor:pointer;}
+button.btn:hover{border-color:var(--accent);color:var(--accent);}
+#theme-btn{position:absolute;top:10px;right:12px;z-index:20;background:var(--panel);border:1px solid var(--border);border-radius:3px;padding:4px 8px;cursor:pointer;color:var(--accent);font-family:inherit;font-size:10px;}
+#ctrl{top:50px;left:8px;width:230px;bottom:12px;overflow-y:auto;}
+canvas{position:absolute;top:50px;left:246px;right:12px;bottom:12px;border:1px solid var(--border);border-radius:3px;}
+table.readout{width:100%;border-collapse:collapse;margin-top:6px;font-size:9.5px;}
+table.readout th,table.readout td{padding:2px 4px;text-align:right;border-bottom:1px solid var(--border);}
+table.readout th:first-child,table.readout td:first-child{text-align:left;}
+table.readout th{color:var(--accent);}
+</style>
+</head>
+<body>
+<div id="title">Brane-Tower &amp; SYT Descent-Rate Probe</div>
+<div id="subtitle">&hbar;<sub>q</sub><sup>2k</sup> = (1 &minus; q<sup>&minus;1</sup>)<sup>2k</sup> &middot; Jucys&ndash;Murphy Pair Weight &beta;(d) = 1</div>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');draw();">◑</button>
+
+<div class="panel" id="ctrl">
+  <div class="panel-title">Aether &amp; Tower Controls</div>
+  <div class="row">
+    <span class="lbl">q</span>
+    <input type="range" id="sl-q" min="1.01" max="1.50" step="0.0005" value="1.1100">
+    <span class="val" id="v-q">1.10998</span>
+  </div>
+  <div class="row" style="grid-template-columns:1fr 1fr;">
+    <button class="btn" id="btn-q0">Preset q₀ = 1.10998</button>
+    <button class="btn" id="btn-scale">Scale: Log₁₀</button>
+  </div>
+  <div class="row">
+    <span class="lbl">k_max</span>
+    <input type="range" id="sl-kmax" min="4" max="12" step="1" value="12">
+    <span class="val" id="v-kmax">12</span>
+  </div>
+  <div class="row">
+    <span class="lbl">State</span>
+    <select id="sel-atom" style="grid-column:2/4;">
+      <option value="proton">Proton B₃(uud)</option>
+      <option value="neutron">Neutron B₃(udd)</option>
+      <option value="deuteron">Deuteron ²H (6-strand)</option>
+      <option value="alpha">Alpha ⁴He (12-strand)</option>
+    </select>
+  </div>
+
+  <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
+    <div class="panel-title">Invariants at q</div>
+    <div class="row"><span class="lbl">&hbar;_q</span><span class="val" id="v-hbar" style="grid-column:2/4;">0.099082</span></div>
+    <div class="row"><span class="lbl">&hbar;_q²</span><span class="val" id="v-hbar2" style="grid-column:2/4;">0.009817</span></div>
+    <div class="row"><span class="lbl">z_D(q)</span><span class="val" id="v-zd" style="grid-column:2/4;">0.614331</span></div>
+    <div class="row"><span class="lbl">&beta;(d)</span><span class="val" id="v-beta" style="grid-column:2/4;color:var(--accent3);">1.000000 (uniform)</span></div>
+  </div>
+
+  <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
+    <div class="panel-title">Level Readout (k = 0..k_max)</div>
+    <table class="readout">
+      <thead><tr><th>k</th><th>&hbar;<sub>q</sub><sup>2k</sup></th><th>R<sub>k</sub>(q)</th><th>&beta;(k)</th></tr></thead>
+      <tbody id="tb-rows"></tbody>
+    </table>
+  </div>
+</div>
+
+<canvas id="cv"></canvas>
+
+<script>
+const Q0 = 1.109978595642739;
+let exactQ = Q0;
+let logScale = true;
+
+const slQ = document.getElementById('sl-q');
+const slK = document.getElementById('sl-kmax');
+const selAtom = document.getElementById('sel-atom');
+const btnQ0 = document.getElementById('btn-q0');
+const btnScale = document.getElementById('btn-scale');
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+
+const ATOM_MULT = { proton: 1.0, neutron: 1.042, deuteron: 1.985, alpha: 3.882 };
+
+slQ.addEventListener('input', () => { exactQ = parseFloat(slQ.value); draw(); });
+slK.addEventListener('input', draw);
+selAtom.addEventListener('change', draw);
+btnQ0.addEventListener('click', () => { exactQ = Q0; slQ.value = Q0.toFixed(4); draw(); });
+btnScale.addEventListener('click', () => {
+  logScale = !logScale;
+  btnScale.textContent = logScale ? 'Scale: Log₁₀' : 'Scale: Linear';
+  draw();
+});
+
+function resize() {
+  cv.width = Math.max(300, window.innerWidth - 258);
+  cv.height = Math.max(240, window.innerHeight - 62);
+  draw();
+}
+window.addEventListener('resize', resize);
+
+function draw() {
+  const q = exactQ;
+  const kMax = parseInt(slK.value, 10);
+  const mult = ATOM_MULT[selAtom.value] || 1.0;
+  const hbar = 1.0 - 1.0 / q;
+  const hbar2 = hbar * hbar;
+  const zD = (q * q * q) / (q * q + 1.0);
+
+  document.getElementById('v-q').textContent = q.toFixed(5);
+  document.getElementById('v-kmax').textContent = String(kMax);
+  document.getElementById('v-hbar').textContent = hbar.toExponential(5);
+  document.getElementById('v-hbar2').textContent = hbar2.toExponential(5);
+  document.getElementById('v-zd').textContent = zD.toFixed(6);
+
+  const levels = [];
+  for (let k = 0; k <= kMax; k++) {
+    const term = mult * Math.pow(hbar2, k);
+    const rem = mult * Math.pow(hbar2, k + 1) / Math.max(1e-15, 1.0 - hbar2);
+    levels.push({ k, term, rem, beta: 1.0 });
+  }
+
+  const tbody = document.getElementById('tb-rows');
+  tbody.innerHTML = levels.map(r =>
+    `<tr><td>${r.k}</td><td>${r.term.toExponential(2)}</td><td>${r.rem.toExponential(2)}</td><td>${r.beta.toFixed(2)}</td></tr>`
+  ).join('');
+
+  const W = cv.width, H = cv.height;
+  ctx.clearRect(0, 0, W, H);
+  const isLight = document.body.classList.contains('light');
+  const colGrid = isLight ? 'rgba(40,70,150,0.14)' : 'rgba(60,120,255,0.14)';
+  const colText = isLight ? '#1a2855' : '#b8ccff';
+  const colAccent = isLight ? '#1a5fcc' : '#3a90ff';
+  const colRem = isLight ? '#cc3300' : '#ff5533';
+  const colBeta = isLight ? '#007744' : '#33ffaa';
+
+  const padL = 62, padR = 28, padT = 32, padB = 42;
+  const plotW = W - padL - padR;
+  const plotH = H - padT - padB;
+
+  const yMinLog = Math.floor(Math.log10(Math.max(1e-30, levels[kMax].rem))) - 1;
+  const yMaxLog = Math.ceil(Math.log10(Math.max(1.0, levels[0].term))) + 1;
+
+  function xOf(k) { return padL + (k / kMax) * plotW; }
+  function yOf(val) {
+    if (logScale) {
+      const lv = Math.log10(Math.max(1e-30, val));
+      return padT + plotH * (1 - (lv - yMinLog) / Math.max(1, yMaxLog - yMinLog));
+    }
+    const ymax = levels[0].term * 1.08;
+    return padT + plotH * (1 - val / ymax);
+  }
+
+  ctx.strokeStyle = colGrid;
+  ctx.lineWidth = 1;
+  ctx.font = '10px monospace';
+  ctx.fillStyle = colText;
+
+  for (let k = 0; k <= kMax; k++) {
+    const x = xOf(k);
+    ctx.beginPath(); ctx.moveTo(x, padT); ctx.lineTo(x, padT + plotH); ctx.stroke();
+    ctx.fillText(`k=${k}`, x - 10, padT + plotH + 16);
+  }
+
+  const nTicks = 6;
+  for (let i = 0; i <= nTicks; i++) {
+    const frac = i / nTicks;
+    const y = padT + plotH * (1 - frac);
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + plotW, y); ctx.stroke();
+    const label = logScale
+      ? `10^${(yMinLog + frac * (yMaxLog - yMinLog)).toFixed(0)}`
+      : (frac * levels[0].term * 1.08).toExponential(1);
+    ctx.fillText(label, 6, y + 3);
+  }
+
+  function plotCurve(getter, color, dashed) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = 2;
+    if (dashed) ctx.setLineDash([5, 4]);
+    ctx.beginPath();
+    levels.forEach((r, idx) => {
+      const x = xOf(r.k), y = yOf(getter(r));
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+    ctx.setLineDash([]);
+    levels.forEach(r => {
+      const x = xOf(r.k), y = yOf(getter(r));
+      ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fill();
+    });
+    ctx.restore();
+  }
+
+  plotCurve(r => r.term, colAccent, false);
+  plotCurve(r => r.rem, colRem, true);
+  plotCurve(r => r.beta, colBeta, false);
+
+  ctx.fillStyle = colAccent;
+  ctx.fillText('● Jet level decay c · ħ_q^(2k)', padL + 10, padT - 10);
+  ctx.fillStyle = colRem;
+  ctx.fillText('--- Truncation tail R_k(q)', padL + 210, padT - 10);
+  ctx.fillStyle = colBeta;
+  ctx.fillText('● SYT pair weight β(d) = 1', padL + 390, padT - 10);
+}
+
+resize();
+</script>
+</body>
+</html>

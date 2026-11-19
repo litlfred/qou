@@ -26,7 +26,7 @@ output) and $q_0$ fixed by CAL-2 ($P_{\mathrm{skew}}^{\beta}$, pinned
 canonical through its proxy $m_\mu/m_e$). The two dimensional
 bridges to MeV are the proxy scales $m_e$ and $m_\pi$; the derived
 hadronic energy scale $\mathfrak{E}_0 = m_e/(q_0(q_0-1))$ and the CAL-2
-proxy $\mathfrak{Q}_\beta$ are $m_e^{1}\cdot\mathbb{Q}(q_0)$ expressions, not
+proxy $\mathfrak{Q}_\beta$ are $m_e^{1}\cdot\mathbb{Q}(q_0)$ expressions rather than
 independent factors.
 
 The three calibration observables, the allowed and forbidden

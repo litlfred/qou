@@ -35,5 +35,3 @@ $n$ amphicheiral pairs the product is $(1 - h^2)^n$, which tends
 to $0$, not to $1$, as $n \to \infty$ (at $q_0$, $h^2 \approx 0.044$
 gives $(1 - h^2)^{n} < 1/2$ once $n \geq 16$). So the pair product
 does not by itself recover the standard BW formula for heavy nuclei.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

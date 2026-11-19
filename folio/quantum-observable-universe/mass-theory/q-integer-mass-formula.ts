@@ -31,4 +31,10 @@ export default conjecture({
     "shell-correction",
     "exceptional-divisor",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

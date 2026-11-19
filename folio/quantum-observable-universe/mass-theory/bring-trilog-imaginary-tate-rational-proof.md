@@ -45,8 +45,7 @@ $S_3(2\pi/5) = 4 \pi^3 / 125$. $\square$
 
 ### canonical structural verification at 50 dps
 
-Verified by the canonical formalism
-([witness JSON](https://github.com/litlfred/qou/blob/main/computations/kummer-reflection-zeta5.witness.json)):
+Numerical evaluation to 50 decimal places gives:
 
 | Quantity | Value (50 dps) |
 |---|---|

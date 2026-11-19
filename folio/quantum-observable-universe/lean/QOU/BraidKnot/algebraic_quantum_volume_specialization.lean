@@ -56,9 +56,9 @@ QOU-internal derivation; the other two are*
 def algebraic_quantum_volume_specialization [ctx : AlgebraicQuantumVolumeSpecializationContext] :
     ctx.z_0 = 1 / (Real.sqrt ctx.q_0 + 1 / Real.sqrt ctx.q_0) ∧
     (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.J_K β) ∧
-    (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.Δ_K β) :=
-  ⟨ctx.claim_i_qou_internal_specialisation,
-   ctx.claim_ii_jones_specialisation,
-   ctx.claim_iii_alexander_specialisation⟩
+    (∀ β : ctx.Braid, ∃ c : ℝ, ctx.Vol_q_at_q0 β = c * ctx.Δ_K β) := by
+  refine ⟨ctx.claim_i_qou_internal_specialisation,
+    ctx.claim_ii_jones_specialisation,
+    ctx.claim_iii_alexander_specialisation⟩
 
 end QOU.BraidKnot

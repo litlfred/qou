@@ -1621,6 +1621,22 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'nuclear-groebner-reduction.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "b5de0e7409b9",
+          "ts": "2c2d948db319",
+          "lean": "a7eff43fe383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:56.319Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified nuclear-groebner-reduction.lean and QOU/Archimedean/NuclearGroebnerReduction.lean compile cleanly (exit 0); max_word_length_bound is proved and scope is documented in sibling stub."
       }
     ],
     "da-citation-misuse": [
@@ -1746,6 +1762,22 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'nuclear-groebner-reduction.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "b5de0e7409b9",
+          "ts": "2c2d948db319",
+          "lean": "a7eff43fe383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:56.345Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified bash scripts/lean-verify.sh exits 0 on both nuclear-interactions/nuclear-groebner-reduction.lean and lean/QOU/Archimedean/NuclearGroebnerReduction.lean."
       }
     ],
     "da-referee-verdict": [
@@ -1785,6 +1817,22 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'nuclear-groebner-reduction.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "b5de0e7409b9",
+          "ts": "2c2d948db319",
+          "lean": "a7eff43fe383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:56.373Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Referee re-audit pass: nuclear-groebner-reduction.lean and QOU/Archimedean/NuclearGroebnerReduction.lean compile cleanly (exit 0)."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2409,6 +2457,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:01.885Z",
+  "updated_at": "2026-11-19T17:22:56.373Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

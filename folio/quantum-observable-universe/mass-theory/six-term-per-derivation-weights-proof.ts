@@ -8,7 +8,9 @@ export default remark({
     engine: "python",
     script: "computations/chi_convention_audit.py",
     witness: [
-      "computations/codata-masses.witness.json"
+      "computations/codata-masses.witness.json",
+      "computations/chi-convention-audit.witness.json",
+      "computations/catalan-binding.witness.json",
     ],
     status: "verified",
   },

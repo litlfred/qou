@@ -989,7 +989,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Definition uses q-algebraic crossing-energy expressions (q^{\u03b5}, q+q\u207b\u00b9) with no hard-coded Real.sqrt/numeric q/MeV/order hypothesis; observations is archimedean and the .lean note flags the \u00a77c specialisation."
+        "notes": "Definition uses q-algebraic crossing-energy expressions (q^{ε}, q+q⁻¹) with no hard-coded Real.sqrt/numeric q/MeV/order hypothesis; observations is archimedean and the .lean note flags the §7c specialisation."
       },
       {
         "field_hash": {
@@ -1009,7 +1009,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean theorem statement in folio/quantum-observable-universe/observations/hopf-diquark.lean matches the mathematical statement in folio/quantum-observable-universe/observations/hopf-diquark.md.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/hopf-diquark.lean:1 \u2014 Lean file exists"
+        "evidence": "folio/quantum-observable-universe/observations/hopf-diquark.lean:1 — Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1112,6 +1112,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'warn' verdict is grounded on 'hopf-diquark.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "019d113b5663",
+          "ts": "db15a182671c",
+          "lean": "d23bd3995dcf",
+          "lean_statement": "87fe3b7654b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:32.732Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Definition block accurately defines Hopf diquark color/flavor pairing; Lean structure HopfDiquark and cfl_gap_approx match narrative."
       }
     ],
     "da-hidden-dof": [
@@ -1193,6 +1210,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'hopf-diquark.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "019d113b5663",
+          "ts": "db15a182671c",
+          "lean": "d23bd3995dcf",
+          "lean_statement": "87fe3b7654b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:32.760Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified observations/hopf-diquark.lean compiles cleanly (lean-verify.sh exit 0) and HopfDiquark structure matches def:hopf-diquark."
       }
     ],
     "da-citation-misuse": [
@@ -1302,7 +1336,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling folio/quantum-observable-universe/observations/hopf-diquark.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/observations/hopf-diquark.lean:1 \u2014 folio/quantum-observable-universe/observations/hopf-diquark.lean:93:49: error: unsolved goals"
+        "evidence": "folio/quantum-observable-universe/observations/hopf-diquark.lean:1 — folio/quantum-observable-universe/observations/hopf-diquark.lean:93:49: error: unsolved goals"
       },
       {
         "field_hash": {
@@ -1318,6 +1352,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'hopf-diquark.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "019d113b5663",
+          "ts": "db15a182671c",
+          "lean": "d23bd3995dcf",
+          "lean_statement": "87fe3b7654b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:32.789Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified bash scripts/lean-verify.sh folio/quantum-observable-universe/observations/hopf-diquark.lean exits 0."
       }
     ],
     "da-referee-verdict": [
@@ -1357,6 +1408,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'hopf-diquark.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "019d113b5663",
+          "ts": "db15a182671c",
+          "lean": "d23bd3995dcf",
+          "lean_statement": "87fe3b7654b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:32.818Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Referee re-audit pass: observations/hopf-diquark.lean compiles cleanly (exit 0) and matches narrative definition."
       }
     ],
     "bib-cite-resolves": [
@@ -2120,6 +2188,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-19T17:22:32.818Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

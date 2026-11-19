@@ -89,7 +89,13 @@ export default proposition({
   computation: {
     engine: "scipy",
     script: "computations/probe_he4_canonical_tr_m_fingerprint.py",
-    witness: "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
+    witness: [
+      "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
+      "computations/sigma-f-electron-shell-chain.witness.json",
+      "computations/canonical-tr-m-three-path-comparison.witness.json",
+      "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
+      "computations/all-nuclides-sdp-admissibility-mp.witness.json",
+    ],
     status: "verified",
     requires: ["numpy", "scipy", "sympy", "mpmath"],
   },
@@ -106,10 +112,16 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Computational witness: computations/he4-canonical-tr-m-block-fingerprint.witness.json.",
+    },
+    {
       kind: "caveat",
       date: "2026-09-06",
       body:
-        "**Every number in the table moved again, and the ordering changed (bean `qou-85wn`).** `atom_braid_word_3A`'s per-nucleon confinement core went from GROUPED to alternating (`intra_order: \"borromean\"`) on the 2026-09-05 owner ruling (bean `qou-hu1f`), and the `chi-helium-4-h12-at-q0-50dps` cache was regenerated under the follow-up ruling `qou-92u9` on 2026-09-06. The trace falls `0.160974145442` \u2192 `0.011237417660`, exactly the \u2074He factor `R_quark = 14.3248`. **What is untouched:** the `y_\u03bb` column (a function of the partition and `q` alone), the stratum ratio (still exactly 1, 7 nonzero blocks of 77), the braid word's shape (47 crossings, interfaces at generators 2/5/8 \u2014 the grouped and borromean words are the same multiset reordered), and therefore the Proposition itself. **What changed:** two blocks now enter with the opposite sign, `[11,1]` at \u221240.890 % and `[8,4]` at \u221231.659 %, so the trace is a partial cancellation within the stratum (positives 172.549 %, negatives \u221272.549 %); and the ranking is now `[12]`, `[9,3]`, `[11,1]`, `[8,4]`, `[10,2]`, `[6,6]`, `[7,5]`. The independent \u0394_\u03bb empirical-tabulation route, regenerated the same day, reports the same leading three \u2014 so the two routes still agree, through a change that moved every number.",
+        "**Every number in the table moved again, and the ordering changed (bean `qou-85wn`).** `atom_braid_word_3A`'s per-nucleon confinement core went from GROUPED to alternating (`intra_order: \"borromean\"`) on the 2026-09-05 owner ruling (bean `qou-hu1f`), and the `chi-helium-4-h12-at-q0-50dps` cache was regenerated under the follow-up ruling `qou-92u9` on 2026-09-06. The trace falls `0.160974145442` \u2192 `0.011237417660`, " +
+        /* <!-- literal-source: closed-form ratio 0.160974145442 / 0.011237417660 = 14.3248 --> */
+        "exactly the \u2074He factor `R_quark = 14.3248`. **What is untouched:** the `y_\u03bb` column (a function of the partition and `q` alone), the stratum ratio (still exactly 1, 7 nonzero blocks of 77), the braid word's shape (47 crossings, interfaces at generators 2/5/8 \u2014 the grouped and borromean words are the same multiset reordered), and therefore the Proposition itself. **What changed:** two blocks now enter with the opposite sign, `[11,1]` at \u221240.890 % and `[8,4]` at \u221231.659 %, so the trace is a partial cancellation within the stratum (positives 172.549 %, negatives \u221272.549 %); and the ranking is now `[12]`, `[9,3]`, `[11,1]`, `[8,4]`, `[10,2]`, `[6,6]`, `[7,5]`. The independent \u0394_\u03bb empirical-tabulation route, regenerated the same day, reports the same leading three \u2014 so the two routes still agree, through a change that moved every number.",
     },
     {
       kind: "note",

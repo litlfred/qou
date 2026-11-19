@@ -16,4 +16,4 @@ $$
 
 3. *The trace itself is **not** in general an element of $\widehat{\mathbb{Z}[q]}$. For $T_w = \sigma_1 \in H_2(q)$, $\mathrm{tr}_M(\sigma_1) = z$ satisfies $(1+q^{2})\,z = q^{3}$, and evaluating at $q = i$ (a ring map $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[i]$) would give $0 = -i$.*
 
-The primitive roots of unity populate $S^1$ densely, blocking any complex-analytic continuation across the boundary. The Habiro ring provides the algebraic substrate for the cleared numerator, not for the trace: the factor $(q^{2}+1)^{-(n-1)}$ has poles at $q = \pm i$, and only after removing it does evaluation at every root of unity make sense.
+The primitive roots of unity populate $S^1$ densely, blocking any complex-analytic continuation across the boundary. The Habiro ring provides the algebraic aether for the cleared numerator rather than for the trace itself: the factor $(q^{2}+1)^{-(n-1)}$ has poles at $q = \pm i$, and only after removing it does evaluation at every root of unity make sense.

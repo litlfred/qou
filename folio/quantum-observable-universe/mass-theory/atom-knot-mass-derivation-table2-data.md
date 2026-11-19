@@ -9,7 +9,7 @@
 | 2 (Markov trace symbolic) | the canonical formalism + the canonical formalism | ✓ for $n \leq 12$ |
 | 3 ($\nu_{\mathrm{SDP}}(Z, N)$ rule from Wedderburn multiplicity) | downstream of 1a — read off SDP solution multiplicity | ✗ |
 | 4 ($M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \in \mathbb{Q}(q)$) | algebraically trivial once 2 + 3 are in | partial |
-| 5 (Archimedean realization at $q_0$ + $m_e$) | MPFR via SymPy/exact algebraic structures | ✓ |
-| 6 (AME comparison) | mass-table-ppb witness + the canonical formalism | ✓ |
-| 7 (methodology tag) | [`methodology-deprecation.witness.json`](../../../computations/methodology-deprecation.witness.json) | ✓ |
+| 5 (Archimedean realization at $q_0$ + $m_e$) | Arbitrary-precision evaluation over exact algebraic forms | ✓ |
+| 6 (AME comparison) | Direct atomic mass evaluation comparison | ✓ |
+| 7 (methodology classification) | Provenance classification by derivation stage | ✓ |
 | 8 (post-Archimedean naming via volume conjecture) | borrowed; not in QOU derivation | ✓ as theorem |

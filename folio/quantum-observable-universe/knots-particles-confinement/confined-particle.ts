@@ -14,4 +14,14 @@ export default definition({
     "groebner-shirshov",
     "naming",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (\u00a77c).",
+    },
+  ],
 });

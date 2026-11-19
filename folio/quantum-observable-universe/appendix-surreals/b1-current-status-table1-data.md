@@ -13,7 +13,7 @@
 | **$\mathrm{Im}\,\mathrm{Li}_3(\zeta_5) = 4\pi^{3}/125$** | **theorem** | [imaginary trilogarithm](#prop:bring-trilog-imaginary-tate-rational) |
 | **$\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5) = -(12/25)\zeta(3)$** | **theorem** | [orbit-sum identity](#prop:cl3-zeta5-orbit-sum-identity) |
 | **Jones-faithfulness $\le$ 10 crossings** | **theorem** | [low-crossing faithfulness](#rem:jones-faithfulness-crossing-8) (HTW 1998) |
-| **chiral hyperbolic rows** ($5_2, 6_2, 6_3$) | **conditional theorem** — the per-knot VC leg is discharged; what remains open is the depth-3 Chern–Simons partner | [ohtsuki2016-52], [ohtsuki-yokota-6crossings]; depth-3 open |
+| **chiral hyperbolic rows** ($5_2, 6_2, 6_3$) | **conditional theorem** — the per-knot volume-conjecture leg is established, conditional on the depth-3 Chern–Simons partner | [ohtsuki2016-52], [ohtsuki-yokota-6crossings]; depth-3 conjectural |
 | **chiral hyperbolic rows** (beyond $6_3$) | **conditional theorem** modulo per-knot VC | open knot-by-knot |
 | **Cl_3(2π/5) − Cl_3(4π/5) closed form** | **open** — single real number $\approx$ 0.955 | reflection + multiplication formulas exhausted |
 | **Strong sharpness, depth 3 over $\mathbb{Q}(\zeta_5)$** | **conditional** on Goncharov $\zeta_5$ sub-case | [cyclotomic depth-3 reduction](#conj:qou-infra-discharges-goncharov-zeta5) (either route) |

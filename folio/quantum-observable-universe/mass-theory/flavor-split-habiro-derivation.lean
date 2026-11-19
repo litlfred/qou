@@ -137,4 +137,22 @@ theorem alternating_projection_weak_vertex
   subst h_def
   linear_combination h_inv
 
+/-- **Class-axiomatised bare nucleon flavour-split identification (`conj:flavor-split-habiro-derivation`, §3b-cond).**
+    Identifies the bare chiral braid-difference mass functional with `scale * (σ³ - σ⁻³)`. -/
+class FlavorSplitHabiroConjecture (R : Type*) [Ring R] (σ σ_inv h : R) where
+  h_central : ∀ x : R, h * x = x * h
+  hecke_quad : σ ^ 2 = h * σ + 1
+  left_inv : σ_inv * σ = 1
+  bareMassDiff : R
+  massScale : R
+  diff_eq_braid_cube : bareMassDiff = massScale * (σ ^ 3 - σ_inv ^ 3)
+
+/-- **Conditional theorem.** Under `[FlavorSplitHabiroConjecture R σ σ_inv h]`,
+    `bareMassDiff = massScale * (h * (h ^ 2 + 3))`. -/
+theorem bareMassDiff_eq_scalar_crossing {R : Type*} [Ring R] (σ σ_inv h : R)
+    [c : FlavorSplitHabiroConjecture R σ σ_inv h] :
+    c.bareMassDiff = c.massScale * (h * (h ^ 2 + 3)) := by
+  rw [c.diff_eq_braid_cube,
+    topological_flavor_split_of_central σ σ_inv h c.h_central c.hecke_quad c.left_inv]
+
 end QOU.FlavorSplit

@@ -22,6 +22,10 @@ export default proposition({
   authorNotes: [
     {
       kind: "note",
+      body: "Computational witness: computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json.",
+    },
+    {
+      kind: "note",
       body:
         "Provenance: the order-0 and order-1 coefficients were proved sorry-free in PR #1764 (`delta_tau_M_surrogate_vanish_at_one`, `delta_tau_M_surrogate_hasDerivAt_one`), and orders 2..7 in `delta_tau_M_surrogate_taylor_coeff_2`..`delta_tau_M_surrogate_taylor_coeff_7`. Kept in metadata (not scholarly prose) per AGENTS.md §4d; the audit trail is preserved without leaking PR refs into the rendered statement.",
     },

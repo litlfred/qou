@@ -41,4 +41,17 @@ export default proposition({
         "witness `docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json` is kept as a historical record.",
     },
   ],
+  computation: {
+    engine: "sympy",
+    script: "computations/delta_q_decoration.py",
+    witness: [
+      "computations/delta-q-decoration.witness.json",
+      "computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
+      "computations/sigma-f-electron-shell-chain.witness.json",
+      "computations/alpha-k-jones-markov-h4.witness.json",
+      "computations/keystone-qdeform-projector-shift.witness.json",
+      "computations/probes/binding-sum-c-vs-d-deut.witness.json",
+    ],
+    status: "verified",
+  },
 });

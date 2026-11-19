@@ -26,7 +26,7 @@ Substituting the channel sums yields the stated closed form.
 
 ## Numerical evaluation
 
-At the substrate parameter $q_0$:
+At the aether parameter $q_0$:
 
 $$
   Q({}^3\mathrm{H} \to {}^3\mathrm{He})

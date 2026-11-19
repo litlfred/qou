@@ -1,4 +1,4 @@
-**V_(2,1) Hoefsmit 2$\times$2 matrix derivation — partial closure.**
+**V_(2,1) Hoefsmit 2$\times$2 matrix derivation: partial closure.**
 
 $V_{(2,1)}$ provides the 2-dimensional Hoefsmit irrep of $H_3(q)$. Unlike
 $V_{(3)}$ and $V_{(1,1,1)}$ (1-d, scalar arithmetic), $V_{(2,1)}$ requires the
@@ -16,8 +16,8 @@ with $d_1 = -q^{-1}/(q^2+1)$, $d_2 = q^3/(q^2+1)$, $b^2 = d_1 d_2 + 1$.
 braid relation $\sigma_0 \sigma_1 \sigma_0 = \sigma_1 \sigma_0 \sigma_1$
 admits the unique diagonal assignment $(d_1, d_2)$ shown (up to the sign of $b$, and the degenerate
 $b = 0$). The transposed pair $(d_2, d_1)$ satisfies the Hecke quadratic relation, has the same
-trace $q - q^{-1}$ and determinant $-1$, and yields the same $b^2$ —
-all four of those quantities are **symmetric** in $d_1, d_2$ — yet fails
+trace $q - q^{-1}$ and determinant $-1$, and yields the same $b^2$ (as
+all four of those quantities are **symmetric** in $d_1, d_2$), yet fails
 the braid relation and therefore does not define a representation of $B_3$. At $q = 1$
 the representation reduces to the classical Young orthogonal matrix
 $s_2 = \begin{pmatrix} -1/2 & \sqrt3/2 \\ \sqrt3/2 & 1/2 \end{pmatrix}$

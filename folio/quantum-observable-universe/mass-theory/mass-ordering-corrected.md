@@ -16,7 +16,7 @@ $$
 $$
 
 This matches the experimental ordering
-$m_n \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$ MeV $> m_p \approx {{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV.
+$m_n \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV} > m_p \approx {{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$.
 
 The **negative signs** of both traces reflect the
 fermionic (antisymmetric) character of the nucleon — the

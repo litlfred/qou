@@ -13,7 +13,7 @@ Donaldson--Thomas / Kontsevich--Soibelman invariant of the $q$-difference
 structure, and $\mathcal{H}_{\mathrm{BPS}}(T[K])$ the space of BPS states whose
 graded dimension categorifies the $3$d index.
 
-For the general setting of the middle term: a BPS structure $(Z, \Gamma, \Omega)$ carries Donaldson--Thomas invariants $\Omega(\gamma)$, and to it is attached a Riemann--Hilbert problem \cite[\S2, \S4]{bridgeland2016}. For finite, uncoupled, integral BPS structures that problem has an explicit solution in products of gamma functions \cite[\S3.2]{bridgeland2016}. The knot BPS structures in this conjecture are not shown to be uncoupled, so that result is context, not a case of the conjecture. On the state-integral side, one-dimensional state integrals of products of Faddeev quantum dilogarithms, including those of $4_1$ and $5_2$, are finite sums of products of a $q$-series and a $\tilde q$-series, and the generating $q$-series is admissible in the sense of Kontsevich--Soibelman \cite[\S1.1, \S1.3--1.4]{garoufalidis2013}.
+For the general setting of the middle term: a BPS structure $(Z, \Gamma, \Omega)$ carries Donaldson--Thomas invariants $\Omega(\gamma)$, and to it is attached a Riemann--Hilbert problem \cite[\S2, \S4]{bridgeland2016}. For finite, uncoupled, integral BPS structures that problem has an explicit solution in products of gamma functions \cite[\S3.2]{bridgeland2016}. The knot BPS structures in this conjecture are not shown to be uncoupled, so that result serves as context rather than a case of the conjecture. On the state-integral side, one-dimensional state integrals of products of Faddeev quantum dilogarithms, including those of $4_1$ and $5_2$, are finite sums of products of a $q$-series and a $\tilde q$-series, and the generating $q$-series is admissible in the sense of Kontsevich--Soibelman \cite[\S1.1, \S1.3--1.4]{garoufalidis2013}.
 
 The first equality is
 [`garoufalidis-gu-marino2023peacock`] Conjecture 3(d) — *"the Stokes
@@ -39,7 +39,7 @@ hyperbolic knot is cusped and not plumbed, so the result does not reach the obje
 this conjecture quantifies over, and the Donaldson–Thomas to BPS identification below stays an assumption
 rather than a citation.
 
-### Which BPS sector — the non-degeneracy result
+### Non-degenerate BPS sector selection
 
 Two published knot-homology/BPS bridges live in the literature, and they identify
 **different** BPS spaces:
@@ -51,13 +51,13 @@ Two published knot-homology/BPS bridges live in the literature, and they identif
 
 The closed-sector entry is the $4_1$ Stokes integer of GGM eq. (60) (§3.1, *the
 $4_1$ knot when $u = 0$*). The integer $4$ that has been quoted beside it comes
-from GGM eqs. (96)/(98), which are **$5_2$ data** (§3.2), not $4_1$ data.
+from GGM eqs. (96)/(98), which are **$5_2$ data** (§3.2) rather than $4_1$ data.
 
 The **open**-HOMFLY count is fixed by the knots--quivers correspondence
 [`kucharski-reineke-stosic-sulkowski2017`]: the quiver of a knot has one node per
 HOMFLY-PT homology generator, so the $4_1$ open-BPS count is $\det(4_1) = 5$.
 
-That count is **read off a published quiver, not inferred from the determinant**.
+That count is **read off a published quiver rather than inferred from the determinant**.
 Singh et al. [`singh-physrevd108106023`] give the figure-eight explicitly, as a
 motivic sum over $d_1 + \cdots + d_5 = r$ with a symmetric $5 \times 5$ matrix
 $C_{4_1}$: five nodes, directly. The correspondence's rule --- node count equals
@@ -80,7 +80,7 @@ integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ holds unconditionally.
 
 The framework therefore adopts the **closed**-sector bridge, and $A_\omega = 3$ is made
 conditional on it downstream
-([aomega-fourone-dt-count theorem](#thm:aomega-fourone-dt-count)) — conditional for
+([figure-eight Stokes BPS/DT theorem](#thm:aomega-fourone-dt-count)) — conditional for
 every knot, $4_1$ included, since GGM's Conjecture 3(d) is not proved for $4_1$. It is *not* the open-HOMFLY bridge.
 
 ### Axiomatic formulation
@@ -93,4 +93,4 @@ The bridge is formulated as a hypothesis class carrying three integer invariants
 The fields are the conjecture's *inputs*; no field asserts a value of $A_\omega$.
 Any witness represents the conjecture holding; none is supplied (the general statement is
 open for every knot, $4_1$ included). Downstream results take the bridge hypothesis class as an explicit premise and hold conditionally modulo that assumption, following the same pattern as
-[kashaev-volume-conjecture conjecture](kashaev-volume-conjecture.md).
+[Kashaev volume conjecture](kashaev-volume-conjecture.md).

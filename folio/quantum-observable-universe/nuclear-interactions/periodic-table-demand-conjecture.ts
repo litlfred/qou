@@ -6,8 +6,8 @@ export default remark({
   title:
     "The valley of stability is the demand-minimizing locus in $(Z, N)$-space",
   lean: {
-    ref: "qou:QOU.PeriodicTableDemand.PeriodicTableDemand",
-    validation: "not_checked",
+    ref: "qou:QOU.Nuclear.PeriodicTableDemand",
+    validation: "leanok",
   },
   tags: [
     "periodic-table",

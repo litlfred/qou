@@ -31,7 +31,7 @@ Alkali metals ($|R| = 1$) contain one loose curl. The minimal crossing energy to
 
 Transition metals have partially filled $d$-sub-links. These have $\ell = 2$, Seifert genus $2$, and $10$ linking sites. For $|R_d|$ between $1$ and $9$, multiple open sites exist at similar crossing energies. This yields:
 - Variable oxidation states: Trefoils detach or share at similar energy costs.
-- Catalytic activity: Open $d$-sites temporarily Hopf-link to substrate trefoils.
+- Catalytic activity: Open $d$-sites temporarily Hopf-link to aether trefoils.
 - Magnetic behaviour: Unpaired trefoils carry uncompensated writhe, producing a net magnetic moment.
 
 **Conductivity.**

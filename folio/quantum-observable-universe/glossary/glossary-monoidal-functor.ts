@@ -6,10 +6,4 @@ export default remark({
   tags: ["glossary", "category-theory", "monoidal"],
   uses: ["rem:glossary-monoidal-category"],
   defines: ["monoidal-functor"],
-  authorNotes: [
-    {
-      kind: "note",
-      body: "Mathlib reference: `CategoryTheory.Functor.LaxMonoidal` (lax) and `CategoryTheory.Functor.Monoidal` (strong) in `Mathlib.CategoryTheory.Monoidal.Functor`.",
-    },
-  ],
 });

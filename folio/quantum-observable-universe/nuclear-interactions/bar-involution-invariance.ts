@@ -29,4 +29,10 @@ export default proposition({
     witness: "computations/audits/brundan-kleshchev-audit.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

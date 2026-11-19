@@ -7,8 +7,8 @@ survives the GB-filtration spectral sequence.
 [Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
 stratifies $H_n(R, q)$ by the curvature rank of **words**; that
 $e_\lambda$ carries a GB-depth $\mathrm{depth}(\lambda)$ indexed by the
-*partition* is a further identification, not stated there and assumed
-here.
+*partition* is a further identification assumed here beyond what is
+stated there.
 Granting it, the centre splits as $Z = \bigoplus_{k} Z_k$ with $Z_k$ the
 depth-$k$ direct summand. The block-restricted Frobenius integral
 $\int_{A_\lambda} = \int_A \circ\, e_\lambda$
@@ -32,7 +32,7 @@ $\mathfrak{m}^{(k)}$ uniformly.*
 
 **Chirality / non-chirality refinement.**
 
-*Per [prop:chirality-residue-mass-term](#prop:chirality-residue-mass-term),
+*Per [chirality/non-chirality mass split](#prop:chirality-residue-mass-term),
 the mass tower further splits along the signed-content predicate
 $c_\lambda = 0$ (chirality cells, where $D_q^2(\lambda) = 0$):*
 
@@ -45,7 +45,7 @@ $$
 $$
 
 *The chirality part is the gauge-invariant background contribution
-([rem:confinement-curvature-rank](#rem:confinement-curvature-rank));
+([curvature-rank confinement layer](#rem:confinement-curvature-rank));
 empirically it accounts for $\sim 3\%$ of the binding energy of $^4$He
 (the formal derivation witness) and dominates the deepest
 curvature-rank strata.*

@@ -34,8 +34,10 @@ export default remark({
   computation: {
     engine: "python",
     script: "computations/per_observable_100x_status.py",
-    witness:
+    witness: [
       "computations/per-observable-100x-status.witness.json",
+      "computations/probes/electroweak-bring-schwinger-bridge.witness.json",
+    ],
     status: "verified",
     requires: ["mpmath"],
   },

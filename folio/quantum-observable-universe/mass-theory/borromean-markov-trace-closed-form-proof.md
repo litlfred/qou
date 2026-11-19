@@ -52,11 +52,11 @@ The series is **purely even** in $h$ (the numerator and denominator
 are both even polynomials in $h$). The higher-order coefficients
 follow a geometric tail from the remainder term $16/(h^2 + 4)$.
 
-## The $h^2$ coefficient is exactly zero
+## The $h^2$ coefficient is exactly zero.
 
-The vanishing of the $h^2$ term is a **non-trivial cancellation**:
-the numerator HAS an $h^2$ coefficient ($+1$), but the denominator's
-$h^2$ coefficient ($+1$) cancels it exactly:
+The vanishing of the $h^2$ term is a **non-trivial cancellation**.
+The numerator carries an $h^2$ coefficient ($+1$), and the denominator's
+$h^2$ coefficient ($+1$) cancels it:
 
 $$
   \frac{4 + h^2 - 3h^4 - h^6}{4 + h^2}
@@ -65,8 +65,7 @@ $$
 $$
 
 The first non-trivial correction appears at $h^4$ with coefficient
-$-3/4$: the **first topological invariant** of the Borromean linking
-structure — the part of the Jones polynomial that distinguishes
+$-3/4$, furnishing the **first topological invariant** of Borromean linking that distinguishes
 $\mathcal{B}_3$ from the trivial 3-component unlink.
 
 ## Per-representation decomposition and exact $h^2$ budget
@@ -85,17 +84,16 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 >    $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
 >    $y_{(1^3)} = 0$ identically
 >    ([$H_3$ Markov Wenzl weights proposition](h3-markov-wenzl-weights.md));
-> 2. the **Wenzl-bridge / Ocneanu** normalisation (producer
->    `y-lambda-wenzl-bridge-symbolic-witness.json`, used by
->    the formal derivation), whose
+> 2. the **Wenzl-bridge / Ocneanu** normalisation, whose
 >    weights are all non-zero and whose trace value on
 >    $\beta_{\mathrm{Bor}}$ **differs** from the closed form above
+<!-- literal-source: closed-form three-row Ocneanu trace evaluation on beta_Bor at q = 1.3 -->
 >    (e.g. $0.91926$ vs $0.93917$ at $q = 1.3$; that witness
 >    records `lean_form_matches: false`).
 >
 > An earlier revision of this section tabulated the bridge-convention
 > budget $(5/128, -20/128, 15/128)$ without labelling the convention —
-> those numbers decompose the *bridge* trace, **not** the closed form
+> those numbers decompose the *bridge* trace rather than the closed form
 > above. Both budgets sum to zero (each trace separately has
 > $h^2 = 0$), which masked the mismatch.
 

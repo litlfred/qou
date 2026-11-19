@@ -18,4 +18,13 @@ export default remark({
     "def:categorical-q-connection",
     "ex:q-reeb-flow",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/pentagon_to_borromean_h4_probe.py",
+    witness: [
+      "computations/pentagon-to-borromean-h4-probe.witness.json",
+      "computations/q-pinning-50-digit.witness.json",
+    ],
+    status: "verified",
+  },
 });

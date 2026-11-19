@@ -24,9 +24,9 @@ $$
     \prod_{d \in P} f(d).
 $$
 
-**Specialisation to the atomic word.** For the canonical $A$-nucleon word, $n_{ud} = 2A$ — two per nucleon — and $P$ is the single colour-weighted p-n interface, at $d = -H_A(\tfrac12 - \tfrac{\delta}{4})$. The p-p interface is a plain $\sigma$ and the n-n a plain $\sigma^{-1}$, so exactly one letter lies outside the three colour-blind classes, independently of $A$. The count of averaged letters is therefore $n_{ud} + |P| = 2A + 1$.
+**Specialisation to the atomic word.** For the canonical $A$-nucleon word, $n_{ud} = 2A$ (two per nucleon) and $P$ is the single colour-weighted p-n interface, at $d = -H_A(\tfrac12 - \tfrac{\delta}{4})$. The p-p interface is a plain $\sigma$ and the n-n a plain $\sigma^{-1}$, so exactly one letter lies outside the three colour-blind classes, independently of $A$. The count of averaged letters is therefore $n_{ud} + |P| = 2A + 1$.
 
-**Colour-blind corollary.** If every letter of $P$ satisfies $d = -H_A/2$ — equivalently $\delta = 0$ — then $\prod_{d \in P} f(d) = \bigl(-(1 + H_A^2/4)\bigr)^{|P|}$ and the closed form collapses to
+**Colour-blind corollary.** If every letter of $P$ satisfies $d = -H_A/2$ (equivalently $\delta = 0$), then $\prod_{d \in P} f(d) = \bigl(-(1 + H_A^2/4)\bigr)^{|P|}$ and the closed form collapses to
 
 $$
 \chi_{\mathrm{sym}}(\beta)\,\chi_{\mathrm{alt}}(\beta)

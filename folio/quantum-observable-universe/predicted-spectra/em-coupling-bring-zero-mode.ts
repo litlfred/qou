@@ -11,7 +11,11 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script: "computations/q_pinning_50_digit.py",
-    witness: "computations/q-pinning-50-digit.witness.json",
+    witness: [
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/alpha-em-form-ladder.witness.json",
+      "computations/alpha-em-schwinger-ladder.witness.json",
+    ],
     status: "verified",
   },
   tags: [

@@ -6,7 +6,7 @@ $$
   \;=\; i \sin\theta .
 $$
 
-A crossing on $|q| = 1$ generates phase, not energy. The circle direction of $\mathbb{G}_m$ carries interference and transport—the electrodynamic, photonic sector. Real, positive crossing energy requires leaving the circle ($q \in \mathbb{R}$, $q > 1$). The two real points $\mu_2 = \{1, -1\}$, where the circle meets the real axis, are doubly degenerate. There, both the phase resolution and the mass scale vanish at once.
+A crossing on $|q| = 1$ generates phase rather than energy. The circle direction of $\mathbb{G}_m$ carries interference and transport—the electrodynamic, photonic sector. Real, positive crossing energy requires leaving the circle ($q \in \mathbb{R}$, $q > 1$). The two real points $\mu_2 = \{1, -1\}$, where the circle meets the real axis, are doubly degenerate. There, both the phase resolution and the mass scale vanish at once.
 
 The categorical Dirac operator realises the same split internally. Its deviation from the bare connection is the Reeb-direction coupling weighted by $(1 - q^{-1})$, which vanishes at $q = 1$ and is first order in $h = q - 1$. This is the same order at which the physically normalised gap opens. Mass is a first-order radial phenomenon on $\mathbb{G}_m$. Electrodynamics is the angular phase flow that survives on the circle.
 

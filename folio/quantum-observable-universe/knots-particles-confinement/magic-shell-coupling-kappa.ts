@@ -60,4 +60,15 @@ export default definition({
         "A separate open question was surfaced and deliberately **not** attached to this block: after the electrostatic correction, an excess-*independent* offset of order $0.2$ MeV survives at $A = 3$ that the H7a form does not exhibit at $A = 4$. That is a real unexplained baseline, but it is not $\\kappa$ and should not inherit this block's name.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probe_kappa_coulomb_reconciliation.py",
+    witness: [
+      "computations/kappa-coulomb-reconciliation.witness.json",
+      "computations/kappa-provenance.witness.json",
+      "computations/kappa-mirror-split-shell-test.witness.json",
+      "computations/sigma-f-electron-shell-chain.witness.json",
+    ],
+    status: "verified",
+  },
 });

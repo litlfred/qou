@@ -4,7 +4,7 @@ The energy $\mathfrak{E} = \mathfrak{m}\,c_q^2$ ([energy](#def:mass-energy)) and
 The causal boundary arises from the $q$-connection decomposition $A_q = q^{-1}A + \hbar_q\iota_\xi A\varTheta$. The boundary at $|Z| = c_q$ in the contact affine coordinate ([contact affine chart](#def:contact-affine-chart)) is the locus where horizontal spatial diffusion matches vertical Reeb advance. Outside this cone, the Lieb--Robinson bound enforces exponential suppression of correlations. Causality follows directly from the ratio of spatial to temporal information flow.
 
 **2. The speed of light varies with $q$.**
-The speed of light $c_q = 1/(q-1)$ depends on the substrate parameter. At the Big Bang ($q \to \infty$), $c \to 0$. As the universe classicalises ($q \to 1$), $c \to \infty$. At the present epoch $q = q_0$, $c \approx 9.093$ in Reeb units.
+The speed of light $c_q = 1/(q-1)$ depends on the aether parameter. At the Big Bang ($q \to \infty$), $c \to 0$. As the universe classicalises ($q \to 1$), $c \to \infty$. At the present epoch $q = q_0$, $c \approx 9.093$ in Reeb units.
 
 **3. The Margolus--Levitin bound and $c_q$.**
 The Margolus--Levitin theorem bounds the operation rate by $2\mathfrak{E}/\pi\hbar$. With the energy $\mathfrak{E} = \mathfrak{m}\,c_q^2 = \mathfrak{m}/(q-1)^2$ and the operation count $n_R(q) = 1/\hbar_q$, the bound takes the form:
@@ -38,4 +38,4 @@ $$
 $$
 
 **7. Summary.**
-Every classical information bound above descends from two substrate quantities: the causal cone $|Z| = c_q$ with $c_q = 1/(q-1)$, and the per-operation fibre-entropy ceiling $\eta_q = (2q - 1)/q^3$. The cone fixes the Lieb--Robinson / information-causality light cone and the $q$-dependent speed of light; the entropy ceiling caps the Margolus--Levitin operation rate, the Bremermann bandwidth $\mathfrak{B}(q)$, and the Bekenstein entropy. Causality, processing rate, and entropy are thus one $q$-parametrised family.
+Every classical information bound above descends from two aether quantities: the causal cone $|Z| = c_q$ with $c_q = 1/(q-1)$, and the per-operation fibre-entropy ceiling $\eta_q = (2q - 1)/q^3$. The cone fixes the Lieb--Robinson / information-causality light cone and the $q$-dependent speed of light; the entropy ceiling caps the Margolus--Levitin operation rate, the Bremermann bandwidth $\mathfrak{B}(q)$, and the Bekenstein entropy. Causality, processing rate, and entropy are thus one $q$-parametrised family.

@@ -27,10 +27,10 @@ $$
 
 The binding energy $\mathfrak{E}_{\mathrm{bind}}$ originates from the Borromean linking. Because the individual quark masses $\mathfrak{m}(\mathfrak{u})$ and $\mathfrak{m}(\mathfrak{d})$ are small, the binding energy dominates. The mass of the proton arises overwhelmingly from topological complexity.
 
-The binding energy follows from the crossing energy of the linking braid word $\beta_{\mathrm{Bor}} \in B_3$. The Borromean link admits the braid representation $\beta_{\mathrm{Bor}} = (\sigma_0^{-1}\sigma_1)^3$. This geometry yields mutual crossings that ensure $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$. At the substrate parameter $q \approx 1.110$, this evaluates to:
+The binding energy follows from the crossing energy of the linking braid word $\beta_{\mathrm{Bor}} \in B_3$. The Borromean link admits the braid representation $\beta_{\mathrm{Bor}} = (\sigma_0^{-1}\sigma_1)^3$. This geometry yields mutual crossings that ensure $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$. At the aether parameter $q \approx 1.110$, this evaluates to:
 
 $$
-  \mathfrak{m}_{\mathfrak{p}}(q) \approx {{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV} \text{MeV}.
+  \mathfrak{m}_{\mathfrak{p}}(q) \approx {{ qou.library.codata-2022.proton-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}.
 $$
 
 **Stability of the proton.**

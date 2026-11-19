@@ -12,4 +12,4 @@ two copies of the irreducible $4$-dimensional $S_5$ representation $W$ ([prolong
 | **modulus** of that plane $=$ SL$_2$ trace $\tau = 2\cosh\theta$ | CAL-2 $q_0$ ([$\mathfrak{sl}_2$ prolongation recurrence proposition](#prop:sl2-prolongation-recurrence)) | cosh / bar-even |
 | **scale** of the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson sector | CAL-3 $m_\pi$ | orthogonal class |
 
-The rank-2 $W$-Hodge plane carries a scale and a modulus. The meson sector, having no geometric scale derivable from $(m_e, q_0)$ due to its zero hyperbolic volume, contributes an orthogonal scale. The count $2 + 1 = 3$ matches the three calibrations. These form the choice of units forced at the substrate-to-archimedean wall.
+The rank-2 $W$-Hodge plane carries a scale and a modulus. The meson sector, having no geometric scale derivable from $(m_e, q_0)$ due to its zero hyperbolic volume, contributes an orthogonal scale. The count $2 + 1 = 3$ matches the three calibrations. These form the choice of units forced at the aether-to-archimedean wall.

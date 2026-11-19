@@ -6,4 +6,10 @@ export default remark({
   interprets: "prop:q-beta-c3-hopf-three-fold-markov",
   tags: ["q-beta", "c3", "hopf-link", "markov-closure", "jones"],
   uses: ["prop:q-beta-c3-hopf-three-fold-markov"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/c3_hopf_habiro_analysis.py",
+    witness: "computations/c3-hopf-habiro-analysis.witness.json",
+    status: "verified",
+  },
 });

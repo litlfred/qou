@@ -29,4 +29,10 @@ export default conjecture({
   cites: [
     "alford1999",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/m_p_borromean_verification_50dps.py",
+    witness: "computations/m-p-borromean-verification-50dps.witness.json",
+    status: "verified",
+  },
 });

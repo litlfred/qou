@@ -1,7 +1,7 @@
 The motivic-Galois layer on the obstruction $\kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m)$ acts via a single character of the cyclotomic Galois group: the **motivic Galois character of the Frobenius–Hopf aether**.
 
 **Definition.**
-Let $A$ be the Frobenius–Hopf aether of a quantum observable universe. Let $[A] \in \widehat{\mathcal{M}}$ be its motivic class ([motivic substrate](#def:motivic-substrate)). The **motivic Galois character of $A$** is the homomorphism
+Let $A$ be the Frobenius–Hopf aether of a quantum observable universe. Let $[A] \in \widehat{\mathcal{M}}$ be its motivic class ([motivic aether](#def:motivic-substrate)). The **motivic Galois character of $A$** is the homomorphism
 $$
   \chi^{\mathrm{mot}}_A
   \;\colon\;
@@ -9,7 +9,7 @@ $$
   \;\longrightarrow\;
   \mathrm{Aut}_{\widehat{\mathcal{M}}}\bigl([A]\bigr).
 $$
-This encodes the action of the cyclotomic Galois group on the realization tower $\{\rho_p\}_{p \in \mathrm{Pl}(\mathbb{Q})}$ ([adelic substrate](#def:adelic-substrate)) of $[A]$. At each finite place $p$, the local component
+This encodes the action of the cyclotomic Galois group on the realization tower $\{\rho_p\}_{p \in \mathrm{Pl}(\mathbb{Q})}$ ([adelic aether](#def:adelic-substrate)) of $[A]$. At each finite place $p$, the local component
 $$
   \chi^{\mathrm{mot}}_{A,\,p}
   \;\colon\;
@@ -22,4 +22,4 @@ is the Frobenius character on the cyclotomic projection $\rho_p \colon \widehat{
 **Choice of level.**
 Working directly with $\chi^{\mathrm{mot}}_A$ replaces per-level Čech-cocycle non-vanishing arguments with a single non-vanishing theorem about the character ([motivic perpetual obstruction](#thm:motivic-perpetual-obstruction), proved via Route A: prime-ideal collapse, $C = a_0(-1) + 2 \cdot a_1(-1)$). The Čech-cocycle and Hochschild presentations of $\kappa_n$ become realizations of $\chi^{\mathrm{mot}}_A$ at the archimedean and Hochschild-deformation places. The [Hochschild–Kummer](#rem:hochschild-kummer-connection) duality corresponds to the duality between these two realizations.
 
-Conditional on the motivic substrate, the character $\chi^{\mathrm{mot}}_A$ is defined and is compatible with each local realization $\rho_p$.
+Conditional on the motivic aether, the character $\chi^{\mathrm{mot}}_A$ is defined and is compatible with each local realization $\rho_p$.

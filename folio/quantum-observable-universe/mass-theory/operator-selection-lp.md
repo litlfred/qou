@@ -92,7 +92,7 @@ $$
 $$
 
 The inequality form $y_0 + \sum_i G_{ij} y_i \le t_j$ is the dual of the
-program with $x \ge 0$, not of this one. Because $G_{1j} = t_j$ for
+program with $x \ge 0$ rather than of this program. Because $G_{1j} = t_j$ for
 $b_1 = 1$, the point $y_0 = 0$, $y = e_1$, $w = 0$ is dual-feasible with
 value $0$, which matches the primal optimum above.
 

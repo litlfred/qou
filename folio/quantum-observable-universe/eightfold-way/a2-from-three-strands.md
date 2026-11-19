@@ -6,10 +6,10 @@ throughout this chapter.*
 > $W(A_2) \cong S_3$ acting on the three *strands*, and it holds **by
 > construction**: the braid group on $n$ strands has Coxeter type
 > $A_{n-1}$, so $n = 3$ puts $A_2$ here by definition. Nothing about the
-> substrate is derived from it. In particular this is **not** the
+> aether is derived from it. In particular this is **not** the
 > $A_2 = \mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)_{\mathrm{f}}$, which is the
 > Schur--Weyl partner acting on the fibre $V$ and requires $\dim V = 3$
-> ([Proposition](#prop:schur-weyl-eightfold), where the framework
+> ([eightfold-way multiplets via quantum Schur--Weyl duality](#prop:schur-weyl-eightfold), where the framework
 > supplies $\dim V = 2$). Items 1--3 below are the standard
 > braid/Coxeter dictionary, recorded for reference; item 4 and the
 > weight-lattice paragraph are what the chapter actually uses.
@@ -43,7 +43,7 @@ the presentation; it is not an independent derivation of the Cartan data.*
 
 4. *At $q = 1$ (the classical limit), $H_3(q)$ reduces to the group
    algebra $\mathbb{C}[S_3]$, and the $A_2$ root system is the standard
-   one.  For $q \neq 1$ (the substrate-deformed case), the root system
+   one.  For $q \neq 1$ (the aether-deformed case), the root system
    acquires a $q$-deformed inner product: the quantum Killing form
    $\langle \alpha_i, \alpha_j \rangle_q = [a_{ij}]_q$, where
    $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ is the $q$-integer.*

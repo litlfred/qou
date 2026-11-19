@@ -16,4 +16,13 @@ export default remark({
     "borromean",
     "braid-word",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/catalan_binding.py",
+    witness: [
+      "computations/catalan-binding.witness.json",
+      "computations/q-pinning-50-digit.witness.json",
+    ],
+    status: "verified",
+  },
 });

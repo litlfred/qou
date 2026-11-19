@@ -33,7 +33,9 @@ export default proposition({
     engine: "python+mpmath",
     script: "computations/qbeta/qbeta_cos_resummation_d_probe.py",
     witness: [
-      "computations/qbeta/qbeta-cos-resummation-d.witness.json"
+      "computations/qbeta/qbeta-cos-resummation-d.witness.json",
+      "computations/qbeta/qbeta-convention-d-c4-quartic-derivation.witness.json",
+      "computations/qbeta/qbeta-route5-ellipticity-target-retired-base.witness.json",
     ],
     status: "experimental",
   },

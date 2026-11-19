@@ -58,4 +58,10 @@ export default conjecture({
         "assuming it) is the open work, bean `qou-5lib`.",
     },
 ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/sigma_f_electron_shell_chain.py",
+    witness: "computations/sigma-f-electron-shell-chain.witness.json",
+    status: "verified",
+  },
 });

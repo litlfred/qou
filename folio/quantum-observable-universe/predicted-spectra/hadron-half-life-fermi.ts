@@ -9,4 +9,10 @@ export default remark({
   label: "rem:hadron-half-life-fermi",
   title: "Fermi-constant relation, $q$-dependence, and parameter count",
   uses: ["prop:hadron-half-life", "prop:em-coupling-projection"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/nuclear_wave3_periodic_table_synthesis_probe.py",
+    witness: "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
+    status: "verified",
+  },
 });

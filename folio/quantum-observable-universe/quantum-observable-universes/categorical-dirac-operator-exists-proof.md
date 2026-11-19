@@ -5,7 +5,7 @@ connection data.  $\iota_\xi \colon \Omega^1(A) \to A$ is the
 interior product with the Reeb derivation, a morphism in
 $\mathbf{C}$.  Composing $\nabla \circ \iota_\xi$ with $\nabla$
 gives the vertical component $\iota_\xi \nabla \colon A \to \Omega^1(A)$.
-The scalars $q^{-1}$ and $(1 - q^{-1})$ act via the substrate
+The scalars $q^{-1}$ and $(1 - q^{-1})$ act via the aether
 parameter, and $R$-linear combinations of morphisms exist in any
 $R$-linear category.  The composite $\mathcal{D}_\nabla$ is
 therefore a morphism.

@@ -19,6 +19,6 @@ $$
 \end{aligned}
 $$
 
-Every term evaluates uniquely from the canonical braid word and substrate parameter. The formulation strictly enforces the Markov trace invariance across all observables. The breakdown identifies exactly the origin of isospin and parity violations. 
+Every term evaluates uniquely from the canonical braid word and aether parameter. The formulation strictly enforces the Markov trace invariance across all observables. The breakdown identifies exactly the origin of isospin and parity violations. 
 
-Term 1 carries the core topological invariant. Terms 2 and 3 evaluate the specific knot's processing cost on the substrate. Term 4 captures the universal vacuum representation overhead. Term 5 measures the chirality of the knot, separating particles from antiparticles. Term 6 adds the higher-stratum cyclotomic poles.
+Term 1 carries the core topological invariant. Terms 2 and 3 evaluate the specific knot's processing cost on the aether. Term 4 captures the universal vacuum representation overhead. Term 5 measures the chirality of the knot, separating particles from antiparticles. Term 6 adds the higher-stratum cyclotomic poles.

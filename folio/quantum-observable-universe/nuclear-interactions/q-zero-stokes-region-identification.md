@@ -1,5 +1,5 @@
 **Conjecture (Stokes region identification).**
-*The substrate parameter $q_0$ admits a canonical identification with a specific point on the geometric component of the character variety $X(\mathcal{B}_3)$, realized via two dual perspectives that coincide by the AJ-conjecture machinery:*
+*The aether parameter $q_0$ admits a canonical identification with a specific point on the geometric component of the character variety $X(\mathcal{B}_3)$, realized via two dual perspectives that coincide by the AJ-conjecture machinery:*
 
 *(a) **Analytic / Stokes side**: $q_0$ is the parameter value at which the Stokes region of the colored-Jones generating function $G_K(x; q) = \sum J_N(K; q) \cdot x^N$ transitions between dilog-asymptotic regimes.*
 *(b) **Algebraic / Hom-functor side**: $q_0$ is the image under the archimedean realisation of a specific $\underline{\mathrm{Hom}}_{\mathbf{C}}$-evaluation in the framework's brane-tower category $\mathbf{C}$ over $\mathbb{Z}[q, q^{\pm 1}]$.*

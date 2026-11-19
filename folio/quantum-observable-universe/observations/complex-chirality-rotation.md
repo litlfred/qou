@@ -1,4 +1,4 @@
-Let $q = |q|e^{i\theta}$ be a complex substrate parameter with $|q| > 1$ and $\theta \in (-\pi, \pi]$ ([complex substrate interpretation](#rem:complex-substrate-interpretation)).
+Let $q = |q|e^{i\theta}$ be a complex aether parameter with $|q| > 1$ and $\theta \in (-\pi, \pi]$ ([complex aether interpretation](#rem:complex-substrate-interpretation)).
 
 **Conjecture.**
 In the pre-observable sector (before the dagger positive-definiteness axiom), the phase $\theta$ controls the particle-antiparticle distinction:

@@ -3,7 +3,7 @@ octet.  Unlike the decuplet, its weight diagram is degenerate --- and that
 degeneracy is the one piece of eightfold-way structure in this chapter which
 constrains rather than describes.*
 
-Conditional on $N = 3$ ([Proposition](#prop:schur-weyl-eightfold)), the
+Conditional on $N = 3$ ([eightfold-way multiplets via quantum Schur--Weyl duality](#prop:schur-weyl-eightfold)), the
 three-fold product decomposes as
 
 $$
@@ -15,7 +15,7 @@ $$
 $$
 
 The two octets are one flavour irrep counted with the multiplicity
-$\dim S^{(2,1)} = 2$ of its Hecke partner, not two different multiplets.  The
+$\dim S^{(2,1)} = 2$ of its Hecke partner rather than two different multiplets.  The
 decuplet is treated in [the preceding
 proposition](#prop:borromean-decuplet); the octet is the subject here.
 
@@ -50,7 +50,7 @@ for no mechanism.  This one is different:
 - The decuplet's ten weights are pairwise distinct; the octet's eight are not,
   with exactly one collision, at the origin.
 - Hence **no** function of the weight alone can separate $\Lambda$ from
-  $\Sigma^0$.  The statement holds for an arbitrary target, not for
+  $\Sigma^0$.  The statement holds for an arbitrary target beyond
   real-valued masses alone.  Any mass formula built
   from $(2I_3, Y)$ predicts $\mathfrak{m}_\Lambda = \mathfrak{m}_{\Sigma^0}$.
 
@@ -62,7 +62,7 @@ The class is excluded outright.
 This is a scope-(b) structural exclusion, and the invariant justifying it is
 proved rather than asserted: non-injectivity of the weight map on the octet.
 The obligation it creates falls on every framework, this one included --- a
-label beyond $(2I_3, Y)$ must be supplied.  Physically that label is isospin,
+label beyond $(2I_3, Y)$ must be supplied.  In the baryon spectrum that label is total isospin $I$,
 which is demonstrably not a function of the weight.  The decuplet incurs no such obligation,
 which is precisely why its
 equal-spacing rule runs on $Y$ alone while Gell-Mann--Okubo needs the isospin
@@ -79,13 +79,13 @@ it.  It does not: the channel arithmetic and the
 degeneracy count are recorded separately for that
 reason.
 
-## What the framework supplies
+## Framework scope and single-fibre obstruction
 
 The decomposition above, and everything drawn from it, is conditional on
 $N = 3$.  The framework's single-fibre construction gives $\dim V = 2$, at
 which the Schur--Weyl row cap removes the singlet entirely and there is no
 octet to carry a weight diagram --- a proved obstruction, not an approximation
-([Proposition](#prop:schur-weyl-eightfold)).  No construction here supplies
+([eightfold-way multiplets via quantum Schur--Weyl duality](#prop:schur-weyl-eightfold)).  No construction here supplies
 $N = 3$.
 
 Nothing on this page is fitted and nothing is wired to any computation; the

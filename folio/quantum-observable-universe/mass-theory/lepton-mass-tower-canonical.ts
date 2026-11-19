@@ -7,7 +7,7 @@ export default conjecture({
     validation: "not_checked",
   },
   title:
-    "Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\\mathfrak{m}(K_\\ell) = m_e \\cdot \\mathcal{F}_\\ell(q)$ for each lepton $\\ell \\in \\{\\mathfrak{e}, \\mu, \\tau\\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\\ell$'s braid representative, **without** invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.",
+    "Canonical operator-level lepton-mass-tower formula: there exists a categorical formula $\\mathfrak{m}(K_\\ell) = m_e \\cdot \\mathcal{F}_\\ell(q)$ for each lepton $\\ell \\in \\{\\mathfrak{e}, \\mu, \\tau\\}$ expressed as a per-braid Markov-trace-weighted sum over $K_\\ell$'s braid representative, **without** invoking the superseded scalar aether density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.",
   uses: [
     "prop:rho-k-graded-expansion",
     "prop:per-braid-mass-tower",

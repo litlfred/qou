@@ -25,4 +25,13 @@ export default remark({
       body: "Witnesses moved from prose: `meson-nucleon-nf.witness.json`, `beta-decay-energy-scale.witness.json`, and `confinement-operator-selection.witness.json`.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/confinement-operator-selection.witness.json",
+      "computations/qbeta/qbeta-three-nucleon-nf-alpha-spread.witness.json",
+    ],
+    status: "verified",
+  },
 });

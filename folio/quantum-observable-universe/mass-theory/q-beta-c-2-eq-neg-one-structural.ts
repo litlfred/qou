@@ -18,8 +18,10 @@ export default proposition({
     engine: "sympy",
     script:
       "computations/qbeta/qbeta_symbolic_chain_alpha_b.py",
-    witness:
+    witness: [
       "computations/qbeta/qbeta-symbolic-chain-alpha-b.witness.json",
+      "computations/qbeta/qbeta-delta-element-fork-pricing.witness.json",
+    ],
     status: "failed",
     // status was "verified" until 2026-08-23; the cited witness's own
     // `allPassed` is false (alpha_q0_matches_probe_n3_witness). Per ComputationStatus,

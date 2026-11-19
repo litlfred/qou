@@ -47,7 +47,7 @@ $$
    \approx  4.155 \text{MeV}.
 $$
 
-**Open finding.** Both the geometric tower form and the bounded symmetric $\mathrm{Li}_2^q$ candidate move the framework prediction further from the calibrated values at the substrate level. The correct closure is a non-obvious resummation identity that the conjecture seeks.
+**Open finding.** Both the geometric tower form and the bounded symmetric $\mathrm{Li}_2^q$ candidate move the framework prediction further from the calibrated values at the aether level. The correct closure is a non-obvious resummation identity that the conjecture seeks.
 
 ## NF$_+$ / NF$_-$ decomposition
 

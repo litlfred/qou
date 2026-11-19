@@ -25,4 +25,10 @@ export default remark({
     "jacobson1995",
     "bekenstein1981",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/chirality_avg_content_atomic.py",
+    witness: "computations/chirality-avg-content-atomic.witness.json",
+    status: "verified",
+  },
 });

@@ -40,4 +40,10 @@ export default remark({
       see: "docs/audits/2026-07-25-planck-step-atomicity-formalization.md",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/binding_heat_kernel_canonical_time_probe.py",
+    witness: "computations/binding-heat-kernel-canonical-time.witness.json",
+    status: "verified",
+  },
 });

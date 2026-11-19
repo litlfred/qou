@@ -41,7 +41,7 @@ $$
 Here $\mathcal{F}_i^{\mathrm{self}}$ derives strictly from the geometry of filament $\varrho_i$ (the writhe contribution), while $\mathcal{F}_{ij}^{\mathrm{mutual}}$ originates from the relative position of filaments $\varrho_i$ and $\varrho_j$ (the linking contribution).
 
 **Categorical interpretation.**
-The [braid--fluid correspondence](#rem:braid-fluid) maps the fundamental group $\pi_1(\mathcal{M}_{j,K})$ to a quotient of the braid group $B_n$. Traversing a closed loop in moduli space — enacting an adiabatic exchange of two vortex filaments — integrates the Berry phase
+The [braid--fluid correspondence](#rem:braid-fluid) maps the fundamental group $\pi_1(\mathcal{M}_{j,K})$ to a quotient of the braid group $B_n$. Traversing a closed loop in moduli space (enacting an adiabatic exchange of two vortex filaments) integrates the Berry phase
 
 $$
   \Phi_{\mathrm{Berry}}(\sigma_i)
@@ -59,7 +59,7 @@ $$
   \quad(\text{antisymmetric channel}),
 $$
 
-assuming $q = e^{i\pi/\kappa}$ acts as a root of unity. The differential $\Phi_+ - \Phi_- = 2\pi/\kappa - \pi$ yields the **statistical angle** — the exact phase distinguishing bosonic from fermionic exchange.
+assuming $q = e^{i\pi/\kappa}$ acts as a root of unity. The differential $\Phi_+ - \Phi_- = 2\pi/\kappa - \pi$ yields the **statistical angle**, the exact phase distinguishing bosonic from fermionic exchange.
 
 **Connection to helicity.**
 The total Berry phase accumulated by a vortex tangle $L$ executing a closed loop in moduli space equals the [categorical helicity](#prop:helicity-conservation) $\mathcal{H}_q$ of the tangle:
@@ -70,7 +70,7 @@ $$
   2\pi\mathcal{H}_q[L] \pmod{2\pi}.
 $$
 
-This equation maps helicity — a hydrodynamic invariant — directly to a quantum-mechanical phase, completing the structural triad:
+This equation maps helicity (a hydrodynamic invariant) directly to a quantum-mechanical phase, completing the structural triad:
 
 $$
   \text{Knot topology (Jones polynomial)}
@@ -81,4 +81,4 @@ $$
 $$
 
 **Anyonic statistics.**
-For generic $q$ (not a root of unity), the Berry phase $\Phi_{\mathrm{Berry}}(\sigma_i)$ resolves to an irrational multiple of $\pi$. The vortex filaments behave as **anyons** — functioning as neither strict bosons nor strict fermions. At a root of unity $q = e^{i\pi/\kappa}$ with $\kappa \in \mathbb{Z}$, the representations of $B_n$ factor through the Iwahori--Hecke algebra $H_n(q)$ and the statistics lock to rational values. The physical anchor $q \approx 1.110$ remains distinct from a root of unity, but its offset from $q = 1$ (the bosonic pole) is small: $\Phi_+ \approx 0.03\pi$. This generates the spin-statistics connection observed near the classical limit — particles behave as "nearly bosonic" or "nearly fermionic" depending on which R-matrix eigenvalue dominates, and the $q \to 1$ collapse snaps the statistics definitively to $0$ or $\pi$.
+For generic $q$ (not a root of unity), the Berry phase $\Phi_{\mathrm{Berry}}(\sigma_i)$ resolves to an irrational multiple of $\pi$. The vortex filaments behave as **anyons**, functioning as neither strict bosons nor strict fermions. At a root of unity $q = e^{i\pi/\kappa}$ with $\kappa \in \mathbb{Z}$, the representations of $B_n$ factor through the Iwahori--Hecke algebra $H_n(q)$ and the statistics lock to rational values. The physical anchor $q \approx 1.110$ remains distinct from a root of unity, but its offset from $q = 1$ (the bosonic pole) is small: $\Phi_+ \approx 0.03\pi$. This generates the spin-statistics connection observed near the classical limit: particles behave as "nearly bosonic" or "nearly fermionic" depending on which R-matrix eigenvalue dominates, and the $q \to 1$ collapse snaps the statistics definitively to $0$ or $\pi$.

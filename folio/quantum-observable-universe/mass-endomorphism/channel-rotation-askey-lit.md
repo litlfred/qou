@@ -21,7 +21,7 @@ The shared recurrence does not imply a shared spectral measure. The asymmetry re
 | measure | $q$-Plancherel weight (determinate) | indeterminate moment problem |
 | at $q_0 > 1$ | does not exist archimedeanly | native regime |
 
-At the substrate anchor $q_0 > 1$, the even channel has no Bożejko–Speicher $q$-Fock realisation ([$q$-Gaussian obstruction at $q_0$](../mass-theory/q-gaussian-obstruction-at-q0.md)); its moment sequence is still positive definite, but no representing measure has a finite moment-generating function. The rotation is therefore irreducibly fibre-level, consistent with observable $\mathrm{Im}(q_0) = 0$. Measure asymmetry explains why parity projection left the binding error unchanged while the recurrence tie holds. A three-term recurrence is measure-independent, whereas a projection is not.
+At the aether anchor $q_0 > 1$, the even channel has no Bożejko–Speicher $q$-Fock realisation ([$q$-Gaussian obstruction at $q_0$](../mass-theory/q-gaussian-obstruction-at-q0.md)); its moment sequence is still positive definite, but no representing measure has a finite moment-generating function. The rotation is therefore irreducibly fibre-level, consistent with observable $\mathrm{Im}(q_0) = 0$. Measure asymmetry explains why parity projection left the binding error unchanged while the recurrence tie holds. A three-term recurrence is measure-independent, whereas a projection is not.
 
 ## Literature precedents
 

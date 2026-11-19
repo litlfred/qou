@@ -2,7 +2,7 @@
 
 *At the classical limit $q = 1$, the Kashiwara crystal of $H_n(q)$ ([crystal isospin degeneracy](#prop:crystal-isospin-degeneracy), at $q \to 0$) **decategorifies** to the Lusztig canonical basis of the group algebra $\mathbb{Z}[S_n]$. The Kazhdan–Lusztig basis polynomials $\{P_{y, w}(q)\}$ are the structure constants of this decategorification. At $q = 1$, they reduce to integer multiplicities of canonical-basis elements.*
 
-*Combined with the $q \to 0$ Kashiwara limit and the $q \to \infty$ [reverse-crystal limit](reverse-limit-q-to-infinity.md), this completes the limit-duality picture for $H_n(q)$:*
+*Combined with the $q \to 0$ Kashiwara limit and the $q \to \infty$ [reverse-crystal limit](#conj:reverse-limit-q-to-infinity), this completes the limit-duality picture for $H_n(q)$:*
 
 $$
   \begin{array}{c}
@@ -12,7 +12,7 @@ $$
     \\
     q = 1 \text{ (Lusztig canonical basis, this conjecture)} \\
     \updownarrow \text{ specialise} \\
-    q = q_0 \text{ (substrate, framework production)} \\
+    q = q_0 \text{ (aether parameter)} \\
   \end{array}
 $$
 
@@ -21,7 +21,7 @@ $$
 | Limit | Categorical structure |
 |-------|----------------------|
 | $q = 1$ (classical) | Lusztig canonical basis / KL polynomials (this conjecture) |
-| $q = q_0$ (substrate $\approx$ 1.11) | full Hecke algebra |
+| $q = q_0$ (aether $\approx$ 1.11) | full Hecke algebra |
 | $q \to 0$ (Kashiwara) | crystal basis / 0-Hecke |
 | $q \to \infty$ (reverse) | bar-image of Kashiwara |
 

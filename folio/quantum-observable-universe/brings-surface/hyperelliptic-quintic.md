@@ -21,4 +21,4 @@ $$
 
 Thus $\mathcal{X}_5$ is a **hyperelliptic** Riemann surface of genus $2$ in the Bolza family \cite{bolza1887}. Its hyperelliptic involution is $\iota \colon (x, y) \mapsto (x, -y)$.
 
-**Relation to Bring's surface.** The coordinate $x$ on $\mathcal{X}_5$ is a $\mathbb{Z}_5$-equivariant observable. It identifies with the first Lagrange resolvent $w_1$ of [prop:lagrange-resolvent-transform](#prop:lagrange-resolvent-transform), restricted to the cyclic subgroup $\mathbb{Z}_5 \subset S_5$ of [Bring's surface](#def:brings-surface). Under this identification, the five branch points $\zeta_5^k$ are the cyclic images of a single $\mathbb{Z}_5$-orbit.
+**Relation to Bring's surface.** The coordinate $x$ on $\mathcal{X}_5$ is a $\mathbb{Z}_5$-equivariant observable. It identifies with the first Lagrange resolvent $w_1$ of [discrete Fourier transform diagonalises $C_5$ on the Bring's surface](#prop:lagrange-resolvent-transform), restricted to the cyclic subgroup $\mathbb{Z}_5 \subset S_5$ of [Bring's surface](#def:brings-surface). Under this identification, the five branch points $\zeta_5^k$ are the cyclic images of a single $\mathbb{Z}_5$-orbit.

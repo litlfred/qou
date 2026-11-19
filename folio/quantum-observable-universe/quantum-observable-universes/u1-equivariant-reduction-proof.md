@@ -1,6 +1,6 @@
 *Proof sketch.*
 Using the spherical parametrisation of
-[def:exceptional-divisor](#def:exceptional-divisor), the
+[exceptional divisor at $p$](#def:exceptional-divisor), the
 $\mathrm{U}(1)$ action is $\psi \mapsto \psi + \alpha$, leaving $\phi$
 fixed.  Quotienting by $\psi$ identifies orbits with $\phi \in [0,\pi]$;
 the two fixed points $\phi = 0, \pi$ (the poles) collapse the $\psi$
@@ -18,4 +18,4 @@ $\mathrm{U}(1)$-invariant observable algebra, which reduces to
 functions on $S^1$ modulo the two polar fixed points.  The physical
 interpretation of this $S^1$ as the single $\mathrm{U}(1)$ phase
 tube is recorded in
-[rem:u1-phase-tube](#rem:u1-phase-tube).
+the single $\mathrm{U}(1)$ phase tube.

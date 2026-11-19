@@ -112,7 +112,7 @@ const SKIP_DIRS = new Set([
   ".git",
   "_deprecated",
 ]);
-const SCRIPT_REL = "content/pipeline/lean-vacuity-axiom-audit.ts";
+const SCRIPT_REL = "folio/pipeline/lean-vacuity-axiom-audit.ts";
 
 // Lake package prefix → lakeRoot (inlined to stay free of the migrated
 // `folio-assistant/cat-harness/schemas/lean-packages.ts`).
@@ -3728,6 +3728,12 @@ function main() {
       // useful (it still resolves stale entries INSIDE what it looked at) and
       // can no longer touch what it did not look at.
       const scannedRel = new Set(files.map((f) => relative(REPO_ROOT, f)));
+      const scannedDirs = scanRoots
+        .map((r) => relative(REPO_ROOT, resolve(REPO_ROOT, r)))
+        .filter((rel) => {
+          const abs = resolve(REPO_ROOT, rel);
+          return existsSync(abs) && statSync(abs).isDirectory();
+        });
       let foreign = 0;
       let unscanned = 0;
       for (const k of Object.keys(led.entries)) {
@@ -3737,7 +3743,12 @@ function main() {
           foreign++;
           continue; // another tool's entry — not ours to resolve or delete
         }
-        if (!scannedRel.has(k.slice(0, k.indexOf("::")))) {
+        const fileRel = k.slice(0, k.indexOf("::"));
+        const fileExists = existsSync(resolve(REPO_ROOT, fileRel));
+        const underScannedDir = scannedDirs.some(
+          (d) => d === "" || fileRel === d || fileRel.startsWith(d + "/"),
+        );
+        if (!scannedRel.has(fileRel) && (fileExists || !underScannedDir)) {
           unscanned++;
           continue; // this run never opened that file — absence is not evidence
         }

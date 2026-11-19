@@ -7,7 +7,7 @@ $$
 
 *So two of the three root branches collide on the arc.*
 
-## What this refutes
+## Refuted discriminant-factorisation ansatz
 
 The transport argument had recorded a sub-gap as closed on the grounds that
 
@@ -20,9 +20,9 @@ the same constant. **Both are false.**
 The $0.348$ was a *grid* minimum from an $\approx 360$-point scan of $[0,\pi]$.
 The dip is narrow — $|\mathrm{disc}'| \approx 87$ near the zero — so refining the
 scan gives $0.068$, then $0.0068$, then $0$. A minimum over samples is a bound on
-the samples, not on the function.
+the samples rather than on the function.
 
-## Why the refutation is short
+## Conciseness of the specialization check
 
 It needs no analysis of the branches at all. Three ingredients:
 

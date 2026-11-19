@@ -1,4 +1,4 @@
-*For substrate parameter $q > 1$, the down-up splitting satisfies the two-sided bound:*
+*For aether parameter $q > 1$, the down-up splitting satisfies the two-sided bound:*
 
 $$
   0 \;<\; \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}
@@ -7,4 +7,4 @@ $$
 
 *where $\hbar_q = (q - 1)/q$, $h_q = q - q^{-1}$, and $[2]_q = q + q^{-1}$.*
 
-Bounding the difference rather than the individual masses isolates the substrate-derivable quantity from the CODATA-anchored mean.
+Bounding the difference rather than the individual masses isolates the aether-derivable quantity from the CODATA-anchored mean.

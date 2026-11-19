@@ -20,4 +20,10 @@ export default remark({
     "thm:generation-completeness",
     "rem:knot-exhaustiveness",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: ["computations/q-pinning-50-digit.witness.json"],
+    status: "verified",
+  },
 });

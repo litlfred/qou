@@ -1,6 +1,6 @@
 ## Approach: from base $M$ to fibre $\mathcal{S}_p$
 
-In the QOU archimedean tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$, the base manifold $M$ carries the smooth metric in which two free vortices propagate. As the vortex cores approach a brane point $p \in M$, the smooth metric becomes degenerate. The base coordinate ratio $z = \sqrt{q} - 1/\sqrt{q}$ drives the exceptional divisor $\mathcal{S}_p$ ([state bundle fibre](#def:exceptional-divisor)) into the foreground. "Below Planck scale" in QOU is a **categorical** statement, not a metric one. The relevant geometry switches from the base $M$ to the fibre $\mathcal{S}_p$, where the morphisms are knot operators ([knot-operator energy](#def:knot-operator-energy)).
+In the QOU archimedean tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$, the base manifold $M$ carries the smooth metric in which two free vortices propagate. As the vortex cores approach a brane point $p \in M$, the smooth metric becomes degenerate. The base coordinate ratio $z = \sqrt{q} - 1/\sqrt{q}$ drives the exceptional divisor $\mathcal{S}_p$ ([state bundle fibre](#def:exceptional-divisor)) into the foreground. "Below Planck scale" in QOU is a **categorical** statement rather than a metric one. The relevant geometry switches from the base $M$ to the fibre $\mathcal{S}_p$, where the morphisms are knot operators ([knot-operator energy](#def:knot-operator-energy)).
 
 The encounter unfolds in three moments:
 

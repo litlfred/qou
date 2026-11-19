@@ -27,6 +27,6 @@ The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus $2$. It is chir
 The muon and antimuon share the same torus knot type but are distinguished by chirality.
 
 **Summary: the unfolding.**
-See [Table 2](#tbl:jet-planck-steps-table2-data).
+See [the jet-order generation summary table](#tbl:jet-planck-steps-table2-data).
 
 The universe unfolds through successive jet approximations. The crossing number $c(K)$ is the computational cost in Planck steps. A universe at step $n$ can resolve knots with $c \leq n$ but not those with $c > n$.

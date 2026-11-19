@@ -11,7 +11,7 @@ requires the quantum-torus relation $uv = q\,vu$ on its operator arguments. The 
 
 At a fixed jet level $n$, the traced volumes $\hat V_i^{(n)}
 \in \mathbb{Z}[q^{\pm 1/2}, z]$ are **scalar Laurent polynomials**
-([def:algebraic-quantum-volume](#def:algebraic-quantum-volume)).
+([algebraic quantum volume](#def:algebraic-quantum-volume)).
 Two scalars commute, so
 
 $$
@@ -21,13 +21,13 @@ $$
 $$
 
 without any $q$-factor. This is the level-internal lemma
-[vhat-pair-commutation-trace lemma](#lem:vhat-pair-commutation-trace); it
+[traced-volume pair commutation](#lem:vhat-pair-commutation-trace); it
 settles the level-internal half of the commutation question.
 
 ## Between adjacent jet levels — the pentagon q-factor
 
 The brane tower
-([def:recursive-brane-tower](../lifting-and-descent/recursive-brane-tower.md))
+([recursive brane tower](../lifting-and-descent/recursive-brane-tower.md))
 admits a non-commutative quantization in which the level-shift
 operator $\hat\tau_n$ supplies the canonical pair $u, v$
 satisfying $uv = q\,vu$. Specifically, let $\widehat U_i$ and
@@ -50,7 +50,7 @@ $\Phi_q(v)\,\Phi_q(u) = \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)$
 applies to the operator lift $u = \widehat U_i$, $v = \widehat
 V_j$ at adjacent jet levels $n, n+1$, and supplies the
 *inter-level ascension rule* for the jet-tower mass formula
-([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower)):
+([jet-brane mass-tower formulation](#rem:mass-endomorphism-jet-tower)):
 
 a triple product at jet level $n$ rewrites via pentagon as a
 pair plus a singleton at level $n$, leaving a residual
@@ -83,7 +83,7 @@ ascension.
 ## Significance for the mass tower
 
 The mass-tower jet form
-([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower))
+([jet-brane mass-tower formulation](#rem:mass-endomorphism-jet-tower))
 
 $$
   \mathfrak{m} \;=\; |\mathrm{tr}_M(W)|
@@ -99,5 +99,5 @@ triples** appear at any level — every triple at level $n$ is
 absorbed into a pair plus singleton at level $n$ plus a
 residual that lives at level $n+1$. Iterating gives the jet
 ascension; the geometric tail bound from
-[jet-tower-convergence proposition](#prop:jet-tower-convergence)
+[brane-tower geometric tail bound](#prop:jet-tower-convergence)
 controls $R_N$.

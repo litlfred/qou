@@ -10,7 +10,7 @@ $$
   \tag{C}
 $$
 
-The nuclear stability condition ([beta-stability](#prop:beta-stability)), under the substitution $t = A^{1/3}$, yields:
+The nuclear stability condition ([beta-stability line](#prop:beta-stability)), under the substitution $t = A^{1/3}$, yields:
 
 $$
   t^3 - cpt^2 - 2p = 0,
@@ -104,16 +104,16 @@ so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \maps
 
 **Physical interpretation.**
 
-If the conjecture holds:
+Under this conjecture, four correspondences hold.
 
-- The **three color tubes** $(r, g, b)$ of the color fibration correspond to the **three sectors** of nuclear binding: volume (strong), Coulomb (electromagnetic), and Pauli (exclusion).
-- The **elliptic fiber** $\mathcal{E}_z$ at spacetime $z$ encodes the allowed baryon configurations at that point; the **stability elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes the allowed nuclear configurations at that proton count.
-- The **isogeny** $\varphi$ connects them, representing the passage from single-baryon color structure to multi-baryon nuclear structure — the same passage that takes the proton ([proton](#def:categorical-proton)) from a color-linked triple to a nucleus ([stable nucleus](#def:stable-nucleus)).
-- The **stability pairs** act as the integer points of $\mathcal{E}_p$ — the $(p, A) \in \mathcal{E}_p(\mathbb{Z})$ where the even-even/odd-odd degeneracy falls on a lattice point.
+* **Three color tubes** $(r, g, b)$ of the color fibration correspond to the **three sectors** of nuclear binding: volume (strong), Coulomb (electromagnetic), and Pauli (exclusion).
+* **Elliptic fibers** $\mathcal{E}_z$ at spacetime $z$ encode allowed baryon configurations, whereas the **stability elliptic curve** $\mathcal{E}_p$ at proton number $p$ encodes allowed nuclear configurations.
+* **Isogeny** $\varphi$ connects single-baryon color structure ([proton](#def:categorical-proton)) to multi-baryon nuclear structure ([stable nucleus](#def:stable-nucleus)).
+* **Stability pairs** act as the integer points $(p, A) \in \mathcal{E}_p(\mathbb{Z})$ where the even-even/odd-odd degeneracy falls on a lattice point.
 
 **Computational evidence.**
 
-The color elliptic curve ([Descartes elliptic curve](#prop:descartes-elliptic-curve)) at the substrate parameter $q_0$ is:
+The color elliptic curve ([Descartes elliptic curve](#prop:descartes-elliptic-curve)) at the aether parameter $q_0$ is:
 
 $$
   \mathcal{E}_q  :  y^2 = x^3 + 0.7087x + 0.8056,
@@ -137,12 +137,12 @@ This curve is rational: $p = t^3/(2 + ct^2)$. For each mass number $A \in \mathb
 
 The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point enumeration. Whether the pairing energy lifts this curve to the genus-$1$ elliptic curve $\mathcal{E}_q$ — and whether the stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$ then acquire an interpretation as integer points of $\mathcal{E}_p$ — remains an open question. The structural parallel between the stability cubic and the color cubic (identical algebraic origin in the Bring's surface) is unproven, and the coefficient matching above agrees in the quadratic coefficient only, with the constant term agreeing at $p \approx 736.8$, outside the nuclear chart.
 
-**Established results:**
+**Established results.**
 
-- The stable nuclei represent lattice points on the stability cubic (exact, from the Skein binding Lagrangian).
-- The Descartes elliptic curve $\mathcal{E}_q$ exists and carries the stated invariants (exact, from the color fibration).
-- Under $X = t$ at $z = -(cp+1)$, the color cubic and the stability cubic share their quadratic coefficient; their linear coefficients never agree (exact, by the table above).
-- No substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at real $z$, since $J_C > 0 > J_S$.
-- The golden ratio degeneration at $q = 1/\varphi^2$ holds (exact, from the $(s^2 + s - 1)$ factor).
+* The stable nuclei represent lattice points on the stability cubic (exact, from the Skein binding Lagrangian).
+* The Descartes elliptic curve $\mathcal{E}_q$ exists and carries the stated invariants (exact, from the color fibration).
+* Under $X = t$ at $z = -(cp+1)$, the color cubic and the stability cubic share their quadratic coefficient; their linear coefficients never agree (exact, by the table above).
+* No substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at real $z$, since $J_C > 0 > J_S$.
+* The golden ratio degeneration at $q = 1/\varphi^2$ holds (exact, from the $(s^2 + s - 1)$ factor).
 
 The full numerical computation is carried out at 100-digit precision.

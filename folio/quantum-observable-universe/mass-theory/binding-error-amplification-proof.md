@@ -2,7 +2,7 @@
 M_{\mathrm{atom}}(1+\delta)) - (M_{\mathrm{free}} - M_{\mathrm{atom}}) =
 -\delta\,M_{\mathrm{atom}}$. Dividing by $B$ gives
 $-\delta\,M_{\mathrm{atom}}/B = -\delta\,(M_{\mathrm{atom}}/B)$. The
-identity is purely algebraic — it holds over any field and assumes nothing
+identity is purely algebraic: it holds over any field and assumes nothing
 about the q-deformation, the calibration inputs, or the knot assignment.
 $\qquad\blacksquare$
 
@@ -17,9 +17,9 @@ defect of two large, nearly equal masses. For the light nuclei
 | ${}^3\mathrm{He}$ | $\approx 2808.4$ | $\approx 7.718$ | $\approx 364$ |
 | ${}^4\mathrm{He}$ | $\approx 3727.4$ | $\approx 28.296$ | $\approx 132$ |
 
-A bound-state mass predicted to $0.1\%$ — already a demanding target for the
+A bound-state mass predicted to $0.1\%$ (already a demanding target for the
 per-knot mass formula
-[$\mathfrak{m}(K) = \mathfrak{m}_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$](#conj:binding-scale-catalan) —
+[$\mathfrak{m}(K) = \mathfrak{m}_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$](#conj:binding-scale-catalan))
 therefore yields a binding energy wrong by tens of percent
 ($0.1\% \times 843 \approx 84\%$ for the deuteron). The amplification is
 worst for the lightest, most weakly bound nuclei.
@@ -36,6 +36,6 @@ This also explains why computing binding as a difference of two large
 Markov traces $\mathrm{tr}_M(W_{\mathrm{free}}) - \mathrm{tr}_M(W_{\mathrm{atom}})$
 is canonical hostile: it subjects the small binding signal to the same
 catastrophic cancellation, so any systematic in the trace is magnified by
-$\mathcal{A}$. Forming the difference object *before* evaluating — so that
+$\mathcal{A}$. Forming the difference object *before* evaluating (so that
 binding is computed as a single quantity rather than a cancellation of two
-large ones — is the structural way to avoid the amplification.
+large ones) is the structural way to avoid the amplification.

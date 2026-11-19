@@ -10,9 +10,9 @@ Here $\delta$ is the Temperley--Lieb loop weight, the balanced quantum integer $
 
 Two features of the statement matter more than its difficulty.
 
-First, the hypothesis is *only* $q \neq 1$. No calibration input enters, and no parameter is available to adjust: the conclusion is forced by the substrate being a genuine deformation rather than the classical point. Writing $q = e^{\lambda}$ gives $\Delta = \cosh \lambda$, so the inequality is the statement that a real deformation parameter cannot produce $|\Delta| < 1$.
+First, the hypothesis is *only* $q \neq 1$. No calibration input enters, and no parameter is available to adjust: the conclusion is forced by the aether being a genuine deformation rather than the classical point. Writing $q = e^{\lambda}$ gives $\Delta = \cosh \lambda$, so the inequality is the statement that a real deformation parameter cannot produce $|\Delta| < 1$.
 
-Second, the value $\Delta = 1$ is a phase boundary rather than an arbitrary threshold. The regime $\Delta > 1$ is the massive, Ising-like phase of the chain; the regime $|\Delta| < 1$ is the massless phase, reached only on $|q| = 1$. The contrapositive is recorded alongside the proposition: an anisotropy at or below unity forces $q = 1$, so the massless phase is unreachable from a real substrate parameter.
+Second, the value $\Delta = 1$ is a phase boundary rather than an arbitrary threshold. The regime $\Delta > 1$ is the massive, Ising-like phase of the chain; the regime $|\Delta| < 1$ is the massless phase, reached only on $|q| = 1$. The contrapositive is recorded alongside the proposition: an anisotropy at or below unity forces $q = 1$, so the massless phase is unreachable from a real aether parameter.
 
 ## Algebraic decomposition
 

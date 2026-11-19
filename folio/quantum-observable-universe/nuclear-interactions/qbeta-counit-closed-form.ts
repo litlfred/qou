@@ -82,4 +82,15 @@ export default proposition({
         "because it is not stated in either bean.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/qbeta/qbeta_delta_element_fork_pricing_probe.py",
+    witness: [
+      "computations/qbeta/qbeta-delta-element-fork-pricing.witness.json",
+      "computations/qbeta/qbeta-delta-net-four-values.witness.json",
+      "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json",
+      "computations/qbeta/qbeta-delta-candidate-census.witness.json",
+    ],
+    status: "verified",
+  },
 });

@@ -30,6 +30,4 @@ $$
   [k]_q = \frac{q^k - q^{-k}}{q - q^{-1}},
 $$
 
-first satisfied at $A = 5$ for all $q > 1$; at the substrate $q_0$ the Skein-polynomial sign flip occurs at $A = 6$ (one step later, because the $(2,2)$ shell closure stabilises $A = 4$). Shell closures at the magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$ re-stabilise $P > 0$, extending the physical nuclear chart to $A \sim 300$ ([shell closure](#prop:shell-closure-normal-form)).
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.
+first satisfied at $A = 5$ for all $q > 1$; at the aether $q_0$ the Skein-polynomial sign flip occurs at $A = 6$ (one step later, because the $(2,2)$ shell closure stabilises $A = 4$). Shell closures at the magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$ re-stabilise $P > 0$, extending the physical nuclear chart to $A \sim 300$ ([shell closure](#prop:shell-closure-normal-form)).

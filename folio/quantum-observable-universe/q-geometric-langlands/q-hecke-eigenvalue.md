@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$. Let $\mathcal{M}$ be a $q$-Hecke eigensheaf on $\mathrm{Bun}_{G_q}(X)$ ([q-Hecke eigensheaf](#def:q-hecke-eigensheaf)). Its eigenvalue $\mathcal{L}_q \in \mathrm{LocSys}_{\check{G}_q}(X)$ is uniquely determined by the action of $\tau$ on the Hecke eigenvalue data:
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with aether parameter $q$. Let $\mathcal{M}$ be a $q$-Hecke eigensheaf on $\mathrm{Bun}_{G_q}(X)$ ([q-Hecke eigensheaf](#def:q-hecke-eigensheaf)). Its eigenvalue $\mathcal{L}_q \in \mathrm{LocSys}_{\check{G}_q}(X)$ is uniquely determined by the action of $\tau$ on the Hecke eigenvalue data:
 
 $$
   \mathcal{L}_q \simeq

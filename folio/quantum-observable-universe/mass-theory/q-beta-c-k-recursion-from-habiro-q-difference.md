@@ -1,4 +1,4 @@
-*Let $F(q) \in \mathbb{Z}[q, q^{-1}]^\wedge$ be a fibre-level Habiro element associated to the operator-valued $T_\beta$ selection ([t-beta-markov-frobenius-collapse proposition](t-beta-markov-frobenius-collapse.md)). Let $F(q)$ satisfy a $q$-difference equation of depth $d$:*
+*Let $F(q) \in \mathbb{Z}[q, q^{-1}]^\wedge$ be a fibre-level Habiro element associated to the operator-valued $T_\beta$ selection ([minimum-Frobenius-norm $T_\beta$ collapse](t-beta-markov-frobenius-collapse.md)). Let $F(q)$ satisfy a $q$-difference equation of depth $d$:*
 
 $$
 F(q\xi) \;=\; R(q,\xi)\cdot F(\xi), \qquad R(q,\xi) \in \mathbb{Q}(q)[\xi, \xi^{-1}] \text{ of degree} \le d.
@@ -26,4 +26,4 @@ $$Z_q(t) = \sum_{\lambda \in \Lambda} d_\lambda(q) \cdot \exp_q(-\mu_\lambda(q) 
 
 The $q$-difference equation for $F(q)$ derives from the depth-1 Jackson equations of each mode. The net partition function satisfies a $q$-difference equation of depth $|\Lambda|$. The $c_k$ coefficients are extracted at $q_0$.
 
-At the fibre level, $Z_q$ is a Hahn--Exton q-Bessel function. The coefficients $c_k$ obey the q-Bessel second-order q-difference equation. This identification applies at the fibre level only. Archimedean closure of $c_3$ via a substrate-fixed q-Bessel is refuted. The q-Bessel object lives in the brane-tower limit.
+At the fibre level, $Z_q$ is a Hahn--Exton q-Bessel function. The coefficients $c_k$ obey the q-Bessel second-order q-difference equation. This identification applies at the fibre level only. Archimedean closure of $c_3$ via an aether-fixed q-Bessel is refuted. The q-Bessel object lives in the brane-tower limit.

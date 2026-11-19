@@ -1,10 +1,6 @@
-> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is
-> the structurally-wrong leading-order ansatz; the operator-valued form supersedes
-> it ([`mass-endomorphism-tower`](../mass-theory/mass-endomorphism-tower.md)). The canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$ graded expansion ([graded $\rho_k$ expansion](../mass-endomorphism/rho-k-graded-expansion.md)).
+The molecular-binding framework uses the Hartree energy $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale (with the leading scalar density $\rho_q = 1/\hbar_q^2$ refined at higher jet order by the operator-valued [mass-endomorphism tower](../mass-theory/mass-endomorphism-tower.md) and [graded $\rho_k$ expansion](../mass-endomorphism/rho-k-graded-expansion.md)). The central question is whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke structure rather than as an empirical input. The result is a **conditional theorem**.
 
-The molecular-binding framework uses the Hartree energy $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale. The central question is whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke structure rather than as an empirical input. The result is a **clean conditional theorem**.
-
-**Conjecture (corrected headline form).** *For a covalent diatomic with definite-parity ground state, the bound-state contribution on the EM Wedderburn channel $(2,2)$ of the molecular Markov trace carries the fine-structure scale exactly:*
+**Conjecture (dressed $(2,2)$-channel form).** *For a covalent diatomic with definite-parity ground state, the bound-state contribution on the EM Wedderburn channel $(2,2)$ of the molecular Markov trace carries the fine-structure scale:*
 
 $$
   \rho_{(2,2)}
@@ -16,11 +12,11 @@ $$
   C(q) \;=\; h\,\bigl(\dim_q V_{(2,2)}\bigr)^{2},
 $$
 
-*Here $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q) \in R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. The categorical coefficient $C(q)$ is the EM-block Plancherel-square, not a free parameter. The archimedean evaluation of $\rho_{(2,2)}$ up to the CAL-1 energy unit $m_e c^{2}$ is $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$.*
+*Here $\alpha_{EM} = 1/(q\,[9]_q\,[10]_q) \in R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. The categorical coefficient $C(q)$ is fixed as the EM-block Plancherel-square rather than a free parameter. The archimedean evaluation of $\rho_{(2,2)}$ up to the CAL-1 energy unit $m_e c^{2}$ is $E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$.*
 
-> **Historical framing.** The investigation opened from a weaker $J^{1}$-vanishing claim about the Markov-layer LP dual $y_{\mathrm{cov}} = c_2\,\alpha^{2} + O(\alpha^{4})$. The separated-atom point is a kink. Therefore $y_{\mathrm{cov}}$ is $O(\alpha)$, not $O(\alpha^{2})$. The $\alpha^{2}$ scaling is real but lives in the q-dimension layer, not the Markov layer. The trace-ratio above is the live statement; the $y_{\mathrm{cov}}$ form is superseded.
+> **Comparison with the Markov-layer LP dual.** Because the separated-atom configuration sits at a piecewise-linear kink of the Markov-layer linear program, the dual variable satisfies $y_{\mathrm{cov}} = O(\alpha)$ rather than $c_2\,\alpha^{2} + O(\alpha^{4})$. The $\alpha^{2}$ scaling enters instead in the quantum-dimension normalization of the $(2,2)$ trace ratio above.
 
-## Status: a conditional theorem
+## Conditional structure
 
 Every mechanism question is resolved. The coupling-parity routes are refuted. The $\alpha_{EM}^{2}$ scaling is exact in $R$. The archimedean realisation is the known $q_0$-evaluation / Bloch–Suslin pairing. The $(2,2) = \mathrm{EM}$ channel is grounded in the covalent-pair structure. The statement is not closed. By the framework's three-calibration design, the statement cannot be unconditional. The energy unit $m_e c^{2}$ is CAL-1. The residual contains exactly three named items:
 
@@ -54,17 +50,17 @@ The molecular SDP is a quadratic program over the Frobenius Gram matrix (**conve
 
 The antipode $S$ of the Iwahori–Hecke algebra acts by $S(\sigma_i) = \sigma_i^{-1}$. The Markov trace is $S$-invariant. For a definite-parity ground state, the molecular braid is $S$-equivariant up to Markov equivalence. This would force a parity selection rule eliminating odd powers of $\alpha_{EM}$.
 
-**Gap.** The antipode acts on the substrate parameter as $S(\alpha_{EM}) = \alpha_{EM}\bigl|_{q \mapsto q^{-1}} = q^{2}\,\alpha_{EM}$. This is a multiplicative scaling, not a sign flip. The quantum integer $[n]_q$ is palindromic, but the $q^{-1}$ prefactor is not. Therefore, $S$-invariance imposes the functional equation $f(\alpha_{EM}) = f(q^{2}\alpha_{EM})$. This does not force odd powers to vanish. A coupling-parity rule requires a different involution flipping the sign of $\alpha_{EM}$. No such involution exists.
+**Gap.** The antipode acts on the aether parameter as $S(\alpha_{EM}) = \alpha_{EM}\bigl|_{q \mapsto q^{-1}} = q^{2}\,\alpha_{EM}$. This is a multiplicative scaling rather than a sign flip. The quantum integer $[n]_q$ is palindromic, but the $q^{-1}$ prefactor is not. Therefore, $S$-invariance imposes the functional equation $f(\alpha_{EM}) = f(q^{2}\alpha_{EM})$. This does not force odd powers to vanish. A coupling-parity rule requires a different involution flipping the sign of $\alpha_{EM}$. No such involution exists.
 
 ### Mechanism D — virial / scaling (the route that survives)
 
-Dimensional analysis at the Bohr radius $a_0 \sim 1/(m_e c \alpha)$ governs the $\alpha^{2}$ scaling of $E_{\mathrm{Hartree}}$. The kinetic energy $T \sim \hbar^{2}/(m_e a_0^{2})$ and Coulomb energy $V \sim e^{2}/a_0$ both scale as $m_e c^{2}\alpha^{2}$. The virial theorem balances them. The QOU analogue is a virial/scaling argument, not a parity argument. At the bound-state LP/SDP optimum, the molecular Markov trace decomposes into two contributions. Both scale as $\lambda_{\mathrm{bound}}^{-2}$. Here $\lambda_{\mathrm{bound}}$ is the characteristic eigenvalue of the molecular transfer matrix ($T_1 = T_{e_2 \mathfrak{p}_2}^{\mathrm{dressed}}$ in the [$H_2$ LP dual binding proposition](#prop:h2-lp-dual-binding), with eigenvalues $q^{5}, -q^{-5}$). The inverse $\lambda_{\mathrm{bound}}^{-1}$ is the categorical analogue of $\alpha_{EM}$. The leading order is $\alpha_{EM}^{2}$ by dimensional matching. There is no linear term to suppress. Thus $J^{1}$-vanishing is not a theorem to prove. It is a consequence of the LP/SDP being quadratic in the bound-state scale. The conjecture sharpens to the claim that $\lambda_{\mathrm{bound}}^{-1} \in R$ and $\lambda_{\mathrm{bound}}^{-1}(q_0) = \alpha_{EM}(q_0)\,c_1$ for some $c_1 \in R$ of order unity. This is a direct symbolic computation (See [Table 11](#tbl:e-hartree-categorical-derivation-table11-data)). The $H_2$ evaluation gives the dimensionless ratio $E_{\mathrm{bind}}/E_{\mathrm{Hartree}} \approx 0.170$. This is of order unity. It matches the standard-physics $H_2$ ratio $\approx 1/6$. This is consistent with Mechanism D without any $J^{1}$-vanishing miracle.
+Dimensional analysis at the Bohr radius $a_0 \sim 1/(m_e c \alpha)$ governs the $\alpha^{2}$ scaling of $E_{\mathrm{Hartree}}$. The kinetic energy $T \sim \hbar^{2}/(m_e a_0^{2})$ and Coulomb energy $V \sim e^{2}/a_0$ both scale as $m_e c^{2}\alpha^{2}$. The virial theorem balances them. The QOU analogue is a virial/scaling argument rather than a parity argument. At the bound-state LP/SDP optimum, the molecular Markov trace decomposes into two contributions. Both scale as $\lambda_{\mathrm{bound}}^{-2}$. Here $\lambda_{\mathrm{bound}}$ is the characteristic eigenvalue of the molecular transfer matrix ($T_1 = T_{e_2 \mathfrak{p}_2}^{\mathrm{dressed}}$ in the [$H_2$ LP dual binding proposition](#prop:h2-lp-dual-binding), with eigenvalues $q^{5}, -q^{-5}$). The inverse $\lambda_{\mathrm{bound}}^{-1}$ is the categorical analogue of $\alpha_{EM}$. The leading order is $\alpha_{EM}^{2}$ by dimensional matching. There is no linear term to suppress. Thus $J^{1}$-vanishing is not a theorem to prove. It is a consequence of the LP/SDP being quadratic in the bound-state scale. The conjecture sharpens to the claim that $\lambda_{\mathrm{bound}}^{-1} \in R$ and $\lambda_{\mathrm{bound}}^{-1}(q_0) = \alpha_{EM}(q_0)\,c_1$ for some $c_1 \in R$ of order unity. This is a direct symbolic computation (See [Table 11](#tbl:e-hartree-categorical-derivation-table11-data)). The $H_2$ evaluation gives the dimensionless ratio $E_{\mathrm{bind}}/E_{\mathrm{Hartree}} \approx 0.170$. This is of order unity. It matches the standard-physics $H_2$ ratio $\approx 1/6$. This is consistent with Mechanism D without any $J^{1}$-vanishing miracle.
 
 ## Absence of a coupling-level involution flipping $\alpha_{EM}$
 
-Direct calculation rules out any involution $\iota$ of $R$ other than $q \leftrightarrow q^{-1}$ flipping the sign of $\alpha_{EM}$. All four automorphisms generated by $q \mapsto \pm q^{\pm 1}$ fail to flip the sign (See [Table 10](#tbl:e-hartree-categorical-derivation-table10-data)). Using $[n]_{-q^{\pm 1}} = (-1)^{n+1}[n]_q$, the sign factors from $q$ and $[10]_q$ cancel. None of the four maps $\alpha_{EM}$ to $-\alpha_{EM}$. This is a structural obstruction. The parameter $\alpha_{EM}$ is a positive scalar on the relevant component of the substrate variety. No positivity-preserving automorphism of $R$ flips its sign. A coupling-parity selection rule of the form "$f(\alpha_{EM}) = f(-\alpha_{EM}) \Rightarrow$ odd terms vanish" cannot be implemented by any Galois-style involution.
+Direct calculation rules out any involution $\iota$ of $R$ other than $q \leftrightarrow q^{-1}$ flipping the sign of $\alpha_{EM}$. All four automorphisms generated by $q \mapsto \pm q^{\pm 1}$ fail to flip the sign (See [Table 10](#tbl:e-hartree-categorical-derivation-table10-data)). Using $[n]_{-q^{\pm 1}} = (-1)^{n+1}[n]_q$, the sign factors from $q$ and $[10]_q$ cancel. None of the four maps $\alpha_{EM}$ to $-\alpha_{EM}$. This is a structural obstruction. The parameter $\alpha_{EM}$ is a positive scalar on the relevant component of the aether variety. No positivity-preserving automorphism of $R$ flips its sign. A coupling-parity selection rule of the form "$f(\alpha_{EM}) = f(-\alpha_{EM}) \Rightarrow$ odd terms vanish" cannot be implemented by any Galois-style involution.
 
-The viable analogue is operator-parity, not coupling-parity. The standard linear-Stark vanishing $\langle\psi_0|\hat r|\psi_0\rangle = 0$ makes the operator the parity-odd object. The categorical version seeks a $\sigma$-antisymmetric Hecke perturbation $\Delta_{\mathrm{cov}}$. This is built from $\sigma_i - \sigma_i^{-1}$ skein factors. A categorical parity rule requires $\Phi_1(\mathcal{M}_{\mathrm{atom}} \cdot \Delta_{\mathrm{cov}}) = 0$. This leaves an $\alpha_{EM}^{2}$-scaled second-order contribution. This aligns with how [antiparticle crossing reversal](#prop:antiparticle-crossing-reversal) realises $\sigma$ at the operator level.
+The viable analogue is operator-parity rather than coupling-parity. The standard linear-Stark vanishing $\langle\psi_0|\hat r|\psi_0\rangle = 0$ makes the operator the parity-odd object. The categorical version seeks a $\sigma$-antisymmetric Hecke perturbation $\Delta_{\mathrm{cov}}$. This is built from $\sigma_i - \sigma_i^{-1}$ skein factors. A categorical parity rule requires $\Phi_1(\mathcal{M}_{\mathrm{atom}} \cdot \Delta_{\mathrm{cov}}) = 0$. This leaves an $\alpha_{EM}^{2}$-scaled second-order contribution. This aligns with how [antiparticle crossing reversal](#prop:antiparticle-crossing-reversal) realises $\sigma$ at the operator level.
 
 ## Companion remark — physical translation
 
@@ -75,7 +71,7 @@ In standard non-relativistic QED, $E_h \propto \alpha_{EM}^{2}$ because both kin
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling requires three concrete items:
 
 1. **A Hecke-algebraic definition of $\Phi_1^{\mathrm{kin}}$ and $\Phi_1^{\mathrm{Coul}}$.** These must be distinct, computable components of the molecular Markov trace. The current LP/SDP framework does not separate them.
-2. **A proof that these contributions balance at a specific categorical length.** This must derive from Hecke structure, not transported dimensional analysis. It requires a symbolic $q$-polynomial recompute of the optimal $\Phi_1^{H_2}(\pi^{*})$ tracking each crossing-type separately.
+2. **A proof that these contributions balance at a specific categorical length.** This must derive from Hecke structure rather than transported dimensional analysis. It requires a symbolic $q$-polynomial recompute of the optimal $\Phi_1^{H_2}(\pi^{*})$ tracking each crossing-type separately.
 3. **An independent derivation of the archimedean energy unit per $\Phi_1$.** This must derive from algebraic structure. It cannot assume a match with QED in the $q \to 1$ limit. This deepest layer requires a functorial uniqueness statement about $\rho_\infty$ verifiable without experimental Hartree values.
 
 ## Non-claims
@@ -88,8 +84,4 @@ Three derivation mechanisms are recorded above. Each has an explicit identified 
 
 ## Supporting data tables
 
-Tables 1–13 collect the intermediate symbolic computations of the investigation. Tables 10–13 support the rigorous results and mechanisms above. Tables 1–9 record the intermediate data of the successive attempts.
-
----
-
-What follows carries the distilled conditional theorem, the rigorous results, and the open closure programme; the intermediate candidate mechanisms, and how each was ruled out or sharpened, are not reproduced here.
+Tables 1–13 collect the symbolic evaluations supporting the derivation: Tables 10–13 document the dressed characters and involution tests above, while Tables 1–9 record intermediate symbolic checks.

@@ -7,7 +7,13 @@ export default remark({
   computation: {
     engine: "mpmath",
     script: "computations/q_pinning_50_digit.py",
-    witness: ["computations/q-pinning-50-digit.witness.json", "computations/codata-masses.witness.json"],
+    witness: [
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/codata-masses.witness.json",
+      "computations/m-p-substrate-identity-50dps.witness.json",
+      "computations/two-term-qed-isotope-and-nucleon-compute.witness.json",
+      "computations/q-beta-predicted.witness.json",
+    ],
     status: "verified",
   },
   tags: [

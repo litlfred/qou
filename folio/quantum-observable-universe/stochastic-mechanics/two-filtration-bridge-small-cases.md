@@ -11,9 +11,9 @@ $$
 *Combining explicit Markov-trace evaluations on each Wedderburn cell with classical Vol/CS values tests the predicted bridge map across all partitions $\lambda \vdash n$ with $n \leq 4$.*
 
 *Scope: comparison versus proof.* No canonical map from cells to
-knots is defined, so the knot attached to each cell below is chosen, not
+knots is defined, so the knot attached to each cell below is chosen rather than
 derived. At $n=1,2$ both periods vanish and nothing is witnessed; the trefoil
-$\sigma_1^3$ is a 2-strand closure, not an $H_3$ object; and the $(2,1)$ row has
+$\sigma_1^3$ is a 2-strand closure rather than an $H_3$ object; and the $(2,1)$ row has
 no witness. The proved part of the bridge is item 4 of the
 [cellular depth-filtration proposition](#prop:cellular-depth-filtration), which is
 conditional on two named hypotheses and does not give the depth values.

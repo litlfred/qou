@@ -1,4 +1,4 @@
-The QOU framework relies on a single free parameter: the substrate parameter $q$. Every observable quantity—masses, couplings, decay rates, and causal structure—is a function of $q$ alone. Independent classes of measurements each restrict $q$ to a narrow range. These ranges overlap, rendering $q$ overdetermined.
+The QOU framework relies on a single free parameter: the aether parameter $q$. Every observable quantity—masses, couplings, decay rates, and causal structure—is a function of $q$ alone. Independent classes of measurements each restrict $q$ to a narrow range. These ranges overlap, rendering $q$ overdetermined.
 
 **Consistency window.**
 

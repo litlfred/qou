@@ -20,6 +20,8 @@ export default proposition({
   uses: [
     "prop:braiding-eigenvalue-extraction",
     "rem:hecke-algebra-from-braiding",
+    "def:hecke-normal-form",
+    "prop:tm-gs-normal-form",
     "unital-groebner-bases:def:groebner-basis",
     "unital-groebner-bases:def:division-algorithm",
   ],

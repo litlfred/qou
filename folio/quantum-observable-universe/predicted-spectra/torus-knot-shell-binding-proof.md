@@ -22,7 +22,7 @@ The magic numbers are the cumulative sums of shell occupancies. Each shell close
 
 See [Table 3](#tbl:torus-knot-shell-binding-table3-data).
 
-This construction is **proposed** to reproduce the experimental magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$; a closed from-$q$ derivation of the full sequence — reconciling the Table-2 $r\times s$ capacities with the Table-3 occupancies — remains the **key open problem** (see the shell construction rules and the Bring magic-number conjecture) and is not established by the induction above.
+This torus-knot histogram construction is **proposed** to reproduce the experimental magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$; while the full magic sequence is independently derived on the graded nucleon spin–isospin Pauli fiber via Mayer–Jensen spin–orbit intruder lowering ([spin–orbit magic closures](#prop:spin-orbit-magic-closures)), reconciling the Bring-surface Table-2 $r\times s$ capacities directly with the Table-3 occupancies within the braid-histogram induction is conjectural ([shell construction rules](#rem:shell-construction-rules), [Bring magic-number conjecture](#conj:magic-numbers-bring)) and is not established by the induction above.
 
 **(v) Energy gap at shell boundaries.**
 The Hecke energy $\Delta E$ jumps by a factor $\sim |\lambda_+(T_{2,n_s})/\lambda_-(T_{2,n_s})|$ at each shell boundary. For the first shell closure (He-4 $\to$ Li-5):
@@ -43,4 +43,4 @@ The full inductive argument for the construction of any nucleus $\mathcal{A}(Z, 
 4. **Inter-shell step.** After a shell closure, the next nucleon crosses the closed shell via the Chebyshev crossing element $(c_{n_s}\sigma + d_{n_s})$ of $T_{2, n_s}$. Because this element is linear in $\sigma$, it enters the Gröbner--Shirshov division exactly like an intra-shell crossing. The algorithm produces a normal form.
 5. **Repeat** until $A = Z + N$ nucleons are linked.
 
-At every step, the Gröbner--Shirshov division algorithm produces a unique normal form. The inter-shell step differs only in the magnitude of the crossing coefficients, not in algebraic structure. Normalization preservation follows from the same theorem used for intra-shell steps.
+At every step, the Gröbner--Shirshov division algorithm produces a unique normal form. The inter-shell step differs only in the magnitude of the crossing coefficients while preserving the algebraic structure. Normalization preservation follows from the same theorem used for intra-shell steps.

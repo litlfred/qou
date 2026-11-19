@@ -26,6 +26,10 @@ export default conjecture({
     "def:two-row-stratum",
     "def:atomic-braid",
   ],
+  lean: {
+    ref: "qou:QOU.BraidKnot.ActiveSetTraceConcentration",
+    validation: "leanok",
+  },
   computation: {
     engine: "python",
     script: "computations/active_set_lr_profile.py",

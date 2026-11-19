@@ -53,4 +53,17 @@ def topological_charge_quantization
     (Res_xi : A ⟶ A) : Prop :=
   Res_xi ≫ Φ = Φ
 
+/-- **Class-axiomatised topological charge quantization (`conj:topological-charge-quantization`, §3b-cond).** -/
+class TopologicalChargeQuantized (A : C) (Φ : A ⟶ (𝟙_ C)) (Res_xi : A ⟶ A) : Prop where
+  residue_invariant : topological_charge_quantization A Φ Res_xi
+
+/-- **Conditional theorem (two-fold Reeb residue invariance).** Under
+    `[TopologicalChargeQuantized A Φ Res_xi]`, iterating `Res_xi` twice still
+    preserves the observer trace `Φ`. -/
+theorem topological_charge_twofold_invariance
+    (A : C) (Φ : A ⟶ (𝟙_ C)) (Res_xi : A ⟶ A)
+    [h : TopologicalChargeQuantized A Φ Res_xi] :
+    (Res_xi ≫ Res_xi) ≫ Φ = Φ := by
+  rw [Category.assoc, h.residue_invariant, h.residue_invariant]
+
 end QOU.AlgebraicSubstrate

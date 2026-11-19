@@ -29,7 +29,7 @@ All four axioms hold for
 $(\mathbf{Rep}(U_{q}(\mathfrak{g})), \mathcal{O}_{q}(G), \mathrm{forget})$
 under the Chern-class hypothesis, establishing existence.  The triple
 specialises to the archimedean realisation
-([$\mathbb{C}$-QOU](#ex:c-quantum-observable-universe)) upon choosing a
+($\mathbb{C}$-QOU) upon choosing a
 fibre functor landing in a module category over a contact CR manifold.
 
 **Non-uniqueness.**  Any $(\mathbf{C}', A', \tau')$ with $\mathbf{C}'$

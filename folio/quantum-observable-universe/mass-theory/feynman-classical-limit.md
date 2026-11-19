@@ -22,5 +22,3 @@ $$
    *The braiding $c_{V,V}$ satisfies $c_{V,V}^2 = \mathrm{id}$, making the monoidal category symmetric. The non-trivial knot structure collapses: the trace of a braid closure depends only on its number of components $c = c(\pi(\beta))$. With the normalisation $J = z^{-(n-1)}\,\mathrm{tr}_M$, every knot gives $1$ and a $c$-component link gives $2^{c-1}$.*
 
 *The finite categorical trace degenerates to the standard discrete trace over the finite-dimensional angular momentum eigenbasis of the symmetric group.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

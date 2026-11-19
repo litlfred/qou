@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with recursive brane tower $\{A_n\}_{n \geq 0}$ and substrate parameter $q$. Given Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ ([Yekutieli triple](#def:yekutieli-triple)) and the distributional connection $A_\infty = \sum_{n,i} c_{n,i} \alpha_{n,i}$ ([distributional connection](#rem:distributional-connection)), the global consistency of $A_\infty$ is equivalent to the *twisted $2$-cocycle condition*: for every triple intersection $U_i \cap U_j \cap U_k$,
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with recursive brane tower $\{A_n\}_{n \geq 0}$ and aether parameter $q$. Given Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ ([Yekutieli triple](#def:yekutieli-triple)) and the distributional connection $A_\infty = \sum_{n,i} c_{n,i} \alpha_{n,i}$ ([distributional connection](#rem:distributional-connection)), the global consistency of $A_\infty$ is equivalent to the *twisted $2$-cocycle condition*: for every triple intersection $U_i \cap U_j \cap U_k$,
 
 ```tex
 \begin{equation}\label{eq:twisted-2-cocycle}

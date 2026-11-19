@@ -1,6 +1,9 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
   label: "conj:quantum-computational-universality",
   title:
     "Quantum computational universality via descent to roots of unity",

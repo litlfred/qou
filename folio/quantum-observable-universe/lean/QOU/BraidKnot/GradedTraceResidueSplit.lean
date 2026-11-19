@@ -87,17 +87,34 @@ theorem strutinsky_analogue
   S.split_identity
 
 
-/-! ### Removed 2026-08-30 — self-assuming projections
+/-- Cumulative Gröbner–Shirshov rewriting residue across `d` filtration strata:
+    `∑_{k=0}^{d-1} (stratumTrace k - stratumTrace (k + 1))`. -/
+def filtrationResidueSum {R : Type u} [AddCommGroup R] (stratumTrace : ℕ → R) : ℕ → R
+  | 0 => 0
+  | d + 1 => filtrationResidueSum stratumTrace d + (stratumTrace d - stratumTrace (d + 1))
 
-- `graded_trace_residue_split` — body was `s.split_identity`: the conclusion was the projected field
-  verbatim, so the declaration restated its own hypothesis.
-
-**Why removal.** The content stays in the class field each declaration
-projected, which asserts the same proposition under the same hypotheses; only
-the restatement goes. That is the vacuity ledger's recorded disposition for
-this category — *"drop the pseudo-theorem and project the field at use sites"*
-— and there were no use sites: each had **zero references anywhere in the
-corpus**, including in this file. Bean `qou-z9ws`.
--/
+/-- **Unconditional telescoping split (`prop:graded-trace-residue-split`).**
+    For any `R`-valued trace sequence `stratumTrace : ℕ → R` along a descending
+    confinement filtration of depth `d`, the full trace `stratumTrace 0`
+    decomposes canonically into the depth-`d` symbol/associated-graded trace
+    `stratumTrace d` plus `filtrationResidueSum stratumTrace d`. -/
+-- Ref: [leitner2026] prop:graded-trace-residue-split
+theorem graded_trace_residue_split {R : Type u} [CommRing R]
+    (stratumTrace : ℕ → R) (d : ℕ) :
+    stratumTrace 0 = stratumTrace d + filtrationResidueSum stratumTrace d := by
+  induction d with
+  | zero =>
+    simp [filtrationResidueSum]
+  | succ k ih =>
+    rw [ih, filtrationResidueSum]
+    calc
+      stratumTrace k + filtrationResidueSum stratumTrace k
+        = (stratumTrace (k + 1) + (stratumTrace k - stratumTrace (k + 1))) +
+            filtrationResidueSum stratumTrace k := by
+            rw [add_sub_cancel]
+      _ = stratumTrace (k + 1) +
+            (filtrationResidueSum stratumTrace k +
+              (stratumTrace k - stratumTrace (k + 1))) := by
+            rw [add_assoc, add_comm (stratumTrace k - stratumTrace (k + 1)), ← add_assoc]
 
 end QOU.BraidKnot

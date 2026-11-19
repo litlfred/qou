@@ -8,7 +8,7 @@ $$
 
 The operator $\mathfrak{C}$ is the Coriolis cross-coupling and $\Delta_\xi$ is the pure Reeb-spin Laplacian. Both $\mathfrak{C}$ and $\Delta_\xi$ contain at least one factor of $\mathcal{L}_\xi$ or $\iota_\xi$.
 
-The Gaussian $G_q$ depends only on the base coordinates $x \in M$, not on the Reeb-fibre direction. Therefore,
+The Gaussian $G_q$ depends only on the base coordinates $x \in M$ and is independent of the Reeb-fibre direction. Therefore,
 
 $$
   \mathcal{L}_\xi G_q = 0,
@@ -36,7 +36,7 @@ $$
 
 Multiplying the second equation by $q^{-2}$ yields the first. Hence $\partial_t G_q = -\Delta_q G_q$. The initial-data condition $G_q(t,\cdot) \to \delta_0$ as $t \downarrow 0$ follows from standard properties of the Gaussian heat kernel. $\square$
 
-**Existence at arbitrary $q > 0$.** The formula for $G_q$ defines a classical Gaussian with variance $\sigma^2 = t/q^2$. It is convergent and strictly positive for every $q > 0$ and $t > 0$. At the physical substrate value $q_0 \approx 1.11$ ([local substrate $q$](#prop:local-substrate-q)), the $q$-Gaussian
+**Existence at arbitrary $q > 0$.** The formula for $G_q$ defines a classical Gaussian with variance $\sigma^2 = t/q^2$. It is convergent and strictly positive for every $q > 0$ and $t > 0$. At the physical aether value $q_0 \approx 1.11$ ([local aether $q$](#prop:local-substrate-q)), the $q$-Gaussian
 
 $$
   G_{q_0}(t, x) \;=\; \bigl(4\pi t / q_0^2\bigr)^{-n/2}

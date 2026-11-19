@@ -18,7 +18,7 @@ The Borromean link $\mathcal{B}_3$ requires that no two components link, yet all
 
 The Hopf link $\mathcal{L}_H$, by contrast, links any two components pairwise. A Hopf chain of three unknots permits diquark states (remove one, and the other two remain linked), contradicting confinement. The two cases are told apart by link-homotopy invariants: three-component links in $S^3$ are classified up to link homotopy by their pairwise linking numbers and Milnor's triple linking number, and the Borromean rings have all pairwise numbers zero and triple number $\pm 1$ \cite{dgkmsv2013}.
 
-**Mass from linking, not from constituents.**
+**Mass from linking rather than constituents.**
 
 The three individual unknots possess zero hyperbolic volume: $\mathrm{Vol}(K_{0_1}) = 0$. The neutrino mass is near zero. However, the Borromean link possesses a nonzero hyperbolic volume:
 
@@ -26,7 +26,7 @@ $$
   \mathrm{Vol}(S^3 \setminus \mathcal{B}_3) =  7.32772\ldots
 $$
 
-By the topological mass formula $\mathfrak{m} = \mathrm{Vol}(K) / \hbar_q^2$, the baryon mass derives entirely from the Borromean linking, not from the constituent unknots. This matches the standard QCD result: roughly $99\%$ of the proton's $938$ MeV derives from gluon binding energy, while quark Higgs masses contribute only roughly $10$ MeV.
+By the topological mass formula $\mathfrak{m} = \mathrm{Vol}(K) / \hbar_q^2$, the baryon mass derives entirely from the Borromean linking rather than from the constituent unknots. This matches the standard QCD result: roughly $99\%$ of the proton's $938$ MeV derives from gluon binding energy, while quark Higgs masses contribute only roughly $10$ MeV.
 
 **Up and down from crossing orientation.**
 

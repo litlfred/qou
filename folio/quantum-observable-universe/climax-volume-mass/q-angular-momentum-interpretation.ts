@@ -12,4 +12,10 @@ export default remark({
     "q-deformed",
   ],
   uses: ["def:q-angular-momentum"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/nuclear_wave3_periodic_table_synthesis_probe.py",
+    witness: "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
+    status: "verified",
+  },
 });

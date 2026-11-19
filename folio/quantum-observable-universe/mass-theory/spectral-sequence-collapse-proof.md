@@ -21,7 +21,7 @@ $$
 
 *The $q$-deformed Wedderburn weights $w_\lambda(q)$ are bounded, but
 $\sum w_\lambda(q) \neq 1$ at $q \neq 1$ in general (cf.
-[plancherel-weight-boundedness proposition](#prop:plancherel-weight-boundedness)
+[Plancherel weight boundedness](#prop:plancherel-weight-boundedness)
 for the classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$
 that does sum to $1$).  Binning by GB-depth
 ([curvature-rank stratification](#prop:curvature-rank-gb-stratification))
@@ -57,11 +57,10 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 > Measured exactly in $\mathbb{Q}(q)$ at $n = 3$ on the corpus's own
 > idempotents — all six off-diagonal entries identically $0$, diagonal
 > $\mathrm{diag}(\tau(e_\lambda))$ nonzero, completeness self-test
-> $\sum_\lambda \tau(e_\lambda) = 1$
-> ([`centre_frobenius_pairing_is_diagonal_probe.py`](../../../computations/probes/centre_frobenius_pairing_is_diagonal_probe.py)).
+> $\sum_\lambda \tau(e_\lambda) = 1$.
 > So each stratum is **self**-dual and the annihilator of a stratum
-> within $Z$ is the span of the *complementary* idempotents — a set
-> complement, not a rank-reindexed stratum. The asserted pairing is
+> within $Z$ is the span of the *complementary* idempotents (a set
+> complement rather than a rank-reindexed stratum). The asserted pairing is
 > identically zero exactly where it claims to be perfect, whenever
 > $\ell \neq N - \ell$.
 >
@@ -76,7 +75,7 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 > the filtration of $A$ itself, which is a different claim and is
 > untouched here; and the *Practical consequence* below, which uses the
 > Wedderburn sum and not this duality. Same defect as
-> [quantum-dilogarithm-stratified-partial-argument remark](#rem:quantum-dilogarithm-stratified-partial-argument)
+> [stratified quantum-dilogarithm argument](#rem:quantum-dilogarithm-stratified-partial-argument)
 > Step 1.
 
 **Practical consequence.**

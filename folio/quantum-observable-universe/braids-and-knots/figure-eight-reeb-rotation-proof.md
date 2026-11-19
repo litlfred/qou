@@ -11,14 +11,14 @@ and the second generator is the real symmetric matrix
 $$
 \sigma_2 = \begin{pmatrix} a & b \\ b & c \end{pmatrix},
 \qquad
-a = \frac{q - q^{-1}}{1 - q^{4}},
+a = \frac{q - q^{-1}}{1 - q^{4}} = \frac{-q^{-2}}{[2]_q},
 \qquad
-c = \frac{q - q^{-1}}{1 - q^{-4}},
+c = \frac{q - q^{-1}}{1 - q^{-4}} = \frac{q^{2}}{[2]_q},
 \qquad
 b^2 = \frac{[3]_q}{[2]_q^2},
 $$
 
-with $b > 0$; the off-diagonal entry is the binding amplitude of [the Hoefsmit proposition](#prop:hoefsmit-binding-amplitude). These entries satisfy the two seminormal identities
+with $b = \sqrt{[3]_q}/[2]_q > 0$; the off-diagonal entry is the binding amplitude of [the Hoefsmit proposition](#prop:hoefsmit-binding-amplitude). Because $1 - q^4 = -(q - q^{-1}) q^2 (q + q^{-1}) = -h q^2 [2]_q$ and $1 - q^{-4} = h q^{-2} [2]_q$, the common factor $h = q - q^{-1}$ cancels identically between numerator and denominator: the simplified rational forms $a = -q^{-2}/[2]_q$ and $c = q^2/[2]_q$ are smooth for every real $q > 0$ (where $[2]_q \ge 2 > 0$) and resolve the apparent $0/0$ removable singularity of the unsimplified expressions at the classical point $q = 1$ (giving $a = -1/2$, $c = 1/2$, $b = \sqrt{3}/2$). These entries satisfy the two seminormal identities
 
 $$
 a + c
@@ -89,7 +89,7 @@ $$
 \qquad \text{for } \varphi^{-1} < q < \varphi .
 $$
 
-This interval contains the classical point $q = 1$ and the substrate regime.
+This interval contains the classical point $q = 1$ and the aether regime.
 
 **Step 5: Unit-modulus eigenvalues.** $M_{4_1}$ is a real $2 \times 2$ matrix with $\det M_{4_1} = 1$ and real trace $t = \mathrm{tr}(M_{4_1})$, so its eigenvalues are the roots of $\lambda^{2} - t\lambda + 1 = 0$. By Step 4 the discriminant $t^{2} - 4$ is strictly negative on the golden interval, so the roots form a complex-conjugate pair $\lambda_{4_1} = e^{\pm i\theta}$ with
 
@@ -99,4 +99,4 @@ $$
 2\cos\theta = \mathrm{tr}(M_{4_1}).
 $$
 
-This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\theta = 2\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\theta \approx 117.09^{\circ}$. The eigenvalue degenerates to $\lambda = 1$ ($\theta = 0$) exactly at the golden endpoints $q \in \{\varphi^{-1}, \varphi\}$, where $\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\theta = \pi$ is never attained on the real axis since $\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. Outside the golden interval, for $q > \varphi$ or $0 < q < \varphi^{-1}$, the two golden factors in Step 4 have the same sign, so $t - 2 > 0$; the discriminant $t^2 - 4$ is then positive, the roots of $\lambda^2 - t\lambda + 1$ are real, distinct and positive with product $1$, and neither has modulus $1$. $\square$
+This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\theta = 2\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the aether value of $q$ the angle evaluates to $\theta \approx 117.09^{\circ}$. The eigenvalue degenerates to $\lambda = 1$ ($\theta = 0$) exactly at the golden endpoints $q \in \{\varphi^{-1}, \varphi\}$, where $\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\theta = \pi$ is never attained on the real axis since $\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. Outside the golden interval, for $q > \varphi$ or $0 < q < \varphi^{-1}$, the two golden factors in Step 4 have the same sign, so $t - 2 > 0$; the discriminant $t^2 - 4$ is then positive, the roots of $\lambda^2 - t\lambda + 1$ are real, distinct and positive with product $1$, and neither has modulus $1$. $\square$

@@ -51,15 +51,13 @@ $$
 $$
 
 The formulas hold for every $n$ because the 1-d Hecke irreps' generator
-eigenvalues $\pm q^{\pm 1}$ are *substrate-derived* — they come from the
+eigenvalues $\pm q^{\pm 1}$ are *aether-derived* — they come from the
 Hecke quadratic relation, not from any $n$-specific representation
 combinatorics. $\blacksquare$
 
 ## Verification
 
-Bit-exact at 50 dps for all atoms in $\{p, n, D, T, {}^{3}\mathrm{He}\}$
-($n \in \{3, 5, 8\}$):
-[`q-beta-1d-irrep-universal-closed-form.witness.json`](../../computations/q-beta-1d-irrep-universal-closed-form.witness.json).
+Verified to all 50 decimal places across $\{p, n, D, T, {}^{3}\mathrm{He}\}$ ($n \in \{3, 5, 8\}$).
 
 ## Role in the τ_M decomposition
 
@@ -78,7 +76,7 @@ $$
 
 where the **1-d backbone**
 ($y_{(n)} \chi^{(n)} + y_{(1^n)} \chi^{(1^n)}$) is fully closed-form
-substrate-derivable for any $n$ via the formulas above, and the
+aether-derivable for any $n$ via the formulas above, and the
 $\dim \geq 2$ middle terms require the Hoefsmit seminormal matrix
 characters (per Hecke branching trace decomposition proposition)
 plus, for $\dim = 2$ irreps, the cos-resummation from

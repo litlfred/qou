@@ -1,6 +1,6 @@
 **Conjecture (graded Baer-* on $\mathcal{H}_q$ across the depth filtration).**
 
-*Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra ([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)), filtered by iterated-integral depth:*
+*Let $\mathcal{H}_q$ be the aether convolution Hopf algebra ([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)), filtered by iterated-integral depth:*
 
 $$
   G^{(0)}(\mathcal{H}_q) \;\subseteq\; G^{(1)}(\mathcal{H}_q)

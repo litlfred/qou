@@ -16,10 +16,11 @@ In the canonical convention $z_D = q^3/(q^2+1)$,
 $$
   P_{7,6}(q) = -\,\frac{(q-1)(q+1)\bigl(q^{6} + q^{4} + 2q^{2} + 1\bigr)}{2q\,(q^{2}+1)^{2}} .
 $$
-The factor $(q - 1)$ measures the departure from classicality: the q-AND magnitude is proportional to the quantum deformation, and vanishes with it. The sextic $q^{6} + q^{4} + 2q^{2} + 1$ has **no positive real root**, and neither does $(q+1)$ for $q > 0$. The q-AND therefore has a **single** sign change on $q > 0$, at $q = 1$, carried entirely by $(q-1)$: it is negative throughout the quantum regime $q > 1$, and in particular at the substrate anchor.
+The factor $(q - 1)$ measures the departure from classicality: the q-AND magnitude is proportional to the quantum deformation, and vanishes with it. The sextic $q^{6} + q^{4} + 2q^{2} + 1$ has **no positive real root**, and neither does $(q+1)$ for $q > 0$. The q-AND therefore has a **single** sign change on $q > 0$, at $q = 1$, carried entirely by $(q-1)$: it is negative throughout the quantum regime $q > 1$, and in particular at the aether parameter.
 
 **Orientation.**
-$P_{6,7}$ and $P_{7,6}$ are the forward and reverse Toffoli transitions. They are **not** related by a sign: taken each from its own input column, $P_{6,7}(q_0) = +0.1572$ against $P_{7,6}(q_0) = -0.1438$. Creating a proton from a neutron and annihilating one are distinct amplitudes, not a signed pair.
+<!-- literal-source: closed-form rational evaluation (q_0-1)(q_0+1)(2*q_0^6+q_0^4+q_0^2+1)/(2*q_0*(q_0^2+1)^2) = 0.1572 -->
+$P_{6,7}$ and $P_{7,6}$ are the forward and reverse Toffoli transitions. They are **not** related by a sign: taken each from its own input column, $P_{6,7}(q_0) = +0.1572$ against $P_{7,6}(q_0) = -0.1438$. Creating a proton from a neutron and annihilating one are distinct amplitudes rather than a signed pair.
 
 **Universality.**
-The Toffoli gate is universal for reversible classical computation. Any irreversible Turing machine can be simulated by a reversible one relying entirely on Toffoli gates, with at most polynomial overhead in time and space. Combined with a single-qubit gate outside the Clifford group, the Toffoli gate achieves quantum computational universality. Since $P_{7,6}(q) \neq 0$ for every $q \neq 1$, the substrate's braiding dynamics, operating in discrete Planck steps, is computationally universal away from the classical limit.
+The Toffoli gate is universal for reversible classical computation. Any irreversible Turing machine can be simulated by a reversible one relying entirely on Toffoli gates, with at most polynomial overhead in time and space. Combined with a single-qubit gate outside the Clifford group, the Toffoli gate achieves quantum computational universality. Since $P_{7,6}(q) \neq 0$ for every $q \neq 1$, the aether's braiding dynamics, operating in discrete Planck steps, is computationally universal away from the classical limit.

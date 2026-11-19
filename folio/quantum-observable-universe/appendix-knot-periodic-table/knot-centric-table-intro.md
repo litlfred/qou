@@ -1,17 +1,3 @@
-The conventional periodic table indexes each element by its atomic
-number $Z$ and electron configuration, an ordering imposed from
-outside the object it catalogues.  In the present framework an
-element *is* a knot: a nuclear Borromean shell structure dressed by
-electron trefoil resonance modes.  Its most natural label is
-therefore intrinsic — the braid whose closure realizes that knot —
-and organizing the table knot-centrically replaces the external
-atomic-number bookkeeping with the element's own topological data.
+The conventional periodic table indexes each element by atomic number $Z$ and electronic orbital configuration, an ordering external to nuclear topology. When an atom is represented directly as a composite knot — a nuclear Borromean shell complex dressed by electronic trefoil modes — its intrinsic coordinates are the canonical braid representative and Hecke shell level. Organizing the periodic grid by those intrinsic coordinates spans all $118$ known elements ($\mathrm{H}$ through $\mathrm{Og}$): rows track nuclear harmonic-oscillator and Mayer--Jensen spin--orbit closures, while columns track sequential $(2j + 1)$ proton sub-shell filling.
 
-Reading the table from its simplest cell makes the scheme concrete.
-Hydrogen occupies the first cell of the first row (the $N = 0$
-harmonic-oscillator shell), where the nuclear side carries a single
-Borromean unit; heavier elements are built by adding shells to this
-seed.  Each element is then indexed by its braid representative
-together with its Hecke level, and the grid arranges these indices so
-that rows track the nuclear harmonic-oscillator level $N$ and columns
-track the proton sub-shell filling order.
+Hydrogen (${}^{1}\mathrm{H}$, $Z = 1$) occupies the initial cell of the $N_{\mathrm{osc}} = 0$ harmonic-oscillator shell with a single Borromean nucleon, helium (${}^{4}\mathrm{He}$, $Z = 2$) closes that shell as the tetrahedral $\alpha$-singlet, and heavier elements through oganesson (${}^{294}\mathrm{Og}$, $Z = 118$) populate successive harmonic-oscillator and spin--orbit intruder shells.

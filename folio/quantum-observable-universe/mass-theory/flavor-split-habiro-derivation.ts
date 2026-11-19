@@ -27,7 +27,10 @@ export default conjecture({
   computation: {
     engine: "python",
     script: "computations/mn_flavor_split_h4_plancherel.py",
-    witness: "computations/mn-flavor-split-h4-plancherel.witness.json",
+    witness: [
+      "computations/mn-flavor-split-h4-plancherel.witness.json",
+      "computations/m-p-substrate-identity-50dps.witness.json",
+    ],
     status: "verified",
   },
   authorNotes: [

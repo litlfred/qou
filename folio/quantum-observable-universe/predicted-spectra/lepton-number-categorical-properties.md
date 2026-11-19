@@ -43,7 +43,7 @@ An inhomogeneous relation is compatible with a *filtration* rather than a
 grading, whereas the Vassiliev filtration grades **invariants** $v \colon K \to R$
 rather than states, and therefore does not by itself supply a state-valued $L$.
 
-The carrier is the **braid word**, not the knot type. Indeed, $L$ cannot factor
+The carrier is the **braid word** rather than the knot type. Indeed, $L$ cannot factor
 through the unframed knot type, since mirror reflection must invert the carrier
 while the unknot is amphichiral. Consistently with antiparticle crossing reversal,
 the mirror involution acts by $\sigma_i \mapsto \sigma_i^{-1}$ on braid words
@@ -70,7 +70,7 @@ so $L$ jumps from $0$ to $1$ on the baryon --- violating conservation clause 3
 above, which requires $\Delta L = 0$ under Markov moves.
 
 *Minimal-level collapse.* Passing to Gröbner--Shirshov normal forms evaluated at
-the lowest level of the substrate tower does not remove this obstruction. The
+the lowest level of the aether tower does not remove this obstruction. The
 table below assigns $\nu_e = K_{0_1} = T_{2,1}$, the **unknot**, whose braid
 index is $1$: its minimal-level normal form is the *empty* word, and so is its
 mirror's. At the minimal level, $\nu_e$ and $\nu_e^{\sigma}$ represent the

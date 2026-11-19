@@ -19,11 +19,11 @@ import { chapter, section } from "../../schema/builders";
  */
 export default chapter({
   tabLabel: "K′",
-  title: "Knot Operations Dictionary — archimedean evaluations at the substrate",
+  title: "Knot Operations Dictionary — archimedean evaluations at the aether parameter",
   label: "app:knot-operations-archimedean",
   sections: [
     section({
-      title: "Particle normal forms at the substrate",
+      title: "Particle normal forms at the aether parameter",
       label: "sec:knot-ops-archi-particle-nf",
       blocks: [
         "particle-nf-table",

@@ -41,7 +41,7 @@ Two purely algebraic identities hold at the symbolic level:
 
 ## $q$-usage discipline
 
-This holds over real $q > 0$ (the substrate-anchor regime). Both identities are $q$-rational, fibre-level constructs. The $c=1$ case holds for all $q > 0$ (an infinite set of constraints, not a single point).
+This holds over real $q > 0$ (the aether-anchor regime). Both identities are $q$-rational, fibre-level constructs. The $c=1$ case holds for all $q > 0$ (an infinite set of constraints, not a single point).
 
 ## Cross-references
 

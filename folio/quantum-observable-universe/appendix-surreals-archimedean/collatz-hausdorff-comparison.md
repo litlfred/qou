@@ -124,4 +124,4 @@ Each Collatz cycle (at $v = 2$) covers about $3$ Planck
 steps worth of Lyapunov decrease.  The Collatz orbit is
 a discrete walk on the same parameter space that the
 Hausdorff recurrence traverses smoothly, both using the
-substrate parameter as their natural scale.
+aether parameter as their natural scale.

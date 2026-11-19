@@ -10,6 +10,10 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.binding_unique_via_alpha_shift" },
   authorNotes: [
     {
+      kind: "status",
+      body: "Status: retired as a knot-selection route. Atom-to-knot assignments were chosen from a census to match B_AME/m_e (leaving A in {5,6,7} unrepresented), and the 4He rule scales 3He by 4x on Vol(L6a4) = 8G.",
+    },
+    {
       kind: "deprecated",
       date: "2026-09-05",
       body: "Retired as a knot-selection route by owner ruling 2026-09-05. See docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md.",

@@ -17,7 +17,10 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script: "computations/c_k_beta_decay_witness.py",
-    witness: "computations/c-k-beta-decay-bound.witness.json",
+    witness: [
+      "computations/c-k-beta-decay-bound.witness.json",
+      "computations/qbeta/qbeta-convention-d-all-order-ck-generating.witness.json",
+    ],
     status: "verified",
   },
   authorNotes: [

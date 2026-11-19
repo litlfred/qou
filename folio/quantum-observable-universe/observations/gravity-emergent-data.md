@@ -11,5 +11,5 @@
 
 **Potential new experiments.**
 
-* Precision tests of the equivalence principle at quantum scales. These probe whether the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) introduces composition-dependent deviations.
+* Precision tests of the equivalence principle at quantum scales. These probe whether the aether parameter $q$ ([aether parameter](#def:substrate-parameter)) introduces composition-dependent deviations.
 * Tabletop gravity experiments at sub-millimetre scales. These search for $q$-dependent modifications to the Newtonian potential.

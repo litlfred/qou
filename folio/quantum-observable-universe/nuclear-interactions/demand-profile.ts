@@ -11,4 +11,10 @@ export default definition({
     "derived-atom",
   ],
   uses: ["def:derived-atom"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

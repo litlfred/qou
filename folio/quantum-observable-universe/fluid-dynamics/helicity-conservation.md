@@ -34,7 +34,7 @@ Then:
 
    where $\mathrm{Wr}_q$ and $\mathrm{Tw}_q$ denote the $q$-deformed writhe and twist obeying the Călugăreanu--White--Fuller relation $\mathrm{Wr}_q + \mathrm{Tw}_q = \mathrm{Lk}_q$.
 
-3. **Jones polynomial refinement.** Classical helicity does not separate knot types. For a single thin tube of flux $\Gamma$ it equals $\Gamma^2(\mathrm{Wr} + \mathrm{Tw}) = \Gamma^2\,\mathrm{Lk}$, the flux squared times the framing number \cite{moffatt-ricca-helicity}. The value therefore depends on the framing of the tube, not on its knot type: it vanishes exactly for a zero-framed tube, and the unknot and the trefoil both admit zero-framed and non-zero-framed tubes. The Jones polynomial $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$, computed via the [Markov trace](#thm:jones-markov-trace) on the Iwahori--Hecke algebra, acts as a **finer invariant**. In the brane fluid, it evaluates to:
+3. **Jones polynomial refinement.** Classical helicity does not separate knot types. For a single thin tube of flux $\Gamma$ it equals $\Gamma^2(\mathrm{Wr} + \mathrm{Tw}) = \Gamma^2\,\mathrm{Lk}$, the flux squared times the framing number \cite{moffatt-ricca-helicity}. The value therefore depends on the framing of the tube rather than on its knot type: it vanishes exactly for a zero-framed tube, and the unknot and the trefoil both admit zero-framed and non-zero-framed tubes. The Jones polynomial $J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$, computed via the [Markov trace](#thm:jones-markov-trace) on the Iwahori--Hecke algebra, acts as a **finer invariant**. In the brane fluid, it evaluates to:
 
    $$
      J_L(q) =  \exp\!\Bigl(
@@ -48,5 +48,3 @@ Then:
    capturing the full topological structure of the vortex tangle missed by $\mathcal{H}_q$.
 
 4. **Classical limit.** As $q \to 1$, the representations collapse ($[j]_q[j+1]_q \to j(j+1)$), linking reduces to Gauss linking ($\mathrm{lk}_q \to \mathrm{lk}$), and $\mathcal{H}_q$ simplifies to classical Moffatt helicity $H = \int v \cdot \omega\,dV$.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

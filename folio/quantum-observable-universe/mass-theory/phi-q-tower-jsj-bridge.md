@@ -1,7 +1,7 @@
-> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md)).
+> **Superseded.** The scalar aether density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([mass-endomorphism tower](mass-endomorphism-tower.md)).
 
 **Conjecture ($\Phi_q$-JSJ archimedean bridge).**
-*Under the archimedean realization, each summand of the dilogarithm tower evaluates precisely to the hyperbolic volume of the corresponding $\Phi_q$-piece, weighted by the substrate density:*
+*Under the archimedean realization, each summand of the dilogarithm tower evaluates precisely to the hyperbolic volume of the corresponding $\Phi_q$-piece, weighted by the aether density:*
 
 $$
   \tau_{\mathrm{arch}}\!\bigl(z^{\lvert S\rvert} \cdot \Phi_q(\|V_S\|_F)\bigr)

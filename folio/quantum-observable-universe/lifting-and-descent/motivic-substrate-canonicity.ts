@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:motivic-substrate-canonicity",
-  title: "Canonicity, realizations, and scope of the motivic substrate",
+  title: "Canonicity, realizations, and scope of the motivic aether",
   interprets: "def:motivic-substrate",
   tags: [
     "motivic",

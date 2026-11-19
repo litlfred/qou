@@ -1,6 +1,6 @@
-With the Reeb infinitesimal $\varepsilon \in \mathrm{Der}(A)$ in hand ([Reeb infinitesimal](#def:reeb-epsilon)), the substrate parameter $q$ is now a derived quantity.
+With the Reeb infinitesimal $\varepsilon \in \mathrm{Der}(A)$ in hand ([Reeb infinitesimal](#def:reeb-epsilon)), the aether parameter $q$ is now a derived quantity.
 
-**Definition.** The **substrate parameter associated to $\varepsilon$** is
+**Definition.** The **aether parameter associated to $\varepsilon$** is
 
 $$
 q := 1 + \varepsilon,

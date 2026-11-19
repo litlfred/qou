@@ -21,6 +21,4 @@ $$
   \sum_{\text{basis } w} c_w(q_0)
 $$
 
-evaluated at the substrate parameter $q_0$.
-
-**Witness**: `breit-wheeler-nucleon-nf.witness.json`.
+evaluated at the aether parameter $q_0$.

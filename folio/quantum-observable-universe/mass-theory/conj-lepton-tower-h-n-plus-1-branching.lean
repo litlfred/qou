@@ -211,6 +211,28 @@ theorem lepton_xi_tau_eq_reduced_form (q : Kˣ)
 theorem lepton_xi_electron_eq_one (q : Kˣ) :
     lepton_xi q LeptonIndex.electron = 1 := rfl
 
+/-- **Class-axiomatised lepton-tower branching conjecture (`conj:lepton-tower-h-n-plus-1-branching`, §3b-cond).**
+    Identifies the categorical closure factor `closureFactor q idx` with
+    `lepton_xi q idx * invHbarSq` over a field `K`. -/
+class LeptonTowerBranchingConjecture (K : Type*) [Field K] (q : Kˣ) where
+  invHbarSq : K
+  closureFactor : LeptonIndex → K
+  factor_eq : ∀ idx : LeptonIndex, closureFactor idx = lepton_xi q idx * invHbarSq
+
+/-- **Conditional theorem (electron-normalised muon closure ratio).** Under
+    `[LeptonTowerBranchingConjecture K q]` with `invHbarSq ≠ 0`, the ratio
+    `closureFactor .muon / closureFactor .electron` cancels `invHbarSq` and
+    equals `(3 + h²) / (2 + h²)`. -/
+theorem muon_electron_closure_ratio {K : Type*} [Field K] (q : Kˣ)
+    [c : LeptonTowerBranchingConjecture K q]
+    (hinv : c.invHbarSq ≠ 0)
+    (hbr4 : br4 q ≠ 0) (h2plus : 2 + (heckeH q) ^ 2 ≠ 0) :
+    c.closureFactor LeptonIndex.muon / c.closureFactor LeptonIndex.electron =
+      (3 + (heckeH q) ^ 2) / (2 + (heckeH q) ^ 2) := by
+  rw [c.factor_eq LeptonIndex.muon, c.factor_eq LeptonIndex.electron,
+    lepton_xi_electron_eq_one, one_mul, mul_div_cancel_right₀ _ hinv,
+    lepton_xi_muon_eq_closed_form q hbr4 h2plus]
+
 end RatioForm
 
 end QOU.BraidKnot.LeptonTowerHnPlus1

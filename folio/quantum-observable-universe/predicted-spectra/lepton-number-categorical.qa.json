@@ -1028,6 +1028,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'lepton-number-categorical.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "d3401cbc8c80",
+          "ts": "e28b8f279605",
+          "lean": "824d7da7017d",
+          "lean_statement": "b78070f7d0b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:55.391Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified predicted-spectra/lepton-number-categorical.lean uses ℤ only (Mathlib.Data.Int.Basic, zero Real imports, §7c) and passes lean-verify.sh exit 0."
       }
     ],
     "da-false-claim": [
@@ -1433,7 +1450,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "lepton-number-categorical.lean:1 \u2014 folio/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:48:27: error: unknown tactic"
+        "evidence": "lepton-number-categorical.lean:1 — folio/quantum-observable-universe/predicted-spectra/lepton-number-categorical.lean:48:27: error: unknown tactic"
       },
       {
         "result": "pass",
@@ -1902,7 +1919,7 @@
         "reviewed_at": "2026-08-22T04:10:04.606Z",
         "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
         "evidence": "No negation-contrast construction in either sentence.",
-        "notes": "pass. MATH/CONSISTENCY FINDING, not fixed inline (it is the definition's operative word). The block's headline sentence defines lepton number as 'the count of Skein SMOOTHINGS applied to the nuclear normal form', but the formal Definition two lines later counts 'a sequence of $k$ Skein CROSSING CHANGES' and sets L = k. Those are different operations in the same skein triple L_+ - L_- = (q-q^{-1})L_0: a crossing change exchanges L_+ and L_-, a smoothing replaces the crossing by L_0. Everything downstream counts smoothings \u2014 the Lean sibling's docstring ('lepton number counts Skein smoothings'), its SkeinSmoothing structure, and the whole of rem:lepton-number-categorical-properties (each L_0^{pm} carries one lepton-antilepton pair). So 'crossing changes' in the Definition line is the outlier and should read 'smoothings'. TWO further observations on the Lean sibling (predicted-spectra/lepton-number-categorical.lean, which does exist and does declare QOU.Archimedean.LeptonNumber, so the definition-block Lean requirement is met): (i) 'structure LeptonNumber where L : Int' is a one-field wrapper on Int \u2014 it carries neither the normal form, the smoothing sequence, nor k, so it does not formalise the .md's L = k; (ii) 'lepton_number_conservation' sums (s.charged + s.neutral) over a list of SkeinSmoothing, but pair_conservation : charged + neutral = 0 is a FIELD of that structure, so the summand is identically zero by hypothesis and the theorem is 'a sum of zeros is zero'. The conservation is assumed in the carrier rather than derived \u2014 the self-assuming-projection shape of AGENTS.md 3b-cond item 5. The induction is real, so this is an observation, not a vacuity call."
+        "notes": "pass. MATH/CONSISTENCY FINDING, not fixed inline (it is the definition's operative word). The block's headline sentence defines lepton number as 'the count of Skein SMOOTHINGS applied to the nuclear normal form', but the formal Definition two lines later counts 'a sequence of $k$ Skein CROSSING CHANGES' and sets L = k. Those are different operations in the same skein triple L_+ - L_- = (q-q^{-1})L_0: a crossing change exchanges L_+ and L_-, a smoothing replaces the crossing by L_0. Everything downstream counts smoothings — the Lean sibling's docstring ('lepton number counts Skein smoothings'), its SkeinSmoothing structure, and the whole of rem:lepton-number-categorical-properties (each L_0^{pm} carries one lepton-antilepton pair). So 'crossing changes' in the Definition line is the outlier and should read 'smoothings'. TWO further observations on the Lean sibling (predicted-spectra/lepton-number-categorical.lean, which does exist and does declare QOU.Archimedean.LeptonNumber, so the definition-block Lean requirement is met): (i) 'structure LeptonNumber where L : Int' is a one-field wrapper on Int — it carries neither the normal form, the smoothing sequence, nor k, so it does not formalise the .md's L = k; (ii) 'lepton_number_conservation' sums (s.charged + s.neutral) over a list of SkeinSmoothing, but pair_conservation : charged + neutral = 0 is a FIELD of that structure, so the summand is identically zero by hypothesis and the theorem is 'a sum of zeros is zero'. The conservation is assumed in the carrier rather than derived — the self-assuming-projection shape of AGENTS.md 3b-cond item 5. The induction is real, so this is an observation, not a vacuity call."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2241,6 +2258,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T04:10:04.606Z",
+  "updated_at": "2026-11-19T17:22:55.391Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

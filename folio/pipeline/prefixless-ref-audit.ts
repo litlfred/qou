@@ -158,7 +158,7 @@ export async function auditPaper(paperDir: string): Promise<number> {
 if (import.meta.main) {
   const i = process.argv.indexOf("--paper");
   const paper = i >= 0 ? process.argv[i + 1] : "quantum-observable-universe";
-  const root = new URL("../../content/", import.meta.url).pathname + paper;
+  const root = new URL("../../folio/", import.meta.url).pathname + paper;
   auditPaper(root)
     .then((c) => process.exit(c))
     .catch((e) => {

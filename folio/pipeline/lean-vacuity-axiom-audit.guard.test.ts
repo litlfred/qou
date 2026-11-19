@@ -25,7 +25,7 @@ const ARTIFACT = resolve(
   REPO_ROOT,
   "docs/audits/2026-06-17-lean-vacuity-axiom-audit.json",
 );
-const SCRIPT = resolve(REPO_ROOT, "content/pipeline/lean-vacuity-axiom-audit.ts");
+const SCRIPT = resolve(REPO_ROOT, "folio/pipeline/lean-vacuity-axiom-audit.ts");
 // Any one real corpus `.lean` file — the point is a partial (non-corpus) scope.
 const ONE_FILE =
   "folio/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean";

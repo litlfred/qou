@@ -23,5 +23,3 @@ normalisation for $c = 3$-component link closure.*
 The connection to the wider framework and the significance of the
 factorisation are collected in
 [the Borromean $h^4$ context](#rem:borromean-h4-categorical-derivation-context).
-
-**Archimedean specialisation.** The factor $1/4 = [2]_q^{-2}\big|_{q=1}$ is the archimedean $q = 1$ numerical evaluation of the exact Wenzl weight, yielding the rational factorisation $(-3)\cdot(1/4) = -3/4$ over $\mathbb{R}$ on the archimedean side of the substrate wall.

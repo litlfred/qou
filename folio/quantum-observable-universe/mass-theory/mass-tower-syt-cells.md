@@ -89,7 +89,7 @@ $$
 with $\mu_T$ = normalised SYT Plancherel weight.
 
 The pair weight $z^2$ in the cross sum matches the generator-indexed
-form of [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower)
+form of [proton–electron mass endomorphism tower](#prop:mass-endomorphism-tower)
 and is justified universally (all $k_1 < k_2$, not just adjacent
 pairs) by the
 [Markov-trace factorization theorem](#thm:markov-trace-factorization):
@@ -136,7 +136,7 @@ A first-pass implementation
 $\hat V_k^{\mathrm{JM}}$ for $k = 1, \ldots, 3A$ on the atom braid
 word and assembles the tower of
 equation\~\ref{eq:syt-cell-tower}. Against the scalar all-pairs form
-of [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower),
+of [proton–electron mass endomorphism tower](#prop:mass-endomorphism-tower),
 with $E_0$ calibrated per path on the proton:
 
 | Atom | scalar all-pairs | JM all-pairs |

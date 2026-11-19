@@ -14,18 +14,18 @@ where $H_{\mathrm{XXZ}} = \sum_i \bigl(\sigma^x_i \sigma^x_{i+1} + \sigma^y_i \s
 
 The identification is not an additional hypothesis. It follows from the two scalar identities recorded in the proposition, which are exactly the entries of the two-site operator in the singlet channel; the remaining entries are identically zero on both sides.
 
-## Consequences
+## Structural corollaries
 
 Three follow without further input.
 
 **The chain is gapped.** Since $\Delta > 1$ for every real $q \neq 1$, the chain sits in the massive regime. Bound states of several down spins --- Bethe strings --- are stable there, whereas in the massless regime they are not.
 
-**The gap is small.** The relevant elliptic scale is $\exp\bigl(-\pi^2 / 2\log q\bigr)$, which at the substrate is of order $10^{-21}$. The chain is therefore only marginally inside the massive phase, and any statement about its spectrum that is not uniform in $\Delta - 1$ should be treated as delicate.
+**The gap is small.** The relevant elliptic scale is $\exp\bigl(-\pi^2 / 2\log q\bigr)$, which at the aether is of order $10^{-21}$. The chain is therefore only marginally inside the massive phase, and any statement about its spectrum that is not uniform in $\Delta - 1$ should be treated as delicate.
 
 **Bound states in one dimension need not be pairwise.** In the exactly soluble attractive case, an $n$-particle string binds as $n(n^2-1)$ rather than as the $\binom{n}{2}$ of a pairwise sum, an enhancement of $(n+1)/3$ over pairwise additivity. This is the shape of object the many-body binding term elsewhere in the framework is missing, and it is available here in closed form.
 
 ## Scope
 
-The matrix identity above is verified numerically at both documented substrate anchors, to the precision of the computation; the accompanying proposition establishes the scalar identities on which the two-site singlet decomposition rests. The coefficient of the boundary term was initially transcribed with the wrong sign, and the discrepancy was resolved by solving for the coefficients from the matrix entries; the witness script records this, and the coefficients should not be restored to a remembered form without re-running it.
+The matrix identity above is verified numerically at both documented aether anchors, to the precision of the computation; the accompanying proposition establishes the scalar identities on which the two-site singlet decomposition rests. The coefficient of the boundary term was initially transcribed with the wrong sign, and the discrepancy was resolved by solving for the coefficients from the matrix entries; the witness script records this, and the coefficients should not be restored to a remembered form without re-running it.
 
 Nothing here identifies the sites of the chain with any physical object. The claim is about the algebra the trace computes in, not about what it is a chain *of*.

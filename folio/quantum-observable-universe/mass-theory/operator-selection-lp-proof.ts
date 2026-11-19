@@ -26,4 +26,10 @@ export default proof({
     },
   ],
   uses: ["prop:operator-selection-lp"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/m_p_substrate_identity_50dps.py",
+    witness: "computations/m-p-substrate-identity-50dps.witness.json",
+    status: "verified",
+  },
 });

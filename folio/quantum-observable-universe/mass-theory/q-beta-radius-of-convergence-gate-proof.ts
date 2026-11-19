@@ -9,4 +9,19 @@ export default remark({
     "conj:q-beta-radius-of-convergence-gate",
     "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: qbeta-decay-sdp-extended-ck.witness.json.",
+    },
+  ],
+  computation: {
+    engine: "python",
+    script: "computations/qbeta/qbeta_decay_sdp_extended_ck.py",
+    witness: [
+      "computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json",
+      "computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

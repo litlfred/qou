@@ -11,7 +11,7 @@ One channel must therefore be mis-assigned, whatever $\tilde B$ is.
 
 ## Scope of the refutation
 
-This is a **structural exclusion**, not a scope-limited negative. The invariant
+This is a **structural exclusion** rather than a scope-limited negative. The invariant
 forbidding the construction is named and is a property of the hypothesis class rather
 than of any member of it: the assumed factorisation through $\mathrm{content}$ makes
 $B$ constant on the fibres of that map, and the two $pn$ channels lie in a single
@@ -24,7 +24,7 @@ every variant of it that keys the interface on species content. What is not excl
 is a crossing count as such: a rule that reads the *state* of the pair rather than its
 content is untouched by the argument.
 
-## What replaces it
+## Replacement interface architecture
 
 The variable that separates the two $pn$ channels is the isospin label $T$, which
 distinguishes the exchange-symmetric $T = 1$ combination from the antisymmetric
@@ -32,12 +32,7 @@ $T = 0$ one while leaving the species content identical. That variable is alread
 supplied by [the isospin ordering](#prop:isospin-singlet-binds-more), which assigns
 $\mu_+$ to the triplet and $\mu_-$ to the singlet and orders them without a fit.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
-physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
-$q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. The two experimental inputs
+The two experimental inputs
 are the AME deuteron binding $+2.224566\ \mathrm{MeV}$ and the $pn({}^1S_0)$ virtual
 state at $-0.066\ \mathrm{MeV}$; the argument itself is a statement about the
 factorisation and holds over any ordered field.

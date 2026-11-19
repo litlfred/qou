@@ -19,7 +19,7 @@ $$
   \rho_F  \;=\;  \nu_{\mathrm{SDP}}(K_w)
 $$
 
-per [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
+per [atomic binding derivation](#prop:atom-knot-mass-derivation)
 §Algorithm step 3 (the joint-tower SDP solve that produces
 $\nu_{\mathrm{SDP}}$ as a non-negative integer multiplicity).
 
@@ -27,7 +27,7 @@ $\nu_{\mathrm{SDP}}$ as a non-negative integer multiplicity).
 
 The identity is exact on the SDP-confirmed
 hyperbolic atoms (per
-[`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation) line 265):
+[atomic binding derivation](#prop:atom-knot-mass-derivation) line 265):
 
 | Atom | $K_w$ | $\rho_F$ (legacy) | $\nu_{\mathrm{SDP}}$ |
 |------|-------|-------------------|----------------------|
@@ -43,23 +43,20 @@ retired, and the deuteron binding is not a hyperbolic-volume term. Since the
 identity's own formula is
 $B_{\mathrm{pred}}(K) = \rho_F \, \mathfrak{m}_e \, \mathrm{Vol}_{\mathrm{hyp}}(K)$,
 at $\mathrm{Vol} = 0$ it returns $B_{\mathrm{pred}} = 0$ for **every** value of
-$\rho_F$ — so that row could not constrain the prefactor even in principle. It
+$\rho_F$, so that row could not constrain the prefactor even in principle. It
 was not a stale entry contributing weak support; it was contributing none.
 
 The evidence base for the $\nu_{\mathrm{SDP}}$ pattern is therefore **two
-points**, both equal to $2$, not three points reading $1, 2, 2$. The $1$ was the
+points**, both equal to $2$ rather than three points reading $1, 2, 2$. The $1$ was the
 row now removed, so the *variation* in that pattern came entirely from it.
 
 Read this together with the operational finding:
 six operational definitions of $\nu_{\mathrm{SDP}}$ were computed and **none**
 reproduces the legacy triple, and the committed values carry the methodology tag
-`"manual-historical-volume-match"` — they are hand-assigned rather than derived.
+`"manual-historical-volume-match"`, meaning they are hand-assigned rather than derived.
 
 The ${}^{4}\mathrm{He}$ case uses the magic $A \cdot 8G$ closure rule rather than a
-census knot. A binding-arbiter probe against AME2020,
-[`he4_nu_sdp_binding_arbiter.py`](../../../computations/probes/he4_nu_sdp_binding_arbiter.py),
-does **not** confirm an
-integer $\nu_{\mathrm{SDP}}(⁴\mathrm{He})$: the data-pinned prefactor is
+census knot. Direct comparison against AME2020 does **not** confirm an integer $\nu_{\mathrm{SDP}}({}^4\mathrm{He})$: the data-pinned prefactor is
 $\rho_F(⁴\mathrm{He}) = B_{\mathrm{AME}}/(m_e A\,8G) \approx 1.889$, which sits
 **strictly between** the isospin count ($2T{+}1 = 1$, $T{=}0$) and the monotone
 Wedderburn count ($A{-}1 = \mathrm{sc}(3A) = 3$). No clean categorical integer
@@ -69,7 +66,7 @@ Consequently the identity $\rho_F = \nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ is
 (${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$), where $\rho_F = A{-}1$ is exact and the
 SDP framing is canonical. At the doubly-magic point the prefactor is an
 **empirical effective binding coefficient** ($\approx 1.89$, Coulomb-corrected
-$\approx 1.94$), not an integer categorical multiplicity.
+$\approx 1.94$) rather than an integer categorical multiplicity.
 
 ## Categorical home
 
@@ -93,8 +90,8 @@ extrapolated to ${}^{4}\mathrm{He}$ with explicit caveat.
 
 The conditional hypothesis takes $\rho_F$, $\nu_{\mathrm{SDP}}$, $B_{\mathrm{pred}}$,
 and $\mathrm{Vol}$ as explicit parameters rather than existentials, so it is
-refutable: any prefactor lying strictly between two consecutive positive integers —
-as the ${}^{4}\mathrm{He}$ datum $\rho_F \approx 1.889$ does — admits no integer
+refutable: any prefactor lying strictly between two consecutive positive integers
+(as the ${}^{4}\mathrm{He}$ datum $\rho_F \approx 1.889$ does) admits no integer
 $\nu_{\mathrm{SDP}}$ at all. No operational definition in the corpus yet
 reproduces the confirmed $1, 2, 2$ across all three atoms; what the conditional
 hypothesis isolates is the positive-integrality of the prefactor and the binding
@@ -104,26 +101,26 @@ formula $B_{\mathrm{pred}} = \rho_F \cdot m_e \cdot \mathrm{Vol}(K_w)$ it feeds.
 
 Before the present convention, three distinct quantities used the symbol $\rho$
 in QOU compute and content (per
-[`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation) §Notation):
+[atomic binding derivation](#prop:atom-knot-mass-derivation) §Notation):
 
-- $\nu_{\mathrm{SDP}}$ — integer Wedderburn multiplicity (this conjecture)
-- $\rho_K$ — CODATA-fit density per knot
-- $\rho_F$ — Kashaev prefactor in the formal derivation (unnamed, compute-only)
+- $\nu_{\mathrm{SDP}}$: integer Wedderburn multiplicity (this conjecture)
+- $\rho_K$: CODATA-fit density per knot
+- $\rho_F$: Kashaev prefactor in the formal derivation (unnamed, compute-only)
 
 Consolidating the compute assignment field around the canonical $\nu_{\mathrm{SDP}}$ name
 removes the third unnamed $\rho$.
 
-## Where $\nu_{\mathrm{SDP}}$ is used
+## Occurrences of $\nu_{\mathrm{SDP}}$ across the binding chain
 
 - the canonical formalism atomic assignment table ($\nu_{\mathrm{SDP}}$ multiplicity entry)
 - the canonical formalism binding evaluator ($B_{\mathrm{pred}} = \nu_{\mathrm{SDP}} \cdot m_e \cdot \mathrm{Vol}(K)$)
-- [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
-  §Algorithm step 3 — supplies $\nu_{\mathrm{SDP}}$ via joint-tower SDP
+- [atomic binding derivation](#prop:atom-knot-mass-derivation)
+  §Algorithm step 3: supplies $\nu_{\mathrm{SDP}}$ via joint-tower SDP
 
-## What remains open
+## Unresolved identification steps
 
 1. **${}^{4}\mathrm{He}$ resolved (negative).** The binding-arbiter probe
-   found $\rho_F(⁴\mathrm{He}) \approx 1.889$ — not an integer, and no
+   found $\rho_F(⁴\mathrm{He}) \approx 1.889$, which is not an integer, and no
    categorical count derives the cap at $2$ (see §Evidence). The open successors
    are sharper: (a) is $\rho_F$ even integer-valued at doubly-magic nuclei? and
    (b) derive the doubly-magic prefactor directly (including Coulomb), rather
@@ -131,10 +128,10 @@ removes the third unnamed $\rho$.
    (${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$) remain the exact domain of the
    $\rho_F = \nu_{\mathrm{SDP}}$ identity; ${}^{2}\mathrm{H}$ left that domain
    when its knot assignment was retired (see §Evidence).
-2. **Extend joint-tower SDP to ${}^{5}\mathrm{Li}$, ${}^{6}\mathrm{Li}$, ${}^{7}\mathrm{Li}$** — the A$\in${5,6,7} gap
+2. **Extend joint-tower SDP to ${}^{5}\mathrm{Li}$, ${}^{6}\mathrm{Li}$, ${}^{7}\mathrm{Li}$:** the A$\in${5,6,7} gap
    needs $\nu_{\mathrm{SDP}}$ values; the wider atom$\to$knot census is
    deferred until the full SDP solver is available.
-3. **Extend joint-tower SDP to α-cluster atoms (${}^{8}\mathrm{Be}$ and up)** — the
+3. **Extend joint-tower SDP to α-cluster atoms (${}^{8}\mathrm{Be}$ and up):** the
    α-cluster rule inherits $\rho_F = 2$ from ${}^{4}\mathrm{He}$; verifying
    $\nu_{\mathrm{SDP}} = 2$ across the α-cluster recursion would close
    the inheritance step.
@@ -142,7 +139,7 @@ removes the third unnamed $\rho$.
 ## Cross-references
 
 - Underlying Kashaev volume conjecture:
-  [`kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
+  [Kashaev volume conjecture](kashaev-volume-conjecture.md)
 - $\nu_{\mathrm{SDP}}$ algorithmic definition:
-  [`atom-knot-mass-derivation`](atom-knot-mass-derivation.md)
+  [atomic binding derivation](atom-knot-mass-derivation.md)
   §Algorithm step 3

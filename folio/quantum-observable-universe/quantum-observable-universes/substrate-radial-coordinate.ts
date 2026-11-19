@@ -8,7 +8,7 @@ export default proposition({
   lean: { ref: "qou:QOU.substrate_radial_coordinate",
     validation: "not_checked",
   },
-  title: "Substrate parameter as the radial coordinate",
+  title: "Aether parameter as the radial coordinate",
   proofs: ["prf:substrate-radial-coordinate"],
   tags: ["substrate", "projective", "boson", "fermion"],
   uses: [

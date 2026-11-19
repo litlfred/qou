@@ -1582,6 +1582,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'strangelet-double-beta.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "8a83cdfe5305",
+          "ts": "165784d3fbf8",
+          "lean": "f437184474fe",
+          "lean_statement": "68894eb68ace"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:55.193Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified observations/strangelet-double-beta.lean compiles cleanly (exit 0); docstring explicitly states strangelet_double_beta is a definitional unfolding and descent_path proves 5->4->3 crossing counts."
       }
     ],
     "da-citation-misuse": [
@@ -1725,6 +1742,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'strangelet-double-beta.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "8a83cdfe5305",
+          "ts": "165784d3fbf8",
+          "lean": "f437184474fe",
+          "lean_statement": "68894eb68ace"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:55.221Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified bash scripts/lean-verify.sh folio/quantum-observable-universe/observations/strangelet-double-beta.lean exits 0."
       }
     ],
     "da-referee-verdict": [
@@ -1764,6 +1798,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'strangelet-double-beta.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "8a83cdfe5305",
+          "ts": "165784d3fbf8",
+          "lean": "f437184474fe",
+          "lean_statement": "68894eb68ace"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:55.249Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Referee re-audit pass: observations/strangelet-double-beta.lean compiles cleanly (exit 0) and honestly documents definitional scope."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2391,6 +2442,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T22:00:14.632Z",
+  "updated_at": "2026-11-19T17:22:55.249Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

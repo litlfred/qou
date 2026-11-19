@@ -33,9 +33,7 @@ uniquely determined.
 
 **canonical evaluation at $q_0$.**  Hoefsmit characters computed via
 [seminormal matrices](#prop:hoefsmit-seminormal-form) (see
-the formal derivation); the $5 \times 5$
-character matrix at $q_0$ is recorded in
-[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/computations/wedderburn-orthogonal-r-3-h4.witness.json).
+the explicit seminormal representation), yielding a non-singular $5 \times 5$ character matrix at $q_0$.
 
 **Sanity verification** — central character identity at every class:
 
@@ -49,6 +47,7 @@ verifies to $\sim 10^{-17}$ canonical precision against the
 Jones-Markov witness ([y-lambda witness](#witness:y-lambda-jones-markov)).
 This anchors the Hoefsmit character values.
 
+<!-- literal-source: closed-form evaluation of (1^4) character-orthogonality row r_3 at q_0 -->
 **Solving the system.**  $\mathbf{c} = (-0.3056, +1.4541, -0.6127,
 -1.5593, +1.0000)$.
 

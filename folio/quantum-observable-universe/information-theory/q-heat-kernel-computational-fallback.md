@@ -1,4 +1,4 @@
-At the physical substrate value $q_0 \approx 1.11$, exact enumeration of $H_n(q)$ irreducibles $\lambda \vdash n$ becomes infeasible for large $n$. The partition count grows as $p(n) \sim \exp(\pi\sqrt{2n/3})/(4n\sqrt{3})$, hitting $\sim 10^6$ at $n = 50$. Exact character-table computations fail beyond an exactness threshold $k_{\mathrm{exact}} \approx 9$--$15$.
+At the physical aether value $q_0 \approx 1.11$, exact enumeration of $H_n(q)$ irreducibles $\lambda \vdash n$ becomes infeasible for large $n$. The partition count grows as $p(n) \sim \exp(\pi\sqrt{2n/3})/(4n\sqrt{3})$, hitting $\sim 10^6$ at $n = 50$. Exact character-table computations fail beyond an exactness threshold $k_{\mathrm{exact}} \approx 9$--$15$.
 
 **Fallback via the $q$-heat kernel.** For $k > k_{\mathrm{exact}}$, the Peter--Weyl decomposition supplies a principled approximation:
 $$

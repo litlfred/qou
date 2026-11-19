@@ -1,6 +1,6 @@
 
 The braiding $c_{V,V} \colon V \otimes V \to V \otimes V$ of the QOU
-provides the substrate parameter categorically — no external choice is
+provides the aether parameter categorically — no external choice is
 needed.
 
 **Step 1 (spectral decomposition).** The volume constraint
@@ -32,8 +32,8 @@ characterised as the unique $q \in \mathrm{End}(\mathbf{1})$ for
 which the Iwahori--Hecke algebra $H_n(q)$ acts faithfully on
 $V^{\otimes n}$.
 
-In the archimedean realisation, the constant substrate field
+In the archimedean realisation, the constant aether field
 $q(p) = q_0 > 1$ for all $p$ satisfies the classicality bound
-$q \ge 1$ and positivity. Non-constant substrate fields arise from
+$q \ge 1$ and positivity. Non-constant aether fields arise from
 the Reeb flow parameterisation of the categorical
 $\mathrm{End}(\mathbf{1})$-valued coordinate.

@@ -21,6 +21,10 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
       kind: "refined-framing",
       date: "2026-06-13",
       body:

@@ -14,6 +14,3 @@ $$
   q_{\mathrm{real}} \xrightarrow{\text{lift}} q_k = e^{2\pi i/(k+2)} \xrightarrow{\hat{\tau}} q_{\mathrm{real}}
 $$
 forms the quantum computation. The lift explores the Hilbert space; the descent collapses it to the observable.
-
-**Archimedean specialisation.**
-What follows sits on the archimedean side of the substrate wall. It invokes real-analytic structures and numerical evaluation at the physical parameter $q_0$. Categorical identities drawn here remain valid over an abstract coefficient ring, but their archimedean realization is strictly specialized.

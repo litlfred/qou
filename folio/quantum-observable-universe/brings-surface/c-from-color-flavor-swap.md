@@ -21,7 +21,7 @@ $$
 | **P** | mirror reflection of braid diagram | writhe / signed-crossing classification ([`bar-involution-table3-data`](../stochastic-mechanics/bar-involution-table3-data.md)) |
 | **T** | Markov-trace word reversal | trace-cyclicity dual |
 
-The bar-involution $q \mapsto q^{-1}$, $\sigma_i \mapsto \sigma_i^{-1}$ acts as the **composite CPT** in this categorisation, not as C alone. This conjecture locates the C-component on the color sheets, orthogonal to P (braid-diagram mirror) and T (trace reversal).
+The bar-involution $q \mapsto q^{-1}$, $\sigma_i \mapsto \sigma_i^{-1}$ acts as the **composite CPT** in this categorisation rather than as C alone. This conjecture locates the C-component on the color sheets, orthogonal to P (braid-diagram mirror) and T (trace reversal).
 
 ## The conjectural content
 
@@ -47,7 +47,7 @@ When all three hold, $C$ constitutes the well-defined Z/2 categorical symmetry o
 
 ## Numerical cross-check and open content
 
-At the 50-digit substrate $q_0$, the flavor-conjugation involution leaves the color-tube weighted inter-nucleon Hecke generator invariant for all sixteen nucleon pairs drawn from $\{p, n, \bar p, \bar n\}$, in two two-dimensional Hecke representations (the diagonal eigenvalue model and a non-diagonal conjugate of it), with the $\epsilon$ and $W$ tables invariant cell by cell ([`verify_c_color_swap.py`](../../../computations/verify_c_color_swap.py), [`verify-c-color-swap.witness.json`](../../../computations/verify-c-color-swap.witness.json)). The check runs the uniform projection $W = 1/9$—the only realisation of $W$ available while its closed form remains open—so it corroborates the derivation rather than testing the conjectural Bring-derived $W$. No parameter is fitted.
+At the 50-digit aether parameter $q_0$, the flavor-conjugation involution leaves the color-tube weighted inter-nucleon Hecke generator invariant for all sixteen nucleon pairs drawn from $\{p, n, \bar p, \bar n\}$, in two two-dimensional Hecke representations (the diagonal eigenvalue model and a non-diagonal conjugate of it), with the $\epsilon$ and $W$ tables invariant cell by cell. The check runs the uniform projection $W = 1/9$—the only realisation of $W$ available while its closed form remains open—so it corroborates the derivation rather than testing the conjectural Bring-derived $W$. No parameter is fitted.
 
 The statement is conjectural only for as long as [inter-nucleon channel color tube](#conj:inter-nucleon-channel-color-tube) and the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action hypothesis remain open; supplying both makes it unconditional.
 
@@ -55,4 +55,4 @@ The statement is conjectural only for as long as [inter-nucleon channel color tu
 
 - Upstream hypothesis: [inter-nucleon channel color tube](#conj:inter-nucleon-channel-color-tube)
 - [CPT orbit-closure density](#conj:cpt-orbit-closure-density)—the CPT composite
-- [`bar-involution.md`](../braids-and-knots/bar-involution.md)—the bar-involution = CPT composite identification at the algebraic level
+- [bar-involution](#def:bar-involution)—the bar-involution = CPT composite identification at the algebraic level

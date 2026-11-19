@@ -1,4 +1,4 @@
-Let $\beta = \sigma_{i_1} \cdots \sigma_{i_N}$ have Gröbner–Shirshov normal form $\mathrm{NF}_{\mathrm{GS}}(\beta) = e_{j_1} \cdots e_{j_M}$. Unlike the Markov locality of [prop:trace-locality-meets-gs-non-locality](#prop:trace-locality-meets-gs-non-locality), the reduction to normal form is non-local. This is an informal observation; no precise statement of it is proved here.
+Let $\beta = \sigma_{i_1} \cdots \sigma_{i_N}$ have Gröbner–Shirshov normal form $\mathrm{NF}_{\mathrm{GS}}(\beta) = e_{j_1} \cdots e_{j_M}$. Unlike the Markov locality of [Markov locality of single Hecke crossings](#prop:trace-locality-meets-gs-non-locality), the reduction to normal form is non-local. This is an informal observation; no precise statement of it is proved here.
 
 The Gröbner–Shirshov reduction algorithm on the Hecke algebra applies three rewriting rules:
 

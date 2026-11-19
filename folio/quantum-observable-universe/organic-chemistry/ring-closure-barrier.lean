@@ -51,4 +51,21 @@ theorem ring_opening_exceeds_closure (N : ℕ) (heven : Even N) (hge : 4 ≤ N) 
   rw [hk]
   omega
 
+/-- **Class-axiomatised ring-closure barrier scaling (`conj:ring-closure-barrier`, §3b-cond).** -/
+class RingClosureBarrierConjecture where
+  unitEnergy : ℕ
+  unitEnergy_pos : 0 < unitEnergy
+  barrierEnergy : ℕ → ℕ
+  barrier_proportional :
+    ∀ N : ℕ, Even N → 4 ≤ N → barrierEnergy N = unitEnergy * alexanderWeightDifference N
+
+/-- **Conditional theorem (monotonicity of ring-closure barrier).** Under
+    `[RingClosureBarrierConjecture]`, the energy barrier increases weakly with
+    even ring size `4 ≤ N ≤ M`. -/
+theorem ring_closure_barrier_monotone [c : RingClosureBarrierConjecture]
+    (N M : ℕ) (hN : Even N) (hM : Even M) (hNge : 4 ≤ N) (hMge : 4 ≤ M) (hle : N ≤ M) :
+    c.barrierEnergy N ≤ c.barrierEnergy M := by
+  rw [c.barrier_proportional N hN hNge, c.barrier_proportional M hM hMge]
+  exact Nat.mul_le_mul_left c.unitEnergy (weight_diff_monotone N M hN hM hNge hMge hle)
+
 end QOU.Organic

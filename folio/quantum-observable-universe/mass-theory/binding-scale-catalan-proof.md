@@ -2,8 +2,8 @@
 The Borromean complement decomposes into two regular ideal
 octahedra, each of volume $4G$ (where
 $G = \mathrm{Cl}_2(\pi/2)$ is the Clausen function evaluated at
-$\pi/2$).  The equality $\mathrm{Vol}(\mathcal{B}_3) = 8G$ is a
-theorem of hyperbolic geometry, not a numerical approximation.
+$\pi/2$).  The equality $\mathrm{Vol}(\mathcal{B}_3) = 8G$ holds as an
+exact theorem of hyperbolic geometry rather than a numerical approximation.
 The volume is known to arbitrary precision as a mathematical
 constant.
 

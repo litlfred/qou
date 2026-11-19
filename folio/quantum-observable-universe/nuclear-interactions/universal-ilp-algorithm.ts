@@ -45,6 +45,10 @@ export default definition({
   },
   authorNotes: [
     {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
       kind: "status",
       date: "2026-08-24",
       body:

@@ -16,4 +16,4 @@ $$
 \end{equation}
 ```
 
-The **substrate parameter** $q \in \mathrm{End}(\mathbf{1})$ is the unique value for which $d_q$ acts as $q^{-1}d$ on horizontal forms and as $d$ on vertical forms.
+The **aether parameter** $q \in \mathrm{End}(\mathbf{1})$ (also referred to in purely algebraic contexts as the deformation or substrate parameter) is the unique value for which $d_q$ acts as $q^{-1}d$ on horizontal forms and as $d$ on vertical forms.

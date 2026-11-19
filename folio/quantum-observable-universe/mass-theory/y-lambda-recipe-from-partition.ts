@@ -10,6 +10,12 @@ export default proposition({
   },
   uses: ["prop:y-lambda-cyclotomic-factorization"],
   cites: ["wenzl1988", "macdonald1995"],
+  computation: {
+    engine: "python",
+    script: "computations/markov_z_full_bar_condition_probe.py",
+    witness: ["computations/markov-z-full-bar-condition.witness.json"],
+    status: "verified",
+  },
   tags: [
     "y-lambda",
     "recipe",

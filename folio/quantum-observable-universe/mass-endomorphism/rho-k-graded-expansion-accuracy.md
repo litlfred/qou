@@ -6,7 +6,7 @@ The graded expansion replaces the empirical leading-order ansatz of [atomic mass
 
 - The leading-order piece acts as a theorem derived from Markov multiplicativity and free-constituent additivity.
 - The single-generator piece is a binding correction whose form is chosen to match the data ($0.18\%$ mean error); it is not derived.
-- The pair-generator and higher pieces remain open work. Finding the precise Wedderburn-coupling structure closes the six-term theorem's Kashaev limit at sub-percent accuracy.
+- The pair-generator and higher pieces are conjectural ([pair-generator canonical form](#conj:rho-k-pair-gen-canonical-form)); determining their exact Wedderburn-coupling prefactor is needed to close the six-term Kashaev limit at sub-percent accuracy.
 
 Combined with the Hecke branching trace decomposition (refined Sub-lemma 2.1, operator-valued $A^\lambda_{\mu, \nu}(I)$ interface), the bound atomic case receives full coverage. The leading-order and single-generator pieces give $\rho_K$ to $0.18\%$; the higher pieces and the interface contribution close the residual.
 

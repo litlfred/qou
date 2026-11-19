@@ -43,6 +43,7 @@ export default conjecture({
     {
       kind: "note",
       date: "2026-08-08",
+      /* <!-- literal-source: hyperbolic volume of Borromean link 8*Catalan = 7.32772475 (8-dp Lean constant volBorromean) --> */
       body: `**Base ring (§7c) — \`ℝ\` is load-bearing.** \`volBorromean := 7.32772474\` and \`vol_4_1 := 2.0298832128\` are decimal hyperbolic volumes, and \`BorromeanCommonScale\` carries \`positive : value > 0\`. Decimal geometric constants and an ordering field are archimedean by construction — this block sits on the observable side of the wall, where a mass formula belongs.`,
     },
   ],

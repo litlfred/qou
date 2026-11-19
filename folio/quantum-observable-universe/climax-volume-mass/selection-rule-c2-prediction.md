@@ -32,7 +32,7 @@ Their sum is $2 + q + q^{-1}$. Dividing by $3$ yields $(2 + q + q^{-1})/3 = (q^2
 
 ## $q$-usage discipline
 
-This holds over real $q > 0$ (substrate-anchor regime). The closed form $(q+1)^2/(3q)$ is a Laurent rational in $\mathbb{Z}[q, q^{-1}]$ — a fibre-level construction. At $q = q_0$, it evaluates to $\approx 1.337$. There is no $|q|=1$ step; both $q$ and $q^{-1}$ are real positive at any real $q > 0$.
+This holds over real $q > 0$ (aether-anchor regime). The closed form $(q+1)^2/(3q)$ is a Laurent rational in $\mathbb{Z}[q, q^{-1}]$ — a fibre-level construction. At $q = q_0$, it evaluates to $\approx 1.337$. There is no $|q|=1$ step; both $q$ and $q^{-1}$ are real positive at any real $q > 0$.
 
 ## Cross-references
 

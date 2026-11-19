@@ -17,7 +17,7 @@ Four distinct uses motivate the lift:
    functor ([classical limit functor](#def:classical-limit-functor))
    with the evaluation at a specific surreal, composed with
    Robinson's standard-part map \cite{robinson1966}. The classical
-   regime becomes a quotient, not a limit.
+   regime becomes a quotient rather than a limit.
 
 2. **A grading source aligned with braid combinatorics.** Gonshor's
    sign-sequence presentation of $\mathbf{No}$ \cite{gonshor1986} assigns
@@ -56,14 +56,13 @@ are *never actually used* in a load-bearing way (see
 - **Lebesgue measure** enters only the Möbius energy integral
   (one block). Everywhere else, "integrals" are categorical
   (Frobenius counit) or reduce to rational/algebraic formulas.
-- **Hilbert completion** appears in exactly one proof
-  passage, where the only step invoking completion is the word
-  "dense" — which can be replaced by "spans the algebraic
+- **Hilbert completion** appears in a single proof
+  passage, where "dense" can be replaced by "spans the algebraic
   direct limit" without loss.
 - **Hausdorff dimension** is given by the rational formula
   $d_H(q) = (2q-1)^2/q^3$, so it transfers to $\mathbf{No}$
   exactly.
-- **Spectral theorems** are never used; Hoefsmit's seminormal
+- **Spectral theorems** are never used. Hoefsmit's seminormal
   form diagonalises Hecke generators algebraically over
   $\mathbb{Q}(q^{1/2})$.
 
@@ -71,20 +70,17 @@ The only obstructions that genuinely bite are the Möbius
 energy integral and the hyperbolic-volume side of the Kashaev
 comparison. This paper's mass-formula pipeline — Hoefsmit $\to$ Markov trace $\to$ Jones polynomial $\to$ categorical mass — transfers to $\mathbf{No}$ unchanged.
 
-## Non-goals
+## Non-goals.
 
-This appendix does **not**:
+Four exclusions bound the scope of this appendix.
 
-- claim a physical interpretation of non-archimedean values (the
-  treatment is purely mathematical);
-- replace any main-text proof (this paper's results stand on their own over $\mathbb{R}$);
-- solve the Kashaev volume conjecture (though it offers a
-  reformulation that separates the algebraic from the
-  transcendental parts — see [Kashaev surreal
-  reformulation](#conj:kashaev-surreal));
-- construct a canonical Lebesgue-like measure on $\mathbf{No}$
-  (it has none; the appendix sidesteps this rather than
-  solving it).
+- Non-archimedean values carry no claimed physical interpretation (the
+  treatment is purely mathematical).
+- No main-text proof is replaced (all main-text results stand over $\mathbb{R}$).
+- Kashaev's volume conjecture is not solved (though [Kashaev surreal
+  reformulation](#conj:kashaev-surreal) separates its algebraic and
+  transcendental parts).
+- No canonical Lebesgue-like measure is constructed on $\mathbf{No}$.
 
 ## Structure of the appendix
 
@@ -93,5 +89,5 @@ Section 2 lists the analytic obstructions; Section 3 shows what
 survives of calculus up to infinitesimals. Sections 4--5 construct
 the birthday and sign-sequence gradings and the standard-part
 functor. Section 6 relaxes the strict QOU axioms. Section 7 gives
-two speculative reformulations: the substrate as a Hahn series,
+two speculative reformulations: the aether parameter as a Hahn series,
 and Kashaev's conjecture as a standard-part identity.

@@ -9,7 +9,7 @@ $$
 $$
 
 **The formal conjecture.**
-For the QOU at a non-torsion substrate parameter $q_0 \in \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$, there exists a family of braids $\{L_N = \hat{\beta}_N\}_{N \geq 1}$ with $c_N = 3N$ crossings encoding an NP-complete problem such that:
+For the QOU at a non-torsion aether parameter $q_0 \in \mathbb{G}_m^{\mathrm{nt}}(\mathbb{R})$, there exists a family of braids $\{L_N = \hat{\beta}_N\}_{N \geq 1}$ with $c_N = 3N$ crossings encoding an NP-complete problem such that:
 $$
   \mathcal{H}_c(L_N, q_0) \neq \varnothing \qquad \text{for all } N \geq N_0.
 $$

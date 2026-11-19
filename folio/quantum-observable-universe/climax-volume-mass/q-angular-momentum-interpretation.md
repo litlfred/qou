@@ -15,7 +15,7 @@ $$
 
 **Building block values.**
 
-| Knot | $n$ (strands) | $j$ | $J_q^2$ at the substrate parameter $q$ | Classical $j(j+1)$ |
+| Knot | $n$ (strands) | $j$ | $J_q^2$ at the aether parameter $q$ | Classical $j(j+1)$ |
 |------|:---:|:---:|:---:|:---:|
 | $0_1$ (unknot) | $1$ | $0$ | $0$ | $0$ |
 | $3_1$ (trefoil) | $2$ | $\frac{1}{2}$ | $[1/2]_q [3/2]_q = 0.7507$ | $0.75$ |
@@ -33,4 +33,4 @@ $$
   J_q^2(\mathcal{N}) =  [J]_q  [J+1]_q
 $$
 
-Here $J$ is the ground-state spin fixed by the nuclear link's embedding in the Temperley--Lieb algebra $TL_A(\delta)$ with $\delta = -(q^{1/2} + q^{-1/2})$.
+Here $J$ is the ground-state spin fixed by the nuclear link's embedding in the Temperley--Lieb algebra $TL_A(\delta)$ with loop parameter $\delta = [2]_q = q + q^{-1}$ under Convention D (contrasted with $\delta = -(q^{1/2} + q^{-1/2})$ in the $q^{1/2}$ Kauffman convention).

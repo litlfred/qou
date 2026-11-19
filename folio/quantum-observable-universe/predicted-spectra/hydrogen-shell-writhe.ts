@@ -9,4 +9,10 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: ["def:electron-knot"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

@@ -39,7 +39,7 @@ $(\lambda - \Delta_q)^{-1}$ acts on the eigenbasis as
 $(\lambda - \Delta_q)^{-1}(z^k) = (\lambda + [k]_q^2)^{-1}z^k$.
 Since $[k]_q^2 \to \infty$ exponentially, the eigenvalues
 $(\lambda + [k]_q^2)^{-1} \to 0$ super-exponentially, so the
-resolvent is not only compact but **trace-class**:
+resolvent is **trace-class** (and in particular compact):
 
 $$
   \sum_{k=1}^\infty \frac{1}{|\lambda + [k]_q^2|}

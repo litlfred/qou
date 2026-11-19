@@ -15,7 +15,7 @@ affine coordinate of a state.
    $\mathbb{CP}^1$ fibre.
 
 Furthermore, the $q$-deformed Reeb flow
-([q-Reeb flow](#ex:q-reeb-flow)) rotates the phase of $Z$ at a rate
+(q-Reeb flow) rotates the phase of $Z$ at a rate
 proportional to the quantum Planck constant:
 
 $$
@@ -23,7 +23,7 @@ $$
 $$
 
 where $\hbar_q = 1 - q^{-1}$
-([quantum Planck constant](#def:quantum-planck-constant)) and $J$ is
+(quantum Planck constant) and $J$ is
 the complex structure on $H$.
 
 Thus $q$ controls the

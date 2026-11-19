@@ -1,6 +1,6 @@
 # Recomputed low-isotope mass table
 
-Following the $q$-Hecke character closure ([$q$-Hecke seminormal character closure](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths evaluate convention D on the borromean word at the proton-anchored substrate parameter $q_0$, so the agreement certifies the character closure, not the choice of convention.
+Following the $q$-Hecke character closure ([$q$-Hecke seminormal character closure](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths evaluate convention D on the borromean word at the proton-anchored aether parameter $q_0$, so the agreement certifies the character closure rather than the choice of convention.
 
 ## Cross-check
 
@@ -21,15 +21,13 @@ This direct form supersedes the equivalent factorisation $\mathfrak{m}(K) = \rho
 
 In the calibrated form, $\rho_K^{\mathrm{LO}}$ consumes CODATA $m_p$ and $m_n$ as upstream inputs. This violates the [three-calibration discipline](../mass-theory/three-calibration-inputs.md) by injecting $m_p$ and $m_n$ as extraneous calibration constants. The proton and neutron rows are tautological by construction.
 
-Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
-
 See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
-† Proton and neutron predictions equal CODATA exactly because $m_p$ and $m_n$ are upstream inputs in this leading-order form. A $0.000\%$ relative error here represents a calibration tautology, not prediction quality.
+† Proton and neutron predictions equal CODATA exactly because $m_p$ and $m_n$ are upstream inputs in this leading-order form. A $0.000\%$ relative error here represents a calibration tautology rather than prediction quality.
 
 ### Full $\mathfrak{Q}_\beta$ prediction
 
-The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([symbolic neutron $Q$-value](../nuclear-interactions/neutron-qvalue-symbolic.md)). No CODATA nucleon masses are injected and $\mathfrak{Q}_\beta$ is not used as an input; rather, $\mathfrak{Q}_\beta$ becomes an output.
+The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the aether parameter $q_0$ (CAL-2) ([symbolic neutron $Q$-value](../nuclear-interactions/neutron-qvalue-symbolic.md)). No CODATA nucleon masses are injected and $\mathfrak{Q}_\beta$ is not used as an input; rather, $\mathfrak{Q}_\beta$ becomes an output.
 
 The Convention-D base evaluation at single wrap ($\varepsilon$ evaluated via the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
 

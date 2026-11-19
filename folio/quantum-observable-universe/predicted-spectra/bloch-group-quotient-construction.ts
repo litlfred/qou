@@ -20,6 +20,10 @@ export default proposition({
   },
   authorNotes: [
     {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
       kind: "status",
       body:
         "**theorem (sorry-free, modulo over-permissive pentagon-shape constraints).** The Lean file [`bloch-group-quotient-construction.lean`](bloch-group-quotient-construction.lean) defines `BlochGroup F` concretely as a quotient `AddCommGroup`, with the pentagon `AddSubgroup` parameterised by the generator set `pentagonRelationGenerators := Set.range pentagonGenerator` over `PentagonShape F`. The structural construction, universal property, `pentagonGenerator_mem_pentagonSubgroup`, `quot_pentagonGenerator_eq_zero`, and `HasBlochGroup ℝ` instance are all sorry-free.",

@@ -15,7 +15,7 @@ $m(K) = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ generalises in two ways.
    $\mathrm{Vol}(K) \rightsquigarrow \mathrm{Vol}_{\mathbb{C}}(K) = \mathrm{Vol}(K) + i\,\mathrm{CS}(K)$,
    the Chern–Simons invariant supplying the imaginary partner already used for
    $\alpha_{\mathrm{EM}}$. The physical mass is the real part; the imaginary part
-   is the confinement / instability scale — the Breit–Wigner width of a confined
+   is the confinement / instability scale, namely the Breit–Wigner width of a confined
    constituent that never has a real pole mass.
 
 2. **Per-knot scalar $\to$ spectrum of a functional.**
@@ -25,26 +25,17 @@ $m(K) = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ generalises in two ways.
    torus-knot longitudinal windings of the three generations).
 
 **No-tuning content.** Successive generations are tied by the fixed continuant
-ratio $b_n / b_{n-2}$ of the Morgan–Voyce tower — the same tower whose
+ratio $b_n / b_{n-2}$ of the Morgan–Voyce tower, the same tower whose
 divisibility $b_a \mid b_n \Leftrightarrow a \mid n$ fixes which windings are
 generations. So the second-generation (charm) block is *determined* by the
 first-generation block, with no free per-flavour parameter; the light-doublet
-splitting $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$, which the substrate already
+splitting $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$, which the aether already
 fixes, is the single calibrated anchor.
 
 **Falsifiability.** Both the Chern–Simons invariant and the composite braid are
-rigid — zero free parameters once the hadron's quark content fixes the braid —
+rigid (with zero free parameters once the hadron's quark content fixes the braid),
 so the conjecture predicts the strange / charm splitting with nothing left to
 tune. Combining the winding-tower law with the light-doublet
 anchor determines the charm block as the $k = 5$ content ratio times the up block.
 
-**Status: OPEN (primary conjecture).** No instance of the class is exhibited.
-Constructing the categorically-fixed functional $\mathfrak{M}$ — equivalently
-deriving $\mathrm{contRatio}$ and the block projections from the Frobenius
-pairing $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ — is the open
-closure, and until it is done no second-generation quark mass follows. This is a
-formalize-first scaffold, not a derivation: it states a falsifiable claim and its
-consequence structure. It sits in Subgoal-2 research (open for all agents); the
-anti-fit discipline gates *how* it may be closed — a $\mathfrak{M}$ obtained by
-inverting the quark-mass anchors is a fit, not a derivation, and may not be
-wired to production as canonical.
+**Open analytical step.** Constructing the functional $\mathfrak{M}$ directly from the Frobenius pairing $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ (deriving the continuant ratio and block projections algebraically rather than inverting empirical quark-mass anchors) is required before any second- or third-generation quark mass follows from the composite braid.

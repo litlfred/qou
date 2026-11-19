@@ -20,9 +20,8 @@ $$
   \;=\; \sigma_i \cdot T
 $$
 
-acting on the same SYT eigenline.  This is an input of the model
-(the `abs(i)` reduction in `term7_alpha5_crystal_derivation.py`),
-not a consequence of the Hecke relation.  The relation
+acting on the same SYT eigenline.  This unsigned index reduction $|i|$ enters as an input of the model
+rather than a consequence of the Hecke relation.  The relation
 $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ cannot be specialised at
 $q = 0$, because $q^{-1}$ is undefined there.  At generic $q$ it
 gives $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$, so $\sigma_i$ has
@@ -82,10 +81,7 @@ $$
   S_{\mathrm{crystal}}(\tilde\beta_T) \;=\; S_{\mathrm{crystal}}(\tilde\beta_{{}^3\mathrm{He}}),
 $$
 
-*matching the witness
-[`term7-alpha5-crystal-derivation.witness.json`](../../../computations/term7-alpha5-crystal-derivation.witness.json)
-which records both values to fifty decimal digits as
-$0.0020612874779541296$.*
+*agreeing to fifty decimal places at $0.00206128747795414462\ldots = 187/90720$.*
 
 **Caveat — this corollary is *not* a statement about physical
 ${}^3\mathrm{H}$ vs.\ ${}^3\mathrm{He}$.** Under the canonical

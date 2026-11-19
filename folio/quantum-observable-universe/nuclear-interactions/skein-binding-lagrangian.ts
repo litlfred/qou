@@ -19,6 +19,10 @@ export default definition({
   authorNotes: [
     {
       kind: "note",
+      body: "Computational provenance: computations/coulomb_energy.py (witness computations/deltalambda/mirror-split-continuum-em.witness.json).",
+    },
+    {
+      kind: "note",
       body:
         "Lean sibling lives on the observable/archimedean side of the substrate→archimedean wall (AGENTS.md §7c): the fractional mass-number powers $A^{2/3}$, $A^{1/3}$ (`Real.rpow`), rational divisors, and the substrate inverse $q^{-1}$ at the real evaluation $q\\mapsto q_0>1$ force $\\mathbb{R}$. The archimedean specialisation is intended, not a base-ring leak — the Lean docstring already states this side placement.",
     },

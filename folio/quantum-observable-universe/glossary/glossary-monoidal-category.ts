@@ -6,10 +6,4 @@ export default remark({
   tags: ["glossary", "category-theory", "monoidal"],
   uses: [],
   defines: ["monoidal-category"],
-  authorNotes: [
-    {
-      kind: "note",
-      body: "Mathlib reference: `CategoryTheory.MonoidalCategory` (class) in `Mathlib.CategoryTheory.Monoidal.Category`, with `tensorObj` and `tensorUnit`.",
-    },
-  ],
 });

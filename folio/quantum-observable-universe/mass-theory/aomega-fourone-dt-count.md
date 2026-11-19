@@ -31,7 +31,7 @@ $$
 The value $3$ enters only from the certified Stokes computation; the bridge
 class asserts no value of $A_\omega$. So the theorem *derives* that the
 figure-eight observable $A_\omega$ **is** the BPS degeneracy of $T[4_1]$ and
-equals $3$ — it does not assume it (the non-degeneracy requirement of the bridge class).
+equals $3$; it does not assume it (the non-degeneracy requirement of the bridge class).
 
 ### Scope
 
@@ -42,13 +42,11 @@ not prove it for any knot. What they prove is their Conjecture 5 for $4_1$ and
 $5_2$ (their Theorem 6), and they verify Conjecture 4 by computation. So no
 instance of the bridge is discharged. The result is **not** carried downstream:
 no mass prediction and no rung of the $Q_\beta$ ladder depends on it. The *internal*
-derivation of the integer $3$ from the QOU categorical drivers (Hecke $H_3$ /
-Bring / Wedderburn), rather than importing it from Garoufalidis--Gu--Mariño,
-remains open.
+deriving the integer $3$ directly from internal Hecke $H_3$, Bring-surface, and Wedderburn invariants (rather than importing it from Garoufalidis–Gu–Mariño) is conjectural.
 
 The bridge here is the **closed** / state-integral BPS sector. The **open**-HOMFLY
 Gukov--Stošić bridge gives the $4_1$ count $\det(4_1) = 5$ (five HOMFLY-homology
 generators / five quiver nodes) and does *not* reproduce the $4_1$ Stokes integer
-$3$ — see the
+$3$; see the
 non-degeneracy discussion in
 [Stokes DT BPS bridge conjecture](#conj:stokes-dt-bps-bridge).

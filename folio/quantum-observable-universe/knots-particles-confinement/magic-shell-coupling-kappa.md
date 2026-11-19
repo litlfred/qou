@@ -1,4 +1,4 @@
-*Define, for a substrate parameter $q$ and a mass scale $m_e$,*
+*Define, for an aether parameter $q$ and a mass scale $m_e$,*
 
 $$
   \kappa_{\mathrm{closed}}(q, m_e)
@@ -7,11 +7,11 @@ $$
   E_0 = \frac{m_e}{q(q-1)}, \quad h = q - q^{-1},
 $$
 
-*where $[n]_q = (q^n - q^{-n}) / (q - q^{-1})$ is the balanced q-bracket. At the substrate parameter this evaluates to $\kappa_{\mathrm{closed}} \approx -1.0704$.*
+*where $[n]_q = (q^n - q^{-n}) / (q - q^{-1})$ is the balanced q-bracket. At the aether parameter this evaluates to $\kappa_{\mathrm{closed}} \approx -1.0704$.*
 
-**No physical quantity is claimed for this expression.** It was formerly proposed as the per-excess slope of a magic-shell coupling; that identification is withdrawn, for the reason recorded below. The name is retained because the corpus refers to it, not because the identification stands.
+**No physical quantity is claimed for this expression.** It was formerly proposed as the per-excess slope of a magic-shell coupling; that identification is withdrawn, for the reason recorded below. The name is retained because the corpus refers to it rather than because the identification stands.
 
-## Why the identification was withdrawn
+## Grounds for withdrawing the identification
 
 The expression was matched, to $3.4 \times 10^{-4}$, against a measured value of $\approx -1.0708\;\text{MeV}$. That value is the electrostatic energy of ${}^{3}$He's $pp$ pair, attributed to the proton–neutron interface asymmetry.
 
@@ -30,7 +30,7 @@ A term proportional to $(n_{pp} - n_{nn})$ must change sign between anchors of e
 
 That single diagnosis accounts for the two independent negatives found before it. No term of this form and size appears in mirror-split binding data at $A = 3$, $15$, $39$, because the coefficient vanishes. And the original fit contradicted itself because it was describing an electrostatic energy with a categorical form, and only one of its two anchors has one.
 
-## What is proved about the expression
+## Proved properties of the expression
 
 The following hold independently of any physical reading, and are unaffected by the withdrawal.
 

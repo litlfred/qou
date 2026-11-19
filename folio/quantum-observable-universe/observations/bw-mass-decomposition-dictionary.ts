@@ -19,4 +19,10 @@ export default remark({
       body: "Crossing-count identities formalised in `QOU.MassTheory.CoulombFromCrossingCounts` and `QOU.MassTheory.CrossingCountAffine`; shell-closure selection principle tracked in `conj:homological-shell-condensation`.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/nuclear_spin_orbit_shells_and_symmetry_probe.py",
+    witness: "computations/probes/nuclear-spin-orbit-shells-and-symmetry.witness.json",
+    status: "verified",
+  },
 });

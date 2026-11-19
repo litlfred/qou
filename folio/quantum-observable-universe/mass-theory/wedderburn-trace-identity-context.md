@@ -15,19 +15,19 @@ weight. The standard representation $[n{-}1, 1]$ carries the dominant
 weight, which is why the volume term (sourced by the standard block)
 leads the BW formula.
 
-**Scale versus weight — two distinct $q$-objects.**
+**Scale versus weight: two distinct $q$-objects.**
 
 Two $q$-quantities enter the BW formula and must not be conflated:
 
-- the **Hecke-level scale** $[n]_q! = [1]_q [2]_q \cdots [n]_q$ — for
+- the **Hecke-level scale** $[n]_q! = [1]_q [2]_q \cdots [n]_q$ (for
   example the Wigner coefficient $\lambda_W = [5]_q!\, m_e$ at Hecke
-  level $k = 5$ — evaluated directly as the $q$-factorial product;
+  level $k = 5$), evaluated directly as the $q$-factorial product;
 - the **per-block weight ratio** $w_\lambda(q) = \dim_q(\lambda)^2 / [n]_q!$,
   used in the LP-dual shadow prices, which coincides with the Markov
   weight $y_\lambda$ only on self-conjugate $\lambda$.
 
 Neither is the bare sum $\sum_\lambda \dim_q(\lambda)^2$: that sum is a
-separate $q$-polynomial — the global dimension of the block algebra —
+separate $q$-polynomial (the global dimension of the block algebra)
 and equals $[n]_q!$ only at $q = 1$.
 
 **Classical limit.** At $q = 1$ the block dimensions satisfy the

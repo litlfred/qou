@@ -18,6 +18,10 @@ export default remark({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Calibration & edition comparison migrated from prose: order-2 CS truncation under muon calibration gives -4.0e-7 (-399.53 ppb, exact closure kappa ~ 1.8880423), and Form B under muon calibration against CODATA 2018 gives +6.7e-9 (+6.672 ppb). Script: computations/alpha/alpha_em_form_comparison_probe.py.",
+    },
+    {
       kind: "status",
       body: "Items 1–2 of the earlier checklist are **resolved** by\n[`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring): the\n\"3-manifold\" is the $2$-surface $M_{\\text{Bring}}$, and the photon zero-mode\ncoefficient $b_1/\\operatorname{Area} = 2g/(4\\pi(g-1)) = 2/(3\\pi)$ is proven\n(Lean `photonZeroModeShift_at_g4`, sorry-free). What remains:\n\n1. **Verify UV finiteness.** Reshetikhin–Turaev shadow-world regularisation\n should produce a finite answer (force-carrier complexity $[9]_q[10]_q$\n regularises the categorical sum, replacing the continuum momentum integral).\n2. **Compute the next-order self-energy** $\\alpha/(4\\pi)$ as a 2-loop graph\n (the $n=2$ jet order); the simplest closed forms $1/(4\\pi)$, $1/(2\\pi[2]_q)$\n are near-misses at $\\sim 0.4\\%$.\n\nThe numerical match at $5.7 \\times 10^{-8}$ is no coincidence; the leading\nmechanism is derived, with UV finiteness and the next-order term the open\nremainder.",
     },
@@ -27,4 +31,13 @@ export default remark({
       body: "Formalization provenance moved from prose: in Form A, the Gram-determinant value $\\kappa \\approx 1.722$ was carried as `sorry` in `em-coupling-chern-simons.lean` from the start; in Form B, the factor $8q$ was annotated in Lean as $\\dim \\mathfrak{su}(3)$ whereas the draft text described a two-step crossing-pattern enumeration. Full numerical attempt log witness: `alpha-em-correction-derivation-attempts.witness.json`.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/alpha_em_form_ladder_probe.py",
+    witness: [
+      "computations/alpha-em-form-ladder.witness.json",
+      "computations/alpha/alpha_em_form_comparison_probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

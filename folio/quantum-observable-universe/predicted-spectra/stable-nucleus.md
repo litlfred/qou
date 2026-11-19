@@ -20,7 +20,7 @@ $$
   Z = \frac{A}{2 + a_C  A^{2/3} / (2a_A)},
 $$
 
-where $a_C = (q - q^{-1}) \cdot \lambda_C$ and $a_A$ is the Pauli coefficient ([beta-stability](#prop:beta-stability)).
+where $a_C = (q - q^{-1}) \cdot \lambda_C$ and $a_A$ is the Pauli coefficient ([beta-stability line](#prop:beta-stability)).
 
 A **stable atom** appends $Z$ electrons:
 
@@ -29,5 +29,3 @@ $$
   = 
   \mathcal{N}(Z, N)  \oplus  Z \cdot T_{2,3}.
 $$
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall, invoking real- and complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter $q_0$. All underlying categorical and $q$-deformation identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

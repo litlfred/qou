@@ -1,34 +1,34 @@
-The QOU framework predicts that classical Navier--Stokes admits finite-time blow-up where the enstrophy transfinite $\mathcal{Z}_q \asymp \varepsilon^{-4/3}$ outruns the mass-gap infinitesimal $\Delta_q \asymp \varepsilon^3$ ([NS surreal bound](#rem:ns-surreal-bound), [blowup as lifting obstruction](#prop:blowup-yekutieli)). Here the mathematical infinity marks not a physical breakdown, but the threshold at which the classical approximation $q = 1$ reverts to the underlying quantum substrate $q > 1$.
+The QOU framework predicts that classical Navier--Stokes admits finite-time blow-up where the enstrophy transfinite $\mathcal{Z}_q \asymp \varepsilon^{-4/3}$ outruns the mass-gap infinitesimal $\Delta_q \asymp \varepsilon^3$ ([NS surreal bound](#rem:ns-surreal-bound), [blowup as lifting obstruction](#prop:blowup-yekutieli)). Here the mathematical infinity marks the threshold at which the classical approximation $q = 1$ reverts to the underlying quantum aether $q > 1$, rather than a physical breakdown.
 
 ## Physical meaning of a blow-up
 
-At a finite-time singularity $T^\ast$ of the classical NS flow, the velocity gradient $|\nabla u|$ diverges in any $L^2_q$-bound sense. In the QOU substrate interpretation:
+At a finite-time singularity $T^\ast$ of the classical NS flow, the velocity gradient $|\nabla u|$ diverges in any $L^2_q$-bound sense. In the QOU aether interpretation:
 
 - **The continuum shatters.** The classical $q = 1$ approximation fails to contain the vorticity cascade. The surreal squeeze $\mathcal{Z}_q > \Delta_q$ forbids any dissipation path at $\varepsilon = 0$.
-- **Substrate reversion.** The region around the singularity is forced to leave the classical standard-part ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)) and operate at $\varepsilon > 0$ on the underlying braided monoidal substrate. The fluid briefly reveals its knot-theoretic interior.
+- **Aether reversion.** The region around the singularity is forced to leave the classical standard-part ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)) and operate at $\varepsilon > 0$ on the underlying braided monoidal aether. The fluid briefly reveals its knot-theoretic interior.
 
 ## Predicted physical signatures
 
 ### A. Turbulence intermittency
 
-Standard homogeneous-isotropic turbulence exhibits fat-tailed velocity-increment distributions ("intermittency") that Kolmogorov 1941 scaling cannot explain. The framework predicts these fat tails are the statistical residue of near-blow-up events regularised by the underlying substrate. Each intermittent burst is a local excursion into $\varepsilon > 0$ before the cascade is re-absorbed.
+Standard homogeneous-isotropic turbulence exhibits fat-tailed velocity-increment distributions ("intermittency") that Kolmogorov 1941 scaling cannot explain. The framework predicts these fat tails are the statistical residue of near-blow-up events regularised by the underlying aether. Each intermittent burst is a local excursion into $\varepsilon > 0$ before the cascade is re-absorbed.
 
 Quantitative prediction: Along the Leray self-similar profile ([Leray profile](#prop:leray-profile)), the distribution of velocity increments $\delta u_r$ at separation $r$ satisfies $\ordw(\delta u_r) = -\tfrac{r + 1}{3} \ordw(d)$ in surreal-order notation ([Big-O via $\ordw$](#rem:conway-normal-form)). Classical intermittency exponents are the standard parts of these surreal orders.
 
 ### B. High-energy astrophysical matter creation
 
-In the knot-braid particle model ([nuclear interactions](#chap:nuclear-interactions)), particles are closed braids. Matter creation corresponds to braid composition. A near-blow-up event concentrates enough crossing energy to braid vacuum modes into matter. For gamma-ray bursts (GRBs), the matter density in the prompt phase exceeds classical dissipation limits. This corresponds to the surreal-squeeze regime where $\mathcal{Z}_q > \Delta_q$. The substrate momentarily re-braids vacuum photons into pair-production channels. This manifests as a characteristic hadron/lepton yield whose ratio tracks the $q$-Hecke branching of [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding).
+In the knot-braid particle model ([nuclear interactions](#chap:nuclear-interactions)), particles are closed braids. Matter creation corresponds to braid composition. A near-blow-up event concentrates enough crossing energy to braid vacuum modes into matter. For gamma-ray bursts (GRBs), the matter density in the prompt phase exceeds classical dissipation limits. This corresponds to the surreal-squeeze regime where $\mathcal{Z}_q > \Delta_q$. The aether momentarily re-braids vacuum photons into pair-production channels. This manifests as a characteristic hadron/lepton yield whose ratio tracks the $q$-Hecke branching of [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding).
 
 ### C. CMB non-Gaussianities
 
-If the inflationary epoch traversed a regime where classical NS regularity failed (an early cosmological blow-up), the CMB would carry topological defects as scars of substrate reversion:
+If the inflationary epoch traversed a regime where classical NS regularity failed (an early cosmological blow-up), the CMB would carry topological defects as scars of aether reversion:
 - Non-Gaussian patches in the CMB temperature map at scales correlated with the surreal order of the early-universe Reeb period.
 - Quadrupole and octupole anomalies matching the $\chi = -6$ topology of Bring's curve ([Descartes universe](#chap:brings-surface)).
 - Cross-correlation with $q$-torsion data ([CMB $q$-torsion](#rem:cmb-q-torsion)).
 
 ### D. Laboratory-accessible probes
 
-- **BEC vortex reconnection events** ([BEC vortex data](#rem:bec-vortex-data)): The near-blow-up moment at a vortex reconnection produces a sharp substrate-reversion signature detectable as a transient violation of classical helicity conservation.
+- **BEC vortex reconnection events** ([BEC vortex data](#rem:bec-vortex-data)): The near-blow-up moment at a vortex reconnection produces a sharp aether-reversion signature detectable as a transient violation of classical helicity conservation.
 - **High-Reynolds-number laboratory turbulence:** Intermittency exponents match the surreal-order predictions of Section A to leading standard-part order.
 
 ## Quantitative handles
@@ -46,13 +46,13 @@ Each row is falsifiable. A null result on the specific observable disconfirms th
 
 ## Physical finiteness of the mathematical blow-up
 
-In classical PDE theory, blow-up means $|\nabla u| \to \infty$. In the QOU framework, this means the classical limit is the wrong asymptotic object and the underlying $q > 1$ substrate must be used instead. The surreal inequality $\mathcal{Z}_q > \Delta_q$ ([NS surreal bound](#rem:ns-surreal-bound)) is strict in $\mathbb{R}(\varepsilon)$ but becomes a standard-real comparison under the standard-part map only where the cascade has been re-absorbed. Blow-up is the failure of the standard-part map to commute with time evolution.
+In classical PDE theory, blow-up means $|\nabla u| \to \infty$. In the QOU framework, this means the classical limit is the wrong asymptotic object and the underlying $q > 1$ aether must be used instead. The surreal inequality $\mathcal{Z}_q > \Delta_q$ ([NS surreal bound](#rem:ns-surreal-bound)) is strict in $\mathbb{R}(\varepsilon)$ but becomes a standard-real comparison under the standard-part map only where the cascade has been re-absorbed. Blow-up is the failure of the standard-part map to commute with time evolution.
 
 ## Relation to the other millennium problems
 
-The substrate-reversion mechanism underlies every physical manifestation of the millennium squeeze ([millennium unification](#rem:millennium-unification)):
-- **RH reversion:** A hypothetical drifted zero requires a spectral jump similar to a localised substrate reversion. No drifted zero is observed empirically.
+The aether-reversion mechanism underlies every physical manifestation of the millennium squeeze ([millennium unification](#rem:millennium-unification)):
+- **RH reversion:** A hypothetical drifted zero requires a spectral jump similar to a localised aether reversion. No drifted zero is observed empirically.
 - **Collatz reversion:** The non-existence of rogue cycles is the arithmetic version of the energy-budget bound.
-- **P vs NP reversion:** The loss of $q$-substrate efficiency under classical compression is the complexity-theoretic analogue.
+- **P vs NP reversion:** The loss of $q$-aether efficiency under classical compression is the complexity-theoretic analogue.
 
-In each case, the physical impossibility of the classical pathology is the non-existence of a substrate channel capable of carrying the transfinite surplus.
+In each case, the physical impossibility of the classical pathology is the non-existence of an aether channel capable of carrying the transfinite surplus.

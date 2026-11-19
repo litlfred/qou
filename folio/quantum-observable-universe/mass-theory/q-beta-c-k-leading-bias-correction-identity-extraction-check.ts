@@ -17,4 +17,10 @@ export default remark({
     },
   ],
   tags: ["q-beta", "c-k-ladder", "extraction", "comparison-with-measurement"],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py",
+    witness: "computations/qbeta/qbeta-ck-truncation-bias-correction-probe.witness.json",
+    status: "verified",
+  },
 });

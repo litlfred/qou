@@ -35,4 +35,10 @@ export default proposition({
     status: "verified",
     requires: ["pyhecke_native"],
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

@@ -1,4 +1,4 @@
-This survey justifies taking the substrate parameter $q \in \mathbf{No}$ in the infinitesimal neighbourhood of $1$ without disturbing any algebraic machinery of this paper. The bulk of the formal structure is **purely algebraic**. It depends only on the ground ring being a field (typically of characteristic zero), independent of any analytic or topological property of $\mathbb{R}$ or $\mathbb{C}$.
+This survey justifies taking the aether parameter $q \in \mathbf{No}$ in the infinitesimal neighbourhood of $1$ without disturbing any algebraic machinery of this paper. The bulk of the formal structure is **purely algebraic**. It depends only on the ground ring being a field (typically of characteristic zero), independent of any analytic or topological property of $\mathbb{R}$ or $\mathbb{C}$.
 
 ## Blocks that lift verbatim
 
@@ -43,7 +43,7 @@ $\mathbf{No}$:
    ([rigid :refterm[monoidal category]{#monoidal-category}](#def:rigid-monoidal-category)).
    The axioms of a strict rigid :refterm[monoidal category]{#monoidal-category} (associator,
    unitors, left/right duals, evaluation/coevaluation) are
-   categorical identities, not analytic conditions.
+   categorical identities rather than analytic conditions.
 
 7. **Hopf algebra structure on $\mathcal{H}_q$**. Comultiplication,
    antipode, coassociativity, and the grouplike elements
@@ -121,7 +121,7 @@ algebraic enough to admit one.
 ## Consequence for the appendix
 
 The core mass formula — Hoefsmit seminormal form $\to$ Markov
-trace $\to$ Jones polynomial at the substrate value — runs
+trace $\to$ Jones polynomial at the aether parameter — runs
 identically over $\mathbf{No}$. The categorical mass
 $\mathfrak{m}(K)$, transfer matrix $T(c,d)$, and $q$-value
 predictions are all *field-polymorphic* and have well-defined

@@ -26,7 +26,7 @@ $$
   = 
   [k]_q^2 .
 $$
-The arc-length factor $(2\pi/L)^2$ is a change of unit, not part of the algebraic operator. All units are restored at once by the single factor $\hbar_q / L_q^2$ below. So $L_q$ is the length in that normalisation: matching $\hbar_q$ times the arc-length eigenvalue $(2\pi[k]_q/L)^2$ sets $L_q = L/(2\pi)$.
+The arc-length factor $(2\pi/L)^2$ is a change of unit rather than part of the algebraic operator. All units are restored at once by the single factor $\hbar_q / L_q^2$ below. So $L_q$ is the length in that normalisation: matching $\hbar_q$ times the arc-length eigenvalue $(2\pi[k]_q/L)^2$ sets $L_q = L/(2\pi)$.
 
 **Derivation.**
 The $q$-derivative operators define the $q$-Laplacian. Assign $z = e^{2\pi i s / L}$ for a function $f$ on the circle. Then:

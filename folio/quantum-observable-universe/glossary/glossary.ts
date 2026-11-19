@@ -1,18 +1,12 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Chapter 8: Glossary of Rigid Monoidal Terms.
+ * Glossary of mathematical and physical terms used across the monograph.
  *
- * Light terminological wrappers mapping paper terminology to Mathlib
- * declarations. These entries introduce no new semantic content — they
- * clarify naming conventions and point the reader (and formalization
- * pipeline) to the canonical Mathlib types.
- *
- * Policy: a glossary entry is appropriate when the paper uses a term
- * that is either (a) a synonym for a Mathlib declaration, or (b) a
- * lightweight notational wrapper around one. If the paper's concept
- * involves genuinely new mathematics, it belongs as a `definition`
- * block in the relevant chapter, not here.
+ * Provides concise, self-contained definitions and cross-references to the
+ * canonical definitions, theorems, and propositions of the Quantum Observable
+ * Universe framework, together with standard categorical and homological
+ * background.
  */
 export default chapter({
   tabLabel: "G",
@@ -20,15 +14,107 @@ export default chapter({
   label: "chap:glossary",
   sections: [
     section({
-      title: "Basic categorical notions",
-      label: "sec:glossary-basic",
+      title: "Foundations and aether calculus",
+      label: "sec:glossary-foundations",
       blocks: [
-        "glossary-hom-set",
+        "glossary-quantum-universe",
+        "glossary-quantum-observable-universe",
+        "glossary-frobenius-hopf-aether",
+        "glossary-fibre-functor",
+        "glossary-frobenius-pairing",
+        "glossary-aether-parameter",
+        "glossary-quantum-planck-constant",
+        "glossary-categorical-q-ext-deriv",
+        "glossary-categorical-reeb",
+        "glossary-categorical-connection-instanton",
+        "glossary-categorical-dirac-operator",
+        "glossary-categorical-lagrangian-action",
+        "glossary-exceptional-divisor",
       ],
     }),
 
     section({
-      title: "Monoidal structure",
+      title: "Lifting, descent, and Bring's surface",
+      label: "sec:glossary-geometry",
+      blocks: [
+        "glossary-geometry-intro",
+        "glossary-arc-space-brane-boundary",
+        "glossary-yekutieli-lifting-condition",
+        "glossary-descent",
+        "glossary-descartes-condition",
+        "glossary-brings-surface",
+        "glossary-color-coordinates",
+        "glossary-observed-value",
+        "glossary-weierstrass-projection",
+        "glossary-quantum-flatness",
+        "glossary-reeb-gauge-group",
+        "glossary-categorical-q-torsion-leaf",
+        "glossary-categorical-transport",
+        "glossary-s3-group",
+      ],
+    }),
+
+    section({
+      title: "Braids, Hecke algebras, and traces",
+      label: "sec:glossary-braids-hecke",
+      blocks: [
+        "glossary-braid-group",
+        "glossary-iwahori-hecke-algebra",
+        "glossary-bar-involution",
+        "glossary-markov-trace",
+        "glossary-gpmt-modified-trace",
+        "glossary-habiro-completions",
+        "glossary-algebraic-quantum-volume",
+        "glossary-crossing-energy",
+        "glossary-curvature-rank",
+        "glossary-cemetery-group",
+      ],
+    }),
+
+    section({
+      title: "Particles, confinement, and atomic braids",
+      label: "sec:glossary-particles-atoms",
+      blocks: [
+        "glossary-fermion-boson-decomposition",
+        "glossary-neutrino-antineutrino",
+        "glossary-electron-positron",
+        "glossary-switched-photon",
+        "glossary-breit-wheeler-pair-production",
+        "glossary-borromean-baryon",
+        "glossary-confined-particle",
+        "glossary-atomic-braid",
+        "glossary-covalent-bond",
+      ],
+    }),
+
+    section({
+      title: "Dynamics, information, and $q$-geometric Langlands",
+      label: "sec:glossary-dynamics-langlands",
+      blocks: [
+        "glossary-q-navier-stokes",
+        "glossary-q-bit",
+        "glossary-q-bit-skein",
+        "glossary-aeon-cmb",
+        "glossary-computational-horizon",
+        "glossary-q-local-system",
+        "glossary-q-hecke-eigensheaf",
+        "glossary-adelic-aether",
+        "glossary-birthday-grading",
+      ],
+    }),
+
+    section({
+      title: "Categories and enrichment",
+      label: "sec:glossary-basic",
+      blocks: [
+        "glossary-hom-set",
+        "glossary-r-linear-category",
+        "glossary-no-quasi-zeros",
+      ],
+    }),
+
+    section({
+      title: "Monoidal and braided categories",
       label: "sec:glossary-monoidal",
       blocks: [
         "glossary-monoidal-intro",
@@ -40,7 +126,7 @@ export default chapter({
     }),
 
     section({
-      title: "Duality and rigidity",
+      title: "Duality, rigidity, and pivotal structure",
       label: "sec:glossary-rigidity",
       blocks: [
         "glossary-rigidity-intro",
@@ -54,47 +140,7 @@ export default chapter({
     }),
 
     section({
-      title: "Enrichment",
-      label: "sec:glossary-enrichment",
-      blocks: [
-        "glossary-r-linear-category",
-        "glossary-no-quasi-zeros",
-        "glossary-cemetery-group",
-      ],
-    }),
-
-    section({
-      title: "Geometry and transport",
-      label: "sec:glossary-geometry",
-      blocks: [
-        "glossary-geometry-intro",
-        "glossary-quantum-flatness",
-        "glossary-reeb-gauge-group",
-        "glossary-categorical-transport",
-        "glossary-categorical-q-torsion-leaf",
-        "glossary-descent",
-      ],
-    }),
-
-    section({
-      title: "Groups and symmetry",
-      label: "sec:glossary-groups",
-      blocks: [
-        "glossary-s3-group",
-      ],
-    }),
-
-    section({
-      title: "Information theory",
-      label: "sec:glossary-information",
-      blocks: [
-        "glossary-q-bit",
-        "glossary-q-bit-skein",
-      ],
-    }),
-
-    section({
-      title: "Homological algebra",
+      title: "Triangulated and derived categories",
       label: "sec:glossary-homological",
       blocks: [
         "glossary-distinguished-triangle",
@@ -104,13 +150,5 @@ export default chapter({
       ],
     }),
 
-    section({
-      title: "Elliptic and surface geometry",
-      label: "sec:glossary-elliptic",
-      blocks: [
-        "glossary-observed-value",
-        "glossary-weierstrass-projection",
-      ],
-    }),
   ],
 });

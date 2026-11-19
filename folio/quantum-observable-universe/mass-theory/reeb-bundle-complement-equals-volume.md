@@ -1,4 +1,4 @@
-**Proposition (conditional on [mass-volume-factorization conjecture](#conj:mass-volume-factorization)).**
+**Proposition (conditional on [mass–volume factorization conjecture](#conj:mass-volume-factorization)).**
 *Let $\mathcal{R}_p \cong S^3$ be the Reeb bundle. Let $K_\beta$ denote the closure of the colour-tube trajectory under $\beta \in B_3$. The categorical Markov-trace observable equals the JSJ-graded sum over the hyperbolic pieces $P_i$ of the knot complement $\mathcal{R}_p \setminus \nu(K_\beta)$:*
 
 $$

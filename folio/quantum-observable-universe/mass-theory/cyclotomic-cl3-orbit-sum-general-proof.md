@@ -97,14 +97,10 @@ $$
   -\zeta(3),
 $$
 
-approaching from below.  The fractional remainder $\frac{1}{N^2}\zeta(3)$
-captures how close to "saturating" $\zeta(3)$ the orbit sum is.  This
-reflects the Riemann-sum interpretation:
+approaching from below, with fractional remainder $\frac{1}{N^2}\zeta(3)$ measuring the finite-$N$ discretisation gap. Since
 
 $$
   \int_0^{2\pi} \mathrm{Cl}_3(\theta) \,d\theta \;=\; 0,
 $$
 
-so as the discretisation tightens, the sum tends to the integral
-modulo boundary corrections, which include $\zeta(3)$ from the $k = 0$
-contribution $\mathrm{Cl}_3(0) = \zeta(3)$.
+refining the $N$-point Riemann sum drives the full sum over $k = 0, \ldots, N - 1$ toward zero, leaving $-\zeta(3)$ once the $k = 0$ contribution $\mathrm{Cl}_3(0) = \zeta(3)$ is separated out.

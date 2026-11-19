@@ -4,7 +4,7 @@ By Wenzl 1988 (Theorem 1.4), $H_{n+m}(q)$ is semisimple with Wedderburn decompos
 $$
 H_{n+m}(q) \;\cong\; \bigoplus_{\lambda \vdash n+m} \mathrm{End}(V_\lambda)
 $$
-This holds whenever $q$ is generic. In particular, it holds for every real $q > 0$, which includes the substrate value $q_0 \approx 1.11$.
+This holds whenever $q$ is generic. In particular, it holds for every real $q > 0$, which includes the aether value $q_0 \approx 1.11$.
 
 The branching for the inclusion $H_n(q) \otimes H_m(q) \hookrightarrow H_{n+m}(q)$ on irreducibles is:
 $$

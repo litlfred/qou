@@ -17,24 +17,24 @@ $$
 $$
 
 *i.e. $(n, \mu) = \bigl(d - \tfrac{1}{2}, \tfrac{1}{2}\bigr)$ up to the
-Legendre reflection $\mu \mapsto -\mu - 1$. The half-integer degree shift —
-the signature of the toroidal harmonic family $P^\mu_{\nu - 1/2}$ — is
-forced by the Hoefsmit mixing structure, not imposed.*
+Legendre reflection $\mu \mapsto -\mu - 1$. The half-integer degree shift
+(the signature of the toroidal harmonic family $P^\mu_{\nu - 1/2}$) is
+forced by the Hoefsmit mixing structure.*
 
 ## Context
 
 The Hoefsmit seminormal block at axial distance $d$ mixes the two lepton
 channels with amplitude $b$ satisfying
 $b^2 = [d-1]_q [d+1]_q / [d]_q^2$
-([prop:hoefsmit-binding-amplitude](#prop:hoefsmit-binding-amplitude) is the
+([Hoefsmit binding amplitude $b^2 = [3]_q / [2]_q^2$](#prop:hoefsmit-binding-amplitude) is the
 $d = 2$ meson case $b^2 = [3]_q/[2]_q^2$). At $q \to 1$ the squared mixing
 numerator is $d^2 - 1$. The associated-Legendre order-ladder factor is
-$(n - \mu)(n + \mu + 1)$, and the toroidal harmonics — the separated
-eigenfunctions around a vortex ring \cite{lebedev1965} — are exactly the
+$(n - \mu)(n + \mu + 1)$, and the toroidal harmonics (the separated
+eigenfunctions around a vortex ring \cite{lebedev1965}) are the
 Legendre family at half-integer degree $\nu - \tfrac{1}{2}$
 \cite{whipple1917}. The proposition says the match between the two
 structures admits no freedom: the degree shift $-\tfrac{1}{2}$ and the
-order $\tfrac{1}{2}$ are the unique solution.
+order $\tfrac{1}{2}$ (or its Legendre reflection $-\tfrac{3}{2}$) are the unique solution.
 
 Because the $q$-bracket identity $[d-1]_q[d+1]_q = [d]_q^2 - 1$ holds for
 all $q$, the same forcing computation runs verbatim at the $q$-deformed

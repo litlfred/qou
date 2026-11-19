@@ -25,6 +25,7 @@ export default proposition({
       date: "2026-08-26",
       body:
         "The colour-blind specialisation was the form stated first, and it " +
+        /* <!-- literal-source: historical residual of superseded colour-blind specialisation before interface separation --> */
         "carried a systematic $5.1139\\times10^{-9}$ discrepancy against the " +
         "canonical word on all four of D, T, $^3$He, $^4$He. The cause is the " +
         "substitution this block's statement avoids: raising the $ud$ factor " +

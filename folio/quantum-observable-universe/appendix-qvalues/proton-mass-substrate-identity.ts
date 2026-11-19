@@ -29,7 +29,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:proton-mass-substrate-identity",
   title:
-    "Substrate evaluation: $m_p = 2 \\cdot m_\\mu \\cdot F_{\\mathrm{Bor}}(q_0) - 12 \\cdot m_e$ to $0.24\\,\\mathrm{ppm}$ at $q = q_0$",
+    "Aether-parameter evaluation: $m_p = 2 \\cdot m_\\mu \\cdot F_{\\mathrm{Bor}}(q_0) - 12 \\cdot m_e$ to $0.24\\,\\mathrm{ppm}$ at $q = q_0$",
   uses: [
     "conj:proton-borromean-assembly",
     "def:f-bor-borromean-observable",

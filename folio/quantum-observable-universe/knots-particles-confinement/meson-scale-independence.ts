@@ -24,4 +24,10 @@ export default proposition({
     "sdp",
     "calibration",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

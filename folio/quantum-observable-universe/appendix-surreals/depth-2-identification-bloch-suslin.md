@@ -1,4 +1,4 @@
-Let $F$ be a number field, $q \in F$ generic, and let $\mathcal{H}_q$ be the substrate convolution Hopf algebra over $F$ ([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)). The depth-2 identification is:
+Let $F$ be a number field, $q \in F$ generic, and let $\mathcal{H}_q$ be the aether convolution Hopf algebra over $F$ ([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)). The depth-2 identification is:
 
 $$
 \tau_{\mathrm{arch}}\!\bigl( G^{(2)}(\mathcal{H}_q) \big/ \mathcal{P}_1 \bigr)_F \cong K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q},

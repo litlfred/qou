@@ -23,7 +23,7 @@ $$
 $$
 
 The composed theorem $c_3 = -2$ is closed by the two-strand Jones specialization at $q = 1$ for $\sigma^2$ (already established in
-[braid-link-types remark](#rem:braid-link-types)).
+[concrete braid and link types](#rem:braid-link-types)).
 
 ## The remaining axiom
 
@@ -64,5 +64,5 @@ Summary of the derivation chain:
 | **Remaining**: dominant-sub-braid combinatorial fact | empirically verified | open combinatorial step |
 
 The single remaining axiomatic content is a **specific combinatorial
-fact** about typed-braid sub-braid extraction, not a research-level
-categorical question. Discharging it is a finite combinatorial verification rather than an open problem at the categorical-frontier level.
+fact** about typed-braid sub-braid extraction rather than a research-level
+categorical question. Verifying it reduces to a finite combinatorial check on typed three-strand words rather than a deep categorical conjecture.

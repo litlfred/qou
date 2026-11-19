@@ -19,9 +19,9 @@ export default paper({
   abstract:
     "This monograph develops the mathematical framework of the Quantum Observable " +
     "Universe (QOU): a rigid braided monoidal category equipped with a " +
-    "Frobenius--Hopf object $A$, a fibre functor $\\tau$, and a unified two-term " +
+    "Frobenius--Hopf aether $A$, a fibre functor $\\tau$, and a unified two-term " +
     "categorical action ($\\mathrm{QCD} + \\mathrm{QED}$) governed by a single " +
-    "proton-pinned substrate parameter $q$.  Every observable passes through a " +
+    "proton-pinned aether parameter $q$.  Every observable passes through a " +
     "five-step categorical trace pipeline: from the categorical action " +
     "$\\mathfrak{S}_q = \\mathrm{tr}(\\Phi)$, through the Iwahori--Hecke quotient " +
     "$H_n(q)$ and the Geer--Patureau-Mirand modified trace on negligible morphisms, " +
@@ -33,18 +33,15 @@ export default paper({
     "across three-dimensional Wigner-$\\mathrm{SU}(4)$ $\\alpha$-simplex complexes.  " +
     "Part~I establishes the categorical axioms, the five-step framing arc across " +
     "Archimedean, $p$-adic, and surreal models, and the Yekutieli lifting and " +
-    "descent tower.  Part~II develops the structural mechanics: braid and Hecke " +
-    "representations, the geometry of Bring's surface, the knot--particle and " +
-    "confinement hierarchy, the Eightfold Way flavour and octonionic colour " +
-    "structure, the categorical mass endomorphism, $q$-hyperbolic volume and " +
-    "kinematics, the elementary-particle and nuclear mass and binding pipelines, " +
-    "and the emergence of contact-geometric gravity.  Part~III compares the " +
-    "resulting spectra against experimental measurements and extends the braid " +
-    "formalism to atomic, molecular, and organic chemistry.  Part~IV treats brane " +
-    "fluid dynamics, Markov-trace stochastic mechanics, information-theoretic " +
-    "complexity, internalised measurement, and the $q$-geometric Langlands " +
-    "correspondence, accompanied throughout by machine-checked Lean~4 proofs and " +
-    "arbitrary-precision certified numerical witnesses.",
+    "descent tower.  Part~II develops braid and Hecke representations, Bring's " +
+    "surface, the knot--particle and confinement hierarchy, Eightfold Way flavour " +
+    "and octonionic colour structure, the mass endomorphism, $q$-hyperbolic " +
+    "kinematics, elementary-particle and nuclear mass and binding pipelines, and " +
+    "contact-geometric gravity.  Part~III compares the resulting spectra against " +
+    "experiment and extends the braid formalism to atomic, molecular, and organic " +
+    "chemistry.  Part~IV treats brane fluid dynamics, Markov-trace stochastic " +
+    "mechanics, information-theoretic complexity, internalised measurement, and " +
+    "the $q$-geometric Langlands correspondence.",
   macros: {
     // NOTE: `\pp` is intentionally NOT defined here. The shared preamble
     // (latex/preamble.tex) defines `\pp` = `p` (the p-adic / finite-field

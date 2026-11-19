@@ -18,4 +18,10 @@ export default conjecture({
   },
   uses: [],
   cites: ["thurston1978"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

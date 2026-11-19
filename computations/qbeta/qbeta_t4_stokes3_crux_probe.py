@@ -8,7 +8,7 @@ Result: YES — both anchors yield real ϑ_K, with correct boost/spin dominance.
 
 The linear route S_K = A_ω · κ · (ln²q₀ − ϑ²) is ALIVE.
 """
-import math
+import math  # float64-ok: historical T4 crux probe reads 9-digit S_leak witness
 import json
 import sys
 from pathlib import Path
@@ -32,7 +32,7 @@ if _SUB.is_dir() and str(_SUB) not in sys.path:
     sys.path.insert(0, str(_SUB))
 from qou_substrate.constants import Q as _Q  # noqa: E402
 
-q0 = float(_Q)
+q0 = float(_Q)  # float64-ok: historical T4 crux probe reads 9-digit S_leak witness
 ln_q0 = math.log(q0)
 
 # (The superseded literal 1.11020 is recorded in the comment above rather than
@@ -53,8 +53,8 @@ ln_q0 = math.log(q0)
 _SLEAK = json.loads(
     (Path(__file__).resolve().parent
      / "qbeta-c3-barodd-sleak.witness.json").read_text(encoding="utf-8"))
-S_muon = float(_SLEAK["data"]["S_leak"]["muon"])
-S_proton = float(_SLEAK["data"]["S_leak"]["proton"])
+S_muon = float(_SLEAK["data"]["S_leak"]["muon"])  # float64-ok: 9-digit S_leak witness input
+S_proton = float(_SLEAK["data"]["S_leak"]["proton"])  # float64-ok: 9-digit S_leak witness input
 
 # Formula: S_K = A_ω · κ · (ln²q₀ − ϑ_K²)
 A_omega = 3
@@ -85,7 +85,7 @@ results = {
             "theta_deg": math.degrees(math.sqrt(theta2_muon)),
             "theta_over_ln_q0": math.sqrt(theta2_muon) / ln_q0,
             "regime": "boost-dominated (ϑ < ln q₀)",
-            "S_sign_correct": True,
+            "S_sign_correct": S_muon > 0,
             "theta_real": theta2_muon >= 0,
         },
         "proton": {
@@ -95,11 +95,11 @@ results = {
             "theta_deg": math.degrees(math.sqrt(theta2_proton)),
             "theta_over_ln_q0": math.sqrt(theta2_proton) / ln_q0,
             "regime": "spin-dominated (ϑ > ln q₀)",
-            "S_sign_correct": True,
+            "S_sign_correct": S_proton < 0,
             "theta_real": theta2_proton >= 0,
         },
     },
-    "diagonal_crossed": True,
+    "diagonal_crossed": (theta2_muon - ln2_q0) * (theta2_proton - ln2_q0) < 0,
     "verdict": "LINEAR ROUTE ALIVE — both ϑ real, signs correct, diagonal crossed",
 }
 

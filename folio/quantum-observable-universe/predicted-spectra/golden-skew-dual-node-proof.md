@@ -13,7 +13,7 @@ The asymmetry places $q_0$ closer to the sub-classical node. The ratio $(\varphi
 
 The Descartes elliptic curve $\mathcal{E}_q$ does not acquire a node at $q = \varphi^2$, as its Weierstrass factor $s^2 + s - 1$ remains non-zero. Instead, the bar-dual node signifies the degeneration of the dual curve $\mathcal{E}^{*}_q := \mathcal{E}_{q^{-1}}$. The $q \leftrightarrow q^{-1}$ symmetry of the Iwahori--Hecke algebra $H_n(q)$ identifies this dual curve with the original curve by exchanging the Hecke eigenvalues $\{q, -q^{-1}\}$.
 
-The skew-dual node is the threshold where the inverse substrate $q^{-1}$ falls into the sub-golden regime. Equivalently, it is where the symmetric channel of the Hecke generator decouples from the antisymmetric channel.
+The skew-dual node is the threshold where the inverse aether $q^{-1}$ falls into the sub-golden regime. Equivalently, it is where the symmetric channel of the Hecke generator decouples from the antisymmetric channel.
 
 **Connection to the Möbius fixed points.**
 
@@ -21,4 +21,4 @@ The fixed points $\{1/\varphi, -\varphi\}$ of the baryon integration-limit Möbi
 
 **Falsifiability.**
 
-Consequently, any observable monotone in $q - q_{\mathrm{gold}}$ on the sub-classical side possesses a bar-paired analogue monotone in $\varphi^2 - q$ on the super-classical side. The same Hecke skew-symmetry that exchanges $L_+$ and $L_-$ in the Skein relation relates their sensitivities. At $q = q_0$, the super-classical margin $\approx 1.508$ dominates. This aligns with the empirical observation that nuclear physics is more robust against substrate compression than rarefaction.
+Consequently, any observable monotone in $q - q_{\mathrm{gold}}$ on the sub-classical side possesses a bar-paired analogue monotone in $\varphi^2 - q$ on the super-classical side. The same Hecke skew-symmetry that exchanges $L_+$ and $L_-$ in the Skein relation relates their sensitivities. At $q = q_0$, the super-classical margin $\approx 1.508$ dominates. This aligns with the empirical observation that nuclear physics is more robust against aether compression than rarefaction.

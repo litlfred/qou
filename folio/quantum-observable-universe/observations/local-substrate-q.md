@@ -1,4 +1,4 @@
-In any sufficiently small neighbourhood $U \subset M$ of the observable universe, the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) satisfies
+In any sufficiently small neighbourhood $U \subset M$ of the observable universe, the aether parameter $q$ ([aether parameter](#def:substrate-parameter)) satisfies
 
 $$
   q\big|_U \approx {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 6 }}.

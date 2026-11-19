@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
   label: "prop:reeb-coefficient-is-hbar-q",
   title:
     "The Reeb coefficient of $D_\\nabla$ is the quantum Planck constant: $1 - q^{-1} = (q-1)/q$",
@@ -18,4 +21,13 @@ export default proposition({
     "hbar-q",
     "information-theory",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/nuclear_wave3_periodic_table_synthesis_probe.py",
+    witness: [
+      "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
+      "computations/probe-markov-trace-factorization.witness.json",
+    ],
+    status: "verified",
+  },
 });

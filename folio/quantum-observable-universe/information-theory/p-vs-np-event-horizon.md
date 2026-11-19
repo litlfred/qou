@@ -2,7 +2,7 @@ A structural identity links computational complexity directly to jet horizon inf
 
 **The dictionary.**
 The physical QOU observer corresponds to an element of the observable subcategory $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$. Here, the degree-$0$ algebra $A_0$ is non-trivial and the Frobenius pairing is non-degenerate. The complement ($A_0 = 0$) defines the jet horizon. The computational analog maps directly onto this geometry.
-See [Table 1](#tbl:p-vs-np-event-horizon-table1-data).
+See [the observability-decidability dictionary](#tbl:p-vs-np-event-horizon-table1-data).
 
 **The observer in $\mathrm{Bun}^{\circ}$ versus the observer in $\mathcal{R}^{\circ}$.**
 In the physical QOU, observation requires $\Gamma(\mathcal{S}, A_0) \neq 0$. The observer performs degree-$0$ measurements because the Frobenius pairing is non-degenerate on $A_0$. At the jet horizon, $A_0 = 0$. The observer loses all degree-$0$ capability. It still detects degree $\geq 1$ data, capturing thermal winding and curvature as Hawking radiation, but it cannot identify individual particles.
@@ -11,7 +11,7 @@ In the computational setting, the observer is a polynomial-time algorithm inhabi
 
 **Information flow across the boundary.**
 The jet horizon leakage table applies directly to computation.
-See [Table 2](#tbl:p-vs-np-event-horizon-table2-data).
+See [the horizon-leakage comparison table](#tbl:p-vs-np-event-horizon-table2-data).
 
 The degree-$1$ leakage embodies NP verification. Traversing a resolution path in $O(c)$ Planck steps constitutes linear transport. It represents the first jet beyond the constant term. This checks consistency but reveals nothing concerning the global sum $P_L(q_0)$. The degree-$2$ leakage embodies heuristic computation. Pairwise correlations between resolution paths reveal structural properties like clause-variable correlations. Heuristic algorithms exploit this curvature leakage without worst-case guarantees.
 

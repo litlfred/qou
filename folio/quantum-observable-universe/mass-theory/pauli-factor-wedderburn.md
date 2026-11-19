@@ -19,5 +19,3 @@ $$
 $$
 
 *This is a unit of $R$ for every braid and depends only on the writhe. It never vanishes, so it does not detect bosonic or fermionic content of $\beta_\mathcal{K}$.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.

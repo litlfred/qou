@@ -1,4 +1,4 @@
-The $Q$-value for any $\beta^-$ decay $\mathcal{N}(Z, N) \to \mathcal{N}(Z\!+\!1, N\!-\!1)$ is computed by the following algorithm. The inputs are the substrate parameter $q$ and the nucleon counts $(Z, N)$. No external nuclear physics data is used.
+The $Q$-value for any $\beta^-$ decay $\mathcal{N}(Z, N) \to \mathcal{N}(Z\!+\!1, N\!-\!1)$ is computed by the following algorithm. The inputs are the aether parameter $q$ and the nucleon counts $(Z, N)$. No external nuclear physics data is used.
 
 ## Proven facts used by the algorithm
 
@@ -180,6 +180,7 @@ $\Delta_{T_{3,5}} = -3.37$
 
 **Step 7:**
 
+<!-- literal-source: arithmetic product 0.0991 * 0.1045 * 1.630 = 0.01688 -->
 $$
   Q = |{-32.09 + 5.04 + (-3.37)}|
   \times 0.0991 \times 0.1045 \times 1.630
@@ -189,4 +190,4 @@ $$
 
 The measured value is $\mathcal{Q}_{\mathrm{exp}} \approx 0.318 \pm 0.0001$ MeV, giving a $+61\%$ discrepancy.
 
-**Coverage.** The algorithm produces a definite answer for any $(Z, N)$ from $q$ alone. The $+61\%$ error for ${}^{60}$Co indicates the shell correction (Step 4) is not yet capturing the full structure. The conjectures (C1)–(C3) require verification. The magic number derivation (C1) from $q$ remains the key open problem.
+**Coverage.** The algorithm produces a definite answer for any $(Z, N)$ from $q$ alone. The $+61\%$ error for ${}^{60}$Co indicates the shell correction (Step 4) is not yet capturing the full structure. Whereas the Mayer–Jensen closures $\{2, 8, 20, 28, 50, 82, 126\}$ follow on the three-dimensional spin–orbit Pauli fiber ([spin–orbit magic closures](#prop:spin-orbit-magic-closures)), establishing hypotheses (C1)–(C3) directly within the one-dimensional braid-histogram algorithm is conjectural.

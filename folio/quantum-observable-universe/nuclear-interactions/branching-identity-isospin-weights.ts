@@ -20,4 +20,16 @@ export default proposition({
     "bratteli",
     "trace-convention",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/y_lambda_cyclotomic_factor.py",
+    witness: "computations/y-lambda-cyclotomic-factor.witness.json",
+    status: "verified",
+  },
 });

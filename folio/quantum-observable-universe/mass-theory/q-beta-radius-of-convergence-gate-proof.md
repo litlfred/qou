@@ -2,11 +2,9 @@
 
 Steps 1 and 2 are proved statements about generating functions. Steps 3 and 4 explain what the finite window of coefficients does and does not show.
 
-Write $c_k$ for the pinned ladder coefficients at the substrate
-anchor (canonical SDP extraction,
-`qbeta-decay-sdp-extended-ck.witness.json`),
+Write $c_k$ for the extracted ladder coefficients at the calibrated parameter,
 $g(u) := \sum_{k \ge 2} c_k u^k$ for the log-correction generating
-function, and $u_0 := u_{\text{substrate}} \approx 0.00852$.
+function, and $u_0 := u_{\text{aether}} \approx 0.00852$.
 
 **Step 1 — rationality of $g$.** By the
 [$c_k$ recursion](q-beta-c-k-recursion-from-habiro-q-difference.md),
@@ -80,8 +78,8 @@ $5\times$ above the measured proton–muon shift of $u_0$, so anchor
 choice alone does not trip the test, and it is much sharper than the
 one-decade window used by the $\S 4(d)$
 [direction-sanity gate](q-beta-direction-sanity-gate.md). A candidate
-that fails it is inconsistent with this conjecture, which is a
-scope-limited negative, not a structural refutation.
+that fails it is inconsistent with this conjecture, constituting a
+scope-limited negative rather than a structural refutation.
 
 ## Measured window (convention-C frame)
 
@@ -89,10 +87,10 @@ From the SDP extraction (convention C) at $q_0 = 1.10997858\ldots$:
 
 | quantity | value |
 |---|---|
-| $u_{\text{substrate}}$ at $q_{\text{proton}}$ | $0.008517234550156142$ |
-| $u_{\text{substrate}}$ at $q_{\text{muon}}$ | $0.008517236340043958$ |
+| $u_{\text{aether}}$ at $q_{\text{proton}}$ | $0.008517234550156142$ |
+| $u_{\text{aether}}$ at $q_{\text{muon}}$ | $0.008517236340043958$ |
 | relative shift | $2.10 \times 10^{-7}$ (210 ppb) |
 | asymptotic $c_k \cdot u^k$ ($k \in \{8,9,10\}$) | $2.118 \times 10^{-13}$ |
 | spread | $0.02$ % |
 | branch-fit $\beta$ | $0.999$ (simple-pole case is $\beta = 1$) |
-| ratio test $c_{k+1}/c_k$ at $k = 10$ | $\to 1 / u_{\text{substrate}} = 117.4$ |
+| ratio test $c_{k+1}/c_k$ at $k = 10$ | $\to 1 / u_{\text{aether}} = 117.4$ |

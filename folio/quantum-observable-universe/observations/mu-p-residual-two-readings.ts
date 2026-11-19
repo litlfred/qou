@@ -27,6 +27,9 @@ export default remark({
       "computations/q-pinning-50-digit.witness.json",
       "computations/probes/keystone-wlambda-vs-ylambda-projected-shift.witness.json",
       "computations/deuteron-from-scratch-ledger.witness.json",
+      "computations/m-tau-volume-target.witness.json",
+      "computations/mu-p-cyclotomic-ladder-magnitude.witness.json",
+      "computations/brng-two-row-dominant-block-a6.witness.json",
     ],
     status: "verified",
   },
@@ -45,9 +48,11 @@ export default remark({
         "`target_100x_ppb 0.2177`, `miss_factor 970.2` — the sibling `sm-params-lepton-masses` block " +
         "still quotes the pre-CODATA-2022 963.6x); the order-window probe " +
         "`docs/audits/scripts/mu_p_carrier_order_window_probe.py`, which emits no witness (re-run " +
+        /* <!-- literal-source: mu_p_carrier_order_window_probe.py audit script output (no witness file emitted, noted above) --> */
         "2026-09-03 at the CODATA-2018 ratio it hard-codes: `t = 2.0975e-7`, 9.534 sigma, " +
         "`sigma_exp/t = 10.49 %`, `c_6 = 0.2217`, `c_7 = 2.2375`, `t/w^3 = 0.1621`, `t/w^4 = 14.877`, " +
         "window 20.98 %; re-measured at the package-layer CODATA-2022 ratio: `t = 2.1121e-7`, " +
+        /* <!-- literal-source: mu_p_carrier_order_window_probe.py audit script output at CODATA-2022 ratio (no witness file) --> */
         "9.49 sigma, 10.53 %, `c_6 = 0.2232`, `c_7 = 2.2529`, `t/w^3 = 0.1632`, `t/w^4 = 14.98`, " +
         "window 21.07 % — the prose quotes the CODATA-2022 values; the 2018 run differs in the third " +
         "significant figure of c_7 and t/w^3); and " +

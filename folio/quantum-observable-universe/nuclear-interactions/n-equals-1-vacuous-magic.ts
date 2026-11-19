@@ -15,4 +15,10 @@ export default proposition({
     "vacuous-truth",
     "proved",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

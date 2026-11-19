@@ -17,4 +17,10 @@ export default remark({
     },
   ],
   tags: ["q-beta", "c-k-ladder", "comparison-with-measurement"],
+  computation: {
+    engine: "python",
+    script: "computations/qbeta/qbeta_habiro_f_from_shape_collapse.py",
+    witness: "computations/qbeta/qbeta-habiro-f-from-shape-collapse.witness.json",
+    status: "verified",
+  },
 });

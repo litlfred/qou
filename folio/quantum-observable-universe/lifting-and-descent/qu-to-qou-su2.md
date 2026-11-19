@@ -1,6 +1,6 @@
 The structural properties of the main theorem hold for $G = \mathrm{SU}(2)$, extending [Yekutieli lifting for SU(2)](#ex:yekutieli-lifting-su2).
 
-**Hypotheses.** The quantum universe is $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with substrate parameter $q$ ([SU(2) QOU](#ex:qou-su2)). Observability holds: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ because $\mathrm{Ad}(\mathrm{SU}(2)) \cong \mathfrak{su}(2)$ has no trivial sub-representation. The adjoint representation is irreducible.
+**Hypotheses.** The quantum universe is $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with aether parameter $q$ ([SU(2) QOU](#ex:qou-su2)). Observability holds: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ because $\mathrm{Ad}(\mathrm{SU}(2)) \cong \mathfrak{su}(2)$ has no trivial sub-representation. The adjoint representation is irreducible.
 
 **(1) :refterm[Descent]{#descent} terminates.** The center of the endomorphism algebra is $Z(\mathrm{End}_{\mathbf{C}}(A)) \cong \mathcal{O}(\mathrm{SU}(2))^{\mathrm{SU}(2)}$. This ring of $\mathrm{SU}(2)$-invariant functions has Krull dimension $\mathrm{rank}(\mathrm{SU}(2)) = 1$. The geometric :refterm[descent]{#descent} tower is:
 $$

@@ -5,9 +5,9 @@
 Bring's genus-4 surface
 ([figure 8 archimedean illustration remark](#rem:figure-8-archimedean-illustration))
 equals the standard-part of $2\,\mathrm{Im}\,\mathrm{Li}_2^q$ at the
-regular-ideal-tetrahedron shape parameter $z = e^{i\pi/3}$ — the
+regular-ideal-tetrahedron shape parameter $z = e^{i\pi/3}$, which is the
 depth-2 grouplike value predicted by
-[Gröbner–Shirshov depth period correspondence conjecture](#conj:gb-depth-period-correspondence):*
+[Gröbner–Shirshov depth period correspondence conjecture](#conj:gb-depth-period-correspondence).*
 
 $$
   \mathrm{Vol}(S^3 \setminus 4_1)
@@ -17,12 +17,10 @@ $$
   2\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right).
 $$
 
-### canonical witness (50-digit precision)
+### Canonical witness (50-digit precision)
 
-Computed via `exact algebraic structures.polylog` at `mp.dps = 50` (formalism
-the canonical formalism,
-witness
-[`gb-depth-period-bring-fig8.witness.json`](https://github.com/litlfred/qou/blob/main/computations/gb-depth-period-bring-fig8.witness.json)):
+Evaluation via `exact algebraic structures.polylog` at `mp.dps = 50` (formalism
+50-decimal-place evaluation) gives the 50-digit value below.
 
 $$
   2\,\mathrm{Cl}_2(\pi/3)
@@ -30,10 +28,7 @@ $$
   2.029{,}883{,}212{,}819{,}307{,}250{,}042{,}405{,}108{,}549{,}040{,}571{,}883\ldots
 $$
 
-A SnapPy-precision sanity check via independent Clausen-series
-partial sum (2 million terms) agrees to $\sim 13$ digits — the
-working precision of SnapPy 3.3.2's verified hyperbolic structure.
-The 50-digit value is the canonical algebraic computation.
+An independent Clausen-series partial sum ($2 \times 10^6$ terms) agrees to $\sim 13$ digits, matching double-precision hyperbolic ideal-triangulation geometry, while the 50-digit value comes from direct Clausen–Legendre evaluation.
 
 ### Depth correspondence
 
@@ -56,19 +51,20 @@ Bring's surface in this paper
 realises inside the genus-4 handlebody, and amphichirality
 $4_1 \cong 4_1^{\,\mathrm{mirror}}$ pins it as a *mass invariant*
 rather than a chirality invariant. Two structural facts already in
-the paper are consistent with the depth-2 reading:
+the paper are consistent with the depth-2 reading.
 
 - The $\pi$ in $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ and the
   $\pi$ in the Bring zero-mode $\alpha_{EM}$ correction
-  $2g/(4\pi(g-1))|_{g=4} = 2/(3\pi)$ share a single provenance — the
-  unique archimedean shadow of pentagon-coherent substrate data on
+  $2g/(4\pi(g-1))|_{g=4} = 2/(3\pi)$ share a single provenance: the
+  unique archimedean shadow of pentagon-coherent aether data on
   Bring's surface (cf.
   [figure 8 archimedean illustration remark](#rem:figure-8-archimedean-illustration)).
 - Both factor through the Bloch–Wigner dilogarithm at a Bring shape
-  parameter — exactly the depth-2 grouplike of $\mathcal{H}_q$.
+  parameter, the depth-2 grouplike of $\mathcal{H}_q$.
+
 ### Cross-reference: deeper-depth Bring instances (open)
 
-The depth correspondence predicts analogous canonical witnesses at every depth:
+The depth correspondence predicts analogous canonical witnesses at every depth.
 
 | Depth | Bring object | Predicted std-image |
 |---|---|---|
@@ -78,12 +74,12 @@ The depth correspondence predicts analogous canonical witnesses at every depth:
 
 **Depth-2 ceiling for hyperbolic 3-manifold volumes.** *All* hyperbolic
 3-manifold volumes (figure-8, Borromean rings = $8G$, Whitehead link,
-$\ldots$) are depth-2 periods — one $\mathrm{Li}_2$ factor in their
+$\ldots$) are depth-2 periods, having one $\mathrm{Li}_2$ factor in their
 Bloch–Wigner formula. Different knots correspond to different shape
 parameters at the same depth. A genuine depth-3 witness therefore
 requires either (a) a trilog $\mathrm{Li}_3$ at an algebraic argument,
 (b) a Chern–Simons invariant (the depth-3 part of the complexified
 volume $\mathrm{CS} + i\,\mathrm{Vol} \in \mathbb{C}/\pi^2\mathbb{Z}$),
 or (c) a multiple zeta value such as $\zeta(3)$. The Bring-natural
-choice is (a) at the primitive 5th root of unity $\zeta_5$ — see
+choice is (a) at the primitive 5th root of unity $\zeta_5$; see
 [Bring trilogarithm depth 3 witness conjecture](#conj:bring-trilog-depth-3-witness).

@@ -11,4 +11,4 @@ $$
 $$
 and $x$ admits a lift if and only if $\kappa(x) = 0$.
 
-This is the categorical form of the gerbe central-extension obstruction of Yekutieli \cite{yekutieli2010}; the name *Quantum Lifting Condition* emphasises its role in specialising the categorical substrate.
+This is the categorical form of the gerbe central-extension obstruction of Yekutieli \cite{yekutieli2010}; the name *Quantum Lifting Condition* emphasises its role in specialising the categorical aether.

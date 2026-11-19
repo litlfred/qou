@@ -3,7 +3,7 @@
 (3) Negate (1). 
 (2) This is false in general. For example, $P(q) = \mathbf{1}_{q \in (a, a^{-1})}$ is bar-invariant on $(a, a^{-1})$ but false outside. Under continuity, every limit point of $\{q : P(q)\}$ is bar-conjugate to a limit point of $\neg P$, forcing the symmetric extension. $\square$
 
-The bar-transfer principle establishes that a one-sided substrate bound for a bar-invariant property yields the bar-conjugate bound. Once
+The bar-transfer principle establishes that a one-sided aether bound for a bar-invariant property yields the bar-conjugate bound. Once
 
 $$
   q_0 > 1/\varphi^2 \quad\Rightarrow\quad

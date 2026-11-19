@@ -14,4 +14,10 @@ export default remark({
     "tau-lepton-nf",
   ],
   uses: ["prop:lepton-continuant-recurrence"],
+  computation: {
+    engine: "python",
+    script: "computations/tau-lepton-nf.py",
+    witness: "computations/tau-lepton-nf.witness.json",
+    status: "verified",
+  },
 });

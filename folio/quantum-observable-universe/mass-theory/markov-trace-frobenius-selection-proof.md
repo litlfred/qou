@@ -73,11 +73,7 @@ $$
 where $c(x)$ and $h(x)$ are the content and hook length of the cell
 $x$ and $z_{-} = z - (q - q^{-1})$ is the negative-crossing loop
 value ([Markov axioms](#rem:markov-axioms-primitive)). This is the
-Ocneanu weight formula at framing ratio $a^2 = z/z_{-}$, verified
-exactly for every $\lambda \vdash n \leq 5$
-([witness](../../../computations/markov-trace-weights-wenzl.witness.json) —
-note that that witness was computed at **convention C**,
-$z = 1/(q^{1/2}+q^{-1/2})$, per its own `description` field; what it
+Ocneanu weight formula at framing ratio $a^2 = z/z_{-}$, verified symbolically for every $\lambda \vdash n \leq 5$ (noting that evaluating the Wenzl formula at convention C, $z = 1/(q^{1/2}+q^{-1/2})$, tests the general hook–content identity; what it
 certifies is the hook–content *formula*, which is
 convention-independent, not the convention-D weight values).
 

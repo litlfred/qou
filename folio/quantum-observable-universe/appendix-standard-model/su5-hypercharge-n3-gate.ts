@@ -71,4 +71,10 @@ export default remark({
         "will be the first thing a future grep lands on.",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/markov_z_fibre_rank_bar_covariance_probe.py",
+    witness: "computations/markov-z-fibre-rank-bar-covariance.witness.json",
+    status: "verified",
+  },
 });

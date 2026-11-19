@@ -11,7 +11,7 @@ import { chapter, section } from "../../schema/builders";
  *                                    force; motivation from Einstein,
  *                                    Heisenberg, Wigner, Noether;
  *                                    constants that need not be constant.
- *   1.1  The substrate parameter   — one family of universes, labelled by q.
+ *   1.1  The aether parameter      — one family of universes, labelled by q.
  *   1.2  State space and knots     — Bring's surface, the knot dictionary,
  *                                    the Hecke algebra, the photon.
  *   1.3  From structure to numbers — the derivation chain in words.
@@ -33,7 +33,7 @@ export default chapter({
       ],
       subsections: [
         section({
-          title: "The substrate parameter",
+          title: "The aether parameter",
           label: "sec:introduction-substrate-parameter",
           blocks: [
             "intro-substrate-parameter",

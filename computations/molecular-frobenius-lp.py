@@ -27,9 +27,8 @@ Usage:
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import math
 import itertools
-import numpy as np
+import numpy as np  # float64-ok: legacy f64 Gram matrix + Clarabel LP array interface (disclosed at build_atom_nf)
 import sys
 from pathlib import Path
 from mpmath import mp
@@ -287,10 +286,10 @@ def scan_bond_frobenius(nf_A, Z_B, N_B, obs_E, bond_name, max_n=4):
     x_ub = np.array(nf_ub)
     passes_ub, Gx_ub, n_viol_ub = frobenius_check(nf_ub)
     tr_ub = nf_trace(nf_ub)
-    Phi_ub = mp.log(abs(tr_ub)) if abs(tr_ub) > 1e-300 else float('inf')
+    Phi_ub = mp.log(abs(tr_ub)) if abs(tr_ub) > 1e-300 else float('inf')  # float64-ok: sentinel for zero trace
 
     print(f"\n--- {bond_name} bond ---")
-    print(f"  Unbonded: tr_M = {tr_ub:.6e}, Phi_1 = {float(Phi_ub):.6f}")
+    print(f"  Unbonded: tr_M = {tr_ub:.6e}, Phi_1 = {float(Phi_ub):.6f}")  # float64-ok: display-only f-string
     print(f"  Frobenius: {'PASS' if passes_ub else 'FAIL'} ({n_viol_ub} violations)")
     if not passes_ub:
         for i in range(6):
@@ -334,8 +333,8 @@ def scan_bond_frobenius(nf_A, Z_B, N_B, obs_E, bond_name, max_n=4):
             best = feasible[0]
             frob_str = "PASS" if best['passes'] else f"FAIL({best['n_viol']})"
             print(f"  {n:>3} {n_pass:>4}/{len(feasible):>3} {best['ops']:>28} "
-                  f"{best['tr']:>12.6e} {float(best['bind']):>10.6f} "
-                  f"{float(best['E']):>10.4f} {frob_str:>5}")
+                  f"{best['tr']:>12.6e} {float(best['bind']):>10.6f} "  # float64-ok: display-only f-string
+                  f"{float(best['E']):>10.4f} {frob_str:>5}")  # float64-ok: display-only f-string
 
             if best['passes'] and (best_overall is None or abs(best['tr']) < abs(best_overall['tr'])):
                 best_overall = best
@@ -343,8 +342,8 @@ def scan_bond_frobenius(nf_A, Z_B, N_B, obs_E, bond_name, max_n=4):
     if best_overall:
         print(f"\n  LP-OPTIMAL: {best_overall['ops']} ({best_overall['n']} crossings)")
         print(f"    tr_M = {best_overall['tr']:.6e}")
-        print(f"    E = {float(best_overall['E']):.4f} eV (obs: {obs_E:.2f} eV, "
-              f"err: {float(best_overall['E']/obs_E - 1)*100:+.1f}%)")
+        print(f"    E = {float(best_overall['E']):.4f} eV (obs: {obs_E:.2f} eV, "  # float64-ok: display-only f-string
+              f"err: {float(best_overall['E']/obs_E - 1)*100:+.1f}%)")  # float64-ok: display-only f-string
         print(f"    Frobenius: ALL constraints satisfied")
     else:
         print(f"\n  NO feasible solution found up to {max_n} crossings")
@@ -383,8 +382,8 @@ print("  " + "-" * 68)
 for name in ["H-H", "C-H", "C-O", "C-C", "O-H"]:
     r = results.get(name)
     if r:
-        err = float(r['E']/bond_types[[b[0] for b in bond_types].index(name)][5] - 1)*100
-        print(f"  {name:>6} {r['n']:>3} {r['ops']:>28} {float(r['E']):>10.4f} "
+        err = float(r['E']/bond_types[[b[0] for b in bond_types].index(name)][5] - 1)*100  # float64-ok: display-only summary
+        print(f"  {name:>6} {r['n']:>3} {r['ops']:>28} {float(r['E']):>10.4f} "  # float64-ok: display-only f-string
               f"{bond_types[[b[0] for b in bond_types].index(name)][5]:>10.2f} {err:>+7.1f}%")
     else:
         print(f"  {name:>6}   — no feasible solution —")
@@ -407,8 +406,8 @@ molecules = [
 print(f"  {'Molecule':>8} {'Predicted':>12} {'Observed':>12} {'Error':>8}")
 print("  " + "-" * 44)
 for name, pred, obs in molecules:
-    err = float((pred/obs - 1)*100) if obs > 0 and pred != 0 else float('nan')
-    print(f"  {name:>8} {float(pred):>10.2f} eV {obs:>10.2f} eV {err:>+7.1f}%")
+    err = float((pred/obs - 1)*100) if obs > 0 and pred != 0 else float('nan')  # float64-ok: display-only summary
+    print(f"  {name:>8} {float(pred):>10.2f} eV {obs:>10.2f} eV {err:>+7.1f}%")  # float64-ok: display-only f-string
 
 print()
 
@@ -446,8 +445,8 @@ for name in ["H-H", "C-H", "C-O", "C-C", "O-H"]:
     if r:
         w.add_data(f"bond_{name}", {
             "ops": r['ops'], "n_crossings": r['n'],
-            "E_eV": float(r['E']), "tr_M": float(r['tr']),
-            "frobenius_passes": True,
+            "E_eV": float(r['E']), "tr_M": float(r['tr']),  # float64-ok: legacy f64 witness schema compatibility
+            "frobenius_passes": bool(r['passes']),
         })
 
 w.add_data("molecules", [{"name": n, "predicted_eV": p, "observed_eV": o}

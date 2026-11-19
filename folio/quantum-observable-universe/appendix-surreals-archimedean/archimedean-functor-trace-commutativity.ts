@@ -13,4 +13,10 @@ export default remark({
   ],
   interprets: "def:standard-part-functor",
   uses: ["def:standard-part-functor"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Side-by-side numerical comparison spanning $^2\\mathrm{H}$ through $^7\\mathrm{Li}$ is recorded in `computations/binding-single-pipeline-comparison.witness.json`.",
+    },
+  ],
 });

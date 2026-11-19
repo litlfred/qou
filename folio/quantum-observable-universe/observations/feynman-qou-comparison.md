@@ -8,7 +8,7 @@ See [Table 1](#tbl:feynman-qou-comparison-table1-data).
 
 See [Table 2](#tbl:feynman-qou-comparison-table2-data).
 
-The $\mathfrak{m}_{\mathrm{QOU}}$ column of that table is the superseded convention-C table, not the adopted one: it gives $938.910$ for ${}^{1}\mathrm{H}$ and $3734.624$ for ${}^{4}\mathrm{He}$, where the adopted convention-D values are $935.352$ and $3740.383$. The per-$Z$ rows and the Winner column are therefore convention-C throughout. They are not recomputed here because the table declares no producer — it carries no `computation` block, so there is nothing to re-run, and the SEMF column has no derivation in the corpus either. Regenerating it needs a producer first.
+The $\mathfrak{m}_{\mathrm{QOU}}$ column of that table is the superseded convention-C table rather than the adopted one: it gives $938.910$ for ${}^{1}\mathrm{H}$ and $3734.624$ for ${}^{4}\mathrm{He}$, where the adopted convention-D values are $935.352$ and $3740.383$. The per-$Z$ rows and the Winner column are therefore convention-C throughout. They are not recomputed here because the table declares no producer — it carries no `computation` block, so there is nothing to re-run, and the SEMF column has no derivation in the corpus either. Regenerating it needs a producer first.
 
 The SEMF achieves a mean accuracy of $0.023\%$ using eight inputs and five fitted coefficients. The Wedderburn formula achieves $0.183\%$ using two inputs ($q_0$, $m_e$) and zero fitted parameters — about $7.9\times$ the SEMF error, against $3.2\times$ under the figure this supersedes.
 

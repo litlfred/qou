@@ -32,5 +32,4 @@ multiplies the deuteron's knot factor by exactly $1$: where it can be evaluated,
 it contributes nothing.
 
 Nothing here retracts the conjecture. It says what a reformulation must supply:
-a rule fixing the word, not just its crossing content.
-`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`.
+a rule fixing the full word rather than its crossing content alone.

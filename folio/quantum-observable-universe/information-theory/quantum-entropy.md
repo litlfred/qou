@@ -1,4 +1,4 @@
-**Definition.** Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$, and let $U \subset M$ be a region. The **quantum entropy** of $U$ is the non-abelian surface integral
+**Definition.** Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with aether parameter $q$, and let $U \subset M$ be a region. The **quantum entropy** of $U$ is the non-abelian surface integral
 $$
   S_q(U) = -\,\mathrm{tr}_{\mathrm{Ad}} \!\oint_{\partial U} \omega_{\mathcal{F}} \,\wedge\, *\eta_q.
 $$

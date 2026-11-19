@@ -1,0 +1,162 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-19T15:03:05.593753+00:00",
+  "commitSha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+  "assertions": [
+    {
+      "name": "transposition_cubic_roots_max_residual_lt_1e_90",
+      "computed": "6.070536989245638644581780698982283372613122197972009245354802280915615834334341e-96",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-90",
+      "unit": "dimensionless",
+      "source": "Cardano + 95-dps Newton solution of P_tau(t) = t^3 + 2 t^2 + 3 t + 4 = 0"
+    },
+    {
+      "name": "transposition_cubic_discriminant_eq_neg_200_lt_1e_88",
+      "computed": "-200.0",
+      "expected": "-200",
+      "passed": true,
+      "tolerance": "1e-88",
+      "unit": "dimensionless",
+      "source": "transposition_cubic_discriminant_eq_neg_200 in BringTranspositionSixFixedPointsAndEllipticQuotient.lean"
+    },
+    {
+      "name": "sixty_weierstrass_points_on_bring_curve_lt_1e_88",
+      "computed": "7.4906821675075173234493590621738825118640373420706933061394487261766132426783994e-96",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-88",
+      "unit": "dimensionless",
+      "source": "p_1 = p_2 = p_3 = 0 across all 10 x 6 = 60 transposition fixed points on Bring's curve"
+    },
+    {
+      "name": "sixty_weierstrass_points_pairwise_fubini_study_distinct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "dimensionless",
+      "source": "Fubini-Study projective distance > 0.4 across all C(60, 2) = 1770 pairs in P^4(C)"
+    },
+    {
+      "name": "s5_acts_transitively_with_stabilizer_order_two",
+      "computed": "60",
+      "expected": "60",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "cardinality",
+      "source": "Transitive S_5 action on W_60 with Stab_{S_5}(P_{(a,b),sigma}) = {e, tau_{a,b}} of order 120/60 = 2"
+    },
+    {
+      "name": "elliptic_quotient_j_invariant_eq_neg_25_over_2_lt_1e_88",
+      "computed": "-12.5",
+      "expected": "-12.5",
+      "passed": true,
+      "tolerance": "1e-88",
+      "unit": "dimensionless",
+      "source": "Weierstrass and Legendre cross-ratio j-invariant j(E_tau) = -25/2 of E_tau = B / <tau>"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "bring-transposition-weierstrass-sixty",
+  "scriptFile": "bring_transposition_weierstrass_sixty_probe.py",
+  "scriptHash": "55e5625d224d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 95,
+    "output_dps": 80,
+    "guard_digits": 10,
+    "truncation_bound": "1e-80"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_transposition_weierstrass_sixty_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_transposition_weierstrass_sixty_probe.py"
+  },
+  "description": "80-dps / 95-dps-guard first-principles verification of the Bring transposition fixed-point cubic P_tau(t) = t^3 + 2 t^2 + 3 t + 4 = 0 (Delta = -200), all 10 x 6 = 60 projective Weierstrass points across the 10 transpositions of S_5, pairwise Fubini-Study separation (> 0.45), transitive S_5 action with stabilizer order 120 / 60 = 2, and the genus-1 elliptic quotient E_tau = B / <tau> with Weierstrass form Y^2 = X^3 - 5 X^2 - 100 and exact j-invariant j(E_tau) = -25/2.",
+  "contentBlock": "lem:brings-euler-characteristic",
+  "data": {
+    "transposition_cubic_P_tau": {
+      "polynomial": "t^3 + 2*t^2 + 3*t + 4",
+      "depressed_cubic": "y^3 + (5/3)*y + 70/27 (t = y - 2/3)",
+      "cardano_sqrt_D": "(5*sqrt(6))/9",
+      "cardano_U_cbrt_15sqrt6_minus_35_over_3": "0.40110390605774272508360035190763298864344622868031371449849667375367600473493397",
+      "cardano_V_neg_cbrt_15sqrt6_plus_35_over_3": "-1.385066430830464277297734652667163757872274793719819639831424192971167334212154",
+      "cardano_r0_vs_newton_error": "0.0",
+      "roots": [
+        {
+          "re": "-1.6506291914393882188808009674261974358954952317061725919995941858841579961438867",
+          "im": "0.0"
+        },
+        {
+          "re": "-0.17468540428030589055959951628690128205225238414691370400020290705792100192805667",
+          "im": "1.5468688872313962771428062345237300666667302953435770316154275462079562961449348"
+        },
+        {
+          "re": "-0.17468540428030589055959951628690128205225238414691370400020290705792100192805667",
+          "im": "-1.5468688872313962771428062345237300666667302953435770316154275462079562961449348"
+        }
+      ],
+      "max_cubic_residual": "6.070536989245638644581780698982283372613122197972009245354802280915615834334341e-96",
+      "vieta_error": "3.7567008738276363832732227375372107129568340829293960883758082250577802757984588e-96",
+      "power_sum_error": "7.4906821675075173234493590621738825118640373420706933061394487261766132426783994e-96",
+      "discriminant_product": {
+        "re": "-200.0",
+        "im": "0.0"
+      },
+      "discriminant_error_vs_neg_200": "4.7940365872048110870075897997912848075929838989252437159292471847530324753141756e-94"
+    },
+    "weierstrass_sixty_locus": {
+      "transposition_count_C5_2": 10,
+      "fixed_points_per_transposition_3fact": 6,
+      "total_weierstrass_points": 60,
+      "pair_count_C60_2": 1770,
+      "max_bring_power_sum_residual": "7.4906821675075173234493590621738825118640373420706933061394487261766132426783994e-96",
+      "min_fubini_study_distance": "0.49949799683515843995523378524209588829493321721549056296131054457423601148247381",
+      "max_fubini_study_distance": "1.0",
+      "s5_group_order": 120,
+      "orbit_size_under_s5": 60,
+      "min_stabilizer_order": 2,
+      "max_stabilizer_order": 2,
+      "stabilizer_equals_unique_transposition_subgroup": true,
+      "overlapping_elimination_identity_error": "2.9962728670030069293797436248695530047456149368282773224557794904706452970713598e-95"
+    },
+    "elliptic_quotient_E_tau": {
+      "plane_cubic_equation": "(z_2 + z_3 + z_4)^3 + 3*(z_2 + z_3 + z_4)*(z_2^2 + z_3^2 + z_4^2) + 2*(z_2^3 + z_3^3 + z_4^3) = 0",
+      "branch_conic_equation": "(z_2 + z_3 + z_4)^2 + 2*(z_2^2 + z_3^2 + z_4^2) = 0",
+      "bezout_branch_point_count": 6,
+      "max_cubic_and_conic_branch_residual": "5.2434775172552621264145513435217177583048261394494853142976141083236292698748796e-95",
+      "weierstrass_model": "Y^2 = X^3 - 5*X^2 - 100 = t^3 - (25/3)*t - 2950/27",
+      "c4": "400.0",
+      "c6": "94400.0",
+      "discriminant_delta": "-5120000.0",
+      "j_invariant_exact_rational": "-25/2",
+      "j_invariant_weierstrass": "-12.5",
+      "j_invariant_legendre_cross_ratio": {
+        "re": "-12.5",
+        "im": "5.9043091983012245795775691010889805998680312760800478413295495087318638437784309e-95"
+      },
+      "j_invariant_agreement_error": "1.8922375814799988480477996859880087316023956294784958940320991567299604017627796e-94",
+      "quotient_genus": 1,
+      "quotient_euler_characteristic": 0,
+      "bring_riemann_hurwitz_euler_characteristic": -6,
+      "bring_genus": 4
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Purely algebro-geometric calculation on Bring's curve B in P^4(C) and its transposition quotient E_tau = B / <tau>; no substrate parameter q0 is read."
+}

@@ -1,6 +1,6 @@
-This note collects the numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier for [the proton mass substrate identity](#prop:proton-mass-substrate-identity).
+This note collects the numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier for [the proton-mass aether identity](#prop:proton-mass-substrate-identity).
 
-The predictive content throughout is the dimensionless ratio $m_p/m_e$ (equivalently $2(m_\mu/m_e)F_{\mathrm{Bor}} - 12$): since $m_e$ (CAL-1) sets the MeV scale by fiat, the absolute proton mass in MeV is not an independent framework prediction. The MeV figures below are that ratio rendered against the $m_e$ unit — a rendering that lets the ratio be read off against CODATA, not an absolute-mass claim.
+The predictive content throughout is the dimensionless ratio $m_p/m_e$ (equivalently $2(m_\mu/m_e)F_{\mathrm{Bor}} - 12$): since $m_e$ (CAL-1) sets the MeV scale by fiat, the absolute proton mass in MeV is not an independent framework prediction. The MeV figures below are that ratio rendered against the $m_e$ unit — a rendering that lets the ratio be read off against CODATA rather than an absolute-mass claim.
 
 ## Numerical verification
 
@@ -12,7 +12,7 @@ At $q_0 = 1.10997859555\ldots$ (muon pin, 12 dps):
 | $[3]_q!$ | $6.120579305\ldots$ |
 | $q_0^3$ | $1.367551884\ldots$ |
 | $F_{\mathrm{Bor}}(q_0)$ | $4.469138598\ldots$ |
-| $2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0)$ | $944.40385\,\mathrm{MeV}$ |
+| $2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0)$ <!-- literal-source: closed-form product 2 * m_mu * F_Bor(q_0) --> | $944.40385\,\mathrm{MeV}$ |
 | $12 \cdot m_e$ | $6.13199\,\mathrm{MeV}$ |
 | $m_p$ ($m_e$-scaled rendering) | $938.27186\,\mathrm{MeV}$ |
 | CODATA $m_p$ | $938.27209\,\mathrm{MeV}$ |
@@ -22,7 +22,7 @@ At $q_0 = 1.10997859555\ldots$ (muon pin, 12 dps):
 
 At $h_0 = q_0 - q_0^{-1} \approx 0.2091$, using the exact rational
 $h$-expansion of $F_{\mathrm{Bor}}$ (categorical,
-[the Borromean observable](../braids-and-knots/f-bor-borromean-observable.md))
+[the Borromean observable](#def:f-bor-borromean-observable))
 the per-order MeV contributions to
 $m_p = 2 m_\mu F_{\mathrm{Bor}} - 12 m_e$ are:
 
@@ -39,7 +39,7 @@ The series converges to $0.017\,\mathrm{ppm}$ accuracy at order $h^9$.
 
 ## Combined with the canonical flavor-split
 
-[The canonical flavor-split proposition](../observations/flavor-split-substrate.md)
+[The canonical flavor-split proposition](#prop:flavor-split-substrate)
 gives the canonical Hecke-skein derivation
 
 $$
@@ -58,11 +58,11 @@ nucleon masses from only $(m_e, m_\mu, q_0)$:
   - $m_n = m_p + \mathfrak{Q}_\beta + m_e$, with $\mathfrak{Q}_\beta$ the
     parameter-free Kashiwara $b^2$ truncation (near-match)
     $\approx 939.56542\,\mathrm{MeV}$ ($\sim +1\,\mathrm{ppb}$ residual)
-  - $\mathfrak{Q}_\beta := m_n - m_p - m_e$ is DERIVED, not an input
+  - $\mathfrak{Q}_\beta := m_n - m_p - m_e$ is DERIVED rather than an input
     ($+1.25\,\mathrm{ppm}$ on $\mathfrak{Q}_\beta$ itself; $\sim 1\,\mathrm{ppb}$
     once propagated to $m_n$). The flavor-split $m_n = m_p(1 + X/(1-X/2))$
     (below) is a **secondary diagnostic** ratio ($-1.76\,\mathrm{ppm}$ on
-    $m_n$), not the production route.
+    $m_n$) rather than the production route.
 
 The flavor-split $X$ is an $h^3$-leading quantity:
 
@@ -72,7 +72,7 @@ $$
 
 with $h^0 = h^1 = h^2 = 0$. The neutron-proton mass difference
 $\Delta_{pn} = m_p \cdot X/(1 - X/2)$ is therefore a **cubic**
-effect in the deformation parameter $h$, not a quadratic one.
+effect in the deformation parameter $h$ rather than a quadratic one.
 The dominant MeV contributions are $h^3$: $+1.43\,\mathrm{MeV}$,
 $h^4$: $-0.15\,\mathrm{MeV}$.
 
@@ -97,23 +97,23 @@ $\mathfrak{D}_n \propto G_F^2 \mathfrak{Q}_\beta^5 f(\mathfrak{Q}_\beta/\mathfra
 where $\mathfrak{D}_K = \hbar / (\text{lifetime of } K)$ is the
 decay width in the paper's fraktur-observable convention (avoiding
 collision with $\tau$ = fibre functor and $\Gamma$ = sheaf sections).
-The ratio $\mathfrak{D}_\mu / \mathfrak{D}_n$ eliminates $G_F$ and provides a $\mathfrak{Q}_\beta$-independent consistency test. If both $\mathfrak{m}_\mu$ and $\mathfrak{Q}_\beta$ are substrate-derived, the lifetime ratio $\hbar/\mathfrak{D}_n \div \hbar/\mathfrak{D}_\mu$ matches CODATA ($\approx 4 \times 10^8$) strictly from categorical invariants.
+The ratio $\mathfrak{D}_\mu / \mathfrak{D}_n$ eliminates $G_F$ and provides a $\mathfrak{Q}_\beta$-independent consistency test. If both $\mathfrak{m}_\mu$ and $\mathfrak{Q}_\beta$ are derived from the aether parameter, the lifetime ratio $\hbar/\mathfrak{D}_n \div \hbar/\mathfrak{D}_\mu$ matches CODATA ($\approx 4 \times 10^8$) strictly from categorical invariants.
 
 ## Open work for full categorical proof
 
-The categorical structure of $F_{\mathrm{Bor}}$ + its rational
+The categorical structure of $F_{\mathrm{Bor}}$ and its rational
 $h$-expansion are completed in
-[the Borromean observable](../braids-and-knots/f-bor-borromean-observable.md).
+[the Borromean observable](#def:f-bor-borromean-observable).
 What remains specific to this archimedean evaluation:
 
 1. **Bridge from $\dim V_{(2,1)}$ to linear factor in mass formula.**
    The factored form
    $m_p = \dim V_{(2,1)} \cdot (m_\mu \cdot F_{\mathrm{Bor}} - |S_3| \cdot m_e)$
-   is numerically exact at 50 dps but the categorical WHY — why the
-   trace-dominant irrep's dimension enters linearly — remains a formal
-   gap. The Wedderburn block expansion of the Markov trace provides
+   holds to $50$ decimal places, while a categorical proof of why the
+   trace-dominant irrep's dimension enters linearly is open.
+   The Wedderburn block expansion of the Markov trace provides
    the natural framework (the $(2,1)$ block carries 49% of the proton's
-   $T_1$ contribution), but the formal categorical statement is pending.
+   $T_1$ contribution).
 
 ## Sub-ppm precision frontier
 
@@ -131,37 +131,31 @@ $$
 $$
 
 The correction $(\alpha_{\mathrm{em}}/\pi) / \dim H_3 = (\alpha_{\mathrm{em}}/\pi) / 6$
-appeared at 0.054 ppm (vs the bare identity's 32 ppm residual to integer
-12) — a $600\times$ improvement, computed by
-[`ocneanu-12-em-correction-candidate`](../../../computations/ocneanu_12_em_correction_candidate.py).
+reduces the residual to $0.054\,\mathrm{ppm}$ (versus the bare identity's $32\,\mathrm{ppm}$ residual to the integer
+$12$) — a $600\times$ improvement.
 Both factors are structurally motivated: $(\alpha_{\mathrm{em}}/\pi)$
-appears in m_K/m_π's Bring zero-mode closure, and
-$1/\dim H_3$ is the Plancherel-mean normalization over the H_3
+appears in $m_K/m_\pi$'s Bring zero-mode closure, and
+$1/\dim H_3$ is the Plancherel-mean normalization over the $H_3$
 Wedderburn block.
 
 A Bring zero-mode template transfer
 and an enumeration of 27 alternative
 knot-operator geometries both confirmed that $1/\dim H_3 = 1/6$ is
-the structurally robust denominator, but no transfer of the m_K/m_π
-$(3q^2-1)/(2q^2)$ shape gives a tighter form. The 54 ppb residual
-after the EM correction is either (a) a non-trivial categorical
+the structurally robust denominator, whereas no transfer of the $m_K/m_\pi$
+$(3q^2-1)/(2q^2)$ shape gives a tighter form. The $54\,\mathrm{ppb}$ residual
+after the electromagnetic correction is either (a) a non-trivial categorical
 $f(q)$ factor with $f(q_0) \approx 1.00167$ not yet identified, or
-(b) higher-order QED / categorical corrections at the substrate
-precision floor. This correction remains a near-match candidate, not
+(b) higher-order QED and categorical corrections at the aether-parameter
+precision floor. This correction is a near-match candidate rather than
 an established categorical derivation.
 
 The Ocneanu-weight cancellation behind the $-12\,m_e$ term carries a
-universal leading-pole coefficient $-1/12$. That coefficient rests on
-high-precision numerical pole detection, verified to 200 decimal
-places; the symbolic Hoefsmit route to the cancellation count still
-carries unrepaired convention and sign issues, so the coefficient is
-numerically verified rather than symbolically derived.
+universal leading-pole coefficient $-1/12$, verified numerically by pole detection to $200$ decimal
+places rather than symbolically derived via Hoefsmit matrix elements.
 
 ## See also
 
-- [The Borromean observable](../braids-and-knots/f-bor-borromean-observable.md)
+- [The Borromean observable](#def:f-bor-borromean-observable)
   — categorical observable $F_{\mathrm{Bor}}$ (closed form, $h$-expansion, structural integers)
-- [The canonical flavor-split proposition](../observations/flavor-split-substrate.md)
+- [The canonical flavor-split proposition](#prop:flavor-split-substrate)
   — canonical Hecke-skein $\Delta m / M_N$ derivation
-- [50-dps proton mass verification](../../../computations/m_p_substrate_identity_50dps.py)
-  — production-grade compute script (50-dps MPFR)

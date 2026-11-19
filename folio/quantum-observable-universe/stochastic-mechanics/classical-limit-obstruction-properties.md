@@ -1,6 +1,6 @@
 The [classical limit obstruction](#def:classical-limit-obstruction) sits in a Hochschild tower whose vanishing controls flatness of the $q \to 1$ deformation.
 
-**The Hochschild tower.** The Hochschild cohomology groups $HH^n(\mathcal{U}_q, \mathrm{Ad})$ govern the deformation theory of the substrate family $\{A_q\}_{q \in \mathbb{G}_m}$:
+**The Hochschild tower.** The Hochschild cohomology groups $HH^n(\mathcal{U}_q, \mathrm{Ad})$ govern the deformation theory of the aether family $\{A_q\}_{q \in \mathbb{G}_m}$:
 - $HH^0(\mathrm{Ad})$: hidden symmetries.
 - $HH^1(\mathrm{Ad})$: outer derivations.
 - $HH^2(\mathrm{Ad})$: obstructions to extending deformations across $q = 1$.

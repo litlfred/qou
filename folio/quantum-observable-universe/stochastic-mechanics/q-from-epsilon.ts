@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:q-from-epsilon",
-  title: "The substrate parameter $q$ as $1 + \\varepsilon$",
+  title: "The aether parameter $q$ as $1 + \\varepsilon$",
   lean: {
     ref: "qou:QOU.AlgebraicSubstrate.QFromEpsilon",
     validation: "not_checked",

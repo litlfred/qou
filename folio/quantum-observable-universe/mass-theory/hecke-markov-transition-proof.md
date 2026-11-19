@@ -53,7 +53,7 @@ At $q = 1$ (classical limit), $p_+ = p_- = 1/2$ and the chain is
 a fair random walk on $S_n$.  As $q \to \infty$ (deep-quantum
 limit), $p_+ \to 1$ and the chain becomes deterministic: only
 the symmetric channel survives, recovering the totally asymmetric
-simple exclusion process (TASEP).  For the substrate value
+simple exclusion process (TASEP).  For the aether value
 $q = q_0$, the per-step Shannon entropy
 $H = -p_+\ln p_+ - p_-\ln p_-$ is close to the maximum $\ln 2$;
 the canonical evaluation is given in Chapter 7

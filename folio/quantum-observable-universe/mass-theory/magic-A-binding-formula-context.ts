@@ -7,4 +7,10 @@ export default remark({
   interprets: "prop:magic-A-binding-formula",
   tags: ["binding", "doubly-magic", "catalan", "borromean", "strutinsky"],
   uses: ["prop:magic-A-binding-formula"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/binding-alpha-shift-witness.witness.json.",
+    },
+  ],
 });

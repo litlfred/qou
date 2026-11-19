@@ -6,7 +6,7 @@ For $n \notin \mathfrak{M}$, the constraint fails. Non-self-conjugate partitions
 
 ## Homological reformulation
 
-The Hoefsmit seminormal form ([prop:hoefsmit-seminormal-form](#prop:hoefsmit-seminormal-form)) supplies explicit matrices for $\sigma_i$ on each $V_\lambda$. Direct multiplication recovers the full-twist eigenvalue $q^{c(\lambda)}$. Numerical verification at $k = 3, \dots, 10$ confirms the shell pattern at small magic values $n = 2, 8, 20$. At $k \geq 12$, combinatorial growth in $|\{\lambda \vdash n\}|$ blocks matrix evaluation.
+The Hoefsmit seminormal form ([Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$](#prop:hoefsmit-seminormal-form)) supplies explicit matrices for $\sigma_i$ on each $V_\lambda$. Direct multiplication recovers the full-twist eigenvalue $q^{c(\lambda)}$. Numerical verification at $k = 3, \dots, 10$ confirms the shell pattern at small magic values $n = 2, 8, 20$. At $k \geq 12$, combinatorial growth in $|\{\lambda \vdash n\}|$ blocks matrix evaluation.
 
 The conjecture reformulates this homologically. Instead of verifying $\Phi_n$ with matrices, the self-conjugate-support condition is verified via content-sum arithmetic. This approach accesses saturation at $n \in \{50, 82, 126\}$ without matrix multiplication.
 

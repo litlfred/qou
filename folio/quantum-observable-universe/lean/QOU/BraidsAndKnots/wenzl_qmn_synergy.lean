@@ -119,8 +119,8 @@ def wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
     10000 ≤ ctx.wenzl_speedup ∧
     100 ≤ ctx.qmn_speedup ∧
     (ctx.combined_speedup = ctx.wenzl_speedup * ctx.qmn_speedup ∧
-     1000000 ≤ ctx.combined_speedup) :=
-  ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
-   ctx.claim_combined_speedup_bound⟩
+     1000000 ≤ ctx.combined_speedup) := by
+  refine ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
+    ctx.claim_combined_speedup_bound⟩
 
 end QOU.BraidsAndKnots

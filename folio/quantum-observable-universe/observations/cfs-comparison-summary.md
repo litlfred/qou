@@ -17,7 +17,7 @@ This yields functional mismatches:
 
 ## Open numerical question
 
-Whether the correction moment vanishes at $q_0 \approx 1.110$ remains open. 
+Whether the higher correction moment vanishes identically at $q_0 \approx 1.110$ is unresolved. 
 
 ## Corollary for QOU
 

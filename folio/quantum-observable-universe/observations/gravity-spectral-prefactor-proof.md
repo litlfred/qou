@@ -1,8 +1,8 @@
 *Proof.* The unified mass formula ([unified mass formula](#prop:unified-curvature-rank-mass-formula)) decomposes mass as $\sum_k \alpha_k \mathfrak{m}^{(k)}_{q,\mathcal{K}}$. For $k \geq 4$, no specific hyperbolic-knot ideal remains in the centre $Z(A)$ ([universal residue](#prop:plancherel-term-7-formulation)). The surviving structure is the dualizing-complex residue. Its normalisation is $\alpha = m_e \cdot 8 G$ by the Planck-unit convention. Solving for $G$ yields the displayed expression. $\square$
 
-**Connection to substrate geometry.**
+**Connection to aether geometry.**
 
-The remarks [Gravity emergent](#rem:gravity-emergent) and [GR substrate geometry](#rem:gr-substrate-geometry) describe gravity as the CR-manifold curvature of the substrate. The proposition above identifies the categorical counterpart: gravity is the high-stratum residue of the Hecke-algebraic mass functional, carrying $G$ as its universal prefactor. The two viewpoints are dual. CR geometry is the substrate face; the Plancherel residue is the categorical face.
+The remarks [Gravity emergent](#rem:gravity-emergent) and [GR aether geometry](#rem:gr-substrate-geometry) describe gravity as the CR-manifold curvature of the aether. The proposition above identifies the categorical counterpart: gravity is the high-stratum residue of the Hecke-algebraic mass functional, carrying $G$ as its universal prefactor. The two viewpoints are dual. CR geometry is the aether face; the Plancherel residue is the categorical face.
 
 **Corollaries.**
 

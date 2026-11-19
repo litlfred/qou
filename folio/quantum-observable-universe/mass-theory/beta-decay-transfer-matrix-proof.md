@@ -11,7 +11,7 @@ The differences $T_{\mathrm{mix}} - T_{nn}$ and
 $T_{pp} - T_{\mathrm{mix}}$ both equal
 $[[h/2, 0], [0, h/2]] = \frac{h}{2} \mathbb{I}$.  $\square$
 
-**Explicit entries at the substrate parameter $q$:**
+**Explicit entries at the aether parameter $q$:**
 
 $$
   \Delta_\beta(q_0) = 
@@ -34,29 +34,29 @@ $$
 
 where $L_i$ is the product of matrices to the left of the
 converting crossing (unchanged) and $R_i$ to the right
-(unchanged).  The daughter matrix product is:
+(unchanged).  The daughter matrix product is
 
 $$
-  M_i^{\mathrm{dau}}(q) = L_i(q) \cdot (T_{\mathrm{par}}(q) + \Delta_\beta(q)) \cdot R_i(q)
+  M_i^{\mathrm{dau}}(q) = L_i(q) \cdot (T_{\mathrm{par}}(q) + \Delta_\beta(q)) \cdot R_i(q).
 $$
 
-The change in the transfer matrix product:
+The change in the transfer matrix product is
 
 $$
-  \Delta M_i(q) = L_i(q) \cdot \Delta_\beta(q) \cdot R_i(q)
+  \Delta M_i(q) = L_i(q) \cdot \Delta_\beta(q) \cdot R_i(q).
 $$
 
-The change in the Markov-traced volume:
+The change in the Markov-traced volume is
 
 $$
   \Delta \hat{V}_i(q)
   = 
-  z \cdot (\Delta M_i)_{11} + (\Delta M_i)_{21}
+  z \cdot (\Delta M_i)_{11} + (\Delta M_i)_{21}.
 $$
 
 The $Q$-value
 ([transition energy](#def:Q-value-transition)) in **eigenfunction-basis
-(log-ratio) form**:
+(log-ratio) form** is
 
 $$
   \mathfrak{Q}_\beta^{\mathrm{B}}
@@ -65,23 +65,22 @@ $$
   \cdot \frac{E_0}{z}
   \;=\;
   \frac{E_0}{z} \,
-  \sum_{i=0}^{p} \ln \frac{\hat{V}_i^{\mathrm{dau}}(q)}{\hat{V}_i^{\mathrm{par}}(q)},
+  \sum_{i=0}^{p} \ln \frac{\hat{V}_i^{\mathrm{dau}}(q)}{\hat{V}_i^{\mathrm{par}}(q)}.
 $$
 
-where the sum runs only over generators affected by the
+Here the sum runs only over generators affected by the
 converting nucleon (generators $\sigma_i$ with $i > p$ cancel
-exactly), $z = 1/(\sqrt q + 1/\sqrt q)$ is the Markov–Jones
-parameter (Hecke–Skein normalization), and the $1/z$ factor is
-**not a calibration knob** — it is the normalization required to
-map the eigenfunction observable $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$
+exactly), and $z = 1/(\sqrt q + 1/\sqrt q)$ is the Markov–Jones
+parameter (Hecke–Skein normalization). The $1/z$ factor is
+**not a calibration knob**; it is the normalization mapping the eigenfunction observable $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$
 onto MeV.
 
 Form B is **not a separate observable** from the NF-counit form
 $\mathfrak{Q}_\beta^{\mathrm{A}} = |\Delta(\mathrm{net})| \cdot E_0$ of
-[prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic);
-the two are basis-change equivalent at leading order, with the
-explicit bridge identity given in
-[prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge):
+[symbolic neutron $Q$-value](#prop:neutron-qvalue-symbolic).
+The two are basis-change equivalent at leading order via the
+bridge identity in
+[$\mathfrak{Q}_\beta$ spectral bridge](#prop:q-beta-spectral-bridge):
 
 $$
   \mathfrak{Q}_\beta^{\mathrm{A}}
@@ -90,6 +89,5 @@ $$
 $$
 
 Form B is the natural basis for $N \geq 1$ brane-tower truncation
-analysis (where it composes additively across generators); Form A
-is canonical at $N = 0$ free neutron (where the NF counit is a
-closed combinatorial datum).
+analysis, whereas Form A
+is canonical at $N = 0$ free neutron.

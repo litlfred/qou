@@ -17,4 +17,10 @@ export default remark({
     "prop:reeb-bundle-complement-equals-volume",
     "rem:garside-as-compound-flow",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/figure_eight_kashaev_volume.py",
+    witness: "computations/figure-eight-kashaev-volume.witness.json",
+    status: "verified",
+  },
 });

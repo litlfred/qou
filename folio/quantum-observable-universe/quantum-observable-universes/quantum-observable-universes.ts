@@ -83,7 +83,7 @@ export default chapter({
           ],
         }),
         section({
-          title: "The $G$-action on the substrate",
+          title: "The $G$-action on the aether",
           label: "sec:emergence-g-action",
           blocks: [
             // Phase 7 orphan reconnection (2026-05-25):
@@ -164,9 +164,9 @@ export default chapter({
       ],
     }),
 
-    // ── Substrate parameter ───────────────────────────────────────────
+    // ── Aether parameter ──────────────────────────────────────────────
     section({
-      title: "Substrate parameter and deformation",
+      title: "Aether parameter and deformation",
       label: "sec:substrate-parameter",
       blocks: [
         "substrate-parameter-intro",
@@ -225,7 +225,7 @@ export default chapter({
     // coordinate ring — content that is genuinely foundational and
     // referenced from braids, fluid, info-theory, QOU itself.
     section({
-      title: "The algebraic substrate and the Reeb derivation",
+      title: "The algebraic aether and the Reeb derivation",
       label: "sec:algebraic-substrate-reeb",
       blocks: [
         "algebraic-substrate-intro",

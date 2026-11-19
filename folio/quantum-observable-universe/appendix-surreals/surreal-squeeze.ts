@@ -9,6 +9,12 @@ export default lemma({
     validation: "not_checked",
   },
   uses: [],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
   tags: [
     "surreal",
     "squeeze",

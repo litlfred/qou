@@ -1,4 +1,1 @@
-A **:defterm[$q$-torsion leaf]{#categorical-q-torsion-leaf}** is a maximal sub-object $L \hookrightarrow A$ such that:
-
-1. **Horizontality:** $L \subset \ker(\pi_V)$ (all forms on $L$ are horizontal).
-2. **Flow invariance:** $\phi_t^q(L) = L$ for all $t$ (the $q$-Reeb flow preserves $L$).
+**Categorical $q$-torsion leaf.** A maximal subobject $L \hookrightarrow A$ of the aether object that is simultaneously horizontal, $L \subset \ker(\pi_V)$, and invariant under the categorical $q$-Reeb flow, $\phi_t^q(L) = L$ for all $t$ (see [categorical $q$-Reeb flow](#def:categorical-q-reeb-flow)); such a subobject is called a :defterm[$q$-torsion leaf]{#categorical-q-torsion-leaf}. Geometrically, $q$-torsion leaves foliate the contact-horizontal locus of $A$ into integral subobjects preserved by Reeb evolution.

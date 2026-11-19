@@ -12,6 +12,5 @@ $\Delta_q / \hbar_q^2
 A mass gap in physical units is therefore a first-order-in-$h$
 phenomenon, in agreement with the first-order Reeb coupling
 $(1 - q^{-1})$ of the
-[categorical Dirac operator](#def:categorical-dirac-operator).  The
-identity is verified numerically to fifty digits in the witness
-[`q1-mass-gap-probe.witness.json`](../../../computations/q1-mass-gap-probe.witness.json).
+[categorical Dirac operator](#def:categorical-dirac-operator).  Numerical
+evaluation confirms this identity to fifty decimal digits.

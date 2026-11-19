@@ -1,1 +1,1 @@
-**:defterm[Left dual]{#left-dual}.** An object $Y$ in a monoidal category has a left dual if there exists an object $X$ and an exact pairing $(X, Y)$.
+**:defterm[Left dual]{#left-dual}.** For an object $Y$ in a monoidal category, an object $X = {}^{\vee}\!Y$ equipped with an [exact pairing](#rem:glossary-exact-pairing) $(X, Y)$ consisting of $\mathrm{ev} \colon X \otimes Y \to \mathbf{1}$ and $\mathrm{coev} \colon \mathbf{1} \to Y \otimes X$. Left duals, when they exist, are unique up to canonical isomorphism.

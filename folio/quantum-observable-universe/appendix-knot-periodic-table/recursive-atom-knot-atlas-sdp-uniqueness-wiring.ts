@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:recursive-atom-knot-atlas-sdp-uniqueness-wiring",
-  title: "Lean SDP-uniqueness wiring for the atlas entries",
+  title: "Semidefinite uniqueness stratification across nuclear strand counts",
   interprets: "prop:recursive-atom-knot-atlas",
   uses: [
     "prop:recursive-atom-knot-atlas",

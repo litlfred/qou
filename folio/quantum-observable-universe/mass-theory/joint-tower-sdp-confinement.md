@@ -1,4 +1,4 @@
-*Let $\mathcal{U}$ be a quantum observable universe at substrate parameter $q_0$. The joint mass-tower confinement SDP is:*
+*Let $\mathcal{U}$ be a quantum observable universe at aether parameter $q_0$. The joint mass-tower confinement SDP is:*
 
 $$
 \boxed{\quad

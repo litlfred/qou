@@ -36,4 +36,10 @@ export default remark({
       body: "Lean substantive proofs in the qou: namespace are partial pending Mathlib's IwahoriHecke API.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/cl3_zeta5_pslq_search.py",
+    witness: "computations/cl3-zeta5-pslq-search.witness.json",
+    status: "verified",
+  },
 });

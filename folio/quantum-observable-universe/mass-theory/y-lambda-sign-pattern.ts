@@ -18,4 +18,10 @@ export default remark({
     "structural-observation",
     "alternating-block",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/alpha/alpha_k_jones_markov_h4.py",
+    witness: "computations/alpha-k-jones-markov-h4.witness.json",
+    status: "verified",
+  },
 });

@@ -14,4 +14,10 @@ export default remark({
     "c3-bar-odd",
     "candidate-iii",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: computations/qbeta/qbeta_c3_imq_decay_projection_probe.py.",
+    },
+  ],
 });

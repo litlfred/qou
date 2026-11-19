@@ -23,7 +23,7 @@ $$
 
 which is literally the standard-part relation $\mathrm{IsSt}(x, r)$ on $\mathbb{R}^*$. So the conjecture's analytic content is the standard part of the hyperreals, and the surreal carrier plays no role in it.
 
-## ⚠ What this does not do
+## Scope and non-equivalence with sequential convergence
 
 Hyperfilter convergence is strictly weaker than sequential convergence as $n \to \infty$. The arrow
 
@@ -35,7 +35,7 @@ $$
 
 is available; **the converse is false**. Everything here therefore *pushes* real limits into $\mathbb{R}^*$. Nothing here proves sequential convergence as $n \to \infty$ by a single standard-part computation, because $\mathrm{IsSt}({}^{*}\!a, r)$ says $a(\omega) \approx r$ for one specific $\omega$, not for every infinite hypernatural — which is what a genuine nonstandard limit argument requires, and which evaluating at the single diagonal class of one ultrapower does not supply.
 
-**So surreal and standard-part machinery does not replace this corpus's $\varepsilon$–$\delta$ arguments.** That was the hoped-for payoff.
+**So surreal and standard-part machinery does not replace standard $\varepsilon$–$\delta$ arguments.** That was the hoped-for payoff.
 
 ## A defect in the surrounding axioms
 

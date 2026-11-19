@@ -4,4 +4,4 @@ Setting $\Delta_q \alpha = 0$ specifies that the field $\alpha$ is in equilibriu
 - **At $q = 1$**: $d_q = d$, and $\Delta_q$ reduces to the Hodge Laplacian $\Delta$. The quantum twist vanishes, and $q$-harmonic forms are ordinary harmonic forms.
 - **At $q \to \infty$**: $d_q$ projects onto $\pi_V \circ d$. A $q$-harmonic form is averaged purely along the internal fibre.
 
-A $q$-harmonic form ($\Delta_q \alpha = 0$) is a particle: a field configuration in perfect $q$-equilibrium with its twisted geometric environment. The substrate parameter $q$ tunes the relative weight of spatial diffusion versus internal spin.
+A $q$-harmonic form ($\Delta_q \alpha = 0$) is a particle: a field configuration in perfect $q$-equilibrium with its twisted geometric environment. The aether parameter $q$ tunes the relative weight of spatial diffusion versus internal spin.

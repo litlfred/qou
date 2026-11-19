@@ -11,6 +11,10 @@ export default conjecture({
   authorNotes: [
     {
       kind: "status",
+      body: "Historical note migrated from prose: an earlier wording equated K with the Garoufalidis-Gu-Marino resurgent colored-Jones Stokes carrier G; Newton-polygon slopes ({1/2, 1/2} vs {-1, +1}) rule out K ~= G, and the sibling .lean states QDifferenceKernelIsProlongationSymbol cleanly without that clause.",
+    },
+    {
+      kind: "status",
       date: "2026-07-20",
       body:
         "Restored to conjecture after PR #4129 relabelled it a theorem with no discharging proof (class-axiomatised, no instance). Additionally, the confluent-limit narrowing (docs/audits/2026-07-20-qdifference-kernel-confluent-narrowing.md, Lean QOU.Mass.QDifferenceConfluentObstruction) proves the stated bounded-depth kernel on the raw OGF cannot exist: R(1,x)=1 is forced and the first-order relation fails against the proved Gevrey-1/2 growth. The surviving well-posed form places the kernel on the q-Borel (Gevrey-normalized) transform, predicted depth 2; the prolongation-symbol identification itself remains open there.",
@@ -103,4 +107,10 @@ export default conjecture({
     "step-9b",
     "open-problem",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/binding_shell_enhancement_derivation.py",
+    witness: "computations/binding-shell-enhancement-derivation.witness.json",
+    status: "verified",
+  },
 });

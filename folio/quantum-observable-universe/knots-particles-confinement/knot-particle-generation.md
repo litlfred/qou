@@ -11,4 +11,4 @@ $$
 
 See [Table](#tbl:knot-particle-generation-table-data).
 
-The symbol $q$ is reserved for the substrate parameter and $p$ for base points. The winding indices are always $(m,n)$.
+The symbol $q$ is reserved for the aether parameter and $p$ for base points. The winding indices are always $(m,n)$.

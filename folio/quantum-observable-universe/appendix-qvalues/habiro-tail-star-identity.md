@@ -12,7 +12,7 @@ $$
 
 This relation is the *Habiro-tail star identity*.
 
-## What the identity does
+## Exponent collapse in the cyclotomic sum
 
 The left-hand side is the Masbaum cyclotomic datum in its native variable
 $a$, carrying a quadratic exponent in both $n$ and the summation index $k$.
@@ -45,7 +45,7 @@ This absorbs the residual $(\bar q)^{-n(n+1)}$ prefactor. Squaring is what
 makes the statement clean: the unsquared inversion carries a sign $(-1)^n$
 and the half-exponent $n(n+1)/2$, and both disappear on squaring.
 
-## Consequences
+## Immediate corollaries
 
 Write $\hat T_n(q) = (\,q;q)_n^{2}\sum_{k=0}^{n} q^{k(n+1)}[n,k]_q$ for the
 right-hand side up to sign, so that the identity reads

@@ -17,6 +17,6 @@ amplitude $h$ are introduced in the parent remark
 
 The elided entries ($\ldots$) in the final row are the remaining NF
 coefficients of $e^- \cdot e^- \cdot e^-$ ($L_+$, $L_-$, $e^-$
-channels); their full symbolic values are recorded in the computation
-witness `photon-operator-table.witness.json` referenced by the parent
-remark [Knot operator action on NF basis pairs](#rem:knot-operator-basis-table).
+channels); their closed-form polynomials in $h$ follow directly from the
+basis multiplication rules of the parent remark
+[Knot operator action on NF basis pairs](#rem:knot-operator-basis-table).

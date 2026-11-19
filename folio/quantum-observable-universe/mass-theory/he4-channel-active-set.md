@@ -12,7 +12,7 @@ The **channel binding residual** is the excess binding beyond the free constitue
 $$
   t_i \;:=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) \;-\; \sum_{j \in \mathrm{channel}\, i} \Delta_\mathrm{cat}(j).
 $$
-This measures the binding that the magic-shell coupling must explain beyond the free constituents. The empirical anchors are loaded from [`magic-shell-empirical-instantiation.witness.json`](computations/magic-shell-empirical-instantiation.witness.json).
+This measures the binding that the magic-shell coupling must explain beyond the free constituents.
 
 ## LP formulation
 
@@ -40,7 +40,7 @@ $$
 
 ## Proposition
 
-**(Conditional on [`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**
+**(Conditional on the compositional canonical ${}^4\mathrm{He}$ trace evaluation.)**
 For the $^4\mathrm{He}$ operator-selection LP:
 1. **Unique primal optimum:** The system selects the $\mathrm{T} \oplus p$ channel with $x^\star_{\mathrm{T} \oplus p} > 0$ and $x^\star_i = 0$ for all $i \neq \mathrm{T} \oplus p$.
 2. **Active set:** The dual-tight constraints are $\mathcal{A}({}^4\mathrm{He}) = \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}$.

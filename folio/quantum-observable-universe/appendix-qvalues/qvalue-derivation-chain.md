@@ -1,4 +1,4 @@
-The $\beta^-$ decay $(Z, N) \to (Z+1, N-1)$ $Q$-value follows strictly from the substrate parameter $q$, using zero fitting parameters. The calculation operates within the $2 \times 2$ standard irreducible representation of $H_3(q)$. While the regular representation is $6 \times 6$, the traced-volume computation strictly isolates the $2 \times 2$ standard block. 
+The $\beta^-$ decay $(Z, N) \to (Z+1, N-1)$ $Q$-value follows strictly from the aether parameter $q$, using zero fitting parameters. The calculation operates within the $2 \times 2$ standard irreducible representation of $H_3(q)$. While the regular representation is $6 \times 6$, the traced-volume computation strictly isolates the $2 \times 2$ standard block. 
 **MAE $\approx 4.4\%$ across six NNDC benchmarks, zero fitting.**
 
 The derivation chain is:
@@ -40,5 +40,6 @@ $$
     \times F_{I_{10}}(Z, N; q)
 $$
 
+<!-- literal-source: unnormalised Rosso-Jones weighted average at z = q^{1/2}/(q+1) -->
 - $F_{\mathrm{shell}} \approx 0.5904$ for shell $\geq 5$: the Rosso–Jones weighted average over the two degree-$2$ torus knots $\tau(2,9)$ and $\tau(3,4)$, using the canonical inner product on $R(H_r(q))$ ([canonical inner product](#prop:rj-canonical-inner-product)). The weights are the quantum dimensions $d_\lambda(q)$, forced by Schur orthogonality — no fitting freedom.
 - $F_{I_{10}} = (1 - \delta_{\mathrm{pp}}/Z)(1 - \delta_{\mathrm{nn}}/N)$ for odd-odd $\to$ even-even at shell $\geq 5$.

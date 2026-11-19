@@ -25,7 +25,7 @@ algebra.
 ## Significance for QOU
 
 The main paper's mass formula outputs live in $\mathbb{Q}(q)$ with
-$q = q_0 \in \mathbb{R}$ as the substrate value. Under a surreal lift,
+$q = q_0 \in \mathbb{R}$ as the aether parameter. Under a surreal lift,
 $q$ becomes $1 + \varepsilon$ and the outputs live in
 $\mathbf{No}_{\mathrm{fin}}$ (they are rational in $\varepsilon$).
 Applying $\mathrm{st}$ recovers exactly the paper's reals; the

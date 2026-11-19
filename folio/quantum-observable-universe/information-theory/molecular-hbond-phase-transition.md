@@ -1,11 +1,11 @@
 The $S^3$-boundary action $\mathfrak{S}_q^{(\partial)}$ anchors the critical temperatures. For a molecular liquid, this boundary action explicitly embodies a braid realization: it rigorously represents the hydrogen-bond network cohesion. This cohesion is strictly gated by the discrete $\mathrm{sp}^3 \leftrightarrow \mathrm{pure}\text{-}p$ flip dictating the bond angle.
 
 **The hydrogen bond as an $h^2$-suppressed crossing.** 
-A covalent $X$–$H$ bond constitutes a $\sigma$-crossing (the shared trefoil). A hydrogen bond $X\!-\!H\cdots Y$ acts as the weak inter-molecular crossing between the donor $\sigma$ and the acceptor lone pair. It sits suppressed by the square of the substrate $q$-deformation parameter $h = q_0 - q_0^{-1}$:
+A covalent $X$–$H$ bond constitutes a $\sigma$-crossing (the shared trefoil). A hydrogen bond $X\!-\!H\cdots Y$ acts as the weak inter-molecular crossing between the donor $\sigma$ and the acceptor lone pair. It sits suppressed by the square of the aether $q$-deformation parameter $h = q_0 - q_0^{-1}$:
 $$
   E_{\mathrm{HB}} = h^2 E_{\mathrm{cov}}, \qquad h^2 \approx {{ qou.computations.hbond-categorical-action.data.h_squared_hbond_ratio | precision: 4 }}.
 $$
-The formal substrate $q_0$ entirely governs this $h^2$ suppression. It effortlessly matches the measured hydrogen-bond to covalent energy ratio ($\approx 0.044$). The boundary action firmly equates to the sum over the molecule's net hydrogen bonds:
+The aether parameter $q_0$ entirely governs this $h^2$ suppression. It effortlessly matches the measured hydrogen-bond to covalent energy ratio ($\approx 0.044$). The boundary action firmly equates to the sum over the molecule's net hydrogen bonds:
 $$
   \mathfrak{S}_q^{(\partial)} = n_{\mathrm{HB}} h^2 E_{\mathrm{cov}},
 $$
@@ -25,4 +25,4 @@ The exact boiling temperature is $T_q^{(g\to l)} = \mathfrak{S}_q^{(\partial)}/[
 
 The predicted water latent heat confidently falls within $\approx 1\%$ of the measured value. Deploying the bridge relation $k_B T_{\mathrm{phys}} = \hbar_q$ yields $T_{\mathrm{boil}}(\mathrm{H_2O}) \approx 369\ \mathrm{K}$ (observed $373\ \mathrm{K}$). The freezing point follows identically from $T_q^{(l\to s)} = \mathfrak{S}_q^{(\partial)}/([2]_q[n_K]_q)$, yielding the tight ratio $T_{\mathrm{melt}}/T_{\mathrm{boil}} = 1/[n_K]_q$.
 
-*Observation structure.* The $h^2$ suppression and the $\mathrm{sp}^3$ gate follow from the substrate and the bond-angle flip, whereas $E_{\mathrm{cov}}$ and $L^{\mathrm{obs}}$ enter strictly from experiment. The dispersion latent heat of the non-hydrogen-bonding hydrides rigorously belongs to the Hopf channel—the symmetric $e_+$ carrier. True van der Waals interactions rigorously correspond to the discarded bar-odd residual $\sinh(2\lambda)(e_+-e_-)$ of that specific channel, firmly requiring a separate formal mechanism.
+*Observation structure.* The $h^2$ suppression and the $\mathrm{sp}^3$ gate follow from the aether parameter and the bond-angle flip, whereas $E_{\mathrm{cov}}$ and $L^{\mathrm{obs}}$ enter strictly from experiment. The dispersion latent heat of the non-hydrogen-bonding hydrides rigorously belongs to the Hopf channel—the symmetric $e_+$ carrier. True van der Waals interactions rigorously correspond to the discarded bar-odd residual $\sinh(2\lambda)(e_+-e_-)$ of that specific channel, firmly requiring a separate formal mechanism.

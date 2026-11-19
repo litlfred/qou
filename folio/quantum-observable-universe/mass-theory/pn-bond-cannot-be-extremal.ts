@@ -36,4 +36,19 @@ export default remark({
     "lean-formalised",
     "draft",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py.",
+    },
+  ],
+  computation: {
+    engine: "python",
+    script: "computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py",
+    witness: [
+      "computations/probes/the_pn_bond_is_an_average_and_cannot_be_extremal_probe.witness.json",
+      "computations/binding-per-bond-decomposition.witness.json",
+    ],
+    status: "verified",
+  },
 });

@@ -1,10 +1,10 @@
-## How far the exact gluing verification actually reaches
+## Exact algebraic reach of gluing certification
 
 Shape fields identified from a triangulation give the edge and cusp equations a purely algebraic form: with $P$ the minimal polynomial and each shape $z_j = Q_j(\theta)$ an explicit element of $\mathbb{Q}(\theta)$, the verification lives in $\mathbb{Q}[x]/(P)$ and no numerics enter at any step.
 
 Two consequences make the whole thing mechanical.
 
-**Every identity holds at an arbitrary root.** Because the computation is in the quotient ring, each equation holds at *every* root of $P$, not merely the geometric one. This removes the root-selection problem entirely — otherwise one would have to prove that a quartic or a degree-14 polynomial has a root in the upper half plane before saying anything at all. Which root is geometric is a separate, numerical question.
+**Every identity holds at an arbitrary root.** Because the computation is in the quotient ring, each equation holds at *every* root of $P$ rather than merely the geometric one. This removes the root-selection problem entirely — otherwise one would have to prove that a quartic or a degree-14 polynomial has a root in the upper half plane before saying anything at all. Which root is geometric is a separate, numerical question.
 
 **Every proof is a single deterministic step.** Clearing denominators turns $\prod z^{a} (z')^{b} (z'')^{c} = 1$ into the polynomial identity
 
@@ -34,11 +34,11 @@ The obvious worries about scaling this up are that the certificates grow with th
 
 **Degree.** The certificates do grow — cofactor degree roughly quadruples and emitted size grows fivefold from degree 4 to degree 9. But the manifold with a degree-14 shape field, whose single largest certificate is over thirty thousand characters, verifies in about two minutes. The naive extrapolation overshoots because **cost tracks the number of ring-normalisation calls far more than the size of any one of them.** Wide-but-few is cheap.
 
-**Tetrahedron count.** The finite-product lemmas available off the shelf stop at eight, which reads like a hard limit at nine tetrahedra. It is a limit on the *named lemmas*, not on the argument: the successor form iterates unaided and unfolds the product at any count. A fourteen-tetrahedron triangulation certifies by the same single step as a two-tetrahedron one.
+**Tetrahedron count.** The finite-product lemmas available off the shelf stop at eight, which reads like a hard limit at nine tetrahedra. It is a limit on the *named lemmas* rather than on the argument: the successor form iterates unaided and unfolds the product at any count. A fourteen-tetrahedron triangulation certifies by the same single step as a two-tetrahedron one.
 
 Net reach: shape-field degrees $2$ through $14$, triangulations of $2$ through $14$ tetrahedra, with each manifold's identities assembled into a certificate that the triangulation satisfies its gluing system — not merely a pile of separate equations.
 
-## What this does not establish
+## Completeness and geometric properties outside gluing certification
 
 The identities hold at an **arbitrary root**, so flat shapes are permitted throughout and **hyperbolicity is not established anywhere** — that needs $\mathrm{Im} z > 0$, which is a genuinely separate condition and is exactly the gap the trefoil exhibits: its flat shapes satisfy the edge equations exactly.
 

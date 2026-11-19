@@ -7,6 +7,7 @@ export default corollary({
   },
   title: "Obstruction to self-intersection",
   authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
     {
       kind: "note",
       date: "2026-08-23",

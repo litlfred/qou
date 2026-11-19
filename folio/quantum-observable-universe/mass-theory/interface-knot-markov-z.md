@@ -14,5 +14,3 @@ $$
 This exact factorisation governs atomic assembly. Adding a proton inserts a positive interface, scaling the trace by $z$. Adding a neutron after a proton also inserts a positive interface. Adding a neutron to an existing neutron inserts a negative interface, scaling the trace by $z-h$. 
 
 The structural interface identity completely determines the trace scaling. The empirical single-block extraction correction operates independently at a different structural level.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

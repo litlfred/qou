@@ -16,4 +16,10 @@ export default remark({
     "tate-twist",
     "graded-mikusinski",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/hyperbolic_volumes.py",
+    witness: "computations/hyperbolic-volumes.witness.json",
+    status: "verified",
+  },
 });

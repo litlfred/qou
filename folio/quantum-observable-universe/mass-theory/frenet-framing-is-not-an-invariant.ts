@@ -23,6 +23,12 @@ export default remark({
     "prop:canonical-closure-torus-chain",
   ],
   cites: ["milnor1950", "lickorish1997"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/the_torsion_half_is_not_an_invariant_probe.py",
+    witness: ["computations/probes/the_torsion_half_is_not_an_invariant_probe.witness.json"],
+    status: "verified",
+  },
   tags: [
     "mass-theory",
     "torus-knots",

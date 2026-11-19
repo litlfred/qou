@@ -19,7 +19,7 @@ Soft sharpness elevates the following consequences of the correspondence to theo
 **Limitations of soft sharpness:**
 Strong sharpness ($\tau_{\mathrm{arch}}(G^{(n)})$ equals all of $\mathcal{P}_n / \mathcal{P}_{n-1}$ over arbitrary $F$) remains Beilinson-conjectural. Soft sharpness permits additional periods in $\mathcal{P}_n / \mathcal{P}_{n-1}$ not coming from $\tau_{\mathrm{arch}}(G^{(n)})$. Strong sharpness denies this possibility.
 
-For QOU's predictive use case, this distinction matters only when predicting that some specific period must equal a specific $G^{(n)}$ image. The framework's predictions concern non-trivial classes at specific depths, not exhausting the period quotient.
+For QOU's predictive use case, this distinction matters only when predicting that some specific period must equal a specific $G^{(n)}$ image. The framework's predictions concern non-trivial classes at specific depths rather than exhausting the period quotient.
 
 **Significance: Goncharov is bigger than QOU needs.**
 Goncharov's full conjecture asserts $K_{2n-1}^{\mathrm{ind}}(F) \otimes \mathbb{Q} \cong \mathfrak{B}_n(F) \otimes \mathbb{Q}$ via the Goncharov regulator, for all $F$ and $n$. QOU requires only that each Bring-natural depth-$n$ grouplike value lands non-by definition in $\mathcal{P}_n / \mathcal{P}_{n-1}$. This soft sharpness is a theorem of Borel + Lewin.

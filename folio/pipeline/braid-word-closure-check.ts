@@ -130,9 +130,10 @@ function mixedIndexing(file: string): boolean {
   });
 }
 
-const targets = process.argv.slice(2).length
-  ? process.argv.slice(2)
-  : globSync("content/**/*.md");
+const rawArgs = process.argv.slice(2);
+const targets = rawArgs.length
+  ? rawArgs
+  : globSync("folio/**/*.md");
 let bad = 0, checked = 0;
 for (const f of targets) {
   if (mixedIndexing(f)) {

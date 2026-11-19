@@ -59,11 +59,9 @@ For a $q$-difference system that is regular singular at $0$ and at $\infty$, the
 **Scope.** (3) determines the zero divisor of $\theta_p$, so the three loci in
 (5) are exact rather than containments and carry multiplicity one. What (5)
 does not settle is completeness in the other direction — whether $P$ has poles
-off those orbits. That, together with the identification of $Y_0$ and
-$Y_\infty$ as the canonical solutions, the meromorphy of $P=Y_0^{-1}Y_\infty$,
-and the closed form for the connection invariant $\chi$, remains open.
+off those orbits. Identifying $Y_0$ and $Y_\infty$ with the canonical fundamental solutions, proving the meromorphy of $P=Y_0^{-1}Y_\infty$, and deriving a closed form for the connection invariant $\chi$ are unproved.
 
-**The remaining claims are computational, not derived.** The pole divisor and
+**The remaining claims are computational rather than derived.** The pole divisor and
 its residue-theorem completeness check, the connection invariant $\chi$ having
 order $2$, the identification $\alpha=t_2/T$, and the closed form for $\chi$
 verified to $5.3\times10^{-63}$ over twelve points, rest on numerical

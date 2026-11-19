@@ -19,4 +19,10 @@ export default corollary({
     "iron-56",
     "lead-208",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

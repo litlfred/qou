@@ -2,7 +2,7 @@ The NF$_+$ / NF$_-$ decomposition of the nucleon normal forms reveals a quantita
 
 ## The topological-deficit
 
-Each nucleon's Gröbner--Shirshov normal form splits into positive and negative coefficient sums. The neutron's topological-deficit $|\mathrm{NF}_-(\mathfrak{n})| = 0.2555$ exceeds the proton's by $|\Delta\mathrm{NF}_-| = 0.1127$. This excess deficit is $11.3\%$ of the proton's net coefficient.
+Each nucleon's Gröbner--Shirshov normal form splits into positive and negative coefficient sums. <!-- literal-source: closed-form difference of negative normal-form sums 0.2555 - 0.1428 = 0.1127 --> The neutron's topological-deficit $|\mathrm{NF}_-(\mathfrak{n})| = 0.2555$ exceeds the proton's by $|\Delta\mathrm{NF}_-| = 0.1127$. This excess deficit is $11.3\%$ of the proton's net coefficient.
 
 The dominant source is the $L_+$ sign flip. This single channel contributes approximately the entire excess deficit.
 

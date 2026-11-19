@@ -1,0 +1,641 @@
+{
+  "engine": "mpmath-80dps",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T16:43:59.047742+00:00",
+  "commitSha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+  "assertions": [
+    {
+      "name": "cauchy_schwarz_and_unconstrained_minimal_energy_unique_orbits",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Cauchy-Schwarz 3*E(t) - T(t)^2 >= 0 and unconstrained minimal energy on Z^3 collapsing 4 battery tuples to 1"
+    },
+    {
+      "name": "s3_orbit_cardinality_matches_color_triality_divisibility",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "|Orb_{S_3}(t)| = 3 iff 3 does not divide T(t) (quarks u,d) and |Orb_{S_3}(t)| = 1 iff 3 | T(t) (leptons nu,e)"
+    },
+    {
+      "name": "baez_huerta_z6_congruence_and_five_anomalies_cancel",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "2*tau_3 + 3*(2*I_3) == 3*Y_t (mod 6) across all 8 chiral states and all 5 gauge/gravitational anomalies = 0"
+    },
+    {
+      "name": "open_A_bring_kummer_pushforward_hypercharge_bridge_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Y_t/2 == smHypercharge on Lambda^1(V_2 (+) W_3^*) (+) Lambda^2(V_2^* (+) W_3) with y_2=-1/2, y_3=+1/3"
+    },
+    {
+      "name": "open_B_diagonal_plumbing_signature_equals_twist_and_1component_parity_obstruction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sum_i sgn(t_i) == sum_i t_i on minimal-energy states (t_i in {-1,0,1}) vs 1-component knot parity sigma(K) in 2Z"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "strand-twist-minimal-energy-and-z6",
+  "scriptFile": "strand_twist_minimal_energy_and_z6_probe.py",
+  "scriptHash": "5b023c637de4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 95,
+    "output_dps": 80,
+    "guard_digits": 10,
+    "truncation_bound": "1e-80"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/strand_twist_minimal_energy_and_z6_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/strand_twist_minimal_energy_and_z6_probe.py"
+  },
+  "description": "80-dps zero-float64 verification of Bean qou-qvpl (StrandTwistMinimalEnergyAndZ6Hypercharge.lean): (1) Theorem 1 — Cauchy-Schwarz framing energy bound 3*E(t) >= T(t)^2 and unconstrained minimal-energy selection across Z^3 uniquely picking {0,1,1} (E=2, card 3), {-1,0,0} (E=1, card 3, beating {-1,-1,1} at E=3), {0,0,0} (E=0, card 1, beating {-1,0,1} at E=2), and {-1,-1,-1} (E=3, card 1), deriving the helon bound t_i in {-1,0,1}, collapsing 1*2*2*1 = 4 battery survivors to 1*1*1*1 = 1, and matching S_3-orbit size (3 vs 1) to 3 | T(t); (2) Theorem 2 (Open C) — Y_t = 2*(T(t)/3 - I_3) reproduces (1/3, 4/3, -2/3, -1, -2), satisfies the Baez-Huerta Z_6 congruence 2*tau_3 + 3*(2*I_3) == 3*Y_t (mod 6) on all 8 first-generation chiral states, and cancels all 5 gauge/gravitational anomalies; (3) Theorem 3 (Open A & B) — exact bridge to Bring's degree-3 Kummer pushforward hypercharge (y_2=-1/2, y_3=+1/3) and to the diagonal 3-strand plumbing signature sum sgn(t_i)/3 on minimal-energy states vs. the even parity obstruction sigma(K) in 2Z for 1-component knots.",
+  "parameters": {
+    "precision_dps": 80,
+    "q0_proton_1term": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+    "q2t_two_term_borromean": "1.1099785951508859990875652035986826212141034805412162114889044129176770838269367",
+    "q0_muon_codata2022": "1.1099785956427390466817951293800017527000655610290115569740457699990950814290311",
+    "zero_fitting": true,
+    "lean_companion": "folio/quantum-observable-universe/lean/QOU/StandardModel/StrandTwistMinimalEnergyAndZ6Hypercharge.lean"
+  },
+  "data": {
+    "pins": {
+      "proton_1term": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
+      "proton_2term_borromean": "1.1099785951508859990875652035986826212141034805412162114889044129176770838269367",
+      "muon_ideal_cal2": "1.1099785956427390466817951293800017527000655610290115569740457699990950814290311"
+    },
+    "part1_minimal_energy_and_orbit_collapse": {
+      "lattice_bound": 5,
+      "total_triples_scanned": 1331,
+      "cauchy_schwarz_identity_failures": 0,
+      "helon_battery_survivor_product": 4,
+      "minimal_energy_unique_orbit_product": 1,
+      "all_uniquely_selected": true,
+      "all_helon_bounded": true,
+      "all_sign_coherent": true,
+      "all_color_multiplicity_match": true,
+      "d_energy_canon_vs_mixed": {
+        "d_canon_rep": [
+          -1,
+          0,
+          0
+        ],
+        "d_canon_energy": 1,
+        "d_mixed_rep": [
+          -1,
+          -1,
+          1
+        ],
+        "d_mixed_energy": 3,
+        "energy_gap_mixed_minus_canon": 2
+      },
+      "nu_energy_canon_vs_mixed": {
+        "nu_canon_rep": [
+          0,
+          0,
+          0
+        ],
+        "nu_canon_energy": 0,
+        "nu_mixed_rep": [
+          -1,
+          0,
+          1
+        ],
+        "nu_mixed_energy": 2,
+        "energy_gap_mixed_minus_canon": 2
+      },
+      "flavour_records": {
+        "u": {
+          "three_Q_totalTwist": 2,
+          "canonical_representative": [
+            0,
+            1,
+            1
+          ],
+          "minimal_twistEnergy_Z": 2,
+          "cauchy_schwarz_3E_minus_T2": 2,
+          "helon_battery_survivor_multisets": [
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "helon_battery_survivor_count": 1,
+          "unconstrained_minimal_energy_multisets": [
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "unconstrained_minimal_energy_orbit": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "s3_orbit_cardinality": 3,
+          "three_divides_totalTwist": false,
+          "inferred_SU3_color_dimension": 3,
+          "q_deformed_energy_by_pin": {
+            "proton_1term": {
+              "E_q_canonical": "2.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "proton_2term_borromean": {
+              "E_q_canonical": "2.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "muon_ideal_cal2": {
+              "E_q_canonical": "2.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+          }
+        },
+        "d": {
+          "three_Q_totalTwist": -1,
+          "canonical_representative": [
+            -1,
+            0,
+            0
+          ],
+          "minimal_twistEnergy_Z": 1,
+          "cauchy_schwarz_3E_minus_T2": 2,
+          "helon_battery_survivor_multisets": [
+            [
+              -1,
+              -1,
+              1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "helon_battery_survivor_count": 2,
+          "unconstrained_minimal_energy_multisets": [
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "unconstrained_minimal_energy_orbit": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "s3_orbit_cardinality": 3,
+          "three_divides_totalTwist": false,
+          "inferred_SU3_color_dimension": 3,
+          "q_deformed_energy_by_pin": {
+            "proton_1term": {
+              "E_q_canonical": "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "proton_2term_borromean": {
+              "E_q_canonical": "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "muon_ideal_cal2": {
+              "E_q_canonical": "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+          }
+        },
+        "nu": {
+          "three_Q_totalTwist": 0,
+          "canonical_representative": [
+            0,
+            0,
+            0
+          ],
+          "minimal_twistEnergy_Z": 0,
+          "cauchy_schwarz_3E_minus_T2": 0,
+          "helon_battery_survivor_multisets": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "helon_battery_survivor_count": 2,
+          "unconstrained_minimal_energy_multisets": [
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "unconstrained_minimal_energy_orbit": [
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "s3_orbit_cardinality": 1,
+          "three_divides_totalTwist": true,
+          "inferred_SU3_color_dimension": 1,
+          "q_deformed_energy_by_pin": {
+            "proton_1term": {
+              "E_q_canonical": "0.0"
+            },
+            "proton_2term_borromean": {
+              "E_q_canonical": "0.0"
+            },
+            "muon_ideal_cal2": {
+              "E_q_canonical": "0.0"
+            }
+          }
+        },
+        "e": {
+          "three_Q_totalTwist": -3,
+          "canonical_representative": [
+            -1,
+            -1,
+            -1
+          ],
+          "minimal_twistEnergy_Z": 3,
+          "cauchy_schwarz_3E_minus_T2": 0,
+          "helon_battery_survivor_multisets": [
+            [
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "helon_battery_survivor_count": 1,
+          "unconstrained_minimal_energy_multisets": [
+            [
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "unconstrained_minimal_energy_orbit": [
+            [
+              -1,
+              -1,
+              -1
+            ]
+          ],
+          "s3_orbit_cardinality": 1,
+          "three_divides_totalTwist": true,
+          "inferred_SU3_color_dimension": 1,
+          "q_deformed_energy_by_pin": {
+            "proton_1term": {
+              "E_q_canonical": "3.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "proton_2term_borromean": {
+              "E_q_canonical": "3.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "muon_ideal_cal2": {
+              "E_q_canonical": "3.0000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+          }
+        }
+      }
+    },
+    "part2_z6_hypercharge_and_anomalies": {
+      "chiral_states": [
+        {
+          "state": "u_L",
+          "twist_rep": [
+            0,
+            1,
+            1
+          ],
+          "totalTwist_3Q": 2,
+          "Q_electric": "2/3",
+          "two_I3": 1,
+          "I3": "1/2",
+          "Y_physicists_2_Q_minus_I3": "1/3",
+          "Y_half_Q_minus_I3": "1/6",
+          "three_Y": 1,
+          "su3_triality_tau3": 2,
+          "color_dim": 3,
+          "tau3_minus_totalTwist_mod3": 0,
+          "baez_huerta_2tau3_plus_3twoI3_minus_3Y": 6,
+          "baez_huerta_mod6": 0,
+          "baez_huerta_z6_holds": true
+        },
+        {
+          "state": "d_L",
+          "twist_rep": [
+            -1,
+            0,
+            0
+          ],
+          "totalTwist_3Q": -1,
+          "Q_electric": "-1/3",
+          "two_I3": -1,
+          "I3": "-1/2",
+          "Y_physicists_2_Q_minus_I3": "1/3",
+          "Y_half_Q_minus_I3": "1/6",
+          "three_Y": 1,
+          "su3_triality_tau3": 2,
+          "color_dim": 3,
+          "tau3_minus_totalTwist_mod3": 0,
+          "baez_huerta_2tau3_plus_3twoI3_minus_3Y": 0,
+          "baez_huerta_mod6": 0,
+          "baez_huerta_z6_holds": true
+        },
+        {
+          "state": "u_R",
+          "twist_rep": [
+            0,
+            1,
+            1
+          ],
+          "totalTwist_3Q": 2,
+          "Q_electric": "2/3",
+          "two_I3": 0,
+          "I3": "0",
+          "Y_physicists_2_Q_minus_I3": "4/3",
+          "Y_half_Q_minus_I3": "2/3",
+          "three_Y": 4,
+          "su3_triality_tau3": 2,
+          "color_dim": 3,
+          "tau3_minus_totalTwist_mod3": 0,
+          "baez_huerta_2tau3_plus_3twoI3_minus_3Y": 0,
+          "baez_huerta_mod6": 0,
+          "baez_huerta_z6_holds": true
+        },
+        {
+          "state": "d_R",
+          "twist_rep": [
+            -1,
+            0,
+            0
+          ],
+          "totalTwist_3Q": -1,
+          "Q_electric": "-1/3",
+          "two_I3": 0,
+          "I3": "0",
+          "Y_physicists_2_Q_minus_I3": "-2/3",
+          "Y_half_Q_minus_I3": "-1/3",
+          "three_Y": -2,
+          "su3_triality_tau3": 2,
+          "color_dim": 3,
+          "tau3_minus_totalTwist_mod3": 0,
+          "baez_huerta_2tau3_plus_3twoI3_minus_3Y": 6,
+          "baez_huerta_mod6": 0,
+          "baez_huerta_z6_holds": true
+        },
+        {
+          "state": "nu_L",
+          "twist_rep": [
+            0,
+            0,
+            0
+          ],
+          "totalTwist_3Q": 0,
+          "Q_electric": "0",
+          "two_I3": 1,
+          "I3": "1/2",
+          "Y_physicists_2_Q_minus_I3": "-1",
+          "Y_half_Q_minus_I3": "-1/2",
+          "three_Y": -3,
+          "su3_triality_tau3": 0,
+          "color_dim": 1,
+          "tau3_minus_totalTwist_mod3": 0,
+          "baez_huerta_2tau3_plus_3twoI3_minus_3Y": 6,
+          "baez_huerta_mod6": 0,
+          "baez_huerta_z6_holds": true
+        },
+        {
+          "state": "e_L",
+          "twist_rep": [
+            -1,
+            -1,
+            -1
+          ],
+          "totalTwist_3Q": -3,
+          "Q_electric": "-1",
+          "two_I3": -1,
+          "I3": "-1/2",
+          "Y_physicists_2_Q_minus_I3": "-1",
+          "Y_half_Q_minus_I3": "-1/2",
+          "three_Y": -3,
+          "su3_triality_tau3": 0,
+          "color_dim": 1,
+          "tau3_minus_totalTwist_mod3": 0,
+          "baez_huerta_2tau3_plus_3twoI3_minus_3Y": 0,
+          "baez_huerta_mod6": 0,
+          "baez_huerta_z6_holds": true
+        },
+        {
+          "state": "nu_R",
+          "twist_rep": [
+            0,
+            0,
+            0
+          ],
+          "totalTwist_3Q": 0,
+          "Q_electric": "0",
+          "two_I3": 0,
+          "I3": "0",
+          "Y_physicists_2_Q_minus_I3": "0",
+          "Y_half_Q_minus_I3": "0",
+          "three_Y": 0,
+          "su3_triality_tau3": 0,
+          "color_dim": 1,
+          "tau3_minus_totalTwist_mod3": 0,
+          "baez_huerta_2tau3_plus_3twoI3_minus_3Y": 0,
+          "baez_huerta_mod6": 0,
+          "baez_huerta_z6_holds": true
+        },
+        {
+          "state": "e_R",
+          "twist_rep": [
+            -1,
+            -1,
+            -1
+          ],
+          "totalTwist_3Q": -3,
+          "Q_electric": "-1",
+          "two_I3": 0,
+          "I3": "0",
+          "Y_physicists_2_Q_minus_I3": "-2",
+          "Y_half_Q_minus_I3": "-1",
+          "three_Y": -6,
+          "su3_triality_tau3": 0,
+          "color_dim": 1,
+          "tau3_minus_totalTwist_mod3": 0,
+          "baez_huerta_2tau3_plus_3twoI3_minus_3Y": 6,
+          "baez_huerta_mod6": 0,
+          "baez_huerta_z6_holds": true
+        }
+      ],
+      "all_triality_congruent_mod3": true,
+      "all_baez_huerta_z6_congruent_mod6": true,
+      "anomalies_physicists_norm": {
+        "Y_Q": "1/3",
+        "Y_uR": "4/3",
+        "Y_dR": "-2/3",
+        "Y_L": "-1",
+        "Y_eR": "-2",
+        "SU3_3": 0,
+        "SU3_2_U1": "0",
+        "SU2_2_U1": "0",
+        "grav_2_U1": "0",
+        "U1_3": "0",
+        "all_five_vanish": true
+      }
+    },
+    "part3_kummer_and_plumbing_bridges": {
+      "open_A_kummer_pushforward_bridge": {
+        "y_V2": "-1/2",
+        "y_W3_dual": "1/3",
+        "y_W3": "-1/3",
+        "tr5_hyperchargeDiag": "0",
+        "kummer_exterior_Y_half": {
+          "LL": "-1/2",
+          "dRc": "1/3",
+          "eRc": "1",
+          "QL": "1/6",
+          "uRc": "-2/3"
+        },
+        "twist_Y_half_on_chiral_multiplets": {
+          "LL": "-1/2",
+          "dRc": "1/3",
+          "eRc": "1",
+          "QL": "1/6",
+          "uRc": "-2/3"
+        },
+        "exact_match_across_all_5_multiplets": true
+      },
+      "open_B_plumbing_vs_knot_signature": {
+        "plumbing_on_minimal_energy_flavours": {
+          "u": {
+            "twist_rep": [
+              0,
+              1,
+              1
+            ],
+            "totalTwist": 2,
+            "plumbingSignature_sum_sgn": 2,
+            "charge_Q_from_plumbing": "2/3",
+            "matches_totalTwist": true
+          },
+          "d": {
+            "twist_rep": [
+              -1,
+              0,
+              0
+            ],
+            "totalTwist": -1,
+            "plumbingSignature_sum_sgn": -1,
+            "charge_Q_from_plumbing": "-1/3",
+            "matches_totalTwist": true
+          },
+          "nu": {
+            "twist_rep": [
+              0,
+              0,
+              0
+            ],
+            "totalTwist": 0,
+            "plumbingSignature_sum_sgn": 0,
+            "charge_Q_from_plumbing": "0",
+            "matches_totalTwist": true
+          },
+          "e": {
+            "twist_rep": [
+              -1,
+              -1,
+              -1
+            ],
+            "totalTwist": -3,
+            "plumbingSignature_sum_sgn": -3,
+            "charge_Q_from_plumbing": "-1",
+            "matches_totalTwist": true
+          }
+        },
+        "all_plumbing_equal_totalTwist": true,
+        "one_component_torus_knot_signatures": [
+          {
+            "torus_knot": "T(2,1)",
+            "signature_sigma": 0,
+            "is_even": true,
+            "sigma_over_3": "0"
+          },
+          {
+            "torus_knot": "T(2,3)",
+            "signature_sigma": -2,
+            "is_even": true,
+            "sigma_over_3": "-2/3"
+          },
+          {
+            "torus_knot": "T(2,5)",
+            "signature_sigma": -4,
+            "is_even": true,
+            "sigma_over_3": "-4/3"
+          },
+          {
+            "torus_knot": "T(2,7)",
+            "signature_sigma": -6,
+            "is_even": true,
+            "sigma_over_3": "-2"
+          }
+        ],
+        "odd_charge_3Qd_or_3Qe_hit_by_1component_knot": false
+      }
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873579"
+  },
+  "q0AnchorReason": "Core ribbon-twist energy minimization, Baez-Huerta Z_6 congruences, and Kummer/plumbing hypercharge bridges are exact over Z and Q; q-deformed framing energies sum_i ([t_i]_q)^2 are evaluated side-by-side at q_0 (proton_1term), q_2t (proton_2term_borromean), and q_muon."
+}

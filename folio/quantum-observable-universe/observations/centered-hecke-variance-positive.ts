@@ -28,4 +28,10 @@ export default proposition({
       body: "**Convention D restatement — the result strengthens.** This block was stated on the excised convention C, $z = 1/(q^{1/2}+q^{-1/2})$, and quoted $\\mathrm{Var}(\\sigma_i) \\approx 0.855$ at $q_0$; the correct value is $0.75270211325196540159$. Three things change. (i) The **hypothesis weakens**: positivity is now unconditional on $q > 0$, where under C it needed the Wenzl regime and the proposition was declared vacuous outside it. (ii) The **bound sharpens**: $3/4$ is attained, at $q = 1$, rather than being a strict lower bound. (iii) The variance turns out to be a known object — $\\mathrm{Var}(\\sigma_i) = y_{(3)} + y_{(2,1)} = \\mu_+$, the isospin-triplet Wenzl weight, identically in $q$, and equal in magnitude to the extreme eigenvalues $\\pm 0.75270211$ of the Markov–Gram form on the bilinear pairing at $q_0$. **Not settled here:** the Wenzl positivity threshold under D. The dropped hypothesis was doing double duty — algebraic (unnecessary, and removed) and probabilistic (the condition making $\\mathrm{tr}_M$ a positive functional, so that this number is the variance of a tracial state). The latter is recorded as a dated open note on the statement and gates the $q$-CLT reading in the interpretation sidecar. The Lean sibling `QOU.Observations.centered_hecke_variance_positive` still carries the C statement and needs the same restatement.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/frobenius_gram_matrix_probe.py",
+    witness: "computations/probes/frobenius-gram-matrix-probe.witness.json",
+    status: "verified",
+  },
 });

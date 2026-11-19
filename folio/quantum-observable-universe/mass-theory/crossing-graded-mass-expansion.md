@@ -24,5 +24,3 @@ $$
 $$
 
 Each added crossing multiplies the mass. Geometric knots grow exponentially heavier. The expansion formalizes the semiclassical limit of the quantum dilogarithm operator acting at each Hecke generator, ordered by the quantum Planck constant. Taking the classical limit $\xi \to 0$ recovers the baseline Gröbner-Shirshov reduction.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

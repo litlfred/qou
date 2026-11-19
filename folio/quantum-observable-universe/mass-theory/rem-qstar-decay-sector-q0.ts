@@ -16,8 +16,23 @@ export default remark({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Computational provenance: computations/qbeta/qbeta_c3_imq_qstar_ladder_amplification_probe.py (witness qbeta-c3-imq-qstar-ladder-amplification.witness.json).",
+    },
+    {
       kind: "refined-framing",
       body: "An earlier version of this remark claimed q* was an independent third determination of q₀.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/qbeta/qbeta_c3_imq_qstar_ladder_amplification_probe.py",
+    witness: [
+      "computations/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json",
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/per-observable-100x-status.witness.json",
+      "computations/qbeta/qbeta-ladder-alpha-provenance.witness.json",
+    ],
+    status: "verified",
+  },
 });

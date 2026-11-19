@@ -14,6 +14,10 @@ export default proposition({
   cites: [],
   authorNotes: [
     {
+      kind: "note",
+      body: "Computational witness: computations/probes/tau-amphichiral-sdp-probe.witness.json.",
+    },
+    {
       kind: "status",
       date: "2026-05-25",
       body:

@@ -44,4 +44,10 @@ export default remark({
     "rem:meson-mass-splitting",
   ],
   cites: ["gellmann1962"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/nonet-mixing-purity.witness.json.",
+    },
+  ],
 });

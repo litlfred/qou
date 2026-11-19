@@ -245,10 +245,10 @@ def allWords : Nat → List (List (Nat × Bool))
 /-- Every braid word of length `< 6` (lengths `0..5`). -/
 def wordsBelow6 : List (List (Nat × Bool)) := (List.range 6).flatMap allWords
 
-set_option maxRecDepth 10000 in
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 4000000 in
 /-- **Crossing-minimality of the Borromean confinement operator** (machine-
-    checked by `native_decide`; axioms `Lean.ofReduceBool` + `Lean.trustCompiler`,
-    i.e. trusting the Lean compiler — cross-checked against the Python enumeration
+    checked by kernel `decide`; cross-checked against the Python enumeration
     oracle, both yielding minimal crossing number `= 6`). Among 3-braid closures
     (the framework's 3-quark setting):
 
@@ -268,7 +268,7 @@ theorem borromean_crossing_minimal :
     nontrivialBrunnian borromean = true ∧
     borromean.length = 6 ∧
     wordsBelow6.all (fun w => !nontrivialBrunnian w) = true := by
-  native_decide
+  decide
 
 /-! ## Library validation + reuse — the figure-eight knot `4₁`
 

@@ -28,7 +28,7 @@ The resulting torus structure forms a quantum pre-universe (QPU), definitively r
 
 **Contrast with the Descartes universe.**
 
-See [Table](#tbl:torus-ns-regular-table-data).
+The [torus--Bring comparison table](#tbl:torus-ns-regular-table-data) contrasts the two geometries.
 
 The mathematical torus provides the simplest mechanical example where $\chi(\mathcal{S}) = 0$ yields categorical NS-regularity ($\mathrm{NS}(A) = e(\xi) = 0$). Predictably, it is also physically trivial: the vanishing Euler characteristic prevents the torus from supporting an irreducible QOU.
 

@@ -1,4 +1,4 @@
-The Reeb vector field $\xi_q$ provides the dynamical complement to the static topology of Bring's surface. The surface supplies the genus-$4$ handles. The Reeb vector supplies the flow through them. The substrate parameter $q$ sets the flow's pitch.
+The Reeb vector field $\xi_q$ provides the dynamical complement to the static topology of Bring's surface. The surface supplies the genus-$4$ handles. The Reeb vector supplies the flow through them. The aether parameter $q$ sets the flow's pitch.
 
 In the classical limit $q\to 1$, the torsion coupling vanishes. The phase rotation $w_k\mapsto\zeta^kw_k$ loses its temporal component. The chiral tubes freeze in the configuration defined by the power-sum equations. This yields a conical metric limit: curvature concentrates at the blow-up points without a circulating torsion field to smooth it. The Reeb field $\xi_q$ becomes the classical Reeb field $\xi_1$. The Heisenberg commutator $[\hat{X},\hat{P}]_q\to 0$. The Bring variety collapses to a non-rotating algebraic surface.
 

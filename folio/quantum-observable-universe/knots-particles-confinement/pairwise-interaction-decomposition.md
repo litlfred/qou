@@ -25,4 +25,4 @@ $$
 
 3. *(Crossing count.) Let $w = c_{i_1} \cdots c_{i_\ell}$ be a word in the elementary crossings, and let $P(w)$ be the set of strand pairs whose order the underlying permutation of $w$ reverses. If $P(w)$ is all $\binom{n}{2}$ pairs, then $\ell \ge \binom{n}{2}$.*
 
-Part 1 says a composite system carries no interaction datum of its own. Part 2 says the decomposition into elementary crossings does not depend on the route chosen. Part 3 counts the cost: $n$ mutually interacting strands require $\binom{n}{2}$ pairwise events, so three strands require three, not two.
+Part 1 says a composite system carries no interaction datum of its own. Part 2 says the decomposition into elementary crossings does not depend on the route chosen. Part 3 counts the cost: $n$ mutually interacting strands require $\binom{n}{2}$ pairwise events, so three strands require three rather than two.

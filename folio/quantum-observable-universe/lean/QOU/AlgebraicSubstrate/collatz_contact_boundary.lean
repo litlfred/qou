@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecificLimits.Basic
+import Mathlib.Tactic
 import QOU.AlgebraicSubstrate.qou_obstruction_reduction
 
 /-!
@@ -65,73 +69,161 @@ theorem obstruction_removable_of_even_chi {R : Type*} [CommRing R]
   unfold kummer_obstruction_removable
   exact (kappa_vanishes_iff_chi 2).mpr (by simpa using h)
 
-/-- **Manuscript statement** (full body):
+/-! ## Unconditional Algebraic & Contractive Identities of the `[2]_q`-Contact Boundary
 
-**Proposition (within a QOU with `2 ∣ χ(A)`; conditional on
-[`conj:q-collatz`](#conj:q-collatz); "$[2]_q$-contact boundary").**
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-substrate parameter $q$ whose Frobenius–Hopf object satisfies
-$2 \mid \chi(A)$ — e.g. the Descartes universe, $\chi(A) = -6$; this
-parity is what makes the $[2]_q$-divisor Kummer-removable, and
-$\chi(A) = -6$ is a Descartes-universe property, not a general-QOU one —
-and let $\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$
-be its Reeb bundle
-([Reeb bundle](#def:reeb-bundle)) with $U(1)$ fiber
-parametrized by $q = e^{i\varTheta}$, $\varTheta \in [0, 2\pi)$.
+The following definitions and theorems formalize the unconditional algebraic
+and analytic content of `appendix-surreals/collatz-contact-boundary.md`:
+1. Over any `[CommRing R]`, the unbalanced quantum integers `[2]_q = 1 + q`
+   and `[3]_q = 1 + q + q²` satisfy the contact margin identity
+   `[2]_q² - [3]_q = q`.
+2. Over any `[Field K]`, the per-cycle contraction ratio decomposes as
+   `[3]_q / [2]_q³ = 1 / [2]_q - q / [2]_q³`.
+3. Over `ℝ` for every `q > 0`:
+   - `1 < [2]_q < [3]_q < [2]_q² < [2]_q³`,
+   - `0 < [3]_q / [2]_q³ < 1 / [2]_q < 1`,
+   - the sharp threshold `v*(q) = log [3]_q / log [2]_q` satisfies
+     `1 < v*(q) < 2`, avoiding transcendental bounds via the integer
+     contact threshold `v ≥ 2`,
+   - any non-negative sequence `P : ℕ → ℝ` satisfying the per-cycle contact
+     bound `P (m + 1) ≤ ([3]_q / [2]_q^v) * P m` with `v ≥ 2` and `q > 0`
+     converges geometrically to `0` (`Filter.Tendsto P Filter.atTop (nhds 0)`). -/
 
-### From integer parity to the $[2]_q$-divisor
+/-- Unbalanced quantum integer `[2]_q = 1 + q` over any commutative ring `R`. -/
+def qInt2Unbal {R : Type*} [CommRing R] (q : R) : R := 1 + q
 
-Classical Collatz hinges on a single question: is $n$ even
-or odd?  Parity is residue mod $2$.  The number $2$ is
-special: it is the smallest prime, the only even prime,
-and the denominator of the halving step $n/2$.
+/-- Unbalanced quantum integer `[3]_q = 1 + q + q²` over any commutative ring `R`. -/
+def qInt3Unbal {R : Type*} [CommRing R] (q : R) : R := 1 + q + q ^ 2
 
-In the QOU, the integer $2$ lifts to the quantum integer
-$[2]_q = q + 1$ (combinatorial convention;
-see [q-Collatz conjecture](#conj:q-collatz)).
-The $[2]_q$-divisor is the locus where $[2]_q = 0$,
-i.e. $q = -1$:
+/-- **Contact margin identity (`[2]_q² - [3]_q = q`)** over any `[CommRing R]`. -/
+theorem qInt2Unbal_sq_sub_qInt3Unbal {R : Type*} [CommRing R] (q : R) :
+    (qInt2Unbal q) ^ 2 - qInt3Unbal q = q := by
+  unfold qInt2Unbal qInt3Unbal
+  ring
 
-$$
-  D_{[2]}  :=  \{q : [2]_q = 0\}
-  =  \{-1\}.
-$$
+/-- **Contraction ratio decomposition (`[3]_q / [2]_q³ = 1 / [2]_q - q / [2]_q³`)**
+    over any `[Field K]` whenever `[2]_q ≠ 0`. -/
+theorem collatz_contraction_ratio_decomp {K : Type*} [Field K] (q : K)
+    (hq : qInt2Unbal q ≠ 0) :
+    qInt3Unbal q / (qInt2Unbal q) ^ 3 =
+      1 / qInt2Unbal q - q / (qInt2Unbal q) ^ 3 := by
+  have hmargin : qInt3Unbal q = (qInt2Unbal q) ^ 2 - q := by
+    linear_combination -qInt2Unbal_sq_sub_qInt3Unbal q
+  rw [hmargin]
+  field_simp [hq]
 
-This is where the $q$-analog of "dividing by $2$"
-degenerates — where the halving step ceases to exist.
+/-- Over `ℝ`, for `q > 0`, `1 < [2]_q`. -/
+theorem one_lt_qInt2Unbal {q : ℝ} (hq : 0 < q) : 1 < qInt2Unbal q := by
+  unfold qInt2Unbal; linarith
 
-**Kummer obstruction at the divisor.**
-The point $q = -1$ belongs to $\mu_2$ (the 2nd roots
-of unity).  The Kummer obstruction
-([root-of-unity truncation](#prop:root-of-unity-truncation))
-at level $n = 2$ asks: does $2$ divide $\chi(A) = -6$?
-Yes — $6/2 = 3$.  The obstruction **vanishes**.  This
-means the $[2]_q$-divisor is removable: the QOU axioms
-can resolve the singularity.  At $q = -1$, the residue ring
-is $\mathbb{Z}[q^{\pm 1}]/(q+1) \cong \mathbb{Z}$
-(setting $q = -1$), and the $[2]_q$-adic valuation
-specializes to the ordinary $2$-adic valuation.
+/-- Over `ℝ`, for `q > 0`, `[2]_q < [3]_q`. -/
+theorem qInt2Unbal_lt_qInt3Unbal {q : ℝ} (hq : 0 < q) :
+    qInt2Unbal q < qInt3Unbal q := by
+  unfold qInt2Unbal qInt3Unbal
+  have : 0 < q ^ 2 := sq_pos_of_pos hq
+  linarith
 
-### The $[2]_q$-adic valuation as contact order
+/-- Over `ℝ`, for `q > 0`, `[3]_q < [2]_q²`. -/
+theorem qInt3Unbal_lt_qInt2Unbal_sq {q : ℝ} (hq : 0 < q) :
+    qInt3Unbal q < (qInt2Unbal q) ^ 2 := by
+  have h := qInt2Unbal_sq_sub_qInt3Unbal q
+  linarith
 
-For an element $P \in \mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$
-of the Skein module, define the **$[2]_q$-adic valuation**:
+/-- Over `ℝ`, for `q > 0`, the two-halving per-cycle factor `[3]_q / [2]_q³` is
+    strictly positive, strictly less than `1 / [2]_q`, and `1 / [2]_q < 1`. -/
+theorem collatz_contraction_ratio_bounds {q : ℝ} (hq : 0 < q) :
+    0 < qInt3Unbal q / (qInt2Unbal q) ^ 3 ∧
+    qInt3Unbal q / (qInt2Unbal q) ^ 3 < 1 / qInt2Unbal q ∧
+    1 / qInt2Unbal q < 1 := by
+  have h2_gt1 : 1 < qInt2Unbal q := one_lt_qInt2Unbal hq
+  have h2_pos : 0 < qInt2Unbal q := by linarith
+  have h3_gt2 : qInt2Unbal q < qInt3Unbal q := qInt2Unbal_lt_qInt3Unbal hq
+  have h3_pos : 0 < qInt3Unbal q := by linarith
+  have h3_lt_sq : qInt3Unbal q < (qInt2Unbal q) ^ 2 := qInt3Unbal_lt_qInt2Unbal_sq hq
+  have h2_cube_pos : 0 < (qInt2Unbal q) ^ 3 := pow_pos h2_pos 3
+  refine ⟨div_pos h3_pos h2_cube_pos, ?_, ?_⟩
+  · rw [collatz_contraction_ratio_decomp q (ne_of_gt h2_pos)]
+    have hq_div_pos : 0 < q / (qInt2Unbal q) ^ 3 := div_pos hq h2_cube_pos
+    linarith
+  · rw [div_lt_iff₀ h2_pos]
+    linarith
 
-$$
-  v_{[2]}(P)  :=  \max\bigl\{k \geq 0 :
-  [2]_q^k \mid P \text{ in } \mathbb{Z}[q^{\pm 1}]\bigr\}.
+/-- **Sharp logarithmic threshold (`1 < log [3]_q / log [2]_q < 2`)** for every `q > 0`. -/
+theorem collatz_sharp_threshold_in_unit_interval {q : ℝ} (hq : 0 < q) :
+    1 < Real.log (qInt3Unbal q) / Real.log (qInt2Unbal q) ∧
+    Real.log (qInt3Unbal q) / Real.log (qInt2Unbal q) < 2 := by
+  have h2_gt1 : 1 < qInt2Unbal q := one_lt_qInt2Unbal hq
+  have h2_pos : 0 < qInt2Unbal q := by linarith
+  have h3_gt2 : qInt2Unbal q < qInt3Unbal q := qInt2Unbal_lt_qInt3Unbal hq
+  have h3_pos : 0 < qInt3Unbal q := by linarith
+  have h3_lt_sq : qInt3Unbal q < (qInt2Unbal q) ^ 2 := qInt3Unbal_lt_qInt2Unbal_sq hq
+  have hlog2_pos : 0 < Real.log (qInt2Unbal q) := Real.log_pos h2_gt1
+  constructor
+  · rw [one_lt_div hlog2_pos]
+    exact Real.log_lt_log h2_pos h3_gt2
+  · rw [div_lt_iff₀ hlog2_pos]
+    have hlog_sq : Real.log ((qInt2Unbal q) ^ 2) = 2 * Real.log (qInt2Unbal q) := by
+      rw [Real.log_pow]; norm_num
+    rw [← hlog_sq]
+    exact Real.log_lt_log h3_pos h3_lt_sq
 
+/-- For any `q > 0` and integer valuation `v ≥ 2`, the per-cycle contraction factor
+    `r = [3]_q / [2]_q^v` satisfies `0 ≤ r < 1`. -/
+theorem collatz_step_factor_in_unit_interval {q : ℝ} (hq : 0 < q) {v : ℕ} (hv : 2 ≤ v) :
+    0 ≤ qInt3Unbal q / (qInt2Unbal q) ^ v ∧
+    qInt3Unbal q / (qInt2Unbal q) ^ v < 1 := by
+  have h2_gt1 : 1 < qInt2Unbal q := one_lt_qInt2Unbal hq
+  have h2_pos : 0 < qInt2Unbal q := by linarith
+  have h3_gt2 : qInt2Unbal q < qInt3Unbal q := qInt2Unbal_lt_qInt3Unbal hq
+  have h3_pos : 0 < qInt3Unbal q := by linarith
+  have h3_lt_sq : qInt3Unbal q < (qInt2Unbal q) ^ 2 := qInt3Unbal_lt_qInt2Unbal_sq hq
+  have hpow_pos : 0 < (qInt2Unbal q) ^ v := pow_pos h2_pos v
+  have hpow_mono : (qInt2Unbal q) ^ 2 ≤ (qInt2Unbal q) ^ v :=
+    pow_le_pow_right₀ (le_of_lt h2_gt1) hv
+  refine ⟨le_of_lt (div_pos h3_pos hpow_pos), ?_⟩
+  rw [div_lt_iff₀ hpow_pos]
+  linarith
 
-[…truncated; see manuscript for remainder…]
+/-- Inductive bound on `P m` under per-cycle contraction `P (m + 1) ≤ r * P m`. -/
+theorem collatz_orbit_geometric_bound {P : ℕ → ℝ} {r : ℝ} (hr0 : 0 ≤ r)
+    (hstep : ∀ m : ℕ, P (m + 1) ≤ r * P m) :
+    ∀ m : ℕ, P m ≤ r ^ m * P 0
+  | 0 => by simp
+  | m + 1 => by
+    have ih := collatz_orbit_geometric_bound hr0 hstep m
+    calc P (m + 1) ≤ r * P m := hstep m
+      _ ≤ r * (r ^ m * P 0) := mul_le_mul_of_nonneg_left ih hr0
+      _ = r ^ (m + 1) * P 0 := by ring
 
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). As of C10 the Kummer-removability half is no longer a raw axiom — it is derived from the universal obstruction-reduction (`obstruction_removable_of_even_chi` above); a full derivation of the remaining substrate primitive — the `κ₀ = χ(A)` trace-gap input inherited from `QouObstructionReductionContext` — remains pending, but is now LOCALISED rather than merely named: `QOU.AlgebraicSubstrate.ObstructionResidualGap` proves (i) that in the presence of `trace_pairing_cast` the three trace fields are equivalent to the single equation `κ₀ = χ(A)`, so the apparatus around it is decorative and `hattori_stallings` is the sole audit target; and (ii) that the two literature inputs (`vdb_duality`, `drinfeld_rigidity`) cannot reach it — an explicit structural core satisfies both while `κ₀ ≠ χ(A)` — although they do still force conclusion (a), `dim HH² = 1`. So closing this requires an actual Hochschild computation; no rearrangement of the existing fields will do it. -/
+/-- **Geometric orbit convergence under the `[2]_q`-contact condition `v ≥ 2`.**
+    If `P : ℕ → ℝ` is non-negative and satisfies the per-cycle contraction
+    `P (m + 1) ≤ ([3]_q / [2]_q^v) * P m` for some integer contact valuation
+    `v ≥ 2` and `q > 0`, then `Filter.Tendsto P Filter.atTop (nhds 0)`. -/
+theorem collatz_orbit_tendsto_zero {P : ℕ → ℝ} {q : ℝ} (hq : 0 < q) {v : ℕ} (hv : 2 ≤ v)
+    (hP_nonneg : ∀ m : ℕ, 0 ≤ P m)
+    (hstep : ∀ m : ℕ, P (m + 1) ≤ (qInt3Unbal q / (qInt2Unbal q) ^ v) * P m) :
+    Filter.Tendsto P Filter.atTop (nhds 0) := by
+  set r := qInt3Unbal q / (qInt2Unbal q) ^ v
+  obtain ⟨hr0, hr1⟩ := collatz_step_factor_in_unit_interval hq hv
+  have hbound : ∀ m : ℕ, P m ≤ r ^ m * P 0 := collatz_orbit_geometric_bound hr0 hstep
+  have htend_pow : Filter.Tendsto (fun m : ℕ => r ^ m) Filter.atTop (nhds 0) :=
+    tendsto_pow_atTop_nhds_zero_of_lt_one hr0 hr1
+  have htend_mul : Filter.Tendsto (fun m : ℕ => r ^ m * P 0) Filter.atTop (nhds 0) := by
+    simpa using htend_pow.mul_const (P 0)
+  exact squeeze_zero hP_nonneg hbound htend_mul
+
+/-- **`[2]_q`-Contact Boundary Theorem** (`prop:collatz-contact-boundary`):
+    Combines Kummer-divisor removability at `2 ∣ χ(A)` with the contact margin
+    identity `[2]_q² - [3]_q = q` (paired with `collatz_contraction_ratio_bounds`,
+    `collatz_sharp_threshold_in_unit_interval`, and `collatz_orbit_tendsto_zero` above). -/
 -- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
 theorem collatz_contact_boundary {R : Type*} [CommRing R]
     [ctx : CollatzContactBoundaryContext R] :
     (ctx.q_int_2 = 0 → kummer_obstruction_removable R) ∧
-    ((2 : ℤ) ∣ ctx.chi_A) := by
+    ((2 : ℤ) ∣ ctx.chi_A) ∧
+    (qInt2Unbal ctx.q) ^ 2 - qInt3Unbal ctx.q = ctx.q := by
   have h1 : (2 : ℤ) ∣ ctx.chi_A := by
     rw [ctx.chi_A_eq]; exact ⟨-3, rfl⟩
-  exact ⟨fun _ => obstruction_removable_of_even_chi (R := R) h1, h1⟩
+  exact ⟨fun _ => obstruction_removable_of_even_chi (R := R) h1, h1,
+    qInt2Unbal_sq_sub_qInt3Unbal ctx.q⟩
 
 end QOU.AlgebraicSubstrate

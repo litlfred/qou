@@ -1,7 +1,7 @@
 **Proof.** The Jones polynomial of a braid closure $\hat\beta$ on
 $n$ strands is $J(\hat\beta, q) = C(n, q) \cdot \mathrm{tr}_M(\beta)$
 where $C(n, q) = (-q^{1/2} - q^{-1/2})^{n-1} \cdot (-q^{-3/2})^{-w(\beta)}$
-depends on the strand count $n$, the substrate parameter $q$, and the
+depends on the strand count $n$, the aether parameter $q$, and the
 writhe $w(\beta)$ — but the factor $(-q^{-3/2})^{-w}$ also cancels in
 ratios of braids with the same writhe. For braids with different
 writhes, the writhe correction is a known power of $q$ that can be
@@ -14,7 +14,7 @@ the common factor $C$. $\square$
 **Consequence for the HOMFLYPT engine.** The
 the canonical formalism
 returns Markov-trace-normalised values at SU(2) (row 3 of
-[archimedean-image-table remark](#rem:archimedean-image-table)), which
+[archimedean realization table](#rem:archimedean-image-table)), which
 are proportional to the Jones polynomial. For all optimisation
 consumers — the canonical formalism,
 the canonical formalism,

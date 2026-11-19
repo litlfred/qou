@@ -6,4 +6,4 @@
 | 3 | $(2, 1)$ | 3 | self-conj. | **2** | (no hyp. knot in $H_3$ from $(2,1)$ alone) | $\mathrm{Im}\,\mathrm{Li}_2^q$ pairing | depth-3 trivial | ✓ structurally |
 | 4 | $(4)$ + $(1^4)$ | 4, 4 | chiral pair | 3 | $T(2, 5)$-related orientation pair | 0 (torus) | rational $\pi^2$ multiple | ✓ via Garoufalidis--Lê |
 | 4 | $(3, 1)$ + $(2, 1, 1)$ | 4, 4 | chiral pair | **3** | (chiral hyperbolic candidate) | nontrivial only via mediator | depth-3 expected | ✓ if hyperbolic instance found |
-| 4 | $(2, 2)$ | 3 | **self-conj.** | **2** | **figure-8 $4_1$** | $2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$ | 0 (amphichiral) | **✓ direct (this paper)** |
+| 4 | $(2, 2)$ | 3 | **self-conj.** | **2** | **figure-8 $4_1$** | $2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988$ | 0 (amphichiral) | **✓ direct** |

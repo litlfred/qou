@@ -31,6 +31,7 @@ The bare topological difference is thus a central scalar: the chiral $\sigma_1$ 
 
 The empirical flavor split is the fractional difference
 
+<!-- literal-source: CODATA fractional nucleon mass difference (m_n - m_p)/((m_p + m_n)/2) -->
 $$
   \Delta_{\mathrm{target}} \;=\; \frac{\mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}}}{(\mathfrak{m}_{\mathfrak{p}} + \mathfrak{m}_{\mathfrak{n}})/2} \;\approx\; 0.00137748 .
 $$
@@ -41,7 +42,7 @@ $$
   X_{\mathrm{baseline}}(q) \;=\; \frac{(q-1)^{2}\,(1 - q^{-4})}{3} \;\approx\; 0.00137571 ,
 $$
 
-is a structured near-match, not a derived closed form: it reproduces the target to a residual of $\approx 1.76 \times 10^{-6}$ absolute ($\approx 0.128\%$ relative), and its status is that of a candidate whose categorical derivation is open.
+is a structured near-match rather than a derived closed form: it reproduces the target to a residual of $\approx 1.76 \times 10^{-6}$ absolute ($\approx 0.128\%$ relative), and its status is that of a candidate whose categorical derivation is open.
 
 ## The conjectured $X(q)$ Habiro element
 

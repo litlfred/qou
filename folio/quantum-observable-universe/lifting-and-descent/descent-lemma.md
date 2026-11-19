@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe. Let $\{A_n\}_{n \geq 0}$ be the [recursive brane tower](#def:recursive-brane-tower) for $n \geq 1$. Let $q$ denote the substrate parameter. The restriction morphism $r_n \colon A_n \to A_{n-1}$ produces a Frobenius–Hopf object $A_{n-1}$ such that $(\mathbf{C}, A_{n-1}, \tau)$ is a quantum observable universe.
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe. Let $\{A_n\}_{n \geq 0}$ be the [recursive brane tower](#def:recursive-brane-tower) for $n \geq 1$. Let $q$ denote the aether parameter. The restriction morphism $r_n \colon A_n \to A_{n-1}$ produces a Frobenius–Hopf object $A_{n-1}$ such that $(\mathbf{C}, A_{n-1}, \tau)$ is a quantum observable universe.
 
 The induced descent homomorphism
 $$

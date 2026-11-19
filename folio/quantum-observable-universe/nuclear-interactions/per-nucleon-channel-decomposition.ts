@@ -20,4 +20,14 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:typed-crossing-operator"],
+  computation: {
+    engine: "numpy",
+    script: "computations/tr_m_q_hecke_seminormal.py",
+    witness: [
+      "computations/tr-m-q-hecke-seminormal.witness.json",
+      "computations/confinement-operator-selection.witness.json",
+      "computations/sigma-f-electron-shell-chain.witness.json",
+    ],
+    status: "verified",
+  },
 });

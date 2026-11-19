@@ -6,10 +6,4 @@ export default remark({
   tags: ["glossary", "category-theory", "monoidal", "duality"],
   uses: ["rem:glossary-symmetric-monoidal-category", "rem:glossary-rigid-category"],
   defines: ["compact-closed-category"],
-  authorNotes: [
-    {
-      kind: "note",
-      body: "Mathlib reference: `CategoryTheory.CompactClosedCategory` (class) in `Mathlib.CategoryTheory.Closed.Monoidal`.",
-    },
-  ],
 });

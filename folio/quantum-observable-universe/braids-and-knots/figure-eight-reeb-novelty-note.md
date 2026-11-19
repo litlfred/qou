@@ -1,1 +1,1 @@
-**Mathematical Novelty:** Reading the figure-eight eigenvalue on $V_{(2,1)}$ as a q-Reeb-rotation phase that connects to $\mathrm{Vol}(4_1)$ and the muon anchor.
+The figure-eight eigenvalue on the standard module $V_{(2,1)}$ admits a $q$-Reeb-rotation phase reading connecting the two-dimensional Hecke character directly to the hyperbolic volume $\mathrm{Vol}(4_1)$ and the muon mass ratio.

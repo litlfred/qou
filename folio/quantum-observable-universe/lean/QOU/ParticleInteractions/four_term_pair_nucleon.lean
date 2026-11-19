@@ -119,8 +119,8 @@ theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
     (∀ φ₀ φ₁ φ₀₁ : ℝ,
       ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget) ∧
     (∀ φ₀ φ₁ φ₀₁ : ℝ,
-      ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.neutronFlavours = neutronNetTarget) :=
-  ⟨ctx.proton_net_match, ctx.neutron_net_match⟩
+      ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.neutronFlavours = neutronNetTarget) := by
+  refine ⟨ctx.proton_net_match, ctx.neutron_net_match⟩
 
 
 

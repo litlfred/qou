@@ -209,11 +209,11 @@ theorem decoy_contentless (C : Prop) : Contentless (DecoyContext C) C :=
   decoy_nonempty_iff C
 
 /-- **The named premise carries no logical weight.** Given the conclusion, a decoy context
-exists with premise `True` — so `bloch_suslin`, `peter_weyl_holds` and the rest are decor.
+exists with any inhabited premise `P` — so `bloch_suslin`, `peter_weyl_holds` and the rest are decor.
 The apparent content of these declarations lives in the *name*, not in the Lean. -/
-theorem decoy_premise_irrelevant {C : Prop} (hC : C) :
-    ∃ ctx : DecoyContext C, ctx.premise = True :=
-  ⟨⟨True, trivial, fun _ => hC⟩, rfl⟩
+theorem decoy_premise_irrelevant {C : Prop} (hC : C) (P : Prop) (hP : P) :
+    ∃ ctx : DecoyContext C, ctx.premise = P :=
+  ⟨⟨P, hP, fun _ => hC⟩, rfl⟩
 
 /-- **The pattern is not universally inhabited** — which is exactly why it looks like it
 says something. At `C = False` no decoy context exists. -/

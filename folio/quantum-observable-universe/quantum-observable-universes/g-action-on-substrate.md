@@ -10,7 +10,7 @@ $$
   \;\oplus\; A^{(Z)} \;\oplus\; A^{(H)} \;\oplus\; A^{(\rm matter)}
 $$
 
-where each $A^{(X)}$ carries a unique irreducible representation of $G$. See [Table 1](#tbl:g-action-on-substrate-table1-data).
+where each $A^{(X)}$ carries a unique irreducible representation of $G$. See Table 1.
 
 **Constraint (G-2) — Per-host $q$-dimension assignment.**
 The categorical $q$-dimension of each component is determined by its torus-link host:
@@ -71,7 +71,7 @@ $$
   [2]_q \cdot [4]_q^2 \cdot [6]_q.
 $$
 
-This derivation grounds Anchor II explicitly in categorical structures. See [Table 2](#tbl:g-action-on-substrate-table2-data).
+This derivation grounds Anchor II explicitly in categorical structures. See Table 2.
 
 ### Verification
 
@@ -84,4 +84,4 @@ $$
 
 Compared to the CODATA target $\mathcal{N}_{\rm sym}(q_0) = 213.11$, this leaves a residual deviation of $-1.81\%$.
 
-The small discrepancy suggests an incomplete specification of the constraints. Possible physical origins include a categorical correction to the vacuum volume normalization, a Plancherel weight for the electroweak block, or a Higgs-mixing correction of order $\mathcal{O}(\hbar_q^2)$ on the $Z$-host. Precise discrimination requires refining the substrate's categorical structure, and results that depend on $\mathcal{N}_{\rm sym}$ inherit this residual.
+The small discrepancy suggests an incomplete specification of the constraints. Possible physical origins include a categorical correction to the vacuum volume normalization, a Plancherel weight for the electroweak block, or a Higgs-mixing correction of order $\mathcal{O}(\hbar_q^2)$ on the $Z$-host. Precise discrimination requires refining the aether's categorical structure, and results that depend on $\mathcal{N}_{\rm sym}$ inherit this residual.

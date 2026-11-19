@@ -1,1 +1,1 @@
-**Mathematical novelty.** $q$-deforming operators is standard. The novelty is that evaluating the $q$-derivative $D_q$ against the classical Kelvin-wave dispersion generates a doubly-exponential UV suppression ($\tau_k \sim q^{-2k}$) uniform in the fluid bulk. It requires no phenomenological regularisation or ad-hoc cutoff.
+Evaluating the $q$-derivative $D_q$ against the classical Kelvin-wave dispersion generates a doubly-exponential ultraviolet suppression ($\tau_k \sim q^{-2k}$) uniform across the fluid bulk, without phenomenological regularisation or ad-hoc cutoffs.

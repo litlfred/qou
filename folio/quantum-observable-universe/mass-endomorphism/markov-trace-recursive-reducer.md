@@ -73,7 +73,7 @@ $$
 $$
 by induction on $\ell(\beta)$. The recursive algorithm realises this property automatically. The peeling phase strips $\beta$'s top generators $\sigma_{n-2}, \sigma_{n-3}, \ldots, \sigma_{k+2}$ in order. This contributes factors of $z$ that exactly match the standalone $\mathrm{tr}_M(\beta)$ computed in its own algebra $H_{n-k-1}$.
 
-## Which axioms the disjoint product actually needs
+## Minimal axiom subset for disjoint-product factorisation
 
 **Scope of the right-induction step.** Right-induction yields $z^{\ell(\beta)}$ directly only when every generator in $\beta$ occurs with multiplicity one; for general words containing repeated generators (such as $\sigma_1^2$, where $\mathrm{tr}_M(\sigma_1^2) = hz + 1 \neq z^2$), the disjoint-product reduction alternates right-peeling with the quadratic Hecke relation $\sigma_i^2 = h\sigma_i + 1$.
 

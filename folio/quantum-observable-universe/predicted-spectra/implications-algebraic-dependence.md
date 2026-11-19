@@ -18,4 +18,4 @@ Suppose the [algebraic independence conjecture](#conj:hyperbolic-volume-transcen
 
 4. **Coefficient ring.** The evaluation map $\iota$ is not injective. The physical ring $\mathbb{Q}[q, q^{-1}][\mathrm{Vol}(4_1), \mathrm{Vol}(5_2), \mathrm{Vol}(\mathcal{B}_3)]$ is smaller than the formal Laurent ring admits.
 
-5. **Bandwidth bounds.** The substrate satisfies the information-bandwidth bounds $\mathfrak{B}(q)$ with slack. The topological mass formula, the Gröbner--Shirshov construction, and the spectral predictions remain valid. They reside in $\mathbb{Z}[q, q^{-1}]$ (see [formal chain remark](#rem:formal-chain-transcendence)).
+5. **Bandwidth bounds.** The aether satisfies the information-bandwidth bounds $\mathfrak{B}(q)$ with slack. The topological mass formula, the Gröbner--Shirshov construction, and the spectral predictions remain valid. They reside in $\mathbb{Z}[q, q^{-1}]$ (see [formal chain remark](#rem:formal-chain-transcendence)).

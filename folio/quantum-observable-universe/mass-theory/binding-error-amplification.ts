@@ -8,4 +8,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["conj:binding-scale-catalan"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

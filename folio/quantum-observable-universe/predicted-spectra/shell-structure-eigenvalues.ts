@@ -35,4 +35,14 @@ export default proposition({
     // (bean `qou-s3zd`). Not transitively reachable, so not redundant.
     "conj:borromean-quark","def:transfer-matrix-operator"
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+      "computations/probes/h2_mirror_electron/h2-mirror-electron.witness.json",
+    ],
+    status: "verified",
+  },
 });

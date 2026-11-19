@@ -60,7 +60,11 @@ Rewritten to assert the **structural** claim this proposition actually makes —
   computation: {
     engine: "sympy",
     script: "computations/probes/y_lambda_cyclotomic_factorization_probe.py",
-    witness: "computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
+    witness: [
+      "computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
+      "computations/y-lambda-cyclotomic-factor.witness.json",
+      "computations/alpha-k-jones-markov-h4.witness.json",
+    ],
     status: "verified",
     // "verified" (unchecked) -> "failed" -> "verified" on 2026-08-23. The block
     // itself was fine: it was corrected to convention D on 2026-08-10, banner

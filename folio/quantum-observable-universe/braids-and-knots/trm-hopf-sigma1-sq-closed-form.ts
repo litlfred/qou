@@ -50,4 +50,10 @@ export default proposition({
         "in Table 1 are exact rationals derived symbolically, not witnessed.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/gram_h3_symbolic_regression.py",
+    witness: "computations/gram-h3-symbolic-regression.witness.json",
+    status: "verified",
+  },
 });

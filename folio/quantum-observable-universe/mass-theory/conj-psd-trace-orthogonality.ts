@@ -61,4 +61,10 @@ export default conjecture({
     "open-conjecture",
     "bar-involution",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/atom_level_wedderburn_tower.py",
+    witness: "computations/atom-level-wedderburn-tower.witness.json",
+    status: "verified",
+  },
 });

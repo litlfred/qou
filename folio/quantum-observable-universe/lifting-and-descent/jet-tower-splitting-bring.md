@@ -13,4 +13,4 @@ for a non-zero universal constant $c$. At $n = 1$ this is the Atiyah class, prop
 
 For the tangent bundle of Bring's surface, $g = 4$ and $d = -6$, so $e_n \propto 3n(n-3)$. The holomorphic jet tower of the tangent bundle fails to split at every level except $n = 3$, where it splits. In the smooth category every $e_n$ vanishes, because the relevant sheaves are fine.
 
-The classes $e_n$ are extension classes in degree $1$. They obstruct a splitting of the tower, not the existence of the next level. They are therefore not the obstructions $\kappa_n$ of the [QU-to-QOU theorem](#thm:qu-to-qou), whose persistence statement is the Kummer form in item 3.
+The classes $e_n$ are extension classes in degree $1$. They obstruct a splitting of the tower rather than the existence of the next level. They are therefore not the obstructions $\kappa_n$ of the [QU-to-QOU theorem](#thm:qu-to-qou), whose persistence statement is the Kummer form in item 3.

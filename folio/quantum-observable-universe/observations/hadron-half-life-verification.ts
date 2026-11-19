@@ -20,4 +20,15 @@ export default example({
     validation: "not_checked",
   },
   uses: ["rem:hadron-half-life-regimes"],
+  computation: {
+    engine: "python",
+    script: "computations/t35-weak-vertex.py",
+    witness: [
+      "computations/t35-weak-vertex.witness.json",
+      "computations/qbeta/qbeta-fmap-phi-b-root-of-unity-reference.witness.json",
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+      "computations/weak-vertex-t35-trace.witness.json",
+    ],
+    status: "verified",
+  },
 });

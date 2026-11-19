@@ -34,5 +34,3 @@ Spectral completeness over $R_\mathbb{C}$ decomposes $F_{\mathrm{Pauli}}$. The a
 Amphicheiral knots must yield exactly $\delta_{\mathrm{CP}} = 0$. Any amphicheiral hadron exhibiting CP violation falsifies this characterization.
 
 *Remark.* This relies on ([complex chirality rotation](#conj:complex-chirality-rotation)). Proof requires demonstrating $R_\mathbb{C}$-enrichment uniqueness and matching $\theta_{\mathrm{res}}$ to the Wolfenstein parameterization.
-
-**Archimedean specialisation.** What follows depends on archimedean components: real-valued observables and numerical evaluation at $q_0$. Categorical identities hold over abstract rings.

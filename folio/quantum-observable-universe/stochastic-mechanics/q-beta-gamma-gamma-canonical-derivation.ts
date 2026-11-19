@@ -23,6 +23,7 @@ export default remark({
     engine: "python+mpmath",
     script: "computations/probe_q_beta_high_precision_ck.py",
     status: "experimental",
+    witness: "computations/qbeta/qbeta-delta-net-four-values.witness.json",
   },
   authorNotes: [
     {

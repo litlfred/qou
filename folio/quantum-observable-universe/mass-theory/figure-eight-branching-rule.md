@@ -1,4 +1,4 @@
-*For any partition $\lambda \vdash k$ and substrate parameter $q > 1$,
+*For any partition $\lambda \vdash k$ and aether parameter $q > 1$,
 the Frobenius character of the figure-eight braid
 $4_1 = \sigma_0\sigma_1^{-1}\sigma_0^{-1}\sigma_1$ in the irreducible
 representation $\rho_\lambda$ of $H_k(R, q)$ is determined by three
@@ -26,5 +26,3 @@ in Young's lattice), and $h = q - q^{-1}$.*
 *Verified to machine precision ($< 10^{-12}$) against explicit Hoefsmit
 seminormal matrix computation for all 191 partitions at $k = 3$ through
 $k = 11$.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

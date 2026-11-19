@@ -1,4 +1,4 @@
-The two natural involutions on the substrate moduli line $\mathbb{C}^\times$,
+The two natural involutions on the aether moduli line $\mathbb{C}^\times$,
 
 $$
   \sigma\colon q \mapsto iq
@@ -46,7 +46,7 @@ The eight elements partition by stabilizer into two cosets:
 
 The intersection $G_8 \cap \mathbb{R}$ recovers the golden quartet
 $Q = \{\,\varphi,\,-\varphi,\,1/\varphi,\,-1/\varphi\,\}$
-([golden-quartet-galois](#prop:golden-quartet-galois)).
+([golden-quartet Galois orbit](#prop:golden-quartet-galois)).
 The intersection $G_8 \cap i\mathbb{R}$ recovers its $\pi/2$-rotation
 $iQ = \{\,i\varphi,\,-i\varphi,\,i/\varphi,\,-i/\varphi\,\}$.
 

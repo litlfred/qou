@@ -3,45 +3,45 @@ blocker backwards, they funnel into **three** missing objects. Closing any one
 of them would move a whole family of parameters at once, which is what makes the
 grouping worth stating rather than listing the parameters individually.
 
-## A three-dimensional flavour object
+## Three-generation flavour and Yukawa structure (beyond the $2 \oplus 3$ colour–hypercharge bundle)
 
-**Gates** every quark row, every hypercharge value, the meson octet, the baryon
-decuplet, every inter-multiplet mass splitting, the $\eta'$, all four CKM
-angles, all four PMNS angles, $\alpha_s$, the smallness of $\theta_{\mathrm{QCD}}$,
-and the normalisation of $\sin^2\theta_W$.
+**Gates** the six individual quark Yukawa eigenvalues, all four CKM angles and phase,
+all four PMNS angles and phase, the heavy-flavour inter-multiplet splittings, the
+infrared matching scales of $\alpha_s(M_Z)$ and $\sin^2\theta_W(M_Z)$, and the
+smallness of $\theta_{\mathrm{QCD}}$.
 
-The obstruction is established: the single-fibre construction supplies a
-two-dimensional fundamental ($\dim \Lambda^2 V = 1$, $N = 2$), and no choice of
-the deformation parameter raises that, since Drinfeld–Jimbo deformation does
-not change dimensions. While the Geer–Patureau-Mirand–Turaev modified trace
-($d_{\mathrm{mod}}(1,1,1) \neq 0$) on $H_3(q)$ restores the antisymmetric
-three-strand $S_3$ sector $S^{(1,1,1)}$ (supplying the baryon singlet, nuclear
-three-body cumulants, and the axial coupling $g_A$) that bare Convention D
-projects out ($y_{(1^3)}(z_D) = 0$), re-weighting the Hecke trace radical does
-not alter the Schur–Weyl fibre row cap $\ell(\lambda) \le N = 2$: a single
-$N = 2$ strand still realizes only $\mathfrak{sl}_2$ Schur–Weyl duality. What
-is missing is a multi-fibre or rank-$2$ HOMFLY-PT $(V_2 \oplus V_3)$
-construction supplying $N = 3$ for rank-$2$ colour $\mathrm{SU}(3)_{\mathrm{c}}$,
-flavour $\mathrm{SU}(3)_{\mathrm{f}}$ octets and decuplets, weak hypercharge
-$\mathrm{U}(1)_Y$, and the CKM/PMNS Yukawa parameters. Several single-fibre
-routes are excluded, each against a named invariant — among them
-Frobenius–Schur parity, which rules out every odd-dimensional summand of a
-tensor power of the two-dimensional fibre.
+At the single-strand level, the unramified base spinor supplies only a
+two-dimensional fundamental ($\dim \Lambda^2 V_2 = 1$, $N = 2$): although the
+Geer–Patureau-Mirand–Turaev modified trace ($d_{\mathrm{mod}}(1,1,1) \neq 0$) on
+$H_3(q)$ restores the antisymmetric three-strand $S_3$ sector $S^{(1,1,1)}$
+(baryon singlet, nuclear three-body cumulants, and axial coupling $g_A$) that
+bare Convention D projects out ($y_{(1^3)}(z_D) = 0$), Frobenius–Schur parity
+excludes any odd-dimensional summand inside tensor powers of $V_2$ alone. Over
+Bring's genus-$4$ surface ($\chi_{\mathrm{eu}} = -6$), scalar restriction along
+the degree-$3$ cyclic Kummer $\mathbb{Z}_3$-cover $\pi$ resolves the *gauge and
+colour* half of this obstruction by constructing the rank-$3$ pushforward bundle
+$W_3 = \pi_*\mathcal{L}$ ($\dim \Lambda^3 W_3 = 1$, equipped with Jimbo's $N = 3$
+braided $R$-matrix and HOMFLY-PT parameter $z_3 = q^3/[3]_q$): on the split
+bundle $F = V_2 \oplus W_3^*$, the unimodular block-diagonal algebra
+$\mathfrak{su}(3)_{\mathrm{c}} \oplus \mathfrak{su}(2)_L \oplus \mathfrak{u}(1)_Y$
+forces traceless fractional hypercharge $y_3 = -\frac{2}{3}y_2$, global
+$\mathbb{Z}_6$ kernel, five-anomaly cancellation on $\Lambda^1 F \oplus \Lambda^2(F^*)$,
+ultraviolet mixing $\sin^2\theta_W^{\mathrm{UV}} = 3/8$, and one-loop beta
+multiplicities $(7, \frac{19}{6}, -\frac{41}{10})$. What that single-generation
+bundle construction does *not* supply is **three-generation replication and
+Yukawa operators**: a categorical derivation of why $\Lambda^1 F \oplus \Lambda^2(F^*)$
+appears in exactly three chiral copies coupled to the Higgs sector through the
+observed CKM and PMNS Yukawa matrices, together with flavour $\mathrm{SU}(3)_{\mathrm{f}}$
+mass-breaking operators beyond first-order octet symmetry.
 
-**A caution about how the surviving question is posed.** It has been recorded as
-asking whether a certain non-abelian cohomology class is non-trivial, and
-whether the resulting gerbe's band can be $\mathrm{SU}(3)$. That formulation
-belongs to *symmetric* Tannakian duality \cite{deligne1990}, and this
-framework's category is not symmetric — a fact that follows from the Hecke relation together with
-$q_0 > 1$, rather than being stipulated. Reading the framework's own
-$\mathrm{Aut}^{\otimes}(\tau) \cong \mathrm{SU}(2)$ result as settling the band
-therefore assumes what is being asked. The general non-symmetric reconstruction
-produces a Hopf algebra internal to the category, not a group scheme carrying a
-band, so the question to ask is what that reconstructed Hopf algebra is, and
-whether it contains an $\mathrm{SU}(3)$-like sub-object.
-
-This is a re-posing, not an exclusion. Nothing here says $\mathrm{SU}(3)$ is
-absent.
+**A caution about non-symmetric Tannakian reconstruction.** At the categorical
+level, asking whether a gerbe's band can be $\mathrm{SU}(3)$ belongs to
+*symmetric* Tannakian duality \cite{deligne1990}, whereas this framework's
+braided category is non-symmetric whenever $q_0 > 1$. Non-symmetric
+reconstruction produces a braided Hopf algebra internal to the category rather
+than a classical group scheme, so lifting the split bundle $F = V_2 \oplus W_3^*$
+to the full braided groupoid requires braided Hopf-algebraic structure rather
+than symmetric Tannakian bands.
 
 ## The intra-nucleon electromagnetic self-energy
 
@@ -60,7 +60,7 @@ components are exchanged — while a Coulomb self-energy between identical charg
 cannot. Any account odd in that invariant is therefore zero, which removes the
 linear ansatz before it is attempted.
 
-**This object gates one front, not two.** It has been recorded as also owning
+**This object gates one front rather than two.** It has been recorded as also owning
 part of the mirror-nucleus splitting. It does not: that splitting is a
 *binding-energy* difference, and a single nucleon's electromagnetic self-energy
 cancels identically in binding energy, since it already sits inside the free

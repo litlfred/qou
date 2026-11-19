@@ -16,6 +16,12 @@ export default remark({
     "prop:frobenius-gram-matrix",
   ],
   interprets: "prop:knot-operator-selection",
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Symbolic NF products and Gram-matrix dual evaluations are cross-checked against `computations/knot-operator-table.witness.json` and `computations/gram-matrix-dual.witness.json` alongside `computations/photon-operator-table.witness.json`.",
+    },
+  ],
   computation: {
     engine: "python",
     script: "computations/photon_operator_table.py",

@@ -1,4 +1,4 @@
-The orbit contact average of $P \in \mathcal{S}(q)$ measures the average $[2]_q$-adic valuation of the results of the odd steps over the first $N$ steps of the Skein-Collatz map ([conj:q-collatz](#conj:q-collatz)). Restricting to the $N_{\mathrm{odd}}$ odd steps:
+The orbit contact average of $P \in \mathcal{S}(q)$ measures the average $[2]_q$-adic valuation of the results of the odd steps over the first $N$ steps of the Skein-Collatz map ([the $q$-Collatz conjecture](#conj:q-collatz)). Restricting to the $N_{\mathrm{odd}}$ odd steps:
 
 $$
 \langle v_{[2]} \rangle_N(P) := \frac{1}{N_{\mathrm{odd}}} \sum_{\substack{0 \leq k < N \\ \mathcal{C}_q^k(P) \text{ is } q\text{-odd}}} v_{[2]}\bigl(\mathcal{C}_q^{k+1}(P)\bigr).

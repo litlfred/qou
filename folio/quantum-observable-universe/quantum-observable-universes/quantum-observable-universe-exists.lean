@@ -96,7 +96,8 @@ theorem QuantumObservableUniverse.exists_instance
     (hsix : IsUnit (6 : R))
     (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1)
     [ctx : QuantumObservableUniverseExistsContext R q qinv hq hcasimir hsix hgeneric] :
-    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w} R) :=
-  ctx.exists_instance
+    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w} R) := by
+  obtain ⟨inst⟩ := ctx.exists_instance
+  exact ⟨inst⟩
 
 end QOU

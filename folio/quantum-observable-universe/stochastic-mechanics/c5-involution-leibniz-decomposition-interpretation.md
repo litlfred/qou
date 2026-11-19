@@ -1,7 +1,7 @@
 **Remark (bar-symmetry class, categorical sectors, and the $c_5$ falsifiable prediction).**
 
 > **Bar-symmetry class** (per the [bar involution](#def:bar-involution)):
-> $c_5(q) = -b^2(q) - 1/2 = -3/2 + 1/[2]_q^2$ is **bar-symmetric** as a function of $q$, by the Hoefsmit--quantum-2 identity $b^2 = 1 - 1/[2]_q^2$. The "$-1/2$" piece is a $q$-independent commutative-QOU constant, giving the classical value $c_5(q=1) = -5/4$. The $c_5$ outlier at the silver ratio is the arithmetic sum of two clean bar-symmetric pieces landing on the inert prime $11 \in \mathbb{Z}[1+\sqrt 2]$, not a quantum-deformation artifact.
+> $c_5(q) = -b^2(q) - 1/2 = -3/2 + 1/[2]_q^2$ is **bar-symmetric** as a function of $q$, by the Hoefsmit--quantum-2 identity $b^2 = 1 - 1/[2]_q^2$. The "$-1/2$" piece is a $q$-independent commutative-QOU constant, giving the classical value $c_5(q=1) = -5/4$. The $c_5$ outlier at the silver ratio is the arithmetic sum of two clean bar-symmetric pieces landing on the inert prime $11 \in \mathbb{Z}[1+\sqrt 2]$ rather than a quantum-deformation artifact.
 
 > **Pentagon-reduction cross-link.** The Leibniz expansion implicitly invokes the $q$-dilogarithm pentagon identity, supplying the algebraic pentagon-coherence layer behind $c_5$'s decomposition.
 
@@ -23,4 +23,4 @@ This is testable by extending SDP-$T_\beta$ extraction to $k \geq 8$ and checkin
 
 ## Discussion
 
-This decomposition is a structural identification, not a first-principles derivation. The $-b^2$ and $-1/2$ summands are identified categorically. The proof that the precision-ladder $c_5$ takes exactly this form requires computing the typed-$\mathbf{B}_3$ Markov-trace expansion at order $b^5 \hbar_q^{10}$, and separating pure-$\sigma$ contributions from averaged-position contributions. Both are concrete computations not yet executed. This proposition sets up the categorical grammar; its full proof requires the order-by-order Hecke expansion machinery.
+This decomposition is a structural identification rather than a first-principles derivation. The $-b^2$ and $-1/2$ summands are identified categorically. The proof that the precision-ladder $c_5$ takes exactly this form requires computing the typed-$\mathbf{B}_3$ Markov-trace expansion at order $b^5 \hbar_q^{10}$, and separating pure-$\sigma$ contributions from averaged-position contributions. Both are concrete computations not yet executed. This proposition sets up the categorical grammar; its full proof requires the order-by-order Hecke expansion machinery.

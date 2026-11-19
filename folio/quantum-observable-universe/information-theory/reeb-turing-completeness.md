@@ -1,4 +1,4 @@
-The QOU asserts that universal computation is native to the substrate. Cardona, Miranda, Peralta-Salas, and Presas prove a corresponding classical result for steady Euler flows on closed Riemannian 3-manifolds.
+The QOU asserts that universal computation is native to the aether. Cardona, Miranda, Peralta-Salas, and Presas prove a corresponding classical result for steady Euler flows on closed Riemannian 3-manifolds.
 
 **The classical result.**
 A conformal change of metric maps any non-vanishing steady Euler field to the Reeb vector field $R_\alpha$ of a contact form. Cardona et al. construct a Reeb field whose first-return map simulates an arbitrary Turing machine, rendering its long-term trajectory problem strictly undecidable.
@@ -14,4 +14,4 @@ Third, undecidability establishes an observational horizon. No finite QOU observ
 The Reeb derivation is a rigorous geometric flow. Universal computation is native to every contact 3-manifold possessing sufficient periodic-orbit structure. The QOU inherits this. Tao's hydrodynamic universality program mirrors this conclusion.
 
 **Location of the conjectural part.**
-The Cardona et al. result establishes universality at a fixed classical metric. The QOU extends this geometrically: universality survives the $q$-deformation of the ambient space. Conjecturally, the continuous parameter family $q \in (1, \infty)$ supports a continuous family of universal Reeb flows, with discrete roots-of-unity specializations recovering the universal quantum computer. Thus, while the $q=1$ limit stands as a classical theorem, its $q$-deformed lift to arbitrary substrate parameters remains conjectural.
+The Cardona et al. result establishes universality at a fixed classical metric. The QOU extends this geometrically: universality survives the $q$-deformation of the ambient space. Conjecturally, the continuous parameter family $q \in (1, \infty)$ supports a continuous family of universal Reeb flows, with discrete roots-of-unity specializations recovering the universal quantum computer. Thus, while the $q=1$ limit stands as a classical theorem, its $q$-deformed lift to arbitrary aether parameters remains conjectural.

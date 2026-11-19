@@ -20,4 +20,7 @@ export default theorem({
     witness: "computations/mass-from-q-symbolic.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

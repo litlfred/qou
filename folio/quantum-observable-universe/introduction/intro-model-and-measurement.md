@@ -15,7 +15,7 @@ of freedom of the first cohomology of the genus-four state space
 [three calibration inputs](#prop:three-calibration-inputs)):
 
 - the electron mass $m_e$ fixes the unit of mass, the *scale*;
-- the neutron $\beta$-decay channel fixes the substrate parameter
+- the neutron $\beta$-decay channel fixes the aether parameter
   $q_0$, the *modulus*; because that modulus is overdetermined, its
   numerical value is read off the most precisely measured mass ratio
   available;
@@ -54,7 +54,7 @@ order $O(\alpha_{\mathrm{EM}}/\pi)$ and higher-body nuclear cumulants.
 The observations chapter reports every residual against these
 theoretical truncation budgets alongside the experimental uncertainty
 band, separating the quantities that already close at sub-parts-per-billion
-precision from those where higher-loop radiative or multi-body terms
-remain open. A derived quantity that misses its truncation budget is
+precision from those where higher-loop radiative or multi-body corrections
+are not yet derived. A derived quantity that misses its truncation budget is
 reported as a miss rather than tuned away, because only an untuned
 model can be corrected by what its errors teach.

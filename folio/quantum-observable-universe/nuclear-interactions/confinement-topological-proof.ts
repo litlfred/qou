@@ -85,4 +85,10 @@ export default proof({
         "symmetrise it — a coincidence in the numbers, corrected there.)",
     },
   ],
+  computation: {
+    engine: "numpy",
+    script: "computations/probes/confinement_b3_enumeration_recheck_probe.py",
+    witness: "computations/probes/confinement-b3-enumeration-recheck-probe.witness.json",
+    status: "verified",
+  },
 });

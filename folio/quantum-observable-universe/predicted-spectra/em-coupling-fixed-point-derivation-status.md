@@ -2,7 +2,7 @@
 
 The fine-structure constant emerges as the symbolic root of a self-consistent fixed-point equation. This path is additive and self-consistent. The formulation avoids the refuted multiplicative Chern–Simons or gluon-octet forms.
 
-The equation integrates three components. Only the third remains open:
+The fixed-point equation combines three components, of which the third is conjectural:
 
 1. **Tree term $q\cdot[9]_q\cdot[10]_q$**: The bare inverse coupling from the [electromagnetic coupling projection](#prop:em-coupling-projection), together with its categorical-trace refactoring ([$\alpha_{EM}$ categorical trace ratio](#prop:alpha-em-categorical-trace-ratio)).
 2. **Zero-mode shift $2/(3\pi) = 2g/(4\pi(g-1))\big|_{g=4}$**: The photon infrared harmonic-$1$-form contribution on Bring's surface, established in the [Bring-surface photon infrared zero-mode proposition](#prop:photon-ir-zero-mode-bring). The normalization $8\pi = \pi b_1 = \pi\dim H^1(M_{\text{Bring}})$ maintains the harmonic count.

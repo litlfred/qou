@@ -13,8 +13,8 @@ See [Table 1](#tbl:atomic-braid-table1-data).
 *The greedy insertion produces **ep pairs**: each electron sits immediately before its proton. The $\mathfrak{n}e = \mathrm{id}$ crossing means electrons pass through neutrons without generating Hecke generators.*
 
 *The atomic braid carries the electron shell: the three electronic rows of
-Table 1 — $\mathfrak{p}e$, $\mathfrak{n}e$, $ee$ — are part of the definition,
-not an optional dressing. It is therefore a different object from the
+Table 1 — $\mathfrak{p}e$, $\mathfrak{n}e$, $ee$ — are part of the definition
+rather than an optional dressing. It is therefore a different object from the
 electron-free nuclear core $\mathcal{B}_K \in H_{3A}(q)$, which places three
 quark strands on each nucleon and carries no electron content
 ([notation register](../notation/notation-collisions.md)). The two are not two

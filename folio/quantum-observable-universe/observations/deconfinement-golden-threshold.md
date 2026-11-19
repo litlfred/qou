@@ -24,7 +24,7 @@ $$
 3. **Order parameter.** The order parameter is the **$j$-invariant** of the elliptic fiber. $j(q)$ is finite and continuous for $q > q_{\mathrm{gold}}$. It diverges as $q \to q_{\mathrm{gold}}$ ($j \to \infty$ at the node). The divergence of $j$ signals the breakdown of the elliptic structure. The Polyakov loop jumps from zero (confined) to nonzero (deconfined) at the transition.
 
 **Effective $q$ at finite temperature.**
-The physical substrate has $q = q_0$. Temperature changes the **effective crossing energy** available to disrupt the Borromean structure. At temperature $T$, thermal fluctuations supply energy $\sim k_B T$ per degree of freedom. Deconfinement occurs when thermal energy matches the Hopf binding energy per baryon:
+The physical aether has $q = q_0$. Temperature changes the **effective crossing energy** available to disrupt the Borromean structure. At temperature $T$, thermal fluctuations supply energy $\sim k_B T$ per degree of freedom. Deconfinement occurs when thermal energy matches the Hopf binding energy per baryon:
 
 $$
   k_B T_c

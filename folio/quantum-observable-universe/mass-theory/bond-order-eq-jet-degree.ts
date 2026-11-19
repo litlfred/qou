@@ -12,4 +12,10 @@ export default lemma({
     "prop:jet-prefix-gb-filtration",
   ],
   proofs: ["prf:bond-order-eq-jet-degree"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

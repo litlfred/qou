@@ -1,6 +1,6 @@
 The unique terminal morphism from any Descartes universe $(\mathbf{C}, A, \tau)$ in $\mathbf{C}_{-6}$ to Bring's QOU $(\mathbf{C}_B, A_B, \tau_B)$ is constructed in four steps.
 
-**Step 1: Match the substrate parameters.** 
+**Step 1: Match the aether parameters.** 
 Both source and target have $\chi(A) = -6$, so the Descartes condition determines $q + q^{-1} = -6$ in both. By constructive extraction, both algebras are defined over $\mathbb{Z}[q, q^{-1}]/(q^2 + 6q + 1)$. The specialisation maps $\iota, \iota_B \colon \mathbb{Z}[q, q^{-1}] \to k$ agree, yielding an isomorphism of base rings. Define $\phi_0 \colon k \to k$ as the identity.
 
 **Step 2: Construct the :refterm[monoidal functor]{#monoidal-functor}.** 

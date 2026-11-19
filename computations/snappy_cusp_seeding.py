@@ -53,16 +53,22 @@ import sys
 import warnings
 from pathlib import Path
 
-import numpy as np
+import mpmath as mp
 
 # Suppress the plink/tkinter warning emitted on every snappy import.
 warnings.filterwarnings("ignore", message="Plink failed to import tkinter")
 
-import snappy  # noqa: E402
+try:
+    import snappy  # noqa: E402
+except ModuleNotFoundError:  # pragma: no cover — optional native dependency
+    snappy = None  # type: ignore[assignment]
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
+set_compute_dps(80)
+
+from q_parameter import q_at  # noqa: E402
 from q_pochhammer_seed import IM_PERTURBATION_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -72,153 +78,165 @@ from witness_base import WitnessBuilder  # noqa: E402
 MANIFOLDS = ["m004", "m003", "L6a4"]
 
 
-def algebraic_seeds(q: float, n: int) -> list[complex]:
-    """The n simple roots of (x; q)_n, lifted to ℂ."""
-    return [complex(q ** (-k), 0.0) for k in range(n)]
+def algebraic_seeds(q: mp.mpf, n: int) -> list[mp.mpc]:
+    """The n simple roots of (x; q)_n, lifted to ℂ in arbitrary precision."""
+    with mp.workdps(max(mp.mp.dps, 80)):
+        qx = mp.mpf(str(q))
+        return [mp.mpc(qx ** (-k), 0) for k in range(n)]
 
 
-def probe_manifold(name: str, q0: float) -> dict:
+def probe_manifold(name: str, q0: mp.mpf) -> dict:
     """Probe one SnapPy manifold against the QOU algebraic seeds."""
-    M = snappy.Manifold(name)
-    n = M.num_tetrahedra()
-    cusps = M.num_cusps()
-    volume = float(M.volume())
+    if snappy is None:
+        raise RuntimeError("SnapPy is not installed in this Python environment")
+    with mp.workdps(max(mp.mp.dps, 80)):
+        M = snappy.Manifold(name)
+        n = int(M.num_tetrahedra())
+        cusps = int(M.num_cusps())
+        volume = mp.mpf(str(M.volume()))
 
-    # SnapPy's converged shape parameters
-    snappy_shapes = [complex(s) for s in M.tetrahedra_shapes("rect")]
+        # SnapPy's converged shape parameters converted to mp.mpc via decimal strings
+        snappy_shapes = [
+            mp.mpc(mp.mpf(str(s.real)), mp.mpf(str(s.imag)))
+            for s in M.tetrahedra_shapes("rect")
+        ]
 
-    # Algebraic seeds.  Use real-line roots q^{-k} of the q-Pochhammer
-    # denominator, lifted to ℂ by a small imaginary kick.
-    real_seeds = algebraic_seeds(q0, n)
-    seeds = [s + complex(0, float(IM_PERTURBATION_STR)) for s in real_seeds]
+        # Algebraic seeds.  Use real-line roots q^{-k} of the q-Pochhammer
+        # denominator, lifted to ℂ by a small imaginary kick.
+        real_seeds = algebraic_seeds(q0, n)
+        im_kick = mp.mpc(0, mp.mpf(IM_PERTURBATION_STR))
+        seeds = [s + im_kick for s in real_seeds]
 
-    # Pairing: for each seed find the closest SnapPy shape.  The
-    # `shared-denominator-cusp-holonomy` conjecture asserts that under
-    # τ_arch the algebraic zero matches a unique cusp shape parameter.
-    # The numerical distance |seed − snappy_shape| measures how far the
-    # bare algebraic value is from the actual hyperbolic-completeness
-    # solution; a small distance supports the conjecture, a large
-    # distance shows τ_arch must be a non-trivial deformation of the
-    # bare q^{-k}.
-    pairings = []
-    for k, seed in enumerate(seeds):
-        dists = [abs(seed - z) for z in snappy_shapes]
-        idx = int(np.argmin(dists))
-        pairings.append({
-            "seed_index": k,
-            "seed_real": float(seed.real),
-            "seed_imag": float(seed.imag),
-            "snappy_index": idx,
-            "snappy_real": float(snappy_shapes[idx].real),
-            "snappy_imag": float(snappy_shapes[idx].imag),
-            "distance": float(dists[idx]),
-        })
+        # Pairing: for each seed find the closest SnapPy shape.  The
+        # `shared-denominator-cusp-holonomy` conjecture asserts that under
+        # τ_arch the algebraic zero matches a unique cusp shape parameter.
+        # The numerical distance |seed − snappy_shape| measures how far the
+        # bare algebraic value is from the actual hyperbolic-completeness
+        # solution; a small distance supports the conjecture, a large
+        # distance shows τ_arch must be a non-trivial deformation of the
+        # bare q^{-k}.
+        pairings = []
+        raw_dists = []
+        for k, seed in enumerate(seeds):
+            dists = [abs(seed - z) for z in snappy_shapes]
+            idx = min(range(len(dists)), key=lambda i: dists[i])
+            raw_dists.append(dists[idx])
+            pairings.append({
+                "seed_index": k,
+                "seed_real": fmt(seed.real),
+                "seed_imag": fmt(seed.imag),
+                "snappy_index": idx,
+                "snappy_real": fmt(snappy_shapes[idx].real),
+                "snappy_imag": fmt(snappy_shapes[idx].imag),
+                "distance": fmt(dists[idx]),
+            })
 
-    return {
-        "name": name,
-        "num_tetrahedra": n,
-        "num_cusps": cusps,
-        "volume": volume,
-        "snappy_shapes": [
-            {"real": float(z.real), "imag": float(z.imag)}
-            for z in snappy_shapes
-        ],
-        "algebraic_seeds": [
-            {"real": float(s.real), "imag": float(s.imag)} for s in seeds
-        ],
-        "pairings": pairings,
-        "max_pairing_distance": float(
-            max(p["distance"] for p in pairings) if pairings else 0.0
-        ),
-        "min_pairing_distance": float(
-            min(p["distance"] for p in pairings) if pairings else 0.0
-        ),
-    }
+        return {
+            "name": name,
+            "num_tetrahedra": n,
+            "num_cusps": cusps,
+            "volume": fmt(volume),
+            "snappy_shapes": [
+                {"real": fmt(z.real), "imag": fmt(z.imag)}
+                for z in snappy_shapes
+            ],
+            "algebraic_seeds": [
+                {"real": fmt(s.real), "imag": fmt(s.imag)} for s in seeds
+            ],
+            "pairings": pairings,
+            "max_pairing_distance": fmt(max(raw_dists) if raw_dists else mp.mpf(0)),
+            "min_pairing_distance": fmt(min(raw_dists) if raw_dists else mp.mpf(0)),
+        }
 
 
 def main() -> None:
-    q0 = Q0_FLOAT
-    print(f"q_0 = {q0}")
-    print()
-
-    results = []
-    for name in MANIFOLDS:
-        try:
-            r = probe_manifold(name, q0)
-        except Exception as exc:  # pragma: no cover
-            print(f"{name}: {exc}")
-            continue
-        results.append(r)
-        print(
-            f"{r['name']}: V={r['volume']:.6f}, "
-            f"tets={r['num_tetrahedra']}, cusps={r['num_cusps']}"
-        )
-        print(
-            f"  pairing distances: "
-            f"min={r['min_pairing_distance']:.4f}, "
-            f"max={r['max_pairing_distance']:.4f}"
-        )
-        for p in r["pairings"]:
-            print(
-                f"    seed[{p['seed_index']}]={p['seed_real']:+.4f}{p['seed_imag']:+.4f}i"
-                f" <-> snappy[{p['snappy_index']}]"
-                f"={p['snappy_real']:+.4f}{p['snappy_imag']:+.4f}i"
-                f"  |Δ|={p['distance']:.4f}"
-            )
+    with mp.workdps(max(mp.mp.dps, 80)):
+        q0 = q_at(80)
+        print(f"q_0 = {fmt(q0)}")
         print()
 
-    # Witness emission
-    w = WitnessBuilder("snappy-cusp-seeding", engine="snappy")
-    w.set_description(
-        "SnapPy-driven test of `conj:shared-denominator-cusp-holonomy`. "
-        "For a few cusped hyperbolic 3-manifolds, compares the QOU "
-        "algebraic q-Pochhammer denominator zeros against SnapPy's "
-        "tetrahedral shape parameters, evaluates Thurston gluing-equation "
-        "residuals at both, and drives Newton-Raphson on the gluing "
-        "system from the algebraic seeds."
-    )
-    w.set_content_block("conj:shared-denominator-cusp-holonomy")
-    w.add_parameter("q0", float(q0))
-    w.add_parameter("manifolds", MANIFOLDS)
-    w.add_data("results", results)
+        results = []
+        for name in MANIFOLDS:
+            try:
+                r = probe_manifold(name, q0)
+            except Exception as exc:  # pragma: no cover
+                print(f"{name}: {exc}")
+                continue
+            results.append(r)
+            print(
+                f"{r['name']}: V={mp.nstr(mp.mpf(r['volume']), 7)}, "
+                f"tets={r['num_tetrahedra']}, cusps={r['num_cusps']}"
+            )
+            print(
+                f"  pairing distances: "
+                f"min={mp.nstr(mp.mpf(r['min_pairing_distance']), 5)}, "
+                f"max={mp.nstr(mp.mpf(r['max_pairing_distance']), 5)}"
+            )
+            for p in r["pairings"]:
+                sr = mp.nstr(mp.mpf(p["seed_real"]), 5)
+                si = mp.nstr(mp.mpf(p["seed_imag"]), 5)
+                zr = mp.nstr(mp.mpf(p["snappy_real"]), 5)
+                zi = mp.nstr(mp.mpf(p["snappy_imag"]), 5)
+                dd = mp.nstr(mp.mpf(p["distance"]), 5)
+                print(
+                    f"    seed[{p['seed_index']}]=({sr}, {si}i)"
+                    f" <-> snappy[{p['snappy_index']}]=({zr}, {zi}i)"
+                    f"  |Δ|={dd}"
+                )
+            print()
 
-    if results:
-        all_dists = [
-            p["distance"]
-            for r in results
-            for p in r["pairings"]
-        ]
-        w.add_data("summary", {
-            "manifolds_tested": len(results),
-            "min_pairing_distance": float(min(all_dists)),
-            "max_pairing_distance": float(max(all_dists)),
-            "mean_pairing_distance": float(sum(all_dists) / len(all_dists)),
-        })
+        # Witness emission
+        w = WitnessBuilder("snappy-cusp-seeding", engine="snappy")
+        w.set_description(
+            "SnapPy-driven test of `conj:shared-denominator-cusp-holonomy`. "
+            "For a few cusped hyperbolic 3-manifolds, compares the QOU "
+            "algebraic q-Pochhammer denominator zeros against SnapPy's "
+            "tetrahedral shape parameters, evaluates Thurston gluing-equation "
+            "residuals at both, and drives Newton-Raphson on the gluing "
+            "system from the algebraic seeds."
+        )
+        w.set_content_block("conj:shared-denominator-cusp-holonomy")
+        w.add_parameter("q0", fmt(q0))
+        w.add_parameter("manifolds", MANIFOLDS)
+        w.add_data("results", results)
 
-    w.add_caveat(
-        "Empirical finding: bare algebraic seeds q_0^{-k} + 0.1i sit "
-        "at distance ~0.4–0.9 from SnapPy's tetrahedral shape parameters "
-        "for m004, m003, and L6a4 (Borromean rings).  The "
-        "shared-denominator-cusp-holonomy conjecture's pole-to-cusp "
-        "bijection therefore cannot be a literal numerical equality "
-        "between q_0^{-k} and SnapPy's z_k; it must be interpreted as a "
-        "bijection of *labels* (algebraic pole index ↔ cusp index), "
-        "with the actual shape parameter being a non-trivial function "
-        "τ_arch(q_0^{-k}) that the present witness does not yet "
-        "construct.  The companion q-pochhammer-seed.witness.json "
-        "verifies the analogous claim for the simpler color-tube "
-        "discriminant Δ(z) = 0 (Newton converges in 9–11 iterations), "
-        "so the conjecture survives in that simpler setting."
-    )
-    w.add_caveat(
-        "A genuine SnapPy-driven test would feed the algebraic seeds "
-        "into SnapPy's internal Newton+tilt-2-3 solver and measure "
-        "iteration count to convergence.  That requires C-level access "
-        "to the SnapPea kernel and is left to a future witness."
-    )
+        if results:
+            all_dists = [
+                mp.mpf(p["distance"])
+                for r in results
+                for p in r["pairings"]
+            ]
+            w.add_data("summary", {
+                "manifolds_tested": len(results),
+                "min_pairing_distance": fmt(min(all_dists)),
+                "max_pairing_distance": fmt(max(all_dists)),
+                "mean_pairing_distance": fmt(mp.fsum(all_dists) / mp.mpf(len(all_dists))),
+            })
 
-    w.save()
-    print("Witness written.")
+        w.add_caveat(
+            "Empirical finding: bare algebraic seeds q_0^{-k} + 0.1i sit "
+            "at distance ~0.4–0.9 from SnapPy's tetrahedral shape parameters "
+            "for m004, m003, and L6a4 (Borromean rings).  The "
+            "shared-denominator-cusp-holonomy conjecture's pole-to-cusp "
+            "bijection therefore cannot be a literal numerical equality "
+            "between q_0^{-k} and SnapPy's z_k; it must be interpreted as a "
+            "bijection of *labels* (algebraic pole index ↔ cusp index), "
+            "with the actual shape parameter being a non-trivial function "
+            "τ_arch(q_0^{-k}) that the present witness does not yet "
+            "construct.  The companion q-pochhammer-seed.witness.json "
+            "verifies the analogous claim for the simpler color-tube "
+            "discriminant Δ(z) = 0 (Newton converges in 9–11 iterations), "
+            "so the conjecture survives in that simpler setting."
+        )
+        w.add_caveat(
+            "A genuine SnapPy-driven test would feed the algebraic seeds "
+            "into SnapPy's internal Newton+tilt-2-3 solver and measure "
+            "iteration count to convergence.  That requires C-level access "
+            "to the SnapPea kernel and is left to a future witness."
+        )
+
+        w.save()
+        print("Witness written.")
 
 
 if __name__ == "__main__":

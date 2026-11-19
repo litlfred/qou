@@ -28,6 +28,7 @@ export default definition({
     "categorical",
   ],
   authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
     {
       kind: "refined-framing",
       date: "2026-11-15",

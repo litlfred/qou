@@ -1,11 +1,13 @@
 import { chapter, section } from "../../schema/builders";
 
 /**
- * Appendix A: Knot-Periodic Table.
+ * Appendix A: Knot-Periodic Table of the Elements.
  *
- * Knot diagrams of light atoms showing sub-Hopf link structure,
- * followed by the complete table of all 92 naturally occurring
- * elements with QOU predicted masses and AME2020 binding energies.
+ * Composite knot diagrams of light atoms ($Z \leq 4$), followed by the
+ * complete parameter-free knot-periodic table of all 118 known elements
+ * ($Z = 1\text{--}118$, hydrogen through oganesson), the recursive
+ * particle-to-nuclide knot atlas across all 3,558 AME2020 nuclides,
+ * and the Mayer--Jensen knot-centric periodic reorganization.
  */
 export default chapter({
   tabLabel: "T",
@@ -21,7 +23,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Knot formulas for all elements",
+      title: "Knot formulas and derived masses for all 118 elements",
       label: "sec:knot-periodic-table",
       blocks: [
         "knot-periodic-table",

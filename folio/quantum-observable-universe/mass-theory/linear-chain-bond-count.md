@@ -25,8 +25,7 @@ the hyperbolic volume of the $n$-body sub-link (the isospin carrier).
 
 **Scope.** Only the *combinatorial multiplicity* is asserted here. The binding
 *magnitude* $B(K) = \mathfrak{m}_e \sum_{n} M_n\,\mathrm{Vol}_n(K)$ — which
-reproduces the tritium binding to $\approx 0.16\%$ with no fit
-(`theta_mn_bondcount_linearchain.py`) — is an *empirical* consequence that also
+reproduces the tritium binding to $\approx 0.16\%$ with no fit — is an *empirical* consequence that also
 multiplies in the topological link volumes and the electron scale $\mathfrak{m}_e$;
 it is **not** part of this proposition, and it carries a $\sim 3\%$ mirror-pair
 residual plus a deuteron ($\mathrm{Vol}=0$ Hopf) exception.

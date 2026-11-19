@@ -1,1 +1,1 @@
-**Mathematical Novelty:** Formalising the relationship between meson decay energies and the lepton mass ratio (figure-eight volume) via the algebraic squaring relation $4_1 = (\sigma_1\sigma_2^{-1})^2$.
+The algebraic squaring relation $4_1 = (\sigma_1\sigma_2^{-1})^2$ relates the half-figure-eight meson crossing word to the full figure-eight braid, tying meson decay energy scales to the figure-eight hyperbolic volume and lepton mass ratio.

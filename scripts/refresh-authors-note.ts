@@ -32,7 +32,7 @@ import { join, resolve } from "path";
 // The platform (content pipeline + this tool) lives in the sibling
 // folio-assistant repo, wired in via the in-repo `folio-assistant/` symlink
 // (scripts/setup-folio-assistant.sh). Run that once if this import fails.
-import { computeStats } from "../folio-assistant/cat-harness-tools/scripts/lean-coverage";
+import { computeStats } from "../folio-assistant/folio-assistant-sci/scripts/lean-coverage";
 
 const REPO_ROOT = resolve(import.meta.dir, "..");
 const PAPER = "quantum-observable-universe";

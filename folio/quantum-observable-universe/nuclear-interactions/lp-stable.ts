@@ -11,4 +11,10 @@ export default definition({
     "hecke-algebra",
   ],
   uses: [],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

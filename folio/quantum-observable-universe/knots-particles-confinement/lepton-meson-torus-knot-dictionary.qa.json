@@ -1211,6 +1211,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'lepton-meson-torus-knot-dictionary.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "bf8d959ae90b",
+          "ts": "6075026c3c00",
+          "lean": "19294c152ec2",
+          "lean_statement": "751a9058ae5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:23:22.036Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified lepton-meson-torus-knot-dictionary.lean uses Fin 3 and ℕ only (zero Real imports, §7c) and passes lean-verify.sh exit 0."
       }
     ],
     "wall-side-proof": [
@@ -2490,6 +2507,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T21:56:00.679Z",
+  "updated_at": "2026-11-19T17:23:22.036Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -4,7 +4,7 @@ be kept separate**:
 
 ## Two mechanisms
 
-### Mechanism 1 — bar projection (real-q phenomenon)
+### Mechanism 1: bar projection (real-q phenomenon)
 
 Per [bar-involution.md](../braids-and-knots/bar-involution.md), every Hecke-algebra
 element decomposes as $x = P_{\mathrm{avg}}(x) + P_{\mathrm{skew}}(x)$
@@ -24,9 +24,9 @@ $\sinh(\log q)$ is the **EM / Coulomb channel**. So the EM /
 P_skew content **exists** for real $q$ and is discarded by the
 canonical projection.
 
-### Mechanism 2 — modulus projection (complex-q phenomenon)
+### Mechanism 2: modulus projection (complex-q phenomenon)
 
-Per [categorical-mass-markov proposition](../mass-endomorphism/categorical-mass-markov.md),
+Per [Markov-trace categorical mass](../mass-endomorphism/categorical-mass-markov.md),
 the categorical mass formula is
 
 $$\mathfrak{m}_{q, \mathcal{K}} = \mathrm{tr}_M(\rho(\beta_\mathcal{K})).$$
@@ -62,11 +62,11 @@ Quantitative consequences differ between the two mechanisms:
    complex tr_M whose modulus closes the residual.
    - **(b) is ruled out under the current ansatz** (residual is
      positive everywhere on the Apollonius circle).
-   - **(a) is open** — accessible via the explicit $Q_m$ P_skew
+   - **(a) is open**: accessible via the explicit $Q_m$ P_skew
      content given above.
 
 2. **Resolving the canonical lepton-mass formula** $F_\ell(q)$
-   ([lepton-mass-tower-canonical conjecture](lepton-mass-tower-canonical.md)):
+   ([operator-level lepton mass-tower conjecture](lepton-mass-tower-canonical.md)):
    the ratio $|\mathrm{tr}_M(K_\mu)| / |\mathrm{tr}_M(K_e)|$ is
    robust against $\mathrm{Im}(q)$ at leading order (modulus
    projection invariance), but **NOT** robust against the
@@ -75,14 +75,14 @@ Quantitative consequences differ between the two mechanisms:
 
 3. **Physical interpretation**: $P_{\mathrm{skew}} = $ EM/charge-distinguishing
    channel (explicit for torus knots, as above).
-   $\mathrm{Im}(q) = $ a substrate moduli parameter (not directly
+   $\mathrm{Im}(q) = $ an aether moduli parameter (not directly
    physical until tied to an Im-sensitive observable, which the
    framework does not currently provide).
 
 ## Cross-references
 
-- [lusztig-vs-hermitian-bar proposition](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
-- [q-zero-complex-extension proposition](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
-- [categorical-mass-markov proposition](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
-- [`bar-involution.md`](../braids-and-knots/bar-involution.md) — bar projection definition
-- [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification
+- [Lusztig versus Hermitian involution split](lusztig-vs-hermitian-bar.md): bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
+- [complex base-ring extension](q-zero-complex-extension.md): aether polymorphism (admits complex q)
+- [Markov-trace categorical mass](../mass-endomorphism/categorical-mass-markov.md): modulus projection definition
+- [`bar-involution.md`](../braids-and-knots/bar-involution.md): bar projection definition
+- [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md): `sinh(log q)` = Coulomb channel identification

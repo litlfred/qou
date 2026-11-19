@@ -17,13 +17,13 @@ those is an $n \geq 4$ effect.
 
 The two are easy to conflate because the dimensions agree at $n = 3$: the
 standard block of $H_3(q)$ has dimension $n - 1 = 2$, and so does
-$R[\sigma]$. This is a coincidence of dimension, not an identification. By
+$R[\sigma]$. This is a coincidence of dimension rather than an identification. By
 Step 2 the two eigenvalues of $M_i$ are the symmetric and alternating
 characters $\lambda_i^{\mathrm{sym}}$ and $\lambda_i^{\mathrm{alt}}$, so the
 standard representation does not act on $M_i$ at all; the row labelled
 *standard* in the correspondence table records the Markov functional
-$\mathrm{tr}_M(X_i) = z \, (M_i)_{12} + (M_i)_{22}$ on the crossing algebra,
-not an image of the two-dimensional block.
+$\mathrm{tr}_M(X_i) = z \, (M_i)_{12} + (M_i)_{22}$ on the crossing algebra
+rather than an image of the two-dimensional block.
 
 Deuterium is the unique atom with $n = A + Z = 3$. It is therefore both the
 smallest atom carrying two distinct braid generators and the only one at which

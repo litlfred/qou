@@ -19,5 +19,3 @@ $$
   P_q^{(\mathrm{boundary})} = \frac{\hbar_q^2}{V_q} \,\mathrm{tr}_{\mathrm{Ad}} \!\oint_{\partial U} \langle d_q K \,,\, d_q K \rangle_A.
 $$
 The pairing $\langle\,\cdot\,,\,\cdot\,\rangle_A$ is the Frobenius pairing.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

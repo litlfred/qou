@@ -22,7 +22,7 @@ Topological closure makes helium a noble gas. A third electron (lithium) forces 
 
 **Shell capacities from sub-link closure.**
 
-Conjecturally, the maximum number of trefoils in a closed sub-Hopf link at level $n$ fixes the shell capacity at $2n^2$. A rigorous derivation remains open:
+Conjecturally, the maximum number of trefoils in a closed sub-Hopf link at level $n$ fixes the shell capacity at $2n^2$, though a link-theoretic proof of that capacity bound is unestablished:
 
 | Shell $n$ | Capacity $2n^2$ | Cumulative | Pure-$2n^2$ closure | Closed sub-link |
 |----------:|----------------:|-----------:|---------------------|----------------|

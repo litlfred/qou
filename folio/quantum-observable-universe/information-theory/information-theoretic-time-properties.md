@@ -15,7 +15,7 @@ where $t_P(q) = q/(q-1)$ is the Planck time ([Planck time](#def:planck-time)). T
 1. **Discrete regime** ($q \to \infty$, deep-quantum).
    $t_P \to 1$, so $t = \mathcal{T}$. The Reeb time coordinate equals the integer step count. Each tick represents one braiding, one jet prolongation, or one link resolved in the exceptional divisor. There is no sub-step structure and no averaging. Time is a natural number.
 
-2. **Statistical regime** ($q = q_0$ ([local substrate $q$](#prop:local-substrate-q)), observable universe).
+2. **Statistical regime** ($q = q_0$ ([local aether $q$](#prop:local-substrate-q)), observable universe).
    $t_P \approx 10$. Approximately $10$ Reeb operations compose each Planck unit. Individual operations are not separately resolvable at the Planck scale; only their aggregate—the statistical average of $\sim 10$ braiding evaluations—is observable. The Reeb flow parameter $t$ becomes a coarse-grained time that smooths over discrete steps, just as thermodynamic quantities smooth over microscopic states.
 
 3. **Continuous regime** ($q \to 1$, classical limit).
@@ -32,4 +32,4 @@ $$
 
 The left side is the average of $g$ over $t_P$ discrete Reeb operations. The right side is the continuous-flow time-average. They agree to $O(1/t_P) = O(\hbar_q)$. The error vanishes precisely as the quantum Planck constant goes to zero.
 
-At $q = q_0$ ([local substrate $q$](#prop:local-substrate-q)), $t_P \approx 10$. The Riemann approximation has $O(1/10) \approx 10\%$ relative error. This marks the scale where discreteness is marginally detectable, aligning with quantum-gravitational corrections as $O(\hbar_q)$ effects.
+At $q = q_0$ ([local aether $q$](#prop:local-substrate-q)), $t_P \approx 10$. The Riemann approximation has $O(1/10) \approx 10\%$ relative error. This marks the scale where discreteness is marginally detectable, aligning with quantum-gravitational corrections as $O(\hbar_q)$ effects.

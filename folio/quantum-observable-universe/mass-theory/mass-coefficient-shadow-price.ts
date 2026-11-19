@@ -48,7 +48,9 @@ export default proposition({
     "derived-coefficient",
   ],
   authorNotes: [
-    { kind: "caveat", date: "2026-10-11", body: "Two inconsistent definitions of $C_\\lambda$ (bean `qou-wg3c`). `prf:unified-iterative-correction` states $C_\\lambda = m_e\\,H_q(\\lambda)$ (the $q$-hook product), while `prop:mass-coefficient-shadow-price` carries $C_\\lambda = w_\\lambda\\,h/2$ as the class field `C_eq`. At $(2,2)$ these give $6.2893$ MeV and $m_e w h/2 = 0.00887$ MeV; no stated map relates them. Neither is derived: the hook value is asserted universal and fails for six of the seven mass-formula coefficients (`qou-orjl`), and the factorisation $u^*_\\lambda = C_\\lambda S_\\lambda(Z,N,A)$ is a class field the stated LP cannot produce, since its dual constraints carry no $(Z,N)$." },
+    { kind: "caveat", date: "2026-10-11", body: "Two inconsistent definitions of $C_\\lambda$ (bean `qou-wg3c`). `prf:unified-iterative-correction` states $C_\\lambda = m_e\\,H_q(\\lambda)$ (the $q$-hook product), while `prop:mass-coefficient-shadow-price` carries $C_\\lambda = w_\\lambda\\,h/2$ as the class field `C_eq`. " +
+      /* <!-- literal-source: closed-form q-hook evaluation m_e * H_q((2,2)) = m_e * [3]_q * [2]_q^2 = 6.2893 MeV at q_0 --> */
+      "At $(2,2)$ these give $6.2893$ MeV and $m_e w h/2 = 0.00887$ MeV; no stated map relates them. Neither is derived: the hook value is asserted universal and fails for six of the seven mass-formula coefficients (`qou-orjl`), and the factorisation $u^*_\\lambda = C_\\lambda S_\\lambda(Z,N,A)$ is a class field the stated LP cannot produce, since its dual constraints carry no $(Z,N)$." },
     {
       kind: "refined-framing",
       date: "2026-09-05",
@@ -115,4 +117,13 @@ export default proposition({
         "The charge-type scaling function $S_\\lambda$ (left here as \"Z-dependent\") is identified — formalize-first, no fit — with the free-vs-atom **$H_{3A}$ q-Reeb phase** $|\\Delta\\theta_\\lambda|$, not a partition-only $Z(Z-1)$ count. The bare $\\sum_{\\text{charge}} C_\\lambda\\,Z(Z-1)\\,m_e$ misses the $^3$H$-^3$He split by $22.6\\times$ (the GAP-A-4 $H_3$-collapse obstruction: $p\\equiv n\\equiv{}^3$He at $H_3$); the atomic q-Reeb phase reproduces it to $\\sim118\\%$ (right order). The Coulomb channel $\\sinh(\\log q)=h/2$ is already the factor in $C_\\lambda=\\tilde w_\\lambda\\,h/2$. See `docs/audits/2026-06-22-charge-slambda-reeb-phase-crack.md`.",
     },
   ],
+  computation: {
+    engine: "numpy",
+    script: "computations/aK_via_lp_dual_full.py",
+    witness: [
+      "computations/a-K-via-lp-dual-full.witness.json",
+      "computations/probes/casimir-q-zeta-probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

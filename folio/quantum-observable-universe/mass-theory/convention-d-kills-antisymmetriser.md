@@ -74,7 +74,7 @@ $$
 the $n = 3$ instance of the two-row closed form
 $y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$.
 
-## What the characterisation replaces
+## Prior characterisation of the trace radical
 
 The selection criterion for the Markov trace is not non-degeneracy. Convention D
 violates non-degeneracy by construction --- the pairing has a radical, and the radical
@@ -90,12 +90,7 @@ three-row partition whose weight can be asked to vanish, the algebra is commutat
 with a single generator, and every $z$ is admissible. The row cap is vacuous at
 $n \le 2$ and bites at $n = 3$.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
-physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
-$q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. At
+At
 $q_0 = 1.10997858275138080759$ the two conventions give
 $z_{\mathrm{D}} = 0.61268803714646525160$ with weights
 $(0.5054042,\, 0.2472979,\, 0)$, against

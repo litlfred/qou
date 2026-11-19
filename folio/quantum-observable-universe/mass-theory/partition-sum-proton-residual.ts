@@ -15,6 +15,10 @@ export default conjecture({
     witness: [
       "computations/proton-residual-rootcause.witness.json",
       "computations/codata-masses.witness.json",
+      "computations/two-term-qed-isotope-and-nucleon-compute.witness.json",
+      "computations/mass-formula-6term-mpfr-50dps.witness.json",
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+      "computations/yekutieli-mp-substrate-closure-probe.witness.json",
     ],
     status: "verified",
   },
@@ -31,7 +35,9 @@ export default conjecture({
   ],
   authorNotes: [
     { kind: "caveat", date: "2026-11-18", body: "The integer 12 in m_p/m_e = 2(Vol(4_1)/hbar_q^2) F_Bor - 12 is a FIT: selected because 2 m_mu F_Bor(q_0) exceeds m_p by about 12 m_e (docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md, status: empirical near-identity, needs categorical proof). The Ocneanu -1/12 reading was retracted 2026-05-26; 12 = dim V_(2,1)*|S_3| = 2 F_Bor(1) are readings only. Owner ruling 2026-11-18 (card: label as fit). Derivation gap tracked in a bean." },
-    { kind: "status", date: "2026-11-16", body: "Comparison rewritten against the live convention-D tower (issue #8118). The production identity m_p/m_e = 2(Vol(4_1)/hbar_q^2) F_Bor - 12 has tower 944.404 MeV; the residual is -12 m_e at the proton pin (by construction, since q_0 is solved from the identity) and -11.99955 m_e at the muon pin, where m_p = 938.271861 MeV (-244 ppb). The +1.278 MeV and -0.451 MeV residuals used the archived towers 936.994 and 938.7228 MeV, which no live producer reproduces; both are kept as records. No mass number changed." },
+    { kind: "status", date: "2026-11-16", body: "Comparison rewritten against the live convention-D tower (issue #8118). The production identity m_p/m_e = 2(Vol(4_1)/hbar_q^2) F_Bor - 12 has tower 944.404 MeV; the residual is -12 m_e at the proton pin (by construction, since q_0 is solved from the identity) and -11.99955 m_e at the muon pin, where m_p = 938.271861 MeV (-244 ppb). The +1.278 MeV and -0.451 MeV residuals " +
+      /* <!-- literal-source: archived historical tower constant recorded for comparison --> */
+      "used the archived towers 936.994 and 938.7228 MeV, which no live producer reproduces; both are kept as records. No mass number changed." },
     { kind: "status", date: "2026-11-16", body: "Restated (issue #8094): the claim tr_M(C_Frob) = 2 + 1/[2]_q is false for the Frobenius Casimir of H_3(q) (prop:h3-frobenius-casimir-markov-trace); the conjecture now compares the residual with the formal sum. Residual sign recorded for both tower values on record. Tables 1 and 4 relabelled; no number changed." },
     { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:partition-sum-proton-residual -> conj:partition-sum-proton-residual." },
     {

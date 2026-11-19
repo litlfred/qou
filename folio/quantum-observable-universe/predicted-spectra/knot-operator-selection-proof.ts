@@ -17,4 +17,10 @@ export default proof({
       body: "Lean formalisation of the Convention-D Markov Gram radical on H_3 (det G = 0 on H_n with the (1^3) block as radical, non-degenerate on H_n / rad tr_M ≅ TL_n): `lean/QOU/QBeta/MarkovGramDegenerate.lean`.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/nuclear_wave3_periodic_table_synthesis_probe.py",
+    witness: "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
+    status: "verified",
+  },
 });

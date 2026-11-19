@@ -73,8 +73,8 @@ $$
   \;=\; \mathrm{tr}_M(\alpha\cdot\sigma_g) - \tfrac{h}{2}\,\mathrm{tr}_M(\alpha)
   \;=\; \Bigl(z - \tfrac{h}{2}\Bigr)\cdot\mathrm{tr}_M(\alpha).
 $$
-Thus **all three** per-interface factors — $z$ (positive), $z-h$
-(negative), $z-\tfrac{h}{2}$ (bar-invariant p-n) — follow by
+Thus **all three** per-interface factors ($z$ for positive, $z-h$
+for negative, and $z-\tfrac{h}{2}$ for bar-invariant p-n) follow by
 trace-linearity from the *single* Markov axiom $\mathrm{tr}_M(\alpha\sigma_g) =
 z\,\mathrm{tr}_M(\alpha)$ plus the skein $\sigma_g^{-1}=\sigma_g-h$; none is an
 independent input or a fit. The division-free form
@@ -99,9 +99,9 @@ $$
   z - \tfrac{h}{2} \;=\; \tfrac{1}{2}\bigl(z + \overline{z}\bigr),
 $$
 
-which is the bar-symmetriser of $z$ — manifestly bar-even. The name
+which is the bar-symmetriser of $z$ and is manifestly bar-even. The name
 "bar-invariant p-n interface" is therefore literal rather than descriptive:
-the p-n factor is not merely *a* bar-invariant choice, it is *the*
+the p-n factor is the unique
 bar-symmetrisation of the p-p factor.
 
 This also fixes where a flavour weighting can act. The colour-tube-weighted
@@ -118,10 +118,10 @@ $$
   w_{p} + w_{n} = 1,
 $$
 
-with $\delta$ the substrate flavour split of
-[flavor split substrate proposition](#prop:flavor-split-substrate). A like-flavour
-bond has no mean to tilt — averaging $f_{pp}$ with itself returns $f_{pp}$ for
-any weights summing to one — which is why the weighting is defined at the p-n
+with $\delta$ the aether flavour split of
+[flavor aether-split proposition](#prop:flavor-split-substrate). A like-flavour
+bond has no mean to tilt (averaging $f_{pp}$ with itself returns $f_{pp}$ for
+any weights summing to one), which is why the weighting is defined at the p-n
 interface and nowhere else.
 
 **The tilt is not bar-invariant.** $\delta$ is bar-mixed,
@@ -132,9 +132,9 @@ $$
   \;=\; \frac{(q-1)^{5}(q+1)^{3}(q^{2}+1)}{12\,q^{5}},
 $$
 
-nonzero for $q \neq 1$ (about $1.67 \times 10^{-5}$ at the substrate anchor).
+nonzero for $q \neq 1$ (about $1.67 \times 10^{-5}$ at the aether anchor).
 The unweighted factor above is the only one of the two that is bar-even, and
-the derivation in this proof — trace-linearity from the single Markov axiom —
+the derivation in this proof (trace-linearity from the single Markov axiom)
 yields that one. The weighted form requires $\delta$ as an additional input
 and is therefore not obtained here.
 
@@ -149,17 +149,17 @@ $$
   \;=\; -\bigl(\overline{\varepsilon} + \varepsilon\bigr)\,\frac{q^{2}-1}{q},
 $$
 
-which vanishes **iff $\overline{\varepsilon} = -\varepsilon$** — the offset must
-be bar-**odd**. (Not bar-even: symmetrising the weight is the wrong repair.)
+which vanishes **iff $\overline{\varepsilon} = -\varepsilon$**: the offset must
+be bar-**odd** (symmetrising the weight is the wrong repair).
 
 The colour weighting uses $\varepsilon = \delta/4$, and
-$\overline{\delta} = -q^{2}\delta$, so it misses bar-oddness by exactly a factor
-of $q^{2}$ and nothing else. That factor localises: in the factored form
+$\overline{\delta} = -q^{2}\delta$, so it misses bar-oddness by a factor
+of $q^{2}$ alone. That factor localises: in the factored form
 $\delta \sim \hbar_q^{2}\, h_q\, [2]_q$ of
-[flavor split substrate proposition](#prop:flavor-split-substrate), the Hecke
+[flavor aether-split proposition](#prop:flavor-split-substrate), the Hecke
 crossing $h_q$ is already bar-odd and the doublet integer $[2]_q$ is bar-even,
-so the **entire** obstruction is the $\hbar_q^{2}$ prefactor — the two quanta of
-substrate Planck action.
+so the **entire** obstruction is the $\hbar_q^{2}$ prefactor (the two quanta of
+aether Planck action).
 
 Consequently a bar-invariant colour weighting **exists**: $\varepsilon = q\,\delta\,E/4$
 is bar-odd for *any* bar-even $E$, since $\overline{q\delta} = -q\delta$. Two
@@ -170,13 +170,10 @@ by order $8 \times 10^{-6}$ in $f_{pn}$.
 **Bar-invariance is necessary but not sufficient.** It fixes the parity and
 leaves a whole bar-even function $E$ free, so it does not by itself determine
 the weighting; selecting $E$ requires re-deriving the colour weighting from the
-colour-tube geometry, and no particular $E$ is asserted here. All of the above
-is checked exactly in
-[`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py)
-(17 assertions), and the four identities that are field-theoretic rather than
-substrate-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
+colour-tube geometry, and no particular $E$ is asserted here. All seventeen algebraic relations above hold identically over $\mathbb{Q}(q)$, and the four identities that are field-theoretic rather than
+aether-specific ($\overline{z} = z - h$, the bar-symmetriser form, the bar
 defect $-(\overline{\varepsilon} + \varepsilon)h$, and the bar-even-iff-offset-bar-odd
-equivalence — hold algebraically over an arbitrary characteristic-zero field.
+equivalence) hold algebraically over an arbitrary characteristic-zero field.
 
 ### Full-trace verification at convention D (4 atoms)
 
@@ -202,10 +199,10 @@ at convention D on every word tested, at the $10^{-50}$ floor of the arithmetic.
 
 Per-atom interface census (from the canonical $3A$-strand atomic braid word):
 
-- **D**: $p \cdot \sigma_3 \cdot n$ — 1 positive (p-n).
-- **T**: $p \cdot \sigma_3 \cdot n \cdot \sigma_6^{-1} \cdot n$ — 1 positive (p-n) + 1 negative (n-n).
-- **${}^{3}$He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n$ — 2 positive (p-p, p-n).
-- **${}^{4}$He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n \cdot \sigma_9^{-1} \cdot n$ — 2 positive (p-p, p-n) + 1 negative (n-n).
+- **D**: $p \cdot \sigma_3 \cdot n$ (1 positive, p-n).
+- **T**: $p \cdot \sigma_3 \cdot n \cdot \sigma_6^{-1} \cdot n$ (1 positive p-n + 1 negative n-n).
+- **${}^{3}$He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n$ (2 positive, p-p and p-n).
+- **${}^{4}$He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n \cdot \sigma_9^{-1} \cdot n$ (2 positive p-p, p-n + 1 negative n-n).
 
 ### Structural reading
 
@@ -219,8 +216,8 @@ boundary contribution** to the canonical atomic braid:
   \sigma - h \cdot \mathbf{1}$).
 
 The crossing-sign / nucleon-flavor pairing is encoded in
-$\bowtie_K$ via $p_+(K)$ and $p_-(K)$ counts — these are determined
-structurally by the canonical-braid construction, not phenomenologically
+$\bowtie_K$ via $p_+(K)$ and $p_-(K)$ counts: these are determined
+structurally by the canonical-braid construction rather than phenomenologically
 fit.
 
 This locks 's interface-knot factorisation as
@@ -232,9 +229,9 @@ at the $\mathrm{tr}_M$ level.
 ### Constit-side companion identity (conjectural)
 
 The factorisation $(\star)$ isolates the **interface** contribution
-to the $\mathrm{tr}_M$ ratio.  The complementary **constit** factor —
-$\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}})$ at varying $Z$ — admits its own
-clean categorical form at the substrate point:
+to the $\mathrm{tr}_M$ ratio.  The complementary **constit** factor
+($\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}})$ at varying $Z$) admits its own
+clean categorical form at the aether point:
 $$
   \frac{\mathrm{tr}_M\!\bigl(\beta_{(Z+1, N)}^{\mathrm{constit}}\bigr)}
        {\mathrm{tr}_M\!\bigl(\beta_{(Z, N)}^{\mathrm{constit}}\bigr)}

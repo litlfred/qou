@@ -50,4 +50,24 @@ namespace QOU.Information.DispersionSuppressionScale
 def dispersion_suppression_scale (fractionalVariation : ℝ → ℝ) (E_QG : ℝ) : Prop :=
   ∀ E : ℝ, 0 < E → fractionalVariation E ≤ E / E_QG
 
+/-- **Class-axiomatised dispersion-suppression conjecture (`conj:dispersion-suppression-scale`, §3b-cond).**
+    Asserts a quantum-gravity suppression scale `E_QG ≥ E_planck > 0` bounding
+    the photon group-velocity fractional variation. -/
+class DispersionSuppressionConjecture where
+  fractionalVariation : ℝ → ℝ
+  E_QG : ℝ
+  E_planck : ℝ
+  planck_pos : 0 < E_planck
+  planck_le_qg : E_planck ≤ E_QG
+  suppressed : dispersion_suppression_scale fractionalVariation E_QG
+
+/-- **Conditional theorem (Planck-scale velocity-variation bound).** Under
+    `[DispersionSuppressionConjecture]`, `fractionalVariation E ≤ E / E_planck`
+    at every positive photon energy `E > 0`. -/
+theorem dispersion_bounded_by_planck [c : DispersionSuppressionConjecture]
+    {E : ℝ} (hE : 0 < E) :
+    c.fractionalVariation E ≤ E / c.E_planck :=
+  le_trans (c.suppressed E hE)
+    (div_le_div_of_nonneg_left (le_of_lt hE) c.planck_pos c.planck_le_qg)
+
 end QOU.Information.DispersionSuppressionScale

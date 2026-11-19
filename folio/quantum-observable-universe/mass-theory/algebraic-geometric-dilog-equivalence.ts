@@ -29,4 +29,21 @@ export default conjecture({
     "algebraic-geometric",
     "open-problem",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witnesses: computations/q-pochhammer-seed.witness.json, computations/snappy-cusp-seeding.witness.json (snappy_cusp_seeding.py).",
+    },
+  ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/q_pochhammer_seed.py",
+    witness: [
+      "computations/q-pochhammer-seed.witness.json",
+      "computations/snappy-cusp-seeding.witness.json",
+      "computations/qbeta/qbeta-c3-muon-anchor-codata-edition-attribution.witness.json",
+      "computations/qbeta/qbeta-c3-geometric-channel-q0star.witness.json",
+    ],
+    status: "verified",
+  },
 });

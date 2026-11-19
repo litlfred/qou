@@ -12,4 +12,10 @@ export default remark({
     "fundamental-constants",
   ],
   uses: ["def:boltzmann-constant"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/snappy_borromean_volume.py",
+    witness: "computations/snappy-borromean-volume.witness.json",
+    status: "verified",
+  },
 });

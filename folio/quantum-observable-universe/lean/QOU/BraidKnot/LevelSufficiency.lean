@@ -115,8 +115,8 @@ def LevelSufficiency
     (h_unfold : ConfMorphism P P')
     (h_cover : kMax P q ≤ P.coarseStrands)
     [hi : LevelSufficient P P' q h_unfold h_cover] :
-    markovTrace P q = markovTrace P' q :=
-  hi.trace_eq
+    markovTrace P q = markovTrace P' q := by
+  refine hi.trace_eq
 
 /-- **Default-coarse corollary.** The Markov trace at the coarsest
     level satisfying `k_max ≤ n` is exact; deeper unfolding

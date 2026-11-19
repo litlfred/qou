@@ -38,21 +38,26 @@ $n = 3$ the splitting is
 $\mathbb{C}[S_3] \cong \mathbb{C} \oplus \mathbb{C} \oplus M_2(\mathbb{C})$,
 of total dimension six; the deformation keeps this shape.
 
-The photon stands apart. It is not a knot but a blend of the four
-simplest operations,
+The photon stands apart: rather than a single knot, it is a blend of four
+elementary braid operations,
 
 $$
-  \gamma = 1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\,\sigma_0\sigma_1,
+  \gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\,\sigma_0\sigma_1^{-1},
 $$
 
-the identity together with the elementary crossings $\sigma_0$,
-$\sigma_1$ and their product. This is what lets light build matter:
-when two photons meet, their terms multiply out under the quadratic
-relation and reach every operator of a six-element basis of
-$H_3(q)$ ([pair production](#prop:gamma-gamma-generates-particles)).
+the identity together with the single crossings $\sigma_0$,
+$\sigma_1$ and the alternating over–under step $\sigma_0\sigma_1^{-1}$.
+This is what lets light build matter: when two photons meet, their
+terms multiply out under the quadratic Hecke relation to span the
+six-dimensional operator basis of $H_3(q)$
+([pair production](#prop:gamma-gamma-generates-particles)), while two
+pure over–under modes with conjugate Hecke weights $+qh$ and
+$-q^{-1}h$ ($h = q - q^{-1}$) factor the three-strand Borromean
+nucleon braid directly,
+$\bigl(\mathbf{1} + qh\,\sigma_0\sigma_1^{-1}\bigr)\bigl(\mathbf{1} - q^{-1}h\,\sigma_0\sigma_1^{-1}\bigr) = (\sigma_0\sigma_1^{-1})^3$.
 The embeddability bound on the genus-four surface keeps the operator
-content at exactly that six-dimensional algebra, so the list of
-elementary interactions is finite.
+content at that six-dimensional algebra, so the list of elementary
+interactions is finite.
 
 One object recurs at the framework's hardest edges: an obstruction
 class, the precise measure of when local data fails to extend

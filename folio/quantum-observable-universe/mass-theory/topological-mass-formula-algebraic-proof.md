@@ -22,5 +22,5 @@ contain an absolute value and are themselves archimedean.
 The identification of $\Phi_1(\beta)$ with the hyperbolic volume
 $\mathrm{Vol}(K)$ is not proved here. It is conditional on the volume
 conjecture and is recorded separately in
-[topological-mass-formula proposition](#prop:topological-mass-formula).
+[archimedean topological mass formula](#prop:topological-mass-formula).
 $\square$

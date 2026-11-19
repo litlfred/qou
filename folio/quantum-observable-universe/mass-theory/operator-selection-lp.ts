@@ -17,7 +17,10 @@ export default proposition({
   computation: {
     engine: "python",
     script: "computations/operator_selection_lp_symbolic_qq.py",
-    witness: "computations/operator-selection-lp-symbolic-qq.witness.json",
+    witness: [
+      "computations/operator-selection-lp-symbolic-qq.witness.json",
+      "computations/m-p-substrate-identity-50dps.witness.json",
+    ],
     status: "verified",
   },
   authorNotes: [

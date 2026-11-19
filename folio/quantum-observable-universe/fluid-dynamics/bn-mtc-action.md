@@ -1,4 +1,4 @@
-Let $\mathbf{C}_{\mathrm{any}}(N)$ define the exact observable modular tensor category detailed in [def:observable-mtc](#def:observable-mtc), functioning specifically at level $N \geq 3$. Let $\mathbf{V}$ specify any definitively non-trivial simple object. Evaluating across every $n \geq 2$, the embedded categorical braiding directly generates a functional representation
+Let $\mathbf{C}_{\mathrm{any}}(N)$ be the [observable modular tensor category](#def:observable-mtc) at level $N \geq 3$, and let $\mathbf{V}$ be a non-trivial simple object. For every $n \geq 2$, the categorical braiding generates a representation
 
 $$
   \rho_n \colon B_n  \longrightarrow
@@ -10,4 +10,4 @@ $$
    \otimes\, \mathrm{id}_{\mathbf{V}^{\otimes (n - i - 1)}},
 $$
 
-governing the Artin braid group $B_n$ (see [def:braid-group](#def:braid-group)) mapped onto the tensor power of $\mathbf{V}$. This representation does not factor through the symmetric-group quotient $B_n \twoheadrightarrow S_n$.
+of the [Artin braid group](#def:braid-group) $B_n$ on the tensor power $\mathbf{V}^{\otimes n}$. This representation does not factor through the symmetric-group quotient $B_n \twoheadrightarrow S_n$.

@@ -1,4 +1,4 @@
-The table records, for each braid word (the **Operation** column), its Hecke normal form and the scalar obtained by evaluating that normal form at the substrate modulus $q_0$ — the **net$(q_0)$** column. The final column gives the physical reading of the resulting knot/link.
+The table records, for each braid word (the **Operation** column), its Hecke normal form and the scalar obtained by evaluating that normal form at the aether parameter $q_0$ — the **net$(q_0)$** column. The final column gives the physical reading of the resulting knot/link.
 
 | Operation | Normal form | net$(q_0)$ | Physical interpretation |
 |-----------|------------|:----------:|------------------------|

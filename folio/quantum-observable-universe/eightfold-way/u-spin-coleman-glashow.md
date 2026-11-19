@@ -22,7 +22,7 @@ a theorem: the combination vanishes for
 *every* choice of the six first-order parameters, over any commutative ring, so two arbitrarily different breaking patterns
 give the same answer.
 
-## Why it vanishes
+## Vanishing under U-spin symmetry
 
 Two standard premises, and both are needed.  First, isospin is exact in the
 strong sector, so the strong mass depends only on the isospin multiplet ---
@@ -61,7 +61,7 @@ distinguish among the mechanisms satisfying both, and the framework has offered
 no reason to doubt either premise.  **Reproducing Coleman--Glashow would
 therefore be no evidence for this framework, or for any other.**
 
-## What remains testable
+## Residual second-order testability
 
 The residual, as with the other two.  At $\approx 0.8\%$ it is the *tightest*
 of the three --- against $\approx 6\%$ for Gell-Mann--Okubo on the pseudoscalar

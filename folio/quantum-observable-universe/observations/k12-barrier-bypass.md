@@ -21,7 +21,7 @@ At $n = 12$, the partition count exceeds memory budgets for exact-rational semin
 Both higher-magic conjectures are structural statements about combinatorial objects. Verification at large $n$ is a finite-data check rather than a matrix computation:
 
 1. **Saturated-shell content sum.** For each $n \in \mathfrak{M}$, the existence of a self-conjugate partition $\lambda \vdash n$ with $c(\lambda) = 0$ is a finite combinatorial statement verifiable in $O(p(n))$ partition operations.
-2. **LR-rigidity at double-magic.** For each pair $(Z, N) \in \mathfrak{M} \times \mathfrak{M}$, the existence of a unique self-conjugate $\nu_{ZN} \vdash Z + N$ produced by LR fusion of self-conjugate $\lambda_Z, \mu_N$ is a finite LR-coefficient computation, not a matrix evaluation.
+2. **LR-rigidity at double-magic.** For each pair $(Z, N) \in \mathfrak{M} \times \mathfrak{M}$, the existence of a unique self-conjugate $\nu_{ZN} \vdash Z + N$ produced by LR fusion of self-conjugate $\lambda_Z, \mu_N$ is a finite LR-coefficient computation rather than a matrix evaluation.
 
 Both check at $n = 50, 82, 126$ on present hardware in seconds. The numerical prediction exists. What remains conjectural is the structural identification of these combinatorial objects with the categorical mass support.
 

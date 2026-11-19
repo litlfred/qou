@@ -26,4 +26,4 @@ $$
 The $e_\lambda$ are linearly independent, so $\#(\sigma_{\mathrm{shell}}) = \sigma_{\mathrm{shell}}$ if and only if $x_\lambda = x_{\lambda^*}$ for every $\lambda$. $\square$
 
 **Relation to existing propositions.**
-This result refines [mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price) (which gives $y_\lambda$ per partition) by characterising when the shell operator's coefficients are symmetric under transposition. Whether $\sigma_{\mathrm{shell}}$ is in fact $\#$-invariant is not settled here. It complements [skein-crossing-asymmetry](#prop:skein-crossing-asymmetry) (which encodes the parity-violation mechanism at level 3).
+This result refines [Frobenius shadow-price identity](#prop:mass-coefficient-shadow-price) (which gives $y_\lambda$ per partition) by characterising when the shell operator's coefficients are symmetric under transposition. Whether $\sigma_{\mathrm{shell}}$ is in fact $\#$-invariant is not settled here. It complements [crossing asymmetry and Coulomb shift](#prop:skein-crossing-asymmetry) (which encodes the parity-violation mechanism at level 3).

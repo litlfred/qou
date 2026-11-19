@@ -17,7 +17,7 @@ See [Table 3](#tbl:knot-particle-dictionary-table3-data).
 
 **Table 4: Quark sector** (on the exceptional divisor).
 
-Each quark is an **unknot** ($0_1$) within the Borromean braid $\mathcal{B}_3$. Up vs down flavour is encoded by crossing orientation ($\sigma$ vs $\sigma^{-1}$), not knot type. The table below shows which lepton's torus knot each quark descends from on the exceptional divisor. This is a descent relationship, not the quark's own knot type:
+Each quark is an **unknot** ($0_1$) within the Borromean braid $\mathcal{B}_3$. Up vs down flavour is encoded by crossing orientation ($\sigma$ vs $\sigma^{-1}$) rather than knot type. The table below shows which lepton's torus knot each quark descends from on the exceptional divisor. This is a descent relationship rather than the quark's own knot type:
 
 See [Table 4](#tbl:knot-particle-dictionary-table4-data).
 

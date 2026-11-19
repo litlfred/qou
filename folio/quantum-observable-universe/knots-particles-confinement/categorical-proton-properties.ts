@@ -10,7 +10,15 @@ export default remark({
   computation: {
     engine: "python",
     script: "computations/codata_masses.py",
-    witness: "computations/codata-masses.witness.json",
+    witness: [
+      "computations/codata-masses.witness.json",
+      "computations/universal-ilp.witness.json",
+      "computations/qbeta/qbeta-delta-net-four-values.witness.json",
+      "computations/qbeta/integer-lp-gluon-convention-d.witness.json",
+      "computations/probes/photon_electron/photon-electron.witness.json",
+      "computations/atomic-chirality-residue.witness.json",
+      "computations/qbeta/qbeta-convention-d-c3-and-tail-derivation.witness.json",
+    ],
     status: "verified",
   },
   authorNotes: [
@@ -42,6 +50,7 @@ export default remark({
         "`pyhecke.gram` exports and what `computations/universal-ilp.py` " +
         "consumes through `hecke_core`): `tr_M = +0.544370`, and every " +
         "intermediate step of the typed build is stable too (`B_3` +0.998562, " +
+        /* <!-- literal-source: intermediate step value from qou-jqjx scratch audit comparing retired z^3 vs live convention D --> */
         "then +0.605510, +0.279195, +0.544370). Nothing is ever negative, so " +
         "there is no instability for a gluon to repair.",
     },

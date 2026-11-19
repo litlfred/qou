@@ -15,7 +15,7 @@ The base-case $+1$ originates from the **single mixed (p, n)
 interface** in pppnnn ordering, contributing
 $\alpha((\sigma+\sigma^{-1})/2) = 1$ from the compound-shift theorem.
 This matches
-[alpha-shift-torus-knot proposition](#prop:alpha-shift-torus-knot)'s
+[torus-knot shift-exponent proposition](#prop:alpha-shift-torus-knot)'s
 simplest interface case $\alpha = 1$ for the Hecke-symmetric
 average. $\square$
 
@@ -37,30 +37,9 @@ combination $18 + 21 + 1 = 40$ are verified by direct symbolic
 Hoefsmit pole-order analysis:
 
 - **Proton ($A = 1$, $H_3$):**
-  the canonical formalism
-  (witness:
-  [`per-irrep-pole-proton-h3.witness.json`](../../../computations/per-irrep-pole-proton-h3.witness.json))
-  computes $\chi^\lambda_q(\mathcal{B}_p)$ for each $\lambda \vdash 3$
-  via the Hoefsmit seminormal, sums
-  $\mathrm{tr}_M(\mathcal{B}_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\mathcal{B}_p)$
-  with the canonical Wenzl Jones-Markov weights, substitutes $q = u^2$
-  (per the $D(u)$ convention from
-  the canonical formalism)
-  and reports $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\mathcal{B}_p)) = 19$,
-  matching $18 \cdot 1 + 21 \cdot 0 + 1$ exactly.
+  Computing $\chi^\lambda_q(\mathcal{B}_p)$ for each $\lambda \vdash 3$ via the Hoefsmit seminormal representation, summing $\mathrm{tr}_M(\mathcal{B}_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\mathcal{B}_p)$ with the Wenzl Jones–Markov weights, and substituting $q = u^2$ yields $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\mathcal{B}_p)) = 19$, matching $18 \cdot 1 + 21 \cdot 0 + 1$ exactly.
 - **Deuteron ($A = 2$, $H_6$):**
-  the canonical formalism
-  (witness:
-  [`per-irrep-pole-deuteron-h6.witness.json`](../../../computations/per-irrep-pole-deuteron-h6.witness.json))
-  uses three optimisations to make the symbolic $H_6$ analysis
-  tractable: (a) cached symbolic $y_\lambda(q)$ from
-  `y-lambda-wenzl-bridge-symbolic-witness.json` (skips the >5 min
-  `solve_y_lambda(6)` bottleneck), (b) cached symbolic
-  $\chi^\lambda_q(\beta_D)$ in
-  [`chi-deuteron-h6.witness.json`](../../../computations/chi-deuteron-h6.witness.json)
-  (first-run ~131 s, then <1 s), (c) per-term
-  $\mathrm{ord}_{u=0}(y_\lambda \cdot \chi^\lambda)$ analysis. The
-  per-term maximum is **uniquely $40$ at $\lambda = (4, 1, 1)$**
+  Evaluating the exact symbolic Wenzl weights $y_\lambda(q)$ and Hoefsmit characters $\chi^\lambda_q(\beta_D)$ across all eleven partitions $\lambda \vdash 6$ and extracting $\mathrm{ord}_{u=0}(y_\lambda \cdot \chi^\lambda)$ term by term shows that the per-term pole order attains its **unique maximum $40$ at $\lambda = (4, 1, 1)$**
   (next-highest $39$ at $(4, 2)$); since the maximum is unique,
   lower-order terms cannot cancel it, so
   $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_D)) = 40 = 18 \cdot 1 + 21 \cdot 1 + 1$

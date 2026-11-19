@@ -5,5 +5,3 @@ $$
 $$
 
 It satisfies Frobenius stability $G x[\gamma] \ge 0$ at every step of the LP reduction. A separate proposition establishes [uniqueness of the categorical proton](#prop:categorical-proton-unique) up to braid isotopy.
-
-**Archimedean specialisation.** The underlying categorical identities hold over an abstract coefficient ring. Their archimedean realisation requires real- or complex-analytic constructs. What follows invokes these constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. What follows therefore sits on the archimedean side of the substrate wall.

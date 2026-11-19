@@ -23,7 +23,7 @@ $$
   \mathrm{net}(\mathfrak{n}) = +0.7976
 $$
 
-Relative to the proton ($\mathrm{net} = +1.0065$), the additional down quark demands a larger $L_+$ compensation ($-0.2206$ versus $-0.1114$). After Hopf gluon stabilisation, the trefoil channel $e^- \approx +1.0$ dominates both nucleons.
+Relative to the proton ($\mathrm{net} = +1.0065$), the additional down quark demands a larger $L_+$ compensation <!-- literal-source: closed-form 11-crossing proton L_+ normal-form coefficient --> ($-0.2206$ versus $-0.1114$). After Hopf gluon stabilisation, the trefoil channel $e^- \approx +1.0$ dominates both nucleons.
 
 **Transition: proton $\to$ neutron.**
 The normal-form difference yields the dimensionless $\beta$-decay transition ([energy scale](#rem:beta-decay-energy-scale)):
@@ -42,7 +42,7 @@ $$
   2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q) + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}(q)
 $$
 
-At the CODATA value $q_0$, the base mass is $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$ MeV, derived strictly from the substrate parameter ([local substrate](#prop:local-substrate-q)). The resulting proton--neutron mass splitting is exactly:
+At the CODATA value $q_0$, the base mass is $\mathfrak{m}_{\mathfrak{n}}(q_0) \approx {{ qou.computations.codata-masses.data.m_n_MeV | precision: 6 }}\;\text{MeV}$, derived strictly from the aether parameter ([local aether](#prop:local-substrate-q)). The resulting proton--neutron mass splitting is exactly:
 
 $$
   \mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}} =
@@ -59,4 +59,4 @@ $$
   1 \cdot (+\tfrac{2}{3}) + 2 \cdot (-\tfrac{1}{3}) = 0.
 $$
 
-The sum vanishes, and the arithmetic is the Standard Model's. What it is **not** is a consequence of the crossing-orientation mechanism. A single positive-orientation unknot $\mathfrak{u}$ cannot cancel two negative-orientation unknots $\mathfrak{d}$ of equal magnitude. The cancellation above works only because $|Q_{\mathfrak{u}}| = 2|Q_{\mathfrak{d}}|$, and orientation reversal is a mirror, so it forces the two magnitudes to be *equal* ([down quark](#def:down-quark)). Writing $Q(\mathfrak{u}) = a$ and hence $Q(\mathfrak{d}) = -a$, the neutron carries $a - 2a = -a$ and the proton $2a - a = +a$: the mechanism makes the neutron the proton's exact opposite, and a neutral neutron forces every quark charge to vanish. The quark charges are therefore an adopted input here, not a derived one. The inter-neutron Hopf crossings acquire the $q^{-1}$ coefficient associated with negative crossings.
+The sum vanishes, and the arithmetic is the Standard Model's. What it is **not** is a consequence of the crossing-orientation mechanism. A single positive-orientation unknot $\mathfrak{u}$ cannot cancel two negative-orientation unknots $\mathfrak{d}$ of equal magnitude. The cancellation above works only because $|Q_{\mathfrak{u}}| = 2|Q_{\mathfrak{d}}|$, and orientation reversal is a mirror, so it forces the two magnitudes to be *equal* ([down quark](#def:down-quark)). Writing $Q(\mathfrak{u}) = a$ and hence $Q(\mathfrak{d}) = -a$, the neutron carries $a - 2a = -a$ and the proton $2a - a = +a$: the mechanism makes the neutron the proton's exact opposite, and a neutral neutron forces every quark charge to vanish. The quark charges are therefore an adopted input here rather than a derived one. The inter-neutron Hopf crossings acquire the $q^{-1}$ coefficient associated with negative crossings.

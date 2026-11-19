@@ -18,7 +18,7 @@ $$
   q \;=\; \delta_{\rm silver} \;=\; 1 + \sqrt{2}.
 $$
 
-At this $q$, the LP optimum is a face of the feasible polytope, not a vertex. Any feasible $x$ satisfying $x_1 + x_2 = n_{\rm target}$ achieves the same primal cost $t_1 x_1 + t_2 x_2 = t_1 \cdot n_{\rm target}$. The dual shadow prices $y_i^*$ become non-unique (multiple optimal $(y_0^*, y^*)$ values), strict complementarity fails, and the active set $\mathcal{A} = \{i : y_i^* > 0\}$ is empty. This is the SDP-degeneracy signature: rapid loss of conditioning, ambiguous identification of binding constraints, and multiple optimal solutions returned.
+At this $q$, the LP optimum is a face of the feasible polytope rather than a vertex. Any feasible $x$ satisfying $x_1 + x_2 = n_{\rm target}$ achieves the same primal cost $t_1 x_1 + t_2 x_2 = t_1 \cdot n_{\rm target}$. The dual shadow prices $y_i^*$ become non-unique (multiple optimal $(y_0^*, y^*)$ values), strict complementarity fails, and the active set $\mathcal{A} = \{i : y_i^* > 0\}$ is empty. This is the SDP-degeneracy signature: rapid loss of conditioning, ambiguous identification of binding constraints, and multiple optimal solutions returned.
 
 **Empirical verification.** The $n=2$ LP active-set sweep observed this signature. Below silver the active set was $\{0\}$ (row 1 tight), AT silver it was $\emptyset$ (degenerate), above silver it was $\{1\}$ (row 2 tight). The degeneracy at silver is the first non-null result in a series of prior canonical probes that all returned smooth observables.
 

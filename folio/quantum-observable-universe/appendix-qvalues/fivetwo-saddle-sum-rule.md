@@ -22,7 +22,7 @@ $$
 
 This identity is the *$5_2$ saddle sum rule*.
 
-## What the statement says
+## Statement of the symmetric sum rule
 
 The left-hand side is the dilogarithm potential evaluated at all three
 tetrahedron shapes of the $5_2$ complement at once — the geometric shape $a$,
@@ -79,7 +79,7 @@ $y^{2} = (1-y)^{3}$, the cubic root data, and the logarithm evaluations. Existen
 intermediate value theorem, so the closed form applies to the
 **actual** roots of $X^{3} - 2X^{2} + 3X - 1$.
 
-## Why the shape field is $\mathbb{Q}(\sqrt{-23})$ and not something smaller
+## Minimality of the quadratic resolvent $\mathbb{Q}(\sqrt{-23})$
 
 The cubic $X^3 - 2X^2 + 3X - 1$ is irreducible over $\mathbb{Q}$ with
 discriminant $-23$, so its splitting field contains the imaginary quadratic
@@ -89,7 +89,7 @@ regular. That extra arithmetic is exactly why the $5_2$ analysis does not reduce
 to the $4_1$ argument: the $4_1$ squeeze rests on positivity of
 $\langle 4_1\rangle_N$, which $\langle 5_2\rangle_N$ does not have.
 
-## What this does and does not establish
+## Established sum rule versus open individual branches
 
 It establishes an exact, parameter-free relation among the three shapes of a
 chiral hyperbolic knot — the analogue, for $5_2$, of the closures available for

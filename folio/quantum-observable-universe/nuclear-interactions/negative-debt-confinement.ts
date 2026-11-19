@@ -16,4 +16,10 @@ export default remark({
     "status-remark",
   ],
   uses: ["rem:beta-decay-energy-scale"],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/confinement-operator-selection.witness.json",
+    status: "verified",
+  },
 });

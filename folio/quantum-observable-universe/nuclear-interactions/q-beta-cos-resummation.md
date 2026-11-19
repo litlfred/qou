@@ -24,6 +24,6 @@ $$
 
 Its evaluation under the proton calibration and the comparison with CODATA are recorded in [the comparison remark](#rem:q-beta-cos-resummation-comparison).
 
-**Status of the structural justification under D.** The original argument for the cosine was Markov cyclicity: the bar involution $q \mapsto q^{-1}$ was taken to send $\alpha \mapsto -\alpha$, forcing an even resummation. That step used the bar-invariance $z(q^{-1}) = z(q)$, which holds for convention C and **fails** for $z_D$, since $z_D(q^{-1}) = 1/(q^3+q) \neq z_D(q)$. Under D the bar involution therefore does not map $\alpha$ to $-\alpha$, and evenness of the resummation is no longer derived; the cosine form is retained here as the definition being tested, not as a consequence.
+**Bar-involution parity under convention D.** Expressing the resummation as an even function $\cos\alpha$ originally rested on bar-invariance $z(q^{-1}) = z(q)$, which sends $\alpha \mapsto -\alpha$ under $q \mapsto q^{-1}$. That symmetry holds for convention C and **fails** for $z_D$, since $z_D(q^{-1}) = 1/(q^3+q) \neq z_D(q)$. Under convention D the bar involution therefore does not map $\alpha$ to $-\alpha$, and evenness of the resummation is no longer derived; the cosine form is stated here as the ansatz under test rather than as a symmetry consequence.
 
 The resummation lives in the real-$q$ (archimedean) regime of the framework's dilogarithm context-sorting, fixed once by the [$\Phi_q$/AJ machinery identification](#prop:phi-q-aj-machinery-identification).

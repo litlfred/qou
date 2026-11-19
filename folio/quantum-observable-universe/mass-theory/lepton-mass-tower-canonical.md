@@ -13,7 +13,7 @@ $$
 
 The atomic graded expansion evaluates nuclear mass by adding constituent nucleon masses to binding-energy corrections. Leptons lack nucleon constituents. The isolated lepton mass requires a separate canonical formula.
 
-The operative Skein formula evaluates the $m_\mu / m_e$ ratio using the Kashaev limit $\mathrm{Vol}(4_1)/\hbar_q^2$. The direct operator-level Markov-trace ratio yields $\sim 0.27$, falsifying the Skein formula as a direct pre-limit identity. The canonical $\mathcal{F}_\ell(q)$ must supply the missing magnitude at the finite substrate $q_0$.
+The operative Skein formula evaluates the $m_\mu / m_e$ ratio using the Kashaev limit $\mathrm{Vol}(4_1)/\hbar_q^2$. The direct operator-level Markov-trace ratio yields $\sim 0.27$, falsifying the Skein formula as a direct pre-limit identity. The canonical $\mathcal{F}_\ell(q)$ must supply the missing magnitude at the finite aether $q_0$.
 
 **Two-constraint obstruction.**
 Any working $\mathcal{F}_\ell(q)$ must satisfy two constraints simultaneously. 

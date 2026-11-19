@@ -19,6 +19,10 @@ export default remark({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
       kind: "refined-framing",
       date: "2026-08-09",
       body:
@@ -32,4 +36,10 @@ export default remark({
         "form without naming which of the two pairings it means.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/qbeta/gram_convention_d_singularity_structural_probe.py",
+    witness: "computations/qbeta/gram-convention-d-singularity-structural.witness.json",
+    status: "verified",
+  },
 });

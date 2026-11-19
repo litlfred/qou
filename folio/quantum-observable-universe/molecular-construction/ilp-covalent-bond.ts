@@ -23,7 +23,8 @@ export default proposition({
     engine: "python",
     script: "computations/probes/h2_gg_electron/h2_gg_electron_probe.py",
     witness: [
-      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json"
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+      "computations/probes/knot-operator-transition-convention-robustness.witness.json",
     ],
     status: "experimental",
   },

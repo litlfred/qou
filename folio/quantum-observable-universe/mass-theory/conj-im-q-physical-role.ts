@@ -7,9 +7,17 @@ export default conjecture({
     validation: "not_checked",
   },
   title:
-    "Physical role of $\\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation).",
+    "Physical role of $\\mathrm{Im}(q)$: an aether moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation).",
   uses: ["rem:im-q-vs-p-skew"],
   authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py, per-observable-100x-status.witness.json.",
+    },
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
     {
       kind: "note",
       body: "An earlier version of this section stated that the coupling and phase-space integral were not supplied anywhere in the corpus; they are, in the hadron half-life rate formula.",
@@ -95,4 +103,14 @@ export default conjecture({
     "open-conjecture",
     "phase-3",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/per_observable_100x_status.py",
+    witness: [
+      "computations/per-observable-100x-status.witness.json",
+      "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
+      "computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

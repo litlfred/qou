@@ -18,7 +18,7 @@ $$
 $$
 
 *Its kernel $D_q^2(\lambda) = 0$ is exactly the locus $c_\lambda = 0$.
-By [confinement-categorical](#prop:confinement-categorical), this
+By [categorical spectral-sequence confinement](#prop:confinement-categorical), this
 kernel is the gauge-invariant background that survives the
 GB-filtration spectral-sequence collapse — the categorical analogue
 of the gluon-condensate vacuum.*
@@ -46,7 +46,7 @@ $\Phi_4$.*
 **Relation to the mass-tower coefficient stratification.**
 
 *By
-[mass-tower-coefficient-stratification](#prop:mass-tower-coefficient-stratification),
+[Wedderburn mass-tower stratification](#prop:mass-tower-coefficient-stratification),
 the prefactor $\alpha_3$ in the unified formula is forced to be the
 **self-conjugate restricted weight** on $\Lambda_3$.  The chirality
 sub-stratum at depth $3$ is exactly the self-conjugate locus
@@ -60,7 +60,7 @@ with no fitting input.*
 
 **Plancherel-boundedness of the chirality sub-sum.**
 
-*[plancherel-weight-boundedness](#prop:plancherel-weight-boundedness) bounds
+*[Plancherel weight boundedness](#prop:plancherel-weight-boundedness) bounds
 the **classical** weights, $\sum_{\lambda \in \Lambda_k} w_\lambda(1) \leq 1$.
 The weights used above are $q$-deformed, and $\sum_\lambda w_\lambda(q)$
 exceeds $1$ for $n \geq 7$, so that proposition does not supply the bound
@@ -78,4 +78,4 @@ is the dominant contribution at deep curvature-rank strata.  This
 provides direct empirical access to the $D_q^2 = 0$ kernel from
 nuclear binding data, and supplies the constructive form for the
 $\lambda_{\mathrm{Wigner}}$ Bethe--Weizsäcker coefficient via
-[mass-tower-coefficient-stratification](#prop:mass-tower-coefficient-stratification).*
+[Wedderburn mass-tower stratification](#prop:mass-tower-coefficient-stratification).*

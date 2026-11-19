@@ -1,6 +1,6 @@
-> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used
+> **Superseded.** The scalar aether density $\rho_q = 1/\hbar_q^2$ used
 > below is the structurally-wrong leading-order ansatz; the operator-valued
-> form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
+> form supersedes it ([mass-endomorphism tower](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
 > graded expansion [rho k graded expansion proposition](../mass-endomorphism/rho-k-graded-expansion.md).
 

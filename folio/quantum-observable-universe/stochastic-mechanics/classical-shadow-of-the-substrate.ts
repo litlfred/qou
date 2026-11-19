@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:classical-shadow-of-the-substrate",
-  title: "The classical shadow of the substrate: what the obstruction space becomes at $q = 1$",
+  title: "The classical shadow of the aether: what the obstruction space becomes at $q = 1$",
   interprets: "def:classical-limit-functor",
   uses: [
     "def:classical-limit-functor",

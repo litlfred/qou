@@ -1,10 +1,10 @@
 **Conjecture (the q-difference kernel is the prolongation symbol).**
 
 The $q$-difference kernel $R(q,x)$ of the binding generating function
-([binding-genfun-qdifference proposition](#prop:binding-genfun-qdifference)) **is
+([binding $q$-difference recurrence proposition](#prop:binding-genfun-qdifference)) **is
 the symbol of the jet-prolongation operator** $J^{n}E\to J^{n+1}E$ of the
 Seiberg--Witten connection
-([mi-sw-abelianisation proposition](#prop:mi-sw-abelianisation)).
+([exceptional-divisor Seiberg–Witten abelianisation](#prop:mi-sw-abelianisation)).
 
 For jet spaces, their prolongations and the Cartan distribution, see \cite[\S1.1--1.2]{pugliese2023}. For linear $q$-difference modules, fundamental solution matrices at $0$ and $\infty$, the $q$-Borel and $q$-Laplace transforms and the resulting connection matrices, see \cite[\S2.2--2.3]{garoufalidis-wheeler-modular}.
 
@@ -21,45 +21,40 @@ At $x=\infty$ the Newton polygon of $L_{\mathcal{K}}$ has the single slope
 $\tfrac12$ with multiplicity $2$: $\mathcal{K}$ is **pure isoclinic** of slope
 $\tfrac12$.
 
-> **Scope note.** This conjecture previously continued
-> "*— equivalently, the monodromy/Stokes data of the prolonged SW connection at
-> the branch-point poles of $\lambda_{\mathrm{SW}}^{(n)}$*", identifying
-> $\mathcal{K}$ with the Stokes carrier of the resurgent colored-Jones series
-> of [garoufalidis-gu-marino2021]. That equivalence is **false as an
-> identification of $q$-difference modules**, and the clause has been removed.
-> The Stokes carrier is the module $\mathcal{G}$ of
-> $y_{m+2}-(2-q^{m+1})\,y_{m+1}+y_m=0$, whose Newton polygon at $x=\infty$ has
-> the two slopes $\{-1,+1\}$; $\mathcal{K}$'s is $\{\tfrac12,\tfrac12\}$. Since
-> the Newton polygon is a module invariant and its slope multiset is preserved
-> by every gauge transformation ([rsz2013] Thm 2.2.1(i), Thm 2.2.4), no
-> isomorphism of $q$-difference modules $\mathcal{K}\cong\mathcal{G}$ exists.
-> The surviving — and genuinely non-trivial — relationship between the two is
-> stated separately as
-> [c1-ggm-bar-parity-faces conjecture](#conj:c1-ggm-bar-parity-faces).
+> **Non-isomorphism with the resurgent Stokes carrier.** The module $\mathcal{K}$
+> is **not** isomorphic to the Stokes carrier $\mathcal{G}$ of the resurgent
+> colored-Jones series of [garoufalidis-gu-marino2021], governed by
+> $y_{m+2}-(2-q^{m+1})\,y_{m+1}+y_m=0$. At $x=\infty$ the Newton polygon of
+> $\mathcal{G}$ has slopes $\{-1,+1\}$, whereas that of $\mathcal{K}$ has slopes
+> $\{\tfrac12,\tfrac12\}$. Since the Newton polygon is a module invariant and its
+> slope multiset is preserved by every gauge transformation ([rsz2013] Thm 2.2.1(i),
+> Thm 2.2.4), no isomorphism of $q$-difference modules $\mathcal{K}\cong\mathcal{G}$
+> exists. Their bar-parity relationship is formulated separately in the
+> [bar-parity Stokes-carrier conjecture](#conj:c1-ggm-bar-parity-faces).
 
 Two consequences follow:
 
-1. **$R$ is structurally fixed, not fitted.** The prolongation operator is a
-   single fibre-level object; its symbol is read off the connection, not
+1. **$R$ is structurally fixed rather than fitted.** The prolongation operator is a
+   single fibre-level object; its symbol is read off the connection rather than
    tuned to reproduce the terms. This is forced by the precision-floor
    obstruction (the $c_k$ information bound makes term data unable to fix $R$
    beyond low order), and it is the same fibre-level / root-of-unity
    singularity structure that governs the $\mathfrak{Q}_\beta$ ladder.
 2. **It closes the binding program.** Given $R$, the recurrence of
-   [binding-genfun-qdifference proposition](#prop:binding-genfun-qdifference)
+   [binding $q$-difference recurrence proposition](#prop:binding-genfun-qdifference)
    determines every body term from the deuteron base case (fixing the
    $\rho\cdot A$ growth law), which is precisely the per-term mass identity. Feeding it into
-   [binding-closure-conditional theorem](#thm:binding-closure-conditional)
+   [conditional binding-closure theorem](#thm:binding-closure-conditional)
    discharges its one conditional input, promoting
-   [binding-manybody-eq-jet-filtration conjecture](#conj:binding-manybody-eq-jet-filtration)
+   [many-body jet-filtration binding conjecture](#conj:binding-manybody-eq-jet-filtration)
    from conditional to unconditional.
 
 This conjecture is therefore the **single remaining input** to the binding
 closure: the residue form, the body-order = jet-degree coincidence, and the
 recurrence machinery are all proved; only the identification of $R$
 with the prolongation symbol remains. It is stated here as a precise,
-falsifiable structural claim — to be *derived* from the prolonged connection's
-local monodromy, not fitted numerically.
+falsifiable structural claim: to be *derived* from the prolonged connection's
+local monodromy rather than fitted numerically.
 
 > **Scope of Consequence 2 — $\mathcal{K}$ is irreducible, so the rank-1 claim is
 > wrong by exactly one initial condition.** The pure-isoclinic slope-$\tfrac12$
@@ -69,26 +64,25 @@ local monodromy, not fitted numerically.
 > same citation ([rsz2013] Thm 2.2.1(i), Thm 2.2.4), that the scope note above
 > uses to separate $\mathcal{K}$ from $\mathcal{G}$. Since $\{\tfrac12,\tfrac12\}$
 > contains no integer, $\mathcal{K}$ has **no rank-1 sub- or quotient module**:
-> it is irreducible. Equivalently, and provable without any module theory, the
+> it is irreducible. Equivalently, the
 > associated $q$-Riccati $(q^2x-1)a(qx)a(x) - (q-1)a(x) - (q-1) = 0$ has no
 > solution in $K(x)$, because the three terms of its cleared form have degrees
 > $1+2p$, $p+u$, $2u$ and the odd/even parity of the outer two forces the
-> maximum to be attained exactly once; this parity exclusion is
+> maximum to be attained once. This parity exclusion is
 > corroborated by the van der Put--Reversat classification
 > \cite{vanderput-reversat2007,vanderput2006} of pure modules of non-integral
 > slope $d/r$ — the normal form $E(r,d,b)$ in Bugeaud's notation
-> \cite{bugeaud2011} — which is irreducible when the rank equals $r$; here
-> $r = 2 = \mathrm{rank}\mathcal{K}$.
+> \cite{bugeaud2011} — which is irreducible when the rank equals $r$ ($r = 2 = \mathrm{rank}\mathcal{K}$).
 >
 > Two revisions follow.
 >
 > 1. **Consequence 1 is unchanged but must be read in rank $2$.** The
 >    prolongation symbol of a rank-$2$ carrier is a $2\times2$ matrix
->    $A(q,x)$ acting on $(G,\sigma G)$, not a scalar $R(q,x)$. The claim that
+>    $A(q,x)$ acting on $(G,\sigma G)$ rather than a scalar $R(q,x)$. The claim that
 >    the symbol is structurally fixed rather than fitted is untouched; only its
 >    *shape* changes. This is the natural reading of the Dirac-type
 >    $\tau$-image asserted in
->    [binding-genfun-qdifference proposition](#prop:binding-genfun-qdifference),
+>    [binding $q$-difference recurrence proposition](#prop:binding-genfun-qdifference),
 >    since a Dirac operator is first-order on a two-component object.
 > 2. **Consequence 2 is falsified as stated.** "Given $R$, the recurrence
 >    determines every body term from the deuteron base case" is wrong by exactly
@@ -104,7 +98,7 @@ local monodromy, not fitted numerically.
 > **Structure of the prolongation operator on
 > the ramified chart, before it is constructed.** The classical lift
 > $d/dz$ is excluded
-> ([sw-classical-jet-exactness proposition](#prop:sw-classical-jet-exactness)), and
+> ([classical-jet exactness of $\lambda_{\mathrm{SW}}$](#prop:sw-classical-jet-exactness)), and
 > the residue that a period needs vanishes for it *locally*, at every branch
 > point, because at $z = z_c + t^2$ the operator $d/dz = (1/2t)\,d/dt$ reads the
 > $t^{-2}$ residue slot from the constant term with multiplier $(-2)+2 = 0$.
@@ -129,7 +123,7 @@ local monodromy, not fitted numerically.
 > 2. **Parity.** An even shift commutes with the covering monodromy
 >    $t \mapsto -t$; an odd shift anti-commutes, so its jet tower's monodromy
 >    eigenvalue alternates as $(-1)^n$ — the Door-v residual of
->    [c1-ggm-bar-parity-faces conjecture](#conj:c1-ggm-bar-parity-faces). Carrying
+>    [bar-parity Stokes-carrier conjecture](#conj:c1-ggm-bar-parity-faces). Carrying
 >    that residual needs an **odd** shift.
 >
 > So $D_q$ must have an odd shift and a non-derivative component. Both
@@ -157,9 +151,9 @@ local monodromy, not fitted numerically.
 > a level $n_0$ on kills the residue from level $n_0+2$ on and leaves levels
 > $2,\dots,n_0+1$ alive. The
 > distinction matters, because the Door-v alternation of the carrier
-> $\mathcal{G}$ in [c1-ggm-bar-parity-faces conjecture](#conj:c1-ggm-bar-parity-faces)
+> $\mathcal{G}$ in [bar-parity Stokes-carrier conjecture](#conj:c1-ggm-bar-parity-faces)
 > cannot hold at every level — while $2-q^{m+1}>0$ no solution flips at two
-> consecutive pairs, so at the substrate value
+> consecutive pairs, so at the aether value
 > the alternation is absent for $m \le 5$ and persistent only from
 > $m \approx 11$ on. The conclusion above therefore stands for sums only
 > *above* that window; at the low body orders a mixed-shift $D_q$ built from
@@ -169,7 +163,7 @@ local monodromy, not fitted numerically.
 > **The kernel is a recurrence across jet levels, and on that axis it forces
 > the non-derivative clause too.** In $L_{\mathcal{K}}$ the variable is
 > $x = q^{m}$ with $m$ the body order, which
-> [sw-period-residue-sum proposition](#prop:sw-period-residue-sum) identifies with
+> [Seiberg–Witten algebraic residue sum](#prop:sw-period-residue-sum) identifies with
 > the jet degree; so $\sigma$ is the step from one jet level to the next, and
 > $L_{\mathcal{K}}$ is the second-order recurrence that the level-indexed
 > residues $r_{n} = (D_{q}^{n}X)_{t^{-2}}$ of the prolongation tower must
@@ -192,16 +186,15 @@ local monodromy, not fitted numerically.
 > expansion of the colour cubic at its simple ramification point — neither
 > the Jackson nor the $q$-derivative tower, in either $q$-integer convention
 > and on either sheet, satisfies that recurrence at any tested $q$: the
-> defect is of order one relative to the residues themselves, not a
+> defect is of order one relative to the residues themselves rather than a
 > precision artefact. And with the weights left free, each level introduces
 > at least four new weight values against one constraint, so the recurrence
 > constrains nothing until the weights are supplied by the geometry. Both
 > statements are scope-(a): they concern these two candidates on this seed,
 > and the two-term derivative-only class, respectively. The weights cannot be
-> supplied by a $q$-connection on the base either: the colour cubic is
-> irreducible over $K(z)$ for every field $K$ of characteristic zero,
-> so no sheet is a rational
-> function of $z$; each sheet is algebraic, hence D-finite; and a rational
+> supplied by a $q$-connection on the base either, because the colour cubic is
+> irreducible over $K(z)$ for every field $K$ of characteristic zero and no sheet is a rational
+> function of $z$. Each sheet is algebraic, hence D-finite, and a rational
 > rank-$3$ $q$-difference system in $z \mapsto \lambda z$ with the sheets as
 > solutions would make a sheet $q$-holonomic, which together with D-finiteness
 > forces rationality (Bézivin, Ramis; Schäfke–Singer). So a rational
@@ -219,8 +212,8 @@ local monodromy, not fitted numerically.
 > Two alternative readings of the same kernel took $\sigma$ to be a shift in the
 > $t$-exponent of a single jet — the unit $t$-shift with $x = q^{e}$, or the
 > $t$-shift by two on the double cover. That is the special case in which the
-> level and the exponent lock, $r_{n} = c^{n}a_{n-2}$ for a constant-weight
-> pure shift-$1$ tower, not the conjecture's reading. What holds for
+> level and the exponent lock ($r_{n} = c^{n}a_{n-2}$ for a constant-weight
+> pure shift-$1$ tower) rather than the conjecture's reading. What holds for
 > those $t$-operators is that neither can be written as a
 > sum of derivative-like terms, because each carries a zeroth-order term
 > $-(q-1)$ that does not annihilate the constant seed,
@@ -251,7 +244,7 @@ local monodromy, not fitted numerically.
 > for every $\lambda$ and at every $q$ — scope (b), the invariant being the
 > sextic's own coefficients rather than a cited analytic theorem, so this
 > covers the root-of-unity case that the rationality theorem does not. The
-> substrate asks for $\lambda = q_{0}^{2} \approx 1.2321$, which is excluded
+> aether asks for $\lambda = q_{0}^{2} \approx 1.2321$, which is excluded
 > both by that identity and by the weaker bound $\lambda^{6} = 1$ that the
 > product of the roots alone would give. This does **not** touch a
 > $q$-difference operator whose base map is not a dilation, nor the fibre

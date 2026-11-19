@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:z-eq-n-rho-correction",
   title:
-    "Z=N substrate-q correction to the Kashaev law",
+    "Z=N aether-q correction to the Kashaev law",
   lean: {
     ref: "qou:QOU.BraidKnot.ZeqNRhoCorrection",
     validation: "not_checked",

@@ -12,7 +12,7 @@ $$
 
 with $b = \sqrt{q^4+q^2+1}/(q^2+1)$ (Hoefsmit $V_{(2,1)}$ off-diagonal
 coupling). The conjecture is that these closed forms
-are **derivable outputs** of four algebraic reduction rules, not
+are **derivable outputs** of four algebraic reduction rules rather than
 phenomenological identifications.
 
 ## The four reduction rules
@@ -40,7 +40,7 @@ The earlier framing (alternating Kashiwara $\times$ Jones at even/odd $k$)
 captured the *empirical pattern* but underspecified the *derivation*.
 The four-rule reframing shifts the conjectural content from
 "the alternation happens" to **"the four reduction rules jointly
-determine the unique normal form"** — which is checkable rule by rule:
+determine the unique normal form"** — which is checkable rule by rule.
 
 - Rules 1, 3 are already discharged for $V_{(2,1)}$ at $H_3(q)$ by the
   Hoefsmit matrix theorems.
@@ -52,16 +52,17 @@ determine the unique normal form"** — which is checkable rule by rule:
 Separating each rule as an independent algebraic condition isolates the $c_k$
 extraction into modular verification steps rather than a single monolithic conjecture.
 
-## What remains open
+## Unproved algebraic steps
 
-- Derive the matrix identities underlying the Hoefsmit Yang–Baxter cubic and Hecke quadratic directly within the reduction pipeline.
+Four algebraic steps remain unproved.
+
+- Derive the matrix identities underlying the Hoefsmit Yang–Baxter cubic and Hecke quadratic directly within the reduction algebra.
 - Construct the $H_3(q)$ $q$-Young symmetrizers explicitly from the Iwahori–Hecke idempotent table.
-- Establish the GB/jet normal-form procedure for $k = 1, 2$
-  (where the reduction is short enough to discharge by
-  case-analysis on the typed-$\mathbf{B}_3$ word structure).
-- Extend the extraction to $k \geq 5$ — the simple alternating
-  Kashiwara $\times$ Jones pattern breaks at $c_5, c_6$, an open point recorded
-  in [q beta categorical precision ladder proposition](#prop:q-beta-categorical-precision-ladder);
-  the four-rule reframing may identify which rule's discharge needs
+- Establish the Gröbner–Shirshov / jet normal-form reduction for $k = 1, 2$
+  by direct case analysis on the typed-$\mathbf{B}_3$ word structure.
+- Extend the extraction to $k \geq 5$. The simple alternating
+  Kashiwara $\times$ Jones pattern breaks at $c_5, c_6$, as noted
+  in [the categorical $\mathfrak{Q}_\beta$ precision ladder](#prop:q-beta-categorical-precision-ladder).
+  The four-rule reframing may identify which rule's discharge needs
   enrichment (likely Rule 2 + Rule 4) to capture multi-link Jones
   contributions.

@@ -1,4 +1,4 @@
-*Let $P$ be a confined particle. Let $\mathcal{G} \subset \mathbb{R}_{>1}$ be the generic locus of the substrate parameter $q$. The **confinement locus** of $P$ is*
+*Let $P$ be a confined particle. Let $\mathcal{G} \subset \mathbb{R}_{>1}$ be the generic locus of the aether parameter $q$. The **confinement locus** of $P$ is*
 
 $$
   \Omega(P) \;:=\; \{\, q \in \mathcal{G} : \mathrm{confined}(P, q) \,\},
@@ -17,5 +17,3 @@ $$
    - ***Deconfinement.** $P$ is not realisable as a closed-braid bound state at $q_0$.*
    - ***Regime switch.** $\mu$ jumps discretely across $q_0$; the active support gains or loses a Wedderburn block; $\sigma_F$ has a non-smooth point.*
    - ***Both.***
-
-**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.

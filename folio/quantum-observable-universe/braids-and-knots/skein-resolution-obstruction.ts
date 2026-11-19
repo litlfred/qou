@@ -35,4 +35,10 @@ export default definition({
     "rem:kummer-filtration-obstruction",
     "prop:ns-obstruction-tower",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/m_p_substrate_identity_50dps.py",
+    witness: "computations/m-p-substrate-identity-50dps.witness.json",
+    status: "verified",
+  },
 });

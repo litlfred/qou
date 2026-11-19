@@ -8,14 +8,9 @@ import Mathlib.Data.Finset.Basic
 
 **Proposition** ([`prop:skein-generation`](../../../quantum-observable-universe/mass-theory/skein-generation.md)).
 
-*The Skein module `𝓢_q = 𝓢_q(𝐂)` is generated as an algebra by:*
+*Let `R` be a commutative ring in which `s = q^{1/2} - q^{-1/2}` is a unit, and let `𝓢_q(S³)` be the HOMFLYPT skein module of `S³` over `R`. Then `𝓢_q(S³)` is a free `R`-module with a basis indexed by unordered finite multisets of nontrivial prime knots (see [przytycki1991]).*
 
-*(1) The fundamental (mass-zero) knot types `{K_i}_{i ∈ 𝓕}` (torus knots), and*
-
-*(2) The Hopf link `𝓛_Hopf` (the binding operation).*
-
-*Every hadron admits a terminal Skein resolution into a finite polynomial in
-these generators with coefficients in `ℤ[q^±1]`.*
+**Note (2026-11-16 alignment):** This module formalises abstract generation of an `R`-algebra from a terminating resolution of every element into a finite polynomial in a specified generating set (`fundamentalKnot` and `hopfLink`). For the updated HOMFLYPT freeness statement and why torus knots + Hopf link alone do not generate hyperbolic knots (e.g. `4₁`), see `folio/quantum-observable-universe/mass-theory/skein-generation.md`.
 
 ## What changed, and why (bean `qou-skgn`)
 

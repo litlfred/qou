@@ -4,4 +4,10 @@ export default table({
   title: "Verification status of the finite-slice categorical mass-derivation steps",
   uses: ["prop:atom-knot-mass-derivation"],
   tags: ["extracted-table"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/methodology-deprecation.witness.json.",
+    },
+  ],
 });

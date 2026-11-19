@@ -14,8 +14,10 @@ export default proposition({
     engine: "python",
     script:
       "computations/substrate/deuteron_tower_fusion_frame_probe.py",
-    witness:
+    witness: [
       "computations/substrate/deuteron-tower-fusion-frame-probe.witness.json",
+      "computations/delta-q-decoration.witness.json",
+    ],
     status: "verified",
     // Round-tripped "verified" -> "failed" -> "verified" on 2026-08-23, and
     // unlike the other blocks in this sweep NOTHING HERE WAS WRONG — the
@@ -32,7 +34,7 @@ export default proposition({
     //
     // Re-run: 7/7 pass, `gram.z` and `q0^3/(q0^2+1)` agree to 0.0, and
     // qou-w8zz / qou-5wpk / qou-9d6h are all completed. The only change to the
-    // witness is `z_live_pyhecke` 0.4993203341836945 -> 0.6126880371464652 and
+    // witness is `z_live_pyhecke` 0.4993203341836945 (excised convention C) -> 0.6126880371464652 (convention D) and
     // the two booleans that follow from it. The tripwire stays in place.,
   },
   tags: [

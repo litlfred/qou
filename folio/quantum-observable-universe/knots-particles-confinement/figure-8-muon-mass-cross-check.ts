@@ -9,8 +9,10 @@ export default remark({
     engine: "mpmath",
     script:
       "computations/derive_m_baryon_volume_form.py",
-    witness:
+    witness: [
       "computations/m-baryon-volume-form.witness.json",
+      "computations/codata-corpus-vintage-scan.witness.json",
+    ],
     status: "verified",
   },
   uses: [

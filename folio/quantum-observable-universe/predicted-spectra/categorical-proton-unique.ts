@@ -13,4 +13,10 @@ export default proposition({
   ],
   proofs: ["prf:categorical-proton-unique"],
   tags: ["uniqueness", "proton"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

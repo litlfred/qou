@@ -1,5 +1,5 @@
 **The local cohomology connection.**
-The [local cohomology group](#def:local-cohomology-group) $H^1_{\mathfrak{m}_1}(A)$ at the unit defect $z = 1$ measures the obstruction to extending sections across the singularity. At $q = 1$, the defect locus $\{z = 1\}$ is the entire base manifold. The substrate parameter is identically $1$, so:
+The [local cohomology group](#def:local-cohomology-group) $H^1_{\mathfrak{m}_1}(A)$ at the unit defect $z = 1$ measures the obstruction to extending sections across the singularity. At $q = 1$, the defect locus $\{z = 1\}$ is the entire base manifold. The aether parameter is identically $1$, so:
 $$
   H^1_{\mathfrak{m}_1}(A)\big|_{q=1}
   = 

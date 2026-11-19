@@ -14,7 +14,7 @@ $$
 *coincide on the parameter $q$ if and only if
 $\mathrm{Im}(q) = 0$, equivalently $q \in \mathbb{R}$.*
 
-Specialising to $\mathbb{R}$ governs the archimedean evaluation at the substrate $q_0$.
+Specialising to $\mathbb{R}$ governs the archimedean evaluation at the aether $q_0$.
 ## Significance
 
 The framework's existing bar-symmetric / bar-anti-symmetric decomposition is built around $\beta_L$ alone. On the real axis this is the only available involution structure. On general complex $q$ with $\lvert q \rvert > 1$ and $\mathrm{Im}(q) \neq 0$, the algebra admits a finer decomposition by simultaneous $\beta_L$- and $\beta_H$-eigenvalues, producing four channels:
@@ -26,7 +26,7 @@ The framework's existing bar-symmetric / bar-anti-symmetric decomposition is bui
 | $-1$ | $+1$ | bar-anti-symmetric, Hermitian | new (CP-even, parity-odd?) |
 | $-1$ | $-1$ | bar-anti-symmetric, anti-Hermitian | projected away |
 
-The interpretation of the two new channels remains open. This proposition only records the structural existence of the decomposition; it does not claim either new channel corresponds to physical structure.
+Physical observables corresponding to the two off-real involution channels are not yet identified. This proposition only records the structural existence of the decomposition; it does not claim either new channel corresponds to physical structure.
 
 ## Non-claims of this proposition (CAL-4 caveat)
 

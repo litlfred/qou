@@ -4,7 +4,7 @@ export default definition({
   label: "def:qns-unit-layers",
   lean: { ref: "qou:QOU.FluidDynamics.qns_unit_layers" },
   title:
-    "Unit layers of the $q$-NS classical limit: substrate (vanishing $\\nu_q$) and physical ($c_q$-rescaled, $\\nu_{\\mathrm{phys}} = 1/(2q)$)",
+    "Unit layers of the $q$-NS classical limit: aether (vanishing $\\nu_q$) and physical ($c_q$-rescaled, $\\nu_{\\mathrm{phys}} = 1/(2q)$)",
   uses: [
     "thm:q-ns-wellposedness",
   ],

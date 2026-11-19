@@ -1,6 +1,6 @@
-**Definition (knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra).**
+**Definition (knot-indexed bi-filtration $\mathcal{H}_q^{(n, K)}$ on the aether convolution algebra).**
 
-*Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
+*Let $\mathcal{H}_q$ be the aether convolution Hopf algebra
 ([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)),
 filtered by iterated-integral depth
 $G^{(0)} \subseteq G^{(1)} \subseteq \cdots$

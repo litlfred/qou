@@ -3,17 +3,18 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   authorNotes: [
     {
-      kind: "caveat",
-      date: "2026-11-15",
+      kind: "note",
+      date: "2026-11-19",
       body:
-        "The Lean link previously pointed at `QCasimir.exists`, a wrapper around an axiom that was false: `QuantumSu2` " +
-        "allows q = 0, where `QCasimirData` (which needs q⁻¹) cannot exist. The axiom and wrapper were removed; the link " +
-        "now points at the refutation. The prose claim (C_q is central in a genuine U_q(su(2)) at generic q) is open in Lean, bean qou-n2un.",
+        "Proved over any CommRing R with q : Rˣ and Invertible (q - q⁻¹): `QOU.UqRing.qCasimirNormRing` commutes with K, K', E, F " +
+        "and acts as `[j]_q [j + 1]_q • v` across every highest-weight spin-j module V_j (`qCasimirNormRing_acts_as_eigenvalue_on_Vj`); " +
+        "`QOU.UqSl2.Uq.casimirNorm_central` and `fund_casimirNorm` prove centrality and spin-1/2 action on presented U_q(sl₂), " +
+        "alongside `QCasimir.not_exists_unconstrained` showing q ≠ 0 is necessary.",
     },
   ],
   label: "prop:q-casimir-exists",
   title: "Existence of the $q$-Casimir element",
-  lean: { ref: "qou:QOU.QCasimir.not_exists_unconstrained",
+  lean: { ref: "qou:QOU.UqRing.qCasimirNormRing_acts_as_eigenvalue_on_Vj",
     validation: "not_checked",
   },
   uses: ["def:q-casimir"],

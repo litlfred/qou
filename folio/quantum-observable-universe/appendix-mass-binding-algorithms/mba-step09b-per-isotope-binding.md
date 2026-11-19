@@ -3,7 +3,7 @@
 
 ### Input
 
-- *Proton count $Z \in \mathbb{N}$, neutron count $N \in \mathbb{N}$ ($A = Z + N \ge 2$), substrate parameter $q = q_{2t} > 1$, electron mass scale $m_e$, and Form-B electromagnetic coupling $\alpha_{\mathrm{EM}}^{\mathrm{corr}}(q)$ (from [Step 9a](#alg:mass-identity)).*
+- *Proton count $Z \in \mathbb{N}$, neutron count $N \in \mathbb{N}$ ($A = Z + N \ge 2$), aether parameter $q = q_{2t} > 1$, electron mass scale $m_e$, and Form-B electromagnetic coupling $\alpha_{\mathrm{EM}}^{\mathrm{corr}}(q)$ (from [Step 9a](#alg:mass-identity)).*
 
 ### Output
 

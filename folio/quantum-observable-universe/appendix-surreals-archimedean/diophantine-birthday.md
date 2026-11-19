@@ -89,14 +89,14 @@ object: **how efficiently rationals approach a real**.
    at birthday approaching $\omega$; elements of $S$ (generic
    transcendentals) at stabilising finite birthdays.
 
-4. **QOU substrate parameter $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps)**: the
+4. **QOU aether parameter $q_0 = 1.109978595642739\ldots$ (muon calibration, $16$ digits)**: the
    conjectured value (not known to be algebraic or
    transcendental) has a specific birthday trajectory. If
    computable, this would *decide* its algebraic status.
 
 ## Specialisation to QOU
 
-The substrate parameter $q_0$ is the locally observed substrate value; it is extracted by a canonical categorical procedure (via fibre-functor rigidity, Tannaka-Krein, etc.) but its numerical value is empirical. The conjecture predicts:
+The aether parameter $q_0$ is the locally observed aether-parameter value; it is extracted by a canonical categorical procedure (via fibre-functor rigidity, Tannaka-Krein, etc.) but its numerical value is empirical. The conjecture predicts:
 
 - if $q_0$ is algebraic, its birthday *trajectory* $b_{q_0}(n)$
   is logarithmic (bounded continued-fraction partial quotients, per
@@ -115,7 +115,7 @@ growth rate of its rational-approximation trajectory.
 
 Computing $q_0$'s actual birthday trajectory would:
 - decide its algebraic status (open in this paper);
-- give a birthday-based characterisation of the QOU substrate.
+- give a birthday-based characterisation of the QOU aether parameter.
 
 ## Proof strategy
 
@@ -169,4 +169,4 @@ theorem, which is deep but classical.
 classical. The conjecture restates Roth / Liouville in
 surreal-combinatorial language.
 
-The application to $q_0$ is the novel part. If $q_0$ has a computable closed-form birthday, the conjecture characterizes the algebraic complexity of the substrate parameter.
+The application to $q_0$ is the novel part. If $q_0$ has a computable closed-form birthday, the conjecture characterizes the algebraic complexity of the aether parameter.

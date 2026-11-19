@@ -77,7 +77,7 @@ For the Hopf row the sign sits entirely in the branch of $t^{1/2}$: with
 $t^{1/2} := A^{-2} = -q^{-1}$, $-t^{1/2}-t^{5/2} = q^{-1}+q^{-5}$. In $q$ there is
 no ambiguity, which is one practical reason to state the normalisation in $q$.
 
-**Why this is a link invariant, and why D is the only choice.** The table above
+**Link invariance and uniqueness of convention D.** The table above
 would be worth little if it rested on knowing which link each braid closes to. It
 does not. By **Markov's theorem**, two braids have the same closure exactly when
 they are related by conjugation and by stabilisation

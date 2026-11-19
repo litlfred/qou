@@ -4,8 +4,8 @@ export default proposition({
   label: "prop:confined-knot-binding",
   title:
     "Confined knot binding mechanism: character ratio decomposition per jet level",
-  lean: { ref: "qou:QOU.BraidKnot.confined_knot_binding",
-    validation: "not_checked",
+  lean: { ref: "qou:QOU.BraidKnot.confined_knot_binding.confined_knot_extremal_cancellation",
+    validation: "leanok",
   },
   uses: ["conj:nuclear-knot-classification"],
   tags: [
@@ -22,7 +22,14 @@ export default proposition({
       "computations/confined-knot-binding.witness.json",
       "computations/intermediate-knot-detection.witness.json",
       "computations/jet-knot-invariants.witness.json",
+      "computations/probes/the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.witness.json",
     ],
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py.",
+    },
+  ],
 });

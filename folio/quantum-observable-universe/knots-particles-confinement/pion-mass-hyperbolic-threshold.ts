@@ -37,4 +37,10 @@ export default remark({
         "than one or three.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/derive_m_baryon_volume_form.py",
+    witness: "computations/m-baryon-volume-form.witness.json",
+    status: "verified",
+  },
 });

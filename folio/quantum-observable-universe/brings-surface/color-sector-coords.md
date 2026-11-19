@@ -1,4 +1,4 @@
-With notation as in [exceptional divisor](#def:exceptional-divisor), fix the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) and set $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$. Define the **color sector coordinates** — the **red**, **green**, and **blue** sector embeddings — by
+With notation as in [exceptional divisor](#def:exceptional-divisor), fix the aether parameter $q$ ([aether parameter](#def:substrate-parameter)) and set $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$. Define the **color sector coordinates** — the **red**, **green**, and **blue** sector embeddings — by
 
 ```tex
 \begin{align*}
@@ -12,7 +12,7 @@ With notation as in [exceptional divisor](#def:exceptional-divisor), fix the sub
 \end{align*}
 ```
 
-The *color twist* $q\phi$ rotates each sector by $q$ full turns as the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$). This encodes the chirality of the substrate parameter.
+The *color twist* $q\phi$ rotates each sector by $q$ full turns as the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$). This encodes the chirality of the aether parameter.
 
 The three sectors tile the exceptional divisor precisely:
 

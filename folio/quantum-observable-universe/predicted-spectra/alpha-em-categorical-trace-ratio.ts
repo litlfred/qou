@@ -95,4 +95,14 @@ export default proposition({
     "algebraic-identity",
     "bring-complex",
   ],
+  computation: {
+    engine: "sympy",
+    script: "computations/delta_q_decoration.py",
+    witness: [
+      "computations/delta-q-decoration.witness.json",
+      "computations/rosso-jones-three-strand-delta-q.witness.json",
+      "computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

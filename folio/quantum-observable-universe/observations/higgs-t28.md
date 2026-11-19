@@ -40,7 +40,7 @@ $$
 
 where $N_{\mathrm{cross}}(L)$ counts crossings between the particle braid and the link $L$.
 
-Particles that cross all three exceptional divisors (heavy quarks, $W$, $Z$) interact strongly with $T(2,8)$ and acquire large masses. Particles confined to fewer divisors interact less. The photon ($\mathbf{1}_{B_4}$, the 4-strand identity, knot-trivial under Markov closure; see [confined-particle](#def:confined-particle)) has zero crossings with $T(2, 8)$ and remains massless.
+Particles that cross all three exceptional divisors (heavy quarks, $W$, $Z$) interact strongly with $T(2,8)$ and acquire large masses. Particles confined to fewer divisors interact less. The photon ($\mathbf{1}_{B_4}$, the 4-strand identity, knot-trivial under Markov closure; see [confined particle](#def:confined-particle)) has zero crossings with $T(2, 8)$ and remains massless.
 
 **Mass of the Higgs.**
 

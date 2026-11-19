@@ -30,4 +30,10 @@ export default proposition({
     },
   ],
   proofs: ["prf:sl2-prolongation-recurrence"],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/sw_period_lw_sl2_qbessel_probe.py",
+    witness: "computations/sw-period-lw-sl2-qbessel-probe.witness.json",
+    status: "verified",
+  },
 });

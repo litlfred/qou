@@ -1,6 +1,6 @@
 **Convention.** A *color observable* is read with the framed generator
 $\sigma_i^{\mathfrak{sl}} = q^{-1/N}\sigma_i$ of
-[Proposition](#prop:sl-n-color-framing). Every other observable keeps the
+[the $\mathrm{SU}(N)$ framing reproduces the one-gluon color factors](#prop:sl-n-color-framing). Every other observable keeps the
 Hecke normalisation $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$. The rescaling is not
 applied to the Markov parameter $z$, to convention D, or to the writhe-normalised
 Markov trace. A uniform rescaling would multiply an unnormalised trace
@@ -14,7 +14,7 @@ ratio is $1$, against the group-theoretic $|c_{\bar 3}/c_6| = 2$. In the
 $\mathrm{SU}(3)$ frame the log-exponents are $-\tfrac43$ and $\tfrac23$, so the
 ratio is $2$ with both signs correct.
 
-**What the factor $2$ was.** The identity
+**Origin of the factor $2$.** The identity
 $\log|\lambda_{\mathrm{S}}| + \log|\lambda_{\mathrm{A}}| = 0$ for the Hecke
 eigenvalues, i.e. $|\det \sigma_i| = 1$ on $V \otimes V$, is the statement that
 the $\mathfrak{u}_1$ summand of $\mathfrak{gl}_N = \mathfrak{sl}_N \oplus

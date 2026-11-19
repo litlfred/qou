@@ -2,7 +2,7 @@ The tritium $Q$-value admits an independent algebraic derivation and cross-check
 
 ## Derivation chain
 
-**Step 0: Substrate parameter**. Fixes $q_0$ from $m_\mu/m_e$.
+**Step 0: Aether parameter**. Fixes $q_0$ from $m_\mu/m_e$.
 
 **Step 1: Typed crossing operator**. Uses the unique isospin-invariant choice $\lambda = 1/2$.
 
@@ -24,4 +24,4 @@ $\lambda = 1/2$ mixing, energy unit $m_e$, and $\mathrm{Vol}(4_1)$ in mass ratio
 The branching factorization and Gröbner--Shirshov $H_9$ verification compute different quantities at different levels.
 
 ### Formula is not a knot invariant
-The formula arises from algebraic manipulation, not topology.
+The formula arises from algebraic manipulation rather than topology.

@@ -1,5 +1,5 @@
 **Remark (curvature-rank as confinement layer).**
-By [confinement-categorical](#prop:confinement-categorical), the collapse of the GB-filtration spectral sequence provides the categorical content of color confinement. Translating this algebraic statement into QCD vocabulary yields the following dictionary.
+By [categorical spectral-sequence confinement](#prop:confinement-categorical), the collapse of the GB-filtration spectral sequence provides the categorical content of color confinement. Translating this algebraic statement into QCD vocabulary yields the following dictionary.
 
 **Confinement layers.**
 The GB filtration $J^0 \supset J^1 \supset \cdots$ stratifies $A = H_n(R, q)$ by curvature-rank $k = \mathrm{depth}(\lambda) - 1$. Each stratum $J^k / J^{k+1}$ acts as a confinement layer:
@@ -30,4 +30,4 @@ Each layer contributes its q-deformed Wedderburn-weighted log-character content 
 | $k \geq 4$ | universal residue | Frobenius co-Casimir tail (no specific knot) |
 
 **Predictive consequence.**
-Confinement is structurally built into the spectral-sequence collapse. Every prediction ([universal residue](#prop:plancherel-term-7-formulation), $\mathfrak{Q}_\beta$ structural derivation) is gauge-invariant because the spectral-sequence projection forces all results through $Z(A)$. The rank-3 chirality residue $\mathrm{Vol}(6_1) \cdot |(q;q)_3|$ in the $\mathfrak{Q}_\beta$ formula acts as a **gluon-condensate background term**. The rank-$\geq 4$ universal Pochhammer tail $|(q;q)_4|$ serves as the **Frobenius co-Casimir**. Both are necessary confinement residues, not free parameters.
+Confinement is structurally built into the spectral-sequence collapse. Every prediction ([universal residue](#prop:plancherel-term-7-formulation), $\mathfrak{Q}_\beta$ structural derivation) is gauge-invariant because the spectral-sequence projection forces all results through $Z(A)$. The rank-3 chirality residue $\mathrm{Vol}(6_1) \cdot |(q;q)_3|$ in the $\mathfrak{Q}_\beta$ formula acts as a **gluon-condensate background term**. The rank-$\geq 4$ universal Pochhammer tail $|(q;q)_4|$ serves as the **Frobenius co-Casimir**. Both are necessary confinement residues rather than free parameters.

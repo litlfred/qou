@@ -12,7 +12,7 @@ $$
 *identically in $z$ and in $q$. Under convention D, where $y_{(1^3)} = 0$, the singlet
 weight is therefore $\mu_- = y_{(2,1)}$ exactly.*
 
-## Where the two sums come from
+## Origin of the two character sums
 
 Restriction along $H_2(q) \subset H_3(q)$ branches each Young diagram of $3$ into the
 diagrams of $2$ obtained by removing a box. The totally symmetric shape $(3)$
@@ -71,12 +71,7 @@ This is the edge that fixes where the Temperley--Lieb characterisation belongs: 
 about the tower, and it is developed with the algebra rather than with the physics
 that consumes it.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
-physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
-$q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. At $q_0$ the three
+At $q_0$ the three
 descriptions of the singlet weight agree to every digit carried:
 $\mu_- = (q_0-z)/(q_0+q_0^{-1})$, $y_{(2,1)} = 1/[2]_{q_0}^{2}$, and the product
 $\mu_{pp}\,\mu_{nn} = 1/(q_0+q_0^{-1})^{2}$ all evaluate to

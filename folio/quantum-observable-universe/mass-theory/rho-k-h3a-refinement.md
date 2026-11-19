@@ -1,4 +1,4 @@
-**Proposition (conditional on [hoefsmit-scattering-pipeline conjecture](#conj:hoefsmit-scattering-pipeline)).**
+**Proposition (conditional on [Hoefsmit scattering-weight conjecture](#conj:hoefsmit-scattering-pipeline)).**
 
 *Fix an atom $K$ with $A = Z + N$ nucleons and braid word $\mathcal{B}_K \in B_{3A}$, and let $\Lambda$ be the list of partitions $\lambda \vdash 3A$ carried by the Wedderburn decomposition. Suppose the categorical density satisfies the division-free refinement balance*
 

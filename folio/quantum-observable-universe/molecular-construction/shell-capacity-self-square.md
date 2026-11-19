@@ -13,7 +13,7 @@ $$
 
 *Both are the $q\to 1$ value of the bar-even self-square $[n]_q^2$.*
 
-This is the self-fusion of a single angular $q$-dimension, not a product of two independent symmetries. The angular $q$-dimension is the bar-even (cosh) Chebyshev evaluation $[n]_q = U_{n-1}\!\bigl((q+q^{-1})/2\bigr)$ of the shell element. The $q$-Clebsch–Gordan rule decomposes its self-square into the sub-shell multiplicities,
+This is the self-fusion of a single angular $q$-dimension rather than a product of two independent symmetries. The angular $q$-dimension is the bar-even (cosh) Chebyshev evaluation $[n]_q = U_{n-1}\!\bigl((q+q^{-1})/2\bigr)$ of the shell element. The $q$-Clebsch–Gordan rule decomposes its self-square into the sub-shell multiplicities,
 
 $$
   [n]_q^2 \;=\; \sum_{\ell=0}^{n-1} [2\ell+1]_q

@@ -15,7 +15,7 @@
 | CODATA 2022                               | ${{ qou.computations.alpha-em-schwinger-ladder.data.codata_reference.alpha_inv | precision: 12 }}(21)$ |
 
 All rows are evaluated at the **proton** pin $q_0$, the production default
-([`local-substrate-q`](#prop:local-substrate-q)), and compared against the
+([local aether parameter](#prop:local-substrate-q)), and compared against the
 **CODATA-2022** adjustment.
 
 The $\alpha^{-1}_{\mathrm{CS}}$ row is the Chern--Simons tower summed to **all
@@ -34,6 +34,3 @@ are small and they act in the same direction:
 | ------ | ---------------------- |
 | order-$\delta_{\mathrm{CS}}^2$ $\to$ all orders | $11.06$ ppb (at either pin) |
 | muon pin $\to$ proton pin | $79.17$ ppb (for either form) |
-
-Reproduce with
-[`alpha_em_form_comparison_probe.py`](../../../computations/alpha/alpha_em_form_comparison_probe.py).

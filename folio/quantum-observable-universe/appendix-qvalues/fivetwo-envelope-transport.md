@@ -41,7 +41,7 @@ exhibits $S(\varphi) = \varphi^{2}$ satisfying both hypotheses, with the
 conclusion reading $\pi^{2} = 0 + \pi^{2}$.
 
 That example is deliberately trivial — its purpose is to rule out the vacuous
-reading, not to supply evidence. The check with real content is numerical: on
+reading rather than to supply evidence. The check with real content is numerical: on
 the actual arc, $S' = 2\varphi$ holds per root to $4.6 \times 10^{-41}$ and
 summed to $9.2 \times 10^{-41}$.
 

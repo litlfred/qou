@@ -1,7 +1,7 @@
 A particle's Gröbner normal form can be read as an occupancy pattern
 over the six basis channels of $H_3(q)$, and that pattern is what
-exposes its flavour and mass structure — the
-$\mathfrak{d}$--$\mathfrak{u}$ splitting (observation 2 below) shows up
+exposes its flavour and mass structure: the
+$\mathfrak{d}{-}\mathfrak{u}$ splitting (observation 2 below) shows up
 precisely as leakage into the identity channel.  With that reading in
 view:
 
@@ -37,13 +37,13 @@ own knot type.
 1. **Up quark** $\mathfrak{u} = \sigma_0$ (positive crossing
    orientation within $\mathcal{B}_3$).  Same Hecke word as
    $\sigma_0$; the quark is distinguished by its Borromean
-   environment, not its Hecke algebra element.
+   environment rather than its Hecke algebra element.
 
 2. **Down quark** $\mathfrak{d} = \sigma_0^{-1} = \sigma_0 -
    (q - q^{-1})\mathbf{1}$.  The negative crossing orientation
    bleeds the Hecke amplitude $-h_{\mathrm{A}} \approx -0.209$ (with
    $h_{\mathrm{A}} = q - q^{-1}$) into the $\gamma$ (identity)
-   channel.  This leakage is the origin of the $\mathfrak{d}$--$\mathfrak{u}$
+   channel.  This leakage is the origin of the $\mathfrak{d}{-}\mathfrak{u}$
    mass splitting.
 
 3. **Positron** $e^+ = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$
@@ -53,11 +53,11 @@ own knot type.
 4. **Gluon** $L_{\pm}$ is already a basis element of $H_3(q)$.
    The Borromean braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ contains
    both $L_+$ and $L_-$ in its NF.  This is the
-   Hopf link $\mathcal{L}_H$ from [Definition](#def:borromean-baryon):
+   Hopf link $\mathcal{L}_H$ from the [Borromean baryon definition](#def:borromean-baryon):
    $B = \mathcal{B}_3 \oplus \mathcal{L}_H$.
 
 5. **Hopf self-link** $\sigma_i^2 = h_{\mathrm{A}}\cdot\sigma_i +
-   \mathbf{1}$.  This is the Hecke relation itself — squaring
+   \mathbf{1}$.  This is the Hecke relation itself: squaring
    any crossing yields the identity (photon) plus an
    $h_{\mathrm{A}}$-weighted crossing.
 

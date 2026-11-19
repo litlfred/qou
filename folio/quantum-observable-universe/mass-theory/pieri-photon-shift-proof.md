@@ -95,7 +95,7 @@ $$
 which is the claimed containment. $\blacksquare$
 
 **Scope.**
-The proposition gives a *containment* of supports, not equality. The
+The proposition gives a *containment* of supports rather than equality. The
 actual coefficients are dictated by the $\phi_i$ and the Hecke-algebra
 6j-symbols (matrix elements of the basis change between the
 seminormal basis and the inclusion basis) and are not computed

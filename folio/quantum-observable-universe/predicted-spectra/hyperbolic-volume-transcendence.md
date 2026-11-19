@@ -1,6 +1,6 @@
 The [topological mass formula](#prop:topological-mass-formula) assigns mass
 $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$. Here $q$ denotes the
-[substrate parameter](#def:substrate-parameter). Three non-zero
+[aether parameter](#def:substrate-parameter). Three non-zero
 hyperbolic volumes drive the Descartes universe mass spectrum:
 
 | Knot/Link | Volume | QOU identity |

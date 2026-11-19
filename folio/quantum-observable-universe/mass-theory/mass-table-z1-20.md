@@ -22,30 +22,12 @@ $q_{0}$ is confined to step 3 alone.
 
 See [Table](#tbl:mass-table-z1-20-table-data).
 
-The row values tabulated here are reproduced by
-[`wedderburn_mass_table_z1_20.py`](https://github.com/litlfred/qou/blob/main/computations/wedderburn_mass_table_z1_20.py)
-from the committed witness `wedderburn-mass-table-z1-20`, evaluating the
-formula above at the proton-pin $q_{0}$ with zero fitted parameters: the
-three coefficients are fixed by $m_{e}$, Catalan's constant and $q_{0}$
-through the formula's own definitions.
-
-These values supersede an earlier table computed with a third coefficient
-of $0.0499$ in place of $h_{\mathrm{A}}^{2}$. That coefficient has no
-derivation in the corpus, and it is inconsistent with the same table's
-second coefficient: since
-$[3]_{q} - 3 = q^{2} - 2 + q^{-2} = h_{\mathrm{A}}^{2}$, the two are locked
-as $-2[3]_{q} = -6 - 2h_{\mathrm{A}}^{2}$, and the recorded
-$-2[3]_{q} = -6.087415$ agrees with $h_{\mathrm{A}}^{2} = 0.0437$, not with
-$0.0499$. Every row moved, by at most $1.206\;\mathrm{MeV}$; agreement with
-AME2020 is materially unchanged (mean $0.075\%$, max $0.191\%$, against
-$0.074\%$ and $0.192\%$), because $\Phi_{3}$ enters roughly fifty times more
-weakly than $\Phi_{1}$. The correction is one of provenance, not of fit.
+The tabulated values evaluate the formula above under the proton calibration $q_{0}$ with zero fitted parameters: all three coefficients are fixed by $m_{e}$, Catalan's constant, and $q_{0}$. In particular, the identity $[3]_{q} - 3 = q^{2} - 2 + q^{-2} = h_{\mathrm{A}}^{2}$ locks the second and third coefficients via $-2[3]_{q} = -6 - 2h_{\mathrm{A}}^{2}$, so $-2[3]_{q} = -6.087415$ fixes $h_{\mathrm{A}}^{2} = 0.0437$ (rather than an ungrounded $0.0499$, which shifts individual rows by at most $1.206\;\mathrm{MeV}$ because $\Phi_{3}$ enters roughly fifty times more weakly than $\Phi_{1}$).
 
 ### Convention D, and what it costs
 
-The table above is computed under the **canonical Markov convention**
-$z = q^{3}/(q^{2}+1)$ (convention D). The values it supersedes were computed
-under the excised convention C, $z = \sqrt{q}/(q+1)$.
+The table above is evaluated under the **canonical Markov convention**
+$z = q^{3}/(q^{2}+1)$ (convention D), in contrast to convention C, $z = \sqrt{q}/(q+1)$.
 
 **Agreement with AME2020 is worse under D, and materially so.** Mean
 $\lvert\Delta\rvert/\mathfrak{m}$ rises from $0.0746\%$ to $0.1827\%$ and
@@ -69,7 +51,7 @@ absorbing part of the input error.
 
 Convention D is fixed structurally by two-row Temperley–Lieb factorisation rather than by numerical fitting to composite masses; tables originally calibrated in the Convention-C frame therefore shift when evaluated at $z_D$.
 
-### What is now derived, and what is not
+### Derived versus empirical inputs across $Z = 1$–$20$
 
 $\Phi_{2}$ and $\Phi_{3}$ are no longer carried from the superseded
 producer. Both are derived from the strand content and the per-crossing

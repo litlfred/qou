@@ -18,6 +18,10 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
       kind: "refined-framing",
       body: "**Demoted.** Earlier drafts of this proof used\nPlancherel weights $w_X = 1/[2]_q$ as a \"uniform completeness\nsignature.\" That uniform-weight expression was a degenerate\nartifact of the dimensionally-collapsed $H_2(q)$-only\nformulation (six rank-1 projectors cannot fit in a 2-dim\nalgebra). The Hoefsmit $n=6$ formulation supersedes it.",
     },

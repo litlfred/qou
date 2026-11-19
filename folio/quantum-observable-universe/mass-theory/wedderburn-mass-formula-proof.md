@@ -138,5 +138,5 @@ free constituent masses $Z \cdot m_{\mathfrak{p}} + N \cdot
 m_{\mathfrak{n}} + Z \cdot m_e$. $\square$
 
 The numerical agreement of this formula with measured atomic masses
-across the nuclide table is an empirical cross-check, not part of the
+across the nuclide table serves as an empirical cross-check external to the
 proof.

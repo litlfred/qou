@@ -32,10 +32,10 @@ $$
   311.75\,\text{MeV}.
 $$
 
-## Distance from the substrate bound
+## Distance from the aether bound
 
 The [flavour mass-splitting bound](../mass-theory/flavor-mass-splitting-bound.md) gives an upper bound of $\approx 3.88\,\text{MeV}$. The realised value $1.286\,\text{MeV}$ is about $33\%$ of the bound. 
 
 ## Heavier flavors
 
-The substrate flavor-split derivation is specific to the nucleon doublet topology. Extensions to heavier flavors remain unconstrained.
+The aether flavor-split derivation is specific to the nucleon doublet topology. Extensions to heavier flavors remain unconstrained.

@@ -22,13 +22,12 @@ canonical evaluation at $q_0 = 1.1099785955541805\ldots$ (50 dps; the CODATA-201
 the formal derivation.
 $\square$
 
-**Witness:** `derived-only-formula.witness.json`.
 
 **Scope.** The formula is derived from Hecke partition theory and the
 paper's atomic-mass framework; no continuous parameters are fitted, and
 no choices were made by selecting from a menu of variants. The atomic
 mass agreement to sub-percent across $A = 1$ to $7$ — including the
-unfitted extension to $^6$Li and $^7$Li — is **predictive**, not
+unfitted extension to $^6$Li and $^7$Li — is **predictive** rather than
 calibrated.
 
 The systematic binding under-prediction is the formula's principal

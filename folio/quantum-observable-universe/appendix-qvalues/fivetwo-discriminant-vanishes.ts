@@ -72,4 +72,13 @@ export default proposition({
         "shared structure (`rem:fivetwo-three-sevens`).",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/jet_tower_delta_max.py",
+    witness: [
+      "computations/jet-tower-delta-max.witness.json",
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+    ],
+    status: "verified",
+  },
 });

@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with $\chi(A) = -6$ and substrate parameter $q$. Set $s = \sqrt{q}$. The color elliptic fiber ([color elliptic](#prop:color-elliptic)) of Bring's surface at spacetime ratio $z = s - s^{-1}$ is the elliptic curve
+Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with $\chi(A) = -6$ and aether parameter $q$. Set $s = \sqrt{q}$. The color elliptic fiber ([color elliptic](#prop:color-elliptic)) of Bring's surface at spacetime ratio $z = s - s^{-1}$ is the elliptic curve
 
 $$
   \mathcal{E}_q  : 

@@ -23,7 +23,7 @@ $\sqrt{-23}$ generates the quadratic resolvent that $A_3$ fixes.
 one a symmetric pairing can reach; the bar-odd channel is confined to a single
 line, and that line is determined by the discriminant of the trace field.**
 
-## Why $5_2$ rather than $4_1$
+## Chirality of $5_2$ versus amphichirality of $4_1$
 
 For an amphichiral knot the mirror is the knot itself, so the Jones polynomial
 satisfies $J_{K^{*}}(q) = J_K(q^{-1}) = J_K(q)$ and the bar-odd part vanishes
@@ -36,7 +36,7 @@ tracks the same distinction: $4_1$ has the quadratic $\mathbb{Q}(\sqrt{-3})$ and
 $5_2$ the cubic of discriminant $-23$, with a genuine complex-conjugate pair to
 separate.
 
-## What is and is not settled
+## Settled location versus open evaluation
 
 Settled: the *location*. Any bar-odd datum assembled from the conjugate pair
 lies on the $\sqrt{-23}$ line. This is a consequence of the field structure

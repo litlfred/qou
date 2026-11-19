@@ -37,4 +37,10 @@ export default proposition({
     "lean-formalised",
     "draft",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: the_canonical_closure_is_a_chain_of_torus_links_probe.py, the_curvature_floor_is_sharp_probe.py.",
+    },
+  ],
 });

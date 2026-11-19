@@ -1,3 +1,3 @@
-Confinement is topological, not energetic. The linear program over $H_3(q)$ has a strictly lower optimum than $\mathcal{B}_3$, but that optimum is not realizable as a braid group element.
+Confinement is topological rather than energetic. The linear program over $H_3(q)$ has a strictly lower optimum than $\mathcal{B}_3$, but that optimum is not realizable as a braid group element.
 
 Energy minimization alone permits unphysical states. The continuous LP finds algebra elements with zero Markov trace by mixing basis elements with large negative coefficients. These cannot be realized as physical braid words. The Borromean property is an independent constraint. The topological requirement restricts the feasible set from $\mathbb{R}^6$ to the image of $B_3$ under $\rho$. This discrete constraint selects $\mathcal{B}_3$. Confinement is topology plus action minimization.

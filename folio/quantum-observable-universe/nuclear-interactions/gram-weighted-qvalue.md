@@ -1,4 +1,4 @@
-> **Scope.** Three auxiliary properties in this block are stated as open hypotheses: that $\Delta_k > 0$, that the Gram weights favour boundary neutrons, and that $G$ is indefinite. Treat them as open.
+> **Scope.** Three auxiliary properties in this block are stated as open hypotheses: that $\Delta_k > 0$, that the Gram weights favour boundary neutrons, and that the bilinear Markov–Gram pairing $G_{ij} = \mathrm{tr}_M(b_i b_j)$ is indefinite (in contrast to the positive semidefinite Hecke star-pairing $\mathrm{tr}_M(b_i b_j^*)$). Treat them as open.
 
 *Let $\mathcal{G}_{\mathrm{par}} = \mathcal{G}(t_0, \ldots, t_{A-1})$ be the typed Garside element of the parent nucleus in $H_A(q)$. Let $G$ be the Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ restricted to the NF subspace spanned by $\mathcal{G}_{\mathrm{par}}$ and all conversion daughters. The $Q$-value for $\beta^-$ decay is:*
 
@@ -55,7 +55,7 @@
 
  *where $\lVert \cdot \rVert_F$ is the Frobenius norm induced by the Gram matrix.*
 
-**Inputs.** Only the substrate parameter $q$ and the electron mass $m_e$ enter the formula; there are no other parameters.
+**Inputs.** Only the aether parameter $q$ and the electron mass $m_e$ enter the formula; there are no other parameters.
 
 ## Structure of the formula
 

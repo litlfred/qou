@@ -4,4 +4,4 @@ The closed form emerges from per-sheet Picard–Lefschetz integration on the Bri
 
 **Remark (limitation).**
 
-The $-0.10\%$ residual exceeds the formal precision of $q_0$. The substrate ansatz is approximate at the subleading order.
+The $-0.10\%$ residual exceeds the formal precision of $q_0$. The aether ansatz is approximate at the subleading order.

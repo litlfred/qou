@@ -17,6 +17,10 @@ export default conjecture({
   title:
     "Local Askey-scheme approximation of the $S_5$-isotypic states on the Bring cone",
   uses: ["def:bring-cone-tetraplectic-structure"],
+  lean: {
+    ref: "qou:QOU.BringsSurface.TetraplecticAskeyLocalisation",
+    validation: "leanok",
+  },
   cites: ["askey1989qhermite", "foth2002"],
   tags: [
     "tetraplectic",

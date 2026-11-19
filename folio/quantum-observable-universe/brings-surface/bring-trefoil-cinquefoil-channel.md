@@ -10,6 +10,6 @@ $$
 $$
 is the unique source of $\zeta_5$'s irrationality over $\mathbb{Q}$. Consequently, the chiral residue's only available irrational scale is $\sqrt5$, yielding the Bring constant $1/\sqrt5$.
 
-The $5$-fold $\zeta_5$ symmetry is not a covering of the $3$-fold cubic fibre. It constitutes a second torus knot embedded in the same $\Sigma_4$. The $\sqrt5$ emerges from the $\mathbb{Z}_5$-orbit Gauss sum carried by the resolvent $w_1$, not the cubic fibre.
+The $5$-fold $\zeta_5$ symmetry is not a covering of the $3$-fold cubic fibre. It constitutes a second torus knot embedded in the same $\Sigma_4$. The $\sqrt5$ emerges from the $\mathbb{Z}_5$-orbit Gauss sum carried by the resolvent $w_1$ rather than the cubic fibre.
 
 This geometric scaffold underpins the H$_2$S bond-angle conjecture by fixing the available $\sqrt5$ scaling and establishing why the chiral channel accesses it via the ambient $S_5$-linkage. 

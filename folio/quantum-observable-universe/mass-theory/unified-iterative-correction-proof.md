@@ -1,5 +1,5 @@
 *Proof.*
-By [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price),
+By [Frobenius shadow-price identity](#prop:mass-coefficient-shadow-price),
 the BW coefficient of partition $\lambda$ is the LP-dual variable
 $u_\lambda^* = C_\lambda \cdot S_\lambda(Z, N, A)$.  The
 categorical scale $C_\lambda = m_e \cdot H_q(\lambda)$ (the
@@ -10,7 +10,7 @@ realised at each step as $\ln|\mathrm{tr}\,\mathbf{M}_\lambda^{(0..A)}| -
 \ln d_\lambda$ via the Young seminormal representation.
 
 For $\lambda = (2,2) \vdash 4$ this recovers the dedicated Wigner
-identity ([prop:wigner-np-pairing](#prop:wigner-np-pairing)):
+identity ([$T{=}0$ Wigner $np$ pairing](#prop:wigner-np-pairing)):
 $H_q((2,2)) = [3]_q \cdot [2]_q^2$; for $\lambda = (2,1) \vdash 3$
 it reproduces the volume / surface / Coulomb decomposition
 through their image under the Wedderburn embedding — a step this
@@ -21,9 +21,9 @@ The obstruction is one of shape.  The block-diagonal Wedderburn embedding is a c
 type $\bigoplus_\lambda M_{f^\lambda} \to M_{n!}$: it assembles blocks
 into one matrix rather than splitting one block's scalar $C_{(2,1)}$ into
 three coefficients.  The landing in $M_{n!}$ is additionally conditional on
-the RSK dimension identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as an explicit hypothesis and not discharged here.
+the RSK dimension identity $\sum_\lambda (f^\lambda)^2 = n!$, carried here as an explicit classical combinatorial hypothesis.
 
-That objection is a **theorem**, not merely a remark.  The naive form — "three
+That objection is a **theorem** rather than a remark.  The naive form — "three
 independent coefficients cannot come from one scalar" — is false, since
 one real encodes three set-theoretically.  Under **linearity**, which
 this corpus already assumes for the Markov trace, it is true: that trace
@@ -53,7 +53,7 @@ rather than merely permitted: one can exhibit three linearly independent block-r
 $(2,1)$, the exact complement of the three trace-factoring ones being
 dependent.  It does **not** identify those three with volume, surface
 and Coulomb; three independent functionals existing is a *necessary*
-condition for such a match, not evidence of one.  So the clause is still an open obligation, not a
+condition for such a match rather than evidence of one.  So the clause remains an open obligation rather than a
 derivation; for higher
 partitions it adds the form-factor, $pn$-correlation, and
 ${[3,2,1]}$ pn-invisible corrections.
@@ -62,7 +62,7 @@ By the [Markov-trace normalization](#prop:wedderburn-trace-identity)
 (the per-level budget is the Hecke-level scale $[k]_q!$, $k$ fixed), the dual
 shadow prices satisfy a single budget constraint per Hecke
 level; by Frobenius reciprocity
-([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price),
+([Frobenius shadow-price identity](#prop:mass-coefficient-shadow-price),
 branching corollary), shadow prices at level $k+1$ are
 determined by those at level $k$.  Telescoping per-step log-trace
 differences across $k = 1, \ldots, A$ yields the closed-form
@@ -88,7 +88,7 @@ The three legacy mechanisms specialise:
   $-\Delta_W \cdot T(T+1)/A$):* the $k = 4$ self-conjugate
   shadow price $\lambda = (2,2)$, which
   vanishes on isolated $pn$ crossings (extremal cancellation,
-  [prop:confined-knot-binding](#prop:confined-knot-binding))
+  [confined-knot binding decomposition](#prop:confined-knot-binding))
   but is nonzero on collective $pn$ patterns.  Under convention D
   no self-conjugate partition beyond $k = 4$ can contribute:
   self-conjugacy forces $\ell(\lambda) = \lambda_1$, so the row cap
@@ -118,10 +118,7 @@ for step = 1..A:
 B_unified = Σ_λ cumulative_λ
 ```
 
-**Witness:** `mass-qvalue-by-level.witness.json` — every isotope
-($^1$H to $^{208}$Pb), per-step rows recording per-partition
-contributions; restartable from any
-$(A, Z_k, N_k, \{\ln|\mathrm{tr}|_\lambda\}, \mathrm{cumulative})$.
+Evaluating this recurrence step by step across $^1\mathrm{H}$ through $^{208}\mathrm{Pb}$ records the cumulative per-partition contributions $(A, Z_k, N_k, \{\ln|\mathrm{tr}|_\lambda\})$.
 
 **Comparison snapshot** (binding energy at $k = 5$, MeV):
 

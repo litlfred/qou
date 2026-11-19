@@ -17,7 +17,7 @@ The numerator $q^{4}+1$ and the denominator $q(q^{2}+1)$ are both strictly posit
 for $q > 0$, so $2z - h > 0$ identically. Dividing by the common positive denominator
 restores the inequality on the scalars.
 
-Nothing in the computation is specific to the substrate parameter, and nothing is
+Nothing in the computation is specific to the aether parameter, and nothing is
 approximate: the quantity whose sign is at issue has been written as a ratio of
 positives, which is the strongest form the claim admits.
 
@@ -36,4 +36,4 @@ The transport step is where the argument leaves the algebra and enters the
 archimedean sector, since $\log$ is a real-analytic function and the energy scale is
 a physical quantity. The inequality it transports, however, was established over an
 ordered field with no such input, so the two halves of the proof sit on opposite
-sides of the substrate wall and only the second is specialised.
+sides of the Archimedean boundary and only the second is specialised.

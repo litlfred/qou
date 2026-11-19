@@ -67,6 +67,7 @@ export default conjecture({
         "originally-conjectured [4]_q · [2]_q / [5]_q). The unifying pattern " +
         "is ξ_m = [2m-1]_q · [m]_q / [2m]_q — matches muon (m=2 → [3]·[2]/[4]) " +
         "AND tau (m=3 → [5]·[3]/[6]) under one formula. Numerical verification " +
+        /* <!-- literal-source: closed-form q-bracket evaluations [2m-1]_q*[m]_q/[2m]_q at q_0 and CODATA m_tau/m_e ratio target --> */
         "at q_0 ≈ 1.110: m=2 → 1.489307 vs required 1.48929 (0.001 %); " +
         "m=3 → 2.487363 vs required 2.46776 (0.79 %); m=4 prediction " +
         "→ [7]·[4]/[8] = 3.503110 (no Standard Model lepton at m=4). " +
@@ -107,4 +108,13 @@ export default conjecture({
     "phase-3",
     "open-conjecture",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/tau_amphichiral_sdp_probe.py",
+    witness: [
+      "computations/probes/tau-amphichiral-sdp-probe.witness.json",
+      "computations/all-nuclides-sdp-admissibility-mp.witness.json",
+    ],
+    status: "verified",
+  },
 });

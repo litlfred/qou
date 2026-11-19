@@ -148,11 +148,11 @@ basis: `E(ξ) = Σ_w |c_w| · ℓ(w)`. With that definition:
   `ξ₀ → ξ₁ → … → ξₘ` the step changes sum to `E(ξₘ) − E(ξ₀)`. By confluence
   every path ends at the same normal form, so the total change depends only on
   `ξ₀` (`energyPath_telescopes`).
-* **The per-step formula in the `.md` is wrong.** A Hecke step on an isolated
+* **The pre-Wave-GS per-step formula in the `.md` was wrong.** A Hecke step on an isolated
   monomial `c·w`, with `w = u σᵢσᵢ v` of length `ℓ`, changes the energy by
   `|c|·(|h|(ℓ − 1) − 2)`, with `h = q − q⁻¹` (`heckeStep_energy_change`).
-  The `.md` says `|c|·|h|`. At `ℓ = 2` and `|h| < 2` (true near `q₀ ≈ 1.11`,
-  where `h ≈ 0.21`) the step *lowers* the energy, contradicting "every Hecke
+  The former `.md` text stated `|c|·|h|` (since repaired in Wave-GS). At `ℓ = 2` and `|h| < 2` (true near `q₀ ≈ 1.11`,
+  where `h ≈ 0.21`) the step *lowers* the energy, refuting the former claim "every Hecke
   step increases the total weight". -/
 
 /-- Energy of a linear combination of braid words: `Σ_w |c_w| · ℓ(w)`. -/
@@ -199,7 +199,7 @@ theorem heckeStep_energy_change (u v : List ℕ) (i : ℕ) (c h : ℝ) :
   push_cast
   ring
 
-/-- **The `.md` claim "every Hecke step increases the energy" is false.**
+/-- **The former `.md` claim "every Hecke step increases the energy" is false.**
     On `σ₁σ₁` with `h = 1/5` the energy drops. -/
 theorem heckeStep_can_lower_energy :
     wordEnergy (Finsupp.single [1] (1 * (1/5 : ℝ)) + Finsupp.single [] 1)
@@ -208,5 +208,18 @@ theorem heckeStep_can_lower_energy :
   simp only [List.nil_append, List.append_nil] at this
   norm_num at this
   linarith
+
+/-- Exponential fugacity functional `Φ_α` on a singleHecke step at length `ℓ = k + 2`:
+`(|c| * (q - q⁻¹) * α ^ (k + 1) + |c| * α ^ k) - |c| * α ^ (k + 2) = -|c| * α ^ k * (α - q) * (α + q⁻¹)`. -/
+-- Ref: [leitner2026] §6/groebner-shirshov-energy
+theorem heckeStep_exp_lyapunov_factorization (c q α : ℝ) (hq : q ≠ 0) (k : ℕ) :
+    (|c| * (q - q⁻¹) * α ^ (k + 1) + |c| * α ^ k) - |c| * α ^ (k + 2)
+      = -|c| * α ^ k * (α - q) * (α + q⁻¹) := by
+  have hqq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
+  calc
+    (|c| * (q - q⁻¹) * α ^ (k + 1) + |c| * α ^ k) - |c| * α ^ (k + 2)
+        = |c| * α ^ k * ((q - q⁻¹) * α + (q * q⁻¹) - α ^ 2) := by
+          rw [hqq]; ring
+    _ = -|c| * α ^ k * (α - q) * (α + q⁻¹) := by ring
 
 end QOU.Archimedean

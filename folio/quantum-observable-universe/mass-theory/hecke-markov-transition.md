@@ -19,5 +19,3 @@ $$
 
 **(iv)** *Independence and factorization.*
 *The product formula factors as independent one-step expectations only when each generator occurs at most once in the word. Then the Markov property peels one generator at a time and $\mathrm{tr}_M(\sigma_{i_1}\cdots\sigma_{i_\ell}) = z^{\ell}$. When a generator repeats the factorisation fails: for $w = \sigma_1\sigma_2\sigma_1$, $\mathrm{tr}_M(w) = h z^2 + z$ with $h = q - q^{-1}$, not $z^3$. So in general a vertex volume is not determined locally; it depends on the other generators in the word.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

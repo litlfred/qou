@@ -40,4 +40,10 @@ export default proposition({
     ref: "qou:QOU.Archimedean.baryonProductFromAlt",
     validation: "not_checked",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/probes/bring-cubic-monodromy-probe.witness.json.",
+    },
+  ],
 });

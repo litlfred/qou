@@ -18,7 +18,8 @@ export default remark({
     engine: "python+mpmath",
     script: "computations/probe_q_beta_operator_valued_N3.py",
     witness: [
-      "computations/q-beta-operator-valued-N3.witness.json"
+      "computations/q-beta-operator-valued-N3.witness.json",
+      "computations/b3-charge-decomposition-a3.witness.json",
     ],
     status: "experimental",
   },

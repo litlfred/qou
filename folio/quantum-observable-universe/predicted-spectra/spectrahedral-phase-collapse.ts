@@ -10,8 +10,11 @@ export default proposition({
   computation: {
     engine: "sympy",
     script: "computations/probes/spectrahedral_phase_collapse_frame_probe.py",
-    witness:
+    witness: [
       "computations/probes/spectrahedral-phase-collapse-frame-probe.witness.json",
+      "computations/all-nuclides-sdp-admissibility-mp.witness.json",
+      "computations/probes/gram-h3-supergolden-is-convention-c-artefact.witness.json",
+    ],
     status: "verified",
   },
   tags: [

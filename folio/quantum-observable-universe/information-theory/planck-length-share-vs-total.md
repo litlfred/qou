@@ -22,13 +22,13 @@ What is being named here is the normalised total: one full Reeb circuit, an angu
 displacement carrying no length scale, set to unity so that the transcendental period
 $2\pi$ never enters and the construction survives over a finite field.
 
-## Why the two are consistent
+## Consistency of per-channel share and total scale
 
 The Planck time is defined as the reciprocal of the Reeb share, $t_P = 1/\hbar_q$, so
 the product of share and reciprocal is the circuit by construction. Writing
 $\hbar_q \approx 0.0991$ and $\ell_P \equiv 1$ side by side asserts that a step covers
 about a tenth of a circuit and that the circuit is one unit: two compatible
-statements about the same flow, not two values for one quantity.
+statements about the same flow rather than two values for one quantity.
 
 The defect the pairing exposes is notational. A single glyph is doing duty for a
 per-step fraction and for a normalised whole, and the notation register admits no

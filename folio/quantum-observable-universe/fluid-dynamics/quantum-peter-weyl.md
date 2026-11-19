@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) with [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\{V_j\}_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}$ denote the simple objects of $\mathbf{C}$ indexed by spin $j$, with categorical dimension $\dim(V_j) = 2j + 1$. For indices $-j \leq m, n \leq j$, define the **matrix coefficient**
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) with [aether parameter](#def:substrate-parameter) $q > 1$. Let $\{V_j\}_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}$ denote the simple objects of $\mathbf{C}$ indexed by spin $j$, with categorical dimension $\dim(V_j) = 2j + 1$. For indices $-j \leq m, n \leq j$, define the **matrix coefficient**
 
 $$
   D^j_{mn}

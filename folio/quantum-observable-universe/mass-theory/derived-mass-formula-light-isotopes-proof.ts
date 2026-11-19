@@ -7,6 +7,10 @@ export default proof({
   authorNotes: [
     {
       kind: "note",
+      body: "Computational witness: derived-only-formula.witness.json.",
+    },
+    {
+      kind: "note",
       body: "The canonical evaluation is recorded in derived-only-formula.witness.json, now under fsh-guts/deprecated/computations/.",
     },
   ],

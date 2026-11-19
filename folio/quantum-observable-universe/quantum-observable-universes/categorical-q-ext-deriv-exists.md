@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 [quantum observable universe](#def:quantum-observable-universe) with
-connection $\nabla$, substrate parameter $q$, and weight
+connection $\nabla$, aether parameter $q$, and weight
 decomposition $(\pi_H, \pi_V)$.  Then the
 [$q$-deformed exterior derivative](#def:categorical-q-ext-deriv)
 
@@ -12,4 +12,4 @@ $$
 exists as a morphism in $\mathbf{C}$ for every $k$.
 
 Uniqueness is established separately in
-[uniqueness of categorical $q$-exterior derivative](#prop:categorical-q-ext-deriv-unique).
+uniqueness of categorical $q$-exterior derivative.

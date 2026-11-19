@@ -149,7 +149,7 @@ async function classify(mdPath: string): Promise<Offender | null> {
 
 function listMarkdown(): string[] {
   return execSync(
-    `find ${REPO}/content -name '*.md' -not -path '*/.lake/*' -not -path '*/node_modules/*'`,
+    `find ${REPO}/folio -name '*.md' -not -path '*/.lake/*' -not -path '*/node_modules/*'`,
     { encoding: "utf8", maxBuffer: 1 << 28 },
   )
     .trim()
@@ -190,7 +190,7 @@ function blocksOnDisk(chapterDir: string, chapterName: string): string[] {
 }
 
 async function orphanSurvey(quiet: boolean): Promise<number> {
-  const contentDir = `${REPO}/content`;
+  const contentDir = `${REPO}/folio`;
   const papers = readdirSync(contentDir).filter(
     (d) => statSync(join(contentDir, d)).isDirectory() && existsSync(join(contentDir, d, `${d}.ts`)),
   );

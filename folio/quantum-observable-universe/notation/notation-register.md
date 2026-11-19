@@ -12,7 +12,7 @@ See [Table 2](#tbl:notation-register-table2-data).
 
 See [Table 3](#tbl:notation-register-table3-data).
 
-### Algebraic substrate (Chapter 6)
+### Algebraic aether (Chapter 6)
 
 See [Table 4](#tbl:notation-register-table4-data).
 

@@ -4,7 +4,7 @@ export default remark({
   interprets: "prop:local-substrate-q",
   label: "rem:w-boson-mass-discrepancy",
   title:
-    "Electroweak boson masses from vertex $\\delta q$ at the CODATA substrate",
+    "Electroweak boson masses from vertex $\\delta q$ at the CODATA aether",
   tags: [
     "W-boson",
     "Z-boson",

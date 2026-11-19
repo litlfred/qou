@@ -7,10 +7,10 @@ Each photon carries the full color content:
 $$
   \gamma_k
   =
-  \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1
+  \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}
 $$
 
-where $\varphi_{01}\sigma_0\sigma_1 = \varphi_{01}L_+$ is the Hopf link dressing. When $\varphi_{01} \neq 0$, the trefoil channel opens directly in the $\gamma\gamma$ product.
+where $V = \sigma_0\sigma_1^{-1} = L_+ - h\sigma_0$ ($h = q - q^{-1}$) is the switched Borromean-step dressing. When $\varphi_{01} \neq 0$, the trefoil channel opens directly in the $\gamma\gamma$ product.
 
 ## Three pair productions
 
@@ -41,4 +41,4 @@ For quarks $(\mathfrak{u}_1, \mathfrak{d}_2, \mathfrak{d}_3)$, reduction yields 
 
 ## Confinement universality
 
-With the quark flavours supplied as input, the nucleon NF does not depend on the photon coefficients, because the confinement word contains none of them ([confinement universality](#prop:confinement-universality)). Sweeping $\varphi_{01}$ from $0$ to $0.2$ therefore leaves the proton and neutron NFs unchanged by construction; the sweep is a consistency check of the construction, not a test of a physical decoupling.
+With the quark flavours supplied as input, the nucleon NF does not depend on the photon coefficients, because the confinement word contains none of them ([confinement universality](#prop:confinement-universality)). Sweeping $\varphi_{01}$ from $0$ to $0.2$ therefore leaves the proton and neutron NFs unchanged by construction; the sweep is a consistency check of the construction rather than a test of a physical decoupling.

@@ -18,9 +18,9 @@ $$
   \mathcal{B}\tilde f(\xi) = \sum_{n \geq 0} \frac{a_n}{n!} \, \xi^n ,
 $$
 
-the coefficient-wise division $a_n \mapsto a_n / n!$. When $\tilde f$ is **Gevrey-1** —
+the coefficient-wise division $a_n \mapsto a_n / n!$. When $\tilde f$ is **Gevrey-1** (meaning
 $|a_n| \leq C \, n! \, A^{-n}$ for some $C, A > 0$ and
-$K \subseteq \mathbb{C}$ — its coefficients grow at most
+$K \subseteq \mathbb{C}$), its coefficients grow at most
 geometrically, so $\mathcal{B}\tilde f$ is a germ analytic on the
 disc $|\xi| < A$.
 
@@ -44,12 +44,12 @@ lies on $e^{i\theta} \mathbb{R}_{> 0}$: the integral through $\omega$
 is obstructed, and only the two lateral sums
 $\mathcal{L}^{\theta^+}$, $\mathcal{L}^{\theta^-}$ (deformed on either
 side of $\omega$) are defined. Their difference is exponentially
-small, of order $e^{-\omega z}$ — the Stokes phenomenon.
+small, of order $e^{-\omega z}$ (the Stokes phenomenon).
 
 ## Median resummation
 
 The **median resummation** $\mathcal{L}^{\mathrm{med}}$ is the
-canonical average of the two lateral sums across a Stokes ray — in
+canonical average of the two lateral sums across a Stokes ray: in
 the simplest one-singularity case
 $\tfrac{1}{2}\bigl(\mathcal{L}^{\theta^+} + \mathcal{L}^{\theta^-}\bigr)$,
 and in general the composition of a lateral sum with the half-power

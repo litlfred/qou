@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:q-beta-radius-of-convergence-gate",
   title:
-    "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(a)$ gate — the log-correction generating function $g(u) = \\sum_{k \\ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\\text{substrate}}$ (convention-C frame)",
+    "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(a)$ gate — the log-correction generating function $g(u) = \\sum_{k \\ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\\text{aether}}$ (convention-C frame)",
   lean: {
     ref: "qou:QOU.QBeta.RadiusOfConvergenceGate.qbeta_g_simple_pole_at_u_substrate",
     validation: "not_checked",

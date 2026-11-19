@@ -6,7 +6,7 @@ export default proposition({
   ],
   label: "prop:hadron-q-self-correction",
   title:
-    "Effective substrate parameter: hadron self-deformation of $q$",
+    "Effective aether parameter: hadron self-deformation of $q$",
   tags: [
     "substrate-parameter",
     "self-energy",

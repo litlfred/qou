@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:motivic-substrate",
   title:
-    "The motivic substrate $(K_0(\\mathrm{Var}_k), \\mathbb{L}, \\{\\rho_v\\})$",
+    "The motivic aether $(K_0(\\mathrm{Var}_k), \\mathbb{L}, \\{\\rho_v\\})$",
   tags: [
     "motivic",
     "substrate",

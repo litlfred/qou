@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:q-harmonic-flow",
   title:
-    "The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\partial_t q = -\\Delta_q q$",
+    "The aether field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\partial_t q = -\\Delta_q q$",
   uses: [
     "prop:germ-commutator-q-curvature",
     "prop:q-gaussian-solves-q-heat",

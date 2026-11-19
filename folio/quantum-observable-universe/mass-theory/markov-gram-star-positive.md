@@ -48,12 +48,7 @@ pairings. The contrast is drawn in
 [two pairings, two signatures](#rem:markov-gram-bilinear-vs-star), and no signature
 claim about the Markov--Gram form is meaningful until the pairing is named.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
-physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
-$q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. At $q_0$ the star form has
+At $q_0$ the star form has
 eigenvalues $0.855067$ (fourfold), $0.101797$ and $3.476950$ under convention C, and
 $0$, $0.752702$ (threefold) and $4.230339$ under convention D. The repeated magnitude
 under convention D is $\mu_+ = 0.75270211325196540159$, the $T = 1$ isospin projector

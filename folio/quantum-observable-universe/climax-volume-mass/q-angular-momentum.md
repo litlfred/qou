@@ -1,7 +1,7 @@
 The **$q$-angular momentum** of a particle is the $\mathrm{SU}_q(2)$ Casimir eigenvalue of its knot representation.
 
 **Definition.**
-Let $K = \hat{\beta}$ be a knot/link with braid representative $\beta \in B_n$. The **$q$-angular momentum** is the eigenvalue of the $q$-Casimir element $C_q$ (cf. [def:q-casimir](#def:q-casimir)) on the spin-$j$ irreducible of $\mathrm{SU}_q(2)$:
+Let $K = \hat{\beta}$ be a knot/link with braid representative $\beta \in B_n$. The **$q$-angular momentum** is the eigenvalue of the $q$-Casimir element $C_q$ (cf. [the $q$-Casimir element of $\mathcal{U}_q(\mathfrak{su}(2))$](#def:q-casimir)) on the spin-$j$ irreducible of $\mathrm{SU}_q(2)$:
 
 $$
   J_q^2(K) =  [j]_q  [j+1]_q
@@ -25,5 +25,3 @@ $$
 
 This differs from the classical $[J_+, J_-] = 2J_z$: $2J_z$ is replaced by its $q$-number $[2J_z]_q$. The asymmetry at $q \neq 1$ connects directly to parity violation ([parity violation](#prop:parity-violation-skein)). The raising and lowering operators do not relate by a simple conjugation.
 
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

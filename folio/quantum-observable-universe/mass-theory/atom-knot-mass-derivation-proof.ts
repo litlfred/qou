@@ -16,4 +16,10 @@ export default proof({
     "murakami-murakami2001",
     "thurston1978",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/gb-filtration-jet-order.witness.json.",
+    },
+  ],
 });

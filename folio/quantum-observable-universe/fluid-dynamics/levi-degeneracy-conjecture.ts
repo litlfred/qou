@@ -19,6 +19,7 @@ export default conjecture({
     "navier-stokes",
   ],
   authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
     {
       kind: "note",
       date: "2026-10-13",
@@ -106,6 +107,7 @@ export default conjecture({
         "$\\log \\mathcal{C}_L = \\log(2\\Gamma/\\pi) + \\log(1+\\varepsilon) " +
         "- \\log\\varepsilon$ and $\\beta = 1$ on the nose. The 0.99628 is a " +
         "least-squares slope over a finite $\\varepsilon$ window dominated by its " +
+        /* <!-- literal-source: closed-form secant exponent 1 - log10(1.1/1.01) = 0.962932 on [1e-1, 1e-2] from qns_levi_lock_beta_exact_probe.py --> */
         "coarse end: measured at 50 dps, the secant exponent is 0.9629 over " +
         "$[10^{-1},10^{-2}]$ and 1.0 to $10^{-15}$ by $\\varepsilon = 10^{-15}$, and " +
         "the *same* fit moved to $[10^{-13},10^{-20}]$ returns 0.999999999999996 " +
@@ -181,4 +183,13 @@ export default conjecture({
       see: "../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/qns_levi_lock_scaling_probe.py",
+    witness: [
+      "computations/qns-levi-lock-scaling-probe.witness.json",
+      "computations/close-321-weinberg-gap.witness.json",
+    ],
+    status: "verified",
+  },
 });

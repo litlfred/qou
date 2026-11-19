@@ -1,5 +1,5 @@
 *Proof (balanced-holonomy sub-case).* The Skein-Collatz map is
-**affine**, not linear: the odd branch carries an additive term,
+**affine** rather than linear: the odd branch carries an additive term,
 $\mathcal{C}_q(P) = ([3]_q P + 1)/[2]_q$, and the even branch is
 $\mathcal{C}_q(P) = P/[2]_q$. A periodic orbit of length $k$ with
 $k_{\mathrm{odd}}$ odd steps and $k_{\mathrm{even}}$ even steps satisfies
@@ -22,7 +22,7 @@ $$
   (1 - A)\,P = B.
 $$
 
-**When $A = 1$** — i.e. $[3]_q^{k_{\mathrm{odd}}} = [2]_q^{k}$ — the
+**When $A = 1$** (i.e. $[3]_q^{k_{\mathrm{odd}}} = [2]_q^{k}$), the
 condition forces $B = 0$. If $k_{\mathrm{odd}} \geq 1$, some $b_i$ is
 nonzero, so $B$ is a nonempty sum of products of rational functions in $q$
 with positive coefficients. Then $B > 0$ at every real $q > 0$, and $B \neq 0$
@@ -39,7 +39,7 @@ $$
 $$
 
 gives $\gcd([2]_q, [3]_q) = 1$ by Bézout, so $[3]_q$ is a unit modulo
-$[2]_q$ while $[2]_q^k \equiv 0 \pmod{[2]_q}$ for $k \geq 1$ — hence
+$[2]_q$ while $[2]_q^k \equiv 0 \pmod{[2]_q}$ for $k \geq 1$; hence
 $A = 1$ is **impossible in $\mathbb{Z}[q]$ for $k_{\mathrm{odd}} \geq 1$**.
 At a real value of $q$ it can occur: at the plastic number $\rho$, the real
 root of $q^3 = q + 1$, one has $1 + \rho + \rho^2 = \rho^5$ and
@@ -51,8 +51,8 @@ excludes every periodic orbit whose holonomy is *balanced* ($A = 1$),
 other than the degenerate fixed point, formally and at every real $q > 0$. $\square$
 
 **Scope.** This settles only the $A = 1$ sub-case. The generic cycle has
-$A \neq 1$ — indeed coprimality *guarantees* $A \neq 1$ in $\mathbb{Z}[q]$ for
-$k_{\mathrm{odd}} \geq 1$ — and the cycle condition then has a unique
+$A \neq 1$ (indeed coprimality *guarantees* $A \neq 1$ in $\mathbb{Z}[q]$ for
+$k_{\mathrm{odd}} \geq 1$), and the cycle condition then has a unique
 candidate solution
 
 $$
@@ -61,10 +61,10 @@ $$
 
 positive in the contractive regime ($A < 1$, i.e.
 $[3]_q^{k_{\mathrm{odd}}} < [2]_q^{k}$). Coprimality makes this candidate
-*solvable*, not impossible; excluding it requires showing that
+*solvable* rather than impossible; excluding it requires showing that
 $B/(1-A)$ never lands in $\mathbb{Z}[q^{\pm 1}]_{>0}$ consistently with
-its own parity word — the $q$-analog of classical nontrivial-cycle
-exclusion, which remains open. A computational census over all primitive
+its own parity word (the $q$-analogue of classical nontrivial-cycle
+exclusion, which is unproved). A computational census over all primitive
 parity words through period $18$ finds no nontrivial positive cycle: the
 only Skein-Collatz cycles are the positive $2$-cycle
 $\{q^{-1},\, 1 + q^{-1}\}$ and the negative fixed point $-q^{-2}$, the
@@ -78,17 +78,17 @@ The $q$-deformation lifts this to polynomial coprimality.
 $\gcd([a]_q, [b]_q) = [\gcd(a,b)]_q$ shows that every
 Collatz-type map $(a, a+1)$ excludes *balanced-holonomy* cycles,
 since $\gcd(a, a+1) = 1$ for all $a$.  This exclusion
-is a consequence of consecutive integers being coprime
-— a fact that lifts from $\mathbb{Z}$ to $\mathbb{Z}[q]$
+is a consequence of consecutive integers being coprime,
+a fact that lifts from $\mathbb{Z}$ to $\mathbb{Z}[q]$
 via the $q$-integer functor. Like the base case above, it
 constrains the $A = 1$ locus and does not by itself reach the
 affine ($A \neq 1$) cycle problem.
 
 **Open directions.** This proposition settles the balanced-holonomy
-($A = 1$) sub-case of cycle exclusion. Two pieces remain open:
+($A = 1$) sub-case of cycle exclusion. Two further steps are required for full cycle exclusion:
 
 1. **Nontrivial-cycle exclusion** ($A \neq 1$): show the candidate
-   $P_0 = B/(1-A)$ never realises a positive Skein-module cycle — the
+   $P_0 = B/(1-A)$ never realises a positive Skein-module cycle, which is the
    $q$-analog of classical nontrivial-cycle exclusion.
 2. **No divergent orbits**: the contact condition
    $\langle v_{[2]} \rangle \geq 2$

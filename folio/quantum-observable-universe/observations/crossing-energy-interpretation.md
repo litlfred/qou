@@ -29,7 +29,7 @@ $$
   \frac{E_{\mathrm{asym}}}{E_{\mathrm{sym}}} = \tanh(\ln q_0) \approx 0.104.
 $$
 
-The antisymmetric channel carries roughly $10\%$ of the symmetric channel's magnitude. This is a ratio of the two channel weights at the substrate anchor, not a running coupling ratio: no renormalisation scale is attached to it, and it should not be read as a value of $\alpha / \alpha_s$, which varies over the accessible energy range. The electromagnetic coupling proper is obtained from the antisymmetric eigenvalue by the [EM coupling projection](#prop:em-coupling-projection).
+The antisymmetric channel carries roughly $10\%$ of the symmetric channel's magnitude. This is a ratio of the two channel weights at the aether anchor rather than a running coupling ratio: no renormalisation scale is attached to it, and it should not be read as a value of $\alpha / \alpha_s$, which varies over the accessible energy range. The electromagnetic coupling proper is obtained from the antisymmetric eigenvalue by the [EM coupling projection](#prop:em-coupling-projection).
 
 **Crossing energy table** for a particle with $n_c$ positive crossings:
 

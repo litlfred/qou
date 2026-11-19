@@ -1,4 +1,4 @@
-The Frobenius--Hopf structure on $J^1(A)$ inherits from $A$ via the jet prolongation functor. The induced fibre functor $\tau'$ is defined by composition with the canonical projection $J^1(A) \to A$, preserving the substrate parameter $q$. The commutativity of the diagram
+The Frobenius--Hopf structure on $J^1(A)$ inherits from $A$ via the jet prolongation functor. The induced fibre functor $\tau'$ is defined by composition with the canonical projection $J^1(A) \to A$, preserving the aether parameter $q$. The commutativity of the diagram
 
 ```tex
 \begin{equation}

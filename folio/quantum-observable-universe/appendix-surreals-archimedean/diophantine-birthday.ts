@@ -35,5 +35,10 @@ export default conjecture({
         "by construction.",
     },
   ],
-
+  computation: {
+    engine: "mpmath",
+    script: "computations/alpha_em_form_ladder_probe.py",
+    witness: "computations/alpha-em-form-ladder.witness.json",
+    status: "verified",
+  },
 });

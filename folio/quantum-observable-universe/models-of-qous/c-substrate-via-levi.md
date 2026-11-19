@@ -1,6 +1,6 @@
-The abstract substrate parameter $q$ measures a connection's departure from classicality. Its concrete archimedean realisation takes the following form.
+The abstract aether parameter $q$ measures a connection's departure from classicality. Its concrete archimedean realisation takes the following form.
 
-Let $A$ be an instanton connection on $P$. Let $F_A^+$ be its self-dual curvature. Let $L_\varTheta(V, W) = -id\varTheta(V, \bar{W})$ be the Levi form. Because $\Lambda^{1,1} H^* \subset \Lambda^+ H^*$ on the 4-dimensional distribution $H$, the Webster metric and Killing form define a natural contraction $\langle L_\varTheta, F_A^+\rangle_p \in \mathbb{R}$. The categorical substrate parameter over $\mathbb{C}$ or $\mathbb{R}$ evaluates to the smooth field
+Let $A$ be an instanton connection on $P$. Let $F_A^+$ be its self-dual curvature. Let $L_\varTheta(V, W) = -id\varTheta(V, \bar{W})$ be the Levi form. Because $\Lambda^{1,1} H^* \subset \Lambda^+ H^*$ on the 4-dimensional distribution $H$, the Webster metric and Killing form define a natural contraction $\langle L_\varTheta, F_A^+\rangle_p \in \mathbb{R}$. The categorical aether parameter over $\mathbb{C}$ or $\mathbb{R}$ evaluates to the smooth field
 
 $$
   q(p) = 1 + \bigl\lvert\langle L_\varTheta, F_A^+ \rangle\bigr\rvert(p),

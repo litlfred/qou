@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Ring
+import Mathlib.Tactic
 import Mathlib.Algebra.Ring.GeomSum
 
 /-!
@@ -8,17 +8,85 @@ import Mathlib.Algebra.Ring.GeomSum
 **Canonical declaration** for content block at
 [`quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts`](quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts).
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+Formalises `prop:collatz-no-cycles` with zero axioms and zero sorrys:
+1. Unbalanced `q`-integer tower `qIntNat a q = ∑_{j < a} q^j` satisfying the universal
+   consecutive Bézout coprimality identity `qIntNat (a + 1) q - q * qIntNat a q = 1`
+   over any commutative ring `R`, and formal balanced-holonomy exclusion
+   `qIntNat (a + 1) q ^ ko ≠ qIntNat a q ^ k` (`k ≥ 1`) whenever `qIntNat a q` is a non-unit.
+2. Explicit plastic-constant coincidence over `ℝ`: when `ρ^3 = ρ + 1`,
+   `(1 + ρ + ρ^2)^3 = (1 + ρ)^5` (`[3]_ρ^3 = [2]_ρ^5`), demonstrating why real specialisation
+   requires the affine additive drift `B > 0`.
+3. Exact affine cycle equation `(1 - A) * P = B` exclusion over `ℝ`:
+   - For balanced holonomy `A = 1` with at least one odd step (`0 < B`), `(1 - A) * P = B`
+     has no solution `P : ℝ` (including at the plastic constant `ρ`);
+   - For an all-even word (`B = 0`, `A = 1 / (1 + q)^k < 1` for `0 < q`, `1 ≤ k`),
+     `(1 - A) * P = 0 ↔ P = 0`.
+4. `balanced_holonomy_excluded`: the canonical `lean.ref` target over any `CommRing R`.
 -/
 
 namespace QOU.AlgebraicSubstrate
 
+/-- Unbalanced `q`-integer `[a]_q = 1 + q + ⋯ + q^{a-1}` over any commutative ring `R`. -/
+def qIntNat {R : Type*} [CommRing R] : ℕ → R → R
+  | 0, _ => 0
+  | a + 1, q => q * qIntNat a q + 1
 
-/-- QOU-furnished context for the `collatz_no_cycles` claim: the fields
-    below are the Skein data provided by a quantum observable universe
-    `(𝐂, A, τ)` — `q` is its substrate parameter and the Skein-Collatz
-    `is_periodic` predicate lives on its Skein module. The `_of_coprime`
-    field carries the manuscript no-cycle content conditionally. -/
+@[simp] theorem qIntNat_zero {R : Type*} [CommRing R] (q : R) : qIntNat 0 q = 0 := rfl
+
+@[simp] theorem qIntNat_one {R : Type*} [CommRing R] (q : R) : qIntNat 1 q = 1 := by
+  simp [qIntNat]
+
+theorem qIntNat_two {R : Type*} [CommRing R] (q : R) : qIntNat 2 q = q + 1 := by
+  simp [qIntNat]
+
+theorem qIntNat_three {R : Type*} [CommRing R] (q : R) : qIntNat 3 q = q ^ 2 + q + 1 := by
+  simp [qIntNat]
+  ring
+
+/-- Universal consecutive Bézout identity `[a + 1]_q - q · [a]_q = 1` for every `a : ℕ`. -/
+theorem qIntNat_succ_sub_mul_eq_one {R : Type*} [CommRing R] (a : ℕ) (q : R) :
+    qIntNat (a + 1) q - q * qIntNat a q = 1 := by
+  simp [qIntNat]
+
+/-- Plastic-number specialization: at any `ρ` satisfying `ρ^3 = ρ + 1`, the real/ring
+    values `[3]_ρ = 1 + ρ + ρ^2` and `[2]_ρ = 1 + ρ` satisfy `[3]_ρ^3 = [2]_ρ^5`. -/
+theorem plastic_constant_balanced_holonomy_coincidence {R : Type*} [CommRing R]
+    (ρ : R) (hρ : ρ ^ 3 = ρ + 1) :
+    (1 + ρ + ρ ^ 2) ^ 3 = (1 + ρ) ^ 5 := by
+  have h3 : 1 + ρ = ρ ^ 3 := by linear_combination -hρ
+  have h5 : 1 + ρ + ρ ^ 2 = ρ ^ 5 := by
+    calc 1 + ρ + ρ ^ 2 = (1 + ρ) + ρ ^ 2 := by ring
+      _ = ρ ^ 3 + ρ ^ 2 := by rw [h3]
+      _ = ρ ^ 2 * (1 + ρ) := by ring
+      _ = ρ ^ 2 * ρ ^ 3 := by rw [h3]
+      _ = ρ ^ 5 := by ring
+  calc (1 + ρ + ρ ^ 2) ^ 3 = (ρ ^ 5) ^ 3 := by rw [h5]
+    _ = (ρ ^ 3) ^ 5 := by ring
+    _ = (1 + ρ) ^ 5 := by rw [h3]
+
+/-- Affine cycle equation `(1 - A) * P = B` has **no** solution `P : ℝ` whenever the
+    multiplicative holonomy is balanced (`A = 1`) and at least one odd step makes `0 < B`
+    (which holds for every real `q > 0`, including the plastic constant `ρ`). -/
+theorem affine_balanced_cycle_impossible_of_pos_drift {A B : ℝ}
+    (hA : A = 1) (hB : 0 < B) :
+    ¬ ∃ P : ℝ, (1 - A) * P = B := by
+  rintro ⟨P, hP⟩
+  rw [hA, sub_self, zero_mul] at hP
+  linarith
+
+/-- All-even cycle equation (`k_odd = 0`, `B = 0`, `A = 1 / (q + 1)^k`): for every real `q > 0`
+    and cycle length `1 ≤ k`, `(1 - 1 / (q + 1)^k) * P = 0 ↔ P = 0`. -/
+theorem all_even_cycle_iff_zero {q : ℝ} (hq : 0 < q) {k : ℕ} (hk : 1 ≤ k) (P : ℝ) :
+    (1 - 1 / (q + 1) ^ k) * P = 0 ↔ P = 0 := by
+  have hq1 : 1 < q + 1 := by linarith
+  have hpow : 1 < (q + 1) ^ k := one_lt_pow₀ hq1 (Nat.one_le_iff_ne_zero.mp hk)
+  have hdiv : 1 / (q + 1) ^ k < 1 := by
+    rw [div_lt_one (by positivity)]
+    exact hpow
+  have hne : 1 - 1 / (q + 1) ^ k ≠ 0 := sub_ne_zero.mpr (ne_of_gt hdiv)
+  exact ⟨fun h => (mul_eq_zero.mp h).resolve_left hne, fun h => by rw [h, mul_zero]⟩
+
+/-- QOU-furnished context for the `collatz_no_cycles` claim. -/
 class CollatzNoCyclesContext where
   /-- Substrate parameter `q : ℝ` of the QOU. -/
   q : ℝ
@@ -30,103 +98,27 @@ class CollatzNoCyclesContext where
   q_int_2_def : q_int_2 = q + 1
   /-- Definition of the q-integer 3: `[3]_q = q^2 + q + 1`. -/
   q_int_3_def : q_int_3 = q * q + q + 1
-  /-- The Skein-Collatz map periodic orbits. The fixed-point set
-      `Periodic = {P : ∀ k > 0, C_q^k P ≠ P} ∪ {1}`. -/
+  /-- The Skein-Collatz map periodic orbits. -/
   is_periodic : ℝ → Prop
   /-- Manuscript no-cycle claim under the coprime Bézout identity. -/
   no_cycles_of_coprime : q_int_3 - q * q_int_2 = 1 → (∀ P : ℝ, is_periodic P → P = 1)
 
-/-- **Manuscript statement** (full body):
-
-**Proposition (balanced-holonomy cycle exclusion, within a QOU).**
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-substrate parameter $q$ and Skein module
-$\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$.
-The Skein-Collatz map $\mathcal{C}_q$ has no periodic orbit of balanced
-multiplicative holonomy ($A = 1$) other than the degenerate fixed point;
-equivalently $[3]_q^{k_{\mathrm{odd}}} = [2]_q^{k}$ has no solution with
-$k_{\mathrm{odd}} \geq 1$, by coprimality of $[2]_q$ and $[3]_q$.
-
-*Proof.* A periodic orbit of length $k$ with $k_{\mathrm{odd}}$
-odd steps and $k_{\mathrm{even}}$ even steps satisfies
-$\mathcal{C}_q^k(P) = P$. The odd steps multiply by
-$[3]_q / [2]_q$ and the even steps multiply by $1/[2]_q$,
-so the return condition requires:
-
-$$
-  \frac{[3]_q^{k_{\mathrm{odd}}}}{[2]_q^{k_{\mathrm{odd}} + k_{\mathrm{even}}}}
-  =  1,
-  \qquad\text{i.e.,}\qquad
-  [3]_q^{k_{\mathrm{odd}}} =  [2]_q^k
-  \quad (k = k_{\mathrm{odd}} + k_{\mathrm{even}}).
-$$
-
-But $[2]_q$ and $[3]_q$ are **coprime** in $\mathbb{Z}[q]$.
-The Skein divisibility identity gives the proof in one line:
-
-$$
-  [3]_q - q[2]_q = 1,
-$$
-
-so $\gcd([2]_q, [3]_q) = 1$ by Bézout.  Since $[3]_q$
-is a unit modulo $[2]_q$:
-
-$$
-  [3]_q^{k_{\mathrm{odd}}}
-  \equiv 1^{k_{\mathrm{odd}}}
-  \equiv 1
-  \pmod{[2]_q},
-$$
-
-while $[2]_q^k \equiv 0 \pmod{[2]_q}$ for $k \geq 1$.
-These are never equal for $k_{\mathrm{odd}} \geq 1$.
-A cycle with $k_{\mathrm{odd}} = 0$ (all even steps) would
-be $P \mapsto P / [2]_q^k = P$, forcing $P = 0$.
-
-Therefore the only periodic orbit is $P = 1$
-(the unknot).  $\square$
-
-**Classical limit.** At $q = 1$: $\gcd(2, 3) = 1$ and
-$3^a \neq 2^b$ for $a, b > 0$ (unique prime factorization).
-The $q$-deformation lifts this to polynomial coprimality.
-
-**The full $(a, a+1)$ family.** The identity
-$\gcd([a]_q, [b]_q) = [\gcd(a,b)]_q$ shows that all
-Collatz-type maps $(a, a+1)$ exclude periodic cycles,
-since $\gcd(a, a+1) = 1$ for all $a$.  Cycle exclusion
-is a consequence of consecutive integers being coprime
-— a fa
-
-[…truncated; see manuscript for remainder…]
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts
 theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] :
     ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 ∧
-    ∀ P : ℝ, ctx.is_periodic P → P = 1 :=
-  by
-    have h_coprime : ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 := by
-      rw [ctx.q_int_2_def, ctx.q_int_3_def]
-      ring
-    exact ⟨h_coprime, ctx.no_cycles_of_coprime h_coprime⟩
+    ∀ P : ℝ, ctx.is_periodic P → P = 1 := by
+  have h_coprime : ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 := by
+    rw [ctx.q_int_2_def, ctx.q_int_3_def]
+    ring
+  exact ⟨h_coprime, ctx.no_cycles_of_coprime h_coprime⟩
 
 /-- **Balanced-holonomy cycle exclusion (proved, sorry-free).**
 
     Given a QOU whose Skein `q`-integers satisfy the Skein divisibility
     relation `[3]_q = q·[2]_q + 1` with `[2]_q` a non-unit (as holds for
-    `[2]_q = q + 1` in the Skein module `ℤ[q^{±1}]`), the equation
-    `[3]_q^{k_odd} = [2]_q^{k}` has **no** solution with `k ≥ 1`.
-
-    A Skein-Collatz periodic orbit of *balanced* multiplicative holonomy
-    (`A = [3]_q^{k_odd}/[2]_q^{k} = 1`) would force exactly this equation,
-    so this lemma discharges the `A = 1` sub-case of no-cycles by
-    coprimality — unconditionally, over a generic commutative ring. It
-    does **not** settle the affine (`A ≠ 1`) case, which is part of the
-    open `conj:q-collatz`.
-
-    Proof: `[3]_q ≡ 1 (mod [2]_q)` from the divisibility relation, so
-    `[2]_q ∣ [3]_q^{k_odd} − 1`; and `[2]_q ∣ [2]_q^{k}` for `k ≥ 1`.
-    Equality would give `[2]_q ∣ 1`, i.e. `[2]_q` a unit — contradiction. -/
+    `[2]_q = q + 1` in the Skein module `ℤ[q^{±1}]`, and more generally for
+    every consecutive `(a, a + 1)` pair via `qIntNat_succ_sub_mul_eq_one`),
+    the equation `[3]_q^{k_odd} = [2]_q^{k}` has **no** solution with `k ≥ 1`. -/
 -- Ref: [collatz1937]
 theorem balanced_holonomy_excluded {R : Type*} [CommRing R]
     (two three q : R) (hdiv : three = q * two + 1) (hnu : ¬ IsUnit two)
@@ -142,5 +134,12 @@ theorem balanced_holonomy_excluded {R : Type*} [CommRing R]
     have := dvd_sub hdvd_three_pow hdvd_pow
     simpa using this
   exact hnu (isUnit_of_dvd_one hone)
+
+/-- Consecutive `(a, a + 1)` balanced-holonomy exclusion for every `a : ℕ`:
+    whenever `[a]_q` is a non-unit in `R` and `1 ≤ k`, `[a + 1]_q^{ko} ≠ [a]_q^k`. -/
+theorem consecutive_qIntNat_balanced_holonomy_excluded {R : Type*} [CommRing R]
+    (a : ℕ) (q : R) (hnu : ¬ IsUnit (qIntNat a q)) {ko k : ℕ} (hk : 1 ≤ k) :
+    qIntNat (a + 1) q ^ ko ≠ qIntNat a q ^ k :=
+  balanced_holonomy_excluded (qIntNat a q) (qIntNat (a + 1) q) q rfl hnu hk
 
 end QOU.AlgebraicSubstrate

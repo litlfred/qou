@@ -31,6 +31,7 @@ export default corollary({
     script: "computations/spectral_decomposition_qvalue_d.py",
     witness: [
       "computations/spectral-decomposition-qvalue-d.witness.json",
+      "computations/h2s-chiral-residue-bar-antisymmetric.witness.json",
     ],
   },
 });

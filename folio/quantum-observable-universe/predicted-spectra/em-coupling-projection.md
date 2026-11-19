@@ -8,7 +8,7 @@ $$
 Every quantity below lives in $R$ and survives any ring map $\iota \colon R \to k$ to a target commutative ring $k$.
 
 **Proposition.**
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe over $R$ with substrate parameter $q$ and force-carrier generators $T_{2,9}$ (crossing number $c_s = 9$) and $T_{3,5}$ (crossing number $c_w = 10$). The electromagnetic fine structure constant is the $\tau$-trace of the singlet idempotent $e_-$ normalised by the force-carrier categorical complexity:
+Let $(\mathbf{C}, A, \tau)$ be the Descartes universe over $R$ with aether parameter $q$ and force-carrier generators $T_{2,9}$ (crossing number $c_s = 9$) and $T_{3,5}$ (crossing number $c_w = 10$). The electromagnetic fine structure constant is the $\tau$-trace of the singlet idempotent $e_-$ normalised by the force-carrier categorical complexity:
 
 $$
   \alpha_{\mathrm{EM}}(q)

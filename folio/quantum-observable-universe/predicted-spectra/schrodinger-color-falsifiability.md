@@ -28,9 +28,9 @@ See [Table 1](#tbl:schrodinger-color-falsifiability-table1-data).
 
 The large-$d$ logarithmic asymptote precisely matches the second-order Weber–Fechner law suggested by \cite{bujack2022}. The empirical power-law exponent of $\approx 0.5$ captures the intermediate-$d$ behavior of $\mathrm{arsinh}(\eta d)/\eta$, mapping the transition between the linear and logarithmic regimes.
 
-**Numerical prediction from the substrate parameter.**
+**Numerical prediction from the aether parameter.**
 
-Evaluation at the substrate value $q_0 \approx 1.109978595642739$ (muon pin; no producer recorded) determines $\eta$ and the crossover scale $d^{\,*}$:
+Evaluation at the aether value $q_0 \approx 1.109978595642739$ (muon pin; no producer recorded) determines $\eta$ and the crossover scale $d^{\,*}$:
 
 $$
   \eta = \frac{q_0 - q_0^{-1}}{2} \approx 0.1043,
@@ -46,7 +46,7 @@ The categorical prediction forms a one-parameter family $\Delta E_{\mathrm{perc}
 
 See [Table 2](#tbl:schrodinger-color-falsifiability-table2-data).
 
-An inconsistent measurement falsifies the hypothesis that retinal $\Delta E$ directly measures the Skein metric on the Bring-surface chromaticity simplex. It leaves the broader framework intact, because color perception operates several decoherence layers above the substrate.
+An inconsistent measurement falsifies the hypothesis that retinal $\Delta E$ directly measures the Skein metric on the Bring-surface chromaticity simplex. It leaves the broader framework intact, because color perception operates several decoherence layers above the aether.
 
 **Sign and functional-form predictions.**
 
@@ -58,4 +58,4 @@ The final empirical test lies in measuring the magnitude of $\eta$.
 
 **Connection to confinement.**
 
-The deformation parameter $q - q^{-1} = 2\eta$ determines the magnitude of the forced negative coefficients driving [color confinement](#rem:q-chromaticity). Measuring $\eta \approx 0.10$ via macroscopic color perception provides an independent measurement of the substrate deformation governing quark confinement.
+The deformation parameter $q - q^{-1} = 2\eta$ determines the magnitude of the forced negative coefficients driving [color confinement](#rem:q-chromaticity). Measuring $\eta \approx 0.10$ via macroscopic color perception provides an independent measurement of the aether deformation governing quark confinement.

@@ -53,7 +53,7 @@ rather than assuming.
 
 ## The separate claim, which is open
 
-**That $B = \alpha L$ is the nuclear binding energy is an interpretation, not a
+**That $B = \alpha L$ is the nuclear binding energy is an interpretation rather than a
 result.** It is recorded here as open, with the evidence that bears on it:
 
 - **At $A = 2$, where no ordering or arrangement convention is in play, the
@@ -87,7 +87,7 @@ matter and is retired for a separate reason: its bond multiset does not
 determine a braid word at all
 ([the ordering ambiguity](#prop:canonical-closure-torus-chain)).
 
-## Why the reading cannot supply the identification — prior to all three misses
+## Structural insufficiency of the free-energy reading
 
 The three bullets above are evidence about a formula. There is a prior fact
 about the *reading*, and it is an identity in $q$ rather than a measurement at
@@ -120,7 +120,7 @@ $e^{-E_-} = -q^{-1} + d$, and the $(1,1)$ block has no energy.
 
 So there is no $U$ and no $S$ for $\alpha L$ to be, or to differ from. **The
 free-energy reading does not supply the step to a binding energy, and could not
-have.** The three misses are downstream of that, not independent of it.
+have.** The three misses are downstream consequences of that obstruction.
 
 The same algebra shows that $L$ itself stands. The total $z + d$ stays positive because the $(2)$ block outweighs the
 $(1,1)$ block, so $L$ is real, exact and canonical wherever it appears, and the
@@ -138,6 +138,4 @@ because $w_+ \neq w_-$.
 The general structural properties hold algebraically: the minus-block summand is
 strictly negative, no real energy exists for the minus block, positivity would
 require $d > q^{-1}$ whereas all admissible letters are non-positive, each of the
-three letters exhibits a positive-but-signed pairing, and the $pn$ block sum equals
-$\tfrac{1}{2} h\,\delta$. Measured at $q_0$ in
-`the_free_energy_reading_has_no_energy_spectrum_probe.py`.
+three letters exhibits a positive-but-signed pairing, and the $pn$ block sum equals $\tfrac{1}{2} h\,\delta$, as verified numerically at $q_0$.

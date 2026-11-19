@@ -60,4 +60,15 @@ export default proposition({
         "separates them.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/qbeta_5two_trace_field_disc23_not_qsqrt7.py",
+    witness: [
+      "computations/probes/qbeta-5two-trace-field-disc23-not-qsqrt7.witness.json",
+      "computations/qbeta-route75-multiknot-gluing-symbolic.witness.json",
+      "computations/qbeta/qbeta-wedderburn-phase-twoterm-pin.witness.json",
+      "computations/qbeta/five-two-disc-neg23-cyclotomic-asymmetry.witness.json",
+    ],
+    status: "verified",
+  },
 });

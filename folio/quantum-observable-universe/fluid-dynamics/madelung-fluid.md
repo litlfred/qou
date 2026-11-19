@@ -15,7 +15,7 @@ $$
 where $Q_q$ is the $q$-deformed quantum pressure.
 
 **$|\psi|^2$ as fluid density; $q$ as brane thickness.**
-The [substrate parameter](#def:substrate-parameter) $q$ modulates the effective thickness of the quantum fluid. Near $q \approx 1$, the quantum pressure vanishes ($Q_q \approx 0$) and the system reduces to ordinary inviscid flow. At $q \gg 1$, $Q_q$ dominates; the fluid strongly resists compression. This resistance acts as the inertial mass of the brane.
+The [aether parameter](#def:substrate-parameter) $q$ modulates the effective thickness of the quantum fluid. Near $q \approx 1$, the quantum pressure vanishes ($Q_q \approx 0$) and the system reduces to ordinary inviscid flow. At $q \gg 1$, $Q_q$ dominates; the fluid strongly resists compression. This resistance acts as the inertial mass of the brane.
 
 **Zero-information state $|\psi|^2 = 0$.**
 The vacuum $\psi = 0$ carries no medium, no vortex, and no fermion. It lies outside the support of all harmonic modes filtered by the [algebraic filter](#rem:algebraic-filter). As $q \to 1$, $\hbar_q \to 0$: the vacuum represents the state of maximal classical certainty.
@@ -27,4 +27,4 @@ $$
   m  \propto  \oint_\varrho \|\nabla_A q\|\cdot\|L \wedge F^+\|,
 $$
 
-reproducing the [mass identity](#def:mass-identity) as a line integral of the substrate curvature around the vortex core.
+reproducing the [mass identity](#def:mass-identity) as a line integral of the aether curvature around the vortex core.

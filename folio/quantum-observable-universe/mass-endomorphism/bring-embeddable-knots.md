@@ -1,6 +1,6 @@
 **Remark (Bring-embeddable knot table).**
 
-The QOU substrate selects the knots whose Seifert genus is bounded by Bring's surface genus ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete), [knot exhaustiveness](#rem:knot-exhaustiveness)):
+The QOU aether selects the knots whose Seifert genus is bounded by Bring's surface genus ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete), [knot exhaustiveness](#rem:knot-exhaustiveness)):
 
 $$
   \mathrm{Knots}_{\mathrm{Bring}}

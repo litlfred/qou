@@ -16,7 +16,7 @@ The canonical values are rigorously evaluated using formal trace definitions.
 
 ### 3. Macdonald $(q,t)$-degeneration at $t = q^2$
 
-The degeneration $t = q^2$ carries the Macdonald pairing onto the coordinate in which the relevant $H_3$ scalar invariants are rational. Its role among the four anchors is placement rather than evaluation: it locates the higher rung coefficients $c_k$, $k \ge 3$, in the $(q, q^2)$ inner product, but determines none of them. No closed form for a rung beyond $c_2$ follows from the degeneration alone. The higher rungs remain open and calibration-anchored.
+The degeneration $t = q^2$ carries the Macdonald pairing onto the coordinate in which the relevant $H_3$ scalar invariants are rational. Its role among the four anchors is placement rather than evaluation: it locates the higher rung coefficients $c_k$, $k \ge 3$, in the $(q, q^2)$ inner product, but determines none of them. No closed form for a rung beyond $c_2$ follows from the $(q, q^2)$ Macdonald degeneration alone; whereas the Convention-D trace cumulants $c_2^{(D)}, c_3^{(D)}, c_4^{(D)}$ come from the explicit generating function $\mathcal{G}_D(u; q)$, deriving an operator-graded fibre kernel for the empirical ladder is conjectural.
 
 ### 4. Habiro residue at roots of unity
 

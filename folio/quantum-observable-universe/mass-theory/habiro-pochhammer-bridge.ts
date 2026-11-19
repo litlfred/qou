@@ -22,4 +22,10 @@ export default proposition({
     "normalization-bridge",
     "1ppQ",
   ],
+  computation: {
+    engine: "sympy",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/markov/markov-substrate-realization.witness.json",
+    status: "verified",
+  },
 });

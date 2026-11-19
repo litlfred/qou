@@ -36,4 +36,13 @@ export default remark({
       body: "Witness moved from prose: `breit-wheeler-nucleon-nf.witness.json`.",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/atomic_chirality_residue.py",
+    witness: [
+      "computations/atomic-chirality-residue.witness.json",
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+    ],
+    status: "verified",
+  },
 });

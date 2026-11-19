@@ -26,6 +26,7 @@ excess makes the neutron heavier.
 
 By $(\mathrm{H}_\alpha)$, the splitting is
 
+<!-- literal-source: closed-form scale m_e * 8 * Catalan = 3.7445 and product 3.74446 * 0.281509 = 1.0541 MeV -->
 $$
   \Delta m \approx 3.7445 \times 0.281509 \approx 1.0541 \;\mathrm{MeV}.
 $$

@@ -57,4 +57,13 @@ export default conjecture({
     "def:neutrino-knot",
     "prop:bn-mtc-action",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/nf-qvalues.witness.json",
+      "computations/m-baryon-volume-form.witness.json",
+    ],
+    status: "verified",
+  },
 });

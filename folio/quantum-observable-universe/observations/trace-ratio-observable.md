@@ -13,5 +13,3 @@ $$
 $$
 
 *where $\hat{V}_i = z \cdot a_i + b_i$ is the Markov-traced generator volume at $\sigma_i$. The product runs only over generators $i \leq p$ (those affected by the conversion of nucleon $p$ from neutron to proton). Generators $i > p$ cancel exactly between parent and daughter.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realization is specialized here.

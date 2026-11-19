@@ -1,10 +1,10 @@
-The bar involution $\iota \colon q \mapsto q^{-1}$ on the substrate parameter line lifts to a substrate-level T-duality between elliptic curves of the Descartes family ([Descartes elliptic curve](#prop:descartes-elliptic-curve)):
+The bar involution $\iota \colon q \mapsto q^{-1}$ on the aether parameter line lifts to an aether-level T-duality between elliptic curves of the Descartes family ([Descartes elliptic curve](#prop:descartes-elliptic-curve)):
 
 $$
   \iota_*\,\mathcal{E}_q  =  \mathcal{E}_{q^{-1}}.
 $$
 
-Here $\iota_*$ is the pull-back of $\iota$ along the substrate parametrization $q \mapsto \mathcal{E}_q$. Under $\iota_*$:
+Here $\iota_*$ is the pull-back of $\iota$ along the aether parametrization $q \mapsto \mathcal{E}_q$. Under $\iota_*$:
 
 1. **Discriminant locus:** The pole $\Delta(\mathcal{E}_q) = 0$ at $q = 1/\varphi^2$ pairs with $\Delta(\mathcal{E}_{1/q}) = 0$ at $q = \varphi^2$ ([skew-dual golden node](#prop:golden-skew-dual-node)).
 2. **$j$-invariant:** The rational involution $j \mapsto j^*$, induced by $q \mapsto q^{-1}$ on the Weierstrass coefficients, relates $j(\mathcal{E}_q)$ and $j(\mathcal{E}_{1/q})$.

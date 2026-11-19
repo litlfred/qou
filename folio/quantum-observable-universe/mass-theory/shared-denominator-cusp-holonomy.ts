@@ -33,4 +33,10 @@ export default conjecture({
     ],
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witnesses: computations/q-pochhammer-seed.witness.json, computations/snappy-cusp-seeding.witness.json.",
+    },
+  ],
 });

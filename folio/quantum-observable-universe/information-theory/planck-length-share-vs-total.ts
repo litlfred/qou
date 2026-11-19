@@ -47,4 +47,10 @@ export default remark({
         "an owner call.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
 });

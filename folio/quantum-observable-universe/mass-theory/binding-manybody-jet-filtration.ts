@@ -23,4 +23,16 @@ export default conjecture({
     "step-9b",
     "open-problem",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: computations/binding_n3_forcing_probe.py, computations/coulomb_energy.py, docs/audits/2026-08-26-n3-body-order-forcing.md.",
+    },
+  ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/d_from_scratch.py",
+    witness: "computations/d-from-scratch.witness.json",
+    status: "verified",
+  },
 });

@@ -17,4 +17,7 @@ export default conjecture({
     "counter-example",
     "millennium-problem",
   ],
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

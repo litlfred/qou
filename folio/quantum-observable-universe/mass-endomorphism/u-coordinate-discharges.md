@@ -4,13 +4,13 @@ Many scalar invariants in the Hecke and Wenzl-bridge algebras are rational in th
 
 ## Substantive identities
 
-See [Table](#tbl:u-coordinate-discharges-table-data).
+See [the $u = q^2$ rational-discharge table](#tbl:u-coordinate-discharges-table-data).
 
 Because the substitution $u = q^2$ removes square roots, every scalar identity in the table reduces to a pure rational function identity in $u$.
 
 ## Significance
 
-The $u$-coordinate identities express the underlying scalars as rational functions in a single variable $u$, connecting the vanishing of each residual directly to substrate arithmetic. For example, the Hecke quadratic residual on $H_3(q)$ vanishes because of the root-sum identity $q \cdot (q - q^{-1}) = u - 1$.
+The $u$-coordinate identities express the underlying scalars as rational functions in a single variable $u$, connecting the vanishing of each residual directly to aether arithmetic. For example, the Hecke quadratic residual on $H_3(q)$ vanishes because of the root-sum identity $q \cdot (q - q^{-1}) = u - 1$.
 
 ## Downstream dependencies
 

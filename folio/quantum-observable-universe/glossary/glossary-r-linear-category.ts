@@ -6,10 +6,4 @@ export default remark({
   tags: ["glossary", "category-theory", "enrichment"],
   uses: [],
   defines: ["r-linear-category"],
-  authorNotes: [
-    {
-      kind: "note",
-      body: "Mathlib reference: `CategoryTheory.Linear R` (class) in `Mathlib.CategoryTheory.Linear.Basic`.",
-    },
-  ],
 });

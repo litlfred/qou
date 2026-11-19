@@ -47,7 +47,7 @@ refutation is untouched; this probe is about k >= 4.
 ## Why it matters
 
 It relocates the target.  The dramatic numbers (mu_5 = -55.8, mu_6 = +166.1,
-mu_7 = -373.2) are not a diffuse many-body effect to be derived from the
+mu_7 = -373.2) are not a diffuse many-body effect originating in the
 substrate -- they are two points of textbook nuclear shell structure, the
 alpha-particle binding maximum and the A = 5 gap.  Any framework term aimed at
 "the growing body-order coefficients" would be aiming at those two points.
@@ -89,7 +89,7 @@ in the descriptive growth rate.
 """
 import sys
 from fractions import Fraction as F
-from math import comb
+from math import comb  # float64-ok: exact integer binomial coefficient
 
 MU = {2: F("2.22457"), 3: F("1.42622"), 4: F("9.24338"),
       5: F("-55.77912"), 6: F("166.12507"), 7: F("-373.24295")}
@@ -120,33 +120,33 @@ B = {A: sum(MU[k] * comb(A, k) for k in MU if k <= A) for A in range(2, 8)}
 print("\n1. Reconstruction of B(A) from the coefficients, checked against AME")
 for A, v in KNOWN.items():
     check(f"B({A}) matches AME within 1e-3 MeV", abs(B[A] - v) < F(1, 1000), True,
-          f"{float(B[A]):.4f} vs {float(v):.4f}")
+          f"{float(B[A]):.4f} vs {float(v):.4f}")  # float64-ok: display-only f-string of exact Fraction
 check("round-trip: mu_k recovered from B", mu_of(B), MU, "exact")
 
 print("\n2. B/A is NOT monotonic — the alpha particle is a local maximum")
 ba = {A: B[A] / A for A in B}
 check("B/A rises to a maximum at A=4", max(ba, key=lambda a: ba[a]), 4,
-      f"B/A(4) = {float(ba[4]):.4f}")
+      f"B/A(4) = {float(ba[4]):.4f}")  # float64-ok: display-only f-string of exact Fraction
 check("B(5) < B(4) — binding DECREASES", B[5] < B[4], True,
-      f"{float(B[5]):.4f} < {float(B[4]):.4f}")
+      f"{float(B[5]):.4f} < {float(B[4]):.4f}")  # float64-ok: display-only f-string of exact Fraction
 
 print("\n3. Delta^2 B picks out A=4 before any interpolation is chosen")
 A = sorted(B)
 d1 = {a: B[a + 1] - B[a] for a in A[:-1]}
 d2 = {a: d1[a + 1] - d1[a] for a in A[:-2]}
 for a in A:
-    c1 = f"{float(d1[a]):>9.3f}" if a in d1 else " " * 9
-    c2 = f"{float(d2[a]):>9.3f}" if a in d2 else " " * 9
-    print(f"       A={a}  B={float(B[a]):>9.4f}  D1={c1}  D2={c2}")
+    c1 = f"{float(d1[a]):>9.3f}" if a in d1 else " " * 9  # float64-ok: display-only f-string
+    c2 = f"{float(d2[a]):>9.3f}" if a in d2 else " " * 9  # float64-ok: display-only f-string
+    print(f"       A={a}  B={float(B[a]):>9.4f}  D1={c1}  D2={c2}")  # float64-ok: display-only f-string
 # d2[a] = B(a+2) - 2B(a+1) + B(a), i.e. the second difference CENTERED on a+1.
 # So the alpha/mass-5 feature -- B(3), B(4), B(5) -- is indexed at a = 3.
 # (I first asserted index 4 here; the probe's own check caught the off-by-one.)
 extremal = max(d2, key=lambda a: abs(d2[a]))
 check("|Delta^2 B| is extremal at the triple centered on A=4", extremal, 3,
-      f"d2[3] = {float(d2[3]):.3f}, spanning B(3),B(4),B(5)")
+      f"d2[3] = {float(d2[3]):.3f}, spanning B(3),B(4),B(5)")  # float64-ok: display-only f-string
 check("and it is the only |Delta^2 B| above 15",
       [a for a in d2 if abs(d2[a]) > 15], [3],
-      f"others: {[round(float(d2[a]), 3) for a in sorted(d2) if a != 3]}")
+      f"others: {[round(float(d2[a]), 3) for a in sorted(d2) if a != 3]}")  # float64-ok: display-only f-string
 
 print("\n4. Null model: interpolate A=4,5 between the untouched A=3 and A=6")
 Bs = dict(B)
@@ -157,26 +157,26 @@ check("mu_2 unchanged", M2[2], MU[2], "involves only A<=2")
 check("mu_3 unchanged", M2[3], MU[3], "involves only A<=3 — b_3 is untouched")
 print(f"       {'k':>2} {'measured':>13} {'null':>13}")
 for k in range(2, 8):
-    print(f"       {k:>2} {float(MU[k]):>13.4f} {float(M2[k]):>13.4f}")
+    print(f"       {k:>2} {float(MU[k]):>13.4f} {float(M2[k]):>13.4f}")  # float64-ok: display-only f-string
 
-rate = lambda m: (abs(float(m[7])) / abs(float(m[4]))) ** (1 / 3)   # noqa: E731
+rate = lambda m: (abs(float(m[7])) / abs(float(m[4]))) ** (1 / 3)   # noqa: E731  # float64-ok: descriptive growth rate display
 print(f"\n       growth rate   measured {rate(MU):.3f}   null {rate(M2):.3f}")
 check("null |mu_7| is >20x smaller", abs(MU[7]) > 20 * abs(M2[7]), True,
-      f"{float(abs(MU[7]) / abs(M2[7])):.1f}x")
+      f"{float(abs(MU[7]) / abs(M2[7])):.1f}x")  # float64-ok: display-only f-string
 check("null growth rate falls inside the smooth-toy band",
       abs(M2[7]) / abs(M2[4]) < F(11), True,
-      f"null |mu7/mu4| = {float(abs(M2[7]) / abs(M2[4])):.2f}, toy max 10.27")
+      f"null |mu7/mu4| = {float(abs(M2[7]) / abs(M2[4])):.2f}, toy max 10.27")  # float64-ok: display-only f-string
 check("measured growth rate does NOT", abs(MU[7]) / abs(MU[4]) > F(11), True,
-      f"measured |mu7/mu4| = {float(abs(MU[7]) / abs(MU[4])):.2f}")
+      f"measured |mu7/mu4| = {float(abs(MU[7]) / abs(MU[4])):.2f}")  # float64-ok: display-only f-string
 
 print("\n5. CORRECTION — mu_3 is NOT robust under the mirror conventions")
 B2 = F("2.224566"); H3 = F("8.481798"); He3 = F("7.718043")
 lo, hi = He3 - 3 * B2, H3 - 3 * B2
 mid = (lo + hi) / 2
 check("mirror average reproduces the quoted mu_3", abs(mid - MU[3]) < F(1, 1000), True,
-      f"{float(mid):.5f} vs {float(MU[3]):.5f}")
+      f"{float(mid):.5f} vs {float(MU[3]):.5f}")  # float64-ok: display-only f-string
 check("mu_3 band exceeds 50%", (hi - lo) / mid > F(1, 2), True,
-      f"{float(lo):.5f}..{float(hi):.5f} = {float((hi - lo) / mid) * 100:.1f}%")
+      f"{float(lo):.5f}..{float(hi):.5f} = {float((hi - lo) / mid) * 100:.1f}%")  # float64-ok: display-only f-string
 print("       -> 0.271 significant digits; the LEAST determined magnitude in the")
 print("          tower.  Reproduces binding_magnitude_is_not_validatable_probe.py,")
 print("          which measured it first.  Invariance under A=4,5 interpolation and")

@@ -12,8 +12,8 @@ See [Table](#tbl:sdp-regime-switch-table-data).
 
 - The SDP couplings $c_{\lambda\lambda'}$ act as the categorical analogues of density-matrix coherence elements between Wedderburn sectors.
 - Zero couplings mark nuclear configurations where the atom's projection loses phase coherence between $\lambda$ and $\lambda'$. This is equivalent to the appearance of a conserved quantum number (shell closure, pairing gap, spin saturation).
-- As $q$ is held fixed at $q_0$ (the substrate parameter from SnapPy $\mathrm{Vol}(4_1)$ and CODATA $m_\mu/m_e$), the $(Z, N)$ scan functions as a categorical probe of the Standard Model's discrete nuclear-structure hierarchy.
+- As $q$ is held fixed at $q_0$ (calibrated from $\mathrm{Vol}(4_1)$ and the CODATA $m_\mu/m_e$ ratio), the $(Z, N)$ scan functions as a categorical probe of the Standard Model's discrete nuclear-structure hierarchy.
 
 **Related**:
-- Complementary to the LP-dual shadow prices ([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)), which give only scalar per-partition variables.
-- The $q$-dependence of the couplings $c_{\lambda\lambda'}(q)$ (varying $q$ at fixed $Z, N$) detects SUBSTRATE regime switches — cosmological transitions, Big-Bang to heat-death across the $q$-time coordinate ([$q$-heat equation](#def:q-heat-equation)).
+- Complementary to the LP-dual shadow prices ([Frobenius shadow-price identity](#prop:mass-coefficient-shadow-price)), which give only scalar per-partition variables.
+- The $q$-dependence of the couplings $c_{\lambda\lambda'}(q)$ (varying $q$ at fixed $Z, N$) detects AETHER regime switches — cosmological transitions, Big-Bang to heat-death across the $q$-time coordinate ([$q$-heat equation](#def:q-heat-equation)).

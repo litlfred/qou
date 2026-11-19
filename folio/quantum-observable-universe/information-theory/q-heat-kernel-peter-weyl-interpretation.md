@@ -1,6 +1,6 @@
-**Small-$\lambda$ table** (at physical substrate $q_0 \approx 1.11$, $\hbar_{q_0}^2 \approx 0.00976$):
+**Small-$\lambda$ table** (at the physical aether parameter $q_0 \approx 1.11$, $\hbar_{q_0}^2 \approx 0.009817$):
 
-See [Table](#tbl:q-heat-kernel-peter-weyl-table-data).
+See [the content-Casimir eigenvalue table](#tbl:q-heat-kernel-peter-weyl-table-data).
 
 The content-Casimir sum follows explicitly from partition data. No diagonalisation is required to determine the spectrum.
 

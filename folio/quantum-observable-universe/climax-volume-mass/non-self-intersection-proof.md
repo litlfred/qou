@@ -1,6 +1,6 @@
 The mechanism is as follows.  The universal $R$-matrix
 $\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \hat{\otimes} \mathcal{U}_q(\mathfrak{su}(2))$
-([Remark](#rem:r-matrix-braiding)) controls the failure of the
+([$R$-matrix and braiding](#rem:r-matrix-braiding)) controls the failure of the
 cocommutativity square
 
 $$

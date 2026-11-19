@@ -31,8 +31,8 @@ export default proposition({
   title:
     "Trilogarithm imaginary part at $\\zeta_n$: closed form $(n - 1)(n - 2)\\pi^3 / (3 n^3)$ for every root of unity",
   lean: {
-    ref: "qou:QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds",
-    validation: "not_checked",
+    ref: "qou:QOU.Infra.Polylogarithm.TheoremA",
+    validation: "leanok",
   },
   computation: {
     engine: "mpmath",

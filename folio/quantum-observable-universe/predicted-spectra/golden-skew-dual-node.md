@@ -1,4 +1,4 @@
-The Hecke bar involution $\sigma \leftrightarrow \sigma^{-1}$ acts on the substrate parameter as $q \leftrightarrow q^{-1}$. In terms of $s = \sqrt{q}$, this is $s \leftrightarrow 1/s$. This involution maps the golden-ratio node $q_{\mathrm{gold}} = 1/\varphi^2$ ([golden-ratio degeneration](#rem:golden-ratio-degeneration)) to the skew-dual golden node:
+The Hecke bar involution $\sigma \leftrightarrow \sigma^{-1}$ acts on the aether parameter as $q \leftrightarrow q^{-1}$. In terms of $s = \sqrt{q}$, this is $s \leftrightarrow 1/s$. This involution maps the golden-ratio node $q_{\mathrm{gold}} = 1/\varphi^2$ ([golden-ratio degeneration](#rem:golden-ratio-degeneration)) to the skew-dual golden node:
 
 $$
   q^{*}_{\mathrm{gold}}

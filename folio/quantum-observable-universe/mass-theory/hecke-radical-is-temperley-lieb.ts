@@ -19,6 +19,10 @@ export default remark({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Computational witness: tl-two-row-weight-family.witness.json.",
+    },
+    {
       kind: "status",
       date: "2026-08-09",
       body:

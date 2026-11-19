@@ -1,45 +1,38 @@
-Closed sub-links govern shell closure, determining both chemical reactivity and nuclear stability. A shell is closed precisely when its components separate as a self-contained Hopf sub-link. The table below provides the knot structure of atoms with $Z \leq 4$.
+Closed sub-links govern shell closure, determining both chemical reactivity and nuclear stability. A shell is closed precisely when its constituent components separate as a self-contained sub-link within the composite atomic diagram. For the lightest elements ($Z \leq 4$), the interplay between nuclear $\alpha$-clustering and electronic $1s/2s$ shell closure already exhibits the full topological grammar of the periodic table.
 
-**Visual conventions.**
+**Topological and visual conventions.**
 
-- **Solid trefoil** (filled): left trefoil $T_{2,3}$ (proton).
-- **Outline trefoil** (unfilled): right trefoil $T_{2,3}^{\sigma}$ (electron).
-- **Circle**: unknot $K_{0_1}$ (neutron).
-- **Dashed circle**: mirror unknot $T_{1,0}^{\sigma}$ (antineutrino, see [antineutrino knot](#def:antineutrino-knot)).
-- **Interlocked circles**: Hopf link $\mathcal{L}_H$ (the $\oplus$ binding operation).
-- **$\alpha$**: alpha particle $2\mathfrak{p} \oplus 2\mathfrak{n}$ (helium-4 nucleus).
-- **Bracket-star $[\cdots]^*$**: closed sub-Hopf link (splits from remaining components).
-- **Green border**: closed $1s$ sub-link (2 electrons).
-- **Blue border**: closed $2s$ sub-link (2 electrons).
-- **Brown border**: nuclear sub-link (protons + neutrons).
+- **Proton** $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}\mathfrak{u}\mathfrak{d})$: three-strand flavored Borromean baryon, the Markov closure $\widehat{(\sigma_1 \sigma_2^{-1})^3}$ in $B_3$ ([Borromean baryon](#def:borromean-baryon)).
+- **Neutron** $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$: three-strand flavored Borromean baryon $\widehat{(\sigma_1 \sigma_2^{-1})^3}$ with down-flavored crossing replacement.
+- **Electron** $e^- = T_{2,3} = 3_1$: trefoil fermion $\widehat{\sigma_1^3}$ in $B_2$ (mirror trefoil $T_{2,3}^{\sigma}$ for the positron $e^+$).
+- **Neutrino and antineutrino**: unknot $0_1 = T_{1,0}$ and mirror unknot $T_{1,0}^{\sigma}$ ([antineutrino knot](#def:antineutrino-knot)).
+- **Hopf link** $\mathcal{L}_H = \widehat{\sigma_1^2}$: pairwise linking operation $\oplus$ coupling nuclear and electronic sectors.
+- **Alpha cluster** $\alpha = 2\mathfrak{p} \oplus 2\mathfrak{n}$: closed tetrahedral $K_4$ four-nucleon singlet (${}^{4}\mathrm{He}$ core).
+- **Bracket-star $[\cdots]^*$**: closed sub-Hopf shell splitting cleanly from outer valence components (green border $= 1s^2$, blue border $= 2s^2$, brown border $=$ nuclear core).
 
-| $Z$ | Atom | $N$ | Structure | $k_\alpha$ | Shells |
-|----:|------|----:|-----------|---:|--------|
-| 1 | H | 0 | $[\mathfrak{p}] \oplus T_{2,3}$ | 0 | $1s^1$ |
-| 2 | He | 2 | $[\alpha] \oplus [T_{2,3} \oplus T_{2,3}]^*$ | 1 | $1s^2$ ${}^*$ |
-| 3 | Li | 4 | $[3\mathfrak{p}4\mathfrak{n}] \oplus [T \oplus T]^* \oplus T$ | 1 | $1s^2 + 2s^1$ |
-| 4 | Be | 5 | $[4\mathfrak{p}5\mathfrak{n}] \oplus [T \oplus T]^* \oplus [T \oplus T]^*$ | 2 | $1s^2 + 2s^2$ |
+| $Z$ | Atom | $N$ | Composite knot formula | $k_\alpha$ | Electron shells |
+|----:|:----:|----:|:-----------------------|---:|:----------------|
+| 1 | ${}^{1}\mathrm{H}$ | 0 | $[\mathfrak{p}] \oplus T_{2,3}$ | 0 | $1s^1$ |
+| 2 | ${}^{4}\mathrm{He}$ | 2 | $[\alpha]^* \oplus [T_{2,3} \oplus T_{2,3}]^*$ | 1 | $1s^2\,{}^*$ |
+| 3 | ${}^{7}\mathrm{Li}$ | 4 | $[\alpha \oplus \mathfrak{p} \oplus 2\mathfrak{n}] \oplus [T_{2,3} \oplus T_{2,3}]^* \oplus T_{2,3}$ | 1 | $1s^2\,2s^1$ |
+| 4 | ${}^{9}\mathrm{Be}$ | 5 | $[2\alpha \oplus \mathfrak{n}] \oplus [T_{2,3} \oplus T_{2,3}]^* \oplus [T_{2,3} \oplus T_{2,3}]^*$ | 2 | $1s^2\,2s^2$ |
 
-$T = T_{2,3}$ (trefoil). Brackets $[\cdots]^*$ denote a closed sub-Hopf link.
+**Shell-closure patterns ($Z \leq 4$).**
 
-**Observations.**
+1. **Hydrogen** ($Z = 1$, ${}^{1}\mathrm{H}$): A single Borromean proton $\mathfrak{p}$ links to one trefoil electron $T_{2,3}$; no paired sub-link closes, leaving an open $1s^1$ valence shell.
+2. **Helium** ($Z = 2$, ${}^{4}\mathrm{He}$): Four Borromean nucleons close into a Wigner-singlet $\alpha$ tetrahedron while two trefoil electrons form a closed $1s^2$ Hopf pair, rendering ${}^{4}\mathrm{He}$ doubly closed in both nuclear and electronic sectors.
+3. **Lithium** ($Z = 3$, ${}^{7}\mathrm{Li}$): Beyond the closed $\alpha$ core and closed $1s^2$ pair, one unpaired valence proton and two neutrons occupy the $1p_{3/2}$ nuclear subshell while a third trefoil electron opens the $2s^1$ shell.
+4. **Beryllium** ($Z = 4$, ${}^{9}\mathrm{Be}$): Two $\alpha$ clusters stabilized by one valence neutron bind to two closed electronic Hopf pairs ($1s^2$ and $2s^2$) prior to opening the $2p$ subshell.
 
-1. **Hydrogen** ($Z = 1$): A single proton $\mathfrak{p}$ links to a single electron $T_{2,3}$. There are no sub-links; the shell is open.
-2. **Helium** ($Z = 2$): The $\alpha$ particle links to two electrons forming a closed Hopf pair. Both nuclear and electronic sub-links are closed. Helium is doubly stable.
-3. **Lithium** ($Z = 3$): The $1s^2$ sub-link is closed, but the third electron links at a higher level. The $2s$ shell is open, leaving one valence electron.
-4. **Beryllium** ($Z = 4$): Two closed electron pairs ($1s^2$ and $2s^2$) are Hopf-linked. The $2s$ shell is closed, but the $2p$ sub-shell has not started.
+**Transfer-matrix complexity on light nuclei.**
 
-**Transfer matrix data.**
+Pairwise nuclear crossings are evaluated by $2 \times 2$ transfer matrices ([transfer matrix operator](#def:transfer-matrix-operator)) over the $\binom{A}{2}$ nucleon pairs:
 
-The nuclear link is encoded by transfer matrices ([transfer matrix operator](#def:transfer-matrix-operator)) with pair-dependent crossing coefficients. For light atoms:
+| Nuclide | $A$ | $\binom{A}{2}$ steps | Nucleon-pair decomposition | $\deg P_{\mathcal{N}} \leq$ |
+|:-------:|:---:|:---:|:---------------------------|:---:|
+| ${}^{1}\mathrm{H}$ | 1 | 0 | — | 0 |
+| ${}^{4}\mathrm{He}$ | 4 | 6 | $1\,\mathfrak{p}\mathfrak{p},\; 1\,\mathfrak{n}\mathfrak{n},\; 4\,\mathfrak{p}\mathfrak{n}$ | 15 |
+| ${}^{7}\mathrm{Li}$ | 7 | 21 | $3\,\mathfrak{p}\mathfrak{p},\; 6\,\mathfrak{n}\mathfrak{n},\; 12\,\mathfrak{p}\mathfrak{n}$ | 48 |
+| ${}^{9}\mathrm{Be}$ | 9 | 36 | $6\,\mathfrak{p}\mathfrak{p},\; 10\,\mathfrak{n}\mathfrak{n},\; 20\,\mathfrak{p}\mathfrak{n}$ | 80 |
 
-| Atom | $A$ | $\binom{A}{2}$ steps | Pair types | $\deg P \leq$ |
-|------|:---:|:---:|------------|:---:|
-| H | 1 | 0 | — | 0 |
-| He | 4 | 6 | 1 pp, 1 nn, 4 mix | 15 |
-| Li | 7 | 21 | 3 pp, 6 nn, 12 mix | 48 |
-| Be | 9 | 36 | 6 pp, 10 nn, 20 mix | 80 |
-
-The photon-electron transfer matrix eigenvalue $\lambda_+ = 1.1073$ ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)) governs shell structure. Hydrogen features one electron-proton junction ($T_{\gamma e}^1$); helium closes the $1s$ shell ($T_{\gamma e}^1 \otimes T_{\gamma e}^1$); lithium adds the first $2s$ electron ($T_{\gamma e}^2$) at the third junction.
-
-See the [knot atom diagrams simulator](#sim:knot-atom-diagrams) for an interactive SVG version.
+At the aether parameter $q_0$, the dominant photon--electron transfer-matrix eigenvalue $\lambda_+ = q_0 \approx 1.109979$ ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)) governs electronic shell scaling: hydrogen exercises a single electron--proton junction ($T_{\gamma e}^1$), helium closes the $1s^2$ tensor pair ($T_{\gamma e}^1 \otimes T_{\gamma e}^1$), and lithium opens the $2s$ level ($T_{\gamma e}^2$). Interactive SVG diagrams appear in the [light-atom knot simulator](#sim:knot-atom-diagrams).

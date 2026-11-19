@@ -1,5 +1,5 @@
 **Definition.**
-Let $q \in k^\times \setminus \{1\}$ denote the substrate parameter ([substrate parameter](#def:substrate-parameter)). Let $\hbar_q = 1 - q^{-1}$ denote the quantum Planck constant ([quantum Planck constant](#def:quantum-planck-constant)). The **Planck time** is
+Let $q \in k^\times \setminus \{1\}$ denote the aether parameter ([aether parameter](#def:substrate-parameter)). Let $\hbar_q = 1 - q^{-1}$ denote the quantum Planck constant ([quantum Planck constant](#def:quantum-planck-constant)). The **Planck time** is
 
 $$
   t_P(q)  :=  \frac{1}{\hbar_q}

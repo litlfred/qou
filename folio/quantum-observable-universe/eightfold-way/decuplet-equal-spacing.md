@@ -18,7 +18,7 @@ commutative ring.  Their common value is $-4b - 6c$, and the second difference
 vanishes identically.  Two arbitrarily different
 breaking patterns therefore give the same answer.
 
-## Why the rule collapses
+## Algebraic collapse of the spacing rule
 
 The Gell-Mann--Okubo mass operator is *quadratic* in the hypercharge,
 
@@ -53,7 +53,7 @@ $$
 
 which means the extrapolation reads off a value the ansatz has already fixed.
 
-**The collapse is special to the decuplet, not generic.**  On the baryon octet
+**The collapse is special to the decuplet rather than generic.**  On the baryon octet
 the isospin is not even a *function* of the hypercharge --- $\Sigma$ and
 $\Lambda$ share $Y = 0$ with $I = 1$ and $I = 0$ --- so no such substitution
 exists and the argument has nothing to act on
@@ -61,7 +61,7 @@ exists and the argument has nothing to act on
 data rather than asserted).  Without that contrast the result above could be
 misread as a fact about every $\mathrm{SU}(3)_{\mathrm{f}}$ multiplet.
 
-## What this means for the framework
+## Implications for framework testing
 
 The same conclusion as [the meson mass-splitting
 remark](#rem:meson-mass-splitting) reaches for Gell-Mann--Okubo, and for the

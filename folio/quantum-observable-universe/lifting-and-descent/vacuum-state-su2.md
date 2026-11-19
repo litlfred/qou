@@ -35,7 +35,7 @@ $$
 $$
 The convergence is exact after finitely many steps. The discrete Peter–Weyl decomposition eliminates the need for an $\epsilon$-$\delta$ argument.
 
-**Bring's surface specialisation.** On Bring's QOU at the specific substrate parameter $q_0$ (recorded in the archimedean witness ledger), the Haar state evaluates to:
+**Bring's surface specialisation.** On Bring's QOU at the specific aether parameter $q_0$ (recorded in the archimedean witness ledger), the Haar state evaluates to:
 $$
   \varphi(t^j_{m,m'})
   = \frac{\delta_{j,0}\,\delta_{m,0}\,\delta_{m',0}}{1},

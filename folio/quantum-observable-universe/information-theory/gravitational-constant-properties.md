@@ -1,6 +1,6 @@
 The [gravitational constant $G_q$](#def:gravitational-constant) is
 derived from the categorical structure of the
-$q$-Yang--Mills--Levi action, not from semiclassical entropy-area
+$q$-Yang--Mills--Levi action rather than from semiclassical entropy-area
 relations.  The key ingredient is the **in-progress braid content**
 of a Planck cell — the sections of the jet tower that are partially
 evaluated but not yet resolved to observable knots.  This remark
@@ -12,7 +12,7 @@ Hausdorff-dimension prediction is recorded separately
 
 **The variational origin of $G$.**
 The field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$
-([GR substrate geometry](#rem:gr-substrate-geometry)) arises from
+([GR aether geometry](#rem:gr-substrate-geometry)) arises from
 varying the $q$-Yang--Mills--Levi functional
 ([$q$-YM-Levi](#def:q-yang-mills-levi))
 
@@ -57,9 +57,8 @@ $\Gamma(J^k\mathcal{S}|_p)$.  For the $\mathrm{SU}_q(2)$ Frobenius--Hopf
 object, this grows with $k$: each jet prolongation adds new
 polynomial coefficients (new Taylor data of the energy function $E$).
 
-The total information content of a Planck cell is not the
-single-operation entropy $\eta_q$ but the **cumulative jet tower
-entropy**:
+The total information content of a Planck cell is the **cumulative jet tower
+entropy** rather than the single-operation entropy $\eta_q$:
 
 $$
   S_{\mathrm{cell}}(q)
@@ -78,13 +77,13 @@ divisors of codimension $\geq 2$.
 The exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$
 is a $2$-sphere.  Each jet level $k$ adds a shell of in-progress
 braids whose **information surface area** scales as $\hbar_q^2$
-(the square of the linear Reeb dimension), not $\hbar_q$.  This is
+(the square of the linear Reeb dimension) rather than $\hbar_q$.  This is
 the holographic content of the :refterm[descent]{#descent} involution: information on
 the exceptional divisor lives on $2$-surfaces, and area is quadratic
 in the linear scale.
 
 Concretely, the entropy at jet level $k$ is suppressed by the
-**area** of the transient shell, not its radius:
+**area** of the transient shell rather than its radius:
 
 $$
   \eta_q^{(k)}
@@ -180,8 +179,8 @@ brane tower.
 The speed of light and Planck constant are algebraic in $q$.  The
 gravitational constant requires the full jet tower information
 content — it is the only fundamental coupling that depends on the
-**braid-group structure** of the Frobenius--Hopf object, not just
-its ring-theoretic data.  This explains why gravity is the hardest
+**braid-group structure** of the Frobenius--Hopf object rather than
+its ring-theoretic data alone.  This explains why gravity is the hardest
 interaction to quantise and the weakest at low energies: its
 coupling is suppressed by the sparsity of in-progress braids
 ($S_{\mathrm{cell}} \ll \eta_q$) in the near-classical regime.

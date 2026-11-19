@@ -45,4 +45,10 @@ export default proposition({
         "it.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/c_k_beta_decay_witness.py",
+    witness: "computations/c-k-beta-decay-bound.witness.json",
+    status: "verified",
+  },
 });

@@ -1,6 +1,6 @@
 ## Scope of the Taylor expansion
 
-**What is established:**
+**Established results:**
 
 - The rational Taylor-coefficient table cataloguing $c_0, \dots, c_7$ in the
   canonical (borromean) frame, matching the computational witness.
@@ -10,9 +10,9 @@
   to $7$ by an iterated-Leibniz recurrence on the polynomial identity
   $f \cdot D = N$.
 
-**What is deferred:**
+**Deferred items:**
 
 - A closed-form recursion for the $c_n$. The canonical surrogate is a
   rational function with a degree-17 numerator and the degree-10
-  denominator $4q^8(q^2+q+1)$, so a finite-order linear recursion on
-  $c_n$ exists, but extracting it remains open.
+  denominator $4q^8(q^2+q+1)$, guaranteeing a finite-order linear recurrence on
+  $c_n$ whose explicit coefficients have not yet been extracted.

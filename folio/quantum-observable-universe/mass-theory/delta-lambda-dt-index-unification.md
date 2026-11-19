@@ -23,25 +23,25 @@ $$
 
 *where $\lambda'$ is the conjugate partition. Both hold for every $n$, with no restriction.*
 
-### Why this is a theorem and not a definition
+### Theorem status versus definitional stipulation
 
-Writing $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$ by itself asserts nothing — it names
+Writing $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$ by itself asserts nothing: it names
 a product of a sign and a dimension. The content is that **neither factor is free**:
 
 - the magnitude is forced as an **Euler characteristic**, an alternating sum over the graded
   pieces, rather than being posited as the Wedderburn dimension;
-- the sign is forced as a **geometric** invariant — the longest-element sign of the associated
-  Weyl-group datum — rather than being posited as the jet-order parity.
+- the sign is forced as a **geometric** invariant (the longest-element sign of the associated
+  Weyl-group datum) rather than being posited as the jet-order parity.
 
 The bridge between the two readings of the sign is the combinatorial identity
 $n(\lambda) = \sum_i \binom{\lambda'_i}{2}$, which is what removes the earlier $n \le 5$
 restriction: the chirality leg had been established only for small $n$ until that identity was
 proved in general.
 
-### Scope — the value only
+### Scope: the value only
 
-This fixes the **per-partition value**. It does **not** address the many-body binding
-**magnitude**, which remains open: no per-block weight converts an intensive quantity into an
+This fixes the **per-partition value**. It does **not** determine the extensive many-body binding
+**magnitude**, which requires an additional body-order mechanism: no per-block weight converts an intensive quantity into an
 extensive one, so the missing contribution is a separate additive extensive term rather than a
 different choice of $\Delta_\lambda$. Six closure ansätze have failed on the deuteron for
 exactly that reason. Nothing here should be read as narrowing that gap.

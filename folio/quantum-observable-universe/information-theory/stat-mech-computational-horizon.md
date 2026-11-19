@@ -15,7 +15,7 @@ This constitutes the Markov trace of statistical mechanics. Just as the Markov t
 **$PV = NkT$ is in the polynomial horizon.**
 The full dictionary:
 
-See [Table](#tbl:stat-mech-computational-horizon-table-data).
+See [the resolution-tree thermodynamic dictionary](#tbl:stat-mech-computational-horizon-table-data).
 
 The equation of state is computationally extractable in polynomial time. The $\ln Z_q$ calculation factors through Stirling's approximation, reducing the $N!$-fold sum to $O(N \log N)$ operations. This reduction precisely matches the condition for membership in $\mathcal{R}^{\circ}$, the polynomial observable subcategory.
 

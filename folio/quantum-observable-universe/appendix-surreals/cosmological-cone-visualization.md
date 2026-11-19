@@ -1,4 +1,4 @@
-Visualize the substrate-parameter axis $q \in \mathbb{R}_{>0}$ as the radial coordinate of a schematic cone with two endpoints:
+Visualize the aether-parameter axis $q \in \mathbb{R}_{>0}$ as the radial coordinate of a schematic cone with two endpoints:
 
 | endpoint | $q$ | structure constants | geometric reading |
 |---|---|---|---|
@@ -9,4 +9,4 @@ At every interior $q$, each cross-section carries a copy of the Reeb bundle $\ma
 
 Light speed $c_q$ diverges at the Big Bang ($q \to 1^+$), and $\hbar_q$ saturates to $1$ at heat death ($q \to \infty$).
 
-The cone is a schematic mnemonic. It does not introduce a physical metric on the parameter axis, commit to a cosmological-time reading of $q$, or promote the endpoint functors from conjecture to theorem. It provides a unifying picture for the substrate parameter, exceptional divisor, Reeb bundle, and color sectors.
+The cone is a schematic mnemonic. It does not introduce a physical metric on the parameter axis, commit to a cosmological-time reading of $q$, or promote the endpoint functors from conjecture to theorem. It provides a unifying picture for the aether parameter, exceptional divisor, Reeb bundle, and color sectors.

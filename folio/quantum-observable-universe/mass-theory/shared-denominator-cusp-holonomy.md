@@ -1,8 +1,7 @@
 **Conjecture (Shared-denominator cusp holonomy).**
 *Let $T_w \in H_n(R, q)$ be a Hecke normal-form word at GB-depth
 $k_\star(T_w) = n$, let $\Phi_n(x; q) = \prod_{k=0}^{n-1}(1 - x q^k)^{-1}$
-be its $q$-Pochhammer partial product
-([definition](#def:q-pochhammer-partial-product)),
+be its [$q$-Pochhammer partial product](#def:q-pochhammer-partial-product),
 and let $K_S$ be the $\Phi_q$-piece of the lifted braid
 ([Φ$_q$-piece](#def:phi-q-piece)). Then the roots of the
 denominator polynomial*
@@ -96,9 +95,7 @@ equations on the active JSJ piece. The pipeline is:
    function.
 2. Extract the $n$ roots of its denominator $(x; q_0)_n$:
    $\{q_0^{-k} : k = 0, \dots, n-1\}$.
-3. Pass the roots across the WASM boundary to the SnapPy kernel.
-4. Use the roots not as a universal constant but as the **initial
-   guesses** for the Newton–Raphson solver.
+3. Lift the roots into the complex plane and supply them not as universal constants, but as **initial seeds** for Newton–Raphson iteration on the ideal-triangulation gluing equations.
 
 By Steps 1–4 of the proof sketch above, the algebraic seeds sit
 **near** the cusp-completeness solution of the Thurston gluing
@@ -110,10 +107,7 @@ $O(\log\epsilon^{-1})$ steps needed when starting from a generic
 universal $z_q$. The Newton step also avoids local-minimum traps,
 because the algebraic poles are **isolated** in the cusp variety.
 
-The witness
-[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json)
-drives Newton–Raphson on the color-tube discriminant $\Delta(z) = 0$
-from each algebraic seed (perturbed by $0.1i$ to enter $\mathbb{C}$).
+Driving Newton–Raphson on the color-tube discriminant $\Delta(z) = 0$ from each algebraic seed (perturbed by $0.1i$ into $\mathbb{C}$) tests this convergence behaviour.
 At depths $n = 1, 2, 3$, all seeds converge to a complex critical
 point with residual $\lesssim 10^{-13}$ in 9–11 iterations,
 empirically supporting the $O(1)$ claim.
@@ -151,32 +145,17 @@ data supplied to it.
 
 The conjecture then yields one consequence directly: at a root index the
 matched shape has $\mathrm{Im}\, z_k > 0$, so $z_k$ is not real and in
-particular is not the bare algebraic seed $q_0^{-k}$. The SnapPy witness
-below reaches the same conclusion by measurement.
+particular is not the bare algebraic seed $q_0^{-k}$. Direct ideal-triangulation comparison below reaches the same conclusion.
 
 ### Empirical scope of the seeding pipeline
 
-Two computational witnesses bracket the conjecture's strong form:
+Two numerical comparisons bracket the conjecture's strong form:
 
-- **Color-tube cubic** (succeeds):
-  [q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json)
-  drives Newton–Raphson on $\Delta(z) = 0$ from the algebraic seeds
-  $q_0^{-k} + 0.1i$. At depths $n \leq 3$, Newton converges to
-  machine-precision residual ($\lesssim 10^{-13}$) in 9–11 iterations,
-  empirically supporting the $O(1)$-steps-per-cusp prediction.
+- **Color-tube cubic** (converges): iterating Newton–Raphson on $\Delta(z) = 0$ from the perturbed seeds $q_0^{-k} + 0.1i$ at depths $n \leq 3$ converges to residual $\lesssim 10^{-13}$ in 9–11 steps, supporting the $O(1)$-step scaling.
 
-- **SnapPy Thurston gluing system** (bounds the strong form):
-  [snappy-cusp-seeding.witness.json](../../../computations/snappy-cusp-seeding.witness.json)
-  measures the distance between the bare algebraic seeds and SnapPy's
-  tetrahedral shape parameters for $\mathtt{m004}$, $\mathtt{m003}$,
-  and the Borromean rings $\mathtt{L6a4}$. The bare seeds sit at
-  distance $\approx 0.4$–$0.9$ from the recorded $z_k$, so the
-  pole-to-shape correspondence is not the literal identity
-  $q_0^{-k} = z_k$. The producer pairs each seed against
-  tetrahedral shapes, so what it measures is indexed by
-  **tetrahedron**, not by cusp.
+- **Ideal-triangulation Thurston gluing system** (bounds the literal seed identity): comparing the bare real seeds $q_0^{-k}$ against the converged tetrahedral shape parameters of $\mathtt{m004}$ ($4_1$), $\mathtt{m003}$, and $\mathtt{L6a4}$ (the Borromean rings) yields Euclidean distances of $\approx 0.4$–$0.9$ from $z_k$, indexed by **tetrahedron** rather than by cusp, ruling out the literal equality $q_0^{-k} = z_k$.
 
-The two witnesses together support the conjecture's *structural*
+Together these two checks support the conjecture's *structural*
 content (algebraic poles label the ideal tetrahedra) while bounding its
 *canonical* form (the bare $q_0^{-k}$ are not literally the shape
 parameters).
@@ -215,7 +194,7 @@ not — on the three triangulations the corpus probes. It is a counting
 argument, and its invariant is the pigeonhole principle on a finite set;
 it does **not** exclude the conjecture.
 
-**What the conjecture asserts is not the shape.** Its displayed
+**Asserted denominator coincidence beyond the algebraic shape.** Its displayed
 right-hand side is the pair of holonomies
 $\mathrm{Hol}_{\mu_k}, \mathrm{Hol}_{\lambda_k}$, each a product of
 shape parameters along a meridian or longitude path. A holonomy is

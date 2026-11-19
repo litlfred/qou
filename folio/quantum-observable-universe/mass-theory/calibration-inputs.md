@@ -4,8 +4,8 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 
 | Input (proxy) | CAL | Canonical observable | What it fixes | Rel. precision |
 |-------|:--:|-------|--------------|:-:|
-| $m_e = 0.51099895000 \pm 0.00000000015$ MeV | CAL-1 | $m_e$ (leptonic mass scale) | the MeV unit + cohomological period | $2.9 \times 10^{-10}$ |
-| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | CAL-2 | $P_{\mathrm{skew}}^{\beta}$ ($n$ $\beta$-sector bar-skew channel) | substrate $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
+| $m_e = 0.51099895000 \pm 0.00000000015$ MeV (CODATA) | CAL-1 | $m_e$ (leptonic mass scale) | the MeV unit + cohomological period | $2.9 \times 10^{-10}$ |
+| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | CAL-2 | $P_{\mathrm{skew}}^{\beta}$ ($n$ $\beta$-sector bar-skew channel) | aether $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
 | $m_\pi = 139.57039 \pm 0.00018$ MeV | CAL-3 | $P_{\mathrm{avg}}^{\pi}$ (pion-sector bar-even channel) | orthogonal meson scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) | $1.3 \times 10^{-6}$ |
 
 > **CAL-2 cross-check (not a separate input).** The free-neutron
@@ -16,11 +16,11 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 > convention-D base (the Markov trace at $z_D$) gives $0.4447$ MeV, a
 > $-43.16\%$ miss, pending the convention-D $c_k$ ladder. The retired
 > Form A gave $0.17\%$ (subject to the net-ansatz caveat below) and is kept
-> only as a historical cross-check. Either way it is a cross-check, not a
+> only as a historical cross-check. Either way it serves as a cross-check rather than a
 > fourth calibration.
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
-via the **leading-order substrate-truncation** of the canonical
+via the **leading-order aether-truncation** of the canonical
 operator-valued mass formula (see the note on the superseded scalar density
 below):
 
@@ -32,13 +32,13 @@ $$
 $\mathrm{Vol}(4_1) \approx 2.0299$ is the topological constant
 (hyperbolic volume of the figure-eight knot) and
 $\hbar_q = (q-1)/q$.  No units are involved.  The precision
-is limited by the muon mass ($2.2 \times 10^{-8}$), not
+is limited by the muon mass ($2.2 \times 10^{-8}$) rather than
 the electron ($2.9 \times 10^{-10}$).
 
-> **Substrate density refinement.**
-> The dimensional factor $1/\hbar_q^2$ forms the leading-order scalar substrate density.
+> **Aether density refinement.**
+> The dimensional factor $1/\hbar_q^2$ forms the leading-order scalar aether density.
 > The canonical operator-valued form replaces it with the
-> Wedderburn-graded expansion. The Skein form closes $m_\mu/m_e = 206.77$ because it evaluates the Kashaev $q \to 1$ limit (the hyperbolic volume $\mathrm{Vol}(4_1)$), dressed by the scalar $1/\hbar_q^2$. The lepton-sector factor $\xi_\ell(q)$ that replaces $1/\hbar_q^2$ remains open.
+> Wedderburn-graded expansion. The Skein form closes $m_\mu/m_e = 206.77$ because it evaluates the Kashaev $q \to 1$ limit (the hyperbolic volume $\mathrm{Vol}(4_1)$), dressed by the scalar $1/\hbar_q^2$. The operator-level lepton factor $\xi_\ell(q)$ replacing $1/\hbar_q^2$ is formulated in the [operator-level lepton mass-tower conjecture](lepton-mass-tower-canonical.md).
 
 The second input sets the **leptonic mass scale** — the
 conversion from dimensionless natural units to MeV.  The
@@ -79,7 +79,7 @@ $$
 $$
 
 (The typed-crossings 6-term decomposition yields $\lvert\Delta(\text{net,typed})\rvert \approx 0.18829$ and a slightly smaller $\mathfrak{E}_0 \approx 4.155$ MeV; the 0.6% gap is finite-size noise in the typed decomposition — see
-[`beta-decay-energy-scale`](../nuclear-interactions/beta-decay-energy-scale.md) §"three values".)
+[Hecke normal-form energy scale](../nuclear-interactions/beta-decay-energy-scale.md) §"three values".)
 
 where $\Delta(\mathrm{net}) = h(h-2)/2$ is the symbolic NF
 difference between neutron and proton
@@ -119,10 +119,10 @@ all but three real parameters:
    $\mathfrak{m}(\varrho) = \mathrm{tr}_M(\rho(\beta))$
    ([categorical mass as Markov trace](#prop:categorical-mass-markov))
    is dimensionless and signed at the categorical level.
-   Trace positivity gives $\mathrm{tr}_M(x^* x) \geq 0$, not
+   Trace positivity gives $\mathrm{tr}_M(x^* x) \geq 0$ rather than
    $\mathrm{tr}_M(x) \geq 0$ for a braid element $x$, so the sign of
    $\mathfrak{m}(\varrho)$ at $q_0$ is a property of the particular
-   $T_w$, not a consequence of positivity.  Converting to physical units (MeV)
+   $T_w$ rather than a consequence of positivity.  Converting to physical units (MeV)
    requires one mass measurement.  The electron mass sets this
    scale, analogous to the speed of light $c$ and Planck's
    constant $\hbar$ in the Standard Model.
@@ -139,54 +139,56 @@ all but three real parameters:
    physical sectors: shape ($q$, via $P_{\mathrm{skew}}^{\beta}$/CAL-2),
    leptonic size ($m_e$/CAL-1), meson scale ($m_\pi$/CAL-3).
 
-No further parameters exist because:
-- The knot-particle dictionary is **determined by $\chi = -6$**:
-  exactly 6 embeddable torus knots, no choice
+Four structural constraints exclude any further free parameters.
+* The knot-particle dictionary is **determined by $\chi = -6$**:
+  6 embeddable torus knots arise with no choice
   ([cohomological embedding](#prop:cohomological-embedding)).
-- The crossing weights $q$ and $-q^{-1}$ are **eigenvalues of
+* The crossing weights $q$ and $-q^{-1}$ are **eigenvalues of
   the $R$-matrix**, determined by $q$ alone.
-- The typed crossing operators $C(f_i, f_j; \sigma_k)$ are
-  **determined by the Hecke relation and quark flavors**, no
+* The typed crossing operators $C(f_i, f_j; \sigma_k)$ are
+  **determined by the Hecke relation and quark flavors**, with no
   free parameters
   ([typed crossing operator](#def:typed-crossing-operator)).
-- The Markov trace $\mathrm{tr}_M$ is **unique** (up to the
+* The Markov trace $\mathrm{tr}_M$ is **unique** (up to the
   Markov parameter $z$, which is determined by $q$) by Schur
   orthogonality
   ([RJ canonical inner product](#prop:rj-canonical-inner-product)).
 
 ## Predictions from the three inputs
 
-**From $q_0$ alone (dimensionless):**
-- Lepton mass ratios: $m_\tau/m_e$, $m_\tau/m_\mu$
-- Hecke amplitude: $h = q - q^{-1} \approx 0.209$
-- Crossing asymmetry: $q/q^{-1} \approx 1.231$ (matter/antimatter)
-- Neutron-proton splitting structure: $m_n - m_p \propto \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$
-- Pair production polarisation selection rule (a model statement; tree-level QED gives nonzero pair production for parallel linear polarisations, so this is not a successful prediction; see [rem:breit-wheeler-vertex](#rem:breit-wheeler-vertex))
-- All NF decompositions and operator selection weights
+The three calibration inputs organize the derived observables into four scope classes.
 
-**From $q_0$ + $m_e$ (in MeV):**
-- Muon mass: $m_\mu = m_e \times \mathrm{Vol}(4_1)/\hbar_q^2$
-  (first prediction, by construction matches calibration input)
-- Proton mass: via Skein pair formula + dressed quark masses
-  from Skein resolution tree (tractable computation)
-- Neutron mass: $m_n = m_p + \mathfrak{Q}_\beta$ (Hecke engine)
-- Deuteron binding energy: $\Delta E_D \approx 2.224$ MeV
-- Beta decay Q-values: 6 benchmarks at 4.4% MAE
-- Nuclear shell structure and magic numbers
-- Half-life predictions
+**Dimensionless predictions from $q_0$ alone.**
+* Lepton mass ratios: $m_\tau/m_e$, $m_\tau/m_\mu$.
+* Hecke amplitude: $h = q - q^{-1} \approx 0.209$.
+* Crossing asymmetry: $q/q^{-1} \approx 1.231$ (matter/antimatter).
+* Neutron-proton splitting structure: $m_n - m_p \propto \mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$.
+* Pair production polarisation selection rule (a model statement; tree-level QED gives nonzero pair production for parallel linear polarisations, so this is not a successful prediction; see [Breit–Wheeler polarisation vertex](#rem:breit-wheeler-vertex)).
+* All NF decompositions and operator selection weights.
 
-**Structurally predicted (verified against CODATA):**
-- Neutron-proton splitting: $m_n - m_p$ from crossing pair
-  isolation (categorical, no calibration beyond $q_0$)
-- Q-value ratios: dimensionless, from $q_0$ alone
-- Shell structure and magic numbers: from transfer matrix
-  eigenvalues at $q_0$
+**Mass-scale predictions from $q_0$ and $m_e$ (in MeV).**
+* Muon mass: $m_\mu = m_e \times \mathrm{Vol}(4_1)/\hbar_q^2$
+  (first prediction, matching the calibration input by construction).
+* Proton mass: via Skein pair formula and dressed quark masses
+  from the Skein resolution tree (tractable computation).
+* Neutron mass: $m_n = m_p + \mathfrak{Q}_\beta$ (Hecke engine).
+* Deuteron binding energy: $\Delta E_D \approx 2.224$ MeV.
+* Beta decay Q-values: 6 benchmarks at 4.4% MAE.
+* Nuclear shell structure and magic numbers.
+* Half-life predictions.
 
-**Open (concrete computation, not conceptual gap):**
-- Dressed quark mass $\mu_\mathfrak{u}$ from $q_0$ alone:
+**Structurally predicted quantities (verified against CODATA).**
+* Neutron-proton splitting: $m_n - m_p$ from crossing pair
+  isolation (categorical, no calibration beyond $q_0$).
+* Q-value ratios: dimensionless, from $q_0$ alone.
+* Shell structure and magic numbers: from transfer matrix
+  eigenvalues at $q_0$.
+
+**Open quantities (concrete computation, not conceptual gap).**
+* Dressed quark mass $\mu_\mathfrak{u}$ from $q_0$ alone:
   requires Skein resolution of Borromean braid ($\leq 729$ terms,
-  each requiring a hyperbolic volume computation)
-- Binding energy per nucleon $B/A$: same Skein resolution approach
+  each requiring a hyperbolic volume computation).
+* Binding energy per nucleon $B/A$: same Skein resolution approach.
 
 ## Comparison with the Standard Model
 
@@ -198,12 +200,12 @@ mass/energy scales), deriving the rest from the topology of
 the Bring surface $\Sigma_4$ and the Iwahori--Hecke algebra
 $H_n(R, q)$.
 
-The reduction from 19 to 3 is possible because:
-- **Particle content** is topological (from $\chi = -6$), not a
-  free choice
-- **Mass ratios** are knot invariants (from Vol and $\mathrm{tr}_M$),
-  not free parameters
-- **Coupling constants** are $R$-matrix eigenvalues (from $q$),
-  not independent inputs
+Four identifications underlie the reduction from 19 to 3.
+- **Particle content** is topological (from $\chi = -6$) rather than a
+  free choice.
+- **Mass ratios** are knot invariants (from Vol and $\mathrm{tr}_M$)
+  rather than free parameters.
+- **Coupling constants** are $R$-matrix eigenvalues (from $q$)
+  rather than independent inputs.
 - **Mixing angles** are Clebsch--Gordan coefficients of the knot
-  eigenbasis decomposition
+  eigenbasis decomposition.

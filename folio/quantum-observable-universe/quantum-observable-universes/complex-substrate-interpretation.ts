@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:complex-substrate-interpretation",
-  title: "Complex substrate parameter and the observability constraint",
+  title: "Complex aether parameter and the observability constraint",
   interprets: "def:substrate-parameter",
   uses: [
     "ex:substrate-parameter-su2",

@@ -20,4 +20,7 @@ export default definition({
     "def:q-casimir",
     "prop:nuclear-spin-parity",
   ],
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

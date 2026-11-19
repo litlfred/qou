@@ -3,7 +3,7 @@ Serre relation and root system: one is a binomial coefficient that deforms
 into the Gaussian integer $[2]_q = q + q^{-1}$ under Drinfeld–Jimbo
 quantization, whereas the other is the diagonal Cartan entry $a_{ii} = 2$
 that remains constant for all $q$.  Separating these two roles clarifies
-what the substrate parameter $q_0$ deforms in the eightfold-way
+what the aether parameter $q_0$ deforms in the eightfold-way
 classification and what remains rigid.
 
 **The two $2$s.**
@@ -28,7 +28,7 @@ These are two different mathematical objects that coincide numerically
 at $q = 1$: one is a binomial coefficient, the other is a normalization
 constant.
 
-**What is $q$-independent — established directly.**
+**Directly established $q$-independent structure.**
 The following properties hold algebraically:
 
 - The off-diagonal entry $a_{12} = -1$ and the Serre exponent
@@ -47,12 +47,12 @@ The following properties hold algebraically:
 **Scope of the algebraic separation.**
 That Drinfeld--Jimbo quantisation leaves the root datum invariant is a
 theorem of Lusztig/Kashiwara, cited here and *not* re-derived in this
-work; it belongs to the cited standard results below, not
+work; it belongs to the cited standard results below rather than
 to the elementary separation above.  What is proved directly is the
 *arithmetic* of the separation on the $A_2$ datum, which is a weaker
 statement and should not be cited for the stronger one.
 
-**What is $q$-independent — standard, cited from the literature.**
+**Standard $q$-independent structure from Drinfeld–Jimbo theory.**
 These follow from the Drinfeld--Jimbo construction and are cited here rather than
 re-derived:
 
@@ -66,7 +66,7 @@ re-derived:
   the weight combinatorics is $q$-independent (the $q \to 0$ limit
   retains the same lattice).
 
-**What $q$ does deform.**
+**Quantities deformed by $q$.**
 
 - The braiding: the $R$-matrix of $\mathcal{U}_q(\mathfrak{sl}_3)$
   depends on $q$ and governs the braid group action on tensor products.

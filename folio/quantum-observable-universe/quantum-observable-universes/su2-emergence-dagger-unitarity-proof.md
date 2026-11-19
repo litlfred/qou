@@ -2,7 +2,7 @@
 The QOU non-degeneracy axiom ensures the Frobenius form
 $\int_A \colon A \to \mathbf{1}$ is non-degenerate, inducing the
 Frobenius self-duality $A \cong A^{\vee}$
-([fibre adjoint involution](#prop:fiber-adjoint-involution)). Define a dagger on
+(fibre adjoint involution). Define a dagger on
 morphisms by $f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$, where
 $S$ is the antipode. Non-degeneracy of $\int_A$ and faithfulness
 of $\tau$ imply $f^{\dagger} \circ f = 0 \Rightarrow f = 0$, so this

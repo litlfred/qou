@@ -14,5 +14,3 @@ $$
 | *$4_1$ (figure-eight)* | *$1$* | *$2 - [3]_q$* | *$1$* |
 | *$B_3$ (Borromean)* | *$1$* | *$(2 - [3])([3]^2 - 4[3] + 1)$* | *$1$* |
 | *unknot (identity)* | *$1$* | *$2$* | *$1$* |
-
-**Archimedean specialisation.** The character values $\chi^{\mathrm{sym}}, \chi^{\mathrm{alt}}$ and skew-SYT counts are stated as real numbers, forming the archimedean evaluations of the generic $\mathrm{Chebyshev}/\mathfrak{sl}_2$ branching over $[\mathrm{CommRing}\ R]$.

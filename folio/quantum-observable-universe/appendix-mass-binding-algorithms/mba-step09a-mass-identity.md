@@ -5,7 +5,7 @@
 
 ### Input
 
-- *Balancing substrate twist root $q_0 > 1$ (or its Chern–Simons-shifted two-term counterpart $q_{2t} = q_0 - \delta q_{\mathrm{CS}}$ determined by anchoring $m_p / m_e$) and unit scale $m_e > 0$ (rendering dimensionless ratios $M / m_e$ into energy units).*
+- *Balancing aether twist root $q_0 > 1$ (or its Chern–Simons-shifted two-term counterpart $q_{2t} = q_0 - \delta q_{\mathrm{CS}}$ determined by anchoring $m_p / m_e$) and unit scale $m_e > 0$ (rendering dimensionless ratios $M / m_e$ into energy units).*
 - *Hyperbolic volume of the figure-eight knot complement $S^3 \setminus 4_1$:*
   $$
     \mathrm{Vol}(4_1)

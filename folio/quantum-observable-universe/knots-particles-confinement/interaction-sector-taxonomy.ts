@@ -17,4 +17,13 @@ export default definition({
     "bar-involution",
     "sector",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/h2_gg_electron/h2_gg_electron_probe.py",
+    witness: [
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+      "computations/qbeta/qbeta-tanh-em-match-is-formal.witness.json",
+    ],
+    status: "verified",
+  },
 });

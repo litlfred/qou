@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe equipped with connection $\nabla$, substrate parameter $q$, $q$-Hodge star $\star_q$, and state $\psi \colon \mathbf{1} \to A$. Then $(\mathbf{C}, A, \tau)$ determines a categorical action, unique up to a scalar $\lambda \in R^{\times}$:
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe equipped with connection $\nabla$, aether parameter $q$, $q$-Hodge star $\star_q$, and state $\psi \colon \mathbf{1} \to A$. Then $(\mathbf{C}, A, \tau)$ determines a categorical action, unique up to a scalar $\lambda \in R^{\times}$:
 
 $$
   \mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q),

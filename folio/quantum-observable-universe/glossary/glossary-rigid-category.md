@@ -1,1 +1,1 @@
-**:defterm[Rigid category]{#rigid-category}.** A monoidal category in which every object has both a left dual and a right dual.
+**:defterm[Rigid category]{#rigid-category}.** A monoidal category in which every object possesses both a [left dual](#rem:glossary-left-dual) and a [right dual](#rem:glossary-right-dual). Rigidity guarantees that dualization is functorial and permits closing endomorphisms into scalar-valued categorical traces once a pivotal isomorphism is specified.

@@ -1,6 +1,6 @@
-The convention of [def:boltzmann-constant](#def:boltzmann-constant) is chosen as follows. The quantum ideal gas law (see [quantum ideal gas law](#prop:quantum-ideal-gas-law)) gives $P_q V_q = N T_q = N \hbar_q$ at leading order. The classical form is $PV = N k_B T$. 
+The convention of [the Boltzmann constant definition](#def:boltzmann-constant) is chosen as follows. The quantum ideal gas law (see [quantum ideal gas law](#prop:quantum-ideal-gas-law)) gives $P_q V_q = N T_q = N \hbar_q$ at leading order. The classical form is $PV = N k_B T$. 
 
-In this framework, the temperature $T_q = \hbar_q$ ([quantum temperature](#def:quantum-temperature)) naturally carries units of energy. It is the Reeb tick rate, not a statistical parameter. Comparing the two forms, the choice consistent with $T_q = \hbar_q$ is:
+In this framework, the temperature $T_q = \hbar_q$ ([quantum temperature](#def:quantum-temperature)) naturally carries units of energy. It is the Reeb tick rate rather than a statistical parameter. Comparing the two forms, the choice consistent with $T_q = \hbar_q$ is:
 $$
   N \, k_B \, T_q \;=\; N \, \hbar_q
   \quad\Longrightarrow\quad

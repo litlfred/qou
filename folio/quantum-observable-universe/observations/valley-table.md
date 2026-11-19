@@ -1,4 +1,4 @@
-[Table: Representative stable isotopes](#tbl:valley-table-data) shows representative elements spanning the periodic table. It compares the continuous beta-stability prediction $p^*(A)$ ([beta-stability](#prop:beta-stability)) with the observed stable proton number, the neutron-to-proton ratio, and the Diophantine error $\varepsilon = |p_{\mathrm{stab}} - p^*|$.
+[Table: Representative stable isotopes](#tbl:valley-table-data) shows representative elements spanning the periodic table. It compares the continuous beta-stability prediction $p^*(A)$ ([beta-stability line](#prop:beta-stability)) with the observed stable proton number, the neutron-to-proton ratio, and the Diophantine error $\varepsilon = |p_{\mathrm{stab}} - p^*|$.
 
 **Observations.**
 

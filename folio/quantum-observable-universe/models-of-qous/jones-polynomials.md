@@ -4,4 +4,4 @@ The fusion category $\mathrm{Rep}_{\mathbb{F}_p}(\mathrm{SU}_q(2))$ carries a ca
 
 The knot crossing number counts the $R$-matrix applications. Thus $J_K(q)$ is a polynomial of degree bounded by the crossing number. The Hecke algebra structure constants control its coefficients. At a root of unity $q = \zeta_\ell$, divisibility patterns of $J_K(q)$ encode the modular-Hecke combinatorics.
 
-The $p$-adic (Witt-vector) lift of the substrate parameter recovers the Jones polynomial by reducing the lifted $R$-matrix modulo $p$. The modular Jones invariant agrees with the characteristic-zero invariant where both are defined. The finite-field and archimedean models thus produce identical knot-theoretic output.
+The $p$-adic (Witt-vector) lift of the aether parameter recovers the Jones polynomial by reducing the lifted $R$-matrix modulo $p$. The modular Jones invariant agrees with the characteristic-zero invariant where both are defined. The finite-field and archimedean models thus produce identical knot-theoretic output.

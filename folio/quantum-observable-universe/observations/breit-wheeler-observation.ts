@@ -27,4 +27,10 @@ export default remark({
         "were dropped (owner H3). The bibliography title of `star2021bw` may not match PRL 127, 052302; not changed here.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
 });

@@ -4,7 +4,7 @@ While the existence of the Habiro expansion for quantum invariants with integer 
 The denominator-cleared numerator of the proton's Markov trace has
 $M = 8$ (series terminates). Under convention D the proton trace is
 $p_p(u)/d_p(u)$ with $d_p = 4u^{18}(u^4+1)^2$, and the expansion of
-$p_p$ is ([`habiro-coefficients-atomic.witness.json`](../../../computations/habiro/habiro-coefficients-atomic.witness.json)):
+$p_p$ is:
 
 | $m$ | $a_m(u) \in \mathbb{Z}[u]$ |
 |-----|---------------------------|
@@ -39,14 +39,14 @@ $\mathrm{tr}_M$ at $q_0$ is determined.
 ## Scope of the exact evaluation
 
 Since the Habiro expansion is **finite** ($M = 8$ for proton), the
-evaluation $\mathrm{tr}_M(\beta_K, q_0)$ is **exact** — a
-well-defined element of $\mathbb{Q}(q_0)$, not a truncated series.
+evaluation $\mathrm{tr}_M(\beta_K, q_0)$ is **exact**: it is a
+well-defined element of $\mathbb{Q}(q_0)$ rather than a truncated series.
 
 What this does **not** give is experiment-grade agreement with
 data. An observable such as $\mathfrak{Q}_\beta$ is
 $m_e \cdot f(\mathrm{tr}_M(\beta_n), \mathrm{tr}_M(\beta_p),
 q_0)$, and the exact Habiro evaluation of that map lands at the
-substrate's *intrinsic* accuracy (improving once the derived low-order
+aether's *intrinsic* accuracy (improving once the derived low-order
 $\mathrm{tr}_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
 included; specific intrinsic-accuracy and ladder-correction figures
 live in the archimedean witness ledger, not here).
@@ -55,5 +55,5 @@ corrections that are **not** currently derived from the $a_m$;
 attempts to read them off as a "precision ladder" tuned the
 coefficients against the experimental value rather than evaluating
 them categorically. The canonical content here is the
-integrality of the $a_m$, not a high-precision prediction.
+integrality of the $a_m$ rather than a high-precision prediction.
 

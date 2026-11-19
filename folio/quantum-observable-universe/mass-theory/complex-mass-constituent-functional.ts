@@ -31,6 +31,10 @@ export default conjecture({
   },
   authorNotes: [
     {
+      kind: "status",
+      body: "Status: OPEN (primary conjecture / Subgoal-2 formalize-first scaffold). Anti-fit discipline: M must be derived from the Frobenius pairing tr_M = sum_lambda y_lambda chi_lambda rather than inverted from empirical quark-mass anchors.",
+    },
+    {
       kind: "caveat",
       date: "2026-08-02",
       body:

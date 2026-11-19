@@ -34,11 +34,11 @@ binding $T_{nn}$ and anti-binding $T_{pp}$ contributions.
 
 **The exhaustive sweep below refutes this heuristic.**
 
-## What the exhaustive sweep found
+## Exhaustive permutation-sweep results
 
 $\Phi_q$ was evaluated over **every** $\binom{A}{Z}$ arrangement for
 each $(Z, N)$ with $Z \leq N$ and $A \leq 16$, at the experimental
-substrate anchor, on both the bare-nucleon chain and the chain with the
+aether anchor, on both the bare-nucleon chain and the chain with the
 electron tail appended.
 
 The interleaved, tail-packed arrangement is the minimiser in a minority
@@ -48,9 +48,9 @@ readouts, while the sorted arrangement — which the rule reserves for
 $A \leq 3$ — is the minimiser.  The excess neutrons of the minimising
 arrangement head-pack rather than tail-pack.  Full tallies and the
 explicit counterexample are in
-[the proposition](#prop:ground-state-ordering).
+[the ground-state ordering proposition](#prop:ground-state-ordering).
 
-## Why the heuristic failed
+## Failure of the adjacent-pairing heuristic
 
 The transfer factors are $T(d) = S + d\,\mathbf{1}$ for a single fixed
 matrix $S$, so they all **commute**: the chain product at a position
@@ -79,7 +79,7 @@ $\Phi_q$ does not apply.
 
 For $A > 16$ exhaustive search over $\binom{A}{Z}$ arrangements was not
 attempted, and no closed-form rule for the minimiser is available.  The
-sweep's minimising family — an interleaved block at an interior offset,
+sweep's minimising family (an interleaved block at an interior offset,
 with the excess neutrons split between a head run and a four-neutron
-tail — is an empirical description over $A \leq 16$, not a derived
+tail) is an empirical description over $A \leq 16$ rather than a derived
 construction.

@@ -9,4 +9,7 @@ export default conjecture({
     "conj:regularity-breakdown",
   ],
   tags: ["critical-exponent", "enstrophy", "phase-transition", "scaling"],
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

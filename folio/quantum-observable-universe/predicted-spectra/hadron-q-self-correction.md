@@ -1,4 +1,4 @@
-The substrate parameter $q \colon M \to k^\times$ ([substrate parameter](#def:substrate-parameter)) is a field, not a background constant. A hadron ([hadron](#def:hadron)) is a multi-component knot composite containing internal Hopf junctions and crossings. It perturbs the local value of $q$ through its topological linking structure. The effective substrate parameter observed by a nucleus is
+The aether parameter $q \colon M \to k^\times$ ([aether parameter](#def:substrate-parameter)) is a field rather than a background constant. A hadron ([hadron](#def:hadron)) is a multi-component knot composite containing internal Hopf junctions and crossings. It perturbs the local value of $q$ through its topological linking structure. The effective aether parameter observed by a nucleus is
 
 $$
   q_{\mathrm{eff}}(p, n)
@@ -6,10 +6,10 @@ $$
   q_0 +  \delta q(p, n),
 $$
 
-with background value $q_0$ ([local substrate $q$](#prop:local-substrate-q)) and hadron self-deformation $\delta q(p, n)$.
+with background value $q_0$ ([local aether $q$](#prop:local-substrate-q)) and hadron self-deformation $\delta q(p, n)$.
 
 **Proposition.**
-Let $\mathcal{N}(Z, N) = Z\mathfrak{p} \oplus N\mathfrak{n}$ be a nucleus ([stable nucleus](#def:stable-nucleus)). The signed crossing excess—the imbalance between positive ($\mathfrak{p}$--$\mathfrak{p}$) and negative ($\mathfrak{n}$--$\mathfrak{n}$) Hopf crossings—determines the self-deformation of the substrate parameter:
+Let $\mathcal{N}(Z, N) = Z\mathfrak{p} \oplus N\mathfrak{n}$ be a nucleus ([stable nucleus](#def:stable-nucleus)). The signed crossing excess—the imbalance between positive ($\mathfrak{p}$--$\mathfrak{p}$) and negative ($\mathfrak{n}$--$\mathfrak{n}$) Hopf crossings—determines the self-deformation of the aether parameter:
 
 $$
   \delta q(p, n)

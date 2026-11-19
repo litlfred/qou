@@ -65,8 +65,8 @@ $H \leftrightarrow \sigma_5^{\,8}$ act
 def ew_interface_knot [ctx : EwInterfaceKnotContext] :
     ctx.n_strands = 6 ∧
     (ctx.exp_W = 4 ∧ ctx.exp_Z = 6 ∧ ctx.exp_H = 8) ∧
-    (ctx.n_adjacent_pair_generators = 2 ∧ ctx.n_disjoint_strand_pairs = 3) :=
-  ⟨ctx.claim_i_strand_count, ctx.claim_ii_ew_carrier_exponents,
-   ctx.claim_iii_bar_self_duality⟩
+    (ctx.n_adjacent_pair_generators = 2 ∧ ctx.n_disjoint_strand_pairs = 3) := by
+  refine ⟨ctx.claim_i_strand_count, ctx.claim_ii_ew_carrier_exponents,
+    ctx.claim_iii_bar_self_duality⟩
 
 end QOU.BraidsAndKnots

@@ -107,7 +107,7 @@ $$
    connected components of knot space.
 
 3. **Complex-$q$ rotation (pre-observable).**  In the
-   [complex substrate](#rem:complex-substrate-interpretation)
+   [complex aether](#rem:complex-substrate-interpretation)
    framework, the chirality operator
    $\mathcal{X}_\varphi \colon \theta \to \theta + \varphi$ rotates
    continuously from electron to positron.  This has **zero energy
@@ -128,6 +128,6 @@ The energy to "convert" an electron to a positron is either:
 
 The crossing energy gap $3(q + q^{-1})$ in Skein units sets the
 *algebraic* distance between the two chiralities. Its physical
-manifestation is not a single energy threshold but the decomposition
+manifestation is the decomposition
 into symmetric binding ($\cosh$) and antisymmetric Coulomb ($\sinh$)
-channels.
+channels rather than a single energy threshold.

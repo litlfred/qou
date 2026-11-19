@@ -24,7 +24,7 @@ Working in $R[X]$ rather than directly with the Hecke skein provides three struc
 
 ## Elementary identities
 
-The defining ring-involution and monomial parity identities are summarised in [Table](#tbl:polynomial-bar-involution-table-data) and established in the accompanying proof.
+The defining ring-involution and monomial parity identities are summarised in the [polynomial bar-involution identity table](#tbl:polynomial-bar-involution-table-data) and established in the accompanying proof.
 
 ## Connection to the three-layer synthesis
 

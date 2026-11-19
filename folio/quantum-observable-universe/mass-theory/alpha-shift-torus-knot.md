@@ -22,11 +22,9 @@ and $\mathrm{ord}_{q=0}^{(-)}$ denotes the pole order at $q = 0$
 
 1. *The maximizer is the all-anti-symmetric channel $V_{(1^p)}$.*
 2. *$\alpha_{\mathrm{shift}}(T_{p,k}) = k(p - 1)$.*
-### Witness summary
+### Symbolic verification
 
-The canonical evidence
-([`alpha-shift-torus.witness.json`](../../../computations/alpha/alpha-shift-torus.witness.json))
-records the full per-irrep symbolic $\chi_\lambda \in \mathbb{Q}(q)$
+Symbolic evaluation across test pairs records the full per-irreducible character $\chi_\lambda \in \mathbb{Q}(q)$
 together with the pole order at $q = 0$ for every test pair, summarised
 in
 [Table: $\alpha_{\mathrm{shift}}(T_{p,k})$ for 6 test pairs](#tbl:alpha-shift-torus-knot-table-data).

@@ -4,7 +4,7 @@
 * **$\mathcal{H}_c \neq \varnothing$** (P $\neq$ NP): The polynomial observable subcategory $\mathcal{R}^{\circ}$ is not closed. A non-trivial computational boundary manifests as a codimension-$1$ locus where degree-$0$ sections vanish. The horizon ideal $\mathfrak{h}_c \neq (0)$ captures polynomial-time algorithms that reach the boundary and return $0$. The resolution tree exhibits a genuine event horizon, forming an essential singularity.
 
 **Parallel with the jet horizon and NS obstruction.**
-See [Table 1](#tbl:p-vs-np-boundary-table1-data).
+See [the horizon-boundary comparison table](#tbl:p-vs-np-boundary-table1-data).
 
 **The three equivalent criteria for $\mathcal{H}_c \neq \varnothing$.**
 
@@ -20,4 +20,4 @@ $$
 The descended boundary $\mathcal{H}_c^{\mathrm{desc}}$ constitutes the classical horizon, remaining opaque at real $q$. The transient boundary $\mathcal{H}_c^{\mathrm{trans}}$ supplies the quantum correction. For BQP problems, exact cancellation occurs: $\mathcal{H}_c^{\mathrm{trans}} = -\mathcal{H}_c^{\mathrm{desc}}$. This yields $\mathcal{H}_c = \varnothing$ at the root of unity. The boundary completely dissolves under quantum interference.
 
 The standard complexity hierarchy translates to:
-See [Table 2](#tbl:p-vs-np-boundary-table2-data).
+See [the complexity-regime table](#tbl:p-vs-np-boundary-table2-data).

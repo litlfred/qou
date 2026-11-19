@@ -7,4 +7,4 @@ A single Hopf linking on the exceptional divisor generates leptonic mass. The Sk
 
 Baryonic mass requires three generators threaded through color tubes. The color-tube fiber geometry imposes a cubic constraint. The Skein polynomial of the three-component link determines the hadronic mass. 
 
-The entire particle mass spectrum organizes into a generative chart. Row depth corresponds to the number of Hopf linkings. Column structure separates colorless leptons from colored hadrons. The system derives the full chart using exactly three inputs: the substrate parameter $q_0$, the seven basic generators, and the two geometric linking operations.
+The entire particle mass spectrum organizes into a generative chart. Row depth corresponds to the number of Hopf linkings. Column structure separates colorless leptons from colored hadrons. The system derives the full chart using exactly three inputs: the aether parameter $q_0$, the seven basic generators, and the two geometric linking operations.

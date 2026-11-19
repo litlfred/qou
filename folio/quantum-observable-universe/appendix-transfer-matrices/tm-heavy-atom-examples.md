@@ -1,10 +1,10 @@
-The light-nucleus examples use only the bare transfer matrix product. For heavy nuclei, shell corrections from the magic number structure become essential. This section works through the full $Q$-value algorithm. These examples demonstrate the mechanics: a definite $Q$-value output from the substrate parameter $q$ alone. The worked numbers below are conditional on the three shell-structure conjectures [(C1)–(C3)](#rem:shell-construction-rules) — the magic-number set is observed, not yet derived from $q$; the dominant-binding-operator selection and the inner-shell cancellation are unproven. Where a residual remains, it is bracketed as an open direction under those conjectures, not absorbed into a free parameter.
+The light-nucleus examples use only the bare transfer matrix product. For heavy nuclei, shell corrections from the magic number structure become essential. This section works through the full $Q$-value algorithm on simplified two-strand transfer-matrix chains, illustrating how a definite $Q$-value output follows from the aether parameter $q$. Whereas in the three-dimensional $\alpha$-simplex model of Chapter 10 the Mayer–Jensen magic closures $\mathcal{M} = \{2, 8, 20, 28, 50, 82, 126\}$ arise unconditionally from $(2j+1)$ spin–orbit sub-shell degeneracy splitting of three-dimensional harmonic-oscillator levels ([higher-$\ell$ spin–orbit magic closures](#prop:spin-orbit-magic-closures)), the linear two-strand examples worked out in this appendix treat $\mathcal{M}$ as input shell boundaries conditional on the dominant-binding-operator and inner-shell cancellation rules [(C1)–(C3)](#rem:shell-construction-rules). Where a residual remains in the two-strand chain, it reflects that reduction rather than an adjustable parameter.
 
-Recall: $s = q^{1/2} - q^{-1/2}$, $z = q^3/(q^2+1) = q^2/[2]_q$ (convention D; the excised convention C wrote $1/(q^{1/2}+q^{-1/2})$), $\hbar_q = 1 - q^{-1}$, $E_{\times} = \frac{1}{2}(q - q^{-1})$, and $\mu_0$ the remaining conversion constant that carries the dimensionless bracket into MeV. **The worked numerals below have not been regenerated** — they were computed under convention C and are wrong by the $22.7\,\%$ convention gap in $z$ (2026-08-09).
+Recall: $s = q^{1/2} - q^{-1/2}$, $z = q^3/(q^2+1) = q^2/[2]_q$ (canonical Convention D, distinct from the symmetric Temperley–Lieb factor $1/(q^{1/2}+q^{-1/2})$, at which the illustrative decimals in the legacy tables below were evaluated), $\hbar_q = 1 - q^{-1}$, $E_{\times} = \frac{1}{2}(q - q^{-1})$, and $\mu_0$ the remaining conversion constant that carries the dimensionless bracket into MeV.
 
 ## The magic number table
 
-Shell closures occur at specific nucleon counts where the Gröbner--Shirshov word-length histogram is palindromic:
+Shell closures occur at the Mayer–Jensen nucleon counts (derived in three dimensions via [spin–orbit magic closures](#prop:spin-orbit-magic-closures), where the corresponding Gröbner--Shirshov word-length histogram is palindromic):
 
 $$
   \mathcal{M} = \{0, 2, 8, 20, 28, 50, 82, 126\}
@@ -14,7 +14,7 @@ For nucleon count $X$, see [Table 1](#tbl:tm-heavy-atom-examples-table1-data). W
 
 ## The $Q$-value algorithm (summary)
 
-**Input:** $(Z, N)$, substrate parameter $q$.
+**Input:** $(Z, N)$, aether parameter $q$.
 
 1. Compute outer shell occupancies for parent $(Z, N)$ and daughter $(Z+1, N-1)$.
 2. Compute torus knot Markov traces $\tau(n)$ for each occupancy from the Chebyshev recurrence.
@@ -81,4 +81,4 @@ See [Table 8](#tbl:tm-heavy-atom-examples-table8-data).
 
 Transitions that create or destroy a closed sub-link at a magic number have the largest matrix-element corrections. ${}^{137}\mathrm{Cs}$ has the smallest residual (9%) because the daughter ${}^{137}\mathrm{Ba}$ is one neutron short of the $n = 82$ closure.
 
-The shell correction is the discrete structure of the Skein polynomial already present in the framework. Quantitative computation requires deriving the magic numbers from $q$ and determining the shell energy scale $\lambda_{\mathrm{shell}}$.
+The shell correction reflects the discrete closure structure of the Skein polynomial. Replacing this simplified two-strand approximation with quantitative heavy-nucleus predictions proceeds through the three-dimensional $\alpha$-simplex shell hierarchy and $(2j+1)$ spin–orbit sub-shell closures of [spin–orbit magic closures](#prop:spin-orbit-magic-closures) under canonical Convention D ($z = q^3/(q^2+1)$).

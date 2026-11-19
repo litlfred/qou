@@ -114,7 +114,6 @@ Identifying *any one* of the three candidates explicitly would:
    [joint Galois braid action conjecture](#conj:joint-galois-braid-action).
 3. **Provide the Bring-natural depth-3 witness target.** The witness
    formalism
-   (the canonical formalism)
-   currently records the algebraic value; geometric identification
-   would let it record a *measurement target* (e.g. SnapPy CS
-   computation on a specific knot) and verify equality at 50 dps.
+   currently records the algebraic value; a geometric identification
+   would supply an explicit hyperbolic Chern–Simons invariant
+   on a specific manifold complement for 50-digit comparison.

@@ -17,8 +17,10 @@ export default conjecture({
     engine: "python",
     script:
       "computations/binding_block_multiplicative.py",
-    witness:
+    witness: [
       "computations/binding-block-multiplicative.witness.json",
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+    ],
     status: "verified",
   },
   tags: [

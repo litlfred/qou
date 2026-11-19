@@ -1,4 +1,4 @@
-> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md)).
+> **Superseded.** The scalar aether density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([mass-endomorphism tower](mass-endomorphism-tower.md)).
 
 The Markov chain, knot-theoretic operations, and the partition $\lambda$ are linked by explicit structural statements that govern traffic between $\lambda$-preserving and $\lambda$-changing moves.
 

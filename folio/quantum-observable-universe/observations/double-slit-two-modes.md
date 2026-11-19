@@ -19,7 +19,7 @@ Standard theory predicts band widths from slit geometry alone.
 
 ## Observation and coherence loss
 
-A detector at one slit shifts the substrate parameter $q \mapsto q + \delta q$ via Hopf coaction ([observation](#def:observation)). The Reeb phases become incommensurate. Fringes vanish, and the single-slit pattern carries an asymmetry of order $\delta q / q$.
+A detector at one slit shifts the aether parameter $q \mapsto q + \delta q$ via Hopf coaction ([observation](#def:observation)). The Reeb phases become incommensurate. Fringes vanish, and the single-slit pattern carries an asymmetry of order $\delta q / q$.
 
 ## Experimental discriminant
 

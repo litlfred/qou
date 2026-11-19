@@ -1,6 +1,6 @@
 ## Proof
 
-**Step 1 — character values at $w_0$.** The longest element
+**Step 1: character values at $w_0$.** The longest element
 $w_0 \in S_3$ is the involution $(1\,3)$ (cycle type $[2,1]$).
 Standard $S_n$ character theory gives:
 
@@ -10,7 +10,7 @@ Standard $S_n$ character theory gives:
 - $\chi_{(1,1,1)}(w_0) = -1$: sign rep gives $\mathrm{sgn}(w_0) = -1$
   (odd permutation).
 
-**Step 2 — per-irrep closed forms at $H_3(q)$.** By
+**Step 2: per-irrep closed forms at $H_3(q)$.** By
 [chi per irreducible-representation cyclotomic closed forms remark](#rem:chi-per-irrep-cyclotomic-closed-forms),
 the three character-difference closed forms are
 
@@ -22,7 +22,7 @@ $$
 \end{aligned}
 $$
 
-**Step 3 — conjugate-partition symmetry.** The
+**Step 3: conjugate-partition symmetry.** The
 conjugate-partition relation
 $\chi_{(1,1,1)}\text{-diff}(q) = \chi_{(3)}\text{-diff}(q) / q^4$
 ([chi per irreducible-representation cyclotomic closed forms remark](#rem:chi-per-irrep-cyclotomic-closed-forms))
@@ -44,14 +44,14 @@ $c_k^{(\lambda)} = [\varepsilon^{2k}]\,\chi_\lambda\text{-diff}$;
 restoring the full ε-expansion is needed to pick out the
 $[\varepsilon^{2k}]$ contribution of $\chi_{(1,1,1)}$, which
 involves $[\varepsilon^{2k - j}]\,\chi_{(3)}$ for $j$ ranging
-over $\{0, 1, \ldots, 2k\}$ — including odd values like
+over $\{0, 1, \ldots, 2k\}$ (including odd values like
 $j = 2k - 1$ where the input is the odd-power coefficient
-$[\varepsilon^1]\,\chi_{(3)}$.
+$[\varepsilon^1]\,\chi_{(3)}$).
 
 For $m = 2k \geq 10$ (i.e. $k \geq 5$), the binomial coefficient
 $\binom{j+3}{j}$ grows monotonically in $j$, so the dominant
 contributions come from the **largest $j$** values where the
-$[\varepsilon^{m - j}]\,\chi_{(3)}$ factor is still non-zero —
+$[\varepsilon^{m - j}]\,\chi_{(3)}$ factor is still non-zero:
 the smallest non-trivial $[\varepsilon^{m - j}]\,\chi_{(3)}$
 sit at $m - j \in \{1, 2\}$ per the witness data (e.g.
 $[\varepsilon^1]\,\chi_{(3)} = -2$, $[\varepsilon^2]\,\chi_{(3)} = -3$).
@@ -63,7 +63,7 @@ negative low-order $\chi_{(3)}$ coefficients gives
 $c_k^{(1,1,1)} \gg c_k^{(3)}$ in magnitude with sign tied to
 the parity of the dominant $j$.
 
-**Step 4 — sign-character coincidence.** Substituting into
+**Step 4: sign-character coincidence.** Substituting into
 $S_k^{(w_0)} = c_k^{(3)} - c_k^{(1,1,1)}$ and observing that
 $c_k^{(1,1,1)} \gg c_k^{(3)}$ for $k \geq 5$
 (because of the $q^{-4}$ amplification of the high-order ε-tail),
@@ -87,8 +87,8 @@ $c_k$ chain. $\square$
 
 ## Open: magnitude closure
 
-The proposition closes the **sign** at $k = 5, 6$. The **magnitude**
-ratios ($1.49\times$ at $c_5$, $95.3\times$ at $c_6$) remain open.
+The proposition determines the **sign** at $k = 5, 6$, whereas the **magnitude**
+ratios ($1.49\times$ at $c_5$, $95.3\times$ at $c_6$) are not accounted for by $w_0$-sign weighting alone.
 Candidate refinements:
 
 1. **Cross-block coupling via $\sigma_1$ matrix elements.** The

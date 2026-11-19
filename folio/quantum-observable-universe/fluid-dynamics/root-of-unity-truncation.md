@@ -8,7 +8,7 @@ and
 the [regularity-breakdown conjecture](#conj:regularity-breakdown);
 "Root-of-unity truncation").**
 
-Let $(\mathbf{C}, A, \tau)$ be a QOU with substrate parameter $q$ not a root of unity ([QOU axiom](#def:substrate-parameter)). As $q \to 1$ through the roots of unity $q = e^{i\pi/\kappa}$, the representation category truncates to a finite modular tensor category; blowup arises only in the $\kappa \to \infty$ accumulation. For an anti-parallel vortex pair with core aspect ratio $\kappa(t)$:
+Let $(\mathbf{C}, A, \tau)$ be a QOU with aether parameter $q$ not a root of unity ([aether parameter](#def:substrate-parameter)). As $q \to 1$ through the roots of unity $q = e^{i\pi/\kappa}$, the representation category truncates to a finite modular tensor category; blowup arises only in the $\kappa \to \infty$ accumulation. For an anti-parallel vortex pair with core aspect ratio $\kappa(t)$:
 
 $$
   \boxed{
@@ -20,7 +20,7 @@ $$
 
 **Proof.**
 
-The governing [QOU axiom](#def:substrate-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \to 1$ directly through the dense set of unity roots triggers a radical truncation across the representation theory that forcibly **strengthens** classical regularity. The resulting macroscopic blowup operating at $q = 1$ behaves merely as the pure mathematical accumulation gathering these infinite truncations.
+The governing [aether-parameter axiom](#def:substrate-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \to 1$ directly through the dense set of unity roots triggers a radical truncation across the representation theory that forcibly **strengthens** classical regularity. The resulting macroscopic blowup operating at $q = 1$ behaves merely as the pure mathematical accumulation gathering these infinite truncations.
 
 The core truncation mechanism — driven exclusively by the vanishing of the $q$-integer $[\kappa]_q$ executing exactly at $q = e^{i\pi/\kappa}$, which cleanly collapses the spanning $q$-Laplacian spectral tower $[k]_q^2$ straight into the constrained finite Verlinde/ADE set — finds derivation strictly within [the $q$-Laplacian spectral tower](#prop:q-laplacian-spectral-tower). The following formally extracts the resulting fluid-dynamical consequence.
 
@@ -47,7 +47,7 @@ Evaluated cleanly at $q = e^{i\pi/\kappa}$, the operating q-NS system mechanical
 - Within generic $q > 1$: valid modes breaching $[k]_q > \mathrm{Re}_q^{1/2}$ safely experience exponential damping but strictly remain nonzero.
 - Operating at root of unity: any hypothetical modes breaching $j > (\kappa-2)/2$ mathematically **do not exist** anywhere inside the governing category. The entire bounded Hilbert space remains strictly finite-dimensional.
 
-A purely finite-dimensional ODE mathematically defaults to globally regular unconditionally (enforcing Picard--Lindelöf). Consequently, situated exactly at every isolated root of unity, the operative q-NS system operates not merely as well-posed, but absolutely **finite-dimensional**.
+A purely finite-dimensional ODE mathematically defaults to globally regular unconditionally (enforcing Picard--Lindelöf). Consequently, situated exactly at every isolated root of unity, the operative q-NS system is strictly **finite-dimensional** and therefore globally well-posed.
 
 **The $q = 1$ accumulation.**
 
@@ -81,6 +81,4 @@ The baseline [vorticity lower bound](#conj:vorticity-lower-bound) strictly manda
 - Assuming $\kappa(t) \sim \kappa$ (exhibiting purely linear growth): the physical core safely flattens exactly mirroring the rate unlocking new modes. Physical vorticity safely spreads forming a wide sheet. The strict lower bound $\omega \geq c/(T^*-t)$ potentially fails. NS may function as completely regular.
 - Assuming $\kappa(t) \sim \kappa^\beta$ spanning $0 < \beta < 1$: an intermediate regime triggers. The firm lower bound holds cleanly provided $\beta < 1/2$ (confirming the physical flattening remains mathematically slower than the approach).
 
-Note that $\kappa(t)^2$ is a statement about core cross-sectional shape only, not a Levi form condition number $\lambda_{\max}/\lambda_{\min}$: on the three-dimensional flow domain the Levi datum of the vorticity plane field is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ ([core Levi form](#prop:core-levi-form)), with no eigenvalue pair and no condition number, and non-degeneracy of that Levi scalar does not imply blow-up (see the Beltrami counterexample in the [Levi degeneracy conjecture](#conj:levi-degeneracy)).
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+Note that $\kappa(t)^2$ is a statement about core cross-sectional shape only rather than a Levi form condition number $\lambda_{\max}/\lambda_{\min}$: on the three-dimensional flow domain the Levi datum of the vorticity plane field is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ ([core Levi form](#prop:core-levi-form)), with no eigenvalue pair and no condition number, and non-degeneracy of that Levi scalar does not imply blow-up (see the Beltrami counterexample in the [Levi degeneracy conjecture](#conj:levi-degeneracy)).

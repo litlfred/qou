@@ -2,7 +2,7 @@
 
 The proof proceeds in two structural steps.
 
-### Step 1 — Schur–Weyl + R-matrix derivation of $\chi^{(2,1)}(\beta_{\mathrm{Bor}})$.
+### Step 1: Schur–Weyl + R-matrix derivation of $\chi^{(2,1)}(\beta_{\mathrm{Bor}})$.
 
 The q-Schur duality for $\mathrm{U}_q(\mathfrak{sl}_2)$ and $\mathrm{H}_3(q)$
 gives a $(\mathrm{U}_q(\mathfrak{sl}_2), \mathrm{H}_3(q))$-bimodule
@@ -68,7 +68,7 @@ $$
   \mathrm{tr}_{V^{\otimes 3}}(F(\beta_{\mathrm{Bor}}))
   \;=\;
   8 - 6h^4 - 2h^6
-  \quad\text{(exact, verified to 50 digits at the substrate $q_0 \approx 1.10998$).}
+  \quad\text{(exact, verified to 50 digits at the aether $q_0 \approx 1.10998$).}
 $$
 
 Subtracting $4 \cdot 1$ and dividing by $\dim(V_{1/2}) = 2$ yields:
@@ -85,7 +85,7 @@ derivable directly from the closed form of
 via the substitution $u = q^2 + q^{-2} = h^2 + 2$; the R-matrix
 derivation provides the categorical confirmation.)
 
-### Step 2 — Markov normalisation $y_{(2,1)}(q=1) = 1/[2]_q^2|_{q=1} = 1/4$.
+### Step 2: Markov normalisation $y_{(2,1)}(q=1) = 1/[2]_q^2|_{q=1} = 1/4$.
 
 The Frobenius expansion of the Markov trace on $\mathrm{H}_3(q)$:
 
@@ -136,12 +136,12 @@ $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (\cdots)/(h^2 + 4)$.
 The identity $y_{(2,1)}(q) = 1/[2]_q^2$ in fact holds **exactly for
 all $q$**, not only at $q = 1$: the full closed-form weight vector on
 $\mathrm{H}_3(q)$ is $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
-$y_{(1^3)} = 0$ (identically — the Temperley–Lieb quotient kills the
+$y_{(1^3)} = 0$ (identically, since the Temperley–Lieb quotient kills the
 3-row partition), evaluating at $q = 1$ to the **non-uniform** vector
 $(\tfrac12, \tfrac14, 0)$. See
 [$H_3$ Markov Wenzl weights proposition](h3-markov-wenzl-weights.md) for the
 derivation and for why a bar-involution uniformity argument fails (the
-Jones-normalised trace is chiral — not invariant under the sign-twist
+Jones-normalised trace is chiral, hence not invariant under the sign-twist
 automorphism $\sigma \mapsto -q\,\sigma^{-1}$).
 
 ### Combining Steps 1 and 2.

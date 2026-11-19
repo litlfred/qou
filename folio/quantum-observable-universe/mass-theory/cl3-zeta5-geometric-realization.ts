@@ -23,4 +23,10 @@ export default conjecture({
     "graded-mikusinski",
     "open-problem",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/bring_trilog_zeta5_depth_3.py",
+    witness: "computations/bring-trilog-zeta5-depth-3.witness.json",
+    status: "verified",
+  },
 });

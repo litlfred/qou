@@ -24,7 +24,7 @@ These weights depend on the Markov parameter $z$, and the values below differ be
 | convention D, $z = q^{3}/(q^{2}+1)$ (canonical) | $0.5054$ | $0.4946$ | $0$ |
 | convention C, $z = \sqrt{q}/(q+1)$ (excised) | $0.42$ | $0.56$ | $0.02$ |
 
-The alternating weight is **exactly zero** under the canonical convention, not merely small. Any statement that the alternating block is *suppressed* describes convention C; under convention D that channel does not contribute at all, and a nonzero $\hat y_{\mathrm{alt}}$ is itself a convention-C signature.
+The alternating weight is **exactly zero** under the canonical convention rather than merely small. Any statement that the alternating block is *suppressed* describes convention C; under convention D that channel does not contribute at all, and a nonzero $\hat y_{\mathrm{alt}}$ is itself a convention-C signature.
 
 The convention-C row is retained because the results tabulated below were computed in it and have not been recomputed under D. They are reported as measured, in the frame that produced them.
 

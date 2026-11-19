@@ -25,6 +25,8 @@ export default remark({
     witness: [
       "computations/q-beta-form-a-n1-extension.witness.json",
       "computations/confinement-operator-selection.witness.json",
+      "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
+      "computations/free-neutron-decay.witness.json",
     ],
     status: "experimental",
   },

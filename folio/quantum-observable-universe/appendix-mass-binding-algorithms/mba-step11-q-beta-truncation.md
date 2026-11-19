@@ -3,7 +3,7 @@
 
 ### Input
 
-- *Two-term substrate parameter $q = q_{2t} > 1$, electron mass scale $m_e$, electroweak Fermi constant $G_F$ and CKM element $|V_{ud}|$, and target relative series accuracy $\varepsilon > 0$.*
+- *Two-term aether parameter $q = q_{2t} > 1$, electron mass scale $m_e$, electroweak Fermi constant $G_F$ and CKM element $|V_{ud}|$, and target relative series accuracy $\varepsilon > 0$.*
 
 ### Output
 

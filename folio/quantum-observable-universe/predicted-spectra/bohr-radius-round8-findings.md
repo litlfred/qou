@@ -31,7 +31,7 @@ $$
 
 Identifying $n = 2k+1$ exactly reproduces the Bohr $1/n^2$ energy-level spacing. The dressing-power $2k+1$ plays the role of the principal quantum number.
 
-The relative shell spacing $E_n / E_1 = 1/n^2$ emerges from the Hecke spectral-gap analysis without transport. This determines only ratios, not the absolute $\alpha_{EM}^{2}$ scale.
+The relative shell spacing $E_n / E_1 = 1/n^2$ emerges from the Hecke spectral-gap analysis without transport. This determines only ratios rather than the absolute $\alpha_{EM}^{2}$ scale.
 
 #### Curvature rank and covalent bonds
 

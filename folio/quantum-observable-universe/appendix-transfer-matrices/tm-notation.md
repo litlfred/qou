@@ -16,7 +16,7 @@ $$
   \hat{V}_i(q) = z(q) \cdot (M_i)_{11} + (M_i)_{21}
 $$
 
-where $z(q) = q^3/(q^2+1) = q^2/[2]_q$ is the Markov-trace loop value — **convention D** (the excised convention C wrote $1/(q^{1/2}+q^{-1/2})$, which weights the Temperley–Lieb generator $e_i = q - \sigma_i$ at the wrong argument, not the Hecke generator $\sigma_i$ stabilised here). Every $\hat V_i(q)$ and hence every $P_{\mathcal{N}}(q)$ in this appendix carries this substitution; the worked numerals downstream have **not** been regenerated and are still convention-C values (2026-08-09). The nuclear Skein polynomial is:
+where $z(q) = q^3/(q^2+1) = q^2/[2]_q$ is the canonical **Convention D** Markov-trace loop value for $\sigma_i$ stabilisation (distinct from $1/(q^{1/2}+q^{-1/2})$, which weights the Temperley–Lieb generator $e_i = q - \sigma_i$ rather than $\sigma_i$, and at which the illustrative decimals in the worked tables below were evaluated). Every symbolic $\hat V_i(q)$ and $P_{\mathcal{N}}(q)$ in this appendix carries $z(q) = q^3/(q^2+1)$:
 
 $$
   P_{\mathcal{N}}(q) = \prod_{i=0}^{A-2} \hat{V}_i(q)

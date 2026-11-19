@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "Non-trivial bar-involution on the polynomial ring $R[X]$ via $X \\mapsto -X$: provides a concrete categorical setting where the indeterminate $X$ plays the role of the bar-anti-symmetric Hecke skein $h = q - q^{-1}$. All four ring-involution axioms proved via `Polynomial.comp` identities; the bar-symmetric subring is exactly $R[X^2]$ (even-degree polynomials).",
+    "Polynomial bar involution $p(X) \\mapsto p(-X)$ on $R[X]$ and its even-degree invariant subring $R[X^2]$",
   uses: [
     "def:bar-involution",
   ],

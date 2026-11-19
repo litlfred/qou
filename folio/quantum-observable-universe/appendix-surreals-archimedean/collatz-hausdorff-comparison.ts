@@ -18,4 +18,10 @@ export default remark({
     "phase-transition",
     "superattraction",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
+    witness: "computations/qbeta/qbeta-fsc-g-pattern-comparison.witness.json",
+    status: "verified",
+  },
 });

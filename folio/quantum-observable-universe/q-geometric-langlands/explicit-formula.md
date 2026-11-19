@@ -20,7 +20,7 @@ explicit formula of prime number theory \cite{reshetikhin1991}.
 
 The identity is stated for a single $q$-zeta datum --- the maximal ideals and the
 Reeb spectrum *of one geometry*, together with its constants. That bundling is
-part of the statement, not presentation: the two sides are the geometric and
+part of the statement rather than presentation: the two sides are the geometric and
 spectral faces of the same object, and the identity is false for an unrelated
 pair (with no ideals, no spectrum and $\Omega_q = 1/2\pi$, the left side is $0$
 while the right side exceeds $2$).
@@ -34,7 +34,7 @@ is a theorem of Weil, but its $q$-deformation --- the $[\rho]_q$, $\ln_q$ and
 $\Omega_q$ terms --- is a claim of this framework.
 
 **The finite-spectrum form is refuted, and the reason names what a repair must
-do.** Formalised with the spectral side as a *finite* list of eigenvalues, the
+do.** Formulated with the spectral side as a *finite* sum of eigenvalues, the
 identity holds for **no datum at all** --- any ideals, any spectrum, any
 $\Omega_q$, any $q>1$. The mechanism is a mismatch of boundedness. The geometric
 side $\psi_q(X)$ is a sum over finitely many maximal ideals whose terms are
@@ -44,11 +44,12 @@ being finitely many terms of norm $X^{\mathrm{Re}\,\rho}$ with $X \le \sqrt2$; w
 $-\tfrac{1}{2}\ln_q\!\left(1 - X^{-2}\right)$ diverges to $+\infty$ as
 $X \to 1^{+}$. A bounded function cannot equal an unbounded one.
 
-This is a defect of the formalisation, not of the mathematics. The classical
+This is a defect of the finite truncation rather than of the identity. The classical
 explicit formula carries the same $-\tfrac{1}{2}\log(1-x^{-2})$ term and is
 true, because there the spectral sum runs over *infinitely many* zeros and
 converges only conditionally: that term is the closed form of the trivial-zero
 series, and its blow-up near $x=1$ is cancelled by the divergence of the
 non-trivial-zero sum. A finite sum cannot reproduce that cancellation. A
-faithful carrier therefore needs the spectral side to be an infinite sum with a
-specified summation order, not a list.
+faithful formulation therefore requires the spectral side to be a conditionally
+convergent infinite series with a specified summation order, rather than a
+finite sum.

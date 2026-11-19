@@ -47,4 +47,13 @@ export default proposition({
         "construction.",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/probes/molien_feray_meliot_bridge_probe.py",
+    witness: [
+      "computations/probes/molien-feray-meliot-bridge.witness.json",
+      "computations/probes/pauli-factor-wedderburn-probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

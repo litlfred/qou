@@ -18,4 +18,10 @@ export default remark({
   ],
   uses: ["rem:q-chromaticity"],
   cites: ["bujack2022", "schrodinger1920color"],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
 });

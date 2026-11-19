@@ -112,8 +112,9 @@ theorem confinement_frobenius_reciprocity
     0 < ctx.y_0_star ∧
     ctx.A_star.Nonempty ∧
     (∀ i : Fin ctx.d, i ∈ ctx.A_star ↔ 0 < ctx.u_star i) ∧
-    ctx.primal_obj = ctx.dual_obj :=
-  ⟨ctx.reciprocity, ctx.primal_nontrivial, ctx.y_0_star_pos, ctx.A_star_nonempty, ctx.active_iff_pos_shadow, ctx.strong_duality⟩
+    ctx.primal_obj = ctx.dual_obj := by
+  refine ⟨ctx.reciprocity, ctx.primal_nontrivial, ctx.y_0_star_pos,
+    ctx.A_star_nonempty, ctx.active_iff_pos_shadow, ctx.strong_duality⟩
 
 
 

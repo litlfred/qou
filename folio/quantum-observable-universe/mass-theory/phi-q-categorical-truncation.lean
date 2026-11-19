@@ -50,7 +50,7 @@ structure GBStratifiedAlgebra (R : Type*) [CommRing R] where
     truncation theorem **derives** the higher-depth vanishing rather
     than assuming it. -/
 -- Ref: [leitner2026] prop:spectral-sequence-collapse
-structure SpectralSequenceCollapse {R : Type*} [CommRing R]
+class SpectralSequenceCollapse {R : Type*} [CommRing R]
     (G : GBStratifiedAlgebra R) (T_w : G.algebra)
     (mass_at_depth : ℕ → R) where
   /-- The NF-support depth k★(T_w): max GB-depth of λ ∈ supp(T_w). -/

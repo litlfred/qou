@@ -15,7 +15,7 @@ Sakharov required C and CP violation for baryogenesis. The Standard Model CKM ph
 
 **QOU interpretation.**
 
-In the [complex chirality rotation](#conj:complex-chirality-rotation) framework the substrate parameter is complex, $q = |q|e^{i\theta}$, and the matter-antimatter asymmetry is measured by the discriminant of the two crossing-energy magnitudes,
+In the [complex chirality rotation](#conj:complex-chirality-rotation) framework the aether parameter is complex, $q = |q|e^{i\theta}$, and the matter-antimatter asymmetry is measured by the discriminant of the two crossing-energy magnitudes,
 
 $$
 \delta_{\mathrm{CP}} = \frac{\lVert\mathfrak{E}_+\rVert - \lVert\mathfrak{E}_-\rVert}{\lVert\mathfrak{E}_+\rVert + \lVert\mathfrak{E}_-\rVert}.
@@ -27,12 +27,12 @@ $$
 \delta_{\mathrm{CP}} = \frac{r^2 - 1}{r^2 + 1}, \qquad r = \lvert q\rvert,
 $$
 
-for **every** $\theta$. This is an exact identity, not a leading order: $\theta$ is bound on the left-hand side and absent from the right. At the substrate anchor $\delta_{\mathrm{CP}} \approx 0.10396$, which coincides with $\tanh(\ln r)$ and with the count-to-signed channel ratio of the $n_- = 0$ crossing sector.
+for **every** $\theta$. This is an exact identity rather than a leading-order approximation: $\theta$ is bound on the left-hand side and absent from the right. At the aether anchor $\delta_{\mathrm{CP}} \approx 0.10396$, which coincides with $\tanh(\ln r)$ and with the count-to-signed channel ratio of the $n_- = 0$ crossing sector.
 
-The asymmetry is therefore supplied by $r > 1$ — the substrate being deformed at all — and not by a residual phase. Consequently:
+The asymmetry is therefore supplied by $r > 1$ — the aether being deformed at all — and not by a residual phase. Consequently:
 
 - The observable sector projects $\theta \to 0$, and an imperfect projection leaves $\theta_{\mathrm{res}}$; but the discriminant is blind to it.
-- The $\mathcal{O}(\theta_{\mathrm{res}}^2)$ scaling for single-crossing systems ($e^-e^+$) is **refuted** — the quantity is independent of $\theta$ at every order, not only at leading order.
+- The $\mathcal{O}(\theta_{\mathrm{res}}^2)$ scaling for single-crossing systems ($e^-e^+$) is **refuted** — the quantity is independent of $\theta$ at every order, beyond leading order alone.
 - A geometric origin for the CKM phase does **not** follow from this discriminant, which carries no phase information.
 - The multi-crossing accumulation $\delta_{\mathrm{CP}} \sim n_c\theta_{\mathrm{res}}$ is a statement about composites and is **not addressed** by the single-crossing-pair identity above. It is neither established nor refuted here.
 

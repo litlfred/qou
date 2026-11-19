@@ -886,6 +886,14 @@ def specht_dim(shape):
     return d
 
 
+def hook_length_dim_lambda(shape):
+    """Exact integer Specht-module dimension `f^λ = n! / ∏ hook(c)` via the
+    hook-length formula (`specht_dim(shape)`). Provided under both names so
+    callers importing `hook_length_dim_lambda` or `specht_dim` resolve identically
+    (bean qou-2cz1)."""
+    return specht_dim(shape)
+
+
 # ════════════════════════════════════════════════════════════════════
 # v3 mass functions removed 2026-05-03 — see audit
 #   docs/audits/2026-05-03-categorical-mass-divergence-audit.md

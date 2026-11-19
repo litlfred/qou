@@ -1,6 +1,6 @@
 Classical kinetic pressure arises from billiard-ball momentum transfer at a boundary. This classical derivation assumes point particles, elastic reflection, and a passive wall. All three assumptions fail in the QOU.
 
-First, particles are knots, not points. The configuration $K$ forms a braid closure strictly within the Reeb bundle $S^3 \to \mathcal{S}_p$. 
+First, particles are knots rather than points. The configuration $K$ forms a braid closure strictly within the Reeb bundle $S^3 \to \mathcal{S}_p$. 
 
 Second, the boundary formally participates in the Hecke algebra. Momentum transfer at $\partial U$ operates via the Frobenius pairing. A morphism $K$ approaching $\partial U$ pairs directly with the boundary datum via $\langle K|_{\partial U}\,,\, \partial U \rangle_A$, yielding a scalar in $\mathrm{End}_{\mathbf{C}}(\mathbf{1})$.
 

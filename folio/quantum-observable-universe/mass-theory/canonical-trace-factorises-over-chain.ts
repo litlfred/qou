@@ -35,4 +35,19 @@ export default remark({
     "lean-formalised",
     "draft",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: the_canonical_mass_trace_factorises_over_the_chain_probe.py, the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py, nf_vs_canonical_word_order_probe.py.",
+    },
+  ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/brng-dominant-summand-ursell.witness.json",
+      "computations/probes/convention_d_proton_constituent_closed_form_probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

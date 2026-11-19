@@ -22,4 +22,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:borromean-hopf-energy-crossover"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/m_p_borromean_verification_50dps.py",
+    witness: "computations/m-p-borromean-verification-50dps.witness.json",
+    status: "verified",
+  },
 });

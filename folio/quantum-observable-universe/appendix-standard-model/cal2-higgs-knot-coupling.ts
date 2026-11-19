@@ -17,4 +17,10 @@ export default remark({
         "to the CAL-2 anchor formula. No new mathematical claim.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/m_tau_volume_target_probe.py",
+    witness: "computations/m-tau-volume-target.witness.json",
+    status: "verified",
+  },
 });

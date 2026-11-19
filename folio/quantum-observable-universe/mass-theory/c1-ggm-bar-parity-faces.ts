@@ -15,6 +15,10 @@ export default conjecture({
   authorNotes: [
     {
       kind: "note",
+      body: "Computational provenance: computations/probes/door_v_residual_scope_probe.py.",
+    },
+    {
+      kind: "note",
       body: "An earlier version of this note denied that the recurrence oscillates inside the window; it does, but never at two consecutive pairs.",
     },
     {

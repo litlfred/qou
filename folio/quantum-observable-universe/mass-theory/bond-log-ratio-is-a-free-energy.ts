@@ -33,4 +33,21 @@ export default remark({
     "open-problem",
     "draft",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: the_free_energy_reading_has_no_energy_spectrum_probe.py.",
+    },
+  ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/hecke-channel-binding.witness.json",
+      "computations/probes/uic_per_block_log_valley_scan_probe.witness.json",
+      "computations/probes/the_free_energy_reading_has_no_energy_spectrum_probe.witness.json",
+      "computations/meson/cut-entropy-is-A-independent.witness.json",
+    ],
+    status: "verified",
+  },
 });

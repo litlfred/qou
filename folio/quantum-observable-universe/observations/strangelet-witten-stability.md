@@ -71,7 +71,7 @@ Strangelets require hadrons (confinement) and accessible strange quarks. This li
 | Classical limit | $q = 1$ | **Trivial** | All Jones polynomials evaluate to $1$; no mass differences |
 | Physical | $q > 1$ (physical: $q_0$) | **Yes, at high density** | Jones polynomial cost finite; Fermi energy overcomes it at $\rho \gtrsim 2\rho_0$ |
 
-Strangelets are a high-density phenomenon at the physical substrate parameter.
+Strangelets are a high-density phenomenon at the physical aether parameter.
 
 **Strange force.**
 Witten posited a "strange force" mediating attraction between strangelets. In QOU, this is the $5$-crossing component of the strong channel. The cinquefoil braiding generates stronger $R$-matrix binding than the trefoil. The "strange force" is the strong force evaluated at higher crossing number.

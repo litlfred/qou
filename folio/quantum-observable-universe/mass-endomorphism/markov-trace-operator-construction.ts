@@ -22,6 +22,7 @@ export default remark({
     "audit-forward-reference",
   ],
   authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
     {
       kind: "status",
       date: "2026-06-03",

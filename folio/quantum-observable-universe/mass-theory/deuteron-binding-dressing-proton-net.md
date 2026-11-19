@@ -16,7 +16,7 @@ $$
 $$
 
 which holds since $(1 - \tfrac{3h}{2} + \tfrac{h^2}{2}) - (1 - \tfrac{h}{2}) = -h + \tfrac{h^2}{2} = -h(1-\tfrac{h}{2})$.
-In the substrate regime $0 < h < 2$, the proton coefficient satisfies $\mathrm{net}(p) > 0$, giving $|\Delta(\mathrm{net})| = h\,\mathrm{net}(p)$. The $Q$-value ansatz $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})|\,\mathfrak{E}_0$ from [neutron $Q$-value symbolic proposition](../nuclear-interactions/neutron-qvalue-symbolic.md) yields:
+In the aether regime $0 < h < 2$, the proton coefficient satisfies $\mathrm{net}(p) > 0$, giving $|\Delta(\mathrm{net})| = h\,\mathrm{net}(p)$. The $Q$-value ansatz $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})|\,\mathfrak{E}_0$ from [neutron $Q$-value symbolic proposition](../nuclear-interactions/neutron-qvalue-symbolic.md) yields:
 
 $$
 \mathfrak{Q}_\beta \;=\; \mathfrak{E}_0 \, h \, \mathrm{net}(p).

@@ -14,7 +14,7 @@ export default theorem({
     },
   ],
   label: "thm:substrate-self-duality",
-  title: "Self-duality of the algebraic substrate",
+  title: "Self-duality of the algebraic aether",
   lean: { ref: "qou:QOU.AlgebraicSubstrate.SelfDualPairingData",
     validation: "not_checked",
   },

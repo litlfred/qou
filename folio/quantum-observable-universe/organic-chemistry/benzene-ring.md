@@ -26,7 +26,7 @@ $$
   (q + q^{-1})^2 - 1.
 $$
 
-Under [conj:ring-closure-barrier](#conj:ring-closure-barrier) the crossing energy is proportional to this polynomial, strictly less than the weight of 6 separate Hopf links.
+Under [ring-closure energy barrier conjecture](#conj:ring-closure-barrier) the crossing energy is proportional to this polynomial, strictly less than the weight of 6 separate Hopf links.
 
 **Bond order equalisation.**
 There are no individual bonds — the threading link distributes binding uniformly. Each carbon is threaded identically, producing equal bond lengths and equal bond orders of $3/2$.

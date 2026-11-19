@@ -1,4 +1,4 @@
-The **substrate parameter** $q \in \mathbb{C}^*$ is the deformation parameter of the Frobenius--Hopf algebra $A$. It governs the non-commutativity of the algebraic substrate. At $q = 1$, the algebra becomes commutative and the quantum structure degenerates to its classical shadow.
+The **aether parameter** $q \in \mathbb{C}^*$ is the deformation parameter of the Frobenius--Hopf aether $A$. It governs the non-commutativity of the algebraic aether. At $q = 1$, the algebra becomes commutative and the quantum structure degenerates to its classical shadow.
 
 The **quantum Planck constant** associated to $q$ is
 

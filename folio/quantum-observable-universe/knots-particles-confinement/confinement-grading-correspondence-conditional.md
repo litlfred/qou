@@ -7,5 +7,3 @@ $$
   \;\iff\;
   (\mathfrak{M}_K)_d = 0 \;\;\text{for}\;\; d > \ell.
 $$
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

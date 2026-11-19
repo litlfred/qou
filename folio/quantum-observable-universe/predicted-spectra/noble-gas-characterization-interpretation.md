@@ -4,7 +4,7 @@ Each trefoil $T_{2,3}$ is a $(2,3)$-torus knot. It winds twice around one axis a
 This yields:
 > **Full shell = full curls.**
 
-A shell fills by exhausting available linking sites at its writhe level, not by reaching a numerical threshold. Topological rigidity drives inertness. No crossing remains available for a new electron.
+A shell fills by exhausting available linking sites at its writhe level rather than by reaching a numerical threshold. Topological rigidity drives inertness. No crossing remains available for a new electron.
 
 **Remark (mathematical novelty).**
 This topological characterization replaces heuristic chemistry with a rigid sub-Hopf link invariant. It formally binds empirical ionization energy peaks to crossing-energy maxima.

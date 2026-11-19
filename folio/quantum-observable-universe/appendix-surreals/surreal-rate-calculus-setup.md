@@ -2,7 +2,7 @@ Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal
 ([Reeb infinitesimal](#def:reeb-epsilon))
 and let $q = 1 + \varepsilon$
 ([$q$ from $\varepsilon$](#def:q-from-epsilon))
-be the associated substrate parameter.  Work inside the ordered field
+be the associated aether parameter.  Work inside the ordered field
 $\mathbb{R}(\varepsilon)$ of rational functions of $\varepsilon$, and
 treat $\varepsilon$ as a **strictly positive infinitesimal**: for every
 standard real $\lambda > 0$ and every $n \in \mathbb{N}$,
@@ -31,4 +31,4 @@ has a literal value as an element of $\mathbb{R}(\varepsilon) \subset \mathbf{No
 
 Here $\asymp$ means "equal up to a strictly positive standard-real
 prefactor", so the **order** of each quantity in $\varepsilon$ is an
-invariant of the substrate, independent of normalization conventions.
+invariant of the aether parameter, independent of normalization conventions.

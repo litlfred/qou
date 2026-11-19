@@ -712,7 +712,7 @@ function writeSidecar(
     result,
     reviewer: {
       kind: "script",
-      id: "content/pipeline/trace-convention-audit.ts",
+      id: "folio/pipeline/trace-convention-audit.ts",
       version: "v1",
       script_hash: prov.scriptHash,
       script_commit_sha: prov.scriptSha,
@@ -916,7 +916,7 @@ function buildMd(findings: Finding[], branch: string): string {
   L.push(`# \`trace-convention\` axis — ${new Date().toISOString().slice(0, 10)}`);
   L.push("");
   L.push(
-    `Scanner: [\`content/pipeline/trace-convention-audit.ts\`](${blob(branch, "content/pipeline/trace-convention-audit.ts")}). ` +
+    `Scanner: [\`folio/pipeline/trace-convention-audit.ts\`](${blob(branch, "folio/pipeline/trace-convention-audit.ts")}). ` +
       `Rule + fingerprints: [\`trace-convention-registry\`](${blob(branch, REGISTRY_MD)}).`,
   );
   L.push("");

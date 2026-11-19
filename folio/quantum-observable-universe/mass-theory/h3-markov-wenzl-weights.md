@@ -30,5 +30,3 @@ The scope of this trace normalisation, the immediate Borromean
 corollary, the chirality of the weights, the notation distinctions,
 and the significance for the Borromean derivation are collected in
 [the Wenzl-weights context](#rem:h3-markov-wenzl-weights-context).
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

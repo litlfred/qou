@@ -22,6 +22,10 @@ export default conjecture({
     "chirality",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
     { kind: "status", date: "2026-11-16", body: "Restated (issue #8094): the conjecture is now the existence of an A-uniform evaluation that changes character at the boundaries of prop:pair-graph-regime-trichotomy, which proves the cut-offs from A alone. The AME selection, the 5% tolerance and the 'non-additive' wording are moved to a marked comparison paragraph or dropped. The sibling Lean holds AME tables and if-branch evaluations; it is data for the comparison, not support for the conjecture." },
     { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a conjecture. Label renamed conj:mass-formula-regime-switching -> conj:mass-formula-regime-switching." },
     {

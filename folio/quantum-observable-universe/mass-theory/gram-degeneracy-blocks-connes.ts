@@ -15,4 +15,16 @@ export default proposition({
     "convention-d",
     "trace-convention",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/frobenius_gram_matrix_probe.py",
+    witness: "computations/probes/frobenius-gram-matrix-probe.witness.json",
+    status: "verified",
+  },
 });

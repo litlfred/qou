@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:recursive-atom-knot-atlas-interpretation",
   title:
-    "Provenance of the recursive atom-knot atlas entries",
+    "Algebraic chain from Hecke normal forms to nuclear binding observables",
   interprets: "prop:recursive-atom-knot-atlas",
   uses: [
     "prop:recursive-atom-knot-atlas",
@@ -11,7 +11,7 @@ export default remark({
   ],
   tags: [
     "atlas",
-    "build-pipeline",
+    "modified-trace",
     "appendix",
   ],
 });

@@ -17,14 +17,14 @@ dressing as the value of that partition function at $q_0$:
 
 The middle row is not $m_p \leftrightarrow Z_{T[\mathcal{B}_3]}(q_0)$,
 an **absolute** proton mass in MeV as the value of the partition function.
-That form is excluded for two independent reasons. The framework the framework no longer claims, targets, or scores an absolute
+That form is excluded for two independent reasons. The framework no longer claims, targets, or scores an absolute
 nucleon mass as a prediction: absolute mass is $\mathfrak{m}_e$ times a
 dimensionless ratio, and $\mathfrak{m}_e$ is the calibration that fixes the MeV
 scale, so the MeV figure carries no content beyond the ratio. Independently of
 that, a partition function is a **dimensionless** number, so setting it
 equal to a quantity carried in MeV was never dimensionally coherent.
 
-**What is not settled, and is not settled here:** *which* dimensionless
+**Unresolved observable-matching ambiguity:** *which* dimensionless
 Borromean quantity the correspondence should be tested against. $F_{\mathcal{B}}$
 is the natural candidate because it is the dimensionless factor that dresses the
 muon anchor in the canonical nucleon relation, but no normalisation of
@@ -39,7 +39,7 @@ spacetime are two computations of the same hyperbolic invariant.
 ## Structural position
 
 - **GB filtration.** None: the duality is at the partition-function
-  / observable level, not at a specific Hecke-element level.
+  / observable level rather than at a specific Hecke-element level.
 - **Jet order.** All orders: the partition function has a full $q$ /
   perturbative expansion, and the $h^4$ coefficient corresponds to a
   specific perturbative order in the gauge theory.
@@ -55,12 +55,12 @@ spacetime are two computations of the same hyperbolic invariant.
 2. Cross-check the $h^4 = -3/4$ coefficient as a 4-loop contribution
    in $T[\mathcal{B}_3]$ partition function.
 3. Closing the conjecture remains distant: the QFT-side
-   formalisation it would require has not been developed.
+   formulation it would require has not been developed.
 
 ## Cross-references
 
-- [conj:borromean-bloch-group-element](../mass-theory/borromean-bloch-group-element.md)
+- [the Borromean Bloch-group conjecture](#conj:borromean-bloch-group-element)
   — K-theoretic regulator parallel
-- [conj:kashaev-volume-conjecture](../mass-theory/kashaev-volume-conjecture.md)
+- [the Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
   — Volume Conjecture is the leading-order 3d–3d statement
 - [Dimofte–Gaiotto–Gukov 2014; Terashima–Yamazaki 2011]

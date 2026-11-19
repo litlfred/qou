@@ -13,18 +13,18 @@ $$
 \bigl((y_1 - y_2)(y_1 - y_3)(y_2 - y_3)\bigr)^{2} \;=\; -23 .
 $$
 
-Consequently the invariant trace field of the $5_2$ knot — the field generated
-by the shapes of its three ideal tetrahedra — is the **cubic field of
+Consequently the invariant trace field of the $5_2$ knot (the field generated
+by the shapes of its three ideal tetrahedra) is the **cubic field of
 discriminant $-23$**, $K = \mathbb{Q}[\xi]$ with
 $\xi^{3} - 2\xi^{2} + 3\xi - 1 = 0$.
 
-## Why the statement is over a generic ring
+## Formulation over a generic commutative ring
 
 The discriminant identity is an algebraic consequence of the three symmetric
 functions and nothing else. It needs no ordering, no square root and no
 archimedean construct, so it is stated over a generic commutative ring rather
 than over $\mathbb{R}$ or $\mathbb{C}$; the geometric reading in the next
-section is the archimedean specialisation, not the content of the identity.
+section is the archimedean specialisation rather than the content of the identity.
 
 The proof is Vieta substitution into the symmetric form of the discriminant:
 $4\cdot 9 - 4\cdot 27 - 4\cdot 8 + 18\cdot 6 - 27 = -23$.
@@ -40,7 +40,7 @@ $$
 \xi_{3} \approx 0.43016 ,
 $$
 
-and $\xi_1$ is the geometric solution — the one whose shapes have positive
+and $\xi_1$ is the geometric solution: the one whose shapes have positive
 imaginary part and reproduce
 $\mathrm{Vol}(5_2) \approx 2.82812$. The reciprocal cubic
 $1 - 2z + 3z^{2} - z^{3}$ and the Landen image $z^{3} - z^{2} + 1$ generate the
@@ -60,15 +60,15 @@ only quadratic field attached to the $5_2$ trace field.**
 
 This matters because the bar involution separates the conjugate pair
 $\xi_1, \bar{\xi_1}$, so any bar-odd datum built from the two complex
-embeddings lands on the $\sqrt{-23}$ line — the structural analogue of the
+embeddings lands on the $\sqrt{-23}$ line, the structural analogue of the
 $\mathbb{Q}(\sqrt{-3})$ line for the amphichiral $4_1$.
 
-## What the determinant does *not* give
+## Independence of the trace field from the knot determinant
 
 $\det(5_2) = 7$, and the Alexander polynomial
 $\Delta_{5_2}(t) = 2t^{2} - 3t + 2$ has discriminant $-7$ with roots
 $(3 \pm i\sqrt{7})/4$. So $\mathbb{Q}(\sqrt{-7})$ *is* genuinely attached to
-$5_2$ — as the **Alexander root field**, equivalently the quadratic subfield of
+$5_2$, as the **Alexander root field**, equivalently the quadratic subfield of
 $\mathbb{Q}(\zeta_7)$, where the abelian data of the $\mathbb{Z}/7$ double
 branched cover lives.
 

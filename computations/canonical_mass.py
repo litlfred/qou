@@ -49,18 +49,27 @@ if str(HERE) not in sys.path:
 _WITNESS = HERE / "m-p-substrate-identity-50dps.witness.json"
 
 
-def _from_witness() -> tuple[float, float] | None:
+def _from_witness():
     if not _WITNESS.exists():
         return None
+    import mpmath as mp
     preds = json.loads(_WITNESS.read_text())["data"]["predictions"]
-    return float(preds["m_p_MeV"]), float(preds["m_n_MeV"])  # float64-ok: legacy float tuple API (use nucleon_mass_mev / two_term_proton_neutron_mass_mev for 50-dps mpf)
+    with mp.workdps(max(80, mp.mp.dps)):
+        return (
+            _as_formattable_mpf(str(preds["m_p_MeV"])),
+            _as_formattable_mpf(str(preds["m_n_MeV"])),
+        )
 
 
-def proton_neutron_mass_mev() -> tuple[float, float]:
+def proton_neutron_mass_mev():
     """Canonical (m_p, m_n) in MeV via the muon-anchored Hecke energy.
 
     Single canonical source: the git-tracked substrate-identity witness
     (50 dps), produced by ``m_p_substrate_identity_50dps.py``.
+    Returns a pair of `_as_formattable_mpf` (`mpmath.mpf` subclass) values
+    parsed directly from the witness decimal strings at ≥80 dps (bean qou-4ohh),
+    preserving full working precision in arithmetic while supporting standard
+    float format specifiers (`f"{m_p:.6f}"`) at display boundaries.
 
     There is deliberately NO formula fallback (owner directive 2026-07-19:
     "canonical derivation only — no silent fallback"). The prior fallback
@@ -87,12 +96,12 @@ def proton_neutron_mass_mev() -> tuple[float, float]:
     return result
 
 
-def proton_mass_mev() -> float:
+def proton_mass_mev():
     """Canonical proton mass (MeV) — muon-anchored Hecke energy ≈ 938.27."""
     return proton_neutron_mass_mev()[0]
 
 
-def neutron_mass_mev() -> float:
+def neutron_mass_mev():
     """Canonical neutron mass (MeV) — muon-anchored Hecke energy ≈ 939.56."""
     return proton_neutron_mass_mev()[1]
 
@@ -101,12 +110,12 @@ def neutron_mass_mev() -> float:
 #  'canonical' = ideal math framework (CAL-2 = m_μ/m_e, 22 ppb);
 #  'proton'    = physical-observations layer (CAL-2 = m_p/m_e, 0.06 ppb re-pin).
 CAL_SIGMA_REL = {
-    "canonical": {"q0": 2.2e-8, "m_e": 3.1e-10},   # muon-anchored CAL-2
-    "proton":    {"q0": 6.0e-11, "m_e": 3.1e-10},  # proton-anchored CAL-2
+    "canonical": {"q0": "2.2e-8", "m_e": "3.1e-10"},   # muon-anchored CAL-2
+    "proton":    {"q0": "6.0e-11", "m_e": "3.1e-10"},  # proton-anchored CAL-2
 }
 
 
-def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> float:
+def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical"):
     """CAL-propagated reliability of the constituent mass Z·m_p + N·m_n, in ppb.
 
     Propagates the calibration-point 1σ (q₀ from CAL-2, m_e from CAL-1) through
@@ -126,39 +135,43 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     # fake precision to detect and no constant built too early, which is why the
     # padding / raw-float64 / import-time gates all passed it.
     # Gate: never_raises_dps_audit.py (bean qou-j6gb).
-    mp.mp.dps = 50
+    mp.mp.dps = 80
     from m_p_substrate_identity_50dps import F_Bor
     from q_parameter import Q_MP as q0, vol_4_1_at
     from codata_constants import M_E_MEV
     from derived_masses import q_beta_kashiwara_n2_mev
-    q = mp.mpf(str(q0)); m_e = mp.mpf(str(M_E_MEV))
-    vol41 = vol_4_1_at(50)
+    with mp.workdps(max(80, mp.mp.dps)):
+        q = mp.mpf(str(q0)); m_e = mp.mpf(str(M_E_MEV))
+        vol41 = vol_4_1_at(80)
 
-    def constit(qq, mee):
-        m_p = 2 * (mee * vol41 / ((qq - 1) / qq) ** 2 * F_Bor(qq) - 6 * mee)
-        m_n = m_p + q_beta_kashiwara_n2_mev() + mee  # Kashiwara b² Q_β (const in FD)
-        return Z * m_p + N * m_n
+        def constit(qq, mee):
+            m_p = 2 * (mee * vol41 / ((qq - 1) / qq) ** 2 * F_Bor(qq) - 6 * mee)
+            m_n = m_p + q_beta_kashiwara_n2_mev() + mee  # Kashiwara b² Q_β (const in FD)
+            return Z * m_p + N * m_n
 
-    base = constit(q, m_e)
-    sig = CAL_SIGMA_REL.get(layer, CAL_SIGMA_REL["canonical"])
-    dq = q * mp.mpf(str(sig["q0"])); dme = m_e * mp.mpf(str(sig["m_e"]))
-    d_q0 = (constit(q + dq, m_e) - constit(q - dq, m_e)) / 2
-    d_me = (constit(q, m_e + dme) - constit(q, m_e - dme)) / 2
-    return float(mp.sqrt(d_q0 ** 2 + d_me ** 2) / abs(base) * mp.mpf(10) ** 9)  # float64-ok: scalar ppb summary return
+        base = constit(q, m_e)
+        sig = CAL_SIGMA_REL.get(layer, CAL_SIGMA_REL["canonical"])
+        dq = q * mp.mpf(str(sig["q0"])); dme = m_e * mp.mpf(str(sig["m_e"]))
+        d_q0 = (constit(q + dq, m_e) - constit(q - dq, m_e)) / 2
+        d_me = (constit(q, m_e + dme) - constit(q, m_e - dme)) / 2
+        return _as_formattable_mpf(mp.sqrt(d_q0 ** 2 + d_me ** 2) / abs(base) * mp.mpf(10) ** 9)
 
 
 def _as_formattable_mpf(val):
     """Wrap an `mpmath.mpf` (or decimal string/number) in a subclass of `mp.mpf`
     that preserves full working precision in arithmetic while supporting
-    standard float format specifiers (e.g. `f"{x:.6f}"`) at display boundaries.
+    standard float format specifiers (e.g. `f"{x:.6f}"`) at display boundaries,
+    using arbitrary-precision `Decimal` formatting (zero binary64 float).
     """
+    from decimal import Decimal
     import mpmath as mp
 
     class _FormattableMpf(mp.mpf):
         def __format__(self, format_spec: str) -> str:
             if not format_spec:
                 return str(self)
-            return format(float(self), format_spec)  # float64-ok: display-only string formatting boundary
+            dec = Decimal(mp.nstr(self, max(80, mp.mp.dps)))
+            return format(dec, format_spec)
 
         def _wrap(self, res):
             return _FormattableMpf(res) if isinstance(res, mp.mpf) else res
@@ -621,5 +634,5 @@ if __name__ == "__main__":
     mn_2t_ = neutron_mass_two_term_mev()
     print(f"canonical m_p = {mp_:.6f} MeV   m_n = {mn_:.6f} MeV "
           f"(muon-anchored Hecke energy, substrate-identity)")
-    print(f"two-term Borromean QED: M_p^QED,conn = {mp_qed_*1e3:+.5f} keV   "
-          f"Delta_m_QED^conn = {dm_qed_*1e3:+.5f} keV   m_n^two-term = {mn_2t_:.7f} MeV")
+    print(f"two-term Borromean QED: M_p^QED,conn = {mp_qed_*1000:+.5f} keV   "
+          f"Delta_m_QED^conn = {dm_qed_*1000:+.5f} keV   m_n^two-term = {mn_2t_:.7f} MeV")

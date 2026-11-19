@@ -16,7 +16,7 @@ that realize the same NF differ only by a sequence of:*
 are isotopic.* $\square$
 
 **Scope.**
-*Uniqueness holds up to isotopy, not up to strict NF equality.
+*Uniqueness holds up to isotopy rather than strict NF equality.
 Different $w_{q^Z}$
 realizations yield distinct categorical isotopy classes in the abstract
 braid representation.*

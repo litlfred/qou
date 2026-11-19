@@ -27,4 +27,10 @@ export default remark({
     "binding",
   ],
   uses: ["conj:jsj-decomposition-linearity"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: m-qclt-approx.witness.json.",
+    },
+  ],
 });

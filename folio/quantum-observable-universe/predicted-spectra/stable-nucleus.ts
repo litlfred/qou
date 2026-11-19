@@ -17,4 +17,10 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:categorical-neutron", "prop:beta-stability"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

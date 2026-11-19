@@ -11,4 +11,16 @@ export default proof({
       body: "The witness formerly cited, atom-mass-complete-wedderburn.witness.json, is absent from computations/: added 2026-04-10 in commit 1359fe23ac under folio-assistant/computations/, it left the tree in the miga migration. It is an atomic-mass witness with no quark Φ values, so it is the wrong artifact for this block. Re-derivation: computations/pn_splitting_proof_provenance_probe.py. All-pairs producer: computations/level1-qvalues.py; hadronic-scale comparison audited in docs/audits/2026-11-15-np-splitting-error-budget.md §18.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/level1-qvalues.witness.json",
+      "computations/markov-free-energy-qvalues.witness.json",
+      "computations/probes/ground-state-ordering-a3.witness.json",
+      "computations/probes/gpmt-sign-block-qbeta-and-np-splitting.witness.json",
+      "computations/catalan-binding.witness.json",
+    ],
+    status: "verified",
+  },
 });

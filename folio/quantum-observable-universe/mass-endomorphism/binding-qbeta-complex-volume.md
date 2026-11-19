@@ -19,7 +19,7 @@ parameters \cite[Thm.~1]{neumann-cspaper}.*
 
 ## The one object
 
-Categorically — **no braid words**. For a confined knot $K$:
+Categorically — **no braid words**. Three morphisms attach to a confined knot $K$.
 
 - $\mathcal{M} = \mathcal{M}(K) \in \mathrm{End}_{\mathbf{C}}(X_K)$
   forms the mass endomorphism of the object $X_K$ representing $K$ in
@@ -30,10 +30,7 @@ Categorically — **no braid words**. For a confined knot $K$:
 - $\Pi_{\text{free}} \in \mathrm{End}_{\mathbf{C}}(X_K)$ provides the
   idempotent projector ($\Pi_{\text{free}}^2 = \Pi_{\text{free}}$)
   onto the factorized sub-object
-  $X_K \twoheadrightarrow X_1 \otimes \cdots \otimes X_c$ — the
-  constituents un-linked (the categorical projection onto the split
-  tensor: the same R-matrix braiding with the inter-constituent
-  confining crossings dropped).
+  $X_K \twoheadrightarrow X_1 \otimes \cdots \otimes X_c$ with inter-constituent confining crossings dropped.
 
 The convolution-defect measures the categorical trace of the part of
 $\mathcal{M}$ that does *not* survive $\Pi_{\text{free}}$ — a
@@ -70,7 +67,7 @@ $$
 
 so $\cosh\lambda \pm \sinh\lambda = e^{\pm\lambda}$. The bar-even and
 bar-odd parts constitute **one element $e^{\lambda}$ read on its two
-parities**. Continue $\lambda \mapsto i\theta$ (the substrate $q$ rotated
+parities**. Continue $\lambda \mapsto i\theta$ (the aether $q$ rotated
 onto the unit circle / a root of unity) and $\cosh\to\cos$,
 $\sinh\to i\sin$: the **bar-even/bar-odd split becomes a Re/Im split**.
 That exactly constructs the complex volume:
@@ -133,38 +130,30 @@ The holomorphic tie hypothesis demands that a **single** Askey-Wilson three-term
 For the bar-odd S observable ($S = c_3 + \mathrm{Vol}(4_1)$), the
 conjecture's decay side takes the concrete form
 $S(q_0) = \mathrm{Im}\,\mathfrak{V}\bigl(u(q_0)\bigr)$: the Chern–Simons
-part of the **deformed** complex volume at the substrate deformation
+part of the **deformed** complex volume at the aether deformation
 $u(q_0)$ (log meridian holonomy). The deformed volume itself is a
 theorem for $4_1$ and explicitly computable via Neumann–Zagier; the two
 open inputs — the map $u(q_0)$ and the channel identity — are carried as
 an explicit deformed-volume channel hypothesis.
 Composed with the argument identification of
 ([algebraic-geometric dilogarithm equivalence](../mass-theory/algebraic-geometric-dilog-equivalence.md)),
-three statements are derived unconditionally from the two hypotheses:
-the fibre-branch $\Phi_b$ phase at the
-identified argument **is** the deformed Chern–Simons part; the $\Phi_b$
-readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$; and *if* $S$ flips
-sign between the anchors, that forces a substrate point $q^{*}$
-where $\mathrm{Im}\,\mathfrak{V}(u(q^{*})) = 0$ — the deformed complex
-volume purely real. This last is **conditional on a sign flip the data
+three statements follow unconditionally from the two hypotheses.
+First, the fibre-branch $\Phi_b$ phase at the identified argument **is** the deformed Chern–Simons part, and the $\Phi_b$ readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$. Second, *if* $S$ flips sign between the anchors, an aether point $q^{*}$ exists where $\mathrm{Im}\,\mathfrak{V}(u(q^{*})) = 0$ and the deformed complex volume is purely real. This last is **conditional on a sign flip the data
 does not establish**: each anchor value carries a CAL-3 propagated
 uncertainty of $\pm 1.26$ ($130\times$ / $32\times$ the value); only the swing
 $S(\text{muon}) - S(\text{proton})$ is resolved (the cross-anchor $c_3$
 difference, with $\mathrm{Vol}(4_1)$ cancelled). So it is a conditional
-structural statement, not an established prediction. This makes precise that $\Phi_b$ touches binding **only**
+structural statement rather than an established prediction. This makes precise that $\Phi_b$ touches binding **only**
 through this channel: remove the deformed-volume channel hypothesis and
 no binding statement about $\Phi_b$ survives. On the open map $u(q_0)$
 itself, the Neumann–Zagier leading-form family laws hold
 over the corrected harmonic form
 $\mathrm{Im}\,\mathfrak{V}(u) = (\sqrt{3}/4)(\mathrm{Re}^2 u - \mathrm{Im}^2 u)$
-(cusp modulus $\tau = -i\sqrt{3}$, so the leading coefficient
-$a_2 = i\sqrt{3}/4$ is purely imaginary): all three candidate families —
+(cusp modulus $\tau = -i\sqrt{3}$, so $a_2 = i\sqrt{3}/4$ is purely imaginary). All three candidate families —
 fixed-phase ($\mathrm{Re},\mathrm{Im} \propto d$), phase-crossing
 ($\mathrm{Re} \propto d$, $\mathrm{Im} \propto d^{2}$), and
 transverse-constant ($\mathrm{Re} \propto d$, $\mathrm{Im}$ anchor-constant),
-with $d = q - q^{*}$ — are **refuted**: each is even in $d$, hence the same
-sign on both sides of $q^{*}$, so none can produce a sign flip
-$S(\text{muon}) > 0 > S(\text{proton})$ *were one present*. The surviving
+with $d = q - q^{*}$ — are **refuted** because each is even in $d$ and carries the same sign on both sides of $q^{*}$. The surviving
 necessary condition is that $u(q_0)$ must cross the diagonal
 $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$ between the anchors; $u(q_0)$ itself
 stays open. The measured values live in the probe witness, and the individual anchor signs are not resolved by the data; the resolved
@@ -197,8 +186,8 @@ independent open problems.
 ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
 *not* $\mathbb{C}$) descends to **both** the bar-even
 (binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a single proof,
-because the projections $x \mapsto x\pm\sigma x$ act additively:
-one ring identity yields both parity identities,
+because the projections $x \mapsto x\pm\sigma x$ act additively.
+One ring identity yields both parity identities,
 and a three-term $\mathfrak{V}$-recurrence with
 a bar-even multiplier $c$, $\sigma c = c$, yields the binding and
 $\mathfrak{Q}_\beta$ recurrences at once (the $c_k$-ladder mechanism). The
@@ -240,8 +229,6 @@ follows from the recurrence involution-descent law. See the
 companion remarks on
 [the channel-rotation Askey literature](#rem:channel-rotation-askey-lit) and
 [the character-variety complex-volume path](#rem:complex-volume-character-variety-path).
-
-**Archimedean specialisation.** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
 
 Two further pieces of the operator picture are proved at the free
 endpoint. First, the concrete $AW(3)$ realization: splitting the channel

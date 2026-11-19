@@ -20,7 +20,7 @@ pairing.*
 ## Relationship to the Bloch-group route
 
 The K-theoretic Bloch-group element
-([borromean-bloch-group-element conjecture](#conj:borromean-bloch-group-element))
+([Borromean Bloch-group conjecture](#conj:borromean-bloch-group-element))
 provides the **regulator** side of the Borromean structure
 ($r_2[\mathcal{B}_3] = 8G$).  Poincaré–Lefschetz provides the
 **topological** side: the volume form $\in$ $H^3$ pairs with the
@@ -33,14 +33,14 @@ topological-cohomological route, the Bloch group the K-theoretic one.
 ## Structural invariants
 
 
-- **GB filtration**: N/A — manifold-with-boundary duality is at the
-  topological level, not at the Hecke-element level.
-- **Jet order**: $h^0$ — Poincaré–Lefschetz acts on the leading-
+- **GB filtration**: N/A; manifold-with-boundary duality operates at the
+  topological level rather than at the Hecke-element level.
+- **Jet order**: $h^0$, as Poincaré–Lefschetz acts on the leading-
   order topological volume.
 - **Bar-symmetry**: bar-symmetric (the duality is independent of
   q-parameter; both sides are classical-topology constructions).
 
-## What remains open
+## Unresolved cohomological steps
 
 1. Verify that the Borromean volume $8G$ arises as a Poincaré–
    Lefschetz pairing on the complement manifold.
@@ -51,10 +51,10 @@ topological-cohomological route, the Bloch group the K-theoretic one.
 
 ## Cross-references
 
-- [borromean-bloch-group-element conjecture](borromean-bloch-group-element.md)
-  — K-theoretic regulator route to the same $8G$
-- [reeb-bundle-complement-equals-volume proposition](#prop:reeb-bundle-complement-equals-volume)
-  — Reeb-pairing volume route (third route to $8G$)
-- [vol-as-motivic-period remark](#rem:vol-as-motivic-period)
-  — motivic framing tying all three routes together
+- [Borromean Bloch-group conjecture](borromean-bloch-group-element.md):
+  K-theoretic regulator route to the same $8G$
+- [Reeb-bundle JSJ-volume proposition](#prop:reeb-bundle-complement-equals-volume):
+  Reeb-pairing volume route (third route to $8G$)
+- [Bloch–Wigner motivic-period reading](#rem:vol-as-motivic-period):
+  motivic framing tying all three routes together
 - [Lefschetz 1926; Neumann–Zagier 1985 for cusped 3-manifolds]

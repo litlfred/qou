@@ -2,4 +2,3 @@ The Iwahori–Hecke algebra $H_n(R, q)$ is the unital associative algebra with g
 
 The axiomatic presentation packages the abstract generators, formal signed words, defining relations, and Plancherel completeness as structural hypotheses consumed by downstream trace and character identities.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

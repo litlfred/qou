@@ -1,5 +1,5 @@
 **Crossing energy of the ring.**
-The crossing energy is conjectured ([conj:ring-closure-barrier](#conj:ring-closure-barrier)) to be determined by the reduced Alexander polynomial evaluated at the substrate parameter:
+The crossing energy is conjectured ([ring-closure energy barrier conjecture](#conj:ring-closure-barrier)) to be determined by the reduced Alexander polynomial evaluated at the aether parameter:
 
 $$
   \mathfrak{E}_{\mathrm{cross}}(\mathcal{R}_N)

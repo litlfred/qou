@@ -5,4 +5,4 @@ $$
   \ \text{generates}\ [\mathrm{Vol}(4_1)] = [2\,\mathrm{Cl}_2(\pi/3)] \in \mathcal{P}_2 / \mathcal{P}_1.
 $$
 
-This is the first row of the depth correspondence to become theorem-level: the companion proof discharges it via the Bloch–Suslin depth-2 inclusion, Borel-rank-1 sharpness, and the Murakami–Murakami (2001) coloured-Jones volume asymptotic. The analog for chiral hyperbolic knots ($5_2$, $6_2$, $6_3$, etc.) requires the depth-3 partner (Chern–Simons) and remains open.
+This is the first row of the depth correspondence to become theorem-level: the companion proof discharges it via the Bloch–Suslin depth-2 inclusion, Borel-rank-1 sharpness, and the Murakami–Murakami (2001) coloured-Jones volume asymptotic. The analogue for chiral hyperbolic knots ($5_2$, $6_2$, $6_3$, etc.) requires the depth-3 Chern–Simons partner and is conjectural.

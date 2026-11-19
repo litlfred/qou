@@ -1,4 +1,4 @@
-Let $\varrho$ denote a stable vortex filament of length $L$ in the brane fluid with [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q$ denote the $q$-Laplacian acting on sections of the normal bundle $N_\varrho$.
+Let $\varrho$ denote a stable vortex filament of length $L$ in the brane fluid with [aether parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q$ denote the $q$-Laplacian acting on sections of the normal bundle $N_\varrho$.
 
 Then:
 
@@ -32,5 +32,3 @@ Then:
    - $[k]_q \to k$, returning the classical Kelvin-wave spectrum.
    - $[j]_q[j+1]_q \to j(j+1)$, reducing the energy levels to the rigid-rotor spectrum of standard angular momentum.
    - The selection rule $\Delta j = \pm 1$ reduces to the classical dipole selection rule.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

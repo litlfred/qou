@@ -1071,6 +1071,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'knot-eigenbasis-complete-proof.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "4b35f1b2e853",
+          "ts": "9d6194042021",
+          "lean": "ab68d3ab7f62",
+          "lean_statement": "705750499525"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:56.510Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified braids-and-knots/knot-eigenbasis-complete-proof.lean compiles cleanly (exit 0) and KnotEigenbasisComplete structure encodes all three parts (q-Schur-Weyl decomposition, Alexander surjectivity, and algebraic direct-limit spanning)."
       }
     ],
     "da-citation-misuse": [
@@ -1181,6 +1198,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'knot-eigenbasis-complete-proof.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "4b35f1b2e853",
+          "ts": "9d6194042021",
+          "lean": "ab68d3ab7f62",
+          "lean_statement": "705750499525"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:56.537Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified bash scripts/lean-verify.sh folio/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete-proof.lean exits 0."
       }
     ],
     "da-referee-verdict": [
@@ -1217,6 +1251,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'knot-eigenbasis-complete-proof.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "4b35f1b2e853",
+          "ts": "9d6194042021",
+          "lean": "ab68d3ab7f62",
+          "lean_statement": "705750499525"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:56.564Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Referee re-audit pass: braids-and-knots/knot-eigenbasis-complete-proof.lean compiles cleanly (exit 0) and aligns with the three-part proof."
       }
     ],
     "bib-cite-resolves": [
@@ -1738,6 +1789,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-15T23:30:07.156Z",
+  "updated_at": "2026-11-19T17:22:56.564Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

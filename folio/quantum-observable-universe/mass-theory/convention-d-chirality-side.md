@@ -14,6 +14,6 @@ This is the ratio of the quantum dimensions of $\mathrm{Sym}^2 V$ and $\Lambda^2
 
 The favoured line is the one on which the generator acts by $q$. For $q > 1$ that is the line on which a positive crossing acts with eigenvalue of modulus greater than $1$.
 
-**What this does not say.** These are observations about a ruled trace convention. Nothing here identifies either eigenline with a physical chirality, or the favoured line with the left-handed weak coupling. That identification is not made.
+**Scope boundaries on physical chirality.** These are observations about a ruled trace convention. Nothing here identifies either eigenline with a physical chirality, or the favoured line with the left-handed weak coupling. That identification is not made.
 
 The bias is also not exclusive. The algebra $P_- H_n P_-$ (call it the corner over $P_-$) contains a copy of $\mathfrak{sl}_2$ for every $n \geq 4$. Convention D gives that copy zero weight at $n = 4$ only. From $n = 5$ on, both corners carry $\mathfrak{sl}_2$-carrying blocks that convention D keeps, and the weighted share of the two corners tends to $[3]_q : 1$.

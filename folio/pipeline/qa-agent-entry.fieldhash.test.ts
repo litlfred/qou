@@ -66,7 +66,7 @@ describe("qa-agent-entry field_hash guard", () => {
 
   test("hashes every sibling that exists — .lean included", () => {
     const r = run({ ts: true, lean: true });
-    expect(Object.keys(r.entry.field_hash).sort()).toEqual(["lean", "md", "ts"]);
+    expect(Object.keys(r.entry.field_hash).sort()).toEqual(["lean", "lean_statement", "md", "ts"]);
   });
 
   // A key must be ABSENT when the sibling is, not present-and-empty: a

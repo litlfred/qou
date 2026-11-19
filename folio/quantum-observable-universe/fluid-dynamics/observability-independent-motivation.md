@@ -6,7 +6,7 @@ The [Descartes Reeb-bundle theorem](#thm:ns-singularity-descartes) and the inter
 Within the archimedean realisation, observability translates to $H^0(M, \mathrm{Ad}(P)) = 0$: the gauge connection $A$ must be **irreducible** (no nonzero gauge-equivariant sections inhabit the adjoint bundle). Irreducibility is the standard generic condition governing connections over compact manifolds. Reducible connections collapse onto a lower-dimensional stratum. This serves as a core gauge-theory condition (Donaldson, Uhlenbeck, Atiyah--Bott) decades older than QOU.
 
 **2. Contact non-integrability (withdrawn).**
-This item formerly identified observability with non-degeneracy of a Levi form. That identification is withdrawn. The chapter's plane field lives on the three-dimensional flow domain, where its Levi datum is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ of the vorticity direction $\xi$ ([core Levi form](#prop:core-levi-form)). No result in the corpus links that scalar to $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
+This item formerly identified observability with non-degeneracy of a Levi form. That identification is withdrawn. The chapter's plane field lives on the three-dimensional flow domain, where its Levi datum is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ of the vorticity direction $\xi$ ([core Levi form](#prop:core-levi-form)). No result in this monograph links that scalar to $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
 
 **3. Tannaka--Krein reconstruction.**
 The fibre functor $\tau$ reconstructs $A$ as a functional Hopf algebra using Tannaka--Krein duality. For this algebra to survive as a **quantum group** (avoiding degeneration into a quantum groupoid), its representation category must be semisimple. Observability ensures the adjoint representation remains **simple** (rejecting any trivial sub-representation), a strict requirement for $\mathrm{Rep}(\mathrm{SU}_q(2))$ semisimplicity.
@@ -22,9 +22,7 @@ The descriptor "observable" is absolute: every internal degree of freedom of $A$
 
 **Consequences of dropping observability.**
 
-A **quantum pre-universe** (QPU) satisfies all QOU axioms **except** observability. In a QPU:
-
-See [Table](#tbl:observability-independent-motivation-table-data).
+A **quantum pre-universe** (QPU) satisfies all QOU axioms **except** observability. The [comparison of observable universes and pre-universes](#tbl:observability-independent-motivation-table-data) summarises the structural differences.
 
 The QPU supplies a fundamentally weaker framework, and it permits NS regularity.
 

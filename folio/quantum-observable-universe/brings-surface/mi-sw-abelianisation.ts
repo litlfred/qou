@@ -7,6 +7,7 @@ export default proposition({
   },
   title: "Abelianisation of the MI integral on exceptional divisors",
   authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
     {
       kind: "status",
       date: "2026-08-08",

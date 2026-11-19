@@ -1,166 +1,162 @@
-import Mathlib.Algebra.Polynomial.Laurent
-import QOU.Archimedean.EmSpectralCompleteness
-import QOU.Archimedean.ForceCarrierBringUniqueness
-
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+import QOU.Archimedean.GramDetRatioCongruence
 
 /-!
-# QOU.Archimedean.gram_determinant_plancherel_ratio
+# QOU.Archimedean.GramDeterminantPlancherelRatio
 
-The Chern-Simons Gram-determinant ratio `κ` appearing in the EM
-coupling correction has a closed-form Plancherel-weighted character
-expression — no 2-jet hand calculation needed.
+Class-axiomatised formulation (§3b-cond) of `conj:gram-determinant-plancherel-ratio`
+together with unconditional Wedderburn block-diagonal and basis-invariance
+theorems over an arbitrary field `K` (§7c, zero `ℝ` specialisation).
 
-  κ = ∏_λ [(dim V_λ / dim_q V_λ) · ([n]_q! / n!)]^{c_λ^(s)·c_λ^(w)}
+The Chern–Simons Gram-determinant ratio `κ := det G_CS^cl / det G_CS^q` on the
+rank-2 force-carrier sublattice (`def:cs-gram-determinant-ratio`) is conjectured
+to admit a closed-form Plancherel-weighted character product once `T_{2,9}` and
+`T_{3,5}` are placed in a common `n`-strand Hecke algebra with integer pairing
+exponents `e_λ ∈ ℤ`:
 
-where `c_λ^(•) = χ_λ(β_•)` are the central-idempotent character
-coefficients of the genus-4 torus knots `T_{2,9}` (strong) and
-`T_{3,5}` (weak).
+  `det G_CS^cl / det G_CS^q = ∏_{λ ⊢ n} ((dim V_λ / dim_q V_λ) · ([n]_q! / n!))^{e_λ}`.
+
+## What is proved unconditionally vs carried by the class
+
+1. **Unconditional (`gramKappaProduct_classical_limit`):** when quantum block
+   dimensions and `[n]_q!` coincide with their classical counterparts (and are
+   non-zero), the Plancherel product equals `1`.
+2. **Unconditional (`gramKappaProduct_dual_eq_inv`):** swapping classical and
+   quantum dimensions/factorials inverts the Plancherel product.
+3. **Unconditional (`diagonal_gramDetRatio_eq_prod`):** for diagonal Wedderburn
+   Gram matrices `diagonal wCl` and `diagonal wQ`, the Gram-determinant ratio
+   equals the product of blockwise ratios `∏ i, (wCl i / wQ i)`.
+4. **Conditional (`gram_determinant_plancherel_ratio`):** under
+   `[GramDeterminantPlancherelRatio K Gcl Gq]`, any invertible change of basis
+   `B` (`B.det ≠ 0`) transports `Gcl, Gq` to congruent Gram matrices whose
+   determinant ratio equals the same `gramKappaProduct D`.
 
 LaTeX label: `conj:gram-determinant-plancherel-ratio`
 
 ## References
 
 - [leitner2026] §5/gram-determinant-plancherel-ratio
-- [jones1987] https://doi.org/10.2307/1971403 — Jones polynomial of torus knots
+- [jones1987] https://doi.org/10.2307/1971403 — Hecke algebra Markov traces
+- [serre1977] https://doi.org/10.1007/978-1-4684-9458-7 — Wedderburn characters
 -/
 
 namespace QOU.Archimedean
 
-/-- A formal placeholder for the central-idempotent character
-    coefficients of a braid `β` in `H_n(q)`. -/
-structure CharacterDecomposition (n : ℕ) where
-  partitions : Finset (List ℕ)         -- partitions of n
-  chi : List ℕ → ℝ                     -- χ_λ(β) for each λ ⊢ n
-  dim_classical : List ℕ → ℕ           -- dim V_λ
-  dim_quantum : List ℕ → ℝ             -- dim_q V_λ at q = q_0
+open Matrix
 
-/-- The Plancherel-weighted character product. -/
-noncomputable def gramKappa (n : ℕ)
-    (q_factorial : ℝ) (n_factorial : ℝ)
-    (cs : CharacterDecomposition n)
-    (cw : CharacterDecomposition n) : ℝ :=
-  cs.partitions.prod fun lam =>
-    let dim_cl := (cs.dim_classical lam : ℝ)
-    let dim_q := cs.dim_quantum lam
-    let exponent := cs.chi lam * cw.chi lam
-    ((dim_cl / dim_q) * (q_factorial / n_factorial)) ^ exponent
+/-- Algebraic Wedderburn–Plancherel character datum over a field `K` on a common
+    `n`-strand Hecke embedding, with integer pairing exponents `pairingExp λ ∈ ℤ`. -/
+structure WedderburnPlancherelDatum (K : Type*) [Field K] where
+  /-- Active partition labels `λ ⊢ n` on the common strand count `n`. -/
+  blocks : Finset (List ℕ)
+  /-- Classical irreducible dimension `dim V_λ` in `K`. -/
+  dimClassical : List ℕ → K
+  /-- Quantum dimension `dim_q V_λ` in `K`. -/
+  dimQuantum : List ℕ → K
+  /-- Integer character-pairing exponent `e_λ ∈ ℤ`. -/
+  pairingExp : List ℕ → ℤ
+  /-- Quantum factorial `[n]_q!` in `K`. -/
+  qFactorial : K
+  /-- Classical factorial `n!` in `K`. -/
+  nFactorial : K
 
-/-- **Proposition (closed-form κ via Plancherel weights)**.
+/-- Dual datum exchanging classical and quantum dimensions and factorials. -/
+def WedderburnPlancherelDatum.dual {K : Type*} [Field K]
+    (D : WedderburnPlancherelDatum K) : WedderburnPlancherelDatum K where
+  blocks := D.blocks
+  dimClassical := D.dimQuantum
+  dimQuantum := D.dimClassical
+  pairingExp := D.pairingExp
+  qFactorial := D.nFactorial
+  nFactorial := D.qFactorial
 
-    The Gram-determinant ratio appearing in the Chern-Simons descent
-    is given by the Plancherel-weighted character product over
-    Wedderburn blocks `λ ⊢ n`, with no 2-jet hand calculation.
+/-- The Plancherel-weighted character product over `D.blocks` in `K`. -/
+def gramKappaProduct {K : Type*} [Field K]
+    (D : WedderburnPlancherelDatum K) : K :=
+  D.blocks.prod fun lam =>
+    ((D.dimClassical lam / D.dimQuantum lam) * (D.qFactorial / D.nFactorial)) ^
+      (D.pairingExp lam)
 
-    **🛑 THE STATEMENT BELOW DOES NOT CARRY THAT CLAIM — flagged 2026-09-05,
-    not rewritten.** It concludes `∃ κ : ℝ, κ = gramKappa …`, which is true for
-    *any* right-hand side whatsoever (`⟨a, rfl⟩`, verified) and says nothing
-    about the Chern–Simons Gram ratio. The docstring's content — that the CS
-    ratio EQUALS this product — needs a term denoting that ratio, and this file
-    has none; `gramKappa` is a definition, so "something equals it" is not a
-    theorem about it.
+/-- **Unconditional (classical limit `q → 1`).** When every active block has
+    non-zero `dimQuantum lam = dimClassical lam` and non-zero
+    `qFactorial = nFactorial`, the Plancherel product evaluates to `1`. -/
+theorem gramKappaProduct_classical_limit {K : Type*} [Field K]
+    (D : WedderburnPlancherelDatum K)
+    (hdim : ∀ lam ∈ D.blocks, D.dimClassical lam = D.dimQuantum lam)
+    (hdim_nz : ∀ lam ∈ D.blocks, D.dimQuantum lam ≠ 0)
+    (hfact : D.qFactorial = D.nFactorial)
+    (hfact_nz : D.nFactorial ≠ 0) :
+    gramKappaProduct D = 1 := by
+  unfold gramKappaProduct
+  apply Finset.prod_eq_one
+  intro lam hlam
+  rw [hdim lam hlam, hfact, div_self (hdim_nz lam hlam), div_self hfact_nz,
+    mul_one, one_zpow]
 
-    Left in place rather than restated because supplying that term is a design
-    decision in this arc's owner's hands, not a mechanical repair.
+/-- **Unconditional (classical/quantum inversion duality).** Exchanging the
+    classical and quantum data inverts every block factor and hence inverts
+    `gramKappaProduct`. -/
+theorem gramKappaProduct_dual_eq_inv {K : Type*} [Field K]
+    (D : WedderburnPlancherelDatum K) :
+    gramKappaProduct D.dual = (gramKappaProduct D)⁻¹ := by
+  unfold gramKappaProduct WedderburnPlancherelDatum.dual
+  rw [← Finset.prod_inv_distrib]
+  apply Finset.prod_congr rfl
+  intro lam _
+  rw [← inv_zpow]
+  congr 1
+  rw [mul_inv, inv_div, inv_div]
 
-    **Correction (2026-09-05).** This said "no detector flags this", and that
-    was wrong — I asserted an absence without running the corpus-grep
-    checklist. `∃ x, x = e := ⟨e, rfl⟩` is a NAMED class with a DEDICATED
-    detector since 2026-08-07: `scripts/lean-vacuous-existential-audit.py`,
-    written up in `docs/audits/2026-08-07-lean-vacuous-existential-audit.md`
-    (17 found, and the ten then-live have since been drained).
+/-- **Unconditional (Wedderburn diagonal Gram factorisation).** For diagonal Gram
+    matrices `diagonal wCl` and `diagonal wQ` with non-vanishing quantum weights,
+    `det (diagonal wCl)` factors as `det (diagonal wQ) * ∏ i, (wCl i / wQ i)`. -/
+theorem diagonal_gramDetRatio_eq_prod {K : Type*} [Field K]
+    {m : Type*} [Fintype m] [DecidableEq m]
+    (wCl wQ : m → K) (hwQ : ∀ i : m, wQ i ≠ 0) :
+    (Matrix.diagonal wCl).det =
+      (Matrix.diagonal wQ).det * Finset.univ.prod (fun i => wCl i / wQ i) := by
+  rw [Matrix.det_diagonal, Matrix.det_diagonal, ← Finset.prod_mul_distrib]
+  apply Finset.prod_congr rfl
+  intro i _
+  exact (mul_div_cancel₀ (wCl i) (hwQ i)).symm
 
-    What is true is narrower and sharper. That detector could not see THIS
-    declaration because its bound-variable pattern was `[A-Za-z_][A-Za-z0-9_']*`
-    — ASCII-only — and this one binds `κ`. So it reported `0 candidates in 0
-    files`, which reads as a clean corpus. Widening the pattern to Unicode on
-    the same tree the same day reports **8 in 3 files**, every one bound to a
-    Greek name. Nothing had been drained; they had never been seen. The
-    detector is fixed and now carries a `--self-test` so a future narrowing
-    cannot report zero silently.
+/-- **Open conjecture (`conj:gram-determinant-plancherel-ratio`, §3b-cond).**
+    Asserts the existence of a common-strand integer-exponent Wedderburn–Plancherel
+    datum `D` with non-vanishing quantum dimensions and `n!` whose character
+    product equals the rank-2 Chern–Simons Gram-determinant ratio
+    `Gcl.det / Gq.det`. No global instance is registered. -/
+class GramDeterminantPlancherelRatio (K : Type*) [Field K]
+    (Gcl Gq : Matrix (Fin 2) (Fin 2) K) : Prop where
+  /-- Non-degeneracy of the `q`-deformed Chern–Simons pairing (`det G_CS^q ≠ 0`). -/
+  gq_det_ne_zero : Gq.det ≠ 0
+  /-- Existence of a well-defined common-strand Plancherel datum reproducing `κ`. -/
+  plancherel_factorisation :
+    ∃ D : WedderburnPlancherelDatum K,
+      (∀ lam ∈ D.blocks, D.dimQuantum lam ≠ 0) ∧
+      D.nFactorial ≠ 0 ∧
+      Gcl.det / Gq.det = gramKappaProduct D
 
-    The live audit (`content/pipeline/lean-vacuity-axiom-audit.ts`) still does
-    not flag this, and that part is correct as stated: its nearest criterion,
-    `proof-no-unused-hypothesis-rfl`, needs an UNUSED binder, and every binder
-    here is consumed by `gramKappa n q_factorial n_factorial cs cw`. -/
+/-- **Conditional theorem (basis-independent Plancherel identity).**
+    Under `[GramDeterminantPlancherelRatio K Gcl Gq]`, transporting both
+    Chern–Simons pairings by any invertible rank-2 basis change `B` (`B.det ≠ 0`)
+    preserves non-degeneracy of `Bᵀ * Gq * B` and yields the identical
+    Plancherel character product `gramKappaProduct D`. -/
 -- Ref: [leitner2026] §5/gram-determinant-plancherel-ratio
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
-theorem gram_determinant_plancherel_ratio
-    (n : ℕ) (q_factorial n_factorial : ℝ)
-    (cs cw : CharacterDecomposition n) :
-    ∃ κ : ℝ, κ = gramKappa n q_factorial n_factorial cs cw := by
-  exact ⟨gramKappa n q_factorial n_factorial cs cw, rfl⟩
-
--- The docstring that stood here belonged to the removed axiom. It is dropped rather than
--- left dangling, because a doc comment attached to nothing followed by another doc comment
--- is a parse error — the SAME failure this very docstring recorded having survived once
--- before ("two docstrings cannot both attach to one declaration, so the file did not
--- parse"). Removing the axiom without it reproduced that error exactly; caught by
--- lean-direct, not by inspection.
---
--- Its one piece of unique content — that the value is `κ ≈ 1.722` at `q₀ ≈ 1.1097` for the
--- genus-4 torus pair `(T_{2,9}, T_{3,5})` — is carried in the replacement theorem's
--- docstring below, which is now the only place it is stated. Its self-description as an
--- "external axiom (§3b-cond pattern)" was inaccurate: §3b-cond axiomatises a conjecture's
--- HYPOTHESES as a class taken by an explicit `[Instance]` binder, whereas this was a bare
--- `axiom` asserting a provable existential with no binder and no class.
--- REMOVED 2026-09-05: `axiom gram_kappa_numerical_value_axiom : ∃ (κ : ℝ), |κ - 1.722| < 0.001`
---
--- It was an `axiom`, and it was PROVABLE — `⟨1.722, by norm_num⟩` closes it, verified
--- lean-direct exit 0. Take κ = 1.722 and |κ − 1.722| = 0 < 0.001. So it assumed something
--- that needs no assuming.
---
--- Worse than redundant, it was VACUOUS AS A PHYSICAL CLAIM. The docstring said "at the
--- substrate value q₀ ≈ 1.1097 for the genus-4 torus pair (T_{2,9}, T_{3,5}), κ ≈ 1.722",
--- but the statement bound `κ` by an existential unconnected to `gramKappa` — no `q`, no
--- `n`, no torus pair, no character data. It asserted only that SOME real lies within
--- 0.001 of 1.722, which 1.722 does. AGENTS.md: "Never launder empirical fits through
--- Lean axioms."
---
--- Restated below as the claim the docstring actually makes: `gramKappa` at the torus-pair
--- data is within 0.001 of 1.722. That statement is FALSIFIABLE — it constrains the
--- product — and it is not proved here, so it carries `sorry` per §1a disposition 2
--- ("state the REAL proposition with `sorry` + a `-- Ref:` citation").
-
-/-- **Numerical value of `κ` at the substrate** (open — stated, not proved).
-
-    For the genus-4 torus pair `T_{2,9}` (strong) and `T_{3,5}` (weak) at the
-    substrate `q₀ ≈ 1.1097`, the Plancherel-weighted product is `≈ 1.722`.
-
-    The torus-pair data enters through `cs`, `cw` and the factorials.
-    `CharacterDecomposition` is a formal placeholder over arbitrary
-    `chi` / `dim_classical` / `dim_quantum`, so nothing in this file pins the
-    knots — which is why the torus-pair condition is carried as an ABSTRACT
-    PREDICATE parameter `IsTorusPairAtQ0` rather than as a construction.
-
-    **Why not a `True` placeholder.** The first draft of this replacement wrote
-    the condition as `(h_torus_pair : True)`. That is not a weak hypothesis, it
-    is NO hypothesis: `True` is supplied by `trivial`, so the statement it
-    guards is logically `∀ cs cw, |gramKappa … − 1.722| < 0.001`, which is
-    FALSE for generic character data (the product is unconstrained). Queuing a
-    false proposition behind `sorry` is a worse defect than the provable axiom
-    this replaced — the axiom was redundant, a false `sorry` is a trap for
-    whoever tries to discharge it. Caught by reading the statement, not by any
-    detector; the `true-class-field` pattern of `proof-claims-unencoded` covers
-    class FIELDS typed `True`, not theorem HYPOTHESES typed `True`, so nothing
-    in the audit would have flagged it. Recorded as a second blind spot.
-
-    **What is open.** Nothing in this file constructs `IsTorusPairAtQ0`, so this
-    theorem has no instance and no consumer. Supplying that predicate — a
-    torus-knot character construction for `T_{2,9}` and `T_{3,5}` over the
-    `CharacterDecomposition` placeholder — IS the open work, and it is upstream
-    of discharging the `sorry`, not downstream of it. Unlike the superseded
-    axiom, the conclusion here constrains `gramKappa`. -/
--- Ref: [leitner2026] §5/gram-determinant-plancherel-ratio
--- Ref: [jones1987] https://doi.org/10.2307/1971403 — Jones polynomial of torus knots
-theorem gram_kappa_numerical_value
-    (n : ℕ) (q_factorial n_factorial : ℝ)
-    (cs cw : CharacterDecomposition n)
-    (IsTorusPairAtQ0 : CharacterDecomposition n → CharacterDecomposition n → Prop)
-    (h_torus_pair : IsTorusPairAtQ0 cs cw)
-    : |gramKappa n q_factorial n_factorial cs cw - 1.722| < 0.001 := by
-  sorry
+theorem gram_determinant_plancherel_ratio {K : Type*} [Field K]
+    (Gcl Gq B : Matrix (Fin 2) (Fin 2) K)
+    [h : GramDeterminantPlancherelRatio K Gcl Gq]
+    (hB : B.det ≠ 0) :
+    (Bᵀ * Gq * B).det ≠ 0 ∧
+    ∃ D : WedderburnPlancherelDatum K,
+      (∀ lam ∈ D.blocks, D.dimQuantum lam ≠ 0) ∧
+      D.nFactorial ≠ 0 ∧
+      (Bᵀ * Gcl * B).det / (Bᵀ * Gq * B).det = gramKappaProduct D := by
+  refine ⟨?_, ?_⟩
+  · rw [det_congr_eq]
+    exact mul_ne_zero (pow_ne_zero 2 hB) h.gq_det_ne_zero
+  · obtain ⟨D, hq, hn, heq⟩ := h.plancherel_factorisation
+    refine ⟨D, hq, hn, ?_⟩
+    rw [gramDetRatio_congr_invariant B Gcl Gq hB, heq]
 
 end QOU.Archimedean

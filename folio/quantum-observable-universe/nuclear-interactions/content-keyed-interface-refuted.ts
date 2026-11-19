@@ -4,6 +4,10 @@ export default proposition({
   authorNotes: [
     {
       kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
+      kind: "note",
       date: "2026-08-22",
       body:
         "**Order of presentation.** The working variable (the isospin label " +
@@ -27,4 +31,10 @@ export default proposition({
     "crossing-multiplicity",
     "deuteron",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/two_term_qed_isotope_and_nucleon_compute.py",
+    witness: "computations/two-term-qed-isotope-and-nucleon-compute.witness.json",
+    status: "verified",
+  },
 });

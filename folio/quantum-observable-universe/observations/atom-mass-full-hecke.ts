@@ -36,4 +36,14 @@ export default remark({
       body: "Model scope (residual open item). The per-atom three-channel traces $\\mathrm{tr}_{\\mathrm{sym/std/alt}}$ are inherited and are a per-atom **H_3 projection model** — exact only at $A=1$. For $A>1$ this is distinct from the full $H_{3A}$ Markov trace: an independent canonical $^4$He computation (`atomic-tr-m-helium4.witness.json`, $|\\mathrm{tr}_M|=0.967$) does not coincide with the three-channel value here ($0.516$ $q$-deformed), and corpus $^4$He trace conventions (disjoint-product $0.967$, all-nuclides-v2 $\\sim1.12$, 3-channel $0.516$) do not agree. A trustworthy per-atom recompute is therefore blocked by both the GS-reducer wall ($A\\ge5$) and convention reconciliation ($A\\ge2$); the columns should be read as a specific three-channel projection, not the canonical $H_{3A}$ trace. General-n three-row Ocneanu weight vanishing: `QOU.SchurWeyl.ocneanuWeight_conventionD_eq_zero_of_three_rows`.",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/atom_mass_full_hecke_qdeformed.py",
+    witness: [
+      "computations/atom-mass-full-hecke.witness.json",
+      "computations/atomic-tr-m-helium4.witness.json",
+      "computations/atom-mass-derived.witness.json",
+    ],
+    status: "verified",
+  },
 });

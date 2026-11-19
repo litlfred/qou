@@ -13,8 +13,8 @@ The (GB-NF) form constitutes the abstract algebraic statement. The
 other two constitute concrete evaluations that fix $\rho_K$ via different
 calibration data. Throughout, the predictive content is the dimensionless
 mass ratio $\mathfrak{m}(K)/m_e$: the leading $m_e$ factor is the CAL-1 scale
-set by fiat, so the MeV figures are that ratio rendered against the $m_e$ unit,
-not an independent absolute-mass prediction.
+set by fiat, so the MeV figures are that ratio rendered against the $m_e$ unit
+rather than an independent absolute-mass prediction.
 
 ## The categorical density factor $\rho_K$
 
@@ -63,7 +63,7 @@ $$
 **The LO piece is no longer an ansatz.** It constitutes the categorical
 consequence of \[Wenzl 1988] Markov multiplicativity for disjoint
 braids ($\mathrm{tr}_M(\mathcal{B}_p \otimes \mathcal{B}_n) = \mathrm{tr}_M(\mathcal{B}_p) \mathrm{tr}_M(\mathcal{B}_n)$,
-verified to $3.2 \times 10^{-14}$ in `rho-k-markov-multiplicativity.witness.json`)
+verified numerically to $3.2 \times 10^{-14}$)
 plus free-constituent mass additivity:
 
 $$
@@ -83,6 +83,7 @@ higher pieces require the proper Wedderburn-coupling structure
 (open work; see [graded ρ_K expansion](#prop:rho-k-graded-expansion)).
 
 **Mirror-pair check** (T and ${}^3\mathrm{He}$, both $A=3$, $n=9$
+<!-- literal-source: closed-form ratio of mirror-pair categorical density factors rho_K(T) / rho_K(3He) -->
 strands): the categorical density factors $\rho_K(T) / \rho_K({}^3\mathrm{He}) = 1.9853$
 exactly compensate $|\!\mathrm{tr}_M({}^3\mathrm{He})| / |\!\mathrm{tr}_M(T)| = 1.9850$,
 since their CODATA masses agree to $0.02\%$. So $\rho_K$ is **not**
@@ -117,7 +118,7 @@ The three forms encode the same physical mass $\mathfrak{m}(K)$
 parameterised by different calibration data:
 
 * **(constituent)** anchors at the nucleon level but evaluates the exact constituent masses through the **muon-anchored Hecke energy** $m_{\mathfrak{p}} = 2(m_\mu F_{\mathrm{Bor}} - 6m_e)$, rendering CODATA fits unnecessary. Sub-percent for $Z = 1$..$20$.
-* **(muon-anchored)** is the definitive structural mass form. It computes the mass ratio without any phenomenological proton calibration or empirical spectral parameter tuning, resolving the atomic mass ratio strictly from the topological substrate; the MeV figure follows from the $m_e$ scale and is a rendering, not an absolute-mass claim.
+* **(muon-anchored)** is the definitive structural mass form. It computes the mass ratio without any phenomenological proton calibration or empirical spectral parameter tuning, resolving the atomic mass ratio strictly from the topological aether; the MeV figure follows from the $m_e$ scale and is a rendering rather than an absolute-mass claim.
 * **(GB-NF)** states the algebraic statement. The atomic mass is
   proportional to the Markov trace of the normal form, with the
   proportionality constant $\rho_K$ as the categorical density.
@@ -128,10 +129,6 @@ factors through the Gröbner–Shirshov quotient — renders the
 applicable. The trace depends only on the braid class modulo the
 PBW relations.
 
-## Witnesses
+## Numerical cross-checks
 
-* `rho-k-codata-vs-six-term.witness.json` — $\rho_K^{\mathrm{CODATA}}$ vs $\rho_K^{6\text{-term}}$ table for $A = 1, 2, 3$.
-* `rho-k-scaling-structure.witness.json` — leading-order ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\mathrm{tr}_M\!|)$ ($0.14\%$ mean residual); mirror-pair analysis.
-* `atomic-tr-m-mpfr-50dps.witness.json` — canonical $\lvert\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$ at $50$ decimal-place precision.
-* `atom-mass-atomic-braid.witness.json` — (constituent) form $m_e$-scaled mass renderings.
-* `paper-six-term-isotope-sweep.witness.json` — (six-term spectral) $m_e$-scaled mass renderings across all five tower modes.
+Independent evaluations compare $\rho_K^{\mathrm{CODATA}}$ against $\rho_K^{6\text{-term}}$ across $A = 1, 2, 3$, evaluate the leading-order scaling ansatz $\rho_K \approx (Z m_{\mathfrak{p}} + N m_{\mathfrak{n}})/(m_e \cdot |\!\mathrm{tr}_M\!|)$ ($0.14\%$ mean residual) alongside the $A = 3$ mirror pair, certify $\lvert\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$ to $50$ decimal places, and compare constituent and six-term spectral $m_e$-scaled mass evaluations across all five tower modes.

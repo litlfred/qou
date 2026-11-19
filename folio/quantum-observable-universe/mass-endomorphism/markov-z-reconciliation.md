@@ -16,7 +16,7 @@ $$
 $$
 giving $z_{\mathrm{m}} \approx 0.6127$ at the proton-pinned $q_0$. This is convention D of the trace-convention registry, replacing the excised convention-C parameter $z_{\mathrm{C}} = 1/(q^{1/2} + q^{-1/2}) \approx 0.499$ across all mass and binding channels; $z_{\mathrm{C}}$ is retained below solely for explicit comparison.
 
-**Relation.** The Jones normalisation is tied to the convention-C parameter, not to $z_{\mathrm{m}}$:
+**Relation.** The Jones normalisation is tied to the convention-C parameter rather than to $z_{\mathrm{m}}$:
 $$
   z_{\mathrm{J}}
   \;=\;
@@ -36,7 +36,7 @@ $$
   \;=\; \frac{1}{q(q^2+1)}
   \;\approx\; 0.4036
 $$
-at $q_0$ ($0.290$ under the excised convention C) ([Markov axioms](#rem:markov-axioms-primitive)). This is the value the pyhecke normal-form reduction computes for $\mathrm{tr}_M(\sigma_i^{-1})$; it is neither $z_{\mathrm{m}}$ nor $z_{\mathrm{m}}^{-1}$.
+at $q_0$ ($0.290$ under the excised convention C) ([Markov axioms](#rem:markov-axioms-primitive)). This is the value normal-form reduction yields for $\mathrm{tr}_M(\sigma_i^{-1})$; it is neither $z_{\mathrm{m}}$ nor $z_{\mathrm{m}}^{-1}$.
 
 **Block weights.** The two loop values jointly determine the Wedderburn block weights of the trace in closed form:
 
@@ -49,11 +49,11 @@ $$
   \frac{z_{\mathrm{m}}\,q^{c(x)} - z_{-}\,q^{-c(x)}}{q^{h(x)} - q^{-h(x)}},
 $$
 
-with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$ ([witness](../../../computations/markov-trace-weights-wenzl.witness.json)). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
+with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ (the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified across every $\lambda \vdash n \leq 5$). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
 
-**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D** of the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md), registered for the **mass** and **binding** channels in both their definitional and production layers, whereas convention C ($z_{\mathrm{C}} = \sqrt{q}/(1+q)$, the full-Hecke Ocneanu/Wenzl $z$-trace) is excised for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$.
+**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D** of the trace-convention classification, registered for the **mass** and **binding** channels in both their definitional and production layers, whereas convention C ($z_{\mathrm{C}} = \sqrt{q}/(1+q)$, the full-Hecke Ocneanu/Wenzl $z$-trace) is excised for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$.
 
-**A structural separation between the two conventions.** The justification on record for the convention-D ruling is empirical — the $195.8$ ppm and $-197$ ppm figures above. There is also a structural one, and it involves no anchor, no measurement and no ppm figure. Using $\hbar_\times = q - q^{-1}$ and $[2]_q^2 - \hbar_\times^2 = 4$, the two loop values of convention D satisfy
+**A structural separation between the two conventions.** The justification on record for the convention-D ruling is empirical: the $195.8$ ppm and $-197$ ppm figures above. There is also a structural one, and it involves no anchor, no measurement and no ppm figure. Using $\hbar_\times = q - q^{-1}$ and $[2]_q^2 - \hbar_\times^2 = 4$, the two loop values of convention D satisfy
 
 $$
   z_{-} \;=\; \frac{1}{q(q^2+1)} , \qquad
@@ -61,7 +61,7 @@ $$
   a^2 \;=\; \frac{z}{z_{-}} \;=\; q^4 .
 $$
 
-So in convention D the two crossing loop values multiply to the inverse square of the quantum dimension, and the Ocneanu framing parameter is the **monomial** $a = q^2$. Note also $z\,z_{-} = w_{(2,1)}$: the product of the loop values is exactly the registered standard-block weight.
+So in convention D the two crossing loop values multiply to the inverse square of the quantum dimension, and the Ocneanu framing parameter is the **monomial** $a = q^2$. Note also $z\,z_{-} = w_{(2,1)}$: the product of the loop values is the registered standard-block weight.
 
 Convention C satisfies neither. There
 
@@ -70,7 +70,7 @@ $$
   a^2 \;=\; \frac{q^{3/2}}{q^{3/2} - q^3 - q^2 + q + 1} ,
 $$
 
-mixing half-integer and integer powers of $q$ in one numerator, with no factorisation and no monomial framing ratio. Both conventions are admissible — $\mathrm{tr}_M(1) = (z - z_{-})/(q - q^{-1}) = 1$ holds in each — so this is not convention C being invalid; it is convention C being structureless.
+mixing half-integer and integer powers of $q$ in one numerator, with no factorisation and no monomial framing ratio. Both conventions are admissible ($\mathrm{tr}_M(1) = (z - z_{-})/(q - q^{-1}) = 1$ holds in each), so this is not convention C being invalid; it is convention C being structureless.
 
 Two further forms, recorded because they make the pair comparable at a glance. Convention D admits the exact analogue of the $z_{\mathrm{C}} = 1/[2]_{\sqrt q}$ above,
 
@@ -82,7 +82,7 @@ and the two are bridged by $z_{\mathrm{D}}(q) = q^2\,z_{\mathrm{C}}(q^2)$.
 
 These loop-value product, framing-ratio, and quantum-dimension identities follow directly by rational simplification in $q$.
 
-**The framing ratio classifies the convention: D is the $\mathfrak{sl}_2$ point.** The monomial above is doing real work in the weight formula below. When $a = q^N$ — that is, $z = q^{2N}z_-$ — every numerator of that product collapses,
+**The framing ratio classifies the convention: D is the $\mathfrak{sl}_2$ point.** The monomial above is doing real work in the weight formula below. When $a = q^N$ (that is, $z = q^{2N}z_-$), every numerator of that product collapses,
 
 $$
   z\,q^{c} - z_{-}q^{-c} \;=\; z_{-}\bigl(q^{2N+c} - q^{-c}\bigr) \;=\; z_{-}q^{N}\bigl(q^{N+c} - q^{-(N+c)}\bigr),
@@ -94,16 +94,16 @@ $$
   w_\lambda \;=\; \frac{\dim_q\bigl(V_\lambda^{\mathfrak{sl}_N}\bigr)}{[N]_q^{\,n}} .
 $$
 
-Solving $a = q^N$ for $z$ gives a one-parameter family $z_N = q^N/[N]_q$, and $z_2 = q^3/(q^2+1)$ is convention D on the nose. Verified for $N = 1,2,3,4$ and every partition of $n \leq 5$: the framing ratio is $q^{2N}$, the weights are $\dim_q/[N]_q^{\,n}$, and $w_\lambda = 0$ exactly when $\lambda$ has more than $N$ rows.
+Solving $a = q^N$ for $z$ gives a one-parameter family $z_N = q^N/[N]_q$, and $z_2 = q^3/(q^2+1)$ is convention D on the nose. Verified for $N = 1,2,3,4$ and every partition of $n \leq 5$: the framing ratio is $q^{2N}$, the weights are $\dim_q/[N]_q^{\,n}$, and $w_\lambda = 0$ when $\lambda$ has more than $N$ rows.
 
-Two consequences. First, the registered $w_{(3)} = [4]_q/[2]_q^3$ and $w_{(2,1)} = 1/[2]_q^2$ are the quantum dimensions of the $4$- and $2$-dimensional $U_q(\mathfrak{sl}_2)$ irreps over $[2]_q^3$. Second, the exact vanishing $w_{(1^3)} = 0$ is the $\mathfrak{sl}_2$ **row bound**, not a coincidence of the trace: a partition with more than $N$ rows has a cell of content $-N$, whose numerator factor carries $[0]_q = 0$.
+Two consequences. First, the registered $w_{(3)} = [4]_q/[2]_q^3$ and $w_{(2,1)} = 1/[2]_q^2$ are the quantum dimensions of the $4$- and $2$-dimensional $U_q(\mathfrak{sl}_2)$ irreps over $[2]_q^3$. Second, the exact vanishing $w_{(1^3)} = 0$ is the $\mathfrak{sl}_2$ **row bound** rather than a coincidence of the trace: a partition with more than $N$ rows has a cell of content $-N$, whose numerator factor carries $[0]_q = 0$.
 
-**Convention C lies in no member of the family, for any $N$** — not merely for no integer $N$. Its framing ratio has logarithmic derivative $q\,(a^2)'/a^2 = -(3s^6+s^4+s^2+3)/\bigl(2(s^6+s^4-s^3-s^2-1)\bigr)$ with $s = \sqrt q$, which is not constant; $a^2 = q^t$ would force it to equal the constant $t$. Consistently, C's weights vanish on no partition at all — checked at $(1^3)$, $(2,1,1)$ and $(1^4)$ — so C has no row bound.
+**Convention C lies in no member of the family, for any $N$** (including non-integer $N$). Its framing ratio has logarithmic derivative $q\,(a^2)'/a^2 = -(3s^6+s^4+s^2+3)/\bigl(2(s^6+s^4-s^3-s^2-1)\bigr)$ with $s = \sqrt q$, which is not constant; $a^2 = q^t$ would force it to equal the constant $t$. Consistently, C's weights vanish on no partition at all (checked at $(1^3)$, $(2,1,1)$ and $(1^4)$), so C has no row bound.
 
-So the convention-D ruling has a classification behind it, not only the empirical figures above: D is the $\mathfrak{sl}_2$ point of the Ocneanu family, C is off the family entirely, and no anchor or measurement enters the argument.
+So the convention-D ruling has a classification behind it beyond the empirical figures above: D is the $\mathfrak{sl}_2$ point of the Ocneanu family, C is off the family entirely, and no anchor or measurement enters the argument.
 
-> **Notation warning.** The $w_\lambda$ of this block is the **Ocneanu/Markov** weight — the $y_\lambda$ of the production trace. It is *not* the $w_\lambda(q) = \dim_q(\lambda)^2/[n]_q!$ of [canonical Wedderburn weight](../mass-theory/wedderburn-weight-canonical.md), which is built from the Frame–Robinson–Thrall hook-*length* dimension rather than the hook-*content* one. At $n = 3$ the two differ on every partition and differ already at $q = 1$ — $(1/6, 2/3, 1/6)$ against $(1/2, 1/4, 0)$ — so the notation register's rule that the partition-weight families are distinct at $q \neq 1$ applies here at $q = 1$ as well.
+> **Notation warning.** The $w_\lambda$ of this block is the **Ocneanu/Markov** weight (the $y_\lambda$ of the production trace). It is *not* the $w_\lambda(q) = \dim_q(\lambda)^2/[n]_q!$ of [canonical Wedderburn weight](../mass-theory/wedderburn-weight-canonical.md), which is built from the Frame–Robinson–Thrall hook-*length* dimension rather than the hook-*content* one. At $n = 3$ the two differ on every partition and differ already at $q = 1$, giving $(1/6, 2/3, 1/6)$ against $(1/2, 1/4, 0)$, so the notation register's rule that the partition-weight families are distinct at $q \neq 1$ applies here at $q = 1$ as well.
 
 This classification identifies convention D as Wenzl level $r = 2$, establishing the $z_{\mathrm{D}}$ row cap directly from the general-$n$ cell product.
 
-The weight formula itself is **frame-general** — it is the Ocneanu weight at framing ratio $a^2 = z/z_{-}$ for whatever admissible pair $(z, z_{-})$ is supplied, with $z_{-} = z - (q - q^{-1})$. Fed $z_{\mathrm{D}}$ it reproduces the registered convention-D weights exactly, $w_{(3)} = [4]_q/[2]_q^3$, $w_{(2,1)} = 1/[2]_q^2$ and $w_{(1^3)} = 0$; and the normalisation $\sum_{\lambda} (\dim V_\lambda)\, w_\lambda = 1$ holds identically under both conventions.
+The weight formula itself is **frame-general**: it is the Ocneanu weight at framing ratio $a^2 = z/z_{-}$ for whatever admissible pair $(z, z_{-})$ is supplied, with $z_{-} = z - (q - q^{-1})$. Fed $z_{\mathrm{D}}$ it reproduces the registered convention-D weights, $w_{(3)} = [4]_q/[2]_q^3$, $w_{(2,1)} = 1/[2]_q^2$ and $w_{(1^3)} = 0$; and the normalisation $\sum_{\lambda} (\dim V_\lambda)\, w_\lambda = 1$ holds identically under both conventions.

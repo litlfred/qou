@@ -26,6 +26,11 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:qbeta-toroidal-harmonics-basis",
   title: "Toroidal harmonics global basis",
+  lean: {
+    ref: "qou:QOU.MassEndomorphism.QBetaToroidalHarmonicsBasis.parabolic_cylinder_order_gap_and_c4_iff",
+    sorryFree: true,
+    validation: "leanok",
+  },
   tags: ["qbeta", "toroidal-harmonics", "habiro", "continuum-limit"],
   uses: [
     "prop:q-beta-categorical-precision-ladder",

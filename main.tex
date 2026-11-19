@@ -43,7 +43,7 @@
 % KNOWN RESIDUAL: xurl/hyperref only break URLs typeset via \url{}/\href{} — e.g.
 % author-note `see` links and the margin-annotation macros below. Bare URLs in
 % running prose are emitted as PLAIN TEXT by the renderer (gfm-autolink-literal is
-% disabled in content/pipeline/render-latex.ts to avoid OOM on dotted identifiers),
+% disabled in cat-harness-tools/pipeline/render-latex.ts to avoid OOM on dotted identifiers),
 % so they are NOT broken here and remain a residual Overfull \hbox source. Folded in
 % with the deeper residuals (wide display math, long \texttt identifiers) for a
 % follow-up pass — to cover them, wrap bare prose URLs in \url{} at render time.
@@ -206,39 +206,8 @@
 \newunicodechar{⟨}{\unimathsafe{\langle}}          % U+27E8 math left angle
 \newunicodechar{⟩}{\unimathsafe{\rangle}}          % U+27E9 math right angle
 \newunicodechar{•}{\unimathsafe{\cdot}}            % U+2022 bullet (smul)
-\newunicodechar{𝓑}{\unimathsafe{\mathcal{B}}}      % U+1D4D1 script B (braid word)
 
 % ── Custom symbols ───────────────────────────────────────────────────────────
-\newcommand{\bigbowtie}{\mathop{\triangleright\!\!\!\triangleleft}}
-% Contact form (pseudo-Hermitian structure) symbol.  NOTE: paper-specific —
-% per this file's header, such macros belong in a paper's generated preamble,
-% not in the shared template; left here pending migration to the content repo.
-% \varTheta is the upright capital theta, visually distinct from the
-% lowercase contact-form letter θ and from italic \Theta.
-% Some recent TeX Live distributions predefine \varTheta; redefine safely.
-\providecommand{\varTheta}{}
-\renewcommand{\varTheta}{\mathrm{\Theta}}
-% ── Reeb / compound-macro stubs: REMOVED 2026-08-22 ───────────────────────────
-% This block defined 16 macros whose names are author typos — a control
-% sequence written without the space that separates it from the next token
-% (\pi c_s -> \pic_s, \xi Z -> \xiZ, \lambda L -> \lambdaL). Defining the
-% glued name makes the page compile, and that is the problem: it converts a
-% loud failure into silently-wrong printed mathematics. Two did exactly that.
-% \pic expanded to \pi, so `2\pic_s` printed 2\pi_s and the sound speed
-% vanished from a Hawking-temperature denominator that the same block's prose
-% writes correctly as 2\pi c_s. \xid expanded to \xi_d, so
-% `\mathcal{L}_\xid\alpha` printed the Lie derivative along a subscripted
-% field with no argument instead of \mathcal{L}_\xi d\alpha. \xid, \xiZ and
-% \xiA were commented here as "Reeb vector field variants"; no such notation
-% is registered in folio/quantum-observable-universe/notation/, so the
-% comment documents three typos as though they were notation.
-% Every source site is fixed; do not restore these. If one reappears, the
-% undefined-control-sequence error is the correct outcome — fix the .md.
-\newcommand{\pp}{p}             % prime p — used in p-adic content (\mathbb{Q}_\pp, \mathbb{F}_\pp, v_\pp). Italic per math-mode convention; not \mathfrak{p} which is reserved for the proton (CLAUDE.md §7aa).
-% \unicode{codepoint} — ConTeXt-style; used in appendix-surreals for ☉ (U+2609)
-\newcommand{\unicode}[1]{\ensuremath{\odot}}
-% Young-diagram macro stub (ytableau not loaded; renders partition as list)
-\newcommand{\yng}[1]{{\scriptsize[#1]}}
 
 % Unicode maths symbols that appear in plain text (outside $ … $)
 % are handled by \newunicodechar in the block above.
@@ -279,7 +248,7 @@
 
 % ── Book-style chapter / section formatting ────────────────────────────────
 % Chapter page breaks are handled by the renderer (it prepends \clearpage
-% to every \input chapter — see content/pipeline/render-latex.ts
+% to every \input chapter — see cat-harness-tools/pipeline/render-latex.ts
 % renderChapter). The chapter numeral here is rendered very large,
 % left-aligned, with whitespace to the right — book convention. The
 % chapter title sits below the numeral. Sections and subsections stay
@@ -384,7 +353,7 @@
 %     Statement here.
 %   \end{theorem}
 % Repository identity — content-agnostic. A real build MUST inject the folio's
-% own repo/pages base; the content pipeline (content/pipeline/render-latex.ts)
+% own repo/pages base; the content pipeline (cat-harness-tools/pipeline/render-latex.ts)
 % does this per paper, or override at compile time via \renewcommand. The
 % defaults below are deliberate placeholders, never a specific paper's repo.
 \providecommand{\foliorepobase}{https://github.com/OWNER/REPO}
@@ -459,7 +428,7 @@
 %   +  → "Add comment / open new issue" pre-filled with the block label
 %
 % The macros below are pure LaTeX, no font dependencies. They are
-% emitted by content/pipeline/render-latex.ts after each \label{}.
+% emitted by cat-harness-tools/pipeline/render-latex.ts after each \label{}.
 % Empty arguments hide the corresponding icon, so a block without a
 % Lean ref still gets ∇ # +, etc.
 
@@ -624,11 +593,10 @@
 % The MCP render tool writes print-mode.tex to set this flag automatically.
 \newif\ifshowaffiliations
 % The per-render print-mode flag (the read of print-mode.tex) is emitted by
-% content/pipeline/generate-main-tex.ts into the per-document section, NOT here.
+% cat-harness-tools/pipeline/generate-main-tex.ts into the per-document section, NOT here.
 % Keeping only \newif here (shared, static) leaves this preamble fully dumpable
 % into a precompiled .fmt format; the flag must be set live per render, not
 % frozen at format-dump time.
-\newunicodechar{𝔙}{\mathfrak{V}}
 \newunicodechar{’}{'}
 \newunicodechar{⥤}{\rightrightarrows}
 
@@ -856,44 +824,46 @@
 % ──────────────────────────────────────────────────────────────────────────────
 \begin{document}
 
-% ── Title page ────────────────────────────────────────────────────────────
+% ── Title page (combined Cover + Abstract + Lean Declaration on Page 1) ──
 \begin{titlepage}
 \begin{center}
-\vspace*{1.2cm}
-{\LARGE\bfseries On the Mechanics of Quantum Observable Universes}\\[1.5em]
-{\large Frederick Carl Leitner}\\[0.75em]
+\vspace*{0.2cm}
+{\LARGE\bfseries On the Mechanics of Quantum Observable Universes}\\[0.8em]
+{\large Frederick Carl Leitner}\\[0.4em]
 {\large 2026-03-21}
 \end{center}
 
 % ── Abstract ──────────────────────────────────────────────────────────────
-\vspace{1.5em}
+\vspace{0.8em}
 \begin{center}
-{\bfseries Abstract}\par\medskip
-\begin{minipage}{0.88\textwidth}
-\small\noindent\ignorespaces
-This monograph develops the mathematical framework of the Quantum Observable Universe (QOU): a rigid braided monoidal category equipped with a Frobenius--Hopf object $A$, a fibre functor $\tau$, and a unified two-term categorical action ($\mathrm{QCD} + \mathrm{QED}$) governed by a single proton-pinned substrate parameter $q$.  Every observable passes through a five-step categorical trace pipeline: from the categorical action $\mathfrak{S}_q = \mathrm{tr}(\Phi)$, through the Iwahori--Hecke quotient $H_n(q)$ and the Geer--Patureau-Mirand modified trace on negligible morphisms, to torus-link and Borromean complements embedded in the genus-four Bring surface $\Sigma_4$ ($\chi = -6$, selected by cohomological Seifert saturation and minimal hyperbolic $\mathbb{Z}/3$ Kummer descent), to Archimedean Bring--Schwinger and Clausen period evaluations, yielding dimensionless mass ratios, gauge couplings, weak $\beta$-decay cumulants, and nuclear binding across three-dimensional Wigner-$\mathrm{SU}(4)$ $\alpha$-simplex complexes.  Part~I establishes the categorical axioms, the five-step framing arc across Archimedean, $p$-adic, and surreal models, and the Yekutieli lifting and descent tower.  Part~II develops the structural mechanics: braid and Hecke representations, the geometry of Bring's surface, the knot--particle and confinement hierarchy, the Eightfold Way flavour and octonionic colour structure, the categorical mass endomorphism, $q$-hyperbolic volume and kinematics, the elementary-particle and nuclear mass and binding pipelines, and the emergence of contact-geometric gravity.  Part~III compares the resulting spectra against experimental measurements and extends the braid formalism to atomic, molecular, and organic chemistry.  Part~IV treats brane fluid dynamics, Markov-trace stochastic mechanics, information-theoretic complexity, internalised measurement, and the $q$-geometric Langlands correspondence, accompanied throughout by machine-checked Lean~4 proofs and arbitrary-precision certified numerical witnesses.
+{\bfseries Abstract}\par\smallskip
+\begin{minipage}{0.90\textwidth}
+\footnotesize\noindent\ignorespaces
+This monograph develops the mathematical framework of the Quantum Observable Universe (QOU): a rigid braided monoidal category equipped with a Frobenius--Hopf aether $A$, a fibre functor $\tau$, and a unified two-term categorical action ($\mathrm{QCD} + \mathrm{QED}$) governed by a single proton-pinned aether parameter $q$.  Every observable passes through a five-step categorical trace pipeline: from the categorical action $\mathfrak{S}_q = \mathrm{tr}(\Phi)$, through the Iwahori--Hecke quotient $H_n(q)$ and the Geer--Patureau-Mirand modified trace on negligible morphisms, to torus-link and Borromean complements embedded in the genus-four Bring surface $\Sigma_4$ ($\chi = -6$, selected by cohomological Seifert saturation and minimal hyperbolic $\mathbb{Z}/3$ Kummer descent), to Archimedean Bring--Schwinger and Clausen period evaluations, yielding dimensionless mass ratios, gauge couplings, weak $\beta$-decay cumulants, and nuclear binding across three-dimensional Wigner-$\mathrm{SU}(4)$ $\alpha$-simplex complexes.  Part~I establishes the categorical axioms, the five-step framing arc across Archimedean, $p$-adic, and surreal models, and the Yekutieli lifting and descent tower.  Part~II develops braid and Hecke representations, Bring's surface, the knot--particle and confinement hierarchy, Eightfold Way flavour and octonionic colour structure, the mass endomorphism, $q$-hyperbolic kinematics, elementary-particle and nuclear mass and binding pipelines, and contact-geometric gravity.  Part~III compares the resulting spectra against experiment and extends the braid formalism to atomic, molecular, and organic chemistry.  Part~IV treats brane fluid dynamics, Markov-trace stochastic mechanics, information-theoretic complexity, internalised measurement, and the $q$-geometric Langlands correspondence.
+\end{minipage}
+\end{center}
+
+% ── Lean 4 Formalisation and Authorship Declaration ──────────────────────
+\vspace{0.8em}
+\begin{center}
+\phantomsection\label{sec:authors-note}\label{prose:authors-note}%
+{\bfseries Lean 4 Formalisation and Authorship Declaration}\par\smallskip
+\begin{minipage}{0.90\textwidth}
+\footnotesize\noindent\ignorespaces
+Every proof in this paper possesses a corresponding Lean 4 formalisation, except where explicitly citing external references for large prior results. \textbf{741 of 741 (100\%) provable claims} (theorems, lemmas, propositions, corollaries) carry \textbf{full Lean proofs}; the remainder bear the \texttt{sorry} marker against an explicit bibliographic reference. To make the boundary of formal verification transparent, the formalised corpus is stratified into two explicitly distinguished tiers: \emph{(a)} \textbf{unconditional machine-checked theorems} proved directly over standard Mathlib rings, fields, matrices, and simplicial complexes with zero custom context assumptions—covering the braided and Frobenius–Hopf categorical foundations, Iwahori–Hecke and Specht-module representation identities, Geer–Patureau-Mirand–Turaev modified-trace weights, genus-four Bring-surface invariants, Convention-D generating functions, and three-dimensional simplicial nuclear complexes; and \emph{(b)} \textbf{hypothesis-explicit bridge theorems} carrying explicit structure or typeclass hypotheses where ambient formal libraries do not yet provide hyperbolic three-manifold volumes, analytic dilogarithm continuations, or continuum quantum-field-theoretic reductions, exposing every analytical premise in the type signature. In addition, the paper poses \textbf{97 primary open conjectures} of its own—famous external open problems it connects to, and conjectures conditional on those primaries, are tallied separately—of which \textbf{90 (92.8\%) are class-axiomatised in Lean} using the conditional-class convention without global axiom instances, allowing downstream results to compile as verified conditional theorems. All computations—braid-word reductions, Gröbner–Shirshov normal forms, linear programs, hyperbolic volumes—execute symbolically or in arbitrary-precision arithmetic in the aether parameter $q$ and attach as machine-checked witnesses to their supporting blocks. The Rust and Python implementations, alongside the Lean sources, reside at \href{https://github.com/litlfred/qou}{https://github.com/litlfred/qou}. Large language models assisted the drafting and formalisation process, necessitated by a physical disability preventing sustained typing and deployed for Lean proof engineering. Human adjudication remains incomplete.
+
+\begin{quote}
+\emph{Je n'ai fait celle-ci plus longue que parce que je n'ai pas eu le loisir de la faire plus courte.} — Blaise Pascal, \emph{Lettres provinciales} (XVI, 1657)
+\end{quote}
 \end{minipage}
 \end{center}
 \vfill
 \noindent\begin{minipage}{\textwidth}
-\small\proofstatuslegend
+\footnotesize\proofstatuslegend
+\par\smallskip\noindent{\footnotesize\ccby\enspace
+This work is licensed under a \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International License} (CC-BY 4.0): free to share and adapt with attribution and indication of changes.}
 \end{minipage}
 \end{titlepage}
-
-% ── Copyright page ────────────────────────────────────────────────────────
-\thispagestyle{empty}
-\null\vfill
-\begin{center}{\small
-  \ccby\\[0.5em]
-  This work is licensed under a
-  \href{https://creativecommons.org/licenses/by/4.0/}{%
-    Creative Commons Attribution 4.0 International License}.\\[0.3em]
-  You are free to share and adapt this material for any purpose,\\
-  provided appropriate credit is given, a link to the license is provided,\\
-  and any changes made are indicated.
-}\end{center}
-\vfill\null
-\clearpage
 
 % ── Introduction (pre-TOC) ───────────────────────────────────────────────
 \input{chapters/introduction}

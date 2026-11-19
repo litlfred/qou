@@ -5,7 +5,7 @@ export default proposition({
   lean: { ref: "qou:QOU.FlavorDressing.dressed_mass_from_substrate_split",
     validation: "not_checked",
   },
-  title: "Substrate-pure derivation of the dressed-quark mass splitting",
+  title: "Aether-pure derivation of the dressed-quark mass splitting",
   authorNotes: [
     {
       kind: "caveat",

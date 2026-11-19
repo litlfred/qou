@@ -17,4 +17,10 @@ export default proposition({
     "frobenius-character",
     "combinatorial",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

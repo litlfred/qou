@@ -6,24 +6,23 @@ Frobenius framework).**
 > $y_{(1^3)} = 0.0227449\ldots$ is small but nonzero and $G$ genuinely inverts.
 > Under the production **convention D** the pin $z(q^2+1) = q^3$ forces
 > $y_{(1^3)} = 0$ *exactly*, so the $(1^3)$ block **is** the radical of the trace
-> form and $\det G = 0$. Not "numerically singular" — zero. A $G^{-1}$ computed
+> form and $\det G = 0$ (identically zero rather than merely "numerically singular"). A $G^{-1}$ computed
 > under C is therefore not an approximation to one under D; the D one does not
 > exist.
 >
 > **This remark already contains its own refutation.** The Wedderburn paragraph
-> below derives $G_{\lambda\mu} = \delta_{\lambda\mu}\,\tau(e_\lambda)$ — block
+> below derives $G_{\lambda\mu} = \delta_{\lambda\mu}\,\tau(e_\lambda)$, which is block
 > diagonal with the *weights themselves* on the diagonal. So
 > $\det G = \prod_\lambda \tau(e_\lambda)^{\,\cdot}$, and convention D sends one
 > factor to zero. The very next line then writes down
 > $G^{-1}_{\lambda\mu} = \delta_{\lambda\mu}\,[n]_q!/(\dim_q(\lambda)\dim(\lambda))$,
 > which for that block is a division by zero.
 >
-> Nothing structural is lost, only relocated. The radical is a two-sided ideal
-> ([`TemperleyLiebTower.traceRadical_two_sided`](../lean/QOU/QBeta/TemperleyLiebTower.lean)),
-> so $\mathrm{tr}_M$ descends and the induced pairing on the quotient **is**
+> Nothing structural is lost, only relocated. Because the trace radical of a symmetric associative form is a two-sided ideal,
+> $\mathrm{tr}_M$ descends and the induced pairing on the quotient **is**
 > non-degenerate. Ranks: $\mathrm{corank}\,G = 1$ at $n = 3$, $10 = 3^2 + 1^2$ at
 > $n = 4$, $78 = 6^2+5^2+4^2+1^2$ at $n = 5$; what survives is
-> $\sum \dim^2 = C_n$ — the Catalan numbers $5, 14, 42$.
+> $\sum \dim^2 = C_n$, namely the Catalan numbers $5, 14, 42$.
 >
 > Because a zero-weight Wedderburn block lies in the trace radical, any basis combination supported on it forces $\det G = 0$, whereas the pairing descends non-degenerately to the quotient by the radical.
 
@@ -37,20 +36,20 @@ algebraic object that encodes:*
    iff $\det G \neq 0$
    ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)). Under **convention
    D** that holds on the quotient and **fails on $H_n$ itself**, where
-   $\det G = 0$ exactly — see the correction above.*
-2. *The **inverse** $G^{-1}$ — which exists on that quotient, **not** on $H_n$
-   (**convention D**) — enters the **Frobenius co-Casimir**
+   $\det G = 0$ exactly (see the correction above).*
+2. *The **inverse** $G^{-1}$ (which exists on that quotient rather than on $H_n$
+   under **convention D**) enters the **Frobenius co-Casimir**
    ([Frobenius universal](#thm:frobenius-codim-universal)):
    $C_{\dim_q} = \sum_{i, j} (G^{-1})_{ij} \cdot b_i \cdot b_j$
    in a non-central-idempotent basis (standard Frobenius
    identity), with $i, j$ running over the two-row stratum only.*
 3. *The **spectral-sequence pairing**: each $E_\infty^{p, *}$ is
    paired with $\mathrm{tr}_M$ via the Gram matrix restricted to
-   the stratum — so $E_\infty^{p, *}(T_w) \to R$ is really
+   the stratum, so $E_\infty^{p, *}(T_w) \to R$ is really
    $T_w \mapsto G_{T_w, *}$ projected to the stratum.*
 4. *The **knot-factor Frobenius pairing**
    ([knot factor Frobenius pairing](#conj:knot-factor-frobenius-pairing))
-   computes $G_{\beta, \beta^*}$ for braid-mirror pairs — the
+   computes $G_{\beta, \beta^*}$ for braid-mirror pairs: the
    chirality factor $a_K$ of Term 5 is a normalised Gram-matrix
    entry.*
 
@@ -108,11 +107,11 @@ $H_3/\mathrm{rad} \cong \mathrm{TL}_3$ is.*
 is **block-diagonal**: $G_{\lambda, \mu} = \delta_{\lambda \mu}
 \cdot \tau(e_\lambda^2) = \delta_{\lambda \mu} \cdot \tau(e_\lambda)
 = \delta_{\lambda \mu} \cdot \frac{\dim_q(\lambda) \cdot \dim(\lambda)}{[n]_q!}$.
-The inverse — on the surviving blocks only, since under **convention D** the
-radical blocks have $\tau(e_\lambda) = 0$ — is
+The inverse (on the surviving blocks only, since under **convention D** the
+radical blocks have $\tau(e_\lambda) = 0$) is
 $G^{-1}_{\lambda, \mu} = \delta_{\lambda \mu} \cdot \frac{[n]_q!}{\dim_q(\lambda) \cdot \dim(\lambda)}$.
 Summing $G^{-1}$ diagonal times $1/\dim_q$ gives exactly the Frobenius
-co-Casimir trace $\sum_\lambda 1/\dim_q(\lambda)$ — recovering
+co-Casimir trace $\sum_\lambda 1/\dim_q(\lambda)$, recovering
 ([Frobenius universal](#thm:frobenius-codim-universal)).*
 
 ***The inversion in the previous sentence is only valid block-by-block on the
@@ -120,13 +119,13 @@ surviving blocks.** The block-diagonal form $G_{\lambda\mu} =
 \delta_{\lambda\mu}\tau(e_\lambda)$ is correct under either convention and is the
 sharpest statement in this remark: it shows $\det G$ is a product of the
 Wedderburn weights, so $G$ inverts **iff every weight is nonzero**. Under the
-excised convention C that held. Under convention D it does not — $y_\lambda = 0$
+excised convention C that held. Under convention D it does not: $y_\lambda = 0$
 for every $\lambda$ with $\ell(\lambda) \geq 3$, since the fibre is the
 two-dimensional fundamental of $\mathrm{SU}_q(2)$ and no three-row partition
 survives Schur–Weyl. For those $\lambda$ the displayed $G^{-1}_{\lambda\lambda}$
 divides by zero, and the co-Casimir sum $\sum_\lambda 1/\dim_q(\lambda)$ must run
 over the two-row stratum only. Restricted there, every statement above stands
-unchanged — which is precisely the sense in which the Frobenius structure
+unchanged, which is precisely the sense in which the Frobenius structure
 survives on $\mathrm{TL}_n$.*
 
 *The quantum dimensions $\dim_q(\lambda)$ entering this Wedderburn block structure

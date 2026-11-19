@@ -61,8 +61,8 @@ classical Bloch-Suslin construction:
   \approx 3.66386$.
 - In the Bloch group each octahedron is $4 \cdot [i]$, so the
   cross-ratio carried by the class is the **fourth** root of unity
-  $\zeta_4 = i = e^{i\pi/2}$ — not the sixth root $e^{i\pi/3}$, which
-  is the figure-eight parameter.
+  $\zeta_4 = i = e^{i\pi/2}$ (distinct from the sixth root $e^{i\pi/3}$, which
+  is the figure-eight parameter).
 - The total Bloch-group element is
 
 $$
@@ -81,7 +81,7 @@ the $\zeta_4$ row of the
 the figure-eight sits in the $\zeta_6$ row with
 $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.
 
-## The conjectural content — $h^4$ as the next-order regulator term
+## The conjectural content: $h^4$ as the next-order regulator term
 
 The Beilinson regulator extends to higher orders via the formal
 $q$-expansion of $\Phi_q$ around $q = 1$ (the archimedean limit per
@@ -114,37 +114,37 @@ $r_2$ regulator.  Equivalently: $r_2^{(2)}[\mathcal{B}_3] = -6G$.
 Four candidate routes are open for deriving $h^4 = -3/4$
 categorically:
 
-1. **Direct Borromean Markov trace** — already done
-2. **Pachner-Pentagon state-sum** —
+1. **Direct Borromean Markov trace**: already done
+2. **Pachner-Pentagon state-sum**:
    [Pachner pentagon Borromean conjecture](pachner-pentagon-borromean.md)
 3. **K-theoretic / Bloch group regulator** (this conjecture)
-4. **DIM-master Pentagon** — research-grade
+4. **DIM-master Pentagon**: research-grade
 
-Closing this conjecture ties $h^4$ to the K-theoretic structure of $K_3(\mathbb{C})$
-— the deepest connection to motivic / arithmetic structure.  It
+Closing this conjecture ties $h^4$ to the K-theoretic structure of $K_3(\mathbb{C})$,
+the deepest connection to motivic / arithmetic structure.  It
 also closes the loop:
 
 - $r_2$ at order $h^0$ = $8G$ (the bare hyperbolic volume = production
   $\mathrm{Vol}(\mathcal{B}_3)$ in the canonical formalism),
 - $r_2^{(2)}$ at order $h^4$ = $-6G$ (the Markov-trace coefficient),
-- $r_2^{(k)}$ at higher orders — the full Markov-trace closed form.
+- $r_2^{(k)}$ at higher orders: the full Markov-trace closed form.
 
 ## Structural invariants
 
 
-- **GB filtration level**: N/A — the Bloch group lives at the
-  decategorified level (image of $K_3(\mathbb{C})$ in $\mathbb{R}$);
+- **GB filtration level**: N/A, since the Bloch group lives at the
+  decategorified level (image of $K_3(\mathbb{C})$ in $\mathbb{R}$) and
   no Coxeter length attaches naturally.
 - **Jet order**: $h^4$ (the load-bearing claim is at the next-order
   regulator level beyond the $h^0$ volume).
 - **Bar-symmetry status**: bar-symmetric.  The Beilinson regulator
   $r_2[z] = \mathrm{Im}\,\mathrm{Li}_2(z) + \ldots$ is bar-symmetric
   under $q \mapsto q^{-1}$ because $\mathrm{Li}_2^q$ is bar-symmetric
-  (per [`bar-involution.md`](../braids-and-knots/bar-involution.md) Table 2 — Rogers
-  q-dilog is bar-symmetric, Faddeev's $\Phi_q$ alone is bar-anti-
+  (per [`bar-involution.md`](../braids-and-knots/bar-involution.md) Table 2: Rogers
+  q-dilog is bar-symmetric, whereas Faddeev's $\Phi_q$ alone is bar-anti-
   symmetric).
 
-## What remains open
+## Unresolved regulator questions
 
 1. **Compute prototype**: at $q = q_0$, numerically evaluate both
    sides of the conjectural identity
@@ -156,7 +156,7 @@ also closes the loop:
    coefficient directly from the Beilinson regulator of the Bloch-group class
    $8[i] \in B(\mathbb{C})$ via the Bloch–Suslin $K_3^{\mathrm{ind}}(\mathbb{C})$ theorem.
 3. **Cross-validation.** The Pachner–Pentagon state-sum
-   and the K-theoretic regulator should both give $h^4 = -3/4$ —
+   and the K-theoretic regulator should both give $h^4 = -3/4$, providing
    a triple cross-validation of the topological coefficient.
 
 ## Cross-references

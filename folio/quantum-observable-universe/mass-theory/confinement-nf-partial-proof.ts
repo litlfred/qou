@@ -51,6 +51,14 @@ export default proposition({
   authorNotes: [
     {
       kind: "note",
+      body: "Computational witness: computations/habiro-coefficients-extended.witness.json.",
+    },
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
+      kind: "note",
       date: "2026-08-08",
       body: "Provenance dropped from the published prose of the $T_2$ item: the operator-valued form of Sub-lemma 2.1 is closed conditional on `conj:crystal-graph-realization` via the combinatorial $R$-matrix on $B_\\mu \\otimes B_\\nu$ at $q \\to 0$, written up in [`docs/audits/-crystal-r-matrix-sublemma-2-1.md`](../../../docs/audits/-crystal-r-matrix-sublemma-2-1.md). The scalar-form audit is already linked in the note below.",
     },

@@ -1,6 +1,6 @@
 **Proposition (conditional on [dilogarithm archimedean limit conjecture](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
 *Let $\tau_{\text{arch}} = \pi_\infty \circ \tau$ be the archimedean
-realization functor of the QOU substrate
+realization functor of the QOU aether
 ([archimedean realization functor](#def:archimedean-realization-functor)),
 acting on motivic inputs assembled from braid / knot data. Under
 hypotheses (C1)–(C2) below, $\tau_{\text{arch}}$ is uniquely
@@ -18,7 +18,7 @@ $$
 *equal the **Bloch-Wigner dilogarithm** on every shape parameter
 $z \in \mathbb{C} \setminus \{0,1\}$, where:*
 
-- *(C1) The substrate's mass-formula state sum is pentagon-coherent:
+- *(C1) The aether's mass-formula state sum is pentagon-coherent:
    $\tau_{\text{arch}}$ is a continuous, antisymmetric, real-valued
    functional on $B(\mathbb{C})$ — the structural content provided by
    the cosimplicial / Yekutieli triple machinery

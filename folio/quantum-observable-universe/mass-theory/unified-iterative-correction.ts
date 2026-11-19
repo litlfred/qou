@@ -32,7 +32,9 @@ export default proposition({
       kind: "refined-framing",
       body: "Earlier formulations restricted the sum to blocks with tr ≤ 0. That restriction was asserted, not derived — it was what the accumulator computed — and was removed on that ground.",
     },
-    { kind: "caveat", date: "2026-10-11", body: "Two inconsistent definitions of $C_\\lambda$ (bean `qou-wg3c`). `prf:unified-iterative-correction` states $C_\\lambda = m_e\\,H_q(\\lambda)$ (the $q$-hook product), while `prop:mass-coefficient-shadow-price` carries $C_\\lambda = w_\\lambda\\,h/2$ as the class field `C_eq`. At $(2,2)$ these give $6.2893$ MeV and $m_e w h/2 = 0.00887$ MeV; no stated map relates them. Neither is derived: the hook value is asserted universal and fails for six of the seven mass-formula coefficients (`qou-orjl`), and the factorisation $u^*_\\lambda = C_\\lambda S_\\lambda(Z,N,A)$ is a class field the stated LP cannot produce, since its dual constraints carry no $(Z,N)$." },
+    { kind: "caveat", date: "2026-10-11", body: "Two inconsistent definitions of $C_\\lambda$ (bean `qou-wg3c`). `prf:unified-iterative-correction` states $C_\\lambda = m_e\\,H_q(\\lambda)$ (the $q$-hook product), while `prop:mass-coefficient-shadow-price` carries $C_\\lambda = w_\\lambda\\,h/2$ as the class field `C_eq`. " +
+      /* <!-- literal-source: closed-form q-hook evaluation m_e * H_q((2,2)) = m_e * [3]_q * [2]_q^2 = 6.2893 MeV at q_0 --> */
+      "At $(2,2)$ these give $6.2893$ MeV and $m_e w h/2 = 0.00887$ MeV; no stated map relates them. Neither is derived: the hook value is asserted universal and fails for six of the seven mass-formula coefficients (`qou-orjl`), and the factorisation $u^*_\\lambda = C_\\lambda S_\\lambda(Z,N,A)$ is a class field the stated LP cannot produce, since its dual constraints carry no $(Z,N)$." },
     {
       kind: "status",
       date: "2026-09-12",
@@ -68,4 +70,13 @@ export default proposition({
       see: "docs/audits/2026-09-12-uic-functional-resolution.md",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/casimir_q_zeta_probe.py",
+    witness: [
+      "computations/probes/casimir-q-zeta-probe.witness.json",
+      "computations/sigma-f-electron-shell-chain.witness.json",
+    ],
+    status: "verified",
+  },
 });

@@ -27,6 +27,8 @@ export default remark({
       "computations/q-pinning-50-digit.witness.json",
       "computations/mu-substrate-tension-audit-100dps.witness.json",
       "computations/per-observable-100x-status.witness.json",
+      "computations/deuteron-from-scratch-ledger.witness.json",
+      "computations/qbeta/qbeta-coherent-collapse-sinh-cosh.witness.json",
     ],
     status: "verified",
   },
@@ -60,6 +62,7 @@ export default remark({
         "i.e. `1.743e-11`; the witness states it as prose in `calibration_inputs.m_p_over_e_source` (\"CODATA 2022 (0.017 ppb)\"). " +
         "`0.06 ppb` is the CODATA-2018 figure.\n" +
         "- Muon-anchored proton miss `roughly 4000σ → ≈ 1.4e4 σ` ← `deuteron-from-scratch-ledger.witness.json` " +
+        /* <!-- literal-source: CODATA 2022 relative uncertainty on m_p/m_e = 3.2e-8 / 1836.152673426 = 0.01743 ppb --> */
         "`data.S2_nucleons.muon_anchor.err_m_p_ppb = -243.863` over that same `0.01743` ppb.\n" +
         "- The muon ratio's `22` ppb is unchanged and correct (`MASS_RATIO_MU_E_ERR = 4.6e-6` on `206.7682827` = `2.225e-8`), " +
         "as is the `9.5σ` (`211.16 / 22.25`). Note the L2 dashboard's `sigma_exp_ppb = 21.77` is the σ on the **mass** " +

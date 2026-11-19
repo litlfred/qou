@@ -23,7 +23,7 @@ three structural regimes:
 
 The "real-axis" row is the current framework convention. The
 "unit-circle" row is the regime already discussed in
-[`commutative-chirality-vanishes`](#cor:commutative-chirality-vanishes).
+[commutative chirality vanishing](#cor:commutative-chirality-vanishes).
 The "general" row is uncharted; it is the categorical home for any
 future $\mathrm{Im}(q_0) \neq 0$ hypothesis.
 

@@ -48,7 +48,7 @@ $\sigma_i, \sigma_{i+1}$, the braid relation
 $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$
 might introduce dependencies that spoil the factorization. The
 proof above sidesteps that concern because the peel operates on
-a **length-2** word, not a length-3 word: no braid relation is
+a **length-2** word rather than a length-3 word: no braid relation is
 invoked. The only algebra used is:
 
 1. $\sigma_j$ is the rightmost generator (index-maximal) in

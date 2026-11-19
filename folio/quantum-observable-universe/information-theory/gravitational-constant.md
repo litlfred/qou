@@ -1,5 +1,5 @@
 **Definition.**
-The **gravitational constant** $G_q$ normalises the $q$-Yang--Mills--Levi variation ([$q$-YM-Levi](#def:q-yang-mills-levi)). It sets the ratio of curvature to stress-energy in the field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$ ([GR substrate geometry](#rem:gr-substrate-geometry)):
+The **gravitational constant** $G_q$ normalises the $q$-Yang--Mills--Levi variation ([$q$-YM-Levi](#def:q-yang-mills-levi)). It sets the ratio of curvature to stress-energy in the field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$ ([GR aether geometry](#rem:gr-substrate-geometry)):
 
 $$
   G_q := \frac{c_q^3 \cdot \hbar_q}{S_{\mathrm{cell}}(q)}

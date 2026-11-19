@@ -1,6 +1,6 @@
 The classical Birch--Swinnerton-Dyer conjecture asserts that the order of vanishing of the $L$-function $L(\mathcal{E}_q, s)$ at $s = 1$ equals the Mordell--Weil rank of the elliptic curve $\mathcal{E}_q$ ([$q$-Birch--Swinnerton-Dyer](#conj:q-birch-swinnerton-dyer)). This remark expresses that order-of-vanishing match as a literal surreal-order identity.
 
-Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)), $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)), and $\mathcal{E}_q$ the Descartes elliptic curve attached to the substrate. Let $r = \mathrm{rank}\bigl(\mathcal{E}_q(\mathbb{Q})\bigr)$ be the Mordell--Weil rank.
+Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)), $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)), and $\mathcal{E}_q$ the Descartes elliptic curve attached to the aether parameter. Let $r = \mathrm{rank}\bigl(\mathcal{E}_q(\mathbb{Q})\bigr)$ be the Mordell--Weil rank.
 
 By [surreal rate calculus](#prop:surreal-rate-calculus) and the spectral identification of $L$-values with Reeb-period integrals, the surreal $\omega$-order of $L(\mathcal{E}_q, 1 + \delta)$ as $\delta$ is a standard-real drift is
 

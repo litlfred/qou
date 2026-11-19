@@ -1,7 +1,7 @@
-The [substrate parameter](#def:substrate-parameter) operates as an element of $\mathrm{End}(\mathbf{1}) \cong k^\times$, establishing the fibre coordinate on a $\mathbb{G}_m$-family. This parameter must strictly avoid the torsion subgroup of $\mathbb{G}_m$.
+The [aether parameter](#def:substrate-parameter) operates as an element of $\mathrm{End}(\mathbf{1}) \cong k^\times$, establishing the fibre coordinate on a $\mathbb{G}_m$-family. This parameter must strictly avoid the torsion subgroup of $\mathbb{G}_m$.
 
 **The multiplicative group scheme.**
-The substrate parameter evaluates as a section $q \colon M \to \mathbb{G}_m(k)$ where $\mathbb{G}_m(k) = k^\times$. The $\mathbb{G}_m$-family of operators
+The aether parameter evaluates as a section $q \colon M \to \mathbb{G}_m(k)$ where $\mathbb{G}_m(k) = k^\times$. The $\mathbb{G}_m$-family of operators
 
 $$
   d_q = q^{-1}d + (1 - q^{-1})\pi_V \circ d
@@ -18,7 +18,7 @@ $$
   \mathbb{G}_m[\mathrm{tors}] = \mu_\infty = \bigcup_{n \geq 1} \mu_n.
 $$
 
-The rigid axiom controlling the [substrate parameter](#def:substrate-parameter) dictates:
+The rigid axiom controlling the [aether parameter](#def:substrate-parameter) dictates:
 
 $$
   q(p) \notin \mu_\infty(k)
@@ -38,7 +38,7 @@ At a strict torsion point $q_0 = e^{2\pi i m/n}$:
 The anchor $q_0 = 1$ constitutes the **universal torsion point**. While quantum integers $[k]_1 = k$ avoid vanishing, the comultiplication turns cocommutative and the braiding degrades into symmetric swapping.
 
 **The projective compactification.**
-Embedding $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$ defines two absolute boundaries. At $q = 0$, the operator $d_q$ hits an undefined $q^{-1}$ pole; the spatial differential diverges. At $q = \infty$, $d_q \to \pi_V \circ d$; spatial mechanics vanish entirely, isolating purely the vertical Reeb dynamic. Under $\mathbb{C}$, torsion points blanket $\mathbb{G}_m$ densely. Under $\mathbb{R}$, torsion points limit to $\{1, -1\}$; the physical substrate $q > 1$ cleanly occupies the torsion-free ray $(1, \infty)$.
+Embedding $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$ defines two absolute boundaries. At $q = 0$, the operator $d_q$ hits an undefined $q^{-1}$ pole; the spatial differential diverges. At $q = \infty$, $d_q \to \pi_V \circ d$; spatial mechanics vanish entirely, isolating purely the vertical Reeb dynamic. Under $\mathbb{C}$, torsion points blanket $\mathbb{G}_m$ densely. Under $\mathbb{R}$, torsion points limit to $\{1, -1\}$; the physical aether parameter $q > 1$ cleanly occupies the torsion-free ray $(1, \infty)$.
 
 **The $q = 1$ limit as torsion specialisation.**
 The [NS regularity problem](#def:ns-regular-qou) effectively tests the extension of a valid non-torsion section $q \colon M \to \mathbb{G}_m^{\mathrm{nt}}$ directly into the universal torsion point $q = 1$. The Neron model of the abelian scheme controls this exact extension. Because the Frobenius--Hopf architecture operates as a parameterised family of Hopf algebras, not a simple $\mathbb{G}_m$-torsor, the obstruction directly populates the special fibre:

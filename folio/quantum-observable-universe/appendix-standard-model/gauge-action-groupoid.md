@@ -14,4 +14,4 @@ $$
 
 Two states $X, Y$ are **gauge equivalent** when $\mathrm{Hom}_{\mathbf{G}}(X, Y) \neq \emptyset$.
 
-The action functional is the datum through which the categorical Lagrangian governs the gauge symmetry: $\mathrm{act}(f)$ records the action cost mandated by [the categorical action](#def:categorical-action) for executing the deformation $f$. Reversibility of gauge transformations is exactly the groupoid axiom; the base ring $R$ stays generic, with the archimedean specialisation $R = \mathbb{R}$ deferred to the observable side of the substrate wall.
+The action functional is the datum through which the categorical Lagrangian governs the gauge symmetry: $\mathrm{act}(f)$ records the action cost mandated by [the categorical action](#def:categorical-action) for executing the deformation $f$. Reversibility of gauge transformations is exactly the groupoid axiom; the base ring $R$ stays generic, with the archimedean specialisation $R = \mathbb{R}$ deferred to the observable side of the Archimedean boundary.

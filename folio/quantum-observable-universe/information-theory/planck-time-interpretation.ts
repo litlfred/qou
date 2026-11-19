@@ -11,4 +11,10 @@ export default remark({
     "rem:julia-set-reeb",
     "prop:local-substrate-q",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/binding_heat_kernel_canonical_time_probe.py",
+    witness: "computations/binding-heat-kernel-canonical-time.witness.json",
+    status: "verified",
+  },
 });

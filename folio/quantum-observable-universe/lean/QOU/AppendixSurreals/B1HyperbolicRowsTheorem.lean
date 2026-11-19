@@ -59,28 +59,16 @@ inductive HyperbolicRow
   | twistKnot
   deriving DecidableEq, Fintype
 
-/-- **Bloch–Suslin regulator condition** — an external open input. -/
+/-- **Conjecture (`conj:b1-hyperbolic-rows-theorem`, §3b-cond class).**
+    Packages the external Bloch–Suslin regulator hypothesis, van der Veen's
+    Volume-Conjecture extension hypothesis, and the per-row B1 predicate on
+    `HyperbolicRow`, without bare global `axiom` or `opaque` declarations. -/
 -- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
-opaque BlochSuslinRegulator : Prop
-
-/-- **van der Veen et al.'s Volume-Conjecture extensions** — an external open
-    input. -/
--- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
-opaque VanDerVeenVolumeConjecture : Prop
-
-/-- **B1 holds at a given hyperbolic row.** -/
--- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
-opaque B1HoldsAt : HyperbolicRow → Prop
-
-/-- **Conjecture (`conj:b1-hyperbolic-rows-theorem`), per-row form.**
-    Conditional on the Bloch–Suslin regulator condition and van der Veen's
-    Volume-Conjecture extensions, B1 holds at each of the three rows.
-
-    This is where the conjectural content lives. It is falsifiable: it says
-    something about the named `B1HoldsAt` at each named row, rather than
-    about an arbitrary numeral. -/
--- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md
-axiom b1_holds_at_row :
+class B1HyperbolicRowsConjecture where
+  BlochSuslinRegulator : Prop
+  VanDerVeenVolumeConjecture : Prop
+  B1HoldsAt : HyperbolicRow → Prop
+  b1_holds_at_row :
     BlochSuslinRegulator → VanDerVeenVolumeConjecture →
       ∀ r : HyperbolicRow, B1HoldsAt r
 
@@ -89,14 +77,15 @@ theorem card_hyperbolicRow : Fintype.card HyperbolicRow = 3 := rfl
 
 open scoped Classical in
 /-- **B1 holds at at least 3 hyperbolic rows** — *derived* from the per-row
-    conjecture, not assumed. Conditional on the two external inputs, the set
-    of rows carrying B1 is all of them, hence has cardinality `3`. -/
-theorem b1_hyperbolic_rows
-    (hbs : BlochSuslinRegulator) (hvdv : VanDerVeenVolumeConjecture) :
-    3 ≤ (Finset.univ.filter fun r : HyperbolicRow => B1HoldsAt r).card := by
-  have hall : ∀ r : HyperbolicRow, B1HoldsAt r := b1_holds_at_row hbs hvdv
+    conjecture class `[B1HyperbolicRowsConjecture]`, not assumed as a numeral
+    bound. Conditional on the two external inputs, the set of rows carrying B1
+    is all of `HyperbolicRow`, hence has cardinality `3`. -/
+theorem b1_hyperbolic_rows [c : B1HyperbolicRowsConjecture]
+    (hbs : c.BlochSuslinRegulator) (hvdv : c.VanDerVeenVolumeConjecture) :
+    3 ≤ (Finset.univ.filter fun r : HyperbolicRow => c.B1HoldsAt r).card := by
+  have hall : ∀ r : HyperbolicRow, c.B1HoldsAt r := c.b1_holds_at_row hbs hvdv
   have hfilter :
-      (Finset.univ.filter fun r : HyperbolicRow => B1HoldsAt r) = Finset.univ :=
+      (Finset.univ.filter fun r : HyperbolicRow => c.B1HoldsAt r) = Finset.univ :=
     Finset.filter_true_of_mem fun r _ => hall r
   rw [hfilter, Finset.card_univ, card_hyperbolicRow]
 

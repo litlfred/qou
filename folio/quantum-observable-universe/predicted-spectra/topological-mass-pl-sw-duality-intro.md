@@ -1,3 +1,3 @@
 The algebraic residue calculus of the Markov–Frobenius trace and the geometric thimble decomposition of Seiberg–Witten (SW) theory form dual descriptions of the same period data: every Gröbner–Shirshov reduction step corresponds to a Picard–Lefschetz (PL) thimble transition, while every cyclotomic denominator pole corresponds to a Seiberg–Witten critical locus where the non-abelian braid monodromy abelianizes.
 
-This section proves the bar-self-dual confinement-band theorem, establishes bar/$T$-duality on the substrate and its compatibility with the transfer matrix, and proves the golden-quartet Galois orbit theorem and $D_4$ dihedral moduli symmetry.
+This section proves the bar-self-dual confinement-band theorem, establishes bar/$T$-duality on the aether and its compatibility with the transfer matrix, and proves the golden-quartet Galois orbit theorem and $D_4$ dihedral moduli symmetry.

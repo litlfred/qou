@@ -1,3 +1,1 @@
-**:defterm[Hom-set]{#hom-set}.** For objects $X$ and $Y$ in a category $\mathbf{C}$, the hom-set $\mathrm{Hom}_{\mathbf{C}}(X, Y)$ is the collection of all morphisms from $X$ to $Y$; alternative notations are $\mathbf{C}(X, Y)$ and $X \to Y$. In a locally small category, each hom-set is a genuine set.
-
-When $\mathbf{C}$ is $R$-linear, each hom-set carries the structure of an $R$-module. Composition is $R$-bilinear.
+**:defterm[Hom-set]{#hom-set}.** For objects $X$ and $Y$ in a locally small category $\mathbf{C}$, the set $\mathrm{Hom}_{\mathbf{C}}(X, Y)$ (also written $\mathbf{C}(X, Y)$) of all morphisms from $X$ to $Y$. When $\mathbf{C}$ is $R$-linear over a commutative ring $R$, each hom-set carries an $R$-module structure for which morphism composition is $R$-bilinear.

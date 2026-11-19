@@ -1,5 +1,3 @@
-*Stated over $\mathbb{R}$ (archimedean regime); the combinatorial content is a finite non-negative sum.*
-
 **Proposition (extensivity of the body-order binding).**
 *Write the jet-filtration binding of [binding manybody equals jet filtration conjecture](#conj:binding-manybody-eq-jet-filtration) as*
 
@@ -21,43 +19,29 @@ $B(A) < B(A+1)$.*
 Adding nucleon body orders can only increase binding. This is exactly the
 **extensive** behaviour the *intensive* rotation-phase reading
 $\theta_\lambda = \arccos(\chi^\lambda/d_\lambda)$ structurally lacked — a bounded
-per-block phase cannot grow with the nucleon number $A$ (see the failed
-one-parameter closure in `probe_full_theta_binding.py`). The body-order series
-supplies it, because each term $\mathfrak{m}_e a_D^{(n)} w_n$ is a non-negative
+per-block phase cannot grow with the nucleon number $A$, so a single-parameter rotation-phase ansatz cannot close heavy-nucleus binding. The body-order series
+supplies extensivity, because each term $\mathfrak{m}_e a_D^{(n)} w_n$ is a non-negative
 contribution and the number of terms grows with $A$.
 
 The proof is elementary — monotonicity of a finite sum of non-negative terms over
 the nested index sets $\{2,\ldots,A\} \subseteq \{2,\ldots,A'\}$.
 
 **Scope (what is *not* asserted here).** The three deeper inputs are carried as
-non-negativity/positivity *hypotheses* on $a_D^{(n)}$ and $w_n$, **not** derived in
-this proposition:
+non-negativity/positivity *hypotheses* on $a_D^{(n)}$ and $w_n$ rather than derived in
+this proposition.
 
-1. the **super-exponential magnitude** of the Seiberg–Witten period
-   $a_D^{(n)} = \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}$ — the
-   *quantitative* extensive channel;
-2. the **non-abelian-Stokes identity** $a_D^{(n)} = \mathrm{lw}(n-1)$ (the mean
-   quantum dimension; conjectural, with residue-sum
-   form Seiberg–Witten period residue sum proposition);
-3. the per-atom **residue weight** $w_n(K)$ (the $\rho\cdot A$ scale rule, a
-   $q$-difference recursion output).
+1. The **super-exponential magnitude** of the Seiberg–Witten period
+   $a_D^{(n)} = \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}$ supplies the
+   *quantitative* extensive channel.
+2. The **non-abelian-Stokes identity** $a_D^{(n)} = \mathrm{lw}(n-1)$ equates the period to the mean
+   quantum dimension (conjectural, with residue-sum
+   form [Seiberg–Witten period residue sum](#prop:sw-period-residue-sum)).
+3. The per-atom **residue weight** $w_n(K)$ provides the $\rho\cdot A$ scale rule via a
+   $q$-difference recursion output.
 
 What is established is the *qualitative* extensivity: given non-negative period and
 weight data, the body-order binding grows with $A$.
 
-**Status of (1)–(3) elsewhere in the corpus.** Being carried as a hypothesis *here*
-is not the same as being open, and only one of the three now is. Item (2) is open:
-it is axiomatised as the prolongation-period mean quantum dimension conjecture class,
-which has no unconditional instance. Item (1) is settled as a **growth class** — the period is
-super-exponential by the $\surd$-branch argument of the colour cubic, confirmed
-independently by the residue-sum route, and the object is identified as the
-*q*-deformed involution number $T_q(n) = n\,\mathrm{lw}(n-1) \to I(n)$; what
-remains open there is the exact *q*-statistic, for which no *q*-holonomic
-recurrence exists at low depth. Note in particular that the falling factorial
-$(1/2)_n$ is **not** a closed form for $\mathrm{lw}$ — it outgrows it, and no
-constant geometric factor absorbs the difference. Item (3) is excluded rather than
-open: $w_3$ is a required boundary condition of a rank-2 problem, a scope-(b)
-result where no scalar kernel exists on the carrier.
+**Mathematical standing of (1)–(3).** Carrying (1)–(3) as hypotheses here separates the elementary monotonicity statement from three distinct analytical problems. Item (2) is conjectural: no unconditional derivation yet equates the prolongation period to the mean quantum dimension $\mathrm{lw}(n-1)$. Item (1) is established at the level of **asymptotic growth**: the period is super-exponential by the square-root branch geometry of the colour cubic, independently corroborated by the residue-sum expansion, and corresponds to the $q$-deformed involution count $T_q(n) = n\,\mathrm{lw}(n-1) \to I(n)$. However, no low-order $q$-holonomic recurrence fixes the exact $q$-statistic; in particular, the falling factorial $(1/2)_n$ outgrows $\mathrm{lw}$ and no constant geometric factor absorbs the ratio. Item (3) reflects a rank-$2$ boundary condition: $w_3$ enters as an independent datum because no scalar kernel exists on the carrier.
 
-The magnitude that matches experiment therefore depends on (1)–(3) as *inputs*, of
-which (2) is the one still to be derived.
+The quantitative match to experimental binding energies therefore depends on (1)–(3) as inputs, of which (2) remains the unproved step.

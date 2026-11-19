@@ -3,7 +3,15 @@ import { proof } from "../../schema/builders";
 export default proof({
   label: "prf:nuclear-groebner-reduction",
   title: "Proof of nuclear groebner reduction",
-  uses: ["prop:nuclear-groebner-reduction"],
+  uses: [
+    "prop:nuclear-groebner-reduction",
+    "def:hecke-normal-form",
+    "prop:tm-gs-normal-form",
+    "unital-groebner-bases:def:groebner-basis",
+    "unital-groebner-bases:def:division-algorithm",
+    "unital-groebner-bases:def:admissible-system",
+  ],
+  cites: ["bergman1978"],
   authorNotes: [
     {
       kind: "note",

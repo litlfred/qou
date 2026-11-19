@@ -19,13 +19,15 @@ $$
 The upper separation says the triplet weight lies above the band's ceiling,
 $z < \mu_+$. Its reduced form $z(q+q^{-1}) < z+q^{-1}$ is, after substituting
 $z = q^{3}/(q^{2}+1)$, equivalent to $q^{5} < q^{2}+1$ and therefore holds for
+<!-- literal-source: unique positive real root of q^5 = q^2 + 1 -->
 $q < 1.193859$.
 
 The lower separation says the singlet weight lies below the band's floor,
 $\mu_- < z-h$. Its reduced form is $q - z < (z-h)(q+q^{-1})$, which under convention D
+<!-- literal-source: supergolden ratio, unique real root of q^3 = q^2 + 1 -->
 holds for $q < 1.465571$.
 
-The substrate parameter clears both, with $7.56\,\%$ of margin on the tighter of the
+The aether parameter clears both, with $7.56\,\%$ of margin on the tighter of the
 two. Neither is a knife-edge, and neither can be repaired by a better choice of $q$:
 moving $q$ upward past $1.193859$ closes the upper separation only by moving $\mu_+$
 into the band, which is not the same as reaching it from inside.
@@ -44,17 +46,13 @@ convention would be a misstatement of the same kind the trace-convention registr
 exists to prevent.
 
 Convention D trades one agreement for another here. It gains the deuteron --- the band
+<!-- literal-source: closed-form offset inversion d/h solving deuteron AME binding energy -->
 now contains $B_{\mathrm{AME}}({}^2\mathrm{H})$, reached at $d = -0.11923\,h$, where
 under convention C the entire band sat $30.69\,\%$ above it --- and it loses the
 singlet's reachability. That trade is a fact about the two conventions and is recorded
-as such, not resolved here.
+as such rather than resolved here.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
-physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
-$q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. At
+At
 $q_0 = 1.10997858275138080759$ under convention D:
 
 | quantity | value at $q_0$ | position |

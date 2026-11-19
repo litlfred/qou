@@ -1,33 +1,19 @@
-Interactive periodic table visualizing the knot-theoretic nuclear
-shell structure predicted by the topological mass formula and
-Borromean binding conditions.  Elements are arranged by nuclear shell
-rows (stability pairs) and proton sub-shell filling order
-(Mayer--Jensen).  Controls allow switching between nuclear sub-shell,
-electron block, and fill-order column modes.
+Interactive periodic table visualizing the nuclear Borromean shell closures, Mayer--Jensen proton sub-shell filling, and electronic trefoil shells across the elements ($Z = 1\text{--}118$, hydrogen through oganesson). Controls switch between knot-centric nuclear sub-shell columns, standard electronic blocks, and $q$-deformation views.
 
-Each element tile displays the knot-particle identification per the
-GB-NF / confinement source of truth
-([confined-particle](#def:confined-particle)) at $q_0$, all at shell
-level $\ell = 1$ except the neutrino at $\ell = 0$:
-**protons** as Borromean baryons $B_3(\mathrm{uud})$ (3-strand
-flavored Borromean rings),
-**neutrons** as $B_3(\mathrm{udd})$,
-**electrons** as trefoil knots $T_{2,3} = 3_1$ (closure of
-$\sigma_1^3$ in $B_2$),
-and **neutrinos** as unknots $0_1$ (vacuum drag).
-The fermion--boson decomposition classifies all entries via
-[fermions are knots, bosons are links](#prop:fermion-boson-knot-link):
-fermions are single-component odd-$n$ torus knots, bosons are
-even-$n$ 2-component links.
-Building-block data including Jones polynomials and hyperbolic
-volumes is in
-([building-block knots](#rem:building-block-knots)).
+Each element tile displays its constituent topology at the aether parameter $q_0$ ([confined particle](#def:confined-particle); [fermions are knots, bosons are links](#prop:fermion-boson-knot-link)):
 
-**Views:**
+- **Protons** $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}\mathfrak{u}\mathfrak{d})$ and **neutrons** $\mathfrak{n} = \mathcal{B}_3(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ as three-strand flavored Borromean baryons ($\ell = 1$);
+- **Electrons** $e^- = T_{2,3} = 3_1$ as trefoil closures of $\sigma_1^3 \in B_2$ ($\ell = 1$);
+- **Neutrinos** $\nu = 0_1$ as single-strand unknots ($\ell = 0$);
+- **Alpha clusters** $\alpha = 2\mathfrak{p} \oplus 2\mathfrak{n}$ as closed four-nucleon sub-links ($\ell = 2$).
 
-1. **Default**: knot-centric layout with electron block coloring
-2. **Magic numbers**: shell closures from linking number constraints
-3. **Binding energy**: $B/A$ gradient (topological mass formula)
-4. **Alpha clusters**: $k_\alpha$ sub-link count (Borromean decomposition)
-5. **Transfer matrix**: Skein polynomial degree bound $A^2 - 1$
-6. **Shell eigenvalues**: $\lambda_+^n$ at outermost electron shell
+Constituent Jones polynomials and hyperbolic volumes appear in [building-block knots](#rem:building-block-knots).
+
+**Display modes:**
+
+1. **Default**: Knot-centric nuclear row and sub-shell layout with electronic block coloring.
+2. **Magic numbers**: Harmonic-oscillator and spin--orbit closures highlighted.
+3. **Binding energy**: $B/A$ gradient across the nuclear landscape.
+4. **Alpha clusters**: Tetrahedral $\alpha$-cluster count $k_\alpha$.
+5. **Transfer matrix**: Pairwise skein polynomial degree bound $A^2 - 1$.
+6. **Shell eigenvalues**: Dominant photon--electron root $\lambda_+^n$ at the outermost electronic shell.

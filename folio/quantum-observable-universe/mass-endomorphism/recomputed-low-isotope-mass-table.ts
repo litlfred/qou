@@ -39,19 +39,16 @@ export default remark({
     witness: [
       "computations/tr-m-q-hecke-seminormal.witness.json",
       "computations/atomic-tr-m-mpfr-50dps.witness.json",
-      // LP / SDP duals supplying shadow-price structure for the
-      // operator-selection step that picks per-Wedderburn-block
-      // contributions to the binding-energy ansatz. Per AGENTS.md
-      // (LP/SDP duals first-class infra) every operator-selection
-      // compute must emit primal + dual; these three witnesses are
-      // the dual companions to this mass-table block:
       "computations/rho-k-h3a-lp-dual.witness.json",
       "computations/rho-k-h3a-gg-trajectory.witness.json",
       "computations/binding-k-solver.witness.json",
-      // Derived m_p witness consumed by low_isotope_mass_table.py
-      // under the no-calibration rule (replaces the previous CODATA
-      // hardcode of M_P_MEV).
       "computations/proton-mass-codata-50dps.witness.json",
+      "computations/atomic-mass-via-rho-k.witness.json",
+      "computations/rho-k-h3a-refinement.witness.json",
+      "computations/low-isotope-mass-table.witness.json",
+      "computations/e-0-lp-dual-h3.witness.json",
+      "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json",
+      "computations/qbeta/qbeta-delta-tr-vs-ruled-base.witness.json",
     ],
     status: "verified",
     requires: ["numpy", "sympy"],
@@ -67,5 +64,11 @@ export default remark({
     "lp-dual",
     "shadow-price",
     "operator-selection-lp",
+  ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/atomic-mass-via-rho-k.witness.json.",
+    },
   ],
 });

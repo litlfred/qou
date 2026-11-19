@@ -34,14 +34,14 @@ Each Goncharov period class $\mathcal{P}_n / \mathcal{P}_{n-1}$ inherits a bar-g
 
 ## Provenance
 
-This categorifies the amphichirality construction introduced in the figure-$8$ block ([figure-8 archimedean illustration](#rem:figure-8-archimedean-illustration)), recasting it as a period-theoretic structure on $\mathcal{P}_\bullet$. The bar involution's role remains structural. It organises period classes by the orientation-reversal symmetry of the motivic substrate.
+This categorifies the amphichirality construction introduced in the figure-$8$ block ([figure-8 archimedean illustration](#rem:figure-8-archimedean-illustration)), recasting it as a period-theoretic structure on $\mathcal{P}_\bullet$. The bar involution's role remains structural. It organises period classes by the orientation-reversal symmetry of the motivic aether.
 
 ## Falsifiability
 
-A concrete test uses a chiral hyperbolic knot $K$ with known $\mathrm{CS}(K) \neq 0$. The simplest such knot is $5_2$, which has $\mathrm{Vol} \approx 2.8281$ and $\mathrm{CS} \approx -0.1530\,\pi^2 \pmod{\pi^2}$. Three points are to be checked:
+A concrete test uses a chiral hyperbolic knot $K$ with known $\mathrm{CS}(K) \neq 0$. The simplest such knot is $5_2$, which has $\mathrm{Vol} \approx 2.8281$ and $\mathrm{CS} \approx -0.1530\,\pi^2 \pmod{\pi^2}$ (SnapPy). Three points are to be checked:
 
 1. The dominant cell of $5_2$ in $H_4(q)$ (or $H_5(q)$) forms a chiral pair, rather than a self-conjugate cell.
 2. The depth-$2$ pairing produces the real $\mathrm{Vol}(5_2)$.
 3. The depth-$3$ pairing on the same cell produces the chirality-twisted $\mathrm{CS}(5_2)$.
 
-Discharge remains open. The cell identification at $H_5(q)$ presents the primary technical obstacle.
+These three steps are conjectural; identifying the explicit cell inside $H_5(q)$ forms the primary algebraic obstacle.

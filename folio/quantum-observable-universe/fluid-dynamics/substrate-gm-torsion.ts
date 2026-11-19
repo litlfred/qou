@@ -4,7 +4,7 @@ export default remark({
   interprets: "def:substrate-parameter",
   label: "rem:substrate-gm-torsion",
   title:
-    "The substrate parameter as a $\\mathbb{G}_m$-section: torsion, specialisation, and the $q = 1$ boundary",
+    "The aether parameter as a $\\mathbb{G}_m$-section: torsion, specialisation, and the $q = 1$ boundary",
   uses: ["prop:ns-obstruction-tower"],
   tags: [
     "multiplicative-group",

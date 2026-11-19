@@ -23,7 +23,7 @@ is a claim that the coefficients are wrong:
    contradicted.** At $H_3$ the committed partition-indexed solve gives
    $y^\ast_{(3)} = y^\ast_{(2,1)} = 1$ and $y^\ast_{(1^3)} = 0$, so
    $c_\lambda = y^\ast_\lambda\, m_e$ is satisfiable on the nonzero blocks. The
-   vanishing block is the $\mathrm{SU}(2)$ specialisation, not a failure of the
+   vanishing block is the $\mathrm{SU}(2)$ specialisation rather than a failure of the
    pairing: every $\ell(\lambda) \ge 3$ weight vanishes identically, which is
    why a partition-indexed program must be posed on the two-row quotient.
 

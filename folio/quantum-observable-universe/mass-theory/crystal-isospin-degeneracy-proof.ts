@@ -12,6 +12,7 @@ export default proof({
     // the value to 19 digits at both mirror atoms).
     status: "verified",
     script: "computations/term7_alpha5_crystal_derivation.py",
+    // <!-- literal-source: historical float64 truncation of 187/90720 recorded in audit comment -->
     // Declared 2026-08-16 (qou-a28x). The block quoted 0.0020612874779541296
     // and could source it to nothing. The witness carries that value at BOTH
     // `data.atoms[1].S_crystal_at_q_zero` and `data.atoms[2].S_crystal_at_q_zero`
@@ -30,4 +31,10 @@ export default proof({
       "computations/term7-alpha5-crystal-derivation.witness.json",
     ],
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: term7_alpha5_crystal_derivation.py, computations/term7-alpha5-crystal-derivation.witness.json.",
+    },
+  ],
 });

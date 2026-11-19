@@ -32,7 +32,7 @@ $$
   =  13.6 \text{ eV}
 $$
 
-Here $\alpha$ is the fine structure constant. The framework relates $\alpha$ to the substrate parameter via:
+Here $\alpha$ is the fine structure constant. The framework relates $\alpha$ to the aether parameter via:
 
 $$
   \alpha =  \frac{\tanh(\ln q)}{C_{\mathrm{geom}}}

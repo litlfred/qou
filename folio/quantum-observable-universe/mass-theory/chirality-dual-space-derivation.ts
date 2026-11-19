@@ -18,4 +18,10 @@ export default proposition({
     "term-5",
     "derivation",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

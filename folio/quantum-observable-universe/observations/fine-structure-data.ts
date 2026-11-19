@@ -2,6 +2,16 @@ import { prose } from "../../schema/builders";
 
 export default prose({
   label: "sec:fine-structure-data",
+  computation: {
+    engine: "mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/meson-em-sinh-closed-form.witness.json",
+      "computations/alpha-em-form-ladder.witness.json",
+      "computations/alpha-em-schwinger-ladder.witness.json",
+    ],
+    status: "verified",
+  },
   tags: [
     "fine-structure-constant",
     "CODATA",
@@ -10,6 +20,10 @@ export default prose({
     "data",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      body: "CODATA 2018 (137.035999084(21)) is superseded by CODATA 2022 (137.035999177(21), +0.679 ppb shift) and retained solely as an edition-comparison benchmark.",
+    },
     {
       kind: "note",
       date: "2026-08-09",

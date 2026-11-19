@@ -11,7 +11,7 @@ $$
 
 *No hypothesis on $x$ is required.*
 
-## Why the unrestricted form is the one worth stating
+## Advantage of the unrestricted angle identity
 
 Writing $D$ in the Lobachevsky form $D(z) = \Lambda(\theta_1) + \Lambda(\theta_2) + \Lambda(\theta_3)$, where the $\theta_i$ are the arguments of the three edge parameters, the proof is immediate: the edge parameters of a real shape are themselves real, the argument of a real number is $0$ or $\pi$, and $\Lambda$ vanishes at both.
 
@@ -19,6 +19,6 @@ That argument never uses the size of $x$, and the unrestricted statement matters
 
 The two degenerate values are covered as well. At $x = 1$ the second edge parameter $1/(1-x)$ is undefined, and at $x = 0$ the third, $1 - 1/x$; under the convention $1/0 = 0$ both evaluate to a real number with argument $0$, so the formula returns $0$ there too.
 
-## Consequence
+## Degenerate-simplex corollary
 
 Volume is additive over an ideal triangulation, so a triangulation whose shape parameters are *all* real has total volume zero. This is the mechanism behind the vanishing of hyperbolic volume for torus knots, and it is used in that form in the block that follows.

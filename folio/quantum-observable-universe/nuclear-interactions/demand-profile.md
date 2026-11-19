@@ -10,5 +10,3 @@ $$
 $$
 
 *The **demand magnitude** is $|\mathrm{dem}| = \sum_{c_w < 0} |c_w|$.*
-
-**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.

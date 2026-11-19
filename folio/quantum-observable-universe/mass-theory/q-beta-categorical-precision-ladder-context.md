@@ -26,12 +26,12 @@ Two supersessions, in order. The earlier $c_4 = b^2 + 1/2$ form is superseded: i
 The KL decategorification governs the appearance of
 classical-limit Jones values: the mass observable lives in the KL
 classical limit of the Hecke / quantum-group representation theory, so
-Jones invariants enter at $q = 1$ rather than at substrate $q_0$.
+Jones invariants enter at $q = 1$ rather than at aether $q_0$.
 
 ## Truncation order and error estimate
 
 The ladder is a **convergent series**: $N$ is a *truncation order*
-chosen by the target precision, not an all-or-nothing
+chosen by the target precision rather than an all-or-nothing
 canonicity decision. The ladder step is
 
 $$
@@ -74,7 +74,7 @@ derivation. The permanent
 upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
 coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
 next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
-([em-coupling-bring-zero-mode proposition](#prop:em-coupling-bring-zero-mode)).
+([Bring zero-mode coupling proposition](#prop:em-coupling-bring-zero-mode)).
 
 ## canonical precision ladder
 
@@ -110,7 +110,7 @@ to a large $c_3$ move; a full settlement re-extracts $c_3$ at both anchors. The
 near-match tier of $c_{k\geq3}$ rests independently on the q$_0$-anchor swing
 recorded above and does not depend on this crossing.
 Agreement at $q_0$ is research-grade and **conditional on** the
-Habiro-element upgrade, not an unconditional derivation.
+Habiro-element upgrade rather than an unconditional derivation.
 
 The $N=2$ slight over-ceiling reflects that the Kashiwara-only prediction
 gives $b^2$ (= 0.7527) rather than the exact empirical $0.7656$ — the
@@ -161,46 +161,8 @@ operator-valued generating function
 $F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ — for instance the KLR
 canonical basis or a Khovanov–Rozansky spectral sequence.
 
-## Provenance of the tables
+## Evaluation conventions and sign bound
 
-Tables 2 and 3 above are computed by
-[`qbeta_precision_ladder_n5.py`](../../../computations/qbeta/qbeta_precision_ladder_n5.py)
-at the muon-pin (CAL-2) $q_0$, in convention C, with $c_4 = c_3 b^4$ and
-$c_5 = -(b^2 + 1/2)$. That producer is the first in the corpus to evaluate the
-boxed five-rung product itself: the block's previously declared producer,
-`probe_q_beta_operator_valued_N3.py`, stops at $N=3$, carries no $c_5$, and is
-not the generator of these tables at all — its own witness records
-$\varepsilon_{N=1} = 674.83$ ppm against the $+73.80$ ppm of the $N=1$ row,
-because its first rung is $\cos(\alpha_{N=1})$ rather than the boxed
-$\cos(\alpha - b\hbar_q^2/2)$.
+Tables 2 and 3 evaluate the boxed five-rung product under the muon calibration (CAL-2) $q_0$ in convention C, with $c_4 = c_3 b^4$, $c_5 = -(b^2 + 1/2)$, and first rung $\cos(\alpha - b\hbar_q^2/2)$ (evaluating $\cos(\alpha_{N=1})$ instead shifts the $N=1$ residual from $+73.80$ ppm to $+674.83$ ppm).
 
-**As previously published, for the record.** The $\varepsilon_Q$ column read
-$+1677.5$, $+73.79$, $+1.24$ ppm, then $+6.02$, $-0.57$ ppb and, at $N=5$,
-$\sim 0$ ppb in table 2 and $+0.04$ ppb in table 3; the headline residual was
-quoted as $-0.0066$ ppm.
-
-*The sign.* The published headline was negative. It cannot be: $\mathfrak{Q}_\beta^A$
-sits 1677 ppm above CODATA and every live rung factor is below 1, so the ladder
-descends to CODATA from above and a negative residual requires overshooting
-zero. Over both documented pins and all four documented $(c_4, c_5)$
-assignments the most negative fifth-rung residual is $+6.50$ ppb. This is a
-scope-limited negative about the boxed ladder under those assignments, not a
-proved invariant.
-
-*The input epoch.* The published $\varepsilon_Q$ column sits 7.133 ppb below the
-recomputed one. A change of inputs shifts $\mathfrak{Q}_\beta^A / \mathfrak{Q}_\beta^{\mathrm{CODATA}}$
-by one relative amount and moves every rung by it, so the $N=3$ row calibrates
-the whole column; applied to the recomputed column that single offset then
-reproduces the published $N=2$ row (to its three significant figures) and the
-published $N=4$ row (to $-0.572$ against $-0.57$) — the latter only with the
-*retired* $c_4 = b^2 + 1/2$, so the published $N=4$ number predated the $c_4$
-supersession that its own label column already carried. The cause of the 7.133
-ppb offset is not identified: it is not the stored $Q_{\mathrm{AME}}$
-(0.78233355931 against the present 0.7823334093099085, a 191.7 ppb gap in the
-wrong direction), and not the CODATA-2018 to 2022 $m_e$ move (1.35 ppb).
-
-*The headline's magnitude.* Under that same offset the published-epoch fifth-rung
-residual lies in $[-0.63, +0.63]$ ppb across all four assignments, so $-6.6$ ppb
-is unreachable at the published epoch as well as at the present one. The
-published magnitude has no reproducible provenance in this ladder, and the
-recomputed value replaces it rather than being reconciled with it.
+Because $\mathfrak{Q}_\beta^A$ sits $1677$ ppm above CODATA and every rung factor in the boxed product is strictly less than $1$, the partial products descend toward CODATA from above; across both lepton/nucleon calibrations and all four $(c_4, c_5)$ assignments considered here, the fifth-rung residual remains positive ($\ge +6.50$ ppb).

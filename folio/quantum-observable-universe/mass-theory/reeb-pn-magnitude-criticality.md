@@ -39,7 +39,7 @@ $g^2\,(5 + (v-v^{-1})^2) = 1$ by item 1.*
 
 The proposition is pure exchange-matrix algebra; it carries no physical
 identification. The physical reading of $g$ as the pn-bond linking
-amplitude is the separate [conjecture](reeb-linking-cwf-normalization.md).
+amplitude is the separate [CWF linking normalization conjecture](reeb-linking-cwf-normalization.md).
 Item 4 implies the $[1^4]$ pn writhe sign is invisible to every
 grading-commuting observable class; sign sensitivity requires $p{\leftrightarrow}n$
 mixing operators.

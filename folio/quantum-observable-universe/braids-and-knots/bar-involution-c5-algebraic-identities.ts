@@ -32,4 +32,13 @@ export default remark({
     "skein",
     "wedderburn",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/markov_bond_rule_forces_pairwise_probe.py",
+    witness: [
+      "computations/probes/markov-bond-rule-forces-pairwise.witness.json",
+      "computations/probes/option-e-v9-bar-symmetric-test-probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

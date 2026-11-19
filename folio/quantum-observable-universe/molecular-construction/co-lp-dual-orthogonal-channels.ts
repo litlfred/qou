@@ -12,4 +12,10 @@ export default remark({
     script: "computations/co_bond_order_active_set.py",
     witness: ["computations/co-bond-order-active-set.witness.json"],
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/co-bond-order-active-set.witness.json.",
+    },
+  ],
 });

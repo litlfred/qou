@@ -9,5 +9,3 @@ $$
 $$
 
 *The Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$, the LP cost vectors $t_k = \mathrm{tr}_M(b_k)$, and the shadow prices $y^*$ from the operator-selection LP are exact up to a global scalar that cancels in every ratio and optimality condition.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued physical observables at $q_0$.

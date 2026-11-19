@@ -13,4 +13,10 @@ export default remark({
     "worked-example",
   ],
   uses: ["def:Q-value-transition"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/nuclear_spin_orbit_shells_and_symmetry_probe.py",
+    witness: "computations/probes/nuclear-spin-orbit-shells-and-symmetry.witness.json",
+    status: "verified",
+  },
 });

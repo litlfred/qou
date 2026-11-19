@@ -11,4 +11,10 @@ export default proof({
       body: "The figures 0.1245 and 0.5514 were quoted here as the main values until 2026-10-10; they are the excised convention-C values. Earlier versions also had the two values swapped.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/trm5_zcubed_live_producer_audit.py",
+    witness: "computations/probes/trm5-zcubed-live-producer-audit.witness.json",
+    status: "verified",
+  },
 });

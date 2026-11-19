@@ -1,4 +1,4 @@
-> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md)).
+> **Superseded.** The scalar aether density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([mass-endomorphism tower](mass-endomorphism-tower.md)).
 
 **Proposition (algebraic stratification of the $\Phi_q$ tower).**
 *Let $\beta \in B_n$ be a braid. The $\Phi_q$-tower admits a purely algebraic stratification by $|S|$ within the Gröbner-Shirshov filtration of the Hecke algebra:*

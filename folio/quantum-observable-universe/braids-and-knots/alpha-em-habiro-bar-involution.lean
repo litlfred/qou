@@ -70,4 +70,20 @@ theorem alphaEmHabiro_at_neg_one (α : R) :
   unfold alphaEmHabiro
   ring
 
+/-- **Exact modular zero `H(ζ_4) = 0`** at a fourth root of unity (`ζ² = -1`, so
+`ζ⁻¹ = -ζ` and `[2]_{ζ_4} = ζ + (-ζ) = 0`), structural dual of the `𝔔_β` modular pole. -/
+theorem alphaEmHabiro_at_zeta4 (ζ α : R) :
+    alphaEmHabiro ζ (-ζ) α = 0 := by
+  unfold alphaEmHabiro
+  ring
+
+/-- At any fourth root of unity `ζ` satisfying `ζ ^ 2 = -1`, `ζ * (-ζ) = 1` (confirming `-ζ`
+is the multiplicative inverse `ζ⁻¹`) and `H(ζ, -ζ, α) = 0`. -/
+theorem alphaEmHabiro_zeta4_inv_and_zero (ζ α : R) (hζ : ζ ^ 2 = -1) :
+    ζ * (-ζ) = 1 ∧ alphaEmHabiro ζ (-ζ) α = 0 := by
+  refine ⟨?_, alphaEmHabiro_at_zeta4 ζ α⟩
+  calc ζ * (-ζ) = -(ζ ^ 2) := by ring
+    _ = -(-1) := by rw [hζ]
+    _ = 1 := by ring
+
 end QOU.BraidKnot

@@ -1,4 +1,4 @@
-The [Yang–Mills surreal bound](#rem:yang-mills-surreal-bound) gives the mass-gap statement at substrate order $\Delta_q \asymp \varepsilon^3$ but explicitly defers the Wightman-axiom portion of the Millennium Prize statement—the regularity programme of recovering a standard renormalised QFT as the standard part of the $q$-deformed substrate. This conjecture supplies the bridge: the Reeb $\mathbb{Z}_2$ acting on the [Frobenius pairing](#def:frobenius-hopf-substrate) furnishes Osterwalder–Schrader reflection positivity in the archimedean realisation. Together with the surreal mass gap, this forms the Osterwalder–Schrader sufficient input for Wightman reconstruction.
+The [Yang–Mills surreal bound](#rem:yang-mills-surreal-bound) gives the mass-gap statement at aether order $\Delta_q \asymp \varepsilon^3$ but explicitly defers the Wightman-axiom portion of the Millennium Prize statement—the regularity programme of recovering a standard renormalised QFT as the standard part of the $q$-deformed aether. This conjecture supplies the bridge: the Reeb $\mathbb{Z}_2$ acting on the [Frobenius pairing](#def:frobenius-hopf-substrate) furnishes Osterwalder–Schrader reflection positivity in the archimedean realisation. Together with the surreal mass gap, this forms the Osterwalder–Schrader sufficient input for Wightman reconstruction.
 
 **Conjecture (OS reflection positivity from the Reeb $\mathbb{Z}_2$).**
 *Let $\theta$ denote the antipodal $\mathbb{Z}_2 \subset U(1)_{\xi}$ inside the Reeb $U(1)$—equivalently, the chart-swap involution $\iota : Z \mapsto Z^{-1}$ on the [contact affine chart](#def:contact-affine-chart) at $\varTheta = \pi$, per [chart-swap $U(1)$ is the Reeb flow](#prop:reeb-u1-chart-swap). Then the [Frobenius pairing](#def:frobenius-hopf-substrate) $\langle\,\cdot\,,\,\cdot\,\rangle_F$ on $A$ satisfies reflection positivity under $\theta$:*
@@ -25,7 +25,7 @@ In the QOU framework:
 | OS3 (symmetry / locality) | Categorical permutation symmetry of the Frobenius pairing; $\Psi = S^2 = \mathrm{id}_A$. |
 | OS4 (cluster decomposition) | Mass gap $\Delta_q \asymp \varepsilon^3$ from the [surreal bound](#rem:yang-mills-surreal-bound) gives exponential clustering at separation $r$: $|S_n(\cdots) - S_k(\cdots) S_{n-k}(\cdots)| \lesssim e^{-\Delta_q r}$. |
 
-OS0, OS1, OS3 are categorically built-in. OS4 is the [surreal mass-gap statement](#rem:yang-mills-surreal-bound). OS2 is the open input—this conjecture. Granting it, the OS theorem reconstructs a Wightman QFT on $\mathbb{R}^4$ as the standard part of the $q$-deformed substrate, completing the Wightman-axiom portion of the Yang–Mills millennium statement.
+OS0, OS1, OS3 are categorically built-in. OS4 is the [surreal mass-gap statement](#rem:yang-mills-surreal-bound). OS2 is the open input—this conjecture. Granting it, the OS theorem reconstructs a Wightman QFT on $\mathbb{R}^4$ as the standard part of the $q$-deformed aether, completing the Wightman-axiom portion of the Yang–Mills millennium statement.
 
 The positivity statement involves three open ingredients:
 
@@ -41,14 +41,14 @@ $$
 
 factors through the positive cone of $A \otimes A^*$. The missing input is exactly this:
 
-> **Axiom (substrate $C^*$-Frobenius positivity).** At the archimedean substrate value $q = q_0 \in \mathbb{R}_{>1}$, the [Frobenius–Hopf aether](#def:frobenius-hopf-substrate) $A$ admits a $C^*$-completion in which the unit map $\eta : \mathbf{1} \to A$ is positive in the categorical sense above. Equivalently, $(A, \mu, \eta, \Delta, \varepsilon)$ is a *positive* Frobenius algebra in the $C^*$-tensor category $\mathbf{C}$ at $q_0$.
+> **Axiom (aether $C^*$-Frobenius positivity).** At the archimedean aether parameter $q = q_0 \in \mathbb{R}_{>1}$, the [Frobenius–Hopf aether](#def:frobenius-hopf-substrate) $A$ admits a $C^*$-completion in which the unit map $\eta : \mathbf{1} \to A$ is positive in the categorical sense above. Equivalently, $(A, \mu, \eta, \Delta, \varepsilon)$ is a *positive* Frobenius algebra in the $C^*$-tensor category $\mathbf{C}$ at $q_0$.
 
-Granting the substrate $C^*$-Frobenius positivity axiom, along with [the chart-swap–Reeb identification](#prop:reeb-u1-chart-swap) and [the archimedean realization functor](#def:archimedean-realization-functor), OS axiom (OS2) holds: $\langle\theta(\phi), \phi\rangle_F \geq 0$ for every state $\phi$ in the positive-time Reeb half.
+Granting the aether $C^*$-Frobenius positivity axiom, along with [the chart-swap–Reeb identification](#prop:reeb-u1-chart-swap) and [the archimedean realization functor](#def:archimedean-realization-functor), OS axiom (OS2) holds: $\langle\theta(\phi), \phi\rangle_F \geq 0$ for every state $\phi$ in the positive-time Reeb half.
 
 The proof sketch involves three steps:
 
 1. **Categorical reflection = Reeb $\mathbb{Z}_2$.** By [the chart-swap–Reeb identification](#prop:reeb-u1-chart-swap), $\theta$ is the antipodal $\mathbb{Z}_2 \subset T_q$ subgroup acting on the contact-affine chart $\mathbb{P}(V)$ via $z \mapsto -z$. On the Frobenius–Hopf aether $A$, the action $\theta_A : A \to A$ factors through the antipode $S$ via the $T_q$-grading: $\theta_A = S \circ (\mathrm{sign}\,\text{of}\,\xi\text{-grading})$.
-2. **Antipode-twisted pairing = state-positive form.** The Frobenius pairing on $A$ factors through the antipode by $\langle a, b \rangle_F = \varepsilon(\mu(a, S(b)))$. Composing with $\theta_A$: $\langle \theta(\phi), \phi \rangle_F = \varepsilon(\mu(\theta(\phi), S(\phi))) = \varepsilon(\mu(S(\phi^*), S(\phi)))$ where $\phi^*$ is the $C^*$-conjugate. By the substrate positivity axiom, this evaluates to a non-negative element of $\mathrm{End}_{\mathbf{C}}(\mathbf{1}) = k$.
+2. **Antipode-twisted pairing = state-positive form.** The Frobenius pairing on $A$ factors through the antipode by $\langle a, b \rangle_F = \varepsilon(\mu(a, S(b)))$. Composing with $\theta_A$: $\langle \theta(\phi), \phi \rangle_F = \varepsilon(\mu(\theta(\phi), S(\phi))) = \varepsilon(\mu(S(\phi^*), S(\phi)))$ where $\phi^*$ is the $C^*$-conjugate. By the aether positivity axiom, this evaluates to a non-negative element of $\mathrm{End}_{\mathbf{C}}(\mathbf{1}) = k$.
 3. **Stability under $\tau_{\mathrm{arch}}$.** $\tau_{\mathrm{arch}}$ sends the categorical $C^*$-norm to the standard $L^2$-norm on $\mathbb{R}^4$ by construction. Positivity is preserved.
 
 The status of OS reflection positivity in the QOU framework is equal to the status of this single $C^*$-Frobenius positivity axiom. The axiom is well-formulated inside unitary fusion categories and unitary $C^*$-Frobenius algebras. Verifying that the Frobenius–Hopf aether $A$ at $q_0 \in \mathbb{R}_{>1}$ satisfies it requires:
@@ -57,6 +57,6 @@ The status of OS reflection positivity in the QOU framework is equal to the stat
 - Verification that one of these candidate norms makes the Frobenius pairing positive in the sense above.
 - Compatibility of the chosen norm with the antipode $S$.
 
-This follow-up programme is formulated as [Wenzl positivity implies substrate positivity](#conj:wenzl-positivity-implies-substrate-positivity). Closing that bridge conjecture makes the substrate axiom derived from Wenzl's classical result, discharging the OS-reflection-positivity-as-axiom assumption.
+This follow-up programme is formulated as [Wenzl positivity implies aether positivity](#conj:wenzl-positivity-implies-substrate-positivity). Closing that bridge conjecture derives the aether positivity axiom from Wenzl's classical result, removing the standalone reflection-positivity hypothesis.
 
 The Wightman-axiom portion of the Yang–Mills millennium statement reduces to the structural positivity of the antipode-twisted Frobenius pairing. The reflection involved is the antipodal $\mathbb{Z}_2$ subgroup of the Reeb $U(1)$, made visible by the [chart-swap–Reeb identification](#prop:reeb-u1-chart-swap). The categorical infrastructure already houses every OS ingredient except this positivity.

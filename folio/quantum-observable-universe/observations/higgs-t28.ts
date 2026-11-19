@@ -6,7 +6,7 @@ export default conjecture({
     "The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors",
   lean: {
     ref: "qou:QOU.HiggsT28.HiggsAsT28",
-    validation: "not_checked",
+    validation: "leanok",
   },
   uses: [
     "def:confined-particle",

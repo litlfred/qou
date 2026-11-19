@@ -5,7 +5,7 @@ The figure-8 knot $4_1$ is the smallest hyperbolic knot
 [`thurston1978`] and serves as the cleanest illustration of the
 dual existence forced by
 [archimedean functor uniqueness proposition](#prop:archimedean-functor-uniqueness):
-*algebraic / motivic in the substrate, transcendental in the
+*algebraic / motivic in the aether, transcendental in the
 laboratory*.
 
 **Embedding in Bring's surface.** The figure-8 knot embeds smoothly
@@ -17,7 +17,7 @@ $4_1 \cong 4_1^{\,\text{mirror}}$ — equivalently, invariance under
 the bar involution $q \mapsto q^{-1}$ — is what selects the
 figure-8 as a *mass* invariant rather than a chirality invariant.
 
-**Pre-archimedean (substrate) representation.**
+**Pre-archimedean (aether) representation.**
 On the algebraic side, $4_1$ has a rigorous motivic
 representation via its Hecke normal form. The
 [algebraic quantum volume](#def:algebraic-quantum-volume) of $4_1$
@@ -36,7 +36,7 @@ braid word above (cf.
 [Markov trace factorization theorem](#thm:markov-trace-factorization)).
 At this level no $\pi$, no $\zeta$-values, no real-analytic
 transcendentals appear: the entire object is a Laurent polynomial
-in $q^{\pm 1/2}$ and lives strictly in the substrate ring $R$.
+in $q^{\pm 1/2}$ and lives strictly in the aether ring $R$.
 
 **Archimedean (laboratory) image.**
 Apply the archimedean realization functor $\tau_{\text{arch}} =
@@ -65,7 +65,7 @@ where $D$ is the Bloch-Wigner dilogarithm and $\mathrm{Cl}_2$ is
 the Clausen function. The transcendence of $\mathrm{Cl}_2(\pi/3)$
 is conjectural in number theory but the *form* of the answer is
 forced by Bloch-Suslin pentagon-uniqueness: any archimedean
-realization of the substrate's pentagon-coherent class must
+realization of the aether's pentagon-coherent class must
 factor through $D$, and the figure-8's three ideal-tetrahedron
 triangulation pins down the specific shape parameter $z = e^{i\pi/3}$.
 
@@ -91,7 +91,7 @@ the $\pi$ in $4_1$'s archimedean image
 $2\,\mathrm{Cl}_2(\pi/3)$ and the $\pi$ in $1/\alpha_{EM}$'s
 correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ share a single
 provenance — the unique archimedean shadow of pentagon-coherent
-substrate data on Bring's surface, factored through the
+aether data on Bring's surface, factored through the
 Bloch-Wigner dilogarithm. The exact algebraic values ${{ qou.computations.q-pinning-50-digit.calibration_inputs.Vol_4_1_str | precision: 6 }}\ldots =
 2\,\mathrm{Cl}_2(\pi/3)$ matches the standard hyperbolic
 2-tetrahedra triangulation [`thurston1978`].

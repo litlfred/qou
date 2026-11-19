@@ -12,7 +12,7 @@ satisfies **all six**. So the axioms admit a model in which every nonzero elemen
 
 > **No lower bound on birthday is derivable from these axioms.** Any statement $\mathrm{birthday}(x) \ge f(x)$ with $f$ unbounded is refuted by the flat model.
 
-Upper bounds are untouched, which is exactly why the bounds actually proved in the appendix survive — they are all upper bounds, and correspondingly weak.
+Upper bounds are untouched, which is why the bounds actually proved in the appendix survive: they are all upper bounds, and correspondingly weak.
 
 ## The gap in one pair of statements
 
@@ -22,15 +22,15 @@ $$
   \mathrm{birthday}\bigl((n : \mathbb{N})\bigr) \;\le\; n .
 $$
 
-Nothing supplies the matching $\ge$, and by the flat model nothing can. So the missing content is not a missing proof but a missing axiom, and it is a single equation:
+Nothing supplies the matching $\ge$, and by the flat model nothing can. So the missing content is a missing axiom rather than a missing proof, and it is a single equation:
 
 $$
   \mathrm{birthday}\bigl((n : \mathbb{N})\bigr) \;=\; n .
 $$
 
-## Why this is a mixin and not a repair of the axioms
+## Modularity via an opt-in axiom
 
-Strengthening the carrier itself would touch every user of it, most of which never mention birthdays at all. Adding the equation as an **opt-in mixin** instead makes the dependency visible in the hypotheses of anything that needs genuine birthday content, and leaves the birthday-free theory — the standard-part and limit-transfer results in particular — exactly where it was. The appendix already uses this pattern elsewhere for the blow-up structure.
+Strengthening the carrier itself would touch every user of it, most of which never mention birthdays at all. Adding the equation as an **opt-in mixin** instead makes the dependency visible in the hypotheses of anything that needs genuine birthday content, and leaves the birthday-free theory (the standard-part and limit-transfer results in particular) where it was. The appendix already uses this pattern elsewhere for the blow-up structure.
 
 Combined with the inequality above, the mixin pins $\mathrm{birthday}(n)$ exactly. It supplies only the missing half.
 
@@ -38,12 +38,10 @@ Combined with the inequality above, the mixin pins $\mathrm{birthday}(n)$ exactl
 
 The flat model fails the mixin at $n = 2$: two is nonzero, so $\mathrm{birthday}_{\flat}(2) = 1 \neq 2$. Since the flat model *does* satisfy all six original axioms, this is a proof that
 
-> the mixin is **not derivable** from them — the six axioms are satisfiable together with the *negation* of the added equation.
+> the mixin is **not derivable** from them: the six axioms are satisfiable together with the *negation* of the added equation.
 
-An earlier form of this claim asserted that adding the matching $\ge$ "would kill the flat model outright". That assertion is now checked rather than asserted.
-
-## ⚠ What is not claimed
+## Scope and uncharacterised models
 
 That the mixin is **sufficient** to characterise Conway's birthday. It rules out *the flat model*; it does not rule out every degenerate model, and whether the strengthened axiom set is categorical is open and untouched here.
 
-Nor does any of this bear on the appendix's standard-part theory, which never mentions birthdays — a point worth keeping separate, because the limit-transfer results are sometimes read as needing the surreal carrier when they need only its birthday-free part.
+Nor does any of this bear on the appendix's standard-part theory, which never mentions birthdays (a point worth keeping separate, because the limit-transfer results are sometimes read as needing the surreal carrier when they need only its birthday-free part).

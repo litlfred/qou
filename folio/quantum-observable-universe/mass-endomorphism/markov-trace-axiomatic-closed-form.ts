@@ -81,6 +81,7 @@ The printed figures were the C column, 15.4 % from D. The stated denominator mat
     witness: [
       "computations/markov/markov-trace-atomic-proton-full.witness.json",
       "computations/markov/markov-trace-axiomatic-proton.witness.json",
+      "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
     ],
     status: "verified",
     // status was "verified" until 2026-08-23 without ever having been checked;

@@ -32,11 +32,11 @@ subtraction, no division, and no appeal to $SU(2)$.
 
 One hypothesis is genuinely needed rather than defensive: $[2]_q \ne 0$. Over an
 ordered field $q\,q^{-1} = 1$ and $q + q^{-1} = 0$ are incompatible, and at the
-substrate parameter $[2]_q \ge 2$; over $\mathbb{C}$, however, $q^{2} = -1$ makes the
+aether parameter $[2]_q \ge 2$; over $\mathbb{C}$, however, $q^{2} = -1$ makes the
 statement false. The recursion is therefore an identity of the *real* tower, and the
 qualification travels with it.
 
-## What it buys
+## Computational reduction from the three-term recurrence
 
 Three facts the framework uses separately are the same fact.
 

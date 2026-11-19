@@ -6,6 +6,10 @@ export default proof({
   authorNotes: [
     {
       kind: "note",
+      body: "Computational provenance: computations/probes/centre_frobenius_pairing_is_diagonal_probe.py.",
+    },
+    {
+      kind: "note",
       date: "2026-08-16",
       body:
         "The in-prose **Gap** note (a grading of the centre by partition depth read off a proposition that stratifies by the curvature rank of words) was dated in the prose; the date moved here per the P4:date-ref voice rule. Analysis: `docs/audits/2026-08-16-three-gb-filtrations-one-name.md`.",

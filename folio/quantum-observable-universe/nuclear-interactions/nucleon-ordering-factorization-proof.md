@@ -39,7 +39,7 @@ level:
 - Descended $\times$ descended = intra-nucleon reductions (cached)
 - Transient = inter-nucleon crossings (simple $2 \times 2$ matrices)
 - Mixed = cross-terms (resolved by the final pass of Algorithm 3
-  in [jet-stratified-reduction](#unital-groebner-bases:prop:jet-stratified-reduction))
+  in [jet-stratified reduction](#unital-groebner-bases:prop:jet-stratified-reduction))
 
 The inter-nucleon crossing matrices follow from the crossing
 conventions:

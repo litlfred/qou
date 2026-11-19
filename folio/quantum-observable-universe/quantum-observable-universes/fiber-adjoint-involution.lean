@@ -97,7 +97,8 @@ class FiberAdjointInvolutionContext (C : Type u) [CategoryTheory.Category.{v} C]
 theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] (fh : FrobeniusHopfData C)
     [ctx : FiberAdjointInvolutionContext C fh] :
-    ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj :=
-  ctx.exists_inv
+    ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj := by
+  obtain ⟨inv, hinv⟩ := ctx.exists_inv
+  exact ⟨inv, hinv⟩
 
 end QOU

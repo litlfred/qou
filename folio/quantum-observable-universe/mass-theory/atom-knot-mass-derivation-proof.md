@@ -7,15 +7,13 @@ the functor.
 
 ### Categorical (pre-Archimedean) leg
 
-By [prop:confinement-sdp](#prop:confinement-sdp), at substrate $q_0$
+By [confinement semidefinite program](#prop:confinement-sdp), at aether $q_0$
 the joint mass-tower SDP admits a solution whose certificate
 includes, per atom $\mathfrak{H}$ of strand count $n_0$, the canonical
 Hecke element $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form.
 The GB-NF carries a length filtration $\ell$ and a jet-order grading
 ($\ell$ from Coxeter length on $S_{n_0}$; jet-order from the temporal
-sequence of reductions; both certificate components verified for
-small cases by the canonical formalism
-and locked in [`gb-filtration-jet-order.witness.json`](../../../computations/gb-filtration-jet-order.witness.json)).
+sequence of reductions; both certificate components are verified explicitly at small strand counts).
 
 **Yekutieli at finite slice** (multiplicative integration on surfaces,
 restricted to finite slicing depth = filtration grade $\leq k$):
@@ -24,25 +22,25 @@ $T_w$ factors as the finite product
 $\rho(\beta) = \prod_{j} \rho(\sigma_{i_j})$. The non-abelian Stokes
 identity at adjacent slices reduces to braid + Hecke quadratic
 relations, which are the only $E_2$-differentials of the GB
-spectral sequence ([prop:gb-spectral-sequence](#prop:gb-spectral-sequence)).
+spectral sequence ([Gröbner–Shirshov filtration spectral sequence](#prop:gb-spectral-sequence)).
 The spectral sequence collapses at $E_2$ for semisimple $H_n(q)$ at
-generic $q$ ([prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse))
+generic $q$ ([$E_1$ spectral-sequence collapse](#prop:spectral-sequence-collapse))
 because no relations beyond braid + Hecke exist; $E_\infty$
 identifications recover Wedderburn
-([prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications)).
+([$E_\infty$-page six-term identifications](#prop:e-infinity-page-identifications)).
 
 Wedderburn for the semisimple algebra $H_n(q)$ over the splitting
 field $\mathbb{Q}(q^{1/2})$ gives
 $H_n(q) \cong \bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q^{1/2}))$
 where $\lambda$ ranges over partitions of $n$ and $d_\lambda$ is the
 dimension of the $S_n$-irreducible $\lambda$
-([prop:wedderburn-trace-identity](#prop:wedderburn-trace-identity)).
+([Markov-trace Wedderburn normalization](#prop:wedderburn-trace-identity)).
 Under this decomposition the Markov trace on $H_n(q)$ takes the
 finite-sum form
 $\mathrm{tr}_M = \sum_\lambda y_\lambda(q) \chi_\lambda$
 where $y_\lambda(q) = s_{\lambda, r}(Q) / Z$ is the Wenzl-bridge
-coefficient ([thm:jones-markov-trace](#thm:jones-markov-trace),
-[prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure))
+coefficient ([Jones–Markov trace existence](#thm:jones-markov-trace),
+[stratum-prefactor linear-system procedure](#prop:alpha-k-derivation-procedure))
 and $\chi_\lambda$ is the $q$-Murnaghan–Nakayama character.
 
 **The categorical mass invariant.** Setting
@@ -60,7 +58,7 @@ irrep $\rho_\lambda$).
 ### Archimedean realization
 
 The Archimedean realization functor
-([def:archimedean-realization-functor](#def:archimedean-realization-functor))
+([archimedean realization functor](#def:archimedean-realization-functor))
 sends $\mathbb{Q}(q) \to \mathbb{R}$ by evaluating at $q_0$ and fixes
 the dimensional bridge so that $m_e \cdot M(\mathfrak{H})|_{q = q_0}$
 has units of MeV:
@@ -109,9 +107,9 @@ place (step 1 of the algorithm). Within the present implementation:
  the explicit $\sigma$-words are direct (electron $\sigma_1^3$ in
  $H_2$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ in $B_3$); steps
  2–6 of the algorithm run end-to-end. $\nu_{\mathrm{SDP}} = 1$ by definition.
-- For `manual-historical` entries (${}^2$H, ${}^{3}$H, ${}^{3}$He) step 1 is pending;
- the post-Archimedean naming (volume from SnapPy) is substituted
- for the categorical Markov trace, justified by the volume
+- For the light nuclei (${}^2$H, ${}^{3}$H, ${}^{3}$He) where step 1 remains pending,
+ the hyperbolic complement volume from ideal triangulations is substituted
+ for the categorical Markov trace via the volume
  conjecture. Re-running step 1 with the joint-tower SDP would
  replace this substitution with a principled derivation.
 - For `recursive-on-⁴He` (${}^{8}$Be–${}^{40}$Ca) the recursion factors through
@@ -120,12 +118,12 @@ place (step 1 of the algorithm). Within the present implementation:
  candidate knot, bypassing step 1 entirely, is excluded: it
  reverse-engineers the knot from the AME target rather than deriving
  it from the categorical pipeline. The principled atlas
- ([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))
+ ([recursive atom-knot atlas](#prop:recursive-atom-knot-atlas))
  admits no such entry.
 
 The collapsing-spectral-sequence framing
-([prop:gb-spectral-sequence](#prop:gb-spectral-sequence),
-[prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse))
+([Gröbner–Shirshov filtration spectral sequence](#prop:gb-spectral-sequence),
+[$E_1$ spectral-sequence collapse](#prop:spectral-sequence-collapse))
 is what allows step 2 (Markov trace) to be a *finite* sum: $E_\infty$-page
 identifications recover Wedderburn after one nontrivial differential,
 so no infinite-page resolution is needed and no asymptotic content

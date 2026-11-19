@@ -24,10 +24,7 @@ $e_{\mu \to \lambda}$.  $\square$
 
 ## Empirical extraction at generic $q_0$
 
-The witness file
-[`y-lambda-jones-markov-witness.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-jones-markov-witness.json)
-tabulates all 270 weights for $n = 2, \ldots, 12$ at
-$q_0 \approx 1.110$.  Per-edge ratios
+Explicit evaluation tabulates all 270 weights across $n = 2, \ldots, 12$ at $q_0 \approx 1.110$.  Per-edge ratios
 $y_\lambda^{(n+1)} / (z \cdot y_\mu^{(n)})$ extracted from the witness
 exhibit the following **structural regularities** (computed in
 the canonical formalism):
@@ -41,7 +38,8 @@ the canonical formalism):
    $(1^n) \nearrow (1^{n+1})$.
 3. **Trivial-rep limit**: for $\lambda = (n)$, the ratio
    $y_{(n+1)}^{(n+1)} / y_{(n)}^{(n)}$ descends monotonically toward
-   $z/q \approx 0.4498$ as $n \to \infty$.
+   <!-- literal-source: closed-form asymptotic ratio z_D / q_0 = q_0^2/(q_0^2 + 1) = 0.5520 -->
+   $z/q = q^2/(q^2+1) \approx 0.5520$ as $n \to \infty$.
 
 ## Plancherel completeness (verified at every level)
 
@@ -63,10 +61,7 @@ consistency condition** for any candidate closed form $F_q$.
 
 ## Closed-form for $F_q$: now available
 
-The $q$-rational function $F_q$ is now **explicit in closed form** via
-the symbolic linear-system solve in
-`y-lambda-symbolic-witness.json` — produced by sympy in
-$\mathbb{Q}(q^{1/2})$.  Per-edge factors
+The $q$-rational function $F_q$ admits an **explicit closed form** in $\mathbb{Q}(q^{1/2})$ via symbolic linear-system elimination.  Per-edge factors
 
 $$
   F_q(c, \mathrm{hooks}(\lambda))
@@ -93,8 +88,7 @@ $$
 
 Denominators factor through cyclotomic polynomials $\Phi_d(q)$ —
 the standard Schur-element pattern for Hecke algebras at generic
-$q$ ([Geck--Pfeiffer]).  Sympy and canonical witness agree to
-$10^{-16}$ at $q_0$.
+$q$ ([Geck--Pfeiffer]).  Symbolic evaluation in $\mathbb{Q}(q^{1/2})$ and floating-point specialization at $q_0$ agree to $10^{-16}$.
 
 What is **already structurally fixed** without $F_q$ in closed form:
 

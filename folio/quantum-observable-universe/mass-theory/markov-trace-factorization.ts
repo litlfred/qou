@@ -31,4 +31,10 @@ export default theorem({
     validation: "not_checked",
   },
   uses: ["prop:generator-volume-decomposition"],
+  computation: {
+    engine: "python",
+    script: "computations/probes/no_within_generator_noncommutativity_probe.py",
+    witness: "computations/probes/no_within_generator_noncommutativity_probe.witness.json",
+    status: "verified",
+  },
 });

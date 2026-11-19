@@ -14,4 +14,4 @@ $$
 
 *which places the two oxygens adjacent (increasing repulsion).*
 
-*The observed $CO_2$ structure is linear with $D_0 \approx 16.56 \;\mathrm{eV}$ (total of both C=O bonds, each $\approx {{ qou.computations.molecular-experimental-refs.data.d0_co2_double_ev | precision: 3 }}\;\text{eV} \;\mathrm{eV}$).*
+*The observed $CO_2$ structure is linear with $D_0 \approx 16.56 \;\mathrm{eV}$ (total of both C=O bonds, each $\approx {{ qou.computations.molecular-experimental-refs.data.d0_co2_double_ev | precision: 3 }}\;\mathrm{eV}$).*

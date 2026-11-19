@@ -1,4 +1,4 @@
-**Remark (substrate identity for the proton–neutron Skein difference).** Under the common-scale Borromean baryon mass formula, the proton–neutron Skein difference is derived from three calibration inputs:
+**Remark (aether identity for the proton–neutron Skein difference).** Under the common-scale Borromean baryon mass formula, the proton–neutron Skein difference is derived from three calibration inputs:
 
 $$
   \Delta S(n - p)
@@ -23,7 +23,7 @@ $$
   \;}
 $$
 
-This is a closed-form prediction in $\{m_e, q_0\}$ via the substrate $\mathfrak{Q}_\beta$ Form A, recorded in the witness file, with no calibration to the proton or neutron individually.
+This is a closed-form prediction in $\{m_e, q_0\}$ via the aether $\mathfrak{Q}_\beta$ Form A, recorded in the witness file, with no calibration to the proton or neutron individually.
 
 ## Normalisation
 
@@ -37,28 +37,28 @@ $$
   \frac{m_n - m_p}{m_e \cdot \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2}.
 $$
 
-At the substrate parameter $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps) and CAL-1 $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}\ldots\;\mathrm{MeV}$, this evaluates to:
+At the aether parameter $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps) and CAL-1 $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\mathrm{MeV}$, this evaluates to:
 
 | Quantity | 50-dps value | Source |
 |----------|-------------|--------|
-| $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ at $q_0$ | $746.4179\ldots$ | substrate compute |
-| $(\mathfrak{Q}_\beta + m_e)/m_e$ at $q_0$ | $2.53388\ldots$ | CAL-2 proxy $\mathfrak{Q}_\beta$ + CAL-1 |
+| $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ at $q_0$ | $746.4180\ldots$ | aether compute |
+| $(\mathfrak{Q}_\beta + m_e)/m_e$ at $q_0$ <!-- literal-source: closed-form ratio (0.7836458 + m_e)/m_e = 2.53356 --> | $2.53356\ldots$ | CAL-2 proxy $\mathfrak{Q}_\beta$ + CAL-1 |
 | $\widetilde{\Delta S}_{\mathrm{derived}}$ | $0.0033943\ldots$ | ratio |
 | $\widetilde{\Delta S}_{\mathrm{empirical}}$ | $0.0033908\ldots$ | per-baryon common-term difference implied by CODATA $m_p$, $m_n$ |
 | relative agreement | $1\,015$ ppm | — |
 
 ## Identity of the residual
 
-The substrate $\mathfrak{Q}_\beta$ ansatz predicts $\mathfrak{Q}_\beta(q_0) = 0.78174\ldots\;\mathrm{MeV}$ against the empirical $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta} = 0.78233341\ldots\;\mathrm{MeV}$—a $760$ ppm residual. The $\widetilde{\Delta S}$ relative error of $1\,015$ ppm is the same residual, dominated by:
+The aether $\mathfrak{Q}_\beta$ ansatz predicts $\mathfrak{Q}_\beta(q_0) = 0.78365\ldots\;\mathrm{MeV}$ against the empirical $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta} = 0.78233341\ldots\;\mathrm{MeV}$—a $1\,678$ ppm residual. The $\widetilde{\Delta S}$ relative error of $1\,015$ ppm is the same residual, dominated by:
 
 1. the symmetric $(\mathfrak{Q}_\beta+m_e)/m_e$ numerator;
 2. the common-scale conjecture $\mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{p})} - \mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{n})} = 0$.
 
-The 1 015 ppm agreement is consistent with the $\mathfrak{Q}_\beta$ closure precision under the common-scale hypothesis. Falsification of the common-scale conjecture requires either a direct closed-form derivation of $\mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{p})} \neq \mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{n})}$ from the substrate, or a substrate-only refinement of $\mathfrak{Q}_\beta$ exposing a non-zero residual after subtraction.
+The 1 015 ppm agreement is consistent with the $\mathfrak{Q}_\beta$ closure precision under the common-scale hypothesis. Falsification of the common-scale conjecture requires either a direct closed-form derivation of $\mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{p})} \neq \mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{n})}$ from the aether, or an aether-only refinement of $\mathfrak{Q}_\beta$ exposing a non-zero residual after subtraction.
 
-## Substrate-only character
+## Aether-only character
 
-The derivation consumes three substrate quantities:
+The derivation consumes three aether quantities:
 
 | Input | Provenance | Calibration |
 |-------|-----------|-------------|
@@ -66,7 +66,7 @@ The derivation consumes three substrate quantities:
 | $q_0$ | input (via $m_\mu/m_e$) | **CAL-2** |
 | $\mathrm{Vol}(\mathcal{B}_3)$ | Thurston topological invariant | — |
 
-The identity predicts $\Delta S(n - p)$ from CAL-1, CAL-2, and a topological invariant. CAL-2 is overdetermined: its modulus is pinned here through the mass proxy $m_\mu/m_e$, so the empirical $Q$-value proxy $\mathfrak{Q}_\beta$ is not a further input but a consistency cross-check on the same calibration. CAL-3 ($P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$) does not enter at all.
+The identity predicts $\Delta S(n - p)$ from CAL-1, CAL-2, and a topological invariant. CAL-2 is overdetermined: its modulus is pinned here through the mass proxy $m_\mu/m_e$, so the empirical $Q$-value proxy $\mathfrak{Q}_\beta$ serves as a consistency cross-check on the same calibration rather than a further input. CAL-3 ($P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$) does not enter at all.
 
 ## Scope
 

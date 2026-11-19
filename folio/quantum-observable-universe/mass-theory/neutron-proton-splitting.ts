@@ -7,11 +7,16 @@ export default proposition({
   label: "prop:neutron-proton-splitting",
   authorNotes: [
     {
+      kind: "note",
+      body: "Computational witnesses: computations/m-p-substrate-identity-50dps.witness.json, two-term-qed-isotope-and-nucleon-compute.witness.json, qbeta/qbeta-wedderburn-phase-twoterm-pin.witness.json.",
+    },
+    {
       kind: "status",
       date: "2026-11-15",
       body:
         "**CODATA comparison moved out of Lean (owner decision, bean " +
         "`neutron_proton_splitting`).** The Lean theorem now states only the " +
+        /* <!-- literal-source: historical rounded 4-digit convention-C product 3.7449 * 0.3476 = 1.30172724 --> */
         "model value `α·|Φ(udd) − Φ(uud)| = 3.7449·0.3476 = 1.30172724`; the " +
         "CODATA-tolerance conjunct and `codataNeutronProtonSplittingMeV` are " +
         "removed. The comparison (+0.65 % vs CODATA 2022 1.29333378 MeV; the " +
@@ -52,6 +57,18 @@ export default proposition({
     },
   ],
   lean: { ref: "qou:QOU.Torsion.neutron_proton_splitting", validation: "not_checked" },
+  computation: {
+    engine: "mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/codata-2022-validation-masses.witness.json",
+      "computations/m-p-substrate-identity-50dps.witness.json",
+      "computations/two-term-qed-isotope-and-nucleon-compute.witness.json",
+      "computations/markov-free-energy-qvalues.witness.json",
+      "computations/catalan-binding.witness.json",
+    ],
+    status: "verified",
+  },
   title: "Neutron--proton mass splitting",
   uses: ["thm:wedderburn-mass-formula"],
 });

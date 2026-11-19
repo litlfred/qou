@@ -59,4 +59,18 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["thm:wedderburn-mass-formula"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/borromean_binding_recompute.py",
+    witness: [
+      "computations/borromean-binding-recompute.witness.json",
+      "computations/probes/gpmt-sign-block-qbeta-and-np-splitting.witness.json",
+      "computations/m-p-substrate-identity-50dps.witness.json",
+      "computations/markov-free-energy-qvalues.witness.json",
+      "computations/catalan-binding.witness.json",
+      "computations/level1-qvalues.witness.json",
+      "computations/sigma-f-electron-shell-chain.witness.json",
+    ],
+    status: "verified",
+  },
 });

@@ -1,7 +1,7 @@
 | ID | Canonical observable | canonical proxy | What it fixes | DOF of $H^1 = 2W$ |
 |----|-----------|-------------|--------------|-------------------|
 | **CAL-1** | $m_\mathfrak{e}$ (leptonic mass scale, order $h^0$) | electron mass (Penning trap) | the dimensional unit | $W$-plane scale |
-| **CAL-2** | $P_{\mathrm{skew}}^{\beta}$ (neutron $\beta$-sector bar-skew channel, order $h^2$) | $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | substrate $q_0$ | $W$-plane modulus |
+| **CAL-2** | $P_{\mathrm{skew}}^{\beta}$ (neutron $\beta$-sector bar-skew channel, order $h^2$) | $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | aether $q_0$ | $W$-plane modulus |
 | **CAL-3** | $P_{\mathrm{avg}}^{\pi}$ (pion-sector bar-even channel, order $h^3$) | charged-pion mass $m_\pi$ (PDG); independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | meson scale | orthogonal class |
 
 All three are the three real degrees of freedom of the single $H^1 = 2W$
@@ -69,7 +69,7 @@ The framework forbids:
   $\{2, 8, 20, 28, 50, 82, 126\}$ asserted as data; they must be
   derived from Bring's surface period structure or the BB / LR
   homological framework).
-- *A second pinning of $q_0$*. The substrate uncertainty floor
+- *A second pinning of $q_0$*. The aether uncertainty floor
   $\delta q_0$ propagated from CODATA $m_\mu/m_e$ is a CAL-2 cross-check;
   it may not be supplemented by independent fits to $m_e$, $m_\mu$,
   $m_\tau$, or any other mass.
@@ -78,7 +78,7 @@ The framework forbids:
   and $\mathfrak{Q}_\beta(n)$ is the CAL-2 proxy — neither is an
   independent fourth input. Proton mass, neutron mass,
   and all nuclear binding energies must be derived from
-  $\{m_e, q_0, m_{\pi^{\pm}}\}$, not introduced as inputs.
+  $\{m_e, q_0, m_{\pi^{\pm}}\}$ rather than introduced as inputs.
 
 ## (Co)homological alignment
 
@@ -103,7 +103,7 @@ characters of $H_3(R, q)$, which are the three cohomology classes
 that survive the on-shell / gauge-invariance quotient. The
 framework is rigid in this sense: increasing or decreasing the
 number of calibrations would require deforming the categorical
-substrate to a different on-shell quotient, which would no longer
+aether to a different on-shell quotient, which would no longer
 satisfy the QOU axioms.
 
 ## Comparison with the Standard Model
@@ -113,9 +113,9 @@ masses, 3 CKM angles + 1 phase, 3 gauge couplings, Higgs mass, Higgs
 VEV, QCD theta angle). The QOU framework replaces all 19 with these
 **3** ([calibration inputs context](#rem:calibration-inputs)):
 
-- particle content is topological (from $\chi(A) = -6$), not chosen;
+- particle content is topological (from $\chi(A) = -6$) rather than chosen;
 - mass ratios are knot invariants (from algebraic quantum volume and
-  $\mathrm{tr}_M$), not free;
+  $\mathrm{tr}_M$) rather than free parameters;
 - coupling constants are $R$-matrix eigenvalues (from $q_0$);
 - mixing angles are Clebsch-Gordan coefficients of the knot eigenbasis
   decomposition.

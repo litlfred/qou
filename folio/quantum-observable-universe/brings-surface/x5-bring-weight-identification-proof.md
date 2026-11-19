@@ -7,7 +7,7 @@ eigenvalue $\zeta_5^{-1}$.
 
 Eigenvalue on Bring: the cyclic permutation $\sigma(x_j) = x_{j+1}$
 diagonalises on the Lagrange resolvents as $\sigma(w_k) = \zeta_5^{-k} w_k$
-([prop:lagrange-resolvent-transform](#prop:lagrange-resolvent-transform));
+([discrete Fourier transform diagonalises $C_5$ on the Bring's surface](#prop:lagrange-resolvent-transform));
 specialising to $k = 1$ gives $\sigma(w_1) = \zeta_5^{-1} w_1$.
 
 Both $x$ and $w_1$ span their respective weight-$(-1)$ eigenspaces

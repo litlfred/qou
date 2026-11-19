@@ -30,5 +30,16 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:atomic-q-reeb-universal-rho",
   title: "Universal-ρ normalisation on the atomic q-Reeb object (Lever 3)",
+  lean: {
+    ref: "qou:QOU.MassTheory.AtomicQReebUniversalRho.lever3_mirror_ratio_rho_independent",
+    sorryFree: true,
+    validation: "leanok",
+  },
   tags: ["mass-theory", "q-reeb", "binding", "lever-3"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/binding_reeb_ratio_rho_free.py",
+    witness: "computations/binding-reeb-ratio-rho-free.witness.json",
+    status: "verified",
+  },
 });

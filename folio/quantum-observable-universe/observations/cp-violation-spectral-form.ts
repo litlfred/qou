@@ -21,4 +21,10 @@ export default conjecture({
     "complex-substrate",
     "ckm-phase",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

@@ -46,8 +46,7 @@ giving the boxed sum identity. $\square$
 
 ### canonical structural verification at 50 dps
 
-the canonical formalism,
-[witness](https://github.com/litlfred/qou/blob/main/computations/cl3-zeta5-orbit-sum.witness.json):
+Numerical evaluation at 50 decimal places:
 
 | Quantity | Value (50 dps) |
 |---|---|

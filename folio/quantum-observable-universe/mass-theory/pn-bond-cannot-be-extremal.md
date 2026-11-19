@@ -25,7 +25,7 @@ $$
   \qquad\text{for every } q > 0 \text{ and every } \delta \in (0,2).
 $$
 
-## Why it matters at $A = 2$
+## Deuteron stability consequence at $A = 2$
 
 At two nucleons there is one bond, one word, and no ordering or arrangement
 convention to choose, so nothing mediates between the bond constants and the
@@ -71,7 +71,7 @@ The ordering result above constrains $L$, which is a free-energy difference;
 whether $B = \alpha L$ is a binding energy at all is the separate open claim in
 [the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
 
-## What would have to change
+## Necessary conditions to evade the extremality bound
 
 One of these, none of them settled here: the $pn$ interface stops being an
 average over crossing sign, so that its letter falls outside the segment
@@ -81,7 +81,6 @@ the framework declares the bond constant channel-averaged and says explicitly
 what it averages over, since at $A = 2$ the $^1S_0$ / $^3S_1$ split is the
 entire content.
 
-## What is proved vs. empirical input
+## Proved convexity versus empirical bond ordering
 
-The algebraic chain-trace factorisation establishes the convex-combination identity, the strict betweenness of the offsets for $0 < \delta < 2$, its transport through the affine trace, and the strict ordering $L_{pp} < L_{pn} < L_{nn}$. That only the $pn$ pair forms a bound state is an empirical input rather than an algebraic theorem. The measurement, the $\delta$ bound and the Wigner reading are
-`the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py`.
+The algebraic chain-trace factorisation establishes the convex-combination identity, the strict betweenness of the offsets for $0 < \delta < 2$, its transport through the affine trace, and the strict ordering $L_{pp} < L_{pn} < L_{nn}$. That only the $pn$ pair forms a bound state is an empirical input rather than an algebraic theorem.

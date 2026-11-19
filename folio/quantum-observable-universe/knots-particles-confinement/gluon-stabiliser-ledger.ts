@@ -43,6 +43,7 @@ export default remark({
       body:
         "Evidence for the `e⁻` claim. Re-running the retired producer's " +
         "enumeration in its own convention reproduces its witness exactly " +
+        /* <!-- literal-source: scratch re-run of retired producer in retired z^3 convention (no witness minted, noted below) --> */
         "(proton 40 survivors, optimum `σ₀→σ₀` at |tr_M| = 0.0274; neutron " +
         "26 survivors, optimum `L₊→L₋` at 0.1120), and `e⁻` appears among " +
         "the survivors of both — as `σ₀→L₋` (proton, rank 35/40, |tr_M| = " +
@@ -92,6 +93,7 @@ export default remark({
         "**(1) above is settled, and it goes the way the caveat feared** " +
         "(bean `qou-jqjx`, closed). Rebuilt on the retired script's own typed " +
         "nucleon so only the convention varies, and reproduced the corpus's " +
+        /* <!-- literal-source: scratch reproduction of retired z^3 weight values (-0.005936 / -0.132224) in qou-jqjx audit --> */
         "numbers exactly on the retired weight (`-0.005936` / `-0.132224` " +
         "against the quoted `-0.006` / `-0.132`). On live convention D — " +
         "`z = q^3/(q^2+1)` and `tr_M(e-) = h*z^2 + z`, which `pyhecke.gram` " +
@@ -149,4 +151,15 @@ export default remark({
       see: "docs/audits/2026-09-04-delta-net-canon-and-crossing-count-analysis.md",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/universal-ilp.py",
+    witness: [
+      "computations/universal-ilp.witness.json",
+      "computations/qbeta/qbeta-delta-net-four-values.witness.json",
+      "computations/qbeta/integer-lp-gluon-convention-d.witness.json",
+      "computations/atomic-chirality-residue.witness.json",
+    ],
+    status: "verified",
+  },
 });

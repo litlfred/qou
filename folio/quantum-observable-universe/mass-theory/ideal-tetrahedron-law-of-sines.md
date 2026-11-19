@@ -19,7 +19,7 @@ $$
 
 The name is apt: the modulus of the shape is a ratio of sines of the opposite angles, exactly as a side of a Euclidean triangle is.
 
-## Why this particular lemma is the one worth isolating
+## Isolating the metric edge-ratio identity
 
 Kummer's identity relates the Bloch–Wigner dilogarithm to a sum of Lobachevsky values. Proved on the unit circle $\lVert z \rVert = 1$, extending it to general $z$ appears to need a genuine two-variable argument, matching
 

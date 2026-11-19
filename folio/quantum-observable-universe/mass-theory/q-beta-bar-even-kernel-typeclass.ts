@@ -53,4 +53,13 @@ export default proposition({
         "`u_substrate` literal.)",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/qbeta/qbeta_radius_of_convergence_gate_probe.py",
+    witness: [
+      "computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json",
+      "computations/probe-q6j-jm-spectral-delta-lambda.witness.json",
+    ],
+    status: "verified",
+  },
 });

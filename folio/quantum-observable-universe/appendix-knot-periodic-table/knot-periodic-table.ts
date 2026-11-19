@@ -27,9 +27,9 @@ export default prose({
     "boson",
   ],
   computation: {
-    engine: "python",
-    script: "computations/codata_masses.py",
-    witness: "computations/codata-masses.witness.json",
+    engine: "mpmath",
+    script: "computations/probes/nuclear_wave3_periodic_table_synthesis_probe.py",
+    witness: "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
     status: "verified",
   },
 });

@@ -8,7 +8,7 @@ regimes**:
 | Hyperbolic | $\mathfrak{B} = \mathfrak{m}_e \cdot \rho_0 \cdot \alpha_{\mathrm{shift}}(T(p, k))$ | per-rep Reeb phase at force-carrier torus knot $T(p, k)$ |
 | Doubly-magic | $\mathfrak{B} = \rho_F \cdot \mathfrak{m}_e \cdot A \cdot 8G$ | Borromean residue prefactor $\times$ nucleon count, no per-knot evaluation |
 
-The dispatch is determined by the substrate:
+The dispatch is determined by the aether:
 [diagrammatic-double-magic-lr-fusion conjecture](../observations/diagrammatic-double-magic-lr-fusion.md)
 proves that at a doubly-magic level $A = Z + N$ with both $Z, N \in
 \mathfrak{M}$, the Littlewood–Richardson fusion of the $Z$-block and
@@ -19,7 +19,7 @@ $\alpha_{\mathrm{shift}}$ vanishes (no hyperbolic knot), and the
 binding is set by the universal Borromean residue $8G$ scaled by
 nucleon count.
 
-[strutinsky-from-graded-trace remark](../observations/strutinsky-from-graded-trace.md)
+[Strutinsky residue-sum remark](../observations/strutinsky-from-graded-trace.md)
 makes the regime split forced by the filtered-algebra structure: the
 decomposition
 
@@ -31,12 +31,12 @@ identifies the Strutinsky shell correction $\delta E_{\mathrm{shell}}$
 with the Gröbner–Shirshov residue sum, and *"Magic-number enhancements
 arise algebraically when $\lambda$ reaches a rectangular shape and
 $H_q(\lambda)$ factorises"*
-([shell-schur-weyl-self-duality proposition](../knots-particles-confinement/shell-schur-weyl-self-duality.md)).
+([Schur–Weyl shell self-duality](../knots-particles-confinement/shell-schur-weyl-self-duality.md)).
 The doubly-magic case is exactly this rectangular-spike limit.
 
 ## $\rho_F$ for $^4_2\mathrm{He}$
 
-The substrate-determined prefactor for $^4_2\mathrm{He}$ is
+The aether-determined prefactor for $^4_2\mathrm{He}$ is
 $\rho_F = 2$, sourced from the canonical
 the canonical formalism
 entry `2·m_e·4·Vol(L6a4)`. The categorical derivation of the integer
@@ -48,7 +48,4 @@ hypothesis on the
 
 the canonical formalism
 emits a comparison witness showing the alpha-shift vs.
-magic-A predictions side-by-side for $A \in \{2, 3, 4\}$. The
-output JSON
-[`binding-alpha-shift-witness.witness.json`](../../../computations/binding-alpha-shift-witness.witness.json)
-quantifies the 80$\times$ gap closure for $^4_2\mathrm{He}$.
+magic-A predictions side-by-side for $A \in \{2, 3, 4\}$. This side-by-side comparison quantifies the $80\times$ residual reduction at $^4_2\mathrm{He}$.

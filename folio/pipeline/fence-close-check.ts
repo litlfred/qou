@@ -19,7 +19,8 @@
  *
  * @module content/pipeline/fence-close-check
  */
-import { readFileSync, globSync } from "node:fs";
+import { readFileSync, globSync, existsSync, statSync } from "node:fs";
+import { resolve } from "node:path";
 
 export interface Problem {
   file: string;
@@ -57,7 +58,16 @@ export function check(files: string[]): Problem[] {
 
 if (import.meta.main) {
   const args = process.argv.slice(2);
-  const files = args.length ? args : globSync("content/**/*.md");
+  const defaultPattern = existsSync("folio")
+    ? "folio/**/*.md"
+    : `${resolve(import.meta.dir, "..")}/**/*.md`;
+  const files = args.length
+    ? args.flatMap((a) =>
+        existsSync(a) && statSync(a).isDirectory()
+          ? globSync(`${a.replace(/\/+$/, "")}/**/*.md`)
+          : [a],
+      )
+    : globSync(defaultPattern);
   const problems = check(files);
   if (!problems.length) {
     console.log(`no unclosed fenced blocks in ${files.length} files`);

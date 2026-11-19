@@ -26,7 +26,7 @@ distinct archimedean evaluations, which do not coincide:
 
 | Face | Evaluation | Trace field | Resurgent action |
 |------|-----------|-------------|------------------|
-| Geometric / state-integral | Faddeev $\Phi_b$ at the substrate $b$ (root-of-unity / Kashaev) | $\mathbb{Q}(\sqrt{-3})$ | $\mathrm{Vol}(4_1)/\pi \approx 0.646$ |
+| Geometric / state-integral | Faddeev $\Phi_b$ at the modular-double parameter $b$ (root-of-unity / Kashaev) | $\mathbb{Q}(\sqrt{-3})$ | $\mathrm{Vol}(4_1)/\pi \approx 0.646$ |
 | Archimedean $\rho_\infty$ | real-$q$ Habiro tail $S(q)$ | $\mathbb{Q}(\sqrt5)$ | $\pi^{2}/5 \approx 1.974$ |
 
 The classical dilogarithm $\mathrm{Li}_2$ is the semiclassical ($b\to 0$) leading
@@ -35,14 +35,14 @@ $e^{i\pi/3}$ (giving $\mathrm{Vol}$, in $\mathbb{Q}(\sqrt{-3})$) versus the gold
 ratio $\varphi^{-2}$ (giving $\pi^{2}/5$, in $\mathbb{Q}(\sqrt5)$). That the two
 faces carry different actions in different number fields is the $\hbar
 \leftrightarrow 2\pi i/N$ resummation wall made exact: the state-integral and
-real-$q$ Habiro evaluations are related by resummation, not by term-by-term
+real-$q$ Habiro evaluations are related by resummation rather than by term-by-term
 reparametrisation.
 
 **Scope.** This is a rigorous statement about the archimedean $\rho_\infty$
 (real-$q$) face. Because $S$ is bar-even, the $4_1$ Habiro tail carries no
 bar-odd datum, consistent with $4_1$ amphichirality; the bar-odd (chiral)
 resurgence relevant to the $Q_\beta$ odd channel must come from a chiral knot
-such as $5_2$. Whether the real-$q$ face — as opposed to the geometric
-state-integral face — is the physically relevant $\rho_\infty$ evaluation for the
-$Q_\beta$ observable is an open question; this proposition asserts only the
-mathematical identity, not a physical identification.
+such as $5_2$. Whether the real-$q$ face (as opposed to the geometric
+state-integral face) is the observable $\rho_\infty$ evaluation for the
+$Q_\beta$ channel is an open question; this proposition asserts only the
+mathematical identity rather than an observable identification.

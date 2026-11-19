@@ -1,4 +1,4 @@
-**Proposition (conditional on [crystal-graph-realization conjecture](#conj:crystal-graph-realization) — transfer-matrix level independence).**
+**Proposition (conditional on [crystal highest-weight realization conjecture](#conj:crystal-graph-realization) — transfer-matrix level independence).**
 Let $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ be a hadron
 with composite knot $K_{\mathfrak{H}} = \hat{\beta}_{\mathfrak{H}}$.  Let $\mathcal{T}(\mathfrak{H}_p)$
 be the categorical transfer matrix

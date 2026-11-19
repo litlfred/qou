@@ -1,29 +1,6 @@
-## Provenance of the atlas entries
+Every entry of the [recursive atom-knot atlas](#prop:recursive-atom-knot-atlas) factors through four deterministic algebraic stages, separating the pre-archimedean Hecke combinatorics over $\mathbb{Z}[q, q^{-1}]$ from the archimedean specialization at $q_0$:
 
-Every entry is computed from a single reproducible chain of sources, so the
-table never drifts from the witnesses it summarizes. The atlas
-is auto-rendered by
-[`recursive_atom_knot_atlas_render.py`](../../../computations/recursive_atom_knot_atlas_render.py).
-
-**Sources of truth** (in order):
-
-1. [`confined-particle.md`](#def:confined-particle) — GB-NF particle registry (canonical $T_w$).
-2. [`mass-table-ppb.witness.json`](../../../computations/mass-table-ppb.witness.json) — D..${}^{40}$Ca (manual-historical, recursive, magic-A).
-3. [`methodology-deprecation.witness.json`](../../../computations/methodology-deprecation.witness.json) — per-particle methodology record.
-4. [`hp_volume.py`](../../../computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
-5. [`y_lambda_wenzl_bridge_extended.py`](../../../computations/y_lambda_wenzl_bridge_extended.py) — symbolic-$q$ Wenzl bridge for $y_\lambda$.
-
-These compose in that order: the particle registry fixes the canonical $T_w$,
-the mass-table witness supplies the tabulated masses, the methodology record
-tags each particle's derivation method, `hp_volume.py` supplies
-$\mathrm{Vol}_{\mathrm{hyp}}$, and the Wenzl bridge supplies $y_\lambda$.
-
-For `principled-derivation` entries (electron, proton, neutron) the
-hyperbolic volume of the Markov closure is computed from the
-$\sigma$-braid word at $\geq 50$ decimal digits via
-`hp_volume_of_link_closure(braid_word, digits=50)` which calls
-SnapPy's `Link(braid_closure=...).exterior.high_precision`
-inside `mpmath.workdps(50)`. When any input changes,
-[`witness_staleness_tracker.py`](../../../computations/witness_staleness_tracker.py)
-marks the affected entries stale and the atlas is recomputed from the sources
-above; no entry is maintained by hand.
+1. **Canonical Hecke normal form**: The [confined-particle registry](#def:confined-particle) assigns to each elementary constituent ($\nu, \gamma, e^-, \mathfrak{p}, \mathfrak{n}$) and each composite $A$-nucleon system a normal-form operator $T_w \in H_{3A}(q)$ built from intra-nucleon Borromean blocks $(\sigma_{3k+1}\sigma_{3k+2}^{-1})^3$ and inter-nucleon crossing interfaces.
+2. **Modified-trace cumulant extraction**: Because the standard Convention-D Markov trace vanishes on all Young diagrams with $\ell(\lambda) \geq 3$, three- and four-body nuclear correlations are extracted via Wenzl idempotent recursion and Geer--Patureau-Mirand--Turaev modified-trace weights $d_\lambda$ on $H_4(q)$, fixing the dimensionless two-, three-, and four-body cumulants $\bigl(\ln(1/z_D), \mu_3, \mu_4^{(H_4)}\bigr)$ as rational and $q$-logarithmic functions of $q$.
+3. **Simplicial and spectroscopic projection**: On $A \geq 4$ nuclei, the three-dimensional close-packed nuclear shell ball supplies exact integer face counts $\bigl(f_1^{\mathrm{shell}}(A), f_2^{\mathrm{shell}}(A), f_3^{\mathrm{shell}}(A)\bigr)$, while spectroscopic filling of $(nl_j)$ spin--orbit subshells and Temperley--Lieb seniority $(v \in \{0, 1, 2\})$ determine the exact integer quantum numbers entering Pauli promotion, spin--orbit splitting, and pairing.
+4. **Archimedean specialization at $q_0$**: Specializing $q \mapsto q_0$ (or $q_{2\mathrm{t}}$), solving the Form-B Bring--Schwinger cubic for $\alpha_{\mathrm{EM}}(q_0)$, and scaling by $m_e$ produces $B_{\mathrm{QOU}}(Z, N)$ and $M_{\mathrm{QOU}}(Z, N)$ without empirical nuclear fit parameters.

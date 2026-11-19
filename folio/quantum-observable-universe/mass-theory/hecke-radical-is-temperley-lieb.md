@@ -26,7 +26,7 @@ $n = 4$ the bookkeeping closes exactly: $24 - 14 = 10 = 3^{2} + 1^{2}$, the disc
 $(2,1,1)$ and $(1^{4})$ blocks, so the quotient is the direct sum of the three
 surviving matrix algebras and not a proper quotient of it.
 
-## Why the quotient is not an amputation
+## Preservation of observable channels under the Temperley–Lieb quotient
 
 The metric obstruction below asks for a quotient by the radical, and taken on its own
 that reads as an ad hoc repair. It is not. The radical is the Temperley--Lieb ideal,
@@ -38,27 +38,25 @@ Stated the other way: the degeneracy is not a defect convention D introduces, it
 what convention D means. Under convention C the framework computes in the full Hecke
 algebra; under convention D it has been computing in Temperley--Lieb throughout.
 
-## What is measured and what is proved
+## Proved algebraic identities versus numerical checks
 
 The dimension count above is an exact algebraic theorem at every $n$, first
 identified by numerical measurement. The
 weights were evaluated for every partition of $n = 2,\dots,7$ at $50$ decimal places,
 with worst residual $1.34 \times 10^{-51}$ against the closed form
-$y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$. That run is now recorded, and
-strengthened, in `tl-two-row-weight-family.witness.json`: rather than a residual
-at one $q$, the normalisation is checked as an **exact identity in $q$**,
+$y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$. Strengthening this numerical check, the normalisation holds as an **exact rational identity in $q$**,
 
 $$
   \sum_{k} f^{(n-k,k)}\,[n-2k+1]_q \;=\; [2]_q^{\,n},
 $$
 
-which `sympy` simplifies to exactly $0$ for $n = 2,\dots,10$ — so the closed
+which simplifies algebraically to $0$ in $\mathbb{Q}(q)$ for $n = 2,\dots,10$ — so the closed
 form is a normalised weight family for *every* $q$ at once, which no
 finite-precision evaluation can establish. The Specht dimensions are cross-checked
 by two independent routes (ballot and hook-length), and the table above is
 reproduced rather than cited.
 
-**What holds algebraically at general $n$.** Four statements,
+**Algebraic identities at general $n$.** Four statements,
 none of which is the isomorphism itself:
 
 - $\sum_\lambda \dim_\lambda\, y_\lambda = 1$ --- the normalisation
@@ -69,7 +67,7 @@ none of which is the isomorphism itself:
   separately, over the two-**column** shapes;
 - $\dim \lambda = \dim \lambda'$ **for this family**.
 
-**What remains cited rather than derived here: the algebra isomorphism itself.** A
+**External literature input: the Temperley–Lieb algebra isomorphism.** A
 count of blocks and a count of dimensions are not an isomorphism of algebras $H_n(q)/\mathrm{rad} \cong TL_n(q)$. The
 identification remains what this section calls it: something the counts support,
 deliberately not a proposition. What *is* established directly is the trace-theoretic half:
@@ -90,9 +88,7 @@ carrying **equal dimension sums**. At
 $n = 3$ the row-set is $\{(3),(2,1)\}$ and the column-set is
 $\{(2,1),(1^3)\}$ — disjoint but for $(2,1)$, both summing to $5$; at $n = 6$ the
 two sets share *nothing at all* and both still total $C_6 = 132$. So the
-Catalan counts agree under either reading, and a check that looks only at
-dimensions cannot tell the two apart. Measured at $n = 3,4,5$ in
-`tl-two-row-weight-family.witness.json`.
+Catalan counts agree under either reading, and a check that looks only at dimensions cannot tell the two apart, as verified explicitly at $n = 3, 4, 5$.
 
 Both halves of that distinction hold at every $n$:
 transposition is an explicit bijection between the two families,

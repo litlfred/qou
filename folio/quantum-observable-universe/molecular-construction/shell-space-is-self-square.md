@@ -11,9 +11,9 @@ The spin labelling is the one used in the [normal-bundle orbital-space conjectur
 
 This is the one step of the $2n^2$ shell-capacity account that is not derived. Everything downstream of it is exact.
 
-**What the conjecture is not.** It is not a claim that a second symmetry group acts. The $(j,j)$ doubling that the hydrogenic shell classically receives from $\mathrm{SO}(4) = \mathrm{SU}(2)\times\mathrm{SU}(2)$ and its Runge–Lenz vector is here internal to a single object. The compact ($\cos/\sin$, root of unity) and non-compact ($\cosh/\sinh$, real $q$) pictures are the two real forms of one $\mathfrak{sl}(2,\mathbb{C})$, so no second compact $\mathrm{SU}(2)$ is required or postulated.
+**Excluded symmetry-doubling reading.** It is not a claim that a second symmetry group acts. The $(j,j)$ doubling that the hydrogenic shell classically receives from $\mathrm{SO}(4) = \mathrm{SU}(2)\times\mathrm{SU}(2)$ and its Runge–Lenz vector is here internal to a single object. The compact ($\cos/\sin$, root of unity) and non-compact ($\cosh/\sinh$, real $q$) pictures are the two real forms of one $\mathfrak{sl}(2,\mathbb{C})$, so no second compact $\mathrm{SU}(2)$ is required or postulated.
 
-**What follows exactly.** Given the identification, the $q$-Clebsch–Gordan rule decomposes the self-square into the sub-shells,
+**Exact Clebsch–Gordan sub-shell decomposition.** Given the identification, the $q$-Clebsch–Gordan rule decomposes the self-square into the sub-shells,
 
 $$
   V_{j_n} \otimes V_{j_n} \;\cong\; \bigoplus_{\ell=0}^{n-1} V_\ell ,

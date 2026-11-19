@@ -24,4 +24,10 @@ export default proposition({
     "ex:nitrogen-14-threading",
     "ex:terminal-resolution-cz",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

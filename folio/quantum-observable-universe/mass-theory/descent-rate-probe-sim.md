@@ -1,1 +1,1 @@
-
+Interactive probe of the Yekutieli brane-tower decay $\hbar_q^{2k} = (1 - q^{-1})^{2k}$, the geometric truncation tail $R_k(q) = \sum_{m > k} \hbar_q^{2m}$, and the uniform Jucys--Murphy cell-pair weight $\beta(d) = 1$ across levels $k = 0, \ldots, 12$ ([SYT / Jucys--Murphy reindexing of the mass tower pair set](#rem:mass-tower-syt-cells)). Controls vary the aether parameter $q \in [1.01, 1.50]$ (with preset $q_0 = 1.1099786$), maximum jet depth $k_{\max}$, and baryon or light-nucleus target state across logarithmic and linear vertical scales.

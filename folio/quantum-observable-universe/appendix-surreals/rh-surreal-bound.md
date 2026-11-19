@@ -22,8 +22,8 @@ $$
 
 By [surreal squeeze](#lem:surreal-squeeze), $\delta^2 \cdot \varepsilon^{-1} > \varepsilon^3$ in $\mathbb{R}(\varepsilon)$ whenever $\delta > 0$ is a standard real. Equivalently, $\ordw\bigl(E(\delta)\bigr) = 1 > -3 = \ordw(\Delta_q)$ in the $\omega$-adic order of [Big-O via $\ordw$](#rem:conway-normal-form): the cost sits at strictly higher $\omega$-order than the budget.
 
-No configuration of the QOU substrate can sustain a standard-real drift $\delta > 0$. The only value of $\delta$ with $E(\delta) \leq \Delta_q$ in the ordered field is $\delta = 0$, i.e., $\mathrm{Re}(\rho) = 1/2$. This realizes, at the level of surreal arithmetic, the equivalence [macroscopic stability $\Leftrightarrow$ RH](#conj:macroscopic-stability-equivalence).
+No configuration of the QOU aether can sustain a standard-real drift $\delta > 0$. The only value of $\delta$ with $E(\delta) \leq \Delta_q$ in the ordered field is $\delta = 0$, i.e., $\mathrm{Re}(\rho) = 1/2$. This realizes, at the level of surreal arithmetic, the equivalence [macroscopic stability $\Leftrightarrow$ RH](#conj:macroscopic-stability-equivalence).
 
-The informal bound "as $q \to 1^+$, the energy cost $O(\delta^2 (q-1)^{-1})$ exceeds the closing mass gap $O((q-1)^3)$" becomes a single inequality $\delta^2 \cdot \varepsilon^{-1} > \varepsilon^3$ inside the ordered field $\mathbb{R}(\varepsilon) \subset \mathbf{No}$. No limit is taken; the argument is algebraic, not analytic.
+The informal bound "as $q \to 1^+$, the energy cost $O(\delta^2 (q-1)^{-1})$ exceeds the closing mass gap $O((q-1)^3)$" becomes a single inequality $\delta^2 \cdot \varepsilon^{-1} > \varepsilon^3$ inside the ordered field $\mathbb{R}(\varepsilon) \subset \mathbf{No}$. No limit is taken; the argument is algebraic rather than analytic.
 
 The phrase "almost everywhere on the critical line" in classical partial-RH results corresponds to the standard part $\mathrm{st}(\delta) = 0$ of a surreal-valued drift—a genuine, not asymptotic, vanishing. This bound upgrades this to $\delta = 0$ on the nose for any standard real $\delta > 0$, using only the ordering of $\mathbb{R}(\varepsilon)$.

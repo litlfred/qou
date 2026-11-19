@@ -5,16 +5,16 @@ $$
   \forall\, q \in \Omega_\alpha(P),
 $$
 
-*where $\Omega_\alpha(P)$ is a fixed connected component of the confinement locus $\Omega(P)$ — a single confinement phase.*
+*where $\Omega_\alpha(P)$ is a fixed connected component of the confinement locus $\Omega(P)$, that is, a single confinement phase.*
 
 **Phase-scoped theorems (these hold only within a single $\Omega_\alpha$):**
 
-- *Level sufficiency — preservation of Markov trace under unfolding.*
-- *Shell-closure stability — monotonicity of $\sigma_F$ along the dressing chain and local maxima at noble-gas $Z$.*
+- *Level sufficiency: preservation of Markov trace under unfolding.*
+- *Shell-closure stability: monotonicity of $\sigma_F$ along the dressing chain and local maxima at noble-gas $Z$.*
 - *Functoriality of $\mathrm{tr}_M: \mathbf{Conf} \to \mathbb{C}(q)$.*
-- *Multi-operator binding structure — constancy of the active support.*
+- *Multi-operator binding structure: constancy of the active support.*
 
-**Boundary phenomena — not covered by within-phase theorems:**
+**Boundary phenomena (not covered by within-phase theorems):**
 
 - ***Deconfinement events.*** *At $q \in \partial\Omega(P)$ with Slater-strict feasibility lost, $P$ ceases to be realisable as a closed-braid bound state.*
 - ***Regime switches.*** *At $q \in \partial\Omega(P)$ with a $\mu$-jump but preserved feasibility, the active support gains or loses a Wedderburn block.*

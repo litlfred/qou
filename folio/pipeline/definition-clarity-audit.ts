@@ -1178,7 +1178,7 @@ function writeSidecar(
       result: f.result === "n/a" ? "n/a" : f.result,
       reviewer: {
         kind: "script",
-        id: "content/pipeline/definition-clarity-audit.ts",
+        id: "folio/pipeline/definition-clarity-audit.ts",
         version: "v1",
         script_hash: scriptHash,
         script_commit_sha: scriptSha,
@@ -1213,7 +1213,7 @@ function buildMd(
   lines.push(`# Definition / statement clarity audit — ${new Date().toISOString().slice(0, 10)}`);
   lines.push("");
   lines.push(
-    `Scanner: [\`content/pipeline/definition-clarity-audit.ts\`](${blob(branch, "content/pipeline/definition-clarity-audit.ts")}). ` +
+    `Scanner: [\`folio/pipeline/definition-clarity-audit.ts\`](${blob(branch, "folio/pipeline/definition-clarity-audit.ts")}). ` +
       `Skill: [\`local/definition-clarity-audit\`](${blob(branch, ".claude/skills/local/definition-clarity-audit.md")}).`,
   );
   lines.push("");

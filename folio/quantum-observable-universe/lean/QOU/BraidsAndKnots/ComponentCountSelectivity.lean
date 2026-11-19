@@ -91,10 +91,18 @@ theorem no_separation_of_equal_component_count
     (f : ℕ → R) {c c' : ℕ} (h : c = c') : f c = f c' := by
   rw [h]
 
+/-- In the framework's assignments, the proton and neutron are both Borromean
+    3-component links (`c = 3`). -/
+def protonComponents : ℕ := 3
+def neutronComponents : ℕ := 3
+
+theorem protonComponents_eq_neutronComponents :
+    protonComponents = neutronComponents := rfl
+
 /-- Specialised to the proton/neutron pair: any component-count function assigns
 them the same value, because the framework gives both `c = 3`. -/
 theorem proton_neutron_indistinguishable (f : ℕ → R) :
-    f 3 = f 3 :=
-  no_separation_of_equal_component_count f rfl
+    f protonComponents = f neutronComponents :=
+  no_separation_of_equal_component_count f protonComponents_eq_neutronComponents
 
 end QOU.BraidsAndKnots.ComponentCountSelectivity

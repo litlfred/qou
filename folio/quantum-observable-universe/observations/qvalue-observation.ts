@@ -18,4 +18,10 @@ export default remark({
     "cor:spectral-decomposition-qvalue",
     "rem:mass-comparison-table",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/spectral_decomposition_qvalue_d.py",
+    witness: "computations/spectral-decomposition-qvalue-d.witness.json",
+    status: "verified",
+  },
 });

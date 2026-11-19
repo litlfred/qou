@@ -39,7 +39,7 @@ $\beta$, and in particular the same magnitude $|\tau(\beta)|$.
 **Step 2: every probed convention factors through the same
 categorical trace.**  Each of the six brane-tower convention
 families probed in
-[brane-tower-z-habiro conjecture](#conj:brane-tower-z-habiro)
+[$z$-Habiro brane-tower conjecture](#conj:brane-tower-z-habiro)
 §"Surviving claims after closure attempts" is, by its defining
 prescription, a regularization of the divergent analytic $\Phi_q$
 tower. Case by case:
@@ -54,7 +54,7 @@ tower. Case by case:
    satisfies M1–M3.
 4. *Multiplicity / Type-B-fold* reweights tower summands by
    folded-crystal multiplicities; the fold acts on the index set of
-   the tower, not on the trace functional.
+   the tower rather than on the trace functional.
 5. *Pair-knot product-volume* substitutes pair-knot composite
    volumes for per-generator volumes inside the tower argument.
 6. *Pair-knot Markov-trace* evaluates the pair-knot composite by a

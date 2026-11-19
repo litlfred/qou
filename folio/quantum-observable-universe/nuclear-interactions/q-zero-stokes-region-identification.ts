@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:q-zero-stokes-region-identification",
   title:
-    "Substrate $q_0$ identification via Stokes region of the generating function (over $\\mathbb{Z}[q, q^{-1}]$)",
+    "Aether $q_0$ identification via Stokes region of the generating function (over $\\mathbb{Z}[q, q^{-1}]$)",
   lean: {
     ref: "qou:QOU.BraidKnot.QZeroStokesRegionIdentification.QZeroStokesIdentification",
     validation: "not_checked",

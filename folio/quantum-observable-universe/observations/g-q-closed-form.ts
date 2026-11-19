@@ -18,4 +18,10 @@ export default remark({
     "closed-form",
     "information-theory",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/alpha_em_anchor_preference_probe.py",
+    witness: "computations/alpha-em-anchor-preference.witness.json",
+    status: "verified",
+  },
 });

@@ -26,5 +26,3 @@ $$
   \sum_{i=1}^{N}
   \mathrm{tr}_M\!\bigl(\Phi^{\mathrm{trans}}_i(\beta)\bigr).
 $$
-
-**Archimedean specialisation.** The categorical mass-squared, the hyperbolic volume $\mathrm{vol} : \mathbb{R}$ and $\hbar : \mathbb{R}$, and the descended trace are the archimedean ($\mathbb{R}$-valued) readouts of the generic Markov-trace mass data; the $R\to\mathbb{R}$ realisation is acknowledged here.

@@ -17,10 +17,10 @@ import { chapter } from "../../schema/builders";
  */
 export default chapter({
   label: "app:surreals-archimedean",
-  title: "Surreal-number lift at the substrate (archimedean appendix)",
+  title: "Surreal-number lift at the aether parameter (archimedean appendix)",
   sections: [
     {
-      title: "Substrate-pinned algebraic structure",
+      title: "Aether-pinned algebraic structure",
       label: "sec:surreals-archimedean-algebraic",
       blocks: [
         "algebraic-core-survives",
@@ -47,7 +47,7 @@ export default chapter({
       ],
     },
     {
-      title: "Characteristic-p companion at substrate",
+      title: "Characteristic-p companion at the aether parameter",
       label: "sec:surreals-archimedean-char-p",
       blocks: [
         "on-p-modular-hecke",
@@ -56,7 +56,7 @@ export default chapter({
       ],
     },
     {
-      title: "Substrate-positivity and millennium bounds",
+      title: "Aether positivity and millennium bounds",
       label: "sec:surreals-archimedean-millennium",
       blocks: [
         "wenzl-positivity-implies-substrate-positivity",

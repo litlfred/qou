@@ -6,6 +6,6 @@ for every triple $(L_+, L_-, L_0)$ of links that differ only at one crossing. Th
 $$
   [L] = P_L(a, q)\,[U]
 $$
-for every oriented link $L$, where $P_L \in R$ is the HOMFLYPT polynomial normalised by $P_U = 1$. In particular every link, and so every hadron configuration of [rem:hadron-operations](#rem:hadron-operations), has a terminal skein resolution: a finite reduction of $L$ to a multiple of $U$.
+for every oriented link $L$, where $P_L \in R$ is the HOMFLYPT polynomial normalised by $P_U = 1$. In particular every link, and so every hadron configuration of [hadron skein operations](#rem:hadron-operations), has a terminal skein resolution: a finite reduction of $L$ to a multiple of $U$.
 
-The specialisation $a = 1$ is the relation $L_+ - L_- = (q - q^{-1}) L_0$ of the corpus's Hecke–skein convention, and $P_L$ is then the Conway polynomial in $z = q - q^{-1}$. At $a = q$ every $P_L$ equals $1$, so that specialisation carries no information about $L$. The reading of this resolution in terms of torus knots, the Hopf link and hadron masses is in [rem:skein-generation-hadron-reading](#rem:skein-generation-hadron-reading).
+The specialisation $a = 1$ is the relation $L_+ - L_- = (q - q^{-1}) L_0$ of the corpus's Hecke–skein convention, and $P_L$ is then the Conway polynomial in $z = q - q^{-1}$. At $a = q$ every $P_L$ equals $1$, so that specialisation carries no information about $L$. The reading of this resolution in terms of torus knots, the Hopf link and hadron masses is in [hadron reading of skein generation](#rem:skein-generation-hadron-reading).

@@ -10,8 +10,8 @@ The constituent knots $K_i$ are simple objects in $\mathbf{C}$,
 each factoring through a tensor power of $V$
 ([knot factorization](#rem:knot-factorization)):
 $K_i \hookrightarrow V^{\otimes 2j_i}$ via the PawLei embedding
-$\iota_{j_i}$.  The index $i$ labels the **constituent slot**,
-not the knot type: several slots may carry the same simple object
+$\iota_{j_i}$.  The index $i$ labels the **constituent slot**
+rather than the knot type: several slots may carry the same simple object
 (e.g.\ a proton has $K_1 = K_2 = T_{2,3}$ for two up quarks).
 Each constituent has a
 [vertex operator](#def:vertex-operator) $Y(K_i, z_i)$ inserted at

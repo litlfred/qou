@@ -1,4 +1,4 @@
-The number of stable nuclear configurations at a given substrate parameter $q$ is finite. The stability boundary precisely traces the zero locus of the Skein polynomial $P_{\mathcal{N}(p,n)}(q)$.
+The number of stable nuclear configurations at a given aether parameter $q$ is finite. The stability boundary precisely traces the zero locus of the Skein polynomial $P_{\mathcal{N}(p,n)}(q)$.
 
 ## The nuclear chart lattice
 

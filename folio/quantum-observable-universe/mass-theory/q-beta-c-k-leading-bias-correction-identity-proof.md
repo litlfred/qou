@@ -26,7 +26,7 @@ $q_0$:
 
 | Rung | $\hat c_k$ (SDP extracted) | $\hat c_k^{\mathrm{corr}}$ (this proposition) | Algebraic target |
 |---|---|---|---|
-| $k = 2$ | $-1.0171$ | $-0.9999932$ | $-1$ (canonical, [q-beta-c-2-eq-neg-one-structural proposition](q-beta-c-2-eq-neg-one-structural.md)) |
+| $k = 2$ | $-1.0171$ | $-0.9999932$ | $-1$ (canonical, [structural $c_2 = -1$ ladder identity](q-beta-c-2-eq-neg-one-structural.md)) |
 | $k = 3$ | $-2.0097$ | $-1.9999968$ | $-2 = J_{\mathrm{Hopf}}(q=1)$ |
 
 The bias correction recovers the canonical $c_2 = -1$ to $7\,\mathrm{ppm}$ and

@@ -27,10 +27,10 @@ The QOU mass identity at $A \geq 2$ contracts a per-interface averaging function
 >   \quad (q \neq 1),
 > $$
 >
-> about $1.67 \times 10^{-5}$ at the substrate anchor, whereas the uniform form
+> about $1.67 \times 10^{-5}$ at the aether anchor, whereas the uniform form
 > is bar-invariant exactly — it is the bar-symmetriser $\tfrac12(z + \overline{z})$
 > of the p-p factor, since $\overline{z} = z - h$
-> ([`prf:interface-knot-markov-z`](#prf:interface-knot-markov-z)).
+> ([interface-knot Markov-$z$ proof](#prf:interface-knot-markov-z)).
 >
 > The colour-weighted coefficient $c = 1/2 - \delta/4$ depends on $q$ and has
 > $c + \overline{c} - 1 = -\delta(1-q^{2})/4 \neq 0$, which is the computation above.
@@ -43,7 +43,7 @@ The QOU mass identity at $A \geq 2$ contracts a per-interface averaging function
 
 ### Derivation chain for the closed-form weight
 
-The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from Bring's surface geometry:
+The aether evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from Bring's surface geometry:
 - Bring's surface has genus $g = 4$.
 - The genus-4 force-carrier pair is $\{T(2,9), T(3,5)\}$.
 - The shift identity $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$ gives $\alpha_{\text{shift}}(T(3,5)) = 10$ for $T(3,5)$, specifying the pole order of $\sigma$.
@@ -55,4 +55,4 @@ The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from B
 - The bar-invariance criterion is $(c + \overline{c} - 1)h = 0$.
 - Constant $c$ and $h \neq 0$ force $2c = 1$.
 - The uniform combination $z - h/2$ is bar-invariant.
-- Any two averagings with the same nine-pair colour weight agree; selecting that weight remains open.
+- Any two averagings sharing the same nine-pair colour weight coincide; fixing that colour weight from first principles is conjectural.

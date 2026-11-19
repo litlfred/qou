@@ -24,4 +24,10 @@ export default conjecture({
     "order-mixing",
     "bring-surface",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

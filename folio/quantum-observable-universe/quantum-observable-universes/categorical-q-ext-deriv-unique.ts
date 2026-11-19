@@ -9,4 +9,7 @@ export default proposition({
   uses: ["prop:categorical-q-ext-deriv-exists"],
   proofs: ["prf:categorical-q-ext-deriv-unique"],
   tags: ["uniqueness", "q-ext-deriv"],
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

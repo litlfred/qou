@@ -43,4 +43,13 @@ export default remark({
       body: "Affine obstruction added (owner picks 2+1). The invariant $J = 4P^3/(4P^3+27Q^2)$ of the depressed cubic is unchanged by $X \\mapsto \\alpha X + \\beta$; it is positive for (C) at every real $z$ and negative for (S) at every real $p \\neq 0$, $c > 0$. Lean: `QOU.EllipticStabilityLocus.no_affine_match` (sorry-free, axioms propext/Classical.choice/Quot.sound). The 'up to Möbius' wording was dropped as vacuous; the conjecture's item 2 now rests on the isogeny alone, and the conjecture stays open (bean `qou-opjb`).",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/observations/neutron_prediction_comparison_probe.py",
+    witness: [
+      "computations/observations/neutron_prediction_comparison_probe.witness.json",
+      "computations/substrate/lever1-color-eq-lambda-sw-rapidity.witness.json",
+    ],
+    status: "verified",
+  },
 });

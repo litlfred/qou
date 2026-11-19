@@ -8,4 +8,4 @@ $$
 
 *This long-element character weighting correctly reproduces the sign of the empirical $c_k$ at $k=5$ and $k=6$.*
 
-The longest element $w_0$ plays the role of central reversal. The $c_k$ Markov-trace decomposition is thus governed by the maximal mixing element, not the identity.
+The longest element $w_0$ plays the role of central reversal. The $c_k$ Markov-trace decomposition is thus governed by the maximal mixing element rather than the identity.

@@ -14,4 +14,10 @@ export default definition({
     "substrate-derived",
   ],
   uses: [],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

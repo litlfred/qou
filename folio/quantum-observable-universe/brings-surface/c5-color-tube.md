@@ -13,4 +13,4 @@ The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$ ([Lagrange resolvents](#rem:lag
 \end{align}
 ```
 
-The $C_5$ action is no longer diagonal. Each coordinate acquires an additive correction proportional to $z$. This reflects the cost of breaking projective homogeneity by subtracting the affine quantity $z$ from each resolvent.
+The $C_5$ action is no longer diagonal: subtracting the affine coordinate $z$ from each resolvent breaks projective homogeneity and introduces an additive $(\zeta^{-k} - 1)z$ shift in the $k$-th channel.

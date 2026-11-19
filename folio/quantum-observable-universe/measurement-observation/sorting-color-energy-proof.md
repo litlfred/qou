@@ -42,7 +42,7 @@ $q + q^{-1}$ in the colour fibre.  $\square$
 
 **Example: three socks.**
 
-See [Table](#tbl:sorting-color-energy-table-data).
+The [colour-sorting energy table](#tbl:sorting-color-energy-table-data) lists all six permutations of $S_3$.
 
 At $q = q_0$: sorting three fully reversed socks costs
 $3 \times 2.011 = 6.033$ action units in the colour fibre.

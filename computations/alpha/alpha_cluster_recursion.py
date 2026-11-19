@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 
-# DEPRECATION-CANDIDATE: witness was moved to fsh-guts/deprecated/computations/ in PR #554 (dead-exploratory).
-# This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
+# DEPRECATION-CANDIDATE (Bean qou-pg2f): witness was moved to fsh-guts/deprecated/computations/ in PR #554 (dead-exploratory).
+# Superseded in production by the Lean-backed 3D compact-ball simplicial alpha-complex + H_4(q_0) GPMT/Groebner-Shirshov
+# nuclear binding pipeline (QOU.Nuclear.AlphaSimplexCoordinationDerivation, QOU.Nuclear.SecondOrderGPMTCabledAlphaAndCarbon12,
+# and computations/probes/simplicial_coulomb_radius_and_joint_nuclear_probe.py). Kept only for legacy diagnostic comparisons.
 """α-cluster recursion driver — heavier-than-⁴He magic-family binding via cluster.
 
 Implements the `recursive-on-4He` methodology from the watched-branch's

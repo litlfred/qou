@@ -86,7 +86,6 @@ Measurement only.  Nothing is fitted and nothing is wired.
 """
 from __future__ import annotations
 
-import math
 import os
 import sys
 import warnings
@@ -135,7 +134,7 @@ C_FRAME_RECORD = {
         "q_cross_sequence_monotone": False,
         "crossings_exist_for_all_n": False,
         "q0_position_informative": False,
-        "dual_cauchy_identity_holds": True,
+        "dual_cauchy_identity_holds": True,  # reference: 2026-08-09 C-frame committed assertion
         "q0_on_real_level_branch": True,
     },
     "note": "Correct for convention C. Under D `q0_on_real_level_branch` asserts a "
@@ -149,7 +148,7 @@ C_FRAME_RECORD = {
 def delta_lambda(lam) -> int:
     """Delta_lam = (-1)^{n(lam)} * dim V_lam (PROVED value-only)."""
     conj = tuple(sum(1 for p in lam if p > i) for i in range(lam[0])) if lam else ()
-    sgn = math.prod((-1) ** (p * (p - 1) // 2) for p in conj)
+    sgn = (-1) ** sum(p * (p - 1) // 2 for p in conj)
     return sgn * _f_lambda(lam)
 
 
@@ -238,7 +237,8 @@ def main() -> int:
         Z_sum = sum((_f_lambda(l) * schur_principal_mpmath(l, Q0)
                      for l in partitions_of(n)), mp.mpf(0))
         cauchy_err = max(cauchy_err, abs(Z_sum - Z_closed) / abs(Z_closed))
-    cauchy_ok = cauchy_err < mp.mpf("1e-35")
+    dual_cauchy_identity_holds = bool(cauchy_err < mp.mpf("1e-35"))
+    cauchy_ok = dual_cauchy_identity_holds
     print(f"\n BG-1 dual-Cauchy  Sum_mu f^mu s_mu = ((1-Q^r)/(1-Q))^n :"
           f" max rel err {mp.nstr(cauchy_err, 6)}  => holds: {cauchy_ok}")
     print(" under D this reads Z = (1+Q)^n, since Q^r = Q^2.")

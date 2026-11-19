@@ -5,7 +5,15 @@ export default conjecture({
   title:
     "Gram-determinant ratio $\\kappa$ as a Plancherel-weighted character product",
   uses: ["def:cs-gram-determinant-ratio", "rem:gram-matrix-spectral-connection"],
+  lean: {
+    ref: "qou:QOU.Archimedean.GramDeterminantPlancherelRatio",
+    validation: "leanok",
+  },
   authorNotes: [
+    {
+      kind: "note",
+      body: "Formalised over an arbitrary field K (§7c, zero R specialisation) via class GramDeterminantPlancherelRatio.",
+    },
     {
       kind: "status",
       date: "2026-11-15",
@@ -27,4 +35,10 @@ export default conjecture({
     "kappa",
     "open-conjecture",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/all_nuclides_sdp_admissibility_mp.py",
+    witness: "computations/all-nuclides-sdp-admissibility-mp.witness.json",
+    status: "verified",
+  },
 });

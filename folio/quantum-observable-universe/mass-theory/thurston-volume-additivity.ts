@@ -7,7 +7,10 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script: "computations/q_pinning_50_digit.py",
-    witness: "computations/q-pinning-50-digit.witness.json",
+    witness: [
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/all-nuclides-sdp-admissibility.witness.json",
+    ],
     status: "verified",
   },
   tags: [
@@ -23,4 +26,10 @@ export default proposition({
   },
   uses: ["thm:wedderburn-mass-formula"],
   cites: ["francaviglia2003", "thurston1978"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

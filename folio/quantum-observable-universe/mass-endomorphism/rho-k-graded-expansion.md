@@ -1,6 +1,6 @@
 ## Statement
 
-**Scope of the three expansion pieces.** In the graded expansion below, only the leading-order piece $\rho_K^{\mathrm{LO}}$ is a proved algebraic identity (by Wenzl's Markov multiplicativity). The single-generator piece $\rho_K^{\text{single-gen}}$ is an empirical logarithmic model whose prefactor $\alpha$ is chosen against the mass table (yielding the $0.18\%$ mean residual recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy)), while the pair-generator piece $\rho_K^{\text{pair-gen}}$ remains open.
+**Scope of the three expansion pieces.** In the graded expansion below, only the leading-order piece $\rho_K^{\mathrm{LO}}$ is a proved algebraic identity (by Wenzl's Markov multiplicativity). The single-generator piece $\rho_K^{\text{single-gen}}$ is an empirical logarithmic model whose prefactor $\alpha$ is chosen against the mass table (yielding the $0.18\%$ mean residual recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy)), while the pair-generator piece $\rho_K^{\text{pair-gen}}$ is conjectural ([pair-generator canonical form](#conj:rho-k-pair-gen-canonical-form)).
 
 
 The graded expansion of the categorical density $\rho_K$ is exposed by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathfrak{m}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:
@@ -43,7 +43,7 @@ $$
   \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|}.
 $$
 
-The script `rho-k-markov-multiplicativity.witness.json` numerically verifies the [Wenzl 1988] branching identity $\chi^\lambda(\mathcal{B}_p \otimes \mathcal{B}_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\mathcal{B}_p) \chi^\nu(\mathcal{B}_n)$ to machine precision ($3.2 \times 10^{-14}$) for all $\lambda \vdash 6$ in the deuteron case.
+Numerical evaluation confirms the [Wenzl 1988] branching identity $\chi^\lambda(\mathcal{B}_p \otimes \mathcal{B}_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\mathcal{B}_p) \chi^\nu(\mathcal{B}_n)$ to machine precision ($3.2 \times 10^{-14}$) for all $\lambda \vdash 6$ in the deuteron case.
 
 ### Single-generator piece (fitted)
 
@@ -53,7 +53,7 @@ $$
   \tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)
 $$
 
-The overline denotes the Hecke bar-involution $q \leftrightarrow q^{-1}$. At real $q_0$ and real $\hat V_i$, this reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$. Using $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean binding scale, [Catalan binding](#conj:binding-scale-catalan)), this captures the leading binding correction. The mean error is $0.18\%$, with a $0.35\%$ maximum across $Z = 1..20$ (see `atomic-braid-mass-paper-formula.witness.json` and the `rho-k-pair-gen-extension.witness.json` table).
+The overline denotes the Hecke bar-involution $q \leftrightarrow q^{-1}$. At real $q_0$ and real $\hat V_i$, this reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$. Using $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean binding scale, [Catalan binding](#conj:binding-scale-catalan)), this captures the leading binding correction. The mean error is $0.18\%$, with a $0.35\%$ maximum across $Z = 1..20$.
 
 ### Pair-generator piece (open)
 
@@ -76,7 +76,7 @@ Here, $M_i$ provides the per-generator $2 \times 2$ standard-representation tran
 
 See [Table 1](#tbl:rho-k-graded-expansion-table1-data).
 
-Both pair extensions degrade accuracy under the simple $\alpha z^2$ log-formula, even with the correct Wedderburn coupling. The gap lies in the functional form: $T_3$ in the six-term theorem requires $-z^2 \sum \mathrm{Li}_2^q(-|V_i V_j|)$, not $\alpha z^2 \sum \ln |V_i V_j|$. The single-generator Kashaev-limit derivation that yields $\alpha \sum \ln|V_i|$ (matching $T_2$) requires a parallel derivation for the pair piece to produce the correct functional form and prefactor. This remains open work.
+Both pair extensions degrade accuracy under the simple $\alpha z^2$ log-formula, even with the correct Wedderburn coupling. The gap lies in the functional form: $T_3$ in the six-term theorem requires $-z^2 \sum \mathrm{Li}_2^q(-|V_i V_j|)$, not $\alpha z^2 \sum \ln |V_i V_j|$. Extending the single-generator Kashaev-limit derivation that yields $\alpha \sum \ln|V_i|$ (matching $T_2$) to the pair piece so as to produce the $q$-dilogarithm form and prefactor is formulated in [pair-generator canonical form](#conj:rho-k-pair-gen-canonical-form).
 
 ## Identification with the six-term theorem
 

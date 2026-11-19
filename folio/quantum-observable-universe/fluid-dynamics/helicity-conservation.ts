@@ -10,4 +10,7 @@ export default proposition({
   ],
   cites: ["moffatt-ricca-helicity"],
   tags: ["helicity", "topological-invariant", "conservation", "fluid-dynamics", "knot"],
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

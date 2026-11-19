@@ -16,4 +16,4 @@ The proof proceeds in two steps:
 
 Combining the two steps yields [the Coulomb-strong ratio identity](#prop:coulomb-strong-ratio-q-rational): $\tanh(\ln q) = (q^2-1)/(q^2+1)$ for $q > 0$.
 
-The identity holds over $\mathbb{R}_{>0}$ (the archimedean substrate-anchor regime). The fibre-level $q$-rational form $(q-q^{-1})/(q+q^{-1})$ is a Laurent-polynomial ratio over $\mathbb{Z}[q,q^{-1}]$, realised at $q = q_0 \in \mathbb{R}_{>0}$ where it agrees with the archimedean $\tanh(\ln q_0)$. No $|q| = 1$ step is involved: the identity uses $q^{-1}$ algebraically rather than as complex conjugation, and both $q_0$ and $q_0^{-1}$ are positive real points.
+The identity holds over $\mathbb{R}_{>0}$ (the archimedean aether-anchor regime). The fibre-level $q$-rational form $(q-q^{-1})/(q+q^{-1})$ is a Laurent-polynomial ratio over $\mathbb{Z}[q,q^{-1}]$, realised at $q = q_0 \in \mathbb{R}_{>0}$ where it agrees with the archimedean $\tanh(\ln q_0)$. No $|q| = 1$ step is involved: the identity uses $q^{-1}$ algebraically rather than as complex conjugation, and both $q_0$ and $q_0^{-1}$ are positive real points.

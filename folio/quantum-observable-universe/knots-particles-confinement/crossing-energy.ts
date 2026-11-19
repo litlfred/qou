@@ -16,4 +16,10 @@ export default definition({
     "prop:nuclear-groebner-reduction",
     "prop:pairwise-interaction-decomposition",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

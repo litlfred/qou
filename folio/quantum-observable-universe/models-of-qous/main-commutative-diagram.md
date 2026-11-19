@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with instanton connection $A$ and substrate parameter $q$. Let $\mathrm{EL}$ denote the Euler–Lagrange operator of the $q$-weighted Yang–Mills–Levi functional $\mathfrak{S}_q$. Let $\nabla^A$ denote parallel transport along $A$. The upper-left object $J^1\mathcal{S}$ is the space of $1$-jets of sections of the state bundle $\mathcal{S}$ (encoding the state and its first-order derivatives). The following diagram commutes:
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with instanton connection $A$ and aether parameter $q$. Let $\mathrm{EL}$ denote the Euler–Lagrange operator of the $q$-weighted Yang–Mills–Levi functional $\mathfrak{S}_q$. Let $\nabla^A$ denote parallel transport along $A$. The upper-left object $J^1\mathcal{S}$ is the space of $1$-jets of sections of the state bundle $\mathcal{S}$ (encoding the state and its first-order derivatives). The following diagram commutes:
 
 ```tex
 \[

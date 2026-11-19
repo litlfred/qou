@@ -2,4 +2,3 @@ The Jones–Wenzl Markov trace $\mathrm{tr}_M : \mathbf{B}_\infty \to \mathbb{R}
 
 The axiomatic construction packages the per-$n$ Hilbert representation, the inductive embedding, and the GNS bicommutant factor hosting $\mathrm{tr}_M$ as structural hypotheses; the GNS state and bicommutant closure then supply the concrete per-$n$ realisations.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Generic categorical $q$-deformation identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

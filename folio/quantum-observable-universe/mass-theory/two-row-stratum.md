@@ -10,7 +10,7 @@ $$
   \;=\; \{\, (n-k, k) : 0 \le k \le \lfloor n/2 \rfloor \,\}.
 $$
 
-The orthogonal projection onto this two-row Wedderburn subalgebra — the two-row projection $\pi_{\mathrm{2-row}}$ — and the induced splitting of the canonical Markov trace are given in [two-row-projection definition](#def:two-row-projection).
+The orthogonal projection onto this two-row Wedderburn subalgebra — the two-row projection $\pi_{\mathrm{2-row}}$ — and the induced splitting of the canonical Markov trace are given in [two-row Wedderburn projection](#def:two-row-projection).
 
 ## Structural significance
 
@@ -21,7 +21,7 @@ $$
 $$
 Partitions with $\ell(\lambda) > 2$ map to zero. They correspond to higher-rank symmetry components absent from the $\mathrm{SU}(2)$ spin-pairing observable. The $q$-deformed spin observables, including the magic-shell coupling of the magic-shell-stabilization conjecture, live strictly in the two-row sector.
 
-**Scope of the two-row stratum: it is the whole support, in the trace and in the binding sum alike.** Under the production convention D the restriction is not a dominance but an identity. The Wenzl weight satisfies $y_\lambda = 0$ exactly when $\ell(\lambda) \geq 3$, because the Schur–Weyl fibre is the two-dimensional fundamental of $\mathrm{SU}_q(2)$; so every $\ell(\lambda) > 2$ term of $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$ vanishes, and so does every $\ell(\lambda) > 2$ term of the binding sum $\sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$ — the factor $\Delta_\lambda = (-1)^{n(\lambda)} f^\lambda$ multiplies a weight that is already zero. The binding sum therefore **does** inherit the restriction, at every $A$, exactly.
+**Scope of the two-row stratum: it is the whole support, in the trace and in the binding sum alike.** Under the production convention D the restriction holds as an exact identity rather than a dominance. The Wenzl weight satisfies $y_\lambda = 0$ exactly when $\ell(\lambda) \geq 3$, because the Schur–Weyl fibre is the two-dimensional fundamental of $\mathrm{SU}_q(2)$; so every $\ell(\lambda) > 2$ term of $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$ vanishes, and so does every $\ell(\lambda) > 2$ term of the binding sum $\sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$ — the factor $\Delta_\lambda = (-1)^{n(\lambda)} f^\lambda$ multiplies a weight that is already zero. The binding sum therefore **does** inherit the restriction, at every $A$, exactly.
 
 **Two-row concentration under Convention D.** While $\Delta_\lambda$ in isolation grows largest on balanced many-row diagrams, under Convention D all weights with $\ell(\lambda) > 2$ vanish identically ($y_\lambda = 0$), so only the two-row stratum $\Lambda^2(n)$ contributes to the ordinary Markov trace.
 
@@ -41,6 +41,6 @@ The non-self-conjugate partitions $(n-k, k)$ with $k < n/2$ form mirror pairs un
 
 ## Empirical use
 
-Evaluating the per-partition decomposition $c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$ across all 77 partitions of 12 shows that the two-row stratum $\Lambda^2(12)$ carries the total trace $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ **exactly** — $100\,\%$, not as a measurement but as an identity, since $y_\lambda = 0$ for the $70$ partitions of $12$ with $\ell(\lambda) > 2$. (Under the alternative convention C, the two-row share is $86.6\,\%$, reflecting a dominance statement rather than exact support.) This exact support is established in [he4-two-row-dominance proposition](#prop:he4-two-row-dominance).
+Evaluating the per-partition decomposition $c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$ across all 77 partitions of 12 shows that the two-row stratum $\Lambda^2(12)$ carries the total trace $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ **exactly** — $100\,\%$, not as a measurement but as an identity, since $y_\lambda = 0$ for the $70$ partitions of $12$ with $\ell(\lambda) > 2$. (Under the alternative convention C, the two-row share is $86.6\,\%$, reflecting a dominance statement rather than exact support.) This exact support is established in [${}^4\mathrm{He}$ two-row dominance](#prop:he4-two-row-dominance).
 
 The identical pattern holds across the $\{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$ series. The dominant block for each atom always lies in $\Lambda^2(3A)$.

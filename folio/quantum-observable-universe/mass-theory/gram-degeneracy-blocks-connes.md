@@ -20,12 +20,12 @@ $$
 $$
 
 grows linearly in $t$. Choosing $t$ large enough overshoots any bound. The distance is
-$+\infty$ as posed, not a hard computation.
+$+\infty$ as posed rather than a hard computation.
 
 Stating the conclusion as "no upper bound exists" rather than "$d = \infty$" keeps the
 statement inside an ordered field, with no top element adjoined.
 
-## Why the framework runs into it
+## Occurrence of Gram degeneracy under convention D
 
 The natural candidate for a derived metric on the state space is the Gram form of the
 Markov trace: build a Lipschitz seminorm from it, take the Connes supremum, and read
@@ -44,11 +44,6 @@ Under convention C the question does not arise. Every Wedderburn weight is stric
 positive there, the star form is definite, and no kernel element exists to exploit.
 The blocker is specific to the convention that imposes the row cap.
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
-physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
-$q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. At $q_0$ under convention D
+At $q_0$ under convention D
 the star-form spectrum is $0,\, 0.752702^{\times 3},\, 4.230339$: exactly one null
 direction, and it is the braid-symmetric one.

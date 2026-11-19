@@ -1,6 +1,6 @@
 # **QOU motivic Galois character instance** via Habiro evaluation
 
-**Conjecture.** The QOU brane-tower substrate carries a concrete instance of [the motivic Galois character](#def:motivic-galois-character) constructed by the Habiro evaluation map:
+**Conjecture.** The QOU brane-tower aether carries a concrete instance of [the motivic Galois character](#def:motivic-galois-character) constructed by the Habiro evaluation map:
 
 $$
   \mathrm{Frob}_p \;=\; f(u) \big|_{u = \zeta_{2p}}
@@ -15,7 +15,7 @@ downstream consumers, and cross-prime coherence are recorded in
 the per-cell $\mathrm{Frob}_p$ data appears in
 [the accompanying example](#ex:qou-motivic-galois-instance-per-cell).
 
-**Why this is stated as a conjecture.** The formula above
+**Grounds for conjectural status.** The formula above
 specifies $\mathrm{Frob}_p$ in $\mathbb{Z}[\zeta_{2p}]$, one prime at a
 time. What [the motivic Galois character](#def:motivic-galois-character)
 asks for is a single Frobenius assignment $\mathrm{Primes} \to

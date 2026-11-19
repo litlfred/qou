@@ -5,8 +5,8 @@ the real dilogarithm, the Bloch group, and the Suslin map.
 
 ## Pre-archimedean / archimedean separation
 
-The QOU substrate is pre-archimedean: every block in the
-[motivic substrate](#def:motivic-substrate) and the
+The QOU aether is pre-archimedean: every block in the
+[motivic aether](#def:motivic-substrate) and the
 [algebraic quantum volume](#def:algebraic-quantum-volume) lives
 in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, a ring of
 Laurent polynomials with no real-analytic transcendentals. QOU
@@ -19,10 +19,10 @@ Two structural questions are settled simultaneously by Bloch-Suslin
 pentagon-uniqueness. (i) *Uniqueness of the exit*: any real-valued
 continuous functional on $B(\mathbb{C})$ respecting the 5-term
 pentagon identity is forced to coincide with $D$ up to a single
-overall scalar; therefore the archimedean image of a substrate
+overall scalar; therefore the archimedean image of an aether
 motivic class is canonical. (ii) *Provenance of $\pi$*: any
 transcendental constant in a QOU observable is the
-$\tau_{\text{arch}}$-image of substrate pentagon data via $D$ (or
+$\tau_{\text{arch}}$-image of aether pentagon data via $D$ (or
 its multivariate generalisations), and is therefore not an external
 import. The additive Bring zero-mode candidate
 [electromagnetic coupling Bring zero mode proposition](#prop:em-coupling-bring-zero-mode)
@@ -32,7 +32,7 @@ data on Bring's surface, not a $\pi$-import outside $R$.
 
 The algebraic / archimedean dichotomy establishes a clean separation between categorical structure and continuum measurement. The mass formula evaluates a closed cycle on the Frobenius–Hopf aether. The non-degenerate Frobenius pairing $\int_A \circ \mu$ identifies $A \cong A^\vee$, making the aether algebra self-dual. This self-duality drives the descent involution $\hat{\tau}_n$ on the endomorphism algebra, which splits the categorical mass endomorphism into a descended baseline component and a transient component localized at the exceptional divisors of the brane tower.
 
-Within this purely algebraic substrate, the mass evaluation yields the algebraic quantum volume:
+Within this purely algebraic aether, the mass evaluation yields the algebraic quantum volume:
 
 $$
   \mathrm{Vol}_q(\beta) \;=\; \prod_{i=0}^{A-2}\hat{V}_i(q),
@@ -51,7 +51,7 @@ To satisfy the Descartes condition $\chi = -6$, the physical state space restric
 [electromagnetic coupling Bring zero mode proposition](#prop:em-coupling-bring-zero-mode).**
 The $\pi$ in the additive correction $2/(3\pi) = 2g/(4\pi(g-1))$
 at $g=4$ is the unique archimedean shadow of pentagon-coherent
-substrate data on Bring's surface. The substrate's pentagon
+aether data on Bring's surface. The aether's pentagon
 coherence forces the archimedean image to involve $D$ (and hence
 $\pi$ via $D$'s functional equation); no other transcendental
 shape is admissible. The additive correction is therefore *not*
@@ -107,5 +107,5 @@ observable proposed in this repository must be expressible as a
 $\tau_{\text{arch}}$-image of a pentagon-coherent
 $R$-internal class, or equivalently, must factor through $D$ (or
 $D_n$) in its archimedean expansion. The
-[`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
+[Bring zero-mode coupling](#prop:em-coupling-bring-zero-mode)
 candidate satisfies this; the gluon-octet PSLQ candidate does not.

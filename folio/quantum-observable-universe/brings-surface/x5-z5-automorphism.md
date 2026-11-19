@@ -1,4 +1,4 @@
-Let $\mathcal{X}_5 \colon y^2 = x^5 - 1$ be the hyperelliptic quintic of Definition [def:hyperelliptic-quintic](#def:hyperelliptic-quintic). The map
+Let $\mathcal{X}_5 \colon y^2 = x^5 - 1$ be the hyperelliptic quintic of Definition [the hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$](#def:hyperelliptic-quintic). The map
 
 $$
   \phi_5 \colon \mathcal{X}_5 \longrightarrow \mathcal{X}_5,

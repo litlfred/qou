@@ -4,23 +4,23 @@ Induction along the 19-link derivation chain. At each step:
 
 * **Base.** The categorical action $\mathfrak{S} = \mathrm{tr}(\Phi)$
   is a $\mathbb{Q}(q)$-valued endomorphism trace
-  ([categorical-action](#def:categorical-action)) — dimensionless,
+  ([categorical action](#def:categorical-action)) — dimensionless,
   living in $H^1$.
 * **Frobenius pairing.** Preserves $\mathbb{Q}(q)$-rationality
-  ([frobenius-pairing](#def:frobenius-pairing)); identifies
+  ([Frobenius pairing](#def:frobenius-pairing)); identifies
   $A \cong A^\vee$ in $H^0 \oplus H^1$.
 * **Mass identity.** Introduces the *Frobenius norm* $\|\cdot\|$
-  on $A$ ([mass-identity](#def:mass-identity)) — the norm is
+  on $A$ ([Frobenius mass identity](#def:mass-identity)) — the norm is
   itself a $\mathbb{Q}(q)$-valued Markov-trace expression in
-  $H^0$, not an Archimedean absolute value. The single $H^0$
+  $H^0$ rather than an Archimedean absolute value. The single $H^0$
   insertion is multiplied by $m_e$ at the reporting step.
 * **Hecke :refterm[descent]{#descent}.** $\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$ is a
   $\mathbb{Q}(q)$-element of the Hecke algebra
-  ([hecke-mass-element](#def:hecke-mass-element)).
+  ([Hecke mass element](#def:hecke-mass-element)).
 * **Markov trace.** $\mathrm{tr}_M : H_n(q) \to \mathbb{Q}(q)$
-  ([jones-markov-trace](#thm:jones-markov-trace)).
+  ([Jones–Markov trace theorem](#thm:jones-markov-trace)).
 * **Tower.** The mass-tower formula
-  ([mass-endomorphism-tower](#prop:mass-endomorphism-tower)) is
+  ([mass-endomorphism tower](#prop:mass-endomorphism-tower)) is
   built from Markov-trace expressions, $\Phi_q$-tower terms, and
   rational coefficients in $z$ — all in $\mathbb{Q}(q)$.
 * **Meson sector.** The orthogonal $\mathrm{Vol}(\mathrm{Hopf}) = 0$
@@ -40,20 +40,20 @@ Induction along the 19-link derivation chain. At each step:
   so the :refterm[descent]{#descent} obstruction
   class
   ([motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction))
-  is normalised by the already-fixed scales, not by a fourth input.
+  is normalised by the already-fixed scales rather than by a fourth input.
 
 The dimensional factors $m_e$ and $m_\pi$ enter only at the final
 reporting step
-([tower-binding-energy](#prop:tower-binding-energy)),
+([three-channel brane-tower binding](#prop:tower-binding-energy)),
 multiplying the dimensionless tower expression to give a value in
 energy units. The composite functional is therefore
 $\mathfrak{m}(X) = m_e^a m_\pi^c \cdot Q_X(q_0)$ with
 $Q_X \in \mathbb{Q}(q_0)$ and $a, c \in \mathbb{Z}_{\geq 0}$.
 
-The discipline enters as an explicit **structural assumption**, not a derived theorem; what the induction above shows is that the assumption is **consistent with** the derivation chain as far as the chain is realised.
+The discipline enters as an explicit **structural assumption** rather than a derived theorem; what the induction above shows is that the assumption is **consistent with** the derivation chain as far as the chain is realised.
 Remaining open conjectures along the chain
-([mass-endomorphism](#conj:mass-endomorphism),
-[phi-q-tower-jsj-bridge](#rem:phi-q-tower-jsj-bridge))
+([mass endomorphism conjecture](#conj:mass-endomorphism),
+[$\Phi_q$ JSJ-volume bridge](#rem:phi-q-tower-jsj-bridge))
 do not affect the dimensional-discipline statement: every step
 that *is* realised respects $m_e^a m_\pi^c \cdot \mathbb{Q}(q_0)$
 homogeneity, and any future closure of the chain inherits this.

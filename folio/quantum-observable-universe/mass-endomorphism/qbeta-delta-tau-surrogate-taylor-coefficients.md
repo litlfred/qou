@@ -39,10 +39,4 @@ the load-bearing fact: the classical-point vanishing, the $(q^2-1)$ factor and
 the first two Taylor data all survive the reordering, and only orders 3 and
 above move.
 
-## Cross-references
-
-- Parent block:
-  [per-block character closed forms](qbeta-per-block-chi-closed-forms.md)
-  (surrogate definition and order-0/order-1 derivatives).
-- Witness JSON:
-  [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).
+See [per-block character closed forms](qbeta-per-block-chi-closed-forms.md) for the surrogate definition and its zeroth- and first-order derivatives.

@@ -1,4 +1,4 @@
-The $q$-Collatz conjecture ([conj:q-collatz](#conj:q-collatz)) lives in the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$.
+[The $q$-Collatz conjecture](#conj:q-collatz) lives in the Skein module $\mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$.
 
 | Identity | Formula | Role |
 |----------|---------|------|

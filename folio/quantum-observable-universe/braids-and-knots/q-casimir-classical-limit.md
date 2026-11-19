@@ -8,4 +8,4 @@ Consequently, the $q$-Casimir eigenvalue converges to the classical $\mathfrak{s
 $$
   \lim_{q \to 1} [j]_q\,[j+1]_q  =  j\,(j+1).
 $$
-The value $j(j+1)$ recovers the classical angular-momentum-squared spectrum. This limit restricts the generic categorical construction to the archimedean side of the substrate wall.
+The value $j(j+1)$ recovers the classical angular-momentum-squared spectrum. This limit restricts the generic categorical construction to the archimedean side of the Archimedean boundary.

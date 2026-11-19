@@ -24,5 +24,3 @@ Separating the crossing-count-to-closure map on $B_2$ from the single hypothesis
 | $J_{\mathrm{Hopf}}(1) = -2$ | Jones 1985 | exact rational evaluation |
 
 Only the topological closure identification remains external to pure Hecke arithmetic; the classical Jones evaluation at $q = 1$ is elementary.
-
-**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

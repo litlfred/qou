@@ -18,7 +18,7 @@ $\beta^2 = a_2 a_{-2} + 1$ on the binding amplitude
 Since the closures of $(\sigma_1\sigma_2)^k$ are the $(3,k)$ torus links,
 the proposition says the compact winding of the three-strand torus-link
 tower is **topological**: a $\zeta_3$ (color/triality) rotation that does
-not flow with the substrate modulus, in contrast to the modulus-carrying
+not flow with the aether modulus, in contrast to the modulus-carrying
 hyperbolic winding pair $q^{\pm 2k}$ of the $1$-dimensional channels. The
 level-lattice and vortex readings — winding pair $(k,\ k \bmod 3)$ for the
 three-strand (Borromean/nucleon) carrier, and the alternating-word

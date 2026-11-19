@@ -15,4 +15,10 @@ export default remark({
   uses: [
     "prop:confinement-lp",
   ],
+  computation: {
+    engine: "numpy",
+    script: "computations/gram-matrix-dual.py",
+    witness: "computations/gram-matrix-dual.witness.json",
+    status: "verified",
+  },
 });

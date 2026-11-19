@@ -15,7 +15,7 @@ Extracting the coefficients gives $a_{n+1} = b_n$ and $b_{n+1} = a_n + h b_n = b
 
 ## The lepton tower
 
-At the substrate parameter $q_0 \approx 1.1100$, the continuant yields the following normal form data for the three charged lepton generations:
+At the aether parameter $q_0 \approx 1.1100$, the continuant yields the following normal form data for the three charged lepton generations:
 
 | Lepton | Torus knot | $n$ | $a_n$ | $b_n$ | $\mathrm{net}$ |
 |:------:|:----------:|:---:|:-----:|:-----:|:---------:|

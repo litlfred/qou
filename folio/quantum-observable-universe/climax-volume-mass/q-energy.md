@@ -1,4 +1,4 @@
-The **$q$-energy** of a particle knot $K$ sums three terms derived from the categorical triple $(\mathbf{C}, A, \tau)$ and the substrate parameter $q$.
+The **$q$-energy** of a particle knot $K$ sums three terms derived from the categorical triple $(\mathbf{C}, A, \tau)$ and the aether parameter $q$.
 
 **Definition.**
 Let $K = \hat{\beta}$ be a particle knot with braid representative $\beta \in B_n$. The **$q$-energy** is:

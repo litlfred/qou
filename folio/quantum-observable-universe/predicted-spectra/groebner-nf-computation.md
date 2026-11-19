@@ -6,7 +6,7 @@ $$
   \sum_{w \in \mathrm{supp}} c_w \cdot w.
 $$
 
-Each amplitude $c_w \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ is an exact Laurent polynomial in the substrate parameter $q$. The support $\mathrm{supp} \subset S_A$ consists of reduced words in the symmetric group.
+Each amplitude $c_w \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ is an exact Laurent polynomial in the aether parameter $q$. The support $\mathrm{supp} \subset S_A$ consists of reduced words in the symmetric group.
 
 ## Content of the NF
 
@@ -89,7 +89,7 @@ These match the $2 \times 2$ eigenvalues. The standard irrep contains both eigen
 
 The Pauli factor $F_{\mathrm{Pauli}}$ is irreducibly multi-generator. No per-generator transfer matrix can compute it.
 
-The Pauli exclusion principle acts between pairs of fermions, not on individual crossings. Quarks inside a Borromean triplet embody this. The multi-generator structure encodes this inter-quark correlation.
+The Pauli exclusion principle acts between pairs of fermions rather than on individual crossings. Quarks inside a Borromean triplet embody this. The multi-generator structure encodes this inter-quark correlation.
 
 Computed witnesses are exact in $\mathbb{Z}[\check{q}, \check{q}^{-1}]$ for $A \leq 12$. They display at $q_0$:
 
@@ -97,7 +97,8 @@ See [Table 3](#tbl:groebner-nf-computation-table3-data).
 
 For $A \leq 12$, the symbolic witnesses $\mathrm{tr}_{\mathrm{alt}}(\check{q})$, $\mathrm{net}(\check{q})$, $\mathrm{observable}(\check{q})$, and $\mathrm{color}(\check{q})$ are exact Laurent polynomials over $\mathbb{Z}$ in the spinor information rate $\check{q} = q^{1/2}$, with the denominator $2^{p_n}$ tracked separately.
 
-The $H_3(q)$ Pauli factor is $F_{\mathrm{Pauli}} = 0.6382$. The $A$-strand values differ because they capture the full multi-generator interaction, not the $3$-strand projection.
+<!-- literal-source: nominal Pauli suppression parameter in 6x6 regular-representation ansatz -->
+The $H_3(q)$ Pauli factor is $F_{\mathrm{Pauli}} = 0.6382$. The $A$-strand values differ because they capture the full multi-generator interaction rather than the $3$-strand projection.
 
 ## Streaming pattern discovery
 

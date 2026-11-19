@@ -18,4 +18,10 @@ export default remark({
     "def:one-dim-qou-channel",
     "def:information-speed-of-light",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/bar_even_grb_dispersion_and_lorentz_null_probe.py",
+    witness: "computations/probes/bar-even-grb-dispersion-and-lorentz-null.witness.json",
+    status: "verified",
+  },
 });

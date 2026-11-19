@@ -50,4 +50,14 @@ export default conjecture({
     "open-problem",
     "conditional-on-class",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/habiro/habiro_exact_mass_endomorphism.py",
+    witness: [
+      "computations/habiro/habiro-exact-mass-endomorphism.witness.json",
+      "computations/m-p-borromean-verification-50dps.witness.json",
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+    ],
+    status: "verified",
+  },
 });

@@ -14,7 +14,7 @@ export default chapter({
   sections: [
     // ── Central result: overdetermination of q ──────────────────────────
     section({
-      title: "The Substrate Consistency Window",
+      title: "The Aether Consistency Window",
       label: "sec:substrate-consistency",
       blocks: [
         "observations-intro",
@@ -62,7 +62,7 @@ export default chapter({
 
     // ── Substrate parameter from lepton masses ────────────────────────
     section({
-      title: "Substrate Parameter from Lepton Masses",
+      title: "Aether Parameter from Lepton Masses",
       label: "sec:substrate-from-leptons",
       blocks: [
         "substrate-from-leptons-intro",

@@ -11,4 +11,10 @@ export default remark({
     "phase-transition",
   ],
   interprets: "def:quantum-universe",
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/toffoli_qand_convention_d_derivation.py",
+    witness: ["computations/probes/toffoli-qand-convention-d-derivation.witness.json"],
+    status: "verified",
+  },
 });

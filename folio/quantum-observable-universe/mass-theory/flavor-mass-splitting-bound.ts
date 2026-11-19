@@ -5,7 +5,7 @@ export default theorem({
   lean: { ref: "qou:QOU.FlavorDressing.flavor_mass_splitting_bound",
     validation: "not_checked",
   },
-  title: "Two-sided substrate bound on the dressed-quark splitting",
+  title: "Two-sided aether bound on the dressed-quark splitting",
   tags: [
     "flavor",
     "dressing",

@@ -554,7 +554,7 @@ function writeSidecar(
       result: f.result === "n/a" ? "n/a" : f.result,
       reviewer: {
         kind: "script",
-        id: "content/pipeline/language-trap-audit.ts",
+        id: "folio/pipeline/language-trap-audit.ts",
         version: "v1",
         script_hash: scriptHash,
         script_commit_sha: scriptSha,
@@ -595,7 +595,7 @@ function buildMd(
   );
   lines.push("");
   lines.push(
-    `Scanner: [\`content/pipeline/language-trap-audit.ts\`](${blob(branch, "content/pipeline/language-trap-audit.ts")}).`,
+    `Scanner: [\`folio/pipeline/language-trap-audit.ts\`](${blob(branch, "folio/pipeline/language-trap-audit.ts")}).`,
   );
   lines.push("");
   lines.push(

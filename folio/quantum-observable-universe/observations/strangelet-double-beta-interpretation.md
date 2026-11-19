@@ -75,4 +75,4 @@ experiments designed for double beta decay searches
 (GERDA, MAJORANA, nEXO, LEGEND).  The distinctive prediction:
 the electron pair spectrum has a **parity-symmetric angular
 distribution** (from the amphichiral intermediate) and an
-endpoint set by $q^{-1}$, not by a nuclear mass difference.
+endpoint set by $q^{-1}$ rather than by a nuclear mass difference.

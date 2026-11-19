@@ -53,8 +53,8 @@ closed-form.md), built from the same three 2-nucleon `Lbond` constants the
 q-CLT already uses. So `B_sym` (and `m_sym_atom`) are now computed for EVERY
 isotope from a closed form; the exact p(3A) trace is still run when
 `n = 3A ≤ --max-strands` (default 21, A ≤ 7) purely to VALIDATE the chain
-(|chain − exact| ≈ 1e-13). The factorized q-CLT remains the
-cruder A→∞ extrapolations shown alongside for comparison.
+(|chain − exact| < 1e-49 MeV at ≥50-dps mpmath precision). The factorized q-CLT
+remains the cruder A→∞ extrapolations shown alongside for comparison.
 
 EXPLORATORY presentation tool — no production rewire, no fit, no witness emitted
 (the canonical witness is the probe's). α = E₀ throughout.
@@ -124,12 +124,12 @@ NUCLEAR_SPINS = {
 
 
 def q_int_float(q, n):
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         qx = q if isinstance(q, mp.mpf) else mp.mpf(str(q))
         return (qx**n - qx**(-n)) / (qx - 1 / qx)
 
 def q_fact_float(q, n):
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         qx = q if isinstance(q, mp.mpf) else mp.mpf(str(q))
         res = mp.mpf(1)
         for i in range(1, n + 1):
@@ -190,7 +190,7 @@ def hook_lengths(lam):
 
 def W_lambda_float(q, lam):
     from canonical_mass import _as_formattable_mpf
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         qx = q if isinstance(q, mp.mpf) else mp.mpf(str(q))
         n = sum(lam)
         hooks = hook_lengths(lam)
@@ -281,7 +281,7 @@ def _ame_table():
     vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A; atomic mass =
     atomic_mass_micro_u × 10^-6 × u — the RAW neutral-atom mass (electrons included)."""
     from canonical_mass import _as_formattable_mpf
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         u_mev = mp.mpf(str(_codata.U_MEV))
         thousand = mp.mpf(1000)
         micro = mp.mpf("1e-6")
@@ -327,7 +327,7 @@ def _electron_binding_mev(Z):
     residuals this table reports. mp-exact version + witness:
     computations/atom_electron_mass.py / atom-electron-mass.witness.json."""
     from canonical_mass import _as_formattable_mpf
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         ry_mev = mp.mpf(str(_E_HARTREE_EV_DERIVED)) / mp.mpf(2) / mp.mpf(1000000)
         total, n, left = mp.mpf(0), 1, Z
         while left > 0:
@@ -342,7 +342,7 @@ def _electron_binding_mev_ame_fit(Z):
     """AME (Lunney-Pearson-Thibault) empirical fit — COMPARISON ONLY since
     the 2026-08-30 derived swap: 1.44381e-5·Z^2.39 + 1.55468e-12·Z^5.35 MeV."""
     from canonical_mass import _as_formattable_mpf
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         z_mp = mp.mpf(Z)
         val = (
             mp.mpf("1.44381e-5") * (z_mp ** mp.mpf("2.39"))
@@ -367,7 +367,7 @@ def _constants():
     import mpmath as _mp
     from q_parameter import Q_50_DIGIT_STR as _Q50
     from codata_constants import M_E_MEV as me
-    with _mp.workdps(60):
+    with _mp.workdps(max(_mp.mp.dps, 80)):
         q0x = _mp.mpf(str(_Q50))
         mex = _mp.mpf(str(me))
         e0x = mex / (q0x * (q0x - 1))
@@ -464,7 +464,7 @@ def _bond_type_L():
 
     # Built inside one guard: an mpf carries the precision of the OPERATION,
     # so forming these at the caller's ambient dps would silently re-cap them.
-    with _mp.workdps(max(_mp.mp.dps, 60)):
+    with _mp.workdps(max(_mp.mp.dps, 80)):
         q0x = _mp.mpf(str(_Q50))
         hx = q0x - 1 / q0x
         # CONVENTION D (fixed 2026-08-09). This read
@@ -538,7 +538,7 @@ def _chain_writhe_shift(Z, N, alpha):
     import mpmath as _mp
     from q_parameter import Q_50_DIGIT_STR as _Q50
     from _li_2_q_util import flavor_split_leading
-    with _mp.workdps(max(_mp.mp.dps, 60)):
+    with _mp.workdps(max(_mp.mp.dps, 80)):
         q0x = _mp.mpf(str(_Q50))
         hx = q0x - 1 / q0x
         dx = flavor_split_leading(q0x)
@@ -587,8 +587,8 @@ def _nucleon_mass_canonical(me, q0):
 def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     from q_parameter import Q_50_DIGIT_STR as _Q50
     from canonical_mass import _as_formattable_mpf
-    with mp.workdps(max(mp.mp.dps, 60)):
-        q0 = _as_formattable_mpf(mp.mpf(str(_Q50)))   # 50-dps mpf (no float64 downcast; bean qou-cqk6)
+    with mp.workdps(max(mp.mp.dps, 80)):
+        q0 = _as_formattable_mpf(mp.mpf(str(_Q50)))   # ≥80-dps mpf from 50-dps q0 (no float64 downcast; bean qou-cqk6)
     A = Z + N
     n = 3 * A
     bame_t = ame.get((Z, A))
@@ -637,7 +637,7 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   (no exact trace needed). B_lin = α·s = α(1 − e^{−B_sym/α}) saturates at α
     #   (s < 1), so it under-binds increasingly with A. Leading term: B_lin ≈ B_sym
     #   for small L (B_sym = α(s + s²/2 + …)).
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         B_lin = _as_formattable_mpf(alpha * (1 - mp.exp(-B_sym / alpha))) if alpha else _as_formattable_mpf(0)
 
         # Explicit h^4 = (q_0 - q_0^{-1})^4 modification applied to the raw trace B_lin 
@@ -692,7 +692,7 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     S_val = NUCLEAR_SPINS.get(name, Fraction(1, 2) if (A % 2) else Fraction(0))
     lam = get_ground_state_partition(Z, N, S_val)
     if lam:
-        with mp.workdps(max(mp.mp.dps, 60)):
+        with mp.workdps(max(mp.mp.dps, 80)):
             w_lam = W_lambda_float(q0, lam)
             E_gate = _as_formattable_mpf(alpha * mp.log(1 / w_lam))
             c_lam = _as_formattable_mpf(bame / E_gate) if bame else None
@@ -709,7 +709,7 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   B/A. Valid for ALL A (no W_λ≥1 breakdown); tracks ¹²C/¹⁶O to ~1–5%. The
     #   residual (light over-binding, magic dips) is the surface/Coulomb/shell
     #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         a_V = _as_formattable_mpf(alpha * mp.log(1 / W_lambda_float(q0, (1, 1, 1))))   # DEPRECATED postdiction coeff (not derived — see banner)
         B_vol = _as_formattable_mpf(A * a_V)
     # ---- E_C: the EM-sector Coulomb energy (bean 754x). Standard uniform-sphere
@@ -1154,7 +1154,7 @@ def main(argv=None) -> int:
     #    columns were removed 2026-06-24 — redundant now that m_unbnd,can ≈ CODATA.)
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     from canonical_mass import _as_formattable_mpf
-    with mp.workdps(max(mp.mp.dps, 60)):
+    with mp.workdps(max(mp.mp.dps, 80)):
         mp_ = _as_formattable_mpf(mp.mpf(str(mp_)))
         mn_ = _as_formattable_mpf(mp.mpf(str(mn_)))
         ppb_scale = mp.mpf(10) ** 9

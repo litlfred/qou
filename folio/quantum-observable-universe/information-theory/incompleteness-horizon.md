@@ -45,7 +45,7 @@ G\"{o}del's theorem requires self-reference: the system must encode statements a
 
 The argument is linear:
 
-1. The QOU is Turing-complete ($q \neq 1$ suffices: [substrate computation](#rem:substrate-computation)).
+1. The QOU is Turing-complete ($q \neq 1$ suffices: [substrate-independence of computation](#rem:substrate-computation)).
 2. It can therefore encode self-referential statements (programs analysing their own Skein polynomials).
 3. By G\"{o}del--Turing, degree-$0$ sections exist that no finite braid produces.
 4. These sections populate the computational horizon $\mathcal{H}_c$.

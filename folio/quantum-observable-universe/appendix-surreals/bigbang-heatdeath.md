@@ -1,4 +1,4 @@
-The QOU framework is parameter-time-symmetric: the substrate $q \in \mathbb{R}_{>0}$ controls all dimensionful constants but does not evolve. A cosmological reading would identify $q$-flow with cosmic time $t$, with two endpoints:
+The QOU framework is parameter-time-symmetric: the aether parameter $q \in \mathbb{R}_{>0}$ controls all dimensionful constants but does not evolve. A cosmological reading would identify $q$-flow with cosmic time $t$, with two endpoints:
 - **Big Bang**: $q \to 1^+$ ($c_q \to \infty$, all states causally connected).
 - **Heat death**: $q \to \infty$ ($\hbar_q \to 1$, quantum scale saturates classical scale).
 

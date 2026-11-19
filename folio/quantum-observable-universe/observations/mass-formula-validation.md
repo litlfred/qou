@@ -6,7 +6,7 @@ Converting dimensionless mass ratios into physical units requires one external i
 
 The hadronic scale evaluates to $E_0 = m_e/(q_0(q_0 - 1)) \approx 4.186$ MeV. This agrees with the calibrated scale $E_0^{(\mathrm{cal})} \approx 4.155$ MeV to $0.75\%$. The neutron $Q$-value is a prediction: $\mathfrak{Q}_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV.
 
-## Genuine predictions of the substrate parameter $q$
+## Genuine predictions of the aether parameter $q$
 
 The derivation chain yields:
 
@@ -40,7 +40,7 @@ See [Table 5](#tbl:mass-formula-validation-table5-data).
 
 All $\beta$-stable nuclei satisfy $|\Delta/M| < 0.04\%$. For $Z = N$ odd-odd nuclei, entanglement imbalance produces a residual $0.05\%$ error.
 
-### What $\Delta/M$ measures, and what it does not
+### Scope of the relative splitting ratio $\Delta/M$
 
 The denominator in Table 5 is the **atomic mass**, which is not a quantity
 this framework predicts: absolute mass is $m_e$ times a dimensionless ratio,
@@ -78,7 +78,7 @@ See [Table 6](#tbl:mass-formula-validation-table6-data).
 
 ## Hecke-engine certificate validation
 
-Exact Gröbner--Shirshov certificates have been computed for 47 isotopes. Each certificate contains $\mathrm{net}(q_0)$, $\mathrm{tr\_alt}(q_0)$, and $F_\mathrm{Pauli}(q_0)$. The fields encode combinatorial crossing structure, not direct mass.
+Exact Gröbner--Shirshov certificates have been computed for 47 isotopes. Each certificate contains $\mathrm{net}(q_0)$, $\mathrm{tr\_alt}(q_0)$, and $F_\mathrm{Pauli}(q_0)$. The fields encode combinatorial crossing structure rather than direct mass.
 
 ## Certificate fields and the $6 \times 6$ transfer matrix
 
@@ -98,9 +98,9 @@ See [Table 8](#tbl:mass-formula-validation-table8-data).
 
 Both nucleons demand identity and trefoil content. The neutron demands Hopf link content.
 
-## The open problem: $B/A$ from $q$
+## Unresolved direction: $B/A$ directly from $P(q_0)$
 
-Deriving $B/A$ directly from the certificate polynomial $P(q_0)$ remains open. Current approaches include evaluating the nuclear Skein volume integral, spectral decomposition, identifying a binding operator from normal form receptivity, and exploring certificate polynomial roots.
+Deriving $B/A$ directly from the certificate polynomial $P(q_0)$ alone is unproved. Current approaches include evaluating the nuclear Skein volume integral, spectral decomposition, identifying a binding operator from normal form receptivity, and exploring certificate polynomial roots.
 
 ## Isotope coverage
 

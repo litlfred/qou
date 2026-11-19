@@ -161,6 +161,7 @@ structure JetExtension where
     kept only so the name resolves and the vacuity is on the record. -/
 -- Ref: [leitner2026] §3/ordering-jet-compatibility
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
+-- vacuous-by-design: historical identity kept so the name resolves and the former axiom's P→P vacuity stays on the record
 theorem ordering_extends (_k : ℕ) (a b : MonomialBasis)
     (hab : degLex a b) :
     degLex a b := hab

@@ -26,4 +26,7 @@ export default proposition({
     "trace-decomposition",
     "operator-valued",
   ],
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

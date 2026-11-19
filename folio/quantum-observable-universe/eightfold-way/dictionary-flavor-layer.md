@@ -41,12 +41,9 @@ $r, g, b$ & $G_2$ stabilizer (\S\ref{sec:color-algebra}) & --- & --- & not exclu
 The isospin $I_3$ column is *derived* (writhe-to-isospin map,
 no fitted parameters).  The hypercharge $Y$ column is *open*
 (candidate: ribbon twist; battery: Gell-Mann--Nishijima consistency).
-The quark flavor assignments are *conditional on $N = 3$*
-(the central open problem of this chapter).  The color assignments
-follow from the octonionic $G_2$ route but remain at the
-discrete-skeleton level pending the continuous $G_2$ completion.
+While colour rank $N_c = 3$ arises via scalar restriction along Bring's cyclic $\mathbb{Z}_3$ cover (and via the discrete octonionic $G_2$ Fano skeleton), the three-flavour assignment $N_f = 3$ is carried as a *conditional hypothesis* throughout this chapter.
 
-**What the $(I_3, Y)$ columns are.**  With one exception they are
+**Provenance of the $(I_3, Y)$ columns.**  With one exception they are
 the standard $\mathrm{SU}(3)_{\mathrm{f}}$ flavour assignments, imported from the
 eightfold-way classification and placed against the braid column to show
 that the dictionary is *consistent* with it.  They are not outputs

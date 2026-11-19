@@ -10,6 +10,7 @@ export default proof({
       date: "2026-08-26",
       body:
         "The numerical witness in this proof was **convention C** (`z = sqrt(q)/(q+1)`) " +
+        /* <!-- literal-source: excised convention-C evaluation of Step-4 closed form at muon pin --> */
         "evaluated at the **muon** pin: `tr_M ~ 1.63315357`, giving " +
         "`rho_p^CODATA ~ 1124.3`. The statement block had already been " +
         "migrated to convention D at the proton pin (`1.88432`, `974.44`), so the proof " +
@@ -27,4 +28,17 @@ export default proof({
       see: "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
     },
   ],
+  computation: {
+    engine: "sympy",
+    script: "computations/option_b_proton_mass_full_chain.py",
+    witness: [
+      "computations/option-b-proton-mass-full-chain.witness.json",
+      "computations/markov/markov-trace-axiomatic-multi-atom.witness.json",
+      "computations/markov/markov-trace-atomic-proton-full.witness.json",
+      "computations/markov/markov-trace-recursive.witness.json",
+      "computations/probes/markov-reduction-h3-to-h4-conventions.witness.json",
+      "computations/probes/trm-proton-five-values-census.witness.json",
+    ],
+    status: "verified",
+  },
 });

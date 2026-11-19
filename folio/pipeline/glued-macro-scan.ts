@@ -36,12 +36,23 @@
  *
  * @module content/pipeline/glued-macro-scan
  */
-import { readFileSync, globSync } from "node:fs";
+import { readFileSync, globSync, existsSync, statSync } from "node:fs";
+import { resolve } from "node:path";
 
 /** How often a name must appear before it counts as corpus vocabulary. */
 const VOCAB_MIN = 8;
 /** A rarer name than this is not a candidate — it is simply in use. */
 const RARE_MAX = 3;
+/** Standard TeX/AMS-LaTeX control sequences whose names extend a shorter macro. */
+const KNOWN_TEX_MACROS = new Set([
+  "Bigg", "Biggl", "Biggr", "Biggm",
+  "Bigl", "Bigr", "Bigm",
+  "biggl", "biggr", "biggm",
+  "bigl", "bigr", "bigm",
+  "dotsb", "dotsc", "dotsi", "dotsm", "dotso",
+  "inf",
+]);
+
 /** A glued variable is a letter or two, not a word. */
 const SUFFIX_MAX = 2;
 
@@ -74,7 +85,7 @@ export function scan(files: string[]): Hit[] {
   const vocab = new Set([...count].filter(([, c]) => c >= VOCAB_MIN).map(([n]) => n));
   const hits: Hit[] = [];
   for (const [name, c] of count) {
-    if (c > RARE_MAX || vocab.has(name)) continue;
+    if (c > RARE_MAX || vocab.has(name) || KNOWN_TEX_MACROS.has(name)) continue;
     // Longest prefix first: `\varepsilonq` should report `\varepsilon` + "q",
     // not some shorter accidental prefix.
     for (let k = name.length - 1; k >= 2; k--) {
@@ -90,7 +101,16 @@ export function scan(files: string[]): Hit[] {
 
 if (import.meta.main) {
   const args = process.argv.slice(2);
-  const files = args.length ? args : globSync("content/**/*.md");
+  const defaultPattern = existsSync("folio")
+    ? "folio/**/*.md"
+    : `${resolve(import.meta.dir, "..")}/**/*.md`;
+  const files = args.length
+    ? args.flatMap((a) =>
+        existsSync(a) && statSync(a).isDirectory()
+          ? globSync(`${a.replace(/\/+$/, "")}/**/*.md`)
+          : [a],
+      )
+    : globSync(defaultPattern);
   const hits = scan(files);
 
   if (!hits.length) {

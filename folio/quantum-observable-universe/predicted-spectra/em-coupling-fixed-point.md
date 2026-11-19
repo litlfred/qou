@@ -1,5 +1,5 @@
 **Theorem (conditional on the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization class).**
-*Let $q$ be the substrate parameter and write*
+*Let $q$ be the aether parameter and write*
 
 $$
   T \;=\; q\cdot[9]_q\cdot[10]_q + \frac{2}{3\pi},

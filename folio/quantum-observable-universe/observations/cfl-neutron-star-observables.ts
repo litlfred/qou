@@ -14,4 +14,10 @@ export default remark({
     "falsifiability",
   ],
   uses: [],
+  computation: {
+    engine: "mpmath",
+    script: "computations/borromean_volume_propagation_to_m_p.py",
+    witness: "computations/borromean-volume-propagation-to-m-p.witness.json",
+    status: "verified",
+  },
 });

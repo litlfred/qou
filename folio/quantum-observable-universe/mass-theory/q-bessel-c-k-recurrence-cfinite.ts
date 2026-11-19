@@ -10,7 +10,10 @@ export default proof({
   computation: {
     engine: "sympy",
     script: "computations/qbeta/qbeta_qbessel_contiguity_cfinite.py",
-    witness: "computations/qbeta/qbeta-qbessel-contiguity-cfinite.witness.json",
+    witness: [
+      "computations/qbeta/qbeta-qbessel-contiguity-cfinite.witness.json",
+      "computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json",
+    ],
     status: "verified",
   },
   authorNotes: [

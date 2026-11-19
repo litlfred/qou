@@ -15,4 +15,10 @@ export default example({
     "beta-decay",
   ],
   uses: ["thm:markov-trace-factorization"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/h2_gg_electron/h2_gg_electron_probe.py",
+    witness: "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+    status: "verified",
+  },
 });

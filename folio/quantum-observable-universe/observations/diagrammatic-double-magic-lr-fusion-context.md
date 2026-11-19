@@ -4,7 +4,7 @@ A nuclide is double-magic when its proton and neutron counts both fall in $\math
 
 ## Setup
 
-Let $Z, N \in \mathbb{N}$ with $A = Z + N$. The atomic-knot framework ([prop:recursive-atom-knot-atlas](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md)) constructs the nuclide knot $\mathfrak{H}(Z, N)$ as a fused product of the $Z$-block (proton braid word at level $Z$) and the $N$-block (neutron braid word at level $N$). On the Hecke side, fusion executes the LR product
+Let $Z, N \in \mathbb{N}$ with $A = Z + N$. The atomic-knot framework ([recursive atom-knot atlas](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md)) constructs the nuclide knot $\mathfrak{H}(Z, N)$ as a fused product of the $Z$-block (proton braid word at level $Z$) and the $N$-block (neutron braid word at level $N$). On the Hecke side, fusion executes the LR product
 
 $$
   V_\lambda(Z) \otimes V_\mu(N)
@@ -20,7 +20,7 @@ The content sum is additive along the LR fusion: $c(\nu) = c(\lambda) + c(\mu)$.
 
 The classical LR rule \cite{ariki1996} generally produces a sum over many $\nu$, with multiplicities counting LR tableaux. The conjecture dictates that at double-magic levels, the sum collapses to a single term with unit multiplicity. Self-conjugacy ($\lambda = \lambda'$, $\mu = \mu'$) constrains the LR product to $\nu = \nu'$. The saturated-shell content-sum-zero condition ($c(\lambda) = c(\mu) = 0$) constrains $c(\nu) = 0$. Rigidity asserts that these two constraints combined leave at most one admissible $\nu$.
 
-Physically, there is no Wedderburn block at the double-magic level capable of absorbing further binding energy through Hecke channels. Exceptional double-magic stability is the algebraic absence of decomposition channels, not a fitted shell-correction term.
+Physically, there is no Wedderburn block at the double-magic level capable of absorbing further binding energy through Hecke channels. Exceptional double-magic stability is the algebraic absence of decomposition channels rather than a fitted shell-correction term.
 
 ## Examples
 
@@ -34,7 +34,7 @@ The illustration blocks ([single-magic $^{18}\mathrm{O}$](single-magic-O18-diagr
 
 The combinatorial barrier at $k \geq 12$ prevents Hoefsmit matrix-evaluation for $\{50, 82, 126\}$. The LR-rigidity conjecture nonetheless predicts a uniquely determined $\nu_{ZN}$ at each double-magic candidate independent of matrix evaluations. Predicted targets in the higher-magic ladder include $^{132}\mathrm{Sn}$ ($Z = 50, N = 82$) and $^{208}\mathrm{Pb}$ ($Z = 82, N = 126$). At each target, the LR fusion is conjecturally rigid. The algebraic prediction of the binding-per-nucleon peak is a zero-parameter statement.
 
-*The dominant component $V_{\lambda_A}$ in the LR decomposition need not be self-conjugate: direct Yamanouchi enumeration finds the dominant $\nu$ is non-self-conjugate at every tested $(Z, N)$. The criterion is content additivity on the LR-fusion, not self-conjugacy of the dominant component.*
+*The dominant component $V_{\lambda_A}$ in the LR decomposition need not be self-conjugate: direct Yamanouchi enumeration finds the dominant $\nu$ is non-self-conjugate at every tested $(Z, N)$. The criterion is content additivity on the LR-fusion rather than self-conjugacy of the dominant component.*
 
 ## Discussion
 

@@ -5,7 +5,7 @@ export default proposition({
   lean: { ref: "qou:QOU.HadronicMass.flavor_split_substrate",
     validation: "not_checked",
   },
-  title: "Substrate-pure derivation of the $u$--$d$ flavor split",
+  title: "Aether-pure derivation of the $u$--$d$ flavor split",
   tags: ["flavor-split", "u-d-splitting", "substrate-only", "no-fit",
          "hecke-substrate-atoms", "categorical-derivation"],
   uses: [

@@ -27,4 +27,4 @@ The figure-8 row of the depth correspondence realises a non-trivial depth-2 peri
 
 See [Table](#tbl:b1-torus-knot-rows-theorem-table-data) for per-knot CS values. Note $T(2, 5) \cong T(5, 2)$. These rational $\pi^2$ multiples confirm that torus-knot CS values sit in $\pi^2 \mathbb{Q} \subset \mathcal{P}_2$, not in $\mathcal{P}_3 \setminus \mathcal{P}_2$.
 
-Two row of the depth correspondence classes are now theorem-level: figure-8 (depth-2 non-trivial) and seven torus-knot generators (depth 2 trivial, depth 3 rational). This discharges 8 specific rows of the depth correspondence. Remaining rows of the Bring-embeddable atlas (chiral hyperbolic knots) are open at depth 3, conditional on the Volume Conjecture asymptotic.
+Two classes of rows of the depth correspondence are now theorem-level: figure-8 (depth-2 non-trivial) and seven torus-knot generators (depth 2 trivial, depth 3 rational). This discharges 8 specific rows of the depth correspondence. Remaining rows of the Bring-embeddable atlas (chiral hyperbolic knots) are open at depth 3, conditional on the Volume Conjecture asymptotic.

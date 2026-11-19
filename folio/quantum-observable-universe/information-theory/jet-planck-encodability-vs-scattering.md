@@ -1,4 +1,4 @@
-The per-step particle spectrum describes resolvability, not creation. This distinction governs when an actual scattering process can occur.
+The per-step particle spectrum describes resolvability rather than creation. This distinction governs when an actual scattering process can occur.
 
 **Encodability versus scattering.**
 The particle table describes encodability: which knot types have enough polynomial degree to be resolvable at each jet order. "Step 0 $\to$ Step 1" means the first application of $\nabla_q$ creates horizontal transport, allowing the unknot $0_1$ to become encodable. It does not represent $\gamma + \gamma \to \nu + \nu^{\sigma}$.

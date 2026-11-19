@@ -93,7 +93,9 @@ noncomputable def heckeH (q : ℝ) : ℝ := q - q⁻¹
 /-- The asserted single-wrap eigenphase `α = (z−1)h/2`. -/
 noncomputable def eigenphase (q : ℝ) : ℝ := (markovZC q - 1) * heckeH q / 2
 
-/-- The existing carrier, fields reproduced verbatim. -/
+/-- The existing carrier, fields reproduced verbatim.
+    (`@marker` opt-out: deliberate reproduction of the superseded vacuous carrier
+    for §1's proof of equivalence to `True`.) -/
 class TransferMatrixEigenphase (q : ℝ) : Prop where
   symmetrized_character_in_unit_disc :
     -2 ≤ 2 * Real.cos (eigenphase q) ∧ 2 * Real.cos (eigenphase q) ≤ 2

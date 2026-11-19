@@ -15,7 +15,7 @@ $$
 \det W_{-1}(0) = -2 .
 $$
 
-## What the three statements do
+## Structural content of the three matrix identities
 
 **Unimodularity.** $\det S^{\pm}(0) = 1$ is the leading-order instance of the
 $\det S^{\pm}(q) = 1$ condition that a Stokes sandwich must satisfy. It is the

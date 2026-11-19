@@ -23,7 +23,7 @@ $$
   \;=\; \mathcal{L}^{\mathrm{med}}\tilde f ,
 $$
 
-read as an identity of the two selection rules, not as a new theorem:
+read as an identity of the two selection rules rather than as a new theorem:
 each side is the unique real, single-valued value compatible with the
 asymptotics of $\tilde f$ (Watson/Nevanlinna–Sokal uniqueness supplies
 the analytic half; the valuation quotient

@@ -1,7 +1,7 @@
 The $q$-deformed Reeb flow $\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-flow)) restricted to the exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ ([Reeb on exceptional divisor](#rem:reeb-exceptional-divisor)) generates a discrete dynamical system. Its Julia set encodes the photon diffraction envelope.
 
 **The iteration.**
-The substrate parameter $q$ drives the main-cardioid parameterization of the Mandelbrot set:
+The aether parameter $q$ drives the main-cardioid parameterization of the Mandelbrot set:
 
 $$
   c(q) =  \tfrac{1}{2}e^{2\pi i q}
@@ -11,7 +11,7 @@ $$
 The associated quadratic map $f_q(z) = z^2 + c(q)$ acts as the discrete-time skeleton of the continuous Reeb flow. Each iteration of $f_q$ corresponds to one full circuit of the $U(1)$ fiber above $\mathcal{S}_c$. The **Julia set** $J(f_q) \subset \mathbb{C}$ marks the boundary between escaping orbits and bounded orbits. It is the fractal frontier of the Reeb dynamics.
 
 **Photon envelope.**
-Photons propagate as exceptional-divisor flux, not as $q$-harmonic forms. Their diffraction envelope follows the **Julia-set measure** $\mu_J$ (the natural invariant measure on $J(f_q)$), rather than the sinc${}^2$ distribution of massive particles. The Hausdorff dimension $d_H = d_H(q)$ of $J(f_q) \cap S^1$ governs the power-law tails of the photon envelope. It replaces the $|\varTheta|^{-2}$ falloff of classical Airy diffraction with $|\varTheta|^{-d_H}$.
+Photons propagate as exceptional-divisor flux rather than as $q$-harmonic forms. Their diffraction envelope follows the **Julia-set measure** $\mu_J$ (the natural invariant measure on $J(f_q)$), rather than the sinc${}^2$ distribution of massive particles. The Hausdorff dimension $d_H = d_H(q)$ of $J(f_q) \cap S^1$ governs the power-law tails of the photon envelope. It replaces the $|\varTheta|^{-2}$ falloff of classical Airy diffraction with $|\varTheta|^{-d_H}$.
 
 **Julia set at the golden ratio.**
 At the golden threshold $q_{\mathrm{gold}} = 1/\varphi^2 \approx 0.382$, the effective angle on the main cardioid is
@@ -65,4 +65,4 @@ $$
   \langle\Delta_\xi\rangle_e / \langle\Delta\rangle_e\bigr).
 $$
 
-This ratio strictly depends on $q$, not on slit width or wavelength. It provides a sharp experimental test of the Julia-set envelope prediction.
+This ratio strictly depends on $q$ rather than on slit width or wavelength. It provides a sharp experimental test of the Julia-set envelope prediction.

@@ -24,9 +24,9 @@ $$
 
 $C$ is irreducible over $\mathbb{Q}$ (its only possible rational roots $\pm 1, \pm 2$
 are all nonzero), so its root generates a genuine **degree-3 field**
-(discriminant $-152 = -2^3 \cdot 19$, Galois group $S_3$). Every substrate
-*quadratic* anchor sits at a rational trace value — golden $\varphi \mapsto y = 3$,
-silver $1 + \sqrt{2} \mapsto y = 6$, classical $q = 1 \mapsto y = 2$ — and $C$ is
+(discriminant $-152 = -2^3 \cdot 19$, Galois group $S_3$). Every aether
+*quadratic* anchor sits at a rational trace value (golden $\varphi \mapsto y = 3$,
+silver $1 + \sqrt{2} \mapsto y = 6$, classical $q = 1 \mapsto y = 2$), and $C$ is
 nonzero at each. A degree-$\le 2$ number can never be a root of an irreducible
 cubic, so **no quadratic-anchor or real-$q$ construction can reproduce the odd
 carrier**: this is the structural reason the real-$q$ $c_3$ closures fail.
@@ -44,11 +44,11 @@ the origin of the cubic:
 
 with $C = C_{\mathrm{Hopf}} + C_{\mathrm{unknot}}$. The odd-crossing sectors
 (virtual, trefoil) are bar-even and vanish; the identity contributes only a
-quadratic; the **cubic — hence the degree-3 field — is sourced entirely by the
+quadratic; the **cubic (and hence the degree-3 field) is sourced entirely by the
 Hopf-link (double-crossing) sector**. $C_{\mathrm{Hopf}}$ is itself irreducible
 (discriminant $-76 = -2^2 \cdot 19$), and the prime $19$ is the arithmetic
-fingerprint shared with the total $C$. So the obstruction is not a
-$3$-dimensional representation ($\mathbf{H}_3$ has none — its Wedderburn blocks
+fingerprint shared with the total $C$. So the obstruction is neither a
+$3$-dimensional representation ($\mathbf{H}_3$ has none, as its Wedderburn blocks
 are $1, 2, 1$) nor a single knot invariant, but the two-crossing isospin
 amplitude difference. Any genuine odd-channel closure must supply the cubic
 field of $C_{\mathrm{Hopf}}$, routed through the archimedean evaluation of the

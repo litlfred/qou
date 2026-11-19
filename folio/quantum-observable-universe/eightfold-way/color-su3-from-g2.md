@@ -7,7 +7,7 @@ group $\mathrm{Aut}(\Sigma_4) \cong S_5$, first Betti number $b_1(\Sigma_4) = 8$
 and Euler characteristic $\chi_{\mathrm{eu}}(\Sigma_4) = -6$ of the genus-$4$
 Bring surface are proved independently, the octonion algebra $\mathbb{O}$ enters
 as an algebraic module not yet generated from the single-fibre ($N = 2$)
-substrate, and the single-node non-separating pinch attempting to degenerate
+aether, and the single-node non-separating pinch attempting to degenerate
 Bring's surface directly onto the genus-$3$ Klein quartic via the common subgroup
 $S_4 \subset S_5 \cap \mathrm{PSL}(2,7)$ is structurally excluded below.*
 
@@ -85,8 +85,8 @@ $S_4$ action.  This follows in exact rational
 arithmetic using only
 *finiteness* of the automorphism group --- the sharp Hurwitz
 bound is deliberately avoided here, for the reason given above.  The
-$S_4$ bridge therefore fails not only to choose between two
-candidates, but to cut a $\mathbb{P}^1$ down at all.
+$S_4$ bridge therefore fails to choose between two
+candidates, and fails to cut a $\mathbb{P}^1$ down at all.
 
 Identifying the normalization therefore cannot be reduced to telling
 Klein and Fermat apart.  Many invariants do that --- the
@@ -107,7 +107,7 @@ normalization has genus $3$ *together with two marked points* --- the
 two preimages of the node, consistent with $3 + 1 = 4$.  Since the pinched
 cycle is $S_4$-invariant, $S_4$ preserves that pair setwise, so the object
 the degeneration produces is a pair $(\Sigma_3, \{p, q\})$ with an
-$S_4$-stable point pair, not a bare genus-3 curve.
+$S_4$-stable point pair rather than a bare genus-3 curve.
 
 No smooth plane quartic admits such a pair.  Let $\{p, q\}$ be $S_4$-stable;
 permuting it gives a homomorphism $S_4 \to S_2$ whose kernel has index $1$ or
@@ -138,9 +138,9 @@ exist.  The Klein quartic is not hyperelliptic, so that escape does not
 recover it.  Nor is a pinch with several nodes or of a separating cycle
 excluded --- but either is a different claim from the one made here.  What
 the argument does not touch at all is the Bring surface: it constrains the
-target, not the source.
+target rather than the source.
 
-**Status:** the $S_4$ incidence action on the local Fano data holds as an
+**Scope of the $S_4$ incidence bridge.** The $S_4$ incidence action on the local Fano data holds as an
 exact finite-group identity, and the genus-$4$ Hurwitz and homology invariants
 of $\Sigma_4$ together with the $\dim = 8$ octonionic derivation stabilizer
 $\mathfrak{su}(3) = \ker(\mathrm{ev}_e) \subset \mathfrak{g}_2$ stand
@@ -167,7 +167,7 @@ The finite simple group $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3, \mathbb{F}_2)$ h
 \end{equation}
 ```
 
-The physical interpretation:
+The representation dimensions and Standard Model assignments are:
 
 | $\dim$ | Representation | Physical role |
 |---|---|---|

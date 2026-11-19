@@ -1288,6 +1288,23 @@
         "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
         "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
         "notes": "Invalidated: the prior 'fail' verdict is grounded on 'color-superconductivity-borromean.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
+      },
+      {
+        "field_hash": {
+          "md": "96c0785f0b41",
+          "ts": "730a7c8b84a7",
+          "lean": "d67782d562b5",
+          "lean_statement": "3c151e54988e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:wave7-qa-reaudit",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-19T17:22:32.937Z",
+        "reviewed_sha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+        "notes": "Verified bash scripts/lean-verify.sh folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean exits 0 and witness m-p-borromean-verification-50dps.witness.json is verified."
       }
     ],
     "da-referee-verdict": [
@@ -2022,6 +2039,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-31T03:02:16.954Z",
+  "updated_at": "2026-11-19T17:22:32.937Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

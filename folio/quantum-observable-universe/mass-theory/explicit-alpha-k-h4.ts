@@ -21,4 +21,10 @@ export default proposition({
     "structural-derivation",
     "depth-3-stratum",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

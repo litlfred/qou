@@ -16,4 +16,10 @@ export default example({
     "net",
     "witness",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: breit-wheeler-nucleon-nf.witness.json.",
+    },
+  ],
 });

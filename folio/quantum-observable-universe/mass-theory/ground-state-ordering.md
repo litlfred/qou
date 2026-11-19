@@ -26,7 +26,7 @@ $$
   \Phi_q(p\,n\,n\,n\,n) < \Phi_q(n\,p\,n\,n\,n)
 $$
 
-*for every $q$ in an interval containing the substrate anchor
+*for every $q$ in an interval containing the aether anchor
 $q_0 \approx 1.10998$ and for every Markov parameter lying strictly
 between the two transfer-matrix eigenvalues, with equality only in the
 undeformed limit $q \to 1$.*
@@ -46,7 +46,7 @@ bare-nucleon readout ($10$ of $62$ with the electron tail), and is the
 strict maximiser in $12$ (respectively $8$).  It is not the ground state.
 
 **(ii) Tail packing** — *refuted.*  The minimising arrangement
-head-packs, not tail-packs.  At $Z = 1$ the minimising proton position is
+head-packs rather than tail-packs.  At $Z = 1$ the minimising proton position is
 $A - 5$ for every $6 \leq N \leq 15$, leaving exactly four neutrons after
 it and all remaining neutrons before it.  For $Z \geq 2$ the minimiser is
 an interleaved block at an interior offset with neutron runs on both

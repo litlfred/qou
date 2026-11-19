@@ -18,4 +18,10 @@ export default conjecture({
     "observation-frame",
     "pipeline",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

@@ -1,4 +1,4 @@
-Applying the local substrate proposition ([local substrate $q$](#prop:local-substrate-q)) to electroweak boson mass measurements yields a zero-free-parameter formula for the vertex substrate perturbation $\delta q$.
+Applying the local aether proposition ([local aether $q$](#prop:local-substrate-q)) to electroweak boson mass measurements yields a zero-free-parameter formula for the vertex aether perturbation $\delta q$.
 
 ## The vertex $\delta q$ formula
 
@@ -67,7 +67,7 @@ See [Table 4](#tbl:w-boson-mass-discrepancy-table4-data).
 
 ## Inferred $\delta q$ per experiment
 
-The backward-inferred $\delta q$ restates the mass deviations in units of the substrate parameter.
+The backward-inferred $\delta q$ restates the mass deviations in units of the aether parameter.
 
 See [Table 5](#tbl:w-boson-mass-discrepancy-table5-data).
 See [Table 6](#tbl:w-boson-mass-discrepancy-table6-data).

@@ -42,7 +42,7 @@ The dimensions and multiplicities are:
 
 The total is $10 \cdot 1 + 8 \cdot 2 + 1 \cdot 1 = 27 = 3^3$, as
 required.  The Hecke block dimensions $(1, 2, 1)$ are the
-*multiplicities* of the flavour irreps, not the irreps themselves.
+*multiplicities* of the flavour irreps rather than the irreps themselves.
 
 **The $N = 3$ question.**
 The single-fibre tower of the
@@ -84,8 +84,8 @@ The following arithmetic properties govern the row-cap obstruction:
 
 **Scope of the arithmetic reduction.**
 The same caveat applies here as to the Weyl-invariance separation
-above, and it is load-bearing in this one
-place because $N = 3$ is the chapter's central open problem.  What is
+above, and it is load-bearing here
+because deriving the three-flavour dimension $N = 3$ (beyond colour $\mathrm{SU}(3)_{\mathrm{c}}$) is the chapter's central conditional hypothesis.  What is
 proved directly is the *arithmetic* of the row cap on the channel
 dimensions: defining $\dim V_{(1^3)}^{\mathfrak{gl}_N}$ to be
 $\binom{N}{3}$ and then reasoning about $\binom{N}{3}$ via elementary
@@ -130,7 +130,7 @@ construction directions are:
 2. **Octonionic $G_2$ stabilizer:** the Günaydin--Gürsey
    $\mathbf{7} = \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$
    provides a non-self-dual triple from $\mathrm{SU}(3)_{\mathrm{c}} \subset G_2$
-   ([Proposition](#prop:color-su3-from-g2)).
+   ([color $\mathrm{SU}(3)$ from octonionic stabilization](#prop:color-su3-from-g2)).
 
 **Status of the $\mathrm{Sym}^2$ gate.**  The gate is the
 requirement that $\mathrm{Sym}^2(W)$ contain no singlet.  By the Frobenius--Schur trichotomy, at dimension three, passing
@@ -141,6 +141,6 @@ excluded*, on the decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}
 \oplus \mathbb{C}^3$ taken from the literature \cite{gunaydin-gursey1973}.
 That the Günaydin--Gürsey triple is complex type is the cited input, not an
 internally derived one, so the octonionic route is *not excluded* rather than
-*unconditionally proved to pass*.  Whether the route yields *flavour*
-$\mathrm{SU}(3)_{\mathrm{f}}$ (not just colour $\mathrm{SU}(3)_{\mathrm{c}}$)
-remains open.
+*unconditionally proved to pass*.  Whether the same mechanism also generates *flavour*
+$\mathrm{SU}(3)_{\mathrm{f}}$ alongside colour $\mathrm{SU}(3)_{\mathrm{c}}$
+is conjectural.

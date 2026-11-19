@@ -1,4 +1,4 @@
-*Let $\mu \colon \mathbf{Flavor} \to \mathbb{R}_{>0}$ be the flavor dressing functor. Let $M_N$ be the average nucleon mass, and $q = q_0$ the substrate parameter. The down-up dressed mass splitting is exactly determined by the substrate flavor formula:*
+*Let $\mu \colon \mathbf{Flavor} \to \mathbb{R}_{>0}$ be the flavor dressing functor. Let $M_N$ be the average nucleon mass, and $q = q_0$ the aether parameter. The down-up dressed mass splitting is exactly determined by the aether flavor formula:*
 
 $$
   \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}
@@ -10,7 +10,7 @@ $$
   O\!\left(\bigl(\Delta m / M_N\bigr)^2\right).
 $$
 
-*Dropping the $O$ correction yields the leading-order substrate-pure form:*
+*Dropping the $O$ correction yields the leading-order aether-pure form:*
 
 $$
   \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}
@@ -25,9 +25,9 @@ The CODATA neutron-proton mass difference is no longer an input. The functor ext
 Here $z_{\mathrm{mkv}} = \sqrt q/(q+1)$ is the excised convention-C Markov weight, inherited from the [pair-Skein formula](#lem:pair-skein-mass-formula). The statement is a convention-C result until that formula is re-derived under the canonical weight $z = q^3/(q^2+1)$.
 
 **Conditional on two upstream results, neither yet formalised.** The formal
-backing is a named accessor for a hypothesis carrying the substrate side
-([flavor split substrate proposition](#prop:flavor-split-substrate)) together with
+backing is a named accessor for a hypothesis carrying the aether side
+([flavor aether-split proposition](#prop:flavor-split-substrate)) together with
 the Skein side ([pair skein mass formula lemma](#lem:pair-skein-mass-formula)),
 which is also where the $O\!\left((\Delta m / M_N)^2\right)$ correction is
-absorbed. The equality above is asserted for a triple $(\mu, M_N, q)$ carrying
-that hypothesis, not for an arbitrary one.
+absorbed. The equality above is asserted specifically for a triple $(\mu, M_N, q)$ carrying
+that hypothesis rather than for an arbitrary triple.

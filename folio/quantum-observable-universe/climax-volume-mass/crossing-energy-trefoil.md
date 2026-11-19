@@ -19,7 +19,7 @@ $$
   =  3q.
 $$
 
-At the substrate parameter $q \approx 1.110$:
+At the aether parameter $q \approx 1.110$:
 
 $$
   \mathfrak{E}_{\mathrm{cross}}(\tau(2,3))

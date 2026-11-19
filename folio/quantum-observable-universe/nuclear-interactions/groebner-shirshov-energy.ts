@@ -16,5 +16,20 @@ export default theorem({
   lean: { ref: "qou:QOU.Archimedean.groebner_shirshov_energy",
     validation: "not_checked",
   },
-  uses: ["unital-groebner-bases:thm:main-theorem"],
+  uses: [
+    "def:hecke-normal-form",
+    "unital-groebner-bases:thm:main-theorem",
+  ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/groebner_shirshov_confluence_lyapunov_and_radical_probe.py",
+    witness: ["computations/probes/groebner-shirshov-confluence-lyapunov-and-radical-probe.witness.json"],
+    status: "verified",
+  },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

@@ -22,6 +22,10 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Computational provenance: computations/probes/electroweak_bring_schwinger_bridge_probe.py.",
+    },
+    {
       kind: "status",
       date: "2026-07-05",
       body:
@@ -79,7 +83,10 @@ export default conjecture({
   computation: {
     engine: "python",
     script: "computations/probes/ew_higgs_sdp_probe.py",
-    witness: "computations/probes/ew-higgs-sdp-probe.witness.json",
+    witness: [
+      "computations/probes/ew-higgs-sdp-probe.witness.json",
+      "computations/probes/electroweak-bring-schwinger-bridge.witness.json",
+    ],
     status: "verified",
   },
   tags: [

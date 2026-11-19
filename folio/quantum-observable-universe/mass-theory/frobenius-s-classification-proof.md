@@ -96,8 +96,7 @@ sign change in general. Example: $X = \sigma + 1$ is not homogeneous, and the
 product of the two ratios is
 $-(q+1)^2/(q-1)^2 \neq \pm 1$, so $\Phi_3 + \Phi_3 \circ S$ picks up
 $2\log\lvert (q_0+1)/(q_0-1) \rvert \neq 0$ from this factor.
-Numerically, one finds $\lvert\Phi_3 + \Phi_3 \circ S\rvert \lesssim 10^{-51}$ at the proton
-pin (mpmath, 50 digits) on all seven of its chains.
+Numerically, $\lvert\Phi_3 + \Phi_3 \circ S\rvert \lesssim 10^{-51}$ under the proton calibration (50-digit arithmetic) across all seven chains.
 
 **Functional $\Phi_1$.** Because the canonical Markov trace commutes with
 $S$, $S$ acts on $\Phi_1$ by inverting the evaluation point:
@@ -118,9 +117,10 @@ $$
 The chirality term is the unique $S$-odd channel only when $\Phi_1^{-}$
 vanishes. It does not vanish in general: on the proton chain $uud$ at the
 proton pin, $\Phi_1^{-} \approx 0.0526$ against
+<!-- literal-source: closed-form product (q_0 - q_0^{-1})^2 * Phi_3 evaluated at q_0 -->
 $h_{\mathrm{A}}^2 \Phi_3 \approx 0.00912$, a ratio $\approx 5.77$.
 
 Since $S$ maps the proton braid (uud) to a braid with quark content (ddu),
 the $S$-odd part of the mass is the structural carrier of the
 proton-neutron splitting at the Wedderburn formula level, and it has two
-sources, $\Phi_1^{-}$ and $h_{\mathrm{A}}^2\Phi_3$, not one.
+distinct sources ($\Phi_1^{-}$ and $h_{\mathrm{A}}^2\Phi_3$) rather than a single source.

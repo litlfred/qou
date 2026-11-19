@@ -9,6 +9,7 @@ export default proposition({
   },
   uses: ["def:coulomb-charge"],
   authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
     {
       kind: "status",
       body: "The companion Lean `skein_crossing_asymmetry` currently encodes a placeholder (`: True`); the intended statement ($q > 1 \\Rightarrow \\tfrac{1}{2}(q - q^{-1}) > 0$) is sketched in-file and deferred via `sorry` (`-- Ref: [leitner2026]`).",

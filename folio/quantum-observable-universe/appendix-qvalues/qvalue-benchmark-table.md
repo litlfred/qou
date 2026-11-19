@@ -33,6 +33,7 @@ representation of $H_3(q)$.
 
 **Shell correction factors (derived from $q$):**
 
+<!-- literal-source: unnormalised Rosso-Jones weighted average at z = q^{1/2}/(q+1) -->
 - $F_{\mathrm{deg2}} = 0.5904$: Rosso--Jones weighted degree-2 torus knot
   suppression for shells $\geq 5$ ($N > 28$), computed as the
   quantum-dimension weighted average
@@ -42,6 +43,7 @@ representation of $H_3(q)$.
   and $\mu_3$ ($T_{2,9}$, $s = 3^2$) branches of the Kummer tower,
   matching the CRT decomposition
   $\mathbb{Z}/6\mathbb{Z} \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}$.
+<!-- literal-source: nominal Pauli suppression parameter in 6x6 regular-representation ansatz -->
 - $F_{\mathrm{Pauli}} = 0.6382$: alternating-irrep projection for
   magic-number shells (filled $N$), computed as
   $|\mathrm{tr}_{\mathrm{alt}}(\Delta)| / |\mathrm{tr}(\Delta)|$
@@ -54,6 +56,6 @@ representation of $H_3(q)$.
 **Error propagation note.** The prediction uncertainty $\delta Q$
 from $\delta q_0 \approx 1.4 \times 10^{-9}$ is negligible
 ($\sim 10^{-9} \text{MeV}$).  The dominant theoretical uncertainty is
-*structural* (model approximations in $F_{\mathrm{shell}}$), not
+*structural* (model approximations in $F_{\mathrm{shell}}$) rather than
 parametric.  All $\sigma$-separations are therefore
 $|Q - \mathcal{Q}_{\mathrm{exp}}| / \delta\mathcal{Q}_{\mathrm{exp}}$.

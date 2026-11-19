@@ -33,4 +33,10 @@ export default proposition({
     "h-expansion",
     "wenzl-weights",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

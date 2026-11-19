@@ -106,9 +106,9 @@ def e_infinity_identifications {wenzlBridgeCorrection : Prop}
       (Finset.range ctx.n_branes).sum (fun i =>
         (Finset.range ctx.n_branes).sum (fun j => ctx.brane_pairwise i j))) ∧
     (ctx.chirality_sign = 1 ∨ ctx.chirality_sign = -1) ∧
-    wenzlBridgeCorrection :=
-  ⟨ctx.claim_mass_formula_unified, ctx.claim_descended,
-   ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise,
-   ctx.claim_chirality_sign, ctx.claim_wenzl_bridge_correction_holds⟩
+    wenzlBridgeCorrection := by
+  refine ⟨ctx.claim_mass_formula_unified, ctx.claim_descended,
+    ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise,
+    ctx.claim_chirality_sign, ctx.claim_wenzl_bridge_correction_holds⟩
 
 end QOU.BraidKnot

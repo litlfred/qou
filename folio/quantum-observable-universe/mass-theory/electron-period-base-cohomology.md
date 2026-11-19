@@ -1,1 +1,1 @@
-The electron scale $m_e$ enters the $n=2$ period $a_D^{(2)} = \tau\,a_D^{(1)} - m_e$ explicitly rather than as an overall prefactor. This reflects the cohomological role of CAL-1: $m_e$ fixes the scale of the rank-2 $W$-Hodge plane, the $h^0$ datum of the archimedean realisation.
+The electron scale $m_e$ enters the $n=2$ period $a_D^{(2)} = \tau\,a_D^{(1)} - m_e$ additively rather than as an overall prefactor: under CAL-1, $m_e$ fixes the normalization of the rank-2 $W$-Hodge plane forming the $h^0$ datum of the archimedean realisation.

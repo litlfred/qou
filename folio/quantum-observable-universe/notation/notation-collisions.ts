@@ -17,7 +17,8 @@ export default prose({
         "(7) `QOU.QBeta.FaddeevModularDouble` ($\\Phi_b$, evaluator `computations/qbeta/phi_b_evaluator.py`) vs legacy `QOU.Machinery.FaddeevQuantumDilogContext` ($\\Phi_q$); " +
         "(8) bar-parity grading theorems in `QOU.BraidKnot.CrossingEnergyBarParity` (`eSym_coef`, `eSym_mirror`, `bar_neg_of_both`); " +
         "(9) nuclear saturation in `QOU.Mass.CoordinationSaturation`; " +
-        "(10) one-dimensional sense census in `computations/audits/one_dimensional_sense_audit.py` (`AlphaShiftOneDimChannel`).",
+        "(10) one-dimensional sense census in `computations/audits/one_dimensional_sense_audit.py` (`AlphaShiftOneDimChannel`); " +
+        "(11) Molien / fake-degree bridge in `computations/probes/molien_feray_meliot_bridge_probe.py`.",
     },
   ],
 });

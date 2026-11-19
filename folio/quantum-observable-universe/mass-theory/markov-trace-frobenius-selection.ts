@@ -26,10 +26,21 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script: "computations/atomic_tr_m_mpfr_50dps.py",
-    witness: "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
+    witness: [
+      "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
+      "computations/markov/markov-peel-atomic-tr-m.witness.json",
+      "computations/canonical-tr-m-via-chi-cache.witness.json",
+      "computations/atomic-tr-m-mpfr-50dps.witness.json",
+      "computations/habiro/habiro-neutron-cross-check.witness.json",
+      "computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json",
+    ],
     status: "verified",
   },
   authorNotes: [
+    {
+      kind: "caveat",
+      body: "Governance & pipeline notes migrated from prose: (1) Under convention D, C_{dim_q} vanishes/divides by zero on l(lambda) >= 3; Term-4 co-Casimir numbers must either restrict to TL_n(q) or retire the co-Casimir route. (2) Four-way cross-check gate: Hoefsmit (Rust) and Habiro omit delta colour split (diverging by up to 3.24e-9 on D, status cb!=) and certify at muon-canonical q0^(mu).",
+    },
     {
       kind: "caveat",
       body: "**Still open, and not repaired here.** The narrative *derivation-chain* documents for these atoms (`{p,n,D}-tr-M-q0`, `markov-trace-assembly-*`) derive their characters by reading a **crossing number** off `atom_braid_word_3A`, whose own docstring states that it returns Hecke elements rather than a braid word and that no topological quantity may be read off it. The live producers do not take that route — they evaluate $\\chi^\\lambda$ as a matrix product in the seminormal representation — so the numbers above are unaffected, but those documents describe a computation nobody performs. Tracked in `qou-1ucq`. A separate open point: the deuteron's bridge leg is recorded `bridge_is_color_blind: true`, the mixed-nucleus colour-blindness of bean `qou-fv0s`.",

@@ -16,4 +16,10 @@ export default remark({
       body: "The homogeneous factorization assumption corresponds to class field mass_factorisation of qou:QOU.Observations.ThreeCalibrationDiscipline.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/gpmt_sign_block_qbeta_and_np_splitting_probe.py",
+    witness: "computations/probes/gpmt-sign-block-qbeta-and-np-splitting.witness.json",
+    status: "verified",
+  },
 });

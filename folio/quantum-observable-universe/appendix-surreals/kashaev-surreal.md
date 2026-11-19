@@ -117,7 +117,7 @@ just relocate the difficulty rather than dissolve it.
 ## Discussion
 
 **Open in general; a theorem for the figure-eight knot** — the
-conjecture is a reformulation, not a proof. Its value is in
+conjecture is a reformulation rather than a proof. Its value is in
 *separating* the algebraic content (which is computable) from the
 geometric content (which is the actual Kashaev). For $K = 4_1$ the
 classical limit statement is a theorem \cite{murakami-murakami2001}, so
@@ -142,7 +142,7 @@ For the figure-eight knot the two question marks collapse:
      \;=\; 2\,\mathrm{Cl}_2(\pi/3),
    $$
 
-   conditional only on the transfer equivalence, not on any open
+   conditional only on the transfer equivalence rather than on any open
    conjecture.
 
 2. **All orders (quantum modularity).** Garoufalidis--Zagier
@@ -151,7 +151,7 @@ For the figure-eight knot the two question marks collapse:
    holomorphic on cut planes, whose functional equation holds
    *exactly* — the factorially divergent perturbative series
    $\Phi(\hbar)$ is the asymptotic expansion of an actual analytic
-   object satisfying an equality, not merely an estimate. Read
+   object satisfying an equality rather than merely an estimate. Read
    through [$\mathrm{st}$ as median resummation](#rem:st-is-median-resummation),
    the cocycle supplies precisely the real-single-valued function
    whose surreal evaluation $\mathrm{st}$ selects: the
@@ -177,7 +177,7 @@ muon anchor is $\mathfrak{m}_\mu = \mathfrak{m}_e \cdot
 backed, at $4_1$, by a proved equality rather than a conjectural
 limit.
 
-## What $\mathrm{st}$ discards: the $\omega$-grade of the remainder
+## Subleading $\omega$-grade discarded by $\mathrm{st}$
 
 The sections above are thorough about what $\mathrm{st}$ *is* and say
 nothing about what it *throws away*. For $4_1$ the discarded quantity can
@@ -228,7 +228,7 @@ correction $1 + O(1/N)$ in the asymptotic above would give
 $r_N = O(1/N^2)$, and check 1 of the probe below measures exactly
 that — the residual after subtracting the two terms falls by a factor
 $0.4928, 0.4966, 0.4983, 0.4992, 0.4996$ on successive doublings, against
-$1/2$ for a clean $1/N$ relative tail. That rate is measured here, not
+$1/2$ for a clean $1/N$ relative tail. That rate is measured here rather than
 derived; the proposition cited above states the leading asymptotic and
 records the step from its two machine-checked analytic inputs to the saddle
 hypotheses as still assumed.
@@ -254,10 +254,9 @@ underlying convergence is logarithmically slow.
 ### Three consequences, derived before measurement
 
 Each consequence below was written down from the expansion above, and only
-then compared against this corpus's own Kashaev sum at
-$N = 50, 100, 200, 400, 800, 1600$ (exact `mpmath` at 50 dps, with
-$\mathrm{Vol}(4_1)$ computed as $2\,\mathrm{Cl}_2(\pi/3)$ rather than read
-from a float literal).
+then compared against the Kashaev sum at
+$N = 50, 100, 200, 400, 800, 1600$ (evaluated to $50$ decimal places, with
+$\mathrm{Vol}(4_1)$ computed directly as $2\,\mathrm{Cl}_2(\pi/3)$).
 
 | | derived | measured |
 |---|---|---|
@@ -270,7 +269,7 @@ consequence: anyone extrapolating the Kashaev limit on a $1/N$ grid is
 fitting a mis-specified ansatz, and the residual they will see is
 $3\pi \log(2)/N$.
 
-### What this prices
+### Subleading asymptotic pricing
 
 The algebra-versus-analysis table above assigns
 the whole analytic burden of the surreal form to a single application of

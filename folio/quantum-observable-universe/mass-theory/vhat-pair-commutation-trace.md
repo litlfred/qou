@@ -17,4 +17,4 @@ $$
   \;=\; z^2.
 $$
 
-The pentagon identity requirement $uv = qvu$ applies strictly to non-commutative operator lifts, not to the scalar traced volumes. The traced volumes commute exactly.
+The pentagon identity requirement $uv = qvu$ applies strictly to non-commutative operator lifts rather than to the scalar traced volumes. The traced volumes commute exactly.

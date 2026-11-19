@@ -1,4 +1,4 @@
-### Proof — bar-eigenspace argument
+### Proof: bar-eigenspace argument
 
 **Step 1 (which involution transposes $\lambda$).** The bar involution does
 **not** transpose cells. It fixes every central primitive idempotent:
@@ -28,14 +28,14 @@ Writing $\mathrm{bar}(e_\lambda) = e_{\lambda'}$ instead would be false. Steps 2
 
 **Step 2 (period-class bar-action).** Under the archimedean
 realization functor $\tau_{\mathrm{arch}}$
-([archimedean-realization-functor definition](#def:archimedean-realization-functor)),
+([archimedean realization functor](#def:archimedean-realization-functor)),
 the bar involution acts on the period side by:
 
-- **Hyperbolic volume**: $\mathrm{Vol}(K) = \mathrm{Vol}(\overline{K})$
- — bar-INVARIANT (orientation-reversal preserves the metric).
+- **Hyperbolic volume**: $\mathrm{Vol}(K) = \mathrm{Vol}(\overline{K})$,
+ which is bar-INVARIANT (orientation-reversal preserves the metric).
  Lives in $\mathcal{P}_2^+$ (real, bar-fixed).
 - **Chern–Simons**: $\mathrm{CS}(K) = -\mathrm{CS}(\overline{K})$ mod
- $\pi^2 \mathbb{Z}$ — bar-ANTI-INVARIANT (CS picks up the
+ $\pi^2 \mathbb{Z}$, which is bar-ANTI-INVARIANT (CS picks up the
  orientation sign). Lives in $\mathcal{P}_3^-$ (Tate-twisted).
 
 These are the two characteristic period-class bar-types at depths 2
@@ -44,25 +44,25 @@ and 3 respectively.
 **Step 3 (pairing analysis).**
 
 *Self-conjugate case $\lambda = \lambda'$.* $\#(e_\lambda) =
-e_\lambda$ — the cell is $\#$-fixed. Pairing with a depth-$n$ grouplike
+e_\lambda$, so the cell is $\#$-fixed. Pairing with a depth-$n$ grouplike
 $g \in G^{(n)}(\mathcal{H}_q)$ under Markov trace yields a value in
 the bar-fixed component of $\mathcal{P}_n / \mathcal{P}_{n - 1}$:
 
 - At $n = 2$: pairs with $\mathrm{Vol}$ (bar-fixed), which can be non-zero.
-- At $n = 3$: pairs with $\mathrm{CS}$ (bar-anti-fixed) — gives zero
+- At $n = 3$: pairs with $\mathrm{CS}$ (bar-anti-fixed), giving zero
  on bar-fixed cells.
 
 So bar-fixed cell $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 2$.
 
 *Chiral pair case $\lambda \neq \lambda'$.* $\#(e_\lambda) =
-e_{\lambda'}$ — $\#$ swaps the two cells, so $e_\lambda$ itself is not an
+e_{\lambda'}$, meaning $\#$ swaps the two cells, so $e_\lambda$ itself is not an
 eigenvector: it is the sum of its symmetric and antisymmetric parts below,
 both nonzero. The bar-eigenspaces of the
 direct sum $e_\lambda + e_{\lambda'}$ decompose as:
 
-- Bar-symmetric: $(e_\lambda + e_{\lambda'})/2$ — pairs with depth-2
+- Bar-symmetric: $(e_\lambda + e_{\lambda'})/2$, which pairs with depth-2
  (Vol-type) periods.
-- Bar-antisymmetric: $(e_\lambda - e_{\lambda'})/2$ — pairs with
+- Bar-antisymmetric: $(e_\lambda - e_{\lambda'})/2$, which pairs with
  depth-3 (CS-type) periods, if the matching holds.
 
 The bar-symmetric part pairs by definition with depth-2 of a chiral knot
@@ -73,14 +73,14 @@ $\mathrm{CS}$ (which is bar-anti-invariant).
 
 So chiral pair $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 3$.
 
-**What this argument does not prove.** Steps 2 and 3 assume that $\#$ on the
+**Unproved orientation and pairing hypotheses.** Steps 2 and 3 assume that $\#$ on the
 Hecke side matches orientation reversal on the period side, and that "pairing
 with a depth-$n$ grouplike" lands in the matching eigenspace. Neither is proved
 here, and $d_{\mathrm{II}}$ itself is defined only through
-[two-filtration-bridge conjecture](#conj:two-filtration-bridge). The argument is
+[iterated-integral and cellular-depth bridge conjecture](#conj:two-filtration-bridge). The argument is
 therefore a heuristic, conditional on that conjecture and on this matching. The
 part that is a theorem is item 4 of
-[cellular-depth-filtration proposition](#prop:cellular-depth-filtration): under
+[cellular depth filtration](#prop:cellular-depth-filtration): under
 (H-match) and (H-parity) it gives the vanishing and antisymmetry of odd-depth
 components, but not the non-vanishing that the values $2$ and $3$ require.
 Assigning a single depth to a chiral cell is not forced, because $e_\lambda$
@@ -88,7 +88,7 @@ carries both a symmetric and an antisymmetric part.
 
 ### Generality of the proof
 
-The argument is *structural*, not case-by-case:
+The argument is *structural* rather than case-by-case:
 
 1. **No upper bound on $n$.** Works for partitions of any size.
 2. **Bar-class of $\lambda$ is computable.** Self-conjugate partitions
@@ -100,4 +100,4 @@ The argument is *structural*, not case-by-case:
 See [Table](#tbl:two-filtration-bridge-general-table-data).
 
 (Self-conjugate partitions of $n$ are in bijection with partitions of
-$n$ into distinct odd parts — a classical result.)
+$n$ into distinct odd parts, a classical result.)

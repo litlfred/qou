@@ -23,4 +23,10 @@ export default corollary({
     witness: "computations/probes/knot-factor-borromean-composite-probe.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

@@ -37,32 +37,32 @@ $$
 - the exchange holds *at the physical forced windings themselves*: at
   $(\mu, \nu) = (\tfrac{1}{2}, d - \tfrac{1}{2})$ for axial distances $d \in \{2, 3, 4\}$
   (the meson is $d = 2$) the same $\Gamma$-constant identity is exact to
-  $\sim 10^{-50}$ — not only at the generic grid points, which deliberately
-  avoided the $\mu = \tfrac{1}{2}$ order — and the order-ladder factor reproduces
+  $\sim 10^{-50}$ (beyond the generic grid points, which deliberately
+  avoided the $\mu = \tfrac{1}{2}$ order), and the order-ladder factor reproduces
   the mixing numerator $d^2 - 1$ at each $d$. This
-  is numerical evidence for the modeling layer, not a proof.
+  is numerical evidence for the modeling layer rather than a proof.
 
 **Open** is the identification itself: that the channel rotation of the
-Ismail–Masson pair \cite{ismail-masson1994} — the map carrying the bar-even
-recurrence to the bar-odd one — descends to the toroidal family *as* the
+Ismail–Masson pair \cite{ismail-masson1994} (the map carrying the bar-even
+recurrence to the bar-odd one) descends to the toroidal family *as* the
 Whipple exchange, i.e. that the two winding oscillations of a bound vortex
-pair are swapped by the substrate bar involution. This conjecture is formulated
+pair are swapped by the aether bar involution. This conjecture is formulated
 as an explicit intertwining hypothesis: the rotation swaps the two winding
 gradings and is involutive on ladder data. Both conditions are
 parameter-quantified in the shape of the claim, and the conjecture remains open.
 
 Two consequences follow directly from the intertwining hypothesis:
 
-- **Along-loop winding restoration** — the along-loop winding is restored after a double
+- **Along-loop winding restoration**: the along-loop winding is restored after a double
   rotation, so the winding pair $(\mu, \nu)$ is fixed by $\mathrm{rot}^2$
   (the categorical shadow of the exact $\cosh\eta \leftrightarrow \coth\eta$
   involution);
-- **Winding-grading intertwining** — the winding-grading map
+- **Winding-grading intertwining**: the winding-grading map
   $x \mapsto (\mu(x), \nu(x))$ intertwines the channel rotation with the
   coordinate swap: $(\mu(\mathrm{rot}\,x), \nu(\mathrm{rot}\,x)) =
   \mathrm{swap}(\mu(x), \nu(x))$. This is the exact discrete shadow of the
   Whipple degree–order exchange $(\mu, \nu) \mapsto (\nu, \mu)$, and a
-  genuine consequence of the two swap-component conditions (not a restatement).
+  genuine consequence of the two swap-component conditions (rather than a restatement).
 
 The archimedean *amplitude* of that exchange is fixed independently of the
 open identification: the grid-verified constant
@@ -76,10 +76,10 @@ establishes. A channel-indexed ladder carries the two
 recurrence-channel indices, the rotation that flips them, and a single shared
 winding function $\mathrm{windOf}$; the swap
 $\mathrm{windOf}(\mathrm{evenIdx}(\mathrm{rot}\,x)) =
-\mathrm{windOf}(\mathrm{oddIdx}\,x)$ then follows from the flip, not from an
+\mathrm{windOf}(\mathrm{oddIdx}\,x)$ then follows from the flip rather than from an
 assumption. This does not close the conjecture: it
 moves the open content off the swap and onto (i) identifying the abstract
 channel flip with the odd-step $\leftrightarrow$
-even-step recurrence rotation, and (ii) the residual involutivity — the order-2
+even-step recurrence rotation, and (ii) the residual involutivity (the order-2
 Whipple $\cosh\eta \leftrightarrow \coth\eta$ exchange, a *different* map from
-the order-4 $\zeta_4$ recurrence rotation, hence genuinely open.
+the order-4 $\zeta_4$ recurrence rotation, hence genuinely open).

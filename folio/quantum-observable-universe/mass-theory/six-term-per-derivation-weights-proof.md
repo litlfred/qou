@@ -53,12 +53,10 @@ Catalan scale it uses is itself conjectural.
 
 **Comparison boundary.** The measured inputs enter here and only here.
 
-The assembly is implemented in
-the formal derivation
-as `assemble_per_derivation_weights(Z, N)` with hardcoded
+Evaluating this per-derivation weight assembly with fixed calibration
 constants $E_{0,\beta} = 0.78233341$ MeV (CODATA β-decay $Q$),
-$\alpha = m_e \cdot 8G = 3.74446989$ MeV, $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV.
-Across the proton..${}^{9}$Be spectrum (12 atoms):
+$\alpha = m_e \cdot 8G = 3.74446989$ MeV, and $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$
+across the proton through ${}^{9}$Be spectrum (12 atoms) gives:
 
 See [Table 3](#tbl:six-term-per-derivation-weights-table3-data).
 
@@ -78,7 +76,7 @@ $28.296$ ($-69.2\%$), ${}^{6}$Li $18.790$ vs $31.994$ ($-41.3\%$),
 ${}^{9}$Be $38.835$ vs $60.210$ ($-35.5\%$) MeV. The comparison
 with the standalone atomic-braid formula (0.13–0.16% mean) and with
 the single-$E_0$ assembly (14.7% mean) is likewise a comparison on
-total mass, not on binding.
+total mass rather than on binding.
 
 **Open questions.**
 

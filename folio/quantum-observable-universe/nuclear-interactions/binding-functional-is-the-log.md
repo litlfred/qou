@@ -16,8 +16,8 @@ positive, $\alpha(t_{\mathrm{free}} - t_{\mathrm{atom}}) < \alpha\,t_{\mathrm{fr
 The Markov trace is multiplicative over independent subsystems, so an atom's
 trace factors as $t_{\mathrm{atom}} = t_{\mathrm{free}} \prod_k \mu_k$ over its
 bonds. Energy, on the other hand, is extensive. A map carrying the first
-structure to the second must send products to sums — Cauchy's equation on
-$(\mathbb{R}_{>0}, \times)$ — whose continuous solutions are the multiples of
+structure to the second must send products to sums (Cauchy's equation on
+$(\mathbb{R}_{>0}, \times)$), whose continuous solutions are the multiples of
 $\ln$.
 
 The proposition records the part of that argument which is mechanically
@@ -33,8 +33,8 @@ cannot produce a binding energy above $\alpha \approx 4.19\ \mathrm{MeV}$, which
 already excludes ${}^{3}\mathrm{H}$, ${}^{4}\mathrm{He}$ and ${}^{7}\mathrm{Li}$
 against their measured values. Two separate reasons therefore point the same way.
 
-**Scope.** The uniqueness step — that Cauchy's functional equation admits no continuous
-solutions beyond $c \ln x$ — is invoked as a classical theorem of real analysis, so the
+**Scope.** The uniqueness step (that Cauchy's functional equation admits no continuous
+solutions beyond $c \ln x$) is invoked as a classical theorem of real analysis, so the
 stronger reading, that the logarithmic form is *forced* rather than merely
 preferred among the two candidates, rests on that classical theorem, whereas the
 algebraic identity proved above establishes the direct comparison between the two

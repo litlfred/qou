@@ -2,7 +2,7 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:einstein-ether-substrate",
-  title: "Einstein's ether and the categorical substrate",
+  title: "Einstein's 1920 ether and the categorical Frobenius–Hopf aether",
   // The remark is a historical interpretation of the substrate's *cohomological*
   // fixing — "q_0 is fixed ... by the cohomological structure of H^1(Bring) = 2W"
   // is the claim that carries the Einstein analogy, and that claim is

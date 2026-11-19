@@ -1,4 +1,4 @@
-The substrate parameter $q$ acts as the variable of the nuclear Skein polynomial. The transfer matrix product computes this polynomial in factored form without expansion.
+The aether parameter $q$ acts as the variable of the nuclear Skein polynomial. The transfer matrix product computes this polynomial in factored form without expansion.
 
 **Proposition.**
 *Let $\mathcal{N}(Z, N)$ be a nucleus with $A = Z + N$ nucleons.
@@ -31,5 +31,3 @@ It is computed by exactly $\binom{A}{2}$ transfer matrix
 multiplications — one per nucleon pair.*
 
 Under the alternative Convention-C parameter $z_C = 1/(q^{1/2} + q^{-1/2})$, each factor is a Laurent polynomial in $q^{1/2}$ and $P_{\mathcal{N}}$ is a polynomial in $q^{1/2}$ of degree $\leq A^2 - 1$. At the canonical parameter the $z$ denominator does not cancel in general: for a single $\mathfrak{p}$-$\mathfrak{p}$ crossing, $\hat{V}_0 = zh + 1 = (q^4+1)/(q^2+1)$.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

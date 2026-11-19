@@ -51,7 +51,7 @@ is the **Bloch–Suslin regulator**, and it is *injective after
 tensoring with $\mathbb{R}$* (Borel + Suslin).
 
 **Step 3 (archimedean image of $G^{(2)}$, this paper).** The
-substrate convolution algebra $\mathcal{H}_q$'s depth-2 grouplike
+aether convolution algebra $\mathcal{H}_q$'s depth-2 grouplike
 $\mathrm{Li}_2^q(z)$ for $z \in F^\times$ has archimedean image
 
 $$
@@ -108,7 +108,7 @@ injectivity. $\square$
  Bloch–Suslin regulator on $K_3^{\mathrm{ind}}(F)$.
 - For each Bring-natural $F = \mathbb{Q}(z_K)$, the depth-2 row
  of [transcendental accounting](#rem:transcendental-accounting)
- is a *theorem*, not a conjecture.
+ is a *theorem* rather than a conjecture.
 
 **Not proved by this**:
 - Identification of *abstract Hopf algebras*: $G^{(2)}(\mathcal{H}_q)$

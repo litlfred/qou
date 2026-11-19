@@ -6,6 +6,10 @@ export default proof({
   uses: ["prop:mass-endomorphism-tower"],
   authorNotes: [
     {
+      kind: "note",
+      body: "Computational witness: kashaev-integration-identity.witness.json.",
+    },
+    {
       kind: "refined-framing",
       body: "Earlier versions of this proof identified the integral with the compact quantum dilogarithm Φ_q; the symmetric Li_2^q identification replaced it.",
     },

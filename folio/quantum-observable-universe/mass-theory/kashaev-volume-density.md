@@ -1,10 +1,10 @@
-> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md)).
+> **Superseded.** The scalar aether density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([mass-endomorphism tower](mass-endomorphism-tower.md)).
 
 The topological mass formula $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$ is exactly a volume $\times$ density product.
 
-### Substrate density $\rho_q$
+### Aether density $\rho_q$
 
-*Define the **substrate density** to be the inverse squared quantum Planck constant:*
+*Define the **aether density** to be the inverse squared quantum Planck constant:*
 
 $$
   \rho_q
@@ -14,7 +14,7 @@ $$
   \frac{q^{2}}{(q-1)^{2}}.
 $$
 
-Physically, $\rho_q$ measures the categorical drag cost of transporting a closed vortex through the Frobenius-Hopf structure. Mass is topological volume weighted by substrate drag.
+Physically, $\rho_q$ measures the categorical drag cost of transporting a closed vortex through the Frobenius-Hopf structure. Mass is topological volume weighted by aether drag.
 
 ### The Kashaev bridge
 
@@ -38,4 +38,4 @@ $$
   \Bigr].
 $$
 
-No continuous inputs remain. Every constituent is a discrete Hecke trace evaluated at roots of unity. The finite categorical evaluation operates precisely at the non-asymptotic substrate value $q_0 \approx 1.11$, avoiding the $N \to \infty$ continuum idealization entirely.
+No continuous inputs remain. Every constituent is a discrete Hecke trace evaluated at roots of unity. The finite categorical evaluation operates precisely at the non-asymptotic aether value $q_0 \approx 1.11$, avoiding the $N \to \infty$ continuum idealization entirely.

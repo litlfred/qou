@@ -7,7 +7,7 @@
      \boxed{\; X \;:=\; Q^{r} \;=\; q^{4}. \;}
    $$
 
-   *Equivalently $X = z_W/(1 - Q + z_W)$ for the Wenzl-normalised convention-D parameter $z_W = q\,z_D = q^4/(q^2+1)$ — the relation that pins the level.*
+   *Equivalently $X = z_W/(1 - Q + z_W)$ for the Wenzl-normalised convention-D parameter $z_W = q\,z_D = q^4/(q^2+1)$, the relation that pins the level.*
 3. *Form the Schur principal-specialisation:*
 
    $$
@@ -23,7 +23,7 @@
    *The closed form for $Z_n$ removes the sum over all $p(n)$ partitions.*
 5. *Factor the result over $\mathbb{Q}(q)$ to isolate the cyclotomic denominator.*
 
-This deterministic process produces the exact $y_\lambda(q)$ closed form in $O(|\lambda| \cdot \max h)$ steps — the cost of one Schur specialisation, the normaliser being closed-form.
+This deterministic process produces the exact $y_\lambda(q)$ closed form in $O(|\lambda| \cdot \max h)$ steps: the cost of one Schur specialisation, the normaliser being closed-form.
 
 **Convention.** The substitution above uses the canonical Convention-D parameter $z_D = q^3/(q^2+1)$. By contrast, the Convention-C parameterization sets
 
@@ -31,7 +31,7 @@ $$
   X \;=\; \frac{q^{3/2}}{1 + q - q^2 - q^3 + q^{3/2}},
 $$
 
-which is convention C: inverting the lattice relation gives exactly $z_W = q\,z_C = q^{3/2}/(q+1)$. That value is *off* the Wenzl lattice — at the substrate anchor it corresponds to an effective level $r \approx 2.5995$, not an integer — which is why it carried a formal square root and why the level never appeared explicitly.
+which is convention C: inverting the lattice relation gives exactly $z_W = q\,z_C = q^{3/2}/(q+1)$. That value is *off* the Wenzl lattice (at the aether anchor it corresponds to a non-integer effective level $r \approx 2.5995$), which is why it carried a formal square root and why the level never appeared explicitly.
 
 **Consequences of the migration.** All three are simplifications:
 

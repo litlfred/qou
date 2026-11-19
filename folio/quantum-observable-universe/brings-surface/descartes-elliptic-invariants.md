@@ -1,6 +1,6 @@
 **Invariants.**
 
-| Quantity | Formula | Value at the substrate parameter $q$ |
+| Quantity | Formula | Value at the aether parameter $q$ |
 |----------|---------|---------------------|
 | Discriminant | $\Delta(q)$ | $-18.95$ |
 | $j$-invariant | $j(q) = 256(2z^2 + z + 2)^3 / \Delta$ | $129.9$ |

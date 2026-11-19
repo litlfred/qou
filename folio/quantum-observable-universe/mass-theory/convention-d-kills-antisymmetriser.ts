@@ -21,4 +21,16 @@ export default proposition({
     "characterisation",
     "trace-convention",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/qbeta/qbeta_decay_channel_convention_status_probe.py",
+    witness: "computations/qbeta/qbeta-decay-channel-convention-status.witness.json",
+    status: "verified",
+  },
 });

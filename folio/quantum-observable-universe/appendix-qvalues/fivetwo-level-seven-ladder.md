@@ -28,7 +28,7 @@ The proposition derives those three numerators from three five-term instances
 alone. Summing them gives $\sum_k \mathrm{Re}[2L(w_k)+L(-w_k)] = \pi^{2}/2 =
 3L_1$, which is Route 8's target and hence the sum rule.
 
-## Where the $7$ comes from
+## Origin of the cyclotomic level $7$
 
 The certificate is
 
@@ -43,7 +43,7 @@ residues mod $7$**. That is where the $7$ in $m_k/7$ originates: not from an
 identity that happens to have a seven in it, but from the multiplicative
 structure of $(\mathbb{Z}/7)^{\times}$ acting on the three real conjugates.
 
-## Why the cleared form, and not the divided one
+## Choice of the cleared polynomial form
 
 The statement multiplies through by $7$ rather than dividing. The divided form is genuinely unavailable, and for a
 sharper reason. In characteristic $7$ the same hypotheses **force** $3L_1 = 0$,

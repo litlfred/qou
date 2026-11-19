@@ -1,7 +1,7 @@
-Discretizing the continuous Reeb flow $\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-flow)) at the Big Bang—where the substrate parameter $q \to \infty$ and the quantum Planck constant $\hbar_q = 1 - q^{-1} \to 1$ ([quantum Planck constant](#def:quantum-planck-constant))—defines a **Planck step**, the minimal dynamical time unit of the QOU. Time is discrete at the origin.
+Discretizing the continuous Reeb flow $\phi_t^q$ ([$q$-Reeb flow](#ex:q-reeb-flow)) at the Big Bang—where the aether parameter $q \to \infty$ and the quantum Planck constant $\hbar_q = 1 - q^{-1} \to 1$ ([quantum Planck constant](#def:quantum-planck-constant))—defines a **Planck step**, the minimal dynamical time unit of the QOU. Time is discrete at the origin.
 
 **Algebraic normalization.**
-The $q$-deformed Reeb flow rotates the affine coordinate $Z$ of a state ([substrate radial coordinate](#prop:substrate-radial-coordinate)):
+The $q$-deformed Reeb flow rotates the affine coordinate $Z$ of a state ([aether radial coordinate](#prop:substrate-radial-coordinate)):
 
 $$
   \mathcal{L}_\xi Z = J\hbar_q Z.
@@ -27,7 +27,7 @@ The Planck step acts as the polynomial iteration $f_q(z) = z^2 + c(q)$ ([Julia s
 | Regime | $q$ | $\hbar_q$ | $t_P$ | Interpretation |
 |--------|-----|-----------|-------|----------------|
 | Big Bang | $q \to \infty$ | $\to 1$ | $\to 1$ | Minimal step; time is fastest |
-| Physical | $q = q_0$ ([local substrate $q$](#prop:local-substrate-q)) | $0.0988$ | $\approx 10.1$ | Local Planck time |
+| Physical | $q = q_0$ ([local aether $q$](#prop:local-substrate-q)) | $0.0988$ | $\approx 10.1$ | Local Planck time |
 | Classical | $q \to 1$ | $\to 0$ | $\to \infty$ | No Reeb period; time freezes |
 
 At the Big Bang, $t_P \to 1$. One Planck step exactly equals one unit. The continuous Reeb flow is merely the $\mathbb{R}$-shadow of this discrete iteration. There is no sub-step resolution.
@@ -52,7 +52,7 @@ Before the first step, position is known exactly but momentum is entirely undete
 Over $\mathbb{F}_\pp$, this first step evaluates $f_q$ once: $z_1 = z_0^2 + c(q)$. The first moment after the Big Bang is a single polynomial evaluation.
 
 **Counting Planck steps.**
-The count of Planck steps measures dynamical distance in Reeb time. From the Big Bang ($q_0 \gg 1$) to the local substrate ($q = q_0$):
+The count of Planck steps measures dynamical distance in Reeb time. From the Big Bang ($q_0 \gg 1$) to the local aether ($q = q_0$):
 
 $$
   N(q_0, q)
@@ -60,10 +60,10 @@ $$
   \frac{dq'}{t_P(q')\dot{q}(q')}
 $$
 
-where $\dot{q}$ is the coordinate time derivative of the substrate parameter. Over $\mathbb{F}_\pp$, the integral becomes a finite sum.
+where $\dot{q}$ is the coordinate time derivative of the aether parameter. Over $\mathbb{F}_\pp$, the integral becomes a finite sum.
 
 **Information per step.**
 Each Planck step propagates information across one fiber. The information content per step is bounded by the Julia-set Hausdorff dimension $d_H(q)$ ([Julia set of Reeb flow](#rem:julia-set-reeb)) over $\mathbb{C}$, or by the orbit complexity of $f_q$ over $\mathbb{F}_\pp$. At the Big Bang, the dynamics is simplest and each step carries minimal information. As $q$ approaches the golden threshold, the complexity peaks. The universe processes information faster as it cools, reaching peak capacity near the golden ratio.
 
 **Relation to 't Hooft's ontological CA.**
-'t Hooft \cite{thooft2016} posits a Planck-scale tick as the elementary time unit of a deterministic cellular automaton. The Planck step $t_P(q) = q/(q-1)$ realizes this tick. It is algebraically derived from the substrate parameter $q$ rather than posited independently. It recovers the dimensional Planck time via the archimedean realisation at $q_0$.
+'t Hooft \cite{thooft2016} posits a Planck-scale tick as the elementary time unit of a deterministic cellular automaton. The Planck step $t_P(q) = q/(q-1)$ realizes this tick. It is algebraically derived from the aether parameter $q$ rather than posited independently. It recovers the dimensional Planck time via the archimedean realisation at $q_0$.

@@ -24,7 +24,7 @@ $$
   \cdot \sqrt{\rho}\Bigr).
 $$
 
-Here $c_q = 1/(q - 1)$ denotes the substrate velocity parameter ([substrate parameter](#def:substrate-parameter)). At vanishing density ($\rho \to 0$), the quantum-pressure term dominates; at high density, the dispersive correction recedes so that $c_s \to c_q$.
+Here $c_q = 1/(q - 1)$ denotes the aether velocity parameter ([aether parameter](#def:substrate-parameter)). At vanishing density ($\rho \to 0$), the quantum-pressure term dominates; at high density, the dispersive correction recedes so that $c_s \to c_q$.
 
 *Kinematic scalar horizon conditions.* A scalar acoustic horizon forms on a spatial hypersurface $\Sigma$ satisfying $|v| = c_s$ whenever three conditions hold jointly:
 

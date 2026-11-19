@@ -8,13 +8,10 @@ selection that this appendix examines.
 This appendix gives the complete NF decomposition of
 $b_i \cdot \beta(T_{m,n}) \cdot b_j$ for every pair of NF basis
 elements and every torus knot operator, **symbolic in
-$h = q - q^{-1}$**.  All results are exact in $q$ — numerical
-values appear only in the witness file for comparison at $q_0$.
+$h = q - q^{-1}$**.  All results are exact polynomials in $h$.
 
 **Notation.**  $h = q - q^{-1}$ (Hecke amplitude).  The NF basis
 is $\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$.
-
-**Witness**: `knot-operator-table.witness.json`.
 
 ---
 
@@ -85,6 +82,3 @@ unconditionally produces the electron channel for all incoming
 pairs**.  Higher operators ($T_{2,5}$, etc.) also open all
 channels but at higher crossing energy cost ($h^2$ vs $1$
 for the photon-photon pair).
-
-**Witness**: `knot-operator-table.witness.json`,
-`gram-matrix-dual.witness.json`.

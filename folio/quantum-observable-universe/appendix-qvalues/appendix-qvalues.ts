@@ -31,7 +31,7 @@ export default chapter({
       ],
     },
     {
-      title: "Substrate evaluations",
+      title: "Aether-parameter evaluations",
       blocks: [
         "proton-borromean-assembly",
         "proton-mass-substrate-identity",

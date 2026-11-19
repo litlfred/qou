@@ -24,6 +24,10 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
       kind: "status",
       date: "2026-06-07",
       body:
@@ -43,4 +47,14 @@ export default conjecture({
       see: "docs/audits/2026-06-07-conjecture-triage.md",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/two_term_qed_isotope_and_nucleon_compute.py",
+    witness: [
+      "computations/two-term-qed-isotope-and-nucleon-compute.witness.json",
+      "computations/delta-q-decoration.witness.json",
+      "computations/borromean-binding-recompute.witness.json",
+    ],
+    status: "verified",
+  },
 });

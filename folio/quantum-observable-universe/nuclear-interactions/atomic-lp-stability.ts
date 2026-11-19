@@ -24,4 +24,10 @@ export default proposition({
         "`ℝ` is forced by the statement rather than chosen.",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/universal-ilp.py",
+    witness: "computations/universal-ilp.witness.json",
+    status: "verified",
+  },
 });

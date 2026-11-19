@@ -9,7 +9,7 @@ This simulator computes the interference intensity envelope for two scattering m
 
 **Parameters**:
 
-- $q$ — substrate parameter
+- $q$ — aether parameter
 - $a$ — slit width
 - $d$ — slit separation
 - $\lambda$ — de Broglie wavelength

@@ -10,4 +10,10 @@ export default remark({
     "prop:physical-units-gap-linear",
     "conj:yang-mills-mass-gap",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/q1-mass-gap-probe.witness.json.",
+    },
+  ],
 });

@@ -59,4 +59,4 @@ The inductive reduction ensures polynomial scaling. Each new nucleon multiplies 
 | $3$ | $(2, 1)$ | ${}^3\mathrm{He}$ | $0.000$ |
 | $4$ | $(2, 2)$ | ${}^4\mathrm{He}$ | $0.098$ |
 
-He-3 achieves exact demand closure ($|\mathrm{dem}| = 0$). He-4 has nonzero demand but minimal Markov trace. The doubly magic stability of He-4 arises from action minimization, not demand closure.
+He-3 achieves exact demand closure ($|\mathrm{dem}| = 0$). He-4 has nonzero demand but minimal Markov trace. The doubly magic stability of He-4 arises from action minimization rather than demand closure.

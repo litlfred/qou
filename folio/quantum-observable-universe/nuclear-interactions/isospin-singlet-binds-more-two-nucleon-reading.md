@@ -1,6 +1,6 @@
 **Remark (two-nucleon reading).** This remark records how the ordering $\mu_- < \mu_+$ of [the isospin interface scalars](#prop:isospin-singlet-binds-more) is read against the measured two-nucleon channels, and the values of the two scalars at $q_0$.
 
-### What it selects
+### Selected two-nucleon channel
 
 Binding is $B = -\alpha\log\mu$ with $\alpha > 0$, a decreasing function of $\mu$, so
 the smaller scalar is the more strongly bound channel. The singlet is thus predicted
@@ -15,11 +15,6 @@ weight comes from. The alternative story, in which the interface is keyed on the
 nucleon content of the pair, is not only unnecessary; it is unavailable --- see
 [the content-keyed refutation](#prop:content-keyed-interface-refuted).
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the
-substrate wall: it invokes real- or complex-analytic constructs --- real-valued
-physical observables, real-analytic bounds, transcendental constants, or numerical
-evaluation at the substrate parameter $q_0$. Any generic categorical or
-$q$-deformation identities it draws on remain valid over an abstract coefficient ring;
-only their archimedean realisation is specialised here. At
+At
 $q_0 = 1.10997858275138080759$ the two scalars are
 $\mu_- = 0.24729788674803459841$ and $\mu_+ = 0.75270211325196540159$.

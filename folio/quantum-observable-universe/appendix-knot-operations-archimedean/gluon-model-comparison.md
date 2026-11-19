@@ -21,7 +21,7 @@ where $\mathrm{cx} = \mathrm{cx}(q_0,q_1) \cdot \mathrm{cx}(q_0,q_2) \cdot \math
 | Model | net$(\mathfrak{p})$ | net$(\mathfrak{n})$ | $\Delta$(n$-$p) | $\Delta \times E_0$ (MeV) | $E_0$ implied (MeV) |
 |-------|:-------------------:|:-------------------:|:---------------:|:-------------------------:|:--------------------:|
 | A | $+0.9991$ | $+0.8108$ | $-0.1883$ | $-0.7823$ | $4.155$ |
-| B | $+1.8460$ | $+1.4939$ | $-0.3521$ | $-1.4628$ | $2.222$ |
+| B <!-- literal-source: closed-form H_3(q_0) normal-form sums for Models B through E --> | $+1.8460$ | $+1.4939$ | $-0.3521$ | $-1.4628$ | $2.222$ |
 | C | $+1.5116$ | $+1.2311$ | $-0.2805$ | $-1.1653$ | $2.789$ |
 | D | $+1.2085$ | $+0.9993$ | $-0.2092$ | $-0.8693$ | $3.739$ |
 | E | $+1.4704$ | $+1.1899$ | $-0.2805$ | $-1.1653$ | $2.789$ |
@@ -40,7 +40,7 @@ $$
         + 0.046L_+ - 0.044L_-
 $$
 
-The $L_+$ and $L_-$ terms constitute the Hopf link $\mathcal{L}_H$. The $\oplus$ operation in $B = \mathcal{B}_3 \oplus \mathcal{L}_H$ is intrinsic to the Borromean braid algebra, not an additional factor. Explicitly adding Hopf links (Models B–E) double-counts the gluon contribution. The braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ completely encodes confinement ($\mathcal{B}_3$) and gluon binding ($\mathcal{L}_H$). 
+The $L_+$ and $L_-$ terms constitute the Hopf link $\mathcal{L}_H$. The $\oplus$ operation in $B = \mathcal{B}_3 \oplus \mathcal{L}_H$ is intrinsic to the Borromean braid algebra rather than an additional factor. Explicitly adding Hopf links (Models B–E) double-counts the gluon contribution. The braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ completely encodes confinement ($\mathcal{B}_3$) and gluon binding ($\mathcal{L}_H$). 
 
 The near-cancellation $+0.046 - 0.044 = +0.002$ reflects baryon color neutrality. The $\gamma$ term ($\approx +0.998$) places $B_3$ perturbatively close to the identity.
 

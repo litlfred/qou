@@ -1,4 +1,4 @@
-**Conjecture (conditional on [borromean-quark conjecture](#conj:borromean-quark)).**
+**Conjecture (conditional on [Borromean quark conjecture](#conj:borromean-quark)).**
 The topological mass formula is a knot invariant (R-I, R-II,
 R-III).  The binding energy of linked particles is an
 embedding invariant (R-II, R-III but not R-I).  Shell
@@ -46,7 +46,7 @@ The electron mass $\mathfrak{m}_e \approx 0.511$ MeV (from vacuum drag, since
 $\mathrm{Vol}(T_{2,3}) = 0$) does not change when the electron
 is excited.  The proton mass $\mathfrak{m}_{\mathfrak{p}} \approx 938$ MeV
 (from $\mathrm{Vol}(\mathcal{B}_3)$) does not change when the
-atom is ionised.  Mass is a property of the **knot type**, not
+atom is ionised.  Mass is a property of the **knot type** rather than
 the diagram.
 
 **Binding energy: invariant under R-II and R-III only.**
@@ -137,5 +137,3 @@ This is why an excited hydrogen atom is still hydrogen: the
 electron is still a trefoil (knot type unchanged by R-I).  But
 it is in a different state: the trefoil's writhe is different
 (embedding changed by R-I), and the binding energy differs.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

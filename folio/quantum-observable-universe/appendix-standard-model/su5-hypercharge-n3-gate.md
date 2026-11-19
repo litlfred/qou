@@ -11,82 +11,63 @@ $$
   \qquad [r]_q = \frac{q^{r} - q^{-r}}{q - q^{-1}},
 $$
 
-whose $r = 2$ member is $z_2 = q^3/(q^2+1)$ — the canonical trace parameter the
-framework actually runs on — and whose $r = 5$ member is
-$z_5 \approx 0.32275$ at the substrate anchor.  The Schur–Weyl row cap at level
-$r$ is $\ell(\lambda) \le r$, so each level fixes an admissible row count: the
-framework sits at $r = 2$, the flavour fundamental would need $r = 3$, and
-$\mathrm{SU}(5)$ is $r = 5$.
+whose $r = 2$ member is $z_2 = q^3/(q^2+1)$ — the canonical trace parameter on
+the rank-$2$ base fibre $V_2$ — whose $r = 3$ member $z_3 = q^3/[3]_q$ is the
+HOMFLY-PT trace parameter on the Kummer-pushforward colour bundle
+$W_3 = \pi_*\mathcal{L}$, and whose $r = 5$ member is
+$z_5 \approx 0.32275$ at the aether parameter.  The Schur–Weyl row cap at level
+$r$ is $\ell(\lambda) \le r$, so each level fixes an admissible row count: a
+single base spinor sits at $r = 2$, the colour pushforward occupies $r = 3$, and
+irreducible Georgi–Glashow $\mathrm{SU}(5)$ would occupy $r = 5$.
 
-**These levels are alternatives, not stages.**  The framework carries a
-*single* Markov trace parameter — production computes one $z$, the canonical
-$z_2 = q^3/(q^2+1)$ — and the fibre-dimension result below fixes $z$ from the
-fibre.  So one fibre occupies one level; there is no sense in which the
-framework passes *through* $r = 3$ and $r = 4$ on its way to $r = 5$, and
-nothing is cumulative.  Reaching a higher level means a *different* fibre, not
-a further step.
+**These levels are alternatives on an irreducible fibre rather than cumulative stages.**
+A single irreducible fibre of quantum dimension $[N]_q$ carries one Markov trace
+parameter, fixed with nothing left to choose by $z\,[N]_q = q^N$: a two-dimensional
+fibre carries $z_2$, a three-dimensional fibre carries $z_3$, and an irreducible
+five-dimensional fibre would carry $z_5$.  No construction in this framework
+produces an *irreducible* fibre of quantum dimension $[5]_q$, and restating the
+conditional implication $\dim_q V = [5]_q \Rightarrow z = z_5$ as though its
+antecedent held would mistake a value of a rational function for an object.
 
-**The level would fix the trace parameter, with nothing left to choose.**  This
-is the fibre-dimension result, proved for general $N$: a fibre of quantum
-dimension $\dim_q V = [N]_q$ forces $z\,[N]_q = q^N$.  So a genuinely
-five-dimensional fibre would carry $z = z_5$ as a consequence rather than as a
-fit, exactly as the two-dimensional fibre carries $z_2$.
+**The framework constructs a split $2 \oplus 3$ bundle rather than an irreducible $r = 5$ fibre.**
+On a single unramified base fibre $V_2$, every summand passing the $\mathrm{Sym}^2$
+gate has even dimension, so $r = 3$ cannot arise inside one base fibre alone.
+Over Bring's genus-$4$ surface ($\chi_{\mathrm{eu}} = -6$), however, scalar
+restriction along the degree-$3$ cyclic Kummer $\mathbb{Z}_3$-cover $\pi$ pushes
+a rank-$1$ Kummer module forward to a rank-$3$ bundle $W_3 = \pi_*\mathcal{L}$
+($\dim \Lambda^3 W_3 = 1$), equipped with Jimbo's $N = 3$ ($a = q^3$) braided
+$R$-matrix and Markov parameter $z_3 = q^3/[3]_q$.  Assembling $V_2$ and $W_3^*$
+forms the **reducible split bundle** $F = V_2 \oplus W_3^*$ rather than an irreducible
+level-$5$ Wenzl fibre.
 
-That statement is a **conditional**, and its antecedent is not established.  No
-construction in this framework produces a fibre of quantum dimension $[5]_q$, or
-of $[3]_q$; the theorem says what would follow *if* one existed, and restating
-its hypothesis as though it held would be the error the framework's own
-discipline names — a conditional lemma proves the implication, never the
-premise.  What the corpus contains at $r = 5$ is a value of a rational
-function, not an object.
-
-**What is missing is therefore not the object but a construction supplying a
-different fibre.**  The framework has no construction yielding a fibre at any
-level other than $r = 2$.  That is the same gap as the flavour problem, at a
-larger level: the three-dimensional fundamental would be $r = 3$, and no object
-of the single-fibre
-category can supply it, since every object of that category passing the
-$\mathrm{Sym}^2$ gate has even dimension.  Climbing cannot be done from inside
-the fibre; it requires structure at the groupoid level, which is exactly what
-[the truncation conjecture](#conj:sm-gauge-truncation) records as unavailable.
-
-$\mathrm{SU}(5)$ therefore sits **strictly downstream** of an already-open
-gate, and is further from reach than the flavour $\mathrm{SU}(3)$ the framework
-has been unable to construct.  It offers no route around that gate, since it
-presupposes it.
-
-## What the grand-unified organisation contributes anyway
-
-One observation survives independently of whether any other level is ever
-reached, and
-it re-scopes the framework's open list.
+## Consequences of the split $2 \oplus 3$ bundle without $\mathrm{SU}(5)$
 
 In the Georgi–Glashow organisation one generation and its antiparticles occupy
 the exterior algebra $\Lambda \mathbb{C}^5$, with the five basis vectors labelled
 $u, d, r, g, b$ \cite{baez-huerta2010}, so that
 $\mathbb{C}^5 \cong \mathbb{C}^2 \oplus \mathbb{C}^3$ — isospin and colour.
-There, **hypercharge is not an additional datum; it is forced.**  The elements of
-$\mathrm{SU}(5)$ commuting with all of $\mathrm{SU}(2) \times \mathrm{SU}(3)$
-are scalar on each block, $\mathrm{diag}(\alpha,\alpha,\beta,\beta,\beta)$, and
-the determinant condition $\alpha^2\beta^3 = 1$ cuts
-$\mathrm{U}(1) \times \mathrm{U}(1)$ down to one $\mathrm{U}(1)$, generated by
-$\mathrm{diag}(\alpha^{3},\alpha^{3},\alpha^{-2},\alpha^{-2},\alpha^{-2})$.  The
-grading of $\Lambda\mathbb{C}^5$ then fixes every hypercharge in the generation.
+On the split bundle $F = V_2 \oplus W_3^*$, **fractional hypercharge is forced
+without importing the full $\mathfrak{su}(5)$ algebra.**  Inside the $5 \times 5$
+matrices on $F$, the block-diagonal unimodular Lie subalgebra
+$\mathfrak{su}(3)_{\mathrm{c}} \oplus \mathfrak{su}(2)_L \oplus \mathfrak{u}(1)_Y$
+has exact dimension $8 + 3 + 1 = 12$ and identically vanishing $(2,3)$ and $(3,2)$
+off-diagonal blocks, thereby excluding all $24 - 12 = 12$ proton-decay leptoquark
+generators of Georgi–Glashow $\mathrm{SU}(5)$.  The centralizer of
+$\mathfrak{gl}(V_2) \oplus \mathfrak{gl}(W_3^*)$ inside the block-diagonal
+endomorphisms consists of block scalars $\mathrm{diag}(y_2 I_2, y_3 I_3)$, and
+tracelessness $2y_2 + 3y_3 = 0$ holds if and only if $y_3 = -\frac{2}{3}y_2$.
+Setting $y_2 = -\frac{1}{2}$ forces $y_3 = +\frac{1}{3}$ on $W_3^*$, fixes all
+five chiral multiplets on $\Lambda^1 F \oplus \Lambda^2(F^*)$ ($5 + 10 = 15$
+Weyl states) with global kernel $\mathbb{Z}_6$ and exact cancellation of all five
+gauge and gravitational anomalies, and yields the canonical ultraviolet mixing
+ratio $\sin^2\theta_W^{\mathrm{UV}} = \mathrm{Tr}(T_3^2)/(\mathrm{Tr}(T_3^2) + \mathrm{Tr}(Y^2)) = 3/8$
+purely from exterior-trace additivity on $F$.
 
-The framework records the missing hypercharge and the missing three-dimensional
-fundamental as two separate gaps — the first asking for a second crossing
-invariant independent of the writhe, the second for a three-dimensional object.
-Read through the $2 \oplus 3$ block structure they are **one** gap: supply the
-colour triple and the determinant condition delivers $\mathrm{U}(1)_Y$ with
-nothing further to choose; withhold it and $Y$ stays underdetermined however
-much framing data is added.  On this reading, searching for an *independent*
-second invariant may be the wrong shape of question.
-
-**What this does not establish.**  That the level-$5$ fibre's five dimensions
-would split as $2 \oplus 3$ in the Standard-Model way is **not** shown here and
-is not a consequence of the tower — the tower fixes a row cap and a trace
-parameter, not a flavour–colour decomposition.  Treating the two fives as the
-same five is the open question, not a result.  Georgi–Glashow $\mathrm{SU}(5)$
-is in any case excluded by experiment on its proton-decay rate
-\cite{baez-huerta2010}; what is at issue is the algebraic organisation, not the
-physical theory.
+**Distinction from $r = 5$ grand unification.**  Because $F = V_2 \oplus W_3^*$
+is split rather than simple, the three gauge couplings $(g_3, g_2, g_1)$ evolve
+under the one-loop Standard Model Dynkin multiplicities $(7, \frac{19}{6}, -\frac{41}{10})$
+without proton-decay gauge bosons, whereas Georgi–Glashow $\mathrm{SU}(5)$
+at an irreducible $r = 5$ rung is excluded experimentally by proton-lifetime
+bounds \cite{baez-huerta2010}.  On the knot-state side, lifting the split-bundle
+hypercharge grading to canonical per-state framed braid words is the open bridge
+in [the truncation conjecture](#conj:sm-gauge-truncation) and [the hypercharge conjecture](#conj:sm-hypercharge-invariant).

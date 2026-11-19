@@ -25,7 +25,13 @@ export default remark({
   computation: {
     engine: "python",
     script: "computations/alpha_em_schwinger_ladder_probe.py",
-    witness: "computations/alpha-em-schwinger-ladder.witness.json",
+    witness: [
+      "computations/alpha-em-schwinger-ladder.witness.json",
+      "computations/alpha-em-anchor-preference.witness.json",
+      "computations/probes/the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.witness.json",
+      "computations/per-observable-100x-status.witness.json",
+      "computations/probes/substrate_consistency_window_q_from_alpha_em_probe.witness.json",
+    ],
     status: "verified",
   },
 });

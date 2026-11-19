@@ -6,6 +6,6 @@ $$
 
 *the ladder admits a clean integer-$u$ Taylor representation if and only if $R$ is bar-even (an even function of $t := q - 1$ about $q = 1$).*
 
-The substrate variable $u$ has a double zero at $q = 1$. Under $q \mapsto q^{-1}$, $t \mapsto -t + O(t^2)$. If $R$ is even in $t$, the $u$-grading absorbs the coefficients, avoiding a $\sqrt{u}$ branch. If $R$ has odd-in-$t$ content, the reversion picks up a $\sqrt{u}$ branch, making the scalar extraction singular.
+The aether variable $u$ has a double zero at $q = 1$. Under $q \mapsto q^{-1}$, $t \mapsto -t + O(t^2)$. If $R$ is even in $t$, the $u$-grading absorbs the coefficients, avoiding a $\sqrt{u}$ branch. If $R$ has odd-in-$t$ content, the reversion picks up a $\sqrt{u}$ branch, making the scalar extraction singular.
 
 This is the formalize-first gate for the bar-even invariant: stating the candidate as a power series in $t$, evaluating $R(q^{-1}, \xi^{-1})$, and subtracting refutes any candidate with a non-zero difference structurally.

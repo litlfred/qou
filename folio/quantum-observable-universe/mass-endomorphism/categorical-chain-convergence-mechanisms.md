@@ -10,7 +10,7 @@ $$
   \lvert R_N \rvert \;\le\; \frac{\hbar_q^{2(N+1)}}{1 - \hbar_q^2},
 $$
 
-where $\hbar_q = (q-1)/q$. At the substrate $q_0 \approx 1.110$, $\hbar_q^2 \approx 9.8 \times 10^{-3}$, meaning each new rung tightens the prediction by approximately $100\times$ (see [Table](#tbl:categorical-chain-convergence-mechanisms-table-data)).
+where $\hbar_q = (q-1)/q$. At the aether $q_0 \approx 1.110$, $\hbar_q^2 \approx 9.8 \times 10^{-3}$, meaning each new rung tightens the prediction by approximately $100\times$ (see [the chain-convergence comparison table](#tbl:categorical-chain-convergence-mechanisms-table-data)).
 
 The truncation depth this gives for free-neutron $\beta$-decay is recorded in [this remark](#rem:categorical-chain-convergence-mechanisms-neutron-truncation).
 
@@ -38,7 +38,7 @@ Cross-coupling correction terms vanish at leading order and only enter when $\ma
 
 ## Combined picture
 
-For a dense substrate with numerous atomic-knot configurations, the full prediction factorises:
+For a dense aether with numerous atomic-knot configurations, the full prediction factorises:
 
 $$
 \boxed{
@@ -57,7 +57,7 @@ The inner product (per linked cluster) is finite via Mechanism 1, while the oute
 ## Mechanism in the QOU framework
 
 This constitutes the categorical analog of asymptotic freedom:
-- At high substrate density (small $\hbar_q$), the per-knot tower truncates sharply.
+- At high aether density (small $\hbar_q$), the per-knot tower truncates sharply.
 - At wide spatial dilution (most $K_i, K_j$ pairs unlinked), the inter-knot coupling vanishes.
 
 Both limits converge a formally-infinite Habiro-ring element to a finite-precision real-valued prediction.
@@ -67,5 +67,5 @@ Both limits converge a formally-infinite Habiro-ring element to a finite-precisi
 In the Habiro ring $\widehat{\mathbb{Z}[q]}_{\text{Hab}}$:
 - Each $F_k = 1 + c_k \cdot b^k \cdot \hbar_q^{2k}$ constructs a Pochhammer-graded element at depth $k$.
 - The infinite product $\prod_k F_k$ exists formally within the inverse limit $\varprojlim \mathbb{Z}[q]/((q;q)_n)$.
-- Per-knot evaluation projects to a Habiro residue at the substrate $q_0$, rendered finite by linking-number locality.
+- Per-knot evaluation projects to a Habiro residue at the aether parameter $q_0$, rendered finite by linking-number locality.
 - The archimedean realisation provides the numerical $\mathfrak{Q}_\beta^{\text{cat}}$.

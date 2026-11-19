@@ -71,4 +71,10 @@ export default remark({
         "not yet in Mathlib — the load-bearing saddle-value brick).",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/alphaem_dilog_bloch_probe.py",
+    witness: "computations/alphaem-dilog-bloch-probe.witness.json",
+    status: "verified",
+  },
 });

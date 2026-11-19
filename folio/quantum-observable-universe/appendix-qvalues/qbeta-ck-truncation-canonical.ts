@@ -76,6 +76,7 @@ export default conjecture({
         "and `−2.01986031` at CODATA-2022 — a *fourth*-significant-figure spread, because " +
         "the extraction divides by `u³ ≈ 6.2e-7` and so amplifies a relative move in `q` by " +
         "≈2.1e6. Restated at the live pin: cross-anchor swing **2.3912%** proton-normalised " +
+        /* <!-- literal-source: proton-arm percentage gap (c3_proton - (-2))/(-2) = 2.4741% + 0.9930% = 3.4671% --> */
         "(**2.4741%** normalised by −2), muon gap **0.9930%**, proton gap 3.4671% (unchanged " +
         "— `m_p/m_e` moved 2e-12 relative between editions against the muon ratio's 1.5e-9, " +
         "which is why only the muon arm ever broke). " +
@@ -129,6 +130,14 @@ export default conjecture({
       "computations/qbeta/qbeta_ck_truncation_order_analysis.py",
     witness: [
       "computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json",
+      "computations/qbeta/qbeta-c3-crossanchor-swing-provenance.witness.json",
+      "computations/qbeta/qbeta-c3-muon-anchor-codata-edition-attribution.witness.json",
+      "computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json",
+      "computations/probes/commutative-chirality-vanishes-probe.witness.json",
+      "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+      "computations/qbeta-habiro-cyclotomic.witness.json",
+      "computations/probes/qbeta-habiro-residual.witness.json",
+      "computations/rev-beta-coordinate-identity.witness.json",
     ],
     status: "experimental",
   },

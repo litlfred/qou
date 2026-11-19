@@ -31,4 +31,10 @@ export default theorem({
     ],
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

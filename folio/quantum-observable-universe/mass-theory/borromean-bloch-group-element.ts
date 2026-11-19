@@ -36,4 +36,10 @@ export default conjecture({
     "conditional-on-class",
     "quantum-dilogarithm",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/whitehead_c_sigma_hiprec.py",
+    witness: "computations/whitehead-c-sigma-hiprec.witness.json",
+    status: "verified",
+  },
 });

@@ -39,4 +39,4 @@ $$
 
 ## Physical significance
 
-Lepton universality is the statement that the weak interaction couples equally to all lepton generations. It emerges here as a consequence of the $T_{3,5}$ braid serving as the unique cross-family mediator on the Bring surface. Its Markov trace $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_0 \sigma_1)^5)$ is a property of the weak vertex alone, not the daughter channel. Universality is broken only by kinematics. The daughter mass enters through the phase-space integral, not the vertex operator.
+Lepton universality is the statement that the weak interaction couples equally to all lepton generations. It emerges here as a consequence of the $T_{3,5}$ braid serving as the unique cross-family mediator on the Bring surface. Its Markov trace $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_0 \sigma_1)^5)$ is a property of the weak vertex alone rather than the daughter channel. Universality is broken only by kinematics. The daughter mass enters through the phase-space integral rather than the vertex operator.

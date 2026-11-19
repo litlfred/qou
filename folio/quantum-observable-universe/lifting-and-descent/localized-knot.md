@@ -1,9 +1,9 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe carrying the projective line object $\mathbb{P}(V) = G/T$ ([Definition](#def:projective-line-object)). A **localized knot** defines a pair:
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe carrying the projective line object $\mathbb{P}(V) = G/T$ ([projective line object](#def:projective-line-object)). A **localized knot** defines a pair:
 $$
   (p, K) \in \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A^{\mathrm{co}T}) \times \mathrm{Knot}
 $$
 where:
-1. $p \colon \mathbf{1} \to A^{\mathrm{co}T}$ is a categorical point of the projective line ([Definition](#def:categorical-point)).
+1. $p \colon \mathbf{1} \to A^{\mathrm{co}T}$ is a categorical point of the projective line ([categorical point](#def:categorical-point)).
 2. $K$ is a knot type—an equivalence class of smooth embeddings $S^1 \hookrightarrow S^3$ under ambient isotopy.
 
 The pair $(p, K)$ formally designates "the knot $K$ localized at the point $p$ on the base manifold $\mathbb{P}(V)$."

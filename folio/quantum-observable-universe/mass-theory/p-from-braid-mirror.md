@@ -9,10 +9,10 @@ an involution ($P^2 = \mathrm{id}$) and is **distinct from**:*
 - *the bar-involution [bar-involution definition](#def:bar-involution),
   which acts as $q \mapsto q^{-1}$ AND $\sigma_i \mapsto \sigma_i^{-1}$
   simultaneously (= composite CPT);*
-- *charge conjugation [c-from-color-flavor-swap conjecture](#conj:c-from-color-flavor-swap),
+- *charge conjugation [color–flavor charge-conjugation conjecture](#conj:c-from-color-flavor-swap),
   which acts on color-sheet flavor labels with no Hecke-
   generator action;*
-- *time-reversal [t-from-trace-cyclicity conjecture](#conj:t-from-trace-cyclicity),
+- *time-reversal [trace-cyclicity time-reversal conjecture](#conj:t-from-trace-cyclicity),
   which reverses the braid word at the Markov-trace level.*
 
 ## The action
@@ -30,7 +30,7 @@ $$
 
 On the writhe, this gives $w(P\beta) = -w(\beta)$ — a sign flip on
 the bar-anti-symmetric writhe quantity classified in
-[`bar-involution-table3-data`](../braids-and-knots/bar-involution.md#tbl:bar-involution-table3-data).
+[bar-involution projection table](../braids-and-knots/bar-involution.md#tbl:bar-involution-table3-data).
 
 ## Disentangling parity from CPT
 
@@ -69,7 +69,7 @@ bar-involution.
   sub-action).
 
 Writhe $w(K)$ (the observable that P negates) is classified in
-[`bar-involution-table3-data`](../braids-and-knots/bar-involution.md#tbl:bar-involution-table3-data)
+[bar-involution projection table](../braids-and-knots/bar-involution.md#tbl:bar-involution-table3-data)
 as bar-anti-symmetric, consistent: bar reverses writhe via the
 composite $P \cdot C \cdot T$, of which P is the writhe-acting
 factor.
@@ -92,15 +92,15 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 ## Consumers / downstream
 
-- [cpt-orbit-closure-density conjecture](#conj:cpt-orbit-closure-density)
+- [Type-B CPT orbit-closure conjecture](#conj:cpt-orbit-closure-density)
   becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once all
   three factors are established.
 - The writhe-based chirality classification
-  [chirality-writhe-ribbon-derivation proposition](#prop:chirality-writhe-ribbon-derivation)
+  [ribbon-twist writhe chirality proposition](#prop:chirality-writhe-ribbon-derivation)
   gets a categorical home: chirality measures the P-anti-symmetric
   part of a knot, separately from C and T.
 
-## What remains open
+## Unresolved mirror-parity questions
 
 1. **Invariance of the Hecke quadratic under $P$.** The quadratic is preserved
    (since both $\sigma_i$ and $\sigma_i^{-1}$ satisfy the same
@@ -115,7 +115,7 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 - The sibling $\mathbb{Z}/2$ factors of CPT — charge conjugation and time
   reversal, this conjecture supplying parity:
-  [c-from-color-flavor-swap conjecture](../brings-surface/c-from-color-flavor-swap.md),
-  [t-from-trace-cyclicity conjecture](../nuclear-interactions/t-from-trace-cyclicity.md)
-- Composite CPT: [cpt-orbit-closure-density conjecture](#conj:cpt-orbit-closure-density)
+  [color–flavor charge-conjugation conjecture](../brings-surface/c-from-color-flavor-swap.md),
+  [trace-cyclicity time-reversal conjecture](../nuclear-interactions/t-from-trace-cyclicity.md)
+- Composite CPT: [Type-B CPT orbit-closure conjecture](#conj:cpt-orbit-closure-density)
 - Bar-involution: [`bar-involution.md`](../braids-and-knots/bar-involution.md) Tables 1-4

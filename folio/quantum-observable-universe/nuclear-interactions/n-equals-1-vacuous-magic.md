@@ -1,3 +1,1 @@
-*For every substrate $q > 1$, the integer $n = 1$ is algebraically prime. Equivalently, the canonical state $\psi_1(q)$ is not in the closed span of any non-trivial tensor product of canonical states indexed by a decomposition $1 = n_1 + \cdots + n_k$ with $k \geq 2$ and $n_i \geq 1$. No such decomposition exists.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall.
+*For every aether $q > 1$, the integer $n = 1$ is algebraically prime. Equivalently, the canonical state $\psi_1(q)$ is not in the closed span of any non-trivial tensor product of canonical states indexed by a decomposition $1 = n_1 + \cdots + n_k$ with $k \geq 2$ and $n_i \geq 1$. No such decomposition exists.*

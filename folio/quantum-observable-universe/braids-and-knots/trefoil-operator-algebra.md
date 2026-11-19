@@ -1,4 +1,4 @@
-Inside the binary dihedral group of [def:su2-generators](#def:su2-generators), the braid generators of $B_3$ are represented by the two transposition lifts:
+Inside the binary dihedral group of [$\mathrm{SU}(2)$ generators of $\mathrm{Dic}_3$](#def:su2-generators), the braid generators of $B_3$ are represented by the two transposition lifts:
 $$
   s_1=\beta=\begin{pmatrix}0&i\\i&0\end{pmatrix},
   \qquad

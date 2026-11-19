@@ -1,6 +1,6 @@
 **Conjecture (GS-depth $\leftrightarrow$ Goncharov period-depth correspondence).**
 
-*Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
+*Let $\mathcal{H}_q$ be the aether convolution Hopf algebra
 ([Frobenius–Hopf aether](#def:frobenius-hopf-substrate)) and let
 $G(\mathcal{H}_q)$ be its sub-Hopf-algebra of grouplikes. Filter
 $G(\mathcal{H}_q)$ by **iterated-integral depth**:*
@@ -21,7 +21,7 @@ $$
          \;\subseteq\; \mathcal{P}_n,\;}
 $$
 
-*and the inclusion is sharp at every depth — for each $n \geq 1$
+*and the inclusion is sharp at every depth: for each $n \geq 1$
 there exists a grouplike $g \in G^{(n)} \setminus G^{(n-1)}$ whose
 $\tau_{\mathrm{arch}}$-image generates a non-trivial class in
 $\mathcal{P}_n / \mathcal{P}_{n-1}$.*
@@ -46,9 +46,9 @@ in the $\omega$-realisation (§6.2 of the same reference).
 
 The classical Mikusiński operational calculus on $C[0,\infty)$ takes
 $f * g \mapsto \tilde f \cdot \tilde g$ under Laplace, turning ODEs
-into algebra. The categorical analog already in this paper —
-[categorical Laplace unique proposition](#prop:categorical-laplace-unique),
-[`q-resolvent`](#def:q-resolvent) — does exactly this for $\mathcal{H}_q$.
+into algebra. The categorical analog already in this paper
+([categorical Laplace unique proposition](#prop:categorical-laplace-unique),
+[$q$-resolvent](#def:q-resolvent)) does exactly this for $\mathcal{H}_q$.
 What it does *not* yet pin down is **which algebraic relations on
 $\mathcal{H}_q$ survive $\tau_{\mathrm{arch}}$ and which do not**. The
 present conjecture supplies the structural answer:
@@ -59,8 +59,8 @@ present conjecture supplies the structural answer:
   $H_n(q)$* (provable over $\mathbb{Z}[q^{\pm 1}]$).
 - A relation that crosses depth or invokes a transcendental
   identity among periods (e.g. the Bloch–Wigner 5-term relation,
-  hyperbolic gluing equations) is an **archimedean accident** — it
-  holds only in $\mathbb{R}$, not over $\mathcal{H}_q$ generically.
+  hyperbolic gluing equations) is an **archimedean accident**: it
+  holds only in $\mathbb{R}$ rather than over $\mathcal{H}_q$ generically.
 
 ### Surreal envelope
 
@@ -74,7 +74,7 @@ $$
 $$
 
 Surreal infinitesimals $1/\omega^k$ sit at depth $k$ as *literal*
-infinitesimal scaling factors — there is no recourse to distributions
+infinitesimal scaling factors, so there is no recourse to distributions
 or limits. The "delta at depth $n$" of graded Mikusiński is the
 surreal element $1/\omega^n$, and $\mathrm{std}$ collapses each layer
 to its archimedean image. This makes the *algebraic core survives*
@@ -113,15 +113,15 @@ period theory:
 **Two related open questions:**
 
 - *Cellular vs iterated-integral depth.* The cellular GB-depth on
-  $Z(H_n(q))$ — attributed here to
+  $Z(H_n(q))$ (attributed here to
   [curvature rank Gröbner–Shirshov stratification proposition](#prop:curvature-rank-gb-stratification),
   though **that proposition stratifies by the curvature rank of *words* and
   mentions no partition**; the max-hook statistic defines the partition depth,
-  and the step joining them is unestablished
-  — (max hook of partition) is a **separate** filtration from the
-  iterated-integral depth used here. Their precise relationship —
-  e.g. whether amphichiral self-conjugate cells correspond to
-  *even* iterated-integral depths — is open.
+  and the step joining them is unestablished;
+  max hook of partition) is a **separate** filtration from the
+  iterated-integral depth used here. Their precise relationship
+  (e.g. whether amphichiral self-conjugate cells correspond to
+  *even* iterated-integral depths) is open.
 - *Graded Titchmarsh.* At which iterated-integral depth does the
   $*_q$-product on $\mathcal{H}_q$ first acquire zero divisors?
   This bounds where the graded field-of-fractions tower

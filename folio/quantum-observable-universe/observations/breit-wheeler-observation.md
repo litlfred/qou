@@ -1,4 +1,4 @@
-The Breit--Wheeler polarisation selection rule ([rem:breit-wheeler-vertex](#rem:breit-wheeler-vertex)) is a model statement: in the model, only distinct generators ($\sigma_0 \neq \sigma_1$) contribute to pair production. This block records what the rule implies and how it compares with measurement.
+The Breit--Wheeler polarisation selection rule ([Breit–Wheeler polarisation vertex](#rem:breit-wheeler-vertex)) is a model statement: in the model, only distinct generators ($\sigma_0 \neq \sigma_1$) contribute to pair production. This block records what the rule implies and how it compares with measurement.
 
 ## Model consequences
 
@@ -26,6 +26,6 @@ For unpolarised beams, the cross-section averages over $\phi_1,\phi_2$ and devel
 
 Ultra-peripheral heavy-ion collisions provide colliding quasi-real photons that are linearly polarised transverse to the beam axis. STAR \cite{star2021bw} reports a fourth-order azimuthal modulation $\cos 4\Delta\phi = (16.8 \pm 2.5)\%$ of $e^-e^+$ pairs in Au+Au collisions at $\sqrt{s_{NN}} = 200\,\mathrm{GeV}$, where $\Delta\phi$ is the angle between the pair transverse momentum and that of one lepton. Lowest-order QED predicts $16.5\%$. ATLAS \cite{atlas2021bw} reports the azimuthal anisotropy of $e^-e^+$ pairs in Pb+Pb collisions at $\sqrt{s_{NN}} = 5.02\,\mathrm{TeV}$.
 
-These measurements do not support the model's selection rule. The measured effect is a fourth harmonic that lowest-order QED reproduces, while the model's averaged amplitude above is a second harmonic. QED also gives nonzero pair production for parallel linear polarisations ([rem:breit-wheeler-vertex](#rem:breit-wheeler-vertex)), so the model's suppression of same-mode pairs is not a property of physical photons. No agreement with data is claimed here.
+These measurements do not support the model's selection rule. The measured effect is a fourth harmonic that lowest-order QED reproduces, while the model's averaged amplitude above is a second harmonic. QED also gives nonzero pair production for parallel linear polarisations ([Breit–Wheeler polarisation vertex](#rem:breit-wheeler-vertex)), so the model's suppression of same-mode pairs is not a property of physical photons. No agreement with data is claimed here.
 
-The model's distinct-mode scale $E_0 \approx 2.27\,\mathrm{MeV}$ does not decompose as $2m_e$ plus one unit of Reeb charge: $\hbar_q = (q-1)/q \approx 0.0991$ is dimensionless, and $m_e\hbar_q \approx 0.0506\,\mathrm{MeV}$, not $1.25\,\mathrm{MeV}$.
+The model's distinct-mode scale $E_0 \approx 2.27\,\mathrm{MeV}$ does not decompose as $2m_e$ plus one unit of Reeb charge: $\hbar_q = (q-1)/q \approx 0.0991$ is dimensionless, <!-- literal-source: closed-form product m_e * (q_0 - 1)/q_0 = 0.05063 MeV --> and $m_e\hbar_q \approx 0.0506\,\mathrm{MeV}$, not $1.25\,\mathrm{MeV}$.

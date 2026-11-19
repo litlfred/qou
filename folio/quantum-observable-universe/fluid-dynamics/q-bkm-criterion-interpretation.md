@@ -1,2 +1,1 @@
-**Remark (interpretation).**
-The $q$-vorticity estimate translates the classical Beale--Kato--Majda criterion algebraically. The bound functions as a diagnostic limit check in the observable universe. The BKM condition shifts from a PDE survival test to an obstruction indicator at the $q \to 1$ substrate boundary.
+The $q$-vorticity estimate translates the classical Beale--Kato--Majda criterion algebraically. The bound functions as a diagnostic limit check in the observable universe. The BKM condition shifts from a PDE survival test to an obstruction indicator at the $q \to 1$ classical boundary.

@@ -53,4 +53,17 @@ def defect_legendrian_knot
     (zero : A ⟶ A) : Prop :=
   θ ≫ supp = zero ≫ supp
 
+/-- **Class-axiomatised Legendrian defect hypothesis (`conj:defect-legendrian-knot`, §3b-cond).** -/
+class DefectLegendrianKnot (A : C) (θ supp zero : A ⟶ A) : Prop where
+  contact_vanishes : defect_legendrian_knot A θ supp zero
+
+/-- **Conditional theorem (pullback Legendrian vanishing).** Under
+    `[DefectLegendrianKnot A θ supp zero]`, pre-composing any endomorphism `f`
+    with `θ` agrees on `supp` with `f ≫ zero`. -/
+theorem defect_legendrian_pullback
+    (A : C) (θ supp zero f : A ⟶ A)
+    [h : DefectLegendrianKnot A θ supp zero] :
+    (f ≫ θ) ≫ supp = (f ≫ zero) ≫ supp := by
+  rw [Category.assoc, h.contact_vanishes, Category.assoc]
+
 end QOU.AlgebraicSubstrate

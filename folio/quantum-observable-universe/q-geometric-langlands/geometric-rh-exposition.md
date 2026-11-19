@@ -30,14 +30,13 @@ The eigenvalues $\alpha_i$ of the Frobenius endomorphism are the reciprocal root
 
 **The physical picture.** The non-trivial zeros of the zeta function
 are eigenvalues of the Reeb flow, each corresponding to a fundamental
-oscillation mode of the substrate; the unitary constraint means no
-mode grows or decays, so the substrate sits in a *critical phase* of
+oscillation mode of the aether; the unitary constraint means no
+mode grows or decays, so the aether sits in a *critical phase* of
 exact balance between order and disorder
 ([unitary stability](#rem:unitary-stability)). The chain of
 implications --- vanishing Chern classes $\to$ flatness of the
 connection $\to$ unitarity of the holonomy $\to$ confinement of zeros
 to $\mathrm{Re}(s) = 1/2$ --- is thus what forbids wild, unconstrained
 error terms in the prime distribution. Whether this local rigidity
-survives the classical limit $q \to 1$ is precisely the content of the
-classical Riemann hypothesis
-([Conjecture](#conj:classical-riemann-hypothesis)).
+survives the classical limit $q \to 1$ is precisely the content of
+[the classical Riemann hypothesis](#conj:classical-riemann-hypothesis).

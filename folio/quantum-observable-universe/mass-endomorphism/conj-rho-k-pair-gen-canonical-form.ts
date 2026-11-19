@@ -54,6 +54,10 @@ export default conjecture({
         "this Wedderburn-coupled product to the correct $T_3$-matching prefactor. " +
         "Empirical witness: `rho-k-pair-gen-extension.witness.json`.",
     },
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
   ],
   tags: [
     "tier:S",

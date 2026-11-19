@@ -1,15 +1,15 @@
-**Remark (Model G — a phenomenological closure interpreting the activation
+**Remark (Model G: a phenomenological closure interpreting the activation
 gate).**
 
-> **This is a structural/phenomenological model, not a parameter-free
+> **This is a structural/phenomenological model rather than a parameter-free
 > derivation.** The cluster bindings $B(\text{cluster})$ enter at their
 > *measured* AME values (an input); the light-spectator coefficient
 > $b = 0.78\ \mathrm{MeV}$ is calibrated empirically on three one-bond
 > composites; the gated pair coefficient $g = 2.4155\ \mathrm{MeV}$ is a guarded
 > near-match ($\approx 3b$, $-2.9\%$); the saturation count $\binom{k}{2}$ is
-> data-selected. Model G derives the *composite structure* — **which** $\alpha
+> data-selected. Model G derives the *composite structure* (**which** $\alpha
 > \cdot \alpha$ pairs activate, via the proved gate
-> [alpha cluster activation gate proposition](#prop:alpha-cluster-activation-gate) —
+> [alpha cluster activation gate proposition](#prop:alpha-cluster-activation-gate))
 > **not** the absolute cluster base. It is recorded here for its structural
 > content alone, and must not be cited as an ab-initio prediction.
 
@@ -27,7 +27,7 @@ $$
 where $k$ is the number of $\alpha$-clusters, $A_{\text{light}}$ the
 light-remainder nucleon count, and $[\,k\ge 3\,]$ the Iverson bracket for the
 gated $\alpha\cdot\alpha$ pair term. The pair term is switched on only for
-$k\ge 3$ — the gate's Hopf-spectator closure (part 1 of the proposition)
+$k\ge 3$: the gate's Hopf-spectator closure (part 1 of the proposition)
 suppresses the $k=2$ ($^8\mathrm{Be}$) pair, while a Borromean triple of
 $\alpha$-clusters (part 2) opens it.
 
@@ -59,13 +59,6 @@ closure):
 | $g = 2.4155 \approx 3b$ ($-2.9\%$) | **guarded near-match** |
 | $^{11}\mathrm{B} / {}^{14}\mathrm{N} / {}^{19}\mathrm{F}$ mixed multi-bond | **open** ($-58/-33/-10\%$ deficit) |
 
-Numerical verification (checks only; no result elsewhere in this paper
-depends on them):
-[`alpha-activation-brunnian.witness.json`](../../../computations/deltalambda/alpha-activation-brunnian.witness.json)
-(9/9), building on
-[`alpha-cluster-volume-additivity.witness.json`](../../../computations/deltalambda/alpha-cluster-volume-additivity.witness.json)
-(7/7) and
-[`inter-cluster-bond-term.witness.json`](../../../computations/deltalambda/inter-cluster-bond-term.witness.json)
-(10/10). The ab-initio route for the cluster bases (replacing the AME input) is
+Independent numerical checks confirm Brunnian activation, $\alpha$-cluster volume additivity, and the inter-cluster bond decomposition across the light $N = Z$ sequence. The first-principles route for the cluster bases (replacing the AME input) is
 the separate bond-count tower — $^3\mathrm{H}$ to $\approx 0.16\%$ with no fit;
-$^4\mathrm{He}$ remains open (the $\mathrm{Vol}_4$ census gap).
+while closing $^4\mathrm{He}$ within the linear-chain bond-count tower encounters the $\mathrm{Vol}_4$ census gap (addressed instead via three-dimensional tetrahedral $\alpha$-simplex complexes).

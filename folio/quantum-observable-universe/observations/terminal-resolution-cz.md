@@ -7,9 +7,9 @@ $$
 Specializing the [topological mass formula](#prop:topological-mass-formula) to $q_0 \approx 1.10998$ gives:
 
 $$
-  \hbar_{q_0} = 1 - q_0^{-1} \approx 0.09889,
+  \hbar_{q_0} = 1 - q_0^{-1} \approx 0.09908,
   \qquad
-  \hbar_{q_0}^{-2} \approx 102.25.
+  \hbar_{q_0}^{-2} \approx 101.86.
 $$
 
 Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the dimensionless mass ratios $\mathfrak{m}(K)/m_e$; rendered against the $m_e$ scale they read in MeV as follows (the proton and neutron MeV entries are the ratio $\mathfrak{m}(K)/m_e$ rendered against the $m_e$ unit, not independent absolute-mass predictions):
@@ -17,7 +17,7 @@ Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the dimensionless mass ratio
 | **Particle** | $\mathrm{Vol}(K)$ | $\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
 |---|---|---|---|
 | Electron ($3_1$) | 0 (non-hyp.) | $m_e$ (baseline) | 0.511 MeV |
-| Muon ($T_{2,5}$) | 2.0299 | $2.0299 \times 102.25 \approx 207.6 m_e$ | $206.768 m_e$ |
+| Muon ($T_{2,5}$) | 2.0299 | $2.0299 \times 101.86 \approx 206.77\,m_e$ | $206.768 m_e$ |
 | Proton | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ | 938.272 MeV | 938.272 MeV |
 | Neutron | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ | 939.565 MeV | 939.565 MeV |
 

@@ -24,4 +24,10 @@ export default conjecture({
     witness: "computations/nf-transition-lifting.witness.json",
     status: "experimental",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py.",
+    },
+  ],
 });

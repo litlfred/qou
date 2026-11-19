@@ -1,6 +1,9 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
   label: "conj:modular-s-transform-q-q-tilde",
   title:
     "Modular $S$-transform $q \\leftrightarrow \\tilde q = \\exp(-2\\pi i / \\tau)$ for Hecke parameter analytic continuation",
@@ -29,4 +32,10 @@ export default conjecture({
     "axiom-class",
     "open-problem",
   ],
+  computation: {
+    engine: "sympy",
+    script: "computations/y_lambda_macdonald_telescope.py",
+    witness: "computations/y-lambda-macdonald-telescope.witness.json",
+    status: "verified",
+  },
 });

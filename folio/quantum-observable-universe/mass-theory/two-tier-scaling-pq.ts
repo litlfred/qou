@@ -19,4 +19,10 @@ export default remark({
     "normalization",
     "boundary-conditions",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/atomic_tr_m_mpfr_50dps.py",
+    witness: "computations/atomic-tr-m-mpfr-50dps.witness.json",
+    status: "verified",
+  },
 });

@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum universe over a Noetherian ring $R$ with substrate parameter $q$ and classical limit functor $\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$ ([classical limit functor](#def:classical-limit-functor)).
+Let $(\mathbf{C}, A, \tau)$ be a quantum universe over a Noetherian ring $R$ with aether parameter $q$ and classical limit functor $\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$ ([classical limit functor](#def:classical-limit-functor)).
 
 The **classical limit obstruction** of the quantum universe is the Hochschild cohomology group
 

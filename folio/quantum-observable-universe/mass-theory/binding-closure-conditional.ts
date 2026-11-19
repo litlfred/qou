@@ -14,4 +14,10 @@ export default theorem({
     "prop:binding-genfun-qdifference",
   ],
   proofs: ["prf:binding-closure-conditional"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

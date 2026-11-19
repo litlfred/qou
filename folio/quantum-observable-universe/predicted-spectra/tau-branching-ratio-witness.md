@@ -18,6 +18,7 @@ $$
 
 Factorized model:
 
+<!-- literal-source: closed-form V-A three-body phase-space integral f(x) = 1 - 8x + 8x^3 - x^4 - 12x^2 ln x at PDG lepton mass ratios -->
 $$
   \frac{\mathrm{BR}(\tau \to e)}{\mathrm{BR}(\tau \to \mu)}
   =

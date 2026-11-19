@@ -43,6 +43,4 @@ $$
   |\,\text{chain} - \text{bare}\,| \;=\; 0
 $$
 
-identically to mpmath precision, with both equalling $\alpha_{EM}^{-1}(q_0) \approx 136.823$. The gap $|\,\text{chain} - \text{CODATA}\,| \approx 0.213$ is the $\mathcal{O}(10^{-3})$ precision gap inherited from the [electromagnetic coupling projection](#prop:em-coupling-projection). This refactoring leaves it unchanged. Closing this gap requires the [categorical Hartree-energy conjecture](#conj:e-hartree-categorical-derivation) and higher-order $C_5$-invariant corrections.
-
-All $3$ assertions in the witness pass.
+identically to arbitrary precision, with both equalling $\alpha_{EM}^{-1}(q_0) \approx 136.823$. The gap $|\,\text{chain} - \text{CODATA}\,| \approx 0.213$ is the $\mathcal{O}(10^{-3})$ tree-level offset of the [electromagnetic coupling projection](#prop:em-coupling-projection), which this algebraic refactoring leaves unchanged; closing it requires the [Bring-surface zero-mode shift](#prop:em-coupling-bring-zero-mode) and higher-loop corrections.

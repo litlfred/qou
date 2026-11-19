@@ -1,5 +1,5 @@
 **Part I: Foundations.**
-This paper's destination is a concise table of dimensionless quantities set against measured constants—the muon-to-electron mass ratio, the kaon-to-pion mass ratio, the fine-structure constant—each computed from one algebraic skeleton and a single substrate parameter. That skeleton is the subject of Part I.
+This paper's destination is a concise table of dimensionless quantities set against measured constants—the muon-to-electron mass ratio, the kaon-to-pion mass ratio, the fine-structure constant—each computed from one algebraic skeleton and a single aether parameter. That skeleton is the subject of Part I.
 
 [*Quantum Universes*](#chap:qu) introduces the **quantum universe** (QU): the algebraic skeleton encoded in the triple
 $$
@@ -30,11 +30,11 @@ Here $R_{\int}$ denotes the **Frobenius–Ricci endomorphism**, $F_\nabla$ denot
 [*Lifting and Descent*](#chap:torsion) resolves global extensions of local categorical data. The quantum lifting condition states that an object admits a lift if and only if its obstruction class $\kappa(x) \in H^2(S, B)$ vanishes. The descent involution $\hat{\tau}$ decomposes the algebra into observable (descended) and pre-observable (transient) modes. The lifting obstructions reduce to the genus of the base curve: $\chi_{\mathrm{eu}}(M_0) = 2 - 2g$ with $g \geq 1$, and the Descartes condition fixes $g = 4$. The Kummer exact sequence filtrates the obstruction space, revealing an obstruction that vanishes at the levels $n \mid \chi_{\mathrm{eu}}(M_0)$ and persists at every other level.
 
 **Part II: Structural Mechanics.**
-[*Braids and Knots*](#chap:path-integrals-braiding) replaces continuum path integrals with discrete braid-group representations inside the Iwahori–Hecke algebra $H_n(q)$. The substrate parameter $q$ fixes the crossing energy:
+[*Braids and Knots*](#chap:path-integrals-braiding) replaces continuum path integrals with discrete braid-group representations inside the Iwahori–Hecke algebra $H_n(q)$. The aether parameter $q$ fixes the crossing energy:
 $$
   \mathfrak{E}_{\mathrm{cross}} = q + q^{-1} = [2]_q.
 $$
-Specific knots map to particle identities: the unknot $0_1$ acts as the neutrino, the trefoil $3_1$ acts as the electron, and higher torus knots act as the muon and tau. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$. Two-photon products generate the massive spectrum. The figure-eight knot volume enters the muon-to-electron mass ratio through
+Specific knots map to particle identities: the unknot $0_1$ acts as the neutrino, the trefoil $3_1$ acts as the electron, and higher torus knots act as the muon and tau. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$, whose over–under fourth term $\sigma_0\sigma_1^{-1}$ pairs conjugate two-photon factors directly into the Borromean nucleon braid $(\sigma_0\sigma_1^{-1})^3$ while general two-photon products span $H_3(q)$ and generate the massive spectrum. The figure-eight knot volume enters the muon-to-electron mass ratio through
 $$
   \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1}.
 $$
@@ -42,7 +42,7 @@ The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 ca
 
 [*Bring's Surface*](#chap:brings-surface) develops the geometry of the genus-four curve $\Sigma_4$ with $\chi_{\mathrm{eu}}(\Sigma_4) = -6$, first Betti number $b_1 = 8$, hyperbolic Gauss–Bonnet area $12\pi$ under its $(2,4,5)$ tiling, and maximal automorphism group $S_5$. Its colour tubes provide coordinates for spacetime and electromagnetic fields, while embeddable torus knots span the homology basis and saturate at genus four.
 
-[*Knots, Particles, and Confinement*](#chap:knots-particles-confinement) establishes the knot–particle dictionary used throughout the monograph: pairwise braiding from the hexagon identities, quark and nucleon derivation from pair production, the hadron algebra and its knot factorisation, the Borromean baryon $(6_3^2)$ whose stability is invariant under the three Reidemeister moves, the electroweak and Higgs sector as the even-twist torus-link triplet $\{T(2,4), T(2,6), T(2,8)\}$ whose Seifert genera sum to $1 + 2 + 3 = 6 = -\chi_{\mathrm{eu}}(\Sigma_4)$, and the confinement hierarchy culminating in atomic and isotopic shells.
+[*Knots, Particles, and Confinement*](#chap:knots-particles-confinement) establishes the knot–particle dictionary used throughout the monograph: pairwise braiding from the hexagon identities, quark and nucleon derivation from pair production, and the hadron algebra with its knot factorisation. It derives the Borromean baryon $(6_3^2)$ invariant under the three Reidemeister moves, identifies the electroweak and Higgs sector with the even-twist torus-link triplet $\{T(2,4), T(2,6), T(2,8)\}$ whose Seifert genera sum to $1 + 2 + 3 = 6 = -\chi_{\mathrm{eu}}(\Sigma_4)$, and traces the confinement hierarchy up to atomic and isotopic shells.
 
 [*The Eightfold Way and Flavor Structure*](#chap:eightfold-way) examines how these braid configurations assemble into meson and baryon multiplets. It separates two distinct objects that share the root type $A_2$: the Coxeter quotient $W(A_2) \cong S_3$ of three-strand braiding $H_3(q)$, which holds unconditionally by construction, and the flavour Lie algebra $\mathfrak{sl}_3$, which enters through quantum Schur–Weyl duality only when the fibre dimension equals $N = 3$ whereas the single-fibre construction supplies $\dim V = N = 2$. Conditionally on $N = 3$, the chapter places the braid dictionary against the meson octet and Borromean decuplet, proves that first-order Gell-Mann–Okubo, decuplet equal spacing, and $U$-spin Coleman–Glashow hold identically as representation-theoretic baselines while the $\Lambda$–$\Sigma^0$ weight-map degeneracy refutes weight-only mass formulas, and establishes the discrete octonionic stabilizer chain $G_2 = \mathrm{Aut}(\mathbb{O}) \supset \mathrm{SU}(3)_{\mathrm{c}}$ splitting $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$ into $1 \oplus 3 \oplus \bar{3}$.
 
@@ -70,7 +70,7 @@ The electron mass fixes the unit, so the formula is evaluated through dimensionl
 **Part IV: Dynamics, Information, Emergence.**
 [*Fluid Dynamics of the Brane*](#chap:fluid-dynamics) recovers a $q$-deformed Navier–Stokes equation. Stable vortices braid as knot operators, unifying fluid and algebraic dynamics. The obstruction to blow-up collapses to a single cohomology class.
 
-[*Stochastic Mechanics*](#chap:stochastic-mechanics) translates the Markov trace into a stochastic process, linking the categorical substrate to quantum diffusion.
+[*Stochastic Mechanics*](#chap:stochastic-mechanics) translates the Markov trace into a stochastic process, linking the categorical aether to quantum diffusion.
 
 [*Information-Theoretic Perspectives*](#chap:info-theory) frames QOU mechanics as Turing-complete. Confluent reductions govern the logic. The Reeb flow builds a fractal event horizon. Setting the information speed $c_q = 1/(q - 1)$ defines the energy $\mathfrak{E} = \mathfrak{m} \cdot c_q^{2}$.
 

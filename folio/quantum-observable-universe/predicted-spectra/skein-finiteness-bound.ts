@@ -17,4 +17,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:shell-closure-normal-form"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

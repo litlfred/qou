@@ -43,6 +43,6 @@ Every stable nucleus corresponds to a lattice point $(p, A) \in \mathbb{Z}^2$ on
 
 When the pairing correction lifts $\mathcal{S}$ from genus $0$ to genus $1$, the stability pairs become rational points of an elliptic curve $\mathcal{E}_p$ over $\mathbb{Q}(q)$. Mordell's theorem constrains them to a finite set. This finite constraint potentially explains why only finitely many stability pairs exist.
 
-**Connection to the substrate parameter.**
+**Connection to the aether parameter.**
 
 The curvature parameter $c = \lambda_C / (2a_{\mathrm{asym}})$, with $\lambda_C = (q - q^{-1})[6]_q\,\mathfrak{m}_{\mathfrak{e}}$, is controlled entirely by $q$. At $q = 1$, the stability cubic degenerates to $t^3 = 2p$, a rational parametrization where all nuclei are symmetric ($n = p$). As $q$ increases from $1$, the $ct^2$ term bends the curve. The integer solutions disperse. The structure of the nuclear chart—neutron excess, stability pairs, and even-odd staggering—emerges from a single deformation parameter.

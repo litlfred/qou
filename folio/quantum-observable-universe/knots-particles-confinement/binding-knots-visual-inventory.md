@@ -6,7 +6,7 @@ This inventory collects diagrams for the knots and links that act as binding ope
 
 The unknot $0_1 = T_{1,0}$ is a single unknotted circle — the trivial element of every braid group. It carries zero crossings. Hence it has zero $q$-deformed crossing energy, $\mathfrak{E}_\times(q) = \frac{1}{2}(q - q^{-1}) \cdot 0 = 0$, and its bare mass vanishes. It plays two disjoint roles:
 
-1. **Neutrino $\nu$**: a single unknot in $H_1(q)$. Its mass arises entirely from Reeb-divisor coupling, not from the knot itself.
+1. **Neutrino $\nu$**: a single unknot in $H_1(q)$. Its mass arises entirely from Reeb-divisor coupling rather than from the knot itself.
 2. **Each quark inside the Borromean baryon**: the three strands of $\mathcal{B}_3$ are individually unknotted. Only their joint closure is non-trivial.
 
 ```tex

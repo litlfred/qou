@@ -16,4 +16,10 @@ export default proposition({
   lean: {
     ref: "qou:QOU.BraidsKnots.markov_trace_ratio_exact",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

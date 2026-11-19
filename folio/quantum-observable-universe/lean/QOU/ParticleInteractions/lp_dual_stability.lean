@@ -90,8 +90,9 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
     (∀ i : Fin ctx.channels, |ctx.y_star i| ≤ ctx.κ_G * ctx.t_norm) ∧
     (Finset.univ.sum fun j : Fin ctx.channels =>
       ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
-    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) :=
-  ⟨ctx.primal_stable, ctx.dual_price_bound, ctx.partial_unstable, ctx.strong_duality⟩
+    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) := by
+  refine ⟨ctx.primal_stable, ctx.dual_price_bound, ctx.partial_unstable,
+    ctx.strong_duality⟩
 
 
 

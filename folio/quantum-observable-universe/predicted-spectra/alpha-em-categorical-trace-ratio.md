@@ -14,7 +14,7 @@ By the [top-channel decoration definition](#def:torus-knot-top-channel-decoratio
 
 For $T_{2,9}$, $w = 9$, so $\delta^{\mathrm{top}}_q(T_{2,9}) = q^{9} - q^{-9} = h\,[9]_q$. For $2$-strand knots this agrees with the sum of the two Hecke characters, $q^{9} + (-q^{-1})^{9}$.
 
-For $T_{3,5}$, $w = 10$, so $\delta^{\mathrm{top}}_q(T_{3,5}) = q^{10} - q^{-10} = h\,[10]_q$. Here the sum of the three characters on $V_{(3)}$, $V_{(2,1)}$, $V_{(1,1,1)}$ would instead give $q^{10} - 1 + q^{-10}$, because $\chi_{(2,1)}((\sigma_1\sigma_2)^{5}) = -1$; the identity uses the top-channel value, not that sum.
+For $T_{3,5}$, $w = 10$, so $\delta^{\mathrm{top}}_q(T_{3,5}) = q^{10} - q^{-10} = h\,[10]_q$. Here the sum of the three characters on $V_{(3)}$, $V_{(2,1)}$, $V_{(1,1,1)}$ would instead give $q^{10} - 1 + q^{-10}$, because $\chi_{(2,1)}((\sigma_1\sigma_2)^{5}) = -1$; the identity uses the top-channel value rather than that sum.
 
 Substitution produces the result:
 
@@ -54,6 +54,6 @@ Evaluation at $q_0 \approx 1.1099786$ yields an exact match to within $10^{-12}$
 > registered muon values differ by $7.98 \times 10^{-11}$ relative; the sharpest
 > figure in this table carries 9 significant digits and separating them needs
 > about 12. The two published tables cannot both be at the canonical pin, and
-> choosing between them is an anchor ruling, not a substitution.
+> choosing between them is an anchor ruling rather than a substitution.
 
 Expressing the relationship as a trace ratio on the $q$-dimension layer reformulates existing projection identities.

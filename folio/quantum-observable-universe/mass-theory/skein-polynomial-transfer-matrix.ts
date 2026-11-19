@@ -18,4 +18,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["thm:markov-trace-factorization"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

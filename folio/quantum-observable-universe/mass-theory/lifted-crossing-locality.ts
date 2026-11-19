@@ -18,4 +18,10 @@ export default conjecture({
   },
   uses: ["conj:crossing-graded-mass-expansion"],
   cites: ["kohno1987"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

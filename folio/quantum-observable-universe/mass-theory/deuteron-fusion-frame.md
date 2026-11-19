@@ -22,12 +22,12 @@ of the deuteron binding magnitude is fixed by three exact identities:*
 The bond factor $z = 1/[2]_v$ is the Ocneanu–Markov normalization of the
 Hecke trace $\mathrm{tr}_M$ (the same $z$ that
 [three strand color winding rigidity proposition](../braids-and-knots/three-strand-color-winding-rigidity.md)
-and the reeb-flow magnitude use), not a modeling parameter. The quantity
+and the reeb-flow magnitude use) rather than a modeling parameter. The quantity
 $1 + [2]_v^2$ is the total quantum dimension of the two-nucleon channels
 $\{V_0\ (\text{direct}),\ V_0 \oplus V_1\ (\text{fused})\}$; by the fusion
 identity it equals $2 + [3]_v$, whose classical value is $5$. So the "5" in
 the near-match law $B(^2\mathrm{H}) \approx 5g\,E_{\text{unit}}$ is a
-counting datum — a total quantum dimension — not an adjustable integer.
+counting datum (a total quantum dimension) rather than an adjustable integer.
 
 ## The exchange rate is a linking rate
 

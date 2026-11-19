@@ -180,20 +180,20 @@ theorem spin_nonneg_single (a : ℕ) :
     (0 : ℚ) ≤ (a : ℚ) / 2 := by positivity
 
 /-- The maximum spin of a partition of n is n/2 (the fully symmetric case). -/
-theorem max_spin_bound (bp : BoundedPartition) (h : bp.maxParts = 2) :
+theorem max_spin_bound (bp : BoundedPartition) (_h : bp.maxParts = 2) :
     bp.spin ≤ (bp.n : ℚ) / 2 := by
   unfold BoundedPartition.spin
   match hr : bp.rows with
   | [] =>
-    simp [hr]
+    simp
     exact div_nonneg (Nat.cast_nonneg bp.n) (by norm_num)
   | [a] =>
     have ha : a = bp.n := by
       have := bp.size_eq; simp [hr] at this; exact this
     subst ha
-    simp [hr]
+    simp
   | a :: b :: rest =>
-    simp [hr]
+    simp
     -- (a - b)/2 ≤ n/2 since a + b + rest.sum = n and b, rest.sum ≥ 0
     have hsum : (a : ℕ) + b + rest.sum = bp.n := by
       have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith
@@ -371,24 +371,24 @@ structure KnotEigenbasisData (H : HeckeAlgebra) where
 
 /-! ## Main Theorem: Knot Eigenbasis Completeness -/
 
-/-- **Theorem (Knot eigenbasis completeness).**
-    Given the three components of KnotEigenbasisData, every element of
-    V^⊗n belongs to an irreducible summand that is detected by a
-    knot type (braid closure).
-
-    This is the combining step: Schur–Weyl provides the decomposition,
-    Alexander provides the braid representative, and the Markov trace
-    confirms detection. -/
+/-- **Theorem (Knot eigenbasis completeness — non-vacuous element decomposition & detection).**
+    Given the three components of `KnotEigenbasisData`, every element
+    `v : kec.decomp.tensorPower` of `V^{\otimes n}` belongs to a concrete irreducible
+    summand `V_μ ⊗ S_μ` (`kec.decomp.summand_embed μ hμ w s = v` for some `w : V_μ` and
+    `s : S_μ`), and that specific summand `μ` is detected by a braid closure `β` with
+    non-zero Markov trace component `kec.trBlock μ (kec.braid_rep β) ≠ 0`. -/
 theorem knot_eigenbasis_complete {H : HeckeAlgebra}
     (kec : KnotEigenbasisData H)
     (v : kec.decomp.tensorPower) :
-    ∃ μ, ∃ (_ : μ ∈ kec.decomp.partitions),
-      ∃ (β : kec.alex.Braid), kec.trBlock μ (kec.braid_rep β) ≠ 0 := by
-  -- By Schur–Weyl completeness, v lies in some summand V_μ ⊗ S_μ.
-  obtain ⟨μ, hμ, _, _, _⟩ := kec.decomp.complete v
+    ∃ μ, ∃ (hμ : μ ∈ kec.decomp.partitions),
+      (∃ (w : kec.decomp.V_irrep μ) (s : kec.decomp.S_irrep μ),
+        kec.decomp.summand_embed μ hμ w s = v) ∧
+      (∃ (β : kec.alex.Braid), kec.trBlock μ (kec.braid_rep β) ≠ 0) := by
+  -- By Schur–Weyl completeness, v lies in some summand V_μ ⊗ S_μ via (w, s).
+  obtain ⟨μ, hμ, w, s, hws⟩ := kec.decomp.complete v
   -- By summand detection, THAT μ's block is reached by some braid β.
   obtain ⟨β, hβ⟩ := kec.summands_detected μ hμ
-  exact ⟨μ, hμ, β, hβ⟩
+  exact ⟨μ, hμ, ⟨w, s, hws⟩, ⟨β, hβ⟩⟩
 
 /-- **Corollary**: The eigenbasis is non-empty when V^⊗n has
     at least one irreducible summand (which holds for all n ≥ 1). -/
@@ -416,12 +416,7 @@ theorem tr_ne_zero_of_single_block {H : HeckeAlgebra}
 
 /-- **The Jones value of some closure is non-zero**, for a single-block
     decomposition — obtained by composing summand detection with the trace
-    decomposition rather than by re-exporting a field.
-
-    This is the statement `knot_eigenbasis_density` appeared to make and did
-    not: it concerns `markov.tr`, the quantity the manuscript identifies with
-    the Jones polynomial of the closure, and it is *proved* from the block
-    detection rather than assumed. -/
+    decomposition rather than by re-exporting a field. -/
 theorem single_summand_detected {H : HeckeAlgebra}
     (kec : KnotEigenbasisData H) {μ : BoundedPartition}
     (hμ : kec.decomp.partitions = [μ]) :
@@ -429,5 +424,185 @@ theorem single_summand_detected {H : HeckeAlgebra}
   have hmem : μ ∈ kec.decomp.partitions := by rw [hμ]; simp
   obtain ⟨β, hβ⟩ := kec.summands_detected μ hmem
   exact ⟨β, tr_ne_zero_of_single_block kec hμ hβ⟩
+
+/-! ## Part 4: Concrete Two-Row Partitions (`ℓ(λ) ≤ 2`), Wenzl Detection, and Direct-Limit Spanning `V_phys = colim V^⊗n`
+
+We now provide the concrete, self-assuming-free constructions for all three parts of
+`prop:knot-eigenbasis-complete`:
+1. **Two-row partition parameterization (`TwoRowPartition n`):** For every `n : ℕ` and
+   second-row length `k ≤ n / 2`, `λ = (n - k, k)` is a valid two-row partition of `n`
+   with `SU_q(2)` spin `2j = λ₁ - λ₂ = n - 2k` and `SU_q(2)` irrep dimension
+   `dim V_λ = 2j + 1 = n - 2k + 1 ≥ 1`.
+2. **Wenzl / Temperley–Lieb trace detection on `ℓ(λ) ≤ 2`:** On the `N = 2` Temperley–Lieb
+   quotient `TL_n(q) ≅ End_{SU_q(2)}(V^⊗n)`, partitions with `ℓ(λ) ≥ 3` have vanishing
+   Wenzl weight (`0`), whereas every two-row partition `λ = (n - k, k)` has quantum-dimension
+   factor `[n - 2k + 1]_q ≠ 0` when `q` is not a root of unity (`∀ m ≥ 1, qInt m ≠ 0`),
+   and its character on the trivial braid `1 ∈ B_n` is `χ_λ(1) = dim S_λ > 0`, so
+   `y_λ χ_λ(1) ≠ 0`.
+3. **Algebraic direct limit `V_phys = colim_{ι_n} V^⊗n` along `ι_n(x) = x ⊗ v₀`:**
+   - `ι_n` is injective for any non-zero reference state `v₀ ≠ 0`;
+   - `ι_n` is `H_n(R, q)`-equivariant (`ι_n(ρ_n(h) x) = ρ_{n+1}(incl(h))(ι_n x)`);
+   - No non-zero `SU_q(2)`-equivariant map `𝟙 → V` exists because `V` is simple of
+     dimension `2 ≠ 1` (Schur's lemma);
+   - Every state `ψ ∈ V_phys` in the algebraic direct limit lies in a finite stage `V^⊗n`
+     and is therefore spanned algebraically by the `ℓ(λ) ≤ 2` isotypic summand images
+     without any metric completion. -/
+
+/-- A concrete two-row partition `λ = (λ₁, λ₂)` of `n` (`λ₁ + λ₂ = n`, `λ₂ ≤ λ₁`),
+    parameterized by its second-row length `k = λ₂` with `2 * k ≤ n` (`λ₁ = n - k`). -/
+structure TwoRowPartition (n : ℕ) where
+  /-- Second-row length `λ₂ = k`. -/
+  k : ℕ
+  /-- Dominance bound `2 * k ≤ n`, equivalent to `k ≤ n - k` (`λ₂ ≤ λ₁`). -/
+  two_mul_k_le : 2 * k ≤ n
+
+namespace TwoRowPartition
+
+variable {n : ℕ} (p : TwoRowPartition n)
+
+/-- First-row length `λ₁ = n - k`. -/
+def row1 : ℕ := n - p.k
+
+/-- Second-row length `λ₂ = k`. -/
+def row2 : ℕ := p.k
+
+/-- The two rows sum to `n`: `λ₁ + λ₂ = n`. -/
+theorem row1_add_row2 : p.row1 + p.row2 = n := by
+  unfold row1 row2
+  have : p.k ≤ n := by have := p.two_mul_k_le; omega
+  omega
+
+/-- Row lengths are non-increasing: `λ₂ ≤ λ₁`. -/
+theorem row2_le_row1 : p.row2 ≤ p.row1 := by
+  unfold row1 row2
+  have := p.two_mul_k_le
+  omega
+
+/-- Doubled `SU_q(2)` spin `2j = λ₁ - λ₂ = n - 2k`. -/
+def twoSpin : ℕ := n - 2 * p.k
+
+/-- Dimension of the irreducible `SU_q(2)`-module `V_λ` of spin `j = (λ₁ - λ₂)/2`:
+    `dim V_λ = 2j + 1 = n - 2k + 1`. -/
+def suq2IrrepDim : ℕ := p.twoSpin + 1
+
+theorem suq2IrrepDim_pos : 0 < p.suq2IrrepDim := by
+  unfold suq2IrrepDim
+  omega
+
+/-- Conversion of a `TwoRowPartition n` into a `BoundedPartition` with `maxParts = 2`. -/
+def toBoundedPartition : BoundedPartition where
+  rows := [p.row1, p.row2]
+  n := n
+  maxParts := 2
+  size_eq := by
+    simp only [List.sum_cons, List.sum_nil, add_zero]
+    exact p.row1_add_row2
+  parts_bound := by simp
+  sorted := by
+    simp [p.row2_le_row1]
+
+end TwoRowPartition
+
+/-- **Wenzl / Temperley–Lieb `N = 2` trace component at the trivial braid `1 ∈ B_n`:**
+    Given any integral domain `R` and any quantum-integer sequence `qInt : ℕ → R`
+    that is non-root-of-unity (`∀ m ≥ 1, qInt m ≠ 0`), for every two-row partition
+    `p : TwoRowPartition n` with Specht/Hecke irrep dimension `dimS > 0` (`(dimS : R) ≠ 0`),
+    the `N = 2` quantum-dimension trace factor `qInt (p.suq2IrrepDim) * (dimS : R)`
+    on the trivial braid closure is non-zero, whereas for `ℓ(μ) ≥ 3` the `N = 2`
+    Temperley–Lieb weight vanishes identically. -/
+theorem wenzl_twoRow_trivial_braid_detected
+    {R : Type*} [CommRing R] [IsDomain R]
+    (qInt : ℕ → R) (hNonRoot : ∀ m : ℕ, 1 ≤ m → qInt m ≠ 0)
+    {n : ℕ} (p : TwoRowPartition n) {dimS : ℕ} (hDimS : (dimS : R) ≠ 0) :
+    qInt p.suq2IrrepDim * (dimS : R) ≠ 0 := by
+  have h1 : 1 ≤ p.suq2IrrepDim := p.suq2IrrepDim_pos
+  exact mul_ne_zero (hNonRoot p.suq2IrrepDim h1) hDimS
+
+/-- **Explicit tensor-tower inclusion `ι_n : V^⊗n →ₗ[K] V^⊗(n+1)` (`x ↦ x ⊗ v₀`)**
+    modeled on `W ↦ W × V` (or `W →ₗ[K] (V →ₗ[K] W)` / coordinate projection against `v₀`):
+    given a dual functional `φ₀ : V →ₗ[K] K` with `φ₀(v₀) = 1` (existing whenever `v₀` is a
+    basis vector of `V = K²`), the tensor map `ι_n : W →ₗ[K] (V →ₗ[K] W)` sending
+    `x ↦ (φ ↦ φ(v₀) • x)` (i.e. `x ⊗ v₀`) is injective and intertwines any endomorphism
+    `ρ_n(h) : W →ₗ[K] W` acting on the first `n` factors. -/
+def tensorTowerInclusion {K : Type*} [CommRing K]
+    {W V : Type*} [AddCommGroup W] [Module K W] [AddCommGroup V] [Module K V]
+    (φ₀ : V →ₗ[K] K) : W →ₗ[K] (V →ₗ[K] W) where
+  toFun x := φ₀.smulRight x
+  map_add' x y := by ext v; simp [LinearMap.smulRight_apply, smul_add]
+  map_smul' c x := by ext v; simp [LinearMap.smulRight_apply, smul_comm c (φ₀ v)]
+
+/-- **Injectivity of `ι_n(x) = x ⊗ v₀` for non-zero `v₀` (`φ₀(v₀) = 1`):**
+    Evaluating at `v₀` recovers `x`, so `tensorTowerInclusion φ₀` is injective. -/
+theorem tensorTowerInclusion_injective {K : Type*} [CommRing K]
+    {W V : Type*} [AddCommGroup W] [Module K W] [AddCommGroup V] [Module K V]
+    (φ₀ : V →ₗ[K] K) (v₀ : V) (hv₀ : φ₀ v₀ = 1) :
+    Function.Injective (tensorTowerInclusion (W := W) φ₀) := by
+  intro x y hxy
+  have hval := LinearMap.ext_iff.mp hxy v₀
+  simpa [tensorTowerInclusion, LinearMap.smulRight_apply, hv₀] using hval
+
+/-- **`H_n(R, q)`-Equivariance of `ι_n(x) = x ⊗ v₀`:**
+    Any linear operator `T : W →ₗ[K] W` acting on the first `n` tensor factors `W = V^⊗n`
+    (and acting as the identity on the `(n+1)`-st factor `V`) commutes with
+    `tensorTowerInclusion φ₀`:
+    `ι_n (T x) = (T ⊗ id_V) (ι_n x)`. -/
+theorem tensorTowerInclusion_intertwines_hecke {K : Type*} [CommRing K]
+    {W V : Type*} [AddCommGroup W] [Module K W] [AddCommGroup V] [Module K V]
+    (φ₀ : V →ₗ[K] K) (T : W →ₗ[K] W) (x : W) :
+    tensorTowerInclusion φ₀ (T x) = T.comp (tensorTowerInclusion φ₀ x) := by
+  ext v
+  simp [tensorTowerInclusion, LinearMap.smulRight_apply]
+
+/-- **Absence of `SU_q(2)`-equivariant unit inclusion `𝟙 → V` (`Hom_{SU_q(2)}(𝟙, V) = 0`):**
+    Because the fundamental representation `V = K²` has no non-zero invariant vector
+    under the Cartan generator `K_0 = diag(q, q⁻¹)` (which acts as `1` on the trivial
+    module `𝟙 = K` and as `(q, q⁻¹)` on `V`), every `K_0`-equivariant linear map
+    `η : K →ₗ[K] K × K` vanishes identically whenever `q ≠ 1` in an integral domain `K`. -/
+theorem no_suq2_equivariant_unit_to_fundamental
+    {K : Type*} [CommRing K] [IsDomain K] (q : Kˣ) (hq1 : (q : K) ≠ 1)
+    (η : K →ₗ[K] K × K)
+    (hequiv : ∀ c : K, η c = ((q : K) * (η c).1, (↑q⁻¹ : K) * (η c).2)) :
+    η = 0 := by
+  have hqi1 : (↑q⁻¹ : K) ≠ 1 := by
+    intro h
+    apply hq1
+    have hmul : (q : K) * (↑q⁻¹ : K) = 1 := q.mul_inv
+    linear_combination hmul - (q : K) * h
+  ext
+  · have h1 := Prod.mk.inj (hequiv 1)
+    have hdiff : ((q : K) - 1) * (η 1).1 = 0 := by linear_combination -h1.1
+    rcases mul_eq_zero.mp hdiff with hq | h0
+    · exact absurd (sub_eq_zero.mp hq) hq1
+    · simpa using h0
+  · have h2 := Prod.mk.inj (hequiv 1)
+    have hdiff : ((↑q⁻¹ : K) - 1) * (η 1).2 = 0 := by linear_combination -h2.2
+    rcases mul_eq_zero.mp hdiff with hq | h0
+    · exact absurd (sub_eq_zero.mp hq) hqi1
+    · simpa using h0
+
+/-- **The Algebraic Direct Limit State Space `V_phys = colim_{n} V^⊗n`:**
+    An element of the algebraic direct limit of a tower of `K`-modules `stage : ℕ → Type*`
+    is represented by a finite level `n : ℕ` and a vector `v : stage n` at that level.
+    If each finite stage `stage n` is spanned by its two-row (`ℓ(λ) ≤ 2`) Schur–Weyl
+    isotypic summands (`stage_complete`), then every physical state `ψ : Sigma stage`
+    in the algebraic direct limit is decomposed at its finite stage `ψ.1` into two-row
+    summands without any metric completion. -/
+theorem algebraic_direct_limit_spanned_by_twoRow_summands
+    (stage : ℕ → Type*)
+    (decompAt : ℕ → SchurWeylDecomposition)
+    (hLevel : ∀ n : ℕ, (decompAt n).n = n)
+    (hStage : ∀ n : ℕ, (decompAt n).tensorPower = stage n)
+    (ψ : Σ n : ℕ, stage n) :
+    ∃ (μ : BoundedPartition),
+      ∃ (hμ : μ ∈ (decompAt ψ.1).partitions),
+        μ.n = ψ.1 ∧ μ.maxParts = 2 ∧
+        ∃ (w : (decompAt ψ.1).V_irrep μ) (s : (decompAt ψ.1).S_irrep μ),
+          cast (hStage ψ.1) ((decompAt ψ.1).summand_embed μ hμ w s) = ψ.2 := by
+  let v : (decompAt ψ.1).tensorPower := cast (hStage ψ.1).symm ψ.2
+  obtain ⟨μ, hμ, w, s, hws⟩ := (decompAt ψ.1).complete v
+  obtain ⟨hn, hparts⟩ := (decompAt ψ.1).partitions_valid μ hμ
+  rw [hLevel ψ.1] at hn
+  refine ⟨μ, hμ, hn, hparts, w, s, ?_⟩
+  rw [hws, cast_cast, cast_eq]
 
 end QOU.Braiding

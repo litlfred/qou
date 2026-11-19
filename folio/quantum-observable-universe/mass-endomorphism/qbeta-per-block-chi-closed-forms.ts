@@ -19,4 +19,7 @@ export default proposition({
   lean: {
     ref: "qou:QOU.BraidKnot.chi_block_antipode_pairing",
   },
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

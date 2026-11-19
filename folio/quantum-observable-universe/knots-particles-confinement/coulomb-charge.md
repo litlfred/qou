@@ -18,8 +18,8 @@ The multiplicities are not interchangeable. The symmetric $\cosh$ weight carries
 **Consequences, and what $Q$ is not.** $Q$ is the coefficient of the *symmetric* channel. Under the channel identification of [the crossing-energy definition](#def:crossing-energy) — symmetric with strong binding, antisymmetric with the electromagnetic correction — the halved writhe therefore governs the strong term, and the electromagnetic coefficient is $\tfrac{1}{2}(n_+ + n_-)$, which is non-negative for every composite. Two things follow that constrain any use of $Q$ as an electric charge:
 
 - No composite carries a negative antisymmetric coefficient, so this decomposition supplies no attractive Coulomb channel and no negative charge.
-- The vanishing locus $n_+ = n_-$ annihilates the *symmetric* term, not the antisymmetric one; the antisymmetric-to-symmetric ratio diverges there rather than vanishing.
+- The vanishing locus $n_+ = n_-$ annihilates the *symmetric* term while leaving the antisymmetric term nonzero; the antisymmetric-to-symmetric ratio diverges there rather than vanishing.
 
-The identification of $Q$ with an electromagnetic charge is therefore not established by this decomposition. The name is retained for continuity with the blocks that cite this label; the identification itself is [an open problem](#conj:sm-hypercharge-invariant), and any candidate must supply the second gauge-invariant datum that the writhe alone does not.
+The identification of $Q$ with an electromagnetic charge is therefore not established by this decomposition. The name is retained for continuity with the blocks that cite this label; lifting bundle-level hypercharge to a per-state framed braid invariant is [conjectural](#conj:sm-hypercharge-invariant), requiring a second topological datum beyond writhe alone.
 
 **Ratio.** For a positive braid closure, $n_- = 0$ with $n_+ \geq 1$, the antisymmetric-to-symmetric ratio is $\tanh(\ln q) \approx 0.104$ at $q = q_0$, independent of $n_+$. For mixed crossing signs with $n_+ \neq n_-$ it acquires the multiplicity factor $\tfrac{n_+ + n_-}{n_+ - n_-}$ and is not a constant of the framework.

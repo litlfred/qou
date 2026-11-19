@@ -10,7 +10,7 @@ $$
   \end{cases}
 $$
 
-where $q$ is the substrate parameter ([substrate parameter](#def:substrate-parameter)). The sign convention follows the Skein relation:
+where $q$ is the aether parameter ([aether parameter](#def:substrate-parameter)). The sign convention follows the Skein relation:
 
 $$
   q  L_+ -  q^{-1} L_-
@@ -18,5 +18,3 @@ $$
 $$
 
 The crossing energy measures the net Skein weight of the composite. A positive $\mathfrak{E}_{\mathrm{cross}}$ indicates that repulsion dominates; a negative value indicates that binding dominates.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

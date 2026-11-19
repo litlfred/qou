@@ -13,8 +13,8 @@ $T_1 = \mathrm{diag}(q, -q^{-1})$ contributes eigenvalues:
 
 The pn row uses $d = -h/2$, the $\delta = 0$ convention. Under the
 colour-tube-weighted interface factor $d = -h(1/2 - \delta/4)$, with
-$\delta$ the substrate flavour split of
-[flavor split substrate proposition](#prop:flavor-split-substrate), *both* pn
+$\delta$ the aether flavour split of
+[flavor aether-split proposition](#prop:flavor-split-substrate), *both* pn
 eigenvalues shift by the same $+h\delta/4$:
 
 $$
@@ -31,7 +31,7 @@ So the exact antisymmetry $\lambda_{\mathrm{anti}} = -\lambda_{\mathrm{sym}}$
 is a property of $\delta = 0$, not of the pn crossing as such, and the
 factorisation of $\Lambda_{\mathrm{sym}}$ below as a power of $[2]/2$ is
 conditional on that convention. The shift is $h\delta/4 \approx 7.190 \times
-10^{-5}$ at the substrate anchor.
+10^{-5}$ at the aether anchor.
 
 The symmetric channel product over all crossings on $T_1$:
 

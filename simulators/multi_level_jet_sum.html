@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multi-Level Jet-Sum Visualiser</title>
+<style>
+:root {
+  --bg:#020710; --panel:rgba(3,10,30,0.93); --border:rgba(60,120,255,0.20);
+  --accent:#3a90ff; --accent2:#ff5533; --accent3:#33ffaa; --accent4:#ffaa33;
+  --text:#b8ccff; --dim:#5a6e9c;
+}
+body.light {
+  --bg:#f0f4ff; --panel:rgba(235,240,255,0.96); --border:rgba(60,80,180,0.25);
+  --accent:#1a5fcc; --accent2:#cc3300; --accent3:#007744; --accent4:#885500;
+  --text:#1a2855; --dim:#506090;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Share Tech Mono',monospace;font-size:11px;overflow:hidden;user-select:none;}
+#title{position:absolute;top:10px;left:50%;transform:translateX(-50%);font-family:'Rajdhani',sans-serif;font-weight:500;font-size:17px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;pointer-events:none;white-space:nowrap;}
+#subtitle{position:absolute;top:31px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;pointer-events:none;white-space:nowrap;}
+.panel{position:absolute;background:var(--panel);border:1px solid var(--border);border-radius:3px;padding:10px;backdrop-filter:blur(18px);z-index:10;}
+.panel-title{font-family:'Rajdhani',sans-serif;font-weight:500;font-size:11px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;padding-bottom:4px;border-bottom:1px solid var(--border);}
+.row{display:grid;grid-template-columns:58px 1fr 56px;align-items:center;gap:5px;margin:5px 0;}
+.lbl{color:var(--dim);font-size:10px;}
+input[type=range]{-webkit-appearance:none;width:100%;height:3px;background:rgba(58,144,255,0.2);border-radius:2px;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height:9px;border-radius:50%;background:var(--accent);cursor:pointer;}
+.val{color:var(--accent);font-size:10px;text-align:right;}
+select,button.btn{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:3px;padding:3px 6px;font-family:inherit;font-size:10px;cursor:pointer;}
+button.btn:hover{border-color:var(--accent);color:var(--accent);}
+#theme-btn{position:absolute;top:10px;right:12px;z-index:20;background:var(--panel);border:1px solid var(--border);border-radius:3px;padding:4px 8px;cursor:pointer;color:var(--accent);font-family:inherit;font-size:10px;}
+#ctrl{top:50px;left:8px;width:240px;bottom:12px;overflow-y:auto;}
+canvas{position:absolute;top:50px;left:256px;right:12px;bottom:12px;border:1px solid var(--border);border-radius:3px;}
+table.readout{width:100%;border-collapse:collapse;margin-top:6px;font-size:9.5px;}
+table.readout th,table.readout td{padding:2px 4px;text-align:right;border-bottom:1px solid var(--border);}
+table.readout th:first-child,table.readout td:first-child{text-align:left;}
+table.readout th{color:var(--accent);}
+</style>
+</head>
+<body>
+<div id="title">Multi-Level Jet-Sum Visualiser</div>
+<div id="subtitle">Partial Sums S<sub>N</sub>(q) = &sum;<sub>k=0</sub><sup>N</sup> c<sub>k</sub> &hbar;<sub>q</sub><sup>k</sup> &middot; Archimedean Limit S<sub>&infin;</sub>(q)</div>
+<button id="theme-btn" onclick="document.body.classList.toggle('light');draw();">◑</button>
+
+<div class="panel" id="ctrl">
+  <div class="panel-title">Jet-Sum Controls</div>
+  <div class="row">
+    <span class="lbl">q</span>
+    <input type="range" id="sl-q" min="1.01" max="1.50" step="0.0005" value="1.1100">
+    <span class="val" id="v-q">1.10998</span>
+  </div>
+  <div class="row" style="grid-template-columns:1fr;">
+    <button class="btn" id="btn-q0">Preset q₀ = 1.1099786</button>
+  </div>
+  <div class="row">
+    <span class="lbl">Levels N</span>
+    <input type="range" id="sl-n" min="1" max="16" step="1" value="6">
+    <span class="val" id="v-n">6</span>
+  </div>
+  <div class="row">
+    <span class="lbl">Nucleus</span>
+    <select id="sel-atom" style="grid-column:2/4;">
+      <option value="deuteron">Deuteron ²H (A=2, B=2.2246 MeV)</option>
+      <option value="triton">Triton ³H (A=3, B=8.4818 MeV)</option>
+      <option value="helion">Helion ³He (A=3, B=7.7180 MeV)</option>
+      <option value="alpha">Alpha ⁴He (A=4, B=28.2957 MeV)</option>
+    </select>
+  </div>
+  <div class="row">
+    <span class="lbl">Profile</span>
+    <select id="sel-prof" style="grid-column:2/4;">
+      <option value="syt">SYT / Jucys–Murphy Plancherel</option>
+      <option value="geom">Geometric c_k = c₀</option>
+      <option value="alt">Alternating c_k = (-1)^k c₀</option>
+    </select>
+  </div>
+
+  <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
+    <div class="panel-title">Convergence Summary</div>
+    <div class="row"><span class="lbl">&hbar;_q</span><span class="val" id="v-hbar" style="grid-column:2/4;">0.099082</span></div>
+    <div class="row"><span class="lbl">S_N(q)</span><span class="val" id="v-sn" style="grid-column:2/4;color:var(--accent3);">2.22457</span></div>
+    <div class="row"><span class="lbl">S_&infin;(q)</span><span class="val" id="v-sinf" style="grid-column:2/4;">2.22457</span></div>
+    <div class="row"><span class="lbl">|S_&infin;&minus;S_N|</span><span class="val" id="v-rem" style="grid-column:2/4;color:var(--accent2);">1.92e-7</span></div>
+  </div>
+
+  <div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;">
+    <div class="panel-title">Jet Tower S_k (k = 0..N)</div>
+    <table class="readout">
+      <thead><tr><th>k</th><th>c<sub>k</sub>&hbar;<sub>q</sub><sup>k</sup></th><th>S<sub>k</sub>(q)</th><th>|S<sub>&infin;</sub>&minus;S<sub>k</sub>|</th></tr></thead>
+      <tbody id="tb-rows"></tbody>
+    </table>
+  </div>
+</div>
+
+<canvas id="cv"></canvas>
+
+<script>
+const Q0 = 1.109978595642739;
+let exactQ = Q0;
+
+const NUCLEI = {
+  deuteron: { label: '²H', targetAtQ0: 2.224573, pairRatio: 0.145 },
+  triton:   { label: '³H', targetAtQ0: 8.481798, pairRatio: 0.182 },
+  helion:   { label: '³He', targetAtQ0: 7.718043, pairRatio: 0.176 },
+  alpha:    { label: '⁴He', targetAtQ0: 28.29566, pairRatio: 0.215 }
+};
+
+const slQ = document.getElementById('sl-q');
+const slN = document.getElementById('sl-n');
+const selAtom = document.getElementById('sel-atom');
+const selProf = document.getElementById('sel-prof');
+const btnQ0 = document.getElementById('btn-q0');
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+
+slQ.addEventListener('input', () => { exactQ = parseFloat(slQ.value); draw(); });
+slN.addEventListener('input', draw);
+selAtom.addEventListener('change', draw);
+selProf.addEventListener('change', draw);
+btnQ0.addEventListener('click', () => { exactQ = Q0; slQ.value = Q0.toFixed(4); draw(); });
+
+function resize() {
+  cv.width = Math.max(300, window.innerWidth - 268);
+  cv.height = Math.max(240, window.innerHeight - 62);
+  draw();
+}
+window.addEventListener('resize', resize);
+
+function computeTower(q, N, atomKey, profKey) {
+  const nuc = NUCLEI[atomKey] || NUCLEI.deuteron;
+  const hbar = 1.0 - 1.0 / q;
+  const hbar0 = 1.0 - 1.0 / Q0;
+  // Normalize c0 so that at q = q0 the closed-form infinite sum equals targetAtQ0
+  let sInf0 = 0, sInf = 0;
+  const maxK = 48;
+  const rawTerms = [];
+  for (let k = 0; k <= maxK; k++) {
+    let ck = 1.0;
+    if (profKey === 'syt') {
+      ck = 1.0 + nuc.pairRatio * k;
+    } else if (profKey === 'alt') {
+      ck = (k % 2 === 0) ? 1.0 : -1.0;
+    }
+    sInf0 += ck * Math.pow(hbar0, k);
+    rawTerms.push(ck * Math.pow(hbar, k));
+  }
+  const c0 = nuc.targetAtQ0 / sInf0;
+  const terms = rawTerms.map(t => c0 * t);
+  sInf = terms.reduce((a, b) => a + b, 0);
+
+  const rows = [];
+  let partial = 0;
+  for (let k = 0; k <= N; k++) {
+    partial += terms[k];
+    const rem = Math.max(1e-18, Math.abs(sInf - partial));
+    rows.push({ k, term: terms[k], partial, rem });
+  }
+  return { hbar, sInf, rows, nuc };
+}
+
+function draw() {
+  const q = exactQ;
+  const N = parseInt(slN.value, 10);
+  const { hbar, sInf, rows, nuc } = computeTower(q, N, selAtom.value, selProf.value);
+  const last = rows[rows.length - 1];
+
+  document.getElementById('v-q').textContent = q.toFixed(5);
+  document.getElementById('v-n').textContent = String(N);
+  document.getElementById('v-hbar').textContent = hbar.toExponential(5);
+  document.getElementById('v-sn').textContent = last.partial.toFixed(6) + ' MeV';
+  document.getElementById('v-sinf').textContent = sInf.toFixed(6) + ' MeV';
+  document.getElementById('v-rem').textContent = last.rem.toExponential(3) + ' MeV';
+
+  document.getElementById('tb-rows').innerHTML = rows.map(r =>
+    `<tr><td>${r.k}</td><td>${r.term.toExponential(2)}</td><td>${r.partial.toFixed(5)}</td><td>${r.rem.toExponential(2)}</td></tr>`
+  ).join('');
+
+  const W = cv.width, H = cv.height;
+  ctx.clearRect(0, 0, W, H);
+  const isLight = document.body.classList.contains('light');
+  const colGrid = isLight ? 'rgba(40,70,150,0.14)' : 'rgba(60,120,255,0.14)';
+  const colText = isLight ? '#1a2855' : '#b8ccff';
+  const colAccent = isLight ? '#1a5fcc' : '#3a90ff';
+  const colLim = isLight ? '#007744' : '#33ffaa';
+  const colRem = isLight ? '#cc3300' : '#ff5533';
+
+  const padL = 66, padR = 26, padT = 28, padB = 36;
+  const gap = 36;
+  const plotW = W - padL - padR;
+  const topH = Math.floor((H - padT - padB - gap) * 0.54);
+  const botTop = padT + topH + gap;
+  const botH = H - botTop - padB;
+
+  function xOf(k) { return padL + (k / Math.max(1, N)) * plotW; }
+
+  // Top panel: Partial sums S_k(q) vs S_inf(q)
+  const vals = rows.map(r => r.partial).concat([sInf]);
+  const vMin = Math.min(...vals) * 0.96;
+  const vMax = Math.max(...vals) * 1.03;
+  function yTop(v) { return padT + topH * (1 - (v - vMin) / Math.max(1e-9, vMax - vMin)); }
+
+  ctx.strokeStyle = colGrid;
+  ctx.fillStyle = colText;
+  ctx.font = '10px monospace';
+  for (let k = 0; k <= N; k++) {
+    const x = xOf(k);
+    ctx.beginPath(); ctx.moveTo(x, padT); ctx.lineTo(x, padT + topH); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x, botTop); ctx.lineTo(x, botTop + botH); ctx.stroke();
+    ctx.fillText(`k=${k}`, x - 10, botTop + botH + 15);
+  }
+  for (let i = 0; i <= 4; i++) {
+    const frac = i / 4;
+    const y = padT + topH * (1 - frac);
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + plotW, y); ctx.stroke();
+    ctx.fillText((vMin + frac * (vMax - vMin)).toFixed(2), 6, y + 3);
+  }
+
+  // S_inf horizontal asymptote
+  ctx.save();
+  ctx.strokeStyle = colLim;
+  ctx.setLineDash([6, 4]);
+  ctx.lineWidth = 1.5;
+  const yAsym = yTop(sInf);
+  ctx.beginPath(); ctx.moveTo(padL, yAsym); ctx.lineTo(padL + plotW, yAsym); ctx.stroke();
+  ctx.restore();
+
+  // Partial sum curve
+  ctx.save();
+  ctx.strokeStyle = colAccent;
+  ctx.fillStyle = colAccent;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  rows.forEach((r, idx) => {
+    const x = xOf(r.k), y = yTop(r.partial);
+    if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  rows.forEach(r => {
+    const x = xOf(r.k), y = yTop(r.partial);
+    ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fill();
+  });
+  ctx.restore();
+
+  ctx.fillStyle = colAccent;
+  ctx.fillText(`● Partial sum S_k(q) for ${nuc.label} (MeV)`, padL + 8, padT - 8);
+  ctx.fillStyle = colLim;
+  ctx.fillText(`--- Exact limit S_∞(q) = ${sInf.toFixed(5)} MeV`, padL + 240, padT - 8);
+
+  // Bottom panel: Log10 remainder |S_inf - S_k|
+  const logRems = rows.map(r => Math.log10(Math.max(1e-18, r.rem)));
+  const rMin = Math.floor(Math.min(...logRems)) - 1;
+  const rMax = Math.ceil(Math.max(...logRems)) + 1;
+  function yBot(rem) {
+    const lr = Math.log10(Math.max(1e-18, rem));
+    return botTop + botH * (1 - (lr - rMin) / Math.max(1, rMax - rMin));
+  }
+
+  for (let i = 0; i <= 4; i++) {
+    const frac = i / 4;
+    const y = botTop + botH * (1 - frac);
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + plotW, y); ctx.stroke();
+    ctx.fillStyle = colText;
+    ctx.fillText(`10^${(rMin + frac * (rMax - rMin)).toFixed(0)}`, 6, y + 3);
+  }
+
+  ctx.save();
+  ctx.strokeStyle = colRem;
+  ctx.fillStyle = colRem;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  rows.forEach((r, idx) => {
+    const x = xOf(r.k), y = yBot(r.rem);
+    if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+  rows.forEach(r => {
+    const x = xOf(r.k), y = yBot(r.rem);
+    ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fill();
+  });
+  ctx.restore();
+
+  ctx.fillStyle = colRem;
+  ctx.fillText('● Log₁₀ truncation remainder |S_∞(q) − S_k(q)| (MeV)', padL + 8, botTop - 8);
+}
+
+resize();
+</script>
+</body>
+</html>

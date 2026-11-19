@@ -22,5 +22,3 @@ $$
 $$
 
 where $\Gamma_q = [j]_q[j+1]_q$ is the quantised circulation at intensity level $j$ and $a_q$ the $q$-deformed core radius. Because $[k]_q \sim q^k$ at large $k$, mode $k$ decays on the timescale $\tau_k = 4L_q^2 / (\hbar_q[k]_q^2)$ — high modes decay **doubly exponentially** in $k$, the rigorous exponential UV cutoff built into the [q-Navier--Stokes definition](#def:q-navier-stokes).
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

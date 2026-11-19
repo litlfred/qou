@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with instanton connection $A$ and substrate parameter $q$. Coupling the instanton energy to the substrate weights the self-dual curvature by the local Levi-form magnitude $q(p)$. Regions where $F_A^+$ overlaps the Levi form $L_\varTheta$ contribute more strongly. The **$q$-weighted Yang–Mills–Levi functional** is
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with instanton connection $A$ and aether parameter $q$. Coupling the instanton energy to the aether weights the self-dual curvature by the local Levi-form magnitude $q(p)$. Regions where $F_A^+$ overlaps the Levi form $L_\varTheta$ contribute more strongly. The **$q$-weighted Yang–Mills–Levi functional** is
 
 $$
   \mathfrak{S}_q[A, \varTheta]

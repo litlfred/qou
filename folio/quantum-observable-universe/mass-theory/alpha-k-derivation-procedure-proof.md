@@ -6,12 +6,12 @@ generic $q$, so the $\chi$-matrix is invertible — the system has a
 unique solution.  $\square$
 
 **Closed-form available via Wenzl-bridge.**
-*By [prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge),
+*By [Wenzl-bridge $y_\lambda$ closed form](#prop:y-lambda-closed-form-wenzl-bridge),
 $y_\lambda(q)$ has the explicit q-rational expression
 $y_\lambda = s_{\lambda, r}(Q) / \sum_\mu d_\mu s_{\mu, r}(Q)$ with
 $Q = q^2$ and $X = Q^r = q^{3/2} / (1 + q - q^2 - q^3 + q^{3/2})$, in
 $O(p(n) \cdot \max\text{hooks})$ time.  The recipe is detailed in
-[prop:y-lambda-recipe-from-partition](#prop:y-lambda-recipe-from-partition).
+[explicit $q$-rational $y_\lambda$ construction](#prop:y-lambda-recipe-from-partition).
 The 4-step linear-system algorithm below remains valid as an
 alternative derivation, and was historically the first method used in
 this paper.*
@@ -129,10 +129,7 @@ $\partial y_\lambda/\partial q$ near $q_0$, (ii) consistency
 checks against any analytically derived closed form.
 
 *Symbolic linear-system solve.*
-For exact rational forms, replace numeric `numpy.linalg.solve` with
-`sympy` over a symbolic $q$.  Cost grows rapidly with $p(n)$, but the
-output is the exact $q$-rational $y_\lambda$.  Tractable in pure
-Python for $n \leq 5$; larger $n$ needs a compiled character kernel.
+For exact rational forms, replacing floating-point linear algebra with exact Gaussian elimination over $\mathbb{Q}(q)$ yields the closed-form $q$-rational weights $y_\lambda$; direct symbolic elimination is tractable through $n \leq 5$, while larger $n$ benefits from precomputed seminormal character tables.
 
 *Witness data layout.*
 At $n \leq 10$ the witness records both the canonical $q_0$ floats

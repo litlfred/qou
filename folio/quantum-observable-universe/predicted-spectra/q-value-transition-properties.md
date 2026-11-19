@@ -98,11 +98,11 @@ $$
 
 **At $q = 1$:** $\delta_q = 0$ and $Q \to Q_{\mathrm{classical}}$. Classical conservation is restored.
 
-**At the substrate parameter $q$:** $\delta_q \neq 0$. For tritium ($A = 3$), $\Delta q_{\mathrm{eff}} = 2/9 \cdot \hbar_q^2 \approx 0.0022$. This gives a correction $\delta_q / Q \sim 5\%$. This correction brings the tritium half-life prediction from 13 yr to 12.4 yr (observed 12.32 yr).
+**At the aether parameter $q$:** $\delta_q \neq 0$. For tritium ($A = 3$), $\Delta q_{\mathrm{eff}} = 2/9 \cdot \hbar_q^2 \approx 0.0022$. This gives a correction $\delta_q / Q \sim 5\%$. This correction brings the tritium half-life prediction from 13 yr to 12.4 yr (observed 12.32 yr).
 
 ## $Q$ is not conserved
 
-The $q$-anomaly $\delta_q$ implies that $Q$ is not the sum of kinetic energies. The $q$-deformation of the vacuum absorbs the missing energy. The effective substrate parameter shifts from $q$ to $q + \Delta q_{\mathrm{eff}}$.
+The $q$-anomaly $\delta_q$ implies that $Q$ is not the sum of kinetic energies. The $q$-deformation of the vacuum absorbs the missing energy. The effective aether parameter shifts from $q$ to $q + \Delta q_{\mathrm{eff}}$.
 
 This is the $q$-deformed quantum anomaly. The full categorical action $\mathfrak{S}_q$ of the entire system is the conserved quantity:
 
@@ -125,7 +125,7 @@ Evaluating the daughter at the shifted parameter $q + \Delta q$ gives the $q$-an
 | $q$ | Regime | $Q$ | $\delta_q$ |
 |-----|--------|:---:|:---:|
 | $q = 1$ | Classical | $0$ | $0$ |
-| the substrate $q$ | Descartes universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |
+| the aether $q$ | Descartes universe | $\mathcal{Q}_{\exp} + \delta_q$ | $\neq 0$ |
 | $q \to \infty$ | Deep-quantum | $\to \infty$ | $\to \infty$ |
 
 ## $q$-Momentum

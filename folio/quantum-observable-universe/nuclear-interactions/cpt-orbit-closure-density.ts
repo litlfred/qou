@@ -28,4 +28,10 @@ export default conjecture({
     "wedderburn",
     "crystal-basis-shortcut",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

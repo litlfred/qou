@@ -59,8 +59,8 @@ This proposition sketches concrete avenues to close both via
 -- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts
 def terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] :
     (ctx.target_page_term_2 = 1 ∧ ctx.hochschild_arity_term_2 = 2) ∧
-    (ctx.target_page_term_6 = 5 ∧ ctx.hochschild_arity_term_6 = 6) :=
-  ⟨ctx.claim_term_2_single_generator_brane_tower,
-   ctx.claim_term_6_jet_prefix_correction⟩
+    (ctx.target_page_term_6 = 5 ∧ ctx.hochschild_arity_term_6 = 6) := by
+  refine ⟨ctx.claim_term_2_single_generator_brane_tower,
+    ctx.claim_term_6_jet_prefix_correction⟩
 
 end QOU.BraidKnot

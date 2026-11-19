@@ -38,7 +38,7 @@ where $T(t)/3$ is the colour-tube charge quantum of the quark picture
 (the helon-model normalisation \cite{bilson-thompson2005}).  The
 Gell-Mann--Nishijima relation holds by construction *if and only if*
 $Q_{\mathrm{twist}} = Q$ against the crossing-derived Coulomb charge
-$Q = w/2$ --- a falsifiable consistency condition, not a definition.
+$Q = w/2$ --- a falsifiable consistency condition rather than a definition.
 
 **Status and batteries.**
 Neither the candidate nor any alternative has been wired.  Any hypercharge
@@ -52,8 +52,8 @@ proposal must pass two batteries before instantiating the class:
    $\{+4/3, -2/3, -2, 0\}$ (right-handed), satisfying the $\mathbb{Z}_6$
    compatibility relations \cite{baez-huerta2010}.
 
-A candidate requiring a fitted scale to pass either battery is a fit,
-not a derivation, and does not instantiate this class.
+A candidate requiring a fitted scale to pass either battery is a fit
+rather than a derivation, and does not instantiate this class.
 
 **Enumeration result, and why it carries no corroboration.**
 The battery has been run over all $10{,}000$ helon-style assignments (3
@@ -66,7 +66,7 @@ is multiset counting:
    $Y_t = 2(Q_{\mathrm{twist}} - I_3)$ and the target $Y = 2(Q - I_3)$ carry
    the same $-2I_3$, which cancels. What remains is
    $Q_{\mathrm{twist}} = Q$ --- the defining equation of
-   $Q_{\mathrm{twist}}$, not a test of it. The battery constrains nothing
+   $Q_{\mathrm{twist}}$ rather than a test of it. The battery constrains nothing
    about isospin.
 2. **The nucleon-doublet check is entailed**, by charge additivity
    alone: $T_{\mathfrak{p}} = 2T_u + T_d = 3(2Q_u + Q_d)$ follows from
@@ -74,24 +74,23 @@ is multiset counting:
    implemented it also states one condition twice --- its second clause
    $2(T_{\mathfrak{p}}/3 - 1/2) = 1$ clears to $T_{\mathfrak{p}} = 3$, which
    is its own first clause.
-3. **The $\mathbb{Z}_6$ condition is not a filter.** In
-   `strand_twist_y_battery.py` it is a function of the
+3. **The $\mathbb{Z}_6$ condition is not a filter.** The $\mathbb{Z}_6$
+   compatibility relation is a function of the
    Standard-Model table alone and never sees the candidate assignment; it
-   runs as an input assertion and cannot exclude any multiset.
+   acts as an input constraint and cannot exclude any multiset.
 
 So each flavour is filtered independently by one equation, and $4 = 1
 \times 2 \times 2 \times 1$ counts the multisets of three twists from
 $\{-1,0,+1\}$ with the required totals $3Q = (2, -1, 0, -3)$. The $u$-quark
 twist $\{0,1,1\}$ and the electron twist $\{-1,-1,-1\}$ are the two totals
 admitting a single multiset --- a fact about writing $2$ and $-3$ as a sum
-of three elements of $\{-1,0,+1\}$, not about the framework; the $d$-quark
+of three elements of $\{-1,0,+1\}$ rather than about the framework; the $d$-quark
 and neutrino each admit two. Passing the battery is therefore equivalent to
 choosing $t$ with $\sum_i t_i = 3Q$, which is always possible.
 
 The open content is unchanged and is the whole question: whether the twist
 multisets are *forced* by the framework's braid words rather than
-only consistent with them. See
-`strand-twist-y-battery.witness.json`.
+only consistent with them.
 
 **A derived-twist repair, tested and refuted (scope-(a)).**
 The defect above is that $t$ is a free label. The natural repair is to
@@ -101,7 +100,6 @@ $c(\lambda) = \sum_{(i,j) \in \lambda} (j - i)$, a derived per-block
 integer. Taking $Q = c(\lambda)/3$ is parameter-free. It does not work: at
 $n = 3$ the content sums are $\{3, 0, -3\}$, giving the *integer*
 charges $\{+1, 0, -1\}$ with no third-integer charge at all, and no
-$n \le 8$ yields both quark charges $\{+2/3, -1/3\}$
-(`ribbon_twist_charge_quantum_probe.py`). This is scope-(a) for
-the plain content-sum reading, not an exclusion of the ribbon route: other
+$n \le 8$ yields both quark charges $\{+2/3, -1/3\}$. This is scope-(a) for
+the plain content-sum reading rather than an exclusion of the ribbon route: other
 normalisations remain untested.

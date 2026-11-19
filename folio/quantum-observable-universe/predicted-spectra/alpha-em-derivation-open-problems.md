@@ -1,42 +1,30 @@
 **Remark (open problems for $\alpha_{EM}$ derivation).**
 
-The bare singlet derivation ([prop:em-coupling-projection](#prop:em-coupling-projection)) gives
+The bare singlet derivation ([electromagnetic coupling projection](#prop:em-coupling-projection)) gives
 
 $$
   \frac{1}{\alpha_{\text{bare}}} \;=\; q\cdot[9]_q\cdot[10]_q
   \;\approx\; 136.823 \quad \text{at}\;\; q = q_0.
 $$
 
-This agrees with the CODATA-2022 value $137.035999177(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are open conjectures:
+This agrees with the CODATA-2022 value $137.035999177(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two multiplicative attempts to close this gap are open conjectures:
 
-| Form | Statement | Residual at $q_0$ | Status |
+| Form | Statement | Residual at proton $q_0$ | Status |
 |------|-----------|-------------------|--------|
 | Bare | $q[9]_q[10]_q$ | $-1.55\times 10^{-3}$ | Derived |
 | Form A (CS) | $\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ with $\kappa=1.722$ | $-4.68\times 10^{-7}$ | Conj.; $\kappa$ unproved; $\kappa \approx 1.9153$ needed for exact match |
 | Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+2.6\times 10^{-9}$ | Conj.; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
 
-*Superseded figures, recorded so the change is legible.* This table previously
-gave Form A as the order-$\delta_{CS}^2$ truncation with residual
-$-4.0\times 10^{-7}$ and $\kappa \approx 1.888$, and Form B as
-$+6.7\times 10^{-9}$. All three are **muon-calibration** numbers, each correctly
-computed for the calibration and truncation it belongs to: $-4.0\times 10^{-7}$ is the
-order-$2$ truncation under the muon calibration ($-399.53$ ppb); $+6.7\times 10^{-9}$ is
-Form B under the muon calibration against CODATA-2018 ($6.672$ ppb); and
-$\kappa \approx 1.888$ is exact closure under the muon calibration for the order-$2$
-truncation ($1.8880423$). They were stale, not wrong. The rows above are the **proton calibration** (the standing default) with
-the tower resummed in closed form, matching
-[the Chern-Simons block](#rem:em-coupling-chern-simons), which already carried
-the resummation and the recalibration. Reproduce every entry with
-[`alpha_em_form_comparison_probe.py`](../../../computations/alpha/alpha_em_form_comparison_probe.py).
+The entries above use the one-term proton calibration $q_0$ with the geometric Chern–Simons tower summed in closed form ([Chern–Simons coupling correction](#rem:em-coupling-chern-simons)); under the muon calibration $q_\mu$, the order-$\delta_{CS}^2$ truncation of Form A gives $-4.0\times 10^{-7}$ ($-399.53\;\mathrm{ppb}$, requiring $\kappa \approx 1.8880$) and Form B gives $+6.7\times 10^{-9}$ against CODATA 2018.
 
-## Why both prior attempts fail
+## Failure modes of the two prior ansätze
 
 **Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at the proton-calibrated $q_0$, with the tower resummed, requires $\kappa \approx 1.9153$. The discrepancy is $11.2\%$ and cannot be quadrature error: resummation is worth $11.06$ ppb against a $468$ ppb gap, about one part in forty.
 
 **Form B is hidden numerology.** Of its four factors:
 
 - $45 = \dim \Lambda^2 V_{\text{nat}}^{10}$ is rigorous. It is the hook-length count of $V_{(9,1)} \oplus V_{(8,1,1)}$.
-- $[3]_q$ does not equal the $q$-dimension of any natural irrep of $H_3(q)$ or $U_q(\mathfrak{sl}_3)$. The singlet-idempotent gluon-octet identification is asserted, not computed.
+- $[3]_q$ does not equal the $q$-dimension of any natural irrep of $H_3(q)$ or $U_q(\mathfrak{sl}_3)$. The singlet-idempotent gluon-octet identification is asserted rather than computed.
 - $\hbar_q^4 \cdot [5]_q$ is claimed to be the leading non-trivial term of the Plancherel-character expansion at $n=10$. The calculation was not performed. The ambient $H_n$ is unspecified.
 - $8q$ has been attributed either to $\dim \mathfrak{su}(3)$ or to a two-step crossing-pattern enumeration. Neither calculation was performed. Exact truncation requires an order-$3$ coefficient of $\approx -52$, which is not a clean $q$-rational.
 
@@ -61,14 +49,14 @@ at $7.4 \times 10^{-4}$ relative residual. This structure relates to $\mathrm{Vo
 
 ## Insufficiency of block-diagonal Gram deformations
 
-A natural ansatz deforms the Gram matrix by a framing correction $\mathcal{A}$ induced by a chiral anomaly on Bring's surface, $G_{\mathrm{CS},n}' = G_{\mathrm{CS},n} \otimes \mathcal{A}$. Every $G$ in this section is a **Chern--Simons** pairing Gram on Bring's surface, indexed by jet level $n$; none of them is the Markov--Gram $\mathrm{tr}_M(b_i b_j)$ of the $H_3(q)$ normal-form basis ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)), whose own determinants appear elsewhere in the corpus under the same glyph and whose $q$-dependence runs through the Markov parameter $z$, which never enters here. There are two sub-cases:
+A natural ansatz deforms the Gram matrix by a framing correction $\mathcal{A}$ induced by a chiral anomaly on Bring's surface, $G_{\mathrm{CS},n}' = G_{\mathrm{CS},n} \otimes \mathcal{A}$. Every $G$ in this section is a **Chern--Simons** pairing Gram on Bring's surface, indexed by jet level $n$; none of them is the Markov--Gram $\mathrm{tr}_M(b_i b_j)$ of the $H_3(q)$ normal-form basis ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)), whose $q$-dependence runs through the Markov parameter $z$, which never enters here. There are two sub-cases:
 
 1. **Scalar $\mathcal{A} \in R$.** For an $N \times N$ Gram matrix, $\det G_{\mathrm{CS},n}' = \mathcal{A}^N \det G_{\mathrm{CS},n}$. The determinant ratio $\kappa = \det G_{\mathrm{CS},n} / \det G_{\mathrm{CS},n-1}$ becomes $\kappa' = \mathcal{A}^{\dim G_{\mathrm{CS},n} - \dim G_{\mathrm{CS},n-1}} \cdot \kappa_{\text{Witten}}$. This is a fixed power of $\mathcal{A}$ multiplying the Witten value. The corrected $1/\alpha_{EM}$ takes the multiplicative form $q[9]_q[10]_q \cdot (1 + \delta_{CS} + \mathcal{A}^{\Delta\dim}\kappa_{\text{Witten}}\delta_{CS}^2)$.
 2. **Block-diagonal $2{\times}2$ $\mathcal{A}$**. This acts on the two Hecke eigenchannels $V_{(2)}, V_{(1,1)}$. The determinant of $G_{\mathrm{CS},n}'$ factors as a product of per-channel scalar powers. Again, $\kappa'$ is a multiplicative perturbation of $\kappa_{\text{Witten}}$. This "old derivation" route yielded $\kappa \approx 1.722$. It agrees with the Wedderburn-block Plancherel sum but falls short of the CODATA value.
 
 Both sub-cases live in the multiplicative $q$-rational family. The 100-dps PSLQ scan over the 54-element basis ruled out this family. Any Gram deformation preserving block-diagonal structure on $V_{(2)} \oplus V_{(1,1)}$ cannot close the gap.
 
-Closure requires an off-diagonal approach or an additive form. The additive Bring zero-mode form ([Bring-surface zero-mode coupling](#prop:em-coupling-bring-zero-mode)) supplies the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ as a summand. The substrate pentagon-coherence factors the quantum observable universe mass-formula state sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin pentagon-uniqueness forces every real-valued archimedean realization to coincide with the Bloch-Wigner dilogarithm $D$. The $\pi$ in $2/(3\pi)$ is the unique archimedean shadow of substrate pentagon data. Two open computations remain: identify the explicit Bloch-group class on Bring's surface, and lift the next-order $\alpha/(4\pi)$ term to a higher Bloch group $B_n(\mathbb{C})$.
+Closure requires an off-diagonal approach or an additive form. The additive Bring zero-mode form ([Bring-surface zero-mode coupling](#prop:em-coupling-bring-zero-mode)) supplies the correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ as a summand. The aether pentagon-coherence factors the quantum observable universe mass-formula state sum through a class in the Bloch group $B(\mathbb{C})$. Bloch-Suslin pentagon-uniqueness forces every real-valued archimedean realization to coincide with the Bloch-Wigner dilogarithm $D$. The $\pi$ in $2/(3\pi)$ is the unique archimedean shadow of aether pentagon data. Two open computations remain: identify the explicit Bloch-group class on Bring's surface, and lift the next-order $\alpha/(4\pi)$ term to a higher Bloch group $B_n(\mathbb{C})$.
 
 ## Implications
 
@@ -105,4 +93,4 @@ $$
   \;=\; \frac{8}{12\pi}.
 $$
 
-The sphere-volume form $2/(3\pi) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$ is a secondary reading of the same number. The photon zero-mode lives on the $2$-surface. The denominator $3$ is the Gauss–Bonnet factor $(g-1)=3$. The $\alpha/(4\pi)$ term suggests a Schwinger-like 1-loop self-coupling.
+The sphere-volume form $2/(3\pi) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$ is a secondary reading of the same number. The photon zero-mode lives on the $2$-surface, where $(g-1)=3$ is the Gauss–Bonnet factor, while the $\alpha$-proportional self-energy refines to $\alpha H(1 - h^2\alpha)$ with $H = [2]_q/(8\pi)$ ([Bring-surface zero-mode coupling](#prop:em-coupling-bring-zero-mode)). Two open limitations remain even after that self-consistent one-loop refinement: (i) **anchor-dominance**, since the cubic fixed-point residual moves from $-0.365\;\mathrm{ppb}$ under the one-term proton calibration $q_0$ to $+75.97\;\mathrm{ppb}$ at the two-term Borromean proton evaluation $q_{2\mathrm{t}}$ and $+79.00\;\mathrm{ppb}$ at the muon evaluation $q_\mu$ ($+80.36\;\mathrm{ppb}$ on the quadratic fixed point), and (ii) **two-loop truncation**, since the arithmetic-weight-$3$ archimedean remainder $\Delta_2 \sim \mathcal{O}((\alpha/\pi)^2)$ has not yet been derived from the categorical action.

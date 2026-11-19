@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) over a Noetherian ring $R$ with substrate parameter $q$, satisfying the observability condition
+Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) over a Noetherian ring $R$ with aether parameter $q$, satisfying the observability condition
 $$
   \mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0
 $$

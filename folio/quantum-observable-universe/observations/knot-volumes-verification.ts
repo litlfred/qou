@@ -25,4 +25,10 @@ export default proof({
     status: "verified",
     requires: ["snappy>=3.3"],
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Verified against SnapPy 3.3 hyperbolic census.",
+    },
+  ],
 });

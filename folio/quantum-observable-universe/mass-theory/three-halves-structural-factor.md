@@ -37,11 +37,8 @@ All five polynomial identities hold over any commutative ring $R$ with the modul
 as a unit $q \in R^\times$, each following directly as a linear combination of the invertibility relation
 $q \cdot q^{-1} = 1$ without division or ordering hypotheses. A field structure is
 used only for the ratio formulation, where the two quotient
-presentations are recovered from the cross-multiplied identities when the denominators are non-zero. These generic-ring identities apply at the substrate
-$q_0 \approx 1.110$ by specialisation; numerical cross-checks at
-50-dps mpmath verify each identity to $\leq 10^{-40}$ in the
-[`tau-amphichiral-sdp-probe.witness.json`](../../../computations/probes/tau-amphichiral-sdp-probe.witness.json)
-witness.
+presentations are recovered from the cross-multiplied identities when the denominators are non-zero. These generic-ring identities apply at the aether
+$q_0 \approx 1.110$ by specialisation; 50-digit numerical evaluation verifies each specialized identity to within $10^{-40}$.
 
 ## Role in the framework
 

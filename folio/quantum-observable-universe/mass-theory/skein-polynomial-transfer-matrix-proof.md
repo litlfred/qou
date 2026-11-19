@@ -18,7 +18,7 @@ choice — any other coefficients break $\sigma \cdot \sigma^{-1} = 1$
 in the standard $(2,1)$ representation.  The unimodularity
 $\det T = -1$ is a theorem (consequence of the Hecke relation
 $\sigma^2 = (q - q^{-1})\sigma + 1$, which forces eigenvalues
-$q, -q^{-1}$ with product $-1$), not an assumption.
+$q, -q^{-1}$ with product $-1$) rather than an assumption.
 
 The transfer matrix at each crossing:
 
@@ -89,7 +89,7 @@ The parameter $q$ plays three roles simultaneously:
 |------|-------------|
 | Algebraic | Deformation parameter of $H_A(q)$: $T^2 = (q - q^{-1})T + 1$ |
 | Topological | Variable of the Skein polynomial $P_{\mathcal{N}}(q)$ |
-| Physical | Substrate parameter $q$ from $\chi(A) = -6$ |
+| Physical | Aether parameter $q$ from $\chi(A) = -6$ |
 
 These are not three different objects — they are the **same $q$**.
 The Hecke relation generates the polynomial; the Markov trace
@@ -118,7 +118,7 @@ All evaluated in milliseconds.
 
 The $Q$-value
 ([transition energy](#def:Q-value-transition)) is the ratio
-of two Skein polynomials evaluated at the substrate parameter $q$:
+of two Skein polynomials evaluated at the aether parameter $q$:
 
 $$
   Q

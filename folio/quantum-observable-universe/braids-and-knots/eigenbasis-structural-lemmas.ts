@@ -6,4 +6,10 @@ export default remark({
   title: "Content/twist eigenbasis: structural lemmas behind the Wedderburn characters (Lean)",
   tags: ["hecke-character", "ribbon-eigenvalue", "eigenbasis", "confinement"],
   uses: ["prop:confinement-categorical"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/hecke-conjugation-duality-sign.witness.json.",
+    },
+  ],
 });

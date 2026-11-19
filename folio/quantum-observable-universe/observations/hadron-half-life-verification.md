@@ -25,7 +25,7 @@ The parameters $q$ and $\mu_0$ alone determine:
    chosen from three candidates listed beside their deviations from
    experiment ($-23\%$, $+46\%$, $+0.1\%$); the closest was kept. That is a
    selection against the target, i.e. a fit under the no-fitting
-   discipline, not a prediction.
+   discipline rather than a prediction.
 4. **Fine structure constant $\alpha_{\mathrm{EM}}$.** RESOLVED. $\alpha^{-1} \approx 137.036$.
 5. **Shell correction energy scale $\lambda_{\mathrm{shell}}$.** The binding energy of the alpha particle.
 

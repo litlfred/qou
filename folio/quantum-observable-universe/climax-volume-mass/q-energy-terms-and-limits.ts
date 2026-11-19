@@ -21,4 +21,10 @@ export default remark({
     "mass-energy",
     "limits",
   ],
+  computation: {
+    engine: "sympy",
+    script: "computations/mass-from-q-symbolic.py",
+    witness: "computations/mass-from-q-symbolic.witness.json",
+    status: "verified",
+  },
 });

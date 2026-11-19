@@ -38,8 +38,8 @@ export default proposition({
     "Partition-sum form of $\\mathrm{tr}_M$ via Wenzl $y_\\lambda$ and " +
     "Hoefsmit $\\chi^\\lambda_q$ agrees with the canonical Markov-axiom reducer",
   lean: {
-    ref: "qou:QOU.BraidKnot.QHeckeSeminormalCharacterClosure.character_closure_holds",
-    validation: "not_checked",
+    ref: "qou:QOU.BraidKnot.QHeckeSeminormalCharacterClosure.QHeckeSeminormalCharacterClosureContext",
+    validation: "leanok",
   },
   uses: [],
   cites: [
@@ -54,8 +54,13 @@ export default proposition({
     script: "computations/tr_m_q_hecke_seminormal.py",
     witness: [
       "computations/tr-m-q-hecke-seminormal.witness.json",
-      // Numerical-verification table reads this (proton pin, owner S2 2026-11-15).
       "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
+      "computations/atomic-tr-m-mpfr-50dps.witness.json",
+      "computations/rho-k-h3a-refinement.witness.json",
+      "computations/canonical-tr-m-three-path-comparison.witness.json",
+      "computations/probes/the_character_closure_block_and_a_lean_file_publish_convention_c_probe.witness.json",
+      "computations/laurentq-a5-ceiling-measure.witness.json",
+      "computations/markov-z-full-bar-condition.witness.json",
     ],
     status: "verified",
     requires: ["numpy", "sympy"],
@@ -79,12 +84,20 @@ export default proposition({
     {
       kind: "refined-framing",
       date: "2026-09-05",
-      body: "**Migrated C → D, 2026-09-05** (`qou-i229` → `qou-46ab`, owner-approved:\n*\"refresh and migrate\"*). Source: the canonical Hoefsmit + Wenzl bridge witness\n`atomic-tr-m-mpfr-50dps.witness.json`, which computes these five atoms by this\nblock's own stated method $\\sum_\\lambda y_\\lambda \\chi_\\lambda$ at\n`q0Anchor: muon`.\n\n| atom | was (convention C) | now (convention D) | ratio |\n|---|---:|---:|---:|\n| Proton | $1.06530622859$ | $1.14575978232$ | $1.0755$ |\n| Neutron | $0.92323329717$ | $0.98774375682$ | $1.0699$ |\n| Deuteron | $0.38828647155$ | $0.57517232973$ | $1.4813$ |\n| Tritium | $0.10405211868$ | $0.22931014615$ | $2.2038$ |\n| ${}^3$He | $0.20654085856$ | $0.40376713691$ | $1.9549$ |\n\nThe proton ratio is `qou-46ab`'s signature, established there to 50 digits:\nC-frame $1.0653062286131670594$ against D-frame $1.1457597822878355047$,\n$|D-C|/C = 0.0755215$.\n\n**The anchor is unchanged.** The C table was muon-anchored — its per-atom\n$D/C$ ratios match `qou-46ab`'s convention ratio at the muon pin to 8 digits\nand at the proton pin only to 7 — so this is a convention migration, not a\nre-anchoring. The muon pin used is the live one, the same target as the\n`q₀` refresh in this pass.\n\n**The two-column form is withdrawn, not recomputed.** The table used to print\n$|\\mathrm{tr}_M|$ *canonical* against *partition-sum* with a $\\sim 10^{-15}$\n\"relative error\", and that column read as a verification of the values. It was\nnot: it was the agreement of **two C-frame paths**, which says nothing about\nwhich convention both are in. The character-closure identity is\nconvention-independent and the declaring probe verifies it on abstract braids,\nso the two paths agree under D as well — but **that agreement has not been\nre-measured at these five nuclei**, because the second path is `markov_peel`,\nwhose proton and neutron entries `qou-46ab` deliberately removed as unreliable\n(`canonical_tr_m_three_path_comparison.py`). Printing a residual nobody has\nmeasured would repeat the defect this migration is fixing.",
+      body: "**Migrated C → D, 2026-09-05** (`qou-i229` → `qou-46ab`, owner-approved:\n*\"refresh and migrate\"*). Source: the canonical Hoefsmit + Wenzl bridge witness\n`atomic-tr-m-mpfr-50dps.witness.json`, which computes these five atoms by this\nblock's own stated method $\\sum_\\lambda y_\\lambda \\chi_\\lambda$ at\n`q0Anchor: muon`.\n\n" +
+        /* <!-- literal-source: historical pre-intra-ordering-ruling (2026-08-29 grouped braid word) C->D migration table --> */
+        "| atom | was (convention C) | now (convention D) | ratio |\n|---|---:|---:|---:|\n| Proton | $1.06530622859$ | $1.14575978232$ | $1.0755$ |\n| Neutron | $0.92323329717$ | $0.98774375682$ | $1.0699$ |\n| Deuteron | $0.38828647155$ | $0.57517232973$ | $1.4813$ |\n" +
+        /* <!-- literal-source: historical pre-intra-ordering-ruling (2026-08-29 grouped braid word) C->D migration table --> */
+        "| Tritium | $0.10405211868$ | $0.22931014615$ | $2.2038$ |\n| ${}^3$He | $0.20654085856$ | $0.40376713691$ | $1.9549$ |\n\nThe proton ratio is `qou-46ab`'s signature, established there to 50 digits:\nC-frame $1.0653062286131670594$ against D-frame $1.1457597822878355047$,\n$|D-C|/C = 0.0755215$.\n\n**The anchor is unchanged.** The C table was muon-anchored — its per-atom\n$D/C$ ratios match `qou-46ab`'s convention ratio at the muon pin to 8 digits\nand at the proton pin only to 7 — so this is a convention migration, not a\nre-anchoring. The muon pin used is the live one, the same target as the\n`q₀` refresh in this pass.\n\n**The two-column form is withdrawn, not recomputed.** The table used to print\n$|\\mathrm{tr}_M|$ *canonical* against *partition-sum* with a $\\sim 10^{-15}$\n\"relative error\", and that column read as a verification of the values. It was\nnot: it was the agreement of **two C-frame paths**, which says nothing about\nwhich convention both are in. The character-closure identity is\nconvention-independent and the declaring probe verifies it on abstract braids,\nso the two paths agree under D as well — but **that agreement has not been\nre-measured at these five nuclei**, because the second path is `markov_peel`,\nwhose proton and neutron entries `qou-46ab` deliberately removed as unreliable\n(`canonical_tr_m_three_path_comparison.py`). Printing a residual nobody has\nmeasured would repeat the defect this migration is fixing.",
     },
     {
       kind: "refined-framing",
       date: "2026-09-05",
-      body: "**Ordering corrected 2026-09-05** (`qou-hu1f`). Earlier the same day these\nvalues were migrated C → D from `atomic-tr-m-mpfr-50dps.witness.json` — which\nwas computed **2026-08-29, before** the intra-ordering owner ruling, and had\nnever been regenerated. The producer has now been re-run under the ruling and\nthe table takes its output:\n\n| atom | grouped (superseded) | **borromean (the ruling)** |\n|---|---:|---:|\n| Proton | $1.14575978232$ | $0.62932842249$ |\n| Neutron | $0.98774375682$ | $0.47513351767$ |\n| Deuteron | $0.57517232973$ | $0.15196834396$ |\n| Tritium | $0.22931014615$ | $0.02914404235$ |\n| ${}^3$He | $0.40376713691$ | $0.05859625835$ |\n\nA factor of $1.8$ to $7.9$, growing with $A$ — far larger than the convention\nmigration that preceded it. `atom_braid_word_3A` lays each nucleon's\nconfinement core down alternating, `(σ₀σ₁⁻¹)³`, because `σ₀` and `σ₁` do not\ncommute and only the alternating word is `β_Bor`.\n\nBoth axes are now current: **convention D** and the **borromean** ordering, at\nthe muon pin, all three taken from the producer rather than substituted by hand.",
+      body: "**Ordering corrected 2026-09-05** (`qou-hu1f`). Earlier the same day these\nvalues were migrated C → D from `atomic-tr-m-mpfr-50dps.witness.json` — which\nwas computed **2026-08-29, before** the intra-ordering owner ruling, and had\nnever been regenerated. The producer has now been re-run under the ruling and\nthe table takes its output:\n\n" +
+        /* <!-- literal-source: historical muon-pinned borromean vs grouped comparison table before 2026-11-15 proton-pin move --> */
+        "| atom | grouped (superseded) | **borromean (the ruling)** |\n|---|---:|---:|\n| Proton | $1.14575978232$ | $0.62932842249$ |\n| Neutron | $0.98774375682$ | $0.47513351767$ |\n| Deuteron | $0.57517232973$ | $0.15196834396$ |\n" +
+        /* <!-- literal-source: historical muon-pinned borromean vs grouped comparison table before 2026-11-15 proton-pin move --> */
+        "| Tritium | $0.22931014615$ | $0.02914404235$ |\n| ${}^3$He | $0.40376713691$ | $0.05859625835$ |\n\nA factor of $1.8$ to $7.9$, growing with $A$ — far larger than the convention\nmigration that preceded it. `atom_braid_word_3A` lays each nucleon's\nconfinement core down alternating, `(σ₀σ₁⁻¹)³`, because `σ₀` and `σ₁` do not\ncommute and only the alternating word is `β_Bor`.\n\nBoth axes are now current: **convention D** and the **borromean** ordering, at\nthe muon pin, all three taken from the producer rather than substituted by hand.",
     },
     {
       kind: "refined-framing",

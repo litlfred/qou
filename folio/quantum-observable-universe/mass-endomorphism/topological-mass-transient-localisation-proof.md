@@ -54,5 +54,5 @@ $\mathrm{Multiplicative}\,\mathbb{R}$ is commutative, and its elements
 $\mathrm{ofAdd}(1)$ and $\mathrm{ofAdd}(-1)$ have norms summing to $2$
 while their product $\mathrm{ofAdd}(0)$ has norm $0$.  Equality would
 require a further structural input, for instance that the disc integrals
-lie on a common ray on which the norm is additive.  No such input is
-established, and the equality remains open.
+lie on a common ray on which the norm is additive.  No such phase-alignment condition is
+established here, so exact additivity is unproved.

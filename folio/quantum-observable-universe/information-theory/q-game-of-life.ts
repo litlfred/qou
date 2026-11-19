@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-game-of-life",
   title:
-    "The quantum Game of Life (q-GoL) as a Toffoli-defined substrate automaton",
+    "The quantum Game of Life (q-GoL) as a Toffoli-defined aether automaton",
   tags: [
     "q-GoL",
     "toffoli",
@@ -37,4 +37,10 @@ export default proposition({
       body: "This block once named the regime q > 1 via the golden-ratio threshold q_⋆ = 1/φ²; both were artifacts of the excised convention C.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/toffoli-lp-stability.witness.json",
+    status: "verified",
+  },
 });

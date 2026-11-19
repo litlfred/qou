@@ -33,4 +33,10 @@ export default proposition({
         "construction.",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/probes/toffoli_published_vs_construction_audit.py",
+    witness: "computations/probes/toffoli-published-vs-construction.witness.json",
+    status: "verified",
+  },
 });

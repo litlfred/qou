@@ -10,4 +10,10 @@ export default remark({
     "prop:braiding-eigenvalue-extraction",
     "prop:tannaka-krein-reconstruction",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/fibre_functor_dimension_not_categorical_probe.py",
+    witness: "computations/probes/fibre-functor-dimension-not-categorical-probe.witness.json",
+    status: "verified",
+  },
 });

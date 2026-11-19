@@ -57,5 +57,5 @@ layers.  Term $k$ of the formula is the contribution of the
 curvature-rank-$k$ confinement stratum.  The rank-3 chirality residue
 ($\mathrm{Vol}(6_1) \cdot |(q;q)_3|$) and the rank-$\geq 4$ universal
 Pochhammer tail in the structural $\mathfrak{Q}_\beta$ derivation
-(Q-beta path A extended witness) are confinement residues, not
+(Q-beta path A extended witness) are confinement residues rather than
 independent ingredients.*

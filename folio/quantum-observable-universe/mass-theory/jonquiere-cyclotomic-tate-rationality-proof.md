@@ -27,7 +27,7 @@ $$
   \;=\; \frac{1}{K}.
 $$
 
-The Bernoulli polynomial evaluates at $1/K$ — a particularly
+The Bernoulli polynomial evaluates at $1/K$, giving a particularly
 clean specialisation. Substituting into Step 1:
 
 $$
@@ -54,7 +54,7 @@ $$
   \mathrm{Re}\,\mathrm{Li}_n(\zeta_K) \;=\; -\frac{(2\pi i)^n}{2 \cdot n!}\,B_n(1/K), \qquad n \text{ even}.
 $$
 
-Both expressions are rational multiples of $\pi^n$ — **Tate-rational**.
+Both expressions are rational multiples of $\pi^n$, hence **Tate-rational**.
 $\square$
 
 ### Verification at low depths
@@ -77,7 +77,7 @@ $$
   \quad \text{(see Theorem A)}.
 $$
 
-This is the special case $n = 3$ — recovers
+This is the special case $n = 3$, which recovers
 [cyclotomic trilogarithm imaginary closed form proposition](#prop:cyclotomic-trilog-imaginary-closed-form).
 
 **$n = 4$ (even, Re part):** $B_4(x) = x^4 - 2x^3 + x^2 - 1/30$.
@@ -98,8 +98,7 @@ $$
 
 ### canonical structural verification at 50 dps
 
-the canonical formalism,
-[witness](https://github.com/litlfred/qou/blob/main/computations/jonquiere-cyclotomic-general.witness.json):
+High-precision numerical check:
 
-Verified at $n \in \{2, 3, 4, 5\}$ and $K \in \{3, 4, 5, 6, 7\}$ —
-20 combinations.  Max residual $4.0 \times 10^{-51}$.
+Verified at $n \in \{2, 3, 4, 5\}$ and $K \in \{3, 4, 5, 6, 7\}$ (20
+combinations).  Max residual $4.0 \times 10^{-51}$.

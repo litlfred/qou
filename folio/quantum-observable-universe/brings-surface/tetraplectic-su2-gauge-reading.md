@@ -41,9 +41,8 @@ fundamental.
 The first limit has a testable consequence, which is what keeps it from being
 a disclaimer. Morita's quaternionic formulation of the
 Weinberg–Salam theory \cite{morita1982} builds fermions and Higgs mesons over
-$\mathbb{H}$ and finds that what it reproduces is not the Standard Model gauge
-group but the **left–right symmetric** one,
-$\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R \times \mathrm{U}(1)$ — precisely
+$\mathbb{H}$ and finds that what it reproduces is the **left–right symmetric** gauge group,
+$\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R \times \mathrm{U}(1)$, rather than the Standard Model one — precisely
 because both the left and the right unit-quaternion actions are available and
 neither is distinguished by the algebra. The same is true of the Reeb triad
 here: the construction has no way to prefer $g\psi$ over $\psi g$.

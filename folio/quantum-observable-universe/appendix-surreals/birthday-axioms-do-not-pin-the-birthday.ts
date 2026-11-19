@@ -21,6 +21,10 @@ export default theorem({
   authorNotes: [
     {
       kind: "note",
+      body: "Historical note migrated from prose: an earlier phrasing asserted without explicit verification that adding the matching >= inequality kills the flat model outright; this is now proved explicitly at n = 2.",
+    },
+    {
+      kind: "note",
       body:
         "Discovered while instantiating the six SurrealField birthday axioms on Mathlib's hyperreals (Real*) in QOU.AppendixSurreals.birthdayFaithful_independent_witnessed.",
     },

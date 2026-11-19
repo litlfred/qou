@@ -38,9 +38,23 @@ export default remark({
   authorNotes: [
     {
       kind: "note",
+      body: "Computational witnesses: computations/deltalambda/alpha-activation-brunnian.witness.json, alpha-cluster-volume-additivity.witness.json, inter-cluster-bond-term.witness.json.",
+    },
+    {
+      kind: "note",
       date: "2026-07-18",
       body:
         "Consolidated audit record: [docs/audits/2026-07-14-model-g-consolidated-record.md](../../../docs/audits/2026-07-14-model-g-consolidated-record.md) (rounds 4–7: #3780/#3784/#3786/#3789). Promoted to a content block per owner direction with STRICT phenomenological labelling — the fit is recorded, not laundered as a derivation. The ab-initio piece for the cluster bases is the separate bond-count tower (³H ≈ −0.16%; ⁴He open, the Vol₄ census gap).",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/deltalambda/alpha-activation-brunnian.witness.json",
+      "computations/deltalambda/alpha-cluster-volume-additivity.witness.json",
+      "computations/deltalambda/inter-cluster-bond-term.witness.json",
+    ],
+    status: "verified",
+  },
 });

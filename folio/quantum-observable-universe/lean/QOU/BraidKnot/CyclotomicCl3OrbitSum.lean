@@ -36,4 +36,45 @@ theorem orbit_sum_at_five (zeta3 : ℝ) :
   field_simp
   ring
 
+/-- **General-`N` cyclotomic `Cl₃` orbit-sum reduction (`prop:cyclotomic-cl3-orbit-sum-general`).**
+    For any `N ≥ 2` and any orbit evaluation `cl3Orbit : Fin N → ℝ` representing
+    `k ↦ Cl₃(2π k / N)` that satisfies the zero-mode value `cl3Orbit 0 = zeta3`
+    and the weight-3 Kubert distribution sum
+    `∑ k : Fin N, cl3Orbit k = zeta3 / (N : ℝ) ^ 2`, the primitive/non-zero orbit
+    sum over `k ∈ {1, …, N - 1}` equals `cl3OrbitSumPredicted N zeta3`, and is
+    strictly negative whenever `0 < zeta3`. -/
+-- Ref: [zagier1986] §1; [leitner2026] prop:cyclotomic-cl3-orbit-sum-general
+theorem orbit_sum_general (N : ℕ) (hN : 2 ≤ N) (zeta3 : ℝ)
+    (cl3Orbit : Fin N → ℝ)
+    (hzero : cl3Orbit ⟨0, by omega⟩ = zeta3)
+    (hkubert : (Finset.univ.sum fun k : Fin N => cl3Orbit k) = zeta3 / (N : ℝ) ^ 2) :
+    (Finset.univ.erase ⟨0, by omega⟩).sum cl3Orbit = cl3OrbitSumPredicted N zeta3 ∧
+    (0 < zeta3 → (Finset.univ.erase ⟨0, by omega⟩).sum cl3Orbit < 0) := by
+  have hsplit :
+      cl3Orbit ⟨0, by omega⟩ + (Finset.univ.erase ⟨0, by omega⟩).sum cl3Orbit =
+        Finset.univ.sum cl3Orbit :=
+    Finset.add_sum_erase Finset.univ cl3Orbit (Finset.mem_univ _)
+  have hN2 : (2 : ℝ) ≤ (N : ℝ) := by exact_mod_cast hN
+  have hN_pos : (0 : ℝ) < (N : ℝ) := lt_of_lt_of_le (by norm_num) hN2
+  have hN_ne : (N : ℝ) ≠ 0 := ne_of_gt hN_pos
+  have hsum : (Finset.univ.erase ⟨0, by omega⟩).sum cl3Orbit =
+      zeta3 / (N : ℝ) ^ 2 - zeta3 :=
+    eq_sub_of_add_eq' (by rw [← hkubert, ← hsplit, hzero])
+  have heq : (Finset.univ.erase ⟨0, by omega⟩).sum cl3Orbit = cl3OrbitSumPredicted N zeta3 := by
+    rw [hsum]
+    unfold cl3OrbitSumPredicted
+    field_simp [hN_ne]
+    ring
+  refine ⟨heq, fun hz => ?_⟩
+  rw [heq]
+  unfold cl3OrbitSumPredicted
+  have hsq_gt_one : (1 : ℝ) < (N : ℝ) ^ 2 := by
+    have h1 : (1 : ℝ) < (N : ℝ) := lt_of_lt_of_le (by norm_num) hN2
+    exact one_lt_pow₀ h1 (by decide)
+  have hnum_pos : (0 : ℝ) < ((N : ℝ) ^ 2 - 1) / (N : ℝ) ^ 2 :=
+    div_pos (sub_pos.mpr hsq_gt_one) (sq_pos_of_pos hN_pos)
+  have hprod_pos : (0 : ℝ) < (((N : ℝ) ^ 2 - 1) / (N : ℝ) ^ 2) * zeta3 :=
+    mul_pos hnum_pos hz
+  simpa [neg_mul] using neg_lt_zero.mpr hprod_pos
+
 end QOU.BraidKnot.CyclotomicCl3OrbitSum

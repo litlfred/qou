@@ -9,4 +9,10 @@ export default definition({
   },
   uses: [],
   examples: ["rem:hadron-operations", "rem:knot-factorization", "rem:knot-particle-dictionary"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

@@ -23,7 +23,7 @@ $\mathbf{On}_p$ in characteristic $p$ (Lenstra--Conway).
 
 ## Note on this paper
 
-This conjecture is **not** load-bearing for QOU's main results; the substrate value $q_0$ is generic (not a root of unity). The binary Hoefsmit / char-$0$ surreal picture applies throughout this paper. The char-$p$ extension is included here as a conceptual companion. It records how the Hoefsmit machinery maps into the modular setting.
+This conjecture is **not** load-bearing for QOU's main results; the aether parameter $q_0$ is generic (not a root of unity). The binary Hoefsmit / char-$0$ surreal picture applies throughout this paper. The char-$p$ extension is included here as a conceptual companion. It records how the Hoefsmit machinery maps into the modular setting.
 
 ## Background: nimber surreals
 

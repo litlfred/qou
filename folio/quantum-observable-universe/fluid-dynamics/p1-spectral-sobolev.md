@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) carrying [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q = d_q\delta_q + \delta_q d_q$ be the [$q$-Laplacian](#rem:q-laplacian-interpretation) operating on $\Omega^1(A)$, and let $\langle \cdot, \cdot \rangle_\varTheta$ supply the [Webster inner product](#rem:hodge-laplacian-relation).
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) carrying [aether parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q = d_q\delta_q + \delta_q d_q$ be the [$q$-Laplacian](#rem:q-laplacian-interpretation) operating on $\Omega^1(A)$, and let $\langle \cdot, \cdot \rangle_\varTheta$ supply the [Webster inner product](#rem:hodge-laplacian-relation).
 
 Then:
 

@@ -22,14 +22,14 @@ ensures invariance under stabilisation $\beta \mapsto \beta\sigma_n^{\pm 1}$
 ([axiomatic Markov closed form](#prop:markov-trace-axiomatic-closed-form)).
 Physically, it acts as a vacuum subtraction: $P_K(q)$ measures the
 *excess* topological complexity of the knot $K$ relative to the
-unbraided substrate, not the absolute count of strands. Without
+unbraided aether rather than the absolute count of strands. Without
 this normalisation the polynomial would grow with every additional
 trivial component, and Reidemeister-I invariance would fail
 ([Reidemeister mass invariance](#conj:reidemeister-mass-invariance)).
 
 ## Tier 2: physical scaling — base mass $m_0$
 
-Evaluating the normalised $P_K(q)$ at the substrate parameter
+Evaluating the normalised $P_K(q)$ at the aether parameter
 $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps) produces a dimensionless real number; converting
 to MeV requires multiplication by a base mass scale,
 
@@ -37,7 +37,7 @@ $$
   \mathfrak{m}_{\mathcal{K}} \;\approx\; m_0 \cdot \bigl| P_K(q_0) \bigr|.
 $$
 
-The choice of $m_0$ is a **boundary condition** of the framework, not
+The choice of $m_0$ is a **boundary condition** of the framework rather than
 a derivation. Three natural anchors appear in the literature:
 
 | Anchor | Value | Setting |
@@ -74,12 +74,12 @@ The volume-density factorisation
 $\mathfrak{m}(K) = \mathrm{Vol}(K) \cdot \rho_q$
 ([Kashaev volume density](#rem:kashaev-volume-density)) inherits the
 same separation: $\rho_q = 1/\hbar_q^2$ is Tier-1 (topological,
-substrate-only), while the conversion of $\mathfrak{m}$ to MeV is
+aether-only), while the conversion of $\mathfrak{m}$ to MeV is
 Tier-2 (physical, set by $m_e$).
 
 ## Summary
 
-The substrate-bound polynomial $P_K(q)$ is a dimensionless
+The aether-bound polynomial $P_K(q)$ is a dimensionless
 topological multiplier; its Markov normalisation by $[N]_q$ is fixed
 by the categorical structure, while the conversion to a macroscopic
 mass requires a separate dimensional anchor $m_0$ chosen by

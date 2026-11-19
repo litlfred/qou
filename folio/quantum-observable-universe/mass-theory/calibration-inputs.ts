@@ -44,4 +44,19 @@ export default remark({
       see: "https://github.com/litlfred/qou/pull/1127",
     },
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/qbeta/qbeta_cos_resummation_d_probe.py",
+    witness: [
+      "computations/qbeta/qbeta-cos-resummation-d.witness.json",
+      "computations/mass-from-q-symbolic.witness.json",
+      "computations/qbeta/qbeta-ck-sseries-operator-match.witness.json",
+      "computations/per-observable-100x-status.witness.json",
+      "computations/e0-calibration-audit.witness.json",
+      "computations/build-six-term-substrate-model-b.witness.json",
+      "computations/qbeta/qbeta-5two-barodd-antisym-offdiagonal.witness.json",
+      "computations/probes/m-pi-hecke-prediction-probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

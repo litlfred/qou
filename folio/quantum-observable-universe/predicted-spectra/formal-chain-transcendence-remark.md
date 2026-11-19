@@ -1,4 +1,4 @@
-The formal proof chain operates in the Laurent polynomial ground ring $\mathbb{Z}[q, q^{-1}]$. It does not use real-number arithmetic. Hyperbolic volumes enter only through the specialisation $\iota \colon q \mapsto q_0$. They appear as computed invariants verified to $10^{-14}$ precision via SnapPy.
+The formal proof chain operates in the Laurent polynomial ground ring $\mathbb{Z}[q, q^{-1}]$. It does not use real-number arithmetic. Hyperbolic volumes enter only through the specialisation $\iota \colon q \mapsto q_0$. They enter as hyperbolic manifold invariants certified to $10^{-14}$ precision from ideal triangulations.
 
 The topological mass formula $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$ mixes Laurent polynomials in $q$ with hyperbolic volumes. The categorical derivation uses the Hecke algebra, Skein relations, Gröbner--Shirshov normal forms, and transfer matrices. This derivation remains purely algebraic over $\mathbb{Z}[q, q^{-1}]$. It does not depend on whether $\mathrm{Vol}(K)$ is transcendental, algebraic, or irrational.
 

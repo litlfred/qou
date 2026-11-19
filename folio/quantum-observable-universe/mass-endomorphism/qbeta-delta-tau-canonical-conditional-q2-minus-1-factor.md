@@ -30,4 +30,3 @@ Here $P_\lambda(q)$ form the per-block polynomial factors from [the per-block ch
 - Parent block: [per-block character closed forms](qbeta-per-block-chi-closed-forms.md) (establishes the per-block $\chi_\lambda$ closed forms and the dimension-normalisation hypothesis).
 - Sibling: [classical-point vanishing of $\mathfrak{Q}_\beta/E_0$](../mass-theory/q-beta-over-e0-classical-vanishing.md) (shows the classical-point vanishing of the upstream object $S(q) = \mathfrak{Q}_\beta/E_0$).
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, physical observables, and numerical evaluation at the substrate parameter $q_0$. Generic categorical or $q$-deformation identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

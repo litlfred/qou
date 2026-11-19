@@ -11,5 +11,3 @@ $$
   \mu_\lambda(q) = \hbar_q^2  \sum_{\square \in \lambda}  [c(\square)]_q \, [c(\square) + 1]_q.
 $$
 The factor $\hbar_q = (q - 1)/q$ is the quantum Planck constant, and $[k]_q = (1 - q^k)/(1 - q)$ is the Jackson integer. This formula computes the eigenvalue of the pure-spin piece $(1 - q^{-1})^2 \Delta_\xi$ from the three-term expansion. The classical-core piece $q^{-2}\Delta$ acts exclusively on spatial modes of the base manifold $M$, contributing a separate eigenvalue $q^{-2}|\mathbf{k}|^2$ dependent on the spatial wavenumber $\mathbf{k}$. Coriolis cross-terms vanish identically on Hecke-representation spaces by Schur's lemma.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

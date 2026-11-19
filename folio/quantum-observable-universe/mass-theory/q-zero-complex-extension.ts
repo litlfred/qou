@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "The pre-Archimedean substrate is polymorphic in its base ring: specializing to $R = \\mathbb{C}$ with $|q| > 1$ is admissible without modifying the Hecke quadratic, the bar involution, the Frobenius pairing, or the Markov trace. The current real-axis convention $q_0 \\in \\mathbb{R}$, $q_0 > 1$ is one such specialization; complex $q_0$ with $|q_0| > 1$ and $\\mathrm{Im}(q_0) \\neq 0$ is uninstantiated infrastructure.",
+    "The pre-Archimedean aether is polymorphic in its base ring: specializing to $R = \\mathbb{C}$ with $|q| > 1$ is admissible without modifying the Hecke quadratic, the bar involution, the Frobenius pairing, or the Markov trace. The current real-axis convention $q_0 \\in \\mathbb{R}$, $q_0 > 1$ is one such specialization; complex $q_0$ with $|q_0| > 1$ and $\\mathrm{Im}(q_0) \\neq 0$ is uninstantiated infrastructure.",
   uses: [
     "def:bar-involution",
     "thm:jones-markov-trace",

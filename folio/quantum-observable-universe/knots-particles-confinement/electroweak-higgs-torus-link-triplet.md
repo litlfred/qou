@@ -41,7 +41,7 @@ Given the sector assignment ($H$ singlet, $W^\pm, Z$ doublets), spin and charge 
 
 The Weinberg-angle block reads the Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ hypercharge gauge boson $B$. It reads $\sigma_5^8$ ($= T(2,8)$, strands $5$–$6$) as the Higgs. There is no conflict: $\sigma_5^8$ carries both, bar-graded by the spin involution. The Higgs boson $H$ is the $A_+$ (bar-even, scalar) part. The hypercharge gauge boson $B$ is the $A_-$ (bar-odd, vector) part.
 
-This bar-grading is derived from the two carriers' spins. The sector$\to$spin map is injective and inverts. Spin determines the sector. The Higgs is a scalar and $B$ a vector as independent physical inputs, so $H \in A_+$ and $B \in A_-$ are forced. The residual postulate is that both $H$ and $B$ inhabit the one $\sigma_5^8$ slot. The self-dual figure-eight $4_1$ is the Higgs mass mechanism, not the $125\,$GeV Higgs boson. The boson is the electroweak-slot link $T(2,8) = A_+$ of $\sigma_5^8$.
+This bar-grading is derived from the two carriers' spins. The sector$\to$spin map is injective and inverts. Spin determines the sector. The Higgs is a scalar and $B$ a vector as independent physical inputs, so $H \in A_+$ and $B \in A_-$ are forced. The residual postulate is that both $H$ and $B$ inhabit the one $\sigma_5^8$ slot. The self-dual figure-eight $4_1$ is the Higgs mass mechanism rather than the $125\,$GeV Higgs boson. The boson is the electroweak-slot link $T(2,8) = A_+$ of $\sigma_5^8$.
 
 **The $W$ vs $Z$ slot assignment is a free label.**
 
@@ -56,7 +56,7 @@ PSD-feasibility is necessary but not sufficient. It holds for every even-twist $
 
 **Scope of the closure.**
 
-If true, the identification supplies the categorical structure for the weak-scale crossing count $N_v = v / m_p$ in the Fermi-constant decomposition $G_F = 1/(\sqrt{2}\,v^2)$. As verified at 50 dps in [`electroweak_bring_schwinger_bridge_probe.py`](../../../computations/probes/electroweak_bring_schwinger_bridge_probe.py):
+If true, the identification supplies the categorical structure for the weak-scale crossing count $N_v = v / m_p$ in the Fermi-constant decomposition $G_F = 1/(\sqrt{2}\,v^2)$. Evaluating at 50 decimal places gives:
 
 1. **Electroweak Bring Seifert–Hodge Zero-Mode ($1/\pi$) and 1-Loop Schwinger Fixed Point ($-29.37\;\mathrm{ppb}$ on $v$):**
    The Seifert genera of $\{W^\pm = T(2,4),\, Z^0 = T(2,6),\, H = T(2,8)\}$ are $(g_W, g_Z, g_H) = (1, 2, 3)$, whose sum $G_{\mathrm{EW}} = 1 + 2 + 3 = 6$ equals the absolute Euler characteristic $-\chi(\Sigma_4) = 2g - 2 = 6$ of Bring's genus-$4$ surface. Dividing the total Seifert first-Betti count $2(g_W + g_Z + g_H) = 12$ by the Bring Gauss–Bonnet area $\mathrm{Area}(\Sigma_4) = 4\pi(g - 1) = 12\pi$ yields the parameter-free zero-mode shift

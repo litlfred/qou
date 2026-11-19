@@ -23,6 +23,10 @@ export default conjecture({
   // definition edge transitively redundant (`uses-editorial-hygiene`). A
   // reader needs the measure and the isotypic decomposition, nothing else.
   uses: ["def:bring-cone-tetraplectic-structure"],
+  lean: {
+    ref: "qou:QOU.BringsSurface.TetraplecticSWLocalisationBridge",
+    validation: "leanok",
+  },
   cites: ["seiberg-witten1994b", "nekrasov2002"],
   tags: [
     "tetraplectic",

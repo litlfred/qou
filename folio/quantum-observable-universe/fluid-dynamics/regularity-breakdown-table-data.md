@@ -1,6 +1,6 @@
 | Statistical mechanics | $q$-Navier--Stokes |
 |---|---|
-| Temperature $T$ | Substrate parameter $q$ |
+| Temperature $T$ | Aether parameter $q$ |
 | Critical point $T_c$ | $q = 1$ |
 | Order parameter (magnetisation) | Enstrophy $\Omega(q)$ |
 | Correlation length $\xi \to \infty$ | Cascade depth $N_{\mathrm{eff}} \to \infty$ |

@@ -143,8 +143,8 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP bounded feasible) : Type wher
 Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
 def strong_duality (lp : OperatorSelectionLP bounded feasible)
     [lpd : HasFiniteLPDuality lp] :
-    lp.duality_gap = 0 :=
-  lpd.strong_duality_holds
+    lp.duality_gap = 0 := by
+  refine lpd.strong_duality_holds
 
 /-- Theorem 3 of the partial proof: duality_gap = 0 for the QOU
 operator-selection LP.  Conditional on `[HasFiniteLPDuality lp]`. -/

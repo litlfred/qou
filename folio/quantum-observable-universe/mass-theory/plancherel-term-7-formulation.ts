@@ -52,4 +52,13 @@ export default proposition({
         "§7c wall by construction.",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/fr_pullback_k3_test.py",
+    witness: [
+      "computations/fr-pullback-k3-test.witness.json",
+      "computations/probes/molien-feray-meliot-bridge.witness.json",
+    ],
+    status: "verified",
+  },
 });

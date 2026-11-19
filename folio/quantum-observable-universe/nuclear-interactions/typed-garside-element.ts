@@ -20,4 +20,10 @@ export default definition({
     "def:typed-crossing-operator",
     "prop:braiding-induced-ordering",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

@@ -18,7 +18,8 @@ $$
 $$
 
 *of $T(2,q)$, $q \in \{3, 5, 7\}$, along $r \in \{0.45, \dots, 0.02\}$
-(mpmath quadrature, 24 digits): $\int\kappa\, ds$ decreases monotonically to
+(24-digit numerical quadrature): $\int\kappa\, ds$ decreases monotonically to
+<!-- literal-source: ratio of total curvature 12.569916 to Milnor floor 4*pi = 1.000282 -->
 $4\pi$ ($\int\kappa/4\pi$ from $1.34$, $2.26$, $3.27$ down to $1.0003$,
 $1.003$, $1.014$), the infimum approached and never attained; $\oint\tau\, ds$
 and $\mathrm{Wr}$ both move across the family; and $\mathrm{Wr} +
@@ -44,13 +45,13 @@ families. The factorisation and inflection-radius algebra ($r^* \in \{3, 5, 7\}$
 velocity-acceleration cross-product vanishing, and injectivity of the inflection
 parameters) hold exactly.
 
-## What this closes
+## Excluded Frenet-framing route
 
 Even the integer half of Călugăreanu is a property of the *curve*: the Frenet
-framing is a framing of the embedding, discontinuous across an inflection, not
+framing is a framing of the embedding (discontinuous across an inflection) rather than
 a framing of the knot type. So no framing datum -- fractional or integral --
 comes from the geometry of the isotopy class alone. Whatever fractional
-framing datum the substrate carries is therefore a property of the algebra
+framing datum the aether carries is therefore a property of the algebra
 (the fractional twist $q^{2c(\lambda)/n}$), or of a canonical *embedding*
 (a Möbius-energy or ropelength minimiser), never of the knot type. That is
 the honest closure of the "missing half" question inside this thread: the
@@ -60,9 +61,9 @@ the curvature floor, and it is not the one the binding gap needs.
 ## Scope
 
 Per component, on one convenient embedding; no canonical embedding is chosen
-and no torsion number is compared with the substrate's hull-exit window,
+and no torsion number is compared with the aether's hull-exit window,
 because the principle says such a comparison has no invariant meaning. That
 the $t = \pi/q$ inflections are the only ones in the family is observed
-(sampled $\kappa_{\min} > 0$ at every listed $r$), not proved; the
-differentiation behind $\gamma'(\pi/q)$, $\gamma''(\pi/q)$ is symbolic, not
+(sampled $\kappa_{\min} > 0$ at every listed $r$) rather than proved; the
+differentiation behind $\gamma'(\pi/q)$, $\gamma''(\pi/q)$ is symbolic rather than
 formalised. Nothing here connects curvature or torsion to binding.

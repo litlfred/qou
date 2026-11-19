@@ -1,7 +1,7 @@
 The linear $\mathrm{C}_6$ chain and benzene represent two different topological states.
 
 **Energy accounting via reduced Alexander polynomials.**
-The crossing energy is conjectured ([conj:ring-closure-barrier](#conj:ring-closure-barrier)) to be proportional to the reduced Alexander polynomial weight at the substrate parameter $q$:
+The crossing energy is conjectured ([ring-closure energy barrier conjecture](#conj:ring-closure-barrier)) to be proportional to the reduced Alexander polynomial weight at the aether parameter $q$:
 
 | Structure | Binding topology | $\tilde\Delta(q)$ | At $q \approx 1$ |
 |-----------|-----------------|-------------|------------------:|

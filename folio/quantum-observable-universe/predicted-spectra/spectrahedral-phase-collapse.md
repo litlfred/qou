@@ -15,7 +15,7 @@ $$
 
 *The supergolden zero has multiplicity $5$ and the classical zero multiplicity $1$. At each, $G$ acquires a kernel and the formal solution space collapses from the higher-dimensional bulk onto a strictly lower-dimensional face of the Hecke spectrahedron.*
 
-The supergolden threshold is the inverse of the first Super Metallic Mean. The substrate sits above both zeros, at $u_0 = \sqrt{q_0} \approx 1.0536$, inside the region $u > 1$ on which $G$ is non-singular — so neither degeneracy is reached by the physical anchor, and the collapse remains distinct from the aeon instantiation at the boundary $q \to 1^+$.
+The supergolden threshold is the inverse of the first Super Metallic Mean. The aether sits above both zeros, at $u_0 = \sqrt{q_0} \approx 1.0536$, inside the region $u > 1$ on which $G$ is non-singular — so neither degeneracy is reached by the physical anchor, and the collapse remains distinct from the aeon instantiation at the boundary $q \to 1^+$.
 
 ## Scope: this is a convention-C statement, and the reading does not survive convention D
 

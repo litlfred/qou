@@ -54,10 +54,10 @@ $$
 
 using $\nabla^2 = \tfrac{1}{2}F_\nabla$ (curvature definition) and
 $\mathcal{L}_\xi = \iota_\xi d + d \iota_\xi$ (Cartan formula). On
-the [categorical-instanton](#def:categorical-instanton) self-dual
+the categorical-instanton self-dual
 background $\star_q F_\nabla = F_\nabla$, the Reeb contraction
 $\iota_\xi F_\nabla$ is in the $+1$ eigenspace of $\star_q$, so it
-contributes only to the symmetric part of $\nabla^*\nabla$, not to
+contributes only to the symmetric part of $\nabla^*\nabla$ rather than to
 the antisymmetric $d_\nabla \delta_\nabla$ piece.
 
 **Step 4: Assembly.** Substituting Steps 2–3 into Step 1 and

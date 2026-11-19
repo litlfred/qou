@@ -27,7 +27,7 @@ $$
   \end{cases}
 $$
 
-## What the map encodes
+## Encoded pair-isospin data
 
 Two couplings and no others carry overall antisymmetry under simultaneous exchange of
 the colour-sheet and flavour labels: exchange-symmetric flavour with the

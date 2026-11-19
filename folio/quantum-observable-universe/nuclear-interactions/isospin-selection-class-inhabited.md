@@ -10,7 +10,7 @@ whose only field is pinned to a definition already in scope cannot fail to be
 satisfiable, and an argument that leaned on its non-vacuity would be leaning on
 nothing.
 
-## What remains open, and why it is not vacuity
+## Physical identification versus algebraic non-vacuity
 
 The class does not assert that *some* coupling satisfies the rule. It asserts that the
 coupling induced by the **physical** interface is $\mathrm{select}$. No formal
@@ -20,7 +20,7 @@ and entirely unproved. The four consequences drawn from it therefore stay condit
 --- charge symmetry between $pp$ and $nn$, the forcing of the like-nucleon channels
 onto $T_1$, the freeing of the deuteron channel alone, and the grouping of the
 symmetric $pn$ state with the like-nucleon pairs --- but the hypothesis they wait on
-is a physical identification, not an open theorem.
+is a physical identification rather than an open theorem.
 
 Inhabitation is recorded as a statement about non-emptiness and deliberately **not**
 as a typeclass instance. Registering an instance would let resolution discharge the

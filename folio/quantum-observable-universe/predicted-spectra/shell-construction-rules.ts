@@ -14,4 +14,14 @@ export default remark({
   ],
   interprets: "cor:spectral-decomposition-qvalue",
   uses: ["cor:spectral-decomposition-qvalue"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/probes/nuclear_spin_orbit_shells_and_symmetry_probe.py",
+    witness: [
+      "computations/probes/nuclear-spin-orbit-shells-and-symmetry.witness.json",
+      "computations/spectral-decomposition-qvalue-d.witness.json",
+      "computations/confined-knot-binding.witness.json",
+    ],
+    status: "verified",
+  },
 });

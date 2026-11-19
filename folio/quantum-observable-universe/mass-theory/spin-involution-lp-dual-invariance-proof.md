@@ -1,6 +1,6 @@
 *Proof.*
 
-**Step 1 — Frobenius pairing is σ-symmetric.**
+**Step 1: Frobenius pairing is σ-symmetric.**
 The Frobenius pairing $\langle a, b \rangle_\tau := \tau(ab)$
 satisfies, for all $a, b \in A$:
 
@@ -18,13 +18,13 @@ is trace-invariance, and the last is symmetry of $\tau$ (the
 Markov / cyclic property). Hence $\sigma$ is an isometry of the
 Frobenius pairing.
 
-**Step 2 — σ stabilises the constraint cone.**
+**Step 2: σ stabilises the constraint cone.**
 Since $\Sigma$ is $\sigma$-stable, the polyhedral cone
 $\mathcal{K}_+ := \{x \in A : \tau(\pi_\lambda \cdot x) \geq 0\
 \forall \lambda \in \Sigma\}$ satisfies $\sigma(\mathcal{K}_+) =
 \mathcal{K}_+$ (apply Step 1 to each constraint).
 
-**Step 3 — σ stabilises the cost functional.**
+**Step 3: σ stabilises the cost functional.**
 Because $\sigma(c) = c$ and $\tau \circ \sigma = \tau$:
 
 $$
@@ -37,7 +37,7 @@ $$
 The cost is $\sigma$-invariant: replacing $x$ by $\sigma(x)$
 does not change the objective.
 
-**Step 4 — σ relates the two LPs.**
+**Step 4: σ relates the two LPs.**
 Define $\mathrm{LP}(\beta)$ to be the LP with input $\beta$.
 The net constraint $\tau(\beta^* \beta \cdot x) =
 n_{\mathrm{target}}(\beta)$ transforms under $x \mapsto
@@ -56,19 +56,19 @@ this is the bar involution). Hence $\sigma$ is a bijection
 between the feasible sets of $\mathrm{LP}(\beta)$ and
 $\mathrm{LP}(\sigma(\beta))$, preserving the objective.
 
-**Step 5 — LP-duality.**
+**Step 5: LP-duality.**
 By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta))$
 have feasible sets in $\sigma$-bijection and the same
 $\sigma$-invariant cost; their primal optima coincide. By
-strong duality (which holds for Frobenius algebras structurally
-— see [frobenius-self-duality-forces-lp-dual-extraction proposition](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
+strong duality (which holds for Frobenius algebras structurally;
+see [Frobenius self-duality LP-dual extraction](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
 the dual optima coincide. In particular,
 
 $$
   y_0^*\bigl(\sigma(\beta)\bigr) = y_0^*(\beta). \qquad\square
 $$
 
-**Corollary (QOU instance — isospin invariance; NOT established).**
+**Corollary (QOU instance: isospin invariance; NOT established).**
 *For $A = H_n(R, q)$ with $\tau$ the Markov trace and $\sigma = S$
 the Hopf antipode, the per-atom canonical braid recipe
 satisfies $S(\mathcal{B}_K(Z, N)) \sim \mathcal{B}_K(N, Z)$ (Markov-
@@ -91,17 +91,16 @@ at $q_0$ these are $0.6127$ and $0.4036$. Moreover $\sigma_i \mapsto
 image satisfies $(\sigma_i^{-1} - q^{-1})(\sigma_i^{-1} + q) = 0$, the
 relation at $q^{-1}$. It is an algebra map only together with
 $q \mapsto q^{-1}$, i.e. the bar involution, and $\tau$ is
-bar-*equivariant*, $\tau(\bar x) = \overline{\tau(x)}$, not invariant.
+bar-*equivariant*, $\tau(\bar x) = \overline{\tau(x)}$, rather than invariant.
 So the hypothesis $\tau \circ \sigma = \tau$ of the proposition is not
 met by the Markov trace with this $\sigma$, and $y_0^*(Z, N) =
 y_0^*(N, Z)$ does not follow. The $R$-linear anti-automorphism
 $T_w \mapsto T_{w^{-1}}$ does preserve $\tau$, but it fixes every
 generator and so does not exchange $Z$ and $N$.
 
-**Empirical confirmation.**
-[`alpha-5-lp-dual-crystal.witness.json`](../../../computations/alpha/alpha-5-lp-dual-crystal.witness.json)
-verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
-precision (= 570.6762 at $q_0$, = 26.8242 in ht=6 stratum, and
+**Numerical confirmation.**
+Direct linear-program evaluation verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
+precision ($= 570.6761$ at $q_0$ in the two-row stratum, and
 exactly equal across the entire $q$-sweep).
 
 **Corollary (pair-knot operator $Z \leftrightarrow N$ symmetry).**
@@ -124,47 +123,46 @@ generators with the Hecke quadratic relation $\sigma_i^2 = (q -
 q^{-1})\sigma_i + 1$ identically structured (the per-strand
 algebraic volumes $\hat V_i$ at intra-positions take the same values
 $0.989$ and $0.971$ at $q_0$ regardless of whether the underlying
-nucleon is a proton or a neutron — proton/neutron distinction enters
+nucleon is a proton or a neutron, since the proton/neutron distinction enters
 only through the inter-nucleon crossings, which are outside the
 intra-shell sub-braid). The two words differ by an index shift
 $\sigma_i \mapsto \sigma_{i+k}$, and the Markov trace is invariant
 under that shift (it is determined by the Markov property, which the
 shift respects). Hence the traces agree. The antipode $S$ plays no
-role, and could not: it sends $\sigma_i$ to $\sigma_i^{-1}$, not to
+role, and could not: it sends $\sigma_i$ to $\sigma_i^{-1}$ rather than to
 another positive generator. $\square$
 
-**Empirical confirmation (Markov-trace level).**
-[`canonical evaluation-phiq-pair-knot-markov-trace.witness.json`](../../../computations/canonical evaluation-phiq-pair-knot-markov-trace.witness.json)
-computes
-$\mathrm{tr}_M(\sigma_{pp})$ and $\mathrm{tr}_M(\sigma_{nn})$ via
+**Numerical confirmation (Markov-trace level).**
+Evaluating $\mathrm{tr}_M(\sigma_{pp})$ and $\mathrm{tr}_M(\sigma_{nn})$ via
 Hoefsmit seminormal at $q_0$ for $T$ ($n=9$ with $N=2$ shell) and
 ${}^3\mathrm{He}$ ($n=9$ with $Z=2$ shell):
 
+<!-- literal-source: closed-form fourth power z_D^4 = (q_0^3/(q_0^2+1))^4 at q_0 -->
 $$
   \mathrm{tr}_M(\sigma_{pp}) \;=\; \mathrm{tr}_M(\sigma_{nn})
-  \;=\; 0.06216177120816107\ldots
+  \;=\; 0.14091512263021504\ldots
 $$
 
-This is an exact representation evaluation. The equality is algebraic — it
+This is an exact representation evaluation. The equality is algebraic (it
 follows from the Hoefsmit seminormal form's $\sigma_{pp} = \sigma_{nn}$
-identity on the $V_{(2,1)}$ block — and so is independent of the working
+identity on the $V_{(2,1)}$ block) and so is independent of the working
 precision.
 
 The earlier $1.326\times$ ratio between $\Delta_{\text{shell}}(Z=2)$
 and $\Delta_{\text{shell}}(N=2)$ in
 the canonical formalism
-was a **product-volume artifact** — the simple convention
+was a **product-volume artifact**: the simple convention
 $|\hat V_{\text{shell}}| = \prod_i |\hat V_i|$ does NOT respect the
 Hecke-algebra structure of the shell sub-braid, while the canonical
 Markov trace does.
 
 **Operator-level signature.** The
 the canonical formalism
-(per [operator-selection-lp proposition](#prop:operator-selection-lp))
+(per [linear-programming operator selection](#prop:operator-selection-lp))
 confirms that $\sigma_{pp}, \sigma_{nn}$ are in the active set
 EXACTLY at magic-shell atoms ($Z=2$ activates $\sigma_{pp}$, $N=2$
-activates $\sigma_{nn}$, doubly magic ${}^{4}$He activates both) — see
+activates $\sigma_{nn}$, doubly magic ${}^{4}$He activates both); see
 [brane-tower-z-habiro §"Pair-knot magic-shell canonical evaluation"](#conj:brane-tower-z-habiro).
 This is the operator-level signature of $Z=2$/$N=2$ closed-shell
-structure in the substrate algebra; the spin-involution corollary
+structure in the aether algebra; the spin-involution corollary
 gives the structural symmetry that pins it down.

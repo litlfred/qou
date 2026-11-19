@@ -12,7 +12,7 @@ $\square$
 figure-eight braid
 $\beta_{4_1} = \sigma_1\,\sigma_2^{-1}\,\sigma_1\,\sigma_2^{-1}$.
 Direct computation of the Hoefsmit characters on the three
-partitions $\lambda \vdash 3$ at the substrate $q_0$ gives:
+partitions $\lambda \vdash 3$ at the aether $q_0$ gives:
 
 | $\lambda$ | $\chi_\lambda(\beta_{4_1})$ | $\chi_\lambda(\beta_{4_1}^*)$ | match? |
 |-----------|---:|---:|---|

@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a Descartes universe with substrate parameter $q$. Consider the beta decay $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1) + T_{2,3} + \nu^{\sigma}$. The emitted electron $T_{2,3}$ crosses each of the $Z = p + 1$ proton strands of the daughter nucleus as it exits the Hopf link. The $q$-deformed wedge product $\wedge_q$ ([crossing asymmetry](#rem:skein-crossing-asymmetry)) assigns weight $q$ to each positive electron-proton crossing. This produces a coherent product that multiplies the decay rate by the **Skein-Coulomb enhancement factor**:
+Let $(\mathbf{C}, A, \tau)$ be a Descartes universe with aether parameter $q$. Consider the beta decay $\mathcal{N}(Z, N) \to \mathcal{N}(p\!+\!1, n\!-\!1) + T_{2,3} + \nu^{\sigma}$. The emitted electron $T_{2,3}$ crosses each of the $Z = p + 1$ proton strands of the daughter nucleus as it exits the Hopf link. The $q$-deformed wedge product $\wedge_q$ ([crossing asymmetry](#rem:skein-crossing-asymmetry)) assigns weight $q$ to each positive electron-proton crossing. This produces a coherent product that multiplies the decay rate by the **Skein-Coulomb enhancement factor**:
 
 $$
   F_q(Z, E)

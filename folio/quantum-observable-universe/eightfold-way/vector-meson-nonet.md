@@ -23,9 +23,7 @@ $s\bar{s}$ probability of the heavy state is convention-independent, and
 
 The vector nonet is **ideally mixed** --- the $\phi$ is $s\bar{s}$ to within
 half a percentage point --- while the pseudoscalar nonet sits about as far
-from ideal as it can.  Values from
-[`nonet-mixing-purity.witness.json`](../../../computations/nonet-mixing-purity.witness.json);
-PDG central values are comparators, and nothing here is fitted.
+from ideal as it can; PDG central values enter solely as comparators, and nothing here is fitted.
 
 This is also why Gell-Mann--Okubo appears to *fail* on the vector nonet.
 Applied to the physical states, the relation deviates by $\approx 6\%$ for the
@@ -33,7 +31,7 @@ pseudoscalar $\eta$ but by $\approx 32\%$ for the physical $\omega$.  The
 discrepancy is not a failure of $\mathrm{SU}(3)_{\mathrm{f}}$: it is that the physical
 $\omega$ is not the octet member at all, because the nonet is ideally mixed.
 
-## Why this target is different
+## Distinction from first-order sum rules
 
 [The GMO relation](#rem:meson-mass-splitting) is an **identity** of the
 first-order octet-breaking ansatz: it holds for every choice of the breaking
@@ -66,7 +64,7 @@ unavailable at $\dim V = 2$: the alternating channel vanishes below $N = 3$, so 
 exist framework-side.  The vector nonet therefore inherits the $N = 3$ problem
 of [the open-problems ledger](#sec:eightfold-open-problems) in full.
 
-What is recorded here is a statement about the **target**, not about prospects.
+What is recorded here is a statement about the **target** rather than about prospects.
 Of the eightfold way's three headline quantitative successes, two are now proved
 content-free as derivation targets and this one is proved content-bearing, which
 makes its derivation the highest-value open item in this chapter.

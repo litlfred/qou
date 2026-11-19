@@ -448,7 +448,7 @@ function main() {
       }
       const sc = JSON.parse(readFileSync(sidecar, "utf8"));
       sc.criteria ??= {};
-      const scriptSha = sha12(readFileSync("content/pipeline/circular-anchor-audit.ts", "utf8"));
+      const scriptSha = sha12(readFileSync("folio/pipeline/circular-anchor-audit.ts", "utf8"));
       for (const f of fds) {
         sc.criteria[f.criterion] ??= [];
         sc.criteria[f.criterion].push({
@@ -456,7 +456,7 @@ function main() {
           result: "fail",
           reviewer: {
             kind: "script",
-            id: "content/pipeline/circular-anchor-audit.ts",
+            id: "folio/pipeline/circular-anchor-audit.ts",
             version: "v1",
             script_hash: scriptSha,
           },

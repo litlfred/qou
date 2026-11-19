@@ -17,4 +17,4 @@
 - *VSEPR predicts: bent, $\approx 104.5^\circ$*
 - *LP dual should show: lone pairs force the two H's into a non-symmetric strand arrangement*
 
-*The braid framework derives geometric preferences from the Hecke algebra structure rather than postulating repulsion rules. Bond angles emerge as properties of the optimal strand ordering, not input parameters.*
+*The braid framework derives geometric preferences from the Hecke algebra structure rather than postulating repulsion rules. Bond angles emerge as properties of the optimal strand ordering rather than input parameters.*

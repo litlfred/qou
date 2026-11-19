@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:hq-bi-filtration",
   title:
-    "Knot-indexed bi-filtration $\\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra",
+    "Knot-indexed bi-filtration $\\mathcal{H}_q^{(n, K)}$ on the aether convolution algebra",
   lean: {
     ref: "qou:QOU.AlgebraicSubstrate.HqBiFiltration.BiFiltration",
     validation: "not_checked",

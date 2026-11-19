@@ -1,6 +1,6 @@
 **Remark (K-theory $\leftrightarrow$ depth filtration — known at depths 1–2, conjectural at depths $\geq 3$).**
 
-The graded-Mikusiński depth filtration ([depth–period correspondence](#conj:gb-depth-period-correspondence)) on the substrate convolution algebra $\mathcal{H}_q$ admits a K-theoretic description. The depth axis matches the Beilinson–Borel regulator on the algebraic K-theory of the algebraic-number field of definition. This correspondence is a theorem at depths 1 and 2, and Beilinson's conjecture at depths $\geq 3$. This remark records that dictionary in standard period-theoretic language.
+The graded-Mikusiński depth filtration ([depth–period correspondence](#conj:gb-depth-period-correspondence)) on the aether convolution algebra $\mathcal{H}_q$ admits a K-theoretic description. The depth axis matches the Beilinson–Borel regulator on the algebraic K-theory of the algebraic-number field of definition. This correspondence is a theorem at depths 1 and 2, and Beilinson's conjecture at depths $\geq 3$. This remark records that dictionary in standard period-theoretic language.
 
 | Depth $n$ | Status | Reason |
 |---|---|---|
@@ -9,7 +9,7 @@ The graded-Mikusiński depth filtration ([depth–period correspondence](#conj:g
 | 3 | **mostly conjectural** | $K_5^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ has known Borel-rank; whether Goncharov regulator generates $\mathcal{P}_3 / \mathcal{P}_2$ is Beilinson's conjecture |
 | $\geq 4$ | **fully conjectural** | Beilinson's conjectures on motivic cohomology |
 
-This Rosetta stone is an analogy that becomes a theorem at low depth and a conjecture at high depth, not a fully-established equivalence at all depths.
+This Rosetta stone is an analogy that becomes a theorem at low depth and a conjecture at high depth rather than a fully-established equivalence at all depths.
 
 | Depth $n$ | Iterated integral grouplike | Algebraic K-theory | Beilinson regulator |
 |---|---|---|---|

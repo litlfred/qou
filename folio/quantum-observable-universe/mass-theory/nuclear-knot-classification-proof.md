@@ -29,9 +29,9 @@ determines the energy scale at which the nuclear braid binds.
 Neither identification is proved, which is why the statement is a
 conjecture.
 
-**Comparison boundary.** At the substrate parameter, the figure-eight
+**Comparison boundary.** At the aether parameter, the figure-eight
 volume $\mathrm{Vol}(4_1) \approx 2.030$ is the volume through which
 $q_0$ is pinned, via $\hbar_q^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$ with
 the measured lepton mass ratio. The remark that $A = 3$ nuclei then bind
-at the substrate scale is a statement about that evaluation, not part of
+at the aether scale is a statement about that evaluation rather than part of
 the argument above.

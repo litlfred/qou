@@ -1,4 +1,4 @@
-Classical statistical mechanics defines temperature implicitly through the Boltzmann distribution $\rho \propto e^{-\beta H}$, where $\beta = 1/(k_B T)$ enforces energy conservation. In the QOU, $\beta_q$ holds direct operational meaning: it counts the discrete Reeb operations composing one macroscopic time unit. Temperature is the tick rate of the quantum substrate, not a statistical average over kinetic energies.
+Classical statistical mechanics defines temperature implicitly through the Boltzmann distribution $\rho \propto e^{-\beta H}$, where $\beta = 1/(k_B T)$ enforces energy conservation. In the QOU, $\beta_q$ holds direct operational meaning: it counts the discrete Reeb operations composing one macroscopic time unit. Temperature is the tick rate of the quantum aether rather than a statistical average over kinetic energies.
 
 **Surface character of temperature.**
 The entropy $S_q(U)$ integrates strictly over the surface $\partial U$, guided by two principles.

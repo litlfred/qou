@@ -27,7 +27,7 @@ namespace QOU.WedderburnMass
     a Hecke algebra, with GB-depth grading and Frobenius-orthogonality
     of strata at depths j ≠ k★(T_w) under the T_w-pairing. -/
 -- Ref: [leitner2026] prop:curvature-rank-gb-stratification
-structure DepthGradedFrobeniusModule (R : Type*) [CommRing R] where
+class DepthGradedFrobeniusModule (R : Type*) [CommRing R] where
   /-- The depth-k Frobenius-dual coefficient (a function of the
       exceptional divisor index i). -/
   phi_at_depth : ℕ → ℕ → R   -- (depth k) (divisor index i) → R-value

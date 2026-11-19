@@ -7,7 +7,7 @@ $$
   \chi_q =  \frac{1}{2q - 1}.
 $$
 
-The substitution $\ln 2 \to 1/(2q-1)$ reflects that the framework operates in $q$-deformed information units, not classical nats. The degree-$2$ map $f_q$ has an effective multiplier of $1/(2q-1)$ in the $q$-connection frame. At $q = 1$, this recovers $\chi_1 = 1$, meaning one nat per operation, which matches the unit-circle dynamics.
+The substitution $\ln 2 \to 1/(2q-1)$ reflects that the framework operates in $q$-deformed information units rather than classical nats. The degree-$2$ map $f_q$ has an effective multiplier of $1/(2q-1)$ in the $q$-connection frame. At $q = 1$, this recovers $\chi_1 = 1$, meaning one nat per operation, which matches the unit-circle dynamics.
 
 The $q$-deformed Hausdorff dimension of the Julia set is:
 

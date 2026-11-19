@@ -35,4 +35,10 @@ export default proposition({
     "nuclear",
     "shell-model",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/sigma_shell_from_beta_chain.py",
+    witness: "computations/sigma-shell-from-beta-chain.witness.json",
+    status: "verified",
+  },
 });

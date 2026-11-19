@@ -46,5 +46,5 @@ incorporates the target representation $V_{j_{i'}} \otimes V_{j_{j'}}$ as a viab
 The [trefoil chirality flip](#rem:trefoil-vortex-chirality-flip) defines three avenues for chirality reversal. Translated to divisor terms:
 
 1. **Passage through exceptional divisor**: The vortex collapses briefly to $E_0$ and re-inflates bearing reversed orientation. This is effectively pair annihilation paired directly with opposite-chirality pair creation.
-2. **Complex substrate rotation**: The divisor sweeps through a homotopically non-trivial path mapped inside the complexified state bundle. No surgery occurs, but the ambient manifold must accommodate complexification.
-3. **Reidemeister reconnection**: A structural series of strand exchanges (Reidemeister moves) explicitly alters the core knot type. This denotes a shell transition, not a modification of particle identity.
+2. **Complex aether rotation**: The divisor sweeps through a homotopically non-trivial path mapped inside the complexified state bundle. No surgery occurs, but the ambient manifold must accommodate complexification.
+3. **Reidemeister reconnection**: A structural series of strand exchanges (Reidemeister moves) explicitly alters the core knot type. This denotes a shell transition rather than a modification of particle identity.

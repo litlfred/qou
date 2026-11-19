@@ -126,8 +126,8 @@ Then:*
 noncomputable def toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
     (∀ k : ℕ × ℕ, ctx.V_hat_1 k = ctx.z_real * ctx.c k + ctx.d k) ∧
     (∀ k : ℕ × ℕ, ctx.q_real = 1 → ctx.P_flip k = 0) ∧
-    ctx.P_7_7 = (ctx.q_real + Real.sqrt ctx.q_real - 1) / (ctx.q_real + 1) :=
-  ⟨ctx.claim_ii_generator_crossing_traced,
-   ctx.claim_v_classical_limit, ctx.claim_vi_diagonal_formula⟩
+    ctx.P_7_7 = (ctx.q_real + Real.sqrt ctx.q_real - 1) / (ctx.q_real + 1) := by
+  refine ⟨ctx.claim_ii_generator_crossing_traced,
+    ctx.claim_v_classical_limit, ctx.claim_vi_diagonal_formula⟩
 
 end QOU.Information

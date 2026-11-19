@@ -90,4 +90,10 @@ export default remark({
     "demazure-subcrystal",
     "open-question",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/alpha/alpha_5_lp_dual_crystal.py",
+    witness: "computations/alpha/alpha-5-lp-dual-crystal.witness.json",
+    status: "verified",
+  },
 });

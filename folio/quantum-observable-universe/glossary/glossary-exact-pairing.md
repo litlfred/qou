@@ -1,5 +1,1 @@
-**:refterm[Exact pairing]{#exact-pairing}.** Given objects $X$ and $Y$ in a monoidal category, an exact pairing consists of morphisms $\varepsilon \colon X \otimes Y \to \mathbf{1}$ (evaluation) and $\eta \colon \mathbf{1} \to Y \otimes X$ (coevaluation) satisfying the snake identities:
-
-$(\varepsilon \otimes \mathrm{id}_X) \circ (\mathrm{id}_X \otimes \eta) = \mathrm{id}_X, \qquad (\mathrm{id}_Y \otimes \varepsilon) \circ (\eta \otimes \mathrm{id}_Y) = \mathrm{id}_Y.$
-
-When an exact pairing exists, $Y$ is a right dual of $X$, and $X$ a left dual of $Y$.
+**:refterm[Exact pairing]{#exact-pairing}.** For objects $X$ and $Y$ in a [monoidal category](#rem:glossary-monoidal-category), a pair of morphisms $\mathrm{ev} \colon X \otimes Y \to \mathbf{1}$ (evaluation) and $\mathrm{coev} \colon \mathbf{1} \to Y \otimes X$ (coevaluation) satisfying the two [snake identities](#def:snake-identity): $(\mathrm{ev} \otimes \mathrm{id}_X) \circ (\mathrm{id}_X \otimes \mathrm{coev}) = \mathrm{id}_X$ and $(\mathrm{id}_Y \otimes \mathrm{ev}) \circ (\mathrm{coev} \otimes \mathrm{id}_Y) = \mathrm{id}_Y$. An exact pairing exhibits $Y$ as a right dual of $X$ and $X$ as a left dual of $Y$.

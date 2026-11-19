@@ -16,4 +16,16 @@ export default remark({
     "prop:e-infinity-page-identifications",
     "prop:q-laplacian-spectral-tower",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Formalized in lean/QOU/QBeta/TemperleyLiebTower.lean (TemperleyLiebTower.traceRadical_two_sided).",
+    },
+  ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/spectral_decomposition_qvalue_d.py",
+    witness: "computations/spectral-decomposition-qvalue-d.witness.json",
+    status: "verified",
+  },
 });

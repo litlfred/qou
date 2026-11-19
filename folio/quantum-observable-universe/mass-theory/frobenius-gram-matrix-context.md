@@ -50,7 +50,7 @@ factor of 3.0 (compared with $0.5514$ and $0.1245$ under Convention C at the muo
 ## Operator identification via the dual
 
 The Frobenius dual
-([def:frobenius-dual-h3](#def:frobenius-dual-h3)) exactly
+([Frobenius dual in $H_3(q)$](#def:frobenius-dual-h3)) exactly
 identifies each basis element with its corresponding knot operator.
 
 **Proposition (operator identification).**

@@ -19,4 +19,10 @@ export default remark({
     "fredkin1982",
     "toffoli1980",
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/toffoli-lp-stability.witness.json",
+    status: "verified",
+  },
 });

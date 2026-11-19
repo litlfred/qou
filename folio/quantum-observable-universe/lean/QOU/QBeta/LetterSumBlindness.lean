@@ -133,8 +133,8 @@ theorem no_letterSum_separates {α β γ : Type*} [AddCommMonoid β]
 This is the invariant behind the owner's objection that the selection rule
 should not be minimum crossing number. -/
 theorem crossingCount_perm_blind {α : Type*} {l l' : List α} (h : l.Perm l') :
-    l.length = l'.length :=
-  h.length_eq
+    l.length = l'.length := by
+  simpa using letterSum_perm_invariant (fun _ : α => (1 : ℕ)) h
 
 /-- Crossing ENERGY is a letter-sum (with `f` the per-crossing weight `+q` or
 `-1/q`), hence permutation-blind by the same invariant. Stated over a generic

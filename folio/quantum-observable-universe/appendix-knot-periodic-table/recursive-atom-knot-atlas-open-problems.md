@@ -1,27 +1,5 @@
-## Open
+Three structural questions govern the refinement of the [recursive atom-knot atlas](#prop:recursive-atom-knot-atlas) from simplicial modified-trace functionals to individual braid-word certificates.
 
-- **Principled derivation for ${}^{6}$Li, ${}^{7}$Li (and any new atom)**: the
- Gröbner–Shirshov filtration grade and the jet-order events are computed
- exactly in symbolic $q$ on the test braids $\sigma_1^3$ (electron) and
- $(\sigma_1 \sigma_2^{-1})^3$ (proton/neutron body). The difficulty is that
- this filtration and jet ordering must remain consistent across all
- confinement levels $\ell$ at once, which forces a **joint SDP on the full
- mass tower** — over all $\ell$ and all atoms simultaneously — yielding a
- canonical $T_w \in H_{n_0}(q_0)$ *per atom* as a structured certificate.
- The Markov closure of $T_w$ is then taken in $S^3$ and
- $\mathrm{Vol}_{\mathrm{hyp}}$ is computed at $\geq 50$ decimal digits
- via `hp_volume_of_link_closure(braid_word, digits=50)`; comparison to
- the AME binding energy happens *a posteriori*. A per-atom volume-match
- search is not an admissible derivation route, since it cannot keep the GB
- filtration and jet ordering consistent across confinement levels. Until
- the joint SDP is run, no principled ${}^{6}$Li / ${}^{7}$Li entry exists.
-- **Structural rule for $\rho$ in $B = \rho \cdot m_e \cdot \mathrm{Vol}(K)$**:
- the pattern $\rho \in \{1, 2\}$ for $\ell \leq 2$ atoms does not extend to
- ${}^{6}$Li, ${}^{7}$Li. Open:
- derive $\rho(Z, N)$ from ILP / confinement structure.
-- **Hyperbolic-knot identification beyond $\ell = 2$**: ${}^{9}$Be, ${}^{11}$B,
- ${}^{14}$N — no entries are in scope until a *principled* (GB-NF) derivation
- exists. Volume-match search will not be used.
-- **Photon $\rho$-factor**: photon mass $= 0$ by definition (no $\rho$
- needed), but for the recursive structure may tie to gauge-boson
- Higgs coupling.
+- **Joint multi-level semidefinite selection across $p$-shell nuclei**: On light non-$\alpha$ nuclei (${}^{6}\mathrm{Li}, {}^{7}\mathrm{Li}, {}^{9}\mathrm{Be}, {}^{11}\mathrm{B}, {}^{14}\mathrm{N}$), preserving Gröbner--Shirshov filtration grades and jet-order events simultaneously across $\ell = 1$ and $\ell = 2$ requires a coupled semidefinite program over the full mass tower ([canonical knot identification SDP](#conj:canonical-knot-id-sdp)). Selecting prime knots per isotope by matching hyperbolic volumes to empirical binding energies violates filtration consistency and is excluded by construction.
+- **Linear Hecke combinations versus pure braid closures**: For $A \geq 2$, inter-nucleon proton--neutron interfaces in $H_{3A}(q_0)$ involve $\mathbb{Z}[q_0, q_0^{-1}]$-linear combinations of $\sigma_i$ and $\mathbf{1}$ rather than single pure group elements of $B_{3A}$. While $\ell = 1$ baryons close to a single hyperbolic link ($\mathcal{B}_3$ with $\mathrm{Vol}(\mathcal{B}_3) = 8G$), multi-nucleon binding energies at $\ell \geq 2$ are invariants of weighted Hecke idempotent decompositions and modified-trace cumulants.
+- **Massless gauge-carrier normalization**: In the $\ell = 0$ sector, the bare photon corresponds to the four-strand identity $\mathbf{1}_{B_4} \in H_4(q_0)$ with vanishing rest mass. Coupling its four polarization-chirality strands to the amphichiral figure-eight scalar sector ($4_1$) governs electroweak vector-boson mass generation without altering neutral atomic binding.

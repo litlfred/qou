@@ -1,8 +1,8 @@
 *At a point $p$, let two independent observations
-([observation](#def:observation)) perturb the substrate parameter by
+([observation](#def:observation)) perturb the aether parameter by
 germ-level increments $\delta q_1, \delta q_2$ in the germ algebra
 $A/\mathfrak{m}_p^2$. Their commutator equals the $q$-curvature $F_q$
-of the $q$-connection ([$q$-flat connection](#def:q-flat-connection))
+of the $q$-connection ($q$-flat connection)
 evaluated on the loop spanned by the two observation directions:*
 
 $$
@@ -33,5 +33,5 @@ The identity $[\delta q_1, \delta q_2] = F_q$ is unconditional
 $q$-curvature $(q-1)\mathcal{F}_q^{\mathrm{intr}}$ of the
 $q$-flat connection is the narrative bridge. Together these promote the
 parallelogram's $\delta q(p)$ to the curvature of the $q$-connection —
-the kinematic half of how the substrate parameter $q$ evolves locally
+the kinematic half of how the aether parameter $q$ evolves locally
 at a point.

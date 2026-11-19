@@ -175,7 +175,7 @@ export default chapter({
           ],
         }),
         section({
-          title: "Bi-filtration and the adelic substrate",
+          title: "Bi-filtration and the adelic aether",
           label: "sec:mass-algebraic-bifiltration-adelic",
           blocks: [
             "lusztig-vs-hermitian-bar",
@@ -326,7 +326,7 @@ export default chapter({
           ],
         }),
         section({
-          title: "Substrate cohomology calibration",
+          title: "Aether cohomology calibration",
           label: "sec:hoefsmit-substrate-cohomology-calibration",
           blocks: [
             "substrate-cohomology-calibration-story",
@@ -761,7 +761,7 @@ export default chapter({
 
     // ═══ ARC III — MANY-BODY NUCLEAR BINDING, GPMT CUMULANTS & PLANCHEREL / WENZL BRIDGE ═══
     section({
-      title: "Substrate Binding Setup and Frobenius Self-Duality",
+      title: "Aether Binding Setup and Frobenius Self-Duality",
       label: "sec:substrate-binding-setup",
       blocks: [
         "nuclear-binding-beta-stability-intro",

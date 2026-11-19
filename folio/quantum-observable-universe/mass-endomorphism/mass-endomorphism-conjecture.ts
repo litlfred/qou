@@ -34,4 +34,10 @@ export default conjecture({
     "kashaev1997",
     "murakami-murakami2001",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/derive_m_baryon_volume_form.py",
+    witness: "computations/m-baryon-volume-form.witness.json",
+    status: "verified",
+  },
 });

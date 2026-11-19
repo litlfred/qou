@@ -23,4 +23,10 @@ export default proposition({
     "reeb",
     "body-order",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c): stated over R; combinatorial content is a finite non-negative sum. Rotation-phase non-closure recorded in computations/probe_full_theta_binding.py.",
+    },
+  ],
 });

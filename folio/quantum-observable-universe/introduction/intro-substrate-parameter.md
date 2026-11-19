@@ -7,8 +7,8 @@ $$
   d_q = q^{-1} d + (1 - q^{-1})\,\pi_V \circ d,
 $$
 
-and the parameter $q$ that labels the family is the **substrate
-parameter** ([definition](#def:substrate-parameter)). At $q = 1$ the
+and the parameter $q$ that labels the family is the **[aether
+parameter](#def:substrate-parameter)**. At $q = 1$ the
 operator $d_q$ is the ordinary derivative and the classical calculus
 returns. Away from $q = 1$ every construction in the paper acquires a
 $q$-dependence, and a single small quantity,

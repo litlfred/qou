@@ -68,4 +68,10 @@ export default conjecture({
   ],
   tags: ["n-v", "electroweak", "derivation", "conditional"],
   lean: { ref: "qou:QOU.Observations.n_v_leading_order" },
+  computation: {
+    engine: "mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/probes/bring-gerbe-obstruction-and-40-prefactor.witness.json",
+    status: "verified",
+  },
 });

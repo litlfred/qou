@@ -1,6 +1,6 @@
 **Proof.** Three steps, each forced.
 
-**Step 1 — $y_{(1^3)} \equiv 0$ (Temperley–Lieb quotient).** The Jones
+**Step 1: $y_{(1^3)} \equiv 0$ (Temperley–Lieb quotient).** The Jones
 polynomial factors through the Temperley–Lieb algebra
 $\mathrm{TL}_n(q)$ (Kauffman bracket), which is the quotient of
 $\mathrm{H}_n(q)$ annihilating every $V_\lambda$ with more than two
@@ -16,7 +16,7 @@ verified by direct expansion: with $[2]_q = q + q^{-1}$,
 $[2]_q^3 = q^3 + 3q + 3q^{-1} + q^{-3}$, so
 $[2]_q^3 - 2[2]_q = q^3 + q + q^{-1} + q^{-3} = [4]_q$.
 
-**Step 2 — Markov normalisation.** $\mathrm{tr}_M(\mathbf{1}_3) = 1$
+**Step 2: Markov normalisation.** $\mathrm{tr}_M(\mathbf{1}_3) = 1$
 (the identity braid closes to the 3-component unlink, whose Jones
 value is exactly the normalising $[2]_q^2$). With
 $d_{(3)}, d_{(2,1)}, d_{(1^3)} = 1, 2, 1$ and Step 1:
@@ -25,7 +25,7 @@ $$
   y_{(3)}(q) + 2\, y_{(2,1)}(q) \;=\; 1.
 $$
 
-**Step 3 — uniqueness from the Borromean closed form.** For
+**Step 3: uniqueness from the Borromean closed form.** For
 $\beta_{\mathrm{Bor}}$ (writhe $0$, image $\mathrm{id} \in S_3$),
 $\chi^{(3)}(\beta_{\mathrm{Bor}}) = 1$ exactly and
 $\chi^{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - 3h^4 - h^6$ with
@@ -56,9 +56,9 @@ Then Step 2 gives $y_{(3)} = 1 - 2/[2]_q^2 = ([2]_q^2 - 2)/[2]_q^2
 Borromean closed form, which is itself a convention-D object. The step is
 therefore a consistency computation internal to convention D, and it is not
 evidence for selecting D over the full-Hecke Ocneanu trace (convention C) in
-any channel — using it that way would be circular. The independent
+any channel; using it that way would be circular. The independent
 characterisation of D is the Temperley–Lieb uniqueness argument
-($y_{(1^3)}(z) = 0$ has the unique non-degenerate root $z = q^3/(q^2+1)$), whose premise — that the
+($y_{(1^3)}(z) = 0$ has the unique non-degenerate root $z = q^3/(q^2+1)$), whose premise (that the
 relevant fibre functor lands in $\mathrm{Rep}(\mathrm{SU}_q(2)) \simeq
-\mathrm{TL}_3$ — is a separate question. See the
+\mathrm{TL}_3$) is a separate question. See the
 [trace-convention registry](../../../docs/coordination/trace-convention-registry.md).

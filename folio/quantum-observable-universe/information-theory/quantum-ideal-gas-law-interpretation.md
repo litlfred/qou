@@ -8,7 +8,7 @@ $$
 The identity $\mathcal{J}_q^{\mathrm{thermo}}(\ln Z_q) = 0$ holds strictly at the equation-of-state surface. The quantum ideal gas law $P_q V_q = N T_q (1 + \cdots)$ is exactly the content of this vanishing. It structurally parallels the classical Euler relation $E = TS - PV + \mu N$.
 
 **Comparison with the classical derivation.**
-See [Table](#tbl:quantum-ideal-gas-law-interpretation-table-data).
+See [the ideal-gas comparison table](#tbl:quantum-ideal-gas-law-interpretation-table-data).
 
 **Classical limit.**
 As $q \to 1$, $T_q = \hbar_q \to 0$. However, $N T_q = N \hbar_q$ remains finite in physical units via $k_B$. The correction vanishes identically as $\hbar_q^2 \to 0$, recovering the classical ideal gas law $PV = Nk_BT$.

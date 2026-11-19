@@ -26,5 +26,4 @@ and higher, which the bar-even ladder absorbs trivially). $\blacksquare$
 
 The bar-even discriminant explains the asymmetry structurally: $\alpha_{\text{EM}}$
 admits a scalar Habiro element because its kernel is bar-even; $\mathfrak{Q}_\beta$ does
-not, so its $c_k \ge 3$ requires the **operator-level grading**, which
-remains open.
+not, so generating an empirical integer-$u$ ladder at $k \ge 3$ (beyond the explicit Convention-D trace cumulants $c_2^{(D)}, c_3^{(D)}, c_4^{(D)}$) requires an **operator-level grading** that is conjectural.

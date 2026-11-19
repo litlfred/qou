@@ -20,4 +20,10 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:integer-stability"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/chebyshev_pairing_engine_witness.py",
+    witness: "computations/chebyshev-pairing-engine.witness.json",
+    status: "verified",
+  },
 });

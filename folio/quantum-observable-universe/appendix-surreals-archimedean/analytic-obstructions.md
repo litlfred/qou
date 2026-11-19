@@ -1,12 +1,12 @@
 A first pass at a surreal lift of QOU would catalogue the
-general-purpose obstructions — Lebesgue measure, Hilbert-space
-completion, hyperbolic geometry — that surreal numbers famously
+general-purpose obstructions (Lebesgue measure, Hilbert-space
+completion, hyperbolic geometry) that surreal numbers famously
 lack \cite{alling1987}. An honest audit of the **actual** QOU
 content, however, finds that most of these obstructions are
 *not triggered* by the main paper. This remark records which
 obstructions genuinely bite and which are only apparent.
 
-## 0. An audit, not an axiomatisation
+## 0. An audit rather than an axiomatisation
 
 The shortcut of axiomatising a single integration operator on $\mathbf{No}$ is mathematically closed. Costin, Ehrlich, and Friedman \cite{costin-ehrlich-friedman2015} prove a two-sided result on integration over the surreals:
 
@@ -38,14 +38,14 @@ See [Table 1](#tbl:analytic-obstructions-table1-data).
 **Net effect.** The Möbius energy proof is the only block whose
 argument genuinely depends on Lebesgue measure, and it is used
 as a motivational cross-check rather than as a load-bearing step
-in the mass formula. The mass formula itself — Hoefsmit $\to$
-Markov trace $\to$ Jones $\to$ substrate value $\to$ categorical mass —
+in the mass formula. The mass formula itself (Hoefsmit $\to$
+Markov trace $\to$ Jones $\to$ aether-parameter evaluation $\to$ categorical mass)
 never integrates.
 
-## 2. Hilbert-space completion: stylistic, not load-bearing
+## 2. Hilbert-space completion: stylistic rather than load-bearing
 
 Only one place in this paper writes down a Hilbert-
-space completion: `knot-eigenbasis-complete-proof.md` (part 3 of
+space completion: [the knot eigenbasis completeness proof](#prf:knot-eigenbasis-complete) (part 3 of
 the proof). The passage reads:
 
 > The direct limit $\varinjlim V^{\otimes n}$ is a pre-Hilbert
@@ -58,8 +58,8 @@ the proof). The passage reads:
 
 Close reading shows that the only step that invokes Hilbert
 structure is the word *dense* in the final sentence. Everything
-else — the direct limit, the finite-dimensional decomposition,
-the knot-closure indexing — is pure algebra. The conclusion can
+else (the direct limit, the finite-dimensional decomposition,
+the knot-closure indexing) is pure algebra. The conclusion can
 be restated in its algebraic form without loss:
 
 > The irreducible summands span the algebraic direct limit
@@ -82,7 +82,7 @@ it.
 
 Three narrow obstructions do bite:
 
-1. **Möbius energy integral** (`mobius-energy-proof.md`).
+1. **Möbius energy integral** ([Möbius energy proof](#prf:mobius-energy)).
    Requires Lebesgue on $S^1 \times S^1$ plus diagonal
    regularisation. A surreal Loeb-measure replacement is
    possible in principle (see
@@ -93,8 +93,8 @@ Three narrow obstructions do bite:
    for cross-checking the Kashaev volume conjecture
    ([Kashaev volume--density](#rem:kashaev-volume-density)).
    Hyperbolic geometry requires conformal structure on
-   $\mathbb{CP}^1$ and metric completion of a universal cover
-   — neither is native to $\mathbf{No}$. A surreal
+   $\mathbb{CP}^1$ and metric completion of a universal cover;
+   neither is native to $\mathbf{No}$. A surreal
    reformulation is proposed in
    [Kashaev surreal reformulation](#conj:kashaev-surreal),
    but it **trades** the hyperbolic-volume problem for an
@@ -106,27 +106,27 @@ Three narrow obstructions do bite:
    limit becomes the standard-part of evaluation at
    $q = 1 + \varepsilon$ (see
    [classical limit as standard-part](#conj:classical-limit-stpart)),
-   which is an *exact substitute*, not a weakening.
+   which is an *exact substitute* rather than a weakening.
 
 ## 4. Things that look like obstructions but are not
 
 For bookkeeping, the following were considered and ruled out as
 obstructions after audit:
 
-- **Haar on $\mathrm{SU}_q(2)$** — not used computationally;
+- **Haar on $\mathrm{SU}_q(2)$**: not used computationally;
   the paper uses the Hopf-algebra counit and Hoefsmit
   seminormal form, both algebraic.
-- **Julia set measure $\mu_J$** — used only for interpretive
+- **Julia set measure $\mu_J$**: used only for interpretive
   language; the Hausdorff dimension is rational in $q$.
-- **Convergence of $q$-dilogarithm products** — only used as
+- **Convergence of $q$-dilogarithm products**: only used as
   formal power series.
-- **Smooth-manifold structure on $M$** — the main paper treats
+- **Smooth-manifold structure on $M$**: the main paper treats
   $M$ via the brane tower (algebraic) and the
   frame bundle $\mathcal{S}$ (algebraically described).
-  Smoothness is a convenience, not load-bearing.
-- **Spectral decomposition of Hecke generators** — Hoefsmit
+  Smoothness is a convenience rather than a load-bearing requirement.
+- **Spectral decomposition of Hecke generators**: Hoefsmit
   gives it algebraically over $\mathbb{Q}(q^{1/2})$.
-- **$\mathrm{PSL}(2, \mathbb{C})$ action on $\mathbb{CP}^1$** —
+- **$\mathrm{PSL}(2, \mathbb{C})$ action on $\mathbb{CP}^1$**:
   used only in knot-complement discussion and Möbius energy
   setup; not load-bearing for the mass formula.
 
@@ -134,4 +134,4 @@ obstructions after audit:
 
 See [Table 2](#tbl:analytic-obstructions-table2-data).
 
-**Conclusion.** The surreal lift preserves nearly all structure. With two narrow exceptions — the Möbius energy integral and the hyperbolic-volume side of the Kashaev comparison — every load-bearing step of the mass formula and categorical axioms transfers to $\mathbf{No}$ without modification. The remaining work constructs new structures (birthday grading, $\varepsilon$-relaxed axioms, standard-part map) in the surreal ambient.
+**Conclusion.** The surreal lift preserves nearly all structure. With two narrow exceptions (the Möbius energy integral and the hyperbolic-volume side of the Kashaev comparison), every load-bearing step of the mass formula and categorical axioms transfers to $\mathbf{No}$ without modification. The remaining work constructs new structures (birthday grading, $\varepsilon$-relaxed axioms, standard-part map) in the surreal ambient.

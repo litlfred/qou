@@ -82,9 +82,9 @@ def spectral_sequence_h3_explicit
     {d1Explicit d2Explicit pagesConcretised : Prop}
     [ctx : SpectralSequenceH3ExplicitContext
              d1Explicit d2Explicit pagesConcretised] :
-    ctx.n_strands = 3 ∧ d1Explicit ∧ d2Explicit ∧ pagesConcretised :=
-  ⟨ctx.claim_strand_count, ctx.claim_i_d1_differential_holds,
-   ctx.claim_ii_d2_differential_holds,
-   ctx.claim_iii_page_identifications_concretised_holds⟩
+    ctx.n_strands = 3 ∧ d1Explicit ∧ d2Explicit ∧ pagesConcretised := by
+  refine ⟨ctx.claim_strand_count, ctx.claim_i_d1_differential_holds,
+    ctx.claim_ii_d2_differential_holds,
+    ctx.claim_iii_page_identifications_concretised_holds⟩
 
 end QOU.BraidKnot

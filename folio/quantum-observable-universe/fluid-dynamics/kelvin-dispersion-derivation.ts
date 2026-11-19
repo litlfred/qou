@@ -6,4 +6,7 @@ export default proposition({
   title: "Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem",
   uses: ["def:q-navier-stokes"],
   tags: ["kelvin-wave", "dispersion", "q-laplacian", "eigenvalue", "derivation"],
+  authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
+  ],
 });

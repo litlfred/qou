@@ -71,10 +71,7 @@ $(X^n+1)/(X+1)$ and divides $X^{2n}-1$; the floor $2A+1 \le b \le 3A$ is
 bookkeeping from $\mu = A+1$ and $A$ knotted components.
 The chain form and its exponents are verified exactly for $A \le 12$, and the
 symbolic predictions -- components, knot types, linking, and that $W'_A$ closes
-to the same link (Jones polynomial and per-component Jones) -- for $A \le 4$,
-by `the_canonical_closure_is_a_chain_of_torus_links_probe.py`; the
-computational instance at $A \le 6$ via Reidemeister simplification and
-Vogel's algorithm is `the_curvature_floor_is_sharp_probe.py`. The two
+to the same link (Jones polynomial and per-component Jones) -- for $A \le 4$, and at $A \le 6$ via Reidemeister simplification and Vogel's algorithm. The two
 topological facts above, Milnor's theorem, and the identification of the
 components from their Jones polynomials enter from the classical knot-theory
 literature.

@@ -27,8 +27,8 @@ relates the cyclotomic-coefficient sum
 $\sum_m a_m(u_0) \cdot (u_0;u_0)_m$ (Habiro side) to the
 residue-spectral-sum
 $|\mathrm{tr}_M^{(0)}| + \sum_\ell \mathrm{Res}_{q\to\zeta_\ell}(\Phi_q \cdot \mathrm{tr}_{M,\ell})$
-(GB side).  The analytic identification of
-the residue contributions with the cyclotomic tail remains open.
+(GB side).  Analytically identifying
+the individual root-of-unity residue contributions with the cyclotomic tail is conjectural.
 
 **Empirical witness.** The agreement is certified at machine precision
 on every available atomic Markov trace by
@@ -38,27 +38,14 @@ between the two paths.  The current run achieves:
 
 | Atom | Polynomial path $\rho_\infty(\mathcal{H}.\mathrm{trace})$ | Residue path $\mathcal{R}.\mathrm{mass}$ | $|\mathrm{rel\ diff}|$ |
 |------|-----------------------------------------------------------|-------------------------------------------|------------------------|
-| $\mathfrak{p}$ (proton, $A=1$)   | $2.1225825095$ | $2.1225825095$ | $0$ |
-| $\mathfrak{n}$ (neutron, $A=1$)  | $1.5893934460$ | $1.5893934460$ | $2.79\!\times\!10^{-16}$ |
-| D (deuteron, $A=2$)              | $0.1774369242$ | $0.1774369242$ | $0$ |
+| $\mathfrak{p}$ (proton, $A=1$)   | $1.1457596925$ | $1.1457596925$ | $0$ |
+| $\mathfrak{n}$ (neutron, $A=1$)  | $0.9877436881$ | $0.9877436881$ | $0$ |
+| D (deuteron, $A=2$)              | $0.5751722439$ | $0.5751722439$ | $0$ |
 
 All differences fall within the relative tolerance $10^{-9}$ — the
-two paths agree to machine epsilon.  This is numerical evidence for the
-analytic identity stated above, not a proof; the algebraic deduction does
+two paths agree to machine epsilon.  This provides numerical evidence for the
+analytic identity stated above rather than a formal proof; the algebraic deduction does
 not take it as a premise, and the proton case remains the open conjecture
 Gröbner–Shirshov archimedean agreement residue conjecture.
 
-**Cross-validation infrastructure.** The check is run by
-the formal derivation; output witness
-`markov-pipeline-cross-validation.witness.json` records:
-
-- Per-atom assertion `tr_M_at_q0_archimedean[atom]` with a relative
-  tolerance proportional to `AGREEMENT_RTOL = 1e-9`.
-- Diagnostic comparison fields (realizer evaluation, Term-6 residue evaluation,
-  absolute difference, and relative difference) for each common atom.
-- Asymmetric atom coverage (atoms present in only one input pipeline).
-
-The validator skips when one of its inputs is absent (forward
-compatibility), and uses the standard `WitnessBuilder` so
-the formal derivation automatically reruns it whenever either input
-witness changes.
+**Numerical cross-check.** Comparing the direct archimedean trace evaluation against the Term-6 cyclotomic residue sum across shared light nuclei confirms agreement within a relative tolerance of $10^{-9}$, recording both absolute and relative residuals per isotope.

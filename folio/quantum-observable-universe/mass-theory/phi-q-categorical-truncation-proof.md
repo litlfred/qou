@@ -34,7 +34,7 @@ and supported on $\mathrm{supp}(T_w) = \{\lambda : \chi_\lambda(\rho(\beta)) \ne
 [Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
 supplies the filtration of $H_n(R, q)$ by the curvature rank $r(T_w)$ of
 **words**. The grading of the centre by *partition* depth used below is a
-further step, not stated there and assumed here.
+further step assumed here beyond what is stated there.
 Granting it, the centre $Z(A)$ admits a GB-depth filtration
 
 $$
@@ -144,11 +144,11 @@ $k_\star(T_w)$ structurally determined by NF support, and the analytic
 $\Phi_q$ infinite product is a faithful Frobenius-pairing
 representation up to the depth-$k_\star$ truncation — is closed
 modulo the depth-stratified version of $\Phi_q$
-([conj:quantum-dilogarithm-stratified](#conj:quantum-dilogarithm-stratified)).
+([stratified quantum dilogarithm conjecture](#conj:quantum-dilogarithm-stratified)).
 The remaining gap is between the categorical equality and its
 real-valued canonical evaluation at $|\hat{V}|\approx 1$.
 
-*Comparison, not part of the proof.* The empirical $k=2$ subtractive cut-off
+*Comparison (separate from the proof).* The empirical $k=2$ subtractive cut-off
 ([brane-tower in $z$-Habiro §"Empirical observation"](#conj:brane-tower-z-habiro))
 for D, T, ${}^3\mathrm{He}$ is not supported by this argument: with GB-depth
 fixed as the $a$-function, $k_\star(T_w)=\binom n2$, and under the max-hook depth
@@ -160,6 +160,6 @@ $k_\star$ here.
 sum equals $\sum_i\Phi_q^{[\le K]}(z_i)$ for every $K$ and is constant for
 $K\ge k_\star$. These cannot both hold, since
 $\Phi_q^{[\le K+1]}(z)\ne\Phi_q^{[\le K]}(z)$ for $z\ne0$
-([cell-depth-truncation proposition](#prop:cell-depth-truncation), item 5). The
+([cell-depth trace truncation](#prop:cell-depth-truncation), item 5). The
 correct centre-projection statement, with its proof, is items 1–3 of that
 proposition; Step 1's spectral-sequence reduction is not needed for it.

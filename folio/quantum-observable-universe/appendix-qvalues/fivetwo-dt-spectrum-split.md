@@ -22,7 +22,7 @@ $$
 so the DT spectrum $\{3,4\}$ is **split across chirality**: the $4$ lives in
 $S^{+}$, the $3$ in $S^{-}$, and the bar-odd part of the pair is $1 \neq 0$.
 
-## Why $4_1$ cannot show this
+## Amphichiral collapse on $4_1$
 
 For the figure-eight the Stokes block is $2 \times 2$, with $q \to 0$ form
 
@@ -50,10 +50,10 @@ for $4_1$ — does not occur.
 > the other is the conflation that produced a retracted claim elsewhere in this
 > lane.
 
-## What the exclusion is worth
+## Structural import of the exclusion
 
 The statement is universally quantified over $g$, so it is a **structural
-exclusion**, not a failed search: it is not that no symmetric scalar has been
+exclusion** rather than a failed search: it is not that no symmetric scalar has been
 found, but that none can exist. Any construction whose output is symmetric
 under exchanging the two Stokes blocks is blind to the datum, however
 elaborate.

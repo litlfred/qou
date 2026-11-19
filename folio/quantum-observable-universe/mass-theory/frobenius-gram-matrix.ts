@@ -17,7 +17,11 @@ export default proposition({
   computation: {
     engine: "sympy",
     script: "computations/probes/frobenius_gram_matrix_probe.py",
-    witness: "computations/probes/frobenius-gram-matrix-probe.witness.json",
+    witness: [
+      "computations/probes/frobenius-gram-matrix-probe.witness.json",
+      "computations/qbeta/qbeta-c3-barodd-knot-operator-gram.witness.json",
+      "computations/probes/the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.witness.json",
+    ],
     status: "failed",
     // "verified" -> "failed" on 2026-08-23. The cited witness's own `allPassed`
     // is false: `gram_matrix_nondegenerate` computes 1 (one degenerate

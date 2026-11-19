@@ -48,7 +48,7 @@ on $g$-Hecke at $z_{\mathrm{GL}} = Q^r(1 - Q)/(1 - Q^r)$ has
 weights $\omega_\lambda(Q) = s_{\lambda, r}(Q)$ given by the
 principal Schur specialisation, where $Q = q^2$.  Combining Steps
 1--3 with this formula yields the Wenzl-bridge closed form
-([prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge)):
+([Wenzl-bridge $y_\lambda$ closed form](#prop:y-lambda-closed-form-wenzl-bridge)):
 
 $$
   y_\lambda \;=\;
@@ -56,11 +56,11 @@ $$
        {\sum_{\mu \,\vdash\, n} d_\mu \cdot s_\mu(1, Q, Q^2, \ldots, Q^{r - 1})}.
 $$
 
-The trace is *forced*, not assumed: every step is dictated by the
-QOU substrate axioms plus the Chlouveraki HDR uniqueness theorem.
+The trace is *forced* rather than assumed: every step is dictated by the
+QOU aether axioms plus the Chlouveraki HDR uniqueness theorem.
 $\square$
 
-## Satisfaction of the hypotheses by the QOU substrate
+## Satisfaction of the hypotheses by the QOU aether
 
 | Hypothesis                                                            | QOU realisation                                                                                                                   |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |

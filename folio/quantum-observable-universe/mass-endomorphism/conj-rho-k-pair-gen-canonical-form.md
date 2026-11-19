@@ -35,7 +35,7 @@ The Kashaev-limit form (six-term $T_3$) provides the anticipated canonical form.
 |---|---|---|
 | Existence of $f_2$ (any form) | Conjectural | Follows from evaluating mass formula at finite truncation |
 | $f_2 = -\text{Li}_2^q(-\|V_i V_j\|) \cdot z^2$ | Conjectural | Matches six-term $T_3$; derivation pending |
-| Naive log-additive form | Refuted | `rho-k-pair-gen-extension.witness.json` |
+| Naive log-additive form | Refuted | Degrades residual accuracy across $Z = 1..20$ |
 | Wedderburn-coupled form | Partial | Correct Wedderburn weights, wrong functional form |
 | Six-term theorem ([unified knot mass formula](../mass-theory/knot-mass-formula-unified.md)) | Theorem | Proved independently |
 
@@ -89,7 +89,3 @@ Deriving the canonical $f_2$ yields four consequences:
 2. The open status of [the graded $\rho_K$ expansion](rho-k-graded-expansion.md) §pair-gen resolves to proved.
 3. Downstream conjectures become reachable, specifically [the canonical lepton mass tower](../mass-theory/lepton-mass-tower-canonical.md).
 4. The $\mathfrak{Q}_\beta$ residual closure direction becomes tractable.
-
-## Archimedean specialization
-
-This conjecture sits on the archimedean side of the substrate wall. It asserts a real-mass sub-percent recovery bound over $\mathbb{R}$. The generic $q$-deformation functional $f_2(q, \hat V_i, \hat V_j)$ serves as input. The conjectural statement intrinsically addresses real masses; it does not constitute a separable archimedean specialization of an otherwise $\mathbb{R}$-free construction.

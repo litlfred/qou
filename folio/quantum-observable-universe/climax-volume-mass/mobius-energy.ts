@@ -7,6 +7,7 @@ export default proposition({
   },
   title: "Categorical recovery of Möbius energy",
   authorNotes: [
+    { kind: "note", body: "Archimedean specialisation over R (§7c)." },
     {
       kind: "note",
       date: "2026-08-23",

@@ -20,4 +20,19 @@ export default proposition({
     "convention-d",
     "trace-convention",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
+  computation: {
+    engine: "mpmath",
+    script: "computations/qbeta/gram_convention_d_singularity_structural_probe.py",
+    witness: [
+      "computations/qbeta/gram-convention-d-singularity-structural.witness.json",
+      "computations/spectral-decomposition-qvalue-d.witness.json",
+    ],
+    status: "verified",
+  },
 });

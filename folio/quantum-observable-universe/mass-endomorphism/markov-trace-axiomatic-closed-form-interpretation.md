@@ -10,13 +10,13 @@ The contrast with the q-Plancherel-measure trace closed form is strict. The q-Pl
 
 ## Evaluation at $q_0$ and the comparison with measurement
 
-Substituting $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ into the closed form and evaluating at the substrate parameter $q_0$ gives
+Substituting $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ into the closed form and evaluating at the aether parameter $q_0$ gives
 
 $$
   \mathrm{tr}_M(\sigma_1^7 \sigma_2^4)(q_0) \;\approx\; 1.884319\,467.
 $$
 
-The closed form is an identity in $\mathbb{Q}(q)$, so the only approximation in this line is the decimal evaluation of $q_0$. The seminormal route, with Hoefsmit representations and the Markov weights $y_\lambda$ solved from the same three axioms, reproduces this value to fourteen digits; that is the precision floor of the comparison, not a bound on the agreement.
+The closed form is an identity in $\mathbb{Q}(q)$, so the only approximation in this line is the decimal evaluation of $q_0$. The seminormal route, with Hoefsmit representations and the Markov weights $y_\lambda$ solved from the same three axioms, reproduces this value to fourteen digits; that is the precision floor of the comparison rather than a bound on the agreement.
 
 **Comparison with measurement.** This is the only point where the block meets data. Dividing the CODATA ratio $m_p/m_e \approx 1836.15$ by the trace gives
 

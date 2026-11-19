@@ -1,7 +1,7 @@
 **Remark.**
 *The number of distinct ILP solutions at a given confinement level dictates the **unwrap depth** required to uniquely specify an atom-knot's normal form.*
 
-*Let $K$ be an atom at substrate parameter $q$ with normal form currently expressed at level $\ell$. Let $N_\ell(K, q)$ be the number of integer solutions $x \in \mathbb{Z}_{\geq 0}^M$ to the Frobenius positivity ILP $\mathrm{G}(q)\, x \geq 0$ within the confinement filtration $J^\ell(q)$.*
+*Let $K$ be an atom at aether parameter $q$ with normal form currently expressed at level $\ell$. Let $N_\ell(K, q)$ be the number of integer solutions $x \in \mathbb{Z}_{\geq 0}^M$ to the Frobenius positivity ILP $\mathrm{G}(q)\, x \geq 0$ within the confinement filtration $J^\ell(q)$.*
 
 *The **unwrap depth** at level $\ell$ is:*
 

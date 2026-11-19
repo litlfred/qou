@@ -1,1 +1,1 @@
-
+Interactive visualiser for the multi-level jet-tower partial sums $S_N(q) = \sum_{k=0}^{N} c_k \hbar_q^k$ and truncation remainders $|S_\infty(q) - S_N(q)|$ across light nuclei (${}^{2}\mathrm{H}$, ${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$, and ${}^{4}\mathrm{He}$) ([SYT / Jucys--Murphy reindexing of the mass tower pair set](#rem:mass-tower-syt-cells)). Controls adjust the aether parameter $q \in [1.01, 1.50]$ (with preset $q_0 = 1.1099786$), truncation order $N \in [1, 16]$, target nucleus, and Jucys--Murphy Plancherel versus geometric weight profiles.

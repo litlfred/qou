@@ -52,4 +52,26 @@ theorem barrier_grows_with_ring_size :
     alexanderWeightDifference 6 < alexanderWeightDifference 8 := by
   decide
 
+/-- **Class-axiomatised molecular chain-to-ring barrier calibration (`conj:chain-ring-comparison`, §3b-cond).**
+    Models a positive integer crossing-energy quantum `quantum_meV : ℕ`
+    assigning barrier `quantum_meV * alexanderWeightDifference N` to even-`N`
+    rings. -/
+class ChainRingBarrierConjecture where
+  quantum_meV : ℕ
+  quantum_pos : 0 < quantum_meV
+  calibratedBarrier : ℕ → ℕ
+  barrier_formula :
+    ∀ N : ℕ, calibratedBarrier N = quantum_meV * alexanderWeightDifference N
+
+/-- **Conditional theorem.** Under `[ChainRingBarrierConjecture]`, the calibrated
+    cyclooctatetraene (`N = 8`) barrier strictly exceeds the benzene (`N = 6`)
+    barrier (`2 * quantum < 3 * quantum`). -/
+theorem calibrated_barrier_six_lt_eight [c : ChainRingBarrierConjecture] :
+    c.calibratedBarrier 6 < c.calibratedBarrier 8 := by
+  rw [c.barrier_formula 6, c.barrier_formula 8]
+  have hpos := c.quantum_pos
+  have hlt : alexanderWeightDifference 6 < alexanderWeightDifference 8 :=
+    barrier_grows_with_ring_size
+  exact Nat.mul_lt_mul_of_pos_left hlt hpos
+
 end QOU.Organic

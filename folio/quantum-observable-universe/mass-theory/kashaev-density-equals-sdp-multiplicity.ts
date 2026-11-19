@@ -39,6 +39,10 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Computational provenance: computations/probes/he4_nu_sdp_binding_arbiter.py.",
+    },
+    {
       kind: "status",
       date: "2026-09-05",
       body:

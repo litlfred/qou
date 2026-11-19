@@ -20,4 +20,10 @@ export default remark({
     "def:markov-axiom-recursive-ascent",
   ],
   cites: ["jones1987", "kassel1995", "wenzl1988"],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/markov/markov_trace_axiomatic_proton.py",
+    witness: "computations/markov/markov-trace-axiomatic-proton.witness.json",
+    status: "verified",
+  },
 });

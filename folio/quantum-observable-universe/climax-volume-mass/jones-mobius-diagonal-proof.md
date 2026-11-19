@@ -25,4 +25,4 @@ $N$-coloured contacts form the coloured-Markov-trace family
 $\mathrm{tr}_M^{(N)}(\rho(\beta_K))$ whose $N \to \infty$ logarithmic
 growth rate is the hyperbolic volume
 ([Kashaev volume–density](#rem:kashaev-volume-density)); the present lemma is the
-$N=2$ rung on which that tower is built, not a claim about the limit.
+$N=2$ rung on which that tower is built rather than a claim about the limit.

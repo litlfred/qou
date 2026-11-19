@@ -14,4 +14,10 @@ export default remark({
   ],
   uses: ["rem:toffoli-q-and"],
   cites: ["thooft2016"],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/probes/toffoli_qand_convention_d_derivation.py",
+    witness: ["computations/probes/toffoli-qand-convention-d-derivation.witness.json"],
+    status: "verified",
+  },
 });

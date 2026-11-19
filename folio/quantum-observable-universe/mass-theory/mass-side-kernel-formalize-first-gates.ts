@@ -54,4 +54,13 @@ export default proposition({
         "so the `ℝ` is forced by the statement rather than chosen.",
     },
   ],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/mass_theory_formalize_first_invariants_probe.py",
+    witness: [
+      "computations/mass-theory-formalize-first-invariants-probe.witness.json",
+      "computations/q-beta-operator-valued-N3.witness.json",
+    ],
+    status: "verified",
+  },
 });

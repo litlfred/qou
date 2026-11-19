@@ -11,7 +11,7 @@ function of involutions by $2\,\mathrm{maj} + \mathrm{content} \circ \mathrm{RSK
 
 Two structural consequences follow, both verified exactly.
 
-1. **The kernel is an insertion recursion, not a finite $q$-difference
+1. **The kernel is an insertion recursion rather than a finite $q$-difference
    operator.** Splitting the involutions by the fate of the largest letter,
    the fixed-point-insertion weight ratio is non-monomial with growing
    polynomial spread, so the statistic is not Markovian under RSK insertion

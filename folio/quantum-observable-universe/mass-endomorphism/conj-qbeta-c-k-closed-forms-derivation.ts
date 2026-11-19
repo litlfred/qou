@@ -13,4 +13,13 @@ export default remark({
       body: "Inadmissibility of $z = 1$ under Convention D is proved in `ConventionDAdmissibleRoots.lean`; the all-order Convention-D generating function, Lagrange–Bürmann radius $R_u \\approx 0.3690$, $N = 3$ Habiro–Kashiwara jet, and quartic cumulant candidates ($+1/6$ vs $+101/288$) are proved in `ConventionDAllOrderCkGeneratingFunction.lean`, `ConventionDC3AndTailSelectionDerivation.lean`, and `ConventionDC4QuarticCumulantDerivation.lean`.",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/qbeta/qbeta_convention_d_all_order_ck_generating_probe.py",
+    witness: [
+      "computations/qbeta/qbeta-convention-d-all-order-ck-generating.witness.json",
+      "computations/qbeta/qbeta-cos-resummation-d.witness.json",
+    ],
+    status: "verified",
+  },
 });

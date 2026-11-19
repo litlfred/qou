@@ -10,15 +10,12 @@
 
 The p-n factors are written $\sigma - h/2$, the $\delta = 0$ convention; the
 canonical colour-tube-weighted form is $\sigma - h(1/2 - \delta/4)$, with
-$\delta$ the substrate flavour split of
-[flavor split substrate proposition](#prop:flavor-split-substrate). **The Dominant NF
+$\delta$ the aether flavour split of
+[flavor aether-split proposition](#prop:flavor-split-substrate). **The Dominant NF
 and Knot type columns are unaffected.** Recomputing the $H_3$ normal form of all
 five operators under both conventions returns the same dominant basis element in
 every case, with dominance margins of $4.7\times$ to $9.6\times$ against a
-relative perturbation of only $\delta/2 \approx 6.9 \times 10^{-4}$ on the p-n
-shift — four orders of magnitude of headroom
-([`knot_operator_transition_convention_robustness_probe.py`](../../../computations/probes/knot_operator_transition_convention_robustness_probe.py),
-8 assertions). The convention is recorded because the operators are written in
+relative perturbation of only $\delta/2 \approx 6.9 \times 10^{-4}$ on the $p$–$n$ shift — four orders of magnitude of headroom. The convention is recorded because the operators are written in
 it, not because the conclusion depends on it.
 
 *The knot hierarchy progresses from unknot (1 nucleon) to single crossing (2) to Hopf link (3) to trefoil (4). The 4th nucleon completes the trefoil topology, explaining why ${}^4\!\mathrm{He}$ has the strongest binding per nucleon among light nuclei.* $\square$

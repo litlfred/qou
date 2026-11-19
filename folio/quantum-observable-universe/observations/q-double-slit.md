@@ -6,7 +6,7 @@ Particles traverse slits in a barrier with knot volume $\mathrm{Vol}(K)$. The ca
 
 **Parameters.**
 
-- $q$ — substrate parameter.
+- $q$ — aether parameter.
 - $D$ — slit separation.
 - $d$ — slit width.
 - $w$ — barrier thickness.

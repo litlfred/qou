@@ -1,11 +1,11 @@
 **Proposition (conditional on Borromean quark conjecture — $\mathfrak{Q}_\beta$ of free neutron $\beta^{-}$-decay).**
-*The $Q$-value of free neutron $\beta^-$-decay $n \to p + e^- + \bar\nu_e$ is derived symbolically from the categorical three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$). The value $\mathfrak{Q}_\beta(n)$ ($H^2$) is the $\beta$-decay datum being predicted, not used as input.*
+*The $Q$-value of free neutron $\beta^-$-decay $n \to p + e^- + \bar\nu_e$ is derived symbolically from the categorical three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$). The value $\mathfrak{Q}_\beta(n)$ ($H^2$) is the $\beta$-decay datum being predicted rather than used as input.*
 
 ## Single-wrap normal-form computation
 
 A single wrap of typed crossings in $H_3(q)$ represents the proton and neutron. Let $h = q - q^{-1}$. A $uu$ crossing is $\sigma$, a $dd$ crossing is $\sigma^{-1} = \sigma - h$, and a mixed $ud$ crossing is the average $\tfrac12(\sigma + \sigma^{-1}) = \sigma - \tfrac h2$.
 
-This typed-crossing assignment is the only input in the construction that tells $u$ from $d$. It is a definition, not a derived result. No weight-preserving operator that commutes with the isospin lowering operator $F_3$ separates $uud$ from $udd$ beyond the pivot factor.
+This typed-crossing assignment is the only input in the construction that tells $u$ from $d$. It enters as a definition rather than a derived result. No weight-preserving operator that commutes with the isospin lowering operator $F_3$ separates $uud$ from $udd$ beyond the pivot factor.
 
 **Proton** $[u, u, d]$: the typed crossing operators give:
 $$
@@ -31,7 +31,7 @@ The $L_+$ and $L_-$ contributions cancel exactly because both nucleons share the
 
 ## $Q$-value from two inputs
 
-The energy scale $E_0 = m_e / \bigl(q_0(q_0 - 1)(1 - \hbar_q^2)\bigr)$, with $\hbar_q = 1 - q_0^{-1}$, converts dimensionless differences to MeV. This tower-summed form is canonical under the full-tower ruling; the derivation of its series is still open. The order-zero form $m_e/(q_0(q_0-1))$ is $0.98\%$ smaller. The functional applied to $\Delta = \mathrm{net}(n) - \mathrm{net}(p) = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ is the Markov trace at $z_D = q^3/(q^2+1)$ (convention D, owner ruling 2026-09-08), which sends $\gamma \mapsto 1$ and $\sigma_i \mapsto z_D$:
+The energy scale $E_0 = m_e / \bigl(q_0(q_0 - 1)(1 - \hbar_q^2)\bigr)$, with $\hbar_q = 1 - q_0^{-1}$, converts dimensionless differences to MeV. This geometric-series tower factor $(1 - \hbar_q^2)^{-1}$ increases the order-zero scale $m_e/(q_0(q_0-1))$ by $0.98\%$, while a first-principles derivation of that geometric-series prefactor is conjectural. Evaluating $\Delta = \mathrm{net}(n) - \mathrm{net}(p) = \tfrac{h^2}{2}\gamma - \tfrac{h}{2}\sigma_0 - \tfrac{h}{2}\sigma_1$ under the convention-D Markov trace at $z_D = q^3/(q^2+1)$, which sends $\gamma \mapsto 1$ and $\sigma_i \mapsto z_D$, gives:
 
 $$
   \mathfrak{Q}_\beta

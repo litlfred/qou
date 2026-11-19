@@ -19,4 +19,10 @@ export default conjecture({
     "rigid-dualizing",
     "frobenius-pairing",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

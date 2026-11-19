@@ -112,15 +112,22 @@ def resolve_lean(block_ts: Path, ts_src: str):
     decl_re = re.compile(r"\b" + re.escape(decl) + r"\b")
     for cut in range(len(parts), 0, -1):
         cand = LEAN_ROOT.joinpath(*parts[:cut]).with_suffix(".lean")
-        if cand.exists() and decl_re.search(cand.read_text(errors="ignore")):
+        if cand.exists() and decl_re.search(strip_comments(cand.read_text(errors="ignore"))):
             return cand
     decl_def_re = re.compile(
-        r"^\s*(?:noncomputable\s+)?(?:theorem|lemma|def|abbrev|structure|class|instance)\s+"
+        r"^[ \t]*(?:@\[[^\]]*\][ \t]*)*(?:(?:noncomputable|protected|private|unsafe|partial)[ \t]+)*"
+        r"(?:theorem|lemma|def|abbrev|structure|class|instance)[ \t]+(?:[\w']+\.)*"
         + re.escape(decl) + r"\b", re.M)
+    parent_re = re.compile(r"\b" + re.escape(parts[-2]) + r"\b") if len(parts) >= 2 else None
+    fallback = None
     for cand in sorted(LEAN_ROOT.rglob("*.lean")):
-        if decl_def_re.search(cand.read_text(errors="ignore")):
-            return cand
-    return None
+        stripped = strip_comments(cand.read_text(errors="ignore"))
+        if decl_def_re.search(stripped):
+            if parent_re is None or parent_re.search(stripped):
+                return cand
+            if fallback is None:
+                fallback = cand
+    return fallback
 
 
 def classify_lean(p: Path) -> str:

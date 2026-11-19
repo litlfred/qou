@@ -1,4 +1,4 @@
-Let $V$ be the fundamental object with braiding $c_{V,V} \colon V \otimes V \to V \otimes V$. The tensor square decomposes intrinsically into symmetric and antisymmetric eigenspaces: $V \otimes V = S^2 V \oplus \Lambda^2 V$. Because $\Lambda^2 V \cong \mathbf{1}$, $c_{V,V}$ acts on it by a scalar $\lambda_-$. It acts on $S^2 V$ by a scalar $\lambda_+$. The substrate parameter is defined as:
+Let $V$ be the fundamental object with braiding $c_{V,V} \colon V \otimes V \to V \otimes V$. The tensor square decomposes intrinsically into symmetric and antisymmetric eigenspaces: $V \otimes V = S^2 V \oplus \Lambda^2 V$. Because $\Lambda^2 V \cong \mathbf{1}$, $c_{V,V}$ acts on it by a scalar $\lambda_-$. It acts on $S^2 V$ by a scalar $\lambda_+$. The aether parameter is defined as:
 
 $$
   q  :=  \lambda_+,

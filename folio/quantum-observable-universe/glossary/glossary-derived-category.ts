@@ -6,10 +6,4 @@ export default remark({
   tags: ["glossary", "homological-algebra", "derived"],
   uses: ["rem:glossary-distinguished-triangle"],
   defines: ["derived-category"],
-  authorNotes: [
-    {
-      kind: "note",
-      body: "Mathlib reference: `DerivedCategory C` (localisation of `HomotopyCategory C (ComplexShape.up ℤ)` at quasi-isomorphisms) in `Mathlib.Algebra.Homology.DerivedCategory.Basic`.",
-    },
-  ],
 });

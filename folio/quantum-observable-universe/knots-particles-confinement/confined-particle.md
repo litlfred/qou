@@ -16,5 +16,3 @@ $$
 
 **Canonical representative.**
 *Among all closed-braid words in $[K]_M$, the one with the shortlex-minimal Gröbner–Shirshov normal form is chosen as the canonical representative $\mathrm{GS}(P)$, on which the witness data $k_{\max}(P, q)$ is evaluated. Two particles are equal if and only if their names are equal, which occurs if and only if $\mathrm{GS}(P_1) = \mathrm{GS}(P_2)$.*
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

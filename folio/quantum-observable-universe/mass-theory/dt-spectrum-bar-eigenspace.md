@@ -1,9 +1,9 @@
 **Proposition.** *Let $(\mathfrak{d}^+, \mathfrak{d}^-) = (4, 3)$ be the ordered
 pair of certified $q\to0$ Stokes constants of the figure-eight's chiral partner
 $5_2$ (the $(96)$/$(97)$ factorization constants of $S^+(0)$, $S^-(0)$; both
-integer, GGM eq 98). Under the chirality involution $\tau$ — the $q\mapsto q^{-1}$
-mirror swap $(\mathfrak{d}^+,\mathfrak{d}^-)\mapsto(\mathfrak{d}^-,\mathfrak{d}^+)$
-— the pair carries a faithful $\mathbb{Z}/2$ grading into a bar-even and a bar-odd
+integer, GGM eq 98). Under the chirality involution $\tau$, namely the $q\mapsto q^{-1}$
+mirror swap $(\mathfrak{d}^+,\mathfrak{d}^-)\mapsto(\mathfrak{d}^-,\mathfrak{d}^+)$,
+the pair carries a faithful $\mathbb{Z}/2$ grading into a bar-even and a bar-odd
 part,*
 
 $$
@@ -19,25 +19,25 @@ spectrum degenerates to a single constant.*
 
 This is the base brick (milestone M0) of the categorical Route C for the
 figure-eight monodromy datum $A_\omega$. The
-[scalar exclusion](#conj:stokes-dt-bps-bridge) — no single-valued Wedderburn
+[scalar exclusion](#conj:stokes-dt-bps-bridge) (where no single-valued Wedderburn
 Euler characteristic, recursion order, block count, or A-polynomial $L$-degree
-equals the $5_2$ DT datum — is a *negative* statement. The bar-eigenspace
-decomposition converts it into a *positive* one: the DT count is not a number but
-a $\mathbb{Z}/2$-graded (bar-even $\oplus$ bar-odd) object, of which a scalar is
+equals the $5_2$ DT datum) is a *negative* statement. The bar-eigenspace
+decomposition converts it into a *positive* one: the DT count is
+a $\mathbb{Z}/2$-graded (bar-even $\oplus$ bar-odd) object rather than a single number, of which a scalar is
 the $\tau$-trivial shadow. "No scalar serves the datum" is exactly "the bar-odd
 part is nonzero", which for the chiral $5_2$ it is ($=1$) and for the amphichiral
 $4_1$ it is not ($=0$).
 
 The grading is the $q\mapsto q^{-1}$ bar-involution that runs through the whole
 even/odd programme; the chirality-refined, set-valued count the exclusion forces is
-therefore the categorification of that involution's eigenspaces, not a generic
+therefore the categorification of that involution's eigenspaces rather than a generic
 cohomological-Hall computation. Milestone M2 supplies a *structural
-characterization* of the putative closed-sector BPS spectrum — **not** a
+characterization* of the putative closed-sector BPS spectrum rather than a
 construction of it: taking the certified eq-(98) constants as Donaldson–Thomas
 invariants (conditional on the DT/BPS bridge Stokes DT BPS bridge conjecture), every
 Borel ray is distinct, so the Davison–Meinhardt plethystic log is trivial and
 $\dim \mathrm{BPS}_d = |\Omega_d|$ with no superpotential and no motivic
-$q$-correction — the spectrum would be *abelian*, which is why $A_\omega$ and the
+$q$-correction; the spectrum would be *abelian*, which is why $A_\omega$ and the
 whole Stokes tower are integers rather than Poincaré polynomials.
 This does **not** build the closed-sector quiver-with-potential $(Q,W)$ (Milestone
 M1, still unwritten), does not compute a cohomology from a category, and does not
@@ -48,6 +48,6 @@ the count stays open; this proposition fixes only the structural target. The onw
 bar-odd decay leak $S$ has no literature support and is not derivable; it is not
 carried here.
 
-## Algebraic properties of the eigenspace decomposition
+## Algebraic properties of the eigenspace decomposition.
 
-Over the core integers (without archimedean structure), the certified matrices $S^+(0)$ and $S^-(0)$ satisfy the two-element DT spectrum split and the involutive bar-swap symmetry: the bar-even pair is fixed, the bar-odd pair is negated, the bar grading reconstructs the pair faithfully, the $5_2$ DT pair is chiral with grading $(7,1)$, and any symmetric scalar functional is blind to chirality.
+Over the core integers (without archimedean structure), the certified matrices $S^+(0)$ and $S^-(0)$ satisfy the two-element DT spectrum split and the involutive bar-swap symmetry. Specifically, the bar-even pair is fixed, the bar-odd pair is negated, and the bar grading reconstructs the pair faithfully. For chiral $5_2$ the DT pair carries grading $(7,1)$, whereas any symmetric scalar functional is blind to chirality.

@@ -22,5 +22,3 @@ $$
 These relations arise from a Rogers pair $(x, y) \in F^\times \times F^\times$ with $x \neq y$, $x \neq 0$, $x \neq 1$, $y \neq 0$, and $y \neq 1$. Enforcing them requires the domain-inequality conditions on $F$, the Rogers shape map $(x, y) \mapsto (e_1, \dots, e_5)$, and the restriction of the generator set $\mathcal{G}(F)$ to valid Rogers five-tuples. The quotient presentation accommodates this restriction directly through the constrained generator set.
 
 Combining this quotient construction with the archimedean functor uniqueness framework isolates the analytic inputs needed for Bloch–Suslin uniqueness: the five-term pentagon identity for $\mathrm{Cl}_2$ on the unit circle, injectivity of the rationalized Bloch–Wigner regulator $D \otimes \mathbb{Q}$, and the Suslin homomorphism $K_3^{\mathrm{ind}}(\mathbb{C}) \to \mathbb{R}$.
-
-**Archimedean specialisation.** Specializing the generic field construction $B(F)$ to $F = \mathbb{R}$ instantiates the pentagon subgroup and Bloch quotient over the real numbers.

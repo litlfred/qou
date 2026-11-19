@@ -4,18 +4,18 @@ The [time reversal barrier](#rem:time-reversal-energy-barrier) dictates infinite
 
 The Frobenius form degenerates: $\int_A(f^\dagger f) \sim q^{-1} \to 0$. The [Heisenberg commutator](#rem:heisenberg-commutator) $[\hat{X}, \hat{P}]_q \to J$ is maximal. Observables become maximally non-commutative. The positive-definiteness axiom vanishes.
 
-Here, $q$ acquires an imaginary part $\theta \neq 0$. The [complex substrate interpretation](#rem:complex-substrate-interpretation) allows continuous fiber chirality rotation. The [exceptional divisor](#def:exceptional-divisor) $\mathcal{S}_p$ supports phase rotation $\mathcal{X}_\varphi$ between trefoils and their mirrors. Chirality flips occur in the fibers.
+Here, $q$ acquires an imaginary part $\theta \neq 0$. The [complex aether interpretation](#rem:complex-substrate-interpretation) allows continuous fiber chirality rotation. The [exceptional divisor](#def:exceptional-divisor) $\mathcal{S}_p$ supports phase rotation $\mathcal{X}_\varphi$ between trefoils and their mirrors. Chirality flips occur in the fibers.
 
 This meets Sakharov's conditions:
 1. Frobenius degeneration enables baryon number violation.
 2. The deformation magnitude $r = \lvert q\rvert$ supplies CP violation. **Not the phase:** the framework's matter-antimatter discriminant is $\delta_{\mathrm{CP}} = (r^2-1)/(r^2+1)$ identically for every $\theta$, so $\theta$ is absent from it — see [CP violation evidence](#sec:cp-violation-evidence). In this regime that strengthens the condition rather than weakening it: as $q \to \infty$ the discriminant tends to $1$, its maximum, whereas the phase-based reading would have needed an imperfect projection to leave a residual $\theta_{\mathrm{res}}$.
 3. The Big Bang provides non-equilibrium.
 
-Condition 2 being satisfied *maximally* does not close baryogenesis; it sharpens what remains. The framework's asymmetry at the substrate anchor already exceeds the observed baryon-to-photon ratio by $\approx 1.7\times10^{8}$, so the open object is a suppression, not a further source of asymmetry (again [CP violation evidence](#sec:cp-violation-evidence)).
+Condition 2 being satisfied *maximally* does not close baryogenesis; it sharpens what remains. The framework's asymmetry at the aether anchor already exceeds the observed baryon-to-photon ratio by $\approx 1.7\times10^{8}$, so the open object is a suppression, not a further source of asymmetry (again [CP violation evidence](#sec:cp-violation-evidence)).
 
 **At heat death ($q \to 1$).**
 
-The Hopf algebra becomes cocommutative. The [quantum Planck constant](#def:substrate-parameter) vanishes. The Descartes color tubes collapse to a single $\mathrm{U}(1)$ phase tube ([prop:u1-equivariant-reduction](#prop:u1-equivariant-reduction)). The crossing-energy asymmetry $q - q^{-1} \to 0$ disappears. The electron and muon survive as indistinguishable topological excitations ([rem:symmetry-preserving-leptons](#rem:symmetry-preserving-leptons)) with vanishing masses.
+The Hopf algebra becomes cocommutative. The [quantum Planck constant](#def:substrate-parameter) vanishes. The Descartes color tubes collapse to a single $\mathrm{U}(1)$ phase tube ([$\mathrm{U}(1)$-equivariant divisor reduction](#prop:u1-equivariant-reduction)). The crossing-energy asymmetry $q - q^{-1} \to 0$ disappears. The electron and muon survive as indistinguishable topological excitations ([symmetry-preserving lepton classification](#rem:symmetry-preserving-leptons)) with vanishing masses.
 
 **Categorical picture (conjectural).**
 

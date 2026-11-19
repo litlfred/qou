@@ -24,4 +24,10 @@ export default proposition({
     "linear-chain",
     "multiplicity",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational provenance: theta_mn_bondcount_linearchain.py.",
+    },
+  ],
 });

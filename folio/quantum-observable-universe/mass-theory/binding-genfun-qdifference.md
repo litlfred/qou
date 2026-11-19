@@ -17,7 +17,7 @@ Then:
    position through $q^n$; for polynomial $R$,
    $(q^n - r_0)\,B_n = \sum_{j=1}^{d} r_j\,B_{n-j}$. Every term is fixed by
    $R$ and the first $d$ terms, so whatever growth the $B_n$ show is an
-   output of $R$, not a fitted constant. The coefficients are **not**
+   output of $R$ rather than a fitted constant. The coefficients are **not**
    constant in $n$: for $R = 1 - x$ the solution $B_n = 1/(q;q)_n$ gives
    $1, -1, 1/3, -1/21, 1/315$ at $q = 2$, which satisfies no constant-coefficient
    recurrence of depth $1$ or $2$.
@@ -84,5 +84,5 @@ the binding series.
 > The exclusion is over $K(x)$: after a degree-$2$ **ramified** base change
 > (adjoining $q^{1/2}$, $x^{1/2}$) the slope becomes the integer $1$ and a
 > scalar kernel does exist on the double cover, relating half-shifts — that is,
-> even and odd body orders separately. That ramification is the missing
-> structure, not a gap in the argument.
+> even and odd body orders separately. That ramification supplies the missing
+> structure rather than indicating a gap in the argument.

@@ -85,7 +85,7 @@ The normal form coefficients represent dimensionless Laurent polynomials in $q$.
       \approx  4.155 \text{ MeV}.
    $$
 
-3. **Well-definedness.** The fixed substrate parameter $q_0$ determines all normal form coefficients. CODATA 2022 measures $\mathfrak{Q}_\beta$ to $\pm 0.6$ eV precision. Typed crossings mandate the negative sign $\Delta\mathrm{net} < 0$. The extra down quark in $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ introduces $-h_{\mathrm{A}}$ shifts. These shifts lower the neutron net below the proton net. The ratio remains well-defined.
+3. **Well-definedness.** The fixed aether parameter $q_0$ determines all normal form coefficients. CODATA 2022 measures $\mathfrak{Q}_\beta$ to $\pm 0.6$ eV precision. Typed crossings mandate the negative sign $\Delta\mathrm{net} < 0$. The extra down quark in $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ introduces $-h_{\mathrm{A}}$ shifts. These shifts lower the neutron net below the proton net. The ratio remains well-defined.
 
 The parameter $\mathfrak{E}_0$ dictates the energy budget. Each normal form coefficient difference $\Delta_i$ contributes $\Delta_i \times \mathfrak{E}_0$ MeV to the decay energy. The six terms sum exactly to $\mathfrak{Q}_\beta$.
 

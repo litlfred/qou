@@ -22,4 +22,10 @@ export default conjecture({
       body: "Lean formalisation (`QOU.Archimedean.HyperbolicVolumeIndependence`): the structural half (tower decomposition, Chern-Simons faithfulness, and downstream implications algebraic independence => Borel-Zagier => irrationality) is proved unconditionally; the transcendence core is axiomatised as the class `HyperbolicVolumeIndependence`.",
     },
   ],
+  computation: {
+    engine: "snappea",
+    script: "computations/substrate/knot_volumes.py",
+    witness: "computations/substrate/knot-volumes.witness.json",
+    status: "verified",
+  },
 });

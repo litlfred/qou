@@ -26,7 +26,7 @@ $$
   \quad \text{(?)}
 $$
 
-Wait — the formula applies at $\zeta_n$ with $n = K/\gcd(j, K)$.
+Specifically, the formula applies at $\zeta_n$ with $n = K/\gcd(j, K)$.
 For prime $K$ and $1 \leq j \leq K - 1$, $\gcd(j, K) = 1$, so
 $\zeta_K^j$ is itself a primitive $K$th root. Applying Theorem A
 at $n = K$:
@@ -42,7 +42,7 @@ More precisely: $\mathrm{Im}\,\mathrm{Li}_3(\zeta_K^j) = S_3(2\pi j/K)$
 where $S_3$ is bounded in magnitude by the closed-form expression
 $(K - 1)(K - 2)\pi^3/(3K^3)$ at the principal angle. By the
 multi-angle Tate-rational structure (Step 1 above), **every imaginary
-part is a $\mathbb{Q}$-linear combination of $\pi^3$** — i.e., lies in
+part is a $\mathbb{Q}$-linear combination of $\pi^3$**, lying in
 the 1-dim Tate-line $\pi^3 \mathbb{Q} \subset \mathcal{P}_3$.
 
 Under the Beilinson regulator quotient $\mathcal{P}_3 \to \mathcal{P}_3 / \mathrm{Tate}$,
@@ -61,7 +61,7 @@ parts $\{\mathrm{Cl}_3(2\pi j/K) : 1 \leq j \leq (K - 1)/2\}$ satisfy:
     -\frac{K^2 - 1}{2K^2}\,\zeta(3).
   $$
 
-  This is **one** linear relation modulo $\mathcal{V}_K$ — it pulls a
+  This is **one** linear relation modulo $\mathcal{V}_K$: it pulls a
   1-dim component into the $\zeta(3)$-line, which projects to zero
   in $\mathcal{P}_3 / (\mathcal{P}_2 + \mathbb{Q}\zeta(3))$.
 
@@ -81,7 +81,7 @@ $$
 
 $\square$
 
-### Lower bound — conditional on Beilinson
+### Lower bound (conditional on Beilinson)
 
 **Claim.** $\dim_{\mathbb{Q}} \mathcal{V}_K \geq (K - 3)/2$, conditional
 on Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$.
@@ -103,7 +103,7 @@ gives a Borel-predicted **$(K - 3)/2$**-dim "genuinely-new"
 component.
 
 Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$ asserts that the
-Beilinson regulator image saturates this Borel rank — i.e., the
+Beilinson regulator image saturates this Borel rank, meaning that the
 $(K - 3)/2$ genuinely-new dimensions are *all realised* in
 $\mathcal{V}_K$. Combined with the upper bound:
 
@@ -114,8 +114,7 @@ $$
 
 ### canonical PSLQ certification at $K = 5, 7$
 
-the canonical formalism,
-[witness](https://github.com/litlfred/qou/blob/main/computations/cyclotomic-depth3-dimension-pslq.witness.json):
+High-precision integer-relation summary:
 
 See [Table 1](#tbl:cyclotomic-depth3-dimension-synthesis-table1-data).
 

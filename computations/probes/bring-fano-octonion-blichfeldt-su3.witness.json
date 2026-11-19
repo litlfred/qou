@@ -1,0 +1,404 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-19T14:54:57.395954+00:00",
+  "commitSha": "0f9f602b27d033c003e75ccbb2dfacb72a0f5f9c",
+  "assertions": [
+    {
+      "name": "part1_gl3_f2_order_168_fano_and_conjugacy_partition_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "|GL(3, F_2)| = 168, Fano PG(2,2) axioms (7 pts, 7 lines), conjugacy classes 1 + 21 + 56 + 42 + 24 + 24 = 168 (orders 1, 2, 3, 4, 7, 7), and 168 !| 120"
+    },
+    {
+      "name": "part1_s4_common_maximal_subgroup_bridge_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Stab(e_7) ~= Stab(line) ~= S_4 (order 24, index 7 in GL(3, F_2), maximal) and S_4 < S_5 (index 5)"
+    },
+    {
+      "name": "part2_blichfeldt_group_order_exactly_168",
+      "computed": "168",
+      "expected": "168",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Generated finite matrix group <T, R, -S> inside SU(3)_c has exact order 168"
+    },
+    {
+      "name": "part2_blichfeldt_su3_unitarity_and_special_determinant_88dps",
+      "computed": "2.6338873134323074047697409486593721346716456102365775197797715928791293725678859e-95",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-88",
+      "source": "max_{U in G_168} (||U U^dag - I_3||_F, |det U - 1|, character snap, closure) < 1e-88"
+    },
+    {
+      "name": "part2_blichfeldt_w3_schur_irreducibility_and_zero_invariants_88dps",
+      "computed": "7.4906821675075173234493590621738825118640373420706933061394487261766132426783994e-96",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-88",
+      "source": "|(1/168) sum |tr(U)|^2 - 1| < 1e-88, |(1/168) sum tr(U)| < 1e-88, and Sym^2(W_3) 6D Schur norm = 1"
+    },
+    {
+      "name": "part3_octonion_fano_associator_and_g2_14_to_su3_8_verified",
+      "computed": "5.9925457340060138587594872497391060094912298736565546449115589809412905941427196e-95",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-88",
+      "source": "Degen 8-square, alternativity, and Moufang identities (< 1e-88); 28 anti-Fano 3-subsets (168/512 ordered triples); exact rational dim Der(O) = 21 - 7 = 14 (g_2) and Stab(e_7) = 8 (su(3)_c)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16934,
+  "computation": "bring-fano-octonion-blichfeldt-su3",
+  "scriptFile": "bring_fano_octonion_blichfeldt_su3_probe.py",
+  "scriptHash": "016e4e86c0bb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 95,
+    "output_dps": 80,
+    "guard_digits": 10,
+    "truncation_bound": "1e-80"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_fano_octonion_blichfeldt_su3_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_fano_octonion_blichfeldt_su3_probe.py"
+  },
+  "description": "80-dps Bring Genus-3 Fano Plane, S_4 Maximal-Subgroup Bridge, Octonion Algebra O, and 168-Element Blichfeldt Subgroup of SU(3)_c Probe (Wave 6B, bean qou-ys29)",
+  "data": {
+    "part1_gl3_f2_fano_and_s4_bridge": {
+      "gl3_f2_order": 168,
+      "fano_plane_pg22": {
+        "num_points": 7,
+        "num_lines": 7,
+        "lines_1_indexed_xor_triples": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            1,
+            6,
+            7
+          ],
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            3,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            6
+          ]
+        ],
+        "lines_per_point_all_three": true,
+        "unique_line_per_point_pair": true,
+        "unique_point_per_line_pair": true,
+        "collineation_group_order": 168
+      },
+      "conjugacy_classes": [
+        {
+          "order": 1,
+          "size": 1,
+          "charpoly_f2_coeffs_x3_x2_x1_x0": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "order": 2,
+          "size": 21,
+          "charpoly_f2_coeffs_x3_x2_x1_x0": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "order": 3,
+          "size": 56,
+          "charpoly_f2_coeffs_x3_x2_x1_x0": [
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "order": 4,
+          "size": 42,
+          "charpoly_f2_coeffs_x3_x2_x1_x0": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "order": 7,
+          "size": 24,
+          "charpoly_f2_coeffs_x3_x2_x1_x0": [
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "order": 7,
+          "size": 24,
+          "charpoly_f2_coeffs_x3_x2_x1_x0": [
+            1,
+            1,
+            0,
+            1
+          ]
+        }
+      ],
+      "conjugacy_class_sizes": [
+        1,
+        21,
+        56,
+        42,
+        24,
+        24
+      ],
+      "conjugacy_class_orders": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        7
+      ],
+      "psl27_irrep_dimensions": [
+        1,
+        3,
+        3,
+        6,
+        7,
+        8
+      ],
+      "sum_irrep_dimensions_squared": 168,
+      "s4_common_maximal_subgroup_bridge": {
+        "bring_aut_s5_order": 120,
+        "fano_aut_psl27_order": 168,
+        "168_divides_120": false,
+        "7_divides_120": false,
+        "gcd_120_168": 24,
+        "index_s4_in_s5_bring_sheets": 5,
+        "index_s4_in_psl27_fano_points": 7,
+        "fixed_point_e7_f2_coords": [
+          1,
+          1,
+          1
+        ],
+        "point_stabilizer_order": 24,
+        "point_stabilizer_element_order_histogram": {
+          "1": 1,
+          "2": 9,
+          "3": 8,
+          "4": 6
+        },
+        "point_stabilizer_faithful_s4_on_4_nonlocal_lines": true,
+        "point_stabilizer_is_maximal_in_gl3f2": true,
+        "local_lines_through_e7": [
+          [
+            1,
+            6,
+            7
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            3,
+            4,
+            7
+          ]
+        ],
+        "nonlocal_lines_disjoint_from_e7": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            3,
+            5,
+            6
+          ]
+        ],
+        "line_stabilizer_order": 24,
+        "line_stabilizer_element_order_histogram": {
+          "1": 1,
+          "2": 9,
+          "3": 8,
+          "4": 6
+        },
+        "line_stabilizer_faithful_s4_on_4_complement_points": true
+      }
+    },
+    "part2_blichfeldt_168_subgroup_in_su3": {
+      "group_order": 168,
+      "gauss_period_alpha_re_80dps": "-0.50000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "gauss_period_alpha_im_80dps": "1.3228756555322952952508078768196302128551295915412250901841672296005344116151418",
+      "gauss_quadratic_sum_alpha_minus_alphabar_im_80dps": "2.6457513110645905905016157536392604257102591830824501803683344592010688232302836",
+      "sqrt7_80dps": "2.6457513110645905905016157536392604257102591830824501803683344592010688232302836",
+      "gauss_quadratic_sum_abs_err": "4.6816763546921983271558494138586765699150233387941833163371554538603832766739996e-96",
+      "generator_relations": {
+        "tr_neg_S_minus_neg1_abs_err": "1.0617044017205980256427099822289043147836931207579713162817778552380137965057897e-96",
+        "det_neg_S_minus_1_abs_err": "4.6889418232746819447562467218959772678136968120197967211995921019167274581521986e-96",
+        "neg_S_squared_minus_I3_frobenius": "6.0280291341692967230379422040308945247491851162591392861558893153989277867474193e-96",
+        "T_mul_neg_S_cubed_minus_I3_frobenius": "1.3903918117934817599674015448577998680592950533196477571007526781275806313532105e-95"
+      },
+      "su3_embedding_certification": {
+        "max_closure_frobenius_err": "2.6338873134323074047697409486593721346716456102365775197797715928791293725678859e-95",
+        "max_unitarity_U_Udag_minus_I3_frobenius": "1.3542761690963334741824635130228161935016415943477778534768601117523848501385800e-95",
+        "max_special_unitary_det_U_minus_1_abs": "2.5869641087434072277729310941110540566153752269864653744705281374171675266807763e-95",
+        "max_character_value_snap_abs_err": "1.2315567666631590975600566192110818719407158881254268596953362102790320279682160e-95",
+        "character_value_multiplicities": {
+          "3_class_1A": 1,
+          "-1_class_2A": 21,
+          "0_class_3A": 56,
+          "1_class_4A": 42,
+          "alpha_(-1+i*sqrt7)/2_class_7A": 24,
+          "alpha_bar_(-1-i*sqrt7)/2_class_7B": 24
+        },
+        "schur_orthogonality_norm_W3_80dps": "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "schur_orthogonality_W3_minus_1_abs_err": "3.7453410837537586617246795310869412559320186710353466530697243630883066213391997e-96",
+        "trivial_invariant_multiplicity_abs": "9.0991699744779682935496050175735803431339449390155709812190854404186227866363651e-98",
+        "schur_orthogonality_Sym2_W3_6D_irrep_minus_1_abs_err": "7.4906821675075173234493590621738825118640373420706933061394487261766132426783994e-96"
+      }
+    },
+    "part3_fano_octonion_and_g2_to_su3_derivations": {
+      "cayley_dickson_xor_grading_verified": true,
+      "degen_8_square_bilinear_identity_all_4096_quadruples": true,
+      "associator_census": {
+        "total_imaginary_3_subsets": 35,
+        "associating_fano_lines_count": 7,
+        "non_associating_anti_fano_3_subsets_count": 28,
+        "associating_fano_lines": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            4,
+            5
+          ],
+          [
+            1,
+            6,
+            7
+          ],
+          [
+            2,
+            4,
+            6
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            3,
+            4,
+            7
+          ],
+          [
+            3,
+            5,
+            6
+          ]
+        ],
+        "ordered_non_associating_triples_out_of_512": 168
+      },
+      "transcendental_80dps_identities": {
+        "degen_8_square_norm_abs_err": "5.9925457340060138587594872497391060094912298736565546449115589809412905941427196e-95",
+        "left_alternativity_max_abs_err": "2.9962728670030069293797436248695530047456149368282773224557794904706452970713598e-95",
+        "right_alternativity_max_abs_err": "1.4981364335015034646898718124347765023728074684141386612278897452353226485356799e-95",
+        "flexibility_max_abs_err": "1.4981364335015034646898718124347765023728074684141386612278897452353226485356799e-95",
+        "left_moufang_max_abs_err": "3.1835399211906948624659776014239000675422158703800446551092657086250606281383198e-95",
+        "right_moufang_max_abs_err": "3.6517075566599146951815625428097677245337182042594629867429812540110989558057197e-95",
+        "middle_moufang_max_abs_err": "5.9925457340060138587594872497391060094912298736565546449115589809412905941427196e-95",
+        "max_identity_abs_err": "5.9925457340060138587594872497391060094912298736565546449115589809412905941427196e-95"
+      },
+      "g2_and_su3_derivation_linear_algebra": {
+        "ambient_gl8_dim": 64,
+        "gl8_derivation_system_rank": 50,
+        "gl8_derivation_nullity_dim_g2": 14,
+        "ambient_so7_skew_dim": 21,
+        "so7_derivation_constraint_rank": 7,
+        "so7_derivation_nullity_dim_g2": 14,
+        "g2_killing_form_rank": 14,
+        "g2_killing_form_strictly_negative_definite": true,
+        "stabilizer_De7_eq_0_so7_rank": 13,
+        "stabilizer_De7_eq_0_nullity_dim_su3": 8,
+        "coset_dimension_dim_g2_minus_dim_su3_eq_dim_S6": 6,
+        "complex_structure_J_eq_Le7_squares_to_neg_I6": true,
+        "stabilizer_commutes_with_J": true,
+        "stabilizer_maps_to_traceless_skew_hermitian_3x3_on_C3": true,
+        "su3_killing_form_rank": 8,
+        "su3_killing_form_strictly_negative_definite": true
+      }
+    }
+  },
+  "caveats": [
+    "Candid scope of bean qou-ys29 (zero fitting): (1) Because |PSL(2, 7)| = 168 does not divide |Aut(Sigma_Bring)| = |S_5| = 120 (7 !| 120, gcd(120, 168) = 24), PSL(2, 7) is NOT a subgroup of Bring's automorphism group S_5. What is proved algebraically and representation-theoretically here is the exact S_4 maximal-subgroup bridge (Stab_{S_5}(pt) ~= S_4 of index 5 and Stab_{GL(3,F_2)}(pt) ~= Stab_{GL(3,F_2)}(line) ~= S_4 of index 7), the faithful irreducible embedding of all 168 elements of PSL(2, 7) as Blichfeldt's finite subgroup G_168 inside SU(3)_c, and the exact Lie-derivation cutdown dim Der(O) = 14 (g_2) -> dim Stab_{Der(O)}(e_7) = 8 (su(3)_c). (2) What remains open in moduli / surface geometry is proving that pinching an S_4-invariant cycle on Bring's genus-4 curve and normalizing produces a genus-3 curve whose automorphism group enhances from S_4 to the Hurwitz maximum PSL(2, 7) (the Klein quartic), and constructing the smooth manifold coset G_2 / SU(3)_c ~= S^6 beyond Lie-algebra tangent spaces."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure group-theoretic, cyclotomic Q(zeta_7) unitary representation, and exact rational octonion Lie-derivation verification (GL(3, F_2), Blichfeldt G_168 < SU(3)_c, Der(O) = g_2 -> su(3)_c); no calibration parameter q_0 or CODATA input enters."
+}

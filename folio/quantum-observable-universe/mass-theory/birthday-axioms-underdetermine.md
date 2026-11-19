@@ -22,11 +22,11 @@ The average bound is documented in the corpus as "exactly Conway's $\{L \mid R\}
 
 That is the sharpest form of the defect. The axiom carrying the most design commentary is the one the unintended model satisfies by default, and no amount of reading the commentary would reveal that — only exhibiting the model does.
 
-## What follows, and what does not
+## Deductive consequences and consistency boundaries
 
-**What follows.** Any theorem proved *from these axioms alone* is also true of the model in which every nonzero element is born on day $1$. Such a theorem therefore says nothing specific about birthdays, whatever its statement appears to be about. This is a statement about the axioms, not about Conway's theory, which is untouched.
+**Immediate consequences.** Any theorem proved *from these axioms alone* is also true of the model in which every nonzero element is born on day $1$. Such a theorem therefore says nothing specific about birthdays, whatever its statement appears to be about. This is a statement about the axioms, not about Conway's theory, which is untouched.
 
-**What does not follow.** The axioms are not *inconsistent*, and nothing here says the surreal material built on them is wrong. It says that material is weaker than its vocabulary suggests, and that the gap is invisible from inside.
+**Non-entailed conclusions.** The axioms are not *inconsistent*, and nothing here says the surreal material built on them is wrong. It says that material is weaker than its vocabulary suggests, and that the gap is invisible from inside.
 
 The practical consequence is recorded in the formalisation: the resulting `SurrealField` structure on $\mathbb{R}^*$ is a plain definition and deliberately **never** a global instance. Registering it globally would silently apply every `SurrealField`-generic theorem to the hyperreals under a birthday that is not Conway's — turning a documented defect into a silent one.
 

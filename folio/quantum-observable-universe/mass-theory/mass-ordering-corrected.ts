@@ -24,7 +24,10 @@ export default remark({
   computation: {
     engine: "python",
     script: "computations/codata_masses.py",
-    witness: "computations/codata-masses.witness.json",
+    witness: [
+      "computations/codata-masses.witness.json",
+      "computations/chi-neutron-h3-at-q0-50dps-muon.witness.json",
+    ],
     status: "verified",
   },
 });

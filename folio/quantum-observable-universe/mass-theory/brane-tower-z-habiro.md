@@ -12,7 +12,7 @@ For low isotopes $\{D, T, {}^3\mathrm{He}\}$, the per-generator volumes satisfy 
 
 Two regularizations exist but neither uniformly closes the gap:
 1. **Yekutieli truncation** at GB filtration depth $k_{\max}$ (empirical, not structural).
-2. **$q$-Habiro completion**, regularizing in $q$, not $z$.
+2. **$q$-Habiro completion**, regularizing in $q$ rather than $z$.
 
 ## Statement
 
@@ -27,7 +27,7 @@ $$
   \mathfrak{H} \;\longmapsto\; n_\star(\mathfrak{H}),
 $$
 
-*derivable from QOU substrate data alone, such that the cyclotomic projection evaluated at $q = q_0$ and $z = z_i$ recovers the empirical brane-tower contribution to the binding $B(\mathfrak{H})$ uniformly across atoms.*
+*derivable from QOU aether data alone, such that the cyclotomic projection evaluated at $q = q_0$ and $z = z_i$ recovers the empirical brane-tower contribution to the binding $B(\mathfrak{H})$ uniformly across atoms.*
 
 ## Consequences of the conjecture
 
@@ -55,7 +55,7 @@ The conjecture is falsifiable by computation:
 1. Pick a candidate $n_\star$ rule.
 2. Compute the projection at $q_0$ for each isotope.
 3. Form the binding $B(\mathfrak{H})$.
-4. Compare with the AME values $\{2.224566, 8.481798, 7.71806\}$ MeV.
+4. Compare with the AME 2020 values $\{2.224566, 8.481798, 7.71806\}$ MeV.
 
 A candidate rule closing all three to within $\sim 5\%$ without per-atom retuning constitutes the empirical signature.
 
@@ -75,6 +75,4 @@ At the canonical Markov-trace operator-volume level, the two magic-shell sub-bra
 
 ## Structural conclusion
 
-No probed choice recovers the light-isotope binding uniformly; the ${}^3\mathrm{He}$ gap represents a structural deficit at $A=3$, not an operator-volume choice.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs (real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$). Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+No probed choice recovers the light-isotope binding uniformly; the ${}^3\mathrm{He}$ gap represents a structural deficit at $A=3$ rather than an operator-volume choice.

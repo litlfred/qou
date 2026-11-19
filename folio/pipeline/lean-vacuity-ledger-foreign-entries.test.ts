@@ -28,7 +28,7 @@ import { resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const REPO_ROOT = resolve(import.meta.dir, "..", "..");
-const SCRIPT = resolve(REPO_ROOT, "content/pipeline/lean-vacuity-axiom-audit.ts");
+const SCRIPT = resolve(REPO_ROOT, "folio/pipeline/lean-vacuity-axiom-audit.ts");
 const TMP = resolve(REPO_ROOT, "docs/audits/.ledger-foreign-selftest.json");
 /**
  * Where this run's REPORT goes.  Naming it is not cosmetic — see `qou-9zh3`.

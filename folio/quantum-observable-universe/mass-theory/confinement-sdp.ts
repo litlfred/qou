@@ -18,4 +18,10 @@ export default proposition({
     "sdp-duality",
     "spectral-gap",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

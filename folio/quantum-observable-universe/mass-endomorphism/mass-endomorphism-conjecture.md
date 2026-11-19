@@ -28,7 +28,7 @@ The scope of a failure is therefore exactly this: the tower formula remains corr
 
 ## Statement
 
-**Conjecture (explicit mass endomorphism).** *The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$ ([Hecke mass element](#def:hecke-mass-element)) admits a closed-form NF decomposition in $H_n(R, q)$ expressible in terms of the braid word $\beta$, the substrate parameter $q$, and the quantum dilogarithm $\Phi_q$. Specifically, the transient component satisfies:*
+**Conjecture (explicit mass endomorphism).** *The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$ ([Hecke mass element](#def:hecke-mass-element)) admits a closed-form NF decomposition in $H_n(R, q)$ expressible in terms of the braid word $\beta$, the aether parameter $q$, and the quantum dilogarithm $\Phi_q$. Specifically, the transient component satisfies:*
 
 $$
   \mathrm{tr}_M\!\bigl(\Phi^{\mathrm{trans}}(\beta)\bigr)
@@ -75,7 +75,7 @@ $$
 
 where $J_N$ is the $N$-colored Jones polynomial. This limit involves evaluating at roots of unity ($q = e^{2\pi i/N}$, not generic $q$), the $N$-dimensional representation (not the fundamental), and an asymptotic limit ($N \to \infty$). Each step departs from the Hecke algebra at generic $q$.
 
-The Habiro ring ([Habiro ring](#def:habiro-ring)) partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume ([algebraic quantum volume](#def:algebraic-quantum-volume)) $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element, evaluated directly at the substrate parameter rather than passing through roots of unity.
+The Habiro ring ([Habiro ring](#def:habiro-ring)) partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume ([algebraic quantum volume](#def:algebraic-quantum-volume)) $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element, evaluated directly at the aether parameter rather than passing through roots of unity.
 
 ## Encoding requirements for $\Phi_{\mathrm{mass}}$
 
@@ -98,7 +98,7 @@ $$
   \;\in\;\widehat{\mathbb{Z}[q]}
 $$
 
-*exists as an element of the Habiro completion. It is well-defined purely algebraically, without analytic convergence. This limit object is the motive of the mass: it carries the combinatorial data mapping to $\mathrm{Vol}(K)/\hbar_q^2$ only when the archimedean realization [$\rho_\infty$](#def:archimedean-realization-functor) of the [motivic substrate](#def:motivic-substrate) is applied at $q_0 \in \mathbb{R}$. The non-archimedean realizations $\{\rho_p\}$ recover the colored-Jones data via cyclotomic projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$ without any complex-analytic limit.*
+*exists as an element of the Habiro completion. It is well-defined purely algebraically, without analytic convergence. This limit object is the motive of the mass: it carries the combinatorial data mapping to $\mathrm{Vol}(K)/\hbar_q^2$ only when the archimedean realization [$\rho_\infty$](#def:archimedean-realization-functor) of the [motivic aether](#def:motivic-substrate) is applied at $q_0 \in \mathbb{R}$. The non-archimedean realizations $\{\rho_p\}$ recover the colored-Jones data via cyclotomic projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$ without any complex-analytic limit.*
 
 The conjecture regarding a "closed-form expression in $H_n(R, q)$" asks a question in the finite-rank Hecke algebra. The $N \to \infty$ tower limit asks a question in the Habiro completion $\widehat{\mathbb{Z}[q]}$. Both are algebraic.
 
@@ -115,7 +115,7 @@ The conjecture regarding a "closed-form expression in $H_n(R, q)$" asks a questi
       \;=\; (z q^{-1};\, q^{-1})_n,
   $$
 
-  *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The completion $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z = \varprojlim_n \mathbb{Z}[q^{\pm 1}][z] / (P_n(q, z))$ has cyclotomic projections $\pi_n^{(z)}$ acting as structural truncations at depth $n$, replacing Yekutieli's ad-hoc cutoff with a quotient by a structural ideal. The [conjecture that the brane tower lives in this ring](#conj:brane-tower-z-habiro) has two independent claims: (a) the algebraic Cauchy-limit (the partial sums converge in the $z$-Habiro topology), and (b) the existence of a canonical level-selection rule $n_\star(\mathfrak{H})$ derivable from substrate data.*
+  *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The completion $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z = \varprojlim_n \mathbb{Z}[q^{\pm 1}][z] / (P_n(q, z))$ has cyclotomic projections $\pi_n^{(z)}$ acting as structural truncations at depth $n$, replacing Yekutieli's ad-hoc cutoff with a quotient by a structural ideal. The [conjecture that the brane tower lives in this ring](#conj:brane-tower-z-habiro) has two independent claims: (a) the algebraic Cauchy-limit (the partial sums converge in the $z$-Habiro topology), and (b) the existence of a canonical level-selection rule $n_\star(\mathfrak{H})$ derivable from aether data.*
 
 2. *Magic-shell structural term. Add a separate $\Delta_{\text{shell}}(Z, N)$ contribution to the binding formula distinguishing closed-shell stabilization from the brane-tower transient.*
 

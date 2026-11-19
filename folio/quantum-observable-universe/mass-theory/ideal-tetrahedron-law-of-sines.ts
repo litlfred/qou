@@ -18,4 +18,13 @@ export default theorem({
   },
   uses: ["thm:rivin-concavity-one-tetrahedron"],
   cites: ["thurston1978", "neumann-zagier1985", "milnor1982"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/all_nuclides_sdp_admissibility_mp.py",
+    witness: [
+      "computations/all-nuclides-sdp-admissibility-mp.witness.json",
+      "computations/qbeta-5two-route73-law-of-sines-radial.witness.json",
+    ],
+    status: "verified",
+  },
 });

@@ -8,7 +8,7 @@ export default proposition({
   lean: { ref: "qou:QOU.Experimental.LocalSubstrateQ",
     validation: "not_checked",
   },
-  title: "Local Value of the Substrate Parameter",
+  title: "Local Value of the Aether Parameter",
   uses: [
     "prop:terminal-resolution",
     "rem:photonic-hall",

@@ -21,4 +21,10 @@ export default proposition({
     "procedure",
     "parameterised",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

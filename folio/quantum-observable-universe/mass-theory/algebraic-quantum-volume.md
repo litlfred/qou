@@ -10,6 +10,6 @@ $$
 *where $W_\lambda$ are the quantum dimensions and $t_\lambda(W)$ are the irreducible character traces.*
 
 The channel-decomposition structure of the sum, and the fact that the
-algebraic volume computes within the categorical substrate before any
+algebraic volume computes within the categorical aether before any
 evaluation at $q_0$, are developed in
 [the follow-on remark](#rem:algebraic-quantum-volume-structure).

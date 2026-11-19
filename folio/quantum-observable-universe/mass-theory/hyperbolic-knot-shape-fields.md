@@ -22,7 +22,7 @@ $7_2$ is triangulated by four tetrahedra and has a **quintic** shape field. Noth
 
 ## Stating the identities for an arbitrary root
 
-The verification lives in $\mathbb{Q}[x]/(P)$, so each gluing identity holds at **every** root of $P$, not only the geometric one. That is the form in which the identities are proved: for a root $t$ of the minimal polynomial, with each shape written as an explicit polynomial in $t$,
+The verification lives in $\mathbb{Q}[x]/(P)$, so each gluing identity holds at **every** root of $P$ rather than only the geometric one. That is the form in which the identities are proved: for a root $t$ of the minimal polynomial, with each shape written as an explicit polynomial in $t$,
 
 $$
   \prod_j z_j(t)^{a_j} \cdot \prod_j \bigl(z_j(t) - 1\bigr)^{c_j}

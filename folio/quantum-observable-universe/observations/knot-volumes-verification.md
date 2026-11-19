@@ -1,4 +1,4 @@
-Hyperbolic volumes are independently verified via SnapPy 3.3.
+Hyperbolic complement volumes are independently verified from ideal-triangulation gluing equations to double precision.
 
 **Verified assertions**:
 

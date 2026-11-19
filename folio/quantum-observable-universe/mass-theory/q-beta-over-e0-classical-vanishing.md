@@ -1,4 +1,4 @@
-*Let $\mathfrak{Q}_\beta(q)$ and $E_0^{(N{=}0)}(q)$ be the substrate closed forms from [neutron-qvalue-symbolic proposition](../nuclear-interactions/neutron-qvalue-symbolic.md) and [beta-decay-energy-scale remark](../nuclear-interactions/beta-decay-energy-scale.md):*
+*Let $\mathfrak{Q}_\beta(q)$ and $E_0^{(N{=}0)}(q)$ be the aether closed forms from [symbolic neutron $Q$-value](#prop:neutron-qvalue-symbolic) and [Hecke normal-form energy scale](#rem:beta-decay-energy-scale):*
 
 $$
 \mathfrak{Q}_\beta(q) \;=\; m_e \cdot \frac{(2q + 1 - q^2)(q+1)}{2q^3},
@@ -14,4 +14,4 @@ $$
 
 *satisfies $S(q = 1) = 0$ as an algebraic identity over any commutative ring.*
 
-What this means for the $c_k$ ladder, with the values at $q_0$, is recorded in [the ladder reading](#rem:q-beta-over-e0-classical-vanishing-ladder-reading).
+Consequences for the $c_k$ ladder and numerical evaluations at $q_0$ are recorded in [the ladder reading](#rem:q-beta-over-e0-classical-vanishing-ladder-reading).

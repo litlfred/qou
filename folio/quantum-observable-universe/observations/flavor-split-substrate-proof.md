@@ -21,9 +21,9 @@ $$
   \frac{\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}}{\mu_{\text{avg}}}. \tag{1}
 $$
 
-*Step 2 (Substrate ansatz for the per-quark split).*
+*Step 2 (Aether ansatz for the per-quark split).*
 
-The substrate prescription for $(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}})/\mu_{\text{avg}}$ is:
+The aether prescription for $(\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}})/\mu_{\text{avg}}$ is:
 
 $$
   \frac{\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}}{\mu_{\text{avg}}}
@@ -35,7 +35,7 @@ $$
   \hbar_q = \frac{q - 1}{q}. \tag{2}
 $$
 
-This is the minimal substrate-atom combination satisfying three conditions:
+This is the minimal aether-atom combination satisfying three conditions:
 (a) Bar-involution antisymmetry under $q \mapsto q^{-1}$ (consistent with the antisymmetry of the splitting under flavor exchange $\mathfrak{u} \leftrightarrow \mathfrak{d}$).
 (b) Leading order $(q-1)^3$ at the classical limit.
 (c) Numerical agreement to $-0.67\%$ at $q = q_0$.
@@ -127,12 +127,13 @@ $$
 
 At $q = q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps):
 
+<!-- literal-source: closed-form powers q_0^{-4} = 0.6588 and 1 - q_0^{-4} = 0.3412 at q_0 -->
 $$
   (q_0 - 1)^2 \cdot (1 - q_0^{-4}) / 3
   \;\approx\;
-  (0.10998)^2 \cdot (1 - 0.6585) / 3
+  (0.10998)^2 \cdot (1 - 0.6588) / 3
   \;\approx\;
-  0.01210 \cdot 0.3415 / 3
+  0.01210 \cdot 0.3412 / 3
   \;\approx\;
   1.376 \times 10^{-3},
 $$

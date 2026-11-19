@@ -14,7 +14,7 @@ $A_2$: the Coxeter quotient of $B_3$ is $W(A_2) \cong S_3$, permuting the
 three *strands*.  This is true, but it is true *by construction* --- the
 braid group on $n$ strands has Coxeter type $A_{n-1}$ by definition, so
 choosing $n = 3$ is what puts $A_2$ there.  It is not a structural theorem
-about the substrate, and nothing is derived from it.
+about the aether, and nothing is derived from it.
 
 The $A_2$ that the eightfold way needs is a *different* one: the Lie
 algebra $\mathfrak{sl}_3$ of flavour $\mathrm{SU}(3)_{\mathrm{f}}$, which in quantum
@@ -62,7 +62,7 @@ $\mathbf{3} \otimes
 \mathbf{3} \otimes \mathbf{3} = \mathbf{10} \oplus \mathbf{8} \oplus
 \mathbf{8} \oplus \mathbf{1}$, with the symmetric channel yielding the
 decuplet and the Borromean baryon
-([Definition](#def:borromean-baryon))
+([borromean baryon](#def:borromean-baryon))
 providing the structural realisation.
 [The colour-algebra section](#sec:color-algebra) derives the color
 $\mathrm{SU}(3)_{\mathrm{c}}$ gauge
@@ -89,7 +89,7 @@ not re-derived here, and carrying no QOU content on its own);
 *conditional* (a rigorous consequence of a named hypothesis, principally
 $N = 3$); and *open* (a precisely identified missing object).
 
-**What this chapter does not do.**
+**Scope boundaries of this chapter.**
 It does not derive flavour $\mathrm{SU}(3)_{\mathrm{f}}$.  The eightfold-way
 classification is reproduced *conditionally on $N = 3$*, and $N = 3$ is
 not available: the framework supplies $\dim V = 2$.  Most of the

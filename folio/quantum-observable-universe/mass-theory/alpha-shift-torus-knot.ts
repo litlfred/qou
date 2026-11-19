@@ -59,4 +59,10 @@ export default proposition({
     "delta-q",
     "force-carrier",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: computations/alpha/alpha-shift-torus.witness.json.",
+    },
+  ],
 });

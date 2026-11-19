@@ -2,7 +2,7 @@
 
 This proposition **proves** the
 categorical identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ in the
-$\mathfrak{Q}_\beta$ precision ladder, not just observing it empirically.
+$\mathfrak{Q}_\beta$ precision ladder rather than merely observing it empirically.
 
 ## Structural claim
 

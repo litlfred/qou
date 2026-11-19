@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) equipped with [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$ and [Reeb derivation](#def:categorical-reeb) $\xi$.
 
-**The substrate line bundle** is the trivial $\mathbb{G}_m$-torsor
+**The aether line bundle** is the trivial $\mathbb{G}_m$-torsor
 
 $$
   \mathcal{Q}
@@ -10,12 +10,12 @@ $$
   \mathrm{Spec}R,
 $$
 
-possessing fibre $\mathbb{G}_m(R) = R^\times$ across each $R$-point. A **substrate section** defines a global section $q \colon \mathrm{Spec}R \to \mathcal{Q}$, resolving to an element $q \in R^\times$.
+possessing fibre $\mathbb{G}_m(R) = R^\times$ across each $R$-point. An **aether section** defines a global section $q \colon \mathrm{Spec}R \to \mathcal{Q}$, resolving to an element $q \in R^\times$.
 
-Fibring $(\mathbf{C}, A, \tau)$ over a space $M$ (the archimedean realisation) recasts the substrate line bundle as $\mathcal{Q}_M = M \times \mathbb{G}_m$. A substrate section operates as a strict map $q \colon M \to \mathbb{G}_m(k) = k^\times$.
+Fibring $(\mathbf{C}, A, \tau)$ over a space $M$ (the archimedean realisation) recasts the aether line bundle as $\mathcal{Q}_M = M \times \mathbb{G}_m$. An aether section operates as a strict map $q \colon M \to \mathbb{G}_m(k) = k^\times$.
 
 **The $\mathbb{P}^1$-compactification.**
-Embed $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$ via the standard inclusion $k^\times \hookrightarrow k \cup \{\infty\} = \mathbb{P}^1(k)$. The compactified substrate bundle evaluates to
+Embed $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$ via the standard inclusion $k^\times \hookrightarrow k \cup \{\infty\} = \mathbb{P}^1(k)$. The compactified aether bundle evaluates to
 
 $$
   \bar{\mathcal{Q}}_M
@@ -24,7 +24,7 @@ $$
    \to  M.
 $$
 
-A given substrate section extends uniquely to a $\mathbb{P}^1$-valued section $\bar{q} \colon M \to \mathbb{P}^1$. Three specific sections dominate the physics:
+A given aether section extends uniquely to a $\mathbb{P}^1$-valued section $\bar{q} \colon M \to \mathbb{P}^1$. Three specific sections dominate the physics:
 
 | Section | Value | Differential $d_q$ | Regime |
 |---|---|---|---|
@@ -33,7 +33,7 @@ A given substrate section extends uniquely to a $\mathbb{P}^1$-valued section $\
 | $q = \infty$ | $[\infty] \in \mathbb{P}^1$ | $\pi_V \circ d$ (purely vertical) | Deep quantum |
 
 **The universal family.**
-Operating over $\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$, the **universal substrate differential** is
+Operating over $\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$, the **universal aether differential** is
 
 $$
   \mathbf{d}

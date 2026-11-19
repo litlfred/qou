@@ -1,12 +1,12 @@
 The information-theoretic time acts as a strict counting measure on discrete Reeb operations. The passage to a smooth time coordinate entails a statistical coarse-graining, structurally analogous to the emergence of thermodynamic quantities from microscopic dynamics.
 
 **The analogy.**
-See [Table](#tbl:statistical-mechanical-time-table-data).
+See [the coarse-graining dictionary](#tbl:statistical-mechanical-time-table-data).
 
 The mechanism of passing from a Riemann sum to an integral drives both the emergence of thermodynamic equilibrium from molecular collisions and the emergence of continuous time from discrete Reeb operations.
 
 **Crossover at $\sim 10$ operations.**
-At $q = q_0$ ([local substrate $q$](#prop:local-substrate-q)), $t_P \approx 10.1$ ([iterations per Reeb circuit](#prop:reeb-operations-per-planck)). The central limit theorem applies to sums of $\sim 10$ independent operations. Statistical fluctuations scale as $O(1/\sqrt{10}) \approx 30\%$. This large variance implies individual discrete steps are not fully smoothed. Quantum-gravitational discreteness reliably produces $O(\hbar_q) \approx 10\%$ corrections to the continuous Reeb flow.
+At $q = q_0$ ([local aether $q$](#prop:local-substrate-q)), $t_P \approx 10.1$ ([iterations per Reeb circuit](#prop:reeb-operations-per-planck)). The central limit theorem applies to sums of $\sim 10$ independent operations. Statistical fluctuations scale as $O(1/\sqrt{10}) \approx 30\%$. This large variance implies individual discrete steps are not fully smoothed. Quantum-gravitational discreteness reliably produces $O(\hbar_q) \approx 10\%$ corrections to the continuous Reeb flow.
 
 Conversely, at $q = 1.01$ ($t_P \approx 101$), fluctuations drop to $O(1/\sqrt{101}) \approx 10\%$. At $q = 1.001$, they fall to $\sim 3\%$ and time effectively smooths.
 

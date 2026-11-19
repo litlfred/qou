@@ -25,9 +25,9 @@ $$
 
 which say that the second edge parameter of the relabelled tetrahedron is the third of the original, and the third is the first.
 
-## Where this is load-bearing
+## Downstream applications of relabelling invariance
 
-It is what makes the $5_2$ volume expression a theorem rather than a coincidence. SnapPy's triangulation of $5_2$ has shapes $(y_1,\; 1/(1-y_1),\; y_1)$ — the middle tetrahedron carries the **second edge parameter** of $y_1$, not $y_1$ itself. An earlier model in this corpus took all three to be $y_1$ and obtained the right total for a reason it did not state. With relabelling invariance the total $3\,D(y_1)$ follows from the actual shapes, and the earlier agreement is explained rather than relied upon.
+This invariance makes the $5_2$ volume identity a theorem rather than a numerical coincidence. The standard three-tetrahedron ideal triangulation of the $5_2$ complement carries shape parameters $(y_1,\; 1/(1-y_1),\; y_1)$: the middle tetrahedron carries the **second edge parameter** $1/(1-y_1)$ rather than $y_1$ itself. By relabelling invariance, $D(1/(1-y_1)) = D(y_1)$, so the total hyperbolic volume $3\,D(y_1)$ follows directly from the true tetrahedral shapes.
 
 ## The law of sines
 

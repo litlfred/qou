@@ -79,6 +79,20 @@ theorem holonomy_hyperbola {q : R} (hq : q ≠ 0) :
   simp only [barEven, barOdd]
   linear_combination (4 : R) * mul_inv_cancel₀ hq
 
+/-- **Rapidity addition law (even / `cosh` channel):** composing meridian turns
+multiplies the holonomies `q ↦ q · q'`, and the bar-even shapes obey the hyperbolic
+cosine addition law `2 · barEven(q · q') = barEven q · barEven q' + barOdd q · barOdd q'`. -/
+theorem holonomy_rapidity_add_even (q q' : R) :
+    2 * barEven (q * q') = barEven q * barEven q' + barOdd q * barOdd q' :=
+  barEven_mul q q'
+
+/-- **Rapidity addition law (odd / `sinh` channel):** composing meridian turns
+multiplies the holonomies `q ↦ q · q'`, and the bar-odd shapes obey the hyperbolic
+sine addition law `2 · barOdd(q · q') = barOdd q · barEven q' + barEven q · barOdd q'`. -/
+theorem holonomy_rapidity_add_odd (q q' : R) :
+    2 * barOdd (q * q') = barOdd q * barEven q' + barEven q * barOdd q' :=
+  barOdd_mul q q'
+
 /-- **Cusp bar-parity split (paper statement).** The figure-eight cusp shape
 `ω` (root of `Φ₆`) splits under the bar involution into a rational Volume part
 `barEven ω = 1` and a `√−3` Chern–Simons part `barOdd ω ^ 2 = −3` — the
@@ -87,5 +101,21 @@ theorem cusp_barParity_split {ω : R} (hω : ω ^ 2 - ω + 1 = 0) :
     barEven ω = 1 ∧ barOdd ω ^ 2 = -3 :=
   ⟨QOU.QBeta.CuspShapeBarParity.cuspShape_barEven hω,
    QOU.QBeta.CuspShapeBarParity.cuspShape_barOdd_sq hω⟩
+
+/-- **Complete figure-eight cusp shape and meridian boost package:** combines the
+cusp bar-parity split (`barEven ω = 1`, `barOdd ω ^ 2 = -3`, `barOdd ω = 2ω - 1`)
+with the meridian boost hyperbola (`barEven q ^ 2 - barOdd q ^ 2 = 4`) and rapidity
+addition laws. -/
+theorem cusp_barParity_full_package {ω q q' : R} (hω : ω ^ 2 - ω + 1 = 0) (hq : q ≠ 0) :
+    (barEven ω = 1 ∧ barOdd ω ^ 2 = -3 ∧ barOdd ω = 2 * ω - 1) ∧
+    barEven q ^ 2 - barOdd q ^ 2 = 4 ∧
+    2 * barEven (q * q') = barEven q * barEven q' + barOdd q * barOdd q' ∧
+    2 * barOdd (q * q') = barOdd q * barEven q' + barEven q * barOdd q' :=
+  ⟨⟨QOU.QBeta.CuspShapeBarParity.cuspShape_barEven hω,
+    QOU.QBeta.CuspShapeBarParity.cuspShape_barOdd_sq hω,
+    QOU.QBeta.CuspShapeBarParity.cuspShape_barOdd hω⟩,
+   holonomy_hyperbola hq,
+   holonomy_rapidity_add_even q q',
+   holonomy_rapidity_add_odd q q'⟩
 
 end QOU.Knot.CuspShapeBarParity

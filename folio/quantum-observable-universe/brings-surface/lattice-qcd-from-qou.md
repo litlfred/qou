@@ -23,8 +23,8 @@ Ordinary lattice quantum chromodynamics is recovered as the $q\to 1$
 to ordinary gauge holonomies and the surface-ordered product becomes the
 plaquette product of the Wilson action.
 
-This correspondence is a structural observation, not a theorem. Agreement
+This correspondence is a structural observation rather than a theorem. Agreement
 between a $q$-deformed surface state-sum and a lattice-gauge computation is an
 empirical cross-check — of the same evidential tier as agreement with an
-experimental datum, and strictly weaker than a formal derivation. A proof of
-the state-sum / lattice-gauge correspondence remains open.
+experimental datum, and strictly weaker than a formal derivation. A rigorous proof of
+the state-sum / lattice-gauge correspondence is conjectural.

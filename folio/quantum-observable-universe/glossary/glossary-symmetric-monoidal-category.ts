@@ -6,10 +6,4 @@ export default remark({
   tags: ["glossary", "category-theory", "monoidal"],
   uses: ["rem:glossary-braided-monoidal-category"],
   defines: ["symmetric-monoidal-category"],
-  authorNotes: [
-    {
-      kind: "note",
-      body: "Mathlib reference: `CategoryTheory.SymmetricCategory` (class) in `Mathlib.CategoryTheory.Monoidal.Braided.Basic`.",
-    },
-  ],
 });

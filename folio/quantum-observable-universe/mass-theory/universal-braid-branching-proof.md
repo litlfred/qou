@@ -69,7 +69,7 @@ where $C_0 \approx 0.035\%$ is the mass MAE at $k = 3$ and
 $[2]_q^2 \approx 4.04$ is the concentration rate.  Each additional
 Hecke level gains a factor $\sim 4\times$ in precision.
 
-The **ultimate precision floor** is set by the substrate parameter
+The **ultimate precision floor** is set by the aether parameter
 uncertainty $\delta q \approx 1.4 \times 10^{-9}$ (from CODATA
 $m_\mu/m_e$), giving $\delta M/M \sim 10^{-7}\%$, reached at
 $k \approx 13$.

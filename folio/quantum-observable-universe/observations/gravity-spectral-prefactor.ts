@@ -18,6 +18,10 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+    {
       kind: "deprecated",
       date: "2026-09-14",
       body:
@@ -50,4 +54,13 @@ export default proposition({
         "those three criteria against this revision.",
     },
   ],
+  computation: {
+    engine: "python",
+    script: "computations/catalan_binding.py",
+    witness: [
+      "computations/catalan-binding.witness.json",
+      "computations/probes/pentagon-rt-torus-knot-higgs-probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

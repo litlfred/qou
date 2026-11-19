@@ -7,11 +7,11 @@ residue $\bar\mu$ is a well-defined invariant only in $\mathbb{Z}/\Delta\mathbb{
 
 1. *(**Hopf-spectator gate closed**) if some pairwise linking is a unit
    $|\ell_{ij}| = 1$, then $\Delta = 1$, so $\mathbb{Z}/\Delta\mathbb{Z}$ is a
-   subsingleton and $\bar\mu$ carries no invariant triple content — the bond
+   subsingleton and $\bar\mu$ carries no invariant triple content, meaning the bond
    channel is **inactive**;*
 2. *(**Brunnian gate open**) the residue space is the full $\mathbb{Z}$ (the gate
    is open, $\Delta = 0$) **iff** all pairwise linkings vanish,
-   $\ell_{12}=\ell_{13}=\ell_{23}=0$ — the Brunnian/Borromean pattern;*
+   $\ell_{12}=\ell_{13}=\ell_{23}=0$, which is the Brunnian/Borromean pattern;*
 3. *(**sign-representation obstruction**) any $\Sigma_3$-equivariant linear map
    from the pair-vector module to the sign representation is identically zero
    over any commutative ring; the inter-cluster coupling therefore factors
@@ -42,12 +42,12 @@ All four parts hold over a generic commutative ring where the statement permits:
   companion CAL-3 class-selection statement is a *conditional* result on
   the binding-volume ledger hypothesis.
 
-**Scope.** Only the *topological activation gate* — which inter-cluster bond
-channels are on or off, and the chirality-even coupling — is asserted here. The
+**Scope.** Only the *topological activation gate* (which inter-cluster bond
+channels are on or off, and the chirality-even coupling) is asserted here. The
 binding **magnitudes** $B(\text{cluster})$, the light-spectator coefficient $b$,
 the gated pair coefficient $g$, and the resulting $\le 0.31\%$ multi-isotope
 closure ("Model G") are **not** part of this proposition. Those enter the
 cluster bindings at their *measured* AME values and calibrate $b$, $g$
-empirically; they are recorded — labelled as a structural/phenomenological
-model, **not** a parameter-free derivation — in the interpreting remark
+empirically; they are recorded (labelled as a structural/phenomenological
+model, **not** a parameter-free derivation) in the interpreting remark
 [alpha cluster model g closure remark](#rem:alpha-cluster-model-g-closure).

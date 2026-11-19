@@ -19,7 +19,15 @@ export default proposition({
   computation: {
     engine: "sympy",
     script: "computations/markov/markov_peel_atomic_witness.py",
-    witness: "computations/markov/markov-peel-atomic-tr-m.witness.json",
+    witness: [
+      "computations/markov/markov-peel-atomic-tr-m.witness.json",
+      "computations/cross-check-trM-1ppb.witness.json",
+      "computations/cross-check-trM-wenzl-lr-1ppb.witness.json",
+      "computations/sweeps/paper-six-term-isotope-sweep.witness.json",
+      "computations/delta-q-decoration.witness.json",
+      "computations/probes/reeb-g-structural-identity.witness.json",
+      "computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json",
+    ],
     consumers: [
       "computations/cross_check_trM_1ppb.py",
       "computations/cross_check_trM_wenzl_lr_1ppb.py",

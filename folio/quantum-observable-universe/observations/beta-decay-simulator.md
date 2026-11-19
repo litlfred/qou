@@ -1,4 +1,4 @@
-This simulator computes nuclear beta-decay half-lives from the substrate parameter $q$. It evaluates the transfer matrix Skein polynomial.
+This simulator computes nuclear beta-decay half-lives from the aether parameter $q$. It evaluates the transfer matrix Skein polynomial.
 
 ## Computed quantities
 

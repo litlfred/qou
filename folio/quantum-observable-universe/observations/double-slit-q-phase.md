@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q \in k^{\times}$ ([substrate parameter](#def:substrate-parameter)). Let $\gamma_i$ ($i = 1,2$) be two paths through slits of width $a$ separated by distance $d$.
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with aether parameter $q \in k^{\times}$ ([aether parameter](#def:substrate-parameter)). Let $\gamma_i$ ($i = 1,2$) be two paths through slits of width $a$ separated by distance $d$.
 
 The **$q$-deformed path phase** along $\gamma_i$ is
 

@@ -2,7 +2,7 @@ import { proof } from "../../schema/builders";
 
 export default proof({
   label: "prf:local-substrate-q",
-  title: "Proof of Local Value of the Substrate Parameter",
+  title: "Proof of Local Value of the Aether Parameter",
   uses: ["prop:local-substrate-q", "prf:knot-volumes-verification"],
   computation: {
     engine: "snappea",

@@ -21,4 +21,10 @@ export default remark({
   title: "Numerical probe: SU(4) alpha-cluster capacity and AME residuals",
   interprets: "conj:wigner-su4-from-spin-isospin",
   tags: ["nuclear-physics", "su4", "alpha-cluster", "audit", "numerical-probe"],
+  computation: {
+    engine: "numpy",
+    script: "computations/probes/the_alpha_spike_is_an_inverted_stagger_probe.py",
+    witness: "computations/probes/the_alpha_spike_is_an_inverted_stagger_probe.witness.json",
+    status: "verified",
+  },
 });

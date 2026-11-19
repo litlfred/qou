@@ -31,10 +31,10 @@ By flatness, closed loops encircling separated subsets have commuting holonomies
 
 Flatness is equivalent to semisimplicity of the braided tensor category. At generic $q$, representations are semisimple and locality holds. At roots of unity, non-semisimple subquotients appear and locality fails.
 
-## The substrate as the locality window
+## The aether as the locality window
 
 The KZ connection is flat at every level (the infinitesimal braid relations are homogeneous), so flatness does not single out the pinned parameter $q_0 \approx 1.11$; what does is that $q_0$ is not a root of unity, so the monodromy target $H_n(q_0)$ is semisimple and the locality statement is about the generic Hecke representation. The soft confinement level is far from the first non-trivial root of unity, so locality holds to high order.
 
 ## Corollary — exponential mass scaling
 
-Combining locality with the crossing-graded expansion gives $\mathfrak{m}(\mathcal{K}; q_0) = \mathfrak{m}_{\mathrm{GB}}(\mathcal{K}) \cdot (1 + \xi(q_0))^{c(\mathcal{K})}$ at the homogeneous fixed point. Each crossing multiplies mass by $\approx 94$. Exponential scaling is the empirical signature of KZ flatness at the substrate.
+Combining locality with the crossing-graded expansion gives $\mathfrak{m}(\mathcal{K}; q_0) = \mathfrak{m}_{\mathrm{GB}}(\mathcal{K}) \cdot (1 + \xi(q_0))^{c(\mathcal{K})}$ at the homogeneous fixed point. Each crossing multiplies mass by $\approx 94$. Exponential scaling is the empirical signature of KZ flatness at the aether.

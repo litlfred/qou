@@ -1,6 +1,6 @@
 *The baryon decuplet --- the $10$-dimensional fully symmetric channel
 of the Schur--Weyl decomposition $V^{\otimes 3}$ --- is realized by
-the Borromean baryon ([Definition](#def:borromean-baryon)) with
+the Borromean baryon ([borromean baryon](#def:borromean-baryon)) with
 symmetric quark content.*
 
 The Schur--Weyl decomposition at $N = 3$, $n = 3$ assigns the
@@ -39,7 +39,7 @@ only after division by $c$ and the symmetric channel is identifiable with
 $\mathrm{Sym}^3$ only where $c$ is invertible.  In characteristic $2$ or
 $3$ it is not, and the identification fails.
 
-**What the Borromean topology does and does not supply.**
+**Scope of the Borromean symmetry input.**
 The Borromean link carries an $S_3$ symmetry permuting its three
 components, so it is a *consistent* carrier for the symmetric channel.
 It does not, however, *select* that channel: the octet $(2,1)$ and the
@@ -48,7 +48,7 @@ to the same link.  Brunnian-ness --- that removing any one component
 frees the other two --- is a statement about sublink triviality, and no
 argument in this framework connects it to the Young-symmetriser
 decomposition of $V^{\otimes 3}$.  The channel
-selection is carried entirely by the Hecke projector, not by the
+selection is carried entirely by the Hecke projector rather than by the
 topology.
 
 **Missing ingredient: spin and colour.**
@@ -58,7 +58,7 @@ antisymmetric once colour is included: with colour antisymmetric and
 spin symmetric, flavour must be symmetric.  This chapter derives neither
 the spin factor nor the colour antisymmetry, so the identification
 $\lambda = (3) \leftrightarrow$ decuplet is at present a *matching of
-dimensions and weights*, not a derivation of the spin--flavour--colour
+dimensions and weights* rather than a derivation of the spin--flavour--colour
 selection rule.  This is recorded as an open item in
 [the open-problems section](#sec:eightfold-open-problems).
 
@@ -76,6 +76,6 @@ the octet.
 **Conditional on $N = 3$.**
 As with all eightfold-way content, this derivation is conditional on
 the flavor fundamental being three-dimensional
-([Proposition](#prop:schur-weyl-eightfold)).  At $N = 2$, the
+([eightfold-way multiplets via quantum Schur--Weyl duality](#prop:schur-weyl-eightfold)).  At $N = 2$, the
 symmetric partition $(3)$ yields only a $4$-dimensional spin-$3/2$
-quadruplet, not a decuplet.
+quadruplet rather than a decuplet.

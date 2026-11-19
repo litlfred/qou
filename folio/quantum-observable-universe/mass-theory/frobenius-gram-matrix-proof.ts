@@ -4,4 +4,10 @@ export default proof({
   label: "prf:frobenius-gram-matrix",
   title: "Proof of frobenius gram matrix",
   uses: ["prop:frobenius-gram-matrix"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witness: gram-matrix-dual.witness.json.",
+    },
+  ],
 });

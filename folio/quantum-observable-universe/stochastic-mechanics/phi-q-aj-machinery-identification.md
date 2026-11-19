@@ -1,4 +1,4 @@
-**Proposition (conditional on the [quantum Langlands dual conjecture](../q-geometric-langlands/quantum-langlands-dual.md) and the [master pentagon conjecture](../mass-theory/dim-master-pentagon.md)).**
+**Proposition (conditional on the [quantum Langlands dual conjecture](#conj:quantum-langlands-dual) and the [master pentagon conjecture](#conj:dim-master-pentagon)).**
 
 *Let $K$ be a hyperbolic knot or link with quantum A-polynomial $\hat{A}_K \in \mathcal{A}_q$ (the $q$-Weyl algebra over $\mathbb{Z}[q^{\pm 1}]$). The $\Phi_q$ (Faddeev) and $\mathrm{Li}_2^q$ (Rogers) asymptotic regulators appearing in the framework are specific saddle-point regimes of the AJ machinery*
 

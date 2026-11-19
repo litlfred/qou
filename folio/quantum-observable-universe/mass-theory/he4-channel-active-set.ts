@@ -94,6 +94,10 @@ export default proposition({
     "verified-empirically",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      body: "Computational witnesses: computations/magic-shell-empirical-instantiation.witness.json, he4-sdp-compositional-canonical evaluation.witness.json.",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

@@ -1,7 +1,7 @@
 Physical nuclei require integer proton and neutron numbers. Stable hadrons correspond to integer solutions of a quadratic energy minimisation. The continuous optimum $p^*(A)$ defines the beta-stability line.
 
 **Proposition.**
-Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate parameter $q$. At a fixed mass number $A = Z + N$, the nuclear binding energy is a strictly convex quadratic in the proton number $p$:
+Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with aether parameter $q$. At a fixed mass number $A = Z + N$, the nuclear binding energy is a strictly convex quadratic in the proton number $p$:
 
 $$
   E(p, A) = 
@@ -23,6 +23,3 @@ Because $E$ is strictly convex in $p$, the exact integer minimiser $p_{\mathrm{s
 $$
   p_{\mathrm{stab}}(A) = \mathrm{argmin}_{p \in \{0, 1, \ldots, A\}} E(p, A) \in \bigl\{\lfloor p^*(A) \rfloor, \lceil p^*(A) \rceil\bigr\}.
 $$
-
-**Archimedean specialisation.** 
-The binding energy $E(p)$, its continuous optimum $p^*$, and the convex-minimisation argument are stated over $\mathbb{R}$. The integer-minimiser bound relies on the real ordering.

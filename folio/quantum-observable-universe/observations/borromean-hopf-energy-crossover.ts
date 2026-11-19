@@ -20,4 +20,13 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["def:hopf-diquark"],
+  computation: {
+    engine: "python+mpmath",
+    script: "computations/q_pinning_50_digit.py",
+    witness: [
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/probes/casimir-hoefsmit-additivity-probe.witness.json",
+    ],
+    status: "verified",
+  },
 });

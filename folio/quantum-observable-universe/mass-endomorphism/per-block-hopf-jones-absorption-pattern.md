@@ -46,7 +46,7 @@ $$
 y_{(3)}(1) (-2) + y_{(2,1)}(1) (-1) + y_{(1,1,1)}(1) (-2) = -\tfrac{5}{4}.
 $$
 
-This provides the Markov-trace leading-order coefficient $\mathrm{tr}_M(\mathcal{B}_n - \mathcal{B}_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$. At the substrate parameter $q_0$, the $y_\lambda$ values constitute $q$-dependent rational functions rather than a probability measure. A direct computation gives $\mathrm{tr}_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$, consistent with the $y_\lambda(q_0) \chi_\lambda(q_0)$ sum.
+This provides the Markov-trace leading-order coefficient $\mathrm{tr}_M(\mathcal{B}_n - \mathcal{B}_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$. At the aether parameter $q_0$, the $y_\lambda$ values constitute $q$-dependent rational functions rather than a probability measure. A direct computation gives $\mathrm{tr}_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$, consistent with the $y_\lambda(q_0) \chi_\lambda(q_0)$ sum.
 
 ## Significance
 

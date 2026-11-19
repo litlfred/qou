@@ -44,7 +44,7 @@ non-degenerate on each stratum separately — each stratum is **self**-dual,
 and there is no Poincaré-type pairing across distinct strata.
 
 *Step 2 (existence of $\phi_q^{(k)}(z_i)$).* By
-[cor: quantum dilogarithm](#cor:quantum-dilogarithm), the level-$i$
+[quantum dilogarithm corollary](#cor:quantum-dilogarithm), the level-$i$
 torsion-volume contribution to the mass is
 $\mathrm{tr}_{\mathrm{trans}}(\varrho, p_i) = \Phi_q(z_i)$. Since the
 mass functional is centre-valued by
@@ -71,7 +71,7 @@ structure:
 $w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
 classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$ —
 the two coincide at $q = 1$; see
-[plancherel-weight-boundedness proposition](#prop:plancherel-weight-boundedness)),
+[Plancherel weight boundedness](#prop:plancherel-weight-boundedness)),
 where
 $\dim_q V_\lambda = [n]_q! \,/\, \prod_{\square \in \lambda} [h(\square)]_q$
 and $[h]_q = (q^h - q^{-h})/(q - q^{-1})$ is the symmetric quantum
@@ -109,7 +109,7 @@ and $u_n(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is a unit. The exponent
 $c_k(n)$ counts depth-exactly-$k$ partitions; the factor
 $(1 - q^{-k} z)^{-c_k(n)}$ contributes the depth-$k$ stratum of $Z(A)$.
 
-> **Scope of (d): the multi-factor product expansion does not hold for a homogeneous monomial.** Every $\lambda \vdash n$ has $|\lambda| = n$, so $F_n(z) = \bigl(\sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda)\bigr)\, z^n$ is a single monomial in $z$. A product $\prod_{k \geq 1}(1-q^{-k}z)^{-c_k(n)}\, u_n(q)$ with some $c_k(n) > 0$ has the nonzero $z^1$ coefficient $u_n(q)\sum_k c_k(n)\, q^{-k}$ when $n \geq 2$, so the two sides cannot agree. Steps (e)–(f) inherit this. The proved truncation statement is [cell-depth-truncation proposition](#prop:cell-depth-truncation).
+> **Scope of (d): the multi-factor product expansion does not hold for a homogeneous monomial.** Every $\lambda \vdash n$ has $|\lambda| = n$, so $F_n(z) = \bigl(\sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda)\bigr)\, z^n$ is a single monomial in $z$. A product $\prod_{k \geq 1}(1-q^{-k}z)^{-c_k(n)}\, u_n(q)$ with some $c_k(n) > 0$ has the nonzero $z^1$ coefficient $u_n(q)\sum_k c_k(n)\, q^{-k}$ when $n \geq 2$, so the two sides cannot agree. Steps (e)–(f) inherit this. The proved truncation statement is [cell-depth trace truncation](#prop:cell-depth-truncation).
 
 (e) The single-stratum factor $(1 - q^{-k}z)^{-1}$ in $\Phi_q$ is
 the $c_k = 1$ specialisation of (d) — applicable when each depth-$k$
@@ -161,7 +161,7 @@ Step 3's identification of the partial product with the
 $\bigoplus_{j \leq k_\star(T_w)} Z^{(j)}$-content. 
 
 **Open: canonical bound.**
-The proof above is a Frobenius-paired *equality*, not a canonical
+The proof above is a Frobenius-paired *equality* rather than a canonical
 identity. It says the Frobenius-pairing of $\Phi_q(z_i)$ with $T_w$
 equals the Frobenius-pairing of $\Phi_q^{[\leq k_\star(T_w)]}(z_i)$
 with $T_w$. To conclude that the *canonical* mass formula evaluated
@@ -174,7 +174,7 @@ product. Establishing this uniform bound is the conjectural target of
 needed for [$\Phi_q$ categorical truncation](#conj:phi-q-categorical-truncation):
 the level-wise $\Phi_q$ identity that the bound was meant to regularise is
 false algebraically, and the centre-projection truncation is proved without
-it ([cell-depth-truncation proposition](#prop:cell-depth-truncation)). Note also
+it ([cell-depth trace truncation](#prop:cell-depth-truncation)). Note also
 that with $\Phi_q(z_i)$ a scalar the equality
 $\mathrm{tr}_M(\Phi_q(z_i)T_w)=\mathrm{tr}_M(\Phi_q^{[\le k_\star]}(z_i)T_w)$
 fails at $w=e$ unless $\prod_{j>k_\star}(1-q^{-j}z_i)^{-1}=1$, which is false

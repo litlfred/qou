@@ -1,4 +1,4 @@
-For a complex substrate parameter $q = |q|e^{i\theta_q}$, the quantum Planck constant is $\hbar_q = 1 - |q|^{-1} e^{-i\theta_q}$. When $\theta_q \neq 0$, $\hbar_q$ acquires an imaginary part, and the $q$-equilibrium mixes amplitudes with phases.
+For a complex aether parameter $q = |q|e^{i\theta_q}$, the quantum Planck constant is $\hbar_q = 1 - |q|^{-1} e^{-i\theta_q}$. When $\theta_q \neq 0$, $\hbar_q$ acquires an imaginary part, and the $q$-equilibrium mixes amplitudes with phases.
 
 The observability axiom demands positive-definiteness of the Haar functional $h_q$. This requires $d_q^\dagger$ to be the formal adjoint of $d_q$, which holds if and only if $q \in \mathbb{R}_{>0}$. Relaxing the observability axiom gives the phase $\theta_q$ geometric meaning:
 

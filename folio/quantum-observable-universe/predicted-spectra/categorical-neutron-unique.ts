@@ -13,4 +13,10 @@ export default proposition({
   ],
   proofs: ["prf:categorical-neutron-unique"],
   tags: ["uniqueness", "neutron"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Archimedean specialisation over R (§7c).",
+    },
+  ],
 });

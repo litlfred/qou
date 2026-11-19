@@ -10,6 +10,10 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "status",
+      body: "Convention D (z_D = q^3/(q^2+1)) is canonical per owner ruling 2026-09-08; full-tower energy scale E_0 = m_e / (q_0(q_0 - 1)(1 - hbar_q^2)) is canonical under the full-tower ruling.",
+    },
+    {
       kind: "caveat",
       date: "2026-05-24",
       body:
@@ -64,7 +68,12 @@ export default proposition({
   computation: {
     engine: "python",
     script: "computations/codata_masses.py",
-    witness: "computations/codata-masses.witness.json",
+    witness: [
+      "computations/codata-masses.witness.json",
+      "computations/probes/gpmt-sign-block-qbeta-and-np-splitting.witness.json",
+      "computations/c-k-beta-decay-bound.witness.json",
+      "computations/qbeta/weak-coevaluation-ga-and-neutron-lifetime.witness.json",
+    ],
     status: "verified",
   },
 });

@@ -3,7 +3,7 @@
 The following steps outline the compactness mechanism needed for the $\{v_q\}_{q > 1}$ solutions to converge to a distributional solution of the classical Navier--Stokes equation.
 
 **Step 1: Uniform embedding.**
-Introduce the $q$-independent space $\mathcal{H} = L^2(\mathcal{S}; T\mathcal{S})$. For each $q > 1$, the fibre functor embeds $L^2_q(A) \hookrightarrow \mathcal{H}$ with uniformly bounded embeddings. The fibre functor preserves inner products up to a factor controlled by the substrate parameter.
+Introduce the $q$-independent space $\mathcal{H} = L^2(\mathcal{S}; T\mathcal{S})$. For each $q > 1$, the fibre functor embeds $L^2_q(A) \hookrightarrow \mathcal{H}$ with uniformly bounded embeddings. The fibre functor preserves inner products up to a factor controlled by the aether parameter.
 
 **Step 2: Uniform energy bound.**
 The energy inequality gives $\sup_{t \geq 0} \lVert v_q(t) \rVert_{L^2_q}^2 \leq 2\lVert v_0 \rVert_{\mathcal{H}}^2$ for $q$ close to $1$. The bound is uniform in $q$.
@@ -25,5 +25,3 @@ The anti-parallel vortex pair initial data causes the filaments to approach at r
 
 **Conjecture (q-Aubin--Lions).**
 Under the hypotheses above, there exists a subsequence $q_n \to 1$ such that $v_{q_n} \to v^*$ weakly in $L^2$. $v^*$ is a weak solution of the Navier--Stokes equation, satisfies the energy inequality, and is smooth off a singular set of Hausdorff dimension $\leq 1$.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

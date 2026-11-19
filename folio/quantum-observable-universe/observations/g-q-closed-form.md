@@ -1,4 +1,4 @@
-**Question.** Does the universal-residue prefactor $\alpha = m_e \cdot 8 G$ ([gravity spectral prefactor](#prop:gravity-spectral-prefactor)) fix $G$ as a numerical constant, or does $G$ inherit a closed $q$-rational form from the substrate parameter $q$? Both faces admit a sharp answer.
+**Question.** Does the universal-residue prefactor $\alpha = m_e \cdot 8 G$ ([gravity spectral prefactor](#prop:gravity-spectral-prefactor)) fix $G$ as a numerical constant, or does $G$ inherit a closed $q$-rational form from the aether parameter $q$? Both faces admit a sharp answer.
 
 **Closed $q$-rational form (information face).**
 
@@ -50,18 +50,18 @@ The electron mass $m_e(q)$ and the Plancherel-weighted residue $\sum_{k \geq 4}\
 
 **Reconciling the two faces.**
 
-The two derivations of $G$ in this folio are dual, not competing.
+The two derivations of $G$ in this folio are dual rather than competing.
 
 | Face | Source | Closed form | Planck value |
 | --- | --- | --- | --- |
 | Categorical (spectral) | Plancherel residue $\mathfrak{m}^{\geq 4}_{q,\mathcal{K}}$ at depth $\geq 4$ | $\alpha/(8 m_e)$ | $1$ |
 | Information (variational) | $q$-YM–Levi action, jet-tower entropy | $q^2/(q-1)^4$ | $1$ |
 
-The categorical face sets $G$ as the universal-residue prefactor of the deep-tower stratum. The information face sets $G$ as the information-geometric coupling of the substrate. Both derivations reduce to $G_{\mathrm{Planck}} = 1$ identically in $q$. The two faces are algebraically consistent without any calibration condition at $q_0$.
+The categorical face sets $G$ as the universal-residue prefactor of the deep-tower stratum. The information face sets $G$ as the information-geometric coupling of the aether. Both derivations reduce to $G_{\mathrm{Planck}} = 1$ identically in $q$. The two faces are algebraically consistent without any calibration condition at $q_0$.
 
 **Empirical anchor.**
 
-Newton's constant in SI units ($G_{\mathrm{Newton}} \approx 6.674 \times 10^{-11}\, \mathrm{m^3\, kg^{-1}\, s^{-2}}$) establishes the Planck length, mass, and time triple via $\ell_P = \sqrt{\hbar G / c^3}$, $m_P = \sqrt{\hbar c / G}$, and $t_P = \sqrt{\hbar G / c^5}$. In QOU units, the conversion $(\hbar_q / c_q)^2 = (q-1)^4/q^2$ absorbs these quantities. The SI value of $G$ functions strictly as the human-scale rescaling that maps $\ell_P, m_P, t_P$ onto metres, kilograms, and seconds. The empirical $G_{\mathrm{Newton}}$ therefore enters as a unit-system datum, not as a fit parameter on $q$. The lepton-mass cross-check ([substrate consistency window](#prop:substrate-consistency-window)) fixes the substrate value $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps), independent of gravity.
+Newton's constant in SI units ($G_{\mathrm{Newton}} \approx 6.674 \times 10^{-11}\, \mathrm{m^3\, kg^{-1}\, s^{-2}}$) establishes the Planck length, mass, and time triple via $\ell_P = \sqrt{\hbar G / c^3}$, $m_P = \sqrt{\hbar c / G}$, and $t_P = \sqrt{\hbar G / c^5}$. In QOU units, the conversion $(\hbar_q / c_q)^2 = (q-1)^4/q^2$ absorbs these quantities. The SI value of $G$ functions strictly as the human-scale rescaling that maps $\ell_P, m_P, t_P$ onto metres, kilograms, and seconds. The empirical $G_{\mathrm{Newton}}$ therefore enters as a unit-system datum, not as a fit parameter on $q$. The lepton-mass cross-check ([aether consistency window](#prop:substrate-consistency-window)) fixes the aether value $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps), independent of gravity.
 
 **Summary.**
 

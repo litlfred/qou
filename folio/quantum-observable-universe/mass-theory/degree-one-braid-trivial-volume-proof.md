@@ -24,7 +24,7 @@ $\mathrm{Vol}(4_1) = 2.0299\ldots \neq 0$, since a linear map that vanishes on a
 **Scope.** The lemma establishes only the *archimedean shadow* — the
 real-valued volume image. It does **not** identify $\gamma$ with the
 gauge boson of any physical theory; that identification is interpretive
-and is discussed in [breit-wheeler-vertex](#rem:breit-wheeler-vertex)
+and is discussed in [Breit–Wheeler polarisation vertex](#rem:breit-wheeler-vertex)
 and the photon-energy section of the manuscript.
 
 **Exclusion.** Every braid word in the support of a degree-one element has

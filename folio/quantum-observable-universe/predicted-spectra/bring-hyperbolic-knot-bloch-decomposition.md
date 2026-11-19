@@ -42,9 +42,9 @@ By Borel's theorem, $\mathrm{rk}\,K_3^{\mathrm{ind}}(F)\otimes\mathbb{Q} = \math
 
 **Observation 1.** The figure-8 trace field $\mathbb{Q}(\zeta_3)$ is not a subfield of $\mathbb{Q}(\zeta_5)$. The field $\mathbb{Q}(\zeta_5)$ contains no real quadratic imaginary subfield other than $\mathbb{Q}$. A decomposition inside $B(\mathbb{Q}(\zeta_5))$ cannot include the figure-8 knot.
 
-**Observation 2.** The Borromean rings expand the natural compositum ([`recursive-atom-knot-atlas`](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md)). Two ideal regular octahedra of shape parameter $i$ define the geometry ([`binding-scale-catalan`](../mass-theory/binding-scale-catalan.md)). The volume is $\mathrm{Vol}(\mathcal{B}_3) = 8G = 8\,\mathrm{Cl}_2(\pi/4)$. The trace field of $\mathcal{B}_3$ is $\mathbb{Q}(i) = \mathbb{Q}(\zeta_4)$. Combining the figure-8, Borromean, and Bring fields produces the compositum $\mathbb{Q}(\zeta_{60}) = \mathbb{Q}(\zeta_3, \zeta_4, \zeta_5)$. This field has degree 16 over $\mathbb{Q}$ and Bloch-group rank $r_2(\mathbb{Q}(\zeta_{60})) = 8$. The figure-8 and Borromean contributions occupy two distinct 1-dimensional lines. The remaining 6 dimensions remain available for the decomposition.
+**Observation 2.** The Borromean rings expand the natural compositum ([recursive atom-knot atlas](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md)). Two ideal regular octahedra of shape parameter $i$ define the geometry ([Catalan binding scale](../mass-theory/binding-scale-catalan.md)). The volume is $\mathrm{Vol}(\mathcal{B}_3) = 8G = 8\,\mathrm{Cl}_2(\pi/4)$. The trace field of $\mathcal{B}_3$ is $\mathbb{Q}(i) = \mathbb{Q}(\zeta_4)$. Combining the figure-8, Borromean, and Bring fields produces the compositum $\mathbb{Q}(\zeta_{60}) = \mathbb{Q}(\zeta_3, \zeta_4, \zeta_5)$. This field has degree 16 over $\mathbb{Q}$ and Bloch-group rank $r_2(\mathbb{Q}(\zeta_{60})) = 8$. The figure-8 and Borromean contributions occupy two distinct 1-dimensional lines. The remaining 6 dimensions remain available for the decomposition.
 
-**Observation 3.** The mass-bearing spectrum supplies a finite enumeration of hyperbolic knots ([`recursive-atom-knot-atlas`](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md)).
+**Observation 3.** The mass-bearing spectrum supplies a finite enumeration of hyperbolic knots ([recursive atom-knot atlas](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md)).
 
 | Particle / atom | Hyperbolic knot / link | Volume | Trace field |
 |---|---|---|---|
@@ -95,7 +95,7 @@ Borel's regulator and Bloch-Suslin uniqueness determine the image. The K-theoret
 
 ## Field equivalence
 
-The substrate route and the geometric route produce coinciding Bloch classes.
+The aether route and the geometric route produce coinciding Bloch classes.
 
 **Theorem (cyclotomic compositum).** The trace fields generate the compositum $\mathbb{Q}(\zeta_3) \cdot \mathbb{Q}(\zeta_4) \cdot \mathbb{Q}(\zeta_5) = \mathbb{Q}(\zeta_{60})$.
 

@@ -35,7 +35,7 @@ $$
 $$
 
 an upper bound for the claimed decomposition
-[eq:topological-mass-decomp](#eq:topological-mass-decomp).  This route
+[the topological mass decomposition](#eq:topological-mass-decomp).  This route
 gives equality, and hence the decomposition itself, only conditionally on
 equality in the transient bound, which is open (it is not forced by the
 disc splitting and support hypotheses).  Each

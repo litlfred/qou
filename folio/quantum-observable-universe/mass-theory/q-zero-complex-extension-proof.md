@@ -1,6 +1,6 @@
 ## Proof
 
-Each substrate identity is stated in the cited literature
+Each aether identity is stated in the cited literature
 (Wenzl 1988; Jones 1987) over a commutative ring with $q$ a unit;
 the bi-filtration, explicit central idempotent, categorical $q$-Lie bracket,
 and bar-involution constructions all hold over any commutative ring $R$

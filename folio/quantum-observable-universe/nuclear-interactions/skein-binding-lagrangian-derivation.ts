@@ -17,4 +17,10 @@ export default remark({
     "prop:qou-canonical-action",
     "def:categorical-lagrangian",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/probes/hbar_q_order_of_binding_observables_probe.py",
+    witness: "computations/probes/hbar-q-order-of-binding-observables-probe.witness.json",
+    status: "verified",
+  },
 });

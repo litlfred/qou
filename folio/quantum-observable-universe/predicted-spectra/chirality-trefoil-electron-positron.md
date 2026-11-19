@@ -22,6 +22,6 @@ Traversing the exceptional divisor of the brane tower reverses the chirality of 
 
 2. **Information transfer**: Double chirality reversal (electron $\to$ positron $\to$ electron) constitutes a round-trip through the time-reversed sector. The fiber adjoint involution satisfies $\sigma^2 = \mathrm{id}$. This returns the system to its original state. Information preservation across this round-trip depends on the exceptional divisor's monodromy.
 
-3. **The imaginary part**: The Archimedean realization over $\mathbb{C}$ permits a complex substrate parameter $q$. The observability axiom restricts $q$ to positive reals. A nonzero imaginary part contributes a phase to the crossing energy. This phase distinguishes particles from antiparticles without mirror reflection. The full theory models chirality reversal as a continuous rotation rather than a discrete flip.
+3. **The imaginary part**: The Archimedean realization over $\mathbb{C}$ permits a complex aether parameter $q$. The observability axiom restricts $q$ to positive reals. A nonzero imaginary part contributes a phase to the crossing energy. This phase distinguishes particles from antiparticles without mirror reflection. The full theory models chirality reversal as a continuous rotation rather than a discrete flip.
 
 4. **CPT from the categorical algebra**: The fiber adjoint involution and the Frobenius structure derive the combined CPT operation (charge conjugation $\sigma$, parity reflection, Reeb flow reversal). The QOU involutive axiom implies the CPT theorem.

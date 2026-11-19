@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:recursive-atom-knot-atlas",
   title:
-    "Recursive atom-knot atlas at $q_0$ — particles to atoms via Markov-NF braids and hyperbolic-knot closures",
+    "Recursive atom-knot atlas at $q_0$ — elementary braids, Borromean nucleons, and three-dimensional $\\alpha$-simplicial nuclei",
   lean: {
     ref: "qou:QOU.BraidsAndKnots.atomKnotAtlas",
     validation: "not_checked",
@@ -24,8 +24,11 @@ export default proposition({
   cites: ["wenzl1988"],
   computation: {
     engine: "mpmath",
-    script: "computations/q_pinning_50_digit.py",
-    witness: "computations/q-pinning-50-digit.witness.json",
+    script: "computations/probes/nuclear_wave3_periodic_table_synthesis_probe.py",
+    witness: [
+      "computations/q-pinning-50-digit.witness.json",
+      "computations/probes/nuclear-wave3-periodic-table-synthesis.witness.json",
+    ],
     status: "verified",
   },
   tags: [

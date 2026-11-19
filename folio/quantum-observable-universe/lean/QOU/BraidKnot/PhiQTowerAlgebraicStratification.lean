@@ -92,17 +92,31 @@ class PhiQTowerAlgebraicStratification (R : Type u) [CommRing R] where
   pentagon_ascension : level3plus = 0
 
 
-/-! ### Removed 2026-08-30 — self-assuming projections
+/-- Partial sum `∑_{k < m} stratum k` over Gröbner–Shirshov filtration depths in `R`. -/
+def gsStratumSum {R : Type u} [CommRing R] (stratum : ℕ → R) : ℕ → R
+  | 0 => 0
+  | m + 1 => gsStratumSum stratum m + stratum m
 
-- `phi_q_tower_algebraic_stratification` — body was `s.mass_sum`: the conclusion was the projected field
-  verbatim, so the declaration restated its own hypothesis.
-
-**Why removal.** The content stays in the class field each declaration
-projected, which asserts the same proposition under the same hypotheses; only
-the restatement goes. That is the vacuity ledger's recorded disposition for
-this category — *"drop the pseudo-theorem and project the field at use sites"*
-— and there were no use sites: each had **zero references anywhere in the
-corpus**, including in this file. Bean `qou-z9ws`.
--/
+/-- **Unconditional algebraic stratification (`prop:phi-q-tower-algebraic-stratification`).**
+    Over any commutative ring `R`, if pentagon ascension kills all filtration
+    strata of depth `k ≥ 3` (`∀ k, 3 ≤ k → stratum k = 0`) and the depth-2
+    stratum decomposes into adjacent and non-adjacent `z²`-weighted contributions
+    `stratum 2 = (z * z) * (adj + nonAdj)`, then for every jet cutoff `m ≥ 3`
+    the tower sum `gsStratumSum stratum m` equals the exact four-piece algebraic
+    stratification `stratum 0 + stratum 1 + (z * z) * adj + (z * z) * nonAdj`. -/
+-- Ref: [leitner2026] prop:phi-q-tower-algebraic-stratification
+theorem phi_q_tower_algebraic_stratification {R : Type u} [CommRing R]
+    (stratum : ℕ → R) (z adj nonAdj : R) (m : ℕ) (hm : 3 ≤ m)
+    (h2 : stratum 2 = (z * z) * (adj + nonAdj))
+    (hpent : ∀ k : ℕ, 3 ≤ k → stratum k = 0) :
+    gsStratumSum stratum m =
+      stratum 0 + stratum 1 + (z * z) * adj + (z * z) * nonAdj := by
+  obtain ⟨d, rfl⟩ : ∃ d : ℕ, m = 3 + d := ⟨m - 3, by omega⟩
+  clear hm
+  induction d with
+  | zero =>
+    simp only [gsStratumSum, zero_add, h2, mul_add, add_assoc]
+  | succ k ih =>
+    rw [Nat.add_succ, gsStratumSum, hpent (3 + k) (by omega), add_zero, ih]
 
 end QOU.BraidKnot

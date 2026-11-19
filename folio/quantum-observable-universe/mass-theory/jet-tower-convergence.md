@@ -1,5 +1,5 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-substrate parameter $q$ and Planck-$q$ constant
+aether parameter $q$ and Planck-$q$ constant
 $\hbar_q = (q-1)/q$.  For a vortex $\varrho$ with braid
 representative $\beta \in B_n$, the brane-tower refinement of the
 mass endomorphism

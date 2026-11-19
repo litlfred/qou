@@ -35,7 +35,7 @@ The parameter $q$ fixes every factor:
 
    The Markov-traced generator volume is $\hat{V}_i = z \cdot a_i + b_i$ ([factorization theorem](#thm:markov-trace-factorization)).
 4. **Phase-space integral** $f(Q)$. The $Q$-value ([transition energy](#def:Q-value-transition)) is the categorical action difference $Q = \mathfrak{S}_q(\mathrm{par}) - \mathfrak{S}_q(\mathrm{dau}) - \mathfrak{S}_q(e)$. This replaces classical energy conservation ($M_{\mathrm{par}} - M_{\mathrm{dau}} - m_e$). The classical formula assumes $d_q^2 = 0$ and fails for $q \neq 1$. The action of each nucleus at $q$ is evaluated via the terminal resolution of its composite link ([terminal resolution](#prop:terminal-resolution)), using the pair Skein mass formula $\mathcal{S}_{ab}(q) = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$. The fifth-power Sargent rule sets $f(Q) \propto Q^5$ for allowed transitions.
-5. **Dimensional scale** $\mu_0$. This single free parameter converts Skein units to physical units (MeV, seconds). It represents a choice of units, not a physical parameter.
+5. **Dimensional scale** $\mu_0$. This single free parameter converts Skein units to physical units (MeV, seconds). It represents a choice of units rather than a physical parameter.
 
 The sensitivity of the decay rate to $q$ is
 

@@ -11,4 +11,4 @@
 
 *For comparison, the same construction for $NH_3$ (nitrogen + 3 hydrogens) gives $C_{3v}$ symmetry with a lone pair occupying the 4th tetrahedral site. This produces the observed pyramidal geometry with bond angles $\approx 107.8^\circ$. The lone pair acts as a "phantom hydrogen" in the strand ordering, occupying space but contributing no bonding crossings.*
 
-*This establishes the computational programme: every small molecule's geometry is determined by the LP dual of its molecular braid, with no geometric input required.*
+*Across small covalent hydrides, equilibrium bond geometry follows directly from the linear-programming dual of the molecular braid without external spatial coordinates.*
