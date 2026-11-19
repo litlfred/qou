@@ -60,8 +60,8 @@ BUILD_DATE=$(git -C "$ROOT" show -s --format=%cs HEAD)
   cat "$TEMPLATE"
   printf '\n%% ── folio identity, continued ──\n'
   # Block sources live under folio/, not the pre-rename content/.
-  printf '\\renewcommand{\\sourcebase}{\\foliorepobase/blob/main/folio/}\n'
-  printf '\\renewcommand{\\leansrcbase}{\\foliorepobase/blob/main/folio/%s/lean/}\n' "$PAPER"
+  printf '\\renewcommand{\\sourcebase}{\\foliorepobase/blob/%s/folio/}\n' "$DEFAULT_BRANCH"
+  printf '\\renewcommand{\\leansrcbase}{\\foliorepobase/blob/%s/folio/%s/lean/}\n' "$DEFAULT_BRANCH" "$PAPER"
   # The ∀ mark links the declaration's rendered page in the Lean docs
   # published on gh-pages ($PAGES_BASE/lean/, doc-gen4), via the lookup
   # written below; a declaration those docs do not have keeps the
