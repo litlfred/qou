@@ -27,5 +27,5 @@ GHPAGES_BLOB="$REPO_BASE/blob/gh-pages"
 DEFAULT_PAPER=$(grep -oE "dir:[[:space:]]*\"[^\"]+\"" "$ROOT/folio/folio.ts" 2>/dev/null \
   | head -1 | sed -E 's/.*"([^"]+)"/\1/')
 # The default branch, for source links: origin's HEAD, else "main".
-DEFAULT_BRANCH=$(git -C "$ROOT" symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed 's#^origin/##')
+DEFAULT_BRANCH=$( { git -C "$ROOT" symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null || true; } | sed 's#^origin/##')
 DEFAULT_BRANCH=${DEFAULT_BRANCH:-main}
