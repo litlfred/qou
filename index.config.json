@@ -1,0 +1,49 @@
+{
+  "$schema": "folio-index-config/v1",
+  "_comment": "This checkout's ONE config (bean ymvt): the qou layer, importing qou.config.json, with its site recipe inline. Owner, 2026-11-19 (\"1 y\"): qou's web view is built by the same document-site builder as every document folio (site.build.extends document-folio), so its right-hand gutter, with the ∀ Lean panel, is the shared runtime's. `siteSteps: site:lean` publishes the Lean render at the route qou.json's `lean-docs` declaration names, READ from that branch store's mount (state:mount), never from a Lake build: the KG viewer (owner: \"use thin html and dynamic loading\"), or doc-gen4's static HTML as the fallback. `keep` lists every root entry of the publish branch the site build does not write and something still links: the README's loose files, the paper PDFs and the earlier renders. `lean` is deliberately NOT kept: the site build writes it from the mounted store, and a kept copy would shadow it (publish-site never overwrites a kept path).",
+  "layers": [
+    {
+      "name": "qou",
+      "source": {
+        "local": {
+          "at": "."
+        }
+      },
+      "site": {
+        "build": {
+          "extends": "document-folio",
+          "siteSteps": [
+            "site:lean"
+          ],
+          "keep": [
+            "papers",
+            "drafts",
+            "python-api",
+            "rust-api",
+            "schema-docs",
+            "content",
+            "axiom-report.txt",
+            "dependency-graph.svg",
+            "dependency-graph.dot",
+            "glossary.json",
+            "proof-objects.json",
+            "qou.pdf",
+            "main.pdf",
+            "paper.html",
+            "visualizer.html",
+            "quantum-observable-universe.pdf",
+            "quantum-observable-universe.md",
+            "mapping.json",
+            "builds.json",
+            "style.css"
+          ]
+        }
+      }
+    }
+  ],
+  "harnesses": [
+    {
+      "name": "qou"
+    }
+  ]
+}

@@ -2,6 +2,9 @@
   "name": "qou",
   "private": true,
   "type": "module",
+  "scripts": {
+    "site:lean": "bash scripts/site-lean.sh"
+  },
   "devDependencies": {
     "typescript": "^5.9.3"
   },

@@ -123,6 +123,28 @@
       ],
       "description": "The bean work-plan (beans/beans.json + beans/defs/, the layout the `beans` CLI reads through .beans.yml). Kept on its own branch, `cat/cat-harness/beans`, not on main (owner, 2026-10-10, re-confirmed 2026-11-15; issue #7642). The session-start hook installs the platform if it is absent and mounts it at `beans/` (`state:mount`); there is no read-only fallback (owner, 2026-11-15). An edit is pushed back with `bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push --id beans`, a splice with `expect` that never forces, so a bean edit is no longer a commit in a PR.",
       "_comment": "Same shape as the platform's own beans declaration (`scope: repository`, which dependents do not inherit, so qou declares its own) and as qou's fsh-guts entry above. The branch name is the owner's choice over the documented folio convention `cat/qou/beans`; the declaration names it explicitly, so no tool needs to compose it."
+    },
+    {
+      "id": "lean-docs",
+      "path": "lean/",
+      "scope": "repository",
+      "source": {
+        "kind": "branch",
+        "branch": "cat/folio-assistant-sci/lean-docs",
+        "keyedBy": "tip"
+      },
+      "graphTypologies": [
+        "lean"
+      ],
+      "coverage": {
+        "visualiser": [
+          {
+            "ref": "_site/lean/index.html",
+            "title": "Lean"
+          }
+        ]
+      },
+      "description": "The Lean render: the doc-gen4 HTML of the Lake packages under folio/<paper>/lean/ (the SOURCE, which stays in the folio), kept on its own branch and mounted at lean/, the way beans/ is (owner, 2026-11-19: \"not lean directory... lean repo branch\", \"needs to be mounted\"). `state:mount` puts the branch tip's lean/ on disk here; the site build's `site:lean` step (package.json) rails it into the site at the route `lean` (coverage.visualiser), and the document site's ∀ panel links each declaration's page there from the render's declarations/declaration-data.bmp. Written by the lean-docs-publish process (folio-assistant-sci): build with lean-html-docs, then `branch-store.ts push --id lean-docs`. Never committed to main (gitignored)."
     }
   ],
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."
