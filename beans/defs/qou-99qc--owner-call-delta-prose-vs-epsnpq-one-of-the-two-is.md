@@ -4016,3 +4016,30 @@ Exact in q (sympy), β_Bor on Wp/Wn:
 - Tr_K β: p = −P(q)/q⁵, n = −P(q)/q⁷ with P = q¹²−3q¹⁰+3q⁸−5q⁶+3q⁴−3q²+1; ratio n/p = q⁻² as C predicts. At q₀: 3.32348, 2.69752.
 - Pair-resolved E_ij depend on the word: p (−0.002351, +0.001919, +0.000432), each ∝ h³ or h⁴; n (−0.112024, −0.109979, −0.111330).
 - But the SUMS are word-independent: Σ_{i<j} E_ij = 0 (p), −1/3 (n), and Σ Q_i² = 1 (p), 2/3 (n), because Q_iQ_j is diagonal and its pair-sum is constant on each weight space. So a uniform Coulomb sum is static charge counting: the braid only redistributes it among pairs. The word can matter only through a pair-dependent weight (a distance or crossing-number kernel), which is underived. Scope (a).
+
+PRE-REGISTRATION 2026-11-18 19:25Z (one-strand marker, owner "go"). Marker = Jucys–Murphy element of
+the marked strand, which lives in H₃ itself, so no new parameter: L₀ = 1, L₁ = σ₀², L₂ = σ₁σ₀²σ₁
+(strands 0,1,2; β_Bor = (σ₀σ₁⁻¹)³ is a pure braid, so strand k ends at k). Compute exactly at z_D:
+  M_k := tr(β L_k)/tr(β) − 1,  k = 0,1,2.
+Report all three readings below, for every placement (uud: d at 0/1/2; udd: u at 0/1/2), and
+the n − p difference for all 3×3 placement pairs. Charges u = +2/3, d = −1/3. Readings fixed now:
+  (A) Σ_k Q_k M_k      (B) Σ_k Q_k² M_k      (C) M_{k_odd} (odd-quark strand only).
+No reading is selected after the fact; target +0.1378 % is compared, not fitted. The trace no-go
+(PR #8517) does not forbid a split here: L_k is a product of σ's, but θ maps strand k to strand
+2−k, so a split must come from comparing different strands.
+
+WITHDRAWN 2026-11-18 19:23Z: the 19:25Z one-strand marker pre-registration above is withdrawn unrun; the owner said "no" to it. Nothing was computed.
+
+PRE-REGISTRATION 2026-11-19 05:10Z (owner "A" + "derive instead of 4 choices"). Charge-insertion EM term, ONE rule, fixed before computing:
+  Δ_EM := m_e · [ t(W_n) − t(W_p) ],  t(W_N) := Tr_{W_N}( K^{⊗3} (Q₁₂+Q₂₃) V³ ) / [2]_q³
+where V = σ₁σ₂⁻¹ on the 3-dim weight spaces of PR #8518 (NucleonWeightSpaceTwoTerm.lean), K = diag(q,q⁻¹) per strand, [2]_q³ = quantum dim of V^{⊗3}.
+Derivation of the weighting (closes #8518's plain/KnKp/Kp3/q menu): convention D's Markov trace IS the U_q(sl2) quantum trace Tr(K^{⊗n}·)/[2]^n (check: Tr_q(σ)/[2]² = q³/(q²+1) = z_D). K commutes with the braid, so restricting to a weight space multiplies by q^{2T³}: q on W_p, q⁻¹ on W_n. No "connected" subtraction, no α_EM factor, no per-anchor normalisation. Target n−p EM part is lattice comparison only (≈ −0.6 to −1.0 MeV); total 1.29333 MeV. Value is reported whatever it is.
+
+RESULT 2026-11-19 05:15Z (rule pre-registered 05:10Z, exact sympy, /tmp scratch emA.py; proton q₀ = 1.1099785827513808, mp.dps 60):
+  check: Tr(K⊗K Ř)/[2]² = q³/(q²+1) = z_D symbolically (weighting derived, not chosen).
+  t(W_n) − t(W_p) = (2q¹⁴−2q¹²−9q¹⁰+20q⁸−26q⁶+18q⁴−13q²+4) / (9q⁴(q²+1)³);  q→1 limit −1/12 (classical Σ QᵢQⱼ).
+  at q₀: −0.0734705048628237;  Δ_EM = m_e·(…) = −0.0375433509 MeV.
+  Sign matches lattice (proton heavier from EM); magnitude ~15–25× short of lattice −0.6…−1.0 MeV (comparison only).
+  87 % of the value is the q=1 classical charge sum; the q-dependence moves it 12 %.
+  Same rule on the bare V³ gives tq(W_n)/tq(W_p) = q⁻² exactly (−18.8 % at q₀), the strong-side 150× problem, unchanged.
+  Remaining gap is the ENERGY UNIT of the charge term, not the trace: no trace choice can supply ×15–25; adding α_EM makes it 137× smaller.
