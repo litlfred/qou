@@ -1,25 +1,24 @@
-The Frobenius pairing makes $A$ self-dual. The motivating instance is the quantum-dimension pairing of $\mathbf{Rep}(\mathrm{SU}_q(2))$ (see [example](#ex:frobenius-pairing-su2)). 
-
-Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) with multiplication $\mu \colon A \otimes A \to A$ and Frobenius form $\int_A \colon A \to \mathbf{1}$. The **Frobenius pairing** is the composite:
+Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) with multiplication $\mu \colon A \otimes A \to A$ and Frobenius form $\int_A \colon A \to \mathbf{1}$. The **Frobenius pairing** is the composite
 
 ```tex
 \begin{equation}\label{eq:frobenius-pairing}
-\begin{tikzcd}[column sep=2.5em]
+\langle -, - \rangle \;=\; \textstyle\int_A \circ \mu \colon\;
+\begin{tikzcd}[column sep=2.5em, ampersand replacement=\&]
   A \otimes A \ar[r, "\mu"]
-  & A \ar[r, "\int_A"]
-  & \mathbf{1}
+  \& A \ar[r, "\int_A"]
+  \& \mathbf{1}.
 \end{tikzcd}
 \end{equation}
 ```
 
-The Frobenius pairing is *non-degenerate* when it induces an isomorphism $A \xrightarrow{ \sim } A^{\vee}$. Equivalently, the snake identities hold: there exists a coevaluation $\tilde{\eta} \colon \mathbf{1} \to A \otimes A$ such that the composites
+It is **non-degenerate** if there is a morphism $\tilde{\eta} \colon \mathbf{1} \to A \otimes A$ such that the composite
 
 $$
-A \xrightarrow{\rho^{-1}} A \otimes \mathbf{1}
-  \xrightarrow{\mathrm{id} \otimes \tilde{\eta}} A \otimes A \otimes A
+A \xrightarrow{\rho_A^{-1}} A \otimes \mathbf{1}
+  \xrightarrow{\mathrm{id} \otimes \tilde{\eta}} A \otimes (A \otimes A)
   \xrightarrow{\alpha^{-1}} (A \otimes A) \otimes A
-  \xrightarrow{(\int_A \circ \mu) \otimes \mathrm{id}} \mathbf{1} \otimes A
+  \xrightarrow{\langle -, - \rangle \otimes \mathrm{id}} \mathbf{1} \otimes A
   \xrightarrow{\lambda_A} A
 $$
 
-and its mirror equal $\mathrm{id}_A$. For $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, this recovers the quantum-dimension pairing.
+and its mirror image are both $\mathrm{id}_A$.
