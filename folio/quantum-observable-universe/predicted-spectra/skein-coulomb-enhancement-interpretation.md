@@ -1,4 +1,4 @@
-The leading-order half-life formula ([hadron half-life](#prop:hadron-half-life)) evaluates the Skein polynomial on the nucleus alone. It treats the emitted electron as a free particle. However, the electron trefoil $T_{2,3}$ ([electron knot](#def:electron-knot)) traverses the Coulomb field of $Z$ protons as it exits the nucleus. Each electron-proton crossing carries a Skein weight. We evaluate the Skein polynomial on the full outgoing link $T_{2,3} \cup \mathcal{N}(Z, N)$. This naturally generates the Coulomb enhancement.
+The leading-order half-life formula ([hadron half-life](#prop:hadron-half-life)) evaluates the Skein polynomial on the nucleus alone. It treats the emitted electron as a free particle. However, the electron trefoil $T_{2,3}$ ([electron knot](#def:electron-knot)) traverses the Coulomb field of $Z$ protons as it exits the nucleus. Each electron-proton crossing carries a Skein weight. We evaluate the Skein polynomial on the full outgoing link $T_{2,3} \cup \mathcal{N}(Z, N)$. This generates the Coulomb enhancement.
 
 We evaluate precisely the same Skein polynomial on the complete outgoing link rather than truncating at the weak vertex.
 

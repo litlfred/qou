@@ -1,28 +1,8 @@
-Nature offers four two-nucleon channels and binds exactly one of them. Three ---
-$pp$, $nn$, and the symmetric $pn$ state --- carry total isospin $T = 1$ and are
-unbound; the antisymmetric $pn$ state, the deuteron, carries $T = 0$ and binds at
-$2.224566\ \mathrm{MeV}$. Any account of nuclear binding in this framework has to
-reproduce that pattern before it reproduces a number.
+Four two-nucleon states exist in nature: the three isospin-triplet ($T = 1$) states ($pp$, $nn$, and the symmetric $pn$ configuration), none of which forms a bound state, and the unique isospin-singlet ($T = 0$) antisymmetric $pn$ state—the deuteron—which binds at $2.224566\;\mathrm{MeV}$. A first-principles theory of nuclear interactions must account for both the discrete selection of the $T = 0$ channel and the numerical value of its binding energy.
 
-Two mechanisms are in play, and this section keeps them apart because they are distinct
-objects.
+Two distinct algebraic mechanisms operate on the two-nucleon braid, and maintaining their separation is essential:
 
-The **isospin** mechanism *selects*. It assigns each channel the Wedderburn weight of
-its isospin block, $\mu_+$ for the triplet and $\mu_-$ for the singlet, and the
-ordering $\mu_- < \mu_+$ holds identically in $q$ under convention D. With binding
-$B = -\alpha\log\mu$, decreasing in $\mu$, the singlet is always the more strongly
-bound channel. No multiplicity is counted and no parameter is tuned.
+1. **Isospin channel selection:** Each two-nucleon isospin channel carries the Wedderburn weight of its symmetry block, $\mu_+$ for the symmetric triplet and $\mu_-$ for the antisymmetric singlet. Under Convention D ($z_D = q^3/(q^2+1)$), the strict inequality $\mu_- < \mu_+$ holds identically for all $q > 1$. Because the logarithmic binding functional $B = -\alpha\log\mu$ is strictly decreasing in $\mu$, the isospin singlet $T = 0$ is unconditionally more strongly bound than the triplet $T = 1$ without parameter tuning.
+2. **Interface bond evaluation:** In the composite mass pipeline, an inter-nucleon bond contributes a Markov scalar $\mu = z_D + d$ with deformation parameter $d \in [-h, 0]$, from which the quantitative binding energy is extracted via the same logarithmic functional.
 
-The **interface** mechanism *produces the number*. A single inter-nucleon bond
-contributes a Markov scalar $\mu = z + d$ with $d$ ranging over the admissible
-interval $[-h, 0]$, and the binding follows from the same logarithm. This is the
-mechanism the mass pipeline actually evaluates.
-
-The section proceeds in that order: the ordering that selects the channel, the
-refutation of the alternative it replaces, the selection map on colour systems, the
-branching identity that ties the isospin weights to the algebra, and then the
-measurement of where the interface band sits relative to the two weights. The answer
-to the last question is negative and sharp --- the band lies strictly between
-$\mu_-$ and $\mu_+$, so no admissible interface element realises either --- which is
-why the two mechanisms must be described as computing on disjoint sets rather than as
-two views of one computation.
+This section proves the universal ordering $\mu_- < \mu_+$, refutes the naive content-keyed interface alternative, defines the isospin selection map on colour systems, and establishes the branching identity tying the isospin weights to $H_n(q)$. Measuring the admissible interface band $[z_D - h, z_D]$ against $\mu_-$ and $\mu_+$ reveals that the interface interval lies strictly between the two Wedderburn weights ($\mu_- < z_D - h < z_D < \mu_+$), proving that channel selection and bond magnitude operate on disjoint algebraic strata, while the $\mathrm{SO}(3)$ spin fibre and spin–isospin product generate Wigner's $\mathrm{SU}(4)$ supermultiplet symmetry.

@@ -22,7 +22,7 @@ The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) bridges the arc
 
 ### Inverting the ontology
 
-The QOU framework reverses the classical priority: the discrete trace is fundamental, while the continuous volume is emergent. The colored Jones polynomials are finite algebraic evaluations of Markov traces. The hyperbolic volume simply describes the asymptotic scaling of these exact categorical evaluations. The macroscopic continuum shadow emerges from the accumulated algebraic drag of discrete crossing resolutions.
+The QOU framework reverses the classical priority: the discrete trace is fundamental, while the continuous volume is emergent. The colored Jones polynomials are finite algebraic evaluations of Markov traces. The hyperbolic volume describes the asymptotic scaling of these exact categorical evaluations. The macroscopic continuum shadow emerges from the accumulated algebraic drag of discrete crossing resolutions.
 
 ### Consequences for the mass formula
 

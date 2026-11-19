@@ -1,6 +1,6 @@
 ## Statement
 
-> **Scope note (2026-11-15).** The single-generator piece was labelled "proved" and is not: its form and the scale $\alpha$ are chosen so that the result matches the mass table, and the $0.18\%$ mean error is a fit diagnostic, not a derivation. Only the leading-order piece is an identity. The empirical accuracy figure is a comparison, not part of the claim, and is recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy).
+**Scope of the three expansion pieces.** In the graded expansion below, only the leading-order piece $\rho_K^{\mathrm{LO}}$ is a proved algebraic identity (by Wenzl's Markov multiplicativity). The single-generator piece $\rho_K^{\text{single-gen}}$ is an empirical logarithmic model whose prefactor $\alpha$ is chosen against the mass table (yielding the $0.18\%$ mean residual recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy)), while the pair-generator piece $\rho_K^{\text{pair-gen}}$ remains open.
 
 
 We expose the graded expansion of the categorical density $\rho_K$ by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathfrak{m}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:

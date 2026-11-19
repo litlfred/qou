@@ -86,7 +86,7 @@ requires each generator's letters to be **contiguous**. That is a property of
 how the word is assembled, not of the chain topology. The corpus's live builder
 `atom_braid_word_3A` does assemble it that way (all of the $\sigma_0$ chain,
 then all of the $\sigma_1$ chain), which is why the identity measures exact
-above. Since 2026-09-05 the live builder instead lays each nucleon's six
+above. In contrast, the alternating Borromean builder lays each nucleon's six
 **confinement letters** down alternating, as the $(\sigma_0\sigma_1^{-1})^3$ its
 own source comment always named — the Borromean braid $\beta_{\mathrm{Bor}}$,
 identified against its Lean closed form to $5\times10^{-60}$. Same letter

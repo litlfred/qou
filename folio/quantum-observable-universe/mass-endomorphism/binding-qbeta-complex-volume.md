@@ -152,7 +152,7 @@ sign between the anchors, that forces a substrate point $q^{*}$
 where $\mathrm{Im}\,\mathfrak{V}(u(q^{*})) = 0$ — the deformed complex
 volume purely real. This last is **conditional on a sign flip the data
 does not establish**: each anchor value carries a CAL-3 propagated
-uncertainty of $\pm 1.26$ (130× / 32× the value); only the swing
+uncertainty of $\pm 1.26$ ($130\times$ / $32\times$ the value); only the swing
 $S(\text{muon}) - S(\text{proton})$ is resolved (the cross-anchor $c_3$
 difference, with $\mathrm{Vol}(4_1)$ cancelled). So it is a conditional
 structural statement, not an established prediction. This makes precise that $\Phi_b$ touches binding **only**

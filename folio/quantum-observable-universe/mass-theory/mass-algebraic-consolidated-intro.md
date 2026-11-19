@@ -1,7 +1,5 @@
-The algebraic machinery developed in the previous sections—Wedderburn decomposition, Frobenius pairing, Hecke characters—now evaluates the mass formula on specific braids.
+With the Wedderburn decomposition and the Hoefsmit seminormal basis in place, the mass functional reduces to explicit operator evaluations on braid words. This section develops the three algebraic pillars of that evaluation:
 
-The transfer matrix encodes how the mass integrand propagates across braid crossings. The Skein mass lemma reduces the mass of a composite knot to linking energies plus volume contributions. The corrected Markov trace accounts for the trefoil's crossing asymmetry that produces the observed $m_n > m_p$ ordering.
-
-The section also establishes the Frobenius Gram matrix, the archimedean realisation uniqueness theorem, the $\mathfrak{Q}_\beta$ categorical precision ladder, and the filtration bridges connecting the algebraic mass machinery to the number-theoretic structure of the substrate.
-
-The arc concludes by wiring the substrate-level Markov-trace evaluation into the substrate-flow numerics. The output is the consolidated algebraic-mass closed form together with its substrate-flow data.
+1. **Transfer-matrix factorisation and skein mass:** The transfer-matrix operator propagates crossing weights along a closed braid so that the skein polynomial and the $\beta$-decay transition amplitude factor as matrix products, reducing composite link masses to linking numbers plus hyperbolic volume increments.
+2. **Convention-D Markov corrections and the Temperley–Lieb radical:** Under the canonical Markov parameter $z_D = q^3/(q^2+1)$ (Convention D), the three-strand antisymmetriser weight $y_{(1^3)}$ vanishes identically. The radical of the Markov Gram pairing $G$ on $H_n(q)$ coincides with the kernel of the Temperley–Lieb quotient $H_n(q) \twoheadrightarrow \mathrm{TL}_n(q)$, so $G$ descends to a positive-definite sesquilinear form on $\mathrm{TL}_n(q)$ while blocking any naive unquotiented Connes distance.
+3. **Bi-filtration and the adelic substrate:** The Lusztig bar involution and the Hermitian star involution induce a joint cellular-depth and jet-degree bi-filtration on $H_n(q)$, linking the algebraic substrate to its archimedean realization $\tau_{\mathrm{arch}}$.

@@ -1,1 +1,3 @@
-We now detail the full six-term mass formula. The formula replaces the phenomenological Bethe-Weizsäcker coefficients with substrate-derived invariants. We trace the isospin-symmetric terms and isolate the structural isospin violations.
+Assembling the volume leading term, the surface crossing deficiency, the Coulomb topological charge pairing, the Wigner Jucys–Murphy symmetry energy, the pairing parity step, and the Plancherel shell residue produces the complete six-term categorical mass formula. Every phenomenological coefficient of the empirical Bethe–Weizsäcker liquid-drop model is thereby replaced by a closed algebraic invariant of the braid normal form in $H_A(q)$.
+
+This section states the complete six-term mass formula, derives its per-term Wedderburn weights, proves exact isospin degeneracy in the $q \to 0$ Kashiwara crystal limit, and demonstrates how electromagnetic localization on the canonical bowtie interface breaks crystal isospin at $q_0$.

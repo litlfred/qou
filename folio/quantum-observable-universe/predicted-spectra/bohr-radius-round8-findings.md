@@ -16,7 +16,7 @@ $$
 
 The bare skein parameter is $h_b = q - q^{-1}$. The K-shell-dressed skein parameter is $h_d = q^5 - q^{-5}$. The Markov parameter is $z = q^3/(q^2+1)$ (convention D, canonical since the ruling of 2026-08-15). The transfer-matrix chain generates multiplicative cross-terms $h_b \cdot h_d$. These cancel exactly.
 
-**Convention note (2026-08-24).** This line previously quoted $z = \sqrt{q}/(q+1)$, which is convention C. The cancellation asserted immediately above is between $h_b$ and $h_d$ and does not involve $z$, so it is unaffected. The *numerical* findings elsewhere in this document were computed in the C frame and are **scoped, not recomputed** — they are correct as recorded for the convention they were produced in, and re-deriving them under D is separate work. Note also that $z_C \le 1/2$ for every $q > 0$ whereas $z_D$ is unbounded, with $z_D < 1$ only for $q < 1.4656$; at the substrate anchor $q_0 \approx 1.1099786$ both lie in $(0,1)$, with $z_C \approx 0.4993203$ and $z_D \approx 0.6126880$.
+**Convention comparison ($z_D$ versus $z_C$).** The ratio cancellation immediately above depends only on $h_b$ and $h_d$ and is independent of $z$. The auxiliary numerical tables below were evaluated at the Convention-C parameter $z_C = \sqrt{q}/(q+1) \approx 0.4993203$ rather than the canonical Convention-D parameter $z_D = q^3/(q^2+1) \approx 0.6126880$ at $q_0 \approx 1.1099786$.
 
 The kinetic ($h_d$) and Coulomb ($h_b$) contributions to $V_i$ decouple linearly. This additive decomposition relies on the permutation structure of the optimal ordering.
 

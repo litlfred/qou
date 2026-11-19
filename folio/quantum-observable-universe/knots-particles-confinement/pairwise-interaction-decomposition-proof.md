@@ -6,12 +6,12 @@ Part 3 rests on the locality of an elementary crossing. Read the word through it
 
 The empty word crosses no pair, so induction on the length of $w$ gives $|P(w)| \le \ell$. If $P(w)$ is all of the $\binom{n}{2}$ pairs then $\binom{n}{2} \le \ell$. $\square$
 
-## Status of the three parts
+## Logical dependencies of the three parts
 
 The parts do not carry equal weight, and the difference matters to how the
 proposition should be read.
 
-| part | status | rests on |
+| part | epistemic tier | rests on |
 |---|---|---|
 | 1. composite reduction | the hexagon axiom, solved for $c_{X \otimes Y, Z}$ | axiom of `BraidedCategory` |
 | 2. route independence | theorem | hexagon + naturality of the braiding |

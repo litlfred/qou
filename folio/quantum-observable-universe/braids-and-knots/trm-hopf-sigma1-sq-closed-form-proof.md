@@ -27,13 +27,7 @@ $$
 using $q^4 + 1 = q^2 [2]_{q^2}$ and $q^2 + 1 = q\,[2]_q$. No half-integral
 power of $q$ appears; the result is rational in $q$.
 
-**Corrected 2026-08-09.** This derivation previously ran on the excised
-convention C, $z = 1/(q^{1/2}+q^{-1/2})$, where $(q-q^{-1})z$ collapses to
-$q^{1/2} - q^{-1/2}$ and the answer is $1 + (q-1)/q^{1/2}$. That collapse — and
-with it every half-power in the old statement — is a property of C alone: it
-works because $q - q^{-1}$ factors as $(q^{1/2}-q^{-1/2})(q^{1/2}+q^{-1/2})$ and
-C is the reciprocal of the second factor. Under D no such cancellation occurs
-and none is needed.
+**Contrast with Convention C.** Under the excised convention C ($z = 1/(q^{1/2}+q^{-1/2})$), the product $(q-q^{-1})z$ collapses to $q^{1/2} - q^{-1/2}$ because $q - q^{-1}$ factors as $(q^{1/2}-q^{-1/2})(q^{1/2}+q^{-1/2})$ and C is the reciprocal of the second factor, yielding $1 + (q-1)/q^{1/2}$. Under Convention D ($z_D = q^3/(q^2+1)$), the derivation remains entirely inside the rational function field $\mathbb{Q}(q)$ without adjoining $q^{1/2}$.
 
 Stabilisation ([`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive)
 axiom 3 and its $\sigma_n^{-1}$ consequence) scales the trace by
