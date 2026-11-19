@@ -1,7 +1,7 @@
 ---
 # qou-x4nh
 title: 'V2 [Part I Foundations Drain]: Fix All L1-L4 Lean, Voice & Anachronism Leaks in Ch 1 (quantum-universes) & Ch 2 (quantum-observable-universes)'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - part-1-foundations
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-19T08:35:24Z
+updated_at: 2026-11-19T09:19:46Z
 parent: qou-d4kh
 ---
 
@@ -41,3 +41,8 @@ Source witness: `computations/audits/monograph-lean-and-voice-leak-audit.witness
   - Relocate or reframe `quantum-universes/quantum-universe.md:28-38` (`**On the substrate parameter.**` and `**This is a choice of instance...**`), remove premature `"on the Hecke basis of A"` in `quantum-universe.md:8` (or define the braiding ordering intrinsically on $A$), replace premature $\dim_q$ / $[n]_q$ / $\mathrm{SU}_q(2)$ in Chapter 1 blocks with the intrinsic categorical trace dimension $\dim_{\mathbf{C}}(\lambda) := \mathrm{tr}(\mathrm{id}_{V_\lambda}) \in R$ until $q$ is extracted from the braiding in Chapter 2 Section 7 (`sec:substrate-parameter`).
 - **L4b (Forward cross-reference links `](#label)` in Chapters 1 & 2):**
   - Resolve forward links such as `quantum-universe.md:4` (`[Frobenius–Hopf algebra](#def:frobenius-hopf-substrate)` pointing to Ch 2 §9), `quantum-universe-axiom-motivation.md:23` and `axiom-independence.md:9` (`#thm:frobenius-codim-universal` in `mass-theory`), and intra-chapter forward links in `quantum-universes` and `quantum-observable-universes`.
+
+
+
+## Completed (2026-11-19)
+- Drained all L1, L2, L3, and L4a leaks in `quantum-universes/` (`0 L1, 0 L2, 0 L3, 0 L4a`) and all L1, L2, and L3 leaks in `quantum-observable-universes/` (`0 L1, 0 L2, 0 L3`).

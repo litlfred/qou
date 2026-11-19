@@ -1,7 +1,7 @@
 ---
 # qou-ig2d
 title: 'V0 [Owner Ruling 2026-11-19]: Defer Wedderburn Semisimplicity Past QOU to Ch 5 (SemisimpleBlockData) & Move def:frobenius-hopf-substrate to Ch 1'
-status: in-progress
+status: completed
 type: feature
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - quantum-universe-axioms
     - part-1-foundations
 created_at: 2026-11-19T08:46:33Z
-updated_at: 2026-11-19T08:46:33Z
+updated_at: 2026-11-19T09:19:46Z
 parent: qou-d4kh
 ---
 
@@ -34,3 +34,10 @@ Cross-linked beans: `qou-d4kh` (parent epic), `qou-x4nh` (*V2 Part I Foundations
 3. **3-Axiom `def:quantum-universe` & Deferral of Cyclotomic Generic Ring to Chapter 5 (`braids-and-knots`):**
    - Update `quantum-universes/quantum-universe.md` to state the 3 axioms (**Temporal braiding**, **Frobenius–Hopf substrate action**, **Symmetric Frobenius trace** + $\Omega^1(A)$), removing Axiom 4 and relocating the cyclotomic generic ring $R = \mathbb{Z}[q, q^{-1}][\Phi_d(q)^{-1} : d \ge 2]$ discussion to Chapter 5 (`braids-and-knots`) where Hecke Wedderburn semisimplicity and $[m]_q$ unit conditions are introduced.
    - Update Chapter 1 consumers (`quantum-universe-axiom-motivation.md`, `quantum-universe-exists.md`, `axiom-independence.md`, `grothendieck-group-of-a-qou.md`, `chern-character.md`) and drain all Class L1, Class L2, and Ch-1 Class L3 leaks in Chapters 1 and 2.
+
+
+
+## Completed (2026-11-19)
+- **Lean 4 Foundation Refactor:** Excised the 10 global Wedderburn fields from `QuantumUniverse` in `QOU/QuantumObservableUniverse/CategoricalFoundations.lean` (and sibling files `quantum-universes/quantum-universe.lean` and `quantum-observable-universes/quantum-observable-universe.lean`) and factored them into standalone `structure SemisimpleBlockData {R : Type*} [CommRing R] (U : QuantumUniverse.{u, v} R)`. Updated `TrivialWitness.lean` and `GrothendieckChern.lean`, added sorry-free real positivity/unit theorems `qBracketSum_real_pos`, `qBracketSum_real_ne_zero`, and `qBracketSum_real_isUnit` in `QGenericBase.lean`, re-emitted `.olean` caches in topological order, and verified with `bash scripts/lean-verify.sh`, `lean-borrowed-name-audit.py --strict`, and `lean-definition-collapsed-audit.py --strict`.
+- **Chapters 1 & 2 Manuscript Refactor:** Moved `frobenius-hopf-substrate` to `quantum-universes/` before `quantum-universe`, removed Wedderburn semisimplicity from the QOU axioms and independence matrix, reframed $K_0$ and the Chern character via finitely generated projective trace without Wedderburn axioms or deferred-axiom language, and drained all Class L1/L2/L3/L4a leaks across `quantum-universes/` (0 L1, 0 L2, 0 L3, 0 L4a) and `quantum-observable-universes/` (0 L1, 0 L2, 0 L3).
+- **Chapter 5 (`braids-and-knots/`) 3-Layer Framing & Leak Drain:** Framed `hecke-algebra-from-braiding.md` via the three exact mathematical layers (integral/cellular Ocneanu + Graham-Lehrer over $\mathbb{Z}[q, q^{-1}]$, Geer-Patureau-Mirand modified trace on negligible/non-semisimple blocks, and Dipper-James/Wenzl Wedderburn splitting as an unconditional theorem whenever $[n]_q! \in R^\times$ and automatically for every real $q > 0$), and drained all L1/L2/L3 leaks in `braids-and-knots/` to `0 L1, 0 L2, 0 L3`.
