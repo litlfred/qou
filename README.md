@@ -1,16 +1,14 @@
-# lean-docs — rendered Lean docs for qou (state branch, never merged)
+# lean-docs — Lean knowledge-graph viewer for qou (state branch, never merged)
 
-doc-gen4 HTML for the qou Lean packages **QOU, UGB, Fred2005**, at `lean/`, for the
-site build to mount and publish at the `lean` route (and for the paper PDF's ∀ links,
-which read `lean/declarations/declaration-data.bmp`).
+A thin viewer (`lean/index.html`, `viewer.js`) plus JSON shards loaded on demand
+(`lean/data/index.json`, `names.json`, `m/<Module>.jsonld`, `m/<Module>.<k>.sig.json`)
+for the qou Lean packages **QOU, UGB, Fred2005** and their **content-block sibling
+modules** (QOUBlocks, UGBBlocks, Fred2005Blocks). Mounted at `lean/` by
+`state-mount --id lean-docs`; the site build copies it to the `lean` route.
 
-- Source render: lake-cache branch `cat/folio-assistant-sci/lake-cache/qou-docgen4-v4-24-0`
-  (doc-gen4 1cd7a11, Lean v4.24.0, mathlib f897ebc; built 2026-10-11 from qou 5697c31 by
-  `lake -R -Kenv=dev build QOU:docs UGB:docs Fred2005:docs`).
-- Staged with `folio-assistant-sci/adapters/paper/lean/lean-render.ts --modules QOU,UGB,Fred2005
-  --no-rail`: Lake `.hash`/`.trace` left out, Mathlib/core pages pruned and their links
-  rewritten to the community mathlib4 docs. **Not railed** — the site build's rail pass
-  (`rail-standalone-pages.ts --foreign-site`) adds the harness chrome at publish.
-- Known gap: the render predates every Lean change since 5697c31, and content-block
-  sibling `.lean` files (the `QOUBlocks` library) are not documented at all.
-  See `manifest.json`.
+- Open a declaration: `lean/#/m/<Module>/<declName>` (module page: `lean/#/m/<Module>`).
+  `data/names.json` is `[[declName, moduleIdx, kindIdx], ...]` indexing `data/index.json` `modules`.
+- Built from qou 7341d18daa5d: doc-gen4 1cd7a11 `single` per module (doc-data only; its
+  static HTML is not published), Lean v4.24.0, mathlib f897ebc, then
+  `lean-kg-publish.ts --no-rail`. **Not railed** — the site build adds the chrome.
+- Provenance, counts and coverage: `manifest.json`.

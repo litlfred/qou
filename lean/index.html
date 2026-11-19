@@ -1,1 +1,42 @@
-<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="./style.css"></link><link rel="icon" href="./favicon.svg"></link><link rel="mask-icon" href="./favicon.svg" color="#000000"></link><link rel="prefetch" href=".//declarations/declaration-data.bmp" as="image"></link><title>Index</title><script defer="true" src="./mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="./";</script><script type="module" src="./jump-src.js"></script><script type="module" src="./search.js"></script><script type="module" src="./expand-nav.js"></script><script type="module" src="./how-about.js"></script><script type="module" src="./instances.js"></script><script type="module" src="./importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">Index</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='./search.html';">Search</button></form></header><main><a id="top"></a><h1>Welcome to the documentation page </h1><p>This was built using Lean 4 <a href="https://github.com/leanprover/lean4/tree/797c613eb9b6d4ec95db23e3e00af9ac6657f24b">4.24.0</a></p></main><nav class="nav"><iframe src="./navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lean declarations</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="viewer.css">
+<!--
+  Third-party scripts are pinned and carry Subresource Integrity hashes, computed
+  from the files in each package's npm tarball (jsDelivr's /npm/ path serves them
+  unchanged). Bumping a version means recomputing its hash:
+    curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A
+  DOMPurify sanitises every piece of HTML viewer.js puts into the page; without it
+  the viewer shows plain text. MathJax's ui/safe extension filters the URLs and
+  attributes TeX can set; MathJax loads it (and any autoloaded TeX extension) from
+  the same pinned directory, which SRI cannot cover.
+-->
+<script>window.MathJax = { loader: { load: ["ui/safe"] }, tex: { inlineMath: [["$", "$"]], displayMath: [["$$", "$$"]] }, options: { skipHtmlTags: ["script", "style", "textarea", "pre", "code"] } };</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.4.17/dist/purify.min.js" integrity="sha384-P0JNneQf81HOl9VwNXK76cQ9VMD6Nfsnepxb0cCOg8+UzEdzgPHAPV4wVQrvYQSx" crossorigin="anonymous"></script>
+<script type="module" src="viewer.js"></script>
+</head>
+<body class="lkg">
+<header class="lkg-head">
+  <a class="lkg-title" href="#/">Lean declarations</a>
+  <span class="lkg-totals" id="totals"></span>
+  <form id="search" class="lkg-search" role="search" onsubmit="return false">
+    <input id="q" type="search" placeholder="Search declarations…" autocomplete="off" aria-label="Search declarations">
+    <ol id="hits" class="lkg-hits" hidden></ol>
+  </form>
+</header>
+<div class="lkg-body">
+  <nav class="lkg-tree" aria-label="Modules">
+    <input id="filter" type="search" placeholder="Filter modules…" aria-label="Filter modules">
+    <div id="tree"></div>
+  </nav>
+  <main id="main" class="lkg-main"><p class="lkg-note">Loading…</p></main>
+</div>
+</body>
+</html>

@@ -4,29 +4,35 @@
  "authoritative": false,
  "keyedBy": "tip",
  "source": {
-  "ref": "lake-cache/qou-docgen4-v4-24-0",
-  "qouSha": "5697c3130d79ead793a58c1a0a984a2e49b1365f",
+  "qouSha": "7341d18daa5d103cc9fa41bebdf054eda96ad3d7",
   "docgen4": "1cd7a1113090e216703e323e8fdcdf099f0a9c8a",
   "toolchain": "leanprover/lean4:v4.24.0",
   "mathlib": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
-  "builtAt": "2026-10-11T08:15:52Z"
+  "method": "doc-gen4 `single` per module, lean-direct (no Lake), against current oleans: library dirty closure rebuilt by scripts/lean-library-sweep.py (QOU 161, UGB 30, Fred2005 2, 0 red); content-block siblings (QOUBlocks 913, UGBBlocks 22, Fred2005Blocks 12) compiled lean-direct, 947/947 ok",
+  "builtAt": "2026-11-19T12:32:44Z"
  },
- "seededAt": "2026-11-19T08:56:14Z",
+ "seededAt": "2026-11-19T12:32:44Z",
  "graphs": [
   {
    "path": "lean",
+   "kind": "folio-lean-kg/v1",
+   "publisher": "folio-assistant-sci/adapters/paper/lean/lean-kg-publish.ts --no-rail",
    "modules": {
-    "QOU": 2980,
-    "UGB": 29,
-    "Fred2005": 2
+    "QOU": 3292,
+    "UGB": 31,
+    "Fred2005": 2,
+    "contentBlocks": 947
    },
-   "files": 3033,
-   "pages": 3018
+   "declarations": 71705,
+   "formalizing": 1420,
+   "files": 8483,
+   "bytes": 216847937
   }
  ],
  "coverage": {
   "paperDeclarations": 1242,
-  "withRenderedPage": 589,
-  "note": "measured against build/paper chapters' \\\\lean / \\\\blockannot names; ~526 of the 653 misses are declared only in content-block sibling .lean files (QOUBlocks), not in the library"
+  "inViewer": 1174,
+  "declarationUrl": "lean/#/m/<Module>/<declName>",
+  "note": "measured against build/paper chapters' \\lean / \\blockannot names; the 68 misses are names not declared in current source (renamed or folded into class fields); 143 linked names occur in more than one module (block siblings restate library declarations)"
  }
 }

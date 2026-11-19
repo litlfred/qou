@@ -1,0 +1,1 @@
+{"@context":{"lean":"lean:","block":"block:","imports":{"@type":"@id"}},"@graph":[{"@id":"lean:module:UGB","@type":"LeanModule","name":"UGB","imports":["lean:module:Init","lean:module:UGB.GrobnerShirshov","lean:module:UGB.BuchbergerPBW","lean:module:UGB.Introduction","lean:module:UGB.UnitalGroebner"],"declarations":0,"chunks":0}]}
