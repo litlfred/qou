@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T15:15:21Z
-updated_at: 2026-10-10T07:01:42Z
+updated_at: 2026-11-19T00:40:00Z
 parent: qou-5p7n
 ---
 
@@ -825,3 +825,7 @@ as `.lean` files.
 ## 2026-10-10 — pointer
 
 Tracked under related carrier M10 of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## 2026-11-19
+
+The four fabricated `PhiD4FConjecture` / `GeneralPhiD4FConjecture` instances are removed in #8523 (port of #7551). The classes now have no instances. The placeholder residual field is still not tied to a character difference, so this bean stays open.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-17T23:08:22Z
+updated_at: 2026-11-19T00:40:00Z
 parent: qou-v2om
 ---
 
@@ -3436,3 +3436,7 @@ The owner ruled that the γγ selection rule also covers the nuclear bond letter
 ## 2026-11-17 sibling sweep
 Residual (ii) work in CuspFactorBarAnomaly.lean from a sibling session. Left: verify, decide whether it closes residual (ii).
 Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-files/qou-sibling-consolidation/table.md). Source session archived; work not lost.
+
+## 2026-11-19 — #7418 ported as #8522
+
+PR #7418 (single-crossing chain factorizes; R12 reduces the b₃ cross term to `TowerSpan`) was 2311 commits behind main and is closed as superseded by #8522, which carries its Lean file, two probes and audit onto main. Re-verified there: lean-direct exit 0, 18 theorems with no sorryAx, both probes 6/6. A scope note marks R11 as measured on the superseded `atom_braid_word_3A`. Residual (ii) is unchanged and still open; the bean stays open.

@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T07:00:10Z
-updated_at: 2026-10-10T07:24:59Z
+updated_at: 2026-11-19T00:40:00Z
 ---
 
 One home for every bean whose subject is the mathematics of `chap:mass-endomorphism`
@@ -120,3 +120,7 @@ H_3 Wedderburn weights in `mass_endomorphism.py`, so no weight change is owed th
 Full correction on `qou-g16t`. The diagnosis-script item of M7 is done (ported, not
 retired). M14: the eight citation items are applied in the same PR; the
 `terashima-yamazaki2013` entry's authors are corrected to Teschner–Vartanov (id kept).
+
+## 2026-11-19 — core of #7551 ported as #8523
+
+Draft #7551 is closed as superseded by #8523, which carries `FibreQuantumTraceOnV3.lean`, the removal of `phiDConj_V3/V21/V111` and `defaultGeneralPhiD4F`, and `qbeta_delta_net_borromean_word_rerun_probe.py`. `trivialVortex` was already off main. #7551's bean edits and witness regenerations were not carried; its branch `claude/practical-carson-9wopuy` keeps them. Lean exit 0, no sorryAx.
