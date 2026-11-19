@@ -19,7 +19,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PAPER="quantum-observable-universe"
+. "$ROOT/scripts/lib/paper-env.sh"
+PAPER="$DEFAULT_PAPER"
 BASE=""
 PUSH=true
 BRANCH="$(git -C "$ROOT" rev-parse --abbrev-ref HEAD)"
@@ -79,7 +80,7 @@ META="$DIFF/main-diff.json"
 python3 -I - "$META" <<PY
 import json, sys
 json.dump({
-  "\$schema": "qou-paper-diff/v1", "paper": "$PAPER", "branch": "$BRANCH",
+  "\$schema": "folio-paper-diff/v1", "paper": "$PAPER", "branch": "$BRANCH",
   "commit": "$SHA", "baseCommit": "$BASE_COMMIT",
   "diffPages": int("${pages:-0}" or 0), "latexErrors": int("${errs:-0}" or 0),
   "latexmkExit": $rc, "addMarks": $added, "deleteMarks": $deleted,
@@ -95,7 +96,7 @@ $PUSH || args=(--no-push "${args[@]}")
 res=$(bash scripts/lib/gh-pages-put.sh "${args[@]}")
 echo "    gh-pages commit: $res"
 if $PUSH && [ "$res" != unchanged ]; then
-  echo "branch PDF: https://github.com/litlfred/qou/blob/gh-pages/$dest/$PAPER.pdf"
-  [ -f "$DIFF/main-diff.pdf" ] && echo "diff PDF:   https://github.com/litlfred/qou/blob/gh-pages/$dest/$PAPER-diff.pdf"
+  echo "branch PDF: $GHPAGES_BLOB/$dest/$PAPER.pdf"
+  [ -f "$DIFF/main-diff.pdf" ] && echo "diff PDF:   $GHPAGES_BLOB/$dest/$PAPER-diff.pdf"
 fi
 [ -f "$DIFF/main-diff.pdf" ] || { echo "diff PDF did not compile; see $DIFF/latexmk.log" >&2; exit 1; }

@@ -21,7 +21,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PAPER="quantum-observable-universe"
+. "$ROOT/scripts/lib/paper-env.sh"
+PAPER="$DEFAULT_PAPER"
 PDF=""
 PUSH=true
 while [[ $# -gt 0 ]]; do
@@ -65,7 +66,7 @@ trap 'rm -f "$META"' EXIT
 python3 -I - "$META" <<PY
 import json, sys
 json.dump({
-  "\$schema": "qou-paper-pdf/v1",
+  "\$schema": "folio-paper-pdf/v1",
   "paper": "$PAPER",
   "commit": "$SHA",
   "commitDate": "$date",
@@ -95,5 +96,5 @@ Built by scripts/publish-paper-pdf.sh from $SHA."
 $PUSH || args=(--no-push "${args[@]}")
 res=$(bash "$ROOT/scripts/lib/gh-pages-put.sh" "${args[@]}")
 echo "    gh-pages commit: $res"
-$PUSH && [ "$res" != unchanged ] && echo "published: https://github.com/litlfred/qou/blob/gh-pages/papers/$PAPER/$PAPER.pdf"
+$PUSH && [ "$res" != unchanged ] && echo "published: $GHPAGES_BLOB/papers/$PAPER/$PAPER.pdf"
 exit 0
