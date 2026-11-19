@@ -276,3 +276,27 @@ Roadmap to discharge the remaining hypotheses of `genus_eq_four_of_cellular`:
 - M3: an equivariant triangulation with `χ = 2 − 2g`. This is the largest, since Mathlib has
   no surface topology.
 - M4: the irreducible dimensions of `A₅`.
+
+M1b and M3 are written up as beans for another agent: `qou-m1bg` (analytic germs) and
+`qou-m3tr` (equivariant triangulation), both children of `qou-qhcr`.
+
+### Milestone M4, character bound (2026-11-18)
+
+`QOU/BringsSurface/CharacterBound.lean`, sorry-free on Mathlib (lean-direct exit 0;
+axioms `propext`, `Classical.choice`, `Quot.sound`). No group-specific input.
+
+- `trace_inv_eq_star_trace`, `character_inv_eq_conj` (M4a): `χ(g⁻¹) = conj χ(g)`, by the
+  unitary trick. `P = Σ_g ρ(g)ᴴρ(g)` is positive definite and `ρ(h)ᴴ P ρ(h) = P`.
+- `finrank_sq_le_card` (M4b): an irreducible complex representation of a finite group has
+  `(dim V)² ≤ |G|`. From `FDRep.char_orthonormal`, `Σ_g |χ(g)|² = |G|`, and the `g = 1` term is
+  `(dim V)²`.
+- `genus_four_or_six_of_irreducible`: with `|A₅| = 60` this gives `g ≤ 7`. Riemann–Hurwitz
+  for `A₅` excludes 2, 3, 7, and for `S₅` excludes 5. So `g ∈ {4, 6}`.
+  New arithmetic lemmas: `a5_genus_ne_seven`, `genus_four_or_six_of_le_seven`.
+- `genus_eq_four_of_irreducible`: `g = 4`, given the one remaining fact `dim W ≠ 6`.
+
+So the old hypothesis `hdim` (the list `1, 3, 3, 4, 5`) is narrowed to one fact: `A₅` has no
+6-dimensional irreducible representation. This is M4c, and it is still open in Lean. It needs
+either `Σ (dim Vᵢ)² = |G|` plus the count of irreducibles, or the explicit character table.
+Neither is in Mathlib. Note that the arithmetic alone cannot exclude 6: `A₅` does act on
+genus-6 curves, with `H¹ = 2(χ₃ + χ₃′)`, which is reducible.
