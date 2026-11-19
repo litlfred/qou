@@ -3,8 +3,7 @@ The **Breit--Wheeler pair production** $\gamma\gamma \to e^- e^+$ is the identit
 $$
   \gamma_1 \cdot \gamma_2
   = 
-  \mathrm{NF}(e^-) + \mathrm{NF}(e^+)
-  +  \text{binding energy},
+  \mathrm{NF}(e^-) + \mathrm{NF}(e^+) + \text{binding energy},
 $$
 
 in which the photon, electron, and positron are the braid words

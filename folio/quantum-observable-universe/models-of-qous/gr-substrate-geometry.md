@@ -11,4 +11,4 @@ $$
 
 Here $\mathrm{Ric}_{g_\varTheta}$ denotes the Webster Ricci curvature and $T^{(q)}$ denotes a $q$-weighted stress-energy $2$-tensor on $H$. Both are coordinate-free objects.
 
-**Why the weight $q(p)$.** The [$q$-weighted Yang–Mills–Levi functional](#def:q-yang-mills-levi) couples the instanton energy to the substrate by weighting the self-dual curvature by the local Levi-form magnitude $q(p)$. Regions where $F_A^+$ overlaps the Levi form $L_\varTheta$ contribute more strongly.
+**The weight $q(p)$.** The [$q$-weighted Yang–Mills–Levi functional](#def:q-yang-mills-levi) couples the instanton energy to the substrate by weighting the self-dual curvature by the local Levi-form magnitude $q(p)$. Regions where $F_A^+$ overlaps the Levi form $L_\varTheta$ contribute more strongly.
