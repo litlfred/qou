@@ -848,3 +848,22 @@ locations, warn on a running build).
 - TRAP: `lean-docs-build.sh` passes its guards on the per-paper root (status exit 0) while
   `lake-cache.sh status` itself says 81 % traced / "NOT for a build", and the per-paper root has
   no `.lake/packages` — a `:docs` build there would clone+build Mathlib. Not run.
+
+## STABLE — doc-data WITHOUT Lake: `doc-gen4 single` per module, lean-direct (2026-11-19)
+
+- `doc-gen4 single -b <builddir> <Module> <sourceUri>` with `LEAN_PATH` from
+  `scripts/lean-direct-env.sh` writes `doc-data/declaration-data-<Module>.bmp` (+ an
+  HTML page). No Lake, no eviction, no Mathlib docs. Binary: extract the
+  `qou-docgen4-v4-24-0` cache, `.lake/packages/doc-gen4/.lake/build/bin/doc-gen4`.
+  `index` is not needed for `lean-kg-publish.ts`.
+- Recipe that worked: `lean-library-sweep.py --shadow DIR` (dirty closure; put the
+  shadow's `qou`/`ugb`/`fred2005` roots FIRST on LEAN_PATH), compile block siblings from
+  `gen-lean-blocks-shadow.py --list` into an isolated olean dir, then `single` over every
+  module, `xargs -P 2`. BASELINE 2026-11-19: 4272 modules, 0 fail; lib docgen 75 min
+  (root `QOU` 273 s, `CechKummerSurface` 243 s), blocks compile 25 min, blocks docgen 15 min.
+- TRAP: `lean -R <root>` rejects a SYMLINKED input ("must be contained in root
+  directory") — lean resolves the link. Copy block sources into the shadow, do not link.
+- TRAP: `lean-kg-publish --modules` filters on the FIRST name component, so `QOUBlocks`
+  (a lib name) matches nothing; pass the block roots (`BraidsAndKnots,MassTheory,...`).
+- Viewer route: `lean/#/m/<Module>/<declName>`; 143 of the paper's names occur in >1
+  module (block siblings restate library decls) — first hit in names.json wins.
