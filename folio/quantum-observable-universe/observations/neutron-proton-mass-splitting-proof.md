@@ -30,7 +30,7 @@ $$
   \Delta m \approx 3.7445 \times 0.281509 \approx 1.0541 \;\mathrm{MeV}.
 $$
 
-$(\mathrm{H}_\alpha)$ is an assumption of this block; no derivation of it is on record. The corpus's derived hadronic scale $E_0 = m_e/(q(q-1))$, applied linearly to the restricted trace of the $\gamma\gamma$ nucleon, gives a different value (`docs/audits/2026-11-15-np-splitting-error-budget.md` §18).
+$(\mathrm{H}_\alpha)$ enters as an explicit hypothesis without an independent derivation; the derived hadronic scale $E_0 = m_e/(q(q-1))$, applied linearly to the restricted trace of the $\gamma\gamma$ nucleon, gives a different value.
 
 $\square$
 
@@ -38,11 +38,10 @@ $\square$
 $m_{\mathfrak{n}} - m_{\mathfrak{p}} \approx 1.2933$ MeV, so the model value is
 about $18.5\%$ below it.
 
-> **Earlier values (historical comparison only).** The previous version of
-> this proof quoted $\Phi_{\mathfrak{p}} = -0.8785$, $\Phi_{\mathfrak{n}} = -1.2261$
-> and $1.302$ MeV ($+0.63\%$). Those values use the retired convention-C
-> parameter $z = 4993/10000$ with the all-pairs strand pairing, which reproduces
-> both of them. Pairing adjacent strands only reproduces the proton value but not
-> the neutron value; under convention D that reading gives $-2.87\%$. The
-> all-pairs reading is the one used by the producer
-> `computations/level1-qvalues.py`, and it is the one stated above.
+> **Alternative Markov-parameter comparison.** Evaluating the all-pairs strand
+> pairing at the alternative parameter $z = 4993/10000$ (rounded
+> $\sqrt{q}/(q+1)$) yields $\Phi_{\mathfrak{p}} = -0.8785$,
+> $\Phi_{\mathfrak{n}} = -1.2261$, and $1.302\;\mathrm{MeV}$ ($+0.63\%$).
+> Pairing adjacent strands only reproduces the proton value under that parameter
+> and gives $-2.87\%$ under the canonical parameter $z_D$; the all-pairs
+> evaluation at $z_D$ is the canonical one stated above.

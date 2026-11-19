@@ -2,7 +2,7 @@ import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.Algebra.Category.ModuleCat.Monoidal.Symmetric
 import Mathlib.Tactic.CategoryTheory.Coherence
 import Mathlib.Tactic.Ring
-import Mathlib.Algebra.Category.ModuleCat.Kernels
+import Mathlib.Algebra.Category.ModuleCat.Limits
 
 /-!
 # The trivial quantum universe — `R`-Mod with `A = 𝟙`
@@ -95,9 +95,9 @@ noncomputable def unitFrobHopf (C : Type*) [Category C] [MonoidalCategory C]
   antipode_involutive := by simp
   antipode_frobeniusForm := by simp
 
-/-- **The trivial quantum universe.**  `C = ModuleCat R`, `A = 𝟙`, one block.
+/-- **The trivial quantum universe.**  `C = ModuleCat R`, `A = 𝟙`.
 
-    Discharges every field, including the five added under `qou-w1g8`. -/
+    Discharges every field of the 3-axiom `QuantumUniverse` structure. -/
 noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
   C := ModuleCat R
   frobHopf := unitFrobHopf (ModuleCat R)
@@ -112,6 +112,15 @@ noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
     rw [← MonoidalCategory.unitors_equal]
     simp
   unitEndEquiv := unitEndEquivModuleCat R
+  differentialForms :=
+    Limits.KernelFork.ofι (Limits.kernel.ι (unitFrobHopf (ModuleCat R)).mul)
+      (Limits.kernel.condition (unitFrobHopf (ModuleCat R)).mul)
+  differentialForms_isLimit :=
+    Limits.kernelIsKernel (unitFrobHopf (ModuleCat R)).mul
+
+/-- **Trivial Wedderburn semisimple block data** on `trivialQU R`, with one block `PUnit`. -/
+noncomputable def trivialSemisimpleBlocks :
+    QOU.SemisimpleBlockData (trivialQU R) where
   blocks := PUnit
   centralIdem _ := 𝟙 _
   centralIdem_idem _ := by simp
@@ -121,8 +130,6 @@ noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
   frobWeight_isUnit _ := isUnit_one
   dimQ _ := 1
   dimQ_isUnit _ := isUnit_one
-  differentialForms := ModuleCat.kernelCone (unitFrobHopf (ModuleCat R)).mul
-  differentialForms_isLimit := ModuleCat.kernelIsLimit _
 
 /-- **`QuantumUniverse` is inhabited** — the claim `quantum-universe-exists.lean`
     carries as an `axiom`, now a theorem. -/
@@ -130,6 +137,11 @@ noncomputable def trivialQU : QOU.QuantumUniverse.{w + 1, w, w, w} R where
 theorem nonempty_quantumUniverse :
     Nonempty (QOU.QuantumUniverse.{w + 1, w, w, w} R) :=
   ⟨trivialQU R⟩
+
+/-- **`SemisimpleBlockData` on `trivialQU` is inhabited.** -/
+theorem nonempty_trivialSemisimpleBlocks :
+    Nonempty (QOU.SemisimpleBlockData (trivialQU R)) :=
+  ⟨trivialSemisimpleBlocks R⟩
 
 end QOU.TrivialWitness
 

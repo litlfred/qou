@@ -1,6 +1,6 @@
-**Remark (Clausen function `Cl_2` as repo-internal Mathlib filler).**
+**Remark (Clausen function $\mathrm{Cl}_2$ and hyperbolic volume special values).**
 
-Mathlib lacks the Clausen function
+The Clausen function of order two is defined for $\theta \in \mathbb{R}$ by the convergent Fourier sine series
 
 $$
   \mathrm{Cl}_2(\theta)
@@ -17,23 +17,23 @@ $$
   \mathrm{Vol}(\mathcal{B}_3)\;=\;8\,\mathrm{Cl}_2(\pi/4)\;=\;8G\;\approx\;7.327724.
 $$
 
-The Lean library file [`QOU/Archimedean/ClausenFunctionMathlibFiller.lean`](../lean/QOU/Archimedean/ClausenFunctionMathlibFiller.lean) provides the `Cl_2` series definition and the boundary/volume carriers; the integral-side definition, the derivative `Cl_2'(\theta) = -\log(2\sin(\theta/2))`, and the series–integral bridge (the classical Zagier identity) are machine-proved in [`QOU/Knot/Clausen.lean`](../lean/QOU/Knot/Clausen.lean) (fundamental theorem of calculus plus an Abel-regularised assembly). Building on this infrastructure, the figure-eight case of the Kashaev volume conjecture — the limit $(2\pi/N)\log\langle 4_1\rangle_N \to 2\,\mathrm{Cl}_2(\pi/3) = \mathrm{Vol}(4_1)$ — is itself machine-proved, in [`QOU/Knot/FigureEightVolumeSqueeze.lean`](../lean/QOU/Knot/FigureEightVolumeSqueeze.lean) by a Riemann-sum squeeze of the Kashaev log-sum against the Clausen primitive, with the exact transcendental target $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.
+On $(0, 2\pi)$, the integral representation has derivative $\mathrm{Cl}_2'(\theta) = -\log(2\sin(\theta/2))$, and the classical Zagier identity equates the Fourier series above with the integral $-\int_0^\theta \log|2\sin(t/2)|\,dt$ via the fundamental theorem of calculus and Abel summation. Building on this integral bridge, a Riemann-sum squeeze of the Kashaev logarithmic sum against the Clausen primitive yields the figure-eight case of the Kashaev volume limit, $(2\pi/N)\log\langle 4_1\rangle_N \to 2\,\mathrm{Cl}_2(\pi/3) = \mathrm{Vol}(4_1)$.
 
 See [Table 1](#tbl:clausen-function-mathlib-filler-table1-data).
 
-This construction unconditionalizes the Bloch-Wigner values in the $\alpha_{\text{EM}}$ chain. Explicit Lean carriers replace opaque references. The framework references $\mathrm{Cl}_2$, $\mathrm{Vol}(4_1)$, and $\mathrm{Vol}(\mathcal{B}_3)$ via these carriers in [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode), [`figure-8-archimedean-illustration`](../mass-theory/figure-8-archimedean-illustration.md), [`bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition), and [`binding-scale-catalan`](../mass-theory/binding-scale-catalan.md).
+These explicit series and integral representations supply the archimedean values $\mathrm{Cl}_2$, $\mathrm{Vol}(4_1)$, and $\mathrm{Vol}(\mathcal{B}_3)$ entering the [Bring-surface zero-mode coupling](#prop:em-coupling-bring-zero-mode), the [figure-8 archimedean illustration](../mass-theory/figure-8-archimedean-illustration.md), the [Bring hyperbolic-knot Bloch decomposition](#conj:bring-hyperbolic-knot-bloch-decomposition), and the [Catalan binding scale](../mass-theory/binding-scale-catalan.md).
 
-## Mathlib gaps
+## Analytic dependencies
 
 See [Table 2](#tbl:clausen-function-mathlib-filler-table2-data).
 
-Six conditional classes remain as mathematical infrastructure gaps: `BlochSuslinUniqueness`, `ArchimedeanLimit`, `BringZeroModeBlochClass`, `BringHyperbolicDecomposition`, `BWQIndependence`, and `BlochWignerInjective`. Closing these classes requires upstream Mathlib contributions or internal formalization.
+Beyond the unit-circle Clausen values and the figure-eight Kashaev limit, the broader archimedean chain relies on six analytic ingredients: Bloch–Suslin pentagon uniqueness, the general $q$-Pochhammer archimedean limit, the Bring zero-mode Bloch class, its hyperbolic-knot decomposition, $\mathbb{Q}$-linear independence of the relevant Clausen values, and injectivity of the rationalized Bloch–Wigner regulator.
 
-## Pattern
+## Extension to complex dilogarithms and Bloch groups
 
-Each Mathlib gap forms a scoped task. The $\mathrm{Cl}_2$ filler defines a single function as a `tsum`. It provides two unconditional boundary lemmas. Four sketched extensions require Fourier-series infrastructure. This pattern extends to:
+Defining $\mathrm{Cl}_2$ directly by its sine series establishes the origin boundary identities immediately while isolating higher functional equations to Fourier-series analysis. The same two-stage separation—explicit series or group presentation first, interior analytic theorems second—governs:
 
-* A `Real.dilog` filler extending `LiTwo` to the complex domain via `Complex.dilog`.
-* A `BlochGroup F` filler constructing the free abelian group quotient by 5-term pentagon relations.
+* Extending the real unit-interval dilogarithm $\mathrm{Li}_2$ to the cut complex plane $\mathbb{C} \setminus [1, \infty)$.
+* Presenting the Bloch group $B(F)$ as the quotient of $\mathbb{Z}[F \setminus \{0, 1\}]$ by the five-term pentagon relations.
 
-This file isolates the $\mathrm{Cl}_2$ filler to support the $\alpha_{\text{EM}}$ and figure-8 chains.
+Isolating $\mathrm{Cl}_2$ on the unit circle suffices to anchor both the $\alpha_{\text{EM}}$ zero-mode comparisons and the figure-eight volume chain.

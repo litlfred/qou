@@ -10,7 +10,7 @@ C_n(a)\,(\bar q;\bar q)_n^{2}\,a^{-(5n^{2}+7n)}
         \sum_{k=0}^{n} \tilde q^{\,k(n+1)}\,[n,k]_{\tilde q}.
 $$
 
-We refer to this as the *Habiro-tail star identity*.
+This relation is the *Habiro-tail star identity*.
 
 ## What the identity does
 
@@ -72,10 +72,6 @@ the archimedean evaluation and are not part of this proposition. What the
 proposition supplies is their algebraic skeleton: the recursion and the
 $q^{n+1}$ transient factor of which those limits are taken.
 
-## Status
+## Algebraic generality
 
-The identity is proved in Lean at every order $n$, over a
-generic field with no archimedean construct (the statement is pre-wall).
-It was first established computationally as an exact integer-Laurent
-equality for $n \leq 32$ and numerically to $10^{-497}$ for $n \leq 64$;
-the proof discharges that computation for all $n$.
+The identity holds at every order $n$ over an arbitrary field with $a \neq 0$, requiring no archimedean structure. Exact integer-Laurent checks for $n \leq 32$ and high-precision evaluations to $10^{-497}$ for $n \leq 64$ match the general algebraic proof for all $n$.

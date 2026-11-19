@@ -10,4 +10,10 @@ export default remark({
     "def:coulomb-charge",
     "rem:self-dual-2group",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Formalized in the Lean sibling of `def:gauge-action-groupoid` (reversal, equivalence relation, residual-symmetry monoid) and `QOU/StandardModel/WritheMarkovInvariance.lean` (`writhe_conj` and `writhe_stabilize`).",
+    },
+  ],
 });

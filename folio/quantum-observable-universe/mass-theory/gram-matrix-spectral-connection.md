@@ -25,11 +25,7 @@ Frobenius framework).**
 > $n = 4$, $78 = 6^2+5^2+4^2+1^2$ at $n = 5$; what survives is
 > $\sum \dim^2 = C_n$ — the Catalan numbers $5, 14, 42$.
 >
-> Proved in
-> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean):
-> `block_mem_radical` `$\to$` `gram_det_eq_zero_of_radical_combination` for the
-> vanishing, `pairing_descends` and `mem_radical_of_pairing_zero` for the
-> descent.
+> Because a zero-weight Wedderburn block lies in the trace radical, any basis combination supported on it forces $\det G = 0$, whereas the pairing descends non-degenerately to the quotient by the radical.
 
 **Role of the Gram matrix.**
 *The **Gram matrix** $G$ of the Markov pairing is the common

@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:classical-limit-stpart`](#conj:classical-limit-stpart) — classical limit).**
+**Proposition (conditional on [classical limit standard-partition conjecture](#conj:classical-limit-stpart) — classical limit).**
 *In the $q \to 1$ limit of the categorical trace, the following degenerations occur:*
 
 $$

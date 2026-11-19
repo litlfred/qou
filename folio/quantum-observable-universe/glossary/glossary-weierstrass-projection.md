@@ -37,8 +37,8 @@ which is the standard Weierstrass equation $\wp'^2 = 4\wp^3 - g_2\wp - g_3$ with
 | Regime | $q$ | Lattice shape | Physics |
 |--------|-----|---------------|---------|
 | Classical | $q = 1$ | $\Lambda_1$ rectangular | Degenerate curve $\mathcal{E}_1$; no crossing asymmetry |
-| Physical | substrate $q$ | $\Lambda_q$ rhombic | Our universe; $\mathcal{E}_q$ smooth, $\Delta < 0$ |
+| Physical | substrate $q$ | $\Lambda_q$ rhombic | Physical substrate; $\mathcal{E}_q$ smooth, $\Delta < 0$ |
 | Deep quantum | $q \to \infty$ | $\Lambda_q \to$ hexagonal | CM lattice; maximal symmetry |
 
 **Notation convention.**
-We reserve the symbol $\wp$ for the Weierstrass elliptic function associated to $\mathcal{E}_q$. We never repurpose it. We write $\wp(z)$ for $\wp_q(z)$ when the dependence on $q$ is clear.
+The symbol $\wp$ is reserved throughout for the Weierstrass elliptic function associated to $\mathcal{E}_q$ and is never repurposed; $\wp(z)$ abbreviates $\wp_q(z)$ when the dependence on $q$ is clear.

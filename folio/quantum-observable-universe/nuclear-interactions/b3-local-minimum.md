@@ -1,4 +1,4 @@
-We show the Borromean braid $\mathcal{B}_3 = (\sigma_0 \sigma_1^{-1})^3$ is a local, rather than global, minimum of the categorical action.
+The Borromean braid $\mathcal{B}_3 = (\sigma_0 \sigma_1^{-1})^3$ is a local, rather than global, minimum of the categorical action.
 
 ## Global minimum
 

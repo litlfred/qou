@@ -1,4 +1,4 @@
-We compute the Gröbner--Shirshov normal form of a nuclear braid word via the division algorithm, specialized to the Iwahori--Hecke algebra.
+The division algorithm, specialized to the Iwahori--Hecke algebra, computes the Gröbner--Shirshov normal form of a nuclear braid word.
 
 **Input:** Mass number $A = Z + N$, proton number $Z$, neutron number $N$. The algebra $H_A(q)$, admissible system $(B, <)$, and Gröbner--Shirshov basis $G$.
 

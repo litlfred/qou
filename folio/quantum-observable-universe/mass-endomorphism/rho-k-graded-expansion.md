@@ -3,7 +3,7 @@
 **Scope of the three expansion pieces.** In the graded expansion below, only the leading-order piece $\rho_K^{\mathrm{LO}}$ is a proved algebraic identity (by Wenzl's Markov multiplicativity). The single-generator piece $\rho_K^{\text{single-gen}}$ is an empirical logarithmic model whose prefactor $\alpha$ is chosen against the mass table (yielding the $0.18\%$ mean residual recorded in [the accuracy remark](#rem:rho-k-graded-expansion-accuracy)), while the pair-generator piece $\rho_K^{\text{pair-gen}}$ remains open.
 
 
-We expose the graded expansion of the categorical density $\rho_K$ by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathfrak{m}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:
+The graded expansion of the categorical density $\rho_K$ is exposed by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathfrak{m}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:
 
 $$
   \boxed{
@@ -84,7 +84,7 @@ Each piece of the graded expansion corresponds to a term in the Kashaev limit of
 
 See [Table 2](#tbl:rho-k-graded-expansion-table2-data).
 
-The graded $\rho_K$ expansion supplies the Kashaev specialisation of the six-term theorem (`thm:knot-mass-formula-unified`) expressed at the GB-NF level. The constituent-mass piece is explicitly factored out via the Markov-multiplicativity rewriting.
+The graded $\rho_K$ expansion supplies the Kashaev specialisation of the six-term theorem ([unified knot mass formula](#thm:knot-mass-formula-unified)) expressed at the GB-NF level. The constituent-mass piece is explicitly factored out via the Markov-multiplicativity rewriting.
 
 ## References
 

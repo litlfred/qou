@@ -46,8 +46,8 @@ export default proposition({
       date: "2026-11-18",
       body:
         "**Two-term categorical Lagrangian & connected 4th-order Borromean V³ QED trace formalized (Epic qou-7xl8, 0 sorry).** " +
-        "`QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm` (`trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`, " +
-        "`trace_QAdj_connected_diff_borromeanV3`, `trace_e21_strong_cartan_diff_borromeanV3`), " +
+        "`QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm` (`trace_e21p_borromeanV3`, `trace_e21_strong_cartan_diff_borromeanV3`, `QAdjn_eq_static_add_half_QAdjp`, `trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`, " +
+        "`trace_QAdj_connected_diff_borromeanV3`), " +
         "`QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace` (`chi21Reduced_ratio_at_one`, `tMod111_neutron_eq_q_sq_mul_proton`), " +
         "and `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` (`hadronicScale_mul_q_sq_hbar_eq_me`, " +
         "`trace_lagrangian_diff_concrete_borromean_connected`) formalize the parameter-free two-term decomposition on $W_p=(2,1)$ and $W_n=(1,2)$.",

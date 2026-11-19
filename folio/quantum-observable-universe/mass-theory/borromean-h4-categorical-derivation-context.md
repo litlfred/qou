@@ -15,17 +15,16 @@ framework after the initial derivation:
   from direct substitution on the closed-form trace.
   The categorical projector onto the (2,1) channel is the
   $\mathbf{e}_-$ minus-eigenspace idempotent of the Hecke quadratic
-  relation $q\sigma^2 = (q^2 − 1)\sigma + q$, formalised
-  in `QOU.Hecke.SpectralProjector` (`eminus_idem`,
-  `eplus_eminus_orthogonal`, `eplus_add_eminus = 1`).
-  Closed-form trace computation on $V^{\otimes 3}$ can be done via
-  the Cayley–Hamilton block reduction
-  `QOU.Braiding.HeckeGenPolyReduction.hecke_gen_poly_reduction`.
+  relation $q\sigma^2 = (q^2 − 1)\sigma + q$, satisfying idempotence
+  $\mathbf{e}_-^2 = \mathbf{e}_-$, orthogonality $\mathbf{e}_+\mathbf{e}_- = 0$,
+  and completeness $\mathbf{e}_+ + \mathbf{e}_- = 1$.
+  Closed-form trace computation on $V^{\otimes 3}$ follows from
+  the Cayley–Hamilton block reduction of the Hecke generator polynomial.
 
 - **Step 2 (the Markov normalisation `y_{(2,1)}(q=1) = 1/4`)**
   is the $q = 1$ evaluation of the exact closed-form Wenzl weight
   $y_{(2,1)}(q) = 1/[2]_q^2$ established in
-  [`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md).
+  [$H_3$ Markov Wenzl weights proposition](h3-markov-wenzl-weights.md).
   The full $\mathrm{H}_3$ weight vector is
   $\bigl([4]_q/[2]_q^3,\ 1/[2]_q^2,\ 0\bigr)$, evaluating at $q = 1$
   to the non-uniform $(\tfrac12, \tfrac14, 0)$ — the sign channel
@@ -38,7 +37,7 @@ be reformulated equivalently as: extract the $\mathbf{e}_-$ component
 of $\sigma_1^{-1}\sigma_2$ on $V_{1/2}^{\otimes 3}$, take the $h^4$
 coefficient of its trace.  The $\mathbf{e}_-$ idempotent is the
 categorical replacement for the explicit $8 \times 8$ R-matrix
-computation; both are now valid Lean entry points to the same
+computation; both routes yield the same
 `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶` identity.
 
 ## Significance
@@ -64,6 +63,6 @@ the framework's existing structure.
 > chain (the 3-strand side of the Borromean story). It does **not**
 > resolve the *cross-algebra* obstruction linking 5-strand $A_5$ fiber
 > action to 3-strand $\mathrm{H}_3$ — that is the question posed by
-> (`conj:s5-so3-fiber-action`), and it remains open: eight candidate
+> ($S_5$ $\mathrm{SO}(3)$ fiber action conjecture), and it remains open: eight candidate
 > cross-algebra functors have been refuted.
 

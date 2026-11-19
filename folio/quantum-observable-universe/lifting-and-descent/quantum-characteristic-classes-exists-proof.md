@@ -15,6 +15,5 @@ $g$ lifts to a global object of $\mathfrak{G}_{n+1}$ if and only if
 $\kappa_n = 0$ (Yekutieli, Theorem 4.17).
 
 The cocycle $c$ takes values in the kernel $\mathcal{B}$ of the extension, not
-in the band of $\mathfrak{G}_n$. The cocycle-level statement is proved in
-Lean as `QOU.CentralExtension.CechGerbe.CentralGerbeExtension.exists_lift_iff`,
+in the band of $\mathfrak{G}_n$. This cocycle-level lifting criterion holds
 for gerbes modelled by their Čech cocycle data on a fixed cover.

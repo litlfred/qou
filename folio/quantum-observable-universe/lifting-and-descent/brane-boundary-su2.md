@@ -1,4 +1,4 @@
-Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2), we evaluate the [brane boundary](#def:brane-boundary) at level $0$.
+Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2), the [brane boundary](#def:brane-boundary) at level $0$ evaluates as follows.
 
 **The singular set.** For $G = \mathrm{SU}(2)$ acting on $\mathbb{CP}^1$ via the Hopf fibration, the singular set $S$ comprises the fixed points of the $\mathrm{U}(1)$-action: the north and south poles $\{0, \infty\} \subset \mathbb{CP}^1$. These fixed points dictate the vortex loci where the fibre degenerates.
 

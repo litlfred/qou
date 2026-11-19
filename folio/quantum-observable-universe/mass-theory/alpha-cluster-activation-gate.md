@@ -28,25 +28,19 @@ off. This is the categorical origin of the "$k\ge 3$, $\alpha$-only" activation
 pattern: two $\alpha$-clusters share a Hopf-type spectator link (gate closed),
 whereas a Borromean triple of $\alpha$-clusters opens the gate.
 
-## Lean structure
+## Structural breakdown
 
-All four parts are formalized (generic commutative ring where the
-statement permits):
+All four parts hold over a generic commutative ring where the statement permits:
 
-- **(1)–(2)** `QOU.Mass.MilnorIndeterminacyGate` —
-  `gate_kills_hopf_spectator` ($|\ell_{ij}|=1 \Rightarrow
-  \mathrm{Subsingleton}\,(\mathbb{Z}/\Delta\mathbb{Z})$) and
-  `gate_open_iff_brunnian` ($\Delta = 0 \iff$ all $\ell_{ij}=0$), with the
-  structure-level `ClusterTriple.residue_nontrivial_of_brunnian`.
-- **(3)** `QOU.Mass.MilnorSignRepObstruction.equivariant_linearMap_eq_zero`
-  (Schur-lemma vanishing of the $\Sigma_3$ sign-rep coupling over any
-  `CommRing`), with `coupling_vanishes_on_charge_bilinears`.
-- **(4)** `QOU.Mass.BondChannelClassSelection.wplane_term_eq_zero_of_vol_eq_zero`
+- **(1)–(2)** Milnor indeterminacy gate:
+  $|\ell_{ij}|=1 \Rightarrow \mathbb{Z}/\Delta\mathbb{Z} = \{0\}$ (Hopf spectator termination) and
+  $\Delta = 0 \iff$ all $\ell_{ij}=0$ (Brunnian activation), with non-trivial residue ring for Brunnian triples.
+- **(3)** Schur-lemma vanishing of the $\Sigma_3$ sign-representation coupling over any
+  commutative ring, so the coupling vanishes on charge bilinears.
+- **(4)** $W$-plane annihilation on zero-volume bond channels
   ($\mathrm{Vol}=0 \Rightarrow \mathfrak{m}_e\,\mathrm{Vol}\,q = 0$). The
-  companion CAL-3 class-selection statement
-  (`eq_cal3_of_support_ne_zero_of_ledger`) is a *conditional* result on
-  the `BindingVolumeLedger` class (no instance declared — the ledger is an open
-  input, not part of this proposition's proved content).
+  companion CAL-3 class-selection statement is a *conditional* result on
+  the binding-volume ledger hypothesis.
 
 **Scope.** Only the *topological activation gate* — which inter-cluster bond
 channels are on or off, and the chirality-even coupling — is asserted here. The
@@ -56,4 +50,4 @@ closure ("Model G") are **not** part of this proposition. Those enter the
 cluster bindings at their *measured* AME values and calibrate $b$, $g$
 empirically; they are recorded — labelled as a structural/phenomenological
 model, **not** a parameter-free derivation — in the interpreting remark
-[`rem:alpha-cluster-model-g-closure`](#rem:alpha-cluster-model-g-closure).
+[alpha cluster model g closure remark](#rem:alpha-cluster-model-g-closure).

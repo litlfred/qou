@@ -9,4 +9,4 @@ $$
   \;\;\forall q' \in U.
 $$
 
-*We read this as: "$\lambda_1$ has at most the energy of $\lambda_2$ on a neighborhood of $q$".*
+*This relation reads: "$\lambda_1$ has at most the energy of $\lambda_2$ on a neighborhood of $q$".*

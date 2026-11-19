@@ -1,4 +1,4 @@
-We recall the classical vector calculus operators as differential forms on a smooth Riemannian manifold $(M, g)$.
+The classical vector calculus operators admit a uniform presentation as differential-form operators on a smooth Riemannian manifold $(M, g)$.
 
 A $0$-form is a scalar field $f \colon M \to \mathbb{R}$. A $1$-form $\alpha$ assigns a number to each tangent vector. A $2$-form $\beta$ measures oriented flux through an infinitesimal parallelogram.
 

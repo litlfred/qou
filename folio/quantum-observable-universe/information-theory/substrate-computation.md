@@ -10,7 +10,7 @@ The medium of computation does not alter its logic. The combinatorics depends on
 **Consistency under descent.**
 Planck-scale combinatorics aligns tightly with local continuous physics. The rationality of $P_{7,6}(q)$ in $q^{1/2}$ guarantees this. The amplitude remains valid over any field where $q \neq 1$. The polynomial governing a $3$-strand braid at the Big Bang also governs it in the laboratory. The passage from discrete to continuous physics does not break logic gates; it merely attenuates the amplitude $P_{7,6}$ and dilates the Planck step $t_P(q) = q/(q-1)$.
 
-At $q = q_0$, we have $P_{7,6}(q_0) = +0.0495$ and $t_P(q_0) \approx 10.11$. The gate operates slowly and with small amplitude, but its operation is a direct algebraic consequence of $q \neq 1$.
+At $q = q_0$, $P_{7,6}(q_0) = +0.0495$ and $t_P(q_0) \approx 10.11$. The gate operates slowly and with small amplitude, but its operation is a direct algebraic consequence of $q \neq 1$.
 
 **Relation to 't Hooft's CA interpretation.**
 The thesis that quantum mechanics emerges from a deterministic Planck-scale cellular automaton aligns structurally with this framework. Both models posit discrete combinatorics at the Planck scale as the ontological primitive. Both attribute macroscopic quantum superposition to coarse-graining. The QOU substrate formally substitutes 't Hooft's information loss with algebraic coarse-graining via the Markov trace on $H_n(q)$, rendering the emergence of quantum mechanics functorial rather than statistical.

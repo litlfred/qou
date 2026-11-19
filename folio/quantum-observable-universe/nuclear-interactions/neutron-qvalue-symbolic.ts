@@ -46,6 +46,11 @@ export default proposition({
       body:
         "Owner ruling 2026-11-16: L+ and L- join the gamma-gamma word rule. The element Delta is therefore no longer guaranteed canonical, and 0.4491 MeV is provisional until the element is reselected over {V, V^-1, L+, L-} (bean qou-99qc).",
     },
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Formalisation note: the commutant exclusion on weight-preserving operators commuting with $F_3$ is proved as `commutant_trace_eq` in `QOU/BraidsAndKnots/NucleonIsospinExclusions.lean`.",
+    },
   ],
   tags: [
     "beta-decay",

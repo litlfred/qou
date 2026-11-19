@@ -11,9 +11,9 @@ with $b$ the Hoefsmit off-diagonal coupling on the seminormal $V_{(2,1)}$ repres
 
 The status of the rung coefficients $c_k$ is **tiered**:
 
-- **$c_2 = -1$ — structural.** The depth-2 coefficient is the exact $u^2$ coefficient of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, obtained by re-reading the Kashiwara $\tilde f_1$ geometric-tail factor $(1 - b^2\,\hbar_q^4)$ in that form ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)). Being a constant, it is $q_0$-anchor-independent. Two scope limits: the factor $(1 - b^2\hbar_q^4)$ is itself a **definition**, not a derived object, so "proved" overstates what is established; and "Taylor coefficient" is a statement about *that* series — the normalised series with the cosine factor inside has $\tilde c_2 = c_2 - 1/8 = -9/8$.
+- **$c_2 = -1$ — structural.** The depth-2 coefficient is the exact $u^2$ coefficient of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, obtained by re-reading the Kashiwara $\tilde f_1$ geometric-tail factor $(1 - b^2\,\hbar_q^4)$ in that form ([the categorical precision ladder](#prop:q-beta-categorical-precision-ladder)). Being a constant, it is $q_0$-anchor-independent. Two scope limits: the factor $(1 - b^2\hbar_q^4)$ is itself a **definition**, not a derived object, so "proved" overstates what is established; and "Taylor coefficient" is a statement about *that* series — the normalised series with the cosine factor inside has $\tilde c_2 = c_2 - 1/8 = -9/8$.
 - **$c_3 = -2 = J_{\mathrm{Hopf}}(q{=}1)$ — near-match.** The depth-3 coefficient matches the classical-limit Jones value of the two-component Hopf link, $J_{\mathrm{Hopf}}(q{=}1) = -2$. This is a structural resemblance, not an exact identity. The empirical Taylor coefficient extracted at the substrate parameter is anchor-dependent. A true Taylor coefficient would be anchor-independent; $c_3$ is not.
-- **$c_k$ for $k \geq 3$ — cal-anchored (open).** We obtain the higher coefficients by matching the truncated product to the measured $Q$-value. They are circular: they encode the calibration datum they attempt to predict, and shift with the substrate anchor. They are cached for downstream reuse but carry no predictive content.
+- **$c_k$ for $k \geq 3$ — cal-anchored (open).** The higher coefficients are obtained by matching the truncated product to the measured $Q$-value. They are circular: they encode the calibration datum they attempt to predict, and shift with the substrate anchor. They are cached for downstream reuse but carry no predictive content.
 
 **Convention frame (cuts across every tier above).** The tiers record *epistemic*
 status. They do **not** record which Markov convention the numbers were computed
@@ -47,9 +47,8 @@ divided by $u^3$ — is $z$-free. So the
 verdict that $c_3$ is refuted as a real-$q$ fibre element survives the convention
 change. It is the *value-level* near-matches that do not.
 
-Re-deriving the ladder under D is **not** a substitution of $z_D$ into the
-existing expressions — that is proved invalid
-(`QOU.QBeta.decayLadder_zC_threeRow_ne_zero`). It requires deriving the D-frame
+Re-deriving the ladder under D is **not** a naive substitution of $z_D$ into the
+existing convention-C expressions, which fails to preserve the three-row trace identity. It requires deriving the D-frame
 eigenphase first, after which the ansatz above is reusable as it stands and the
 five values are re-extracted from it.
 

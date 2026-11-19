@@ -23,7 +23,7 @@ Hermitian Yang--Mills equations on $\mathcal{S}_{n-1}$ as it did at level $n{-}1
 Non-degeneracy of the Frobenius form on the restricted object follows
 from the direct-summand inclusion $A \hookrightarrow J^1(A)$.  The
 vanishing condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is
-unchanged since we recover $A$.
+unchanged since $A$ is recovered.
 
 *Step 4: The :refterm[descent]{#descent} homomorphism.*
 Applying $\tau$ to $r_n$ yields

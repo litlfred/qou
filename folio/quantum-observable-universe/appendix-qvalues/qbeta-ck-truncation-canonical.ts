@@ -115,7 +115,9 @@ export default conjecture({
         "come from `qbeta-c3-ladder-trace-convention-sensitivity.witness.json` " +
         "(10/10 PASS). The one-rung localisation of the convention (the N=1 " +
         "eigenphase α = (z−1)h/2) is recorded in " +
-        "`docs/audits/2026-09-13-d2-convention-enters-at-one-rung.md`; the " +
+        "`docs/audits/2026-09-13-d2-convention-enters-at-one-rung.md`; " +
+        "`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` establishes that naive substitution of " +
+        "`z_D` into the C-frame expressions fails; the " +
         "re-derivation is bean `qou-cds1`, blocked on `qou-pdix`.",
       see:
         "computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json",

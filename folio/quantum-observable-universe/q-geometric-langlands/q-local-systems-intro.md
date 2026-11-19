@@ -1,1 +1,1 @@
-We establish the automorphic-side geometry upon which the $q$-Hecke correspondences act. We define $q$-local systems on a brane curve $X$ and the $q$-flat connections that supply their $q$-holonomy residues.
+This section establishes the automorphic-side geometry upon which the $q$-Hecke correspondences act, defining $q$-local systems on a brane curve $X$ and the $q$-flat connections that supply their $q$-holonomy residues.

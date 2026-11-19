@@ -1,5 +1,3 @@
-*Lean sibling: structural, over a generic commutative ring $R$.*
-
 **Proposition.** Let $\mathcal{F}_A$ and $\mathcal{F}_B$ be two one-dimensional channels placed in parallel. The cladding bounds each channel, rendering the joint configuration a **split link**. The boundary suppresses all crossings between the strands of $\mathcal{F}_A$ and those of $\mathcal{F}_B$. Because the Markov trace is multiplicative over split links, the transmitted datum of the joint channel factorizes:
 
 $$

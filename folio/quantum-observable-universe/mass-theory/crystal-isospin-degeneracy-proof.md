@@ -95,5 +95,5 @@ ${}^3\mathrm{H}$ has interface types $(pn{=}\bowtie_K,\;nn{=}\sigma^{-1})$
 while ${}^3\mathrm{He}$ has $(pp{=}\sigma,\;pn{=}\bowtie_K)$ — the
 words differ in *interface type*, not just generator signs, so the
 sign-flip proposition does not apply directly.  The legacy
-disjoint-product witness used by `term7_alpha5_crystal_derivation`
+disjoint-product witness for the Term-7 $\alpha_5$ crystal derivation
 artificially erases this isospin asymmetry.

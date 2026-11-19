@@ -1,7 +1,7 @@
 **Conjecture (Critical exponent).**
 The regularity breakdown conjecture predicts that maximum enstrophy diverges as $\Omega_{\max}(q) \sim (q-1)^{-\alpha}$ for some $\alpha > 0$.
 
-From the enstrophy evolution, we have $\frac{d\Omega}{dt} \leq \Lambda_q\Omega$, where $\Lambda_q = \frac{(C_q')^2E_0}{\nu_q} - \nu_q$.
+Enstrophy evolution satisfies $\frac{d\Omega}{dt} \leq \Lambda_q\Omega$, where $\Lambda_q = \frac{(C_q')^2E_0}{\nu_q} - \nu_q$.
 
 **Computation of $\Lambda_q$ asymptotics.**
 Set $\varepsilon = q - 1 \to 0^+$.

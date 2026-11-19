@@ -40,7 +40,7 @@ Since all four elements appear and $|G| = 4 = |Q|$, the action is transitive. $\
 
 Previous arguments invoke the Galois action of $\mathrm{Gal}(\mathbb{Q}(\zeta_5)/\mathbb{Q}) \cong \mathbb{Z}/4$ to track $S_5$-equivariance on Bring's surface coordinates. When this action restricts to the real values $\varphi$ and $1/\varphi$, the relevant group is the order-2 quotient $\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q})$. Here, $\mathbb{Q}(\sqrt{5}) \subset \mathbb{Q}(\zeta_5) = \mathbb{Q}(\zeta_{10})$ is the maximal real subfield.
 
-The quartet orbit simplifies these arguments by eliminating $\zeta_5$. Rather than fixing $\varphi$ as a real combination under the $\zeta_5$-action, we identify the golden quartet $Q$ as closed under the $G$-action, with $\varphi$ serving as an orbit representative. This avoids unnecessary roots-of-unity bookkeeping.
+The quartet orbit simplifies these arguments by eliminating $\zeta_5$. Rather than fixing $\varphi$ as a real combination under the $\zeta_5$-action, the golden quartet $Q$ is closed directly under the $G$-action, with $\varphi$ serving as an orbit representative. This avoids unnecessary roots-of-unity bookkeeping.
 
 **Connection to Bring's surface.**
 

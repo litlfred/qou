@@ -6,4 +6,10 @@ export default remark({
   tags: ["glossary", "category-theory", "monoidal", "duality"],
   uses: ["rem:glossary-exact-pairing"],
   defines: ["right-dual"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Mathlib reference: `CategoryTheory.HasRightDual` (class) in `Mathlib.CategoryTheory.Monoidal.Rigid.Basic`.",
+    },
+  ],
 });

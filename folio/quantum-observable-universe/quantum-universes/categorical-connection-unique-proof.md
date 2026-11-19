@@ -1,4 +1,4 @@
-Uniqueness up to gauge follows once we show that the difference of two
+Uniqueness up to gauge follows once it is shown that the difference of two
 connections is a derivation, hence lies in a fixed module. To that end,
 consider the difference $\omega = \nabla_2 - \nabla_1$, which is
 $R$-linear: for any

@@ -1,8 +1,8 @@
-The isotope $^{18}\mathrm{O}$ ($Z = 8$, $N = 10$, $A = 18$) is the canonical single-magic test case. The proton count $Z = 8 \in \mathfrak{M}$ is saturated, but the neutron count $N = 10 \notin \mathfrak{M}$ is not. This example illustrates the partition-level diagrammatic content of the double-magic LR-fusion conjecture ([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion)) in the regime where exactly one block is saturated. The $\kappa$-leakage through the non-saturated $N$-block accounts for the binding-energy tail beyond the saturated $Z = 8$ contribution.
+The isotope $^{18}\mathrm{O}$ ($Z = 8$, $N = 10$, $A = 18$) is the canonical single-magic test case. The proton count $Z = 8 \in \mathfrak{M}$ is saturated, but the neutron count $N = 10 \notin \mathfrak{M}$ is not. This example illustrates the partition-level diagrammatic content of the double-magic LR-fusion conjecture ([diagrammatic double-magic LR fusion](#conj:diagrammatic-double-magic-lr-fusion)) in the regime where exactly one block is saturated. The $\kappa$-leakage through the non-saturated $N$-block accounts for the binding-energy tail beyond the saturated $Z = 8$ contribution.
 
 ## $Z$-block (saturated)
 
-The proton count $Z = 8$ is magic. By [`prop:categorical-neutrality-saturated-shells`](../mass-endomorphism/categorical-neutrality-saturated-shells.md), the categorical mass at level $8$ is supported on a single self-conjugate partition. The relevant partition is
+The proton count $Z = 8$ is magic. By [categorical neutrality of saturated shells](../mass-endomorphism/categorical-neutrality-saturated-shells.md), the categorical mass at level $8$ is supported on a single self-conjugate partition. The relevant partition is
 
 $$
   \lambda_{Z=8} \;=\; (3, 2, 2, 1) \;=\; \lambda_{Z=8}'.
@@ -33,7 +33,7 @@ These two partitions of $10$ differ in shape and contribute independently to $\P
 
 ## LR fusion at $A = 18$
 
-The LR fusion $V_{\lambda_{Z=8}} \otimes V_\mu(N=10)$ does not collapse to a single $\nu$. The non-self-conjugacy of $\mu$ on the $N$ side propagates through the LR rule ([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion)) to produce a sum
+The LR fusion $V_{\lambda_{Z=8}} \otimes V_\mu(N=10)$ does not collapse to a single $\nu$. The non-self-conjugacy of $\mu$ on the $N$ side propagates through the LR rule ([diagrammatic double-magic LR fusion](#conj:diagrammatic-double-magic-lr-fusion)) to produce a sum
 
 $$
   V_{\lambda_{Z=8}} \otimes V_{\mu(N=10)}
@@ -46,7 +46,7 @@ The sum contains multiple non-zero $c^\nu$. The spread over $\nu$—the non-zero
 
 ## Diagram content
 
-The diagrammatic illustration in this example block is schematically:
+The diagrammatic structure for $^{18}\mathrm{O}$ is schematically:
 
 - **Left half.** The symmetric $\lambda_{Z=8} = (3,2,2,1)$ Young diagram, marked as "self-conjugate, full-twist trivial, saturated".
 - **Right half.** A fragment of Young's lattice between $\mu = (5,3,2)$ and $\mu' = (3,3,2,1,1)$, with edges marking the Pieri / branching arrows, marked as "frayed, full-twist non-trivial, non-saturated".

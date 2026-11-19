@@ -8,8 +8,8 @@ The quark masses are not hyperbolic volumes of independent per-quark knots: the
 Standard-Model appendix records that no carrier knot exists for
 $\mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$. Each quark is instead a
 constituent of a composite braid, and its mass is a functional of that
-composite. We generalise the real volume reading
-$m(K) = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ in two ways.
+composite. The real volume reading
+$m(K) = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ generalises in two ways.
 
 1. **Real volume $\to$ complex volume.**
    $\mathrm{Vol}(K) \rightsquigarrow \mathrm{Vol}_{\mathbb{C}}(K) = \mathrm{Vol}(K) + i\,\mathrm{CS}(K)$,
@@ -35,10 +35,8 @@ fixes, is the single calibrated anchor.
 **Falsifiability.** Both the Chern–Simons invariant and the composite braid are
 rigid — zero free parameters once the hadron's quark content fixes the braid —
 so the conjecture predicts the strange / charm splitting with nothing left to
-tune. The Lean class [`QOU.MassTheory.ComplexMassConstituent`](complex-mass-constituent-functional.lean)
-carries this as two content fields, the winding-tower law and the light-doublet
-anchor, and the conditional theorem `charm_block_determined` shows the
-charm block equals $\mathrm{contRatio}(5)$ times the up block.
+tune. Combining the winding-tower law with the light-doublet
+anchor determines the charm block as the $k = 5$ content ratio times the up block.
 
 **Status: OPEN (primary conjecture).** No instance of the class is exhibited.
 Constructing the categorically-fixed functional $\mathfrak{M}$ — equivalently

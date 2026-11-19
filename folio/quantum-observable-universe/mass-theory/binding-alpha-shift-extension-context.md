@@ -72,46 +72,13 @@ This is the $A\ge3$ analogue of:
 - the T(2, k) tower for lepton + electroweak masses
   (W k=4, Z k=6, τ k=7, H k=8).
 
-## Lean structure
+## Structural decomposition
 
-- `class BindingPerRepReebPhase B m_e ρ_0` — substrate axiom: per-rep
-  Reeb phase factorisation, with field `αShiftAt : ℕ → ℕ` recording
-  the per-A pole order and `factors` axiomatising
-  $B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(A)$.
-- `class BindingForceCarrierKnot αShiftAt p k` — substrate axiom:
-  the per-A pole order $\alpha_{\text{shift}}(A)$ is realised by
-  the proved formula $k(A) \cdot (p(A) - 1)$ at a substrate-identified
-  torus knot.
-- `theorem binding_unique_via_alpha_shift` — conditional
-  on the two classes: two binding evaluators sharing $(m_e, \rho_0,
-  \alpha_{\text{shift}})$ agree pointwise.
-- `theorem binding_subsingleton` — Subsingleton companion.
+The conditional framework separates two hypotheses:
+- **Per-representation Reeb phase factorisation**: the per-$A$ pole order $\alpha_{\text{shift}}(A)$ factors the binding as $B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(A)$.
+- **Force-carrier knot realisation**: the per-$A$ pole order $\alpha_{\text{shift}}(A)$ is realised by the proved formula $k(A) \cdot (p(A) - 1)$ at a substrate-identified torus knot.
 
-### Concrete light-nuclei candidate instance
-
-The candidate table above is realised as a single Lean
-instance covering all four light nuclei $A \in \{2, 3, 4\}$:
-
-- `def lightNucleusP`, `def lightNucleusK` — case-split selectors
-  over $A \in \{2, 3, 4\}$ with sentinel $0$ elsewhere.  The three
-  branches encode $D \mapsto T(2, 3)$, $T / {}^{3}\mathrm{He} \mapsto T(2, 5)$,
-  ${}^{4}\mathrm{He} \mapsto T(3, 4)$.
-- `def lightNucleusAlphaShift A := bindingAlphaShift (lightNucleusP A)
-  (lightNucleusK A)` — defined *directly* as the structural composition,
-  so all downstream proofs close definitionally.
-- `theorem light_nucleus_alpha_shift_at_deuteron|A3|He4` —
-  per-branch sanity checks, each closing by a single `rfl`
-  (deuteron: $\alpha_{\mathrm{shift}} = 3$;
-  A=3 mirror: $\alpha_{\mathrm{shift}} = 5$;
-  $^4$He: $\alpha_{\mathrm{shift}} = 8$).
-- `instance lightNucleiForceCarrierKnot : BindingForceCarrierKnot
-  lightNucleusAlphaShift lightNucleusP lightNucleusK` — discharges
-  `matches_alpha_shift` definitionally; the instance body is
-  `matches_alpha_shift _ := rfl`.  **No `sorry`.**
-
-All four nuclei are carried by this single instance rather than by four
-per-nucleus instances, so the identification pattern is stated once and
-the full candidate table is discharged in one place.
+Conditional on these two hypotheses, any two binding evaluators sharing $(m_e, \rho_0, \alpha_{\text{shift}})$ agree pointwise. For the four light nuclei $A \in \{2, 3, 4\}$, the case-split assignment $D \mapsto T(2, 3)$ ($\alpha_{\mathrm{shift}} = 3$), $T / {}^{3}\mathrm{He} \mapsto T(2, 5)$ ($\alpha_{\mathrm{shift}} = 5$), and ${}^{4}\mathrm{He} \mapsto T(3, 4)$ ($\alpha_{\mathrm{shift}} = 8$) satisfies the force-carrier knot relation directly by structural composition.
 
 ## Remaining open math
 
@@ -130,7 +97,7 @@ informed by:
 
 Closing it — proving why specifically T(2, 5) carries A=3 mirror
 binding etc. — requires the per-nucleus minimisation argument on
-H_{3A}(q)'s Wedderburn block at the binding's smallest non-trivial
-irrep.  Lean target: a theorem deriving $(p_A, k_A)$ from a Hecke-
-trace minimisation principle, analogous to the still-open meson
-force-carrier derivation at `prop:meson-color-tube-uniqueness`.
+$H_{3A}(q)$'s Wedderburn block at the binding's smallest non-trivial
+irrep: a theorem deriving $(p_A, k_A)$ from a Hecke-trace
+minimisation principle, analogous to the still-open meson
+force-carrier derivation at meson color tube uniqueness proposition.

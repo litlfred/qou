@@ -17,4 +17,7 @@ export default remark({
     "external-program",
   ],
   cites: ["ooguri-vafa2007"],
+  authorNotes: [
+    { kind: "note", body: "The jet horizon definition is formalised in Lean." },
+  ],
 });

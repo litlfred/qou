@@ -40,10 +40,9 @@ $4/29$, $4/53$ for the three component types. Since $\cos qt = -1$ at the $q$
 parameters $(2k+1)\pi/q$, the family crosses $q$ inflection points at once; the
 Frenet normal flips at each, and the Frenet self-linking jumps by $q$:
 $\mathrm{Lk}_F = -2q$ for $r > r^*$ and $-q$ for $r < r^*$, in all three
-families. The factorisation is exact (sympy) and the algebra is formalised
-(`QOU.Mass.TorusInflection`: `cross_vel_acc`, `inflection_iff`,
-`inflection_radius_three_five_seven`, `cos_q_mul_inflection`,
-`inflection_params_injective`).
+families. The factorisation and inflection-radius algebra ($r^* \in \{3, 5, 7\}$,
+velocity-acceleration cross-product vanishing, and injectivity of the inflection
+parameters) hold exactly.
 
 ## What this closes
 

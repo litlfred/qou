@@ -1,10 +1,10 @@
 **Categorical-chain convergence: per-knot finite truncation + inter-knot linking-number locality.**
 
-The categorical-derivation precision ladder $\mathfrak{Q}_\beta^{\text{cat}}$ from [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) is formally an **infinite product** in the Habiro ring (cyclotomic-Pochhammer completion of $\mathbb{Z}[q]$). For any **single isolated knot**, this product reduces to a **finite truncation** at sub-CODATA precision through two convergence mechanisms.
+The categorical-derivation precision ladder $\mathfrak{Q}_\beta^{\text{cat}}$ from [the categorical precision ladder](#prop:q-beta-categorical-precision-ladder) is formally an **infinite product** in the Habiro ring (cyclotomic-Pochhammer completion of $\mathbb{Z}[q]$). For any **single isolated knot**, this product reduces to a **finite truncation** at sub-CODATA precision through two convergence mechanisms.
 
 ## Mechanism 1: Per-knot c(K) brane-tower bound
 
-Per `conj:archimedean-remainder-exponential-decay`, the truncation residual at depth $N$ satisfies:
+Under the archimedean remainder exponential-decay hypothesis, the truncation residual at depth $N$ satisfies:
 
 $$
   \lvert R_N \rvert \;\le\; \frac{\hbar_q^{2(N+1)}}{1 - \hbar_q^2},

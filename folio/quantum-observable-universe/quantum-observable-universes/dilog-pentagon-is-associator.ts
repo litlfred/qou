@@ -7,7 +7,7 @@ export default proposition({
     ref: "qou:QOU.QuantumObservableUniverses.DilogPentagonAssociator.pentagon_iff_isDilog",
     validation: "not_checked",
   },
-  uses: ["def:q-dilogarithm", "prop:q-dilogarithm-exists"],
+  uses: ["def:q-dilogarithm", "prop:q-dilogarithm-exists", "rem:q-dilogarithm-pentagon-associator"],
   cites: ["faddeev_kashaev1994"],
   tags: ["dilogarithm", "pentagon-identity", "associator", "monoidal"],
   authorNotes: [

@@ -62,8 +62,7 @@ $\chi_\lambda(r_\lambda) \ne 0$, as identities of rational functions in
 $q$. So the five rows are the basis of class functions dual to the
 irreducible characters, normalised by $c_{(1234)} = 1$ (for $(2,2)$, where
 $c_{(1234)} = 0$, by $c_{(123)} = 1$). The $(1^4)$ row is the $r_3$ of this
-proof; at $q_0$ it reproduces the numerical solution. The check is
-`computations/probes/explicit_alpha_k_h4_exact_check.py`.
+proof; at $q_0$ it reproduces the numerical solution.
 
 **Markov pairing on $r_3$.**  Markov-trace values on the 5 class
 representatives are universal (Markov reduction):

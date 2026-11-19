@@ -1,6 +1,6 @@
 *Two independent photons multiplied in the Iwahori--Hecke algebra $H_3(q)$ reach every operator of the six-element basis $\{\mathbf{1}, \sigma_0, \sigma_1, L_+, L_-, e^-\}$. The photon and the elementary crossings generate the whole particle catalogue through pair production.*
 
-We write two colored photons with independent color weights:
+Consider two colored photons with independent color weights:
 
 $$
   \gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
@@ -10,7 +10,7 @@ $$
              + \psi_{01}\sigma_0\sigma_1.
 $$
 
-We reduce $\gamma_1\cdot\gamma_2$ with the Hecke relation $\sigma_i^2 = (q-q^{-1})\sigma_i + \mathbf{1}$. This places five of the six basis operators in the three-term product (where $\varphi_{01}=\psi_{01}=0$):
+Reducing $\gamma_1\cdot\gamma_2$ via the Hecke relation $\sigma_i^2 = (q-q^{-1})\sigma_i + \mathbf{1}$ places five of the six basis operators in the three-term product (where $\varphi_{01}=\psi_{01}=0$):
 
 $$
 \begin{aligned}

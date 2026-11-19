@@ -9,8 +9,8 @@ $\prod_{k \ge 2}\bigl(1 + c_k(q)\,u^k\bigr)$ with
 $u = b(q)\,\hbar_q^2$ the ladder variable. The gate asserts two
 classical shadows of the canonical ladder,
 $\lim_{q \to 1} c_2(q) = -1$ and $\lim_{q \to 1} c_3(q) = -2$, and
-refutes any candidate failing either. We establish the two anchor
-values, then the rejection.
+refutes any candidate failing either. The two anchor
+values are established first, followed by the rejection criterion.
 
 **Step 1 — the $c_2$ shadow is exact at every $q$.** By the
 [$c_2$ structural identity](q-beta-c-2-eq-neg-one-structural.md), the

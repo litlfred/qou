@@ -10,7 +10,7 @@ $$
 *the* **shared closed-form derivation** *across the α_shift
 universal chain's specialisations.*
 
-The scaffolded open math, the Lean structure, the class-instance
-closure, and the downstream consequence are collected in
+The scaffolded open math, the structural decomposition, the residue-hypothesis
+closure routes, and the downstream consequences are collected in
 [the Bring-residue resolvent context](#rem:bring-residue-resolvent-context).
 

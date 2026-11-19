@@ -1,8 +1,8 @@
-| Addition | Content | Status |
+| Construction / identity | Mathematical content | Derivation |
 |---|---|---|
-| `complexLiTwo : ℂ → ℂ` | $\sum_{k \geq 1} z^{k+1}/(k+1)^2$ via `tsum` | Unconditional definition; convergence on closed unit disk implicit. |
-| `complexLiTwo_zero` | `Li_2(0) = 0` | Proved by `simp`. |
-| `blochWigner : ℂ → ℝ` | $\mathrm{Im}(\mathrm{Li}_2(z)) + \log\lvert z\rvert \cdot \arg(1-z)$ | Unconditional definition using Mathlib's `Complex.log`, `Complex.arg`, `Complex.abs`. |
-| `blochWigner_zero` | `D(0) = 0` (boundary) | Proved using `Real.log_zero = 0` Mathlib convention. |
-| `Cl_2_neg` | `Cl_2(-θ) = -Cl_2(θ)` (oddness) | Proved by `tsum`-rearrangement and `Real.sin_neg`. |
-| `Cl_2_zero_via_oddness` | Re-derivation of `Cl_2(0) = 0` from oddness | `linarith`. |
+| Complex dilogarithm $\mathrm{Li}_2 \colon \mathbb{C} \to \mathbb{C}$ | $\sum_{k \geq 0} z^{k+1}/(k+1)^2$ | Unconditional power-series definition on the closed unit disk. |
+| Origin evaluation $\mathrm{Li}_2(0) = 0$ | Vanishing at $z = 0$ | Termwise vanishing of positive powers $0^{k+1}$. |
+| Bloch–Wigner function $D \colon \mathbb{C} \to \mathbb{R}$ | $\mathrm{Im}\,\mathrm{Li}_2(z) + \log\lvert z\rvert \cdot \arg(1-z)$ | Single-valued real-analytic combination of $\mathrm{Li}_2$, $\log\lvert z\rvert$, and $\arg(1-z)$. |
+| Boundary evaluation $D(0) = 0$ | Vanishing at the cusp $z = 0$ | Follows from $\mathrm{Li}_2(0) = 0$ and $\arg(1) = 0$ (with convention $\log 0 = 0$). |
+| Clausen oddness | $\mathrm{Cl}_2(-\theta) = -\mathrm{Cl}_2(\theta)$ | Termwise series negation using $\sin(-k\theta) = -\sin(k\theta)$. |
+| Origin vanishing from oddness | $\mathrm{Cl}_2(0) = 0$ | Immediate consequence of $\mathrm{Cl}_2(-0) = -\mathrm{Cl}_2(0)$. |

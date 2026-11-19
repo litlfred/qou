@@ -26,7 +26,7 @@ canonical projection.
 
 ### Mechanism 2 — modulus projection (complex-q phenomenon)
 
-Per [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md),
+Per [categorical-mass-markov proposition](../mass-endomorphism/categorical-mass-markov.md),
 the categorical mass formula is
 
 $$\mathfrak{m}_{q, \mathcal{K}} = \mathrm{tr}_M(\rho(\beta_\mathcal{K})).$$
@@ -66,7 +66,7 @@ Quantitative consequences differ between the two mechanisms:
      content given above.
 
 2. **Resolving the canonical lepton-mass formula** $F_\ell(q)$
-   ([`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)):
+   ([lepton-mass-tower-canonical conjecture](lepton-mass-tower-canonical.md)):
    the ratio $|\mathrm{tr}_M(K_\mu)| / |\mathrm{tr}_M(K_e)|$ is
    robust against $\mathrm{Im}(q)$ at leading order (modulus
    projection invariance), but **NOT** robust against the
@@ -81,8 +81,8 @@ Quantitative consequences differ between the two mechanisms:
 
 ## Cross-references
 
-- [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
-- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
-- [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
+- [lusztig-vs-hermitian-bar proposition](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
+- [q-zero-complex-extension proposition](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
+- [categorical-mass-markov proposition](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
 - [`bar-involution.md`](../braids-and-knots/bar-involution.md) — bar projection definition
 - [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification

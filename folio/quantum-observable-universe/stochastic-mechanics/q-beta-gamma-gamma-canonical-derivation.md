@@ -1,6 +1,6 @@
 **$\mathfrak{Q}_\beta$ γγ canonical derivation: the categorical-chain reading, selected by the cat-action / Frobenius / Wenzl chain.**
 
-The $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_k$ admit two readings: one in which $c_2$ is fitted, and one in which it is derived from the categorical chain. The ambiguity, left open by [`probe_q_beta_high_precision_ck.py`](../../computations/probe_q_beta_high_precision_ck.py), is settled here in favour of the second.
+The $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_k$ admit two readings: one in which $c_2$ is fitted, and one in which it is derived from the categorical chain. That ambiguity is settled here in favour of the second.
 
 ## The chain
 
@@ -18,7 +18,7 @@ $H_3(q)$ acts on the three irreps $V_{(3)}, V_{(2,1)}, V_{(1,1,1)}$ via the Hoef
 
 ### Step 2 — Frobenius pairing
 
-Per [`prop:markov-trace-frobenius-selection`](#prop:markov-trace-frobenius-selection), the unique non-degenerate Markov trace on $H_n(R, q)$ is the Jones-Markov $\mathrm{tr}_M$. The non-degeneracy is forced by the Frobenius co-Casimir construction.
+Per the [Frobenius Markov-trace selection proposition](#prop:markov-trace-frobenius-selection), the unique non-degenerate Markov trace on $H_n(R, q)$ is the Jones-Markov $\mathrm{tr}_M$. The non-degeneracy is forced by the Frobenius co-Casimir construction.
 
 ### Step 3 — Wedderburn decomposition
 
@@ -30,7 +30,7 @@ The $y_\lambda$ weights solve the Markov-axiom system on $H_3$.
 
 ### Step 5 — Canonical typed braids
 
-From [`def:categorical-proton`](#def:categorical-proton) and [`def:categorical-neutron`](#def:categorical-neutron), $\mathcal{B}_p$ and $\mathcal{B}_n$ have 11 typed crossings each.
+From the [categorical proton](#def:categorical-proton) and [categorical neutron](#def:categorical-neutron) definitions, $\mathcal{B}_p$ and $\mathcal{B}_n$ have 11 typed crossings each.
 
 ### Step 6 — $\mathrm{tr}_M$ values
 
@@ -38,7 +38,7 @@ At $q_0$, $\Delta\mathrm{tr}_M(n{-}p) = +0.0445860283$.
 
 ### Step 7-9 — Precision-ladder identifications
 
-Categorical-chain reading of the $c_k$ coefficients from [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder):
+Categorical-chain reading of the $c_k$ coefficients from the [categorical precision ladder](#prop:q-beta-categorical-precision-ladder):
 
 | $k$ | $c_k$ | categorical source |
 |:---:|:---|:---|
@@ -49,7 +49,7 @@ Categorical-chain reading of the $c_k$ coefficients from [`prop:q-beta-categoric
 
 ## Resolving the ambiguity: fitted versus categorical reading
 
-[`probe_q_beta_gamma_gamma_derivation.py`](../../computations/probe_q_beta_gamma_gamma_derivation.py) runs the categorical-derivation chain end-to-end. The N=2 $\to$ N=3 transition reduces the residual against CODATA by 112$\times$. This reduction is observable above CODATA's 0.4 ppm measurement floor. The categorical identification $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ is empirically validated, not just an empirical fit.
+Evaluating the categorical-derivation chain end-to-end shows that the $N=2 \to N=3$ transition reduces the residual against CODATA by $112\times$. This reduction is observable above CODATA's $0.4\;\mathrm{ppm}$ measurement floor, confirming the categorical identification $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ without fitting.
 
 The fitted reading, in which $c_2$ is chosen to match the data, provides no structural derivation of the 1.7% deviation. The categorical reading — Kashiwara $c_2 = b^2$ together with Hopf $c_3 = -2$ — provides structural content: each rung's coefficient is derived from substrate-only data via the categorical chain.
 
@@ -57,7 +57,7 @@ Selection rule: when two readings match the data equally, the categorical-chain 
 
 ## Open question: a rigorous $c_3 = -2$
 
-Can the $c_3 = -2$ Hopf assignment be proved rigorously? A Lean-level proof requires formalising the 3-fold Markov closure $\to$ Hopf-link substructure identification at the categorical level.
+Establishing the $c_3 = -2$ Hopf assignment unconditionally requires deriving the 3-fold Markov closure $\to$ Hopf-link substructure identification directly at the categorical level.
 
 ## Open question: higher orders
 

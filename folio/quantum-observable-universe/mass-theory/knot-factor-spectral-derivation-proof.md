@@ -24,6 +24,4 @@ $\lambda$, so $w_\lambda = 0$ there. $\square$
 
 **Scope.** The projection $\pi$ is essential. The uncentred entry $\tau(\beta_\mathcal{K}\,\beta_\mathcal{K}^*)$
 equals $\sum_\lambda y_\lambda\,\chi_\lambda(\beta_\mathcal{K}\beta_\mathcal{K}^*)$, the character of a product,
-which is not the product of characters unless one factor is central. The earlier statement of this
-block used that uncentred entry with weights $\dim_q^2 V_\lambda / [n]_q!$; at $\beta_\mathcal{K} = \mathbf{1}$
-it gave $1 = \sum_\lambda \dim_q^2 V_\lambda/[n]_q!$, which is false for $q \neq 1$.
+which is not the product of characters unless one factor is central. Using that uncentred entry with weights $\dim_q^2 V_\lambda / [n]_q!$ would give $1 = \sum_\lambda \dim_q^2 V_\lambda/[n]_q!$ at $\beta_\mathcal{K} = \mathbf{1}$, which is false for $q \neq 1$.

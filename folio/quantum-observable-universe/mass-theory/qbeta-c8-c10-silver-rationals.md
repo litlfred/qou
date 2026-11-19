@@ -10,4 +10,4 @@ $$
 
 The Pell-Lucas-clean classification at the silver ratio signals the structure of the $\mathfrak{Q}_\beta$ $c_k$ precision ladder. The $c_k$ values extracted at $q_0$ become noise-dominated for $k \geq 8$. The silver ratio exposes the algebraic structure. These three closed forms extend the $c_4 = c_3 \cdot b^4$, $c_6 = c_3^2 \cdot b^2$, $c_7 = c_3^3$ pattern.
 
-The formalization provides three pure-rational identities closed by `norm_num`. The silver-ratio $b^2 = 7/8$ serves as a rational constant. The identities hold over any field containing $\mathbb{Q}$ and are specialized here to the silver-ratio rational point. They remain fibre-level Laurent rationals.
+These three pure-rational identities hold over any field containing $\mathbb{Q}$ and are specialized here to the silver-ratio rational point $b^2 = 7/8$. They remain fibre-level Laurent rationals.

@@ -1,32 +1,28 @@
-**Axiomatic Markov-closure map**, reducing the open content to two atomic axioms.
+**Axiomatic Markov-closure map**, reducing the open content to two atomic hypotheses.
 
-As set out in [`rem:F3-eps6-leading-eq-neg-2b-cubed`](#rem:F3-eps6-leading-eq-neg-2b-cubed), the substantive open content of $c_3 = J_{\text{Hopf}}(q=1) = -2$ lives in the 3-fold Markov closure $\to$ Hopf-link substructure identification.
+As set out in the [$F_3$ leading-coefficient lemma](#rem:F3-eps6-leading-eq-neg-2b-cubed), the substantive open content of $c_3 = J_{\text{Hopf}}(q=1) = -2$ lives in the 3-fold Markov closure $\to$ Hopf-link substructure identification.
 
-We factorise that content into two atomic axioms:
+That content factorises into two atomic statements:
 
-## The two atomic axioms
+## The two atomic inputs
 
 1. **Markov-closure of a 2-strand 2-crossing braid is the Hopf link**:
    $$\widehat{\sigma_1^2 \in B_2} \;=\; \text{Hopf link}$$
-   This is the Alexander-Markov closure theorem applied to a specific case.
+   This is the Alexander--Markov closure theorem applied to the two-crossing braid on $B_2$.
 
 2. **Classical Jones value of the Hopf link**:
    $$J_{\text{Hopf}}(q{=}1) \;=\; -2$$
-   Already proved in Lean ([`F3-eps6-leading-eq-neg-2b-cubed.lean`](F3-eps6-leading-eq-neg-2b-cubed.lean)) via `unfold + norm_num`.
+   Verified directly by evaluating $-q^{1/2} - q^{5/2}$ (or its mirror) at $q = 1$.
 
-## Lean encoding
+## Algebraic decomposition
 
-The companion file [`markov-closure-map-axiomatic.lean`](markov-closure-map-axiomatic.lean) defines `class MarkovClosureMap2Strand` with explicit fields mapping crossing-count to closure type and tracking the classical-limit Jones value. It defines `class TrackCReducedAxiom` carrying the single axiomatic statement that $c_3$ factors through the Hopf identification. It proves `track_C_c_3_eq_neg_two`: under both classes, $c_3 = -2$.
+Separating the crossing-count-to-closure map on $B_2$ from the single hypothesis that $c_3$ factors through the two-crossing Hopf closure yields $c_3 = -2$ immediately from the two inputs:
 
-## Result
-
-The previous `ThreeFoldMarkovHopfExtraction` class had a single broad axiomatic field. Now, that content is split into two atomic axioms, each representing a recorded knot-theoretic result:
-
-| atomic axiom | known result | Lean status |
+| Atomic input | Classical reference | Status |
 |---|---|---|
-| `closure 2 = Hopf link` | Alexander-Markov | type axiom |
-| `jones_at_one 2 = -2` | Jones 1985 | proved (`unfold + norm_num`) |
+| Closure at $k = 2$ is the Hopf link | Alexander--Markov | topological closure input |
+| $J_{\mathrm{Hopf}}(1) = -2$ | Jones 1985 | exact rational evaluation |
 
-A full formalisation therefore targets only the first atom; the second is already closed.
+Only the topological closure identification remains external to pure Hecke arithmetic; the classical Jones evaluation at $q = 1$ is elementary.
 
 **Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

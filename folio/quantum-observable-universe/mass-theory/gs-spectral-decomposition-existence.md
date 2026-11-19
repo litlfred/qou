@@ -9,8 +9,6 @@ $$
 
 **Categorical statement.** The $E_\infty$-pairing of $\mathrm{tr}_M$ with $T_w$ in the filtered Hochschild spectral sequence splits into the smooth liquid-drop part and the shell-correction cyclotomic residues.
 
-**Lean encoding.** Encoded as the class-field axiom `spectral_decomposition` on `GBResidueSpectralSum`. Instances supply this identity.
-
-**Conjectural status.** A Lean proof requires formalized definitions for the graded trace and residues, plus the Habiro–Mittag-Leffler bridge identifying the cyclotomic tail with the residue sum.
+**Conjectural status.** Establishing this decomposition requires explicit constructions of the graded trace and cyclotomic residues together with the Habiro–Mittag-Leffler bridge identifying the cyclotomic tail with the residue sum.
 
 **Empirical witness.** Cross-pipeline validation records relative differences at or below $10^{-9}$ on every checkpoint.

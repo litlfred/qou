@@ -79,7 +79,7 @@ where $[\cdot]$ is the Iverson bracket. Whereas the Convention-C trace gave a no
 
 ### Convention-D $Q$-values
 
-The bare term and the combined formula, evaluated at the proton pin $q_0$ with $z = q^3/(q^2+1)$, the normalisation $|\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})|\cdot\hbar_q\cdot m_e/3$ of the corollary, and nucleons ordered protons first. $F_{\mathrm{deg2}} \approx 3.6844$ is applied for converting-neutron shells $\geq 5$; for ${}^{137}\mathrm{Cs}$ ($N = 82$, a filled shell $\geq 5$) the Pauli factor is $0$ under convention D. ${}^{3}\mathrm{H}$ ($N = 2$) and ${}^{14}\mathrm{C}$ ($N = 8$) also fill a shell, but lie in shells $1$–$4$, where $F = 1$; read literally, part (iii) of the corollary would give $Q = 0$ for them as well.
+The bare term and the combined formula, evaluated under the proton calibration $q_0$ with $z = q^3/(q^2+1)$, the normalisation $|\log_q(P_{\mathrm{dau}}/P_{\mathrm{par}})|\cdot\hbar_q\cdot m_e/3$ of the corollary, and nucleons ordered protons first. $F_{\mathrm{deg2}} \approx 3.6844$ is applied for converting-neutron shells $\geq 5$; for ${}^{137}\mathrm{Cs}$ ($N = 82$, a filled shell $\geq 5$) the Pauli factor is $0$ under convention D. ${}^{3}\mathrm{H}$ ($N = 2$) and ${}^{14}\mathrm{C}$ ($N = 8$) also fill a shell, but lie in shells $1$–$4$, where $F = 1$; read literally, part (iii) of the corollary would give $Q = 0$ for them as well.
 
 | Decay | $N$ | Shell | $\mathcal{Q}_{\mathrm{bare}}$ (MeV) | Error | Combined $Q$ (MeV) | Error | $Q_{\mathrm{exp}}$ (MeV) |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|

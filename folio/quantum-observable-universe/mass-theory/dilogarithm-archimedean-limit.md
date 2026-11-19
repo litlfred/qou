@@ -8,6 +8,6 @@ $$
   \mathrm{Li}_2(x).
 $$
 
-**Status:** Part A now PROVED (`archimedeanLimit_Ioo`). The elementary uniform convergence for $x \in (0, 1)$ holds strictly on the sub-unity limit. The substantive open content concerns the substrate continuation extending past the branch cut, demanding exact cancellation among algebraic poles before evaluating the principal branch.
+**Status:** Part A is proved: the elementary uniform convergence for $x \in (0, 1)$ holds strictly on the sub-unity limit. The substantive open content concerns the substrate continuation extending past the branch cut, demanding exact cancellation among algebraic poles before evaluating the principal branch.
 
 This conjecture supplies the required algebraic half of the overarching Kashaev volume conjecture, pairing with the Bloch-Wigner geometric half to construct the complete continuous volume.

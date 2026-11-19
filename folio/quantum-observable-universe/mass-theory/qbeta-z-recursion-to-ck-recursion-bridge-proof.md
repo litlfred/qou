@@ -1,14 +1,13 @@
 **Proof.** Algebraic rearrangement of the 3-term recursion
 `4(n+1) · a_{n+1} + 6n · a_n + (2n-1) · a_{n-1} = 0` from
-[`prop:qbeta-per-block-chi-closed-forms`](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
-§Extension #5, dividing through by $4(n+1)$ (positive for $n \geq 0$).
-The Lean proof is `field_simp` + `linarith` on the recursion equation.
+[qbeta-per-block-chi-closed-forms proposition](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
+§Extension #5, dividing through by $4(n+1)$ (positive for $n \geq 0$), which follows by direct linear arithmetic on the recursion equation.
 $\square$
 
 ## Structural relationship to `CKRecursion`
 
 The `QOU.QBeta.CKRecursion.CKRecursion ℝ` structure defined in
-[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
+[q-beta-c-k-recursion-from-habiro-q-difference proposition](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
 captures the **constant-kernel** depth-$d$ linear recursion
 
 $$
@@ -23,8 +22,8 @@ but its kernel coefficients depend on $n$:
 | Property | `CKRecursion` | $z$-Taylor recursion |
 |---|---|---|
 | **Depth** | $d$ (fixed) | 2 |
-| **Kernel** | `Fin d → R` (constant) | $n \mapsto (\text{Fin 2} \to \mathbb{R})$ (variable) |
-| **Linear in history** | Yes (proven, `applyRecursion_linear`) | Yes (state-dependent linear) |
+| **Kernel** | $R^d$ (constant) | $n \mapsto \mathbb{R}^2$ (variable) |
+| **Linear in history** | Yes (proven) | Yes (state-dependent linear) |
 
 **Origin of the kernel difference.** The constant-kernel structure of
 `CKRecursion` reflects a fibre-level Habiro element whose
@@ -51,7 +50,7 @@ shapes differ). However:
 2. The $z$-recursion's role in this picture is **upstream auxiliary
    data**: the Markov parameter $z(q)$ enters $\Delta\mathrm{tr}_M(q)$
    through the canonical Wenzl weights $y_\lambda(q)$
-   (see [`prop:qbeta-per-block-chi-closed-forms`](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
+   (see [qbeta-per-block-chi-closed-forms proposition](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
    §Extension #4), and the $z$-Taylor expansion is what one would
    eventually convolve against the per-block characters to recover
    the f-map. The $z$-recursion is a structural input to the f-map

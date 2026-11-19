@@ -18,4 +18,11 @@ export default theorem({
   },
   uses: ["thm:hyperreal-limit-transfer"],
   cites: ["conway1976", "gonshor1986"],
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Discovered while instantiating the six SurrealField birthday axioms on Mathlib's hyperreals (Real*) in QOU.AppendixSurreals.birthdayFaithful_independent_witnessed.",
+    },
+  ],
 });

@@ -21,4 +21,11 @@ export default conjecture({
     "rem:st-is-median-resummation",
   ],
   cites: ["robinson1966", "berarducci-mantova2018"],
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Formalised in QOU.AppendixSurreals.SurrealLimitTransfer as a Lean class with no instance over the abstract SurrealField interface; standardPart_evalOmega_of_tendstoReal and tendstoReal_le_of_eventuallyLE are proved from the class fields.",
+    },
+  ],
 });

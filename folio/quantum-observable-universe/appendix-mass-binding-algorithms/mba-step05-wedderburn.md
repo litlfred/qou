@@ -30,19 +30,18 @@ Step 3.*
 
 ### Correctness conditions
 
-1. *[`prop:wedderburn-trace-identity`](#prop:wedderburn-trace-identity)
+1. *[The Wedderburn trace identity](#prop:wedderburn-trace-identity)
    gives the canonical sum $\mathrm{tr}_M = \sum_\lambda y_\lambda\,\chi^\lambda$.*
-2. *[`prop:wenzl-bridge-applicability-qou`](#prop:wenzl-bridge-applicability-qou)
+2. *[The Wenzl-bridge applicability proposition](#prop:wenzl-bridge-applicability-qou)
    asserts that the Wenzl bridge applies in the QOU setting,
    giving a closed-form recursion for $y_\lambda(q)$.*
-3. *[`prop:wedderburn-as-noncomm-fourier`](#prop:wedderburn-as-noncomm-fourier)
+3. *[The non-commutative Fourier proposition](#prop:wedderburn-as-noncomm-fourier)
    establishes the algebra-level isomorphism as a non-commutative
    Fourier transform.*
-4. *The $q=1$ dimension of step 2a — the Frame–Robinson–Thrall hook-length
-   formula $d_\lambda = n!/\prod_{c} h_\lambda(c)$ — is machine-checked in Lean
-   (`QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct`),
+4. *The $q=1$ dimension of step 2a is given by the exact Frame–Robinson–Thrall hook-length
+   formula $d_\lambda = n!/\prod_{c} h_\lambda(c)$,
    so the block dimensions entering $\mathrm{tr}_M = \sum_\lambda y_\lambda\,\chi^\lambda$
-   are exact integers, not floating-point.*
+   are exact integers rather than floating-point approximations.*
 
 ### Complexity
 
@@ -67,8 +66,8 @@ for lam in partitions_of(n):
 *Canonical witness:
 [`wedderburn-lp-ew-wiring.witness.json`](../../../computations/wedderburn-lp-ew-wiring.witness.json).
 Records the per-partition $(d_\lambda, y_\lambda(q))$ table, the
-chosen $q$, and the upstream Hoefsmit cell-content table from
-`prop:hoefsmit-ew-cell-content` for cross-checking.*
+chosen $q$, and the upstream Hoefsmit cell-content table
+for cross-checking.*
 
 ### Notes
 

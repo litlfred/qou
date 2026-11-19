@@ -11,4 +11,4 @@ $$
   \bigr\}.
 $$
 
-Each boundary object represents a jet horizon or a big bang state . We define the boundary datum at $\mathcal{S} \in \partial\mathcal{A}$ as the colimit of the degree $\geq 1$ data over all diagrams in $\mathcal{A}$ approaching $\mathcal{S}$. This is the CMB boundary datum $\mathrm{CMB}(\partial\mathcal{A})$ .
+Each boundary object represents a jet horizon or a big bang state . The boundary datum at $\mathcal{S} \in \partial\mathcal{A}$ is defined as the colimit of the degree $\geq 1$ data over all diagrams in $\mathcal{A}$ approaching $\mathcal{S}$. This is the CMB boundary datum $\mathrm{CMB}(\partial\mathcal{A})$ .

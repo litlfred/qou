@@ -31,7 +31,7 @@ export default remark({
     {
       kind: "note",
       date: "2026-06-03",
-      body: "Item 4 of the post-PR-#665 open R&D inventory. The class fields follow the explicit-residual pattern; the GNS state and bicommutant closure of the inductive-limit algebra remain the substantive open R&D, with per-$n$ discharge status recorded in the audit doc. This block is retained as an interpretive forward-reference; it makes no logical claim.",
+      body: "Item 4 of the post-PR-#665 open R&D inventory. The class fields (`HnHilbertRep n q`, `HnInductiveEmbedding n q`, `MarkovTraceVNFactor q`) follow the explicit-residual pattern; the GNS state and bicommutant closure of the inductive-limit algebra remain the substantive open R&D, with per-$n$ discharge status recorded in the audit doc. This block is retained as an interpretive forward-reference; it makes no logical claim.",
     },
   ],
 });

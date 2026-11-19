@@ -9,6 +9,7 @@ export default proposition({
   tags: ["archimedean-universe", "genus", "riemann-roch"],
   uses: [
     "def:archimedean-condition",
+    "rem:three-euler-characteristics",
   ],
   proofs: ["prf:genus-maximal-descent"],
 });

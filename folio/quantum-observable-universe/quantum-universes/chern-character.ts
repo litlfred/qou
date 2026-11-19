@@ -4,7 +4,7 @@ export default definition({
   label: "def:chern-character",
   title: "The Chern character of a quantum universe",
   lean: { ref: "qou:QOU.GrothendieckChern.chernCharacter", validation: "not_checked" },
-  uses: ["def:grothendieck-group-of-a-qou", "def:hochschild-homology", "def:rigid-monoidal-category"],
+  uses: ["def:quantum-universe", "def:grothendieck-group-of-a-qou", "def:hochschild-homology", "def:rigid-monoidal-category"],
   defines: ["chern-character"],
   foreshadows: ["ex:su2-characters-and-quantum-dimension"],
   cites: ["bghl-2017", "loday-1998"],

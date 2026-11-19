@@ -1,4 +1,4 @@
-We independently verify hyperbolic volumes using SnapPy 3.3.
+Hyperbolic volumes are independently verified via SnapPy 3.3.
 
 **Verified assertions**:
 

@@ -164,7 +164,7 @@ export default remark({
     },
     {
       kind: "note",
-      body: "The `pn` row of the interface table previously read $\\sigma + (-h/2)\\cdot\\mathbf{1}$ with wire-format `averaged`, the $\\delta = 0$ form, which the producer never emits at generator $3k+2$.",
+      body: "The `pn` row of the interface table previously read $\\sigma + (-h/2)\\cdot\\mathbf{1}$ with wire-format `averaged`, the $\\delta = 0$ form, which the producer never emits at generator $3k+2$. Wire-format `ctype` values in `canonical_braid_crossings.atom_canonical_crossings` are `sigma` (pp), `sigma_inv` (nn), `averaged_weighted` (pn at generator $3k+2$), and `averaged` (intra-nucleon quark crossing); active block-partition symbolic trace routine is `closed_form_tau_M`.",
     },
   ],
 });

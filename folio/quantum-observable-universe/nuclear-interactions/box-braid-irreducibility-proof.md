@@ -10,7 +10,7 @@ For $T_{3,5}$: $\min(2 \cdot 5, 4 \cdot 3) = \min(10, 12) = 10$. The $B_3$ repre
 
 **Irreducibility below 10 crossings:**
 
-**(i) Topological invariance.** The crossing number $c(K)$ is a knot invariant. It is the minimum number of crossings over all diagrams of $K$ (not just positive braids, but all braid groups $B_n$ and all non-braid diagrams). For torus knots, we know this minimum exactly. No isotopy, Reidemeister move, or change of braid representation can reduce $c(T_{3,5})$ below $10$.
+**(i) Topological invariance.** The crossing number $c(K)$ is a knot invariant. It is the minimum number of crossings over all diagrams of $K$ (not just positive braids, but all braid groups $B_n$ and all non-braid diagrams). For torus knots, this minimum is known in closed form. No isotopy, Reidemeister move, or change of braid representation can reduce $c(T_{3,5})$ below $10$.
 
 **(ii) Distinction from the Iwahori--Hecke algebra normal form.** In the Iwahori--Hecke algebra $H_3(q)$, which has dimension $|S_3| = 6$, the word $(\sigma_0\sigma_1)^5$ reduces to a polynomial in the standard basis $\{T_w : w \in S_3\}$. The maximum word length is $3$ per basis element (since the longest element of $S_3$ has length $3$). This algebraic reduction computes the amplitude of the process (the Markov trace gives the Jones polynomial $J_{T_{3,5}}(q)$), not the physical crossing count. Each $\sigma_i$ in the original braid word represents one physical $R$-matrix application, which corresponds to one Planck step. The Iwahori--Hecke algebra computes what amplitude results from $10$ $R$-matrix applications; it does not reduce the number of applications.
 

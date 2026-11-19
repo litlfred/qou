@@ -1,4 +1,4 @@
-We explicitly construct the rigid dualizing complex $\omega_A^\bullet$ for Bring's coordinate ring.
+This example constructs the rigid dualizing complex $\omega_A^\bullet$ for Bring's coordinate ring explicitly.
 
 **Step 1: Identify the algebra.** Set $A = \mathcal{O}_q(\mathrm{SU}(2))$. As a $q$-deformation of a $3$-dimensional Lie group, $A$ is an Artin–Schelter regular algebra of global dimension $d = 3$.
 

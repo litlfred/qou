@@ -26,27 +26,27 @@ The weight distribution $W(\ell) = \sum_{|w| = \ell} |c_w|$ defines the total am
 
 The raw normal form contains up to $|S_A| = A!$ terms. For nuclei in the valley of stability with $N \geq Z - 1$, two quotient ideals reduce this to exactly $A$ terms. This forms the optimal Gröbner--Shirshov basis.
 
-**$I_8$ (adjacency correlation).** We absorb a reduced word $\sigma_i \sigma_{i+1}$ of length $2$ into the single-generator term $\sigma_{i+1}$ when the latter is present. The coefficient of $\sigma_i \sigma_{i+1}$ matches the off-diagonal entry of the transfer matrix product $M_i$ at $\sigma_i$.
+**$I_8$ (adjacency correlation).** A reduced word $\sigma_i \sigma_{i+1}$ of length $2$ is absorbed into the single-generator term $\sigma_{i+1}$ whenever the latter is present. The coefficient of $\sigma_i \sigma_{i+1}$ matches the off-diagonal entry of the transfer matrix product $M_i$ at $\sigma_i$.
 
 Adjacency correlation represents the non-commutative coupling between neighbouring crossings. It appears as the off-diagonal entry of the $2 \times 2$ transfer matrix $T(c, d)$ acting on the Hecke state $(a \sigma + b)$. The optimal basis encodes this coupling in the ratio $c_{\sigma_i \sigma_{i+1}} / c_{\sigma_{i+1}}$, which is a function of $q$ alone.
 
-**$I_9$ (closed shell chain collapse).** We absorb a reduced word $w \cdot \sigma_j$ when its prefix $w$ is present. We apply this recursively from longest to shortest words. This collapses the entire normal form to the standard basis $\{\mathbf{1}, \sigma_0, \ldots, \sigma_{A-2}\}$.
+**$I_9$ (closed shell chain collapse).** A reduced word $w \cdot \sigma_j$ is absorbed whenever its prefix $w$ is present; applied recursively from longest to shortest words, this reduction collapses the entire normal form to the standard basis $\{\mathbf{1}, \sigma_0, \ldots, \sigma_{A-2}\}$.
 
-Each generator $\sigma_i$ contributes a transfer matrix chain $M_i = \prod_{j > i} T_{K_i, K_j}(q)$. The extension $w \cdot \sigma_j$ represents the next step in this chain. We collapse the chain to a single term $\hat{V}_i = z \cdot (M_i)_{00} + (M_i)_{10}$. This yields the Markov-traced volume.
+Each generator $\sigma_i$ contributes a transfer matrix chain $M_i = \prod_{j > i} T_{K_i, K_j}(q)$. The extension $w \cdot \sigma_j$ represents the next step in this chain. Collapsing the chain to a single term $\hat{V}_i = z \cdot (M_i)_{00} + (M_i)_{10}$ yields the Markov-traced volume.
 
-**Necessity of $d \neq 0$ for $I_9$.** We multiply the normal form by $(c \cdot \sigma_k + d)$. This scales every existing word by $d$ and extends each word by $c \cdot \sigma_k$. For every extended word $w \cdot \sigma_k$, the prefix $w$ survives from the $d$-term. This allows $I_9$ to absorb it. This mechanism fails if $d = 0$.
+**Necessity of $d \neq 0$ for $I_9$.** Multiplying the normal form by $(c \cdot \sigma_k + d)$ scales every existing word by $d$ and extends each word by $c \cdot \sigma_k$. For every extended word $w \cdot \sigma_k$, the prefix $w$ survives from the $d$-term. This allows $I_9$ to absorb it. This mechanism fails if $d = 0$.
 
 For proton–proton crossings, $d = 0$. Without the prefix, $I_9$ lacks an anchor for chain stripping. The condition $d \neq 0$ holds for neutron–neutron ($d = -(q - q^{-1})$) and proton–neutron ($d = -(q - q^{-1})/2$) crossings. The valley of stability condition $N \geq Z - 1$ ensures at least one $d \neq 0$ crossing at every generator.
 
 ## The histogram is universal in $A$
 
-The term-count histogram $h(\ell) = \#\{w : |w| = \ell\}$ tallies reduced words at each length. We verify this for $A \leq 8$. The histogram is identical for all $(Z, N)$ at the same $A$, such as ${}^8\mathrm{Be}(4,4)$ and ${}^8\mathrm{Li}(3,5)$.
+The term-count histogram $h(\ell) = \#\{w : |w| = \ell\}$ tallies reduced words at each length. Direct computation confirms this universality for $A \leq 8$: the histogram is identical for all $(Z, N)$ at the same $A$, such as ${}^8\mathrm{Be}(4,4)$ and ${}^8\mathrm{Li}(3,5)$.
 
 The histogram depends only on the Iwahori--Hecke algebra $H_A(q)$. It factors as a product of $q$-integers:
 
 See [Table 2](#tbl:groebner-nf-computation-table2-data).
 
-These are $q$-multinomial coefficients. The palindromicity of the histogram polynomial reflects the Poincaré duality of the Bruhat order on the support. We verify this up to $A \leq 7$.
+These are $q$-multinomial coefficients. The palindromicity of the histogram polynomial reflects the Poincaré duality of the Bruhat order on the support, verified explicitly through $A \leq 7$.
 
 ## The weight distribution carries the pairing energy
 
@@ -55,7 +55,7 @@ The $A$-universal histogram depends only on $A$. The weight distribution $W(\ell
 - Even-even nuclei exhibit higher total weight. This reflects stronger coherence from nucleon pairing.
 - Odd-odd nuclei exhibit lower total weight. Unpaired crossings weaken the chain anchor.
 
-The ratio $\mathrm{net}(\text{even-even}) / \mathrm{net}(\text{odd-odd})$ quantifies the pairing energy. At $A = 6$, we find $\mathrm{net}({}^6\mathrm{He}(2,4)) / \mathrm{net}({}^6\mathrm{Li}(3,3)) = 6.64 / 4.96 = 1.34$. This represents a $34\%$ pairing enhancement.
+The ratio $\mathrm{net}(\text{even-even}) / \mathrm{net}(\text{odd-odd})$ quantifies the pairing energy. At $A = 6$, $\mathrm{net}({}^6\mathrm{He}(2,4)) / \mathrm{net}({}^6\mathrm{Li}(3,3)) = 6.64 / 4.96 = 1.34$, representing a $34\%$ pairing enhancement.
 
 In the normal form, adjacent same-type crossings (even occupancy) trigger the Hecke product $\sigma^2 = (q - q^{-1})\sigma + 1$. The generated $\mathbf{1}$ term anchors the $I_9$ chain. Unpaired crossings (odd occupancy) produce only the $\sigma$ term. This weakens the anchor and reduces the total amplitude.
 
@@ -95,7 +95,7 @@ Computed witnesses are exact in $\mathbb{Z}[\check{q}, \check{q}^{-1}]$ for $A \
 
 See [Table 3](#tbl:groebner-nf-computation-table3-data).
 
-For $A \leq 12$, the symbolic witnesses $\mathrm{tr}_{\mathrm{alt}}(\check{q})$, $\mathrm{net}(\check{q})$, $\mathrm{observable}(\check{q})$, and $\mathrm{color}(\check{q})$ are exact Laurent polynomials over $\mathbb{Z}$ in the spinor information rate $\check{q} = q^{1/2}$. We track the denominator $2^{p_n}$ separately.
+For $A \leq 12$, the symbolic witnesses $\mathrm{tr}_{\mathrm{alt}}(\check{q})$, $\mathrm{net}(\check{q})$, $\mathrm{observable}(\check{q})$, and $\mathrm{color}(\check{q})$ are exact Laurent polynomials over $\mathbb{Z}$ in the spinor information rate $\check{q} = q^{1/2}$, with the denominator $2^{p_n}$ tracked separately.
 
 The $H_3(q)$ Pauli factor is $F_{\mathrm{Pauli}} = 0.6382$. The $A$-strand values differ because they capture the full multi-generator interaction, not the $3$-strand projection.
 
@@ -105,4 +105,4 @@ During inductive construction, the quotient ideals $I_8$ and $I_9$ strip terms a
 
 For ${}^{16}\mathrm{O}$ at strand $8$, $\sigma_7 \sigma_8$ appears $52{,}230$ times. This is the $I_8$ adjacency pattern at the newest generator. The pattern $\sigma_4 \sigma_6 \sigma_7 \sigma_8$ appears $14{,}262$ times. This reveals a $4$-generator chain that skips $\sigma_5$. It represents a potential $I_{11}$ candidate.
 
-The weight distribution $W(\ell)$ and the Pauli accumulator $\mathrm{tr}_{\mathrm{alt}}$ are preserved exactly through stripping. No physical data is lost. We compute the $A$-universal histogram $h(\ell)$ once from the minimal case $N(1, A-1)$.
+The weight distribution $W(\ell)$ and the Pauli accumulator $\mathrm{tr}_{\mathrm{alt}}$ are preserved exactly through stripping. No physical data is lost; the $A$-universal histogram $h(\ell)$ is computed once from the minimal case $N(1, A-1)$.

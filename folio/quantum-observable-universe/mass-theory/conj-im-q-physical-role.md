@@ -22,7 +22,7 @@ below.*
 
 ## Exclusions for Im(q)
 
-Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
+Per [im q vs p skew remark](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
 - The EM / $P_{\mathrm{skew}}$ channel (this is a real-q mechanism)
 - A fourth calibration input (the 3-CAL count is cohomologically forced)
 - An observable in the current framework (mass formula uses $|\cdot|$)
@@ -40,9 +40,9 @@ $(\mathrm{Re}\,q, \mathrm{Im}\,q)$.
 
 | candidate | conclusion at $q_0$ | scope | carrier |
 |---|---|---|---|
-| (i) chirality | the identification $\text{chirality} = (q \mapsto \bar q)$ holds exactly on $\lvert q\rvert = 1$; the substrate sits $18.83\,\%$ of $q_0$ away from it | (b) | `qou:QOU.QBeta.conj_eq_inv_iff_modulus_one` |
-| (ii) phase dual to CAL-2 | $\mathrm{Im}\,q = 0$ on the whole admissible set | (b) | `qou:QOU.QBeta.im_qbeta_zero_iff_e2` |
-| (iii) non-Hermitian | premise correct; **open**, but re-scoped — the framework *does* carry a categorical decay rate, and that rate is built entirely at real $q$ | (a) | `qou:QOU.QBeta.two_width_mechanisms_are_independent` |
+| (i) chirality | the identification $\text{chirality} = (q \mapsto \bar q)$ holds exactly on $\lvert q\rvert = 1$; the substrate sits $18.83\,\%$ of $q_0$ away from it | (b) | unit-modulus conjugation-inversion equivalence |
+| (ii) phase dual to CAL-2 | $\mathrm{Im}\,q = 0$ on the whole admissible set | (b) | reality criterion $\mathrm{Im}\,\mathfrak{Q}_\beta = 0 \iff e_2 = 0$ |
+| (iii) non-Hermitian | premise correct; **open**, but re-scoped — the framework *does* carry a categorical decay rate, and that rate is built entirely at real $q$ | (a) | independence of the two width mechanisms |
 
 For (i), the corpus's own chirality operation is the **bar involution**
 $q \mapsto q^{-1}$ — the mirror knot, $J_{\bar K}(q) = J_K(q^{-1})$ — and
@@ -106,8 +106,7 @@ $\mathrm{Im}\,q$, not that no construction does.
 
 What the rate formula genuinely lacks is its **scale**, not its shape. The
 weak-scale crossing count $N_v$ in $v = N_v\,\mathfrak{E}_\times\,\mu_0$ is
-undetermined, so $G_F$ enters numerically from experiment; the Lean carrier
-`all_six_agree` says so in its own docstring, and
+undetermined, so $G_F$ enters numerically from experiment, and
 [the Fermi-relation block](../predicted-spectra/hadron-half-life-fermi.md)
 lists it as open computation 1. Since $m_e = 3\mathfrak{E}_\times\mu_0$, both
 $\mathfrak{E}_\times$ and $\mu_0$ cancel and
@@ -213,11 +212,11 @@ directly. The candidate roles are all in **non-mass observables**.
 
 ## Connection to other conjectures
 
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) F_ℓ
+- [lepton mass tower canonical conjecture](lepton-mass-tower-canonical.md) F_ℓ
   — the canonical lepton-mass formula is Im(q)-robust (modulus projection
   invariance); F_ℓ does NOT distinguish the three candidate Im(q) roles.
   Hence the F_ℓ conjecture is consistent with ALL three candidates.
-- [`prop:rho-k-pair-gen-canonical-form`](../mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) —
+- [rho k pair gen canonical form proposition](../mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) —
   similarly Im(q)-robust at LO.
 - The complex-q machinery is **decoupled** from the mass-formula closure;
   closing the $\mathfrak{Q}_\beta$ residual or deriving F_ℓ does **not** require resolving
@@ -232,7 +231,7 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 - **Empirically sufficient**: all known mass observables fit
   with real $q_0$ to the precision documented in `per-observable-100x-status.witness.json`.
 - **Structurally forced at the archimedean layer**, and no longer a
-  convention. `qou:QOU.QBeta.im_qbeta_zero_iff_e2` derives
+  convention. The $\mathfrak{Q}_\beta$ reality equivalence derives
   $\mathrm{Im}(q_0) = 0$ from the reality of $\mathfrak{Q}_\beta$ on
   $\mathrm{Re}\,q > 1/2$, which contains the whole CAL-2 admissible set.
   The Im-sensitive measurement this clause was waiting for is
@@ -244,9 +243,9 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 
 ## Cross-references
 
-- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism
-- [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — involution split for complex q
-- [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md) — the distinction from P_skew
-- [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md) — modulus projection
+- [q zero complex extension proposition](q-zero-complex-extension.md) — substrate polymorphism
+- [Lusztig vs Hermitian bar proposition](lusztig-vs-hermitian-bar.md) — involution split for complex q
+- [im q vs p skew remark](rem-im-q-vs-p-skew.md) — the distinction from P_skew
+- [categorical mass Markov proposition](../mass-endomorphism/categorical-mass-markov.md) — modulus projection
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

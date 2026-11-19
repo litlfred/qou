@@ -1,4 +1,4 @@
-The cosmic microwave background records the initial state of an aeon. We model this as the boundary jet data surviving at a big bang state.
+The cosmic microwave background records the initial state of an aeon, modelled here as the boundary jet data surviving at a big bang state.
 
 Let $\mathcal{S}_0$ be a big bang state  in an affine chart $U$. Let $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$ be the associated brane tower . The **cosmic microwave background** (CMB) of $\mathcal{S}_0$ is the boundary datum
 
@@ -11,7 +11,7 @@ $$
   \bigr).
 $$
 
-This pair isolates the degree-$1$ (linear transport) and degree-$2$ (curvature) jet data at $\mathcal{S}_0$. Because $A_0|_{\mathcal{S}_0} = 0$, we can equivalently restrict $A_1 \oplus A_2$:
+This pair isolates the degree-$1$ (linear transport) and degree-$2$ (curvature) jet data at $\mathcal{S}_0$. Because $A_0|_{\mathcal{S}_0} = 0$, this is equivalent to restricting $A_1 \oplus A_2$:
 
 $$
   \mathrm{CMB}(\mathcal{S}_0)

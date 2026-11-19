@@ -1,4 +1,4 @@
-The LP dual of [`prop:co2-lp-dual-binding`](#prop:co2-lp-dual-binding) has three shadow prices:
+The LP dual of the [$CO_2$ LP-dual binding proposition](#prop:co2-lp-dual-binding) has three shadow prices:
 
 - *$y_{\sigma}$: value of each $\sigma$-bond shared pair*
 - *$y_{\pi}$: value of each $\pi$-bond shared pair*

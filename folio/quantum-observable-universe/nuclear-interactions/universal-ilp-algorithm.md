@@ -54,7 +54,7 @@ $$
 
 ### Consistency
 
-*We use the same energy functional $\Phi_1 = \ln|\mathrm{tr}_M|$ and the same Wedderburn-Artin weights at every level. All energy scales are derived from $q_0$ and $m_e$ alone.*
+*The same energy functional $\Phi_1 = \ln|\mathrm{tr}_M|$ and the same Wedderburn-Artin weights govern every level. All energy scales are derived from $q_0$ and $m_e$ alone.*
 
 **Archimedean specialisation.**
 *What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.*

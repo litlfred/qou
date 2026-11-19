@@ -2,7 +2,7 @@
 
 ## Form A nulling
 
-We treat the formal trace difference $\Delta(\mathrm{net})$ as a proxy for the physical $\beta$-decay $Q$-value by multiplying by $m_e$ and geometric factors. The resulting Form A vanishes precisely at the silver ratio:
+Treating the formal trace difference $\Delta(\mathrm{net})$ as a proxy for the physical $\beta$-decay $Q$-value through multiplication by $m_e$ and geometric factors yields Form A, which vanishes precisely at the silver ratio:
 
 $$
 \mathfrak{Q}_\beta^A = m_e \cdot \frac{|q^2-2q-1|(q+1)}{2q^3} \;\xrightarrow{q \to 1+\sqrt{2}}\; 0

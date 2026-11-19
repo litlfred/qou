@@ -1,4 +1,4 @@
-This remark records the derivation behind [`prop:co-lp-dual-binding`](#prop:co-lp-dual-binding): why the multiple bond decomposes into orthogonal channels, why a single-chain model fails, and how the active-set cardinality reproduces the bond order.
+This remark records the derivation behind the [$CO$ LP-dual binding proposition](#prop:co-lp-dual-binding): why the multiple bond decomposes into orthogonal channels, why a single-chain model fails, and how the active-set cardinality reproduces the bond order.
 
 ## Orthogonal channels, not one chain
 

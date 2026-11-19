@@ -22,7 +22,7 @@ two distinct filtrations:*
 \lambda_1+\lambda'_1-1$ used in this block is now called the **max-hook
 depth**. The corpus fixes "GB-depth" to mean Lusztig's $a$-function
 $a(\lambda)=\sum_i\binom{\lambda_i}{2}$; see
-[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration), which also
+[cellular-depth-filtration proposition](#prop:cellular-depth-filtration), which also
 shows that either choice gives a filtration of $Z(H_n(q))$ by ideals, not a
 unital algebra filtration. Below, $\mathrm{depth}_{\mathrm{GB}}$ should be read
 as the max-hook depth.
@@ -54,7 +54,7 @@ half of the two-element orbit $\{\lambda,\lambda'\}$. So $d_{\mathrm{II}}$ is
 the indicator of $\lambda=\lambda'$ recoded as $\{2,3\}$, and the content of the
 conjecture is the existence of the lift $\hat e_\lambda$. Under the
 hypotheses (H-match) and (H-parity) of
-[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration) item 4,
+[cellular-depth-filtration proposition](#prop:cellular-depth-filtration) item 4,
 such a realisation forces odd-depth components to vanish on self-conjugate
 cells and to be antisymmetric on chiral pairs; non-vanishing is the remaining
 conjectural input.
@@ -101,7 +101,7 @@ not derived, and is not part of the conjecture.
 The general pattern: **self-conjugacy under partition transpose
 $\Rightarrow$ even iterated-integral depth (real period); chiral
 pair $\Rightarrow$ odd depth (Tate-twisted period)**. Verifies
-[`rem:chirality-period-pairing`](#rem:chirality-period-pairing).
+[chirality-period-pairing remark](#rem:chirality-period-pairing).
 
 ### Reduction to known structure
 
@@ -113,7 +113,7 @@ chiral pairs split into depth-$3$ witnesses.
 
 At $n \geq 5$: the partition combinatorics gets richer; Hoefsmit
 seminormal form
-([`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form))
+([hoefsmit-seminormal-form proposition](#prop:hoefsmit-seminormal-form))
 and the explicit $e_\lambda$ formula
-([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent))
+([explicit-central-idempotent proposition](#prop:explicit-central-idempotent))
 allow the bridge to be computed cell-by-cell.

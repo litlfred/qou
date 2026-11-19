@@ -1,7 +1,7 @@
 ### Proof (Markov axiom + Hecke skein)
 
 For a positive interface generator $\sigma_g$, the **Markov axiom**
-([`thm:jones-markov-trace`](#thm:jones-markov-trace)) gives
+([Jones Markov trace theorem](#thm:jones-markov-trace)) gives
 $$
   \mathrm{tr}_M(\alpha \cdot \sigma_g) \;=\; z \cdot \mathrm{tr}_M(\alpha)
   \qquad \forall\, \alpha \in H_{n}(q).
@@ -60,7 +60,7 @@ $z(z-h)$.
 
 The same single Markov input fixes a **third** interface factor. The
 canonical p-n boundary (`closed_form_tau_M.canonical_interface_kinds`,
-`prop:averaging-resonance-rule`) carries no preferred chirality, so it is
+averaging resonance rule proposition) carries no preferred chirality, so it is
 the **bar-invariant** ($q \leftrightarrow q^{-1}$ symmetric) crossing
 $$
   \sigma_{\mathrm{bar}} \;:=\; \tfrac{1}{2}\bigl(\sigma_g + \sigma_g^{-1}\bigr)
@@ -78,9 +78,8 @@ Thus **all three** per-interface factors — $z$ (positive), $z-h$
 trace-linearity from the *single* Markov axiom $\mathrm{tr}_M(\alpha\sigma_g) =
 z\,\mathrm{tr}_M(\alpha)$ plus the skein $\sigma_g^{-1}=\sigma_g-h$; none is an
 independent input or a fit. The division-free form
-$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ is
-formalised over a generic commutative ring as
-`interface_knot_markov_z_bar_symmetric` (the $\tfrac12$ normalisation is
+$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ holds
+over a generic commutative ring (with the $\tfrac12$ normalisation
 deferred to the archimedean realisation, per the base-ring convention).
 
 ### The three factors are one bar-orbit
@@ -120,7 +119,7 @@ $$
 $$
 
 with $\delta$ the substrate flavour split of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate). A like-flavour
+[flavor split substrate proposition](#prop:flavor-split-substrate). A like-flavour
 bond has no mean to tilt — averaging $f_{pp}$ with itself returns $f_{pp}$ for
 any weights summing to one — which is why the weighting is defined at the p-n
 interface and nowhere else.
@@ -157,7 +156,7 @@ The colour weighting uses $\varepsilon = \delta/4$, and
 $\overline{\delta} = -q^{2}\delta$, so it misses bar-oddness by exactly a factor
 of $q^{2}$ and nothing else. That factor localises: in the factored form
 $\delta \sim \hbar_q^{2}\, h_q\, [2]_q$ of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate), the Hecke
+[flavor split substrate proposition](#prop:flavor-split-substrate), the Hecke
 crossing $h_q$ is already bar-odd and the doublet integer $[2]_q$ is bar-even,
 so the **entire** obstruction is the $\hbar_q^{2}$ prefactor — the two quanta of
 substrate Planck action.
@@ -177,9 +176,7 @@ is checked exactly in
 (17 assertions), and the four identities that are field-theoretic rather than
 substrate-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
 defect $-(\overline{\varepsilon} + \varepsilon)h$, and the bar-even-iff-offset-bar-odd
-equivalence — are formalised over an arbitrary characteristic-zero field in
-[`QOU/MassTheory/PnInterfaceBarStructure.lean`](../lean/QOU/MassTheory/PnInterfaceBarStructure.lean),
-using only the axioms `propext`, `Classical.choice` and `Quot.sound`.
+equivalence — hold algebraically over an arbitrary characteristic-zero field.
 
 ### Full-trace verification at convention D (4 atoms)
 
@@ -203,7 +200,7 @@ $0.12568415$, again equal to the predicted product to $\le 5\times10^{-50}$ (and
 likewise for the colour-blind $\sigma_g - h/2$). The identity ($\star$) therefore holds
 at convention D on every word tested, at the $10^{-50}$ floor of the arithmetic.
 
-Per-atom interface census (from `atom_braid_word_3A`):
+Per-atom interface census (from the canonical $3A$-strand atomic braid word):
 
 - **D**: $p \cdot \sigma_3 \cdot n$ — 1 positive (p-n).
 - **T**: $p \cdot \sigma_3 \cdot n \cdot \sigma_6^{-1} \cdot n$ — 1 positive (p-n) + 1 negative (n-n).
@@ -245,7 +242,7 @@ $$
   \quad\text{at }q_0.
 $$
 This is the content of
-`conj:constit-factor-2q-minus-1`, whose $0.033\%$ agreement was measured at the
+constituent factor 2q minus 1 conjecture, whose $0.033\%$ agreement was measured at the
 excised convention-C weight on the earlier grouped intra-nucleon word.
 
 **The step does not survive at convention D.** The constituent product is

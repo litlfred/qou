@@ -1,4 +1,4 @@
-*Proof.* We establish the absolute-convergence bound via direct geometric-series estimation on the iterated Laplacian.
+*Proof.* Direct geometric-series estimation on the iterated Laplacian establishes the absolute-convergence bound.
 
 **Step 1: q-integer asymptotic.** For $q > 1$, the q-integer $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ satisfies
 $$
@@ -6,7 +6,7 @@ $$
   \;\leq\;
   \frac{q^k}{q - q^{-1}}.
 $$
-Squaring and applying $\hbar_q = (q - 1)/q$, we obtain $\lambda_k^{(q)} = [k]_q^2 \hbar_q / L_q^2 \leq C\,q^{2k}$ for a constant $C = \hbar_q / \bigl((q - q^{-1})^2 L_q^2\bigr)$.
+Squaring and applying $\hbar_q = (q - 1)/q$ gives $\lambda_k^{(q)} = [k]_q^2 \hbar_q / L_q^2 \leq C\,q^{2k}$ for a constant $C = \hbar_q / \bigl((q - q^{-1})^2 L_q^2\bigr)$.
 
 **Step 2: Single-jet bound.** The $\hbar_q^2 \Delta^{(1)}$ term on a normalised mode $e_k$ of the Reeb bundle yields
 $$
@@ -16,7 +16,7 @@ $$
   \;\leq\;
   \hbar_q^2 \cdot C \, q^{2k}.
 $$
-For the leading mode $k = 1$, this quantity is finite. Higher modes produce exponentially suppressed corrections, which we control in Step 4.
+For the leading mode $k = 1$, this quantity is finite. Higher modes produce exponentially suppressed corrections, controlled in Step 4.
 
 **Step 3: Iterated-Laplacian bound.** The $n$-th iteration $\Delta^{(n)}$ on the same mode yields
 $$
@@ -33,7 +33,7 @@ $$
   \bigl(\hbar_q^2 \, C \, q^{2k}\bigr)^n.
 $$
 
-**Step 4: Geometric-series sum.** We sum over $n$ with $k = 1$ fixed to extract the dominant mode contribution. We use $\hbar_q^2 C q^2 < 1$, which holds for $q \in (1, q_*)$ with $q_* \approx 1.2$. This range comfortably covers the substrate $q_0 \approx 1.110$:
+**Step 4: Geometric-series sum.** Summing over $n$ with $k = 1$ fixed extracts the dominant mode contribution under $\hbar_q^2 C q^2 < 1$, which holds for $q \in (1, q_*)$ with $q_* \approx 1.2$. This range comfortably covers the substrate $q_0 \approx 1.110$:
 $$
   \sum_{n=1}^{\infty} \hbar_q^{2n} C^n q^{2n}
   \;=\;
@@ -41,13 +41,13 @@ $$
   \;<\;\infty.
 $$
 
-**Step 5: Leading versus remainder.** We separate the $n = 1$ term:
+**Step 5: Leading versus remainder.** Separating the $n = 1$ term gives
 $$
   T(\rho) - \hbar_q^2 \,\Delta^{(1)}(\rho)
   \;=\;
   \sum_{n=2}^{\infty} \hbar_q^{2n} \, \Delta^{(n)}(\rho).
 $$
-On the leading mode Step 3 is an equality, $\langle e_1, \Delta^{(n)} e_1\rangle = \lambda_1^n$ with $\lambda_1 = \lambda_1^{(q)} = \hbar_q / L_q^2$. The [uniform bound on $\Delta^{(n)}$](#prop:delta-max-uniform-bound) makes $\lambda_1^n$ bounded in $n$, and a bounded sequence of powers has $\lambda_1 \leq 1$ (Lean `QOU.QBeta.lam_le_one_of_pow_bounded`). Therefore
+On the leading mode Step 3 is an equality, $\langle e_1, \Delta^{(n)} e_1\rangle = \lambda_1^n$ with $\lambda_1 = \lambda_1^{(q)} = \hbar_q / L_q^2$. The [uniform bound on $\Delta^{(n)}$](#prop:delta-max-uniform-bound) makes $\lambda_1^n$ bounded in $n$, and any non-negative number whose powers remain bounded satisfies $\lambda_1 \leq 1$. Therefore
 $$
   \bigl| T(\rho) - \hbar_q^2 \,\Delta^{(1)}(\rho) \bigr|
   \;\leq\;
@@ -63,4 +63,4 @@ Finally $\frac{1}{1 - \hbar_q^2} \leq \frac{q^{-2}}{1 - q^{-2}}$ on $1 < q \leq 
 
 *Direct eigenvalue bound.* Bounding the tail directly through the exact leading eigenvalue avoids absorbing the Step-1 constant $C$ into $C q^2 \leq q^{-2}$ (which would require $L_q \geq q^2 \sqrt{\hbar_q}/(q - q^{-1}) \approx 1.855$ rather than the normalized value $L_q = \sqrt{\hbar_q}$), and therefore requires no auxiliary condition on $L_q$ beyond the uniform bound.
 
-**Sharpness.** At $q_0 \approx 1.110$, we have $\hbar_q \approx 0.099$ and $q^{-2} \approx 0.812$. Therefore, the geometric ratio $q^{-2} \hbar_q^2 \approx 0.008 \ll 1$. The single-jet term dominates the tower at the $\approx 1\%$ level. Three jet levels suffice for sub-ppm precision, justifying the truncations applied elsewhere in the mass-formula derivations. $\square$
+**Sharpness.** At $q_0 \approx 1.110$, $\hbar_q \approx 0.099$ and $q^{-2} \approx 0.812$, giving the geometric ratio $q^{-2} \hbar_q^2 \approx 0.008 \ll 1$. The single-jet term dominates the tower at the $\approx 1\%$ level. Three jet levels suffice for sub-ppm precision, justifying the truncations applied elsewhere in the mass-formula derivations. $\square$

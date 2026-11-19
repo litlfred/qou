@@ -1,4 +1,4 @@
-After the $\sigma$-bond framework is assembled, there remain 6 unpaired electrons — one from each carbon's $2p_z$ orbital. The LP dual of [`prop:benzene-threading-emergence`](#prop:benzene-threading-emergence) optimises their placement.
+After the $\sigma$-bond framework is assembled, there remain 6 unpaired electrons — one from each carbon's $2p_z$ orbital. The LP dual of the [benzene threading emergence proposition](#prop:benzene-threading-emergence) optimises their placement.
 
 **Candidate configurations:**
 
@@ -28,4 +28,4 @@ $$
   \bigr)
 $$
 
-The observed resonance energy is $\approx 1.56 \;\mathrm{eV}$ (:val[benzene_resonance_kcal]{precision=2, witness=computations/molecular-experimental-refs.witness.json} kcal/mol).
+The observed resonance energy is $\approx 1.56 \;\mathrm{eV}$ (:val[benzene_resonance_kcal]{precision=2}).

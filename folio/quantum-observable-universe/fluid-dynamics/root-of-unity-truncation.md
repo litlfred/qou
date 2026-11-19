@@ -1,11 +1,11 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
-[`conj:vorticity-lower-bound`](#conj:vorticity-lower-bound),
+the [$q$-Aubin--Lions conjecture](#conj:q-aubin-lions),
+the [Navier--Stokes counterexample conjecture](#conj:ns-counterexample),
+the [critical-exponent conjecture](#conj:critical-exponent),
+the [Yekutieli blowup proposition](#prop:blowup-yekutieli),
+the [vorticity lower-bound conjecture](#conj:vorticity-lower-bound),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+the [regularity-breakdown conjecture](#conj:regularity-breakdown);
 "Root-of-unity truncation").**
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU with substrate parameter $q$ not a root of unity ([QOU axiom](#def:substrate-parameter)). As $q \to 1$ through the roots of unity $q = e^{i\pi/\kappa}$, the representation category truncates to a finite modular tensor category; blowup arises only in the $\kappa \to \infty$ accumulation. For an anti-parallel vortex pair with core aspect ratio $\kappa(t)$:
@@ -81,6 +81,6 @@ The baseline [vorticity lower bound](#conj:vorticity-lower-bound) strictly manda
 - Assuming $\kappa(t) \sim \kappa$ (exhibiting purely linear growth): the physical core safely flattens exactly mirroring the rate unlocking new modes. Physical vorticity safely spreads forming a wide sheet. The strict lower bound $\omega \geq c/(T^*-t)$ potentially fails. NS may function as completely regular.
 - Assuming $\kappa(t) \sim \kappa^\beta$ spanning $0 < \beta < 1$: an intermediate regime triggers. The firm lower bound holds cleanly provided $\beta < 1/2$ (confirming the physical flattening remains mathematically slower than the approach).
 
-An earlier version of this proposition identified $\kappa(t)^2$ with a Levi form condition number $\lambda_{\max}/\lambda_{\min}$ and inserted "the Levi form stays non-degenerate at collision" as a middle term of the boxed equivalence. That reading is withdrawn. On the three-dimensional flow domain the Levi datum of the vorticity plane field is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ ([core Levi form](#prop:core-levi-form)), so there is no eigenvalue pair and no condition number, and the blow-up implication from non-degenerate Levi data is refuted by a Beltrami solution ([Levi degeneracy conjecture](#conj:levi-degeneracy)). The core aspect ratio $\kappa(t)$ is kept as a statement about the core shape only.
+Note that $\kappa(t)^2$ is a statement about core cross-sectional shape only, not a Levi form condition number $\lambda_{\max}/\lambda_{\min}$: on the three-dimensional flow domain the Levi datum of the vorticity plane field is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ ([core Levi form](#prop:core-levi-form)), with no eigenvalue pair and no condition number, and non-degeneracy of that Levi scalar does not imply blow-up (see the Beltrami counterexample in the [Levi degeneracy conjecture](#conj:levi-degeneracy)).
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

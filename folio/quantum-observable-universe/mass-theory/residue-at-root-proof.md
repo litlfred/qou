@@ -1,11 +1,11 @@
-## Proof (conditional on [`conj:gs-residue-at-root-existence`](#conj:gs-residue-at-root-existence))
+## Proof (conditional on [gs-residue-at-root-existence conjecture](#conj:gs-residue-at-root-existence))
 
-The conjectural hypothesis, assumed throughout, is the existence of the cyclotomic projections $\pi_n$ on the Habiro completion (the class `ResidueAtRoot` in the Lean encoding); every remaining step is unconditional.
+The conjectural hypothesis, assumed throughout, is the existence of the cyclotomic projections $\pi_n$ on the Habiro completion; every remaining step is unconditional.
 
 The graded Markov trace
 $\mathrm{tr}_{M, \ell}(T_w) \in \mathbb{Q}(q)$ has, by
 construction
-([`prop:graded-markov-trace-from-gs-filtration`](#prop:graded-markov-trace-from-gs-filtration)),
+([graded-markov-trace-from-gs-filtration proposition](#prop:graded-markov-trace-from-gs-filtration)),
 $q$-degree $= \ell$ in the GS-filtration grading. Multiplied by
 $\Phi_q$, the product is an element of the Habiro ring:
 

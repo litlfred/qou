@@ -45,7 +45,7 @@ $$
 
 where $\Lambda$ is the **Lobachevsky function**.  So hyperbolic volume
 IS a regulator evaluation, per
-[`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period).  The two
+[vol as motivic period remark](#rem:vol-as-motivic-period).  The two
 normalisations differ by both an argument doubling and a factor $2$;
 keeping one function's coefficient while writing the other's name is
 a recurring slip.
@@ -53,7 +53,7 @@ a recurring slip.
 ## The Borromean Bloch-group element
 
 Per
-[`def:quantum-bloch-group`](#def:quantum-bloch-group) and the
+[quantum Bloch group definition](#def:quantum-bloch-group) and the
 classical Bloch-Suslin construction:
 
 - The Borromean complement decomposes into **two** regular ideal
@@ -75,7 +75,7 @@ $$
 
 with regulator $r_2[\mathcal{B}_3] = 8 \cdot D(i) = 8\,\mathrm{Cl}_2(\pi/2)
 = 8G$ (Catalan's constant; see
-[`conj:binding-scale-catalan`](#conj:binding-scale-catalan)).  This is
+[binding scale Catalan conjecture](#conj:binding-scale-catalan)).  This is
 the $\zeta_4$ row of the
 [transcendental-accounting table](../appendix-surreals/transcendental-accounting-table-data.md);
 the figure-eight sits in the $\zeta_6$ row with
@@ -85,7 +85,7 @@ $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.
 
 The Beilinson regulator extends to higher orders via the formal
 $q$-expansion of $\Phi_q$ around $q = 1$ (the archimedean limit per
-[`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)):
+[dilogarithm archimedean limit conjecture](#conj:dilogarithm-archimedean-limit)):
 
 $$
   \log \Phi_q(z)
@@ -116,7 +116,7 @@ categorically:
 
 1. **Direct Borromean Markov trace** — already done
 2. **Pachner-Pentagon state-sum** —
-   [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md)
+   [Pachner pentagon Borromean conjecture](pachner-pentagon-borromean.md)
 3. **K-theoretic / Bloch group regulator** (this conjecture)
 4. **DIM-master Pentagon** — research-grade
 
@@ -144,25 +144,6 @@ also closes the loop:
   q-dilog is bar-symmetric, Faddeev's $\Phi_q$ alone is bar-anti-
   symmetric).
 
-## Lean axiomatisation (sketch)
-
-```lean
-class BorromeanBlochGroupElement
-    (M : Type*) [BrCategory M] [QuantumDilogarithm M] where
-  /-- The Bloch-group element of the Borromean complement. -/
-  borromean_bloch_class : BlochGroup (Complex)
-  /-- It equals 8 · [i], the ζ₄ (octahedral) class. -/
-  borromean_bloch_eq_eight_xi :
-    borromean_bloch_class = 8 • bloch_symbol Complex.I
-  /-- The Beilinson regulator of the class equals 8G. -/
-  regulator_eq_eight_G : r_2 borromean_bloch_class = 8 * catalan_G
-  /-- The order-h² regulator correction equals -6G. -/
-  regulator_h2_correction : r_2_h2_correction borromean_bloch_class = -6 * catalan_G
-  /-- Equivalently, the h^4 Markov-trace coefficient = -3/4. -/
-  borromean_h4_coefficient_from_regulator :
-    markov_trace_h4_coefficient borromean_complement = -3/4
-```
-
 ## What remains open
 
 1. **Compute prototype**: at $q = q_0$, numerically evaluate both
@@ -171,11 +152,9 @@ class BorromeanBlochGroupElement
    extending the Bloch-Wigner regulator to order $h^2$ via the
    $\Phi_q$ formal expansion; the right side is already in
    [`borromean-markov-trace-closed-form.md`](#prop:borromean-markov-trace-closed-form).
-2. Closing the conjecture needs an instance of the class above, and the
-   `borromean_h4_coefficient_from_regulator` proof (which would
-   import a Bloch-Suslin lemma from Mathlib once available; per
-   `lean_loogle` search, $K_3$ formalisation is currently partial in
-   Mathlib).
+2. **Bloch–Suslin regulator bridge**: deriving the $h^4 = -3/4$ Markov-trace
+   coefficient directly from the Beilinson regulator of the Bloch-group class
+   $8[i] \in B(\mathbb{C})$ via the Bloch–Suslin $K_3^{\mathrm{ind}}(\mathbb{C})$ theorem.
 3. **Cross-validation.** The Pachner–Pentagon state-sum
    and the K-theoretic regulator should both give $h^4 = -3/4$ —
    a triple cross-validation of the topological coefficient.
@@ -183,15 +162,15 @@ class BorromeanBlochGroupElement
 ## Cross-references
 
 - The sibling pentagon-validation conjecture:
-  [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md)
+  [Pachner pentagon Borromean conjecture](pachner-pentagon-borromean.md)
 - The quantum Bloch group:
-  [`def:quantum-bloch-group`](#def:quantum-bloch-group)
+  [quantum Bloch group definition](#def:quantum-bloch-group)
 - The motivic-period framing:
-  [`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period)
+  [vol as motivic period remark](#rem:vol-as-motivic-period)
 - The volume = regulator identity:
-  [`prop:vol-through-tau`](#prop:vol-through-tau),
-  [`conj:binding-scale-catalan`](#conj:binding-scale-catalan)
+  [vol through tau proposition](#prop:vol-through-tau),
+  [binding scale Catalan conjecture](#conj:binding-scale-catalan)
 - The archimedean dilog limit:
-  [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
+  [dilogarithm archimedean limit conjecture](#conj:dilogarithm-archimedean-limit)
 - The Kashaev volume conjecture (upstream):
-  [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
+  [Kashaev volume conjecture](kashaev-volume-conjecture.md)

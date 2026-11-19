@@ -1,6 +1,6 @@
 ## Proof
 
-We prove this by direct expansion. Substituting $q \mapsto 1/q$ in $p(q)$:
+The identity follows by direct expansion. Substituting $q \mapsto 1/q$ in $p(q)$:
 
 $$
   p(1/q) \;=\; q^{-20} + q^{-18} + 2 q^{-12} - 2 q^{-8} - q^{-2} - 1.
@@ -12,7 +12,7 @@ $$
   q^{20} \cdot p(1/q) \;=\; 1 + q^{2} + 2 q^{8} - 2 q^{12} - q^{18} - q^{20}.
 $$
 
-We compare this term by term to:
+Comparing this term by term to:
 
 $$
   -p(q) \;=\; -q^{20} - q^{18} - 2 q^{12} + 2 q^{8} + q^{2} + 1.

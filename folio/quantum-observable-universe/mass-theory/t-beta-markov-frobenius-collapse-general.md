@@ -1,4 +1,4 @@
-*Let $R$ be a strict-ordered field. Let $A$ be a unital $R$-algebra. Let $\tau : A \to R$ be an $R$-linear normalised trace ($\tau(1) = 1$, $\tau(xy) = \tau(yx)$). Assume $\tau$ is positive-semi-definite on squares: $0 \le \tau(X \cdot X)$ for all $X \in A$. For any $S \in R$ and $X \in A$ satisfying $\tau(X) = S$, we have:*
+*Let $R$ be a strict-ordered field. Let $A$ be a unital $R$-algebra. Let $\tau : A \to R$ be an $R$-linear normalised trace ($\tau(1) = 1$, $\tau(xy) = \tau(yx)$). Assume $\tau$ is positive-semi-definite on squares: $0 \le \tau(X \cdot X)$ for all $X \in A$. For any $S \in R$ and $X \in A$ satisfying $\tau(X) = S$, the following properties hold:*
 $$
 S^2 \;\le\; \tau(X \cdot X).
 $$
@@ -6,11 +6,11 @@ $$
 
 ## Relation to the substrate-model version
 
-This proposition lifts [`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-frobenius-collapse.md) from the substrate model ($A = R$, $\tau = \mathrm{id}$) to the general unital $R$-algebra setting, where $A$ may be non-commutative and infinite-dimensional.
+This proposition lifts [t-beta-markov-frobenius-collapse proposition](t-beta-markov-frobenius-collapse.md) from the substrate model ($A = R$, $\tau = \mathrm{id}$) to the general unital $R$-algebra setting, where $A$ may be non-commutative and infinite-dimensional.
 
 ## Application to the Iwahori–Hecke algebra
 
-For $A = H_n(R, q)$ with $\tau = \mathrm{tr}_M$ the hypothesis fails for $n \ge 3$: $\mathrm{tr}_M(X \cdot X) < 0$ at $X = \sigma_1\sigma_2 - \sigma_2\sigma_1 \in H_3$, and under convention D the trace is degenerate as well. The Hecke case is instead proved with the twisted form $\mathrm{tr}_M(X \cdot X^\dagger)$ in [`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-frobenius-collapse.md), which gives, up to the radical,
+For $A = H_n(R, q)$ with $\tau = \mathrm{tr}_M$ the hypothesis fails for $n \ge 3$: $\mathrm{tr}_M(X \cdot X) < 0$ at $X = \sigma_1\sigma_2 - \sigma_2\sigma_1 \in H_3$, and under convention D the trace is degenerate as well. The Hecke case is instead proved with the twisted form $\mathrm{tr}_M(X \cdot X^\dagger)$ in [t-beta-markov-frobenius-collapse proposition](t-beta-markov-frobenius-collapse.md), which gives, up to the radical,
 $$
 T_\beta^{\mathrm{Markov}} \;=\; S \cdot 1_H.
 $$

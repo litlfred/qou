@@ -75,5 +75,10 @@ export default conjecture({
       kind: "status",
       body: "Pursue the **combined $\\sigma \\cdot \\varepsilon$ parity** for the\n$H_2$ molecular braid:\n\n1. Make $\\varepsilon$ explicit as conjugation by a specific braid\n $\\gamma \\in B_4$ that swaps strands $(p_1 \\leftrightarrow p_2,\n   e_1 \\leftrightarrow e_2)$.\n2. Decompose the covalent perturbation\n $\\Delta_{\\mathrm{cov}}$ into joint $(\\sigma, \\varepsilon)$\n parity sectors; identify the\n $(\\sigma\\text{-anti}, \\varepsilon\\text{-sym})$ component.\n3. Show that the bare $H_2$ ground state\n $\\mathcal{M}_{\\mathrm{atom}}^{\\otimes 2}$ lies in the\n $(\\sigma\\text{-sym}, \\varepsilon\\text{-sym})$ sector.\n4. Conclude — IF the joint parity argument goes through — that\n $\\mathrm{tr}_M(\\mathcal{M}_{\\mathrm{atom}}^{\\otimes 2} \\cdot\n   \\Delta_{\\mathrm{cov}}^{(\\sigma\\text{-anti},\\,\\varepsilon\\text{-sym})})\n   = 0$ exactly (not just up to factor $h$), giving the desired\n $J^{1}$-vanishing.\n\nThe heteronuclear case (CO, HCl, etc.) does **not** satisfy\n$\\varepsilon$-symmetry. Standard physics predicts a nonzero\npermanent dipole moment for such molecules, and\n$\\alpha_{EM}^{1}$ contributions to binding *do* in fact appear\n(though they are smaller than $\\alpha_{EM}^{2}$ at\n$\\alpha_{EM} \\approx 1/137$). This is consistent with the\n$\\sigma\\varepsilon$ argument requiring nuclear-exchange symmetry.",
     },
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Formalization provenance moved from Mechanism B prose: degeneracy of the unquotiented Markov Gram matrix on $H_n$ ($\\det G = 0$ via the $(1^3)$ radical block under Convention D) is formalized in `QOU/QBeta/MarkovGramDegenerate.lean`. Numerical $H_2$ ratio witness moved from Mechanism D prose: `computations/h2-molecular-binding.witness.json`.",
+    },
   ],
 });

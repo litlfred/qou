@@ -28,9 +28,9 @@ at $q = q_0$ via the GS filtration of Step 7.*
 
 ### Correctness conditions
 
-1. *[`prop:jet-prefix-gb-filtration`](#prop:jet-prefix-gb-filtration)
+1. *[The jet-prefix filtration proposition](#prop:jet-prefix-gb-filtration)
    gives the length $\leftrightarrow$ jet-order correspondence used in step 3.*
-2. *[`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence) ($E_2$
+2. *[The Gröbner–Shirshov spectral-sequence proposition](#prop:gb-spectral-sequence) ($E_2$
    collapse, Step 7) ensures the truncation does not mix orders.*
 
 ### Complexity
@@ -41,7 +41,7 @@ in the Hecke dimension.*
 ### Python API entry point
 
 *Canonical compute is the script
-[`computations/gb_filtration_jet_order_reader.py`](../../../computations/gb_filtration_jet_order_reader.py),
+[`gb_filtration_jet_order_reader.py`](../../../computations/gb_filtration_jet_order_reader.py),
 which reads the GS-filtered NF and emits the per-jet-order
 truncation witness. The substrate's precision discipline (compute
 at 70 dps, serialise at 60 dps) is configured by

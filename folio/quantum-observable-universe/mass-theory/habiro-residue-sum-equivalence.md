@@ -44,9 +44,9 @@ between the two paths.  The current run achieves:
 
 All differences fall within the relative tolerance $10^{-9}$ — the
 two paths agree to machine epsilon.  This is numerical evidence for the
-analytic identity stated above, not a proof; the Lean formalization does
+analytic identity stated above, not a proof; the algebraic deduction does
 not take it as a premise, and the proton case remains the open conjecture
-`conj:gs-archimedean-agreement-residue`.
+Gröbner–Shirshov archimedean agreement residue conjecture.
 
 **Cross-validation infrastructure.** The check is run by
 the formal derivation; output witness
@@ -54,8 +54,8 @@ the formal derivation; output witness
 
 - Per-atom assertion `tr_M_at_q0_archimedean[atom]` with a relative
   tolerance proportional to `AGREEMENT_RTOL = 1e-9`.
-- Diagnostic fields `realizer_value`, `term6_value`, `abs_diff`,
-  `rel_diff` for each common atom.
+- Diagnostic comparison fields (realizer evaluation, Term-6 residue evaluation,
+  absolute difference, and relative difference) for each common atom.
 - Asymmetric atom coverage (atoms present in only one input pipeline).
 
 The validator skips when one of its inputs is absent (forward

@@ -55,7 +55,7 @@
 
  *where $\lVert \cdot \rVert_F$ is the Frobenius norm induced by the Gram matrix.*
 
-**Inputs.** We require the substrate parameter $q$ and the electron mass $m_e$. There are no other parameters.
+**Inputs.** Only the substrate parameter $q$ and the electron mass $m_e$ enter the formula; there are no other parameters.
 
 ## Structure of the formula
 

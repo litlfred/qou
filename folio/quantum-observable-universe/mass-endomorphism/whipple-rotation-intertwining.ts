@@ -24,4 +24,10 @@ export default conjecture({
     "winding-exchange",
     "bar-involution",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Lean declarations in `whipple-rotation-intertwining.lean` (`QOU.MassEndomorphism`): primary conjecture class `WhippleRotationIntertwining`, derived theorems `nuGrade_square` and `gradingPair_intertwines_swap`, structure `ChannelIndexedLadder`, and reduction `channelIndexed_swaps_windings` (via `rotation_step`).",
+    },
+  ],
 });

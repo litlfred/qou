@@ -7,7 +7,7 @@ $$
   w_+ + w_- = 1
 $$
 
-*(the normalisation is exact: `wPlus_add_wMinus` in `QOU.Mass.ChainTraceFactor`),
+*(the normalisation $w_+ + w_- = 1$ is exact),
 so $w$ is a genuine probability measure on the blocks, on which $\sigma$ acts by
 the block eigenvalues $q$ and $-q^{-1}$. The interface trace is therefore an
 expectation,*
@@ -42,7 +42,7 @@ three constants are closed forms:
 | $pn$ | $d_{pn}$ | $0.508229789377$ | $0.676821592386$ |
 
 with $L_{pp} = -\log z$, $L_{nn} = \log\bigl(q(q^2+1)\bigr)$ and
-$L_{pp} + L_{nn} = 2\log[2]_q$ (all in `QOU.Mass.ChainTraceFactor`).
+$L_{pp} + L_{nn} = 2\log[2]_q$.
 
 One caveat belongs with the identification: the observable is **signed**, since
 the $(1,1)$ eigenvalue $-q^{-1}$ is negative. So this is the free energy of a
@@ -135,9 +135,9 @@ $(\lambda_+ + d_{pn}) + (\lambda_- + d_{pn}) = h + 2d_{pn} = h\delta/2 =
 the near-null vector of the unweighted block sum, and survives in $z+d$ only
 because $w_+ \neq w_-$.
 
-`QOU.Mass.FreeEnergyReadingIsSigned` proves the general statements:
-`minusSummand_neg`, `no_real_energy_for_minus_block`,
-`positivity_would_need_d_gt_inv_q`, `admissible_letters_nonpos`, the
-positive-but-signed pairing at each of the three letters, and
-`pn_blockSum_eq_h_delta_half`. Measured at $q_0$ in
+The general structural properties hold algebraically: the minus-block summand is
+strictly negative, no real energy exists for the minus block, positivity would
+require $d > q^{-1}$ whereas all admissible letters are non-positive, each of the
+three letters exhibits a positive-but-signed pairing, and the $pn$ block sum equals
+$\tfrac{1}{2} h\,\delta$. Measured at $q_0$ in
 `the_free_energy_reading_has_no_energy_spectrum_probe.py`.

@@ -1,2 +1,2 @@
 import { table } from "../../schema/builders";
-export default table({ label: "tbl:braid-group-n-strand-table1-data", title: "Table 1 from rem:braid-group-n-strand", uses: ["rem:braid-group-n-strand"], tags: ["extracted-table"] });
+export default table({ label: "tbl:braid-group-n-strand-table1-data", title: "Table 1 from rem:braid-group-n-strand", uses: ["rem:braid-group-n-strand"], tags: ["extracted-table"], authorNotes: [{ kind: "note", body: "Lean objects: `TypedCrossing n`, `BraidWord n`, `BraidWord.writhe`, `closureN` (`closure2`), `HeckeQuotient n q`, `MarkovTraceN n q` (`MarkovTraceAxioms`)." }] });

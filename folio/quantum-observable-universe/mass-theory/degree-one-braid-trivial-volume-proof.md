@@ -12,15 +12,14 @@ convention ([Kashaev--Murakami--Murakami convention](#conj:kashaev-volume-conjec
 
 These are all the words in the support of $\gamma$. $\blacksquare$
 
-**Why the volume is not linear.** The earlier version of this proof added the
-two cases using linearity of a volume map on $H_n(q)$. No such map exists. The
+**Why the volume is not linear.** One cannot combine the
+two cases using linearity of a volume map on $H_n(q)$, because no such linear map exists. The
 six positive permutation braids $\mathbf{1}, \sigma_1, \sigma_2, \sigma_1\sigma_2,
 \sigma_2\sigma_1, \sigma_1\sigma_2\sigma_1$ span $H_3(q)$, and their closures
 (unlinks, the unknot, the Hopf link) all have volume $0$. A linear map that
 agreed with $\mathrm{Vol}$ on them would vanish on all of $H_3(q)$, including on
 $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1}$, whose closure is $4_1$ with
-$\mathrm{Vol}(4_1) = 2.0299\ldots \neq 0$. The Lean sibling proves the first
-half of this argument: a linear map that vanishes on a set vanishes on its span.
+$\mathrm{Vol}(4_1) = 2.0299\ldots \neq 0$, since a linear map that vanishes on a generating set vanishes on its span.
 
 **Scope.** The lemma establishes only the *archimedean shadow* — the
 real-valued volume image. It does **not** identify $\gamma$ with the

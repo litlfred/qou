@@ -1,4 +1,4 @@
-The Gröbner--Shirshov normal form of each nucleon in $H_3(q)$ has exactly six terms. With typed crossings, the sign pattern differs between neutron and proton. We classify each term by word length $\ell$ and observability.
+The Gröbner--Shirshov normal form of each nucleon in $H_3(q)$ has exactly six terms. With typed crossings, the sign pattern differs between neutron and proton. Each term is classified below by word length $\ell$ and observability.
 
 ## Sign patterns
 

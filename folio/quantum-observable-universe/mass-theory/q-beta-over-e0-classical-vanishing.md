@@ -1,4 +1,4 @@
-*Let $\mathfrak{Q}_\beta(q)$ and $E_0^{(N{=}0)}(q)$ be the substrate closed forms from [`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md) and [`rem:beta-decay-energy-scale`](../nuclear-interactions/beta-decay-energy-scale.md):*
+*Let $\mathfrak{Q}_\beta(q)$ and $E_0^{(N{=}0)}(q)$ be the substrate closed forms from [neutron-qvalue-symbolic proposition](../nuclear-interactions/neutron-qvalue-symbolic.md) and [beta-decay-energy-scale remark](../nuclear-interactions/beta-decay-energy-scale.md):*
 
 $$
 \mathfrak{Q}_\beta(q) \;=\; m_e \cdot \frac{(2q + 1 - q^2)(q+1)}{2q^3},

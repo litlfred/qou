@@ -12,12 +12,18 @@ export default proposition({
     ref: "qou:QOU.Molecular.shell_capacity_self_square",
     validation: "not_checked",
   },
-  uses: ["def:electron-shell-braid-capacity"],
+  uses: ["def:electron-shell-braid-capacity", "conj:shell-space-is-self-square"],
   tags: [
     "shell-capacity",
     "self-square",
     "q-clebsch-gordan",
     "bar-even",
     "no-second-su2",
+  ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "The q=1 integer identities are proved in Lean (`QOU.Molecular.shell_capacity_self_square`, induction on the sum of the first n odd numbers); the cleared-denominator polynomial identity `qCG_self_square` is proved for every n in the Lean sibling of `conj:shell-space-is-self-square`.",
+    },
   ],
 });

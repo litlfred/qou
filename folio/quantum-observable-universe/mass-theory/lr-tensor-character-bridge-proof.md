@@ -1,7 +1,7 @@
 ## Proof
 
 Setting $I = \mathbf{1}$ in
-[`prop:hecke-branching-trace-decomposition`](../mass-endomorphism/hecke-branching-trace-decomposition.md)
+[Hecke branching trace decomposition proposition](../mass-endomorphism/hecke-branching-trace-decomposition.md)
 collapses the operator-valued coefficient $A^\lambda_{\mu,\nu}(\mathbf{1})$
 to the identity on $V_\mu \otimes V_\nu$, so the trace splits across
 the tensor factors and the scalar prefactor reduces to the

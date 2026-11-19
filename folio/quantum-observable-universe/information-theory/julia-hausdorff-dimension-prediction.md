@@ -17,4 +17,4 @@ $$
 The formula yields $d_H = 1$ at $q = 1$ (unit circle) and $q = (3+\sqrt{5})/2 = \varphi^2$ (golden threshold), which are exact matches. For $1 < q < \varphi^2$, the Julia set is strictly more fractal than a circle ($d_H > 1$), consistent with McMullen's theorem [mcmullen1998].
 
 **Testable prediction.**
-The value $d_H(q_0) = 1.088$ is testable against high-precision transfer-operator computations (Ruelle 1982) for $d_H(J_c)$ at $c(0.1097) = 0.338 + 0.073i$. Box-counting gives $d_H \approx 1.012$ but systematically underestimates thin Jordan curves. The Ruelle perturbative lower bound $1 + |c|^2/(4\ln 2) \approx 1.043$ is consistent with our prediction.
+The value $d_H(q_0) = 1.088$ is testable against high-precision transfer-operator computations (Ruelle 1982) for $d_H(J_c)$ at $c(0.1097) = 0.338 + 0.073i$. Box-counting gives $d_H \approx 1.012$ but systematically underestimates thin Jordan curves. The Ruelle perturbative lower bound $1 + |c|^2/(4\ln 2) \approx 1.043$ is consistent with this prediction.

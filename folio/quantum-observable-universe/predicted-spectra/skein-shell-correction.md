@@ -32,14 +32,14 @@ $$
 
 A closed sub-link of $\mathcal{N}(Z, N)$ is a subset $S \subset \{1, \ldots, p+n\}$ of nucleons satisfying two conditions:
 
-1. The restriction $\mathcal{N}|_S$ of the Hopf link to $S$ forms a split link. We can isotope it into a ball disjoint from all remaining nucleons.
-2. The Skein polynomial of $\mathcal{N}|_S$ divides $J_{\mathcal{N}}$. We have $J_{\mathcal{N}} = J_{\mathcal{N}|_S} \cdot J_{\mathcal{N}|_{S^c}} \cdot (\text{linking factor})$.
+1. The restriction $\mathcal{N}|_S$ of the Hopf link to $S$ forms a split link, isotopic into a ball disjoint from all remaining nucleons.
+2. The Skein polynomial of $\mathcal{N}|_S$ divides $J_{\mathcal{N}}$, yielding $J_{\mathcal{N}} = J_{\mathcal{N}|_S} \cdot J_{\mathcal{N}|_{S^c}} \cdot (\text{linking factor})$.
 
 When these hold, the link factorizes. The nucleons in $S$ form an internally bound cluster. They contribute extra binding energy beyond the liquid-drop prediction.
 
 **Predicted factorizations.**
 
-For the Descartes universe ($\chi = -6$), we predict the following factorizations:
+For the Descartes universe ($\chi = -6$), this structure predicts the following factorizations:
 
 See [Table](#tbl:skein-shell-correction-table-data).
 
@@ -72,7 +72,7 @@ This quantity is maximised when both $p$ and $n$ are even. Even-even nuclei host
 
 **Remaining obligations.**
 
-1. **Skein factorization**: We must prove the Skein polynomial $J_{\mathcal{N}(Z, N)}(q)$ factors when $(p, n)$ admits an $\alpha$-cluster decomposition. This requires a direct computation in the Skein algebra of the Hopf link.
-2. **Shell energy scale**: We must derive $\lambda_{\mathrm{shell}}$ directly from the categorical action. We expect to express it in terms of $q$, $a_V$, and the Skein polynomial of $\mathcal{N}(2,2)$.
-3. **Corrected stability formula**: We must show the total binding energy $\mathcal{L}_{\mathrm{bind}} + \delta E_{\mathrm{shell}}$ reproduces all observed stable isotopes to within $|\Delta n| \leq 1$ for all $p \leq 103$.
-4. **Genus lift**: We must show including $\delta E_{\mathrm{shell}}$ lifts the stability cubic from genus $0$ to genus $1$. This establishes a connection to the [elliptic stability conjecture](#rem:elliptic-stability-locus).
+1. **Skein factorization**: Prove that the Skein polynomial $J_{\mathcal{N}(Z, N)}(q)$ factors whenever $(p, n)$ admits an $\alpha$-cluster decomposition, via direct computation in the Skein algebra of the Hopf link.
+2. **Shell energy scale**: Derive $\lambda_{\mathrm{shell}}$ directly from the categorical action in terms of $q$, $a_V$, and the Skein polynomial of $\mathcal{N}(2,2)$.
+3. **Corrected stability formula**: Show that the total binding energy $\mathcal{L}_{\mathrm{bind}} + \delta E_{\mathrm{shell}}$ reproduces all observed stable isotopes to within $|\Delta n| \leq 1$ for all $p \leq 103$.
+4. **Genus lift**: Show that including $\delta E_{\mathrm{shell}}$ lifts the stability cubic from genus $0$ to genus $1$, establishing a connection to the [elliptic stability conjecture](#rem:elliptic-stability-locus).

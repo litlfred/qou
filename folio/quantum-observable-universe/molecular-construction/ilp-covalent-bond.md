@@ -1,6 +1,6 @@
 *The covalent bond word is selected by the same rule as every other canonical word: $\gamma\gamma$ construction followed by reading-3 confinement. Write $V_s = \sigma_s \sigma_{s+1}^{-1}$ for the pair-production unit. The $H_2$ word lives on twelve strands: each atom is a nucleon word $V^m$ and an electron word $V^k$ on its own three-strand windows, and a bond letter $K$ sits at a junction site $s \in \{4, 5\}$ between the two atoms. Reading 3 asks $\chi_\lambda \geq 0$ on every block with $y_\lambda > 0$ under convention D, at every level $1, \dots, 12$.*
 
-*Proposition. Let the nucleon be $V^m$ with $m \in \{3, 6\}$ and the electron $V^k$ with $k \in \{0, 3, 6\}$, the powers that pass reading 3 on their own three strands. At the proton pin $q = q_0 \approx 1.10998$, among the bond letters $K \in \{V_s, V_s^2, V_s^3\}$ at $s \in \{4, 5\}$, the bonded $H_2$ word passes reading 3 exactly for $K = V_s^3$, at either site.*
+*Proposition. Let the nucleon be $V^m$ with $m \in \{3, 6\}$ and the electron $V^k$ with $k \in \{0, 3, 6\}$, the powers that pass reading 3 on their own three strands. At the proton-mass calibration $q = q_0 \approx 1.10998$, among the bond letters $K \in \{V_s, V_s^2, V_s^3\}$ at $s \in \{4, 5\}$, the bonded $H_2$ word passes reading 3 exactly for $K = V_s^3$, at either site.*
 
 ### Why the inverse trefoil is excluded
 

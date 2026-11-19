@@ -8,6 +8,7 @@ export default proposition({
   uses: [
     "thm:jones-markov-trace",
     "rem:non-commutative-probability-dictionary",
+    "prop:algebraic-gns-embedding",
   ],
   tags: [
     "q-clt",

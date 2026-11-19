@@ -1,0 +1,479 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-19T08:16:48.586140+00:00",
+  "commitSha": "974a6952a3bf3c410c2eb0a0a538d05e573de646",
+  "assertions": [
+    {
+      "name": "euler_nonvanishing_iff_g_ne_one_and_bring_neg_six",
+      "computed": "[1]:-6",
+      "expected": "[1]:-6",
+      "passed": true,
+      "tolerance": "0",
+      "source": "GerbeObstructionAndVolumePrefactor.euler_nonvanishing_iff_g_ne_one"
+    },
+    {
+      "name": "stiefel_whitney_mod2_vanishes_all_genera",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "GerbeObstructionAndVolumePrefactor.stiefel_whitney_mod2_vanishes"
+    },
+    {
+      "name": "kummer_mod_n_vanishes_iff_dvd_six",
+      "computed": "1,2,3,6",
+      "expected": "1,2,3,6",
+      "passed": true,
+      "tolerance": "0",
+      "source": "GerbeObstructionAndVolumePrefactor.kummer_mod_n_vanishes_iff_dvd_six"
+    },
+    {
+      "name": "atiyah_jet_tangent_bol_unique_zero_at_n_eq_3",
+      "computed": "[3]:[2]:[]",
+      "expected": "[3]:[2]:[]",
+      "passed": true,
+      "tolerance": "0",
+      "source": "GerbeObstructionAndVolumePrefactor.bring_tangent_atiyah_jet_bol_zero"
+    },
+    {
+      "name": "odd_theta_genus_four_eq_120_s5_order_and_256_total",
+      "computed": "136+120=256;genera=[2, 4]",
+      "expected": "136+120=256;genera=[2, 4]",
+      "passed": true,
+      "tolerance": "0",
+      "source": "GerbeObstructionAndVolumePrefactor.odd_theta_characteristics_genus_four_eq_s5_order"
+    },
+    {
+      "name": "bring_245_tessellation_and_coset_indices_40_and_20",
+      "computed": "area=1/20;sigma4=12;s5_c3=40;a5_c3=20",
+      "expected": "area=1/20;sigma4=12;s5_c3=40;a5_c3=20",
+      "passed": true,
+      "tolerance": "0",
+      "source": "GerbeObstructionAndVolumePrefactor.bring_245_hyperbolic_tessellation"
+    },
+    {
+      "name": "v_over_m_e_literal_residual_two_sided_0_0057_to_0_0058",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-5lib exact Fraction + 80-dps residual enclosure"
+    },
+    {
+      "name": "schwarz_245_rhombus_cross_ratio_primitive_40th_root",
+      "computed": "4.7439890744537354510e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "GerbeObstructionAndVolumePrefactor.schwarz_rhombus_cyclotomic_order_40"
+    },
+    {
+      "name": "d2_schwarz_245_rhombus_eq_cl2_11pi_20",
+      "computed": "2.1084395886461046449e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "80-dps Bloch-Wigner identity D_2(z_rhombus(2,4,5)) = Cl_2(11*pi/20)"
+    },
+    {
+      "name": "vol_4_1_polylog_agrees_with_lobachevsky_quadrature_80dps",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "GerbeObstructionAndVolumePrefactor.bring_depth2_two_tetrahedra_eval"
+    },
+    {
+      "name": "abel_five_term_pentagon_d2_identity_80dps",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "Abel 5-term Bloch-Wigner pentagon relation at (e^(i*pi/3), zeta_5)"
+    },
+    {
+      "name": "landen_clean_trilog_inv_phi2_eq_four_fifths_zeta3",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "GerbeObstructionAndVolumePrefactor.landen_clean_trilog_golden_cancellation"
+    },
+    {
+      "name": "bring_depth3_golden_and_zeta5_pair_linear_relation",
+      "computed": "8.4337583545844185795e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "GerbeObstructionAndVolumePrefactor.bring_depth3_golden_and_pentagon_relation"
+    },
+    {
+      "name": "im_li3_zeta5_eq_four_pi3_over_125_80dps",
+      "computed": "1.0542197943230523224e-81",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-70",
+      "source": "BringTrilogImaginaryTateRational.im_li3_zeta5_closed_form"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "bring-gerbe-obstruction-and-40-prefactor",
+  "scriptFile": "bring_gerbe_obstruction_and_40_prefactor_probe.py",
+  "scriptHash": "cce40c8c854e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_gerbe_obstruction_and_40_prefactor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_gerbe_obstruction_and_40_prefactor_probe.py"
+  },
+  "description": "80-dps mpmath and exact rational/combinatorial verification of GerbeObstructionAndVolumePrefactor.lean (qou-vo9t, qou-lx8f, qou-2a2o, qou-n2aa, qou-5lib, cj27e, cj3fb): Z vs Z/2 vs Z/n vs O^x lifting obstructions on Sigma_4, 120 = |S_5| odd theta characteristics, (2,4,5) hyperbolic tessellation and [S_5 : C_3] = 40 coset index, primitive 40th-root Schwarz-rhombus cross-ratio, and honest 80-dps D_2(z) and L_3(z) evaluations.",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "gerbe_obstructions_and_spin_structures": {
+      "euler_zero_genera_0_to_10": [
+        1
+      ],
+      "bring_euler_class_Z": -6,
+      "all_orientable_genera_w2_zero": true,
+      "odd_degree_bundles_w2_one": true,
+      "admissible_kummer_levels_up_to_30": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "obstructed_kummer_levels_count_up_to_30": 26,
+      "prime_kummer_residues_mod_p": {
+        "2": 0,
+        "3": 0,
+        "5": 4,
+        "7": 1,
+        "11": 5,
+        "13": 7,
+        "17": 11,
+        "19": 13,
+        "23": 17,
+        "29": 23
+      },
+      "atiyah_tangent_bol_zero_levels_1_to_12": [
+        3
+      ],
+      "atiyah_spin_gunning_zero_levels_1_to_12": [
+        2
+      ],
+      "atiyah_canonical_zero_levels_1_to_12": [],
+      "atiyah_jet_scalars_sigma4": {
+        "1": {
+          "tangent_d_neg6": -6,
+          "spin_d_neg3": -3,
+          "canonical_d_pos6": 6
+        },
+        "2": {
+          "tangent_d_neg6": -6,
+          "spin_d_neg3": 0,
+          "canonical_d_pos6": 18
+        },
+        "3": {
+          "tangent_d_neg6": 0,
+          "spin_d_neg3": 9,
+          "canonical_d_pos6": 36
+        },
+        "4": {
+          "tangent_d_neg6": 12,
+          "spin_d_neg3": 24,
+          "canonical_d_pos6": 60
+        },
+        "5": {
+          "tangent_d_neg6": 30,
+          "spin_d_neg3": 45,
+          "canonical_d_pos6": 90
+        },
+        "6": {
+          "tangent_d_neg6": 54,
+          "spin_d_neg3": 72,
+          "canonical_d_pos6": 126
+        },
+        "7": {
+          "tangent_d_neg6": 84,
+          "spin_d_neg3": 105,
+          "canonical_d_pos6": 168
+        },
+        "8": {
+          "tangent_d_neg6": 120,
+          "spin_d_neg3": 144,
+          "canonical_d_pos6": 216
+        },
+        "9": {
+          "tangent_d_neg6": 162,
+          "spin_d_neg3": 189,
+          "canonical_d_pos6": 270
+        },
+        "10": {
+          "tangent_d_neg6": 210,
+          "spin_d_neg3": 240,
+          "canonical_d_pos6": 330
+        },
+        "11": {
+          "tangent_d_neg6": 264,
+          "spin_d_neg3": 297,
+          "canonical_d_pos6": 396
+        },
+        "12": {
+          "tangent_d_neg6": 324,
+          "spin_d_neg3": 360,
+          "canonical_d_pos6": 468
+        }
+      },
+      "arf_partition_holds_g_1_to_12": true,
+      "genera_with_odd_theta_eq_factorial_g_plus_1": [
+        2,
+        4
+      ],
+      "bring_g4_total_spin": 256,
+      "bring_g4_even_theta": 136,
+      "bring_g4_odd_theta": 120,
+      "klein_g3_odd_theta_bitangents": 28,
+      "bring_even_theta_mod_5": 1,
+      "euler_and_w2_by_genus": {
+        "0": {
+          "euler_class_Z": 2,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "1": {
+          "euler_class_Z": 0,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "2": {
+          "euler_class_Z": -2,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "3": {
+          "euler_class_Z": -4,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "4": {
+          "euler_class_Z": -6,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "5": {
+          "euler_class_Z": -8,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "6": {
+          "euler_class_Z": -10,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "7": {
+          "euler_class_Z": -12,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "8": {
+          "euler_class_Z": -14,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "9": {
+          "euler_class_Z": -16,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        },
+        "10": {
+          "euler_class_Z": -18,
+          "stiefel_whitney_w2_ZMod2": 0,
+          "archimedean_Ox_H2": 0
+        }
+      },
+      "theta_counts_by_genus": {
+        "1": {
+          "total_spin_2_pow_2g": 4,
+          "even_theta": 3,
+          "odd_theta": 1,
+          "factorial_g_plus_1": 2
+        },
+        "2": {
+          "total_spin_2_pow_2g": 16,
+          "even_theta": 10,
+          "odd_theta": 6,
+          "factorial_g_plus_1": 6
+        },
+        "3": {
+          "total_spin_2_pow_2g": 64,
+          "even_theta": 36,
+          "odd_theta": 28,
+          "factorial_g_plus_1": 24
+        },
+        "4": {
+          "total_spin_2_pow_2g": 256,
+          "even_theta": 136,
+          "odd_theta": 120,
+          "factorial_g_plus_1": 120
+        },
+        "5": {
+          "total_spin_2_pow_2g": 1024,
+          "even_theta": 528,
+          "odd_theta": 496,
+          "factorial_g_plus_1": 720
+        },
+        "6": {
+          "total_spin_2_pow_2g": 4096,
+          "even_theta": 2080,
+          "odd_theta": 2016,
+          "factorial_g_plus_1": 5040
+        },
+        "7": {
+          "total_spin_2_pow_2g": 16384,
+          "even_theta": 8256,
+          "odd_theta": 8128,
+          "factorial_g_plus_1": 40320
+        },
+        "8": {
+          "total_spin_2_pow_2g": 65536,
+          "even_theta": 32896,
+          "odd_theta": 32640,
+          "factorial_g_plus_1": 362880
+        },
+        "9": {
+          "total_spin_2_pow_2g": 262144,
+          "even_theta": 131328,
+          "odd_theta": 130816,
+          "factorial_g_plus_1": 3628800
+        },
+        "10": {
+          "total_spin_2_pow_2g": 1048576,
+          "even_theta": 524800,
+          "odd_theta": 523776,
+          "factorial_g_plus_1": 39916800
+        },
+        "11": {
+          "total_spin_2_pow_2g": 4194304,
+          "even_theta": 2098176,
+          "odd_theta": 2096128,
+          "factorial_g_plus_1": 479001600
+        },
+        "12": {
+          "total_spin_2_pow_2g": 16777216,
+          "even_theta": 8390656,
+          "odd_theta": 8386560,
+          "factorial_g_plus_1": 6227020800
+        }
+      }
+    },
+    "hyperbolic_245_tessellation_and_40_prefactor": {
+      "s5_order": 120,
+      "a5_order": 60,
+      "three_cycle_count_in_s5": 20,
+      "free_c3_subgroup_count": 10,
+      "all_3cycles_in_a5": true,
+      "coset_index_s5_over_c3": 40,
+      "coset_index_a5_over_c3": 20,
+      "schwarz_245_norm_area_over_pi": "1/20",
+      "rhombus_245_norm_area_over_pi": "1/10",
+      "sigma4_norm_area_over_pi": 12,
+      "sigma2_c3_quotient_norm_area_over_pi": 4,
+      "riemann_hurwitz_245_constant": 40,
+      "schwarz_triangle_count_sigma4": 240,
+      "fundamental_rhombus_count_sigma4": 120,
+      "quadrilateral_faces_5_4_map": 30,
+      "pentagonal_faces_4_5_map": 24,
+      "c3_rhombus_orbits_on_c2": 40,
+      "literal_pin_audit": {
+        "q0_literal": "1.10998",
+        "m_e_literal_MeV": "0.51099895069",
+        "v_ew_literal_MeV": "246220",
+        "v_over_m_e_80dps": "481840.51976531466720613198838817365086985047797026426414480432443175277785226483",
+        "q0_pow_90_80dps": "11977.435012579801354247327709042762261928189805949563730916405282023547168045729",
+        "ratio_v_me_over_q0_pow_90": "40.229023932022301725371891465828056071550054125924776780801277679085820195020278",
+        "epsilon_residual_80dps": "0.0057255983005575431342972866457014017887513531481194195200319419771455048755069570",
+        "epsilon_strictly_between_0_0057_and_0_0058": true,
+        "headroom_factor_under_0_006": "1.04792541932530201729303516017",
+        "exact_fraction_vs_80dps_diff": "6.9702047807468685975e-80",
+        "exact_headroom_numerator_bits": 1454
+      },
+      "proton_pin_codata_audit": {
+        "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+        "v_pdg_from_GF_MeV": "246219.65079413737804757656897241980682466964533231959241832325515517361961844917",
+        "m_e_codata_MeV": "0.51099895069000000000000000000000000000000000000000056544347190005446779328425293",
+        "v_over_m_e_phys_80dps": "481839.83638648942613463073640273546297263854628507303787695233598679682018708922",
+        "q0_proton_pow_90_80dps": "11976.058714367654971984512013974574211940621256184363910224751361852182255926850",
+        "ratio_phys_over_q0_pow_90": "40.233590021433936894647066458419244190362807193265388418524402918798592679105707",
+        "epsilon_phys_80dps": "0.0058397505358484223661766614604811047590701798316347104631100729699648169776426664",
+        "headroom_phys_under_0_006": "1.02744114892714264708226376657",
+        "honest_status": "40 = |S_5|/3 = [S_5 : C_3] = 2/(1 - 1/2 - 1/4 - 1/5) is a proved geometric invariant of Bring's (2,4,5) uniformization, whereas the categorical EW fibre-functor identification and depth-90 Coxeter count remain open §3b-cond conjectures (NVBringAction, TowerDepthNinetyConjecture; qou-5lib)."
+      }
+    },
+    "bloch_wigner_d2_and_clean_trilog_80dps": {
+      "vol_4_1_two_cl2_pi_over_3": "2.0298832128193072500424051085490405718833786150605995840349782135531949525164880",
+      "vol_4_1_six_lobachevsky_pi_over_3": "2.0298832128193072500424051085490405718833786150605995840349782135531949525164880",
+      "vol_4_1_lobachevsky_quadrature_diff": "0.0",
+      "schwarz_245_rhombus_cross_ratio_re": "1.1564344650402308690101053194671668923138998920856607900846413460577587933056236",
+      "schwarz_245_rhombus_cross_ratio_im": "0.98768834059513772619004024769343726075840686158988043492390480163807293596971274",
+      "one_minus_z_rhombus_vs_zeta40_inv11_diff": "4.7439890744537354510e-81",
+      "d2_schwarz_245_rhombus_cl2_11pi_20": "0.85566848599510225048322822170177858086040397825305646526408319082286681779331355",
+      "d2_rhombus_vs_cl2_11pi_20_diff": "2.1084395886461046449e-81",
+      "d2_klein_237_rhombus_vs_cl2_29pi_42_diff": "4.2168791772922092897e-81",
+      "d2_real_golden_inv_phi": "0.0",
+      "d2_real_golden_inv_phi2": "0.0",
+      "d2_fourth_root_catalan_G": "0.91596559417721901505460351493238411077414937428167213426649811962176301977625477",
+      "d2_fourth_root_vs_catalan_diff": "0.0",
+      "d2_fifth_root_cl2_2pi_5": "0.99735469139841477866728357532148264441655716618944342047180896389328862577898500",
+      "d2_fifth_root_sq_cl2_4pi_5": "0.42507782240132791937834424213228303175800042331779554147180836637850667043581726",
+      "d2_tenth_root_cl2_pi_5": "0.92375516810053530871198602979302435396627900641251725170771284832515098332530976",
+      "cl2_duplication_pi_5_diff": "4.2168791772922092897e-81",
+      "abel_five_term_pentagon_residual": "0.0",
+      "landen_li2_inv_phi2_diff": "5.2710989716152616122e-82",
+      "honest_ratios_against_vol_4_1_no_pslq": {
+        "d2_rhombus_245_over_vol_4_1": "0.42153582067741880336790716439650665881328446343057126385806919165191463499155096",
+        "d2_zeta5_over_vol_4_1": "0.49133599662277498279414971610138658531430190522969957414791870594176259474511594",
+        "d2_zeta5_sq_over_vol_4_1": "0.20940998955843219058152218287176091070494596691305397065013623860646905316024775",
+        "d2_catalan_i_over_vol_4_1": "0.45124053856528686355529329106653206986377454642608468662212158003036737305006801",
+        "cyclotomic_field_intersection_gcd_40_6": 2,
+        "structural_explanation": "Vol(4_1) = 2*Cl_2(pi/3) lies in the Eisenstein Bloch group B_2(Q(zeta_6)) (ramified at 3), whereas Bring's (2,4,5) tessellation cross-ratios lie in B_2(Q(zeta_40)) (ramified at 2 and 5, gcd(40, 6) = 2, Q(zeta_40) cap Q(zeta_6) = Q). Real golden-ratio pentagon cross-ratios have D_2 = 0 identically."
+      },
+      "depth_3_trilogarithm_evaluations": {
+        "zeta_3_apery": "1.2020569031595942853997381615114499907649862923404988817922715553418382057863131",
+        "clean_l3_inv_phi2": "0.96164552252767542831979052920915999261198903387239910543381724427347056462905047",
+        "four_fifths_zeta3_diff": "0.0",
+        "cl3_2pi_5_re_li3_zeta5": "0.18936791501083168387944480476641361363127422974423388985398284236102343803339634",
+        "cl3_4pi_5_re_li3_zeta5_sq": "-0.76635522852743694087131912229190960919846765006767335311427318892510577681082662",
+        "cl3_11pi_20_rhombus_unit": "-0.25198601618722917955416745124021236189062336756673885402374004475480028419534555",
+        "k5_distribution_orbit_diff": "4.2168791772922092897e-81",
+        "five_pair_sum_plus_three_l3_inv_phi2_diff": "8.4337583545844185795e-81",
+        "cl3_pi_3_minus_third_zeta3_diff": "5.2710989716152616122e-82",
+        "im_li3_zeta5": "0.99220085376959424561524208214724464647120923410832344621262521932180463735890259",
+        "im_li3_zeta5_minus_4pi3_over_125_diff": "1.0542197943230523224e-81",
+        "im_li3_zeta6_minus_5pi3_over_162_diff": "1.0542197943230523224e-81"
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

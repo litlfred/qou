@@ -39,7 +39,7 @@ The right-hand side depends only on the $H_3$ character data of $\sigma_g$, prov
 
 ### $q$-deformation: the open structural step
 
-For $q \ne 1$, the LR identity generalises to a $q$-Schur duality. We conjecture that this identity yields an $A$-independent residual after factoring out $[3A]_q! / [3A-3]_q!$. A structural proof via the $q$-Schur–Weyl duality remains pending.
+For $q \ne 1$, the LR identity generalises to a $q$-Schur duality. Conjecturally, this identity yields an $A$-independent residual after factoring out $[3A]_q! / [3A-3]_q!$. A structural proof via the $q$-Schur–Weyl duality remains pending.
 
 ### Significance
 

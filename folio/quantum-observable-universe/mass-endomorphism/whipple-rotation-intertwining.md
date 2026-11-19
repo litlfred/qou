@@ -46,43 +46,40 @@ $$
 Ismail–Masson pair \cite{ismail-masson1994} — the map carrying the bar-even
 recurrence to the bar-odd one — descends to the toroidal family *as* the
 Whipple exchange, i.e. that the two winding oscillations of a bound vortex
-pair are swapped by the substrate bar involution. The Lean sibling
-axiomatises exactly this as a primary conjecture class
-(`WhippleRotationIntertwining`): the rotation swaps the two winding
-gradings and is involutive on ladder data. Both fields are
-parameter-quantified in the shape of the claim; no instance is provided
-(the conjecture is open).
+pair are swapped by the substrate bar involution. This conjecture is formulated
+as an explicit intertwining hypothesis: the rotation swaps the two winding
+gradings and is involutive on ladder data. Both conditions are
+parameter-quantified in the shape of the claim, and the conjecture remains open.
 
-Two consequences are *derived from* the class (provable modulo it, no
-instance):
+Two consequences follow directly from the intertwining hypothesis:
 
-- `nuGrade_square` — the along-loop winding is restored after a double
+- **Along-loop winding restoration** — the along-loop winding is restored after a double
   rotation, so the winding pair $(\mu, \nu)$ is fixed by $\mathrm{rot}^2$
   (the categorical shadow of the exact $\cosh\eta \leftrightarrow \coth\eta$
   involution);
-- `gradingPair_intertwines_swap` — the winding-grading map
+- **Winding-grading intertwining** — the winding-grading map
   $x \mapsto (\mu(x), \nu(x))$ intertwines the channel rotation with the
   coordinate swap: $(\mu(\mathrm{rot}\,x), \nu(\mathrm{rot}\,x)) =
   \mathrm{swap}(\mu(x), \nu(x))$. This is the exact discrete shadow of the
   Whipple degree–order exchange $(\mu, \nu) \mapsto (\nu, \mu)$, and a
-  genuine consequence of the two swap-component fields (not a restatement).
+  genuine consequence of the two swap-component conditions (not a restatement).
 
 The archimedean *amplitude* of that exchange is fixed independently of the
 open identification: the grid-verified constant
 $C(\nu,\mu) = \sqrt{2/\pi}\,e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac{1}{2})$ above is
 the symbolic-exact shadow the intertwining must carry.
 
-The grading-swap field is moreover *not primitive*: `channelIndexed_swaps_windings`
-**derives** it from the even$\leftrightarrow$odd channel flip that
-[prop on the channel rotation](binding-qbeta-complex-volume.md)
-(`rotation_step`) proves. A `ChannelIndexedLadder` carries the two
+The grading-swap condition is moreover *not primitive*: it follows
+from the even$\leftrightarrow$odd channel flip that
+[the channel rotation](binding-qbeta-complex-volume.md)
+establishes. A channel-indexed ladder carries the two
 recurrence-channel indices, the rotation that flips them, and a single shared
 winding function $\mathrm{windOf}$; the swap
 $\mathrm{windOf}(\mathrm{evenIdx}(\mathrm{rot}\,x)) =
 \mathrm{windOf}(\mathrm{oddIdx}\,x)$ then follows from the flip, not from an
-assumption. This does not close the conjecture (no instance is produced): it
+assumption. This does not close the conjecture: it
 moves the open content off the swap and onto (i) identifying the abstract
-channel flip with `rotation_step`'s $\mathrm{oddStep} \leftrightarrow
-\mathrm{evenStep}$ carry, and (ii) the residual involutivity — the order-2
+channel flip with the odd-step $\leftrightarrow$
+even-step recurrence rotation, and (ii) the residual involutivity — the order-2
 Whipple $\cosh\eta \leftrightarrow \coth\eta$ exchange, a *different* map from
 the order-4 $\zeta_4$ recurrence rotation, hence genuinely open.

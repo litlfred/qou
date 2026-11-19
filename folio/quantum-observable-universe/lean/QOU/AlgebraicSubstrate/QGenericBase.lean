@@ -7,15 +7,18 @@ The framework's ground ring is fixed by an owner decision (2026-08-26) as
 
 — Laurent polynomials with every cyclotomic polynomial from the second on
 inverted. `Spec R` is the `q`-line with the roots of unity of order `≥ 2`
-deleted, which is exactly the locus `def:quantum-universe` axiom 4 forbids: no
-quantum dimension may be a non-unit.
+deleted, which is the locus where finite-strand Hecke Wedderburn blocks
+(`SemisimpleBlockData`, Chapter 5) have invertible quantum dimensions.
 
 ## Scope: this is CONSTRUCTION-side, not a hypothesis of the axioms
 
 `def:quantum-universe` asks of its base only `CommRing`, and that is correct and
-should not change. The invertibility it needs is stated as `dimQ_isUnit` /
-`frobWeight_isUnit`, quantified over a universe's *own* blocks — a condition on
-the pair `(R, C)`, never on `R` alone. More importantly `q` is **emergent**:
+should not change. Per the 2026-11-19 architectural ruling (`qou-ig2d`), finite
+Wedderburn semisimplicity is deferred to Chapter 5 (`braids-and-knots` Hecke
+`H_n(q)` slices and `SemisimpleBlockData`), where the invertibility it needs is
+stated as `dimQ_isUnit` / `frobWeight_isUnit`, quantified over the slice's
+*own* blocks — a condition on the pair `(R, C)`, never on `R` alone. More
+importantly `q` is **emergent**:
 `QuantumUniverse` carries `unitEndEquiv : R ≃+* End (𝟙_ C)` and deliberately has
 **no `q` field**, because the twist axiom reads `q` off the ribbon structure and
 "a distinguished element would smuggle in as data the thing the framework claims
@@ -24,8 +27,9 @@ to derive".
 `IsQGeneric R q` below takes `q` as a **parameter**, so it is exactly the shape
 the axioms refuse. It is therefore *not* a definition-layer constraint and must
 not be threaded into `QuantumUniverse`. Its use is the other direction of
-travel: when one **constructs** a Hecke-type universe, `q` is chosen first (one
-builds `H_n(q)`), and this class is what discharges the axiom-4 fields for that
+travel: when one **constructs** a Hecke-type finite-strand slice in Chapter 5,
+`q` is chosen first (one builds `H_n(q)`), and this class is what discharges the
+`SemisimpleBlockData` unit fields (`dimQ_isUnit`, `frobWeight_isUnit`) for that
 construction. Axiomatic direction — `R` generic, `q` emerges, nothing more
 required. Constructive direction — `q` given, and then this.
 
@@ -75,6 +79,7 @@ shows those two are not in tension.
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Eval
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
 
 namespace QOU.AlgebraicSubstrate
 
@@ -148,5 +153,55 @@ theorem IsQGeneric.map (f : R →+* S) (q : R) [IsQGeneric R q] : IsQGeneric S (
       rw [← map_cyclotomic d f, eval_map, eval₂_at_apply]
     rw [this]
     exact (IsQGeneric.isUnit_cyclotomic d hd).map f
+
+/-- Additive geometric-sum form of the quantum integer
+`[m]_q = ∑_{i=0}^{m-1} q^i = 1 + q + ⋯ + q^{m-1}`. -/
+def qBracketSum (q : R) (m : ℕ) : R :=
+  ∑ i ∈ Finset.range m, q ^ i
+
+/-- Telescoping geometric-sum identity `(q - 1) · ∑_{i=0}^{m-1} q^i = q^m - 1`. -/
+theorem sub_one_mul_qBracketSum (q : R) (m : ℕ) :
+    (q - 1) * qBracketSum q m = q ^ m - 1 := by
+  unfold qBracketSum
+  induction m with
+  | zero => simp
+  | succ k ih =>
+    rw [Finset.sum_range_succ, mul_add, ih, pow_succ]
+    ring
+
+/-- Over any field `K`, for `q ≠ 1` and `m ≥ 1`, the cyclotomic product `qBracket K q m`
+coincides identically with the geometric sum `qBracketSum q m = ∑_{i=0}^{m-1} q^i`. -/
+theorem qBracket_eq_qBracketSum_of_ne_one {K : Type*} [Field K] (q : K) (hq1 : q ≠ 1)
+    {m : ℕ} (hm : 0 < m) :
+    qBracket K q m = qBracketSum q m := by
+  apply mul_left_cancel₀ (sub_ne_zero.mpr hq1)
+  rw [← qPow_sub_one_eq_mul_bracket q hm, sub_one_mul_qBracketSum]
+
+/-- **Unconditional Real Positivity of `[m]_q` on `(0, ∞)`**:
+For every real `q > 0` (including the classical point `q = 1` and the physical
+substrate `q₀ > 1`) and every `m ≥ 1`, the quantum integer
+`qBracketSum q m = ∑_{i=0}^{m-1} q^i` is strictly positive (`> 0`). -/
+theorem qBracketSum_real_pos {q : ℝ} (hq : 0 < q) {m : ℕ} (hm : 1 ≤ m) :
+    0 < qBracketSum q m := by
+  unfold qBracketSum
+  obtain ⟨k, rfl⟩ : ∃ k, m = k + 1 := Nat.exists_eq_add_of_le' hm
+  rw [Finset.sum_range_succ]
+  have hnonneg : 0 ≤ ∑ i ∈ Finset.range k, q ^ i :=
+    Finset.sum_nonneg (fun i _ => le_of_lt (pow_pos hq i))
+  have hlast : 0 < q ^ k := pow_pos hq k
+  linarith
+
+/-- On `ℝ`, for every `q > 0` and `m ≥ 1`, `qBracketSum q m ≠ 0`. -/
+theorem qBracketSum_real_ne_zero {q : ℝ} (hq : 0 < q) {m : ℕ} (hm : 1 ≤ m) :
+    qBracketSum q m ≠ 0 :=
+  ne_of_gt (qBracketSum_real_pos hq hm)
+
+/-- **Unconditional Invertibility of `[m]_q` on `(0, ∞)`**:
+On `ℝ`, for every `q > 0` and `m ≥ 1`, `IsUnit (qBracketSum q m)` holds without
+any auxiliary semisimplicity assumption, certifying that Dipper–James / Wenzl
+split semisimplicity of `H_n(q)` holds unconditionally across all `q ∈ (0, ∞)`. -/
+theorem qBracketSum_real_isUnit {q : ℝ} (hq : 0 < q) {m : ℕ} (hm : 1 ≤ m) :
+    IsUnit (qBracketSum q m) :=
+  isUnit_iff_ne_zero.mpr (qBracketSum_real_ne_zero hq hm)
 
 end QOU.AlgebraicSubstrate

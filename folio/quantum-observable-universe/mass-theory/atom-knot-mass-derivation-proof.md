@@ -2,7 +2,7 @@
 (Yekutieli at finite slices replaces any geometric-leg construction
 with finite-categorical Markov trace), the proof is a single
 pre-Archimedean categorical pipeline, terminated by the Archimedean
-realization functor. We treat the algebraic content first and then
+realization functor. The algebraic content is treated first and then
 the functor.
 
 ### Categorical (pre-Archimedean) leg
@@ -54,7 +54,7 @@ Reeb-density integral on the cover, etc.) is needed. $\nu_{\mathrm{SDP}} \in \ma
 is read off as the multiplicity of $T_w$'s SDP solution in the
 Wedderburn decomposition (renamed from $\rho$ to
 disambiguate from the categorical density $\rho_K$ of
-[`prop:atomic-mass-gb-nf`](../mass-endomorphism/atomic-mass-gb-nf.md) and the Hoefsmit
+[atomic mass Gröbner–Shirshov normal-form proposition](../mass-endomorphism/atomic-mass-gb-nf.md) and the Hoefsmit
 irrep $\rho_\lambda$).
 
 ### Archimedean realization

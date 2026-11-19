@@ -1,6 +1,6 @@
 **$\mathrm{tr}_M$ ladder — representation-theoretic structure.**
 
-**Proposition (conditional on the open recursion kernel of [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference); "$\mathrm{tr}_M$ ladder").**
+**Proposition (conditional on the open recursion kernel of [the Habiro $q$-difference recursion for $c_k$](#prop:q-beta-c-k-recursion-from-habiro-q-difference); "$\mathrm{tr}_M$ ladder").**
 
 For a typed braid $\beta$ and a Hecke irreducible representation $V_\lambda$ of $H_n(q)$, the Markov-traced character at single wrap admits a canonical factorisation in the substrate ladder variable $u_\lambda = b_\lambda\,\hbar_q^2$ (where $\hbar_q = (q-1)/q$):
 
@@ -14,7 +14,7 @@ $$
 }
 $$
 
-This matches the canonical $\mathfrak{Q}_\beta$ precision ladder ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)), where:
+This matches the canonical $\mathfrak{Q}_\beta$ precision ladder ([categorical precision ladder](#prop:q-beta-categorical-precision-ladder)), where:
 
 - $\rho_\lambda$ is the Hoefsmit seminormal representation of $H_n(q)$ on $V_\lambda$.
 - $b_\lambda$ is the off-diagonal coupling of $\rho_\lambda(\sigma_i)$ in the standard-tableau basis. For $V_{(2,1)}$ of $H_3$, the scalar $b = \sqrt{q^4+q^2+1}/(q^2+1) = \sqrt{d_1 d_2 + 1}$ from [`prop:hoefsmit-V21-cos-symmetrization`](#prop:hoefsmit-V21-cos-symmetrization).
@@ -23,7 +23,7 @@ This matches the canonical $\mathfrak{Q}_\beta$ precision ladder ([`prop:q-beta-
 
 The factorisation defines the correction factor $F_\lambda := \mathrm{tr}_M^{V_\lambda}(\beta) / \mathrm{Tr}\,\rho_\lambda(\beta)$, which is valid wherever $\mathrm{Tr}\,\rho_\lambda(\beta) \neq 0$. The right-hand side depends on $\hbar_q$ only through $\hbar_q^2$, so the factorisation is even in $\hbar_q$ by construction. This evenness is a property of the ansatz, not a consequence of the bar involution: under $q \mapsto q^{-1}$ one has $\hbar_q \mapsto 1 - q = -q\,\hbar_q$, not $-\hbar_q$.
 
-The rung coefficients are conjectured to be determined by the proved second-order $q$-difference (Hahn–Exton $q$-Bessel) recursion of [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference). The entire product forms the Taylor expansion of the exact finite Habiro sum, which the production system evaluates without truncation ([`prop:habiro-precision-ladder-equivalence`](#prop:habiro-precision-ladder-equivalence)).
+The rung coefficients are conjectured to be determined by the proved second-order $q$-difference (Hahn–Exton $q$-Bessel) recursion of [the Habiro $q$-difference recursion for $c_k$](#prop:q-beta-c-k-recursion-from-habiro-q-difference). The entire product forms the Taylor expansion of the exact finite Habiro sum, which the production system evaluates without truncation ([Habiro precision-ladder equivalence](#prop:habiro-precision-ladder-equivalence)).
 
 | order | datum | status |
 |------:|:---:|:---|

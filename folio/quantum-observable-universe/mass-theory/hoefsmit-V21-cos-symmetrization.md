@@ -1,6 +1,6 @@
-**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
+**Proposition (conditional on [Borromean quark conjecture](#conj:borromean-quark)).**
 
-The 1-d Hecke irreps use the universal closed form in [`prop:hecke-1d-irrep-closed-form-character`](#prop:hecke-1d-irrep-closed-form-character). The 2-d irrep $V_{(2,1)}$ of $H_3(q)$ requires the **Hoefsmit seminormal action**:
+The 1-d Hecke irreps use the universal closed form in [Hecke one-dimensional irreducible-representation closed form character proposition](#prop:hecke-1d-irrep-closed-form-character). The 2-d irrep $V_{(2,1)}$ of $H_3(q)$ requires the **Hoefsmit seminormal action**:
 
 $$
   \rho_{(2,1)}(\sigma_0) \;=\; \begin{pmatrix} q & 0 \\ 0 & -q^{-1} \end{pmatrix},

@@ -6,4 +6,10 @@ export default remark({
   tags: ["glossary", "homological-algebra", "dg"],
   uses: ["rem:glossary-derived-category"],
   defines: ["dg-category"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Mathlib reference: none for dg-enriched categories; underlying complexes are `HomologicalComplex` and `CochainComplex` in `Mathlib.Algebra.Homology.HomologicalComplex`.",
+    },
+  ],
 });

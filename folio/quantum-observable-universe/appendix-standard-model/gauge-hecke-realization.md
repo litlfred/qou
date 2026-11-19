@@ -1,4 +1,4 @@
-We conjecture that the gauge symmetry of the knot-state groupoid realises faithfully inside the Hecke algebra: for every topological state $X$, there is an injective monoid homomorphism
+The gauge symmetry of the knot-state groupoid is conjectured to realise faithfully inside the Hecke algebra: for every topological state $X$, there is an injective monoid homomorphism
 
 $$
   \Phi_X \colon \mathrm{End}_{\mathbf{G}}(X) \longrightarrow H_n(q)

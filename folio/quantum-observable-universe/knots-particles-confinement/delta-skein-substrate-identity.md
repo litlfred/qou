@@ -37,7 +37,7 @@ $$
   \frac{m_n - m_p}{m_e \cdot \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2}.
 $$
 
-At the substrate parameter $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps) and CAL-1 $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}\ldots\;\mathrm{MeV}$, we evaluate this:
+At the substrate parameter $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps) and CAL-1 $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}\ldots\;\mathrm{MeV}$, this evaluates to:
 
 | Quantity | 50-dps value | Source |
 |----------|-------------|--------|

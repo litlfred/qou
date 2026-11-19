@@ -1,0 +1,946 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T09:39:11.999352+00:00",
+  "commitSha": "974a6952a3bf3c410c2eb0a0a538d05e573de646",
+  "assertions": [
+    {
+      "name": "scanned_all_36_monograph_chapters_and_appendices",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Scanned 3668 active monograph .md files across 36 chapters/appendices in reading order"
+    },
+    {
+      "name": "reproduced_all_owner_reported_ch1_ch2_leaks",
+      "computed": "0",
+      "expected": "1",
+      "passed": false,
+      "tolerance": "0",
+      "source": "Every owner-reported leak in Chapters 1 and 2 is captured with exact file:line coordinates"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 3,
+  "computation": "monograph-lean-and-voice-leak-audit",
+  "scriptFile": "monograph_lean_and_voice_leak_audit.py",
+  "scriptHash": "2a719386ab69",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/monograph_lean_and_voice_leak_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/monograph_lean_and_voice_leak_audit.py"
+  },
+  "description": "Read-only corpus audit of all 35 chapters and appendices under folio/quantum-observable-universe/ for Class L1 (Lean/Mathlib prose mentions), Class L2 (backticked Lean identifiers and raw block IDs in prose), Class L3 (first/second-person pronouns), and Class L4 (Chapter 1-2 reading-order anachronisms and forward refs).",
+  "data": {
+    "dps": 80,
+    "total_chapters_and_appendices": 36,
+    "total_md_files_scanned": 3668,
+    "totals_by_class": {
+      "L1": 5,
+      "L2": 0,
+      "L3": 0,
+      "L4": 24
+    },
+    "root_causes_of_checker_gaps": {
+      "gap_1_paper_commentary_audit_exemption": "folio/pipeline/paper-commentary-audit.ts lines 11-12 & 74 explicitly exempted naming Lean declarations/carriers ('Naming the Lean declaration that states a result is fine; grading the Lean is not') and required 'Lean (backing|carrier|sibling|file)' to be followed within 80 chars by 'does not|doesn't|cannot'.",
+      "gap_2_qa_checkers_voice_backtick_stripping": "folio-assistant/cat-harness-tools/pipeline/qa-checkers-voice.ts strips all inline backtick spans (`replace(/`[^`]+`/g, '')` in scanProse line 180 and stripInlineCode line 572) and has no detector for backticked Lean FQNs (`QOU.Foo`), Lean declaration identifiers (`foo_bar`), or raw block IDs (`def:foo`).",
+      "gap_3_first_person_pronoun_narrow_regex": "qa-checkers-voice.ts checkFirstPersonWork (line 286) only matches work-tracker futures/pasts ('we'll add/fix', 'we should fix', 'we went ahead and'), and checkScholarlyDefault (lines 744, 754) only matches 'So what we...', 'Now we want...', or 'we proved/showed... above/earlier'. General first-person plural ('we can speak', 'we chose', 'We require', 'for us', 'our') is completely unguarded.",
+      "gap_4_chapter_1_anachronism_leak": "Automated wall/q-usage checkers do not flag premature substrate-parameter q, [n]_q, Phi_d(q), Hecke basis, SU_q(2), or archimedean-wall discourse inside Chapter 1 (quantum-universes), even though the substrate parameter q is not introduced until Chapter 2 Section 7 (sec:substrate-parameter) and the Frobenius-Hopf substrate is not introduced until Chapter 2 Section 9 (sec:algebraic-substrate-reeb)."
+    },
+    "chapter_summary": {
+      "introduction": {
+        "md_files": 7,
+        "L1": 5,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 5
+      },
+      "quantum-universes": {
+        "md_files": 63,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "quantum-observable-universes": {
+        "md_files": 312,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 24,
+        "total": 24
+      },
+      "models-of-qous": {
+        "md_files": 54,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "lifting-and-descent": {
+        "md_files": 128,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "braids-and-knots": {
+        "md_files": 133,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "brings-surface": {
+        "md_files": 181,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "knots-particles-confinement": {
+        "md_files": 169,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "eightfold-way": {
+        "md_files": 19,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "mass-endomorphism": {
+        "md_files": 133,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "climax-volume-mass": {
+        "md_files": 61,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "mass-theory": {
+        "md_files": 825,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "nuclear-interactions": {
+        "md_files": 167,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "gravity-spacetime": {
+        "md_files": 6,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "predicted-spectra": {
+        "md_files": 305,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "observations": {
+        "md_files": 261,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "molecular-construction": {
+        "md_files": 79,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "organic-chemistry": {
+        "md_files": 27,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "fluid-dynamics": {
+        "md_files": 110,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "stochastic-mechanics": {
+        "md_files": 78,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "information-theory": {
+        "md_files": 178,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "measurement-observation": {
+        "md_files": 14,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "q-geometric-langlands": {
+        "md_files": 51,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "glossary": {
+        "md_files": 31,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-knot-periodic-table": {
+        "md_files": 15,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-knot-operations": {
+        "md_files": 12,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-knot-operations-archimedean": {
+        "md_files": 3,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-transfer-matrices": {
+        "md_files": 45,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-mass-binding-algorithms": {
+        "md_files": 21,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-standard-model": {
+        "md_files": 22,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-nf-witnesses": {
+        "md_files": 4,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-qvalues": {
+        "md_files": 19,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-surreals": {
+        "md_files": 100,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "appendix-surreals-archimedean": {
+        "md_files": 21,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "index-of-definitions": {
+        "md_files": 1,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      },
+      "notation": {
+        "md_files": 13,
+        "L1": 0,
+        "L2": 0,
+        "L3": 0,
+        "L4": 0,
+        "total": 0
+      }
+    },
+    "ch1_ch2_detailed_hits": {
+      "L1": [],
+      "L2": [],
+      "L3": [],
+      "L4": [
+        {
+          "file": "quantum-observable-universes/quantum-observable-universe-exists-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "quantum-observable-universe-exists-proof",
+          "line": 32,
+          "subkind": "L4b:forward-ref",
+          "match": "[$\\mathbb{C}$-QOU](#ex:c-quantum-observable-universe)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#ex:c-quantum-observable-universe, +104 blocks ahead)",
+          "excerpt": "([$\\mathbb{C}$-QOU](#ex:c-quantum-observable-universe)) upon choosing a"
+        },
+        {
+          "file": "quantum-observable-universes/braiding-induced-ordering-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "braiding-induced-ordering-proof",
+          "line": 32,
+          "subkind": "L4b:forward-ref",
+          "match": "[categorical Reeb](#def:categorical-reeb)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#def:categorical-reeb, +40 blocks ahead)",
+          "excerpt": "([categorical Reeb](#def:categorical-reeb)) express the same"
+        },
+        {
+          "file": "quantum-observable-universes/su2-emergence-dagger-unitarity-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "su2-emergence-dagger-unitarity-proof",
+          "line": 5,
+          "subkind": "L4b:forward-ref",
+          "match": "[fibre adjoint involution](#prop:fiber-adjoint-involution)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:fiber-adjoint-involution, +40 blocks ahead)",
+          "excerpt": "([fibre adjoint involution](#prop:fiber-adjoint-involution)). Define a dagger on"
+        },
+        {
+          "file": "quantum-observable-universes/g-action-on-substrate.md",
+          "chapter": "quantum-observable-universes",
+          "block": "g-action-on-substrate",
+          "line": 13,
+          "subkind": "L4b:forward-ref",
+          "match": "[Table 1](#tbl:g-action-on-substrate-table1-data)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#tbl:g-action-on-substrate-table1-data, +1 blocks ahead)",
+          "excerpt": "where each $A^{(X)}$ carries a unique irreducible representation of $G$. See [Table 1](#tbl:g-action-on-substrate-table1-data)."
+        },
+        {
+          "file": "quantum-observable-universes/g-action-on-substrate.md",
+          "chapter": "quantum-observable-universes",
+          "block": "g-action-on-substrate",
+          "line": 74,
+          "subkind": "L4b:forward-ref",
+          "match": "[Table 2](#tbl:g-action-on-substrate-table2-data)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#tbl:g-action-on-substrate-table2-data, +2 blocks ahead)",
+          "excerpt": "This derivation grounds Anchor II explicitly in categorical structures. See [Table 2](#tbl:g-action-on-substrate-table2-data)."
+        },
+        {
+          "file": "quantum-observable-universes/substrate-radial-coordinate-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "substrate-radial-coordinate-proof",
+          "line": 18,
+          "subkind": "L4b:forward-ref",
+          "match": "[q-Reeb flow](#ex:q-reeb-flow)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#ex:q-reeb-flow, +137 blocks ahead)",
+          "excerpt": "([q-Reeb flow](#ex:q-reeb-flow)) rotates the phase of $Z$ at a rate"
+        },
+        {
+          "file": "quantum-observable-universes/substrate-radial-coordinate-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "substrate-radial-coordinate-proof",
+          "line": 26,
+          "subkind": "L4b:forward-ref",
+          "match": "[quantum Planck constant](#def:quantum-planck-constant)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#def:quantum-planck-constant, +22 blocks ahead)",
+          "excerpt": "([quantum Planck constant](#def:quantum-planck-constant)) and $J$ is"
+        },
+        {
+          "file": "quantum-observable-universes/braiding-eigenvalue-extraction-novelty.md",
+          "chapter": "quantum-observable-universes",
+          "block": "braiding-eigenvalue-extraction-novelty",
+          "line": 1,
+          "subkind": "L4b:forward-ref",
+          "match": "[reconstruction](#prop:tannaka-krein-reconstruction)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:tannaka-krein-reconstruction, +2 blocks ahead)",
+          "excerpt": "The deformation parameter $q$ enters the framework categorically rather than by hand. It is the eigenvalue of the braiding $c_{V,V}$ on the symmetric summand of $V \\otimes V$, named by the Hecke relation; the Tannaka--Kr"
+        },
+        {
+          "file": "quantum-observable-universes/braiding-eigenvalue-extraction-novelty.md",
+          "chapter": "quantum-observable-universes",
+          "block": "braiding-eigenvalue-extraction-novelty",
+          "line": 3,
+          "subkind": "L4b:forward-ref",
+          "match": "[epistemic status of the calibrations](#rem:epistemic-status-of-calibrations)",
+          "target_chapter": "observations",
+          "detail": "cross-chapter forward ref -> observations (#rem:epistemic-status-of-calibrations)",
+          "excerpt": "**What this does not settle is the value.** The braiding is *assumed data* — a braided monoidal category comes equipped with a braiding, and different braidings give different eigenvalues. Reading $q$ off the braiding th"
+        },
+        {
+          "file": "quantum-observable-universes/braiding-eigenvalue-extraction-novelty.md",
+          "chapter": "quantum-observable-universes",
+          "block": "braiding-eigenvalue-extraction-novelty",
+          "line": 5,
+          "subkind": "L4b:forward-ref",
+          "match": "[three-calibration discipline](#def:three-calibration-discipline)",
+          "target_chapter": "observations",
+          "detail": "cross-chapter forward ref -> observations (#def:three-calibration-discipline)",
+          "excerpt": "The two statements live at different levels and neither implies the other. At the fibre level $q$ is a formal parameter whose categorical meaning is the braiding eigenvalue. At the archimedean level $q_0$ is a number fix"
+        },
+        {
+          "file": "quantum-observable-universes/u1-equivariant-reduction-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "u1-equivariant-reduction-proof",
+          "line": 21,
+          "subkind": "L4b:forward-ref",
+          "match": "[rem:u1-phase-tube](#rem:u1-phase-tube)",
+          "target_chapter": "nuclear-interactions",
+          "detail": "cross-chapter forward ref -> nuclear-interactions (#rem:u1-phase-tube)",
+          "excerpt": "[rem:u1-phase-tube](#rem:u1-phase-tube)."
+        },
+        {
+          "file": "quantum-observable-universes/categorical-q-ext-deriv-exists.md",
+          "chapter": "quantum-observable-universes",
+          "block": "categorical-q-ext-deriv-exists",
+          "line": 15,
+          "subkind": "L4b:forward-ref",
+          "match": "[uniqueness of categorical $q$-exterior derivative](#prop:categorical-q-ext-deriv-unique)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:categorical-q-ext-deriv-unique, +2 blocks ahead)",
+          "excerpt": "[uniqueness of categorical $q$-exterior derivative](#prop:categorical-q-ext-deriv-unique)."
+        },
+        {
+          "file": "quantum-observable-universes/germ-commutator-q-curvature.md",
+          "chapter": "quantum-observable-universes",
+          "block": "germ-commutator-q-curvature",
+          "line": 5,
+          "subkind": "L4b:forward-ref",
+          "match": "[$q$-flat connection](#def:q-flat-connection)",
+          "target_chapter": "q-geometric-langlands",
+          "detail": "cross-chapter forward ref -> q-geometric-langlands (#def:q-flat-connection)",
+          "excerpt": "of the $q$-connection ([$q$-flat connection](#def:q-flat-connection))"
+        },
+        {
+          "file": "quantum-observable-universes/categorical-lichnerowicz-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "categorical-lichnerowicz-proof",
+          "line": 57,
+          "subkind": "L4b:forward-ref",
+          "match": "[categorical-instanton](#def:categorical-instanton)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#def:categorical-instanton, +7 blocks ahead)",
+          "excerpt": "the [categorical-instanton](#def:categorical-instanton) self-dual"
+        },
+        {
+          "file": "quantum-observable-universes/categorical-instanton-exists-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "categorical-instanton-exists-proof",
+          "line": 6,
+          "subkind": "L4b:forward-ref",
+          "match": "[self-duality](#prop:categorical-self-duality)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:categorical-self-duality, +5 blocks ahead)",
+          "excerpt": "([self-duality](#prop:categorical-self-duality))."
+        },
+        {
+          "file": "quantum-observable-universes/q-heat-equation-exists-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "q-heat-equation-exists-proof",
+          "line": 8,
+          "subkind": "L4b:forward-ref",
+          "match": "[Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)",
+          "target_chapter": "information-theory",
+          "detail": "cross-chapter forward ref -> information-theory (#prop:q-heat-kernel-peter-weyl)",
+          "excerpt": "([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)), which is"
+        },
+        {
+          "file": "quantum-observable-universes/categorical-laplace-transform-exists-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "categorical-laplace-transform-exists-proof",
+          "line": 2,
+          "subkind": "L4b:forward-ref",
+          "match": "[existence of $\\exp_q$](#prop:q-exponential-exists)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:q-exponential-exists, +25 blocks ahead)",
+          "excerpt": "([existence of $\\exp_q$](#prop:q-exponential-exists)).  The Markov"
+        },
+        {
+          "file": "quantum-observable-universes/categorical-laplace-transform-unique-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "categorical-laplace-transform-unique-proof",
+          "line": 4,
+          "subkind": "L4b:forward-ref",
+          "match": "[uniqueness of $\\exp_q$](#prop:q-exponential-unique)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:q-exponential-unique, +25 blocks ahead)",
+          "excerpt": "([uniqueness of $\\exp_q$](#prop:q-exponential-unique)): fixing"
+        },
+        {
+          "file": "quantum-observable-universes/q-exponential-exists-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "q-exponential-exists-proof",
+          "line": 16,
+          "subkind": "L4b:forward-ref",
+          "match": "[Taylor series of $\\exp_q$](#prop:q-exponential-taylor)",
+          "target_chapter": "information-theory",
+          "detail": "cross-chapter forward ref -> information-theory (#prop:q-exponential-taylor)",
+          "excerpt": "([Taylor series of $\\exp_q$](#prop:q-exponential-taylor)).  Over"
+        },
+        {
+          "file": "quantum-observable-universes/q-exponential-exists-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "q-exponential-exists-proof",
+          "line": 18,
+          "subkind": "L4b:forward-ref",
+          "match": "[finite-field obstruction](#rem:q-exp-finite-field-obstruction)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#rem:q-exp-finite-field-obstruction, +3 blocks ahead)",
+          "excerpt": "([finite-field obstruction](#rem:q-exp-finite-field-obstruction));"
+        },
+        {
+          "file": "quantum-observable-universes/q-exponential-exists-proof.md",
+          "chapter": "quantum-observable-universes",
+          "block": "q-exponential-exists-proof",
+          "line": 21,
+          "subkind": "L4b:forward-ref",
+          "match": "[$p$-adic $\\exp_q$](#rem:q-exp-p-adic)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#rem:q-exp-p-adic, +4 blocks ahead)",
+          "excerpt": "Witt-vector lift ([$p$-adic $\\exp_q$](#rem:q-exp-p-adic))."
+        },
+        {
+          "file": "quantum-observable-universes/q-dilogarithm-pentagon-associator.md",
+          "chapter": "quantum-observable-universes",
+          "block": "q-dilogarithm-pentagon-associator",
+          "line": 15,
+          "subkind": "L4b:forward-ref",
+          "match": "[pentagon coherence of the $q$-dilogarithm](#prop:dilog-pentagon-is-associator)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:dilog-pentagon-is-associator, +11 blocks ahead)",
+          "excerpt": "The equivalence proved in [pentagon coherence of the $q$-dilogarithm](#prop:dilog-pentagon-is-associator) is *scalar*: a potential on $\\mathcal{H}_q$ satisfies the five-term relation exactly when it is a $q$-dilogarithm "
+        },
+        {
+          "file": "quantum-observable-universes/q-dilogarithm-pentagon-associator.md",
+          "chapter": "quantum-observable-universes",
+          "block": "q-dilogarithm-pentagon-associator",
+          "line": 17,
+          "subkind": "L4b:forward-ref",
+          "match": "[$\\Phi_q$ and $A$-polynomial machinery identification](#prop:phi-q-aj-machinery-identification)",
+          "target_chapter": "stochastic-mechanics",
+          "detail": "cross-chapter forward ref -> stochastic-mechanics (#prop:phi-q-aj-machinery-identification)",
+          "excerpt": "**Two faces of the one associator.** On the substrate branch (real $q$) the pentagon is realised by the *compact* dilogarithm $\\Phi_q / \\mathrm{Li}_2^q$ — the bar-even face that drives mass and binding. Continued to the "
+        },
+        {
+          "file": "quantum-observable-universes/q-dilogarithm-exists.md",
+          "chapter": "quantum-observable-universes",
+          "block": "q-dilogarithm-exists",
+          "line": 11,
+          "subkind": "L4b:forward-ref",
+          "match": "[uniqueness of $\\mathrm{Li}_2^q$](#prop:q-dilogarithm-unique)",
+          "target_chapter": "quantum-observable-universes",
+          "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:q-dilogarithm-unique, +2 blocks ahead)",
+          "excerpt": "([uniqueness of $\\mathrm{Li}_2^q$](#prop:q-dilogarithm-unique)), and the"
+        }
+      ]
+    },
+    "corpus_hits_L1_lean_prose_mention": [
+      {
+        "file": "introduction/authors-note.md",
+        "chapter": "introduction",
+        "block": "authors-note",
+        "line": 1,
+        "match": "Lean 4",
+        "excerpt": "Every proof in this paper possesses a corresponding Lean 4 formalisation, except where explicitly citing external references for large prior results. **737 of 748 (98.5%) provable claims** (theorems, lemmas, propositions"
+      },
+      {
+        "file": "introduction/authors-note.md",
+        "chapter": "introduction",
+        "block": "authors-note",
+        "line": 1,
+        "match": "Lean proof",
+        "excerpt": "Every proof in this paper possesses a corresponding Lean 4 formalisation, except where explicitly citing external references for large prior results. **737 of 748 (98.5%) provable claims** (theorems, lemmas, propositions"
+      },
+      {
+        "file": "introduction/authors-note.md",
+        "chapter": "introduction",
+        "block": "authors-note",
+        "line": 1,
+        "match": "in Lean",
+        "excerpt": "Every proof in this paper possesses a corresponding Lean 4 formalisation, except where explicitly citing external references for large prior results. **737 of 748 (98.5%) provable claims** (theorems, lemmas, propositions"
+      },
+      {
+        "file": "introduction/authors-note.md",
+        "chapter": "introduction",
+        "block": "authors-note",
+        "line": 1,
+        "match": "Lean source",
+        "excerpt": "Every proof in this paper possesses a corresponding Lean 4 formalisation, except where explicitly citing external references for large prior results. **737 of 748 (98.5%) provable claims** (theorems, lemmas, propositions"
+      },
+      {
+        "file": "introduction/authors-note.md",
+        "chapter": "introduction",
+        "block": "authors-note",
+        "line": 1,
+        "match": "Lean proof",
+        "excerpt": "Every proof in this paper possesses a corresponding Lean 4 formalisation, except where explicitly citing external references for large prior results. **737 of 748 (98.5%) provable claims** (theorems, lemmas, propositions"
+      }
+    ],
+    "corpus_hits_L2_lean_ident_in_prose": [],
+    "corpus_hits_L3_first_second_person": [],
+    "ch1_ch2_hits_L4_anachronisms_and_forward_refs": [
+      {
+        "file": "quantum-observable-universes/quantum-observable-universe-exists-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "quantum-observable-universe-exists-proof",
+        "line": 32,
+        "subkind": "L4b:forward-ref",
+        "match": "[$\\mathbb{C}$-QOU](#ex:c-quantum-observable-universe)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#ex:c-quantum-observable-universe, +104 blocks ahead)",
+        "excerpt": "([$\\mathbb{C}$-QOU](#ex:c-quantum-observable-universe)) upon choosing a"
+      },
+      {
+        "file": "quantum-observable-universes/braiding-induced-ordering-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "braiding-induced-ordering-proof",
+        "line": 32,
+        "subkind": "L4b:forward-ref",
+        "match": "[categorical Reeb](#def:categorical-reeb)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#def:categorical-reeb, +40 blocks ahead)",
+        "excerpt": "([categorical Reeb](#def:categorical-reeb)) express the same"
+      },
+      {
+        "file": "quantum-observable-universes/su2-emergence-dagger-unitarity-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "su2-emergence-dagger-unitarity-proof",
+        "line": 5,
+        "subkind": "L4b:forward-ref",
+        "match": "[fibre adjoint involution](#prop:fiber-adjoint-involution)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:fiber-adjoint-involution, +40 blocks ahead)",
+        "excerpt": "([fibre adjoint involution](#prop:fiber-adjoint-involution)). Define a dagger on"
+      },
+      {
+        "file": "quantum-observable-universes/g-action-on-substrate.md",
+        "chapter": "quantum-observable-universes",
+        "block": "g-action-on-substrate",
+        "line": 13,
+        "subkind": "L4b:forward-ref",
+        "match": "[Table 1](#tbl:g-action-on-substrate-table1-data)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#tbl:g-action-on-substrate-table1-data, +1 blocks ahead)",
+        "excerpt": "where each $A^{(X)}$ carries a unique irreducible representation of $G$. See [Table 1](#tbl:g-action-on-substrate-table1-data)."
+      },
+      {
+        "file": "quantum-observable-universes/g-action-on-substrate.md",
+        "chapter": "quantum-observable-universes",
+        "block": "g-action-on-substrate",
+        "line": 74,
+        "subkind": "L4b:forward-ref",
+        "match": "[Table 2](#tbl:g-action-on-substrate-table2-data)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#tbl:g-action-on-substrate-table2-data, +2 blocks ahead)",
+        "excerpt": "This derivation grounds Anchor II explicitly in categorical structures. See [Table 2](#tbl:g-action-on-substrate-table2-data)."
+      },
+      {
+        "file": "quantum-observable-universes/substrate-radial-coordinate-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "substrate-radial-coordinate-proof",
+        "line": 18,
+        "subkind": "L4b:forward-ref",
+        "match": "[q-Reeb flow](#ex:q-reeb-flow)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#ex:q-reeb-flow, +137 blocks ahead)",
+        "excerpt": "([q-Reeb flow](#ex:q-reeb-flow)) rotates the phase of $Z$ at a rate"
+      },
+      {
+        "file": "quantum-observable-universes/substrate-radial-coordinate-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "substrate-radial-coordinate-proof",
+        "line": 26,
+        "subkind": "L4b:forward-ref",
+        "match": "[quantum Planck constant](#def:quantum-planck-constant)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#def:quantum-planck-constant, +22 blocks ahead)",
+        "excerpt": "([quantum Planck constant](#def:quantum-planck-constant)) and $J$ is"
+      },
+      {
+        "file": "quantum-observable-universes/braiding-eigenvalue-extraction-novelty.md",
+        "chapter": "quantum-observable-universes",
+        "block": "braiding-eigenvalue-extraction-novelty",
+        "line": 1,
+        "subkind": "L4b:forward-ref",
+        "match": "[reconstruction](#prop:tannaka-krein-reconstruction)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:tannaka-krein-reconstruction, +2 blocks ahead)",
+        "excerpt": "The deformation parameter $q$ enters the framework categorically rather than by hand. It is the eigenvalue of the braiding $c_{V,V}$ on the symmetric summand of $V \\otimes V$, named by the Hecke relation; the Tannaka--Kr"
+      },
+      {
+        "file": "quantum-observable-universes/braiding-eigenvalue-extraction-novelty.md",
+        "chapter": "quantum-observable-universes",
+        "block": "braiding-eigenvalue-extraction-novelty",
+        "line": 3,
+        "subkind": "L4b:forward-ref",
+        "match": "[epistemic status of the calibrations](#rem:epistemic-status-of-calibrations)",
+        "target_chapter": "observations",
+        "detail": "cross-chapter forward ref -> observations (#rem:epistemic-status-of-calibrations)",
+        "excerpt": "**What this does not settle is the value.** The braiding is *assumed data* — a braided monoidal category comes equipped with a braiding, and different braidings give different eigenvalues. Reading $q$ off the braiding th"
+      },
+      {
+        "file": "quantum-observable-universes/braiding-eigenvalue-extraction-novelty.md",
+        "chapter": "quantum-observable-universes",
+        "block": "braiding-eigenvalue-extraction-novelty",
+        "line": 5,
+        "subkind": "L4b:forward-ref",
+        "match": "[three-calibration discipline](#def:three-calibration-discipline)",
+        "target_chapter": "observations",
+        "detail": "cross-chapter forward ref -> observations (#def:three-calibration-discipline)",
+        "excerpt": "The two statements live at different levels and neither implies the other. At the fibre level $q$ is a formal parameter whose categorical meaning is the braiding eigenvalue. At the archimedean level $q_0$ is a number fix"
+      },
+      {
+        "file": "quantum-observable-universes/u1-equivariant-reduction-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "u1-equivariant-reduction-proof",
+        "line": 21,
+        "subkind": "L4b:forward-ref",
+        "match": "[rem:u1-phase-tube](#rem:u1-phase-tube)",
+        "target_chapter": "nuclear-interactions",
+        "detail": "cross-chapter forward ref -> nuclear-interactions (#rem:u1-phase-tube)",
+        "excerpt": "[rem:u1-phase-tube](#rem:u1-phase-tube)."
+      },
+      {
+        "file": "quantum-observable-universes/categorical-q-ext-deriv-exists.md",
+        "chapter": "quantum-observable-universes",
+        "block": "categorical-q-ext-deriv-exists",
+        "line": 15,
+        "subkind": "L4b:forward-ref",
+        "match": "[uniqueness of categorical $q$-exterior derivative](#prop:categorical-q-ext-deriv-unique)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:categorical-q-ext-deriv-unique, +2 blocks ahead)",
+        "excerpt": "[uniqueness of categorical $q$-exterior derivative](#prop:categorical-q-ext-deriv-unique)."
+      },
+      {
+        "file": "quantum-observable-universes/germ-commutator-q-curvature.md",
+        "chapter": "quantum-observable-universes",
+        "block": "germ-commutator-q-curvature",
+        "line": 5,
+        "subkind": "L4b:forward-ref",
+        "match": "[$q$-flat connection](#def:q-flat-connection)",
+        "target_chapter": "q-geometric-langlands",
+        "detail": "cross-chapter forward ref -> q-geometric-langlands (#def:q-flat-connection)",
+        "excerpt": "of the $q$-connection ([$q$-flat connection](#def:q-flat-connection))"
+      },
+      {
+        "file": "quantum-observable-universes/categorical-lichnerowicz-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "categorical-lichnerowicz-proof",
+        "line": 57,
+        "subkind": "L4b:forward-ref",
+        "match": "[categorical-instanton](#def:categorical-instanton)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#def:categorical-instanton, +7 blocks ahead)",
+        "excerpt": "the [categorical-instanton](#def:categorical-instanton) self-dual"
+      },
+      {
+        "file": "quantum-observable-universes/categorical-instanton-exists-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "categorical-instanton-exists-proof",
+        "line": 6,
+        "subkind": "L4b:forward-ref",
+        "match": "[self-duality](#prop:categorical-self-duality)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:categorical-self-duality, +5 blocks ahead)",
+        "excerpt": "([self-duality](#prop:categorical-self-duality))."
+      },
+      {
+        "file": "quantum-observable-universes/q-heat-equation-exists-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "q-heat-equation-exists-proof",
+        "line": 8,
+        "subkind": "L4b:forward-ref",
+        "match": "[Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)",
+        "target_chapter": "information-theory",
+        "detail": "cross-chapter forward ref -> information-theory (#prop:q-heat-kernel-peter-weyl)",
+        "excerpt": "([Peter--Weyl heat kernel](#prop:q-heat-kernel-peter-weyl)), which is"
+      },
+      {
+        "file": "quantum-observable-universes/categorical-laplace-transform-exists-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "categorical-laplace-transform-exists-proof",
+        "line": 2,
+        "subkind": "L4b:forward-ref",
+        "match": "[existence of $\\exp_q$](#prop:q-exponential-exists)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:q-exponential-exists, +25 blocks ahead)",
+        "excerpt": "([existence of $\\exp_q$](#prop:q-exponential-exists)).  The Markov"
+      },
+      {
+        "file": "quantum-observable-universes/categorical-laplace-transform-unique-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "categorical-laplace-transform-unique-proof",
+        "line": 4,
+        "subkind": "L4b:forward-ref",
+        "match": "[uniqueness of $\\exp_q$](#prop:q-exponential-unique)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:q-exponential-unique, +25 blocks ahead)",
+        "excerpt": "([uniqueness of $\\exp_q$](#prop:q-exponential-unique)): fixing"
+      },
+      {
+        "file": "quantum-observable-universes/q-exponential-exists-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "q-exponential-exists-proof",
+        "line": 16,
+        "subkind": "L4b:forward-ref",
+        "match": "[Taylor series of $\\exp_q$](#prop:q-exponential-taylor)",
+        "target_chapter": "information-theory",
+        "detail": "cross-chapter forward ref -> information-theory (#prop:q-exponential-taylor)",
+        "excerpt": "([Taylor series of $\\exp_q$](#prop:q-exponential-taylor)).  Over"
+      },
+      {
+        "file": "quantum-observable-universes/q-exponential-exists-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "q-exponential-exists-proof",
+        "line": 18,
+        "subkind": "L4b:forward-ref",
+        "match": "[finite-field obstruction](#rem:q-exp-finite-field-obstruction)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#rem:q-exp-finite-field-obstruction, +3 blocks ahead)",
+        "excerpt": "([finite-field obstruction](#rem:q-exp-finite-field-obstruction));"
+      },
+      {
+        "file": "quantum-observable-universes/q-exponential-exists-proof.md",
+        "chapter": "quantum-observable-universes",
+        "block": "q-exponential-exists-proof",
+        "line": 21,
+        "subkind": "L4b:forward-ref",
+        "match": "[$p$-adic $\\exp_q$](#rem:q-exp-p-adic)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#rem:q-exp-p-adic, +4 blocks ahead)",
+        "excerpt": "Witt-vector lift ([$p$-adic $\\exp_q$](#rem:q-exp-p-adic))."
+      },
+      {
+        "file": "quantum-observable-universes/q-dilogarithm-pentagon-associator.md",
+        "chapter": "quantum-observable-universes",
+        "block": "q-dilogarithm-pentagon-associator",
+        "line": 15,
+        "subkind": "L4b:forward-ref",
+        "match": "[pentagon coherence of the $q$-dilogarithm](#prop:dilog-pentagon-is-associator)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:dilog-pentagon-is-associator, +11 blocks ahead)",
+        "excerpt": "The equivalence proved in [pentagon coherence of the $q$-dilogarithm](#prop:dilog-pentagon-is-associator) is *scalar*: a potential on $\\mathcal{H}_q$ satisfies the five-term relation exactly when it is a $q$-dilogarithm "
+      },
+      {
+        "file": "quantum-observable-universes/q-dilogarithm-pentagon-associator.md",
+        "chapter": "quantum-observable-universes",
+        "block": "q-dilogarithm-pentagon-associator",
+        "line": 17,
+        "subkind": "L4b:forward-ref",
+        "match": "[$\\Phi_q$ and $A$-polynomial machinery identification](#prop:phi-q-aj-machinery-identification)",
+        "target_chapter": "stochastic-mechanics",
+        "detail": "cross-chapter forward ref -> stochastic-mechanics (#prop:phi-q-aj-machinery-identification)",
+        "excerpt": "**Two faces of the one associator.** On the substrate branch (real $q$) the pentagon is realised by the *compact* dilogarithm $\\Phi_q / \\mathrm{Li}_2^q$ — the bar-even face that drives mass and binding. Continued to the "
+      },
+      {
+        "file": "quantum-observable-universes/q-dilogarithm-exists.md",
+        "chapter": "quantum-observable-universes",
+        "block": "q-dilogarithm-exists",
+        "line": 11,
+        "subkind": "L4b:forward-ref",
+        "match": "[uniqueness of $\\mathrm{Li}_2^q$](#prop:q-dilogarithm-unique)",
+        "target_chapter": "quantum-observable-universes",
+        "detail": "intra-chapter forward ref -> quantum-observable-universes (#prop:q-dilogarithm-unique, +2 blocks ahead)",
+        "excerpt": "([uniqueness of $\\mathrm{Li}_2^q$](#prop:q-dilogarithm-unique)), and the"
+      }
+    ]
+  },
+  "caveats": [
+    "Read-only audit diagnostic witness: classifies candidate fourth-wall Lean leaks, first/second-person pronouns, and Part I reading-order anachronisms across the monograph corpus."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Purely textual and structural audit of monograph markdown files and chapter manifests; independent of the numerical substrate parameter q_0."
+}

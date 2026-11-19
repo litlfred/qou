@@ -59,4 +59,4 @@ The surreal valuation serves three specific purposes in QOU:
 2. **Spectral gaps and singularity formation**: The leading exponent determines whether a $q$-deformed spectral gap closes algebraically or transcendentally as $q \to 1$.
 3. **Renormalisation counterterms**: Each counterterm in the blow-up calculus has a specific leading exponent. Matching counterterms to divergences means matching leading exponents.
 
-For the appendix, we use $\preceq, \prec, \asymp, \simeq$ uniformly.
+Throughout this appendix, the relations $\preceq, \prec, \asymp, \simeq$ are used uniformly.

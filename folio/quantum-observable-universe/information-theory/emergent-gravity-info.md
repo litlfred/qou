@@ -1,4 +1,4 @@
-We derive the gravitational constant $G_q$ from the $q$-Yang--Mills--Levi action ([$q$-YM-Levi](#def:q-yang-mills-levi)). The coupling is determined by the **in-progress braid content** of a Planck cell. These are sections of the jet tower $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$ that remain partially evaluated and not yet resolved to observable knots ([gravitational constant](#def:gravitational-constant)).
+The gravitational constant $G_q$ arises from the $q$-Yang--Mills--Levi action ([$q$-YM-Levi](#def:q-yang-mills-levi)). The coupling is determined by the **in-progress braid content** of a Planck cell. These are sections of the jet tower $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$ that remain partially evaluated and not yet resolved to observable knots ([gravitational constant](#def:gravitational-constant)).
 
 The central formula is:
 

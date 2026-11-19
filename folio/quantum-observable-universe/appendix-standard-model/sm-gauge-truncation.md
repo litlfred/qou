@@ -1,4 +1,4 @@
-We conjecture that the archimedean truncation of the categorical gauge symmetry — the image of the gauge action groupoid's symmetries at observable scales under the fibre functor $\tau$ — contains the Standard Model gauge group: there is a group $G_{\mathrm{arch}}$ receiving the truncation together with an injective group homomorphism
+The archimedean truncation of the categorical gauge symmetry — the image of the gauge action groupoid's symmetries at observable scales under the fibre functor $\tau$ — is conjectured to contain the Standard Model gauge group: there is a group $G_{\mathrm{arch}}$ receiving the truncation together with an injective group homomorphism
 
 $$
   \mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)

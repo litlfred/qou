@@ -230,7 +230,6 @@ export default chapter({
       blocks: [
         "algebraic-substrate-intro",
         "substrate-preamble",
-        "frobenius-hopf-substrate",
         "brings-coordinate-ring",
         "substrate-parameter-planck",
         "categorical-reeb-derivation",

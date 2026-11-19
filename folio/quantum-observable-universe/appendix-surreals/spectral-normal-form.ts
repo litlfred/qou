@@ -23,4 +23,11 @@ export default conjecture({
     "conway1976",
     "berarducci-mantova2018",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Lean formalisation prerequisites: specialising rational/polynomial expressions in R_q at q = 1 + epsilon, Hahn-series substrate, and (for the transcendental case) Berarducci–Mantova exp/log on No.",
+    },
+  ],
 });

@@ -19,7 +19,7 @@ export default remark({
     "explicit-residual",
   ],
   authorNotes: [
-    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data. Exported declarations: `hecke_root_sum_times_q`, `dimQ_V21_sq_in_u`, `hoefsmit_b_sq_in_u` (discharging `HeckeQuadraticAllGenerators 3 q .hecke_quad_residual_eq_zero`)." },
     {
       kind: "status",
       body: "**All theorems sorry-free.** Six concrete scalar identities backed\nby `field_simp + ring` proofs. This addresses the reviewer's repeated\n\"vacuous True / concrete mathematical statement\" critiques at the\n**scalar-invariant** level. The full matrix-level proofs (Yang-Baxter\ncubic on the V_(2,1) Hoefsmit matrices, etc.) remain open R&D, but\nthe scalar discharges are now substantive.",

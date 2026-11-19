@@ -14,4 +14,4 @@ $$
 
 ## The $k = 5$ selection
 
-For the proton typed-$\mathbf{B}_3$ braid ($n_{\mathrm{total}} = 9$), the half-fill floor is $4$. The inter-nucleon interface contributes $+1$. We obtain $k_{\mathrm{res}} = 5$. This wrap-around contribution ensures the recipe is canonical.
+For the proton typed-$\mathbf{B}_3$ braid ($n_{\mathrm{total}} = 9$), the half-fill floor is $4$. The inter-nucleon interface contributes $+1$, yielding $k_{\mathrm{res}} = 5$. This wrap-around contribution ensures the recipe is canonical.

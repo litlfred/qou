@@ -20,7 +20,7 @@ pairing.*
 ## Relationship to the Bloch-group route
 
 The K-theoretic Bloch-group element
-([`conj:borromean-bloch-group-element`](#conj:borromean-bloch-group-element))
+([borromean-bloch-group-element conjecture](#conj:borromean-bloch-group-element))
 provides the **regulator** side of the Borromean structure
 ($r_2[\mathcal{B}_3] = 8G$).  Poincaré–Lefschetz provides the
 **topological** side: the volume form $\in$ $H^3$ pairs with the
@@ -43,20 +43,18 @@ topological-cohomological route, the Bloch group the K-theoretic one.
 ## What remains open
 
 1. Verify that the Borromean volume $8G$ arises as a Poincaré–
-   Lefschetz pairing in Lean — partial Mathlib infrastructure
-   exists (Mathlib's `Topology.Manifold` library).
+   Lefschetz pairing on the complement manifold.
 2. Connect to the Bloch-group route: show the regulator $r_2$ and the
    Poincaré–Lefschetz pairing both produce $8G$ via the
-   `vol-as-motivic-period` framing.
-3. Closing the conjecture needs a Lean class for manifold-with-cusps
-   Poincaré–Lefschetz (partial in Mathlib).
+   motivic-period framing.
+3. Formulate the cusped-manifold Poincaré–Lefschetz duality interface required to close the conjecture.
 
 ## Cross-references
 
-- [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- [borromean-bloch-group-element conjecture](borromean-bloch-group-element.md)
   — K-theoretic regulator route to the same $8G$
-- [`prop:reeb-bundle-complement-equals-volume`](#prop:reeb-bundle-complement-equals-volume)
+- [reeb-bundle-complement-equals-volume proposition](#prop:reeb-bundle-complement-equals-volume)
   — Reeb-pairing volume route (third route to $8G$)
-- [`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period)
+- [vol-as-motivic-period remark](#rem:vol-as-motivic-period)
   — motivic framing tying all three routes together
 - [Lefschetz 1926; Neumann–Zagier 1985 for cusped 3-manifolds]

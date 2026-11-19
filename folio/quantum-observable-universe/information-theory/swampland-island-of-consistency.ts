@@ -14,4 +14,7 @@ export default remark({
     "external-program",
   ],
   cites: ["vafa2005", "arkani-hamed2007"],
+  authorNotes: [
+    { kind: "note", body: "The derivation of $\\chi(A) = -6$ is Lean-checked." },
+  ],
 });

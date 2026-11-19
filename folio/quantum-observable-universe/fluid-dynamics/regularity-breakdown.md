@@ -7,7 +7,7 @@ There exist smooth, finite-energy initial data $v_0$ such that the classical Nav
 
 1. **Blowup of enstrophy.** There exists a time $T^* < \infty$ such that $\lim_{t \to T^{*-}} \int_{\mathbb{R}^3} |\omega(x, t)|^2dx = +\infty$, where $\omega = \nabla \times v$ is the vorticity.
 2. **Vortex sheet concentration.** The blowup occurs by concentration of vorticity onto a codimension-1 surface (vortex sheet). The *spatial* Hausdorff dimension of the sheet is $d_H = 2$. This is not, a priori, in contradiction with the Caffarelli--Kohn--Nirenberg bound (the *parabolic* Hausdorff dimension of the space--time singular set of a suitable weak solution is $\leq 1$): the two measure different sets. A single-instant $2$-dimensional spatial concentration would violate the CKN bound, so compatibility requires the sheet to be read scale-by-scale along the discretely self-similar approach (item 3), which spreads the concentration through space--time rather than onto one time slice; establishing that the resulting space--time set stays within the CKN bound is a required reconciliation, not yet carried out.
-3. **Discretely self-similar asymptotics.** Near the blowup time, the solution approaches a *discretely* self-similar profile: in Leray's similarity variables $y = (x - x_0)/\sqrt{T^* - t}$, $s = -\log(T^* - t)$, the profile is periodic in $s$ (with period set by the root-of-unity scaling $\lambda_\kappa$) rather than steady. The continuous ($s$-independent) self-similar profile solving the Leray equations is excluded \cite{necas-ruzicka-sverak1996}; see [`prop:leray-profile`](#prop:leray-profile).
+3. **Discretely self-similar asymptotics.** Near the blowup time, the solution approaches a *discretely* self-similar profile: in Leray's similarity variables $y = (x - x_0)/\sqrt{T^* - t}$, $s = -\log(T^* - t)$, the profile is periodic in $s$ (with period set by the root-of-unity scaling $\lambda_\kappa$) rather than steady. The continuous ($s$-independent) self-similar profile solving the Leray equations is excluded \cite{necas-ruzicka-sverak1996}; see the [Leray profile proposition](#prop:leray-profile).
 
 **The three obstructions.**
 
@@ -18,7 +18,7 @@ There exist smooth, finite-energy initial data $v_0$ such that the classical Nav
 **Obstruction 3: Cascade becomes continuous.** The $q$-turbulence spectrum has discrete transfer rates with exponentially decreasing amplitude. At $q = 1$, the cascade becomes continuous and the transfer rate $T_{k \to k+1} \to \varepsilon_k^{-1/3}$, allowing energy to reach arbitrarily high wavenumbers in finite time.
 
 **Critical exponents.**
-The transition at $q = 1$ has the structure of a second-order phase transition. We define:
+The transition at $q = 1$ has the structure of a second-order phase transition, characterised by three quantities:
 - **Enstrophy order parameter**: $\Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2|\hat{v}_k(t)|^2$. For $q > 1$, $\Omega(q) < \infty$. At $q = 1$, $\Omega(1) = +\infty$.
 - **Critical exponent**: $\Omega(q) \sim (q - 1)^{-\alpha}$ as $q \to 1^+$.
 - **Correlation length**: The maximum active wavenumber $k_{\max}(q) \sim \log_q(\mathrm{Re}_q^{3/4}) \to \infty$ as $q \to 1^+$.

@@ -84,7 +84,7 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 >    convention of *the closed form above* — with weights
 >    $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
 >    $y_{(1^3)} = 0$ identically
->    ([`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md));
+>    ([$H_3$ Markov Wenzl weights proposition](h3-markov-wenzl-weights.md));
 > 2. the **Wenzl-bridge / Ocneanu** normalisation (producer
 >    `y-lambda-wenzl-bridge-symbolic-witness.json`, used by
 >    the formal derivation), whose

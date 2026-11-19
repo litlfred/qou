@@ -2,8 +2,8 @@
 
 ## Definitions
 
-| Label | Title | Chapter | Lean |
-|-------|-------|---------|------|
+| Label | Title | Chapter | Formal Reference |
+|-------|-------|---------|------------------|
 | [def:qz-bicompletion](#def:qz-bicompletion) | $(q, z)$-bicompletion $\widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z}$ | Ch 12 | `qou:QOU.HabiroRing.QZBicompletionElement` |
 | [def:Q-value-transition](#def:Q-value-transition) | $\mathcal{Q}_q$-Value as Categorical Action Difference | Ch 14 | `qou:QOU.Archimedean.QqValue.value` |
 | [def:su2-basis](#def:su2-basis) | $\mathfrak{su}(2)$ basis | Ch 5 | `qou:QOU.PathIntegrals.SU2Basis` |
@@ -274,8 +274,8 @@
 
 ## Theorems
 
-| Label | Title | Chapter | Lean |
-|-------|-------|---------|------|
+| Label | Title | Chapter | Formal Reference |
+|-------|-------|---------|------------------|
 | [thm:q-bkm](#thm:q-bkm) | $q$-deformed Beale--Kato--Majda criterion | Ch 18 | `qou:QOU.FluidDynamics.q_bkm_criterion` |
 | [thm:flat-tetrahedron-zero-volume](#thm:flat-tetrahedron-zero-volume) | A flat ideal tetrahedron has zero volume: $D(x) = 0$ for every real $x$ | Ch 12 | `qou:QOU.Knot.FlatTet.BlochWigner_lob_ofReal` |
 | [thm:averaging-resonance-rule](#thm:averaging-resonance-rule) | Averaging-resonant rung selection: $k_{\mathrm{res}}(n_{\mathrm{total}}) = \lfloor n_{\mathrm{total}}/2 \rfloor + \mathbb{1}_{\mathrm{wrap}}$ | Ch 12 | `qou:QOU.BraidKnot.AveragingResonanceRule` |
@@ -334,8 +334,8 @@
 
 ## Propositions
 
-| Label | Title | Chapter | Lean |
-|-------|-------|---------|------|
+| Label | Title | Chapter | Formal Reference |
+|-------|-------|---------|------------------|
 | [prop:silver-ratio-beta-decay-null](#prop:silver-ratio-beta-decay-null) | **Silver-ratio trace degeneracy**: at $q = 1 \pm \sqrt{2}$, the Hecke generator $\sigma$ has eigenvalues = $1 \pm \sqrt{2}$ (silver-ratio self-referential fixed point); proton and neutron Markov-traces become categorically indistinguishable | Ch 10 | `qou:QOU.ParticleInteractions.beta_decay_null_iff_h_zero_or_two` |
 | [prop:force-carrier-bring-uniqueness](#prop:force-carrier-bring-uniqueness) | $(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots | Ch 14 | `qou:QOU.Archimedean.force_carrier_bring_uniqueness` |
 | [prop:em-coupling-fixed-point](#prop:em-coupling-fixed-point) | $\alpha_{EM}$ as the root of the self-consistent fixed-point cubic $-h^2H\alpha^3 + H\alpha^2 + T\alpha - 1 = 0$ (conditional on the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization) | Ch 14 | `qou:QOU.ArchimedeanUniverse.alpha_em_is_fixed_point_root` |
@@ -346,7 +346,7 @@
 | [prop:qbeta-c8-c10-silver-rationals](#prop:qbeta-c8-c10-silver-rationals) | $\mathfrak{Q}_\beta$ c_8, c_9, c_10 closed-form values at the silver ratio q = 1 + √2 | Ch 12 | `qou:QOU.QBeta.qbeta_c10_at_silver` |
 | [prop:q-beta-categorical-precision-ladder](#prop:q-beta-categorical-precision-ladder) | $\mathfrak{Q}_\beta$ categorical-derivation precision ladder | Ch 12 | `qou:QOU.BraidKnot.q_beta_categorical_precision_ladder` |
 | [prop:q-beta-cos-resummation](#prop:q-beta-cos-resummation) | $\mathfrak{Q}_\beta$ cos-resummation in convention D: $\mathfrak{Q}_\beta^{\cos} = \mathfrak{Q}_\beta^{\mathrm{base}} \cdot \cos((z_D-1)h/2)$ (conditional on the transfer-matrix eigenphase identification) | Ch 10 | `qou:QOU.Interactions.q_beta_cos_resummation` |
-| [prop:q-beta-bar-even-kernel-typeclass](#prop:q-beta-bar-even-kernel-typeclass) | $\mathfrak{Q}_\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt | Ch 12 | `qou:QOU.QBeta.BarEvenKernelTypeclass.BarEvenKernel` |
+| [prop:q-beta-bar-even-kernel-typeclass](#prop:q-beta-bar-even-kernel-typeclass) | Unified $\mathfrak{Q}_\beta$ bar-even kernel conditions bundling all four $\S 4$ invariants (bar-evenness, radius of convergence, $q = 1$ shadow, and direction sanity) for kernel candidates $F(q)$ | Ch 12 | `qou:QOU.QBeta.BarEvenKernelTypeclass.BarEvenKernel` |
 | [prop:q-beta-bar-even-kernel-invariant](#prop:q-beta-bar-even-kernel-invariant) | $\mathfrak{Q}_\beta$ precision-ladder $\bar{}$-even discriminant — the kernel $R(q,\xi)$ produces a clean integer-$u$ ladder $\prod_k(1+c_k\,u^k)$ if and only if $R$ is even under $t \mapsto -t$ ($t = q-1$); $(1-u^2)$ at N=2 is the prototype | Ch 12 | `qou:QOU.QBeta.BarEvenInvariant.bar_even_quadratic_term_in_t_squared` |
 | [prop:q-beta-q-eq-one-shadow-gate](#prop:q-beta-q-eq-one-shadow-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \to -1$ (the structural N=2 anchor) and $c_3 \to J_{\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED | Ch 12 | `qou:QOU.QBeta.QOneShadowGate.qbeta_q_eq_one_shadow_anchors` |
 | [rem:q-beta-direction-sanity-gate](#rem:q-beta-direction-sanity-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(d)$ formalize-first gate — any candidate Habiro element $F(q_0)$ must have magnitude consistent with the target observable's order of magnitude; the $z(q_0) \approx 0.6127 < 1$ direction obstruction is the canonical refutation precedent | Ch 12 | `qou:QOU.QBeta.DirectionSanityGate.qbeta_direction_sanity_magnitude_match` |
@@ -361,7 +361,7 @@
 | [prop:he4-channel-active-set](#prop:he4-channel-active-set) | $^4\mathrm{He}$ operator-selection LP: primal $\mathrm{T} \oplus p$, active set $\{\mathrm{D} \oplus \mathrm{D},\,{}^3\mathrm{He} \oplus n\}$ | Ch 12 | `qou:QOU.BraidKnot.He4ChannelActiveSet.HasHe4ChannelActiveSet` |
 | [prop:a-8-partition-function-identity](#prop:a-8-partition-function-identity) | $a_8$ partition-function identity: $a_8(X) = \sum_{n=1}^{5} p(n)\,X^{5-n}$ | Ch 12 | `qou:QOU.BraidKnot.A8Partition.a_8_eq_partition_sum` |
 | [prop:q-beta-c-2-eq-neg-one-structural](#prop:q-beta-c-2-eq-neg-one-structural) | $c_2 = -1$ in the $\mathfrak{Q}_\beta$ precision ladder is structural — the $(1 - b^2 \cdot \hbar_q^4)$ N=2 factor IS $(1 - u^2)$ with $u = b \cdot \hbar_q^2$, hence the $(1 + c_2 \cdot u^2)$ coefficient is exactly $-1$ by ring identity | Ch 12 | `qou:QOU.QBeta.C2Structural.c_2_eq_neg_one_structural` |
-| [prop:c5-involution-leibniz-decomposition](#prop:c5-involution-leibniz-decomposition) | $c_5$ decomposes as $-b^2 - 1/2$: pure-$\sigma$ Kashiwara contribution plus bar-invariant involution fingerprint from averaged-crossing structure. Interpretation of the unique averaging-resonant rung k = 5 identified in `thm:averaging-resonance-rule` (planned, not yet derived); involution supplies the $1/2$ magnitude, while the half-fill cyclic structure supplies the rung selection. | Ch 19 | `qou:QOU.BraidKnot.c5_decomposition_via_quantum_two` |
+| [prop:c5-involution-leibniz-decomposition](#prop:c5-involution-leibniz-decomposition) | $c_5$ decomposes as $-b^2 - 1/2$: pure-$\sigma$ Kashiwara contribution plus bar-invariant involution fingerprint from averaged-crossing structure. Interpretation of the unique averaging-resonant rung $k = 5$ of the averaging resonance rule; involution supplies the $1/2$ magnitude, while the half-fill cyclic structure supplies the rung selection. | Ch 19 | `qou:QOU.BraidKnot.c5_decomposition_via_quantum_two` |
 | [prop:q-beta-c-k-recursion-from-habiro-q-difference](#prop:q-beta-c-k-recursion-from-habiro-q-difference) | $c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation — depth-$d$ linear recursion on $c_k$ from the $q$-shift kernel $R(q,\xi)$ acting on $F(\xi)$ | Ch 12 | `qou:QOU.QBeta.CKRecursion.CKRecursion` |
 | [prop:dq-squared](#prop:dq-squared) | $d_q^2$ does not vanish | Ch 2 | `qou:QOU.dq_squared` |
 | [prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications) | $E_\infty$-page identifications with the six mass-formula terms | Ch 12 | `qou:QOU.BraidKnot.e_infinity_identifications` |
@@ -470,7 +470,7 @@
 | [prop:torus-embeddable-complete](#prop:torus-embeddable-complete) | Completeness of torus knots embeddable in the Bring's surface | Ch 6 | `qou:QOU.Archimedean.torus_embeddable_complete` |
 | [prop:compound-beta-shell-calibration](#prop:compound-beta-shell-calibration) | Compound β-decay calibration across magic shells | Ch 8 | `qou:QOU.BraidKnot.CompoundBetaShellCalibration` |
 | [prop:ns-obstruction-computation](#prop:ns-obstruction-computation) | Computation of the NS obstruction for the Descartes universe | Ch 18 | `qou:QOU.FluidDynamics.ns_obstruction_computation` |
-| [prop:bloch-group-quotient-construction](#prop:bloch-group-quotient-construction) | Concrete construction of $B(F)$ as `FreeAbelianGroup ⧸ pentagonSubgroup` (closes substantive Mathlib gap 1) | Ch 14 | `qou:QOU.Archimedean.BlochQuotient.BlochGroup` |
+| [prop:bloch-group-quotient-construction](#prop:bloch-group-quotient-construction) | Concrete quotient construction of the Bloch group $B(F)$ modulo the five-term pentagon subgroup | Ch 14 | `qou:QOU.Archimedean.BlochQuotient.BlochGroup` |
 | [prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor](#prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor) | Conditional on canonical Markov weights: $\Delta\mathrm{tr}_M^{\text{can}}(q)$ factors $(q^2 - 1)$ | Ch 7 | `qou:QOU.BraidKnot.delta_tau_M_canonical_has_q2_minus_1_factor` |
 | [prop:confined-knot-binding](#prop:confined-knot-binding) | Confined knot binding mechanism: character ratio decomposition per jet level | Ch 12 | `qou:QOU.BraidKnot.confined_knot_binding` |
 | [prop:confinement-categorical](#prop:confinement-categorical) | Confinement = spectral-sequence collapse (only Wedderburn-central observables survive) | Ch 12 | `qou:QOU.WedderburnMass.confinement_categorical` |
@@ -681,7 +681,7 @@
 | [conj:mass-formula-regime-switching](#conj:mass-formula-regime-switching) | Mass formula regime switch: an $A$-uniform evaluation whose dominant term changes at the pair-graph regime boundaries $A = 2 \mid 3$ and $4 \mid 5$ | Ch 12 | `qou:QOU.BraidKnot.mass_formula_regime_switching` |
 | [prop:hecke-mass-trace](#prop:hecke-mass-trace) | Mass via the Markov trace of the Hecke mass element | Ch 12 | `qou:QOU.Braiding.hecke_mass_trace` |
 | [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price) | Mass-formula coefficients as shadow prices of the Frobenius positivity constraints | Ch 12 | `qou:QOU.BraidKnot.MassCoefficientShadowPrice` |
-| [prop:mass-side-kernel-formalize-first-gates](#prop:mass-side-kernel-formalize-first-gates) | Mass-side $\S 4$ formalize-first gates as parametric Lean classes — `MassSideKernel` bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any `linking_weight` candidate $w(q)$; mirrors the $\mathfrak{Q}_\beta$ `BarEvenKernel` typeclass | Ch 12 | `qou:QOU.Mass.MassSideKernelFormalize.MassSideKernel` |
+| [prop:mass-side-kernel-formalize-first-gates](#prop:mass-side-kernel-formalize-first-gates) | Mass-side $\S 4$ kernel conditions bundling anchor stability, $q = 1$ shadow, and direction sanity for linking-weight candidates $w(q)$, mirroring the $\mathfrak{Q}_\beta$ bar-even kernel conditions | Ch 12 | `qou:QOU.Mass.MassSideKernelFormalize.MassSideKernel` |
 | [prop:mass-tower-coefficient-stratification](#prop:mass-tower-coefficient-stratification) | Mass-tower coefficients $(\lambda_V, \lambda_S, \lambda_{\mathrm{pair}}, \alpha_k)$ as Wedderburn-block projections | Ch 12 | `qou:QOU.BraidKnot.mass_tower_coefficient_stratification` |
 | [prop:double-slit-massive-pattern](#prop:double-slit-massive-pattern) | Massive-particle interference pattern | Ch 15 | `qou:QOU.Experimental.double_slit_massive_pattern` |
 | [prop:meridian-holonomy-boost](#prop:meridian-holonomy-boost) | Meridian holonomy is a boost: $\mathrm{barEven}(q)^2 - \mathrm{barOdd}(q)^2 = 4$ | Ch 5 | `qou:QOU.Knot.CuspShapeBarParity.holonomy_hyperbola` |
@@ -699,7 +699,7 @@
 | [prop:neutron-proton-mass-splitting](#prop:neutron-proton-mass-splitting) | Neutron--proton mass splitting from quark crossing change | Ch 15 | `qou:QOU.NeutronProtonSplitting.splitting_value` |
 | [prop:content-keyed-interface-refuted](#prop:content-keyed-interface-refuted) | No interface keyed on nucleon content can work: the two $pn$ channels share content and differ in boundness | Ch 10 | `qou:QOU.QBeta.InterfaceScalar.content_keyed_interface_refuted` |
 | [prop:noble-gas-characterization](#prop:noble-gas-characterization) | Noble gas characterization: full shell as full curls | Ch 14 | `qou:QOU.Archimedean.noble_gas_characterization` |
-| [prop:polynomial-bar-involution](#prop:polynomial-bar-involution) | Non-trivial bar-involution on the polynomial ring $R[X]$ via $X \mapsto -X$: provides a concrete categorical setting where the indeterminate $X$ plays the role of the bar-anti-symmetric Hecke skein $h = q - q^{-1}$. All four ring-involution axioms proved via `Polynomial.comp` identities; the bar-symmetric subring is exactly $R[X^2]$ (even-degree polynomials). | Ch 19 | `qou:QOU.BraidKnot.PolynomialBarInvolution.barPoly_involutive` |
+| [prop:polynomial-bar-involution](#prop:polynomial-bar-involution) | Non-trivial bar-involution on the polynomial ring $R[X]$ via $X \mapsto -X$: provides a concrete categorical setting where the indeterminate $X$ plays the role of the bar-anti-symmetric Hecke skein $h = q - q^{-1}$. All four ring-involution axioms follow from polynomial composition identities; the bar-symmetric subring is $R[X^2]$ (even-degree polynomials). | Ch 19 | `qou:QOU.BraidKnot.PolynomialBarInvolution.barPoly_involutive` |
 | [prop:categorical-dq-squared](#prop:categorical-dq-squared) | Non-vanishing of $d_q^2$ | Ch 2 | `qou:QOU.categorical_dq_squared` |
 | [prop:q-ns-nonlinear-uniqueness](#prop:q-ns-nonlinear-uniqueness) | Nonlinear estimates and uniqueness for the $q$-Navier--Stokes system | Ch 18 | `qou:QOU.FluidDynamics.p1_nonlinear_uniqueness` |
 | [prop:mass-element-nf](#prop:mass-element-nf) | Normal form of the Hecke mass element | Ch 12 | `qou:QOU.BraidKnot.HeckeMassNF` |
@@ -721,7 +721,7 @@
 | [prop:parallel-fibre-noninteraction](#prop:parallel-fibre-noninteraction) | Parallel fibres are non-interacting (split-link trace multiplicativity) | Ch 20 | `qou:QOU.Information.OneDimChannel.ParallelNonInteraction.parallel_noninteraction` |
 | [prop:parity-violation-skein](#prop:parity-violation-skein) | Parity non-conservation from the Skein relation at $q \neq 1$ | Ch 14 | `qou:QOU.Archimedean.parity_violation_skein` |
 | [prop:positron-correction](#prop:positron-correction) | Parity-dependent Q-value offset | Ch 10 | `qou:QOU.ParticleInteractions.positron_correction` |
-| [prop:cl2-pentagon-and-faddeev-partial](#prop:cl2-pentagon-and-faddeev-partial) | Partial closures: $\mathrm{Cl}_2$ pentagon at boundary + Faddeev-Kashaev limit at boundary (closes parts of substantive Mathlib gaps 2+3) | Ch 14 | `qou:QOU.Archimedean.PartialClosures.partial_closures_at_boundary` |
+| [prop:cl2-pentagon-and-faddeev-partial](#prop:cl2-pentagon-and-faddeev-partial) | Boundary specialisations of the $\mathrm{Cl}_2$ pentagon relation and the Faddeev--Kashaev limit | Ch 14 | `qou:QOU.Archimedean.PartialClosures.partial_closures_at_boundary` |
 | [prop:confinement-nf-partial-proof](#prop:confinement-nf-partial-proof) | Partial formal proof of $\mathrm{conj}:\mathrm{confinement\text{-}nf\text{-}structure\text{-}forcing}$: $T_1$ and $T_3$ from standard LP duality; $T_2$ reduces to Sub-lemma 2.1 | Ch 12 | `qou:QOU.BraidKnot.ConfinementNFPartial.theorem_3_strong_duality` |
 | [prop:q-hecke-seminormal-character-closure](#prop:q-hecke-seminormal-character-closure) | Partition-sum form of $\mathrm{tr}_M$ via Wenzl $y_\lambda$ and Hoefsmit $\chi^\lambda_q$ agrees with the canonical Markov-axiom reducer | Ch 7 | `qou:QOU.BraidKnot.QHeckeSeminormalCharacterClosure.character_closure_holds` |
 | [prop:pauli-factor-wedderburn](#prop:pauli-factor-wedderburn) | Pauli factor $F_{\mathrm{Pauli}}$ is the alt/sym Wedderburn-block trace ratio | Ch 12 | `qou:QOU.BraidKnot.pauli_factor_wedderburn` |
@@ -942,7 +942,7 @@
 | [prop:plancherel-term-7-formulation](#prop:plancherel-term-7-formulation) | Universal residue at curvature-rank $k \geq 4$ (Molien-weighted log functional) | Ch 12 | `qou:QOU.WedderburnMass.plancherel_term_7` |
 | [prop:universality](#prop:universality) | Universality of the critical exponent: dependence on $\chi(A)$ alone | Ch 18 | `qou:QOU.FluidDynamics.p4_universality` |
 | [prop:unstable-atom-decay-channel](#prop:unstable-atom-decay-channel) | Unstable atom has a uniquely-determined decay channel | Ch 8 | `qou:QOU.BraidKnot.UnstableAtom.decay_channel` |
-| [prop:upstream-mathlib-additions](#prop:upstream-mathlib-additions) | Upstream Mathlib additions: complex dilogarithm via tsum + BW formula + Cl_2 oddness | Ch 14 | `qou:QOU.Archimedean.UpstreamAdditions.complexLiTwo` |
+| [prop:upstream-additions](#prop:upstream-mathlib-additions) | Complex dilogarithm series representation, Bloch--Wigner formula, and $\mathrm{Cl}_2$ oddness | Ch 14 | `qou:QOU.Archimedean.UpstreamAdditions.complexLiTwo` |
 | [prop:n-equals-1-vacuous-magic](#prop:n-equals-1-vacuous-magic) | Vacuous primality at $n = 1$ | Ch 10 | `qou:QOU.Interactions.AlgebraicPrimality.one_isAlgebraicallyPrime` |
 | [prop:vdw-pskew-isolation](#prop:vdw-pskew-isolation) | Van der Waals as the bar-odd ($P_{\mathrm{skew}}$, sinh) channel | Ch 20 | `qou:QOU.VdwPskew.hopf_bar_even_odd_decomposition` |
 | [prop:variational-equations](#prop:variational-equations) | Variational equations of the categorical action | Ch 2 | `qou:QOU.variational_equations` |
@@ -966,8 +966,8 @@
 
 ## Lemmas
 
-| Label | Title | Chapter | Lean |
-|-------|-------|---------|------|
+| Label | Title | Chapter | Formal Reference |
+|-------|-------|---------|------------------|
 | [lem:nsi-q-deformed-kernel](#lem:nsi-q-deformed-kernel) | $q$-deformed commutator replaces $1/r^2$ with a hard kernel at $r = \hbar_q$ | Ch 11 | `qou:QOU.BraidsKnots.nsi_q_deformed_kernel` |
 | [lem:qou-exists-axiom-1](#lem:qou-exists-axiom-1) | Axiom 1 — Haar state gives a non-degenerate Frobenius pairing | Ch 2 | `qou:QOU.QuantumObservableUniverse.exists_axiom_1_frobenius` |
 | [lem:qou-exists-axiom-2](#lem:qou-exists-axiom-2) | Axiom 2 — observability via Peter--Weyl decomposition | Ch 2 | `qou:QOU.QuantumObservableUniverse.exists_axiom_2_observability` |
@@ -1020,8 +1020,8 @@
 
 ## Corollaries
 
-| Label | Title | Chapter | Lean |
-|-------|-------|---------|------|
+| Label | Title | Chapter | Formal Reference |
+|-------|-------|---------|------------------|
 | [cor:spectral-half-line](#cor:spectral-half-line) | All fundamental Reeb modes lie on the critical line | Ch 22 | `qou:QOU.AlgebraicSubstrate.spectral_half_line` |
 | [cor:jet-prolongation-C](#cor:jet-prolongation-C) | Archimedean realisation of jet prolongation | Ch 4 | `qou:QOU.Torsion.jet_prolongation_C` |
 | [cor:mass-identity-C](#cor:mass-identity-C) | Archimedean realisation: nonabelian multiplicative integration | Ch 7 | `qou:QOU.MassIdentityC` |
@@ -1042,8 +1042,8 @@
 
 ## Conjectures
 
-| Label | Title | Chapter | Lean |
-|-------|-------|---------|------|
+| Label | Title | Chapter | Formal Reference |
+|-------|-------|---------|------------------|
 | [conj:qbeta-c-k-closed-forms](#conj:qbeta-c-k-closed-forms) | Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\mathfrak{Q}_\beta$ precision ladder (convention-C frame) | Ch 7 | `qou:QOU.BraidKnot.QBetaCKClosedForms` |
 | [conj:q-beta-radius-of-convergence-gate](#conj:q-beta-radius-of-convergence-gate) | $\mathfrak{Q}_\beta$ precision-ladder $\S 4(a)$ gate — the log-correction generating function $g(u) = \sum_{k \ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\text{substrate}}$ (convention-C frame) | Ch 12 | `qou:QOU.QBeta.RadiusOfConvergenceGate.qbeta_g_simple_pole_at_u_substrate` |
 | [conj:dilogarithm-archimedean-limit](#conj:dilogarithm-archimedean-limit) | $(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$ | Ch 12 | `qou:QOU.QPochhammer.ArchimedeanLimit` |
@@ -1143,7 +1143,7 @@
 | [conj:joint-galois-braid-action](#conj:joint-galois-braid-action) | Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$ | Ch 12 | `qou:QOU.BraidKnot.JointGaloisBraidAction` |
 | [conj:jsj-decomposition-linearity](#conj:jsj-decomposition-linearity) | JSJ additivity of nucleon braids | Ch 8 | `qou:QOU.BraidsKnots.LinearJSJVolume.JSJ_volume_additivity` |
 | [conj:kashaev-density-equals-sdp-multiplicity](#conj:kashaev-density-equals-sdp-multiplicity) | Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\rho_F = \nu_{\mathrm{SDP}}$) | Ch 12 | `qou:QOU.Kashaev.KashaevDensityEqualsSdpMultiplicity` |
-| [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture (axiomatised as Lean class) | Ch 12 | `qou:QOU.Kashaev.VolumeConjecture` |
+| [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture | Ch 12 | `qou:QOU.Kashaev.VolumeConjecture` |
 | [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 25 | `qou:QOU.AppendixSurreals.KashaevSurreal` |
 | [conj:klein-bring-icosahedral-bridge](#conj:klein-bring-icosahedral-bridge) | Klein icosahedral–quintic bridge: the $(2,3,5)$ force symmetries assemble the Bring ED into the icosahedral $\mathbb{P}^1$ with quotient $S^2(2,3,5)$ | Ch 6 | `qou:QOU.KleinBringBridge.KleinBringIcosahedralBridge` |
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 12 | `qou:QOU.BraidKnot.KnotFactorFrobeniusPairing` |
@@ -1234,8 +1234,8 @@
 
 ## Examples
 
-| Label | Title | Chapter | Lean |
-|-------|-------|---------|------|
+| Label | Title | Chapter | Formal Reference |
+|-------|-------|---------|------------------|
 | [ex:chi-minus-six-derivation](#ex:chi-minus-six-derivation) | $\chi_{\mathrm{eu}}(M_0) = -6$: the derivation chain | Ch 6 | — |
 | [ex:rigid-monoidal-vect](#ex:rigid-monoidal-vect) | $\mathbb{C}[z]$ and $\mathcal{O}(\mathrm{SU}(2))$ | Ch 1 | `qou:QOU.Examples.su2RigidData` |
 | [ex:finite-field-realisation](#ex:finite-field-realisation) | $\mathbb{F}_\pp$ realisation | Ch 3 | — |

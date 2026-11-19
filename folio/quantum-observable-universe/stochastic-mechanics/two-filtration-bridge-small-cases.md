@@ -1,4 +1,4 @@
-The two-filtration bridge conjecture ([`conj:two-filtration-bridge`](#conj:two-filtration-bridge)) predicts an iterated-integral depth $d_{\mathrm{II}}(\lambda)$ for each partition $\lambda$:
+The [two-filtration bridge conjecture](#conj:two-filtration-bridge) predicts an iterated-integral depth $d_{\mathrm{II}}(\lambda)$ for each partition $\lambda$:
 
 $$
   d_{\mathrm{II}}(\lambda) =
@@ -8,14 +8,14 @@ $$
   \end{cases}
 $$
 
-*We verify the predicted bridge map for all partitions $\lambda \vdash n$ with $n \leq 4$ by combining the explicit Markov-trace calculation on each Wedderburn cell with known Vol/CS values from classical knot theory.*
+*Combining explicit Markov-trace evaluations on each Wedderburn cell with classical Vol/CS values tests the predicted bridge map across all partitions $\lambda \vdash n$ with $n \leq 4$.*
 
-*Status (2026-11-16): this is a comparison, not a proof.* No map from cells to
+*Scope: comparison versus proof.* No canonical map from cells to
 knots is defined, so the knot attached to each cell below is chosen, not
 derived. At $n=1,2$ both periods vanish and nothing is witnessed; the trefoil
 $\sigma_1^3$ is a 2-strand closure, not an $H_3$ object; and the $(2,1)$ row has
-no witness. The proved part of the bridge is item 4 of
-[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration), which is
+no witness. The proved part of the bridge is item 4 of the
+[cellular depth-filtration proposition](#prop:cellular-depth-filtration), which is
 conditional on two named hypotheses and does not give the depth values.
 
 ### Detailed verifications

@@ -20,4 +20,10 @@ export default remark({
     "experimental",
   ],
   uses: ["rem:mass-from-generators"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Supporting witnesses referenced across sections: computations/atomic-mass-via-rho-k.witness.json, computations/m-p-substrate-identity-50dps.witness.json, computations/two-term-qed-isotope-and-nucleon-compute.witness.json, computations/qbeta/qbeta-wedderburn-phase-twoterm-pin.witness.json, computations/q-beta-predicted.witness.json, and certificate-to-mass.witness.json.",
+    },
+  ],
 });

@@ -9,5 +9,12 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:markov-stabilisation-needs-a-fresh-generator"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Formalisation note: the classical uniqueness step for Cauchy's functional equation (no continuous solutions beyond $c \\ln x$) is not formalised in Lean; `QOU.QBeta.InterfaceScalar.linearForm_extensivity_defect` proves the algebraic extensivity comparison.",
+    },
+  ],
   tags: ["binding-functional", "extensivity", "markov-trace", "deuteron"],
 });

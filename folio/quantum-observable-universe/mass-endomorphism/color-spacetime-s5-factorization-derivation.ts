@@ -13,4 +13,10 @@ export default remark({
     "derivation-chain",
   ],
   uses: ["prop:color-spacetime-s5-factorization"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Formalized in `color-spacetime-s5-factorization.lean` (`QOU.MassEndomorphism`) via `spacetime_color_card`, `colorSpacetimeEmbed_injective`, `color_fixes_spacetime`, `spacetime_fixes_color`, and `winding_hom_to_finite_trivial`.",
+    },
+  ],
 });

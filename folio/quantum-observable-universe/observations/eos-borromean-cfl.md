@@ -27,7 +27,7 @@ $$
   \frac{2}{3}
   \frac{E_F}{M_B + E_F}
 $$
-*where $E_F = \hbar_q^2(3\pi^2 n_B)^{2/3} / (2M_B)$ is the Fermi energy. Since $M_B \gg E_F$ at nuclear densities, we have $c_{s,B}^2 \ll 1$ (non-relativistic regime).*
+*where $E_F = \hbar_q^2(3\pi^2 n_B)^{2/3} / (2M_B)$ is the Fermi energy. Since $M_B \gg E_F$ at nuclear densities, $c_{s,B}^2 \ll 1$ (non-relativistic regime).*
 
 *2. CFL phase*
 *This is color superconducting matter ($\rho > \rho_c$). The effective quark mass is $M_D = \frac{1}{3}(q + q^{-1})$. This represents crossing energy per quark, with no volume contribution since $\mathrm{Vol}(\mathcal{L}_H) = 0$. For a degenerate quark Fermi gas at quark number density $n_q = 3 n_B$, the energy density includes the CFL gap contribution:*

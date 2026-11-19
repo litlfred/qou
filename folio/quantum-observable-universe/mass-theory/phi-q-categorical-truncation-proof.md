@@ -160,6 +160,6 @@ $k_\star$ here.
 sum equals $\sum_i\Phi_q^{[\le K]}(z_i)$ for every $K$ and is constant for
 $K\ge k_\star$. These cannot both hold, since
 $\Phi_q^{[\le K+1]}(z)\ne\Phi_q^{[\le K]}(z)$ for $z\ne0$
-([`prop:cell-depth-truncation`](#prop:cell-depth-truncation), item 5). The
+([cell-depth-truncation proposition](#prop:cell-depth-truncation), item 5). The
 correct centre-projection statement, with its proof, is items 1–3 of that
 proposition; Step 1's spectral-sequence reduction is not needed for it.

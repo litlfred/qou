@@ -14,9 +14,9 @@ $$
 
 in which the **body order $n$ is the vertical (jet) degree** of the prolonged
 Seiberg--Witten differential
-([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)), the $n$-body term is
+([Milnor-invariant Seiberg–Witten abelianisation proposition](#prop:mi-sw-abelianisation)), the $n$-body term is
 $m_e$ times the $n$-th prolonged SW period, and that period is the algebraic
-residue sum of [`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum) taken
+residue sum of [Seiberg–Witten period residue sum proposition](#prop:sw-period-residue-sum) taken
 over the **hyperbolic** components only (non-hyperbolic components contribute
 $\mathrm{Vol}=0$). Equivalently: the many-body binding series **coincides
 with the jet-order filtration** of $\mathcal{B}_K$, term by term.
@@ -88,8 +88,7 @@ $K$-dependent kernel is underdetermined by the anchors ($A-1$ unknowns against
 one equation per isotope) — extraction is a fit. Closure therefore requires the
 *derived* $R(q,x)$. The eigenfunction relation of the na-Stokes period
 $a_D^{(n)}=S(n)/n$ (the seed $c_3=[2]_q$ exact, and the Habiro
-$(q-1)^2\Phi_3$ deviation, formalized in
-[`QOU.Mass.BindingEigenfunctionTwoTier`](../lean/QOU/Mass/BindingEigenfunctionTwoTier.lean))
+$(q-1)^2\Phi_3$ deviation)
 supplies a *derived target* for $R(q,x)$ but does not determine it — the binding
 deviation and the $Q_\beta$ $c_k$ ladder share the Habiro *ring*, not the same
 element.
@@ -98,8 +97,7 @@ element.
 "Does not determine it" is now a count rather than a caution. With $R$ an
 unconstrained formal power series the shift relation determines exactly one
 kernel coefficient per body order, and conversely: for any body sequence with
-$B_2 \neq 0$ the map $\{r_k\} \leftrightarrow \{B_n\}$ is a **bijection**
-([`QOU.Mass.BindingScalarKernelParityExclusion.kernel_coeff_existsUnique`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean)).
+$B_2 \neq 0$ the map $\{r_k\} \leftrightarrow \{B_n\}$ is a **bijection**.
 So the unconstrained ansatz constrains *nothing*: it reparametrises
 the unknown weights, it does not remove them, and "$\rho\cdot A$ is an output of
 the recursion" is false unless $R$ is independently pinned. All of the ansatz's
@@ -107,7 +105,7 @@ content therefore lies in the **finiteness** of the Laurent window.
 
 That finiteness is unattainable in the scalar form. The $q$-Borel-normalized
 carrier is the rank-$2$ module $\mathcal{K}$ of
-[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol),
+[$q$-difference kernel prolongation symbol conjecture](#conj:qdifference-kernel-prolongation-symbol),
 which is **irreducible** — its Newton slope $\tfrac12$ is not an integer, while
 every rank-1 $q$-difference module has integer slope — so no scalar
 $R(q,x)\in K(x)$ acts on it at all, at any depth. The kernel that closes this

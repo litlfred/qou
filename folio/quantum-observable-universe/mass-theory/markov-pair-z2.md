@@ -107,16 +107,7 @@ Under this statement the alternative prefactor $q^{1/2}+q^{-1/2}$ is not a
 near-miss. With it the quantity fails to survive a stabilisation move, so it is
 not an invariant of anything at all.
 
-Proved in
-[`JonesNormalisation.lean`](../lean/QOU/QBeta/JonesNormalisation.lean) —
-`tl_generator_sq`, `sigma_inv`, `stab_pos_iff_conventionD`,
-`stab_neg_iff_conventionD`, `jonesV_stabilise_pos`, `jonesV_stabilise_neg`,
-`conventionD_iff_markov_invariant`, plus the four closure values
-(`unknot_two_strand`, `unknot_three_strand`, `hopf_link`,
-`two_component_unlink`) and `kauffman_loop`. Every hypothesis is
-`IsConventionD` plus $q \neq 0$, and $q^2+1 \neq 0$ is *derived* rather than
-assumed (`q_sq_add_one_ne_zero`) — in a general field it can vanish, so assuming
-it would have been a hidden hypothesis.
+These Temperley–Lieb generator square relations, positive and negative Markov stabilisation equivalences under convention D, and the four closure evaluations (two-strand unknot, three-strand unknot, Hopf link, and two-component unlink) together with the Kauffman loop value hold over any field under the convention-D condition with $q \neq 0$, where $q^2 + 1 \neq 0$ is derived rather than assumed as an extra hypothesis.
 
 The four closure rows are retained as sanity checks — they confirm the invariant
 is normalised so the unknot is $1$ — but they are no longer load-bearing.

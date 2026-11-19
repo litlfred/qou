@@ -24,5 +24,10 @@ export default proposition({
       kind: "status",
       body: "See [Table 2](#tbl:upstream-mathlib-additions-table2-data).\n\nThe first three are tractable Mathlib PRs; the fourth requires\nsubstantial Tauberian-theorem infrastructure.",
     },
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Lean/Mathlib formalisation (`upstream-mathlib-additions.lean`, namespace `QOU.Archimedean.UpstreamAdditions`): (A) `complexLiTwo` via `tsum` (candidate for `Real.dilog` / `Complex.dilog`); (B) `blochWigner` built from `Complex.log` and `Complex.arg`; (C) unconditional theorem `Cl_2_neg` (`Cl_2(-θ) = -Cl_2(θ)`).",
+    },
   ],
 });

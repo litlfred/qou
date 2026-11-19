@@ -1,4 +1,4 @@
-**Setup.** Consider a monatomic hydrogen gas comprising $N$ atoms of $\mathcal{A}(1,0)$ at quantum temperature $T_q = \hbar_q$ in a region $U$ with quantum volume $V_q$. Each hydrogen atom combines a proton (Borromean link $\mathcal{B}_3$ with Hopf binding $\mathcal{L}_H$) and an electron (trefoil $T_{2,3}$). We treat the atom as a single composite knot $K_H = \mathcal{A}(1,0)$. This supplies the simplest non-trivial gas. Hydrogen possesses the lightest knot structure and fewest internal degrees of freedom.
+**Setup.** Consider a monatomic hydrogen gas comprising $N$ atoms of $\mathcal{A}(1,0)$ at quantum temperature $T_q = \hbar_q$ in a region $U$ with quantum volume $V_q$. Each hydrogen atom combines a proton (Borromean link $\mathcal{B}_3$ with Hopf binding $\mathcal{L}_H$) and an electron (trefoil $T_{2,3}$), forming a single composite knot $K_H = \mathcal{A}(1,0)$. This supplies the simplest non-trivial gas. Hydrogen possesses the lightest knot structure and fewest internal degrees of freedom.
 
 **Single-atom partition function.** The atom $K_H$ resides in an $S^3$ fibre. Its internal degrees of freedom dictate the partition function:
 

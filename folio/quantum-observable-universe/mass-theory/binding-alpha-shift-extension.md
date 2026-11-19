@@ -3,7 +3,7 @@
 Reeb coupling* $\rho_0$ *pinned by the deuteron, and* (ii) *the
 substrate-fixed force-carrier torus knot* $T(p_A, k_A)$
 *per nucleus.  Both legs route through the proved* $\alpha_{\mathrm{shift}} = k\cdot(p-1)$
-*formula (`prop:alpha-shift-torus-knot`).*  The binding closure is
+*formula (alpha shift torus knot proposition).*  The binding closure is
 
 $$
   B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(T(p_A, k_A))
@@ -15,7 +15,7 @@ identification from the substrate's
 Hecke-Wedderburn block structure on $H_{3A}(q)$ is open.
 
 The $A \ge 3$ binding gap, the per-nucleus candidate table and its
-rationale, the Lean structure, and the remaining open math
+rationale, the conditional structure, and the remaining open math
 are collected in
 [the binding-extension derivation context](#rem:binding-alpha-shift-extension-context).
 

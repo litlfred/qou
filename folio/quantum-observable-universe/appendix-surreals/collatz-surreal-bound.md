@@ -1,4 +1,4 @@
-We translate the contact-boundary argument of the $q$-Collatz conjecture ([$q$-Collatz](#conj:q-collatz), [Collatz no cycles](#prop:collatz-no-cycles)) into a literal surreal inequality in $\mathbb{R}(\varepsilon)$.
+The contact-boundary argument of the $q$-Collatz conjecture ([$q$-Collatz](#conj:q-collatz), [Collatz no cycles](#prop:collatz-no-cycles)) translates into a literal surreal inequality in $\mathbb{R}(\varepsilon)$.
 
 Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)) and $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)). The $q$-Collatz conjecture translates the integer orbit into a skein-module resolution on the Reeb contact boundary. A rogue orbit is a non-trivial cycle or an unbounded hailstone. The rogue drift $\delta$ measures the excess contact volume produced per step.
 
@@ -20,4 +20,4 @@ No rogue orbit with standard-real drift $\delta > 0$ can persist. The Reeb perio
 
 The classical Collatz orbit on $\mathbb{N}$ is the standard part $\mathrm{st}\bigl(\cdot \,|_{q = 1 + \varepsilon}\bigr)$ of the $q$-deformed skein resolution ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)). Every infinitesimal drift vanishes under $\mathrm{st}$. Every standard-real drift is prohibited by the squeeze above. Therefore, $\mathrm{st}(\delta) = 0$ for every admissible surreal drift. All orbits terminate at $1$.
 
-The $q$-Collatz statement upgrades to a surreal inequality that rules out all standard-real drifts. We recover the classical conjecture only by assuming the $q$-Collatz skein-module resolution admits a well-defined standard part.
+The $q$-Collatz statement upgrades to a surreal inequality that rules out all standard-real drifts. Recovering the classical conjecture requires assuming that the $q$-Collatz skein-module resolution admits a well-defined standard part.

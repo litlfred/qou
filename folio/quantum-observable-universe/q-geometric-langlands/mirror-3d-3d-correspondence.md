@@ -59,8 +59,8 @@ spacetime are two computations of the same hyperbolic invariant.
 
 ## Cross-references
 
-- [`conj:borromean-bloch-group-element`](../mass-theory/borromean-bloch-group-element.md)
+- [conj:borromean-bloch-group-element](../mass-theory/borromean-bloch-group-element.md)
   — K-theoretic regulator parallel
-- [`conj:kashaev-volume-conjecture`](../mass-theory/kashaev-volume-conjecture.md)
+- [conj:kashaev-volume-conjecture](../mass-theory/kashaev-volume-conjecture.md)
   — Volume Conjecture is the leading-order 3d–3d statement
 - [Dimofte–Gaiotto–Gukov 2014; Terashima–Yamazaki 2011]

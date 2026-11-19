@@ -1,4 +1,4 @@
-We decompose a photon into identity and color components. The photon color content model  writes a photon as:
+A photon decomposes into identity and color components. The photon color content model  writes a photon as:
 
 $$
   \gamma

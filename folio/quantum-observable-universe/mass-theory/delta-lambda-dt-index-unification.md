@@ -38,13 +38,6 @@ $n(\lambda) = \sum_i \binom{\lambda'_i}{2}$, which is what removes the earlier $
 restriction: the chirality leg had been established only for small $n$ until that identity was
 proved in general.
 
-### Lean
-
-`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional` proves the conjunction of both legs.
-The value leg is `dtEulerG_eq_deltaLambdaG`; the chirality leg is
-`parity_eq_w0_sign_general`, which discharges $(\dagger)$ via
-`aStat_eq_sumChoose2_conjugate`.
-
 ### Scope — the value only
 
 This fixes the **per-partition value**. It does **not** address the many-body binding

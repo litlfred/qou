@@ -25,7 +25,7 @@ export default remark({
         "Corrected, and the disagreement between restrictions is now stated " +
         "concretely (level-2 vanishes at χ(A) = −6 while the resolution-tree " +
         "residue does not), with the machine-checked refutation of the " +
-        "single-verdict reading in `QOU.Information.ObstructionVerdictCap`.",
+        "single-verdict reading in `QOU.Information.ObstructionVerdictCap` (and level-2 vanishing at chi(A) = -6 in `QOU/AlgebraicSubstrate/collatz_obstruction_link.lean`).",
     },
   ],
 });

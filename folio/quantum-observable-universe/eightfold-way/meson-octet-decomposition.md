@@ -57,10 +57,10 @@ part.  The Hecke algebra $H_3(q)$ does not enter here: it has no
 three-dimensional irreducible and no tensor product of modules, and it
 acts on $V^{\otimes 3}$ by Schur--Weyl duality, which is the baryon side.
 
-The idempotent algebra is formalised for any $k$-linear category: given
+The idempotent algebra holds in any $k$-linear category: given
 $c\colon U \to W$ and $e\colon W \to U$ with $e \circ c = d \cdot 1_U$ and
 $d \neq 0$, the maps $p$ and $1 - p$ are complementary idempotents,
-$p \circ c = c$, $e \circ p = e$, and $e \circ (1 - p) = 0$.  The Lean does not
+$p \circ c = c$, $e \circ p = e$, and $e \circ (1 - p) = 0$.  This algebraic splitting does not by itself
 prove that the octet is irreducible, and it does not construct
 $U_q(\mathfrak{sl}_3)$.
 

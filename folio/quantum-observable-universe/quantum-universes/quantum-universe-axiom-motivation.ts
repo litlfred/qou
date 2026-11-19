@@ -12,5 +12,5 @@ export default remark({
     "motivation",
     "so3",
   ],
-  uses: ["def:quantum-universe"],
+  uses: ["def:quantum-universe", "def:frobenius-hopf-substrate", "def:snake-identity"],
 });

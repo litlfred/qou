@@ -6,7 +6,7 @@ The trace ratio grows with $p$ (the number of affected generators), reflecting t
 The growth of the ratio with $p$ means heavier nuclei have larger topological matrix elements, which drives faster decay rates. This aligns with the observation that allowed beta transitions in heavy nuclei tend to have shorter half-lives (smaller $\log ft$) than those in light nuclei.
 
 **The half-life formula (final form).**
-We combine the trace ratio with the phase space integral:
+Combining the trace ratio with the phase-space integral yields:
 
 $$
   t_{1/2}

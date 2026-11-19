@@ -18,4 +18,10 @@ export default conjecture({
     "reconstruction",
   ],
   cites: ["reshetikhin1991"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "The Lean carrier `IsTannakaKreinDual` states the fibre-functor-compatible equivalence condition over arbitrary parameter categories and is satisfiable via the identity equivalence on a category over its own fibre functor; no instance is supplied for `Rep_loc(A)` and `Comod(H_xi)`.",
+    },
+  ],
 });

@@ -35,4 +35,11 @@ export default conjecture({
     "reeb",
     "open-problem",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Packaged in Lean as the typeclass QOU.AppendixSurreals.OSReflectionPositivity; full formalisation of OS reconstruction also requires categorical C*-completion Frobenius structures and Wightman reconstruction, neither currently in Mathlib.",
+    },
+  ],
 });

@@ -18,4 +18,11 @@ export default remark({
     "pair-production",
   ],
   uses: ["rem:energy-scale-planck"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Witnesses moved from prose: `meson-nucleon-nf.witness.json`, `beta-decay-energy-scale.witness.json`, and `confinement-operator-selection.witness.json`.",
+    },
+  ],
 });

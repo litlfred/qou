@@ -87,5 +87,5 @@ Substituting into the closed form:
 See [Table](#tbl:cyclotomic-trilog-imaginary-closed-form-table-data).
 
 The $n = 5$ row recovers
-[`prop:bring-trilog-imaginary-tate-rational`](#prop:bring-trilog-imaginary-tate-rational)'s
+[Bring trilogarithm imaginary Tate rational proposition](#prop:bring-trilog-imaginary-tate-rational)'s
 $4\pi^3/125$ as a special case.

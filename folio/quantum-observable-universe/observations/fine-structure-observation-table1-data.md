@@ -10,15 +10,15 @@
 | Discrepancy (bare)                       |                                        | $-0.15528\%$         |
 | Discrepancy (corrected)                  |                                        | $-468\;\mathrm{ppb}$ |
 
-*Evaluated at the proton-pinned modulus $q_0$ against CODATA 2022.* Every cell is computed from [`alpha_em_form_comparison_probe.py`](../../../computations/alpha/alpha_em_form_comparison_probe.py) and `alpha_em_inv_derived`, satisfying the exact product identity $[9]_{q_0}[10]_{q_0} = 10.3635176 \times 11.8942752 = 123.266530$, with the sub-leading row
+*Evaluated at the proton-calibrated modulus $q_0$ against CODATA 2022.* Every cell satisfies the exact product identity $[9]_{q_0}[10]_{q_0} = 10.3635176 \times 11.8942752 = 123.266530$, with the sub-leading row
 $-2.1\;\mathrm{ppm}$, which is the Chern-Simons tower resummed with the Gram
-factor $\kappa$ set to $1$ (no Gram correction at all) at the **muon** pin
+factor $\kappa$ set to $1$ (no Gram correction at all) under the **muon** calibration
 ($-2.128\;\mathrm{ppm}$). The row above uses the derived Witten
 $\kappa \approx 1.7216$ with the tower resummed in closed form.
 
 **The correction remains conjectural.** Only the bare row is derived. The
-Chern-Simons correction is a conjecture whose Gram constant $\kappa$ is carried
-as an unproved Lean `sorry`; exact closure at this pin would need
+Chern-Simons correction is a conjecture whose Gram constant $\kappa$ remains
+unproved; exact closure under this calibration would need
 $\kappa \approx 1.9153$, which differs from the Witten value by $11.2\%$
 ([Chern-Simons correction](#rem:em-coupling-chern-simons),
 [open problems](#rem:alpha-em-derivation-open-problems)).

@@ -1,8 +1,8 @@
 The state space on which all of this lives is not free to take any
 shape. It is a compact Riemann surface, and its Euler characteristic
-$\chi = 2 - 2g$ records its genus $g$. The lifting obstructions of the
+$\chi_{\mathrm{eu}} = 2 - 2g$ records its genus $g$. The lifting obstructions of the
 foundational chapters force $g \geq 1$; the *Descartes condition*
-$\chi = -6$ fixes $g = 4$. Among the universes satisfying that
+$\chi_{\mathrm{eu}}(M_0) = -6$ fixes $g = 4$. Among the universes satisfying that
 condition one surface is terminal: Bring's curve of genus four, whose
 automorphism group is the symmetric group $S_5$
 ([Descartes theorem](#thm:descartes);

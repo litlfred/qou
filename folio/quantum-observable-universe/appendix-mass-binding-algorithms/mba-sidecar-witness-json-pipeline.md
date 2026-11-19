@@ -43,7 +43,7 @@ that do not yet conform.*
   (`PRECISION_GUARD`, the difference between the two).
 - Cross-method assertion at $\leq 10^{-15}$ relative agreement
   (L1 — internal compute precision).
-- The `precisionMetadata` block records the truncation bound so
+- The precision-metadata block records the truncation bound so
   downstream consumers know the error floor of every serialised
   value.
 
@@ -51,7 +51,7 @@ that do not yet conform.*
 
 *If the compute is LP / SDP / operator-selection, the witness
 **must** additionally carry the fields specified in
-[`alg:lp-sdp-dual-emission`](#alg:lp-sdp-dual-emission).*
+[the LP/SDP dual-emission contract](#alg:lp-sdp-dual-emission).*
 
 ### Wedderburn-respecting witnesses
 
@@ -78,10 +78,10 @@ and reviewers can check the isotypic structure.*
 ### Correctness conditions
 
 1. *The Wedderburn decomposition
-   ([`prop:wedderburn-trace-identity`](#prop:wedderburn-trace-identity))
-   defines the partition structure that `add_data` records.*
+   ([the Wedderburn trace identity](#prop:wedderburn-trace-identity))
+   defines the partition structure that `builder.add_data(...)` records.*
 2. *The LP/SDP dual contract
-   ([`prop:operator-selection-lp`](#prop:operator-selection-lp))
+   ([the operator-selection LP proposition](#prop:operator-selection-lp))
    defines the dual-emission fields used by Step 10.*
 
 ### Canonical entry point

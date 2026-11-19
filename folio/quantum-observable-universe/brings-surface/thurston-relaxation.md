@@ -2,7 +2,7 @@
 
 Once the two vortex cores merge inside a tubular neighbourhood $U \subset M$, the operative geometry is the complement $U \setminus K$. Thurston's hyperbolisation programme proves that, excluding a finite list of exceptions, $U \setminus K$ admits a complete finite-volume hyperbolic structure. A triangulation into ideal tetrahedra $\Delta_{z_k}$ and a system of *gluing equations* in the shape parameters $z_k$ encode this structure.
 
-The algebraic SDP solver of [Chapter 11](#chap:nuclear-interactions) is the $\mathbb{Z}[q^{\pm 1/2}]$-shadow of the hyperbolic-geometry calculation. We establish this via three correspondences:
+The algebraic SDP solver of [Chapter 11](#chap:nuclear-interactions) is the $\mathbb{Z}[q^{\pm 1/2}]$-shadow of the hyperbolic-geometry calculation, established via three correspondences:
 
 * **Cusps from poles.** The roots of the $q$-Pochhammer denominator $\Phi_n(x; q) = \prod_{k=0}^{n-1}(1 - x q^k)^{-1}$ seed the Frobenius positivity constraints in the SDP. These roots are in bijection with the $n$ ideal tetrahedra of a hyperbolic triangulation of the $\Phi_q$-piece $K_S$, the root of index $k$ labelling the tetrahedron whose shape parameter it seeds ([pole-to-cusp bijection](#conj:algebraic-geometric-dilog-equivalence)(1)).
 * **Newton iteration on the gluing equations.** The Newton solver for Thurston's gluing equations (e.g. SnapPy) seeds from these poles and converges to the shape parameters $z_k$ realising the complete hyperbolic structure. The same algebraic-residue data feeds both the SDP and the gluing solver; they are different *evaluations* of one categorical object.

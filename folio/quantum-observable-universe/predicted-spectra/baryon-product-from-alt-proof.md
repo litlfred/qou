@@ -13,7 +13,7 @@ $$
   \;=\; \mathrm{Sym}^3 \;\oplus\; \mathrm{Alt}^3 \;\oplus\; \mathrm{Std}^{\oplus 2}.
 $$
 
-The dimensions are $\dim_R V_{(3)} = 1$, $\dim_R V_{(1,1,1)} = 1$, $\dim_R V_{(2,1)} = 2$, summing to $4$. However, since $V$ is the rank-$3$ permutation representation of $\mathrm{S}_3$, we have $V \cong V_{(3)} \oplus V_{(2,1)}$. The rank-$1$ alternating piece sits inside the exterior cube $\Lambda^3 V$. The relevant isotype is therefore the top exterior power.
+The dimensions are $\dim_R V_{(3)} = 1$, $\dim_R V_{(1,1,1)} = 1$, $\dim_R V_{(2,1)} = 2$, summing to $4$. However, since $V$ is the rank-$3$ permutation representation of $\mathrm{S}_3$, $V \cong V_{(3)} \oplus V_{(2,1)}$. The rank-$1$ alternating piece sits inside the exterior cube $\Lambda^3 V$. The relevant isotype is therefore the top exterior power.
 
 By the Frobenius character formula ([Frobenius universal](#thm:frobenius-codim-universal)) applied to $\mathrm{S}_3$, the projector onto the sign isotype of any $\mathrm{S}_3$-module $W$ is
 
@@ -80,7 +80,7 @@ $$
   \pm\,\frac{V_3(c_1, c_2, c_3)}{\Delta(z)}.
 $$
 
-Thus we obtain
+Consequently,
 
 $$
   \Bigl(\prod_{k=1}^{3} \frac{dc_k}{dz}\Bigr)^{2}
@@ -93,7 +93,7 @@ $$
 
 which is manifestly $R$-rational. $\square$
 
-The sum $\sum_k dc_k/dz$ projects onto the trivial isotype $V_{(3)}$ as the integrand for a symmetric trion. The baryon sits in the antisymmetric colour singlet $\mathrm{Alt}^3$, selecting the wedge product. This algebraic selection requires no input from the Picard–Lefschetz machinery. Both the Vandermonde and $\pi_{\mathrm{Alt}}$ are defined over $R$; the baryon integrand evaluation remains $R$-rational until we apply the archimedean fibre functor $\tau$.
+The sum $\sum_k dc_k/dz$ projects onto the trivial isotype $V_{(3)}$ as the integrand for a symmetric trion. The baryon sits in the antisymmetric colour singlet $\mathrm{Alt}^3$, selecting the wedge product. This algebraic selection requires no input from the Picard–Lefschetz machinery. Both the Vandermonde and $\pi_{\mathrm{Alt}}$ are defined over $R$; the baryon integrand evaluation remains $R$-rational prior to application of the archimedean fibre functor $\tau$.
 
 This algebraic choice of the sign block, combined with the scalar weight $w_\lambda$ from the Markov trace ([categorical mass as Markov trace](#prop:categorical-mass-markov)), fully determines the baryon integrand $\lambda_{\mathrm{baryon}}$.
 

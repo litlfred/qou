@@ -1,4 +1,4 @@
-The proton definition establishes the $\mathcal{B}_3(\mathfrak{u},\mathfrak{u},\mathfrak{d})$ baryon. We derive its normal form, mass, Coulomb charge, and computational backing.
+The proton definition establishes the $\mathcal{B}_3(\mathfrak{u},\mathfrak{u},\mathfrak{d})$ baryon, from which its normal form, mass, Coulomb charge, and computational backing follow.
 
 **Step 1: Borromean braid NF.**
 The inverse relation $\sigma_1^{-1} = \sigma_1 - h_{\mathrm{A}} \mathbf{1}$ yields $\mathcal{B}_3 = (\sigma_0(\sigma_1 - h_{\mathrm{A}}))^3$. Expanding and reducing within $H_3(q)$ gives $\mathrm{net}(\mathcal{B}_3) = +1.0000$. The Hopf link terms $L_\pm$ manifest the gluon field.

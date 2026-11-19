@@ -1,13 +1,12 @@
-**Proof.** Both parts are proved formally over the abstract value group
-$\Gamma$ in
-[`adelic-reeb-restricted-product.lean`](adelic-reeb-restricted-product.lean).
+**Proof.** Both parts hold over the abstract linearly ordered abelian value group
+$\Gamma$.
 The restricted-product condition is encoded by an explicit finite set $S$ of
 *active* places (those with $\ordw_v \neq 0$); off $S$ the local order is the
 tame archimedean reference $0$, so the sum is finite and well-defined.
-Additivity (`adelic_reeb_order_additive`) is pointwise addition of local orders
+Additivity follows from pointwise addition of local orders
 summed over $S$ ($\sum_S (a+b) = \sum_S a + \sum_S b$). The squeeze
-(`adelic_reeb_squeeze_local_to_global`) is `Finset.sum_lt_sum`: a finite sum of
-weak inequalities with one strict term is strict. $\square$
+follows because a finite sum of
+weak inequalities with one strict term is strict in any linearly ordered cancellative abelian monoid. $\square$
 
 **Tate's thesis.** This is the surreal-register form of Tate's adelic
 factorisation \cite{tate1967}: where Tate writes the global zeta integral as a
@@ -24,10 +23,9 @@ which is the local–global content used by
 local orders $\ordw_v$ land in one common value group $\Gamma$ is not free: it
 is the requirement that the per-place surreal orders be **commensurable** — a
 single coherent birthday filtration spanning every prime and the archimedean
-place $v = \infty$ simultaneously. Without it the sum $\sum_v \ordw_v(f_v)$ does
-not even typecheck. This shared $\Gamma$ is the genuine additional structure the
-adelic lift exposes (formalised in Lean as a linearly ordered abelian group:
-`AddCommGroup` $+$ `LinearOrder` $+$ `IsOrderedCancelAddMonoid`): it is what makes the two dual archimedean reductions of
+place $v = \infty$ simultaneously. Without it the sum $\sum_v \ordw_v(f_v)$ is
+not even defined. This shared linearly ordered abelian group $\Gamma$ is the genuine additional structure the
+adelic lift exposes: it is what makes the two dual archimedean reductions of
 [adelic–Tate surreal squeeze](#rem:adelic-tate-squeeze) — the fibre functor
 $\tau_{\mathrm{arch}} = \pi_\infty$ across places, and the standard part
 $\mathrm{St} : \mathbf{No} \to \mathbb{R}$ along the filtration — land in the

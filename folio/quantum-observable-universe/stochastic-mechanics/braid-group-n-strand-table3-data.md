@@ -1,5 +1,5 @@
-| Bridge | Direction | Lean | Closure |
+| Bridge | Direction | Statement | Verification |
 |---|---|---|---|
-| `closureN @ n=2` $\leftrightarrow$ `closure2 ∘ writhe` | n=2 specialisation | `closureN_eq_closure2` | `rfl` |
-| `BraidWord 3` $\to$ `TypedBraidWord3` | n=3 conversion | `BraidWord.toBraid3` (`def`) | mapped via `BraidCrossing.toTypedB3` (`sigma`/`sigma_inv` subset) |
-| `BraidWord.toBraid3_length` | length preservation | `@[simp]` lemma | `List.length_map` |
+| $n=2$ closure $\leftrightarrow$ $2$-strand writhe closure | $n=2$ specialisation | $\widehat{\beta}\big|_{n=2} = \mathrm{cl}_2(w(\beta))$ | definitional equality |
+| $3$-strand braid word $\to$ typed $B_3$ word | $n=3$ conversion | generator-by-generator map on $\{\sigma_i, \sigma_i^{-1}\}$ | direct list map |
+| Length preservation under $n=3$ conversion | length invariance | $|\iota_3(\beta)| = |\beta|$ | list-map length identity |

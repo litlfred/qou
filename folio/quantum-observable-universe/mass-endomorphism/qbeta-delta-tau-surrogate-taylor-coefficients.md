@@ -1,6 +1,6 @@
 **Catalogue (Taylor coefficients of the surrogate $\Delta\mathrm{tr}_M$).**
 *The Taylor coefficients $c_n$ of*
-[`delta_tau_M_surrogate`](qbeta-per-block-chi-closed-forms.md)
+[the surrogate trace difference $\Delta\mathrm{tr}_M^{\text{surr}}$](qbeta-per-block-chi-closed-forms.md)
 *expanded around the classical point $q = 1$ in the variable
 $w = q - 1$, to order 7, are read off the closed form*
 
@@ -14,22 +14,21 @@ $$
 
 *by substituting $q = 1 + w$ and extracting the coefficient of $w^n$:*
 
-| Order $n$ | Coefficient $c_n$ | Status in Lean |
+| Order $n$ | Coefficient $c_n$ | Derivation method |
 |---|---|---|
-| 0 | $0$ | proved (`delta_tau_M_surrogate_vanish_at_one`) |
-| 1 | $-5/6$ | proved (`delta_tau_M_surrogate_hasDerivAt_one`) |
-| 2 | $5/6$ | proved (`delta_tau_M_surrogate_taylor_coeff_2`) |
-| 3 | $-23/9$ | proved (`delta_tau_M_surrogate_taylor_coeff_3`) |
-| 4 | $77/18$ | proved (`delta_tau_M_surrogate_taylor_coeff_4`) |
-| 5 | $1349/108$ | proved (`delta_tau_M_surrogate_taylor_coeff_5`) |
-| 6 | $-191/4$ | proved (`delta_tau_M_surrogate_taylor_coeff_6`) |
-| 7 | $26285/162$ | proved (`delta_tau_M_surrogate_taylor_coeff_7`) |
+| 0 | $0$ | classical-point vanishing at $q = 1$ |
+| 1 | $-5/6$ | first derivative at $q = 1$ |
+| 2 | $5/6$ | explicit quotient-rule derivative tower |
+| 3 | $-23/9$ | explicit quotient-rule derivative tower |
+| 4 | $77/18$ | iterated-Leibniz recurrence on $f \cdot D = N$ |
+| 5 | $1349/108$ | iterated-Leibniz recurrence on $f \cdot D = N$ |
+| 6 | $-191/4$ | iterated-Leibniz recurrence on $f \cdot D = N$ |
+| 7 | $26285/162$ | iterated-Leibniz recurrence on $f \cdot D = N$ |
 
-Every order is now formally proved, orders 2 and 3 by explicit quotient-rule
+Every order is established analytically: orders 2 and 3 by explicit quotient-rule
 derivative towers and orders 4 to 7 by an iterated-Leibniz recurrence on the
-polynomial identity $f \cdot D = N$. The witness independently reproduces all
-eight coefficients by direct series expansion, which shares no machinery with
-the Lean route.
+polynomial identity $f \cdot D = N$. The computational witness independently reproduces all
+eight coefficients by direct series expansion.
 
 **Dependence on the intra-nucleon ordering.** The closed form above is the one
 induced by the canonical borromean $\chi_{(2,1)}$; the grouped ordering gives
@@ -43,7 +42,7 @@ above move.
 ## Cross-references
 
 - Parent block:
-  [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
-  (`delta_tau_M_surrogate` definition + order-0/order-1 proofs).
+  [per-block character closed forms](qbeta-per-block-chi-closed-forms.md)
+  (surrogate definition and order-0/order-1 derivatives).
 - Witness JSON:
   [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).

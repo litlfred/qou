@@ -37,6 +37,11 @@ export default definition({
         "Created as the downstream-referenceable normalization object for the R2-core Schwinger measure (docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md). The sibling Lean states the fibre-level density shape over a generic Field per §7c (no ℝ, no ordering) and proves the scale-invariance functional equation sorry-free (lean-direct exit 0); the archimedean shell (shape uniqueness, nat-per-e-fold, e-fold Jacobian, unit assembly to 1/(8π)) is the existing library file QOU/Archimedean/SchwingerMeasureShape.lean. Canonicity of ς = 1 is CONJECTURAL (conditionally forced by conj:schwinger-measure-computational-time or by owner premises P1/P2); unconditionally it is a unit convention per the 2026-07-19 owner ruling — this block does not upgrade any tier and nothing wires on it.",
       see: "docs/audits/2026-07-25-r2core-schwinger-measure-exploration.md",
     },
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Notation note moved from prose: `QOU/Archimedean/SchwingerMeasureShape.lean` writes `c` for the scalar unit `\\varsigma`.",
+    },
   ],
   tags: [
     "alpha-em",

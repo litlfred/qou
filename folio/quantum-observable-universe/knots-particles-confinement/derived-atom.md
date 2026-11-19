@@ -10,7 +10,7 @@
 
 ## Inductive Gröbner--Shirshov reduction
 
-For large $A$, the unreduced braid word has exponentially many terms. The Gröbner--Shirshov normal form is computed inductively. We reduce after each multiplication step, not at the end. Each intermediate result is in normal form. The total computation is polynomial in $A$.
+For large $A$, the unreduced braid word has exponentially many terms. The Gröbner--Shirshov normal form is computed inductively by reducing after each multiplication step rather than at the end. Each intermediate result is in normal form. The total computation is polynomial in $A$.
 
 ## NF characterization
 

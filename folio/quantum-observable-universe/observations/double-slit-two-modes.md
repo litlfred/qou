@@ -1,4 +1,4 @@
-We predict two structurally distinct scattering modes:
+The $q$-deformed propagation law predicts two structurally distinct scattering modes:
 
 | | **Mode 1: Massive particle** | **Mode 2: Photon** |
 |---|---|---|

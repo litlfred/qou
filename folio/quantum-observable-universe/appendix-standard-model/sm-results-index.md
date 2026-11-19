@@ -13,8 +13,8 @@ without a derivation, or open.
 | Result | Where | Status |
 |---|---|---|
 | Coulomb charge $Q = w/2$, and $I_3$ on the nucleon doublet | [Coulomb charge](#def:coulomb-charge), [gauge truncation](#conj:sm-gauge-truncation) | derived; the per-crossing coupling $c = 1/2$ is structurally fixed, not fitted |
-| Weak isospin $T_3 = \mathrm{sign}(\kappa)/2$ as a grading orthogonal to the generation winding | `QOU/ParticleInteractions/WeakIsospinT3Grading.lean` | derived from an oriented crossing already in the corpus; closes Gell-Mann–Nishijima |
-| $\alpha_{\mathrm{EM}}$ to $0.313$ parts per billion under the proton pin | `QOU/AlphaEM/FormLadderAnchorDominance.lean`, `alpha-em-form-ladder.witness.json` | partial: three unproved classes remain, and the anchor choice constitutes the residual |
+| Weak isospin $T_3 = \mathrm{sign}(\kappa)/2$ as a grading orthogonal to the generation winding | standalone weak-isospin $T_3$ grading derivation | derived from an oriented crossing already in the corpus; closes Gell-Mann–Nishijima |
+| $\alpha_{\mathrm{EM}}$ to $0.313$ parts per billion under the proton pin | form-ladder anchor-dominance analysis, `alpha-em-form-ladder.witness.json` | partial: three unproved classes remain, and the anchor choice constitutes the residual |
 
 Scope on the first of these: the $I_3$ identification is a two-point
 sign-and-ratio match on the proton–neutron doublet. It matches sign and ratio,
@@ -23,7 +23,7 @@ scale-free; it does not make $I_3$ an output for general states.
 ## Where the rest is
 
 Eleven blocks outside this appendix carry Standard-Model or flavour content,
-across five chapters, together with Lean and compute that no chapter surfaces.
+across five chapters, together with standalone derivations and computations that no chapter surfaces.
 
 | Chapter | Carries |
 |---|---|
@@ -33,10 +33,9 @@ across five chapters, together with Lean and compute that no chapter surfaces.
 | `observations` | the CP-violation survey |
 | `eightfold-way` | the multiplet classification and its null results |
 
-Unsurfaced elsewhere: `WeakIsospinT3Grading.lean`,
-`MesonOperatorSelectionT3.lean`, `FormLadderAnchorDominance.lean`, the
-$\alpha_{\mathrm{EM}}$ form ladder, and the stage-1 quark-mass extraction
-scoping.
+Unsurfaced elsewhere: the weak-isospin $T_3$ grading, meson operator $T_3$
+selection rules, form-ladder anchor dominance, the $\alpha_{\mathrm{EM}}$ form
+ladder, and the stage-1 quark-mass extraction scoping.
 
 ## The dominant mode of contribution is deletion
 

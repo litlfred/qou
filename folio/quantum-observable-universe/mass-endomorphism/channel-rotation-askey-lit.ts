@@ -33,4 +33,10 @@ export default remark({
     "modular-double",
     "fibre-level",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Lean declarations (`QOU.MassEndomorphism`): `rotation_step`, `eigencolumn_eq_overlap`, and conjecture class `ChannelLeonardDuality`.",
+    },
+  ],
 });

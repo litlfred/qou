@@ -136,11 +136,10 @@ Hahn-substrate)**:
 7. Match against known asymptotic-volume formulas (Kashaev,
    etc.).
 
-**Required infrastructure**:
-- Rational-function arithmetic in Lean at $q = 1 + \varepsilon$
-  (partial; via specialising `Polynomial (R_q)` at surreal values).
-- Hahn-series substrate (pending).
-- Normal-form computation for eigenvalues (pending).
+**Required mathematical ingredients**:
+- Evaluation of rational functions in $q$ at $q = 1 + \varepsilon$ in the valuation ring $\mathcal{O}$.
+- The Hahn-series substrate embedding.
+- Conway normal-form extraction for characteristic-polynomial roots.
 
 **Falsification path**: find an operator $O_q$ with classically
 well-defined spectral gap closure *not* matching the leading
@@ -148,10 +147,7 @@ exponent $\ordw(\Delta)$. Such a mismatch would refute the
 surreal-normal-form interpretation, likely indicating a subtle
 multi-scale behaviour that the surreal lift does not capture.
 
-**Provability assessment**: algebraic case mostly tractable with
-current Lean + surreal infrastructure. Transcendental case
-requires Berarducci–Mantova in Lean. The overall conjecture is
-a *dictionary*, more testable than deep-research-open.
+**Assessment**: the algebraic case reduces to rational-function valuation arithmetic over $\mathbb{R}(\varepsilon)$, whereas the transcendental case requires the Berarducci–Mantova exponential and logarithm on $\mathbf{No}$. The overall conjecture is a *dictionary*, more testable than deep-research-open.
 
 ## Open problem
 

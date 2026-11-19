@@ -25,7 +25,7 @@ every downstream step.*
 
 ### Correctness conditions
 
-*Settled by [`def:brings-surface`](#def:brings-surface): the
+*Settled by [the Bring-surface definition](#def:brings-surface): the
 Bring surface is uniquely characterised (up to isomorphism) by
 its Euler characteristic and the six-fold $S_5$-symmetric
 embedding. No upstream calibration; the values are categorical
@@ -38,7 +38,7 @@ constants.*
 ### Python API entry point
 
 *The Bring constants are produced by the canonical script
-[`computations/bring_chiral_fibre_figure.py`](../../../computations/bring_chiral_fibre_figure.py),
+[`bring_chiral_fibre_figure.py`](../../../computations/bring_chiral_fibre_figure.py),
 which emits the witness JSON consumed by every downstream step.
 The substrate parameter $q_0$ and its derived constants live in
 [`qou_substrate.constants`](../../../tools/qou-substrate/python/qou_substrate/constants.py).*

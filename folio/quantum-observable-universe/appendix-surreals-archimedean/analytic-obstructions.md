@@ -27,11 +27,11 @@ The shortcut of axiomatising a single integration operator on $\mathbf{No}$ is m
   $C(\mathbf{No})$ can simultaneously be translation-invariant,
   $\sigma$-additive, and non-degenerate.
 
-We do **not** postulate a measure on all of $C(\mathbf{No})$. That object does not exist. Manufacturing one via a categorical proxy (e.g.\ asserting the Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A = C(\mathbf{No})$) smuggles the obstruction into the axiom. Instead, we audit each genuine use of an analytic structure in this paper to determine whether the use lifts to $\mathbf{No}$ on the CEF-positive side (algebraic / transserial) or requires a custom workaround. We perform this audit below.
+No measure on all of $C(\mathbf{No})$ is postulated here. That object does not exist. Manufacturing one via a categorical proxy (e.g.\ asserting the Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A = C(\mathbf{No})$) smuggles the obstruction into the axiom. Instead, each genuine use of an analytic structure in this paper is audited below to determine whether the use lifts to $\mathbf{No}$ on the CEF-positive side (algebraic / transserial) or requires a custom workaround.
 
 ## 1. Lebesgue measure: one genuine use, no others
 
-We evaluate Lebesgue, Haar, and Hausdorff measures throughout this paper. Almost all instances are *categorical* or *algebraic* upon inspection:
+Lebesgue, Haar, and Hausdorff measures appear throughout this paper, yet almost all instances are *categorical* or *algebraic* upon inspection:
 
 See [Table 1](#tbl:analytic-obstructions-table1-data).
 

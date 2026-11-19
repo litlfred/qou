@@ -15,4 +15,11 @@ export default conjecture({
   lean: { ref: "qou:QOU.Archimedean.HyperbolicVolumeIndependence",
     validation: "not_checked",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Lean formalisation (`QOU.Archimedean.HyperbolicVolumeIndependence`): the structural half (tower decomposition, Chern-Simons faithfulness, and downstream implications algebraic independence => Borel-Zagier => irrationality) is proved unconditionally; the transcendence core is axiomatised as the class `HyperbolicVolumeIndependence`.",
+    },
+  ],
 });

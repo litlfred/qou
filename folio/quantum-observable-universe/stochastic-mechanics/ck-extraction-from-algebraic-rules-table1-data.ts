@@ -1,2 +1,2 @@
 import { table } from "../../schema/builders";
-export default table({ label: "tbl:ck-extraction-from-algebraic-rules-table1-data", title: "Table 1 from rem:ck-extraction-from-algebraic-rules", uses: ["rem:ck-extraction-from-algebraic-rules"], tags: ["extracted-table"] });
+export default table({ label: "tbl:ck-extraction-from-algebraic-rules-table1-data", title: "Table 1 from rem:ck-extraction-from-algebraic-rules", uses: ["rem:ck-extraction-from-algebraic-rules"], tags: ["extracted-table"], authorNotes: [{ kind: "note", body: "Lean classes: `YangBaxterRule n q`, `QYoungSymmetrizers n q`, `HeckeQuadraticAllGenerators n q`, `GBJetReduction k`." }] });

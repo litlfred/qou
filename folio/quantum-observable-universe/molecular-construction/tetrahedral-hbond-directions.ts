@@ -9,4 +9,10 @@ export default proposition({
   },
   uses: ["def:h2o-molecular-braid"],
   tags: ["water", "ice", "tetrahedral", "hydrogen-bond", "bond-angle"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Lean sibling `QOU.Molecular.tetrahedral_cos` proves balanced sum, squared length 3, pairwise dot -1, and cos theta_0 = -1/3 over R.",
+    },
+  ],
 });

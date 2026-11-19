@@ -1,4 +1,4 @@
-By [`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation), for each vertical
+By [MI--SW abelianisation](#prop:mi-sw-abelianisation), for each vertical
 degree $n\geq 0$ the Killing-norm projection of the surface-ordered
 multiplicative integral onto the $n$-jet component equals the prolonged
 Seiberg--Witten period, $\lVert\mathrm{MI}\!\int_{\mathcal{S}_c}\rVert_{J^n} =
@@ -18,8 +18,6 @@ $$
 $$
 
 Rewriting each period as its residue sum
-([`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum)) gives the second
-equality. The Lean witness
-[`QOU.Brings.jet_sw_tau_decomposition`](#prop:jet-sw-tau-decomposition) packages
-the exhaustiveness and additivity as the structure hypothesis and extracts the
+([SW period residue sum](#prop:sw-period-residue-sum)) gives the second
+equality, combining exhaustiveness and additivity to yield the
 graded-sum identity. $\qquad\blacksquare$

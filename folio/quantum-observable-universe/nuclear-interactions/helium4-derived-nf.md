@@ -19,7 +19,7 @@ The four-nucleon Hopf chain generates large trefoil content from iterated proton
 
 ## Full atom NF (with $1s^2$ shell)
 
-We add two Hopf-linked electrons:
+Adjoining two Hopf-linked electrons gives:
 
 $$
   \mathrm{NF}(\mathcal{A}(2,2)) = +0.236\gamma - 0.061\sigma_0 + 0.176\sigma_1 + 0.384 L_+ - 0.037 L_- + 1.190 e^-.

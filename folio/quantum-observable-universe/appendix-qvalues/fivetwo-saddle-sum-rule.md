@@ -20,7 +20,7 @@ $$
 \;=\; -\frac{\pi^{2}}{6} - \frac{(\log t)^{2}}{2} + \frac{2}{3}\bigl(\arg a - \pi\bigr)^{2} .
 $$
 
-We call this the *$5_2$ saddle sum rule*.
+This identity is the *$5_2$ saddle sum rule*.
 
 ## What the statement says
 
@@ -73,13 +73,11 @@ the closed form carries an argument-squared rather than only a
 logarithm-squared. The $\varepsilon_j$ above are the same bookkeeping, in the
 form the gluing relation sees them.
 
-The proof chain is: the complex five-term identity at $(y_3, y_1)$ and
-$(y_3, y_2)$; the anharmonic evaluations; the branch equations from
-$y^{2} = (1-y)^{3}$; the root data; and the logarithm evaluations. Every step uses
-only the standard axioms, and `SaddleRoots` is inhabited via the
-intermediate value theorem — so the closed form is a statement about the
-**actual** roots of $X^{3} - 2X^{2} + 3X - 1$, rather than about a structure
-that might be empty.
+The proof chain combines the complex five-term identity at $(y_3, y_1)$ and
+$(y_3, y_2)$, the anharmonic evaluations, the branch equations from
+$y^{2} = (1-y)^{3}$, the cubic root data, and the logarithm evaluations. Existence of the root pair $(t, a)$ follows from the
+intermediate value theorem, so the closed form applies to the
+**actual** roots of $X^{3} - 2X^{2} + 3X - 1$.
 
 ## Why the shape field is $\mathbb{Q}(\sqrt{-23})$ and not something smaller
 
@@ -100,12 +98,12 @@ the amphichiral $4_1$.
 **It is not the volume conjecture.** Three statements are distinct and must not
 be conflated:
 
-1. the sum rule above, which is proved;
-2. $\mathrm{Vol}(S^3 \setminus 5_2) = 3\,D(y_1)$, a statement about a
-   hyperbolic manifold, which is not formalised here;
+1. the algebraic dilogarithm sum rule established above;
+2. $\mathrm{Vol}(S^3 \setminus 5_2) = 3\,D(y_1)$, a geometric statement about the
+   hyperbolic 3-manifold $S^3 \setminus 5_2$ lying outside the scope of this proposition;
 3. $\lim_{N} \frac{2\pi}{N}\log\langle 5_2\rangle_N =
    \mathrm{Vol}(S^3 \setminus 5_2)$, the volume conjecture for $5_2$ —
-   Ohtsuki's theorem \cite{ohtsuki2016}, untouched.
+   Ohtsuki's theorem \cite{ohtsuki2016}.
 
 The sum rule is an identity among dilogarithm values at algebraic points.
 Nothing about a metric, a manifold, or an asymptotic follows from it.

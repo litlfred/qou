@@ -25,4 +25,11 @@ export default conjecture({
     "markov-trace",
     "open-problem",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Formalisation note: downstream Lean declarations requiring CPT closure take `[CPTClosure R B tr cpt]` as an explicit typeclass hypothesis.",
+    },
+  ],
 });

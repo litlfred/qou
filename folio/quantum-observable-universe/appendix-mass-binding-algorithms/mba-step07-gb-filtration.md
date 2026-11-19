@@ -28,7 +28,7 @@ differential $d_r$ ($r \geq 2$) vanishes.*
 
 ### Correctness conditions
 
-*[`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence)
+*[The Gröbner–Shirshov spectral-sequence proposition](#prop:gb-spectral-sequence)
 asserts $E_2$-collapse for the GS filtration on $H_n(q)$ in the
 QOU rigid-monoidal setting. The proof uses the diamond-lemma /
 Gröbner basis structure of the Hecke relations and is standard
@@ -43,10 +43,10 @@ cached per $(n, q)$ pair.*
 ### Python API entry point
 
 *Canonical compute is the script
-[`computations/gb_filtration_jet_tracker.py`](../../../computations/gb_filtration_jet_tracker.py);
+[`gb_filtration_jet_tracker.py`](../../../computations/gb_filtration_jet_tracker.py);
 run it directly to emit the witness. The Rust implementation
 lives in [`tools/hecke-engine/`](../../../tools/hecke-engine/),
-called via `pyhecke_native` when the per-particle builders need
+called via the `pyhecke-native` extension when the per-particle builders need
 the filtered NF.*
 
 ### Witness contract

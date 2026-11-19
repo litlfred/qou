@@ -62,21 +62,22 @@ curvature is $\pi$ times the average number of critical points of the height
 functions -- the oscillation count, integrated -- which is where the
 serpenoid picture that prompted this result becomes exact.)
 
-## What is formalised, what is checked, what is cited
+## Algebraic, computational, and topological ingredients
 
-`QOU.Mass.TorusKnotPages` carries the algebra: the Seifert form
+The algebraic core holds unconditionally: the Seifert form
 of $T(2,n)$ is unimodular for every odd $n$; the continuant of $V - X V^{\mathsf T}$
 satisfies $(X+1) D_{2g} = X^{2g+1} + 1$, so the Alexander polynomial is
 $(X^n+1)/(X+1)$ and divides $X^{2n}-1$; the floor $2A+1 \le b \le 3A$ is
-bookkeeping from $\mu = A+1$ and $A$ knotted components (`curvature_floor`).
+bookkeeping from $\mu = A+1$ and $A$ knotted components.
 The chain form and its exponents are verified exactly for $A \le 12$, and the
 symbolic predictions -- components, knot types, linking, and that $W'_A$ closes
 to the same link (Jones polynomial and per-component Jones) -- for $A \le 4$,
 by `the_canonical_closure_is_a_chain_of_torus_links_probe.py`; the
 computational instance at $A \le 6$ via Reidemeister simplification and
-Vogel's algorithm is `the_curvature_floor_is_sharp_probe.py`. Not formalised:
-the two topological facts above, Milnor's theorem, and the identification of
-the components from their Jones polynomials.
+Vogel's algorithm is `the_curvature_floor_is_sharp_probe.py`. The two
+topological facts above, Milnor's theorem, and the identification of the
+components from their Jones polynomials enter from the classical knot-theory
+literature.
 
 ## Scope
 

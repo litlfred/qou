@@ -1,5 +1,5 @@
 **Remark (topological mass evaluation).**
-*We evaluate the two mass scales attached to the trefoil $\tau(2,3)$ (electron knot) and the figure-eight $4_1$ (Higgs knot).*
+*This remark evaluates the two mass scales attached to the trefoil $\tau(2,3)$ (electron knot) and the figure-eight $4_1$ (Higgs knot).*
 
 The trefoil is a non-hyperbolic torus knot: its complement is Seifert-fibered, so its hyperbolic volume — and with it any volume-route mass — vanishes ([torus-knot zero volume via Reeb](#rem:torus-knot-zero-volume-via-reeb)). The exclusion is not merely geometric. The colored Jones asymptotics of a torus knot contain no volume-type limit at all: the Kashaev-point growth is polynomial, and the deformed limit degenerates to the inverse Alexander polynomial on one side of the real axis and a pure Chern–Simons phase on the other \cite{murakami2004a}. The quantum-dilogarithm value
 

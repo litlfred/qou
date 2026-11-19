@@ -1,7 +1,7 @@
 **Conjecture (conditional).**
 Under the Kashaev volume conjecture
-([`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture))
-applied to an atomic Hecke element $T_w$ with `Markov closure` knot/link
+([Kashaev volume conjecture](#conj:kashaev-volume-conjecture))
+applied to an atomic Hecke element $T_w$ with Markov closure knot/link
 $K_w$, the multiplicative density prefactor
 $\rho_F \in \mathbb{Z}_{>0}$ in the binding-energy formula
 
@@ -50,7 +50,7 @@ The evidence base for the $\nu_{\mathrm{SDP}}$ pattern is therefore **two
 points**, both equal to $2$, not three points reading $1, 2, 2$. The $1$ was the
 row now removed, so the *variation* in that pattern came entirely from it.
 
-Read this together with the operational finding recorded on the Lean carrier:
+Read this together with the operational finding:
 six operational definitions of $\nu_{\mathrm{SDP}}$ were computed and **none**
 reproduces the legacy triple, and the committed values carry the methodology tag
 `"manual-historical-volume-match"` — they are hand-assigned rather than derived.
@@ -89,33 +89,16 @@ the canonical formalism, which does not yet exist, gives a unique
 non-negative integer
 $\nu_{\mathrm{SDP}}(K_w)$ for every bound-state knot $K_w$. Until that solver
 is available, the identity is verified on two census atoms and
-extrapolated to ${}^{4}\mathrm{He}$ with explicit caveat. The Lean carrier
-axiomatises
+extrapolated to ${}^{4}\mathrm{He}$ with explicit caveat.
 
-```lean
-class KashaevDensityEqualsSdpMultiplicity
-    (Atom : Type*) (rhoF : Atom → ℝ) (nuSdp : Atom → ℕ)
-    (bindingPred vol : Atom → ℝ) (mE : ℝ) : Prop where
-  mE_pos : 0 < mE
-  vol_pos : ∀ a, 0 < vol a
-  nuSdp_pos : ∀ a, 0 < nuSdp a
-  identity : ∀ a, rhoF a = (nuSdp a : ℝ)
-  binding_formula : ∀ a, bindingPred a = rhoF a * mE * vol a
-```
-
-The quantities are class **parameters supplied by the caller** rather than
-existentials, so the carrier is refutable: the accompanying theorem
-`not_of_prefactor_strictly_between` shows that a prefactor lying strictly
-between two consecutive naturals — as the ${}^{4}\mathrm{He}$ datum
-$\rho_F \approx 1.889$ does — admits no $\nu_{\mathrm{SDP}}$ at all.
-
-**No instance is provided.** That is the open state: an instance would have to
-supply $\nu_{\mathrm{SDP}}$, and no operational definition in the corpus yet
-reproduces the confirmed $1, 2, 2$. The carrier deliberately does *not* identify
-$\nu_{\mathrm{SDP}}$ with any SDP construction — the Wedderburn saturating
-projection whose dimension it is meant to be has no Lean type here — so what the
-carrier states is the positive-integrality of the prefactor and the binding
-formula it feeds, and nothing more.
+The conditional hypothesis takes $\rho_F$, $\nu_{\mathrm{SDP}}$, $B_{\mathrm{pred}}$,
+and $\mathrm{Vol}$ as explicit parameters rather than existentials, so it is
+refutable: any prefactor lying strictly between two consecutive positive integers —
+as the ${}^{4}\mathrm{He}$ datum $\rho_F \approx 1.889$ does — admits no integer
+$\nu_{\mathrm{SDP}}$ at all. No operational definition in the corpus yet
+reproduces the confirmed $1, 2, 2$ across all three atoms; what the conditional
+hypothesis isolates is the positive-integrality of the prefactor and the binding
+formula $B_{\mathrm{pred}} = \rho_F \cdot m_e \cdot \mathrm{Vol}(K_w)$ it feeds.
 
 ## Notation hazard resolved
 
@@ -127,17 +110,13 @@ in QOU compute and content (per
 - $\rho_K$ — CODATA-fit density per knot
 - $\rho_F$ — Kashaev prefactor in the formal derivation (unnamed, compute-only)
 
-The renamed compute field (`rho_factor` $\to$ `nu_sdp` in
-the canonical formalism
-ATOM_ASSIGN) consolidates around the canonical $\nu_{\mathrm{SDP}}$ name,
-removing the third unnamed $\rho$.
+Consolidating the compute assignment field around the canonical $\nu_{\mathrm{SDP}}$ name
+removes the third unnamed $\rho$.
 
 ## Where $\nu_{\mathrm{SDP}}$ is used
 
-- the canonical formalism
-  — ATOM_ASSIGN.`nu_sdp` field (renamed from `rho_factor`)
-- the canonical formalism
-  — reads `nu_sdp` and emits `B_pred = nu_sdp · m_e · Vol(K)`
+- the canonical formalism atomic assignment table ($\nu_{\mathrm{SDP}}$ multiplicity entry)
+- the canonical formalism binding evaluator ($B_{\mathrm{pred}} = \nu_{\mathrm{SDP}} \cdot m_e \cdot \mathrm{Vol}(K)$)
 - [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
   §Algorithm step 3 — supplies $\nu_{\mathrm{SDP}}$ via joint-tower SDP
 

@@ -19,4 +19,11 @@ export default conjecture({
     ref: "qou:QOU.Archimedean.JetOrderIndependence",
     validation: "stub",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Lean formalisation (`QOU.Archimedean.JetOrderIndependence`): base-order LU certificate `jetOrder3_certificate`; full-rank base minor `jetJacobianBase_rank`; abstract monotonicity principle `jacobianRank_eq_three_of_base`; surreal bridge uniformity and composition `transport_uniform_bound`, `transport_shadow_vanishes`.",
+    },
+  ],
 });

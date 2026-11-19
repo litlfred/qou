@@ -22,7 +22,7 @@ export default theorem({
     {
       kind: "note",
       body:
-        "Scope: an **existence** statement about substrate structure (a nonempty jet horizon), NOT a claim of $\\mathrm{P} \\neq \\mathrm{NP}$ (which needs the separate, open counting$\\to$decision transfer). The physical-intractability witness is *derived* (`qou_physical_intractability_unconditional`, from the $3^{3n}$ resolution tree + the Bekenstein bandwidth bound); the formal witness is Gödel incompleteness, taken as the hypothesis $\\neg\\,\\text{formallyProvable}$.",
+        "Scope: an **existence** statement about substrate structure (a nonempty jet horizon), NOT a claim of $\\mathrm{P} \\neq \\mathrm{NP}$ (which needs the separate, open counting$\\to$decision transfer). Lean chain (`QOU.Information.geometry_of_incompleteness`, `horizon_nonempty`): from a Gödel datum with $\\neg\\,\\text{formallyProvable}$ and a boundary datum whose bandwidth-$B$ extractor reads the full $3^{3n}$ tree, both satisfy `Inaccessible`, yielding $\\exists\\, d,\\ \\text{Inaccessible}\\ d$; the physical-intractability witness is `qou_physical_intractability_unconditional` (resting on `superPoly_two_pow`).",
     },
   ],
 });

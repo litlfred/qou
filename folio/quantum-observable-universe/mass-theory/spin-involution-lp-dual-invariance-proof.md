@@ -49,7 +49,7 @@ $$
   = \tau(\sigma(\beta)^* \sigma(\beta) \cdot x),
 $$
 
-where we used $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$
+where $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$ is applied
 (anti-multiplicativity preserves the involutive form $a^*a$
 when $\sigma$ is a $*$-involution; for the Hecke / Markov case
 this is the bar involution). Hence $\sigma$ is a bijection
@@ -61,7 +61,7 @@ By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta))$
 have feasible sets in $\sigma$-bijection and the same
 $\sigma$-invariant cost; their primal optima coincide. By
 strong duality (which holds for Frobenius algebras structurally
-— see [`prop:frobenius-self-duality-forces-lp-dual-extraction`](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
+— see [frobenius-self-duality-forces-lp-dual-extraction proposition](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
 the dual optima coincide. In particular,
 
 $$
@@ -160,7 +160,7 @@ Markov trace does.
 
 **Operator-level signature.** The
 the canonical formalism
-(per [`prop:operator-selection-lp`](#prop:operator-selection-lp))
+(per [operator-selection-lp proposition](#prop:operator-selection-lp))
 confirms that $\sigma_{pp}, \sigma_{nn}$ are in the active set
 EXACTLY at magic-shell atoms ($Z=2$ activates $\sigma_{pp}$, $N=2$
 activates $\sigma_{nn}$, doubly magic ${}^{4}$He activates both) — see

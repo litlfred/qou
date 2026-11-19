@@ -9,7 +9,7 @@ involution ($b\mapsto b^{-1}$ maps $q=e^{2\pi i b^2}$ to its S-dual
 $\tilde q$, not to $q^{-1}$), and it is the structure the compact
 q-dilogarithm lacks — not the bar parity, which the compact form also has.
 
-Conditional on the complex-volume conjecture `conj:binding-qbeta-complex-volume`,
+Conditional on the complex-volume conjecture the binding-qbeta-complex-volume conjecture,
 the two parts are the two faces of the complex volume
 $\mathfrak V=\mathrm{Vol}+i\,\mathrm{CS}$:
 
@@ -19,7 +19,7 @@ $\mathfrak V=\mathrm{Vol}+i\,\mathrm{CS}$:
   **decay** ($\mathfrak Q_\beta$) face, carried on the root-of-unity
   (Faddeev) saddle.
 
-The mathematical statement of `prop:phi-b-bar-parity-decomposition` is
+The mathematical statement of the phi-b-bar-parity-decomposition proposition is
 **unconditional**; only this physical identification of the two parts invokes
 the conjecture.
 

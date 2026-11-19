@@ -1,19 +1,19 @@
 ## Proof
 
 By the Markov-trace factorization theorem
-([`thm:markov-trace-factorization`](#thm:markov-trace-factorization)),
+([markov-trace-factorization theorem](#thm:markov-trace-factorization)),
 the level-$n$ Markov trace of a product of factors decomposes as a
 sum over subset structures with weights determined by the Markov
 parameter $z$. For a pair $(i, j) \in \mathcal{P}_n$, the
 two-factor subset contributes the weight $z^2$ (from
-[`prop:markov-pair-z2`](#prop:markov-pair-z2): $\mathrm{tr}_M(\sigma_i \sigma_j) = z \cdot z = z^2$,
+[markov-pair-z2 proposition](#prop:markov-pair-z2): $\mathrm{tr}_M(\sigma_i \sigma_j) = z \cdot z = z^2$,
 adjacent or not). The dilogarithm $\Phi_q$ applied to the absolute
 value of the pair product $|\hat V_i^{(n)} \hat V_j^{(n)}|$ is the
 quantum-dilogarithm regularization of the pair's contribution to the
 jet-tower mass.
 
 Pair commutativity
-[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace)
+[vhat-pair-commutation-trace lemma](#lem:vhat-pair-commutation-trace)
 ensures the pair index $(i, j)$ vs $(j, i)$ does not double-count
 (the absolute value $|\hat V_i^{(n)} \hat V_j^{(n)}| = |\hat V_j^{(n)} \hat V_i^{(n)}|$
 is symmetric). Summing over $\mathcal{P}_n$ — the set of unordered
@@ -57,6 +57,6 @@ $$
 
 Each term is exact at its level; the truncation error at level $N$
 is bounded by
-[`prop:jet-tower-convergence`](#prop:jet-tower-convergence) at
+[jet-tower-convergence proposition](#prop:jet-tower-convergence) at
 $\le \Delta_{\max}\,\hbar_q^{2(N+1)} / (1 - \hbar_q^2)$ once the
 uniform $\Delta_{\max}$ bound is established (still open).

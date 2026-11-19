@@ -18,7 +18,7 @@ and report each $c_k$ with its **tiered classification**.*
 
 | $k$ | $c_k$ | Tier | Notes |
 |---|---|---|---|
-| 2 | $-1$ | **structural** | Taylor coefficient of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$; no fit, no CODATA, no $q_0$. Not "proved" — the Lean re-reads the $N{=}2$ factor rather than deriving it. For the normalised series (cosine factor inside) the coefficient is $\tilde c_2 = c_2 - 1/8 = -9/8$ |
+| 2 | $-1$ | **structural** | Taylor coefficient of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$; no fit, no CODATA, no $q_0$. Not "proved" — this identity expands the $N{=}2$ factor rather than deriving it from first principles. For the normalised series (cosine factor inside) the coefficient is $\tilde c_2 = c_2 - 1/8 = -9/8$ |
 | 3 | $-2 = J_{\mathrm{Hopf}}(q = 1)$ | **near-match** | swings $\leq 3.47\%$ at m_p-pin $q_0$ |
 | $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
 | any | empirical fit | **fitted** | flagged as discipline violation |
@@ -41,7 +41,7 @@ reported as a tier, never collapsed to a binary keep-or-discard verdict.*
 
 ### Correctness conditions
 
-*[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
+*[The categorical precision-ladder proposition](#prop:q-beta-categorical-precision-ladder)
 establishes the convergent ladder, the truncation-order
 inequality, and that $c_2$ is the exact $u^2$ coefficient of the
 explicit-factor product. That is a re-reading of the $N{=}2$ factor's
@@ -51,18 +51,17 @@ series — the normalised series' coefficient is $\tilde c_2 = -9/8$.*
 ### Python API entry point
 
 *Canonical compute for the tiered $c_k$ cache is the script
-[`computations/qbeta/qbeta_ck_cache.py`](../../../computations/qbeta/qbeta_ck_cache.py),
+[`qbeta_ck_cache.py`](../../../computations/qbeta/qbeta_ck_cache.py),
 which records each $c_k$ row (`data.rows`) with its `tier` (`"derived"` vs
 `"cal-anchored"`), `label`, structural candidates, and cumulative truncation
 prediction `Q_pred_after_this_rung_MeV` alongside `data.Q_beta_tiers` in the
 witness JSON. Note that the cached $c_k$ ladder artifact is a retained
 **Convention-C** cache (`markov_convention: "C"`, generated via
-`--historical-convention-C` pending the Convention-D re-derivation tracked
-under `qou-cds1` / `qou-wxhi`; its default Convention-D path refuses because
-substituting $z_D$ into $\alpha = (z-1)h/2$ is proved invalid by
-`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` and
-`QOU.QBeta.eigenphase_bar_defect_of_fullBar`). The downstream consumer
-[`computations/q_beta_predicted.py`](../../../computations/q_beta_predicted.py)
+`--historical-convention-C` pending a Convention-D re-derivation;
+its default Convention-D path refuses because
+substituting $z_D$ into $\alpha = (z-1)h/2$ violates the three-row vanishing condition
+and the full-bar eigenphase identity). The downstream consumer
+[`q_beta_predicted.py`](../../../computations/q_beta_predicted.py)
 (witness:
 [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json))
 wires only the derived $N = 2$ rung ($c_2 = -1$, emitting $Q_{N_2}$ without
@@ -73,11 +72,11 @@ regenerations use
 ### Witness contract
 
 *Canonical witness for the tiered $c_k$ ladder:
-[`computations/qbeta/qbeta-ck-cache.witness.json`](../../../computations/qbeta/qbeta-ck-cache.witness.json)
+[`qbeta-ck-cache.witness.json`](../../../computations/qbeta/qbeta-ck-cache.witness.json)
 (C-frame cache, `markov_convention: "C"`, with downstream $Q_{N_2}$ consumer
 [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json)).
 **Must** record each $c_k$ alongside its `tier` (`"derived"` vs
-`"cal-anchored"`) and its `markov_convention`.*
+`"cal-anchored"`) and its Markov-convention tag (`"C"` vs `"D"`).*
 
 ### Notes
 

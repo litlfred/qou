@@ -13,4 +13,7 @@ export default remark({
     "external-program",
   ],
   cites: ["banks-seiberg2011", "harlow-ooguri2021"],
+  authorNotes: [
+    { kind: "note", body: "Discharged in Lean as `Subsingleton ((1_C) -> Ad(A))`." },
+  ],
 });

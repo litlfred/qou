@@ -36,7 +36,7 @@ proves that for plumbed $3$-manifolds with negative-definite linking matrix the
 Witten--Reshetikhin--Turaev invariant is the radial limit of the homological block
 $\hat{Z}$. That class consists of closed manifolds; $S^3 \setminus K$ for a
 hyperbolic knot is cusped and not plumbed, so the result does not reach the objects
-this conjecture quantifies over, and the field `dt_eq_bps` below stays an assumption
+this conjecture quantifies over, and the Donaldson–Thomas to BPS identification below stays an assumption
 rather than a citation.
 
 ### Which BPS sector — the non-degeneracy result
@@ -76,31 +76,21 @@ $K(p, -m)$ implied by the Alexander polynomial of [`singh-physrevd108106023`].
 Since $5 \neq 3$, the **open**-HOMFLY Gukov--Stošić bridge does *not* reproduce
 the $4_1$ Stokes integer $3$ of GGM eq. (60) and does *not* license
 $A_\omega = 3$. Only the **closed**-sector bridge stated above relates to that
-integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ is machine-checked
-unconditionally (`QOU.QBeta.StokesQZeroDTCount`).
+integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ holds unconditionally.
 
-We therefore adopt the **closed**-sector bridge, and A_ω=3 is made
+The framework therefore adopts the **closed**-sector bridge, and $A_\omega = 3$ is made
 conditional on it downstream
-([`thm:aomega-fourone-dt-count`](#thm:aomega-fourone-dt-count)) — conditional for
+([aomega-fourone-dt-count theorem](#thm:aomega-fourone-dt-count)) — conditional for
 every knot, $4_1$ included, since GGM's Conjecture 3(d) is not proved for $4_1$. It is *not* the open-HOMFLY bridge.
 
-### Lean axiomatisation
+### Axiomatic formulation
 
-The bridge is a Lean typeclass `QOU.QBeta.StokesDTBPSBridge` carrying the two
-identifications as fields:
+The bridge is formulated as a hypothesis class carrying three integer invariants on knots — the Stokes constant, the Donaldson–Thomas invariant, and the BPS state dimension — together with the two identifications:
 
-```lean
-class StokesDTBPSBridge (Knot : Type*) where
-  stokesConstant : Knot → ℤ
-  dtInvariant    : Knot → ℤ
-  bpsDim         : Knot → ℤ
-  stokes_eq_dt : ∀ K, stokesConstant K = dtInvariant K   -- GGM Conj 3(d)
-  dt_eq_bps    : ∀ K, dtInvariant K   = bpsDim K          -- GPPV
-```
+1. **Stokes–DT correspondence (GGM Conjecture 3(d)):** the Stokes constant equals the Donaldson–Thomas invariant for every knot $K$.
+2. **DT–BPS correspondence (GPPV):** the Donaldson–Thomas invariant equals the BPS dimension for every knot $K$.
 
 The fields are the conjecture's *inputs*; no field asserts a value of $A_\omega$.
-Any instance is the conjecture holding; none is supplied (the general statement is
-open for every knot, $4_1$ included). Downstream results take
-`[StokesDTBPSBridge Knot]` as an explicit hypothesis and are then fully verified
-by Lean modulo that class instance, following the same pattern as
-[`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md).
+Any witness represents the conjecture holding; none is supplied (the general statement is
+open for every knot, $4_1$ included). Downstream results take the bridge hypothesis class as an explicit premise and hold conditionally modulo that assumption, following the same pattern as
+[kashaev-volume-conjecture conjecture](kashaev-volume-conjecture.md).

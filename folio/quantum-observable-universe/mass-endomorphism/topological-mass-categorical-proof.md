@@ -1,5 +1,5 @@
 **Proof.**
-We assemble the decomposition from three lemmas.  By
+The decomposition is assembled from three lemmas.  By
 ([eigenspace decomposition](#lem:topological-mass-cat-eigenspace)),
 the :refterm[descent]{#descent} involution gives an orthogonal Frobenius-norm split
 

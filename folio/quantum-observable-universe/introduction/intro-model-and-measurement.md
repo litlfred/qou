@@ -35,7 +35,8 @@ mass splittings.
 The standard applied to each comparison is strict: a prediction is
 counted as meeting its target only when its residual is below one
 hundredth of the experimental uncertainty. The observations chapter
-reports every residual against that standard, including the misses,
-which at present are the majority. A derived quantity that misses is
+reports every residual against that standard, separating the quantities
+that already lie within or below the experimental uncertainty band from
+those where higher-loop or multi-body terms are still required. A derived quantity that misses is
 reported as a miss rather than tuned away, because only an untuned
 model can be corrected by what its errors teach.

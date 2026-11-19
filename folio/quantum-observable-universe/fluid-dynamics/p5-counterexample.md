@@ -1,7 +1,7 @@
 Consider the $q \to 1$ limit of solutions to the q-NS equation, using the brane tower to identify the homological stratum where blowup occurs.
 
 **The initial data.**
-We set up an anti-parallel vortex pair: two counter-rotating vortex tubes that approach each other by mutual induction. In the q-deformed setting, the circulation $\Gamma$ is quantised: $\Gamma_q = [j]_q[j+1]_q$ with $j = 1/2$. The separation $d$ is measured in units of the Planck length $\ell_q = (q-1)/q$.
+Take an anti-parallel vortex pair: two counter-rotating vortex tubes that approach each other by mutual induction. In the q-deformed setting, the circulation $\Gamma$ is quantised: $\Gamma_q = [j]_q[j+1]_q$ with $j = 1/2$. The separation $d$ is measured in units of the Planck length $\ell_q = (q-1)/q$.
 
 **Phase 1: q-deformed evolution ($q > 1$).**
 For $q > 1$, q-NS well-posedness guarantees a unique smooth global solution. The outcome of filament interaction is determined by the Hecke relation. In either symmetric or antisymmetric channel, the quantum pressure $Q_q$ prevents the cores from overlapping. The minimum separation is $d_{\min} \sim \ell_q > 0$.

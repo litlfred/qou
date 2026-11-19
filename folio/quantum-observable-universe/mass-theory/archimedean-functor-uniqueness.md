@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
+**Proposition (conditional on [dilogarithm archimedean limit conjecture](#conj:dilogarithm-archimedean-limit) and on the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`]).**
 *Let $\tau_{\text{arch}} = \pi_\infty \circ \tau$ be the archimedean
 realization functor of the QOU substrate
 ([archimedean realization functor](#def:archimedean-realization-functor)),
@@ -22,10 +22,9 @@ $z \in \mathbb{C} \setminus \{0,1\}$, where:*
    $\tau_{\text{arch}}$ is a continuous, antisymmetric, real-valued
    functional on $B(\mathbb{C})$ — the structural content provided by
    the cosimplicial / Yekutieli triple machinery
-   ([`prop:cosimplicial-crossed-groupoid`](#prop:cosimplicial-crossed-groupoid))
-   together with the archimedean-limit class
-   `QOU.QPochhammer.ArchimedeanLimit`
-   ([`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).*
+   ([cosimplicial crossed groupoid proposition](#prop:cosimplicial-crossed-groupoid))
+   together with the archimedean-limit hypothesis
+   ([dilogarithm archimedean limit conjecture](#conj:dilogarithm-archimedean-limit)).*
 - *(C2) Bloch-Suslin pentagon-uniqueness [`suslin1991`,
    `bloch2000`]: any continuous antisymmetric pentagon-coherent
    real-valued function on $\mathbb{C} \setminus \{0,1\}$ is a
@@ -43,15 +42,9 @@ $$
   + D\!\left(\tfrac{1-y}{1-x}\right) \;=\; 0.
 $$
 
-> **Theorem (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).**
-> The upstream conjecture is axiomatised in Lean as the typeclass
-> [`QOU.QPochhammer.ArchimedeanLimit`](dilogarithm-archimedean-limit.lean);
-> the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,
-> `bloch2000`] is similarly axiomatised as
-> [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean).
-> The Lean theorem
-> [`QOU.Archimedean.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)
-> takes both classes as `[Instance]` hypotheses and is proved
-> **without `sorry`**; the uniqueness statement therefore qualifies as a
-> *rigorous conditional result* rather than an unproved
+> **Theorem (conditional on [dilogarithm archimedean limit conjecture](#conj:dilogarithm-archimedean-limit)).**
+> Taking the upstream archimedean-limit conjecture and the Bloch–Suslin
+> pentagon-uniqueness theorem [`suslin1991`, `bloch2000`] as explicit
+> hypotheses, the uniqueness statement follows as a *rigorous conditional result*
+> rather than an unproved
 > conjecture.

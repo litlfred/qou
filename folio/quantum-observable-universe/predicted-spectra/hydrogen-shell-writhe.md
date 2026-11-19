@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
+**Proposition (conditional on the [Borromean quark conjecture](#conj:borromean-quark)).**
 Let $T_{2,3}$ be the electron trefoil ([electron knot](#def:electron-knot)) Hopf-linked to a proton anchor. Let $w$ be the writhe in its minimal diagram.
 
 1. **Shell--writhe correspondence.** The writhe fixes the principal quantum number $n$ via $n = (w - 1)/2$. The ground state has $w = 3$ ($n = 1$). Excited states $w = 2n + 1$ arise from Reidemeister I pairs at the exceptional divisor.

@@ -34,16 +34,8 @@ constraint that limits Young diagrams to two-rowed shapes —
 giving the *binary* (rather than $r$-ary) split needed for the
 sign-sequence interpretation.
 
-A full proof requires:
+Completing the step-by-step verification reduces to three ingredients:
 
-- formalising the YJM-tableau tree structure (in Mathlib:
-  `Combinatorics.YoungTableau` plus a `successor` relation);
-- formalising Gonshor's sign-sequence-to-surreal map (open in
-  Mathlib's `SetTheory.Game.Surreal` development);
-- checking the eigenvalue conventions (Hoefsmit uses
-  $q$ and $-q^{-1}$; Conway's construction uses left/right of
-  midpoint).
-
-The Lean stub axiomatises the embedding
-([sign sequence functor](#def:sign-sequence-of-braid)) pending
-these prerequisites.
+- the Young--Jucys--Murphy successor relation on two-row standard tableaux;
+- Gonshor's sign-sequence-to-surreal bijection on dyadic rationals;
+- matching the eigenvalue conventions ($q$ and $-q^{-1}$ on the Hoefsmit side versus left/right cuts around the midpoint on the Conway side) along the [sign sequence functor](#def:sign-sequence-of-braid).

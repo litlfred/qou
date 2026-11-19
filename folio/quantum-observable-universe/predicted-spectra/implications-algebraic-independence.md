@@ -18,5 +18,4 @@ Assume the [algebraic independence conjecture](#conj:hyperbolic-volume-transcend
 
 4. **Bandwidth bounds.** The information-bandwidth bounds $\mathfrak{B}(q)$ are tight.
 
-**Lean formalisation.**
-Independence populates the class `QOU.Archimedean.HyperbolicVolumeIndependence`. Constructing an instance requires an arithmetic theorem for the quantum dilogarithm $\mathrm{Li}_2^q$ at algebraic arguments.
+Establishing algebraic independence directly requires an arithmetic transcendence theorem for the quantum dilogarithm $\mathrm{Li}_2^q$ at algebraic arguments.

@@ -81,12 +81,7 @@ the framework declares the bond constant channel-averaged and says explicitly
 what it averages over, since at $A = 2$ the $^1S_0$ / $^3S_1$ split is the
 entire content.
 
-## What is formalised
+## What is proved vs. empirical input
 
-`QOU.Mass.ChainTraceFactor`: the convex-combination identity
-(`dPN_eq_convex`, `convex_weights_sum`), the strict betweenness of the offsets
-for $0 < \delta < 2$ (`dPN_strict_between`), its transport through the affine
-trace (`factors_strict_mono`), and the ordering $L_{pp} < L_{pn} < L_{nn}$
-itself (`L_strict_mono`). Not formalised, because it is empirical input: that
-only $pn$ binds. The measurement, the $\delta$ bound and the Wigner reading are
+The algebraic chain-trace factorisation establishes the convex-combination identity, the strict betweenness of the offsets for $0 < \delta < 2$, its transport through the affine trace, and the strict ordering $L_{pp} < L_{pn} < L_{nn}$. That only the $pn$ pair forms a bound state is an empirical input rather than an algebraic theorem. The measurement, the $\delta$ bound and the Wigner reading are
 `the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py`.

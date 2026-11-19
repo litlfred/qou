@@ -27,7 +27,7 @@ export default proposition({
     {
       kind: "refined-framing",
       date: "2026-11-15",
-      body: "Owner ruling 2026-09-05, re-affirmed 2026-09-08 and 2026-11-15: the canonical Phi_k weight is Molien $f^\\lambda q^{-\\kappa_\\lambda}\\dim_q(\\lambda)/[n]_q!$; $d_q^2/D^2$ is a labelled comparison arm (bean qou-oots). Prose previously called the choice open.",
+      body: "Owner ruling 2026-09-05, re-affirmed 2026-09-08 and 2026-11-15: the canonical Phi_k weight is Molien $f^\\lambda q^{-\\kappa_\\lambda}\\dim_q(\\lambda)/[n]_q!$ (`QOU.MathlibExt.MolienFakeDegreeGeneralN.molienSum`, `molienSum_eq_qFactorial`, verified against Féray–Méliot M_{n,q^2} in `computations/probes/molien_feray_meliot_bridge_probe.py`); $d_q^2/D^2$ is a labelled comparison arm (bean qou-oots). Prose previously called the choice open.",
     },
     {
       kind: "note",

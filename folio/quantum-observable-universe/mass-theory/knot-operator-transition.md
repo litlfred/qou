@@ -11,7 +11,7 @@
 The p-n factors are written $\sigma - h/2$, the $\delta = 0$ convention; the
 canonical colour-tube-weighted form is $\sigma - h(1/2 - \delta/4)$, with
 $\delta$ the substrate flavour split of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate). **The Dominant NF
+[flavor split substrate proposition](#prop:flavor-split-substrate). **The Dominant NF
 and Knot type columns are unaffected.** Recomputing the $H_3$ normal form of all
 five operators under both conventions returns the same dominant basis element in
 every case, with dominance margins of $4.7\times$ to $9.6\times$ against a

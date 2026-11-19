@@ -13,6 +13,12 @@ export default remark({
     "rem:skein-turing-machine",
   ],
   cites: ["cardona2021", "freedman2003"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Lean companion modules: `QOU/Information/SkeinCounterfactual.lean` (`SkeinObservationSystem`, `qCollatzSystem`, `vortexReductionSystem`, `QCollatz`) and `QOU/AppendixSurreals/collatz_vtwo_obstruction.lean` (`collatz_vtwo_obstruction`).",
+    },
+  ],
   tags: [
     "skein-module",
     "markov-trace",

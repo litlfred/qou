@@ -4,18 +4,18 @@ The fine-structure constant emerges as the symbolic root of a self-consistent fi
 
 The equation integrates three components. Only the third remains open:
 
-1. **Tree term $q\cdot[9]_q\cdot[10]_q$**: The bare inverse coupling from [`prop:em-coupling-projection`](#prop:em-coupling-projection). Lean verifies its categorical-trace refactoring ([`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)).
-2. **Zero-mode shift $2/(3\pi) = 2g/(4\pi(g-1))\big|_{g=4}$**: The photon infrared harmonic-$1$-form contribution on Bring's surface. Lean proves this in [`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring). The normalization $8\pi = \pi b_1 = \pi\dim H^1(M_{\text{Bring}})$ maintains the harmonic count.
-3. **$\mathcal{O}(\alpha^2)$ normalization $H\cdot(1-h^2\alpha)$**: The Habiro deformation $(1-h^2\alpha)$ with coefficient $H = [2]_q/(8\pi)$. Identifying the exact $\mathcal{O}(\alpha^2)$ correction to $H$ with a class in $B_3(\mathbb{C})$ is the single open input. The `b3_normalization` class field axiomatises this.
+1. **Tree term $q\cdot[9]_q\cdot[10]_q$**: The bare inverse coupling from the [electromagnetic coupling projection](#prop:em-coupling-projection), together with its categorical-trace refactoring ([$\alpha_{EM}$ categorical trace ratio](#prop:alpha-em-categorical-trace-ratio)).
+2. **Zero-mode shift $2/(3\pi) = 2g/(4\pi(g-1))\big|_{g=4}$**: The photon infrared harmonic-$1$-form contribution on Bring's surface, established in the [Bring-surface photon infrared zero-mode proposition](#prop:photon-ir-zero-mode-bring). The normalization $8\pi = \pi b_1 = \pi\dim H^1(M_{\text{Bring}})$ maintains the harmonic count.
+3. **$\mathcal{O}(\alpha^2)$ normalization $H\cdot(1-h^2\alpha)$**: The Habiro deformation $(1-h^2\alpha)$ with coefficient $H = [2]_q/(8\pi)$. Identifying the exact $\mathcal{O}(\alpha^2)$ correction to $H$ with a class in $B_3(\mathbb{C})$ is the single conditional hypothesis.
 
-## Genuine derivation, not projection
+## Algebraic equivalence of the fixed point and cubic
 
-The class carries the hypothesis, and the theorem derives the conclusion. The lemma [`QOU.ArchimedeanUniverse.fixedPoint_iff_cubic`](em-coupling-fixed-point.lean) establishes the equivalence between the fixed-point equation and the cubic root for $\alpha \neq 0$. The main theorem [`QOU.ArchimedeanUniverse.alpha_em_is_fixed_point_root`](em-coupling-fixed-point.lean) composes this equivalence with the `b3_normalization` field. The proof is a genuine derivation.
+Under the $B_3(\mathbb{C})$ self-energy normalization hypothesis, the fixed-point equation $1/\alpha = T + \alpha H(1 - h^2\alpha)$ is algebraically equivalent for $\alpha \neq 0$ to the cubic root condition $P(\alpha) = 0$. Composing that equivalence with the normalization hypothesis yields the cubic root characterization directly rather than projecting an assumed conclusion.
 
 ## Numerical context
 
-At $q_0$, the tree term and zero-mode reproduce $1/\alpha$ to $-4.2\times 10^{-6}$ ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)). The $\mathcal{O}(\alpha^2)$ self-consistency term supplies the residual $\mathcal{O}(\alpha)$ correction. The conjectural $B_3(\mathbb{C})$ Bloch-class content supplies its exact form. The cubic $P$ features a real root near $1/137.036$. CODATA-consistency provides the empirical foundation of the conjecture.
+At $q_0$, the tree term and zero-mode reproduce $1/\alpha$ to $-4.2\times 10^{-6}$ ([Bring-surface zero-mode coupling](#prop:em-coupling-bring-zero-mode)). The $\mathcal{O}(\alpha^2)$ self-consistency term supplies the residual $\mathcal{O}(\alpha)$ correction. The conjectural $B_3(\mathbb{C})$ Bloch-class content supplies its exact form. The cubic $P$ features a real root near $1/137.036$. CODATA-consistency provides the empirical foundation of the conjecture.
 
-## Status
+## Open input
 
-The sole open element remains the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization. Lean proves the tree/zero-mode assembly of $T$, the algebraic equivalence of the fixed-point, and the derivation of $P(\alpha)=0$. The class remains uninhabited. No fabricated instance attempts to close the primary conjecture.
+The sole unproved ingredient is the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization hypothesis; the assembly of $T$ from the tree and zero-mode terms and the algebraic reduction of the fixed-point equation to $P(\alpha) = 0$ are unconditional.

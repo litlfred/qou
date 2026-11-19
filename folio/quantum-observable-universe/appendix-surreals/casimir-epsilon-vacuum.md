@@ -7,7 +7,7 @@ $$
   \frac{F_{\text{Cas}}(d)}{A} = -\mathrm{st}\!\left(\frac{1}{A}\frac{\partial}{\partial d}\bigl[N_{\bigcirc}^{\text{in}}(A, d) - N_{\bigcirc}^{\text{out}}(A, d)\bigr] \cdot \varepsilon\right).
 $$
 
-The functor $\mathrm{st}$ annihilates $X \cdot \varepsilon$ only when $X$ is finite. The unknot-component count between plates is surreal-infinite ($\omega \cdot \varepsilon = 1$). Concretely, we assert
+The functor $\mathrm{st}$ annihilates $X \cdot \varepsilon$ only when $X$ is finite. The unknot-component count between plates is surreal-infinite ($\omega \cdot \varepsilon = 1$). Concretely, the conjecture asserts
 $$
   N_{\bigcirc}^{\text{in}}(A, d) - N_{\bigcirc}^{\text{out}}(A, d) = -\frac{\pi^{2}}{720}\frac{A}{d^{3}}\hbar^{2}_{q}\hbar c \cdot \varepsilon^{-1} + \text{lower-birthday corrections}.
 $$

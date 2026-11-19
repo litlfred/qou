@@ -1,4 +1,4 @@
-The QOU framework predicts that classical Navier--Stokes admits finite-time blow-up where the enstrophy transfinite $\mathcal{Z}_q \asymp \varepsilon^{-4/3}$ outruns the mass-gap infinitesimal $\Delta_q \asymp \varepsilon^3$ ([NS surreal bound](#rem:ns-surreal-bound), [blowup as lifting obstruction](#prop:blowup-yekutieli)). We treat the mathematical infinity not as a breakdown, but as the moment where the classical approximation $q = 1$ reverts to the underlying quantum substrate $q > 1$.
+The QOU framework predicts that classical Navier--Stokes admits finite-time blow-up where the enstrophy transfinite $\mathcal{Z}_q \asymp \varepsilon^{-4/3}$ outruns the mass-gap infinitesimal $\Delta_q \asymp \varepsilon^3$ ([NS surreal bound](#rem:ns-surreal-bound), [blowup as lifting obstruction](#prop:blowup-yekutieli)). Here the mathematical infinity marks not a physical breakdown, but the threshold at which the classical approximation $q = 1$ reverts to the underlying quantum substrate $q > 1$.
 
 ## Physical meaning of a blow-up
 

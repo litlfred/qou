@@ -1,4 +1,4 @@
-We verify that the [Quantum lifting condition](#prop:yekutieli-lifting) holds in the brane tower for $G = \mathrm{SU}(2)$, extending [quantum characteristic classes for SU(2)](#ex:quantum-characteristic-classes-su2).
+The [Quantum lifting condition](#prop:yekutieli-lifting) holds in the brane tower for $G = \mathrm{SU}(2)$, extending [quantum characteristic classes for SU(2)](#ex:quantum-characteristic-classes-su2).
 
 **The central extensions.** The brane tower for $\mathrm{SU}(2)$ produces a central extension of gerbes on $\mathcal{S} = \mathbb{CP}^1$ at each level:
 $$

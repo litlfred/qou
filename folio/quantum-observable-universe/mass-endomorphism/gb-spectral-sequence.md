@@ -42,7 +42,7 @@ $$
 
 **Derivation of $d \circ d = 0$ (via Hochschild complex).**
 
-*The rewriting rules $d_H, d_F, d_{YB}$ define a reduction procedure. To obtain $d \circ d = 0$, we pass to the Hochschild cochain complex over the natural ground ring $R$:*
+*The rewriting rules $d_H, d_F, d_{YB}$ define a reduction procedure. To obtain $d \circ d = 0$, pass to the Hochschild cochain complex over the natural ground ring $R$:*
 
 $$
   C^k(H_n(R, q), H_n(R, q))
@@ -58,9 +58,9 @@ $$
 - *$p$-adic: $R$ contains $\mathbb{Q}_p[q, q^{-1}]$.*
 - *Finite-field: $R$ contains $\mathbb{F}_p[q, q^{-1}]$.*
 
-*The spectral-sequence construction operates over any such $R$. The physics application uses the archimedean realisation. The derivation is ring-agnostic. Complex numbers appear only as a derived embedding $R \hookrightarrow \mathbb{C}$ when we extract residues at roots of unity ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
+*The spectral-sequence construction operates over any such $R$. The physics application uses the archimedean realisation. The derivation is ring-agnostic. Complex numbers appear only as a derived embedding $R \hookrightarrow \mathbb{C}$ when extracting residues at roots of unity ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
 
-*We equip the complex with the standard Hochschild differential:*
+*The complex is equipped with the standard Hochschild differential:*
 
 $$
   (d\,f)(a_0 \otimes \cdots \otimes a_k)

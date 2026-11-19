@@ -9,4 +9,10 @@ export default remark({
     "prop:c5-involution-leibniz-decomposition",
     "def:bar-involution",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Lean sibling proves b^2 = 1 - 1/[2]_q^2 and `c5_classical_limit_eq_neg_five_quarters`; symbolic pentagon reduction in `computations/pentagon_reduction_li2q.py`.",
+    },
+  ],
 });

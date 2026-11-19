@@ -1,4 +1,4 @@
-Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2), we compute the [mass identity](#def:mass-identity) for $G = \mathrm{SU}(2)$.
+Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2), the [mass identity](#def:mass-identity) is evaluated for $G = \mathrm{SU}(2)$.
 
 **Setup.** Let $A = \mathcal{O}(\mathrm{SU}(2))$ with Frobenius form $\int_A = \int_{\mathrm{SU}(2)} (-) d\mu$, where $\mu$ is the normalised Haar measure. The comultiplication is $\Delta(f)(x, y) = f(xy)$. The categorical trace is $\mathrm{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
 

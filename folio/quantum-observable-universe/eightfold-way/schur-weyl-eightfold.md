@@ -66,56 +66,50 @@ $N = 2$).  No choice of $q$ restores it: the row cap is
 $\ell(\lambda) \leq \dim V$, which the single-fibre construction fixes at $2$,
 and the Drinfeld--Jimbo quantisation does not change dimensions.
 
-**The obstruction, and what is machine-checked about it.**
-The following are verified in
-`QOU/Eightfold/RowCapObstruction.lean`:
+**The obstruction, and what is established directly about it.**
+The following arithmetic properties govern the row-cap obstruction:
 
-- `weyl_dim_alt_eq_zero_iff` --- the alternating channel
+- The alternating channel
   $\dim V_{(1^3)} = \binom{N}{3}$ vanishes *if and only if* $N < 3$.
   This is the obstruction in one line.
-- `decuplet_forces_three` --- if the symmetric channel has
+- If the symmetric channel has
   dimension $10$ then $N = 3$.  The implication runs from the decuplet
   dimension to the flavour dimension, in that direction.
-- `singlet_forces_three` --- a one-dimensional alternating
+- A one-dimensional alternating
   channel likewise pins $N = 3$.
-- `schur_weyl_cube_split_two_three` --- the channel
+- The channel
   arithmetic closes at both values ($8 = 4 + 4 + 0$ at $N = 2$;
   $27 = 10 + 16 + 1$ at $N = 3$), so the $N = 2$ deficit sits precisely in the
   vanishing alternating channel and not in some unaccounted-for piece.
 
-**What that Lean does not establish.**
-The same caveat applies here as to
-`WeylInvarianceQDeformation.lean` above, and it is load-bearing in this one
+**Scope of the arithmetic reduction.**
+The same caveat applies here as to the Weyl-invariance separation
+above, and it is load-bearing in this one
 place because $N = 3$ is the chapter's central open problem.  What is
-machine-checked is the *arithmetic* of the row cap on the channel
-dimensions: the file *defines* $\dim V_{(1^3)}^{\mathfrak{gl}_N}$ to be
-$\binom{N}{3}$ and then reasons about $\binom{N}{3}$, with every proof a
-`Nat.choose` identity, a `decide`, or an `omega`.  That the hook-content
+proved directly is the *arithmetic* of the row cap on the channel
+dimensions: defining $\dim V_{(1^3)}^{\mathfrak{gl}_N}$ to be
+$\binom{N}{3}$ and then reasoning about $\binom{N}{3}$ via elementary
+binomial-coefficient identities.  That the hook-content
 formula gives $\dim V_{(1^3)} = \binom{N}{3}$, and that the Schur--Weyl row
-cap is $\ell(\lambda) \leq N$, are standard and cited --- carried by the
-definition names and docstrings, not proved.  The file's own docstring
-concedes the boundary, noting that Worpitzky's identity is not formalised
-here.  So the tier is *standard mathematics, with a
-machine-checked arithmetic instance* --- not *proved* in the sense the other
-Lean-backed rows of this chapter use.
+cap is $\ell(\lambda) \leq N$, are standard and cited rather than derived from first principles here (for instance, Worpitzky's identity is cited from the literature).  So the tier is *standard mathematics, with an
+explicit arithmetic instance* --- not an unconditional derivation of the representation theory itself.
 
 The conclusion is nonetheless correct, because the two cited inputs are
 textbook.  The eightfold-way classification is not "approximately available"
 at $N = 2$ --- it is structurally unavailable.  This is a scope-(b)
 exclusion, and the invariant justifying it is the Schur--Weyl row cap.
 
-**The $N = 2$ half of the duality is machine-checked.**
-`QOU/SchurWeyl/JimboActionKernel.lean` builds the Jimbo action of $H_n(q)$ on
-$V^{\otimes n}$ with $\dim V = 2$ and proves over an ordered field
-at generic $q$: the induced trace is the Markov trace with
-$z = q^3/(q^2+1)$ (`jimboTrace_eq_wtrace`); the kernel of the action is
-exactly the trace radical, i.e. the blocks with three or more rows
-(`ker_jimbo_eq_traceRadicalIdeal`); and the image has dimension the Catalan
-number (`finrank_range_jimbo_eq_catalan`). Surjectivity onto the
+**The $N = 2$ half of the duality is established explicitly.**
+Constructing the Jimbo action of $H_n(q)$ on
+$V^{\otimes n}$ with $\dim V = 2$ over an ordered field
+at generic $q$ shows that: the induced trace is the Markov trace with
+$z = q^3/(q^2+1)$; the kernel of the action is
+exactly the trace radical, i.e. the blocks with three or more rows; and the image has dimension the Catalan
+number. Surjectivity onto the
 $\mathcal{U}_q(\mathfrak{sl}_2)$ commutant is not claimed, and no $N \geq 3$
-action is formalised, so the $N = 3$ statement above remains cited.
+action is constructed here, so the $N = 3$ statement above remains cited.
 
-`decuplet_forces_three` and `singlet_forces_three` run from an
+The dimension implications run from an
 *observed* channel dimension to $N = 3$; what the framework requires is
 $N = 3$ *supplied* by a construction.  That is the affirmative half, and it
 remains open.
@@ -132,17 +126,14 @@ construction directions are:
    ([Proposition](#prop:color-su3-from-g2)).
 
 **Status of the $\mathrm{Sym}^2$ gate.**  The gate is the
-requirement that $\mathrm{Sym}^2(W)$ contain no singlet.  Its
-representation-theoretic content is machine-checked in
-`QOU/Eightfold/Sym2GateFSTrichotomy.lean`: at dimension three, passing
-the gate forces a complex-type summand (`gate_forces_complex_of_dim_three`),
+requirement that $\mathrm{Sym}^2(W)$ contain no singlet.  By the Frobenius--Schur trichotomy, at dimension three, passing
+the gate forces a complex-type summand,
 so the icosahedral triple $T_1$ --- a rotation representation of
-$A_5 \subset \mathrm{SO}(3)$, hence real --- fails
-(`real_triple_fails_gate`), while the octonionic $\mathbf{3}$ is *not
+$A_5 \subset \mathrm{SO}(3)$, hence real --- fails, while the octonionic $\mathbf{3}$ is *not
 excluded*, on the decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}
 \oplus \mathbb{C}^3$ taken from the literature \cite{gunaydin-gursey1973}.
-That the Günaydin--Gürsey triple is complex type is the cited input, not a
-formalised one, so the octonionic route is *not excluded* rather than
-*machine-checked to pass*.  Whether the route yields *flavour*
+That the Günaydin--Gürsey triple is complex type is the cited input, not an
+internally derived one, so the octonionic route is *not excluded* rather than
+*unconditionally proved to pass*.  Whether the route yields *flavour*
 $\mathrm{SU}(3)_{\mathrm{f}}$ (not just colour $\mathrm{SU}(3)_{\mathrm{c}}$)
 remains open.

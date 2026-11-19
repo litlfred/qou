@@ -5,7 +5,7 @@ import { conjecture } from "../../schema/builders";
  */
 export default conjecture({
   authorNotes: [
-    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data. Chebyshev pairing identity numerically checked to 10^-40 in computations/chebyshev-pairing-engine.witness.json." },
   ],
   label: "conj:shell-closure-nf-term-count",
   title: "Shell closure from NF term count",

@@ -10,6 +10,4 @@ The proof is a finite computation in the six-dimensional left regular module, wi
 
 **Item 4.** The hook products are $[3]_q[2]_q$, $[3]_q$ and $[3]_q[2]_q$, so the quotients of $[3]_q!$ by them are $1$, $1/[2]_q$ and $1$; and $q^{-\kappa(\lambda)}c_\lambda=\prod_x[h_x]_q$.
 
-**Item 5.** $t(e_\lambda/(\dim_q(\lambda)t(e_\lambda)))=1/\dim_q\lambda$ for each $\lambda$.
-
-**Lean.** The sibling file proves, over an arbitrary field: `sigma1_quad`, `sigma2_quad`, `braid`, `tau0_dual`, `casimir_coords`, `casimir_central`, `tr_comm`, `tr_markov`, `markov_weights`, `ySign_D`, `yTriv_D`, `yRefl_D`, `tr_casimir`, `tr_casimir_D`, `tr_casimir_D_sub`, `tr_casimir_D_ne`, `tr_casimir_blocks`, `tau0_schur`, `inv_qdim_eq_schur_sum`, `inv_qdim_sum_three`, `inv_qdim_sum_three_D` and `cdimq_tautology`. There $H_3$ is $K^6$ with the basis multiplication above; associativity of that product, which is the statement that it is $H_3$ with its standard basis, is the textbook fact and is not re-proved, and uniqueness of the Ocneanu trace is cited [Jones 1987]. Sorry-free, lean-direct exit 0. $\blacksquare$
+**Item 5.** $t(e_\lambda/(\dim_q(\lambda)t(e_\lambda)))=1/\dim_q\lambda$ for each $\lambda$. $\blacksquare$

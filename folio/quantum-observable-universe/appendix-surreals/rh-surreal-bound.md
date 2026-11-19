@@ -1,4 +1,4 @@
-The classical Riemann hypothesis states that every non-trivial zero $\rho$ of the Riemann zeta function satisfies $\mathrm{Re}(\rho) = 1/2$ ([Riemann hypothesis](#conj:classical-riemann-hypothesis)). We express the QOU stability argument for this claim as a literal surreal inequality.
+The classical Riemann hypothesis states that every non-trivial zero $\rho$ of the Riemann zeta function satisfies $\mathrm{Re}(\rho) = 1/2$ ([Riemann hypothesis](#conj:classical-riemann-hypothesis)). This remark expresses the QOU stability argument for that claim as a literal surreal inequality.
 
 Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)), so that $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)). The scaling laws of [surreal rate calculus](#prop:surreal-rate-calculus) hold:
 
@@ -6,7 +6,7 @@ $$
 \Delta_q \asymp \varepsilon^3, \qquad \Omega_q \asymp \varepsilon^{-1}.
 $$
 
-Let $\rho$ be a hypothetical zero of $\zeta(s)$ with $\mathrm{Re}(\rho) = 1/2 + \delta$ for some $\delta \in \mathbb{R}$, $\delta > 0$. We call $\delta$ the rogue-zero drift.
+Let $\rho$ be a hypothetical zero of $\zeta(s)$ with $\mathrm{Re}(\rho) = 1/2 + \delta$ for some $\delta \in \mathbb{R}$, $\delta > 0$. Call $\delta$ the rogue-zero drift.
 
 By [collapse of the quantum gap](#thm:quantum-gap-collapse) and the Hasse--Weil alignment at every prime fibre, the energy required to relocate a zero from $\mathrm{Re}(\rho) = 1/2$ to $\mathrm{Re}(\rho) = 1/2 + \delta$ is
 

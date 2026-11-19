@@ -60,7 +60,7 @@ $$
   \mathrm{Li}_2(z) \pmod{\mathcal{P}_1}
 $$
 
-by [`prop:categorical-laplace-unique`](#prop:categorical-laplace-unique)
+by [categorical Laplace uniqueness](#prop:categorical-laplace-unique)
 combined with the analytic continuation of $\mathrm{Li}_2^q$ to
 $\mathrm{Li}_2$ at $q \to 1$. The Bloch–Wigner companion
 
@@ -107,7 +107,7 @@ injectivity. $\square$
 - Image of $\tau_{\mathrm{arch}}$ on $G^{(2)}|_F$ equals image of
  Bloch–Suslin regulator on $K_3^{\mathrm{ind}}(F)$.
 - For each Bring-natural $F = \mathbb{Q}(z_K)$, the depth-2 row
- of [`rem:transcendental-accounting`](#rem:transcendental-accounting)
+ of [transcendental accounting](#rem:transcendental-accounting)
  is a *theorem*, not a conjecture.
 
 **Not proved by this**:

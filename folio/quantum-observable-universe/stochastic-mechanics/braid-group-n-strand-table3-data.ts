@@ -1,2 +1,2 @@
 import { table } from "../../schema/builders";
-export default table({ label: "tbl:braid-group-n-strand-table3-data", title: "Table 3 from rem:braid-group-n-strand", uses: ["rem:braid-group-n-strand"], tags: ["extracted-table"] });
+export default table({ label: "tbl:braid-group-n-strand-table3-data", title: "Table 3 from rem:braid-group-n-strand", uses: ["rem:braid-group-n-strand"], tags: ["extracted-table"], authorNotes: [{ kind: "note", body: "Lean bridges: `closureN_eq_closure2` (`rfl`), `BraidWord.toBraid3` via `BraidCrossing.toTypedB3`, `BraidWord.toBraid3_length` (`List.length_map`)." }] });

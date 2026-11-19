@@ -2,7 +2,7 @@
 $$
   K_q(s,t) \;=\; \mathrm{tr}\bigl(\Delta(\varrho(s)) \otimes \Delta(\varrho(t))\bigr)
 $$
-*be the categorical Möbius two-point kernel of [prop:mobius-energy](#prop:mobius-energy), which collapses to the repulsive $1/\lvert\varrho(s)-\varrho(t)\rvert^2$ as $q \to 1$ ([Frobenius–Hopf kernel](#lem:mobius-energy-frobenius-kernel)). We write the Hadamard finite-part decomposition of the categorical Möbius energy obtained by excising the diagonal,*
+*be the categorical Möbius two-point kernel of [prop:mobius-energy](#prop:mobius-energy), which collapses to the repulsive $1/\lvert\varrho(s)-\varrho(t)\rvert^2$ as $q \to 1$ ([Frobenius–Hopf kernel](#lem:mobius-energy-frobenius-kernel)). Under the Hadamard finite-part decomposition of the categorical Möbius energy obtained by excising the diagonal,*
 $$
   E_{\mathrm{cat}}(\varrho)
   \;=\;

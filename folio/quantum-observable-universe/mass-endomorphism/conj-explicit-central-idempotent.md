@@ -16,17 +16,17 @@ $$
 ## Why this is stated separately
 
 The cross-checks are what makes $e_\lambda$ *the* central primitive idempotent rather than merely an element of $Z(H_n(q))$, and they are the sole unproved input to
-[`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent). That proposition is proved in Lean *conditionally* on them, with the class carrying them as an explicit instance hypothesis. Naming the conjecture as its own block is what lets the proposition's `uses[]` record the dependency, so the conditional cone is auditable from the manifest and not only from the Lean signature.
+[the explicit central idempotent proposition](#prop:explicit-central-idempotent). That proposition holds *conditionally* on them, taking the interpolation hypothesis as an explicit premise.
 
 ## Open interpolation step
 
-The conjecture remains open. The carrier is the class `QOU.BraidKnot.ExplicitCentralIdempotent.ExplicitCentralIdempotentConjecture`, whose field states cross-check 2 — the one downstream Lean consumes — quantified over every partition of every $n$, so it is a claim about the whole construction and not about one $\lambda$. **No instance of the class exists anywhere in the corpus**, which is the correct representation of an unproved primary conjecture: an instance would assert the statement, not prove it.
+The conjecture remains open. Its hypothesis states cross-check 2 — quantified over every partition of every $n$, so it is a claim about the whole construction and not about one $\lambda$.
 
-The `J_k` diagonal action that the interpolation argument rests on is itself established — [`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou) gives pairwise commutation and the eigenvalue $J_k \cdot v_T = c_T(k;q) \cdot v_T$ on the Hoefsmit seminormal basis ([`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form)). What is missing is the step from that diagonal action to the four identities, which is the interpolation argument proper.
+The $J_k$ diagonal action that the interpolation argument rests on is itself established — [the Jucys–Murphy centrality proposition](#prop:jucys-murphy-central-elements-qou) gives pairwise commutation and the eigenvalue $J_k \cdot v_T = c_T(k;q) \cdot v_T$ on the Hoefsmit seminormal basis ([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)). What is missing is the step from that diagonal action to the four identities, which is the interpolation argument proper.
 
-## Scope of the Lean carrier
+## Scope of the interpolation hypothesis
 
-The class carries the **interpolation-theoretic inputs**, not the cross-checks
+The hypothesis carries the **interpolation-theoretic inputs**, not the cross-checks
 themselves: an index type $\mathrm{Tab}(\lambda)$ of standard tableaux, a
 projector $\pi_T$ for each, and three properties —
 
@@ -38,8 +38,5 @@ projector $\pi_T$ for each, and three properties —
 Cross-check 2 is then **derived**: $e_\lambda^2 = \sum_T \sum_{T'} \pi_T
 \pi_{T'} = \sum_T \pi_T^2 = \sum_T \pi_T = e_\lambda$.
 
-
 Cross-checks 1, 3 and 4 (sum-to-identity, self-adjointness, bar-pairing) are
-stated above but are still not encoded — they have no downstream consumer yet.
-Orthogonality is now encoded, at the projector level, because idempotency needs
-it. The class has **no instance**: the conjecture is open.
+stated above as part of the full interpolation conjecture; orthogonality at the projector level directly yields idempotency of $e_\lambda$.

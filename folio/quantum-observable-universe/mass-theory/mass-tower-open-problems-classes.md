@@ -1,5 +1,5 @@
-**Remark (Lean classes for open mass-tower problems).**
-*Four structural gaps remain in the mass-tower derivation. We formalise them as conditional typeclasses.*
+**Remark (conditional interfaces for open mass-tower problems).**
+*Four structural gaps in the mass-tower derivation are isolated as explicit conditional hypotheses.*
 
 1. **Term 7 shell correction (`Term7ShellCorrectionClass`)**. The unified mass formula underpredicts heavy isotopes. The correction coefficient $\alpha_5$ currently relies on empirical data. The class asserts a structural derivation exists from the Gröbner-Shirshov spectral sequence at height-6 partitions.
 2. **Chirality factor (`ChiralityFactorClass`)**. The deuterium chirality factor relies on an ansatz. The class asserts a full derivation from the structural first-order Kauffman expansion.

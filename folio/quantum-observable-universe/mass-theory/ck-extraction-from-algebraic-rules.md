@@ -1,7 +1,7 @@
 **$c_k$ extraction from four algebraic reduction rules on the typed-$\mathbf{B}_3$ word.**
 
 The $\mathfrak{Q}_\beta$ categorical precision ladder
-([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
+([q beta categorical precision ladder proposition](#prop:q-beta-categorical-precision-ladder))
 displays per-rung coefficients
 
 $$
@@ -11,7 +11,7 @@ $$
 $$
 
 with $b = \sqrt{q^4+q^2+1}/(q^2+1)$ (Hoefsmit $V_{(2,1)}$ off-diagonal
-coupling). We formalise the claim that these closed forms
+coupling). The conjecture is that these closed forms
 are **derivable outputs** of four algebraic reduction rules, not
 phenomenological identifications.
 
@@ -21,11 +21,8 @@ See [Table 1](#tbl:ck-extraction-from-algebraic-rules-table1-data).
 
 ## The extraction function
 
-The Lean module exports
-```
-noncomputable def ckFromReduction (q : ℝ) : ℕ → ℝ
-```
-returning the closed-form scalar value that Rules 1-4 jointly
+The reduction map $k \mapsto c_k^{\mathrm{red}}(q)$ returns the closed-form
+scalar value that Rules 1–4 jointly
 determine at order $\varepsilon^{2k}$ on the canonical typed-$\mathbf{B}_3$
 word:
 
@@ -33,13 +30,9 @@ See [Table 2](#tbl:ck-extraction-from-algebraic-rules-table2-data).
 
 ## Per-order agreement
 
-The Lean theorems
-`ckFromReduction_eq_c1`, $\ldots$, `ckFromReduction_eq_c4` discharge each
-agreement equality by `rfl` against the inline coefficients used in
-`N1_factor`, $\ldots$, `N4_factor` of the precision ladder.
-
-The synthesis theorem `ckFromReduction_matches_ladder` records the
-joint statement under all four class instances.
+For $k = 1, 2, 3, 4$, the extracted values $c_k^{\mathrm{red}}(q)$ agree
+identically with the coefficients $c_1, c_2, c_3, c_4$ used in the precision
+ladder factors $N_1, \ldots, N_4$ when all four reduction rules hold.
 
 ## Significance of the reframing
 
@@ -51,28 +44,24 @@ determine the unique normal form"** — which is checkable rule by rule:
 
 - Rules 1, 3 are already discharged for $V_{(2,1)}$ at $H_3(q)$ by the
   Hoefsmit matrix theorems.
-- Rule 2 (Hecke idempotents) is largely Mathlib-able via the standard
-  Iwahori-Hecke decomposition.
+- Rule 2 (Hecke idempotents) follows from the standard
+  Iwahori–Hecke $q$-Young symmetrizer decomposition.
 - Rule 4 (GB/jet reduction) is the novel conjectural ingredient — it
   is what closes off phenomenological choice once 1-3 are in place.
 
-The class skeleton makes each rule a **separate instance** to discharge,
-turning the c_k extraction into a structured Lean-engineering programme
-rather than a single open conjecture.
+Separating each rule as an independent algebraic condition isolates the $c_k$
+extraction into modular verification steps rather than a single monolithic conjecture.
 
 ## What remains open
 
-- Replace the `True` ansatz fields with the substantive matrix
-  identities they encode (`yb_cubic` $\leftarrow$ Hoefsmit YB cubic; `hecke_quad`
-  $\leftarrow$ `hoefsmit_sigma{0,1}_hecke_quadratic`).
-- Discharge `QYoungSymmetrizers 3 q` via the Mathlib Iwahori-Hecke
-  module (when complete) or via the explicit $H_3$ idempotent table.
-- Formalise the GB/jet normal-form procedure for $k = 1, 2$
+- Derive the matrix identities underlying the Hoefsmit Yang–Baxter cubic and Hecke quadratic directly within the reduction pipeline.
+- Construct the $H_3(q)$ $q$-Young symmetrizers explicitly from the Iwahori–Hecke idempotent table.
+- Establish the GB/jet normal-form procedure for $k = 1, 2$
   (where the reduction is short enough to discharge by
   case-analysis on the typed-$\mathbf{B}_3$ word structure).
 - Extend the extraction to $k \geq 5$ — the simple alternating
   Kashiwara $\times$ Jones pattern breaks at $c_5, c_6$, an open point recorded
-  in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder);
+  in [q beta categorical precision ladder proposition](#prop:q-beta-categorical-precision-ladder);
   the four-rule reframing may identify which rule's discharge needs
   enrichment (likely Rule 2 + Rule 4) to capture multi-link Jones
   contributions.

@@ -28,7 +28,7 @@ with demand $\{\gamma = -0.211\}$. This larger vacuum deficit reflects the extra
 
 ## Candidate operator comparison
 
-We evaluate nine candidate confinement operators by applying each to the typed crossings and measuring three quantities:
+Nine candidate confinement operators are compared by applying each to the typed crossings and evaluating three quantities:
 
 1. **Net constraint**: $|\mathrm{net}(\Phi \cdot \mathrm{crossings}) - \mathrm{net}_{\mathrm{target}}|$
 2. **Markov trace**: $\mathrm{tr}_M(\Phi \cdot \mathrm{crossings})$ (categorical action)
@@ -38,4 +38,4 @@ We evaluate nine candidate confinement operators by applying each to the typed c
 
 **Topological selection.** Among three-strand braid closures, $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is the crossing-minimal nontrivial Brunnian link. Its closure has three components, all three pairwise linking numbers vanish, yet every two-component sublink is the unlink. No braid of fewer than six crossings is nontrivially Brunnian. This selection relies on no physical input.
 
-**Net consistency check.** We confirm the topologically selected $\mathcal{B}_3$ against the physical data. Its $|\Delta\mathrm{net}|$ is closest among the candidates, and it successfully confines. The identity leaves the quark demand profile unchanged. This match acts as a consistency check.
+**Net consistency check.** Comparing the topologically selected $\mathcal{B}_3$ against the physical data confirms the selection. Its $|\Delta\mathrm{net}|$ is closest among the candidates, and it successfully confines. The identity leaves the quark demand profile unchanged. This match acts as a consistency check.

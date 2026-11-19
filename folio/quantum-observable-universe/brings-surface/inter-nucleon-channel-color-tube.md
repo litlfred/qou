@@ -1,4 +1,4 @@
-**Conjecture (conditional on `conj:s5-so3-fiber-action`).** The canonical inter-nucleon Hecke channel assignment for the atomic braid word—currently realised as the uniform-flavor map $\mathrm{pp} \mapsto \sigma$, $\mathrm{nn} \mapsto \sigma^{-1}$, $\mathrm{pn} \mapsto \sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2$ in [`isotope_record_schema.py:65{-}70, 176{-}178`](../../../computations/isotope_record_schema.py)—is the **flavor-only projection** of a categorically-refined *color-tube weighted* assignment derived from the Bring color-tube structure on the quintic.
+**Conjecture (conditional on the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action hypothesis).** The canonical inter-nucleon Hecke channel assignment for the atomic braid word—currently realised as the uniform-flavor map $\mathrm{pp} \mapsto \sigma$, $\mathrm{nn} \mapsto \sigma^{-1}$, $\mathrm{pn} \mapsto \sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2$ in [`isotope_record_schema.py:65{-}70, 176{-}178`](../../../computations/isotope_record_schema.py)—is the **flavor-only projection** of a categorically-refined *color-tube weighted* assignment derived from the Bring color-tube structure on the quintic.
 
 ## Setup
 
@@ -7,11 +7,11 @@ Each nucleon carries 3 quark color sheets. The nucleon type fixes the quark-flav
 - **proton** (uud): color sheets $(\mu_u, \mu_u, \mu_d)$
 - **neutron** (udd): color sheets $(\mu_u, \mu_d, \mu_d)$
 
-The atomic braid word ([`prop:atom-knot-exists`](#prop:atom-knot-exists)) places one inter-nucleon Hecke generator at every position $3k + 2$ for each adjacent nucleon pair $k, k+1$ with $k = 0, \ldots, A - 2$. This gives $A - 1$ inter-nucleon arcs total (matching [`isotope_record_schema.build_knot_operator_catalogue`](../../../computations/isotope_record_schema.py) lines 248-262 and [`def:canonical-braid-interface-composition`](../mass-theory/canonical-braid-interface-composition.md)). The current production assignment treats each such generator as a single element of the Hecke algebra $H_{3A}(q)$—one $\sigma$ for pp, one $\sigma^{-1}$ for nn, one $\sigma_{\mathrm{avg}}$ for pn—regardless of which flavor triple across the three color sheets pairs across the inter-nucleon arc.
+The atomic braid word ([atom knot existence](#prop:atom-knot-exists)) places one inter-nucleon Hecke generator at every position $3k + 2$ for each adjacent nucleon pair $k, k+1$ with $k = 0, \ldots, A - 2$. This gives $A - 1$ inter-nucleon arcs total (matching [`isotope_record_schema.build_knot_operator_catalogue`](../../../computations/isotope_record_schema.py) lines 248-262 and [canonical braid interface composition](../mass-theory/canonical-braid-interface-composition.md)). The current production assignment treats each such generator as a single element of the Hecke algebra $H_{3A}(q)$—one $\sigma$ for pp, one $\sigma^{-1}$ for nn, one $\sigma_{\mathrm{avg}}$ for pn—regardless of which flavor triple across the three color sheets pairs across the inter-nucleon arc.
 
 ## The conjectural refinement
 
-Per [`def:color-tube-coordinates`](color-tube-coordinates.md) and [`def:color-tube-fibers`](color-tube-fibers.md), Bring's surface carries a canonical $(r, g, b)$ color-tube fiber structure. The $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action on Bring's quintic (conjectural class supplied by `conj:s5-so3-fiber-action`) maps each Bring fiber to a 3-dimensional color rotation. Composing with the nucleon color-sheet assignment gives a canonical $3 \times 3 = 9$-element matrix of color-pair couplings per inter-nucleon arc.
+Per [color tube coordinates](color-tube-coordinates.md) and [color tube fibers](color-tube-fibers.md), Bring's surface carries a canonical $(r, g, b)$ color-tube fiber structure. The $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action on Bring's quintic maps each Bring fiber to a 3-dimensional color rotation. Composing with the nucleon color-sheet assignment gives a canonical $3 \times 3 = 9$-element matrix of color-pair couplings per inter-nucleon arc.
 
 **Conjectured refined assignment.** For each inter-nucleon arc with nucleon-pair flavor triples $(F_1, F_2) \in \{u, d\}^3 \times \{u, d\}^3$ across the three color sheets, the canonical Hecke generator is the color-sheet-weighted sum
 
@@ -43,27 +43,7 @@ The **gg-production collapse** isolates the cost of the projection directly. Dec
 
 ## Conditional structure
 
-This conjecture remains conditional on `conj:s5-so3-fiber-action` being formalised as a Lean class. Once available, the weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom. The statement then becomes unconditional: it is a conjecture only for as long as that upstream class is uninhabited.
-
-## Lean axiomatisation (sketch)
-
-```lean
--- Conditional on the S₅↔SO(3) fiber-action class:
-class InterNucleonChannelColorTube
-    (M : Type*) [BrCategory M] [ColorTube M] [S5SO3Fiber M] where
-  /-- Per-arc canonical Hecke generator for (color-pair, nucleon-pair). -/
-  hecke_of_color_pair :
-    NucleonColorPair → HeckeAlgebra M
-  /-- The flavor-only projection (current production rule) is the
-      categorical average of `hecke_of_color_pair` over the 9 color
-      pairs of the (nucleon₁, nucleon₂) flavor type. -/
-  flavor_projection_compatibility :
-    ∀ (C₁ C₂ : NucleonColorContent),
-      avg_over_color_pairs (hecke_of_color_pair (C₁, C₂))
-        = flavor_only_hecke (flavor_of C₁) (flavor_of C₂)
-```
-
-The class becomes inhabited by the $S_{5}$/SO(3) fiber data once `conj:s5-so3-fiber-action` is established.
+This conjecture remains conditional on the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber-action hypothesis. Once that action is established, the weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom. The statement then becomes unconditional.
 
 ## Consumers
 
@@ -87,14 +67,12 @@ The chirality sign $\epsilon(c_1, c_2, F_1, F_2) \in \{+1, -1, 0\}$ is constrain
 With $q = e^{\eta}$, the $\mathrm{SU}(2)_q$ doublet character is $[2]_q = 2\cosh\eta$ and the lowest $\mathrm{SO}(3)_q$ (integer-spin) character is the adjoint $[3]_q$. They satisfy the Chebyshev/Clebsch–Gordan square identity
 
 $$
-  [3]_q \;=\; [2]_q^{\,2} - 1,
+  [3]_q \;=\; [2]_q^{\,2} - 1.
 $$
 
-formalised as `so3_adjoint_eq_chebyshev` in [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6. The $\mathrm{SO}(3)$ characters are exactly the polynomials in $[2]_q$ invariant under the $\mathbb{Z}_2$ quotient. Any admissible $\epsilon$ rule must be a section of this same $\mathbb{Z}_2$-grading. A valid $\epsilon$ cannot assign $-1$ to a color-sheet pair whose combined flavor content sits in the integer-spin (tensor) sector. The explicit map from color-sheet pairs $(c_1, c_2)$ to the $\mathbb{Z}_2$-grade still requires the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action of `conj:s5-so3-fiber-action`.
+The $\mathrm{SO}(3)$ characters are exactly the polynomials in $[2]_q$ invariant under the $\mathbb{Z}_2$ quotient. Any admissible $\epsilon$ rule must be a section of this same $\mathbb{Z}_2$-grading. A valid $\epsilon$ cannot assign $-1$ to a color-sheet pair whose combined flavor content sits in the integer-spin (tensor) sector. The explicit map from color-sheet pairs $(c_1, c_2)$ to the $\mathbb{Z}_2$-grade still requires the $S_5 \leftrightarrow \mathrm{SO}(3)$ fiber action.
 
 ## Cross-references
 
 - Existing color-tube infrastructure: [`color-tube-coordinates.md`](color-tube-coordinates.md), [`color-tube-fibers.md`](color-tube-fibers.md), [`color-tube-cubic.md`](color-tube-cubic.md)
-- Supplier class: `conj:s5-so3-fiber-action`
-- $\mathrm{SO}(3)_q = \mathrm{SU}(2)_q/\mathbb{Z}_2$ level structure: [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6 (`so3_adjoint_eq_chebyshev`)
 - Empirical probe scripts: [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py), [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py)

@@ -1,3 +1,3 @@
 Given a fixed quantum observable universe ([quantum observable universe](#def:quantum-observable-universe)) $(\mathbf{C}, A, \tau)$ and a fixed closed cycle $\varrho \colon \mathbf{1} \to A$, the scalar ambiguity of the Frobenius pairing uniquely determines the inertial mass $\mathfrak{m}(\varrho)$ ([uniqueness of Frobenius pairing](#prop:frobenius-pairing-unique)). Specifically, if $\int_A^{(1)} = c \int_A^{(2)}$, then $\mathfrak{m}_{(1)}(\varrho) = |c| \cdot \mathfrak{m}_{(2)}(\varrho)$. 
 
-Once we fix a normalisation for $\int_A$, the mass function $\mathfrak{m} \colon \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A) \to R$ is unique.
+Once a normalisation for $\int_A$ is fixed, the mass function $\mathfrak{m} \colon \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A) \to R$ is unique.

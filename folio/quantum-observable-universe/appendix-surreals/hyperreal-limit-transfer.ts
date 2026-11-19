@@ -17,4 +17,11 @@ export default theorem({
   },
   uses: ["conj:surreal-limit-transfer"],
   cites: ["robinson1966", "conway1976"],
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Proved in Mathlib's hyperreals (Real*) in QOU.AppendixSurreals.HyperrealTransfer.st_ofSeq_of_tendstoReal: infinitesimal closeness agrees definitionally (by rfl) with Mathlib's IsSt, pushing Filter.Tendsto along Filter.atTop to IsSt without the converse.",
+    },
+  ],
 });

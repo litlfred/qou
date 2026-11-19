@@ -28,38 +28,33 @@ These are two different mathematical objects that coincide numerically
 at $q = 1$: one is a binomial coefficient, the other is a normalization
 constant.
 
-**What is $q$-independent — machine-checked.**
-The following are proved in
-`QOU/Eightfold/WeylInvarianceQDeformation.lean`:
+**What is $q$-independent — established directly.**
+The following properties hold algebraically:
 
 - The off-diagonal entry $a_{12} = -1$ and the Serre exponent
-  $1 - a_{12} = 2$ (`cartan_A2_offdiag`, `serre_exponent_A2`).
+  $1 - a_{12} = 2$.
 - The $q$-Serre coefficient $[2]_q$ genuinely *moves* with $q$ ---
   witnessed at $q = 2$, where the framed binomial is $5$ and the framed
-  Cartan diagonal is $4$ (`qSerre_not_constant`) --- while the
-  Cartan datum does not (`cartanMatrixAt_const`).  The conjunction
-  of the two is the "two $2$s" separation
-  (`cartan_fixed_while_qSerre_moves`), and it is the conjunction,
+  Cartan diagonal is $4$ --- while the
+  Cartan datum does not.  The conjunction
+  of the two is the "two $2$s" separation, and it is the conjunction,
   not either half alone, that carries the content: constancy of the Cartan
   datum is true *by construction* and is compatible with both sides
   being constant, which is exactly the confusion at issue.
-- For $(q-1)^2 \neq 0$ the two differ
-  (`qSerre_neq_cartan_diag`); they agree at $q = 1$
-  (`qSerre_eq_cartan_at_classical`).
-- The root-angle ratio $\cos\theta = a_{ij}/a_{ii} = -1/2$
-  (`root_angle_ratio_A2`).
+- For $(q-1)^2 \neq 0$ the two differ; they agree at $q = 1$.
+- The root-angle ratio $\cos\theta = a_{ij}/a_{ii} = -1/2$.
 
-**What the Lean does not establish.**
+**Scope of the algebraic separation.**
 That Drinfeld--Jimbo quantisation leaves the root datum invariant is a
-theorem of Lusztig/Kashiwara, cited here and *not* formalised in this
-corpus; it belongs to the "standard, but not formalised" list below, not
-to the machine-checked list above.  What is machine-checked is the
+theorem of Lusztig/Kashiwara, cited here and *not* re-derived in this
+work; it belongs to the cited standard results below, not
+to the elementary separation above.  What is proved directly is the
 *arithmetic* of the separation on the $A_2$ datum, which is a weaker
 statement and should not be cited for the stronger one.
 
-**What is $q$-independent — standard, but not formalised here.**
-These follow from the Drinfeld--Jimbo construction and are cited here, not
-machine-checked:
+**What is $q$-independent — standard, cited from the literature.**
+These follow from the Drinfeld--Jimbo construction and are cited here rather than
+re-derived:
 
 - The root lattice $\Lambda_R = \mathbb{Z}\alpha_1 \oplus
   \mathbb{Z}\alpha_2$ and the weight lattice $\Lambda_W =

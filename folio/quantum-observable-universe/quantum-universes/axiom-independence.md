@@ -1,13 +1,11 @@
-Are the four axioms of a quantum universe independent?
+Are the axioms of a [quantum universe](#def:quantum-universe) independent?
 
-**Temporal braiding.** Over a characteristic-zero field, Deligne's theorem shows every symmetric :refterm[monoidal category]{#monoidal-category} admits a fibre functor. We require only a braiding, and only over a commutative ring, so the fibre functor is not supplied for us. The braiding axiom is independent of the fibre functor.
+**Temporal braiding.** Over a characteristic-zero field, Deligne's theorem \cite{deligne1990} shows that every symmetric :refterm[monoidal category]{#monoidal-category} satisfying moderate growth admits a fibre functor. A quantum universe requires only a braiding, and works over an arbitrary commutative ring $R$, so neither symmetry of the braiding nor existence of a fibre functor follows from the monoidal axioms alone. The well-founded braiding axiom is therefore independent of the fibre functor.
 
-**Frobenius--Hopf.** A general Hopf algebra need not carry a non-degenerate Frobenius form. The Frobenius condition $A \cong A^{\vee}$ is strictly stronger than the Hopf axioms.
+**Frobenius--Hopf substrate.** A general algebra or bialgebra object in a braided monoidal category need not admit a non-degenerate Frobenius pairing or an involutive antipode. The self-duality $A \cong A^{\vee}$ induced by the Frobenius form and its [snake identities](#def:snake-identity) is strictly stronger than the algebra and coalgebra axioms alone.
 
-**Symmetric Frobenius.** A Frobenius algebra need not be symmetric: the left and right traces induced by a non-symmetric form differ by the Nakayama automorphism, which is trivial exactly when the form is symmetric. The axiom is therefore a genuine restriction on the Frobenius--Hopf datum, not a consequence of it.
+**Symmetric Frobenius trace.** A Frobenius substrate need not be symmetric: the left and right categorical traces induced by a non-symmetric Frobenius form differ by the Nakayama automorphism, which is the identity morphism exactly when the Frobenius pairing is symmetric. Axiom 3 is therefore a genuine restriction on the [Frobenius--Hopf substrate](#def:frobenius-hopf-substrate), not a consequence of axiom 2.
 
-**Wedderburn semisimplicity.** A Frobenius object need not be semisimple: a truncated polynomial algebra $k[x]/(x^n)$ carries a non-degenerate Frobenius form and is local, hence has a single block and a nilpotent radical. Semisimplicity is therefore independent of the preceding three axioms. It is the assumption that does the work later: given it, the co-Casimir trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)) follows by linearity over the central idempotents rather than being assumed.
+**Universal first-order differential calculus.** For smooth commutative algebras, Kähler differentials represent first-order derivations automatically; for noncommutative Frobenius--Hopf substrates \cite{woronowicz1989}, first-order differential calculi need not reduce to a commutative quotient, so carrying the universal kernel $\Omega^1(A) = \ker(\mu \colon A \otimes A \to A)$ as part of the structure is an independent datum rather than a consequence of the algebra laws.
 
-The differential calculus $\Omega^1(A)$ is a separate matter. For smooth algebraic groups Kähler differentials exist automatically, but for quantum groups ($q \neq 1$) a differential calculus need not exist or be unique, so its existence is an assumption rather than a theorem.
-
-In full generality, all four axioms are independent.
+In full generality, the three axioms and the differential calculus datum are mutually independent.

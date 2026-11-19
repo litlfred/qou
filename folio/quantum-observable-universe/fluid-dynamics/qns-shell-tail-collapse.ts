@@ -27,5 +27,9 @@ export default proposition({
         "per-amplitude step and the dissipation-scale condition are " +
         "explicit hypotheses, never assumed of full NS.",
     },
+    {
+      kind: "note",
+      body: "Lean declarations in `QOU.FluidDynamics.PhysicalLayerLeray`: `rung_equilibrium_forced` (1), `trajectory_ladder_bounds` (2), `trajectory_tail_collapse` (3), and `rung_equilibrium_two_source`, `two_source_ladder_collapse`, `trajectory_two_source_bounds`, `multi_source_ladder_uniform` (4).",
+    },
   ],
 });

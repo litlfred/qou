@@ -7,7 +7,7 @@ $$
 $$
 
 the Clausen function $\mathrm{Cl}_2(\theta)$
-([Clausen function Mathlib filler](#rem:clausen-function-mathlib-filler)).
+([Clausen function definition](#rem:clausen-function-mathlib-filler)).
 Its critical points solve
 
 $$

@@ -23,7 +23,7 @@ export default remark({
   authorNotes: [
     {
       kind: "status",
-      body: "**n = 3 fully verified** in Lean. **n $\\ge$ 4 open** — concrete next\nprobe is the B_4 typed-braid character difference at each of the\nfive irreps, testing whether the predicted $\\Phi_4, \\Phi_{12}, \\Phi_8$\nfactors appear.",
+      body: "**n = 3 fully verified** in Lean (`chi_V3_numerator_matches`, `chi_V21_numerator_matches`, `chi_V111_numerator_matches`, `PhiD4FConjecture`, `phiDConj_V3`, `phiDConj_V21`, `phiDConj_V111`). **n $\\ge$ 4 open** — concrete next\nprobe is the B_4 typed-braid character difference at each of the\nfive irreps, testing whether the predicted $\\Phi_4, \\Phi_{12}, \\Phi_8$\nfactors appear.",
     },
   ],
 });

@@ -2,7 +2,7 @@ Liouville's theorem and Roth's theorem bound the approximability
 of an algebraic irrational by rationals: if $\alpha$ is algebraic of
 degree $d$, then $|\alpha - p/q| > c/q^d$ for sufficiently large
 $q$ (Liouville), and Roth improves the exponent to $2 + \delta$ for
-any $\delta > 0$.  We use $\delta$ rather than $\varepsilon$ here
+any $\delta > 0$. Here $\delta$ is written rather than $\varepsilon$
 to avoid collision with the surreal infinitesimal $\varepsilon =
 1/\omega$ used elsewhere in this appendix.
 
@@ -96,7 +96,7 @@ object: **how efficiently rationals approach a real**.
 
 ## Specialisation to QOU
 
-The substrate parameter $q_0$ is the observed substrate value at our location; it is extracted by a canonical categorical procedure (via fibre-functor rigidity, Tannaka-Krein, etc.) but its numerical value is empirical. The conjecture predicts:
+The substrate parameter $q_0$ is the locally observed substrate value; it is extracted by a canonical categorical procedure (via fibre-functor rigidity, Tannaka-Krein, etc.) but its numerical value is empirical. The conjecture predicts:
 
 - if $q_0$ is algebraic, its birthday *trajectory* $b_{q_0}(n)$
   is logarithmic (bounded continued-fraction partial quotients, per

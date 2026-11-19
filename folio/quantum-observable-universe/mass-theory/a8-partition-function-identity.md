@@ -51,7 +51,7 @@ Table 1; Andrews, *The Theory of Partitions*, §1.1).
 
 ## Cross-references
 
-- Sibling Lean identity (cyclotomic strand-doubling):
+- Sibling cyclotomic strand-doubling identity:
   [`cyclotomic-strand-doubling.md`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.md)
 - categorical source: the canonical formalism
 

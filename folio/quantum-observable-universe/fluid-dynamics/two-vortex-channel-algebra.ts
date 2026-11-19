@@ -31,5 +31,9 @@ export default proposition({
         "home chapter (subject-matched), and the true logical flow runs the other " +
         "way: that definition consumes this channel algebra, not vice versa.",
     },
+    {
+      kind: "status",
+      body: "Lean sibling over generic CommRing (`QOU.FluidDynamics.TwoVortexChannelAlgebra`): `channel_algebra` and standalone field lemma `eigenvalue_ratio`.",
+    },
   ],
 });

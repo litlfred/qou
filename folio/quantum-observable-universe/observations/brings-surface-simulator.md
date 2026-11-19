@@ -1,4 +1,4 @@
-We provide a 3D visualisation of quaternionic spectral resolvent coordinates on Bring's surface.
+This simulator provides a 3D visualisation of quaternionic spectral resolvent coordinates on Bring's surface.
 
 The simulator renders the four $\beta$-branches of the spectral resolvent:
 

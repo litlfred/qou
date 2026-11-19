@@ -1,4 +1,4 @@
-Every particle is built from knots and links embeddable on Bring's surface. We catalog the building blocks.
+Every particle is built from knots and links embeddable on Bring's surface; the tables below catalogue these building blocks.
 
 ## Visual convention
 

@@ -94,5 +94,9 @@ export default conjecture({
       date: "2026-06-16",
       body: "**Story/structure follow-up (owner-flagged).** This collapses the mass-binding and β-decay chapters into one derivation (compute `$\mathfrak{V}$(K)` once; Re = every binding, Im = every Q-value). A chapter/section reorg + one-voice pass is warranted so the paper tells the single complex-volume story rather than two disjoint ones — tracked as a follow-up, not done in this PR.",
     },
+    {
+      kind: "note",
+      body: "Lean declarations in `binding-qbeta-complex-volume.lean` (`QOU.MassEndomorphism.ComplexVolumeUnification`): `ComplexVolumeMatch`, `SingleFrakVAssembly`, `StageCSigma3Lift`, `binding_canonical`, `lusztig_q_0_imaginary_part_zero`, `QOU.QBeta.PhiBSArgumentIdentification.SDeformedVolumeChannel` (`phase_eq_im_deformed_volume`, `phiB_eq_cs_phase`, `exists_cs_vanishing`), `QOU.QBeta.UDeformFamilyPruning`, `invol_descent`, `recurrence_invol_descent`, `evenStep`, `oddStep`, `rotation_step`, `eigencolumn_eq_overlap`, `ChannelLeonardDuality`, `AWDeformationPath`, `channel_ladders`, `chQR_rel`, `chLQ_rel`, `chLR_comm`, `chM_eigencolumn_iff`, `casoratian_step`, `channel_casoratian_const`.",
+    },
   ],
 });

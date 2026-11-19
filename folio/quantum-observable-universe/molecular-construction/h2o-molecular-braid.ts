@@ -13,4 +13,10 @@ export default definition({
     "c2v",
     "lone-pair",
   ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Lean sibling `QOU.Molecular.waterParts`: self-contained combinatorial strand-partition datum fixing N = 28, two bonding generators, and hydrogen-exchange symmetry.",
+    },
+  ],
 });

@@ -5,4 +5,4 @@
 *Two further properties of the filtration are worth stating, though **neither is used in the uniqueness argument**:*
 
 1. *The filtration $J^\bullet(q)$ is **monotone**: $J^0(q) \subseteq J^1(q) \subseteq \cdots \subseteq J^m(q) = H_n(R, q)$, so the valid level set is **upward-closed**. This is what makes $\ell$ a threshold rather than an isolated index, and it is why tied operators enter together at a single level without disturbing uniqueness.*
-2. *The valid set is **nonempty** (it contains $m$, since $J^m = H_n$). This is what [`prop:confinement-level-exists`](confinement-level-exists.md) needs — existence follows from nonemptiness by well-ordering of $\mathbb{N}$ — and it is not needed here.*
+2. *The valid set is **nonempty** (it contains $m$, since $J^m = H_n$). This is what [confinement level existence](confinement-level-exists.md) needs — existence follows from nonemptiness by well-ordering of $\mathbb{N}$ — and it is not needed here.*

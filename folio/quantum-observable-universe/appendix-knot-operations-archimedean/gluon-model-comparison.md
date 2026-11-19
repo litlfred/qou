@@ -44,7 +44,7 @@ The $L_+$ and $L_-$ terms constitute the Hopf link $\mathcal{L}_H$. The $\oplus$
 
 The near-cancellation $+0.046 - 0.044 = +0.002$ reflects baryon color neutrality. The $\gamma$ term ($\approx +0.998$) places $B_3$ perturbatively close to the identity.
 
-We confirm the Model A proton and neutron NF:
+Direct evaluation gives the Model A proton and neutron NF:
 
 $$
   \mathfrak{p} = B_3 \cdot \sigma(\mathfrak{u},\mathfrak{u})

@@ -45,7 +45,7 @@ alone and needs no analytic input.
 Not settled: the *value*. Locating the line does not evaluate anything on it,
 and no bar-odd action value is asserted here or in the propositions this remark
 interprets. The sum rule
-([`prop:fivetwo-saddle-sum-rule`](#prop:fivetwo-saddle-sum-rule)) is symmetric in
+([the $5_2$ saddle sum rule](#prop:fivetwo-saddle-sum-rule)) is symmetric in
 the conjugate pair and therefore bar-even; it constrains the even channel and
 leaves the odd one open.
 

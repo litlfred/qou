@@ -1,6 +1,6 @@
 In the unified six-term formula ([unified knot mass](#thm:knot-mass-formula-unified)), $|\mathrm{tr}_M(\rho(\beta))|$ forms **Term 1** ($E_\infty^{0,*}$, vortex-specific). The brane tower $\sum \Phi_q(z_i)$ supplies **Terms 2–3** ($E_\infty^{1,*}$ and $E_\infty^{2,*}$). In the archimedean realisation, these three terms together evaluate to $\mathrm{Vol}(K)/\hbar_q^2$ ([topological decomposition](#thm:topological-mass)). Terms 4–6 (Frobenius co-Casimir, chirality, jet prefix) form separate structural pieces handled elsewhere. This conjecture concerns only the tower piece.
 
-We define the **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ ([Hecke mass element](#def:hecke-mass-element)) categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. Its Markov trace gives the full categorical mass ([mass via Markov trace](#prop:hecke-mass-trace)). The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
+The **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ ([Hecke mass element](#def:hecke-mass-element)) is defined categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. Its Markov trace gives the full categorical mass ([mass via Markov trace](#prop:hecke-mass-trace)). The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
 
 ## Scope: convenience target, not load-bearing
 
@@ -18,9 +18,9 @@ The scope of this conjecture is as follows:
     \Bigr).
   $$
 
-  This follows from [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) and [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
+  This follows from [the unified knot mass formula](#thm:knot-mass-formula-unified) and [the mass endomorphism tower](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
 
-- **Convenience target** (the conjectural content here): We conjecture the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
+- **Convenience target** (the conjectural content here): The conjecture posits the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
 
 If this conjecture fails (no closed-form $\Phi_{\mathrm{mass}}$ exists in finite-rank $H_n(R, q)$), the algebraic mass formula remains valid as the infinite series. Compute scripts attempting to materialise $\Phi_{\mathrm{mass}}$ as a single element must truncate explicitly. Scripts that evaluate the infinite sum at $q_0$ (the dominant case) remain unaffected.
 
@@ -57,9 +57,9 @@ The tower converges in $\sim 20$ terms. This rate is consistent with $t_P = 1/\h
 
 ## Established results
 
-**Step 1 (Categorical $\to$ Markov, proved).** We have $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$. This is [categorical mass as Markov trace](#prop:categorical-mass-markov). The Nakayama automorphism is $S^2 = \mathrm{id}$, so the mass reduces to the Markov trace of the braid word.
+**Step 1 (Categorical $\to$ Markov, proved).** Single-level mass satisfies $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$. This is [categorical mass as Markov trace](#prop:categorical-mass-markov). The Nakayama automorphism is $S^2 = \mathrm{id}$, so the mass reduces to the Markov trace of the braid word.
 
-**Step 2 (Tower sum $\to$ Vol, archimedean).** We have $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$. This is the [archimedean mass formula](#prop:topological-mass-formula). The descended trace gives $\mathrm{Vol}(K)$, each transient trace gives $\Phi_q(z_i)$, and their sum is $\mathrm{Vol}(K)/\hbar_q^2$.
+**Step 2 (Tower sum $\to$ Vol, archimedean).** Full-tower mass satisfies $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$. This is the [archimedean mass formula](#prop:topological-mass-formula). The descended trace gives $\mathrm{Vol}(K)$, each transient trace gives $\Phi_q(z_i)$, and their sum is $\mathrm{Vol}(K)/\hbar_q^2$.
 
 **Step 3 (Markov trace $\neq$ Vol, the gap).** The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is the Jones polynomial $J(K; q)$—a Laurent polynomial in $q^{1/2}$. The hyperbolic volume $\mathrm{Vol}(K)$ is a transcendental number. They are different knot invariants: $J(\text{trefoil}; q) = -q^{-4} + q^{-3} + q^{-1}$ while $\mathrm{Vol}(\text{trefoil}) = 0$.
 
@@ -75,7 +75,7 @@ $$
 
 where $J_N$ is the $N$-colored Jones polynomial. This limit involves evaluating at roots of unity ($q = e^{2\pi i/N}$, not generic $q$), the $N$-dimensional representation (not the fundamental), and an asymptotic limit ($N \to \infty$). Each step departs from the Hecke algebra at generic $q$.
 
-The Habiro ring ([Habiro ring](#def:habiro-ring)) partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume ([algebraic quantum volume](#def:algebraic-quantum-volume)) $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element. We evaluate directly at the substrate parameter, rather than passing through roots of unity.
+The Habiro ring ([Habiro ring](#def:habiro-ring)) partially closes this gap. The colored Jones polynomials for all $N$ coexist as a single element of $\widehat{\mathbb{Z}[q]}$. The algebraic quantum volume ([algebraic quantum volume](#def:algebraic-quantum-volume)) $\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into $\widehat{\mathbb{Z}[q^{1/2}]}$. Its evaluations at roots of unity collectively encode the hyperbolic volume via the Volume Conjecture. The mass at $q_0$ is a different specialisation of the same Habiro element, evaluated directly at the substrate parameter rather than passing through roots of unity.
 
 ## Encoding requirements for $\Phi_{\mathrm{mass}}$
 
@@ -136,7 +136,7 @@ The single-level (descended) Markov trace contributes less than $0.5\%$ of the t
 
 ## Computational verification (single-level)
 
-We tested three single-level approaches for the proton ($uud$) and neutron ($udd$) Borromean braids:
+Three single-level approaches were evaluated for the proton ($uud$) and neutron ($udd$) Borromean braids:
 
 | Method | Proton | Neutron | Ratio $n/p$ | CODATA |
 |:---|:---:|:---:|:---:|:---:|

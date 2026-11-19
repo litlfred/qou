@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)).**
+**Proposition (conditional on the [$q$-integer mass formula](#conj:q-integer-mass-formula)).**
 *The LP dual of the $H_2$ molecular braid selects the interleaved ordering $[\mathfrak{p}_1, e_2, \mathfrak{p}_2, e_1]$ as the ground state, with molecular volume:*
 
 $$

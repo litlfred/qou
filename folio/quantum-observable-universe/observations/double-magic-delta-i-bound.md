@@ -17,7 +17,7 @@ All nine observed doubly-magic isotopes have $\Delta i \in \{0, 1\}$. No empiric
 
 ## Categorical interpretation
 
-Per [`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion), double-magic stability requires the LR-fusion
+Per the [double-magic LR-fusion conjecture](#conj:diagrammatic-double-magic-lr-fusion), double-magic stability requires the LR-fusion
 
 $$
   V_{\lambda_Z} \otimes V_{\lambda_N}
@@ -25,11 +25,11 @@ $$
   H_A(q_0)
 $$
 
-to have a dominant rank-1 component $V_{\lambda_A}$ that is self-conjugate and gapless. We combine this with the Bring-shell-binding picture ([`prop:torus-knot-shell-binding`](#prop:torus-knot-shell-binding)).
+to have a dominant rank-1 component $V_{\lambda_A}$ that is self-conjugate and gapless, combined here with the [Bring torus-knot shell-binding picture](#prop:torus-knot-shell-binding).
 
 See [Table 2](#tbl:double-magic-delta-i-bound-table2-data).
 
-We specify the mechanism. Let $\lambda_Z$ be a Bring shell-$i$ diagram and $\lambda_N$ be a Bring shell-$j$ diagram. The LR-tensor's structure depends on the relationship between $i$ and $j$:
+The mechanism operates as follows. Let $\lambda_Z$ be a Bring shell-$i$ diagram and $\lambda_N$ be a Bring shell-$j$ diagram. The LR-tensor's structure depends on the relationship between $i$ and $j$:
 
 - $i = j$: $V_\lambda \otimes V_\lambda$ has a dominant self-conjugate component $\lambda_A$ matching the doubled diagram (compatible).
 - $j = i + 1$: $V_{\lambda_Z} \otimes V_{\lambda_N}$ has a dominant component obtained by extending $\lambda_Z$ by the new shell-$(i+1)$ cells of $\lambda_N$ (compatible).
@@ -39,7 +39,7 @@ The $\Delta i \leq 1$ rule forms the LR-fusion compatibility constraint between 
 
 ## Discussion
 
-We conjecture, axiomatised as a Lean class:
+The conjecture separates into two complementary implications:
 
 - **Forward direction** ($\Delta i \leq 1 \Rightarrow$ LR-fusion compatible): Relies on the LR-rigidity of adjacent Bring shells.
 - **Reverse direction** ($\Delta i \geq 2 \Rightarrow$ LR-fusion shattered): Relies on a categorical shell-gap argument.
@@ -60,8 +60,6 @@ The $\Delta i \leq 1$ constraint reduces the search space for double-magic LR-fu
 - **With rule**: $19$ pairs ($7$ diagonal + $12$ off-diagonal). A $61\%$ reduction.
 - **With rule + physical convention $i_Z \leq i_N$**: $13$ pairs ($7$ diagonal + $6$ above). A $73\%$ reduction.
 
-This restriction accelerates the algebraic-primality verifier ([`sdp-primality-verifier-spec.md`](../../../computations/sdp-primality-verifier-spec.md)). The LR-coefficient computation per pair scales as $O(p(n))^2$.
-
-Empirical tests on small-$n$ pairs via `optimised_magic_verifier.py` measure an approximate $16\times$ speedup on the tractable subset.
+This restriction accelerates algebraic-primality verification, where LR-coefficient computation per pair scales as $O(p(n))^2$; benchmarks on tractable small-$n$ pairs show an approximate $16\times$ speedup.
 
 Coupled with the Bring 6-knot basis restriction, which cuts partition enumeration from $p(n)$ to $\leq 6$ for shell-binding analysis, these structural predictions enable significant compute savings beyond generic LP/SDP solvers.

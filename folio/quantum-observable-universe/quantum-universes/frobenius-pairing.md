@@ -1,4 +1,4 @@
-The Frobenius pairing makes $A$ self-dual. The motivating instance is the quantum-dimension pairing of $\mathbf{Rep}(\mathrm{SU}_q(2))$ (see [example](#ex:frobenius-pairing-su2)). 
+The Frobenius pairing makes $A$ self-dual. The motivating instance is the Haar pairing on $\mathcal{O}(\mathrm{SU}(2))$ in $\mathbf{Rep}(\mathrm{SU}(2))$, developed in the next section.
 
 Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) with multiplication $\mu \colon A \otimes A \to A$ and Frobenius form $\int_A \colon A \to \mathbf{1}$. The **Frobenius pairing** is the composite:
 
@@ -22,4 +22,4 @@ A \xrightarrow{\rho^{-1}} A \otimes \mathbf{1}
   \xrightarrow{\lambda_A} A
 $$
 
-and its mirror equal $\mathrm{id}_A$. For $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$, this recovers the quantum-dimension pairing.
+and its mirror equal $\mathrm{id}_A$. For $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}(2))$, this recovers the canonical representation-dimension pairing.

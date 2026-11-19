@@ -1,4 +1,4 @@
-The joint-action conjecture ([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)) predicted commutativity of the motivic-Galois action $G_{\mathrm{mot}}$ and the braid-group action $B_{n_K}$ on every $\mathcal{H}_q^{(n, K)}$ stratum. We discharge the conjecture in general. The argument is structural: the two actions touch disjoint factors of the bi-filtration's underlying tensor structure.
+The [joint Galois--braid action conjecture](#conj:joint-galois-braid-action) predicts commutativity of the motivic-Galois action $G_{\mathrm{mot}}$ and the braid-group action $B_{n_K}$ on every $\mathcal{H}_q^{(n, K)}$ stratum. That commutativity holds in general by a structural factorisation: the two actions touch disjoint factors of the bi-filtration's underlying tensor structure.
 
 For every $(n, K)$, the actions $G_{\mathrm{mot}}$ and $B_{n_K}$ commute on $\mathcal{H}_q^{(n, K)}$:
 

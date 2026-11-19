@@ -6,7 +6,7 @@ $$
   \sigma_i^2 \;=\; h\,\sigma_i + 1, \qquad h \;=\; q - q^{-1}.
 $$
 
-*Let $\mathrm{tr}_M : \bigsqcup_n H_n(q) \to \mathbb{Q}(q)$ be the Markov trace ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)). It is uniquely determined by:*
+*Let $\mathrm{tr}_M : \bigsqcup_n H_n(q) \to \mathbb{Q}(q)$ be the Markov trace ([categorical mass as Markov trace](#prop:categorical-mass-markov)). It is uniquely determined by:*
 
 $$
   \mathrm{tr}_M(1) = 1, \qquad

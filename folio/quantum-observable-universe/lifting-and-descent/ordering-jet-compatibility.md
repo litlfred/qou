@@ -1,4 +1,4 @@
-*Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with braiding-induced ordering $\prec_c$ on the Hecke basis of $A$ ([temporal braiding](#def:quantum-observable-universe), axiom 5). Let $A_0 = A \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$ be the recursive brane tower ([recursive brane tower](#def:recursive-brane-tower)), with $A_{n+1} = J^1(A_n)$ ([jet prolongation](#prop:jet-prolongation)). We have:*
+*Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with braiding-induced ordering $\prec_c$ on the Hecke basis of $A$ ([temporal braiding](#def:quantum-observable-universe), axiom 5). Let $A_0 = A \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$ be the recursive brane tower ([recursive brane tower](#def:recursive-brane-tower)), with $A_{n+1} = J^1(A_n)$ ([jet prolongation](#prop:jet-prolongation)). Then:*
 
 1. **(Extension.)** *At each level $n$, the jet prolongation $\ell_n \colon A_n \hookrightarrow A_{n+1}$ induces an admissible ordering $\prec_{n+1}$ on the Hecke basis of $A_{n+1}$ that extends $\prec_n$:*
 $$

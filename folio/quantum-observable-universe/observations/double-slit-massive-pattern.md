@@ -45,4 +45,4 @@ $$
         \frac{\langle\Delta_\xi\rangle}{\langle\Delta\rangle}\right).
 $$
 
-At $q = 1$, we recover the Fraunhofer pattern. For $q \neq 1$, the envelope widens, matching precision observations \cite{bach2013}.
+At $q = 1$, the formula recovers the classical Fraunhofer pattern. For $q \neq 1$, the envelope widens, matching precision observations \cite{bach2013}.

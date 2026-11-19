@@ -12,7 +12,7 @@ $$
 \mathcal{E}_q(\mathbf{1}) \cong \tau(E_q)^G = H^1(\mathcal{E}_q)^G.
 $$
 
-We define $r_q$ as the multiplicity of the trivial representation $\mathbf{1}$ in the $G$-module $H^1(\mathcal{E}_q)$.
+Equivalently, $r_q$ is the multiplicity of the trivial representation $\mathbf{1}$ in the $G$-module $H^1(\mathcal{E}_q)$.
 
 The $q$-deformed $L$-function is built from the Frobenius eigenvalues $\alpha_1, \ldots, \alpha_8$ of the local $q$-zeta function ([local $q$-zeta](#def:local-q-zeta-function)) acting on $H^1(\mathcal{B})$, the first étale cohomology of Bring's curve. The elliptic fiber $\mathcal{E}_q \hookrightarrow \mathcal{B}$ is a genus-$1$ sub-curve. The restriction of Frobenius to $H^1(\mathcal{E}_q) \subset H^1(\mathcal{B})$ yields a conjugate pair $\alpha_{\mathcal{E}}, \bar{\alpha}_{\mathcal{E}}$ with $|\alpha_{\mathcal{E}}| = q^{1/2}$ (by the Hasse--Weil bound). Define
 

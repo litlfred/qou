@@ -1,0 +1,259 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-19T08:03:32.801923+00:00",
+  "commitSha": "974a6952a3bf3c410c2eb0a0a538d05e573de646",
+  "assertions": [
+    {
+      "name": "cm_refuted_and_weierstrass_q_models_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "qou-m117: j(tau0)=-121945/32 and j(5*tau0)=-25/2 are non-integral rationals with exact Q-models E_j"
+    },
+    {
+      "name": "x05_five_isogeny_im_ratio_equals_5_at_80dps",
+      "computed": "5.0",
+      "expected": "5.0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "qou-m117: Im(tau_B^fund) / Im(tau0) = 4 * t_A * t_B = 5 exactly on X_0(5)"
+    },
+    {
+      "name": "polarization_matrix_C_spectrum_1_5_5_5_and_det_125",
+      "computed": "[1, 5, 5, 5];det=125;tr=16",
+      "expected": "[1, 5, 5, 5];det=125;tr=16",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringJacobianHodgeZeroModeInstance.bringPolarizationC_spectrum_and_invariants"
+    },
+    {
+      "name": "epstein_zeta_at_zero_is_minus_one_refuting_minus_b1",
+      "computed": "-1.0",
+      "expected": "-1.0",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "qou-af91: flat-torus Epstein zeta_Lambda(0) = -1 for all ranks n >= 1, not -b1 = -8"
+    },
+    {
+      "name": "cohomology_per_mode_1_over_pi_b1_matches_gauss_bonnet_uniquely_at_g4",
+      "computed": "[4]",
+      "expected": "[4]",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringJacobianHodgeZeroModeInstance.cohomology_per_mode_eq_gaussBonnet_iff_g4"
+    },
+    {
+      "name": "seifert_hodge_em_zeromode_equals_2_over_3pi_at_80dps",
+      "computed": "0.21220659078919378102517835116335248271261286098727526499688979207852906351230205",
+      "expected": "0.21220659078919378102517835116335248271261286098727526499688979207852906351230205",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Lean BringJacobianHodgeZeroModeInstance.emBringSeifertHodgeInstance_zeroMode_eq"
+    },
+    {
+      "name": "seifert_hodge_ew_zeromode_equals_1_over_pi_at_80dps",
+      "computed": "0.31830988618379067153776752674502872406891929148091289749533468811779359526845307",
+      "expected": "0.31830988618379067153776752674502872406891929148091289749533468811779359526845307",
+      "passed": true,
+      "tolerance": "1e-75",
+      "source": "Lean BringJacobianHodgeZeroModeInstance.ewBringSeifertHodgeInstance_zeroMode_eq"
+    },
+    {
+      "name": "pi_free_ratios_1loop_to_em_and_ew_zeromodes_are_3_16_and_1_8",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringJacobianHodgeZeroModeInstance.seifertHodge_oneLoop_to_zeroMode_pi_free_ratios"
+    },
+    {
+      "name": "clausen_ivt_root_exists_in_0_pi_div_2_and_poincare_tiling_matches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringJacobianHodgeZeroModeInstance.bring_clausen_unit_circle_witness_and_seifert_bridge"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "bring-jacobian-e4-hodge-zeromode",
+  "scriptFile": "bring_jacobian_e4_hodge_zeromode_probe.py",
+  "scriptHash": "263f2f92a976",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_jacobian_e4_hodge_zeromode_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_jacobian_e4_hodge_zeromode_probe.py"
+  },
+  "description": "80-dps verification of Bring's curve Jacobian period matrix Omega = tau0 * C in H_4 and isogeny decomposition Jac(Sigma_4) ~ E_{5*tau0}^3 x E_{tau0} (qou-m117), first-principles evaluation of all 8 zero-mode and 1-loop normalization candidates on Jac(Sigma_4) and Sigma_4 (qou-af91, qou-4uhn), and the non-vacuous Seifert-Hodge zero-mode model and Clausen IVT witness closing Bring Gap B3 (qou-006b).",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "qou_m117_jacobian_period_matrix_80dps": {
+      "j_tau0_rational": "-121945/32",
+      "j_5tau0_rational": "-25/2",
+      "cm_refuted_nonintegral_j": true,
+      "weierstrass_q_models_exact": true,
+      "im_tau_A_fund_80dps": "1.3392154356353604295173050288541029639716692920292331058050364048685392186313168",
+      "im_tau_B_fund_80dps": "0.93338231231404961603081440681562014731847626109416811781345460244811266238449415",
+      "im_tau0_80dps": "0.18667646246280992320616288136312402946369525221883362356269092048962253247689883",
+      "re_tau0_exact": "-1/2",
+      "j_inversion_max_residual": "7.67045853953e-93",
+      "agm_vs_j_inversion_max_diff": "2.73987369207e-92",
+      "sl2z_word_residual": "0.0",
+      "x05_five_isogeny_residual": "9.36335270938e-97",
+      "im_ratio_5tau0_over_tau0_80dps": "5.0",
+      "im_ratio_5_error": "7.49068216751e-96",
+      "polarization_matrix_C": [
+        [
+          4,
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          4,
+          -1,
+          1
+        ],
+        [
+          1,
+          -1,
+          4,
+          1
+        ],
+        [
+          -1,
+          1,
+          1,
+          4
+        ]
+      ],
+      "C_eigenvalues_exact": [
+        1,
+        5,
+        5,
+        5
+      ],
+      "C_eigenvalue_max_error": "2.24720465025e-95",
+      "C_trace_exact": 16,
+      "C_det_exact": 125,
+      "C_sign_class_count_of_64": 8,
+      "C_eigenvector_lambda1": [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "C_eigenvector_lambda1_verified": true,
+      "det_Im_Omega_80dps": "0.15179877346831409854323086297268078215885484079261710433337808194672970644671262",
+      "det_Im_Omega_fourth_root_80dps": "0.62419037219649553025403224289672566901292091337924629226371436860858512621109183",
+      "tr_Im_Omega_80dps": "2.9868233994049587712986061018099844714191240355013379770030547278339605196303813",
+      "det_Im_Omega_formula_error": "0.0"
+    },
+    "qou_af91_4uhn_normalization_candidates_80dps": {
+      "C1_epstein_zeta_at_zero_80dps": "-1.0",
+      "C1_refutes_minus_b1_anomaly": true,
+      "C2_flat_torus_gaussian_product_80dps": "0.00064162389091777094932204895419491838386423761585239141988550221699835391722199502",
+      "C2_ratio_to_1_over_8pi": "0.016125767216599744592",
+      "C3_hodge_det_Im_Omega_80dps": "0.15179877346831409854323086297268078215885484079261710433337808194672970644671262",
+      "C3_hodge_det_quarter_80dps": "0.62419037219649553025403224289672566901292091337924629226371436860858512621109183",
+      "C3_hodge_trace_Im_Omega_80dps": "2.9868233994049587712986061018099844714191240355013379770030547278339605196303813",
+      "C4_elliptic_factor_m_tau0_80dps": "1.7414646167990996343816043403569762525412889413557737580877162512272137461281538",
+      "C4_elliptic_factor_m_5tau0_80dps": "1.6778880694361243998717965862843618918973991853211846403440667376397236593809367",
+      "C4_kronecker_product_m5_cubed_m1_80dps": "8.2262823735979083625387790275886512201504902431371983409122477630114726957883805",
+      "C4_relative_gap_from_b1_8": "0.0282852966997",
+      "C5_gauss_bonnet_loop_unit_1_over_4pi_80dps": "0.079577471545947667884441881686257181017229822870228224373833672029448398817113268",
+      "C6_gauss_bonnet_hodge_split_1_over_8pi_80dps": "0.039788735772973833942220940843128590508614911435114112186916836014724199408556634",
+      "C6_matches_1_over_8pi_exact": true,
+      "C7_cohomology_per_mode_by_genus": {
+        "g=2": {
+          "b1": 4,
+          "value_80dps": "0.079577471545947667884441881686257181017229822870228224373833672029448398817113268",
+          "matches_gauss_bonnet_1_over_8pi": false
+        },
+        "g=3": {
+          "b1": 6,
+          "value_80dps": "0.053051647697298445256294587790838120678153215246818816249222448019632265878075512",
+          "matches_gauss_bonnet_1_over_8pi": false
+        },
+        "g=4": {
+          "b1": 8,
+          "value_80dps": "0.039788735772973833942220940843128590508614911435114112186916836014724199408556634",
+          "matches_gauss_bonnet_1_over_8pi": true
+        },
+        "g=5": {
+          "b1": 10,
+          "value_80dps": "0.031830988618379067153776752674502872406891929148091289749533468811779359526845307",
+          "matches_gauss_bonnet_1_over_8pi": false
+        },
+        "g=6": {
+          "b1": 12,
+          "value_80dps": "0.026525823848649222628147293895419060339076607623409408124611224009816132939037756",
+          "matches_gauss_bonnet_1_over_8pi": false
+        }
+      },
+      "C7_unique_genus_matching_gauss_bonnet": [
+        4
+      ],
+      "C8_em_seifert_genera_T29_T35": [
+        4,
+        4
+      ],
+      "C8_em_seifert_rank_8": 8,
+      "C8_em_zeromode_2_over_3pi_80dps": "0.21220659078919378102517835116335248271261286098727526499688979207852906351230205",
+      "C8_em_zeromode_matches_exact": true,
+      "C8_ew_seifert_genera_T24_T26_T28": [
+        1,
+        2,
+        3
+      ],
+      "C8_ew_seifert_rank_12": 12,
+      "C8_ew_zeromode_1_over_pi_80dps": "0.31830988618379067153776752674502872406891929148091289749533468811779359526845307",
+      "C8_ew_zeromode_matches_exact": true,
+      "pi_free_ratio_1loop_over_em_zeromode": "0.1875",
+      "pi_free_ratio_1loop_over_ew_zeromode": "0.125",
+      "pi_free_ratios_match_3_16_and_1_8": true
+    },
+    "qou_006b_clausen_and_seifert_hodge_instance_80dps": {
+      "cl2_at_zero_80dps": "0.0",
+      "cl2_at_pi_div_2_catalan_80dps": "0.91596559417721901505460351493238411077414937428167213426649811962176301977625477",
+      "ivt_theta_star_in_0_pi_div_2_80dps": "0.054202520770531197315462295864880570192867599175632637051537530635613468914401665",
+      "ivt_theta_star_over_pi_80dps": "0.017253198217342335268384030753205230311055563296951483548483039811136055500950332",
+      "ivt_cl2_residual": "7.02251453204e-97",
+      "ivt_bracket_holds": true,
+      "min_gap_rational_angle_den_le_60": "0.000108252805193",
+      "closest_rational_angle_den_le_60": "1/58",
+      "rational_root_of_unity_excluded_den_le_60": true,
+      "poincare_triangle_area_80dps": "0.15707963267948966192313216916397514420985846996875529104874722961539082031431045",
+      "poincare_triangle_area_error": "3.97942490149e-96",
+      "poincare_240_tiling_em_ratio_80dps": "0.21220659078919378102517835116335248271261286098727526499688979207852906351230205",
+      "poincare_em_ratio_error": "5.3839278079e-96"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure Archimedean / Hodge-theoretic / modular-period evaluation of Bring's genus-4 curve Sigma_4 and its Jacobian Jac(Sigma_4) ~ E_{5*tau0}^3 x E_{tau0} at 80 dps; independent of substrate parameter q0."
+}

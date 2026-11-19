@@ -6,8 +6,7 @@ $w \in B_n$ in Hecke normal form.*
 ### Input
 
 - *Braid word $w = \sigma_{i_1}^{\varepsilon_1} \cdots \sigma_{i_k}^{\varepsilon_k}$ in
-  $B_n$ (the closure of $w$ is the knot or link whose mass we
-  predict).*
+  $B_n$ (whose closure is the knot or link under evaluation).*
 - *Substrate parameter $q \in R$ — either symbolic
   (for an algebraic identity) or pinned to $q_0$
   for a numerical evaluation.*
@@ -37,14 +36,14 @@ $w \in B_n$ in Hecke normal form.*
 
 1. *Existence and uniqueness of the trace is established by the
    axiomatic closed form
-   ([`prop:markov-trace-axiomatic-closed-form`](#prop:markov-trace-axiomatic-closed-form)):
+   ([the axiomatic closed-form proposition](#prop:markov-trace-axiomatic-closed-form)):
    $\mathrm{tr}_M$ is the unique $R$-linear functional on $H_n(q)$
    satisfying (i) cyclicity, (ii) the Markov axiom
    $\mathrm{tr}_M(a\sigma_n) = z \cdot \mathrm{tr}_M(a)$ for
    $a \in H_n(q)$, and (iii) normalisation
    $\mathrm{tr}_M(1) = 1$.*
 2. *The recursive-reducer formula
-   ([`prop:markov-trace-recursive-reducer`](#prop:markov-trace-recursive-reducer))
+   ([the recursive-reducer proposition](#prop:markov-trace-recursive-reducer))
    gives a terminating reduction strategy by descent on braid index,
    so step 1 always terminates.*
 3. *The Frobenius pairing in step 4 is justified by the Wedderburn
@@ -73,7 +72,7 @@ trM  = compute_tr_M(Z=1, N=0)                 # Decimal at q = q_0
 *The lower-level `pyhecke` surface exposes the trace on a Hecke
 normal form: `pyhecke.nf_tr(nf)`. The compile-time Markov-trace
 vector for the 6-element basis is the constant `pyhecke.TR_M`.
-The PyO3 binding `pyhecke_native` calls the Rust core directly.*
+The PyO3 wheel `pyhecke-native` calls the Rust core directly.*
 
 ### Witness contract
 
@@ -102,6 +101,6 @@ $(q^{n(n-1)})$ from the central character (Schur–Weyl).*
 
 *For large-$A$ scaling (Step 9b atom braids), the multi-nucleon braid word features a **monotone** non-decreasing generator sequence. Nucleon $k$ uses $\sigma_{3k}, \sigma_{3k+1}$ and one interface crossing $\sigma_{3k+2}$, never revisiting a generator. Thus, each $O_g$ is a polynomial in a single $\sigma_g$.
 
-In the multiplicity-free seminormal (Gelfand–Zetlin) basis, $\sigma_g$ moves exactly one level of the chain $\varnothing \subset s_1 \subset \cdots \subset s_n = \lambda$. Trace closure forces each $O_g$ into its diagonal block. This collapses Steps 3–4 into a transfer matrix over fine-Bratteli edges $s_g \subset s_{g+1}$. We compute every $\chi^\lambda(\beta)$ in a single sweep without materializing the $d_\lambda$-dimensional Hoefsmit representation. The computational cost scales with the fine-Bratteli edge count (e.g., a few thousand at $n = 21$) rather than $n!$. This extends numerical $\mathrm{tr}_M$ evaluation at $q_0$ to $A \geq 6$ ($^6$Li, $^7$Li, and beyond) in seconds.
+In the multiplicity-free seminormal (Gelfand–Zetlin) basis, $\sigma_g$ moves exactly one level of the chain $\varnothing \subset s_1 \subset \cdots \subset s_n = \lambda$. Trace closure forces each $O_g$ into its diagonal block. This collapses Steps 3–4 into a transfer matrix over fine-Bratteli edges $s_g \subset s_{g+1}$. Every $\chi^\lambda(\beta)$ is evaluated in a single sweep without materializing the $d_\lambda$-dimensional Hoefsmit representation. The computational cost scales with the fine-Bratteli edge count (e.g., a few thousand at $n = 21$) rather than $n!$. This extends numerical $\mathrm{tr}_M$ evaluation at $q_0$ to $A \geq 6$ ($^6$Li, $^7$Li, and beyond) in seconds.
 
-The implementation resides in [`chi_monotone_transfer.py`](../../../computations/chi_monotone_transfer.py), with per-atom trace assembly in [`tr_m_atom_via_transfer.py`](../../../computations/tr_m_atom_via_transfer.py) (witness [`tr-m-atom-via-transfer.witness.json`](../../../computations/tr-m-atom-via-transfer.witness.json)). We validate it to the 50-dps floor against Hoefsmit characters ($n \leq 6$) and cached per-basis-vector trace witnesses ($n \leq 12$). The production binding consumers [`binding_canonical`](../../../computations/binding_canonical.py) and [`canonical_tr_m_via_branching`](../../../computations/canonical_tr_m_via_branching.py) ($A \geq 3$) route their atom-trace through this transfer path. The brute-force atom-level Wedderburn tower (`atom_level_wedderburn_tower.py`) serves strictly as a $d_\lambda$-explicit cross-check.*
+The implementation resides in [`chi_monotone_transfer.py`](../../../computations/chi_monotone_transfer.py), with per-atom trace assembly in [`tr_m_atom_via_transfer.py`](../../../computations/tr_m_atom_via_transfer.py) (witness [`tr-m-atom-via-transfer.witness.json`](../../../computations/tr-m-atom-via-transfer.witness.json)). Agreement holds to the 50-dps floor against Hoefsmit characters ($n \leq 6$) and cached per-basis-vector trace witnesses ($n \leq 12$). The production binding consumers [`binding_canonical.py`](../../../computations/binding_canonical.py) and [`canonical_tr_m_via_branching.py`](../../../computations/canonical_tr_m_via_branching.py) ($A \geq 3$) route their atom-trace through this transfer path. The brute-force atom-level Wedderburn tower (`atom_level_wedderburn_tower.py`) serves strictly as a $d_\lambda$-explicit cross-check.*

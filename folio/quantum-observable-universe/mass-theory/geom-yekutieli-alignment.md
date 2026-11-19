@@ -1,7 +1,7 @@
 **Proposition (conditional on
-[`conj:hyperbolic-volume-transcendence`](#conj:hyperbolic-volume-transcendence)
+[hyperbolic volume transcendence conjecture](#conj:hyperbolic-volume-transcendence)
 and
-`rem:baryon-period-ratio`).**
+baryon period ratio remark).**
 *The piecewise geometric invariant
 $\mathrm{Geom}(K)$
 ([topological mass formula](#prop:topological-mass-formula))

@@ -10,7 +10,7 @@ $$
 
 The LR coefficient gives the multiplicity of $V_\lambda$ in the outer tensor product $V_\mu \boxtimes V_\nu$ pulled back through the standard inclusion $\mathbf{H}_{n_1}(q) \otimes \mathbf{H}_{n_2}(q) \hookrightarrow \mathbf{H}_{n_1 + n_2}(q)$. This constitutes the Hecke-deformed counterpart of the classical Littlewood-Richardson rule for symmetric groups.
 
-The operator-valued Wenzl 1988 sub-lemma 2.1 ([`prop:crystal-r-matrix-sub-lemma`](crystal-r-matrix-sub-lemma.md)) sums per $(\mu, \nu)$ block with multiplicity $c^\lambda_{\mu\nu}$:
+The operator-valued Wenzl 1988 sub-lemma 2.1 ([crystal r matrix sub lemma proposition](crystal-r-matrix-sub-lemma.md)) sums per $(\mu, \nu)$ block with multiplicity $c^\lambda_{\mu\nu}$:
 
 $$
   \chi^\lambda(W_{\mathrm{inner}} \cdot I \cdot \beta_{\mathrm{block}}) = \sum_{\substack{\mu \vdash n_1 \\ \nu \vdash n_2}} c^\lambda_{\mu\nu} \cdot \mathrm{Tr}\bigl(A^\lambda_{\mu\nu}(I) \cdot (\rho_\mu(W_{\mathrm{inner}}) \otimes \rho_\nu(\beta_{\mathrm{block}}))\bigr)

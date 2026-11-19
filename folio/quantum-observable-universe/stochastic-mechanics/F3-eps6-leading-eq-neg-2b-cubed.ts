@@ -23,7 +23,7 @@ export default remark({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
-      body: "Lean stub: **closed**, no `sorry`s. Provable by Mathlib `Real.sqrt_sq` +\n`ring`. Companion to `rem:markov-axioms-primitive` in the categorical-chain\nLean infrastructure.",
+      body: "Lean stub (`F3-eps6-leading-eq-neg-2b-cubed.lean`): **closed**, no `sorry`s, discharging the arithmetic part of `ThreeFoldMarkovHopfExtraction`. Provable by Mathlib `Real.sqrt_sq` +\n`ring`. Companion to `rem:markov-axioms-primitive` in the categorical-chain\nLean infrastructure.",
     },
   ],
 });

@@ -5,7 +5,7 @@ $$
   0 \;<\; E_1(q) \;\leq\; E_2(q) \;\leq\; \cdots \;\leq\; E_m(q),
 $$
 
-*where $E_\ell(q)$ is the $\ell$-th distinct nonzero value of $\{E(\lambda, q) : \lambda \vdash k,\; k \leq k_{\max}\}$. We define the **confinement filtration** $J^\bullet(q)$ of $H_n(R, q)$ by:*
+*where $E_\ell(q)$ is the $\ell$-th distinct nonzero value of $\{E(\lambda, q) : \lambda \vdash k,\; k \leq k_{\max}\}$. Define the **confinement filtration** $J^\bullet(q)$ of $H_n(R, q)$ by:*
 
 $$
   J^\ell(q)
@@ -16,7 +16,7 @@ $$
 
 *Tied operators enter the filtration together at the level of their common energy. The filtration is well-defined under degeneracy.*
 
-*A closed braid $K$ with Hecke normal form $T_w \in H_n(R, q)$ is **confined at level $\ell$ at $q$** if and only if $\ell$ is the smallest integer with $T_w \in J^\ell(q)$. We write $\ell(K, q) := \min\{\ell : T_w \in J^\ell(q)\}$.*
+*A closed braid $K$ with Hecke normal form $T_w \in H_n(R, q)$ is **confined at level $\ell$ at $q$** if and only if $\ell$ is the smallest integer with $T_w \in J^\ell(q)$, denoted $\ell(K, q) := \min\{\ell : T_w \in J^\ell(q)\}$.*
 
 **Per-atom truncation $k_{\max}(K, q)$.**
 *The truncation $k_{\max}$ is not a global parameter. The interaction-strand requirement determines it per atom-knot $K$ at $q$. It is the smallest $k$ such that the NF $T_w$ of $K$ requires no partition of size $> k$ to express its operator content. Concretely:*
@@ -25,4 +25,4 @@ $$
 2. *Determine the maximal $k \leq n(K)$ such that the operator $T_w$ has a nonzero projection on some Wedderburn block $\lambda \vdash k$ with $d_\lambda \geq 2$.*
 3. *Set $k_{\max}(K, q)$ to this value.*
 
-*Non-magic atoms typically have small $k_{\max}$. Magic configurations have larger $k_{\max}$ because shell closure forces additional operator content. We compute this once per atom-knot and witness it as part of $K$'s NF data.*
+*Non-magic atoms typically have small $k_{\max}$. Magic configurations have larger $k_{\max}$ because shell closure forces additional operator content. This value is computed once per atom-knot and witnessed as part of $K$'s NF data.*

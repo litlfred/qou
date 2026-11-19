@@ -1,12 +1,12 @@
-| Theorem | Statement |
+| Property | Statement |
 |---|---|
-| `barPoly_X` | $\overline X = -X$ |
-| `barPoly_neg_X` | $\overline{(-X)} = X$ |
-| `barPoly_C c` | $\overline{c} = c$ for $c \in R$ |
-| `barPoly_add` | $\overline{p+q} = \overline p + \overline q$ |
-| `barPoly_mul` | $\overline{p\cdot q} = \overline p \cdot \overline q$ |
-| `barPoly_one` | $\overline 1 = 1$ |
-| `barPoly_zero` | $\overline 0 = 0$ |
-| `barPoly_involutive` | $\overline{\overline p} = p$ |
-| `barPoly_X_pow_two` | $\overline{X^2} = X^2$ (concrete bar-symmetry) |
-| `barPoly_X_pow n` | $\overline{X^n} = (-1)^n \cdot X^n$ |
+| Indeterminate anti-symmetry | $\overline X = -X$ |
+| Negated indeterminate | $\overline{(-X)} = X$ |
+| Scalar invariance | $\overline{c} = c$ for $c \in R$ |
+| Additivity | $\overline{p+q} = \overline p + \overline q$ |
+| Multiplicativity | $\overline{p\cdot q} = \overline p \cdot \overline q$ |
+| Unit preservation | $\overline 1 = 1$ |
+| Zero preservation | $\overline 0 = 0$ |
+| Involutivity | $\overline{\overline p} = p$ |
+| Quadratic invariance | $\overline{X^2} = X^2$ (concrete bar-symmetry) |
+| Monomial parity law | $\overline{X^n} = (-1)^n \cdot X^n$ |

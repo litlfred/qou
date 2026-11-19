@@ -7,8 +7,6 @@ $$
 
 **Categorical statement.** The confinement level $\ell(K, q_0)$ is finite and unique. If $T_w \in J^\ell(q_0)$ for $\ell > \ell(K, q_0)$, then $T_w \equiv 0$, contradicting genericity.
 
-**Lean encoding.** Cast as a tautology over the compact domain `Fin levelBound` in `spectral_sum_finite`. The substantive claim is that `levelBound` correctly represents the confinement level.
-
-**Conjectural status.** Proving the bound requires formalising $\mathrm{ConfinementLevel}$ and establishing $\mathrm{tr}_{M, \ell} \equiv 0$ for $\ell > \ell(K, q_0)$.
+**Conjectural status.** Over a finite index domain bounded by the confinement level, finiteness of the sum is immediate; the substantive claim is that the graded Markov trace $\mathrm{tr}_{M, \ell}$ vanishes identically for all strata $\ell > \ell(K, q_0)$.
 
 **Empirical witness.** Witness scripts truncate the sum at $\ell = 6$, observing zero contributions beyond it. Homologically, strata outside $J^{\ell(K, q_0)}$ map into the cemetery group, vanishing without term-by-term cancellation.

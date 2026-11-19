@@ -1,4 +1,4 @@
-The [quantum Euler equation](#rem:madelung-fluid) models inviscid flow in the brane fluid. To account for dissipation — the irreversible degradation of coherent vortex motion into thermal fluctuations — we introduce the **$q$-deformed Navier--Stokes equation**.
+The [quantum Euler equation](#rem:madelung-fluid) models inviscid flow in the brane fluid. Accounting for dissipation — the irreversible degradation of coherent vortex motion into thermal fluctuations — leads to the **$q$-deformed Navier--Stokes equation**.
 
 **Categorical formulation.**
 Let $(\mathbf{C}, A, \tau)$ be a [QOU](#def:quantum-observable-universe) with [substrate parameter](#def:substrate-parameter) $q \in \mathrm{End}(\mathbf{1})$, where $q > 1$. Let $\Omega^k(A)$ be the [differential forms](#def:higher-forms) on the Frobenius--Hopf object $A$, governed by the [q-exterior derivative](#def:categorical-q-ext-deriv) $d_q \colon \Omega^k(A) \to \Omega^{k+1}(A)$ and its adjoint $\delta_q \colon \Omega^{k+1}(A) \to \Omega^k(A)$ under the [Frobenius pairing](#def:frobenius-pairing). The [$q$-Laplacian](#rem:q-laplacian-interpretation) operates as $\Delta_q = d_q\delta_q + \delta_q d_q$.

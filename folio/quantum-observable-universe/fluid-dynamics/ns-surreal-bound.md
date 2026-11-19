@@ -1,4 +1,4 @@
-We express the blowup mechanism as a strict surreal inequality. 
+The blowup mechanism admits a concise formulation as a strict surreal inequality. 
 
 Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal and $q = 1 + \varepsilon$. In the $q > 1$ regime, the mass gap $\Delta_q \asymp \varepsilon^3$ serves as a quantum viscosity $\nu_q$, and the fluid is globally regular.
 

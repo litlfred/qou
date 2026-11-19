@@ -1,6 +1,6 @@
-Having stated the conjecture on the non-torsion locus, we
-verify that the $q \to 1$ degeneration recovers familiar geometry and
-read the resulting structure physically. The classical-limit conjecture asserts that
+With the conjecture stated on the non-torsion locus, the next step is
+to verify that the $q \to 1$ degeneration recovers familiar geometry and
+to read the resulting structure physically. The classical-limit conjecture asserts that
 specialising at $q = 1$ recovers the classical Geometric Langlands
 equivalence of Beilinson–Drinfeld, and an accompanying remark sketches how the degeneration of $q$-opers and
 $q$-Hecke eigensheaves recovers their classical counterparts. A further remark refines this picture: the

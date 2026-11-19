@@ -39,11 +39,10 @@ $\omega$ is not the octet member at all, because the nonet is ideally mixed.
 first-order octet-breaking ansatz: it holds for every choice of the breaking
 parameters, so reproducing it is evidence for nothing.  The decuplet
 equal-spacing rule behind the $\Omega^-$ prediction is the same
-(`QOU/Eightfold/DecupletEqualSpacing.lean`, established later in this
+(established later in this
 chapter).
 
-The mixing is the opposite case, and this too is a theorem
-(`QOU/Eightfold/NonetMixingUnconstrained.lean`).  Holding fixed the
+The mixing is the opposite case, and this too is a theorem.  Holding fixed the
 octet member $m_8$ that Gell-Mann--Okubo determines, *every* pair of physical
 masses is realisable by choosing the singlet entry and the octet--singlet
 mixing:
@@ -63,8 +62,7 @@ one parameter --- the parameter on which the two nonets disagree.
 ## Availability of the nonet in the framework
 
 **Open, and not currently attemptable.**  The nonet needs the singlet, which is
-unavailable at $\dim V = 2$: the alternating channel vanishes below $N = 3$
-(`RowCapObstruction.lean`), so the $\eta'$ and its vector counterpart do not
+unavailable at $\dim V = 2$: the alternating channel vanishes below $N = 3$, so the $\eta'$ and its vector counterpart do not
 exist framework-side.  The vector nonet therefore inherits the $N = 3$ problem
 of [the open-problems ledger](#sec:eightfold-open-problems) in full.
 

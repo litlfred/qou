@@ -110,5 +110,10 @@ export default conjecture({
         "exactly what the standard-part form records.",
       see: "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean",
     },
+    {
+      kind: "note",
+      body:
+        "Lean formalisation prerequisites for the general case: QOU.AppendixSurreals.gonshorIn and omegaSurreal express the surreal evaluations, while coloured Jones polynomials, the Berarducci–Mantova exp/log on No, and hyperbolic 3-manifold volume are not yet in Mathlib.",
+    },
   ],
 });

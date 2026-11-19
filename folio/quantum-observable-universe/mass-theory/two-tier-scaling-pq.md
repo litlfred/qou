@@ -1,5 +1,5 @@
 **Remark (two-tier scaling of the confined Laurent polynomial $P_K(q)$).**
-*The map from a braid word to a physical mass passes through two logically separate scaling factors. We separate topological constants (intrinsic to the Hecke trace) from dimensional constants (set by the choice of physical anchor).*
+*The map from a braid word to a physical mass passes through two logically separate scaling factors, separating topological constants (intrinsic to the Hecke trace) from dimensional constants (set by the choice of physical anchor).*
 
 ## Tier 1: topological scaling — quantum dimension $[N]_q$
 

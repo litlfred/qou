@@ -12,6 +12,12 @@ export default conjecture({
     "def:confined-particle",
     "prop:fermion-boson-knot-link",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "The 2-strand Plancherel trace identity and W/Z-anchor reconciliation (higgs_W_Z_anchor_reconciliation) are formalized in QOU/StandardModel/ElectroweakBringSchwingerBridge.lean; numerical 1-loop comparisons are evaluated in computations/probes/electroweak_bring_schwinger_bridge_probe.py.",
+    },
+  ],
   tags: [
     "tier:E",
     "higgs",

@@ -1,10 +1,10 @@
 The balanced dimension sum $S^{\mathrm{bal}}(n; q)$ is the fibre-level
 numerator of the classical binding period: at $q = 1$ it specialises to the
 involution count $I(n)$, and the body-order period is $I(n)/n$
-([`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum)). The identity of
-[`prop:binding-period-involution-statistic`](#prop:binding-period-involution-statistic)
+([Seiberg–Witten period residue sum proposition](#prop:sw-period-residue-sum)). The identity of
+[binding period involution statistic proposition](#prop:binding-period-involution-statistic)
 therefore locates the open recurrence kernel $R(q, x)$ of
-[`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference) at the
+[binding generating-function $q$-difference proposition](#prop:binding-genfun-qdifference) at the
 level of a *permutation statistic*: the binding period is the generating
 function of involutions by $2\,\mathrm{maj} + \mathrm{content} \circ \mathrm{RSK}$
 — a different statistic from the crossing statistic of the $q$-Hermite family.

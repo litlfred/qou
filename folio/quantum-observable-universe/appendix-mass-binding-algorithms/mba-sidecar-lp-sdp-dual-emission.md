@@ -5,14 +5,25 @@ documents the canonical contract.*
 
 ### Required witness fields
 
-| Field | Meaning |
+```json
+{
+  "y0_star":     "<float: shadow price of the net constraint>",
+  "y_star":      ["<float >= 0: shadow prices of Frobenius positivity constraints>"],
+  "active_set":  ["<int: indices i with y_star[i] > 0 (aliases: active_constraints, active_channels)>"],
+  "primal_obj":  "<float: sum_i t_i x_i*>",
+  "dual_obj":    "<float: n_target * y_0* (= primal_obj by strong duality)>",
+  "duality_gap": "<float: |primal_obj - dual_obj|>"
+}
+```
+
+| Quantity | Meaning |
 |-------|---------|
-| `y0_star` | shadow price of the net constraint |
-| `y_star` | shadow prices of Frobenius positivity constraints (≥ 0) |
-| `active_set` (or `active_constraints` / `active_channels`) | indices $i$ with `y_star[i] > 0` |
-| `primal_obj` | $\sum_i t_i x_i^*$ |
-| `dual_obj` | $n_{\mathrm{target}} \cdot y_0^*$ (= `primal_obj` by strong duality) |
-| `duality_gap` | $|\text{primal\_obj} - \text{dual\_obj}|$ |
+| $y_0^*$ | shadow price of the net constraint |
+| $y^*$ | shadow prices of Frobenius positivity constraints ($\geq 0$) |
+| $\{i : y_i^* > 0\}$ | active constraint indices |
+| $p^*$ | primal objective $\sum_i t_i x_i^*$ |
+| $d^*$ | dual objective $n_{\mathrm{target}} \cdot y_0^*$ ($= p^*$ by strong duality) |
+| $|p^* - d^*|$ | duality gap |
 
 ### Canonical entry point
 
@@ -27,7 +38,7 @@ per-witness driver script is
 ### Validation
 
 The contract is checked mechanically by
-[`computations/lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py).
+[`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py).
 The validator scans every `*.witness.json` whose name or
 `description` / `computation` field signals an LP / SDP /
 operator-selection compute and verifies the dual fields are
@@ -35,12 +46,12 @@ present.
 
 ### Why this is mandatory
 
-*The dual variables **are** the binding-energy shadow prices. Active demand channels (`y_star[i] > 0`) name the receptive sub-braids, identifying the Wedderburn blocks saturated by the bound state. Solving only the primal drops this structural information, a historical flaw (58 of 58 LP/SDP witnesses lacked the dual when this rule was introduced).*
+*The dual variables **are** the binding-energy shadow prices. Active demand channels ($y_i^* > 0$) name the receptive sub-braids, identifying the Wedderburn blocks saturated by the bound state. Solving only the primal drops this structural information.*
 
 ### Correctness conditions
 
-*[`prop:operator-selection-lp`](#prop:operator-selection-lp) §
-*dual program* establishes strong duality (`primal_obj = dual_obj`
+*[The operator-selection LP proposition](#prop:operator-selection-lp) §
+*dual program* establishes strong duality ($p^* = d^*$
 to solver tolerance) and the interpretation of $y^*$ as the
 binding-energy shadow prices.*
 

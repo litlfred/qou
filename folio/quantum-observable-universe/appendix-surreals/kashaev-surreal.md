@@ -1,6 +1,5 @@
 The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
-\cite{kashaev1997} (open in full generality; provenance and the Lean
-axiomatisation live in that block) states:
+\cite{kashaev1997} (open in full generality) states:
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
@@ -108,7 +107,7 @@ $\mathrm{Vol}$-identity.
 is exactly computable for any specific knot (it is a rational
 function evaluated at named surreals). If a *general* formula
 exists for $\mathrm{st}(\log |J_K(\zeta_\omega, \omega)|/\omega)$
-in terms of knot data, we have a path to a proof of Kashaev.
+in terms of knot data, that formula yields a path to a proof of Kashaev.
 
 **Might not help:** the standard-part identity is *itself* an
 analytic statement (it asserts an asymptotic relationship
@@ -214,8 +213,7 @@ $$
 $$
 
 with both $3^{-1/4}$ and the power $3/2$ derived
-([1-loop prefactor provenance](#prop:one-loop-prefactor-provenance),
-Lean `c_pow_four_eq_third`). Taking logarithms term by term gives the two
+([1-loop prefactor provenance](#prop:one-loop-prefactor-provenance)). Taking logarithms term by term gives the two
 leading terms of the remainder:
 
 $$
@@ -340,8 +338,8 @@ geometry.
  directly, take $\mathrm{st}$, and verify equality with the
  known volume.
 
-5. Use `QOU.AppendixSurreals.gonshorIn` and
- `omegaSurreal` to express the surreal evaluations.
+5. Express the surreal evaluations via Gonshor's sign-sequence embedding
+ and the canonical surreal $\omega$.
 
 **General case (open)**:
 
@@ -351,18 +349,17 @@ geometry.
  (rational-in-$\omega$ evaluations of $J_K$) from the geometric
  content (the volume identity).
 
-**Required infrastructure**:
-- Coloured Jones polynomial in Lean (does not exist in mathlib).
-- Berarducci–Mantova exponential/logarithm on $\mathbf{No}$
- (partial in mathlib).
-- Hyperbolic-volume formalisation (does not exist in mathlib).
+**Required mathematical ingredients**:
+- The coloured Jones polynomial as a rational family in $q$ and polynomial family in $n$.
+- The Berarducci–Mantova exponential and logarithm on $\mathbf{No}$.
+- The hyperbolic volume $\mathrm{Vol}(S^3 \setminus K)$ of the knot complement.
 
 **Falsification path**: identical to the classical Kashaev
 conjecture; if the limit form fails for some knot, the
 surreal form fails as well (and conversely).
 
-**Provability assessment**: the *equivalence* of the two
-formulations is provable in Lean (transfer principle). The
+**Assessment**: the *equivalence* of the two
+formulations follows from the transfer principle. The
 underlying conjecture is a long-standing open problem; the
 reformulation does not by itself solve it but reorganises the
 problem productively.

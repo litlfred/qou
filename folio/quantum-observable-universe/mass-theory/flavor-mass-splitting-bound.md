@@ -7,4 +7,4 @@ $$
 
 *where $\hbar_q = (q - 1)/q$, $h_q = q - q^{-1}$, and $[2]_q = q + q^{-1}$.*
 
-We bound the difference rather than the individual masses to isolate the substrate-derivable quantity from the CODATA-anchored mean. 
+Bounding the difference rather than the individual masses isolates the substrate-derivable quantity from the CODATA-anchored mean.

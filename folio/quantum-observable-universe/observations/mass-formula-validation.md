@@ -4,7 +4,7 @@ The atomic mass formula recombines CODATA nucleon masses and AME2020 binding ene
 
 Converting dimensionless mass ratios into physical units requires one external input: $m_e \approx 0.511$ MeV. This fixes the absolute energy scale.
 
-We derive the hadronic scale $E_0 = m_e/(q_0(q_0 - 1)) \approx 4.186$ MeV. This agrees with the calibrated scale $E_0^{(\mathrm{cal})} \approx 4.155$ MeV to $0.75\%$. The neutron $Q$-value is a prediction: $\mathfrak{Q}_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV.
+The hadronic scale evaluates to $E_0 = m_e/(q_0(q_0 - 1)) \approx 4.186$ MeV. This agrees with the calibrated scale $E_0^{(\mathrm{cal})} \approx 4.155$ MeV to $0.75\%$. The neutron $Q$-value is a prediction: $\mathfrak{Q}_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV.
 
 ## Genuine predictions of the substrate parameter $q$
 
@@ -78,7 +78,7 @@ See [Table 6](#tbl:mass-formula-validation-table6-data).
 
 ## Hecke-engine certificate validation
 
-We compute exact Gröbner--Shirshov certificates for 47 isotopes. Each certificate contains $\mathrm{net}(q_0)$, $\mathrm{tr\_alt}(q_0)$, and $F_\mathrm{Pauli}(q_0)$. The fields encode combinatorial crossing structure, not direct mass.
+Exact Gröbner--Shirshov certificates have been computed for 47 isotopes. Each certificate contains $\mathrm{net}(q_0)$, $\mathrm{tr\_alt}(q_0)$, and $F_\mathrm{Pauli}(q_0)$. The fields encode combinatorial crossing structure, not direct mass.
 
 ## Certificate fields and the $6 \times 6$ transfer matrix
 

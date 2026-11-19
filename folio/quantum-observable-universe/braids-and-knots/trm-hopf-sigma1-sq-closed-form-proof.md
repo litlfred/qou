@@ -2,7 +2,7 @@
 
 The Hecke quadratic relation $\sigma_1^2 = (q - q^{-1})\sigma_1 + 1$
 gives $\mathrm{tr}_M(\sigma_1^2) = (q - q^{-1})\,\mathrm{tr}_M(\sigma_1) + \mathrm{tr}_M(1)$.
-The Markov axioms ([`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive))
+The Markov axioms ([primitive Markov axioms](#rem:markov-axioms-primitive))
 fix $\mathrm{tr}_M(1) = 1$ and
 $\mathrm{tr}_M(\sigma_1) = z := q^3/(q^2+1)$ (**convention D**), so
 $$
@@ -29,7 +29,7 @@ power of $q$ appears; the result is rational in $q$.
 
 **Contrast with Convention C.** Under the excised convention C ($z = 1/(q^{1/2}+q^{-1/2})$), the product $(q-q^{-1})z$ collapses to $q^{1/2} - q^{-1/2}$ because $q - q^{-1}$ factors as $(q^{1/2}-q^{-1/2})(q^{1/2}+q^{-1/2})$ and C is the reciprocal of the second factor, yielding $1 + (q-1)/q^{1/2}$. Under Convention D ($z_D = q^3/(q^2+1)$), the derivation remains entirely inside the rational function field $\mathbb{Q}(q)$ without adjoining $q^{1/2}$.
 
-Stabilisation ([`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive)
+Stabilisation ([primitive Markov axioms](#rem:markov-axioms-primitive)
 axiom 3 and its $\sigma_n^{-1}$ consequence) scales the trace by
 $z$ for an adjoined positive crossing and by
 $z_{-} = z - (q - q^{-1})$ for a negative one. Neither case arises

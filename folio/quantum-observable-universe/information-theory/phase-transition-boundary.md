@@ -18,12 +18,12 @@ where $n_K$ denotes the crossing number of the particle knot.
 
 Sublimation represents a direct solid--gas transition. It occurs when the intermediate liquid phase is not populated at any temperature between the two critical values.
 
-No Hecke extension class obstructs that phase, because there are no non-split extensions here to carry one. The symmetric and antisymmetric channels are the $q$- and $-q^{-1}$-eigenspaces of the braiding $\sigma$ ([`rem:hecke-algebra-from-braiding`](#rem:hecke-algebra-from-braiding)), and the eigenprojections
+No Hecke extension class obstructs that phase, because there are no non-split extensions here to carry one. The symmetric and antisymmetric channels are the $q$- and $-q^{-1}$-eigenspaces of the braiding $\sigma$ ([Hecke algebra from braiding](#rem:hecke-algebra-from-braiding)), and the eigenprojections
 $$
   e_{+} = \frac{\sigma + q^{-1}}{[2]_q},
   \qquad
   e_{-} = \frac{q - \sigma}{[2]_q}
 $$
-are orthogonal idempotents summing to $1$ whenever $[2]_q$ is invertible — the same condition the two critical temperatures above already require, since they divide by it. So $V^{\otimes 2} = S^2 V \oplus \Lambda^2 V$ is a direct sum, not an extension. For general $n$ the conclusion follows instead from semisimplicity: at a substrate parameter that is not a root of unity, $H_n(q)$ is semisimple ([`prop:knot-eigenbasis-complete`](#prop:knot-eigenbasis-complete)(1)), so every short exact sequence of $H_n(q)$-modules splits and $\mathrm{Ext}^1_{H_n(q)}$ vanishes on every pair of modules.
+are orthogonal idempotents summing to $1$ whenever $[2]_q$ is invertible — the same condition the two critical temperatures above already require, since they divide by it. So $V^{\otimes 2} = S^2 V \oplus \Lambda^2 V$ is a direct sum, not an extension. For general $n$ the conclusion follows instead from semisimplicity: at a substrate parameter that is not a root of unity, $H_n(q)$ is semisimple ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)(1)), so every short exact sequence of $H_n(q)$-modules splits and $\mathrm{Ext}^1_{H_n(q)}$ vanishes on every pair of modules.
 
 Over the Laurent ring $\mathbb{Z}[q, q^{-1}]$, where $[2]_q$ is not invertible, extensions of the antisymmetric channel by the symmetric one are classified by $\mathbb{Z}[q, q^{-1}] / ([2]_q) \cong \mathbb{Z}[q, q^{-1}] / (q^2 + 1) \cong \mathbb{Z}[i]$. That group is supported on $q^2 = -1$, which no real $q$ meets, so the archimedean realisation never leaves the split case. What selects sublimation over a stable liquid phase is left open.

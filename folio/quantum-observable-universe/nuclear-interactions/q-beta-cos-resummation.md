@@ -22,7 +22,7 @@ $$
   \cos\!\bigl(\tfrac{(z_D-1)\,h}{2}\bigr).
 $$
 
-Its evaluation at the proton pin and the comparison with CODATA are recorded in [the comparison remark](#rem:q-beta-cos-resummation-comparison).
+Its evaluation under the proton calibration and the comparison with CODATA are recorded in [the comparison remark](#rem:q-beta-cos-resummation-comparison).
 
 **Status of the structural justification under D.** The original argument for the cosine was Markov cyclicity: the bar involution $q \mapsto q^{-1}$ was taken to send $\alpha \mapsto -\alpha$, forcing an even resummation. That step used the bar-invariance $z(q^{-1}) = z(q)$, which holds for convention C and **fails** for $z_D$, since $z_D(q^{-1}) = 1/(q^3+q) \neq z_D(q)$. Under D the bar involution therefore does not map $\alpha$ to $-\alpha$, and evenness of the resummation is no longer derived; the cosine form is retained here as the definition being tested, not as a consequence.
 

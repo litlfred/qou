@@ -60,5 +60,9 @@ export default definition({
         "don't invert the SM target). Audit: " +
         "docs/audits/2026-08-02-hypercharge-strand-twist-total-reduction.md.",
     },
+    {
+      kind: "note",
+      body: "Vertical stabilization shift of writhe referenced in the horizontal/vertical orbit comparison is `writhe_stabilize` in `QOU/StandardModel/WritheMarkovInvariance.lean`.",
+    },
   ],
 });

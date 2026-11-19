@@ -1,4 +1,4 @@
-The Gröbner--Shirshov normal form coefficients are dimensionless Laurent polynomials in $q$. To connect them to observed energies, we need an energy scale $\mathfrak{E}_0$ (in MeV) such that:
+The Gröbner--Shirshov normal form coefficients are dimensionless Laurent polynomials in $q$. Connecting them to observed energies requires an energy scale $\mathfrak{E}_0$ (in MeV) such that:
 
 $$
   |\Delta(\mathrm{net})| \times \mathfrak{E}_0
@@ -38,7 +38,7 @@ $$
 $$
 
 **Calibration cross-check, $\mathfrak{E}_0^{(\text{cal})}$.**
-We extract the same scale from CODATA:
+Extracting the empirical scale directly from CODATA gives:
 
 $$
   \mathfrak{E}_0^{(\text{cal})}

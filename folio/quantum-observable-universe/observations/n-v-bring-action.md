@@ -11,7 +11,7 @@ Three constraints force the choice of $S_5$:
 
 ## Constructions required
 
-We require three ingredients:
+Three ingredients are required:
 
 1. **Definition** of the EW slice.
 2. **Construction** of the $S_5$-action on $H_n(R, q)$.
@@ -21,4 +21,4 @@ Without these, the closure $N_v = 120 \cdot q_0^{90}$ is an empirical observatio
 
 ## Empirical evidence
 
-The closure $N_v = 120 \cdot q_0^{90}$ matches the target $N_{v,\mathrm{target}} = 1.4455 \times 10^6$ to within $-0.58\%$. We retain conjectural status.
+The closure $N_v = 120 \cdot q_0^{90}$ matches the target $N_{v,\mathrm{target}} = 1.4455 \times 10^6$ to within $-0.58\%$. The relation therefore retains conjectural status.

@@ -1,25 +1,23 @@
 # Construction, verification, and coherence of the QOU $\mathrm{Frob}_p$ instance
 
-This remark records the finite-place coherence checks, the Lean
-status, the downstream consumers, and the cross-prime coherence of
-the [`conj:qou-motivic-galois-instance`](#conj:qou-motivic-galois-instance)
-construction.
+This remark records the finite-place coherence checks, the open
+status of the global map, the downstream consumers, and the cross-prime coherence of
+[the QOU motivic Galois character conjecture](#conj:qou-motivic-galois-instance).
 
 ## Construction and verification
 
-- **Compatibility verification.** We perform two finite-place coherence checks on every $(p, \text{atom})$ cell. First, Galois-norm integrality holds: the trace $N(\mathrm{Frob}_p) = \sum_{\sigma \in \mathrm{Gal}(\mathbb{Q}(\zeta_{2p})/\mathbb{Q})} \sigma(\mathrm{Frob}_p)$ yields a rational integer (residual $< 10^{-7}$). Second, Weil purity holds at small primes: at $p \in \{2, 3\}$, the orbit-spread $\max|\sigma(\mathrm{Frob}_p)| - \min|\sigma(\mathrm{Frob}_p)|$ remains below $10^{-10}$ for every atom, and the inferred weight $w = 2 \log_p |\mathrm{Frob}_p|$ takes integer or near-integer values. At larger primes, the spread grows. The QOU motive remains mixed in general, consistent with the brane tower forming a sum across cohomology degrees.
+- **Compatibility verification.** Two finite-place coherence checks hold on every $(p, \text{atom})$ cell. First, Galois-norm integrality holds: the trace $N(\mathrm{Frob}_p) = \sum_{\sigma \in \mathrm{Gal}(\mathbb{Q}(\zeta_{2p})/\mathbb{Q})} \sigma(\mathrm{Frob}_p)$ yields a rational integer (residual $< 10^{-7}$). Second, Weil purity holds at small primes: at $p \in \{2, 3\}$, the orbit-spread $\max|\sigma(\mathrm{Frob}_p)| - \min|\sigma(\mathrm{Frob}_p)|$ remains below $10^{-10}$ for every atom, and the inferred weight $w = 2 \log_p |\mathrm{Frob}_p|$ takes integer or near-integer values. At larger primes, the spread grows. The QOU motive remains mixed in general, consistent with the brane tower forming a sum across cohomology degrees.
 
-- **Lean status: there is no instance.** `MotivicGaloisCharacter` carries a single field, `frobenius_at`, and nothing in the Lake tree supplies it for the QOU substrate, so [`def:motivic-galois-character`](#def:motivic-galois-character) is not discharged here. The class once also carried `almost_everywhere_nontrivial`; that field was removed precisely because encoding it as a class field forced every instance either to prove it or to launder the perpetual obstruction through a bare `axiom`.
+- **Status of the global Frobenius map.** [The motivic Galois character definition](#def:motivic-galois-character) requires a single map assigning a Frobenius element to every prime, and that global map remains open for the QOU substrate. The non-triviality condition at almost all primes is kept separate from the character data itself so that constructing a character does not presuppose the perpetual obstruction.
 
 ## Downstream consumers
 
-Were the instance in hand, theorems that carry [`def:motivic-galois-character`](#def:motivic-galois-character) as an `[instance]` hypothesis could consume it directly, and the [motivic perpetual obstruction](#thm:motivic-perpetual-obstruction) would become unconditional for the QOU substrate. That is the intended payoff, not a present fact: the instance is conjectural, so those theorems still carry the hypothesis.
+Were the global character in hand, statements that take [the motivic Galois character](#def:motivic-galois-character) as a hypothesis could consume it directly, and the [motivic perpetual obstruction](#thm:motivic-perpetual-obstruction) would become unconditional for the QOU substrate. That is the intended payoff, not a present fact: the character remains conjectural, so those statements still carry the hypothesis.
 
 What *is* unconditional is a narrower result on a different route:
-the Lean module `QOU.LiftingDescent.MotivicPerpetualObstructionFromTrace`
-derives the obstruction from the prime-ideal-collapse invariant
-$C = a_0(-1) + 2 a_1(-1)$, without going through a
-`MotivicGaloisCharacter` instance at all.
+the prime-ideal-collapse invariant
+$C = a_0(-1) + 2 a_1(-1)$ establishes the obstruction directly from the trace expansion, without going through a
+global motivic Galois character at all.
 
 ## Coherence
 

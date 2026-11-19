@@ -30,5 +30,10 @@ export default remark({
         "obtained by setting E_pair = 2m_e, i.e. fitted to the electron mass. The text now says so, and no " +
         "longer presents closing the 1.6 % gap as evidence.",
     },
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Witness moved from prose: `breit-wheeler-nucleon-nf.witness.json`.",
+    },
   ],
 });

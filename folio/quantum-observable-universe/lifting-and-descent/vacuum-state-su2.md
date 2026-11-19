@@ -1,4 +1,4 @@
-We explicitly construct the [vacuum state](#prop:vacuum-state) $\varphi$ for the [direct limit algebra](#def:direct-limit-algebra) of $\mathrm{SU}(2)$. We replace the abstract direct-limit existence argument with a closed-form formula.
+The [vacuum state](#prop:vacuum-state) $\varphi$ for the [direct limit algebra](#def:direct-limit-algebra) of $\mathrm{SU}(2)$ admits an explicit closed-form construction that replaces the abstract direct-limit existence argument.
 
 **Step 1: the Frobenius trace at finite level.** At level $n$ of the brane tower, the endomorphism algebra $\mathrm{End}(A_n)$ carries the Frobenius trace:
 $$
@@ -19,7 +19,7 @@ The map $\mathrm{tr}_n$ is the Haar integral restricted to representations of sp
 $$
   \varphi(t^j_{m,m'}) = \delta_{j,0}\,\delta_{m,0}\,\delta_{m',0}.
 $$
-On products, we compute the Haar state via the Woronowicz--Peter--Weyl orthogonality:
+On products, the Haar state evaluates via the Woronowicz--Peter--Weyl orthogonality:
 $$
   \varphi\bigl((t^j_{m,n})^* \cdot t^{j'}_{m',n'}\bigr)
   = \frac{\delta_{jj'}\,\delta_{mm'}\,\delta_{nn'}}{[2j+1]_q},
@@ -43,4 +43,4 @@ $$
   [2j+1]_{q_0}
   = \frac{q_0^{2j+1} - q_0^{-(2j+1)}}{q_0 - q_0^{-1}}.
 $$
-For $j = \frac{1}{2}$, we have $[2]_{q_0} = q_0 + q_0^{-1} \approx 2.011$. For $j = 1$, we have $[3]_{q_0} = q_0^2 + 1 + q_0^{-2} \approx 3.044$. These quantum dimensions determine the normalisation of the vacuum state at each spin level.
+For $j = \frac{1}{2}$, $[2]_{q_0} = q_0 + q_0^{-1} \approx 2.011$. For $j = 1$, $[3]_{q_0} = q_0^2 + 1 + q_0^{-2} \approx 3.044$. These quantum dimensions determine the normalisation of the vacuum state at each spin level.

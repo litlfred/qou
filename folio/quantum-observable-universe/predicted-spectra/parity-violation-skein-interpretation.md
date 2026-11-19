@@ -1,4 +1,4 @@
-The Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$ breaks the symmetry between positive and negative crossings. At $q = 1$, we have $\sigma^2 = 1$. Parity is conserved. At the substrate parameter $q_0$, the relation becomes $\sigma^2 = 0.209\,\sigma + 1$. The $0.209\,\sigma$ term distinguishes positive from negative crossings. This violates parity.
+The Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$ breaks the symmetry between positive and negative crossings. At $q = 1$, the generator satisfies $\sigma^2 = 1$. Parity is conserved. At the substrate parameter $q_0$, the relation becomes $\sigma^2 = 0.209\,\sigma + 1$. The $0.209\,\sigma$ term distinguishes positive from negative crossings. This violates parity.
 
 The Hecke deformation parameter controls the degree of parity violation:
 

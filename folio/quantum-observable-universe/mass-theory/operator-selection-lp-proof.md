@@ -75,9 +75,7 @@ that is where the LP is well-posed.
 > one, and the tetraquark row is $14$, not $24$. The optimal vertex $x^*$ and the
 > active set $\mathcal{A}$ are well defined on the quotient; on $H_n$ the LP has
 > a $\mathrm{corank} G$-dimensional space of optima differing by radical
-> directions the trace cannot see. Proved in
-> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)
-> (`gram_det_eq_zero_of_radical_combination`, `RankAccounting`).
+> directions the trace cannot see, as follows from the vanishing of the Gram determinant on any radical combination and the corresponding rank accounting.
 
   The optimal vertex $x^*$ identifies the minimum-action
 operator, and the active set $\mathcal{A}$ identifies the saturated

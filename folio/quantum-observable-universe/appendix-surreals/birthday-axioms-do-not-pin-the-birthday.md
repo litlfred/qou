@@ -1,6 +1,6 @@
 ## The six birthday axioms constrain only from above
 
-The appendix's surreal carrier axiomatises a birthday function by six conditions. Attempting to instantiate them at Mathlib's hyperreals exposed what they do and do not say.
+The appendix's surreal carrier axiomatises a birthday function by six conditions. Instantiating those axioms on the hyperreals $\mathbb{R}^*$ exposes what they do and do not say.
 
 The two-valued function
 

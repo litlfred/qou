@@ -7,7 +7,7 @@ Let $\mathfrak{p}$ be a prime (not to be confused with a point $p\in M$). Workin
 \end{equation}
 ```
 
-where $\zeta_{\mathfrak{p}}=e^{2\pi i/\mathfrak{p}}$ is a primitive $\mathfrak{p}$-th root of unity, we examine the sublocus
+where $\zeta_{\mathfrak{p}}=e^{2\pi i/\mathfrak{p}}$ is a primitive $\mathfrak{p}$-th root of unity, consider the sublocus
 
 $$
   S_{\mathfrak{p}}

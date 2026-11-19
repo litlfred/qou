@@ -24,9 +24,4 @@ the optimum is standard convex duality.
 3. **The scalar LP is the diagonal restriction.** When every Wedderburn
    block decouples (no off-diagonal pair constraint binds), the matrix
    SDP collapses block-by-block to the
-   [confinement LP](#prop:confinement-lp), with equal primal/dual values.
-
-The Lean sibling encodes the data as `ConfinementSDPData` and states
-`confinement_sdp` conditional on `slaterStrictFeasible`; the conic-duality
-step is deferred there via `sorry` (`-- Ref: [leitner2026]`), pending a
-Mathlib SDP strong-duality API. $\square$
+   [confinement LP](#prop:confinement-lp), with equal primal/dual values. $\square$

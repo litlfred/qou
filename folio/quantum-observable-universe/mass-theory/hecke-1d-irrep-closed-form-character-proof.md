@@ -6,7 +6,7 @@ which by the Iwahori-Hecke relation
 $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ must satisfy
 $\lambda_\sigma \in \{+q,\, -q^{-1}\}$.  The two choices give the
 trivial and sign 1-d irreps respectively (per
-`prop:hecke-branching-trace-decomposition`).
+Hecke branching trace decomposition proposition).
 
 For a typed braid $\beta = c_1 c_2 \cdots c_L$ with crossings
 $c_\ell \in \{\sigma_i,\, \sigma_i^{-1},\, \sigma_i - h/2\}$, the
@@ -80,9 +80,9 @@ where the **1-d backbone**
 ($y_{(n)} \chi^{(n)} + y_{(1^n)} \chi^{(1^n)}$) is fully closed-form
 substrate-derivable for any $n$ via the formulas above, and the
 $\dim \geq 2$ middle terms require the Hoefsmit seminormal matrix
-characters (per `prop:hecke-branching-trace-decomposition`)
+characters (per Hecke branching trace decomposition proposition)
 plus, for $\dim = 2$ irreps, the cos-resummation from
-[`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation).
+[q beta cos resummation proposition](#prop:q-beta-cos-resummation).
 
 ## Recursion to higher $n$
 

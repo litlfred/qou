@@ -285,85 +285,15 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
       depend on a drawing convention. -/
   frobenius_symmetric : ∀ f : frobHopf.obj ⟶ frobHopf.obj,
     frobHopf.leftTrace f = frobHopf.rightTrace f
-  /-- **The ground ring is `End(𝟙_C)`.**  The block data below lands in `R`
-      rather than in `End(𝟙_C)`, which presumes the two agree.  That is a
-      genuine extra assumption, NOT a consequence of `R`-linearity:
+  /-- **The ground ring is `End(𝟙_C)`.**  Scalar invariants of the unit object
+      land in `R` rather than in `End(𝟙_C)`, which presumes the two agree.  That
+      is a genuine extra assumption, NOT a consequence of `R`-linearity:
       `Linear R C` supplies only a ring map `R → End(𝟙_C)`, `r ↦ r • 𝟙`,
       and its being bijective needs `𝟙` simple.  Carried explicitly so the
       assumption is visible instead of hiding in a docstring.
 
       Surfaced on the paper side in `def:quantum-universe`. -/
   unitEndEquiv : R ≃+* CategoryTheory.End (𝟙_ C)
-  /-- **Wedderburn semisimplicity** (axiom 4).  The substrate has *channels*:
-      `A` decomposes into finitely many blocks that do not mix, and no block
-      is degenerate.
-
-      Encoded here: a `Fintype` of blocks, an idempotent endomorphism of `A`
-      per block, their mutual orthogonality, their completeness, and
-      invertibility of each block's Frobenius weight and quantum dimension.
-
-      **`blocks` indexes the NON-NEGLIGIBLE blocks, and vanishing elsewhere is
-      permitted.**  `dimQ_isUnit` below is therefore a specification of what
-      `blocks` ranges over, NOT a prohibition on the ambient category.  This
-      matters at a root of unity (and in char p), where some `dim_q(λ)` really
-      does vanish: those λ are *negligible* — they form a tensor ideal, the
-      categorical trace kills anything factoring through them, and the standard
-      construction quotients by that ideal (semisimplification) before reading
-      off blocks.  Read as a prohibition, the field would exclude the
-      root-of-unity categories outright; read as an index specification, it
-      says the decomposition is that of the semisimplified quotient.
-
-      The corpus already relies on this shape elsewhere: `y_(1^3) ≡ 0` in
-      `h3-markov-wenzl-weights` (the Temperley-Lieb quotient kills the 3-row
-      partition), and `tr_M = Σ_λ y_λ χ^λ` sums over all λ with zero weights on
-      some.  That vanishing is a DIFFERENT mechanism from negligibility — a row
-      cap at generic q, not a root-of-unity phenomenon — but it is the same
-      pattern, and it is why no sum over blocks needs re-indexing here.
-
-      Orthogonality needs a zero morphism and completeness needs a finite
-      sum; both come from the `Preadditive` instance field above.
-
-      `frobWeight` and `dimQ` land in `R` via `unitEndEquiv`, which is
-      carried as a field rather than left to a docstring — see its comment
-      for why `R`-linearity alone does not supply it (bean `qou-w1g8`).
-
-      Given this axiom, the co-Casimir trace identity
-      `tr_M(C_dimQ) = Σ_λ 1/dim_q(λ)` is a *consequence*, proved as
-      `QOU.BraidKnot.frobenius_codim_universal` by linearity of the trace
-      over the central idempotents.  It is deliberately NOT an axiom here:
-      asserting it would assert something already proved, and would collide
-      with the unrelated `def:mass-identity` (the vortex integral). -/
-  blocks : Type v
-  [blocksFintype : Fintype blocks]
-  /-- The central idempotent `p_λ` of each block. -/
-  centralIdem : blocks → (frobHopf.obj ⟶ frobHopf.obj)
-  /-- Each `p_λ` is idempotent. -/
-  centralIdem_idem : ∀ b, centralIdem b ≫ centralIdem b = centralIdem b
-  /-- **Blocks do not mix.**  Distinct central idempotents are orthogonal, so a
-      state resolving into one channel has no component in another.  This is the
-      half of semisimplicity that costs only a zero morphism. -/
-  centralIdem_orthogonal : ∀ b b', b ≠ b' → centralIdem b ≫ centralIdem b' = 0
-  /-- **The blocks span.**  `Σ_λ p_λ = 𝟙_A`: every state resolves into the
-      channels, with nothing left over.  Together with orthogonality this is
-      what "Wedderburn decomposition" means; without it the blocks could sit
-      inside `A` without exhausting it.
-
-      This is the field the axiom's NAME promised and its TYPE did not
-      deliver.  It needs the finite sum that `Preadditive` supplies. -/
-  centralIdem_complete : ∑ b, centralIdem b = 𝟙 frobHopf.obj
-  /-- The Frobenius weight `∫_A p_λ` of each block. -/
-  frobWeight : blocks → R
-  /-- Every block's Frobenius weight is a **unit**: none is invisible to the
-      trace.  `IsUnit`, not `≠ 0` — the paper says "invertible in `R`", and
-      over a ring those differ (`2 ≠ 0` in `ℤ`, and `2` is not a unit).  The
-      two coincide only over a field, which is why `≠ 0` survived while the
-      base ring was one. -/
-  frobWeight_isUnit : ∀ b, IsUnit (frobWeight b)
-  /-- The quantum dimension `dim_q(λ)` of each block. -/
-  dimQ : blocks → R
-  /-- Every block's quantum dimension is a **unit**: each can be normalised
-      against.  `IsUnit` for the same reason as `frobWeight_isUnit`. -/
-  dimQ_isUnit : ∀ b, IsUnit (dimQ b)
   /-- **`A` admits a universal first-order calculus.**  `Ω¹(A)` is a
       kernel of the multiplication `μ : A ⊗ A ⟶ A` in `C`: an object with a
       morphism `ι : Ω¹(A) ⟶ A ⊗ A` such that `ι ≫ μ = 0`.
@@ -381,6 +311,57 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
   /-- The fork `differentialForms` is a limit: `Ω¹(A)` *is* the kernel of
       `μ`, not merely some object mapping into `A ⊗ A` and killed by `μ`. -/
   differentialForms_isLimit : CategoryTheory.Limits.IsLimit differentialForms
+
+attribute [instance] QuantumUniverse.catInst QuantumUniverse.monInst
+  QuantumUniverse.preInst QuantumUniverse.linInst QuantumUniverse.braidedInst
+  QuantumUniverse.balancedInst
+
+/-- **Wedderburn Semisimple Block Decomposition Data** for a Frobenius–Hopf
+    substrate or a finite-strand endomorphism quotient slice (such as the
+    Iwahori–Hecke quotient `H_n(q)` in Chapter 5).
+
+    Per the 2026-11-19 architectural ruling, global finite Wedderburn
+    semisimplicity is deferred out of `QuantumUniverse` and
+    `QuantumObservableUniverse` to Chapter 5 (`braids-and-knots`) so that
+    infinite Peter–Weyl coordinate algebras (such as `O(SU(2))`) and nilpotent
+    jet thickenings satisfy the Quantum Universe axioms directly, while finite
+    orthogonal central idempotent decompositions with invertible Frobenius
+    weights and quantum dimensions are packaged in `SemisimpleBlockData U`.
+
+    Encoded here: a `Fintype` of blocks, an idempotent endomorphism of `A`
+    per block, their mutual orthogonality, their completeness, and
+    invertibility of each block's Frobenius weight and quantum dimension.
+
+    Given `SemisimpleBlockData U`, the co-Casimir trace identity
+    `tr_M(C_dimQ) = Σ_λ 1/dim_q(λ)` follows by linearity of the trace over the
+    central idempotents (`QOU.BraidKnot.frobenius_codim_universal`), and the
+    Chern character factorisation `dim_q = ev ∘ ch` on `K₀` holds
+    (`QOU.GrothendieckChern.dimQK0_eq_evDimQ_chernCharacter`). -/
+structure SemisimpleBlockData {R : Type*} [CommRing R]
+    (U : QuantumUniverse.{u, v} R) where
+  /-- Finite index type of non-negligible Wedderburn blocks. -/
+  blocks : Type v
+  [blocksFintype : Fintype blocks]
+  /-- The central idempotent `p_λ` of each block. -/
+  centralIdem : blocks → (U.frobHopf.obj ⟶ U.frobHopf.obj)
+  /-- Each `p_λ` is idempotent. -/
+  centralIdem_idem : ∀ b, centralIdem b ≫ centralIdem b = centralIdem b
+  /-- **Blocks do not mix.**  Distinct central idempotents are orthogonal, so a
+      state resolving into one channel has no component in another. -/
+  centralIdem_orthogonal : ∀ b b', b ≠ b' → centralIdem b ≫ centralIdem b' = 0
+  /-- **The blocks span.**  `Σ_λ p_λ = 𝟙_A`: every state resolves into the
+      channels, with nothing left over. -/
+  centralIdem_complete : ∑ b, centralIdem b = 𝟙 U.frobHopf.obj
+  /-- The Frobenius weight `∫_A p_λ` of each block. -/
+  frobWeight : blocks → R
+  /-- Every block's Frobenius weight is a **unit** in `R`. -/
+  frobWeight_isUnit : ∀ b, IsUnit (frobWeight b)
+  /-- The quantum dimension `dim_q(λ)` of each block. -/
+  dimQ : blocks → R
+  /-- Every block's quantum dimension is a **unit** in `R`. -/
+  dimQ_isUnit : ∀ b, IsUnit (dimQ b)
+
+attribute [instance] SemisimpleBlockData.blocksFintype
 
 /-- **Quantum Observable Universe** over a commutative ring `R`.
 

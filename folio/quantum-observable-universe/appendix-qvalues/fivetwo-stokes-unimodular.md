@@ -33,22 +33,21 @@ Note that the inversion relation constrains the pair without collapsing it.
 Transposition is not the chirality involution: it relates the blocks while
 leaving the ordered pair of off-diagonal constants genuinely ordered, which is
 why the split recorded in
-[`prop:fivetwo-dt-spectrum-split`](#prop:fivetwo-dt-spectrum-split) survives.
+[the $5_2$ DT spectrum split](#prop:fivetwo-dt-spectrum-split) survives.
 
 **The $W_{-1}$ determinant.** The magnitude $2$ is the "$\det \pm 2$"
 phenomenon of the $W_{-1}$ block. The sign matters and is easy to get wrong:
 $W_{-1}(0)$ carries denominators of $6$ from the $c$-slot subtraction, so it
-is a matrix over $\mathbb{Q}$ and its determinant is $-2$. An earlier framing
-assumed a fitted integer $+2$; the honest statement is the rational one.
+is a matrix over $\mathbb{Q}$ and its determinant is $-2$.
 
-## Why these are Lean-provable
+## Algebraic scope
 
 Every assertion above is a finite decidable identity about a concrete matrix
-with rational entries. There is no analysis, no limit and no convergence
-argument — the content is entirely in having the *right* matrices, which come
-from the derived sandwich compute rather than from a fit.
+with rational entries, requiring no analytic limit or convergence
+argument; the content resides in the leading-order Stokes matrices extracted
+from the asymptotic sandwich expansion.
 
-That is also the limit of what is claimed. These are statements about the
+These identities hold for the
 leading coefficient matrices; the corresponding all-orders statements
 ($\det S^{\pm}(q) = 1$ as an identity of $q$-series, and Stokes integrality)
-are checked numerically in the sandwich compute and are not formalised here.
+are verified numerically in the sandwich expansion beyond leading order.

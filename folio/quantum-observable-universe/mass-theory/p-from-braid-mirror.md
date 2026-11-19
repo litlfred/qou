@@ -6,13 +6,13 @@ of the braid diagram** — each positive crossing $\sigma_i \mapsto
 the signed writhe $w(K) \mapsto -w(K)$ of every braid word.  $P$ is
 an involution ($P^2 = \mathrm{id}$) and is **distinct from**:*
 
-- *the bar-involution [`def:bar-involution`](#def:bar-involution),
+- *the bar-involution [bar-involution definition](#def:bar-involution),
   which acts as $q \mapsto q^{-1}$ AND $\sigma_i \mapsto \sigma_i^{-1}$
   simultaneously (= composite CPT);*
-- *charge conjugation [`conj:c-from-color-flavor-swap`](#conj:c-from-color-flavor-swap),
+- *charge conjugation [c-from-color-flavor-swap conjecture](#conj:c-from-color-flavor-swap),
   which acts on color-sheet flavor labels with no Hecke-
   generator action;*
-- *time-reversal [`conj:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity),
+- *time-reversal [t-from-trace-cyclicity conjecture](#conj:t-from-trace-cyclicity),
   which reverses the braid word at the Markov-trace level.*
 
 ## The action
@@ -74,7 +74,7 @@ as bar-anti-symmetric, consistent: bar reverses writhe via the
 composite $P \cdot C \cdot T$, of which P is the writhe-acting
 factor.
 
-## Lean axiomatisation (sketch)
+## Algebraic axiomatisation (sketch)
 
 ```lean
 class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
@@ -92,11 +92,11 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 ## Consumers / downstream
 
-- [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
+- [cpt-orbit-closure-density conjecture](#conj:cpt-orbit-closure-density)
   becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once all
   three factors are established.
 - The writhe-based chirality classification
-  [`prop:chirality-writhe-ribbon-derivation`](#prop:chirality-writhe-ribbon-derivation)
+  [chirality-writhe-ribbon-derivation proposition](#prop:chirality-writhe-ribbon-derivation)
   gets a categorical home: chirality measures the P-anti-symmetric
   part of a knot, separately from C and T.
 
@@ -115,7 +115,7 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 - The sibling $\mathbb{Z}/2$ factors of CPT — charge conjugation and time
   reversal, this conjecture supplying parity:
-  [`conj:c-from-color-flavor-swap`](../brings-surface/c-from-color-flavor-swap.md),
-  [`conj:t-from-trace-cyclicity`](../nuclear-interactions/t-from-trace-cyclicity.md)
-- Composite CPT: [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
+  [c-from-color-flavor-swap conjecture](../brings-surface/c-from-color-flavor-swap.md),
+  [t-from-trace-cyclicity conjecture](../nuclear-interactions/t-from-trace-cyclicity.md)
+- Composite CPT: [cpt-orbit-closure-density conjecture](#conj:cpt-orbit-closure-density)
 - Bar-involution: [`bar-involution.md`](../braids-and-knots/bar-involution.md) Tables 1-4

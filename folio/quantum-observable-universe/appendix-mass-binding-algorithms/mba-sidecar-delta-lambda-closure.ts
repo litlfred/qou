@@ -12,6 +12,11 @@ export default algorithm({
         "and the candidate super-pairwise extensive-magnitude terms are " +
         "collected in `docs/coordination/option-e.md`.",
     },
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Formalization pointers moved out of published prose: the per-partition value and chirality sign are formalized in `QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional` and `deltaSign_eq_nStat_parity`; the $A = 4$ pairwise determinant inequality $(1-m^2)^6 \\le (1+3m)(1-m)^3$ is formalized in `QOU.MassTheory.exchangeDet_pow_two_le_four` (`lean/QOU/MassTheory/BindingSaturationCapA4.lean`).",
+    },
   ],
   label: "alg:delta-lambda-closure",
   title: "$\\Delta_\\lambda$ per-partition value (PROVED $(-1)^{n(\\lambda)}\\dim V_\\lambda$); many-body magnitude open",

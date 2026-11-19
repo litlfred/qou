@@ -47,7 +47,7 @@ summed to $9.2 \times 10^{-41}$.
 
 ## Scope
 
-The derivative hypothesis is an input. What is proved here is the passage from
+The derivative hypothesis is an input. What is established here is the passage from
 that hypothesis to the total $\pi^{2}$, tolerating one exceptional point — the
-integration step, not the identification of the integrand. The numerical
-measurement above is what supports the integrand; it is not formalised.
+integration step rather than the analytic derivation of the integrand, which is
+supported by the high-precision arc evaluation above.

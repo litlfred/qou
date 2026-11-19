@@ -13,6 +13,6 @@ In the surreal lift, the inner integrand at $s = t$ evaluates to $1/0^2 = \omega
 The blow-up calculus respects the birthday grading. The counterterm $C(\omega)$ has the same birthday as $X(\omega)$. Their difference lives at a strictly lower birthday. The standard part collapses it to $\mathbb{R}$. This provides a birthday-graded refinement of BPHZ subtraction, where each subtraction reduces the birthday by a controlled ordinal amount.
 
 The QOU mass formula contains no divergences. The blow-up calculus serves three secondary purposes:
-1. **Möbius energy comparison**: We turn the informal classical $\infty$ into a named $\omega^2$.
-2. **Classical-limit $q \to 1$**: We make "$c_q \to \infty$" literal.
-3. **Future renormalisation work**: We provide a setting for Yang--Mills or Sobolev-completion arguments requiring regularisation.
+1. **Möbius energy comparison**: turning the informal classical $\infty$ into a named $\omega^2$.
+2. **Classical-limit $q \to 1$**: making "$c_q \to \infty$" literal.
+3. **Future renormalisation work**: providing a setting for Yang--Mills or Sobolev-completion arguments requiring regularisation.

@@ -7,7 +7,7 @@ $$
   \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}
 $$
 
-*is the substrate-side anchor that fixes $q_0$. We evaluate both sides at 50-decimal precision and record the residual in the witness file:*
+*is the substrate-side anchor that fixes $q_0$. Evaluating both sides at 50-decimal precision yields the residual recorded in the witness file:*
 
 | Quantity | 50-dps value | Source |
 |----------|-------------|--------|

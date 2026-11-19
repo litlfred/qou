@@ -7,6 +7,8 @@ export default remark({
     "HKR and skew-Poisson integration",
   uses: [
     "def:poisson-object",
+  ],
+  foreshadows: [
     "def:classical-limit-obstruction",
     "prop:skew-poisson-integration",
   ],

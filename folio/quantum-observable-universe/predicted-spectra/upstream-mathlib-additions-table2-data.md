@@ -1,6 +1,6 @@
-| Open content | Substantive work needed |
+| Analytic obligation | Required argument |
 |---|---|
-| Absolute convergence of `complexLiTwo` on $\lvert z\rvert \leq 1$ | `Summable` proof comparing with $1/k^2$ series (requires adapting Mathlib's `Real.tsum_geometric_lt_top` analogues). |
-| 5-term pentagon for `blochWigner` | Spence-style identities (approximately 50-100 lines of Lean). |
-| `Cl_2(2π - θ) = -Cl_2(θ)` half-period reflection | Analogous to `Cl_2_neg`, but using `Real.sin_two_pi_sub`. |
-| Faddeev-Kashaev uniform Tauberian for `complexLiTwo` | Substantial. Requires a Riemann-sum argument with a uniform error bound as $q \to 1$. |
+| Absolute convergence of $\mathrm{Li}_2(z)$ on $\lvert z\rvert \leq 1$ | Direct comparison with $\sum_{k \ge 1} 1/k^2$ via Weierstrass $M$-test bounds on the closed unit disk. |
+| Five-term pentagon identity for $D(z)$ | Classical Spence functional identities for the real and imaginary parts of $\mathrm{Li}_2$. |
+| Half-period reflection $\mathrm{Cl}_2(2\pi - \theta) = -\mathrm{Cl}_2(\theta)$ | Termwise Fourier rearrangement using $\sin(2\pi k - k\theta) = -\sin(k\theta)$. |
+| Faddeev–Kashaev uniform Tauberian limit for $\mathrm{Li}_2(z)$ | Riemann-sum Euler–Maclaurin estimate with uniform remainder bound as $q \to 1$. |

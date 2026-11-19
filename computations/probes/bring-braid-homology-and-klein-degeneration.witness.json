@@ -1,0 +1,278 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T09:16:06.511713+00:00",
+  "commitSha": "974a6952a3bf3c410c2eb0a0a538d05e573de646",
+  "assertions": [
+    {
+      "name": "s5_and_a5_cyclic_stabilizer_orders_match",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.cyclic_subgroup_perm5_card_mem"
+    },
+    {
+      "name": "bring_branch_point_tangent_multipliers_primitive_at_80dps",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.FaithfulAnalyticPointAction.isCyclic_and_generator"
+    },
+    {
+      "name": "cellular_riemann_hurwitz_bring_euler_minus_six",
+      "computed": "-6",
+      "expected": "-6",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.equivariant_cell_riemann_hurwitz_orbit_deficit"
+    },
+    {
+      "name": "t3_5_seifert_rank_8_unimodular_and_in_sp8z",
+      "computed": "8",
+      "expected": "8",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.seifert_t35_and_t29_unimodular_symplectic"
+    },
+    {
+      "name": "t3_5_monodromy_charpoly_equals_cyclotomic_15",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.monodromyT35_charpoly_eq_cyclotomic_15"
+    },
+    {
+      "name": "t2_11_irreducible_phi22_degree_10_exceeds_sp8z",
+      "computed": "10",
+      "expected": "10",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.no_matrix8_int_annihilates_cyclotomic_22"
+    },
+    {
+      "name": "artin_braid_generators_preserve_omega8_and_braid_relations",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.braid_to_sp8z_functorial_and_artin_relations"
+    },
+    {
+      "name": "s5_cubic_pencil_p3_eq_3e3_on_p1_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.bring_cubic_pencil_s5_rigidity"
+    },
+    {
+      "name": "s4_canonical_pencil_acquires_4_or_6_ordinary_nodes_never_1",
+      "computed": "4,4,6",
+      "expected": "4,4,6",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.s4_no_fixed_point_on_bring_quadric"
+    },
+    {
+      "name": "klein_hurwitz237_s4_min_orbit_size_is_8_gt_2",
+      "computed": "8",
+      "expected": "8",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BraidCurveHomologyAndEquivariantHurwitz.klein_hurwitz237_s4_orbit_ge_eight_excludes_marked_pair"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "bring-braid-homology-and-klein-degeneration",
+  "scriptFile": "bring_braid_homology_and_klein_degeneration_probe.py",
+  "scriptHash": "bfbe297c9728",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_braid_homology_and_klein_degeneration_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_braid_homology_and_klein_degeneration_probe.py"
+  },
+  "description": "Symbolic and 80-dps mpmath verification of cyclic analytic germ stabilizers and G-equivariant cellular Riemann-Hurwitz (qou-m1bg, qou-m3tr), the canonical Stallings Seifert and Artin-braid symplectic representation into Sp(8, Z) for T(3,5), T(2,2m+1), and T(2,11) (qou-pzsi), and the S_5/S_4 nodal degeneration and Klein quartic orbit-bound obstructions (qou-8pl1).",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "sec1_cyclic_stabilizers_and_cellular_hurwitz": {
+      "s5_element_orders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "a5_element_orders": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "p5_tangent_multiplier_abs": "1.00000000000000000000000000000000000000000000000000000000000",
+      "p5_multiplier_pow5_err": "7.96828415353827614639285155045556633072316032382683705868315e-81",
+      "p5_tangent_projection_residual": "8.00656059045075565124223564638651276759607736867560264569291e-80",
+      "p5_is_primitive_order_5": true,
+      "p4_multiplier_pow4_err": "0.0",
+      "p4_is_primitive_order_4": true,
+      "p2_multiplier_minus1_err": "0.0",
+      "cellular_bring_V": 114,
+      "cellular_bring_E": 240,
+      "cellular_bring_F": 120,
+      "cellular_bring_chi": -6,
+      "cellular_quotient_chi": 2,
+      "orbit_deficit_sum": 246,
+      "stabilizer_ramification_sum": 246,
+      "cellular_riemann_hurwitz_holds": true
+    },
+    "sec2_braid_seifert_homology_sp8z": {
+      "torus_2_family": {
+        "T_2_3": {
+          "rank": 2,
+          "det_S": 1,
+          "det_J": 1,
+          "embeds_in_Sp8Z": true,
+          "charpoly": "t**2 - t + 1"
+        },
+        "T_2_5": {
+          "rank": 4,
+          "det_S": 1,
+          "det_J": 1,
+          "embeds_in_Sp8Z": true,
+          "charpoly": "t**4 - t**3 + t**2 - t + 1"
+        },
+        "T_2_7": {
+          "rank": 6,
+          "det_S": 1,
+          "det_J": 1,
+          "embeds_in_Sp8Z": true,
+          "charpoly": "t**6 - t**5 + t**4 - t**3 + t**2 - t + 1"
+        },
+        "T_2_9": {
+          "rank": 8,
+          "det_S": 1,
+          "det_J": 1,
+          "embeds_in_Sp8Z": true,
+          "charpoly": "(t**2 - t + 1)*(t**6 - t**3 + 1)"
+        },
+        "T_2_11": {
+          "rank": 10,
+          "det_S": 1,
+          "det_J": 1,
+          "embeds_in_Sp8Z": false,
+          "charpoly": "t**10 - t**9 + t**8 - t**7 + t**6 - t**5 + t**4 - t**3 + t**2 - t + 1"
+        }
+      },
+      "t2_11_charpoly_equals_phi22": true,
+      "phi22_irreducible_degree_10": true,
+      "t3_5_seifert_rank": 8,
+      "t3_5_det_S": 1,
+      "t3_5_det_J": 1,
+      "t3_5_darboux_sp8z_verified": true,
+      "t3_5_charpoly_is_phi15": true,
+      "t3_5_phi15_formula": "t**8 - t**7 + t**5 - t**4 + t**3 - t + 1",
+      "t3_5_max_eigenvalue_match_error_80dps": "6.02296583119194514134226173659597833238528819644982144190375e-81",
+      "artin_braid_sp8z_homomorphism_verified": true,
+      "qou_pzsi_gluon_dressings_symplectic_rank8": {
+        "gluon_s0_s1_classB": {
+          "b1_seifert": 9,
+          "symplectic_rank": 8,
+          "det_S": 1,
+          "symplectic_quotient_charpoly": "(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)",
+          "spectral_radius_80dps": "1.00000000000000000000000000000000000000000000000000000000000"
+        },
+        "gluon_s0_s0_nuc11_classB": {
+          "b1_seifert": 9,
+          "symplectic_rank": 8,
+          "det_S": 1,
+          "symplectic_quotient_charpoly": "(t + 1)**2*(t**2 - t + 1)*(t**4 - t**3 + t**2 - t + 1)",
+          "spectral_radius_80dps": "1.00000000000000000000000000000000000000000000000000000000000"
+        },
+        "gluon_s1_s0_classA": {
+          "b1_seifert": 9,
+          "symplectic_rank": 8,
+          "det_S": 1,
+          "symplectic_quotient_charpoly": "t**8 + t**5 - t**4 + t**3 + 1",
+          "spectral_radius_80dps": "1.28063815626775759670190253271067630159531331781935358407628"
+        },
+        "gluon_s1_s1_classA": {
+          "b1_seifert": 9,
+          "symplectic_rank": 8,
+          "det_S": 1,
+          "symplectic_quotient_charpoly": "t**8 + t**5 - t**4 + t**3 + 1",
+          "spectral_radius_80dps": "1.28063815626775759670190253271067630159531331781935358407628"
+        }
+      },
+      "classA_salem_vs_classB_cyclotomic_separated": true
+    },
+    "sec3_bring_to_klein_degeneration_test": {
+      "s5_complete_intersection_rigidity_p3_eq_3e3": true,
+      "s4_pencil_e3_reparametrization_verified": true,
+      "s4_fixed_point_p2_value": 20,
+      "s4_pencil_critical_node_counts": [
+        4,
+        4,
+        6
+      ],
+      "s4_pencil_normalized_genera": [
+        0,
+        0,
+        0
+      ],
+      "tau_crit_4node_minpoly": "96*tau^2 - 360*tau + 400",
+      "tau_crit_6node_exact": "15/8 (tau_tilde = -5)",
+      "tau_15_8_splits_into_three_conics": true,
+      "min_intrinsic_hessian_det_across_14_nodes_80dps": "45.0000000000000000000000000000000000000000000000000000000000",
+      "all_14_singular_points_are_ordinary_A1_nodes": true,
+      "klein_gl3f2_order": 168,
+      "fano_stabilizer_s4_order": 24,
+      "s4_orbits_on_84_order2_points": [
+        12,
+        12,
+        12,
+        24,
+        24
+      ],
+      "s4_orbits_on_56_order3_points": [
+        8,
+        24,
+        24
+      ],
+      "s4_orbits_on_24_order7_weierstrass_points": [
+        24
+      ],
+      "distinct_s4_orbit_sizes_on_klein_branch_loci": [
+        8,
+        12,
+        24
+      ],
+      "min_s4_orbit_size_on_klein": 8
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure algebraic-geometric, integral symplectic Sp(8,Z), and 80-dps complex root/Hessian verification of Bring's curve stabilizers, Seifert matrices, and nodal degenerations; never reads substrate q0."
+}

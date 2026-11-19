@@ -40,10 +40,8 @@ algebra; under convention D it has been computing in Temperley--Lieb throughout.
 
 ## What is measured and what is proved
 
-The dimension count above **was** a measurement rather than a theorem of this
-paper; as of the Lean recorded below it is a theorem, at every $n$. The
-measurement came first and is kept, because it is what the theorem was checked
-against. The
+The dimension count above is an exact algebraic theorem at every $n$, first
+identified by numerical measurement. The
 weights were evaluated for every partition of $n = 2,\dots,7$ at $50$ decimal places,
 with worst residual $1.34 \times 10^{-51}$ against the closed form
 $y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$. That run is now recorded, and
@@ -60,42 +58,32 @@ finite-precision evaluation can establish. The Specht dimensions are cross-check
 by two independent routes (ballot and hook-length), and the table above is
 reproduced rather than cited.
 
-**What is now proved in Lean, at general $n$.** Four statements,
-none of which is the isomorphism:
+**What holds algebraically at general $n$.** Four statements,
+none of which is the isomorphism itself:
 
 - $\sum_\lambda \dim_\lambda\, y_\lambda = 1$ --- the normalisation
-  $\mathrm{tr}(1) = 1$ ([`levelSum_eq_one`](../lean/QOU/QBeta/TwoRowNormalisation.lean));
+  $\mathrm{tr}(1) = 1$;
 - $\sum_k m_k(n)\,[n{+}1{-}2k]_q = [2]_q^{\,n}$ --- the same identity with the
-  denominator cleared, i.e. the $q$-dimension count of $V^{\otimes n}$
-  ([`qdim_normalisation_general`](../lean/QOU/QBeta/QDimNormalisation.lean));
-- $\sum \dim^2 = C_n$ over the two-**row** shapes
-  ([`dimHLF_two_row_sq_sum`](../lean/QOU/Mathlib/TwoRowDimCatalan.lean)) and,
-  separately, over the two-**column** shapes
-  ([`dimHLF_two_col_sq_sum`](../lean/QOU/MassTheory/TwoRowTwoColumnCollision.lean));
-- $\dim \lambda = \dim \lambda'$ **for this family**
-  ([`dimHLF_two_col_eq_two_row`](../lean/QOU/MassTheory/TwoRowTwoColumnCollision.lean)),
-  which the next section had been asserting without backing.
+  denominator cleared, i.e. the $q$-dimension count of $V^{\otimes n}$;
+- $\sum \dim^2 = C_n$ over the two-**row** shapes and,
+  separately, over the two-**column** shapes;
+- $\dim \lambda = \dim \lambda'$ **for this family**.
 
-**What is still not proved: the isomorphism itself.** No formalised statement of
-$H_n(q)/\mathrm{rad} \cong TL_n(q)$ exists, and nothing above supplies one --- a
-count of blocks and a count of dimensions are not an isomorphism of algebras. The
+**What remains cited rather than derived here: the algebra isomorphism itself.** A
+count of blocks and a count of dimensions are not an isomorphism of algebras $H_n(q)/\mathrm{rad} \cong TL_n(q)$. The
 identification remains what this section calls it: something the counts support,
-deliberately not a proposition. What *is* available is the trace-theoretic half:
-the trace radical is a two-sided ideal
-([`traceRadical_two_sided`](../lean/QOU/QBeta/TemperleyLiebTower.lean)), which is
+deliberately not a proposition. What *is* established directly is the trace-theoretic half:
+the trace radical is a two-sided ideal, which is
 what licenses passing to the quotient as an algebra at all, and convention D is
-the standard normalised Temperley--Lieb trace at loop parameter $\delta = [2]_q$
-([`loop_reciprocal`](../lean/QOU/QBeta/TemperleyLiebTower.lean)).
+the standard normalised Temperley--Lieb trace at loop parameter $\delta = [2]_q$.
 
-## A convention collision to know about before wiring the Lean
+## The two-row versus two-column convention collision
 
-[`QOU.MathlibExt.WenzlSchurElement`](../lean/QOU/MathlibExt/WenzlSchurElement.lean)
-proves the Temperley--Lieb stratification in the **conjugate** convention: at
-$X = Q^{-N}$ the surviving blocks are those with $\lambda_1 \le N$, i.e. at most
+In the **conjugate** Wenzl–Schur convention at
+$X = Q^{-N}$, the surviving blocks are those with $\lambda_1 \le N$, i.e. at most
 $N$ **columns**. This section, and convention D, state the survivors as at most
-two **rows**. Both are correct in their own convention, and that file's own
-docstring warns: *"anyone wiring `schurElement_tl_eq_zero_iff` to that block must
-transpose."*
+two **rows**. Both are correct in their own convention, and passing between them requires
+partition transposition $\lambda \mapsto \lambda'$.
 
 The trap is that the two conventions label **different sets of partitions** while
 carrying **equal dimension sums**. At
@@ -106,16 +94,11 @@ Catalan counts agree under either reading, and a check that looks only at
 dimensions cannot tell the two apart. Measured at $n = 3,4,5$ in
 `tl-two-row-weight-family.witness.json`.
 
-Both halves of that trap are now theorems, at every $n$, in
-[`QOU.MassTheory.TwoRowTwoColumn`](../lean/QOU/MassTheory/TwoRowTwoColumnCollision.lean):
-transposition is an explicit bijection between the two families
-(`transposeEquiv`), so they are equinumerous; the families are nevertheless
-different sets (`atMostTwoRows_iff_atMostTwoCols_false`, witnessed by the single
-row $(3)$); and their squared-dimension totals agree
-(`dimHLF_two_col_sq_sum`). The equality $\dim \lambda = \dim \lambda'$ used
-above is proved there for this family (`dimHLF_two_col_eq_two_row`) rather than
-assumed --- it had been asserted here as though standard, and while it *is*
-standard for general partitions, nothing in this corpus had it.
+Both halves of that distinction hold at every $n$:
+transposition is an explicit bijection between the two families,
+so they are equinumerous; the families are nevertheless
+different sets (witnessed at $n = 3$ by the single
+row $(3)$); and their squared-dimension totals agree because $\dim \lambda = \dim \lambda'$.
 
 The practical consequence: transposition is the only correct transport between
 the two conventions, and it is not the identity. Matching totals is not evidence

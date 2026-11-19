@@ -1,9 +1,9 @@
 The many-body magnitude leg of $\Delta_\lambda$ is scored against an external
 observable — the empirical correlation between three-body and four-body binding
-energies, known in nuclear physics as the *Tjon line*. The folio carries no
-statement of what that literature actually establishes, which leaves an analogy
-free to be read as an established premise. This remark states the external
-result, states the corpus construction, and separates them.
+energies, known in nuclear physics as the *Tjon line*. Without an explicit
+statement of what that literature establishes, a heuristic analogy can be
+mistaken for an established premise. What follows states the external
+effective-field-theory results, states the simplex decomposition used here, and separates them.
 
 ## The external results
 
@@ -33,7 +33,7 @@ confined to the threshold region.
 ## Limits of the external results
 
 Each of the following is a separate statement that the results above do
-**not** license, and the distinctions matter because the corpus scores against
+**not** license, and the distinctions matter when binding curves are compared against
 these numbers.
 
 1. **``No four-body parameter is needed'' is not ``no four-body force exists.''**
@@ -107,14 +107,14 @@ another way of writing ``the amount by which $M(4)$ exceeds the two-point
 prediction'', and nothing more. It is not a measurement of a four-body
 interaction, and calling it ``the four-body moment'' — as the surrounding
 literature's vocabulary tempts one to — asserts an identification that no step
-above establishes. The corpus rule this instantiates is
+above establishes. The methodological principle this instantiates is
 *defined residual $\neq$ derived decomposition*: a residual introduced with
 $:=$ acquires no physical content from the index it is written under.
 
-Both facts are formalised over a generic commutative ring, in
-`QOU.MassTheory.TjonSimplexForm` — `tjon_baseline_lt_four_ratio`,
-`universal_ratio_not_in_tjon_baseline` and `universal_ratio_forces_mu4` — and
-measured in `computations/deltalambda/tjon_external_cross_check_probe.py`.
+Both algebraic facts hold identically over any ordered commutative ring: on the
+$\mu_4 = 0$ baseline, $M(4) < 4\,M(3)$ whenever $\mu_2 > 0$, so the zero-range
+ratio $M(4) = 5\,M(3)$ lies strictly outside the baseline and forces
+$\mu_4 = 9\mu_2 + \mu_3$.
 
 The consequence for the magnitude leg is a constraint on citation, not a new
 result. The external literature may be cited for why a nonzero $\mu_4$ is

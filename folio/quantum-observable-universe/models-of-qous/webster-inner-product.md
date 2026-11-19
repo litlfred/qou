@@ -1,4 +1,4 @@
-We denote the inner product induced by the Webster metric $g_\varTheta$ on the horizontal distribution $H = \ker\varTheta$ and its exterior powers as $\langle \cdot, \cdot \rangle_\varTheta$. For vector fields $X, Y$ and differential forms $\alpha, \beta$:
+Denote the inner product induced by the Webster metric $g_\varTheta$ on the horizontal distribution $H = \ker\varTheta$ and its exterior powers as $\langle \cdot, \cdot \rangle_\varTheta$. For vector fields $X, Y$ and differential forms $\alpha, \beta$:
 
 $$
   \langle X, Y \rangle_\varTheta := g_\varTheta(X, Y),

@@ -23,4 +23,11 @@ export default remark({
     "free-abelian-group",
     "lean-infrastructure",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Lean/Mathlib formalisation (`three-substantive-mathlib-fillers.lean`): (1) Bloch group carrier `PreBlochElement F`, `PreBlochGroup F := FreeAbelianGroup (PreBlochElement F)`, `HasPentagonRelation F`, `HasBlochGroup F`; (2) Clausen pentagon class `Cl_2_PentagonHolds` and boundary theorem `Cl_2_pentagon_at_zero`; (3) Faddeev-Kashaev limit class `FaddeevKashaevQuasiClassicalLimit x` (extending `ArchimedeanLimit`) and boundary theorem `faddeev_kashaev_at_zero`; combined in `HasAllSubstantiveFillers F` with `three_substantive_fillers_synthesis_consistent`.",
+    },
+  ],
 });

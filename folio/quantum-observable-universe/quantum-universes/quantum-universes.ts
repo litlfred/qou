@@ -43,6 +43,7 @@ export default chapter({
       label: "sec:quantum-universe",
       blocks: [
         "quantum-universe-intro",
+        "frobenius-hopf-substrate",
         "quantum-universe",
         // Light-touch physical motivation for each axiom, and the
         // foreshadow of ch:knots-particles-confinement §1 (the braiding's
@@ -64,10 +65,10 @@ export default chapter({
         "quantum-universe-frobenius-pairing-unique-intro",
         "frobenius-pairing-unique",
         "frobenius-pairing-unique-proof",
-        "frobenius-pairing-su2",
         "frobenius-geometric-role",
         "quantum-universe-su2",
         "quantum-universe-su2-table1-data",
+        "frobenius-pairing-su2",
         "higher-forms",
         "higher-forms-su2",
         "fundamental-object-explication",

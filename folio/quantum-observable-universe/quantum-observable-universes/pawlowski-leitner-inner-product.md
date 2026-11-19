@@ -1,4 +1,4 @@
-The adjoint trace induces an inner product on the intertwiner spaces. For $\phi, \psi \in \mathrm{Hom}_{\mathrm{SU}(2)}(V_j, V_{1/2}^{\otimes n})$, we define:
+The adjoint trace induces an inner product on the intertwiner spaces. For $\phi, \psi \in \mathrm{Hom}_{\mathrm{SU}(2)}(V_j, V_{1/2}^{\otimes n})$, the inner product is defined by:
 
 $$
   \langle \phi, \psi \rangle_{\mathrm{PL}}

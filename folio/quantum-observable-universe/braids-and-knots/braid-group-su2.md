@@ -1,4 +1,4 @@
-The braid group $B_3$ acts on tensor products of the spin-$\tfrac{1}{2}$ representation $V = \mathbb{C}^2$ of $\mathcal{U}_q(\mathfrak{su}(2))$. We explicitly compute the action on $V \otimes V$.
+The braid group $B_3$ acts on tensor products of the spin-$\tfrac{1}{2}$ representation $V = \mathbb{C}^2$ of $\mathcal{U}_q(\mathfrak{su}(2))$. The action on $V \otimes V$ admits an explicit matrix form.
 
 Choose the standard basis $\{e_1, e_2\}$ for $V$. The ordered basis for $V \otimes V$ is $\{e_1 \otimes e_1, e_1 \otimes e_2, e_2 \otimes e_1, e_2 \otimes e_2\}$. The braiding $\sigma \colon V \otimes V \to V \otimes V$ is the $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$. It acts on basis vectors by:
 $$

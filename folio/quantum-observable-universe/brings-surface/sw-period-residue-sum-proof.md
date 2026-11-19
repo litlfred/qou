@@ -17,7 +17,7 @@ $$
 
 the right-hand side being a finite sum of local residues. Identifying the
 left-hand side with the prolonged period $a_D^{(n)}$ of
-[`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation) gives the residue-sum
+[MI--SW abelianisation](#prop:mi-sw-abelianisation) gives the residue-sum
 shape: the period is computed by collecting residues, with no contour
 integration — *once $E$ is known*.
 
@@ -26,17 +26,12 @@ over a generating cycle of $\mathcal{S}_c$. $\mathbb{P}^1(\mathbb{C})$ has
 $H_1 = 0$, so there is no generating cycle; and the residue theorem on a compact
 Riemann surface states that the residues over *all* poles **sum to zero**, which
 would give $a_D^{(n)} = 0$ at every level rather than the positive binding period
-the keystone requires. The Lean records this as a derived consequence rather than
-a claim:
-[`QOU.Brings.period_eq_zero_of_total_residue_vanishes`](#prop:sw-period-residue-sum)
-and its contrapositive
-`total_residue_ne_zero_of_period_ne_zero`, which is what forces $E$ to be a
-*proper* subset. The companion witness
-[`QOU.Brings.sw_period_eq_residue_sum`](#prop:sw-period-residue-sum) carries the
-residue-sum shape as an explicit hypothesis; it does not derive it.
+the keystone requires. By the contrapositive, a nonzero period forces a nonzero
+total residue on the enclosed subset, which in turn forces $E$ to be a
+*proper* subset of the pole locus.
 
 A second, independent route reaches the same vanishing under the classical-jet
-rule: [`prop:sw-classical-jet-exactness`](#prop:sw-classical-jet-exactness) shows
+rule: [SW classical-jet exactness](#prop:sw-classical-jet-exactness) shows
 $\lambda_{\mathrm{SW}}^{(n)} = d\bigl(X^{(n-1)}\bigr)$ is exact, so each residue
 vanishes on its own. That argument is stronger where it applies and is scoped to
 the classical-jet reading; the one here assumes only that the *total* vanishes,

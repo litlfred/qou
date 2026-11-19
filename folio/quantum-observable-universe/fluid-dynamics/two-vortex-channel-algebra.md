@@ -1,5 +1,3 @@
-*Lean sibling: generic commutative ring, no archimedean input; library module `QOU.FluidDynamics.TwoVortexChannelAlgebra`.*
-
 **Proposition (channel algebra of the two-vortex interaction).** *Let $R$ be a commutative ring carrying elements $e_+, e_-, \sigma, q, u$ satisfying*
 
 $$
@@ -17,6 +15,6 @@ $$
   \underbrace{\sigma^2 = (q - u)\,\sigma + 1}_{\text{Hecke relation}}.
 $$
 
-The theorem `channel_algebra` unites these derivations. The parallel identity $(-q^{-1})/q = -(q^2)^{-1}$ — defining the per-crossing eigenvalue ratio over any field without channel data — resides in the standalone lemma `eigenvalue_ratio`.
+In addition, over any field with $q \neq 0$, the per-crossing eigenvalue ratio satisfies $(-q^{-1})/q = -(q^2)^{-1}$ independently of the channel projectors.
 
 The primary model assigns these elements to the commutant of $\sigma_1$ in the two-strand Hecke algebra $H_2(q)$. Here $e_\pm$ represents the Wedderburn pair of the [Hopf channel](#def:van-der-waals-hopf-channel) and $\sigma$ represents the braid operator of the [$R$-matrix braiding](#prop:r-matrix-braiding-structure). Setting $u = q^{-1}$ casts the spectral form as the eigenvalue decomposition of $\sigma_1$ supporting eigenvalues $q$ and $-q^{-1}$. The resulting Hecke relation proves that the abstract channel data logically forces the Skein relation without external topological presentation.

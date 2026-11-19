@@ -1,4 +1,4 @@
-We derive a particle mass from the categorical action of a quantum observable universe. We detail the algorithm behind each step. Every intermediate quantity belongs to $\mathbb{Q}(q)$. No analytic limits or empirical constants enter until the final Archimedean specialisation.
+A particle mass is derived from the categorical action of a quantum observable universe through the explicit algebraic pipeline below. Every intermediate quantity belongs to $\mathbb{Q}(q)$. No analytic limits or empirical constants enter until the final Archimedean specialisation.
 
 Three weak-sector inputs calibrate the framework: the electron mass $m_e$ fixes the unit, the neutron beta-sector bar-skew channel fixes $q_0$, and the pion mass fixes the orthogonal meson scale. All other observables—nucleon masses, binding energies, decay Q-values—are derived algebraically at $q_0$.
 

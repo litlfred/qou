@@ -1,6 +1,6 @@
-| Missing piece | Used by | Substantive work needed |
+| Analytic component | Role in framework | Mathematical requirement |
 |---|---|---|
-| `Real.dilog` / `Complex.dilog` | Bloch-Wigner $D$ on $\mathbb{C}\setminus\{0,1\}$ | partial (`LiTwo` in dilogarithm-archimedean-limit.lean) |
-| `BlochGroup F` for number field $F$ | Suslin map, `BlochSuslinUniqueness` | substantial — quotient of free abelian group on $F^\times \times F^\times$ by 5-term pentagon |
-| Suslin map $K_3^{\mathrm{ind}}(\mathbb{C}) \to \mathbb{R}$ | `BlochSuslinUniqueness` | depends on `BlochGroup` |
-| Fourier-series identities for $\mathrm{Cl}_2$ | reflection / functional equation | depends on Mathlib's Fourier-series infra (in progress upstream) |
+| Real and complex dilogarithm $\mathrm{Li}_2$ | Bloch–Wigner $D$ on $\mathbb{C}\setminus\{0,1\}$ | Analytic continuation from the unit-disk power series |
+| Bloch group $B(F)$ for a number field $F$ | Suslin regulator and pentagon uniqueness | Quotient of $\mathbb{Z}[F \setminus \{0, 1\}]$ by Rogers five-term relations |
+| Suslin homomorphism $K_3^{\mathrm{ind}}(\mathbb{C}) \to \mathbb{R}$ | Bloch–Suslin uniqueness | Bloch-group presentation and Borel regulator |
+| Fourier-series identities for $\mathrm{Cl}_2$ | Functional equations and duplication | Termwise sine-series manipulation on $(0, 2\pi)$ |

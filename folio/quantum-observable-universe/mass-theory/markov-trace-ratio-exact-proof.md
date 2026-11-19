@@ -14,7 +14,7 @@ the common factor $C$. $\square$
 **Consequence for the HOMFLYPT engine.** The
 the canonical formalism
 returns Markov-trace-normalised values at SU(2) (row 3 of
-[`rem:archimedean-image-table`](#rem:archimedean-image-table)), which
+[archimedean-image-table remark](#rem:archimedean-image-table)), which
 are proportional to the Jones polynomial. For all optimisation
 consumers — the canonical formalism,
 the canonical formalism,

@@ -1,4 +1,4 @@
-We derive the gas constant $R_q = N_A(q) \cdot k_B$ directly from $q$ and the Borromean volume. A **categorical mole** consists of $N_A(q) = 12 / \mathfrak{m}_{C\text{-}12}(q)$ particles. The strictly defined mass of Carbon-12 in QOU natural units is:
+The gas constant $R_q = N_A(q) \cdot k_B$ follows directly from $q$ and the Borromean volume. A **categorical mole** consists of $N_A(q) = 12 / \mathfrak{m}_{C\text{-}12}(q)$ particles. The strictly defined mass of Carbon-12 in QOU natural units is:
 $$
   \mathfrak{m}_{C\text{-}12}(q) = \frac{12\,\mathrm{Vol}(\mathcal{B}_3) + 6\,\delta_{\mathfrak{n}} - B_{12}(q)}{\hbar_q^2}.
 $$

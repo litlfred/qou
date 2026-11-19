@@ -1,6 +1,6 @@
 **All three $V_\lambda$ per-irrep character-difference closed forms — cyclotomic-factor pattern.**
 
-We extend [`rem:chi-v3-closed-form-proof`](#rem:chi-v3-closed-form-proof) to all three Wedderburn blocks of $H_3(q)$, exposing the unified cyclotomic-factor pattern.
+This remark extends [the $V_{(3)}$ closed-form proof](#rem:chi-v3-closed-form-proof) to all three Wedderburn blocks of $H_3(q)$, exposing the unified cyclotomic-factor pattern.
 
 ## Three closed forms
 
@@ -58,14 +58,14 @@ acts as a 2$\times$2 matrix on the SYT basis $\{v_{T_1}, v_{T_2}\}$:
 
 The character $\chi_{(2,1)}(\beta) = \mathrm{Tr}\bigl(\prod_{c \in \beta} M_c\bigr)$
 where $M_c$ is the matrix for each crossing in the canonical word order
-from `atomic_braid_to_crossings`.
+of the atomic braid.
 
 ## Literature pointers
 
 The canonical values are rigorously evaluated via formal trace definitions.
 
-## Lean theorems exported
+## Algebraic identities established
 
-All proved by `field_simp + ring` after unfolding:
+All identities hold by rational simplification after unfolding:
 
 See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).

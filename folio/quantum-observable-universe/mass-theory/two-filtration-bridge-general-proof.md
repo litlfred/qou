@@ -23,13 +23,12 @@ $$
 $$
 
 In $H_2$, $\#(e_{(2)}) = (-\sigma + h + q^{-1})/(q + q^{-1}) = (q - \sigma)/(q + q^{-1}) = e_{(1,1)}$.
-The earlier version of this step wrote $\mathrm{bar}(e_\lambda) = e_{\lambda'}$,
-which is false. Steps 2 and 3 below use the transposing involution, so read
+Writing $\mathrm{bar}(e_\lambda) = e_{\lambda'}$ instead would be false. Steps 2 and 3 below use the transposing involution, so read
 "bar" there as $\#$ on the Hecke side.
 
 **Step 2 (period-class bar-action).** Under the archimedean
 realization functor $\tau_{\mathrm{arch}}$
-([`def:archimedean-realization-functor`](#def:archimedean-realization-functor)),
+([archimedean-realization-functor definition](#def:archimedean-realization-functor)),
 the bar involution acts on the period side by:
 
 - **Hyperbolic volume**: $\mathrm{Vol}(K) = \mathrm{Vol}(\overline{K})$
@@ -78,10 +77,10 @@ So chiral pair $\Rightarrow$ $d_{\mathrm{II}}(\lambda) = 3$.
 Hecke side matches orientation reversal on the period side, and that "pairing
 with a depth-$n$ grouplike" lands in the matching eigenspace. Neither is proved
 here, and $d_{\mathrm{II}}$ itself is defined only through
-[`conj:two-filtration-bridge`](#conj:two-filtration-bridge). The argument is
+[two-filtration-bridge conjecture](#conj:two-filtration-bridge). The argument is
 therefore a heuristic, conditional on that conjecture and on this matching. The
 part that is a theorem is item 4 of
-[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration): under
+[cellular-depth-filtration proposition](#prop:cellular-depth-filtration): under
 (H-match) and (H-parity) it gives the vanishing and antisymmetry of odd-depth
 components, but not the non-vanishing that the values $2$ and $3$ require.
 Assigning a single depth to a chiral cell is not forced, because $e_\lambda$

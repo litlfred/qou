@@ -1,4 +1,4 @@
-We re-derive and cross-check the tritium $Q$-value.
+The tritium $Q$-value admits an independent algebraic derivation and cross-check.
 
 ## Derivation chain
 

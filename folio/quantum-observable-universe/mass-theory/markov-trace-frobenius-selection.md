@@ -12,11 +12,11 @@ $$
   z \, [2]_q \;=\; q^{2},
 $$
 
-*that is, $z = q^{3}/(q^{2}+1)$ — **convention D** of the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md). Neither condition may be dropped: without the row cap $z$ is free (the whole Ocneanu family, convention C among it), and without faithfulness the trivial character $y = (1, 0, \ldots, 0)$ at $z = q$ satisfies M1–M3 and the row cap alike.*
+*that is, $z = q^{3}/(q^{2}+1)$ — **convention D**. Neither condition may be dropped: without the row cap $z$ is free (the whole Ocneanu family, convention C among it), and without faithfulness the trivial character $y = (1, 0, \ldots, 0)$ at $z = q$ satisfies M1–M3 and the row cap alike.*
 
 **(iii) What the pairing then is.** *Consequently $\langle x, y \rangle_\tau := \mathrm{tr}_M(xy)$ is **degenerate** on $H_n(R,q)$ for $n \geq 3$, and the radical of the form (not the Jacobson radical — $H_n$ is split semisimple at generic $q$) is exactly the Temperley–Lieb ideal $I_n = \ker\bigl(H_n(q) \twoheadrightarrow \mathrm{TL}_n(q)\bigr)$, neither larger nor smaller. $\mathrm{tr}_M$ vanishes identically on $I_n$, so it is still determined on all of $H_n(R,q)$ — uniqueness is on the nose, not merely modulo the radical — and it descends to a non-degenerate pairing on the quotient. It is $(\mathrm{TL}_n(q), \mathrm{tr}_M)$, not $(H_n(R,q), \mathrm{tr}_M)$, that is a symmetric Frobenius algebra.*
 
-**Status.** *(i) and (iii) are unconditional. (ii) is an implication whose antecedent — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — is **open**; the implication itself is proved at $n = 3$ (`QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical`). Its extension to $n > 3$ rests on the restriction property together with the closed form above, which is verified against every partition of $n \leq 7$ to a worst residual of $1.34 \times 10^{-51}$ and proved in Lean only as fixed-$n$ instances of the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$ (`QOU.QBeta.TemperleyLiebTower`), not by a general-$n$ induction.*
+**Status.** *(i) and (iii) are unconditional. (ii) is an implication whose antecedent — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — is **open**; the implication itself is established algebraically at $n = 3$. Its extension to $n > 3$ rests on the restriction property together with the closed form above, which is verified against every partition of $n \leq 7$ to a worst residual of $1.34 \times 10^{-51}$ and established as fixed-$n$ instances of the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$.*
 
 | form | $\tau(1)$ | $z = \tau(\sigma_i)$ | $y_\lambda$ | radical of $\langle \cdot, \cdot \rangle_\tau$ | non-degenerate? |
 |---|---:|---:|---|---|---|
@@ -29,7 +29,7 @@ steps:
 
 ### Step 1: Cat-action of $\mathbf{C}$ on the state bundle
 
-A quantum observable universe specifies a rigid monoidal category $\mathbf{C}$ with a fibre functor $\tau \colon \mathbf{C} \to \mathbf{Vect}$. The category fixes the acting Frobenius–Hopf algebra $A$. We typically use $A = H_n(R, q)$.
+A quantum observable universe specifies a rigid monoidal category $\mathbf{C}$ with a fibre functor $\tau \colon \mathbf{C} \to \mathbf{Vect}$. The category fixes the acting Frobenius–Hopf algebra $A$, typically taken to be $A = H_n(R, q)$.
 
 ### Step 2: Non-abelian Stokes at finite slice
 
@@ -79,7 +79,7 @@ The trace $\mathrm{tr}_M$ admits the explicit form:
 $$
   \mathrm{tr}_M(x) \;=\; \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(x),
 $$
-where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every other character is annihilated — and $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$. Equivalently $\mathrm{tr}_M$ factors through $\mathrm{TL}_n(q)$, and the surviving blocks carry $\sum d_\lambda^2 = \mathrm{Catalan}(n)$ of the $n!$ dimensions of $H_n(q)$ (`QOU.QBeta.TemperleyLiebTower.catalan_three` / `catalan_four` / `catalan_five`).
+where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every other character is annihilated — and $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$. Equivalently $\mathrm{tr}_M$ factors through $\mathrm{TL}_n(q)$, and the surviving blocks carry $\sum d_\lambda^2 = \mathrm{Catalan}(n)$ of the $n!$ dimensions of $H_n(q)$ (verified explicitly at $n = 3, 4, 5$).
 
 ## Selection theorem
 
@@ -92,17 +92,17 @@ where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every
 
 *Level $3$ is where the hypotheses bite, and the statement is false if they are imposed lower: at $n \leq 2$ the row cap is vacuous and M1 + M3 leave one free parameter, so $z$ is genuinely undetermined there. Given level $3$, no higher level adds freedom — the restriction of a level-$n$ Markov trace to $H_3(R,q)$ is again a Markov trace with the same $z$.*
 
-*Both hypotheses are load-bearing and neither is redundant. Dropping 1 leaves $z$ free (the full Ocneanu family, convention C among it). Dropping 2 admits the trivial character $y = (1, 0, 0)$ at $z = q$, which satisfies M1–M3 and the row cap and makes the conclusion **false**, not merely unprovable (`markovWeights_degenerate_root`). Dropping M1 / M3 admits, at $n = 3$, the entire two-parameter family $\{(y_{(3)}, y_{(2,1)}, 0) : y_{(2,1)} \neq 0\}$ — so hypotheses 1 and 2 alone do **not** single out $\mathrm{tr}_M$; the Markov axioms are still required.*
+*Both hypotheses are load-bearing and neither is redundant. Dropping 1 leaves $z$ free (the full Ocneanu family, convention C among it). Dropping 2 admits the trivial character $y = (1, 0, 0)$ at $z = q$, which satisfies M1–M3 and the row cap and makes the conclusion **false**, not merely unprovable. Dropping M1 / M3 admits, at $n = 3$, the entire two-parameter family $\{(y_{(3)}, y_{(2,1)}, 0) : y_{(2,1)} \neq 0\}$ — so hypotheses 1 and 2 alone do **not** single out $\mathrm{tr}_M$; the Markov axioms are still required.*
 
-*Formalised at $n = 3$, division-free, over a generic commutative domain: `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero` ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean)), with the fibre-side antecedent in `markovWeights_eq_jones_of_fibre_categorical` ([`FibreCategoricalTraceForcesJones.lean`](../lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean)).*
+*This $n = 3$ uniqueness theorem holds division-free over any generic commutative domain.*
 
 ## Discussion
 
-This proposition is a structural theorem about the representation theory of the Hecke algebra. We introduce no fitting or empirical input, and no numerical $q_0$: parts (i) and (iii) are unconditional, and part (ii) is division-free over a generic commutative domain. What it is **conditional** on is one named categorical premise — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — which is open. Conditional-proved is not premise-established.
+This proposition is a structural theorem about the representation theory of the Hecke algebra. No fitting, empirical input, or numerical $q_0$ enters: parts (i) and (iii) are unconditional, and part (ii) is division-free over a generic commutative domain. What it is **conditional** on is one named categorical premise — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — which is open. Conditional-proved is not premise-established.
 
 ## Computational consequence
 
-The QOU production stack computes $\mathrm{tr}_M$ on the canonical atomic word — 11 letters on 3 strands for the two $A = 1$ atoms, 23 on 6 strands for the deuteron — through two independent colour-weighted paths: the Gröbner-Shirshov reduction (`markov_peel`) and the Frobenius combiner $\sum_\lambda y_\lambda \chi^\lambda$ (`canonical_tr_m_via_chi_cache`). At the proton-pinned $q_0$, in **production convention D** — SU(2)/Temperley–Lieb (Jones), $z = q^3/(q^2+1)$, [registry](../../../docs/coordination/trace-convention-registry.md) id **D**, `forcing_status: forced-given-premise`:
+The QOU production stack computes $\mathrm{tr}_M$ on the canonical atomic word — 11 letters on 3 strands for the two $A = 1$ atoms, 23 on 6 strands for the deuteron — through two independent colour-weighted paths: the Gröbner-Shirshov reduction (recursive Markov peeling) and the Frobenius combiner $\sum_\lambda y_\lambda \chi^\lambda$. At the proton-anchored $q_0$, in **production convention D** — SU(2)/Temperley–Lieb (Jones), $z = q^3/(q^2+1)$:
 
 | atom | $\mathrm{tr}_M(\beta_{\rm atom}, q_0)$ | peel vs combiner |
 |---|---:|---:|

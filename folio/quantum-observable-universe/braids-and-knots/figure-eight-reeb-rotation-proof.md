@@ -33,7 +33,7 @@ $$
 
 so that $\det \sigma_2 = ac - b^2 = -\bigl(1 + [3]_q\bigr)/[2]_q^2 = -[2]_q^2/[2]_q^2 = -1$ and $\mathrm{tr}\,\sigma_2 = h$: both generators have the Hecke eigenvalues $q$ and $-q^{-1}$. These are Hoefsmit's seminormal matrices for the standard representation, with diagonal entries indexed by the axial distances $\pm 2$ of the two standard tableaux of shape $(2,1)$; they satisfy the braid relation $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ by the seminormal construction \cite{hoefsmit1974,wenzl1988c}.
 
-**Step 2: Determinant of the knot operator.** Since each generator has eigenvalue product $q \cdot (-q^{-1}) = -1$, we get $\det \sigma_1 = \det \sigma_2 = -1$ and $\det \sigma_2^{-1} = -1$. Hence for $A = \sigma_1 \sigma_2^{-1}$ and $M_{4_1} = A^2$,
+**Step 2: Determinant of the knot operator.** Since each generator has eigenvalue product $q \cdot (-q^{-1}) = -1$, $\det \sigma_1 = \det \sigma_2 = -1$ and $\det \sigma_2^{-1} = -1$. Hence for $A = \sigma_1 \sigma_2^{-1}$ and $M_{4_1} = A^2$,
 
 $$
 \det A = (-1)(-1) = 1,

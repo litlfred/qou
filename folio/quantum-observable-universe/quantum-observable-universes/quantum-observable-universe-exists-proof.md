@@ -1,5 +1,5 @@
 *Proof.*
-We exhibit the triple $(\mathbf{C}, A, \tau)$ and verify the four
+The proof exhibits the triple $(\mathbf{C}, A, \tau)$ and verifies the four
 axioms of
 [quantum observable universe](#def:quantum-observable-universe).
 

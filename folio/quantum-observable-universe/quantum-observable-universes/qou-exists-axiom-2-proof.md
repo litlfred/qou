@@ -1,5 +1,5 @@
 **Proof.**
-We show $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
+The goal is to show $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$.
 By the Peter--Weyl decomposition for compact quantum groups
 \cite{woronowicz1988},
 

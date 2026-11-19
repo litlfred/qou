@@ -10,4 +10,10 @@ export default remark({
     "cor:gauge-coupling-uniqueness",
     "conj:cp-violation-spectral-form",
   ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      body: "Lookup table stored in physics-names.json; the SDP discovery run behind w_{(3,3,3,3)}(q_0) ~ 0.024 is not currently reproducible from repository scripts. Categorical interface references: prop:em-spectral-completeness, cor:gauge-coupling-uniqueness, prop:chirality-residue-mass-term.",
+    },
+  ],
 });

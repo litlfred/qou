@@ -58,7 +58,7 @@ be stated.
 
 $L$ is **abstract**: nothing here depends on a dilogarithm implementation or on
 the Bloch group, matching the treatment in
-[`prop:fivetwo-saddle-sum-rule`](#prop:fivetwo-saddle-sum-rule) where the
+[the $5_2$ saddle sum rule](#prop:fivetwo-saddle-sum-rule) where the
 reflection identity is likewise an explicit hypothesis.
 
 Correspondingly, this derives the numerators *given* the five-term instances and

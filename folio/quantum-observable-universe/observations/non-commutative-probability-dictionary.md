@@ -12,4 +12,4 @@ See [Table](#tbl:non-commutative-probability-dictionary-table-data).
 
 **Formal equivalence.** The Hecke algebra under the Markov trace operates as a $(W^*, \mathrm{tr})$ probability space. 
 
-**Imported tools.** We utilize Voiculescu's R-/S-transforms, Speicher's free cumulants, free entropy, and Biane's asymptotic representation theory.
+**Analytic machinery.** This correspondence makes available Voiculescu's $R$- and $S$-transforms, Speicher's free cumulants, free entropy, and Biane's asymptotic representation theory.

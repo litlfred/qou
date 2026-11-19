@@ -1,4 +1,4 @@
-The stability curve and the color fibration of Bring's surface share the same algebraic origin. We conjecture that the nuclear degeneracy locus — the curve in the $(p, A)$-plane where adjacent nuclei have equal energy — forms an elliptic curve isogenous to the color fiber $\mathcal{E}_z$.
+The stability curve and the color fibration of Bring's surface share the same algebraic origin. The nuclear degeneracy locus — the curve in the $(p, A)$-plane where adjacent nuclei have equal energy — is conjectured to form an elliptic curve isogenous to the color fiber $\mathcal{E}_z$.
 
 **The two cubics.**
 
@@ -100,7 +100,7 @@ $$
   4P_S^3 + 27Q_S^2 = \frac{4p^2(54c^3p^2 + 729)}{27},
 $$
 
-so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at any real $z$; equality of $J$ requires complex $z$. Matching "up to a Möbius transformation" would add nothing, since any three distinct points of $\mathbb{P}^1$ map to any other three. The isogeny in item 2 is therefore the whole content of that item. The obstruction is proved in the Lean sibling (`no_affine_match`).
+so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at any real $z$; equality of $J$ requires complex $z$. Matching "up to a Möbius transformation" would add nothing, since any three distinct points of $\mathbb{P}^1$ map to any other three. The isogeny in item 2 is therefore the whole content of that item.
 
 **Physical interpretation.**
 
@@ -142,7 +142,7 @@ The genus-$0$ stability cubic accounts for all stable nuclei via lattice-point e
 - The stable nuclei represent lattice points on the stability cubic (exact, from the Skein binding Lagrangian).
 - The Descartes elliptic curve $\mathcal{E}_q$ exists and carries the stated invariants (exact, from the color fibration).
 - Under $X = t$ at $z = -(cp+1)$, the color cubic and the stability cubic share their quadratic coefficient; their linear coefficients never agree (exact, by the table above).
-- No substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at real $z$, since $J_C > 0 > J_S$ (proved in Lean, `no_affine_match`).
+- No substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at real $z$, since $J_C > 0 > J_S$.
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds (exact, from the $(s^2 + s - 1)$ factor).
 
 The full numerical computation is carried out at 100-digit precision.

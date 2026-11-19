@@ -1,4 +1,4 @@
-The strategy relies on a direct algebraic classification. We assume a general affine operator of the form $\alpha \nabla + \beta \iota_\xi \nabla$ and apply the defining categorical constraints, demonstrating that they algebraically force the unique solution $\alpha=q^{-1}$ and $\beta=1-q^{-1}$.
+The strategy relies on a direct algebraic classification. Assuming a general affine operator of the form $\alpha \nabla + \beta \iota_\xi \nabla$, the defining categorical constraints algebraically force the unique coefficients $\alpha=q^{-1}$ and $\beta=1-q^{-1}$.
 
 The formula is a fixed $R$-linear combination of $\nabla$ and
 $\iota_\xi \nabla$.  Any morphism $\mathcal{D}'$ that equals this

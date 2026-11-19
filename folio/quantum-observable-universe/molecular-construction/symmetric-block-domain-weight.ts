@@ -22,7 +22,7 @@ export default proposition({
       "computations/h2s-lone-pair-asymmetry.witness.json",
     ],
   },
-  uses: ["def:h2o-molecular-braid", "prop:h2o-bond-angle-shift"],
+  uses: ["def:h2o-molecular-braid", "prop:h2o-bond-angle-shift", "rem:h2o-c2v-from-projector"],
   tags: [
     "symmetric-block",
     "trivial-representation",
@@ -31,5 +31,11 @@ export default proposition({
     "q-squared",
     "AXE",
     "molecular-geometry",
+  ],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "Lean sibling proves the weight law q^ell (`symmetric_block_domain_weight`) and the corollary q^3 = q^2 * q (`lone_bond_ratio_q_squared`).",
+    },
   ],
 });

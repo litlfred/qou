@@ -14,4 +14,11 @@ export default remark({
     "PDG",
   ],
   uses: ["prop:tau-leptonic-universality"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Witness moved from prose: `tau-leptonic-decay.witness.json`.",
+    },
+  ],
 });

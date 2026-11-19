@@ -7,7 +7,7 @@ The Hecke algebra $H_n(q)$ carries irreducible representations corresponding to 
 3. **Solid (antisymmetric channel, eigenvalue $-q^{-1}$).** At low $T_q$, inter-fibre links dominate. Knots form a rigid braid lattice, occupying the strict sign representation.
 
 **Sublimation mechanism.**
-The Hecke algebra supplies no mechanism. The three channels are complementary summands, not an extension of one by another: at a substrate parameter that is not a root of unity $H_n(q)$ is semisimple, so every short exact sequence of $H_n(q)$-modules splits and no extension class distinguishes an unstable liquid phase from a stable one ([`prop:phase-transition-boundary`](#prop:phase-transition-boundary)). The correlation with odd crossing number recorded in [`rem:composite-crossing-sublimation-criteria`](#rem:composite-crossing-sublimation-criteria) stands on its own arithmetic and carries no derivation from here.
+The Hecke algebra supplies no mechanism. The three channels are complementary summands, not an extension of one by another: at a substrate parameter that is not a root of unity $H_n(q)$ is semisimple, so every short exact sequence of $H_n(q)$-modules splits and no extension class distinguishes an unstable liquid phase from a stable one ([the phase-transition boundary](#prop:phase-transition-boundary)). The correlation with odd crossing number recorded in [the composite crossing sublimation criteria](#rem:composite-crossing-sublimation-criteria) stands on its own arithmetic and carries no derivation from here.
 
 **Triple point.**
 All three phases coexist only when three Hecke representations contribute identically. This defines a rigid codimension-2 condition in the $(T_q, P_q)$ plane. It obeys the Gibbs phase rule.

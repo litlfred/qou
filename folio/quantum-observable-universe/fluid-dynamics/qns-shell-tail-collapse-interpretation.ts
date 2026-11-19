@@ -13,4 +13,10 @@ export default remark({
     "probe-support",
     "millennium-problem",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Supporting trajectory witnesses: qns-dissipation-scale-probe.witness.json, qns-nonlocal-transfer-probe.witness.json, qns-allpairs-transfer-probe.witness.json, qns-phase-decorrelation-probe.witness.json, and qns-phase-scramble-probe.witness.json.",
+    },
+  ],
 });

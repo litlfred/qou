@@ -8,6 +8,9 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["def:one-dim-qou-channel"],
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: structural, over a generic commutative ring $R$." },
+  ],
   tags: [
     "optical-fibre",
     "non-interaction",

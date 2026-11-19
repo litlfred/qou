@@ -1,4 +1,4 @@
-We compute the branching $\mathcal{Q}_q$-value by summing over all $4^A$ channel configurations.
+Summing over all $4^A$ channel configurations determines the branching $\mathcal{Q}_q$-value.
 
 ## Statement
 

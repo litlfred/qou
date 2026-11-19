@@ -19,26 +19,32 @@ export default paper({
   abstract:
     "This monograph develops the mathematical framework of the Quantum Observable " +
     "Universe (QOU): a rigid braided monoidal category equipped with a " +
-    "Frobenius--Hopf object $A$ and a fibre functor $\\tau$ whose differential " +
-    "geometry is governed by a substrate parameter $q$.  Every observable passes " +
-    "through a five-step categorical trace pipeline: from the categorical action " +
-    "$\\mathfrak{S}_q = \\mathrm{tr}(\\Phi)$, to the Iwahori--Hecke quotient " +
-    "$H_n(q)$ and its Jones--Markov trace, to hyperbolic knot complements embedded " +
-    "in the genus-four Bring surface $\\Sigma_4$ ($\\chi = -6$), to Archimedean " +
-    "period evaluations at the substrate parameter $q_0$, and finally to " +
-    "dimensionless mass ratios, binding energies, and couplings.  " +
+    "Frobenius--Hopf object $A$, a fibre functor $\\tau$, and a unified two-term " +
+    "categorical action ($\\mathrm{QCD} + \\mathrm{QED}$) governed by a single " +
+    "proton-pinned substrate parameter $q$.  Every observable passes through a " +
+    "five-step categorical trace pipeline: from the categorical action " +
+    "$\\mathfrak{S}_q = \\mathrm{tr}(\\Phi)$, through the Iwahori--Hecke quotient " +
+    "$H_n(q)$ and the Geer--Patureau-Mirand modified trace on negligible morphisms, " +
+    "to torus-link and Borromean complements embedded in the genus-four Bring surface " +
+    "$\\Sigma_4$ ($\\chi = -6$, selected by cohomological Seifert saturation and " +
+    "minimal hyperbolic $\\mathbb{Z}/3$ Kummer descent), to Archimedean " +
+    "Bring--Schwinger and Clausen period evaluations, yielding dimensionless mass " +
+    "ratios, gauge couplings, weak $\\beta$-decay cumulants, and nuclear binding " +
+    "across three-dimensional Wigner-$\\mathrm{SU}(4)$ $\\alpha$-simplex complexes.  " +
     "Part~I establishes the categorical axioms, the five-step framing arc across " +
-    "Archimedean and non-Archimedean models, and the Yekutieli lifting and descent " +
-    "tower.  Part~II develops the structural mechanics: braid and Hecke " +
+    "Archimedean, $p$-adic, and surreal models, and the Yekutieli lifting and " +
+    "descent tower.  Part~II develops the structural mechanics: braid and Hecke " +
     "representations, the geometry of Bring's surface, the knot--particle and " +
     "confinement hierarchy, the Eightfold Way flavour and octonionic colour " +
-    "structure, the categorical mass endomorphism and $q$-hyperbolic kinematics, " +
-    "the elementary-particle and nuclear mass pipeline, many-body Gröbner--Shirshov " +
-    "binding, and the emergence of contact-geometric gravity.  Part~III compares " +
-    "the resulting spectra against experimental data and extends the braid " +
-    "formalism to molecular and organic chemistry.  Part~IV treats brane fluid " +
-    "dynamics, Markov-trace stochastic mechanics, information-theoretic complexity, " +
-    "internalised measurement, and the $q$-geometric Langlands correspondence.",
+    "structure, the categorical mass endomorphism, $q$-hyperbolic volume and " +
+    "kinematics, the elementary-particle and nuclear mass and binding pipelines, " +
+    "and the emergence of contact-geometric gravity.  Part~III compares the " +
+    "resulting spectra against experimental measurements and extends the braid " +
+    "formalism to atomic, molecular, and organic chemistry.  Part~IV treats brane " +
+    "fluid dynamics, Markov-trace stochastic mechanics, information-theoretic " +
+    "complexity, internalised measurement, and the $q$-geometric Langlands " +
+    "correspondence, accompanied throughout by machine-checked Lean~4 proofs and " +
+    "arbitrary-precision certified numerical witnesses.",
   macros: {
     // NOTE: `\pp` is intentionally NOT defined here. The shared preamble
     // (latex/preamble.tex) defines `\pp` = `p` (the p-adic / finite-field

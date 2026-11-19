@@ -98,17 +98,13 @@ said is the dovetail with $S(n)=\sum_{\lambda\vdash n}\dim_q(\lambda)=
 $E_8$ marks carries the Verlinde measure $W_\lambda$. Specific root
 magnitudes are not interpreted.
 
-**Partial formalization.** The Lean module
-[`QOU.Mass.CyclotomicBoundaryKeystone`](../lean/QOU/Mass/CyclotomicBoundaryKeystone.lean)
-formalizes what is honestly provable. *Proved:* the Tier-1 base-case
-factorizations $D(4)=\Phi_1^2\Phi_3$ and $D(5)=2\,\Phi_1^2\Phi_2^2\Phi_3\Phi_6$
-(with the factors verified equal to Mathlib's cyclotomic polynomials); the
-palindrome identity $C_6(z)=z^4\,\tilde C(z+z^{-1})$; and the full n = 6
-non-cyclotomicity of the deg-8 core $C_6$ — that $C_6$ is *not* a product of
-cyclotomic polynomials — derived using only the elementary direction of
+**Algebraic scope at $n = 6$.** The Tier-1 base-case
+factorizations $D(4)=\Phi_1^2\Phi_3$ and $D(5)=2\,\Phi_1^2\Phi_2^2\Phi_3\Phi_6$,
+the palindrome identity $C_6(z)=z^4\,\tilde C(z+z^{-1})$, and the $n = 6$
+non-cyclotomicity of the degree-$8$ core $C_6$ — that $C_6$ is *not* a product of
+cyclotomic polynomials — follow from the elementary direction of
 Kronecker's dichotomy (roots of cyclotomics are roots of unity, hence of
-modulus 1), *not* the hard converse. The entire n = 6 chain rests on a
-**single** cited classical input: that $\tilde C(y)=y^4+4y^3+2y^2-10y-8$ has a
-non-real root (immediate from $\mathrm{disc}(\tilde C)=-44208<0$; Mathlib lacks
-the discriminant–root-product bridge). The full Tier-2 claim (non-cyclotomic
-for *all* $n\geq 6$) is not formalized — it remains verified-through-$n=11$.
+modulus $1$), *not* the hard converse. The entire $n = 6$ chain rests on a
+**single** classical input: that $\tilde C(y)=y^4+4y^3+2y^2-10y-8$ has a
+non-real root (immediate from $\mathrm{disc}(\tilde C)=-44208<0$). The full Tier-2 claim (non-cyclotomic
+for *all* $n\geq 6$) is verified computationally through $n=11$.

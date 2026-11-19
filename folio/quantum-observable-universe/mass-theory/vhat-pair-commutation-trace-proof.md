@@ -8,7 +8,7 @@ $\mathbb{Z}[q^{\pm 1/2}, z]$ — the coefficients $a_i, b_i$ are
 polynomials in $q^{\pm 1/2}$ and $z$ is a single transcendental
 parameter (the Markov parameter, eliminated by
 $z = q^{3}/(q^{2}+1)$ (**convention D**) at the end of every Markov peel,
-[`thm:jones-markov-trace`](#thm:jones-markov-trace)).
+[jones-markov-trace theorem](#thm:jones-markov-trace)).
 
 Two elements of a commutative ring commute. Hence
 
@@ -35,13 +35,13 @@ $uv$ values and **does not hold generically**. So the pentagon
 identity does *not* apply to scalar $\hat V$'s.
 
 Hence the pentagon ascension argument as stated in
-[`rem:mass-endomorphism-jet-tower`](#rem:mass-endomorphism-jet-tower)
+[mass-endomorphism-jet-tower remark](#rem:mass-endomorphism-jet-tower)
 **describes the correct structure** (singletons + pairs at level $n$,
 defects of order $\geq 3$ ascending to level $n+1$) but is **not
 derived from the operator pentagon**. The actual derivation goes
 through
 Markov-trace factorization
-([`thm:markov-trace-factorization`](#thm:markov-trace-factorization)):
+([markov-trace-factorization theorem](#thm:markov-trace-factorization)):
 
 1. The traced product $\mathrm{tr}_M(\prod_i \hat V_i)$ factors
    as a sum over subset structures on $\{i_1, \dots, i_n\}$, with

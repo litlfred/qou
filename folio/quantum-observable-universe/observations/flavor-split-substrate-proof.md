@@ -2,7 +2,7 @@
 
 *Step 1 (Pair-Skein difference, exact).*
 
-We apply [`lem:pair-skein-mass-formula`](pair-skein-mass-formula.md) to the Borromean baryon braids of the proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$) and neutron ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$). This gives the exact relation:
+Applying the [pair-Skein mass formula](pair-skein-mass-formula.md) to the Borromean baryon braids of the proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$) and neutron ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$) gives the exact relation:
 
 $$
   m_n - m_p

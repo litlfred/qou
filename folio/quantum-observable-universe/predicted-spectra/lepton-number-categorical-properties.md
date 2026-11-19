@@ -17,10 +17,10 @@ Lepton number is conserved by construction:
 
 Every process expressed as a sequence of Skein relations and Hecke reductions conserves lepton number.
 
-**Lepton number is not a $\mathbb{Z}$-grading (proved).**
+**Lepton number is not a $\mathbb{Z}$-grading.**
 The Skein module $\mathcal{K}(S^3; q)$ admits no $\mathbb{Z}$-grading by the
 smoothing count with the nuclear sector in grade $0$ and each smoothing shifting
-the grade by $+1$ (`QOU.StandardModel.LeptonNumberGradingObstruction`).
+the grade by $+1$.
 
 The skein relation is *inhomogeneous* for such a grading. Writing it as
 $$
@@ -34,64 +34,57 @@ $L_+ = L_-$. Imposing the grading therefore annihilates every smoothing:
 it would make lepton number identically $0$, which is the one value it
 cannot take.
 
-This is a scope-(b) exclusion of *one construction*, with its invariant
-cited (the defining disjointness of homogeneous components); it does not
-touch lepton number itself, the Skein module, or the $Y = B - L$ route.
+This excludes only the $\mathbb{Z}$-graded construction, by the disjointness of
+homogeneous components; it does not affect categorical lepton number itself, the
+Skein module, or the $Y = B - L$ relation.
 
-**What this leaves, and where $L$ does live.**
-An inhomogeneous relation is what a *filtration* tolerates rather than a
-grading, but the corpus's Vassiliev filtration
-(`QOU/KnotTheory/Vassiliev/`) grades **invariants** $v : K \to R$, not states,
-so it does not by itself supply a state-valued $L$.
+**Carrier and filtration structure.**
+An inhomogeneous relation is compatible with a *filtration* rather than a
+grading, whereas the Vassiliev filtration grades **invariants** $v \colon K \to R$
+rather than states, and therefore does not by itself supply a state-valued $L$.
 
-The carrier is the **braid word**, not the knot type. This is forced:
-`QOU/StandardModel/LeptonNumberCarrierChirality.lean` proves $L$ cannot factor
-through the unframed knot type, since the mirror must move the carrier and the
-unknot is amphichiral. It is also what the corpus already does --
-`AntiparticleCrossingReversalContext` takes the mirror to be
-$\sigma_i \mapsto \sigma_i^{-1}$ on braid words and records that it
-*preserves the knot type*.
+The carrier is the **braid word**, not the knot type. Indeed, $L$ cannot factor
+through the unframed knot type, since mirror reflection must invert the carrier
+while the unknot is amphichiral. Consistently with antiparticle crossing reversal,
+the mirror involution acts by $\sigma_i \mapsto \sigma_i^{-1}$ on braid words
+while preserving the unframed knot type of the unknot.
 
 The braid words are fixed by the $\chi = -6$ constraint below: $T(2,n)$ is the
 closure of $\sigma_1^n$, so $\nu_e = \sigma_1$, $e^- = \sigma_1^3$, and the
 antiparticles are $\sigma_1^{-1}, \sigma_1^{-3}$ --- distinct braid words that
 both close to the unknot, which is exactly how the mirror acts freely.
-`QOU/StandardModel/ChiralFermionBraidWords.lean` proves the writhes from the
-words and shows the candidate
+Evaluating the writhes directly from these braid words shows that the candidate
+functional
 $$
   L(\beta) = \mathrm{sign}\bigl(\mathrm{writhe}(\beta)\bigr)
 $$
-reproduces every row of the table below, hadrons included. It is a
-**candidate**, not a derivation: $\mathrm{sign}$ is a choice of function, the
-quark braid word is still absent from the corpus, and chirality ($u_L$ vs
-$u_R$) is not yet represented.
+reproduces every row of the table below, hadrons included. This expression
+remains a **candidate** rather than a derivation: $\mathrm{sign}$ is an ad hoc
+choice of function, and chiral quark braid words ($u_L$ versus $u_R$) require
+additional structure beyond pure writhe.
 
-**And it is refuted, under both readings of the gauge freedom.**
+**Obstructions to the bare writhe ansatz.**
 
 *Markov II.* Stabilisation raises the writhe by $1$ without changing the link,
 so $L$ jumps from $0$ to $1$ on the baryon --- violating conservation clause 3
-above, which requires $\Delta L = 0$ under Markov moves
-(`leptonNumber_not_markov_invariant`).
+above, which requires $\Delta L = 0$ under Markov moves.
 
-*The minimal-level ruling.* The escape from the first refutation was that
-states are Gröbner--Shirshov normal forms, with the observable evaluated at the
-lowest level of the substrate tower. That closes the escape rather than opening
-it. The table above assigns $\nu_e = K_{0_1} = T_{2,1}$, the **unknot**, whose
-braid index is $1$: its minimal-level normal form is the *empty* word, and so is
-its mirror's. At the level where the framework says observables live, $\nu_e$
-and $\nu_e^{\sigma}$ are the **same state**, and no function of the state can
-give them $+1$ and $-1$ --- quite apart from $\mathrm{sign}(0) = 0 \neq +1$.
-This is `QOU/StandardModel/WritheLevelParity.lean`'s
-`leptonNumber_collapses_at_minimal_level`, and it is the same obstruction
-`LeptonNumberCarrierChirality.lean` proved for the unframed knot type,
-reappearing once the canonical representative is pinned.
+*Minimal-level collapse.* Passing to Gröbner--Shirshov normal forms evaluated at
+the lowest level of the substrate tower does not remove this obstruction. The
+table below assigns $\nu_e = K_{0_1} = T_{2,1}$, the **unknot**, whose braid
+index is $1$: its minimal-level normal form is the *empty* word, and so is its
+mirror's. At the minimal level, $\nu_e$ and $\nu_e^{\sigma}$ represent the
+**same state**, so no function of the minimal-level state alone can assign them
+$+1$ and $-1$ --- quite apart from $\mathrm{sign}(0) = 0 \neq +1$. This recovers
+the same chirality obstruction encountered on unframed knot types once the
+canonical minimal-level representative is fixed.
 
-So the "carrier is the braid word, not the knot type" escape is unavailable at
-minimal level, where the braid word is determined by the knot type. **Scope-(a)**:
-$L = \mathrm{sign}(w)$ is refuted; lepton number itself and the $Y = B - L$
-route are untouched, and what the refutation locates is that $L$ must come from
-data the writhe does not carry --- the framing or the smoothing history, not the
-crossing sum.
+Passing from unframed knot types to braid words therefore fails to rescue
+$L = \mathrm{sign}(w)$ at minimal level, where the canonical braid word is
+determined by the knot type. Consequently, the bare writhe ansatz
+$L = \mathrm{sign}(w)$ is ruled out, while categorical lepton number itself and
+the $Y = B - L$ relation remain intact: $L$ must arise from framing data or the
+skein smoothing history rather than the bare crossing sum.
 
 **Individual lepton assignments.**
 

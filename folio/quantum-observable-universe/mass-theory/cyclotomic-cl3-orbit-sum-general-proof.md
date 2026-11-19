@@ -84,7 +84,7 @@ $$
 
 This is the classical evaluation $\mathrm{Li}_3(-1) = -\frac{3}{4}\zeta(3)$
 (real, no imaginary part — consistent with
-[`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form)
+[cyclotomic trilogarithm imaginary closed form proposition](#prop:cyclotomic-trilog-imaginary-closed-form)
 giving $\mathrm{Im}\,\mathrm{Li}_3(\zeta_2) = 0$).
 
 ### Asymptotic behaviour

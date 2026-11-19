@@ -14,7 +14,7 @@ $$
 Delocalised trefoils form a lattice-spanning sub-Hopf chain. This acts as a conduction band. Trefoils slide along this chain via Reidemeister II moves. These crossing exchanges conserve the total linking number.
 
 **Strategy.**
-We translate macroscopic properties into structural conditions on sub-Hopf links. Macroscopic conductivity corresponds to Reidemeister II mobility. Shared bonding becomes merged linking sites. Energetic inequalities derive from crossing energies, parametrized by the residual index $\lambda(R)$.
+Macroscopic properties translate directly into structural conditions on sub-Hopf links. Macroscopic conductivity corresponds to Reidemeister II mobility. Shared bonding becomes merged linking sites. Energetic inequalities derive from crossing energies, parametrized by the residual index $\lambda(R)$.
 
 **Classification.**
 The residual sub-link size $|R|$ and shell capacity $2n_{k+1}^2$ govern metallic behaviour.

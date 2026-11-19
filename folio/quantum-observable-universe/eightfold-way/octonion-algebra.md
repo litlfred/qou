@@ -24,14 +24,13 @@ algebra. Its automorphism group is the compact $14$-dimensional exceptional Lie 
 $G_2 = \mathrm{Aut}(\mathbb{O})$, equivalently $\mathrm{Der}(\mathbb{O}) \cong \mathfrak{g}_2$
 \cite{baez2002}.
 
-**Convention.** The sign rule above is the Baez convention \cite{baez2002}, matching the
-multiplication `octMul` fixed in the Lean sibling. The choice is not canonical: $480$
+**Convention.** The sign rule above is the Baez convention \cite{baez2002}. The choice is not canonical: $480$
 distinct multiplication tables are compatible with $e_0 = 1$ and $e_i^2 = -1$, all
 isomorphic as algebras but differing in which triples are quaternionic. Any statement
 that names a specific $e_i e_j = \pm e_k$ is convention-dependent and must carry this
 qualification; statements about $\mathbb{O}$ up to isomorphism, including
 $\mathrm{Aut}(\mathbb{O}) = G_2$, are not \cite{albuquerque-majid1999}.
 
-**Base ring.** The Lean sibling realises the product over $\mathbb{Q}$ in exact rational
+**Base ring.** The product is defined over $\mathbb{Q}$ in exact rational
 arithmetic. Nothing archimedean is required: the structure constants are integers, and
 the derivation count needs only $\mathrm{char} \ne 2, 3$.

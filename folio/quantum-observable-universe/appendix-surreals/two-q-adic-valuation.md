@@ -1,4 +1,4 @@
-For an element $P \in \mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ of the Skein module, we define the $[2]_q$-**adic valuation**:
+For an element $P \in \mathcal{S}(q) \cong \mathbb{Z}[q^{\pm 1}]$ of the Skein module, the $[2]_q$-**adic valuation** is defined by
 
 $$
 v_{[2]}(P) := \max\bigl\{k \geq 0 : [2]_q^k \mid P \text{ in } \mathbb{Z}[q^{\pm 1}]\bigr\}.

@@ -12,7 +12,7 @@ export default algorithm({
         "decision must update both that ledger and the canonical tiered $c_k$ cache " +
         "`computations/qbeta/qbeta-ck-cache.witness.json` (which is C-frame, " +
         "`markov_convention: \"C\"`, pending the Convention-D re-derivation under " +
-        "`qou-cds1` / `qou-wxhi`; downstream $Q_{N_2}$ consumer: " +
+        "`qou-cds1` / `qou-wxhi`; invalid $z_D$ substitution proved by `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` and `QOU.QBeta.eigenphase_bar_defect_of_fullBar`; downstream $Q_{N_2}$ consumer: " +
         "`computations/q-beta-predicted.witness.json`).",
     },
   ],

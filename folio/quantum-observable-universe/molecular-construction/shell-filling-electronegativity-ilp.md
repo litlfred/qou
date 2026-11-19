@@ -2,7 +2,7 @@
 
 ### ILP electron attachment
 
-*The integer LP builds each electron shell from scratch. Starting from the bare nucleus, we add electrons one at a time. At each step, we select the operator that minimises $|tr_M|$ subject to Frobenius positivity $G \cdot x \geq 0$. The ILP discovers that electrons alternate generators:*
+*The integer LP builds each electron shell from scratch, adding electrons one at a time starting from the bare nucleus. Each step selects the operator that minimises $|tr_M|$ subject to Frobenius positivity $G \cdot x \geq 0$. The ILP discovers that electrons alternate generators:*
 
 See [Table](#tbl:shell-filling-rule-table-data).
 

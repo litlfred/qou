@@ -30,4 +30,4 @@ $$
   \mathcal{N}(Z, N)  \oplus  Z \cdot T_{2,3}.
 $$
 
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. We invoke real- and complex-analytic constructs, including real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter $q_0$. Any generic categorical or $q$-deformation identities we draw upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall, invoking real- and complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, and numerical evaluation at the substrate parameter $q_0$. All underlying categorical and $q$-deformation identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -13,4 +13,4 @@ $$
   \bigr\rVert.
 $$
 
-Equality in this bound is not established. The disc splitting and the support of the integrand on $E_i \subset D_i$ do not by themselves force it: there are data in the seminormed group $\mathrm{Multiplicative}\,\mathbb{R}$ satisfying both for which the inequality is strict. The equality is recorded as the open conjecture `TransientLocalisationNormEquality` in the Lean formalisation.
+Equality in this bound is not established. The disc splitting and the support of the integrand on $E_i \subset D_i$ do not by themselves force it: there are data in the seminormed group $\mathrm{Multiplicative}\,\mathbb{R}$ satisfying both for which the inequality is strict. Equality remains an open conjecture.

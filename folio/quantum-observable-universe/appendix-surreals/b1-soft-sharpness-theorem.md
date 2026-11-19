@@ -4,4 +4,4 @@ $$
   \tau_{\mathrm{arch}}\bigl(\mathrm{Li}_n^q(z_K)\bigr) \;\not\equiv\; 0 \pmod{\mathcal{P}_{n-1}}.
 $$
 
-This is the soft sharpness half of the depth correspondence [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence). The depth-$n$ image $\tau_{\mathrm{arch}}(G^{(n)}\rvert_F)$ is non-trivial in $\mathcal{P}_n / \mathcal{P}_{n-1}$. It requires no part of Goncharov's or Beilinson's conjectures.
+This is the soft sharpness half of [the depth–period correspondence](#conj:gb-depth-period-correspondence). The depth-$n$ image $\tau_{\mathrm{arch}}(G^{(n)}\rvert_F)$ is non-trivial in $\mathcal{P}_n / \mathcal{P}_{n-1}$. It requires no part of Goncharov's or Beilinson's conjectures.

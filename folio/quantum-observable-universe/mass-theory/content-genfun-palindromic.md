@@ -23,7 +23,7 @@ $$
 
 *where $I(n)$ is the number of involutions of $S_n$.*
 
-By [`prop:binding-period-involution-statistic`](#prop:binding-period-involution-statistic),
+By [binding period involution statistic proposition](#prop:binding-period-involution-statistic),
 $C_n(q)$ is the content-only face of the binding statistic — the object obtained by
 retaining the RSK shape and discarding the descent (major-index) data. The bar-even
 $O((q-1)^2)$ deviation is exactly the q-rigidity measured for the level-1/2 alien datum
@@ -32,9 +32,7 @@ only at second order.
 
 Both statements are instances of a single structural fact — partition conjugation
 $\lambda \mapsto \lambda'$ is an anti-invariant involution, $f^{\lambda'} = f^\lambda$
-and $\mathrm{content}(\lambda') = -\mathrm{content}(\lambda)$ — which is proved for
-every $n$ in the library module `QOU.AntiInvolutionPalindrome`
-(`palindromic_sum_of_antiInvolution` for the palindromy, and
-`first_moment_zero_of_antiInvolution`, $\sum_\lambda f^\lambda\,\mathrm{content}(\lambda) = 0$,
-for the vanishing linear term). The Lean sibling here records the fully machine-checked
-$n=4$ instance, $C_4(q) = q^6 + 3q^2 + 2 + 3q^{-2} + q^{-6}$.
+and $\mathrm{content}(\lambda') = -\mathrm{content}(\lambda)$ — which implies both
+the palindromy $C_n(q^{-1}) = C_n(q)$ and the vanishing first moment
+$\sum_\lambda f^\lambda\,\mathrm{content}(\lambda) = 0$ for every $n$. At
+$n=4$ this evaluates to $C_4(q) = q^6 + 3q^2 + 2 + 3q^{-2} + q^{-6}$.

@@ -1,6 +1,6 @@
-**Theorem (conditional on [`conj:magic-numbers-bring`](../observations/magic-numbers-bring.md),
-[`prop:gravity-spectral-prefactor`](../observations/gravity-spectral-prefactor.md),
-and [`conj:diagrammatic-double-magic-lr-fusion`](../observations/diagrammatic-double-magic-lr-fusion.md)).**
+**Theorem (conditional on [magic-numbers-bring conjecture](../observations/magic-numbers-bring.md),
+[gravity-spectral-prefactor proposition](../observations/gravity-spectral-prefactor.md),
+and [diagrammatic-double-magic-lr-fusion conjecture](../observations/diagrammatic-double-magic-lr-fusion.md)).**
 *For a light nucleus $^A_Z\mathfrak{X}$ that is doubly magic
 (both $Z \in \mathfrak{M}$ and $N \in \mathfrak{M}$, with
 $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$), the binding energy
@@ -12,7 +12,7 @@ $$
 
 *where $G$ is Catalan's constant, $8G = \mathrm{Vol}(L6a4) =
 \mathrm{Vol}(\mathrm{Borromean})$ is the universal residue prefactor
-([`prop:gravity-spectral-prefactor`](../observations/gravity-spectral-prefactor.md)),
+([gravity-spectral-prefactor proposition](../observations/gravity-spectral-prefactor.md)),
 and $\rho_F \in \mathbb{R}$ is the substrate-determined structural
 prefactor for the doubly-magic regime.*
 
@@ -26,7 +26,7 @@ $$
 
 *compared to the experimental value $28.296\,\mathrm{MeV}$ — a relative
 miss of $+5.9\%$. This is dramatically tighter than the alpha-shift
-formula ([`prop:binding-alpha-shift-extension`](binding-alpha-shift-extension.md))
+formula ([binding-alpha-shift-extension proposition](binding-alpha-shift-extension.md))
 which misses $^4_2\mathrm{He}$ by $-79\%$ ($5\times$ too small) because that
 formula assumes a single hyperbolic force-carrier knot per nucleus —
 an assumption that breaks for doubly-magic nuclei.*

@@ -39,5 +39,9 @@ export default proposition({
         "archimedean side of the §7c wall, and any change is a parent-class " +
         "refactor rather than a per-block one.",
     },
+    {
+      kind: "note",
+      body: "Stabilisation shift of writhe by +/- 1 is formalized in QOU/StandardModel/WritheMarkovInvariance.lean (writhe_stabilize).",
+    },
   ],
 });

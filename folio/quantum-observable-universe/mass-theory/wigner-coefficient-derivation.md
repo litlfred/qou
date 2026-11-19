@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula) — Wigner term coefficient $[5]_q!\cdot m_e$).**
+**Proposition (conditional on [q-integer-mass-formula conjecture](#conj:q-integer-mass-formula) — Wigner term coefficient $[5]_q!\cdot m_e$).**
 *The Wigner term (term 9) of the BW mass formula has coefficient*
 
 $$

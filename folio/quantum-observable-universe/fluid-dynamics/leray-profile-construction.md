@@ -5,7 +5,7 @@ In Leray's similarity variables $y = (x - x_0)/\sqrt{T^* - t}$, $s = -\log(T^* -
 By the Peter--Weyl theorem, the profile decomposes into matrix coefficients. The Leray equations decompose by spin. The nonlinear coupling coefficients are determined by the Clebsch--Gordan decomposition.
 
 **Truncation by the discrete spectrum.**
-The discrete vortex spectrum eigenvalues grow exponentially in $j$. The centrifugal barrier suppresses high-spin components. At the physical value $q \approx 1.110$, we have $k_{\max} \approx 4$ active modes. The discretely self-similar profile is a finite sum.
+The discrete vortex spectrum eigenvalues grow exponentially in $j$. The centrifugal barrier suppresses high-spin components. At the physical value $q \approx 1.110$, there are $k_{\max} \approx 4$ active modes. The discretely self-similar profile is a finite sum.
 
 **The truncated Leray system.**
 Substituting the truncated ansatz gives a system of 5 coupled ODEs in the radial variable $r$, the $s$-periodicity being carried by the ansatz coefficients.

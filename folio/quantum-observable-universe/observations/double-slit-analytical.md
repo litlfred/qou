@@ -1,4 +1,4 @@
-We provide an analytical intensity pattern plotter for the $q$-deformed double-slit experiment.
+This simulator provides an analytical intensity pattern plotter for the $q$-deformed double-slit experiment.
 
 This simulator computes the interference intensity envelope for two scattering modes:
 

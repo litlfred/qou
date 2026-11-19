@@ -1,4 +1,4 @@
-We express the Reeb-period complexity argument of [P vs NP in the QOU](#conj:p-vs-np-qou) as a literal surreal inequality.
+The Reeb-period complexity argument of [P vs NP in the QOU](#conj:p-vs-np-qou) takes the form of a literal surreal inequality.
 
 Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)), and let $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)). A $q$-substrate computation accesses the Reeb-period budget $\Omega_q \asymp \varepsilon^{-1}$ ([surreal rate calculus](#prop:surreal-rate-calculus)). A classical computation accesses the mass-gap budget $\Delta_q \asymp \varepsilon^3$ per elementary step.
 

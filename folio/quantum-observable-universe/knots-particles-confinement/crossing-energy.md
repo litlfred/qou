@@ -1,4 +1,4 @@
-Let $\mathfrak{H} = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ be a composite of knots linked by $\mathcal{L}$, with braid word $\beta \in B_n$ representing the linking. We define the **crossing energy** of $\mathfrak{H}$ as:
+Let $\mathfrak{H} = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ be a composite of knots linked by $\mathcal{L}$, with braid word $\beta \in B_n$ representing the linking. Define the **crossing energy** of $\mathfrak{H}$ as:
 
 $$
   \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H})

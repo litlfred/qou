@@ -15,7 +15,7 @@ $$
 *$\square$*
 
 **$C_{\dim_q}$ is not forced by its trace.**
-*An earlier version claimed that $C_{\dim_q}$ is the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$. That is false whenever $A$ has at least two blocks: $\tau$ is one linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a choice, not a consequence.*
+*$C_{\dim_q}$ is not the unique central element with trace $\sum_\lambda 1/\dim_q(\lambda)$ whenever $A$ has at least two blocks: $\tau$ is one linear functional on $Z(A)$, which has dimension $|\widehat{A}| = p(n) \geq 2$ for $n \geq 2$, so every $z = \sum_\lambda c_\lambda p_\lambda$ with $\sum_\lambda c_\lambda\,\tau(p_\lambda) = \sum_\lambda 1/\dim_q(\lambda)$ has the same trace. The coefficients $c_\lambda = 1/(\dim_q(\lambda)\,\tau(p_\lambda))$ are a structural choice, not a consequence of the trace alone.*
 
 *$C_{\dim_q}$ is categorical in three distinct senses:*
 
@@ -145,7 +145,7 @@ three tiers:*
    co-Casimir $\tau(C_{\dim_q}^{(A)})$.*
 3. *Isotope-specific (vortex-dependent but structural):
    chirality / knot-factor coefficients from
-   `thm:six-term-mass-formula-complete`.*
+   six term mass formula complete theorem.*
 
 **Consistency.**
 
@@ -167,46 +167,36 @@ three tiers:*
    two eigenvalues $(q, -q^{-1})$ — the source of all
    $q$-deformation structure in the paper.*
 
-## Explicit Lean closures by partition count $n$
+## Explicit closures by partition count $n$
 
 For each $n$, the Frobenius co-Casimir trace
 $\tau(C_{\dim_q}^{(n)}) = \sum_{\lambda \vdash n} 1/\dim_q(\lambda)$
-admits an explicit closed form via $\mathrm{Fin}\,p(n)$ enumeration
-once a Lean definition of $\dim_q(\lambda)$ for each partition is
-available. The convention used throughout is the **quantum
-hook-length formula** $\dim_q(\lambda) = [n]_q!\,/\,\prod_{x \in \lambda} [h_x]_q$,
+admits an explicit closed form via enumeration of the $p(n)$ partitions
+using the **quantum hook-length formula**
+$\dim_q(\lambda) = [n]_q!\,/\,\prod_{x \in \lambda} [h_x]_q$,
 which reduces to the classical $S_n$-irrep dimension at $q = 1$.
 
-The status table:
+The partition counts and conjugate-pair groupings for the covered strand counts are:
 
-| $n$ | $p(n)$ | conj. pairs | self-conj. | Lean theorem | nucleus covered |
+| $n$ | $p(n)$ | conj. pairs | self-conj. | verification scope | nucleus covered |
 |----:|-------:|------------:|-----------:|-------------|-------------------|
 | $3$ | $3$ | $1$ | $1$ ((2,1)) | inline at $\sigma_w$-trace | $\mathfrak{p}, \mathfrak{n}$ (single-vortex) |
-| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ${}^{4}$He (H_{12} block; ) |
-| $7$ | $15$ | $7$ | $1$ ((4,2,1)) | `hecke_n7_frobenius_codim` | A $\ge$ 5 nuclei |
-| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | `hecke_n8_frobenius_codim` | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne |
+| $6$ | $11$ | $5$ | $1$ ((3,2,1)) | $H_6(q)$ closed form | ${}^{4}$He ($H_{12}$ block) |
+| $7$ | $15$ | $7$ | $1$ ((4,2,1)) | $H_7(q)$ closed form | $A \ge 5$ nuclei |
+| $8$ | $22$ | $10$ | $2$ ((4,2,1,1), (3,3,2)) | $H_8(q)$ closed form | ${}^4$He / ${}^{16}$O / ${}^{20}$Ne |
 
-Each closure follows the same proof scheme: (i) a `Fin.sum_univ_*`
-decomposition lemma extending Mathlib's `Fin.sum_univ_eight` to
-$p(n)$ summands via a sequence of `Fin.sum_univ_castSucc` peels;
-(ii) per-partition `@[simp]` lemmas unfolding $\dim_q(\lambda)$ to
-its product-of-$q$-integers form; (iii) the trace identity itself,
-discharged by `simp + ring` after the conjugate-pair grouping.
+Each closure follows the same algebraic scheme: (i) decomposing the finite sum
+over the $p(n)$ partitions; (ii) unfolding $\dim_q(\lambda)$ to
+its product-of-$q$-integers form; and (iii) simplifying the rational trace identity
+after conjugate-pair grouping.
 
 The $n = 8$ closure introduces partitions whose hook-product
 cancellation against $[8]_q!$ leaves residual $/[2]_q$ factors
-(specifically (5,1,1,1), (4,4), (4,1,1,1,1), (2,2,2,2)). These are
-encoded as $(q + q^{-1})^{-1}$ in the explicit `dim_q` expressions;
-the `ring` discharge handles them via real-arithmetic field
+(specifically (5,1,1,1), (4,4), (4,1,1,1,1), (2,2,2,2)). These enter as
+$(q + q^{-1})^{-1}$ in the explicit $\dim_q(\lambda)$ expressions and cancel under rational-field
 identities. Self-conjugates at $n = 8$ are (4,2,1,1) and (3,3,2).
-The complete index map and the conjugate-symmetric `Fin 22`
-ordering are documented in
-[`frobenius-codim-universal.lean`](frobenius-codim-universal.lean).
 
-The generator that produces the per-partition $\dim_q$ table and
-the Lean source is
-the canonical formalism;
-the JSON output and per-partition factor signatures are committed
+The per-partition $\dim_q$ table and factor signatures are recorded
 under `phase5-n8-dim-q-table.json`.
 
 Beyond $n = 8$, the same scheme extends mechanically to $n = 9$

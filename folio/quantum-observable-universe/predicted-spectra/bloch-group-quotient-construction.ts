@@ -29,5 +29,10 @@ export default proposition({
       body:
         "**Over-permissive pentagon shapes.** The current `PentagonShape F` allows arbitrary 5-tuples of `PreBlochElement F`, not the constrained 5-tuples derived from a valid Rogers pair $(x, y) \\in F^\\times \\times F^\\times$ via the maps $(x, y, y/x, (1-y^{-1})/(1-x^{-1}), (1-y)/(1-x))$. This makes the pentagon `AddSubgroup` *too large*: choosing a degenerate shape with repeated entries (e.g. $e_2 = e_3 = e_4 = e_5$) collapses the generator to $\\mathrm{of}(e_1)$, putting individual pre-Bloch elements into the relation subgroup and trivialising the quotient. The proper fix is a `ValidPentagonShape F` predicate enforcing the Rogers-form constraints; the structural skeleton supports this drop-in refinement without modification.",
     },
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Lean declaration inventory moved from prose and table: `PreBlochElement F` (`val ≠ 0`, `val ≠ 1`), `pentagonRelationGenerators : Set (PreBlochGroup F)`, `pentagonSubgroup` (`AddSubgroup.closure`), `BlochGroup F := PreBlochGroup F ⧸ pentagonSubgroup` with `AddCommGroup` via Mathlib `QuotientAddGroup`, projection `quot : PreBlochGroup F →+ BlochGroup F`, lemmas `quot_zero`, `quot_add`, `quot_universal_property` (`QuotientAddGroup.lift`), and real instances `hasPentagonRelation_real`, `hasBlochGroup_real`.",
+    },
   ],
 });

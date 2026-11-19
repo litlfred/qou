@@ -1,12 +1,12 @@
-| Definition / theorem | Content |
+| Datum / identity | Mathematical content |
 |---|---|
-| `Cell` | structure `(row col : ℕ)` |
-| `Cell.content` | `(col : ℤ) - (row : ℤ)` |
-| `Cell.transpose` | swap `row ↔ col` |
-| `Cell.transpose_transpose` | involutive |
-| `Cell.content_plus_transpose_content_eq_zero` | summand-by-summand cancellation, by `ring` |
-| `PartitionWithCells` | structure `(cells : List Cell)` |
-| `PartitionWithCells.content_sum` | `Σ c(x)` over cells |
-| `PartitionWithCells.transpose` | map `Cell.transpose` over the list |
-| `PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero` | partition-level cancellation, proved by induction + `linarith` |
-| `PartitionWithCells.self_transpose_content_sum_zero` | self-dual partitions have content sum zero |
+| Diagram cell | Ordered pair $(r, \mathrm{col}) \in \mathbb{N}^2$ |
+| Cell content | $c(r, \mathrm{col}) = \mathrm{col} - r \in \mathbb{Z}$ |
+| Cell transpose | $(r, \mathrm{col})^T = (\mathrm{col}, r)$ |
+| Transpose involution | $((r, \mathrm{col})^T)^T = (r, \mathrm{col})$ |
+| Cell-level cancellation | $c(r, \mathrm{col}) + c(\mathrm{col}, r) = 0$ |
+| Partition diagram | Finite cell list representing $\lambda$ |
+| Partition content sum | $c(\lambda) = \sum_{x \in \lambda} c(x)$ |
+| Conjugate diagram $\lambda^T$ | Elementwise cell transpose across $\lambda$ |
+| Partition-level cancellation | $c(\lambda) + c(\lambda^T) = 0$ by induction on cells |
+| Self-conjugate vanishing | $\lambda = \lambda^T \implies c(\lambda) = 0$ |

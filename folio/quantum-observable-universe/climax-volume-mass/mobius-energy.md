@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe ([Definition](#def:
 
 Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve (a knot embedding) and let $\mathfrak{m}(\varrho)$ denote the categorical mass ([Theorem](#thm:topological-mass)).
 
-We define the *categorical Möbius energy* by
+The *categorical Möbius energy* is defined by
 
 $$
   E_{\mathrm{cat}}(\varrho)

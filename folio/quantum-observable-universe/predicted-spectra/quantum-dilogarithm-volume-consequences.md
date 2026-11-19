@@ -14,7 +14,7 @@ $$
   \right|,
 $$
 
-where the sum runs only over the affected generators ($i \leq p$). For $i > p$, we have $\hat{V}_i^{\mathrm{par}} = \hat{V}_i^{\mathrm{dau}}$. The $Q$-value is intensive ($O(1)$ in MeV) because each log ratio is $O(1)$ and the sum contains $p + 1$ terms.
+where the sum runs only over the affected generators ($i \leq p$). For $i > p$, the generator factors agree: $\hat{V}_i^{\mathrm{par}} = \hat{V}_i^{\mathrm{dau}}$. The $Q$-value is intensive ($O(1)$ in MeV) because each log ratio is $O(1)$ and the sum contains $p + 1$ terms.
 
 ## The half-life (complete formula)
 

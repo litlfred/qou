@@ -1,5 +1,5 @@
 **Remark (Numerical Probe: SU(4) Alpha-Cluster Capacity and AME Residuals).**
-*We numerically investigate the capacity of the SU(4) alpha-cluster. We link the Plancherel weight to the magic $A\cdot 8G$ closure and AME residuals.*
+*Numerical evaluation of the $\mathrm{SU}(4)$ alpha-cluster capacity links the Plancherel weight to the magic $A\cdot 8G$ closure and AME residuals.*
 
 ## Connection to nuclear-shell binding
 
@@ -15,7 +15,7 @@ The framework's nuclear-shell-binding gap relies on the hard-coded `magic A·8G`
 | 12 | second α-cluster | $c_{\alpha\alpha} \cdot 3$ |
 | 16 | third α-cluster (closed p-shell) | second magic |
 
-We conjecture that the magic A$\cdot$8G constant equals the SU(4)-singlet projection coefficient of the saturated 4-nucleon braid. We evaluate this under the SO(3)-fiber and bar-symmetric crystal functional:
+The magic A$\cdot$8G constant is conjectured to equal the SU(4)-singlet projection coefficient of the saturated 4-nucleon braid, evaluated under the SO(3)-fiber and bar-symmetric crystal functional:
 
 $$
   \text{magic A$\cdot$8G constant}

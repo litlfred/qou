@@ -20,14 +20,11 @@ and $\mathrm{st}$ the [standard-part map](#def:standard-part-functor).
 This is the block-level home for the "move analytic $\to$ surreal"
 operation: an analytic *limit statement* becomes a surreal
 *equality up to an infinitesimal* — and, after $\mathrm{st}$, an exact
-equality. Two consequences are **derived, fully proved**, from the
-class fields in the Lean sibling:
+equality. Two consequences follow directly from these axioms:
 
-1. *Limits are computed by* $\mathrm{st} \circ \mathrm{ev}_\omega$
-   (`standardPart_evalOmega_of_tendstoReal`).
+1. *Limits are computed by* $\mathrm{st} \circ \mathrm{ev}_\omega$.
 2. *Limit comparison*: if $a_n \le b_n$ eventually and both converge,
-   then $\lim a_n \le \lim b_n$
-   (`tendstoReal_le_of_eventuallyLE`) — the eventual inequality is
+   then $\lim a_n \le \lim b_n$ — the eventual inequality is
    transferred to a single surreal inequality at $\omega$ and the
    archimedean conclusion recovered by the proved monotonicity of
    $\mathrm{st}$. The classical strict-inequality collapse is visible
@@ -37,16 +34,15 @@ class fields in the Lean sibling:
 
 ## Epistemic status
 
-The conjecture is carried as a content-bearing Lean `class` with **no
-instance** — the honest open state. For the concrete surreals the
+For the concrete surreals the
 evaluation exists model-theoretically: Robinson's ultrapower supplies
 one \cite{robinson1966}, and the Berarducci–Mantova identification of
 surreals with transseries/germs \cite{berarducci-mantova2018} supplies the
 canonical one for the definable-germ class (evaluation of the germ at
-$\omega$). Neither construction is available from the axiomatised
-`SurrealField` interface alone, which is exactly why the block is a
+$\omega$). Neither construction follows from the abstract
+surreal-field axioms alone, which is why the statement is a
 conjecture rather than a theorem: what is conjectural is the
-*compatibility package* on the abstract interface, not the existence
+*compatibility package* on the abstract surreal carrier, not the existence
 of some such map in set theory.
 
 ## Relation to resummation

@@ -31,5 +31,9 @@ export default remark({
       kind: "status",
       body: "See [Table 1](#tbl:b1-current-status-table1-data).",
     },
+    {
+      kind: "note",
+      body: "Lean substantive proofs in the qou: namespace are partial pending Mathlib's IwahoriHecke API.",
+    },
   ],
 });

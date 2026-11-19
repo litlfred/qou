@@ -1,8 +1,7 @@
 **Algorithm (Confinement SDP — canonical $T_w$).**
 *Solve the LP/SDP that selects the canonical Hecke element $T_w$
 realising confinement (or gluon attachment, electron attachment,
-molecular bonding — the universal ILP of Algorithm
-$\mathtt{def:universal-ilp-algorithm}$).*
+molecular bonding — the universal integer-linear program).*
 
 ### Input
 
@@ -18,7 +17,7 @@ $\mathtt{def:universal-ilp-algorithm}$).*
 - *Dual: shadow prices $y_0^*$ (net constraint) and
   $y^*_i \geq 0$ (Frobenius positivity).*
 - *Active set: $\{i : y^*_i > 0\}$ — the "receptive sub-braids".*
-- *`primal_obj`, `dual_obj`, `duality_gap = |primal_obj − dual_obj|`.*
+- *Primal objective $p^* = \sum_i t_i x_i^*$, dual objective $d^* = n_{\mathrm{target}} y_0^*$, and duality gap $|p^* - d^*|$.*
 
 ### Algorithm
 
@@ -35,9 +34,9 @@ $\mathtt{def:universal-ilp-algorithm}$).*
 
 ### Correctness conditions
 
-*[`prop:operator-selection-lp`](#prop:operator-selection-lp)
+*[The operator-selection LP proposition](#prop:operator-selection-lp)
 specifies the LP and proves the canonical $T_w$ is its primal
-optimum. Strong duality gives `primal_obj = dual_obj` (modulo
+optimum. Strong duality gives $p^* = d^*$ (modulo
 solver tolerance); the active dual variables identify the
 binding-energy shadow prices that feed Step 9b.*
 
@@ -49,7 +48,7 @@ LP in milliseconds.*
 ### Python API entry point
 
 *Canonical compute is the script
-[`computations/confinement-operator-selection.py`](../../../computations/confinement-operator-selection.py),
+[`confinement-operator-selection.py`](../../../computations/confinement-operator-selection.py),
 which solves the LP with primal + dual emission and writes
 `confinement-operator-selection.witness.json`. The reusable
 solver helpers are exposed as
@@ -60,9 +59,12 @@ solver helpers are exposed as
 
 *Canonical witness:
 [`confinement-operator-selection.witness.json`](../../../computations/confinement-operator-selection.witness.json).
-**Must emit all of** `y0_star`, `y_star`, `active_set`,
-`primal_obj`, `dual_obj`, `duality_gap` — enforced in CI by
-[`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py).*
+**Must emit all six dual-contract keys** — enforced by
+[`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py):*
+
+```json
+["y0_star", "y_star", "active_set", "primal_obj", "dual_obj", "duality_gap"]
+```
 
 ### Notes
 

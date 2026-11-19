@@ -1,8 +1,7 @@
-The two classes taken as `[Instance]` hypotheses by the Lean theorem
-[`QOU.Archimedean.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)
-are the only unproved inputs; both are well-established results
-awaiting Mathlib formalisation (`Real.dilog`, `BlochGroup`, the
-Suslin map).
+The two conditional inputs to the archimedean functor uniqueness theorem — the
+dilogarithm archimedean limit and the Bloch–Suslin pentagon-uniqueness theorem —
+are the only external hypotheses; both are well-established results concerning
+the real dilogarithm, the Bloch group, and the Suslin map.
 
 ## Pre-archimedean / archimedean separation
 
@@ -26,7 +25,7 @@ transcendental constant in a QOU observable is the
 $\tau_{\text{arch}}$-image of substrate pentagon data via $D$ (or
 its multivariate generalisations), and is therefore not an external
 import. The additive Bring zero-mode candidate
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
+[electromagnetic coupling Bring zero mode proposition](#prop:em-coupling-bring-zero-mode)
 illustrates the second point: the $2/(3\pi) = 2g/(4\pi(g-1))$
 correction at $g = 4$ is the archimedean shadow of pentagon
 data on Bring's surface, not a $\pi$-import outside $R$.
@@ -49,7 +48,7 @@ To satisfy the Descartes condition $\chi = -6$, the physical state space restric
 ## Corollaries
 
 **(a) Resolves the pre-archimedean concern in
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).**
+[electromagnetic coupling Bring zero mode proposition](#prop:em-coupling-bring-zero-mode).**
 The $\pi$ in the additive correction $2/(3\pi) = 2g/(4\pi(g-1))$
 at $g=4$ is the unique archimedean shadow of pentagon-coherent
 substrate data on Bring's surface. The substrate's pentagon
@@ -64,7 +63,7 @@ form for a QOU observable that includes a transcendental constant
 not derivable from $D$ (or its multivariate generalisations
 $D_n$) is excluded. This is a falsifiability constraint: the
 multiplicative gluon-octet form (a PSLQ-empirical candidate, which
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode) replaces)
+[electromagnetic coupling Bring zero mode proposition](#prop:em-coupling-bring-zero-mode) replaces)
 required arbitrary integer ratios $45 \cdot [3]_q \cdot
 (1+\delta_{CS}+8q\delta_{CS}^2)$ that would have to come from a
 non-pentagon source, is ruled out *structurally* in addition to
@@ -99,10 +98,6 @@ transcendental continuum required for geometric measurement. See
    $D_n$ at $n \geq 3$ is open in the literature (Goncharov 1995
    conjectures); the QOU framework can take it as input where
    needed.
-3. **Lean formalisation of Suslin1991.** Mathlib has neither
-   `Real.dilog` nor `BlochGroup`. The Lean stub records this as
-   a sorry keyed to [`suslin1991`]; closure depends on upstream
-   Mathlib work.
 
 ## Witness
 

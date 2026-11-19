@@ -11,7 +11,7 @@ Standard $S_n$ character theory gives:
   (odd permutation).
 
 **Step 2 — per-irrep closed forms at $H_3(q)$.** By
-[`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms),
+[chi per irreducible-representation cyclotomic closed forms remark](#rem:chi-per-irrep-cyclotomic-closed-forms),
 the three character-difference closed forms are
 
 $$
@@ -25,9 +25,8 @@ $$
 **Step 3 — conjugate-partition symmetry.** The
 conjugate-partition relation
 $\chi_{(1,1,1)}\text{-diff}(q) = \chi_{(3)}\text{-diff}(q) / q^4$
-proved as `chi_V111_eq_V3_div_q4`
-([`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms)
-"Lean theorems exported") implies, expanding both at $q = 1 + \varepsilon$,
+([chi per irreducible-representation cyclotomic closed forms remark](#rem:chi-per-irrep-cyclotomic-closed-forms))
+implies, expanding both at $q = 1 + \varepsilon$,
 that **every** $\varepsilon^m$ coefficient (odd and even alike) of
 the $V_{(1,1,1)}$ difference is a $q^{-4} = (1+\varepsilon)^{-4}$
 binomial-shift of the $V_{(3)}$ coefficients:
@@ -106,4 +105,4 @@ Candidate refinements:
    the Wenzl-bridge inductive ascent.
 
 These extensions are flagged for follow-up under the
-`conj:alpha-k-categorical-closure` proposal.
+alpha k categorical closure conjecture proposal.

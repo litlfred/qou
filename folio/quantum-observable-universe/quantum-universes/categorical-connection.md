@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum universe over $R$ with differential forms $\Omega^k(A)$ ([higher forms](#def:higher-forms)).
 
-A **categorical connection** on $A$ is a morphism $\nabla \colon A \to A \otimes \Omega^1(A)$ in $\mathbf{C}$ satisfying the Leibniz rule $\nabla(\mu(a \otimes b)) = \nabla(a) \cdot b + a \cdot \nabla(b)$. It generalizes the classical de Rham connection $d$ (the $\mathrm{SU}(2)$ instance in [Example](#ex:categorical-connection-su2) gives a concrete picture). The rule is expressed by the commutativity of the *Leibniz triangle*:
+A **categorical connection** on $A$ is a morphism $\nabla \colon A \to A \otimes \Omega^1(A)$ in $\mathbf{C}$ satisfying the Leibniz rule $\nabla(\mu(a \otimes b)) = \nabla(a) \cdot b + a \cdot \nabla(b)$, generalising the classical de Rham differential $d$ (illustrated on $\mathcal{O}(\mathrm{SU}(2))$ below). The rule is expressed by the commutativity of the *Leibniz triangle*:
 
 ```tex
 \begin{equation}\label{eq:leibniz-triangle}

@@ -27,6 +27,11 @@ export default proposition({
       body: "Moved from prose: Scope-(a) throughout: none of this shows the $Q$-value wrong. It records which functional the construction evaluates, and that it is excluded by the canonical convention. See beans `qou-99qc` (the open decision), `qou-xzrj` (the residual), and `docs/audits/2026-08-26-qbeta-epsilon-is-inadmissible-under-convention-d.md`.",
     },
     {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Formalisation note: non-multiplicativity of the coordinate sum $\\sigma \\mapsto 1$ ($h = 0$ forced by the Hecke relation) is proved as `QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one`.",
+    },
+    {
       kind: "caveat",
       date: "2026-09-03",
       body:

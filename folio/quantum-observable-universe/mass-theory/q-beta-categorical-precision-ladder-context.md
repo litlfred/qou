@@ -63,8 +63,8 @@ $$
 **Coefficient tier (read with the truncation order).** The $c_k$ carry a
 provenance tier: $c_2 = -1$ is **structural** — the exact $u^2$ coefficient
 of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, and therefore
-$q_0$-independent by definition. It is not **proved**: the Lean re-reads the $N{=}2$ factor
-rather than deriving it. And it is Taylor-exact *for that series* — the
+$q_0$-independent by definition. It is not independently derived from first principles, since the $N{=}2$ factor is read off
+rather than derived. And it is Taylor-exact *for that series* — the
 normalised series (cosine factor inside) has $\tilde c_2 = c_2 - 1/8 = -9/8$; $c_k$ for $k \geq 3$ are at present **structural
 near-matches** — their empirical value swings with the $q_0$ anchor
 (e.g. $c_3$: $-2.010$ at the muon-pin $q_0$, $-2.069$ at the $m_p$-pin
@@ -74,7 +74,7 @@ derivation. The permanent
 upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
 coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
 next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
-([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
+([em-coupling-bring-zero-mode proposition](#prop:em-coupling-bring-zero-mode)).
 
 ## canonical precision ladder
 
@@ -91,7 +91,7 @@ and is therefore below 1. **That is not what the non-monotonicity claim is
 about.** The claim
 concerns the residual *magnitude* — whether the approximation gets worse —
 and on magnitude the signature **survives, and survives only under the live
-coefficient**. At the proton pin:
+coefficient**. Under proton calibration:
 
 | $N$ | $\lvert\text{residual}\rvert$, live $c_5$ | $\lvert\text{residual}\rvert$, superseded $c_5$ |
 |---|---|---|
@@ -105,8 +105,8 @@ conclusion. The ladder therefore carries a numerical signature of its own
 inexactness on the live coefficient.
 
 **Caveat:** the crossing is only $0.91\,\%$, computed with $c_3$ at the
-recorded proton extraction and at the proton pin alone, so it is not robust
-to a large $c_3$ move; a full settlement re-extracts $c_3$ at both pins. The
+recorded proton extraction and under proton calibration alone, so it is not robust
+to a large $c_3$ move; a full settlement re-extracts $c_3$ at both anchors. The
 near-match tier of $c_{k\geq3}$ rests independently on the q$_0$-anchor swing
 recorded above and does not depend on this crossing.
 Agreement at $q_0$ is research-grade and **conditional on** the

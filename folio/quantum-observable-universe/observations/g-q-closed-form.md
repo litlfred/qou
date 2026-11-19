@@ -18,7 +18,7 @@ This strictly $q$-rational expression in $\mathbb{Q}(q)$ requires no transcenden
 
 **Planck-unit identity.**
 
-Newton's constant in Planck units is the dimensionless ratio $G_{\mathrm{Planck}} = G_q \cdot (\hbar_q / c_q)^2$. With $\hbar_q / c_q = (q-1)^2/q$, we compute:
+Newton's constant in Planck units is the dimensionless ratio $G_{\mathrm{Planck}} = G_q \cdot (\hbar_q / c_q)^2$. Substituting $\hbar_q / c_q = (q-1)^2/q$ gives:
 
 $$
   G_{\mathrm{Planck}}

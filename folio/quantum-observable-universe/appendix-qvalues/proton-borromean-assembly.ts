@@ -37,7 +37,10 @@ export default conjecture({
         "The section now titled *Established identifications and the residual bridge* was headed " +
         "**## Status: open categorical bridge**. The conditionality is carried by the block kind " +
         "(`conjecture`) and by the prose, which states what remains conjectural; the header does " +
-        "not need to restate it.",
+        "not need to restate it. Axiomatised as Lean class " +
+        "`QOU.AppendixQValues.ProtonBorromeanAssembly` (consumed by `prop:proton-mass-substrate-identity` " +
+        "sorry-free modulo the class instance); the transpose-pair identity " +
+        "$y_{(3)}(q)\\cdot y_{(1,1,1)}(q) = 1/[3]_q!^2$ is also Lean-proved.",
     },
   ],
   tags: [

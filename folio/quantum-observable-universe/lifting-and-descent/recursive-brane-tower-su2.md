@@ -1,8 +1,8 @@
-Continuing the [jet prolongation for SU(2)](#ex:jet-prolongation-su2), we construct the explicit brane tower for $G = \mathrm{SU}(2)$.
+Continuing the [jet prolongation for SU(2)](#ex:jet-prolongation-su2), the explicit brane tower for $G = \mathrm{SU}(2)$ is constructed as follows.
 
 **Level 0.** $A_0 = \mathcal{O}(\mathrm{SU}(2))$, the coordinate ring of polynomial functions on $\mathrm{SU}(2)$. As an $\mathrm{SU}(2)$ representation, it decomposes via Peter–Weyl as $A_0 \cong \bigoplus_{j \geq 0} V_j \otimes V_j^*$, where $V_j$ denotes the spin-$j$ representation of dimension $2j + 1$.
 
-**Level 1.** $A_1 = J^1(A_0) = A_0 \otimes \Omega^1(A_0)$. Because $\Omega^1(A_0) \cong A_0 \otimes \mathfrak{su}(2)^*$ and $\mathfrak{su}(2)^* \cong V_1$, we strictly obtain:
+**Level 1.** $A_1 = J^1(A_0) = A_0 \otimes \Omega^1(A_0)$. Because $\Omega^1(A_0) \cong A_0 \otimes \mathfrak{su}(2)^*$ and $\mathfrak{su}(2)^* \cong V_1$, this strictly yields:
 $$
   A_1 \cong \Gamma\bigl(F(\mathrm{SU}(2))\bigr),
 $$

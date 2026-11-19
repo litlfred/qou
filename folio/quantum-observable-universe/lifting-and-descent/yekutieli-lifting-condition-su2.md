@@ -1,4 +1,4 @@
-We verify the [Quantum lifting condition](#def:yekutieli-lifting-condition) for $G = \mathrm{SU}(2)$ in [SU(2) as a QOU](#ex:qou-su2).
+The [Quantum lifting condition](#def:yekutieli-lifting-condition) holds for $G = \mathrm{SU}(2)$ in [SU(2) as a QOU](#ex:qou-su2) as follows.
 
 **The site.** Let $\mathcal{S} = \mathbb{CP}^1$ with the analytic topology. The space $\mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$ is the flag variety of maximal tori in $\mathrm{SU}(2)$.
 

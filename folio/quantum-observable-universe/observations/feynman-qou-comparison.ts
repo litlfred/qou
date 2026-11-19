@@ -19,4 +19,10 @@ export default remark({
     "hammer2019",
     "jones1985",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Tabulated comparison data recorded in witness feynman-qou-comparison.witness.json.",
+    },
+  ],
 });

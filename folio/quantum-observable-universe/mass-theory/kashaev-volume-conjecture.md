@@ -2,7 +2,7 @@
 > below is the structurally-wrong leading-order ansatz; the operator-valued
 > form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](../mass-endomorphism/rho-k-graded-expansion.md).
+> graded expansion [rho k graded expansion proposition](../mass-endomorphism/rho-k-graded-expansion.md).
 
 The **Kashaev volume conjecture (KVC)** asserts that, for every
 hyperbolic knot $K \subseteq S^3$, the Kashaev limit of the colored
@@ -33,52 +33,24 @@ recovers the hyperbolic volume; this is the content of the per-block
 [Kashaev as archimedean realization](#rem:kashaev-as-archimedean-realization)
 remark.
 
-### Lean axiomatisation
+### Conditional hypothesis structure
 
-KVC is
-encoded in Lean as a **typeclass**
+The Kashaev volume conjecture (KVC) is formulated as an explicit conditional hypothesis pairing the non-negative hyperbolic volume functional $\mathrm{Vol}_{\mathrm{hyp}} \colon \mathrm{Braid} \to \mathbb{R}_{\ge 0}$ with the asymptotic Kashaev limit $\mathrm{Vol}_{\mathrm{Kashaev}} \colon \mathrm{Braid} \to \mathbb{R}$. Downstream results that depend on KVC take this identification as an explicit hypothesis, following the same conditional pattern used in [mass endomorphism tower](#prop:mass-endomorphism-tower).
 
-```
-class VolumeConjecture (q : ℝ) where
-  hypVolume       : Braid → ℝ
-  kashaevLimit    : Braid → ℝ
-  kvc_holds       : ∀ β, hypVolume β = kashaevLimit β
-  hypVolume_nonneg : ∀ β, 0 ≤ hypVolume β
-```
+Formulating KVC as a local hypothesis rather than a global axiom provides three structural advantages:
 
-The class fields encode the conjectural identification of hyperbolic
-volume with the Kashaev limit. Any instance of `VolumeConjecture` is
-**conjecture-bearing**: the `kvc_holds` field plays the role of
-`sorry`, but as an axiomatised class field rather than a tactic
-failure. Downstream results that depend on KVC take it as an
-`[VolumeConjecture q]` typeclass argument and are then **fully
-verified** by Lean — the only unproved input is the class instance.
-
-This is the same pattern used for `MassEvaluation` in
-[mass endomorphism tower](#prop:mass-endomorphism-tower): the
-canonical computation is axiomatised so that the algebraic tower
-identities are machine-checked.
-
-### Rationale for a class rather than an axiom
-
-Three reasons:
-
-1. **Locality.** A typeclass instance can be supplied per knot family
-   (figure-eight, torus, etc.) where KVC is actually proved; downstream
-   theorems then specialise to verified ground.
+1. **Locality.** The hypothesis can be discharged per knot family
+   (figure-eight, torus, etc.) where KVC is established in the literature; downstream
+   theorems then specialise to those verified families.
 
 2. **Compositionality.** A bridge theorem of the form
    $\Phi_q(V_S) = \rho_q \cdot \mathrm{Vol}(K_S)$ depends only on KVC
-   restricted to $K_S$; the typeclass scope makes that dependency
-   visible in the type signature.
+   restricted to $K_S$, keeping the scope of the assumption explicit.
 
-3. **No global axiom pollution.** Mathlib's axiom audit
-   (`#print axioms`) records typeclass dependencies but does not flag
-   them as global axioms; the conditional nature of every downstream
-   result is preserved.
+3. **Explicit dependency tracking.** The conditional nature of every downstream
+   result is preserved without introducing unproved global assumptions.
 
-The conjecture itself remains open at the level of $\pi_0$ —
-no claim of proof is made by introducing the class.
+The general conjecture itself remains open at the level of arbitrary knots.
 
 ### Motivic perspective
 

@@ -17,4 +17,11 @@ export default remark({
     "prop:cs-evaluation-faithfulness",
   ],
   cites: ["yekutieli2010"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-19",
+      body: "Lean formalisation: algebraic independence populates the class `QOU.Archimedean.HyperbolicVolumeIndependence`.",
+    },
+  ],
 });

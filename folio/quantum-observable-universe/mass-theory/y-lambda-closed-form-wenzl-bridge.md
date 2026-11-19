@@ -15,4 +15,4 @@ $$
 
 *This resolves the convention mismatch between the symmetric Hecke formulation and the standard Wenzl formulas.*
 
-The Wenzl-bridge identifies $y_\lambda$ symbolically. We substitute $Q=q^2$ and $z_{\mathrm{GL}}=q \cdot z$ into the principal-specialisation Schur element. This avoids explicit linear-system solves and delivers polynomial q-rational forms in a fraction of the computation time.
+The Wenzl-bridge identifies $y_\lambda$ symbolically. Substituting $Q=q^2$ and $z_{\mathrm{GL}}=q \cdot z$ into the principal-specialisation Schur element avoids explicit linear-system solves and delivers polynomial $q$-rational forms in a fraction of the computation time.

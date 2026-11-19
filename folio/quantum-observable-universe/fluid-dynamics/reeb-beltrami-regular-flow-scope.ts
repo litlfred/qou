@@ -10,4 +10,10 @@ export default remark({
     "ex:torus-ns-regular",
   ],
   tags: ["navier-stokes", "regularity", "scope", "reeb", "descartes"],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Boothby-Wang contact identification of V on the link of Bring's cone: see `docs/audits/2026-09-03-bring-cone-link-is-the-unit-tangent-bundle.md` and `docs/audits/2026-10-12-ns-rescue-reformulations.md`.",
+    },
+  ],
 });

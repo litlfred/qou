@@ -23,6 +23,6 @@ These computations provide empirical evidence for the upstream conjecture. Once 
 
 ## Computational corollary
 
-The conditional theorem licenses the engine optimisation. We enforce the KLR grading bound before any crystal step. Given a target confinement level $\ell$, the engine restricts crystal traversal to the subgraph spanned by KLR-modules of degree $\leq \ell$. Any application of $\tilde f_i$ that pushes a state into degree $\ell + 1$ is geometrically forbidden. This justifies the heuristic confinement cutoff in the engine.
+The conditional theorem licenses the engine optimisation by enforcing the KLR grading bound before any crystal step. Given a target confinement level $\ell$, the engine restricts crystal traversal to the subgraph spanned by KLR-modules of degree $\leq \ell$. Any application of $\tilde f_i$ that pushes a state into degree $\ell + 1$ is geometrically forbidden. This justifies the heuristic confinement cutoff in the engine.
 
 This reduces engine-side combinatorics to a Bruhat-prefix Demazure filtration. The Demazure-fiber Markov-trace functional $T^{\mathrm{Dem}}(\lambda;\, w)$ provides the explicit quantitative form of the resonance widths inside each KLR-graded layer.

@@ -1,4 +1,4 @@
-We construct the archimedean quantum observable universe ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) explicitly for Bring's surface. The five homogeneous coordinates $x_j$, $j\in\{0,\dots,4\}$, split into *spacetime* and *color* degrees of freedom:
+The archimedean quantum observable universe ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) is constructed explicitly for Bring's surface as follows. The five homogeneous coordinates $x_j$, $j\in\{0,\dots,4\}$, split into *spacetime* and *color* degrees of freedom:
 
 $$
   \underbrace{x_0, x_1}_{\text{spacetime}}

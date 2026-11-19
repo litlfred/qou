@@ -3,7 +3,7 @@
 Let $\mathcal{K}$ be the rank-$2$ $q$-difference module of the binding $q$-lift
 recurrence
 $[m+2]_q\,b_{m+2}=b_{m+1}+b_m$
-([`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol)),
+([$q$-difference kernel prolongation symbol conjecture](#conj:qdifference-kernel-prolongation-symbol)),
 and let $\mathcal{G}$ be the module of
 $$
 y_{m+2}-(2-q^{m+1})\,y_{m+1}+y_m \;=\; 0,
@@ -50,8 +50,7 @@ $\mathcal{G}$ does: for $m+1<\log 2/\log q$ the coefficient $2-q^{m+1}$ is
 positive, and while it is positive a sign flip is always followed by a
 same-sign pair, since $y_{m+2}y_{m+1} = (2-q^{m+1})\,y_{m+1}^2 - y_m y_{m+1} > 0$
 whenever $y_m y_{m+1} < 0$
-(`QOU.Mass.GGMAlternationOnset.ggm_solution_no_double_flip`, over an
-ordered field). The recurrence *is* oscillatory there — its solutions do change
+(over any ordered field). The recurrence *is* oscillatory there — its solutions do change
 sign inside the window — but never
 at two consecutive pairs, and that is what the argument needs. So the untwisted
 sequence has same-sign consecutive pairs in that window, the twisted sequence

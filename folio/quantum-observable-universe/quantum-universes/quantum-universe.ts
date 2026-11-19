@@ -25,7 +25,7 @@ export default definition({
   // sits in the path of the decision-1/decision-2 errata (its axiom 4 IS the
   // non-degeneracy that convention D violates), so it must not be relocated
   // in the same round as its mathematical restatement.
-  uses: ["def:rigid-monoidal-category"],
+  uses: ["def:rigid-monoidal-category", "def:frobenius-hopf-substrate", "def:snake-identity"],
   examples: ["ex:quantum-universe-su2"],
   rendered: [
     { mime: "image/svg+xml", url: "rendered/quantum-universe-0.svg", blockIndex: 0, hash: "7d5b5776ad75" },

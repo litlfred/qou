@@ -17,7 +17,7 @@ Total: $(K - 1)/2$ real parts $+$ $(K - 1)/2$ imaginary parts =
 $K - 1$ candidate generators.
 
 *Step 2 (eliminate imaginary parts via Theorem A).* By
-[`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form):
+[cyclotomic trilogarithm imaginary closed form proposition](#prop:cyclotomic-trilog-imaginary-closed-form):
 
 $$
   \mathrm{Im}\,\mathrm{Li}_3(\zeta_K^j)
@@ -28,7 +28,7 @@ $$
 
 Wait — the formula applies at $\zeta_n$ with $n = K/\gcd(j, K)$.
 For prime $K$ and $1 \leq j \leq K - 1$, $\gcd(j, K) = 1$, so
-$\zeta_K^j$ is itself a primitive $K$th root. We apply Theorem A
+$\zeta_K^j$ is itself a primitive $K$th root. Applying Theorem A
 at $n = K$:
 
 $$
@@ -53,7 +53,7 @@ Under the Beilinson regulator quotient $\mathcal{P}_3 \to \mathcal{P}_3 / \mathr
 parts $\{\mathrm{Cl}_3(2\pi j/K) : 1 \leq j \leq (K - 1)/2\}$ satisfy:
 
 - **Orbit-sum relation** by
-  [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general):
+  [cyclotomic $\mathrm{Cl}_3$ orbit sum general proposition](#prop:cyclotomic-cl3-orbit-sum-general):
 
   $$
     \sum_{j=1}^{(K - 1)/2} \mathrm{Cl}_3(2\pi j/K)
@@ -87,7 +87,7 @@ $\square$
 on Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$.
 
 **Argument.** Borel's theorem
-([`prop:borel-partial-resolution`](#prop:borel-partial-resolution)):
+([Borel partial resolution proposition](#prop:borel-partial-resolution)):
 for prime $K$, $\mathbb{Q}(\zeta_K)$ is totally complex with $r_2 = (K - 1)/2$.
 For $n = 3$ (odd):
 

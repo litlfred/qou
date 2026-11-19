@@ -9,7 +9,7 @@ $$
   h \;=\; \frac{q-1}{q}.
 $$
 
-*Assume the typeclass [`QOU.ArchimedeanUniverse.AlphaEmFixedPointNormalization`](em-coupling-fixed-point.lean) is inhabited at $(q,\alpha)$. The exact $\mathcal{O}(\alpha^2)$ self-energy normalization of the coupling equation is $H\cdot(1-h^2\alpha)$. This is the archimedean image of a class in the Bloch group $B_3(\mathbb{C})$. Consequently, $\alpha$ solves the self-consistent fixed point:*
+*Assume the $B_3(\mathbb{C})$ self-energy normalization hypothesis holds at $(q,\alpha)$, so that the exact $\mathcal{O}(\alpha^2)$ self-energy normalization of the coupling equation equals $H\cdot(1-h^2\alpha)$ as the archimedean image of a class in the Bloch group $B_3(\mathbb{C})$. Consequently, $\alpha$ solves the self-consistent fixed point:*
 
 $$
   \frac{1}{\alpha}

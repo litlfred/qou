@@ -1,1 +1,1 @@
-We build heat-flow, Laplace, Fourier, and resolvent calculus on top of the $q$-deformed operators. The framework organises around the $q$-shuffle Hopf algebra $\mathcal{H}_q$ and its grouplikes $\exp_q, \log_q, \mathrm{Li}_2^q$.
+This section develops heat-flow, Laplace, Fourier, and resolvent calculus on top of the $q$-deformed operators. The framework organises around the $q$-shuffle Hopf algebra $\mathcal{H}_q$ and its grouplikes $\exp_q, \log_q, \mathrm{Li}_2^q$.

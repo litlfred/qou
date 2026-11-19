@@ -3,7 +3,7 @@ Pinning the Frobenius pairing on the fundamental object $A$ makes the $\mathrm{S
 This sub-section proves the pairing unique and exhibits the $\mathrm{SU}(2)$ realisation. The arc proceeds through:
 
 1. The uniqueness proof for the pairing on $A$.
-2. The explicit $\mathrm{SU}(2)$ pairing realisation.
-3. The geometric role of the pairing in the substrate-flow.
-4. The canonical $\mathrm{SU}(2)$ explication and table data.
+2. The geometric role of the pairing as categorical integration.
+3. The canonical $\mathrm{SU}(2)$ quantum-universe explication and table data.
+4. The explicit $\mathrm{SU}(2)$ Frobenius-pairing calculation.
 5. The higher-forms identification.

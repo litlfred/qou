@@ -21,7 +21,7 @@ $i \leq n - 1$ leave $\beta_m$ at level $n$ of the tower, while a
 $\sigma_n$ term, read in $H_{n+1}(q)$, couples one further strand and
 lands at level $n + 1$. Support is therefore tracked in the
 Wedderburn labels of the tower algebra $\bigoplus_m H_m(q)$, one
-label set per level. At level $n + 1$ we write
+label set per level. At level $n + 1$ write
 $\lambda + \square := (\lambda_1 + 1, \lambda_2) \vdash n+1$ and
 $\lambda - \square := (\lambda_1, \lambda_2 + 1) \vdash n+1$; the
 name of the latter comes from the two-row $\mathrm{SU}_q(2)$
@@ -98,7 +98,7 @@ which is the claimed containment. $\blacksquare$
 The proposition gives a *containment* of supports, not equality. The
 actual coefficients are dictated by the $\phi_i$ and the Hecke-algebra
 6j-symbols (matrix elements of the basis change between the
-seminormal basis and the inclusion basis); we do not compute them
+seminormal basis and the inclusion basis) and are not computed
 here. For the purposes of the QOU mass-formula pipeline, only the
 support statement is used: it bounds the spectral spread induced by a
 single photon coupling to one box.

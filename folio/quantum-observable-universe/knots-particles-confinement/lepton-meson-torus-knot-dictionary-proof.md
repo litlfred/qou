@@ -7,7 +7,7 @@ The meson assignment follows from the quark flavor–torus-knot identification. 
 - $K$: $\bar{u}s = 3 + 5 = 8$ crossings
 - $\phi$: $s\bar{s} = 5 + 5 = 10$ crossings; $\eta$ sits at the same rung but is an $\mathrm{SU}(3)_{\mathrm{f}}$-octet mixture of $u\bar{u}$, $d\bar{d}$ and $s\bar{s}$ rather than pure $s\bar{s}$
 
-The normal form in $H_3(q)$ is determined by the Hecke reduction of the meson braid word $\mathfrak{M}_+$ ([`def:categorical-meson`](categorical-meson.md)). $\square$
+The normal form in $H_3(q)$ is determined by the Hecke reduction of the meson braid word $\mathfrak{M}_+$ ([categorical meson](categorical-meson.md)). $\square$
 
 ## The structural duality
 
@@ -19,7 +19,7 @@ The dictionary reveals a highest-weight / lowest-weight duality between the two 
 | Hecke eigenvalue | $q$ only (highest weight) | $q$ dominates: symmetric partition $(3)$ carries $62\%$ of the Markov trace at $6$ crossings, rising to $100\%$ as crossing count $\to \infty$ |
 | SDP selection | trivial (1-dim $H_2$) | symmetric-channel-dominated (all-positive crossings force eigenvalue $q > \lvert{-q^{-1}}\rvert$ at every crossing) |
 | Mass formula input | $\mathrm{Vol}(4_1)/\hbar_q^2$ (hyperbolic volume) | $\mathrm{tr}_M(\mathfrak{M}, q_0)$ (Markov trace at substrate) |
-| Calibration | CAL-2: $P_{\mathrm{skew}}^{\beta}$, proxy $m_\mu/m_\mathfrak{e}$ (exact, Lean-proved modulo CAL-2) | CAL-3: $P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$ (genuinely independent of $m_\mathfrak{e}$, $q_0$) |
+| Calibration | CAL-2: $P_{\mathrm{skew}}^{\beta}$, proxy $m_\mu/m_\mathfrak{e}$ (exact modulo CAL-2) | CAL-3: $P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$ (genuinely independent of $m_\mathfrak{e}$, $q_0$) |
 | Role of $4_1$ | transition knot $T(2,3) \to T(2,5)$ giving mass ratio | same transition, different evaluation (dual volume?) |
 
 The lepton sector evaluates in the Kashaev $N \to \infty$ limit (hyperbolic volume). The meson sector evaluates at finite $q_0$ (Markov trace). This is the highest-weight / lowest-weight exchange. The asymptotic invariant (volume) governs fundamental particles, while the finite-$q$ invariant (trace) governs composite bound states.

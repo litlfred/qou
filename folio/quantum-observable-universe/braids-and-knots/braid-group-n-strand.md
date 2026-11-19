@@ -1,1 +1,1 @@
-To compute the $\mathrm{tr}_M(K_1 \sqcup K_2)$ inter-knot decoupling, the $B_3$ framework generalises to arbitrary $n$-strand braid groups and Hecke quotients. The Lean class system enables per-$n$ extensibility, allowing downstream theorems to auto-specialise as higher dimensions are analysed.
+To compute the $\mathrm{tr}_M(K_1 \sqcup K_2)$ inter-knot decoupling, the $B_3$ framework generalises to arbitrary $n$-strand braid groups and Hecke quotients. The uniform per-$n$ formulation allows downstream theorems to specialise automatically as higher strand counts are analysed.

@@ -46,5 +46,11 @@ export default conjecture({
       body:
         "Domain-stability refinement backing: computations/qcollatz_divergence_probe.py + .witness.json. Forward-orbit census (6045 positive Laurent seeds, window q^-3..q^5): 6042 escape the domain {P(-1)∈{0,-1}} (5369 after one step, max in-domain prefix 4), 0 divergent, 0 rogue cycles; the only convergents are the fundamental 2-cycle {q^-1,1+q^-1} and its backward-tree preimages. Motivates the domain-stable cone. Cycle half: qcollatz_cycle_census (period<=18).",
     },
+    {
+      kind: "refined-framing",
+      date: "2026-08-15",
+      body:
+        "Lean references for the obstruction and length-filtration discussion: QOU/AlgebraicSubstrate/collatz_obstruction_link.lean (links kappa_C only to Kummer removability at n | chi(A)), QOU/Information/ObstructionGenericity.lean (cofinite non-vanishing locus in q), QOU/Information/SkeinCounterfactual.lean (halting set vs single-proposition scalar distinction, corrected 2026-08-15), QOU/Information/ObstructionVerdictCap.lean (independent verdicts across legs), and QOU.Information.SkeinObservationSystem (Halts / halts_of_len_descent).",
+    },
   ],
 });

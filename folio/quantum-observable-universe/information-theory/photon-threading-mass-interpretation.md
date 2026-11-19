@@ -1,6 +1,6 @@
 **Three computations of the same quantity.**
 
-We compute the mass $\mathfrak{m}_{\mathfrak{H}}$ using three independent methods. All three yield identical results:
+Three independent methods evaluate the mass $\mathfrak{m}_{\mathfrak{H}}$, yielding identical results:
 
 | Method | Domain | Computes $\mathfrak{m}_{\mathfrak{H}}$ as |
 |--------|--------|------------------------------|
@@ -15,7 +15,7 @@ The first represents the definition ([mass over $\mathbb{C}$](#ex:mass-identity-
 The photon $\gamma$ ($\mathbf{1}_{B_4}$ 4-strand identity) is knot-trivial under Markov closure. It approaches the hadron $\mathfrak{H}$. To "measure" the hadron—to determine its mass—the photon must braid completely through $\mathfrak{H}$, moving from one side of the braid word to the other.
 
 1. **Start.** The photon strand sits above the hadron braid: $\gamma \otimes \beta_{\mathfrak{H}} \in B_{n+1}$.
-2. **Thread.** We apply braid relations to move $\gamma$ downward through $\beta_{\mathfrak{H}}$. The Yang--Baxter moves ($\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$) and far-commutativity ($\sigma_i\sigma_j = \sigma_j\sigma_i$) are **free**. They rearrange crossings without altering the Skein weight ([Gröbner--Shirshov energy](#thm:groebner-shirshov-energy)). Only the **Hecke steps** ($\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$) cost energy. Each Hecke step resolves a double crossing into a weighted single crossing plus a resolved identity.
+2. **Thread.** Braid relations move $\gamma$ downward through $\beta_{\mathfrak{H}}$. The Yang--Baxter moves ($\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$) and far-commutativity ($\sigma_i\sigma_j = \sigma_j\sigma_i$) are **free**. They rearrange crossings without altering the Skein weight ([Gröbner--Shirshov energy](#thm:groebner-shirshov-energy)). Only the **Hecke steps** ($\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$) cost energy. Each Hecke step resolves a double crossing into a weighted single crossing plus a resolved identity.
 3. **End.** The photon strand sits below $\beta_{\mathfrak{H}}$. The total Hecke cost equals the crossing energy $E_{\mathfrak{H}} = \sum |c_w| \cdot |q - q^{-1}|$ in Skein units. Mass--energy equivalence yields the mass: $\mathfrak{m}_{\mathfrak{H}} = E_{\mathfrak{H}} \cdot (q-1)^2$.
 
 **Measurement mechanism.**

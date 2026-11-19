@@ -1,4 +1,4 @@
-*Proof.* We reduce an arbitrary joint moment of centred generators
+*Proof.* An arbitrary joint moment of centred generators reduces
 to a pair-partition sum by induction on word length.
 
 **Setup.** Let $\tilde\sigma_i := \sigma_i - z \cdot 1$ where
@@ -60,7 +60,7 @@ $\sigma_i^2$ to a lower-degree word. This produces a tree of
 reductions whose leaves are square-free generator products; each
 leaf evaluates under $\mathrm{tr}_M$ via Wenzl's product
 factorisation
-([`prop:trace-locality-meets-gs-non-locality`](#prop:trace-locality-meets-gs-non-locality)).
+([trace locality and Gröbner--Shirshov reduction](#prop:trace-locality-meets-gs-non-locality)).
 The factorisation pairs each $\tilde\sigma_i$ with another
 $\tilde\sigma_j$ of the same index (Kronecker $\delta_{i=j}$) — any
 unmatched generator gives zero by Markov property as above.

@@ -26,4 +26,10 @@ export default remark({
     "askey-scheme",
     "fibre-level",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "Lean declarations (`QOU.MassEndomorphism`): conjecture class `AWDeformationPath` and derived theorem `AWDeformationPath.channel_ladders` (via `recurrence_invol_descent`).",
+    },
+  ],
 });

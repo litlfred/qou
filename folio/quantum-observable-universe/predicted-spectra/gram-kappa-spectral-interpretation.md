@@ -17,7 +17,7 @@ No committed producer reproduces this evaluation, and the product it evaluates i
 | Tied to Bring-surface coordinate calculation | Categorical: depends only on $\chi_\lambda(\beta_\bullet)$ |
 | Result $1.722$ computed from the two determinants | Result would be determined by the $\lambda$-blocks of the genus-$4$ pair, if the conjecture holds |
 
-**Lean handle.**
+**Symbolic evaluation.**
 
 The formula evaluates symbolically over $R$ to a $q$-rational expression for $\kappa$. It specializes numerically via $\iota \colon R \to \mathbb{R}$ at $q \mapsto q_0$. Character values $\chi_\lambda(T_{m,n})$ for torus knots are polynomial in $q^{\pm 1}$ \cite{jones1987}. The formula reduces to a finite product of Laurent monomials.
 

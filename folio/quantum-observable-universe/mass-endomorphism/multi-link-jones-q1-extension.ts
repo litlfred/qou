@@ -27,7 +27,7 @@ export default remark({
     status: "experimental",
   },
   authorNotes: [
-    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+    { kind: "note", body: "Lean sibling (`QOU.BraidKnot.multi_link_jones_q1_extension`): archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Exports `Link` constructors `trefoil`, `borromean`, `doubleHopf`, their `jonesAtOne` cases, and `jonesHopfTimesBorromean = 16`, `jonesBorromeanFlipped = 8`." },
     {
       kind: "status",
       body: "**Open R&D recorded.** The Lean class `MultiLinkJonesAtOne` is the\nhook — once an empirical or theoretical match is found, a new\ninstance plugs in the right $(c_5, c_6)$ values and the\nprecision-ladder extension auto-picks-up. Until then the default\ninstance carries the probe's exploratory placeholders with the\nmismatch explicitly documented.",

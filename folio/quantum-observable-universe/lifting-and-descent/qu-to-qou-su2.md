@@ -1,4 +1,4 @@
-We verify the structural properties of the main theorem for $G = \mathrm{SU}(2)$, extending [Yekutieli lifting for SU(2)](#ex:yekutieli-lifting-su2).
+The structural properties of the main theorem hold for $G = \mathrm{SU}(2)$, extending [Yekutieli lifting for SU(2)](#ex:yekutieli-lifting-su2).
 
 **Hypotheses.** The quantum universe is $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with substrate parameter $q$ ([SU(2) QOU](#ex:qou-su2)). Observability holds: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ because $\mathrm{Ad}(\mathrm{SU}(2)) \cong \mathfrak{su}(2)$ has no trivial sub-representation. The adjoint representation is irreducible.
 
@@ -15,7 +15,7 @@ $$
 $$
 The Hopf fibration $\mathrm{SU}(2) \to \mathbb{CP}^1$ is a different circle bundle, with $c_1 = \pm 1$ depending on orientation.
 
-**(3) Kummer persistence.** Since $\chi(\mathbb{CP}^1) = 2$, the bundle $\xi$ has an $n$-th root exactly when $n \mid 2$. Its square root is the Hopf bundle: $2 \cdot c_1(\text{Hopf}) = \pm 2 = \pm c_1(\xi)$, the spin structure of $S^2$. For every $n \geq 3$ the obstruction $2 \bmod n \in H^2(\mathbb{CP}^1, \mu_n)$ is non-zero and no $n$-th root exists. The earlier claim that the jet-tower obstruction satisfies $\kappa_n \geq 1$ at every level is retracted; see the [proof of QU-to-QOU](#prf:qu-to-qou).
+**(3) Kummer persistence.** Since $\chi(\mathbb{CP}^1) = 2$, the bundle $\xi$ has an $n$-th root exactly when $n \mid 2$. Its square root is the Hopf bundle: $2 \cdot c_1(\text{Hopf}) = \pm 2 = \pm c_1(\xi)$, the spin structure of $S^2$. For every $n \geq 3$ the obstruction $2 \bmod n \in H^2(\mathbb{CP}^1, \mu_n)$ is non-zero and no $n$-th root exists. By contrast, in the jet tower no complementary-subgroup bound $\kappa_n \geq 1$ holds at every level; see the [proof of QU-to-QOU](#prf:qu-to-qou).
 
 **(4) Branch point formula.** The projective line object is $\mathbb{P}(V) = \mathbb{CP}^1$. The :refterm[descent]{#descent} map $\mathbb{CP}^1 \to \mathbb{CP}^1$ has degree $d = 1$. The Riemann--Hurwitz formula gives:
 $$

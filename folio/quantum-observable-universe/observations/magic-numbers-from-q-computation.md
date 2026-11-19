@@ -1,4 +1,4 @@
-This remark records the computation, interpretation, $q$-dependence, witness, and homological cross-link for [`conj:magic-numbers-from-q`](#conj:magic-numbers-from-q).
+This remark records the computation, interpretation, $q$-dependence, and homological cross-link for [the magic-numbers conjecture](#conj:magic-numbers-from-q).
 
 ## Computation
 
@@ -9,7 +9,7 @@ The Hoefsmit seminormal matrix for partition $\lambda$ at generator $g$ has bloc
 
 This structure yields $O(d)$ matrix--vector cost per crossing instead of $O(d^3)$ for dense multiplication. This enables a $15\,000\times$ speedup at $k = 9$ (from $557\,$s to $14\,$s) and makes $k = 10$ ($42$ partitions, $\dim \leq 768$) feasible in $48\,$s.
 
-We compute the nuclear character at each $Z$ by multiplying crossing matrices through the full atomic braid $\mathcal{N}(Z, Z)$. This includes intra-nucleon $\mathcal{B}_3 \times \text{quarks}$, inter-nucleon pp/nn/pn crossings, and electron pe crossings using both generators.
+The nuclear character at each $Z$ is computed by multiplying crossing matrices through the full atomic braid $\mathcal{N}(Z, Z)$. This includes intra-nucleon $\mathcal{B}_3 \times \text{quarks}$, inter-nucleon pp/nn/pn crossings, and electron pe crossings using both generators.
 
 ## Interpretation
 
@@ -26,10 +26,6 @@ All quantities are functions of the substrate parameter $q$:
 - Crossing eigenvalues: $q$ (pp), $-q^{-1}$ (nn), $(q - q^{-1})/2$ (pn)
 
 At $q = 1$ (the classical limit), all $[\rho]_q \to \rho$, $w_\lambda \to \dim(\lambda)^2/k!$, and the magic number signal vanishes. There is no quantum deformation and no shell closure. The magic numbers are a quantum effect that exists only for $q \neq 1$.
-
-## Witness
-
-The file `shell-closure.witness.json` records $\delta^2 \Phi(Z)$ for $Z = 1\ldots 30$ at $K = 10$. The block-diagonal optimised computation resides in `shell_closure_compute.py`.
 
 ## Cross-link: homological route past the $K = 12$ barrier
 

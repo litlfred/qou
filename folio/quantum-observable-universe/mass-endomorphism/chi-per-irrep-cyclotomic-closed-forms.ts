@@ -26,7 +26,7 @@ export default remark({
     status: "experimental",
   },
   authorNotes: [
-    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data. Exported declarations: `atomic_braid_to_crossings`, `chi_V3_diff_polynomial_form`, `chi_V21_diff_polynomial_form`, `chi_V111_diff_polynomial_form`, `chi_V111_eq_V3_div_q4`, `chi_V3_diff_at_one`, `chi_V21_diff_at_one`, `chi_V111_diff_at_one`, `chi_V3_diff_via_cyclotomic`, `chi_V21_diff_via_cyclotomic`, `chi_V111_diff_via_cyclotomic`." },
     {
       kind: "status",
       body: "**All three V_λ formally closed**, cyclotomic pattern documented,\ncompute wired, lit pointers in place. The substantive next R&D step\nis to derive the Hoefsmit-matrix-expansion formula for V_(2,1)\n**from the matrix algebra directly** in Lean (currently the closed\nform is recorded as a verified rational identity, with the\nmatrix-product derivation backed empirically by sympy in the probe).",

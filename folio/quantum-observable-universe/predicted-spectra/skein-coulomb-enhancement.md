@@ -18,7 +18,7 @@ $$
 The EM coupling projection is $\alpha_{\mathrm{EM}}(q) = q^{-1}/([9]_q \cdot [10]_q)$ ([EM coupling projection](#prop:em-coupling-projection)). The velocity of the emitted electron is $\beta_e = v_e / c$.
 
 **Derivation.**
-We evaluate the canonical action $\mathfrak{S}_q$ ([canonical action](#prop:qou-canonical-action)) on the full outgoing state $\psi = T_{2,3} \cup \mathcal{N}(p\!+\!1, n\!-\!1)$. This decomposes as:
+Evaluating the canonical action $\mathfrak{S}_q$ ([canonical action](#prop:qou-canonical-action)) on the full outgoing state $\psi = T_{2,3} \cup \mathcal{N}(p\!+\!1, n\!-\!1)$ decomposes the action as:
 
 $$
   \mathfrak{S}_q\big|_\psi
@@ -38,7 +38,7 @@ $$
   \arg \Gamma(\ell + 1 + i\eta_q).
 $$
 
-We form the coherent product of $Z$ such scattering amplitudes. We sum over partial waves $\ell$ and integrate over the electron energy spectrum. This yields:
+Forming the coherent product of $Z$ such scattering amplitudes, summing over partial waves $\ell$, and integrating over the electron energy spectrum yields:
 
 $$
   |\psi_e(0)|^2_{\text{Coulomb}}

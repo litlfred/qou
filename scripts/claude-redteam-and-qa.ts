@@ -23,7 +23,9 @@
  *     summary without making any network calls.
  */
 
+import { spawnSync } from "child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "fs";
+import { tmpdir } from "os";
 import { basename, dirname, extname, join, relative, resolve } from "path";
 import { getAnthropic } from "../folio-assistant/cat-harness-tools/src/core/anthropic.ts";
 
@@ -91,24 +93,36 @@ Respond ONLY with a single valid JSON object (no markdown fences outside the JSO
 
 const QA_PROSE_SYSTEM_RUBRIC = `You are the Principal Monograph Editor and Mathematical Physics QA Auditor for the Quantum Observable Universe (QOU) folio.
 
-Your task is to audit submitted monograph prose blocks (\`.md\`) and chapter manifests (\`.ts\`) for mathematical consistency, Convention-D & Two-Term QED alignment, ValueRegistry discipline, and Milnor-style monograph voice.
+Your task is to audit submitted monograph prose blocks (\`.md\`) and their companion block manifests (\`.ts\`) for:
+  - **Classes L1 & L2**: Fourth-wall Lean 4 / Mathlib / declaration-identifier leaks in reader-facing mathematical prose,
+  - **Class L3**: John Milnor Monograph Voice A compliance (zero first/second-person pronouns \`we\`, \`our\`, \`us\`, \`I\`, \`you\` and zero editorializing),
+  - **Class L4**: Architectural reading-order anachronisms (invoking concepts from later chapters before their defining chapter/section, forward cross-references in foundational chapters, and terminology drift on core objects),
+  - **Convention-D, Two-Term QED, & ValueRegistry Discipline**: Zero stale Convention-C formulas and zero unbacked hardcoded multi-digit observables.
 
 ### NON-NEGOTIABLE QOU MONOGRAPH QA RUBRIC
 
-1. **STALE CONVENTION-C OR ONE-TERM FORMULA DRIFT (CRITICAL)**:
-   - Flag any prose passage that still presents Convention C (\`z = \\sqrt{q}/(1+q)\` or the retracted non-Markov weight vector \`(z, 1/2 - z, z)\`) as canonical without noting the 2026-08-15 Convention-D ruling (\`z_D = q^3/(q^2+1)\`, \`w_{(3)}(z_D) = (q^4+1)/(q^2+1)^2\`, \`w_{(2,1)}(z_D) = q^2/(q^2+1)^2\`, \`w_{(1^3)}(z_D) = 0\`).
-   - Flag any passage claiming \`1/2 - z_D\` is a Wedderburn weight (it fails Markov conditions \`h2\` and \`h3\`).
-   - Check whether discussions of the \`\\mu\\text{--}p\` tension (\`211.2\\text{ ppb}\` at the 1-term proton pin) or \`Q_\\beta\` / \`m_n\` residuals reflect or properly cross-reference the parameter-free two-term connected 4th-order Borromean \`V^3\` QED correction (\`M_p^{QED,conn} = +220.08\\text{ eV}\`, \`\\Delta m_{QED}^{conn} = -331.70\\text{ eV}\`) and the GPMT \`(1^3)\` modified-trace / Kohno-Drinfeld full-twist framing bridges where relevant.
+1. **CLASSES L1 & L2 — ZERO FOURTH-WALL LEAN / MATHLIB / IDENTIFIER LEAKS IN PROSE (CRITICAL / MAJOR)**:
+   - In the published QOU monograph, machine-checked formalization is linked exclusively via the block manifest's \`lean:\` field and the rendered marginal \`\\forall\` verification badge — NEVER inside reader-facing \`.md\` prose.
+   - **Class L1 (\`L1_LEAN_PROSE\`)**: Flag ANY narrative prose mention of \`Lean\`, \`Lean 4\`, \`Lean carrier\`, \`Lean sibling\`, \`Lean backing\`, \`Lean file\`, \`Lean module\`, \`Lean structure\`, \`Mathlib\`, \`proved formally\`, \`formally proved\`, \`formalised in\` / \`formalized in\`, \`discharges the axiom\`, \`sorry-free\`, \`axiom-free\`, \`## Lean ...\` section headings, or \`**Lean.**\` paragraph lead-ins.
+   - **Class L2 (\`L2_LEAN_IDENT\`)**: Flag ANY backticked Lean fully-qualified name (\`QOU.Foo.bar\`, \`Mathlib...\`, \`CategoryTheory...\`), \`.lean\` filename, Lean typeclass or type application (\`CommRing\`, \`Field\`, \`LinearOrderedField\`, \`IsQGeneric\`, \`[Add H]\`, \`HochschildZero R A\`), raw backticked block ID (\`def:foo\`, \`thm:bar\` instead of a prose markdown link \`[noun phrase](#def:foo)\`), or Lean \`snake_case\` / \`camelCase\` declaration identifier (\`dimQK0_eq_evDimQ_chernCharacter\`, \`su2Character_one\`, \`exteriorSquareDim_ne_zero_iff\`) appearing in \`.md\` prose.
 
-2. **HARDCODED NUMERICAL PREDICTIONS BYPASSING VALUEREGISTRY (MAJOR)**:
-   - Flag raw hardcoded multi-digit decimal predictions in prose tables or inline math that are not backed by a named witness JSON or \`ValueRegistry\` macro.
+2. **CLASS L3 — JOHN MILNOR MONOGRAPH VOICE A: ZERO FIRST/SECOND-PERSON PRONOUNS & EDITORIALIZING (MAJOR)**:
+   - QOU monograph prose is written strictly in John Milnor's impersonal third-person Voice A (*Topology from the Differentiable Viewpoint*, *Characteristic Classes*): mathematical objects, morphisms, and functors are the grammatical subjects ("The counit $\\varepsilon$ induces...", "Applying the braided hexagon yields...", "Restricting to the $(2,1)$ sector gives...").
+   - **Flag every first-person or second-person pronoun in mathematical prose (\`L3_VOICE_PRONOUN\`)**: \`we\`, \`we're\`, \`we've\`, \`we'll\`, \`our\`, \`ours\`, \`us\`, \`let's\`, \`I\`, \`my\`, \`you\`, \`your\`, and reader-address frames (\`the reader will see/note/observe\`). *(Genre note: an explicitly titled front-matter \`authors-note.md\` may use authorial voice for historical/acknowledgement framing if strictly segregated from mathematical exposition, but \`chapter-overview.md\`, \`intro-*.md\`, and all Part I–IV chapters must use pure third-person Voice A.)*
+   - Flag lecturer-cadence openers (\`So the plan/idea is\`, \`Now let's\`, \`Basically,\`), editorializing intensifiers/superlatives (\`surprisingly\`, \`remarkably\`, \`a beautiful result\`, \`the most important consequence\`), repository/session chatter (\`bean qou-xxxx\`, \`PR #\`, \`this session\`, \`measured on 2026-...\`), and epistemic overclaiming (open conjectures phrased as proved results).
 
-3. **MILNOR MONOGRAPH VOICE & EPISTEMIC HONESTY (MAJOR)**:
-   - QOU prose must read like John Milnor's *Topology from the Differentiable Viewpoint* or *Characteristic Classes*: crisp definitions, explicit hypotheses, clear separation between proved theorems (\`0 sorry\`, \`0 axiom\`), scope-(a)/(b) negative exclusions, and open conjectures.
-   - Flag any meta-commentary, PR/commit/bean changelog chatter inside reader-facing monograph prose (belongs in audit docs or code comments, not the book!), or overstated claims where an open conjecture is phrased as a closed derivation.
+3. **CLASS L4 — ARCHITECTURAL READING-ORDER ANACHRONISMS & TERMINOLOGY DRIFT (\`L4_ANACHRONISM\` — MAJOR / CRITICAL)**:
+   - Enforce the authoritative QOU Monograph Chapter Sequence:
+     * **Front Matter (\`introduction/\`)**: High-level conceptual roadmap of the five-step pipeline. Must introduce intuitive motivation cleanly without presupposing undefined technical notation or leaking repository/Lean internals.
+     * **Part I, Chapter 1 (\`quantum-universes/\`)**: Purely categorical foundations of a *Quantum Universe* $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ over a rigid braided monoidal category $\\mathbf{C}$ (and Frobenius–Hopf algebra / groupoid axioms over a generic base ring). **STRICT CHAPTER-1 BOUNDARY**: The numerical or Laurent substrate parameter $q$, quantum integers $[n]_q$, $q$-dimensions $\\dim_q$ evaluated as $q$-brackets, cyclotomic polynomials $\\Phi_d(q)$, quantum groups $\\mathrm{SU}_q(2)$, Iwahori–Hecke algebras $H_n(q)$, Wedderburn block decompositions, and the \`"archimedean wall"\` are **NOT DEFINED IN CHAPTER 1**! Any remark, motivation, or example in \`quantum-universes/*.md\` that prematurely invokes $q$, $[n]_q$, $\\Phi_d(q)$, $H_n(q)$, $\\mathrm{SU}_q(2)$, \`"substrate parameter"\`, or \`"archimedean wall"\` (such as an out-of-place \`**On the substrate parameter.**\` passage) is a **MAJOR/CRITICAL Class L4 reading-order anachronism** that belongs in Chapter 2 Section 7+ or Part II.
+     * **Part I, Chapter 2 (\`quantum-observable-universes/\`)**: Introduces Quantum Observable Universes, $q$-differential operators, the **substrate parameter $q$** (Section 7, \`sec:substrate-parameter\`), and the **Frobenius–Hopf substrate $A$ and categorical Reeb derivation** (Section 9, \`sec:algebraic-substrate-reeb\`). Blocks before Section 7 must not use $q$ as already defined, and blocks in Chapters 1–2 must not carry forward \`](#label)\` cross-references to later sections or Part II chapters.
+     * **Part I, Chapter 3 (\`models-of-qous/\`)**: Explicit 5-step framing/preview gallery where forward previews of Part II–III stages are architecturally permitted when clearly signposted as previews.
+     * **Part II (\`braids-and-knots\` $\\to$ \`brings-surface\` $\\to$ \`knots-particles-confinement\` $\\to$ \`eightfold-way\` $\\to$ \`mass-endomorphism\` $\\to$ \`climax-volume-mass\` $\\to$ \`mass-theory\` $\\to$ \`nuclear-interactions\` $\\to$ \`gravity-spacetime\`)**: Develops $H_n(q)$, Jones–Markov trace & Convention D, GPMT modified trace, Bring's surface $\\Sigma_4$ ($\\chi_{\\mathrm{eu}} = -6$), particle braids, mass endomorphism, and nuclear binding / $\\beta$-decay.
+   - **Core Object & Notation Discipline**: Flag terminology or glyph drift on core objects — e.g. conflating the Frobenius–Hopf algebra object $A$ with the state bundle $\\mathcal{S}$ or fundamental representation $V_1$; writing bare $\\chi$ instead of $\\chi_{\\mathrm{eu}}$ for topological Euler characteristic; writing bare $E$ for energy instead of $\\mathfrak{E}$; writing bare $\\mathrm{SU}(3)$ when colour $\\mathrm{SU}(3)_{\\mathrm{c}}$ vs flavour $\\mathrm{SU}(3)_{\\mathrm{f}}$ is meant; or using inconsistent $q$-calculus conventions ($h_{\\mathrm{A}} = q - q^{-1}$, $\\hbar_q = 1 - q^{-1}$, $[n]_q = (q^n - q^{-n})/(q - q^{-1})$).
 
-4. **UNDEFINED SYMBOLS & BROKEN CROSS-REFERENCES (MINOR)**:
-   - Flag LaTeX macros or notation used before definition or inconsistent with the QOU notation register (\`h = q - q^{-1}\`, \`\\hbar_q = (q-1)/q = 1 - q^{-1}\`, \`[n]_q = (q^n - q^{-n})/(q - q^{-1})\`).
+4. **CONVENTION-D, TWO-TERM QED, & VALUEREGISTRY DISCIPLINE (CRITICAL / MAJOR)**:
+   - Flag any prose presenting excised Convention C ($z = \\sqrt{q}/(1+q)$ or non-Markov $(z, 1/2 - z, z)$) as canonical instead of Convention D ($z_D = q^3/(q^2+1)$, $w_{(3)}(z_D) = (q^4+1)/(q^2+1)^2$, $w_{(2,1)}(z_D) = q^2/(q^2+1)^2$, $w_{(1^3)}(z_D) = 0$).
+   - Flag raw hardcoded multi-digit numerical predictions in prose or tables that bypass \`:val[...]\` / \`ValueRegistry\` witness macros.
 
 ### REQUIRED JSON OUTPUT SCHEMA
 Respond ONLY with a single valid JSON object (no markdown fences outside the JSON) matching this structure:
@@ -116,20 +130,22 @@ Respond ONLY with a single valid JSON object (no markdown fences outside the JSO
   "target": "<primary file path>",
   "verdict": "PASS" | "CONDITIONAL" | "FAIL",
   "scores": {
+    "fourth_wall_lean_clean": "PASS" | "WARN" | "FAIL",
+    "milnor_voice_and_honesty": "PASS" | "WARN" | "FAIL",
+    "reading_order_coherence": "PASS" | "WARN" | "FAIL",
     "convention_d_alignment": "PASS" | "WARN" | "FAIL",
     "value_registry_discipline": "PASS" | "WARN" | "FAIL",
-    "milnor_voice_and_honesty": "PASS" | "WARN" | "FAIL",
     "notation_consistency": "PASS" | "WARN" | "FAIL"
   },
   "summary": "<2-3 sentence executive QA summary>",
   "findings": [
     {
       "severity": "CRITICAL" | "MAJOR" | "MINOR" | "NIT",
-      "category": "CONVENTION_DRIFT" | "HARDCODED_NUMBER" | "VOICE_VIOLATION" | "NOTATION",
+      "category": "L1_LEAN_PROSE" | "L2_LEAN_IDENT" | "L3_VOICE_PRONOUN" | "L4_ANACHRONISM" | "CONVENTION_DRIFT" | "HARDCODED_NUMBER" | "NOTATION",
       "file": "<relative file path>",
       "line": <line number or null>,
-      "detail": "<precise issue description>",
-      "suggested_edit": "<concise replacement text if applicable>"
+      "detail": "<precise issue description explaining why it violates L1/L2/L3/L4 or QOU invariants>",
+      "suggested_edit": "<concise Milnor-Voice-A replacement text or structural relocation target>"
     }
   ]
 }`;
@@ -217,6 +233,15 @@ function expandTargetPaths(rawPaths: string[], mode: "redteam-lean" | "qa-prose"
   return Array.from(new Set(out));
 }
 
+function discoverCompanionsForProse(mdAbsPath: string): string[] {
+  const companions: string[] = [];
+  const siblingTs = mdAbsPath.replace(/\.md$/, ".ts");
+  if (siblingTs !== mdAbsPath && existsSync(siblingTs)) {
+    companions.push(siblingTs);
+  }
+  return companions;
+}
+
 function buildAuditUnits(
   rawPaths: string[],
   mode: "redteam-lean" | "qa-prose",
@@ -232,7 +257,9 @@ function buildAuditUnits(
       .slice(-54);
     const id = `qou_${idx}_${slug}`.slice(0, 64);
     const companions =
-      mode === "redteam-lean" ? discoverCompanionsForLean(absPath, explicitMd, explicitProbe) : [];
+      mode === "redteam-lean"
+        ? discoverCompanionsForLean(absPath, explicitMd, explicitProbe)
+        : discoverCompanionsForProse(absPath);
     return {
       id,
       primaryPath: absPath,
@@ -325,6 +352,85 @@ function loadAnthropicApiKeyIfPresent(): string | undefined {
   return undefined;
 }
 
+function resolveClaudeCliBinary(): string | undefined {
+  const candidates = [
+    process.env.CLAUDE_BIN,
+    join(process.env.HOME || "", ".local", "bin", "claude"),
+    "/opt/homebrew/bin/claude",
+    "/usr/local/bin/claude",
+  ].filter((x): x is string => Boolean(x));
+  for (const c of candidates) {
+    if (existsSync(c)) return c;
+  }
+  const which = spawnSync("which", ["claude"], { encoding: "utf-8" });
+  if (which.status === 0 && which.stdout.trim()) return which.stdout.trim();
+  return undefined;
+}
+
+async function invokeViaClaudeCli(
+  claudeBin: string,
+  model: string,
+  systemText: string,
+  userText: string,
+): Promise<{ text: string; usage: any }> {
+  const proc = Bun.spawn(
+    [
+      claudeBin,
+      "-p",
+      "--model",
+      model,
+      "--effort",
+      "low",
+      "--setting-sources",
+      "user",
+      "--tools",
+      "",
+      "--strict-mcp-config",
+      "--mcp-config",
+      '{"mcpServers":{}}',
+      "--no-session-persistence",
+      "--output-format",
+      "json",
+      "--system-prompt",
+      systemText,
+      "--",
+      userText,
+    ],
+    {
+      cwd: tmpdir(),
+      stdin: "ignore",
+      stdout: "pipe",
+      stderr: "pipe",
+    },
+  );
+  const [stdout, stderr, exitCode] = await Promise.all([
+    new Response(proc.stdout).text(),
+    new Response(proc.stderr).text(),
+    proc.exited,
+  ]);
+  if (exitCode !== 0) {
+    try {
+      const errEnv = JSON.parse(stdout.trim());
+      if (errEnv?.api_error || errEnv?.result) {
+        throw new Error(
+          `claude CLI ${errEnv.api_error ?? "error"} (status ${errEnv.api_error_status ?? exitCode}): ${errEnv.result ?? ""}`,
+        );
+      }
+    } catch (inner) {
+      if (inner instanceof Error && inner.message.startsWith("claude CLI ")) throw inner;
+    }
+    throw new Error(`claude CLI exited with status ${exitCode}: ${(stderr || stdout).slice(0, 500)}`);
+  }
+  const envelope = JSON.parse(stdout.trim());
+  if (envelope.is_error) {
+    throw new Error(`claude CLI returned error: ${JSON.stringify(envelope).slice(0, 500)}`);
+  }
+  return {
+    text: String(envelope.result ?? ""),
+    usage: envelope.usage ?? {},
+  };
+}
+
 function requireAnthropicClient(): NonNullable<ReturnType<typeof getAnthropic>> {
   const apiKey = loadAnthropicApiKeyIfPresent();
   const client = getAnthropic();
@@ -348,6 +454,15 @@ function parseJsonResponse(rawText: string, fallbackTarget: string): any {
   try {
     return JSON.parse(cleaned);
   } catch {
+    const firstBrace = rawText.indexOf("{");
+    const lastBrace = rawText.lastIndexOf("}");
+    if (firstBrace !== -1 && lastBrace > firstBrace) {
+      try {
+        return JSON.parse(rawText.slice(firstBrace, lastBrace + 1));
+      } catch {
+        // fall through to structured fallback
+      }
+    }
     return {
       target: fallbackTarget,
       verdict: "CONDITIONAL",
@@ -533,22 +648,81 @@ async function main() {
       return;
     }
 
-    const client = requireAnthropicClient();
-    const results: any[] = [];
-    for (const u of units) {
+    const apiKey = loadAnthropicApiKeyIfPresent();
+    const sdkClient = apiKey ? getAnthropic() : null;
+    const claudeBin = !sdkClient ? resolveClaudeCliBinary() : undefined;
+    if (!sdkClient && !claudeBin) {
+      requireAnthropicClient();
+    }
+
+    async function evaluateOneUnit(u: AuditUnit): Promise<any> {
       const rel = relative(QOU_ROOT, u.primaryPath);
       const params = buildAnthropicMessageParams(u, model);
+      const backendLabel = sdkClient ? "anthropic-sdk" : "claude-cli";
       console.error(
-        `[claude-${mode}] Auditing ${rel} (companions: ${u.companionPaths.length}, model: ${model})...`,
+        `[claude-${mode}] Auditing ${rel} (companions: ${u.companionPaths.length}, model: ${model}, backend: ${backendLabel})...`,
       );
-      const resp = await client.messages.create(params);
-      const textBlocks = resp.content
-        .filter((b: any) => b.type === "text")
-        .map((b: any) => b.text)
-        .join("\n");
+      let textBlocks = "";
+      let usageInfo: any = {};
+      let lastErr: unknown;
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          if (sdkClient) {
+            const resp = await sdkClient.messages.create(params);
+            textBlocks = resp.content
+              .filter((b: any) => b.type === "text")
+              .map((b: any) => b.text)
+              .join("\n");
+            usageInfo = resp.usage;
+          } else {
+            const cliResp = await invokeViaClaudeCli(
+              claudeBin!,
+              model,
+              params.system[0]!.text,
+              params.messages[0]!.content,
+            );
+            textBlocks = cliResp.text;
+            usageInfo = cliResp.usage;
+          }
+          lastErr = undefined;
+          break;
+        } catch (err) {
+          lastErr = err;
+          if (attempt === 0) {
+            await new Promise((r) => setTimeout(r, 2000));
+          }
+        }
+      }
+      if (lastErr !== undefined) {
+        console.error(
+          `  -> ${rel}: ERROR after retry: ${lastErr instanceof Error ? lastErr.message : String(lastErr)}`,
+        );
+        return {
+          target: rel,
+          verdict: "CONDITIONAL",
+          summary: `API/CLI error during audit: ${lastErr instanceof Error ? lastErr.message.slice(0, 160) : String(lastErr).slice(0, 160)}`,
+          findings: [],
+        };
+      }
       const parsed = parseJsonResponse(textBlocks, rel);
-      parsed._usage = resp.usage;
-      results.push(parsed);
+      parsed._usage = usageInfo;
+      console.error(
+        `  -> ${rel}: verdict=${parsed.verdict ?? "UNKNOWN"}, findings=${Array.isArray(parsed.findings) ? parsed.findings.length : 0}, ` +
+          `tokens(in=${usageInfo?.input_tokens ?? 0}, cache_write=${usageInfo?.cache_creation_input_tokens ?? 0}, cache_read=${usageInfo?.cache_read_input_tokens ?? 0}, out=${usageInfo?.output_tokens ?? 0})`,
+      );
+      return parsed;
+    }
+
+    const results: any[] = [];
+    if (units.length > 0) {
+      // Run unit 0 first to populate the shared ephemeral prompt cache, then run remaining units in batches of 3.
+      results.push(await evaluateOneUnit(units[0]!));
+      const CONCURRENCY = 3;
+      for (let idx = 1; idx < units.length; idx += CONCURRENCY) {
+        const chunk = units.slice(idx, idx + CONCURRENCY);
+        const chunkRes = await Promise.all(chunk.map((u) => evaluateOneUnit(u)));
+        results.push(...chunkRes);
+      }
     }
 
     renderVerdictTable(results);
