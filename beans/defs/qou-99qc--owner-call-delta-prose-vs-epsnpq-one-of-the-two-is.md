@@ -4005,3 +4005,14 @@ Formalised in `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/Nucleon
      - Proton (`trace_QAdjp_borromeanV3`): `tr((Q₁₂^{(p)} + Q₂₃^{(p)}) V_p³) = -2(q - 1)⁴(q + 1)⁴(q⁴ + q² + 1) / (9 q⁶)` (`(1/3)|tr| = 0.00043068`, which in units of `m_e` is `+0.22008 keV`, within `0.36σ` of the `+0.22881 keV` `211 ppb` `μ--p` anchor gap).
      - Connected Neutron (`trace_QAdjn_borromeanV3_connected`): `tr((Q₁₂^{(n)} + Q₂₃^{(n)}) V_n³) + (2/9)tr(V_n³) = +(q - 1)⁴(q + 1)⁴(2q⁴ - q² + 2) / (9 q⁶)`.
      - Connected `(n - p)` difference (`trace_QAdj_connected_diff_borromeanV3`): `(q - 1)⁴(q + 1)⁴(4q⁴ + q² + 4) / (9 q⁶)`.
+## 2026-11-19 00:05Z — PRE-REGISTRATION: charge-tensor insertion on the weight spaces (owner pasted agy's two-term discussion, 19:32Z)
+- Spaces: Wp = (2,1), Wn = (1,2), matrices A, B of NucleonWeightSpaceTraces.lean; β_Bor = (σ₁σ₂⁻¹)³.
+- Charge Q = diag(2/3, −1/3) per strand (an input charge assignment, Gell-Mann–Nishijima; not derived here).
+- Reported, exact in q: E_ij = Tr(K^{⊗3} Q_iQ_j ρ(β)) / Tr(K^{⊗3} ρ(β)) for each pair i<j, and the self terms Σ Q_i² (diagonal, word-independent), for p and n.
+- This is a measurement of whether the insertion is word-sensitive. No coupling constant is applied and nothing is scored against MeV.
+
+## 2026-11-19 00:10Z — RESULT: charge-tensor insertion
+Exact in q (sympy), β_Bor on Wp/Wn:
+- Tr_K β: p = −P(q)/q⁵, n = −P(q)/q⁷ with P = q¹²−3q¹⁰+3q⁸−5q⁶+3q⁴−3q²+1; ratio n/p = q⁻² as C predicts. At q₀: 3.32348, 2.69752.
+- Pair-resolved E_ij depend on the word: p (−0.002351, +0.001919, +0.000432), each ∝ h³ or h⁴; n (−0.112024, −0.109979, −0.111330).
+- But the SUMS are word-independent: Σ_{i<j} E_ij = 0 (p), −1/3 (n), and Σ Q_i² = 1 (p), 2/3 (n), because Q_iQ_j is diagonal and its pair-sum is constant on each weight space. So a uniform Coulomb sum is static charge counting: the braid only redistributes it among pairs. The word can matter only through a pair-dependent weight (a distance or crossing-number kernel), which is underived. Scope (a).
