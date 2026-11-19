@@ -6,6 +6,14 @@
 **Runnable 50-dps + SymPy Probe:** [`folio/quantum-observable-universe/computations/probes/np_two_term_qed_mup_tension_probe.py`](../../folio/quantum-observable-universe/computations/probes/np_two_term_qed_mup_tension_probe.py) (mirrored at [`computations/probes/np_two_term_qed_mup_tension_probe.py`](../../computations/probes/np_two_term_qed_mup_tension_probe.py))  
 **Companion Error-Budget Audit:** [`docs/audits/2026-11-15-np-splitting-error-budget.md`](2026-11-15-np-splitting-error-budget.md)
 
+
+> **🛑 CORRECTION 2026-11-19 (owner asked for it; measurement in bean `qou-99qc`, 00:10Z).** The figures below are labelled "zero-parameter" and "DERIVED". Two choices make them selections instead:
+>
+> 1. **The word dependence comes only from omitting a quark pair.** Summed over all three pairs, the charge insertion differs between $W_n$ and $W_p$ by $-\tfrac13\,\mathrm{tr}(w)$ for every word (`trace_QPair_diff_word`, in the same Lean file), so it carries no braid content. The "connected" term keeps pairs 1–2 and 2–3 and drops 1–3. In $V^3 = (\sigma_1\sigma_2^{-1})^3$ every pair crosses exactly twice, so the word gives no reason to drop one.
+> 2. **The scale and weighting were picked against targets.** $m_e$, $E_0$ and $\alpha_{\mathrm{bind}}$, under four weightings, were compared with the $\mu$–$p$ tension, the $Q_\beta$ residual and lattice benchmarks. `hadronicScale_mul_q_sq_hbar_eq_me` unfolds a definition and does not derive a scale.
+>
+> The algebra (the closed forms of the traces) stands. The keV / ppm / ppb figures and the "closes N %" statements are records of selected combinations, not predictions, and must not be cited as a derived $n$–$p$ split. Canonical $m_n$ was never changed.
+
 ---
 
 ## 1. Executive Summary

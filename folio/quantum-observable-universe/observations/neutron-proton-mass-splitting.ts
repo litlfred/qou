@@ -50,7 +50,15 @@ export default proposition({
         "`trace_QAdj_connected_diff_borromeanV3`, `trace_e21_strong_cartan_diff_borromeanV3`), " +
         "`QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace` (`chi21Reduced_ratio_at_one`, `tMod111_neutron_eq_q_sq_mul_proton`), " +
         "and `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` (`hadronicScale_mul_q_sq_hbar_eq_me`, " +
-        "`trace_lagrangian_diff_concrete_borromean_connected`) formalize the parameter-free two-term decomposition on $W_p=(2,1)$ and $W_n=(1,2)$.",
+        "`trace_lagrangian_diff_concrete_borromean_connected`) formalize two-term charge-insertion algebra on $W_p=(2,1)$ and $W_n=(1,2)$. The mass scale and the adjacent-pair restriction are choices; see the 2026-11-19 caveat.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-11-19",
+      body:
+        "The 2026-11-18 two-term figures (M_p^QED,conn = +0.22 keV, Δm_QED^conn = −0.33 keV, the μ–p and Q_β residual reductions) are selections, not derivations. " +
+        "Summed over all three quark pairs the charge insertion is word-independent (`trace_QPair_diff_word`); the word dependence comes from dropping pair 1–3, which the Borromean word does not single out. " +
+        "The scale (m_e, E_0, α_bind) and the four weightings were compared against targets. Measured in bean qou-99qc, 2026-11-19 00:10Z.",
     },
   ],
   label: "prop:neutron-proton-mass-splitting",
