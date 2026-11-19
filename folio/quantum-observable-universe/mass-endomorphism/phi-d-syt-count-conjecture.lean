@@ -119,34 +119,22 @@ class PhiD4FConjecture (n : ℕ) (lam_syt_count : ℕ) (q : ℝ) : Type where
   /-- The conjecture residual vanishes (closed form matches prediction). -/
   conjecture_residual_eq_zero : conjecture_residual = 0
 
-/-! ## Verified instances at n = 3 -/
+/-! ## No instances at n = 3 (removed 2026-10-10, bean `qou-ffwk`)
 
--- Ref: [leitner2026] rem:phi-d-syt-count-conjecture §"n=3 verified"
-/-- V_(3) instance: f_(3) = 1, d_(3) = 4 — verified via
-    chi_V3_numerator_matches. -/
-instance phiDConj_V3 (q : ℝ) : PhiD4FConjecture 3 syt_count_3 q where
-  d_lambda := 4
-  d_lambda_eq_four_f := by unfold syt_count_3; rfl
-  conjecture_residual := 0
-  conjecture_residual_eq_zero := rfl
+This file previously declared three global instances `phiDConj_V3`,
+`phiDConj_V21`, `phiDConj_V111` discharging `PhiD4FConjecture` with
+`conjecture_residual := 0` / `conjecture_residual_eq_zero := rfl`. That
+witnesses nothing: the residual is a free field, so `0` inhabits the class
+at every `(n, f, q)` whether or not the conjecture holds, and as global
+`instance`s they would have resolved every downstream
+`[PhiD4FConjecture 3 _ _]` binder for free (AGENTS.md §1a / §3b-tax). They
+had zero consumers and were removed rather than demoted to `def`s, since a
+named `def` built from the same constant would carry the same non-content.
 
--- Ref: [leitner2026] rem:phi-d-syt-count-conjecture §"n=3 verified"
-/-- V_(2,1) instance: f_(2,1) = 2, d_(2,1) = 8 — verified via
-    chi_V21_numerator_matches. -/
-instance phiDConj_V21 (q : ℝ) : PhiD4FConjecture 3 syt_count_21 q where
-  d_lambda := 8
-  d_lambda_eq_four_f := by unfold syt_count_21; rfl
-  conjecture_residual := 0
-  conjecture_residual_eq_zero := rfl
-
--- Ref: [leitner2026] rem:phi-d-syt-count-conjecture §"n=3 verified"
-/-- V_(1,1,1) instance: f_(1,1,1) = 1, d_(1,1,1) = 4 — verified via
-    chi_V111_numerator_matches. -/
-instance phiDConj_V111 (q : ℝ) : PhiD4FConjecture 3 syt_count_111 q where
-  d_lambda := 4
-  d_lambda_eq_four_f := by unfold syt_count_111; rfl
-  conjecture_residual := 0
-  conjecture_residual_eq_zero := rfl
+The genuine `n = 3` evidence is the three numerator identities above
+(`chi_V3_numerator_matches` etc.). `PhiD4FConjecture` itself remains a
+placeholder carrier — its residual field is not tied to any character
+difference — and stays open under bean `qou-ffwk`; it has no instances. -/
 
 /-! ## Partial proof attempt: 1-d irreps always satisfy `d_λ = 4`
 
@@ -215,21 +203,17 @@ class GeneralPhiD4FConjecture : Type where
   /-- The conjectural identity: `d_lambda_map(f) = 4 · f`. -/
   d_lambda_map_eq : ∀ (f : ℕ), d_lambda_map f = 4 * f
 
--- Ref: [leitner2026] rem:phi-d-syt-count-conjecture §"general-n"
--- Ref: [mathas1999] Iwahori-Hecke Algebras and Schur Algebras
--- Ref: [kassel1995] GTM 155 §V.5
-/-- Canonical instance of the general conjecture. Currently
-    discharged trivially (the map IS `4·f` by definition); the
-    substantive content is the **predictive accuracy** at each
-    `(n, λ)` instance, which is the open R&D content. -/
-instance defaultGeneralPhiD4F : GeneralPhiD4FConjecture where
-  d_lambda_map f := 4 * f
-  d_lambda_map_eq f := rfl
+-- Removed 2026-10-10 (bean `qou-ffwk`): a global instance
+-- `defaultGeneralPhiD4F` set `d_lambda_map f := 4 * f` and closed
+-- `d_lambda_map_eq` by `rfl`, i.e. it discharged the class by definition,
+-- as its own docstring admitted. Same defect as the n = 3 instances above;
+-- zero consumers. `GeneralPhiD4FConjecture` has no instances.
 
 /-! ## Status
 
-**n = 3 fully verified** via three instance discharges + three
-numerator-match theorems.
+**n = 3**: three numerator-match theorems (closed by `ring` after
+unfolding). The three former instance discharges were removed as
+fabricated (see above); no instance of either class exists.
 
 **General-n status**: open R&D. The conjecture `d_λ = 4 · f_λ`
 predicts cyclotomic factors at every (n, λ) where a typed-braid
