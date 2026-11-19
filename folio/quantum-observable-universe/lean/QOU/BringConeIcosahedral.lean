@@ -41,9 +41,6 @@ namespace QOU.Tetraplectic
 
 variable {R : Type*} [CommRing R]
 
-/-- The quaternionic unit `j` on the cone. -/
-def unitJ : BringCone R := ⟨0, 0, 1, 0⟩
-
 /-- Conjugation of an admissible unit by `g`: `u ↦ g u ḡ`. -/
 def conjBy (g u : BringCone R) : BringCone R := g * u * star g
 

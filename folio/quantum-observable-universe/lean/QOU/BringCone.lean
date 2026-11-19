@@ -347,6 +347,11 @@ choice made here.
 /-- The quaternionic unit `i` on the cone, named so that proofs can manipulate it. -/
 def unitI : BringCone R := ⟨0, 1, 0, 0⟩
 
+/-- The quaternionic unit `j` on the cone. Shared by `BringConeGauge` and
+`BringConeIcosahedral`, which each declared their own copy until both were imported
+together and the library root failed. -/
+def unitJ : BringCone R := ⟨0, 0, 1, 0⟩
+
 theorem unitI_mul_unitI : (unitI : BringCone R) * unitI = -1 := by
   ext <;> simp [unitI]
 

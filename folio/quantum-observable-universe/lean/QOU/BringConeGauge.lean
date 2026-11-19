@@ -56,9 +56,6 @@ variable {R : Type*} [CommRing R]
 
 /-! ## 1. Gauge transformations of the chirality grading -/
 
-/-- The quaternionic unit `j`. -/
-def unitJ : BringCone R := ⟨0, 0, 1, 0⟩
-
 /-- Euclidean dot product of the imaginary parts. -/
 def imDot (u v : BringCone R) : R := u.imI * v.imI + u.imJ * v.imJ + u.imK * v.imK
 
