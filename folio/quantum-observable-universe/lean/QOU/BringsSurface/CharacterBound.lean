@@ -23,13 +23,13 @@ character theory, with no group-specific input:
 * `genus_four_or_six_of_irreducible`: so `g = dim W ≤ 7` for `|A₅| = 60`, and Riemann–Hurwitz
   for `A₅` and `S₅` leaves `g ∈ {4, 6}`.
 
-## What is still a hypothesis
+## The remaining fact
 
 To reach `g = 4` one must exclude `g = 6`, i.e. show `A₅` has no 6-dimensional irreducible
-representation. That needs either the sum-of-squares identity `Σ (dim Vᵢ)² = |G|` together with
-the number of irreducibles, or the explicit character table. Neither is in Mathlib; it stays the
-named hypothesis `hno6` of `genus_eq_four_of_irreducible` below.
-Ref: [fulton-harris1991] Fulton–Harris, *Representation Theory*, §2.1 and §5.1.
+representation. Here that is the hypothesis `hno6` of `genus_eq_four_of_irreducible`, stated
+for an abstract group of order 60. For `A₅` itself it is proved in
+`QOU.BringsSurface.A5NoSixDim.finrank_ne_six`, and
+`QOU.BringsSurface.A5NoSixDim.genus_eq_four_of_A5_irreducible` combines the two.
 -/
 
 open Matrix ComplexOrder
@@ -89,19 +89,22 @@ theorem character_inv_eq_conj (V : FDRep ℂ G) (g : G) :
 /-- **M4b.** An irreducible complex representation of a finite group `G` has
 `(dim V)² ≤ |G|`. From character orthonormality: `Σ_g |χ(g)|² = |G|`, and the `g = 1` term is
 `(dim V)²`. -/
-theorem finrank_sq_le_card (V : FDRep ℂ G) [CategoryTheory.Simple V] :
-    Module.finrank ℂ V.V ^ 2 ≤ Fintype.card G := by
+theorem sum_normSq_character (V : FDRep ℂ G) [CategoryTheory.Simple V] :
+    (∑ g, Complex.normSq (V.character g)) = (Fintype.card G : ℝ) := by
   have horth := FDRep.char_orthonormal V V
   rw [if_pos ⟨CategoryTheory.Iso.refl V⟩] at horth
   have hsum : (∑ g, V.character g * V.character g⁻¹) = (Fintype.card G : ℂ) := by
     have := congrArg (fun z => (Fintype.card G : ℂ) • z) horth
     simpa only [smul_eq_mul, ← mul_assoc, mul_invOf_self, one_mul, mul_one] using this
-  have hreal : (∑ g, Complex.normSq (V.character g)) = (Fintype.card G : ℝ) := by
-    have : ((∑ g, Complex.normSq (V.character g) : ℝ) : ℂ) = ((Fintype.card G : ℝ) : ℂ) := by
-      rw [Complex.ofReal_sum]
-      simp only [← Complex.mul_conj, ← Complex.star_def, ← character_inv_eq_conj]
-      rw [hsum]; simp
-    exact_mod_cast this
+  have : ((∑ g, Complex.normSq (V.character g) : ℝ) : ℂ) = ((Fintype.card G : ℝ) : ℂ) := by
+    rw [Complex.ofReal_sum]
+    simp only [← Complex.mul_conj, ← Complex.star_def, ← character_inv_eq_conj]
+    rw [hsum]; simp
+  exact_mod_cast this
+
+theorem finrank_sq_le_card (V : FDRep ℂ G) [CategoryTheory.Simple V] :
+    Module.finrank ℂ V.V ^ 2 ≤ Fintype.card G := by
+  have hreal := sum_normSq_character V
   have hle : Complex.normSq (V.character 1) ≤ ∑ g, Complex.normSq (V.character g) :=
     Finset.single_le_sum (fun g _ => Complex.normSq_nonneg _) (Finset.mem_univ 1)
   rw [hreal, FDRep.char_one, Complex.normSq_natCast] at hle

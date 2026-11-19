@@ -300,3 +300,26 @@ So the old hypothesis `hdim` (the list `1, 3, 3, 4, 5`) is narrowed to one fact:
 either `Σ (dim Vᵢ)² = |G|` plus the count of irreducibles, or the explicit character table.
 Neither is in Mathlib. Note that the arithmetic alone cannot exclude 6: `A₅` does act on
 genus-6 curves, with `H¹ = 2(χ₃ + χ₃′)`, which is reducible.
+
+### Milestone M4c, `A₅` has no 6-dimensional irreducible (2026-11-19)
+
+`QOU/BringsSurface/A5NoSixDim.lean`, sorry-free on Mathlib (lean-direct exit 0; axioms
+`propext`, `Classical.choice`, `Quot.sound`). The finite facts about `A₅` are kernel `decide`,
+with no `native_decide`.
+
+- `sum_subgroup_char`: `Σ_{h∈H} χ(h) = |H| · dim V^H`, for any subgroup `H`.
+- `finrank_ne_six`: suppose `dim V = 6`. Apply the subgroup sum to `{1,t}`, `⟨c⟩`, the dihedral
+  normaliser `D₅` of a 5-cycle, and `A₅` itself. With `Σ|χ|² = 60`, the involution and 3-cycle
+  values are forced to 0. Then the `D₅` and `A₅` equations give `60(n₄ − n₀) = 30`, which has no
+  integer solution.
+- `genus_eq_four_of_A5_irreducible`: `A₅` and `S₅` act on a curve of genus `g ≥ 2`, and
+  `g = dim W` for an irreducible complex `A₅`-representation `W`. Then `g = 4`.
+
+M4 is closed. The genus-4 chain now assumes nothing about the representations of `A₅`.
+Its remaining hypotheses are geometric:
+- the equivariant cell structure with `χ = 2 − 2g` (M3, bean `qou-m3tr`);
+- cyclic point stabilisers (M1b and M2, bean `qou-m1bg`);
+- `H¹ ⊗ ℂ = 2W` with `W` irreducible, which is gaps G2 and G3.
+The statement `genus_eq_four_of_A5_irreducible` has `g = dim W` as a hypothesis. It does not
+yet use the cellular Riemann–Hurwitz of `RiemannHurwitzCellular.lean`. Composing the two is
+mechanical.
