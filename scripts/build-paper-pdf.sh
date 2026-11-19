@@ -91,6 +91,7 @@ BUILD_DATE=$(git -C "$ROOT" show -s --format=%cs HEAD)
   \texorpdfstring{\folioleanhref{#1}{\textsuperscript{\textcolor{leandraftcolor}{$\boldsymbol{\forall}$}}}}{(Lean: #1)}%
 }
 \makeatother
+\usepackage{multicol}
 \InputIfFileExists{lean-doc-links.tex}{}{}
 TEX
 } > "$PRE"
@@ -146,6 +147,43 @@ for n in sorted(names):
 pathlib.Path(out).write_text("\n".join(lines) + "\n", encoding="utf-8")
 print(f"==> Lean doc links: {hit} of {len(names)} declarations have a rendered page; the rest link source search")
 PY4
+
+# A block label set as code in the prose (`def:quantum-universe`) reads as a
+# code name. Where the label is a block in this PDF, render it as a link whose
+# text is the block's title (or "Definition 1.3.3" when it has none); the
+# source is unchanged, and paper-render-qa.py counts what is left.
+python3 -I - "$OUT/chapters" <<'PY5'
+import pathlib, re, sys
+ch = pathlib.Path(sys.argv[1])
+KIND = {"definition": "Definition", "theorem": "Theorem", "proposition": "Proposition",
+        "lemma": "Lemma", "corollary": "Corollary", "conjecture": "Conjecture",
+        "remark": "Remark", "example": "Example", "observation": "Observation"}
+titles = {}
+files = {f: f.read_text(encoding="utf-8") for f in ch.glob("*.tex")}
+for t in files.values():
+    for m in re.finditer(r"\\begin\{(\w+)\}(?:\[\{((?:[^{}]|\{[^{}]*\})*)\}\])?\s*\\label\{([^}]+)\}", t):
+        env, title, lab = m.groups()
+        titles[lab] = title or (KIND.get(env, "") and f"{KIND[env]}~\\ref{{{lab}}}")
+    for lab in re.findall(r"\\label\{([^}]+)\}", t):
+        titles.setdefault(lab, "")
+TT = re.compile(r"\\texttt\{((?:[^{}]|\{[^{}]*\})*)\}")
+n = 0
+def sub(m):
+    global n
+    raw = re.sub(r"\\allowbreak\{\}|\\-", "", m.group(1)).replace("\\_", "_").strip()
+    if not re.match(r"^[a-z]+:[\w.:-]+$", raw) or raw not in titles:
+        return m.group(0)
+    n += 1
+    text = titles[raw] or f"\\ref*{{{raw}}}"
+    return f"\\hyperref[{raw}]{{{text}}}"
+for f, t in files.items():
+    u = TT.sub(sub, t)
+    if u != t:
+        f.write_text(u, encoding="utf-8")
+print(f"==> {n} code-font block labels rendered as links to the block")
+PY5
+
+python3 -I "$ROOT/scripts/lib/definition-glossary.py" "$ROOT" "$PAPER" "$OUT"
 
 # A sentence that continues after display math ("... the composites $$...$$
 # and its mirror equal id") is written in markdown with a blank line after the
@@ -206,3 +244,7 @@ pages=$( { grep -oE '\(([0-9]+) pages' "$L" || true; } | tail -1 | tr -dc 0-9)
 echo "==> pages=$pages errors=$errs undefined-citations=$cites undefined-refs=$refs latexmk-exit=$rc"
 [ -f main.pdf ] || { echo "no PDF produced"; exit 1; }
 echo "PDF: $OUT/main.pdf ($(du -h main.pdf | cut -f1))"
+# Render QA: what the reader of the PDF trips on (Lean names and raw labels in
+# the prose, long definitions, placeholder links, duplicate labels, broken
+# hyphens). Fails the build only on a placeholder link.
+python3 -I "$ROOT/scripts/lib/paper-render-qa.py" "$OUT"
