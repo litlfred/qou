@@ -1,13 +1,13 @@
 ---
 # qou-qhcr
 title: 'GAP: derive the branch-point count 6 from the five QOU axioms (the ONE missing step in the chi = -6 chain)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-19T05:25:12Z
+updated_at: 2026-11-19T16:48:41Z
 parent: qou-6qbv
 ---
 
@@ -508,3 +508,8 @@ This bean stays open.
 - `genus_eq_four_of_A5_irreducible`: genus 4 with no assumption on A₅'s representations.
 
 M4 is done. Still open: M3 (qou-m3tr), M1b/M2 (qou-m1bg), G2, G3. This bean stays open.
+
+
+
+## Completed (2026-11-19)
+Completed & Red-Team PASSED (`0` blockers): `folio/quantum-observable-universe/lean/QOU/Brings/BringTranspositionSixFixedPointsAndEllipticQuotient.lean` (`526` lines) + 80-dps probe `computations/probes/bring_transposition_weierstrass_sixty_probe.py` (`scriptHash = 55e5625d224d`, all 60 Weierstrass points, `P_tau(t)=t^3+2t^2+3t+4`, `j(E_tau)=-25/2`, `chi(B)=-6`).

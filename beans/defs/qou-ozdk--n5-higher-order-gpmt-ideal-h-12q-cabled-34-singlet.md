@@ -1,11 +1,11 @@
 ---
 # qou-ozdk
 title: 'N5 [Higher-Order GPMT Ideal & H_12(q) Cabled (3^4) Singlet Bridge]: Formalize (z - z_D)^m Filtration & Bridge H_12(q) supset H_3(q)^4 to H_4(q) Alpha Cell'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T11:13:48Z
-updated_at: 2026-11-19T11:13:48Z
+updated_at: 2026-11-19T16:48:41Z
 parent: qou-8ffl
 ---
 
@@ -19,3 +19,8 @@ Parent Epic: `qou-8ffl`. Deduplicates and extends `qou-xsmr` (*General-K 1st-ord
 2. **Deliverables (Lean 4 + 80-dps Compute):**
    - Formalize the `m`-th order GPMT tensor-ideal filtration `I_{>=3}^{(m)}` (`m = |{(r,c) in lambda : r - c = 2}|`) and the second-order modified quantum dimension `d_mod^{(2)}((3,3,3,3))` in Lean 4 (`0 sorry`, `0 axiom`).
    - Bridge the cabled `H_12(q) supset H_3(q)^{otimes 4}` Littlewood-Richardson / Schur-Weyl embedding to the nucleon-strand `H_4(q)` GPMT cumulants `dMod211`, `dMod1111` at 80 dps (`0` float64, zero fitting).
+
+
+
+## Completed (2026-11-19)
+Completed & Red-Team PASSED (`0` blockers): `folio/quantum-observable-universe/lean/QOU/Nuclear/SecondOrderGPMTCabledAlphaAndCarbon12.lean` (`1,015` lines, wired in `QOU.lean`) + 80-dps zero-float64 probe `computations/probes/second_order_gpmt_h12_carbon12_and_o16_probe.py` (`scriptHash = 1ef65a65eeca`).

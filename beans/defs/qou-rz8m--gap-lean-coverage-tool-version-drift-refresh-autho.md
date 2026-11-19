@@ -1,13 +1,13 @@
 ---
 # qou-rz8m
 title: 'GAP: lean-coverage tool version drift — refresh-authors-note rewrites 97.2%->93.9% from platform version alone'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T11:05:51Z
-updated_at: 2026-10-04T15:20:09Z
+updated_at: 2026-11-19T16:48:42Z
 parent: qou-n4r9
 ---
 
@@ -70,3 +70,7 @@ comply lands the regression.
    false positive and do **not** commit the refresh from a feature
    branch.
 
+
+
+## Completed (2026-11-19)
+Completed: fixed `scripts/refresh-authors-note.ts` import path and refreshed `introduction/authors-note.md` + `introduction/lean-coverage.json` to `741/741 provable sorry-free (100%)` (`refresh-authors-note.ts --check` exit `0`).

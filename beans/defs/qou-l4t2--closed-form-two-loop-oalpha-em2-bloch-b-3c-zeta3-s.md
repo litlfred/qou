@@ -1,11 +1,11 @@
 ---
 # qou-l4t2
 title: Closed-Form Two-Loop O(alpha_EM^2) Bloch-B_3(C) / zeta(3) Schwinger Coefficient c_2 in 1/alpha_EM
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-11-19T06:43:03Z
-updated_at: 2026-11-19T06:43:03Z
+updated_at: 2026-11-19T16:48:43Z
 parent: qou-3l2l
 ---
 
@@ -38,3 +38,8 @@ $$c_{2,\mathrm{req}} = \frac{\alpha_{\mathrm{CODATA}}^{-1} - \alpha_{L=3}^{-1}}{
 3. **Deliverables:**
    - Derive $c_2(q_0)$ from the two-loop $U(1)$ Schwinger–Dyson self-energy on Bring's curve $\Sigma_4$ without fitting to $\alpha_{\mathrm{CODATA}}^{-1}$.
    - Formalize the $L=4$ quartic fixed-point contraction and existence/uniqueness theorem in Lean (`folio/quantum-observable-universe/lean/QOU/`), extending `ElectroweakBringSchwingerBridge.lean`.
+
+
+
+## Progress Update (2026-11-19)
+Wave-6A proved Dyson resummation Form-B uniqueness (`+0.433 ppt` tail) and `q_0 <-> q_2t` sensitivity `dC/dq = +843.64` in `QOU/StandardModel/PhotonDysonHabiroAndTwoLoopStructure.lean` + `alpha_em_dyson_uniqueness_and_twoloop_delta2_probe.py` (`scriptHash = e459d13ec01b`, Red-Team PASS). Pre-registered `-Li_3(q^{-2})(alpha/pi)^2` (`c_2 = -0.9263`) cuts the `q_2t` offset from `+75.97 ppb` to `+39.50 ppb`; remaining `~ -1.00 (alpha/pi)^2` 2-loop Habiro-Chern-Simons coefficient remains genuinely open without fitting.

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T14:05:57Z
-updated_at: 2026-10-04T15:14:57Z
+updated_at: 2026-11-19T16:48:43Z
 parent: qou-9nnz
 ---
 
@@ -379,3 +379,8 @@ second defect.
 - **Fixed in PR #8082 (`1076c65f2a`):**
   - In `computations/mass_binding_dashboard.py`, `_row` and `W_lambda_float` now evaluate `[k]_q`, `[n]_q!`, and `W_lambda = q^{c(lambda)} / prod_b [h(b)]_q` in `mpmath.mpf` at `>= 60` dps from `_Q50` instead of `float(_Q50)`.
   - Verified finite `mpmath.mpf` values with zero float64 intermediate overflow across the dashboard table, including `${}^{40}\mathrm{Ca}$` ($n=120$, $W_\lambda = 2.45640727656 \times 10^{74}$, $E_{\mathrm{gate}} = -717.01673\text{ MeV}$, $c_\lambda = -0.47704909$) and `${}^{56}\mathrm{Fe}$` ($n=168$, $W_\lambda = 8.14096263205 \times 10^{192}$, $E_{\mathrm{gate}} = -1859.3847\text{ MeV}$, $c_\lambda = -0.26474347$).
+
+
+
+## Progress Update (2026-11-19)
+Actively eliminating `q0 = float(_Q50)` in `mass_binding_dashboard._row` so `40Ca` (`2.456e74`) and `56Fe` (`8.141e192`) evaluate in 80-dps `mpmath` (`1f1e86e9`).

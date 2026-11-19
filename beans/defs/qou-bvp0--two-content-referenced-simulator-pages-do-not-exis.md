@@ -1,14 +1,14 @@
 ---
 # qou-bvp0
 title: Two content-referenced simulator pages do not exist in either tree
-status: in-progress
+status: completed
 type: bug
 priority: high
 tags:
     - simulators
     - reorg-2026-10-04
 created_at: 2026-09-26T10:38:50Z
-updated_at: 2026-11-15T20:55:00Z
+updated_at: 2026-11-19T16:48:42Z
 parent: qou-n4r9
 ---
 
@@ -53,3 +53,8 @@ measure. No fix is proposed here.
   - Both simulator blocks (`folio/quantum-observable-universe/lifting-and-descent/descent-rate-probe-sim.ts` and `folio/quantum-observable-universe/lifting-and-descent/multi-level-jet-sum-sim.ts`, referenced by `descent-rate-probe.ts` and `multi-level-jet-sum.ts`) were introduced in commit `114b24ba5b` (`2026-06-14`, *"feat(content): migrate lifting-and-descent (Ch 10) to TypeScript schema"*) explicitly tagged `"todo-html"` with comments noting *"Simulator HTML not yet built; tagged 'todo-html'"*.
   - `scripts/run-validate.ts` surfaces both as intentional deferred warnings (`⚠ Simulator asset deferred: ... Tagged todo-html, so this is an intended stub`).
 - **Owner ruling (`Q-N4R9-1 = 2`, 2026-11-15):** Keep the 2 simulator blocks as `"todo-html"` deferred stubs until the HTML simulators are authored; kept `status: in-progress` on this bean to track the deferred HTML assets.
+
+
+
+## Completed (2026-11-19)
+Completed: built and validated `simulators/descent_rate_probe.html` and `simulators/multi_level_jet_sum.html` (`run-validate.ts` reports `0` deferred simulator warnings across all `3,635` blocks).

@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-flavour
 created_at: 2026-08-04T10:18:37Z
-updated_at: 2026-11-16T18:32:12Z
+updated_at: 2026-11-19T16:48:42Z
 parent: qou-8lxd
 ---
 
@@ -172,3 +172,8 @@ Was in-progress with no bean update since 2026-08-04 and no main commit naming i
   - Proves `bring_klein_s4_order_bridge`: $\gcd(|S_5|=120, |\mathrm{PSL}_2(\mathbb{F}_7)|=168) = 24 = |S_4|$, $\neg(168 \mid 120)$, $\neg(7 \mid 120)$ (formalizing the exact group-order obstruction preventing $\mathrm{PSL}_2(\mathbb{F}_7)$ from embedding into $\mathrm{Aut}(\Sigma_{\mathrm{Bring}}) = S_5$), $[\mathrm{PSL}_2(\mathbb{F}_7) : S_4] = 7$ (Fano points/lines), and $[S_5 : S_4] = 5$ (Bring covering sheets).
   - Proves `fano_local_nonlocal_line_partition`: fixing $e_1$ splits the 7 Fano lines into `3` local lines through $e_1$ (which form the 3 complex lines of $W \cong \mathbb{C}^3$ under $J = L_{e_1}$) and `4` non-local lines disjoint from $e_1$ ($3 + 4 = 7$).
 - **Probe & Witness (`computations/probes/ribbon_twist_z6_hypercharge_hirzebruch_probe.py` + `ribbon-twist-z6-hypercharge-hirzebruch.witness.json`)**: `allPassed: true` (`q0Anchor: "independent"`).
+
+
+
+## Progress Update (2026-11-19)
+Wave-6B 80-dps probe `bring_fano_octonion_blichfeldt_su3_probe.py` (`scriptHash = 016e4e86c0bb`) Red-Team PASSED (`0` blockers); companion Lean module `QOU/Eightfold/BringGenusThreeFanoOctonionAndBlichfeldtSU3.lean` (`1,302` lines) completing verification.
