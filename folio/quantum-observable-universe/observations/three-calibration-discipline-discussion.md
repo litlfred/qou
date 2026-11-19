@@ -28,3 +28,5 @@ This proposition formalizes the calibration discipline.
 Every derivation in the paper is checked against this proposition, and every proof block against the $\mathbb{Q}(q_0)$-rationality clause, which forbids Archimedean-side derivation inputs on the algebraic side.
 
 A fourth dimensional input is a hard failure. The three calibrations are categorical. They sit in distinct cohomological degrees and cannot be replaced without violating the (co)homological alignment.
+
+In the factorisation $\mathfrak{m}(X) = m_e^{a(X)} m_\pi^{c(X)} Q_X(q_0)$, the exponent $a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$ counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$ in the baryon sector), and $q_0$ is fixed by the lepton ratio $m_\mu/m_e$ (the $H^1$ $W$-plane modulus, CAL-2 = $P_{\mathrm{skew}}^{\beta}$). The parameter $\mathfrak{Q}_\beta$ is the CAL-2 proxy. It represents the experimental face of the modulus that CAL-2 pins. It is not a separate dimensional mass-formula factor.
