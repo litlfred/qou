@@ -5,6 +5,8 @@ with machine-checked **Lean 4** formalization, **content-object architecture**
 (TypeScript + Markdown + Lean triples), and an interactive **Folio Assistant**
 platform for browsing, reviewing, and exploring the work.
 
+**Read the paper:** [PDF](https://litlfred.github.io/qou/papers/quantum-observable-universe/quantum-observable-universe.pdf) · [build info](https://litlfred.github.io/qou/papers/quantum-observable-universe/quantum-observable-universe.json) — rebuilt with LaTeX and republished on every merge to `main` (`scripts/publish-paper-pdf.sh`). A branch's changes against `main` are at `drafts/<branch>/quantum-observable-universe-diff.pdf` on `gh-pages`.
+
 ## Content-Object Architecture
 
 Content is organized as **atomic knowledge units** — each definition,
@@ -435,7 +437,7 @@ SVGs and JSON inline.
 |----------|----------------------------------|
 | Folio landing page | [index.html](https://github.com/litlfred/qou/blob/gh-pages/index.html) |
 | Paper viewer | [papers/quantum-observable-universe/](https://github.com/litlfred/qou/tree/gh-pages/papers/quantum-observable-universe) |
-| Paper (PDF) | [quantum-observable-universe.pdf](https://github.com/litlfred/qou/blob/gh-pages/quantum-observable-universe.pdf) |
+| Paper (PDF) | [papers/quantum-observable-universe/quantum-observable-universe.pdf](https://github.com/litlfred/qou/blob/gh-pages/papers/quantum-observable-universe/quantum-observable-universe.pdf) (current; the root-level `quantum-observable-universe.pdf` is the 2026-07-08 build) |
 | Lean interactive docs | [lean/](https://github.com/litlfred/qou/tree/gh-pages/lean) |
 | Schema docs (TypeDoc) | [schema-docs/](https://github.com/litlfred/qou/tree/gh-pages/schema-docs) |
 | Python API docs | [python-api/](https://github.com/litlfred/qou/tree/gh-pages/python-api) |

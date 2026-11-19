@@ -62,6 +62,18 @@ relocate_legacy_paper_trees() {
   return 0
 }
 
+# The two addons over the base seed: the Mathlib modules the base is missing,
+# and the lean-direct refresh that brings ~900 QOU/UGB modules up to current
+# source (owner, 2026-11-19). Both are best-effort: the base seed still works
+# without them, only older.
+restore_addons() {
+  "$REPO_ROOT/scripts/lean-restore-gap-oleans.sh" >/dev/null 2>&1 \
+    && echo "lean-cache-restore: Mathlib gap addon applied." \
+    || echo "lean-cache-restore: Mathlib gap addon not applied (run scripts/lean-restore-gap-oleans.sh)." >&2
+  "$REPO_ROOT/scripts/lean-restore-refresh-oleans.sh" \
+    || echo "lean-cache-restore: refresh addon not applied (run scripts/lean-restore-refresh-oleans.sh)." >&2
+}
+
 # Already restored?  BOTH halves: mathlib (~3480 when complete) AND the paper
 # library.  A mathlib-only restore is repaired from a legacy tree if one exists,
 # otherwise re-extracted.
@@ -72,6 +84,7 @@ if [ "${existing:-0}" -ge 2000 ]; then
   if [ "$q" -gt 0 ]; then
     echo "lean-cache-restore: $existing mathlib + $q QOU oleans already present — skipping."
     lean_mathlib_url_fix
+    restore_addons
     exit 0
   fi
   echo "lean-cache-restore: $existing mathlib oleans present but 0 QOU oleans under folio/ — re-extracting."
@@ -124,4 +137,5 @@ if [ "$q" -eq 0 ]; then
   echo "lean-cache-restore: 0 QOU oleans under folio/quantum-observable-universe/lean/.lake/build — the paper half of $branch did not land where Lean reads it." >&2
   exit 1
 fi
+restore_addons
 echo "lean-cache-restore: verify a file with  scripts/lean-verify.sh <file.lean>"
