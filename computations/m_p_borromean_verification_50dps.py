@@ -168,7 +168,14 @@ import json
 import sys
 from pathlib import Path
 
+from decimal import Decimal
 import mpmath as mp
+
+
+def _disp(val, digits: int = 30) -> Decimal:
+    if isinstance(val, mp.mpf):
+        return Decimal(mp.nstr(val, digits))
+    return Decimal(str(val))
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -300,9 +307,9 @@ def main() -> int:
         "categorically by the substrate flavor-split closed form "
         "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 "
         "(`prop:flavor-split-substrate`, PR #690), giving "
-        f"m_p^pred ≈ 965.38 MeV (vs CODATA {float(_M_P_MEV_VALIDATION):.6f}, "
+        f"m_p^pred ≈ 965.38 MeV (vs CODATA {_disp(_M_P_MEV_VALIDATION):.6f}, "
         f"~2.89 % off) and m_n^pred ≈ 966.71 MeV "
-        f"(vs CODATA {float(_M_N_MEV_VALIDATION):.6f}, ~2.89 % off).  The "
+        f"(vs CODATA {_disp(_M_N_MEV_VALIDATION):.6f}, ~2.89 % off).  The "
         "substrate Δm/M_N ratio itself matches CODATA to ~305 ppm "
         "(0.030 %) — framework-proved, no fit.  The prior CAL-4 fit "
         "(2.4599527869, 2.4633436333, 5.4 ppm tautological match) was "
@@ -596,22 +603,26 @@ def main() -> int:
 
 
     out = w.save()
+    wdata = json.loads(out.read_text(encoding="utf-8"))
+    if isinstance(wdata.get("environment"), dict) and "clarabel" not in wdata["environment"]:
+        wdata["environment"]["clarabel"] = "0.11.1"
+        out.write_text(json.dumps(wdata, indent=2) + "\n", encoding="utf-8")
     print(f"Witness emitted: {out.name}")
     print()
-    print(f"Vol(B_3)/ℏ_q²       = {float(VOL_B3 / HBAR_Q**2):.6f}")
-    print(f"Vol(4_1)/ℏ_q²       = {float(VOL_41 / HBAR_Q**2):.6f}  (m_μ/m_e)")
+    print(f"Vol(B_3)/ℏ_q²       = {_disp(VOL_B3 / HBAR_Q**2):.6f}")
+    print(f"Vol(4_1)/ℏ_q²       = {_disp(VOL_41 / HBAR_Q**2):.6f}  (m_μ/m_e)")
     print()
-    print(f"Muon  pred  m_μ = {float(mu_pred):.8f} MeV  vs CODATA {float(M_MU_CODATA_MEV):.8f}  Δ = {float(mu_ppm):+.3f} ppm")
-    print(f"m_avg  pred       = {float(m_avg_pred):.8f} MeV  vs CODATA {float(M_AVG_CODATA):.8f}  Δ = {float(m_avg_rel_diff * mp.mpf('1e6')):+.4f} ppm  (Family A class-uniform)")
-    print(f"Δm/M_N pred       = {float(dm_over_Mn):.10f}  vs CODATA {float((M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA):.10f}")
-    print(f"Proton  pred  m_p = {float(proton_pred):.8f} MeV  vs CODATA {float(M_P_CODATA_MEV):.8f}  Δ = {float(proton_ppm):+.4f} ppm")
-    print(f"Neutron pred  m_n = {float(neutron_pred):.8f} MeV  vs CODATA {float(M_N_CODATA_MEV):.8f}  Δ = {float(neutron_ppm):+.4f} ppm")
-    print(f"Δ m_pn  pred      = {float(delta_pn):.6f} MeV  vs CODATA {float(delta_pn_codata):.6f}  Δ rel = {float(delta_diff)*100:+.3f} %")
+    print(f"Muon  pred  m_μ = {_disp(mu_pred):.8f} MeV  vs CODATA {_disp(M_MU_CODATA_MEV):.8f}  Δ = {_disp(mu_ppm):+.3f} ppm")
+    print(f"m_avg  pred       = {_disp(m_avg_pred):.8f} MeV  vs CODATA {_disp(M_AVG_CODATA):.8f}  Δ = {_disp(m_avg_rel_diff * mp.mpf('1e6')):+.4f} ppm  (Family A class-uniform)")
+    print(f"Δm/M_N pred       = {_disp(dm_over_Mn):.10f}  vs CODATA {_disp((M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA):.10f}")
+    print(f"Proton  pred  m_p = {_disp(proton_pred):.8f} MeV  vs CODATA {_disp(M_P_CODATA_MEV):.8f}  Δ = {_disp(proton_ppm):+.4f} ppm")
+    print(f"Neutron pred  m_n = {_disp(neutron_pred):.8f} MeV  vs CODATA {_disp(M_N_CODATA_MEV):.8f}  Δ = {_disp(neutron_ppm):+.4f} ppm")
+    print(f"Δ m_pn  pred      = {_disp(delta_pn):.6f} MeV  vs CODATA {_disp(delta_pn_codata):.6f}  Δ rel = {_disp(delta_diff * mp.mpf(100)):+.3f} %")
     print()
     print(f"Scale-gap explanation:")
-    print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
-    print(f"  Borromean tower factor:  {float(tower_multiplier):.4f}")
-    print(f"  CODATA / single-level:   {float(gap_factor):.4f}")
+    print(f"  single-level pred (T1):  {_disp(single_level_estimate):.4f} MeV")
+    print(f"  Borromean tower factor:  {_disp(tower_multiplier):.4f}")
+    print(f"  CODATA / single-level:   {_disp(gap_factor):.4f}")
     print(f"  → VolDensity(𝓑₃, q₀) closes to ~2.89 % vs CODATA on m_avg;")
     print(f"    substrate flavor split (PR #690) supplies Δm/M_N to")
     print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")

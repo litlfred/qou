@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T14:40:39.227752+00:00",
-  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T07:54:11.857763+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 65,
+  "durationMs": 0,
   "computation": "canonical-isotope-witness-Z13",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "e56cabeee1ea",
-  "scriptCommitSha": "e005856e181805935eb2e6f17662b5a11c4e9508",
+  "scriptHash": "83142efa9754",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,26 +17,35 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585",
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
-      "computations/canonical_isotope_witness.py"
+      "computations/canonical_isotope_witness.py",
+      "--max-z",
+      "118"
     ],
-    "reproduce": "python3 -u computations/canonical_isotope_witness.py"
+    "reproduce": "python3 -u computations/canonical_isotope_witness.py --max-z 118"
   },
-  "description": "Per-Z=13 shard of the recursive atom-knot atlas. Element: Al. Covers every (Z=13, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
+  "description": "Per-Z=13 shard of the recursive atom-knot atlas. Element: Al. Covers every (Z=13, N) in AME 2020. Each row carries: prediction_type \u2208 {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 \u03b1-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N\u00b7m_n + Z\u00b7m_p \u2212 B (when nucleon masses + B are available); and Wave-2 Corrected Photon (Form-B Bring\u2013Schwinger cubic alpha_EM(q_2t)), Two-Term Categorical Lagrangian Trace (M = M_QCD + M_QED at consistent q_2t), exact 4x4 Hankel Plancherel Z_{3A}^{(4)}(q_2t), and 3D stacked alpha-simplex + E_0^tower binding. L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha/alpha-cluster-recursion.witness.json; nucleon masses: m-p-substrate-identity-50dps.witness.json.",
   "parameters": {
     "Z": 13,
     "element": "Al",
     "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_2t_two_term_borromean": "1.10997859515088599908756520359868262121410348054121621148890",
+    "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+    "E0_bare_q2t_MeV": "4.18598084458586196691657518614936431268665308922925087340435",
+    "E0_tower_q2t_MeV": "4.22748284029228794563903096289594012068427417858243054253959",
+    "m_p_two_term_q2t_MeV": "938.272089427324247363940000000000000000000000000001038240543",
+    "m_n_two_term_q2t_MeV": "939.565561372542143484074013044546458761344735615575800004172",
     "rows_total": 23,
     "rows_with_prediction": 3,
     "rows_with_composite_mass": 3
@@ -63,9 +72,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "34.5537116933060747959285885845982028971223181407117880292713",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "34.5537090556347018253689739936437283031377524343316288254988",
+          "qed_nucleon_shift_q2t_MeV": "0.00196805566231100994144111141876534122519969960845395321926680",
+          "M_constituent_two_term_q2t_MeV": "19720.6946759934392682770426945524745127600794258089442878168",
+          "su4_partition": [
+            17,
+            17,
+            15,
+            14
+          ],
+          "W_lambda_unnormalized_q2t": "2648834.12551267545126608216388400266301809661593686098987753",
+          "Z_3A_4row_hankel_q2t": "976999334.220995288996866826171968237164553823816749130082601",
+          "omega_lambda_normalized_4row_q2t": "0.00271119337826847944106095764273233545630741479847911614348492",
+          "f_vector_3tree": [
+            21,
+            57,
+            55,
+            18
+          ],
+          "f_vector_pauli_triangle": [
+            21,
+            52,
+            45,
+            13
+          ],
+          "B_3tree_logD_gpmt_MeV": "148.153968304438186342746727540391943582307639373554366260442",
+          "B_3tree_logD_gpmt_E0tower_MeV": "149.622843959809008141919002408616057482148918058215259245126",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "115.069134904174306316550028414972329179011165623883630419627",
+          "B_3tree_gg_gpmt_MeV": "192.787539516935287887508877903845012600644866656248113162054",
+          "B_3tree_gg_gpmt_E0tower_MeV": "194.698935659044451996861704981463070313307466920584603025638",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "160.145226603409750171492730987819342010169714486252974200139",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "140.710921509480492660639876555156244076406440842781384092231",
+          "B_pauli_triangle_err_MeV": "8.47392150948049266063987655515624407640644084278138409223058",
+          "M_atom_two_term_pauli_simplex_MeV": "19579.9837544839587756164028179973182686836729849661629037246",
+          "M_atom_two_term_err_MeV": "-8.48213516042626438359718200268173131632701503384426945459260",
+          "M_atom_two_term_err_ppm": "-433.016817560502265644922707801644995450176558305020029685436"
         },
         "ame_reference": {
           "B_AME_keV": "132237.000000000000000000000000000000000000000000000000000000",
@@ -95,9 +145,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "34.0220315722932980900986574190812023721381999349577912901963",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "34.0220289752079393579053298332622365156505811372639369039987",
+          "qed_nucleon_shift_q2t_MeV": "0.00185643686285676297341714762630135030769009419498651025200049",
+          "M_constituent_two_term_q2t_MeV": "20660.2602373659814117611167075970209715214241614245200878210",
+          "su4_partition": [
+            18,
+            17,
+            16,
+            15
+          ],
+          "W_lambda_unnormalized_q2t": "339580353.256181870785964525812768255957665719551231984367052",
+          "Z_3A_4row_hankel_q2t": "88998702466.0063343575751900576316791314898265203465553920073",
+          "omega_lambda_normalized_4row_q2t": "0.00381556521440171466456157995370994710499639136819735860336173",
+          "f_vector_3tree": [
+            22,
+            60,
+            58,
+            19
+          ],
+          "f_vector_pauli_triangle": [
+            22,
+            56,
+            50,
+            15
+          ],
+          "B_3tree_logD_gpmt_MeV": "156.004963926413590336225920313669170055945315928463035127461",
+          "B_3tree_logD_gpmt_E0tower_MeV": "157.551678444094501948098854067280799937766011821193182011009",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "123.529649468886562590193524234018563422115430683929245107010",
+          "B_3tree_gg_gpmt_MeV": "202.987670465884223541238710169935558496300292015509084497579",
+          "B_3tree_gg_gpmt_E0tower_MeV": "205.000196022237074426985909407119760812669747465792491253653",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "170.978167047029135069080579573857524297019166328528554349654",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "155.430722971885729060398296027727045950008547413751282263327",
+          "B_pauli_triangle_err_MeV": "6.22672297188572906039829602772704595000854741375128226332744",
+          "M_atom_two_term_pauli_simplex_MeV": "20504.8295143940956827007184115692939255714156140107688055577",
+          "M_atom_two_term_err_MeV": "-6.24216223259311729928158843070607442858438598923870547424444",
+          "M_atom_two_term_err_ppm": "-304.331354841217232149941018662096087325293952465446960085212"
         },
         "ame_reference": {
           "B_AME_keV": "149204.000000000000000000000000000000000000000000000000000000",
@@ -127,9 +218,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "33.5216348900189870051517864035621123808209578385252445107089",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "33.5216323311316087295728906329084050595773974654091460166391",
+          "qed_nucleon_shift_q2t_MeV": "0.00174481806340251600539318383383735939018048878151906728473418",
+          "M_constituent_two_term_q2t_MeV": "21599.8257987385235552451907206415674302827688970400958878252",
+          "su4_partition": [
+            18,
+            18,
+            17,
+            16
+          ],
+          "W_lambda_unnormalized_q2t": "7318668852.07210896999855994153644527394644306220699796746907",
+          "Z_3A_4row_hankel_q2t": "12579820514842.3261738857772308746635106690019172479996379946",
+          "omega_lambda_normalized_4row_q2t": "0.000581778479544852250924131081173498445039738299741740197585145",
+          "f_vector_3tree": [
+            23,
+            63,
+            61,
+            20
+          ],
+          "f_vector_pauli_triangle": [
+            23,
+            60,
+            55,
+            17
+          ],
+          "B_3tree_logD_gpmt_MeV": "163.855959548388994329705113086946396529582992483371703994479",
+          "B_3tree_logD_gpmt_E0tower_MeV": "165.480512928379995754278705725945542393383105584171104776892",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "131.958880597248387024705815093037137333805708118761958760253",
+          "B_3tree_gg_gpmt_MeV": "213.187801414833159194968542436026104391955717374770055833103",
+          "B_3tree_gg_gpmt_E0tower_MeV": "215.301456385429696857110113832776451312032028011000379481668",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "181.779824054298088127537223199868046252454630545591233465029",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "170.119240997940533621025510540270187492196666359508279400284",
+          "B_pauli_triangle_err_MeV": "1.39750849794053362102551054027018749219666635950827940028388",
+          "M_atom_two_term_pauli_simplex_MeV": "21429.7065577405830216241652101012972427905722306805876084249",
+          "M_atom_two_term_err_MeV": "-1.40589806119506409583478989870275720942776931942023952046534",
+          "M_atom_two_term_err_ppm": "-65.6007971632131876778751578195725245376231950506908836145834"
         },
         "ame_reference": {
           "B_AME_keV": "168721.732500000000000000000000000000000000000000000000000000",
@@ -159,9 +291,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "33.0494362893260607325210882226216679678766844330696813874916",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "33.0494337664841511017990503384666593037712674441052111850504",
+          "qed_nucleon_shift_q2t_MeV": "0.00163319926394826903736922004137336847267088336805162431746787",
+          "M_constituent_two_term_q2t_MeV": "22539.3913601110656987292647336861138890441136326556716878293",
+          "su4_partition": [
+            19,
+            18,
+            18,
+            17
+          ],
+          "W_lambda_unnormalized_q2t": "1025224084842.77066663108390052886423558950843178154544703611",
+          "Z_3A_4row_hankel_q2t": "2771258389758320.81934567620986618392140413009407914128404382",
+          "omega_lambda_normalized_4row_q2t": "0.000369948933174787653663976012518770167564025063635357773741313",
+          "f_vector_3tree": [
+            24,
+            66,
+            64,
+            21
+          ],
+          "f_vector_pauli_triangle": [
+            24,
+            64,
+            60,
+            19
+          ],
+          "B_3tree_logD_gpmt_MeV": "171.706955170364398323184305860223623003220669038280372861498",
+          "B_3tree_logD_gpmt_E0tower_MeV": "173.409347412665489560458557384610284849000199347149027542775",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "140.359913646181338458659507046143625545228931903043816357724",
+          "B_3tree_gg_gpmt_MeV": "223.387932363782094848698374702116650287611142734031027168627",
+          "B_3tree_gg_gpmt_E0tower_MeV": "225.602716748622319287234318258433141811394308556208267709683",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "192.553282982138168185435267919966482507623041112103056524633",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "184.779560944566465181094126146901243334117731654714420481469",
+          "B_pauli_triangle_err_MeV": "1.18962654456646518109412614690124333411773165471442048146948",
+          "M_atom_two_term_pauli_simplex_MeV": "22354.6117991664992335481706075392126457099959010009572673479",
+          "M_atom_two_term_err_MeV": "-1.19787795947763101182939246078735429000409899905091921607669",
+          "M_atom_two_term_err_ppm": "-53.5824010303360245837896347987894615680897324987099017685030"
         },
         "ame_reference": {
           "B_AME_keV": "183589.934400000000000000000000000000000000000000000000000000",
@@ -191,9 +364,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "32.6027675306206155464699671400664046799854223733822094280629",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "32.6027650418753438831790099037689128716240863445293141092665",
+          "qed_nucleon_shift_q2t_MeV": "0.00152158046449402206934525624890937755516127795458418135020156",
+          "M_constituent_two_term_q2t_MeV": "23478.9569214836078422133387467306603478054583682712474878335",
+          "su4_partition": [
+            19,
+            19,
+            19,
+            18
+          ],
+          "W_lambda_unnormalized_q2t": "35866513695990.3096196457110642956289482798711592579313440251",
+          "Z_3A_4row_hankel_q2t": "955040345295324322.489603591036005788022252022813882134319017",
+          "omega_lambda_normalized_4row_q2t": "0.0000375549722822436500044155340864601498983198574079088511788847",
+          "f_vector_3tree": [
+            25,
+            69,
+            67,
+            22
+          ],
+          "f_vector_pauli_triangle": [
+            25,
+            68,
+            65,
+            21
+          ],
+          "B_3tree_logD_gpmt_MeV": "179.557950792339802316663498633500849476858345593189041728516",
+          "B_3tree_logD_gpmt_E0tower_MeV": "181.338181896950983366638409043275027304617293110126950308657",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "148.735416855075639483459399139506114432993206765597636199391",
+          "B_3tree_gg_gpmt_MeV": "233.588063312731030502428206968207196183266568093291998504152",
+          "B_3tree_gg_gpmt_E0tower_MeV": "235.903977111814941717358522684089832310756589101416155937698",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "203.301212069939597834179512780320919439132502756886841828432",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "199.414351051153746332008941893788299852379848028192523806850",
+          "B_pauli_triangle_err_MeV": "-1.11406394884625366799105810621170014762015197180747619314983",
+          "M_atom_two_term_pauli_simplex_MeV": "23279.5425704324540958813298048368720479530785202430549640267",
+          "M_atom_two_term_err_MeV": "1.10595209307799012132980483687204795307852024304643960224108",
+          "M_atom_two_term_err_ppm": "47.5097237503781258570801898596463947431193426130579341467475"
         },
         "ame_reference": {
           "B_AME_keV": "200528.415000000000000000000000000000000000000000000000000000",
@@ -223,9 +437,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "32.1793070346975596997690265847764790836832882501331646451982",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "32.1793045782773140016782733933771082472349818706616272727274",
+          "qed_nucleon_shift_q2t_MeV": "0.00140996166503977510132129245644538663765167254111673838293526",
+          "M_constituent_two_term_q2t_MeV": "24418.5224828561499856974127597752068065668031038868232878377",
+          "su4_partition": [
+            20,
+            20,
+            19,
+            19
+          ],
+          "W_lambda_unnormalized_q2t": "37636011601239252.2445711848121215264222036036521053967432801",
+          "Z_3A_4row_hankel_q2t": "516535763296587389767.812674298954778306355460971297670868333",
+          "omega_lambda_normalized_4row_q2t": "0.0000728623539269423187664952192500918419134998038805018171448246",
+          "f_vector_3tree": [
+            26,
+            72,
+            70,
+            23
+          ],
+          "f_vector_pauli_triangle": [
+            26,
+            72,
+            70,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "187.408946414315206310142691406778075950496022148097710595535",
+          "B_3tree_logD_gpmt_E0tower_MeV": "189.267016381236477172818260701939769760234386873104873074540",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "157.087711802959163171139987308562661512999405002443245801813",
+          "B_3tree_gg_gpmt_MeV": "243.788194261679966156158039234297742078921993452552969839676",
+          "B_3tree_gg_gpmt_E0tower_MeV": "246.205237475007564147482727109746522810118869646624044165714",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "214.025932896730250145804453716369414562883887775962416892986",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "214.025932896730250145804453716369414562883887775962416892986",
+          "B_pauli_triangle_err_MeV": "2.13203509673025014580445371636941456288388777596241689298612",
+          "M_atom_two_term_pauli_simplex_MeV": "24204.4965499594197355516083060588373920039192161108608709447",
+          "M_atom_two_term_err_MeV": "-2.14000654374964316839169394116260799608078388914799338099460",
+          "M_atom_two_term_err_ppm": "-88.4057782564891452601325292989887974640829113460313683787782"
         },
         "ame_reference": {
           "B_AME_keV": "211893.897800000000000000000000000000000000000000000000000000",
@@ -255,9 +510,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "31.7770235247883869517441317103732631759754730020227553858769",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "31.7770210990766135394571528965336895788058524805368225100667",
+          "qed_nucleon_shift_q2t_MeV": "0.00129834286558552813329732866398139572014206712764929541566895",
+          "M_constituent_two_term_q2t_MeV": "25358.0880442286921291814867728197532653281478395023990878418",
+          "su4_partition": [
+            21,
+            20,
+            20,
+            20
+          ],
+          "W_lambda_unnormalized_q2t": "15531805312381003031.3071132826954660730801833931006886062653",
+          "Z_3A_4row_hankel_q2t": "439644589322359841699609.012898619716956312211774226847613087",
+          "omega_lambda_normalized_4row_q2t": "0.0000353280938503547561918425508402261886177854864880002478992989",
+          "f_vector_3tree": [
+            27,
+            75,
+            73,
+            24
+          ],
+          "f_vector_pauli_triangle": [
+            27,
+            74,
+            71,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "195.259942036290610303621884180055302424133698703006379462553",
+          "B_3tree_logD_gpmt_E0tower_MeV": "197.195850865521970978998112360604512215851480636082795840423",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "165.418829766445357439540959464070822637045628155545973330356",
+          "B_3tree_gg_gpmt_MeV": "253.988325210628901809887871500388287974577418811813941175200",
+          "B_3tree_gg_gpmt_E0tower_MeV": "256.506497838200186577606931535403213309481150191831932393729",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "224.729476739123573038149778638869523730675297711295109883662",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "220.842615720337721535979207752336904143922642982600791862080",
+          "B_pauli_triangle_err_MeV": "-4.10932337966227846402079224766309585607735701739920813791981",
+          "M_atom_two_term_pauli_simplex_MeV": "25137.2454285083544076455075650674163611842251965197982959798",
+          "M_atom_two_term_err_MeV": "4.10149216163872988550756506741636118422519651978909237261634",
+          "M_atom_two_term_err_ppm": "163.190573054702023386639998504284972500412053872400484052867"
         },
         "ame_reference": {
           "B_AME_keV": "224951.939100000000000000000000000000000000000000000000000000",
@@ -287,9 +583,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "31.3941305383455854661335140671965347208115052551868735422547",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "31.3941281418621009918199930633751890243975606358922593529628",
+          "qed_nucleon_shift_q2t_MeV": "0.00118672406613128116527336487151740480263246171418185244840264",
+          "M_constituent_two_term_q2t_MeV": "26297.6536056012342726655607858642997240894925751179748878460",
+          "su4_partition": [
+            22,
+            21,
+            21,
+            20
+          ],
+          "W_lambda_unnormalized_q2t": "193504263937647749217417.905828339088310286341631424055823700",
+          "Z_3A_4row_hankel_q2t": "590257013456626580622377795.212333703820772722001112876945269",
+          "omega_lambda_normalized_4row_q2t": "0.000327830520478630246495023984997460069060333373964723729837724",
+          "f_vector_3tree": [
+            28,
+            78,
+            76,
+            25
+          ],
+          "f_vector_pauli_triangle": [
+            28,
+            76,
+            72,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "203.110937658266014297101076953332528897771375257915048329571",
+          "B_3tree_logD_gpmt_E0tower_MeV": "205.124685349807464785177964019269254671468574399060718606306",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "173.730557207945363793357970955894065647071013763168459253343",
+          "B_3tree_gg_gpmt_MeV": "264.188456159577837463617703766478833870232844171074912510725",
+          "B_3tree_gg_gpmt_E0tower_MeV": "266.807758201392809007731135961059903808843430737039820621744",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "235.413630059530708015911142897684714784445870101147561268781",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "227.639908021959005011570001124619475610940560643758925225617",
+          "B_pauli_triangle_err_MeV": "-5.03720517804099498842999887538052438905943935624107477438258",
+          "M_atom_two_term_pauli_simplex_MeV": "26070.0136975792752676539907847396802484785520144742159626204",
+          "M_atom_two_term_err_MeV": "5.02951337212313417399078473968024847855201447420641777891973",
+          "M_atom_two_term_err_ppm": "192.960538037484426921640795745328254250636257343507343284020"
         },
         "ame_reference": {
           "B_AME_keV": "232677.113200000000000000000000000000000000000000000000000000",
@@ -319,9 +656,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "31.0290494057636686952769804155345822708632169279852670258508",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "31.0290470371487981855101894849375519112168408870097858425719",
+          "qed_nucleon_shift_q2t_MeV": "0.00107510526667703419724940107905341388512285630071440948113633",
+          "M_constituent_two_term_q2t_MeV": "27237.2191669737764161496347989088461828508373107335506878502",
+          "su4_partition": [
+            23,
+            22,
+            21,
+            21
+          ],
+          "W_lambda_unnormalized_q2t": "610082154342695344414339981.523073104771553755620910311748053",
+          "Z_3A_4row_hankel_q2t": "1252524626664853026992115323654.66420554363818079524168421439",
+          "omega_lambda_normalized_4row_q2t": "0.000487081963383973758824317397744394572202072657214857689750726",
+          "f_vector_3tree": [
+            29,
+            81,
+            79,
+            26
+          ],
+          "f_vector_pauli_triangle": [
+            29,
+            78,
+            73,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "210.961933280241418290580269726609755371409051812823717196590",
+          "B_3tree_logD_gpmt_E0tower_MeV": "213.053519834092958591357815677933997127085668162038641372189",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "182.024472796944160405847626192996445215868827275028855529617",
+          "B_3tree_gg_gpmt_MeV": "274.388587108526773117347536032569379765888269530335883846249",
+          "B_3tree_gg_gpmt_E0tower_MeV": "277.109018564585431437855340386716594308205711282247708849759",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "246.079971527436633252345150901779042396988870395237923007187",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "234.419388471079078745833438242181183636730906209154968942442",
+          "B_pauli_triangle_err_MeV": "-7.68608782892092125416656175781881636326909379084503105755839",
+          "M_atom_two_term_pauli_simplex_MeV": "27002.7997785026973374038013606666649992141064045243957189077",
+          "M_atom_two_term_err_MeV": "7.67853310307916732380136066666499921410640452438583345563293",
+          "M_atom_two_term_err_ppm": "284.441511978306335156073179857735366832692645769194895245177"
         },
         "ame_reference": {
           "B_AME_keV": "242105.476300000000000000000000000000000000000000000000000000",
@@ -351,9 +729,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "30.6803788875465595112200580373998197658931840085657098149221",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "30.6803765455475921687602908615332958380973479792540344022771",
+          "qed_nucleon_shift_q2t_MeV": "0.000963486467222787229225437286589422967613250887246966513870021",
+          "M_constituent_two_term_q2t_MeV": "28176.7847283463185596337088119533926416121820463491264878544",
+          "su4_partition": [
+            24,
+            23,
+            22,
+            21
+          ],
+          "W_lambda_unnormalized_q2t": "12762689604158469524239007017973.5901777792655801218392629340",
+          "Z_3A_4row_hankel_q2t": "4208026939954950830941575264628244.02691173601827809148760427",
+          "omega_lambda_normalized_4row_q2t": "0.00303293913900064074025527983915055192669744051068493796622117",
+          "f_vector_3tree": [
+            30,
+            84,
+            82,
+            27
+          ],
+          "f_vector_pauli_triangle": [
+            30,
+            80,
+            74,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "218.812928902216822284059462499886981845046728367732386063608",
+          "B_3tree_logD_gpmt_E0tower_MeV": "220.982354318378452397537667336598739582702761925016564138072",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "190.301977772830860228777376475065443744605413945762529735795",
+          "B_3tree_gg_gpmt_MeV": "284.588718057475708771077368298659925661543694889596855181773",
+          "B_3tree_gg_gpmt_E0tower_MeV": "287.410278927778053867979544812373284807567991827455597077774",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "256.729902382230461699219253950839988969470643848201562675497",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "241.182458307087055690536970404709510622460024933424290589170",
+          "B_pauli_triangle_err_MeV": "-6.65068869291294430946302959529048937753997506657570941083018",
+          "M_atom_two_term_pauli_simplex_MeV": "27935.6022700392315039431718415486831309897220214157021972652",
+          "M_atom_two_term_err_MeV": "6.64327523419508782317184154868313098972202141569196984727220",
+          "M_atom_two_term_err_ppm": "237.863331584638695939022037595223026969605323587101480660116"
         },
         "ame_reference": {
           "B_AME_keV": "247833.147000000000000000000000000000000000000000000000000000",
@@ -383,9 +802,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "30.3468700941396159691270734499482317428200300249945109892349",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "30.3468677775991754793372313851457046562797662098005347188437",
+          "qed_nucleon_shift_q2t_MeV": "0.000851867667768540261201473494125432050103645473779523546603712",
+          "M_constituent_two_term_q2t_MeV": "29116.3502897188607031177828249979391003735267819647022878585",
+          "su4_partition": [
+            25,
+            24,
+            22,
+            22
+          ],
+          "W_lambda_unnormalized_q2t": "45922060626611036464851440231172742.8292683230896832721530705",
+          "Z_3A_4row_hankel_q2t": "22415660886464256690979829380276144185.4369399243502943016218",
+          "omega_lambda_normalized_4row_q2t": "0.00204865967857058223081535874239987599207134024065608349239171",
+          "f_vector_3tree": [
+            31,
+            87,
+            85,
+            28
+          ],
+          "f_vector_pauli_triangle": [
+            31,
+            82,
+            75,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "226.663924524192226277538655273164208318684404922641054930627",
+          "B_3tree_logD_gpmt_E0tower_MeV": "228.911188802663946203717518995263482038319855687994486903955",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "198.564321025064770724380287610117777382040089478193952185111",
+          "B_3tree_gg_gpmt_MeV": "294.788849006424644424807200564750471557199120248857826517298",
+          "B_3tree_gg_gpmt_E0tower_MeV": "297.711539290970676298103749238029975306930272372663485305789",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "267.364671513371500818766517852884270650650506162862950586945",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "247.930366419442243307913663420221172716887232519391360479037",
+          "B_pauli_triangle_err_MeV": "-7.06069158055775669208633657977882728311276748060863952096344",
+          "M_atom_two_term_pauli_simplex_MeV": "28868.4199232994184598098691615777179276566395494453109273795",
+          "M_atom_two_term_err_MeV": "7.05341749167397492986916157771792765663954944530035851951769",
+          "M_atom_two_term_err_ppm": "244.389588769285149527907992984571048454664723089437142360053"
         },
         "ame_reference": {
           "B_AME_keV": "254991.058000000000000000000000000000000000000000000000000000",
@@ -415,9 +875,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "30.0274056314141006998266484365290093440912420425623413203406",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "30.0274033392601074748541799444967649043493586318313236835480",
+          "qed_nucleon_shift_q2t_MeV": "0.000740248868314293293177509701661441132594040060312080579337404",
+          "M_constituent_two_term_q2t_MeV": "30055.9158510914028466018568380424855591348715175802780878627",
+          "su4_partition": [
+            26,
+            25,
+            23,
+            22
+          ],
+          "W_lambda_unnormalized_q2t": "1847120588112919102476918251380553222459.74613648527823255986",
+          "Z_3A_4row_hankel_q2t": "189560141844078864523233876880781364866323.279681183389353088",
+          "omega_lambda_normalized_4row_q2t": "0.00974424565282427858188575289230739878139799107674489811520145",
+          "f_vector_3tree": [
+            32,
+            90,
+            88,
+            29
+          ],
+          "f_vector_pauli_triangle": [
+            32,
+            84,
+            76,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "234.514920146167630271017848046441434792322081477549723797645",
+          "B_3tree_logD_gpmt_E0tower_MeV": "236.840023286949440009897370653928224493936949450972409669838",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "206.812619947689332535043190709431459589587590819141085986290",
+          "B_3tree_gg_gpmt_MeV": "304.988979955373580078537032830841017452854545608118797852822",
+          "B_3tree_gg_gpmt_E0tower_MeV": "308.012799654163298728227953663686665806292552917871373533804",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "277.985396314903191253373773719189900901943194286040049850256",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "254.664230202188082240350348399994183381427265913874141720766",
+          "B_pauli_triangle_err_MeV": "-4.54680659781191775964965160000581661857273408612585827923436",
+          "M_atom_two_term_pauli_simplex_MeV": "29801.2516208892147643615064896424913757534442516664039461419",
+          "M_atom_two_term_err_MeV": "4.53967074413522700150648964249137575344425166639303476404722",
+          "M_atom_two_term_err_ppm": "152.354754837743882145359784847118226801124699791565504511094"
         },
         "ame_reference": {
           "B_AME_keV": "259211.036800000000000000000000000000000000000000000000000000",
@@ -447,9 +948,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "29.7209821521970122590070809258805315126138774171305118836344",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "29.7209798834339776179001696221480993971970189632639299231167",
+          "qed_nucleon_shift_q2t_MeV": "0.000628630068860046325153545909197450215084434646844637612071095",
+          "M_constituent_two_term_q2t_MeV": "30995.4814124639449900859308510870320178962162531958538878669",
+          "su4_partition": [
+            27,
+            26,
+            23,
+            23
+          ],
+          "W_lambda_unnormalized_q2t": "11208823936605103652344326967531971500712859.2481456027272046",
+          "Z_3A_4row_hankel_q2t": "2547580727371515244359600123829106787166415566.27948009646700",
+          "omega_lambda_normalized_4row_q2t": "0.00439979146339746746391873383748995744407409723270195536255314",
+          "f_vector_3tree": [
+            33,
+            93,
+            91,
+            30
+          ],
+          "f_vector_pauli_triangle": [
+            33,
+            86,
+            77,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "242.365915768143034264497040819718661265959758032458392664664",
+          "B_3tree_logD_gpmt_E0tower_MeV": "244.768857771234933816077222312592966949554043213950332435720",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "215.047877887800956198177052690444867552357024250686402512604",
+          "B_3tree_gg_gpmt_MeV": "315.189110904322515732266865096931563348509970967379769188346",
+          "B_3tree_gg_gpmt_E0tower_MeV": "318.314060017355921158352158089343356305654833463079261761819",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "288.593080133921943540451988467195256908457814499815331838702",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "261.385053002420983025257992261466919801189231398955105687630",
+          "B_pauli_triangle_err_MeV": "-3.29531459757901697474200773853308019881076860104489431236976",
+          "M_atom_two_term_pauli_simplex_MeV": "30734.0963594615240070606728588255650980950270217968987821792",
+          "M_atom_two_term_err_MeV": "3.28831933630051886067285882556509809502702179688752874094732",
+          "M_atom_two_term_err_ppm": "107.003998463267204305309931794208855680504484366297983634678"
         },
         "ame_reference": {
           "B_AME_keV": "264680.367600000000000000000000000000000000000000000000000000",
@@ -479,9 +1021,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "29.4266956728497673965254088908056833815267237111942195353526",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "29.4266934265512086101758061611616225096168031105977866738686",
+          "qed_nucleon_shift_q2t_MeV": "0.000517011269405799357129582116733459297574829233377194644804786",
+          "M_constituent_two_term_q2t_MeV": "31935.0469738364871335700048641315784766575609888114296878710",
+          "su4_partition": [
+            28,
+            27,
+            24,
+            23
+          ],
+          "W_lambda_unnormalized_q2t": "925020101933398481593084220155722653081338348954.503805105450",
+          "Z_3A_4row_hankel_q2t": "54461570124924223244559277018969194666517472580603.6360571814",
+          "omega_lambda_normalized_4row_q2t": "0.0169848225053295878757824312384762475902660218382014141203748",
+          "f_vector_3tree": [
+            34,
+            96,
+            94,
+            31
+          ],
+          "f_vector_pauli_triangle": [
+            34,
+            88,
+            78,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "250.216911390118438257976233592995887739597434587367061531682",
+          "B_3tree_logD_gpmt_E0tower_MeV": "252.697692255520427622257073971257709405171136976928255201603",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "223.270998828969219012081267810096086895554333866330468527735",
+          "B_3tree_gg_gpmt_MeV": "325.389241853271451385996697363022109244165396326640740523871",
+          "B_3tree_gg_gpmt_E0tower_MeV": "328.615320380548543588476362515000046805017114008287149989834",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "299.188626953997334978300556353838424295400310897689363315966",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "268.093738803710522960935989261577467601379073068134819143312",
+          "B_pauli_triangle_err_MeV": "0.841818403710522960935989261577467601379073068134819143311714",
+          "M_atom_two_term_pauli_simplex_MeV": "31666.9532350327766106090688748700010090561819157432948687277",
+          "M_atom_two_term_err_MeV": "-0.848672627900546670931125129998990943818084256716727832118280",
+          "M_atom_two_term_err_ppm": "-26.7992275048065916110301101207785092379762988572639463552269"
         },
         "ame_reference": {
           "B_AME_keV": "267251.920400000000000000000000000000000000000000000000000000",
@@ -511,9 +1094,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "29.1437291495533616667834360895659928048863306617123291948852",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "29.1437269248551653721000341440743222599274029651429260915308",
+          "qed_nucleon_shift_q2t_MeV": "0.000405392469951552389105618324269468380065223819909751677538478",
+          "M_constituent_two_term_q2t_MeV": "32874.6125352090292770540788771761249354189057244270054878752",
+          "su4_partition": [
+            29,
+            28,
+            24,
+            24
+          ],
+          "W_lambda_unnormalized_q2t": "10823905957206192334293953913213885460622930930842621.0444965",
+          "Z_3A_4row_hankel_q2t": "1853412262506874362037983228487045164258472879480473204.51404",
+          "omega_lambda_normalized_4row_q2t": "0.00583998831569511434605298658155986079999438608271501961871314",
+          "f_vector_3tree": [
+            35,
+            99,
+            97,
+            32
+          ],
+          "f_vector_pauli_triangle": [
+            35,
+            90,
+            79,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "258.067907012093842251455426366273114213235111142275730398701",
+          "B_3tree_logD_gpmt_E0tower_MeV": "260.626526739805921428436925629922451860788230739906177967486",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "231.482799814950756056336891485848129600860827774763251875955",
+          "B_3tree_gg_gpmt_MeV": "335.589372802220387039726529629112655139820821685901711859395",
+          "B_3tree_gg_gpmt_E0tower_MeV": "338.916580743741166018600566940656737304379394553495038217849",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "309.772853818886000646500532796582415044451991588352112126319",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "274.791104649813337126965394817788838763678099030103249932083",
+          "B_pauli_triangle_err_MeV": "2.24175414981333712696539481778883876367809903010324993208285",
+          "M_atom_two_term_pauli_simplex_MeV": "32599.8214305592159399271134823583360966552276253969022379431",
+          "M_atom_two_term_err_MeV": "-2.24846966097617559288651764166390334477237460310970074007441",
+          "M_atom_two_term_err_ppm": "-68.9670830060084493278809024434182483224708257530422132621159"
         },
         "ame_reference": {
           "B_AME_keV": "272549.350500000000000000000000000000000000000000000000000000",
@@ -543,9 +1167,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "28.8713419129021609444868959164273966681719998766049859853021",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "28.8713397089967530730690245605311700469739084346151660162053",
+          "qed_nucleon_shift_q2t_MeV": "0.000293773670497305421081654531805477462555618406442308710272169",
+          "M_constituent_two_term_q2t_MeV": "33814.1780965815714205381528902206713941802504600425812878794",
+          "su4_partition": [
+            30,
+            29,
+            25,
+            24
+          ],
+          "W_lambda_unnormalized_q2t": "1900941909060375398529757946212909792276373396196129475596.32",
+          "Z_3A_4row_hankel_q2t": "100476128871905682482159712846926854382284252956606369975902.",
+          "omega_lambda_normalized_4row_q2t": "0.0189193386568847131010819334158899478862028410474892755430914",
+          "f_vector_3tree": [
+            36,
+            102,
+            100,
+            33
+          ],
+          "f_vector_pauli_triangle": [
+            36,
+            92,
+            80,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "265.918902634069246244934619139550340686872787697184399265719",
+          "B_3tree_logD_gpmt_E0tower_MeV": "268.555361224091415234616777288587194316405324502884100733369",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "239.684021515094662161547752728056024269431416068268934717164",
+          "B_3tree_gg_gpmt_MeV": "345.789503751169322693456361895203201035476247045162683194920",
+          "B_3tree_gg_gpmt_E0tower_MeV": "349.217841106933788448724771366313427803741675098702926445864",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "320.346501397937035375655746805782257756767766664087760429659",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "281.477891210078520353950037940456061889241219377144580213842",
+          "B_pauli_triangle_err_MeV": "7.03133681007852035395003794045606188924121937714458021384173",
+          "M_atom_two_term_pauli_simplex_MeV": "33532.7002053714929001842028522802153322910092406654367076656",
+          "M_atom_two_term_err_MeV": "-7.03791288307045981579714771978466770899075933457557438616054",
+          "M_atom_two_term_err_ppm": "-209.838039231438066396490312273310459212304580277383327469310"
         },
         "ame_reference": {
           "B_AME_keV": "274446.554400000000000000000000000000000000000000000000000000",
@@ -575,9 +1240,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "28.6088606397189050956108002246419291856653980978313875718167",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "28.6088584558501099725264913308764610910206660483278661951784",
+          "qed_nucleon_shift_q2t_MeV": "0.000182154871043058453057690739341486545046012992974865743005860",
+          "M_constituent_two_term_q2t_MeV": "34753.7436579541135640222269032652178529415951956581570878836",
+          "su4_partition": [
+            31,
+            30,
+            25,
+            25
+          ],
+          "W_lambda_unnormalized_q2t": "4.57234972789035297643930192726632524664632573197168535667794e+61",
+          "Z_3A_4row_hankel_q2t": "8.68180660900209315131895562514695946541230766167429746410639e+63",
+          "omega_lambda_normalized_4row_q2t": "0.00526658785874050860225399670561424392823487379162172755742827",
+          "f_vector_3tree": [
+            37,
+            105,
+            103,
+            34
+          ],
+          "f_vector_pauli_triangle": [
+            37,
+            94,
+            81,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "273.769898256044650238413811912827567160510464252093068132738",
+          "B_3tree_logD_gpmt_E0tower_MeV": "276.484195708376909040796628947251936772022418265862023499252",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "247.875337252526799068270137616375475681001752217534157304073",
+          "B_3tree_gg_gpmt_MeV": "355.989634700118258347186194161293746931131672404423654530444",
+          "B_3tree_gg_gpmt_E0tower_MeV": "359.519101470126410878848975791970118303103955643910814673880",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "330.910243014276300906322484461093657212083289595582948478701",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "288.154771807631934382446204709234841757804087579945450241302",
+          "B_pauli_triangle_err_MeV": "9.49607980763193438244620470923484175780408757994545024130191",
+          "M_atom_two_term_pauli_simplex_MeV": "34465.5888861464816296397806985559830111837911080782116376423",
+          "M_atom_two_term_err_MeV": "-9.50251589979369036021930144401698881620889192180098693023288",
+          "M_atom_two_term_err_ppm": "-275.634248187364248751686942473082783979507095857237573399176"
         },
         "ame_reference": {
           "B_AME_keV": "278658.692000000000000000000000000000000000000000000000000000",
@@ -607,9 +1313,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "28.3556716035387974150869623395352445031701990526125922985283",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "28.3556694389972884200411855814490407017393788665974367666174",
+          "qed_nucleon_shift_q2t_MeV": "0.0000705360715888114850337269468774956275364075795074227757395515",
+          "M_constituent_two_term_q2t_MeV": "35693.3092193266557075063009163097643117029399312737328878877",
+          "su4_partition": [
+            32,
+            31,
+            26,
+            25
+          ],
+          "W_lambda_unnormalized_q2t": "1.74808185668451633693535146047957283346189910045123486098788e+67",
+          "Z_3A_4row_hankel_q2t": "1.19625886755374201443828556788040468356726247421534169152641e+69",
+          "omega_lambda_normalized_4row_q2t": "0.0146129061534917619792417115033477113336074009502014469061826",
+          "f_vector_3tree": [
+            38,
+            108,
+            106,
+            35
+          ],
+          "f_vector_pauli_triangle": [
+            38,
+            96,
+            82,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "281.620893878020054231893004686104793634148140807001736999756",
+          "B_3tree_logD_gpmt_E0tower_MeV": "284.413030192662402846976480605916679227639512028839946265135",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "256.057360753665114426935295024467638525900133162242509498517",
+          "B_3tree_gg_gpmt_MeV": "366.189765649067194000916026427384292826787097763684625865968",
+          "B_3tree_gg_gpmt_E0tower_MeV": "369.820361833319033308973180217626808802466236189118702901895",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "341.464692394321744888931994636177768100726857322521266135277",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "294.822360168891526862885143997786333059695000578189449876296",
+          "B_pauli_triangle_err_MeV": "14.7623601688915268628851439977863330596950005781894498762962",
+          "M_atom_two_term_pauli_simplex_MeV": "35398.4868591577641806434157723119779786432449306955434380114",
+          "M_atom_two_term_err_MeV": "-14.7588294501091393565842276880220213567550693044695301075498",
+          "M_atom_two_term_err_ppm": "-416.760146186118256229527295783834224120336382546486224422440"
         },
         "ame_reference": {
           "B_AME_keV": "280060.000000000000000000000000000000000000000000000000000000",
@@ -639,9 +1386,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "28.1112139942631456785630045135144172392026605124116500657089",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "28.1112118483824058539714316142627245839930448417528406651241",
+          "qed_nucleon_shift_q2t_MeV": "-0.0000410827278654354829902368455864952899731978339600201915267572",
+          "M_constituent_two_term_q2t_MeV": "36632.8747806991978509903749293543107704642846668893086878919",
+          "su4_partition": [
+            33,
+            32,
+            26,
+            26
+          ],
+          "W_lambda_unnormalized_q2t": "8.95913101318740209902333373782333275615047394519760875310996e+71",
+          "Z_3A_4row_hankel_q2t": "2.62959532936320598190329952044588445882065838920990226062715e+74",
+          "omega_lambda_normalized_4row_q2t": "0.00340703792448436675188481431517387486893547817750447188456550",
+          "f_vector_3tree": [
+            39,
+            111,
+            109,
+            36
+          ],
+          "f_vector_pauli_triangle": [
+            39,
+            98,
+            83,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "289.471889499995458225372197459382020107785817361910405866775",
+          "B_3tree_logD_gpmt_E0tower_MeV": "292.341864676947896653156332264581421683256605791817869031018",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "264.230652828565490799184900650318697099263560950065028365894",
+          "B_3tree_gg_gpmt_MeV": "376.389896598016129654645858693474838722442523122945597201493",
+          "B_3tree_gg_gpmt_E0tower_MeV": "380.121622196511655739097384643283499301828516734326591129910",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "352.010410348129249885125953029020774717835471892573750464786",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "301.481217103913180356908531504096720090050960419547616184223",
+          "B_pauli_triangle_err_MeV": "18.3412171039131803569085315040967200900509604195476161842229",
+          "M_atom_two_term_pauli_simplex_MeV": "36331.3935635952846706334663978502140503742337064697610717077",
+          "M_atom_two_term_err_MeV": "-18.3660504575357293665336021497859496257662935302522393571087",
+          "M_atom_two_term_err_ppm": "-505.259199855489899182626138813814815343931047383455196020257"
         },
         "ame_reference": {
           "B_AME_keV": "283140.000000000000000000000000000000000000000000000000000000",
@@ -671,9 +1459,50 @@
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "derivation-pending"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "27.8749741362266328343637756735468984674272193281970089892114",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "27.8749720083793568595690853361881991619033637788763979493865",
+          "qed_nucleon_shift_q2t_MeV": "-0.000152701527319682451014200638050486207482803247427463158793066",
+          "M_constituent_two_term_q2t_MeV": "37572.4403420717399944744489423988572292256294025048844878961",
+          "su4_partition": [
+            34,
+            33,
+            27,
+            26
+          ],
+          "W_lambda_unnormalized_q2t": "7.56889364963133992289968210458318018358391970778901601010455e+77",
+          "Z_3A_4row_hankel_q2t": "9.22477921779829388545087689634916039439352218184218055583312e+79",
+          "omega_lambda_normalized_4row_q2t": "0.00820495913336105922788074478621641038293381825344295374109924",
+          "f_vector_3tree": [
+            40,
+            114,
+            112,
+            37
+          ],
+          "f_vector_pauli_triangle": [
+            40,
+            100,
+            84,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "297.322885121970862218851390232659246581423493916819074733793",
+          "B_3tree_logD_gpmt_E0tower_MeV": "300.270699161233390459336183923246164138873699554795791796900",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "272.395727152854033599767098587057964976970335775919393847514",
+          "B_3tree_gg_gpmt_MeV": "386.590027546965065308375690959565384618097948482206568537017",
+          "B_3tree_gg_gpmt_E0tower_MeV": "390.422882559704278169221589068940189801190797279534479357925",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "362.547910551324921309652503732751990639287433500658081408538",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "308.131856288323000279264511321295316424750267298937629106394",
+          "B_pauli_triangle_err_MeV": "24.2518562883230002792645113212953164247502672989376291063938",
+          "M_atom_two_term_pauli_simplex_MeV": "37264.3084857834169941951844310775619128008791352059468587897",
+          "M_atom_two_term_err_MeV": "-24.2760905856798058048155689224380871991208647940667960671997",
+          "M_atom_two_term_err_ppm": "-651.032772133279047098096171314623691234109057227307760215232"
         },
         "ame_reference": {
           "B_AME_keV": "283880.000000000000000000000000000000000000000000000000000000",
@@ -691,21 +1520,62 @@
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
         "canonical_status": "asymptotic-approximation",
-        "prediction_MeV_50dps": "147.970984209778943805356829704738320890663634318137442151496",
+        "prediction_MeV_50dps": "100.500059119132177433929480499423265145735713414750317877608",
         "reference_MeV_50dps": "286.180000000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-138.209015790221056194643170295261679109336365681862557848504",
-        "err_pct": "-48.2944355965549850425058251084148714478078012725775937691326",
-        "err_ppm": "-482944.355965549850425058251084148714478078012725775937691326",
+        "err_MeV": "-185.679940880867822566070519500576734854264286585249682122392",
+        "err_pct": "-64.8822212876049418429207210498905356259222470421586701105570",
+        "err_ppm": "-648822.212876049418429207210498905356259222470421586701105570",
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": "38364.0541706078805561946431702952616791093363656818625651993",
+          "M_pred_MeV": "38411.5250956941147980320385195005767348542642865852496894732",
           "M_AME_MeV": "38225.8483545675384800000000000000000000000000000000139980773",
-          "err_MeV": "138.205816040342076194643170295261679109336365681848567121987",
-          "err_ppm": "3615.50683606549989350886303433012089001770911628808317191345",
+          "err_MeV": "185.676741126576318032038519500576734854264286585235691395876",
+          "err_ppm": "4857.36089894758699880752350602509668374672306354456814129854",
           "canonical_status": "asymptotic-approximation",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "27.6464804647238561941725888000836940407752959096490010490785",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "27.6464783543187358285123399339770065898219949738020923894056",
+          "qed_nucleon_shift_q2t_MeV": "-0.000264320326773929419038164430514477124992408660894906126059375",
+          "M_constituent_two_term_q2t_MeV": "38512.0059034442821379585229554434036879869741381204602879003",
+          "su4_partition": [
+            35,
+            34,
+            27,
+            27
+          ],
+          "W_lambda_unnormalized_q2t": "8.45141289671826110091663877063994801405336156314948031551053e+82",
+          "Z_3A_4row_hankel_q2t": "5.16604953552841040229488438315818346226343126685515406380684e+85",
+          "omega_lambda_normalized_4row_q2t": "0.00163595274079264256513153619989667864951901297346743126532252",
+          "f_vector_3tree": [
+            41,
+            117,
+            115,
+            38
+          ],
+          "f_vector_pauli_triangle": [
+            41,
+            102,
+            85,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "305.173880743946266212330583005936473055061170471727743600812",
+          "B_3tree_logD_gpmt_E0tower_MeV": "308.199533645518884265516035581910906594490793317773714562783",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "280.553055291200148437003695647933900004668798343971622173378",
+          "B_3tree_gg_gpmt_MeV": "396.790158495914000962105523225655930513753373841467539872541",
+          "B_3tree_gg_gpmt_E0tower_MeV": "400.724142922896900599345793494596880300553077824742367585940",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "373.077664568578164770833453560619873710731082850940275196534",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "314.774749286790392238274890262630579909441261920525504872808",
+          "B_pauli_triangle_err_MeV": "28.5947492867903922382748902626305799094412619205255048728081",
+          "M_atom_two_term_pauli_simplex_MeV": "38197.2311541574917457202480651807731080775328761999347830274",
+          "M_atom_two_term_err_MeV": "-28.6172004100467342797519348192268919224671238000792150498378",
+          "M_atom_two_term_err_ppm": "-748.634801891252624473054021351634121596278276942601968849870"
         },
         "ame_reference": {
           "B_AME_keV": "286180.000000000000000000000000000000000000000000000000000000",
@@ -723,21 +1593,62 @@
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
         "canonical_status": "asymptotic-approximation",
-        "prediction_MeV_50dps": "153.323130029394479803813741415368455673214910493292347005137",
+        "prediction_MeV_50dps": "104.488072109871826240948958304500787861620465616970984376533",
         "reference_MeV_50dps": "286.818000000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-133.494869970605520196186258584631544326785089506707652994863",
-        "err_pct": "-46.5434073072838943846572595111295470740278118900165446362722",
-        "err_ppm": "-465434.073072838943846572595111295470740278118900165446362722",
+        "err_MeV": "-182.329927890128173759051041695499212138379534383029015623467",
+        "err_pct": "-63.5699042215370631407551275357541061364278163793865850900109",
+        "err_ppm": "-635699.042215370631407551275357541061364278163793865850900109",
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": "39298.2679178562462201961862585846315443267850895067076603456",
+          "M_pred_MeV": "39347.1029757711987835012600416954992121383795343830290229742",
           "M_AME_MeV": "39164.7422474474901600000000000000000000000000000000143418946",
-          "err_MeV": "133.525670408756060196186258584631544326785089506693318451013",
-          "err_ppm": "3409.33356755229041945771479179937891195406898114705514900016",
+          "err_MeV": "182.360728323708623501260041695499212138379534383014681079617",
+          "err_ppm": "4656.24737605910685512363080507222626199853297457797740985727",
           "canonical_status": "asymptotic-approximation",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "27.4252991456799691539612314581040912995511349880142448852256",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "27.4252970521588130540255503893330162968759891521789135166335",
+          "qed_nucleon_shift_q2t_MeV": "-0.000375939126228176387062128222978468042502014074362349093325683",
+          "M_constituent_two_term_q2t_MeV": "39451.5714648168242814425969684879501467483188737360360879044",
+          "su4_partition": [
+            36,
+            35,
+            28,
+            27
+          ],
+          "W_lambda_unnormalized_q2t": "1.59419121282312955263255068755026536042162201977500825467278e+89",
+          "Z_3A_4row_hankel_q2t": "4.61965695605070674320664566603438157163152202503692516930059e+91",
+          "omega_lambda_normalized_4row_q2t": "0.00345088656579813635568967935995749828847765606504528728599101",
+          "f_vector_3tree": [
+            42,
+            120,
+            118,
+            39
+          ],
+          "f_vector_pauli_triangle": [
+            42,
+            104,
+            86,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "313.024876365921670205809775779213699528698847026636412467830",
+          "B_3tree_logD_gpmt_E0tower_MeV": "316.128368129804378071695887240575649050107887080751637328666",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "288.703071077645565017670336851242632753231897928572723812033",
+          "B_3tree_gg_gpmt_MeV": "406.990289444862936615835355491746476409408799200728511208066",
+          "B_3tree_gg_gpmt_E0tower_MeV": "411.025403286089523029469997920253570799915358369950255813955",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "383.600106233930709975444447530920554503039369217771342297321",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "321.410329933357085940715313346398641114996893558662253952014",
+          "B_pauli_triangle_err_MeV": "34.5923299333570859407153133463986411149968935586622539520136",
+          "M_atom_two_term_pauli_simplex_MeV": "39130.1611348834671955018816551415515056333219801773738339524",
+          "M_atom_two_term_err_MeV": "-34.5811125640229644981183448584484943666780198226405079422053",
+          "M_atom_two_term_err_ppm": "-882.965406628630177871718908431907454674095871795644946052728"
         },
         "ame_reference": {
           "B_AME_keV": "286818.000000000000000000000000000000000000000000000000000000",
@@ -755,21 +1666,62 @@
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
         "canonical_status": "asymptotic-approximation",
-        "prediction_MeV_50dps": "158.670549606617205052916608183323670323545417214912932700314",
+        "prediction_MeV_50dps": "108.470612277920649526179672374545403171179460266416925066467",
         "reference_MeV_50dps": "288.616000000000000000000000000000000000000000000000000000000",
-        "err_MeV": "-129.945450393382794947083391816676329676454582785087067299686",
-        "err_pct": "-45.0236474739386572286648667491325254582055682238985597817468",
-        "err_ppm": "-450236.474739386572286648667491325254582055682238985597817468",
+        "err_MeV": "-180.145387722079350473820327625454596828820539733583074933533",
+        "err_pct": "-62.4169788653710641384470464650104626316006526781547367206022",
+        "err_ppm": "-624169.788653710641384470464650104626316006526781547367206022",
         "excised": null,
         "composite_mass": {
-          "M_pred_MeV": "40232.4863913470046949470833918166763296764545827850870746505",
+          "M_pred_MeV": "40282.6863286709735944922703276254545968288205397335830822843",
           "M_AME_MeV": "40102.5164844147704000000000000000000000000000000000146853019",
-          "err_MeV": "129.969906932234294947083391816676329676454582785072389348513",
-          "err_ppm": "3240.94142527801493904235407455992000035624834038174521875151",
+          "err_MeV": "180.169844256203194492270327625454596828820539733568396982360",
+          "err_ppm": "4492.73163010165330842983047652216838548014670129585816856701",
           "canonical_status": "asymptotic-approximation",
-          "formula": "N·m_n + Z·m_p − B(A,Z)",
+          "formula": "N\u00b7m_n + Z\u00b7m_p \u2212 B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"
+        },
+        "two_term_qed_and_3d_simplex": {
+          "q2t_pin": "1.10997859515088599908756520359868262121410348054121621148890",
+          "alpha_em_inv_bring_schwinger_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "E_electron_bring_schwinger_q2t_MeV": "0.00996390108309532676940980389715733067845911567561669438203197",
+          "coulomb_energy_1term_MeV": "27.2110302429755863234553794057170016092181441516093930909991",
+          "coulomb_energy_bring_schwinger_q2t_MeV": "27.2110281658107324291276874248659631374660421708306976446370",
+          "qed_nucleon_shift_q2t_MeV": "-0.000487557925682423355086092015442458960011619487829792060591992",
+          "M_constituent_two_term_q2t_MeV": "40391.1370261893664249266709815324966055096636093516118879086",
+          "su4_partition": [
+            37,
+            36,
+            28,
+            28
+          ],
+          "W_lambda_unnormalized_q2t": "3.93564077751031428660643681497374036522393370077224902935893e+94",
+          "Z_3A_4row_hankel_q2t": "6.59790611034340609088979851741188398211058578289257289085190e+97",
+          "omega_lambda_normalized_4row_q2t": "0.000596498451431506212382055998375925664135945642654105338918963",
+          "f_vector_3tree": [
+            43,
+            123,
+            121,
+            40
+          ],
+          "f_vector_pauli_triangle": [
+            43,
+            106,
+            87,
+            23
+          ],
+          "B_3tree_logD_gpmt_MeV": "320.875871987897074199288968552490926002336523581545081334848",
+          "B_3tree_logD_gpmt_E0tower_MeV": "324.057202614089871877875738899240391505724980843729560094549",
+          "B_3tree_logD_gpmt_E0tower_net_MeV": "296.846174448279139448748051474374428368258938672898862449912",
+          "B_3tree_gg_gpmt_MeV": "417.190420393811872269565187757837022305064224559989482543590",
+          "B_3tree_gg_gpmt_E0tower_MeV": "421.326663649282145459594202345910261299277638915158144041970",
+          "B_3tree_gg_gpmt_E0tower_net_MeV": "394.115635483471413030466514921044298161811596744327446397333",
+          "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": "328.038998164111937493566809849989765187016466356524040030443",
+          "B_pauli_triangle_err_MeV": "39.4229981641119374935668098499897651870164663565240400304434",
+          "M_atom_two_term_pauli_simplex_MeV": "40063.0980280252544874331041716825068403226471429950878478782",
+          "M_atom_two_term_err_MeV": "-39.4184563895159125668958283174931596773528570049268374237859",
+          "M_atom_two_term_err_ppm": "-982.942215230689891363768835823471429903566383646128814308930"
         },
         "ame_reference": {
           "B_AME_keV": "288616.000000000000000000000000000000000000000000000000000000",
@@ -783,14 +1735,14 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "184d7e1287bdbc1558347f117ec102db4054cd5eb690ddda6914a50ce6df38b3",
-        "size_bytes": 65295,
-        "commitSha": "cf6bbe87beddaaafbee66caaa0d82670005b57ab",
-        "scriptCommitSha": "948eef5a8518693782416235491470ea343669cb",
-        "computedAt": "2026-08-22T09:49:32.663084+00:00"
+        "sha256": "8737b926c0d185e3536f63c00f6bafc5804e7176629f04f7c69f7ffff5f1afee",
+        "size_bytes": 76700,
+        "commitSha": "c194bfb705d570a72e3a25a0d3fe61ca2a56718a",
+        "scriptCommitSha": "c194bfb705d570a72e3a25a0d3fe61ca2a56718a",
+        "computedAt": "2026-11-15T20:42:39.154910+00:00"
       },
       {
-        "path": "alpha-cluster-recursion.witness.json",
+        "path": "alpha/alpha-cluster-recursion.witness.json",
         "sha256": "f33ab6d3406d4de4b8dd2150509358fd204d1d5783c747398275edde943716a7",
         "size_bytes": 5818,
         "commitSha": null,
@@ -798,23 +1750,31 @@
         "computedAt": "2026-08-15T23:34:27.095910+00:00"
       },
       {
-        "path": "low-isotope-binding-sweep.witness.json",
-        "sha256": "7917dee289469c3747e4cd19f634c01891534ee0236b942b4acbf07a60cf9433",
-        "size_bytes": 7924,
-        "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
-        "scriptCommitSha": null,
-        "computedAt": null
+        "path": "sweeps/low-isotope-binding-sweep.witness.json",
+        "sha256": "49c97f547d01cce14ce6e08780dcb4cbc491606ac04ac8a59652f2b7d6142f5b",
+        "size_bytes": 12002,
+        "commitSha": "601c42efc19f5f7a60d135e7292598fe8594eebf",
+        "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+        "computedAt": "2026-09-13T18:21:07.944792+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "a2c4fba672ed0b8e17154c07585f31d71180f46de5720142d9d3cc8098b8905d",
-        "size_bytes": 11542,
-        "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
-        "scriptCommitSha": "945b2edf2fb8d11552720c7e2aa3a1944797dfe4",
-        "computedAt": "2026-08-23T21:16:04.728212+00:00"
+        "sha256": "069b09fe171aac91ee99de4677b6a12d4881d72a0ac6b840a38fc74729108de7",
+        "size_bytes": 12131,
+        "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+        "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+        "computedAt": "2026-11-19T07:48:03.439167+00:00"
       },
       {
-        "path": "ame2020.json",
+        "path": "m-p-substrate-identity-50dps.witness.json",
+        "sha256": "b1ca46c2f55f3bc2718a147f34914fbaa0109d9c12157eac2777d132111d9899",
+        "size_bytes": 10332,
+        "commitSha": "2dbd0b5cde411a3d35c971f05af3cd21549e56a4",
+        "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+        "computedAt": "2026-11-18T21:28:32.729499+00:00"
+      },
+      {
+        "path": "data/ame2020.json",
         "sha256": "a74f4204c189aa18e3f857ccf86ad7d49d4fb313dfec036421b506ddaead84a9",
         "size_bytes": 2404329,
         "commitSha": null,

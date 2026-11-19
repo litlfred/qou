@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T04:13:17.972845+00:00",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T07:48:03.802959+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
   "assertions": [
     {
       "name": "binding_routes_agree",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "ame-2020-binding-energies",
   "scriptFile": "ame_2020_binding_energies.py",
-  "scriptHash": "0ca5d6dc31b7",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
+  "scriptHash": "1664387eb78a",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585",
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [

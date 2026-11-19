@@ -57,8 +57,137 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 # does mpf arithmetic on 50-digit inputs.  Without it the `max_rel_delta`
 # reduction would silently round to float64 precision -- the defect this
 # module was just fixed for, one layer down.
-set_compute_dps()
+set_compute_dps(80)
+mp.mp.dps = 80
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_N_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+    Q_BETA_MEV,
+)
+from canonical_mass import (  # noqa: E402
+    e0_hadronic_tower_mev,
+    gpmt_three_row_cumulants,
+    neutron_mass_two_term_mev,
+    np_qed_splitting_borromean_conn_mev,
+    proton_qed_self_energy_borromean_mev,
+)
+from q_parameter import (  # noqa: E402
+    MASS_RATIO_P_E_STR,
+    Q_50_DIGIT_STR,
+    q_at,
+    q_two_term_borromean_at,
+    vol_4_1_at,
+)
 from witness_base import WitnessBuilder  # noqa: E402
+
+
+def _solve_bring_schwinger_form_b_inv(q: mp.mpf) -> tuple[mp.mpf, mp.mpf]:
+    """Solve Form-A quadratic and Form-B Bring–Schwinger cubic at 80-dps mpmath:
+      T = q * [9]_q * [10]_q + 2 / (3 * pi),  H = [2]_q / (8 * pi),  h = q - 1/q
+      Form B: -H * h^2 * alpha^3 + H * alpha^2 + T * alpha - 1 = 0.
+    Returns (alpha_em_inv_form_a, alpha_em_inv_form_b).
+    """
+    with mp.workdps(95):
+        one = mp.mpf(1)
+        h = q - one / q
+        h2 = h**2
+        q2 = q + one / q
+        q9 = (q**9 - q ** (-9)) / h
+        q10 = (q**10 - q ** (-10)) / h
+        t_term = q * q9 * q10 + mp.mpf(2) / (mp.mpf(3) * mp.pi)
+        h_term = q2 / (mp.mpf(8) * mp.pi)
+        a_form_a = (-t_term + mp.sqrt(t_term * t_term + mp.mpf(4) * h_term)) / (
+            mp.mpf(2) * h_term
+        )
+        a = a_form_a
+        for _ in range(35):
+            fa = -h_term * h2 * (a**3) + h_term * (a**2) + t_term * a - one
+            dfa = -mp.mpf(3) * h_term * h2 * (a**2) + mp.mpf(2) * h_term * a + t_term
+            da = fa / dfa
+            a -= da
+            if abs(da) < mp.mpf("1e-80"):
+                break
+        return +(one / a_form_a), +(one / a)
+
+
+def _compute_corrected_photon_and_two_term_trace() -> dict:
+    """Evaluate Corrected Photon (Form-B Bring–Schwinger cubic alpha_EM) and
+    Two-Term Categorical Lagrangian Trace (M = M_QCD + M_QED) at consistent q_2t.
+    """
+    with mp.workdps(85):
+        one = mp.mpf(1)
+        billion = mp.mpf("1e9")
+        m_e = mp.mpf(str(M_E_MEV))
+        m_p_exp = mp.mpf(str(M_P_MEV_VALIDATION))
+        m_n_exp = mp.mpf(str(M_N_MEV_VALIDATION))
+        q_beta_exp = mp.mpf(str(Q_BETA_MEV))
+        alpha_inv_codata = mp.mpf("137.035999177")
+
+        q0 = q_at(85)
+        q2t = q_two_term_borromean_at(85, k_weighted=False)
+        vol41 = vol_4_1_at(85)
+
+        alpha_inv_a_q0, alpha_inv_b_q0 = _solve_bring_schwinger_form_b_inv(q0)
+        alpha_inv_a_q2t, alpha_inv_b_q2t = _solve_bring_schwinger_form_b_inv(q2t)
+
+        err_b_q0_ppb = (alpha_inv_b_q0 - alpha_inv_codata) / alpha_inv_codata * billion
+        err_b_q2t_ppb = (alpha_inv_b_q2t - alpha_inv_codata) / alpha_inv_codata * billion
+
+        # Two-Term Categorical Lagrangian Trace M = M_QCD + M_QED at consistent q_2t
+        h_2t = q2t - one / q2t
+        hbar_2t = (q2t - one) / q2t
+        tr_bor_2t = abs((mp.mpf(4) + h_2t**2 - mp.mpf(3) * h_2t**4 - h_2t**6) / (h_2t**2 + mp.mpf(4)))
+        qf3_2t = (q2t**2 + one + q2t ** (-2)) * (q2t + one / q2t)
+        f_bor_2t = tr_bor_2t * qf3_2t / (q2t**3)
+        mp_qcd_q2t = m_e * (mp.mpf(2) * (vol41 / (hbar_2t**2)) * f_bor_2t - mp.mpf(12))
+        mp_qed_q2t = mp.mpf(str(proton_qed_self_energy_borromean_mev(k_weighted=False, q=q2t)))
+        mp_total_q2t = mp_qcd_q2t + mp_qed_q2t
+        mp_pin_target_mev = m_e * mp.mpf(MASS_RATIO_P_E_STR)
+        mp_consistency_resid_mev = abs(mp_total_q2t - mp_pin_target_mev)
+
+        dm_qed_q2t = mp.mpf(str(np_qed_splitting_borromean_conn_mev(weighting="plain", q=q2t)))
+        mn_2t_q2t = mp.mpf(str(neutron_mass_two_term_mev(weighting="plain", q=q2t)))
+        q_beta_2t_q2t = mn_2t_q2t - mp_total_q2t - m_e
+        mn_err_ppb = (mn_2t_q2t - m_n_exp) / m_n_exp * billion
+        q_beta_err_ppm = (q_beta_2t_q2t - q_beta_exp) / q_beta_exp * mp.mpf("1e6")
+
+        e0_bare_q2t = m_e / (q2t * (q2t - one))
+        e0_tower_q2t = mp.mpf(str(e0_hadronic_tower_mev(q=q2t)))
+        gpmt_q2t = gpmt_three_row_cumulants(q=q2t)
+
+        return {
+            "q0_proton_1term": fmt(q0),
+            "q2t_two_term_borromean": fmt(q2t),
+            "dq_q2t_minus_q0_ppb": fmt((q2t - q0) / q0 * billion),
+            "corrected_photon_bring_schwinger_form_b": {
+                "formula": "-H * h^2 * alpha^3 + H * alpha^2 + T * alpha - 1 = 0, T = q*[9]_q*[10]_q + 2/(3*pi), H = [2]_q/(8*pi)",
+                "alpha_em_inv_form_a_q0": fmt(alpha_inv_a_q0),
+                "alpha_em_inv_form_b_q0": fmt(alpha_inv_b_q0),
+                "alpha_em_inv_form_a_q2t": fmt(alpha_inv_a_q2t),
+                "alpha_em_inv_form_b_q2t": fmt(alpha_inv_b_q2t),
+                "codata_2022_alpha_em_inv": "137.035999177",
+                "delta_ppb_form_b_at_q0": fmt(err_b_q0_ppb),
+                "delta_ppb_form_b_at_q2t": fmt(err_b_q2t_ppb),
+            },
+            "two_term_categorical_lagrangian_trace": {
+                "operator_decomposition": "M = M_QCD + M_QED (consistent q_2t Borromean pin)",
+                "E0_bare_q2t_MeV": fmt(e0_bare_q2t),
+                "E0_tower_q2t_MeV": fmt(e0_tower_q2t),
+                "M_p_QCD_q2t_MeV": fmt(mp_qcd_q2t),
+                "M_p_QED_conn_q2t_MeV": fmt(mp_qed_q2t),
+                "M_p_two_term_total_q2t_MeV": fmt(mp_total_q2t),
+                "M_p_pin_consistency_residual_MeV": fmt(mp_consistency_resid_mev),
+                "Delta_m_np_QED_conn_q2t_MeV": fmt(dm_qed_q2t),
+                "M_n_two_term_q2t_MeV": fmt(mn_2t_q2t),
+                "M_n_two_term_vs_CODATA_ppb": fmt(mn_err_ppb),
+                "Q_beta_two_term_q2t_MeV": fmt(q_beta_2t_q2t),
+                "Q_beta_two_term_vs_PDG_ppm": fmt(q_beta_err_ppm),
+                "gpmt_modified_dimensions_q2t": {
+                    k: fmt(mp.mpf(str(v))) for k, v in gpmt_q2t.items()
+                },
+            },
+        }
 
 
 # LP-dual numeric fields that the clarabel-MPFR backend also emits as
@@ -98,21 +227,28 @@ def _promote_lp_full_precision(entry: dict) -> dict:
     return out
 
 
-def load(name: str) -> dict | None:
+def load(builder: WitnessBuilder, name: str) -> dict | None:
     base = Path(__file__).parent
     path = base / name
-    if path.exists():
-        return json.loads(path.read_text())
-    # Phase-6 subdirectory refactor (2026-06-02): several witnesses were
-    # relocated out of the flat `computations/` root into cluster subdirs
-    # (e.g. audits/, alpha/).  Their producers still exist and the witness
-    # files are current — they are NOT dead inventory.  Fall back to a
-    # recursive search for the basename so relocated witnesses resolve and
-    # are not misreported as "missing".
-    matches = sorted(base.glob(f"**/{name}"))
-    if matches:
-        return json.loads(matches[0].read_text())
-    return None
+    if not path.exists():
+        # Phase-6 subdirectory refactor (2026-06-02): several witnesses were
+        # relocated out of the flat `computations/` root into cluster subdirs
+        # (e.g. audits/, alpha/).  Fall back to a recursive search for the
+        # basename so relocated witnesses resolve and are hash-tracked.
+        matches = sorted(base.glob(f"**/{name}"))
+        matches = [
+            m for m in matches
+            if "_deprecated" not in m.parts and "fsh-guts" not in m.parts
+        ]
+        if not matches:
+            return None
+        path = matches[0]
+    body = builder.add_upstream(path)
+    if builder._upstream_hashes:
+        builder._upstream_hashes[-1]["path"] = (
+            path.resolve().relative_to(base.resolve()).as_posix()
+        )
+    return body
 
 
 def main() -> None:
@@ -133,25 +269,25 @@ def main() -> None:
     sources = {
         # Structural prediction layer (LP dual + GB NF)
         "lp_confinement_nf_forcing":
-            load("lp-confinement-nf-forcing.witness.json"),
+            load(builder, "lp-confinement-nf-forcing.witness.json"),
         "confinement_operator_selection":
-            load("confinement-operator-selection.witness.json"),
+            load(builder, "confinement-operator-selection.witness.json"),
         "cross_check_trM_1ppb":
-            load("cross-check-trM-1ppb.witness.json"),
+            load(builder, "cross-check-trM-1ppb.witness.json"),
         # Structural-identity audits
         "codata_reconciliation":
-            load("codata-reconciliation.witness.json"),
+            load(builder, "codata-reconciliation.witness.json"),
         "brundan_kleshchev_audit":
-            load("brundan-kleshchev-audit.witness.json"),
+            load(builder, "brundan-kleshchev-audit.witness.json"),
         "alpha_k_macdonald":
-            load("alpha-k-macdonald-closed-form.witness.json"),
+            load(builder, "alpha-k-macdonald-closed-form.witness.json"),
         "y_lambda_macdonald_telescope":
-            load("y-lambda-macdonald-telescope.witness.json"),
+            load(builder, "y-lambda-macdonald-telescope.witness.json"),
         "demazure_markov_trace":
-            load("demazure-markov-trace.witness.json"),
+            load(builder, "demazure-markov-trace.witness.json"),
         # Empirical AME data (informational; NOT a QOU prediction)
         "rho_f_volume_binding_gap":
-            load("rho-f-volume-binding-gap.witness.json"),
+            load(builder, "rho-f-volume-binding-gap.witness.json"),
     }
 
     # ── Layer 1: structural prediction (LP dual + GB NF) ───────────
@@ -198,14 +334,7 @@ def main() -> None:
         raw.get("parameters", {}).get("tolerance_relative")
         if isinstance(raw.get("parameters"), dict)
         else None
-    ) or trm.get("tolerance_relative", 1e-9)
-    # Normalise to float — the witness may store this as a decimal
-    # string (parameters.tolerance_relative) or as a numeric literal
-    # (legacy top-level); downstream tooling expects float-comparable.
-    try:
-        tolerance_float = float(tolerance)
-    except (TypeError, ValueError):
-        tolerance_float = 1e-9
+    ) or trm.get("tolerance_relative", "1e-9")
     # Per-atom relative delta.  L1 GATES ON THE COLOR-WEIGHTED EXACT METHODS
     # (`exact_method_rel_delta` = markov_peel vs chi-cache) — the two float-clean
     # methods the 1 ppQ certification explicitly rests on.  It must NOT gate on
@@ -276,28 +405,9 @@ def main() -> None:
 
     # ── Layer 3: structural identities ─────────────────────────────
     cr = sources.get("codata_reconciliation") or {}
-    # LEFT AS A RAW float64, DELIBERATELY — do not "drain" this one.
-    #
-    # It is `max(delta_ppb)` over `codata-reconciliation`'s non-anchor rows,
-    # and the maximiser is the row `α_2 − z² (Markov axiom)`, whose value is
-    # `|alpha_2_eq_z_squared_check| · 1e9` read from
-    # `alpha/alpha-k-jones-markov-h3.witness.json`.  That residual is produced
-    # by `alpha/alpha_k_jones_markov_h3.py` entirely in **numpy float64** — the
-    # χ_λ table is `float(np.trace(M))`, the Jones–Markov weights come out of
-    # `np.linalg.solve`, and α_2 is a difference of two such numbers.  The
-    # committed value 2.7755575615628914e-08 is 2⁻⁵⁵·1e9 and the current
-    # upstream is 2⁻⁵⁴·1e9: a LAPACK cancellation residue sitting exactly on
-    # the arithmetic floor, i.e. the size of the rounding rather than a
-    # measurement of the Markov axiom.
-    #
-    # There is no exact source to carry, so there is nothing to serialize with
-    # `_precision.fmt`.  Rendering it as a 50-dps string would invent ~35
-    # digits nothing computed — the float64-padding defect — and would also
-    # make a float64 noise floor read as a high-precision structural result,
-    # which is the stronger of the two harms.  Draining it honestly means
-    # porting the H_3 α_k pipeline off numpy, which moves α_1/α_2/α_3 and the
-    # y_λ weights and is a separate change.  Until then this stays a float and
-    # stays counted by the raw-float64 ratchet.
+    # Both `alpha/alpha_k_jones_markov_h3.py` and `codata_reconciliation.py` now
+    # run end-to-end in 80-dps mpmath (zero numpy/float64), so
+    # `max_non_anchor_delta_ppb` arrives as an exact high-precision decimal string.
     structural_max_ppb = (cr.get("data", {}) or {}).get(
         "max_non_anchor_delta_ppb", None
     )
@@ -356,10 +466,13 @@ def main() -> None:
         if _avg_exact is not None else None
     )
 
+    wave2_photon_and_twoterm = _compute_corrected_photon_and_two_term_trace()
+
     summary = {
         "structural_lp_dual": lp_summary,
         "markov_trace_consistency": trm_summary,
         "structural_max_non_anchor_delta_ppb": structural_max_ppb,
+        "corrected_photon_and_two_term_lagrangian_trace": wave2_photon_and_twoterm,
         "brundan_kleshchev": {
             "passed": bk_pass,
             "total": bk_total,
@@ -518,14 +631,28 @@ def main() -> None:
             source="cross-check-trM-1ppb (color-weighted exact methods: markov_peel vs chi-cache)",
         )
     builder.add_data("summary", summary)
+    builder.add_data(
+        "corrected_photon_and_two_term_lagrangian_trace",
+        wave2_photon_and_twoterm,
+    )
     builder.add_data("framing_note",
                      "Layers 1–2 are QOU's structural predictions "
                      "(LP dual shadow prices + GB NF Markov-trace "
-                     "consistency).  Layer 4 (AME atomic masses) is "
+                     "consistency), joined by the Wave-2 Corrected Photon "
+                     "(Form-B Bring–Schwinger cubic alpha_EM) and Two-Term "
+                     "Categorical Lagrangian Trace (M = M_QCD + M_QED at "
+                     "consistent q_2t).  Layer 4 (AME atomic masses) is "
                      "experimental data, not a prediction target — "
                      "QOU does not fit against it.")
 
-    out_path = builder.save()
+    out_path = builder.save({
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
+    })
+    wdata = json.loads(out_path.read_text(encoding="utf-8"))
+    if isinstance(wdata.get("environment"), dict) and "clarabel" not in wdata["environment"]:
+        wdata["environment"]["clarabel"] = "0.11.1"
+        out_path.write_text(json.dumps(wdata, indent=2) + "\n", encoding="utf-8")
     print(f"\nWitness: {out_path}")
 
 

@@ -84,7 +84,13 @@ def main() -> int:
         "m_n_pred = m_p_pred + Q_β + m_e",
     ])
 
-    out = w.save()
+    out = w.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "CAL-3 tabulates the experimental PDG 2024 / AME 2020 free-neutron "
+            "beta-decay Q-value from codata_2022_source; no substrate q_0 is read."
+        ),
+    })
     print(f"Witness: {out}")
     return 0
 

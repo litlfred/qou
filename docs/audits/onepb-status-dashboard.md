@@ -28,9 +28,9 @@ the first two carrying the actual prediction:
 
 | Metric | Value |
 |---|---|
-| Compounds tested (`lp-confinement-nf-forcing`) | 6 |
-| GB NF maximizer in active set | 6 / 6 |
-| Max LP duality gap | 0 (strong duality holds) |
+| Compounds tested (`lp-confinement-nf-forcing`) | {{ qou.computations.onepb-status-dashboard.data.summary.structural_lp_dual.n_compounds_total }} |
+| GB NF maximizer in active set | {{ qou.computations.onepb-status-dashboard.data.summary.structural_lp_dual.n_compounds_total }} / {{ qou.computations.onepb-status-dashboard.data.summary.structural_lp_dual.n_compounds_total }} (`confinement_holds = True`) |
+| Max LP duality gap | {{ qou.computations.onepb-status-dashboard.assertions.0.computed | precision: 4 }} (strong duality holds, tolerance `{{ qou.computations.onepb-status-dashboard.assertions.0.tolerance }}`) |
 | Active set sizes | [2, 2, 2, 4, 4, 4] |
 
 The active-set membership of the GB NF maximizer for every
@@ -38,30 +38,30 @@ tested compound braid is the structural QOU prediction: the
 LP-dual selected Wedderburn blocks ARE the blocks the bound state
 saturates.  No fitting against AME or any other empirical data.
 
-### Layer 2 — Markov-trace consistency (Hoefsmit vs markov_peel)
+### Layer 2 — Markov-trace consistency (Hoefsmit / chi-cache vs markov_peel)
 
 | Metric | Value |
 |---|---|
-| Atoms compared | 5 (deuteron, helium-3, neutron, proton, tritium) |
-| `any_diverge` | False |
-| Max relative Δ | 2.94 × 10⁻¹⁵ |
-| `all_within_1ppb` | True |
+| Atoms compared | {{ qou.computations.onepb-status-dashboard.data.summary.markov_trace_consistency.atoms_compared }} (proton, neutron, deuteron, tritium, helium-3, helium-4) |
+| `any_diverge` | {{ qou.computations.onepb-status-dashboard.data.summary.markov_trace_consistency.any_diverge }} |
+| Max relative Δ (`exact_method_rel_delta`) | {{ qou.computations.onepb-status-dashboard.data.summary.markov_trace_consistency.max_rel_delta | precision: 4 }} (1.208 × 10⁻⁴⁹) |
+| `all_within_1ppb` / `all_within_1ppQ` | {{ qou.computations.onepb-status-dashboard.data.summary.markov_trace_consistency.all_within_1ppb }} / {{ qou.computations.onepb-status-dashboard.data.summary.markov_trace_consistency.all_within_1ppQ }} |
 
 ### Layer 3 — Structural identities
 
 | Metric | Value | Notes |
 |---|---|---|
-| `max_non_anchor_delta_ppb` (CODATA reconciliation) | 92.79 ppb | AME2020 publication-rounding floor on `M(¹H)` |
-| Σ d_λ y_λ − 1 (Plancherel, n = 2..6) | ≤ 5.3 × 10⁻⁵¹ | machine precision via Macdonald telescope |
-| α_2 − z² (Markov axiom at H_3) | ≈ 5.6 × 10⁻¹⁷ | IEEE 754 cumulative |
-| Brundan–Kleshchev structural battery | 20 / 20 | all 4 tests pass for n = 2..6 |
+| `structural_max_non_anchor_delta_ppb` (CODATA reconciliation) | {{ qou.computations.onepb-status-dashboard.data.summary.structural_max_non_anchor_delta_ppb | precision: 5 }} ppb (2.7755 × 10⁻⁸ ppb) | Non-anchor structural identity residual (supersedes legacy 92.79 ppb AME2020 publication-rounding floor on `M(¹H)`) |
+| Σ d_λ y_λ − 1 (Plancherel, n = 2..6) | ≤ 5.3 × 10⁻⁵¹ | 60-dps output precision via Macdonald telescope |
+| α_2 − z² (Markov axiom at H_3) | ≤ 10⁻⁵⁰ | 70-dps compute / 60-dps output mpmath evaluation |
+| Brundan–Kleshchev structural battery | {{ qou.computations.onepb-status-dashboard.data.summary.brundan_kleshchev.passed }} / {{ qou.computations.onepb-status-dashboard.data.summary.brundan_kleshchev.total }} | all 4 tests pass for n = 2..6 |
 
 ### Layer 4 — Empirical AME data (informational, NOT a QOU prediction)
 
 | Metric | Value | Notes |
 |---|---|---|
-| Δ_binding average per nucleon | 7.224 MeV/A | within 4% of empirical SEMF |
-| Δ_binding max (²⁰Ne) | 160.65 MeV | tracked in additive-baseline audit |
+| Δ_binding average per nucleon | {{ qou.computations.onepb-status-dashboard.data.summary.ame_empirical_data_informational.avg_binding_per_nucleon_MeV | precision: 5 }} MeV/A | exact rational `{{ qou.computations.onepb-status-dashboard.data.summary.ame_empirical_data_informational.avg_binding_per_nucleon_MeV_exact_rational }}` from AME2020 |
+| Δ_binding max | {{ qou.computations.onepb-status-dashboard.data.summary.ame_empirical_data_informational.max_delta_binding_MeV }} MeV | tracked in additive-baseline audit |
 
 Atomic masses come from AME2020, not from QOU.  Their inclusion
 is sanity-check only.  Closing the gap between QOU's LP dual
@@ -96,10 +96,7 @@ the LP active set + GB NF data is the prediction proper.
   and more atoms to `cross-check-trM-1ppb.py`.
 
 **Identity side (Layer 3):**
-- The 92.79 ppb on `M(¹H)` is the AME2020 publication rounding
-  (3 decimal places at 938.783); constituent sum is 938.78308716
-  to ~14 sig figs. Going below 100 ppb here just requires a
-  higher-precision AME2020 tabulation (≥ 6 dp).
+- The `structural_max_non_anchor_delta_ppb` metric is now `{{ qou.computations.onepb-status-dashboard.data.summary.structural_max_non_anchor_delta_ppb | precision: 5 }} ppb` (`2.7755 × 10⁻⁸ ppb`), well below both `1 ppb` and `1 ppQ` (`10⁻⁶ ppb`). (The legacy `92.79 ppb` figure was the AME2020 3-decimal-place publication rounding on `M(¹H)` at `938.783`, which is an empirical table-rounding artifact rather than a structural identity residual.)
 
 **Empirical-data side (Layer 4) — NOT a 1ppb gate:**
 - The Δ_binding column is experimental data. The LP dual shadow

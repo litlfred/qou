@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-08T07:43:39.837018+00:00",
-  "commitSha": "75ed7daaaecb4c5206bff58a97790c4bb5b55706",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T07:58:05.147066+00:00",
+  "commitSha": "4a0920fecd36f912cc5eb177c47228829a97e3c1",
   "assertions": [
     {
       "name": "lp_max_duality_gap",
@@ -14,7 +14,7 @@
     },
     {
       "name": "markov_trace_max_rel_delta",
-      "computed": "1.20819237374015567898223585856413088285795870629260000000000e-49",
+      "computed": "1.82100138921154217387589229711099729665740618849990000000000e-49",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-15",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 60,
   "computation": "onepb-status-dashboard",
   "scriptFile": "onepb_status_dashboard.py",
-  "scriptHash": "98a8503e8757",
-  "scriptCommitSha": "4772365d6c4ca9fb2f666a6584c51e6f9c8ee195",
+  "scriptHash": "c4e3759ee5ae",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585",
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -49,7 +50,7 @@
     ],
     "reproduce": "python3 -u computations/onepb_status_dashboard.py"
   },
-  "description": "Aggregated 1ppb-readiness dashboard.  Single source of truth for the headline metric `max_non_anchor_delta_ppb` across the QOU primary observables (CODATA reconciliation), structural audits (Brundan–Kleshchev, Macdonald-telescope Plancherel completeness), and the open atomic-binding derivation gap (rho_f_volume_binding_gap, sourcing AME binding directly).",
+  "description": "Aggregated 1ppb-readiness dashboard.  Single source of truth for the headline metric `max_non_anchor_delta_ppb` across the QOU primary observables (CODATA reconciliation), structural audits (Brundan\u2013Kleshchev, Macdonald-telescope Plancherel completeness), and the open atomic-binding derivation gap (rho_f_volume_binding_gap, sourcing AME binding directly).",
   "auditOnly": "docs/audits/onepb-status-dashboard.md",
   "data": {
     "summary": {
@@ -365,16 +366,59 @@
       "markov_trace_consistency": {
         "atoms_compared": 6,
         "any_diverge": false,
-        "tolerance_relative": "1e-09",
-        "tolerance_relative_raw": "1e-09",
-        "max_rel_delta": "1.2081923737401556789822358585641308828579587062926e-49",
+        "tolerance_relative": "1e-9",
+        "tolerance_relative_raw": "1e-9",
+        "max_rel_delta": "1.8210013892115421738758922971109972966574061884999e-49",
         "max_rel_delta_source_key": "exact_method_rel_delta",
         "n_atoms_with_rel_delta": 6,
         "all_within_1ppb": true,
         "all_within_1ppQ": true,
         "l1_target_note": "L1 target is 1 ppQ (1e-15) since 2026-05-26; the *_1ppb field names predate that upgrade and are kept for compatibility. Quote all_within_1ppQ for L1 status."
       },
-      "structural_max_non_anchor_delta_ppb": 2.7755575615628914e-08,
+      "structural_max_non_anchor_delta_ppb": "9.05567907882671236750911929088779178068253119813913818958261e-63",
+      "corrected_photon_and_two_term_lagrangian_trace": {
+        "q0_proton_1term": "1.10997858275138080759166909561076887987449912187357873607281",
+        "q2t_two_term_borromean": "1.10997859515088599908756520359868262121410348054121621148890",
+        "dq_q2t_minus_q0_ppb": "11.1709409390227905169310114569608029362965624416383144319418",
+        "corrected_photon_bring_schwinger_form_b": {
+          "formula": "-H * h^2 * alpha^3 + H * alpha^2 + T * alpha - 1 = 0, T = q*[9]_q*[10]_q + 2/(3*pi), H = [2]_q/(8*pi)",
+          "alpha_em_inv_form_a_q0": "137.035999313169007502203657864918198371507442685533058031976",
+          "alpha_em_inv_form_b_q0": "137.035999126950912420172700496420006739955675505718045793752",
+          "alpha_em_inv_form_a_q2t": "137.036009773867504138165559519503724723872938861353588609583",
+          "alpha_em_inv_form_b_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+          "codata_2022_alpha_em_inv": "137.035999177",
+          "delta_ppb_form_b_at_q0": "-0.365225837593100819074564109857341041090469883999131563857889",
+          "delta_ppb_form_b_at_q2t": "75.9701790753879162708688881067151248121974773719236763275760"
+        },
+        "two_term_categorical_lagrangian_trace": {
+          "operator_decomposition": "M = M_QCD + M_QED (consistent q_2t Borromean pin)",
+          "E0_bare_q2t_MeV": "4.18598084458586196691657518614936431268665308922924624142705",
+          "E0_tower_q2t_MeV": "4.22748284029228794563903096289594012068427417858242586463845",
+          "M_p_QCD_q2t_MeV": "938.271869349935174672733412859864732517802671035160292808170",
+          "M_p_QED_conn_q2t_MeV": "0.000220077389072691206587140135267482197328964839707191830120350",
+          "M_p_two_term_total_q2t_MeV": "938.272089427324247363940000000000000000000000000000000000000",
+          "M_p_pin_consistency_residual_MeV": "1.07069197860935001497290205208211130547054295289680154805477e-82",
+          "Delta_m_np_QED_conn_q2t_MeV": "-0.000331696188526938174611103927731473114838570253174634673875404",
+          "M_n_two_term_q2t_MeV": "939.565561372542143484074013044546458761344735615575798572887",
+          "M_n_two_term_vs_CODATA_ppb": "148.401100005985682190636946822633880991177651765523940067643",
+          "Q_beta_two_term_q2t_MeV": "0.782472994527896120134013044546458761344735615575798572886695",
+          "Q_beta_two_term_vs_PDG_ppm": "178.420768066290475838229312562225029780609236410564246124713",
+          "gpmt_modified_dimensions_q2t": {
+            "dMod111": "-0.163383227362328294331110834129166942296606375738138700794189",
+            "dMod211": "-0.183153352054687993203590464721539131080328222780466108450522",
+            "dMod1111": "0.0197701246923596988724796305923721887837218470423274076563325",
+            "mu2GPMT": "0.0",
+            "mu3GPMT": "0.163383227362328294331110834129166942296606375738138700794189",
+            "mu4GPMT_uniform": "-0.326766454724656588662221668258333884593212751476277401588379",
+            "BextGPMT_2": "0.0",
+            "BextGPMT_3": "0.163383227362328294331110834129166942296606375738138700794189",
+            "BextGPMT_4_uniform": "0.980299364173969765986665004775001653779638254428832204765136",
+            "sRow3GPMT_H4_4": "0.569230180856423678483251024756989582024706515383725733007898",
+            "mu4GPMT_H4": "-0.0843027285928894988411923117596781871617189875688290701688593",
+            "BextGPMT_4_H4": "1.22276309030573685580769436127365735121113201833628053618466"
+          }
+        }
+      },
       "brundan_kleshchev": {
         "passed": 20,
         "total": 20,
@@ -390,7 +434,7 @@
         "max_delta_binding_MeV": "39.2450807",
         "avg_binding_per_nucleon_MeV": "4.25586404857142857142857142857142857142857142857142857142857",
         "avg_binding_per_nucleon_MeV_exact_rational": "1489552417/350000000",
-        "precision_note": "max_delta_binding_MeV is one of the AME2020 table's own decimals, emitted verbatim — it carries exactly the digits AME quotes and is not padded.  avg_binding_per_nucleon_MeV is the exact rational above rendered at output_dps; every digit is determined by the exact AME decimals and the integer A, none is invented.",
+        "precision_note": "max_delta_binding_MeV is one of the AME2020 table's own decimals, emitted verbatim \u2014 it carries exactly the digits AME quotes and is not padded.  avg_binding_per_nucleon_MeV is the exact rational above rendered at output_dps; every digit is determined by the exact AME decimals and the integer A, none is invented.",
         "note": "Empirical AME column for sanity-check only.  QOU predictions come from the LP dual + GB NF layers above, not from fitting against this column."
       },
       "witness_inventory": [
@@ -413,8 +457,125 @@
         "note": "Non-gating inventory bucket.  Does NOT affect allPassed, which reflects the L1 compute assertions only.  A missing structural-audit witness is an inventory issue, not an L1 precision failure."
       }
     },
-    "framing_note": "Layers 1–2 are QOU's structural predictions (LP dual shadow prices + GB NF Markov-trace consistency).  Layer 4 (AME atomic masses) is experimental data, not a prediction target — QOU does not fit against it."
+    "corrected_photon_and_two_term_lagrangian_trace": {
+      "q0_proton_1term": "1.10997858275138080759166909561076887987449912187357873607281",
+      "q2t_two_term_borromean": "1.10997859515088599908756520359868262121410348054121621148890",
+      "dq_q2t_minus_q0_ppb": "11.1709409390227905169310114569608029362965624416383144319418",
+      "corrected_photon_bring_schwinger_form_b": {
+        "formula": "-H * h^2 * alpha^3 + H * alpha^2 + T * alpha - 1 = 0, T = q*[9]_q*[10]_q + 2/(3*pi), H = [2]_q/(8*pi)",
+        "alpha_em_inv_form_a_q0": "137.035999313169007502203657864918198371507442685533058031976",
+        "alpha_em_inv_form_b_q0": "137.035999126950912420172700496420006739955675505718045793752",
+        "alpha_em_inv_form_a_q2t": "137.036009773867504138165559519503724723872938861353588609583",
+        "alpha_em_inv_form_b_q2t": "137.036009587649397251401115050533859666718931937745788700409",
+        "codata_2022_alpha_em_inv": "137.035999177",
+        "delta_ppb_form_b_at_q0": "-0.365225837593100819074564109857341041090469883999131563857889",
+        "delta_ppb_form_b_at_q2t": "75.9701790753879162708688881067151248121974773719236763275760"
+      },
+      "two_term_categorical_lagrangian_trace": {
+        "operator_decomposition": "M = M_QCD + M_QED (consistent q_2t Borromean pin)",
+        "E0_bare_q2t_MeV": "4.18598084458586196691657518614936431268665308922924624142705",
+        "E0_tower_q2t_MeV": "4.22748284029228794563903096289594012068427417858242586463845",
+        "M_p_QCD_q2t_MeV": "938.271869349935174672733412859864732517802671035160292808170",
+        "M_p_QED_conn_q2t_MeV": "0.000220077389072691206587140135267482197328964839707191830120350",
+        "M_p_two_term_total_q2t_MeV": "938.272089427324247363940000000000000000000000000000000000000",
+        "M_p_pin_consistency_residual_MeV": "1.07069197860935001497290205208211130547054295289680154805477e-82",
+        "Delta_m_np_QED_conn_q2t_MeV": "-0.000331696188526938174611103927731473114838570253174634673875404",
+        "M_n_two_term_q2t_MeV": "939.565561372542143484074013044546458761344735615575798572887",
+        "M_n_two_term_vs_CODATA_ppb": "148.401100005985682190636946822633880991177651765523940067643",
+        "Q_beta_two_term_q2t_MeV": "0.782472994527896120134013044546458761344735615575798572886695",
+        "Q_beta_two_term_vs_PDG_ppm": "178.420768066290475838229312562225029780609236410564246124713",
+        "gpmt_modified_dimensions_q2t": {
+          "dMod111": "-0.163383227362328294331110834129166942296606375738138700794189",
+          "dMod211": "-0.183153352054687993203590464721539131080328222780466108450522",
+          "dMod1111": "0.0197701246923596988724796305923721887837218470423274076563325",
+          "mu2GPMT": "0.0",
+          "mu3GPMT": "0.163383227362328294331110834129166942296606375738138700794189",
+          "mu4GPMT_uniform": "-0.326766454724656588662221668258333884593212751476277401588379",
+          "BextGPMT_2": "0.0",
+          "BextGPMT_3": "0.163383227362328294331110834129166942296606375738138700794189",
+          "BextGPMT_4_uniform": "0.980299364173969765986665004775001653779638254428832204765136",
+          "sRow3GPMT_H4_4": "0.569230180856423678483251024756989582024706515383725733007898",
+          "mu4GPMT_H4": "-0.0843027285928894988411923117596781871617189875688290701688593",
+          "BextGPMT_4_H4": "1.22276309030573685580769436127365735121113201833628053618466"
+        }
+      }
+    },
+    "framing_note": "Layers 1\u20132 are QOU's structural predictions (LP dual shadow prices + GB NF Markov-trace consistency), joined by the Wave-2 Corrected Photon (Form-B Bring\u2013Schwinger cubic alpha_EM) and Two-Term Categorical Lagrangian Trace (M = M_QCD + M_QED at consistent q_2t).  Layer 4 (AME atomic masses) is experimental data, not a prediction target \u2014 QOU does not fit against it.",
+    "upstream_witness_hashes": [
+      {
+        "path": "lp-confinement-nf-forcing.witness.json",
+        "sha256": "48ff480e74a8593911e4319b75713ef29655b36ba156bd7f8357e7771d6a794e",
+        "size_bytes": 31445,
+        "commitSha": "550985daa5aeaf44c63fa89d10084789b08bd22f",
+        "scriptCommitSha": "f48b0dcc53b81b3be6f61cde1f7d2af66cf03e4e",
+        "computedAt": "2026-08-24T05:02:37.276466+00:00"
+      },
+      {
+        "path": "confinement-operator-selection.witness.json",
+        "sha256": "3eb5f5e19f864ec0355d2be8a9b816c49369d7786006354e32c00c77fe22cf69",
+        "size_bytes": 10142,
+        "commitSha": "a729482cb284bb439f697cd1efc4eef26bf9cd6f",
+        "scriptCommitSha": "a729482cb284bb439f697cd1efc4eef26bf9cd6f",
+        "computedAt": "2026-11-15T22:42:09.592270+00:00"
+      },
+      {
+        "path": "cross-check-trM-1ppb.witness.json",
+        "sha256": "351b993967c6aa987ce1b4897d452339e065553b305d3bd4456e1c40bd68d09f",
+        "size_bytes": 13932,
+        "commitSha": "efbce1c0e14b4e586b750de9efc6b3567095267d",
+        "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+        "computedAt": "2026-10-13T18:34:11.581772+00:00"
+      },
+      {
+        "path": "codata-reconciliation.witness.json",
+        "sha256": "e2daee3491445d8d47d4e0ab75e40a210272a26ca45234b414c35222d87ce034",
+        "size_bytes": 12092,
+        "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+        "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+        "computedAt": "2026-11-19T07:48:04.182731+00:00"
+      },
+      {
+        "path": "audits/brundan-kleshchev-audit.witness.json",
+        "sha256": "d8485e62282772e523260196416c7a0f267eda39eb360d27c8257c4031055c08",
+        "size_bytes": 6459,
+        "commitSha": "945cfb2cf3d0fb3af8db9e571fb3b416d6450c74",
+        "scriptCommitSha": "d4c8cceb49842afbb17884447af09db6b839bdad",
+        "computedAt": "2026-08-30T06:34:14.889006+00:00"
+      },
+      {
+        "path": "alpha/alpha-k-macdonald-closed-form.witness.json",
+        "sha256": "8d8c5590d68771e7aa06d423553ed06e8fad9d2b20d4f19df6f563ef5352883b",
+        "size_bytes": 11169,
+        "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+        "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+        "computedAt": "2026-08-23T08:49:01.828050+00:00"
+      },
+      {
+        "path": "y-lambda-macdonald-telescope.witness.json",
+        "sha256": "d3468b973e3220ca6e0c969426c621fb95ac62cbc769be5c35701770dd224c19",
+        "size_bytes": 96707,
+        "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+        "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+        "computedAt": "2026-08-23T10:00:26.353469+00:00"
+      },
+      {
+        "path": "demazure-markov-trace.witness.json",
+        "sha256": "39f3fb578382380fb6545611d64686754d2040d11ff19bdd352b1cf09422ba5d",
+        "size_bytes": 15925,
+        "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+        "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+        "computedAt": "2026-11-19T07:49:50.867605+00:00"
+      },
+      {
+        "path": "rho-f-volume-binding-gap.witness.json",
+        "sha256": "6560bb036352dfd1b8f04ac84101da8638da9fe7357eeb2bf33f6fc61dec3f07",
+        "size_bytes": 6680,
+        "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+        "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+        "computedAt": "2026-11-19T07:48:05.656482+00:00"
+      }
+    ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

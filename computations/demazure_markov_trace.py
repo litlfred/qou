@@ -366,9 +366,15 @@ def main():
     )
     builder.add_data("tables_by_n", tables)
     builder.add_data("precision", "symbolic_q")
-    builder.add_data("truncation_eps", 0.0)
+    builder.add_data("truncation_eps", 0)
 
-    out_path = builder.save()
+    out_path = builder.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Purely symbolic Demazure character and Macdonald hook-content "
+            "rational identities in formal indeterminate q; no numerical q_0 pin is evaluated."
+        ),
+    })
     print(f"\nWitness: {out_path}")
 
 

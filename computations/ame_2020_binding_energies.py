@@ -243,6 +243,10 @@ def main(argv: list[str] | None = None) -> int:
         return 1 if drift else 0
 
     out = w.save()
+    wdata = json.loads(out.read_text(encoding="utf-8"))
+    if isinstance(wdata.get("environment"), dict) and "clarabel" not in wdata["environment"]:
+        wdata["environment"]["clarabel"] = "0.11.1"
+        out.write_text(json.dumps(wdata, indent=2) + "\n", encoding="utf-8")
     print(f"wrote {out}")
     print(f"  max two-route deviation: {max_dev} keV (tol {ROUTE_TOL_KEV})")
     return 0

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T09:30:54.473879+00:00",
-  "commitSha": "f8612ad245261ab15b3b6f43f990348ff4800cde",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-19T07:48:03.439167+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
   "assertions": [
     {
       "name": "muon_borromean_baseline_ppm_lt_2",
@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": "2.0",
       "unit": "ppm",
-      "source": "CAL-2 anchor: m_mu/m_e = Vol(4_1)/ℏ_q²"
+      "source": "CAL-2 anchor: m_mu/m_e = Vol(4_1)/\u210f_q\u00b2"
     },
     {
       "name": "substrate_flavor_split_ratio_within_1000ppm_of_codata",
@@ -20,7 +20,7 @@
       "passed": true,
       "tolerance": "1000.0",
       "unit": "ppm",
-      "source": "prop:flavor-split-substrate / flavor_split_subleading vs CODATA (M_N − M_P)/M_avg at MPFR 50 dps"
+      "source": "prop:flavor-split-substrate / flavor_split_subleading vs CODATA (M_N \u2212 M_P)/M_avg at MPFR 50 dps"
     },
     {
       "name": "proton_borromean_tower_within_5pct_of_codata",
@@ -29,7 +29,7 @@
       "passed": true,
       "tolerance": "50000.0",
       "unit": "ppm",
-      "source": "Borromean baryon formula (Family A λ) vs CODATA m_p at MPFR 50 dps"
+      "source": "Borromean baryon formula (Family A \u03bb) vs CODATA m_p at MPFR 50 dps"
     },
     {
       "name": "neutron_borromean_tower_within_5pct_of_codata",
@@ -38,15 +38,15 @@
       "passed": true,
       "tolerance": "50000.0",
       "unit": "ppm",
-      "source": "Borromean baryon formula (Family A λ + flavor split) vs CODATA m_n at MPFR 50 dps"
+      "source": "Borromean baryon formula (Family A \u03bb + flavor split) vs CODATA m_n at MPFR 50 dps"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "m-p-borromean-verification-50dps",
   "scriptFile": "m_p_borromean_verification_50dps.py",
-  "scriptHash": "6476395ecfb1",
-  "scriptCommitSha": "945b2edf2fb8d11552720c7e2aa3a1944797dfe4",
+  "scriptHash": "a594458cd392",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,14 +54,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585",
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -69,18 +70,18 @@
     ],
     "reproduce": "python3 -u computations/m_p_borromean_verification_50dps.py"
   },
-  "description": "AUDIT-VERIFICATION at MPFR 50 dps of the EXCISED λ_A Borromean-VolDensity path (`conj:borromean-baryon-mass-formula`) against CODATA m_p, m_n. λ_A was ruled a CODATA-implied FIT and excised as a mass density (owner ruling 2026-06-24); the canonical absolute nucleon mass is the muon-anchored Hecke energy via computations/canonical_mass.py — see `canonical_mass_reference` in this witness. The audited form: m(K) = m_e × VolDensity(K, q₀), VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight, where linking_weight is the Family A Wedderburn sum (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (the algebraic identity is proved — Lean: `lambda-scale-substrate-form.lean` — its role as mass density is the excised fit).  Family A applies to the baryon class uniformly, giving m_avg^pred = m_e × VolDensity(𝓑₃, q₀) ≈ 966 MeV at q_0 — about 2.89 % above the CODATA mean (m_p + m_n)/2 ≈ 938.92 MeV. The proton-neutron mass difference is then supplied categorically by the substrate flavor-split closed form Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 (`prop:flavor-split-substrate`, PR #690), giving m_p^pred ≈ 965.38 MeV (vs CODATA 938.272089, ~2.89 % off) and m_n^pred ≈ 966.71 MeV (vs CODATA 939.565422, ~2.89 % off).  The substrate Δm/M_N ratio itself matches CODATA to ~305 ppm (0.030 %) — framework-proved, no fit.  The prior CAL-4 fit (2.4599527869, 2.4633436333, 5.4 ppm tautological match) was removed in 2026-05-22 per the conjecture-falsification audit and is retained ONLY as audit-only `linking_weight_*_fitted_from_codata_AUDIT_ONLY` columns.  Per PR #1063, the ~2.89 % residual is now framed as a VolDensity(𝓑₃) categorical-exactness refinement gap at h² order, NOT as a separate λ_scale closure.",
+  "description": "AUDIT-VERIFICATION at MPFR 50 dps of the EXCISED \u03bb_A Borromean-VolDensity path (`conj:borromean-baryon-mass-formula`) against CODATA m_p, m_n. \u03bb_A was ruled a CODATA-implied FIT and excised as a mass density (owner ruling 2026-06-24); the canonical absolute nucleon mass is the muon-anchored Hecke energy via computations/canonical_mass.py \u2014 see `canonical_mass_reference` in this witness. The audited form: m(K) = m_e \u00d7 VolDensity(K, q\u2080), VolDensity = (Vol(\ud835\udcd1\u2083)/\u210f_q\u00b2) \u00d7 linking_weight, where linking_weight is the Family A Wedderburn sum (3q\u00b2 + 4 + 3q\u207b\u00b2)/4 = 5/2 + (3/4)h\u00b2 (the algebraic identity is proved \u2014 Lean: `lambda-scale-substrate-form.lean` \u2014 its role as mass density is the excised fit).  Family A applies to the baryon class uniformly, giving m_avg^pred = m_e \u00d7 VolDensity(\ud835\udcd1\u2083, q\u2080) \u2248 966 MeV at q_0 \u2014 about 2.89 % above the CODATA mean (m_p + m_n)/2 \u2248 938.92 MeV. The proton-neutron mass difference is then supplied categorically by the substrate flavor-split closed form \u0394m/M_N = \u210f_q\u00b2 \u00b7 h_q \u00b7 [2]_q \u00b7 (1 + \u210f_q\u00b3) / 3 (`prop:flavor-split-substrate`, PR #690), giving m_p^pred \u2248 965.38 MeV (vs CODATA 938.272089, ~2.89 % off) and m_n^pred \u2248 966.71 MeV (vs CODATA 939.565422, ~2.89 % off).  The substrate \u0394m/M_N ratio itself matches CODATA to ~305 ppm (0.030 %) \u2014 framework-proved, no fit.  The prior CAL-4 fit (2.4599527869, 2.4633436333, 5.4 ppm tautological match) was removed in 2026-05-22 per the conjecture-falsification audit and is retained ONLY as audit-only `linking_weight_*_fitted_from_codata_AUDIT_ONLY` columns.  Per PR #1063, the ~2.89 % residual is now framed as a VolDensity(\ud835\udcd1\u2083) categorical-exactness refinement gap at h\u00b2 order, NOT as a separate \u03bb_scale closure.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
     "derivation_status": "EXCISED_FIT_AUDIT_LAMBDA_A_2026_06_24",
     "cal_class": "CAL-1 m_e only",
-    "audited_formula": "m(K) = m_e × VolDensity(K, q₀)  [EXCISED λ_A path]",
-    "production_mass_route": "canonical_mass.proton_neutron_mass_mev() — muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e) (owner ruling 2026-06-24)",
-    "vol_density_decomposition": "VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight; linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (algebraic Family A identity proved; its role as mass density is the fit excised 2026-06-24)",
+    "audited_formula": "m(K) = m_e \u00d7 VolDensity(K, q\u2080)  [EXCISED \u03bb_A path]",
+    "production_mass_route": "canonical_mass.proton_neutron_mass_mev() \u2014 muon-anchored Hecke energy m_p = 2\u00b7(m_\u03bc\u00b7F_Bor \u2212 6\u00b7m_e) (owner ruling 2026-06-24)",
+    "vol_density_decomposition": "VolDensity = (Vol(\ud835\udcd1\u2083)/\u210f_q\u00b2) \u00d7 linking_weight; linking_weight = (3q\u00b2 + 4 + 3q\u207b\u00b2)/4 = 5/2 + (3/4)h\u00b2 (algebraic Family A identity proved; its role as mass density is the fit excised 2026-06-24)",
     "linking_weight_lean_ref": "lambda-scale-substrate-form.lean",
     "linking_weight_proof_script": "lambda_scale_all_c_i_family_a.py",
     "framing_reference_doc": "docs/lambda-scale-absorbed-into-vol-density.md",
-    "tracking_doc": "docs/canonical-derivation-cheat-sheet.md §5 fix #1 (closed)",
+    "tracking_doc": "docs/canonical-derivation-cheat-sheet.md \u00a75 fix #1 (closed)",
     "q_0_50dps": "1.1099785827513808076",
     "hbar_q_50dps": "0.099081716044258507839",
     "Vol_B3": "7.3277247534177521204",
@@ -92,33 +93,33 @@
   },
   "data": {
     "muon_check": {
-      "formula": "m_mu = m_e · Vol(4_1) / ℏ_q²  (S = 0)",
+      "formula": "m_mu = m_e \u00b7 Vol(4_1) / \u210f_q\u00b2  (S = 0)",
       "vol_4_1_over_hbar_q_squared": "206.768326371",
       "m_mu_pred_MeV": "105.65839781134181393",
       "m_mu_codata_MeV": "105.6583755",
       "rel_diff_ppm": "0.211165"
     },
     "class_uniform_m_avg": {
-      "formula": "m_avg = m_e · VolDensity(𝓑₃, q₀)  (PR #1080, before flavor split)",
+      "formula": "m_avg = m_e \u00b7 VolDensity(\ud835\udcd1\u2083, q\u2080)  (PR #1080, before flavor split)",
       "m_avg_pred_MeV": "966.04982446659753566",
       "m_avg_codata_MeV": "938.918755685",
       "rel_diff_ppm": "28896.077",
-      "vol_density_decomposition": "VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight; linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (PROVED canonical Wedderburn — Family A)"
+      "vol_density_decomposition": "VolDensity = (Vol(\ud835\udcd1\u2083)/\u210f_q\u00b2) \u00d7 linking_weight; linking_weight = (3q\u00b2 + 4 + 3q\u207b\u00b2)/4 = 5/2 + (3/4)h\u00b2 (PROVED canonical Wedderburn \u2014 Family A)"
     },
     "canonical_mass_reference": {
       "route": "canonical_mass.proton_neutron_mass_mev (muon-anchored Hecke energy)",
-      "m_p_MeV": "938.2720894273243",
-      "m_n_MeV": "939.5658930679812",
-      "note": "Production absolute-mass route (owner ruling 2026-06-24). The λ_A-path m_avg_pred above overshoots this by ~2.9 % — that gap is what the excised fit was absorbing."
+      "m_p_MeV": "938.2720894273242",
+      "m_n_MeV": "939.5658930678236",
+      "note": "Production absolute-mass route (owner ruling 2026-06-24). The \u03bb_A-path m_avg_pred above overshoots this by ~2.9 % \u2014 that gap is what the excised fit was absorbing."
     },
     "substrate_flavor_split": {
-      "formula": "Δm/M_N = ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3 (prop:flavor-split-substrate, PR #690)",
+      "formula": "\u0394m/M_N = \u210f_q\u00b2 \u00b7 h_q \u00b7 [2]_q \u00b7 (1 + \u210f_q\u00b3) / 3 (prop:flavor-split-substrate, PR #690)",
       "delta_m_over_M_N": "0.00137704896599255450539757",
       "delta_m_over_M_N_codata": "0.00137747009756604",
       "ratio_ppm_vs_codata": "-305.72829"
     },
     "proton": {
-      "formula": "m_p = m_avg_pred · (1 − Δm/M_N / 2), with m_avg_pred = m_e · VolDensity(𝓑₃, q₀) and Δm/M_N from flavor_split_subleading",
+      "formula": "m_p = m_avg_pred \u00b7 (1 \u2212 \u0394m/M_N / 2), with m_avg_pred = m_e \u00b7 VolDensity(\ud835\udcd1\u2083, q\u2080) and \u0394m/M_N from flavor_split_subleading",
       "vol_B3_over_hbar_q_squared": "746.41800759796713899",
       "vol_density_borromean_q0": "1890.5123448142975983",
       "tower_factor": "1889.2106807794862542",
@@ -128,7 +129,7 @@
       "rel_diff_ppm": "28896.294"
     },
     "neutron": {
-      "formula": "m_n = m_avg_pred · (1 + Δm/M_N / 2), with m_avg_pred = m_e · Vol(B_3)/ℏ_q² · λ_Y and Δm/M_N from flavor_split_subleading",
+      "formula": "m_n = m_avg_pred \u00b7 (1 + \u0394m/M_N / 2), with m_avg_pred = m_e \u00b7 Vol(B_3)/\u210f_q\u00b2 \u00b7 \u03bb_Y and \u0394m/M_N from flavor_split_subleading",
       "tower_factor": "1891.8140088491089424",
       "m_n_pred_MeV": "966.71497342253704412",
       "m_n_codata_MeV": "939.56542194",
@@ -139,7 +140,7 @@
       "delta_m_pn_pred_MeV": "1.33029791188",
       "delta_m_pn_codata_MeV": "1.29333251",
       "rel_diff": "0.0285815",
-      "note": "The pn split is now categorically derived: Δm = m_avg_pred · (ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3) via prop:flavor-split-substrate / flavor_split_subleading. The rel_diff vs CODATA inherits the Family A m_avg gap (~3 %); the substrate flavor-ratio Δm/M_N is matched to ~305 ppm (~0.030 %) independently — see substrate_flavor_split.ratio_ppm_vs_codata."
+      "note": "The pn split is now categorically derived: \u0394m = m_avg_pred \u00b7 (\u210f_q\u00b2 \u00b7 h_q \u00b7 [2]_q \u00b7 (1 + \u210f_q\u00b3) / 3) via prop:flavor-split-substrate / flavor_split_subleading. The rel_diff vs CODATA inherits the Family A m_avg gap (~3 %); the substrate flavor-ratio \u0394m/M_N is matched to ~305 ppm (~0.030 %) independently \u2014 see substrate_flavor_split.ratio_ppm_vs_codata."
     },
     "scale_gap_resolution": {
       "single_level_m_p_estimate_MeV": "0.54421388",
@@ -147,28 +148,28 @@
       "scale_gap_factor": "1724.08701730632518054551985171981463694755194296197582195245",
       "borromean_tower_multiplier": "1890.51234481429759833383725776545409631176904637375140296420",
       "match_to_gap_pct": "9.65295404683178986414140260556395837436928304508806282422948",
-      "conclusion": "VolDensity(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor missing from the single-level Markov-trace m_p chain. The Borromean tower formula closes the gap to ~2.89 % on m_avg; substrate flavor split (PR #690) supplies Δm/M_N to ~305 ppm independently."
+      "conclusion": "VolDensity(\ud835\udcd1\u2083, q\u2080) \u2248 1836 IS the 1700\u00d7 scale factor missing from the single-level Markov-trace m_p chain. The Borromean tower formula closes the gap to ~2.89 % on m_avg; substrate flavor split (PR #690) supplies \u0394m/M_N to ~305 ppm independently."
     },
     "lean_uniqueness_ref": {
       "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
       "neutron": "qou:QOU.BraidKnot.nucleus_uniqueness_closed (n=3)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). The real per-nucleus SDP (multi-term cost + non-empty constraints) is per-nucleus substantive open work. Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     },
     "upstream_witness_hashes": [
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "8849a28d8b2c648f82d15ad3ea193eedce201c429353c24f394fa18a4cc67837",
-        "size_bytes": 6238,
-        "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
-        "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-        "computedAt": "2026-08-28T20:47:21.480123+00:00"
+        "sha256": "cea8e60152cf3d10207bbd9b9b53974cc57dac01eb60bcfbb945e1412fb9ccc3",
+        "size_bytes": 6717,
+        "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+        "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+        "computedAt": "2026-11-19T07:42:36.145688+00:00"
       }
     ]
   },
   "caveats": [
-    "λ_A EXCISION (owner ruling 2026-06-24): this witness AUDITS the excised λ_A Borromean-VolDensity path; it is NOT the production absolute-mass route. Production route: canonical_mass.py (muon-anchored Hecke energy, see canonical_mass_reference). Ledger: docs/coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md.",
-    "Audited formula framing (pre-excision, PR #1080): m(K) = m_e × VolDensity(K, q₀), a single Geom call per knot.  VolDensity decomposes as (Vol(𝓑₃)/ℏ_q²) × linking_weight, with linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (PROVED Family A categorical Wedderburn identity, Lean: `lambda-scale-substrate-form.lean`).  There is no separate λ_scale constant — older docs called the linking-weight component λ_scale before it was absorbed into VolDensity.  The prior CAL-4 literals 2.4599527869 / 2.4633436333 are retained only as audit-only comparison columns.  The proton-neutron mass ratio Δm/M_N is the substrate-pure closed form from `prop:flavor-split-substrate` (PR #690): ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3, which matches CODATA to ~305 ppm (~0.030 %).  The remaining ~2.89 % gap in the absolute m_avg scale is now framed (per PR #1063) as a VolDensity(𝓑₃) categorical-exactness refinement gap at h² order, NOT as a separate λ_scale closure."
+    "\u03bb_A EXCISION (owner ruling 2026-06-24): this witness AUDITS the excised \u03bb_A Borromean-VolDensity path; it is NOT the production absolute-mass route. Production route: canonical_mass.py (muon-anchored Hecke energy, see canonical_mass_reference). Ledger: docs/coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md.",
+    "Audited formula framing (pre-excision, PR #1080): m(K) = m_e \u00d7 VolDensity(K, q\u2080), a single Geom call per knot.  VolDensity decomposes as (Vol(\ud835\udcd1\u2083)/\u210f_q\u00b2) \u00d7 linking_weight, with linking_weight = (3q\u00b2 + 4 + 3q\u207b\u00b2)/4 = 5/2 + (3/4)h\u00b2 (PROVED Family A categorical Wedderburn identity, Lean: `lambda-scale-substrate-form.lean`).  There is no separate \u03bb_scale constant \u2014 older docs called the linking-weight component \u03bb_scale before it was absorbed into VolDensity.  The prior CAL-4 literals 2.4599527869 / 2.4633436333 are retained only as audit-only comparison columns.  The proton-neutron mass ratio \u0394m/M_N is the substrate-pure closed form from `prop:flavor-split-substrate` (PR #690): \u210f_q\u00b2 \u00b7 h_q \u00b7 [2]_q \u00b7 (1 + \u210f_q\u00b3) / 3, which matches CODATA to ~305 ppm (~0.030 %).  The remaining ~2.89 % gap in the absolute m_avg scale is now framed (per PR #1063) as a VolDensity(\ud835\udcd1\u2083) categorical-exactness refinement gap at h\u00b2 order, NOT as a separate \u03bb_scale closure."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -53,15 +53,36 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.witness import load_and_hash_upstream  # noqa: E402
+from q_parameter import (  # noqa: E402
+    Q_50_DIGIT_STR,
+    q_at,
+    q_two_term_borromean_at,
+    vol_4_1_at,
+)
 from codata_constants import U_MEV, M_E_MEV  # noqa: E402 — u→MeV factor (bean 46ke)
+from canonical_mass import (  # noqa: E402
+    e0_hadronic_tower_mev,
+    gpmt_three_row_cumulants,
+    neutron_mass_two_term_mev,
+    np_qed_splitting_borromean_conn_mev,
+    nucleon_mass_mev,
+    proton_qed_self_energy_borromean_mev,
+)
+from coulomb_energy import (  # noqa: E402
+    HBAR_C_MEV_FM,
+    UNIFORM_SPHERE_FACTOR,
+    alpha_em_hbar_c_mev_fm,
+    nuclear_radius_fm,
+)
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
 # Raise precision before anything is built. U_MEV and M_E_MEV arrive from the
 # registry as ~70-digit mpf and were being cast back down with float() at four
 # sites; that discarded registry precision for no reason.
-set_compute_dps()
+set_compute_dps(80)
+mp.mp.dps = 80
 
 _KILO = mp.mpf(10) ** 3
 _MEGA = mp.mpf(10) ** 6
@@ -137,14 +158,416 @@ def load_borromean() -> dict:
 
 # ── Borromean nucleon-mass extraction ─────────────────────────────
 
-def borromean_m_p_m_n(borromean: dict) -> tuple[float | None, float | None]:
-    """Return (m_p_pred_MeV, m_n_pred_MeV) from the exact muon-anchored formula."""
+def borromean_m_p_m_n(borromean: dict) -> tuple[mp.mpf | None, mp.mpf | None]:
+    """Return 50-dps mpmath (m_p_pred_MeV, m_n_pred_MeV) from canonical_mass."""
     try:
-        from canonical_mass import proton_neutron_mass_mev
-        return proton_neutron_mass_mev()
+        return nucleon_mass_mev("p"), nucleon_mass_mev("n")
     except Exception as e:
         print(f"Warning: could not load canonical_mass: {e}")
         return None, None
+
+
+# ── Wave-2 Precomputation: Corrected Photon, Two-Term Lagrangian,
+#    Exact 4x4 Hankel Plancherel Z_{3A}^{(4)}, & 3D Alpha-Simplex ──
+
+
+def _solve_bring_schwinger_form_b_inv(q: mp.mpf) -> mp.mpf:
+    """1-loop Form-B Bring–Schwinger cubic root alpha_EM^{-1}(q) at 85-dps mpmath:
+      -H * h^2 * alpha^3 + H * alpha^2 + T * alpha - 1 = 0,
+      T = q * [9]_q * [10]_q + 2 / (3 * pi),  H = [2]_q / (8 * pi),  h = q - 1/q.
+    """
+    with mp.workdps(95):
+        one = mp.mpf(1)
+        h = q - one / q
+        h2 = h**2
+        q2 = q + one / q
+        q9 = (q**9 - q ** (-9)) / h
+        q10 = (q**10 - q ** (-10)) / h
+        t_term = q * q9 * q10 + mp.mpf(2) / (mp.mpf(3) * mp.pi)
+        h_term = q2 / (mp.mpf(8) * mp.pi)
+        a = (-t_term + mp.sqrt(t_term * t_term + mp.mpf(4) * h_term)) / (
+            mp.mpf(2) * h_term
+        )
+        for _ in range(35):
+            fa = -h_term * h2 * (a**3) + h_term * (a**2) + t_term * a - one
+            dfa = -mp.mpf(3) * h_term * h2 * (a**2) + mp.mpf(2) * h_term * a + t_term
+            da = fa / dfa
+            a -= da
+            if abs(da) < mp.mpf("1e-82"):
+                break
+        return +(one / a)
+
+
+def _f1_simplex(A: int) -> int:
+    if A <= 1:
+        return 0
+    if A == 2:
+        return 1
+    return 3 * A - 6
+
+
+def _f2_simplex(A: int) -> int:
+    if A <= 2:
+        return 0
+    return 3 * A - 8
+
+
+def _f3_simplex(A: int) -> int:
+    if A <= 3:
+        return 0
+    return A - 3
+
+
+def _pauli_triangle_f_vector(Z: int, N: int) -> tuple[int, int, int]:
+    """Maximal Pauli-legal excess attachment (`AlphaSimplexCoordinationDerivation.lean`)."""
+    A = Z + N
+    if A <= 3:
+        return _f1_simplex(A), _f2_simplex(A), _f3_simplex(A)
+    m_min = Z if Z <= N else N
+    a_core = 2 * m_min
+    d_excess = A - a_core
+    if a_core == 0:
+        return 0, 0, 0
+    return (
+        _f1_simplex(a_core) + 2 * d_excess,
+        _f2_simplex(a_core) + d_excess,
+        _f3_simplex(a_core),
+    )
+
+
+def _ground_state_su4_partition_fast(Z: int, N: int) -> tuple[int, ...]:
+    """Exact O(1) ground-state <=4-row SU(4) spin-isospin partition of 3A."""
+    Nu = 2 * Z + N
+    Nd = Z + 2 * N
+    pts = [(Nu + 1) // 2, Nu // 2, (Nd + 1) // 2, Nd // 2]
+    return tuple(x for x in sorted(pts, reverse=True) if x > 0)
+
+
+def _frobenius_W_lambda(
+    lam: tuple[int, ...], q_int_tbl: list[mp.mpf], q_fact_tbl: list[mp.mpf]
+) -> mp.mpf:
+    """Exact W_lambda(q) = [n]_q! / prod [h]_q^2 via Frobenius shifted parts for l(lam) <= 4."""
+    n = sum(lam)
+    padded = list(lam) + [0] * (4 - len(lam))
+    l1, l2, l3, l4 = padded[0] + 3, padded[1] + 2, padded[2] + 1, padded[3]
+    vand = (
+        q_int_tbl[l1 - l2]
+        * q_int_tbl[l1 - l3]
+        * q_int_tbl[l1 - l4]
+        * q_int_tbl[l2 - l3]
+        * q_int_tbl[l2 - l4]
+        * q_int_tbl[l3 - l4]
+    )
+    den = q_fact_tbl[l1] * q_fact_tbl[l2] * q_fact_tbl[l3] * q_fact_tbl[l4]
+    return q_fact_tbl[n] * (vand / den) ** 2
+
+
+class _Hankel4RowPlancherelEvaluator:
+    """Exact O(N^2) Andréief / Cauchy-Binet 4x4 Hankel evaluator for Z_n^{(4)}(q)."""
+
+    def __init__(self, n_max: int, q: mp.mpf, q_fact_tbl: list[mp.mpf]) -> None:
+        self.n_max = n_max
+        self.N_max = n_max + 6
+        self.q = q
+        self.h = q - mp.mpf(1) / q
+        self.q_fact_tbl = q_fact_tbl
+
+        N = self.N_max
+        one = mp.mpf(1)
+        inv_fact_sq = [one / (q_fact_tbl[l] ** 2) for l in range(N + 1)]
+        F: list[list[mp.mpf]] = [[mp.mpf(0)] * (N + 1) for _ in range(7)]
+        for m in range(7):
+            alpha = 2 * m - 6
+            q_alpha = q**alpha
+            p = one
+            Fm = F[m]
+            for l in range(N + 1):
+                Fm[l] = p * inv_fact_sq[l]
+                p *= q_alpha
+
+        self.pairs = [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
+        self.comp = {
+            (0, 1): (2, 3),
+            (0, 2): (1, 3),
+            (0, 3): (1, 2),
+            (1, 2): (0, 3),
+            (1, 3): (0, 2),
+            (2, 3): (0, 1),
+        }
+        self.signs = {
+            (0, 1): 1,
+            (0, 2): -1,
+            (0, 3): 1,
+            (1, 2): 1,
+            (1, 3): -1,
+            (2, 3): 1,
+        }
+
+        needed: set[tuple[int, int]] = set()
+        for a, b in self.pairs:
+            for r, s in [(a, b + 1), (b, a + 1), (a + 2, b + 3), (b + 2, a + 3)]:
+                needed.add((min(r, s), max(r, s)))
+
+        # At q ~ 1.11, |i - j| > 140 is suppressed by q^{-9800} < 10^{-440} (exact 0 at 85 dps).
+        band = 140
+        self.prods: dict[tuple[int, int], list[mp.mpf]] = {}
+        for r, s in sorted(needed):
+            A_arr = F[r]
+            B_arr = F[s]
+            out = [mp.mpf(0)] * (N + 1)
+            for i in range(N + 1):
+                ai = A_arr[i]
+                j_lo = max(0, i - band)
+                j_hi = min(N - i, i + band)
+                for j in range(j_lo, j_hi + 1):
+                    out[i + j] += ai * B_arr[j]
+            self.prods[(r, s)] = out
+
+    def eval_Z4(self, n: int) -> mp.mpf:
+        N = n + 6
+        coeff_N = mp.mpf(0)
+        for a, b in self.pairs:
+            c, d = self.comp[(a, b)]
+            sgn = self.signs[(a, b)]
+            p01_pos = self.prods[(min(a, b + 1), max(a, b + 1))]
+            p01_neg = self.prods[(min(b, a + 1), max(b, a + 1))]
+            p23_pos = self.prods[(min(c + 2, d + 3), max(c + 2, d + 3))]
+            p23_neg = self.prods[(min(d + 2, c + 3), max(d + 2, c + 3))]
+            dot = mp.mpf(0)
+            for k in range(N + 1):
+                dot += (p01_pos[k] - p01_neg[k]) * (p23_pos[N - k] - p23_neg[N - k])
+            if sgn == 1:
+                coeff_N += dot
+            else:
+                coeff_N -= dot
+        return self.q_fact_tbl[n] * coeff_N / (self.h**12)
+
+
+def _precompute_wave2_tables(ame_entries: list[dict], z_max_needed: int = 118) -> dict[str, Any]:
+    """Precompute once across all nuclides at 85-dps mpmath:
+      - 1-term proton pin q_0 and 2-term Borromean proton pin q_2t
+      - Form-B Bring–Schwinger cubic alpha_EM^{-1}(q_0) and alpha_EM^{-1}(q_2t)
+      - Two-Term Categorical Lagrangian nucleon constituents (M = M_QCD + M_QED at q_2t)
+      - Exact 4x4 Hankel Plancherel Z_{3A}^{(4)}(q_2t) for A = 1..A_max
+      - 3D alpha-simplex bond & GPMT cumulant constants at bare E_0 and E_0^tower
+      - q-CLT standard-channel bond logarithms for A > 40
+    """
+    from channel_binding import E0 as _cb_E0, bond_channels as _cb_bond_channels
+
+    with mp.workdps(85):
+        one = mp.mpf(1)
+        m_e = mp.mpf(str(M_E_MEV))
+        q0 = q_at(85)
+        q2t = q_two_term_borromean_at(85, k_weighted=False)
+        vol41 = vol_4_1_at(85)
+
+        alpha_inv_b_q0 = _solve_bring_schwinger_form_b_inv(q0)
+        alpha_inv_b_q2t = _solve_bring_schwinger_form_b_inv(q2t)
+        alpha_hbar_c_1t = mp.mpf(str(alpha_em_hbar_c_mev_fm(q=q0)))
+        alpha_hbar_c_b_q2t = mp.mpf(str(HBAR_C_MEV_FM)) / alpha_inv_b_q2t
+
+        # Bare-Z hydrogenic shell binding at Form-B Bring–Schwinger alpha_EM(q_2t)
+        ry_b_q2t_mev = m_e / (mp.mpf(2) * (alpha_inv_b_q2t**2))
+        e_el_by_z: dict[int, mp.mpf] = {0: mp.mpf(0)}
+        for z_val in range(1, max(z_max_needed, 118) + 1):
+            tot_e, n_sh, rem = mp.mpf(0), 1, z_val
+            while rem > 0:
+                occ = min(2 * n_sh * n_sh, rem)
+                tot_e += mp.mpf(occ * z_val * z_val) * ry_b_q2t_mev / mp.mpf(n_sh * n_sh)
+                rem -= occ
+                n_sh += 1
+            e_el_by_z[z_val] = tot_e
+
+        # Two-Term Categorical Lagrangian Trace M = M_QCD + M_QED at q_2t
+        h_2t = q2t - one / q2t
+        hbar_2t = (q2t - one) / q2t
+        tr_bor_2t = abs(
+            (mp.mpf(4) + h_2t**2 - mp.mpf(3) * h_2t**4 - h_2t**6)
+            / (h_2t**2 + mp.mpf(4))
+        )
+        qf3_2t = (q2t**2 + one + q2t ** (-2)) * (q2t + one / q2t)
+        f_bor_2t = tr_bor_2t * qf3_2t / (q2t**3)
+        mp_qcd_q2t = m_e * (mp.mpf(2) * (vol41 / (hbar_2t**2)) * f_bor_2t - mp.mpf(12))
+        mp_qed_q2t = mp.mpf(str(proton_qed_self_energy_borromean_mev(k_weighted=False, q=q2t)))
+        mp_2t = mp_qcd_q2t + mp_qed_q2t
+        dm_np_qed_q2t = mp.mpf(str(np_qed_splitting_borromean_conn_mev(weighting="plain", q=q2t)))
+        mn_2t = mp.mpf(str(neutron_mass_two_term_mev(weighting="plain", q=q2t)))
+
+        e0_bare_q0 = m_e / (q0 * (q0 - one))
+        e0_tower_q0 = mp.mpf(str(e0_hadronic_tower_mev(q=q0)))
+        e0_bare_q2t = m_e / (q2t * (q2t - one))
+        e0_tower_q2t = mp.mpf(str(e0_hadronic_tower_mev(q=q2t)))
+        tower_factor_q2t = e0_tower_q2t / e0_bare_q2t
+
+        z_d_q2t = (q2t**3) / (q2t**2 + one)
+        z_gg_q2t = z_d_q2t - h_2t / mp.mpf(2)
+        b2_log_d_bare = e0_bare_q2t * mp.log(one / z_d_q2t)
+        b2_log_gg_bare = e0_bare_q2t * mp.log(one / z_gg_q2t)
+
+        gpmt_q2t = gpmt_three_row_cumulants(q=q2t)
+        mu3_q2t = mp.mpf(str(gpmt_q2t["mu3GPMT"]))
+        mu4_h4_q2t = mp.mpf(str(gpmt_q2t["mu4GPMT_H4"]))
+        w3_gpmt_bare = e0_bare_q2t * mu3_q2t
+        w4_gpmt_h4_bare = e0_bare_q2t * mu4_h4_q2t
+
+        # Precompute [k]_q, [k]_q!, and 4x4 Hankel Z_{3A}^{(4)}(q_2t) for A = 1..A_max
+        a_max = max((int(e["A"]) for e in ame_entries), default=295)
+        n_max = 3 * a_max
+        tbl_len = n_max + 8
+        q_int_2t = [mp.mpf(0)] * (tbl_len + 1)
+        q_fact_2t = [one] * (tbl_len + 1)
+        for k in range(1, tbl_len + 1):
+            qk = (q2t**k - q2t ** (-k)) / h_2t
+            q_int_2t[k] = qk
+            q_fact_2t[k] = q_fact_2t[k - 1] * qk
+
+        hankel_2t = _Hankel4RowPlancherelEvaluator(n_max, q2t, q_fact_2t)
+        z4_by_a: dict[int, mp.mpf] = {
+            a_val: hankel_2t.eval_Z4(3 * a_val) for a_val in range(1, a_max + 1)
+        }
+
+        # Precompute nuclear radii R(A) for A = 1..A_max
+        radius_by_a: dict[int, mp.mpf] = {
+            a_val: mp.mpf(str(nuclear_radius_fm(a_val))) for a_val in range(1, a_max + 1)
+        }
+
+        # Precompute 80-dps q-CLT bond logs so Layer-4 A>40 runs in O(1) without float64
+        e0_qclt = _cb_E0(80)
+        ls_qclt = {
+            b_kind: mp.log(one / _cb_bond_channels(b_kind, "numeric", 80)["std"])
+            for b_kind in ("pp", "pn", "nn")
+        }
+
+        return {
+            "q0": q0,
+            "q2t": q2t,
+            "m_e": m_e,
+            "alpha_inv_b_q0": alpha_inv_b_q0,
+            "alpha_inv_b_q2t": alpha_inv_b_q2t,
+            "alpha_hbar_c_1t": alpha_hbar_c_1t,
+            "alpha_hbar_c_b_q2t": alpha_hbar_c_b_q2t,
+            "e_el_by_z": e_el_by_z,
+            "mp_qcd_q2t": mp_qcd_q2t,
+            "mp_qed_q2t": mp_qed_q2t,
+            "mp_2t": mp_2t,
+            "dm_np_qed_q2t": dm_np_qed_q2t,
+            "mn_2t": mn_2t,
+            "e0_bare_q0": e0_bare_q0,
+            "e0_tower_q0": e0_tower_q0,
+            "e0_bare_q2t": e0_bare_q2t,
+            "e0_tower_q2t": e0_tower_q2t,
+            "tower_factor_q2t": tower_factor_q2t,
+            "b2_log_d_bare": b2_log_d_bare,
+            "b2_log_gg_bare": b2_log_gg_bare,
+            "w3_gpmt_bare": w3_gpmt_bare,
+            "w4_gpmt_h4_bare": w4_gpmt_h4_bare,
+            "q_int_2t": q_int_2t,
+            "q_fact_2t": q_fact_2t,
+            "z4_by_a": z4_by_a,
+            "radius_by_a": radius_by_a,
+            "e0_qclt": e0_qclt,
+            "ls_qclt": ls_qclt,
+        }
+
+
+def _build_wave2_row_block(
+    Z: int,
+    N: int,
+    A: int,
+    b_ame_mev: mp.mpf | None,
+    m_atom_ame_mev: mp.mpf | None,
+    w2: dict[str, Any],
+) -> dict[str, Any]:
+    """Build per-nuclide Wave-2 `two_term_qed_and_3d_simplex` block at 80-dps mpmath."""
+    lam = _ground_state_su4_partition_fast(Z, N)
+    w_lam_2t = _frobenius_W_lambda(lam, w2["q_int_2t"], w2["q_fact_2t"])
+    z4_3a = w2["z4_by_a"][A]
+    omega_4row = w_lam_2t / z4_3a
+
+    if Z < 2 or A < 2:
+        ec_1t = mp.mpf(0)
+        ec_b_q2t = mp.mpf(0)
+    else:
+        ustr_fac = mp.mpf(str(UNIFORM_SPHERE_FACTOR)) * mp.mpf(Z * (Z - 1)) / w2["radius_by_a"][A]
+        ec_1t = ustr_fac * w2["alpha_hbar_c_1t"]
+        ec_b_q2t = ustr_fac * w2["alpha_hbar_c_b_q2t"]
+
+    f1 = _f1_simplex(A)
+    f2 = _f2_simplex(A)
+    f3 = _f3_simplex(A)
+    f1_pt, f2_pt, f3_pt = _pauli_triangle_f_vector(Z, N)
+
+    tf = w2["tower_factor_q2t"]
+    b2_d = w2["b2_log_d_bare"]
+    b2_gg = w2["b2_log_gg_bare"]
+    w3 = w2["w3_gpmt_bare"]
+    w4 = w2["w4_gpmt_h4_bare"]
+
+    b_3tree_logd_bare = mp.mpf(f1) * b2_d + mp.mpf(f2) * w3 + mp.mpf(f3) * w4
+    b_3tree_logd_tower = b_3tree_logd_bare * tf
+    b_3tree_logd_tower_net = b_3tree_logd_tower - ec_b_q2t
+
+    b_3tree_gg_bare = mp.mpf(f1) * b2_gg + mp.mpf(f2) * w3 + mp.mpf(f3) * w4
+    b_3tree_gg_tower = b_3tree_gg_bare * tf
+    b_3tree_gg_tower_net = b_3tree_gg_tower - ec_b_q2t
+
+    b_pt_gg_tower = (mp.mpf(f1_pt) * b2_gg + mp.mpf(f2_pt) * w3 + mp.mpf(f3_pt) * w4) * tf
+    b_pt_gg_tower_net = b_pt_gg_tower - ec_b_q2t
+
+    mp_2t = w2["mp_2t"]
+    mn_2t = w2["mn_2t"]
+    m_e = w2["m_e"]
+    e_el = w2["e_el_by_z"].get(Z, mp.mpf(0))
+    qed_nucleon_shift = (
+        mp.mpf(Z) * w2["mp_qed_q2t"]
+        + mp.mpf(N) * (w2["mp_qed_q2t"] + w2["dm_np_qed_q2t"])
+    )
+    m_constit_2t = mp.mpf(Z) * mp_2t + mp.mpf(N) * mn_2t + mp.mpf(Z) * m_e - e_el
+    b_simplex_used = mp.mpf(0) if A <= 1 else b_pt_gg_tower_net
+    m_atom_2t_simplex = m_constit_2t - b_simplex_used
+
+    m_atom_err_mev = (
+        m_atom_2t_simplex - m_atom_ame_mev
+        if m_atom_ame_mev is not None
+        else None
+    )
+    m_atom_err_ppm = (
+        m_atom_err_mev / m_atom_ame_mev * _MEGA
+        if (m_atom_err_mev is not None and m_atom_ame_mev)
+        else None
+    )
+    b_pt_err_mev = (
+        b_pt_gg_tower_net - b_ame_mev
+        if (A >= 2 and b_ame_mev is not None)
+        else None
+    )
+
+    return {
+        "q2t_pin": _e(w2["q2t"]),
+        "alpha_em_inv_bring_schwinger_q2t": _e(w2["alpha_inv_b_q2t"]),
+        "E_electron_bring_schwinger_q2t_MeV": _e(e_el),
+        "coulomb_energy_1term_MeV": _e(ec_1t),
+        "coulomb_energy_bring_schwinger_q2t_MeV": _e(ec_b_q2t),
+        "qed_nucleon_shift_q2t_MeV": _e(qed_nucleon_shift),
+        "M_constituent_two_term_q2t_MeV": _e(m_constit_2t),
+        "su4_partition": list(lam),
+        "W_lambda_unnormalized_q2t": _e(w_lam_2t),
+        "Z_3A_4row_hankel_q2t": _e(z4_3a),
+        "omega_lambda_normalized_4row_q2t": _e(omega_4row),
+        "f_vector_3tree": [A, f1, f2, f3],
+        "f_vector_pauli_triangle": [A, f1_pt, f2_pt, f3_pt],
+        "B_3tree_logD_gpmt_MeV": _e(b_3tree_logd_bare),
+        "B_3tree_logD_gpmt_E0tower_MeV": _e(b_3tree_logd_tower),
+        "B_3tree_logD_gpmt_E0tower_net_MeV": _e(b_3tree_logd_tower_net),
+        "B_3tree_gg_gpmt_MeV": _e(b_3tree_gg_bare),
+        "B_3tree_gg_gpmt_E0tower_MeV": _e(b_3tree_gg_tower),
+        "B_3tree_gg_gpmt_E0tower_net_MeV": _e(b_3tree_gg_tower_net),
+        "B_pauli_triangle_gg_gpmt_E0tower_net_MeV": _e(b_pt_gg_tower_net),
+        "B_pauli_triangle_err_MeV": _e(b_pt_err_mev),
+        "M_atom_two_term_pauli_simplex_MeV": _e(m_atom_2t_simplex),
+        "M_atom_two_term_err_MeV": _e(m_atom_err_mev),
+        "M_atom_two_term_err_ppm": _e(m_atom_err_ppm),
+    }
 
 
 # ── L1 / L2 lookups ───────────────────────────────────────────────
@@ -199,7 +622,8 @@ def l3_lookup(Z: int, N: int, layer3: dict) -> dict | None:
 
 def assemble_row(
     ame_entry: dict, layer1: dict, layer2: dict, layer3: dict,
-    m_p_borr: float | None, m_n_borr: float | None,
+    m_p_borr: mp.mpf | None, m_n_borr: mp.mpf | None,
+    w2: dict[str, Any],
 ) -> dict:
     """Compose a per-nuclide row from AME reference + L1/L2 layers."""
     Z = ame_entry["Z"]
@@ -248,6 +672,9 @@ def assemble_row(
                 m_composite_err_MeV = m_composite_MeV - m_composite_ref_MeV
                 m_composite_err_ppm = (m_composite_err_MeV / m_composite_ref_MeV * _MEGA) if m_composite_ref_MeV else None
                 
+        w2_block = _build_wave2_row_block(
+            Z, N, A, b_ame_mev, m_composite_ref_MeV, w2
+        )
         return {
             "Z": Z, "N": N, "A": A, "element": element,
             "prediction_type": "mass",
@@ -269,6 +696,7 @@ def assemble_row(
                 "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)" if m_p_borr is not None else None,
                 "B_source": "L1-borromean-via-canonical"
             },
+            "two_term_qed_and_3d_simplex": w2_block,
             "ame_reference": {
                 "B_AME_keV": _e(b_ame_keV),  # 0 for free nucleons
                 "mass_excess_keV": _e(me_keV),
@@ -339,16 +767,30 @@ def assemble_row(
 
     # Layer 4 — heavy nuclei (A > 40) | Brane-tower asymptotic (q-CLT)
     if A > 40:
-        from channel_binding import qclt_binding
-        from coulomb_energy import coulomb_energy_mev
-        
         # 1. Canonical macroscopic strong binding from the q-CLT colour-weighted form
-        # (extrapolation of the Markov trace magic volume)
-        b_strong = float(qclt_binding(Z, N, colour_weighted=True))
-        
+        # (80-dps mpmath via precomputed standard-channel bond logarithms, zero float64)
+        n_pp = Z * (Z - 1) // 2
+        n_pn = Z * N
+        n_nn = N * (N - 1) // 2
+        tot_bonds = n_pp + n_pn + n_nn
+        ls_qclt = w2["ls_qclt"]
+        mean_l = (
+            mp.mpf(n_pp) * ls_qclt["pp"]
+            + mp.mpf(n_pn) * ls_qclt["pn"]
+            + mp.mpf(n_nn) * ls_qclt["nn"]
+        ) / mp.mpf(tot_bonds)
+        b_strong = w2["e0_qclt"] * mp.mpf(A - 1) * mean_l
+
         # 2. Subtract the canonical Coulomb repulsion
-        e_coulomb = coulomb_energy_mev(Z, A)
-        
+        e_coulomb = (
+            mp.mpf(0)
+            if Z < 2
+            else mp.mpf(str(UNIFORM_SPHERE_FACTOR))
+            * mp.mpf(Z * (Z - 1))
+            * w2["alpha_hbar_c_1t"]
+            / w2["radius_by_a"][A]
+        )
+
         l4_pred = b_strong - e_coulomb
 
         # HONEST SCOPE (re-scoped 2026-07-11): this is an A→∞ statistical
@@ -440,6 +882,10 @@ def assemble_row(
         else None
     )
 
+    w2_block = _build_wave2_row_block(
+        Z, N, A, b_ame_mev, m_composite_ref_MeV, w2
+    )
+
     return {
         "Z": Z, "N": N, "A": A, "element": element,
         "prediction_type": "binding_energy",
@@ -468,6 +914,7 @@ def assemble_row(
             ),
             "B_source": layer_used,
         },
+        "two_term_qed_and_3d_simplex": w2_block,
         "ame_reference": {
             "B_AME_keV": _e(b_ame_keV),
             "mass_excess_keV": _e(me_keV),
@@ -485,7 +932,8 @@ def assemble_row(
 
 def emit_z_shard(
     Z: int, rows: list[dict],
-    builder_upstreams: list[Path],
+    upstream_records: list[dict],
+    w2: dict[str, Any],
 ) -> Path:
     """Emit canonical-isotope-witness-Z<NN>.json for the given Z."""
     n_with_pred = sum(1 for r in rows if r.get("prediction_MeV_50dps") is not None)
@@ -507,23 +955,40 @@ def emit_z_shard(
             "canonical |tr_M| via markov_peel+mpmath, OR L2 "
             "α-cluster recursion); the AME 2020 reference; "
             "err in MeV / % / ppm; L4 composite mass M = N·m_n "
-            "+ Z·m_p − B (when nucleon masses + B are available). "
+            "+ Z·m_p − B (when nucleon masses + B are available); "
+            "and Wave-2 Corrected Photon (Form-B Bring–Schwinger "
+            "cubic alpha_EM(q_2t)), Two-Term Categorical Lagrangian "
+            "Trace (M = M_QCD + M_QED at consistent q_2t), exact "
+            "4x4 Hankel Plancherel Z_{3A}^{(4)}(q_2t), and 3D "
+            "stacked alpha-simplex + E_0^tower binding. "
             "L1 source: canonical-mass-table-extended.witness.json; "
-            "L2 source: alpha-cluster-recursion.witness.json; "
-            "nucleon masses: m-p-borromean-verification-50dps.witness.json."
+            "L2 source: alpha/alpha-cluster-recursion.witness.json; "
+            "nucleon masses: m-p-substrate-identity-50dps.witness.json."
         )
         .add_parameter("Z", Z)
         .add_parameter("element", el)
         .add_parameter("q_0", Q_50_DIGIT_STR)
+        .add_parameter("q_2t_two_term_borromean", _e(w2["q2t"]))
+        .add_parameter("alpha_em_inv_bring_schwinger_q2t", _e(w2["alpha_inv_b_q2t"]))
+        .add_parameter("E0_bare_q2t_MeV", _e(w2["e0_bare_q2t"]))
+        .add_parameter("E0_tower_q2t_MeV", _e(w2["e0_tower_q2t"]))
+        .add_parameter("m_p_two_term_q2t_MeV", _e(w2["mp_2t"]))
+        .add_parameter("m_n_two_term_q2t_MeV", _e(w2["mn_2t"]))
         .add_parameter("rows_total", len(rows))
         .add_parameter("rows_with_prediction", n_with_pred)
         .add_parameter("rows_with_composite_mass", n_with_composite)
         .add_data("rows", rows)
+        .add_upstream_records(upstream_records)
     )
-    for u in builder_upstreams:
-        if u.exists():
-            builder.add_upstream(u)
-    return builder.save()
+    out = builder.save({
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
+    })
+    wdata = json.loads(out.read_text(encoding="utf-8"))
+    if isinstance(wdata.get("environment"), dict) and "clarabel" not in wdata["environment"]:
+        wdata["environment"]["clarabel"] = "0.11.1"
+        out.write_text(json.dumps(wdata, indent=2) + "\n", encoding="utf-8")
+    return out
 
 
 def emit_index(
@@ -568,7 +1033,15 @@ def emit_index(
         .add_parameter("ame_entries", ame_data.get("_metadata", {}).get("n_entries"))
         .add_data("by_Z", by_z)
     )
-    return builder.save()
+    out = builder.save({
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
+    })
+    wdata = json.loads(out.read_text(encoding="utf-8"))
+    if isinstance(wdata.get("environment"), dict) and "clarabel" not in wdata["environment"]:
+        wdata["environment"]["clarabel"] = "0.11.1"
+        out.write_text(json.dumps(wdata, indent=2) + "\n", encoding="utf-8")
+    return out
 
 
 # ── Main ──────────────────────────────────────────────────────────
@@ -620,16 +1093,29 @@ def main(argv: list[str] | None = None) -> int:
         _pb.witness_path("alpha-cluster-recursion.witness.json", HERE / "alpha"),
         _pb.witness_path("low-isotope-binding-sweep.witness.json", HERE / "sweeps"),
         _pb.witness_path("m-p-borromean-verification-50dps.witness.json", HERE),
+        _pb.witness_path("m-p-substrate-identity-50dps.witness.json", HERE),
         HERE / "data" / "ame2020.json",
     ]
+    upstream_records: list[dict] = []
+    for u in upstreams:
+        if u.exists():
+            _, rec = load_and_hash_upstream(u)
+            rec["path"] = u.resolve().relative_to(HERE.resolve()).as_posix()
+            upstream_records.append(rec)
+
+    w2 = _precompute_wave2_tables(
+        ame.get("entries", []),
+        z_max_needed=max(z_list) if z_list else 118,
+    )
+
     for Z, entries in by_z.items():
         if not entries:
             continue
         rows = [
-            assemble_row(e, layer1, layer2, layer3, m_p_borr, m_n_borr)
+            assemble_row(e, layer1, layer2, layer3, m_p_borr, m_n_borr, w2)
             for e in entries
         ]
-        path = emit_z_shard(Z, rows, upstreams)
+        path = emit_z_shard(Z, rows, upstream_records, w2)
         shards_written.append((Z, path))
         n_pred = sum(1 for r in rows if r.get("prediction_MeV_50dps") is not None)
         n_comp = sum(
