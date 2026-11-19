@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-16T18:28:22Z
+updated_at: 2026-11-19T00:12:05Z
 parent: qou-6qbv
 ---
 
@@ -481,3 +481,22 @@ the owner's call, the same disposition `qou-51l1` and the prior session took.
   - `trigonal_genus_four_six_branch_points_iff_index_two (rPerPoint : Nat) : 6 * rPerPoint = totalRamificationOverP1 3 4 ↔ rPerPoint = 2`
   - `uniform_six_branch_points_minimal_degree_is_trigonal`: proves that for $2 \le d \le 5$, a uniform-ramification cover of $\mathbb{P}^1$ of genus $4$ with $b = 6$ branch points has unique minimal-degree solution $(d, r_{\text{per}}) = (3, 2)$.
 - Kept at `status: in-progress` per owner rule.
+
+## 2026-11-19 — M4 character bound (PR #8365, commit fea313d5e)
+
+`QOU/BringsSurface/CharacterBound.lean`, sorry-free:
+- χ(g⁻¹) = conj χ(g);
+- (dim V)² ≤ |G| for an irreducible rep;
+- hence g ∈ {4,6}, from H¹ = 2W with W irreducible, plus Riemann–Hurwitz for A₅ and S₅.
+
+The old hypothesis `hdim` (the list of A₅ irreducible dimensions) is narrowed to one fact: A₅ has no 6-dim irreducible (M4c, open).
+
+Child beans for another agent: qou-m1bg (M1b, analytic germs) and qou-m3tr (M3, equivariant triangulation).
+
+Still open:
+- G2 (lift A₅ from the fibre to the base);
+- G3 (irreducibility of H¹);
+- M2 (globalise on the surface);
+- M4c.
+
+This bean stays open.
