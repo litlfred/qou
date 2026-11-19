@@ -920,7 +920,7 @@ def _phi1_nuclear(Z, N):
     # The pn crossing is mediated by the shared electron.
     # Reference: prop:mass-endomorphism-tower
     if A == 2:
-        # V̂_e = w_sym × q³ + w_std × V_std + w_alt × (-1/q³)
+        # V̂_e = V_std, the convention-D Markov trace (was the w_sym/w_std/w_alt mixture)
         # For trefoil σ₁³ on 2 strands: 3 crossings, all (c=1, d=0) on gen 0.
         # V_std = z×M[0][0] + M[1][0] where M = T(1,0)³
         # T(1,0) = [[h, 1],[1, 0]] → T³ = specific matrix
@@ -932,7 +932,8 @@ def _phi1_nuclear(Z, N):
                   [_M[1][0]*_t[0][0]+_M[1][1]*_t[1][0],
                    _M[1][0]*_t[0][1]+_M[1][1]*_t[1][1]]]
         _V_std = z * _M[0][0] + _M[1][0]
-        _V_e = W_SYM * q0**3 + W_STD * _V_std + W_ALT * (-qi**3)
+        # Convention D (owner, 2026-11-18): the Markov trace of a*sigma+b is z*a+b.
+        _V_e = _V_std
         CATALAN_G = 0.915965594177219015054603514932
         _alpha = M_E_MEV * 8 * CATALAN_G
         return _alpha * abs(_V_e)

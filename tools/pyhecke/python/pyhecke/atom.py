@@ -386,7 +386,8 @@ def vertex_volume(chain):
       standard:   traced volume z·a + b (from 2×2 transfer matrix)
       alternating: eigenvalue -cq⁻¹ + d
 
-    Full volume = W_sym × λ_sym + W_std × V_std + W_alt × λ_alt.
+    Volume = the convention-D Markov trace z·a + b (the sym and alt channels
+    are kept for reference; they no longer enter the volume).
     """
     a, b = 0.0, 1.0
     sp, ap = 1.0, 1.0
@@ -395,7 +396,10 @@ def vertex_volume(chain):
         sp *= c*q0 + d
         ap *= -c*qi + d
     V_std = z * a + b
-    return W_SYM * sp + W_STD * V_std + W_ALT * ap
+    # Convention D (owner, 2026-11-18): the Markov trace has weights y_sym=(q^4+1)/(q^2+1)^2,
+    # y_std=q^2/(q^2+1)^2, y_alt=0, and on a single-generator element a*sigma+b it is exactly
+    # z*a+b. The old W_SYM/W_STD/W_ALT mixture is the q-Plancherel measure, not this trace.
+    return V_std
 
 
 
@@ -732,7 +736,7 @@ def _chain_V_full(chain):
     """Wedderburn-weighted traced volume from a crossing chain.
 
     chain: list of (c, d) tuples.
-    Returns V̂^full = w_sym·λ_sym + w_std·V_std + w_alt·λ_alt.
+    Returns V̂^full = z·a + b, the convention-D Markov trace of the chain.
     """
     lam_sym = 1.0
     for c, d in chain:
@@ -750,7 +754,10 @@ def _chain_V_full(chain):
         M00, M01, M10, M11 = n00, n01, n10, n11
     V_std = z * M10 + M11  # second row: [a,b] = [0,1] × M → (M₁₀, M₁₁)
 
-    return W_SYM * lam_sym + W_STD * V_std + W_ALT * lam_alt
+    # Convention D (owner, 2026-11-18): the Markov trace has weights y_sym=(q^4+1)/(q^2+1)^2,
+    # y_std=q^2/(q^2+1)^2, y_alt=0, and on a single-generator element a*sigma+b it is exactly
+    # z*a+b. The old W_SYM/W_STD/W_ALT mixture is the q-Plancherel measure, not this trace.
+    return V_std
 
 
 
