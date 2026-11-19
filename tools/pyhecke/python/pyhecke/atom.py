@@ -835,19 +835,9 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
     if A < 1:
         return []
 
-    # H_3 vs H_{3A} legacy bug warning (audit 2026-05-25, PR #1238).
-    # For A > 1 the H_3 Wedderburn weights used below are systematically
-    # wrong. Callers should migrate to mass_at_3A_proper.per_generator_V_hat_3A.
-    if A > 1:
-        import warnings
-        warnings.warn(
-            f"atom_per_generator_volumes uses H_3 Wedderburn weights for "
-            f"A={A} atom (Z={Z}, N={N}); H_{{3A}}={3*A} weights are correct. "
-            "See docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md. "
-            "Migrate to mass_at_3A_proper.per_generator_V_hat_3A.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
+    # The H_3 vs H_{3A} DeprecationWarning that stood here (audit 2026-05-25,
+    # PR #1238) was removed on 2026-11-19. The volumes below are now the
+    # convention-D Markov trace z*a + b, which is the same in H_3 and H_{3A}.
 
     # Nucleon ordering (Z protons then N neutrons) — matches
     # atom_character_raw convention.
@@ -946,12 +936,23 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
     # constant that is imported three lines above is how the `z` fork happened
     # in the first place, so both now come from the single source.
     #
-    # NOTE: these remain the H_3 weights, which are wrong for A > 1 — see the
-    # DeprecationWarning above. Fixing the convention does not fix that.
+    # The old NOTE here said these were "the H_3 weights, wrong for A > 1".
+    # That no longer applies: see the convention-D note below.
+    #
+    # CONVENTION D (owner, 2026-11-18: "switch them to convention D"). The
+    # per-generator volume is now the convention-D Markov trace of the
+    # generator's word a*sigma_i + b, which is z*a + b with z = q^3/(q^2+1).
+    # It used to be the mixture W_SYM*sym + W_STD*(z*a+b) + W_ALT*alt. Those
+    # weights (0.165, 0.669, 0.165) are not the convention-D Markov weights,
+    # which are y_lambda*dim_lambda = (0.505, 0.495, 0) on (3), (2,1), (1^3).
+    # The Markov property tr(x*sigma_i) = z*tr(x) makes z*a + b the same in
+    # every H_n, so the H_3 vs H_{3A} question goes away for these volumes.
+    # Checked against mass_at_3A_proper.per_generator_V_hat_3A(weight_scheme=
+    # "jones_wenzl") for A = 1..4: agreement to 5.6e-16, the float64 floor.
     vols = []
     for i in range(n_gens_total):
         Vs = z * a_arr[i] + b_arr[i]
-        Vf = W_SYM * sp_arr[i] + W_STD * Vs + W_ALT * ap_arr[i]
+        Vf = Vs
         vols.append({"std": Vs, "sym": sp_arr[i], "alt": ap_arr[i], "full": Vf})
     return vols
 
