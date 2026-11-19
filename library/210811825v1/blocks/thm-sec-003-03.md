@@ -1,0 +1,1 @@
+For any right angled hyperbolic triangle, the following hold: cosh(c) = cot(α) cot(β), cos(α) = cosh(a) sin(β), where c is the hypotenuse, a is the side with opposite angle α, and b is the side with opposite angle β. The hyperbolic side lengths for the (2, 3, 7) triangle are: a = arccosh

@@ -1,1 +1,0 @@
-It remains to understand what happens in the "huge" region in the analytic neighborhood located between the algebraic neighborhood and the exterior, the "actual world" ${\mathbf C}^*$: one must imagine it as filled by "points" (that we shall label $(q,d)$ below, $d$ being a direction and $q$ a "parameter" of scale).

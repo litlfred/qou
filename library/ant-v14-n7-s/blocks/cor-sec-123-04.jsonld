@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/ant-v14-n7-s/blocks/cor-sec-123-04",
@@ -12,10 +12,20 @@
     "doco:Section"
   ],
   "kind": "corollary",
-  "pageStart": 246,
-  "pageEnd": 249,
+  "pageStart": 232,
+  "pageEnd": 238,
   "text": "cor-sec-123-04.md",
   "derivedFrom": "library/ant-v14-n7-s/sections/sec-123",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.6",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-123-2b-rational-points-on-twisted-hurwitz-spaces-ove.md (p. 232-238)",
+    "claim_id": "ant-v14-n7-s#corollary:2.6",
+    "lean_status": "unformalized"
+  }
 }

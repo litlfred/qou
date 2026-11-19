@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/schechtman-varchenko1991-arrangements/blocks/lem-page-051-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 51,
+  "pageEnd": 51,
+  "text": "lem-page-051-01.md",
+  "derivedFrom": "library/schechtman-varchenko1991-arrangements/sections/page-051",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7.5.5",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/page-051.md (p. 51-51)",
+    "claim_id": "schechtman-varchenko1991-arrangements#lemma:7.5.5",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+Let A and B be K-ﬂat DG central K-rings. The following three conditions are equivalent for an object T ∈D(B ⊗Aop). (i) The DG B-A-bimodule T is tilting. (ii) The DG B-A-bimodule T is pretilting. (iii) The DG B-A-bimodule T is a compact generator on the B side, and it has the noncommutative derived Morita property on the B side.

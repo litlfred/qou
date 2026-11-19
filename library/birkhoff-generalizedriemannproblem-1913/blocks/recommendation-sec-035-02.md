@@ -1,1 +1,0 @@
-We shall choose a continuous branch of T(x) in the right half plane, and a continuous branch in the left half plane in such a way that these branches coincide along the upper half of the axis of imaginaries.

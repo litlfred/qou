@@ -1,1 +1,0 @@
-However, $\Gamma_i^{(1)}$ must vanish at leading order $\hbar^{-1}$ precisely because $Z$ is a solution to the leading-order critical point equations; and we have also already extracted the leading $\hbar^{-1}$ piece of $\Gamma_i^{(2)}$ as the Gaussian integration measure $-\tfrac{1}{2\hbar}\zeta\mathcal{H}\zeta$.

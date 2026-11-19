@@ -1,0 +1,1 @@
+1. For ϕ ∈C∞ c (Bρ), L ∈N, k ∈N, we have the estimate  Z B2Lρ Z B2L+kρ\B2L+k−1 ρ(x, y)2 ρ(x, y)−2 y Z x y Z x |u(s) −u(t)||ϕ(s)v(s) −ϕ(t)v(t)| ds dt  p dx dy  p ≾2−s(L+k) ∥v∥∞[u]W 1p ,p(B2L+kρ) ∥|∇| p ϕ∥Lp .

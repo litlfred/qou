@@ -1,0 +1,1 @@
+Let K be a triangulated category, let S be a denominator set of cohomological origin in K, and let K′ be a full triangulated subcategory of K. Then S′ := K′ ∩S is a denominator set of cohomological origin in K′, the Ore localization K′ S′ exists, and K′ S′ is a triangulated category.

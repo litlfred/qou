@@ -1,1 +1,0 @@
-If the BMR freeness conjecture (see e.g. \cite{CYCLO}) holds true for the complex reflection group of Shephard-Todd type $G_{20}$, then the quotient of the group algebra of the braid group by the relations $(s-a)^3 = 0$ is again finite dimensional (of dimenion $360$) and therefore it should be computationally doable to compare the dimensions of the two ideals.

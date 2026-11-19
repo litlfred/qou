@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9408045v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408045v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9408045v1",
+  "title": "Constrained analysis of topologically massive gravity",
   "contains": [
     "library/arxiv-hep-th-9408045v1/sections/sec-front-matter",
     "library/arxiv-hep-th-9408045v1/sections/sec-000",
@@ -31,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9408045v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9408045v1.pdf",
     "source_sha256": "a9786c0f44a4e659f489f2928f53c5ba3f1cf53f057f9b018ed14697c32c74ce",
     "pages": 15,
@@ -42,8 +44,8 @@
       "stamp_date": "8 Aug 1994"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-In summary, we have shown that the parity conjugate of the $\C\otimes Cl(1,3) \simeq \left(\CH\right)\otimes_{\C}\left(\CH\right)$ algebra may be used to induce a parity conjugate on our generalized ideals in $\CH$.

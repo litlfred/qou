@@ -1,1 +1,0 @@
-Furthermore, at the present time the protons in the laboratory must be predomi- nantly of one kind in order to produce the supposedly observed asymmetry, and also to give rise to the observed Fermi-Dirac statistical character of the proton.

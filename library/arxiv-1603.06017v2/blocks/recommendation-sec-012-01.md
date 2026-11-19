@@ -1,1 +1,0 @@
-Having this rule, coming up with similar rules for other comparison operators, e.g., $W[e_1][e_2]\cdots[e_n]<@\alpha$, and even predicates involving comparison of two automatic words, e.g., $W_1[e_1][e_2]\cdots[e_m]\text{>=}W_2[e'_1][e'_2]\cdots[e'_n]$, should be straightforward.

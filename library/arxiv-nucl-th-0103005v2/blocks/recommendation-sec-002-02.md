@@ -1,1 +1,0 @@
-Some initial $A=9,10$ calculations have been made, but are at the limit of current computer resources, so while $^{12}$C should be reached in a few years, it may be the practical limit for this approach.

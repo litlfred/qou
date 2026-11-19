@@ -1,0 +1,1 @@
+Let g be a ﬁnite dimensional complex semisimple Lie algebra with Drinfeld- Jimbo algebra Uq(g). There exists an isomorphism of topological algebras: ϕ : Uh(g) →U(g)[[h]], which is the identity modulo h. Moreover, given any other such isomorphism ϕ′ there exists an invertible element F ∈U(g)[[h]], congruent to 1 modulo h, such that for any x ∈Uh(g): ϕ′(x) = Fϕ(x)F −1.

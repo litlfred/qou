@@ -13,9 +13,12 @@
   "pageStart": 5,
   "pageEnd": 5,
   "contains": [
-    "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-005"
+    "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-005",
+    "library/yuasa-rims-kokyuroku-2163-05/blocks/lem-page-005-01",
+    "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-005-02",
+    "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-005-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/yuasa-rims-kokyuroku-2163-05",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/yuasa-rims-kokyuroku-2163-05",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yuasa-rims-kokyuroku-2163-05/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yuasa-rims-kokyuroku-2163-05/manifest.jsonld",
   "provenance": "ingested"
 }

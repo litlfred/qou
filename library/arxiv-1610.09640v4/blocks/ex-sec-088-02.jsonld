@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/ex-sec-088-02",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 245,
+  "pageEnd": 248,
+  "text": "ex-sec-088-02.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-088",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "12.9.3",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-088-129-the-derived-tensor-evaluation-morphism.md (p. 245-248)",
+    "claim_id": "arxiv-1610.09640v4#example:12.9.3"
+  }
+}

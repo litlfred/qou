@@ -1,0 +1,1 @@
+To get a statistical quantification of this effect, we have performed another Monte Carlo simulation of the random matrix ensemble with ν ∼n for increasing ν, and cal- culated their spacings, differences to the bulk and empirical densities to observe this effect (see figure 7).

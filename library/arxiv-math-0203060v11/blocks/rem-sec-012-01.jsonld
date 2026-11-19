@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203060v11/blocks/rem-sec-012-01",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "rem-sec-012-01.md",
+  "derivedFrom": "library/arxiv-math-0203060v11/sections/sec-012",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203060v11/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.2",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-012-33-proof-of-proposition-212-and-properties-of-mo.md (p. 12-13)",
+    "claim_id": "arxiv-math-0203060v11#remark:3.2"
+  }
+}

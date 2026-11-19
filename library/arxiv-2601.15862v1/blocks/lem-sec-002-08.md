@@ -1,0 +1,1 @@
+8. The inclusion i! in (A.2): (i) preserves representables V ∈CrtSp SmthSet in that:1 (A.4) i!V ≃V ≡V × D0 ∈FrmCrtSp FrmSmthSet , (ii) is fully faithful, hence (A.5) i∗◦i! ≃id , (iii) and such that the reduced objects X ∈SmthSet FrmSmthSet i! are equiv- alently those which are isomorphic to their purely reduced aspect ℜ(X), (A.6) X ≃ℜ(X) , where (A.7) ℜ:= i! ◦i∗.

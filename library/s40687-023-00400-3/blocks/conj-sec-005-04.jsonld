@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s40687-023-00400-3/blocks/conj-sec-005-04",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "pageStart": 4,
+  "pageEnd": 7,
+  "text": "conj-sec-005-04.md",
+  "derivedFrom": "library/s40687-023-00400-3/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s40687-023-00400-3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.4",
+    "source_kind": "conjecture",
+    "claim_domain": "math",
+    "evidence_kind": "conjectural",
+    "evidence_location": "none",
+    "evidence_locator": "Open conjecture stated in sections/sec-005-13-neumannzagier-matrices-and-their-twisted-vers.md",
+    "claim_id": "s40687-023-00400-3#conjecture:1.4"
+  }
+}

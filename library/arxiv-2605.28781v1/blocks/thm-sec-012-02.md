@@ -1,0 +1,1 @@
+There is an absolute constant C > 0 such that the following holds. Let k ≥C be any integer. There exist infinitely many d ≥2 and multiplicative groups Γ ≤R× of rank ≤d such that there are at least exp((C−1k log k)d) many non-degenerate solutions to (6.1).

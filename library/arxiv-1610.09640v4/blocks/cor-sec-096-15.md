@@ -1,0 +1,1 @@
+Let A be a ring and let L be a complex of A-modules. The following two conditions are equivalent. (i) L is a compact object of D(A). (ii) L is isomorphic in D(A) to a bounded complex of ﬁnitely generated projec- tive A-modules.

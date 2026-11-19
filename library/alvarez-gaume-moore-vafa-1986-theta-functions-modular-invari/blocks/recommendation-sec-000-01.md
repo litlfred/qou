@@ -1,1 +1,0 @@
-Whereas in most well known results one considers the underlying space to be JR2 (or R x S1, or S1 x S1 corresponding to periodic boundary conditions in space or time), for string theories one must consider the space to be an arbitrary Riemann surface.

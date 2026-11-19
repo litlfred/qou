@@ -1,0 +1,1 @@
+For any quadratic exponential ⟨·⟩on a Gaussian group G, the polarization identity satisfies: ⟨x; x⟩= ⟨x⟩2 for all x ∈G. This follows directly from applying the definition to 0 = x + (−x), using evenness and symmetry.

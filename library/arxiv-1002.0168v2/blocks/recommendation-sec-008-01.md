@@ -1,1 +1,0 @@
-The absolute value squared of the dimension of any object in $\cH^d$ must lie in $k$, by [@MR2183279 §2.1] (we take the absolute value squared because this does not depend on having a pivotal structure over $k$).

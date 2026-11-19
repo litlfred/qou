@@ -1,0 +1,1 @@
+Assume A is a left noetherian connected graded ring. Con- sider A as a graded Aen-module. Then in the minimal graded-free resolution ρ : P →A of A over Aen, the graded-free Aen-modules P i are all ﬁnite. The subtle point is that the graded ring Aen might not be left noetherian – see

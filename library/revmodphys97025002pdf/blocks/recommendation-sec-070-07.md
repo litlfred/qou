@@ -1,1 +1,0 @@
-As can be seen from its observational equation in Table XXXI, it contributes to the determination of the adjusted constant μe=μ0p and thus also to the determination of the recommended value of σ0p since ðμe=μpÞ=ðμe=μ0pÞ ¼ μ0p=μp ¼ 1 −σ0p.

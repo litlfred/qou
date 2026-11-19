@@ -1,0 +1,1 @@
+Let {Mk}k∈N be an inverse system in Cstr(A), with inverse limit M = lim←k Mk. Assume the system satisﬁes these two conditions: (a) For every i ∈Z the inverse system {M i k}k∈N has surjective transitions. (b) For every k the DG module Mk is acyclic. Then M is acyclic. Derived Categories | Amnon Yekutieli |

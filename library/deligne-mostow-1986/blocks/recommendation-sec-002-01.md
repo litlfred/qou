@@ -1,1 +1,0 @@
-This has the following meaning: U should be provided with a base point o, and a multivalued section of a sheaf y (^, or L, ...) is a section of the pull back of y on the universal cove- rings (U, o) of (U, o).

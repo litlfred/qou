@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1807.01453v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "0cc84fde6f95260894cb0ed93840434bc44686f7fd3d3d5b29b679d03f5434f5",
   "file": "1807.01453v2.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Looking at Eq.(13) we see that gh and gx must satisfy gh, gx > gY , which rules out the blue region shown in each panel.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-phenomenology-highlights.md",
-   "section_title": "Phenomenology highlights",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Back to our model, a proper analysis of the mod- i\ufb01cation to h \u2192\u03b3\u03b3 must not only incorporate the full set 4Easier to see in the Higgs basis, where the doublet orthogonal to the one with the Goldstones and the whole v contains H+ in the upper component and \u2212hSM cos (\u03b2 \u2212\u03b1) in the lower component.",
-   "strength": "must-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-phenomenology-highlights.md",
-   "section_title": "Phenomenology highlights",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

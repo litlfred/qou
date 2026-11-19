@@ -1,0 +1,1 @@
+1 (Efficient PT moment). For a given (mixed) n-qubit state ρ, there exists an efficient algo- rithm to measure p4(ρ) = tr(ρΓ)4, where ρΓ = (I ⊗Γ)ρ is the partial transpose, to additive precision ϵ with failure probability δ using O(ϵ−2 log(2/δ)) copies of ρ, O(n) circuit depth, O(n) Toffoli gates, 1 auxiliary qubit, and O(ϵ−2 log(2/δ)) classical post-processing time.

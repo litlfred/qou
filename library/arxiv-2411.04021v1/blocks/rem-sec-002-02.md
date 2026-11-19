@@ -1,0 +1,1 @@
+Recall that det(λ) = m · 2a(2) λ for some odd integer m. Now, the integer a(2) λ being even is equivalent to 2a(2) λ being a square. Together with Remark 2.11, we conclude that Theorem 1.1 holds true if it can be shown that Podd λ is odd, for any even partition λ. The idea now is to find a suitable set partition Podd λ = M1 ∪M2 ∪· · · ∪Mk such that each of the Mi is odd.

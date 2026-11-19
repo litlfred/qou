@@ -1,1 +1,0 @@
-By construction the leaves must be final graphs, and they are the plane graphs we are interested in: any plane graph of $n$ faces can be generated in $n-1$ steps by this process, adding one (final) face at a time.

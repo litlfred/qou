@@ -1,1 +1,0 @@
-To relate these to $EP_{\mc H}$ one must compare $EP_{\mc H}$ and $EP_{\mc W^e}$, which is done in \cite[Section 5.6]{Ree} (for affine Hecke algebras with equal parameters) and in \cite[Chapter 3]{OpSo1}.

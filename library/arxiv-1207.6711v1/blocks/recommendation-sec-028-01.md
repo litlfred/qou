@@ -1,1 +1,0 @@
-To prove that $\mathcal Z$ is well defined, we must prove that \begin{equation}\mu(c)=\mu(c'),\text{ with } c'=\mathcal C(g_0d_0N,\dots,g_3d_3N), \end{equation} where $d_i=d(\lambda^i_1,\dots,\lambda^i_n)$ are diagonal matrices.

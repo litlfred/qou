@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2104.01786v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "34087d5063ef550753f920ff521868df1305989eeb4e1a9e630da8e17185da80",
   "file": "2104.01786v1.pdf"
  },
  "provenance": {
-  "title": "Spin(11 , 3), particles and octonions",
+  "title": "Spin(11, 3), particles and octonions",
   "authors": "Kirill Krasnov",
   "arxiv": {
    "id": "2104.01786",
@@ -16,106 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 6
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "We shall refer to it as $\\tilde{J}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "The suggestion that octonions may provide a useful language for describing elementary particles is almost as old as the Standard Model (SM) itself, see [@Gunaydin:1973rs] and references therein.[^1] Thus, it was observed early on that the 8-dimensional space of octonions, after a complex structure is chosen, splits as ${\\mathbb O}={\\mathbb C}\\oplus{\\mathbb C}^3$, with the first factor naturally corresponding to leptons and the second one describing quarks.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 1-6)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-000-1-introduction.md",
    "section_title": "Introduction",
    "pages": "1-6",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This suggests that unconventional descriptions that \\\"unify\\\" the internal (colour, isospin) with the Lorentz spin degrees of freedom should be taken more seriously.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This should be compared with (the quark version of) ([\\[Phi-Y\\]](#Phi-Y){reference-type=\"ref\" reference=\"Phi-Y\"}).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-033-73-evaluating-the-mass-terms.md",
-   "section_title": "Evaluating the mass terms",
-   "pages": "23-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Indeed, it is clear that we have put together what all textbooks say one should never mix - the group of gauge transformations acting on the \\\"internal\\\" particle degrees of freedom, and the Lorentz group that acts by spacetime rotations.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-034-8-discussion.md",
-   "section_title": "Discussion",
-   "pages": "24-27",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The only thing we can say in the defence of the whole approach is that the similarity in the two complex structure $J,\\tilde{J}$, the first of which is needed to go from ${\\rm Spin}(10)$ to the Pati-Salam group, and the second needed to see the Lorentz group arising, is so striking that this suggests that the mechanism selecting them must be one and the same.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-034-8-discussion.md",
-   "section_title": "Discussion",
-   "pages": "24-27",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "There is no such simple description in the split case ${\\rm Spin}(7,7)$, and so it must be concluded that from the two pseudo-orthogonal groups in 14 dimensions that have real semi-spinor representations, it is the ${\\rm Spin}(11,3)$ case that is relevant for the purpose of describing the elementary particles, not ${\\rm Spin}(7,7)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-034-8-discussion.md",
-   "section_title": "Discussion",
-   "pages": "24-27",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 1-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-2104.01786v1/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-2104.01786v1#prop-sec-000-01"
   }
  ]
 }

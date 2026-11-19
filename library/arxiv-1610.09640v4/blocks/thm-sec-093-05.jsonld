@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/thm-sec-093-05",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 273,
+  "pageEnd": 280,
+  "text": "thm-sec-093-05.md",
+  "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-093",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "13.4.16",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-093-134-van-den-bergh-rigidity.md (p. 273-280)",
+    "claim_id": "arxiv-1610.09640v4#theorem:13.4.16",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,1 +1,0 @@
-We can further decompose each regular ideal octahedron into four non-regular ideal tetrahedra (there are three ways to do this: you must choose a diagonal connecting two opposite vertices) to get an ideal triangulation $\calT$ for $M$.

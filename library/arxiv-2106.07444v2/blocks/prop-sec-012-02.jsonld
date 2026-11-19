@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2106.07444v2/blocks/prop-sec-012-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 78,
+  "pageEnd": 82,
+  "text": "prop-sec-012-02.md",
+  "derivedFrom": "library/arxiv-2106.07444v2/sections/sec-012",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.07444v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "B",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-012-appendix-b-braid-varieties-in-the-literature.md (p. 78-82)",
+    "claim_id": "arxiv-2106.07444v2#proposition:B",
+    "lean_status": "unformalized"
+  }
+}

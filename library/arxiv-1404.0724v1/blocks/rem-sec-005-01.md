@@ -1,0 +1,1 @@
+Let G be an abelian group. An Eilenberg-Maclane space K(G, n) is a topological space such that: • πn(K(G, n)) ∼= G. • πm(K(G, n)) ∼= {0} for m̸ = n. Given G and n, the spaces K(G, n) exist and are well deﬁned up to homotopy equivalence. The conﬁguration spaces of points in the plane are important examples of Eilenberg-Maclane spaces: Cn(C) ∼= K(Bn, 1). ˆCn(C) ∼= K(Pn, 1).

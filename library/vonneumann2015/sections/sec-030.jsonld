@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Unbounded Operators",
+  "pageStart": 85,
+  "pageEnd": 86,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-030",
+    "library/vonneumann2015/blocks/ex-sec-030-01",
+    "library/vonneumann2015/blocks/rem-sec-030-02",
+    "library/vonneumann2015/blocks/lem-sec-030-03",
+    "library/vonneumann2015/blocks/lem-sec-030-04",
+    "library/vonneumann2015/blocks/rem-sec-030-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

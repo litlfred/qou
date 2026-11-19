@@ -1,0 +1,1 @@
+Since there is no experimental value for the $P$-wave effective range $r_1$, \textcite{Hammer:2011ye} extracted it from the experimental number ${\rm B(E1)}(1/2^+ \rightarrow 1/2^-) = 0.105(12)~e^2$ \fm$^2$ from \textcite{Summers:2007du}, yielding $r_1^{\rm LO} = {-}0.66~\fm^{-1}$.

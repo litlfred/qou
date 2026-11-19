@@ -1,0 +1,1 @@
+There is a natural splitting ρ: Hi(BG, BP; Z) →Hi(BG; Z) of the above sequence for i > 1. Proof Denote P2 := 2k b 2−k  | k ∈Z, b ∈C  . One computes that Hi(BP2; Z) = 0 for i > 0. Thus the diagram 0 −−−−→Hi(BG; Z) −−−−→Hi(BG, BP; Z) −−−−→Hi−1(BP; Z) −−−−→0 y

@@ -14,14 +14,11 @@
   "pageEnd": 13,
   "contains": [
     "library/milnor-hyperbolic/blocks/prose-sec-000",
-    "library/milnor-hyperbolic/blocks/recommendation-sec-000-01",
-    "library/milnor-hyperbolic/blocks/recommendation-sec-000-02",
-    "library/milnor-hyperbolic/blocks/recommendation-sec-000-03",
-    "library/milnor-hyperbolic/blocks/recommendation-sec-000-04",
-    "library/milnor-hyperbolic/blocks/recommendation-sec-000-05",
-    "library/milnor-hyperbolic/blocks/recommendation-sec-000-06"
+    "library/milnor-hyperbolic/blocks/lem-sec-000-01",
+    "library/milnor-hyperbolic/blocks/lem-sec-000-02",
+    "library/milnor-hyperbolic/blocks/rem-sec-000-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-hyperbolic",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/milnor-hyperbolic",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-hyperbolic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/milnor-hyperbolic/manifest.jsonld",
   "provenance": "ingested"
 }

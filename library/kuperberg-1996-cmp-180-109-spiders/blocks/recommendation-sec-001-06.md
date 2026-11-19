@@ -1,1 +1,0 @@
-We will use this incomplete structure in an indirect argument that internal clasps must exist for all three rank 2 cases (as before, they are highest- weight projections), but in the A2 case we will also give a more explicit construction.

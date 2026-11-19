@@ -1,0 +1,1 @@
+(Local to Global Principle) Given K ≥1, C ≥0 and δ ≥0, there exists ˆK, ˆC and A so that if J is an interval in R, X is δ-hyperbolic and h : J →X is a (K, C)-quasi- isometric embedding restricted to every connected subsegment of J with length ≤A, then h is a ( ˆK, ˆC)-quasi-isometric embedding.

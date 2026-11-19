@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2507.12454v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "156fd9080847b4e75e8a4f4b16558161b49cc0fdbcf7149ff9f35fa90819c152",
   "file": "2507.12454v1.pdf"
@@ -16,151 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
-  "by_kind": {
-   "recommendation": 9
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Denoting the top-left diagonal entry of $M_i$ by $\\lambda_i$ we must have $\\prod_{i=1}^4 \\lambda_i=1$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-fricke-klein-example.md",
-   "section_title": "Fricke-Klein example",
-   "pages": "3-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We should also compare our calculations with the number of points on our variety over $\\mathbb F_q$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-fricke-klein-example.md",
-   "section_title": "Fricke-Klein example",
-   "pages": "3-8",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Even if we do obtain a complete list of equations, it is not clear which interesting information we should be able to extract from such a list.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-setup.md",
-   "section_title": "Setup",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Initially, in the identity [\\[eq:partition function logarithm\\]](#eq:partition function logarithm){reference-type=\"eqref\" reference=\"eq:partition function logarithm\"} it was not at all clear that the right hand side has coefficients which are polynomials in $q$, $t$, which they should be because the mixed Hodge polynomials on the left hand side are polynomials by definition.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-what-is-known.md",
-   "section_title": "What is known?",
-   "pages": "9-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is not completely clear why we should pass to the Hilbert scheme of $\\mathbb C^2$, but our construction in [@hausel2022p], in fact first produces an algebra of Hamiltonian fields on $\\mathbb C^*\\times\\mathbb C$, and only then it is degenerated to the algebra for $\\mathbb C^2$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-cohascoulomb-branches.md",
-   "section_title": "COHAs/Coulomb branches",
-   "pages": "15-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Instead, we should take the local cohomology with respect to a Lagrangian subvariety.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-cohascoulomb-branches.md",
-   "section_title": "COHAs/Coulomb branches",
-   "pages": "15-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Here it is not clear which precise Higgs moduli stack should be taken on the right hand side.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-5-cohascoulomb-branches.md",
-   "section_title": "COHAs/Coulomb branches",
-   "pages": "15-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "First, observe that, in view of [\\[eq:geometric engineering\\]](#eq:geometric engineering){reference-type=\"eqref\" reference=\"eq:geometric engineering\"}, we should consider the bundle of multiforms, i.e. the $g$-fold tensor product of the bundle of differential forms on the Hilbert scheme.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-7-poisson-geometry-of-coulomb-branches.md",
-   "section_title": "Poisson geometry of Coulomb branches",
-   "pages": "20-21",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "I explain how the general case should be related to the symplectic geometry of the Hilbert scheme.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-1",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

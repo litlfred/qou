@@ -1,1 +1,0 @@
-From the type IIA perspective, the target space is $K3\times S^1\times \tilde{S}^1$ and the orbifold group must be a symmetry of the $\mathcal{N}=(4,4)$ superconformal sigma model $\mathcal{C}$ on $K3$.

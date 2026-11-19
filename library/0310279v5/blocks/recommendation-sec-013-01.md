@@ -1,1 +1,0 @@
-It should be clear to the reader that (except in very special cases) the braiding of the long thin bands will lead to geometric linking between X+ and X−, and this implies that there will be additional ‘short clasp arcs’ in the bands.

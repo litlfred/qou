@@ -1,1 +1,0 @@
-An example of how the left associative multiplication algebra of the (complex) octonions may be used to represent one generation of standard model fermions with unbroken $SU(3)\times U(1)$ symmetry was given in [\[Furey\]](#Furey){reference-type="ref" reference="Furey"}.

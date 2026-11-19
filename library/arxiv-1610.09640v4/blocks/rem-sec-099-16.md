@@ -1,0 +1,1 @@
+In algebraic geometry the role of tensoring with tilting bimodule complexes is played by Fourier-Mukai transforms. This theory is at the core of contemporary birational geometry. See the survey [64] or the book [70].

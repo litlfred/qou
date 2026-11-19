@@ -1,0 +1,1 @@
+22 (holomorphic de Rham cohomology). Let M be a complex p-manifold embedded in Cn. Then the inclusions Cn,holo(M) ,→Cn(M) induce an isomorphism of cohomology rings. In particular, Hholo,k(M)  Hk(M) for all k ≥0. □ Proof See Voisin [Voi02] and the notes at the end of this appendix. □ We ﬁnish this appendix by observing a corollary of Proposition B.10 in the complex setting.

@@ -1,1 +1,0 @@
-Therefore, just before the instant of degeneracy the endpoint of λ2θ which is on F + must "migrate" from the + to the - STUDYING LINKS VIA CLOSED BRAIDS III 43 FIGURE 3.6 side of F 20, as it has done in the passage from 02 to Θ4.

@@ -1,1 +1,0 @@
-The chain of equivalences [\[STonT1\]](#STonT1){reference-type="eqref" reference="STonT1"} should remind us of [\[tetpols\]](#tetpols){reference-type="eqref" reference="tetpols"}.\ This concludes our quick tour of the basic operations and mirror symmetries in 3d $\mathcal{N}=2$ gauge theories.

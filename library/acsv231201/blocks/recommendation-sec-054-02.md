@@ -1,1 +1,0 @@
-Because the weight function is bounded among terms whose total degree is ﬁxed, the loop in the algorithm must terminate, and when it terminates every summand has a denominator whose linear factors form a χ-independent set.

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-039",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "S,F and their graphs.",
+  "pageStart": 94,
+  "pageEnd": 96,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-039",
+    "library/vonneumann2015/blocks/lem-sec-039-01",
+    "library/vonneumann2015/blocks/thm-sec-039-02",
+    "library/vonneumann2015/blocks/cor-sec-039-03",
+    "library/vonneumann2015/blocks/lem-sec-039-04",
+    "library/vonneumann2015/blocks/cor-sec-039-05",
+    "library/vonneumann2015/blocks/lem-sec-039-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

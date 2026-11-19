@@ -1,0 +1,1 @@
+Let 1E Y ∈E0,0(Y) be the unit π∗ Y/B(u). Then s∗(1E Y) = thV ∈E2r,r 0V (V, p∗det−1 V ). As a consequence, s∗(1E Y) in E2r,r(V, p∗det−1 V ) is the image of thV under the “forget supports” map E2r,r 0V (V, p∗det−1 V ) →E2r,r(V, p∗det−1 V ).

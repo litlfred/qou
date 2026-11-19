@@ -1,0 +1,1 @@
+With notation as above, suppose τpδ = 2 cos π/(λ(p)+2) (τpδ ≥2 if λ(p) = ∞). Then P (A,TR) is a (spherical) C∗-planar algebra with principal and dual principal graphs equal to ['4,.. The (normalized) trace of the minimal projection in PAT) corresponding to the word w=

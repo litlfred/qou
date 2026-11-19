@@ -1,0 +1,1 @@
+The case of p = 1 would recover Matveev’s theorem [278]: two closed 3-manifolds M and N are equivalent by a finite sequence of surgeries on Y graphs if and only if there is an isomorphism Hi(M;Z) > H,(N;Z) preserving the linking pairing on the torsion.

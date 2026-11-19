@@ -1,1 +1,0 @@
-This must be compared with Theorem [\[thm:BV\]](#thm:BV){reference-type="ref" reference="thm:BV"} (due to Bergeron and Venkatesh) on the asymptotic behavior of torsions by coverings, that yields sequences of coverings $M^3_ n\to M^3$ so that $\left|\tau(M^3_ n, \sigma)\right|$ grows with the exponential of the volume of $M_n^3$.

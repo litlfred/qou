@@ -1,1 +1,0 @@
-Since symmetries are equivalent to con- served quantities, this implies for instance that any conserved quantity (“current”) other than energy-momentum and angular momentum (which come from p0) must 10 RON Y.

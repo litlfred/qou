@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1705.01853v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "895e0b22c93bca1b83d0a42b4735c2bdd923720cc50dea2ecf3fa50b5a07a5b8",
   "file": "1705.01853v2.pdf"
@@ -16,166 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
-  "by_kind": {
-   "recommendation": 10
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\para \\underline{$\\Gamma= {\\bf Z}_2$:} Wilson lines must now be invariant under $\\xi^3$ This means that electric lines with $z_2^e=0$ must have $q$ even, while those with $z_2^e=1$ must have $q$ odd.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-line-operators-in-the-standard-model.md",
-   "section_title": "Line Operators in the Standard Model",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\para \\underline{$\\Gamma= {\\bf Z}_3$:} Wilson lines must now be invariant under $\\xi^2$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-line-operators-in-the-standard-model.md",
-   "section_title": "Line Operators in the Standard Model",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This mean that electric lines must have $q=z_3^e$ mod 3.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-line-operators-in-the-standard-model.md",
-   "section_title": "Line Operators in the Standard Model",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It is noticeable that all fundamental fermions in the Standard Model obey this relationship between the charges\\footnote{Wilson lines should be thought of as the insertion of infinitely heavy particles, and so are not directly associated to these massless, chiral fermions.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-3-line-operators-in-the-standard-model.md",
-   "section_title": "Line Operators in the Standard Model",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The resolution to this was given long ago \\cite{corrigan}: the magnetic monopole must also carry colour magnetic charge, and this provides an extra contribution to the Dirac quantisation condition, rendering the spectrum consistent.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-32-electroweak-symmetry-breaking.md",
-   "section_title": "Electroweak Symmetry Breaking",
-   "pages": "13-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\para The further requirement that elementary particles should not form black holes \\cite{weakest} suggests that there are new magnetic (and possibly electric) particles to be found whose charges depend on $\\Gamma$.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-4-summary.md",
-   "section_title": "Summary",
-   "pages": "15-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Obviously, if a neutral quark is discovered, transforming in the $({\\bf 1},{\\bf 3})_0$ representation of $G$, then we must take $\\Gamma = {\\bf Z}_2$ or ${\\bf 1}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-4-summary.md",
-   "section_title": "Summary",
-   "pages": "15-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Of course, these predictions are rather toothless: the particles have a mass which is constrained only by the Planck scale are unlikely to be abundant; one must hope that Nature is kind \\cite{moedal}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-4-summary.md",
-   "section_title": "Summary",
-   "pages": "15-16",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We learn in kindergarten that we should take \u02dcG = U(1) \u00d7 SU(2) \u00d7 SU(3) But this is not quite accurate.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For this reason, it is sometimes stated that one should take the gauge group to include the quotient \u0393 = Z6.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-front-matter.md",
-   "section_title": "Front matter",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

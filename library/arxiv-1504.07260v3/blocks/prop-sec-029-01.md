@@ -1,0 +1,1 @@
+Lattice of electric-magnetic charges In this section, we determine the lattice of electric-magnetic charges in a CHL model with λ > 1 under the assumption that string-string duality and heterotic S-duality (or, equiva- lently, type IIA T-duality along S1 × ˜S1) hold.

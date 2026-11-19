@@ -1,0 +1,1 @@
+Let us introduce one more affine Hecke algebra # with generators {T, ¥;, 1Sisn} for d =(@)", 4” =(q")", where k’, k"eC. Then the formal substitution Y; = Y*(k,; =k’ or k” a me or long «;) together with one of the following four sets of formulas

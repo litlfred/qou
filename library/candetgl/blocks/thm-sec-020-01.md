@@ -1,0 +1,1 @@
+The image of the Biot–Savart operator is a proper subspace of the image of curl, whose orthogonal projection into the subspace of ‘‘ﬂuxless knots’’ is one-to-one. This will follow immediately from Theorems B and B8 and ~borrowing from the future! from

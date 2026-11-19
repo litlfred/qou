@@ -1,1 +1,0 @@
-Working inﬁnitesimally we derive that there must exist φ ∈Lie(U(k)), such that: [B1, φ] = ǫ1B1, [B2, φ] = ǫ2B2 −φI + Ia = 0, −aJ + Jφ = −(ǫ1 + ǫ2)J (3.13) We can go to the bases in the spaces V , W where φ and a are diagonal.

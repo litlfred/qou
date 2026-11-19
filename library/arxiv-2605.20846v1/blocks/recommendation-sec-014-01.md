@@ -1,1 +1,0 @@
-Since $e_{M\# N} = e_M \circ e_N$, their actions on the quotient $V_i / V_{i-1}$ must satisfy \[ \chi_i(M \# N) = \chi_i(M) \chi_i (N) .\] Therefore this ``character theory'' of closed oriented 3 manifolds is completely determined by the character theory of oriented irreducible prime 3 manifolds. \end{eg}

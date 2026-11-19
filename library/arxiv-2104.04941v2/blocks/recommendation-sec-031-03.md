@@ -1,1 +1,0 @@
-Then for $G$, there is a quiver $Q$ which also carries a Fock--Goncharov coordinate structure. \end{lemma} \begin{proof} We must construct $Q$, $\murot$, $\muflip$, $\conftoquiv$, then show that all requirements of \cref{def:fgcs} are satisfied.

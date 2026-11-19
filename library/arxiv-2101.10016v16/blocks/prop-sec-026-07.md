@@ -1,1 +1,1 @@
-Let C be a tensor category with generalised coboundary c. Then duals
+Let C be a tensor category with generalised coboundary c. Then duals are two-sided. If the category has right duals and (ρ ∨ , bρ, dρ) denotes a right duality then b ′ ρ = c(ρ ∨ , ρ) −1 ◦ bρ, d′ ρ = dρ ◦ c(ρ, ρ∨ ) (27.7) is a left duality with ρ ∨ = ∨ρ. Conversely, given a left duality, (∨ρ, b′ ρ , d′ ρ ) the same formula defines a right duality.

@@ -1,1 +1,0 @@
-This should be contrasted with the case of a compact gauge group, where one usually develops perturbation theory in the background of a trivial flat connection, and the perturbative invariants $S_n^{(\rho)}$ turn out to be rational numbers.

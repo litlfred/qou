@@ -1,0 +1,1 @@
+(Global Cubic Condition) Consider a family π : X →U of marked abelian varieties, with period map p : U →Hg, where U has an aﬃne structure α : V ∗⊗OU ∼→TU. Then π admits a Lagrangian structure which induces α if and only if the composition dp ◦α ∈Hom(V ∗⊗OU, Sym2V ⊗OU) = Γ(V ⊗Sym2V ⊗OU) comes from a cubic c ∈Γ(Sym3V ⊗OU).

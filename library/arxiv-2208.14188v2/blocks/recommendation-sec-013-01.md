@@ -1,1 +1,0 @@
-For a generic $sl(2,\IZ)$ transformation $(\begin{smallmatrix} a&b\\c&d\end{smallmatrix})$, the power series should be replaced by $\varphi^{(k=c,\s_0)}(1;\tau)$ and $\varphi^{(k=c,\s_j)}(1;\tau)$ or their Galois transformation in the trace field.

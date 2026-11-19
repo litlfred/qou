@@ -1,0 +1,1 @@
+What extra conditions do you need to check? In the presence of minimal critical points we do not need to rule out the critical points at inﬁnity (CPAI) discussed in previous chapters. However, if we do rule out CPAI then Theorem 7.20 applies and we get the following.

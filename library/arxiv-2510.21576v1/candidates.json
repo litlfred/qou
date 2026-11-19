@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2510.21576v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "17a79b59d590c8da2157c822a8d005af33250a6c641717a52b443a014eb3793a",
   "file": "2510.21576v1.pdf"
@@ -16,121 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
-  "by_kind": {
-   "recommendation": 7
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Additionally, in coordinate space $\\ensuremath{\\boldsymbol{p}} = -i \\nabla$ and acts directly on the wave function (for sub-leading terms involving powers of $\\ensuremath{\\boldsymbol{p}}$, particular care must be taken when performing the Fourier transform from momentum to coordinate space).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-low-momentum-transfer-nonrelativistic-reduction.md",
-   "section_title": "Low-momentum transfer nonrelativistic reduction",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Second, the final states, which play a significant role in the nuclear response functions, may include high-momentum knocked-out nucleons, whose kinetic energies should be calculated relativistically for accurate results.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-high-momentum-transfer-nonrelativistic-reduction.md",
-   "section_title": "High-momentum transfer nonrelativistic reduction",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The nucleon form factors ${F}_1(Q^2)$ and $F_2(Q^2)$ appearing in the covariant expression of the electromagnetic current -- Eq. ([\\[eq:relvector\\]](#eq:relvector){reference-type=\"ref\" reference=\"eq:relvector\"}) -- must also be treated consistently since they depend on the nucleon momentum through $Q^2$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-high-momentum-transfer-nonrelativistic-reduction.md",
-   "section_title": "High-momentum transfer nonrelativistic reduction",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In principle, their expansion around the quasielastic peak introduces terms that should be included for consistency.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-high-momentum-transfer-nonrelativistic-reduction.md",
-   "section_title": "High-momentum transfer nonrelativistic reduction",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A similar treatment should be in principle applied to two-body currents.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-high-momentum-transfer-nonrelativistic-reduction.md",
-   "section_title": "High-momentum transfer nonrelativistic reduction",
-   "pages": "4-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Focusing on the dominant contributions at large $q$, the prefactor $(2m\\tau_{qe})\\alpha(q)/q^2$ in the LO high-$q$ expansion should be compared to the factor $1/2m$ appearing in Eq. [\\[eq:transverse_NR_LO\\]](#eq:transverse_NR_LO){reference-type=\"eqref\" reference=\"eq:transverse_NR_LO\"}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-comparing-low--and-high-momentum-transfer-nonrel.md",
-   "section_title": "Comparing low- and high-momentum transfer nonrelativistic reductions",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(20) and (21), should lead to the well-known Rosen- bluth cross section.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-comparison-with-the-rosenbluth-cross-section.md",
-   "section_title": "Comparison with the Rosenbluth cross section",
-   "pages": "16-17",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

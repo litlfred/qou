@@ -1,1 +1,0 @@
-However, if we had different kinds of heat baths which interact in a nonlinear way with the heavy particle, the adjustment previously mentioned cannot be applied anymore but a different derivation as that proposed in this paper should be considered.

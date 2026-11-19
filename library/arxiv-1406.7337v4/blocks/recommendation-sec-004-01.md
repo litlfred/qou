@@ -1,1 +1,0 @@
-Since $\beta \in B_{n}$ contains a complete subword, then each generator of $B_{n}$ (each of which corresponds to a crossing of $D(K)$ between adjacent braid string portions) must occur at least once.

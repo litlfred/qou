@@ -1,0 +1,1 @@
+1.6. (Quotient Category) Let C be a category and R a congruence on C. Then the quotient category C/R has the same objects as C and the morphisms HomC/R(a, b) = HomC(a, b)/Ra,b are those of C modulo the equivalence relation Ra,b. If R is a binary relation, the quotient category C/R is defined as C/R′ where R′ is the least congruence containing R.

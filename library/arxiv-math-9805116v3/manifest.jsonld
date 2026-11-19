@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805116v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9805116v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9805116v3",
+  "title": "Weak Hopf Algebras I: Integral Theory and C*-structure",
   "contains": [
     "library/arxiv-math-9805116v3/sections/sec-front-matter",
     "library/arxiv-math-9805116v3/sections/sec-000",
@@ -37,7 +37,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9805116v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9805116v3.pdf",
     "source_sha256": "65ce47d232d61de4f4f1f64b202d5b0299e66d7e2cc7aa0218b5c8e4f8ee169c",
     "pages": 40,
@@ -48,8 +50,8 @@
       "stamp_date": "8 Jun 1999"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-For these choices we set $ C_{\T_0} = x_{\nu, \s, \mu} $ and, in view of \eqref{intheaboveexpansion} and Theorem \ref{GLqh}, we must calculate the coefficient of $ C_{\T_0 \T_0} $ in the expansion of $ C_{\T_0 \T_0} C_{\T_0 \T_0} $ in terms of the cellular basis for $ \SpheAlg(t) $.

@@ -1,0 +1,1 @@
+1.11. (Necessary Relations) Let H, G, R be a presentation of C. Let H : F(G) →C be the composition H ◦QR. We say R is necessary if for any R′ smaller than R, the unique functor H ′ : F(G)/ ∼R′→C, through which H factors as H = H ′ ◦QR′ is no longer an isomorphism.

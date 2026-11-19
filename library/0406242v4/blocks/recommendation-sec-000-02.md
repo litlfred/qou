@@ -1,1 +1,0 @@
-Akiyoshi [4], combining the methods of Akiyoshi, Sakuma, Wada and Yamashita [5] and Minsky [18], proved that the “combinatorially canonical” triangulation H must also be “geometrically canonical,” ie topologically dual to the Ford–Voronoi domain of Vϕ.

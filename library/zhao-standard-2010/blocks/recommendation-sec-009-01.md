@@ -1,1 +1,0 @@
-Computation in many cases such as those listed in Remark 8.2 and Conjec- ture 8.5 show that MPVs must satisfy some other relations apart from the standard ones when N has at least two distinct prime factors, so a naive gener- alization of Conjecture 6.1 to all levels does not exist at present.

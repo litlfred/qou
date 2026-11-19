@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/s0025-5718-07-02027-3/blocks/rem-sec-007-09",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 14,
+  "pageEnd": 24,
+  "text": "rem-sec-007-09.md",
+  "derivedFrom": "library/s0025-5718-07-02027-3/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0025-5718-07-02027-3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7.11",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-007-7-the-algorithm.md (p. 14-24)",
+    "claim_id": "s0025-5718-07-02027-3#remark:7.11"
+  }
+}

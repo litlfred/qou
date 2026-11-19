@@ -1,1 +1,0 @@
-While the meson sector must be formulated relativistically due to the lightness of its constituents, the meson-baryon sector can be formulated in both ways, and the nucleon-nucleon sector is formulated non-relativistically.

@@ -1,1 +1,0 @@
-In the case of SUq(2) one should use the q-generalized angular momentum theory22,23,24, in which the irreducible tensor op- erators for the quantum algebra SUq(2)23 as well as the q-generalized version of the Wigner-Eckart theorem24 are available.

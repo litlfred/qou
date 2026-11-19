@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2205.06874v2/blocks/ex-sec-013-03",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 18,
+  "pageEnd": 19,
+  "text": "ex-sec-013-03.md",
+  "derivedFrom": "library/arxiv-2205.06874v2/sections/sec-013",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2205.06874v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.10",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-013-bordered-diagrams.md (p. 18-19)",
+    "claim_id": "arxiv-2205.06874v2#example:2.10"
+  }
+}

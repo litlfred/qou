@@ -1,1 +1,0 @@
-Focusing on the dominant contributions at large $q$, the prefactor $(2m\tau_{qe})\alpha(q)/q^2$ in the LO high-$q$ expansion should be compared to the factor $1/2m$ appearing in Eq. [\[eq:transverse_NR_LO\]](#eq:transverse_NR_LO){reference-type="eqref" reference="eq:transverse_NR_LO"}.

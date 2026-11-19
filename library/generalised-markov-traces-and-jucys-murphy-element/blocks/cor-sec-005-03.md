@@ -1,0 +1,1 @@
+For X equal to A−1, B or D, elements JX k commute with each other when considered lying in the same Iwahori–Hecke algebra via the embedding described above. The element JX n lies in the centraliser of H(Xn−1) in H(Xn).

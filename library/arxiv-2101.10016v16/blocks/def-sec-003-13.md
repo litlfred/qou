@@ -1,0 +1,1 @@
+A ∗-category is a linear category C endowed with an antilinear, contravariant, involutive functor ∗ : C → C acting trivially on objects. A tensor ∗-category is a tensor category equipped with the structure of a ∗-category satisfying (S ⊗ T) ∗ = S∗ ⊗ T∗ for any pair of morphisms S, T ∈ C. The associativity morphisms are assumed unitary, α ∗ ρ,σ,τ = α −1 ρ,σ,τ .

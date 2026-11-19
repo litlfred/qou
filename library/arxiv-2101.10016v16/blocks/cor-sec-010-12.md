@@ -1,1 +1,1 @@
-Let A be a discrete unitary weak quasi bialgebra defined by Ω and
+Let A be a discrete unitary weak quasi bialgebra defined by Ω and assume that (Ω−1) 1/2Ω1/2 = ∆(I). Let us regard T = Ω1/2 as a twist with left inverse T −1 = (Ω−1 ) 1/2 . Then the twisted Ω-involution of AT is trivial, and therefore strongly trivial.

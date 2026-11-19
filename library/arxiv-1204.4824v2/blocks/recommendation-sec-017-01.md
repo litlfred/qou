@@ -1,1 +1,0 @@
-There are infinitely many such intersections, accumulating at the defect, which generate infinitely many $ik$ walls.} Similar (but more involved) remarks should apply for more general types of defect.

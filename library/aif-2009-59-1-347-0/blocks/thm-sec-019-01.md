@@ -1,0 +1,1 @@
+— Let E(x) be the sum of the classical Euler series in the direction R+. Then Eq(x) →E(x) if q →1+ for any x ∈C such that arg x ∈(−π, π) and the convergence is uniform on the compacts of such a domain.

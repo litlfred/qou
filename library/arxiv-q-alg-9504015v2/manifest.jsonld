@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9504015v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9504015v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-q-alg-9504015v2",
+  "title": "Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution",
   "contains": [
     "library/arxiv-q-alg-9504015v2/sections/sec-000",
     "library/arxiv-q-alg-9504015v2/sections/sec-001",
@@ -56,7 +56,9 @@
   },
   "meta": {
     "doc_id": "arxiv-q-alg-9504015v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9504015v2.pdf",
     "source_sha256": "ea5588225a393477d8b59b4f1374ec9192da2632b9beccdd0f17bb68f9584047",
     "pages": 33,
@@ -67,8 +69,8 @@
       "stamp_date": "24 Apr 1995"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

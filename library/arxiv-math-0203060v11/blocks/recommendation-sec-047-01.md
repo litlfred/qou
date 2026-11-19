@@ -1,1 +1,0 @@
-The result is that $G$ must be abelian, and for each $G$ the categories are parametrized by pairs $(q,r)$ where $q$ is a nondegenerate symmetric bilinear form on $G$ with coefficients in ${\mathbb{C}}^*$, and $r$ is a choice of $\sqrt{|G|}$.

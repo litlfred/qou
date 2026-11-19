@@ -1,1 +1,0 @@
-Repeating a previous experiment or calculation may not be as glamorous as doing it for the first time even if done by a different method, but doing so may be the only way to ensure that a result is correct and that the magnitude of the changes in the recommended values of the constants from one CODATA adjustment to the next will not be unduly large.

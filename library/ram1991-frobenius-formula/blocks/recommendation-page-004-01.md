@@ -1,1 +1,0 @@
-In view of the fact that the “modern” approach to the theory (and notation) of quantum groups and the quantum Yang-Baxter equation is slightly different from that used in Jimbo’s original paper, I shall endeavor to give a short summary explaining how this reciprocity comes about.

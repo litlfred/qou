@@ -1,1 +1,0 @@
-As a consistency check, note that the Galois group $\mathrm{Gal}(\mathbf Q(\zeta)/\mathbf Q(\zeta)^{+})$ should act trivially on $B(\mathbf Q(\zeta)^{+})$, and we indeed see that the non-trivial element $\sigma: \zeta \mapsto \zeta^{-1}$ satisfies $$\sigma \eta_{\zeta} = \eta_{\zeta^{-1}} = (-1)^2 \eta_{\zeta} = \eta_{\zeta} \,.$$ ◻ :::

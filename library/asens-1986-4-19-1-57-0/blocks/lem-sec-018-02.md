@@ -1,0 +1,1 @@
+- (a) J / 0 < f < l then 2r| r+2r|(l -t)^ -lnr(l-0 mth equality iff r=l/2. (b) If ^,...,r,e^, n^2, ^t,=l, 0<r<l and ^1 ^rl +(1-0~1 then ^r|r^r|r+r|(l-0 and the equality holds iffn=2 and [t^ t^}={t, \-t}.

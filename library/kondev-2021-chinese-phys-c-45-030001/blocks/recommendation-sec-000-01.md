@@ -1,1 +1,0 @@
-Introduction NUBASE2020 is an evaluated nuclear data library that contains the recommended values of the main nuclear physics properties: masses, excitation energies (for excited isomers), half-lives, spins and parities and decay modes, and their in- tensities, for all known nuclei in their ground and excited, isomeric (T1/2≥100 ns) states.

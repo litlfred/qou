@@ -1,1 +1,0 @@
-(We shall discuss the Euler factors at the “bad” primes in Section 2F below.) The Asai L-function should not be confused with the standard L-function Lstd(9, s) := X mPOF c(m, 9) Nm(m)−s that corresponds to the usual (rather than tensor) induction of the same family of Gal(F/F)-representations.

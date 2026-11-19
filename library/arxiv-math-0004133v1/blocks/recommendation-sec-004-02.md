@@ -1,1 +1,0 @@
-Instead, they satisfy the famous relation $$aa^* - a^* a = 1.$$ While this relation plays a crucial role throughout quantum theory, it remains slightly mysterious: why should first creating a photon and then destroying one give a different result than first destroying one and then creating one?

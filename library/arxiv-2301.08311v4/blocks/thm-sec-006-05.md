@@ -1,0 +1,1 @@
+The disc potential is invariant under mutation if the local system ρ is changed to ρµ ie. W(eL) = W(eLµ). Moreover, if W(eL) = W( eK) then the Floer homology is invariant up to the same change of local system i.e. HF(eL, eK) ∼= HF(f Lµ, eK).

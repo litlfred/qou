@@ -1,1 +1,0 @@
-We thus start by the assumption that $P_n^{(\alpha)}(0) \neq 0$, and normalize the polynomials accordingly.\footnote{ We avoid a proliferation of new symbols by employing the same $P^{(\alpha)}_n(\lambda)$ and $h^{(\alpha)}_n$ in both conventions.} As we shall see shortly, this assumption is equivalent to having the origin included in the support of the spectral density.

@@ -1,0 +1,1 @@
+The algebra Bld;b g;n.c/ is an associative, unital algebra with a K-basis given by all handlebody blob diagrams on 2n points of genus g where all strands have at most du blobs of the corresponding type. Handlebody diagram algebras

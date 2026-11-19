@@ -1,0 +1,1 @@
+The additional moves needed are commuting the commuting structures past the symmetry m of the trace and the unit and counits of the adjunctions. These all follow immediately from the 2-categorical interchange law for natural transformations. □

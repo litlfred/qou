@@ -1,1 +1,0 @@
-At this point, one should emphasize the fact that the torsion of a cohomological complex carries much more informations than the cohomology of this complex, at least it provides some topological information even when the complex is acyclic.

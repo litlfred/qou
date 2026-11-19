@@ -1,1 +1,0 @@
-We remark that such a sequence of ramified covers $V_i$ must satisfy $0<i\|V\| \le \|V_i\|$, so it does not imply a negative answer to Question [\[q:manif\]](#q:manif){reference-type="ref" reference="q:manif"}.

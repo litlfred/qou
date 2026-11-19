@@ -1,1 +1,0 @@
-We shall see that, if $h$ denotes a meromorphic function at $z=0$, then $\dfrac{h}{\theta_\Lambda}$ represents a function with trivial asymptotic expansion, that is, $\dfrac{h}{\theta_\Lambda} \in \text{Ker~}J$ with notations from theorem [\[theo:BorelRitt\]](#theo:BorelRitt){reference-type="ref" reference="theo:BorelRitt"}.

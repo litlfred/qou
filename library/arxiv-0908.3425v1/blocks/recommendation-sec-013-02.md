@@ -1,1 +1,0 @@
-Inserting a complete set of states into the commutator of Eq. ([\[2:2:3:crqc\]](#2:2:3:crqc){reference-type="ref" reference="2:2:3:crqc"}) yields that both the pseudoscalar density $P_a(y)$ as well as the axial charge operators $Q_{aA}$ must have a non-vanishing matrix element between the vacuum and massless one-particle states $|\phi_b\rangle$.

@@ -1,1 +1,0 @@
-(Furthermore, it is known \cite{t} that the dimension of a modular category must be non-zero.) In the non-semisimple case one might hope to prove that the center of a spherical noetherian category satisfies the non-degeneracy condition on the the braiding introduced in \cite{ly2}.

@@ -1,0 +1,1 @@
+For a Sidon set 𝐴⊂ℕof size 𝑛, let 𝐼(𝐴+ 𝐴) count the isolated elements of the sumset — those 𝑠∈𝐴+ 𝐴with 𝑠± 1 ∉𝐴+ 𝐴. Define 𝑓(𝑛) as the minimum of 𝐼(𝐴+ 𝐴) over all Sidon sets of size 𝑛. Then 𝑓(𝑛) ≥(𝑛2 −100𝑛−16)/16, so in particular 𝑓(𝑛) →∞.

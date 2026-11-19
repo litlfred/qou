@@ -41,6 +41,17 @@ export default proposition({
         "§13–§18: the first derived u/d difference is the level-2 weight q^{∓2}; its sign is derived (u = e₁), its MeV scale is not. " +
         "The tautological Lean def `same_scale_both_levels` (`m_e·volB3 = m_e·volB3 := rfl`), which stood in for (H_α), is removed.",
     },
+    {
+      kind: "status",
+      date: "2026-11-18",
+      body:
+        "**Two-term categorical Lagrangian & connected 4th-order Borromean V³ QED trace formalized (Epic qou-7xl8, 0 sorry).** " +
+        "`QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm` (`trace_QAdjp_borromeanV3`, `trace_QAdjn_borromeanV3_connected`, " +
+        "`trace_QAdj_connected_diff_borromeanV3`, `trace_e21_strong_cartan_diff_borromeanV3`), " +
+        "`QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace` (`chi21Reduced_ratio_at_one`, `tMod111_neutron_eq_q_sq_mul_proton`), " +
+        "and `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` (`hadronicScale_mul_q_sq_hbar_eq_me`, " +
+        "`trace_lagrangian_diff_concrete_borromean_connected`) formalize the parameter-free two-term decomposition on $W_p=(2,1)$ and $W_n=(1,2)$.",
+    },
   ],
   label: "prop:neutron-proton-mass-splitting",
   title: "Neutron--proton mass splitting from quark crossing change",

@@ -1,0 +1,1 @@
+Let {Xk}∞ k=1 be a sequence of independent, identically distributed integer-valued random variables with finite mean µ and finite variance σ2, and assume that σ2 > |µ|. Assume further there is no infinite subprogression a + ℓZ of Z with ℓ> 1 such that X1 takes values in a + ℓZ almost surely. Let Sn := Pn k=1 Xk. Then sup m∈Z √n

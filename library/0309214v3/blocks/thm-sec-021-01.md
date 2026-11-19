@@ -1,0 +1,1 @@
+For every simple Lie algebra other than G2, and a set of ﬁxed fundamental weights, the colored Jones function JK : Nℓ→Z[q±1/2D] is q– holonomic. Hence the colored Jones function will satisfy some recursion relations, which, together with values at a ﬁnitely many initial colors, totally determine the colored Jones function JK.

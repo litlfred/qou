@@ -1,1 +1,0 @@
-Thus, by Corollary [\[cor:HUHU\]](#cor:HUHU){reference-type="ref" reference="cor:HUHU"}, we must prove that if [\[sumresiduesnotzero\]](#sumresiduesnotzero){reference-type="eqref" reference="sumresiduesnotzero"} holds, then there exists $\tilde m \in \mathcal{T}(-m^2/4P)$ such that at most $n-3$ of the $p_j$'s which divide $\tilde m$.

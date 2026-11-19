@@ -1,0 +1,1 @@
+Let (R, β) be a balanced dualizing complex over A. Then there is a unique symmetry isomorphism ϵR : RΓm(R) ≃ −→RΓmop(R) in D(Aen, gr), in the sense of Deﬁnition 16.5.7. Hence there is a unique isomorphism βop : RΓmop(R) ≃ −→ A∗D(Aen, gr) such that βop ◦ϵR = β.

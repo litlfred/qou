@@ -1,1 +1,0 @@
-Partial permutations form a semigroup; in this article we are interested also in the corresponding semigroup algebra which should be regarded as an analogue of the permutation group algebra ${\mathbb{C}}(S_q)$ equipped with some additional structure.

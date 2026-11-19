@@ -1,1 +1,0 @@
-We shall assume (in this section only) that there exists a Chow motive MAs(5) over Q, with coefﬁcients in E, whose L-function is LAs(5, s), and whose p-adic realisation is As Vp(5), for every prime p of E.

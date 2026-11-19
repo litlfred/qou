@@ -1,0 +1,1 @@
+The partition function ZG(β) admits the following cluster expansion: log(ZG(β)) ∶= ∑ Γ∈GC φ(HΓ)∏ γ∈Γ wγ. For algorithms, an important quantity is the truncated cluster expansion for log(ZG(β)), Tm(ZG(β)) ∶= ∑ Γ∈GC ∥Γ∥<m φ(HΓ)∏ γ∈Γ wγ, where ∥Γ∥∶= ∑γ∈Γ∥γ∥.

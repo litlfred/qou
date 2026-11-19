@@ -1,0 +1,1 @@
+A Lie group G is called a Poisson Lie Group if it is a Poisson manifold such that the group multiplication G x G -> G is a Poisson map, where G x G is equipped with the product Poisson structure. The Poisson structure is specified by a bivect or field π, the Poisson tensor, V/, 06C°°(M). (3.1) A map φ:M-+N between two Poisson manifolds is a Poisson map if {Φ*f,Φ*g}M = {f,g}N

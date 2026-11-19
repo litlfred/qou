@@ -13,9 +13,14 @@
   "pageStart": 3,
   "pageEnd": 6,
   "contains": [
-    "library/arxiv-1210.5756v1/blocks/prose-sec-001"
+    "library/arxiv-1210.5756v1/blocks/prose-sec-001",
+    "library/arxiv-1210.5756v1/blocks/thm-sec-001-01",
+    "library/arxiv-1210.5756v1/blocks/thm-sec-001-02",
+    "library/arxiv-1210.5756v1/blocks/lem-sec-001-03",
+    "library/arxiv-1210.5756v1/blocks/cor-sec-001-04",
+    "library/arxiv-1210.5756v1/blocks/cor-sec-001-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1210.5756v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1210.5756v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1210.5756v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1210.5756v1/manifest.jsonld",
   "provenance": "ingested"
 }

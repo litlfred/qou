@@ -1,0 +1,1 @@
+— Ifk<\/4 then Q^ is the noncommutative Bernoulli shift of weights t, 1 -1, where t (1 -1) = X-. In particular H (9,,) = T| t + T| (1 -1). The computation of H(9^) for ^>1/4 is entirely different and does not involve the results obtained in the preceding sections.

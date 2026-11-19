@@ -1,0 +1,1 @@
+23. (i) If X is a complex analytic variety of dimension d then X has the homotopy type of a cell complex of dimension at most d. (ii) If X is the complement in a domain of Cn of a complex variety of dimension d then X has the homotopy type of a cell complex of dimension at most 2n −d −1.

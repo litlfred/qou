@@ -1,1 +1,0 @@
-Hence we can discard the two-sided component (it must bound in $M$) and the resulting surface still represents $c.$ As this new surface is not normal, it can be isotoped to a normal surface of less weight, giving a contradiction.

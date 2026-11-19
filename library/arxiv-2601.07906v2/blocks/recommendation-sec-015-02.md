@@ -1,1 +1,0 @@
-The formal definition of an essential cylinder is discussed in appendix \ref{subapp:boundary compressibility}, but it is similar to the notion of an essential torus described in section~\ref{subsec:machine is hyperbolic}: it should be incompressible in the bulk and not parallel to the boundary.

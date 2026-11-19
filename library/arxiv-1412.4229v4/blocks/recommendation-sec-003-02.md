@@ -1,1 +1,0 @@
-At the same time we shall construct an increasing sequence of graded sets $F_0(X) \subseteq F_1(X) \subseteq \cdots$, with a compatible sequence of isomorphisms $F_i(\til{B})^{\natural} \cong A^{\natural} \ot_{\Z} \Z[F_i(X)]$.

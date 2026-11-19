@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/18/blocks/thm-sec-001-03",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 1,
+  "pageEnd": 4,
+  "text": "thm-sec-001-03.md",
+  "derivedFrom": "library/18/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/18/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.4",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-001-1-conformal-simplices.md (p. 1-4)",
+    "claim_id": "18#theorem:1.4",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+Note that the integrals defining Fp are convergent since the integrand always decays exponentially at infinity. It is, however, crucial that we consider only graphs without components having no external vertices; for example, if [ has a single 4-valent vertex connected to itself by two loops (Fig.23) then the amplitude integral involves f, G(0)?ds, which is obviously divergent.

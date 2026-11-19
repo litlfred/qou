@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/modularqholonomicmodules/blocks/thm-sec-005-07",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 7,
+  "pageEnd": 12,
+  "text": "thm-sec-005-07.md",
+  "derivedFrom": "library/modularqholonomicmodules/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.10",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-005-15-modular-q-holonomic-modules-in-chernsimons-th.md (p. 7-12)",
+    "claim_id": "modularqholonomicmodules#theorem:1.10",
+    "lean_status": "unformalized"
+  }
+}

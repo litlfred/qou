@@ -1,0 +1,1 @@
+Let A be an invertible operator on a sep- arable Hilbert space H and A −I ∈J1(H). Let P be an orthogonal projection in H and Q = I −P . Then det(PAP) = det(A) det(QA−1Q). (8.1) We use the following variation of this identity.

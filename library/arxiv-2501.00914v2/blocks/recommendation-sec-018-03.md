@@ -1,1 +1,0 @@
-But then $K$ must be a genus-1 fibered knot, since it has the same $0$-surgery as another genus-1 fibered knot \cite{gabai-foliations3}, and we have a contradiction because the only genus-1 fibered knots are not satellites.

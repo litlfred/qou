@@ -1,1 +1,1 @@
-Let C be a semisimple pre-tensor category. An object ρ ∈ C is called
+A linear functor F : C → C ′ between linear categories is called a linear equivalence if there is a linear functor, called a quasi-inverse, G : C ′ → C such that FG and GF are naturally isomorphic to the identity functors of C ′ and C respectively.

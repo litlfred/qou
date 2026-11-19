@@ -1,0 +1,1 @@
+Let M(𝑆) denote the set of multiples of a subset 𝑆⊆ℕ, and let 𝑑(𝑋) denote the upper asymptotic density of a set 𝑋. There exists a sequence 𝐴: ℕ→ℕsatisfying Í 𝑖∈ℕ1/𝐴(𝑖) = ∞, such that for 𝜖= 1/4 and for all 𝑘≥1, we have 𝑑(M(𝐴+ 𝑘)) < 1 −𝜖.

@@ -1,1 +1,0 @@
-As is evident from these papers, there are many interesting statistics under these measures, and the method of constructing exchangeable pairs in this paper should be useful for studying them by Stein's method.

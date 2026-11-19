@@ -1,1 +1,0 @@
-Second, the final states, which play a significant role in the nuclear response functions, may include high-momentum knocked-out nucleons, whose kinetic energies should be calculated relativistically for accurate results.

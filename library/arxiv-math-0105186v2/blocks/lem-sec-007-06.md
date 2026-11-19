@@ -1,0 +1,1 @@
+Assume that (E, π) has nonnegative curvature, and that the La- grangian boundary condition Q satisﬁes R ∂S κQ = 0. In addition, assume that Mh is clean and that its dimension agrees at every point with the index of Du,J. Then Φ1(E, π, Q) = [evζ(Mh)].

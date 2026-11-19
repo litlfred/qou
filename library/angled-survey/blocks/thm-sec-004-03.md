@@ -1,0 +1,1 @@
+Let M be an orientable 3–manifold with boundary consisting of tori, and let τ be an ideal triangulation of M. Then a point p ∈A(τ) corresponds to a complete hyperbolic metric on the interior of M if and only if p is a critical point of the functional V : A(τ) →R.

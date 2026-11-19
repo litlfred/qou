@@ -1,0 +1,1 @@
+Let F : K →M be a cohomological functor, and let L α−→M β−→N γ−→T(L) be a distinguished triangle in K. Then the sequence · · · →F(Ti(L)) F (Ti(α)) −−−−−−→F(Ti(M)) F (Ti(β)) −−−−−−→F(Ti(N)) F (Ti(γ)) −−−−−−→F(Ti+1(L)) F (Ti+1(α)) −−−−−−−→F(Ti+1(M)) →· · · in M is exact. Derived Categories | Amnon Yekutieli |

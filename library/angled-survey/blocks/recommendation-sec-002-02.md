@@ -1,1 +1,0 @@
-The notion of an angle structure can be summarized by saying that the tetra- hedra of τ carry genuine hyperbolic shapes, but the conditions these shapes must satisfy are much weaker than the gluing equations.

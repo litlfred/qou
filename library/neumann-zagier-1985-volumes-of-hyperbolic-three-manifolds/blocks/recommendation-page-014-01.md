@@ -1,1 +1,0 @@
-In this section we shall describe a more natural and intrinsic parametriz- ation of the deformations, due to Thurston [7, $5.81, and discuss the relation between the parameters used and the geometry of the cusps.

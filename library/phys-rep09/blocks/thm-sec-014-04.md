@@ -1,0 +1,1 @@
+Let us consider the differential equation Y’ = A(t)Y defined in a Hilbert space #€ with Y(0) = I, and let A(t) bea bounded operator in #. Then, the Magnus series 2(t) = ran Q2x(t), with 2, given by (51) converges in the interval t € [0, T) such that

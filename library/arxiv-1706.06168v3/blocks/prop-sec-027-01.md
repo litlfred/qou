@@ -1,0 +1,1 @@
+1. Fix λ ∈Nm 0 , and view V (λ) ∼= V (λ1)⊠· · ·⊠V (λm) and V (1λ) ∼= V (1)⊗λ1 ⊠· · ·⊠V (1)⊗λm as representations of (SL2(C))m. The maps Π↑ λ : V (λ) →V (1λ) and Π↓ λ : V (1λ) →V (λ) are (SL2(C))m- invariant.

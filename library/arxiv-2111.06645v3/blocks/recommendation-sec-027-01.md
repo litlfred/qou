@@ -1,1 +1,0 @@
-We must assume for now that the symmetric matrix $AB^t$ is positive definite to ensure the convergence of the series [\[Nahm2\]](#Nahm2){reference-type="eqref" reference="Nahm2"} or [\[Nahm3\]](#Nahm3){reference-type="eqref" reference="Nahm3"}, but this is not important at the end since the final formulas will be purely algebraic and make sense without this assumption.

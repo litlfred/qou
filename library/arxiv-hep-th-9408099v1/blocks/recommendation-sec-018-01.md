@@ -1,1 +1,0 @@
-Since the jumps in a or aD are integral linear combinations of mi/ √ 2 (with mi the bare masses) and are 2πi times the residues of λ, the residues of λ should be of the form Res λ = X i nimi 2πi √ 2 , with ni ∈Z.

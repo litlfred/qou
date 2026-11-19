@@ -1,1 +1,0 @@
-Nevertheless, it should certainly be understood in the framework of 3d-3d correspondence, which in particular claims that the supersymmetric vacua of the dual 3d SCFT are given by $sl(2,\IC)$ flat connections on $M$ \cite{Dimofte:2010tz}, which are precisely the saddle points of the complex Chern-Simons theory.

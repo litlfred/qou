@@ -1,1 +1,0 @@
-We now define a distance function for the set of partitions, where the distance between two partitions is the minimum number of hooks that must be removed and added to transform one Young diagram into the other.

@@ -13,9 +13,11 @@
   "pageStart": 8,
   "pageEnd": 10,
   "contains": [
-    "library/helicity03mmj/blocks/prose-sec-005"
+    "library/helicity03mmj/blocks/prose-sec-005",
+    "library/helicity03mmj/blocks/rem-sec-005-01",
+    "library/helicity03mmj/blocks/rem-sec-005-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
   "provenance": "ingested"
 }

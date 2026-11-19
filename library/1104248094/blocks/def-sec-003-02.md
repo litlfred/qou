@@ -1,0 +1,1 @@
+Let g be a Lie algebra over C, g* iίs dual We say that (g) is a Lie bialgebra if there is a Lie algebra structure on g* such the map <5:g-> Λ 2g dual to the Lie bracket [,]: Λ 2g*->g* is a 1-cocycle with the adjoint action of g on Λ 2g. The following theorem states the relations between Poisson Lie groups and Lie bialgebras.

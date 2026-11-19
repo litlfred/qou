@@ -1,1 +1,0 @@
-In the next results, we shall be devoted to prove that the bialgebra reconstructed in Theorem \ref{hopf-rec}, from the forgetful functor $\uc:{}^H\vc\to\vc$, coincides with the original bialgebra $H$.

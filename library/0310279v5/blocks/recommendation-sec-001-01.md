@@ -1,1 +1,0 @@
-(For an example the reader should refer ahead to the speciﬁed site of the stabilization in the sequence in Figure 5.) Until now these moves have been predominately used to develop link invariants, but the Markov towers themselves have been ‘black boxes’.

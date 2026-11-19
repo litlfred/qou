@@ -1,1 +1,0 @@
-[^4]: []{#foot:v2pi label="foot:v2pi"}Explicitly, in the notation of Section [\[sec:quantization\]](#sec:quantization){reference-type="ref" reference="sec:quantization"} and above, the sum of log-parameters along the two paths in the neighborhood of the $k$th cusp must equal $2u_k$ and $2v_k+2\pi i$, respectively.

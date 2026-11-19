@@ -1,0 +1,1 @@
+Let xk be a feasible solution and let α1z1,...,αjzj be the following steepest-descent augmentations applied to xk. If z1 and zj do not have the same sign-pattern from {≤0,≥0} n, then we have −c⊺z1/∥z1∥1 > −c⊺zj/∥zj∥1. De Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming

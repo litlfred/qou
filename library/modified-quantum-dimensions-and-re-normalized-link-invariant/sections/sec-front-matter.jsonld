@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/modified-quantum-dimensions-and-re-normalized-link-invariant/sections/sec-front-matter",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "contains": [
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/prose-sec-front-matter",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-1",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-2",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p001-3",
+    "library/modified-quantum-dimensions-and-re-normalized-link-invariant/blocks/figure-img-p002-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modified-quantum-dimensions-and-re-normalized-link-invariant/manifest.jsonld",
+  "provenance": "ingested"
+}

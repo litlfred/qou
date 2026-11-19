@@ -1,0 +1,1 @@
+(i) A full fusion subcategory of a group-theoretical category is group-theoretical. (ii) A component in a quotient category of a group-theoretical category is group- theoretical. jj are invertible, so C∗ jj with respect to a module category).

@@ -1,1 +1,1 @@
-B.5. Let 3, ˜3, a be three formal variables. There exists a map
+B.5. Let 3, ˜3, a be three formal variables. There exists a map iter∫1,0(3, ˜3, a) : Ad ˜51,0(K)(e1) →K⟨⟨e0∪µN ⟩⟩[ ˜3, a](3), (2-2) such that, for any f ∈Ad ˜51,0(K)(e1), word w, a ∈N∗such that a > depth(w) and λ ∈K \ {0} which is not a root of unity, we have iter ∫1,0 a,λ ( f )[w] = iter∫1,0(λ, λa, a)( f )[w].

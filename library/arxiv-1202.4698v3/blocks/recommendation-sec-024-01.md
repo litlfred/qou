@@ -1,1 +1,0 @@
-This raises several interesting questions which should be clarified, including, in particular, the interpretation of normalization changes for b-$6j$ symbols (\ref{norm}) from the point of view of supersymmetric gauge theories.

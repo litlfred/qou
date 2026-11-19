@@ -1,0 +1,1 @@
+The set ´ ba1 k1;i1...bam km;imHw ˇˇˇˇˇ w 2 Sn; m 2 N; a 2 Nm; .u; i/ 2 .¹1; : : : ; gº  ¹1; : : : ; nº/m; i1      im µ is a K-basis of HC g;n. As in the previous sections, we fix cyclotomic parameters b D .bu;i/ 2 Kd1CCdg, and a degree vector d D .du/ 2 Ng.

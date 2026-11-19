@@ -1,1 +1,0 @@
-Should $V$ be dualizable with respect to tensor products over $\Bbbk$, then the restriction of this homology theory to $\mfld(\cB)^{\sf fin}$ factors through $\Ch_\Bbbk^{\sf dual}$. \end{itemize} \end{itemize}

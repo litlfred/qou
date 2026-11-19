@@ -1,1 +1,0 @@
-For a family of recangular blocks $U'_{I,j}$, we shall use the following abreviation: $$A'_{U'} = \begin{pmatrix} A'_{1} & \ldots & \ldots & \ldots & \ldots \\ \ldots & \ldots & \ldots & U'_{i,j} & \ldots \\ 0 & \ldots & \ldots & \ldots & \ldots \\ \ldots & 0 & \ldots & \ldots & \ldots \\ 0 & \ldots & 0 & \ldots & A'_{k} \end{pmatrix},$$

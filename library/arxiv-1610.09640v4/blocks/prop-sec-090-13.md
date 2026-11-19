@@ -1,0 +1,1 @@
+Let u : A →B be an EFT ring homomorphism. (1) Let v : B →C be another EFT ring homomorphism. Then v ◦u : A →C is an EFT ring homomorphism. (2) Let A →A′ be a ring homomorphism, and deﬁne B′ := A′ ⊗A B. Then the induced ring homomorphism u′ : A′ →B′ is EFT. (3) If the ring A is noetherian, then B is also noetherian. Exercise 13.1.32. Prove Proposition 13.1.31.

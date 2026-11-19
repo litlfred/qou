@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-9306237v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9306237v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-9306237v1",
+  "title": "Chiral Perturbation to One Loop Including the rho Meson",
   "contains": [
     "library/arxiv-hep-ph-9306237v1/sections/sec-front-matter",
     "library/arxiv-hep-ph-9306237v1/sections/sec-000"
@@ -25,7 +25,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-9306237v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9306237v1.pdf",
     "source_sha256": "6fea847208a60505bf14d48dcf27d4c8db984176da9ba577c3f8240846150051",
     "pages": 14,
@@ -36,8 +38,8 @@
       "stamp_date": "7 Jun 1993"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

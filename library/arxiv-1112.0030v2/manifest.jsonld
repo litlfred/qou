@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1112.0030v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.0030v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Homological algebra of knots and BPS states Sergei Gukov and Marko Stoˇsi´c",
+  "title": "Homological Algebra of Knots and BPS States",
   "contains": [
     "library/arxiv-1112.0030v2/sections/sec-front-matter",
     "library/arxiv-1112.0030v2/sections/sec-000",
@@ -48,8 +48,8 @@
       "stamp_date": "15 Mar 2012"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

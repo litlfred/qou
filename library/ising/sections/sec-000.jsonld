@@ -14,12 +14,12 @@
   "pageEnd": 12,
   "contains": [
     "library/ising/blocks/prose-sec-000",
-    "library/ising/blocks/recommendation-sec-000-01",
-    "library/ising/blocks/recommendation-sec-000-02",
-    "library/ising/blocks/recommendation-sec-000-03",
-    "library/ising/blocks/recommendation-sec-000-04"
+    "library/ising/blocks/lem-sec-000-01",
+    "library/ising/blocks/lem-sec-000-02",
+    "library/ising/blocks/rem-sec-000-03",
+    "library/ising/blocks/lem-sec-000-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ising",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ising",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,1 @@
+An elementary disc u with boundary on TR+iϵ can be viewed as sections of πm over the upper half-space H+iϵ or the lower half-space −H+iϵ i.e. ∃ϕu, a biholomorphism from H →±H+iϵ and a section su : ±H + iϵ →Cne such that u = su ◦ϕu.

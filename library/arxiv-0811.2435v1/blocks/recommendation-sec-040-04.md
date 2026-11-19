@@ -1,1 +1,0 @@
-The total space ${\cal M}^{tot}$ of the fibration ${\cal M}^{tot}\to {\cal M}$ with the fiber $H_{D}(\CC)$ over the point $[\CC]\in {\cal M}$ should be a holomorphic symplectic manifold (cf. [@DonM]).

@@ -13,11 +13,9 @@
   "pageStart": 1,
   "pageEnd": 3,
   "contains": [
-    "library/hyperbolicandneumann/blocks/prose-sec-000",
-    "library/hyperbolicandneumann/blocks/recommendation-sec-000-01",
-    "library/hyperbolicandneumann/blocks/recommendation-sec-000-02"
+    "library/hyperbolicandneumann/blocks/prose-sec-000"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hyperbolicandneumann",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hyperbolicandneumann",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
   "provenance": "ingested"
 }

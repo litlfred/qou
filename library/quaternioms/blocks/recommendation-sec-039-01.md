@@ -1,1 +1,0 @@
-The Modiﬁed Heisenberg Equation in O When we re-derive the equation of motion without assuming associativity, the stan- dard product rule for differentiation must be replaced with one valid for non-associative algebras.

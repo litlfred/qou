@@ -1,1 +1,0 @@
-The difficulty in showing that $\iota$ is analytic is that $M_{\mathrm{dR}}(S,r)$ is a priori a moduli space for algebraic connections, not for all analytic connections; we shall not pursue here in this direction].

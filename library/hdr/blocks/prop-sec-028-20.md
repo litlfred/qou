@@ -1,0 +1,1 @@
+Let d ∈N, d > 1. The invariants θd are topologically equivalent to the Jones polyno- mial on knots, and more generally on links that are obtained as disjoint unions of knots. However, the invariants θd are not topologically equivalent to the Jones polynomial on links.

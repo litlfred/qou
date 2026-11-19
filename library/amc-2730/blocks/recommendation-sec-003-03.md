@@ -1,1 +1,0 @@
-In fact, as we shall see, a simple walk is completely determined by its set of active crossings, and it follows that |SWβ| “ |SWβr|. β β∗ β† βr Figure 5: A braid β representing the knot 52 and its reflection β˚, rotation β:, and reversal βr.
