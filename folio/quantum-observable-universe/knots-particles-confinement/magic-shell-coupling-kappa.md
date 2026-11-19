@@ -1,4 +1,4 @@
-*Define, for a substrate parameter $q$ and a mass scale $m_e$,*
+*Let $q$ be a substrate parameter and $m_e$ a mass scale. The **expression $\kappa_{\mathrm{closed}}$** is*
 
 $$
   \kappa_{\mathrm{closed}}(q, m_e)

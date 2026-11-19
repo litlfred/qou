@@ -1,6 +1,6 @@
 **No physical quantity is claimed for the [expression $\kappa_{\mathrm{closed}}$](#def:magic-shell-coupling-kappa).** At the substrate parameter it evaluates to $\kappa_{\mathrm{closed}} \approx -1.0704$. It was formerly proposed as the per-excess slope of a magic-shell coupling; that identification is withdrawn, for the reason recorded below. The name is retained because the corpus refers to it, not because the identification stands.
 
-**Why the identification was withdrawn.**
+**Reason for the withdrawal.**
 
 The expression was matched, to $3.4 \times 10^{-4}$, against a measured value of $\approx -1.0708\;\text{MeV}$. That value is the electrostatic energy of ${}^{3}$He's $pp$ pair, attributed to the proton–neutron interface asymmetry.
 
@@ -19,7 +19,7 @@ A term proportional to $(n_{pp} - n_{nn})$ must change sign between anchors of e
 
 That single diagnosis accounts for the two independent negatives found before it. No term of this form and size appears in mirror-split binding data at $A = 3$, $15$, $39$, because the coefficient vanishes. And the original fit contradicted itself because it was describing an electrostatic energy with a categorical form, and only one of its two anchors has one.
 
-**What is proved about the expression.**
+**Proved properties of the expression.**
 
 The following hold independently of any physical reading, and are unaffected by the withdrawal.
 

@@ -1,4 +1,4 @@
-*The framework's interactions form three sectors — **strong**, **electromagnetic**, and **weak** — classified by the bar-involution parity of the sector's primary observable, the calibration its scale anchors to, and its coupling object.*
+*The **interaction-sector taxonomy** sorts the framework's interactions into three sectors — **strong**, **electromagnetic**, and **weak** — classified by the bar-involution parity of the sector's primary observable, the calibration its scale anchors to, and its coupling object.*
 
 | Sector | Primary observable | Bar parity ($q \mapsto q^{-1}$) | Scale anchor | Coupling object |
 |---|---|---|---|---|

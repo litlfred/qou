@@ -15,8 +15,11 @@ export default chapter({
       label: "sec:nf-witnesses-light",
       blocks: [
         "witness-4he",
+        "witness-4he-remark",
         "witness-8be",
+        "witness-8be-remark",
         "witness-12c",
+        "witness-12c-remark",
       ],
     }),
     section({
