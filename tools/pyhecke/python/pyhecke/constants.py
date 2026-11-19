@@ -238,7 +238,9 @@ ALPHA = ALPHA_BORROMEAN                             # default (backward compat)
 _a_e, _b_e = 0.0, 1.0
 for _ in range(3):
     _a_e, _b_e = _a_e * h + _b_e, _a_e
-V_HAT_ELECTRON = W_SYM * q0**3 + W_STD * (z * _a_e + _b_e) + W_ALT * (-qi)**3
+# Convention D (owner, 2026-11-18): the Markov trace of a*sigma+b is z*a+b; the old
+# W_SYM/W_STD/W_ALT mixture (the q-Plancherel measure) is no longer used here.
+V_HAT_ELECTRON = z * _a_e + _b_e
 
 
 # ── Figure-eight BW scaling factors ──
