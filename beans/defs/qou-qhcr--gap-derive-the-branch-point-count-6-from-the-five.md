@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-19T00:12:05Z
+updated_at: 2026-11-19T05:25:12Z
 parent: qou-6qbv
 ---
 
@@ -500,3 +500,11 @@ Still open:
 - M4c.
 
 This bean stays open.
+
+## 2026-11-19 — M4c closed (PR #8365, commit 8d02dfe12)
+
+`A5NoSixDim.lean`, sorry-free, kernel decide only:
+- `finrank_ne_six`: A₅ has no 6-dim irreducible.
+- `genus_eq_four_of_A5_irreducible`: genus 4 with no assumption on A₅'s representations.
+
+M4 is done. Still open: M3 (qou-m3tr), M1b/M2 (qou-m1bg), G2, G3. This bean stays open.
