@@ -24,7 +24,7 @@ Owner directive (2026-11-19): **"work both"** — execute BOTH the multi-crossin
 3. **80-dps pure-`mpmath` compute** (`0` float64 in probes and witnesses; evaluated at both `q_0` and `q_2t`).
 4. **Genuine Lean 4 proofs** (`0 sorry`, `0 axiom`, `0` borrowed names, `0` collapsed definitions).
 
-## Child Lanes (`N1..N4`)
+## Child Lanes (`N1..N6`)
 
 | Child Bean | Lane | Status | Scope Summary |
 |---|---|---|---|
@@ -32,3 +32,5 @@ Owner directive (2026-11-19): **"work both"** — execute BOTH the multi-crossin
 | `qou-rhfk` | **N2: Heavy Nuclei `^56Fe -> ^208Pb -> ^238U` Saturation & Pauli Asymmetry** | `todo` | Multi-crossing simplicial saturation + 4-row `SU(4)` `(9/4)(N-Z)^2/A` content-sum penalty + discrete step-graph vs CAL-3 Coulomb audit (deduplicated with `qou-n0so`, `qou-usft`, `qou-mumr`, `qou-4waf`) |
 | `qou-pg2f` | **N3: Retire `alpha_cluster_recursion.py` & Rewire Live Importers** | `todo` | Excise dead-exploratory `64 m_e G + Vol(7^2_1)` recursion & rewire `b_over_a_v5_unified.py` / isotope atlas / dashboards (coordinated with `qou-yd54`) |
 | `qou-2lwj` | **N4: Paper + Monograph Derivation Blocks (`nuclear-interactions/`, `predicted-spectra/`)** | `todo` | Replace `magic A*8G` / `Vol(7^2_1)` prose with Lean-backed `H_4(q)` full-twist, GPMT & inductive transfer-matrix Gröbner–Shirshov derivations in Voice A |
+| `qou-ozdk` | **N5: Higher-Order GPMT `(z - z_D)^m` & `H_12(q)` Cabled `(3^4)` Bridge** | `todo` | Formalize 2nd-order GPMT modified trace on `(3,3,3,3)` (`m = 2` zero at `z_D`) & bridge `H_12(q) supset H_3(q)^4` to `H_4(q)` (`0 sorry`, 80 dps) |
+| `qou-wxey` | **N6: `1 <= A <= 238` Valley of Stability, Magic Closures & Drip-Line Sweep** | `todo` | 80-dps parameter-free isobar & transfer-matrix Groebner-Shirshov demand sweep across `Z=0..118` (coordinated with `qou-yd54`) |
