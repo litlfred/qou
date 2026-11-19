@@ -1,11 +1,11 @@
 ---
 # qou-rhfk
 title: 'N2 [Heavy Nuclei ^56Fe -> ^208Pb -> ^238U Compute + Lean]: 3D Simplicial Multi-Crossing Saturation, Pauli Content-Sum Asymmetry & Discrete Step-Graph Coulomb Audit'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T09:36:33Z
-updated_at: 2026-11-19T09:36:33Z
+updated_at: 2026-11-19T12:46:10Z
 parent: qou-8ffl
 ---
 
@@ -19,3 +19,9 @@ Parent Epic: `qou-8ffl`. Deduplicates and extends `qou-n0so`, `qou-usft`, `qou-m
      * Explicit side-by-side comparison of CAL-3 continuum `E_C(Z, A)` (`coulomb_energy.py`, preserving `qou-usft` / `qou-mumr` model-boundary disclosures) against discrete simplicial-graph / Connes shortest-path step-distance Coulomb sums on `K_A` / `C_A`.
 2. **Deliverables:**
    - Dedicated `0-sorry`, `0-axiom` Lean module under `QOU/Nuclear/` and 80-dps `0`-float64 probe + witness covering `^2H .. ^238U` with zero fitted parameters.
+
+
+
+## Completed (Checkpoint 4 — 2026-11-19)
+- Formalized `folio/quantum-observable-universe/lean/QOU/Nuclear/SpinOrbitShellClosureAndSymmetryEnergy.lean` and `folio/quantum-observable-universe/lean/QOU/Nuclear/SimplicialCoulombGraphMetricDerivation.lean` (`0 sorry`, `0 axiom`, wired into `QOU.lean`).
+- Generated 80-dps zero-float64 probes and witnesses: `computations/probes/nuclear_spin_orbit_shells_and_symmetry_probe.py` (`nuclear-spin-orbit-shells-and-symmetry.witness.json`, `scriptHash: a235efa1a269`) and `computations/probes/simplicial_coulomb_radius_and_joint_nuclear_probe.py` (`simplicial-coulomb-radius-and-joint-nuclear.witness.json`, `scriptHash: bb19a61dac57`).

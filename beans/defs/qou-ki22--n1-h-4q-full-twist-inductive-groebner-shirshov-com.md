@@ -1,11 +1,11 @@
 ---
 # qou-ki22
 title: 'N1 [H_4(q) Full-Twist & Inductive Groebner-Shirshov Compute + Lean]: H_4(q) Delta_4^2 Singlet Cell, Transfer-Matrix Reduction & Light/Medium Nuclear Compute (^2H..^40Ca)'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T09:36:33Z
-updated_at: 2026-11-19T09:36:33Z
+updated_at: 2026-11-19T12:46:10Z
 parent: qou-8ffl
 ---
 
@@ -23,3 +23,9 @@ Parent Epic: `qou-8ffl`. Cross-links: `qou-v2om`, `qou-n0so`, `qou-xsmr`.
      * (a) 1-crossing pair trace (`alpha_simplex` baseline),
      * (b) Multi-crossing `H_4(Delta_4^+-2)` full-twist + GPMT `alpha`-cell energy + inter-cell transfer-matrix couplings (testing `^8Be` vs `2 * ^4He` threshold stability with Coulomb, and reporting `B(^12C)` & `M(^12C)`),
      * (c) Exact 80-dps `H_12(q)` 2-row Ocneanu + GPMT derivative comparison (`alpha_k_jones_markov_h12` upgrade without float64) and why `L1` stopped at `A <= 6`.
+
+
+
+## Completed (Checkpoint 4 — 2026-11-19)
+- Formalized `folio/quantum-observable-universe/lean/QOU/Nuclear/H4FullTwistAlphaCellAndGroebnerBridge.lean` (`0 sorry`, `0 axiom`, wired into `QOU.lean`) and `QOU/Nuclear/BallManifoldTriangulationAndSurfaceScaling.lean`.
+- Generated 80-dps zero-float64 probes and witnesses: `computations/probes/h4_fulltwist_alpha_and_carbon12_groebner_probe.py` (`h4-fulltwist-alpha-and-carbon12-groebner.witness.json`, `scriptHash: 7daa156ec83a`) and `computations/probes/nuclear_3d_ball_manifold_triangulation_probe.py` (`nuclear-3d-ball-manifold-triangulation.witness.json`, `scriptHash: 835eb55fb324`).

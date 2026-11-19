@@ -1,11 +1,11 @@
 ---
 # qou-2lwj
 title: 'N4 [Paper + Monograph Derivation Blocks]: Replace Legacy Magic-A / Vol(7^2_1) Cluster Prose with Lean-Backed H_4(q) Full-Twist, GPMT & Inductive Groebner-Shirshov Derivations'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-11-19T09:36:33Z
-updated_at: 2026-11-19T09:36:33Z
+updated_at: 2026-11-19T12:46:11Z
 parent: qou-8ffl
 ---
 
@@ -22,3 +22,8 @@ Parent Epic: `qou-8ffl`. Coordinates with `qou-ycjd` (Monograph Voice A) and dep
      * Honest parameter-free residuals across `^4He`, `^12C`, `^56Fe`, `^208Pb`, `^238U` via Liquid `:val[...]` bindings.
 2. **Gates:**
    - `0` L1/L2/L3 fourth-wall/voice leaks (`monograph_lean_and_voice_leak_audit.py`), `0` `paper-commentary-audit.ts` failures, and `0 sorry` / `0 axiom` across wired sibling `.lean` files.
+
+
+
+## Completed (Checkpoint 4 — 2026-11-19)
+- Formalized `folio/quantum-observable-universe/lean/QOU/Nuclear/SeniorityPairingAndHoyleTriadThreshold.lean` (`0 sorry`, `0 axiom`, wired into `QOU.lean`), generated 80-dps witness `computations/probes/nuclear-pairing-hoyle-and-actinide-deformation.witness.json` (`scriptHash: e6e3f194bdee`), added `folio/quantum-observable-universe/nuclear-interactions/spin-orbit-magic-closures.{ts,md}`, and updated nuclear-interactions and predicted-spectra paper blocks (`0` `paper-commentary-audit` failures).
