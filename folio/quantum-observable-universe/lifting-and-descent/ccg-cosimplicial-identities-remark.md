@@ -1,0 +1,1 @@
+Each case of the [cosimplicial identities](#def:ccg-cosimplicial-identities), including the mixed identities, reduces either to disjoint-support commutation or to the retraction $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.

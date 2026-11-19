@@ -147,3 +147,15 @@ $$
 $$
 
 where $\delta p_q \propto \hbar_q$ is a $q$-anomaly in momentum. This is the braid-group analogue of the quantum anomaly in gauge theories.
+
+**Primary definition and the mass-difference form.** The [$\mathcal{Q}_q$-value](#def:Q-value-transition) uses $\mathfrak{S}_q(\bar{\nu}_e) = 0$, since the antineutrino is the unknot. The action difference is the primary definition: it does not assume classical energy conservation, which is the $q = 1$ limit; the relation between $\mathcal{Q}_q$ and the kinetic energies of the products is the $q$-anomaly $\delta_q$ treated above.
+
+In the archimedean realisation the action of a nucleus is its mass, and the same transition is evaluated as the difference of neutral atomic masses,
+
+$$
+  Q = M(Z, N) - M(Z{+}1, N{-}1),
+  \qquad
+  M(Z, N) = Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e - B(Z, N),
+$$
+
+where $B(Z,N)$ is the binding energy at Hecke level $k$ under the [Bethe–Weizsäcker emergence conjecture](#conj:q-integer-mass-formula). Expanding the atomic masses gives $Q = m_{\mathfrak{n}} - m_{\mathfrak{p}} - m_e - \bigl(B(Z,N) - B(Z{+}1,N{-}1)\bigr)$. This is the form in which $Q$ is compared with measured values; it is a realisation of the action difference, not a second definition, and its numerical content is conditional on the conjecture that supplies $B$.

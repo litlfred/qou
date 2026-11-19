@@ -1,0 +1,1 @@
+By the first power sum, the [quaternionic spectral resolvent](#def:quaternionic-spectral-resolvents) $\omega_0$ vanishes in the balanced state. The remaining coordinates $\omega_1, \omega_2, \omega_3$ embed Bring's surface into the infinite jet shell $J^\infty E$ ([jet shell](#rem:jet-shell)).

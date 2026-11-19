@@ -1,3 +1,13 @@
+Each non-archimedean place $p$ corresponds to a localized quantum
+geometric state of the substrate: a specific $q$-deformation
+evaluated at a primitive root of unity, equivalently a Kummer level
+in the Habiro / cyclotomic completion
+([algebraic quantum volume](#def:algebraic-quantum-volume)).
+The archimedean place $\infty$ — the $\mathbb{R}$ component — is
+the laboratory continuum, accessible only through the
+[classical limit functor](#def:classical-limit-functor) and the
+[archimedean realization functor](#def:archimedean-realization-functor).
+
 **Motivation for the adelic substrate.** Replacing $\mathbb{R}$ by $\mathbb{A}$ resolves a
 structural tension already noted in
 [classical limit (preamble)](#sec:classical-limit-preamble): the

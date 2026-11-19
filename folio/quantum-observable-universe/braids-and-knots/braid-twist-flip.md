@@ -1,4 +1,4 @@
-Let $\mathbf{b}=(b_0,b_1,b_2)$ be the three branches of the cubic constraint — the sheets that the trefoil monodromy group $S_3\cong D_3$, the Galois group of the cubic, permutes. The two braid generators are the reflections **twist** $\sigma_1=(b_0\,b_1)$ and **flip** $\sigma_2=(b_1\,b_2)$, as $3\times 3$ permutation matrices:
+Let $\mathbf{b}=(b_0,b_1,b_2)$ be the three branches of the cubic constraint — the sheets that the trefoil monodromy group $S_3\cong D_3$, the Galois group of the cubic, permutes. The braid generators **twist** $\sigma_1=(b_0\,b_1)$ and **flip** $\sigma_2=(b_1\,b_2)$ are the reflections given by the $3\times 3$ permutation matrices
 ```tex
 \begin{equation}\label{eq:perm-matrices}
   \sigma_1=\begin{pmatrix}
@@ -9,12 +9,8 @@ Let $\mathbf{b}=(b_0,b_1,b_2)$ be the three branches of the cubic constraint —
   \end{pmatrix}.
 \end{equation}
 ```
-Both are involutions ($\sigma_1^2=\sigma_2^2=\mathrm{id}$). They satisfy the **braid relation** $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$ — the defining relation of the trefoil-knot group $B_3$ — and their product is the order-$3$ **rotation**
+Their product is the **rotation**
 
 $$
-  \alpha=\sigma_1\sigma_2,\qquad \alpha^3=\mathrm{id},
+  \alpha=\sigma_1\sigma_2 .
 $$
-
-the cyclic permutation of the three branches; it is the $\mathrm{SU}(2)$ generator $\alpha$ of [the $\mathrm{SU}(2)$ generators](#def:su2-generators). The **dihedral relation** $\sigma_1\,\alpha\,\sigma_1=\alpha^{-1}$ exhibits $D_3\cong S_3$.
-
-The four spectral resolvents $w_1,\dots,w_4$ carry this action through the conjugate pairs $(w_1,w_4)$ and $(w_2,w_3)$ and the projective ratios $\eta_1=w_1/w_2$, $\eta_2=w_3/w_4$ ([the braid-group action](#rem:braid-group-action)): the reflection swaps the conjugate pairs, and the rotation cycles the three branches. The action lives on the branches rather than on the resolvents because $S_3$ has no faithful action on four points ($4\nmid 6$).

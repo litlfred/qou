@@ -1,0 +1,1 @@
+The categorical Lagrangian is the categorical analogue of a Lagrangian density before integration over spacetime. Its first summand $\mathcal{D}_\nabla^2$ encodes the bosonic sector; the second summand encodes the fermionic coupling of the state to the connection.

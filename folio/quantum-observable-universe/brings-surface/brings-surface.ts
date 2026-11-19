@@ -48,7 +48,9 @@ export default chapter({
       blocks: [
         "bring-algebraic-substructure-intro",
         "su2-generators",
+        "su2-generators-remark",
         "hyperelliptic-quintic",
+        "hyperelliptic-quintic-remark",
         "x5-z5-automorphism",
         "x5-z5-automorphism-proof",
         "x5-z5-automorphism-interpretation",
@@ -63,6 +65,7 @@ export default chapter({
       blocks: [
         "brings-surface-qou-intro",
         "brings-surface-def",
+        "brings-surface-def-remark",
         "brings-surface-example",
         "brings-realisations",
         "brings-physics-interpretations",
@@ -105,6 +108,7 @@ export default chapter({
         "t-duality-elliptic",
         "color-tube-cubic",
         "color-tube-fibers",
+        "color-tube-fibers-remark",
         "t-duality-color-tube",
         "color-tube-subloci",
         "pure-colour-sublocus",
@@ -122,6 +126,7 @@ export default chapter({
         "approach-to-exceptional-divisor",
         "thurston-relaxation",
         "briggs-klein-chart",
+        "briggs-klein-chart-remark",
         "radial-projection",
         "four-colourability",
         "four-colour-theorem",
@@ -134,6 +139,7 @@ export default chapter({
       blocks: [
         "spectral-gauge-intro",
         "quaternionic-spectral-resolvents",
+        "quaternionic-spectral-resolvents-remark",
         "omega-constraints",
         "spectral-dynamics",
         // Tetraplectic layer, incorporated 2026-08-24 from the unregistered
@@ -146,6 +152,7 @@ export default chapter({
         // bean `qou-8p1g` ride on the blocks as authorNotes rather than
         // being dropped.
         "bring-cone-tetraplectic-structure",
+        "bring-cone-tetraplectic-structure-remark",
         "bring-cone-reeb-quaternionic-twist",
         "bring-cone-reeb-quaternionic-twist-proof",
         "tetraplectic-su2-gauge-reading",
@@ -162,6 +169,7 @@ export default chapter({
         "jet-sw-tau-decomposition",
         "jet-sw-tau-decomposition-proof",
         "color-sector-coords",
+        "color-sector-coords-remark",
         "descartes-braid-structure",
         "descartes-braid-structure-proof",
         "descartes-braid-structure-generality",
@@ -181,6 +189,7 @@ export default chapter({
         "archimedean-condition-intro",
         "descent-to-zero",
         "archimedean-condition",
+        "archimedean-condition-remark",
         "chi-minus-six-chain",
         "archimedean-calabi-yau",
         "descent-one-dim",
@@ -254,9 +263,13 @@ export default chapter({
       blocks: [
         "cohomological-defect-intro",
         "levi-form-defect",
+        "levi-form-defect-remark",
         "maximal-ideal-defect",
+        "maximal-ideal-defect-remark",
         "local-cohomology-group",
+        "local-cohomology-group-remark",
         "unit-particle-state",
+        "unit-particle-state-remark",
         "topological-charge-quantization",
         "defect-legendrian-knot",
       ],

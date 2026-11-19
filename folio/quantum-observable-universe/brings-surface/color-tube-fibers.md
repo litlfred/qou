@@ -16,5 +16,3 @@ $$
   \mathbf{r}_z = w_2 - z, \qquad \mathbf{g}_z = w_3 - z, \qquad
   \mathbf{b}_z = w_4 - z.
 $$
-
-As varieties, $R_z \cong G_z \cong B_z$ is isomorphic to the color elliptic fiber $\mathcal{E}_z$ of [color elliptic curve](#prop:color-elliptic) via the shift $X = \mathbf{c} + z$.

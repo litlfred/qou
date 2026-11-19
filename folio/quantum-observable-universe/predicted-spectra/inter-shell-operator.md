@@ -1,4 +1,4 @@
-Let shell $\ell$ contain $n_s$ nucleons and be closed (indicated by a palindromic histogram). The torus knot transfer matrix encodes the crossing of a new nucleon (starting shell $\ell + 1$) with the closed shell $\ell$:
+Let shell $\ell$ contain $n_s$ nucleons and be closed. The **inter-shell operator** of shell $\ell$ is
 
 $$
   \Phi_{\mathrm{shell}}^{(\ell)} \colon H_A(q) \to H_{A+1}(q),

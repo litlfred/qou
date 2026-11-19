@@ -1,5 +1,5 @@
-**Definition (proposed; conjectural utility).**
-*The $(q, z)$-bicompletion is the inverse limit*
+**Definition.**
+*The **$(q, z)$-bicompletion** is the inverse limit*
 
 $$
   \widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z} := \varprojlim_{(m, n)} \mathbb{Z}[q^{\pm 1}, z] \big/ \bigl(I_{m,n}\bigr),
@@ -10,7 +10,3 @@ $$
 $$
   I_{m,n} := \bigl((q;q)_m \cdot P_n(q, z)\bigr).
 $$
-
-The bicompletion unifies the $q$-only Habiro ring and the $z$-only Habiro ring at the apex of the cyclotomic completions diagram.
-
-**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

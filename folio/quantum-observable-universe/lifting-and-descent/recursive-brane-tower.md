@@ -6,4 +6,4 @@ $$
 $$
 in $\mathbf{C}$, where each embedding is the canonical inclusion $A_n \hookrightarrow J^1(A_n) = A_{n+1}$ through the unit section.
 
-The *brane relation* makes the structure recursive: each jet object $A_n$ is the base object — the *brane* — of $A_{n+1}$, and the comultiplication $\Delta_n$ on $A_n$ encodes the $n$-th level connection, inherited via jet prolongation.
+Each $A_n$ is the **brane** of $A_{n+1}$.

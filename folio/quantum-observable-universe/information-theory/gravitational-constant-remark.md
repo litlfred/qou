@@ -1,0 +1,1 @@
+The gravitational constant $G_q$ normalises the [$q$-Yang--Mills--Levi variation](#def:q-yang-mills-levi). It sets the ratio of curvature to stress-energy in the field equation $\mathrm{Ric}_{g_\varTheta} = T^{(q)}$ ([GR substrate geometry](#rem:gr-substrate-geometry)). In Planck units, $G_{\mathrm{Planck}} = G_q\,(\hbar_q/c_q)^2 = 1$ identically for all $q > 1$.

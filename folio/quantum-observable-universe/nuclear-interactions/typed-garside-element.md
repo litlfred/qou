@@ -22,7 +22,4 @@ $$
   d(p, n) = d(n, p) = -\tfrac{1}{2}(q - q^{-1}).
 $$
 
-The product contains $\binom{A}{2}$ factors. The result is reduced to Gröbner–Shirshov normal form under the braiding-induced ordering.
-
-**Archimedean specialisation.**
-What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+The result is reduced to Gröbner–Shirshov normal form under the braiding-induced ordering.

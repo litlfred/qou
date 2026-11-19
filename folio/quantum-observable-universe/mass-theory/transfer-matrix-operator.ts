@@ -19,4 +19,5 @@ export default definition({
     validation: "not_checked",
   },
   uses: [],
+  examples: ["ex:transfer-matrix-operator-nuclear-crossings"],
 });

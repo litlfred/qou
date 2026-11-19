@@ -1,5 +1,5 @@
 **Definition (Hecke curvature 2-cocycle).**
-*The Hecke curvature 2-cocycle is the 2-form-valued bilinear map $F \in C^2(H_n(R, q), H_n(R, q))$ defined on generator pairs by the deviation from Hecke and Yang-Baxter flat relations:*
+*The **Hecke curvature 2-cocycle** is the 2-form-valued bilinear map $F \in C^2(H_n(R, q), H_n(R, q))$ defined on generator pairs by the deviation from Hecke and Yang-Baxter flat relations:*
 
 $$
   F(\sigma_i, \sigma_j) \;=\;
@@ -10,4 +10,4 @@ $$
   \end{cases}
 $$
 
-*It extends to general elements via the Leibniz rule. It measures the failure of commutativity and normal-form flatness at each generator pair.*
+*It extends to general elements via the Leibniz rule.*

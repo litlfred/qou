@@ -1,0 +1,1 @@
+The assembly projector $e_{\lambda,\mu}$ is the $q$-Young symmetriser for the pair $(\lambda,\mu)$. Benzene is the case $e_{(2,2,2),(6)}$ ([benzene as the assembly projector](#ex:benzene-symmetric-projector)), whose symmetric block is realised geometrically as the $T(2,6)$ threading link.

@@ -1,0 +1,1 @@
+As varieties, the [color tubes](#def:color-tube-fibers) satisfy $R_z \cong G_z \cong B_z$, and each is isomorphic to the color elliptic fiber $\mathcal{E}_z$ of [color elliptic curve](#prop:color-elliptic) via the shift $X = \mathbf{c} + z$.

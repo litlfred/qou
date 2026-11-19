@@ -9,4 +9,4 @@ $$
    \in  \mathrm{End}_{\mathbf{C}}(A),
 $$
 
-where $\psi^* = \int_A \!\circ S(\psi) \colon A \to \mathbf{1}$ is the adjoint section. The Lagrangian acts as the categorical analog of a Lagrangian density before integration over spacetime. Its first summand $\mathcal{D}_\nabla^2$ encodes the bosonic sector; the second summand encodes the fermionic coupling of the state to the connection.
+where $\psi^* = \int_A \!\circ S(\psi) \colon A \to \mathbf{1}$ is the adjoint section.

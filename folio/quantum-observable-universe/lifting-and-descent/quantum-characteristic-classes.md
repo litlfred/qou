@@ -9,4 +9,4 @@ The **quantum characteristic classes** are the cohomology classes
 $$
   \kappa_n  \in  H^2(\mathcal{S}, \mathcal{B})
 $$
-that obstruct the lifting of objects from $\mathfrak{G}_n$ to $\mathfrak{G}_{n+1}$. By the [Quantum lifting condition](#def:yekutieli-lifting-condition), the condition $\kappa_n = 0$ is necessary and sufficient for the lift to exist.
+that obstruct the lifting of objects from $\mathfrak{G}_n$ to $\mathfrak{G}_{n+1}$.

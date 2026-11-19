@@ -1,0 +1,1 @@
+Each iteration of $f_q$ advances the braiding-induced ordering $\prec_c$ ([ordering–jet compatibility](#prop:ordering-jet-compatibility)) by one step. The count $\mathcal{T}$ determines the position in $\prec_c$ propagated through the jet tower.

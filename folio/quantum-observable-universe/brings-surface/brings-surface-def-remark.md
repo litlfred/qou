@@ -1,0 +1,1 @@
+Over any algebraically closed field $K \supseteq R$, [Bring's surface](#def:brings-surface) $\Sigma_4$ is a smooth projective curve of genus $4$. Its automorphism group is $\mathrm{Aut}(\Sigma_4) \cong S_5$. It has order $120$, the maximum possible for genus $4$, though below the Hurwitz bound $84(g-1) = 252$. Its Euler characteristic is $\chi(\Sigma_4) = 2 - 2g = -6$.

@@ -25,7 +25,3 @@ $$
   c_{n+1} = c_n(q - q^{-1}) + c_n + d_n, \qquad
   d_{n+1} = c_n
 $$
-
-The first few values at $q \approx 1.110$:
-
-See [Table 1](#tbl:torus-knot-shell-binding-table1-data).

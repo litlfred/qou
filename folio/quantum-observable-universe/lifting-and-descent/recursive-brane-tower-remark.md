@@ -1,0 +1,1 @@
+The *brane relation* makes the [recursive brane tower](#def:recursive-brane-tower) recursive: each jet object $A_n$ is the base object — the *brane* — of $A_{n+1}$, and the comultiplication $\Delta_n$ on $A_n$ encodes the $n$-th level connection, inherited via jet prolongation.

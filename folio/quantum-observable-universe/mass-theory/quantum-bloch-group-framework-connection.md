@@ -1,3 +1,5 @@
+The classical Bloch group $\mathcal{B}(\mathbb{C})$ is defined by the five-term relation of the dilogarithm $\mathrm{Li}_2$; the quantum Bloch group replaces this with the pentagon identity of $\Phi_q$.
+
 The pentagon identity of the quantum dilogarithm $\Phi_q$ — the
 Yang–Baxter equation in exponential form — connects to the QOU
 framework as follows:
@@ -74,3 +76,5 @@ This refines the discussion in
 the framework's working object is the **pre-archimedean
 $\mathfrak{B}(\widehat{\mathbb{Z}[q]})$**, and the Beilinson regulator
 $r_2$ is the archimedean realization of the graded $\rho_K$.
+
+A functorial setting for state-sum invariants built from quantum dilogarithms is quantum hyperbolic field theory: for each odd $N$ it assigns to a $3$-manifold with a framed tangle and a $PSL(2,\mathbb{C})$-character a tensor built from matrix dilogarithms \cite[\S1, \S2.1]{baseilhac-benedetti2007}.

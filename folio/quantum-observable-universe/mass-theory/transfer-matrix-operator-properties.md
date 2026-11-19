@@ -1,3 +1,5 @@
+Every particle interaction in the Descartes universe encodes as a transfer matrix $T_{K_1, K_2}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$ acting on the Gröbner–Shirshov ideal of the Iwahori–Hecke algebra, with entries that are polynomials in $q$.
+
 The [transfer matrix](#def:transfer-matrix-operator)
 $T_{K_1, K_2}(q)$ acts on the Gröbner--Shirshov-reduced Hecke chain,
 generates a non-commutative operator algebra under composition, and

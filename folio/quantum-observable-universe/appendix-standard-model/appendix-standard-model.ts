@@ -46,6 +46,7 @@ export default chapter({
         "sm-gauge-truncation",
         "sm-hypercharge-invariant",
         "strand-twist-datum",
+        "strand-twist-datum-remark",
         "sm-colour-stabilizer-action",
         // The SU(5) scope note. Placed after both blocks it uses
         // (truncation, hypercharge) so its uses[] edges run backward.

@@ -1,15 +1,13 @@
-**Definition (Breit--Wheeler pair production).**
-
-The Breit--Wheeler process models categorical pair production, $\gamma\gamma \to e^- e^+$. The fusion of two photons into an electron--positron pair corresponds to an identity in the Iwahori--Hecke algebra $H_3(q)$:
+The **Breit--Wheeler pair production** $\gamma\gamma \to e^- e^+$ is the identity in the Iwahori--Hecke algebra $H_3(q)$
 
 $$
   \gamma_1 \cdot \gamma_2
   = 
   \mathrm{NF}(e^-) + \mathrm{NF}(e^+)
-  +  \text{binding energy}.
+  +  \text{binding energy},
 $$
 
-Braid words represent the photon, electron, and positron:
+in which the photon, electron, and positron are the braid words
 
 $$
   \gamma = \sigma_0, \qquad

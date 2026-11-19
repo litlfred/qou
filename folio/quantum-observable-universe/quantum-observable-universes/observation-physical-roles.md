@@ -14,3 +14,5 @@ physical roles:
   gauge degrees of freedom.  This is the backreaction: the
   observation perturbs $q$, which shifts the Reeb flow,
   which changes what the next observation reads.
+
+The direction $\epsilon$ of an observation determines whether the crossing injected at $p$ is $\sigma_i$ (forward, $\epsilon = +1$) or $\sigma_i^{-1}$ (backward, $\epsilon = -1$).

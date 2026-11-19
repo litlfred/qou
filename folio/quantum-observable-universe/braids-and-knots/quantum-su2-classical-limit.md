@@ -1,0 +1,1 @@
+In the classical limit $q\to 1$, the generator $K$ of the [quantum group](#def:quantum-su2) reduces to $\exp(he_3)$ and the relations recover the $\mathfrak{su}(2)$ commutation relations of the [standard basis](#def:su2-basis).

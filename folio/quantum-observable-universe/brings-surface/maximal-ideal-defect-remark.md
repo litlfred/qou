@@ -1,0 +1,1 @@
+The point $z = 1$ of the [maximal ideal at the unit coordinate](#def:maximal-ideal-defect) is the fixed point of the antipode $S$, marking the unique location where the Hopf and Frobenius structures interact maximally. The local ring $A_{\mathfrak{m}_1}$ captures the algebraic behavior near this singularity.

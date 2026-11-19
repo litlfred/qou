@@ -1,0 +1,1 @@
+The parallel-placement product relies on the multiplicativity of the Markov trace over split links, as parallel cladded fibres decouple. The channel structure is algebraic: it is stated over a generic commutative ring $R$, with no archimedean input.

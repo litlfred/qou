@@ -1,0 +1,1 @@
+The rigidifying isomorphism pins down $\omega_A^\bullet$ up to unique isomorphism. Rigidity therefore makes the dualizing complex intrinsic to $A$, independent of base ring or presentation: it is the categorical substitute for the canonical sheaf in the non-commutative setting.

@@ -21,6 +21,7 @@ export default chapter({
       blocks: [
         "covalent-bonding-intro",
         "covalent-bond-types",
+        "covalent-bond-types-remark",
         "carbon-valence",
       ],
     }),
@@ -34,6 +35,7 @@ export default chapter({
         "molecular-hopf-chain",
         "molecular-hopf-chain-crossing-energy",
         "threading-link",
+        "threading-link-remark",
         "threading-link-alexander",
         "threading-link-weight",
         "molecular-hopf-ring",

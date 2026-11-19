@@ -1,0 +1,1 @@
+When $q = 1$ the categorical Dirac operator reduces to $\mathcal{D}_\nabla = \nabla$, the undeformed covariant derivative. The $q$-deformation interpolates between the full connection and its projection onto the Reeb direction: as $q \to \infty$, $\mathcal{D}_\nabla \to \iota_\xi\nabla$, the purely contact component.

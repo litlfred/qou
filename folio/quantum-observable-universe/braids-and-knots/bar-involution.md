@@ -2,4 +2,3 @@ The **bar-involution** $\overline{(\cdot)} \colon H_n(q) \to H_n(q)$ is the ring
 $$
 \overline{\sigma_i} \;=\; \sigma_i^{-1}, \qquad \overline{q} \;=\; q^{-1}.
 $$
-Geometrically, it corresponds to reflecting the braid diagram (swapping positive and negative crossings).

@@ -112,6 +112,7 @@ export default chapter({
       label: "sec:color-algebra",
       blocks: [
         "octonion-algebra",
+        "octonion-algebra-remark",
         "color-su3-from-g2",
         // SU(N) framing of sigma: color factors (bean qou-sl3f, PR #7830)
         "sl-n-color-framing",

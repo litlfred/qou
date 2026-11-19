@@ -1,0 +1,1 @@
+For the [quantum characteristic classes](#def:quantum-characteristic-classes), by the [Quantum lifting condition](#def:yekutieli-lifting-condition), the condition $\kappa_n = 0$ is necessary and sufficient for the lift to exist.

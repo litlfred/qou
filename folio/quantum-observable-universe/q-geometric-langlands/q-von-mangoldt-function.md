@@ -1,6 +1,4 @@
-To measure the arithmetic weight of fundamental defects in a quantum observable universe, we deform the classical von Mangoldt function. 
-
-We define the :defterm[$q$-von Mangoldt function]{#q-von-mangoldt-function} over the maximal ideals $\mathfrak{m}$ of the coordinate ring $\mathcal{O}_q(\mathcal{B})$. Let $N(\mathfrak{m})$ denote the norm of $\mathfrak{m}$, given by the cardinality of its residue field. We set:
+Let $\mathfrak{m}$ range over the maximal ideals of the coordinate ring $\mathcal{O}_q(\mathcal{B})$, and let $N(\mathfrak{m})$ be the norm of $\mathfrak{m}$, the cardinality of its residue field. A maximal ideal is a **fundamental defect** if it lies over a prime ideal of the center of $A$. The :defterm[$q$-von Mangoldt function]{#q-von-mangoldt-function} is
 
 $$
 \Lambda_q(\mathfrak{m}) = \begin{cases}
@@ -8,5 +6,3 @@ $$
 0 & \text{otherwise}.
 \end{cases}
 $$
-
-A maximal ideal constitutes a fundamental defect if it lies over a prime ideal of the center of $A$. The fraction $\frac{N(\mathfrak{m})^{\hbar_q} - 1}{\hbar_q}$ deforms the classical logarithm. As $q \to 1$, we have $\hbar_q \to 0$. L'Hôpital's rule recovers $\Lambda_q(\mathfrak{m}) \to \log N(\mathfrak{m}) = \Lambda(\mathfrak{m})$, restoring the classical von Mangoldt function.

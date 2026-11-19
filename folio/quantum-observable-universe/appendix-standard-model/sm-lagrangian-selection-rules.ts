@@ -9,5 +9,6 @@ export default remark({
     "def:gauge-action-groupoid",
     "def:coulomb-charge",
     "rem:self-dual-2group",
+    "def:categorical-action",
   ],
 });

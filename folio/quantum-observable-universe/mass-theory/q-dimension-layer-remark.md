@@ -1,0 +1,1 @@
+The layer preserves the per-irrep structure that the Markov trace normally collapses. It provides the high-fidelity projection data required to map force-carrier knots into exact Wedderburn components. For example, it cleanly extracts the $[9]_q$ and $[10]_q$ $q$-dimensions for the Bring torus-knot force carriers directly from the character evaluations.

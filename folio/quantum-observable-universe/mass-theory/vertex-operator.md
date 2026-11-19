@@ -20,14 +20,6 @@ $$
   a_m = \oint_{|z| = 1} Y(a, z) z^m \frac{dz}{2\pi i} = \mathrm{tr}_M\!\bigl(\check{R}_{(a)} z^m\bigr).
 $$
 
-Here $\check{R}_{(a)} = P \circ \mathcal{R}$ applies the braid operator to the state $a$, and $\mathrm{tr}_M$ is the Markov trace. The contour integral traces a fibre of the Reeb bundle $\mathcal{R}_p$.
+Here $\check{R}_{(a)} = P \circ \mathcal{R}$ applies the braid operator to the state $a$, and $\mathrm{tr}_M$ is the Markov trace.
 
 The vacuum is the unknot $|0\rangle = 1 \in A_0$. The translation operator $T = L_{-1} = j \colon A_n \to A_{n+1}$ advances one level in the brane tower.
-
-When insertion points $z$ and $w$ collide on $\mathcal{S}_p$, the operator product expansion
-
-$$
-  Y(a, z) Y(b, w) \sim \sum_{n \geq 0} \frac{Y(c_n, w)}{(z - w)^{n+1}}
-$$
-
-has its leading singularity governed by the Hecke relation $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$. This corresponds to the Skein relation $L_+ - L_- = (q - q^{-1}) L_0$. The collision represents two strands meeting on $\mathcal{S}_p$. The resolution into $L_+$, $L_-$, $L_0$ forms the OPE decomposition. The eigenvalues $q$ and $-q^{-1}$ of $\sigma_i$ correspond to the symmetric and antisymmetric OPE channels.

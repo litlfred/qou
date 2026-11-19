@@ -3,5 +3,3 @@ A primitive of $\mathcal{H}_q$ satisfies $\Delta_q(p) = p \otimes 1 + 1 \otimes 
 $$
   \log_q \circ \exp_q \;=\; \mathrm{id}.
 $$
-
-It acts as the left adjoint of the grouplike-of functor from primitives to grouplikes.

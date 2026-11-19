@@ -9,4 +9,3 @@ Let $q\in\mathbb{C}^{*}$ with $0<\lvert q\rvert\le 1$. The **quantum group** $\m
     \label{eq:quantum-EF}
 \end{align}
 ```
-In the classical limit $q\to 1$, the generator $K$ reduces to $\exp(he_3)$ and the relations recover the $\mathfrak{su}(2)$ commutation relations.

@@ -1,0 +1,1 @@
+The [Quantum Lifting Condition](#def:yekutieli-lifting-condition) is the categorical form of the gerbe central-extension obstruction of Yekutieli \cite{yekutieli2010}; we adopt the name *Quantum Lifting Condition* to emphasise its role in specialising the categorical substrate.

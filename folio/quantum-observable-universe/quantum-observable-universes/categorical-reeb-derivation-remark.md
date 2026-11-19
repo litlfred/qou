@@ -1,0 +1,1 @@
+The derivation $\xi_q$ preserves the contact structure on the state bundle $\mathcal{S}$ and encodes the observer drift. The periodicity condition $\xi_q^{\Omega_q} = \mathrm{id}_A$ ensures that the Reeb flow closes, yielding a discrete spectrum of frequencies on $A$; each eigenvalue of $\xi_q$ corresponds to a fundamental mode of the substrate.

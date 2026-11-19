@@ -1,7 +1,4 @@
-Let $\beta$ be a braid on $n$ strands with $c$ crossings. Let $L = \hat{\beta}$ be its closure. Let $\mathcal{R}(L)$ be the Skein resolution tree ([Skein Turing machine](#rem:skein-turing-machine)). Fix a polynomial bound $p(c) = c^d$.
-
-**Definition.**
-The **polynomial observable subcategory** of the resolution tree is the full sub-poset
+Let $\beta$ be a braid on $n$ strands with $c$ crossings, let $L = \hat{\beta}$ be its closure, let $\mathcal{R}(L)$ be the Skein resolution tree ([Skein Turing machine](#rem:skein-turing-machine)), and fix a polynomial bound $p(c) = c^d$. For $x \in \mathcal{R}(L)$, let $\Gamma_{\mathrm{poly}}(x, A_0)$ be the set of degree-$0$ sections at $x$ that the Markov trace computes in at most $p(c)$ Planck steps. The **polynomial observable subcategory** of the resolution tree is the full sub-poset
 
 $$
   \mathcal{R}^{\circ}(L, q)
@@ -12,5 +9,3 @@ $$
     \Gamma_{\mathrm{poly}}\!(x, A_0) \neq 0
   \bigr\}.
 $$
-
-The set $\Gamma_{\mathrm{poly}}(x, A_0)$ consists of degree-$0$ sections at $x$ that the Markov trace computes in at most $p(c)$ Planck steps. This trace restricts to $\mathcal{R}_{p(c)}$. The poset $\mathcal{R}^{\circ}(L, q)$ forms the computational analog of the physical observable subcategory $\mathrm{Bun}^{\circ}(\mathbb{P}(V))$ ([observable subcategory](#def:observable-subcategory)). It collects the nodes of the resolution tree from which the degree-$0$ answer $P_L(q)$ is polynomial-time accessible.

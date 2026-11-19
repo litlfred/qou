@@ -125,6 +125,7 @@ export default chapter({
         "core-levi-interpretation",
         "ns-regular-qou",
         "ns-obstruction",
+        "ns-obstruction-remark",
         "ns-obstruction-spectral-gap",
         "ns-classical-formulation",
       ],
@@ -155,6 +156,7 @@ export default chapter({
         "root-of-unity-truncation-interpretation",
         // ── Observable MTC / anyons (Track B) ──────────────────────
         "observable-mtc",
+        "observable-mtc-remark",
         "observable-mtc-braiding",
         "bn-mtc-action",
         "bn-mtc-action-proof",

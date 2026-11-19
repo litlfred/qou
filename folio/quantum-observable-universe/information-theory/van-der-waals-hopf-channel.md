@@ -1,9 +1,5 @@
-**Definition (Hopf symmetric block $e_+$).** *In the 2-strand inter-molecular Hecke algebra $H_2(q)$, the **symmetric (Hopf) block** is the idempotent:*
+In the 2-strand inter-molecular Hecke algebra $H_2(q)$, the **symmetric (Hopf) block** is the idempotent
 $$
   e_+ = \frac{\sigma + q^{-1}}{q + q^{-1}}, \qquad \sigma \mapsto q \ \ (\text{trivial rep}),
 $$
-*the Hopf $/[2]_q$ block. Its complement is the directional (hydrogen-bond) block $e_- = (q-\sigma)/(q+q^{-1})$ (sign rep, $\sigma\mapsto -q^{-1}$).*
-
-The Hopf link $\mathcal{L}_H = T_{2,2} = \widehat{\sigma_1^2}$ possesses **vanishing hyperbolic volume**, $\mathrm{Vol}(\mathcal{L}_H)=0$. This dictates a volume-less correlation. Two molecules link without bonding; they share no bonded volume. This establishes the topological mechanism of **dispersion** (the van der Waals force): attraction without a chemical bond. Within this Hopf channel, the symmetric $e_+$ block constitutes the retained $[2]_q$ / diquark carrier. The van der Waals force itself is **not** $e_+$. It acts strictly as the **bar-odd residual** $\sinh(2\lambda)(e_+-e_-)$ that the canonical $P_{\mathrm{avg}}$ projection structurally discards. The dispersion force represents an explicit small object, not an unmodelled residual.
-
-The block represents a genuine Wedderburn projector: $e_+ + e_- = 1$ and $e_+^2 = e_+$. The Hopf link is *not* a separate operator from $e_\pm$. In $H_2(q)$, $\sigma_1^2 = (q-q^{-1})\sigma_1 + 1$ sits algebraically dependent on $\{1,\sigma_1\}$. The operator-selection SDP over $\{1,\sigma_1,\sigma_1^2\}$ acts rank-deficient. The fundamentally independent blocks remain exactly $e_+$ (the symmetric Hopf-diquark carrier) and $e_-$ (the antisymmetric directional block). Van der Waals is strictly the **bar-odd** combination $\sinh(2\lambda)(e_+-e_-)$ of these two blocks, never either block alone.
+the Hopf $/[2]_q$ block. Its complement is the **directional (hydrogen-bond) block** $e_- = (q-\sigma)/(q+q^{-1})$ (sign rep, $\sigma\mapsto -q^{-1}$).

@@ -7,5 +7,5 @@ export default remark({
   interprets: "def:quantum-bloch-group",
   tags: ["quantum-bloch-group", "regulator", "habiro", "pre-archimedean"],
   uses: ["def:quantum-bloch-group", "def:habiro-ring"],
-  cites: ["li-wang2006"],
+  cites: ["li-wang2006", "baseilhac-benedetti2007"],
 });

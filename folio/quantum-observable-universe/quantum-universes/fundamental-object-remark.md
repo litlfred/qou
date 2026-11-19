@@ -1,0 +1,3 @@
+The volume form $\epsilon$ of a fundamental object, with its coform $\eta$, exhibits $V$ as its own dual: a *symplectic self-dual object*, the datum that distinguishes $\mathrm{SL}_2 / \mathrm{SU}(2)$ from $\mathrm{GL}_2$ \cite{deligne1990}.
+
+Under a fibre functor the volume constraint forces $\mathrm{rank}(V) = 2$, so $V$ is simple of categorical dimension $2$: in $\mathrm{SU}(2)$ it is $V = V_{1/2} \cong \mathbb{C}^2$, every other simple object is an exterior or symmetric power of $V$, and $V$ tensor-generates $\mathbf{C}$ (see the [role of $V$](#rem:simple-objects-V)).

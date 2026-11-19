@@ -17,12 +17,3 @@ defined by the $q$-Hecke correspondence:
 ```
 
 Here, $\mathrm{Hecke}_{x,\lambda}^{(q)}$ parametrises pairs $(\mathcal{P}, \mathcal{P}')$ of $G_q$-bundles on $X$ equipped with an isomorphism $\mathcal{P}|_{X \setminus x} \xrightarrow{\sim} \mathcal{P}'|_{X \setminus x}$ of relative position $\lambda$.
-
-The $q$-Hecke operators satisfy the Iwahori--Hecke algebra relation ([braiding eigenvalues](#prop:braid-action-tensor)):
-
-$$
-  (\mathbf{T}_{x,\lambda}^{(q)} - q)
-  (\mathbf{T}_{x,\lambda}^{(q)} + q^{-1}) = 0.
-$$
-
-They act with eigenvalues $q$ and $-q^{-1}$ on the symmetric and antisymmetric channels, respectively.

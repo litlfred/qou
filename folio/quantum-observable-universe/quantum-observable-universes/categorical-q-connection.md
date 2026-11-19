@@ -3,5 +3,3 @@ Let $\nabla$ be a categorical connection on $A$ and $\xi$ the Reeb derivation. T
 $$
   \nabla_q =  q^{-1}\nabla + (1 - q^{-1})(\iota_\xi \nabla)\varTheta_A.
 $$
-
-At $q = 1$, $\nabla_q = \nabla$.

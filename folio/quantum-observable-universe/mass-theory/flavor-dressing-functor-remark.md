@@ -1,0 +1,27 @@
+We restrict our focus to the doublet $\{\mathfrak{u}, \mathfrak{d}\}$. We include heavy flavors for forward compatibility, but leave their individual $\mu_q$ values open.
+
+The functor bridges two categorical layers:
+
+1. **Substrate side.** The splitting $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ is determined by the substrate flavor split modulo the pair-skein factor.
+2. **Bounds side.** The splitting respects the categorical bound enforced by the substrate factors $\hbar_q$, $h_q$, and $[2]_q$.
+
+The flavor dressing functor composes with the shell dressing morphism at the hadron and atom levels:
+
+```tex
+\begin{tikzcd}
+  \mathbf{Flavor}
+  \arrow[r, "\mu"] \arrow[d, "\Phi"]
+  & \mathbb{R}_{>0}
+  \\
+  \mathbf{Hadron}
+  \arrow[r, "m_{\mathrm{bare}}"']
+  & \mathbb{R}_{>0}
+  \arrow[u, "P_{\mathrm{bare}} \mapsto P_{\mathrm{dressed}}"']
+\end{tikzcd}
+```
+
+Here $\Phi$ is the quark-content functor. The right-vertical arrow lifts a bare hadron mass to its electron-dressed atomic mass.
+
+The discrete-category framing ensures compatibility with other categorical constructions. Sums over flavors in hadronic mass formulas become natural transformations of functors rather than ad-hoc weighted sums.
+
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any generic categorical identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.

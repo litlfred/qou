@@ -6,6 +6,7 @@ export default remark({
   interprets: "def:motivic-mass-measure",
   tags: ["motivic", "mass", "lefschetz", "arc-space"],
   uses: [
+    "thm:wedderburn-mass-formula",
     "def:motivic-mass-measure",
     "prop:mass-endomorphism-tower",
     "prop:topological-mass-formula",

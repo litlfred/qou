@@ -24,9 +24,11 @@ export default chapter({
       blocks: [
         "molecular-hecke-algebra-intro",
         "molecular-braid",
+        "molecular-braid-remark",
         "molecular-crossing-table",
         "molecular-crossing-table-table-data",
         "covalent-bond-shared-trefoil",
+        "covalent-bond-shared-trefoil-remark",
         "covalent-bond-order-and-lp-selection",
         "ilp-covalent-bond",
       ],
@@ -39,8 +41,11 @@ export default chapter({
       blocks: [
         "molecular-assembly-projector-intro",
         "molecular-strand-partition",
+        "molecular-strand-partition-remark",
         "parabolic-hecke-subalgebra",
+        "parabolic-hecke-subalgebra-remark",
         "molecular-assembly-projector",
+        "molecular-assembly-projector-remark",
         "assembly-projector-exists",
         "assembly-projector-scope",
         "benzene-symmetric-projector",
@@ -55,7 +60,9 @@ export default chapter({
       blocks: [
         "electron-shells-intro",
         "electron-shell-braid-capacity",
+        "electron-shell-braid-capacity-remark",
         "atomic-valence-open-sites",
+        "atomic-valence-open-sites-remark",
         "shell-capacity-self-square",
         "shell-space-is-self-square",
         "electron-shell-2n2-capacity",
@@ -80,6 +87,7 @@ export default chapter({
       blocks: [
         "h2-computation-intro",
         "h2-molecular-braid",
+        "h2-molecular-braid-remark",
         "h2-molecular-braid-table-data",
         "h2-covalent-channel-interference",
         "h2-lp-dual-binding",
@@ -98,6 +106,7 @@ export default chapter({
         "co-lp-dual-binding",
         "co-lp-dual-orthogonal-channels",
         "embeddable-knot-operator",
+        "embeddable-knot-operator-remark",
         "bond-order-le-three",
         "embeddable-cardinality-vs-energy",
         "co-triple-bond-energy",
@@ -111,6 +120,7 @@ export default chapter({
       blocks: [
         "co2-computation-intro",
         "co2-molecular-braid",
+        "co2-molecular-braid-remark",
         "co2-linear-geometry-and-d0",
         "co2-lp-dual-binding",
         "co2-lp-dual-shadow-prices",
@@ -126,6 +136,7 @@ export default chapter({
       blocks: [
         "ch4-computation-intro",
         "ch4-molecular-braid",
+        "ch4-molecular-braid-remark",
         "ch4-tetrahedral-from-phi1",
         "ch4-lp-dual-binding",
         "ch4-tetrahedral-symmetry",
@@ -138,6 +149,7 @@ export default chapter({
       label: "sec:h2o-computation",
       blocks: [
         "h2o-molecular-braid",
+        "h2o-molecular-braid-remark",
         "h2o-c2v-from-projector",
         "h2o-bent-geometry",
         "tetrahedral-hbond-directions",
@@ -158,6 +170,7 @@ export default chapter({
       blocks: [
         "benzene-computation-intro",
         "benzene-molecular-braid",
+        "benzene-molecular-braid-remark",
         "benzene-threading-emergence",
         "benzene-threading-selection",
         "benzene-bond-equalization",

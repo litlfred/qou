@@ -25,9 +25,3 @@ $$
   \hat{V}(T_1, q) = \hat{V}(T_2, q)
   \quad\text{as polynomials in } q.
 $$
-
-This is well-defined because the vertex volume $\hat{V}_i(q)$
-depends only on the Markov trace of the Hecke-reduced element.
-It does not depend on the specific braid representative, the
-decomposition of $\mathfrak{H}$ into constituents, or the path of
-braiding operations within $\mathcal{S}_p$.

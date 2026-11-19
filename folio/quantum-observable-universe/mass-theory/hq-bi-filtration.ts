@@ -2,6 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:hq-bi-filtration",
+  examples: ["ex:hq-bi-filtration"],
   title:
     "Knot-indexed bi-filtration $\\mathcal{H}_q^{(n, K)}$ on the substrate convolution algebra",
   lean: {

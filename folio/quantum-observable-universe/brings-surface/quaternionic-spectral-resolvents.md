@@ -36,5 +36,3 @@ we define the **quaternionic spectral resolvents** $\omega_k\colon\mathcal{S}\to
     \label{eq:omega-3}
 \end{align}
 ```
-
-By the first power sum, $\omega_0=0$ in the balanced state. The remaining coordinates embed $\mathcal{S}$ into the infinite jet shell $J^\infty E$ ([jet shell](#rem:jet-shell)).

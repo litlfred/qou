@@ -1,0 +1,1 @@
+A change of basis $B$ with $\det B \neq 0$ sends each Gram matrix $G$ to $B^{\top} G B$ and multiplies each determinant by $(\det B)^2$, so $\kappa$ does not depend on the basis chosen (`QOU.Archimedean.gramDetRatio_indep_of_basis`).

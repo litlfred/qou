@@ -59,6 +59,7 @@ export default chapter({
           label: "sec:categorical-braiding-hecke-quotient",
           blocks: [
             "skein-resolution-obstruction",
+            "skein-resolution-obstruction-remark",
             "hecke-satisfies-blitvic-hypothesis",
             "hecke-blitvic-pair-partition-mechanism",
             "hecke-satisfies-blitvic-hypothesis-proof",
@@ -101,6 +102,7 @@ export default chapter({
             "hecke-log-decomposition-table-data",
             "hecke-algebra-from-braiding",
             "f-bor-borromean-observable",
+            "f-bor-borromean-observable-remark",
             "hecke-normal-form",
             "dark-vision-strand-bandwidth",
             "markov-moves-brane-tower",
@@ -147,6 +149,7 @@ export default chapter({
         "first-order-taylor",
         // su2-generators relocated to archimedean-universe/ (PR #823 fit-section-chapter audit)
         "so3-generators",
+        "so3-generators-rotations",
         "quaternion-so3-motivation",
       ],
     }),
@@ -163,6 +166,7 @@ export default chapter({
         // (accepted §5).
         "lagrange-resolvent-transform",
         "braid-twist-flip",
+        "braid-twist-flip-relations",
         "holonomy-trefoil",
         "rho-s3-holonomy-exposition",
       ],
@@ -202,7 +206,9 @@ export default chapter({
         "enveloping-algebras-intro",
         "enveloping-algebra",
         "quantum-su2",
+        "quantum-su2-classical-limit",
         "q-casimir",
+        "q-casimir-remark",
         "q-casimir-classical-limit",
         "q-casimir-exists",
         "q-casimir-exists-proof",

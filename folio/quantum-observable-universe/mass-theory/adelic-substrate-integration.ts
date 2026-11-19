@@ -8,6 +8,8 @@ export default remark({
   uses: [
     "def:adelic-substrate",
     "def:archimedean-realization-functor",
+    "def:algebraic-quantum-volume",
+    "def:classical-limit-functor",
   ],
   cites: ["tate1967"],
 });
