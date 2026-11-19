@@ -831,3 +831,20 @@ locations, warn on a running build).
 `verification-harness.md` §17a.
 
 - **TRAP (2026-10-12, PR #7747): a partial extra olean root SHADOWS the full one.** Lean resolves a module by the FIRST `LEAN_PATH` root that contains its top-level directory (`Mathlib/`), not the first that contains the file. So prepending a scratch dir holding only 2 newly built Mathlib oleans made every other Mathlib import fail with "object file … does not exist". **Fix:** `cp -al` the whole `.lake/packages/mathlib/.lake/build/lib/lean/Mathlib` into the scratch root, unlink each target before writing it with `lean -o`, then build into it. Also: the root `.lake/packages/mathlib` holds oleans only, with no `.lean` sources; sources are in `folio/quantum-observable-universe/lean/.lake/packages/mathlib` (same rev, f897ebc). A module that no QOU file imported (e.g. `GroupTheory.GroupExtension.Defs`, `GroupTheory.SemidirectProduct`) is ABSENT from the cache and must be built this way.
+
+## STABLE — rendered Lean docs: cached render, mount branch, and the coverage ceiling (2026-11-19)
+
+- doc-gen4 output is cached on `cat/folio-assistant-sci/lake-cache/qou-docgen4-v4-24-0` (2 tgz
+  parts, 160 MB; built 2026-10-11 from qou 5697c31). Extract into an ISOLATED dir, never the qou
+  tree. `lean-render.ts --modules QOU,UGB,Fred2005 [--no-rail]` prunes it to 3033 files / 239 MB.
+- Mount branch `cat/folio-assistant-sci/lean-docs` (render at `lean/`, `manifest.json`
+  state-manifest/v1). gh-pages `lean/` was ALSO replaced (e05ee9eb) before the owner moved the
+  source of truth to the branch.
+- TRAP: `lean-render.ts` looks for `cat-harness/scripts/rail-standalone-pages.ts`; it now lives
+  in `cat-harness-tools/scripts/` — rail fails "no index checkout". Run the rail pass by hand.
+- TRAP: coverage is capped by WHAT is documented, not freshness: 589/1242 for both the July and
+  October renders; ~526 of the 653 misses are declared only in content-block sibling `.lean`
+  (QOUBlocks lib), which no `QOU:docs` build covers.
+- TRAP: `lean-docs-build.sh` passes its guards on the per-paper root (status exit 0) while
+  `lake-cache.sh status` itself says 81 % traced / "NOT for a build", and the per-paper root has
+  no `.lake/packages` — a `:docs` build there would clone+build Mathlib. Not run.
