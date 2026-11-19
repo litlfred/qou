@@ -1,13 +1,13 @@
 ---
 # qou-4ohh
 title: mass_binding_dashboard computes in float64 — and its own accuracy claim is the f64 floor
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T06:32:21Z
-updated_at: 2026-11-19T16:48:43Z
+updated_at: 2026-11-19T17:42:00Z
 parent: qou-9nnz
 ---
 
@@ -234,3 +234,7 @@ Was in-progress with no bean update since 2026-09-05 and no main commit naming i
 
 ## Progress Update (2026-11-19)
 Actively draining float64 downcasts in `computations/mass_binding_dashboard.py` and `computations/canonical_mass.py` under Wave-7E (`1f1e86e9`).
+
+## Resolution (2026-11-19)
+
+Completed: Excised float64 from `computations/canonical_mass.py` and `computations/mass_binding_dashboard.py` (`40Ca = 2.456e74`, `56Fe = 8.141e192` finite in arbitrary-precision `mpmath`, `B_sym` exactness `1.4e-49 MeV`, `probe-float64-guard.py --strict` exit 0).

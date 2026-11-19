@@ -1,11 +1,11 @@
 ---
 # qou-zqno
 title: 'RT-1 (Audit Sweep): Blind `Lean -> English -> Lean` Statement Round-Trip & Paper Statement Equivalence Across Provable Claims'
-status: todo
+status: in-progress
 type: task
 priority: critical
 created_at: 2026-11-19T16:50:59Z
-updated_at: 2026-11-19T16:50:59Z
+updated_at: 2026-11-19T17:42:00Z
 parent: qou-ncxf
 ---
 

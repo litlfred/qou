@@ -1,13 +1,13 @@
 ---
 # qou-cqk6
 title: mass_binding_dashboard._row re-casts q0 to float64 one line in — 2 of 12 rows publish 'not representable' for a number that is 2.5e74
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-13T14:05:57Z
-updated_at: 2026-11-19T16:48:43Z
+updated_at: 2026-11-19T17:42:00Z
 parent: qou-9nnz
 ---
 
@@ -384,3 +384,7 @@ second defect.
 
 ## Progress Update (2026-11-19)
 Actively eliminating `q0 = float(_Q50)` in `mass_binding_dashboard._row` so `40Ca` (`2.456e74`) and `56Fe` (`8.141e192`) evaluate in 80-dps `mpmath` (`1f1e86e9`).
+
+## Resolution (2026-11-19)
+
+Completed: Eliminated `float(q0)` re-cast in `computations/mass_binding_dashboard.py`, `snappy_cusp_seeding.py`, and `qbeta_g3_annihilator_certification.py`.

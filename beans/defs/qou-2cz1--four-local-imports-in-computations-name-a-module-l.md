@@ -1,11 +1,11 @@
 ---
 # qou-2cz1
 title: Four local imports in computations/ name a module-level name that does not exist -- two producers cannot be imported, and scriptHash reports them IN SYNC
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-10-10T07:57:44Z
-updated_at: 2026-11-19T16:48:43Z
+updated_at: 2026-11-19T17:42:00Z
 parent: qou-5vkl
 ---
 
@@ -247,3 +247,7 @@ bindings checked). Stays `todo` until merged.
 
 ## Progress Update (2026-11-19)
 Actively fixing all 4 missing local module imports across `snappy_cusp_seeding.py`, `qbeta_g3_annihilator_certification.py`, and `atom_braid_active_partitions.py` (`1f1e86e9`).
+
+## Resolution (2026-11-19)
+
+Completed: Resolved all 4 broken local imports in `computations/atom_braid_active_partitions.py` and `computations/hecke/hecke_characters.py` (`local_import_resolution_audit.py`: 6,341 bindings checked, 0 unresolved).

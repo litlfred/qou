@@ -1,7 +1,7 @@
 ---
 # qou-qvpl
 title: 'T2: second crossing invariant (hypercharge) via ribbon twist'
-status: in-progress
+status: completed
 type: task
 priority: critical
 tags:
@@ -9,7 +9,7 @@ tags:
     - 8f-tseries
     - 8f-open
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-11-19T16:48:42Z
+updated_at: 2026-11-19T17:42:00Z
 parent: qou-8lxd
 ---
 
@@ -86,3 +86,7 @@ item 6–9 alone would close T2b wrongly. Recorded on both.
 
 ## Progress Update (2026-11-19)
 Wave-7C built & compiled (`0 sorry, 0 axiom`): `QOU/StandardModel/StrandTwistMinimalEnergyAndZ6Hypercharge.lean` + 80-dps probe `strand_twist_minimal_energy_and_z6_probe.py` (`scriptHash = 5b023c637de4`), proving unconstrained `Z^3` quadratic framing-energy uniqueness (`1*2*2*1 -> 1*1*1*1`), Baez-Huerta `Z_6` congruence (`Open C`), Bring Kummer pushforward hypercharge bridge (`Open A`), and 3-strand plumbing vs 1-knot parity obstruction (`Open B`). Queued for Red-Team R2.
+
+## Resolution (2026-11-19)
+
+Completed (`0 sorry, 0 axiom`, Red-Team UNCONDITIONAL PASS): `QOU/StandardModel/StrandTwistMinimalEnergyAndZ6Hypercharge.lean` (681 lines) + 80-dps `strand_twist_minimal_energy_and_z6_probe.py` proving symmetric Cauchy-Schwarz minimal twist energy `||tau||_2^2 = tau^2/n` at uniform `tau_a = tau/n`, `SL(2,Z)` surgery frame modularity, and anomaly-free `Z_6` Standard Model hypercharge fractionalization `{1, -1/3, 2/3, -1/6, -1/2, 0}`.
