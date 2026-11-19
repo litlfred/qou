@@ -1,0 +1,134 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.AppendixSurreals.SpectralNormalForm</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.AppendixSurreals.SpectralNormalForm";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">SpectralNormalForm</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/AppendixSurreals/Asymptotics.html">QOU.AppendixSurreals.Asymptotics</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.AppendixSurreals.SpectralNormalForm" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.SpectralNormalForm"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">SpectralNormalForm</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.SpectralNormalForm.Ow_normalises_on_ofReal"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">SpectralNormalForm</span>.<span class="name">Ow_normalises_on_ofReal</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.SpectralNormalForm.not_infinitesimal_and_not_finite"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">SpectralNormalForm</span>.<span class="name">not_infinitesimal_and_not_finite</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-AppendixSurreals-SpectralNormalForm-conjecture-carrier">QOU.AppendixSurreals.SpectralNormalForm — conjecture carrier <a class="hover-link" href="#QOU-AppendixSurreals-SpectralNormalForm-conjecture-carrier">#</a></h1><p><strong>§3b-cond class axiomatisation</strong> for content block
+<a href="../.././../../../appendix-surreals/spectral-normal-form.md"><code>conj:spectral-normal-form</code></a>:
+<em>Spectral gap closure and singularity formation as <code>q → 1</code> read from normal-form
+exponents</em>.</p><p>Primary conjecture carrier with <strong>no instance</strong> — the honest open state per
+AGENTS.md §3b-tax.</p><h2 class="markdown-heading" id="What-changed-bean-qou-ffwk">What changed (bean <code>qou-ffwk</code>) <a class="hover-link" href="#What-changed-bean-qou-ffwk">#</a></h2><p>The previous field schema was a scalar plus a field asserting that it vanishes,
+inhabited by <code>⟨0, rfl⟩</code>. The class chose its own witness, so it asserted nothing
+and a downstream <code>[SpectralNormalForm]</code> hypothesis was not a meaningful
+conditional.</p><p>Unlike the three carriers refined before it, this one needed <strong>no invented
+types</strong>: <code>SurrealField</code>, <code>IsInfinitesimal</code>, <code>IsFinite</code> and <code>OmegaOrder.Ow</code> all
+already exist in this library, so the conjecture can be stated in the corpus's
+own vocabulary rather than against caller-supplied stand-ins.</p><h2 class="markdown-heading" id="What-the-conjecture-actually-says">What the conjecture actually says <a class="hover-link" href="#What-the-conjecture-actually-says">#</a></h2><p>The block states three parts. What they share, and what makes them a
+conjecture rather than a definition, is a <strong>bridge between two independent
+structures on <code>K</code></strong>: the <em>order</em> (infinitesimal, finite — from
+<code>SurrealField</code>'s <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a></code>) and the <em>valuation</em> (<code>Ow</code>, the leading Conway
+exponent). <code>OmegaOrder</code> axiomatises <code>Ow</code>'s multiplicativity and its behaviour
+under real rescaling and <strong>says nothing relating it to the order</strong>. The
+conjecture is exactly that relation:</p><ul>
+<li><strong>Part 1 (gap closure).</strong> &quot;The gap <code>Δ</code> closes in the classical limit iff
+<code>Ow(Δ) &lt; 0</code> (i.e. <code>Δ</code> is infinitesimal)&quot; — the block's own &quot;i.e.&quot; identifies
+closure with being infinitesimal, so the content is
+<code>IsInfinitesimal x ↔ Ow x &lt; 0</code>.</li>
+<li><strong>Part 3 (singularity formation).</strong> &quot;A divergence has <code>Ow(λ) &gt; 0</code>&quot; — a value
+blows up exactly when it fails to be finite, so the content is
+<code>¬ IsFinite x ↔ Ow x &gt; 0</code>.</li>
+</ul><p>Both are stated for <code>x ≠ 0</code>, and that side condition is <strong>load-bearing rather
+than decorative</strong>: <code>0</code> is infinitesimal (<code>zero_isInfinitesimal</code>) while
+<code>Ow 0 = ⊤</code> by <code>Ow_zero</code>, and <code>⊤</code> is not <code>&lt; 0</code>. Without the hypothesis part 1 is
+outright false at zero. The same applies to part 3, where <code>0</code> is finite and <code>⊤</code>
+is <code>&gt; 0</code>.</p><p><strong>Part 2 is deliberately not a field.</strong> It reads off <em>rates</em> — <code>Ow(Δ) = -1</code> is
+linear closure, <code>Ow(Δ) = -n</code> polynomial of order <code>n</code>, and a value strictly
+between <code>-ω·2</code> and <code>-ω</code> signals transcendental quantum-dilogarithm behaviour.
+That is a classification of the exponent once parts 1 and 3 are granted, not an
+independent assertion, and encoding a rate table as class fields would claim the
+classification is part of what must be assumed.</p><h2 class="markdown-heading" id="Anti-vacuity-what-the-class-forces-that-OmegaOrder-does-not">Anti-vacuity: what the class forces that <code>OmegaOrder</code> does not <a class="hover-link" href="#Anti-vacuity-what-the-class-forces-that-OmegaOrder-does-not">#</a></h2><p><code><a href="../.././QOU/AppendixSurreals/SpectralNormalForm.html#QOU.AppendixSurreals.SpectralNormalForm.Ow_normalises_on_ofReal">Ow_normalises_on_ofReal</a></code> below derives, from the two fields, that <code>Ow</code> is
+<strong>exactly <code>0</code></strong> on every non-zero embedded real. That is not available from
+<code>OmegaOrder</code> alone: its <code>Ow_ofReal_mul</code> says rescaling by a non-zero real leaves
+the leading exponent <em>unchanged</em>, which is a statement about differences and
+never pins an absolute value. So the class genuinely adds content, and an
+instance cannot be produced by fixing up <code>Ow</code> on a whim.</p><p><strong>No non-emptiness witness is supplied, and what blocks it has narrowed.</strong>
+When this carrier was written, <code>OmegaOrder</code> had no instance anywhere, so the
+missing piece was the valuation itself. That half is now closed: bean <code>qou-x20w</code>
+generalised <code>OmegaOrder</code> to carry its exponent group separately and populated it
+from Mathlib's Hahn series (<code>HahnOmegaOrder.lean</code>), so the valuation axioms are
+demonstrably consistent.</p><p>What remains is the <strong>other</strong> hypothesis. This class also needs
+<code>IsInfinitesimal</code> and <code>IsFinite</code>, hence <code>[SurrealField K]</code> — and <code>SurrealField</code>
+requires <code>omegaSurreal</code> exceeding every natural, so no archimedean carrier can
+serve and the Hahn model does not qualify either.
+<code>HyperrealLimitTransfer.lean</code> has a <code>SurrealField ℝ*</code> model, but as a <code>def</code>
+rather than an instance, and with no <code>Ow</code> for it.</p><p>So satisfiability is still untested in either direction, but the gap is now one
+construction — a non-archimedean ordered field carrying both a birthday function
+and a leading-exponent valuation — rather than two. Recorded rather than papered
+over with a degenerate instance.</p><h2 class="markdown-heading" id="Base-ring-7c">Base ring (§7c) <a class="hover-link" href="#Base-ring-7c">#</a></h2><p><code>K</code> is a generic <code>[SurrealField K]</code>. <code>ℝ</code> enters only through
+<code>SurrealField.ofReal</code>, the embedding that is part of the structure itself, and
+through <code>IsInfinitesimal</code>'s comparison against embedded reals — both inherited
+from the corpus's own definitions rather than introduced here. No numerical
+substrate value appears, and nothing is compared against a measured quantity.</p></div><div class="decl" id="QOU.AppendixSurreals.SpectralNormalForm"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean#L100-L129">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/SpectralNormalForm.html#QOU.AppendixSurreals.SpectralNormalForm"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">SpectralNormalForm</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField">SurrealField</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Spectral normal form</strong>: the surreal order and the ω-adic valuation agree
+about smallness and largeness.</p><p>The conjecture of
+<a href="../.././../../../appendix-surreals/spectral-normal-form.md"><code>conj:spectral-normal-form</code></a>,
+which is what lets spectral gap closure and singularity formation as <code>q → 1</code> be
+read directly off leading exponents, with no analytic limit.</p><p><code>K</code> is the caller's surreal carrier together with its ω-adic order. An instance
+<strong>is</strong> the conjecture, for that carrier. None is provided — and see the header:
+no <code>OmegaOrder</code> instance exists anywhere in this tree, so the class has not been
+exhibited satisfiable either.</p><ul class="structure_fields" id="QOU.AppendixSurreals.SpectralNormalForm.mk"><li id="QOU.AppendixSurreals.SpectralNormalForm.infinitesimal_iff_Ow_neg" class="structure_field"><div class="structure_field_info">infinitesimal_iff_Ow_neg<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">K</span>)</span></span>
+ : <span class="fn"><span class="fn">x</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span> → (<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField.IsInfinitesimal">SurrealField.IsInfinitesimal</a> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Iff">↔</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">OmegaOrder.Ow</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">0</span>)</span></div><div class="structure_field_doc"><p><strong>Part 1 — gap closure.</strong> A non-zero value is infinitesimal exactly when
+its leading exponent is negative. Applied to <code>Δ = λ₂ − λ₁</code>, this is
+&quot;the gap closes in the classical limit iff <code>Ow(Δ) &lt; 0</code>&quot;.</p><p>The hypothesis <code>x ≠ 0</code> is load-bearing: <code>0</code> is infinitesimal but has
+<code>Ow 0 = ⊤</code>, so the biconditional is false there.</p></div></li><li id="QOU.AppendixSurreals.SpectralNormalForm.not_finite_iff_Ow_pos" class="structure_field"><div class="structure_field_info">not_finite_iff_Ow_pos<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">K</span>)</span></span>
+ : <span class="fn"><span class="fn">x</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span> → (<a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Not">¬</a><span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField.IsFinite">SurrealField.IsFinite</a> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Iff">↔</a> <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">OmegaOrder.Ow</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">x</span></span>)</span></div><div class="structure_field_doc"><p><strong>Part 3 — singularity formation.</strong> A non-zero value fails to be finite
+exactly when its leading exponent is positive. Applied to an eigenvalue,
+this is &quot;a divergence has <code>Ow(λ) &gt; 0</code>&quot;, and the exponent is what
+classifies the divergence type.</p><p>The hypothesis <code>x ≠ 0</code> is load-bearing for the same reason.</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.AppendixSurreals.SpectralNormalForm" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.AppendixSurreals.SpectralNormalForm.Ow_normalises_on_ofReal"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean#L150-L171">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/SpectralNormalForm.html#QOU.AppendixSurreals.SpectralNormalForm.Ow_normalises_on_ofReal"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">SpectralNormalForm</span>.<span class="name">Ow_normalises_on_ofReal</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField">SurrealField</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/AppendixSurreals/SpectralNormalForm.html#QOU.AppendixSurreals.SpectralNormalForm">SpectralNormalForm</a> <span class="fn">K</span> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">r</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hr</span> : <span class="fn">r</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">OmegaOrder.Ow</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">(<a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField.ofReal">SurrealField.ofReal</a> <span class="fn">r</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p><strong>The class pins <code>Ow</code> on the embedded reals</strong> — anti-vacuity.</p><p>For non-zero <code>r : ℝ</code>, both fields fire and force <code>Ow (ofReal r) = 0</code> exactly.
+<code>OmegaOrder</code> alone cannot give this: <code>Ow_ofReal_mul</code> says rescaling by a
+non-zero real leaves the leading exponent unchanged, which constrains
+differences and never fixes an absolute value.</p><p>So the two fields are not inert decoration — they have a consequence that
+constrains <code>Ow</code> on a set the caller does not choose, and an instance cannot be
+manufactured by adjusting <code>Ow</code> freely.</p></div></div><div class="decl" id="QOU.AppendixSurreals.SpectralNormalForm.not_infinitesimal_and_not_finite"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/SpectralNormalForm.lean#L173-L184">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/SpectralNormalForm.html#QOU.AppendixSurreals.SpectralNormalForm.not_infinitesimal_and_not_finite"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">SpectralNormalForm</span>.<span class="name">not_infinitesimal_and_not_finite</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField">SurrealField</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/AppendixSurreals/SpectralNormalForm.html#QOU.AppendixSurreals.SpectralNormalForm">SpectralNormalForm</a> <span class="fn">K</span> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">K</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx</span> : <span class="fn">x</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Not">¬</a>(<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField.IsInfinitesimal">SurrealField.IsInfinitesimal</a> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Not">¬</a><span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField.IsFinite">SurrealField.IsFinite</a> <span class="fn">x</span></span>)</div></div><p><strong>The two parts are about the same value at most one way.</strong></p><p>A non-zero value cannot be both infinitesimal and non-finite: parts 1 and 3
+would put its leading exponent strictly below and strictly above <code>0</code>. Exercises
+both fields together, and is the statement that the conjecture is internally
+coherent rather than describing two unrelated regimes.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

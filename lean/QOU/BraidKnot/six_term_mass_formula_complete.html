@@ -1,0 +1,110 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.BraidKnot.six_term_mass_formula_complete</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.BraidKnot.six_term_mass_formula_complete";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">six_term_mass_formula_complete</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic.html">Mathlib.Tactic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.BraidKnot.six_term_mass_formula_complete" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.sixTermSplit"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">sixTermSplit</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.sixTermSplit_sum"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">sixTermSplit_sum</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.not_sixTermSplit_of_independent"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">not_sixTermSplit_of_independent</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.six_term_mass_formula_complete"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">six_term_mass_formula_complete</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-BraidKnot-six-term-mass-formula-complete-six-term-unified-mass-formula">QOU.BraidKnot.six_term_mass_formula_complete — six-term unified mass formula <a class="hover-link" href="#QOU-BraidKnot-six-term-mass-formula-complete-six-term-unified-mass-formula">#</a></h1><p><strong>Proposition</strong> (<a href="../.././../../../mass-theory/six-term-mass-formula-complete.md"><code>prop:six-term-mass-formula-complete</code></a>).</p><p>The <code>.md</code> states that the categorical mass of a vortex <code>ϱ</code> is the sum of six
+<strong>named, concrete</strong> terms:</p><pre><code>  𝔪(ϱ) = |tr_M(T_w)|                                            (Term 1)
+       + Σ_{i=0}^{n-2} Φ_q(|V̂_i^full|)                          (Term 2)
+       + z² Σ_{i&lt;j} Φ_q(|V̂_i^full V̂_j^full|)                    (Term 3)
+       + m_e · τ(C_{dim_q})                                     (Term 4)
+       + a_K · 𝒞_K                                              (Term 5)
+       + Σ_{ℓ≥2} Res_{q=ζ_ℓ}[·] / (q₀ − ζ_ℓ)                    (Term 6)
+</code></pre><p>and adds that <em>&quot;every term evaluates uniquely from the canonical braid word
+and substrate parameter.&quot;</em></p><h2 class="markdown-heading" id="2026-09-02-this-file-encodes-the-SHAPE-not-the-formula">2026-09-02 — this file encodes the SHAPE, not the formula <a class="hover-link" href="#2026-09-02-this-file-encodes-the-SHAPE-not-the-formula">#</a></h2><p><code>SixTermMassFormulaContext</code> carried <code>term1 … term6</code> and <code>cat_mass</code> as seven
+opaque elements of <code>R</code> plus a field <code>claim_six_term_sum</code> asserting the sum
+identity, and <code><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.six_term_mass_formula_complete">six_term_mass_formula_complete</a></code> returned that field. Removing
+the projection is not the interesting part; the interesting part is what is
+left when you do.</p><p><strong>None of the six terms is encoded.</strong> Nothing in this file mentions the Markov
+trace, <code>Φ_q</code>, the <code>V̂_i^full</code>, <code>z</code>, <code>m_e</code>, <code>τ(C_{dim_q})</code>, <code>a_K</code>, <code>𝒞_K</code>, or a
+cyclotomic residue. With the terms opaque, <code>cat_mass = term1 + ⋯ + term6</code> is
+not the six-term mass formula — it is the statement that some element is a sum
+of six elements, which is the <em>definition</em> of a six-way additive split and
+holds of every quantity that can be written as one.</p><p>So this is not a case where naming the claim over parameters (AGENTS.md §1a
+disposition 3) would recover the content, as it did for
+<code>QOU.Archimedean.knot_operator_selection</code>. There, the parameters were the
+objects the claim is about. Here, naming <code><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit">sixTermSplit</a> m t₁ … t₆</code> names a
+schema, not the proposition.</p><p>Both facts about that schema are <strong>proved</strong> below rather than asserted:</p><ul>
+<li><code><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit_sum">sixTermSplit_sum</a></code> — for <em>any</em> six terms a mass satisfying it exists (take
+the sum). So the schema constrains nothing whatever about the terms.</li>
+<li><code><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.not_sixTermSplit_of_independent">not_sixTermSplit_of_independent</a></code> — it is refutable when <code>cat_mass</code> is
+chosen independently (<code>1 ≠ 0 + ⋯ + 0</code>). So it constrains <code>cat_mass</code>, and
+only <code>cat_mass</code>.</li>
+</ul><p>Together: the schema pins one element to five additions and says nothing about
+the mathematics the <code>.md</code> describes. That is also why a <code>sorry</code> here would be
+wrong — it would read as &quot;true, not yet proved&quot; over a statement that is
+refutable at free data.</p><h2 class="markdown-heading" id="What-is-unencoded-term-by-term">What is unencoded, term by term <a class="hover-link" href="#What-is-unencoded-term-by-term">#</a></h2><table>
+<thead>
+<tr>
+<th>term</th>
+<th><code>.md</code> content</th>
+<th>what encoding it needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>\|tr_M(T_w)\|</code></td>
+<td>the Markov trace on the canonical Hecke normal form</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>Σ_i Φ_q(\|V̂_i^full\|)</code></td>
+<td><code>Φ_q</code> (Faddeev) and the full vertex operators</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>z² Σ_{i&lt;j} Φ_q(\|V̂_i V̂_j\|)</code></td>
+<td>the same, plus the Markov parameter <code>z</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>m_e · τ(C_{dim_q})</code></td>
+<td>the fibre functor <code>τ</code> on the <code>dim_q</code> Casimir</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>a_K · 𝒞_K</code></td>
+<td>the chirality coefficient and knot invariant</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>Σ_{ℓ≥2} Res_{q=ζ_ℓ}[·]/(q₀−ζ_ℓ)</code></td>
+<td>the cyclotomic pole expansion</td>
+</tr>
+</tbody>
+</table><p>The <code>.md</code>'s further claims — that every term evaluates uniquely from the braid
+word, that Markov-trace invariance is enforced, and that the breakdown locates
+the origin of isospin and parity violation — have no encoding here either.</p><p>Bean <code>qou-z9ws</code>.</p></div><div class="decl" id="QOU.BraidKnot.sixTermSplit"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean#L77-L86">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">sixTermSplit</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">m </span><span class="fn">t₁ </span><span class="fn">t₂ </span><span class="fn">t₃ </span><span class="fn">t₄ </span><span class="fn">t₅ </span><span class="fn">t₆</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>A six-way additive split</strong>: <code>m = t₁ + t₂ + t₃ + t₄ + t₅ + t₆</code>.</p><p>This is the <em>shape</em> of the manuscript's six-term formula with all six terms
+left opaque. It is named here so the distance between the shape and the claim
+is visible in the Lean rather than only in prose. See
+<code><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit_sum">sixTermSplit_sum</a></code> and <code><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.not_sixTermSplit_of_independent">not_sixTermSplit_of_independent</a></code> for exactly how much
+it constrains.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit">QOU.BraidKnot.sixTermSplit</a> <span class="fn">m</span> <span class="fn">t₁</span> <span class="fn">t₂</span> <span class="fn">t₃</span> <span class="fn">t₄</span> <span class="fn">t₅</span> <span class="fn">t₆</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> (<span class="fn">m</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">t₁</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₂</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₃</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₄</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₅</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₆</span>)</li></ul></details><details id="instances-for-list-QOU.BraidKnot.sixTermSplit" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.BraidKnot.sixTermSplit_sum"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean#L88-L92">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit_sum"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">sixTermSplit_sum</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t₁ </span><span class="fn">t₂ </span><span class="fn">t₃ </span><span class="fn">t₄ </span><span class="fn">t₅ </span><span class="fn">t₆</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit">sixTermSplit</a> (<span class="fn">t₁</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₂</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₃</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₄</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₅</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">t₆</span>) <span class="fn">t₁</span> <span class="fn">t₂</span> <span class="fn">t₃</span> <span class="fn">t₄</span> <span class="fn">t₅</span> <span class="fn">t₆</span></span></div></div><p><strong>The schema constrains nothing about the terms.</strong> For <em>any</em> six elements
+there is a mass satisfying the split — namely their sum.</p></div></div><div class="decl" id="QOU.BraidKnot.not_sixTermSplit_of_independent"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean#L94-L102">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.not_sixTermSplit_of_independent"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">not_sixTermSplit_of_independent</span></a></span><span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Not">¬</a><span class="fn"><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit">sixTermSplit</a> <span class="fn">1</span> <span class="fn">0</span> <span class="fn">0</span> <span class="fn">0</span> <span class="fn">0</span> <span class="fn">0</span> <span class="fn">0</span></span></div></div><p><strong>And it does constrain the mass.</strong> Chosen independently of the terms, the
+split fails — so the schema pins <code>m</code> to the sum and says nothing else.</p><p>Recorded as a theorem because it is also the reason a <code>sorry</code> would be the
+wrong disposition here: it would read as &quot;true, not yet proved&quot; over a
+statement refutable at free data.</p></div></div><div class="decl" id="QOU.BraidKnot.six_term_mass_formula_complete"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean#L104-L117">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.six_term_mass_formula_complete"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">six_term_mass_formula_complete</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">cat_mass </span><span class="fn">term1 </span><span class="fn">term2 </span><span class="fn">term3 </span><span class="fn">term4 </span><span class="fn">term5 </span><span class="fn">term6</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Six-term unified mass formula</strong> ([<code>prop:six-term-mass-formula-complete</code>]).</p><p>The claim of the block, as a proposition over caller-supplied data — <strong>named,
+not asserted</strong>.</p><p>Read the module docstring before using it: with <code>t₁ … t₆</code> opaque this states
+only that <code>m</code> is their sum, and the six terms the <code>.md</code> names (<code>|tr_M(T_w)|</code>,
+<code>Σ Φ_q(|V̂_i|)</code>, …) are <strong>not encoded anywhere in this file</strong>. A caller who has
+actually constructed the six terms supplies them here; what they get is the
+additive bookkeeping, not the manuscript's derivation.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.six_term_mass_formula_complete">QOU.BraidKnot.six_term_mass_formula_complete</a> <span class="fn">cat_mass</span> <span class="fn">term1</span> <span class="fn">term2</span> <span class="fn">term3</span> <span class="fn">term4</span> <span class="fn">term5</span> <span class="fn">term6</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a>   <span class="fn"><a href="../.././QOU/BraidKnot/six_term_mass_formula_complete.html#QOU.BraidKnot.sixTermSplit">QOU.BraidKnot.sixTermSplit</a> <span class="fn">cat_mass</span> <span class="fn">term1</span> <span class="fn">term2</span> <span class="fn">term3</span> <span class="fn">term4</span> <span class="fn">term5</span> <span class="fn">term6</span></span></li></ul></details><details id="instances-for-list-QOU.BraidKnot.six_term_mass_formula_complete" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

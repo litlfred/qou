@@ -1,0 +1,58 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>UGB.UnitalGroebner.buchberger</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="UGB.UnitalGroebner.buchberger";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">UGB</span>.<span class="name">UnitalGroebner</span>.<span class="name">buchberger</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/UnitalGroebner/buchberger.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././UGB/GrobnerShirshov/CompositionLemma.html">UGB.GrobnerShirshov.CompositionLemma</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-UGB.UnitalGroebner.buchberger" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#UGB.UnitalGroebner.buchberger"><span class="name">UGB</span>.<span class="name">UnitalGroebner</span>.<span class="name">buchberger</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="UGB-UnitalGroebner-buchberger">UGB.UnitalGroebner.buchberger <a class="hover-link" href="#UGB-UnitalGroebner-buchberger">#</a></h1><p><strong>Real-content formalization</strong> (replaces the former vacuous
+<code>class … where holds : Prop</code>). Buchberger's theorem is stated as its
+operational consequence over the concrete reduction system: a
+Gröbner–Shirshov basis is <strong>confluent</strong> — any two multi-step reducts of
+the same element have a common reduct. The conclusion is a concrete
+existential over <code>AlgElement</code> / <code>MultiStepReduction</code>, not a bare <code>Prop</code>,
+and is <strong>fully proved</strong> from the composition-lemma <code>confluence</code>.</p><p>Content block
+<a href="../.././../../../unital-groebner-bases/unital-groebner-bases-chapter/buchberger.md"><code>thm:buchberger</code></a>:
+<em>Buchberger's theorem over commutative rings</em>.</p><h2 class="markdown-heading" id="Manuscript-statement">Manuscript statement <a class="hover-link" href="#Manuscript-statement">#</a></h2><p>Let $R$ be a commutative ring with unity, $A$ an $R$-algebra free as an
+$R$-module, $(B,&lt;)$ an admissible system, $I \leq A$ an ideal generated
+by a unital set $G=\{g_\gamma\mid\gamma\in\Gamma\}$. Then $G$ is a
+Gröbner–Shirshov basis for $I$ iff all S-polynomials for $G$ have zero
+remainder under the division algorithm.</p><h2 class="markdown-heading" id="What-is-weakened-relative-to-the-manuscript">What is weakened relative to the manuscript <a class="hover-link" href="#What-is-weakened-relative-to-the-manuscript">#</a></h2><p>The full biconditional (with the &quot;zero-remainder of all S-polynomials&quot;
+side) is recorded separately, on the concrete S-polynomial structures,
+in <code>BuchbergerPBW.buchberger_theorem</code>. Here we formalize the principal
+<em>content</em> of &quot;G is a Gröbner–Shirshov basis&quot;: the resulting reduction is
+<strong>confluent</strong>. Operationally this is what makes the division algorithm
+well-defined — it is the property that distinguishes a GS basis from an
+arbitrary generating set. The statement is a concrete existence of a
+common reduct (<code>MultiStepReduction</code>), proved from the <code>confluence</code>
+result of <code>CompositionLemma.lean</code> (itself the Newman's-lemma corollary
+of the resolved S-polynomials). No <code>sorry</code>.</p></div><div class="decl" id="UGB.UnitalGroebner.buchberger"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/UnitalGroebner/buchberger.lean#L48-L75">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/UnitalGroebner/buchberger.html#UGB.UnitalGroebner.buchberger"><span class="name">UGB</span>.<span class="name">UnitalGroebner</span>.<span class="name">buchberger</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">GrobnerShirshov.AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">GrobnerShirshov.RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hgs</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.IsGrobnerShirshovBasis">GrobnerShirshov.IsGrobnerShirshovBasis</a> <span class="fn">G</span> <span class="fn">k</span> <span class="fn">ord</span> <span class="fn">sys</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hnqz</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.NoQuasiZerosFree">GrobnerShirshov.NoQuasiZerosFree</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">g₁ </span><span class="fn">g₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">GrobnerShirshov.AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h₁</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">GrobnerShirshov.MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₁</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">GrobnerShirshov.MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₂</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">h</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">GrobnerShirshov.AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>),
+  <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">GrobnerShirshov.MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₁</span> <span class="fn">h</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">GrobnerShirshov.MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₂</span> <span class="fn">h</span></span></span></div></div><p><strong>Buchberger's theorem — confluence consequence.</strong></p><p>A Gröbner–Shirshov basis <code>sys</code> is confluent: whenever <code>f →* g₁</code> and
+<code>f →* g₂</code>, there is a common reduct <code>h</code> with <code>g₁ →* h</code> and
+<code>g₂ →* h</code>. This is the operational meaning of &quot;<code>G</code> is a GS basis for
+<code>I</code>&quot; — the division algorithm produces well-defined remainders.</p><p>The conclusion is a <strong>concrete existential over <code>AlgElement</code></strong> (a
+common <code>MultiStepReduction</code> target), not a bare <code>Prop</code>. Proved from
+<code>confluence</code>.
+The manuscript's standing hypothesis that the algebra has <strong>no
+quasi-zeros</strong> (Leitner–Pawloski; <code>monomial-basis.md</code>) is carried
+explicitly as <code>hnqz</code>: it is what the S-polynomial half of the
+composition lemma needs, and it is discharged for the free algebra on
+any non-empty generating set by <code>noQuasiZerosFree_of_generator</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

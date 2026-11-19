@@ -1,0 +1,35 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.FluidDynamics.helicity_conservation</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.FluidDynamics.helicity_conservation";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">FluidDynamics</span>.<span class="name">helicity_conservation</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/FluidDynamics/helicity_conservation.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic.html">Mathlib.Tactic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.FluidDynamics.helicity_conservation" class="imported-by-list"></ul></details></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-FluidDynamics-helicity-conservation-intentionally-empty-the-formalisation-lives-in-the-content-block-sibling"><code><a href="../.././QOU/FluidDynamics/helicity_conservation.html">QOU.FluidDynamics.helicity_conservation</a></code> — intentionally empty; the formalisation lives in the content-block sibling <a class="hover-link" href="#QOU-FluidDynamics-helicity-conservation-intentionally-empty-the-formalisation-lives-in-the-content-block-sibling">#</a></h1><p>This module used to hold <code>HelicityConservationContext</code> together with a
+projection that discharged all four manuscript claims from that class's own
+fields.  Both are removed (2026-08-31).</p><p><strong>Why the declaration was empty</strong>, and this one is a stronger case than most.
+<code>HelicityConservationContext</code> carried <code>helicity_conserved : Prop</code> as a <em>field</em>
+and <code>conservation_active : helicity_conserved</code> as a second field proving it —
+so the instance chose the hypothesis <strong>and</strong> its proof.  Taking
+<code>helicity_conserved := <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#True">True</a></code>, <code>conservation_active := <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#trivial">trivial</a></code>,
+<code>knot_equiv := <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#True">True</a></code>, <code>H_q := fun _ =&gt; 0</code> and every scalar <code>0</code> satisfies every
+field, and <code>helicity_conservation</code> returned the four implications applied to
+that self-supplied proof.  A <code>[HelicityConservationContext]</code> binder therefore
+assumed nothing.  The file's own docstring said as much: <em>&quot;the substantive
+mathematical content is carried by the context-class axioms&quot;</em>.  AGENTS.md
+§3b-cond item 5 (bean <code>qou-z9ws</code>).</p><p><strong>Why removal costs nothing readable.</strong>  Three facts, all measured:</p><ol>
+<li>The content block's <code>lean.ref</code> is
+<code>qou:QOU.FluidDynamics.helicity_conservation</code>, and per AGENTS.md §0a
+resolution checks the <strong>sibling first</strong> — so the block already resolves to
+<a href="../.././../../fluid-dynamics/helicity-conservation.lean"><code>fluid-dynamics/helicity-conservation.lean</code></a>,
+never to this file.</li>
+<li>That sibling now carries a real derivation.  <code>helicity_conservation</code> there
+takes the md's <em>definition</em> of <code>ℋ_q</code>, the Călugăreanu–White–Fuller relation
+and the Moffatt–Ricca self-helicity identity as hypotheses on
+caller-supplied filaments, and <strong>derives</strong> both the writhe/twist/linking
+decomposition (md part 2) and time-independence (md part 1) — neither is a
+field of anything.  What it does not establish, it says: <code>hdef</code> is where
+the quantum Euler equation would enter, and md parts (3) and (4) are not
+encoded.</li>
+<li><strong>Nothing imports this module</strong> and nothing else in <code>content/</code> names the
+class (measured 2026-08-31 across every <code>.lean</code> in the tree).</li>
+</ol><p>So the declaration was unreachable from its own block, unreachable by import,
+and vacuous where it stood.</p><p>The file is kept rather than deleted so that the <code>lean.ref</code>'s second
+resolution candidate —
+<code><a href="../.././&lt;lakeRoot&gt;/QOU/FluidDynamics/helicity_conservation.html">&lt;lakeRoot&gt;/QOU/FluidDynamics/helicity_conservation.lean</a></code> — still exists as a
+real path.</p><p>Bean <code>qou-z9ws</code>; <code>docs/audits/2026-08-30-the-remainder-is-vacuous-not-open.md</code>.</p></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

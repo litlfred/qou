@@ -1,0 +1,122 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.Archimedean.BranchIntegerPinning</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.Archimedean.BranchIntegerPinning";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">BranchIntegerPinning</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/BranchIntegerPinning.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order/IntermediateValue.html">Mathlib.Topology.Order.IntermediateValue</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/SpecialFunctions/Complex/Log.html">Mathlib.Analysis.SpecialFunctions.Complex.Log</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.Archimedean.BranchIntegerPinning" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.Archimedean.intMul_ne_intMul_add_half"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">intMul_ne_intMul_add_half</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Archimedean.eq_of_continuousOn_intMul"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">eq_of_continuousOn_intMul</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Archimedean.eq_zero_of_continuousOn_of_exp_eq_one"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">eq_zero_of_continuousOn_of_exp_eq_one</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Pinning-a-branch-integer-by-the-base-point">Pinning a branch integer by the base point <a class="hover-link" href="#Pinning-a-branch-integer-by-the-base-point">#</a></h1><p>Bean <code>qou-trns</code>. The 5₂ transport needs to know that a sum of logarithms equals a
+logarithm of a product <strong>on the nose</strong>, not up to <code>2πi ℤ</code>. This file proves the
+principle that forces the integer to be <code>0</code>, with no dilogarithm and no curve in
+it.</p><h2 class="markdown-heading" id="The-statement-the-transport-wants">The statement the transport wants <a class="hover-link" href="#The-statement-the-transport-wants">#</a></h2><p><code>exp_eq_zero_of_continuousOn_of_exp_eq_one</code>: if <code>F : ℝ → ℂ</code> is continuous on
+<code>[a,b]</code>, satisfies <code>exp (F y) = 1</code> throughout, and vanishes at <code>a</code>, then <code>F ≡ 0</code>.</p><p>The transport instantiates it at
+<code>F φ := Σⱼ log (1 − e^{iφ} · yⱼ) − iφ</code> on <code>[0, π]</code>:</p><ul>
+<li><code>exp (F φ) = 1</code> is <strong>exactly</strong> the Vieta product <code>∏ⱼ (1 − x·yⱼ) = x</code>, which is
+already sorry-free in <code><a href="../.././QOU/QBeta/FiveTwoCyclotomicBloch.html">QOU/QBeta/FiveTwoCyclotomicBloch.lean</a></code>
+(<code>prod_one_sub_x_mul</code>; the companion <code>prod_x_sub</code> gives the other factor).</li>
+<li><code>F 0 = 0</code> is the base point <code>x = 1</code>, where every factor is <code>1 − yⱼ</code> and the
+product is <code>1</code>.</li>
+<li>Continuity is the one genuine analytic hypothesis. See the scoping note below —
+it is <strong>not</strong> the hypothesis the refuted argument used, and it is <strong>not</strong> the
+naive &quot;no factor meets the cut&quot; either. See &quot;the arc ends on the cut&quot;.</li>
+</ul><h2 class="markdown-heading" id="Why-this-had-to-be-proved-rather-than-waved-at">Why this had to be proved rather than waved at <a class="hover-link" href="#Why-this-had-to-be-proved-rather-than-waved-at">#</a></h2><p>The earlier argument for <code>k = 0</code> ran: the branch integer is integer-valued and
+locally constant on a collision-free arc, hence constant; and it is <code>0</code> at the
+base point. Two separate steps, and the first one was <strong>false as stated</strong> — the
+arc is not collision-free. <code><a href="../.././QOU/QBeta/FiveTwoDiscriminant.html">QOU/QBeta/FiveTwoDiscriminant.lean</a></code> proves the
+discriminant of the GGM curve vanishes at a point of <code>|x| = 1</code>.</p><p>The repair is that collisions are <em>harmless here</em>: at the collision the two
+colliding roots are equal, so the two log-terms being permuted are identical and
+their <strong>sum</strong> cannot notice the relabelling. What the sum really needs is that no
+factor <code>1 − x·yⱼ</code> crosses the branch cut of <code>log</code> — a different hypothesis, and
+the honest one. This file takes that hypothesis in its weakest usable form,
+plain continuity of <code>F</code>, and gets <code>k = 0</code> in a single step: connectedness plus
+the base point, with no appeal to local constancy.</p><p>So the division of labour is now explicit:</p><table>
+<thead>
+<tr>
+<th>ingredient</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>exp (F φ) = 1</code></td>
+<td>Lean-proved (Vieta, #4658)</td>
+</tr>
+<tr>
+<td><code>F 0 = 0</code></td>
+<td>Lean-proved (same Vieta identity at <code>x = 1</code>)</td>
+</tr>
+<tr>
+<td><code>F</code> continuous on the arc</td>
+<td><strong>open</strong> — see below</td>
+</tr>
+<tr>
+<td>continuity + the two above ⟹ <code>F ≡ 0</code></td>
+<td><strong>this file</strong></td>
+</tr>
+</tbody>
+</table><h2 class="markdown-heading" id="The-arc-ends-on-the-cut-and-that-is-why-this-lane-keeps-seeing-2π">The arc ends on the cut — and that is why this lane keeps seeing <code>2π</code> <a class="hover-link" href="#The-arc-ends-on-the-cut-and-that-is-why-this-lane-keeps-seeing-2π">#</a></h2><p>Route 20 (<code>computations/probes/qbeta_5two_route20_cut_avoidance_probe.py</code>,
+7 gates) measured the open hypothesis rather than the conclusion, and the first
+version of it <strong>failed</strong>. The obvious sufficient condition — no factor ever meets
+<code>(−∞, 0]</code> — is false: at the endpoint <code>x = −1</code>,</p><pre><code>1 − x·y₁ = 1 − w₁ = −1.2469796…
+</code></pre><p>sits exactly on the cut, where <code>w₁</code> is the largest root of <code>w³ − 2w² − w + 1</code> —
+the level-7 ladder's own cubic. And <code>x = −1</code> is on the cut too. The transport arc
+ends on the branch cut in two independent ways; it is structural, not bad luck.</p><p>Continuity survives because it forbids <em>crossing</em>, not <em>touching</em>. The contact is
+transversal — the margin is exactly <code>w₁·(π − φ)</code>, measured over four orders of
+magnitude — and one-sided: rising to <code>φ = π</code> the factor arrives from above, so
+<code>arg → +π</code>, which is precisely where the principal branch is defined on the cut.
+Left-limit meets value; <code>F</code> is continuous on <code>[0, π]</code>; <code>hcont</code> holds.</p><p>Traverse the same arc <em>downward</em> and the factor arrives from below, <code>arg → −π</code>,
+while principal <code>Log</code> on the cut still returns <code>+π</code> — a genuine <code>2πi</code> jump. So
+the transport's <strong>orientation is load-bearing</strong>, and only because of where the
+principal branch is declared to sit. <code>qou-trns</code> records three separate spurious
+<code>2π</code>s and calls them the most reliable false alarm in this work. This is their
+mechanism.</p><p>Away from the endpoint the margin is comfortable: an interior minimum of <code>0.337</code>
+at <code>φ/π = 0.542</code>, and <code>0.775</code> at the collision — the branch point is invisible to
+it, which is exactly why the symmetric repair survives a collision that killed
+the per-root argument.</p><p><strong><code>hcont</code> is measured, not proved.</strong> Proving it means showing from the curve that
+no factor meets <code>(−∞, 0]</code> for <code>φ ∈ [0, π)</code>, plus the one-sided limit at the
+endpoint. That is not written, and until it is, this lemma's hypothesis is an
+assumption.</p><h2 class="markdown-heading" id="Proof">Proof <a class="hover-link" href="#Proof">#</a></h2><p><code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/SpecialFunctions/Complex/Log.html#Complex.exp_eq_one_iff">Complex.exp_eq_one_iff</a></code> puts every value of <code>F</code> in <code>2πi ℤ</code>, so <code>F</code> has zero real
+part and its imaginary part lands in the discrete set <code>2π·ℤ</code>. A continuous real
+function into <code>c·ℤ</code> is constant: if it took two distinct values <code>c·m &lt; c·n</code>, the
+intermediate value theorem would realise <code>c·m + c/2</code>, which is not a multiple of
+<code>c</code> because <code>2(k − m) = 1</code> has no integer solution.</p><p>That is the whole argument. Nothing here is deep; the point is that it is stated
+against the hypothesis the mathematics actually supplies.</p><p><strong>The 5₂ sum rule is PROVED</strong>: <code>QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule</code>
+and <code>fiveTwoSaddleSumRule_holds</code>, sorry-free, standard axioms.</p></div><div class="decl" id="QOU.Archimedean.intMul_ne_intMul_add_half"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/BranchIntegerPinning.lean#L109-L119">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Archimedean/BranchIntegerPinning.html#QOU.Archimedean.intMul_ne_intMul_add_half"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">intMul_ne_intMul_add_half</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">c</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hc</span> : <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">k </span><span class="fn">m</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int">ℤ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">↑<span class="fn">k</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">↑<span class="fn">m</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HDiv.hDiv">/</a> <span class="fn">2</span></div></div><p>Two integer multiples of <code>c ≠ 0</code> never differ by exactly <code>c/2</code>.</p><p>This is the entire arithmetic content of &quot;a continuous function into <code>c·ℤ</code> cannot
+move&quot;: the midpoint the intermediate value theorem hands back is not available.</p></div></div><div class="decl" id="QOU.Archimedean.eq_of_continuousOn_intMul"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/BranchIntegerPinning.lean#L121-L168">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Archimedean/BranchIntegerPinning.html#QOU.Archimedean.eq_of_continuousOn_intMul"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">eq_of_continuousOn_intMul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">f</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a </span><span class="fn">b </span><span class="fn">c </span><span class="fn">x</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hc</span> : <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">c</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx</span> : <span class="fn">x</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Interval/Set/Defs.html#Set.Icc">Set.Icc</a> <span class="fn">a</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcont</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Filter.html#ContinuousOn">ContinuousOn</a> <span class="fn">f</span> <span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Interval/Set/Defs.html#Set.Icc">Set.Icc</a> <span class="fn">a</span> <span class="fn">b</span>)</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hval</span> : <span class="fn">∀ <span class="fn">y</span> ∈ <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Interval/Set/Defs.html#Set.Icc">Set.Icc</a> <span class="fn">a</span> <span class="fn">b</span></span>, <span class="fn">∃ (<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int">ℤ</a>), <span class="fn"><span class="fn">f</span> <span class="fn">y</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">↑<span class="fn">n</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">f</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">f</span> <span class="fn">a</span></span></div></div><p><strong>A continuous real function valued in <code>c·ℤ</code> is constant</strong>, for <code>c &gt; 0</code>.</p><p>Stated with the base point on the left so that the conclusion pins the <em>value</em>,
+not merely the constancy — that distinction is what the refuted 5₂ argument
+collapsed.</p></div></div><div class="decl" id="QOU.Archimedean.eq_zero_of_continuousOn_of_exp_eq_one"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/BranchIntegerPinning.lean#L170-L204">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Archimedean/BranchIntegerPinning.html#QOU.Archimedean.eq_zero_of_continuousOn_of_exp_eq_one"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">eq_zero_of_continuousOn_of_exp_eq_one</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Complex/Basic.html#Complex">ℂ</a></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a </span><span class="fn">b </span><span class="fn">x</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hx</span> : <span class="fn">x</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Interval/Set/Defs.html#Set.Icc">Set.Icc</a> <span class="fn">a</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcont</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Filter.html#ContinuousOn">ContinuousOn</a> <span class="fn">F</span> <span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Interval/Set/Defs.html#Set.Icc">Set.Icc</a> <span class="fn">a</span> <span class="fn">b</span>)</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hexp</span> : <span class="fn">∀ <span class="fn">y</span> ∈ <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Interval/Set/Defs.html#Set.Icc">Set.Icc</a> <span class="fn">a</span> <span class="fn">b</span></span>, <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/Complex/Exponential.html#Complex.exp">Complex.exp</a> <span class="fn">(<span class="fn">F</span> <span class="fn">y</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h0</span> : <span class="fn"><span class="fn">F</span> <span class="fn">a</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">F</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p><strong>The branch integer is pinned by the base point.</strong></p><p>If <code>F</code> is continuous on <code>[a,b]</code> with <code>exp (F y) = 1</code> throughout and <code>F a = 0</code>,
+then <code>F</code> vanishes identically.</p><p>This is the 5₂ transport's <code>k = 0</code> step. <code>exp (F y) = 1</code> is what Vieta supplies;
+<code>F a = 0</code> is the base point <code>x = 1</code>; continuity is the open hypothesis, and it is
+the non-<em>crossing</em> condition, not the non-touching one — the arc's endpoint sits
+on the cut (see the header). No local-constancy argument appears, and no
+non-collision hypothesis is needed: the arc <em>does</em> carry a collision
+(<code>FiveTwoDiscriminant.exists_unit_circle_disc_zero</code>) and it is irrelevant to a
+symmetric sum.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

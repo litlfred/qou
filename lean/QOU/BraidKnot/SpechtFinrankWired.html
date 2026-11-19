@@ -1,0 +1,92 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.BraidKnot.SpechtFinrankWired</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.BraidKnot.SpechtFinrankWired";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">SpechtFinrankWired</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/SpechtFinrankWired.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/BraidKnot/SpechtTriangularCore.html">QOU.BraidKnot.SpechtTriangularCore</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.BraidKnot.SpechtFinrankWired" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.SpechtFinrankWired.standardPolytabloid_linearIndependent_wired"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">SpechtFinrankWired</span>.<span class="name">standardPolytabloid_linearIndependent_wired</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">SpechtFinrankWired</span>.<span class="name">standardBasis_wired</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.SpechtFinrankWired.specht_finrank_eq_numSYT_wired"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">SpechtFinrankWired</span>.<span class="name">specht_finrank_eq_numSYT_wired</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-BraidKnot-SpechtFinrankWired-brick-4-finrank-=-numSYT-re-routed-onto-proved-independence">QOU.BraidKnot.SpechtFinrankWired — brick-4 <code>finrank = numSYT</code>, re-routed onto proved independence <a class="hover-link" href="#QOU-BraidKnot-SpechtFinrankWired-brick-4-finrank-=-numSYT-re-routed-onto-proved-independence">#</a></h1><p>This module rebuilds the standard-basis dimension identity
+<code>dim_k S^μ = #SYT(μ)</code> of brick 4, but <strong>sources its linear-independence input from the
+<em>proved</em> triangular core</strong> <code>SpechtTriangularCore.standardPolytabloid_triangular'</code>
+(independence — fully sorry-free apart from Sagan's relation-level dominance core) rather
+than from the opaque brick-2 stub <code>Specht.specht_finrank_eq_numSYT</code> (which carries an
+opaque <code>sorry : finrank Sᵘ = numSYT μ</code>).</p><p>Concretely:</p><ul>
+<li><code><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired">standardBasis_wired</a></code> mirrors <code>SpechtStandardBasis.standardBasis</code> — a <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Basis/Basic.html#Module.Basis.mk">Module.Basis.mk</a></code>
+of the corestricted standard polytabloids — but its independence half comes from
+<code>SpechtTriangularCore.standardPolytabloid_triangular'</code>
+(<code>obtain ⟨_, htri⟩ := …; htri.linearIndependent</code>, corestricted via
+<code>SpechtStandardBasis.linearIndependent_corestrict_iff</code>), and its spanning half is the
+existing <code>SpechtStandardBasis.standardPolytabloid_span</code>.</li>
+<li><code><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.specht_finrank_eq_numSYT_wired">specht_finrank_eq_numSYT_wired</a></code> mirrors <code>SpechtStandardBasis.specht_finrank_eq_numSYT</code>
+but reads off <code><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired">standardBasis_wired</a></code>.</li>
+</ul><p>The net effect on the OV capstone (<code>OVTopAssembly.snSpectralData</code>'s <code>rank</code> field): after the
+capstone's <code>rank</code> rewrites with <code><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.specht_finrank_eq_numSYT_wired">specht_finrank_eq_numSYT_wired</a></code> instead of the brick-2 stub,
+the <code>rank</code> sorry-path no longer contains the independence stub
+<code>SpechtStandardBasis.standardPolytabloid_triangular</code> <strong>nor</strong> the opaque brick-2 finrank stub —
+its <strong>only</strong> remaining sorry is the spanning / straightening stub
+<code>SpechtStandardBasis.standardPolytabloid_straightening</code> (via <code>standardPolytabloid_span</code>),
+plus the relation-level dominance core <code>SpechtDominanceCore.dominance_relation_exists</code> that
+the <em>proved</em> <code>triangular'</code> legitimately consumes.</p><h2 class="markdown-heading" id="sorry-free-↔-stubbed-map">sorry-free ↔ stubbed map <a class="hover-link" href="#sorry-free-↔-stubbed-map">#</a></h2><table>
+<thead>
+<tr>
+<th>Declaration</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired">standardBasis_wired</a></code></td>
+<td><strong>sorry-free MODULO</strong> <code>triangular'</code>'s dominance core + the spanning stub</td>
+</tr>
+<tr>
+<td><code><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.specht_finrank_eq_numSYT_wired">specht_finrank_eq_numSYT_wired</a></code></td>
+<td><strong>sorry-free MODULO</strong> the same two cores</td>
+</tr>
+</tbody>
+</table><p>Independence here flows through the <strong>proved</strong> <code>triangular'</code>; there is no independence
+<code>sorry</code>. The residual <code>sorry</code>-tainted inputs are exactly:</p><ol>
+<li><code>SpechtStandardBasis.standardPolytabloid_straightening</code> (spanning / Garnir straightening), and</li>
+<li><code>SpechtDominanceCore.dominance_relation_exists</code> (Sagan's dominance lemma, consumed by the
+<em>proved</em> <code>triangular'</code>).</li>
+</ol><h2 class="markdown-heading" id="Base-ring-7c">Base ring (§7c) <a class="hover-link" href="#Base-ring-7c">#</a></h2><p><code>variable {k : Type} [Field k] [CharZero k]</code> — algebraic; <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a></code> is what <code>Basis.mk</code> /
+<code>finrank</code> need, <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a></code> is inherited from the brick-4 signature contract. No <code>ℝ</code>, no
+<code>Real.*</code>, no ordering on <code>k</code>.</p><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li>[sagan2001] Sagan, <em>The Symmetric Group</em>, §2.5 (the standard basis, Thm 2.5.2).</li>
+<li>[james1984representation] James, <em>The Representation Theory of the Symmetric Groups</em> §8.</li>
+</ul></div><div class="decl" id="QOU.BraidKnot.SpechtFinrankWired.standardPolytabloid_linearIndependent_wired"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/SpechtFinrankWired.lean#L74-L86">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.standardPolytabloid_linearIndependent_wired"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">SpechtFinrankWired</span>.<span class="name">standardPolytabloid_linearIndependent_wired</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">μ</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Young/YoungDiagram.html#YoungDiagram">YoungDiagram</a>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/LinearIndependent/Defs.html#LinearIndependent">LinearIndependent</a> <span class="fn">k</span> <a href="../.././QOU/BraidKnot/SpechtStandardBasisCore.html#QOU.BraidKnot.SpechtStandardBasis.standardPolytabloidS">SpechtStandardBasis.standardPolytabloidS</a></span></div></div><p><strong>Linear independence of the corestricted standard polytabloids — sourced from the PROVED
+triangular core.</strong> Identical conclusion to
+<code>SpechtStandardBasis.standardPolytabloid_linearIndependent</code>, but its triangular input is the
+<em>proved</em> <code>SpechtTriangularCore.standardPolytabloid_triangular'</code> (independence) rather than the
+opaque stub <code>SpechtStandardBasis.standardPolytabloid_triangular</code>. Hence this carries <strong>no
+independence <code>sorry</code></strong> — its only sorry-path is the dominance core that <code>triangular'</code> itself
+legitimately consumes.</p></div></div><div class="decl" id="QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/SpechtFinrankWired.lean#L88-L98">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">SpechtFinrankWired</span>.<span class="name">standardBasis_wired</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">μ</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Young/YoungDiagram.html#YoungDiagram">YoungDiagram</a>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Basis/Defs.html#Module.Basis">Module.Basis</a> <span class="fn">(<a href="../.././QOU/BraidKnot/StandardYoungTableau.html#QOU.BraidKnot.StandardYoungTableau">StandardYoungTableau</a> <span class="fn">μ</span>)</span> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<a href="../.././QOU/BraidKnot/Specht.html#QOU.BraidKnot.Specht.SpechtSubmodule">Specht.SpechtSubmodule</a> <span class="fn">μ</span>)</span></span></span></div></div><p><strong>The standard polytabloid basis of <code>S^μ</code>, wired to proved independence.</strong></p><p>Mirrors <code>SpechtStandardBasis.standardBasis</code> (a <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Basis/Basic.html#Module.Basis.mk">Module.Basis.mk</a></code> of the corestricted standard
+polytabloids), but its independence half is <code><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.standardPolytabloid_linearIndependent_wired">standardPolytabloid_linearIndependent_wired</a></code>
+(sourced from the <em>proved</em> <code>triangular'</code>) and its spanning half is the existing
+<code>SpechtStandardBasis.standardPolytabloid_span</code>. Sorry-free apart from the spanning stub and the
+dominance core consumed by <code>triangular'</code>.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired">QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Basis/Basic.html#Module.Basis.mk">Module.Basis.mk</a> <span class="fn">⋯</span> <span class="fn">⋯</span></span></li></ul></details><details id="instances-for-list-QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.BraidKnot.SpechtFinrankWired.specht_finrank_eq_numSYT_wired"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/SpechtFinrankWired.lean#L100-L108">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.specht_finrank_eq_numSYT_wired"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">SpechtFinrankWired</span>.<span class="name">specht_finrank_eq_numSYT_wired</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">μ</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Young/YoungDiagram.html#YoungDiagram">YoungDiagram</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Dimension/Finrank.html#Module.finrank">Module.finrank</a> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<a href="../.././QOU/BraidKnot/Specht.html#QOU.BraidKnot.Specht.SpechtSubmodule">Specht.SpechtSubmodule</a> <span class="fn">μ</span>)</span></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././QOU/BraidKnot/StandardYoungTableau.html#QOU.BraidKnot.numSYT">numSYT</a> <span class="fn">μ</span></span></div></div><p><strong>Standard-basis dimension theorem (wired).</strong> <code>dim_k S^μ = #SYT(μ)</code>, read off
+<code><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html#QOU.BraidKnot.SpechtFinrankWired.standardBasis_wired">standardBasis_wired</a></code>. Mirrors <code>SpechtStandardBasis.specht_finrank_eq_numSYT</code>, but its
+independence input is the <em>proved</em> triangular core — so this declaration's sorry-path is the
+spanning stub + dominance core only, and does <strong>not</strong> include the opaque brick-2 finrank stub
+<code>Specht.specht_finrank_eq_numSYT</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

@@ -1,0 +1,77 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.BringsSurface.PentagonTwistAssociator</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.BringsSurface.PentagonTwistAssociator";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">BringsSurface</span>.<span class="name">PentagonTwistAssociator</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BringsSurface/PentagonTwistAssociator.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/Abel.html">Mathlib.Tactic.Abel</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.BringsSurface.PentagonTwistAssociator" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.BringsSurface.PentagonTwist.assoc"><span class="name">QOU</span>.<span class="name">BringsSurface</span>.<span class="name">PentagonTwist</span>.<span class="name">assoc</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BringsSurface.PentagonTwist.assoc_pentagon"><span class="name">QOU</span>.<span class="name">BringsSurface</span>.<span class="name">PentagonTwist</span>.<span class="name">assoc_pentagon</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-BringsSurface-PentagonTwistAssociator">QOU.BringsSurface.PentagonTwistAssociator <a class="hover-link" href="#QOU-BringsSurface-PentagonTwistAssociator">#</a></h1><p><strong>Non-associativity as a pentagon (3-cocycle) deformation — the categorical
+route to octonion multiplication.</strong></p><p>Two independent deformations of a monoidal category, from its two coherence laws:</p><table>
+<thead>
+<tr>
+<th>deform</th>
+<th>constraint</th>
+<th>coherence law</th>
+<th>deformation datum</th>
+<th>algebraic home</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>commutative → non-commutative</td>
+<td>braiding <code>c</code></td>
+<td><strong>hexagon</strong> (Yang–Baxter)</td>
+<td>R-matrix</td>
+<td>quantum groups (QOU's Hecke)</td>
+</tr>
+<tr>
+<td>associative → <strong>non-associative</strong></td>
+<td>associator <code>α</code></td>
+<td><strong>pentagon</strong> (Mac Lane)</td>
+<td>3-cocycle / Drinfeld <code>Φ</code></td>
+<td>quasi-Hopf algebras (Drinfeld)</td>
+</tr>
+</tbody>
+</table><p>The octonions realise the <em>second</em> row: <code>𝕆 = ℝ_F[(ℤ/2)³]</code>, the group algebra of
+<code>(ℤ/2)³</code> (its <code>8</code> elements index <code>e₀,…,e₇</code>) twisted by a sign 2-cochain <code>F</code> that is
+<strong>not a 2-cocycle</strong> — its associator <code>α = dF</code> is a nonzero 3-cochain (a genuine
+3-cocycle, though a <em>coboundary</em>, so cohomologically trivial; see <code>OctonionCocycle</code>)
+(Albuquerque–Majid 1999). So &quot;the non-associative doubling <code>ℍ → 𝕆</code>&quot; is precisely
+&quot;turn on a twist <code>F</code> with <code>dF ≠ 0</code>&quot; — a <strong>pentagon-cochain deformation</strong>, the
+associativity-side analogue of deforming the braiding (hexagon) to turn commutative
+into non-commutative.</p><p>This file formalises the mechanism: for a graded twist <code>e_a·e_b = F(a,b)·e_{a+b}</code>,
+the associator is <code>α = dF</code> (the coboundary of <code>F</code>), and it <strong>automatically
+satisfies the pentagon</strong> because <code>d² = 0</code>. That is why a graded twist keeps Mac
+Lane coherence while breaking strict associativity. The specific octonion cochain
+<code>F</code> — whose associator <code>α = dF</code> is cohomologically <strong>trivial</strong> (a coboundary) yet
+<strong>nonzero as a cochain</strong> (non-associativity) — is realised concretely in
+<code>OctonionCocycle</code> (<code>det3</code> on <code>(ℤ/2)³</code>, <code>decide</code>-verified).</p><p>The grading group <code>G</code> and phase group <code>k</code> are written <strong>additively</strong> (cohomology
+is naturally additive; the octonion signs live in <code>k = ℤ/2</code>). Generic
+(<code>[AddCommGroup G]</code>, <code>[AddCommGroup k]</code>; §7c), sorry-free.</p><p>-- Ref: [manuscript] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md</p></div><div class="decl" id="QOU.BringsSurface.PentagonTwist.assoc"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BringsSurface/PentagonTwistAssociator.lean#L44-L48">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BringsSurface/PentagonTwistAssociator.html#QOU.BringsSurface.PentagonTwist.assoc"><span class="name">QOU</span>.<span class="name">BringsSurface</span>.<span class="name">PentagonTwist</span>.<span class="name">assoc</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">G</span> → <span class="fn">G</span> → <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a </span><span class="fn">b </span><span class="fn">c</span> : <span class="fn">G</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">k</span></div></div><p>Associator of a 2-cochain twist <code>F</code> (<code>e_a·e_b = F(a,b) · e_{a+b}</code>, phases
+additive): the &quot;defect&quot; <code>(e_a·e_b)·e_c − e_a·(e_b·e_c)</code>, i.e. the coboundary
+<code>dF</code>.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/BringsSurface/PentagonTwistAssociator.html#QOU.BringsSurface.PentagonTwist.assoc">QOU.BringsSurface.PentagonTwist.assoc</a> <span class="fn">F</span> <span class="fn">a</span> <span class="fn">b</span> <span class="fn">c</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">F</span> <span class="fn">a</span> <span class="fn">b</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><span class="fn">F</span> (<span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">b</span>) <span class="fn">c</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn"><span class="fn">F</span> <span class="fn">b</span> <span class="fn">c</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn"><span class="fn">F</span> <span class="fn">a</span> (<span class="fn">b</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">c</span>)</span></li></ul></details><details id="instances-for-list-QOU.BringsSurface.PentagonTwist.assoc" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.BringsSurface.PentagonTwist.assoc_pentagon"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BringsSurface/PentagonTwistAssociator.lean#L50-L59">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BringsSurface/PentagonTwistAssociator.html#QOU.BringsSurface.PentagonTwist.assoc_pentagon"><span class="name">QOU</span>.<span class="name">BringsSurface</span>.<span class="name">PentagonTwist</span>.<span class="name">assoc_pentagon</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><span class="fn">G</span> → <span class="fn">G</span> → <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a </span><span class="fn">b </span><span class="fn">c </span><span class="fn">d</span> : <span class="fn">G</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/BringsSurface/PentagonTwistAssociator.html#QOU.BringsSurface.PentagonTwist.assoc">assoc</a> <span class="fn">F</span> <span class="fn">a</span> <span class="fn">b</span> <span class="fn">c</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><a href="../.././QOU/BringsSurface/PentagonTwistAssociator.html#QOU.BringsSurface.PentagonTwist.assoc">assoc</a> <span class="fn">F</span> <span class="fn">a</span> (<span class="fn">b</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">c</span>) <span class="fn">d</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><a href="../.././QOU/BringsSurface/PentagonTwistAssociator.html#QOU.BringsSurface.PentagonTwist.assoc">assoc</a> <span class="fn">F</span> <span class="fn">b</span> <span class="fn">c</span> <span class="fn">d</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././QOU/BringsSurface/PentagonTwistAssociator.html#QOU.BringsSurface.PentagonTwist.assoc">assoc</a> <span class="fn">F</span> (<span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">b</span>) <span class="fn">c</span> <span class="fn">d</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><a href="../.././QOU/BringsSurface/PentagonTwistAssociator.html#QOU.BringsSurface.PentagonTwist.assoc">assoc</a> <span class="fn">F</span> <span class="fn">a</span> <span class="fn">b</span> (<span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">d</span>)</span></div></div><p><strong>Pentagon holds automatically for a twist associator (<code>d² = 0</code>).</strong>
+For any 2-cochain twist, the associator <code>α = dF</code> satisfies the pentagon /
+3-cocycle identity. This is the mechanism by which turning on a graded twist
+(the octonion <code>(ℤ/2)³</code> cochain) breaks strict associativity while preserving Mac
+Lane coherence — the categorical form of &quot;deform the pentagon.&quot;</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

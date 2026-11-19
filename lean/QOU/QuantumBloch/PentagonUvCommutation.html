@@ -1,0 +1,103 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.QuantumBloch.PentagonUvCommutation</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.QuantumBloch.PentagonUvCommutation";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">QuantumBloch</span>.<span class="name">PentagonUvCommutation</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QuantumBloch/PentagonUvCommutation.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/Hecke.html">QOU.Hecke</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.QuantumBloch.PentagonUvCommutation" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.QuantumBloch.hatV"><span class="name">QOU</span>.<span class="name">QuantumBloch</span>.<span class="name">hatV</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QuantumBloch.pentagon_uv_commutation_inter_level_placeholder"><span class="name">QOU</span>.<span class="name">QuantumBloch</span>.<span class="name">pentagon_uv_commutation_inter_level_placeholder</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Pentagon-UV-commutation-Hecke-traced-volume-operators">Pentagon UV-commutation — Hecke traced-volume operators <a class="hover-link" href="#Pentagon-UV-commutation-Hecke-traced-volume-operators">#</a></h1><p>For a triple <code>(i, j, k)</code> with <code>i &lt; j &lt; k</code> of braid-generator indices
+at jet level <code>n</code>, define <code>u = V̂_i V̂_j</code> and <code>v = V̂_k</code>. On the
+q-eigenblock <code>B_λ^trans</code> (transient summand of the Wedderburn block
+where σ_i, σ_j, σ_k act with eigenvalue <code>q</code>), the operators satisfy
+the quantum-torus relation:</p><p><code>u · v = q · v · u</code></p><p>This is the commutation needed for pentagon ascension of order-3
+contributions to jet level <code>n+1</code> per
+<code>rem:mass-endomorphism-jet-tower</code>.</p><p>Substantive derivation: 4 steps in the narrative <code>.md</code>:</p><ol>
+<li>Far-commutativity reduces triple commutator to adjacent pairs.</li>
+<li>Eigenvalue specialisation on B_λ.</li>
+<li>Braid relation σ_s σ_{s+1} σ_s = σ_{s+1} σ_s σ_{s+1} combined
+with Hecke σ_s² = (q - q⁻¹)σ_s + 1 yields pair-swap identity.</li>
+<li>Descent splitting: residual R_q lies in im τ̂_n, ascending to
+level n+1 as a new singleton or pair.</li>
+</ol><p>Open: std-block (2x2) check; sharpness of residual R_q.</p><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li>[prop:pentagon-uv-commutation]</li>
+<li>[def:quantum-bloch-group]</li>
+<li>[prop:descended-level-zero]</li>
+</ul></div><div class="decl" id="QOU.QuantumBloch.hatV"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QuantumBloch/PentagonUvCommutation.lean#L41-L50">source</a></div><div class="attributes">@[reducible]</div>
+<div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QuantumBloch/PentagonUvCommutation.html#QOU.QuantumBloch.hatV"><span class="name">QOU</span>.<span class="name">QuantumBloch</span>.<span class="name">hatV</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn">R</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv">Inv</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">R</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">HA</span> : <span class="fn"><a href="../.././QOU/Hecke/Algebra.html#QOU.Hecke.HeckeAlgebra">Hecke.HeckeAlgebra</a> <span class="fn">R</span> <span class="fn">n</span> <span class="fn">q</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">i</span> : <span class="fn"><a href="../.././QOU/Hecke/Generators.html#QOU.Hecke.Generator">Hecke.Generator</a> <span class="fn">n</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">A</span></div></div><p>The Hecke traced-volume operator at generator index i is the
+Markov-trace value of σ_i in the Wedderburn block B_λ. We model it
+abstractly as the embedded generator gen i ∈ A; downstream theorems
+restrict to specific blocks via the Wedderburn decomposition.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/QuantumBloch/PentagonUvCommutation.html#QOU.QuantumBloch.hatV">QOU.QuantumBloch.hatV</a> <span class="fn">i</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././QOU/Hecke/Algebra.html#QOU.Hecke.HeckeAlgebra.embed">QOU.Hecke.HeckeAlgebra.embed</a> <span class="fn">q</span> <span class="fn">i</span></span></li></ul></details><details id="instances-for-list-QOU.QuantumBloch.hatV" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="mod_doc"><p>Pentagon UV-commutation, <strong>corrected level-internal identity</strong>
+(post-PR-501).</p><p>The original <code>prop:pentagon-uv-commutation</code> claim was that the
+quantum-torus relation <code>u · v = q · v · u</code> holds on the
+q-eigenblock <code>B_λ^trans</code> for <code>u = V̂_i V̂_j</code>, <code>v = V̂_k</code>. After PR
+#501 landed <code>lem:vhat-pair-commutation-trace</code> we now know the
+<strong>traced volumes</strong> <code>V̂_ℓ</code> are scalar Laurent polynomials in
+<code>ℤ[q^{±1/2}, z]</code> (a commutative ring); within a single jet level
+they commute trivially with no q-factor. The q-factor <code>uv = q vu</code>
+applies only to an <strong>operator lift between adjacent jet levels</strong>
+<code>n, n+1</code>, which lives in <code>QOU.LiftingDescent.JetProlongation</code>
+(not yet formalised in the repo).</p><p>The corrected level-internal claim is therefore stated about the
+<strong>scalar Markov-trace targets</strong> in the commutative coefficient
+ring <code>R</code>, not about the Hecke-algebra elements themselves. The
+formal Lean lemma is <code>QOU.BraidKnot.VhatPairCommutationTrace</code> in
+<a href="../.././../../../braids-and-knots/vhat-pair-commutation-trace.lean"><code>vhat-pair-commutation-trace.lean</code></a>:</p><pre><code>theorem VhatPairCommutationTrace
+    {R : Type*} [CommRing R] (V_i V_j : R) :
+    V_i * V_j = V_j * V_i := <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#mul_comm">mul_comm</a> V_i V_j
+</code></pre><p>There is <strong>no level-internal identity to prove inside the Hecke
+algebra <code>A</code> itself</strong> because <code>A</code> is non-commutative in general
+(unless trivial), so a <code>[CommRing A]</code> hypothesis would be
+logically inconsistent with <code>[HeckeAlgebra R n q A]</code>. We do not
+re-state the trivial scalar lemma here; downstream callers should
+import <code>QOU.BraidKnot.VhatPairCommutationTrace</code> directly.</p><p>For the q-deformed inter-level operator lift, see the audit memo
+<a href="../.././../../../../docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md"><code>2026-05-02-r7-pentagon-trace-vs-operator.md</code></a>
+and the corrected narrative <code>prop:pentagon-uv-commutation</code> block
+(which now defers to <code>lem:vhat-pair-commutation-trace</code>).</p></div><div class="decl" id="QOU.QuantumBloch.pentagon_uv_commutation_inter_level_placeholder"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QuantumBloch/PentagonUvCommutation.lean#L90-L123">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QuantumBloch/PentagonUvCommutation.html#QOU.QuantumBloch.pentagon_uv_commutation_inter_level_placeholder"><span class="name">QOU</span>.<span class="name">QuantumBloch</span>.<span class="name">pentagon_uv_commutation_inter_level_placeholder</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">R</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv">Inv</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">R</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">HA</span> : <span class="fn"><a href="../.././QOU/Hecke/Algebra.html#QOU.Hecke.HeckeAlgebra">Hecke.HeckeAlgebra</a> <span class="fn">R</span> <span class="fn">n</span> <span class="fn">q</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">i </span><span class="fn">j </span><span class="fn">k</span> : <span class="fn"><a href="../.././QOU/Hecke/Generators.html#QOU.Hecke.Generator">Hecke.Generator</a> <span class="fn">n</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">have <span class="fn">u</span> := <span class="fn"><a href="../.././QOU/QuantumBloch/PentagonUvCommutation.html#QOU.QuantumBloch.hatV">hatV</a> <span class="fn">i</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><a href="../.././QOU/QuantumBloch/PentagonUvCommutation.html#QOU.QuantumBloch.hatV">hatV</a> <span class="fn">j</span></span>;
+<span class="fn">have <span class="fn">v</span> := <span class="fn"><a href="../.././QOU/QuantumBloch/PentagonUvCommutation.html#QOU.QuantumBloch.hatV">hatV</a> <span class="fn">k</span></span>;
+<span class="fn">u</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">v</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> (<span class="fn">v</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">u</span>) <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Or">∨</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#True">True</a></span></span></div></div><p>Inter-level pentagon ascension (q-graded). Stated as a
+forward-declaration of the form the inter-level identity should
+take when <code>QOU.LiftingDescent.JetProlongation</code> lands.</p><p>The descent operator <code>τ̂_n : 𝒜_{n+1} → 𝒜_{n+1}^{desc}</code> and its
+transient kernel <code>B_λ^trans = ker τ̂_n ∩ B_λ</code> are the right domain
+for the q-deformed quantum-torus relation. The full theorem will
+assert: for the operator lift <code>Ũ : B_λ^{(n)}_trans → B_λ^{(n+1)}</code>,
+the pair <code>(Ũ_i Ũ_j, Ũ_k)</code> satisfies <code>uv = q · vu</code> modulo the
+descended residual <code>R_q ∈ im τ̂_n</code>.</p><p>Until JetProlongation lands, we leave the inter-level identity as
+a placeholder disjunction including <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#True">True</a></code> (the descent-residual
+case is always satisfied trivially when the residual is
+unconstrained).</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

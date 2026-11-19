@@ -1,0 +1,131 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.QBeta.EvenFaceMassShadow</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.QBeta.EvenFaceMassShadow";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/EvenFaceMassShadow.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/QBeta/OddDecayWeightParity.html">QOU.QBeta.OddDecayWeightParity</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.QBeta.EvenFaceMassShadow" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.EvenFaceMassShadow.IsEvenFace"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">IsEvenFace</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.EvenFaceMassShadow.evenFace_carries_shadow"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">evenFace_carries_shadow</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.EvenFaceMassShadow.oddFace_shadow_null"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">oddFace_shadow_null</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.EvenFaceMassShadow.parity_decomposition_unique"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">parity_decomposition_unique</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.EvenFaceMassShadow.evenFace_shadow_faithful"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">evenFace_shadow_faithful</span></a></div></nav><main>
+<div class="decl" id="QOU.QBeta.EvenFaceMassShadow.IsEvenFace"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/EvenFaceMassShadow.lean#L52-L56">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/EvenFaceMassShadow.html#QOU.QBeta.EvenFaceMassShadow.IsEvenFace"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">IsEvenFace</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">e</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Bar-evenness of the even/mass (C1) face.</strong> Abbreviation matching the
+bar-even cosh profile: <code>σ e = e</code>. The bar-fixed locus is a subring
+(<code>ZBarParity.bar_fixed_add/mul/pow</code>), so a C1 kernel assembled from bar-even
+atoms by ring operations stays on this face.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/QBeta/EvenFaceMassShadow.html#QOU.QBeta.EvenFaceMassShadow.IsEvenFace">QOU.QBeta.EvenFaceMassShadow.IsEvenFace</a> <span class="fn">σ</span> <span class="fn">e</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> (<span class="fn"><span class="fn">σ</span> <span class="fn">e</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e</span>)</li></ul></details><details id="instances-for-list-QOU.QBeta.EvenFaceMassShadow.IsEvenFace" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.QBeta.EvenFaceMassShadow.evenFace_carries_shadow"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/EvenFaceMassShadow.lean#L58-L68">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/EvenFaceMassShadow.html#QOU.QBeta.EvenFaceMassShadow.evenFace_carries_shadow"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">evenFace_carries_shadow</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">S</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcomm</span> : <span class="fn"><span class="fn"><span class="fn">φ</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom.comp">comp</a></span> <span class="fn">σ</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">φ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">qCubic </span><span class="fn">e </span><span class="fn">o</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsplit</span> : <span class="fn">qCubic</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">o</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">he</span> : <span class="fn"><a href="../.././QOU/QBeta/EvenFaceMassShadow.html#QOU.QBeta.EvenFaceMassShadow.IsEvenFace">IsEvenFace</a> <span class="fn">σ</span> <span class="fn">e</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ho</span> : <span class="fn"><span class="fn">σ</span> <span class="fn">o</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a><span class="fn">o</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">φ</span> <span class="fn">qCubic</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">φ</span> <span class="fn">e</span></span></div></div><p><strong>The even face carries the whole classical shadow.</strong> For the graded split
+<code>qCubic = e + o</code> with <code>e</code> bar-even and <code>o</code> bar-odd, every bar-compatible
+evaluation <code>φ</code> (<code>φ ∘ σ = φ</code>) into a characteristic-<code>≠ 2</code> field gives
+<code>φ(qCubic) = φ(e)</code>. The nonzero classical mass content is sourced entirely by
+the even (C1/cosh) face.</p></div></div><div class="decl" id="QOU.QBeta.EvenFaceMassShadow.oddFace_shadow_null"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/EvenFaceMassShadow.lean#L70-L79">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/EvenFaceMassShadow.html#QOU.QBeta.EvenFaceMassShadow.oddFace_shadow_null"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">oddFace_shadow_null</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">S</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcomm</span> : <span class="fn"><span class="fn"><span class="fn">φ</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom.comp">comp</a></span> <span class="fn">σ</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">φ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">o</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ho</span> : <span class="fn"><span class="fn">σ</span> <span class="fn">o</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a><span class="fn">o</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">φ</span> <span class="fn">o</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p><strong>The odd face is classically inert.</strong> The bar-odd decay face <code>o</code> is
+annihilated by every bar-compatible evaluation into a characteristic-<code>≠ 2</code>
+field: <code>φ(o) = 0</code>. (The <code>2·φ(o) = 0</code> division-free form is
+<code>oddWeight_shadow_zero</code>.)</p></div></div><div class="decl" id="QOU.QBeta.EvenFaceMassShadow.parity_decomposition_unique"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/EvenFaceMassShadow.lean#L81-L111">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/EvenFaceMassShadow.html#QOU.QBeta.EvenFaceMassShadow.parity_decomposition_unique"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">parity_decomposition_unique</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">F</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σF</span> : <span class="fn">F</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">F</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">qCubic </span><span class="fn">e </span><span class="fn">o </span><span class="fn">e' </span><span class="fn">o'</span> : <span class="fn">F</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsplit</span> : <span class="fn">qCubic</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">o</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsplit'</span> : <span class="fn">qCubic</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e'</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">o'</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">he</span> : <span class="fn"><span class="fn">σF</span> <span class="fn">e</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ho</span> : <span class="fn"><span class="fn">σF</span> <span class="fn">o</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a><span class="fn">o</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">he'</span> : <span class="fn"><span class="fn">σF</span> <span class="fn">e'</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e'</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ho'</span> : <span class="fn"><span class="fn">σF</span> <span class="fn">o'</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a><span class="fn">o'</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">e</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e'</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn">o</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">o'</span></div></div><p><strong>The graded split is canonical (unique).</strong> Over a characteristic-<code>≠ 2</code>
+field <code>F</code>, if <code>qCubic = e + o = e' + o'</code> with <code>e, e'</code> bar-even and <code>o, o'</code>
+bar-odd, then <code>e = e'</code> and <code>o = o'</code>. Proof: the difference <code>e − e' = o' − o</code>
+is simultaneously bar-even (LHS) and bar-odd (RHS), hence <code>2·(e − e') = 0</code>,
+so <code>e = e'</code> in characteristic <code>≠ 2</code>; the odd parts then agree by
+cancellation. The even/odd (mass/decay) decomposition of the q-cubic has a
+single well-defined home — the structural counterpart of the super-Berezinian
+block-diagonalization.</p></div></div><div class="decl" id="QOU.QBeta.EvenFaceMassShadow.evenFace_shadow_faithful"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/EvenFaceMassShadow.lean#L113-L127">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/EvenFaceMassShadow.html#QOU.QBeta.EvenFaceMassShadow.evenFace_shadow_faithful"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">EvenFaceMassShadow</span>.<span class="name">evenFace_shadow_faithful</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">F</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">F</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σF</span> : <span class="fn">F</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">F</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn">F</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">S</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">qCubic </span><span class="fn">e </span><span class="fn">o </span><span class="fn">e' </span><span class="fn">o'</span> : <span class="fn">F</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsplit</span> : <span class="fn">qCubic</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">o</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsplit'</span> : <span class="fn">qCubic</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e'</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">o'</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">he</span> : <span class="fn"><span class="fn">σF</span> <span class="fn">e</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ho</span> : <span class="fn"><span class="fn">σF</span> <span class="fn">o</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a><span class="fn">o</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">he'</span> : <span class="fn"><span class="fn">σF</span> <span class="fn">e'</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">e'</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ho'</span> : <span class="fn"><span class="fn">σF</span> <span class="fn">o'</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a><span class="fn">o'</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">φ</span> <span class="fn">e</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">φ</span> <span class="fn">e'</span></span></div></div><p><strong>The even face's classical shadow is a split-independent invariant.</strong>
+Corollary of canonicity: if <code>qCubic = e + o = e' + o'</code> are two even/odd
+splits over a characteristic-<code>≠ 2</code> field, then <code>φ(e) = φ(e')</code> for every ring
+hom <code>φ</code> — the classical mass value read off the even face does not depend on
+how the split was presented.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

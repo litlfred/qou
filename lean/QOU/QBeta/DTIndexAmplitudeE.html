@@ -1,0 +1,226 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.QBeta.DTIndexAmplitudeE</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.QBeta.DTIndexAmplitudeE";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic.html">Mathlib.Tactic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.QBeta.DTIndexAmplitudeE" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.DTIndexAmplitudeE.BarEven"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">BarEven</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.DTIndexAmplitudeE.BarOdd"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">BarOdd</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.DTIndexAmplitudeE.dtIndex_barEven"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">dtIndex_barEven</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.DTIndexAmplitudeE.barEven_barOdd_eq_zero"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">barEven_barOdd_eq_zero</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.DTIndexAmplitudeE.barOdd_ne_barEven"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">barOdd_ne_barEven</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.DTIndexAmplitudeE.crossTermBarEven_imp_C_barOdd"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">crossTermBarEven_imp_C_barOdd</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.DTIndexAmplitudeE.amplitude_barOdd"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">amplitude_barOdd</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.DTIndexAmplitudeE.dtIndex_cannot_supply_amplitude"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">dtIndex_cannot_supply_amplitude</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-QBeta-DTIndexAmplitudeE-the-DT-invariant-3d-index-graded-Euler-route-is-BAR-PARITY-excluded-from-supplying-the-A=3-anti-self-adjoint-amplitude-E">QOU.QBeta.DTIndexAmplitudeE — the DT-invariant / 3d-index / graded-Euler route is BAR-PARITY excluded from supplying the A=3 anti-self-adjoint amplitude <code>E</code> <a class="hover-link" href="#QOU-QBeta-DTIndexAmplitudeE-the-DT-invariant-3d-index-graded-Euler-route-is-BAR-PARITY-excluded-from-supplying-the-A=3-anti-self-adjoint-amplitude-E">#</a></h1><p><strong>Scope (read this first).</strong>  <code>QOU.QBeta.A3AntiSelfAdjointLift</code> (merged #4611) bracketed the
+observed A=3 magnitude lift <code>r* = μ₃/c₃ ≈ 1.585 &gt; 1</code> to <strong>exactly one free real degree of
+freedom</strong> — the anti-self-adjoint off-block amplitude <code>E := C + σ B</code> (deviation of the off-block
+<code>C</code> from its graded-self-adjoint value <code>−(σ B)</code>).  It proved <code>E ↦ factor</code> is an affine bijection
+(<code>factor = factor_sa − B·D⁻¹·E/A</code>, <code>amplitude_surjective</code>/<code>amplitude_injective</code>), and that any
+genuine lift <strong>forces</strong> <code>E ≠ 0</code> (<code>amplitude_nonzero</code>).  Deriving <code>E</code> from the substrate — never
+fitting it to <code>r*</code> — is the open keystone <code>qou-jqof</code> (epic <code>qou-x631</code>, convergence bean
+<code>qou-3dya</code>).</p><p><strong>This file's angle — the DT-invariant / 3d-index / graded-Euler substrate route.</strong>  The corpus
+already establishes that the per-partition binding factor is a Behrend-signed Donaldson–Thomas /
+3d-index graded Euler characteristic, <code>Δ_λ = (−1)^{n(λ)}·dim V_λ = DT(𝓑_λ)</code> (sorry-free, all <code>n</code>;
+<code>DeltaLambdaDTIndexGeneralN</code>), and that the DT/graded-Euler machinery over the Wedderburn blocks
+lands integers — the sandwich normalization <code>Σ_{λ⊢3} Δ_λ = −2</code> and the count <code>3</code> / <code>{3,4}</code>
+(<code>StokesDTCountExceedsRecursionOrder</code>).  The forward question this file attacks:</p><blockquote>
+<p>Does the DT-invariant / 3d-index graded-Euler DATA supply the numeric amplitude <code>E</code> that hits
+<code>r*</code> — i.e. is <code>E</code> a Behrend-signed DT count / graded Euler characteristic of a
+substrate-forced moduli?</p>
+</blockquote><p><strong>Verdict — scope-(b) structural exclusion (invariant: bar-parity).</strong>  <strong>NO.</strong>  The DT-index /
+3d-index / graded-Euler datum is, by definition, an <strong>integer</strong> (a Behrend-weighted virtual point
+count, equivalently an alternating dimension sum <code>χ = Σ_k (−1)^k dim(G)_k ∈ ℤ</code>).  Every integer —
+indeed every element of the prime field fixed by the bar involution — is <strong>bar-EVEN</strong>
+(<code>σ x = x</code>, <code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.dtIndex_barEven">dtIndex_barEven</a></code> via <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Int/Cast/Lemmas.html#map_intCast">map_intCast</a></code>).  But the anti-self-adjoint amplitude <code>E</code> is
+<strong>bar-ODD</strong> (<code>σ E = −E</code>): this is <em>derived</em>, not assumed (<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.amplitude_barOdd">amplitude_barOdd</a></code>) — the physical
+mass / C1 face carries a <strong>bar-even</strong> Berezinian cross-term <code>B·D⁻¹·C</code> (the parity of the ratio
+<code>r* = μ₃/c₃</code>, both moments bar-even; <code>BerezinianSelfAdjointCrossTerm</code>), which forces the off-block
+<code>C</code> bar-odd (<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.crossTermBarEven_imp_C_barOdd">crossTermBarEven_imp_C_barOdd</a></code>), hence <code>E = C + σ B</code> bar-odd.  A nonzero element
+<strong>cannot</strong> be both bar-even and bar-odd (<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.barEven_barOdd_eq_zero">barEven_barOdd_eq_zero</a></code>, invariant: <code>char R ≠ 2</code>).</p><p>Therefore (<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.dtIndex_cannot_supply_amplitude">dtIndex_cannot_supply_amplitude</a></code>, sorry-free): the nonzero anti-self-adjoint amplitude
+<code>E</code> that a genuine lift forces is <strong>NOT</strong> any DT-invariant / 3d-index / graded-Euler value.  The
+DT route lives entirely in the <strong>bar-even</strong> (self-adjoint, real π-phase, <code>≤ 1</code>) sector; <code>E</code> lives
+in the <strong>bar-odd</strong> (anti-self-adjoint, <code>±i</code> / π/2 resurgent-Stokes-phase) sector.</p><p><strong>What this buys, and its honest limit.</strong>  This is a genuine <em>proved invariant</em> (bar-parity), so
+it is a scope-(b) exclusion — but a <strong>route-scoped</strong> one: it excludes the DT / graded-Euler
+integer count from <em>being</em> <code>E</code>, not the amplitude <code>E</code> from being derivable.  It <strong>hands <code>E</code> back
+to the bar-odd sector</strong> — the resurgent Stokes / DM q-cubic prolongation symbol
+(<code>conj:qdifference-kernel-prolongation-symbol</code>), which is the ±i (π/2) resurgent phase, bar-ODD,
+the correct parity.  This <em>converges from a fresh direction</em> with the Stokes route a sibling
+agent is on (bean <code>qou-jqof</code>): the DT-index attack does not merely fail — it <em>proves</em> the amplitude
+cannot be a DT count and points at Stokes as the only remaining home.  It is fully consistent with
+<code>amplitude_surjective</code> (some real <code>E</code> hits <code>r*</code>): that witness is a bar-odd geometric scalar, never
+a DT integer.</p><p><strong>Why not a fit; why no axiom of the conclusion.</strong>  Nothing here inverts <code>r*</code>, <code>μ₃</code>, <code>c₃</code>, AME,
+CODATA, or <code>q₀</code>.  There is <strong>no</strong> conjecture class carrying <code>E</code>'s value — the file is a pure
+<em>limitative</em> (impossibility) result, so there is nothing to launder.  The one physical input taken
+as a hypothesis is the <strong>bar-EVEN parity of the mass-face cross-term</strong> (an established parity
+datum, <code>BerezinianSelfAdjointCrossTerm</code> / <code>OddDecayWeightParity</code>), which is a <em>sub-hypothesis about
+the observable's parity</em> — not the conclusion; the theorem DERIVES <code>E</code>'s bar-oddness and then the
+exclusion from it.</p><p><strong>Base ring (§7c).</strong>  Generic <code>{R : Type*} [Field R]</code> throughout (scalar inverses <code>D⁻¹</code> genuinely
+required — the §7c <code>[Field R]</code> inverse carve-out); the char≠2 collapse adds <code>[CharZero R]</code> (the
+only archimedean-adjacent hypothesis, and the weakest one that gives <code>(2 : R) ≠ 0</code>; a
+<code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Field/Defs.html#LinearOrderedField">LinearOrderedField</a></code> such as <code>ℝ</code> is <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a></code>, so downstream specialisation is free).  No <code>ℝ</code>, no
+<code>Real.*</code>; the numerics <code>r* ≈ 1.585</code>, <code>μ₃</code>, <code>c₃</code>, and the DT integers <code>−2</code> / <code>3</code> live only in the
+Python witness / audit, downstream of the substrate→archimedean wall.</p><p><strong>Relation to the established corpus bar-parity invariant.</strong>  The bar-parity <em>exclusion
+principle</em> is already accepted corpus infrastructure — <code>QOU.BraidKnot.BarParityInvariant</code>
+(<code>barEven_barOdd_forces_zero</code>, bean <code>qou-ph2a</code> / <code>s5bb</code>) proves the same &quot;bar-even ∧ bar-odd ⇒ 0&quot;
+filter at the <strong>function</strong> level (<code>f(q⁻¹) = ±f(q)</code> for <code>f : K → K</code>, <code>q ↦ q⁻¹</code> concrete).  This file
+is the <strong>element / scalar</strong> analog (<code>σ : R →+* R</code> acting on scalars — the model in which the A=3
+off-blocks <code>B, C, D, E</code> live), and its genuinely new step is <code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.dtIndex_barEven">dtIndex_barEven</a></code>: a DT-index / 3d-index
+/ graded-Euler value is an <strong>integer</strong>, hence bar-even, so the DT route falls on the excluded (<code>≤ 1</code>,
+self-adjoint) side of that established filter and cannot supply the bar-odd amplitude <code>E</code>.</p><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li>[manuscript] <code>QOU.QBeta.A3AntiSelfAdjointLift</code> (<code>amplitude_nonzero</code> — the lift forces <code>E ≠ 0</code>;
+<code>amplitude_surjective</code>/<code>amplitude_injective</code> — <code>E</code> is the single free/unique DOF);
+<code>QOU.QBeta.A3OffBlockDerivation</code> (<code>magnitudeFactor_le_one</code> — the self-adjoint branching is a
+reduction <code>≤ 1</code>; <code>offBlockNum_bar_odd</code>, <code>branching_graded_selfadjoint</code> — the branching parity
+data); <code>QOU.QBeta.BerezinianSelfAdjointCrossTerm</code> (self-adjoint ⇒ bar-even cross-term — the
+physical parity of the mass face); <code>conj:qdifference-kernel-prolongation-symbol</code> (the bar-ODD
+resurgent Stokes / DM q-cubic datum that WOULD derive <code>E</code>); <code>docs/coordination/option-e.md</code>
+(ROUTE 2-c); beans <code>qou-jqof</code> / <code>qou-3dya</code>.</li>
+<li>[wenzl1988] Wenzl, &quot;Hecke algebras of type Aₙ and subfactors&quot;, Invent. Math. 92 (1988) 349-383
+(the Markov trace weights on the Wedderburn blocks).</li>
+<li>[donagi-markman1996cubics] <a href="https://arxiv.org/abs/alg-geom/9408004">https://arxiv.org/abs/alg-geom/9408004</a> §1 (the cubic condition that
+would pin the off-block amplitude geometrically — bar-odd, not a DT integer).</li>
+</ul></div><div class="mod_doc"><h3 class="markdown-heading" id="Bar-parity-predicates">Bar-parity predicates. <a class="hover-link" href="#Bar-parity-predicates">#</a></h3><p><code>σ : R →+* R</code> is the bar involution <code>q ↦ q⁻¹</code> (a ring homomorphism).  An element is <strong>bar-even</strong>
+when <code>σ</code> fixes it (real π-phase / self-adjoint sector) and <strong>bar-odd</strong> when <code>σ</code> negates it
+(<code>±i</code> / π/2 resurgent-Stokes-phase / anti-self-adjoint sector).</p></div><div class="decl" id="QOU.QBeta.DTIndexAmplitudeE.BarEven"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean#L106-L108">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">BarEven</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>Bar-even: fixed by the bar involution.  The self-adjoint / real-π-phase sector; the mass /
+C1 (<code>cosh</code>) face and every integer-valued DT-index / graded-Euler characteristic live here.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">QOU.QBeta.DTIndexAmplitudeE.BarEven</a> <span class="fn">σ</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> (<span class="fn"><span class="fn">σ</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">x</span>)</li></ul></details><details id="instances-for-list-QOU.QBeta.DTIndexAmplitudeE.BarEven" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.QBeta.DTIndexAmplitudeE.BarOdd"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean#L110-L112">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">BarOdd</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>Bar-odd: negated by the bar involution.  The anti-self-adjoint / <code>±i</code>-π/2-phase sector; the
+GGM decay (<code>sinh</code>) face and the resurgent-Stokes amplitude <code>E</code> live here.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd">QOU.QBeta.DTIndexAmplitudeE.BarOdd</a> <span class="fn">σ</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> (<span class="fn"><span class="fn">σ</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a><span class="fn">x</span>)</li></ul></details><details id="instances-for-list-QOU.QBeta.DTIndexAmplitudeE.BarOdd" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="mod_doc"><h3 class="markdown-heading" id="The-DT-index-graded-Euler-value-is-BAR-EVEN">The DT-index / graded-Euler value is BAR-EVEN. <a class="hover-link" href="#The-DT-index-graded-Euler-value-is-BAR-EVEN">#</a></h3></div><div class="decl" id="QOU.QBeta.DTIndexAmplitudeE.dtIndex_barEven"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean#L116-L124">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.dtIndex_barEven"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">dtIndex_barEven</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">d</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int">ℤ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> <span class="fn">↑<span class="fn">d</span></span></span></div></div><p><strong>A DT-index / 3d-index / graded-Euler value is bar-even (sorry-free).</strong>  A Behrend-signed DT
+count, a rotated 3d-index, or a graded Euler characteristic <code>χ = Σ_k (−1)^k dim(G)_k</code> is an
+<strong>integer</strong>; the bar involution (a ring homomorphism) fixes the image of <code>ℤ</code> in <code>R</code>
+(<code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Int/Cast/Lemmas.html#map_intCast">map_intCast</a></code>).  So every such value is bar-even — it lives in the self-adjoint / real-π-phase
+sector, the same sector as the <code>≤ 1</code> self-adjoint branching factor.</p></div></div><div class="mod_doc"><h3 class="markdown-heading" id="A-nonzero-element-cannot-be-both-bar-even-and-bar-odd-invariant-char-≠-2">A nonzero element cannot be both bar-even and bar-odd (invariant: char ≠ 2). <a class="hover-link" href="#A-nonzero-element-cannot-be-both-bar-even-and-bar-odd-invariant-char-≠-2">#</a></h3></div><div class="decl" id="QOU.QBeta.DTIndexAmplitudeE.barEven_barOdd_eq_zero"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean#L128-L136">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.barEven_barOdd_eq_zero"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">barEven_barOdd_eq_zero</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">he</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> <span class="fn">x</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ho</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd">BarOdd</a> <span class="fn">σ</span> <span class="fn">x</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">x</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p><strong>Bar-even ∧ bar-odd ⇒ zero (sorry-free; invariant: <code>char R ≠ 2</code>).</strong>  If <code>σ x = x</code> (bar-even)
+and <code>σ x = −x</code> (bar-odd) then <code>x = −x</code>, so <code>2·x = 0</code>; in a field of characteristic zero
+<code>(2 : R) ≠ 0</code>, hence <code>x = 0</code>.  The bar-parity sectors intersect only at <code>0</code>.</p></div></div><div class="decl" id="QOU.QBeta.DTIndexAmplitudeE.barOdd_ne_barEven"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean#L138-L145">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.barOdd_ne_barEven"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">barOdd_ne_barEven</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">E </span><span class="fn">x</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hEodd</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd">BarOdd</a> <span class="fn">σ</span> <span class="fn">E</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hEne</span> : <span class="fn">E</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hxeven</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> <span class="fn">x</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">E</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">x</span></div></div><p><strong>A nonzero bar-odd element is not equal to any bar-even element (sorry-free).</strong>  The general
+limitative core: the bar-odd amplitude <code>E ≠ 0</code> cannot coincide with any bar-even quantity —
+in particular with any DT-index / graded-Euler value (<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.dtIndex_barEven">dtIndex_barEven</a></code>).</p></div></div><div class="mod_doc"><h3 class="markdown-heading" id="The-anti-self-adjoint-amplitude-E-is-BAR-ODD-derived-not-assumed">The anti-self-adjoint amplitude <code>E</code> is BAR-ODD (derived, not assumed). <a class="hover-link" href="#The-anti-self-adjoint-amplitude-E-is-BAR-ODD-derived-not-assumed">#</a></h3></div><div class="decl" id="QOU.QBeta.DTIndexAmplitudeE.crossTermBarEven_imp_C_barOdd"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean#L149-L165">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.crossTermBarEven_imp_C_barOdd"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">crossTermBarEven_imp_C_barOdd</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">B </span><span class="fn">C </span><span class="fn">D</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hB</span> : <span class="fn">B</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hD</span> : <span class="fn">D</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hBodd</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd">BarOdd</a> <span class="fn">σ</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hDeven</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcross</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> (<span class="fn">B</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">D</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">C</span>)</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd">BarOdd</a> <span class="fn">σ</span> <span class="fn">C</span></span></div></div><p><strong>A bar-even mass-face cross-term forces the off-block <code>C</code> bar-ODD (sorry-free).</strong>  The
+physical mass / C1 face carries a <strong>bar-even</strong> Berezinian cross-term <code>t = B·D⁻¹·C</code>
+(<code>BerezinianSelfAdjointCrossTerm</code>; the parity of <code>r* = μ₃/c₃</code>).  With the branching datum
+<code>B</code> bar-odd (<code>σ B = −B</code>, <code>A3OffBlockDerivation.offBlockNum_bar_odd</code>) and the odd diagonal <code>D</code>
+bar-even (<code>σ D = D</code>, the bar-conjugate 1-dim blocks give <code>D = a + σ a</code>), applying <code>σ</code> to <code>t</code>
+gives <code>−B·D⁻¹·σ C = B·D⁻¹·C</code>; cancelling the nonzero <code>B·D⁻¹</code> yields <code>σ C = −C</code>.  So the
+off-block that produces a bar-even mass face is itself bar-odd.</p></div></div><div class="decl" id="QOU.QBeta.DTIndexAmplitudeE.amplitude_barOdd"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean#L167-L180">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.amplitude_barOdd"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">amplitude_barOdd</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">B </span><span class="fn">C </span><span class="fn">D</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hB</span> : <span class="fn">B</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hD</span> : <span class="fn">D</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hinv</span> : <span class="fn">∀ (<span class="fn">x</span> : <span class="fn">R</span>), <span class="fn"><span class="fn">σ</span> <span class="fn">(<span class="fn">σ</span> <span class="fn">x</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">x</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hBodd</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd">BarOdd</a> <span class="fn">σ</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hDeven</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcross</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> (<span class="fn">B</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">D</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">C</span>)</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd">BarOdd</a> <span class="fn">σ</span> (<span class="fn">C</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><span class="fn">σ</span> <span class="fn">B</span></span>)</span></div></div><p><strong>The anti-self-adjoint amplitude <code>E = C + σ B</code> is bar-ODD (sorry-free).</strong>  From <code>C</code> bar-odd
+(<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.crossTermBarEven_imp_C_barOdd">crossTermBarEven_imp_C_barOdd</a></code>), <code>B</code> bar-odd, and <code>σ</code> involutive (<code>σ (σ B) = B</code>):
+<code>σ(C + σ B) = σ C + B = −C + B = −(C + σ B)</code>.  <code>E</code> sits in the anti-self-adjoint /
+resurgent-Stokes-phase sector — the OPPOSITE bar-parity from any DT-index value.</p></div></div><div class="mod_doc"><h3 class="markdown-heading" id="The-scope-b-exclusion-no-DT-index-value-supplies-the-lift-amplitude">The scope-(b) exclusion: no DT-index value supplies the lift amplitude. <a class="hover-link" href="#The-scope-b-exclusion-no-DT-index-value-supplies-the-lift-amplitude">#</a></h3></div><div class="decl" id="QOU.QBeta.DTIndexAmplitudeE.dtIndex_cannot_supply_amplitude"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/DTIndexAmplitudeE.lean#L184-L202">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.dtIndex_cannot_supply_amplitude"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">DTIndexAmplitudeE</span>.<span class="name">dtIndex_cannot_supply_amplitude</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">σ</span> : <span class="fn">R</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Hom/Defs.html#RingHom">→+*</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">B </span><span class="fn">C </span><span class="fn">D</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hB</span> : <span class="fn">B</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hD</span> : <span class="fn">D</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hinv</span> : <span class="fn">∀ (<span class="fn">x</span> : <span class="fn">R</span>), <span class="fn"><span class="fn">σ</span> <span class="fn">(<span class="fn">σ</span> <span class="fn">x</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">x</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hBodd</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarOdd">BarOdd</a> <span class="fn">σ</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hDeven</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> <span class="fn">D</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcross</span> : <span class="fn"><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.BarEven">BarEven</a> <span class="fn">σ</span> (<span class="fn">B</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">D</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">C</span>)</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hlift</span> : <span class="fn">C</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><span class="fn">σ</span> <span class="fn">B</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">d</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int">ℤ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">C</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><span class="fn">σ</span> <span class="fn">B</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">↑<span class="fn">d</span></span></div></div><p><strong>THE SCOPE-(b) STRUCTURAL EXCLUSION (sorry-free; invariant cited: bar-parity + <code>char ≠ 2</code>).</strong>
+The nonzero anti-self-adjoint amplitude <code>E = C + σ B</code> that a genuine A=3 lift forces
+(<code>A3AntiSelfAdjointLift.amplitude_nonzero</code> supplies <code>hlift : C + σ B ≠ 0</code>) is <strong>NOT</strong> equal to
+any DT-invariant / 3d-index / graded-Euler value <code>(d : R)</code>, <code>d : ℤ</code>.</p><p>The DT datum is bar-even (<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.dtIndex_barEven">dtIndex_barEven</a></code>); <code>E</code> is bar-odd (<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.amplitude_barOdd">amplitude_barOdd</a></code>, derived from
+the bar-even mass-face cross-term); a nonzero element cannot be both (<code><a href="../.././QOU/QBeta/DTIndexAmplitudeE.html#QOU.QBeta.DTIndexAmplitudeE.barEven_barOdd_eq_zero">barEven_barOdd_eq_zero</a></code>).
+So the DT-invariant / 3d-index / graded-Euler route — which produces integer Behrend counts —
+<strong>cannot</strong> supply the amplitude that hits <code>r*</code>.  The amplitude belongs to the bar-ODD
+resurgent-Stokes / DM q-cubic sector (<code>conj:qdifference-kernel-prolongation-symbol</code>), not the
+bar-EVEN DT-index sector.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

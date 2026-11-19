@@ -1,0 +1,89 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.SchurWeyl.HeckeInclInjective</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.SchurWeyl.HeckeInclInjective";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">SchurWeyl</span>.<span class="name">HeckeInclInjective</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeInclInjective.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/Mathlib/YoungDiagramEraseCornerSurjective.html">QOU.Mathlib.YoungDiagramEraseCornerSurjective</a></li><li><a href="../.././QOU/SchurWeyl/HeckeProductInjective.html">QOU.SchurWeyl.HeckeProductInjective</a></li><li><a href="../.././QOU/SchurWeyl/SeminormalBlockEquality.html">QOU.SchurWeyl.SeminormalBlockEquality</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.SchurWeyl.HeckeInclInjective" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.SchurWeyl.SeminormalRep.seminormalRep_eq_of_heckeIncl_eq"><span class="name">QOU</span>.<span class="name">SchurWeyl</span>.<span class="name">SeminormalRep</span>.<span class="name">seminormalRep_eq_of_heckeIncl_eq</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.SchurWeyl.SeminormalRep.heckeIncl_injective"><span class="name">QOU</span>.<span class="name">SchurWeyl</span>.<span class="name">SeminormalRep</span>.<span class="name">heckeIncl_injective</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="heckeIncl-is-injective-the-composition-bean-qou-ejde-mapped"><code>heckeIncl</code> is injective — the composition bean <code>qou-ejde</code> mapped <a class="hover-link" href="#heckeIncl-is-injective-the-composition-bean-qou-ejde-mapped">#</a></h1><p>The tower inclusion <code>H_m(q) → H_{m+1}(q)</code> is <strong>injective</strong>. This is the third and last step of
+the route recorded on bean <code>qou-ejde</code>, and the file that composes it; the other two were already
+on <code>main</code>.</p><h2 class="markdown-heading" id="The-three-steps-and-which-file-owns-each">The three steps, and which file owns each <a class="hover-link" href="#The-three-steps-and-which-file-owns-each">#</a></h2><table>
+<thead>
+<tr>
+<th>step</th>
+<th>statement</th>
+<th>where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>the seminormal family is faithful: <code>heckeProduct</code> is injective</td>
+<td><code>HeckeProductInjective</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>the upstairs block of <code>heckeIncl y</code>, compressed to a corner, IS the downstairs block of <code>y</code></td>
+<td><code>SeminormalBlockEquality.compress_seminormalRep_heckeIncl</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>compose them</strong></td>
+<td>this file</td>
+</tr>
+</tbody>
+</table><p>Step 3 is two lemmas. <code><a href="../.././QOU/SchurWeyl/HeckeInclInjective.html#QOU.SchurWeyl.SeminormalRep.seminormalRep_eq_of_heckeIncl_eq">seminormalRep_eq_of_heckeIncl_eq</a></code> says that if <code>heckeIncl</code> identifies <code>x</code>
+and <code>y</code> then every downstairs seminormal block does too — for an <em>arbitrary</em> diagram <code>ν</code> of the
+right size, which is where the surjectivity of corner removal is consumed. <code><a href="../.././QOU/SchurWeyl/HeckeInclInjective.html#QOU.SchurWeyl.SeminormalRep.heckeIncl_injective">heckeIncl_injective</a></code>
+then feeds that to step 1's separation form <code>eq_of_seminormalRep_eq</code>.</p><h2 class="markdown-heading" id="Why-ν-is-a-variable-and-not-partitionShape-lam">Why <code>ν</code> is a variable and not <code>partitionShape lam</code> <a class="hover-link" href="#Why-ν-is-a-variable-and-not-partitionShape-lam">#</a></h2><p>Step 2 is stated upstairs: its conclusion mentions <code>seminormalRep</code> at the diagram
+<code>eraseCorner μ c hc</code>, while the goal mentions it at <code>ν</code>. <code>seminormalRep</code>'s <em>output type</em> depends on
+the diagram (it is a matrix indexed by that diagram's standard tableaux), so relating the two is a
+dependent rewrite and transporting along an equation of diagrams would land in <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HEq">HEq</a></code>.</p><p>Quantifying over <code>ν</code> as a <strong>variable</strong> avoids the transport entirely: <code>exists_eraseCorner_eq</code>
+returns an equation <code>eraseCorner μ c hc = ν</code> whose right side is that variable, so <code>subst</code> replaces
+<code>ν</code> — carrying <code>hν</code> with it — and step 2 then applies on the nose, with <code>hν</code> itself as its <code>hNs</code>.
+No transport, no <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HEq">HEq</a></code>, no <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#congr">congr</a></code>. The call site instantiates <code>ν := partitionShape lam</code>, which is
+an ordinary application of a <code>∀</code>-statement and needs nothing.</p><h2 class="markdown-heading" id="Scope-inherited-and-to-be-stated-downstream">Scope — inherited, and to be stated downstream <a class="hover-link" href="#Scope-inherited-and-to-be-stated-downstream">#</a></h2><p><code>ℝ</code>, <code>q ≠ 0</code>, <code>NotRootOfUnity q</code>: <strong>generic <code>q</code></strong>. Step 1 needs <code>[Field K] [CharZero K]</code> and
+genericity because <code>finrank_hecke_eq_factorial</code> needs semisimplicity; step 2 is stated over <code>ℝ</code>
+with <code>qi = q⁻¹</code>. At a root of unity <code>H_n(q)</code> is not semisimple, the partitions stop indexing the
+irreducibles, and this proof does not merely weaken — it fails. Every downstream consequence
+inherits that hypothesis.</p><h2 class="markdown-heading" id="What-this-does-NOT-give">What this does NOT give <a class="hover-link" href="#What-this-does-NOT-give">#</a></h2><p>Injectivity of the <em>tower</em> inclusion, not of anything about a colimit. In particular it does <strong>not</strong>
+prove that <code>ofLim n</code> is injective for <code>heckeColimitMarkovTrace</code>, and it does not make <code>trLim</code>
+faithful. <code>qou-ejde</code>'s own later note measures that the Hecke <strong>colimit and its canonical maps
+exist without any injectivity hypothesis</strong> (<code>@DirectLimit</code> / <code>@DirectLimit.Ring.of</code> carry none), so
+what this unlocks is the <em>strict</em>-growth question (bean <code>qou-p8yg</code>), not the bridge. Nor is
+<code>Ring.DirectLimit.of_injective</code> the lemma to reach for: under the pinned Mathlib v4.24.0 the
+namespace is unified and no lemma of that name exists — <code>qou-ejde</code> records this correction.</p><p>-- Ref: [manuscript] bean qou-ejde, steps 1-3; Geck-Pfeiffer, <em>Characters of Finite Coxeter
+--      Groups and Iwahori-Hecke Algebras</em>, §8.1 (generic semisimplicity, seminormal form).</p></div><div class="decl" id="QOU.SchurWeyl.SeminormalRep.seminormalRep_eq_of_heckeIncl_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeInclInjective.lean#L72-L85">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/SchurWeyl/HeckeInclInjective.html#QOU.SchurWeyl.SeminormalRep.seminormalRep_eq_of_heckeIncl_eq"><span class="name">QOU</span>.<span class="name">SchurWeyl</span>.<span class="name">SeminormalRep</span>.<span class="name">seminormalRep_eq_of_heckeIncl_eq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn">K</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hq0</span> : <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq2</span> : <span class="fn"><a href="../.././QOU/SchurWeyl/GenericParameter.html#QOU.SchurWeyl.GenericParameter.NotRootOfUnity">GenericParameter.NotRootOfUnity</a> <span class="fn">q</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y</span> : <span class="fn"><a href="../.././QOU/SchurWeyl/HeckeAlgebra.html#QOU.SchurWeyl.Hecke">Hecke</a> <span class="fn">K</span> <span class="fn">q</span> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a> <span class="fn">m</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn">(<a href="../.././QOU/SchurWeyl/HeckeInclusion.html#QOU.SchurWeyl.HeckeInclusion.heckeIncl">HeckeInclusion.heckeIncl</a> <span class="fn">K</span> <span class="fn">q</span> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a> <span class="fn">m</span>)</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<a href="../.././QOU/SchurWeyl/HeckeInclusion.html#QOU.SchurWeyl.HeckeInclusion.heckeIncl">HeckeInclusion.heckeIncl</a> <span class="fn">K</span> <span class="fn">q</span> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a> <span class="fn">m</span>)</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ν</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Young/YoungDiagram.html#YoungDiagram">YoungDiagram</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hν</span> : <span class="fn"><span class="fn"><span class="fn">ν</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Young/YoungDiagram.html#YoungDiagram.cells">cells</a></span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html#Finset.card">card</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">m</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">1</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<a href="../.././QOU/SchurWeyl/SeminormalRep.html#QOU.SchurWeyl.SeminormalRep.seminormalRep">seminormalRep</a> <span class="fn">q</span> <span class="fn">hq0</span> <span class="fn">hq2</span> <span class="fn">m</span> <span class="fn">hν</span>)</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<a href="../.././QOU/SchurWeyl/SeminormalRep.html#QOU.SchurWeyl.SeminormalRep.seminormalRep">seminormalRep</a> <span class="fn">q</span> <span class="fn">hq0</span> <span class="fn">hq2</span> <span class="fn">m</span> <span class="fn">hν</span>)</span> <span class="fn">y</span></span></div></div><p><strong>Step 3, first half.</strong> If the tower inclusion identifies <code>x</code> and <code>y</code>, then so does every
+downstairs seminormal block — at an <em>arbitrary</em> diagram of the right size. The diagram is a
+variable so that <code>exists_eraseCorner_eq</code> can be <code>subst</code>ed into it; see the module docstring.</p></div></div><div class="decl" id="QOU.SchurWeyl.SeminormalRep.heckeIncl_injective"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/SchurWeyl/HeckeInclInjective.lean#L87-L92">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/SchurWeyl/HeckeInclInjective.html#QOU.SchurWeyl.SeminormalRep.heckeIncl_injective"><span class="name">QOU</span>.<span class="name">SchurWeyl</span>.<span class="name">SeminormalRep</span>.<span class="name">heckeIncl_injective</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q</span> : <span class="fn">K</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hq0</span> : <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq2</span> : <span class="fn"><a href="../.././QOU/SchurWeyl/GenericParameter.html#QOU.SchurWeyl.GenericParameter.NotRootOfUnity">GenericParameter.NotRootOfUnity</a> <span class="fn">q</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Function.html#Function.Injective">Function.Injective</a> <span class="fn">⇑<span class="fn">(<a href="../.././QOU/SchurWeyl/HeckeInclusion.html#QOU.SchurWeyl.HeckeInclusion.heckeIncl">HeckeInclusion.heckeIncl</a> <span class="fn">K</span> <span class="fn">q</span> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a> <span class="fn">m</span>)</span></span></span></div></div><p><strong>The tower inclusion is injective.</strong> <code>H_m(q) ↪ H_{m+1}(q)</code> at generic <code>q</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

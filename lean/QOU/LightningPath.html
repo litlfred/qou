@@ -1,0 +1,131 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href=".././style.css"></link><link rel="icon" href=".././favicon.svg"></link><link rel="mask-icon" href=".././favicon.svg" color="#000000"></link><link rel="prefetch" href=".././/declarations/declaration-data.bmp" as="image"></link><title>QOU.LightningPath</title><script defer="true" src=".././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT=".././";</script><script>const MODULE_NAME="QOU.LightningPath";</script><script type="module" src=".././jump-src.js"></script><script type="module" src=".././search.js"></script><script type="module" src=".././expand-nav.js"></script><script type="module" src=".././how-about.js"></script><script type="module" src=".././instances.js"></script><script type="module" src=".././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">LightningPath</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/LightningPath.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href=".././QOU/ArchimedeanUniverse.html">QOU.ArchimedeanUniverse</a></li><li><a href=".././QOU/CODATAChain.html">QOU.CODATAChain</a></li><li><a href=".././QOU/HadronicMass.html">QOU.HadronicMass</a></li><li><a href=".././QOU/MassDerivation.html">QOU.MassDerivation</a></li><li><a href=".././QOU/QuantumObservableUniverse.html">QOU.QuantumObservableUniverse</a></li><li><a href=".././QOU/Torsion.html">QOU.Torsion</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.LightningPath" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.lightning_path_synthesis"><span class="name">QOU</span>.<span class="name">lightning_path_synthesis</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Lightning-Path-Terminal-Observational-Synthesis">Lightning Path — Terminal Observational Synthesis <a class="hover-link" href="#Lightning-Path-Terminal-Observational-Synthesis">#</a></h1><p>A single concluding remark that depends on <strong>all</strong> key observational results
+in the QOU formalization.  Its purpose is twofold:</p><ol>
+<li><p><strong>Dependency graph</strong>: this declaration is the unique sink node.  Tracing
+its transitive imports backwards yields the &quot;lightning path&quot; — the minimal
+subgraph of the proof forest connecting categorical axioms to CODATA
+observables.</p>
+</li>
+<li><p><strong>Evidence summary</strong>: the remark collects the five pillars of
+observational support proved elsewhere in the formalization:</p>
+<table>
+<thead>
+<tr>
+<th>Pillar</th>
+<th>Source</th>
+<th>Key declaration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gauge group emergence</td>
+<td>VolumeForm</td>
+<td><code>SU2Emergence.det_one</code></td>
+</tr>
+<tr>
+<td>Self-dual instantons</td>
+<td>Instanton</td>
+<td><code>categorical_self_duality</code></td>
+</tr>
+<tr>
+<td>Topological mass decomposition</td>
+<td>TopologicalMass</td>
+<td><code>topological_mass_decomposition</code></td>
+</tr>
+<tr>
+<td>CODATA end-to-end chain</td>
+<td>CODATAChain</td>
+<td><code>end_to_end</code></td>
+</tr>
+<tr>
+<td>Descartes terminality</td>
+<td>ArchimedeanUniverse</td>
+<td><code>descartes_terminal</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol><blockquote>
+<p><strong>Canonical-accuracy note.</strong> This synthesis node bundles the <em>proved</em>
+pillars, but the CODATA leg (<code>end_to_end</code>) rests on CODATA-pinned mass
+constants (<code>HadronicMass</code>) and the deprecated <code>Vol(K)/ℏ_q²</code> mass shape,
+<strong>not</strong> the canonical muon-anchored Hecke energy (<code>computations/canonical_mass.py</code>),
+and its binding row is a consistency identity rather than a prediction.
+Read pillars 3–4 below with those caveats — per-isotope binding is the
+still-open <code>Δ_λ</code> gate.  Canonical sources:
+<code>docs/canonical-mass-formula-guardrail.md</code>,
+<code>docs/canonical-derivation-cheat-sheet.md</code> §9.</p>
+</blockquote><blockquote>
+<p><strong>Pillar 1 carries less than its heading (bean <code>qou-szd6</code>).</strong>  Pillar 1 is
+stated below as &quot;the volume constraint forces <code>Aut⊗(ω) ≅ SU(2)</code>&quot;.  The
+conjunct actually proved is <code>emg.ext_sq_action g = 𝟙 exteriorSquare</code>,
+discharged by projecting the <code>det_one</code> field of <code><a href=".././QOU/QuantumObservableUniverse/VolumeForm.html#QOU.SU2Emergence">QOU.SU2Emergence</a></code>
+(<code>VolumeForm.lean</code>).  That structure has three fields — an abstract
+<code>gaugeGroupType</code>, an action on <code>exteriorSquare</code>, and <code>det_one</code> — and
+<code>exteriorSquare</code> is an unconstrained parameter.  <strong>It mentions neither
+<code>SU(2)</code> nor the rank of the fundamental object</strong>, so what this synthesis
+node checks is that a group acts trivially on some object, not that the
+gauge group is <code>SU(2)</code>.  The two supporting lemmas
+(<code>SU2EmergenceVolumeDeterminant</code>, <code>SU2EmergenceDaggerUnitarity</code>) are
+single-field classes restating their own conclusions, with docstrings
+recording the witness as pending a categorical-determinant formalisation in
+Mathlib.</p>
+<p>This is a gap in the <em>formalisation</em>, not a claim that the theorem is
+wrong — <code>prf:su2-emergence</code> is a real argument, but it takes the rank as an
+input to both of its lemmas rather than deriving it.
+<code>QOU.BraidsAndKnots.VolumeConstraintForcesFibreTwo</code> re-sources that rank
+from the categorical volume constraint of <code>def:quantum-observable-universe</code>;
+see bean <code>qou-n1dj</code> for what remains open.</p>
+</blockquote><h2 class="markdown-heading" id="How-to-use">How to use <a class="hover-link" href="#How-to-use">#</a></h2><pre><code>lake exe graph <a href=".././QOU/LightningPath.html">QOU.LightningPath</a>   -- renders the full dependency DAG
+</code></pre><p>The resulting graph shows the critical path from <code>FrobeniusHopfData</code> through
+<code>ArchimedeanSubstrateField</code>, <code>TopologicalMassDecomposition</code>, <code>ArchimedeanMassFormula</code>,
+and <code>HadronicMass</code> to <code>terminal_resolution_hadronic_mass</code>.</p></div><div class="mod_doc"><h2 class="markdown-heading" id="Concluding-Observational-Synthesis">Concluding Observational Synthesis <a class="hover-link" href="#Concluding-Observational-Synthesis">#</a></h2></div><div class="decl" id="QOU.lightning_path_synthesis"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/LightningPath.lean#L80-L156">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././QOU/LightningPath.html#QOU.lightning_path_synthesis"><span class="name">QOU</span>.<span class="name">lightning_path_synthesis</span></a></span><span class="decl_args"> :</span><div class="decl_type"><span class="fn">(∀ {<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1} [<span class="fn">inst</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Category/Basic.html#CategoryTheory.Category">CategoryTheory.Category.{u_4, u_1}</a> <span class="fn">C</span></span>] [<span class="fn">inst_1</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Category.html#CategoryTheory.MonoidalCategory">CategoryTheory.MonoidalCategory</a> <span class="fn">C</span></span>]
+    [<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Braided/Basic.html#CategoryTheory.BraidedCategory">CategoryTheory.BraidedCategory</a> <span class="fn">C</span></span>] {<span class="fn">exteriorSquare</span> : <span class="fn">C</span>} (<span class="fn">emg</span> : <span class="fn"><a href=".././QOU/QuantumObservableUniverse/VolumeForm.html#QOU.SU2Emergence">SU2Emergence</a> <span class="fn">C</span> <span class="fn">exteriorSquare</span></span>)
+    (<span class="fn">g</span> : <span class="fn"><span class="fn">emg</span>.<a href=".././QOU/QuantumObservableUniverse/VolumeForm.html#QOU.SU2Emergence.gaugeGroupType">gaugeGroupType</a></span>), <span class="fn"><span class="fn"><span class="fn">emg</span>.<a href=".././QOU/QuantumObservableUniverse/VolumeForm.html#QOU.SU2Emergence.ext_sq_action">ext_sq_action</a></span> <span class="fn">g</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Category/Basic.html#CategoryTheory.CategoryStruct.id">CategoryTheory.CategoryStruct.id</a> <span class="fn">exteriorSquare</span></span>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a>   <span class="fn">(∀ {<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_2} [<span class="fn">inst</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Category/Basic.html#CategoryTheory.Category">CategoryTheory.Category.{u_6, u_2}</a> <span class="fn">C</span></span>] [<span class="fn">inst_1</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Category.html#CategoryTheory.MonoidalCategory">CategoryTheory.MonoidalCategory</a> <span class="fn">C</span></span>]
+      [<span class="fn">inst_2</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Braided/Basic.html#CategoryTheory.BraidedCategory">CategoryTheory.BraidedCategory</a> <span class="fn">C</span></span>] (<span class="fn">fh</span> : <span class="fn"><a href=".././QOU/QuantumObservableUniverse/CategoricalFoundations.html#QOU.FrobeniusHopfData">FrobeniusHopfData</a> <span class="fn">C</span></span>) (<span class="fn">inst_3</span> : <span class="fn"><a href=".././QOU/QuantumObservableUniverse/Instanton.html#QOU.CategoricalInstanton">CategoricalInstanton</a> <span class="fn">fh</span></span>),
+      <span class="fn"><span class="fn"><span class="fn"><span class="fn">inst_3</span>.<a href=".././QOU/QuantumObservableUniverse/Instanton.html#QOU.CategoricalInstanton.hodge">hodge</a></span>.<a href=".././QOU/QuantumObservableUniverse/Structures.html#QOU.CatHodgeInvolution.IsSelfDual">IsSelfDual</a></span> <span class="fn"><span class="fn">inst_3</span>.<a href=".././QOU/QuantumObservableUniverse/Instanton.html#QOU.CategoricalInstanton.curvature">curvature</a></span></span>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a>     <span class="fn">(∀ {<span class="fn">M</span> : <a href=".././foundational_types.html">Type</a> u_3} (<span class="fn">tmd</span> : <span class="fn"><a href=".././QOU/Torsion/TopologicalMass.html#QOU.Torsion.TopologicalMassDecomposition">Torsion.TopologicalMassDecomposition</a> <span class="fn">M</span></span>),
+        <span class="fn"><span class="fn">tmd</span>.<a href=".././QOU/Torsion/TopologicalMass.html#QOU.Torsion.TopologicalMassDecomposition.totalMass">totalMass</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">tmd</span>.<a href=".././QOU/Torsion/TopologicalMass.html#QOU.Torsion.TopologicalMassDecomposition.baselineHolonomy">baselineHolonomy</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">∑ <span class="fn">i</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Fin">Fin</a> <span class="fn"><span class="fn">tmd</span>.<a href=".././QOU/Torsion/TopologicalMass.html#QOU.Torsion.TopologicalMassDecomposition.numBlowups">numBlowups</a></span></span>, <span class="fn"><span class="fn"><span class="fn">tmd</span>.<a href=".././QOU/Torsion/TopologicalMass.html#QOU.Torsion.TopologicalMassDecomposition.exceptionalContribution">exceptionalContribution</a></span> <span class="fn">i</span></span></span>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a>       (<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Group/Unbundled/Abs.html#abs">|</a><a href=".././QOU/HadronicMass.html#QOU.HadronicMass.proton_topological">HadronicMass.proton_topological</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <a href=".././QOU/HadronicMass.html#QOU.HadronicMass.proton_mass_MeV">HadronicMass.proton_mass_MeV</a><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Group/Unbundled/Abs.html#abs">|</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">1e-3</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a>           <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Group/Unbundled/Abs.html#abs">|</a><a href=".././QOU/HadronicMass.html#QOU.HadronicMass.neutron_topological">HadronicMass.neutron_topological</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <a href=".././QOU/HadronicMass.html#QOU.HadronicMass.neutron_mass_MeV">HadronicMass.neutron_mass_MeV</a><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Group/Unbundled/Abs.html#abs">|</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">1e-3</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a>             <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Group/Unbundled/Abs.html#abs">|</a><a href=".././QOU/HadronicMass.html#QOU.HadronicMass.deuteron_topological">HadronicMass.deuteron_topological</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <a href=".././QOU/HadronicMass.html#QOU.HadronicMass.deuteron_mass_MeV">HadronicMass.deuteron_mass_MeV</a><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Group/Unbundled/Abs.html#abs">|</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">1e-3</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a>               <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Group/Unbundled/Abs.html#abs">|</a><a href=".././QOU/HadronicMass.html#QOU.HadronicMass.binding_energy_QOU">HadronicMass.binding_energy_QOU</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <a href=".././QOU/HadronicMass.html#QOU.HadronicMass.binding_energy_CODATA">HadronicMass.binding_energy_CODATA</a><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Group/Unbundled/Abs.html#abs">|</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">1e-3</span>) <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a>         <span class="fn">∀ (<span class="fn">dc</span> : <a href=".././QOU/ArchimedeanUniverse.html#QOU.ArchimedeanUniverse.ArchimedeanCondition">ArchimedeanUniverse.ArchimedeanCondition</a>) (<span class="fn">tk</span> : <a href=".././QOU/ArchimedeanUniverse.html#QOU.ArchimedeanUniverse.TannakaKreinRigidity">ArchimedeanUniverse.TannakaKreinRigidity</a>),
+          <span class="fn"><span class="fn">dc</span>.<a href=".././QOU/ArchimedeanUniverse.html#QOU.ArchimedeanUniverse.ArchimedeanCondition.eulerChar">eulerChar</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">-<span class="fn">6</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn"><span class="fn">tk</span>.<a href=".././QOU/ArchimedeanUniverse.html#QOU.ArchimedeanUniverse.TannakaKreinRigidity.iso_count">iso_count</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span></span></div></div><p><strong>Remark (Lightning Path — Observational Evidence for QOU).</strong></p><p>The Quantum Observable Universe framework, starting from three categorical
+axioms (Frobenius self-duality, adjoint vanishing, volume constraint),
+produces a chain of predictions that match experiment:</p><ol>
+<li><p><strong>Gauge group</strong>: the volume constraint forces <code>Aut⊗(ω) ≅ SU(2)</code>
+(Theorem <code>thm:su2-emergence</code>).</p>
+</li>
+<li><p><strong>Self-dual instantons</strong>: every Yang–Mills minimiser on the QOU is an
+instanton with <code>⋆_q F = F</code> (Proposition <code>categorical_self_duality</code>).</p>
+</li>
+<li><p><strong>Topological mass</strong>: a stable vortex's mass decomposes categorically
+as <code>m = baseline + Σᵢ exceptional</code> via the descent involution
+(Theorem <code>topological_mass_decomposition</code>).  This categorical
+decomposition is <strong>not</strong> the canonical absolute-mass form: per the
+owner ruling (2026-06-24) the absolute nucleon mass is the
+muon-anchored Hecke energy <code>m_p = 2·(m_μ·F_Bor − 6·m_e)</code> with
+<code>m_μ = m_e·Vol(4₁)/ℏ_q²</code> and <code>F_Bor = |tr_M(β_Bor)|·[3]_q!/q³</code>,
+routed through <code>computations/canonical_mass.py</code>.  The <code>Vol(K)/ℏ_q²</code>
+shape carried by <code>ArchimedeanMassFormula</code> is deprecated for absolute
+mass (read with <code>K = 𝓑₃</code> it gives <code>m_p ≈ 966</code> MeV, +2.96%; the λ_A
+linking weight is a fit).  See <code>docs/canonical-mass-formula-guardrail.md</code>.</p>
+</li>
+<li><p><strong>CODATA agreement</strong>: the substrate parameter <code>q ≈ 1.1097</code> is <em>derived</em>
+(not assumed) from <code>Vol(4₁)</code> and the muon/electron ratio, with
+<code>|q − 1.1097| &lt; 0.001</code> proved by interval arithmetic — this is the one
+genuinely-derived observable on this leg.  The proton and neutron rows
+of <code>end_to_end</code> are <strong>CODATA-pinned reference constants</strong>
+(<code>proton_topological := proton_mass_MeV</code>; see the <code>HadronicMass</code>
+honesty note), so <code>row1/row2_matches_CODATA</code> are equalities-by-
+construction, not predictions.  The deuteron and binding rows are a
+mass-deficit <strong>consistency identity</strong> <code>m_p + m_n − B_exp ≈ m_D</code> with
+<code>B_exp = binding_energy_QOU</code> the <em>experimental</em> deficit rounded to
+4 s.f. — <strong>not</strong> an independent binding prediction.  Canonically the
+per-isotope binding <code>B(K) = m_e·Σ_λ y_λ χ^λ Δ_λ</code> is the <strong>OPEN <code>Δ_λ</code>
+gate</strong>: derived only to ≈ −9% on the deuteron and off 44–72% for
+A ≥ 3 (<code>docs/canonical-derivation-cheat-sheet.md</code> §9b).</p>
+</li>
+<li><p><strong>Descartes terminality</strong>: the Descartes universe with <code>χ = −6</code> is the
+unique rigid completion (<code>descartes_terminal</code>).</p>
+</li>
+</ol><p>This remark carries no new mathematical content — it exists solely as
+the terminal node of the dependency graph, enabling the &quot;lightning path&quot;
+visualization from axioms to observables.</p><p>LaTeX: <code>\label{rem:lightning-path}</code></p></div></div></main>
+<nav class="nav"><iframe src=".././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

@@ -1,0 +1,156 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.AppendixSurreals.LocalInfinitesimalField</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.AppendixSurreals.LocalInfinitesimalField";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/AppendixSurreals/StandardPart.html">QOU.AppendixSurreals.StandardPart</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.AppendixSurreals.LocalInfinitesimalField" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.LocalInfinitesimalField"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.LocalInfinitesimalField.standardPart_eq_zero"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span>.<span class="name">standardPart_eq_zero</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.LocalInfinitesimalField.standardPart_const"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span>.<span class="name">standardPart_const</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.LocalInfinitesimalField.leadingCoeff_eq"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span>.<span class="name">leadingCoeff_eq</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.LocalInfinitesimalField.not_of_subsingleton"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span>.<span class="name">not_of_subsingleton</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-AppendixSurreals-LocalInfinitesimalField-conjecture-carrier">QOU.AppendixSurreals.LocalInfinitesimalField — conjecture carrier <a class="hover-link" href="#QOU-AppendixSurreals-LocalInfinitesimalField-conjecture-carrier">#</a></h1><p><strong>§3b-cond class axiomatisation</strong> for content block
+<a href="../.././../../../appendix-surreals/local-infinitesimal-field.md"><code>conj:local-infinitesimal-field</code></a>:
+<em>Substrate parameter as a local infinitesimal field <code>ε(x)</code></em>.</p><p>Primary conjecture carrier with <strong>no instance</strong> — the honest open state per
+AGENTS.md §3b-tax.</p><h2 class="markdown-heading" id="What-changed-bean-qou-ffwk">What changed (bean <code>qou-ffwk</code>) <a class="hover-link" href="#What-changed-bean-qou-ffwk">#</a></h2><p>The previous field schema was a scalar plus a field asserting that it vanishes,
+inhabited by <code>⟨0, rfl⟩</code>. The class chose its own witness, so it asserted nothing
+and a downstream <code>[LocalInfinitesimalField]</code> hypothesis was not a meaningful
+conditional.</p><h2 class="markdown-heading" id="Why-the-scheme-and-sheaf-are-not-modelled">Why the scheme and sheaf are <em>not</em> modelled <a class="hover-link" href="#Why-the-scheme-and-sheaf-are-not-modelled">#</a></h2><p>The block sets the conjecture up over a scheme <code>X</code> — <code>ε ∈ Γ(X, 𝔪_X)</code>, a section
+of the sheaf of infinitesimals, with <code>X</code> a functor <code>CRing → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Set/Defs.html#Set">Set</a></code> evaluated at
+the valuation ring of finite surreals. Mathlib's <code>AlgebraicGeometry.Scheme</code> and
+<code>Topology.Sheaves</code> are both available in this tree, so that framing <em>could</em> be
+written down.</p><p>It is deliberately not, because <strong>none of the three claims uses it</strong>. Read them
+back: <code>ε(x)</code> differs from <code>ε(y)</code> somewhere; <code>st(ε(x)) = 0</code> everywhere; the
+leading coefficient is globally constant. Every one is an extensional statement
+about the family <code>x ↦ ε(x)</code>. Restricting/gluing, the structure sheaf, and the
+<code>X(𝒪) ↠ X(ℝ)</code> standard-part map are all <em>setting</em> — they explain where the
+family comes from and why it is interesting, and the conjecture would be neither
+stronger nor weaker if <code>X</code> were a bare type.</p><p>Wrapping the family in a <code>Scheme</code> would therefore assert structure the claims
+never consume, which is the same defect in the opposite direction from the
+schema this file used to carry: a placeholder asserts too little, decoration
+asserts too much. <code>X</code> stays an abstract index type, and the sheaf framing lives
+in this docstring where a reader can find it.</p><p>If a later result actually needs locality — gluing local <code>ε</code>s, or a stalkwise
+argument — that is the point to introduce the sheaf, and the class statement
+below will still be what it restricts to.</p><h2 class="markdown-heading" id="What-is-encoded">What is encoded <a class="hover-link" href="#What-is-encoded">#</a></h2><ul>
+<li><strong>Part 1 — local variation.</strong> &quot;<code>ε(x)</code> may differ from <code>ε(y)</code> for distinct
+<code>x, y</code>.&quot; Encoded as genuine non-constancy. This is the whole point of the
+conjecture: a <em>global</em> <code>ε</code> is exactly what the appendix already has, so a
+carrier that permitted a constant family would assert nothing new.</li>
+<li><strong>Part 2 — standard-part global constant.</strong> &quot;<code>st(ε(x)) = 0</code> for all <code>x</code>, so
+the classical substrate is <code>q = 1</code> everywhere.&quot; Encoded as infinitesimality,
+which is the block's own framing (<code>ε</code> is a section of the sheaf of
+<em>infinitesimals</em>); <code><a href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField.standardPart_eq_zero">standardPart_eq_zero</a></code> below derives the <code>st</code> form from it
+using the corpus's own <code>StandardPart</code> API.</li>
+<li><strong>Part 3 — birthday-uniform at archimedean scale.</strong> &quot;The leading surreal
+coefficient of <code>ε(x)</code> is globally constant and equals <code>q₀ − 1</code>.&quot; Encoded
+against a caller-supplied <code>leadingCoeff</code>, for the reason below.</li>
+</ul><p><code>leadingCoeff</code> is the coefficient of <code>ω⁻¹</code> in Conway normal form. It does not
+exist in this tree, and it is <strong>not</strong> <code>OmegaOrder.Ow</code>, which is the leading
+<em>exponent</em>. Rather than invent it, it enters as a parameter — the same choice as
+the <code>archimedean_agreement</code> pipelines and <code>DiophantineBirthday</code>'s trajectory.
+See <code>Asymptotics.lean</code> for why the Conway-normal-form machinery is not available
+from Mathlib.</p><p><code>q₀</code> is a parameter too, not a literal. Writing <code>0.11</code> into a carrier would fix a
+substrate pin inside a conjecture and require re-editing whenever the pin moves.</p><h2 class="markdown-heading" id="Base-ring-7c">Base ring (§7c) <a class="hover-link" href="#Base-ring-7c">#</a></h2><p><code>K</code> is a generic <code>[SurrealField K]</code>. <code>ℝ</code> enters only through <code>standardPart</code> and
+<code>leadingCoeff</code>'s codomain — the archimedean shadow the conjecture is <em>about</em> —
+and through <code>SurrealField</code>'s own <code>ofReal</code>. No numerical substrate value appears.</p></div><div class="decl" id="QOU.AppendixSurreals.LocalInfinitesimalField"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean#L84-L114">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> v)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField">SurrealField</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ε</span> : <span class="fn"><span class="fn">X</span> → <span class="fn">K</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">leadingCoeff</span> : <span class="fn"><span class="fn">K</span> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q₀</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>The substrate parameter is a local infinitesimal field.</strong></p><p>The conjecture of
+<a href="../.././../../../appendix-surreals/local-infinitesimal-field.md"><code>conj:local-infinitesimal-field</code></a>:
+<code>q(x) = 1 + ε(x)</code> fluctuates from point to point, every fluctuation is
+infinitesimal, and the leading surreal coefficient is nevertheless globally
+constant.</p><p>Parameters are the caller's data:</p><ul>
+<li><code>X</code> — the index type of points (the block's scheme, taken extensionally;
+see the header);</li>
+<li><code>ε x</code> — the local infinitesimal at <code>x</code>;</li>
+<li><code>leadingCoeff</code> — the <code>ω⁻¹</code> coefficient in Conway normal form, which this tree
+does not construct;</li>
+<li><code>q₀</code> — the archimedean substrate value, a parameter rather than a literal.</li>
+</ul><p>An instance <strong>is</strong> the conjecture, for that data. None is provided.</p><ul class="structure_fields" id="QOU.AppendixSurreals.LocalInfinitesimalField.mk"><li id="QOU.AppendixSurreals.LocalInfinitesimalField.infinitesimal" class="structure_field"><div class="structure_field_info">infinitesimal<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">X</span>)</span></span>
+ : <span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField.IsInfinitesimal">SurrealField.IsInfinitesimal</a> <span class="fn">(<span class="fn">ε</span> <span class="fn">x</span>)</span></span></div><div class="structure_field_doc"><p><strong>Part 2.</strong> Every local value is infinitesimal, so the classical
+substrate is <code>q = 1</code> at every point.</p></div></li><li id="QOU.AppendixSurreals.LocalInfinitesimalField.local_variation" class="structure_field"><div class="structure_field_info">local_variation : <span class="fn">∃ (<span class="fn">x</span> : <span class="fn">X</span>) (<span class="fn">y</span> : <span class="fn">X</span>), <span class="fn"><span class="fn">ε</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn"><span class="fn">ε</span> <span class="fn">y</span></span></span></div><div class="structure_field_doc"><p><strong>Part 1 — local variation.</strong> The family is genuinely non-constant.
+Without this the conjecture collapses to the global <code>ε</code> the appendix
+already has, so a carrier permitting a constant family would assert
+nothing new.</p></div></li><li id="QOU.AppendixSurreals.LocalInfinitesimalField.leadingCoeff_const" class="structure_field"><div class="structure_field_info">leadingCoeff_const<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">X</span>)</span></span>
+ : <span class="fn"><span class="fn">leadingCoeff</span> <span class="fn">(<span class="fn">ε</span> <span class="fn">x</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">q₀</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn">1</span></div><div class="structure_field_doc"><p><strong>Part 3.</strong> The leading <code>ω⁻¹</code> coefficient is globally constant and equals
+the archimedean substrate deviation.</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.AppendixSurreals.LocalInfinitesimalField" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.AppendixSurreals.LocalInfinitesimalField.standardPart_eq_zero"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean#L135-L143">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField.standardPart_eq_zero"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span>.<span class="name">standardPart_eq_zero</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField">SurrealField</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ε</span> : <span class="fn"><span class="fn">X</span> → <span class="fn">K</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">leadingCoeff</span> : <span class="fn"><span class="fn">K</span> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q₀</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField">LocalInfinitesimalField</a> <span class="fn">X</span> <span class="fn">K</span> <span class="fn">ε</span> <span class="fn">leadingCoeff</span> <span class="fn">q₀</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">X</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/AppendixSurreals/StandardPart.html#QOU.AppendixSurreals.standardPart">standardPart</a> <span class="fn">(<span class="fn">ε</span> <span class="fn">x</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p><strong>The classical substrate is <code>q = 1</code> everywhere</strong> — the block's part 2 in
+its own <code>st</code> form, derived rather than assumed.</p><p>The class states infinitesimality, which is the block's framing (<code>ε</code> is a
+section of the sheaf of <em>infinitesimals</em>); this is the consequence the block
+actually spells out. Uses the corpus's own <code>standardPart_of_infinitesimal</code>.</p></div></div><div class="decl" id="QOU.AppendixSurreals.LocalInfinitesimalField.standardPart_const"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean#L145-L150">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField.standardPart_const"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span>.<span class="name">standardPart_const</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField">SurrealField</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ε</span> : <span class="fn"><span class="fn">X</span> → <span class="fn">K</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">leadingCoeff</span> : <span class="fn"><span class="fn">K</span> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q₀</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField">LocalInfinitesimalField</a> <span class="fn">X</span> <span class="fn">K</span> <span class="fn">ε</span> <span class="fn">leadingCoeff</span> <span class="fn">q₀</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">X</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/AppendixSurreals/StandardPart.html#QOU.AppendixSurreals.standardPart">standardPart</a> <span class="fn">(<span class="fn">ε</span> <span class="fn">x</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/StandardPart.html#QOU.AppendixSurreals.standardPart">standardPart</a> <span class="fn">(<span class="fn">ε</span> <span class="fn">y</span>)</span></span></div></div><p><strong>The archimedean shadow really is constant</strong>, across every pair of points —
+the sense in which the fluctuation is invisible classically.</p></div></div><div class="decl" id="QOU.AppendixSurreals.LocalInfinitesimalField.leadingCoeff_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean#L152-L156">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField.leadingCoeff_eq"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span>.<span class="name">leadingCoeff_eq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField">SurrealField</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ε</span> : <span class="fn"><span class="fn">X</span> → <span class="fn">K</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">leadingCoeff</span> : <span class="fn"><span class="fn">K</span> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">q₀</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField">LocalInfinitesimalField</a> <span class="fn">X</span> <span class="fn">K</span> <span class="fn">ε</span> <span class="fn">leadingCoeff</span> <span class="fn">q₀</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">X</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">leadingCoeff</span> <span class="fn">(<span class="fn">ε</span> <span class="fn">x</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">leadingCoeff</span> <span class="fn">(<span class="fn">ε</span> <span class="fn">y</span>)</span></span></div></div><p><strong>The leading coefficient agrees across points</strong> — part 3 in the form the
+block states it (&quot;globally constant&quot;), rather than pinned to <code>q₀ − 1</code>.</p></div></div><div class="mod_doc"><h3 class="markdown-heading" id="Inhabitation-depends-on-the-data">Inhabitation depends on the data <a class="hover-link" href="#Inhabitation-depends-on-the-data">#</a></h3><p>Not an <code>instance</code>, so typeclass resolution cannot pick it up and silently close
+a downstream hypothesis.</p></div><div class="decl" id="QOU.AppendixSurreals.LocalInfinitesimalField.not_of_subsingleton"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/LocalInfinitesimalField.lean#L163-L177">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField.not_of_subsingleton"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">LocalInfinitesimalField</span>.<span class="name">not_of_subsingleton</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">X</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Basic.html#QOU.AppendixSurreals.SurrealField">SurrealField</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Subsingleton">Subsingleton</a> <span class="fn">X</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ε</span> : <span class="fn"><span class="fn">X</span> → <span class="fn">K</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">leadingCoeff</span> : <span class="fn"><span class="fn">K</span> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q₀</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Not">¬</a><span class="fn"><a href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField">LocalInfinitesimalField</a> <span class="fn">X</span> <span class="fn">K</span> <span class="fn">ε</span> <span class="fn">leadingCoeff</span> <span class="fn">q₀</span></span></div></div><p><strong>Refuted over a one-point index</strong> — the property the old schema lacked
+entirely.</p><p><code><a href="../.././QOU/AppendixSurreals/LocalInfinitesimalField.html#QOU.AppendixSurreals.LocalInfinitesimalField.local_variation">local_variation</a></code> cannot hold when there is nowhere to vary, so the conjecture
+is genuinely falsifiable by the shape of <code>X</code> alone. Under the previous schema
+<code>⟨0, rfl⟩</code> closed the class for every choice of everything, including a
+one-point scheme, so &quot;the substrate fluctuates&quot; had nothing to fail against.</p><p>This is also the precise sense in which the conjecture says more than the
+appendix's existing global <code>ε</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

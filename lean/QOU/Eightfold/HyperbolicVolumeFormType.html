@@ -1,0 +1,192 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.Eightfold.HyperbolicVolumeFormType</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.Eightfold.HyperbolicVolumeFormType";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/Linarith.html">Mathlib.Tactic.Linarith</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/NormNum.html">Mathlib.Tactic.NormNum</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Basic.html">Mathlib.Data.Nat.Choose.Basic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.Eightfold.HyperbolicVolumeFormType" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">realRank_of_complexRank</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">extPowerDim</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.real_three_has_volume_form"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">real_three_has_volume_form</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.complexRank_three_is_realRank_six"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">complexRank_three_is_realRank_six</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.three_ne_six"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">three_ne_six</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.real_three_not_complex_three"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">real_three_not_complex_three</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.realRank_even"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">realRank_even</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.degree_three_but_real_rank_three"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">degree_three_but_real_rank_three</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Eightfold.HyperbolicVolumeFormType.complex_three_real_extCube"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">complex_three_real_extCube</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-Eightfold-HyperbolicVolumeFormType-the-hyperbolic-volume-form-is-a">QOU.Eightfold.HyperbolicVolumeFormType — the hyperbolic volume form is a <a class="hover-link" href="#QOU-Eightfold-HyperbolicVolumeFormType-the-hyperbolic-volume-form-is-a">#</a></h1><p><strong>third</strong> kind of degree-3 form, on a <strong>fourth</strong> three-manifold, and it is real</p><p>Bean <code>qou-xlw1</code>, epic <code>qou-8lxd</code>.  Third companion to
+<code>QOU.Eightfold.ContactDistributionRank</code> and
+<code>QOU.QuantumObservableUniverse.SelfDualityDegree</code>.</p><h2 class="markdown-heading" id="The-question-this-answers">The question this answers <a class="hover-link" href="#The-question-this-answers">#</a></h2><p>Raised by the owner: <em>&quot;when we get to the knot complement there's an <code>S³</code> there
+and we need a hyperbolic volume … so we need a volume form that is that
+hyperbolic metric on the knot complement, which is outside the exceptional
+divisor.  On the exceptional divisor, with the Reeb flow, it should not
+necessarily be [hyperbolic].&quot;</em></p><p>Both halves are right, and the second half is provable.</p><h2 class="markdown-heading" id="Four-three-manifolds-three-geometries">Four three-manifolds, three geometries <a class="hover-link" href="#Four-three-manifolds-three-geometries">#</a></h2><p>The prior audit
+(<a href="../.././../../../../../docs/audits/2026-09-04-where-the-ambient-s3-comes-from.md"><code>2026-09-04-where-the-ambient-s3-comes-from</code></a>)
+separated three objects the corpus writes as <code>S³</code>.  The hyperbolic volume lives
+on a <strong>fourth</strong>, which that audit missed because it is not called <code>S³</code> — it is
+<code>S³</code> with something <em>removed</em>:</p><table>
+<thead>
+<tr>
+<th>object</th>
+<th>geometry</th>
+<th>curvature</th>
+<th>compact</th>
+<th><code>π₁</code></th>
+<th>its volume form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>S³_AM</code> — Alexander–Markov closure arena</td>
+<td>topological only</td>
+<td>—</td>
+<td>yes</td>
+<td>trivial</td>
+<td>none stated</td>
+</tr>
+<tr>
+<td><code>S³_Reeb</code> — Hopf bundle over <code>𝒮_p ≅ S²</code></td>
+<td><strong>round / spherical</strong></td>
+<td><code>+1</code></td>
+<td>yes</td>
+<td><strong>trivial</strong></td>
+<td><code>Θ ∧ dΘ</code></td>
+</tr>
+<tr>
+<td><code>M_S</code> — circle bundle in <code>T*S</code></td>
+<td>contact, genus-4 base</td>
+<td>—</td>
+<td>yes</td>
+<td>infinite (<code>b₁ ≥ 8</code>)</td>
+<td><code>Θ ∧ dΘ</code></td>
+</tr>
+<tr>
+<td><strong><code>S³ ∖ K</code> — the knot complement</strong></td>
+<td><strong>hyperbolic</strong></td>
+<td><code>−1</code></td>
+<td><strong>no, cusped</strong></td>
+<td>infinite</td>
+<td><strong><code>Vol(K)</code></strong></td>
+</tr>
+</tbody>
+</table><h2 class="markdown-heading" id="Why-S³-Reeb-cannot-be-the-hyperbolic-one-cited-and-the-reason-is-π₁">Why <code>S³_Reeb</code> cannot be the hyperbolic one — cited, and the reason is <code>π₁</code> <a class="hover-link" href="#Why-S³-Reeb-cannot-be-the-hyperbolic-one-cited-and-the-reason-is-π₁">#</a></h2><p><code>virtual-particles-exceptional-divisor.md:7</code> puts the Reeb bundle over the
+exceptional divisor as the Hopf fibration <code>U(1) ↪ S³ → 𝒮_p</code>.  That total space
+is <code>S³</code>: compact and <strong>simply connected</strong>.</p><p>A complete finite-volume hyperbolic 3-manifold is <code>ℍ³/Γ</code> with <code>Γ ⊂ PSL(2,ℂ)</code>
+discrete and torsion-free, so <code>π₁ = Γ</code>; and <code>Γ</code> must be <strong>infinite</strong>, since
+<code>ℍ³</code> itself has infinite volume.  Hence <strong>no simply connected 3-manifold carries
+a complete finite-volume hyperbolic metric</strong>, and <code>S³_Reeb</code> is not hyperbolic.</p><p>That is standard hyperbolic geometry, <strong>cited and not formalised</strong> — Mathlib has
+no hyperbolic-manifold API.  It is recorded here because it is what makes the
+owner's second half correct: on the exceptional divisor, with the Reeb flow, the
+geometry is the round Hopf one, and it is <em>not</em> hyperbolic, provably rather than
+incidentally.</p><h2 class="markdown-heading" id="What-is-formalised-the-third-pair-of-different-threes">What is formalised: the third pair of &quot;different threes&quot; <a class="hover-link" href="#What-is-formalised-the-third-pair-of-different-threes">#</a></h2><p>The hyperbolic volume form is a top form on a <strong>real</strong> 3-manifold, so the object
+it is a volume form <em>of</em> is the real rank-3 tangent bundle.  <code>Λ³</code> of that is a
+line, so it is a genuine degree-3 volume form — and the object is
+<strong>self-conjugate</strong>, i.e. real Frobenius–Schur type, which
+<code>QOU.Eightfold.Sym2GateFSTrichotomy.real_triple_fails_gate</code> excludes.</p><p>What the eightfold way needs is a <strong>complex</strong> rank-3 object, whose underlying
+real rank is <code>6</code>, not <code>3</code> (<code><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank">realRank_of_complexRank</a></code>, <code><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.three_ne_six">three_ne_six</a></code>).</p><p>So this is the <strong>third</strong> instance of one trap, and they should be read together:</p><table>
+<thead>
+<tr>
+<th>file</th>
+<th>the two threes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ContactDistributionRank.degree_three_but_rank_one</code></td>
+<td>at <code>dim M = 3</code> the contact volume form has <strong>degree 3</strong> while <code>ξ</code> has complex rank <strong>1</strong></td>
+</tr>
+<tr>
+<td><code>ContactDistributionRank.dim_seven_two_distributions</code></td>
+<td>at <code>dim M = 7</code> the Sasakian distribution has complex rank <strong>3</strong> while the quaternionic-contact one has <strong>2</strong></td>
+</tr>
+<tr>
+<td><strong>here</strong></td>
+<td>the hyperbolic volume form has <strong>degree 3</strong> while its object has <strong>real</strong> rank 3, not <strong>complex</strong> rank 3</td>
+</tr>
+</tbody>
+</table><p>Each time, a <code>3</code> that is a <em>degree</em> has been read as a <code>3</code> that is a <em>rank</em>.</p><h2 class="markdown-heading" id="Consequences-for-the-framework-stated-plainly">Consequences for the framework, stated plainly <a class="hover-link" href="#Consequences-for-the-framework-stated-plainly">#</a></h2><p><strong>1. <code>Vol(K)</code> is currently an <em>input</em>, which is a fact about the corpus's present
+state and NOT a claim that it must stay one.</strong>  It is computed by SnapPy
+(<code>knot-volumes-verification.md</code>) and enters <code>q₀</code> alongside CODATA <code>m_μ/m_e</code>
+(<code>local-substrate-q-proof.md:14</code>).  By <strong>Mostow rigidity</strong> the complete
+hyperbolic metric on a finite-volume 3-manifold is unique up to isometry, so
+<code>Vol(K)</code> is a <em>topological invariant of the knot</em> — there is no metric to
+<em>choose</em>.  The corpus leans on exactly this: <em>&quot;Mostow rigidity (geometric
+confinement) makes the resulting topology — and hence the mass — discrete&quot;</em>
+(<code>approach-to-exceptional-divisor.md</code>).</p><blockquote>
+<p><strong>🛑 An earlier draft of this file said the hyperbolic volume form &quot;is not a
+QOU structure — it is imported&quot;, and that is RETRACTED.</strong>  Rigidity means the
+metric is not <em>chosen</em>; it does not mean the volume is not <em>derivable</em>.  The
+corpus in fact asserts the opposite of what I wrote:
+<code>brings-surface/thurston-relaxation.md</code> states that the <code>q</code>-Pochhammer poles
+are in bijection with the <code>n</code> ideal tetrahedra of a hyperbolic triangulation, that
+Newton iteration on Thurston's gluing equations seeded by those poles converges
+to the shape parameters realising the complete hyperbolic structure, and that
+<em>&quot;the same algebraic-residue data feeds both the SDP and the gluing solver;
+they are different <strong>evaluations of one categorical object</strong>&quot;</em>
+(<code>conj:algebraic-geometric-dilog-equivalence</code>).  The volume-conjecture leg
+points the same way: the Kashaev invariant / coloured Jones is a categorical
+object the framework already computes, and its root-of-unity asymptotics <em>are</em>
+<code>Vol(S³∖K)</code>.  Whether those links are proved, conjectured or merely asserted is
+a separate question and is being measured — but &quot;not a QOU structure&quot; was an
+impossibility claim I never established, against a route the corpus names.</p>
+</blockquote><p><strong>2. It is not a fourth calibration.</strong>  <code>Vol(4₁) = 2·Cl₂(π/3)</code> is a closed form,
+known exactly; SnapPy verifies it numerically rather than supplying it.  Its
+status is that of <code>π</code>, not that of a measured input.  (For a general knot no
+closed form is known and the SnapPy value is the only source — that dependency
+is real, and is separate from the <code>4₁</code> case.)</p><p><strong>3. The two volume forms are on different manifolds and neither yields the
+other.</strong>  <code>Θ ∧ dΘ</code> is a contact volume form on a compact simply connected <code>S³</code>;
+the hyperbolic volume form is the Riemannian volume of a cusped, non-compact,
+infinite-<code>π₁</code> manifold.  No restriction, deformation or limit of one is the
+other, because they are not forms on the same space.</p><p><strong>4. The hyperbolic volume form does not supply <code>W</code> either.</strong>  Fifth
+independent route to land on real type, after <code>𝔰𝔲(2) = Im ℍ</code>, the tetraplectic
+<code>Sp(1)ⁿ</code>, the affine-<code>W</code> compactification, and <code>Ad(A)</code>.</p><h2 class="markdown-heading" id="What-is-proved-here-and-what-is-not">What is proved here, and what is not <a class="hover-link" href="#What-is-proved-here-and-what-is-not">#</a></h2><p><strong>Proved (unconditional integer arithmetic):</strong> that a complex rank-<code>n</code> object has
+real rank <code>2n</code>; that complex rank 3 means real rank 6; that real rank 3 has a
+one-dimensional top exterior power (so the hyperbolic volume form is a genuine
+volume form) while its object is not complex rank 3; and the three-way table
+above as arithmetic.</p><p><strong>Not proved, and asserted nowhere below:</strong></p><ul>
+<li><p>that <code>S³</code> admits no complete finite-volume hyperbolic metric.  Cited standard
+hyperbolic geometry (<code>π₁</code> of such a manifold is infinite).</p>
+<blockquote>
+<p><strong>🛑 The provenance note attached to this used to read &quot;Mathlib has no
+hyperbolic-manifold API and <code>library/</code> holds no source on it&quot;.  BOTH HALVES
+ARE FALSE, measured.</strong>  Mathlib carries
+<code>Analysis/Complex/UpperHalfPlane/{Metric,Basic,Manifold,MoebiusAction,Topology}</code>
+— the hyperbolic metric on <code>ℍ²</code> and the Möbius action — plus the whole
+<code>NumberTheory/ModularForms/</code> tree; what it lacks is a <em>dilogarithm</em> and a
+3-dimensional hyperbolic-manifold API.  And <code>library/</code> is saturated with this
+material: section-file hits are dilogarithm <strong>849</strong>, Kashaev <strong>548</strong>, volume
+conjecture <strong>381</strong>, Thurston <strong>321</strong>, gluing equation <strong>215</strong>, ideal
+tetrahedra <strong>178</strong>, Bloch–Wigner <strong>135</strong>, Neumann–Zagier <strong>96</strong>, Lobachevsky
+<strong>46</strong>.</p>
+<p>The error was a change-of-vocabulary blind spot of exactly the kind this
+corpus keeps recording: the search that produced &quot;holds nothing&quot; used the
+<strong>contact/CR</strong> vocabulary (<code>Sasakian</code>, <code>CR manifold</code>, <code>7-manifold</code>), while
+this layer is covered under the <strong>knot-theory / dilogarithm</strong> vocabulary.
+Note also <code>Bloch-Wigner</code> (hyphen) returns 135 and <code>Bloch–Wigner</code> (en-dash)
+returns 19 — one spelling of one name changes the count sevenfold.</p>
+</blockquote>
+</li>
+<li><p>Mostow rigidity, or that <code>Vol(4₁) = 2·Cl₂(π/3)</code>.  Both cited.</p>
+</li>
+<li><p>that the corpus's <code>S³_Reeb</code> and <code>S³ ∖ K</code> are the manifolds the corpus intends
+— the three-way <code>S³</code> ambiguity is unresolved and is the author's.</p>
+</li>
+<li><p>anything about which knot is meant anywhere.  The corpus's own
+torus-vs-hyperbolic treatment (<code>pion-mass-hyperbolic-threshold.md</code>) is
+careful and is <strong>not</strong> disturbed by anything here.</p>
+</li>
+</ul><p>Base ring: none — integer arithmetic (§7c: no <code>ℝ</code>, no ring at all).</p></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L164-L165">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">realRank_of_complexRank</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></div></div><p>The real rank underlying a complex rank-<code>n</code> bundle.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank">QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank</a> <span class="fn">n</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">n</span></li></ul></details><details id="instances-for-list-QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L167-L168">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">extPowerDim</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">m </span><span class="fn">k</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></div></div><p>The dimension of <code>Λ^k</code> of a real rank-<code>m</code> bundle.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim">QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim</a> <span class="fn">m</span> <span class="fn">k</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn"><span class="fn">m</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Basic.html#Nat.choose">choose</a></span> <span class="fn">k</span></span></li></ul></details><details id="instances-for-list-QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.real_three_has_volume_form"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L170-L173">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.real_three_has_volume_form"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">real_three_has_volume_form</span></a></span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim">extPowerDim</a> <span class="fn">3</span> <span class="fn">3</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span></div></div><p><strong>A real 3-manifold's tangent bundle has a genuine degree-3 volume form.</strong>
+<code>Λ³</code> of a real rank-3 bundle is a line — so the hyperbolic volume form really is
+a volume form, and the route was not a category error on that count.</p></div></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.complexRank_three_is_realRank_six"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L175-L176">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.complexRank_three_is_realRank_six"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">complexRank_three_is_realRank_six</span></a></span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank">realRank_of_complexRank</a> <span class="fn">3</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">6</span></div></div><p><strong>But its object is real rank 3, and complex rank 3 is real rank 6.</strong></p></div></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.three_ne_six"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L178-L179">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.three_ne_six"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">three_ne_six</span></a></span><span class="decl_args"> :</span><div class="decl_type"><span class="fn">3</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank">realRank_of_complexRank</a> <span class="fn">3</span></span></div></div><p>The two are different, which is the whole content of the trap.</p></div></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.real_three_not_complex_three"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L181-L186">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.real_three_not_complex_three"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">real_three_not_complex_three</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank">realRank_of_complexRank</a> <span class="fn">n</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">3</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#False">False</a></div></div><p>Restated as the exclusion: a real rank-3 object is not the underlying real
+bundle of any complex rank-3 object.</p></div></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.realRank_even"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L188-L191">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_even"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">realRank_even</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank">realRank_of_complexRank</a> <span class="fn">n</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMod.hMod">%</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p>The complex rank a real rank-3 object would have to have is not an integer —
+<code>3</code> is odd, and every complex bundle has even real rank.</p></div></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.degree_three_but_real_rank_three"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L193-L198">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.degree_three_but_real_rank_three"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">degree_three_but_real_rank_three</span></a></span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim">extPowerDim</a> <span class="fn">3</span> <span class="fn">3</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.realRank_of_complexRank">realRank_of_complexRank</a> <span class="fn">3</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">3</span></div></div><p><strong>The third pair of different threes, stated side by side.</strong>  The hyperbolic
+volume form has degree 3 — genuinely — while the object it is a top form of has
+<em>real</em> rank 3, and the eightfold way needs <em>complex</em> rank 3, i.e. real rank 6.</p></div></div><div class="decl" id="QOU.Eightfold.HyperbolicVolumeFormType.complex_three_real_extCube"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Eightfold/HyperbolicVolumeFormType.lean#L200-L204">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.complex_three_real_extCube"><span class="name">QOU</span>.<span class="name">Eightfold</span>.<span class="name">HyperbolicVolumeFormType</span>.<span class="name">complex_three_real_extCube</span></a></span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/Eightfold/HyperbolicVolumeFormType.html#QOU.Eightfold.HyperbolicVolumeFormType.extPowerDim">extPowerDim</a> <span class="fn">6</span> <span class="fn">3</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">20</span></div></div><p>For contrast: a complex rank-3 object has real rank 6, whose <code>Λ³</code> is
+<strong>twenty</strong>-dimensional, not a line.  The complex <code>Λ³_ℂ</code> that the eightfold needs
+is not the real <code>Λ³_ℝ</code> of the same bundle — a further reason the two threes
+cannot be identified.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

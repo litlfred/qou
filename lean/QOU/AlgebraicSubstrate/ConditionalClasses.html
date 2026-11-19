@@ -1,0 +1,183 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.AlgebraicSubstrate.ConditionalClasses</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.AlgebraicSubstrate.ConditionalClasses";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">ConditionalClasses</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/Linarith.html">Mathlib.Tactic.Linarith</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html">Mathlib.Data.Real.Basic</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/MeasureTheory/Measure/Lebesgue/Basic.html">Mathlib.MeasureTheory.Measure.Lebesgue.Basic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.AlgebraicSubstrate.ConditionalClasses" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.AlgebraicSubstrate.QAubinLions"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">QAubinLions</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AlgebraicSubstrate.NSCounterexample"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">NSCounterexample</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AlgebraicSubstrate.CriticalExponent"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">CriticalExponent</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AlgebraicSubstrate.BlowupYekutieli"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">BlowupYekutieli</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AlgebraicSubstrate.RegularityBreakdown"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">RegularityBreakdown</span></a></div></nav><main>
+<div class="decl" id="QOU.AlgebraicSubstrate.QAubinLions"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean#L75-L101">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.QAubinLions"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">QAubinLions</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">K</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>§3b-cond hypothesis class</strong> for <code>conj:q-aubin-lions</code>.</p><p>The q-deformed Aubin-Lions weak-compactness lemma.  <code>K</code> is the
+compactness constant as a function of the energy bound, and the claim is
+the one this class's docstring has always made: <strong><code>K</code> scales linearly with
+the energy bound</strong> (the Aubin-Lions embedding constant).</p><p><strong>What this encodes.</strong> <code>∃ C &gt; 0, ∀ E ≥ 0, K E = C · E</code> — linear, with a
+strictly positive constant. The strictness is what carries the content:
+without <code>0 &lt; C</code> the zero function satisfies it and the class is back where
+it started.</p><p><strong>What this does NOT encode</strong>, so the fix is not over-read: nothing here
+ties <code>K</code> to a subsequence extraction, to the q-deformation, or to any
+function space. Those need the analytic setup, which is open. This is the
+docstring's <em>scaling</em> claim, stated about a supplied <code>K</code>.</p><p><strong>History.</strong> Until 2026-08-30 the field read
+<code>∀ E ≥ 0, ∃ K, 0 ≤ K ∧ K ≤ 2·E</code> — an existential per <code>E</code>, satisfied by
+<code>K = 0</code> for every <code>E</code>, so &quot;scales linearly&quot; appeared in the prose and
+nowhere in the Lean. <code>Prop</code> classes cannot carry data, hence <code>K</code> is a
+parameter. Bean <code>qou-3ytx</code>.</p><ul class="structure_fields" id="QOU.AlgebraicSubstrate.QAubinLions.mk"><li id="QOU.AlgebraicSubstrate.QAubinLions.linear_in_energy" class="structure_field"><div class="structure_field_info">linear_in_energy : <span class="fn">∃ (<span class="fn">C</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>), <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">C</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn">∀ (<span class="fn">E</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>), <span class="fn"><span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn">E</span> → <span class="fn"><span class="fn">K</span> <span class="fn">E</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">C</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">E</span></span></span></span></div><div class="structure_field_doc"><p>The compactness constant is linear in the energy bound, with a strictly
+positive embedding constant.</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.AlgebraicSubstrate.QAubinLions" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.AlgebraicSubstrate.NSCounterexample"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean#L103-L144">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.NSCounterexample"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">NSCounterexample</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">vorticitySup</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>§3b-cond hypothesis class</strong> for <code>conj:ns-counterexample</code>.</p><p>Finite-time singularity formation (q-deformed Beale-Kato-Majda
+obstruction).  <code>vorticitySup t</code> is the <code>L^∞</code> norm of the vorticity at time
+<code>t</code>, and the claim is the one this class's docstring has always made: <strong>a
+non-negative singularity time <code>T*</code> exists at which the vorticity
+diverges</strong>.</p><p><strong>What this encodes.</strong> <code>∃ T ≥ 0, ∀ M, ∀ t₀ &lt; T, ∃ t ∈ (t₀, T), M &lt; vorticitySup t</code> — the vorticity exceeds every bound at times <strong>arbitrarily
+close to <code>T</code> from below</strong>, which is the Beale-Kato-Majda shape. A bounded
+<code>vorticitySup</code> refutes it, which is exactly what the previous field could
+not do.</p><p><strong>The <code>t₀</code> quantifier is load-bearing and was missing in the first
+encoding</strong> (caught in review on PR #6122). Without it the field reads
+<code>∀ M, ∃ t &lt; T, M &lt; vorticitySup t</code>, which says only that the vorticity is
+unbounded somewhere on <code>(-∞, T)</code> — satisfied by a function that blows up
+early and is placid near <code>T</code>, i.e. by no blow-up <em>at</em> <code>T</code> at all. That is
+the &quot;documented as a limit, stated without one&quot; defect: the docstring said
+&quot;as <code>t → T*</code>&quot; and the statement had no device localising anything near
+<code>T</code>. Quantifying over <code>t₀ &lt; T</code> is what turns &quot;unbounded before <code>T</code>&quot; into
+&quot;unbounded approaching <code>T</code>&quot;.</p><p><strong>What this does NOT encode.</strong> That <code>vorticitySup</code> solves anything. There
+is no q-NS evolution here, no initial datum, no relation between <code>T</code> and
+the data — the previous field bound <code>D₀</code> and never mentioned it again, and
+this one does not bind it at all rather than pretend to use it. Supplying
+the evolution is the open work.</p><p><strong>History.</strong> Until 2026-08-30 the field read <code>∀ D₀ ≥ 0, ∃ T, 0 ≤ T</code> —
+literally &quot;there exists a non-negative real&quot;, with the initial-datum norm
+bound and discarded, and its own sub-docstring conceded &quot;Trivially: <code>T* = 0</code>
+works.&quot; Bean <code>qou-5nj1</code>.</p><ul class="structure_fields" id="QOU.AlgebraicSubstrate.NSCounterexample.mk"><li id="QOU.AlgebraicSubstrate.NSCounterexample.blowup_at_finite_time" class="structure_field"><div class="structure_field_info">blowup_at_finite_time : <span class="fn">∃ (<span class="fn">T</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>), <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn">T</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn">∀ (<span class="fn">M </span><span class="fn">t₀</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>), <span class="fn"><span class="fn">t₀</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">T</span> → <span class="fn">∃ (<span class="fn">t</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>), <span class="fn">t₀</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">t</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn">t</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">T</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn">M</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn"><span class="fn">vorticitySup</span> <span class="fn">t</span></span></span></span></span></span></div><div class="structure_field_doc"><p>The vorticity exceeds every bound <code>M</code> at times arbitrarily close to <code>T</code>
+from below: for every <code>t₀ &lt; T</code> there is a <code>t</code> in <code>(t₀, T)</code> with
+<code>M &lt; vorticitySup t</code>.</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.AlgebraicSubstrate.NSCounterexample" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.AlgebraicSubstrate.CriticalExponent"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean#L146-L214">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.CriticalExponent"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">CriticalExponent</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">enstrophy</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">α</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>§3b-cond hypothesis class</strong> for <code>conj:critical-exponent</code>.</p><p>Enstrophy diverges as <code>q → 1⁺</code> with a positive exponent <code>α</code>. Both the
+enstrophy function and the exponent are class <strong>parameters</strong> (<code>Prop</code>
+classes cannot carry data); the fields are transcribed from the upstream
+carrier <code>QOU.FluidDynamics.<a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.CriticalExponent">CriticalExponent</a></code> in
+[<code><a href="../.././fluid-dynamics/p2-critical-exponent.html">fluid-dynamics/p2-critical-exponent.lean</a></code>].</p><p><strong>🛑 <code>α = 4/3</code> was REMOVED on 2026-08-30 and must not be put back.</strong> It
+was here for one day, and it is the more interesting of this carrier's two
+defects.</p><p>From 2026-08-30 the single field read <code>alpha_eq : α = 4/3</code>, which I wrote
+while draining the vacuity of the numeral identity below. That fixed the
+shape and introduced a worse problem: <code>4/3</code> is <strong>not a result the corpus
+holds</strong>. [<code>p2-critical-exponent.md</code>] gives it as one of <em>two</em> heuristic
+values under <em>two</em> named turbulence closures — <code>α = 1</code> under the
+dissipation closure <code>ε = ν_q·Ω</code>, <code>α = 4/3</code> under the Kolmogorov cascade —
+and says in terms: <em>&quot;Neither closure is rigorous; the true <code>α</code> is fixed by
+the actual q-Navier–Stokes enstrophy spectrum (the turbulence-closure
+problem) and is open. The two values bracket it under their respective
+hypotheses.&quot;</em> Even under its own closure it carries a logarithmic
+correction, so it is not a clean power law.</p><p>So the field asserted as settled a value its own source calls open, and
+picked the larger of the two bracketing candidates. The corpus had already
+decided against exactly this: bean <code>qou-15gb</code> (completed 2026-07-18)
+reconciled the inconsistency by making the exponent <strong>closure-dependent,
+not a single boxed value</strong>, and the established way to carry a value here
+is to name its closure — <code>QOU.FluidDynamics.enstrophy_alpha_one_of_dissipation_closure</code>
+in [<code>q_ns_classical_bridge.lean</code>] is the pattern. A closure-free <code>α = 4/3</code>
+in a hypothesis class re-boxed the value one namespace over.</p><p><strong>What this encodes now.</strong> <code>0 &lt; α</code> and the divergence statement — which is
+what the <code>.md</code> asserts without hedging (<em>&quot;diverges as <code>Ω_max(q) ~ (q-1)^{-α}</code> for some <code>α &gt; 0</code>&quot;</em>), and what the upstream carrier encodes.
+The one-sided neighbourhood <code>1 &lt; q ∧ q - 1 &lt; ε</code> is load-bearing and is
+upstream's, not mine: without it the field says only that enstrophy is
+unbounded <em>somewhere</em>, which <code>enstrophy q = max q 0</code> satisfies while being
+the identity near <code>q = 1</code> — regular exactly where the conjecture asserts
+blow-up (bean <code>qou-k3hh</code>, witness in
+<code><a href="../.././docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.html">docs/audits/2026-08-29-q-ns-conjecture-statement-strength-probe.lean</a></code>).</p><p><strong>What this still does NOT encode.</strong> That <code>α</code> is the <em>rate</em> of the
+divergence. The asymptotic <code>Ω_max(q) ~ (q-1)^{-α}</code> relating the two
+parameters is absent here exactly as it is absent upstream, which says so
+itself: <em>&quot;the divergence rate is not encoded, and <code>criticalExponent</code> is
+accordingly unconstrained by any field of this class.&quot;</em> Encoding it needs
+the asymptotic, and pinning <code>α</code> needs a closure that is not rigorous. That
+gap is the honest open state; it is not closed by choosing a number.</p><p><strong>History.</strong> Until 2026-08-30 the single field read
+<code>alpha_three_eq_four : (3 * 4 : ℕ) = 12</code> — a closed numeral identity with
+the values already substituted in, containing <strong>no exponent variable at
+all</strong>. <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#rfl">rfl</a></code> proved it whatever the physics, so the class constrained
+nothing and every <code>[CriticalExponent]</code>-conditional theorem was vacuous in
+its critical-exponent leg. Beans <code>qou-93hu</code> (the vacuity) and <code>qou-4670</code>
+(the boxed value).</p><ul class="structure_fields" id="QOU.AlgebraicSubstrate.CriticalExponent.mk"><li id="QOU.AlgebraicSubstrate.CriticalExponent.alpha_pos" class="structure_field"><div class="structure_field_info">alpha_pos : <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">α</span></div><div class="structure_field_doc"><p>The exponent is positive: a genuine divergence, not a bounded
+oscillation. Mirrors upstream <code>criticalExponent_pos</code>.</p></div></li><li id="QOU.AlgebraicSubstrate.CriticalExponent.enstrophy_diverges" class="structure_field"><div class="structure_field_info">enstrophy_diverges<span class="decl_args">
+<span class="fn">(<span class="fn">M </span><span class="fn">ε</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+ : <span class="fn"><span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">ε</span> → <span class="fn">∃ (<span class="fn">q</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>), <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">ε</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn">M</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn"><span class="fn">enstrophy</span> <span class="fn">q</span></span></span></span></div><div class="structure_field_doc"><p><strong>The conjecture itself.</strong> Enstrophy is unbounded on <em>every</em>
+right-neighbourhood of <code>q = 1</code>. Transcribed from upstream
+<code>QOU.FluidDynamics.CriticalExponent.<a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.CriticalExponent.enstrophy_diverges">enstrophy_diverges</a></code>.</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.AlgebraicSubstrate.CriticalExponent" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.AlgebraicSubstrate.BlowupYekutieli"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean#L216-L266">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.BlowupYekutieli"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">BlowupYekutieli</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">obstruction</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">smooth</span> : <a href="../.././foundational_types.html">Prop</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>§3b-cond hypothesis class</strong> for [<code>prop:blowup-yekutieli</code>].</p><p>Smoothness as lifting through the brane tower: <code>v</code> is smooth exactly when
+every obstruction class <code>κ_n(v)</code> vanishes. <code>obstruction n</code> is <code>κ_n(v)</code> at
+tower level <code>n</code>, valued in a coefficient group modelled by <code>ℕ</code> with its
+distinguished zero; <code>smooth</code> is the proposition &quot;<code>v</code> lifts through the whole
+tower&quot;.</p><p>Transcribed from the upstream carrier <code>QOU.FluidDynamics.<a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.BlowupYekutieli">BlowupYekutieli</a></code> in
+[<code><a href="../.././lifting-and-descent/p3-blowup-yekutieli.html">lifting-and-descent/p3-blowup-yekutieli.lean</a></code>], which states exactly this
+field and derives the blow-up direction from it by contraposition. Both
+parameters are class parameters because <code>Prop</code> classes cannot carry data.</p><p><strong>🛑 THIS IS NOT THE CLASS THAT USED TO BE HERE, and the difference is not a
+strengthening (2026-08-30, beans <code>qou-88nf</code> / <code>qou-4670</code>).</strong> Until today the
+field read <code>∀ T ≥ 0, ∃ r, 0 ≤ r ∧ r ≤ 1 + T</code> — an existential satisfied by
+<code>r = 0</code>, i.e. by <em>no blow-up</em>, the negation of the claim the carrier is
+named for. That field was about a <strong>blow-up rate</strong>. This one is about
+<strong>obstruction-class vanishing</strong>. They are two different propositions that
+happened to share a name, so this is a replacement, not a re-encoding of the
+same content, and a <code>[BlowupYekutieli …]</code> binder written before today did
+not mean what one written after it means.</p><p><strong>Why it took a second look.</strong> The carrier was left vacuous on the stated
+grounds that its docstring named &quot;an explicit constant determined by the
+substrate scale&quot; without saying which, so any bound would have been chosen
+by an agent rather than transcribed — and an audit concluded the rate is
+nowhere in the corpus and &quot;its conjecture block does not exist&quot;. The first
+half stands: <strong>there is still no Yekutieli blow-up rate in the corpus</strong>, and
+none may be invented. The second half was wrong. There is no
+<code>conj:blowup-yekutieli</code>, which is what that grep tested, but the block is
+live at <code>lifting-and-descent/</code> under the label <strong><code>prop:</code></strong>, with ten blocks
+interpreting or using it. It had moved chapters, not been deleted.</p><p>So the transcription needs no rate at all: the upstream statement is about
+obstructions, and it is the thing this class should always have carried.</p><p><strong>Refutable</strong>, which the old field was not: <code><a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.BlowupYekutieli">BlowupYekutieli</a> (fun _ =&gt; 0) <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#False">False</a></code> is false, because every obstruction vanishes while <code>smooth</code> is
+<code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#False">False</a></code>. Satisfiable both ways — trivially by <code>(fun _ =&gt; 0, True)</code>, and with
+a genuine blow-up by an <code>obstruction</code> that is nonzero somewhere against
+<code>smooth = <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#False">False</a></code>. Witnesses in
+<code><a href="../.././docs/audits/2026-08-30-qns-carriers-are-refutable.html">docs/audits/2026-08-30-qns-carriers-are-refutable.lean</a></code>.</p><ul class="structure_fields" id="QOU.AlgebraicSubstrate.BlowupYekutieli.mk"><li id="QOU.AlgebraicSubstrate.BlowupYekutieli.smooth_iff_all_obstructions_vanish" class="structure_field"><div class="structure_field_info">smooth_iff_all_obstructions_vanish : <span class="fn">smooth</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Iff">↔</a> <span class="fn">∀ (<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>), <span class="fn"><span class="fn">obstruction</span> <span class="fn">n</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span></div><div class="structure_field_doc"><p><strong>Smoothness-as-lifting.</strong> <code>v</code> is smooth iff every brane-tower
+obstruction class vanishes. The blow-up characterisation — some finite
+level has <code>κ_{n*}(v) ≠ 0</code> — is <em>derived</em> from this by contraposition,
+not assumed.</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.AlgebraicSubstrate.BlowupYekutieli" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.AlgebraicSubstrate.RegularityBreakdown"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/ConditionalClasses.lean#L268-L291">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.RegularityBreakdown"><span class="name">QOU</span>.<span class="name">AlgebraicSubstrate</span>.<span class="name">RegularityBreakdown</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">breakdownSet</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Set/Defs.html#Set">Set</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>§3b-cond hypothesis class</strong> for <code>conj:regularity-breakdown</code>.</p><p><code>breakdownSet</code> is the set of times at which regularity fails, and the claim
+is the one this class's docstring has always made: <strong>breakdown is
+concentrated on a measure-zero set</strong>.</p><p><strong>What this encodes.</strong> <code>volume breakdownSet = 0</code>, against Mathlib's
+Lebesgue measure — the actual statement, not a numeric proxy for it. It is
+false for any breakdown set of positive measure (an interval <code>Ioo a b</code> with
+<code>a &lt; b</code> refutes it), which is what the previous field could not be.</p><p><strong>What this does NOT encode.</strong> That <code>breakdownSet</code> is the breakdown locus
+of anything. There is no q-NS solution here and no definition of
+regularity; supplying those is the open work.</p><p><strong>History.</strong> Until 2026-08-30 the field read
+<code>∀ s ≥ 0, ∃ μ, 0 ≤ μ ∧ μ ≤ s</code> — satisfied by <code>μ = 0</code> for every <code>s</code>, and
+its own sub-docstring conceded &quot;Trivially: <code>μ = 0</code>&quot;. Note the discharger
+also reused the hypothesis directly (<code>⟨0, <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#le_refl">le_refl</a> 0, hs⟩</code>): the proof term
+<em>was</em> the hypothesis. Bean <code>qou-m7a2</code>.</p><ul class="structure_fields" id="QOU.AlgebraicSubstrate.RegularityBreakdown.mk"><li id="QOU.AlgebraicSubstrate.RegularityBreakdown.breakdown_measure_zero" class="structure_field"><div class="structure_field_info">breakdown_measure_zero : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/MeasureTheory/Measure/MeasureSpaceDef.html#MeasureTheory.MeasureSpace.volume">MeasureTheory.volume</a> <span class="fn">breakdownSet</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div><div class="structure_field_doc"><p>The breakdown locus is Lebesgue-null.</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.AlgebraicSubstrate.RegularityBreakdown" class="instances-list"></ul></details></div></div><div class="mod_doc"><h2 class="markdown-heading" id="The-canonical-instance-bundle-REMOVED-2026-08-30-bean-qou-rq9n">The &quot;canonical instance bundle&quot; — REMOVED 2026-08-30 (bean <code>qou-rq9n</code>) <a class="hover-link" href="#The-canonical-instance-bundle-REMOVED-2026-08-30-bean-qou-rq9n">#</a></h2><p>This file used to close with five <strong>unconditional global instances</strong>, one per
+carrier above, introduced as the <em>&quot;canonical instance bundle … via the
+trivial-zero discharger&quot;</em>:</p><pre><code class="language-lean">instance ns_counterexample_canonical : <a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.NSCounterexample">NSCounterexample</a> where
+  exists_singularity_time := fun _ _ =&gt; ⟨0, <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#le_refl">le_refl</a> 0⟩
+
+instance critical_exponent_canonical : <a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.CriticalExponent">CriticalExponent</a> where
+  alpha_three_eq_four := <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#rfl">rfl</a>
+</code></pre><p>AGENTS.md §3b-tax is explicit that this is the one thing not to do: <em>&quot;An
+unproved primary is honestly represented by a content-bearing class with no
+instance (the open state); do not fabricate a trivial instance to 'close' it.&quot;</em></p><p><strong>What the instances cost.</strong> This is an importable library module, so an
+unconditional instance makes every <code>[C]</code>-conditional theorem in the cone
+unconditional — the q-NS results in <code>ConditionalCorollaries.lean</code> were
+conditional in their signatures and dischargeable by zero in fact. That is the
+<code>conditional-proved ≠ premise-established</code> failure with the premise supplied by
+the file itself.</p><p><strong>What they bought: nothing, measured.</strong> Every consumer takes the carriers as
+explicit <code>[C]</code> hypotheses — all nine theorems in <code>ConditionalCorollaries.lean</code>
+and <code>surreal_rate_calculus_conditional</code> in <code>SurrealRateCalculus.lean</code>, the only
+two modules that import this one — and <strong>no declaration anywhere in the corpus
+applies any of those conditional corollaries</strong> (0 external references to each of
+the nine). Nothing resolved these instances and nothing needed them. Removing
+them is behaviour-preserving for every consumer and restores the conditional
+theorems to genuinely conditional.</p><p><strong>Removing the bundle did not by itself make the carriers honest, only
+unclosed.</strong> At that moment their fields asserted far less than their docstrings
+claimed — <code><a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.NSCounterexample">NSCounterexample</a></code> bound <code>D₀</code> and never mentioned it again;
+<code><a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.CriticalExponent">CriticalExponent</a></code>'s entire content was a closed numeral identity with no
+exponent variable in it. <strong>That sentence is history as of later the same day:</strong>
+four of the five have since been re-encoded (see the table at the head of this
+file). As of 2026-08-30 none of the five carries its original field:
+<code><a href="../.././QOU/AlgebraicSubstrate/ConditionalClasses.html#QOU.AlgebraicSubstrate.BlowupYekutieli">BlowupYekutieli</a></code> was the last, and it was REPLACED rather than re-encoded --
+its rate existential and the upstream obstruction statement are different
+propositions sharing a name (<code>qou-88nf</code>). Do <strong>not</strong> re-add an instance
+to make a downstream result typecheck: with no instance, an attempt to use one
+of these conditionally-proved theorems fails loudly, which is the correct
+behaviour for an open conjecture.</p></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

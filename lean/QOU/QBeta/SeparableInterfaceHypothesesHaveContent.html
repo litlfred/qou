@@ -1,0 +1,149 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.QBeta.SeparableInterfaceHypothesesHaveContent</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.QBeta.SeparableInterfaceHypothesesHaveContent";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">SeparableInterfaceHypothesesHaveContent</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/SeparableInterfaceHypothesesHaveContent.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/FieldSimp.html">Mathlib.Tactic.FieldSimp</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/NormNum.html">Mathlib.Tactic.NormNum</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/Ring.html">Mathlib.Tactic.Ring</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html">Mathlib.Algebra.Field.Defs</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html">Mathlib.Algebra.Ring.Defs</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.QBeta.SeparableInterfaceHypothesesHaveContent" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.SeparableInterfaceContent.separability_hypotheses_have_content"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">SeparableInterfaceContent</span>.<span class="name">separability_hypotheses_have_content</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.SeparableInterfaceContent.degeneracy_is_commutativity"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">SeparableInterfaceContent</span>.<span class="name">degeneracy_is_commutativity</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.QBeta.SeparableInterfaceContent.asymmetry_attainable_with_distinct_scalars"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">SeparableInterfaceContent</span>.<span class="name">asymmetry_attainable_with_distinct_scalars</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="The-Pauli-lock-closure-is-carried-entirely-by-its-two-hypotheses">The Pauli-lock closure is carried entirely by its two hypotheses <a class="hover-link" href="#The-Pauli-lock-closure-is-carried-entirely-by-its-two-hypotheses">#</a></h1><p><strong>What this file establishes.</strong> <code>QOU.QBeta.InterfaceScalar.separable_interface_degenerate</code>
+is the theorem the two-nucleon channel-asymmetry closure rests on. Its statement is</p><pre><code class="language-lean">theorem separable_interface_degenerate
+    {Sp Is Sp3 : Type*} (fSpin : Sp → R) (fIso : Is → R) (fSpace : Sp3 → R)
+    (s1 s0 : Sp) (t1 t0 : Is) (ell : Sp3)
+    (hplus : fSpin s1 = fIso t1) (hminus : fSpin s0 = fIso t0) :
+    fSpin s1 * fIso t0 * fSpace ell = fSpin s0 * fIso t1 * fSpace ell
+</code></pre><p>and its proof is <code>rw [hplus, hminus, <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#mul_comm">mul_comm</a> (fIso t1) (fIso t0)]</code>. Three facts about
+that shape, each machine-checked below:</p><ol>
+<li><strong>The hypotheses do work</strong> (<code><a href="../.././QOU/QBeta/SeparableInterfaceHypothesesHaveContent.html#QOU.QBeta.SeparableInterfaceContent.separability_hypotheses_have_content">separability_hypotheses_have_content</a></code>). Drop them and
+the conclusion is false — exhibited on a two-element index type over <code>ℝ</code>. So the
+closure is not a tautology about products.</li>
+<li><strong>The residual mathematics is commutativity</strong> (<code><a href="../.././QOU/QBeta/SeparableInterfaceHypothesesHaveContent.html#QOU.QBeta.SeparableInterfaceContent.degeneracy_is_commutativity">degeneracy_is_commutativity</a></code>). Once
+<code>hplus</code>/<code>hminus</code> are in force the conclusion is <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#mul_comm">mul_comm</a></code>. Everything the theorem
+asserts about physics is asserted by its antecedent.</li>
+<li><strong>Releasing the hypotheses releases the conclusion completely</strong>
+(<code><a href="../.././QOU/QBeta/SeparableInterfaceHypothesesHaveContent.html#QOU.QBeta.SeparableInterfaceContent.asymmetry_attainable_with_distinct_scalars">asymmetry_attainable_with_distinct_scalars</a></code>, <code>distinct_positive_scalars_reach_any_ratio</code>).
+If the isospin <code>SU(2)</code> carries scalars <code>ν±</code> different from the spin <code>SU(2)</code>'s <code>μ±</code>,
+the channel ratio is <em>any</em> element of the field — with positivity preserved over <code>ℝ</code>,
+so the escape is not an artefact of admitting unphysical negative weights. In
+particular the measured two-nucleon asymmetry <code>33.7055</code> is attainable
+(<code>measured_asymmetry_attainable</code>).</li>
+</ol><p><strong>Why this is worth stating.</strong> Bean <code>qou-brng</code> (2026-09-04) records the equal-scalars
+hypothesis as <em>&quot;the residue&quot;</em> of the channel-asymmetry question and names its next step
+as <em>&quot;a witness for D9 would make the equal-scalars question decidable for the first
+time.&quot;</em> Two shape facts bear on that, and both are checkable rather than argued:</p><ul>
+<li><p><code>fSpin</code> and <code>fIso</code> are <strong>arbitrary functions on arbitrary types</strong>. The projector
+scalars <code>μ₊ = (z + q⁻¹)/(q + q⁻¹)</code>, <code>μ₋ = (q − z)/(q + q⁻¹)</code> appear in the theorem's
+<em>docstring</em>, never in its <em>statement</em>. Nothing in the type ties either function to the
+corpus's <code>H₂</code> Wedderburn weights <code>y₂</code>, <code>y₁₁</code> — that identification lives in a different
+section of the same file (<code>weight_eq_proj_scalar</code>, <code>WeightsDetermineZ</code>), about
+different variables.</p>
+</li>
+<li><p>The theorem has <strong>no application site</strong>. Measured over every tracked file, with Lean
+comments stripped (nested block comments included) before the name is searched for.
+Quoted against <strong><code>origin/main</code> as of 2026-09-06</strong>, which is the tree the claim is
+<em>about</em> — not against this branch, which cites the name in four files of its own and so
+cannot be its own denominator:</p>
+<pre><code>1 declaration, 0 applications, 28 prose citations in 13 files
+16 .md · 8 .py docstrings · 2 witness/ledger JSON · 2 <a href="https://leanprover-community.github.io/mathlib4_docs/Lean.html">Lean</a> docstrings
+(isospin-from-canonical-bowtie.lean, TensorCouplingCannotUnbindSinglet.lean)
+</code></pre>
+<p>On this branch the same command reads <strong>41 in 17 files</strong>. The whole increase is this
+PR's own four files — verified by set difference against <code>origin/main</code>, which adds no
+file and removes none, so no sibling contributed one. <strong>The load-bearing figure is the
+<code>0</code></strong>, which is identical on both trees; the guard reports the prose count but gates
+only on the applications:
+<a href="../.././../../../../../../scripts/separable-interface-instantiation-audit.py"><code>scripts/separable-interface-instantiation-audit.py</code></a>.</p>
+</li>
+</ul><p>So <code>hplus</code>/<code>hminus</code> are not a claim <em>about the corpus</em> that a witness could settle; they
+are the antecedent of a statement universally quantified over every possible pair of
+scalar assignments. Making them a claim about the corpus requires <em>instantiating</em> the
+theorem at the corpus's own constructions — which nothing does.</p><p><strong>And that instantiation is not merely absent — one of its two arguments does not
+exist.</strong> Measured 2026-09-06 over every <code>.lean</code> in the tree:</p><ul>
+<li><strong><code>fIso</code> IS available.</strong> The isospin scalars are <code>μ₊ = (z + q⁻¹)/(q + q⁻¹)</code> and
+<code>μ₋ = (q − z)/(q + q⁻¹)</code> (<code>InterfaceScalar.mu_sum_eq_one</code>,
+<code>mu_singlet_lt_mu_triplet</code>). At the proton pin under convention D they evaluate to
+<code>0.75270211325196540159377935162</code> and <code>0.24729788674803459840622064838</code> — which are,
+to all 30 digits, the corpus's own Wedderburn weights <code>y₍₂₎</code> and <code>y₍₁,₁₎</code> at <code>n = 2</code>
+(<code>y-lambda-at-q0.witness.json</code>), exactly as <code>weight_eq_proj_scalar</code> says they must be.
+<strong>This is a re-measurement, not a discovery:</strong> bean <code>qou-kj4v</code> recorded the same
+identity at 50 dps (agreement to <code>3.3e-52</code>) on 2026-08-09. Cited because the agreement
+is worth having twice from two directions, not because it is new here.</li>
+<li><strong><code>fSpin</code> is NOT.</strong> There is no spin-side projector-scalar pair anywhere. The two
+spin-side carriers assert something else entirely: <code>BringFiberAction</code> (D10) builds
+<code>A5Irrep → IcosahedralRotation</code> with an injectivity field, and <code>SpinFromSo3Fiber</code>
+constrains <code>levelCoeff : ℕ → R</code>, the <code>h^(2n)</code> Wedderburn coefficients of the
+three-strand Borromean trace (<code>levelCoeff 1 = 0</code>, <code>levelCoeff 2 = −3/4</code>). Neither is a
+two-element scalar on the spin channel. Read from the carriers' own field lists, not
+from their names.</li>
+</ul><p><strong>🛑 &quot;un-instantiable&quot; would be too strong, and this paragraph said it before the beans
+path of the corpus-grep came back.</strong> Someone <em>has</em> instantiated it: bean <code>qou-5d6k</code>
+(2026-08-25) evaluates the Pauli-locked interface at 50 dps by using <code>μ±</code> for <strong>both</strong>
+<code>SU(2)</code>s and gets</p><pre><code>μ(³S₁) = μ₊^spin · μ₋^iso = 0.18614164195799085217
+μ(¹S₀) = μ₋^spin · μ₊^iso = 0.18614164195799085217
+</code></pre><p>— <code>separable_interface_degenerate</code>'s conclusion, measured, to the last digit. So the
+statement is not that the identification cannot be written down; it is that <strong>the only
+way anyone has written it down is by positing <code>μ±</code> on the spin side, which assumes
+<code>hplus</code>/<code>hminus</code> rather than checking them.</strong> That is why &quot;instantiate it at the corpus's
+own constructions&quot; is empty as a next step: no <em>construction</em> supplies <code>fSpin</code>, and the
+one instantiation that exists supplies it by assumption.</p><p>The distinction matters because the two readings send a reader to different places. &quot;It
+cannot be instantiated&quot; invites building a spin scalar. &quot;It has only ever been
+instantiated by assuming the answer&quot; says the missing thing is a <em>derivation</em> of the spin
+projector weights from the D10 side — which is a statement about <code>BringFiberAction</code>, not
+about this theorem.</p><p><strong>A route that this observation might seem to open is already closed — do not walk into
+it.</strong> The tempting next move is to drop the missing spin factor and read the channel
+asymmetry off the isospin scalars alone. Their log-ratio at the proton pin is
+<code>B(T=0)/B(T=1) = 4.9181</code>, against a measured <code>33.7055</code> — but the shortfall is beside the
+point, because the whole class is excluded by a stronger argument that needs no candidate:
+the <em>total</em> <code>B(T=1) + B(T=0) = −α·log(μ₊μ₋)</code> is invariant under every T-odd rescaling
+<code>(μ₊, μ₋) ↦ (μ₊t, μ₋/t)</code>, and <code>μ₊ + μ₋ = 1</code> floors it at <code>α·log 4 = 5.8030</code> against
+nature's <code>2.1510</code>. Route 7 of
+<a href="../.././../../../../../../docs/audits/2026-08-16-two-nucleon-sector-final-state-eight-closures.md"><code>2026-08-16-two-nucleon-sector-final-state-eight-closures.md</code></a>,
+Lean, scope-(b), landed 2026-08-16. The <code>4.9181</code> is recorded here only so the next reader
+does not re-derive it as though it were news.</p><p>There is a second, independent reason, and it is sharper: bean <code>qou-4g4a</code> proves the
+admissible interface band <code>[z − h, z] = [0.40362773835082593616, 0.61268803714646525160]</code>
+lies <strong>strictly between</strong> the two isospin weights — <code>μ₋</code> is 63.22 % below the floor and
+<code>μ₊</code> 22.85 % above the ceiling, with a 7.56 % margin on the tighter of the two <code>q</code>
+conditions, so it is not a knife-edge and not fixable by a better <code>q</code>. Using an isospin
+projector <em>as</em> the interface is therefore not merely unmotivated but <strong>unavailable</strong>: the
+two mechanisms compute on disjoint sets. (That separation on the lower side is a
+convention-<strong>D</strong> phenomenon; under C, <code>μ₋ = 0.303675</code> sits inside the band.)</p><p><strong>What this does NOT say.</strong> It does not refute <code>separable_interface_degenerate</code>, which is
+correct and sorry-free, nor the physics reading of the Pauli lock, nor anything about
+whether the two <code>SU(2)</code>s in fact carry equal scalars — that stays exactly as unestablished
+as its converse. It is scope-(a) throughout: a statement about what the Lean asserts, with
+the invariant named where it becomes (b) — see <code><a href="../.././QOU/QBeta/SeparableInterfaceHypothesesHaveContent.html#QOU.QBeta.SeparableInterfaceContent.asymmetry_attainable_with_distinct_scalars">asymmetry_attainable_with_distinct_scalars</a></code>,
+whose content is that the conclusion is <em>unconstrained</em> once the antecedent is dropped.</p><p><strong>Base ring (§7c).</strong> Everything here is generic — <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a></code>, <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#CommMonoid">CommMonoid</a></code>, <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a></code> —
+with the non-degeneracy <code>(5 : R) ≠ 6</code> carried as a hypothesis rather than obtained from an
+ordering. The archimedean half (positivity of the projector weights, and the measured
+asymmetry as a real numeral) lives in the sibling
+<code>SeparableInterfaceHypothesesHaveContentReal.lean</code> and consumes these results at
+<code>R := ℝ</code>, per §7c's rule that the specialisation goes in its own file.</p><p>-- Ref: [manuscript] quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean</p></div><div class="mod_doc"><h2 class="markdown-heading" id="1-The-hypotheses-do-work">1. The hypotheses do work <a class="hover-link" href="#1-The-hypotheses-do-work">#</a></h2></div><div class="decl" id="QOU.QBeta.SeparableInterfaceContent.separability_hypotheses_have_content"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/SeparableInterfaceHypothesesHaveContent.lean#L154-L171">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/SeparableInterfaceHypothesesHaveContent.html#QOU.QBeta.SeparableInterfaceContent.separability_hypotheses_have_content"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">SeparableInterfaceContent</span>.<span class="name">separability_hypotheses_have_content</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn">5</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">6</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">fSpin</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool">Bool</a> → <span class="fn">R</span></span>) (<span class="fn">fIso</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool">Bool</a> → <span class="fn">R</span></span>) (<span class="fn">fSpace</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Unit">Unit</a> → <span class="fn">R</span></span>),
+  <span class="fn"><span class="fn">fSpin</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool.true">true</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn">fIso</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool.false">false</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn">fSpace</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Unit.unit">(</a><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Unit.unit">)</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn"><span class="fn">fSpin</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool.false">false</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn">fIso</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool.true">true</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn">fSpace</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Unit.unit">(</a><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Unit.unit">)</a></span></span></div></div><p><strong>The separability conclusion is false without <code>hplus</code>/<code>hminus</code>.</strong></p><p>Index the two channels by <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool">Bool</a></code>. With <code>fSpin = (2, 1)</code>, <code>fIso = (5, 3)</code> (reading
+<code>true ↦</code> the first slot) and a unit space factor, the two sides are <code>5</code> and <code>6</code>.</p><p>The only thing the ring must supply is that those two are different — carried as the
+hypothesis <code>(5 : R) ≠ 6</code> rather than deduced from an ordering, so the statement stays on
+the generic side of the §7c wall. Its <code>R := ℝ</code> instance is in the sibling file.</p><p>This is the <code>gate_has_content</code> pattern this arc uses elsewhere: a theorem whose
+hypotheses could be dropped without changing the conclusion asserts nothing, and the
+cheapest way to know which kind you have is to exhibit a failure.</p></div></div><div class="mod_doc"><h2 class="markdown-heading" id="2-With-the-hypotheses-the-residual-mathematics-is-commutativity">2. With the hypotheses, the residual mathematics is commutativity <a class="hover-link" href="#2-With-the-hypotheses-the-residual-mathematics-is-commutativity">#</a></h2></div><div class="decl" id="QOU.QBeta.SeparableInterfaceContent.degeneracy_is_commutativity"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/SeparableInterfaceHypothesesHaveContent.lean#L175-L182">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/SeparableInterfaceHypothesesHaveContent.html#QOU.QBeta.SeparableInterfaceContent.degeneracy_is_commutativity"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">SeparableInterfaceContent</span>.<span class="name">degeneracy_is_commutativity</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#CommMonoid">CommMonoid</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">a </span><span class="fn">b</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">b</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">b</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">a</span></div></div><p><strong>What <code>separable_interface_degenerate</code> proves, once its antecedent is applied.</strong></p><p>Rewriting by <code>hplus</code> and <code>hminus</code> replaces both spin scalars by isospin ones, and the
+two sides then differ by the order of a product. So the closure's mathematical content
+is <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#mul_comm">mul_comm</a></code>; its physical content is entirely in the identification the hypotheses
+make. Stated here separately so that this is visible without reading a proof term.</p></div></div><div class="mod_doc"><h2 class="markdown-heading" id="3-Releasing-the-identification-releases-the-conclusion">3. Releasing the identification releases the conclusion <a class="hover-link" href="#3-Releasing-the-identification-releases-the-conclusion">#</a></h2></div><div class="decl" id="QOU.QBeta.SeparableInterfaceContent.asymmetry_attainable_with_distinct_scalars"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/QBeta/SeparableInterfaceHypothesesHaveContent.lean#L186-L199">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/QBeta/SeparableInterfaceHypothesesHaveContent.html#QOU.QBeta.SeparableInterfaceContent.asymmetry_attainable_with_distinct_scalars"><span class="name">QOU</span>.<span class="name">QBeta</span>.<span class="name">SeparableInterfaceContent</span>.<span class="name">asymmetry_attainable_with_distinct_scalars</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">μp </span><span class="fn">μm </span><span class="fn">r</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hμp</span> : <span class="fn">μp</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">νp</span> : <span class="fn">R</span>) (<span class="fn">νm</span> : <span class="fn">R</span>), <span class="fn">μp</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">νm</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">r</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> (<span class="fn">μm</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">νp</span>)</span></div></div><p><strong>Distinct scalars reach every ratio.</strong></p><p>If the spin <code>SU(2)</code> carries <code>(μ₊, μ₋)</code> and the isospin <code>SU(2)</code> carries a <em>different</em>
+pair <code>(ν₊, ν₋)</code>, the channel ratio <code>r</code> defined by <code>μ₊ ν₋ = r · (μ₋ ν₊)</code> is unconstrained:
+for every <code>r</code> there is such a pair. So no bound on the achievable asymmetry survives the
+loss of <code>hplus</code>/<code>hminus</code> — not a weakened bound, none at all.</p><p>Scope (b) on the conjunction {separable interface, distinct scalar pairs}, invariant
+named: a field has no nontrivial multiplicative constraint between two free elements.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

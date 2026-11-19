@@ -1,0 +1,66 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href=".././style.css"></link><link rel="icon" href=".././favicon.svg"></link><link rel="mask-icon" href=".././favicon.svg" color="#000000"></link><link rel="prefetch" href=".././/declarations/declaration-data.bmp" as="image"></link><title>UGB.GrobnerShirshov</title><script defer="true" src=".././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT=".././";</script><script>const MODULE_NAME="UGB.GrobnerShirshov";</script><script type="module" src=".././jump-src.js"></script><script type="module" src=".././search.js"></script><script type="module" src=".././expand-nav.js"></script><script type="module" src=".././how-about.js"></script><script type="module" src=".././instances.js"></script><script type="module" src=".././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href=".././UGB/GrobnerShirshov/Basic.html">UGB.GrobnerShirshov.Basic</a></li><li><a href=".././UGB/GrobnerShirshov/CompositionLemma.html">UGB.GrobnerShirshov.CompositionLemma</a></li><li><a href=".././UGB/GrobnerShirshov/Flatness.html">UGB.GrobnerShirshov.Flatness</a></li><li><a href=".././UGB/GrobnerShirshov/JetOrder.html">UGB.GrobnerShirshov.JetOrder</a></li><li><a href=".././UGB/GrobnerShirshov/NormalFormExistsRefutation.html">UGB.GrobnerShirshov.NormalFormExistsRefutation</a></li><li><a href=".././UGB/GrobnerShirshov/NormalForms.html">UGB.GrobnerShirshov.NormalForms</a></li><li><a href=".././UGB/GrobnerShirshov/QSerreCriticalPairs.html">UGB.GrobnerShirshov.QSerreCriticalPairs</a></li><li><a href=".././UGB/GrobnerShirshov/Quotient.html">UGB.GrobnerShirshov.Quotient</a></li><li><a href=".././UGB/GrobnerShirshov/StrongMultiplicativity.html">UGB.GrobnerShirshov.StrongMultiplicativity</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-UGB.GrobnerShirshov" class="imported-by-list"></ul></details></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Gröbner-Shirshov-Bases-Module-Root">Gröbner–Shirshov Bases — Module Root <a class="hover-link" href="#Gröbner-Shirshov-Bases-Module-Root">#</a></h1><p>This module re-exports the Gröbner–Shirshov formalization, which
+provides the algebraic engine behind the QOU lifting mechanism.</p><h2 class="markdown-heading" id="Module-structure">Module structure <a class="hover-link" href="#Module-structure">#</a></h2><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Basic</code></td>
+<td>Monomial orders, rewriting systems, S-polynomials</td>
+</tr>
+<tr>
+<td><code>CompositionLemma</code></td>
+<td>Diamond lemma / confluence proof</td>
+</tr>
+<tr>
+<td><code>NormalForms</code></td>
+<td>PBW-type bases for <code>U_q(su(2))</code> and <code>Dist(G)</code></td>
+</tr>
+<tr>
+<td><code>NormalFormExistsRefutation</code></td>
+<td>proof that the <code>normal_form_exists</code> axiom is <strong>false</strong></td>
+</tr>
+<tr>
+<td><code>QSerreCriticalPairs</code></td>
+<td>reduces <code>qSerre_is_gs_basis</code> to its 8 genuine critical pairs</td>
+</tr>
+<tr>
+<td><code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Quotient">Quotient</a></code></td>
+<td>the quotient algebra <code>k⟨G⟩ / (Σ)</code> and <code>NormalFormBasis</code></td>
+</tr>
+<tr>
+<td><code>Flatness</code></td>
+<td>Flat deformation from GS confluence</td>
+</tr>
+<tr>
+<td><code>StrongMultiplicativity</code></td>
+<td>Frobenius preservation under deformation</td>
+</tr>
+<tr>
+<td><code>JetOrder</code></td>
+<td>Jet-stratified reduction: ordering extension + complexity</td>
+</tr>
+</tbody>
+</table><h2 class="markdown-heading" id="How-the-pieces-fit-together">How the pieces fit together <a class="hover-link" href="#How-the-pieces-fit-together">#</a></h2><pre><code>Basic.lean
+  ├─ AlgOps.lean              (algebra operations: add, smul, leftMulGen)
+  ├─ CompositionLemma.lean    (diamond lemma: GS ⟹ confluence)
+  │    └─ NormalForms.lean     (PBW bases for U_q and Dist(G))
+  │         └─ Flatness.lean   (Dist(G) is flat over Dist(H))
+  │              └─ StrongMultiplicativity.lean  (Δ(xy) = Δ(x)·Δ(y))
+  └─ JetOrder.lean            (jet-stratified reduction algorithm)
+       ├─ imports: Basic, AlgOps, CompositionLemma, Flatness
+       └─ uses: filtration + Hilbert function from Flatness
+</code></pre><p>The composition lemma does triple duty:</p><ol>
+<li><strong>Normal forms</strong> — unique representatives in the quotient algebra</li>
+<li><strong>Flatness</strong> — the deformation preserves Hilbert series</li>
+<li><strong>Strong multiplicativity</strong> — comultiplication is an algebra map</li>
+</ol><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li>[fred2005] L. Fred, PhD thesis, University of Arizona, 2005.</li>
+<li>Bergman, <em>The diamond lemma for ring theory</em>, Adv. Math. 29 (1978).</li>
+<li>Bokut &amp; Chen, <em>Gröbner–Shirshov bases</em>, Bull. Math. Sci. 4 (2014).</li>
+</ul></div></main>
+<nav class="nav"><iframe src=".././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

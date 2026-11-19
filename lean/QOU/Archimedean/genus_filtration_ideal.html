@@ -1,0 +1,86 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.Archimedean.genus_filtration_ideal</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.Archimedean.genus_filtration_ideal";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">genus_filtration_ideal</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/genus_filtration_ideal.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html">Mathlib.Data.Real.Basic</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Prime/Defs.html">Mathlib.Data.Nat.Prime.Defs</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.Archimedean.genus_filtration_ideal" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.Archimedean.GenusFiltrationIdealContext"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">GenusFiltrationIdealContext</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Archimedean.genus_filtration_ideal"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">genus_filtration_ideal</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-Archimedean-genus-filtration-ideal">QOU.Archimedean.genus_filtration_ideal <a class="hover-link" href="#QOU-Archimedean-genus-filtration-ideal">#</a></h1><p>Canonical Lean declaration for content block at
+<a href="../.././quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts"><code>quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts</code></a>.</p><p>The manuscript sub-claims (the Hecke-completeness genus selection
+<code>g = 4</code>, the evaluation-matrix rank <code>5</code>, the genus-filtration ideal
+<code>I_4 = (u^5)</code>, and that it kills <code>T_{2,p}</code> for every odd prime
+<code>p ≥ 11</code>) are stated over <strong>opaque categorical data</strong> (the braid /
+partition / link / obstruction types and the abstract <code><a href="../.././QOU/Archimedean/genus_filtration_ideal.html#QOU.Archimedean.GenusFiltrationIdealContext.kills_T_2p">kills_T_2p</a></code>
+predicate); no faithful Mathlib structure realises the Hecke evaluation
+matrix or the filtration ideal, so per the vacuity-fix playbook pattern C
+the proposition is <strong>named</strong> as a <code>def … : Prop</code> over the context —
+honestly recording the conditional conjecture rather than projecting
+context fields.  A Lean instance would be the conjecture.</p></div><div class="decl" id="QOU.Archimedean.GenusFiltrationIdealContext"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/genus_filtration_ideal.lean#L27-L47">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Archimedean/genus_filtration_ideal.html#QOU.Archimedean.GenusFiltrationIdealContext"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">GenusFiltrationIdealContext</span></a></span><span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> 1</div></div><p>Abstract context (inputs) for the <code><a href="../.././QOU/Archimedean/genus_filtration_ideal.html#QOU.Archimedean.genus_filtration_ideal">genus_filtration_ideal</a></code> claim —
+the categorical braid / partition / link / obstruction data, the
+evaluation-matrix rank, the genus, the ideal exponent, and the
+abstract <code><a href="../.././QOU/Archimedean/genus_filtration_ideal.html#QOU.Archimedean.GenusFiltrationIdealContext.kills_T_2p">kills_T_2p</a></code> predicate.  No field asserts a conclusion.</p><ul class="structure_fields" id="QOU.Archimedean.GenusFiltrationIdealContext.mk"><li id="QOU.Archimedean.GenusFiltrationIdealContext.Braid" class="structure_field"><div class="structure_field_info">Braid : <a href="../.././foundational_types.html">Type</a></div><div class="structure_field_doc"><p>Braid representative type.</p></div></li><li id="QOU.Archimedean.GenusFiltrationIdealContext.PartitionIdx" class="structure_field"><div class="structure_field_info">PartitionIdx : <a href="../.././foundational_types.html">Type</a></div><div class="structure_field_doc"><p>Partition / Young-diagram indexing for irreps of <code>H_n(q)</code>.</p></div></li><li id="QOU.Archimedean.GenusFiltrationIdealContext.Link" class="structure_field"><div class="structure_field_info">Link : <a href="../.././foundational_types.html">Type</a></div><div class="structure_field_doc"><p>Topological link / torus-knot type.</p></div></li><li id="QOU.Archimedean.GenusFiltrationIdealContext.ObstructionClass" class="structure_field"><div class="structure_field_info">ObstructionClass : <a href="../.././foundational_types.html">Type</a></div><div class="structure_field_doc"><p>Cohomology / obstruction class type.</p></div></li><li id="QOU.Archimedean.GenusFiltrationIdealContext.EvalMatrixRank" class="structure_field"><div class="structure_field_info">EvalMatrixRank : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></div><div class="structure_field_doc"><p>The representation-evaluation matrix <code>M_{ij} = χ_{λ_j}(σ_i)</code>.</p></div></li><li id="QOU.Archimedean.GenusFiltrationIdealContext.genus" class="structure_field"><div class="structure_field_info">genus : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></div><div class="structure_field_doc"><p>The Riemann-surface genus chosen by the algebra.</p></div></li><li id="QOU.Archimedean.GenusFiltrationIdealContext.ideal_exponent" class="structure_field"><div class="structure_field_info">ideal_exponent : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></div><div class="structure_field_doc"><p>Generator exponent of the ideal <code>I_g = (u^k_g)</code>.</p></div></li><li id="QOU.Archimedean.GenusFiltrationIdealContext.kills_T_2p" class="structure_field"><div class="structure_field_info">kills_T_2p : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a> → <a href="../.././foundational_types.html">Prop</a></span></div><div class="structure_field_doc"><p>Predicate: torus knot <code>T_{2, p}</code> is killed by the ideal.</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.Archimedean.GenusFiltrationIdealContext" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.Archimedean.genus_filtration_ideal"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/genus_filtration_ideal.lean#L49-L109">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Archimedean/genus_filtration_ideal.html#QOU.Archimedean.genus_filtration_ideal"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">genus_filtration_ideal</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">ctx</span> : <a href="../.././QOU/Archimedean/genus_filtration_ideal.html#QOU.Archimedean.GenusFiltrationIdealContext">GenusFiltrationIdealContext</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Manuscript statement</strong> (full body):</p><p>The genus of the moduli surface is not assumed --- it is
+<strong>determined by the Iwahori--Hecke algebra</strong>.  The QOU axioms force
+$g = 4$ through a completeness condition on the irreducible
+representations of $H_2(q) \oplus H_3(q)$, and the
+genus-filtration ideal $\mathfrak{I}_4 = (u^5)$ is the
+algebraic obstruction that kills $T_{2,p}$ for all primes
+$p \geq 11$.</p><h2 class="markdown-heading" id="Part-0-the-genus-is-determined-by-the-algebra">Part 0: the genus is determined by the algebra <a class="hover-link" href="#Part-0-the-genus-is-determined-by-the-algebra">#</a></h2><p><strong>Proposition (Genus from Hecke completeness).</strong>
+<em>Let $(\mathbf{C}, A, \tau)$ be a QOU with
+$G = \mathrm{SU}_q(2)$.  The braiding on $V_1^{\otimes n}$
+gives the Iwahori--Hecke algebra $H_n(q)$.  The relevant strand
+counts are $n = 2$ and $n = 3$:</em></p><ul>
+<li><em>$H_2(q)$ has $2$ irreducible representations
+(partitions of $2$: $(2)$ trivial, $(1,1)$ sign).</em></li>
+<li><em>$H_3(q)$ has $3$ irreducible representations
+(partitions of $3$: $(3)$, $(1,1,1)$, $(2,1)$).</em></li>
+<li><em>Total: $5$ irreps.</em></li>
+</ul><p><em>At genus $g$, the embeddable torus knots $T_{r,s}$ with
+$(r-1)(s-1) \leq 2g$ and $\gcd(r,s) = 1$ are the ones whose
+Jones polynomials can be evaluated on $\Sigma_g$.  Completeness
+(<a href="#prop:cohomological-embedding">cohomological embedding</a>)
+requires that these evaluations <strong>span all $5$ irrep
+characters</strong>: the evaluation matrix
+$M_{ij} = \chi_{\lambda_j}(\sigma_i)$ must have rank $5$.</em></p><p><em>The strand counts $m \geq 4$ contribute no new knots: at genus
+$g$, the constraint $(m-1)(s-1) \leq 2g$ with $m \geq 4$ and
+$m &lt; s$, $\gcd(m,s) = 1$, gives $s \leq 2g/(m-1) + 1$, which
+for $m = 4$ yields $T_{4,3} = T_{3,4}$ (already counted) and
+for $m \geq 5$ yields no valid $(m, s)$ pairs with $m &lt; s$.
+Therefore $H_2(q) \oplus H_3(q)$ is the complete Hecke
+algebra of the QOU.</em></p><p><strong>The genus scan.</strong></p><table>
+<thead>
+<tr>
+<th align="center">$g$</th>
+<th align="left">Embeddable torus knots</th>
+<th align="center">Count</th>
+<th align="center">Rank of $M$</th>
+<th align="center">Complete?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">$2$</td>
+<td align="left">$T_{2,3}$, $T_{2,5}$</td>
+<td align="center">$2$</td>
+<td align="center">$\leq 2$</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">$3$</td>
+<td align="left">$T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{3,4}$</td>
+<td align="center">$4$</td>
+<td align="center">$\leq 4$</td>
+<td align="center"><strong>No</strong></td>
+</tr>
+<tr>
+<td align="center">$4$</td>
+<td align="left">$T_{2,3}$, $T_{2,5}$, $T_{2,7}$, $T_{2,9}$, $T_{3,4}$, $T_{3,5}$</td>
+<td align="center">$6$</td>
+<td align="center">$5$</td>
+<td align="center">**</td>
+</tr>
+</tbody>
+</table><p>[…truncated; see manuscript for remainder…]</p><pre><code>The proposition is **named** below as a `def … : Prop` (pattern C):
+the Hecke evaluation matrix and filtration ideal are opaque
+categorical inputs, so the four-part claim is recorded as the
+conditional conjecture over the context rather than discharged by a
+fake projection. 
+</code></pre><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-QOU.Archimedean.genus_filtration_ideal" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

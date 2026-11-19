@@ -1,0 +1,242 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.AppendixSurreals.Asymptotics</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.AppendixSurreals.Asymptotics";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">Asymptotics</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/AppendixSurreals/Basic.html">QOU.AppendixSurreals.Basic</a></li><li><a href="../.././QOU/AppendixSurreals/StandardPart.html">QOU.AppendixSurreals.StandardPart</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Monoid/WithTop.html">Mathlib.Algebra.Order.Monoid.WithTop</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.AppendixSurreals.Asymptotics" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.OmegaOrder"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.OmegaOrder.preceq"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.OmegaOrder.prec"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">prec</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.OmegaOrder.preceq_refl"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq_refl</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.OmegaOrder.preceq_trans"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq_trans</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.OmegaOrder.preceq_of_prec"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq_of_prec</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.AppendixSurreals.OmegaOrder.preceq_algebraMap_mul_left"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq_algebraMap_mul_left</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-AppendixSurreals-Asymptotics-ω-adic-Big-O-valuation">QOU.AppendixSurreals.Asymptotics — ω-adic Big-O valuation <a class="hover-link" href="#QOU-AppendixSurreals-Asymptotics-ω-adic-Big-O-valuation">#</a></h1><p>Axiomatises the surreal <strong>ω-adic order</strong> <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> : K → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/TypeTags.html#WithTop">WithTop</a> K</code>
+(leading exponent in Conway normal form) and records the standard
+dictionary relating it to classical Big-O / little-o / Θ / ∼.</p><p>The valuation signature is axiomatised as a typeclass <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a></code>;
+the classical-Big-O bridge is stated as a conjectural class
+<code>SurrealBigOBridge</code> per AGENTS.md §3b (conjectural propagation).</p><p>Mathlib does not yet expose Conway normal form on <code>𝐍𝐨</code>, so the
+canonical surreal model is still not constructed here.  <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a></code>
+is nevertheless <strong>populated</strong>, by the Hahn model in
+<code>HahnOmegaOrder.lean</code> — see below.</p><h2 class="markdown-heading" id="History-how-this-class-came-to-be-instantiable-2026-08-16">History: how this class came to be instantiable (2026-08-16) <a class="hover-link" href="#History-how-this-class-came-to-be-instantiable-2026-08-16">#</a></h2><p><code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a></code> previously had <strong>no instance anywhere in this tree</strong>, which left
+every <code>[OmegaOrder]</code>-conditional result untested for satisfiability — a class
+that asserts a great deal but has never been shown consistent is not much better
+than one that asserts nothing, which is the defect bean <code>qou-ffwk</code> is about.
+A first attempt to supply a model from Mathlib's Hahn-series API found <strong>three
+obstructions</strong>. Recorded because two of them are still live for the <em>surreal</em>
+model, and because obstruction 2 is the one this class was changed to remove.</p><ol>
+<li><p><strong>No degenerate model is available — still true.</strong> <code>SurrealField</code> requires
+<code>omegaSurreal : K</code> with <code>omegaSurreal_gt_natCast : ∀ n : ℕ, (n : K) &lt; _</code>.
+No real exceeds every natural, so <code>SurrealField ℝ</code> is <strong>impossible</strong>; the
+cheap witness that would settle non-emptiness cannot exist, and any
+<code>SurrealField</code> model must be genuinely non-archimedean. This is why
+<code>SpectralNormalForm</code>, which needs <code>IsInfinitesimal</code>/<code>IsFinite</code> and hence
+<code>SurrealField</code>, is <em>still</em> unwitnessed even though <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a></code> now is.</p>
+</li>
+<li><p><strong>The exponent type was self-referential — FIXED.</strong> <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a></code> was typed
+<code>K → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/TypeTags.html#WithTop">WithTop</a> K</code>, exponents in the field itself. That is right for <code>𝐍𝐨</code>,
+closed under <code>ω</code>-exponentiation, but it has no counterpart in Mathlib, whose
+valuation is <code>HahnSeries.orderTop : HahnSeries Γ R → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/TypeTags.html#WithTop">WithTop</a> Γ</code> with <code>Γ</code>
+separate. The class now carries <code>Γ</code> as its own parameter (take <code>Γ := K</code> for
+the surreal reading) and weakens <code>[SurrealField K]</code> to
+<code>[CommRing K] [Algebra ℝ K]</code>, which is all the scaling axiom ever used.
+Bean <code>qou-x20w</code>.</p>
+</li>
+<li><p><strong><code>orderTop</code> multiplicativity — PROVED.</strong> Mathlib offers only the inequality
+<code>orderTop_add_le_mul</code>. The equality <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow_mul">Ow_mul</a></code> states is now derived in
+<code>HahnOmegaOrder.lean</code> from <code>HahnSeries.order_mul</code> over a domain, together
+with the two zero cases.</p>
+</li>
+</ol><p>Still open for the <em>surreal</em> carrier: the <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Synonym.html#Lex">Lex</a></code> order transfer, and a <code>birthday</code>
+function satisfying the <code>nadd</code> sub-additivity and midpoint bounds <code>SurrealField</code>
+demands.</p><p>Notation: in LaTeX we write <code>$O_\omega$</code> (Big-O register, via the
+<code>\ordw</code> macro).  In Lean the identifier is <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a></code> for ASCII usability.</p><p>LaTeX label: <code>rem:conway-normal-form</code>.</p><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li>[conway1976] Conway, <em>On Numbers and Games</em>, Academic Press.</li>
+<li>[gonshor1986] Gonshor, <em>An Introduction to the Theory of Surreal
+Numbers</em>, Cambridge University Press.
+<a href="https://doi.org/10.1017/CBO9780511629143">https://doi.org/10.1017/CBO9780511629143</a></li>
+<li>[berarducci-mantova2018] Berarducci, Mantova, <em>Surreal numbers,
+derivations and transseries</em>, JEMS 20 (2018) 339–390.
+<a href="https://doi.org/10.4171/JEMS/769">https://doi.org/10.4171/JEMS/769</a></li>
+<li>[ehrlich2012] Ehrlich, <em>The absolute arithmetic continuum</em>,
+Bull. Symbolic Logic 18 (2012) 1–45.
+<a href="https://doi.org/10.2178/bsl/1327328438">https://doi.org/10.2178/bsl/1327328438</a></li>
+</ul></div><div class="decl" id="QOU.AppendixSurreals.OmegaOrder"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean#L80-L132">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> s)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">S</span> <span class="fn">K</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#PartialOrder">PartialOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> (max u w)</div></div><p>A commutative <code>ℝ</code>-algebra <code>K</code> admits an <strong>ω-adic order</strong> with
+exponents in <code>Γ</code>: the leading exponent in Conway normal form,
+valued in <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/TypeTags.html#WithTop">WithTop</a> Γ</code>.</p><p>Classical analogue is the p-adic order <code>ord_p</code>.  Under the QOU
+notational convention, the symbol is typeset as <code>$O_\omega$</code>
+(Big-O register) because the equivalence
+<code>f = O(g) ⟺ Ow(f) ≤ Ow(g)</code> makes Big-O the natural reading.</p><h2 class="markdown-heading" id="Why-the-exponent-group-is-a-separate-parameter">Why the exponent group is a separate parameter <a class="hover-link" href="#Why-the-exponent-group-is-a-separate-parameter">#</a></h2><p>Until 2026-08-16 this class fixed <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> : K → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/TypeTags.html#WithTop">WithTop</a> K</code> and required
+<code>[SurrealField K]</code>.  Exponents-in-<code>K</code> is right for <code>𝐍𝐨</code>, which is
+closed under <code>ω</code>-exponentiation — but it is a <em>self-referential</em>
+structure, and it made the class <strong>uninstantiable</strong>: it left <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a></code>
+with no model anywhere in this tree, so every <code>[OmegaOrder]</code>-
+conditional result was untested for satisfiability.  See bean
+<code>qou-x20w</code>, and <code>qou-ffwk</code> for the carrier-hygiene work that
+surfaced it.</p><p>Two changes fix that, both conservative:</p><ul>
+<li>exponents move to their own <code>Γ</code>, matching the standard shape of a
+leading-exponent valuation (and Mathlib's
+<code>HahnSeries.orderTop : HahnSeries Γ R → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/TypeTags.html#WithTop">WithTop</a> Γ</code>); take
+<code>Γ := K</code> to recover the old reading for <code>𝐍𝐨</code>;</li>
+<li>the base weakens from <code>[SurrealField K]</code> to a commutative ring
+with an algebra over an arbitrary scalar ring <code>S</code>, which is all
+<code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow_algebraMap_mul">Ow_algebraMap_mul</a></code> ever used.  It was previously phrased with
+<code>SurrealField.ofReal</code>; nothing about a leading-exponent valuation
+needs the scalars to be the reals, and leaving them abstract also
+keeps this module clear of the §7c mixed-regime rule (a generic
+base ring beside a real-field type is exactly what that rule
+forbids).  Surreal callers instantiate <code>S := ℝ</code>, since every
+<code>SurrealField</code> is canonically a real algebra via
+<code>SurrealField.toAlgebra</code> with <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a></code> equal to <code>ofReal</code>.</li>
+</ul><p>Together these admit the Hahn model in <code>HahnOmegaOrder.lean</code>.</p><ul class="structure_fields" id="QOU.AppendixSurreals.OmegaOrder.mk"><li id="QOU.AppendixSurreals.OmegaOrder.Ow" class="structure_field"><div class="structure_field_info">Ow : <span class="fn"><span class="fn">K</span> → <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/TypeTags.html#WithTop">WithTop</a> <span class="fn">Γ</span></span></span></div><div class="structure_field_doc"><p>The ω-adic order, valued in <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/TypeTags.html#WithTop">WithTop</a> Γ</code>.</p></div></li><li id="QOU.AppendixSurreals.OmegaOrder.Ow_zero" class="structure_field"><div class="structure_field_info">Ow_zero : <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> <span class="fn">S</span> <span class="fn">0</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Notation.html#Top.top">⊤</a></div><div class="structure_field_doc"><p>Zero has order <code>⊤</code>.</p></div></li><li id="QOU.AppendixSurreals.OmegaOrder.Ow_mul" class="structure_field"><div class="structure_field_info">Ow_mul<span class="decl_args">
+<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">K</span>)</span></span>
+ : <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> <span class="fn">S</span> (<span class="fn">x</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">y</span>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> <span class="fn">S</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> <span class="fn">S</span> <span class="fn">y</span></span></div><div class="structure_field_doc"><p>Multiplication is valuation-additive: <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> (x·y) = <a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> x + <a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> y</code>.</p></div></li><li id="QOU.AppendixSurreals.OmegaOrder.Ow_algebraMap_mul" class="structure_field"><div class="structure_field_info">Ow_algebraMap_mul<span class="decl_args">
+<span class="fn">(<span class="fn">r</span> : <span class="fn">S</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">K</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <span class="fn">S</span> <span class="fn">K</span>)</span> <span class="fn">r</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span> → <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> <span class="fn">S</span> (<span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <span class="fn">S</span> <span class="fn">K</span>)</span> <span class="fn">r</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">x</span>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> <span class="fn">S</span> <span class="fn">x</span></span></span></div><div class="structure_field_doc"><p>Rescaling by a nonzero real leaves the leading exponent
+unchanged (finite nonzero reals have <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> = 0</code>).</p></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.AppendixSurreals.OmegaOrder" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.AppendixSurreals.OmegaOrder.preceq"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean#L139-L141">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> s}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">S</span> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#PartialOrder">PartialOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <span class="fn">S</span> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">K</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Surreal Big-O</strong> relation: <code>x ≼ y</code> iff <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> x ≤ <a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> y</code>.
+Equivalent under the Hahn bridge to classical <code>x = O(y)</code>.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq">QOU.AppendixSurreals.OmegaOrder.preceq</a> <span class="fn">x</span> <span class="fn">y</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a>   (<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">QOU.AppendixSurreals.OmegaOrder.Ow</a> <span class="fn">S</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">QOU.AppendixSurreals.OmegaOrder.Ow</a> <span class="fn">S</span> <span class="fn">y</span></span>)</li></ul></details><details id="instances-for-list-QOU.AppendixSurreals.OmegaOrder.preceq" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.AppendixSurreals.OmegaOrder.prec"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean#L143-L145">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.prec"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">prec</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> s}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">S</span> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#PartialOrder">PartialOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <span class="fn">S</span> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">K</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Surreal little-o</strong> relation: <code>x ≺ y</code> iff <code><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> x &lt; <a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">Ow</a> y</code>.
+Equivalent under the bridge to classical <code>x = o(y)</code>.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.prec">QOU.AppendixSurreals.OmegaOrder.prec</a> <span class="fn">x</span> <span class="fn">y</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a>   (<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">QOU.AppendixSurreals.OmegaOrder.Ow</a> <span class="fn">S</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.Ow">QOU.AppendixSurreals.OmegaOrder.Ow</a> <span class="fn">S</span> <span class="fn">y</span></span>)</li></ul></details><details id="instances-for-list-QOU.AppendixSurreals.OmegaOrder.prec" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.AppendixSurreals.OmegaOrder.preceq_refl"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean#L147-L148">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq_refl"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq_refl</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> s}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">S</span> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#PartialOrder">PartialOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <span class="fn">S</span> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">K</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq">preceq</a> <span class="fn">x</span> <span class="fn">x</span></span></div></div><p><code>≼</code> is reflexive.</p></div></div><div class="decl" id="QOU.AppendixSurreals.OmegaOrder.preceq_trans"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean#L150-L154">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq_trans"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq_trans</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> s}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">S</span> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#PartialOrder">PartialOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <span class="fn">S</span> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y </span><span class="fn">z</span> : <span class="fn">K</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hxy</span> : <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq">preceq</a> <span class="fn">x</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hyz</span> : <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq">preceq</a> <span class="fn">y</span> <span class="fn">z</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq">preceq</a> <span class="fn">x</span> <span class="fn">z</span></span></div></div><p><code>≼</code> is transitive.</p></div></div><div class="decl" id="QOU.AppendixSurreals.OmegaOrder.preceq_of_prec"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean#L156-L158">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq_of_prec"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq_of_prec</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> s}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">S</span> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#PartialOrder">PartialOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <span class="fn">S</span> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x </span><span class="fn">y</span> : <span class="fn">K</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.prec">prec</a> <span class="fn">x</span> <span class="fn">y</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq">preceq</a> <span class="fn">x</span> <span class="fn">y</span></span></div></div><p><code>≺</code> refines <code>≼</code>.</p></div></div><div class="decl" id="QOU.AppendixSurreals.OmegaOrder.preceq_algebraMap_mul_left"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Asymptotics.lean#L160-L164">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq_algebraMap_mul_left"><span class="name">QOU</span>.<span class="name">AppendixSurreals</span>.<span class="name">OmegaOrder</span>.<span class="name">preceq_algebraMap_mul_left</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">K</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> s}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">S</span> <span class="fn">K</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Γ</span> : <a href="../.././foundational_types.html">Type</a> w}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommMonoid">AddCommMonoid</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/PartialOrder.html#PartialOrder">PartialOrder</a> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder">OmegaOrder</a> <span class="fn">K</span> <span class="fn">S</span> <span class="fn">Γ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">r</span> : <span class="fn">S</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hr</span> : <span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <span class="fn">S</span> <span class="fn">K</span>)</span> <span class="fn">r</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x </span><span class="fn">y</span> : <span class="fn">K</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq">preceq</a> (<span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <span class="fn">S</span> <span class="fn">K</span>)</span> <span class="fn">r</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">x</span>) <span class="fn">y</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Iff">↔</a> <span class="fn"><a href="../.././QOU/AppendixSurreals/Asymptotics.html#QOU.AppendixSurreals.OmegaOrder.preceq">preceq</a> <span class="fn">x</span> <span class="fn">y</span></span></div></div><p>Rescaling by a nonzero real preserves the Big-O class.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

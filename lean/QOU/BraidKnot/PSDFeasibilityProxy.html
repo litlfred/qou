@@ -1,0 +1,95 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.BraidKnot.PSDFeasibilityProxy</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.BraidKnot.PSDFeasibilityProxy";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">PSDFeasibilityProxy</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic.html">Mathlib.Tactic</a></li><li><a href="../.././QOU/HeckeAlgebra/Common.html">QOU.HeckeAlgebra.Common</a></li><li><a href="../.././QOU/HeckeAlgebra/Wedderburn.html">QOU.HeckeAlgebra.Wedderburn</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Int/Basic.html">Mathlib.Data.Int.Basic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.BraidKnot.PSDFeasibilityProxy" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.PSDFeasibilityProxy.braidWordEval"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">PSDFeasibilityProxy</span>.<span class="name">braidWordEval</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.PSDFeasibilityProxy.evenPower_necessary_for_blockPosSemidef"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">PSDFeasibilityProxy</span>.<span class="name">evenPower_necessary_for_blockPosSemidef</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.PSDFeasibilityProxy.withinLengthBound"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">PSDFeasibilityProxy</span>.<span class="name">withinLengthBound</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-BraidKnot-PSDFeasibilityProxy">QOU.BraidKnot.PSDFeasibilityProxy <a class="hover-link" href="#QOU-BraidKnot-PSDFeasibilityProxy">#</a></h1><p>Bridge between the decidable structural proxies on <code>BraidWord</code>
+(<code>structurallyValidBinding</code>, <code>evenPower</code>, <code>length ≤ 4</code>) used in
+the <code>CanonicalKnotIdSDP</code> placeholder instances, and the
+categorical PSD-feasibility statement on the abstract Hecke-
+algebra Wedderburn decomposition.</p><h2 class="markdown-heading" id="What-this-module-provides">What this module provides <a class="hover-link" href="#What-this-module-provides">#</a></h2><ul>
+<li><p><code><a href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.evenPower_necessary_for_blockPosSemidef">evenPower_necessary_for_blockPosSemidef</a></code> — the proxy
+<code>BraidWord.evenPower</code> is a NECESSARY condition for every
+Wedderburn block of the corresponding Hecke element to be
+PSD.  Axiomatised at the categorical-content level pending
+the algebra-evaluation map <code>BraidWord → HeckeElement n</code>.</p>
+</li>
+<li><p><code><a href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.withinLengthBound">withinLengthBound</a></code> — the enumerator's search-space bound as a
+named decidable predicate.</p>
+</li>
+</ul><p><strong>Not provided, despite an earlier version of this list saying so:</strong>
+a <code>structurallyValidBinding_necessary_for_canonical</code> — &quot;the
+structural-validity proxy is necessary for the Hecke element to be
+a candidate canonical T_w&quot;. No such declaration exists or has ever
+existed in this file. What stood in its place was a tautology under
+the similar name <code>structurallyValidBinding_necessary</code>, removed on
+2026-08-30 (see the note at the foot of this file). The predicate
+itself is <code>BraidWord.structurallyValidBinding</code> in
+<code><a href="../.././mass-theory/conj-canonical-knot-id-sdp.html">mass-theory/conj-canonical-knot-id-sdp.lean</a></code>; the necessity claim
+awaits the same algebra-evaluation map as its <code>evenPower</code> sibling.</p><h2 class="markdown-heading" id="Mathematical-content">Mathematical content <a class="hover-link" href="#Mathematical-content">#</a></h2><p>The decidable Lean predicates <code>evenPower</code>, <code>structurallyValidBinding</code>,
+and <code>length ≤ L_K_max</code> are NECESSARY but NOT SUFFICIENT
+conditions for the categorical PSD-feasibility / minimal-length
+/ canonical-Markov-trace claims.  This module captures the
+arrow <code>decidable proxy → categorical claim</code> direction (the only
+direction that's relevant for falsification: violating the
+proxy disqualifies the candidate categorically).</p><p>The reverse direction (sufficiency) requires the full SDP
+machinery: PSD eigenvalue check per Wedderburn block via
+<code><a href="../.././QOU/HeckeAlgebra/Hoefsmit.html">QOU.HeckeAlgebra.Hoefsmit</a></code>, Markov-trace evaluation via
+<code>QOU.HeckeAlgebra.MarkovTrace</code>.  These are the open Lean ports.</p><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li><code>binding-k-enumerator.witness.json</code> — empirical justification
+that the placeholder bindingKWord [3, 3] satisfies the
+decidable predicates.</li>
+<li><code>binding-k-solver.witness.json</code> — empirical PSD-feasibility
+verification per Wedderburn block.</li>
+</ul></div><div class="decl" id="QOU.BraidKnot.PSDFeasibilityProxy.braidWordEval"><div class="opaque"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean#L65-L75">source</a></div><div class="decl_header"><span class="decl_kind">opaque</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.braidWordEval"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">PSDFeasibilityProxy</span>.<span class="name">braidWordEval</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">_w</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#List">List</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int">ℤ</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/HeckeAlgebra/Wedderburn.html#QOU.HeckeAlgebra.Wedderburn.WedderburnDecomposition">HeckeAlgebra.Wedderburn.WedderburnDecomposition</a> <span class="fn">n</span></span></div></div><p><strong>Abstract braid-word evaluation map</strong> from a list of integer
+generator indices to a <code>WedderburnDecomposition n</code>.  Axiomatised
+pending the Hoefsmit-based concrete construction.</p><p>The signature: takes a word <code>w : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#List">List</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int">Int</a></code> and a strand count
+<code>n</code>, returns the Wedderburn decomposition of the corresponding
+Hecke-algebra element.  The map respects the Hecke and braid
+relations (a downstream <code>axiom</code>).</p></div></div><div class="decl" id="QOU.BraidKnot.PSDFeasibilityProxy.evenPower_necessary_for_blockPosSemidef"><div class="axiom"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean#L77-L94">source</a></div><div class="decl_header"><span class="decl_kind">axiom</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.evenPower_necessary_for_blockPosSemidef"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">PSDFeasibilityProxy</span>.<span class="name">evenPower_necessary_for_blockPosSemidef</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#List">List</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int">ℤ</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.braidWordEval">braidWordEval</a> <span class="fn">n</span> <span class="fn">w</span>)</span>.<a href="../.././QOU/HeckeAlgebra/Wedderburn.html#QOU.HeckeAlgebra.Wedderburn.WedderburnDecomposition.PosSemidef">PosSemidef</a></span> → <span class="fn">∀ <span class="fn">g</span> ∈ <span class="fn"><span class="fn">w</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/List/Basic.html#List.eraseDups">eraseDups</a></span>, (<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/List/Basic.html#List.count">List.count</a> <span class="fn">g</span> <span class="fn">w</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/List/Basic.html#List.count">List.count</a> (<a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a><span class="fn">g</span>) <span class="fn">w</span></span>) <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMod.hMod">%</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span></span></div></div><p><strong>Even-power proxy is necessary for block PSD.</strong></p><p>If <code><a href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.braidWordEval">braidWordEval</a> n w</code> has every Wedderburn block PSD, then
+<code>w.evenPower</code> (the decidable proxy on <code>BraidWord</code>) holds.</p><p>Contrapositive: a word violating <code>evenPower</code> cannot evaluate
+to a PSD-everywhere element.  This is the half of
+&quot;evenPower-iff-PSD&quot; that's actually true at the σ_k^{2m}
+eigenvalue level.</p><p>Axiomatised at the categorical-content level; concrete proof
+requires the Hoefsmit-eigenvalue computation per block.</p></div></div><div class="decl" id="QOU.BraidKnot.PSDFeasibilityProxy.withinLengthBound"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/PSDFeasibilityProxy.lean#L96-L106">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.withinLengthBound"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">PSDFeasibilityProxy</span>.<span class="name">withinLengthBound</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#List">List</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int">ℤ</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">L_max</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>The <strong>length-bound proxy</strong> for the canonical-T_w search: a candidate
+word is within the enumerator's search space only if <code>w.length ≤ L_max</code>
+(the R5-full SDP search bounds candidate length to <code>L_K_max ≤ 4</code>, per
+<code>binding-k-enumerator</code>'s parameter).</p><p>Named as a decidable predicate (§3b: naming, not asserting). The
+necessity is the enumerator's search-space restriction — a definitional
+bound, not a derived theorem. The previous <code>(h : ¬P) : ¬P := h</code> was a
+self-assuming tautology that asserted nothing about braid words.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.withinLengthBound">QOU.BraidKnot.PSDFeasibilityProxy.withinLengthBound</a> <span class="fn">w</span> <span class="fn">L_max</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> (<span class="fn"><span class="fn">w</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#List.length">length</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn">L_max</span>)</li></ul></details><details id="instances-for-list-QOU.BraidKnot.PSDFeasibilityProxy.withinLengthBound" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="mod_doc"><h3 class="markdown-heading" id="structurallyValidBinding-necessary-REMOVED-2026-08-30"><code>structurallyValidBinding_necessary</code> — REMOVED 2026-08-30 <a class="hover-link" href="#structurallyValidBinding-necessary-REMOVED-2026-08-30">#</a></h3><p>It read, in full:</p><pre><code>theorem structurallyValidBinding_necessary {w : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#List">List</a> Int} {n_0 : ℕ}
+    (h_invalid : ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧
+                   (∀ g ∈ w, 3 ≤ <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int.natAbs">Int.natAbs</a> g ∧ <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int.natAbs">Int.natAbs</a> g &lt; n_0))) :
+    ¬(w ≠ [] ∧ (∀ g ∈ w, g ≠ 0) ∧
+      (∀ g ∈ w, 3 ≤ <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int.natAbs">Int.natAbs</a> g ∧ <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Int/Basic.html#Int.natAbs">Int.natAbs</a> g &lt; n_0)) := h_invalid
+</code></pre><p>Hypothesis and conclusion are the same proposition and the proof is the
+hypothesis: <code>(h : ¬P) : ¬P := h</code>, which is <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#id">id</a></code> under a name that promises a
+necessity result. It asserted nothing about braid words, PSD blocks, or
+<code>n_0</code>.</p><p><strong>The fix is this file's own precedent, applied one declaration later than it
+should have been.</strong> <code><a href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.withinLengthBound">withinLengthBound</a></code> above records that <em>&quot;the previous
+<code>(h : ¬P) : ¬P := h</code> was a self-assuming tautology&quot;</em> and replaces it with a
+named decidable predicate — naming, not asserting (§3b). The same move was
+available here and was not made.</p><p>It is a removal rather than a renaming because the predicate <strong>already has a
+canonical name elsewhere</strong>: <code>BraidWord.structurallyValidBinding</code> in
+[<code>mass-theory/conj-canonical-knot-id-sdp.lean:156</code>], a <code>@[reducible] def</code>
+with roughly twenty use sites, whose body unfolds to exactly the proposition
+restated above. Defining a second copy here would have been the worse fix.</p><p>Nothing consumed this declaration — the only other mention in the corpus was
+the module header's entry for a <em>differently named</em> theorem that does not
+exist, corrected above.</p><p>The necessity direction this file's header describes — structural validity
+being necessary for the Hecke element to be a candidate canonical <code>T_w</code> — is
+<strong>not stated anywhere</strong>, and writing it is authorial: it needs the
+algebra-evaluation map the header lists as an open Lean port. Its sibling
+<code><a href="../.././QOU/BraidKnot/PSDFeasibilityProxy.html#QOU.BraidKnot.PSDFeasibilityProxy.evenPower_necessary_for_blockPosSemidef">evenPower_necessary_for_blockPosSemidef</a></code> is an honest <code>axiom</code> for exactly
+that reason. Bean <code>qou-z9ws</code>.</p></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

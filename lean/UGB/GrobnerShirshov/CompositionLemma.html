@@ -1,0 +1,237 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>UGB.GrobnerShirshov.CompositionLemma</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="UGB.GrobnerShirshov.CompositionLemma";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">CompositionLemma</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././UGB/GrobnerShirshov/Basic.html">UGB.GrobnerShirshov.Basic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-UGB.GrobnerShirshov.CompositionLemma" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#UGB.GrobnerShirshov.normal_form_exists_of_unit_lc"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">normal_form_exists_of_unit_lc</span></a></div><div class="nav_link"><a class="break_within" href="#UGB.GrobnerShirshov.local_confluence"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">local_confluence</span></a></div><div class="nav_link"><a class="break_within" href="#UGB.GrobnerShirshov.newman"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">newman</span></a></div><div class="nav_link"><a class="break_within" href="#UGB.GrobnerShirshov.confluence"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">confluence</span></a></div><div class="nav_link"><a class="break_within" href="#UGB.GrobnerShirshov.normal_form_unique"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">normal_form_unique</span></a></div><div class="nav_link"><a class="break_within" href="#UGB.GrobnerShirshov.composition_lemma"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">composition_lemma</span></a></div><div class="nav_link"><a class="break_within" href="#UGB.GrobnerShirshov.retraction_property"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">retraction_property</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Gröbner-Shirshov-Composition-Lemma-Diamond-Lemma">Gröbner–Shirshov Composition Lemma (Diamond Lemma) <a class="hover-link" href="#Gröbner-Shirshov-Composition-Lemma-Diamond-Lemma">#</a></h1><p>The <strong>Composition Lemma</strong> (also known as the <strong>Diamond Lemma</strong> for ring
+theory, Bergman 1978) is the central result of Gröbner–Shirshov theory:</p><blockquote>
+<p>A rewriting system <code>Σ</code> is confluent (hence yields unique normal forms)
+<strong>if and only if</strong> every S-polynomial of <code>Σ</code> reduces to zero.</p>
+</blockquote><p>This module states the lemma and its corollaries using the proper
+reduction relations defined in <code>Basic.lean</code>:</p><ol>
+<li><strong>Termination</strong> — well-founded induction on the admissible order.</li>
+<li><strong>Local confluence</strong> — from S-polynomial resolution.</li>
+<li><strong>Confluence</strong> — Newman's lemma (termination + local confluence).</li>
+<li><strong>Uniqueness of normal forms</strong> — from confluence.</li>
+<li><strong>Idempotency of reduce</strong> — the composition lemma itself.</li>
+<li><strong>Retraction property</strong> — bridge to <code>FormalGroups.lean</code>.</li>
+</ol><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li>Bergman, <em>The diamond lemma for ring theory</em>, Adv. Math. 29 (1978).</li>
+<li>Bokut, <em>Imbeddings into simple associative algebras</em>, Algebra i Logika 15 (1976).</li>
+<li>[fred2005, §3, Proposition 3.8].</li>
+</ul></div><div class="mod_doc"><h2 class="markdown-heading" id="1-Termination">§1  Termination <a class="hover-link" href="#1-Termination">#</a></h2><p><code>reduction_well_founded</code> and <code>normal_form_exists</code> <strong>moved to <code>Basic.lean</code> §6</strong>
+(bean qou-lzoo). The axiom is stated purely in <code>Basic</code>'s vocabulary, and
+<code>normal_form_exists</code> — now a theorem carrying <code>∀ r ∈ sys.rules, <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Units/Defs.html#IsUnit">IsUnit</a> (r.lc ord)</code>
+— needs it in order for <code>reduce</code> to be defined there rather than from the false
+axiom it replaced. Both remain in the <code>UGB.GrobnerShirshov</code> namespace, so uses
+elsewhere in this file are unqualified as before.</p></div><div class="decl" id="UGB.GrobnerShirshov.normal_form_exists_of_unit_lc"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean#L45-L58">source</a></div><div class="attributes">@[deprecated UGB.GrobnerShirshov.normal_form_exists (since := &quot;2026-08-10&quot;)]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.normal_form_exists_of_unit_lc"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">normal_form_exists_of_unit_lc</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hlc</span> : <span class="fn">∀ <span class="fn">r</span> ∈ <span class="fn"><span class="fn">sys</span>.<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem.rules">rules</a></span>, <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Units/Defs.html#IsUnit">IsUnit</a> <span class="fn">(<span class="fn"><span class="fn">r</span>.<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.ReductionRule.lc">lc</a></span> <span class="fn">ord</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">nf</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>), <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.ReducesToNF">ReducesToNF</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">nf</span></span></span></div></div><p>Compatibility alias for the name this theorem carried while it lived here.</p><p>It is now <code>Basic.normal_form_exists</code>: once the false axiom of that name was
+removed, the repaired statement could take the plain name, and the <code>_of_unit_lc</code>
+suffix stopped earning its keep. Retained so the migration does not break
+references.</p></div></div><div class="mod_doc"><h2 class="markdown-heading" id="2-Local-Confluence-from-S-Polynomial-Resolution">§2  Local Confluence from S-Polynomial Resolution <a class="hover-link" href="#2-Local-Confluence-from-S-Polynomial-Resolution">#</a></h2></div><div class="decl" id="UGB.GrobnerShirshov.local_confluence"><div class="axiom"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean#L62-L87">source</a></div><div class="decl_header"><span class="decl_kind">axiom</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.local_confluence"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">local_confluence</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hgs</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.IsGrobnerShirshovBasis">IsGrobnerShirshovBasis</a> <span class="fn">G</span> <span class="fn">k</span> <span class="fn">ord</span> <span class="fn">sys</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hnqz</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.NoQuasiZerosFree">NoQuasiZerosFree</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">g₁ </span><span class="fn">g₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h₁</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.SingleStepReduction">SingleStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₁</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.SingleStepReduction">SingleStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₂</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">h</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>), <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₁</span> <span class="fn">h</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₂</span> <span class="fn">h</span></span></span></div></div><p><strong>Local confluence</strong>: if all S-polynomials reduce to zero (i.e., the
+system is a GS basis), then whenever <code>f → g₁</code> and <code>f → g₂</code> by
+single-step reductions, there exists <code>h</code> with <code>g₁ →* h</code> and <code>g₂ →* h</code>.</p><p>Axiomatised because the three-case proof (disjoint / overlap / inclusion)
+requires <code>AlgElement</code> subtraction to form the S-polynomial <code>g₁ - g₂</code>,
+which is not available at the abstract level.  The argument is:</p><ul>
+<li><strong>Disjoint sites</strong>: both reductions commute; apply each to the other's result.</li>
+<li><strong>Overlap</strong>: <code>g₁ - g₂</code> is an overlap S-polynomial, which reduces to zero
+by <code>hgs.overlap_resolves</code>.</li>
+<li><strong>Inclusion</strong>: <code>g₁ - g₂</code> is an inclusion S-polynomial, which reduces to zero
+by <code>hgs.inclusion_resolves</code>.</li>
+</ul><p>Reference: Bergman 1978, §3, proof of Theorem 1.2 (the Diamond Lemma).</p></div></div><div class="mod_doc"><h2 class="markdown-heading" id="3-Confluence-Newman-s-Lemma">§3  Confluence (Newman's Lemma) <a class="hover-link" href="#3-Confluence-Newman-s-Lemma">#</a></h2></div><div class="decl" id="UGB.GrobnerShirshov.newman"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean#L91-L137">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.newman"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">newman</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hlc</span> :
+  <span class="fn">∀ (<span class="fn">f </span><span class="fn">g₁ </span><span class="fn">g₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>),
+    <span class="fn"><span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.SingleStepReduction">SingleStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₁</span></span> →
+      <span class="fn"><span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.SingleStepReduction">SingleStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₂</span></span> →
+        <span class="fn">∃ (<span class="fn">h</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>), <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₁</span> <span class="fn">h</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₂</span> <span class="fn">h</span></span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hacc</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/WF.html#Acc">Acc</a> <span class="fn">(fun (<span class="fn">g</span> <span class="fn">h</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>) =&gt; <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.SingleStepReduction">SingleStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">h</span> <span class="fn">g</span></span>)</span> <span class="fn">f</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g₁ </span><span class="fn">g₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₁</span></span> →
+  <span class="fn"><span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₂</span></span> →
+    <span class="fn">∃ (<span class="fn">h</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>), <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₁</span> <span class="fn">h</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₂</span> <span class="fn">h</span></span></span></span></span></div></div><p><strong>Newman's lemma</strong>, in the form the induction actually needs: local
+confluence plus accessibility of <code>f</code> under reduction gives confluence at <code>f</code>.</p><p>The hypothesis is taken as a plain function rather than as
+<code>IsGrobnerShirshovBasis</code>, because nothing in the argument looks at <em>why</em> the
+system is locally confluent — this is the abstract rewriting content, and
+keeping it separate is what makes <code><a href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.confluence">confluence</a></code> below a one-line instantiation.</p><p>The proof is the standard tiling argument. Given <code>x →* g₁</code> and <code>x →* g₂</code>,
+expose the first step of each (<code>MultiStepReduction.cases_head</code>); if either run
+is empty the other is the common reduct. Otherwise <code>x → a →* g₁</code> and
+<code>x → b →* g₂</code>, and:</p><ul>
+<li>local confluence at the fork <code>a ← x → b</code> gives <code>c</code> with <code>a →* c</code>, <code>b →* c</code>;</li>
+<li>the induction hypothesis at <code>a</code> — legitimate because <code>x → a</code> — applied to
+<code>a →* g₁</code> and <code>a →* c</code> gives <code>d</code> with <code>g₁ →* d</code> and <code>c →* d</code>;</li>
+<li>the induction hypothesis at <code>b</code>, applied to <code>b →* g₂</code> and <code>b →* c →* d</code>,
+gives <code>e</code> with <code>g₂ →* e</code> and <code>d →* e</code>.</li>
+</ul><p>Then <code>e</code> is the common reduct: <code>g₁ →* d →* e</code> and <code>g₂ →* e</code>. Note that the
+two induction steps are <em>not</em> symmetric — the second consumes the output of
+the first — which is why local confluence alone does not suffice and
+termination is doing real work.</p><p>Reference: Newman (1942); Bergman 1978, Corollary to Theorem 1.2.</p></div></div><div class="decl" id="UGB.GrobnerShirshov.confluence"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean#L139-L162">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.confluence"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">confluence</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hgs</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.IsGrobnerShirshovBasis">IsGrobnerShirshovBasis</a> <span class="fn">G</span> <span class="fn">k</span> <span class="fn">ord</span> <span class="fn">sys</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hnqz</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.NoQuasiZerosFree">NoQuasiZerosFree</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">g₁ </span><span class="fn">g₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h₁</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₁</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">g₂</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">h</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>), <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₁</span> <span class="fn">h</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a> <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.MultiStepReduction">MultiStepReduction</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">g₂</span> <span class="fn">h</span></span></span></div></div><p><strong>Confluence</strong>: any two multi-step reducts of the same element have a common
+reduct.</p><p>Was an axiom. It is not one: it is <code><a href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.newman">newman</a></code> applied to <code><a href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.local_confluence">local_confluence</a></code>
+(§2) and <code>reduction_well_founded</code> (§1), and those two are the only
+assumptions it ever needed. The previous docstring's reason for
+axiomatising — that an explicit derivation-height measure on
+<code>MultiStepReduction</code> was missing — is not in fact what the argument induct
+on; it inducts on the accessibility of the <em>source</em>, which §1 already
+supplies. <code>MultiStepReduction.cases_head</code> is the one piece that was missing,
+and it is three lines.</p></div></div><div class="mod_doc"><h2 class="markdown-heading" id="4-Uniqueness-of-Normal-Forms">§4  Uniqueness of Normal Forms <a class="hover-link" href="#4-Uniqueness-of-Normal-Forms">#</a></h2></div><div class="decl" id="UGB.GrobnerShirshov.normal_form_unique"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean#L166-L194">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.normal_form_unique"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">normal_form_unique</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hgs</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.IsGrobnerShirshovBasis">IsGrobnerShirshovBasis</a> <span class="fn">G</span> <span class="fn">k</span> <span class="fn">ord</span> <span class="fn">sys</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hnqz</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.NoQuasiZerosFree">NoQuasiZerosFree</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f </span><span class="fn">nf₁ </span><span class="fn">nf₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hred₁</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.ReducesToNF">ReducesToNF</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">nf₁</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hred₂</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.ReducesToNF">ReducesToNF</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">nf₂</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">nf₁</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">nf₂</span></div></div><p><strong>Uniqueness of normal forms</strong>: if <code>f →* nf₁</code> and <code>f →* nf₂</code>
+where both <code>nf₁</code> and <code>nf₂</code> are in normal form, then <code>nf₁ = nf₂</code>.</p><p>Proof: by confluence, <code>nf₁</code> and <code>nf₂</code> have a common reduct <code>h</code>.
+Since both are in normal form (no reduction applies), <code>h = nf₁</code>
+and <code>h = nf₂</code>, hence <code>nf₁ = nf₂</code>.</p><p>Was an axiom. Its own docstring gave the two-line proof and then listed as
+the reason for axiomatising exactly the two things that are available:
+confluence (§3, now a theorem) and irreducibility of normal forms
+(<code>MultiStepReduction.eq_of_isNormalForm</code>, proved in <code>Basic.lean</code> since the
+reduction relation was repaired).</p><p>Justified by Bergman 1978, Theorem 1.2.</p></div></div><div class="mod_doc"><h2 class="markdown-heading" id="5-The-Composition-Lemma-Main-Theorem">§5  The Composition Lemma (Main Theorem) <a class="hover-link" href="#5-The-Composition-Lemma-Main-Theorem">#</a></h2></div><div class="decl" id="UGB.GrobnerShirshov.composition_lemma"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean#L198-L236">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.composition_lemma"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">composition_lemma</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hgs</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.IsGrobnerShirshovBasis">IsGrobnerShirshovBasis</a> <span class="fn">G</span> <span class="fn">k</span> <span class="fn">ord</span> <span class="fn">sys</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hnqz</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.NoQuasiZerosFree">NoQuasiZerosFree</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hlc</span> : <span class="fn">∀ <span class="fn">r</span> ∈ <span class="fn"><span class="fn">sys</span>.<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem.rules">rules</a></span>, <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Units/Defs.html#IsUnit">IsUnit</a> <span class="fn">(<span class="fn"><span class="fn">r</span>.<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.ReductionRule.lc">lc</a></span> <span class="fn">ord</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.reduce">reduce</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">hlc</span> <span class="fn">(<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.reduce">reduce</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">hlc</span> <span class="fn">f</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.reduce">reduce</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">hlc</span> <span class="fn">f</span></span></div></div><p><strong>The Composition Lemma</strong> (Shirshov 1962, Bokut 1976, Bergman 1978):</p><p>The reduction map is <strong>idempotent</strong>: <code>reduce (reduce f) = reduce f</code>.</p><p>This encodes the forward direction of the diamond lemma: a GS basis
+(all S-polynomials reduce to zero) implies that normal-form monomials
+form a <code>k</code>-basis of the quotient <code>k⟨G⟩ / (Σ)</code>.</p><p>Proof: <code>reduce f</code> is in normal form (by <code>reduce_is_normal</code>), so it
+reduces to itself in zero steps.  By <code><a href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.normal_form_unique">normal_form_unique</a></code>, the
+chosen normal form of <code>reduce f</code> must equal <code>reduce f</code>.</p><p>Carries <code>hlc</code> (unit leading coefficients) since <code>reduce</code> does — see
+<code>Basic.lean</code> §6. Both hypotheses are load-bearing and for different reasons:
+<code>hlc</code> is what makes <code>reduce</code> defined at all, <code>hgs</code> is what makes its value
+canonical.</p></div></div><div class="mod_doc"><h2 class="markdown-heading" id="6-Retraction-Property-Bridge-to-FormalGroups-lean">§6  Retraction Property (Bridge to FormalGroups.lean) <a class="hover-link" href="#6-Retraction-Property-Bridge-to-FormalGroups-lean">#</a></h2></div><div class="decl" id="UGB.GrobnerShirshov.retraction_property"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/CompositionLemma.lean#L240-L258">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.retraction_property"><span class="name">UGB</span>.<span class="name">GrobnerShirshov</span>.<span class="name">retraction_property</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hgs</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.IsGrobnerShirshovBasis">IsGrobnerShirshovBasis</a> <span class="fn">G</span> <span class="fn">k</span> <span class="fn">ord</span> <span class="fn">sys</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hnqz</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.NoQuasiZerosFree">NoQuasiZerosFree</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hlc</span> : <span class="fn">∀ <span class="fn">r</span> ∈ <span class="fn"><span class="fn">sys</span>.<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem.rules">rules</a></span>, <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Units/Defs.html#IsUnit">IsUnit</a> <span class="fn">(<span class="fn"><span class="fn">r</span>.<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.ReductionRule.lc">lc</a></span> <span class="fn">ord</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">embed</span> : <span class="fn"><span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span> → <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h_embed</span> : <span class="fn">∀ (<span class="fn">f</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>), <span class="fn"><span class="fn">embed</span> <span class="fn">(<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.reduce">reduce</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">hlc</span> <span class="fn">f</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.reduce">reduce</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">hlc</span> <span class="fn">f</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.reduce">reduce</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">hlc</span> <span class="fn">(<span class="fn">embed</span> <span class="fn">(<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.reduce">reduce</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">hlc</span> <span class="fn">f</span>)</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.reduce">reduce</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">hlc</span> <span class="fn">f</span></span></div></div><p>The retraction property <code>reduce ∘ embed ∘ reduce = reduce</code>
+needed by <code>FormalGroups.GrobnerShirshovBasis.<a href="../.././UGB/GrobnerShirshov/CompositionLemma.html#UGB.GrobnerShirshov.composition_lemma">composition_lemma</a></code>.</p><p>If <code>embed</code> is the identity on reduced elements, then the property
+follows from idempotency of <code>reduce</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

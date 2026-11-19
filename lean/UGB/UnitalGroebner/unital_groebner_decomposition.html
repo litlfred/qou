@@ -1,0 +1,58 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>UGB.UnitalGroebner.unital_groebner_decomposition</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="UGB.UnitalGroebner.unital_groebner_decomposition";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">UGB</span>.<span class="name">UnitalGroebner</span>.<span class="name">unital_groebner_decomposition</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/UnitalGroebner/unital_groebner_decomposition.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././UGB/GrobnerShirshov/Basic.html">UGB.GrobnerShirshov.Basic</a></li><li><a href="../.././UGB/GrobnerShirshov/Flatness.html">UGB.GrobnerShirshov.Flatness</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-UGB.UnitalGroebner.unital_groebner_decomposition" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#UGB.UnitalGroebner.unital_groebner_decomposition"><span class="name">UGB</span>.<span class="name">UnitalGroebner</span>.<span class="name">unital_groebner_decomposition</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="UGB-UnitalGroebner-unital-groebner-decomposition">UGB.UnitalGroebner.unital_groebner_decomposition <a class="hover-link" href="#UGB-UnitalGroebner-unital-groebner-decomposition">#</a></h1><p><strong>Real-content formalization</strong> (replaces the former vacuous
+<code>class … where holds : Prop</code>). The decomposition <code>A = I ⊕ Õ(G)</code> is
+stated as a <strong>concrete claim about the reduction system</strong>: for a
+Gröbner–Shirshov basis, every algebra element <code>f</code> decomposes as a
+multi-step reduction <code>f →* nf</code> to a normal form <code>nf</code> (its
+<code>Õ(G)</code>-component), and the deformed and graded algebras share the same
+Hilbert function (flatness). Neither conjunct is instantiable with
+<code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#True">True</a></code>.</p><p>Content block
+<a href="../.././../../../unital-groebner-bases/unital-groebner-bases-chapter/main-theorem.md"><code>thm:main-theorem</code></a>:
+<em>Free module decomposition via unital Gröbner–Shirshov bases</em>.</p><h2 class="markdown-heading" id="Manuscript-statement">Manuscript statement <a class="hover-link" href="#Manuscript-statement">#</a></h2><p>Let $R$ be a commutative ring with unity, $A$ an $R$-algebra free as an
+$R$-module without quasi-zeros, $(B,&lt;)$ an admissible system, and
+$I \trianglelefteq A$ with a unital Gröbner–Shirshov basis $G$. With
+$\widetilde{O}(G)$ the free $R$-module on the non-leading monomials,
+(1) $A/I \cong \widetilde{O}(G)$ and (2) $A = I \oplus \widetilde{O}(G)$.</p><h2 class="markdown-heading" id="What-is-weakened-relative-to-the-manuscript">What is weakened relative to the manuscript <a class="hover-link" href="#What-is-weakened-relative-to-the-manuscript">#</a></h2><p>The internal-direct-sum statement <code>A = I ⊕ Õ(G)</code> is rendered as its
+two algorithmic consequences over the concrete <code>AlgElement</code> /
+<code>RewritingSystem</code> types:</p><ul>
+<li><strong>Õ(G)-component existence</strong> — every <code>f</code> reduces (<code>MultiStepReduction</code>)
+to a normal form, i.e. an element supported on non-leading monomials;
+<code>f</code> minus this normal form lies in the ideal <code>I</code> generated by the
+rules. This is the <code>Õ(G)</code> summand of the decomposition.</li>
+<li><strong>Flatness</strong> — <code>isFlat h_deformed h_graded</code>: the Hilbert function of
+the deformed algebra equals that of its associated graded, which is
+the dimension-count form of &quot;no quasi-zeros / direct sum&quot;.</li>
+</ul><p>The <code>R</code>-module structure of the summands and the explicit <code>I</code>-component
+are not formalized (raw <code>AlgElement</code> data type; see <code>AlgOps.lean</code> §6).
+The existence/termination half is <strong>proved</strong> (bean qou-lzoo): it is
+<code>normal_form_exists</code>, from <code>reduction_well_founded</code> plus the hypothesis
+<code>hlc</code> that every rule has a unit leading coefficient. It used to invoke an
+axiom of the same name that was not merely unproved but <strong>false</strong> — see
+<code>NormalFormExistsRefutation</code>. The flatness half is still supplied by the
+<code>gs_implies_flat</code> axiom of <code>Flatness.lean</code>.</p></div><div class="decl" id="UGB.UnitalGroebner.unital_groebner_decomposition"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/unital-groebner-bases/lean/UGB/UnitalGroebner/unital_groebner_decomposition.lean#L60-L92">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././UGB/UnitalGroebner/unital_groebner_decomposition.html#UGB.UnitalGroebner.unital_groebner_decomposition"><span class="name">UGB</span>.<span class="name">UnitalGroebner</span>.<span class="name">unital_groebner_decomposition</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> v}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ord</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.AdmissibleOrder">GrobnerShirshov.AdmissibleOrder</a> <span class="fn">G</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sys</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem">GrobnerShirshov.RewritingSystem</a> <span class="fn">G</span> <span class="fn">k</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hgs</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.IsGrobnerShirshovBasis">GrobnerShirshov.IsGrobnerShirshovBasis</a> <span class="fn">G</span> <span class="fn">k</span> <span class="fn">ord</span> <span class="fn">sys</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hlc</span> : <span class="fn">∀ <span class="fn">r</span> ∈ <span class="fn"><span class="fn">sys</span>.<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.RewritingSystem.rules">rules</a></span>, <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Units/Defs.html#IsUnit">IsUnit</a> <span class="fn">(<span class="fn"><span class="fn">r</span>.<a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.ReductionRule.lc">lc</a></span> <span class="fn">ord</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h_deformed </span><span class="fn">h_graded</span> : <a href="../.././UGB/GrobnerShirshov/Flatness.html#UGB.GrobnerShirshov.HilbertFunction">GrobnerShirshov.HilbertFunction</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">(∀ (<span class="fn">f</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">GrobnerShirshov.AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>),
+    <span class="fn">∃ (<span class="fn">nf</span> : <span class="fn"><a href="../.././UGB/GrobnerShirshov/Elem.html#UGB.GrobnerShirshov.AlgElement">GrobnerShirshov.AlgElement</a> <span class="fn">G</span> <span class="fn">k</span></span>), <span class="fn"><a href="../.././UGB/GrobnerShirshov/Basic.html#UGB.GrobnerShirshov.ReducesToNF">GrobnerShirshov.ReducesToNF</a> <span class="fn">ord</span> <span class="fn">sys</span> <span class="fn">f</span> <span class="fn">nf</span></span></span>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#And">∧</a>   <span class="fn"><a href="../.././UGB/GrobnerShirshov/Flatness.html#UGB.GrobnerShirshov.isFlat">GrobnerShirshov.isFlat</a> <span class="fn">h_deformed</span> <span class="fn">h_graded</span></span></div></div><p><strong>Free-module decomposition — <code>Õ(G)</code>-component + flatness.</strong></p><p>For a Gröbner–Shirshov basis <code>sys</code>, every element <code>f</code> reduces to a
+normal form (the <code>Õ(G)</code>-summand of <code>f</code> in <code>A = I ⊕ Õ(G)</code>), and the
+deformed/graded Hilbert functions agree (<code>isFlat</code>).</p><p>The conclusion is a <strong>concrete conjunction</strong>: a <code>ReducesToNF</code>
+existential over <code>AlgElement</code> together with an <code>isFlat</code> equality of
+Hilbert functions — substantive content the former <code>holds : Prop</code>
+lacked.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

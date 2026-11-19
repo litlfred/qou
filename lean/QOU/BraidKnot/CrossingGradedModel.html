@@ -1,0 +1,121 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.BraidKnot.CrossingGradedModel</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.BraidKnot.CrossingGradedModel";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">CrossingGradedModel</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/CrossingGradedModel.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/BraidKnot/MassGapKeystone.html">QOU.BraidKnot.MassGapKeystone</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.BraidKnot.CrossingGradedModel" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.crossingGradedTM"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGradedTM</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.crossingGradedTM_gapValue"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGradedTM_gapValue</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.crossingGradedTM_filtration"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGradedTM_filtration</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.crossingGraded_substrateGap"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGraded_substrateGap</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.crossingGradedYMG"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGradedYMG</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.instHasYangMillsMassGapCrossingGraded"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">instHasYangMillsMassGapCrossingGraded</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-BraidKnot-CrossingGradedModel-S1c-the-crossing-graded-model-tower">QOU.BraidKnot.CrossingGradedModel — S1c, the crossing-graded model tower <a class="hover-link" href="#QOU-BraidKnot-CrossingGradedModel-S1c-the-crossing-graded-model-tower">#</a></h1><p>Implements the constructive half of <strong>S1c strategy (iii)</strong>
+(&quot;min-energy-per-crossing counting&quot;) of the mass-gap three-step
+program: the <strong>crossing-graded model transfer matrix</strong>, whose level-<code>k</code>
+excitation carries exactly <code>k</code> crossings, each contributing the
+minimum crossing energy — i.e. the additive energy accounting of
+strategy (iii) taken as the <em>definition</em> of the spectrum:</p><p><code>eigenvalues k = k · E_×(q)</code>.</p><p><strong>What this module proves (all sorry-free):</strong></p><ol>
+<li>The model is a well-formed <code>CategoricalTransferMatrix</code>
+(<code><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM">crossingGradedTM</a></code>): vacuum eigenvalue <code>0</code>, non-negative,
+monotone.</li>
+<li>The model satisfies <code>CrossingFiltration</code> (<code><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM_filtration">crossingGradedTM_filtration</a></code>):
+every non-vacuum excitation dominates one crossing's energy —
+<strong>by construction</strong>, which is exactly the point of strategy (iii).</li>
+<li>The full reduction pipeline composes end-to-end: the model tower
+has a uniform <code>SubstrateGap</code> (<code><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGraded_substrateGap">crossingGraded_substrateGap</a></code>), each
+level is a <code>YangMillsMassGap</code> witness (<code><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedYMG">crossingGradedYMG</a></code>), and
+the millennium-conjecture class <code>HasYangMillsMassGap</code> receives its
+first in-framework instance (<code><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.instHasYangMillsMassGapCrossingGraded">instHasYangMillsMassGapCrossingGraded</a></code>)
+— for the <strong>model</strong>, on the substrate window <code>1 &lt; q ≤ 2</code>.</li>
+</ol><p><strong>What this module does NOT prove (the honest residue of S1c):</strong>
+that the <em>physical</em> brane-tower transfer matrix on <code>End(Aₙ)</code> has a
+spectrum dominating the crossing-graded model.  That single
+comparison — &quot;every non-vacuum excitation of the physical <code>𝒯_q</code>
+carries at least one crossing's energy&quot; — is the entire remaining
+content of S1c; it enters as the <code>per_crossing</code> field of
+<code>CrossingFiltration</code> for the physical tower (the class is a one-field
+constructor, so no further machinery is needed once that spectral
+fact is established).  Strategies (i) (Wenzl/Jones-tower positivity
+transport) and (ii) (Perron–Frobenius) of the workplan are candidate
+routes to it; both are research-grade.</p><p>This module therefore converts S1c from &quot;research-grade step&quot; to
+&quot;research-grade <em>single hypothesis</em> plus a verified pipeline that
+consumes it.&quot;</p></div><div class="decl" id="QOU.BraidKnot.crossingGradedTM"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/CrossingGradedModel.lean#L51-L71">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGradedTM</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">q</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">dla</span> : <a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.DirectLimitAlgebra">Torsion.DirectLimitAlgebra</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">vac</span> : <span class="fn"><a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.VacuumState">Torsion.VacuumState</a> <span class="fn">dla</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././QOU/Torsion/MassGap.html#QOU.Torsion.CategoricalTransferMatrix">Torsion.CategoricalTransferMatrix</a></div></div><p><strong>The crossing-graded model transfer matrix</strong>: the <code>k</code>-th
+excitation carries exactly <code>k</code> crossings, each contributing the
+minimum crossing energy <code>E_×(q)</code>.  Parametrized over any direct
+limit algebra and vacuum state (<code>vacuum_state_exists</code> supplies one
+for every <code>dla</code>).</p><p>This is strategy (iii)'s additive energy accounting taken as the
+<em>definition</em> of the spectrum — a MODEL, not the physical
+<code>End(Aₙ)</code> spectrum (see module docstring).</p><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-QOU.BraidKnot.crossingGradedTM" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.BraidKnot.crossingGradedTM_gapValue"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/CrossingGradedModel.lean#L73-L78">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM_gapValue"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGradedTM_gapValue</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">q</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">dla</span> : <a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.DirectLimitAlgebra">Torsion.DirectLimitAlgebra</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">vac</span> : <span class="fn"><a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.VacuumState">Torsion.VacuumState</a> <span class="fn">dla</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM">crossingGradedTM</a> <span class="fn">q</span> <span class="fn">hq</span> <span class="fn">dla</span> <span class="fn">vac</span>)</span>.<a href="../.././QOU/Torsion/MassGap.html#QOU.Torsion.CategoricalTransferMatrix.gapValue">gapValue</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../.././QOU/Torsion/MassGap.html#QOU.Torsion.minCrossingEnergy">Torsion.minCrossingEnergy</a> <span class="fn">q</span></span></div></div><p>The model's gap value (first excited eigenvalue) is exactly one
+crossing's energy.</p></div></div><div class="decl" id="QOU.BraidKnot.crossingGradedTM_filtration"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/CrossingGradedModel.lean#L80-L98">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM_filtration"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGradedTM_filtration</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">q</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">dla</span> : <a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.DirectLimitAlgebra">Torsion.DirectLimitAlgebra</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">vac</span> : <span class="fn"><a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.VacuumState">Torsion.VacuumState</a> <span class="fn">dla</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/BraidKnot/MassGapKeystone.html#QOU.BraidKnot.CrossingFiltration">CrossingFiltration</a> <span class="fn">q</span> <span class="fn">fun (<span class="fn">x</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>) =&gt; <span class="fn"><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM">crossingGradedTM</a> <span class="fn">q</span> <span class="fn">hq</span> <span class="fn">dla</span> <span class="fn">vac</span></span></span></span></div></div><p><strong>The model satisfies the crossing-energy filtration</strong> — by
+construction: a non-vacuum excitation has <code>k ≥ 1</code> crossings, and
+<code>k · E_×(q) ≥ E_×(q)</code>.  This is the constructive half of S1c
+strategy (iii); the open half is the same statement for the
+physical tower.</p></div></div><div class="decl" id="QOU.BraidKnot.crossingGraded_substrateGap"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/CrossingGradedModel.lean#L100-L108">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGraded_substrateGap"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGraded_substrateGap</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">q</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq2</span> : <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn">2</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">dla</span> : <a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.DirectLimitAlgebra">Torsion.DirectLimitAlgebra</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">vac</span> : <span class="fn"><a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.VacuumState">Torsion.VacuumState</a> <span class="fn">dla</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/BraidKnot/MassGapKeystone.html#QOU.BraidKnot.SubstrateGap">SubstrateGap</a> <span class="fn">q</span> <span class="fn">(<a href="../.././QOU/BraidKnot/MassGapKeystone.html#QOU.BraidKnot.towerSpectrum">towerSpectrum</a> <span class="fn">fun (<span class="fn">x</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>) =&gt; <span class="fn"><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM">crossingGradedTM</a> <span class="fn">q</span> <span class="fn">hq</span> <span class="fn">dla</span> <span class="fn">vac</span></span></span>)</span></span></div></div><p><strong>The model tower carries the uniform substrate gap</strong> on the
+substrate window <code>1 &lt; q ≤ 2</code> — the full S1b/S1c pipeline composed:
+crossing-graded construction ⟹ <code>CrossingFiltration</code> ⟹
+<code>SubstrateGap</code>.</p></div></div><div class="decl" id="QOU.BraidKnot.crossingGradedYMG"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/CrossingGradedModel.lean#L110-L133">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedYMG"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">crossingGradedYMG</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">q</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq2</span> : <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn">2</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">dla</span> : <a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.DirectLimitAlgebra">Torsion.DirectLimitAlgebra</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">vac</span> : <span class="fn"><a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.VacuumState">Torsion.VacuumState</a> <span class="fn">dla</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././QOU/Torsion/MassGap.html#QOU.Torsion.YangMillsMassGap">Torsion.YangMillsMassGap</a></div></div><p><strong>Per-level Yang–Mills mass-gap witness for the model</strong>: on
+<code>1 &lt; q ≤ 2</code>, the crossing-graded model satisfies the
+<code>YangMillsMassGap</code> interface — <code>massGapBound q ≤ gapValue = E_×(q)</code>
+(since <code>(q−1)² ≤ 1</code> there) and the gap is positive.</p><p>MODEL CAVEAT: this witnesses the <em>conjecture interface</em> for the
+crossing-graded model spectrum, not for the physical <code>End(Aₙ)</code>
+transfer matrix.  See module docstring.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedYMG">QOU.BraidKnot.crossingGradedYMG</a> <span class="fn">q</span> <span class="fn">hq</span> <span class="fn">hq2</span> <span class="fn">dla</span> <span class="fn">vac</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a>   <a href="../.././QOU/Torsion/MassGap.html#QOU.Torsion.YangMillsMassGap.mk">{</a> <span class="fn">q</span> := <span class="fn">q</span>, <span class="fn">hq</span> := <span class="fn">hq</span>, <span class="fn">transferMatrix</span> := <span class="fn"><a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM">QOU.BraidKnot.crossingGradedTM</a> <span class="fn">q</span> <span class="fn">hq</span> <span class="fn">dla</span> <span class="fn">vac</span></span>, <span class="fn">mass_gap</span> := <span class="fn">⋯</span>, <span class="fn">gap_positive</span> := <span class="fn">⋯</span> <a href="../.././QOU/Torsion/MassGap.html#QOU.Torsion.YangMillsMassGap.mk">}</a></li></ul></details><details id="instances-for-list-QOU.BraidKnot.crossingGradedYMG" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.BraidKnot.instHasYangMillsMassGapCrossingGraded"><div class="instance"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/CrossingGradedModel.lean#L135-L155">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable instance</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.instHasYangMillsMassGapCrossingGraded"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">instHasYangMillsMassGapCrossingGraded</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">q</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq2</span> : <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn">2</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">dla</span> : <a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.DirectLimitAlgebra">Torsion.DirectLimitAlgebra</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">vac</span> : <span class="fn"><a href="../.././QOU/Torsion/BraneTower.html#QOU.Torsion.VacuumState">Torsion.VacuumState</a> <span class="fn">dla</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/Torsion/MassGap.html#QOU.Torsion.HasYangMillsMassGap">Torsion.HasYangMillsMassGap</a> <span class="fn">q</span> <span class="fn">(<a href="../.././QOU/BraidKnot/CrossingGradedModel.html#QOU.BraidKnot.crossingGradedTM">crossingGradedTM</a> <span class="fn">q</span> <span class="fn">hq</span> <span class="fn">dla</span> <span class="fn">vac</span>)</span></span></div></div><p>The millennium-conjecture class <code>HasYangMillsMassGap</code> is
+<strong>non-vacuous in-framework</strong>: the crossing-graded model
+instantiates it on the substrate window.  (First in-framework
+instance; MODEL caveat per the module docstring.)</p><p>The class's <code>mass_gap_holds : Prop</code> field carries the mass-gap
+proposition for the model transfer matrix,
+<code>(crossingGradedTM …).hasMassGap</code>, and <code>gap_present</code> is discharged by
+the model's <code>crossingGradedYMG.gap_positive</code> (the crossing-graded gap
+is positive by <code>minCrossingEnergy_pos</code>).  MODEL CAVEAT (as above): this
+is the crossing-graded model spectrum, not the physical <code>End(Aₙ)</code>
+transfer matrix — the physical Yang–Mills mass gap remains open.</p><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

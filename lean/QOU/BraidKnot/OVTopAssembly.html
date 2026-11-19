@@ -1,0 +1,195 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.BraidKnot.OVTopAssembly</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.BraidKnot.OVTopAssembly";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/BraidKnot/JucysMurphyOV.html">QOU.BraidKnot.JucysMurphyOV</a></li><li><a href="../.././QOU/BraidKnot/RegularRepBlockTrace.html">QOU.BraidKnot.RegularRepBlockTrace</a></li><li><a href="../.././QOU/BraidKnot/RegularRepTrace.html">QOU.BraidKnot.RegularRepTrace</a></li><li><a href="../.././QOU/BraidKnot/SnWedderburnPartitionBridge.html">QOU.BraidKnot.SnWedderburnPartitionBridge</a></li><li><a href="../.././QOU/BraidKnot/Specht.html">QOU.BraidKnot.Specht</a></li><li><a href="../.././QOU/BraidKnot/SpechtClassification.html">QOU.BraidKnot.SpechtClassification</a></li><li><a href="../.././QOU/BraidKnot/SpechtFinrankWired.html">QOU.BraidKnot.SpechtFinrankWired</a></li><li><a href="../.././QOU/BraidKnot/WedderburnSn.html">QOU.BraidKnot.WedderburnSn</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.BraidKnot.OVTopAssembly" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.OVTopAssembly.snSpectralData"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span>.<span class="name">snSpectralData</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.OVTopAssembly.sn_spectralData_exists"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span>.<span class="name">sn_spectralData_exists</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.OVTopAssembly.identityB_general"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span>.<span class="name">identityB_general</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span>.<span class="name">sum_numSYT_sq_eq_factorial</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-BraidKnot-OVTopAssembly-the-TOP-capstone-of-the-Okounkov-Vershik-tower">QOU.BraidKnot.OVTopAssembly — the TOP / capstone of the Okounkov–Vershik tower <a class="hover-link" href="#QOU-BraidKnot-OVTopAssembly-the-TOP-capstone-of-the-Okounkov-Vershik-tower">#</a></h1><p>This file is the <strong>keystone of the keystone</strong>: it assembles bricks 2 / 3 / 5 together with the
+Wedderburn–Artin decomposition of <code>R[S_n]</code> into a single
+<code>RegularRepBlockTrace.SnWedderburnSpectralData R n</code>, and thereby discharges the <strong>side-2 hypothesis</strong>
+of Identity (B).  The §3b-cond conditional theorem
+<code>RegularRepBlockTrace.identityB_conditional</code> — <em>if</em> a Wedderburn / Jucys–Murphy block spectral
+decomposition exists, <em>then</em> <code>Σ_λ ω_λ·dim(λ)² = n!·binom(n,2)</code> — becomes, via this assembly,
+the <strong>unconditional</strong> general-<code>n</code> Identity (B) (modulo the bricks' own honest stubs).</p><h2 class="markdown-heading" id="What-this-capstone-does">What this capstone does <a class="hover-link" href="#What-this-capstone-does">#</a></h2><p><code><a href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.sn_spectralData_exists">sn_spectralData_exists</a> n : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nonempty">Nonempty</a> (SnWedderburnSpectralData R n)</code> constructs the structure,
+<strong>wiring each field to the brick that supplies it</strong>.  The construction is de-abstracted: the six
+projection-data fields no longer carry bare opaque <code>sorry</code>s — each is wired to the <strong>named brick
+theorem</strong> it cites, via the glue lemma <code>snBlocks</code> (the OV-reindexing residual, itself now discharged
+by <code>SnWedderburnPartitionBridge.snBridge</code> — no direct <code>sorry</code>) and per-field consumption of the
+proved/stubbed bricks.</p><table>
+<thead>
+<tr>
+<th>field</th>
+<th>source brick</th>
+<th>status here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Idx</code></td>
+<td>brick 3 <code>SpechtClassification.PartitionIndex n</code> = <code>{μ : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Young/YoungDiagram.html#YoungDiagram">YoungDiagram</a> // μ.card = n}</code></td>
+<td><strong>sorry-free</strong></td>
+</tr>
+<tr>
+<td><code>fintypeIdx</code></td>
+<td>brick 3 <code>instFintypePartitionIndex</code></td>
+<td><strong>sorry-free</strong></td>
+</tr>
+<tr>
+<td><code>d i</code></td>
+<td>brick 1/2 <code>numSYT i.diagram</code> (<code>dim Sᵘ = #SYT</code>)</td>
+<td><strong>sorry-free</strong> (the <em>definition</em>; <code>rank</code> carries the dim-identity)</td>
+</tr>
+<tr>
+<td><code>ω i</code></td>
+<td>brick 5 <code>((contentSqSum i.diagram : ℤ) : R)</code> (the JM eigenvalue <code>Σ_{c∈λ} c²</code>)</td>
+<td><strong>sorry-free</strong> (the <em>definition</em>; <code>decomp</code> carries the action-identity)</td>
+</tr>
+<tr>
+<td><code>p i</code>, <code>proj i</code></td>
+<td>the <code>λ</code>-isotypic projections (Wedderburn <code>∏ <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Matrix/Defs.html#Matrix">Matrix</a></code> blocks, brick <code>WedderburnSn</code>) re-indexed by partition (brick 3), via <code>snBlocks</code></td>
+<td><code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#sorryAx">sorryAx</a></code>-via-<code>snBlocks</code> → <code>snBridge</code> (Ref <code>SnWedderburnPartitionBridge.sn_rational_specht_split</code>)</td>
+</tr>
+<tr>
+<td><code>isProj i</code></td>
+<td><code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Projection.html#LinearMap.IsProj">LinearMap.IsProj</a></code> of the isotypic projection, via <code>snBlocks</code></td>
+<td><code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#sorryAx">sorryAx</a></code>-via-<code>snBlocks</code> → <code>snBridge</code> (Ref <code>SnWedderburnPartitionBridge.sn_rational_specht_split</code>)</td>
+</tr>
+<tr>
+<td><code>rank i</code></td>
+<td>brick 4 <code>SpechtFinrankWired.specht_finrank_eq_numSYT_wired</code> (<code>dim Sᵘ = #SYT</code>, sourced from the <strong>proved</strong> independence core <code>SpechtTriangularCore.standardPolytabloid_triangular'</code>) + <code>WedderburnSn.sn_block_finrank_sq</code> (<code>dim block = dim(λ)²</code>)</td>
+<td><strong>no <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#sorryAx">sorryAx</a></code> from brick 4</strong> — <code>specht_finrank_eq_numSYT_wired</code> is axiom-clean (<code>[propext, Classical.choice, Quot.sound]</code>, verified 2026-08-08); the earlier &quot;sorry-path = spanning/straightening&quot; attribution here was wrong. Residual <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#sorryAx">sorryAx</a></code> on this row is <code>snBlocks</code> block-size only</td>
+</tr>
+<tr>
+<td><code>decomp</code></td>
+<td>brick 5 <code>centralC2_acts_by_contentSqSum</code> + <code>centralC2_eq_sum_jucysMurphy_sq</code> (<code>C₂</code> acts by <code>ω_λ</code> on <code>Sᵘ</code>)</td>
+<td><code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#sorryAx">sorryAx</a></code>-via-<code>JucysMurphy.centralC2_acts_by_contentSqSum</code>; the rfl bridge <code>centralC2_eq_sum_jucysMurphy_sq</code> is consumed sorry-free</td>
+</tr>
+<tr>
+<td><code>complete</code></td>
+<td><code>WedderburnSn.sn_wedderburnArtin_algClosed</code> <code>Σ proj = <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#id">id</a></code> + brick 3 <code>card_irreducibles_eq_card_partitions</code></td>
+<td><code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#sorryAx">sorryAx</a></code>-via-<code>snBlocks</code> → <code>snBridge</code> (Ref <code>SnWedderburnPartitionBridge.sn_rational_specht_split</code>)</td>
+</tr>
+</tbody>
+</table><p>The genuinely hard, irreducibly-OV content (which Mathlib does not provide at the pinned <code>f897ebcf</code>)
+is exactly the explicit isotypic-projection family <strong>re-indexed by partitions</strong> — i.e. the rational,
+OV-labelled Wedderburn split of <code>R[S_n]</code> over a char-0 field, matching the blocks against
+<code>SpechtClassification.PartitionIndex n</code> with each block's <code>R</code>-dimension the squared SYT count.  That
+residual is <strong>de-abstracted in <code>SnWedderburnPartitionBridge</code></strong>: the passage from a <code>∏ <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/LinearAlgebra/Matrix/Defs.html#Matrix">Matrix</a></code> algebra
+split to the projection bundle (<code>snBlocks</code>-shaped <code>snBridge</code>) is sorry-free linear algebra there, and
+the irreducible gap is isolated in that file's <strong>single</strong> named core
+<code>SnWedderburnPartitionBridge.sn_rational_specht_split</code> (the <code>ℚ</code>-rationality + partition labelling).
+So <code>snBlocks</code> here carries no <code>sorry</code> of its own.  Two further fields then <em>consume their named bricks
+load-bearingly</em> on top of <code>snBlocks</code>:
+<code>rank</code> rewrites with the brick-4 <strong>wired</strong> finrank
+<code>SpechtFinrankWired.specht_finrank_eq_numSYT_wired</code>, and <code>decomp</code> aligns the central element with
+the rfl-proved <code>JucysMurphy.centralC2_eq_sum_jucysMurphy_sq</code> and cites the eigenvalue punchline
+<code>JucysMurphy.centralC2_acts_by_contentSqSum</code>.</p><h3 class="markdown-heading" id="rank-re-route-brick-4-finrank-→-proved-independence"><code>rank</code> re-route (brick-4 finrank → proved independence) <a class="hover-link" href="#rank-re-route-brick-4-finrank-→-proved-independence">#</a></h3><p>The <code>rank</code> field formerly rewrote with the <strong>opaque brick-2 stub</strong>
+<code>Specht.specht_finrank_eq_numSYT</code> (a bare <code>sorry : finrank Sᵘ = numSYT μ</code>).  It now rewrites with
+<code>SpechtFinrankWired.specht_finrank_eq_numSYT_wired</code>, which rebuilds the same <code>dim Sᵘ = #SYT</code> identity
+from the standard polytabloid basis but <strong>sources linear independence from the proved triangular
+core</strong> <code>SpechtTriangularCore.standardPolytabloid_triangular'</code> (sorry-free — its dominance core
+<code>SpechtDominanceCore.dominance_relation_exists</code> is discharged on the pinned oleans) instead of the
+independence stub.  Consequently the <code>rank</code> sorry-path no longer contains the independence stub
+<code>SpechtStandardBasis.standardPolytabloid_triangular</code> <strong>nor</strong> the opaque brick-2 finrank stub; its
+<strong>only</strong> remaining <code>sorry</code> is the spanning / straightening stub
+<code>SpechtStandardBasis.standardPolytabloid_straightening</code> (via <code>standardPolytabloid_span</code>).  The basis-
+building + <code>finrank</code> machinery itself is sorry-free (demonstrated: a <code>Basis.mk</code> whose independence and
+spanning are <em>both</em> supplied as hypotheses depends only on <code>[propext, Classical.choice, Quot.sound]</code>),
+so the spanning stub is genuinely the sole residual.</p><p><code><a href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.identityB_general">identityB_general</a> n</code> is the payoff: it feeds <code>(sn_spectralData_exists n).some</code> into
+<code>RegularRepBlockTrace.identityB_conditional</code>, yielding the Identity-(B) trace equation
+<code>Σ_i ω_i · dim(λ_i)² = n!·binom(n,2)</code> for <strong>all <code>n</code></strong> — modulo the tower's stubs.</p><h2 class="markdown-heading" id="Base-ring-7c">Base ring (§7c) <a class="hover-link" href="#Base-ring-7c">#</a></h2><p><code>variable {R : Type} [Field R] [CharZero R]</code>.  This is <em>algebraic</em>: <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a></code> is what the structure and
+the Wedderburn decomposition need; <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a></code> is what the brick-3 classification needs.  No <code>ℝ</code>, no
+<code>Real.*</code>, no ordering on <code>R</code>, no archimedean tactics — the eigenvalues / contents are integers cast
+into the field.</p><p>This module carries honest <code>sorry</code> targets, so — like bricks 1–5 — it is intentionally <strong>not</strong> wired
+into the <code>QOU.BraidKnot</code> umbrella (that would taint the umbrella's sorry-free CI surface).  Verified
+standalone via <code>lean</code>-direct against the pinned v4.24.0 oleans.</p><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li>[vershik-kerov1977] Vershik–Okounkov, &quot;A new approach to the representation theory of the symmetric
+groups II&quot; (JM elements; the GZ algebra; eigenvalues = cell contents).</li>
+<li>[sagan2001] Sagan, <em>The Symmetric Group</em>, §2.3–2.5 (Specht modules, the standard basis, the
+classification of irreducibles).</li>
+<li>[james1984representation] James, <em>The Representation Theory of the Symmetric Groups</em> (Specht
+modules; pairwise non-isomorphism; irreducibility in char 0).</li>
+</ul></div><div class="mod_doc"><h2 class="markdown-heading" id="The-OV-reindexing-residual-+-C₂-decomposition-from-SnWedderburnPartitionBridge">The OV-reindexing residual + <code>C₂</code> decomposition — from <code>SnWedderburnPartitionBridge</code> <a class="hover-link" href="#The-OV-reindexing-residual-+-C₂-decomposition-from-SnWedderburnPartitionBridge">#</a></h2><p>The keystone's <code>SnWedderburnSpectralData</code> needs a partition-indexed isotypic projection family of
+<code>R[S_n]</code> that is simultaneously the <code>snBlocks</code> bundle (projections, ranks <code>(dim Sᵘⁱ)²</code>, completeness)
+<strong>and</strong> block-diagonalises the central Jucys–Murphy element <code>mulLeft C₂</code> with eigenvalues
+<code>contentSqSum λ_i</code>.  These two halves are <strong>inseparable</strong>: <code>mulLeft C₂</code> is block-diagonal only in the
+<em>isotypic</em> frame, which is strictly stronger than the size-aligned frame of <code>snBridge</code> (distinct
+partitions can share <code>dim Sᵘ</code>, so a size-aligned split need not be isotypic-aligned; see
+<code>SnWedderburnPartitionBridge</code> §5).  Both are therefore supplied together by the single aligned core
+<code>SnWedderburnPartitionBridge.snBlocks_c2_aligned</code>.</p><p><strong>History / correction.</strong> Earlier revisions split this into a <code>snBlocks</code> (delegating to the
+size-aligned <code>snBridge</code>) plus a separate <code>c2_eigen_on_blocks</code> that took the projection family as a
+<em>free</em> argument.  That free-<code>proj</code> <code>decomp</code> statement is <strong>false</strong>, machine-proved as
+<code>SnWedderburnPartitionBridge.freeProjClaim_false</code> (instantiate <code>proj ≡ 0</code> ⇒ <code>mulLeft C₂ = 0</code> ⇒
+<code>C₂ = 0</code>, contradicting <code>C₂(1) = binom(n,2) ≠ 0</code>) — because <code>mulLeft C₂</code> is block-diagonal only for the
+<em>specific isotypic</em> projections, not an arbitrary <code>snBlocks</code>/<code>snBridge</code> family.  The over-general
+<code>c2_eigen_on_blocks</code> is removed in favour of the aligned core.</p></div><div class="mod_doc"><h2 class="markdown-heading" id="The-capstone-construction">The capstone construction <a class="hover-link" href="#The-capstone-construction">#</a></h2></div><div class="decl" id="QOU.BraidKnot.OVTopAssembly.snSpectralData"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean#L133-L178">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.snSpectralData"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span>.<span class="name">snSpectralData</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/BraidKnot/SnWedderburnPartitionBridge.html#QOU.BraidKnot.SnWedderburnPartitionBridge.SnIsotypicSpechtSplit">SnWedderburnPartitionBridge.SnIsotypicSpechtSplit</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././QOU/BraidKnot/RegularRepBlockTrace.html#QOU.BraidKnot.RegularRepBlockTrace.SnWedderburnSpectralData">RegularRepBlockTrace.SnWedderburnSpectralData</a> <span class="fn">R</span> <span class="fn">n</span></span></div></div><p><strong>TOP of the OV tower — the Wedderburn / Jucys–Murphy block spectral decomposition exists.</strong></p><p>We construct the keystone's <code>SnWedderburnSpectralData R n</code> by wiring each field to its brick:</p><ul>
+<li><code>Idx := SpechtClassification.PartitionIndex n</code> (brick 3) — sorry-free, with its <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a></code>.</li>
+<li><code>d i := numSYT i.diagram</code> (bricks 1/2, <code>dim Sᵘ = #SYT</code>) — sorry-free <em>definition</em>.</li>
+<li><code>ω i := ((contentSqSum i.diagram : ℤ) : R)</code> (brick 5, the JM content-square eigenvalue) —
+sorry-free <em>definition</em>.</li>
+<li><code>p</code> / <code>proj</code> / <code>isProj</code> / <code>complete</code> / <code>decomp</code> are all drawn from the single aligned core
+<code>SnWedderburnPartitionBridge.snBlocks_c2_aligned</code> (the isotypic projection family <strong>and</strong> the <code>C₂</code>
+block-decomposition, produced together; Ref <code>sn_rational_specht_split</code> strengthened to isotypic
+alignment + <code>JucysMurphy.centralC2_acts_by_contentSqSum</code>).</li>
+<li><code>rank i</code> additionally consumes the brick-4 <strong>wired</strong> finrank
+<code>SpechtFinrankWired.specht_finrank_eq_numSYT_wired</code> load-bearingly (a <code>rw</code> turning the aligned core's
+block-size <code>(dim Sᵘⁱ)²</code> into the field's <code>(numSYT λ_i)²</code>).  This wired finrank sources independence
+from the <strong>proved</strong> core <code>SpechtTriangularCore.standardPolytabloid_triangular'</code>, so the <code>rank</code>
+sorry-path is the <strong>spanning / straightening stub only</strong> — not the independence stub and not the
+opaque brick-2 finrank stub <code>Specht.specht_finrank_eq_numSYT</code>.</li>
+</ul><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-QOU.BraidKnot.OVTopAssembly.snSpectralData" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.BraidKnot.OVTopAssembly.sn_spectralData_exists"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean#L180-L186">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.sn_spectralData_exists"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span>.<span class="name">sn_spectralData_exists</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/BraidKnot/SnWedderburnPartitionBridge.html#QOU.BraidKnot.SnWedderburnPartitionBridge.SnIsotypicSpechtSplit">SnWedderburnPartitionBridge.SnIsotypicSpechtSplit</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nonempty">Nonempty</a> <span class="fn">(<a href="../.././QOU/BraidKnot/RegularRepBlockTrace.html#QOU.BraidKnot.RegularRepBlockTrace.SnWedderburnSpectralData">RegularRepBlockTrace.SnWedderburnSpectralData</a> <span class="fn">R</span> <span class="fn">n</span>)</span></span></div></div><p><strong>The Wedderburn / JM block spectral decomposition of <code>R[S_n]</code> is inhabited</strong> — the capstone
+existence statement that discharges the side-2 hypothesis of Identity (B).  Constructed by
+<code><a href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.snSpectralData">snSpectralData</a></code>, whose <code>Idx</code> / <code>d</code> / <code>ω</code> fields are sorry-free and whose projection data is wired
+to the bricks (see the per-field map in <code><a href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.snSpectralData">snSpectralData</a></code>).</p></div></div><div class="mod_doc"><h2 class="markdown-heading" id="Identity-B-general-n-the-payoff">Identity (B), general <code>n</code> — the payoff <a class="hover-link" href="#Identity-B-general-n-the-payoff">#</a></h2></div><div class="decl" id="QOU.BraidKnot.OVTopAssembly.identityB_general"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean#L190-L213">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.identityB_general"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span>.<span class="name">identityB_general</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/BraidKnot/SnWedderburnPartitionBridge.html#QOU.BraidKnot.SnWedderburnPartitionBridge.SnIsotypicSpechtSplit">SnWedderburnPartitionBridge.SnIsotypicSpechtSplit</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn">∑ <span class="fn">i</span> : <span class="fn"><span class="fn"><span class="fn">⋯</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Logic/Nonempty.html#Nonempty.some">some</a></span>.<a href="../.././QOU/BraidKnot/RegularRepBlockTrace.html#QOU.BraidKnot.RegularRepBlockTrace.SnWedderburnSpectralData.Idx">Idx</a></span>, <span class="fn"><span class="fn"><span class="fn"><span class="fn">⋯</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Logic/Nonempty.html#Nonempty.some">some</a></span>.<a href="../.././QOU/BraidKnot/RegularRepBlockTrace.html#QOU.BraidKnot.RegularRepBlockTrace.SnWedderburnSpectralData.ω">ω</a></span> <span class="fn">i</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">↑<span class="fn">(<span class="fn"><span class="fn"><span class="fn">⋯</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Logic/Nonempty.html#Nonempty.some">some</a></span>.<a href="../.././QOU/BraidKnot/RegularRepBlockTrace.html#QOU.BraidKnot.RegularRepBlockTrace.SnWedderburnSpectralData.d">d</a></span> <span class="fn">i</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">↑<span class="fn"><span class="fn">n</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Factorial/Basic.html#Nat.factorial">factorial</a></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">↑<span class="fn">(<span class="fn"><span class="fn">n</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Basic.html#Nat.choose">choose</a></span> <span class="fn">2</span>)</span></span></div></div><p><strong>Identity (B), general <code>n</code> (modulo the tower's stubs).</strong>  Feeding the assembled spectral datum
+<code>(sn_spectralData_exists n).some</code> into the keystone's §3b-cond conditional theorem
+<code>RegularRepBlockTrace.identityB_conditional</code> yields the Identity-(B) trace equation</p><p><code>Σ_i ω_i · dim(λ_i)² = n! · binom(n,2)</code></p><p>for <strong>all <code>n</code></strong> — where <code>ω_i</code> is the Jucys–Murphy content-square eigenvalue and <code>dim(λ_i)</code> the SYT
+dimension of block <code>i</code>.  This is the unconditional general-<code>n</code> Identity (B).</p><p><strong>Corrected 2026-08-23.</strong> The sentence that stood here said &quot;the only residual inputs are the
+bricks' own honest <code>sorry</code>s (the isotypic-projection identification, the OV eigenvalue theorem, the
+standard-basis dimension theorem's spanning core)&quot;. Measured, there are none left:
+<code>#print axioms</code> on <code><a href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.identityB_general">identityB_general</a></code>, on <code><a href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial">sum_numSYT_sq_eq_factorial</a></code> and on <code><a href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.snSpectralData">snSpectralData</a></code>
+reports <code>[propext, Classical.choice, Quot.sound]</code>. The class hypothesis <code>SnIsotypicSpechtSplit</code> is
+also no longer an open premise — it is inhabited by <code>SnIsotypicSpechtSplitInstance</code>.</p><p>(The statement is stated exactly as the keystone's <code>identityB_conditional</code> concludes, against the
+assembled <code>W := (sn_spectralData_exists n).some</code>.)</p></div></div><div class="decl" id="QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean#L215-L234">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">OVTopAssembly</span>.<span class="name">sum_numSYT_sq_eq_factorial</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../.././QOU/BraidKnot/SnWedderburnPartitionBridge.html#QOU.BraidKnot.SnWedderburnPartitionBridge.SnIsotypicSpechtSplit">SnWedderburnPartitionBridge.SnIsotypicSpechtSplit</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/Rat/Basic.html#Rat">ℚ</a></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn">∑ <span class="fn">i</span> : <span class="fn"><a href="../.././QOU/BraidKnot/SpechtClassification.html#QOU.BraidKnot.SpechtClassification.PartitionIndex">SpechtClassification.PartitionIndex</a> <span class="fn">n</span></span>, <span class="fn"><a href="../.././QOU/BraidKnot/StandardYoungTableau.html#QOU.BraidKnot.numSYT">numSYT</a> <span class="fn"><span class="fn">i</span>.<a href="../.././QOU/BraidKnot/SpechtClassification.html#QOU.BraidKnot.SpechtClassification.PartitionIndex.diagram">diagram</a></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">n</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Factorial/Basic.html#Nat.factorial">factorial</a></span></div></div><p><strong>RSK sum-of-squares in SYT-count form — unconditional (modulo the assembled OV bricks).</strong>
+<code>∑_{λ ⊢ n} (#SYT λ)² = n!</code>, over the partition index <code>PartitionIndex n</code> with <code>#SYT = numSYT</code>.</p><p>Specialises the conditional <code>RegularRepBlockTrace.sumSq_dim_eq</code> to the assembled datum
+<code><a href="../.././QOU/BraidKnot/OVTopAssembly.html#QOU.BraidKnot.OVTopAssembly.snSpectralData">snSpectralData</a> (R := ℚ) n</code> — whose <code>d = numSYT ∘ diagram</code> — over the characteristic-zero field <code>ℚ</code>,
+then transports the resulting <code>ℚ</code>-identity back to <code>ℕ</code> (<code>exact_mod_cast</code>). This is the <strong>dimension
+side</strong> the <code>Δ_λ</code>-gate / Identity-I note flagged as needing HLF/RSK: it now holds outright, the only
+residual inputs being the assembled tower's own cited bricks (no new axiom). It is the SYT-count half
+of the Burnside identity <code>Σ_λ (f^λ)² = n!</code> (<code>DeltaLambdaSignRule.burnside</code>); wiring it there
+additionally needs <code>dimIrrep = numSYT</code> (the hook-length formula <code>numSYT_mul_hookProduct</code> + the
+custom-<code>Partition</code> ↔ <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Young/YoungDiagram.html#YoungDiagram">YoungDiagram</a></code> hookProduct bridge) and the <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#List">List</a> (Partition n)</code> ↔
+<code>PartitionIndex n</code> reindexing.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

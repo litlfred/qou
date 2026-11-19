@@ -1,0 +1,275 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href=".././style.css"></link><link rel="icon" href=".././favicon.svg"></link><link rel="mask-icon" href=".././favicon.svg" color="#000000"></link><link rel="prefetch" href=".././/declarations/declaration-data.bmp" as="image"></link><title>QOU.GroundRingAnnotations</title><script defer="true" src=".././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT=".././";</script><script>const MODULE_NAME="QOU.GroundRingAnnotations";</script><script type="module" src=".././jump-src.js"></script><script type="module" src=".././search.js"></script><script type="module" src=".././expand-nav.js"></script><script type="module" src=".././how-about.js"></script><script type="module" src=".././instances.js"></script><script type="module" src=".././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">GroundRingAnnotations</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/GroundRingAnnotations.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/Ring.html">Mathlib.Tactic.Ring</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.GroundRingAnnotations" class="imported-by-list"></ul></details></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Ground-Ring-Annotations">Ground Ring Annotations <a class="hover-link" href="#Ground-Ring-Annotations">#</a></h1><p>Each Lean module in the QOU formalization works over a specific ring.
+The <strong>formal proof chain</strong> (the results that constitute the paper's
+theorems) uses only <code>ℤ[q, q⁻¹]</code>.  Modules over <code>ℝ</code> or <code>ℂ</code> provide
+the <strong>archimedean realisation</strong> — they specialise the formal results
+to numerical computations but are NOT part of the formal chain.</p><h2 class="markdown-heading" id="Annotation-Table">Annotation Table <a class="hover-link" href="#Annotation-Table">#</a></h2><table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Ground ring</th>
+<th align="center">Formal chain?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Descartes/</strong></td>
+<td><code>ℤ[q, q⁻¹]</code></td>
+<td align="center">✓</td>
+<td>Transfer matrices, β-decay, spectral decomposition</td>
+</tr>
+<tr>
+<td><strong>GrobnerShirshov/</strong></td>
+<td><code>ℤ[q, q⁻¹]</code></td>
+<td align="center">✓</td>
+<td>Hecke algebra, admissible systems, PBW bases</td>
+</tr>
+<tr>
+<td><strong>CategoricalFoundations</strong></td>
+<td>generic <code>k</code></td>
+<td align="center">✓</td>
+<td>Categorical axioms (ring-independent)</td>
+</tr>
+<tr>
+<td><strong>Structures</strong></td>
+<td>generic <code>k</code></td>
+<td align="center">✓</td>
+<td>Involutive, Hodge, spin structures</td>
+</tr>
+<tr>
+<td><strong>Instanton</strong></td>
+<td>generic <code>k</code></td>
+<td align="center">✓</td>
+<td>q-deformed exterior derivative</td>
+</tr>
+<tr>
+<td><strong>GaugeTheory</strong></td>
+<td>generic <code>k</code></td>
+<td align="center">✓</td>
+<td>Categorical connection, action</td>
+</tr>
+<tr>
+<td><strong>VolumeForm</strong></td>
+<td>generic <code>k</code></td>
+<td align="center">✓</td>
+<td>Volume from rigidity</td>
+</tr>
+<tr>
+<td><strong>PathIntegrals</strong></td>
+<td>generic <code>k</code></td>
+<td align="center">✓</td>
+<td>Braid group, quantum SU(2)</td>
+</tr>
+<tr>
+<td><strong>Torsion/</strong></td>
+<td>generic <code>k</code> + <code>ℝ</code> realisation modules</td>
+<td align="center">partial</td>
+<td>Jet prolongation, brane tower, descent (generic <code>k</code>). Post-wall, <strong>not</strong> formal chain: <code>Torsion/ArchimedeanMassIdentity</code> (substrate field + integrand order; its generic core is <code>Torsion/MassIdentity</code> over <code>[CommRing R]</code>), <code>Torsion/TopologicalMass</code> (consumes it; <code>ℝ</code> throughout), <code>HeckeMassElement.mass</code> (<code>[NormedCommRing R] → ℝ</code>). <code>ℝ</code>/<code>Real.</code> also occurs in <code>MassGap</code>, <code>neutron_proton_splitting</code>, <code>quantum_dilogarithm</code>, <code>BraneTower</code>, <code>weak_equiv_invariance</code>, <code>mass_decomposition_categorical</code> — not yet triaged (measured 2026-10-10, bean <code>qou-puwe</code>)</td>
+</tr>
+<tr>
+<td><strong>KnotTheory</strong></td>
+<td><code>ℤ</code></td>
+<td align="center">✓</td>
+<td>Crossing sign, braid word</td>
+</tr>
+<tr>
+<td><strong>KnotRegistry</strong></td>
+<td><code>ℤ</code></td>
+<td align="center">✓</td>
+<td>Knot data (integer invariants)</td>
+</tr>
+<tr>
+<td><strong>BringsSurface</strong></td>
+<td><code>ℂ</code></td>
+<td align="center">—</td>
+<td>Archimedean realisation</td>
+</tr>
+<tr>
+<td><strong>CRRealisation</strong></td>
+<td><code>ℂ</code></td>
+<td align="center">—</td>
+<td>ℂ quantum observable universe</td>
+</tr>
+<tr>
+<td><strong>Calculations</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>Numerical substrate derivation</td>
+</tr>
+<tr>
+<td><strong>MassDerivation</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>Topological mass (numerical)</td>
+</tr>
+<tr>
+<td><strong>CODATAChain</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>End-to-end CODATA comparison</td>
+</tr>
+<tr>
+<td><strong>ArchimedeanMassFormula</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>Volume → mass (numerical)</td>
+</tr>
+<tr>
+<td><strong>HadronicMass</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>Terminal resolution (numerical)</td>
+</tr>
+<tr>
+<td><strong>MathConstants</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>Derived physical constants</td>
+</tr>
+<tr>
+<td><strong>Elaboration</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>d_q² computation (numerical)</td>
+</tr>
+<tr>
+<td><strong>ArchimedeanSubstrateField</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>q(p) field (numerical)</td>
+</tr>
+<tr>
+<td><strong>FormalGroups</strong></td>
+<td>generic <code>k</code></td>
+<td align="center">✓</td>
+<td>Skewed-Poisson, Witt vectors</td>
+</tr>
+<tr>
+<td><strong>RepresentationTheory</strong></td>
+<td>generic <code>k</code></td>
+<td align="center">✓</td>
+<td>Categorical hadrons</td>
+</tr>
+<tr>
+<td><strong>PhotonThreading</strong></td>
+<td><code>ℤ[q, q⁻¹]</code></td>
+<td align="center">✓</td>
+<td>Hecke cost = mass</td>
+</tr>
+<tr>
+<td><strong>MobiusEnergy</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>Energy functional (numerical)</td>
+</tr>
+<tr>
+<td><strong>InformationTheory</strong></td>
+<td><code>ℝ</code></td>
+<td align="center">—</td>
+<td>Planck length, bandwidth</td>
+</tr>
+<tr>
+<td><strong>GaugeFieldFluidDynamics</strong></td>
+<td>generic <code>R</code> + <code>ℝ</code> shim</td>
+<td align="center">partial</td>
+<td>q-arithmetic (<code>qInteger</code>, <code>qFactorial</code>, <code>qBinomial</code>, <code>qHookProduct</code>) generic over <code>[Field R]</code>; the ordering-dependent declarations (<code>pow_gt_inv_pow</code>, <code>qInteger_pos</code>, <code>qInteger_sq_pos</code>, <code>qInteger_ne_zero</code>, <code>markovParameter</code>, <code>markovParameter_pos</code>) stay at <code>ℝ</code> as the archimedean shim</td>
+</tr>
+<tr>
+<td><strong>PAdicQuantumGroups</strong></td>
+<td><code>ℚ_p</code>, <code>𝔽_p</code></td>
+<td align="center">✓</td>
+<td>p-adic realisation</td>
+</tr>
+</tbody>
+</table><h2 class="markdown-heading" id="The-formal-chain">The formal chain <a class="hover-link" href="#The-formal-chain">#</a></h2><p>The paper's formal results form a chain over <code>ℤ[q, q⁻¹]</code>:</p><pre><code>ℤ[q, q⁻¹] (GroundRing)
+  → Hecke algebra H_A(q) (GrobnerShirshov)
+  → Torus knots τ(r,s) (TorusKnot)
+  → Transfer matrices T(q) (TransferMatrix)
+  → Skein polynomial P(q) (SkeinPolynomial)
+  → β-decay operator T_{β-decay}(q) (BetaDecay)
+  → Spectral decomposition Q_q (SpectralDecomp)
+</code></pre><p>Results over <code>ℝ</code> (archimedean realisation) are obtained by
+specialising <code>q ↦ q₀ ≈ 1.1098</code> and are confined to Chapter 7.</p><h2 class="markdown-heading" id="Bridge-specialisation-map">Bridge: specialisation map <a class="hover-link" href="#Bridge-specialisation-map">#</a></h2><p>The specialisation <code>ι : ℤ[q, q⁻¹] → ℝ</code> sends <code>q ↦ q₀</code> where
+<code>q₀ = 1 / (1 - √(Vol(4₁) / (m_μ/m_e)))</code>.  Every formal result
+over <code>ℤ[q, q⁻¹]</code> descends to a numerical result via <code>ι</code>.</p><p><strong>Note to reader</strong>: Lean proofs in the formal chain work exclusively
+over <code>ℤ[q, q⁻¹]</code>.  Numerical evaluations (Chapter 7) use the
+archimedean specialisation and are NOT part of the formal chain.</p><h2 class="markdown-heading" id="Co-located-stub-annotations">Co-located stub annotations <a class="hover-link" href="#Co-located-stub-annotations">#</a></h2><p>Co-located <code>.lean</code> stubs live alongside <code>.ts</code>/<code>.md</code> content blocks in
+chapter directories (NOT under <code>lean/QOU/</code>).  They are documentation
+stubs — <strong>not compiled by <code>lake build</code></strong> — that mirror the paper's
+mathematical content in Lean syntax.</p><p>Each stub carries a ground-ring annotation in its module docstring.
+Stubs in the formal chain use <code>R_q = ℤ[q, q⁻¹]</code>; stubs in the
+archimedean realisation use <code>ℝ</code>.</p><h3 class="markdown-heading" id="Formal-chain-stubs-R-q">Formal chain stubs (R_q) <a class="hover-link" href="#Formal-chain-stubs-R-q">#</a></h3><p>Stubs for definitions and theorems that belong to the formal proof
+chain declare a local <code>R_q := LaurentPolynomial ℤ</code> and work over
+the Laurent polynomial ring.  The parameter <code>q</code> is the canonical
+indeterminate of <code>R_q</code>.  Ordering constraints (<code>q &gt; 1</code>, <code>0 &lt; q</code>)
+are commented out — they are archimedean and not meaningful over <code>R_q</code>.</p><p>Directories: <code>quantum-observable-universes/</code>, <code>quantum-universes/</code>,
+<code>models-of-qous/</code>, <code>lifting-and-descent/</code>, <code>braids-and-knots/</code>,
+<code>archimedean-universe/</code> (algebraic stubs), <code>algebraic-substrate/</code>,
+<code>information-theory/</code> (bounds).</p><h3 class="markdown-heading" id="Archimedean-stubs-ℝ">Archimedean stubs (ℝ) <a class="hover-link" href="#Archimedean-stubs-ℝ">#</a></h3><p>Stubs that evaluate formal results at <code>q₀ ≈ 1.1098</code> for comparison
+with experimental data.  These use <code>ℝ</code> and are NOT part of the
+formal proof chain.</p><p>Directories: <code>observations/</code>, <code>glossary/</code>, <code>archimedean-universe/</code>
+(mass predictions), some <code>information-theory/</code> files.</p><h3 class="markdown-heading" id="Geometric-analytic-stubs-ℝ">Geometric/analytic stubs (ℝ) <a class="hover-link" href="#Geometric-analytic-stubs-ℝ">#</a></h3><p>Stubs using ℝ-specific analysis functions (trig, norms, real powers)
+that cannot be expressed over <code>R_q</code>.</p><p>Includes: <code>exceptional-divisor</code>, <code>descartes-elliptic-curve</code>,
+<code>mass-identity</code>, some <code>models-of-qous/</code> files.</p><h3 class="markdown-heading" id="Co-located-stub-summary-table">Co-located stub summary table <a class="hover-link" href="#Co-located-stub-summary-table">#</a></h3><table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Ground ring</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>quantum-observable-universes/</code></td>
+<td><code>R_q</code></td>
+<td>Categorical definitions (Ch 1–2)</td>
+</tr>
+<tr>
+<td><code>quantum-universes/</code></td>
+<td><code>R_q</code></td>
+<td>Foundational structures (Ch 1)</td>
+</tr>
+<tr>
+<td><code>models-of-qous/</code></td>
+<td><code>R_q</code> or <code>ℝ</code></td>
+<td>Categorical models (Ch 3)</td>
+</tr>
+<tr>
+<td><code>braids-and-knots/</code></td>
+<td><code>R_q</code> or <code>ℝ</code></td>
+<td>Braid/knot algebra (Ch 4)</td>
+</tr>
+<tr>
+<td><code>archimedean-universe/</code></td>
+<td><code>R_q</code> or <code>ℝ</code></td>
+<td>Particles (R_q), mass predictions (ℝ)</td>
+</tr>
+<tr>
+<td><code>lifting-and-descent/</code></td>
+<td><code>R_q</code> or <code>ℝ</code></td>
+<td>Categorical lifting (Ch 6)</td>
+</tr>
+<tr>
+<td><code>algebraic-substrate/</code></td>
+<td><code>R_q</code> or <code>ℝ</code></td>
+<td>q-analytic number theory</td>
+</tr>
+<tr>
+<td><code>observations/</code></td>
+<td><code>ℝ</code></td>
+<td>Archimedean realisation (Ch 7)</td>
+</tr>
+<tr>
+<td><code>information-theory/</code></td>
+<td><code>R_q</code> or <code>ℝ</code></td>
+<td>Info-theoretic bounds</td>
+</tr>
+<tr>
+<td><code>glossary/</code></td>
+<td><code>ℝ</code></td>
+<td>Cross-references</td>
+</tr>
+</tbody>
+</table></div></main>
+<nav class="nav"><iframe src=".././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

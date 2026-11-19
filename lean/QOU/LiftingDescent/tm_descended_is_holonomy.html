@@ -1,0 +1,104 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.LiftingDescent.tm_descended_is_holonomy</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.LiftingDescent.tm_descended_is_holonomy";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">LiftingDescent</span>.<span class="name">tm_descended_is_holonomy</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic.html">Mathlib.Tactic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.LiftingDescent.tm_descended_is_holonomy" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.LiftingDescent.descended_exceptional_disc_trivial"><span class="name">QOU</span>.<span class="name">LiftingDescent</span>.<span class="name">descended_exceptional_disc_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.LiftingDescent.tm_descended_is_holonomy"><span class="name">QOU</span>.<span class="name">LiftingDescent</span>.<span class="name">tm_descended_is_holonomy</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-LiftingDescent-tm-descended-is-holonomy">QOU.LiftingDescent.tm_descended_is_holonomy <a class="hover-link" href="#QOU-LiftingDescent-tm-descended-is-holonomy">#</a></h1><p><strong>Lemma</strong> (<a href="../.././../../../quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.md"><code>lem:topological-mass-holonomy</code></a>).</p><p><em>Under the topological blow-up decomposition
+<code>Σ = Σ₀ ∪ ⋃_{i=1}^N D_i</code>, where <code>Σ₀</code> is a disc spanning the unknot core
+<code>ϱ₀</code> and each <code>D_i</code> is the exceptional disc at the <code>i</code>-th blow-up, the
+descended term equals the unknot-core holonomy:</em></p><pre><code>MI∫_Σ τ̂ₙ(α) = Hol_{∇A}(ϱ₀; 𝔊).
+</code></pre><h2 class="markdown-heading" id="Structure-hypotheses-vs-derivation">Structure (hypotheses vs. derivation) <a class="hover-link" href="#Structure-hypotheses-vs-derivation">#</a></h2><p>Everything is a <strong>parameter</strong>; nothing is a named constant.  The
+multiplicative integral takes values in an arbitrary (not necessarily
+commutative) monoid <code>G</code> — the structure group in which holonomies live —
+so the blow-up product is an <em>ordered</em> <code><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/BigOperators/Group/List/Defs.html#List.prod">List.prod</a></code>.  Surfaces and
+integrands are arbitrary types, and the multiplicative integral is an
+arbitrary map <code>MI : Form → Surf → G</code>.</p><p>The descended term is modelled as what the proof block says it is: a
+level-<code>n</code> section <code>β</code> pulled back along the blow-down,
+<code>τ̂ₙ(α) = pullback β</code> (the ascent embedding <code>ℓₙ</code>).  The hypotheses are
+the standard properties of the multiplicative integral the proof uses,
+each strictly more primitive than the conclusion:</p><ol>
+<li><code>hfact</code> — multiplicativity over the blow-up decomposition (Yekutieli):
+<code>MI∫_Σ = MI∫_{Σ₀} · Π_i MI∫_{D_i}</code> (ordered product).</li>
+<li><code>hnat</code> — naturality under the blow-down on the exceptional discs:
+<code>MI∫_{D_i} (pullback β) = MI∫_{blowdown D_i} β</code>.</li>
+<li><code>hcollapse</code> — each exceptional disc collapses to a point under the
+blow-down: <code>blowdown D_i = pt</code>.</li>
+<li><code>hpt</code> — the multiplicative integral over a degenerate (point) surface
+is the identity.</li>
+<li><code>hstokes</code> — non-abelian Stokes on the spanning disc:
+<code>MI∫_{Σ₀} (pullback β) = Hol_{∇A}(ϱ₀; 𝔊)</code>.</li>
+</ol><p><strong>Derived</strong>: (2)+(3)+(4) give that every exceptional-disc contribution is
+<code>1</code> (<code><a href="../.././QOU/LiftingDescent/tm_descended_is_holonomy.html#QOU.LiftingDescent.descended_exceptional_disc_trivial">descended_exceptional_disc_trivial</a></code>, formerly an assumed class
+field); (1) then collapses the ordered product and (5) closes.</p><p>An earlier revision modelled the five quantities as <code>opaque</code> reals and
+assumed disc triviality directly as a <code>Prop</code>-class field; one earlier
+still <em>defined</em> <code>descendedMIdisc := 1</code>, collapsing the lemma to <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#rfl">rfl</a></code>.
+Bean <code>tmvac</code>.</p></div><div class="decl" id="QOU.LiftingDescent.descended_exceptional_disc_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean#L55-L67">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/LiftingDescent/tm_descended_is_holonomy.html#QOU.LiftingDescent.descended_exceptional_disc_trivial"><span class="name">QOU</span>.<span class="name">LiftingDescent</span>.<span class="name">descended_exceptional_disc_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Surf</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Form</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Monoid">Monoid</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">MI</span> : <span class="fn"><span class="fn">Form</span> → <span class="fn"><span class="fn">Surf</span> → <span class="fn">G</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">pullback</span> : <span class="fn"><span class="fn">Form</span> → <span class="fn">Form</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">blowdown</span> : <span class="fn"><span class="fn">Surf</span> → <span class="fn">Surf</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">pt</span> : <span class="fn">Surf</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">D</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a> → <span class="fn">Surf</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">β</span> : <span class="fn">Form</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hnat</span> : <span class="fn">∀ (<span class="fn">i</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>), <span class="fn"><span class="fn">MI</span> <span class="fn">(<span class="fn">pullback</span> <span class="fn">β</span>)</span> <span class="fn">(<span class="fn">D</span> <span class="fn">i</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">MI</span> <span class="fn">β</span> <span class="fn">(<span class="fn">blowdown</span> <span class="fn">(<span class="fn">D</span> <span class="fn">i</span>)</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcollapse</span> : <span class="fn">∀ (<span class="fn">i</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>), <span class="fn"><span class="fn">blowdown</span> <span class="fn">(<span class="fn">D</span> <span class="fn">i</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">pt</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hpt</span> : <span class="fn">∀ (<span class="fn">ω</span> : <span class="fn">Form</span>), <span class="fn"><span class="fn">MI</span> <span class="fn">ω</span> <span class="fn">pt</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">i</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">MI</span> <span class="fn">(<span class="fn">pullback</span> <span class="fn">β</span>)</span> <span class="fn">(<span class="fn">D</span> <span class="fn">i</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span></div></div><p><strong>Exceptional discs contribute trivially (derived).</strong>  A pulled-back
+(descended) integrand has trivial multiplicative integral over every
+exceptional disc: naturality moves the integral to the blow-down image,
+which is a point, where the multiplicative integral is the identity.</p></div></div><div class="decl" id="QOU.LiftingDescent.tm_descended_is_holonomy"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean#L69-L90">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/LiftingDescent/tm_descended_is_holonomy.html#QOU.LiftingDescent.tm_descended_is_holonomy"><span class="name">QOU</span>.<span class="name">LiftingDescent</span>.<span class="name">tm_descended_is_holonomy</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">G</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Surf</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Form</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Monoid">Monoid</a> <span class="fn">G</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">MI</span> : <span class="fn"><span class="fn">Form</span> → <span class="fn"><span class="fn">Surf</span> → <span class="fn">G</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">pullback</span> : <span class="fn"><span class="fn">Form</span> → <span class="fn">Form</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">blowdown</span> : <span class="fn"><span class="fn">Surf</span> → <span class="fn">Surf</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">pt </span><span class="fn">Sig </span><span class="fn">Sig0</span> : <span class="fn">Surf</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">D</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a> → <span class="fn">Surf</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">N</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">β</span> : <span class="fn">Form</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hol</span> : <span class="fn">G</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hfact</span> :
+  <span class="fn"><span class="fn">MI</span> <span class="fn">(<span class="fn">pullback</span> <span class="fn">β</span>)</span> <span class="fn">Sig</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">MI</span> <span class="fn">(<span class="fn">pullback</span> <span class="fn">β</span>)</span> <span class="fn">Sig0</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/List/Basic.html#List.map">List.map</a> <span class="fn">(fun (<span class="fn">i</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>) =&gt; <span class="fn"><span class="fn">MI</span> <span class="fn">(<span class="fn">pullback</span> <span class="fn">β</span>)</span> <span class="fn">(<span class="fn">D</span> <span class="fn">i</span>)</span></span>)</span> <span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Init/Data/List/Basic.html#List.range">List.range</a> <span class="fn">N</span>)</span>)</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/BigOperators/Group/List/Defs.html#List.prod">prod</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hnat</span> : <span class="fn">∀ (<span class="fn">i</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>), <span class="fn"><span class="fn">MI</span> <span class="fn">(<span class="fn">pullback</span> <span class="fn">β</span>)</span> <span class="fn">(<span class="fn">D</span> <span class="fn">i</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">MI</span> <span class="fn">β</span> <span class="fn">(<span class="fn">blowdown</span> <span class="fn">(<span class="fn">D</span> <span class="fn">i</span>)</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcollapse</span> : <span class="fn">∀ (<span class="fn">i</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>), <span class="fn"><span class="fn">blowdown</span> <span class="fn">(<span class="fn">D</span> <span class="fn">i</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">pt</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hpt</span> : <span class="fn">∀ (<span class="fn">ω</span> : <span class="fn">Form</span>), <span class="fn"><span class="fn">MI</span> <span class="fn">ω</span> <span class="fn">pt</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hstokes</span> : <span class="fn"><span class="fn">MI</span> <span class="fn">(<span class="fn">pullback</span> <span class="fn">β</span>)</span> <span class="fn">Sig0</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">hol</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">MI</span> <span class="fn">(<span class="fn">pullback</span> <span class="fn">β</span>)</span> <span class="fn">Sig</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">hol</span></div></div><p><strong>Descended term = unknot-core holonomy</strong>
+([<code>lem:topological-mass-holonomy</code>]).</p><p><code>MI∫_Σ τ̂ₙ(α) = Hol_{∇A}(ϱ₀; 𝔊)</code> with <code>τ̂ₙ(α) = pullback β</code>.  <em>Derived</em>
+(not assumed): factorise over the blow-up decomposition, show each
+exceptional-disc factor is trivial from naturality and collapse, collapse
+the ordered product, then apply Stokes on the spanning disc.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

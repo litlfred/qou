@@ -1,0 +1,434 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.MassTheory.CompositionFeasibilityProgram</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.MassTheory.CompositionFeasibilityProgram";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">CompositionFeasibilityProgram</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/Linarith.html">Mathlib.Tactic.Linarith</a></li><li><a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html">QOU.MassTheory.BranchingPushforwardMultiplicativity</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/BigOperators/Group/Finset.html">Mathlib.Algebra.Order.BigOperators.Group.Finset</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.MassTheory.CompositionFeasibilityProgram" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.Reading3"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">FrobeniusPairingData</span>.<span class="name">Reading3</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.trM_nonneg_of_reading3"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">FrobeniusPairingData</span>.<span class="name">trM_nonneg_of_reading3</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram.composite"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">composite</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">letterDeviation</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation_unit"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">letterDeviation_unit</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">Feasible</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram.feasible_unit_iff"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">feasible_unit_iff</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram.trM_composite_nonneg"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">trM_composite_nonneg</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram.weighted_letterDeviation_ge"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">weighted_letterDeviation_ge</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.BlockMeasure.CompositionProgram.feasibleSet"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">feasibleSet</span></a></div></nav><main>
+<div class="decl" id="QOU.MassTheory.BlockMeasure.FrobeniusPairingData.Reading3"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L46-L49">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.Reading3"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">FrobeniusPairingData</span>.<span class="name">Reading3</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">D</span> : <span class="fn"><a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData">FrobeniusPairingData</a> <span class="fn">R</span> <span class="fn">A</span> <span class="fn">Λ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">A</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Reading 3, whole word</strong>: the character of <code>x</code> is non-negative on every block of
+positive weight.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.Reading3">Reading3</a></span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">∀ (<span class="fn">l</span> : <span class="fn">Λ</span>), <span class="fn"><span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.y">y</a></span> <span class="fn">l</span></span> → <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.χ">χ</a></span> <span class="fn">l</span> <span class="fn">x</span></span></span></span></li></ul></details><details id="instances-for-list-QOU.MassTheory.BlockMeasure.FrobeniusPairingData.Reading3" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.FrobeniusPairingData.trM_nonneg_of_reading3"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L51-L58">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.trM_nonneg_of_reading3"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">FrobeniusPairingData</span>.<span class="name">trM_nonneg_of_reading3</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">D</span> : <span class="fn"><a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData">FrobeniusPairingData</a> <span class="fn">R</span> <span class="fn">A</span> <span class="fn">Λ</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hy</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.IsProbability">IsProbability</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">x</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hx</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.Reading3">Reading3</a></span> <span class="fn">x</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.trM">trM</a></span> <span class="fn">x</span></span></div></div><p>Under reading 3 and non-negative weights the Markov trace is non-negative.</p></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram"><div class="structure"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L62-L75">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a> (max (max (max (max (max (max (max u_1 u_2) u_3) u_4) u_5) u_6) u_7) u_8)</div></div><p><strong>The composition feasibility program</strong>: two marginals inside a composite, and a
+finite alphabet of interface letters acting on the composite algebra, with a unit letter.</p><ul class="structure_fields" id="QOU.MassTheory.BlockMeasure.CompositionProgram.mk"><li id="QOU.MassTheory.BlockMeasure.CompositionProgram.B" class="structure_field"><div class="structure_field_info">B : <span class="fn"><a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData">BranchingData</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span></span></div><div class="structure_field_doc"><p>The two marginals inside the composite.</p></div></li><li id="QOU.MassTheory.BlockMeasure.CompositionProgram.act" class="structure_field"><div class="structure_field_info">act : <span class="fn"><span class="fn">L</span> → <span class="fn"><span class="fn">A</span> → <span class="fn">A</span></span></span></div><div class="structure_field_doc"><p>The interface alphabet, acting on the composite algebra.</p></div></li><li id="QOU.MassTheory.BlockMeasure.CompositionProgram.unit" class="structure_field"><div class="structure_field_info">unit : <span class="fn">L</span></div><div class="structure_field_doc"><p>The unit letter.</p></div></li><li id="QOU.MassTheory.BlockMeasure.CompositionProgram.act_unit" class="structure_field"><div class="structure_field_info">act_unit<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">A</span>)</span></span>
+ : <span class="fn"><span class="fn"><span class="fn">self</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.act">act</a></span> <span class="fn"><span class="fn">self</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.unit">unit</a></span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">x</span></div><div class="structure_field_doc"><p>The unit letter acts trivially.</p></div></li></ul><details id="instances-for-list-QOU.MassTheory.BlockMeasure.CompositionProgram" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram.composite"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L85-L86">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.composite"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">composite</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram">CompositionProgram</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ℓ</span> : <span class="fn">L</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A₁</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">A₂</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">A</span></div></div><p>The composite produced by the letter <code>ℓ</code> from the marginals <code>a</code>, <code>b</code>.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.composite">composite</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.act">act</a></span> <span class="fn">ℓ</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.tensor">tensor</a></span> <span class="fn">a</span> <span class="fn">b</span>)</span></span></li></ul></details><details id="instances-for-list-QOU.MassTheory.BlockMeasure.CompositionProgram.composite" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L88-L90">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">letterDeviation</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram">CompositionProgram</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ℓ</span> : <span class="fn">L</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A₁</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">A₂</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">l</span> : <span class="fn">Λ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">R</span></div></div><p>The block-resolved deviation of the letter's composite from the free product.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation">letterDeviation</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span> <span class="fn">l</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.deviation">deviation</a></span> <span class="fn">(<span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.composite">composite</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span>)</span> <span class="fn">a</span> <span class="fn">b</span> <span class="fn">l</span></span></li></ul></details><details id="instances-for-list-QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation_unit"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L92-L96">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation_unit"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">letterDeviation_unit</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram">CompositionProgram</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A₁</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">A₂</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">l</span> : <span class="fn">Λ</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation">letterDeviation</a></span> <span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.unit">unit</a></span> <span class="fn">a</span> <span class="fn">b</span> <span class="fn">l</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p>The unit letter's deviation vanishes on every block.</p></div></div><div class="mod_doc"><h3 class="markdown-heading" id="The-ordered-part-over-a-linearly-ordered-field-matching-IsProbability-upstream">The ordered part — over a linearly ordered field, matching <code>IsProbability</code> upstream <a class="hover-link" href="#The-ordered-part-over-a-linearly-ordered-field-matching-IsProbability-upstream">#</a></h3></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L110-L111">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">Feasible</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram">CompositionProgram</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ℓ</span> : <span class="fn">L</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A₁</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">A₂</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>The feasible set</strong>: reading 3 on the letter's composite.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible">Feasible</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.D">D</a></span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.Reading3">Reading3</a></span> <span class="fn">(<span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.composite">composite</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span>)</span></span></li></ul></details><details id="instances-for-list-QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram.feasible_unit_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L114-L118">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.feasible_unit_iff"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">feasible_unit_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram">CompositionProgram</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A₁</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">A₂</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible">Feasible</a></span> <span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.unit">unit</a></span> <span class="fn">a</span> <span class="fn">b</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Iff">↔</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.D">D</a></span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.Reading3">Reading3</a></span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.tensor">tensor</a></span> <span class="fn">a</span> <span class="fn">b</span>)</span></span></div></div><p>The unit letter is feasible iff the free product itself satisfies reading 3.</p></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram.trM_composite_nonneg"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L120-L123">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.trM_composite_nonneg"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">trM_composite_nonneg</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram">CompositionProgram</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hy</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.D">D</a></span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.IsProbability">IsProbability</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ℓ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a</span> : <span class="fn">A₁</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">b</span> : <span class="fn">A₂</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible">Feasible</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.D">D</a></span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.trM">trM</a></span> <span class="fn">(<span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.composite">composite</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span>)</span></span></div></div><p>A feasible letter's composite has non-negative trace.</p></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram.weighted_letterDeviation_ge"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L125-L134">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.weighted_letterDeviation_ge"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">weighted_letterDeviation_ge</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram">CompositionProgram</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hy</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.D">D</a></span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.IsProbability">IsProbability</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">ℓ</span> : <span class="fn">L</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a</span> : <span class="fn">A₁</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">b</span> : <span class="fn">A₂</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible">Feasible</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Neg.neg">-</a>(<span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.D₁">D₁</a></span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.trM">trM</a></span> <span class="fn">a</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.D₂">D₂</a></span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.trM">trM</a></span> <span class="fn">b</span></span>) <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn">∑ <span class="fn">l</span> : <span class="fn">Λ</span>, <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.B">B</a></span>.<a href="../.././QOU/MassTheory/BranchingPushforwardMultiplicativity.html#QOU.MassTheory.BlockMeasure.BranchingData.D">D</a></span>.<a href="../.././QOU/MassTheory/BlockMeasureFromFrobeniusPairing.html#QOU.MassTheory.BlockMeasure.FrobeniusPairingData.y">y</a></span> <span class="fn">l</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.letterDeviation">letterDeviation</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span> <span class="fn">l</span></span></span></div></div><p><strong>A feasible letter's weighted deviation is bounded below by minus the free trace.</strong>
+<code>−tr_M(a) tr_M(b) ≤ Σ_λ y_λ δ_λ(ℓ)</code>: reading 3 forbids the letter from cancelling the free
+product's trace entirely.</p></div></div><div class="decl" id="QOU.MassTheory.BlockMeasure.CompositionProgram.feasibleSet"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/CompositionFeasibilityProgram.lean#L136-L138">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.feasibleSet"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">BlockMeasure</span>.<span class="name">CompositionProgram</span>.<span class="name">feasibleSet</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₁</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ₂</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Λ</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">Λ</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">L</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Fintype/Defs.html#Fintype">Fintype</a> <span class="fn">L</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram">CompositionProgram</a> <span class="fn">R</span> <span class="fn">A₁</span> <span class="fn">A₂</span> <span class="fn">A</span> <span class="fn">Λ₁</span> <span class="fn">Λ₂</span> <span class="fn">Λ</span> <span class="fn">L</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A₁</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">A₂</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">L</span></span></div></div><p>The feasible letters for a given pair of marginals.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.feasibleSet">feasibleSet</a></span> <span class="fn">a</span> <span class="fn">b</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">{<span class="fn">ℓ</span> : <span class="fn">L</span> | <span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././QOU/MassTheory/CompositionFeasibilityProgram.html#QOU.MassTheory.BlockMeasure.CompositionProgram.Feasible">Feasible</a></span> <span class="fn">ℓ</span> <span class="fn">a</span> <span class="fn">b</span></span>}</span></li></ul></details><details id="instances-for-list-QOU.MassTheory.BlockMeasure.CompositionProgram.feasibleSet" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

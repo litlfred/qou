@@ -1,0 +1,30 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.BraidKnot.CyclotomicTrilogImaginary</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.BraidKnot.CyclotomicTrilogImaginary";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">BraidKnot</span>.<span class="name">CyclotomicTrilogImaginary</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././QOU/Infra/Polylogarithm.html">QOU.Infra.Polylogarithm</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.BraidKnot.CyclotomicTrilogImaginary" class="imported-by-list"></ul></details></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Im-Li-3-ζ-n-closed-form-at-every-root-of-unity">Im Li_3(ζ_n) closed form at every root of unity <a class="hover-link" href="#Im-Li-3-ζ-n-closed-form-at-every-root-of-unity">#</a></h1><p>Compiled formalisation of
+<code>prop:cyclotomic-trilog-imaginary-closed-form</code>.
+Sibling docstub at
+<code><a href="../.././braids-and-knots/cyclotomic-trilog-imaginary-closed-form.html">braids-and-knots/cyclotomic-trilog-imaginary-closed-form.lean</a></code>.</p><p>The closed form <code>Im Li_3(ζ_n) = (n - 1)(n - 2) π³ / (3 n³)</code>
+is the substantive Theorem A content; identification with the
+analytic polylog value lives in
+<code><a href="../.././QOU/Infra/Polylogarithm.html#QOU.Infra.Polylogarithm.TheoremA">QOU.Infra.Polylogarithm.TheoremA</a></code>.</p></div><div class="mod_doc"><h3 class="markdown-heading" id="closed-form-holds-REMOVED-2026-08-21"><code>closed_form_holds</code> — REMOVED 2026-08-21 <a class="hover-link" href="#closed-form-holds-REMOVED-2026-08-21">#</a></h3><pre><code>It read `∀ n, 2 ≤ n → imLi3ZetaPredicted n = imLi3ZetaPredicted n`,
+closed by `rfl` (vacuity ledger, `proof-no-trivial-true` /
+`reflexive-tautology`, verdict genuine).  A name asserting that a
+closed form *holds* is exactly the claim a reflexive equality cannot
+make: a closed-form statement needs the predicted value on one side
+and the closed form on the other.  That makes it worse than a merely
+empty theorem — a reader grepping for whether the `Im Li₃` closed form
+is established would have found a green `theorem` and stopped.
+
+It was **dropped rather than restated** because both halves of the
+real content already exist upstream, and duplicating either here would
+add nothing:
+
+- the verified `n = 4` row is
+  `QOU.Infra.Polylogarithm.beta3_from_jonquiere :
+  imLi3ZetaPredicted 4 = beta3`, proved from the definitions;
+- the **general-`n`** identification with the analytic
+  `Im Li₃(exp(2πi/n))` is conditional content, carried by
+  `TheoremA.agrees_at`, and remains unproved.
+
+Nothing referenced this declaration. 
+</code></pre></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

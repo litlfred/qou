@@ -1,0 +1,135 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.MassTheory.TraceSignFlipRegime</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.MassTheory.TraceSignFlipRegime";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">TraceSignFlipRegime</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/TraceSignFlipRegime.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic.html">Mathlib.Tactic</a></li><li><a href="../.././QOU/Eightfold/HeckeBraidingNonSymmetric.html">QOU.Eightfold.HeckeBraidingNonSymmetric</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.MassTheory.TraceSignFlipRegime" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.TraceSignFlipRegime.inv_eq_sub"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">TraceSignFlipRegime</span>.<span class="name">inv_eq_sub</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.TraceSignFlipRegime.trace_inv_sub_trace"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">TraceSignFlipRegime</span>.<span class="name">trace_inv_sub_trace</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.MassTheory.TraceSignFlipRegime.trace_sign_flip_iff_symmetric"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">TraceSignFlipRegime</span>.<span class="name">trace_sign_flip_iff_symmetric</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-MassTheory-TraceSignFlipRegime-the-trace-tower-is-sign-flip-blind-only-where-the-braiding-is-symmetric">QOU.MassTheory.TraceSignFlipRegime — the trace tower is sign-flip blind only where the braiding is symmetric <a class="hover-link" href="#QOU-MassTheory-TraceSignFlipRegime-the-trace-tower-is-sign-flip-blind-only-where-the-braiding-is-symmetric">#</a></h1><p>Bean <code>qou-bn8e</code>, continuing <code>QOU.MassTheory.InvolutionSelectionRule</code>. That file
+proved the localisation argument's valid core and measured what it rests on: of
+the four sectors <code>rem:isospin-mass-split-em-localisation</code> calls sign-flip
+invariant, only the shell correction has a proof. This file settles the <strong>trace
+tower</strong>, and the answer is not the one the remark needs.</p><h2 class="markdown-heading" id="What-was-already-in-the-corpus-and-what-this-adds">What was already in the corpus, and what this adds <a class="hover-link" href="#What-was-already-in-the-corpus-and-what-this-adds">#</a></h2><p><strong>Found after writing this file, which is the wrong order.</strong>
+<a href="../.././../../../mass-theory/chirality-dual-space-derivation.md"><code>prop:chirality-dual-space-derivation</code></a>
+already records the symmetric-channel case, in the same notation:</p><p><code>τ_sym(σ) − τ_sym(σ⁻¹) = h</code>,  with  <code>h = q − q⁻¹</code>,</p><p>which is <code><a href="../.././QOU/MassTheory/TraceSignFlipRegime.html#QOU.MassTheory.TraceSignFlipRegime.trace_inv_sub_trace">trace_inv_sub_trace</a></code> below specialised to the one-dimensional
+symmetric representation, where <code>σ</code> acts by <code>q</code> and <code>tr 1 = 1</code>. Anyone citing
+this file should cite that one too.</p><p>What is genuinely added here is not the deviation but <strong>when it vanishes</strong>:</p><ol>
+<li>It holds for <strong>any</strong> <code>R</code>-linear functional on <strong>any</strong> algebra whose element
+satisfies the Hecke relation — the corpus statement is about <code>τ_sym</code>
+specifically, over <code>ℝ</code>.</li>
+<li>The <strong>iff</strong>: <code>tr σ⁻¹ = tr σ ↔ q² = 1</code>, rather than the value of the
+difference alone.</li>
+<li>The <strong>tie to the braiding</strong>: by <code>double_braiding_eq_one_iff</code>, that locus is
+exactly <code>σ² = 1</code>. So &quot;the trace is sign-flip blind&quot; and &quot;the braiding is
+symmetric&quot; are the <em>same condition</em>, which is what makes this a statement
+about the framework rather than an arithmetic identity.</li>
+<li>Generic over a field, with the <code>ℝ</code> specialisation kept on the archimedean
+side of the §7c wall.</li>
+</ol><h2 class="markdown-heading" id="The-result">The result <a class="hover-link" href="#The-result">#</a></h2><p>The Hecke relation itself forces the inverse of a generator:
+<code>σ⁻¹ = σ − (q − q⁻¹)</code>. So for any linear functional <code>tr</code>,</p><p><code>tr σ⁻¹ − tr σ = −(q − q⁻¹) · tr 1</code>,</p><p>which vanishes exactly when <code>q² = 1</code>. By
+<code><a href="../.././QOU/Eightfold/HeckeBraidingNonSymmetric.html#QOU.Eightfold.HeckeBraidingNonSymmetric.double_braiding_eq_one_iff">QOU.Eightfold.HeckeBraidingNonSymmetric.double_braiding_eq_one_iff</a></code> that is
+exactly the locus where the braiding is <strong>symmetric</strong>. Hence:</p><blockquote>
+<p><strong>The trace tower is sign-flip invariant precisely on the symmetric-braiding
+locus — and QOU sits off it.</strong></p>
+</blockquote><p>At the substrate <code>q₀ ≈ 1.10998</code> the flip changes the trace by
+<code>(q₀ − q₀⁻¹) · tr 1 ≈ 0.209 · tr 1</code>, which is not a small correction.</p><h2 class="markdown-heading" id="What-this-does-to-the-remark">What this does to the remark <a class="hover-link" href="#What-this-does-to-the-remark">#</a></h2><p><code>rem:isospin-mass-split-em-localisation</code> lists the trace tower among the
+functionals that <em>&quot;respect these structural involutions&quot;</em>. As a claim about the
+mass functional <strong>at the substrate</strong>, that is false, and this file proves it.</p><p>The remark is not simply wrong, though, and the distinction is the whole point.
+Its cited support, <code>prop:crystal-isospin-degeneracy</code>, is a statement about the
+<strong>crystal limit <code>q → 0</code></strong>, where — in that proposition's own words — <em>&quot;the
+crystal limit completely masks generator inversions&quot;</em>. Both facts hold:</p><table>
+<thead>
+<tr>
+<th>regime</th>
+<th>trace tower under generator sign-flip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>crystal limit <code>q → 0</code></td>
+<td><strong>blind</strong> (<code>prop:crystal-isospin-degeneracy</code>, conditional on <code>CrystalEigenlineSignBlind</code>)</td>
+</tr>
+<tr>
+<td>substrate <code>q₀ &gt; 1</code></td>
+<td><strong>not blind</strong> — <code><a href="../.././QOU/MassTheory/TraceSignFlipRegime.html#QOU.MassTheory.TraceSignFlipRegime.trace_sign_flip_iff_symmetric">trace_sign_flip_iff_symmetric</a></code> below</td>
+</tr>
+</tbody>
+</table><p>So the defect is a <strong>regime conflation</strong>: a <code>q → 0</code> invariance is used to license
+a claim about the functional at <code>q₀</code>. That is the <code>da-arity-conflation</code> shape
+one level over from the two-involutions confusion recorded in
+<code>InvolutionSelectionRule</code> — same family, different axis.</p><p><strong>Scope.</strong> Scope-<strong>(a)</strong>, and pointed. This refutes <em>one premise</em> of the
+localisation argument, at <em>one regime</em>. It does <strong>not</strong> refute the conclusion:
+the mirror-isobar split may well be entirely Coulomb-sourced, and nothing here
+bears on the co-Casimir or chirality sectors. What it removes is the right to
+assert the trace tower drops out at the substrate without further argument.</p><p><strong>What it does not do.</strong> It derives no <code>E_EM</code>, and it does not close
+<code>qou-bn8e</code>. A selection rule constrains where a quantity lives; this one now
+constrains it less than the corpus claimed.</p></div><div class="decl" id="QOU.MassTheory.TraceSignFlipRegime.inv_eq_sub"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/TraceSignFlipRegime.lean#L92-L100">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/TraceSignFlipRegime.html#QOU.MassTheory.TraceSignFlipRegime.inv_eq_sub"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">TraceSignFlipRegime</span>.<span class="name">inv_eq_sub</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">R</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">σ </span><span class="fn">τ</span> : <span class="fn">A</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hHecke</span> : <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <span class="fn">R</span> <span class="fn">A</span>)</span> (<span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">1</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hinv</span> : <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">τ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">τ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <span class="fn">R</span> <span class="fn">A</span>)</span> (<span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a>)</span></div></div><p><strong>The Hecke relation forces the inverse.</strong> If <code>σ</code> satisfies the Hecke
+relation and <code>τ</code> is a right inverse, then <code>τ = σ − (q − q⁻¹)</code>. This is the skein
+relation <code>σ − σ⁻¹ = q − q⁻¹</code> (AGENTS.md §7a) read as a definition of <code>σ⁻¹</code>.</p></div></div><div class="decl" id="QOU.MassTheory.TraceSignFlipRegime.trace_inv_sub_trace"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/TraceSignFlipRegime.lean#L102-L111">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/TraceSignFlipRegime.html#QOU.MassTheory.TraceSignFlipRegime.trace_inv_sub_trace"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">TraceSignFlipRegime</span>.<span class="name">trace_inv_sub_trace</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">R</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">σ </span><span class="fn">τ</span> : <span class="fn">A</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">tr</span> : <span class="fn">A</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Module/LinearMap/Defs.html#LinearMap">→ₗ[</a><span class="fn">R</span><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Module/LinearMap/Defs.html#LinearMap">]</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hHecke</span> : <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <span class="fn">R</span> <span class="fn">A</span>)</span> (<span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">1</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hinv</span> : <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">τ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">tr</span> <span class="fn">σ</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn"><span class="fn">tr</span> <span class="fn">τ</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> (<span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a>) <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn">tr</span> <span class="fn">1</span></span></div></div><p><strong>The sign-flip changes the trace by exactly <code>(q − q⁻¹) · tr 1</code>.</strong> Stated for
+any <code>R</code>-linear functional, so it applies to the Markov trace <code>tr_M</code> without
+needing any of its Markov properties — the whole effect comes from the Hecke
+relation.</p></div></div><div class="decl" id="QOU.MassTheory.TraceSignFlipRegime.trace_sign_flip_iff_symmetric"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/MassTheory/TraceSignFlipRegime.lean#L113-L137">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/MassTheory/TraceSignFlipRegime.html#QOU.MassTheory.TraceSignFlipRegime.trace_sign_flip_iff_symmetric"><span class="name">QOU</span>.<span class="name">MassTheory</span>.<span class="name">TraceSignFlipRegime</span>.<span class="name">trace_sign_flip_iff_symmetric</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Field/Defs.html#Field">Field</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#Ring">Ring</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#Algebra">Algebra</a> <span class="fn">R</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">σ </span><span class="fn">τ</span> : <span class="fn">A</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">tr</span> : <span class="fn">A</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Module/LinearMap/Defs.html#LinearMap">→ₗ[</a><span class="fn">R</span><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Module/LinearMap/Defs.html#LinearMap">]</a> <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htr</span> : <span class="fn"><span class="fn">tr</span> <span class="fn">1</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hHecke</span> : <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <span class="fn">R</span> <span class="fn">A</span>)</span> (<span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn">q</span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Inv.inv">⁻¹</a>)</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">1</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hinv</span> : <span class="fn">σ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">τ</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">tr</span> <span class="fn">τ</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">tr</span> <span class="fn">σ</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Iff">↔</a> <span class="fn">q</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">1</span></div></div><p><strong>The trace tower is sign-flip blind exactly on the symmetric-braiding
+locus.</strong> With <code>tr 1 ≠ 0</code> — a Markov trace is normalised so this holds — flipping
+a generator leaves the trace unchanged <strong>iff</strong> <code>q² = 1</code>, which by
+<code>double_braiding_eq_one_iff</code> is exactly <code>σ² = 1</code>, the symmetric braiding.</p><p>So at any <code>q</code> where the braiding is genuinely non-symmetric, and in particular at
+the substrate, the trace tower is <strong>not</strong> sign-flip invariant.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

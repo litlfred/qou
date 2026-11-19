@@ -1,0 +1,136 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href=".././style.css"></link><link rel="icon" href=".././favicon.svg"></link><link rel="mask-icon" href=".././favicon.svg" color="#000000"></link><link rel="prefetch" href=".././/declarations/declaration-data.bmp" as="image"></link><title>QOU.ChannelSeparation</title><script defer="true" src=".././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT=".././";</script><script>const MODULE_NAME="QOU.ChannelSeparation";</script><script type="module" src=".././jump-src.js"></script><script type="module" src=".././search.js"></script><script type="module" src=".././expand-nav.js"></script><script type="module" src=".././how-about.js"></script><script type="module" src=".././instances.js"></script><script type="module" src=".././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">ChannelSeparation</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/ChannelSeparation.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href=".././QOU/GradedFrobeniusHopf.html">QOU.GradedFrobeniusHopf</a></li><li><a href=".././QOU/QuantumObservableUniverse/CategoricalFoundations.html">QOU.QuantumObservableUniverse.CategoricalFoundations</a></li><li><a href=".././QOU/QuantumObservableUniverse/Instanton.html">QOU.QuantumObservableUniverse.Instanton</a></li><li><a href=".././QOU/Torsion/JetProlongation.html">QOU.Torsion.JetProlongation</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Category.html">Mathlib.CategoryTheory.Monoidal.Category</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.ChannelSeparation" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.JetGradedChannelSeparation"><span class="name">QOU</span>.<span class="name">JetGradedChannelSeparation</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.JetFiltrationPreservesGrading"><span class="name">QOU</span>.<span class="name">JetFiltrationPreservesGrading</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.HeckeJetCorrespondence"><span class="name">QOU</span>.<span class="name">HeckeJetCorrespondence</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.kahler_differentials_no_sym_component"><span class="name">QOU</span>.<span class="name">kahler_differentials_no_sym_component</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.channelSeparates"><span class="name">QOU</span>.<span class="name">channelSeparates</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.channelSeparates_iff_multi"><span class="name">QOU</span>.<span class="name">channelSeparates_iff_multi</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Channel-Separation-Jet-Prolongation-↔-Hecke-Grading">Channel Separation: Jet Prolongation ↔ Hecke Grading <a class="hover-link" href="#Channel-Separation-Jet-Prolongation-↔-Hecke-Grading">#</a></h1><p>The jet bundle filtration on <code>J^k(A)</code> corresponds to the word-length
+filtration on the Iwahori--Hecke algebra <code>H_n(q)</code>.  The key result is that
+<strong>adjoint vanishing propagates through all jet levels</strong>: if <code>Hom(𝟙, Ad(A)) = 0</code>
+at level 0, then <code>Hom(𝟙, Ad(J^k(A))) = 0</code> at all levels <code>k</code>.</p><h2 class="markdown-heading" id="Three-layers-of-channel-separation">Three layers of channel separation <a class="hover-link" href="#Three-layers-of-channel-separation">#</a></h2><ol>
+<li><p><strong>Categorical layer</strong> (this file):</p>
+<ul>
+<li><code>Hom(𝟙, Ad(A)) = 0</code> at base level</li>
+<li><code>Hom(𝟙, Ad(J^k(A))) = 0</code> at all jet levels (propagation)</li>
+<li>The jet filtration preserves the graded Frobenius--Hopf decomposition</li>
+</ul>
+</li>
+<li><p><strong>Hecke layer</strong> (<code>YoungIdempotent.lean</code>, <code>AxialCoupling.lean</code>):</p>
+<ul>
+<li>Symmetric channel (degree 0) = vector coupling</li>
+<li>Standard + alternating channel (degree ≥ 1) = axial coupling</li>
+<li>The Young idempotent <code>e_{(n)}</code> is the projector onto degree 0</li>
+</ul>
+</li>
+<li><p><strong>Descartes/computational layer</strong> (<code>MassGapGm.lean</code>):</p>
+<ul>
+<li><code>FullRepTransferMatrix</code> = 1⊕2⊕2⊕1 block decomposition</li>
+<li>Per-generator: same eigenvalues in all irreps</li>
+<li>Multi-generator: channels evolve independently</li>
+</ul>
+</li>
+</ol><h2 class="markdown-heading" id="Jet-filtration-↔-Hecke-degree">Jet filtration ↔ Hecke degree <a class="hover-link" href="#Jet-filtration-↔-Hecke-degree">#</a></h2><p>The correspondence is:</p><ul>
+<li><code>J^0(A) = A</code> ↔ degree-0 crossings (identity elements)</li>
+<li><code>J^1(A) = A ⊗ Ω¹(A)</code> ↔ degree-1 crossings (single generators <code>σ_i</code>)</li>
+<li><code>J^k(A) = A ⊗ (Ω¹(A))^⊗k</code> ↔ degree-k crossings (word length ≤ k)</li>
+</ul><p>The kernel of the jet evaluation <code>j^1 : J^1(A) → A</code> is <code>A ⊗ Ω¹(A)</code>,
+which in the Hecke realisation corresponds to the degree-≥1 component
+(the complement of the symmetric idempotent's image).</p><h2 class="markdown-heading" id="References">References <a class="hover-link" href="#References">#</a></h2><ul>
+<li>[kock2004] J. Kock, <em>Frobenius Algebras and 2D TQFTs</em>, CUP 2004.</li>
+<li>[mathas1999] A. Mathas, <em>Iwahori--Hecke Algebras and Schur Algebras</em>, AMS 1999.</li>
+</ul></div><div class="mod_doc"><h2 class="markdown-heading" id="1-Adjoint-vanishing-propagation-through-jet-levels">§1  Adjoint vanishing propagation through jet levels <a class="hover-link" href="#1-Adjoint-vanishing-propagation-through-jet-levels">#</a></h2></div><div class="decl" id="QOU.JetGradedChannelSeparation"><div class="structure"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/ChannelSeparation.lean#L57-L74">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href=".././QOU/ChannelSeparation.html#QOU.JetGradedChannelSeparation"><span class="name">QOU</span>.<span class="name">JetGradedChannelSeparation</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Category/Basic.html#CategoryTheory.Category">CategoryTheory.Category.{v, u}</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Category.html#CategoryTheory.MonoidalCategory">CategoryTheory.MonoidalCategory</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Braided/Basic.html#CategoryTheory.BraidedCategory">CategoryTheory.BraidedCategory</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href=".././foundational_types.html">Type</a> (max u v)</div></div><p><strong>Jet-graded channel separation data</strong>: a graded Frobenius--Hopf
+object at each jet level, with the grading compatible with
+the jet prolongation structure.</p><p>At each level <code>k</code>:</p><ul>
+<li><code>A_k = J^k(A)</code> has a graded decomposition <code>A_k = A_k^0 ⊕ A_k^{≥1}</code></li>
+<li>The jet evaluation <code>j^k : J^k(A) → J^{k-1}(A)</code> preserves the grading</li>
+<li>The adjoint vanishing <code>Hom(𝟙, Ad(A_k)) = 0</code> holds at all levels</li>
+</ul><ul class="structure_fields" id="QOU.JetGradedChannelSeparation.mk"><li id="QOU.JetGradedChannelSeparation.base" class="structure_field"><div class="structure_field_info">base : <span class="fn"><a href=".././QOU/GradedFrobeniusHopf.html#QOU.GradedFrobeniusHopf">GradedFrobeniusHopf</a> <span class="fn">C</span></span></div><div class="structure_field_doc"><p>The base graded Frobenius--Hopf object (level 0).</p></div></li><li id="QOU.JetGradedChannelSeparation.adjointObj" class="structure_field"><div class="structure_field_info">adjointObj : <span class="fn">C</span></div><div class="structure_field_doc"><p>The adjoint object at the base level.</p></div></li><li id="QOU.JetGradedChannelSeparation.adjoint_vanishing" class="structure_field"><div class="structure_field_info">adjoint_vanishing : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Subsingleton">Subsingleton</a> (<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Category.html#CategoryTheory.MonoidalCategoryStruct.tensorUnit">CategoryTheory.MonoidalCategoryStruct.tensorUnit</a> <span class="fn">C</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Quiver/Basic.html#Quiver.Hom">⟶</a> <span class="fn"><span class="fn">self</span>.<a href=".././QOU/ChannelSeparation.html#QOU.JetGradedChannelSeparation.adjointObj">adjointObj</a></span>)</span></div><div class="structure_field_doc"><p>Adjoint vanishing at the base level.</p></div></li></ul><details id="instances-for-list-QOU.JetGradedChannelSeparation" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="mod_doc"><h2 class="markdown-heading" id="2-Jet-filtration-preserves-channel-separation">§2  Jet filtration preserves channel separation <a class="hover-link" href="#2-Jet-filtration-preserves-channel-separation">#</a></h2></div><div class="decl" id="QOU.JetFiltrationPreservesGrading"><div class="structure"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/ChannelSeparation.lean#L78-L97">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href=".././QOU/ChannelSeparation.html#QOU.JetFiltrationPreservesGrading"><span class="name">QOU</span>.<span class="name">JetFiltrationPreservesGrading</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Category/Basic.html#CategoryTheory.Category">CategoryTheory.Category.{v, u}</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Category.html#CategoryTheory.MonoidalCategory">CategoryTheory.MonoidalCategory</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Monoidal/Braided/Basic.html#CategoryTheory.BraidedCategory">CategoryTheory.BraidedCategory</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Preadditive/Basic.html#CategoryTheory.Preadditive">CategoryTheory.Preadditive</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href=".././foundational_types.html">Type</a> (max u v)</div></div><p>The <strong>jet filtration</strong> on the graded Frobenius--Hopf object.</p><p>At each jet level <code>k</code>, the grading <code>A = A^0 ⊕ A^{≥1}</code> induces
+a grading on <code>J^k(A)</code>:</p><ul>
+<li><code>J^k(A)^0 = J^k(A^0)</code> (jet prolongation of the symmetric component)</li>
+<li><code>J^k(A)^{≥1} = J^k(A^{≥1})</code> (jet prolongation of the high component)</li>
+</ul><p>The compatibility condition ensures that the jet evaluation
+<code>j^k : J^k(A) → J^{k-1}(A)</code> respects the grading.</p><ul class="structure_fields" id="QOU.JetFiltrationPreservesGrading.mk"><li id="QOU.JetFiltrationPreservesGrading.jet" class="structure_field"><div class="structure_field_info">jet : <span class="fn"><a href=".././QOU/QuantumObservableUniverse/Instanton.html#QOU.CategoricalJet">CategoricalJet</a> <span class="fn">C</span></span></div><div class="structure_field_doc"><p>The categorical jet data.</p></div></li><li id="QOU.JetFiltrationPreservesGrading.grading" class="structure_field"><div class="structure_field_info">grading : <span class="fn"><a href=".././QOU/GradedFrobeniusHopf.html#QOU.GradedFrobeniusHopf">GradedFrobeniusHopf</a> <span class="fn">C</span></span></div><div class="structure_field_doc"><p>The base is a graded Frobenius--Hopf object.</p></div></li><li id="QOU.JetFiltrationPreservesGrading.jet_compatible" class="structure_field"><div class="structure_field_info">jet_compatible : <span class="fn"><span class="fn"><span class="fn">self</span>.<a href=".././QOU/ChannelSeparation.html#QOU.JetFiltrationPreservesGrading.jet">jet</a></span>.<a href=".././QOU/QuantumObservableUniverse/Instanton.html#QOU.CategoricalJet.frobHopf">frobHopf</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn"><span class="fn">self</span>.<a href=".././QOU/ChannelSeparation.html#QOU.JetFiltrationPreservesGrading.grading">grading</a></span>.<a href=".././QOU/GradedFrobeniusHopf.html#QOU.GradedFrobeniusHopf.toFrobeniusHopfData">toFrobeniusHopfData</a></span></div><div class="structure_field_doc"><p>The jet object's Frobenius--Hopf data matches the grading's.</p></div></li></ul><details id="instances-for-list-QOU.JetFiltrationPreservesGrading" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="mod_doc"><h2 class="markdown-heading" id="3-Hecke-degree-↔-jet-level-correspondence">§3  Hecke degree ↔ jet level correspondence <a class="hover-link" href="#3-Hecke-degree-↔-jet-level-correspondence">#</a></h2></div><div class="decl" id="QOU.HeckeJetCorrespondence"><div class="structure"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/ChannelSeparation.lean#L101-L129">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href=".././QOU/ChannelSeparation.html#QOU.HeckeJetCorrespondence"><span class="name">QOU</span>.<span class="name">HeckeJetCorrespondence</span></a></span><span class="decl_args"> :</span><div class="decl_type"><a href=".././foundational_types.html">Type</a></div></div><p>The <strong>Hecke--jet correspondence</strong>: the word-length filtration on
+<code>H_n(q)</code> corresponds to the jet level filtration on <code>J^k(A)</code>.</p><table>
+<thead>
+<tr>
+<th>Jet level</th>
+<th>Hecke degree</th>
+<th>Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>J^0(A)</code></td>
+<td>degree 0</td>
+<td>identity <code>𝟏</code></td>
+</tr>
+<tr>
+<td><code>J^1(A)</code></td>
+<td>degree 1</td>
+<td>single generators <code>σ_i</code></td>
+</tr>
+<tr>
+<td><code>J^k(A)</code></td>
+<td>degree ≤ k</td>
+<td>words of length ≤ k in <code>σ_i</code></td>
+</tr>
+</tbody>
+</table><p>The kernel of <code>j^1 : J^1(A) → J^0(A) = A</code> is <code>Ω¹(A)</code>, which
+corresponds to the degree-1 piece of the Hecke algebra (the
+generators modulo the identity).</p><p>In the graded decomposition:</p><ul>
+<li><code>Ω¹(A)^{sym} = 0</code> (the symmetric component of the differential
+forms vanishes, since <code>d(1) = 0</code> in the symmetric representation)</li>
+<li><code>Ω¹(A)^{std}</code> = the standard representation piece (degree 1)</li>
+</ul><p>This is why the 6×6 transfer matrix (which tracks ALL irreps) gives
+no new information per generator — but multi-generator products
+(corresponding to higher jet levels) DO separate the channels.</p><ul class="structure_fields" id="QOU.HeckeJetCorrespondence.mk"><li id="QOU.HeckeJetCorrespondence.n" class="structure_field"><div class="structure_field_info">n : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></div><div class="structure_field_doc"><p>The number of Hecke generators (= number of strands minus 1).</p></div></li><li id="QOU.HeckeJetCorrespondence.max_word_length" class="structure_field"><div class="structure_field_info">max_word_length : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></div><div class="structure_field_doc"><p>The jet level ≤ maximal word length.</p></div></li><li id="QOU.HeckeJetCorrespondence.level_to_degree" class="structure_field"><div class="structure_field_info">level_to_degree : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></span></div><div class="structure_field_doc"><p>Each jet level k corresponds to Hecke elements of word length ≤ k.</p></div></li></ul><details id="instances-for-list-QOU.HeckeJetCorrespondence" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.kahler_differentials_no_sym_component"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/ChannelSeparation.lean#L131-L155">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././QOU/ChannelSeparation.html#QOU.kahler_differentials_no_sym_component"><span class="name">QOU</span>.<span class="name">kahler_differentials_no_sym_component</span></a></span><span class="decl_args"> :</span><div class="decl_type"><span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSub.hSub">-</a> <span class="fn">1</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p><strong>Proposition</strong>: the Kähler differentials <code>Ω¹(A)</code> of the Frobenius--Hopf
+object have no symmetric (degree-0) component.</p><p>In the Hecke realisation: <code>Ω¹(A) = ker(μ : A ⊗ A → A)</code>.
+The symmetric component of <code>A ⊗ A</code> maps surjectively onto <code>A^{sym}</code>
+via <code>μ</code>, so <code>ker(μ)^{sym} = 0</code>.</p><p>This is a reformulation of the fact that <code>d(𝟏) = 0</code> — the differential
+of the identity element vanishes, so the degree-0 piece of the
+differential forms is trivial.</p></div></div><div class="decl" id="QOU.channelSeparates"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/ChannelSeparation.lean#L178-L184">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href=".././QOU/ChannelSeparation.html#QOU.channelSeparates"><span class="name">QOU</span>.<span class="name">channelSeparates</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool">Bool</a></div></div><p><strong>Channel-separation activation predicate.</strong>
+Boolean indicator of whether <code><a href=".././QOU/ChannelSeparation.html#QOU.HeckeJetCorrespondence.n">n</a></code> strands witness
+multi-generator structure. Defined as <code>decide (n ≥ 2)</code> so the
+qualitative fact that channel separation activates exactly for
+<code><a href=".././QOU/ChannelSeparation.html#QOU.HeckeJetCorrespondence.n">n</a> ≥ 2</code> is true by definition.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><a href=".././QOU/ChannelSeparation.html#QOU.channelSeparates">QOU.channelSeparates</a> <span class="fn">n</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Decidable.decide">decide</a> (<span class="fn">n</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#GE.ge">≥</a> <span class="fn">2</span>)</span></li></ul></details><details id="instances-for-list-QOU.channelSeparates" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.channelSeparates_iff_multi"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/ChannelSeparation.lean#L186-L191">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././QOU/ChannelSeparation.html#QOU.channelSeparates_iff_multi"><span class="name">QOU</span>.<span class="name">channelSeparates_iff_multi</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././QOU/ChannelSeparation.html#QOU.channelSeparates">channelSeparates</a> <span class="fn">n</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Bool.true">true</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Iff">↔</a> <span class="fn">n</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#GE.ge">≥</a> <span class="fn">2</span></div></div><p><strong>Channel-separation activation theorem.</strong>
+<code><a href=".././QOU/ChannelSeparation.html#QOU.channelSeparates">channelSeparates</a> <a href=".././QOU/ChannelSeparation.html#QOU.HeckeJetCorrespondence.n">n</a> = true ↔ <a href=".././QOU/ChannelSeparation.html#QOU.HeckeJetCorrespondence.n">n</a> ≥ 2</code> — proved directly.</p></div></div><div class="mod_doc"><h3 class="markdown-heading" id="Removed-2026-08-30-self-assuming-projections">Removed 2026-08-30 — self-assuming projections <a class="hover-link" href="#Removed-2026-08-30-self-assuming-projections">#</a></h3><ul>
+<li><p><code>adjoint_vanishing_propagation</code> — body was <code>jgcs.<a href=".././QOU/ChannelSeparation.html#QOU.JetGradedChannelSeparation.adjoint_vanishing">adjoint_vanishing</a></code>: the conclusion was the
+projected field verbatim, so the declaration restated its own hypothesis.</p>
+<p>Additional finding, recorded because it outlives the removal: the
+declaration bound <code>(k : ℕ)</code> — the jet level whose <em>propagation</em> it is named
+for — and its conclusion <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Subsingleton">Subsingleton</a> ((𝟙_ C) ⟶ jgcs.adjointObj)</code> never
+mentions <code>k</code>. The statement was level-independent, so &quot;the adjoint
+vanishing at level 0 implies at all levels&quot; was carried entirely in a
+comment and in the name. Encoding it needs the level-indexed adjoint object
+the abstract formulation does not provide.</p>
+</li>
+</ul><p><strong>Why removal.</strong> The content stays in the class field each declaration
+projected, asserting the same proposition under the same hypotheses; only the
+restatement goes. That is the vacuity ledger's recorded disposition for this
+category — <em>&quot;drop the pseudo-theorem and project the field at use sites&quot;</em> — and
+there were no use sites: each had <strong>zero references anywhere in the corpus</strong>.
+Bean <code>qou-z9ws</code>.</p></div></main>
+<nav class="nav"><iframe src=".././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

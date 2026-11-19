@@ -1,0 +1,244 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.Optimization.AngleStructureFeasibility</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.Optimization.AngleStructureFeasibility";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">AngleStructureFeasibility</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Tactic/Linarith.html">Mathlib.Tactic.Linarith</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/BigOperators/Ring/Finset.html">Mathlib.Algebra.BigOperators.Ring.Finset</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html">Mathlib.Algebra.Order.Ring.Defs</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/BigOperators/Group/Finset.html">Mathlib.Algebra.Order.BigOperators.Group.Finset</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.Optimization.AngleStructureFeasibility" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.Optimization.AngleStructure"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">AngleStructure</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Optimization.AngleStructure.star_nonempty"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">AngleStructure</span>.<span class="name">star_nonempty</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Optimization.angleStructure_vertex_min_degree"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">angleStructure_vertex_min_degree</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Optimization.angleStructure_edge_lt_vertex_total"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">angleStructure_edge_lt_vertex_total</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Optimization.angleStructure_cutset_gt_two_pi_imp_not_star"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">angleStructure_cutset_gt_two_pi_imp_not_star</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Optimization.AngleStructureFeasibilityContext"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">AngleStructureFeasibilityContext</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Optimization.exists_angleStructure_of_expansion"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">exists_angleStructure_of_expansion</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Angle-structure-feasibility-the-cutset-Rivin-polytope-necessity-direction">Angle-structure feasibility — the cutset (Rivin) polytope, necessity direction <a class="hover-link" href="#Angle-structure-feasibility-the-cutset-Rivin-polytope-necessity-direction">#</a></h1><p>Rivin's combinatorial-optimization approach to hyperbolic structures models the
+existence of an ideal-polyhedral / Delaunay <em>angle structure</em> as nonemptiness of
+a linear-programming polytope
+([rivin2003], &quot;Combinatorial optimization in geometry&quot;,
+Adv. Appl. Math. <strong>31</strong> (2003) 242–271). This file states the polytope's
+defining conditions abstractly and proves the <strong>easy (necessity) direction</strong>
+sorry-free; the <strong>hard (sufficiency) direction</strong> — that these conditions force
+a feasible structure to <em>exist</em> — is the Hall / max-flow–min-cut analytic core
+and is stated with an explicit, honest <code>sorry</code>.</p><h2 class="markdown-heading" id="The-abstract-model">The abstract model <a class="hover-link" href="#The-abstract-model">#</a></h2><p>Fix a finite vertex set <code>V</code> and edge set <code>E</code>, an incidence assignment
+<code>star : V → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> E</code> (the edges meeting each vertex), and a positive scalar
+<code>pi : R</code> standing for the angle <code>π</code> (so <code>2 * pi</code> is a full turn). An <strong>angle
+structure</strong> assigns to each edge an angle <code>A e</code> with <code>0 &lt; A e &lt; pi</code> such that
+the angles around every vertex sum to a full turn <code>2 * pi</code>. Concretely
+<code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure">AngleStructure</a> star A pi</code> bundles:</p><ul>
+<li><code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.pi_pos">pi_pos</a></code>      : <code>0 &lt; pi</code>;</li>
+<li><code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.angle_pos">angle_pos</a></code>   : <code>∀ e, 0 &lt; A e</code>               (strict positivity);</li>
+<li><code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.angle_lt_pi">angle_lt_pi</a></code> : <code>∀ e, A e &lt; pi</code>              (each angle is below a straight angle);</li>
+<li><code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.vertex">vertex</a></code>      : <code>∀ v, ∑ e ∈ star v, A e = 2 * pi</code>  (the vertex/turn condition).</li>
+</ul><p>The <strong>cutset condition</strong> — for a nontrivial edge cutset <code>S</code> (one <em>not</em> contained
+in a single vertex's star), <code>∑ e ∈ S, A e &gt; 2 * pi</code> — is a <em>consequence</em>
+extracted below, not an axiom: the necessity lemma
+<code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.angleStructure_cutset_gt_two_pi_imp_not_star">angleStructure_cutset_gt_two_pi_imp_not_star</a></code> shows that any set exceeding the
+<code>2 * pi</code> budget cannot sit inside one vertex's star, which is exactly the
+&quot;separating / nontrivial&quot; clause.</p><h2 class="markdown-heading" id="What-is-proved-necessity-sorry-free-non-vacuous">What is proved (necessity — sorry-free, non-vacuous) <a class="hover-link" href="#What-is-proved-necessity-sorry-free-non-vacuous">#</a></h2><ul>
+<li><code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.angleStructure_vertex_min_degree">angleStructure_vertex_min_degree</a></code> : every vertex has <strong>at least three</strong>
+incident edges. Falsifiable: with <code>≤ 2</code> incident edges each <code>&lt; pi</code>, the vertex
+sum would be <code>&lt; 2 * pi</code>, contradicting <code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.vertex">vertex</a></code>. This is genuine
+count/lower-bound bookkeeping, not a tautology.</li>
+<li><code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.angleStructure_edge_lt_vertex_total">angleStructure_edge_lt_vertex_total</a></code> : each edge angle is strictly below the
+full-turn total <code>2 * pi</code> at any vertex it meets. Falsifiable: an edge angle
+<code>≥ 2 * pi</code> would (with the other positive angles) overshoot the turn budget.</li>
+<li><code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.angleStructure_cutset_gt_two_pi_imp_not_star">angleStructure_cutset_gt_two_pi_imp_not_star</a></code> : an edge set whose angles
+exceed <code>2 * pi</code> is <strong>not</strong> contained in any single vertex's star — the
+necessity form of the cutset/separation condition. Falsifiable: a subset of a
+vertex star has angle sum <code>≤ 2 * pi</code>.</li>
+</ul><h2 class="markdown-heading" id="What-is-not-proved-sufficiency-the-open-direction">What is <em>not</em> proved (sufficiency — the open direction) <a class="hover-link" href="#What-is-not-proved-sufficiency-the-open-direction">#</a></h2><ul>
+<li><code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.exists_angleStructure_of_expansion">exists_angleStructure_of_expansion</a></code> : the converse existence statement. Under
+a Hall-type combinatorial-expansion hypothesis on <code>star</code>, a feasible angle
+structure exists. This is the max-flow–min-cut / Hall direction of Rivin's
+theorem and is left as an explicit <code>sorry</code> with a <code>-- Ref: [rivin2003]</code>
+citation. It is <strong>not</strong> axiomatized and <strong>not</strong> faked.</li>
+</ul><p>The base ring is a generic ordered commutative ring <code>{R : Type*}</code> with
+<code>[CommRing R] [LinearOrder R] [IsStrictOrderedRing R]</code> (per the §7c
+substrate-side convention); <code>pi</code> is an abstract positive scalar, so nothing here
+touches <code>Real.pi</code> or any archimedean construct.</p><p>-- Ref: [rivin2003] Igor Rivin, &quot;Combinatorial optimization in geometry&quot;,
+--   Adv. Appl. Math. 31 (2003) 242–271.</p></div><div class="decl" id="QOU.Optimization.AngleStructure"><div class="structure"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean#L78-L91">source</a></div><div class="decl_header"><span class="decl_kind">structure</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">AngleStructure</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">E</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">star</span> : <span class="fn"><span class="fn">V</span> → <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">E</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <span class="fn"><span class="fn">E</span> → <span class="fn">R</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">pi</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>An <strong>angle structure</strong> on the incidence data <code>star : V → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> E</code>, valued in
+an ordered ring <code>R</code> with abstract straight-angle scalar <code>pi</code>. Each edge carries a
+strictly positive angle below <code>pi</code>, and the angles around every vertex sum to a
+full turn <code>2 * pi</code>. The cutset (separation) inequalities are <em>derived</em> from these
+fields, not assumed — see the necessity lemmas below.</p><ul class="structure_fields" id="QOU.Optimization.AngleStructure.mk"><li id="QOU.Optimization.AngleStructure.pi_pos" class="structure_field"><div class="structure_field_info">pi_pos : <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">pi</span></div><div class="structure_field_doc"><p>The straight-angle scalar is positive.</p></div></li><li id="QOU.Optimization.AngleStructure.angle_pos" class="structure_field"><div class="structure_field_info">angle_pos<span class="decl_args">
+<span class="fn">(<span class="fn">e</span> : <span class="fn">E</span>)</span></span>
+ : <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn"><span class="fn">A</span> <span class="fn">e</span></span></div><div class="structure_field_doc"><p>Each edge angle is strictly positive.</p></div></li><li id="QOU.Optimization.AngleStructure.angle_lt_pi" class="structure_field"><div class="structure_field_info">angle_lt_pi<span class="decl_args">
+<span class="fn">(<span class="fn">e</span> : <span class="fn">E</span>)</span></span>
+ : <span class="fn"><span class="fn">A</span> <span class="fn">e</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">pi</span></div><div class="structure_field_doc"><p>Each edge angle is strictly below a straight angle <code>pi</code>.</p></div></li><li id="QOU.Optimization.AngleStructure.vertex" class="structure_field"><div class="structure_field_info">vertex<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+ : <span class="fn">∑ <span class="fn">e</span> ∈ <span class="fn"><span class="fn">star</span> <span class="fn">v</span></span>, <span class="fn"><span class="fn">A</span> <span class="fn">e</span></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">pi</span></div><div class="structure_field_doc"><p>The angles around every vertex sum to a full turn <code>2 * pi</code>.</p></div></li></ul><details id="instances-for-list-QOU.Optimization.AngleStructure" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.Optimization.AngleStructure.star_nonempty"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean#L95-L104">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.star_nonempty"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">AngleStructure</span>.<span class="name">star_nonempty</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">E</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">star</span> : <span class="fn"><span class="fn">V</span> → <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">E</span></span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <span class="fn"><span class="fn">E</span> → <span class="fn">R</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">pi</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure">AngleStructure</a> <span class="fn">star</span> <span class="fn">A</span> <span class="fn">pi</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<span class="fn">star</span> <span class="fn">v</span>)</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span></div></div><p>The star of a vertex is nonempty: an empty star would give a vertex angle
+sum of <code>0</code>, contradicting the full-turn value <code>2 * pi &gt; 0</code>.</p></div></div><div class="decl" id="QOU.Optimization.angleStructure_vertex_min_degree"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean#L106-L123">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.angleStructure_vertex_min_degree"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">angleStructure_vertex_min_degree</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">E</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">star</span> : <span class="fn"><span class="fn">V</span> → <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">E</span></span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <span class="fn"><span class="fn">E</span> → <span class="fn">R</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">pi</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure">AngleStructure</a> <span class="fn">star</span> <span class="fn">A</span> <span class="fn">pi</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">3</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn">(<span class="fn">star</span> <span class="fn">v</span>)</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html#Finset.card">card</a></span></div></div><p><strong>Necessity — vertex minimum degree.</strong> In any feasible angle structure every
+vertex meets <strong>at least three</strong> edges.</p><p>This is genuinely falsifiable count bookkeeping: each incident angle is <code>&lt; pi</code>,
+so a vertex with <code>k</code> incident edges has angle sum <code>&lt; k · pi</code>; the turn condition
+pins that sum at <code>2 · pi</code>, forcing <code>2 · pi &lt; k · pi</code>, i.e. <code>k &gt; 2</code>. A vertex with
+one or two incident edges would violate the turn condition, so the model
+excludes it. (Not a tautology: it uses <code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.angle_lt_pi">angle_lt_pi</a></code>, <code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.pi_pos">pi_pos</a></code>, and <code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.vertex">vertex</a></code>.)</p></div></div><div class="decl" id="QOU.Optimization.angleStructure_edge_lt_vertex_total"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean#L125-L137">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.angleStructure_edge_lt_vertex_total"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">angleStructure_edge_lt_vertex_total</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">E</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">star</span> : <span class="fn"><span class="fn">V</span> → <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">E</span></span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <span class="fn"><span class="fn">E</span> → <span class="fn">R</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">pi</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure">AngleStructure</a> <span class="fn">star</span> <span class="fn">A</span> <span class="fn">pi</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">e</span> : <span class="fn">E</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">A</span> <span class="fn">e</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">pi</span></div></div><p><strong>Necessity — an edge is below the vertex turn budget.</strong> Every edge angle is
+strictly less than the full turn <code>2 * pi</code> at any vertex it meets.</p><p>Falsifiable: an edge angle <code>≥ 2 * pi</code> would, with the remaining strictly positive
+angles around the vertex, push the vertex sum above <code>2 * pi</code>, contradicting the
+turn condition. Here proved directly from <code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.angle_lt_pi">angle_lt_pi</a></code> and <code>pi &lt; 2 * pi</code>
+(which needs <code><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure.pi_pos">pi_pos</a></code>), so it uses the model's hypotheses and is not a
+tautology.</p></div></div><div class="decl" id="QOU.Optimization.angleStructure_cutset_gt_two_pi_imp_not_star"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean#L139-L154">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.angleStructure_cutset_gt_two_pi_imp_not_star"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">angleStructure_cutset_gt_two_pi_imp_not_star</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">E</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">star</span> : <span class="fn"><span class="fn">V</span> → <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">E</span></span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <span class="fn"><span class="fn">E</span> → <span class="fn">R</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">pi</span> : <span class="fn">R</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure">AngleStructure</a> <span class="fn">star</span> <span class="fn">A</span> <span class="fn">pi</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">E</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hS</span> : <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn">pi</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">∑ <span class="fn">e</span> ∈ <span class="fn">S</span>, <span class="fn"><span class="fn">A</span> <span class="fn">e</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Not">¬</a><span class="fn">S</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#HasSubset.Subset">⊆</a> <span class="fn"><span class="fn">star</span> <span class="fn">v</span></span></div></div><p><strong>Necessity — the cutset / separation condition.</strong> Any edge set <code>S</code> whose
+angles exceed the full-turn budget <code>2 * pi</code> is <strong>not</strong> contained in a single
+vertex's star. Equivalently: a set of edges all incident to one vertex can never
+be a nontrivial cutset, because its angle sum is at most <code>2 * pi</code>.</p><p>This is the easy direction of Rivin's cutset inequality — it <em>derives</em> the
+&quot;separating / not-all-at-one-vertex&quot; clause from the vertex turn conditions and
+positivity, rather than assuming it. Falsifiable: if <code>S ⊆ star v</code>, then
+<code>∑ e ∈ S, A e ≤ ∑ e ∈ star v, A e = 2 * pi</code>, contradicting <code>2 * pi &lt; ∑ e ∈ S</code>.</p></div></div><div class="decl" id="QOU.Optimization.AngleStructureFeasibilityContext"><div class="class"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean#L156-L171">source</a></div><div class="decl_header"><span class="decl_kind">class</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructureFeasibilityContext"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">AngleStructureFeasibilityContext</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_4)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">E</span> : <a href="../.././foundational_types.html">Type</a> u_5)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_6)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">star</span> : <span class="fn"><span class="fn">V</span> → <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">E</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">pi</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hpi</span> : <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">pi</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Sufficiency (HARD — OPEN in this file).</strong> Rivin's existence theorem: a
+Hall-type combinatorial-expansion condition on the incidence data forces a
+feasible angle structure to <em>exist</em>. The hypothesis <code>hExp</code> asks that every
+nonempty vertex set <code>W</code> meet strictly more than <code>2 · |W|</code> edges — the discrete
+slack that a max-flow–min-cut / Hall argument turns into a strictly-interior
+point of the angle-structure polytope.</p><p>This converse to the necessity lemmas above is the analytic core of Rivin's
+combinatorial optimization and is <strong>not proved here</strong>: it is stated with an
+explicit <code>sorry</code> and a bibliographic citation, per the repository's Lean
+discipline (an honest &quot;stated, not yet proved&quot; marker — no axiom, no fake
+closure). This requires massive infrastructure (Hall / max-flow–min-cut analytic core)
+that cannot be added as a simple class field, and is thus left as an explicit sorry.</p><ul class="structure_fields" id="QOU.Optimization.AngleStructureFeasibilityContext.mk"><li id="QOU.Optimization.AngleStructureFeasibilityContext.exists_angleStructure" class="structure_field"><div class="structure_field_info">exists_angleStructure : <span class="fn"><span class="fn">(∀ (<span class="fn">W</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">V</span></span>), <span class="fn"><span class="fn"><span class="fn">W</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span> → <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn">W</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html#Finset.card">card</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn"><span class="fn">(<span class="fn"><span class="fn">W</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Union.html#Finset.biUnion">biUnion</a></span> <span class="fn">star</span>)</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html#Finset.card">card</a></span></span>)</span> → <span class="fn">∃ (<span class="fn">A</span> : <span class="fn"><span class="fn">E</span> → <span class="fn">R</span></span>), <span class="fn"><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure">AngleStructure</a> <span class="fn">star</span> <span class="fn">A</span> <span class="fn">pi</span></span></span></span></div></li></ul><details class="instances"><summary>Instances</summary><ul id="instances-list-QOU.Optimization.AngleStructureFeasibilityContext" class="instances-list"></ul></details></div></div><div class="decl" id="QOU.Optimization.exists_angleStructure_of_expansion"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean#L173-L177">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.exists_angleStructure_of_expansion"><span class="name">QOU</span>.<span class="name">Optimization</span>.<span class="name">exists_angleStructure_of_expansion</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">E</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">R</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Defs/LinearOrder.html#LinearOrder">LinearOrder</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Ring/Defs.html#IsStrictOrderedRing">IsStrictOrderedRing</a> <span class="fn">R</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#DecidableEq">DecidableEq</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">star</span> : <span class="fn"><span class="fn">V</span> → <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">E</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">pi</span> : <span class="fn">R</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hpi</span> : <span class="fn">0</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn">pi</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn">ctx</span> : <span class="fn"><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructureFeasibilityContext">AngleStructureFeasibilityContext</a> <span class="fn">V</span> <span class="fn">E</span> <span class="fn">R</span> <span class="fn">star</span> <span class="fn">pi</span> <span class="fn">hpi</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hExp</span> : <span class="fn">∀ (<span class="fn">W</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Defs.html#Finset">Finset</a> <span class="fn">V</span></span>), <span class="fn"><span class="fn"><span class="fn">W</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Empty.html#Finset.Nonempty">Nonempty</a></span> → <span class="fn">2</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><span class="fn">W</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html#Finset.card">card</a></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#LT.lt">&lt;</a> <span class="fn"><span class="fn">(<span class="fn"><span class="fn">W</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Union.html#Finset.biUnion">biUnion</a></span> <span class="fn">star</span>)</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html#Finset.card">card</a></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">A</span> : <span class="fn"><span class="fn">E</span> → <span class="fn">R</span></span>), <span class="fn"><a href="../.././QOU/Optimization/AngleStructureFeasibility.html#QOU.Optimization.AngleStructure">AngleStructure</a> <span class="fn">star</span> <span class="fn">A</span> <span class="fn">pi</span></span></span></div></div></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

@@ -1,0 +1,75 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>QOU.Archimedean.knot_operator_selection</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="QOU.Archimedean.knot_operator_selection";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script><style data-lean-render="rail-offset">body:has(nav.fa-nav)>header{left:56px;width:calc(100% - 56px)}body:has(nav.fa-nav)>nav.nav{left:calc(56px + 1ex)}@media print{body:has(nav.fa-nav)>header{left:0;width:100%}body:has(nav.fa-nav)>nav.nav{left:1ex}}</style></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">knot_operator_selection</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html">Mathlib.Data.Real.Basic</a></li><li><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/BigOperators/Group/Finset/Basic.html">Mathlib.Algebra.BigOperators.Group.Finset.Basic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-QOU.Archimedean.knot_operator_selection" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#QOU.Archimedean.knot_operator_selection"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">knot_operator_selection</span></a></div><div class="nav_link"><a class="break_within" href="#QOU.Archimedean.not_knot_operator_selection_of_free_data"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">not_knot_operator_selection_of_free_data</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="QOU-Archimedean-knot-operator-selection">QOU.Archimedean.knot_operator_selection <a class="hover-link" href="#QOU-Archimedean-knot-operator-selection">#</a></h1><p><strong>Proposition</strong> (<a href="../.././../../../predicted-spectra/knot-operator-selection.md"><code>prop:knot-operator-selection</code></a>):
+<em>Knot operator selection via the Frobenius dual.</em></p><p>Let <code>(C, A, τ)</code> be a QOU with archimedean realisation <code>Hᵣ(q)</code>. Then</p><p>(i) <strong>Spectral decomposition.</strong> The Lagrangian endomorphism <code>Φ</code>
+decomposes via Schur orthogonality as <code>tr(Φ) = Σ_λ d_λ(q)·tr(Φ_λ)</code>.
+(ii) <strong>Multi-channel pair production.</strong> The categorical action of two
+photons equals the per-channel sum <code>Σ_λ d_λ·tr_λ(…)</code>.
+(iii) <strong>Frobenius demand–supply.</strong> The Frobenius pairing is
+non-degenerate (kernel dimension <code>0</code>).
+(iv) <strong>Minimum-action selection.</strong> Among all on-shell <code>Φ_alt</code>, the
+selected <code>Φ</code> minimises <code>|tr(Φ)|</code>.</p><h2 class="markdown-heading" id="2026-09-02-the-previous-docstring-described-a-repair-that-was-never-made">2026-09-02 — the previous docstring described a repair that was never made <a class="hover-link" href="#2026-09-02-the-previous-docstring-described-a-repair-that-was-never-made">#</a></h2><p>This file's own header used to say:</p><blockquote>
+<p><em>&quot;The class carries only the <strong>categorical / Hecke data</strong> … It does <strong>not</strong>
+carry the four conclusions as fields (the previous version did, then
+projected them — the self-assuming projection forbidden by AGENTS.md
+§3b-cond item 5).&quot;</em></p>
+<p><em>&quot;<code><a href="../.././QOU/Archimedean/knot_operator_selection.html#QOU.Archimedean.knot_operator_selection">knot_operator_selection</a></code> states the genuine four-part conjunction over
+that data and <strong>ends in <code>sorry</code></strong> (disposition B).&quot;</em></p>
+</blockquote><p>Neither sentence described the code beneath it. <code>KnotOperatorSelectionContext</code>
+<strong>did</strong> carry the four conclusions, in a single field docstring'd <em>&quot;Operator
+selection conclusion.&quot;</em>, and the theorem ended not in <code>sorry</code> but in
+<code>exact ctx.operator_selection</code> — the projection, under prose naming the rule
+it violates. <code>git log</code> shows the file was created in <strong>one</strong> commit
+(<code>eb0f267e905</code>) carrying both halves, so this was never a repair that
+regressed; the description and the defect were written together.</p><h2 class="markdown-heading" id="And-disposition-B-would-not-have-been-sound-either">And &quot;disposition B&quot; would not have been sound either <a class="hover-link" href="#And-disposition-B-would-not-have-been-sound-either">#</a></h2><p>The docstring's proposed fix — drop the field, state the conjunction over the
+class data, end in <code>sorry</code> — puts a <code>sorry</code> on a statement that is <strong>false</strong>.
+With the data as freely-chosen fields, <code>n_partitions := 0</code>, <code>tr_Phi := 1</code>,
+<code>tr_Phi_lambda := fun _ =&gt; 0</code> refutes conjunct (i): <code>1 = 0</code>. Measured
+<code>lean</code>-direct, exit 0, on exactly that instance. A <code>sorry</code> on a refutable
+statement is worse than the projection it would replace, because it reads as
+&quot;true, not yet proved&quot;.</p><p>The four claims are about <em>the</em> <code>Φ</code> arising from a QOU with its archimedean
+realisation, not about arbitrary reals — and this development has no such
+construction to quantify over.</p><h2 class="markdown-heading" id="Disposition-name-it-assert-nothing-AGENTS-md-1a-disposition-3">Disposition: name it, assert nothing (AGENTS.md §1a, disposition 3) <a class="hover-link" href="#Disposition-name-it-assert-nothing-AGENTS-md-1a-disposition-3">#</a></h2><p><code><a href="../.././QOU/Archimedean/knot_operator_selection.html#QOU.Archimedean.knot_operator_selection">knot_operator_selection</a></code> is now a <strong><code>Prop</code>-valued definition over
+caller-supplied data</strong>. It states the four-part claim exactly, and asserts
+none of it. There is no class, no projection, and no <code>sorry</code> on a refutable
+statement.</p><p>A caller who has a genuine QOU realisation takes
+<code><a href="../.././QOU/Archimedean/knot_operator_selection.html#QOU.Archimedean.knot_operator_selection">knot_operator_selection</a> …</code> as an ordinary hypothesis, and it constrains their
+data because the data are theirs.</p><p><strong>What is still open</strong>, stated rather than implied: all four parts. The
+Wedderburn / Schur-orthogonality decomposition (i)–(ii), the QUO-1
+non-degeneracy of the Frobenius pairing (iii), and the minimum-action
+variational selection (iv) each need semisimple-algebra representation theory
+and the Markov-trace projection machinery, which the <code>QOU</code> library and Mathlib
+do not yet carry. Nothing here constructs <code>Φ</code>, the isotypic decomposition, or
+the Frobenius pairing.</p><p>Bean <code>qou-z9ws</code>.</p></div><div class="decl" id="QOU.Archimedean.knot_operator_selection"><div class="def"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean#L78-L99">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Archimedean/knot_operator_selection.html#QOU.Archimedean.knot_operator_selection"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">knot_operator_selection</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">nPartitions</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">trPhi</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">trPhiLambda</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">actionPair </span><span class="fn">channelSum</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">pairingKernelDim</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">actionPhi</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">actionAlt</span> : <span class="fn"><span class="fn">(<span class="fn">V</span> → <span class="fn">V</span>)</span> → <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Real/Basic.html#Real">ℝ</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">isOnShell</span> : <span class="fn"><span class="fn">(<span class="fn">V</span> → <span class="fn">V</span>)</span> → <a href="../.././foundational_types.html">Prop</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>The claim of <code>prop:knot-operator-selection</code></strong>, as a proposition over
+caller-supplied data.</p><ul>
+<li><code>trPhi = Σ_{λ &lt; nPartitions} trPhiLambda λ</code> — (i) spectral decomposition;</li>
+<li><code>actionPair = channelSum</code> — (ii) multi-channel pair production;</li>
+<li><code>pairingKernelDim = 0</code> — (iii) Frobenius non-degeneracy;</li>
+<li><code>actionPhi ≤ actionAlt Φ_alt</code> for every on-shell <code>Φ_alt</code> — (iv)
+minimum-action selection.</li>
+</ul><p><strong>Named, not asserted.</strong> See the module docstring for why neither a projection
+nor a <code>sorry</code> is the honest form here.</p><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-QOU.Archimedean.knot_operator_selection" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="QOU.Archimedean.not_knot_operator_selection_of_free_data"><div class="theorem"><div class="gh_link"><a href="https://github.com/litlfred/qou/blob/5697c3130d79ead793a58c1a0a984a2e49b1365f/folio/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean#L101-L113">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././QOU/Archimedean/knot_operator_selection.html#QOU.Archimedean.not_knot_operator_selection_of_free_data"><span class="name">QOU</span>.<span class="name">Archimedean</span>.<span class="name">not_knot_operator_selection_of_free_data</span></a></span><span class="decl_args"> :</span><div class="decl_type"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Not">¬</a><span class="fn"><a href="../.././QOU/Archimedean/knot_operator_selection.html#QOU.Archimedean.knot_operator_selection">knot_operator_selection</a> <span class="fn">0</span> <span class="fn">1</span> <span class="fn">(fun (<span class="fn">x</span> : <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a>) =&gt; <span class="fn">0</span>)</span> <span class="fn">0</span> <span class="fn">0</span> <span class="fn">0</span> <span class="fn">0</span> <span class="fn">(fun (<span class="fn">x</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></span>) =&gt; <span class="fn">0</span>)</span> <span class="fn">fun (<span class="fn">x</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a> → <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nat">ℕ</a></span>) =&gt; <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#True">True</a></span></span></div></div><p><strong>The claim is refutable at freely-chosen data</strong>, which is why it is named
+rather than carried as a <code>sorry</code>.</p><p>At <code>nPartitions = 0</code>, <code>trPhi = 1</code>, <code>trPhiLambda = fun _ =&gt; 0</code>, conjunct (i)
+reads <code>1 = 0</code>. Recorded as a theorem so the module docstring's argument is
+checked rather than asserted, and so a later attempt to &quot;finish&quot; this file by
+adding a <code>sorry</code> over free data fails against a standing counterexample.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

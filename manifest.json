@@ -1,0 +1,32 @@
+{
+ "$schema": "state-manifest/v1",
+ "status": "seeded",
+ "authoritative": false,
+ "keyedBy": "tip",
+ "source": {
+  "ref": "lake-cache/qou-docgen4-v4-24-0",
+  "qouSha": "5697c3130d79ead793a58c1a0a984a2e49b1365f",
+  "docgen4": "1cd7a1113090e216703e323e8fdcdf099f0a9c8a",
+  "toolchain": "leanprover/lean4:v4.24.0",
+  "mathlib": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+  "builtAt": "2026-10-11T08:15:52Z"
+ },
+ "seededAt": "2026-11-19T08:56:14Z",
+ "graphs": [
+  {
+   "path": "lean",
+   "modules": {
+    "QOU": 2980,
+    "UGB": 29,
+    "Fred2005": 2
+   },
+   "files": 3033,
+   "pages": 3018
+  }
+ ],
+ "coverage": {
+  "paperDeclarations": 1242,
+  "withRenderedPage": 589,
+  "note": "measured against build/paper chapters' \\\\lean / \\\\blockannot names; ~526 of the 653 misses are declared only in content-block sibling .lean files (QOUBlocks), not in the library"
+ }
+}
