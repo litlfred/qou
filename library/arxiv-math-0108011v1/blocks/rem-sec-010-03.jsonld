@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0108011v1/blocks/rem-sec-010-03",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 13,
+  "pageEnd": 21,
+  "text": "rem-sec-010-03.md",
+  "derivedFrom": "library/arxiv-math-0108011v1/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [9] in sections/sec-010-4-the-hopf-link-decorated-with-any-young-diagram.md"
+  }
+}

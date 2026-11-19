@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0508100v6/blocks/lem-sec-042-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 28,
+  "pageEnd": 30,
+  "text": "lem-sec-042-01.md",
+  "derivedFrom": "library/arxiv-math-0508100v6/sections/sec-042",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "B",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-042-b2-proof-of-proposition-89.md (p. 28-30) citing [1, n−1\n4 ]",
+    "claim_id": "arxiv-math-0508100v6#lemma:B",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

@@ -1,1 +1,0 @@
-And for every morphism $g : \om \to \om'$ in $G_1^p$ there is a group isomorphism (the twisting) \[ \opn{Ad}_{G^p_1 \curvearrowright G^p_{2}}(g) : G^p_2(\om) \to G^p_2(\om') . \] We shall often use the abbreviated expression $\opn{Ad}(g)$ to mean both $\opn{Ad}_{G^p_1 \curvearrowright G^p_{2}}(g)$ and $\opn{Ad}_{G^p_1}(g)$; hopefully that will not cause confusion.

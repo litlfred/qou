@@ -1,0 +1,1 @@
+We list the following Q(v)-bases for the q-Schur algebra U(n, r). Let i0 be a ﬁxed integer with 1 ⩽i0 ⩽n. (1) The monomial basis: Ni0 = n e(A+)kjf(A−) A ∈Ξ±(n), j ∈Nn, ji0 = 0, |j| + |A| ⩽r o ; (2) The BLM basis: Bi0 =  A(j, r) A ∈Ξ±(n), j ∈Nn, ji0 = 0, |j| + |A| ⩽r

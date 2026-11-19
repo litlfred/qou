@@ -1,1 +1,0 @@
-(Note the error on the right-hand side of [7, (7.3.13)]: the factor (−ac)n must be replaced by (−acq2)−n.) Formally the orthogonality relations (6.5) can be obtained as a limit case of the or- thogonality relations (6.8) for big q-Jacobi polynomials.

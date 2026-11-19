@@ -1,1 +1,0 @@
-We may and shall choose $u$ in such a way that its exterior square of this $F$-space coincides with the canonical $F$-structure on $ \mathrm{H}^2_{\mathrm{crys}}\bigl((A_0)_{\ovl{\F}_p}/\ovl{\Q}_p\bigr) $ (this can be achieved by replacing $u$ by a suitable multiple).

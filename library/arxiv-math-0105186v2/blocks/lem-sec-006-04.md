@@ -1,0 +1,1 @@
+Jreg(E, π, Q, j) is C∞-dense in J(E, π, j). In fact the following stronger statement holds: take some nonempty open subset U ⊂S and a J ∈ J(E, π, j). Then there are J′ ∈Jreg(E, π, Q, j) arbitrarily close to J, such that J = J′ outside π−1(U).

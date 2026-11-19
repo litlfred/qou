@@ -1,1 +1,0 @@
-This is unfortunately not the case, and the compactification of $\Teich(S_g)$ must be constructed from scratch via different methods: we compactify $\Teich(S_g)$ by embedding it in a bigger infinite-dimensional space.

@@ -13,9 +13,16 @@
   "pageStart": 6,
   "pageEnd": 10,
   "contains": [
-    "library/zhao-standard-2010/blocks/prose-sec-005"
+    "library/zhao-standard-2010/blocks/prose-sec-005",
+    "library/zhao-standard-2010/blocks/lem-sec-005-01",
+    "library/zhao-standard-2010/blocks/prop-sec-005-02",
+    "library/zhao-standard-2010/blocks/prop-sec-005-03",
+    "library/zhao-standard-2010/blocks/prop-sec-005-04",
+    "library/zhao-standard-2010/blocks/def-sec-005-05",
+    "library/zhao-standard-2010/blocks/thm-sec-005-06",
+    "library/zhao-standard-2010/blocks/def-sec-005-07"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zhao-standard-2010",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/zhao-standard-2010",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zhao-standard-2010/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zhao-standard-2010/manifest.jsonld",
   "provenance": "ingested"
 }

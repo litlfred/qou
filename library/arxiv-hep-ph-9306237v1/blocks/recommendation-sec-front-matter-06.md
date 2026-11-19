@@ -1,1 +1,0 @@
-It should be noted, however, these renormalization group equations (20) are derived in the mass independent scheme and thus the scale µ is not directly related to the actual physics scale, especially at the low energy region below mρ where the dynamical degree of freedom of the ρ meson is frozen out.

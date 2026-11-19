@@ -1,0 +1,1 @@
+Let A be a left noetherian graded ring. (1) If {Ix}x∈X is a collection of graded-injective A-modules, then I := L x∈X Ix is a graded-injective A-module. (2) Every graded-injective A-module I is a direct sum of indecomposable graded- injective A-modules.

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-064",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Finite dimensions",
+  "pageStart": 149,
+  "pageEnd": 155,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-064",
+    "library/vonneumann2015/blocks/rem-sec-064-01",
+    "library/vonneumann2015/blocks/thm-sec-064-02",
+    "library/vonneumann2015/blocks/cor-sec-064-03",
+    "library/vonneumann2015/blocks/lem-sec-064-04",
+    "library/vonneumann2015/blocks/thm-sec-064-05",
+    "library/vonneumann2015/blocks/thm-sec-064-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

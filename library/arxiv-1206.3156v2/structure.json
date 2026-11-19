@@ -1,0 +1,892 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1206.3156v2",
+ "source": {
+  "file": "1206.3156v2.pdf",
+  "sha256": "384b83fa69f21305a5b1a7b841d98b4006e729ac0b172bc67daec51b43f3c050",
+  "bytes": 341092,
+  "pages": 31,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1206.3156",
+   "version": "2",
+   "primary_class": "hep-lat",
+   "stamp_date": "21 Dec 2012"
+  },
+  "doi": null,
+  "title": "Isospin breaking in octet baryon mass splittings",
+  "authors_raw": "December 20, 2012",
+  "title_lines": [
+   "DESY 12-094",
+   "Edinburgh 2012/07",
+   "Liverpool LTH 946"
+  ],
+  "abstract": "Using an SU(3) ﬂavour symmetry breaking expansion in the quark mass, we determine the QCD component of the nucleon, Sigma and Xi mass splittings of the baryon octet due to up-down (and strange) quark mass diﬀerences in terms of the kaon mass splitting. Provided the average quark mass is kept constant, the expansion coeﬃcients in our procedure can be determined from computationally cheaper simulations with mass degen- erate sea quarks and partially quenched valence quarks. Both the linear and quadratic terms in the SU(3) ﬂavour symmetry breaking expansion are considered; it is found that the quadratic terms only change the result by a few percent, indicating that the expansion is highly convergent.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180925164503-04'00'"
+  },
+  "title_raw": "DESY 12-094 Edinburgh 2012/07 Liverpool LTH 946",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Isospin breaking in octet baryon mass splittings",
+   "outline": "1 Introduction",
+   "text": "DESY 12-094 Edinburgh 2012/07 Liverpool LTH 946",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Isospin breaking in octet baryon mass splittings",
+   "basis": "Printed title on page 1 (Horsley et al., QCDSF-UKQCD Collaboration); the extracted title was the preprint report numbers",
+   "extracted_title": "DESY 12-094 Edinburgh 2012/07 Liverpool LTH 946",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "Octet Baryons",
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 1,
+   "title": "Determining the expansion coefficients",
+   "page": 7,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Partially quenched octet baryons",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "Numerical results",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 1,
+   "title": "Octet pseudoscalar mesons",
+   "page": 11,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "PQ pseudoscalar meson flavour expansions",
+   "page": 12,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 2,
+   "title": "Determination of the coefficients",
+   "page": 14,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 2,
+   "title": "Pseudoscalar meson isospin splittings",
+   "page": 14,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
+  },
+  {
+   "level": 1,
+   "title": "Physical values of the quark masses",
+   "page": 16,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 1,
+   "title": "Comparison with `fan' plots",
+   "page": 18,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 1,
+   "title": "Results and discussion",
+   "page": 19,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 2,
+   "title": "Baryon octet mass splittings",
+   "page": 20,
+   "source": "outline",
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 2,
+   "title": "Physical values of the mass splittings",
+   "page": 22,
+   "source": "outline",
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 2,
+   "title": "Conclusions",
+   "page": 23,
+   "source": "outline",
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
+  },
+  {
+   "level": 1,
+   "title": "A Systematic errors",
+   "page": 25,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
+  },
+  {
+   "level": 1,
+   "title": "B Tables",
+   "page": 27,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The lowest octet for the spin 1",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Permutation group transformations link the isospin violation caused by md−mu to the SU(3) violation caused by ms−mu, ms−md. The neutron-proton mass diﬀerence, Mn−Mp, dashed line, is mapped to MΞ0−MΣ+; the Σ splitting, MΣ−−MΣ+, maps to MΞ−−Mp dot-dashed line; and MΞ−−MΞ0 is related to MΣ−−Mn, full li",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Results for the baryon octet expansion coeﬃcients",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The lowest octet for the spin 0 pseudoscalar mesons plotted in the I3–Y plane",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Results for the pseudoscalar octet expansion coeﬃcients",
+   "page": 14,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Results for the bare quark mass in lattice units at the physical point using eq. (46) as input. The ﬁrst line is the LO result. The next line, NLOa, uses the result of eq. (40), while as a check the last line in italics, NLOb, iterates eqs. (37) and (38)",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The pseudoscalar meson octet ‘fan’ plot, M2",
+   "page": 19,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The baryon octet ‘fan’ plot, M2",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Comparison of the n – p mass diﬀerence of the present result (QCDSF- UKQCD or lowest plotted number) with NPLQCD, Blum et al., and RM123 [2, 3, 4], respectively (top to bottom plotted numbers). The ﬁlled circles use the QED determination of [11], while the ﬁlled square gives the full QCD and QED det",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Results for the PQ baryon masses, M(aab) in lattice units at β = 5.50 from",
+   "page": 27,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Additional results to Table 22 of [13] for the PQ baryon masses, MNs ≡",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Results for the PQ pseudoscalar masses, M(a",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "29"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1627,
+   "n_words": 237,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6340,
+   "n_words": 1118,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-001-2-octet-baryons",
+   "number": "2",
+   "title": "Octet Baryons",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 6336,
+   "n_words": 1307,
+   "label_start": "4",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-determining-the-expansion-coefficients",
+   "number": "3",
+   "title": "Determining the expansion coefficients",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 97,
+   "n_words": 18,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-003-31-partially-quenched-octet-baryons",
+   "number": "3.1",
+   "title": "Partially quenched octet baryons",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4051,
+   "n_words": 804,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-32-numerical-results",
+   "number": "3.2",
+   "title": "Numerical results",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4400,
+   "n_words": 805,
+   "label_start": "9",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-005-4-octet-pseudoscalar-mesons",
+   "number": "4",
+   "title": "Octet pseudoscalar mesons",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 977,
+   "n_words": 171,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-006-41-pq-pseudoscalar-meson-flavour-expansions",
+   "number": "4.1",
+   "title": "PQ pseudoscalar meson flavour expansions",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3194,
+   "n_words": 681,
+   "label_start": "12",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-007-42-determination-of-the-coefficients",
+   "number": "4.2",
+   "title": "Determination of the coefficients",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1178,
+   "n_words": 225,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-008-43-pseudoscalar-meson-isospin-splittings",
+   "number": "4.3",
+   "title": "Pseudoscalar meson isospin splittings",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 2012,
+   "n_words": 415,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-009-5-physical-values-of-the-quark-masses",
+   "number": "5",
+   "title": "Physical values of the quark masses",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4746,
+   "n_words": 927,
+   "label_start": "16",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-010-6-comparison-with-fan-plots",
+   "number": "6",
+   "title": "Comparison with `fan' plots",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2847,
+   "n_words": 525,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-011-7-results-and-discussion",
+   "number": "7",
+   "title": "Results and discussion",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1390,
+   "n_words": 252,
+   "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-012-71-baryon-octet-mass-splittings",
+   "number": "7.1",
+   "title": "Baryon octet mass splittings",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 2499,
+   "n_words": 541,
+   "label_start": "20",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-013-72-physical-values-of-the-mass-splittings",
+   "number": "7.2",
+   "title": "Physical values of the mass splittings",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2981,
+   "n_words": 547,
+   "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-014-73-conclusions",
+   "number": "7.3",
+   "title": "Conclusions",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 2238,
+   "n_words": 368,
+   "label_start": "23",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-015-a-systematic-errors",
+   "number": null,
+   "title": "A Systematic errors",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 4411,
+   "n_words": 808,
+   "label_start": "25",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-016-b-tables",
+   "number": null,
+   "title": "B Tables",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 6890,
+   "n_words": 1001,
+   "label_start": "27",
+   "label_end": "31"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 17,
+  "toc_inferred_entries": 0,
+  "figure_entries": 12,
+  "figure_sequence_gaps": [
+   "figure 3",
+   "figure 5"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 18,
+  "chars_total": 58214,
+  "furniture_lines_stripped": 31
+ }
+}

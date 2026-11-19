@@ -1,0 +1,1 @@
+(a) and Lemma 2.3. By the Wronskian condition for univariate polynomials in proper position, $$ \Wr[f(\a+(\b+\delta_i)t),g(\a+(\b+\delta_i)t)]\leq 0 $$ for all $t\in\RR$. Taking the limit as $\b\goesto\zero$ and evaluating at $t=0$ yields $$ \Wr_i[f,g](\a) = \Wr[f(\a+\delta_i t),g(\a+\delta_i t)]|_{t=0}\leq 0, $$ by continuity. Thus (a) implies (c).

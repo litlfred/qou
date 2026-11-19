@@ -1,1 +1,0 @@
-They can be traced to the fact that at LO some interactions need to be fully iterated---or, equivalently, a dynamical equation should be solved exactly---in order to produce the bound states and resonances that we refer to as nuclei.

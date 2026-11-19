@@ -1,1 +1,1 @@
-Let C be a semisimple tensor category with associativity morphisms α.
+Let C be a semisimple tensor category with associativity morphisms α. Let c(τ, σ) ∈ (τ ⊗ σ, σ ⊗ τ ) be natural isomorphisms satisfying (5.7) and (5.8) (or (5.9 resp.) Let ρ be a generating object of C as in Def. 4.3. Then c is uniquely determined by the morphisms c(ρλ, ρ) (c(ρ, ρλ) resp.) with ρλ varying in a complete set of simple objects of C. In particular, if c is a braided symmetry then it is determined by either class of morphisms of the form c(ρλ, ρ) or of the form c(ρ, ρλ).

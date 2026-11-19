@@ -1,1 +1,0 @@
-Geometry & Topology 10 (2006) Canonical triangulations 1249 Thus, if (1)-ii and (1)-iii are to be satisﬁed, the pleating angles of the pleated punctured torus Σ living between ∆i and ∆i+1 must be (2) −2wi, 2wi+1 and 2wi −2wi+1.

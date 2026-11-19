@@ -1,1 +1,0 @@
-In order to quantize $(\mathcal{P},\omega_{0,s})$ we must choose a polarization, and there are several nice choices, summarized in Table [\[tab:pol\]](#tab:pol){reference-type="ref" reference="tab:pol"}.

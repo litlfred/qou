@@ -1,1 +1,0 @@
-In the subsequent sections of the book we shall deal with a few ideas that emerged as by-products of the Artin school of NC algebraic geometry: the χ condition, balanced dualizing complexes and rigid dualizing complexes.

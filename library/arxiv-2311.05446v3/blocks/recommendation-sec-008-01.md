@@ -1,1 +1,0 @@
-Therefore, if $S \subseteq \mathscr{W}_{2}(R^{n})$ is a displacement convex set, and we would like to prove that $e^{- a D (\cdot \Vert \nu)}$ is concave on $S$, we must prove that $$\int \Gamma_{2} (\theta_{t}) \textnormal{ d}\mu_{t} \geq a \left( \int L \theta_{t} \textnormal{ d}\mu_{t} \right)^{2},$$ for all displacement interpolations $\{ \mu_{t} \}_{t \in [0,1]}$ in $S$.

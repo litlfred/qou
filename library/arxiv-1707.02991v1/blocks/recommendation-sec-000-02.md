@@ -1,1 +1,0 @@
-In this letter we argue that BPS states enumerated by motivic Donaldson-Thomas invariants of quiver mod- uli spaces should be identiﬁed with those arising in the supersymmetric quiver quantum mechanics description of brane systems encoding knots.

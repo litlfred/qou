@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "81555eb91d1c",
+          "ts": "cedc56b6d19f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T00:43:10.477Z",
+        "reviewed_sha": "0eba507a077106abc6597936dd5f1cfb3cff653b",
+        "evidence": "Each step follows; checked the G1 quadratic relation and the (1,1) commutator entry = 1 by hand."
+      }
+    ]
+  },
+  "updated_at": "2026-11-17T00:43:10.477Z"
+}

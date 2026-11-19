@@ -1,1 +1,0 @@
-But if $S^3_r(T_{p,q}) \cong \pm S^3_0(T_{2,3})$ then $r=0$ for homological reasons, and by \cite{moser} the two sides of this identification are both Seifert fibered with base orbifolds $S^2(|p|,|q|,|pq|) \cong S^2(2,3,6)$, so we must have $\{|p|,|q|\} = \{2,3\}$ and therefore $T_{p,q}$ is a trefoil. \end{proof}

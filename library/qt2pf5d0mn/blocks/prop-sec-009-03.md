@@ -1,0 +1,1 @@
+Let D0 = D({e}, G, ρ0, a0), then ZD0(M; T ) = |G||T 0|#({e}, G, ρ0, a0) = | Hom(π1(M), G)| | Hom(π0(M), G)| = DWG(M), (3.8) Section 3.3 Examples where π0(M) is the set of connected components of M and Hom(π0(M), G) is the set of maps from π0(M) to G.

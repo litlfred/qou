@@ -1,0 +1,1 @@
+t−2iXi ∗Sk(y) =(y −t2 −t−2)−1 × [−t4k+2Sn+k+1(y) + t−4k−2Sn−k−3(y) + t4k(t4 −S2(x))Sn+k(y) + t−4k(−t−4 + S2(x))Sn−k−2(y) + t4k−2(−t−4 + (t4 −1)S2(x))Sn+k−1(y) + t−4k+2(t4 −(t−4 −1)S2(x))Sn−k(y) + 2x2t−2nSk(y) + k−1 X i=−k+1 t4iϕi−k(x)Sn+i(y)], where ϕj(x) =  (t4 −t−4)S2(x), if j is odd t6 −t−6 + (t2 −t−2)S2(x), if j is even

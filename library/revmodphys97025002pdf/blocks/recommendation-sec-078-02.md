@@ -1,1 +1,0 @@
-Of course, innovative new experiments and theoretical calculations that will lead to reduced fundamental constant uncertainties should always be encouraged because it can never be known in advance what new physics might be uncovered in the next decimal place.

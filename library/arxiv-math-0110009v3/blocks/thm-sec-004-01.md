@@ -1,0 +1,1 @@
+Suppose f : Rn →R is an admissible function, is not identically zero, and satisﬁes the following two conditions: (1) f(x) ≤0 for |x| ≥1, and (2) bf(t) ≥0 for all t. Then the center density of n-dimensional sphere packings is bounded above by f(0) 2n bf(0) .

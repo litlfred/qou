@@ -1,0 +1,1 @@
+Let λ ∈Pn,2, and λ ∪λ ∈P2n,2. Let OL λ be the GL(Mn)-orbit corresponding to λ, and Oλ∪λ the G-orbit corresponding to λ ∪λ. Then Oλ is the unique H-orbit in X such that OL λ ⊂Oλ ⊂Oλ∪λ. The analogue of Lemma 7.2 and Remark 7.3 also hold for Gιθ uni × V .

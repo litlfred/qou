@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0108011v1/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Hecke algebras",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-math-0108011v1/blocks/prose-sec-002"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0108011v1/manifest.jsonld",
+  "provenance": "ingested"
+}

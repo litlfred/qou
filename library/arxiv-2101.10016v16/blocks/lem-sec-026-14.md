@@ -1,0 +1,1 @@
+Let (ρ ∨ , bρ, dρ) and (˜ρ, ˜bρ, ˜dρ) be two right dualities with associated functors D and D˜ respectively, and let ξ ∈ (D, D ˜ ) the corresponding monoidal isomorphism. Let u and u˜ be corresponding Drinfeld isomorphisms defined by the same generalised coboundary. Then u˜ρ = ζρ ◦ uρ where ζρ := ξ −1 ρ˜ ◦ ξ ∨ ρ : D2 → D˜ 2is the composite monoidal isomorphism.

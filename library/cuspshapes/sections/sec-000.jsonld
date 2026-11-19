@@ -14,10 +14,11 @@
   "pageEnd": 3,
   "contains": [
     "library/cuspshapes/blocks/prose-sec-000",
-    "library/cuspshapes/blocks/recommendation-sec-000-01",
-    "library/cuspshapes/blocks/recommendation-sec-000-02"
+    "library/cuspshapes/blocks/thm-sec-000-01",
+    "library/cuspshapes/blocks/thm-sec-000-02",
+    "library/cuspshapes/blocks/cor-sec-000-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,1 +1,0 @@
-*How should we normalize the characters of the symmetric groups in order to obtain some meaningful asymptotic quantities?* The answer for this question was given by [@Biane2003] who gave the following definition.

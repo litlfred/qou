@@ -1,0 +1,1 @@
+Using Remark 3.16, the deﬁnition of ϑE −extends to virtual bundles by setting ϑE V −W := ϑE V ◦(ϑE W)−1 = (ϑE W)−1 ◦ϑE V (with these identities understood as in Remark 3.16), giving the isomorphism ϑE V −W : 61−det V ⊗det−1 Wπ∗ XE −→ ∼ 6rV −rW −V +Wπ∗ XE.

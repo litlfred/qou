@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/blocks/prop-sec-110-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 174,
+  "pageEnd": 174,
+  "text": "prop-sec-110-01.md",
+  "derivedFrom": "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-110",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "empirical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "empirical-measurement",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper empirical measurement in sections/sec-110-fgk208-ij-page-174.md (p. 174-174)",
+    "claim_id": "kondev-2021-chinese-phys-c-45-030001#prop-sec-110-01"
+  }
+}

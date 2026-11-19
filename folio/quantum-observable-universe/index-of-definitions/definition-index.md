@@ -745,7 +745,7 @@
 | [prop:p-bandwidth-bound](#prop:p-bandwidth-bound) | Polynomial computation as sub-horizon bandwidth | Ch 20 | `qou:QOU.Information.p_bandwidth_bound` |
 | [prop:q-rogers-pentagon-archimedean](#prop:q-rogers-pentagon-archimedean) | Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction | Ch 12 | `qou:QOU.BraidKnot.QRogersAnalyticContinuation` |
 | [prop:habiro-precision-ladder-equivalence](#prop:habiro-precision-ladder-equivalence) | Precision-ladder coefficients are Habiro integer evaluations | Ch 12 | `qou:QOU.BraidKnot.habiro_integral` |
-| [prop:chain-ring-comparison](#prop:chain-ring-comparison) | Predicted vs. observed $\mathrm{C}_6$ ring-closure barrier | Ch 17 | `qou:QOU.Organic.benzene_weights` |
+| [conj:chain-ring-comparison](#conj:chain-ring-comparison) | Predicted vs. observed $\mathrm{C}_6$ ring-closure barrier | Ch 17 | `qou:QOU.Organic.benzene_weights` |
 | [prop:homological-shell-condensation](#prop:homological-shell-condensation) | Proposition (homological shell condensation): BB-stratified $E_\infty^{p,>0}(n) = 0$ at magic $n$ | Ch 7 | `qou:QOU.ShellCondensation.HomologicalConjecture` |
 | [conj:partition-sum-proton-residual](#conj:partition-sum-proton-residual) | Proton tower residual compared with $m_e\sum_{\lambda\vdash3}1/\dim_q\lambda = m_e(2 + 1/[2]_q)$ | Ch 12 | `qou:QOU.BraidKnot.proton_tower_residual_frobenius` |
 | [prop:mass-endomorphism-tower](#prop:mass-endomorphism-tower) | Proton--electron mass endomorphism tower (convention D, $\mathrm{Li}_2^q$): the mass formula is positive under a genuine norm and bounded dilogarithm | Ch 12 | `qou:QOU.MassEndomorphism.mass_endomorphism_positive` |
@@ -770,7 +770,7 @@
 | [prop:root-of-unity-truncation](#prop:root-of-unity-truncation) | Representation-theoretic truncation at roots of unity and the $q = 1$ accumulation | Ch 18 | `qou:QOU.FluidDynamics.root_of_unity_truncation_conditional` |
 | [prop:adelic-reeb-restricted-product](#prop:adelic-reeb-restricted-product) | Restricted-product structure of the Reeb $\omega$-order: additivity over places and local--global squeeze | Ch 19 | `qou:QOU.AlgebraicSubstrate.adelic_reeb_order_additive` |
 | [prop:three-strand-color-winding-rigidity](#prop:three-strand-color-winding-rigidity) | Rigidity of the three-strand color winding: $(\sigma_1\sigma_2)^3 = \mathrm{Id}$ on the $(2,1)$ block, $q$-independently | Ch 5 | `qou:QOU.BraidsAndKnots.threeStrand_cubes_to_one` |
-| [prop:ring-closure-barrier](#prop:ring-closure-barrier) | Ring-closure energy barrier from braid rearrangement | Ch 17 | `qou:QOU.Organic.alexanderWeightDifference` |
+| [conj:ring-closure-barrier](#conj:ring-closure-barrier) | Ring-closure energy barrier from braid rearrangement | Ch 17 | `qou:QOU.Organic.alexanderWeightDifference` |
 | [prop:shell-schur-weyl-self-duality](#prop:shell-schur-weyl-self-duality) | Schur-Weyl justification of shell-operator self-duality | Ch 8 | `qou:QOU.BraidKnot.ShellSchurWeylSelfDuality` |
 | [prop:schur-weyl-mass-decomposition](#prop:schur-weyl-mass-decomposition) | Schur–Weyl decomposition of the atomic mass trace | Ch 12 | `qou:QOU.BraidKnot.schur_weyl_mass_decomposition` |
 | [prop:hyperbolic-knot-shape-fields](#prop:hyperbolic-knot-shape-fields) | Shape fields of hyperbolic knot triangulations, with the gluing equations verified exactly | Ch 12 | `qou:QOU.Knot.GeneratedGluing.K61.edge_0` |

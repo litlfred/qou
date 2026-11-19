@@ -1,1 +1,0 @@
-Often we shall use the notation (1"'2”...) for a partition, so that m, denotes the number of parts equal to i in the partition. m, shall denote the monomial symmetric function, h, the homogeneous symmetric function, s, the Schur function, and p, the power symmetric function associated to the partition 4.

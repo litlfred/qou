@@ -1,0 +1,1 @@
+Under the hypotheses of Theorem 9.5, the asymptotic series Φw(r) can be expressed as Φw(r) = w−r p det(2πrd H) X k≥0 p−1 X j=0 (rd + 1)(p−1−j) (p −1 −j)! j! r−k d Lk(Aj, φ), where Lk(A, φ) = (−1)k X 0≤ℓ≤2k Dℓ+k  A(x) · φ(x)ℓ 2ℓ+kℓ!(ℓ+ k)!

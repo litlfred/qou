@@ -1,0 +1,1 @@
+In the four cases l = 1, 2, 4 and 8, the image ρl(π1(M0,4, x)) in the projective linear group PGL(2, C) is ﬁnite and isomorphic to the groups given in table l ρl(π1(M0,4, x)) µ3 µ2 × µ2 A4 A5 Here An denotes the alternating group on n letters.

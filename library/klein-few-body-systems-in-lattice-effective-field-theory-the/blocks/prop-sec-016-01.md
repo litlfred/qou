@@ -1,0 +1,1 @@
+The identiﬁcation of bound states in the energy spectrum of a lattice calculation is quite important for the determination of deuteron, triton and helium properties as well as any other description of nuclei in the framework of NLEFT.

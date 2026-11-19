@@ -1,1 +1,0 @@
-The quaternionic fields which should describe flavor doublets will be de- composed into left ideals using the projection operators (@o+ies)/2.° The extra U(1) arises from the arbitrariness in the decomposition.

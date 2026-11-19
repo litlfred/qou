@@ -1,1 +1,0 @@
-Although conceptually this Landau-Ginzburg model should be the effective two-dimensional $\CN=2$ theory on $D$ in the brane construction \eqref{theoryB} studied in \cite{DGH,FGS2,FGSS}, the setup appears to be surprisingly different.

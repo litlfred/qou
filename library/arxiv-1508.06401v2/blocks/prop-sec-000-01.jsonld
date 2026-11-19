@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1508.06401v2/blocks/prop-sec-000-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 2,
+  "pageEnd": 4,
+  "text": "prop-sec-000-01.md",
+  "derivedFrom": "library/arxiv-1508.06401v2/sections/sec-000",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.06401v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "computational-claim",
+    "claim_domain": "science",
+    "evidence_kind": "computational-simulation",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper result in sections/sec-000-1-introduction-and-general-strategy.md combined with [4, 5]"
+  }
+}

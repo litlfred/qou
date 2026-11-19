@@ -1,0 +1,1 @@
+Note that the product (10.12) consists of half of the terms involved in a face equation. More precisely, if v0v1v2 ∈∆0 is glued to w0w1w2 ∈∆1, the face equations are given by (10.13) X εv0v1v2 ⟲ t0v0+t1v1+t2v2 = X εw0w1w2 ⟲ t0w0+t1w1+t2w2.

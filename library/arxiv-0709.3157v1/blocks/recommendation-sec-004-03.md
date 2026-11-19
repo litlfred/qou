@@ -1,1 +1,0 @@
-As a result, one should keep in mind that, besides the chirally renormalized low-energy couplings, each operator with $n$ tensor sources bears a non-vanishing anomalous dimension, namely $n\,\gamma_T$.

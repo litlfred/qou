@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0001202v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0001202v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-0001202v2",
+  "title": "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees",
   "contains": [
     "library/arxiv-hep-th-0001202v2/sections/sec-front-matter",
     "library/arxiv-hep-th-0001202v2/sections/sec-000",
@@ -36,7 +36,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-0001202v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0001202v2.pdf",
     "source_sha256": "b2e3e22ea3d51c0b10a6678d71c5d5b265646c5c8902b7d24b35a3162f709214",
     "pages": 21,
@@ -47,8 +49,8 @@
       "stamp_date": "29 Jan 2000"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

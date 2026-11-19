@@ -1,0 +1,1 @@
+Let H ∈PR with coordinates γm,ℓ,j ∈R (m, ℓ≥1, 0 ≤j < ϕ(m)). Then H ∈HR if and only if M∗ N  (φmγm,ℓ,j) mℓ<N 0≤j<ϕ(m)  ≡0 (mod D(N)) (333) for all N ∈Z>0, where M∗ N is the matrix defined in Proposition 5.2 of Section 5.1. This gives an easy numerical check of whether a function near roots of unity is an element of the Habiro ring of R.

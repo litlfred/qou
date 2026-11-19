@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "1172-3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "e9c32f59e9db7970fb39510d17d1fbeb1d26ba29609d88a308a26ba1e36ae636",
   "file": "1172-3.pdf"
@@ -11,13 +14,196 @@
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 6,
+  "by_kind": {
+   "proposition": 5,
+   "remark": 1
+  },
+  "formalization_candidates": 5,
+  "by_domain": {
+   "math": 6
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 5,
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 6
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 5
+  },
+  "needs_lean_proof": 5
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.1",
+   "name": null,
+   "statement": "For each $n\\geq 0_{f}$ $e_{n}= \\sum_{i=0}^{n}(-1)ih$ . ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-4-the-kauffman-bracket-skein-module-of-the-solid.md (p. 4-7)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-4-the-kauffman-bracket-skein-module-of-the-solid.md",
+   "section_title": "THE KAUFFMAN BRACKET SKEIN MODULE OF THE SOLID TORUS",
+   "pages": "4-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-001-4-the-kauffman-bracket-skein-module-of-the-solid.md (p. 4-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/1172-3/blocks/prop-sec-001-01",
+   "claim_id": "1172-3#proposition:5.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TwoRoutesProtonMass.lean:h_eq_qp1_hbar",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean:choose2_succ"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.1",
+   "name": null,
+   "statement": "$Forn\\geq 0$ and $a\\in B^{\\mathrm{e}\\mathrm{v}\\mathrm{e}\\mathrm{n}}$ we have $\\langle R_{n}\u2019, a\\rangle\\in \\mathrm{Z}[A, A^{-}1]$ . Hence there is the natural well-de\ufb01ned pairing $\\langle, \\rangle:\\hat{B}^{l_{\\otimes_{\\mathrm{Z}1}-1}}A,A]B\\mathrm{e}\\mathrm{V}\\mathrm{e}\\mathrm{n}arrow \\mathrm{Z}[A, A^{-}1]$. We de\ufb01ne an element $\\omega\\in\\hat{B}\u2019$ as follows. (3) $\\omega=\\sum_{n=0}^{\\infty}(-1)^{n}a^{\\frac{1}{2}}R_{n}\u2019n(n+3)$ . Let $t:Barrow B$ the $\\mathrm{Z}[A, A^{-}1]$-linear map de\ufb01ned as one positive full twist, see [BHMV]. Alternatively, $t$ is the unique $\\mathrm{Z}[A, A^{-}1]$-linear map de\ufb01ned by $t(e_{n})=(-1)^{n}A^{n}(n+2\\rangle$ for",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-002-6-the-twisting-element.md",
+   "section_title": "THE TWISTING ELEMENT",
+   "pages": "7-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-002-01",
+   "block_iri": "library/1172-3/blocks/prop-sec-002-01",
+   "claim_id": "1172-3#proposition:6.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TwoRoutesProtonMass.lean:h_eq_qp1_hbar",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean:choose2_succ"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.2",
+   "name": null,
+   "statement": "The element $\\omega$ is invertible in $\\hat{B}\u2019$ with the inverse $\\omega^{-1}=\\sum_{n=0}^{\\infty}a-\\frac{1}{2}n(n+3)R_{n};$ . We have for every $x\\in B^{\\mathrm{e}\\mathrm{v}\\mathrm{e}\\mathrm{n}}$ $\\langle\\omega^{\\pm 1}, x\\rangle=\\langle t^{\\pm 1}(_{X})\\rangle$. KAZUO HABIRO",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-002-6-the-twisting-element.md",
+   "section_title": "THE TWISTING ELEMENT",
+   "pages": "7-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-002-02",
+   "block_iri": "library/1172-3/blocks/prop-sec-002-02",
+   "claim_id": "1172-3#proposition:6.2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TwoRoutesProtonMass.lean:h_eq_qp1_hbar",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean:choose2_succ"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "7.1",
+   "name": null,
+   "statement": "We have $\\langle R\u2019l\u2019 R\u2019m\u2019 R\u2019\\rangle_{\\otimes}n=\\{$ $(a-a^{-1})^{n} \\frac{[2n+11^{1}}{[n]!}$ , if $l=m=n$ , $0$ , otherwise.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-002-6-the-twisting-element.md",
+   "section_title": "THE TWISTING ELEMENT",
+   "pages": "7-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-002-03",
+   "block_iri": "library/1172-3/blocks/prop-sec-002-03",
+   "claim_id": "1172-3#proposition:7.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TwoRoutesProtonMass.lean:h_eq_qp1_hbar",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean:choose2_succ"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "8.2",
+   "name": null,
+   "statement": "Let $L$ be an $m$-component algebraically split link and let $(L_{0}, ])$ be a surgery description of L. Let $l$ denote the number of components of $J$ and let $f_{p}\\in\\{1, -1\\}(p=1, \\ldots, \\iota)$ denote the framing of the $pth$ component of J. Then we have, for $a_{1},$ $\\ldots,$ $a_{m}\\in B$, $\\langle a_{1}, \\ldots, a_{m}\\rangle_{L}=\\langle a1, \\ldots, a_{m}, \\omega^{-f1}, \\ldots, \\omega^{-f_{\\mathrm{t}}}\\rangle_{L}0\\cup J\\in \\mathrm{z}[A, A^{-}1]$ (and the right hand side is well de\ufb01ned).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-002-6-the-twisting-element.md",
+   "section_title": "THE TWISTING ELEMENT",
+   "pages": "7-10",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-002-04",
+   "block_iri": "library/1172-3/blocks/prop-sec-002-04",
+   "claim_id": "1172-3#proposition:8.2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Knot/BorromeanVolume.lean:borromeanDen_pos",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TwoRoutesProtonMass.lean:h_eq_qp1_hbar",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean:choose2_succ"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "8.3",
+   "name": null,
+   "statement": "Proposition 8.2 can be stated in a stronger form. Details will appear in [H]. 9. $\\mathrm{c}_{\\mathrm{A}\\mathrm{L}\\mathrm{c}\\mathrm{U}\\mathrm{L}}\\mathrm{A}\\mathrm{T}\\mathrm{I}\\mathrm{o}\\mathrm{N}$ OF THE COLORED JONES POLYNOMIAL OF THE TREFOIL KNOT Here we illustrate how to calculate the colored Jones polynomial $\\langle e_{n}\\rangle_{3_{1}}$ of the trefoil knot $3_{1}$ with negative crossings. The polynomials for other links listed in Section 3 can be calculated similarly. The trefoil knot $3_{1}$ has a surgery description $(U, J_{1}\\cup J_{2})$ such that 1. $U\\cup J_{1}\\cup J_{2}$ is the Borromean rings, 2. the framings of $J_{1}$ and $J_{2",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-002-6-the-twisting-element.md (p. 7-10)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-002-6-the-twisting-element.md",
+   "section_title": "THE TWISTING ELEMENT",
+   "pages": "7-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-002-05",
+   "block_iri": "library/1172-3/blocks/rem-sec-002-05",
+   "claim_id": "1172-3#remark:8.3"
+  }
+ ]
 }

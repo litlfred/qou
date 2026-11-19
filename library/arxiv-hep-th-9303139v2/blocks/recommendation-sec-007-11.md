@@ -1,1 +1,0 @@
-From this point of view eq.(2.1) is rather a particular representation of ZN and it is sensible to look for other representations as well (we shall later discuss two of them: one in terms of CFT, another in terms of Kontsevich integrals).

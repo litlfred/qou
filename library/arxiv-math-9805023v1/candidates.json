@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-9805023v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "ea8758b2a2bf9d8504d6715dba6f905440e513e5c0e0118ae3a60485457d3411",
   "file": "9805023v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/9805023v1 [math.CA] 6 May 1998",
+  "title": "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations",
   "authors": "FUNCTIONS AND THEIR ORTHOGONALITY RELATIONS",
   "arxiv": {
    "id": "math/9805023",
@@ -16,61 +19,377 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
+  "candidates": 13,
   "by_kind": {
-   "recommendation": 3
+   "remark": 5,
+   "lemma": 4,
+   "theorem": 1,
+   "corollary": 1,
+   "proposition": 2
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 8,
+  "by_domain": {
+   "math": 13
+  },
+  "by_evidence_kind": {
+   "explanatory": 5,
+   "deductive-proof": 8
+  },
+  "by_evidence_location": {
+   "in-paper": 6,
+   "both": 3,
+   "elsewhere": 4
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 8
+  },
+  "needs_lean_proof": 8
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.1",
    "name": null,
-   "statement": "It should be noted that this method corresponds to the one employed by Kakehi, Masuda and Ueno [11], 2 [12] giving the Plancherel measure for the little q-Jacobi functions from its interpretation as matrix elements of irreducible representations of SUq(1, 1).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction.",
-   "pages": "1-3",
+   "statement": "The motivation to consider the operator L comes from an investigation in the Hopf \u2217-algebra related to the quantum SU(1, 1) group. This is a \u2217-algebra with two generators \u03b1 and \u03b3 such that for 0 < q < 1 the following relations hold: \u03b1\u03b3 = q\u03b3\u03b1, \u03b1\u03b3\u2217= q\u03b3\u2217\u03b1, \u03b3\u03b3\u2217= \u03b3\u2217\u03b3, \u03b1\u03b1\u2217\u2212q2\u03b3\u03b3\u2217= 1 = \u03b1\u2217\u03b1 \u2212\u03b3\u2217\u03b3. We can represent this \u2217-algebra in terms of unbounded operators in \u21132(Z) by \u03c0(\u03b3) ek = \u03bbqk ek, \u03c0(\u03b1) ek = q 1 + |\u03bb|2q2k ek\u22121, for the standard orthonormal basis {ek}k\u2208Z of \u21132(Z) and where \u03bb \u2208C\\{0}. Study of the self-adjoint element \u03c1 = \u03b1\u2217\u03b3\u2217+ \u03b3\u03b1 + (t + t\u22121)\u03b3\u03b3\u2217in these representations leads to the operator in (2.1) after some normalisation. Then we might expect t",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-2-solutions-to-a-symmetric-operator.md (p. 3-6)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-2-solutions-to-a-symmetric-operator.md",
+   "section_title": "Solutions to a symmetric operator.",
+   "pages": "3-6",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-001-01",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/rem-sec-001-01",
+   "claim_id": "arxiv-math-9805023v1#remark:2.1"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let x \u2208C\\{0}, then V t(x) = \u0000V t k(x) \u0001 k\u2208Z, V t\u22121(x) = \u0000V t\u22121 k (x) \u0001 k\u2208Z and U(x) = \u0000Uk(x) \u0001 k\u2208Z are solutions to Lu = x u. Furthermore, V t(x) is \u21132 as k \u2192\u221eif and only if |t| < q\u22121 2 or t = \u00b1q\u22121 2 m, m \u2208Z\u22650, and V t\u22121(x) is \u21132 as k \u2192\u221eif and only if |t| > q 2 or t = \u00b1q 2 m, m \u2208Z\u22650, and U(x) is \u21132 as k \u2192\u2212\u221efor all t. If we moreover assume t \u2208R\\{q 2 m | m \u2208Z}, then U(x) is \u21132 as k \u2192\u221eif and only if q 2 < |t| < q\u22121 2 .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-001-2-solutions-to-a-symmetric-operator.md (p. 3-6) citing [7, Exercise 1.13]",
+   "external_refs": [
+    "[7, Exercise 1.13]"
+   ],
+   "proof_excerpt": "Recall the second order q-di\ufb00erence equation (c \u2212abz)f(qz) + (\u2212(c + q) + (a + b)z)f(z) + (q \u2212z)f(z/q) = 0 satis\ufb01ed by f(z) = 2\u03d51(a, b; c; q, z), see [7, Exercise 1.13]. Take c = 0 to see that U(x) satis\ufb01es Lu = x u. It is clear from (2.3) that U(x) is \u21132 as k \u2192\u2212\u221e. By con\ufb02uent lim",
+   "section_file": "sections/sec-001-2-solutions-to-a-symmetric-operator.md",
+   "section_title": "Solutions to a symmetric operator.",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-001-2-solutions-to-a-symmetric-operator.md (p. 3-6) citing [7, Exercise 1.13]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-001-02",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/lem-sec-001-02",
+   "claim_id": "arxiv-math-9805023v1#lemma:2.2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
    "number": null,
    "name": null,
-   "statement": "It should also be observed that M (\u03b1;c) p (cqk; q) is bounded as k \u2192\u221eand that M (\u03b1;c) p (cqk; q) \u21920 for |qp\u2212\u03b1/c| < 1 for k \u2192\u2212\u221eas follows from (2.5).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "It follows from Lemma 2.2(i) that L has de\ufb01ciency indices (1, 1) for q 2 < |t| < q\u22121 2 , t\u0338 = \u00b11, and that the de\ufb01ciency space N\u00b1i = {u \u2208\u21132(Z) | Lu = \u00b1i u} is spanned by U(\u00b1i). The Wronskian for two sequences (uk)k\u2208Z and (vk)k\u2208Z is given by (2.10) [u, v]k := ak \u0000uk+1vk \u2212ukvk+1 \u0001 . It is independent of k if u and v are two solutions to Lu = x u, so that we may denote it by [u, v].",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-001-2-solutions-to-a-symmetric-operator.md (p. 3-6)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-2-solutions-to-a-symmetric-operator.md",
+   "section_title": "Solutions to a symmetric operator.",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-001-03",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/rem-sec-001-03",
+   "claim_id": "arxiv-math-9805023v1#rem-sec-001-03"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.3",
+   "name": null,
+   "statement": "We have the following Wronskians: [V t(x), V t\u22121(x)] = \u221ac t (t2, qt\u22122 \u22121/c, \u2212cq; q)\u221e, [U(x), V t(x)] = ct\u22121(x) \u2212t\u221ac .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-001-2-solutions-to-a-symmetric-operator.md (p. 3-6)",
+   "external_refs": [],
+   "proof_excerpt": "The \ufb01rst Wronskian follows by combining (2.10) with Lemma 2.2(ii) and letting k \u2192\u221eusing (2.7). The second Wronskian follows from the \ufb01rst and (2.4) for \u00b1t /\u2208{q 1 2 m | m \u2208Z}. Next use analytic continuation with respect to t.",
+   "section_file": "sections/sec-001-2-solutions-to-a-symmetric-operator.md",
+   "section_title": "Solutions to a symmetric operator.",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-001-2-solutions-to-a-symmetric-operator.md (p. 3-6)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-001-04",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/lem-sec-001-04",
+   "claim_id": "arxiv-math-9805023v1#lemma:2.3",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The vector V t\u22121(\u03bep) belongs to \u21132(Z) for p \u2208Z. This can also be seen as follows. First apply to (2.3) the transformation formula (3.5) 1\u03d51 \u0010a c ; q, z \u0011 = (z; q)\u221e (c; q)\u221e 1\u03d51 \u0012az/c z ; q, c \u0013 (a limit case of Heine\u2019s transformation formula [7, (1.4.5)]). Combination of (2.3), (3.5) and ( 2.5) yields that V t\u22121 k (\u03bep) = (\u2212qp+1/c; q)\u221e(\u2212t2c\u22121qp)p p (\u2212q1\u2212k/c; q)\u221e(qt\u22122; q)\u221e q 4 k(k+1) (tc\u22121 2 qp)k(qt\u22122; q)\u221e \u00d7 (q1\u2212p\u2212k; q)\u221e1\u03d51 \u0012 \u2212cq\u2212p q1\u2212p\u2212k ; q, q1\u2212p\u2212kt\u22122 \u0013 , so that we obtain the \u21132-behaviour as k \u2192\u2212\u221eof V t\u22121(x).",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [7, (1.4.5)] in sections/sec-002-3-spectral-resolution.md",
+   "external_refs": [
+    "[7, (1.4.5)]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-002-3-spectral-resolution.md",
+   "section_title": "Spectral resolution.",
+   "pages": "6-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-002-01",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/rem-sec-002-01",
+   "claim_id": "arxiv-math-9805023v1#rem-sec-002-01"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.1",
+   "name": null,
+   "statement": "The functions M (\u03b1;c) p (\u00b7; q), p \u2208Z, together with the q-Laguerre polynomials L(\u03b1) n (\u00b7; q), n \u2208Z\u22650, form an orthogonal basis for L2(\u00b5(\u03b1;c)), c > 0, \u03b1 > \u22121. Explicitly, L \u0000L(\u03b1) n (\u00b7; q)L(\u03b1) p (\u00b7; q) \u0001 = \u03b4n,pq\u2212p (q\u03b1+1; q)p (q; q)p (q, \u2212cq\u03b1+1, \u2212q\u2212\u03b1/c; q)\u221e (q\u03b1+1, \u2212c, \u2212q/c; q)\u221e , L \u0000M (\u03b1;c) p (\u00b7; q)M (\u03b1;c) r (\u00b7; q) \u0001 = \u03b4p,rcq\u03b1q\u2212p (\u2212qp+1/c, \u2212q\u2212\u03b1/c; q)\u221e (\u2212qp+1\u2212\u03b1/c, \u2212cq\u03b1+1; q)\u221e (\u2212c, \u2212q/c; q)\u221e , L \u0000M (\u03b1;c) p (\u00b7; q)L(\u03b1) n (\u00b7; q) \u0001 = 0.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-003-4-basis-for-l2-space.md (p. 9-11)",
+   "external_refs": [],
+   "proof_excerpt": "Apply the results of the previous section with t\u22122 = q\u03b1. The \ufb01rst statement corresponds to \u27e8V t\u22121(\u03b7p), V t\u22121(\u03b7r)\u27e9= \u03b4p,r\u2225V t\u22121(\u03b7p)\u22252, the second statement corresponds to \u27e8V t\u22121(\u03bep), V t\u22121(\u03ber)\u27e9= \u03b4p,r\u2225V t\u22121(\u03bep)\u22252 and the last one to \u27e8V t\u22121(\u03bep), V t\u22121(\u03b7r)\u27e9= 0.",
+   "section_file": "sections/sec-003-4-basis-for-l2-space.md",
+   "section_title": "Basis for L2-space.",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-003-4-basis-for-l2-space.md (p. 9-11)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-003-01",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/thm-sec-003-01",
+   "claim_id": "arxiv-math-9805023v1#theorem:4.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4.2",
+   "name": null,
+   "statement": "The \ufb01rst statement of Theorem 4.1 corresponds to Moak\u2019s discrete orthogo- nality relations [21, Thm. 2] for the q-Laguerre polynomials. The second relation can be rewritten as (4.3) \u221e X k=\u2212\u221e qk(\u03b1+1)(q\u03b1+1; q)\u221e (\u2212cqk; q)\u221e(q; q)\u221e 1\u03d51 \u0012\u2212cq\u03b1\u2212p q\u03b1+1 ; q, qp+k+1 \u0013 (q\u03b1+1; q)\u221e (q; q)\u221e 1\u03d51 \u0012\u2212cq\u03b1\u2212r q\u03b1+1 ; q, qr+k+1 \u0013 = \u03b4p,rcq\u03b1q\u2212p (\u2212qp+1/c; q)\u221e (\u2212qp+1\u2212\u03b1/c; q)\u221e (\u2212cq\u03b1+1, \u2212q\u2212\u03b1/c; q)\u221e (\u2212c, \u2212q/c; q)\u221e = \u221e X k=\u2212\u221e qk(\u03b1+1)(qk+p+1; q)\u221e (\u2212cqk; q)\u221e(q; q)\u221e 1\u03d51 \u0012 \u2212cqk qk+p+1 ; q, q\u03b1+1 \u0013 (qk+r+1; q)\u221e (q; q)\u221e 1\u03d51 \u0012 \u2212cqk qk+r+1 ; q, q\u03b1+1 \u0013 , for p, r \u2208Z, which can be viewed as a q-analogue of the Hankel transform for the \ufb01rst equality or as a q-analogue of the Hansen-Lom",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "both",
+   "evidence_locator": "Inline argument in sections/sec-003-4-basis-for-l2-space.md citing [21, Thm. 2]",
+   "external_refs": [
+    "[21, Thm. 2]"
+   ],
+   "proof_excerpt": null,
    "section_file": "sections/sec-003-4-basis-for-l2-space.md",
    "section_title": "Basis for L2-space.",
    "pages": "9-11",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-003-02",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/rem-sec-003-02",
+   "claim_id": "arxiv-math-9805023v1#remark:4.2"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "4.3",
+   "name": null,
+   "statement": "The following orthogonality relations hold; \u03b4k,lcq\u2212k(\u2212cqk; q)\u221e (\u2212cq\u03b1+1, \u2212q\u2212\u03b1/c; q)\u221e (\u2212c, \u2212q/c; q)\u221e = c 2 \u2212\u03b1 qk \u2212ql \u0010 q 2 kJ(2) \u03b1+1(2\u221acq 2 k; q)J(2) \u03b1 (2\u221acq 2 l; q) \u2212q 2 lJ(2) \u03b1+1(2\u221acq 2 l; q)J(2) \u03b1 (2\u221acq 2 k; q) \u0011 + q\u03b1( 1 2 (k+l)\u22121) \u221e X p=\u2212\u221e qp (\u2212qp+1\u2212\u03b1/c; q)\u221e (\u2212qp+1/c; q)\u221e (q\u03b1+1; q)\u221e (q; q)\u221e 1\u03d51 \u0012\u2212cq\u03b1\u2212p q\u03b1+1 ; q, qk+p+1 \u0013 \u00d7 (q\u03b1+1; q)\u221e (q; q)\u221e 1\u03d51 \u0012\u2212cq\u03b1\u2212p q\u03b1+1 ; q, ql+p+1 \u0013 , In this form Corollary 4.3 is reminiscent of the Hankel transform, whereas if we use the transformation for the 1\u03d51-series of (4.2), the orthogonality relations remind us of the Hansen-Lommel orthogonality relations, cf. [18]. Of course, we may also replace the expressio",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [18] in sections/sec-003-4-basis-for-l2-space.md",
+   "external_refs": [
+    "[18]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-003-4-basis-for-l2-space.md",
+   "section_title": "Basis for L2-space.",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [18] in sections/sec-003-4-basis-for-l2-space.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-003-03",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/cor-sec-003-03",
+   "claim_id": "arxiv-math-9805023v1#corollary:4.3",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.1",
+   "name": null,
+   "statement": "We have the following generating functions: (i) For 0 < |z| < |b|\u22121 we have \u221e X p=\u2212\u221e zpbp (qp+1; q)\u221e (aqp/b; q)\u221e 1\u03d51 \u0012aqp/b qp+1 ; q, bx \u0013 = (q, az, x/z; q)\u221e (a/b, bz; q)\u221e , (ii) For |d| < |w| < 1 we have \u221e X r=\u2212\u221e wr(qr+1; q)\u221e1\u03d51 \u0012dqr+1/y qr+1 ; q, y \u0013 = (d, q, y/w; q)\u221e (w, d/w; q)\u221e .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md (p. 11-13) citing [13, Prop. 2.1], [7, (1.3.2)], [7, (1.3.16)]",
+   "external_refs": [
+    "[13, Prop. 2.1]",
+    "[7, (1.3.2)]",
+    "[7, (1.3.16)]",
+    "[7, (1.4.6)]"
+   ],
+   "proof_excerpt": "Case (i) is a limit case of [13, Prop. 2.1]. Use the q-binomial theorem [7, (1.3.2)] to expand (az; q)\u221e/(bz; q)\u221ein a power series of z for |z| < |b|\u22121, and [7, (1.3.16)] to expand (x/z; q)\u221ein a power series in z\u22121 for |z| > 0. Multiply the resulting series to \ufb01nd the result. For ",
+   "section_file": "sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md",
+   "section_title": "Direct proof of the orthogonality relations of Theorem 4.1.",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md (p. 11-13) citing [13, Prop. 2.1], [7, (1.3.2)], [7, (1.3.16)]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-004-01",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/lem-sec-004-01",
+   "claim_id": "arxiv-math-9805023v1#lemma:5.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.2",
+   "name": null,
+   "statement": "For |y| < 1, l \u2208Z, we have \u221e X k=\u2212\u221e yk (aqk/b; q)\u221e (qk+1; q)\u221e1\u03d51 \u0012aqk/b qk+1 ; q, y \u0013 (qk\u2212l+1; q)\u221e1\u03d51 \u0012dqk\u2212l+1/y qk\u2212l+1 ; q, y \u0013 = \uf8f1 \uf8f2 \uf8f3 0, for l < 0, dl (ay/(bd); q)l(d, q, q; q)\u221e (q; q)l(a/b; q)\u221e , for l \u22650.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md (p. 11-13)",
+   "external_refs": [],
+   "proof_excerpt": "Choose w = y/(bz) in Lemma 5.1(ii) and multiply with the generating function of",
+   "section_file": "sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md",
+   "section_title": "Direct proof of the orthogonality relations of Theorem 4.1.",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md (p. 11-13)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-004-02",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/prop-sec-004-02",
+   "claim_id": "arxiv-math-9805023v1#proposition:5.2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.1",
+   "name": null,
+   "statement": "(i) with x replaced by y/b. This then gives the following identity (az; q)\u221e(d, q, q; q)\u221e (bzd/y; q)\u221e(a/b; q)\u221e = \u221e X l=\u2212\u221e zl \u00d7 \u221e X k=\u2212\u221e yk\u2212lbl (aqk/b; q)\u221e (qk+1; q)\u221e1\u03d51 \u0012aqk/b qk+1 ; q, y \u0013 (qk\u2212l+1; q)\u221e1\u03d51 \u0012dqk\u2212l+1/y qk\u2212l+1 ; q, y \u0013 under the condition |y/b| < |z| < min(|b|\u22121, |y/(db)|). So we need |y| < 1, |d| < 1 to have a non-empty region of analyticity of the right hand side as function of z. The left hand side is an analytic function of z in |z| < |y/(db)| and it can be expanded in a power series in z using the q-binomial theorem [7, (1.3.2)]. Comparing coe\ufb03cients at both sides gives the result for |d| < 1. Next we use analytic continuati",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [7, (1.3.2)] in sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md",
+   "external_refs": [
+    "[7, (1.3.2)]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md",
+   "section_title": "Direct proof of the orthogonality relations of Theorem 4.1.",
+   "pages": "11-13",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, Cites external source [7, (1.3.2)] in sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-004-03",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/lem-sec-004-03",
+   "claim_id": "arxiv-math-9805023v1#lemma:5.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.1",
+   "name": null,
+   "statement": "Fix \u03b1 > \u22121, c > 0, k \u2208Z. Then, for each x \u2208R we have the pointwise limit (6.11) lim r\u2192\u221e ePr\u2212k(q\u03b1+1x; q\u03b1, 0, \u2212cq\u2212r\u22121; q) = J c \u03b1,k(x; q). Furthermore, if M > 0 then (6.12)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-005-6-proof-of-the-dual-orthogonality-relations.md (p. 13-20)",
+   "external_refs": [],
+   "proof_excerpt": "Write ePr\u2212k(q\u03b1+1x; q\u03b1, 0, \u2212cq\u2212r\u22121; q) = 2\u03c61 \u0012q\u2212r+k, x\u22121 q\u03b1+1 ; q, \u2212q\u03b1+r+2x c \u0013 = \u221e X j=0 tr(j, x) with tr(j, x) := (q\u2212r+k, x\u22121; q)j (q\u03b1+1, q; q)j (\u2212c\u22121q\u03b1+r+2x)j (vanishing if j > r \u2212k). Also write J c \u03b1,k(x; q) = 1\u03c61 \u0012 x\u22121 q\u03b1+1 ; q, \u2212c\u22121xqk+\u03b1+2 \u0013 = \u221e X j=0 t(j, x) with t(j, x) :=",
+   "section_file": "sections/sec-005-6-proof-of-the-dual-orthogonality-relations.md",
+   "section_title": "Proof of the dual orthogonality relations.",
+   "pages": "13-20",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-005-6-proof-of-the-dual-orthogonality-relations.md (p. 13-20)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-005-01",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/prop-sec-005-01",
+   "claim_id": "arxiv-math-9805023v1#proposition:6.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean:sTransform_pow_four"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
    "number": null,
    "name": null,
-   "statement": "(Note the error on the right-hand side of [7, (7.3.13)]: the factor (\u2212ac)n must be replaced by (\u2212acq2)\u2212n.) Formally the orthogonality relations (6.5) can be obtained as a limit case of the or- thogonality relations (6.8) for big q-Jacobi polynomials.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "As we said in the Introduction the limit transition (6.7) from big q-Jacobi poly- nomials to big q-Bessel functions is inspired by what happens at a quantum group level. The regular representation of the quantum group SUq(2) on Podle\u00b4s\u2019 quantum spheres naturally decomposes into irreducibles, generated by suitable spherical functions which turn out to depend on a single variable. Such functions can thus be identi\ufb01ed with ordinary big q-Jacobi polynomials, see [22]. In the limit transition from SUq(2) to the Euclidean quantum group Eq(2), quantum spheres are replaced by quantum hyperboloids, i.e., algebras in two generators z and \u00afz such that z",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [22] in sections/sec-005-6-proof-of-the-dual-orthogonality-relations.md",
+   "external_refs": [
+    "[22]"
+   ],
+   "proof_excerpt": null,
    "section_file": "sections/sec-005-6-proof-of-the-dual-orthogonality-relations.md",
    "section_title": "Proof of the dual orthogonality relations.",
    "pages": "13-20",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-005-02",
+   "block_iri": "library/arxiv-math-9805023v1/blocks/rem-sec-005-02",
+   "claim_id": "arxiv-math-9805023v1#rem-sec-005-02"
   }
  ]
 }

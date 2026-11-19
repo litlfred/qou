@@ -1,1 +1,0 @@
-When $\mathcal{T}_i$ are handlebodies there are multiple Massey products in the complement $S^3\setminus \mathcal{T}$, but the formula [\[eq:massey123\]](#eq:massey123){reference-type="eqref" reference="eq:massey123"} should still be valid.

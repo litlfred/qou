@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-000-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "prop-sec-000-02.md",
+  "derivedFrom": "library/arxiv-hep-th-9711057v2/sections/sec-000",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9711057v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "computational-claim",
+    "claim_domain": "science",
+    "evidence_kind": "computational-simulation",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)",
+    "claim_id": "arxiv-hep-th-9711057v2#prop-sec-000-02"
+  }
+}

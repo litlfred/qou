@@ -1,1 +1,0 @@
-To begin with, let us treat minutely the case when $$\omega=\left(\left(\frac{1}{2},\frac{1}{2},0,0,\ldots\right),(0,0,\ldots)\right).$$ The corresponding $\omega$-shuffles (which we shall call **$\mathbf{2}$-shuffles**) are easy to describe.

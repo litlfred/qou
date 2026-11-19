@@ -1,1 +1,0 @@
-Since we do not want to enter details on mod-Gaussian convergence for random vectors (for which we refer the reader to \cite{KN12} and \cite{FMN13}), we shall only consider the simple case $X=(X^{(1)},\ldots,X^{(d)})$ is a random vector with values in $\R^d$ such that $\mathbb E[\exp(z_1 X^{(1)}+\cdots+z_d X^{(d)})]$ is entire in $\CC^d$.

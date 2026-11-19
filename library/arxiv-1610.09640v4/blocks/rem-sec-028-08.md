@@ -1,0 +1,1 @@
+In algebraic topology and homotopy theory it is customary to use lower indices for DG rings (and to call them DG algebras). In other words, they use homological grading, as opposed to our cohomological grading. Thus our nonpositive DG ring A = L i≤0 Ai becomes a nonnegative graded algebra A = L i≥0 Ai in their language. Derived Categories | Amnon Yekutieli |

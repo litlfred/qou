@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2311.15631v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a3cc6d51cd04fc0736955afa21ff937ff60793a255bc282e835a6e7b662688db",
   "file": "2311.15631v3.pdf"
@@ -16,151 +19,55 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 9,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 9
+   "lemma": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "both": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "lemma",
+   "source_kind": "lemma",
    "number": null,
    "name": null,
-   "statement": "The candidates should satisfy three conditions: i) $\\text{rank}(\\mathcal C)\\le r_\\text{max}=\\lfloor\\text{FPdim}(\\mathcal B)\\rfloor$, ii) $(1\\le)\\text{FPdim}(\\mathcal C)\\le\\text{FPdim}(\\mathcal B)$, and iii) $\\text{FPdim}_{\\mathcal B}(A)=\\text{FPdim}(\\mathcal B)/\\text{FPdim}(\\mathcal C)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For $A\\cong1\\oplus X$ to be separable, it should have quantum dimension one.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-rank-two.md",
-   "section_title": "Rank two",
-   "pages": "6-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since none of them is modular, they should not be listed in MFCs, consistent with [@RSW07].",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-rank-three.md",
-   "section_title": "Rank three",
-   "pages": "11-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since the only rank three fusion category with Frobenius-Perron dimension three is $\\text{Vec}_{\\mathbb Z/3\\mathbb Z}^1$, for $A$ to be separable, the three simple objects should form $\\text{Vec}_{\\mathbb Z/3\\mathbb Z}^1$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-rank-three.md",
-   "section_title": "Rank three",
-   "pages": "11-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, the algebra should obey ([\\[constsMFCB\\]](#constsMFCB){reference-type=\"ref\" reference=\"constsMFCB\"}).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-rank-three.md",
-   "section_title": "Rank three",
-   "pages": "11-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since any object has $\\text{FPdim}_{\\mathcal C}(c_i)\\ge1$, $\\sum_{c_i\\neq c}(\\text{FPdim}_{\\mathcal C}(c_i))^2\\ge8$, and we must have $1<\\text{FPdim}_{\\mathcal C}(c)<2$, or the squared sum reaches ten.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-rank-three.md",
-   "section_title": "Rank three",
-   "pages": "11-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus, we conclude non-symmetric pre-MFC with fusion ring K(Rep(S3)) must have dY = 2 and hY = \u00b11 3 mod 1.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-conformal-dimensions-of-breps3.md",
-   "section_title": "Conformal dimensions of BRep(S3)",
-   "pages": "25-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since all simple objects are self-dual b\u2217\u223c= b, this means all components should be real.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "There does not exist a pre-modular fusion category with fusion ring K(psu(2)5) and trivial conformal dimension. In other words, all pre-modular fusion categories with fu- sion ring K(psu(2)5) are modular.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-007-conformal-dimensions-of-bpsu25.md (p. 26-30) citing [30], [34]",
+   "external_refs": [
+    "[30]",
+    "[34]"
+   ],
+   "proof_excerpt": "Assume the opposite, and suppose there exist pre-MFCs with trivial conformal dimensions obeying the fusion ring K(psu(2)5). When conformal dimensions are trivial, they turn out to be symmetric. For a symmetric fusion category B, there exists a \ufb01nite group G such that B \u2243Rep(G) [3",
    "section_file": "sections/sec-007-conformal-dimensions-of-bpsu25.md",
    "section_title": "Conformal dimensions of Bpsu(2)5",
    "pages": "26-30",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The only possibilities in our case is G = Z/3Z, S3 [34], and such symmetric fusion categories should have fusion rings K(Rep(Z/3Z)) or K(Rep(S3)) = K(0, 1, 0, 1) (in the notation of the paper).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-007-conformal-dimensions-of-bpsu25.md",
-   "section_title": "Conformal dimensions of Bpsu(2)5",
-   "pages": "26-30",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-007-conformal-dimensions-of-bpsu25.md (p. 26-30) citing [30], [34]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-007-01",
+   "block_iri": "library/arxiv-2311.15631v3/blocks/lem-sec-007-01",
+   "claim_id": "arxiv-2311.15631v3#lem-sec-007-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

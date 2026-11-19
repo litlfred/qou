@@ -1,0 +1,1 @@
+Any tangle in the knot-theoretic sense with alternating in and out boundary orientations is isotopic to a tangle with a diagram where all crossings occur in disjoint discs which contain the pattern with some non-alternating choice of crossings.

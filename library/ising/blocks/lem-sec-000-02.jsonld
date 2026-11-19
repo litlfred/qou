@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ising/blocks/lem-sec-000-02",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 8,
+  "pageEnd": 12,
+  "text": "lem-sec-000-02.md",
+  "derivedFrom": "library/ising/sections/sec-000",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.3",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-000-31-at-very-high-temperature-with-a-weak-magnetic.md (p. 8-12)",
+    "claim_id": "ising#lemma:3.3",
+    "lean_status": "unformalized"
+  }
+}

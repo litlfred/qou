@@ -1,1 +1,0 @@
-By uniqueness (see Corollary A.12), this then must equal Dλ up to scalar. ⊓⊔ The content of this result is that fact that we have commutativity even though D(1λ) is a priori the apolarity form with respect to a different group action than that of Dλ (i.e., (SL2(C))|λ| instead of (SL2(C))m).

@@ -1,0 +1,1 @@
+For this reason, one may consider only C™ (and not C”) functions on supermanifolds. Indeed, if for example g(x) is a C" function of one variable which is not differentiable r+1 times, then the expression g(a+ rt &2i-1€;) will not be defined, because the coefficient of &1...£p4 in this expression should be gt") (x), but this derivative does not exist.

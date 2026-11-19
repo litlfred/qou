@@ -1,1 +1,0 @@
-The only properties of FinSet0 which were used in the original construction of stuﬀtypes and operators was that it should be a groupoid: groupoids X with one or two functors into it were stuﬀtypes and operators respectively.

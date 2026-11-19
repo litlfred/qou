@@ -1,1 +1,0 @@
-It should be no surprise that: $$\label{eqn:c2} \mathrm{FHilb}_2(\mathbb{C}^2) = \text{Bl}_\Delta\left( \mathbb{C}^2 \times \mathbb{C}^2 \right) = \text{Proj} \left( \frac {\mathbb{C}[x_1,x_2,y_1,y_2,z,w]}{(x_1-x_2)w - (y_1-y_2)z} \right)$$ where the variables $x_i,y_i$ sit in degree 0, while $z,w$ sit in degree 1 with respect to the Proj.

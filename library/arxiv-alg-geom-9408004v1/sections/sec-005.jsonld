@@ -13,9 +13,11 @@
   "pageStart": 6,
   "pageEnd": 6,
   "contains": [
-    "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-005"
+    "library/arxiv-alg-geom-9408004v1/blocks/prose-sec-005",
+    "library/arxiv-alg-geom-9408004v1/blocks/lem-sec-005-01",
+    "library/arxiv-alg-geom-9408004v1/blocks/thm-sec-005-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9408004v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9408004v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9408004v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9408004v1/manifest.jsonld",
   "provenance": "ingested"
 }

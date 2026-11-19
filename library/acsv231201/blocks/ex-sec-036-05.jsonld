@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/acsv231201/blocks/ex-sec-036-05",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "title": "Critical Points at Inﬁnity",
+  "pageStart": 189,
+  "pageEnd": 200,
+  "text": "ex-sec-036-05.md",
+  "derivedFrom": "library/acsv231201/sections/sec-036",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7.5",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-036-some-illustrative-examples.md (p. 189-200)",
+    "claim_id": "acsv231201#example:7.5"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/black-samson-phd2010sp/blocks/thm-sec-008-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 36,
+  "pageEnd": 42,
+  "text": "thm-sec-008-02.md",
+  "derivedFrom": "library/black-samson-phd2010sp/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "III",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [32] in sections/sec-008-ilia-the-quantum-supergroup-uv-g111.md",
+    "claim_id": "black-samson-phd2010sp#theorem:III",
+    "lean_status": "unformalized"
+  }
+}

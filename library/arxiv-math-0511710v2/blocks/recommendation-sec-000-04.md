@@ -1,1 +1,0 @@
-This suggests that the holonomies in higher gauge theory should take values in some `categorified' analogue of a Lie group --- that is, some gadget resembling a Lie group, but which is a category rather than a set.

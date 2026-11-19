@@ -1,0 +1,1 @@
+Let K be a ﬁeld containing R such that the algebra KA is split semisimple. The blocks of the symmetric algebra A are the non-empty subsets B of Irr(KA) that are minimal with respect to the property: X V ∈B sV χV (a) ∈R ∀a ∈A.

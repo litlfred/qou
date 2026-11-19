@@ -1,0 +1,413 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "modified-quantum-dimensions-and-re-normalized-link-invariant",
+ "source": {
+  "file": "modified-quantum-dimensions-and-re-normalized-link-invariants.pdf",
+  "sha256": "5447f6d5f5d6c8d707d99cc7748d53dc97306f7b7a2eb3119b0107ea401e7171",
+  "bytes": 900152,
+  "pages": 18,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1112/S0010437X08003795",
+  "title": "Modified quantum dimensions and re-normalized link invariants",
+  "authors_raw": "Modified quantum dimensions and re-normalized link",
+  "title_lines": [
+   "COMPOSITIO MATHEMATICA"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "Modified quantum dimensions and re-normalized link invariants",
+   "Author": "Nathan Geer, Bertrand Patureau-Mirand and Vladimir Turaev",
+   "Producer": "pdfTeX-1.40.9",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20090205145335+05'30'"
+  },
+  "title_raw": "COMPOSITIO MATHEMATICA",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Modified quantum dimensions and re-normalized link invariants",
+   "heading": "COMPOSITIO MATHEMATICA",
+   "outline": "1 Introduction",
+   "text": "COMPOSITIO MATHEMATICA",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "196"
+  },
+  {
+   "level": 1,
+   "title": "Ribbon Ab-categories",
+   "page": 3,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "197"
+  },
+  {
+   "level": 1,
+   "title": "The invariant F' of closed ribbon graphs",
+   "page": 4,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "198"
+  },
+  {
+   "level": 1,
+   "title": "The quasi-functor F'",
+   "page": 6,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "200"
+  },
+  {
+   "level": 1,
+   "title": "Properties of dJ and F'",
+   "page": 10,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "204"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 13,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "207"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 18,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "212"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "196",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "197",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "198",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "199",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "200",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "201",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "202",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "203",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "204",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "205",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "206",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "207",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "208",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "209",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "210",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "211",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "212",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1287,
+   "n_words": 169,
+   "label_start": "1",
+   "label_end": "196"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4188,
+   "n_words": 703,
+   "label_start": "196",
+   "label_end": "197"
+  },
+  {
+   "id": "sec-001-2-ribbon-ab-categories",
+   "number": "2",
+   "title": "Ribbon Ab-categories",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1608,
+   "n_words": 325,
+   "label_start": "197",
+   "label_end": "198"
+  },
+  {
+   "id": "sec-002-3-the-invariant-f-of-closed-ribbon-graphs",
+   "number": "3",
+   "title": "The invariant F' of closed ribbon graphs",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4670,
+   "n_words": 984,
+   "label_start": "198",
+   "label_end": "200"
+  },
+  {
+   "id": "sec-003-4-the-quasi-functor-f",
+   "number": "4",
+   "title": "The quasi-functor F'",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 5793,
+   "n_words": 1277,
+   "label_start": "200",
+   "label_end": "204"
+  },
+  {
+   "id": "sec-004-5-properties-of-dj-and-f",
+   "number": "5",
+   "title": "Properties of dJ and F'",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 6779,
+   "n_words": 1394,
+   "label_start": "204",
+   "label_end": "207"
+  },
+  {
+   "id": "sec-005-6-examples",
+   "number": "6",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 18,
+   "n_chars": 13034,
+   "n_words": 2542,
+   "label_start": "207",
+   "label_end": "212"
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1740,
+   "n_words": 248,
+   "label_start": "212",
+   "label_end": "212"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 39099,
+  "furniture_lines_stripped": 34
+ }
+}

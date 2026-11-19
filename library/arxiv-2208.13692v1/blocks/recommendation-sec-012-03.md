@@ -1,1 +1,0 @@
-It requires a little effort to see $(12) : [s : t : u : v] \to [-s - t : t : u: v]$, which corresponds to $x^\prime \to -x^\prime$, and that $(34) : [s : t : u : v] \to [s : t : u: u^3/v]$, which fixes $x^\prime$ and so must be the map $y^\prime \to -y^\prime$.

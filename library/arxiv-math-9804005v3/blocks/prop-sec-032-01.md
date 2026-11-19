@@ -1,0 +1,1 @@
+Let (R,φ ) be a rigid dualizing complex over A. Then the two k-algebra homomorphisms λ,ρ : Z(A) → EndD(ModAe)(R) from the center of A, namely left and right multiplication, are both isomorphis ms, and are equal.

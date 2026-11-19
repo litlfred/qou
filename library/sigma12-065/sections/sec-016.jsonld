@@ -13,9 +13,12 @@
   "pageStart": 17,
   "pageEnd": 19,
   "contains": [
-    "library/sigma12-065/blocks/prose-sec-016"
+    "library/sigma12-065/blocks/prose-sec-016",
+    "library/sigma12-065/blocks/thm-sec-016-01",
+    "library/sigma12-065/blocks/thm-sec-016-02",
+    "library/sigma12-065/blocks/rem-sec-016-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sigma12-065",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/sigma12-065",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sigma12-065/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sigma12-065/manifest.jsonld",
   "provenance": "ingested"
 }

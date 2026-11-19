@@ -1,0 +1,1 @@
+Under Setup 16.3.1, let W ∈M(K, gr), and deﬁne I := A∗⊗ W ∈M(A, gr). Consider the canonical monomorphism W ↣I in M(A, gr) from (16.3.10). Then: (1) I is a graded-injective A-module. (2) I is an m-torsion A-module. (3) W = Soc(I). (4) W is a graded-essential submodule of I.

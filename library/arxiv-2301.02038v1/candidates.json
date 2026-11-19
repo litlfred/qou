@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2301.02038v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "27b303939826ab393daeb77ab186311fc7a7ada9d47f6f830bfeafcf14aedb9a",
   "file": "2301.02038v1.pdf"
  },
  "provenance": {
-  "title": "Contemporary Mathematics",
+  "title": "Vinogradov's Cohomological Geometry of Partial Differential Equations",
   "authors": "Vinogradov\u2019s Cohomological Geometry",
   "arxiv": {
    "id": "2301.02038",
@@ -16,181 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
-  "by_kind": {
-   "recommendation": 11
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Vinogradov is that Partial Differential Equations (PDEs) should be treated in a similar way.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "According to Vinogradov, the diffiety $(\\mathscr E, \\mathscr C)$ should be considered as the ultimate geometric portrait of $\\mathscr E_0$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As a consequence the space of solutions of a PDE share some features of the leaf space of a foliation (and \\emph{it is} the leaf space of a foliation when $\\dim \\mathscr E < \\infty$) and should be treated as a stack rather than as an ordinary space \\cite{mm03, BX2011, dH2013}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the ultimate idea of Vinogradov this fascinating constructions should be studied in their homotopy aspects.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "At this stage, we can only speculate that the space of solutions of a PDE should be ultimately treated as a \\emph{higher derived stack} \\cite{t10}.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In the following, $n$ should be interpreted as the number of \\emph{independent variables}, $m$ as the number of \\emph{dependent variables}, and $P$ as the space parameterizing both independent and dependent variables.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-11-jet-spaces.md",
-   "section_title": "jet spaces",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "\\label{Subsec:LR} Examples \\ref{exmpl:var_prin} and \\ref{exmpl:cons_law} suggest that the horizontal cohomology $\\overline H{}^\\bullet (\\mathscr E)$ should be interpreted as ``smooth functions on the space of solutions of the PDE $\\mathscr E_0$''.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-23-algebraic-structures-on-horizontal-cohomologi.md",
-   "section_title": "algebraic structures on horizontal cohomologies",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Similarly, the discussion at the end of Example \\ref{exmpl:inf_sym} suggests that $\\overline H{}^\\bullet (\\mathscr E, \\mathscr V)$ should be interpreted as ``vector fields on the space of solutions of $\\mathscr E_0$''.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-23-algebraic-structures-on-horizontal-cohomologi.md",
-   "section_title": "algebraic structures on horizontal cohomologies",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Finally, Example \\ref{exmpl:ELeq} suggests that $\\overline H{}^\\bullet (\\mathscr E, \\mathscr V)$ should be interpreted as ``differential forms on the space of solutions of $\\mathscr E_0$'', we denote \\[ \\boldsymbol{\\Omega}^p := \\overline H{}^\\bullet (\\mathscr E, \\wedge^p \\mathscr V^\\ast) \\] and call it \\emph{secondary differential $p$-forms}, $p = 0, 1, \\ldots$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-23-algebraic-structures-on-horizontal-cohomologi.md",
-   "section_title": "algebraic structures on horizontal cohomologies",
-   "pages": "15-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Theorems \\ref{theor:LR_infty} and \\ref{theor:CE} provide indications towards \\emph{Vinogradov's conjecture} that the correct category where differential calculus on the space of solutions of a PDE $\\mathscr E_0$ should be developed is the homotopy category of $DG$-modules over the horizontal De Rham algebra $(\\overline \\Omega{}^\\bullet (\\mathscr E), \\overline d)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-32-the-lr-algebra-of-secondary-vector-fields.md",
-   "section_title": "the LR-algebra of secondary vector fields",
-   "pages": "20-22",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Intuitively, they should be DOs taking derivatives just in the direction transverse to $\\mathscr C$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-012-33-the-a-algebra-of-secondary-differential-opera.md",
-   "section_title": "the A-algebra of secondary differential operators",
-   "pages": "22-25",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

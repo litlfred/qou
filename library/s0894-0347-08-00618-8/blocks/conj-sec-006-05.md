@@ -1,0 +1,1 @@
+h-NLC ⇒CNA and Rayleigh/h-NLC+ ⇒CNA+. We prove Conjecture 2.6 for almost symmetric measures (cf. Deﬁnition 2.1). Since PHR measures are CNA+ (Theorem 4.10), we are naturally led to consider the following related problem. Problem 2.7. Is PHR = Rayleigh/h-NLC+?

@@ -1,0 +1,1 @@
+In the notation introduced above, consider the Hilbert space W := V1⊕V2 and the (now possibly inﬁnite dimensional) R-matrix F ⊞−F ∈R0(W). Then ωF ⊞−F A⊕B := O n≥1 TrW ((A ⊕B) · ) ◦ρF ⊞−F : S∞→C (5.8) is an extremal character of S∞. Its α-parameters are the eigenvalues of A, and its β-parameters are the eigenvalues of B.

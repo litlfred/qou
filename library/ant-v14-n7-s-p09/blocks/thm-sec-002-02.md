@@ -1,0 +1,1 @@
+Suppose that N is a normal subgroup of G and G/N is a p′-group. Let P ∈Sylp(G) and assume that G = NCG(P). Then restriction of characters deﬁnes a bijection Irr(B0(G)) →Irr(B0(N)). In particular, |Irrp′(B0(G))σ1| = |Irrp′(B0(N))σ1|.

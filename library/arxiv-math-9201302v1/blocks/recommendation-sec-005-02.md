@@ -1,1 +1,0 @@
-In the 4-endpoint case, two endpoints must be oriented inward and two outward, and we get two diﬀerent bases which diﬀer in the ordering of the endpoints in the projection: or The two possible boundaries are equivalent, but not canonically, so there is no canonical formula for a change of basis.

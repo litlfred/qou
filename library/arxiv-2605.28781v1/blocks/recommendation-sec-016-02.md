@@ -1,1 +1,0 @@
-Since $f_1/f_2$ is a rational function with no zeroes or poles at points of $C(\mathbb F_q)$, and $g_2/g_1$ is a rational function with only zeroes and poles at points of $C(\mathbb F_q)$, they must both have no zeroes or poles and hence be elements of $\mathbb F_q^\times$.

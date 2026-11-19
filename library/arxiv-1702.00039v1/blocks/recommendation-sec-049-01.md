@@ -1,1 +1,0 @@
-Extending x by a color t̸ = r, s one has Extending x by s one has 45 To convince the reader that this is a categoriﬁcation of Dyer’s formula, one should remark that the rightmost term, when multiplied by −1, is an idempo- tent of End(sx) projecting to Brx.

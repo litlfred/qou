@@ -1,0 +1,1 @@
+2.7. [Lur09] Let C be a simplicial category such that MapC(X, Y ) is a Kan complex for any X, Y ∈C. Then its simplicial nerve N(C) is an ∞-category. Notations A.2.8. Let C be a topological category. Then there is an associated sim- plicial category Sing(C) whose objects are those of C and whose homs are simplicial spaces given by MapSing(C)(x, y) = Sing(MapC(x, y)).

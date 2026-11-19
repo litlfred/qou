@@ -1,101 +1,24 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "1992evansberger",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "6f100e931a1e5f2241cb428f007fe82abbe99f2f30047cc0d769ef0d6ad1389e",
   "file": "1992EvansBerger.pdf"
  },
  "provenance": {
-  "title": null,
+  "title": "A Hierarchy of Linking Integrals",
   "authors": null,
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If they do, it is equivalent to (14), which we shall now show.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-007.md",
-   "section_title": "Page 7",
-   "pages": "7-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "so that PNiK = 0, as it should.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-007.md",
-   "section_title": "Page 7",
-   "pages": "7-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We shall show here that it vanishes for four unlinked rings but equals +1 for the tangle of figure 2a.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-009.md",
-   "section_title": "Page 9",
-   "pages": "9-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If it is to be locally exact everywhere then we must impose the Poincar\u00e9 lemma, dMiy. = 0.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-011.md",
-   "section_title": "Page 11",
-   "pages": "11-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Such invariants should have many applications in physics.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-012.md",
-   "section_title": "Page 12",
-   "pages": "12-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

@@ -91,7 +91,21 @@ Metadata is stored in `library/<paper-id>/import-meta.json`:
 }
 ```
 
-### Phase 2: Environment Extraction
+### Phase 2: Environment & Claim Extraction (Math + Logic vs Science + Empirical Evidence)
+
+Stage-B extraction (`folio-assistant/cat-harness-tools/scripts/extract-candidates.py` with `folio-assistant-sci/scripts/extractors/math-environments.py`) scans `sections/*.md` to populate `library/<paper-id>/candidates.json` (`ingest-candidates/v1`) and typed `blocks/*.jsonld` nodes. Every extracted candidate records its **epistemic domain** (`claim_domain`), **warrant kind** (`evidence_kind`), and **where the supporting proof or evidence lives** (`evidence_location`, `evidence_locator`, `external_refs`, `proof_excerpt`, `quantitative_values`):
+
+- **Math claim + deductive logic (`claim_domain: "math"`)**:
+  - `evidence_kind`: `"deductive-proof"`, `"axiomatic-definition"`, `"conjectural"`, or `"explanatory"`.
+  - `evidence_location`: `"in-paper"` (proved in this paper via an immediate `Proof.` block, deferred `"proved in Section 4"`, or inline argument), `"elsewhere"` (attributed to an external paper such as `Theorem 2.2 (Rumer, Teller, Weyl)` or `"Proof. See [14, Thm. 3.1]."`), `"both"`, or `"none"`.
+  - `route_to`: `"formalizer"`.
+- **Science claim + empirical / computational / analytic evidence (`claim_domain: "science"`)**:
+  - `evidence_kind`: `"empirical-measurement"` (experimental observations and physical constants with error bars), `"computational-simulation"` (lattice QCD+QED, Monte Carlo, *ab initio* numerical evaluations), or `"analytic-derivation"` (dispersion relations, sum rules, effective Lagrangians, 1-loop radiative formulas).
+  - `evidence_location`: `"in-paper"`, `"elsewhere"` (citing external datasets/papers `[4]`, PDG, CODATA), or `"both"`.
+  - `route_to`: `"compute-check"` for empirical and numerical claims (cross-checked against witnesses and comparison paragraphs, never wired into formal Lean theorems as axioms) and `"formalizer"` for analytic derivations.
+- **Claim-level citation & Lean proof mandate (`block_iri`, `claim_id`, `lean_status`, `needs_lean_proof`)**:
+  - Every candidate carries `block_id`, `block_iri` (`library/<doc-id>/blocks/<block-id>`), and `claim_id` (`<doc-id>#<kind>:<number>`). When citing an ingested paper in QOU, link to the specific result/claim (`block_iri` / `claim_id`), not just the paper.
+  - Every formalizable `"math"` claim carries `lean_status`, `lean_decls`, and `needs_lean_proof`. If QOU cites a math claim that is not yet Lean-proved (`needs_lean_proof: true`), it must be proved in Lean (`0 sorry`, `0 axiom`), audited via `python3 scripts/library-claim-citation-audit.py`.
 
 Scan LaTeX source (or extracted text from PDF) for formal environments:
 

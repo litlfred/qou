@@ -1,0 +1,1 @@
+The category of unipotent character sheaves ChG is equivalent to both the trace and center of the Hecke category HG. The equivalences ﬁt into natural adjoint commutative diagrams HG tr z✉✉✉✉✉✉✉✉✉ F  Tr(HG) ∼ / ChG F r O ∼ / Z(HG) z d❍❍❍❍❍❍❍❍❍

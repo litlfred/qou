@@ -1,0 +1,1 @@
+- If WC^M=C then H(M|N)=ln [M:N]. Conversely if H(M N)=ln[M:N]an^4<[M:N]<8, [M:N]^(l+2cos7c/n)2, n^3, thenW HM=C. ANNALES SCIENTIFIQUES DE L'ECOLE NORMALE SUPERIEURE M. PIMSNER AND POPA

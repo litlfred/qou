@@ -1,1 +1,0 @@
-By Chevalley's theorem, $G$ is defined as the stabilizer of one $\mathbb{C}$-subspace $V$ of $\omega_M(M')$ for some construction $M' = Constr_{k} (M)$.\ We must show that $V$ is stable under $Aut^{\otimes}( \omega_M)$, i.e., we must show that $V$ is of the form $\omega_M(N)$ for $N \in \lbrace \lbrace M \rbrace \rbrace$.

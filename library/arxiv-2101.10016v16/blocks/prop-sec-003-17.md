@@ -1,0 +1,1 @@
+Let F : C → C ′ be a ∗-functor between C ∗–categories. Then F is a ∗ -equivalence if and only if it is a ∗-functor which is an equivalence of linear categories. If C and C ′ are tensor C∗ -categories then F is a tensor ∗–equivalence if and only if it is a ∗ -functor and a tensor equivalence.

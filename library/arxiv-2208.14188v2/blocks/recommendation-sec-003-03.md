@@ -1,1 +1,0 @@
-This will change the complexified hyperbolic volume $U_{0,0}/(2\pi\ri)$ in \eqref{eq:U00k}, whose imaginary part is the Chern-Simons action.}, each trans-series $\Phi_\gamma^{(k,\s_i)}(u,n;\tau)$ should be upgraded to a family of trans-series with the same power series but with shifted instanton action.

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Examples.",
+  "pageStart": 13,
+  "pageEnd": 19,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-006",
+    "library/vonneumann2015/blocks/ex-sec-006-01",
+    "library/vonneumann2015/blocks/ex-sec-006-02",
+    "library/vonneumann2015/blocks/ex-sec-006-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

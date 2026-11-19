@@ -1,0 +1,1 @@
+11 (c.f. Theorem A.8) For any β ∈Nm 0 , deﬁne U β := U β1 ⊠· · · ⊠U βm. Deﬁne Dβ similarly. For any μ ≤λ ∈Nm 0 , the maps U β : V (λ) ⊗V (μ) →V (λ + β) ⊗V (μ + β) Dβ : V (λ + β) ⊗V (μ + β) →V (λ) ⊗V (μ) restrict to SL2(C)-invariant isomorphisms on the components of V (λ) ⊗V (μ) ∼=

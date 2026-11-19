@@ -1,1 +1,0 @@
-Following the classical framework via a suitable version of Schur-Weyl duality this study should have implications for the representation theory of Hecke and Brauer algebras, as outlined in e.g. [@AST].

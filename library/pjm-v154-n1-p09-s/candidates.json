@@ -1,56 +1,154 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "pjm-v154-n1-p09-s",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "cbf5c02babe5a61ed34fdd5b67f8af30c4c8b8fcdb8d4a64c33c94fc02860538",
   "file": "pjm-v154-n1-p09-s.pdf"
  },
  "provenance": {
   "title": "The period matrix of Bring's curve",
-  "authors": null,
+  "authors": "GONZALO RIERA AND RUBI RODRIGUEZ",
   "arxiv": null,
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
+  "candidates": 4,
   "by_kind": {
-   "recommendation": 2
+   "lemma": 1,
+   "theorem": 3
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 1,
+   "proved-here": 3
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
    "name": null,
-   "statement": "To do so we shall locate TQ in a fundamental region for this group.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-010.md",
-   "section_title": "Page 10",
-   "pages": "10-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "If M is symplectic and commutes with S p ^ , then %, ( ml nc\\ \u038a (m n\\ o \u03c4 /\u039b ^ M = I i \u0393 , where e SL(2, R). Vpc- glj \\p q)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/page-006.md (p. 6-6)",
+   "external_refs": [],
+   "proof_excerpt": "Let \u039bf = (^ ^) be a symplectic matrix commuting with every Ag = (^'f \u00b0g) in",
+   "section_file": "sections/page-006.md",
+   "section_title": "Page 6",
+   "pages": "6-6",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/page-006.md (p. 6-6)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-page-006-01",
+   "block_iri": "library/pjm-v154-n1-p09-s/blocks/lem-page-006-01",
+   "claim_id": "pjm-v154-n1-p09-s#lemma:1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringEllipticFactor.lean:std_S4_fixed_is_one_dimensional",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean:hauptmodul_sextic_root",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean:trace_intMatrix_eq_intCast",
+    "folio/quantum-observable-universe/lean/QOU/BringsSurface/BranchPointSixNotForced.lean:neg_six_admissible"
+   ],
+   "needs_lean_proof": true
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
    "name": null,
-   "statement": "We shall show in the next section that via a nat- ural isogeny every matrix Z = \u03c4 c is equivalent to the diagonal (5\u03c4,5\u03c4,5\u03c4,\u03c4).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/page-011.md",
-   "section_title": "Page 11",
-   "pages": "11-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "statement": "There is a one complex parameter family\u2014Bring's half-plane\u2014ofRiemann matrices Z in Siege\u0393s upper half space fixed under the action ofSpS^- These are the matrices of the form Z = \u03c4 c, \u03c4eC, Im\u03c4 > 0. The stabilizer of B ring's half plane in Sp(8, Z) is the product of the groups S\u03c1J?5, which fixes the set pointwise, and Sp\u0393o(5), which acts by \u03c4c \u2014> \u03c4*c, where \u03c4* = p\u03c4 + m If TQC is a Riemann matrix for Bring's curve and M is a matrix in S\u03c1(8, Z) that maps \u03c4$c to a point \u03c4'c in the half plane, then M stabilizes Bring's half plane.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/page-007.md (p. 7-7)",
+   "external_refs": [],
+   "proof_excerpt": "We use the fact that a symplectic change of basis (Q^) acts on a period matrix Z by sending it to (E + ZG)~ \u03b9(F + ZH), so that the action of Sp\u0393o(5) on Bring's half-plane is as stated and hence Sp\u0393o(5) is contained in the stabilizer as claimed. Furthermore, it also follows that t",
+   "section_file": "sections/page-007.md",
+   "section_title": "Page 7",
+   "pages": "7-7",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/page-007.md (p. 7-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-007-01",
+   "block_iri": "library/pjm-v154-n1-p09-s/blocks/thm-page-007-01",
+   "claim_id": "pjm-v154-n1-p09-s#theorem:1",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringHauptmodulGate.lean:hauptmodul_sextic_root",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/TrBIntegerTracePrune.lean:trace_intMatrix_eq_intCast"
+   ],
+   "needs_lean_proof": false
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "\u0393\u03bbe period matrix of Bring's curve is Z = \u03c4o c, c/\u03b1ss 1 of \u03c4o modulo \u0393Q(5) \u00a3S characterized by the two values v \u039b",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-009.md (p. 9-9)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-009.md",
+   "section_title": "Page 9",
+   "pages": "9-9",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-009.md (p. 9-9)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-009-01",
+   "block_iri": "library/pjm-v154-n1-p09-s/blocks/thm-page-009-01",
+   "claim_id": "pjm-v154-n1-p09-s#theorem:2",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/BringEllipticFactor.lean:std_S4_fixed_is_one_dimensional"
+   ],
+   "needs_lean_proof": false
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "The Schottky relation restricted to Bring's half plane defines a non trivial algebraic equation in the theta-nullwerte of one complex variable with moduli 5\u03c4, \u03c4.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/page-015.md (p. 15-15)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/page-015.md",
+   "section_title": "Page 15",
+   "pages": "15-15",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/page-015.md (p. 15-15)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-page-015-01",
+   "block_iri": "library/pjm-v154-n1-p09-s/blocks/thm-page-015-01",
+   "claim_id": "pjm-v154-n1-p09-s#theorem:3",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/BringsSurface/BranchPointSixNotForced.lean:neg_six_admissible"
+   ],
+   "needs_lean_proof": false
   }
  ]
 }

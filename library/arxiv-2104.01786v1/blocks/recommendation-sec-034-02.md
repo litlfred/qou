@@ -1,1 +1,0 @@
-The only thing we can say in the defence of the whole approach is that the similarity in the two complex structure $J,\tilde{J}$, the first of which is needed to go from ${\rm Spin}(10)$ to the Pati-Salam group, and the second needed to see the Lorentz group arising, is so striking that this suggests that the mechanism selecting them must be one and the same.

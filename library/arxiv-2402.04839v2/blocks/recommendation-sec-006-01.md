@@ -1,1 +1,0 @@
-In particular, every infinite sequence of hyperbolic manifolds of bounded volume must have a subsequence with converging volumes, and which is obtained from a sequence of Dehn fillings on a fixed cusped hyperbolic $3$--manifold.

@@ -1,1 +1,0 @@
-A strict quotient agrees with the usual intuition of how a quotient should work on objects, in that if there is a group element taking an object $x \in C$ to $y \in C$, then $j(x)=j(y)$: the objects of $C / G$ are just equivalence classes of objects in $C$ which are equivalent if they lie in the same orbit under the action $A$.

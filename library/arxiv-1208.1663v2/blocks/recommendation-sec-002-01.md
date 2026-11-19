@@ -1,1 +1,0 @@
-Generalized angle structures are linearizations of the gluing equations, that may be used to construct complete hyperbolic structures, and intimately connected with the theory of normal surfaces on $M$ [@Jaco].

@@ -1,0 +1,1 @@
+Let A →B be a ring homomorphism. (1) If I ∈C(A) is K-injective, then J := HomA(B, I) ∈C(B) is K-injective. (2) Given M ∈D(A), let us deﬁne N := RHomA(B, M) ∈D(B). Then there is an isomorphism RHomB(−, N) ∼= RHomA(−, M) of triangulated functors D(B)op →D(B).

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1906.12122v2/blocks/prop-sec-046-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 36,
+  "pageEnd": 36,
+  "text": "prop-sec-046-01.md",
+  "derivedFrom": "library/arxiv-1906.12122v2/sections/sec-046",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1906.12122v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "empirical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "empirical-measurement",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper empirical measurement in sections/sec-046-4-neutron-capture.md (p. 36-36)",
+    "claim_id": "arxiv-1906.12122v2#prop-sec-046-01"
+  }
+}

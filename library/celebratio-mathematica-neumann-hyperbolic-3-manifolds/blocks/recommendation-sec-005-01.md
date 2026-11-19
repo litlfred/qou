@@ -1,1 +1,0 @@
-Extensive numerical experiments led to a concrete conjecture saying that this is the case and also to a definition (originally highly speculative, but now sup‐ ported by more theory) of “higher Bloch groups” that should be iso‐ morphic after tensoring with to the higher algebraic -groups and should express the Borel regulator in terms of polylogarithms.

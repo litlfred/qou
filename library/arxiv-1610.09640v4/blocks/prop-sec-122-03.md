@@ -1,0 +1,1 @@
+Let A be a commutative ring, and let f : A →B be a ﬁnite central ring homomorphism. If A has a noetherian connected ﬁltration F, then there exists a noetherian connected ﬁltration G of B, such that f(Fj(A)) ⊆Gj(B) for all j, and the graded ring homomorphism Gr(f) : GrF (A) →GrG(B) is ﬁnite.

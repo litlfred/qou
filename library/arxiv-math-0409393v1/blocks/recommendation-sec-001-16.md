@@ -1,1 +1,0 @@
-From the computations in example [\[example:exemple-classique\]](#example:exemple-classique){reference-type="ref" reference="example:exemple-classique"}, we deduce that we have to take $\nu = {\mathcal{B}}_{q,1} u (1) = \sum_{n \in {\mathbf Z}} q^{-n(n-1)/2} u_{n}$; we must then prove the existence and unicity of $f$.

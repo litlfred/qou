@@ -1,0 +1,67 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1904.05612v3",
+ "source_sha256": "49de771ab5b79489",
+ "brief": "ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS — We prove that a regular subfactor of type II1 with ﬁnite Jones index always admits a two-sided Pimsner-Popa basis.",
+ "extended": "**ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS**\n\n*KESHAB CHANDRA BAKSHI AND VED PRAKASH GUPTA*\n\n15 pp, 9 sections.\n\n**Abstract.** We prove that a regular subfactor of type II1 with ﬁnite Jones index always admits a two-sided Pimsner-Popa basis. This is preceded by a pragmatic revisit of Popa’s notion of orthogonal systems.\n\n**Outline.** Front matter; 1 Introduction; 2 Pimsner-Popa bases and systems; 2.1 Pimsner-Popa systems; 2.2 Examples of Pimsner-Popa systems; 2.3 Generalized Weyl group and orthonormal sys; 2.4 Some useful properties related to Pimsner-; 3 Regular subfactor and two-sided basis; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.10: Let N ⊂M be a regular subfactor of type II1 with ﬁnite Jones index. Then, M admits a two-sided basis over N.\n- Theorem 2.10: Let N ⊂M be a subfactor of type II1 with ﬁnite index. Then, any Pimsner- Popa system {λ1, · · · , λk} for M over N can be extended to a Pimsner-Popa basis for M over N.\n- Theorem 3.10: Let N ⊂M be a regular subfactor of type II1 with ﬁnite index. Then, M admits a two-sided Pimsner-Popa basis over N.\n- Theorem 3.12: Every regular subfactor N ⊂M of type II1 with ﬁnite Jones index has integer valued index and the index is given by [M : N] = |G| dimC(N ′ ∩M), where G denotes the generalized Weyl\n- Proposition 2.7: Let N ⊂M be a subfactor of type II1 with [M : N] < ∞, {λi : 1 ≤ i ≤n} be a ﬁnite subset of M and f be a projection in M1 satisfying the following three conditions: (1) f ≥e1, (2)\n- Proposition 2.16: Let (N, P, Q, M) be a quadruple of type II1 factors such that N ′ ∩M = C and [M : N] < ∞, and let {λi : i ∈I} be a Pimsner-Popa basis for P/N.",
+ "tokens": {
+  "brief": 44,
+  "extended": 420
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-pimsner-popa-bases-and-systems",
+   "title": "Pimsner-Popa bases and systems",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-pimsner-popa-systems",
+   "title": "Pimsner-Popa systems",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-22-examples-of-pimsner-popa-systems",
+   "title": "Examples of Pimsner-Popa systems",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-23-generalized-weyl-group-and-orthonormal-system",
+   "title": "Generalized Weyl group and orthonormal systems",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-005-24-some-useful-properties-related-to-pimsner-pop",
+   "title": "Some useful properties related to Pimsner-Popa systems",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-006-3-regular-subfactor-and-two-sided-basis",
+   "title": "Regular subfactor and two-sided basis",
+   "pages": "10-15"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "15-15"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

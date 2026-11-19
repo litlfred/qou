@@ -82,6 +82,24 @@
         "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
         "severity": "major",
         "evidence": "Self-assuming: markov_frobenius_min_norm_lift returns ctx.holds, which is the inequality S^2 <= tau(XX). It follows in two lines from tau((X - S)^2) >= 0 with tau(X) = S, so it can be proved rather than assumed. The equality case is not encoded."
+      },
+      {
+        "field_hash": {
+          "md": "4bc459cbc131",
+          "ts": "5c0e47b803ca",
+          "lean": "44e29cd1a9af",
+          "lean_statement": "3b120756c340"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:12:26.669Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-read 2026-11-17. markov_frobenius_min_norm_lift returns ctx.holds, which is the inequality itself, so the Lean is self-assuming. The md claim is true and short: tau((X-S)^2) = tau(X^2) - 2S^2 + S^2 >= 0. The equality case under non-degeneracy is not encoded. Fix: prove it from the PSD hypothesis instead of assuming it."
       }
     ],
     "proof-statement-integrity": [
@@ -2134,6 +2152,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:09:32.687Z",
+  "updated_at": "2026-11-17T18:12:26.669Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

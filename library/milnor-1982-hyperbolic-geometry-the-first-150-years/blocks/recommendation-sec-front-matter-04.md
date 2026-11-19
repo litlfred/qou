@@ -1,1 +1,0 @@
-(See the Appendix.) Inspired by examples due to Clifford, Klein [1890] posed the following problem: " . . . to classify all connectivities which can possibly arise among closed manifolds of constant curvature." It must be noted in this context that the concept of a (global) manifold was never defined in any satisfactory way during the nineteenth century.

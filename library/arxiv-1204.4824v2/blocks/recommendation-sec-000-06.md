@@ -1,1 +1,0 @@
-Readers who prefer to think in terms of M-theory fivebranes might say that we consider the theory of $NK$ fivebranes wrapped on $C \subset T^* C$, and then move to a point of the Coulomb branch represented by $N$ fivebranes wrapped on $\Sigma \subset T^* C$.} Our construction of $\Psi_\wnet$ in \S\ref{sec:moduli} is set up in a way that should generalize directly to this setting.

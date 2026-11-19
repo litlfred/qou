@@ -1,0 +1,1 @@
+2 (cf. [KMS93, §35]). The functor which forms (plain) R-algebras of smooth functions constitutes a full inclusion of smooth manifolds, hence in par- ticular of Cartesian spaces (Def. A.1): CrtSp SmthMfd CAlgop C∞(−)

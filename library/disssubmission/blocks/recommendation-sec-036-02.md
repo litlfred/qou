@@ -1,1 +1,0 @@
-Strictly speaking certain Tate twists should be inserted in the above deﬁnition so that L± become pure complexes of weight 2g −2 like δΘ ∗δΘ, but to keep the notations simple we will in what follows suppress all occuring Tate twists.

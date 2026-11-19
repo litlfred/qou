@@ -1,1 +1,0 @@
-Finally, Example \ref{exmpl:ELeq} suggests that $\overline H{}^\bullet (\mathscr E, \mathscr V)$ should be interpreted as ``differential forms on the space of solutions of $\mathscr E_0$'', we denote \[ \boldsymbol{\Omega}^p := \overline H{}^\bullet (\mathscr E, \wedge^p \mathscr V^\ast) \] and call it \emph{secondary differential $p$-forms}, $p = 0, 1, \ldots$.

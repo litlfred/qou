@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/fulltext/blocks/lem-sec-010-04",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 39,
+  "pageEnd": 56,
+  "text": "lem-sec-010-04.md",
+  "derivedFrom": "library/fulltext/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-010-3-dilogarithms-and-modular-functions-the-nahm-eq.md (p. 39-56)",
+    "claim_id": "fulltext#lem-sec-010-04",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,1 @@
+- J/N c M ^s finite index [M, N] = 'k~ \ then H (M | N) ^ H (R | R^).

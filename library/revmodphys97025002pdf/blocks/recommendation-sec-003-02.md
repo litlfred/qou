@@ -1,1 +1,0 @@
-In the same year, researchers at RCA Laboratories and the University of Pennsylvania published a comprehensive paper documenting an adjustment they carried out as an outgrowth of their measurement of the Josephson constant KJ that included a complete set of recommended values (Taylor, Parker, and Langenberg, 1969).

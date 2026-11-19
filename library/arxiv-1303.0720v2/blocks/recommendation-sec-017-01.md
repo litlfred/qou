@@ -1,1 +1,0 @@
-We should observe first that the above setting of power weights $\omega=\mathrm{e}^{-2mQ}$ has a natural extension to the setting of line bundles over (usually compact) complex manifolds in one or more dimensions.

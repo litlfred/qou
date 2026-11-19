@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0105186v2/blocks/rem-sec-006-06",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 22,
+  "pageEnd": 29,
+  "text": "rem-sec-006-06.md",
+  "derivedFrom": "library/arxiv-math-0105186v2/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0105186v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.6",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [0; 1] in sections/sec-006-21-a-simple-invariant.md",
+    "claim_id": "arxiv-math-0105186v2#remark:2.6"
+  }
+}

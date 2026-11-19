@@ -1,1 +1,0 @@
-\begin{teo} \label{S2:omotopi:teo} Two diffeomorphisms $\varphi, \psi\colon S^2 \to S^2$ are isotopic $\Longleftrightarrow$ they are homotopic $\Longleftrightarrow$ they are co-oriented. \end{teo} \begin{proof} We suppose that $\varphi$ and $\psi$ are co-oriented and we must prove that they are isotopic.

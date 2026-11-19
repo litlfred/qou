@@ -1,0 +1,1 @@
+A variant of Grothendieck’s period conjecture states that per : Pm MT (Z) −→C is injective. In particular, its restriction to H is injective also. The last statement, together with theorem 1.5, is equivalent to

@@ -1,1 +1,0 @@
-Then we should add to $\overline{XY}$ the manifold corresponding to the diagonal contraction by excising a ball around two Wilson lines and identifying their boundaries, i.e.~applying the cylinder surgery $M_1 \#_{P_1 \sim P_2} M_2$ as above.

@@ -1,1 +1,0 @@
-Most of what is contained in Part I is a short summary of tools that students in optimization normally encounter in a course based on the excellent books [50, 145, 206, 259, 296] and probably should be skipped by such readers.

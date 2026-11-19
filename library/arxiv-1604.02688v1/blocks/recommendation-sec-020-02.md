@@ -1,1 +1,0 @@
-By a standard sweepout argument, starting with a peripheral normal torus at a cusp and sweeping to a core circle or the other cusp, there must be an intermediate almost normal torus $\tilde S$ - see Rubinstein \cite{Ru} or Stocking \cite{St}.

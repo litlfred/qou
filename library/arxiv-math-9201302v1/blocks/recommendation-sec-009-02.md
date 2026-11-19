@@ -1,1 +1,0 @@
-However, the endpoints of an A2 freeway must be labeled as either “incoming” or “outgoing” depending on the orientation of the edges containing the points, and the endpoints of a C2 freeway are labeled as “single” or “double”.

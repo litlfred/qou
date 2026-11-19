@@ -1,1 +1,0 @@
-We should point out that, with $s$ and $t$ being coprime positive integers. the number, $(s-1) \, (t-1)/2$, of integral lattice points in the 2-dimensional space has appeared as the number of the irreducible highest weight representation of the Virasoro algebra of the minimal model $\mathcal{M}(s,t)$ in the conformal field theory [@BPZ84a].

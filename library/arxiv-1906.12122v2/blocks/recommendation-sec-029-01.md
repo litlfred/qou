@@ -1,1 +1,0 @@
-The characteristic trinucleon momentum scale $\gamma_T\sim 80~\MeV \gg \alpha m_N$ suggests that Coulomb effects should be a perturbative correction to the \ThreeHe binding energy (compared to the triton as its isospin mirror state).

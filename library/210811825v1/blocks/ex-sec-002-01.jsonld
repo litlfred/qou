@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/210811825v1/blocks/ex-sec-002-01",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 35,
+  "pageEnd": 43,
+  "text": "ex-sec-002-01.md",
+  "derivedFrom": "library/210811825v1/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.2",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-002-spectral-theory.md (p. 35-43)",
+    "claim_id": "210811825v1#example:2.2"
+  }
+}

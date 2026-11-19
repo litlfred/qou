@@ -1,1 +1,0 @@
-The result takes the same form as in the case $\epsilon (p)=-1$: $\Psi$ is now attached to an element $\psi$ of degree one in the Weil group (\ie a lifting of the Frobenius element in $\Gal({\ovl{\Q}}_p/{\Q}_p)$), the expressions $\,{p\frac{u}{d}}\,$ have to be replaced by $\,{\psi\frac{u}{d}}$, and $\Gamma_p$ must be extended to ${\Q}_p$ \cite[6.5]{coleman90:_froben_fermat}.

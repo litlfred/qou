@@ -1,1 +1,0 @@
-This is not strictly true: there is a Research Report [14] dated June 1953 which differs from the published paper in the title and in a few minor details, and which should in fact be taken as a preliminary draft of it.

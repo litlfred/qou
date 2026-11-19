@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2404.19155v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "45b9ed90006536b3c3ed2678f246941eac8deb7ca9ab740a7b67f3c9b54c7458",
   "file": "2404.19155v2.pdf"
@@ -16,61 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "recommendation": 3
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To define the holonomy we must first introduce a groupoid presentation of $\\pi(D)$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-the-holonomy-of-an-octahedral-coloring.md",
-   "section_title": "The holonomy of an octahedral coloring",
-   "pages": "7-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "As $w_1$ and $w_2$ map to the same element of the first homology they must generate a $\\mathbb{Z}$ subgroup.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-shape-parameters-and-the-potential-function.md",
-   "section_title": "Shape parameters and the potential function",
-   "pages": "14-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "They are primitive and map to the same homology class so they must be equal. \u25fb :::",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-004-shape-parameters-and-the-potential-function.md",
-   "section_title": "Shape parameters and the potential function",
-   "pages": "14-19",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

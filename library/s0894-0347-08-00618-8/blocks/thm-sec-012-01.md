@@ -1,0 +1,1 @@
+Suppose µ ∈Pn has a symmetric generating polynomial and rank sequence {rk}n k=0. The following are equivalent: (a) The generating polynomial of µ is stable, i.e., µ is strongly Rayleigh. (b) All zeros of the univariate polynomial n k=0 rkzk are real. (c) The inﬁnite Toeplitz matrix (ri−j)∞ i,j=0 is TP, where rk = 0 if k /∈{0}∪[n].

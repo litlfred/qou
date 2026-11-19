@@ -1,1 +1,0 @@
-In the presence of an external magnetic field, one must add a term of the form $h \sum_{(i, j)\in \Lambda} \sigma_{i,j}$ to $E_\Lambda(\sigma)$, $h\in \mathbb{R}$, but the most complete results have been obtained only when the field is absent, and we will always assume $h=0$.

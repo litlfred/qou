@@ -1,1 +1,0 @@
-As this set is indexed by all Young diagrams of size at most $n$, by Theorem [\[idemP\]](#idemP){reference-type="ref" reference="idemP"}(1), it must be a complete set of pairwise non-conjugate primitive idempotents in $FP_n(t)$.

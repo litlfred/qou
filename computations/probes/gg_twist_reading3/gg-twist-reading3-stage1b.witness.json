@@ -1,0 +1,787 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-17T18:13:07.281288+00:00",
+  "commitSha": "6b60c370e204dff1dfbe395971f216938b2c91ab",
+  "assertions": [
+    {
+      "name": "ran_alphabet_a",
+      "computed": "5460",
+      "expected": "5460",
+      "passed": true,
+      "source": "4+16+...+4096"
+    },
+    {
+      "name": "ran_alphabet_b",
+      "computed": "3905",
+      "expected": "3905",
+      "passed": true,
+      "source": "5+25+...+3125"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "gg-twist-reading3-stage1b",
+  "scriptFile": "gg_twist_reading3_stage1b_probe.py",
+  "scriptHash": "fe00aa5daa17",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_twist_reading3/gg_twist_reading3_stage1b_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_twist_reading3/gg_twist_reading3_stage1b_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "via h2_one_rule (cf.Q, proton pin)",
+  "description": "PROBE stage 1b (beans qou-a1hh, qou-99qc): stage 1 re-run with L- = s1 s0 (order, not inverse) and the four-term photon letter e- = s0 s1 s0. Pre-registered. Nothing selected.",
+  "results": {
+    "a": {
+      "words": 5460,
+      "passing": 1848,
+      "pure": 1848,
+      "pass_iff_pure": true,
+      "pure_failing": [],
+      "nonpure_passing": [],
+      "passing_knots": [],
+      "passing_by_writhe": {
+        "0": 42,
+        "2": 216,
+        "4": 474,
+        "6": 566,
+        "8": 386,
+        "10": 142,
+        "12": 22
+      },
+      "shortest_passer_by_writhe": {
+        "0": [
+          2,
+          "V.Vi",
+          "1.0"
+        ],
+        "2": [
+          2,
+          "V.Lm",
+          "0.81165375436575805813"
+        ],
+        "4": [
+          2,
+          "Lp.Lm",
+          "0.91561746441816820381"
+        ],
+        "6": [
+          3,
+          "Lp.Lp.Lp",
+          "1.0"
+        ],
+        "8": [
+          4,
+          "Lp.Lp.Lm.Lm",
+          "0.81165375436575805813"
+        ],
+        "10": [
+          5,
+          "Lp.Lp.Lp.Lp.Lm",
+          "0.91561746441816820381"
+        ],
+        "12": [
+          6,
+          "Lp.Lp.Lp.Lp.Lp.Lp",
+          "1.0"
+        ]
+      },
+      "numerical_zero_words": [],
+      "numerical_zero_count": 0,
+      "pass_by_components": {
+        "1": [
+          0,
+          3612
+        ],
+        "2": [
+          0,
+          0
+        ],
+        "3": [
+          1848,
+          1848
+        ]
+      }
+    },
+    "b": {
+      "words": 3905,
+      "passing": 1176,
+      "pure": 650,
+      "pass_iff_pure": false,
+      "pure_failing": [],
+      "nonpure_passing": [
+        {
+          "word": "Vi.Lm.E",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Vi.E.Lp",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.Vi.E",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.Lm.E",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.E.V",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.E.Lp",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lm.V.E",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lm.Lp.E",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lm.Lm.E",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lm.E.Vi",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lm.E.Lp",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lm.E.Lm",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "E.V.Lp",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "E.Lp.Vi",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "E.Lp.Lp",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "E.Lp.Lm",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "E.Lm.V",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "E.Lm.Lp",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "V.V.Lm.E",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "V.V.E.Lp",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "V.Lp.Lm.E",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "V.Lp.E.Lp",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "V.E.Vi.Lp",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "V.E.Lm.Lp",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Vi.Lp.V.E",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Vi.Lp.Lp.E",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Vi.Lp.E.Vi",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Vi.Lp.E.Lm",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Vi.E.Lm.Vi",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Vi.E.Lm.Lm",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.V.V.E",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.V.Lp.E",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.V.Lm.E",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.V.E.Vi",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.V.E.Lp",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.V.E.Lm",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.Lp.V.E",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.Lp.E.Vi",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.E.Vi.Vi",
+          "writhe": 5,
+          "components": 2,
+          "min_level_char": "0.42725783060631219849",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        },
+        {
+          "word": "Lp.E.Vi.Lp",
+          "writhe": 7,
+          "components": 2,
+          "min_level_char": "0.20906029879563931543",
+          "numerical_zero": false,
+          "pass": true,
+          "fails": []
+        }
+      ],
+      "passing_knots": [],
+      "passing_by_writhe": {
+        "0": 20,
+        "2": 84,
+        "4": 144,
+        "5": 110,
+        "6": 159,
+        "7": 266,
+        "8": 140,
+        "9": 60,
+        "10": 82,
+        "11": 60,
+        "12": 21,
+        "13": 30
+      },
+      "shortest_passer_by_writhe": {
+        "0": [
+          2,
+          "V.Vi",
+          "1.0"
+        ],
+        "2": [
+          2,
+          "V.Lm",
+          "0.81165375436575805813"
+        ],
+        "4": [
+          2,
+          "Lp.Lm",
+          "0.91561746441816820381"
+        ],
+        "5": [
+          3,
+          "Vi.Lm.E",
+          "0.42725783060631219849"
+        ],
+        "6": [
+          2,
+          "E.E",
+          "1.0"
+        ],
+        "7": [
+          3,
+          "Lp.Lm.E",
+          "0.20906029879563931543"
+        ],
+        "8": [
+          4,
+          "V.Lm.E.E",
+          "0.81165375436575805813"
+        ],
+        "9": [
+          5,
+          "Vi.Lp.Lm.Lm.E",
+          "0.63631812940195151393"
+        ],
+        "10": [
+          4,
+          "Lp.Lm.E.E",
+          "0.91561746441816820381"
+        ],
+        "11": [
+          5,
+          "Vi.Lm.E.E.E",
+          "0.42725783060631219849"
+        ],
+        "12": [
+          4,
+          "E.E.E.E",
+          "1.0"
+        ],
+        "13": [
+          5,
+          "Lp.Lm.E.E.E",
+          "0.20906029879563931543"
+        ]
+      },
+      "numerical_zero_words": [
+        "E",
+        "V.E",
+        "E.Vi",
+        "V.Vi.E",
+        "V.E.V",
+        "Vi.V.E",
+        "Vi.Vi.E",
+        "Vi.E.V",
+        "Vi.E.Vi",
+        "E.V.V",
+        "E.V.Vi",
+        "E.Vi.V",
+        "E.E.E",
+        "V.V.V.E",
+        "V.V.Vi.E",
+        "V.V.E.V",
+        "V.V.E.Vi",
+        "V.Vi.V.E",
+        "V.Vi.E.Vi",
+        "V.E.V.Vi",
+        "V.E.Vi.V",
+        "V.E.Vi.Vi",
+        "V.E.E.E",
+        "Vi.V.V.E",
+        "Vi.V.E.Vi",
+        "Vi.Vi.Vi.E",
+        "Vi.Vi.E.V",
+        "Vi.E.V.V",
+        "Vi.E.Vi.Vi",
+        "Lp.Lp.Lp.E",
+        "Lp.Lp.Lm.E",
+        "Lp.Lp.E.Lp",
+        "Lp.Lp.E.Lm",
+        "Lp.E.Lm.Lp",
+        "Lp.E.Lm.Lm",
+        "Lm.Lp.Lp.E",
+        "Lm.Lp.E.Lm",
+        "Lm.Lm.Lm.E",
+        "Lm.Lm.E.Lp",
+        "Lm.E.Lp.Lp",
+        "Lm.E.Lm.Lm",
+        "E.V.V.V",
+        "E.V.Vi.Vi",
+        "E.Vi.V.Vi",
+        "E.Vi.Vi.V",
+        "E.Vi.Vi.Vi",
+        "E.Vi.E.E",
+        "E.Lp.Lp.Lp",
+        "E.Lp.Lm.Lm",
+        "E.Lm.Lm.Lp",
+        "E.Lm.Lm.Lm",
+        "E.E.V.E",
+        "E.E.E.Vi",
+        "V.V.V.V.E",
+        "V.V.V.E.Vi",
+        "V.V.Vi.Vi.E",
+        "V.V.Vi.E.V",
+        "V.V.E.V.V",
+        "V.V.E.Vi.Vi",
+        "V.Vi.V.Vi.E",
+        "V.Vi.V.E.V",
+        "V.Vi.Vi.V.E",
+        "V.Vi.Vi.Vi.E",
+        "V.Vi.Vi.E.V",
+        "V.Vi.Vi.E.Vi",
+        "V.Vi.E.V.V",
+        "V.Vi.E.V.Vi",
+        "V.Vi.E.Vi.V",
+        "V.Vi.E.E.E",
+        "V.Lp.Lp.Lp.E",
+        "V.Lp.Lp.E.Lm",
+        "V.Lp.E.Lm.Lm",
+        "V.Lm.Lp.Lm.E",
+        "V.Lm.Lp.E.Lp",
+        "V.Lm.Lm.Lp.E",
+        "V.Lm.Lm.Lm.E",
+        "V.Lm.Lm.E.Lp",
+        "V.Lm.Lm.E.Lm",
+        "V.Lm.E.Lp.Lp",
+        "V.Lm.E.Lp.Lm",
+        "V.Lm.E.Lm.Lp",
+        "V.E.V.V.V",
+        "V.E.V.V.Vi",
+        "V.E.V.Vi.V",
+        "V.E.V.E.E",
+        "V.E.Vi.V.V",
+        "V.E.Vi.Vi.Vi",
+        "V.E.Lp.Lp.Lp",
+        "V.E.Lp.Lp.Lm",
+        "V.E.Lp.Lm.Lp",
+        "V.E.Lm.Lm.Lm",
+        "V.E.E.Vi.E",
+        "V.E.E.E.V",
+        "Vi.V.V.Vi.E",
+        "Vi.V.V.E.V",
+        "Vi.V.Vi.V.E",
+        "Vi.V.Vi.Vi.E",
+        "Vi.V.Vi.E.V",
+        "Vi.V.Vi.E.Vi",
+        "Vi.V.E.V.V",
+        "Vi.V.E.V.Vi",
+        "Vi.V.E.Vi.V",
+        "Vi.V.E.E.E",
+        "Vi.Vi.V.V.E",
+        "Vi.Vi.V.Vi.E",
+        "Vi.Vi.V.E.V",
+        "Vi.Vi.V.E.Vi",
+        "Vi.Vi.Vi.V.E",
+        "Vi.Vi.Vi.E.Vi",
+        "Vi.Vi.E.V.Vi",
+        "Vi.Vi.E.Vi.V",
+        "Vi.Vi.E.Vi.Vi",
+        "Vi.Vi.E.E.E",
+        "Vi.Lp.Lp.Lm.E",
+        "Vi.Lp.Lp.E.Lp",
+        "Vi.Lp.Lm.Lp.E",
+        "Vi.Lp.Lm.E.Lm",
+        "Vi.Lp.E.Lp.Lm",
+        "Vi.Lp.E.Lm.Lp",
+        "Vi.Lm.Lm.Lp.E",
+        "Vi.Lm.Lm.E.Lm",
+        "Vi.Lm.E.Lp.Lm",
+        "Vi.E.V.V.Vi",
+        "Vi.E.V.Vi.V",
+        "Vi.E.V.Vi.Vi",
+        "Vi.E.V.E.E",
+        "Vi.E.Vi.V.V",
+        "Vi.E.Vi.V.Vi",
+        "Vi.E.Vi.Vi.V",
+        "Vi.E.Vi.E.E",
+        "Vi.E.Lp.Lp.Lm",
+        "Vi.E.Lm.Lp.Lm",
+        "Vi.E.Lm.Lm.Lp",
+        "Vi.E.E.V.E",
+        "Vi.E.E.Vi.E",
+        "Vi.E.E.E.V",
+        "Vi.E.E.E.Vi",
+        "Lp.V.Lp.Lp.E",
+        "Lp.V.Lp.E.Lm",
+        "Lp.V.Lm.Lm.E",
+        "Lp.V.Lm.E.Lp",
+        "Lp.V.E.Lp.Lp",
+        "Lp.V.E.Lm.Lm",
+        "Lp.Vi.Lm.Lm.E",
+        "Lp.Vi.Lm.E.Lp",
+        "Lp.Vi.E.Lp.Lp",
+        "Lp.Lp.Vi.Lm.E",
+        "Lp.Lp.Vi.E.Lp",
+        "Lp.Lp.Lp.V.E",
+        "Lp.Lp.Lp.E.Vi",
+        "Lp.Lp.Lm.Vi.E",
+        "Lp.Lp.Lm.E.V",
+        "Lp.Lp.E.V.Lp",
+        "Lp.Lp.E.Lp.V",
+        "Lp.Lp.E.Lm.Vi",
+        "Lp.Lm.V.Lm.E",
+        "Lp.Lm.V.E.Lp",
+        "Lp.Lm.Vi.Lp.E",
+        "Lp.Lm.Vi.Lm.E",
+        "Lp.Lm.Vi.E.Lp",
+        "Lp.Lm.Vi.E.Lm",
+        "Lp.Lm.E.V.Lp",
+        "Lp.Lm.E.V.Lm",
+        "Lp.Lm.E.Vi.Lp",
+        "Lp.E.V.Lp.Lp",
+        "Lp.E.Vi.Lp.Lp",
+        "Lp.E.Vi.Lm.Lm",
+        "Lp.E.Lp.V.Lp",
+        "Lp.E.Lp.V.Lm",
+        "Lp.E.Lp.Vi.Lp",
+        "Lp.E.Lm.V.Lp",
+        "Lp.E.Lm.Lp.V",
+        "Lp.E.Lm.Lm.Vi",
+        "Lm.V.Lm.Lm.E",
+        "Lm.V.Lm.E.Lp",
+        "Lm.V.E.Lp.Lp",
+        "Lm.Vi.Lp.Lp.E",
+        "Lm.Vi.Lp.Lm.E",
+        "Lm.Vi.Lp.E.Lp",
+        "Lm.Vi.Lp.E.Lm",
+        "Lm.Vi.E.Lm.Lp",
+        "Lm.Vi.E.Lm.Lm",
+        "Lm.Lp.V.Lm.E",
+        "Lm.Lp.V.E.Lp",
+        "Lm.Lp.Vi.Lp.E",
+        "Lm.Lp.Vi.E.Lm",
+        "Lm.Lp.Lm.Vi.E",
+        "Lm.Lp.Lm.E.V",
+        "Lm.Lp.E.V.Lm",
+        "Lm.Lp.E.Vi.Lp",
+        "Lm.Lp.E.Lp.V",
+        "Lm.Lm.V.Lp.E",
+        "Lm.Lm.V.E.Lm",
+        "Lm.Lm.Vi.Lp.E",
+        "Lm.Lm.Vi.E.Lm",
+        "Lm.Lm.Lp.V.E",
+        "Lm.Lm.Lp.Vi.E",
+        "Lm.Lm.Lp.E.V",
+        "Lm.Lm.Lp.E.Vi",
+        "Lm.Lm.Lm.V.E"
+      ],
+      "numerical_zero_count": 274,
+      "pass_by_components": {
+        "1": [
+          0,
+          1484
+        ],
+        "2": [
+          526,
+          1771
+        ],
+        "3": [
+          650,
+          650
+        ]
+      }
+    }
+  }
+}

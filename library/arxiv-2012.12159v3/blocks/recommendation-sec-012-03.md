@@ -1,1 +1,0 @@
-By Remark [\[rem:proper\]](#rem:proper){reference-type="ref" reference="rem:proper"}, it can only arrive to $\partial K\times\partial L^\vee$ transversally, and so the reflection law translates to simply switching from one integral curve to another, which similarly must also be transversal to $\partial K\times\partial L^\vee$.

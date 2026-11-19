@@ -1,1 +1,0 @@
-For other $A$ = 6--8 ground states, and all the excited states, the trial functions contain minimal changes to the $^6$Li and $^7$Li wave functions, with the added requirement that excited states should not have smaller radii than the ground states.

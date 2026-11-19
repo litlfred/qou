@@ -1,1 +1,0 @@
-Then we shall denote by ${}^H_H\YD$ the category of finite-dimensional \textit{Yetter-Drinfeld modules.} An object $V\in {}^H_H\YD(\vect_\ku)$ is a left $H$-module $\cdot:H\otk V\to V$, and a left $H$-comodule $\lambda:V\to H\otk V$ such that \begin{equation}\label{yd-module} \lambda(h\cdot v)=h\_1 v\_{-1} \Sc(h\_3)\ot h\_2\cdot v\_0, \end{equation} for any $h\in H, v\in V$.

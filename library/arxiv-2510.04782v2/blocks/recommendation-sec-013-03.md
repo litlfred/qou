@@ -1,1 +1,0 @@
-Moreover, it follows that the filtered $\Phi_{p^\alpha}(q)^\star A[q]$-module $$\fil_\Nn^\star \bigl(\qdeRham_{R/A}^{(p^\alpha)}\bigr)_p^\complete\bigl[\localise{p}\bigr]_{\Phi_{p^{\smash{i}}}(q)}^\complete$$ must be the constant filtration on $\bigl(\qdeRham_{R/A}^{(p^\alpha)}\bigr)_p^\complete\bigl[\localise{p}\bigr]_{\Phi_{p^{\smash{i}}}(q)}^\complete$.

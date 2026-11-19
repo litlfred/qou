@@ -1,0 +1,1 @@
+Assuming Conjecture 1.1, the reduced HOMFLY-PT homology of any object σ ∈Kb(SBimn) is: HHHred(σ) ∼= Z FHilb dg n (C) (r1 ◦ι)∗(σ) ⊗∧•T ∨ n. FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOVANOV-ROZANSKY HOMOLOGY

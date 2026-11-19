@@ -1,0 +1,1 @@
+Let  2 B1ðRnÞ with m :¼ ðRnÞ. Then, for any p  1 and  > 0, we have CRadð; m  Þ  VpðÞ ðmÞ1=p : ð2:1Þ In the case of p ¼ 2, we also have the better estimate CRadð; m  Þ  V2ðÞ ﬃﬃﬃﬃﬃﬃﬃﬃﬃ 2m p : ð2:2Þ Central and Lp-concentration of 1-Lipschitz maps into R-trees

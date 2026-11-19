@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/0310279v5/blocks/rem-sec-026-04",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 59,
+  "pageEnd": 67,
+  "text": "rem-sec-026-04.md",
+  "derivedFrom": "library/0310279v5/sections/sec-026",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.1.1",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-026-51-the-complexity-function-cxx-ca.md (p. 59-67)",
+    "claim_id": "0310279v5#remark:5.1.1"
+  }
+}

@@ -1,0 +1,1 @@
+2. An easy way to see that Lθ is the correct branching of the multivalued function Li2(e(z))/(2πi)2 is that the zeros of (e(z); e(−1/τ))∞accumulate to the lines {z | Im((z + Z≥0)τ) = 0, and Im(z) ≤0} in the limit as τ tends to inﬁnity.

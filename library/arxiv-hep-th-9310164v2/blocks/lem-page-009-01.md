@@ -1,0 +1,1 @@
+In any pivotal category, for any morphism f: a →b the following composite is f ∗: b∗ ρ−1(b∗) −−−−−→b∗⊗e 1⊗ǫ(a) −−−−→b∗⊗(a ⊗a∗) 1⊗(f⊗1) −−−−−→b∗⊗(b ⊗a∗) α−1(b∗,b,a∗) −−−−−−−−→(b∗⊗b)⊗a∗ (τ(b∗)⊗τ(b))⊗1 −−−−−−−−−−→(b∗∗∗⊗b∗∗)⊗a γ(b∗∗,b∗)⊗1 −−−−−−−→(b∗⊗b∗∗)∗⊗a∗ ǫ∗(b∗)⊗1 −−−−−→e∗⊗a∗ ν−1⊗1 −−−−→e ⊗a∗ λ(a∗) −−−→a∗

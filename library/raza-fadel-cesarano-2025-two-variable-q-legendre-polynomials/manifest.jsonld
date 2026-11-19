@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "On 2-variable q -Legendre polynomials: the view point of the q -operational technique",
+  "title": "Two-variable q-Legendre polynomials",
   "contains": [
     "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/page-001",
     "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/page-002",
@@ -37,8 +37,8 @@
     "pages": 13,
     "arxiv": null,
     "doi": "10.15330/cmp.17.1.14-26",
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,1 +1,0 @@
-However the user should be cautious since there could very well be number systems for which the difference between $\MSD$ and $\LSD$ is more than the direction of the arrows in their corresponding automata.

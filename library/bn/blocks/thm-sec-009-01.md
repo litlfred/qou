@@ -1,0 +1,1 @@
+For n = 4, 5, 6, 8 and 12, the period map fq : M0,n →CHn−3/ρq(Bn) at q = ζ−2 n presents moduli space as the complement of a divisor in a ﬁnite- volume, arithmetic, complex-hyperbolic orbifold. (This divisor corresponds to certain Dehn twists whose images under ρq have ﬁnite order.) Since M2 ∼= M0,6 we also have:

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1801.05145v1/blocks/thm-sec-032-02",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 85,
+  "pageEnd": 91,
+  "text": "thm-sec-032-02.md",
+  "derivedFrom": "library/arxiv-1801.05145v1/sections/sec-032",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.05145v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "11.2.3",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-032-112-admissible-seeds-in-the-monoidal-category-sh.md (p. 85-91)",
+    "claim_id": "arxiv-1801.05145v1#theorem:11.2.3",
+    "lean_status": "unformalized"
+  }
+}

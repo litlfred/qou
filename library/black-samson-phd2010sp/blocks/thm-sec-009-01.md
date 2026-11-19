@@ -1,0 +1,1 @@
+lol (Semi-normal representations). This action extends to make S(A) into a well- defined Hd-module. Furthermore, the modules {S(A) I A E Par(d)} constitute a complete set of pairwise non-isomorphic irreducible modules for Hd. IV 1.2. Sign Sequences and Hook Partitions For 0 :::; g:::; d -1, let A£ be the hook partition (d - g, If). We refer to g as leg length,

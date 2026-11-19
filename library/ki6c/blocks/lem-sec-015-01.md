@@ -1,0 +1,1 @@
+Fixing X and Y , we regard f as a function of Z. (1) If s + u ≥1 2, then f is monotonically decreasing. (2) If s + u < 1 2, then f has a unique minimal point at Z = g3(t, s, u), where g3(t, s, u) = 2π log sin 2πs sin 2π ( 1 2 −s −u ) . In particular, this minimal point goes to ∞as s + u →1 2 −0.

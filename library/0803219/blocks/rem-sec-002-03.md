@@ -1,0 +1,1 @@
+In [43], the author only proved the case where Im(θ) > 0. But taking the complex conjugate we have a similar formula for the other case. This was pointed out by A. Gibson. Putting u := θ −2π√−1, we have THE VOLUME CONJECTURE AND ITS GENERALIZATIONS

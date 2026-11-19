@@ -1,0 +1,1 @@
+Let b ∈B be a real-valued function, satisfying cB 3 (b) = 1/2. Then there exists a constant C = C(L(b), ∥b+∥L∞) providing the following estimate for the Kolmogorov–Smirnov distance for any R ⩾1 sup x |FR,b(x) −FN (x)| ⩽ C log R. (2.4)

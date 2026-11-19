@@ -1,1 +1,0 @@
-We shall need the description of *Yetter-Drinfeld modules* over $\Bbbk G$, $G$ a finite group; these are $G$-graded vector spaces $M = \oplus_{g\in G} M_g$ provided with a $G$-module structure such that $g\cdot M_t = M_{gtg^{-1}}$ for any $g,t\in G$.

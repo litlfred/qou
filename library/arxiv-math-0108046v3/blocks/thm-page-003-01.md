@@ -1,0 +1,1 @@
+Over Q, the Schur algebra S(n, d) is isomorphic with the associative algebra (with 1) on the generators ei, fi (1 ≤i ≤n−1), and Hi (1 ≤i ≤n) with relations HiHj = HjHi (R1) eifj −fjei = δij(Hj −Hj+1) (R2) Hiej −ejHi = (εi, αj)ej, Hifj −fjHi = −(εi, αj)fj (R3)

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/hdr/blocks/rem-sec-023-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 45,
+  "pageEnd": 48,
+  "text": "rem-sec-023-02.md",
+  "derivedFrom": "library/hdr/sections/sec-023",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.21",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-023-families-of-characters-for-hecke-algebras-from-r.md (p. 45-48)",
+    "claim_id": "hdr#remark:5.21"
+  }
+}

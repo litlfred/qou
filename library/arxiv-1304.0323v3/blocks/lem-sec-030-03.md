@@ -1,1 +1,1 @@
-B.1.3. Let k be a ﬁeld and let A be a k-linear abelian category. Assume the
+1.3. Let k be a ﬁeld and let A be a k-linear abelian category. Assume the following conditions: (a) dim k HomA(X,Y )<∞ for any X,Y ∈A , SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 81 (b) any object of A has ﬁnite length. Then, for any Serre subcategoryS ofA, the quotient categoryA/S is a k-linear abelian category satisfying (a) and (b). The following proposition is easy to verify.

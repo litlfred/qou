@@ -1,1 +1,0 @@
-The reason for this is that we must distinguish two kinds of fix-points since, for example, $\Sigma_{1,1}$ and $\Sigma_1$ represent multiples of each other in ${\mathbb{C}}(S_q)$, but the disjoint product treats them differently.

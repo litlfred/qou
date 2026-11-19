@@ -1,0 +1,1 @@
+It is known (see, for example, [321]) that quantum invariants of knots can be defined by using quasi-triangular quasi-Hopf algebras with associators @. When ® = 1, such definition can naturally extend for virtual knots. However, when ® 4 1 (as in the combinatorial definition of the Kontsevich invariant of classical knots), this extension does not work.

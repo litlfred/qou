@@ -1,0 +1,1 @@
+Let M and N be linear categories. Put on Mop the canonical linear structure (see Proposition 2.3.20). (1) The functor Op : M →Mop is an additive contravariant functor. (2) If F : M →N is an additive contravariant functor, then F ◦Op : Mop → N is an additive functor; and vice versa. Exercise 2.5.22. Prove Proposition 2.5.21. Derived Categories | Amnon Yekutieli |

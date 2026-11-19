@@ -1,1 +1,0 @@
-Any pair connected by $\pi_{\mathop{\mathrm{fat}}}$ must be of the form $(\pi_{s,t}', \pi_{s,t+1})$ (we use the notation from Section [\[subsec:fat\]](#subsec:fat){reference-type="ref" reference="subsec:fat"}).

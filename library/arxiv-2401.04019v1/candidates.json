@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2401.04019v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1a29e52a816396404032a27d93864e411e2f1cd775b4c0ac7a7bbe7cc2c52fcf",
   "file": "2401.04019v1.pdf"
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since $n\\geq 1$, we must have $\\lambda\\neq \\emptyset$ and $$\\lambda_\\ell\\geq \\min\\{R+S, 2R-S\\}.$$ Define $\\varphi_1(\\lambda, \\emptyset):=(\\mu, \\delta_{R-S, 1})$, where $\\mu$ is the partition obtained from $\\lambda$ by replacing part $\\lambda_\\ell$ by parts $\\lambda_\\ell-R, S$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-proof-of-theorem-11-and-applications.md",
-   "section_title": "Proof of Theorem 1.1 and applications",
-   "pages": "6-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since $n\\neq 2R$, we must have $\\ell(\\lambda)\\geq 4.$ Define $\\varphi_2(\\lambda, \\delta_{R-S,1}):=(\\mu, \\delta_{R-S, 2})$, where $\\mu$ is the partition obtained from $\\lambda$ by replacing parts $\\lambda_{\\ell-3}$ and $R-S$ by part $\\lambda_{\\ell-3}-R$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-proof-of-theorem-11-and-applications.md",
-   "section_title": "Proof of Theorem 1.1 and applications",
-   "pages": "6-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

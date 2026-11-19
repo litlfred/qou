@@ -1,1 +1,0 @@
-Taking for T a non-split maximal k-torus of GL, we see, by comparing 1.6 (i) and 3.10 that we shall indeed have n,(B, B’)= — 1 for two opposite Borel subgroups of G=GL,, if we know that n,(B, B’) is a scalar multiplication.

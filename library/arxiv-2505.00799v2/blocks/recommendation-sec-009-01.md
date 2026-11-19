@@ -1,1 +1,0 @@
-The integral along this entire curve must be 0 by the residue theorem, and as $R$ tends to infinity, the integral along the arc approach zero since the expression in brackets is a polynomial and $e^{-u/(z+d/c)}$ decays exponentially as $\Im(u) \to \infty$ (recalling that $z+d/c \in i\mathbb{R}_+)$.

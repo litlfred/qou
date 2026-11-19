@@ -1,1 +1,0 @@
-Regarding the $CP^3$ solutions illustrated in FIGS. [6](#fig:energy_cp3){reference-type="ref" reference="fig:energy_cp3"} and [7](#fig:radius_cp3){reference-type="ref" reference="fig:radius_cp3"}, it should be noted that for high values of $|\kappa|$ and small values of $\beta e^2$, the solution curves are confined to the regime of small Noether charges.

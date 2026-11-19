@@ -1,1 +1,0 @@
-This is unsatisfactory, since some free theories (e.g. of one real scalar ﬁeld plus one real vector ﬁeld, [Fr]; such theories are not covered by the Coleman-Mandula theorem) do admit conserved vectors and tensors, which should survive under small perturbation.

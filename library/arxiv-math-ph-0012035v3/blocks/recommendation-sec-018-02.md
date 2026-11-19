@@ -1,1 +1,0 @@
-We define the topological invariant of the link ${\cal L}$ as the (normalized) expectation value $$\left<\prod_iZ_i(A)\right> \equiv\left[\int d\mu\exp(iS)\right]^{-1} \int d\mu\exp(iS)\prod_iZ_i(A), \label{CSvac}$$ where $S$ consists of $S_{\rm CS}$ plus quantum terms, and the measure should also contain the auxiliary fields.

@@ -1,0 +1,1 @@
+Type II irlcariance for ( ) implies type III invariance. (by II-invariance) Hence (x)=(Yx ,). This is type III invariance. Thus we see that by choosing B=A-‘,d= -A*-A-* (K) becomes a Laurent polynomial in A, and it is an invariant of regular isotopy (i.e. invariant under moves of type II and III). It is not invariant under the type I moves, but behaves as follows:

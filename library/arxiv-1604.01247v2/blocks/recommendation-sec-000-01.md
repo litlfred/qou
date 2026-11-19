@@ -1,1 +1,0 @@
-Furthermore since the exceptional Albert algebra is involved, one cannot use directly the technics of noncommutative geometry (i.e. of associative algebra) and some care must be taken to handle such theory.

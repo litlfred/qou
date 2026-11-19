@@ -53,7 +53,7 @@ CAL-3 is the pion-sector bar-even channel $P_{\mathrm{avg}}^{\pi}$ (proxy $m_\pi
 
 The derived $\mathfrak{Q}_\beta$ fixes the hadronic scale $\mathfrak{E}_0$ via $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$.
 
-- We postulate $\mathfrak{Q}_\beta = |\varepsilon(\Delta)| \cdot \mathfrak{E}_0$, with $\varepsilon$ the Markov trace at $z_D$ (convention D, owner ruling 2026-09-08). This gives $0.4447$ MeV, a $-43.16\%$ miss, pending the convention-D $c_k$ ladder.
+- We postulate $\mathfrak{Q}_\beta = |\varepsilon(\Delta)| \cdot \mathfrak{E}_0$, with $\varepsilon$ the Markov trace at $z_D$ (convention D, owner ruling 2026-09-08). With the tower-summed $\mathfrak{E}_0$ this gives $0.4491$ MeV, a $-42.59\%$ miss ($0.4447$ MeV with the order-zero $\mathfrak{E}_0$), pending the convention-D $c_k$ ladder.
 - The +0.17% match of the retired Form A ($\varepsilon$ weighting every basis element by $1$, the trace at $z = 1$) is either a truncation residual or a substrate artefact. It is kept only as a historical cross-check.
 - Higher-order corrections correspond to traces over Khovanov-Rozansky strata.
 

@@ -1,1 +1,0 @@
-To be precise, for $ \lambda \in \ParSph$ we think that it should be true that \begin{equation}\label{conjecture} \dim G_k(\lambda ) = \dim e_kL_k(\overline{\lambda} ). \end{equation} We note that we have verified \eqref{conjecture} for $ k \le 11 $ using SageMath.

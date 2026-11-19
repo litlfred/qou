@@ -1,1 +1,1 @@
-B.1.2. LetS be a Serre subcategory of an abelian category A.
+1.2. LetS be a Serre subcategory of an abelian category A. (i) If X is simple in A and X /∈S , then Q(X) is simple in A/S. (ii) Assume that every object in A has ﬁnite length. Then every simple object Y in A/S is isomorphic to Q(X) for a simple object X inA. (iii) If X1 and X2 are simple objects of A andQ(X1)≃Q (X2)⁄≃0 inA/S, then X1≃X2 inA. Since the proofs are elementary, we omit them. The following lemma is also elementary.

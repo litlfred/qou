@@ -1,0 +1,1 @@
+The set Mi (k) = {g € M,(k) | o(-A, —B) = 9(A, B)} is nonempty. It is acted on by the group GT*(k) = {(4, f) € GT(k) | f(x, ¥4) = f(X, ¥)}, and the action on Mj (k) by the subgroup GT*(k) N GT, (k) is free and transitive.

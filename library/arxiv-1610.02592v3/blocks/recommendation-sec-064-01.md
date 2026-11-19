@@ -1,1 +1,0 @@
-The elements of order four form the imaginary two-sphere and are all conjugate. \end{cor} \begin{proof} An element of order four is conjugate to a complex one $a+bi$, which must be $\pm i$ and is hence purely imaginary. \end{proof}

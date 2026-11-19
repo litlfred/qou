@@ -1,1 +1,0 @@
-::: proof *Proof.* By Theorem [\[thm:hyperbolic-3braid\]](#thm:hyperbolic-3braid){reference-type="ref" reference="thm:hyperbolic-3braid"}, $K$ must be represented by a generic word $w = C^k \sigma_1^{p_1} \sigma_2^{-q_1} \cdots \sigma_1^{p_s} \sigma_2^{-q_s}$.

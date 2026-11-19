@@ -1,1 +1,0 @@
-We shall give explicit formulas for the symplectic form and a topological interpretation which (hopefully) will shed some light on the sym- plectic nature of the Burau representation, originally introduced by Squier in purely algebraic terms.

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-042",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The KMS condition.",
+  "pageStart": 102,
+  "pageEnd": 105,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-042",
+    "library/vonneumann2015/blocks/thm-sec-042-01",
+    "library/vonneumann2015/blocks/cor-sec-042-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

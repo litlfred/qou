@@ -1,0 +1,1 @@
+As to the pentaquark, the report (http://www.phy.ohiou.edu/~hicks/thplus/thplus3.html) of the experimental result states that “The valence quark configuration of the exotic state contains two up quarks, two down quarks, and an anti strange quark”8 (See Figure 57 below) which was found to decay into a neutron and a K  meson.

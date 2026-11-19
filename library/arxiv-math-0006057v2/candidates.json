@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0006057v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "c881434fe9f4b04fb71fe64491e955051c9dd270b93ca6f80fce3eb25f3485d2",
   "file": "0006057v2.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/0006057v2 [math.QA] 10 Jun 2000",
+  "title": "Finite Quantum Groupoids and Their Applications",
   "authors": "DMITRI NIKSHYCH AND LEONID VAINERMAN",
   "arxiv": {
    "id": "math/0006057",
@@ -16,46 +19,148 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
+  "candidates": 5,
   "by_kind": {
-   "recommendation": 2
+   "example": 2,
+   "proposition": 2,
+   "corollary": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 4,
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "explanatory": 2,
+   "empirical-measurement": 1,
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 5
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "example",
+   "source_kind": "example",
+   "number": "4.1.3",
    "name": null,
-   "statement": "::: proof *Proof.* Any endomorphism of an irreducible module is the multiplication by a scalar, therefore, we must have $\\mbox{Tr}\\,(S(1_{(1)})u\\nu f)1_{(2)} = \\mbox{tr}_q(f) 1$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-018-ribbon-quantum-groupoids.md",
-   "section_title": "Ribbon quantum groupoids",
-   "pages": "20-21",
+   "statement": "(i) The target counital subalgebra Ht is a trivial H-module algebra via h \u00b7 z = \u03b5t(hz), h \u2208H, z \u2208Ht. (ii) H is an bH-module algebra via the dual action \u03c6 \u21c0h = h(1)\u27e8\u03c6, h(2) \u27e9, \u03c6 \u2208 bH, h \u2208H. (iii) Let A = CH(Hs) = {a \u2208H | ay = ya \u2200y \u2208Hs}, be the centralizer of Hs in H, then A is an H-module algebra via the adjoint action h \u00b7 a = h(1)aS(h(2)). 4.2. Smash products. Let A be an H-module algebra, then a smash product algebra A#H is de\ufb01ned on a k-vector space A \u2297Ht H, where H is a left Ht-module via multiplication and A is a right Ht-module via a \u00b7 z = S\u22121(z) \u00b7 a = a(z \u00b7 1), a \u2208A, z \u2208Ht, as follows. Let a#h be the class of a \u2297h in A \u2297Ht H, then the ",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-011-012-module-and-comodule-algebras.md (p. 13-14)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-011-012-module-and-comodule-algebras.md",
+   "section_title": "Module and comodule algebras",
+   "pages": "13-14",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "ex-sec-011-01",
+   "block_iri": "library/arxiv-math-0006057v2/blocks/ex-sec-011-01",
+   "claim_id": "arxiv-math-0006057v2#example:4.1.3"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "example",
+   "source_kind": "example",
+   "number": "4.2.1",
+   "name": null,
+   "statement": "H is isomorphic to the trivial smash product algebra Ht#H.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-011-012-module-and-comodule-algebras.md (p. 13-14)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-011-012-module-and-comodule-algebras.md",
+   "section_title": "Module and comodule algebras",
+   "pages": "13-14",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "ex-sec-011-02",
+   "block_iri": "library/arxiv-math-0006057v2/blocks/ex-sec-011-02",
+   "claim_id": "arxiv-math-0006057v2#example:4.2.1"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Clearly, $u$ must commute with $g$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-020-024-existence-of-the-haar-integral.md",
-   "section_title": "Existence of the Haar integral",
-   "pages": "28-31",
+   "statement": "In addition to quantum groups, such categories also arise from skein categories of tangles and, as it was observed by A.~Ocneanu, from certain bimodule categories of type II${}_1$ subfactors.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-016-019-towards-modular-categories.md (p. 21-23)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-016-019-towards-modular-categories.md",
+   "section_title": "Towards modular categories",
+   "pages": "21-23",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-016-019-towards-modular-categories.md (p. 21-23)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-016-01",
+   "block_iri": "library/arxiv-math-0006057v2/blocks/prop-sec-016-01",
+   "claim_id": "arxiv-math-0006057v2#prop-sec-016-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "9.3.1",
+   "name": null,
+   "statement": "If K is a coideal \u2217-subalgebra of B then the principal graph of the subfactor N \u2282N>\u22b3K is given by the connected component of the Bratteli diagram of the inclusion \u03b4(K) \u2282bB containing the trivial representation of bB.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-027-032-principal-graphs.md (p. 41-44)",
+   "external_refs": [],
+   "proof_excerpt": "First, let us show that there is a bijective correspondence between right relative (B, K) Hopf modules and ( bB>\u22b3K)-modules. Indeed, every right (B, K) Hopf module V carries a right action of K. If we de\ufb01ne a right action of bB by v \u22b3x = \u27e8v(1), x \u27e9v(2), v \u2208V, x \u2208bB, then we have ",
+   "section_file": "sections/sec-027-032-principal-graphs.md",
+   "section_title": "Principal graphs",
+   "pages": "41-44",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-027-032-principal-graphs.md (p. 41-44)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-027-01",
+   "block_iri": "library/arxiv-math-0006057v2/blocks/prop-sec-027-01",
+   "claim_id": "arxiv-math-0006057v2#proposition:9.3.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "9.3.2",
+   "name": null,
+   "statement": "If N \u2282N>\u22b3B is a depth 2 inclusion corresponding to the quan- tum groupoid B, then its principal graph is given by the Bratteli diagram of the inclusion bBt \u2282bB.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-027-032-principal-graphs.md (p. 41-44)",
+   "external_refs": [],
+   "proof_excerpt": "In this case K = B and inclusion bBt \u2282bB is connected, so that \u03b4(K) = bBt (note that bB is biconnected). References [BS] S. Baaj and G. Skandalis, Unitaires multiplicatifs et dualit\u00b4e pour les produits crois\u00b4es de C\u2217-alg\u00b4ebres, Ann. Sci. ENS., 26 (1993), 425\u2013488. [Ba] O. Babelon,",
+   "section_file": "sections/sec-027-032-principal-graphs.md",
+   "section_title": "Principal graphs",
+   "pages": "41-44",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-027-032-principal-graphs.md (p. 41-44)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-027-02",
+   "block_iri": "library/arxiv-math-0006057v2/blocks/cor-sec-027-02",
+   "claim_id": "arxiv-math-0006057v2#corollary:9.3.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

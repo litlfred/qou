@@ -1,0 +1,1 @@
+The SL(2; C)-character variety is determined by the polynomial (2 + η −ξ2)F(ξ, η), where F(ξ, η) := k X i=0 (−1)iPω(i)(ξ, η) with ω(i) the word obtained from ω by deleting the ﬁrst i letters and the last i letters (we put P∅(ξ, η) := 1). Moreover the ﬁrst factor 2 + η −ξ2 determines the abelian part and the second factor F(ξ, η) determines the non-abelian part. HITOSHI MURAKAMI

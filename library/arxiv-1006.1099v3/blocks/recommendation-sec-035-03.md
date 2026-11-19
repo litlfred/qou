@@ -1,1 +1,0 @@
-Therefore, at most one of the µi>0 can be zero, in fact µ3 since the A∞-structure is invariant under permuting v1 and v2; and in this case W must contain a monomial v4g+2 3 (or the element [v2g+1 3 ] ∈J(W) will not have square zero).

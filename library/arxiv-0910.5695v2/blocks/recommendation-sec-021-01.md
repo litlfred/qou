@@ -1,1 +1,0 @@
-Since the projection FPn(0) ↠FSn maps sn 7→sn, and in FSn the idempotent sn is primitive corresponding to (1n), we know any orthogonal decomposition of sn into primitive idempotents in FPn(0) must contain a summand corresponding to L((1n)) in Rep(S0; F).

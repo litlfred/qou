@@ -1,1 +1,0 @@
-This result should also be compared to the lower bound of Solymosi [@So09], who proved that for any $A\subset \mathbb{R}$ $$\label{eq-sol} \mathopen{}\left| A+A\mathclose{}\right|^2\mathopen{}\left| AA\mathclose{}\right|\geq \mathopen{}\left| A\mathclose{}\right|^{4-o(1)}.$$

@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1202.0461v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "656a2ea80ef2e25ce2795cb06f644c6cb11cf0ba5bc55c356f2db32c105f0486",
   "file": "1202.0461v1.pdf"
@@ -16,91 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 5
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "computational-claim",
    "number": null,
    "name": null,
-   "statement": "For this mechanism to be efficient at producing the observed magnetic fields, the dynamo must work for several convective turnovers before the energy of the hot corona is radiated away.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "We computed the boundaries of the convective region using the Schwarzschild criterion, and we found that the inner and outer edges of the convective region are located at radii $R\\approx 0.012\\, R_{\\sun}$, and $R \\approx 0.026\\, R_{\\sun}$, respectively, and that the total mass inside this region is $\\sim 0.24 \\, M_{\\sun}$ (see Fig.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-001-2-the-stellar-dynamo.md (p. 1-3)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-001-2-the-stellar-dynamo.md",
    "section_title": "The stellar dynamo",
    "pages": "1-3",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Our model naturally predicts that the masses of high-field magnetic white dwarfs should be larger than average and that they should be observed as single white dwarfs, as observationally found --- see, for instance, Valyavin & Fabrika (1999).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-stellar-dynamo.md",
-   "section_title": "The stellar dynamo",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This means that the toroidal component of the magnetic field must be stable, and that a poloidal component should also be present.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-the-stellar-dynamo.md",
-   "section_title": "The stellar dynamo",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Consequently, the expected number of massive white dwarfs in the local sample should be $\\sim 12$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-magnetic-white-dwarfs-in-the-solar-neighborhoo.md",
-   "section_title": "Magnetic white dwarfs in the solar neighborhood",
-   "pages": "3-5",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Our model naturally predicts that high-\ufb01eld magnetic white dwarfs should preferen- tially have high masses, and should be observed as sin- gle white dwarfs, as observationally found.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-4-summary-and-conclusions.md",
-   "section_title": "Summary and conclusions",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-001-2-the-stellar-dynamo.md (p. 1-3)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/arxiv-1202.0461v1/blocks/prop-sec-001-01",
+   "claim_id": "arxiv-1202.0461v1#prop-sec-001-01"
   }
  ]
 }

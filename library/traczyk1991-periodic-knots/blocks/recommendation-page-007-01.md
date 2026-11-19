@@ -1,1 +1,0 @@
-A direct computation shows that the three terms in the first line of the above formula (which are the three terms we want) live in the area from degree (k—1)(p—1) to degree (k—1)(p—1)+2k—2, while the remaining three terms live in the area above (k + 1)(p—1) which proves that they must cancel.

@@ -1,1 +1,0 @@
-Condition (6), $A=eV_{\rm ac}/hf\gg 1$, requires $V_{\rm ac}\sim 0.8$--$8\;\mathrm{mV}$ at $10\;\mathrm{GHz}$ for $A\sim 20$--$200$, which is accessible though large enough that drive-induced heating must be monitored.

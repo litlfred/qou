@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1304.0323v3/blocks/lem-sec-017-14",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 46,
+  "pageEnd": 61,
+  "text": "lem-sec-017-14.md",
+  "derivedFrom": "library/arxiv-1304.0323v3/sections/sec-017",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.0323v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.6.4",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-017-44-quotient-of-the-category-r-gmod.md (p. 46-61)",
+    "claim_id": "arxiv-1304.0323v3#lemma:4.6.4",
+    "lean_status": "unformalized"
+  }
+}

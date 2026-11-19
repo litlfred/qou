@@ -1,1 +1,0 @@
-This is the setting of a cross-section measurement: experiments observe event distributions in reconstructed kinematics, from which the corresponding signal rates in true kinematics must be inferred after accounting for detector effects and backgrounds, before normalisation by the integrated flux and number of targets.

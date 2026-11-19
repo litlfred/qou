@@ -1,1 +1,0 @@
-\medskip Here again, we may and shall assume that that $\Sigma $ is contained in $\bigcup Z_i\cup \ovl{S}^{\mathrm{sing}}$ and set $Z=\bigcup Z_i\cup \ovl{S}^{\mathrm{sing}},\;S=\ovl{S}\setminus Z$ (which is a $K$-manifold). \end{para}

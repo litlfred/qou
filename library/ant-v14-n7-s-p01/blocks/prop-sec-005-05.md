@@ -1,0 +1,1 @@
+Suppose that the nebentypus character ε9 : (OF/n)× →R× of 9 has nontrivial restriction to (Z/NZ)×, and moreover this restriction does not have p-power conductor. Then there exists a measure LAs p (9) ∈L ⊗R R[[Z× p ]] such that cLAs p (9) = (c2 −c−2kε9(c)[c]2)LAs p (9) for all valid integers c.

@@ -1,0 +1,1 @@
+The use of P to restrict the possible values of e is usually most effective, but not indispensable. There are other conditions on e, originating from Bennequin’s work [Be], that can be more applicable in certain cases where the calculation of P is tedious. Also, when t is a root of unity of order n, the tests depend only on e mod 2n.

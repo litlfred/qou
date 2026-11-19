@@ -1,1 +1,0 @@
-For part (b), observe that a mixed manifold must contain either: two hyperbolic pieces glued along a torus, an isolated non-elementary Seifert fibered piece, or a non-elementary graph manifold component with boundary.

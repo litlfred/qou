@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/def-page-002-03",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "text": "def-page-002-03.md",
+  "derivedFrom": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/exploring-the-geometric-buchberger-algorithm-in-integer-prog/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.2",
+    "source_kind": "definition",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper definition in sections/page-002.md",
+    "claim_id": "exploring-the-geometric-buchberger-algorithm-in-integer-prog#definition:2.2",
+    "lean_status": "unformalized"
+  }
+}

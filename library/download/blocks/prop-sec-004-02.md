@@ -1,0 +1,1 @@
+Under LSI(σ 2), for any smooth function f on R such that f ′ belongs to Lp(R,dF), p ≥2, E   f dFn −  f dF  p ≤(σ√p)p np/2  |f ′|p dF. (5.1) In addition, if |f ′| ≤1, then, for all h > 0, μ   f dFn −  f dF  ≥h

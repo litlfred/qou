@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1207.4990v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "02aa065f4f65b8579392ae32b61e27d93ee2501be3b13b0f4e7bc99aa1ba0fbb",
   "file": "1207.4990v3.pdf"
@@ -16,166 +19,67 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 10
+   "proposition": 2
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "In particular such correlations $\\left\\langle \\prod_{(i,j)\\in A} \\sigma_{i,j} \\right\\rangle$ should model physical phenomena such as phase transitions.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "On the other hand, it was observed in 1941 by van der Waerden [@vanderW] that the calculation of the Ising partition function is equivalent to the problem of counting closed polygons on the square lattice.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-setting-the-problem.md (p. 3-9)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-000-1-setting-the-problem.md",
    "section_title": "Setting the problem",
    "pages": "3-9",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-setting-the-problem.md (p. 3-9)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-1207.4990v3/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-1207.4990v3#prop-sec-000-01"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "In the presence of an external magnetic field, one must add a term of the form $h \\sum_{(i, j)\\in \\Lambda} \\sigma_{i,j}$ to $E_\\Lambda(\\sigma)$, $h\\in \\mathbb{R}$, but the most complete results have been obtained only when the field is absent, and we will always assume $h=0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-setting-the-problem.md",
-   "section_title": "Setting the problem",
-   "pages": "3-9",
+   "statement": "However, as was observed in [@IJK], in the case of algebraic matrix functions $\\varphi(z)$ one can take advantage of the algebro-geometric method that had been developed in the late 70s to the early 90s in soliton theory (see e.g. [@BBEIM]).",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-009-10-block-toeplitz-matrices.md (p. 45-49)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-009-10-block-toeplitz-matrices.md",
+   "section_title": "Block Toeplitz matrices",
+   "pages": "45-49",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Onsager's analysis allows for different interaction constants $J_1 \\neq J_2$, in which case equation [\\[eq12\\]](#eq12){reference-type=\"eqref\" reference=\"eq12\"} for $T_c$ must be replaced by $$\\label{eq14} \\sinh \\left( \\frac{2J_1}{k_B\\, T_c}\\right) \\sinh \\left(\\frac{2J_2}{k_B\\, T_c}\\right) =1.$$",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-1-setting-the-problem.md",
-   "section_title": "Setting the problem",
-   "pages": "3-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The only thing I did not know was how to fill out the holes in the mathematics and show the epsilons and deltas and all of that, and the limiting processes; I did not know just how it should be done and what mathematicians really knew about limiting processes in that ball park.\" As it turned out, by that point, mathematicians knew a lot!",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-toeplitz-meets-ising.md",
-   "section_title": "Toeplitz meets Ising",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Presumably to allay any concerns about priority, Onsager assures Kaufman at the end of the letter that \"There will be time for all these things.\" As one reads [@Ons2] [@Ons3], one senses the faint hint of regret that Onsager must have felt for such optimism.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-2-toeplitz-meets-ising.md",
-   "section_title": "Toeplitz meets Ising",
-   "pages": "9-12",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "If the matrices $U$ in the ensembles carry a weight $e^{-\\beta\\,{\\mathrm{tr}}\\,Q(U)}$, then the energy in the corresponding Coulomb gas must be replaced by $$H_n(\\theta_0,\\dots,\\theta_{n-1})=-\\sum_{0\\le j<k\\le n-1}\\log | e^{i\\theta_j}-e^{i\\theta_k} |+\\sum_{j=0}^{n-1}Q(e^{i\\theta_j})$$ where $Q$ now plays the role of an external force acting on the charges.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-szegos-theorem.md",
-   "section_title": "Szego's Theorem",
-   "pages": "12-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In such situations when $X= X_n$, or $Y=Y_n$, is varying, there is no general procedure to follow and each problem must be addressed on an ad hoc basis.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-szegos-theorem.md",
-   "section_title": "Szego's Theorem",
-   "pages": "12-23",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "One must analyze lower order terms, in fact go \"beyond all orders\" in the language of Kruskal, to capture the exponential decay in Wu's result [\\[eq64\\]](#eq64){reference-type=\"eqref\" reference=\"eq64\"} (see Remark [\\[degen\\]](#degen){reference-type=\"ref\" reference=\"degen\"} below).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-6-fisher-hartwig-singularities-fisher-hartwig-co.md",
-   "section_title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
-   "pages": "29-36",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "::: remark []{#remark6 label=\"remark6\"} Formulae [\\[eq103\\]](#eq103){reference-type=\"eqref\" reference=\"eq103\"} and [\\[eq106\\]](#eq106){reference-type=\"eqref\" reference=\"eq106\"} should be compared respectively with formulae [\\[eq61\\]](#eq61){reference-type=\"eqref\" reference=\"eq61\"} and [\\[eq52\\]](#eq52){reference-type=\"eqref\" reference=\"eq52\"} in [@FisHart1]. :::",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-7-basor-tracy-conjecture.md",
-   "section_title": "Basor-Tracy conjecture",
-   "pages": "36-40",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In order to recover $p_N(n)$ as $N,\\, n\\to\\infty$ from [\\[eq129\\]](#eq129){reference-type=\"eqref\" reference=\"eq129\"} [\\[eq130\\]](#eq130){reference-type=\"eqref\" reference=\"eq130\"} one must analyze the double-scaling limit for the determinant as $\\lambda$, $n\\to\\infty$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-11-double-scaling-limits.md",
-   "section_title": "Double-scaling limits",
-   "pages": "49-70",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-009-10-block-toeplitz-matrices.md (p. 45-49)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-009-01",
+   "block_iri": "library/arxiv-1207.4990v3/blocks/prop-sec-009-01",
+   "claim_id": "arxiv-1207.4990v3#prop-sec-009-01"
   }
  ]
 }

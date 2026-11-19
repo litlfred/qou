@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2004.04939v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "59a06f9f7d97cad25436cbb5f2759e0a71002a5f4229e573a7a92386ece037f8",
   "file": "2004.04939v1.pdf"
@@ -16,9 +19,7 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
   "candidates": 0,
   "by_kind": {},

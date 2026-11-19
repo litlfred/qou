@@ -1,1 +1,0 @@
-Every neighbourhood of $x$ must intersect infinitely many triangles of $\tilde \calT$, hence there is a sequence of edges $e_i$ of $\tilde \calT$ such that $d(e_i,x)$ is monotone decreasing and tends to zero.

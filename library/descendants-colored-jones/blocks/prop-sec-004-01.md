@@ -1,0 +1,1 @@
+Each family of invariants {Jn(q)|n ∈Z≥0}, {DJ(m) n (q)|n ∈ Z≥0, m ∈Z}, {DJ(m)(x, q)|m ∈Z}, {DJ(m)(q)|m ∈Z}, {Jn(ζ)|n ∈Z≥0, ζ ∈ μ}, {DJ(m) n (ζ)|n ∈Z≥0, ζ ∈μ}, {DJ(m)(x, ζ)m ∈Z, ζ ∈μ}, {DJ(m)(ζ)|m ∈ Z, ζ ∈μ} determines all other families.

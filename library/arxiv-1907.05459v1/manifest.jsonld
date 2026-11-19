@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.05459v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+  "contains": [
+    "library/arxiv-1907.05459v1/sections/page-001",
+    "library/arxiv-1907.05459v1/sections/page-002",
+    "library/arxiv-1907.05459v1/sections/page-003",
+    "library/arxiv-1907.05459v1/sections/page-004",
+    "library/arxiv-1907.05459v1/sections/page-005",
+    "library/arxiv-1907.05459v1/sections/page-006",
+    "library/arxiv-1907.05459v1/sections/page-007",
+    "library/arxiv-1907.05459v1/sections/page-008",
+    "library/arxiv-1907.05459v1/sections/page-009",
+    "library/arxiv-1907.05459v1/sections/page-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1907.05459v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1907.05459v1.pdf",
+    "source_sha256": "824ee0fcf834eda33533b1a984fae8361e7a753186cd10942916c790c7c75735",
+    "pages": 10,
+    "arxiv": {
+      "id": "1907.05459",
+      "version": "1",
+      "primary_class": "nucl-th",
+      "stamp_date": "11 Jul 2019"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

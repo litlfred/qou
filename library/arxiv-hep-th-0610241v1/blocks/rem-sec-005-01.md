@@ -1,0 +1,1 @@
+The notation ↑and ↓is meant to be suggestive of “up” and “down” as in the ﬁrst generation of quarks, rather than refer to spin states. In fact, we will see in Remark 2.18 below that the basis of HF can be naturally identiﬁed with the fermions of the standard model, with the result of the following proposition giving the corresponding hypercharges.

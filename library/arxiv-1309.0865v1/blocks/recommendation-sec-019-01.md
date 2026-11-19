@@ -1,1 +1,0 @@
-We will extend the map $\langle \a_s^\vee, \cdot \rangle \co \hg^* \to \Bbbk$ to the \emph{Demazure operator} $\pa_s \co R \to R^s(-2)$, by the formula \[ \pa_s(f) = \frac{f - s(f)}{\a_s}. \] The numerator and denominator are both $s$-antiinvariant, so that the fraction, assuming it is well-defined, should lie in the subring $R^s$ of $s$-invariants.

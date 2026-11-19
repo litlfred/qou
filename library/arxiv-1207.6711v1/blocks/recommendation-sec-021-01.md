@@ -1,1 +1,0 @@
-Since $\sgn(\sigma_{01})=-1$, we must prove that \begin{equation}\label{eqn:murespectspullback}(\mu(\sigma_{01}^*c))^e_s=(\mu(c)_{\sigma_{01}(s)}^{\sigma_{01}(e)})^{-1}.\end{equation} We prove this for the edge $e=1100$, the other cases being similar.

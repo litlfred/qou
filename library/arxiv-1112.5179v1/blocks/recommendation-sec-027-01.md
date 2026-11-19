@@ -1,1 +1,0 @@
-For example, from the inverse of (3.20), we ﬁnd that we should send ˆx± →−1 ˆp′ ± 1 ˆx′ ± , ˆp± →ˆx± , (A.7) so that the operators annihilating I′(m′, e′) are ˆp± + ˆx± −1 → ˆx′ ± −ˆx′ ±ˆp′ ± −1 = −ˆx′ ±(ˆp′ ± + ˆx′ ± −1 −1) .

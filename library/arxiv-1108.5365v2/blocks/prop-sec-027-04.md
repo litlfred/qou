@@ -1,0 +1,1 @@
+[30, Thm 4.2]The Haar functional h on D(A) deﬁned by h = hL ⊗ˆhR (7.15) is both left and right invariant: (h ⊗1 ⊗1)∆m(x ⊗ˆx) = h(x ⊗ˆx)(1 ⊗1), (7.16) (1 ⊗1 ⊗h)∆m(x ⊗ˆx) = h(x ⊗ˆx)(1 ⊗1). (7.17) In particular, the GNS representation of D(A) is given by Λm := Λ⊗ˆΛR on H⊗ˆH.

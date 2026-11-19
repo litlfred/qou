@@ -1,1 +1,0 @@
-In view of the relation between representations of an aqg and corepresentations of its dual aqg (and the relation between the identity representation and the universal corepresentation), the following result should not come as a big surprise.

@@ -1,1 +1,0 @@
-From here, \cite{budney-jsj} says that $\Sigma_0$ must be a planar surface with at least three boundary components, and that $K$ is a connected sum of the nontrivial knots whose complements are the connected components of $(S^3\setminus \nu(K)) \setminus Y_0$. \end{proof}
