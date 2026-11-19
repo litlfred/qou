@@ -217,6 +217,49 @@ PY5
 
 python3 -I "$ROOT/scripts/lib/definition-glossary.py" "$ROOT" "$PAPER" "$OUT"
 
+# One front page (owner, 2026-11-19): title, author and date, the abstract,
+# the Lean key, and the licence at the foot. The generator writes these as
+# four separate pages (title page, licence page, abstract, legend); the
+# introduction then starts on page 2.
+python3 -I - "$OUT/main.tex" <<'PY6'
+import re, sys
+p = sys.argv[1]
+s = open(p, encoding="utf-8").read()
+m = re.search(r"% ── Title page.*?(?=% ── Introduction)", s, re.S)
+if not m:
+    sys.exit("front page: generated layout not found; left as is")
+blk = m.group(0)
+def grab(rx):
+    g = re.search(rx, blk, re.S)
+    return g.group(1).strip() if g else ""
+title = grab(r"\\LARGE\\bfseries (.*?)\}")
+author, date = re.findall(r"\{\\large (.*?)\}", blk)[:2] + [""] * (2 - len(re.findall(r"\{\\large (.*?)\}", blk)[:2]))
+abstract = grab(r"\\begin\{abstract\}(.*?)\\end\{abstract\}")
+licence = grab(r"\\begin\{center\}\{\\small(.*?)\}\\end\{center\}")
+legend = "\\proofstatuslegend" if "\\proofstatuslegend" in blk else ""
+front = f"""% ── Front page (scripts/build-paper-pdf.sh) ─────────────────────────────
+\\thispagestyle{{empty}}
+\\begin{{center}}
+\\vspace*{{0.5cm}}
+{{\\LARGE\\bfseries {title}}}\\\\[0.8em]
+{{\\large {author}}}\\\\[0.3em]
+{{\\large {date}}}
+\\end{{center}}
+\\vspace{{1em}}
+\\begin{{center}}\\bfseries Abstract\\end{{center}}
+\\begin{{quotation}}\\noindent {abstract}\\end{{quotation}}
+\\vspace{{1em}}
+{legend}
+\\vfill
+\\begin{{center}}{{\\footnotesize {licence}}}\\end{{center}}
+\\clearpage
+
+"""
+s = s[:m.start()] + front + s[m.end():]
+open(p, "w", encoding="utf-8").write(s)
+print("==> front page: title, abstract, Lean key and licence on one page")
+PY6
+
 # A sentence that continues after display math ("... the composites $$...$$
 # and its mirror equal id") is written in markdown with a blank line after the
 # display, which LaTeX reads as a new, indented paragraph. Fold the blank line
