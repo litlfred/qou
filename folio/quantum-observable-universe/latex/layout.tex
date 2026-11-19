@@ -26,3 +26,16 @@
   \setlength{\abovedisplayshortskip}{2pt plus 1pt}%
   \setlength{\belowdisplayshortskip}{3pt plus 1pt minus 1pt}%
 }
+
+% Where a definition, example, remark or observation ends. Their bodies are
+% roman like the prose that follows, so without a mark the reader cannot see
+% the boundary (owner, 2026-11-19). Each now ends with a right-flushed
+% \diamond, the usual end mark for non-proof environments, as a proof ends
+% with \square; a body that ends in display math gets it on the last line.
+\newcommand{\folioendmark}{$\diamond$}
+\makeatletter
+\@for\folio@env:={definition,example,remark,observation,algorithmblock}\do{%
+  \AddToHook{env/\folio@env/begin}{\pushQED{\qed}\renewcommand{\qedsymbol}{\folioendmark}}%
+  \AddToHook{env/\folio@env/end}{\popQED}%
+}
+\makeatother

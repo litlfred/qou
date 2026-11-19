@@ -45,7 +45,25 @@ mkdir -p "$OUT"
 PRE="$OUT/preamble.tex"
 # The layout must follow the template's own \geometry call, so it is inserted
 # just before the line that marks the end of the template's preamble body.
-cp "$TEMPLATE" "$PRE"
+# Repository links and title-page date, prepended so the template's
+# \providecommand placeholders (github.com/OWNER/REPO) do not win.
+#   repo   — from the origin remote (github.com/<owner>/<repo>)
+#   date   — the commit date of the source this PDF is built from (owner,
+#            2026-11-19), not the fixed date in identity.ts, which the
+#            self-citation keeps.
+SLUG=$(git -C "$ROOT" remote get-url origin | sed -E 's#\.git$##; s#.*[/:]([^/]+/[^/]+)$#\1#')
+OWNER=${SLUG%%/*}; REPO=${SLUG#*/}
+BUILD_DATE=$(git -C "$ROOT" show -s --format=%cs HEAD)
+{
+  printf '%% ── folio identity (scripts/build-paper-pdf.sh) ──\n'
+  printf '\\newcommand{\\foliorepobase}{https://github.com/%s/%s}\n' "$OWNER" "$REPO"
+  printf '\\newcommand{\\foliopagesbase}{https://%s.github.io/%s}\n' "$OWNER" "$REPO"
+  cat "$TEMPLATE"
+  printf '\n%% ── folio identity, continued ──\n'
+  # Block sources live under folio/, not the pre-rename content/.
+  printf '\\renewcommand{\\sourcebase}{\\foliorepobase/blob/main/folio/}\n'
+  printf '\\renewcommand{\\leansrcbase}{\\foliorepobase/blob/main/folio/%s/lean/}\n' "$PAPER"
+} > "$PRE"
 for f in macros layout; do
   src="$ROOT/folio/$PAPER/latex/$f.tex"
   [ -f "$src" ] && printf '\n%% ── folio %s: %s ──\n\\input{%s}\n' "$f" "folio/$PAPER/latex/$f.tex" "$src" >> "$PRE"
@@ -57,6 +75,34 @@ echo "==> content -> LaTeX"
     "folio/$PAPER/$PAPER.ts" \
     --out-dir "$OUT/chapters" --generate-main --main-out "$OUT/main.tex" \
     --preamble "$PRE" ) | tee "$OUT/content-build.log" | grep -E 'Issues:|preflight' || true
+# The generator writes the manifest's fixed date both into \date and as a
+# literal on the title page; both become the commit date.
+python3 -I - "$OUT/main.tex" "$BUILD_DATE" <<'PY2'
+import re, sys
+p, d = sys.argv[1], sys.argv[2]
+s = open(p, encoding="utf-8").read()
+s, n1 = re.subn(r"\\date\{[^}]*\}", lambda m: "\\date{%s}" % d, s, count=1)
+s, n2 = re.subn(r"(\\begin\{titlepage\}.*?\{\\large )\d{4}-\d{2}-\d{2}(\})",
+                lambda m: m.group(1) + d + m.group(2), s, count=1, flags=re.S)
+open(p, "w", encoding="utf-8").write(s)
+print(f"==> date {d} (\\date: {n1}, title page: {n2})")
+PY2
+# A sentence that continues after display math ("... the composites $$...$$
+# and its mirror equal id") is written in markdown with a blank line after the
+# display, which LaTeX reads as a new, indented paragraph. Fold the blank line
+# when the next line starts lowercase or with punctuation: it is the same
+# sentence. A capitalised next line is left as a real paragraph.
+python3 -I - "$OUT/chapters" <<'PY3'
+import pathlib, re, sys
+pat = re.compile(r"(\\\]|\\end\{(?:equation|align|gather|multline)\*?\})\n[ \t]*\n+(?=[a-z,.;:)])")
+n = 0
+for f in pathlib.Path(sys.argv[1]).glob("*.tex"):
+    s = f.read_text(encoding="utf-8")
+    t, k = pat.subn(lambda m: m.group(1) + "\n", s)
+    if k:
+        f.write_text(t, encoding="utf-8"); n += k
+print(f"==> joined {n} sentence(s) continuing after display math")
+PY3
 
 # The template carries \IfFileExists{print-mode.tex}; chapters are \input as
 # chapters/<x>, so latexmk runs inside $OUT.
