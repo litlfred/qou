@@ -112,6 +112,27 @@ theorem genus_eq_four_of_A5_irreducible_and_S5
   · exact h4
   · subst h5; exact (s5_genus_ne_five hS tsS htsS hRHS).elim
 
+/-- `A₅` acts on no curve of genus 7 (Riemann–Hurwitz arithmetic). -/
+theorem a5_genus_ne_seven (h : Nat) (ts : List Nat)
+    (hts : ∀ t ∈ ts, A5Branch t) (hRH : RH 60 7 h ts) : False := by
+  obtain ⟨a, b, c, hs⟩ := a5_sum ts hts
+  unfold RH at hRH
+  omega
+
+/-- **The dimension bound gives `g ∈ {4, 6}`.** If `A₅` and `S₅` act on a curve of genus
+`2 ≤ g ≤ 7`, then `g = 4` or `g = 6`. The bound `g ≤ 7` is what
+`QOU.BringsSurface.CharacterBound.finrank_sq_le_card` gives for `g = dim W`, `W` irreducible
+for a group of order 60: `g² ≤ 60`. -/
+theorem genus_four_or_six_of_le_seven
+    (g hA hS : Nat) (tsA tsS : List Nat)
+    (htsA : ∀ t ∈ tsA, A5Branch t) (hRHA : RH 60 g hA tsA)
+    (htsS : ∀ t ∈ tsS, S5Branch t) (hRHS : RH 120 g hS tsS)
+    (hg : 2 ≤ g) (hg7 : g ≤ 7) : g = 4 ∨ g = 6 := by
+  have h23 := a5_genus_ne_two_three g hA tsA htsA hRHA
+  have h5 : g ≠ 5 := by rintro rfl; exact s5_genus_ne_five hS tsS htsS hRHS
+  have h7 : g ≠ 7 := by rintro rfl; exact a5_genus_ne_seven hA tsA htsA hRHA
+  omega
+
 /-- The hypotheses are satisfiable at `g = 4`: `A₅` with signature `(0; 2,5,5)` and `S₅`
 with signature `(0; 2,4,5)` (Bring's curve). So the conclusion is not vacuous. -/
 theorem genus_four_attained :
