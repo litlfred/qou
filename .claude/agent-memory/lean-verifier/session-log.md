@@ -420,3 +420,23 @@ lean-direct of two Mathlib-only files: 3.7 s / 1.6 s; autoImplicit control re-co
 - BASELINE: toolchain already at ~/.elan/toolchains/leanprover--lean4---v4.24.0 (no ~/.elan/bin); release.lean-lang.org 403, GitHub zip 200 (730 MB, 24 s) — not needed.
 - BASELINE: streamed restore of cat/folio-assistant-sci/lake-cache/qou-v4-24-0 @ a792c46d01b: fetch 1m36s, root .lake 3758 / per-paper 2703 oleans; disk 16G -> 8.8G free.
 - STABLE: cone rebuild into a `cp -al` shadow of the per-paper lib dir (7 modules, HeckeAlgebra 64 s, rest ≤6 s), LEAN_PATH = shadow + root .lake/packages/*; works with no union mirror.
+
+## 2026-11-19 — cache refresh (resumed after container restart)
+
+- TRAP: building missing Mathlib oleans lean-direct needs mathlib's own leanOptions:
+  `-DmaxSynthPendingDepth=3` (+ `-Dpp.unicode.fun=true`); without it
+  `Mathlib.RingTheory.Kaehler.Basic` fails "failed to synthesize" at 197:12.
+  `lean -o` also rejects a source outside cwd: run with cwd = mathlib source root
+  and call `/tmp/lean-v4.24.0/bin/lean` directly (the elan override is per /home/user/qou).
+- TRAP: memcg OOM (exit -9, "no output") at `lean-direct-cone.sh -j3` on
+  `Machinery/HeckeH4BlockMap31` and `Mathlib/SYTEnumerationN7`; `HeckeH4Semisimple`
+  peaks ~11 GB RSS alone. Re-run `-j1` (the builder resumes via .srcsha stamps).
+- STABLE: `lean-axiom-guard.py` needs LEAN_PATH exported (else "unknown module
+  prefix 'QOU'", exit 2); build it like lean-direct-cone.sh does.
+- STABLE: a seed olean whose `.trace` source hash == `Lake.Hash.ofText(src)` and
+  whose import closure is clean can be given a `.srcsha` stamp so the cone builder
+  stops rebuilding it (312 here). `lean-olean-staleness-audit.py` is mtime-based and
+  still lists such oleans as stale (68 after this run, all trace-verified).
+- BASELINE (re-measure): pushed `…/lake-cache/qou-v4-24-0-mathlib-gap-modules`
+  bcadf92 (158 oleans) and new addon `…/lake-cache/qou-v4-24-0-lean-direct-refresh`
+  4b44063 (3251 oleans + 3324 stamps, 11 parts, 974 MB).
