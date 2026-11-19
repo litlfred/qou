@@ -128,8 +128,18 @@ PY2
 # Only what Pages actually serves is used, so a link never points at a page
 # that is not published yet.
 LD="$OUT/lean-data"; mkdir -p "$LD"
-fetch() { curl -fsSL -z "$LD/$2" -o "$LD/$2.new" "$PAGES_BASE/lean/$1" 2>/dev/null \
-  && mv "$LD/$2.new" "$LD/$2" || { rm -f "$LD/$2.new" "$LD/$2"; return 1; }; }
+# `curl -z` answers an unchanged file with an EMPTY download, so only a
+# non-empty .new replaces the cached copy; a failed fetch drops the cache so a
+# route Pages no longer serves is not linked.
+fetch() {
+  rm -f "$LD/$2.new"
+  if curl -fsSL -z "$LD/$2" -o "$LD/$2.new" "$PAGES_BASE/lean/$1" 2>/dev/null; then
+    [ -s "$LD/$2.new" ] && mv "$LD/$2.new" "$LD/$2"
+    rm -f "$LD/$2.new"; [ -s "$LD/$2" ]
+  else
+    rm -f "$LD/$2.new" "$LD/$2"; return 1
+  fi
+}
 fetch data/index.json kg-index.json && fetch data/names.json kg-names.json || true
 [ -f "$LD/kg-names.json" ] || fetch declarations/declaration-data.bmp docgen.json || true
 python3 -I - "$OUT/chapters" "$LD" "$OUT/lean-doc-links.tex" <<'PY4'
