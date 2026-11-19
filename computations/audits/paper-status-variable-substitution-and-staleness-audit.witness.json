@@ -1,0 +1,2203 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-19T07:00:51.201664+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+  "assertions": [
+    {
+      "name": "witness_corpus_scan_nonempty",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Live witness corpus under computations/ must exceed 3,000 files"
+    },
+    {
+      "name": "upstream_witness_sha256_drift_detected",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Must resolve data.upstream_witness_hashes['path'] and catch real upstream sha256 drift"
+    },
+    {
+      "name": "value_registry_parsed_and_rho_q_defect_detected",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "folio/values/registry.ts has >=68 entries and broken rho_q path is caught"
+    },
+    {
+      "name": "manuscript_md_scan_complete",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "All 23 main chapters + 10 appendices + 3 backmatter chapters scanned"
+    },
+    {
+      "name": "bring_schwinger_cubic_closes_alpha_em_sub_ppb",
+      "computed": "0.00000000036522583759310081907456410985734104109046988399913",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "source": "1-loop Bring-Schwinger cubic closes 1/alpha_EM within 1 ppb of CODATA 2022 (-0.3652 ppb)"
+    },
+    {
+      "name": "two_term_borromean_pin_increases_q0_over_1term",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Since d(m_p^QCD/m_e)/dq < 0, subtracting M_p^QED > 0 increases q_2t above q_proton_1term"
+    },
+    {
+      "name": "E0_tower_matches_closed_form_me_q_over_qm1_2qm1",
+      "computed": "4.2274833556290305502680560265872111536151841980656",
+      "expected": "4.2274833556290305502680560265872111536151841980656",
+      "passed": true,
+      "tolerance": "1e-48",
+      "source": "E_0^(0) / (1 - hbar_q^2) == m_e * q / ((q - 1)(2q - 1))"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "paper-status-variable-substitution-and-staleness-audit",
+  "scriptFile": "paper_status_variable_substitution_and_staleness_audit.py",
+  "scriptHash": "84633ca63dc2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/paper_status_variable_substitution_and_staleness_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/paper_status_variable_substitution_and_staleness_audit.py"
+  },
+  "description": "End-to-end audit and dependency trace of (1) ValueRegistry :val[...] and Liquid {{ qou... }} variable substitution vs hardcoded prose/tables across status docs, 23 main paper chapters, and 10 appendices; (2) stale witnesses (producer scriptHash drift, upstream sha256 drift, unrecorded dashboard upstreams, and muon/proton pin straddles); and (3) the Wave-2 script upgrade matrix for Corrected Photon alpha_EM, Two-Term QED + q_2t pin, and GPMT + mirror-projected alpha_D^proj + normalized 4-row q-Plancherel + E_0^tower.",
+  "auditOnly": "docs/audits/2026-11-18-two-term-qed-downstream-and-211ppb-audit.md",
+  "parameters": {
+    "compute_dps_floor": 50,
+    "serialization_dps": 50,
+    "main_chapters_count": 23,
+    "appendices_count": 10,
+    "status_docs_count": 4
+  },
+  "data": {
+    "wave2_reference_values_50dps": {
+      "q0_proton_1term": "1.1099785827513808075916690956107688798744991218736",
+      "q0_two_term_borromean": "1.1099785951508859990875652035986826212141034805412",
+      "q0_muon_live_codata2022": "1.1099785956427390466817951293800017527000655610290",
+      "q0_pinning_witness_frozen_muon": "1.1099785956427390466817951293800017527000655610290",
+      "dq_two_term_minus_1term_ppb": "11.170940939022790516931011456960802936296562441638",
+      "dq_frozen_witness_minus_live_muon_ppb": "-8.1584267609980108929235812269159781032105800605996e-62",
+      "dq_frozen_witness_minus_1term_proton_ppb": "11.614060342619785788004692467102689086750024366954",
+      "alpha_em_inv_bare_q9q10": "136.82320885358258430804610540444147849492999517975",
+      "alpha_em_inv_cs_resummed": "137.03593509397560465879568999422684958038686715110",
+      "alpha_em_inv_cs_err_ppb": "-467.63642240145640522493647399619319909889298128503",
+      "alpha_em_inv_bring_form_a_quadratic": "137.03599931316900750220365786491819837150744268553",
+      "alpha_em_inv_bring_form_a_err_ppb": "0.99367325607867091580069735015237865860752425688117",
+      "alpha_em_inv_bring_schwinger_cubic": "137.03599912695091242017270049642000673995567550572",
+      "alpha_em_inv_bring_schwinger_cubic_err_ppb": "-0.36522583759310081907456410985734104109046988399913",
+      "proton_qed_self_energy_borromean_mev": "0.00022007729380398293985229390000000000000000000000000",
+      "np_qed_splitting_borromean_conn_mev": "-0.00033169604460517884767480250000000000000000000000000",
+      "neutron_mass_two_term_mev_at_q2t": "939.56556137177902909739330000000000000000000000000",
+      "coulomb_energy_3he_mev_at_q2t": "0.84742183929186982417789629216716636559934923363620",
+      "mirror_displacement_a3_mev_at_q2t": "0.84742183929186982417789629216716636559934923363620",
+      "E0_truncated_M0_mev": "4.1859813632944758969450621587590084101434868908796",
+      "E0_untruncated_tower_mev": "4.2274833556290305502680560265872111536151841980656",
+      "E0_closed_form_me_q_over_qm1_2qm1_mev": "4.2274833556290305502680560265872111536151841980656",
+      "E0_tower_minus_M0_rel_ppb": "9914519.1372499348624723462307320448301746221717361",
+      "alpha_D_unprojected_at_q2t": "-0.040485780334362635920742660760536383967968439567846",
+      "alpha_D_mirror_projected_at_q2t": "-0.051412334815617770832339191271379418872572454213815",
+      "gpmt_dmod_111_at_q2t": "-0.16338322736232829433111083412916694229660637573814",
+      "gpmt_dmod_211_at_q2t": "-0.18315335205468799320359046472153913108032822278047",
+      "gpmt_dmod_1111_at_q2t": "0.019770124692359698872479630592372188783721847042327"
+    },
+    "variable_substitution_audit": {
+      "pipeline_mechanisms": {
+        "legacy_val_directive": {
+          "registry_file": "folio/values/registry.ts",
+          "registered_entries_count": 68,
+          "distinct_witness_files_count": 17,
+          "rendered_in_latex": true,
+          "rendered_in_markdown_site": false,
+          "pipeline_defect": "render-markdown.ts calls resolveLiquidValues(mdContent) ONLY and never invokes renderValue / substituteValuesInMath; :val[...] tokens leak un-substituted into rendered Markdown/site output."
+        },
+        "liquid_knowledge_graph_binding": {
+          "config_file": "qou.json",
+          "resolver_file": "../folio-assistant/cat-harness-tools/pipeline/liquid-values.ts",
+          "flat_directory_lookup_only": true,
+          "pipeline_defect": "liquid-values.ts resolves join(dir, '${entry}.witness.json') with SEG regex forbidding '/', so witnesses in subdirectories (computations/qbeta/, computations/probes/, computations/deltalambda/, computations/audits/) cannot be addressed via {{ qou.computations... }}.",
+          "distinct_entries_used_in_manuscript": {
+            "computations/hbond-vdw-sdp": 1,
+            "computations/hbond-categorical-action": 3,
+            "computations/vdw-pskew-sinh-probe": 2,
+            "computations/codata-masses": 3,
+            "library/codata-2022": 6,
+            "computations/atomic-tr-m-mpfr-50dps-proton": 11,
+            "computations/tr-m-q-hecke-seminormal": 15,
+            "computations/q-pinning-50-digit": 28,
+            "computations/sigma-shell-from-beta-chain": 7,
+            "computations/hyperbolic-volumes": 1,
+            "computations/molecular-experimental-refs": 5,
+            "computations/co-bond-order-active-set": 4,
+            "computations/molecular-angle-master-table": 6
+          }
+        },
+        "ts_computation_witness_blocks": {
+          "ts_files_scanned": 3707,
+          "computation_witness_declarations": 469,
+          "distinct_witnesses_referenced": 363,
+          "substitutes_prose_or_tables": false
+        },
+        "leanval_directives": {
+          "lean_files_scanned": 11321,
+          "lean_files_with_leanval": 1,
+          "leanval_occurrences": 4
+        }
+      },
+      "value_registry_health": {
+        "broken_entries": [
+          {
+            "name": "rho_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "witnessPath": "derived_50_digit.rho_q",
+            "needsReview": false,
+            "reason": "witness_path_missing_in_json"
+          }
+        ],
+        "needs_review_placeholders": [
+          {
+            "name": "inv_alpha",
+            "witnessFile": "computations/alpha-em-4pi-fixed-point-solve.witness.json",
+            "witnessPath": "data.CODATA_alpha_inv",
+            "needsReview": true
+          },
+          {
+            "name": "c_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "witnessPath": "derived_50_digit.q",
+            "needsReview": true
+          },
+          {
+            "name": "eta_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "witnessPath": "derived_50_digit.q",
+            "needsReview": true
+          },
+          {
+            "name": "chi_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "witnessPath": "derived_50_digit.q",
+            "needsReview": true
+          },
+          {
+            "name": "d_H",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "witnessPath": "derived_50_digit.q",
+            "needsReview": true
+          }
+        ],
+        "entries_with_stale_backing_witness": [
+          {
+            "name": "q_0",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "q_inv",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "H_A",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "hbar_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "hbar_q_sq",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "two_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "qint_3",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "qint_4",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "qint_5",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "z_markov",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "rho_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "s_skein",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "codata_rel_unc",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "Vol_4_1",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "m_mu_over_e",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "B_4He_AME_MeV",
+            "witnessFile": "computations/ame-2020-binding-energies.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "proton"
+          },
+          {
+            "name": "c_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "eta_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "chi_q",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "d_H",
+            "witnessFile": "computations/q-pinning-50-digit.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "muon"
+          },
+          {
+            "name": "E_mol_eV",
+            "witnessFile": "computations/molecular-frobenius-lp.witness.json",
+            "scriptHash_stale": true,
+            "upstream_sha256_stale": false,
+            "q0Anchor": "proton"
+          }
+        ],
+        "unused_entries_count": 64,
+        "used_entries_in_md": {
+          "benzene_resonance_kcal": 1,
+          "confinement_B3_net_proton": 1,
+          "confinement_Lplus_net_proton": 1,
+          "confinement_id_net_proton": 1
+        }
+      },
+      "coverage_by_section": {
+        "status_scorecard_docs": {
+          "md_files": 4,
+          "liquid_wired_files": 0,
+          "liquid_occurrences": 0,
+          "val_wired_files": 0,
+          "val_occurrences": 0,
+          "total_wired_files": 0,
+          "table_data_md_total": 0,
+          "table_data_md_wired": 0,
+          "table_data_md_unwired": 0,
+          "inline_pipe_table_files": 4,
+          "inline_pipe_table_numeric_unwired": 4,
+          "unwired_files_with_hardcoded_residuals": 4,
+          "wired_files_also_with_hardcoded_residuals": 0,
+          "hardcoded_residual_occurrences": 400,
+          "unwired_files_with_key_observable_literals": 3,
+          "hardcoded_key_observable_literal_occurrences": 7
+        },
+        "main_paper_chapters": {
+          "md_files": 3374,
+          "liquid_wired_files": 31,
+          "liquid_occurrences": 89,
+          "val_wired_files": 2,
+          "val_occurrences": 4,
+          "total_wired_files": 33,
+          "table_data_md_total": 371,
+          "table_data_md_wired": 3,
+          "table_data_md_unwired": 368,
+          "inline_pipe_table_files": 321,
+          "inline_pipe_table_numeric_unwired": 108,
+          "unwired_files_with_hardcoded_residuals": 236,
+          "wired_files_also_with_hardcoded_residuals": 8,
+          "hardcoded_residual_occurrences": 853,
+          "unwired_files_with_key_observable_literals": 85,
+          "hardcoded_key_observable_literal_occurrences": 164
+        },
+        "appendices": {
+          "md_files": 264,
+          "liquid_wired_files": 2,
+          "liquid_occurrences": 3,
+          "val_wired_files": 0,
+          "val_occurrences": 0,
+          "total_wired_files": 2,
+          "table_data_md_total": 62,
+          "table_data_md_wired": 0,
+          "table_data_md_unwired": 62,
+          "inline_pipe_table_files": 39,
+          "inline_pipe_table_numeric_unwired": 10,
+          "unwired_files_with_hardcoded_residuals": 22,
+          "wired_files_also_with_hardcoded_residuals": 1,
+          "hardcoded_residual_occurrences": 110,
+          "unwired_files_with_key_observable_literals": 5,
+          "hardcoded_key_observable_literal_occurrences": 20
+        },
+        "backmatter": {
+          "md_files": 45,
+          "liquid_wired_files": 0,
+          "liquid_occurrences": 0,
+          "val_wired_files": 0,
+          "val_occurrences": 0,
+          "total_wired_files": 0,
+          "table_data_md_total": 10,
+          "table_data_md_wired": 0,
+          "table_data_md_unwired": 10,
+          "inline_pipe_table_files": 5,
+          "inline_pipe_table_numeric_unwired": 2,
+          "unwired_files_with_hardcoded_residuals": 3,
+          "wired_files_also_with_hardcoded_residuals": 0,
+          "hardcoded_residual_occurrences": 9,
+          "unwired_files_with_key_observable_literals": 3,
+          "hardcoded_key_observable_literal_occurrences": 3
+        },
+        "manuscript_total_md_files": 3683,
+        "manuscript_total_wired_md_files": 35,
+        "manuscript_wired_md_fraction_50dps": "0.0095031224545207711105077382568558240564756991582949",
+        "manuscript_total_table_data_files": 443,
+        "manuscript_wired_table_data_files": 3,
+        "manuscript_wired_table_fraction_50dps": "0.0067720090293453724604966139954853273137697516930023"
+      },
+      "all_wired_manuscript_files": [
+        {
+          "file": "folio/quantum-observable-universe/information-theory/hopf-link-symmetric-decomposition-van-der-waals-reading.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/hbond-vdw-sdp"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md",
+          "liquid_refs": 3,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/hbond-categorical-action"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/information-theory/vdw-pskew-isolation-interpretation.md",
+          "liquid_refs": 2,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/vdw-pskew-sinh-probe"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/codata-masses"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/knots-particles-confinement/delta-skein-substrate-identity.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "library/codata-2022"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/knots-particles-confinement/hadron-proton-example.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "library/codata-2022"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.md",
+          "liquid_refs": 5,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/atomic-tr-m-mpfr-50dps-proton"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table-table1-data.md",
+          "liquid_refs": 15,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/tr-m-q-hecke-seminormal"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.md",
+          "liquid_refs": 2,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md",
+          "liquid_refs": 6,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/atomic-tr-m-mpfr-50dps-proton"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-theory/mass-ordering-corrected.md",
+          "liquid_refs": 2,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/codata-masses",
+            "library/codata-2022"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation-table-data.md",
+          "liquid_refs": 7,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/sigma-shell-from-beta-chain"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-theory/six-term-per-derivation-weights-proof.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "library/codata-2022"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/mass-theory/vc-as-depth-2-instance.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/hyperbolic-volumes"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/molecular-construction/benzene-bond-equalization.md",
+          "liquid_refs": 3,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/molecular-experimental-refs"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/molecular-construction/benzene-threading-selection.md",
+          "liquid_refs": 0,
+          "val_refs": 1,
+          "liquid_targets": [],
+          "val_names": [
+            "benzene_resonance_kcal"
+          ]
+        },
+        {
+          "file": "folio/quantum-observable-universe/molecular-construction/co-lp-dual-orthogonal-channels.md",
+          "liquid_refs": 2,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/co-bond-order-active-set"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/molecular-construction/co-triple-bond-energy.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/co-bond-order-active-set"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/molecular-construction/co2-linear-geometry-and-d0.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/molecular-experimental-refs"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/molecular-construction/co2-vsepr-and-per-bond-energy.md",
+          "liquid_refs": 2,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/co-bond-order-active-set",
+            "computations/molecular-experimental-refs"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/molecular-construction/domain-weight-vsepr-angles.md",
+          "liquid_refs": 6,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/molecular-angle-master-table"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-table1-data.md",
+          "liquid_refs": 0,
+          "val_refs": 3,
+          "liquid_targets": [],
+          "val_names": [
+            "confinement_B3_net_proton",
+            "confinement_Lplus_net_proton",
+            "confinement_id_net_proton"
+          ]
+        },
+        {
+          "file": "folio/quantum-observable-universe/observations/epistemic-status-of-calibrations.md",
+          "liquid_refs": 3,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/observations/local-substrate-q-proof.md",
+          "liquid_refs": 3,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/observations/local-substrate-q.md",
+          "liquid_refs": 3,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/observations/mass-comparison-table.md",
+          "liquid_refs": 2,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit",
+            "library/codata-2022"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/observations/mu-p-residual-two-readings.md",
+          "liquid_refs": 2,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/observations/skein-mass-relation-proof.md",
+          "liquid_refs": 8,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/observations/skein-mass-relation.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/predicted-spectra/clausen-function-mathlib-filler.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/appendix-knot-periodic-table/knot-periodic-table.md",
+          "liquid_refs": 2,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/codata-masses",
+            "library/codata-2022"
+          ],
+          "val_names": []
+        },
+        {
+          "file": "folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
+          "liquid_refs": 1,
+          "val_refs": 0,
+          "liquid_targets": [
+            "computations/q-pinning-50-digit"
+          ],
+          "val_names": []
+        }
+      ],
+      "high_priority_hardcoded_stale_sites": [
+        {
+          "section": "status_docs",
+          "file": "docs/precision-goals.md",
+          "lines": "347, 733",
+          "hardcoded_claim": "Delta m_pn row says 658 ppb / misses ~151.7x (contradicting lines 55 & 390: 1.009e+8 ppb / 2.327e+7x)",
+          "live_compute_status": "Two-term QED + mirror-projected alpha_D^proj + GPMT shifts nucleon sector; 0 variable substitutions in docs/"
+        },
+        {
+          "section": "status_docs",
+          "file": "docs/observable-sector-tracker.md",
+          "lines": "60-69, 258-261",
+          "hardcoded_claim": "L2 table says 1/5 scoreable, ships excised 2-term m_K/m_pi=23.44 ppb, m_mu=209.8 ppb, Q_beta=1248 ppb, m_n=2.389 ppb, Delta_pn=755.6 ppb, cites muon alpha^-1=137.035944, marks G_Fermi & Higgs VEV OPEN",
+          "live_compute_status": "Live per-observable-100x-status has 3/6 <=100x (alpha_em_inv 0.3652 ppb / 2.38x via Bring-Schwinger cubic); electroweak_bring_schwinger_bridge_probe derives v & G_F"
+        },
+        {
+          "section": "status_docs",
+          "file": "docs/audits/onepb-status-dashboard.md",
+          "lines": "45-64",
+          "hardcoded_claim": "5 atoms, Max relative Delta = 2.94e-15, max_non_anchor_delta_ppb = 92.79 ppb",
+          "live_compute_status": "Live cross-check-trM-1ppb.witness.json has 6 atoms, Max rel Delta = 1.208e-49, max_non_anchor_delta_ppb = 2.7755e-8 ppb"
+        },
+        {
+          "section": "appendices",
+          "file": "folio/quantum-observable-universe/appendix-standard-model/sm-params-gauge-couplings.md",
+          "lines": "22, 24",
+          "hardcoded_claim": "Hardcodes retired CODATA-2018 alpha_EM residuals: 1.67 ppb (Form A), +0.313 ppb, 2.1 sigma, c_2 approx +8.1e-4, 209x short",
+          "live_compute_status": "Live alpha-em-schwinger-ladder.witness.json (CODATA-2022): +0.9937 ppb (Form A), -0.3652 ppb (Form B cubic, 2.38 sigma), c_2 = -9.4e-4, 238.3x"
+        },
+        {
+          "section": "appendices",
+          "file": "folio/quantum-observable-universe/appendix-qvalues/per-observable-100x-status-dashboard.md",
+          "lines": "1-15",
+          "hardcoded_claim": "Prose disclaimer 'Numbers are not inlined here' — prints ZERO numerical status rows in rendered PDF",
+          "live_compute_status": "Backed in .ts by computations/per-observable-100x-status.witness.json, which is never templated via Liquid"
+        },
+        {
+          "section": "appendices",
+          "file": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09a-mass-identity.md",
+          "lines": "90-94",
+          "hardcoded_claim": "Claims canonical_mass.py has a formula fallback and omits all 2-term QED & GPMT functions",
+          "live_compute_status": "Fallback removed 2026-07-19; canonical_mass.py now exports proton_qed_self_energy_borromean_mev, np_qed_splitting_borromean_conn_mev, neutron_mass_two_term_mev, gpmt_dmod_*"
+        },
+        {
+          "section": "appendices",
+          "file": "folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md",
+          "lines": "80-4782",
+          "hardcoded_claim": "4,782-line generated atlas with only 1 Liquid ref (Vol_4_1_str -> stale q-pinning-50-digit) and hardcoded CODATA-2018 m_p=938.27208816, m_n=939.56542052 + 1-term QED masses",
+          "live_compute_status": "atlas_render_canonical_table.py must be updated to CODATA-2022 + 2-term QED + GPMT"
+        },
+        {
+          "section": "main_paper",
+          "file": "folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md",
+          "lines": "26-36, 58-60",
+          "hardcoded_claim": "Hardcodes muon-pin q_0=1.109978595642739..., bare 136.823219729, 137.035426320, and tentative alpha/(4*pi) -> +5.7e-8",
+          "live_compute_status": "Targeted by alpha-em-schwinger-ladder.witness.json (proton pin bare 136.823208854, CS 137.035935094, Bring-Schwinger cubic 137.035999127)"
+        },
+        {
+          "section": "main_paper",
+          "file": "folio/quantum-observable-universe/observations/mass-comparison-table.md",
+          "lines": "21, 33-39, 53",
+          "hardcoded_claim": "Uses Liquid q-pinning-50-digit (stale muon q_0!) alongside hardcoded superseded Delta_S Q_beta=0.4491 MeV (-42.59%, m_n-m_p=0.9557 MeV) and '\\text{MeV}$ MeV' typo; all 4 companion *-table*-data.md files have 0 substitutions",
+          "live_compute_status": "Ruled nuc11_interleaved gives 0.6519 MeV (-16.68%); wave-2 2-term QED + mirror-projected alpha_D^proj + GPMT updates nucleon splitting"
+        },
+        {
+          "section": "main_paper",
+          "file": "folio/quantum-observable-universe/mass-theory/neutron-proton-splitting.md",
+          "lines": "13",
+          "hardcoded_claim": "Hybrid CODATA-2022 minus CODATA-2018 subtraction: 939.56542194 - 938.27208816 = 1.29333378 MeV labelled 'CODATA 2022 splitting'",
+          "live_compute_status": "True CODATA-2022 splitting is 939.56542194 - 938.27208943 = 1.29333251 MeV (982 ppb discrepancy in prose target)"
+        },
+        {
+          "section": "main_paper",
+          "file": "folio/quantum-observable-universe/mass-theory/isospin-mass-split-em-localisation.md",
+          "lines": "1-40",
+          "hardcoded_claim": "Retains retired Convention-C narrative alongside outdated EM splitting prose",
+          "live_compute_status": "Superseded by connected Borromean V^3 two-term QED splitting (np_qed_splitting_borromean_conn_mev)"
+        }
+      ]
+    },
+    "witness_staleness_audit": {
+      "corpus_summary": {
+        "total_live_witnesses": 3629,
+        "scriptHash_stale_count": 893,
+        "upstream_sha256_stale_count": 188,
+        "missing_producer_script_count": 483,
+        "muon_anchored_count": 43,
+        "ts_declared_witnesses_total": 363,
+        "ts_declared_scriptHash_stale_count": 66,
+        "ts_declared_upstream_sha256_stale_count": 124
+      },
+      "critical_stale_witness_traces": [
+        {
+          "witness": "computations/ame-2020-binding-energies.witness.json",
+          "producer": "computations/ame_2020_binding_energies.py",
+          "computedAt": "2026-08-29T04:13:17.972845+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": true,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "ValueRegistry(1 keys: B_4He_AME_MeV)"
+          ],
+          "defect_summary": "Producer scriptHash changed without witness regeneration"
+        },
+        {
+          "witness": "computations/atomic-mass-via-rho-k.witness.json",
+          "producer": "computations/atomic_mass_via_rho_k.py",
+          "computedAt": "2026-09-07T10:14:11.674252+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": false,
+          "upstream_sha256_stale": true,
+          "drifted_upstreams": [
+            {
+              "upstream": "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
+              "recorded_sha256_prefix": "c74ec58d263e",
+              "live_sha256_prefix": "cc7d2ad418bd"
+            }
+          ],
+          "downstream_consumers": [],
+          "defect_summary": "Upstream witness sha256 changed without downstream regeneration"
+        },
+        {
+          "witness": "computations/binding-K-direct.witness.json",
+          "producer": "computations/binding_K_direct.py",
+          "computedAt": "2026-09-07T10:17:49.489226+00:00",
+          "q0Anchor": "UNSTAMPED",
+          "scriptHash_stale": false,
+          "upstream_sha256_stale": true,
+          "drifted_upstreams": [
+            {
+              "upstream": "computations/atomic-tr-m-mpfr-50dps-proton.witness.json",
+              "recorded_sha256_prefix": "c74ec58d263e",
+              "live_sha256_prefix": "cc7d2ad418bd"
+            }
+          ],
+          "downstream_consumers": [],
+          "defect_summary": "Upstream witness sha256 changed without downstream regeneration"
+        },
+        {
+          "witness": "computations/cal-3-q-beta.witness.json",
+          "producer": "computations/build_cal_3_q_beta_witness.py",
+          "computedAt": "2026-07-03T01:10:37.092327+00:00",
+          "q0Anchor": "UNSTAMPED",
+          "scriptHash_stale": true,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "computations/per_observable_100x_status.py",
+            "TSManifest(2 block(s))"
+          ],
+          "defect_summary": "Producer scriptHash changed without witness regeneration"
+        },
+        {
+          "witness": "computations/canonical-isotope-witness-Z00.witness.json",
+          "producer": "computations/canonical_isotope_witness.py",
+          "computedAt": "2026-08-24T14:40:35.223144+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": false,
+          "upstream_sha256_stale": true,
+          "drifted_upstreams": [
+            {
+              "upstream": "computations/canonical-mass-table-extended.witness.json",
+              "recorded_sha256_prefix": "184d7e1287bd",
+              "live_sha256_prefix": "8737b926c0d1"
+            },
+            {
+              "upstream": "alpha-cluster-recursion.witness.json",
+              "recorded_sha256_prefix": "f33ab6d3406d",
+              "live_sha256_prefix": "MISSING"
+            },
+            {
+              "upstream": "low-isotope-binding-sweep.witness.json",
+              "recorded_sha256_prefix": "7917dee28946",
+              "live_sha256_prefix": "MISSING"
+            },
+            {
+              "upstream": "computations/m-p-borromean-verification-50dps.witness.json",
+              "recorded_sha256_prefix": "a2c4fba672ed",
+              "live_sha256_prefix": "0b89a5f78fa8"
+            },
+            {
+              "upstream": "ame2020.json",
+              "recorded_sha256_prefix": "a74f4204c189",
+              "live_sha256_prefix": "MISSING"
+            }
+          ],
+          "downstream_consumers": [
+            "TSManifest(1 block(s))"
+          ],
+          "defect_summary": "Upstream witness sha256 changed without downstream regeneration"
+        },
+        {
+          "witness": "computations/canonical-isotope-witness-Z01.witness.json",
+          "producer": "computations/canonical_isotope_witness.py",
+          "computedAt": "2026-08-24T14:40:35.538516+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": false,
+          "upstream_sha256_stale": true,
+          "drifted_upstreams": [
+            {
+              "upstream": "computations/canonical-mass-table-extended.witness.json",
+              "recorded_sha256_prefix": "184d7e1287bd",
+              "live_sha256_prefix": "8737b926c0d1"
+            },
+            {
+              "upstream": "alpha-cluster-recursion.witness.json",
+              "recorded_sha256_prefix": "f33ab6d3406d",
+              "live_sha256_prefix": "MISSING"
+            },
+            {
+              "upstream": "low-isotope-binding-sweep.witness.json",
+              "recorded_sha256_prefix": "7917dee28946",
+              "live_sha256_prefix": "MISSING"
+            },
+            {
+              "upstream": "computations/m-p-borromean-verification-50dps.witness.json",
+              "recorded_sha256_prefix": "a2c4fba672ed",
+              "live_sha256_prefix": "0b89a5f78fa8"
+            },
+            {
+              "upstream": "ame2020.json",
+              "recorded_sha256_prefix": "a74f4204c189",
+              "live_sha256_prefix": "MISSING"
+            }
+          ],
+          "downstream_consumers": [
+            "TSManifest(1 block(s))"
+          ],
+          "defect_summary": "Upstream witness sha256 changed without downstream regeneration"
+        },
+        {
+          "witness": "computations/canonical-isotope-witness-Z02.witness.json",
+          "producer": "computations/canonical_isotope_witness.py",
+          "computedAt": "2026-08-24T14:40:35.814827+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": false,
+          "upstream_sha256_stale": true,
+          "drifted_upstreams": [
+            {
+              "upstream": "computations/canonical-mass-table-extended.witness.json",
+              "recorded_sha256_prefix": "184d7e1287bd",
+              "live_sha256_prefix": "8737b926c0d1"
+            },
+            {
+              "upstream": "alpha-cluster-recursion.witness.json",
+              "recorded_sha256_prefix": "f33ab6d3406d",
+              "live_sha256_prefix": "MISSING"
+            },
+            {
+              "upstream": "low-isotope-binding-sweep.witness.json",
+              "recorded_sha256_prefix": "7917dee28946",
+              "live_sha256_prefix": "MISSING"
+            },
+            {
+              "upstream": "computations/m-p-borromean-verification-50dps.witness.json",
+              "recorded_sha256_prefix": "a2c4fba672ed",
+              "live_sha256_prefix": "0b89a5f78fa8"
+            },
+            {
+              "upstream": "ame2020.json",
+              "recorded_sha256_prefix": "a74f4204c189",
+              "live_sha256_prefix": "MISSING"
+            }
+          ],
+          "downstream_consumers": [
+            "TSManifest(1 block(s))"
+          ],
+          "defect_summary": "Upstream witness sha256 changed without downstream regeneration"
+        },
+        {
+          "witness": "computations/codata-reconciliation.witness.json",
+          "producer": "computations/codata_reconciliation.py",
+          "computedAt": "2026-07-07T13:43:48.124536+00:00",
+          "q0Anchor": "UNSTAMPED",
+          "scriptHash_stale": true,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "computations/onepb_status_dashboard.py (UNTRACKED in add_upstream!)"
+          ],
+          "defect_summary": "Producer scriptHash changed without witness regeneration"
+        },
+        {
+          "witness": "computations/demazure-markov-trace.witness.json",
+          "producer": "computations/demazure_markov_trace.py",
+          "computedAt": "2026-07-05T11:22:10.811856+00:00",
+          "q0Anchor": "UNSTAMPED",
+          "scriptHash_stale": true,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "computations/onepb_status_dashboard.py (UNTRACKED in add_upstream!)",
+            "TSManifest(1 block(s))"
+          ],
+          "defect_summary": "Producer scriptHash changed without witness regeneration"
+        },
+        {
+          "witness": "computations/m-p-borromean-verification-50dps.witness.json",
+          "producer": "computations/m_p_borromean_verification_50dps.py",
+          "computedAt": "2026-08-29T09:30:54.473879+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": true,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "computations/per_observable_100x_status.py",
+            "TSManifest(1 block(s))"
+          ],
+          "defect_summary": "Producer scriptHash changed without witness regeneration"
+        },
+        {
+          "witness": "computations/molecular-frobenius-lp.witness.json",
+          "producer": "computations/molecular-frobenius-lp.py",
+          "computedAt": "2026-08-30T13:02:17.456650+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": true,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "ValueRegistry(1 keys: E_mol_eV)",
+            "TSManifest(1 block(s))"
+          ],
+          "defect_summary": "Producer scriptHash changed without witness regeneration"
+        },
+        {
+          "witness": "computations/onepb-status-dashboard.witness.json",
+          "producer": "computations/onepb_status_dashboard.py",
+          "computedAt": "2026-09-08T07:43:39.837018+00:00",
+          "q0Anchor": "muon",
+          "scriptHash_stale": false,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "docs/audits/onepb-status-dashboard.md"
+          ],
+          "defect_summary": "Silently stale (2026-09-08, q0Anchor=muon): onepb_status_dashboard.py omits add_upstream(), hiding newer regenerations of cross-check-trM-1ppb (2026-10-13) and confinement-operator-selection (2026-11-15) plus 3 scriptHash-stale upstreams."
+        },
+        {
+          "witness": "computations/per-observable-100x-status.witness.json",
+          "producer": "computations/per_observable_100x_status.py",
+          "computedAt": "2026-11-18T23:35:19.603854+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": false,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "TSManifest(4 block(s))"
+          ],
+          "defect_summary": "Omits 4 read witnesses from add_upstream() (alpha-em-schwinger-ladder, 3 qbeta witnesses), omits electroweak v/G_F row, uses finite-diff q_2t with inverted derivative sign note, and mixes Form-B cubic alpha_EM with CS alpha_EM."
+        },
+        {
+          "witness": "computations/proton-mass-codata-50dps.witness.json",
+          "producer": "computations/build_proton_mass_50dps_chain.py",
+          "computedAt": "2026-09-13T12:47:23.149773+00:00",
+          "q0Anchor": "proton",
+          "scriptHash_stale": false,
+          "upstream_sha256_stale": true,
+          "drifted_upstreams": [
+            {
+              "upstream": "computations/m-p-substrate-identity-50dps.witness.json",
+              "recorded_sha256_prefix": "7d21ea048a3b",
+              "live_sha256_prefix": "b1ca46c2f55f"
+            }
+          ],
+          "downstream_consumers": [
+            "TSManifest(2 block(s))"
+          ],
+          "defect_summary": "Upstream witness sha256 changed without downstream regeneration"
+        },
+        {
+          "witness": "computations/q-pinning-50-digit.witness.json",
+          "producer": "computations/q_pinning_50_digit.py",
+          "computedAt": "2026-08-28T20:47:21.480123+00:00",
+          "q0Anchor": "muon",
+          "scriptHash_stale": true,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "ValueRegistry(19 keys: q_0, q_inv, H_A, hbar_q)",
+            "Liquid(13 .md files)",
+            "TSManifest(24 block(s))"
+          ],
+          "defect_summary": "Frozen pre-CODATA-2022 muon pin (1.10997859555733..., -0.077 ppb off live muon, +11.11 ppb off proton); read by derived_masses._q_0() causing silent proton/muon pin straddle inside m_p_substrate_identity_50dps.py, and substituted into 13 .md files!"
+        },
+        {
+          "witness": "computations/rho-f-volume-binding-gap.witness.json",
+          "producer": "computations/rho_f_volume_binding_gap.py",
+          "computedAt": "2026-08-30T07:42:55.359139+00:00",
+          "q0Anchor": "UNSTAMPED",
+          "scriptHash_stale": true,
+          "upstream_sha256_stale": false,
+          "drifted_upstreams": [],
+          "downstream_consumers": [
+            "computations/onepb_status_dashboard.py (UNTRACKED in add_upstream!)"
+          ],
+          "defect_summary": "Producer scriptHash changed without witness regeneration"
+        }
+      ],
+      "ts_declared_scriptHash_stale_witnesses": [
+        "computations/atom-level-wedderburn-tower.witness.json",
+        "computations/b-over-a.witness.json",
+        "computations/binding-block-multiplicative.witness.json",
+        "computations/borromean-axial-coupling.witness.json",
+        "computations/bring-chiral-fibre-figure.witness.json",
+        "computations/cal-3-q-beta.witness.json",
+        "computations/catalan-binding.witness.json",
+        "computations/chirality-avg-content.witness.json",
+        "computations/close-321-weinberg-gap.witness.json",
+        "computations/crystal-pole-order.witness.json",
+        "computations/d-density-derivation.witness.json",
+        "computations/delta-lambda-fr-identity-phase5c.witness.json",
+        "computations/demazure-markov-trace.witness.json",
+        "computations/deuteron-from-scratch-ledger.witness.json",
+        "computations/gb-filtration-jet-order-reader.witness.json",
+        "computations/gram-h3-symbolic-regression.witness.json",
+        "computations/h2o-angle-q2-symmetric-block.witness.json",
+        "computations/h2s-chirality-residue-s3-holonomy.witness.json",
+        "computations/hadron-knot-table.witness.json",
+        "computations/he4-sdp-compositional-probe.witness.json",
+        "computations/hybridization-sp-gap-braid.witness.json",
+        "computations/lambda-scale-rd-h4-half-symmetric.witness.json",
+        "computations/lr-fusion-self-conj-test.witness.json",
+        "computations/m-baryon-volume-form.witness.json",
+        "computations/m-p-borromean-verification-50dps.witness.json",
+        "computations/markov/markov-trace-atomic-proton-full.witness.json",
+        "computations/mass-formula-6term-mpfr-50dps.witness.json",
+        "computations/mass-from-q-symbolic.witness.json",
+        "computations/mn-flavor-split-h4-plancherel.witness.json",
+        "computations/molecular-frobenius-lp.witness.json",
+        "computations/operator-selection-lp-symbolic-qq.witness.json",
+        "computations/probes/casimir-epsilon-vacuum-probe.witness.json",
+        "computations/probes/em-coupling-projection-probe.witness.json",
+        "computations/probes/flavor-split-substrate-probe.witness.json",
+        "computations/probes/full-twist-root-of-unity-probe.witness.json",
+        "computations/probes/gram-h3-convention-frame-probe.witness.json",
+        "computations/probes/h2_gg_electron/h2-gg-electron.witness.json",
+        "computations/probes/plancherel-weight-boundedness-probe.witness.json",
+        "computations/probes/r2core-schwinger-measure-explore.witness.json",
+        "computations/probes/spectrahedral-phase-collapse-frame-probe.witness.json",
+        "computations/probes/y-lambda-cyclotomic-factorization-probe.witness.json",
+        "computations/proton-residual-rootcause.witness.json",
+        "computations/q-pinning-50-digit.witness.json",
+        "computations/q-pochhammer-seed.witness.json",
+        "computations/q-spectral-truncation-tower.witness.json",
+        "computations/qbeta/kashaev-remainder-omega-grade.witness.json",
+        "computations/qbeta/qbeta-c3-ladder-trace-convention-sensitivity.witness.json",
+        "computations/qbeta/qbeta-c3-muon-anchor-codata-edition-attribution.witness.json",
+        "computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json",
+        "computations/qbeta/qbeta-decay-sdp-full-ck-derivation.witness.json",
+        "computations/qbeta/qbeta-direction-sanity-gate-probe.witness.json",
+        "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json",
+        "computations/qbeta/qbeta-precision-ladder-n5.witness.json",
+        "computations/qbeta/qbeta-silver-ratio-pell-lucas-ck.witness.json",
+        "computations/sdp-gamma-gamma-to-qqbar.witness.json",
+        "computations/shift-from-nf-basis.witness.json",
+        "computations/snappy-cusp-seeding.witness.json",
+        "computations/spectral-decomposition-qvalue-d.witness.json",
+        "computations/substrate/knot-volumes.witness.json",
+        "computations/substrate/toroidal-level-selection-three-strand-probe.witness.json",
+        "computations/substrate/whipple-rotation-involution-probe.witness.json",
+        "computations/sweeps/paper-six-term-isotope-sweep.witness.json",
+        "computations/unified-low-isotope-predictor.witness.json",
+        "computations/universal-ilp.witness.json",
+        "computations/wedderburn-mass-table-convention-d.witness.json",
+        "computations/wedderburn-pair-volumes.witness.json"
+      ],
+      "ts_declared_upstream_sha256_stale_witnesses": [
+        "computations/canonical-isotope-witness-Z00.witness.json",
+        "computations/canonical-isotope-witness-Z01.witness.json",
+        "computations/canonical-isotope-witness-Z02.witness.json",
+        "computations/canonical-isotope-witness-Z03.witness.json",
+        "computations/canonical-isotope-witness-Z04.witness.json",
+        "computations/canonical-isotope-witness-Z05.witness.json",
+        "computations/canonical-isotope-witness-Z06.witness.json",
+        "computations/canonical-isotope-witness-Z07.witness.json",
+        "computations/canonical-isotope-witness-Z08.witness.json",
+        "computations/canonical-isotope-witness-Z09.witness.json",
+        "computations/canonical-isotope-witness-Z10.witness.json",
+        "computations/canonical-isotope-witness-Z100.witness.json",
+        "computations/canonical-isotope-witness-Z101.witness.json",
+        "computations/canonical-isotope-witness-Z102.witness.json",
+        "computations/canonical-isotope-witness-Z103.witness.json",
+        "computations/canonical-isotope-witness-Z104.witness.json",
+        "computations/canonical-isotope-witness-Z105.witness.json",
+        "computations/canonical-isotope-witness-Z106.witness.json",
+        "computations/canonical-isotope-witness-Z107.witness.json",
+        "computations/canonical-isotope-witness-Z108.witness.json",
+        "computations/canonical-isotope-witness-Z109.witness.json",
+        "computations/canonical-isotope-witness-Z11.witness.json",
+        "computations/canonical-isotope-witness-Z110.witness.json",
+        "computations/canonical-isotope-witness-Z111.witness.json",
+        "computations/canonical-isotope-witness-Z112.witness.json",
+        "computations/canonical-isotope-witness-Z113.witness.json",
+        "computations/canonical-isotope-witness-Z114.witness.json",
+        "computations/canonical-isotope-witness-Z115.witness.json",
+        "computations/canonical-isotope-witness-Z116.witness.json",
+        "computations/canonical-isotope-witness-Z117.witness.json",
+        "computations/canonical-isotope-witness-Z118.witness.json",
+        "computations/canonical-isotope-witness-Z12.witness.json",
+        "computations/canonical-isotope-witness-Z13.witness.json",
+        "computations/canonical-isotope-witness-Z14.witness.json",
+        "computations/canonical-isotope-witness-Z15.witness.json",
+        "computations/canonical-isotope-witness-Z16.witness.json",
+        "computations/canonical-isotope-witness-Z17.witness.json",
+        "computations/canonical-isotope-witness-Z18.witness.json",
+        "computations/canonical-isotope-witness-Z19.witness.json",
+        "computations/canonical-isotope-witness-Z20.witness.json",
+        "computations/canonical-isotope-witness-Z21.witness.json",
+        "computations/canonical-isotope-witness-Z22.witness.json",
+        "computations/canonical-isotope-witness-Z23.witness.json",
+        "computations/canonical-isotope-witness-Z24.witness.json",
+        "computations/canonical-isotope-witness-Z25.witness.json",
+        "computations/canonical-isotope-witness-Z26.witness.json",
+        "computations/canonical-isotope-witness-Z27.witness.json",
+        "computations/canonical-isotope-witness-Z28.witness.json",
+        "computations/canonical-isotope-witness-Z29.witness.json",
+        "computations/canonical-isotope-witness-Z30.witness.json",
+        "computations/canonical-isotope-witness-Z31.witness.json",
+        "computations/canonical-isotope-witness-Z32.witness.json",
+        "computations/canonical-isotope-witness-Z33.witness.json",
+        "computations/canonical-isotope-witness-Z34.witness.json",
+        "computations/canonical-isotope-witness-Z35.witness.json",
+        "computations/canonical-isotope-witness-Z36.witness.json",
+        "computations/canonical-isotope-witness-Z37.witness.json",
+        "computations/canonical-isotope-witness-Z38.witness.json",
+        "computations/canonical-isotope-witness-Z39.witness.json",
+        "computations/canonical-isotope-witness-Z40.witness.json",
+        "computations/canonical-isotope-witness-Z41.witness.json",
+        "computations/canonical-isotope-witness-Z42.witness.json",
+        "computations/canonical-isotope-witness-Z43.witness.json",
+        "computations/canonical-isotope-witness-Z44.witness.json",
+        "computations/canonical-isotope-witness-Z45.witness.json",
+        "computations/canonical-isotope-witness-Z46.witness.json",
+        "computations/canonical-isotope-witness-Z47.witness.json",
+        "computations/canonical-isotope-witness-Z48.witness.json",
+        "computations/canonical-isotope-witness-Z49.witness.json",
+        "computations/canonical-isotope-witness-Z50.witness.json",
+        "computations/canonical-isotope-witness-Z51.witness.json",
+        "computations/canonical-isotope-witness-Z52.witness.json",
+        "computations/canonical-isotope-witness-Z53.witness.json",
+        "computations/canonical-isotope-witness-Z54.witness.json",
+        "computations/canonical-isotope-witness-Z55.witness.json",
+        "computations/canonical-isotope-witness-Z56.witness.json",
+        "computations/canonical-isotope-witness-Z57.witness.json",
+        "computations/canonical-isotope-witness-Z58.witness.json",
+        "computations/canonical-isotope-witness-Z59.witness.json",
+        "computations/canonical-isotope-witness-Z60.witness.json",
+        "computations/canonical-isotope-witness-Z61.witness.json",
+        "computations/canonical-isotope-witness-Z62.witness.json",
+        "computations/canonical-isotope-witness-Z63.witness.json",
+        "computations/canonical-isotope-witness-Z64.witness.json",
+        "computations/canonical-isotope-witness-Z65.witness.json",
+        "computations/canonical-isotope-witness-Z66.witness.json",
+        "computations/canonical-isotope-witness-Z67.witness.json",
+        "computations/canonical-isotope-witness-Z68.witness.json",
+        "computations/canonical-isotope-witness-Z69.witness.json",
+        "computations/canonical-isotope-witness-Z70.witness.json",
+        "computations/canonical-isotope-witness-Z71.witness.json",
+        "computations/canonical-isotope-witness-Z72.witness.json",
+        "computations/canonical-isotope-witness-Z73.witness.json",
+        "computations/canonical-isotope-witness-Z74.witness.json",
+        "computations/canonical-isotope-witness-Z75.witness.json",
+        "computations/canonical-isotope-witness-Z76.witness.json",
+        "computations/canonical-isotope-witness-Z77.witness.json",
+        "computations/canonical-isotope-witness-Z78.witness.json",
+        "computations/canonical-isotope-witness-Z79.witness.json",
+        "computations/canonical-isotope-witness-Z80.witness.json",
+        "computations/canonical-isotope-witness-Z81.witness.json",
+        "computations/canonical-isotope-witness-Z82.witness.json",
+        "computations/canonical-isotope-witness-Z83.witness.json",
+        "computations/canonical-isotope-witness-Z84.witness.json",
+        "computations/canonical-isotope-witness-Z85.witness.json",
+        "computations/canonical-isotope-witness-Z86.witness.json",
+        "computations/canonical-isotope-witness-Z87.witness.json",
+        "computations/canonical-isotope-witness-Z88.witness.json",
+        "computations/canonical-isotope-witness-Z89.witness.json",
+        "computations/canonical-isotope-witness-Z90.witness.json",
+        "computations/canonical-isotope-witness-Z91.witness.json",
+        "computations/canonical-isotope-witness-Z92.witness.json",
+        "computations/canonical-isotope-witness-Z93.witness.json",
+        "computations/canonical-isotope-witness-Z94.witness.json",
+        "computations/canonical-isotope-witness-Z95.witness.json",
+        "computations/canonical-isotope-witness-Z96.witness.json",
+        "computations/canonical-isotope-witness-Z97.witness.json",
+        "computations/canonical-isotope-witness-Z98.witness.json",
+        "computations/canonical-isotope-witness-Z99.witness.json",
+        "computations/embeddable-knot-operator.witness.json",
+        "computations/he4-sdp-compositional-probe.witness.json",
+        "computations/operator-valued-ansatze-from-mass-endo.witness.json",
+        "computations/pentagon-reduction-li2q.witness.json",
+        "computations/proton-mass-codata-50dps.witness.json"
+      ]
+    },
+    "script_upgrade_matrix": {
+      "corpus_pattern_counts": {
+        "live_python_scripts_scanned": 4713,
+        "pillar1_muon_137_035944_scripts_count": 4,
+        "pillar1_codata2018_137_035999084_scripts_count": 61,
+        "pillar1_pyhecke_hecke_core_f64_alpha_scripts_count": 14,
+        "pillar1_bare_q9q10_without_derived_helper_count": 63,
+        "pillar3_truncated_M0_E0_scripts_count": 128,
+        "pillar3_untruncated_tower_E0_scripts_count": 26,
+        "pillar3_unnormalized_plancherel_scripts_count": 362,
+        "pillar3_normalized_4row_plancherel_scripts_count": 1,
+        "pillar3_unprojected_alpha_D_scripts_count": 24,
+        "pillar3_mirror_projected_alpha_D_scripts_count": 1
+      },
+      "flagged_script_lists": {
+        "pillar1_muon_137_035944_scripts": [
+          "computations/audits/mk_mpi_alpha_em_weight_family_reach_probe.py",
+          "computations/meson_em_residual_alpha_em.py",
+          "computations/meson_em_sinh_closed_form.py",
+          "computations/per_observable_100x_status.py"
+        ],
+        "pillar1_codata2018_137_035999084_scripts": [
+          "computations/alpha/alpha_em_4pi_bring_cm_modular_pslq.py",
+          "computations/alpha/alpha_em_4pi_q_hyperbolic_b3_pslq.py",
+          "computations/alpha/alpha_em_categorical_reidentification.py",
+          "computations/alpha/alpha_em_form_comparison_probe.py",
+          "computations/alpha/alpha_em_habiro_taylor_investigation.py",
+          "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
+          "computations/alpha/alpha_em_q_difference_fourier.py",
+          "computations/alpha/alpha_em_shift_chain.py",
+          "computations/alpha/alpha_em_yekutieli_h2_extraction.py",
+          "computations/alpha/bring_schwinger_normalization_derivation_probe.py",
+          "computations/alpha_em_4pi_fixed_point_solve.py",
+          "computations/alpha_em_anchor_preference_probe.py",
+          "computations/alpha_em_b2_tau_w_freedom_probe.py",
+          "computations/alpha_em_channel_split_loop_measure_probe.py",
+          "computations/alpha_em_form_ladder_probe.py",
+          "computations/alpha_em_loop_measure_consistency_probe.py",
+          "computations/alpha_em_perloop_integer_forcedness_probe.py",
+          "computations/alpha_em_rt_phase3_schwinger_derivation.py",
+          "computations/alpha_em_rt_shadow_world_symbolic_phase1.py",
+          "computations/alpha_em_schwinger_ladder_probe.py",
+          "computations/alpha_em_theta_graph_two_loop_probe.py",
+          "computations/alpha_em_two_loop_structure_probe.py",
+          "computations/audits/derived_alpha_em_usage_audit.py",
+          "computations/audits/m_k_m_pi_closure_pattern_audit.py",
+          "computations/audits/witness_value_copy_audit.py",
+          "computations/b_over_a_evaluator.py",
+          "computations/binding_color_vs_charge_tn3he.py",
+          "computations/bring_2loop_weight3_coefficient_probe.py",
+          "computations/bring_b3_closed_form_attempt.py",
+          "computations/bring_mapping_torus_residue_weight_probe.py",
+          "computations/bring_perturbative_cs_2loop_probe.py",
+          "computations/codata_truncation_audit.py",
+          "computations/compound_shift_nf.py",
+          "computations/crystal_alpha_shift_pole_orders.py",
+          "computations/flavor_split_xq_refinement.py",
+          "computations/h4_residual_vs_fine_structure_50dps.py",
+          "computations/mn_dpn_xq_habiro_element_probe.py",
+          "computations/mn_flavor_split_h4_plancherel.py",
+          "computations/ocneanu_12_alt_knot_geometries.py",
+          "computations/ocneanu_12_bring_zero_mode_variants.py",
+          "computations/ocneanu_12_em_correction_candidate.py",
+          "computations/ocneanu_54ppb_residual_exploration.py",
+          "computations/probe_m_mu_correction.py",
+          "computations/probes/alpha_em_4pi_derived_form_probe.py",
+          "computations/probes/alpha_em_coulomb_channel_probe.py",
+          "computations/probes/alpha_em_multicell_yekutieli_probe.py",
+          "computations/probes/em_coupling_projection_probe.py",
+          "computations/probes/em_selfenergy_coupling_target_probe.py",
+          "computations/probes/he4_9_3_trace_dominant_correction_probe.py",
+          "computations/probes/mn_dpn_xq_cross_anchor_probe.py",
+          "computations/probes/mn_dpn_xq_habiro_element_probe.py",
+          "computations/probes/substrate_consistency_window_q_from_alpha_em_probe.py",
+          "computations/probes/the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py",
+          "computations/probes/xq_habiro_2param_probe.py",
+          "computations/probes/xq_habiro_derivative_probe2.py",
+          "computations/probes/xq_habiro_multiblock_probe.py",
+          "computations/probes/xq_ratio_function_probe.py",
+          "computations/probes/yekutieli_a2_em_gauge_coupling_h2_probe.py",
+          "computations/probes/yekutieli_per_cell_qlambert_decomposition_probe.py",
+          "computations/qbeta/qbeta_h4_em_normalization_probe.py",
+          "computations/substrate/experimental_constants.py"
+        ],
+        "pillar1_pyhecke_hecke_core_f64_alpha_scripts": [
+          "computations/atom_electron_mass.py",
+          "computations/audits/derived_alpha_em_usage_audit.py",
+          "computations/co_bond_order_active_set.py",
+          "computations/compound_shift_nf.py",
+          "computations/hecke_core_legacy.py",
+          "computations/mass_binding_dashboard.py",
+          "computations/meson_em_sinh_closed_form.py",
+          "computations/molecular-frobenius-lp.py",
+          "computations/per_observable_100x_status.py",
+          "computations/probes/confinement_lp_sdp_twoterm_photon_gpmt_probe.py",
+          "computations/substrate/hecke_core.py",
+          "computations/substrate/hecke_core_symbolic.py",
+          "computations/substrate/hecke_core_symbolic_migration.py",
+          "computations/unified-mass-molecular.py"
+        ],
+        "pillar1_bare_q9q10_without_derived_helper": [
+          "computations/alpha/alpha_em_categorical_reidentification.py",
+          "computations/alpha/alpha_em_habiro_torus_knot_jones.py",
+          "computations/alpha/alpha_em_shift_chain.py",
+          "computations/alpha/alpha_em_yekutieli_h2_extraction.py",
+          "computations/alpha/alpha_shift_torus.py",
+          "computations/alpha_basis_knot_couplings.py",
+          "computations/alpha_em/alpha_em_perloop_conjecture_statement_probe.py",
+          "computations/alpha_em_4pi_fixed_point_solve.py",
+          "computations/alpha_em_anchor_preference_probe.py",
+          "computations/alpha_em_form_ladder_probe.py",
+          "computations/alpha_em_no_pi_correction_probe.py",
+          "computations/alpha_em_perloop_integer_forcedness_probe.py",
+          "computations/alpha_em_rt_phase4_bring_measure.py",
+          "computations/alpha_k_four_strand_singlet_selection.py",
+          "computations/alpha_k_per_force_assembly.py",
+          "computations/alpha_k_selection_rule_conditional.py",
+          "computations/alpha_k_split_pole_order_audit.py",
+          "computations/atom_electron_mass.py",
+          "computations/bring_2loop_weight3_coefficient_probe.py",
+          "computations/bring_b3_closed_form_attempt.py",
+          "computations/bring_mapping_torus_residue_weight_probe.py",
+          "computations/bring_perturbative_cs_2loop_probe.py",
+          "computations/bring_zero_mode_bloch_hunt.py",
+          "computations/casimir_mode_indexed_derivation.py",
+          "computations/compound_shift_nf.py",
+          "computations/crystal_alpha_shift_pole_orders.py",
+          "computations/crystal_pole_order.py",
+          "computations/deltalambda/deltalambda_coulomb_mirror_split_probe.py",
+          "computations/deltalambda/mirror_split_continuum_em_probe.py",
+          "computations/deltalambda/packing_exponent_combinatorics_probe.py",
+          "computations/e_hartree_round19_dressed_scalar_block.py",
+          "computations/e_hartree_round20_trace_ratio.py",
+          "computations/e_hartree_round23_normalization.py",
+          "computations/e_hartree_round24_molecular_reuse.py",
+          "computations/h2-molecular-binding.py",
+          "computations/h4_gram/hecke_h4_markov_gram_derive.py",
+          "computations/habiro/du_law_reparametrisation_probe.py",
+          "computations/hecke/hecke_wedderburn.py",
+          "computations/lambda_scale_proof_step4_h4_remainder.py",
+          "computations/mirror_isospin_coulomb_split.py",
+          "computations/n_sym_numerical_anchor.py",
+          "computations/photon_ir_zero_mode_bring.py",
+          "computations/probes/alpha_em_4pi_derived_form_probe.py",
+          "computations/probes/alpha_em_bar_parity_probe.py",
+          "computations/probes/alpha_em_coulomb_channel_probe.py",
+          "computations/probes/alpha_em_multicell_yekutieli_probe.py",
+          "computations/probes/casimir_grid_sweep_probe.py",
+          "computations/probes/casimir_q_zeta_probe.py",
+          "computations/probes/confinement_lp_sdp_twoterm_photon_gpmt_probe.py",
+          "computations/probes/convention_d_proton_constituent_closed_form_probe.py",
+          "computations/probes/em_coupling_projection_probe.py",
+          "computations/probes/published_figures_carry_a_retired_q0_probe.py",
+          "computations/probes/qbeta_5two_n6_cable_qstar_probe.py",
+          "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py",
+          "computations/probes/substrate_consistency_window_q_from_alpha_em_probe.py",
+          "computations/probes/the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py",
+          "computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py",
+          "computations/qbeta/qbeta_bond_decay_rates_from_transfer_spectrum_probe.py",
+          "computations/qbeta/qbeta_fsc_g_pattern_comparison.py",
+          "computations/qbeta/qbeta_residue_a_precision_ceiling.py",
+          "computations/qbeta/qbeta_tanh_em_match_is_formal_probe.py",
+          "computations/rt_identity_chain_consolidation.py",
+          "computations/substrate/hecke_core_symbolic.py"
+        ],
+        "pillar3_unnormalized_plancherel_scripts": [
+          "computations/_exact_trace_engine.py",
+          "computations/aK_via_lp_dual_full.py",
+          "computations/alpha/alpha_5_jucys_murphy_central.py",
+          "computations/alpha/alpha_blend_tower.py",
+          "computations/alpha/alpha_k_macdonald_closed_form.py",
+          "computations/alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py",
+          "computations/alpha_em/alpha_em_b4_classical_half_origin_probe.py",
+          "computations/alpha_em/alpha_em_torsion_perloop_probe.py",
+          "computations/alpha_em_b2_scalar_c_probe.py",
+          "computations/alpha_em_b2_tau_w_freedom_probe.py",
+          "computations/atom_level_wedderburn_tower.py",
+          "computations/atom_mass_derived.py",
+          "computations/atom_nf_symbolic_D.py",
+          "computations/atomic_chirality_residue.py",
+          "computations/audits/canonical_script_input_audit.py",
+          "computations/audits/mk_mpi_alpha_em_weight_family_reach_probe.py",
+          "computations/audits/molien_name_gate_missed_triage.py",
+          "computations/audits/q0_muon_population_partition.py",
+          "computations/audits/quoted_figure_provenance_audit.py",
+          "computations/audits/w_lambda_family_consumer_audit.py",
+          "computations/audits/weight_factor_audit.py",
+          "computations/audits/y_lambda_conflation_audit.py",
+          "computations/audits/y_lambda_convention_c_fingerprint_audit.py",
+          "computations/b_over_a_evaluator.py",
+          "computations/b_over_m_order_probe.py",
+          "computations/barparity/crossing_energy_bar_split_probe.py",
+          "computations/beta_ew_delta_I_321_and_wedderburn.py",
+          "computations/binding_canonical.py",
+          "computations/binding_depth_stratified.py",
+          "computations/binding_depth_stratified_knot_weighted.py",
+          "computations/binding_depth_stratified_lr.py",
+          "computations/binding_depth_stratified_rust.py",
+          "computations/binding_depth_stratified_selfconj.py",
+          "computations/binding_per_bond_decomposition.py",
+          "computations/binding_via_interface_knot.py",
+          "computations/borromean_h3_2_1_irrep_derivation.py",
+          "computations/bring_zero_mode_per_block_scaffold.py",
+          "computations/build_markov_trace_assembly_deuteron_chain.py",
+          "computations/build_term7_s_crystal_4he_chain.py",
+          "computations/c_alpha_alpha_categorical_via_jones_markov.py",
+          "computations/canonical_lepton_braid_words.py",
+          "computations/canonical_plus_multibrane.py",
+          "computations/canonical_tower.py",
+          "computations/canonical_tr_m_helium4_stub.py",
+          "computations/canonical_trm_reference.py",
+          "computations/catalan_binding.py",
+          "computations/chi_at_q0_via_hoefsmit_mpfr.py",
+          "computations/chi_convention_audit.py",
+          "computations/chirality_avg_content.py",
+          "computations/chirality_avg_content_chiral.py",
+          "computations/chirality_braid_average.py",
+          "computations/close_321_weinberg_gap.py",
+          "computations/codata_reconciliation.py",
+          "computations/color_tube_qdim_ah_mix.py",
+          "computations/compute_atom_chi_rust.py",
+          "computations/d_density_derivation.py",
+          "computations/d_from_scratch.py",
+          "computations/defect_weighted_zero_point_probe.py",
+          "computations/delta_lambda_2row_stratum_analysis.py",
+          "computations/delta_lambda_empirical_tabulation.py",
+          "computations/delta_lambda_full_variance_phase5e_1.py",
+          "computations/delta_lambda_k_star_variance_phase5d_5b.py",
+          "computations/delta_lambda_v_hat_z_transfer_phase5d_4.py",
+          "computations/delta_q_decoration.py",
+          "computations/deltalambda/_m1_io_constants.py",
+          "computations/deltalambda/binding_weight_markov_pinning_probe.py",
+          "computations/deltalambda/covariance_growth_exponents.py",
+          "computations/deltalambda/covariance_omega3_regression.py",
+          "computations/deltalambda/delta_lambda_covariance_and_reordered_c2_probe.py",
+          "computations/deltalambda/deltalambda_conjugation_symmetric_excluded_probe.py",
+          "computations/deltalambda/deuteron_conjugation_parity_categorical_probe.py",
+          "computations/deltalambda/deuteron_coupling_s00_probe.py",
+          "computations/deltalambda/deuteron_interface_handle_curvature_probe.py",
+          "computations/deltalambda/deuteron_magnus_omega2_sign_probe.py",
+          "computations/deltalambda/fl_sniady_genus_biased_measure.py",
+          "computations/deltalambda/he4_magnus_omega2_sign_sparse_probe.py",
+          "computations/deltalambda/m1_kappa_correction_exponent_probe.py",
+          "computations/deltalambda/magnus_omega2_markov_stabilisation_probe.py",
+          "computations/deltalambda/magnus_omega2_markov_window_scan_probe.py",
+          "computations/deltalambda/magnus_omega2_weight_family_robustness_probe.py",
+          "computations/deltalambda/magnus_weight_family_note.py",
+          "computations/deltalambda/perknot_pn_bond_mayer_grounding_probe.py",
+          "computations/deltalambda/plancherel_density_u_probe.py",
+          "computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py",
+          "computations/deltalambda/s5so3_geometric_wlambda_borromean_lift_probe.py",
+          "computations/deltalambda/s5so3_wlambda_borromean_lift_probe.py",
+          "computations/deltalambda/triton_magnus_omega2_sign_probe.py",
+          "computations/deltalambda/vassiliev_magnitude_a3_probe.py",
+          "computations/deltalambda/wlambda_D_reduction_content_covariance.py",
+          "computations/deltalambda/wlambda_covariance_epic_A1_sigmah_not_polynomial.py",
+          "computations/deltalambda/wlambda_covariance_epic_A1b_dpp_maya_representation.py",
+          "computations/deltalambda/wlambda_covariance_epic_A2_fractional_moment_family_probe.py",
+          "computations/deltalambda/wlambda_covariance_epic_A2_odd_moment_structure.py",
+          "computations/deltalambda/wlambda_covariance_epic_A3_transfer_bound_extension.py",
+          "computations/deltalambda/wlambda_covariance_epic_B1_kappa_window_extension.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_IO_mode_decomposition.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_antidiagonal_reformulation.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_area_fluctuation_scale.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_area_symmetry.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_deficit_rates.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_descent_dpp_variance_rate.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_edge_bulk_decomposition_probe.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_edge_cauchy_schwarz.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_edge_ratio_decomposition.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_eigenfunction_reach.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_free_cumulant_reframing.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_fulman_exchangeable_pair.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_jensen_route.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_kappa_cancellation.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_kappa_derivation.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_kappa_large_n_sampler.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_kendall_route.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_kerov_clt_leading_kappa.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_limit_closed_form.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_monovary_route.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_opp_sign_large_n.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_pairwise_route.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_pq_pointwise_census.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_rho_inf_kerov_derivation.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_secondorder_fit.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_sigmaD_leg_rate.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_sigmah_tilt_path.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_support_restricted_cs.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_tail_bulk_split.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_telescoping_route.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_variance_polynomiality.py",
+          "computations/deltalambda/wlambda_covariance_epic_M1_widom_arc_toeplitz_constant_probe.py",
+          "computations/deltalambda/wlambda_covariance_epic_dim_threshold.py",
+          "computations/deltalambda/wlambda_covariance_epic_phase1.py",
+          "computations/deltalambda/wlambda_covariance_epic_phase3.py",
+          "computations/deltalambda/wlambda_covariance_epic_phase5_route1_exchangeable_pair.py",
+          "computations/deltalambda/wlambda_covariance_epic_phase5b_dirichlet_peredge.py",
+          "computations/deltalambda/wlambda_covariance_epic_phase6_marginal_stein.py",
+          "computations/deltalambda/wlambda_covariance_epic_phase7_transfer_bound.py",
+          "computations/deltalambda/wlambda_covariance_epic_phase8_complete_monotonicity.py",
+          "computations/deltalambda/wlambda_covariance_kernel_frontier.py",
+          "computations/deltalambda/wlambda_jet_tower_connected_probe.py",
+          "computations/deltalambda/wlambda_level_selection_kA_probe.py",
+          "computations/deltalambda/wlambda_nuclear_braid_connected_probe.py",
+          "computations/deltalambda/wlambda_transfer_matrix_connected_probe.py",
+          "computations/deltalambda/wlambda_wstd_growth_bound_probe.py",
+          "computations/deltalambda/wlambda_wstd_superexp_lower_bound.py",
+          "computations/demazure_markov_trace.py",
+          "computations/deuteron_binding_plancherel_channel.py",
+          "computations/deuteron_tr_M_symbolic.py",
+          "computations/e0_lambda_tryall.py",
+          "computations/e_hartree_round19_dressed_scalar_block.py",
+          "computations/e_hartree_round22_arch_bridge.py",
+          "computations/flavor_split_xq_refinement.py",
+          "computations/fr_pullback_borromean_h3a_test.py",
+          "computations/fr_pullback_k1_k2_test.py",
+          "computations/fr_pullback_k3_test.py",
+          "computations/from_scratch/derive_he3.py",
+          "computations/from_scratch/derive_t_h5.py",
+          "computations/from_scratch/wedderburn_markov.py",
+          "computations/fusion_process_joint_h15_lp.py",
+          "computations/h4_markov_weights_closed_form.py",
+          "computations/h_3a_vs_h_3_divergence.py",
+          "computations/habiro/habiro_coefficients_atomic.py",
+          "computations/habiro/habiro_correction_product_verify.py",
+          "computations/habiro/habiro_correction_shadow_price_test.py",
+          "computations/habiro/habiro_derivation_vs_fit.py",
+          "computations/habiro/habiro_exact_taylor_extraction.py",
+          "computations/habiro/habiro_h9_correction_series.py",
+          "computations/habiro/habiro_h9_spectral_decomposition.py",
+          "computations/habiro/habiro_neutron_cross_check.py",
+          "computations/habiro/habiro_pochhammer_bridge.py",
+          "computations/habiro/habiro_product_taylor_algebraic.py",
+          "computations/habiro/habiro_sub_ppm_third_factor.py",
+          "computations/habiro_interpolation_wlambda.py",
+          "computations/hecke/hecke_3a_weights.py",
+          "computations/hecke/hecke_wedderburn.py",
+          "computations/hecke/murphy_lead_injectivity_probe.py",
+          "computations/hecke_core_legacy.py",
+          "computations/hoefsmit_symbolic.py",
+          "computations/items_1_2_3_mw_strongforce_anchor_asymmetry.py",
+          "computations/keystone_c8_superexp_proof.py",
+          "computations/keystone_index_necessary_conditions.py",
+          "computations/keystone_wlambda_defect_coeff_ladder.py",
+          "computations/keystone_wlambda_ladder_higher_rungs.py",
+          "computations/lambda_scale_rd_hoefsmit_symbolic.py",
+          "computations/lever1_content_rigidity_second_moment.py",
+          "computations/lever1_plancherel_content_separation.py",
+          "computations/log_delta_categorical_derivation.py",
+          "computations/log_delta_full_mass_subtract.py",
+          "computations/log_delta_per_depth_binding.py",
+          "computations/lr_modulus_identification_sigma235.py",
+          "computations/lw2_c2_independent_hopf_test_attempt.py",
+          "computations/m_p_linking_weight_operator_valued_probe.py",
+          "computations/markov/markov_substrate_realizer.py",
+          "computations/markov/markov_trace_atomic_proton_full.py",
+          "computations/markov/markov_trace_canonical.py",
+          "computations/markov/markov_trace_for_knot.py",
+          "computations/markov/markov_weights_symbolic.py",
+          "computations/markov_trace_weights_wenzl.py",
+          "computations/mass_at_3A_proper.py",
+          "computations/mass_binding_dashboard.py",
+          "computations/meson/binding_cut_entropy_derived_weightings_probe.py",
+          "computations/meson/binding_cut_entropy_sign_is_forced_probe.py",
+          "computations/meson/cut_entropy_is_A_independent_probe.py",
+          "computations/meson/determinacy_filter_calibration_probe.py",
+          "computations/meson/zero_weight_sector_is_temperley_lieb_probe.py",
+          "computations/mn_flavor_split_h3_plancherel.py",
+          "computations/mn_flavor_split_h4_plancherel.py",
+          "computations/mn_flavor_split_plancherel_channel.py",
+          "computations/mn_standard_channel_correction.py",
+          "computations/mp_yekutieli_plancherel_scaffold.py",
+          "computations/mp_yekutieli_sign_block_discrimination.py",
+          "computations/mu_p_pin_sensitivity_map.py",
+          "computations/murnaghan_nakayama.py",
+          "computations/n_sym_numerical_anchor.py",
+          "computations/nv1_candidate_a_doubleprime.py",
+          "computations/nv_pslq_extended_basis.py",
+          "computations/nv_pslq_tr_pure_basis.py",
+          "computations/ocneanu_12_alt_knot_geometries.py",
+          "computations/ocneanu_12_bring_zero_mode_variants.py",
+          "computations/ocneanu_12_em_correction_candidate.py",
+          "computations/ocneanu_12_qdeformation_discriminator.py",
+          "computations/ocneanu_param_from_fibre_dimension.py",
+          "computations/ocneanu_weights.py",
+          "computations/onepb_status_dashboard.py",
+          "computations/option_e_v7_involution_aware.py",
+          "computations/path4_rho_K_at_h3A.py",
+          "computations/per_generator_V_hat_general.py",
+          "computations/phase5/phase2b_dim_v21_bridge_derivation.py",
+          "computations/phase5/phase2c_derive_correction_tower.py",
+          "computations/phase5/phase3_triton_binding_convention_b.py",
+          "computations/probe_9b_alphak_structure.py",
+          "computations/probe_binding_measure_search.py",
+          "computations/probe_he4_canonical_tr_m_fingerprint.py",
+          "computations/probe_k3_selfnormalized_recheck.py",
+          "computations/probe_pauli_young_delta_lambda_the3_signtest.py",
+          "computations/probe_plancherel_convention_gap.py",
+          "computations/probe_theta_carry_binding.py",
+          "computations/probes/adjacent_vs_full_probe.py",
+          "computations/probes/alpha5_jm_crossatom_budget_probe.py",
+          "computations/probes/alpha_em_b2_weight_family_triage_probe.py",
+          "computations/probes/av_surface_correction_probe.py",
+          "computations/probes/b4_iceil_norm_ceiling_probe.py",
+          "computations/probes/bar_anomaly_of_the_two_amplitudes_probe.py",
+          "computations/probes/beta_ew_weight_is_not_markov_probe.py",
+          "computations/probes/binding_depth_stratified_derived_alpha_probe.py",
+          "computations/probes/binding_von_neumann_entropy_probe.py",
+          "computations/probes/clambda_shape_invariant_probe.py",
+          "computations/probes/collective_term_budget_probe.py",
+          "computations/probes/collective_term_sign_screen_regime_confined_probe.py",
+          "computations/probes/convention_d_proton_constituent_closed_form_probe.py",
+          "computations/probes/crystal_limit_transport_probe.py",
+          "computations/probes/deuteron_fpn_wlambda_wiring.py",
+          "computations/probes/dynamic_pn_occupancy_probe.py",
+          "computations/probes/electroweak_bring_schwinger_bridge_probe.py",
+          "computations/probes/gap_a4_He3_residual_probe.py",
+          "computations/probes/gap_a4_T15_character_polynomial_probe.py",
+          "computations/probes/gap_a4_T4_schur_weyl_icosahedral_probe_perknot_rerun.py",
+          "computations/probes/gap_a4_T5_candidate_functor_probe.py",
+          "computations/probes/gap_a4_T7_bratteli_stabilization_probe.py",
+          "computations/probes/gt_matrix_pslq_probe.py",
+          "computations/probes/h6_wedderburn_block_unbinding_probe.py",
+          "computations/probes/habiro_frobenius_probe.py",
+          "computations/probes/hbar_q_order_of_binding_observables_probe.py",
+          "computations/probes/he4_channel_split_categorical_constraint_probe.py",
+          "computations/probes/he4_gate_vs_magic_a_identity_probe.py",
+          "computations/probes/keystone_colored_sigma235_wrt.py",
+          "computations/probes/keystone_colored_wrt_perblock_vs_dq.py",
+          "computations/probes/keystone_framing_is_phase.py",
+          "computations/probes/keystone_mckay_e8_valuemap.py",
+          "computations/probes/keystone_q0_framing_residual.py",
+          "computations/probes/keystone_qbessel_latticept_search.py",
+          "computations/probes/keystone_qbessel_tricomi_c0q_nodes.py",
+          "computations/probes/keystone_qhankel_eq2_vacuum_row.py",
+          "computations/probes/keystone_valuemap_qbessel_gate_s013.py",
+          "computations/probes/keystone_valuemap_target_is_compact_hecke.py",
+          "computations/probes/keystone_wlambda_vs_ylambda_projected_shift.py",
+          "computations/probes/knot_factor_amphicheiral_probe.py",
+          "computations/probes/label_space_growth_probe.py",
+          "computations/probes/lr_hecke_character_probe.py",
+          "computations/probes/metallic_ladder_regime_test_probe.py",
+          "computations/probes/metallic_silver_coincidence_weighting_probe.py",
+          "computations/probes/molien_blast_radius_remainder_triage_probe.py",
+          "computations/probes/molien_feray_meliot_bridge_probe.py",
+          "computations/probes/nf_channel_exact_repair_options_probe.py",
+          "computations/probes/nfold_ip_coupling_duality_gap_probe.py",
+          "computations/probes/o3prime_quotient_lp_solve_probe.py",
+          "computations/probes/o3prime_selection_is_atom_independent_probe.py",
+          "computations/probes/option_e_kashiwara_crystal_delta_lambda_probe.py",
+          "computations/probes/pauli_young_spin_isospin_delta_lambda_probe.py",
+          "computations/probes/phi_k_is_not_a_trace_probe.py",
+          "computations/probes/phi_k_weight_family_discriminator.py",
+          "computations/probes/plancherel_deformation_uniqueness_probe.py",
+          "computations/probes/plancherel_weight_boundedness_probe.py",
+          "computations/probes/poly_q_proof_probe.py",
+          "computations/probes/probe_h3_central_idempotents_exact.py",
+          "computations/probes/q_plancherel_vs_y_lambda_probe.py",
+          "computations/probes/qbeta_5two_categorical_markov_volume_probe.py",
+          "computations/probes/qbeta_fmap_power_class_prune.py",
+          "computations/probes/qbeta_multiblock_ck_lambda_probe.py",
+          "computations/probes/schur_weyl_share_is_a_third_measure_probe.py",
+          "computations/probes/su4_occupancy_binding_probe.py",
+          "computations/probes/t6_tau_h5_embedding_probe.py",
+          "computations/probes/the_binding_arc_was_measured_in_float64_probe.py",
+          "computations/probes/the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py",
+          "computations/probes/tower_vhat_markov_parameter_probe.py",
+          "computations/probes/tower_walk_magic_replication_probe.py",
+          "computations/probes/trm_proton_five_values_census.py",
+          "computations/probes/uic_functional_resolution_probe.py",
+          "computations/probes/uic_sign_decomposition_probe.py",
+          "computations/probes/wedderburn_weight_canonical_probe.py",
+          "computations/probes/which_functional_the_substrate_extremises_probe.py",
+          "computations/probes/which_n_the_nucleus_is_a_state_at_probe.py",
+          "computations/probes/wlambda_q0_continuation.py",
+          "computations/probes/wlambda_rational_shadow_degree_probe.py",
+          "computations/proton_residual_rootcause.py",
+          "computations/q1_mass_gap_probe.py",
+          "computations/q_pinning_50_digit.py",
+          "computations/qbeta/fbor_q3_is_qschur_plancherel_weight_probe.py",
+          "computations/qbeta/flavour_split_three_channel_weight_probe.py",
+          "computations/qbeta/qbessel_quadratic_binding_wiring_gate.py",
+          "computations/qbeta/qbessel_unblocker_forced_order_refutation.py",
+          "computations/qbeta/qbeta_adjunction_ilp_probe.py",
+          "computations/qbeta/qbeta_bring_tau0_and_jet_tower_closure_probe.py",
+          "computations/qbeta/qbeta_covariance_kernel_class_basis_probe.py",
+          "computations/qbeta/qbeta_covariance_kernel_exact_variance_probe.py",
+          "computations/qbeta/qbeta_covariance_kernel_monotone_probe.py",
+          "computations/qbeta/qbeta_covariance_kernel_p3_special_probe.py",
+          "computations/qbeta/qbeta_covariance_kernel_scale_probe.py",
+          "computations/qbeta/qbeta_covariance_kernel_slack_probe.py",
+          "computations/qbeta/qbeta_covariance_kernel_tempering_probe.py",
+          "computations/qbeta/qbeta_covariance_kernel_tilt_path_probe.py",
+          "computations/qbeta/qbeta_decay_operator_elliptic_spectrum_probe.py",
+          "computations/qbeta/qbeta_h4_em_normalization_probe.py",
+          "computations/qbeta/qbeta_per_block_uniform_rule_verify.py",
+          "computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py",
+          "computations/qbeta/qbeta_signblock_template_check.py",
+          "computations/qbeta/toroidal_harmonics.py",
+          "computations/rho_k_h3a_co_casimir.py",
+          "computations/rho_k_h3a_counit_canonical_integral.py",
+          "computations/rho_k_h3a_crystal.py",
+          "computations/rho_k_h3a_gg_trajectory.py",
+          "computations/rho_k_h3a_lp_dual.py",
+          "computations/rho_k_h3a_refinement.py",
+          "computations/rho_w_crystal_vertex_trace.py",
+          "computations/shadow_price_c_321_q0.py",
+          "computations/substrate/bar_parity_delta_lambda_prune_probe.py",
+          "computations/substrate/binding_qaskey_product_probe.py",
+          "computations/substrate/lever1_binding_monodromy_hyperbolicity.py",
+          "computations/substrate/lever1_color_eq_intrinsic_tau_rapidity.py",
+          "computations/substrate/wlambda_identity_i_structure_probe.py",
+          "computations/sweeps/light_isotope_sweep.py",
+          "computations/sweeps/paper_six_term_shadow_price_sweep.py",
+          "computations/t6_lepton_h3_3channel_convention.py",
+          "computations/term7_alpha5_crystal_derivation.py",
+          "computations/term7_chi5_basis.py",
+          "computations/torus_knot_markov_trace_closed_form.py",
+          "computations/torus_knot_markov_trace_generalized.py",
+          "computations/trace_convention_reconciliation.py",
+          "computations/unified_lift.py",
+          "computations/wedderburn_lp_ew_wiring.py",
+          "computations/xi_ell_phi_q_probe.py",
+          "computations/y_lambda_symbolic_validate.py",
+          "computations/y_lambda_wenzl_bridge.py",
+          "computations/yekutieli_volume_join.py",
+          "computations/zero_point_channel_energy_probe.py"
+        ],
+        "pillar3_unprojected_alpha_D_scripts": [
+          "computations/binding_single_pipeline_comparison.py",
+          "computations/qbeta/qbeta_alpha_required_c_vs_d_probe.py",
+          "computations/qbeta/qbeta_braid_image_eigenphase_exclusion_probe.py",
+          "computations/qbeta/qbeta_cos_resummation_d_probe.py",
+          "computations/qbeta/qbeta_d_bar_defect_is_h_squared_probe.py",
+          "computations/qbeta/qbeta_d_frame_bar_midpoint_offset_probe.py",
+          "computations/qbeta/qbeta_d_frame_bridge_generic_z.py",
+          "computations/qbeta/qbeta_d_frame_eigenphase_bar_parity_probe.py",
+          "computations/qbeta/qbeta_d_frame_eigenphase_window_probe.py",
+          "computations/qbeta/qbeta_d_frame_ladder_bar_weight_prune.py",
+          "computations/qbeta/qbeta_d_gate_inventory_is_exhausted_probe.py",
+          "computations/qbeta/qbeta_eigenphase_algebraic_exclusion_probe.py",
+          "computations/qbeta/qbeta_eigenphase_holonomy_consistency_probe.py",
+          "computations/qbeta/qbeta_holonomy_t2_is_a_bar_symmetry_test_probe.py",
+          "computations/qbeta/qbeta_ladder_phase_from_wedderburn_weights.py",
+          "computations/qbeta/qbeta_ladder_phase_mirror_covariance_probe.py",
+          "computations/qbeta/qbeta_mbeta_v21_spectrum_under_d.py",
+          "computations/qbeta/qbeta_pdix_cds1_cosh_gpmt_bridge_probe.py",
+          "computations/qbeta/qbeta_phase_block_resolution_probe.py",
+          "computations/qbeta/qbeta_phase_fails_log_functional_equation_probe.py",
+          "computations/qbeta/qbeta_required_phase_target_provenance_probe.py",
+          "computations/qbeta/qbeta_route5_discriminating_test.py",
+          "computations/qbeta/qbeta_wedderburn_phase_twoterm_pin_probe.py",
+          "computations/qbeta/qstar_anchor_interval_convention_probe.py"
+        ],
+        "pillar3_truncated_M0_E0_scripts_sample": [
+          "computations/b_over_a_evaluator.py",
+          "computations/bar_pairing_binding_observable.py",
+          "computations/binding_color_vs_charge_tn3he.py",
+          "computations/binding_log_scale_investigation.py",
+          "computations/binding_n3_forcing_probe.py",
+          "computations/binding_per_block_magnitude_a3_probe.py",
+          "computations/binding_perblock_bond_type_a3.py",
+          "computations/borromean_binding_recompute.py",
+          "computations/brng_multiplicity_channel_bound_probe.py",
+          "computations/build_six_term_substrate_model_b.py",
+          "computations/charge_coulomb_tn3he_derived.py",
+          "computations/charge_symmetric_coulomb_binding.py",
+          "computations/closed_form_entanglement.py",
+          "computations/defect_info_a_trend_probe.py",
+          "computations/deltalambda/a4_h12_brunnian_deficit_measure_probe.py",
+          "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
+          "computations/deltalambda/b4_nonsaturating_mstar_diagnostic.py",
+          "computations/deltalambda/borromean_3body_cluster_sign_probe.py",
+          "computations/deltalambda/borromean_h9_magnitude_lift_probe.py",
+          "computations/deltalambda/brane_tower_level_coordination_edge_probe.py",
+          "computations/deltalambda/convention_systematic_audit_probe.py",
+          "computations/deltalambda/deltalambda_k4_complete_graph_collective_magnitude_probe.py",
+          "computations/deltalambda/deltalambda_perpair_bond_magnitude_derive_probe.py",
+          "computations/deltalambda/deltalambda_saturation_det_ceiling_probe.py",
+          "computations/deltalambda/helium4_mu4_cluster_moment_probe.py",
+          "computations/deltalambda/helium_four_body_cluster_probe.py",
+          "computations/deltalambda/mirror_split_milnor_one_third_probe.py",
+          "computations/deltalambda/mu3_abs_choice_robustness_probe.py",
+          "computations/deltalambda/mu3_anchor_consistency_probe.py",
+          "computations/deltalambda/mu3_frechet_perblock_probe.py",
+          "computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py",
+          "computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py",
+          "computations/deltalambda/s5so3_geometric_wlambda_borromean_lift_probe.py",
+          "computations/deltalambda/s5so3_wlambda_borromean_lift_probe.py",
+          "computations/deltalambda/triangle_bond_submodularity_probe.py",
+          "computations/derive_binding_bond_sum.py",
+          "computations/derive_binding_bond_type.py",
+          "computations/derive_binding_chain_cooperative.py",
+          "computations/derive_binding_per_block_archimedean.py",
+          "computations/emitted_particle_tracker.py"
+        ],
+        "pillar3_truncated_M0_E0_scripts_total": 128
+      },
+      "algebraic_guardrail_notes": {
+        "E0_tower_exact_simplification": "With hbar_q = (q - 1)/q, E_0^tower = E_0^(M=0) / (1 - hbar_q^2) = [m_e / (q(q - 1))] / [(2q - 1)/q^2] = m_e * q / ((q - 1)(2q - 1)) approx 4.227483 MeV (+0.9915% over M=0 4.185981 MeV). Note: do NOT confuse (1 - hbar_q^2) with (q^2 - 1), which would give m_e / ((q-1)^2(q+1)) approx 42.2 MeV (10x error).",
+        "two_term_pin_derivative_sign": "d ln(m_p^QCD/m_e) / d ln q approx -20.997 < 0 at q_0, so subtracting positive M_p^QED > 0 lowers target M_p^QCD and INCREASES q_2t above 1-term q_proton by +11.17 ppb (closing 96.2% of the 211.2 ppb mu-p gap)."
+      },
+      "prioritized_upgrade_queue": [
+        {
+          "priority": "P0-Library-Facade",
+          "script": "computations/substrate/q_parameter.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED"
+          ],
+          "current_defect": "Exports only 1-term Q_50_DIGIT_STR; q_pinning_50_digit.py still emits frozen muon pin in q-pinning-50-digit.witness.json",
+          "required_upgrade": "Re-export q_two_term_borromean_at / Q_TWO_TERM_50_DIGIT_STR alongside Q_50_DIGIT_STR; regenerate q-pinning-50-digit.witness.json with explicit proton & 2-term Borromean keys so Liquid consumers stop reading frozen muon q_0"
+        },
+        {
+          "priority": "P0-Library-Facade",
+          "script": "computations/canonical_mass.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "proton_neutron_mass_mev() returns 1-term float64 tuple; proton_qed_self_energy_borromean_mev / np_qed_splitting_borromean_conn_mev / neutron_mass_two_term_mev do not accept explicit q=q_2t (they read 1-term m-p-substrate-identity-50dps.witness.json); lacks canonical E_0^tower helper",
+          "required_upgrade": "Add explicit q= parameter defaulting to q_two_term_borromean_at(), add pure-mpf proton_neutron_mass_two_term_mev(q=None), export e0_hadronic_tower_mev(q), and wire mirror-projected alpha_D^proj + GPMT cumulant helpers"
+        },
+        {
+          "priority": "P0-Library-Facade",
+          "script": "computations/coulomb_energy.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED"
+          ],
+          "current_defect": "alpha_em_hbar_c_mev_fm / coulomb_energy_mev / mirror_displacement_mev hardcode 1-term Q_50_DIGIT_STR and CS _alpha_em_inv_derived without optional q=q_2t or Bring-Schwinger Form-B cubic",
+          "required_upgrade": "Accept optional q= parameter (supporting q_two_term_borromean_at) and Form-B Bring-Schwinger cubic alpha_EM option"
+        },
+        {
+          "priority": "P0-Library-Facade",
+          "script": "computations/derived_masses.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "_q_0() reads stale muon q-pinning-50-digit.witness.json (lines 90-105); lines 602, 685 use unprojected alpha_D and truncated E_0^(M=0)",
+          "required_upgrade": "Switch _q_0() to proton/2-term pin from qou_substrate.constants, add q_2t + alpha_D^proj = alpha_D - h^2/4 + E_0^tower support"
+        },
+        {
+          "priority": "P0-Library-Facade",
+          "script": "computations/m_p_substrate_identity_50dps.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Silent proton/muon pin straddle: evaluates m_p at proton Q_50_DIGIT_STR then calls derived_masses.q_beta_kashiwara_n2_mev() which defaults to stale muon _q_0(); triggers sha256 drift in proton-mass-codata-50dps.witness.json",
+          "required_upgrade": "Pass explicit proton/q_2t pin into Q_beta / m_n computation, record 2-term QED nucleon outputs, and regenerate proton-mass-codata-50dps.witness.json"
+        },
+        {
+          "priority": "P0-Library-Facade",
+          "script": "computations/substrate/hecke_core.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton"
+          ],
+          "current_defect": "Lines 87-97 re-export float64 pyhecke.constants.{ALPHA_EM_INV_DERIVED, alpha_em, E_HARTREE_EV}",
+          "required_upgrade": "Replace float64 coupling/Hartree exports with mpmath-backed accessors from alpha_em_inv_derived / Bring-Schwinger cubic"
+        },
+        {
+          "priority": "P1-Dashboard",
+          "script": "computations/per_observable_100x_status.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "(1) Uses Form-B cubic on alpha_em_inv row (-0.3652 ppb) but CS-resummed alpha_em_inv_derived on m_K/m_pi row; (2) lines 1529-1532 use linear finite-difference q0_two_term_plain instead of q_two_term_borromean_at() and line 1549 states inverted sign d(m_p^QCD/m_e)/dq > 0; (3) omits v/G_F electroweak row; (4) omits 4 read witnesses in add_upstream()",
+          "required_upgrade": "Use exact q_two_term_borromean_at(70), fix derivative sign note, unify Form-B Bring-Schwinger cubic alpha_EM, add v/G_F row + mirror-projected alpha_D^proj + GPMT Q_beta/m_n row, and register all upstream witnesses in add_upstream()"
+        },
+        {
+          "priority": "P1-Dashboard",
+          "script": "computations/onepb_status_dashboard.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Never calls builder.add_upstream(); witness frozen at 2026-09-08 (q0Anchor=muon); writes hardcoded docs/audits/onepb-status-dashboard.md with stale 5-atom / 92.79 ppb figures",
+          "required_upgrade": "Register all upstream witnesses via add_upstream(), regenerate stale upstreams (codata-reconciliation, demazure-markov-trace, rho-f-volume-binding-gap), switch to proton/q_2t pin, and regenerate witness + markdown report"
+        },
+        {
+          "priority": "P1-Dashboard",
+          "script": "computations/mass_binding_dashboard.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Tables 1-7 use 1-term float64 proton_neutron_mass_mev(), float64 pyhecke E_HARTREE_EV (lines 85, 296), truncated M=0 E_0 = m_e/(q(q-1)) (line 331), and unnormalized W_lambda_float (lines 175, 654, 671)",
+          "required_upgrade": "Promote 2-term QED nucleon + mirror/Coulomb shifts, q_2t pin, pure-mpf derived alpha_EM atomic electron binding, untruncated E_0^tower, GPMT dmod_(1^3)/(2,1^2)/(1^4), and Z_{3A}^{(4)}(q_0) normalization across all tables"
+        },
+        {
+          "priority": "P1-Wave2-Core",
+          "script": "computations/two_term_qed_isotope_and_nucleon_compute.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Line 240 structural_finding prose states inverted derivative sign ('d(m_p^QCD/m_e)/dq > 0 ... +0.233 ppb') contradicting computed witness (+8.058 ppb, shift -203.15 ppb); line 306 uses unprojected alpha_D; lines 415, 440 scale B_sym & GPMT by truncated E0_order0",
+          "required_upgrade": "Fix line 240 derivative sign prose, add mirror-projected alpha_D^proj = alpha_D - h^2/4 branch, and evaluate B_sym / GPMT MeV shifts with untruncated E0_tower"
+        },
+        {
+          "priority": "P1-Wave2-Core",
+          "script": "computations/probes/electroweak_bring_schwinger_bridge_probe.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton"
+          ],
+          "current_defect": "Line 92 hardcodes CODATA alpha_inv_codata = mpf('137.035999177') inside schwinger_1loop_alpha_pi instead of derived alpha_EM",
+          "required_upgrade": "Replace experimental alpha_inv_codata input with parameter-free Form-B Bring-Schwinger cubic / alpha_em_inv_derived(q0)"
+        },
+        {
+          "priority": "P2-Table-Producer",
+          "script": "computations/borromean_binding_recompute.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Line 124 uses truncated M=0 E_0 = m_e/(q(q-1)); lacks 2-term QED nucleon/Coulomb/mirror terms and GPMT modified trace",
+          "required_upgrade": "Wire E_0^tower, coulomb_energy_mev / mirror_displacement_mev, 2-term nucleon masses at q_2t, and GPMT (1^3) completion"
+        },
+        {
+          "priority": "P2-Table-Producer",
+          "script": "computations/atom_electron_mass.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Line 76 uses truncated M=0 E_0; uses CS alpha_em_inv_mp rather than Form-B cubic and 1-term nuclear inputs",
+          "required_upgrade": "Add Form-B Bring-Schwinger cubic option, E_0^tower, and 2-term QED nuclear mass integration"
+        },
+        {
+          "priority": "P2-Table-Producer",
+          "script": "computations/canonical_isotope_witness.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "All 119 emitted canonical-isotope-witness-Z00..Z118.witness.json (.ts-wired) have stale upstream sha256 against m-p-substrate-identity-50dps and m-p-borromean-verification-50dps and use 1-term QED",
+          "required_upgrade": "Wire 2-term QED nucleon + Coulomb + GPMT + Z_{3A}^{(4)} normalization and regenerate Z00..Z118 witnesses"
+        },
+        {
+          "priority": "P2-Table-Producer",
+          "script": "computations/canonical_mass_table_extended.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Uses 1-term proton_neutron_mass_mev() without two-term QED self-energy, Coulomb/mirror displacement, or GPMT/Plancherel Z_{3A}^{(4)}",
+          "required_upgrade": "Upgrade to 2-term QED nucleon + coulomb_energy_mev + E_0^tower + normalized 4-row Plancherel"
+        },
+        {
+          "priority": "P2-Table-Producer",
+          "script": "computations/atlas_render_canonical_table.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Emits 4,782-line recursive-atom-knot-atlas-registry.md with CODATA-2018 m_p/m_n literals and 1-term QED masses",
+          "required_upgrade": "Update to CODATA-2022 + 2-term QED + E_0^tower and regenerate appendix atlas"
+        },
+        {
+          "priority": "P2-Table-Producer",
+          "script": "computations/mass_table_ppb.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Uses 1-term nucleon masses and pre-GPMT binding pipeline",
+          "required_upgrade": "Switch to 2-term QED nucleon + Coulomb + GPMT + E_0^tower"
+        },
+        {
+          "priority": "P2-Table-Producer",
+          "script": "computations/level1-qvalues.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Computes Q-values from 1-term masses without connected Borromean QED splitting, mirror_displacement_mev, or alpha_D^proj",
+          "required_upgrade": "Incorporate 2-term QED nucleon/mirror splittings, alpha_D^proj, and E_0^tower"
+        },
+        {
+          "priority": "P2-Table-Producer",
+          "script": "computations/free-neutron-decay.py",
+          "pillars": [
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Uses pre-wave-2 1-term Q_beta without connected Borromean QED + mirror-projected alpha_D^proj",
+          "required_upgrade": "Wire 2-term QED splitting + alpha_D^proj + E_0^tower at q_2t"
+        },
+        {
+          "priority": "P3-Sector-Sweep",
+          "script": "computations/b_over_a_evaluator.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Line 126 hardcodes float64 CODATA ALPHA_EM = 1.0 / 137.035999084; unnormalized Plancherel; truncated E_0",
+          "required_upgrade": "Use derived pure-mpf alpha_EM, coulomb_energy_mev, Z_{3A}^{(4)}(q_0), and E_0^tower"
+        },
+        {
+          "priority": "P3-Sector-Sweep",
+          "script": "computations/probes/coulomb_mirror_killswitch_probe.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED"
+          ],
+          "current_defect": "Consumes hardcoded 1.43996 MeV*fm CODATA Coulomb constant instead of coulomb_energy.alpha_hbar_c_mev_fm(q)",
+          "required_upgrade": "Import derived pure-mpf alpha_hbar_c_mev_fm / mirror_displacement_mev from coulomb_energy.py"
+        },
+        {
+          "priority": "P3-Sector-Sweep",
+          "script": "computations/deltalambda/wlambda_binding_a3_mirror_selection.py",
+          "pillars": [
+            "Pillar-1-CorrectedPhoton",
+            "Pillar-2-TwoTermQED",
+            "Pillar-3-GPMT-E0Tower"
+          ],
+          "current_defect": "Uses hardcoded 1.43996 Coulomb literal and pre-GPMT A=3 mirror evaluation",
+          "required_upgrade": "Switch to coulomb_energy.mirror_displacement_mev, gpmt_dmod_111, and E_0^tower"
+        }
+      ]
+    }
+  },
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029011",
+    "proton": "1.109978582751380807591669095610768879874499121873578"
+  },
+  "q0AnchorReason": "Audit cross-compares 1-term proton, 2-term Borromean proton, live CODATA-2022 muon, and frozen pre-CODATA-2022 muon pins across witnesses, ValueRegistry, Liquid bindings, and manuscript prose."
+}

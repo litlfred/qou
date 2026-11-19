@@ -984,6 +984,7 @@ export default chapter({
         "y-lambda-closed-form-wenzl-bridge-table3-data",
         "rho-k-h3a-refinement",
         "rho-k-h3a-refinement-interpretation",
+        "atomic-q-reeb-universal-rho",
         "sigma-shell-from-beta-chain-derivation",
         "sigma-shell-from-beta-chain-derivation-table-data",
         "knot-operator-transition",

@@ -18,8 +18,8 @@ and tests order-of-magnitude consistency with the measured 49.5 MeV²
 residual.
 """
 from __future__ import annotations
-import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
+import _path_bridge  # noqa: F401, E402
+from codata_constants import M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION  # noqa: E402
 import sys
 import time
 from pathlib import Path
@@ -27,7 +27,7 @@ import mpmath as mp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
@@ -46,25 +46,20 @@ def main():
     # α⁻¹ = q·[9]_q·[10]_q · (1 + δ_CS + δ_CS²·κ),
     # which at the proton-pinned q₀ with the EXACTLY RESUMMED tower gives
     # 137.0359350939756 vs CODATA 137.035999177 — a 468 ppb derived
-    # prediction. (The long-quoted "399 ppb" belongs to the superseded
-    # muon-anchor, truncated-tower literal 137.035944; it understated the
-    # residual by 15%.) We use the derived value as the framework's α_em.
-    alpha_em_inv_LO = q * q_int(9, q) * q_int(10, q)
-    # DERIVED, not copied -- see meson_em_sinh_closed_form.alpha_em_inv_derived.
-    # Was mp.mpf("137.035944"): the MUON-anchor, truncated-tower value from
-    # before the 2026-05-28 proton re-pin, 65.0 ppb from the current pin.
+    # prediction. We use the derived value as the framework's α_em.
     from meson_em_sinh_closed_form import alpha_em_inv_derived  # noqa: E402
     alpha_em_inv = alpha_em_inv_derived(q)
     alpha_em = 1 / alpha_em_inv
+    codata_ref = mp.mpf("137.036")
+    miss_pct = abs(alpha_em_inv - codata_ref) / codata_ref * mp.mpf(100)
 
     print("=" * 70)
     print("  Framework α_em vs the meson 203 ppm EM residual")
     print("=" * 70)
     print()
-    print(f"  α_EM⁻¹ = q·[9]_q·[10]_q = {float(alpha_em_inv):.4f}")
-    print(f"  α_EM    = {float(alpha_em):.6e}")
-    print(f"  CODATA α_EM⁻¹ ≈ 137.036; framework miss = "
-          f"{abs(float(alpha_em_inv)-137.036)/137.036*100:.2f}%")
+    print(f"  α_EM⁻¹ = q·[9]_q·[10]_q (CS-resummed) = {mp.nstr(alpha_em_inv, 8)}")
+    print(f"  α_EM    = {mp.nstr(alpha_em, 7)}")
+    print(f"  CODATA α_EM⁻¹ ≈ 137.036; framework miss = {mp.nstr(miss_pct, 3)}%")
     print()
 
     # ---------------------------------------------------------------
@@ -72,27 +67,18 @@ def main():
     # ---------------------------------------------------------------
     m_pi_pm = mp.mpf(M_PI_PM_MEV_VALIDATION)
     m_K_pm  = mp.mpf(M_K_PM_MEV_VALIDATION)
-    f_pi    = mp.mpf("92.07")    # pion decay constant (PDG)
-    Lambda_chi = mp.mpf("1000")  # chiral scale ~ 4π·f_pi ~ 1 GeV
-    chiral_cond_cuberoot = mp.mpf("240")  # ⟨q̄q⟩^(1/3) ~ 240 MeV
+    f_pi    = mp.mpf("92.07")
+    chiral_cond_cuberoot = mp.mpf("240")
 
-    # The measured residual (#1436):
     prod_34 = q_int(3, q) * q_int(4, q)
     ratio_sq = (m_K_pm/m_pi_pm)**2
     resid_ratio = ratio_sq / prod_34 - 1
     resid_MeV2 = resid_ratio * m_K_pm**2
 
-    print(f"  Measured residual: {float(resid_ratio)*1e6:.1f} ppm "
-          f"= {float(resid_MeV2):.1f} MeV² (on m_K²)")
+    print(f"  Measured residual: {mp.nstr(resid_ratio * mp.mpf('1e6'), 4)} ppm "
+          f"= {mp.nstr(resid_MeV2, 3)} MeV² (on m_K²)")
     print()
 
-    # ---------------------------------------------------------------
-    # χPT EM correction estimates (order of magnitude)
-    # The EM self-energy of a charged meson at LO (Dashen):
-    #   Δm² ~ (α_em / π) · C · Λ²
-    # for various natural scales Λ. Test which (if any) lands near
-    # the residual.
-    # ---------------------------------------------------------------
     print("-" * 70)
     print("  Order-of-magnitude EM-correction candidates")
     print("-" * 70)
@@ -111,33 +97,26 @@ def main():
     print(f"  {'─'*25} {'─'*14} {'─'*10}")
     best = None
     for name, val in candidates:
-        v = float(val)
-        ratio = v / float(resid_MeV2)
-        if best is None or abs(mp.log(abs(ratio))) < abs(mp.log(abs(best[2]/float(resid_MeV2)))):
-            best = (name, val, v)
-        print(f"  {name:<25s} {v:>14.2f} {ratio:>9.3f}×")
+        ratio = val / resid_MeV2
+        if best is None or abs(mp.log(abs(ratio))) < abs(mp.log(abs(best[1] / resid_MeV2))):
+            best = (name, val)
+        print(f"  {name:<25s} {mp.nstr(val, 5):>14s} {mp.nstr(ratio, 4):>9s}×")
     print()
-    print(f"  Closest to 49.5 MeV²: {best[0]} = {best[2]:.2f} MeV²")
+    print(f"  Closest to 49.5 MeV²: {best[0]} = {mp.nstr(best[1], 4)} MeV²")
     print()
 
-    # ---------------------------------------------------------------
-    # Sinh-channel NLO: structural multiplier closing (α/π)·m_π² → 49.5
-    # Per #1417's [n]_q = sinh(nλ)/sinh(λ) bridge (cosh=strong/sinh=Coulomb),
-    # the EM NLO should sit on the sinh side. Required multiplier:
-    # ---------------------------------------------------------------
     print("-" * 70)
     print("  Sinh-channel NLO candidates (close (α/π)·m_π² → 49.5)")
     print("-" * 70)
     print()
     lo_apim = alpha_em/mp.pi * m_pi_pm**2
     needed = resid_MeV2 / lo_apim
-    print(f"  (α/π)·m_π² (CS-corrected α_em) = {float(lo_apim):.3f} MeV²")
-    print(f"  multiplier needed:               {float(needed):.5f}")
+    print(f"  (α/π)·m_π² (CS-corrected α_em) = {mp.nstr(lo_apim, 5)} MeV²")
+    print(f"  multiplier needed:               {mp.nstr(needed, 6)}")
     print()
-    h = q - 1/q       # = 2 sinh(ln q)
-    hbar_q = (q - 1)/q   # Planck quantum
-    sinh_lnq = h/2
-    cosh_lnq = (q + 1/q)/2  # = [2]_q/2
+    h = q - 1/q
+    hbar_q = (q - 1)/q
+    cosh_lnq = (q + 1/q)/2
     sinh_cands = [
         ("1 + ℏ_q  (LO Planck)",       1 + hbar_q),
         ("1 + ℏ_q − ℏ_q²/2  (NLO)",     1 + hbar_q - hbar_q**2/2),
@@ -153,42 +132,28 @@ def main():
     best_sinh = None
     for name, mult in sinh_cands:
         pred = lo_apim * mult
-        m = abs(float(pred / resid_MeV2 - 1))*100
+        m = abs(pred / resid_MeV2 - 1) * mp.mpf(100)
         if best_sinh is None or m < best_sinh[2]:
             best_sinh = (name, mult, m, pred)
-        print(f"  {name:<32s} {float(mult):>10.5f} {float(pred):>10.2f} ({m:.2f}%)")
+        print(f"  {name:<32s} {mp.nstr(mult, 6):>10s} {mp.nstr(pred, 4):>10s} ({mp.nstr(m, 3)}%)")
     print()
     print(f"  Best sinh-channel candidate: {best_sinh[0]}")
-    print(f"  ⟹ (α/π)·m_π² · {best_sinh[0]} = {float(best_sinh[3]):.2f} MeV² "
-          f"vs 49.51 measured ({best_sinh[2]:.2f}% miss)")
+    print(f"  ⟹ (α/π)·m_π² · {best_sinh[0]} = {mp.nstr(best_sinh[3], 4)} MeV² "
+          f"vs 49.51 measured ({mp.nstr(best_sinh[2], 3)}% miss)")
     print()
 
-    # ---------------------------------------------------------------
-    # The reference EM scale: π± − π⁰ splitting (Dashen LO, ~pure EM)
-    # ---------------------------------------------------------------
-    em_pi_meas = float(m_pi_pm**2) - 134.9768**2
-    print(f"  Reference: (m_π±² − m_π⁰²)_meas = {em_pi_meas:.1f} MeV² (~pure EM)")
-    print(f"  Residual / em_pi_meas = {float(resid_MeV2)/em_pi_meas:.3f}")
-    print(f"  ⟹ meson residual ≈ {float(resid_MeV2)/em_pi_meas*100:.0f}% of the π EM splitting")
+    em_pi_meas = m_pi_pm**2 - mp.mpf("134.9768")**2
+    print(f"  Reference: (m_π±² − m_π⁰²)_meas = {mp.nstr(em_pi_meas, 5)} MeV² (~pure EM)")
+    print(f"  Residual / em_pi_meas = {mp.nstr(resid_MeV2 / em_pi_meas, 3)}")
+    print(f"  ⟹ meson residual ≈ {mp.nstr(resid_MeV2 / em_pi_meas * mp.mpf(100), 2)}% of the π EM splitting")
     print()
 
-    # ---------------------------------------------------------------
-    # Verdict — is α_em the right SCALE?
-    # ---------------------------------------------------------------
     print("=" * 70)
     print("  VERDICT")
     print("=" * 70)
     print()
-    # The residual 49.5 MeV² sits at the EM/χPT-NLO scale. (α/π)·f_π²
-    # ≈ 19.6 MeV² (2.5× below); α·⟨q̄q⟩^(2/3) ≈ 420 MeV² (8× above);
-    # α·m_K·f_π ≈ 333 MeV². The residual lives BETWEEN α·f_π² and
-    # α·⟨q̄q⟩² — exactly the χPT NLO window. So **α_em alone (LO)**
-    # underpredicts; the EM closure needs the framework's α_em wired
-    # through the specific χPT NLO matching (e.g. via the sinh
-    # channel of #1417's cosh/sinh bridge).
-    # Full closure: the meson m_K²/m_π² as both pieces derived.
     full_prediction = prod_34 + alpha_em/mp.pi * (1 + hbar_q - hbar_q**2/2)
-    full_miss_ppm = float((full_prediction - ratio_sq)/ratio_sq) * 1e6
+    full_miss_ppm = (full_prediction - ratio_sq)/ratio_sq * mp.mpf("1e6")
 
     print(f"  • Framework α_em (CS tower, exactly resummed, Witten κ): "
           f"α⁻¹ = {mp.nstr(alpha_em_inv, 16)}")
@@ -196,44 +161,37 @@ def main():
     print(f"  • LO (α/π)·m_π² misses the 49.5 MeV² residual by 9%.")
     print(f"  • (α/π)·m_π²·(1+ℏ_q) [LO Planck truncation]: 0.46% miss.")
     print(f"  • (α/π)·m_π²·(1+ℏ_q − ℏ_q²/2) [next sinh-channel term, =")
-    print(f"    truncation of log(1+ℏ_q)]: {best_sinh[2]:.4f}% = "
-          f"{abs(best_sinh[2])*1e4:.1f} ppm miss on the EM piece.")
+    print(f"    truncation of log(1+ℏ_q)]: {mp.nstr(best_sinh[2], 4)}% = "
+          f"{mp.nstr(abs(best_sinh[2]) * mp.mpf('1e4'), 3)} ppm miss on the EM piece.")
     print()
     print("  FULL CLOSURE FORM (both pieces derived):")
     print("    m_K²/m_π² = [3]_q·[4]_q + (α_em/π)·(1 + ℏ_q − ℏ_q²/2)")
-    print(f"  prediction  = {float(full_prediction):.6f}")
-    print(f"  measured    = {float(ratio_sq):.6f}")
-    print(f"  full miss   = {full_miss_ppm:+.3f} ppm on m_K²/m_π²")
-    print()
-    print("  Still open: rigorous derivation of (1+ℏ_q − ℏ_q²/2) as the")
-    print("  exact sinh-channel categorical-action correction. The form")
-    print("  IS the first three terms of log(1+ℏ_q) — a real series, not")
-    print("  a fit; per #1417's cosh/sinh bridge this is the Coulomb (sinh)")
-    print("  channel's log-running of (α/π)·m_π². Closes to ~10 ppm on")
-    print("  the full ratio with NO fitted integer.")
+    print(f"  prediction  = {mp.nstr(full_prediction, 8)}")
+    print(f"  measured    = {mp.nstr(ratio_sq, 8)}")
+    print(f"  full miss   = {mp.nstr(full_miss_ppm, 4)} ppm on m_K²/m_π²")
     print()
 
     w = WitnessBuilder("meson-em-residual-alpha-em", engine="mpmath",
                        start_time=_t0)
     w.set_description(
-        f"Framework α_em⁻¹ = q·[9]_q·[10]_q = {float(alpha_em_inv):.3f} "
+        f"Framework α_em⁻¹ = q·[9]_q·[10]_q = {mp.nstr(alpha_em_inv, 6)} "
         f"(0.16% off CODATA). The 203 ppm m_K²/m_π² residual (49.5 MeV²) "
         f"sits inside the χPT-EM window (LO α_em × {{f_π², ⟨q̄q⟩²}} spans "
         f"19–420 MeV²). α_em is the right SCALE; closure needs the NLO "
         f"χPT matching via #1417's sinh/Coulomb channel."
     )
     w.set_audit_only("docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md")
-    w.add_data("alpha_em_inv_framework", float(alpha_em_inv))
-    w.add_data("alpha_em_inv_codata", 137.036)
-    w.add_data("framework_alpha_miss_pct", abs(float(alpha_em_inv)-137.036)/137.036*100)
-    w.add_data("residual_MeV2", float(resid_MeV2))
-    w.add_data("residual_over_pi_em_splitting", float(resid_MeV2)/em_pi_meas)
+    w.add_data("alpha_em_inv_framework", fmt(alpha_em_inv))
+    w.add_data("alpha_em_inv_codata", fmt(codata_ref))
+    w.add_data("framework_alpha_miss_pct", fmt(miss_pct))
+    w.add_data("residual_MeV2", fmt(resid_MeV2))
+    w.add_data("residual_over_pi_em_splitting", fmt(resid_MeV2 / em_pi_meas))
     w.add_data("closest_em_candidate", best[0])
-    w.add_data("closest_em_value_MeV2", best[2])
+    w.add_data("closest_em_value_MeV2", fmt(best[1]))
     w.add_data("conclusion", "α_em is the right scale; NLO χPT matching open")
 
     w.add_assertion("residual_in_em_window",
-                    computed=1 if 10 < float(resid_MeV2) < 500 else 0,
+                    computed=1 if mp.mpf(10) < resid_MeV2 < mp.mpf(500) else 0,
                     expected=1, tolerance=0,
                     source="residual within α_em × {f_π², ⟨q̄q⟩²} χPT window")
 

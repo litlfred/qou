@@ -1,6 +1,6 @@
-| Nucleus | Knot formula | LO output (MeV) | Observed (MeV) | $\Delta$ = CODATA binding | Source |
+| Nucleus | Knot formula | LO constituent sum (MeV) | Observed (MeV) | $\Delta = -B_{\mathrm{AME}}$ | Source |
 |---------|-------------|---:|---:|---:|--------|
-| Deuteron | $\mathfrak{p} \oplus \mathfrak{n}$ | $1877.838$ † | $1875.613$ | $-2.225$ MeV | CODATA |
-| Tritium | $\mathfrak{p} \oplus 2\mathfrak{n}$ | $2817.403$ † | $2808.921$ | $-8.482$ MeV | AME2020 |
-| ${}^3\mathrm{He}$ | $2\mathfrak{p} \oplus \mathfrak{n}$ | $2816.110$ † | $2808.392$ | $-7.718$ MeV | AME2020 |
-| ${}^4\mathrm{He}$ | $2\mathfrak{p} \oplus 2\mathfrak{n}$ | $3755.675$ † | $3727.379$ | $-28.296$ MeV | AME2020 |
+| Deuteron | $\mathfrak{p} \oplus \mathfrak{n}$ | $1877.838$ † | ${{ qou.computations.codata-2022-validation-masses.data.m_D_MeV | precision: 7 }}$ | $-{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector3_light_isotopes_and_gpmt_cumulants.isotope_table_A2_to_A4.0.B_AME_MeV | precision: 4 }}$ MeV | CODATA 2022 |
+| Tritium | $\mathfrak{p} \oplus 2\mathfrak{n}$ | $2817.403$ † | ${{ qou.computations.codata-2022-validation-masses.data.m_T_MeV | precision: 7 }}$ | $-{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector3_light_isotopes_and_gpmt_cumulants.isotope_table_A2_to_A4.1.B_AME_MeV | precision: 4 }}$ MeV | CODATA 2022 / AME2020 |
+| ${}^3\mathrm{He}$ | $2\mathfrak{p} \oplus \mathfrak{n}$ | $2816.110$ † | ${{ qou.computations.codata-2022-validation-masses.data.m_3He_MeV | precision: 7 }}$ | $-{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector3_light_isotopes_and_gpmt_cumulants.isotope_table_A2_to_A4.2.B_AME_MeV | precision: 4 }}$ MeV | CODATA 2022 / AME2020 |
+| ${}^4\mathrm{He}$ | $2\mathfrak{p} \oplus 2\mathfrak{n}$ | $3755.675$ † | ${{ qou.computations.codata-2022-validation-masses.data.m_4He_MeV | precision: 7 }}$ | $-{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector3_light_isotopes_and_gpmt_cumulants.isotope_table_A2_to_A4.3.B_AME_MeV | precision: 5 }}$ MeV | CODATA 2022 / AME2020 |

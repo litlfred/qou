@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-19T21:02:37.278911+00:00",
-  "commitSha": "8012e99a60460238500489de3c44de1a4b113f60",
+  "computedAt": "2026-11-19T07:36:14.161332+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
   "assertions": [
     {
       "name": "residual_in_em_window",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "meson-em-residual-alpha-em",
   "scriptFile": "meson_em_residual_alpha_em.py",
-  "scriptHash": "a5e8b70b94bc",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "24cead48a9c1",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,22 +26,31 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_em_residual_alpha_em.py"
+    ],
+    "reproduce": "python3 -u computations/meson_em_residual_alpha_em.py"
   },
   "description": "Framework α_em⁻¹ = q·[9]_q·[10]_q = 137.036 (0.16% off CODATA). The 203 ppm m_K²/m_π² residual (49.5 MeV²) sits inside the χPT-EM window (LO α_em × {f_π², ⟨q̄q⟩²} spans 19–420 MeV²). α_em is the right SCALE; closure needs the NLO χPT matching via #1417's sinh/Coulomb channel.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
   "data": {
-    "alpha_em_inv_framework": 137.0359350939756,
-    "alpha_em_inv_codata": 137.036,
-    "framework_alpha_miss_pct": 4.736421406898593e-05,
-    "residual_MeV2": 49.50809577229177,
-    "residual_over_pi_em_splitting": 0.03925608538850699,
+    "alpha_em_inv_framework": "137.035935093975604658795689994226849580386867151122288998955",
+    "alpha_em_inv_codata": "137.036000000000000000000000000000000000000000000000000000000",
+    "framework_alpha_miss_pct": "0.0000473642140717338541040352704037038538288105882476145286039459",
+    "residual_MeV2": "49.5080957722917678286098013713262904736294686136575505448487",
+    "residual_over_pi_em_splitting": "0.0392560853885070841287439315587734047700580736560053739439067",
     "closest_em_candidate": "(α/π)·m_π²",
-    "closest_em_value_MeV2": 45.24829755697539,
+    "closest_em_value_MeV2": "45.2482975569753904555829736008646685296179756945928807260355",
     "conclusion": "α_em is the right scale; NLO χPT matching open"
   }
 }

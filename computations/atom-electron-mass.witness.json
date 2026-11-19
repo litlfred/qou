@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T03:13:34.381792+00:00",
-  "commitSha": "ff5244f41f6c09cce3c94ef48ff4f3229a75b964",
+  "computedAt": "2026-11-19T07:36:13.852627+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
   "assertions": [
     {
       "name": "h_shell_binding_equals_rydberg",
@@ -15,15 +15,15 @@
     },
     {
       "name": "rydberg_cs_mp_vs_codata_rel",
-      "computed": "0.00000093526792138450309703740061172740166294034881869679",
+      "computed": "0.00000093526792138450309703740061172740166294034879747792",
       "expected": "0",
       "passed": true,
       "tolerance": "2e-6",
-      "source": "CS-corrected mp route (pyhecke alpha_em_inv_mp + CODATA m_e; float64 excised, bean qou-ozvb) vs CODATA-2022 Ry; the ~9.4e-7 residual is the structural alpha_EM gap (-468 ppb, doubled)"
+      "source": "CS-corrected mp route (meson_em_sinh_closed_form.alpha_em_inv_derived + CODATA m_e; float64 excised, bean qou-ozvb) vs CODATA-2022 Ry; the ~9.4e-7 residual is the structural alpha_EM gap (-468 ppb, doubled)"
     },
     {
       "name": "rydberg_bare_vs_codata_rel",
-      "computed": "0.003112860644115958362136989652737822941178762863651",
+      "computed": "0.0031128606441159583621369896527378229411787628636511",
       "expected": "0",
       "passed": true,
       "tolerance": "5e-3",
@@ -31,7 +31,7 @@
     },
     {
       "name": "h_atomic_electron_residual_kev",
-      "computed": "0.0000090158479583261342857469201181458051279512395790218",
+      "computed": "0.0000090158479583261342857469201181458051279500089935765",
       "expected": "0",
       "passed": true,
       "tolerance": "1",
@@ -40,11 +40,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 17,
   "computation": "atom-electron-mass",
   "scriptFile": "atom_electron_mass.py",
-  "scriptHash": "d3a7569d4898",
-  "scriptCommitSha": "921c9d52feb06fbccb941f8541588d9888d6506e",
+  "scriptHash": "760814c29225",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,13 +52,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -66,15 +67,19 @@
     ],
     "reproduce": "python3 -u computations/atom_electron_mass.py"
   },
-  "description": "Level-6 atomic electron layer at the canonical e-Hartree scale (bare derived alpha_EM^-1 = q0*[9]_q*[10]_q, mp end-to-end): m_atom = m_sym(nucleus) + Z*m_e - E_e(Z), vs AME2020 neutral-atom masses, 1H..7Li. G4 promotion of the previously unwitnessed diagnostic (docs/audits/2026-08-29-mass-provenance-breakdown-and-gap-map.md). The /dashboard-low atomic table still uses the AME empirical B_el fit; this witness is the derived-side comparator, not a production rewire.",
+  "description": "Level-6 atomic electron layer at the canonical e-Hartree scale (bare derived alpha_EM^-1 = q0*[9]_q*[10]_q, CS-resummed alpha_EM^-1, and Form-B Bring-Schwinger cubic alpha_EM^-1, mp end-to-end): m_atom = m_sym(nucleus) + Z*m_e - E_e(Z), vs AME2020 neutral-atom masses, 1H..7Li. G4 promotion of the previously unwitnessed diagnostic (docs/audits/2026-08-29-mass-provenance-breakdown-and-gap-map.md). The /dashboard-low atomic table still uses the AME empirical B_el fit; this witness is the derived-side comparator, not a production rewire.",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "q0Anchor": "proton",
     "alpha_E0_mev": "4.1859813632944758969450621587590084101434868908787",
+    "alpha_E0_tower_mev": "4.2274833556290305502680560265872111536151841980647",
     "alpha_em_inv_bare": "136.82320885358258430804610540444147849492999517977",
     "alpha_em_inv_cs_mp": "137.03593509397560465879568999422684958038686715112",
-    "E_hartree_ev_cs_mp": "27.211411695916652268571493840236291610255900017988",
+    "alpha_em_inv_bring_schwinger_mp": "137.03599912695091242017270049642000673995567550574",
+    "E_hartree_ev_cs_mp": "27.211411695916652268571493840236291610255900017987",
     "rydberg_ev_cs_mp": "13.605705847958326134285746920118145805127950008994",
+    "E_hartree_ev_bring_schwinger_mp": "27.21138626570477769919706007489323523620931368067",
+    "rydberg_ev_bring_schwinger_mp": "13.605693132852388849598530037446617618104656840335",
     "E_hartree_ev_bare": "27.296091499296949432991680848237111571632520298356"
   },
   "data": {
@@ -83,87 +88,102 @@
         "Z": 1,
         "N": 0,
         "E_e_ev": "13.605705847958326134285746920118145805127950008994",
+        "E_e_bring_schwinger_ev": "13.605693132852388849598530037446617618104656840335",
         "B_sym_mev": "0.0",
+        "B_sym_E0_tower_mev": "0.0",
         "m_atom_mev": "938.78307477498415204167386571425307988185419487205",
         "M_ame_mev": "938.783074784",
-        "delta_total_mev": "-0.0000000090158479583261342857469201181458051279512395790218",
+        "delta_total_mev": "-0.0000000090158479583261342857469201181458051279500089935765",
         "delta_nuclear_mev": "0.0",
-        "delta_electron_kev": "-0.0000090158479583261342857469201181458051279512395790218"
+        "delta_electron_kev": "-0.0000090158479583261342857469201181458051279500089935765"
       },
       "2H": {
         "Z": 1,
         "N": 1,
         "E_e_ev": "13.605705847958326134285746920118145805127950008994",
-        "B_sym_mev": "2.8331625720045237703378158014920195241868601607275",
+        "E_e_bring_schwinger_ev": "13.605693132852388849598530037446617618104656840335",
+        "B_sym_mev": "2.8331625720045237703378158014920195241868601607276",
+        "B_sym_E0_tower_mev": "2.8612520165436028678071972185845456889576603479331",
         "m_atom_mev": "1875.5153341429796282713360499127610603576673347113",
         "M_ame_mev": "1876.123930335",
-        "delta_total_mev": "-0.60859619202037172866395008723893964233266528867522",
-        "delta_nuclear_mev": "-0.60859637200452377033781580149201952418686016072746",
-        "delta_electron_kev": "0.00017998415204167386571425307988185419487205223055546"
+        "delta_total_mev": "-0.6085961920203717286639500872389396423326652886776",
+        "delta_nuclear_mev": "-0.60859637200452377033781580149201952418686016072759",
+        "delta_electron_kev": "0.00017998415204167386571425307988185419487204999100642"
       },
       "3H": {
         "Z": 1,
         "N": 2,
         "E_e_ev": "13.605705847958326134285746920118145805127950008994",
-        "B_sym_mev": "6.630945507146877099461641786345815948433701999592",
+        "E_e_bring_schwinger_ev": "13.605693132852388849598530037446617618104656840335",
+        "B_sym_mev": "6.6309455071468770994616417863458159484337019995921",
+        "B_sym_E0_tower_mev": "6.6966881432755462871874316630920557265003720693",
         "m_atom_mev": "2811.2829731478372749422122239279072639334204928725",
         "M_ame_mev": "2809.43212206",
-        "delta_total_mev": "1.8508510878372749422122239279072639334204928724559",
-        "delta_nuclear_mev": "1.850850692853122900538358213654184051566298000408",
-        "delta_electron_kev": "0.00039498415204167386571425307988185419487204789756179"
+        "delta_total_mev": "1.8508510878372749422122239279072639334204928724579",
+        "delta_nuclear_mev": "1.8508506928531229005383582136541840515662980004079",
+        "delta_electron_kev": "0.00039498415204167386571425307988185419487204999100642"
       },
       "3He": {
         "Z": 2,
         "N": 1,
         "E_e_ev": "108.84564678366660907428597536094516644102360007195",
-        "B_sym_mev": "4.883872264385957455968773636376672841077183167",
+        "E_e_bring_schwinger_ev": "108.84554506281911079678824029957294094483725472268",
+        "B_sym_mev": "4.8838722643859574559687736363766728410771831670001",
+        "B_sym_E0_tower_mev": "4.9322935094150962046627756879159053535271923079963",
         "m_atom_mev": "2812.2476175913472588774221520776479662137563758094",
         "M_ame_mev": "2809.41353004",
-        "delta_total_mev": "2.8340875513472588774221520776479662137563758094045",
-        "delta_nuclear_mev": "2.834169055614042544031226363623327158922816833",
-        "delta_electron_kev": "-0.081504266783666609074285975360945166441023595442297"
+        "delta_total_mev": "2.8340875513472588774221520776479662137563758093998",
+        "delta_nuclear_mev": "2.8341690556140425440312263636233271589228168329999",
+        "delta_electron_kev": "-0.081504266783666609074285975360945166441023600071949"
       },
       "4He": {
         "Z": 2,
         "N": 2,
         "E_e_ev": "108.84564678366660907428597536094516644102360007195",
-        "B_sym_mev": "8.6816551995283107850925996212304692653240250058645",
+        "E_e_bring_schwinger_ev": "108.84554506281911079678824029957294094483725472268",
+        "B_sym_mev": "8.6816551995283107850925996212304692653240250058646",
+        "B_sym_E0_tower_mev": "8.7677296361470396240430101324234153910699040293632",
         "m_atom_mev": "3748.0152565962049055482983260927941697895095339705",
         "M_ame_mev": "3728.40133075",
-        "delta_total_mev": "19.613925846204905548298326092794169789509533970538",
-        "delta_nuclear_mev": "19.614007200471689214907400378769530734675974994136",
-        "delta_electron_kev": "-0.08135426678366660907428597536094516644102359709313"
+        "delta_total_mev": "19.613925846204905548298326092794169789509533970535",
+        "delta_nuclear_mev": "19.614007200471689214907400378769530734675974994135",
+        "delta_electron_kev": "-0.081354266783666609074285975360945166441023600071949"
       },
       "6Li": {
         "Z": 3,
         "N": 3,
-        "E_e_ev": "275.51554342115610421928637513239245255384098768213",
-        "B_sym_mev": "14.530147827052097799847383440968919006461189851001",
+        "E_e_ev": "275.51554342115610421928637513239245255384098768212",
+        "E_e_bring_schwinger_ev": "275.51528594026087420437023325829400676661930101678",
+        "B_sym_mev": "14.530147827052097799847383440968919006461189851002",
+        "B_sym_E0_tower_mev": "14.674207255750476380278823046262285093182147710793",
         "m_atom_mev": "5620.515107619474481044048397272655948601086256308",
         "M_ame_mev": "5603.05150276",
-        "delta_total_mev": "17.463604859474481044048397272655948601086256308005",
-        "delta_nuclear_mev": "17.463839372947898200152616559031080993538810148999",
-        "delta_electron_kev": "-0.23451347341715610421928637513239245255384099353897"
+        "delta_total_mev": "17.463604859474481044048397272655948601086256308011",
+        "delta_nuclear_mev": "17.463839372947898200152616559031080993538810148998",
+        "delta_electron_kev": "-0.23451347341715610421928637513239245255384098768212"
       },
       "7Li": {
         "Z": 3,
         "N": 4,
-        "E_e_ev": "275.51554342115610421928637513239245255384098768213",
+        "E_e_ev": "275.51554342115610421928637513239245255384098768212",
+        "E_e_bring_schwinger_ev": "275.51528594026087420437023325829400676661930101678",
         "B_sym_mev": "18.327930762194451128971209425822715430708031689866",
+        "B_sym_E0_tower_mev": "18.50964338248241979965905749076979513072485943216",
         "m_atom_mev": "6556.2827466243321277149245712878021521768394144691",
         "M_ame_mev": "6535.36583067",
-        "delta_total_mev": "20.91691595433212771492457128780215217683941446915",
+        "delta_total_mev": "20.916915954332127714924571287802152176839414469146",
         "delta_nuclear_mev": "20.917149937805548871028790574177284569291968310134",
-        "delta_electron_kev": "-0.23398347342115610421928637513239245255384098420381"
+        "delta_electron_kev": "-0.23398347342115610421928637513239245255384098768212"
       }
     },
     "rydberg_codata_2022_ev": "13.60569312299",
-    "rydberg_cs_mp_vs_codata_rel": "0.00000093526792138450309703740061172740166294034881869679",
+    "rydberg_cs_mp_vs_codata_rel": "0.00000093526792138450309703740061172740166294034879747792",
+    "rydberg_bring_schwinger_mp_vs_codata_rel": "0.00000000072487221051118064083001950745328133000324521800871",
     "rydberg_bare_ev": "13.648045749648474716495840424118555785816260149178",
-    "rydberg_bare_vs_codata_rel": "0.003112860644115958362136989652737822941178762863651"
+    "rydberg_bare_vs_codata_rel": "0.0031128606441159583621369896527378229411787628636511"
   },
   "caveats": [
-    "Bare-Z hydrogenic shell sum: no inter-electron screening (Z_eff open); over-binds He/Li at the eV scale. Nuclear side uses CODATA validation masses (CLASS-A acknowledged anchor). The CS-corrected alpha_EM tower and E_Hartree are mp end-to-end as of 2026-08-30 (pyhecke float64 excised, bean qou-ozvb; the rounded 511000.0 eV m_e is gone)."
+    "Bare-Z hydrogenic shell sum: no inter-electron screening (Z_eff open); over-binds He/Li at the eV scale. Nuclear side uses CODATA validation masses (CLASS-A acknowledged anchor). The CS-corrected alpha_EM tower and E_Hartree are mp end-to-end via alpha_em_inv_derived(q0)."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

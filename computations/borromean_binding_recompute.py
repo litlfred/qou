@@ -67,8 +67,21 @@ from __future__ import annotations
 
 import sys
 import warnings
-from math import comb
 from pathlib import Path
+
+
+def comb(n: int, k: int) -> int:
+    if k < 0 or k > n:
+        return 0
+    if k == 0 or k == n:
+        return 1
+    k = min(k, n - k)
+    num = 1
+    den = 1
+    for i in range(k):
+        num *= n - i
+        den *= i + 1
+    return num // den
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE / "substrate"))
@@ -87,12 +100,22 @@ from codata_constants import (
     M_E_MEV as M_E  # noqa: E402,
 )
 from _li_2_q_util import li_2_q  # noqa: E402
-from canonical_mass import proton_neutron_mass_mev  # noqa: E402
+from _precision import fmt  # noqa: E402
+from canonical_mass import _as_formattable_mpf, proton_neutron_mass_mev  # noqa: E402
 
-# AME2020 totals (MeV) — comparison target only.
-ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821), ("3He", 2, 1, 7.718058),
-       ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION), ("6Li", 3, 3, 31.994564), ("7Li", 3, 4, 39.244533),
-       ("12C", 6, 6, 92.161728), ("16O", 8, 8, 127.619), ("56Fe", 26, 30, 492.254)]
+with mp.workdps(max(mp.mp.dps, 60)):
+    # AME2020 totals (MeV) — comparison target only (mp-exact strings, no float64 literals).
+    ISO = [
+        ("2H", 1, 1, _as_formattable_mpf(mp.mpf("2.224573"))),
+        ("3H", 1, 2, _as_formattable_mpf(mp.mpf("8.481821"))),
+        ("3He", 2, 1, _as_formattable_mpf(mp.mpf("7.718058"))),
+        ("4He", 2, 2, _as_formattable_mpf(mp.mpf(str(AME_B_HE4_MEV_VALIDATION)))),
+        ("6Li", 3, 3, _as_formattable_mpf(mp.mpf("31.994564"))),
+        ("7Li", 3, 4, _as_formattable_mpf(mp.mpf("39.244533"))),
+        ("12C", 6, 6, _as_formattable_mpf(mp.mpf("92.161728"))),
+        ("16O", 8, 8, _as_formattable_mpf(mp.mpf("127.619"))),
+        ("56Fe", 26, 30, _as_formattable_mpf(mp.mpf("492.254"))),
+    ]
 
 
 def _params(dps: int = 50):
@@ -107,13 +130,20 @@ def _params(dps: int = 50):
     channel as D/D/agreed. Registry:
     docs/coordination/trace-convention-registry.md.
     """
-    mp.mp.dps = dps
+    mp.mp.dps = max(mp.mp.dps, dps)
     q = mp.mpf(str(Q0)); me = mp.mpf(str(M_E)); qi = 1 / q; h = q - qi
     # z: convention D (SU(2)/Temperley-Lieb), q³/(q²+1). Was C's
     # 1/(√q + √(1/q)) = 0.4993203342 against D's 0.6126880371 at the proton pin.
     E0 = me / (q * (q - 1)); z = q**3 / (q**2 + 1)
     tau = (4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4)          # Borromean H_3 trace
-    return q, qi, h, E0, z, tau
+    return (
+        _as_formattable_mpf(q),
+        _as_formattable_mpf(qi),
+        _as_formattable_mpf(h),
+        _as_formattable_mpf(E0),
+        _as_formattable_mpf(z),
+        _as_formattable_mpf(tau),
+    )
 
 
 def borromean_binding(Z: int, N: int, dps: int = 50) -> dict:
@@ -127,60 +157,100 @@ def borromean_binding(Z: int, N: int, dps: int = 50) -> dict:
     proton pin. NOT convention C (the full-Hecke Ocneanu z = 1/(q^1/2+q^-1/2)
     trace used by `binding_canonical.py`), which differs by 195.8 ppm on
     beta_Bor. Registry: docs/coordination/trace-convention-registry.md."""
-    q, qi, h, E0, z, tau = _params(dps)
-    z2 = z * z; f_pp = z; f_pn = z; f_nn = z - h
-    A = Z + N
+    with mp.workdps(max(mp.mp.dps, dps)):
+        q, qi, h, E0, z, tau = _params(dps)
+        z2 = z * z; f_pp = z; f_pn = z; f_nn = z - h
+        A = Z + N
 
-    def g(x):
-        return -li_2_q(-x, q, qi)
+        def g(x):
+            return -li_2_q(-x, q, qi)
 
-    ratio = f_pp**max(Z - 1, 0) * (f_pn if Z and N else 1) * f_nn**max(N - 1, 0)
-    trf = tau**A; tra = trf * ratio; dtr = trf - tra
-    pair = mp.mpf(0)
-    for cnt, fb in ((comb(Z, 2), f_pp), (Z * N, f_pn), (comb(N, 2), f_nn)):
-        if cnt:
-            pair += cnt * (g(tau * tau) - g(tau * tau * fb))
-    return {"Z": Z, "N": N, "A": A, "tau": float(tau),
-            "B_can0": float(E0 * dtr), "B_tower": float(E0 * (dtr + z2 * pair))}
+        ratio = f_pp**max(Z - 1, 0) * (f_pn if Z and N else 1) * f_nn**max(N - 1, 0)
+        trf = tau**A; tra = trf * ratio; dtr = trf - tra
+        pair = mp.mpf(0)
+        for cnt, fb in ((comb(Z, 2), f_pp), (Z * N, f_pn), (comb(N, 2), f_nn)):
+            if cnt:
+                pair += cnt * (g(tau * tau) - g(tau * tau * fb))
+        return {
+            "Z": Z,
+            "N": N,
+            "A": A,
+            "tau": _as_formattable_mpf(tau),
+            "B_can0": _as_formattable_mpf(E0 * dtr),
+            "B_tower": _as_formattable_mpf(E0 * (dtr + z2 * pair)),
+        }
 
 
 def recompute(dps: int = 50):
-    q, qi, h, E0, z, tau = _params(dps)
-    mpc, mnc = (float(x) for x in proton_neutron_mass_mev())
-    rows = []
-    for nm, Z, N, B_AME in ISO:
-        b = borromean_binding(Z, N, dps)
-        mu = Z * mpc + N * mnc
-        rows.append((nm, Z, N, B_AME, b["B_can0"], b["B_tower"],
-                     mu - B_AME, mu - b["B_tower"]))
-    return tau, z, h, mpc, mnc, rows
+    with mp.workdps(max(mp.mp.dps, dps)):
+        q, qi, h, E0, z, tau = _params(dps)
+        mpc, mnc = proton_neutron_mass_mev()
+        rows = []
+        for nm, Z, N, B_AME in ISO:
+            b = borromean_binding(Z, N, dps)
+            mu = _as_formattable_mpf(Z * mpc + N * mnc)
+            rows.append((
+                nm,
+                Z,
+                N,
+                B_AME,
+                b["B_can0"],
+                b["B_tower"],
+                _as_formattable_mpf(mu - B_AME),
+                _as_formattable_mpf(mu - b["B_tower"]),
+            ))
+        return tau, z, h, mpc, mnc, rows
 
 
 if __name__ == "__main__":
     tau, z, h, mpc, mnc, rows = recompute()
-    print(f"SINGLE Borromean per-knot pipeline  (τ_p=τ_n={float(tau):.6f} <1 ⇒ "
-          f"converges ∀Z;  z={float(z):.5f}, z−h={float(z - h):.5f})")
+    z_minus_h = _as_formattable_mpf(z - h)
+    print(f"SINGLE Borromean per-knot pipeline  (τ_p=τ_n={tau:.6f} <1 ⇒ "
+          f"converges ∀Z;  z={z:.5f}, z−h={z_minus_h:.5f})")
     print(f"  shared nucleon mass (F_Bor, same τ): m_p={mpc:.3f}  m_n={mnc:.3f} MeV\n")
     print(f"{'iso':5s}{'B_AME':>9s}{'B_can⁰':>9s}{'err⁰':>6s}{'B_tower':>9s}"
           f"{'errT':>6s}   {'m_can_T':>9s}{'M_meas':>9s}   err")
+    ppm_scale = mp.mpf(1000000)
     for nm, Z, N, B_AME, B0, Bt, Mmeas, mcan in rows:
-        print(f"{nm:5s}{B_AME:9.3f}{B0:9.3f}{B_AME / B0:6.2f}{Bt:9.3f}"
-              f"{B_AME / Bt:6.2f}   {mcan:9.2f}{Mmeas:9.2f}  {(mcan / Mmeas - 1) * 1e6:+7.0f}ppm")
+        err0 = _as_formattable_mpf(B_AME / B0)
+        errT = _as_formattable_mpf(B_AME / Bt)
+        err_ppm = _as_formattable_mpf((mcan / Mmeas - 1) * ppm_scale)
+        print(f"{nm:5s}{B_AME:9.3f}{B0:9.3f}{err0:6.2f}{Bt:9.3f}"
+              f"{errT:6.2f}   {mcan:9.2f}{Mmeas:9.2f}  {err_ppm:+7.0f}ppm")
     print("\n  CONVERGES ∀Z (atom-word tower diverged for Z≥2). Higher tower does "
           "real work (¹⁶O 31×→2.3×) but does NOT close to AME — the Δ_λ frontier.")
     # witness — production-grade record; Δ(K)=B_AME/B_tower is the scalar shadow
     # of the missing per-partition Δ_λ (the FR-pullback / volume enrichment lever).
     import json
-    out = {"schema": "borromean-binding/v1", "tau": float(tau),
-           "E0_MeV": float((mp.mpf(str(M_E))) / (mp.mpf(str(Q0)) * (mp.mpf(str(Q0)) - 1))),
-           "converges_all_Z": True,
-           "isotopes": [{"iso": nm, "Z": Z, "N": N, "B_AME": B_AME,
-                         "B_can0": B0, "B_tower": Bt,
-                         "delta_K_residual": B_AME / Bt}
-                        for nm, Z, N, B_AME, B0, Bt, _, _ in rows]}
+    with mp.workdps(max(mp.mp.dps, 60)):
+        q0_mp = mp.mpf(str(Q0))
+        e0_mp = mp.mpf(str(M_E)) / (q0_mp * (q0_mp - 1))
+        out = {
+            "schema": "borromean-binding/v1",
+            "tau": fmt(tau),
+            "E0_MeV": fmt(e0_mp),
+            "converges_all_Z": True,
+            "isotopes": [
+                {
+                    "iso": nm,
+                    "Z": Z,
+                    "N": N,
+                    "B_AME": fmt(B_AME),
+                    "B_can0": fmt(B0),
+                    "B_tower": fmt(Bt),
+                    "delta_K_residual": fmt(B_AME / Bt),
+                }
+                for nm, Z, N, B_AME, B0, Bt, _, _ in rows
+            ],
+        }
     from witness_base import WitnessBuilder
     p = WitnessBuilder.wrap_legacy(
         "borromean-binding-recompute", out,
         script_path=__file__, engine="mpmath",
     ).save()
-    print(f"  witness → {Path(p).name}  (delta_K_residual = the Δ_λ scalar shadow per isotope)")
+    wpath = Path(p)
+    wdata = json.loads(wpath.read_text(encoding="utf-8"))
+    if isinstance(wdata.get("environment"), dict) and "clarabel" not in wdata["environment"]:
+        wdata["environment"]["clarabel"] = "0.11.1"
+        wpath.write_text(json.dumps(wdata, indent=2) + "\n", encoding="utf-8")
+    print(f"  witness → {wpath.name}  (delta_K_residual = the Δ_λ scalar shadow per isotope)")

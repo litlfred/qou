@@ -1,0 +1,982 @@
+{
+  "engine": "python-mpmath-80dps-and-exact-fraction",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T07:37:08.084872+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+  "assertions": [
+    {
+      "name": "reordered_c2_diagonal_insertion_all_six_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact cycle-decomposed diagonal-insertion expansion [◇] (|S|<=2) reproduces (a0, c1, a2, c2) and the |S|=0,1,2 class splits for pp (33/32), pn (25/32), nn (1/16), T (99/128), 3He (157/128), and 4He (439/512) (qou-qqm4)."
+    },
+    {
+      "name": "reordered_c2_a2_wedderburn_series_and_grouped_crosscheck",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact Wedderburn Ser eps-series on A=2 (pp, pn, nn) matches the diagonal-insertion expansion identically (33/32, 25/32, 1/16 on borromean; 357/32, 403/32, 217/16 on grouped)."
+    },
+    {
+      "name": "reordered_c2_a3_mirror_sum_equals_2",
+      "computed": "2",
+      "expected": "2",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact A=3 mirror sum c2(T) + c2(3He) = 99/128 + 157/128 = 256/128 = 2 (qou-qqm4)."
+    },
+    {
+      "name": "reordered_c2_a2_content_cancellation_invariance",
+      "computed": "-15/32",
+      "expected": "-15/32",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Content-cancelling second-order combination c2(pp) + c2(nn) - 2*c2(pn) = -15/32 is identically invariant between borromean (33/32 + 1/16 - 50/32) and grouped (357/32 + 217/16 - 806/32) intra-nucleon orderings."
+    },
+    {
+      "name": "reordered_c2_chain_over_atom_ratios_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact second-order chain-over-atom ratios T: 12/11, 3He: 232/157, 4He: 960/439 with |r2 - 1| < |r1 - 1| vs first-order (4, 3/2, 24/7), plus species-blindness of the |S|=0 permutation floor (0 at A=2, 5/32 at A=3, 11/64 at A=4)."
+    },
+    {
+      "name": "deuteron_h6_chi_lambda_eps_series_reproduces_c0_c1_c2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact H_6(q) Wedderburn character decomposition sum_{l(lambda)<=2} y_lambda * (chi^lambda_free - chi^lambda_atom) over {(6), (5,1), (4,2), (3,3)} yields [eps^0, eps^1, eps^2] = [1/8, 1/16, 23/32] and (c0, c1, c2) = (1/8, 1/16, 25/32) (qou-6h6p)."
+    },
+    {
+      "name": "deuteron_h6_chi_lambda_80dps_matches_transfer_trace",
+      "computed": "0.14704667798040846910949472901991769100370850974175845255460247927895116810552655",
+      "expected": "0.14704667798040846910949472901991769100370850974175845255460247927895116810552655",
+      "passed": true,
+      "tolerance": "1.0e-49",
+      "source": "At 80-dps canonical proton pin q0, all 11 H_6(q0) irreps chi^lambda(W_atom) match tr_m_atom_zn to < 1e-75 and the two-row Wedderburn sum matches Delta tr_M(2H; q0) to < 1e-50 (qou-6h6p)."
+    },
+    {
+      "name": "plancherel_covariance_identities_and_transpose_symmetry_k1_to_20",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact Plancherel identities sum_{lambda|-k} (f^lambda)^2 = k! and sum_{lambda|-k} (f^lambda)^2 omega_3(lambda) = 0, plus transpose invariance f^{lambda'} = f^lambda and omega_3(lambda') = omega_3(lambda), verified for k=1..20."
+    },
+    {
+      "name": "plancherel_covariance_kernel_nonpositive_k1_to_20",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "Exact integer Plancherel covariance kernel cov(k) = sum_{lambda|-k} (f^lambda)^3 omega_3(lambda) satisfies cov(1) = cov(2) = 0 and cov(k) < 0 strictly for all 3 <= k <= 20 (with cov(3)=-4, cov(4)=-16, cov(5)=-320, cov(6)=-10400, cov(7)=-163520) (qou-v8t7)."
+    },
+    {
+      "name": "plancherel_covariance_legs_A2_and_A3_k3_to_20",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "80-dps verification of Leg A2 (g'(0) = Cov_Planch(ln f^lambda, omega_3(lambda)) < 0) and Leg A3 (|g(1) - g'(0)| < |g'(0)|, equivalently r = g(1)/g'(0) in (0, 2)) for all 3 <= k <= 20 (qou-v8t7)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "delta-lambda-covariance-and-reordered-c2-probe",
+  "scriptFile": "delta_lambda_covariance_and_reordered_c2_probe.py",
+  "scriptHash": "ef83c7acab35",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/delta_lambda_covariance_and_reordered_c2_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/delta_lambda_covariance_and_reordered_c2_probe.py"
+  },
+  "description": "80-dps and exact rational compute probe closing three linked MassTheory / Delta_lambda derivations without float64 intermediates or parameter fitting: (1) qou-qqm4 — exact reordered-word (c0, c1, a2, c2) and |S|<=2 diagonal-insertion class splits for pp (33/32), pn (25/32), nn (1/16), T (99/128), 3He (157/128), 4He (439/512), the A=3 mirror sum 99/128 + 157/128 = 2, the A=2 content-cancellation invariance c2(pp) + c2(nn) - 2*c2(pn) = -15/32, and chain/atom second-order ratios (12/11, 232/157, 960/439); (2) qou-6h6p — deuteron (2H) at H_6(q) per-partition chi_lambda free-vs-bound table across all 11 partitions lambda |- 6 both as exact rational [eps^0, eps^1, eps^2] series and at 80-dps canonical proton pin q0; (3) qou-v8t7 — Plancherel covariance kernel cov(k) = sum_{lambda|-k} (f^lambda)^3 omega_3(lambda) <= 0, transpose-involution invariance, Leg A2 (g'(0) < 0), and Leg A3 (|g(1)-g'(0)| < |g'(0)|) for k = 1..20.",
+  "data": {
+    "compute_dps": 80,
+    "q0_proton_pin_50d": "1.1099785827513808075916690956107688798744991218736",
+    "reordered_word_c2_table": {
+      "pp": {
+        "Z": 2,
+        "N": 0,
+        "A": 2,
+        "a0": "1/8",
+        "c1": "1/8",
+        "a2": "29/32",
+        "c2": "33/32",
+        "s0": "0",
+        "s1": "7/8",
+        "s2": "5/32",
+        "ok": true
+      },
+      "pn": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "a0": "1/8",
+        "c1": "1/16",
+        "a2": "23/32",
+        "c2": "25/32",
+        "s0": "0",
+        "s1": "27/32",
+        "s2": "-1/16",
+        "ok": true
+      },
+      "nn": {
+        "Z": 0,
+        "N": 2,
+        "A": 2,
+        "a0": "1/8",
+        "c1": "0",
+        "a2": "1/16",
+        "c2": "1/16",
+        "s0": "0",
+        "s1": "13/16",
+        "s2": "-3/4",
+        "ok": true
+      },
+      "T": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "a0": "3/32",
+        "c1": "1/64",
+        "a2": "97/128",
+        "c2": "99/128",
+        "s0": "5/32",
+        "s1": "123/128",
+        "s2": "-11/32",
+        "ok": true
+      },
+      "3He": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "a0": "3/32",
+        "c1": "1/8",
+        "a2": "141/128",
+        "c2": "157/128",
+        "s0": "5/32",
+        "s1": "65/64",
+        "s2": "7/128",
+        "ok": true
+      },
+      "4He": {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "a0": "7/128",
+        "c1": "7/128",
+        "a2": "411/512",
+        "c2": "439/512",
+        "s0": "11/64",
+        "s1": "25/32",
+        "s2": "-49/512",
+        "ok": true
+      }
+    },
+    "a3_mirror_sum_c2": "2",
+    "a2_content_cancellation_c2_canonical": "-15/32",
+    "a2_content_cancellation_c2_grouped": "-15/32",
+    "chain_over_atom_ratios": {
+      "order1_c1": {
+        "T": "4",
+        "3He": "3/2",
+        "4He": "24/7"
+      },
+      "order2_c2": {
+        "T": "12/11",
+        "3He": "232/157",
+        "4He": "960/439"
+      }
+    },
+    "deuteron_h6_partitions": [
+      {
+        "partition": [
+          6
+        ],
+        "num_rows": 1,
+        "chi_free_eps012": [
+          "1",
+          "4",
+          "8"
+        ],
+        "chi_atom_eps012": [
+          "1",
+          "4",
+          "17/2"
+        ],
+        "dchi_eps012": [
+          "0",
+          "0",
+          "-1/2"
+        ],
+        "y_lambda_eps012": [
+          "7/64",
+          "0",
+          "35/64"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "0",
+          "-7/128"
+        ],
+        "chi_free_q0": "1.551306468200477573340004",
+        "chi_atom_q0": "1.559870199564151592706167",
+        "dchi_q0": "-0.008563731363674019366162451",
+        "y_lambda_q0": "0.1153242249020661661103691",
+        "y_dchi_q0": "-0.0009876056817852203911922019"
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "num_rows": 2,
+        "chi_free_eps012": [
+          "1",
+          "-3",
+          "-7/2"
+        ],
+        "chi_atom_eps012": [
+          "0",
+          "-5",
+          "-27/2"
+        ],
+        "dchi_eps012": [
+          "1",
+          "2",
+          "10"
+        ],
+        "y_lambda_eps012": [
+          "5/64",
+          "0",
+          "5/64"
+        ],
+        "y_dchi_eps012": [
+          "5/64",
+          "5/32",
+          "55/64"
+        ],
+        "chi_free_q0": "0.7222231954766334325134789",
+        "chi_atom_q0": "-0.6822850127605704464123995",
+        "dchi_q0": "1.404508208237203878925878",
+        "y_lambda_q0": "0.07895296247592667898771963",
+        "y_dchi_q0": "0.1108900838620829719964125"
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "num_rows": 2,
+        "chi_free_eps012": [
+          "1",
+          "-3",
+          "17/2"
+        ],
+        "chi_atom_eps012": [
+          "0",
+          "1",
+          "31/2"
+        ],
+        "dchi_eps012": [
+          "1",
+          "-4",
+          "-7"
+        ],
+        "y_lambda_eps012": [
+          "3/64",
+          "0",
+          "-5/64"
+        ],
+        "y_dchi_eps012": [
+          "3/64",
+          "-3/16",
+          "-13/32"
+        ],
+        "chi_free_q0": "0.8265916670255464812900218",
+        "chi_atom_q0": "0.3290803475396132377570415",
+        "dchi_q0": "0.4975113194859332435329803",
+        "y_lambda_q0": "0.04603243469202042693652015",
+        "y_dchi_q0": "0.02290165732277713167774484"
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "num_rows": 3,
+        "chi_free_eps012": [
+          "-2",
+          "-7",
+          "-15/2"
+        ],
+        "chi_atom_eps012": [
+          "-1",
+          "-1",
+          "-8"
+        ],
+        "dchi_eps012": [
+          "-1",
+          "-6",
+          "1/2"
+        ],
+        "y_lambda_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "chi_free_q0": "-2.813326331719353445786781",
+        "chi_atom_q0": "-1.204805134089040224143514",
+        "dchi_q0": "-1.608521197630313221643267",
+        "y_lambda_q0": "0.0",
+        "y_dchi_q0": "0.0"
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "num_rows": 2,
+        "chi_free_eps012": [
+          "1",
+          "4",
+          "20"
+        ],
+        "chi_atom_eps012": [
+          "1",
+          "-2",
+          "-1/2"
+        ],
+        "dchi_eps012": [
+          "0",
+          "6",
+          "41/2"
+        ],
+        "y_lambda_eps012": [
+          "1/64",
+          "0",
+          "-3/64"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "3/32",
+          "41/128"
+        ],
+        "chi_free_q0": "1.655674939749390622116547",
+        "chi_atom_q0": "0.7139451517513857464225213",
+        "dchi_q0": "0.9417297879980048756940258",
+        "y_lambda_q0": "0.01512381009802331930447028",
+        "y_dchi_q0": "0.0142425424773335858265296"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "num_rows": 3,
+        "chi_free_eps012": [
+          "0",
+          "0",
+          "-6"
+        ],
+        "chi_atom_eps012": [
+          "0",
+          "4",
+          "-2"
+        ],
+        "dchi_eps012": [
+          "0",
+          "-4",
+          "-4"
+        ],
+        "y_lambda_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "chi_free_q0": "-0.08983362542011539570608397",
+        "chi_atom_q0": "0.3850286115269139383819567",
+        "dchi_q0": "-0.4748622369470293340880406",
+        "y_lambda_q0": "0.0",
+        "y_dchi_q0": "0.0"
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "num_rows": 4,
+        "chi_free_eps012": [
+          "-2",
+          "7",
+          "-29/2"
+        ],
+        "chi_atom_eps012": [
+          "1",
+          "-1",
+          "9"
+        ],
+        "dchi_eps012": [
+          "-3",
+          "8",
+          "-47/2"
+        ],
+        "y_lambda_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "chi_free_q0": "-1.4537303547896066573929",
+        "chi_atom_q0": "1.004372285532338409661225",
+        "dchi_q0": "-2.458102640321945067054125",
+        "y_lambda_q0": "0.0",
+        "y_dchi_q0": "0.0"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "num_rows": 3,
+        "chi_free_eps012": [
+          "1",
+          "-4",
+          "24"
+        ],
+        "chi_atom_eps012": [
+          "-1",
+          "-2",
+          "5/2"
+        ],
+        "dchi_eps012": [
+          "2",
+          "-2",
+          "43/2"
+        ],
+        "y_lambda_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "chi_free_q0": "0.7776253679191266002301066",
+        "chi_atom_q0": "-1.180431953602151460530266",
+        "dchi_q0": "1.958057321521278060760372",
+        "y_lambda_q0": "0.0",
+        "y_dchi_q0": "0.0"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "num_rows": 4,
+        "chi_free_eps012": [
+          "1",
+          "3",
+          "11/2"
+        ],
+        "chi_atom_eps012": [
+          "0",
+          "1",
+          "-33/2"
+        ],
+        "dchi_eps012": [
+          "1",
+          "2",
+          "22"
+        ],
+        "y_lambda_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "chi_free_q0": "1.308138072125029247797462",
+        "chi_atom_q0": "-0.03669817184552345042304863",
+        "dchi_q0": "1.344836243970552698220511",
+        "y_lambda_q0": "0.0",
+        "y_dchi_q0": "0.0"
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "num_rows": 5,
+        "chi_free_eps012": [
+          "1",
+          "3",
+          "-13/2"
+        ],
+        "chi_atom_eps012": [
+          "0",
+          "-5",
+          "37/2"
+        ],
+        "dchi_eps012": [
+          "1",
+          "8",
+          "-25"
+        ],
+        "y_lambda_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "chi_free_q0": "1.203769600576116199020919",
+        "chi_atom_q0": "-0.3382626406827009674633727",
+        "dchi_q0": "1.542032241258817166484292",
+        "y_lambda_q0": "0.0",
+        "y_dchi_q0": "0.0"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "num_rows": 6,
+        "chi_free_eps012": [
+          "1",
+          "-4",
+          "12"
+        ],
+        "chi_atom_eps012": [
+          "-1",
+          "4",
+          "-25/2"
+        ],
+        "dchi_eps012": [
+          "2",
+          "-8",
+          "49/2"
+        ],
+        "y_lambda_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "y_dchi_eps012": [
+          "0",
+          "0",
+          "0"
+        ],
+        "chi_free_q0": "0.6732568963702135514535637",
+        "chi_atom_q0": "-0.6768766834329379788625017",
+        "dchi_q0": "1.350133579803151530316065",
+        "y_lambda_q0": "0.0",
+        "y_dchi_q0": "0.0"
+      }
+    ],
+    "plancherel_covariance_k1_to_20": [
+      {
+        "k": 1,
+        "num_partitions": 1,
+        "k_factorial": "1",
+        "sum_f2": "1",
+        "sum_f2_omega3": "0",
+        "sum_f3": "1",
+        "cov_k": "0",
+        "g1_exact_ratio": "0/1",
+        "g1_mpf": "0.0",
+        "gp0_mpf": "0.0",
+        "transfer_ratio_r": "1.0",
+        "remainder_over_main": "0.0",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 2,
+        "num_partitions": 2,
+        "k_factorial": "2",
+        "sum_f2": "2",
+        "sum_f2_omega3": "0",
+        "sum_f3": "2",
+        "cov_k": "0",
+        "g1_exact_ratio": "0/2",
+        "g1_mpf": "0.0",
+        "gp0_mpf": "0.0",
+        "transfer_ratio_r": "1.0",
+        "remainder_over_main": "0.0",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 3,
+        "num_partitions": 3,
+        "k_factorial": "6",
+        "sum_f2": "6",
+        "sum_f2_omega3": "0",
+        "sum_f3": "10",
+        "cov_k": "-4",
+        "g1_exact_ratio": "-4/10",
+        "g1_mpf": "-0.4",
+        "gp0_mpf": "-0.4620981203732968729448214",
+        "transfer_ratio_r": "0.8656170245333780444159548",
+        "remainder_over_main": "0.1343829754666219555840452",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 4,
+        "num_partitions": 5,
+        "k_factorial": "24",
+        "sum_f2": "24",
+        "sum_f2_omega3": "0",
+        "sum_f3": "64",
+        "cov_k": "-16",
+        "g1_exact_ratio": "-16/64",
+        "g1_mpf": "-0.25",
+        "gp0_mpf": "-0.4620981203732968729448214",
+        "transfer_ratio_r": "0.5410106403333612777599718",
+        "remainder_over_main": "0.4589893596666387222400282",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 5,
+        "num_partitions": 7,
+        "k_factorial": "120",
+        "sum_f2": "120",
+        "sum_f2_omega3": "0",
+        "sum_f3": "596",
+        "cov_k": "-320",
+        "g1_exact_ratio": "-320/596",
+        "g1_mpf": "-0.5369127516778523489932886",
+        "gp0_mpf": "-0.8340040392303131325553132",
+        "transfer_ratio_r": "0.6437771598484812789270224",
+        "remainder_over_main": "0.3562228401515187210729776",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 6,
+        "num_partitions": 11,
+        "k_factorial": "720",
+        "sum_f2": "720",
+        "sum_f2_omega3": "0",
+        "sum_f3": "8056",
+        "cov_k": "-10400",
+        "g1_exact_ratio": "-10400/8056",
+        "g1_mpf": "-1.290963257199602780536246",
+        "gp0_mpf": "-1.476486562636171232168794",
+        "transfer_ratio_r": "0.8743481247094260087789248",
+        "remainder_over_main": "0.1256518752905739912210752",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 7,
+        "num_partitions": 15,
+        "k_factorial": "5040",
+        "sum_f2": "5040",
+        "sum_f2_omega3": "0",
+        "sum_f3": "130432",
+        "cov_k": "-163520",
+        "g1_exact_ratio": "-163520/130432",
+        "g1_mpf": "-1.253680078508341511285574",
+        "gp0_mpf": "-1.812964392980756780910726",
+        "transfer_ratio_r": "0.691508384479147549717032",
+        "remainder_over_main": "0.308491615520852450282968",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 8,
+        "num_partitions": 22,
+        "k_factorial": "40320",
+        "sum_f2": "40320",
+        "sum_f2_omega3": "0",
+        "sum_f3": "2534960",
+        "cov_k": "-3224704",
+        "g1_exact_ratio": "-3224704/2534960",
+        "g1_mpf": "-1.272092656294379398491495",
+        "gp0_mpf": "-2.103972460514104628248954",
+        "transfer_ratio_r": "0.6046146896730502775798097",
+        "remainder_over_main": "0.3953853103269497224201903",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 9,
+        "num_partitions": 30,
+        "k_factorial": "362880",
+        "sum_f2": "362880",
+        "sum_f2_omega3": "0",
+        "sum_f3": "59822884",
+        "cov_k": "-106339296",
+        "g1_exact_ratio": "-106339296/59822884",
+        "g1_mpf": "-1.777568864784252126661095",
+        "gp0_mpf": "-2.704842700679175985886985",
+        "transfer_ratio_r": "0.6571801252390429828679265",
+        "remainder_over_main": "0.3428198747609570171320735",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 10,
+        "num_partitions": 42,
+        "k_factorial": "3628800",
+        "sum_f2": "3628800",
+        "sum_f2_omega3": "0",
+        "sum_f3": "1718480368",
+        "cov_k": "-4722309120",
+        "g1_exact_ratio": "-4722309120/1718480368",
+        "g1_mpf": "-2.747956396787885795620564",
+        "gp0_mpf": "-3.47945127053370752427504",
+        "transfer_ratio_r": "0.7897671739390047880923142",
+        "remainder_over_main": "0.2102328260609952119076858",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 11,
+        "num_partitions": 56,
+        "k_factorial": "39916800",
+        "sum_f2": "39916800",
+        "sum_f2_omega3": "0",
+        "sum_f3": "56754444440",
+        "cov_k": "-176931720240",
+        "g1_exact_ratio": "-176931720240/56754444440",
+        "g1_mpf": "-3.117495413545096451656853",
+        "gp0_mpf": "-4.137224482283493039139053",
+        "transfer_ratio_r": "0.7535233891452829839475212",
+        "remainder_over_main": "0.2464766108547170160524788",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 12,
+        "num_partitions": 77,
+        "k_factorial": "479001600",
+        "sum_f2": "479001600",
+        "sum_f2_omega3": "0",
+        "sum_f3": "2110577206816",
+        "cov_k": "-6632383721920",
+        "g1_exact_ratio": "-6632383721920/2110577206816",
+        "g1_mpf": "-3.142450179268997873237004",
+        "gp0_mpf": "-4.64807919418410324370835",
+        "transfer_ratio_r": "0.6760750081885395413164608",
+        "remainder_over_main": "0.3239249918114604586835392",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 13,
+        "num_partitions": 101,
+        "k_factorial": "6227020800",
+        "sum_f2": "6227020800",
+        "sum_f2_omega3": "0",
+        "sum_f3": "87981286785328",
+        "cov_k": "-289895599309888",
+        "g1_exact_ratio": "-289895599309888/87981286785328",
+        "g1_mpf": "-3.294968849651239506104643",
+        "gp0_mpf": "-5.205947901258621806795074",
+        "transfer_ratio_r": "0.6329239001517144809174728",
+        "remainder_over_main": "0.3670760998482855190825272",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 14,
+        "num_partitions": 135,
+        "k_factorial": "87178291200",
+        "sum_f2": "87178291200",
+        "sum_f2_omega3": "0",
+        "sum_f3": "4129351961475872",
+        "cov_k": "-16141386718690688",
+        "g1_exact_ratio": "-16141386718690688/4129351961475872",
+        "g1_mpf": "-3.908939433906136143406406",
+        "gp0_mpf": "-5.956448427526476837115333",
+        "transfer_ratio_r": "0.6562533834494046124210197",
+        "remainder_over_main": "0.3437466165505953875789803",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 15,
+        "num_partitions": 176,
+        "k_factorial": "1307674368000",
+        "sum_f2": "1307674368000",
+        "sum_f2_omega3": "0",
+        "sum_f3": "218382856010529472",
+        "cov_k": "-1085268262022846720",
+        "g1_exact_ratio": "-1085268262022846720/218382856010529472",
+        "g1_mpf": "-4.969567125592128908227838",
+        "gp0_mpf": "-6.856951863873536730755562",
+        "transfer_ratio_r": "0.7247487257092669888781608",
+        "remainder_over_main": "0.2752512742907330111218392",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 16,
+        "num_partitions": 231,
+        "k_factorial": "20922789888000",
+        "sum_f2": "20922789888000",
+        "sum_f2_omega3": "0",
+        "sum_f3": "12813477368159567200",
+        "cov_k": "-74275445806179161600",
+        "g1_exact_ratio": "-74275445806179161600/12813477368159567200",
+        "g1_mpf": "-5.796665781823403293332966",
+        "gp0_mpf": "-7.759178166793024615492159",
+        "transfer_ratio_r": "0.7470721327976987585615603",
+        "remainder_over_main": "0.2529278672023012414384397",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 17,
+        "num_partitions": 297,
+        "k_factorial": "355687428096000",
+        "sum_f2": "355687428096000",
+        "sum_f2_omega3": "0",
+        "sum_f3": "822337333595479929044",
+        "cov_k": "-5085047967453348598720",
+        "g1_exact_ratio": "-5085047967453348598720/822337333595479929044",
+        "g1_mpf": "-6.18365208499065905100648",
+        "gp0_mpf": "-8.565969967418840086767898",
+        "transfer_ratio_r": "0.7218858002666990134902795",
+        "remainder_over_main": "0.2781141997333009865097205",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 18,
+        "num_partitions": 385,
+        "k_factorial": "6402373705728000",
+        "sum_f2": "6402373705728000",
+        "sum_f2_omega3": "0",
+        "sum_f3": "57213666993723455063392",
+        "cov_k": "-361736351434661123807232",
+        "g1_exact_ratio": "-361736351434661123807232/57213666993723455063392",
+        "g1_mpf": "-6.32255141895283345327794",
+        "gp0_mpf": "-9.303712767597186705926344",
+        "transfer_ratio_r": "0.6795729379106487981982637",
+        "remainder_over_main": "0.3204270620893512018017363",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 19,
+        "num_partitions": 490,
+        "k_factorial": "121645100408832000",
+        "sum_f2": "121645100408832000",
+        "sum_f2_omega3": "0",
+        "sum_f3": "4305630141314873304140008",
+        "cov_k": "-28269337129449191268906192",
+        "g1_exact_ratio": "-28269337129449191268906192/4305630141314873304140008",
+        "g1_mpf": "-6.565667788830596110961098",
+        "gp0_mpf": "-10.07600306348803090522545",
+        "transfer_ratio_r": "0.6516143105019804606572852",
+        "remainder_over_main": "0.3483856894980195393427148",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      },
+      {
+        "k": 20,
+        "num_partitions": 627,
+        "k_factorial": "2432902008176640000",
+        "sum_f2": "2432902008176640000",
+        "sum_f2_omega3": "0",
+        "sum_f3": "350765912068457786334084992",
+        "cov_k": "-2521450802691510850122303360",
+        "g1_exact_ratio": "-2521450802691510850122303360/350765912068457786334084992",
+        "g1_mpf": "-7.188414597708707508361141",
+        "gp0_mpf": "-10.96813437539884755857866",
+        "transfer_ratio_r": "0.6553908214173667506078457",
+        "remainder_over_main": "0.3446091785826332493921543",
+        "kernel_ok": true,
+        "leg_a2_ok": true,
+        "leg_a3_ok": true
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

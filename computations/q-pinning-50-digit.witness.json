@@ -1,13 +1,13 @@
 {
   "computation": "q-pinning-50-digit",
   "description": "Substrate parameter q\u2080 pinned to 50 decimal digits via mpmath.  READ THE THREE anchor_* ROLE FIELDS BELOW BEFORE USING THIS: the word \"anchor\" does three different jobs in this witness and they do NOT all say the same thing.  This producer is listed under ideal_muon in q0_anchor_manifest.json, so when run under its own name q_parameter rebinds q_at to return the MUON literal and the Newton solve described below never executes -- derived_50_digit.q is the muon value.  The m_p/m_e route is what DEFINES the quantity, not what ran.  Internal arithmetic is exact to 50 digits; physical anchoring is bounded by the propagated CODATA relative uncertainty \u2248 8.30e-13 (830 ppQ) from the 0.017 ppb m_p/m_e ratio (see physical_anchoring_bound).  m_\u03bc/m_e is recorded only as a 9.5\u03c3 cross-check prediction.  Recorded 50-digit outputs: q, q^{-1}, \u210f_q\u00b2, \u210f_q, H_A, [2]_q, z_markov, s_skein; plus quantum integers/factorials and n=3 Plancherel weights.  \u03be(q\u2080) via Bring-curve \u03bb is NOT yet recorded \u2014 the current placeholder has been disabled; port lambda_bring_q0.py to 50 digits and re-emit.",
-  "timestamp": "2026-08-28T20:47:21.415667+00:00",
+  "timestamp": "2026-11-19T07:42:36.071333+00:00",
   "precision_decimal_digits": 70,
   "calibration_inputs": {
     "Vol_4_1_str": "2.029883212819307250042405108549040571883378615060599584034978213553195",
     "Vol_4_1_source": "SnapPy 3.3.2 verified hyperbolic structure",
     "anchor": "m_p/m_e",
-    "anchor_role": "DERIVATION ROUTE \u2014 the identity that defines q0. NOT the layer emitted: under the ideal_muon manifest entry this run returns the muon literal and this solve does not execute. For the emitted layer read q0Anchor (muon).",
+    "anchor_role": "DERIVATION ROUTE \u2014 the identity that defines q0. NOT the layer emitted: under the ideal_muon manifest entry this solve does not execute and q0 is DERIVED live from q_muon_at() over constants.MASS_RATIO_MU_E_STR (CODATA 2022). It is not read back out of this witness \u2014 that self-certifying read was removed by fca08de7d2. For the emitted layer read q0Anchor (muon).",
     "m_p_over_e_str": "1836.152673426",
     "m_p_over_e_err": "3.2e-08",
     "m_p_over_e_source": "CODATA 2022 (0.017 ppb)",
@@ -20,11 +20,15 @@
     "hbar_q_sq": "0.009817188527722425437750202432517666656054200594570201864112973133249281",
     "hbar_q": "0.09908172650757769994900513212191813328007160819686755672969350570705254",
     "q": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "q_proton": "1.1099785827513808075916690956107688798744991218736",
+    "q_two_term_plain": "1.1099785951508859990875652035986826212141034805412",
     "q_inv": "0.9009182734924223000509948678780818667199283918031324432703064942929475",
     "H_A": "0.2090603221503167466308002615019198859801371692258791137037392757061475",
     "two_q": "2.010896869135161346732789997258083619419993952832144000244352264292042",
     "z_markov": "0.6126880506382724152208889276461106648319646313607796792710889099112901",
-    "s_skein": "0.1043880698890507637533688678906164851810398386820984411494235381737513"
+    "rho_q": "101.8621570907122691108896438447050836031958361166554263948947597612529",
+    "s_skein": "0.1043880698890507637533688678906164851810398386820984411494235381737513",
+    "Vol_4_1": "2.029883212819307250042405108549040571883378615060599584034978213553195"
   },
   "quantum_integers": {
     "[1]_q": "1.0",
@@ -64,14 +68,14 @@
     "muon_cross_check_relative_uncertainty": "0.000000001223353827169450140082479862729952591564232159513537329583408446995427",
     "comment": "Internal arithmetic is at 50 digits.  The framework's DIMENSIONLESS predictions (ratios, equality of computed quantities) can be checked at 50-digit precision.  q\u2080 is anchored on m_p/m_e (the most precise ratio, 0.017 ppb); the propagated bound \u03c3(q\u2080)/q\u2080 \u2248 8.30e-13 (830 ppQ) improves one-for-one as CODATA improves m_p/m_e \u2014 it is not a framework ceiling.  The muon-anchor bound (~1.22e-9) is shown for comparison and is ~429\u00d7 looser; m_\u03bc/m_e is now a 9.5\u03c3 prediction."
   },
-  "scriptHash": "58f994b46a01",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-  "commitSha": "c3bb19806dc879a984f8f87becd4d586c4099d38",
+  "scriptFile": "q_pinning_50_digit.py",
+  "scriptHash": "65ad78bb59c0",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
   "engine": "mpmath",
-  "computedAt": "2026-08-28T20:47:21.480123+00:00",
+  "computedAt": "2026-11-19T07:42:36.145688+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.4.1",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "muon",
-  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
-  "scriptFile": "q_pinning_50_digit.py"
+  "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

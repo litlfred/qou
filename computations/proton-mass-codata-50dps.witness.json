@@ -1,25 +1,25 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-13T12:47:23.149773+00:00",
-  "commitSha": "3d7d7a89f6e0e727629379b1e98548dc5175e795",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T07:43:56.146250+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
   "assertions": [
     {
       "name": "m_p_within_10_ppm_canonical",
-      "computed": "2.8517701e-6",
+      "computed": "2.8517875e-6",
       "expected": "0",
       "passed": true,
-      "tolerance": 10.0,
+      "tolerance": "10.0",
       "unit": "ppm",
-      "source": "muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e) (canonical_mass facade identity at 50 dps)"
+      "source": "muon-anchored Hecke energy m_p = 2\u00b7(m_\u03bc\u00b7F_Bor \u2212 6\u00b7m_e) (canonical_mass facade identity at 50 dps)"
     },
     {
       "name": "m_p_within_1_ppb_target",
-      "computed": "0.0000000000028517700811806188823893853252759011891819820387429",
+      "computed": "0.0000000000028517875211288858512709942541554941966446339590976",
       "expected": "0",
       "passed": true,
-      "tolerance": "1e-09",
-      "source": "1 ppb target via the canonical identity. NOTE: q₀ and m_p inform the same H¹ datum, so this is a calibration-consistency cross-check, not an independent 1-ppb prediction (AGENTS.md §q₀ anchor convention)."
+      "tolerance": "0.000000001",
+      "source": "1 ppb target via the canonical identity. NOTE: q\u2080 and m_p inform the same H\u00b9 datum, so this is a calibration-consistency cross-check, not an independent 1-ppb prediction (AGENTS.md \u00a7q\u2080 anchor convention)."
     },
     {
       "name": "m_p_pred_MeV_finite",
@@ -29,11 +29,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "proton-mass-codata-50dps",
   "scriptFile": "build_proton_mass_50dps_chain.py",
-  "scriptHash": "a3fbd5d64c52",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptHash": "0ca6fbeea4cc",
+  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,14 +41,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585",
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -56,24 +57,24 @@
     ],
     "reproduce": "python3 -u computations/build_proton_mass_50dps_chain.py"
   },
-  "description": "Cross-pipeline m_p prediction vs CODATA. Headline m_p is the canonical muon-anchored Hecke energy read from m-p-substrate-identity-50dps.witness.json at 50 dps (λ_A excised 2026-06-24; the Borromean VolDensity paths survive only as audit columns). The CODATA residual is a calibration-consistency cross-check per the q₀ anchor convention, since q₀ and m_p inform the same H¹ datum.",
+  "description": "Cross-pipeline m_p prediction vs CODATA. Headline m_p is the canonical muon-anchored Hecke energy read from m-p-substrate-identity-50dps.witness.json at 50 dps (\u03bb_A excised 2026-06-24; the Borromean VolDensity paths survive only as audit columns). The CODATA residual is a calibration-consistency cross-check per the q\u2080 anchor convention, since q\u2080 and m_p inform the same H\u00b9 datum.",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "M_E_MEV_CODATA": "0.51099895069",
     "target_precision_ppb": "1.0",
     "conjectural_derivation": false,
-    "mass_route": "canonical muon-anchored Hecke energy (canonical_mass identity; λ_A excised 2026-06-24)"
+    "mass_route": "canonical muon-anchored Hecke energy (canonical_mass identity; \u03bb_A excised 2026-06-24)"
   },
   "data": {
-    "m_p_pred_MeV": "938.2720894273242637273567",
+    "m_p_pred_MeV": "938.27208942732424736394",
     "m_p_borromean_lambdaA_excised_fit_MeV": "966.04982446659753565797793103937409734667618179461",
     "m_p_borromean_falsified_fit_MeV": "938.27756089381825781274824352639602431506059548428",
     "m_p_codata_MeV": "938.27208943",
-    "rel_diff": "0.0000000000028517700811806188823893853252759011891819820387429",
-    "rel_diff_ppb": "0.00285177008118",
+    "rel_diff": "0.0000000000028517875211288858512709942541554941966446339590976",
+    "rel_diff_ppb": "0.00285178752113",
     "target_ppb": "1.0",
-    "gap_orders_of_magnitude_to_1ppb": "-2.54489",
+    "gap_orders_of_magnitude_to_1ppb": "-2.54488",
     "upstream_witness_hashes": [
       {
         "path": "option-b-proton-mass-full-chain.witness.json",
@@ -85,11 +86,11 @@
       },
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "7d21ea048a3b37cdd38d10efad748eaa52be5bb8e89d287e3016723dd2f65645",
-        "size_bytes": 5892,
-        "commitSha": "766a531446726071965fd29785f076e1780bc036",
-        "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
-        "computedAt": "2026-08-29T11:06:01.894087+00:00"
+        "sha256": "b1ca46c2f55f3bc2718a147f34914fbaa0109d9c12157eac2777d132111d9899",
+        "size_bytes": 10332,
+        "commitSha": "2dbd0b5cde411a3d35c971f05af3cd21549e56a4",
+        "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
+        "computedAt": "2026-11-18T21:28:32.729499+00:00"
       }
     ],
     "reference_blocks": [
@@ -99,7 +100,7 @@
     "lean_uniqueness_ref": {
       "nucleus": "proton",
       "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },

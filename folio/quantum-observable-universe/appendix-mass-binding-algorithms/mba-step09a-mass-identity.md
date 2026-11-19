@@ -82,16 +82,25 @@ at 50 dps.*
 ### Python API entry point
 
 ```python
-from canonical_mass import proton_neutron_mass_mev
+from canonical_mass import (
+    proton_neutron_mass_mev,
+    nucleon_mass_mev,
+    proton_qed_self_energy_borromean_mev,
+    np_qed_splitting_borromean_conn_mev,
+    neutron_mass_two_term_mev,
+    gpmt_dmod_111,
+    gpmt_dmod_211,
+    gpmt_dmod_1111,
+    gpmt_three_row_cumulants,
+)
 
 m_p_MeV, m_n_MeV = proton_neutron_mass_mev()
+m_n_2term_MeV = neutron_mass_two_term_mev()
 ```
 
-*`computations/canonical_mass.py` is the single entry point: it
-prefers the producer witness and falls back to the raw
-identity above (no $R_{\mathrm{s5bb}}$ dressing — the fallback matches
-the raw pin). Producer:
-[`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py).*
+*`computations/canonical_mass.py` is the single production facade. `proton_neutron_mass_mev()` and `nucleon_mass_mev(species)` read directly from the git-tracked 50-dps witness [`m-p-substrate-identity-50dps.witness.json`](../../../computations/m-p-substrate-identity-50dps.witness.json) produced by [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py); there is **no inline formula fallback** (a missing witness raises `FileNotFoundError` rather than substituting an unverified value). The facade also exposes:*
+- *the connected fourth-order Borromean $V^3 = (\sigma_1\sigma_2^{-1})^3$ Two-Term QED helpers `proton_qed_self_energy_borromean_mev` ($M_p^{\mathrm{QED,conn}} = +{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector1_proton_self_energy_and_mup_tension.candidates.derived_borromean_V3_plain.M_p_QED_keV | precision: 6 }}\;\mathrm{keV}$, closing the $+211.2\;\mathrm{ppb}$ $\mu$–$p$ anchor tension to $+{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector1_proton_self_energy_and_mup_tension.candidates.derived_borromean_V3_plain.m_mu_err_ppb | precision: 3 }}\;\mathrm{ppb}$), `np_qed_splitting_borromean_conn_mev` ($\Delta m_{\mathrm{QED}}^{\mathrm{conn}} = {{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector2_np_and_qbeta_two_term_splitting.Delta_m_QED_conn_plain_keV | precision: 6 }}\;\mathrm{keV}$), and `neutron_mass_two_term_mev` ($m_n^{\mathrm{2\text{-}term}} = {{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector2_np_and_qbeta_two_term_splitting.substrate_identity_neutron_mass.m_n_2term_plain_MeV | precision: 10 }}\;\mathrm{MeV}$, $+{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector2_np_and_qbeta_two_term_splitting.substrate_identity_neutron_mass.m_n_2term_plain_err_ppb | precision: 4 }}\;\mathrm{ppb}$ vs.\ CODATA 2022), backed by [`two-term-qed-isotope-and-nucleon-compute.witness.json`](../../../computations/two-term-qed-isotope-and-nucleon-compute.witness.json); and*
+- *the Convention-D Geer–Patureau-Mirand–Turaev (GPMT) modified-dimension cumulant helpers `gpmt_dmod_111` (${{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector3_light_isotopes_and_gpmt_cumulants.gpmt_modified_dimensions_and_cumulants_at_q0.dMod111 | precision: 6 }}$), `gpmt_dmod_211` (${{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector3_light_isotopes_and_gpmt_cumulants.gpmt_modified_dimensions_and_cumulants_at_q0.dMod211 | precision: 6 }}$), `gpmt_dmod_1111` ($+{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector3_light_isotopes_and_gpmt_cumulants.gpmt_modified_dimensions_and_cumulants_at_q0.dMod1111 | precision: 6 }}$), and `gpmt_three_row_cumulants`, which feed the 3D tetrahedral $\alpha$-simplex coordination functional (`QOU.Nuclear.AlphaSimplexCoordinationDerivation`).*
 
 ### Witness contract
 

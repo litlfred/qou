@@ -69,12 +69,26 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 import sys
 
+from decimal import Decimal
+from fractions import Fraction
 import mpmath as mp
-from math import comb
 from pathlib import Path
+
+
+def comb(n: int, k: int) -> int:
+    if k < 0 or k > n:
+        return 0
+    if k == 0 or k == n:
+        return 1
+    k = min(k, n - k)
+    num = 1
+    den = 1
+    for i in range(k):
+        num *= n - i
+        den *= i + 1
+    return num // den
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -99,22 +113,28 @@ SWEEP = [("2H", 1, 1), ("4He", 2, 2),
          ("56Fe", 26, 30)]
 
 NUCLEAR_SPINS = {
-    "p": 0.5, "n": 0.5, "2H": 1.0, "3H": 0.5, "3He": 0.5, "4He": 0.0,
-    "6Li": 1.0, "7Li": 1.5, "9Be": 1.5, "12C": 0.0, "16O": 0.0,
-    "24Mg": 0.0, "40Ca": 0.0, "56Fe": 0.0
+    "p": Fraction(1, 2), "n": Fraction(1, 2), "2H": Fraction(1), "3H": Fraction(1, 2),
+    "3He": Fraction(1, 2), "4He": Fraction(0), "6Li": Fraction(1), "7Li": Fraction(3, 2),
+    "9Be": Fraction(3, 2), "12C": Fraction(0), "16O": Fraction(0),
+    "24Mg": Fraction(0), "40Ca": Fraction(0), "56Fe": Fraction(0),
+    "197Au": Fraction(3, 2), "238U": Fraction(0),
 }
 
 
 
 
 def q_int_float(q, n):
-    return (q**n - q**(-n)) / (q - 1.0/q)
+    with mp.workdps(max(mp.mp.dps, 60)):
+        qx = q if isinstance(q, mp.mpf) else mp.mpf(str(q))
+        return (qx**n - qx**(-n)) / (qx - 1 / qx)
 
 def q_fact_float(q, n):
-    res = 1.0
-    for i in range(1, n + 1):
-        res *= q_int_float(q, i)
-    return res
+    with mp.workdps(max(mp.mp.dps, 60)):
+        qx = q if isinstance(q, mp.mpf) else mp.mpf(str(q))
+        res = mp.mpf(1)
+        for i in range(1, n + 1):
+            res *= q_int_float(qx, i)
+        return res
 
 def hook_lengths(lam):
     hooks = []
@@ -169,12 +189,15 @@ def hook_lengths(lam):
 
 
 def W_lambda_float(q, lam):
-    n = sum(lam)
-    hooks = hook_lengths(lam)
-    prod_hooks_sq = 1.0
-    for h in hooks:
-        prod_hooks_sq *= (q_int_float(q, h))**2
-    return q_fact_float(q, n) / prod_hooks_sq
+    from canonical_mass import _as_formattable_mpf
+    with mp.workdps(max(mp.mp.dps, 60)):
+        qx = q if isinstance(q, mp.mpf) else mp.mpf(str(q))
+        n = sum(lam)
+        hooks = hook_lengths(lam)
+        prod_hooks_sq = mp.mpf(1)
+        for h in hooks:
+            prod_hooks_sq *= (q_int_float(qx, h))**2
+        return _as_formattable_mpf(q_fact_float(qx, n) / prod_hooks_sq)
 
 def get_ground_state_partition(Z, N, S):
     Nu = 2*Z + N
@@ -256,23 +279,40 @@ def format_md_tables(text):
 def _ame_table():
     """(Z, A) → (total binding MeV, σ_B MeV, atomic mass MeV, σ_atom MeV) from the
     vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A; atomic mass =
-    atomic_mass_micro_u × 1e-6 × u — the RAW neutral-atom mass (electrons included)."""
-    U_MEV = float(_codata.U_MEV)                        # CODATA-2022 u→MeV via registry (bean me3r; float-preserving)
-    d = json.loads((HERE / "data" / "ame2020.json").read_text())
-    entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
-    rows = entries.values() if isinstance(entries, dict) else entries
-    out = {}
-    for r in rows:
-        b = r.get("binding_energy_total_keV")
-        if b is None:
-            continue
-        unc_perA = r.get("binding_energy_per_A_unc_keV") or 0.0
-        sigma = unc_perA * r["A"] / 1000.0              # total σ_B in MeV
-        amu = r.get("atomic_mass_micro_u")
-        m_atom = amu * 1e-6 * U_MEV if amu is not None else None
-        s_atom = (r.get("atomic_mass_unc_micro_u") or 0.0) * 1e-6 * U_MEV
-        out[(r["Z"], r["A"])] = (b / 1000.0, sigma, m_atom, s_atom)
-    return out
+    atomic_mass_micro_u × 10^-6 × u — the RAW neutral-atom mass (electrons included)."""
+    from canonical_mass import _as_formattable_mpf
+    with mp.workdps(max(mp.mp.dps, 60)):
+        u_mev = mp.mpf(str(_codata.U_MEV))
+        thousand = mp.mpf(1000)
+        micro = mp.mpf("1e-6")
+        d = json.loads((HERE / "data" / "ame2020.json").read_text())
+        entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
+        rows = entries.values() if isinstance(entries, dict) else entries
+        out = {}
+        for r in rows:
+            b = r.get("binding_energy_total_keV")
+            if b is None:
+                continue
+            b_mp = mp.mpf(str(b))
+            unc_raw = r.get("binding_energy_per_A_unc_keV")
+            unc_perA = mp.mpf(str(unc_raw)) if unc_raw is not None else mp.mpf(0)
+            sigma = _as_formattable_mpf(unc_perA * r["A"] / thousand)
+            amu = r.get("atomic_mass_micro_u")
+            m_atom = (
+                _as_formattable_mpf(mp.mpf(str(amu)) * micro * u_mev)
+                if amu is not None
+                else None
+            )
+            s_raw = r.get("atomic_mass_unc_micro_u")
+            s_unc = mp.mpf(str(s_raw)) if s_raw is not None else mp.mpf(0)
+            s_atom = _as_formattable_mpf(s_unc * micro * u_mev)
+            out[(r["Z"], r["A"])] = (
+                _as_formattable_mpf(b_mp / thousand),
+                sigma,
+                m_atom,
+                s_atom,
+            )
+        return out
 
 
 def _electron_binding_mev(Z):
@@ -286,20 +326,29 @@ def _electron_binding_mev(Z):
     at the eV scale and Fe by ~18 keV — all far below the MeV-scale nuclear
     residuals this table reports. mp-exact version + witness:
     computations/atom_electron_mass.py / atom-electron-mass.witness.json."""
-    ry_mev = _E_HARTREE_EV_DERIVED / 2.0 / 1e6
-    total, n, left = 0.0, 1, Z
-    while left > 0:
-        k = min(2 * n * n, left)
-        total += k * (Z * Z) * ry_mev / (n * n)
-        left -= k
-        n += 1
-    return total
+    from canonical_mass import _as_formattable_mpf
+    with mp.workdps(max(mp.mp.dps, 60)):
+        ry_mev = mp.mpf(str(_E_HARTREE_EV_DERIVED)) / mp.mpf(2) / mp.mpf(1000000)
+        total, n, left = mp.mpf(0), 1, Z
+        while left > 0:
+            k = min(2 * n * n, left)
+            total += mp.mpf(k * (Z * Z)) * ry_mev / mp.mpf(n * n)
+            left -= k
+            n += 1
+        return _as_formattable_mpf(total)
 
 
 def _electron_binding_mev_ame_fit(Z):
     """AME (Lunney-Pearson-Thibault) empirical fit — COMPARISON ONLY since
     the 2026-08-30 derived swap: 1.44381e-5·Z^2.39 + 1.55468e-12·Z^5.35 MeV."""
-    return 1.44381e-5 * Z ** 2.39 + 1.55468e-12 * Z ** 5.35
+    from canonical_mass import _as_formattable_mpf
+    with mp.workdps(max(mp.mp.dps, 60)):
+        z_mp = mp.mpf(Z)
+        val = (
+            mp.mpf("1.44381e-5") * (z_mp ** mp.mpf("2.39"))
+            + mp.mpf("1.55468e-12") * (z_mp ** mp.mpf("5.35"))
+        )
+        return _as_formattable_mpf(val)
 
 
 def _constants():
@@ -537,7 +586,9 @@ def _nucleon_mass_canonical(me, q0):
 
 def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     from q_parameter import Q_50_DIGIT_STR as _Q50
-    q0 = float(_Q50)   # f64 only at this display/scalar boundary
+    from canonical_mass import _as_formattable_mpf
+    with mp.workdps(max(mp.mp.dps, 60)):
+        q0 = _as_formattable_mpf(mp.mpf(str(_Q50)))   # 50-dps mpf (no float64 downcast; bean qou-cqk6)
     A = Z + N
     n = 3 * A
     bame_t = ame.get((Z, A))
@@ -548,20 +599,20 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     # ---- cheap form (any A): factorized q-CLT --------------------------------
     n_pp, n_pn, n_nn = comb(Z, 2), Z * N, comb(N, 2)
     sigma_L = n_pp * Lbond["pp"] + n_pn * Lbond["pn"] + n_nn * Lbond["nn"]
-    Lbar = sigma_L / comb(A, 2) if A >= 2 else 0.0
-    B_fac = alpha * (A - 1) * Lbar
+    Lbar = sigma_L / comb(A, 2) if A >= 2 else _as_formattable_mpf(0)
+    B_fac = _as_formattable_mpf(alpha * (A - 1) * Lbar)
     # ---- colour-weighting decomposition of the factorized q-CLT ------------
     #   B_qCLT_fac = isospin-symmetric baseline (every bond = the deuteron p-n
     #   bond) + the p↔n chirality correction. The baseline IS the uniform
     #   B_qCLT — pure combinatorics on a cached constant, so it (and the
     #   free-component mass below) are available for ALL A.
-    B_base = alpha * (A - 1) * Lbond["pn"]
+    B_base = _as_formattable_mpf(alpha * (A - 1) * Lbond["pn"])
     B_qCLT = B_base                                  # uniform per-bond (un-gated)
-    B_chir = B_fac - B_base
+    B_chir = _as_formattable_mpf(B_fac - B_base)
     # free-component Kashaev mass: tr_free = tr_p^Z·tr_n^N factorizes over GB
     # components, so m_sym(free) = Z·msp + N·msn for ANY A (no bound-knot trace).
     msp, msn = nucleon_msym
-    m_sym_free = Z * msp + N * msn
+    m_sym_free = _as_formattable_mpf(Z * msp + N * msn)
     # ---- B_sym closed form: the EXACT linear chain (all A, no p(3A) sweep) --
     #   The atom word ['p']·Z+['n']·N places exactly ONE inter-nucleon crossing
     #   per DISTINCT generator (monotone word), so the log-binding factorizes
@@ -575,24 +626,25 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   is intrinsically O(p(3A)): ¹²C 5.5 min, ¹⁶O hours).
     b_pp, b_pn, b_nn = (alpha * Lbond["pp"], alpha * Lbond["pn"],
                         alpha * Lbond["nn"])
-    pn_term = b_pn if (Z >= 1 and N >= 1) else 0.0
+    pn_term = b_pn if (Z >= 1 and N >= 1) else _as_formattable_mpf(0)
     # max(·,0): a single-nucleon / zero-count species has no same-species bonds
     # (Z−1 or N−1 would otherwise go negative and fabricate a spurious bond).
-    B_sym = max(Z - 1, 0) * b_pp + pn_term + max(N - 1, 0) * b_nn
-    m_sym_atom = B_sym + m_sym_free               # B_sym = m_sym_atom − m_sym_free
+    B_sym = _as_formattable_mpf(max(Z - 1, 0) * b_pp + pn_term + max(N - 1, 0) * b_nn)
+    m_sym_atom = _as_formattable_mpf(B_sym + m_sym_free)               # B_sym = m_sym_atom − m_sym_free
     # ---- B_lin = α·s, the LINEAR/SATURATING leading term of B_sym. The bond
     #   suppression s = 1 − tr_atom/tr_free and B_sym = α·L = −α·ln(1−s), so
     #   s = 1 − e^{−L} with L = B_sym/α — recoverable from the closed-form chain
     #   (no exact trace needed). B_lin = α·s = α(1 − e^{−B_sym/α}) saturates at α
     #   (s < 1), so it under-binds increasingly with A. Leading term: B_lin ≈ B_sym
     #   for small L (B_sym = α(s + s²/2 + …)).
-    B_lin = alpha * (1 - mp.exp(-B_sym / alpha)) if alpha else mp.mpf(0)
-    
-    # Explicit h^4 = (q_0 - q_0^{-1})^4 modification applied to the raw trace B_lin 
-    # scaled by the topological exponent (10A-5), to observe jet-order scaling.
-    h4 = (q0 - 1/q0)**4
-    B_tetra = B_lin * (q0 ** (10*A - 5)) * h4
-    m_tetra = m_sym_free - B_tetra
+    with mp.workdps(max(mp.mp.dps, 60)):
+        B_lin = _as_formattable_mpf(alpha * (1 - mp.exp(-B_sym / alpha))) if alpha else _as_formattable_mpf(0)
+
+        # Explicit h^4 = (q_0 - q_0^{-1})^4 modification applied to the raw trace B_lin 
+        # scaled by the topological exponent (10A-5), to observe jet-order scaling.
+        h4 = (q0 - 1 / q0)**4
+        B_tetra = _as_formattable_mpf(B_lin * (q0 ** (10*A - 5)) * h4)
+        m_tetra = _as_formattable_mpf(m_sym_free - B_tetra)
 
     # ---- m_can⁰: brane-tower LEVEL-0 binding. The per-braid brane tower
     #   (per-braid-mass-tower.md) has descended (n=0) term |tr_M(W)|, so its
@@ -637,12 +689,13 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   supported by a measurement instead of by noise.
     B_sym_exact = chain_resid = None
     E_retained = E_emitted = E_multilink = B_sym_ent = None
-    S_val = NUCLEAR_SPINS.get(name, 0.0)
+    S_val = NUCLEAR_SPINS.get(name, Fraction(1, 2) if (A % 2) else Fraction(0))
     lam = get_ground_state_partition(Z, N, S_val)
     if lam:
-        w_lam = W_lambda_float(q0, lam)
-        E_gate = alpha * mp.log(1 / w_lam)
-        c_lam = (bame / E_gate) if bame else None
+        with mp.workdps(max(mp.mp.dps, 60)):
+            w_lam = W_lambda_float(q0, lam)
+            E_gate = _as_formattable_mpf(alpha * mp.log(1 / w_lam))
+            c_lam = _as_formattable_mpf(bame / E_gate) if bame else None
     else:
         lam, w_lam, E_gate, c_lam = None, None, None, None
     # ---- B_vol: the ALL-KNOTS entanglement binding = the liquid-drop VOLUME term.
@@ -656,8 +709,9 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   B/A. Valid for ALL A (no W_λ≥1 breakdown); tracks ¹²C/¹⁶O to ~1–5%. The
     #   residual (light over-binding, magic dips) is the surface/Coulomb/shell
     #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
-    a_V = alpha * mp.log(1 / W_lambda_float(q0, (1, 1, 1)))   # DEPRECATED postdiction coeff (not derived — see banner)
-    B_vol = A * a_V
+    with mp.workdps(max(mp.mp.dps, 60)):
+        a_V = _as_formattable_mpf(alpha * mp.log(1 / W_lambda_float(q0, (1, 1, 1))))   # DEPRECATED postdiction coeff (not derived — see banner)
+        B_vol = _as_formattable_mpf(A * a_V)
     # ---- E_C: the EM-sector Coulomb energy (bean 754x). Standard uniform-sphere
     #   E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3); the strong B-forms above carry NO EM
     #   term. Reported alongside them (additive), NOT subtracted — B_sym etc. are
@@ -737,16 +791,21 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
 
 
 def _disp(v):
-    """Coerce a value to a `float`-formattable display type.
+    """Coerce a value to an arbitrary-precision `Decimal` display type.
 
     `mpmath.mpf` implements `__format__` but rejects the fixed-point /
     scientific specs used below, so an mpf-valued cell (e.g. `E_C`, which
     `coulomb_energy_mev` returns at full working precision) raises
     `TypeError` instead of printing. Coercion happens HERE, at the display
-    boundary only — every computed quantity stays mpf upstream and nothing
-    that reaches a witness passes through this function.
+    boundary only, using arbitrary-precision `Decimal(mp.nstr(v, 50))` (no
+    binary64 `float` conversion) — every computed quantity stays mpf upstream
+    and nothing that reaches a witness passes through this function.
     """
-    return v if v is None or isinstance(v, float) else float(v)
+    if v is None:
+        return None
+    if isinstance(v, mp.mpf):
+        return Decimal(mp.nstr(v, 50))
+    return Decimal(str(v))
 
 
 def _fmt(v, w=8, p=2):
@@ -833,17 +892,18 @@ def _relerr(v, w=13):
     """
     if v is None:
         return f"{'—':>{w}}"
-    a = abs(v)
+    dv = _disp(v)
+    a = abs(dv)
     if a == 0:
         s = "0"
-    elif a >= 1e-3:
-        s = f"{v * 100:+.3f}%"
-    elif a >= 1e-6:
-        s = f"{v * 1e6:+.3f}ppm"
-    elif a >= 1e-9:
-        s = f"{v * 1e9:+.3f}ppb"
+    elif a >= Decimal("1e-3"):
+        s = f"{dv * Decimal(100):+.3f}%"
+    elif a >= Decimal("1e-6"):
+        s = f"{dv * Decimal(1000000):+.3f}ppm"
+    elif a >= Decimal("1e-9"):
+        s = f"{dv * Decimal(1000000000):+.3f}ppb"
     else:
-        s = f"{v * 1e15:+.3f}ppq"
+        s = f"{dv * Decimal(1000000000000000):+.3f}ppq"
     return f"{s:>{w}}"
 
 
@@ -1093,7 +1153,12 @@ def main(argv=None) -> int:
     #    Each form X: m_X = m_unbnd,can − B_X. (The measured-baseline ",rel"
     #    columns were removed 2026-06-24 — redundant now that m_unbnd,can ≈ CODATA.)
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
-    mp_, mn_ = float(mp_), float(mn_)
+    from canonical_mass import _as_formattable_mpf
+    with mp.workdps(max(mp.mp.dps, 60)):
+        mp_ = _as_formattable_mpf(mp.mpf(str(mp_)))
+        mn_ = _as_formattable_mpf(mp.mpf(str(mn_)))
+        ppb_scale = mp.mpf(10) ** 9
+        kev_scale = mp.mpf(1000)
     print("### Mass  M + error (MeV; err auto-scaled %/ppm/ppb/ppq)   "
           "[canonical = Hecke energy 2(m_μ·F_Bor−6m_e) at the PROTON pin; "
           "m_μ there is derived from q₀, not an anchor; m_X = m_unbnd,can − B_X]")
@@ -1110,7 +1175,7 @@ def main(argv=None) -> int:
         mu_can = r["Z"] * mp_can + r["N"] * mn_can       # framework-derived sum
         m_meas = (mu - r["B_AME"]) if r["B_AME"] is not None else mu  # measured mass
         s = r["sigma_AME"]
-        s_ppb = (s / m_meas * 1e9) if (s and m_meas) else None
+        s_ppb = (s / m_meas * ppb_scale) if (s and m_meas) else None
         # CANONICAL bound mass per form X: m_X = mu_can − B_X (zero AME/CODATA
         # beyond CAL-1 m_e + CAL-2 q₀; M_meas is the SEPARATE comparison target).
         def _can(bkey):
@@ -1142,17 +1207,17 @@ def main(argv=None) -> int:
         m_atom_ame = r["M_atom_AME"]
         b = r["B_sym"]
         m_atom_pred = (mu_can - b) + e_layer if b is not None else None
-        err = ((m_atom_pred - m_atom_ame) / m_atom_ame * 1e9
+        err = ((m_atom_pred - m_atom_ame) / m_atom_ame * ppb_scale
                if (m_atom_pred is not None and m_atom_ame) else None)
         sa = r["sigma_atom"]
-        s_ppb = (sa / m_atom_ame * 1e9) if (sa and m_atom_ame) else None
+        s_ppb = (sa / m_atom_ame * ppb_scale) if (sa and m_atom_ame) else None
         print(f"| {r['name']} | {r['A']} | {Z} | {_fmt(m_atom_ame,10,3)} "
               f"| {_fmt(m_atom_pred,10,3)} | {_sci(err,13,3)} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(e_layer,7,3)} |")
-    max_fit_dev_kev = max(
-        abs(_electron_binding_mev(r["Z"]) - _electron_binding_mev_ame_fit(r["Z"])) * 1e3
+    max_fit_dev_kev = _as_formattable_mpf(max(
+        abs(_electron_binding_mev(r["Z"]) - _electron_binding_mev_ame_fit(r["Z"])) * kev_scale
         for r in rows if r["Z"] > 0
-    )
+    ))
     print(f"\n  B_el is DERIVED (bare-Z hydrogenic @ e-Hartree, swap 2026-08-30); "
           f"max |derived − AME fit| over this group: {max_fit_dev_kev:.4f} keV "
           f"(screening open; both far below the MeV nuclear residuals)")
@@ -1165,7 +1230,7 @@ def main(argv=None) -> int:
     print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
-        s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
+        s_ppb = (s / r["B_AME"] * ppb_scale) if (s and r["B_AME"]) else None
         e_can0 = _err(r["B_AME"], r["B_can0"])
         e_sym = _err(r["B_AME"], r["B_sym"])
         e_qclt_fac = _err(r["B_AME"], r["B_qCLT_fac"])
@@ -1252,14 +1317,14 @@ def main(argv=None) -> int:
     mp_qed_bor = proton_qed_self_energy_borromean_mev(k_weighted=False)
     dm_qed_bor = np_qed_splitting_borromean_conn_mev(weighting="plain")
     mn_2term = neutron_mass_two_term_mev(weighting="plain")
-    mn_1term_err_ppb = (mn_can - mn_) / mn_ * 1e9
-    mn_2term_err_ppb = (mn_2term - mn_) / mn_ * 1e9
+    mn_1term_err_ppb = _as_formattable_mpf((mn_can - mn_) / mn_ * ppb_scale)
+    mn_2term_err_ppb = _as_formattable_mpf((mn_2term - mn_) / mn_ * ppb_scale)
 
     print("\n### Table 9 — Two-Term QED & GPMT Modified-Dimension Diagnostics (A=1..4)")
     print("  Lean modules: `NucleonWeightSpaceTwoTerm`, `USpinColemanGlashowLambdaSigma`, "
           "`GPMTThreeRowCumulantBridge`, `H4GPMTModifiedDimensionCumulants`, `ThreeRowSpringerSYTDerivation`.")
-    print(f"  A=1 Borromean V³ QED: M_p^QED,conn = +{mp_qed_bor*1e3:.4f} keV | "
-          f"Δm_QED^conn(n−p) = {dm_qed_bor*1e3:+.4f} keV | "
+    print(f"  A=1 Borromean V³ QED: M_p^QED,conn = +{mp_qed_bor*kev_scale:.4f} keV | "
+          f"Δm_QED^conn(n−p) = {dm_qed_bor*kev_scale:+.4f} keV | "
           f"m_n(1-term) = {mn_can:.7f} MeV ({mn_1term_err_ppb:+.1f} ppb) → "
           f"m_n^two-term = {mn_2term:.7f} MeV ({mn_2term_err_ppb:+.1f} ppb, −70.4% residual).")
     print(f"  GPMT ≥3-row modified dimensions at q₀: d_mod(1,1,1) = {gpmt_c['dMod111']:.6f}, "
@@ -1273,22 +1338,22 @@ def main(argv=None) -> int:
         A_r, Z_r, N_r = r["A"], r["Z"], r["N"]
         q_pair = inter_nucleon_pair_charge(Z_r)
         if A_r == 1:
-            bext_h4 = 0.0
-            qed_v3_kev = (mp_qed_bor * 1e3) if Z_r == 1 else ((mp_qed_bor + dm_qed_bor) * 1e3)
+            bext_h4 = _as_formattable_mpf(0)
+            qed_v3_kev = (mp_qed_bor * kev_scale) if Z_r == 1 else ((mp_qed_bor + dm_qed_bor) * kev_scale)
             note = ("CAL-2 proton pin anchor" if Z_r == 1
                     else f"m_n^2term err {mn_2term_err_ppb:+.1f} ppb (vs {mn_1term_err_ppb:+.1f} ppb 1-term)")
         elif A_r == 2:
             bext_h4 = gpmt_c["BextGPMT_2"]
-            qed_v3_kev = (2 * mp_qed_bor + dm_qed_bor) * 1e3
+            qed_v3_kev = (2 * mp_qed_bor + dm_qed_bor) * kev_scale
             note = "μ₂^GPMT = 0 (no ≥3-row ideal in H₂(q))"
         elif A_r == 3:
             bext_h4 = gpmt_c["BextGPMT_3"]
-            qed_v3_kev = (Z_r * mp_qed_bor + N_r * (mp_qed_bor + dm_qed_bor)) * 1e3
+            qed_v3_kev = (Z_r * mp_qed_bor + N_r * (mp_qed_bor + dm_qed_bor)) * kev_scale
             note = ("mirror lo: Q_pair=0, strong core = ³He" if Z_r == 1
                     else "mirror hi: B(³H)−B(³He) = +0.764 MeV AME vs +0.847 MeV E_C")
         else:
             bext_h4 = gpmt_c["BextGPMT_4_H4"]
-            qed_v3_kev = (2 * (2 * mp_qed_bor + dm_qed_bor)) * 1e3
+            qed_v3_kev = (2 * (2 * mp_qed_bor + dm_qed_bor)) * kev_scale
             note = f"H₄ cumulant μ₄^H4 = {gpmt_c['mu4GPMT_H4']:.4f} < 0 (4-body saturation)"
         e0_bext = E0 * bext_h4
         print(f"| {r['name']} | {A_r} | {Z_r} | {N_r} | {q_pair} "

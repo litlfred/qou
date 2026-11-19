@@ -145,7 +145,10 @@ from pathlib import Path
 
 import mpmath as mp
 
+from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)
+
+set_compute_dps()
 
 _HERE = Path(__file__).resolve().parent
 _BETA_DECAY_WITNESS = _pb.witness_path("beta-decay-energy-scale.witness.json", _HERE)
@@ -160,41 +163,32 @@ _NET_COEFF_DPS = 30
 
 @lru_cache(maxsize=None)
 def _q_0() -> mp.mpf:
-    """Substrate parameter q_0 at 50-dps from the q-pinning witness.
+    """Substrate parameter q_0 at ≥50-dps from the canonical proton pin (`Q_50_DIGIT_STR`).
 
-    Pulled from `q-pinning-50-digit.witness.json:derived_50_digit.q`, which is
-    the **ideal / CAL-2 (muon) anchor** -- that field is what
-    `qou_substrate.witness._q0_value_for_anchor("muon")` returns, so this
-    module computes at the muon pin regardless of what `q_parameter` would
-    resolve for it.
-
-    CORRECTED 2026-08-24 (bean `qou-aj91`).  This docstring previously called
-    `q_parameter.Q_50_DIGIT_STR` a "legacy float64 fallback" that is
-    "identical to ~50 digits".  Both clauses are wrong, and the second one is
-    a false all-clear on a production module -- `derived_masses` predicts MASS
-    and BINDING observables, so "the two pins agree" is exactly the statement
-    that stops a reader from investigating.  Measured:
-
-        pin  (muon) : 1.1099785955573347198997632204...
-        q_parameter : 1.1099785827513808075916690956...
-        first differing digit : index 9
-        separation            : -1.1537118e-8  =  -11.5371 ppb
-
-    They agree to **9** digits, not ~50, and the separation *is* the mu-p
-    substrate tension.  Nor is `Q_50_DIGIT_STR` a legacy fallback: it is the
-    **experimental (proton) pin**, the standing default for all production
-    code since the 2026-08-07 owner directive.
-
-    The layer question -- whether these mass/binding quantities belong on the
-    proton pin -- is triaged in
-    `docs/audits/2026-08-24-mech5-producer-layer-triage.md` (bucket `E`) and
-    is NOT decided here; only the false equivalence is removed.  Changing the
-    read would move every number this module emits by ~11.54 ppb, which is
-    the `qou-1c4y` sweep.
+    Previously read `q-pinning-50-digit.witness.json:derived_50_digit.q`, which
+    was stamped on the ideal/muon anchor (11.54 ppb above the physical proton
+    pin). Now reads `q_parameter.Q_50_DIGIT_STR` directly at ≥50 dps so all
+    mass/binding observables in `derived_masses` evaluate on the canonical
+    proton pin by default.
     """
-    with _Q_PINNING_WITNESS.open() as fh:
-        d = json.load(fh)
-    return mp.mpf(d["derived_50_digit"]["q"])
+    from q_parameter import Q_50_DIGIT_STR
+    with mp.workdps(max(50, mp.mp.dps)):
+        return mp.mpf(Q_50_DIGIT_STR)
+
+
+@lru_cache(maxsize=None)
+def _q_2t(k_weighted: bool = False) -> mp.mpf:
+    """Consistent Two-Term Categorical Lagrangian Trace proton pin q_{2t} at ≥50 dps.
+
+    Solves M_p^{QCD}(q) + M_p^{QED,conn}(q) = m_e · (m_p/m_e)_CODATA via
+    `Q_TWO_TERM_50_DIGIT_STR` (`k_weighted=False`) or
+    `q_two_term_borromean_at(..., k_weighted=True)`.
+    """
+    from q_parameter import Q_TWO_TERM_50_DIGIT_STR, q_two_term_borromean_at
+    with mp.workdps(max(50, mp.mp.dps)):
+        if k_weighted:
+            return q_two_term_borromean_at(max(50, mp.mp.dps), k_weighted=True)
+        return mp.mpf(Q_TWO_TERM_50_DIGIT_STR)
 
 
 @lru_cache(maxsize=None)
@@ -607,6 +601,106 @@ def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "plain") -> mp.mpf
         return q_n2 + borromean_v3_connected_qed_diff_mev(q=q, weighting=weighting)
 
 
+def alpha_em_inv_bring_schwinger(q=None, loop_variant: str = "hHecke_sq") -> mp.mpf:
+    """Form-B Bring–Schwinger cubic inverse fine-structure constant 1/α_EM(q)
+    (Corrected Photon, Lean `QOU.Archimedean.BringSchwingerNormalizationDerivation`):
+        1/α = T_EM(q) + α · H(q) · (1 − c_loop(q) · α),
+        T_EM(q) = q · [9]_q · [10]_q + 2 / (3π),
+        H(q)    = [2]_q / (8π),
+    where `c_loop(q)` defaults to the Kazhdan–Lusztig bar-Hermitian skein
+    contraction `h² = (q − q⁻¹)²` (`loop_variant='hHecke_sq'`, giving
+    1/α_EM(q₀) = 137.03599912695091242017270049642000673995567550574,
+    −0.365 ppb vs CODATA 2022).
+    """
+    with mp.workdps(max(60, mp.mp.dps + 10)):
+        q0 = _resolve_q(q)
+        h = q0 - 1 / q0
+        q2 = q0 + 1 / q0
+        q9 = (q0 ** 9 - q0 ** (-9)) / h
+        q10 = (q0 ** 10 - q0 ** (-10)) / h
+        t_em_const = q0 * q9 * q10 + mp.mpf(2) / (3 * mp.pi)
+        h_norm = q2 / (8 * mp.pi)
+        v = loop_variant.lower()
+        if v in ("hhecke_sq", "c_hhecke_sq", "form_b", "bring_schwinger"):
+            c_loop = h ** 2
+        elif v in ("c0_quadratic", "c0", "quadratic", "form_a"):
+            c_loop = mp.mpf(0)
+        elif v in ("hbarq_sq", "c_hbarq_sq"):
+            c_loop = (1 - 1 / q0) ** 2
+        elif v in ("deltahabirosq", "c_deltahabirosq"):
+            c_loop = q2 - 2
+        else:
+            raise ValueError(
+                f"alpha_em_inv_bring_schwinger: unknown loop_variant {loop_variant!r}"
+            )
+
+        def _cubic(a):
+            return (
+                -c_loop * h_norm * (a ** 3)
+                + h_norm * (a ** 2)
+                + t_em_const * a
+                - mp.mpf(1)
+            )
+
+        a_root = mp.findroot(_cubic, mp.mpf(1) / t_em_const)
+        ainv = mp.mpf(1) / a_root
+    return +ainv
+
+
+def alpha_em_bring_schwinger(q=None) -> mp.mpf:
+    """Form-B Bring–Schwinger cubic fine-structure constant α_EM(q)."""
+    with mp.workdps(max(50, mp.mp.dps)):
+        return 1 / alpha_em_inv_bring_schwinger(q=q)
+
+
+def alpha_em_inv_cs_derived(q=None) -> mp.mpf:
+    """Chern–Simons / Bring zero-mode inverse fine-structure constant 1/α_EM^{CS}(q)
+    via `meson_em_sinh_closed_form._alpha_em_inv_derived(q)` (≈ 137.035935094).
+    """
+    from meson_em_sinh_closed_form import _alpha_em_inv_derived
+    with mp.workdps(max(50, mp.mp.dps)):
+        q0 = _resolve_q(q)
+        return _alpha_em_inv_derived(q0)
+
+
+def two_term_lagrangian_proton_mass_mev(q=None, k_weighted: bool = False) -> mp.mpf:
+    """Two-Term Categorical Lagrangian Trace proton mass M_p^{2t}(q) = M_p^{QCD}(q) + M_p^{QED,conn}(q) (MeV).
+
+    Implements the unified two-term categorical Lagrangian trace
+    (`QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` and
+    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm`):
+        M_p^{QCD}(q)      = m_e · (2 · (Vol(4₁) / ℏ_q²) · F_Bor(q) − 12)
+        M_p^{QED,conn}(q) = m_e · w(q) · |tr_conn(p, V³)|
+        M_p^{2t}(q)       = M_p^{QCD}(q) + M_p^{QED,conn}(q).
+    When `q is None`, defaults to the consistent two-term Borromean pin `_q_2t(k_weighted)`.
+    """
+    from q_parameter import vol_4_1_at
+    with mp.workdps(max(50, mp.mp.dps)):
+        qx = _q_2t(k_weighted=k_weighted) if q is None else _resolve_q(q)
+        vol = vol_4_1_at(max(50, mp.mp.dps))
+        h = qx - 1 / qx
+        hbar2 = (1 - 1 / qx) ** 2
+        tr_m = abs((4 + h ** 2 - 3 * (h ** 4) - (h ** 6)) / (h ** 2 + 4))
+        qf3 = (qx ** 2 + 1 + qx ** (-2)) * (qx + 1 / qx)
+        mp_qcd = M_E_MEV * (2 * vol / hbar2 * (tr_m * qf3 / (qx ** 3)) - 12)
+        mp_qed = borromean_v3_connected_qed_proton_mev(q=qx, k_weighted=k_weighted)
+        return mp_qcd + mp_qed
+
+
+def two_term_lagrangian_neutron_mass_mev(q=None, weighting: str = "plain") -> mp.mpf:
+    """Two-Term Categorical Lagrangian Trace neutron mass
+    M_n^{2t}(q) = M_p^{2t}(q) + Q_β^{N2,2t}(q) + m_e (MeV).
+
+    When `q is None`, evaluates consistently at the two-term Borromean pin `_q_2t(...)`.
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        k_w = weighting != "plain"
+        qx = _q_2t(k_weighted=k_w) if q is None else _resolve_q(q)
+        mp_2t = two_term_lagrangian_proton_mass_mev(q=qx, k_weighted=k_w)
+        qb_2t = q_beta_kashiwara_n2_two_term_mev(q=qx, weighting=weighting)
+        return mp_2t + qb_2t + M_E_MEV
+
+
 # ── Q_β predictions (FULL framework chain) ──────────────────────
 
 @lru_cache(maxsize=None)
@@ -913,6 +1007,12 @@ def derivation_summary() -> dict:
             "Q_beta_kashiwara_n2_two_term_KnKp_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="KnKp")),
             "Q_beta_kashiwara_n2_two_term_Kp3_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="Kp3")),
             "Q_beta_kashiwara_n2_two_term_q_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="q")),
+            "q_two_term_borromean_plain": str(_q_2t(k_weighted=False)),
+            "alpha_em_inv_bring_schwinger_q0": str(alpha_em_inv_bring_schwinger()),
+            "alpha_em_inv_bring_schwinger_q2t": str(alpha_em_inv_bring_schwinger(q=_q_2t(k_weighted=False))),
+            "alpha_em_inv_cs_derived_q0": str(alpha_em_inv_cs_derived()),
+            "m_p_two_term_lagrangian_q2t_MeV": str(two_term_lagrangian_proton_mass_mev()),
+            "m_n_two_term_lagrangian_q2t_MeV": str(two_term_lagrangian_neutron_mass_mev()),
         },
         "stubbed_predictions": [
             "proton_mass_mev", "neutron_mass_mev",
@@ -942,6 +1042,10 @@ __all__ = [
     "borromean_v3_e21_strong_qcd_diff_mev",
     "borromean_v3_connected_qed_proton_mev",
     "borromean_v3_connected_qed_diff_mev",
+    "alpha_em_inv_bring_schwinger", "alpha_em_bring_schwinger",
+    "alpha_em_inv_cs_derived",
+    "two_term_lagrangian_proton_mass_mev",
+    "two_term_lagrangian_neutron_mass_mev",
     "q_beta_predicted_mev", "q_beta_observable_mev", "q_beta_virtual_mev",
     "q_beta_kashiwara_n2_mev", "q_beta_kashiwara_n2_two_term_mev",
     "q_beta_toroidal_mev",

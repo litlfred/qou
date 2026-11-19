@@ -41,17 +41,20 @@ $G_{\mathrm{CS}}$ is built from $\pi$, the torus-knot data $(m_i, n_i)$ and the 
 
 The tower is geometric with ratio $\delta_{\mathrm{CS}}\kappa \approx 2.7 \times 10^{-3}$, so it sums in closed form: there is no truncation order, and the closed form is exact to all orders.
 
-| Formula                            | $\alpha^{-1}$   | Discrepancy             |
-| ---------------------------------- | --------------- | ----------------------- |
-| Bare: $q \cdot [9]_q \cdot [10]_q$ | $136.8232089$   | $-1553\;\mathrm{ppm}$   |
-| CS-corrected (exact resummation)   | $137.0359351$   | $-0.468\;\mathrm{ppm}$  |
-| CODATA 2022                        | $137.035999177$ | —                       |
+| Formula                            | $\alpha^{-1}$   | Discrepancy vs.\ CODATA 2022 |
+| ---------------------------------- | --------------- | ---------------------------- |
+| Bare: $q \cdot [9]_q \cdot [10]_q$ | ${{ qou.computations.meson-em-sinh-closed-form.data.cs_tower_order_sweep.0.alpha_em_inv | precision: 10 }}$ | $-1553\;\mathrm{ppm}$ |
+| Additive Bring zero-mode ($+2/(3\pi)$) | ${{ qou.computations.alpha-em-form-ladder.data.ladder.proton.additive | precision: 10 }}$ | ${{ qou.computations.alpha-em-form-ladder.data.ladder.proton.additive_resid_ppb | precision: 4 }}\;\mathrm{ppb}$ ($-4.26\;\mathrm{ppm}$) |
+| CS-corrected (exact resummation)   | ${{ qou.computations.meson-em-sinh-closed-form.data.alpha_em_inv_derived_exact | precision: 10 }}$ | $-0.468\;\mathrm{ppm}$ ($-468\;\mathrm{ppb}$) |
+| Form A Bring quadratic ($+\alpha H$, $H = [2]_q/(8\pi)$) | ${{ qou.computations.alpha-em-schwinger-ladder.data.ladder_proton.form_A_alpha_inv | precision: 13 }}$ | $+{{ qou.computations.alpha-em-schwinger-ladder.data.ladder_proton.form_A_no_schwinger_ppb | precision: 4 }}\;\mathrm{ppb}$ (${{ qou.computations.alpha-em-schwinger-ladder.data.ladder_proton.form_A_sigma | precision: 3 }}\,\sigma_\alpha$) |
+| Form B Bring–Schwinger cubic ($+\alpha H(1 - h^2\alpha)$) | ${{ qou.computations.alpha-em-schwinger-ladder.data.ladder_proton.form_B_alpha_inv | precision: 13 }}$ | ${{ qou.computations.alpha-em-schwinger-ladder.data.ladder_proton.form_B_schwinger_ppb | precision: 4 }}\;\mathrm{ppb}$ (${{ qou.computations.alpha-em-schwinger-ladder.data.ladder_proton.form_B_sigma | precision: 3 }}\,\sigma_\alpha$) |
+| CODATA 2022                        | ${{ qou.computations.alpha-em-schwinger-ladder.data.codata_reference.alpha_inv | precision: 12 }}$ | — |
 
-The residual $-0.468\;\mathrm{ppm}$ survives exact resummation and is therefore structural: no further orders remain to be added.
+The multiplicative Chern–Simons residual $-468\;\mathrm{ppb}$ survives exact geometric resummation, whereas the additive Bring–Schwinger fixed-point ladder ([Bring zero-mode](#prop:em-coupling-bring-zero-mode)) reaches $+{{ qou.computations.alpha-em-schwinger-ladder.data.ladder_proton.form_A_no_schwinger_ppb | precision: 4 }}\;\mathrm{ppb}$ at quadratic order (Form A) and ${{ qou.computations.alpha-em-schwinger-ladder.data.ladder_proton.form_B_schwinger_ppb | precision: 4 }}\;\mathrm{ppb}$ at cubic order (Form B).
 
 **Sensitivity to $q$.**
 
-The prediction $\alpha^{-1}(q) = [9]_q [10]_q / q^{-1}$ depends steeply on $q$. Matching the CODATA central value requires $q \approx 1.11023 \pm 0.00002$. We extract $q$ independently from two other observables:
+The prediction $\alpha^{-1}(q) = [9]_q [10]_q / q^{-1}$ depends steeply on $q$. Matching the CODATA central value on the bare tree term alone requires $q \approx 1.11023 \pm 0.00002$. The substrate parameter $q$ is extracted independently from two other observables:
 
 * **Neutron-to-proton mass ratio**: $q \approx q_0$ (via the Skein mass formula).
 * **Tritium half-life**: $q \approx 1.109$--$1.112$ (via the transfer matrix calculation).

@@ -401,7 +401,7 @@ def build() -> DerivationChain:
     return DerivationChain(
         target="m_p (MeV)",
         target_value=mp.nstr(M_P_PRED_MEV, 50),
-        target_tolerance=0.01,
+        target_tolerance=0.01,  # float64-ok: DerivationChain schema tolerance field
         content_block="prop:full-pole-structure-mass-trace",
         description=(
             "Mass-formula assembly chain for the proton at 50 dps.  "
@@ -439,7 +439,7 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     w.set_content_block("prop:full-pole-structure-mass-trace")
     # Witness values stored as 50-dps decimal strings (mp.nstr) so
     # consumers retain full precision per the no-float64 directive.
-    w.add_parameter("q_0", Q_0)
+    w.add_parameter("q_0", Q_50_DIGIT_STR)
     w.add_parameter("M_E_MEV_CODATA", mp.nstr(M_E_MEV_CODATA, 12))
     w.add_parameter("target_precision_ppb", "1.0")
     w.add_parameter("conjectural_derivation", CONJECTURAL_M_P_DERIVATION)
@@ -456,7 +456,7 @@ def emit_codata_witness(chain: DerivationChain) -> None:
         "m_p_within_10_ppm_canonical",
         computed=mp.nstr(GAP_REL * mp.mpf("1e6"), 8),
         expected="0",
-        tolerance=10.0,
+        tolerance=mp.mpf("10"),
         unit="ppm",
         source=(
             "muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e) "
@@ -467,7 +467,7 @@ def emit_codata_witness(chain: DerivationChain) -> None:
         "m_p_within_1_ppb_target",
         computed=mp.nstr(GAP_REL, 50),
         expected="0",
-        tolerance=1e-9,
+        tolerance=mp.mpf("1e-9"),
         source=(
             "1 ppb target via the canonical identity. NOTE: q₀ and m_p "
             "inform the same H¹ datum, so this is a calibration-"

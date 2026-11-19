@@ -95,7 +95,9 @@ R_P = mpf(MASS_RATIO_P_E_STR)
 from qou_substrate.constants import (  # noqa: E402
     MASS_RATIO_MU_E_STR as M_MU_OVER_E_STR,
     MASS_RATIO_MU_E_ERR as _M_MU_OVER_E_ERR,
+    Q_50_DIGIT_STR as Q_PROTON_50_DIGIT_STR,
 )
+from q_parameter import Q_TWO_TERM_50_DIGIT_STR  # noqa: E402
 M_MU_OVER_E_ERR_STR = repr(_M_MU_OVER_E_ERR)
 M_MU_OVER_E = mpf(M_MU_OVER_E_STR)
 
@@ -109,6 +111,7 @@ Q         = q_at(mp.dps)
 Q_INV     = mpf(1) / Q
 HBAR_Q    = mpf(1) - Q_INV
 HBAR_Q_SQ = HBAR_Q ** 2
+RHO_Q     = mpf(1) / HBAR_Q_SQ
 H_A       = Q - Q_INV
 TWO_Q     = Q + Q_INV       # [2]_q
 # Markov / Skein parameters
@@ -282,14 +285,18 @@ if __name__ == "__main__":
     print(f"  σ(m_p/m_e)               = {R_P_ERR}")
     print(f"  σ(q₀) [absolute]         = {Q_ERR}")
     print(f"  σ(q₀)/q₀ [rel]           = {Q_ERR / Q}")
-    rel_prec = float(Q_ERR / Q)
-    ppq = rel_prec / 1e-15
-    print(f"  → CODATA-bounded relative precision: ~{rel_prec:.2e} ({ppq:.0f} ppQ)")
+    rel_prec_mp = Q_ERR / Q
+    rel_prec_str = f"{mp.nstr(rel_prec_mp * mpf('1e13'), 3, strip_zeros=False)}e-13"
+    ppq_int = int(mp.nint(rel_prec_mp * mpf("1e15")))
+    r_p_ppb_str = mp.nstr((R_P_ERR / R_P) * mpf("1e9"), 2, strip_zeros=False)
+    print(f"  → CODATA-bounded relative precision: ~{rel_prec_str} ({ppq_int} ppQ)")
     # muon cross-check (now a 9.5σ prediction, not the anchor)
     DQ_DR_MU = Q ** 2 * HBAR_Q / (mpf(2) * M_MU_OVER_E)
     Q_ERR_MU = DQ_DR_MU * mpf(M_MU_OVER_E_ERR_STR)
+    rel_mu_str = f"{mp.nstr((Q_ERR_MU / Q) * mpf('1e9'), 3, strip_zeros=False)}e-09"
+    looser_int = int(mp.nint(Q_ERR_MU / Q_ERR))
     print(f"  (muon-anchor cross-check would give σ(q₀)/q₀ ≈ "
-          f"{float(Q_ERR_MU / Q):.2e} — {float(Q_ERR_MU / Q_ERR):.0f}× looser)")
+          f"{rel_mu_str} — {looser_int}× looser)")
 
     # ξ(q₀) is DISABLED pending verified Bring-curve derivation at
     # 50-digit mpmath precision; a 15-digit path exists in
@@ -320,9 +327,9 @@ if __name__ == "__main__":
             "m_p/m_e route is what DEFINES the quantity, not what ran.  "
             "Internal arithmetic is exact to 50 digits; "
             "physical anchoring is bounded by the propagated CODATA "
-            f"relative uncertainty ≈ {float(Q_ERR / Q):.2e} "
-            f"({float(Q_ERR / Q) * 1e15:.0f} ppQ) from the "
-            f"{float(mpf(str(MASS_RATIO_P_E_ERR)) / R_P) * 1e9:.3f} ppb "
+            f"relative uncertainty ≈ {rel_prec_str} "
+            f"({ppq_int} ppQ) from the "
+            f"{r_p_ppb_str} ppb "
             "m_p/m_e ratio (see physical_anchoring_bound).  "
             "m_μ/m_e is recorded only as a 9.5σ cross-check prediction.  "
             "Recorded 50-digit outputs: q, q^{-1}, ℏ_q², ℏ_q, H_A, "
@@ -354,21 +361,25 @@ if __name__ == "__main__":
             ),
             "m_p_over_e_str": MASS_RATIO_P_E_STR,
             "m_p_over_e_err": str(MASS_RATIO_P_E_ERR),
-            "m_p_over_e_source": f"CODATA 2022 ({float(mpf(str(MASS_RATIO_P_E_ERR)) / R_P) * 1e9:.3f} ppb)",
+            "m_p_over_e_source": f"CODATA 2022 ({r_p_ppb_str} ppb)",
             "m_mu_over_e_str": M_MU_OVER_E_STR,
             "m_mu_over_e_err": "0.0000046",
             "m_mu_over_e_role": "9.5σ cross-check PREDICTION (not the anchor)",
             "m_mu_over_e_source": "CODATA 2022",
         },
         "derived_50_digit": {
-            "hbar_q_sq": str(HBAR_Q_SQ),
-            "hbar_q":    str(HBAR_Q),
-            "q":         str(Q),
-            "q_inv":     str(Q_INV),
-            "H_A":       str(H_A),
-            "two_q":     str(TWO_Q),
-            "z_markov":  str(Z_MARKOV),
-            "s_skein":   str(S_SKEIN),
+            "hbar_q_sq":        str(HBAR_Q_SQ),
+            "hbar_q":           str(HBAR_Q),
+            "q":                str(Q),
+            "q_proton":         Q_PROTON_50_DIGIT_STR,
+            "q_two_term_plain": Q_TWO_TERM_50_DIGIT_STR,
+            "q_inv":            str(Q_INV),
+            "H_A":              str(H_A),
+            "two_q":            str(TWO_Q),
+            "z_markov":         str(Z_MARKOV),
+            "rho_q":            str(RHO_Q),
+            "s_skein":          str(S_SKEIN),
+            "Vol_4_1":          VOL_4_1_STR,
         },
         "quantum_integers": {
             f"[{n}]_q": str(q_int(n)) for n in range(1, 10)
@@ -388,19 +399,19 @@ if __name__ == "__main__":
             "codata_relative_uncertainty": str(Q_ERR / Q),
             "sensitivity_S_dlnR_dlnq": str(S_PROTON),
             "sigma_q0_absolute": str(Q_ERR),
-            "ppq": f"{float(Q_ERR / Q) / 1e-15:.0f}",
+            "ppq": f"{ppq_int}",
             "limited_by":
-                f"CODATA m_p/m_e ({float(R_P_ERR / R_P) * 1e9:.3f} ppb) "
-                f"at σ(q)/q ≈ {float(Q_ERR/Q):.2e}",
+                f"CODATA m_p/m_e ({r_p_ppb_str} ppb) "
+                f"at σ(q)/q ≈ {rel_prec_str}",
             "muon_cross_check_relative_uncertainty": str(Q_ERR_MU / Q),
             "comment": (
                 "Internal arithmetic is at 50 digits.  The framework's "
                 "DIMENSIONLESS predictions (ratios, equality of "
                 "computed quantities) can be checked at 50-digit "
                 "precision.  q₀ is anchored on m_p/m_e (the most precise "
-                f"ratio, {float(R_P_ERR / R_P) * 1e9:.3f} ppb); the "
+                f"ratio, {r_p_ppb_str} ppb); the "
                 "propagated bound σ(q₀)/q₀ ≈ "
-                f"{float(Q_ERR / Q):.2e} ({float(Q_ERR / Q) * 1e15:.0f} ppQ) "
+                f"{rel_prec_str} ({ppq_int} ppQ) "
                 "improves one-for-one as CODATA "
                 "improves m_p/m_e — it is not a framework ceiling.  The "
                 "muon-anchor bound (~1.22e-9) is shown for comparison "

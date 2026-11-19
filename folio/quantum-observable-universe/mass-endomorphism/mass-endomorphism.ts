@@ -217,6 +217,7 @@ export default chapter({
         "qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope",
         "qbeta-canonical-markov-weights-explicit-instance",
         "qbeta-canonical-markov-weights-explicit-instance-proof",
+        "qbeta-toroidal-harmonics-basis",
       ],
     }),
     section({

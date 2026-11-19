@@ -1,10 +1,10 @@
-This table evaluates the topological knot formulas ([knot formula table](#rem:knot-formula-table)) at the substrate parameter $q_0$. We derive $q_0$ from the muon--electron mass ratio ([Skein mass relation](#rem:skein-mass-relation)). We compare the results against CODATA 2022 recommended values and PDG 2024 averages. All masses are in MeV/$c^2$.
+This table evaluates the topological knot formulas ([knot formula table](#rem:knot-formula-table)) at the canonical proton-pinned substrate parameter $q_0 = {{ qou.computations.m-p-substrate-identity-50dps.q0Value | precision: 12 }}\ldots$ ([local substrate](#prop:local-substrate-q), [Skein mass relation](#rem:skein-mass-relation)). The predictions are compared against CODATA 2022 recommended values and PDG 2024 averages. All masses are in MeV/$c^2$.
 
-**Input parameters** (one free parameter):
+**Input parameters** (one dimensionless substrate parameter $q_0$ plus the CAL-1 scale $m_e$):
 
 $$
-  q = q_0, \quad
-  \hbar_q = 1 - q^{-1} = 0.09905, \quad
+  q = q_0 = {{ qou.computations.m-p-substrate-identity-50dps.q0Value | precision: 10 }}\ldots, \quad
+  \hbar_q = 1 - q^{-1} = {{ qou.computations.q-pinning-50-digit.derived_50_digit.hbar_q | precision: 6 }}, \quad
   \mathrm{Vol}(4_1) = {{ qou.computations.q-pinning-50-digit.calibration_inputs.Vol_4_1_str | precision: 6 }}.
 $$
 
@@ -14,43 +14,40 @@ $$
 
 See [Table 1](#tbl:mass-comparison-table-table1-data).
 
-The electron mass is an input. It fixes $\mu_{\mathfrak{u}}$ through the pair Skein mass. The muon mass prediction equals $\mathrm{Vol}(4_1)/\hbar_q^2$. This reproduces the CODATA value to six significant figures at $q = q_0$.
+The electron mass is the CAL-1 scale input. It fixes $\mu_{\mathfrak{u}}$ through the pair Skein mass. At the proton pin $q_0$, the one-term muon mass prediction $m_e\mathrm{Vol}(4_1)/\hbar_q^2 = {{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector1_proton_self_energy_and_mup_tension.m_mu_pred_1term_MeV | precision: 9 }}\;\mathrm{MeV}$ sits $+{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector1_proton_self_energy_and_mup_tension.m_mu_err_1term_ppb | precision: 4 }}\;\mathrm{ppb}$ above CODATA 2022, and subtracting the connected fourth-order Borromean $V^3$ proton QED self-energy $M_p^{\mathrm{QED,conn}} = +{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector1_proton_self_energy_and_mup_tension.candidates.derived_borromean_V3_plain.M_p_QED_keV | precision: 6 }}\;\mathrm{keV}$ brings the two-term muon prediction to ${{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector1_proton_self_energy_and_mup_tension.candidates.derived_borromean_V3_plain.m_mu_pred_MeV | precision: 9 }}\;\mathrm{MeV}$ ($+{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector1_proton_self_energy_and_mup_tension.candidates.derived_borromean_V3_plain.m_mu_err_ppb | precision: 3 }}\;\mathrm{ppb} = +0.36\,\sigma$).
 
 *Hadrons (from pair Skein masses).*
 
-The proton and neutron rows derive from the LO $\rho_K$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)). This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula does not yet extend to the nucleon scale. The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV under the ruled convention-D base, against CODATA $1.2933$ MeV).
+The leading-order $\rho_K^{\mathrm{LO}}$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)) cancels $|\mathrm{tr}_M|$ in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the constituent baseline to $Z m_p + N m_n$. In the production substrate-identity pipeline ([`m-p-substrate-identity-50dps.witness.json`](../../../computations/m-p-substrate-identity-50dps.witness.json) and [`two-term-qed-isotope-and-nucleon-compute.witness.json`](../../../computations/two-term-qed-isotope-and-nucleon-compute.witness.json)), $m_p = {{ qou.computations.m-p-substrate-identity-50dps.data.predictions.m_p_MeV | precision: 9 }}\;\mathrm{MeV}$ round-trips the proton pin while the neutron mass and $n$–$p$ splitting follow from the $\mathfrak{Q}_\beta$ chain without CODATA $m_n$ input.
 
 See [Table 2](#tbl:mass-comparison-table-table2-data).
 
-† **Tautological under the LO chain.** The proton, neutron, and $n$-$p$ split rows return the CODATA inputs because the LO formula collapses to $Z m_p + N m_n$ (no binding correction).
+† **Anchor and constituent conventions.** At the proton pin $q_0$, $m_p$ is the CAL-2 calibration anchor round-trip; $m_n$ and the $n$–$p$ split are parameter-free predictions from the Kashiwara $b^2$ + Two-Term QED Borromean $V^3$ chain.
 
-#### FULL $\mathfrak{Q}_\beta$ prediction (framework, no CODATA mass injection)
+#### FULL $\mathfrak{Q}_\beta$ and Two-Term QED $n$–$p$ splitting predictions (zero CODATA $m_n$ injection)
 
-Per [`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md), the framework predicts the $\beta$-decay Q-value using only CAL-1 ($m_e$) and CAL-2 ($q_0$):
+Using only CAL-1 ($m_e$) and CAL-2 ($q_0$), the framework evaluates the neutron $\beta$-decay $Q$-value and $n$–$p$ mass splitting across three parameter-free Convention-D levels ([`m-p-substrate-identity-50dps.witness.json`](../../../computations/m-p-substrate-identity-50dps.witness.json), [`two-term-qed-isotope-and-nucleon-compute.witness.json`](../../../computations/two-term-qed-isotope-and-nucleon-compute.witness.json)):
 
-$$
-\boxed{
-\mathfrak{Q}_\beta^{\text{pred}} = \mathfrak{Q}_\beta^{z_D} = \Bigl|\tfrac{h^2}{2} - h\,z_D\Bigr|\,\frac{m_e}{q_0(q_0-1)(1-\hbar_q^2)} \approx 0.4491 \text{ MeV}
-}
-$$
-
-with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$. The energy scale is the tower-summed $E_0$; the order-zero form $m_e/(q_0(q_0-1))$ gives $0.4447$ MeV. This is the ruled convention-D base: $\varepsilon$ is the Markov trace at $z_D$ (owner ruling 2026-09-08). It compares to the CODATA value of $0.7823$ MeV at $-42.59\%$ ($-333.2$ keV). The convention-D $c_k$ correction ladder that would act on this base is not yet derived, and the factor a cosine phase can supply is capped below $1$ ([cos-resummation](#prop:q-beta-cos-resummation)), so the miss is reported as it stands.
-
-The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV. This compares to the CODATA value of $1.2933$ MeV ($-26.11\%$ error, no CODATA $m_n - m_p$ input).
-
-*Retired Form A (historical cross-check only).* The earlier closed form $m_e\,|q_0^2 - 2q_0 - 1|\,(q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$, giving $m_n - m_p \approx 1.295$ MeV) evaluates $\varepsilon$ at $z = 1$, which is not an admissible Markov parameter under convention D. It is kept for comparison and is not the prediction. Witness: [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
+1. **One-term Kashiwara $b^2$ Convention-D chain:**
+   $$\mathfrak{Q}_\beta^{(1)} = {{ qou.computations.m-p-substrate-identity-50dps.data.predictions.Q_beta_MeV | precision: 7 }}\;\mathrm{MeV} \quad (+{{ qou.computations.m-p-substrate-identity-50dps.data.codata_comparison.Q_beta_residual_ppm | precision: 4 }}\;\mathrm{ppm}), \qquad m_n^{(1)} = {{ qou.computations.m-p-substrate-identity-50dps.data.predictions.m_n_MeV | precision: 9 }}\;\mathrm{MeV} \quad (+{{ qou.computations.m-p-substrate-identity-50dps.data.codata_comparison.m_n_residual_ppm | precision: 4 }}\;\mathrm{ppm}).$$
+2. **Two-Term QED connected Borromean $V^3 = (\sigma_1\sigma_2^{-1})^3$ chain:**
+   Adding the parameter-free electromagnetic splitting $\Delta m_{\mathrm{QED}}^{\mathrm{conn}} = {{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector2_np_and_qbeta_two_term_splitting.Delta_m_QED_conn_plain_keV | precision: 6 }}\;\mathrm{keV}$ ($-331.70\;\mathrm{eV}$ plain, or ${{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector2_np_and_qbeta_two_term_splitting.Delta_m_QED_conn_q_MeV | precision: 5 }}\;\mathrm{MeV} = -368.18\;\mathrm{eV}$ under Cartan $q_0$ weighting) reduces the neutron residual by $70.4\%$:
+   $$\mathfrak{Q}_\beta^{\mathrm{2\text{-}term}} = {{ qou.computations.m-p-substrate-identity-50dps.data.two_term_borromean_qed_diagnostics.Q_beta_two_term_MeV | precision: 7 }}\;\mathrm{MeV} \quad (+{{ qou.computations.m-p-substrate-identity-50dps.data.two_term_borromean_qed_diagnostics.Q_beta_two_term_residual_ppm | precision: 4 }}\;\mathrm{ppm}), \qquad m_n^{\mathrm{2\text{-}term}} = {{ qou.computations.m-p-substrate-identity-50dps.data.two_term_borromean_qed_diagnostics.m_n_two_term_MeV | precision: 9 }}\;\mathrm{MeV} \quad (+{{ qou.computations.m-p-substrate-identity-50dps.data.two_term_borromean_qed_diagnostics.m_n_two_term_residual_ppb | precision: 4 }}\;\mathrm{ppb}\text{ plain},\; +{{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector2_np_and_qbeta_two_term_splitting.substrate_identity_neutron_mass.m_n_2term_q_err_ppb | precision: 4 }}\;\mathrm{ppb}\text{ Cartan }q_0).$$
+   With the mirror-projected Convention-D Wedderburn phase $\alpha_D^{\mathrm{proj}} \approx -0.051412$ ([`qbeta-wedderburn-phase-twoterm-pin.witness.json`](../../../computations/qbeta/qbeta-wedderburn-phase-twoterm-pin.witness.json)), the one-term $Q$-value reaches $0.782375\;\mathrm{MeV}$ ($+53.2\;\mathrm{ppm}$ vs.\ CODATA ${{ qou.computations.m-p-substrate-identity-50dps.data.codata_comparison.Q_beta_codata_MeV | precision: 7 }}\;\mathrm{MeV}$).
+3. **Un-dressed single-crossing base $\mathfrak{Q}_\beta^{z_D}$ ([`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md)):**
+   Evaluating the bare single-crossing Markov trace at $z_D = q_0^3/(q_0^2+1)$ without the Kashiwara $b^2$ ladder gives $\bigl|\tfrac{1}{2}h^2 - h z_D\bigr| E_0^{(\infty)} \approx 0.4491\;\mathrm{MeV}$ ($-42.59\%$) and Path-C $Q_\beta = {{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector2_np_and_qbeta_two_term_splitting.ruled_zD_qbeta_and_path_c_impact.qbeta_ruled_1term_MeV | precision: 6 }}\;\mathrm{MeV}$ ($\Delta m_{np} = {{ qou.computations.two-term-qed-isotope-and-nucleon-compute.data.sector2_np_and_qbeta_two_term_splitting.ruled_zD_qbeta_and_path_c_impact.Delta_pn_path_c_1term_MeV | precision: 6 }}\;\mathrm{MeV}$); the earlier $z = 1$ symbolic form (${{ qou.computations.q-beta-predicted.data.q_beta_prediction.Q_beta_pred_MeV | precision: 6 }}\;\mathrm{MeV}$, $+0.168\%$, [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json)) is retained as a historical cross-check only.
 
 *Light nuclei (from multi-body Skein).* 
 
-All rows below come from the LO $\rho_K$ assembly using CODATA $m_p, m_n$ inputs. The $\Delta$ column equals the CODATA binding energy by construction. The FULL multi-body unified knot mass formula at $H_{3A}$ remains intractable beyond $A = 1$. Binding-energy predictions require resolving the open $\Delta_\lambda$ research question (see [recomputed-low-isotope-mass-table.md:99](../mass-endomorphism/recomputed-low-isotope-mass-table.md)).
+All rows below come from the LO $\rho_K$ assembly using CODATA $m_p, m_n$ inputs. The $\Delta$ column equals the CODATA/AME2020 binding energy by construction. The FULL multi-body unified knot mass formula at $H_{3A}$ remains intractable beyond $A = 1$. Binding-energy predictions require resolving the open $\Delta_\lambda$ research question (see [recomputed-low-isotope-mass-table.md:99](../mass-endomorphism/recomputed-low-isotope-mass-table.md)).
 
 See [Table 3](#tbl:mass-comparison-table-table3-data).
 
 † **LO output is constituent sum only.** The full prediction (beyond the constituent sum) is not yet available. Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
 
-**Notes.** The muon--electron mass ratio fixes the substrate parameter $q$. Hadronic masses follow from the pair Skein formula ([terminal resolution](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. We evaluate the multi-body Skein polynomials up to ${}^4\mathrm{He}$. Polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) but remain unevaluated.
+**Notes.** The proton--electron mass ratio (CAL-2) fixes the production substrate parameter $q_0$. Hadronic masses follow from the pair Skein formula ([terminal resolution](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. The multi-body Skein polynomials are evaluated explicitly up to ${}^4\mathrm{He}$; polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) or via the 3D tetrahedral $\alpha$-simplex coordination reduction.
 
-**Sources and scope.** The proton and neutron entries use CODATA 2022 values directly. The nuclear entries use AME2020 binding energies. These entries recombine observed constants. The parameter $q$ predicts mass ratios ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), Q-values ($\Delta\mathrm{net} \times E_0$), and half-life ratios via $\log_q(ft)$ spectroscopy. The single external scaling ruler is $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ MeV (CODATA 2022 input). This ruler converts dimensionless $q$-ratios to physical MeV. 
+**Sources and scope.** The proton and neutron comparison entries use CODATA 2022 values directly. The nuclear entries use AME2020 binding energies. These entries recombine observed constants. The parameter $q$ predicts mass ratios ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), Q-values ($\Delta\mathrm{net} \times E_0$), and half-life ratios via $\log_q(ft)$ spectroscopy. The single external scaling ruler is $m_e = {{ qou.library.codata-2022.electron-mass-energy-equivalent-in-mev | precision: 6 }}\;\text{MeV}$ (CODATA 2022 input). This ruler converts dimensionless $q$-ratios to physical MeV. 
 
 *Isotope-level data (hecke-engine certificates, $A \leq 14$).*
 

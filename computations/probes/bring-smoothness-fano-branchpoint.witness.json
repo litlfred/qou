@@ -1,0 +1,215 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-19T07:36:44.462099+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+  "assertions": [
+    {
+      "name": "all_10_jacobian_minors_factor_as_6_vandermonde",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.bringJacobianMinor_eq_six_vandermonde"
+    },
+    {
+      "name": "two_value_power_sum_elimination_forces_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.all_zero_of_two_values"
+    },
+    {
+      "name": "sheet_collision_branch_point_has_7_nonzero_jacobian_minors",
+      "computed": "7",
+      "expected": "7",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.bring_transverse_in_P4"
+    },
+    {
+      "name": "gcd_bring_s5_and_fano_gl3f2_is_octahedral_24",
+      "computed": "24",
+      "expected": "24",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.bring_klein_s4_order_obstruction"
+    },
+    {
+      "name": "gl3f2_lagrangian_embeds_in_sp6f2_order_168",
+      "computed": "168",
+      "expected": "168",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.genus_three_mod2_homology_symplectic_bridge"
+    },
+    {
+      "name": "s5_transvection_embeds_in_sp6f2_order_120",
+      "computed": "120",
+      "expected": "120",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.genus_three_mod2_homology_symplectic_bridge"
+    },
+    {
+      "name": "fano_lines_split_3_local_plus_4_nonlocal",
+      "computed": "3+4",
+      "expected": "3+4",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.fano_lines_local_nonlocal_split"
+    },
+    {
+      "name": "colour_cubic_discriminant_has_6_distinct_branch_points",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.bring_trigonal_vs_hyperelliptic_ramification"
+    },
+    {
+      "name": "weierstrass_60_splits_into_10_transpositions_times_6_fixed_points",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.bring_weierstrass_transposition_quotient_six"
+    },
+    {
+      "name": "electroweak_torus_link_seifert_genus_sum_equals_minus_chi_bring",
+      "computed": "6",
+      "expected": "6",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.electroweak_torus_link_seifert_genus_sum_six"
+    },
+    {
+      "name": "simple_weierstrass_hurwitz_genus_bound_max_is_8",
+      "computed": "8",
+      "expected": "8",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lean BringVandermondeSmoothnessAndGenusThree.weierstrass_hurwitz_genus_bound_eight"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "bring-smoothness-fano-branchpoint",
+  "scriptFile": "bring_smoothness_fano_branchpoint_probe.py",
+  "scriptHash": "b9c795dab5f6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_smoothness_fano_branchpoint_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_smoothness_fano_branchpoint_probe.py"
+  },
+  "description": "Symbolic and 60-dps verification of Bring's curve Vandermonde smoothness and intrinsic quadratic resolution (qou-c46w), the genus-3 Fano/octonion GL(3,F2) and Bring S5 unification inside Sp(6,F2) on H_1(Sigma_3; F2) (qou-ys29), and the six-fold colour-cubic branch-point / Weierstrass / Seifert-genus bridge (qou-qhcr).",
+  "parameters": {
+    "dps": 60
+  },
+  "data": {
+    "qou_c46w_vandermonde_smoothness": {
+      "all_10_vandermonde_minors_match": true,
+      "minor_factorizations": {
+        "minor_012": "-6*(x0 - x1)*(x0 - x2)*(x1 - x2)",
+        "minor_013": "-6*(x0 - x1)*(x0 - x3)*(x1 - x3)",
+        "minor_014": "-6*(x0 - x1)*(x0 - x4)*(x1 - x4)",
+        "minor_023": "-6*(x0 - x2)*(x0 - x3)*(x2 - x3)",
+        "minor_024": "-6*(x0 - x2)*(x0 - x4)*(x2 - x4)",
+        "minor_034": "-6*(x0 - x3)*(x0 - x4)*(x3 - x4)",
+        "minor_123": "-6*(x1 - x2)*(x1 - x3)*(x2 - x3)",
+        "minor_124": "-6*(x1 - x2)*(x1 - x4)*(x2 - x4)",
+        "minor_134": "-6*(x1 - x3)*(x1 - x4)*(x3 - x4)",
+        "minor_234": "-6*(x2 - x3)*(x2 - x4)*(x3 - x4)"
+      },
+      "two_value_elimination_holds_all_splits": true,
+      "intrinsic_quadratic_resolution_holds": true,
+      "c5_point_max_residual": "1.94469227433160678348252001680628882518445380272536472909410e-61",
+      "c5_point_nonzero_minors": 10,
+      "c5_point_min_minor_modulus": "15.7719333635740081807700725454362982185649379673002534458681",
+      "sheet_collision_point_max_residual": "6.22301527786114170714406405378012424059025216872116713310112e-61",
+      "sheet_collision_nonzero_minors": 7,
+      "sheet_collision_zero_minors": 3,
+      "sheet_collision_min_nonzero_minor_modulus": "66.0452346544058373908385187425207603886274337557728961904228"
+    },
+    "qou_ys29_fano_sp6f2_bridge": {
+      "bring_s5_order": 120,
+      "klein_fano_gl3f2_order": 168,
+      "gcd_s5_gl3f2_order": 24,
+      "seven_divides_s5": false,
+      "hurwitz_bound_g3": 168,
+      "hurwitz_bound_g4": 252,
+      "gl3f2_lagrangian_embedding_in_sp6f2": true,
+      "s5_transvection_subgroup_order_in_sp6f2": 120,
+      "s5_subgroup_preserves_symplectic_form": true,
+      "sp6f2_order": 1451520,
+      "sp6f2_index_of_s5": 12096,
+      "sp6f2_index_of_gl3f2": 8640,
+      "genus3_odd_bitangents": 28,
+      "genus3_even_nonzero_theta": 35,
+      "fano_local_lines_through_e0": 3,
+      "fano_nonlocal_lines_disjoint_from_e0": 4,
+      "fano_unique_line_per_pair": true
+    },
+    "qou_qhcr_branch_point_weierstrass": {
+      "colour_cubic_discriminant_formula": "-16*z**6 - 24*z**5 - 35*z**4 - 50*z**3 - 35*z**2 - 24*z - 16",
+      "discriminant_matches_palindromic_sextic": true,
+      "discriminant_is_palindromic": true,
+      "discriminant_is_squarefree": true,
+      "branch_point_count": 6,
+      "unit_circle_branch_points": 2,
+      "quartet_branch_points": 4,
+      "min_branch_point_separation": "0.117242314728903515070134056924251765621232510506866873048400",
+      "max_branch_point_residual": "5.13162986009078447594370792024298678484594590497355942083730e-60",
+      "branch_point_moduli": [
+        "1.00000000000000000000000000000000000000000000000000000000000",
+        "1.00000000000000000000000000000000000000000000000000000000000",
+        "0.943095589071759029509778594692765014998172037474908496901824",
+        "0.943095589071759029509778594692765014998172037474908496901824",
+        "1.06033790380066254457991265161701678061940454798177536995022",
+        "1.06033790380066254457991265161701678061940454798177536995022"
+      ],
+      "bring_euler_characteristic": -6,
+      "riemann_hurwitz_d2_total_ramification": 10,
+      "riemann_hurwitz_d3_total_ramification": 12,
+      "weierstrass_weight_g4": 60,
+      "s5_transposition_count": 10,
+      "fixed_weierstrass_points_per_transposition": 6,
+      "electroweak_torus_link_seifert_genera": [
+        1,
+        2,
+        3
+      ],
+      "electroweak_seifert_genus_sum": 6,
+      "simple_weierstrass_hurwitz_genera_up_to_20": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Pure algebraic-geometric and F2-symplectic verification of Bring's curve Vandermonde minors, GL(3,F2)/S5 embeddings in Sp(6,F2), and colour-cubic discriminant roots; never reads substrate q0."
+}

@@ -64,6 +64,13 @@ except ImportError:
 
 from qou_substrate.constants import *  # noqa: F401,F403,E402
 
+import mpmath as _mp_2t  # noqa: E402
+with _mp_2t.workdps(90):
+    Q_TWO_TERM_50_DIGIT_STR = _mp_2t.nstr(
+        q_two_term_borromean_at(80), 50, strip_zeros=False  # noqa: F405
+    )
+del _mp_2t
+
 
 # ─────────────────────────────────────────────────────────────────────
 # CAL-LAYER q₀ ANCHOR SELECTION (computations/ layer) — bean `yfvb`, 2026-07-06.
@@ -113,7 +120,7 @@ if not _anchor:
 if _anchor in ("ideal", "muon", "canonical"):
   try:
     import json as _json
-    import math as _math
+    import math as _math  # float64-ok: legacy f64 back-compat shim mirroring constants.py
 
     # ── Owner ruling 2026-08-22: "A --> CODATA 2022" ────────────────────
     # The ideal/muon anchor IS the CODATA-2022 muon derivation, taken LIVE
@@ -148,7 +155,7 @@ if _anchor in ("ideal", "muon", "canonical"):
     # q0_f64), then derive every dependent with the SAME f64 ops as
     # constants.py lines 84-103 — NOT from the witness's q_inv/hbar_q strings,
     # which round ~1 ULP differently and would perturb dim_q at the ~15th digit.
-    Q         = float(_d["q"])
+    Q         = float(_d["q"])  # float64-ok: legacy f64 back-compat shim mirroring constants.py
     HBAR_Q    = 1.0 - 1.0 / Q
     HBAR_Q_SQ = HBAR_Q * HBAR_Q
     Q_INV     = 1.0 / Q

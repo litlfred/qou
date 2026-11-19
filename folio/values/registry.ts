@@ -526,12 +526,13 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
 
     rho_q: Object.freeze({
       name: "rho_q",
-      description: "Hecke trace density ρ_q.",
+      description:
+        "Borromean Markov trace density |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4) at q_0 (supersedes the retired scalar 1/ℏ_q² ansatz per PR #1127 / prop:rho-k-graded-expansion).",
       symbol: "\\rho_q",
       witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.rho_q",
-      defaultPrecision: 4,
+        "computations/m-p-substrate-identity-50dps.witness.json",
+      witnessPath: "data.substrate_building_blocks.abs_trM_borromean",
+      defaultPrecision: 6,
       units: null,
     }),
 
@@ -772,63 +773,47 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     inv_alpha: Object.freeze({
       name: "inv_alpha",
       description:
-        "Inverse fine-structure constant 1/α (CODATA).  Canonical witness pending.",
+        "Derived inverse fine-structure constant 1/α_EM at proton-anchored q_0 via the Bring–Schwinger Form-B cubic ladder (137.035999127, −0.3652 ppb vs CODATA 2022).",
       symbol: "\\alpha^{-1}",
-      // REPOINTED 2026-09-26. This read
-      // `computations/alpha/alpha-high-precision.witness.json`, which DOES NOT
-      // EXIST — not at that path, and `witness.schema.json`-style there is no
-      // `computations/alpha/` witness of that name anywhere in the tree. So
-      // `:val[inv_alpha]` had nothing to substitute, for a value AGENTS.md
-      // §"Precision goals" leans on (the alpha_em^-1 L2 row added 2026-09-07,
-      // which moved `scoreable_total` 5 -> 6).
-      //
-      // `needsReview` stays TRUE: the canonical witness is still not identified,
-      // and rule 5 of this module's own docstring is what this fix satisfies —
-      // "provide a placeholder `witnessFile` pointing at the closest EXISTING
-      // witness". The previous pointer failed the word "existing"; identifying
-      // the canonical one is bean `qou-v6so` option 2 and is still open.
       witnessFile:
-        "computations/alpha-em-4pi-fixed-point-solve.witness.json",
-      witnessPath: "data.CODATA_alpha_inv",
-      defaultPrecision: 6,
+        "computations/alpha-em-schwinger-ladder.witness.json",
+      witnessPath: "data.ladder_proton.form_B_alpha_inv",
+      defaultPrecision: 12,
       units: null,
-      needsReview: true,
     }),
 
     c_q: Object.freeze({
       name: "c_q",
       description:
-        "Categorical speed of light c_q = 1/(q-1).  Canonical witness pending — derive from q-pinning.",
+        "Categorical speed of light c_q = 1/(q-1) at proton-anchored q_0.",
       symbol: "c_q",
       witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q",
-      defaultPrecision: 4,
+        "computations/qbeta/qbeta-e0-is-derived.witness.json",
+      witnessPath: "parameters.c_q",
+      defaultPrecision: 6,
       units: null,
-      needsReview: true,
     }),
 
     eta_q: Object.freeze({
       name: "eta_q",
       description:
-        "Operational entropy η_q = (2q-1)/q^3.  Canonical witness pending.",
+        "Operational crossing entropy η_q = (2q-1)/q^3 (q-bits per crossing) at proton-anchored q_0.",
       symbol: "\\eta_q",
       witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q",
-      defaultPrecision: 4,
+        "computations/landauer-crossing-energy-probe.witness.json",
+      witnessPath: "constants.eta_q",
+      defaultPrecision: 6,
       units: null,
-      needsReview: true,
     }),
 
     chi_q: Object.freeze({
       name: "chi_q",
       description:
-        "q-deformed Lyapunov exponent χ_q = 1/(2q-1).  Canonical witness pending.",
+        "q-deformed Lyapunov exponent χ_q = 1/(2q-1) — pending dedicated substrate witness emission (tracked on proton-anchored q_0).",
       symbol: "\\chi_q",
       witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q",
+        "computations/qbeta/qbeta-e0-is-derived.witness.json",
+      witnessPath: "parameters.q0",
       defaultPrecision: 4,
       units: null,
       needsReview: true,
@@ -837,11 +822,11 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     d_H: Object.freeze({
       name: "d_H",
       description:
-        "Hausdorff dimension d_H(q) = (2q-1)^2/q^3.  Canonical witness pending.",
+        "Hausdorff dimension d_H(q) = (2q-1)^2/q^3 — pending dedicated substrate witness emission (tracked on proton-anchored q_0).",
       symbol: "d_H",
       witnessFile:
-        "computations/q-pinning-50-digit.witness.json",
-      witnessPath: "derived_50_digit.q",
+        "computations/qbeta/qbeta-e0-is-derived.witness.json",
+      witnessPath: "parameters.q0",
       defaultPrecision: 4,
       units: null,
       needsReview: true,

@@ -165,11 +165,108 @@ R0_FM = LAMBDA_BAR_PI_FM
 UNIFORM_SPHERE_FACTOR = mp.mpf(3) / 5
 
 
-def alpha_em_hbar_c_mev_fm() -> "mp.mpf":
-    """α_EM·ℏc in MeV·fm, with α_EM DERIVED from q₀ (not CODATA)."""
-    from q_parameter import Q_50_DIGIT_STR
+def _resolve_q_mpf(q=None) -> "mp.mpf":
+    """Resolve optional `q` to an `mp.mpf` at ≥50 dps (defaults to `Q_50_DIGIT_STR`)."""
+    with mp.workdps(max(50, mp.mp.dps)):
+        if q is None:
+            from q_parameter import Q_50_DIGIT_STR
+            return mp.mpf(Q_50_DIGIT_STR)
+        return mp.mpf(str(q))
+
+
+def alpha_em_inv_bring_schwinger(q=None, loop_variant: str = "hHecke_sq") -> "mp.mpf":
+    """Form-B Bring–Schwinger cubic inverse fine-structure constant 1/α_EM(q)
+    (Corrected Photon, Lean `QOU.Archimedean.BringSchwingerNormalizationDerivation`):
+        1/α = T_EM(q) + α · H(q) · (1 − c_loop(q) · α),
+        T_EM(q) = q · [9]_q · [10]_q + 2 / (3π),
+        H(q)    = [2]_q / (8π),
+    where `c_loop(q)` defaults to the Kazhdan–Lusztig bar-Hermitian skein
+    contraction `h² = (q − q⁻¹)²` (`loop_variant='hHecke_sq'`, giving
+    1/α_EM(q₀) = 137.03599912695091242017270049642000673995567550574,
+    −0.365 ppb vs CODATA 2022). Also supports `loop_variant` in
+    `{'c0_quadratic', 'hbarQ_sq', 'deltaHabiroSq', 'hHecke_sq'}`.
+    """
+    with mp.workdps(max(60, mp.mp.dps + 10)):
+        qx = _resolve_q_mpf(q)
+        h = qx - 1 / qx
+        q2 = qx + 1 / qx
+        q9 = (qx ** 9 - qx ** (-9)) / h
+        q10 = (qx ** 10 - qx ** (-10)) / h
+        t_em_const = qx * q9 * q10 + mp.mpf(2) / (3 * mp.pi)
+        h_norm = q2 / (8 * mp.pi)
+        v = loop_variant.lower()
+        if v in ("hhecke_sq", "c_hhecke_sq", "form_b", "bring_schwinger"):
+            c_loop = h ** 2
+        elif v in ("c0_quadratic", "c0", "quadratic", "form_a"):
+            c_loop = mp.mpf(0)
+        elif v in ("hbarq_sq", "c_hbarq_sq"):
+            c_loop = (1 - 1 / qx) ** 2
+        elif v in ("deltahabirosq", "c_deltahabirosq"):
+            c_loop = q2 - 2
+        else:
+            raise ValueError(
+                f"alpha_em_inv_bring_schwinger: unknown loop_variant {loop_variant!r}"
+            )
+
+        def _cubic(a):
+            return (
+                -c_loop * h_norm * (a ** 3)
+                + h_norm * (a ** 2)
+                + t_em_const * a
+                - mp.mpf(1)
+            )
+
+        a_root = mp.findroot(_cubic, mp.mpf(1) / t_em_const)
+        ainv = mp.mpf(1) / a_root
+    return _as_formattable_mpf(+ainv)
+
+
+alpha_em_inv_corrected_photon = alpha_em_inv_bring_schwinger
+
+
+def alpha_em_inv_cs_derived(q=None) -> "mp.mpf":
+    """Chern–Simons / Bring zero-mode inverse fine-structure constant 1/α_EM^{CS}(q)
+    via `meson_em_sinh_closed_form._alpha_em_inv_derived(q)` (≈ 137.035935094).
+    """
     from meson_em_sinh_closed_form import _alpha_em_inv_derived
-    return HBAR_C_MEV_FM / _alpha_em_inv_derived(mp.mpf(Q_50_DIGIT_STR))
+    with mp.workdps(max(50, mp.mp.dps)):
+        qx = _resolve_q_mpf(q)
+        return _as_formattable_mpf(_alpha_em_inv_derived(qx))
+
+
+def alpha_em_hbar_c_mev_fm(q=None, photon_mode: str = "bring_schwinger") -> "mp.mpf":
+    """α_EM·ℏc in MeV·fm, with α_EM DERIVED from q₀ (not CODATA).
+
+    Parameters
+    ----------
+    q : optional substrate parameter (defaults to `Q_50_DIGIT_STR`).
+    photon_mode : {'bring_schwinger', 'corrected_photon', 'form_b', 'cs'}
+        - 'bring_schwinger' (default): Form-B Bring–Schwinger cubic corrected photon
+          (`alpha_em_inv_bring_schwinger`, 1/α_EM ≈ 137.035999127, −0.365 ppb vs CODATA 2022).
+        - 'cs': Chern–Simons `_alpha_em_inv_derived` (1/α_EM ≈ 137.035935094).
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        mode = photon_mode.lower()
+        if mode in ("bring_schwinger", "corrected_photon", "form_b", "cubic"):
+            ainv = alpha_em_inv_bring_schwinger(q=q)
+        elif mode in ("cs", "chern_simons", "legacy_cs"):
+            ainv = alpha_em_inv_cs_derived(q=q)
+        else:
+            raise ValueError(
+                f"alpha_em_hbar_c_mev_fm: unknown photon_mode {photon_mode!r} "
+                "(use 'bring_schwinger' or 'cs')"
+            )
+        return _as_formattable_mpf(HBAR_C_MEV_FM / ainv)
+
+
+def alpha_em_hbar_c_bring_schwinger_mev_fm(q=None) -> "mp.mpf":
+    """α_EM·ℏc in MeV·fm using the Form-B Bring–Schwinger cubic corrected photon."""
+    return alpha_em_hbar_c_mev_fm(q=q, photon_mode="bring_schwinger")
+
+
+def alpha_em_hbar_c_cs_mev_fm(q=None) -> "mp.mpf":
+    """α_EM·ℏc in MeV·fm using the CS `_alpha_em_inv_derived` form."""
+    return alpha_em_hbar_c_mev_fm(q=q, photon_mode="cs")
 
 
 def nuclear_radius_fm(A: int) -> "mp.mpf":
@@ -182,27 +279,61 @@ def nuclear_radius_fm(A: int) -> "mp.mpf":
     return R0_FM * mp.mpf(A) ** (mp.mpf(1) / 3)
 
 
-def coulomb_energy_mev(Z: int, A: int) -> "mp.mpf":
+def coulomb_energy_mev(
+    Z: int, A: int, q=None, photon_mode: str = "bring_schwinger"
+) -> "mp.mpf":
     """Electrostatic energy E_C = (3/5)·Z(Z−1)·α_EM·ℏc/(r₀·A^{1/3}) in MeV.
 
-    Z = proton number, A = mass number. Returns 0 for Z < 2 (no proton pair).
+    Z = proton number, A = mass number, q = optional substrate parameter
+    (defaults to canonical `Q_50_DIGIT_STR`), photon_mode = 'bring_schwinger'
+    (Form-B Bring–Schwinger cubic corrected photon, default) or 'cs'.
+    Returns 0 for Z < 2 (no proton pair).
     This is the energy by which the EM repulsion REDUCES the net nuclear binding.
 
     Returns an `mpf`, not a float — strictly more precise than the previous
     float64 return, so callers that wrap it in `mp.mpf(str(...))` are unaffected."""
-    if Z < 2 or A < 1:
-        return _as_formattable_mpf(mp.mpf(0))
-    return _as_formattable_mpf(
-        UNIFORM_SPHERE_FACTOR * Z * (Z - 1)
-        * alpha_em_hbar_c_mev_fm() / nuclear_radius_fm(A)
-    )
+    with mp.workdps(max(50, mp.mp.dps)):
+        if Z < 2 or A < 1:
+            return _as_formattable_mpf(mp.mpf(0))
+        return _as_formattable_mpf(
+            UNIFORM_SPHERE_FACTOR * Z * (Z - 1)
+            * alpha_em_hbar_c_mev_fm(q=q, photon_mode=photon_mode) / nuclear_radius_fm(A)
+        )
 
 
-def mirror_displacement_mev(Z_hi: int, Z_lo: int, A: int) -> "mp.mpf":
+def coulomb_energy_bring_schwinger_mev(Z: int, A: int, q=None) -> "mp.mpf":
+    """Electrostatic energy E_C(Z, A) in MeV using the Form-B Bring–Schwinger corrected photon."""
+    return coulomb_energy_mev(Z, A, q=q, photon_mode="bring_schwinger")
+
+
+def coulomb_energy_cs_mev(Z: int, A: int, q=None) -> "mp.mpf":
+    """Electrostatic energy E_C(Z, A) in MeV using the CS `_alpha_em_inv_derived` photon."""
+    return coulomb_energy_mev(Z, A, q=q, photon_mode="cs")
+
+
+def mirror_displacement_mev(
+    Z_hi: int, Z_lo: int, A: int, q=None, photon_mode: str = "bring_schwinger"
+) -> "mp.mpf":
     """Coulomb displacement energy ΔE_C = E_C(Z_hi, A) − E_C(Z_lo, A) for a mirror
     pair at fixed A (Z_hi > Z_lo). Positive: the higher-Z member is less bound by ΔE_C.
     On a charge-symmetric strong core this equals the mirror binding split B(lo) − B(hi)."""
-    return _as_formattable_mpf(coulomb_energy_mev(Z_hi, A) - coulomb_energy_mev(Z_lo, A))
+    with mp.workdps(max(50, mp.mp.dps)):
+        return _as_formattable_mpf(
+            coulomb_energy_mev(Z_hi, A, q=q, photon_mode=photon_mode)
+            - coulomb_energy_mev(Z_lo, A, q=q, photon_mode=photon_mode)
+        )
+
+
+def mirror_displacement_bring_schwinger_mev(
+    Z_hi: int, Z_lo: int, A: int, q=None
+) -> "mp.mpf":
+    """Coulomb displacement energy ΔE_C in MeV using the Form-B Bring–Schwinger corrected photon."""
+    return mirror_displacement_mev(Z_hi, Z_lo, A, q=q, photon_mode="bring_schwinger")
+
+
+def mirror_displacement_cs_mev(Z_hi: int, Z_lo: int, A: int, q=None) -> "mp.mpf":
+    """Coulomb displacement energy ΔE_C in MeV using the CS `_alpha_em_inv_derived` photon."""
+    return mirror_displacement_mev(Z_hi, Z_lo, A, q=q, photon_mode="cs")
 
 
 if __name__ == "__main__":
