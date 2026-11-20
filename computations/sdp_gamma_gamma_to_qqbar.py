@@ -12,7 +12,9 @@ vertex is encoded in the Hecke algebra:
   - σ_0 (horizontal polarization, eigenvalues +q / −q⁻¹)
   - σ_1 (vertical polarization, eigenvalues +q / −q⁻¹)
   - σ_0 · σ_1 → L₊ (Hopf link intermediate)
-  - σ_0 · σ_1 · σ_0 → trefoil (electron / quark closure)
+  - σ_0 · σ_1 · σ_0 → closure in B₃ has 2 components (its permutation is the
+    transposition of strands 0 and 2), so it is NOT the trefoil T(2,3); see
+    perm_e_gg (LeptonStrandPremise.lean, PR #8673).  The trefoil is σ³ in B₂.
 
 The classical reading: each photon enters a Hecke generator slot,
 the product gives the pair-creation amplitude in the polarization
@@ -121,7 +123,8 @@ HA               = Q0 - QI0
 # (computations/qbeta/integer_lp_gluon_convention_d.py).  It does not force
 # k > 0: whether the gluon vertex is present at all is a separate question.
 # γγ → qq̄ "production" is described by σ_0³ (per breit-wheeler-vertex
-# the trefoil σ_0σ_1σ_0 closes to a trefoil knot = electron, not quark).
+# σ_0σ_1σ_0 is the γγ electron word, not a quark; its B₃ closure has 2
+# components (perm_e_gg, PR #8673), so it is not the trefoil T(2,3)).
 
 
 def h2_psd_check(c1, c_sigma):
