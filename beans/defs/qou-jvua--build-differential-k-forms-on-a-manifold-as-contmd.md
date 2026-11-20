@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:07:55Z
-updated_at: 2026-11-20T21:27:24Z
+updated_at: 2026-11-20T21:35:13Z
 parent: qou-c8p8
 ---
 
@@ -70,3 +70,7 @@ STILL WORTH DOING, on a narrower claim: Milnor's Lambda-sum is currently a DEFIN
 ## 2026-11-20 — first tranche (PR #8678): `QOU/Mathlib/ManifoldForms.lean`
 
 Proved, sorry-free: `extDeriv_pullback` (naturality d∘φ* = φ*∘d for C² maps, any nontrivially normed field); `ManifoldForm` (pointwise), `inChart`, `extDeriv_inChart_eq_pullback` (chart-wise d is chart-independent, boundaryless). NOT built: alternating-map vector bundle / ContMDiff sections; global `d : ManifoldForm k → ManifoldForm (k+1)` and d∘d = 0 on M; wedge, integration, Stokes; boundary. Needs 18 manifold oleans missing from the cache (gap-cone script builds them).
+
+## 2026-11-20 — tranche 2 (PR #8678)
+
+`ManifoldForm.extDeriv` (global, chart-wise), `inChart_extDeriv`, `extDeriv_extDeriv` (d∘d = 0 for C² forms, boundaryless), `IsSmoothForm.extDeriv`, linearity, `extDeriv_modelSpace`. Sorry-free. STILL NOT BUILT: alternating-form vector bundle / ContMDiff sections; pullback along maps M → N; wedge, integration, Stokes; boundary. Bean stays open for the bundle.
