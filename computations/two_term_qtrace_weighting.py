@@ -39,8 +39,12 @@ WEIGHT but the wrong NORMALISATION (1/3 instead of 1/[2]_q³; ratio (q²+1)³/(3
 pre-registered rule, no connected subtraction) KnKp differs additionally by the static term
 (2/27)·q⁻¹·tr(V³).
 
-What is NOT fixed by the corpus (reported side by side, none chosen by residual)
--------------------------------------------------------------------------------
+OWNER RULING 2026-11-20 16:44: the scored two-term object is the covariant all-pairs insertion
+with the derived weighting (`CANONICAL_INSERTION`). Its connected part is 0 on V³, so the scored
+two-term rows equal the one-term rows. The rest are kept as labelled, unscored comparisons.
+
+What was NOT fixed by the corpus before that ruling (reported side by side, none chosen by residual)
+------------------------------------------------------------------------------------------------
 * the insertion: adjacent Q₁₂+Q₂₃ (pre-registered; not braid-covariant, #8552 T2/T3) vs the
   permutation-complete Q₁₂+Q₂₃+Q₁₃ (covariant projection, #8552 T6; static, its connected part
   is identically 0, cf. #8557/#8565);
@@ -67,6 +71,13 @@ LEAN_MODULE = "QOU.BraidsAndKnots.NucleonWeightSpaceQTrace"
 DERIVED = "derived"
 HISTORICAL_WEIGHTINGS = ("plain", "KnKp", "Kp3", "q")
 VALID_WEIGHTINGS = (DERIVED,) + HISTORICAL_WEIGHTINGS
+
+#: Scored insertion (OWNER RULING 2026-11-20 16:44): the covariant permutation-complete
+#: Q₁₂+Q₂₃+Q₁₃ with the derived weighting. Its connected part is identically 0 on V³
+#: (`deltaT_allPairs_connected_eq_zero`; Q_pair = 0 on W_p), so the scored two-term rows equal the
+#: one-term rows. The adjacent Q₁₂+Q₂₃ stays as a labelled comparison.
+CANONICAL_INSERTION = "all_pairs"
+INSERTIONS = ("all_pairs", "adjacent")
 
 #: Sign convention of the compute's connected rows (mass contribution = −m_e · trace).
 #: The pre-registered rule uses +1. Not fixed by the corpus for the connected insertion.
@@ -153,13 +164,27 @@ def delta_t(q, insertion: str = "adjacent", connected: bool = False):
 
 # ── the compute's connected adjacent quantity, per weighting (derived default) ─────────────────
 
-def connected_trace_p(q, weighting: str = DERIVED):
+def _resolve_insertion(weighting, insertion):
+    """None -> the ruled all-pairs for the derived weighting; historical weightings are adjacent-only."""
+    if insertion is None:
+        return CANONICAL_INSERTION if weighting == DERIVED else "adjacent"
+    return insertion
+
+
+def connected_trace_p(q, weighting: str = DERIVED, insertion=None):
     """Proton connected adjacent trace as the compute weights it.
 
     derived : q·tr((Q₁₂+Q₂₃)_p V_p³)/[2]_q³
     plain   : (1/3)·tr(...)          (historical comparison)
     Kp      : (q/3)·tr(...)          (historical comparison; the old `k_weighted=True`)
     """
+    insertion = _resolve_insertion(weighting, insertion)
+    if insertion == "all_pairs":
+        if weighting != DERIVED:
+            raise ValueError("the all-pairs insertion is defined with the derived weighting only")
+        return t_weight(q, "p", "all_pairs", connected=True)
+    if insertion != "adjacent":
+        raise ValueError(f"unknown insertion {insertion!r}")
     base = tr_adj_p(q)
     if weighting == DERIVED:
         return q * base / qdim_v3(q)
@@ -170,8 +195,15 @@ def connected_trace_p(q, weighting: str = DERIVED):
     raise ValueError(f"unknown proton weighting {weighting!r}; expected derived/plain/Kp")
 
 
-def connected_trace_diff(q, weighting: str = DERIVED):
-    """Δtr_conn = t_conn(W_n) − t_conn(W_p) of the connected adjacent insertion."""
+def connected_trace_diff(q, weighting: str = DERIVED, insertion=None):
+    """Δtr_conn = t_conn(W_n) − t_conn(W_p) of the connected insertion (canonical: all-pairs ≡ 0)."""
+    insertion = _resolve_insertion(weighting, insertion)
+    if insertion == "all_pairs":
+        if weighting != DERIVED:
+            raise ValueError("the all-pairs insertion is defined with the derived weighting only")
+        return delta_t(q, "all_pairs", connected=True)
+    if insertion != "adjacent":
+        raise ValueError(f"unknown insertion {insertion!r}")
     tp3 = tr_adj_p(q) / 3
     tn3 = tr_adj_n_conn(q) / 3
     if weighting == DERIVED:
@@ -187,14 +219,14 @@ def connected_trace_diff(q, weighting: str = DERIVED):
     raise ValueError(f"unknown weighting {weighting!r}; expected one of {VALID_WEIGHTINGS}")
 
 
-def m_p_qed_conn_mev(q, m_e, weighting: str = DERIVED):
-    """M_p^{QED,conn} in the compute's sign convention: −m_e · t_conn(W_p) (= m_e·|t|, t < 0)."""
-    return COMPUTE_CONNECTED_SIGN * m_e * connected_trace_p(q, weighting)
+def m_p_qed_conn_mev(q, m_e, weighting: str = DERIVED, insertion=None):
+    """M_p^{QED,conn}. Canonical (all-pairs) = 0. Adjacent: −m_e·t_conn(W_p) (compute sign)."""
+    return COMPUTE_CONNECTED_SIGN * m_e * connected_trace_p(q, weighting, insertion)
 
 
-def delta_m_qed_conn_mev(q, m_e, weighting: str = DERIVED):
-    """Δm_QED^{conn} in the compute's sign convention: −m_e · Δtr_conn."""
-    return COMPUTE_CONNECTED_SIGN * m_e * connected_trace_diff(q, weighting)
+def delta_m_qed_conn_mev(q, m_e, weighting: str = DERIVED, insertion=None):
+    """Δm_QED^{conn}. Canonical (all-pairs) = 0. Adjacent: −m_e·Δtr_conn (compute sign)."""
+    return COMPUTE_CONNECTED_SIGN * m_e * connected_trace_diff(q, weighting, insertion)
 
 
 def delta_em_charge_insertion_mev(q, m_e, insertion: str = "adjacent"):
@@ -323,10 +355,21 @@ def main() -> int:
     menu = {}
     for w in VALID_WEIGHTINGS:
         menu[w] = {
-            "Delta_m_QED_conn_keV": fmt(delta_m_qed_conn_mev(q, m_e, w) * kev, 30),
-            "label": "CANONICAL (derived quantum trace)" if w == DERIVED else "historical comparison",
+            "Delta_m_QED_conn_keV": fmt(delta_m_qed_conn_mev(q, m_e, w, "adjacent") * kev, 30),
+            "label": ("derived weighting, ADJACENT insertion: labelled comparison (option 1)"
+                      if w == DERIVED else "historical comparison"),
         }
-    mp_conn = {w: fmt(m_p_qed_conn_mev(q, m_e, w) * kev, 30) for w in (DERIVED, "plain", "Kp")}
+    mp_conn = {w: fmt(m_p_qed_conn_mev(q, m_e, w, "adjacent") * kev, 30) for w in (DERIVED, "plain", "Kp")}
+    canonical = {
+        "ruling": "OWNER 2026-11-20 16:44: score option 2 (covariant all-pairs, derived weighting)",
+        "insertion": CANONICAL_INSERTION,
+        "M_p_QED_conn_MeV": fmt(m_p_qed_conn_mev(q, m_e), 30),
+        "Delta_m_QED_conn_MeV": fmt(delta_m_qed_conn_mev(q, m_e), 30),
+        "consequence": "two-term rows equal the one-term rows on V³",
+        "static_word_independent_part_not_scored_MeV": fmt(
+            delta_em_charge_insertion_mev(q, m_e, "all_pairs"), 30),
+    }
+    assert m_p_qed_conn_mev(q, m_e) == 0 and delta_m_qed_conn_mev(q, m_e) == 0
 
     pre = delta_em_charge_insertion_mev(q, m_e, "adjacent")
     # Recorded 2026-11-19 05:15Z at the proton pin (bean qou-99qc); reproduced here.
@@ -359,10 +402,11 @@ def main() -> int:
             "Delta_EM_all_pairs_MeV": fmt(delta_em_charge_insertion_mev(q, m_e, "all_pairs"), 30),
             "lattice_comparison_only": "EM part of m_n − m_p ≈ −0.6 to −1.0 MeV (not a target)",
         },
+        "canonical_scored": canonical,
         "by_insertion": rows,
         "connected_adjacent_Delta_m_by_weighting": menu,
         "connected_adjacent_M_p_by_weighting_keV": mp_conn,
-        "not_fixed_by_corpus": [
+        "not_fixed_by_corpus_before_ruling": [
             "insertion: adjacent Q12+Q23 (pre-registered, not braid-covariant #8552) vs all-pairs",
             "raw (pre-registered) vs connected (the compute's scored object)",
             "overall sign: +m_e·t (pre-registered) vs −m_e·t (compute connected rows, selected)",

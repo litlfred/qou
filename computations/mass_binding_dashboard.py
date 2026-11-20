@@ -1293,8 +1293,8 @@ def main(argv=None) -> int:
         inter_nucleon_pair_charge,
     )
     gpmt_c = gpmt_three_row_cumulants(q0)
-    # Weighting: derived quantum trace Tr(K^{⊗3}·)/[2]_q³ (bean qou-99qc); the
-    # 1/3-normalised 'plain' entry is no longer used here.
+    # Weighting: derived quantum trace Tr(K^{⊗3}·)/[2]_q³ (bean qou-99qc). Insertion: covariant
+    # all-pairs (owner 2026-11-20 16:44), connected part 0 on V³, so these are 0 / one-term.
     mp_qed_bor = proton_qed_self_energy_borromean_mev()
     dm_qed_bor = np_qed_splitting_borromean_conn_mev()
     mn_2term = neutron_mass_two_term_mev()
@@ -1302,8 +1302,9 @@ def main(argv=None) -> int:
     mn_2term_err_ppb = (mn_2term - mn_) / mn_ * 1e9
 
     print("\n### Table 9 — Two-Term QED & GPMT Modified-Dimension Diagnostics (A=1..4)")
-    print("  The A=1 QED figures use the derived quantum-trace weighting Tr(K^{⊗3}·)/[2]_q³ (qou-99qc);")
-    print("  they are still not derived predictions (pair 1-3 left out, connected subtraction, sign and m_e scale chosen; #8524).")
+    print("  The A=1 QED figures use the ruled covariant all-pairs insertion with the derived weighting")
+    print("  Tr(K^{⊗3}·)/[2]_q³ (qou-99qc, owner 2026-11-20): its connected part is 0 on V³, so the two-term")
+    print("  values equal the one-term ones. The adjacent insertion is a labelled comparison elsewhere.")
     print("  Lean modules: `NucleonWeightSpaceTwoTerm`, `USpinColemanGlashowLambdaSigma`, "
           "`GPMTThreeRowCumulantBridge`, `H4GPMTModifiedDimensionCumulants`, `ThreeRowSpringerSYTDerivation`.")
     print(f"  A=1 Borromean V³ QED: M_p^QED,conn = +{mp_qed_bor*1e3:.4f} keV | "

@@ -753,7 +753,8 @@ try:
         finally:
             _mp.mp.dps = prev
 
-    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, weighting: str = "derived"):
+    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, weighting: str = "derived",
+                                insertion=None):
         """Parallel two-term connected Borromean proton pin (COMPARISON only; one-term is default).
 
         Solves:
@@ -765,8 +766,19 @@ try:
         historical comparisons only. 14 Newton iterations at `dps + 25` guard digits from
         `q_at(dps + 25)`.
 
+        INSERTION (owner ruling 2026-11-20 16:44): `insertion=None` with the derived weighting is
+        the covariant all-pairs insertion, for which M_p^QED,conn = 0 (Q₁₂+Q₂₃+Q₁₃ = 0 on W_p), so
+        the pin coincides with the one-term proton pin. `insertion='adjacent'` gives the weighted
+        adjacent comparison above; 'plain' and 'Kp' are adjacent-only.
+
         Does NOT modify `q_at()` or `Q_50_DIGIT_STR`.
         """
+        if insertion is None:
+            insertion = "all_pairs" if weighting == "derived" else "adjacent"
+        if insertion not in ("all_pairs", "adjacent"):
+            raise ValueError(f"unknown insertion {insertion!r}")
+        if insertion == "all_pairs" and weighting != "derived":
+            raise ValueError("the all-pairs insertion is defined with the derived weighting only")
         if weighting not in ("derived", "plain", "Kp"):
             raise ValueError(f"unknown weighting {weighting!r} (use 'derived', 'plain', 'Kp')")
         prev = _mp.mp.dps
@@ -784,7 +796,9 @@ try:
                 qcd_term = 2 * vol / hbar_sq * (trM * qf3 / (qq ** 3)) - 12
                 q2 = qq ** 2
                 tr_conn_p_abs = 2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (27 * (q2 ** 3))
-                if weighting == "derived":
+                if insertion == "all_pairs":
+                    w = _mp.mpf(0)
+                elif weighting == "derived":
                     w = 3 * q2 ** 2 / (q2 + 1) ** 3
                 elif weighting == "Kp":
                     w = qq
@@ -871,7 +885,8 @@ except ImportError:
     def tr_conn_borromean_diff_at(q=None, dps: int = _DPS_DEFAULT):
         raise RuntimeError("tr_conn_borromean_diff_at requires mpmath; install it with `pip install mpmath`")
 
-    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, weighting: str = "derived"):
+    def q_two_term_borromean_at(dps: int = _DPS_DEFAULT, weighting: str = "derived",
+                                insertion=None):
         raise RuntimeError("q_two_term_borromean_at requires mpmath; install it with `pip install mpmath`")
 
 # ── Experimental observable anchors (CODATA 2022) ─────────────

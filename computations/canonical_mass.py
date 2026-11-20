@@ -251,10 +251,12 @@ _TWO_TERM_SCOPE_NOTE = """
     the proton term) are kept only as labelled historical comparisons. Library:
     `two_term_qtrace_weighting.py`.
 
-    STILL NOT A DERIVED PREDICTION. Three choices are not fixed by the corpus and are carried as
-    they were: the ADJACENT insertion Q₁₂+Q₂₃ (not braid-covariant, #8552; the permutation-complete
-    insertion has connected part 0), the CONNECTED subtraction (the pre-registered rule is raw),
-    and the overall SIGN −m_e·t (the pre-registered rule uses +m_e·t). The m_e scale is a selection.
+    INSERTION (OWNER RULING 2026-11-20 16:44). The canonical insertion is the covariant
+    permutation-complete Q₁₂+Q₂₃+Q₁₃ (`insertion='all_pairs'`, the default). Its connected part is
+    identically 0 on V³ (`NucleonWeightSpaceQTrace.deltaT_allPairs_connected_eq_zero`), so the
+    canonical M_p^QED,conn and Δm_QED^conn are 0 and the two-term masses equal the one-term ones.
+    `insertion='adjacent'` (Q₁₂+Q₂₃, not braid-covariant, #8552; connected subtraction and −m_e·t
+    sign as previously selected) is kept as a labelled comparison only.
     """
 
 
@@ -277,16 +279,24 @@ def _two_term_q_me():
     return mp.mpf(str(q0)), mp.mpf(str(M_E_MEV))
 
 
-def proton_qed_self_energy_borromean_mev(weighting: str = "derived"):
+def proton_qed_self_energy_borromean_mev(weighting: str = "derived", insertion=None):
     """Proton connected 4th-order Borromean V³ electromagnetic term M_p^{QED,conn} (MeV).
 
-    M_p^{QED,conn} = −m_e · t_conn(W_p), t_conn(W_p) = q·tr((Q₁₂+Q₂₃)_p V_p³)/[2]_q³ < 0
-    (`trace_QAdjp_borromeanV3`). At the proton q₀ (derived) ≈ +0.0901243 keV; the historical
-    'plain' entry (1/3, no K) gave +0.2200773 keV and 'Kp' (q/3) +0.2442811 keV.
+    Canonical (all-pairs, derived): 0, since Q₁₂+Q₂₃+Q₁₃ = 0 on W_p.
+    Comparison (adjacent): −m_e·t_conn(W_p), t_conn(W_p) = q·tr((Q₁₂+Q₂₃)_p V_p³)/[2]_q³ < 0
+    (`trace_QAdjp_borromeanV3`) ≈ +0.0901243 keV; historical 'plain' (1/3, no K) +0.2200773 keV,
+    'Kp' (q/3) +0.2442811 keV.
 
     Weighting and scope: see `_TWO_TERM_SCOPE_NOTE` in this module.
     """
     import mpmath as mp
+    if insertion is None:
+        insertion = "all_pairs" if weighting == "derived" else "adjacent"
+    if insertion == "all_pairs":
+        from two_term_qtrace_weighting import m_p_qed_conn_mev
+        with mp.workdps(max(50, mp.mp.dps)):
+            q, m_e = _two_term_q_me()
+            return _as_formattable_mpf(m_p_qed_conn_mev(q, m_e, weighting, "all_pairs"))
     key = {"derived": "M_p_QED_conn_derived_MeV", "plain": "M_p_QED_conn_MeV",
            "Kp": "M_p_QED_conn_Kp_MeV"}.get(weighting)
     if key is None:
@@ -297,13 +307,14 @@ def proton_qed_self_energy_borromean_mev(weighting: str = "derived"):
     from two_term_qtrace_weighting import m_p_qed_conn_mev
     with mp.workdps(max(50, mp.mp.dps)):
         q, m_e = _two_term_q_me()
-        return _as_formattable_mpf(m_p_qed_conn_mev(q, m_e, weighting))
+        return _as_formattable_mpf(m_p_qed_conn_mev(q, m_e, weighting, "adjacent"))
 
 
-def np_qed_splitting_borromean_conn_mev(weighting: str = "derived"):
+def np_qed_splitting_borromean_conn_mev(weighting: str = "derived", insertion=None):
     """(n − p) connected 4th-order Borromean V³ QED mass splitting Δm_QED^{conn} (MeV).
 
-    Δm_QED^{conn} = −m_e · [t_conn(W_n) − t_conn(W_p)],
+    Canonical (all-pairs, derived): 0 (`deltaT_allPairs_connected_eq_zero`).
+    Comparison (adjacent): Δm_QED^{conn} = −m_e · [t_conn(W_n) − t_conn(W_p)],
     Δt_conn = (q−1)⁴(q+1)⁴(q²+2)(2q⁴+1)/(9q⁴(q²+1)³)
     (`NucleonWeightSpaceQTrace.deltaT_adjacent_connected_eq`). At the proton q₀ (derived)
     ≈ −0.1272243 keV. Historical comparisons: 'plain' −0.3316960, 'KnKp' −0.3448405
@@ -318,14 +329,20 @@ def np_qed_splitting_borromean_conn_mev(weighting: str = "derived"):
     if weighting not in ("derived", "plain", "KnKp", "Kp3", "q"):
         raise ValueError(f"unknown weighting {weighting!r} (use 'derived'; historical: "
                          "'plain', 'KnKp', 'Kp3', 'q')")
+    from two_term_qtrace_weighting import delta_m_qed_conn_mev
+    if insertion is None:
+        insertion = "all_pairs" if weighting == "derived" else "adjacent"
+    if insertion == "all_pairs":
+        with mp.workdps(max(50, mp.mp.dps)):
+            q, m_e = _two_term_q_me()
+            return _as_formattable_mpf(delta_m_qed_conn_mev(q, m_e, weighting, "all_pairs"))
     if key:
         v = _two_term_witness_value(key)
         if v is not None:
             return v
-    from two_term_qtrace_weighting import delta_m_qed_conn_mev
     with mp.workdps(max(50, mp.mp.dps)):
         q, m_e = _two_term_q_me()
-        return _as_formattable_mpf(delta_m_qed_conn_mev(q, m_e, weighting))
+        return _as_formattable_mpf(delta_m_qed_conn_mev(q, m_e, weighting, "adjacent"))
 
 
 def delta_em_charge_insertion_mev(insertion: str = "adjacent"):
@@ -345,19 +362,17 @@ def delta_em_charge_insertion_mev(insertion: str = "adjacent"):
         return _as_formattable_mpf(_f(q, m_e, insertion))
 
 
-def neutron_mass_two_term_mev(weighting: str = "derived"):
-    """Two-term neutron mass m_n^{two-term} = m_n + Δm_QED^{conn}(V³) in MeV (derived weighting).
+def neutron_mass_two_term_mev(weighting: str = "derived", insertion=None):
+    """Two-term neutron mass m_n^{two-term} = m_n + Δm_QED^{conn}(V³) in MeV.
+
+    Canonical (all-pairs): equals the one-term `nucleon_mass_mev("n")`.
 
     Weighting and scope: see `_TWO_TERM_SCOPE_NOTE` in this module.
     """
     import mpmath as mp
-    if weighting == "derived":
-        v = _two_term_witness_value("m_n_two_term_derived_MeV")
-        if v is not None:
-            return v
     with mp.workdps(max(50, mp.mp.dps)):
         mn = nucleon_mass_mev("n")
-        dm_qed = np_qed_splitting_borromean_conn_mev(weighting=weighting)
+        dm_qed = np_qed_splitting_borromean_conn_mev(weighting=weighting, insertion=insertion)
         return _as_formattable_mpf(mn + dm_qed)
 
 
