@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:homological-shell-condensation",
+  interprets: "conj:homological-shell-condensation",
   label: "rem:homological-shell-condensation-motivation",
   title:
     "Motivation: the Białynicki-Birula spectral sequence and shell closure",
@@ -11,5 +11,5 @@ export default remark({
     "spectral-sequence",
     "shell-condensation",
   ],
-  uses: ["prop:homological-shell-condensation"],
+  uses: ["conj:homological-shell-condensation"],
 });
