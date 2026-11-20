@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-20T16:14:45Z
+updated_at: 2026-11-20T17:18:37Z
 parent: qou-9nnz
 ---
 
@@ -385,3 +385,30 @@ Across the 221: 72 moved only below 1e-9 (the intended gain), 12 only in near-ze
 METHOD NOTE (cost me two false claims this session): 'payload-changed' is a useless metric for a precision sweep — 93% of 221 changed, almost all at digit 51. And a relative diff on a residual whose baseline is ~1e-50 reads as 1e+8. Mask timing fields, exclude near-zero baselines, and count **assertion flips**; that is the signal.
 
 **Open decision handed to the owner:** the content block `mass-theory/deuteron-binding-dressing-proton-net.md` asserts +0.12% of AME2020 twice and declares this producer's witness as its source; that witness now reads -75.25%. Not touched — a claim change is not a precision fix.
+
+## 2026-11-20 (C) — the 4.047x Delta_tr move is an OWNER-RULED CORRECTION, not drift
+
+Answered, and it corrects two of my own claims from earlier today.
+
+**Retracted:** I attributed the move to `806d5146227` (2026-11-15, weak chirality) on the strength of `--stat` showing '289 insertions, 0 deletions'. **That commit is a SHALLOW BOUNDARY commit** (it is in `.git/shallow`), so the whole-file-added diff is a fetch artifact. The file was not created then. TRAP: in this clone, `git show --stat <boundary-sha>` reports every file it touches as newly added. Check `.git/shallow` before reading an add as an add.
+
+**The real cause, from the module's own docstring and then the ruling commit:** `atom_braid_word_3A` switched to the interleaved Borromean intra word on **2026-09-05** (`7db032fb48`, owner ruling, bean `qou-hu1f`). `nucleon_gen_chains` commented its B_3 confinement letters as `(sigma_0 . sigma_1^-1)^3` and returned them **bucketed by generator**, so consumers emitted `sigma_0^3 sigma_1^-3`. sigma_0 and sigma_1 do not commute, so that is a **different element of H_3(q)** — 82 % away at q0, where the interleaved word matches the Lean closed form to **5e-60**.
+
+So the pre-2026-09-05 Delta_tr was computed on the **wrong object**, not merely an old one. The `grouped` intra_order path survives, so every published number stays reachable.
+
+**The live value is corpus-consistent, checked three ways rather than assumed:**
+- `tr_m_atom_via_transfer` cross-checks `tr_M^atom(D)` against the INDEPENDENT Hoefsmit witness (`atomic-tr-m-mpfr-50dps-proton`, `0.15196833920423160759266569775106`) and passes — and *refuses* a cross-pin reference (q0Value is the proton pin).
+- 16 witnesses carry the live Delta_tr against 1 straggler (refreshed in `e8eeb61cfe5`).
+- The module's own two assertions are green.
+
+**Stale figure to not repeat:** the module docstring still claims 'tr_M^atom(D) ~ 0.388 (matches the #2080 canonical_tr_m_via_branching value)'. Live is **0.15196834**. AGENTS.md records this quantity as having moved 0.388 -> 0.575; it has now moved again. The module's *assertion* is fine — it compares against a witness, not against the docstring — so the docstring is unguarded prose. 404 files reference `atom_braid_word_3A`.
+
+## 2026-11-20 (B) — magnitude comparison withdrawn, no replacement asserted
+
+`e8d6c9d6374`. `mass-theory/deuteron-binding-dressing-proton-net`: the two `+0.12 %` sites and the `+11.99 %` beside them are withdrawn with the (C) evidence cited inline; a 2026-11-20 `authorNotes` status entry supersedes the 2026-07-04 one (kept as a dated record). The live chain reads **-72.33 % undressed -> -75.22 % dressed** — the dressing now makes the deuteron *worse* — recorded as a measurement, NOT adopted as the block's claim, because that is a re-derivation rather than a renumbering.
+
+`computation.status` **verified -> failed**; the schema is explicit ('script ran, witness does NOT match expected values') and `check-computation-status.py` went 1 disagreement -> 0. Unaffected: the proposition (stated for ANY Delta_tr) and its Lean.
+
+Render-QA preflight battery GREEN (11 checks). The pipeline render is **unavailable** here — the platform is a mounted copy, not a checkout — so the .md is NOT machine-render-validated; stated rather than implied. qa-sweep loads at pin `82b3899` (contra `qou-4jhp`, which reports it failing at `b61e856`) but cannot write sidecars in this container; the committed sidecar is now legitimately stale against the edit, and the attestations file it extracted carries only the OLD field hashes, so nothing attests the new prose.
+
+**next** (D) refreshing the 62 sweep producers still stale by scriptHash — background, ~3.8 h ETA. Scope correction: I told the owner '~100'; the measured figure is **62**. Corpus-wide staleness is far larger (511 distinct stale producers, 472 of them outside the sweep) and is NOT in scope here.
