@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.BraidKnot.frobenius_antipode_unifies — `S(σᵢ) = σᵢ⁻¹` unifies Term-5 + neutron tower
 
 Canonical Lean for content block
-[`conj:frobenius-antipode-unifies-chirality-and-tower`](../../../quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md).
+[`conj:frobenius-antipode-unifies-chirality-and-tower`](../../../mass-theory/frobenius-antipode-unifies-chirality-and-tower.md).
 
 *The Term-5 chirality factor and the neutron-tower closure both use
 the **Frobenius antipode** `S : σ ↦ σ⁻¹` on `H_n(R, q)`.  `S` is an
@@ -21,7 +21,7 @@ the conclusion.  The previous encoding posited
 fields and projected them (`:= ⟨…⟩`); that was a vacuous self-assuming
 projection and is removed.
 
--- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/frobenius-antipode-unifies-chirality-and-tower.md
 -/
 
 namespace QOU.BraidKnot
