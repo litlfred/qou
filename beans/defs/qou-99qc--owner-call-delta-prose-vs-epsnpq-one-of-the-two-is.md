@@ -4122,3 +4122,9 @@ Independent recomputation (own sympy Jimbo Ř on (C²)^⊗3, not the PRs' code),
 - Lean: both files lean-direct exit 0 against a private rebuilt cone; #print axioms on all declarations: propext, Classical.choice, Quot.sound only.
 
 Decision put to the owner in the session chat (options: strict γγ+reading-3 base, Q_β = 0; base + T³ flavour split, 0.3254 MeV; keep nuc11_interleaved, 0.6519 MeV, fails reading 3; CORE·TAIL·V¹, 0.2295 MeV). Bean stays todo (rule 13a).
+
+### PRE-REGISTRATION ε-L1V (2026-11-20; re-ask ε-L1 of the ruled photon vertex V = σ₀σ₁⁻¹; PR #8616)
+- Full text: computations/probes/gg_twist_vertex_channel/PREREGISTRATION.md (commit bc02ecd75c), written before computing.
+- Functionals: F1 = ε-L1's multiplicity-trace ε_tr (verbatim); F2 = z_D trace Tr(K^{⊗3}·)/[2]³ split over W_p, W_n (plain-sector difference D = tr_Wn − tr_Wp is the channel's u↔d asymmetry).
+- Arms: V-words (V, V⁻¹, V·V³, V³·V, VV⁻¹, V·σ₀); four-term photon at the eigenvalue pair γ(0,0,qh), γ(0,0,−q⁻¹h) and products; symbolic φ₀,φ₁ first-order coefficients.
+- Prediction: symmetric everywhere (Hecke image commutes with U_q(sl₂); Δ = σ₀σ₁σ₀ swaps σ₀↔σ₁). No physical target compared.
