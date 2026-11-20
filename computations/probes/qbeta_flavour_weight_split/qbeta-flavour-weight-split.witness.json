@@ -1,0 +1,276 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T14:51:01.819976+00:00",
+  "commitSha": "d70a51ff517811a3eeb9cbc51565e3cf0adab128",
+  "assertions": [
+    {
+      "name": "P0.proton_pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "1.109978582751380807"
+    },
+    {
+      "name": "D1.trace_is_zD",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Tr(K⊗K Ř)/[2]² = q**3/(q**2 + 1)"
+    },
+    {
+      "name": "D2.weight_sum_is_tau_zD",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "max |Σ_T3 − τ_zD(V^k)| over k=0..10 = 4.9626e-31 (witness carries 30 digits)"
+    },
+    {
+      "name": "D2b.8dim_equals_weight_sum",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "8-dim K-trace of V³ = weight-space sum"
+    },
+    {
+      "name": "W1.plain_equal_k3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tr_Wn(V^3) = tr_Wp(V^3); per-sector-normalised split = 0"
+    },
+    {
+      "name": "W2.bar_odd_k3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ε_flavour(q⁻¹) = −ε_flavour(q)"
+    },
+    {
+      "name": "W3.bar_swaps_components_k3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ε_p(q⁻¹) = ε_n(q)"
+    },
+    {
+      "name": "W1.plain_equal_k6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tr_Wn(V^6) = tr_Wp(V^6); per-sector-normalised split = 0"
+    },
+    {
+      "name": "W2.bar_odd_k6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ε_flavour(q⁻¹) = −ε_flavour(q)"
+    },
+    {
+      "name": "W3.bar_swaps_components_k6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ε_p(q⁻¹) = ε_n(q)"
+    },
+    {
+      "name": "W1.plain_equal_k9",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tr_Wn(V^9) = tr_Wp(V^9); per-sector-normalised split = 0"
+    },
+    {
+      "name": "W2.bar_odd_k9",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ε_flavour(q⁻¹) = −ε_flavour(q)"
+    },
+    {
+      "name": "W3.bar_swaps_components_k9",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ε_p(q⁻¹) = ε_n(q)"
+    },
+    {
+      "name": "W4.closed_form_k3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "matches FlavourWeightSplit.fV3"
+    },
+    {
+      "name": "G1.derived_photons_give_V3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "γ(0,0,qh)γ(0,0,−q⁻¹h) = V³ on (C²)^⊗3"
+    },
+    {
+      "name": "G2.antipode_k3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "τ(S(V)^k) = τ(V^k)"
+    },
+    {
+      "name": "G2.inverse_k3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "τ(V^-k) = τ(V^k)"
+    },
+    {
+      "name": "G2.antipode_k6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "τ(S(V)^k) = τ(V^k)"
+    },
+    {
+      "name": "G2.inverse_k6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "τ(V^-k) = τ(V^k)"
+    },
+    {
+      "name": "G3.order_blind",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "τ_zD(γ(φ)γ(ψ) − γ(ψ)γ(φ)) = 0"
+    },
+    {
+      "name": "G4.V3_normal_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "V³ NF: L₊ coefficient h⁴+h², L₋ coefficient −h² (chiral, identical for p and n)"
+    },
+    {
+      "name": "Q1.V3_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "ε_flavour(V³) ≠ 0 at q₀"
+    },
+    {
+      "name": "Q2.arm_gamma_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "arm γ: p = n = V³ ⇒ Q_β = 0 for every linear ε (G1, PR #8564)"
+    },
+    {
+      "name": "Q3.normalised_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "per-sector-normalised split: Q_β = 0 (W1)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17831,
+  "computation": "qbeta-flavour-weight-split",
+  "scriptFile": "qbeta_flavour_weight_split_probe.py",
+  "scriptHash": "0992545a3ee1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_flavour_weight_split/qbeta_flavour_weight_split_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_flavour_weight_split/qbeta_flavour_weight_split_probe.py"
+  },
+  "description": "qou-99qc / qou-ales: T3 (weight-space) split of the convention-D trace on the gamma-gamma base V^3, and the chiral four-term photon arm. Pre-registered at d70a51ff51.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 70,
+    "convention": "D (z = q^3/(q^2+1))"
+  },
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "E0_canonical_MeV": "4.227483355629030550268056026587211153615",
+    "photon": "gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1 (owner 2026-11-20 15:47)",
+    "closed_forms": {
+      "V^3": "(q - 1)*(q + 1)*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)",
+      "V^6": "-(q - 1)*(q + 1)*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)*(q**12 - 3*q**10 + 3*q**8 - 3*q**6 + 3*q**4 - 3*q**2 + 1)/(q**10*(q**2 + 1)**3)",
+      "V^9": "(q - 1)*(q + 1)*(q**36 - 9*q**34 + 36*q**32 - 93*q**30 + 189*q**28 - 324*q**26 + 480*q**24 - 630*q**22 + 738*q**20 - 779*q**18 + 738*q**16 - 630*q**14 + 480*q**12 - 324*q**10 + 189*q**8 - 93*q**6 + 36*q**4 - 9*q**2 + 1)/(q**16*(q**2 + 1)**3)"
+    },
+    "qbeta_table": [
+      {
+        "element": "V^3",
+        "eps_flavour": "-0.07698053460136417243226269581244475136371",
+        "Q_beta_MeV": "0.3254339287346917072909656439",
+        "selected": true,
+        "vs_codata_pct": "-58.40214357",
+        "F_required": "2.40397002562629"
+      },
+      {
+        "element": "V^6",
+        "eps_flavour": "-0.07653295537628949536375149547078943833526",
+        "Q_beta_MeV": "0.323541795010363170345597075608",
+        "selected": false,
+        "vs_codata_pct": "-58.64400128",
+        "F_required": "2.41802889785829"
+      },
+      {
+        "element": "V^9",
+        "eps_flavour": "-0.07578988201743612670043422915905553554544",
+        "Q_beta_MeV": "0.32040046475379919659193566604",
+        "selected": false,
+        "vs_codata_pct": "-59.04553472",
+        "F_required": "2.44173618974354"
+      }
+    ],
+    "arm_gamma": "derived weights (0,0,qh),(0,0,-h/q) give V^3 for p and n: Q_beta = 0",
+    "arm_normalised": "per-sector-normalised split: 0 for every word",
+    "scope": "(a) for the values; (b) for the zero arms (invariants: P(q) intertwiner, trace cyclicity, theta/antipode invariance of the z_D trace on V^k)"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
