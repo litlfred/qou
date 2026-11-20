@@ -12,7 +12,7 @@ each factoring through a tensor power of $V$
 $K_i \hookrightarrow V^{\otimes 2j_i}$ via the PawLei embedding
 $\iota_{j_i}$.  The index $i$ labels the **constituent slot**,
 not the knot type: several slots may carry the same simple object
-(e.g.\ a proton has $K_1 = K_2 = T_{2,3}$ for two up quarks).
+(e.g.\ a proton's two up quarks occupy two slots carrying the same simple object, the unknot strand of $\mathcal{B}_3$).
 Each constituent has a
 [vertex operator](#def:vertex-operator) $Y(K_i, z_i)$ inserted at
 a point $z_i \in \mathcal{S}_p$.  The $n$-tuple of insertion points
