@@ -1585,6 +1585,50 @@ def main() -> dict:
                 _diag["substrate_identity_residual_reduction_pct"] = fmt(_mn_sub_reduction_pct, 4)
             _r["two_term_qed_diagnostics"] = _diag
 
+    # ── OWNER RULING 2026-11-20: two-term QED is PRIMARY ────────────────────
+    # Verbatim: "Put two term in scorecards and ALL compute". The scored value
+    # of m_mu, Q_beta, m_n and Delta_pn is now the TWO-TERM value (plain
+    # normalised connected Borromean V^3 trace at the m_e scale,
+    # NucleonWeightSpaceTwoTerm). The one-term row is kept under `one_term`.
+    #
+    # SCOPE, stated with the ruling, not instead of it:
+    #   * the insertion Q12+Q23 is not braid-covariant; on W_p its trace equals
+    #     -tr(Q13 w) for every word (the dropped pair) — Lean proof on
+    #     claude/two-term-qed-covariance-2026-11-20;
+    #   * the covariant (all-pairs) projection gives M_p^QED = 0 and a
+    #     word-independent n-p splitting (derived coefficient b = 0);
+    #   * of the candidate scales only m_e lands near the mu-p gap
+    #     (0.2201 keV vs 0.2288 keV needed); E0_tower gives 1.821 keV, alpha_bind
+    #     1.613 keV, alpha_em*E0_tower 0.0133 keV. So the scale and the plain
+    #     weighting are SELECTIONS. The four weightings stay in the diagnostics.
+    # Do not read the two-term rows as derived until those are closed.
+    _TWO_TERM_SCOPE = (
+        "OWNER-RULED PRIMARY 2026-11-20 (two-term, plain weighting, m_e scale). "
+        "Selection-scoped: non-covariant adjacent insertion (whole proton signal "
+        "= dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/"
+        "alpha_em*E0; covariant all-pairs projection gives b = 0. One-term "
+        "value under `one_term`.")
+    _two_term_pred = {"m_mu": _mmu_pred_2term_plain}
+    for _r in rows:
+        _o = _r.get("obs")
+        if _o in ("Q_beta", "m_n", "Delta_pn") and "pred_MeV" in _r:
+            _two_term_pred[_o] = mpf(str(_r["pred_MeV"])) + _dm_qed_plain
+    for _i, _r in enumerate(rows):
+        _o = _r.get("obs")
+        if _o not in _two_term_pred:
+            continue
+        _one = {k: _r[k] for k in ("pred_MeV", "err_ppb", "miss_factor",
+                                   "beats_1x_experimental",
+                                   "beats_100x_experimental") if k in _r}
+        _new = _row_for(_o, _two_term_pred[_o], _r.get("source_witness", ""))
+        for _k in ("pred_MeV", "err_ppb", "miss_factor",
+                   "beats_1x_experimental", "beats_100x_experimental",
+                   "compute_truncation_ppb"):
+            _r[_k] = _new[_k]
+        _r["one_term"] = _one
+        _r["scored_form"] = "two_term_plain_me"
+        _r["two_term_scope"] = _TWO_TERM_SCOPE
+
     return {
         "computation": "per-observable-100x-experimental-status",
         "description": (
