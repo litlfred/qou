@@ -4112,3 +4112,13 @@ QBetaChiralityReduction: Q_beta = (h[2]/2)*y3*E0 for every block-weighted trace.
 
 ## 2026-11-20 — W2: flavour round trip PROVED (FlavourRoundTrip.lean, sorry-free)
 tr(Lu s2 Ld s2) = (q^4+1)/(q^2+1)^2 = the ruled convention-D y3 (label A); tr(Ja s3 Jb s3) = cJ/2 (label B), also via the gamma-gamma vertex. Label B gives Q_beta +0.33% / +1.32%, but J4 labels (3) vs (2,1) = isospin 3/2 vs 1/2, not n<->p. Label C (T3) is the physical n<->p label, and no braid word changes it (qou-0whz C2). Options are in audit section 9; the default is to keep both labels with no ruling.
+
+## 2026-11-20 — W5 (session 01VQDpPf): independent check of #8564 and #8586, and the decision framed
+
+Independent recomputation (own sympy Jimbo Ř on (C²)^⊗3, not the PRs' code), proton pin, dps 60:
+- Tr(K^⊗3·)/[2]³ = Markov trace at z_D: verified (tr σ₁ = q³/(q²+1) exactly; Markov property on 1, σ₁, σ₁⁻¹).
+- #8564: at H₃, χ_(2,1)(V^k) ≥ 0 only for k = 3, 6, 9 (1.994, 1.977, 1.948): verified. Pair values 0.0182 / 0.0302 / 0.0484 MeV: verified. Q_β = 0 follows from `frobeniusSelected_ten_unique` alone; the stated hypothesis (pairing = altChar) is used only in the vd7j side result. H₆ placement enumeration not re-run. Both probes pass (13/13, 24/24).
+- #8586: ε_n − ε_p = (q²−1)P(q)/(q⁴(q²+1)³), exactly bar-odd: verified. |ε|·E₀ = 0.325433928735 MeV (−58.40 %), F_required 2.404: verified. The SIGN of ε flips with K ↔ K⁻¹ (which basis vector is "up"); |ε| does not move. So "ε < 0, neutron smaller" is convention-dependent.
+- Lean: both files lean-direct exit 0 against a private rebuilt cone; #print axioms on all declarations: propext, Classical.choice, Quot.sound only.
+
+Decision put to the owner in the session chat (options: strict γγ+reading-3 base, Q_β = 0; base + T³ flavour split, 0.3254 MeV; keep nuc11_interleaved, 0.6519 MeV, fails reading 3; CORE·TAIL·V¹, 0.2295 MeV). Bean stays todo (rule 13a).
