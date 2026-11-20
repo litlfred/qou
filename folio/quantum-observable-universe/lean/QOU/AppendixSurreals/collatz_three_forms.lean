@@ -257,4 +257,34 @@ theorem no_nontrivial_periodic_trace (sys : HeckeCollatzSystem H S)
   have := hK (p * K) hle
   rwa [hmul] at this
 
+/-- At the `[2]_q`-divisor `q = -1`, iterating the odd-branch numerator twice
+    shifts `P` by `+2`. -/
+theorem odd_branch_iterated_two_at_divisor (P : R) :
+    ((-1 : R) ^ 2 + (-1) + 1) * (((-1 : R) ^ 2 + (-1) + 1) * P + 1) + 1 = P + 2 := by
+  have h1 := odd_branch_at_divisor P
+  have h2 := odd_branch_at_divisor (P + 1)
+  rw [h1, h2]
+  ring
+
+/-- **Preperiodic tail trace exclusion (`qcz15` C12).** Under
+    `[MarkovTraceConvergence sys]`, if the orbit of `h` enters a `p`-periodic
+    cycle after `m` steps (`p > 0`), then the cycle entry `sys.step^[m] h`
+    already has Markov trace `1`. -/
+theorem no_nontrivial_preperiodic_tail_trace (sys : HeckeCollatzSystem H S)
+    [inst : MarkovTraceConvergence sys] (h : H) (m p : ℕ) (hp : 0 < p)
+    (hper : sys.step^[p] (sys.step^[m] h) = sys.step^[m] h) :
+    sys.trM (sys.step^[m] h) = 1 := by
+  have hcyc := no_nontrivial_periodic_trace sys (sys.step^[m] h) p hp hper
+  exact hcyc
+
+/-- Under `[MarkovTraceConvergence sys]`, every fixed point `sys.step h = h` has
+    unknot Markov trace `1` across all iterates `sys.step^[k] h`. -/
+theorem fixed_point_orbit_trace_one (sys : HeckeCollatzSystem H S)
+    [inst : MarkovTraceConvergence sys] (h : H) (hfix : sys.step h = h) (k : ℕ) :
+    sys.trM (sys.step^[k] h) = 1 := by
+  have hiter : sys.step^[k] h = h := Function.iterate_fixed hfix k
+  have htr : sys.trM h = 1 := inst.identity_unique_attractor h hfix
+  rw [hiter]
+  exact htr
+
 end QOU.AppendixSurreals.CollatzThreeForms

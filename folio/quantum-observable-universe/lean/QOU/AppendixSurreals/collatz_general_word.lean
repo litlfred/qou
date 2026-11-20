@@ -339,7 +339,11 @@ theorem oeoWord_front : ∀ i, 3 ≤ i → oeoWord i = false := by
   omega
 
 theorem oeoWord_oddCount : oddCount oeoWord 3 = 2 := by
-  simp [oddCount, oeoWord]
+  have h0 : oeoWord 0 = true := rfl
+  have h1 : oeoWord 1 = false := rfl
+  have h2 : oeoWord 2 = true := rfl
+  simp only [oddCount, h0, h1, h2]
+  decide
 
 /-- **The hypotheses of `qcollatz_no_front_loaded_cycle` are satisfiable outside
     the adjacent-tail family** — witnessing that the new exclusion is not vacuous
@@ -544,6 +548,56 @@ theorem cycle_regime_is_below_threshold (m k : ℕ) (hm : 1 ≤ m)
     (2 : ℤ) ^ k ≤ 2 * 3 ^ m - 2 ^ m := by
   have h2 : (2 : ℤ) ^ m < 3 ^ m :=
     pow_lt_pow_left₀ (by norm_num) (by norm_num) (by omega)
+  linarith
+
+/-! ## Contractive-word (`2^k < 3^m`) positivity exclusion (`qcz8`)
+
+In the contractive sub-family where `2^k < 3^m` and `1 ≤ m = oddCount w k`, the
+denominator height `2^k - 3^m` is strictly negative while `wordNum_map_lower`
+forces the numerator height `φ(wordNum q w k) ≥ 3^m - 2^m > 0`. Consequently,
+any cycle solution must satisfy `φ(P₀) < 0`, excluding every periodic orbit with
+non-negative `q = 1` evaluation `0 ≤ φ(P₀)`. -/
+
+/-- Any word with at least one odd step (`1 ≤ oddCount w n`) has strictly
+    positive `q = 1` numerator height `0 < φ(wordNum q w n)`. -/
+theorem wordNum_map_pos_of_oddCount_pos (q : R) (w : ℕ → Bool)
+    (hq : φ q = 1) (n : ℕ) (hm : 1 ≤ oddCount w n) :
+    0 < φ (wordNum q w n) := by
+  have hlow := wordNum_map_lower φ q w hq n
+  have h23 : (2 : ℤ) ^ oddCount w n < 3 ^ oddCount w n :=
+    pow_lt_pow_left₀ (by norm_num) (by norm_num) (by omega)
+  linarith
+
+/-- In the contractive regime `2^k < 3^m` with `1 ≤ m = oddCount w k`, the cycle
+    forcing equation forces `φ P0 < 0`. -/
+theorem qcollatz_contractive_forces_neg_at_one (q P0 : R) (w : ℕ → Bool)
+    (hq : φ q = 1) (k : ℕ) (hm : 1 ≤ oddCount w k)
+    (hcontr : (2 : ℤ) ^ k < 3 ^ oddCount w k)
+    (hforce : ((q + 1) ^ k - wordHol q w k) * P0 = wordNum q w k) :
+    φ P0 < 0 := by
+  have hmap := congrArg φ hforce
+  rw [map_mul, map_sub, map_pow, map_add, map_one, hq, wordHol_map φ q w hq k] at hmap
+  norm_num at hmap
+  have hnum_pos := wordNum_map_pos_of_oddCount_pos φ q w hq k hm
+  by_contra hge
+  push_neg at hge
+  have hden_neg : (2 : ℤ) ^ k - 3 ^ oddCount w k < 0 := by linarith
+  have hprod_nonpos : ((2 : ℤ) ^ k - 3 ^ oddCount w k) * φ P0 ≤ 0 :=
+    mul_nonpos_of_nonpos_of_nonneg (le_of_lt hden_neg) hge
+  linarith
+
+/-- **No non-negative periodic orbit in the contractive sub-family `2^k < 3^m`.**
+    If `1 ≤ oddCount w k`, `2^k < 3^(oddCount w k)`, and `0 ≤ φ (P 0)`, then no
+    period-`k` cycle exists. -/
+theorem qcollatz_no_nonneg_cycle_of_contractive (q : R) (w : ℕ → Bool) (P : ℕ → R)
+    (hq : φ q = 1) (k : ℕ)
+    (hstep : ∀ i, P (i + 1) * (q + 1) = stepMul q w i * P i + stepAdd q w i)
+    (hcyc : P k = P 0)
+    (hm : 1 ≤ oddCount w k)
+    (hcontr : (2 : ℤ) ^ k < 3 ^ oddCount w k)
+    (hnonneg : 0 ≤ φ (P 0)) : False := by
+  have hneg := qcollatz_contractive_forces_neg_at_one φ q (P 0) w hq k hm hcontr
+    (qcollatz_word_forces q w P k hstep hcyc)
   linarith
 
 end QOU.AppendixSurreals.CollatzGeneralWord

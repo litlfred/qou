@@ -69,7 +69,11 @@ def conjOp (u : (V →ₗ[R] V)ˣ) : (V →ₗ[R] V) →ₗ[R] (V →ₗ[R] V) w
 
 omit [Module.Free R V] [Module.Finite R V] in
 @[simp] theorem conjOp_apply (u : (V →ₗ[R] V)ˣ) (x : V →ₗ[R] V) :
-    conjOp u x = (↑u : V →ₗ[R] V) * x * ↑u⁻¹ := rfl
+    conjOp u x = (↑u : V →ₗ[R] V) * x * ↑u⁻¹ := by
+  have h1 : (↑u : V →ₗ[R] V) * x * ↑u⁻¹ + 0 = (↑u : V →ₗ[R] V) * x * ↑u⁻¹ :=
+    add_zero _
+  change (↑u : V →ₗ[R] V) * x * ↑u⁻¹ = _
+  exact h1.symm.trans (add_zero _)
 
 omit [Module.Free R V] [Module.Finite R V] in
 /-- **The operator lemma `M ∘ Q = M` (sorry-free).**  As linear maps
@@ -95,5 +99,54 @@ theorem trace_comp_conjOp_sub_id (u : (V →ₗ[R] V)ˣ) :
   simp only [LinearMap.comp_apply, LinearMap.sub_apply, LinearMap.id_coe, id_eq,
     conjOp_apply, map_sub, LinearMap.zero_apply]
   rw [magnitude_trace_conj, sub_self]
+
+omit [Module.Free R V] [Module.Finite R V] in
+/-- Conjugation by the identity unit is the identity operator on `End V`. -/
+theorem conjOp_one : conjOp (1 : (V →ₗ[R] V)ˣ) = LinearMap.id := by
+  ext x
+  have h : conjOp (1 : (V →ₗ[R] V)ˣ) x = (1 : V →ₗ[R] V) * x * 1 := conjOp_apply 1 x
+  rw [h, one_mul, mul_one]
+  rfl
+
+omit [Module.Free R V] [Module.Finite R V] in
+/-- Conjugation operators compose multiplicatively: `conjOp (u * v) = conjOp u ∘ conjOp v`. -/
+theorem conjOp_mul (u v : (V →ₗ[R] V)ˣ) :
+    conjOp (u * v) = (conjOp u).comp (conjOp v) := by
+  ext x
+  simp only [LinearMap.comp_apply, conjOp_apply, Units.val_mul, mul_inv_rev]
+  simp only [mul_assoc]
+
+/-- **Observed halting predicate (`qou-hrom`).** An operator `f : V →ₗ[R] V`
+    halts-observed at target trace `target : R` when `trace R V f = target`. -/
+def haltsObserved (target : R) (f : V →ₗ[R] V) : Prop :=
+  trace R V f = target
+
+omit [Module.Free R V] [Module.Finite R V] in
+/-- **Observed halting is invariant under the conjugation `Q`-step (`qou-hrom`).**
+    Because `trace ∘ conjOp u = trace`, `conjOp u f` halts-observed at `target`
+    if and only if `f` does. -/
+theorem haltsObserved_conjOp_iff (target : R) (u : (V →ₗ[R] V)ˣ) (f : V →ₗ[R] V) :
+    haltsObserved target (conjOp u f) ↔ haltsObserved target f := by
+  have htr : trace R V (conjOp u f) = trace R V f :=
+    LinearMap.congr_fun (trace_comp_conjOp u) f
+  constructor
+  · intro h
+    exact htr.symm.trans h
+  · intro h
+    exact htr.trans h
+
+omit [Module.Free R V] [Module.Finite R V] in
+/-- **Lossy shadow / converse-failure for observed halting (`qou-hrom`).**
+    Whenever a unit `u` moves `f` (`conjOp u f ≠ f`), the two distinct operators
+    `conjOp u f` and `f` have identical observed-halting status at every target
+    value, demonstrating that `haltsObserved` cannot separate conjugate states. -/
+theorem haltsObserved_converse_failure_of_conjOp_ne (target : R)
+    (u : (V →ₗ[R] V)ˣ) (f : V →ₗ[R] V) (hne : conjOp u f ≠ f)
+    (hobs : haltsObserved target f) :
+    haltsObserved target (conjOp u f) ∧ conjOp u f ≠ f := by
+  have hiff := (haltsObserved_conjOp_iff target u f).mpr hobs
+  refine ⟨?_, ?_⟩
+  · exact hiff
+  · exact hne
 
 end QOU.Information
