@@ -4331,3 +4331,11 @@ Owner 20:52 ("higher q power"?). Pre-reg `7f9016bf4e`. Lean `QOU/QBeta/NormalFor
 - Required κ/m_e (comparison only): 1.53099 (Δℓ=1), 0.51033 (Δ=3), 0.30620 (Δ=5) vs Q 0.78233; no corpus scale per unit exists.
 - One linear scale on χ-degree has a sign conflict (p higher but lighter; e⁻ at +3, massive). Scope (a).
 - Side: `beta_decay_energy_negative` (E_gs daughter < parent) holds in the short model (−0.209), fails in the 11-letter model (+0.064), equal on V³.
+
+## 2026-11-20T21:45Z — P2: e⁻ν̄ pair as ONE word entangled with the proton (PR #8680)
+
+Leptons from the knot blocks (e⁻ = σ³ trefoil, ν̄ = 1-strand unknot); exact conv-D Markov trace over ℚ(q); 777 six-strand final-state words, proton pin 70 dps. Audit `docs/audits/2026-11-20-beta-entangled-lepton-pair.md`.
+- Clasp σ₁^{±2} multiplies ANY 2-strand trace by λ₊=(q⁴+1)/(q²+1), λ₋=(q⁴+1)/(q²(q²+1)) (Lean sorry-free, `QOU/QBeta/EntangledLeptonPairTrace.lean`).
+- Leptons attached through ONE nucleon strand are nucleon-blind: tr(W)/tr(N) identical for p, n, β_Bor in 9+729+27 words (connected sum; families A,B proved by Jones multiplicativity, C measured). Only a full twist on ≥2 nucleon strands + e⁻ is nucleon-sensitive (12/12); its trace cross term ∝ q⁶−1 (ν̄ unlinked), → 0 at q→1.
+- Trace channel |tr|[N]!/q^N extended uniformly (my extension; corpus defines N=3 only): E(ν̄)=m_μ/q₀=95.19 MeV, E(n)−E(p)=−72.92 MeV, X∈[8.5e3, 8.3e4] MeV, Q∈[−8.3e4, −8.8e3] MeV vs CODATA 0.78233. Scope (a). Volume channel gives e⁻, ν̄ zero; entangled volumes not computed (no SnapPy).
+- Linking letters are chosen: the corpus writes the pair only as ⊔. Still open; not closing.
