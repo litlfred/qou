@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "def:derived-atom",
     "def:categorical-meson",
-    "prop:atom-knot-mass-derivation",
+    "conj:atom-knot-mass-derivation",
     "rem:pion-mass-hyperbolic-threshold",
   ],
   authorNotes: [
@@ -20,7 +20,7 @@ export default remark({
         "disposes of the antiquarks as 'either annihilate or form " +
         "antinucleons', omitting the third available channel — three q-qbar " +
         "pairs binding as three mesons. The omission turns out to be " +
-        "justified: on `prop:atom-knot-mass-derivation`'s formula the " +
+        "justified: on `conj:atom-knot-mass-derivation`'s formula the " +
         "meson's Hopf-link binding topology has Vol = 0, so channel B " +
         "carries no binding, while the Borromean rings of channel A carry " +
         "8G. But the text gives no reason, and the reason matters because it " +

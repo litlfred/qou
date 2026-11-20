@@ -1,4 +1,4 @@
-**Proof.** After the pre-Archimedean / post-Archimedean simplification
+**Proof sketch.** After the pre-Archimedean / post-Archimedean simplification
 (Yekutieli at finite slices replaces any geometric-leg construction
 with finite-categorical Markov trace), the proof is a single
 pre-Archimedean categorical pipeline, terminated by the Archimedean
@@ -42,7 +42,7 @@ finite-sum form
 $\mathrm{tr}_M = \sum_\lambda y_\lambda(q) \chi_\lambda$
 where $y_\lambda(q) = s_{\lambda, r}(Q) / Z$ is the Wenzl-bridge
 coefficient ([thm:jones-markov-trace](#thm:jones-markov-trace),
-[prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure))
+[conj:alpha-k-derivation-procedure](#conj:alpha-k-derivation-procedure))
 and $\chi_\lambda$ is the $q$-Murnaghan–Nakayama character.
 
 **The categorical mass invariant.** Setting

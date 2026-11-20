@@ -3,7 +3,8 @@
 Compute Wiring for A=1 Nucleons, μ–p Anchor Tension, U-Spin Baryon Octet, and
 A=2,3,4 Light Isotopes with GPMT Modified-Dimension Cumulants.
 
-Implements the parameter-free two-term categorical mass operator
+Implements the two-term categorical mass operator (its QED figures are selections,
+not derived: issue #8524, probes/two_term_qed_pair_choice)
     M = M_QCD + M_QED
 from the sorry-free Lean modules:
   1. `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm`
@@ -211,7 +212,7 @@ def compute_all() -> dict:
                 "m_mu_shift_from_1term_ppb": fmt(shift_ppb, 8),
             }
 
-        # Weight-space & macroscopic parameter-free candidates + empirical Cottingham benchmark
+        # Weight-space & macroscopic candidates (selections, not derived) + empirical Cottingham benchmark
         mp_qed_hecke_1crossing = alpha_em * m_e * 2 * (q2 - 1) / (9 * q0)
         mp_qed_macro_E0_qint3 = alpha_em * E0_tower * q_int(q0, 3)
         mp_qed_cottingham_benchmark = mp.mpf("0.63")  # Empirical benchmark ONLY, never used as input

@@ -5,7 +5,7 @@ free-particle sum.  The binding energy is the
 algebraic difference of the bound atom's mass formula and its
 free baseline.  Each of the six terms contributes additively to
 the categorical mass per
-[unified six-term decomposition](#thm:six-term-mass-formula-complete);
+[unified six-term decomposition](#conj:six-term-mass-formula-complete);
 isolating the **physical scale** of each contribution is exactly
 the per-derivation reading above:
 

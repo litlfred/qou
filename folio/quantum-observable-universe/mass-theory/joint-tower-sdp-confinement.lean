@@ -7,13 +7,13 @@
   constraints.
 
   This is the structural "step 1" input to the categorical mass
-  derivation (prop:atom-knot-mass-derivation).  Per-atom SDPs alone
+  derivation (conj:atom-knot-mass-derivation).  Per-atom SDPs alone
   are insufficient — the cross-level consistency constraints can only
   be enforced jointly.
 
-  Refs: prop:joint-tower-sdp-confinement (this block),
+  Refs: conj:joint-tower-sdp-confinement (this block),
         def:confined-particle, prop:confinement-sdp,
-        prop:atom-knot-mass-derivation, prop:gb-spectral-sequence,
+        conj:atom-knot-mass-derivation, prop:gb-spectral-sequence,
         prop:spectral-sequence-collapse,
         prop:wedderburn-trace-identity.
 -/
@@ -116,7 +116,7 @@ theorem joint_tower_sdp_feasible (sdp : JointTowerSdp)
 
 /-- Output: structured certificate Φ(q_0) per atom.  Combined with
     the Wedderburn-multiplicity ρ(𝔥), this is consumed by
-    prop:atom-knot-mass-derivation. -/
+    conj:atom-knot-mass-derivation. -/
 structure JointTowerSdpCertificate where
   T_w_per_atom : List (String × List ℤ)             -- (atom_name, σ-word)
   filtration_per_atom : List (String × ℕ)            -- (atom_name, max_grade)

@@ -49,7 +49,9 @@ eigenvalues $(q^{2k}, q^{-2k}) \in R^\times \times R^\times$
 Define the **per-link block projectors**:
 - $e_W^{+} := $ sym block of $T(2, 4)$, $e_W^{-} := $ alt block
 - $e_Z^{+} := $ sym block of $T(2, 6)$, $e_Z^{-} := $ alt block
-- $e_H^{+} := $ sym block of $T(2, 8)$, $e_H^{-} := $ alt block
+- $e_{T(2,8)}^{+} := $ sym block of $T(2, 8)$, $e_{T(2,8)}^{-} := $ alt block
+
+The $T(2,8)$ pair is indexed by its link rather than by $H$, to keep it distinct from the Higgs idempotent $e_H$ of [conj:g-action-on-substrate](#conj:g-action-on-substrate), which is a rank-one idempotent on $A^{(H)}$ and not a Wedderburn block of $H_2(q)$.
 
 The three torus links **all embed in the same Bring-surface
 genus-$4$ Seifert fiber**
@@ -58,7 +60,7 @@ since their Seifert genera $1, 2, 3$ are each $\leq 4$. So the
 six projectors live in $H_2(q)$ in the same ambient host as the
 saturating EM/strong carriers $\{T_{2,9}, T_{3,5}\}$. The
 completeness statement asserts that within the EW sector, the
-direct sum $e_W^{+} \oplus e_W^{-} \oplus \cdots \oplus e_H^{-}$
+direct sum $e_W^{+} \oplus e_W^{-} \oplus \cdots \oplus e_{T(2,8)}^{-}$
 exhausts the Wedderburn-block content of the EW Hecke action on
 Bring's surface.
 

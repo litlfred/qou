@@ -23,7 +23,7 @@ Used in Term 5 chirality derivation
 (prop:chirality-dual-space-derivation) and in the neutron tower
 closure (prop:frobenius-antipode-unifies-chirality-and-tower).
 
-LaTeX label: thm:frobenius-antipode-unifies-chirality-and-tower
+LaTeX label: conj:frobenius-antipode-unifies-chirality-and-tower
 -/
 
 namespace QOU.BraidKnot

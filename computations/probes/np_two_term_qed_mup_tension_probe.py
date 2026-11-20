@@ -9,7 +9,10 @@ for Bean qou-eas4 (Epic qou-9pl8):
      and the exact closed forms of the charge-weighted Convention-D trace functionals.
   2. Test 1 — Impact of the two-term decomposition m_p = m_p^QCD + M_p^QED on the
      211 ppb mu-p consistency tension (q_proton vs q_muon, delta_m_p = m_p^QCD(q_muon) - m_p^exp).
-     Evaluates all pre-registered parameter-free QOU electromagnetic self-energy
+     NOTE 2026-11-20 (issue #8524): the 'DERIVED-*' labels below are historical keys. The
+     Borromean V^3 candidates are selections, not derived (pair 1-3 left out, scale and weighting
+     chosen); see probes/two_term_qed_pair_choice. Keys kept so consumers do not break.
+     Evaluates all pre-registered QOU electromagnetic self-energy
      candidates M_p^QED (and literature Cottingham/lattice benchmarks) honestly,
      with zero cherry-picking.
   3. Test 2 — Impact of the two-term decomposition Delta m_np = Delta m_QCD + Delta m_QED
@@ -641,7 +644,7 @@ def main() -> int:
     mp_qed_candidates = [
         ("Baseline (no QED correction, M_p^QED = 0)", mp.mpf(0)),
         ("Exact gap target -(m_p^QCD(q_mu) - m_p^exp) [reference only]", -delta_mp_mev),
-        # PRIMARY ZERO-PARAMETER DERIVED BORROMEAN V^3 CONNECTED 4TH-ORDER TRACE (NucleonWeightSpaceTwoTerm.lean)
+        # PRIMARY BORROMEAN (selection, not derived; issue #8524) V^3 CONNECTED 4TH-ORDER TRACE (NucleonWeightSpaceTwoTerm.lean)
         ("DERIVED-Bor-V3 (plain): +m_e * |tr_conn(p, V^3)| [= +0.220077 keV]", +m_e_mev * abs(tr_conn_Bor_p_val)),
         ("DERIVED-Bor-V3 (K^3-wt): +q * m_e * |tr_conn(p, V^3)| [= +0.244281 keV]", +q_proton * m_e_mev * abs(tr_conn_Bor_p_val)),
         # Literature benchmarks (macroscopic proton EM self-energy M_p^QED > 0)
@@ -792,7 +795,7 @@ def main() -> int:
 
         qed_cands = {
             "QED-0 (none = 0)": mp.mpf(0),
-            # PRIMARY ZERO-PARAMETER DERIVED BORROMEAN V^3 TRACES (NucleonWeightSpaceTwoTerm.lean)
+            # PRIMARY BORROMEAN (selection, not derived; issue #8524) V^3 TRACES (NucleonWeightSpaceTwoTerm.lean)
             "DERIVED-Bor-V3-Conn (plain): -m_e * Delta tr_conn(V^3)": -m_e_mev * diff_conn_V3_norm,
             "DERIVED-Bor-V3-Conn (K_n/K_p-wt): -m_e * (q^-1 tr_n - q tr_p)_conn": -m_e_mev * diff_conn_V3_KnKp_norm,
             "DERIVED-Bor-V3-Conn (K_p^3-wt): -m_e * (tr_n - q tr_p)_conn": -m_e_mev * diff_conn_V3_Kwt_norm,

@@ -1,7 +1,8 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:baryon-product-from-alt",
-  title: "Proof of baryon product from alt",
-  uses: ["prop:baryon-product-from-alt"],
+export default remark({
+  interprets: "conj:baryon-product-from-alt",
+  label: "rem:baryon-product-from-alt-proof-sketch",
+  title: "Proof sketch: baryon product from alt",
+  uses: ["conj:baryon-product-from-alt"],
 });

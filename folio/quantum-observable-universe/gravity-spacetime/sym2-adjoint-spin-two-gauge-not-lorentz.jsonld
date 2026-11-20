@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-sym2-adjoint-spin-two-gauge-not-lorentz",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:sym2-adjoint-spin-two-gauge-not-lorentz",
+  "kind": "remark",
+  "title": "The spin-$2$ summand of $\\mathrm{Sym}^2(V_1)$ is gauge spin, not spacetime spin",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sym2-adjoint-traceless-spin-two",
+    "papers/quantum-observable-universe/blocks/thm-su2-emergence",
+    "papers/quantum-observable-universe/blocks/prop-spin-labels"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-sym2-adjoint-traceless-spin-two",
+  "tags": [
+    "spin",
+    "gauge-group",
+    "graviton",
+    "symmetric-square",
+    "scope"
+  ],
+  "text": "sym2-adjoint-spin-two-gauge-not-lorentz.md",
+  "provenance": "authored"
+}

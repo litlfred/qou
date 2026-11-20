@@ -1,11 +1,11 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:atom-knot-mass-derivation",
-  title:
-    "Proof of the end-to-end mass derivation $B = \\rho \\cdot m_e \\cdot \\mathrm{Vol}_{\\mathrm{hyp}}(\\widehat{T_w})$",
+export default remark({
+  interprets: "conj:atom-knot-mass-derivation",
+  label: "rem:atom-knot-mass-derivation-proof-sketch",
+  title: "Proof sketch: the end-to-end mass derivation $B = \\rho \\cdot m_e \\cdot \\mathrm{Vol}_{\\mathrm{hyp}}(\\widehat{T_w})$",
   uses: [
-    "prop:atom-knot-mass-derivation",
+    "conj:atom-knot-mass-derivation",
     "def:archimedean-realization-functor",
     "thm:jones-markov-trace",
   ],

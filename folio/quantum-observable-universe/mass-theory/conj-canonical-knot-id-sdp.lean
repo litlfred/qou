@@ -45,8 +45,8 @@ verified by Lean modulo this single conjectural input.
 ## References
 - [leitner2026] conj:canonical-knot-id-sdp
 - [leitner2026] prop:confinement-sdp
-- [leitner2026] prop:joint-tower-sdp-confinement
-- [leitner2026] prop:atom-knot-mass-derivation
+- [leitner2026] conj:joint-tower-sdp-confinement
+- [leitner2026] conj:atom-knot-mass-derivation
 -/
 
 namespace QOU.BraidKnot
@@ -167,7 +167,7 @@ the previously vacuous `True` Props per Gemini's PR #614 review
 
 -- Ref: [leitner2026] conj:canonical-knot-id-sdp
 -- Ref: [leitner2026] prop:delta-max-uniform-bound
--- Ref: [leitner2026] prop:joint-tower-sdp-confinement
+-- Ref: [leitner2026] conj:joint-tower-sdp-confinement
 class CanonicalKnotIdSDP (n : LightNucleus) where
   /-- Name of the canonical knot / link (e.g. "6_2", "8_11", "L6a4"). -/
   canonicalKnotId : String

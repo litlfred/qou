@@ -1,7 +1,8 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:explicit-alpha-k-h3",
-  title: "Proof of explicit alpha k h3",
-  uses: ["prop:explicit-alpha-k-h3"],
+export default remark({
+  interprets: "conj:explicit-alpha-k-h3",
+  label: "rem:explicit-alpha-k-h3-proof-sketch",
+  title: "Proof sketch: explicit alpha k h3",
+  uses: ["conj:explicit-alpha-k-h3"],
 });

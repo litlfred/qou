@@ -57,7 +57,7 @@
   not here.  Nothing in this file is archimedean, so it is already on the
   correct side of the wall.
 
-  Refs: prop:wedderburn-bratteli-recursion,
+  Refs: conj:wedderburn-bratteli-recursion,
         prop:y-lambda-closed-form-wenzl-bridge,
         prop:hoefsmit-seminormal-form,
         thm:jones-markov-trace
@@ -160,7 +160,7 @@ def SatisfiesWedderburnBratteliRecursion {R : Type u} [Field R]
     not non-triviality of the weight. Sharpening to "the unique
     Markov-trace-derived weight satisfies the recursion" requires a
     Jones-Markov axiom on top of `MarkovTransitionStep`. -/
--- Ref: prop:wedderburn-bratteli-recursion proof, [hoefsmit1974];
+-- Ref: conj:wedderburn-bratteli-recursion proof, [hoefsmit1974];
 -- Hoefsmit seminormal eigenvalue on per-cell idempotent + Markov property.
 theorem wedderburn_bratteli_recursion_holds
     {R : Type u} [Field R] (q : R) :

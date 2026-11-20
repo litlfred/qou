@@ -19,7 +19,7 @@ $$
   \rho_F  \;=\;  \nu_{\mathrm{SDP}}(K_w)
 $$
 
-per [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
+per [`atom-knot-mass-derivation`](#conj:atom-knot-mass-derivation)
 §Algorithm step 3 (the joint-tower SDP solve that produces
 $\nu_{\mathrm{SDP}}$ as a non-negative integer multiplicity).
 
@@ -27,7 +27,7 @@ $\nu_{\mathrm{SDP}}$ as a non-negative integer multiplicity).
 
 The identity is exact on the SDP-confirmed
 hyperbolic atoms (per
-[`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation) line 265):
+[`atom-knot-mass-derivation`](#conj:atom-knot-mass-derivation) line 265):
 
 | Atom | $K_w$ | $\rho_F$ (legacy) | $\nu_{\mathrm{SDP}}$ |
 |------|-------|-------------------|----------------------|
@@ -121,7 +121,7 @@ formula it feeds, and nothing more.
 
 Before the present convention, three distinct quantities used the symbol $\rho$
 in QOU compute and content (per
-[`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation) §Notation):
+[`atom-knot-mass-derivation`](#conj:atom-knot-mass-derivation) §Notation):
 
 - $\nu_{\mathrm{SDP}}$ — integer Wedderburn multiplicity (this conjecture)
 - $\rho_K$ — CODATA-fit density per knot
@@ -138,7 +138,7 @@ removing the third unnamed $\rho$.
   — ATOM_ASSIGN.`nu_sdp` field (renamed from `rho_factor`)
 - the canonical formalism
   — reads `nu_sdp` and emits `B_pred = nu_sdp · m_e · Vol(K)`
-- [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
+- [`atom-knot-mass-derivation`](#conj:atom-knot-mass-derivation)
   §Algorithm step 3 — supplies $\nu_{\mathrm{SDP}}$ via joint-tower SDP
 
 ## What remains open

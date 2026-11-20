@@ -1,7 +1,8 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:alpha-k-derivation-procedure",
-  title: "Proof of alpha k derivation procedure",
-  uses: ["prop:alpha-k-derivation-procedure"],
+export default remark({
+  interprets: "conj:alpha-k-derivation-procedure",
+  label: "rem:alpha-k-derivation-procedure-proof-sketch",
+  title: "Proof sketch: alpha k derivation procedure",
+  uses: ["conj:alpha-k-derivation-procedure"],
 });

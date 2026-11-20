@@ -42,7 +42,13 @@ $$
   e_H \;=\; \frac{\varrho_\Phi \cdot \varrho_\Phi^*}{\mathrm{tr}_F(\varrho_\Phi^* \cdot \varrho_\Phi)}.
 $$
 
-This rank-1 projector isolates the unbroken 1-dimensional subspace of $A^{(H)}$. By Constraint (G-2), its trace dimension is $[2]_q$.
+This rank-1 projector isolates the unbroken 1-dimensional subspace of $A^{(H)}$. Its trace is
+
+$$
+  \mathrm{tr}_F(e_H) \;=\; 1.
+$$
+
+The idempotent factors through the monoidal unit: $e_H = \varrho_\Phi \circ \bigl(t^{-1}\varrho_\Phi^*\bigr)$ with $t = \mathrm{tr}_F(\varrho_\Phi^* \cdot \varrho_\Phi)$, and $\varrho_\Phi^* \cdot \varrho_\Phi = t \cdot \mathrm{id}_{\mathbf{1}}$. Cyclicity of the trace gives $\mathrm{tr}_F(e_H) = \mathrm{tr}_F(\mathrm{id}_{\mathbf{1}})$, which is $1$ for a unit-normalised cyclic trace (Lean: `VacuumPairing.tr_proj_eq_one`). The value $[2]_q$ of (G-2) is the $q$-dimension of all of $A^{(H)}$, not the trace of its rank-one image.
 
 ### Derivation of $\mathcal{N}_{\rm sym}(q)$
 
@@ -59,16 +65,16 @@ Applying the assignments from the first two constraints yields:
 
 - $\dim_q(e_{\rm sym}^{\rm EW}[A^{(W^\pm)}]) = [4]_q$
 - $\dim_q(e_{\rm sym}^{\rm EW}[A^{(Z)}]) = [6]_q$
-- $\dim_q(e_H \cdot A^{(H)}) = [2]_q$
+- $\dim_q(e_H \cdot A^{(H)}) = \mathrm{tr}_F(e_H) = 1$
 
 Thus,
 
 $$
   \mathcal{N}_{\rm sym}(q)
   \;=\;
-  [4]_q \cdot [4]_q \cdot [6]_q \cdot [2]_q
+  [4]_q \cdot [4]_q \cdot [6]_q \cdot 1
   \;=\;
-  [2]_q \cdot [4]_q^2 \cdot [6]_q.
+  [4]_q^2 \cdot [6]_q.
 $$
 
 This derivation grounds Anchor II explicitly in categorical structures. See [Table 2](#tbl:g-action-on-substrate-table2-data).
@@ -78,10 +84,10 @@ This derivation grounds Anchor II explicitly in categorical structures. See [Tab
 At the value $q_0 = {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 6 }}\ldots$, the predicted trace evaluates to:
 
 $$
-  [2]_q \cdot [4]_q^2 \cdot [6]_q \;=\; 2.0109 \cdot 16.892 \cdot 6.388
-  \;\approx\; 216.96.
+  [4]_q^2 \cdot [6]_q \;\approx\; 16.889 \cdot 6.388
+  \;\approx\; 107.89.
 $$
 
-Compared to the CODATA target $\mathcal{N}_{\rm sym}(q_0) = 213.11$, this leaves a residual deviation of $-1.81\%$.
+The CODATA target is $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$. The predicted value is $49.4\%$ below it ($107.89/213.11 - 1 \approx -0.494$).
 
-The small discrepancy suggests an incomplete specification of the constraints. Possible physical origins include a categorical correction to the vacuum volume normalization, a Plancherel weight for the electroweak block, or a Higgs-mixing correction of order $\mathcal{O}(\hbar_q^2)$ on the $Z$-host. Precise discrimination requires refining the substrate's categorical structure, and results that depend on $\mathcal{N}_{\rm sym}$ inherit this residual.
+The constraints as stated do not reproduce the target. An earlier version of (G-4) gave $\mathrm{tr}_F(e_H)$ the value $[2]_q$, and the resulting product $[2]_q \cdot [4]_q^2 \cdot [6]_q \approx 216.96$ came within $1.81\%$ of the target; that factor is the $q$-dimension of $A^{(H)}$, not the trace of $e_H$, so the near-match does not survive. The discrepancy points to an incomplete specification of the constraints. Possible physical origins include a categorical correction to the vacuum volume normalization, a Plancherel weight for the electroweak block, or a Higgs-mixing correction of order $\mathcal{O}(\hbar_q^2)$ on the $Z$-host. Precise discrimination requires refining the substrate's categorical structure, and results that depend on $\mathcal{N}_{\rm sym}$ inherit this residual.

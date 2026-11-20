@@ -319,17 +319,20 @@ def li2_q_sym(z: mp.mpf, max_n: int = 300) -> mp.mpf:
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
 
     Identity: ∫_0^V (ln_q(1+t)/t) dt = -Li_2^q(-V).
+
+    Delegates to the corpus implementation ``_li_2_q_util.li_2_q`` (bean
+    qou-cw27). The power series has radius |z| < q, but the FUNCTION is
+    analytic on the whole negative axis:
+        -Li_2^q(-V) = (q - q^{-1}) · Σ_{k≥0} log(1 + V·q^{-(2k+1)}),
+    finite and positive for every V > 0. This module previously summed the
+    series to a fixed 300 terms with no radius check, so for |V| > q it
+    returned a truncated DIVERGENT partial sum: -2.43e15 at the proton's
+    convention-D volume V = 1.2824 (and a different value at 301 terms).
+    That number was never a pole of the formula. ``max_n`` is kept only for
+    call-site compatibility and is ignored.
     """
-    total = mp.mpf(0)
-    for n in range(1, max_n + 1):
-        nq = _q_int(n)
-        if abs(nq) < mp.mpf("1e-300"):
-            continue
-        term = z ** n / (n * nq)
-        total += term
-        if abs(term) < mp.mpf("1e-50"):
-            break
-    return total
+    from _li_2_q_util import li_2_q
+    return li_2_q(mp.mpf(z), Q_MP, Q_INV_MP)
 
 
 # ── Canonical Term 6 from Habiro residue witness ────────────────────
@@ -373,31 +376,51 @@ def term1_descended(vols):
     return p
 
 
+def _phi_q_or_divergent(arg):
+    """Φ_q(arg), or ``mp.inf`` when ``arg`` is at or past the pole.
+
+    Φ_q(x) = ∏_{k≥1} (1 − q^{-k} x)^{-1} has its first pole at x = q₀. Under
+    the convention-D volumes (owner ruling 2026-11-18) the proton and neutron
+    generator volumes are 1.2824 and 1.1337, past it (bean qou-2tuv).
+    """
+    phi = Phi_q(arg)
+    if mp.isinf(phi) or mp.isnan(phi):
+        return mp.inf
+    return mp.mpf(phi)
+
+
 def term2_single_gen_tower(vols):
-    """Term 2: Σ_i Φ_q(|V̂_i|)."""
+    """Term 2: Σ_i Φ_q(|V̂_i|).
+
+    Returns ``mp.inf`` if any generator volume is at or past the Φ_q pole.
+    It used to skip such generators silently (and, through a swallowed
+    TypeError, every generator); a divergence is now reported as what it is
+    (owner, 2026-11-20).
+    """
     total = mp.mpf(0)
     for v in vols:
-        try:
-            phi = Phi_q(v)
-            if not mp.isinf(phi) and not mp.isnan(phi):
-                total += phi
-        except Exception:
-            pass
+        # |V̂_i| per the docstring. The old body passed the raw volume, which
+        # is a dict ({"full", "sym", ...}); Phi_q raised TypeError on it and the
+        # blanket `except: pass` swallowed that, so this term was 0 for EVERY
+        # isotope in every convention, not only past the pole.
+        phi = _phi_q_or_divergent(abs_mpf(v))
+        if mp.isinf(phi):
+            return mp.inf
+        total += phi
     return total
 
 
 def term3_pair_gen_tower(vols):
-    """Term 3: z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)."""
+    """Term 3: z² Σ_{i<j} Φ_q(|V̂_i V̂_j|). ``mp.inf`` on any divergent pair
+    (previously skipped silently, as in Term 2)."""
     total = mp.mpf(0)
     n = len(vols)
     for (i, j) in combinations(range(n), 2):
         arg = abs_mpf(vols[i]) * abs_mpf(vols[j])
-        try:
-            phi = Phi_q(arg)
-            if not mp.isinf(phi) and not mp.isnan(phi):
-                total += Z_MARK ** 2 * phi
-        except Exception:
-            pass
+        phi = _phi_q_or_divergent(arg)
+        if mp.isinf(phi):
+            return mp.inf
+        total += Z_MARK ** 2 * phi
     return total
 
 
