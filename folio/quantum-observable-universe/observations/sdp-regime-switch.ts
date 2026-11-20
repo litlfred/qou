@@ -11,6 +11,9 @@ export default proposition({
     "prop:unified-iterative-correction",
     "prop:q-heat-kernel-peter-weyl",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([$q$-heat kernel Peter-Weyl](#prop:q-heat-kernel-peter-weyl))" },
+  ],
   tags: [
     "sdp",
     "regime-switch",
