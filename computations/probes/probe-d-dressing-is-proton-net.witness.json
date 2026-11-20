@@ -1,31 +1,31 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T13:24:19.598668+00:00",
-  "commitSha": "4dfe838c398126a960003b0092b87838bf3818a1",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T16:02:06.142072+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "abs_delta_net_eq_h_net_p",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "4.83724949865941701043468466875971454488342298500478895518600e-71",
+      "expected": "0",
       "passed": true,
       "tolerance": "1e-45",
       "source": "|Δ(net)| = h·net(p) — exact ℚ(q), the identity tying the binding dressing to Q_β"
     },
     {
       "name": "binding_candidate_subpercent",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "source": "B_D = E₀·net(p)·Δtr vs AME2020"
     }
   ],
-  "allPassed": true,
-  "durationMs": 21,
+  "allPassed": false,
+  "durationMs": 25,
   "computation": "probe-d-dressing-is-proton-net",
   "scriptFile": "probe_d_dressing_is_proton_net.py",
-  "scriptHash": "909123d5e1a4",
-  "scriptCommitSha": "4dfe838c398126a960003b0092b87838bf3818a1",
+  "scriptHash": "f39fe471d156",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,11 +33,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_d_dressing_is_proton_net.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_d_dressing_is_proton_net.py"
   },
   "description": "The deuteron binding dressing (1−h/2) is the proton single-wrap NF net coefficient net(p) (conj:borromean-quark). Exact ℚ(q) chain: Δ(net) = −h·net(p); |Δ(net)| = h·net(p); Q_β = E₀·h·net(p); hence B_D = E₀·net(p)·Δtr = Q_β·Δtr/h. Ties the binding dressing to the β-decay (bar-odd) sector via the single factor h. Structural identification; magnitude match (+0.12%) observation-tier, conditional on borromean-quark, NOT wired.",
   "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
@@ -60,16 +69,16 @@
       "net_n": "0.70826265607280202155",
       "abs_delta_net": "0.18720719452937832073",
       "h_times_net_p": "0.18720719452937832073",
-      "abs_delta_eq_h_net_p_reldiff": 0.0,
+      "abs_delta_eq_h_net_p_reldiff": "4.83724949865941701043468466875971454488342298500478895518600e-71",
       "Qbeta_ansatz_MeV": "0.783645827374621213",
-      "Qbeta_kashiwara_MeV": "0.782334386518171885",
-      "Qbeta_ansatz_vs_kashiwara_rel": 0.0016763175427913603,
-      "Delta_tr": "0.59516889262234348652",
-      "B_cand_E0_netp_dtr_MeV": "2.23094304357897479",
-      "B_cand_err_vs_AME_pct": 0.28665559959396997,
-      "B_via_kashiwara_qbeta_MeV": "2.2272095331670547",
-      "B_via_qbeta_err_vs_AME_pct": 0.11882465745702253,
-      "consistency_cand_vs_ansatz_route_rel": 0.0
+      "Qbeta_kashiwara_MeV": "0.782804689809386912",
+      "Qbeta_ansatz_vs_kashiwara_rel": "0.00107451778992166989657640301945191586989573880739106925856361",
+      "Delta_tr": "0.14704667798040846911",
+      "B_cand_E0_netp_dtr_MeV": "0.55119272426415506",
+      "B_cand_err_vs_AME_pct": "-75.2224625068853846455482681257115789256372815159300582987958",
+      "B_via_kashiwara_qbeta_MeV": "0.550601093593938048",
+      "B_via_qbeta_err_vs_AME_pct": "-75.2490578345594728712754098938936799964435495384982296921592",
+      "consistency_cand_vs_ansatz_route_rel": "6.57169710715328292414490410598898921633359898586247689957022e-71"
     }
   },
   "q0Anchor": "proton",

@@ -84,7 +84,7 @@ import os  # noqa: E402
 os.environ.setdefault("QOU_COMPUTE_DPS", "70")
 os.environ.setdefault("QOU_OUTPUT_DPS", "60")
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt, OUTPUT_DPS  # noqa: E402
 set_compute_dps(70)
 
 from witness_base import WitnessBuilder  # noqa: E402
@@ -157,6 +157,37 @@ def main() -> int:
     print(f"  Δtr_M(u) = tr_M(n) − tr_M(p)  (exact rational in u)")
     print()
 
+    def _mpc(expr, dps: int = OUTPUT_DPS + 10) -> "mp.mpc":
+        """Evaluate a sympy expression to an mpmath complex at `dps`.
+
+        NOT ``complex(sp.N(...))``: that casts to float64 and discards
+        every digit past ~16, so a 30-dps evaluation was being thrown
+        away at the serialization boundary (AGENTS.md NO-FLOAT64).
+        """
+        v = sp.N(expr, dps)
+        re_, im_ = v.as_real_imag()
+        return mp.mpc(mp.mpf(str(sp.N(re_, dps))), mp.mpf(str(sp.N(im_, dps))))
+
+    def _is_pole_at_zeta(den: sp.Expr, d: int) -> bool:
+        """EXACT: is ζ_d a zero of `den`?  ζ_d is a root of a rational
+        polynomial iff the d-th cyclotomic polynomial divides it, tested
+        by polynomial remainder over ℚ — deterministic, no floats.
+
+        Replaces ``sp.simplify(den.subs(u, zeta)) == 0``, a heuristic
+        zero-test that silently MISCLASSIFIED the pole structure: it
+        reported a pole at d=4 and none at d=8, while
+        den_p = 4u¹⁸(u⁴+1)² gives u⁴=+1 at ζ₄ (value 4, no pole) and
+        u⁴=−1 at ζ₈ (value 0, genuine pole).  The verdict flipped with
+        the mpmath version, because sympy's simplify leans on it.
+        """
+        try:
+            dp = sp.Poly(sp.expand(den), u)
+        except sp.PolynomialError:
+            return bool(sp.simplify(den.subs(u, sp.exp(sp.I * 2 * sp.pi / d))) == 0)
+        if dp.is_zero:
+            return True
+        return bool(sp.rem(dp, sp.Poly(sp.cyclotomic_poly(d, u), u)).is_zero)
+
     # ── 1. numeric sanity at canonical q₀ ──────────────────────────
     # IMPORTANT: the witness Habiro variable is u = q^{1/2} (NOT the
     # ladder variable u_ladder = b·ℏ²). See habiro_coefficients_atomic.py
@@ -165,8 +196,8 @@ def main() -> int:
     # u = √q, where the root-of-unity truncation is the genuine WRT cut.
     q0 = Q_MP
     u0 = mp.sqrt(q0)
-    trM_p_num = complex(sp.N(trM_p.subs(u, sp.Float(str(u0), 60)), 40))
-    trM_n_num = complex(sp.N(trM_n.subs(u, sp.Float(str(u0), 60)), 40))
+    trM_p_num = _mpc(trM_p.subs(u, sp.Float(str(u0), 60)), 40)
+    trM_n_num = _mpc(trM_n.subs(u, sp.Float(str(u0), 60)), 40)
     print(f"  q₀ = {mp.nstr(q0,12)} → u₀ = √q₀ = {mp.nstr(u0,12)}  "
           f"(Habiro u, NOT ladder b·ℏ²)")
     print(f"  tr_M(p, u₀) = {trM_p_num.real:.10f}  (witness: "
@@ -174,7 +205,7 @@ def main() -> int:
     print(f"  tr_M(n, u₀) = {trM_n_num.real:.10f}  (witness: "
           f"{n_atom['tr_M_at_q0']})")
     poch_bug_ok = abs(trM_p_num.real
-                      - float(p_atom["tr_M_at_q0"])) < 1e-6
+                      - mp.mpf(str(p_atom["tr_M_at_q0"]))) < mp.mpf("1e-6")
     print(f"  Pochhammer/denominator fix reproduces witness: {poch_bug_ok}")
     print()
 
@@ -214,8 +245,8 @@ def main() -> int:
         en = trunc_expr(n_atom, d)
         den_p = sp.denom(ep)
         den_n = sp.denom(en)
-        pole_p = sp.simplify(den_p.subs(u, zeta)) == 0
-        pole_n = sp.simplify(den_n.subs(u, zeta)) == 0
+        pole_p = _is_pole_at_zeta(den_p, d)
+        pole_n = _is_pole_at_zeta(den_n, d)
         if pole_p or pole_n:
             which = "p&n" if (pole_p and pole_n) else ("p" if pole_p else "n")
             poles.append(d)
@@ -226,13 +257,13 @@ def main() -> int:
                              "note": (f"cancelled denominator({which})=0 at "
                                       f"ζ_{d} — genuine pole of tr_M")})
             continue
-        tp = complex(sp.N(ep.subs(u, zeta), 30))
-        tn = complex(sp.N(en.subs(u, zeta), 30))
+        tp = _mpc(ep.subs(u, zeta))
+        tn = _mpc(en.subs(u, zeta))
         dd = tn - tp
         spectrum.append({
             "d": d, "surviving_modes": d, "pole": False,
-            "trM_p_abs": abs(tp), "trM_n_abs": abs(tn),
-            "dtrM_abs": abs(dd),
+            "trM_p_abs": fmt(abs(tp)), "trM_n_abs": fmt(abs(tn)),
+            "dtrM_abs": fmt(abs(dd)),
             "trM_p": f"{tp.real:.6f}{tp.imag:+.6f}j",
             "trM_n": f"{tn.real:.6f}{tn.imag:+.6f}j",
             "dtrM": f"{dd.real:.6f}{dd.imag:+.6f}j",
@@ -280,6 +311,37 @@ def main() -> int:
           f"bar-ODD leading Laurent order: u^({odd_lead})")
     print()
 
+    # The two sentences below were HARDCODED and had gone stale: they
+    # quoted |tr_M(p)|=0.6614 / |Δtr_M|=1.5612 (live: see the table above)
+    # and asserted a pole at ζ_4 from "D(u)=4u¹⁹(u²+1)", which is not the
+    # live denominator.  den_p = 4u¹⁸(u⁴+1)² has u⁴=+1 at ζ_4 (value 4 —
+    # NO pole) and u⁴=−1 at ζ_8 (value 0 — the genuine pole).  Derived
+    # from the computation now, so they cannot drift again.
+    _by_d = {e["d"]: e for e in spectrum}
+    _s3, _s6 = _by_d.get(3), _by_d.get(6)
+    if (_s3 and _s6 and not _s3.get("pole") and not _s6.get("pole")
+            and _s3.get("trM_p_abs") == _s6.get("trM_p_abs")
+            and _s3.get("dtrM_abs") == _s6.get("dtrM_abs")):
+        d36_line = (f"d=3 and d=6 give IDENTICAL spectra "
+                    f"(|tr_M(p)|={_s3['trM_p_abs'][:8]}, "
+                    f"|tr_M(n)|={_s3['trM_n_abs'][:8]}, "
+                    f"|Δtr_M|={_s3['dtrM_abs'][:8]}) — a period-3 "
+                    f"resonance in the root-of-unity tower.")
+    else:
+        d36_line = ("d=3 and d=6 do NOT share a spectrum in this run — see "
+                    "the table above.")
+    if poles:
+        d0 = poles[0]
+        pole_line = (f"ζ_{d0} is a GENUINE POLE: the cancelled denominator "
+                     f"{sp.factor(den_p)} vanishes there (exact cyclotomic "
+                     f"test) while the numerator does not. The q-difference "
+                     f"equation has a real singularity at the {d0}th root of "
+                     f"unity — a structural feature, not an artifact. "
+                     f"(All poles found: d={poles}.)")
+    else:
+        pole_line = ("no ζ_d in d=2..M is a pole of the cancelled "
+                     "denominator (exact cyclotomic test).")
+
     print("=" * 78)
     print(" FINDING (spectral characterization — no closure, no fit)")
     print("=" * 78)
@@ -293,11 +355,8 @@ def main() -> int:
     – d=2 (bar / charge-conjugation mode): Δtr_M = 0 EXACTLY. The proton
       and neutron Markov traces are identical in the lowest Fourier mode;
       the entire p/n difference lives in the higher (d≥3) modes.
-    – d=3 and d=6 give IDENTICAL spectra (|tr_M(p)|=0.6614, |tr_M(n)|=1,
-      |Δtr_M|=1.5612) — a period-3 resonance in the root-of-unity tower.
-    – ζ_4 = i is a GENUINE POLE: D(u)=4u¹⁹(u²+1) vanishes there while the
-      numerator does not. The q-difference equation has a real singularity
-      at the 4th root of unity — a structural feature, not an artifact.
+    – {d36_line}
+    – {pole_line}
 
   • Bar-symmetry split (u = √q, so bar = q↦q⁻¹ exactly): Δtr_M's
     bar-EVEN part leads at Laurent order u^({even_lead}), bar-ODD at
@@ -352,18 +411,18 @@ def main() -> int:
     })
     builder.add_assertion(
         "habiro_pochhammer_reproduces_witness",
-        computed=1.0 if poch_bug_ok else 0.0,
-        expected=1.0,
-        tolerance=0.0,
+        computed="1" if poch_bug_ok else "0",
+        expected="1",
+        tolerance="0",
         source=("Corrected (u;u)_m Pochhammer + denominator reproduces the "
                 "witness-cited tr_M(p, q₀) to < 1e-6 — confirms the exact "
                 "Habiro expansion the q-difference analysis is built on."),
     )
     builder.add_assertion(
         "root_of_unity_spectrum_extracted",
-        computed=float(len(spectrum)),
-        expected=float(M - 1),
-        tolerance=0.0,
+        computed=str(len(spectrum)),
+        expected=str(M - 1),
+        tolerance="0",
         source=("tr_M Fourier-evaluated at ζ_d for d=2..M; each ζ_d keeps "
                 "only the m<d Habiro modes (the WRT truncation)."),
     )

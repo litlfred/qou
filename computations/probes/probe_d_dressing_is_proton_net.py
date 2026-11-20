@@ -50,7 +50,7 @@ warnings.filterwarnings("ignore")
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
-from _precision import set_compute_dps, COMPUTE_DPS  # noqa: E402
+from _precision import set_compute_dps, COMPUTE_DPS, fmt  # noqa: E402
 
 # Use the shared precision infra so the witness precisionMetadata (derived
 # from qou_substrate.precision defaults) matches the dps actually used.
@@ -113,19 +113,19 @@ def numerical_chain(q: mp.mpf) -> dict:
         "abs_delta_net": mp.nstr(abs_delta, 20),
         "h_times_net_p": mp.nstr(h * net_p, 20),
         "abs_delta_eq_h_net_p_reldiff":
-            float(abs((abs_delta - h * net_p) / (h * net_p))),
+            fmt(abs((abs_delta - h * net_p) / (h * net_p))),
         "Qbeta_ansatz_MeV": mp.nstr(Qb_ansatz, 18),
         "Qbeta_kashiwara_MeV": mp.nstr(Qb_kashiwara, 18),
         "Qbeta_ansatz_vs_kashiwara_rel":
-            float((Qb_ansatz - Qb_kashiwara) / Qb_kashiwara),
+            fmt((Qb_ansatz - Qb_kashiwara) / Qb_kashiwara),
         "Delta_tr": mp.nstr(dtr, 20),
         "B_cand_E0_netp_dtr_MeV": mp.nstr(B_cand, 18),
-        "B_cand_err_vs_AME_pct": float((B_cand / B_AME - 1) * 100),
+        "B_cand_err_vs_AME_pct": fmt((B_cand / B_AME - 1) * 100),
         "B_via_kashiwara_qbeta_MeV": mp.nstr(B_via_qbeta, 18),
-        "B_via_qbeta_err_vs_AME_pct": float((B_via_qbeta / B_AME - 1) * 100),
+        "B_via_qbeta_err_vs_AME_pct": fmt((B_via_qbeta / B_AME - 1) * 100),
         "consistency_cand_vs_ansatz_route_rel":
-            float(abs((B_cand - abs_delta * E0 * dtr / h)
-                      / (abs_delta * E0 * dtr / h))),
+            fmt(abs((B_cand - abs_delta * E0 * dtr / h)
+                     / (abs_delta * E0 * dtr / h))),
     }
 
 
@@ -142,17 +142,17 @@ def main() -> int:
         print(f"  {k}: {si[k]}")
 
     nc = numerical_chain(q)
-    print("\n[numerical @ 50 dps, q₀]")
+    print(f"\n[numerical @ {DPS} dps, q₀]")
     print(f"  net(p) = 1 − h/2 = {nc['net_p'][:14]}   |Δ(net)| = "
           f"{nc['abs_delta_net'][:14]}   h·net(p) = {nc['h_times_net_p'][:14]}")
-    print(f"  |Δ(net)| = h·net(p) reldiff = {nc['abs_delta_eq_h_net_p_reldiff']:.2e}")
+    print(f"  |Δ(net)| = h·net(p) reldiff = {nc['abs_delta_eq_h_net_p_reldiff']}")
     print(f"  Q_β(ansatz=E₀·h·net_p) = {nc['Qbeta_ansatz_MeV'][:12]}  "
           f"vs Kashiwara {nc['Qbeta_kashiwara_MeV'][:12]}  "
-          f"(rel {nc['Qbeta_ansatz_vs_kashiwara_rel']:+.3e})")
+          f"(rel {nc['Qbeta_ansatz_vs_kashiwara_rel'][:14]})")
     print(f"  B_D = E₀·net(p)·Δtr = {nc['B_cand_E0_netp_dtr_MeV'][:12]} MeV  "
-          f"err {nc['B_cand_err_vs_AME_pct']:+.3f}%")
+          f"err {nc['B_cand_err_vs_AME_pct'][:10]}%")
     print(f"  B_D via Kashiwara Q_β·Δtr/h = {nc['B_via_kashiwara_qbeta_MeV'][:12]} "
-          f"MeV  err {nc['B_via_qbeta_err_vs_AME_pct']:+.3f}%")
+          f"MeV  err {nc['B_via_qbeta_err_vs_AME_pct'][:10]}%")
 
     wb = (WitnessBuilder("probe-d-dressing-is-proton-net",
                          engine="mpmath+sympy")
@@ -174,13 +174,13 @@ def main() -> int:
           .add_data("numerical", nc))
     wb.add_assertion(
         "abs_delta_net_eq_h_net_p",
-        computed=nc["abs_delta_eq_h_net_p_reldiff"], expected=0.0,
-        tolerance=1e-45,
+        computed=nc["abs_delta_eq_h_net_p_reldiff"], expected="0",
+        tolerance="1e-45",
         source="|Δ(net)| = h·net(p) — exact ℚ(q), the identity tying the "
                "binding dressing to Q_β")
     wb.add_assertion(
         "binding_candidate_subpercent",
-        computed=abs(nc["B_cand_err_vs_AME_pct"]) < 1.0, expected=True,
+        computed=abs(mp.mpf(nc["B_cand_err_vs_AME_pct"])) < 1.0, expected=True,
         source="B_D = E₀·net(p)·Δtr vs AME2020")
     wb.save()
     print("\nwitness → probe-d-dressing-is-proton-net.witness.json (audit-only)")
