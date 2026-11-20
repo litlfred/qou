@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T14:50:40Z
+updated_at: 2026-11-20T16:55:00Z
 parent: qou-10v9
 ---
 
@@ -4096,3 +4096,9 @@ The +1.28 ppm needs BOTH a z = 1 base (retired 2026-09-08: not a convention-D Ma
 
 ## 2026-11-20 — W2: epsilon is RULED, not derived (audit docs/audits/2026-11-20-qbeta-epsilon-is-ruled-not-derived.md)
 Delta (typed crossings) is a definition, epsilon a ruling and E0 posited. The mass-channel scale (945.76 MeV per unit trace) applied to this Delta gives ~100-177 MeV, so Delta and E0 are not the mass channel's objects. A derivation reduces to the u/d distinction in the braid plus energy conservation, which would make epsilon = tr_M(z_D) a theorem with scale 2 m_mu [3]_q!/q^3.
+
+**2026-11-20T16:55Z — derived weighting implemented across the compute (owner request 16:00; PR #8591, branch claude/two-term-derived-trace-weighting-2026-11-20).**
+The 05:10Z pre-registered rule now lives in `computations/two_term_qtrace_weighting.py` (library + producer, witness `two-term-qtrace-weighting.witness.json`, 70 dps, proton q₀) and `lean/QOU/BraidsAndKnots/NucleonWeightSpaceQTrace.lean` (7 theorems, sorry-free, axioms propext/choice/Quot.sound). Reproduced: Δt_adj,raw = (2q¹⁴−2q¹²−9q¹⁰+20q⁸−26q⁶+18q⁴−13q²+4)/(9q⁴(q²+1)³) = −0.0734705048628237, Δ_EM = −0.0375433508915675 MeV.
+Symbolic map: 'KnKp' (on the connected traces) = ([2]_q³/3)·Δt_derived,conn EXACTLY — derived weight, wrong normalisation (1/3 vs 1/[2]³; 8/3 at q=1). 'plain', 'Kp3', 'q' are not proportional. On the raw insertion KnKp differs further by the static (2/27)q⁻¹tr(V³). All-pairs: raw −0.0565058628 MeV (q→1 −1/8), connected ≡ 0.
+`weighting='derived'` is now the default/only canonical path in canonical_mass, derived_masses, qbeta_utils, qou_substrate.q_two_term_borromean_at, m_p_substrate_identity, free-neutron-decay, two_term_qed_isotope, mass_binding_dashboard, and the L2 scorecard (scored_form two_term_plain_me → two_term_derived_qtrace_me). Moved: M_p^QED,conn +0.2201→+0.0901 keV; Δm_QED^conn −0.3317→−0.1272 keV; m_mu +8.058→+128.0 ppb (miss 37.02→588.1, loses beats-1×); Q_β 1.672e8→1.669e8; m_n 1.392e5→1.390e5; Δ_pn 1.011e8→1.010e8 ppb. q₀ not re-pinned.
+Kept unchanged because the corpus does not fix them (owner decision framed in the PR): adjacent vs all-pairs insertion, connected vs raw, sign −m_e·t (compute) vs +m_e·t (pre-registered). Alternatives are unscored labelled rows in the scorecard. Probes (np_two_term_qed_mup_tension, two_term_qed_pair_choice, qbeta_pdix_cds1 bridge) and level1-qvalues (long compute, not re-run) still carry the 1/3 'plain' form as records. Bean stays open (rule 13a).
