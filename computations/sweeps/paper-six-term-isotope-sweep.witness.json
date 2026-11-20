@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T14:47:22.086670+00:00",
-  "commitSha": "fab2c289abcdf2641083c456613353eca9064cb7",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-20T16:22:37.810567+00:00",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "assertions": [
     {
       "name": "proton_anchor_exact",
@@ -26,8 +26,8 @@
   "durationMs": 0,
   "computation": "paper-six-term-isotope-sweep",
   "scriptFile": "paper_six_term_isotope_sweep.py",
-  "scriptHash": "f3bc827a447c",
-  "scriptCommitSha": "fab2c289abcdf2641083c456613353eca9064cb7",
+  "scriptHash": "620ec68fd9be",
+  "scriptCommitSha": "fd5853d8cca85ade64b5f9d562b3ce2dc770d9dd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,14 +36,13 @@
   },
   "environment": {
     "python": "3.13.18",
-    "numpy": "2.5.5",
+    "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "1909bbe0316e1236"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -59,7 +58,7 @@
     "thm:frobenius-codim-universal",
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:y-lambda-recipe-from-partition",
-    "prop:three-calibration-inputs",
+    "def:three-calibration-discipline",
     "prop:per-nucleon-shift-additive-linearity"
   ],
   "derivation_inputs": {
@@ -275,11 +274,11 @@
           "N": 0,
           "A": 1,
           "M_codata": "938.272089429999999999999999999999999999999999999999459224910",
-          "M_predicted": "inf",
-          "err_pct": "inf",
+          "M_predicted": "+inf",
+          "err_pct": "+inf",
           "term1_canonical_tr_M": "0.629328402202921918165345746778485927600219400634359762811677",
-          "term2_single_gen_tower": "inf",
-          "term3_pair_gen_tower": "inf",
+          "term2_single_gen_tower": "+inf",
+          "term3_pair_gen_tower": "+inf",
           "term4_frobenius_codim_raw": "2.49729054560491621582751642066035510353674589102516101461351",
           "term4_frobenius_codim_scaled": "2.49729054560491621582751642066035510353674589102516101461351",
           "term5_chirality_factor_a_K": "1.50323597644672890326072599358332438658411936116127101707731",
@@ -290,7 +289,7 @@
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": "1.00000000000000000000000000000000000000000000000000000000000",
-          "total_hecke": "inf"
+          "total_hecke": "+inf"
         },
         {
           "isotope": "n",
@@ -298,10 +297,10 @@
           "N": 1,
           "A": 1,
           "M_codata": "939.565000000000000000000000000000000000000000000000000000000",
-          "M_predicted": "inf",
-          "err_pct": "inf",
+          "M_predicted": "+inf",
+          "err_pct": "+inf",
           "term1_canonical_tr_M": "0.475133517155682212506090232675005799558407634708751231268857",
-          "term2_single_gen_tower": "inf",
+          "term2_single_gen_tower": "+inf",
           "term3_pair_gen_tower": "243772.911216126729738736787832781220181085269117109989423504",
           "term4_frobenius_codim_raw": "2.49729054560491621582751642066035510353674589102516101461351",
           "term4_frobenius_codim_scaled": "2.49729054560491621582751642066035510353674589102516101461351",
@@ -313,7 +312,7 @@
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": "1.00000000000000000000000000000000000000000000000000000000000",
-          "total_hecke": "inf"
+          "total_hecke": "+inf"
         },
         {
           "isotope": "D",
@@ -321,11 +320,11 @@
           "N": 1,
           "A": 2,
           "M_codata": "1876.12400000000000000000000000000000000000000000000000000000",
-          "M_predicted": "inf",
-          "err_pct": "inf",
+          "M_predicted": "+inf",
+          "err_pct": "+inf",
           "term1_canonical_tr_M": "0.151968339204231607592665697751066141271240964655261151310301",
-          "term2_single_gen_tower": "inf",
-          "term3_pair_gen_tower": "inf",
+          "term2_single_gen_tower": "+inf",
+          "term3_pair_gen_tower": "+inf",
           "term4_frobenius_codim_raw": "3.20213400122174704329951154451763582059135237761236430350534",
           "term4_frobenius_codim_scaled": "3.20213400122174704329951154451763582059135237761236430350534",
           "term5_chirality_factor_a_K": "1.85291144568299577175501144564845538463265715835204251570405",
@@ -336,7 +335,7 @@
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": "1.00000000000000000000000000000000000000000000000000000000000",
-          "total_hecke": "inf"
+          "total_hecke": "+inf"
         },
         {
           "isotope": "T",
@@ -344,11 +343,11 @@
           "N": 2,
           "A": 3,
           "M_codata": "2809.43200000000000000000000000000000000000000000000000000000",
-          "M_predicted": "inf",
-          "err_pct": "inf",
+          "M_predicted": "+inf",
+          "err_pct": "+inf",
           "term1_canonical_tr_M": "0.0291440423609720653572542187918698440658388035647413094897483",
-          "term2_single_gen_tower": "inf",
-          "term3_pair_gen_tower": "inf",
+          "term2_single_gen_tower": "+inf",
+          "term3_pair_gen_tower": "+inf",
           "term4_frobenius_codim_raw": "2.54388384698146154528189428748572974529023549220278613095082",
           "term4_frobenius_codim_scaled": "2.54388384698146154528189428748572974529023549220278613095082",
           "term5_chirality_factor_a_K": "2.06845099994199544751499384218803371247403121900486910823211",
@@ -359,7 +358,7 @@
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": "1.00000000000000000000000000000000000000000000000000000000000",
-          "total_hecke": "inf"
+          "total_hecke": "+inf"
         },
         {
           "isotope": "3He",
@@ -367,11 +366,11 @@
           "N": 1,
           "A": 3,
           "M_codata": "2809.41300000000000000000000000000000000000000000000000000000",
-          "M_predicted": "inf",
-          "err_pct": "inf",
+          "M_predicted": "+inf",
+          "err_pct": "+inf",
           "term1_canonical_tr_M": "0.0585962536544363802189567154521302568308771072841873080383315",
-          "term2_single_gen_tower": "inf",
-          "term3_pair_gen_tower": "inf",
+          "term2_single_gen_tower": "+inf",
+          "term3_pair_gen_tower": "+inf",
           "term4_frobenius_codim_raw": "2.54388384698146154528189428748572974529023549220278613095082",
           "term4_frobenius_codim_scaled": "2.54388384698146154528189428748572974529023549220278613095082",
           "term5_chirality_factor_a_K": "3.14213681363520870262176224981373578371418938013442425892721",
@@ -382,7 +381,7 @@
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": "1.00000000000000000000000000000000000000000000000000000000000",
-          "total_hecke": "inf"
+          "total_hecke": "+inf"
         },
         {
           "isotope": "4He",
@@ -390,11 +389,11 @@
           "N": 2,
           "A": 4,
           "M_codata": "3728.40100000000000000000000000000000000000000000000000000000",
-          "M_predicted": "inf",
-          "err_pct": "inf",
+          "M_predicted": "+inf",
+          "err_pct": "+inf",
           "term1_canonical_tr_M": "0.0553483458766979921628070826500334078446030616760250000000000",
-          "term2_single_gen_tower": "inf",
-          "term3_pair_gen_tower": "inf",
+          "term2_single_gen_tower": "+inf",
+          "term3_pair_gen_tower": "+inf",
           "term4_frobenius_codim_raw": "2.25193404803902103431910455956643390304763112810779169596417",
           "term4_frobenius_codim_scaled": "2.25193404803902103431910455956643390304763112810779169596417",
           "term5_chirality_factor_a_K": "3.50764525161783754903278014210027752875168963093697836667832",
@@ -405,7 +404,7 @@
           "tower_mode": "brane-legacy",
           "sub_tower_mode": null,
           "m_e_hecke": "1.00000000000000000000000000000000000000000000000000000000000",
-          "total_hecke": "inf"
+          "total_hecke": "+inf"
         },
         {
           "isotope": "5Li",

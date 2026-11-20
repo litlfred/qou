@@ -13,11 +13,11 @@
   ],
   "label": "def:three-calibration-discipline",
   "kind": "definition",
-  "title": "Three-calibration discipline ($m_e$, $m_\\mu$, $m_\\pi$) aligned to (co)homological data",
+  "title": "Three-calibration discipline ($m_e$, $m_\\mu/m_e$, $m_\\pi$) and the calibrated substrate parameter $q_0$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-substrate-consistency-window",
-    "papers/quantum-observable-universe/blocks/prop-calibration-cohomology-alignment",
-    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant",
+    "papers/quantum-observable-universe/blocks/prop-meson-scale-independence"
   ],
   "cites": [
     "references/jones1985",
@@ -34,7 +34,7 @@
     "cohomology",
     "audit"
   ],
-  "leanRef": "qou:QOU.Observations.threeCalibrationDiscipline",
+  "leanRef": "qou:QOU.Observations.CalibrationTriple",
   "text": "three-calibration-discipline.md",
   "leanSource": "three-calibration-discipline.lean",
   "provenance": "authored"

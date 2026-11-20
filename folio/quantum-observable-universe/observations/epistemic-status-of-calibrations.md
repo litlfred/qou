@@ -2,7 +2,7 @@ The three-calibration discipline ([Three-calibration discipline ($m_e$, $m_\mu$,
 
 The parameter $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$ proxies CAL-2 (the neutron $\beta$-sector bar-skew channel $P_{\mathrm{skew}}^{\beta}$). It is not a fourth calibration. The CAL-2 modulus is most precisely pinned by $m_\mu/m_e$. Reproducing $\mathfrak{Q}_\beta$ from $q_0$ provides a $0.17\%$ cross-check. CAL-3 is the pion-sector bar-even channel $P_{\mathrm{avg}}^{\pi}$ (proxy $m_\pi$).
 
-No fourth calibration or numerological substitution is introduced. The clauses of [Exactly three calibration inputs](#prop:three-calibration-inputs) remain in force.
+No fourth calibration or numerological substitution is introduced. The clauses of [Exactly three calibration inputs](#conj:three-calibration-inputs) remain in force.
 
 ## CAL-1 ($m_e$) — unit choice + cohomological period
 

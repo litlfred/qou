@@ -186,7 +186,7 @@ def main() -> int:
         "consistency choice and NOT an accuracy claim; the residual "
         "direction is an outcome, never a reason."
     )
-    w.set_content_block("prop:three-calibration-inputs")
+    w.set_content_block("def:three-calibration-discipline")
     w.set_audit_only("docs/audits/2026-05-10-1ppb-workplan-update.md")
 
     w.add_parameter("calibration_id", "CAL-2")

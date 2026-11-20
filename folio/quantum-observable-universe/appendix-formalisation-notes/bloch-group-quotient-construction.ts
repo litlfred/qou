@@ -4,7 +4,10 @@ export default proposition({
   label: "prop:bloch-group-quotient-construction",
   title:
     "Concrete construction of $B(F)$ as `FreeAbelianGroup ⧸ pentagonSubgroup` (closes substantive Mathlib gap 1)",
-  uses: ["rem:three-substantive-mathlib-fillers"],
+  // rem:three-substantive-mathlib-fillers dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: [],
   cites: ["bloch2000", "suslin1991"],
   tags: [
     "mathlib-filler",

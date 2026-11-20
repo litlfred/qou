@@ -15,10 +15,10 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:meson-octet-decomposition",
   title: "The meson octet via $\\mathbf{3} \\otimes \\bar{\\mathbf{3}}$",
-  uses: [
-    "prop:a2-from-three-strands",
-    "rem:flavor-charge-assignments",
-  ],
+  // rem:flavor-charge-assignments dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: ["prop:a2-from-three-strands"],
   // Lean backs the DIMENSION shadow the block states — "(9 = 8 + 1)":
   // meson_octet_at_three proves sorry-free that the fundamental ⊗ anti-
   // fundamental (dim N² = 9) splits as adjoint (octet, dim N²−1 = 8) ⊕ singlet

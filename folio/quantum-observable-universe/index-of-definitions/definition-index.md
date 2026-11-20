@@ -253,7 +253,7 @@
 | [def:linking-operations](#def:linking-operations) | The two geometric linking operations | Ch 8 | `qou:QOU.Torsion.LinkingOperation` |
 | [def:unit-particle-state](#def:unit-particle-state) | The unit particle state $\mathrm{Li}_q(z)$ | Ch 6 | `qou:QOU.AlgebraicSubstrate.UnitParticleState` |
 | [def:threading-link](#def:threading-link) | Threading link $T(2,N)$ | Ch 17 | `qou:QOU.Organic.ThreadingLink` |
-| [def:three-calibration-discipline](#def:three-calibration-discipline) | Three-calibration discipline ($m_e$, $m_\mu$, $m_\pi$) aligned to (co)homological data | Ch 15 | `qou:QOU.Observations.threeCalibrationDiscipline` |
+| [def:three-calibration-discipline](#def:three-calibration-discipline) | Three-calibration discipline ($m_e$, $m_\mu/m_e$, $m_\pi$) and the calibrated substrate parameter $q_0$ | Ch 15 | `qou:QOU.Observations.CalibrationTriple` |
 | [def:torsion-knot-flow](#def:torsion-knot-flow) | Torsion-driven knot flow | Ch 21 | `qou:QOU.ParticleState` |
 | [def:transfer-matrix-operator](#def:transfer-matrix-operator) | Transfer Matrix Operator for Nuclear Braid Interactions | Ch 12 | `qou:QOU.Archimedean.TransferMatrixOperator` |
 | [def:two-row-projection](#def:two-row-projection) | Two-row projection $\pi_{\mathrm{2-row}}$ onto the two-row Wedderburn subalgebra | Ch 12 | `qou:QOU.BraidKnot.TwoRowStratum.HasTwoRowProjection` |
@@ -536,7 +536,7 @@
 | [prop:eos-borromean-cfl](#prop:eos-borromean-cfl) | Equation of state: Borromean hadronic matter vs CFL quark matter | Ch 15 | `qou:QOU.Archimedean.eos_borromean_cfl` |
 | [prop:pairwise-interaction-decomposition](#prop:pairwise-interaction-decomposition) | Every interaction decomposes into two-particle crossings | Ch 8 | `qou:QOU.Braiding.pairwise_interaction_decomposition` |
 | [prop:branching-qvalue-factorization](#prop:branching-qvalue-factorization) | Exact factorization of the branching Q-value | Ch 10 | `qou:QOU.ParticleInteractions.branching_qvalue_factorization` |
-| [prop:three-calibration-inputs](#prop:three-calibration-inputs) | Exactly three calibration inputs ($m_e$, $m_\mu/m_e$, $\mathfrak{Q}_\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$ | Ch 12 | `qou:QOU.BraidKnot.three_calibration_inputs` |
+| [conj:three-calibration-inputs](#conj:three-calibration-inputs) | Exactly three calibration inputs: every observable factors through $m_e$, $m_\pi$ and $q_0$ | Ch 12 | `qou:QOU.BraidKnot.ThreeCalibrationFactorisation` |
 | [prop:q-heat-equation-exists](#prop:q-heat-equation-exists) | Existence and uniqueness for the $q$-heat equation | Ch 2 | `qou:QOU.QHeatEquation.exists_solution` |
 | [prop:vacuum-state](#prop:vacuum-state) | Existence and Uniqueness of the Vacuum State | Ch 4 | `qou:QOU.Torsion.invariant_functional_unique` |
 | [prop:markov-trace-recursive-reducer](#prop:markov-trace-recursive-reducer) | Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property | Ch 7 | `qou:QOU.BraidKnot.markovTraceRecursiveReducer` |
@@ -879,7 +879,7 @@
 | [prop:sw-period-residue-sum](#prop:sw-period-residue-sum) | The Seiberg–Witten period is an algebraic residue sum | Ch 6 | `qou:QOU.Brings.sw_period_eq_residue_sum` |
 | [prop:self-dual-higgs-real-volume](#prop:self-dual-higgs-real-volume) | The self-dual Higgs ($4_1$) has a real complex volume ($\mathrm{CS}=0$) | Ch 5 | `qou:QOU.Knot.SelfDuality.higgs_complex_volume_real` |
 | [prop:substrate-massive-regime](#prop:substrate-massive-regime) | The Temperley--Lieb anisotropy $\Delta = \tfrac{1}{2}(q + q^{-1})$ exceeds unity for every real $q \neq 1$ | Ch 5 | `qou:QOU.OneDim.TLIsXXZChain` |
-| [prop:calibration-cohomology-alignment](#prop:calibration-cohomology-alignment) | The three calibrations are the three cohomological data of H¹(Bring) | Ch 12 | `qou:QOU.Mass.calibrations_eq_cohomology` |
+| [conj:calibration-cohomology-alignment](#conj:calibration-cohomology-alignment) | The three calibrations are the three cohomological data of H¹(Bring) | Ch 12 | — |
 | [prop:coxeter-tits-residue-collapse](#prop:coxeter-tits-residue-collapse) | The Tits residue collapsed: cell faithfulness is simple-distinctness | Ch 5 | `qou:QOU.Machinery.CoxeterParabolic.isReduced_iji_iff` |
 | [prop:bring-trefoil-cinquefoil-channel](#prop:bring-trefoil-cinquefoil-channel) | The trefoil $+$ cinquefoil channel in Bring's $\Sigma_4$ | Ch 6 | `qou:QOU.BringChiralCinquefoil.bring_trefoil_cinquefoil_channel` |
 | [prop:wedderburn-as-noncomm-fourier](#prop:wedderburn-as-noncomm-fourier) | The Wedderburn--Artin mass sum is the inverse non-commutative Fourier transform on $H_n(q)$ | Ch 12 | `qou:QOU.WedderburnFourier.peter_weyl_decomposition` |

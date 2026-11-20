@@ -1,4 +1,4 @@
-## Proof
+## Argument sketch
 
 The three-parameter count follows directly from
 [Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$](#prop:three-parameters-wedderburn):

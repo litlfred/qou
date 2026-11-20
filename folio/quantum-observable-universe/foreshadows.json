@@ -1908,7 +1908,7 @@
         "prop:q-beta-cos-resummation"
       ]
     },
-    "prf:three-calibration-inputs": {
+    "rem:three-calibration-inputs-sketch": {
       "derived": [
         "prop:three-parameters-wedderburn"
       ],
@@ -3015,7 +3015,7 @@
         "prop:habiro-precision-ladder-equivalence"
       ]
     },
-    "prop:three-calibration-inputs": {
+    "conj:three-calibration-inputs": {
       "derived": [
         "rem:three-calibration-inputs-context"
       ],

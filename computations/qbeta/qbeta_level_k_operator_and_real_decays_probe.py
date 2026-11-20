@@ -296,7 +296,7 @@ def main() -> int:
             "'special'. The mechanism stands and is confirmed — n-p has the smallest |disc| "
             "of the 21, i.e. marginal ellipticity, exactly what a 0.43 % alignment excess "
             "predicts."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 30,

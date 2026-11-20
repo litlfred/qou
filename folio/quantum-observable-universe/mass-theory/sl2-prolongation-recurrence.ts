@@ -10,7 +10,12 @@ export default proposition({
   uses: [
     "prop:prolonged-periods-fixed-depth",
     "prop:sw-period-residue-sum",
-    "prop:sl2-period-conserved-quantity",
+    // prop:sl2-period-conserved-quantity removed 2026-11-20 (owner choice,
+    // bean qou-tm3c). That block uses this one; the text here cites it as
+    // "recorded downstream ... which uses this block". Listing it here made
+    // a uses[] cycle that carried conj:binding-manybody-eq-jet-filtration
+    // (via prop:binding-genfun-qdifference) upstream into this recurrence
+    // and into everything that cites it, CAL-1/2/3 included.
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): is proved for every $n$ in the Lean sibling." },
