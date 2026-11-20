@@ -147,6 +147,7 @@ export default theorem({
         "RELOCATES the postulate, does not close it. Whole file lean-direct " +
         "exit 0 (no warnings) on lake-cache/qou-v4-24-0.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  is the [$P_{\\mathrm{skew}}$ functional](#prop:vdw-pskew-isolation)" },
   ],
   tags: [
     "electroweak",
