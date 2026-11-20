@@ -2,7 +2,7 @@
   "$schema": "lean-vacuity-review/v1",
   "updated_at": "2026-09-14T08:21:14.232Z",
   "entries": {
-    "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
+    "folio/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 85,
@@ -13,7 +13,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::chiralityFactor::proof-zero-placeholder": {
+    "folio/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::chiralityFactor::proof-zero-placeholder": {
       "category": "proof-zero-placeholder",
       "pattern": "zero-placeholder",
       "line": 142,
@@ -23,7 +23,7 @@
       "evidence": "`1 + 0 * q` is identically 1 while mentioning q. Docstring discloses it (\"Concrete model: returns 1\"), so this is an honest stub rather than laundering -- but it is a placeholder standing where prop:chirality-dual-space-derivation's product over pn-crossings should be, and any theorem stated over it is about the constant 1.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.lean::axial_eq_div::proof-borrowed-name": {
+    "folio/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.lean::axial_eq_div::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 201,
@@ -34,7 +34,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.lean::threeStrandRotation_eq_product::proof-borrowed-name": {
+    "folio/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.lean::threeStrandRotation_eq_product::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 134,
@@ -45,7 +45,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean::bring_trefoil_cinquefoil_channel::proof-borrowed-name": {
+    "folio/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean::bring_trefoil_cinquefoil_channel::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 55,
@@ -56,7 +56,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean::schur_weyl_n3::proof-borrowed-name": {
+    "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean::schur_weyl_n3::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 129,
@@ -67,7 +67,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/brings-surface/generation-completeness.lean::generation_completeness::proof-borrowed-name": {
+    "folio/quantum-observable-universe/brings-surface/generation-completeness.lean::generation_completeness::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 116,
@@ -80,7 +80,7 @@
       "reviewed_at": "2026-09-03",
       "tier": "major"
     },
-    "content/quantum-observable-universe/brings-surface/generation-completeness.lean::spectrum_complete::proof-borrowed-name": {
+    "folio/quantum-observable-universe/brings-surface/generation-completeness.lean::spectrum_complete::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 67,
@@ -91,7 +91,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp) [neighbour-read, not detector-flagged]"
     },
-    "content/quantum-observable-universe/climax-volume-mass/commutative-crossing-energy.lean::ord_u_zero_trM_eq::proof-borrowed-name": {
+    "folio/quantum-observable-universe/climax-volume-mass/commutative-crossing-energy.lean::ord_u_zero_trM_eq::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 95,
@@ -102,7 +102,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean::t2_11_genus::proof-borrowed-name": {
+    "folio/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean::t2_11_genus::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 57,
@@ -113,7 +113,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean::acoustic_horizon_regularity::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean::acoustic_horizon_regularity::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 98,
@@ -131,7 +131,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean::discrete_vortex_spectrum::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean::discrete_vortex_spectrum::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 91,
@@ -149,7 +149,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean::root_of_unity_truncation_conditional::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean::root_of_unity_truncation_conditional::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 73,
@@ -167,7 +167,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean::vorticity_lower_bound_conditional::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean::vorticity_lower_bound_conditional::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 85,
@@ -185,7 +185,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.lean::ConfinementPhaseStratification_open::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification.lean::ConfinementPhaseStratification_open::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 71,
@@ -202,7 +202,7 @@
         "agent_model": "claude-opus-5"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MetallicLPIdentities.lean::delta_silver_hecke_scalar::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MetallicLPIdentities.lean::delta_silver_hecke_scalar::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 110,
@@ -213,7 +213,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/PvsNPQou.lean::QOU.AlgebraicSubstrate.PvsNPQou::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 52,
@@ -221,7 +221,7 @@
       "file_sha": "9c4c166550f6",
       "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
     },
-    "content/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean::writheTorus_not_symm::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/AlphaEM/FormLadderAnchorDominance.lean::writheTorus_not_symm::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 175,
@@ -232,7 +232,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean::B1TorusKnotRowsContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/B1TorusKnotRowsTheorem.lean::B1TorusKnotRowsContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 18,
@@ -247,7 +247,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean::classical_limit_eq_stpart::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/ClassicalLimitStpart.lean::classical_limit_eq_stpart::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 65,
@@ -264,7 +264,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::HyperbolicVolume::proof-zero-placeholder": {
+    "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::HyperbolicVolume::proof-zero-placeholder": {
       "category": "proof-zero-placeholder",
       "pattern": "zero-placeholder",
       "line": 186,
@@ -281,7 +281,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::card_cells_eq_card_nimbers::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::card_cells_eq_card_nimbers::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 708,
@@ -299,7 +299,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/ConfinedKnotBinding.lean::dq_sym_sq_eq_dq_alt_sq::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/ConfinedKnotBinding.lean::dq_sym_sq_eq_dq_alt_sq::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 91,
@@ -310,7 +310,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/DilogarithmArchimedeanLimit.lean::faddeev_limit_at_zero::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/DilogarithmArchimedeanLimit.lean::faddeev_limit_at_zero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 98,
@@ -321,7 +321,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/EHartreeTraceRatio.lean::em_channel_forced_to_two_two::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/EHartreeTraceRatio.lean::em_channel_forced_to_two_two::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 240,
@@ -331,7 +331,7 @@
       "evidence": "Genuine finite verification: filters the three partitions of 4 induced from the covalent pair by self-conjugacy and gets [[2,2]]. Decidable enumeration, legitimately discharged by decide, and the docstring is careful (\"does not close the conjecture\").",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/EmSpectralCompleteness.lean::hecke_minimal_polynomial_splits::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/EmSpectralCompleteness.lean::hecke_minimal_polynomial_splits::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 87,
@@ -342,7 +342,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/HodgeWeilRealStructure.lean::c_ne_F_on_witness::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/HodgeWeilRealStructure.lean::c_ne_F_on_witness::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 138,
@@ -353,7 +353,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicIsometryReflection.lean::dH_verticalReflection::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicIsometryReflection.lean::dH_verticalReflection::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 87,
@@ -370,7 +370,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/JetOrderIndependence.lean::jetOrder3_certificate::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/JetOrderIndependence.lean::jetOrder3_certificate::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 312,
@@ -380,7 +380,7 @@
       "evidence": "`def jetPivots : N -> Q x Q x Q := fun _ => (1/4, 2, 1/8)` DISCARDS its argument, so `jetPivots 3` is the same hand-entered triple as `jetPivots n` for every n. The docstring calls it \"the actual elimination determinant of the canonical Markov-trace jet-Jacobian\" and the theorem `eliminationDet (jetPivots 3) != 0` then verifies (1/4)*2*(1/8) != 0 by norm_num. Nothing connects the pivots to a Jacobian; the order-3 rank claim is not what is proved.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::brane_tower_finite::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::brane_tower_finite::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 205,
@@ -396,7 +396,7 @@
       "reviewed_at": "2026-08-30T04:30:08Z",
       "disposition": "restate-to-derive-or-demote"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::term7_structural::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::term7_structural::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 71,
@@ -412,7 +412,7 @@
       "reviewed_at": "2026-08-30T04:30:08Z",
       "disposition": "restate-to-derive-or-demote"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/OrderingIndependence.lean::skein_multiset_invariance_axiom::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/OrderingIndependence.lean::skein_multiset_invariance_axiom::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 113,
@@ -423,7 +423,7 @@
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/PerLoopMeasureShadowAssembly.lean::kl_eigenvalue_at_one_eq_pairCount::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/PerLoopMeasureShadowAssembly.lean::kl_eigenvalue_at_one_eq_pairCount::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 70,
@@ -434,7 +434,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::qFact_ratio_bound::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::qFact_ratio_bound::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 608,
@@ -446,7 +446,7 @@
       "disposition": "accessor-idiom-legit",
       "stale_prev_verdict": "needs-agent"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::qInt_ratio_bound_small::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::qInt_ratio_bound_small::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 415,
@@ -458,7 +458,7 @@
       "disposition": "accessor-idiom-legit",
       "stale_prev_verdict": "needs-agent"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::convergence_bound::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::convergence_bound::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 1037,
@@ -470,7 +470,7 @@
       "reviewed_at": "2026-08-30T14:13:22Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean::matrixChain_eq_buildChains_axiom::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean::matrixChain_eq_buildChains_axiom::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 589,
@@ -487,7 +487,7 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "RE-VERIFIED 2026-09-14 by `scripts/lean-vacuity-ledger-reverify.py`: the DECLARATION is byte-identical to its text at 7bea19725, the revision whose file_sha this entry recorded. `file_sha` is a WHOLE-FILE hash, so the expiry was caused by an edit elsewhere in the file and was never about this declaration. The prior reading therefore applies unchanged and the verdict `genuine` is RESTORED, not re-decided. (Run: 14 rows, IDENTICAL=14, CHANGED=0, NOT-FOUND=0 across the three categories.)\n\n--- prior evidence, unchanged ---\n`MatrixChainEqBuildChains.eq` IS the conclusion; theorem is `:= hi.eq`. Genuine as a projection — but the MOST honest of the nine: the name ends in `_axiom`, and the class docstring states the gap exactly (`List.foldl_eq_foldr_of_comm` is not in Mathlib, so callers witness the equality per (config, j)). The content is real and open; the defect is only that the accessor reads as a proved theorem. Fix is cheap: the docstring's own argument (transfer matrices commute ⇒ foldl = foldr) is provable once the commutation is stated as a field, which would make the class carry a HYPOTHESIS rather than the claim."
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/archimedean.lean::descartes::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/archimedean.lean::descartes::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 42,
@@ -504,7 +504,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/metallic_character_knot.lean::metallic_character_knot::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/metallic_character_knot.lean::metallic_character_knot::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 43,
@@ -521,7 +521,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/noble_gas_characterization.lean::noble_gas_characterization::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/noble_gas_characterization.lean::noble_gas_characterization::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 60,
@@ -538,7 +538,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/s5_bring_hodge_depth.lean::multiplicity_W_in_H1::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/s5_bring_hodge_depth.lean::multiplicity_W_in_H1::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 85,
@@ -549,7 +549,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean::closure2_jones_at_one_sigma_sq_eq_neg_two::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean::closure2_jones_at_one_sigma_sq_eq_neg_two::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 185,
@@ -560,7 +560,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean::jonesAtOne_doubleHopf_eq_four::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/BraidLinkTypes.lean::jonesAtOne_doubleHopf_eq_four::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 175,
@@ -571,7 +571,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerIsospinBlind.lean::t2_isobar_invariant::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/BraneTowerIsospinBlind.lean::t2_isobar_invariant::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 81,
@@ -582,7 +582,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean::ord_u_zero_trM_eq::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/CommutativeCrossingEnergy.lean::ord_u_zero_trM_eq::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 82,
@@ -593,7 +593,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean::QOU.BraidKnot.PLCorrectnessHypotheses::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/ConditionalClasses.lean::QOU.BraidKnot.PLCorrectnessHypotheses::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 54,
@@ -601,7 +601,7 @@
       "file_sha": "653297dea0f2",
       "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::axkia_pole_T_2_9::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::axkia_pole_T_2_9::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
@@ -619,7 +619,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::axkia_pole_product::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::axkia_pole_product::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
@@ -637,7 +637,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::inter_nucleon_interface_pole::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/CrystalRMatrixSubLemma.lean::inter_nucleon_interface_pole::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
@@ -655,7 +655,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean::habiroLeadingCoeff_eq::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaSignRule.lean::habiroLeadingCoeff_eq::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 420,
@@ -666,7 +666,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean::chirality_ideal_4_1_value::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean::chirality_ideal_4_1_value::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 148,
@@ -684,7 +684,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean::noble_gas_multi_operator::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean::noble_gas_multi_operator::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 95,
@@ -695,7 +695,7 @@
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean::gb_residue_spectral_sum::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean::gb_residue_spectral_sum::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 114,
@@ -712,7 +712,7 @@
       "reviewed_at": "2026-08-21T15:40:59.000Z",
       "disposition": "accessor-idiom-legit"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean::hoefsmit_V21_markov_symmetrized_character::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/HoefsmitV21CosSymmetrization.lean::hoefsmit_V21_markov_symmetrized_character::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 260,
@@ -730,7 +730,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/IdentityIContentDecomposition.lean::idB_verified_le12::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/IdentityIContentDecomposition.lean::idB_verified_le12::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 988,
@@ -740,7 +740,7 @@
       "evidence": "Genuine kernel verification of the Plancherel content-square identity Sum_{lam|-n} dim(lam)^2 * Sum_c c^2 = n! * C(n,2) for all n <= 12. Real decidable computation; the docstring is explicit that the general-n case awaits a Lean hook-length formula.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/JHopfQOneProvenance.lean::jonesHopf_atOne::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/JHopfQOneProvenance.lean::jonesHopf_atOne::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 98,
@@ -758,7 +758,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/JHopfQOneProvenance.lean::jonesHopf_provenance::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/JHopfQOneProvenance.lean::jonesHopf_provenance::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 118,
@@ -769,7 +769,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.lean::markov_trace_factors::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorFrobeniusPairing.lean::markov_trace_factors::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 80,
@@ -786,7 +786,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/LevelSufficiency.lean::LevelSufficiency::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/LevelSufficiency.lean::LevelSufficiency::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 112,
@@ -803,7 +803,7 @@
         "agent_date": "2026-08-21"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean::theorem_3_via_class::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean::theorem_3_via_class::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 158,
@@ -814,7 +814,7 @@
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `OperatorSelectionLP` carries field `duality_gap` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `OperatorSelectionLP` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `duality_gap` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZC_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZC_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 120,
@@ -825,7 +825,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZD_eq_sq_mul_kernel::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZD_eq_sq_mul_kernel::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 131,
@@ -836,7 +836,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZD_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovConventionSeparation.lean::markovZD_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 118,
@@ -847,7 +847,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_four::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_four::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 81,
@@ -858,7 +858,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_three::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_three::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 77,
@@ -869,7 +869,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_two::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean::markovParamCoeff_two::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 73,
@@ -880,7 +880,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean::q_beta_c3_wenzl_decomposition_exact::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean::q_beta_c3_wenzl_decomposition_exact::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 35,
@@ -891,7 +891,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean::rogersAlphaBeta_at_zero::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean::rogersAlphaBeta_at_zero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 163,
@@ -909,7 +909,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean::rogersLogCorrection_at_zero::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean::rogersLogCorrection_at_zero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 105,
@@ -927,7 +927,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean::shell_closure_monotone::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean::shell_closure_monotone::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 135,
@@ -944,7 +944,7 @@
       "reviewed_at": "2026-09-07T09:35:00Z",
       "disposition": "restate-to-derive-or-demote"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::seifertEuler_eq_neg_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::seifertEuler_eq_neg_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 49,
@@ -955,7 +955,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::seifert_euler_relation::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::seifert_euler_relation::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 64,
@@ -965,7 +965,7 @@
       "evidence": "`seifertDisks := 2`, `seifertBands := 3`, `boundaryComponents := 1`, `seifertGenus := 1` are all hand-entered Int literals, so `seifertEuler = 2 - 2*seifertGenus - boundaryComponents` is `-1 = -1` by decide and CANNOT fail. The docstring asserts the opposite: \"This is the genuine check (had the cell count been wrong, this would fail).\" Nothing derives the cell counts from sigma_1^3.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::symmetrizedSeifertDet_eq_three::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/Sigma1CubedSeifertTessellation.lean::symmetrizedSeifertDet_eq_three::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 113,
@@ -976,7 +976,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean::twoM_content_decomposition::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean::twoM_content_decomposition::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 69,
@@ -994,7 +994,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/algebraic_quantum_volume_specialization.lean::algebraic_quantum_volume_specialization::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/algebraic_quantum_volume_specialization.lean::algebraic_quantum_volume_specialization::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 56,
@@ -1011,7 +1011,7 @@
         "agent_date": "2026-08-21"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean::e_infinity_identifications::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean::e_infinity_identifications::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 97,
@@ -1028,7 +1028,7 @@
         "agent_date": "2026-09-14"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/geom_universality.lean::geom_universality::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/geom_universality.lean::geom_universality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 68,
@@ -1045,7 +1045,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean::spectral_sequence_h3_explicit::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean::spectral_sequence_h3_explicit::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 81,
@@ -1062,7 +1062,7 @@
         "agent_date": "2026-09-14"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/terms_2_6_higher_operations.lean::terms_2_6_higher_operations::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/terms_2_6_higher_operations.lean::terms_2_6_higher_operations::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 60,
@@ -1079,7 +1079,7 @@
         "agent_date": "2026-08-21"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/three_parameters_wedderburn.lean::three_parameters_wedderburn::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/three_parameters_wedderburn.lean::three_parameters_wedderburn::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 33,
@@ -1090,7 +1090,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean::qIntSym_zero::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean::qIntSym_zero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 46,
@@ -1101,7 +1101,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean::volume_perturbation::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean::volume_perturbation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 73,
@@ -1118,7 +1118,7 @@
       },
       "source": "agent adjudication, bean qou-metc item 3 (corpus-wide ledger seeding)"
     },
-    "content/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean::heckeAB_cons::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Braiding/HeckeGenPolyReduction.lean::heckeAB_cons::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 56,
@@ -1129,7 +1129,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Braiding/non_self_intersection.lean::non_self_intersection::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Braiding/non_self_intersection.lean::non_self_intersection::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 44,
@@ -1146,7 +1146,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean::conventionD_ne_conventionC::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean::conventionD_ne_conventionC::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 151,
@@ -1157,7 +1157,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ComponentCountSelectivity.lean::proton_neutron_indistinguishable::proof-no-trivial-true": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/ComponentCountSelectivity.lean::proton_neutron_indistinguishable::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology",
       "line": 96,
@@ -1174,7 +1174,7 @@
       },
       "source": "agent adjudication, bean qou-metc item 3 (corpus-wide ledger seeding)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaDTIndexGeneralN.lean::dtEulerG_eq_deltaLambdaG::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/DeltaLambdaDTIndexGeneralN.lean::dtEulerG_eq_deltaLambdaG::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 120,
@@ -1184,7 +1184,7 @@
       "evidence": "NOT vacuous -- kernel-checked with scripts/lean/BorrowedNameKernel.lean: defeq_collapse=false, value_is_rfl=false, so `dtEulerG_collapse` is a genuine (elementary) List.range induction. The finding is about NAMING and SCOPE: kernel confirms local_only=true and value_foreign=0, i.e. the statement quantifies over nothing but this file's own defs (`gradedDimG N d k = if k = N then d else 0`, a one-hot list) and the proof cites nothing outside the file. Calling its alternating sum \"the DT/3d-index graded Euler characteristic\" with a \"Behrend sign\" is nomenclature, not Donaldson-Thomas theory. The corpus cites this as the Delta_lambda value being PROVED; that citation over-reads it.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::identity_coeff_avg_eq_trace_full::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::identity_coeff_avg_eq_trace_full::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 217,
@@ -1195,7 +1195,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_half_h_eq_avg_evals::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_half_h_eq_avg_evals::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 317,
@@ -1206,7 +1206,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_margin::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_margin::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 169,
@@ -1217,7 +1217,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_sub_vHat::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/OneGeneratorHeckeCollapse.lean::vHat_sub_vHat::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 158,
@@ -1228,7 +1228,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean::alexanderTorus2_succ::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean::alexanderTorus2_succ::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 99,
@@ -1239,7 +1239,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean::framedQInt_sub_eq_zero_iff_alexander_root::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/QIntegerAlexanderTorus.lean::framedQInt_sub_eq_zero_iff_alexander_root::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 175,
@@ -1250,7 +1250,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean::electron_not_in_gl2_image::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean::electron_not_in_gl2_image::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 82,
@@ -1261,7 +1261,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean::gl2_image_eq_le2row::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/Su2SchurWeylForeclosure.lean::gl2_image_eq_le2row::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 75,
@@ -1272,7 +1272,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean::F_Bor_eq_trM_over_y_3::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean::F_Bor_eq_trM_over_y_3::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 403,
@@ -1283,7 +1283,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ew_interface_knot.lean::ew_interface_knot::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/ew_interface_knot.lean::ew_interface_knot::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 65,
@@ -1300,7 +1300,7 @@
         "agent_date": "2026-08-21"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/BringsSurface.lean::euler_genus_relation::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BringsSurface.lean::euler_genus_relation::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
@@ -1311,7 +1311,7 @@
       "tier": "major",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BringsSurface.lean::is_qou::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BringsSurface.lean::is_qou::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
@@ -1322,7 +1322,7 @@
       "tier": "major",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BringsSurface.lean::riemann_hurwitz_check::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/BringsSurface.lean::riemann_hurwitz_check::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
@@ -1333,7 +1333,7 @@
       "tier": "major",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/BringsSurface/lagrange_resolvent_transform.lean::lagrange_resolvent_transform_equivariance::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/BringsSurface/lagrange_resolvent_transform.lean::lagrange_resolvent_transform_equivariance::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 72,
@@ -1350,7 +1350,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/Eightfold/DecupletEqualSpacing.lean::decuplet_casimir_is_affine_in_hypercharge::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Eightfold/DecupletEqualSpacing.lean::decuplet_casimir_is_affine_in_hypercharge::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 208,
@@ -1361,7 +1361,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Eightfold/FlavourColourDiscriminator.lean::colour_eq_flavour_data::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Eightfold/FlavourColourDiscriminator.lean::colour_eq_flavour_data::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 88,
@@ -1372,7 +1372,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean::dressed_mass_from_substrate_split::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean::dressed_mass_from_substrate_split::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 122,
@@ -1384,7 +1384,7 @@
       "evidence": "SHA REFRESHED 2026-08-30, verdict unchanged at `genuine`. Declaration byte-identical to origin/main; the file hash moved because a different self-assuming projection was removed from it (bean `qou-z9ws`).\n\nPrior evidence: Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `split` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `split` is outside CONCLUSION_FIELD.",
       "stale_prev_verdict": "needs-agent"
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean::AcousticHorizonConditionsContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean::AcousticHorizonConditionsContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 18,
@@ -1399,7 +1399,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean::acoustic_horizon_conditions::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/acoustic_horizon_conditions.lean::acoustic_horizon_conditions::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-tuple-projection",
       "line": 43,
@@ -1417,7 +1417,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/core_levi_form.lean::CoreLeviFormContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/core_levi_form.lean::CoreLeviFormContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 18,
@@ -1432,7 +1432,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/discrete_vortex_spectrum.lean::DiscreteVortexSpectrumContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/discrete_vortex_spectrum.lean::DiscreteVortexSpectrumContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 23,
@@ -1447,7 +1447,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/discrete_vortex_spectrum.lean::discrete_vortex_spectrum::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/discrete_vortex_spectrum.lean::discrete_vortex_spectrum::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-tuple-projection",
       "line": 70,
@@ -1465,7 +1465,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/helicity_conservation.lean::HelicityConservationContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/helicity_conservation.lean::HelicityConservationContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 20,
@@ -1480,7 +1480,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/kelvin_dispersion_derivation.lean::KelvinDispersionDerivationContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/kelvin_dispersion_derivation.lean::KelvinDispersionDerivationContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 20,
@@ -1495,7 +1495,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/qou_ns_in_qou.lean::QOUFluidUniverse::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/qou_ns_in_qou.lean::QOUFluidUniverse::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 74,
@@ -1510,7 +1510,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/quantum_peter_weyl.lean::QuantumPeterWeylContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/quantum_peter_weyl.lean::QuantumPeterWeylContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 17,
@@ -1525,7 +1525,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/root_of_unity_truncation.lean::RootOfUnityTruncationContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/root_of_unity_truncation.lean::RootOfUnityTruncationContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 22,
@@ -1540,7 +1540,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/root_of_unity_truncation.lean::root_of_unity_truncation::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/root_of_unity_truncation.lean::root_of_unity_truncation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-tuple-projection",
       "line": 69,
@@ -1558,7 +1558,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean::VorticityLowerBoundContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/FluidDynamics/vorticity_lower_bound.lean::VorticityLowerBoundContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 19,
@@ -1573,7 +1573,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean::bernstein_bound_linear::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean::bernstein_bound_linear::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 397,
@@ -1584,7 +1584,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean::quantum_peter_weyl_completeness::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/GaugeFieldFluidDynamics.lean::quantum_peter_weyl_completeness::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 451,
@@ -1595,7 +1595,7 @@
       "evidence": "SHARPEST CATCH OF THE AUDIT. `def eigenspace_dim (twice_j : N) : N := (twice_j + 1)^2`, and `theorem quantum_peter_weyl_completeness : forall twice_j, eigenspace_dim twice_j = (twice_j + 1)^2 := by intro twice_j; rfl` unfolds that definition -- it is literally x = x. Kernel-confirmed defeq_collapse=true, value_is_rfl=true, local_only=true. The docstring states the REAL Peter-Weyl content ('The matrix coefficients {D^j_{mn}} form a complete orthonormal basis of L^2(A)'), attributes it to Tannaka-Krein reconstruction, and cites [woronowicz1987] 10.1007/BF01219077 -- none of which appears in the statement. It also says verbatim 'This is an axiom of the formalization' while being declared a THEOREM. That is the AGENTS.md 1a audit-dodge shape by its own words: a docstring saying 'stated as an opaque axiom' beside a `theorem ... := by rfl` is STRICTLY WORSE than an `axiom`, because an axiom is visible to `#print axioms` and this is not. Same shape bean qou-wcff documented for genus-filtration-ideal. Honest dispositions per AGENTS.md 1a: prove the real completeness statement, state it with `sorry` + `-- Ref: [woronowicz1987]`, or declare it an `axiom` so the axiom audit can see it.",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Hecke/ClosedFormInterfaceFactors.lean::heckeH_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Hecke/ClosedFormInterfaceFactors.lean::heckeH_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 415,
@@ -1606,7 +1606,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Hecke/H3Wedderburn.lean::wedderburn_dim_three::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Hecke/H3Wedderburn.lean::wedderburn_dim_three::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 81,
@@ -1617,7 +1617,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Hecke/H3Wedderburn.lean::wedderburn_dim_three_eq_factorial::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Hecke/H3Wedderburn.lean::wedderburn_dim_three_eq_factorial::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 86,
@@ -1628,7 +1628,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Information/toffoli_transfer_matrix.lean::toffoli_transfer_matrix::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Information/toffoli_transfer_matrix.lean::toffoli_transfer_matrix::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 126,
@@ -1644,7 +1644,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Infra/Polylogarithm.lean::beta3_via_class::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Infra/Polylogarithm.lean::beta3_via_class::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 157,
@@ -1655,7 +1655,7 @@
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean::ConfinementSDP::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean::ConfinementSDP::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "exact-field-projection",
       "line": 207,
@@ -1672,7 +1672,7 @@
         "agent_date": "2026-09-14"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean::sdp_lp_projection::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean::sdp_lp_projection::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 298,
@@ -1689,7 +1689,7 @@
         "agent_date": "2026-09-14"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean::gramEntryD_zero_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean::gramEntryD_zero_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 644,
@@ -1700,7 +1700,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilVanishing.lean::b3_nf_wedderburn_uniqueness::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Interactions/TrefoilVanishing.lean::b3_nf_wedderburn_uniqueness::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 131,
@@ -1710,7 +1710,7 @@
       "evidence": "Statement is `b3_nf_coefficients 5 = 0`, reading off entry 5 of a hand-entered 6-element table whose fifth line is literally `| 5 => 0  -- e- = 0 EXACTLY`. The name claims uniqueness of the H3(q) normal form under Wedderburn-Artin; the proof is a table lookup.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilVanishing.lean::unit2_nf_hecke_reduction::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Interactions/TrefoilVanishing.lean::unit2_nf_hecke_reduction::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 264,
@@ -1721,7 +1721,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knot/FigureEightVolume.lean::saddle_eq_volume::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Knot/FigureEightVolume.lean::saddle_eq_volume::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 135,
@@ -1737,7 +1737,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Knot/HeckeTwBasis.lean::genTerm_zero::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knot/HeckeTwBasis.lean::genTerm_zero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 163,
@@ -1748,7 +1748,7 @@
       "tier": "CRITICAL",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knot/WhiteheadVolumeConjecture.lean::whitehead_volume_conjecture::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Knot/WhiteheadVolumeConjecture.lean::whitehead_volume_conjecture::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "exact-field-projection",
       "line": 337,
@@ -1765,7 +1765,7 @@
         "agent_model": "claude-opus-5"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
       "pattern": "native_decide",
       "line": 267,
@@ -1782,7 +1782,7 @@
         "agent_date": "2026-08-21"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesFigureEight::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesFigureEight::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 300,
@@ -1793,7 +1793,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesTorus819::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesTorus819::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 497,
@@ -1804,7 +1804,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesTrefoil::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_mul_jonesTrefoil::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 363,
@@ -1815,7 +1815,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_sq_mul_jonesHopf::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::delta_sq_mul_jonesHopf::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 433,
@@ -1826,7 +1826,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::figure_eight_knot_nontrivial::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::figure_eight_knot_nontrivial::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 329,
@@ -1837,7 +1837,7 @@
       "tier": "CRITICAL",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::hopf_link_nontrivial::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::hopf_link_nontrivial::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 461,
@@ -1848,7 +1848,7 @@
       "tier": "CRITICAL",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_figureEight_value::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_figureEight_value::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 307,
@@ -1859,7 +1859,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_hopf_value::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_hopf_value::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 439,
@@ -1870,7 +1870,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_torus819_value::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_torus819_value::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 505,
@@ -1881,7 +1881,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_trefoil_value::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::jones_trefoil_value::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 370,
@@ -1892,7 +1892,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::torus819_knot_nontrivial::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::torus819_knot_nontrivial::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 522,
@@ -1903,7 +1903,7 @@
       "tier": "CRITICAL",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::trefoil_knot_nontrivial::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::trefoil_knot_nontrivial::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 390,
@@ -1914,7 +1914,7 @@
       "tier": "CRITICAL",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/descent_cocycle_deviation.lean::descent_cocycle_deviation::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/descent_cocycle_deviation.lean::descent_cocycle_deviation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 57,
@@ -1931,7 +1931,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/descent_cocycle_deviation.lean::twisted_cech_cocycle_equation::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/descent_cocycle_deviation.lean::twisted_cech_cocycle_equation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 68,
@@ -1948,7 +1948,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean::descended_MI_factorises::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean::descended_MI_factorises::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 88,
@@ -1965,7 +1965,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean::descended_core_stokes::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean::descended_core_stokes::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 106,
@@ -1982,7 +1982,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean::descended_exceptional_disc_trivial::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean::descended_exceptional_disc_trivial::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 98,
@@ -1999,7 +1999,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean::tm_divisor_chart_evaluation::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_dilogarithm_evaluation.lean::tm_divisor_chart_evaluation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 90,
@@ -2016,7 +2016,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_eigenspace_decomp.lean::TmEigenspaceDecompContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_eigenspace_decomp.lean::TmEigenspaceDecompContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 17,
@@ -2031,7 +2031,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean::transient_disc_is_divisor_integral::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean::transient_disc_is_divisor_integral::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 89,
@@ -2048,7 +2048,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean::transient_disjoint_disc_additivity::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/tm_transient_localisation.lean::transient_disjoint_disc_additivity::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 77,
@@ -2065,7 +2065,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Machinery/HeckeTowerBasicConstruction.lean::smul_jonesIdempotent::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Machinery/HeckeTowerBasicConstruction.lean::smul_jonesIdempotent::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 70,
@@ -2076,7 +2076,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean::QOU.Machinery.ResidueACompositeIdentification::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceOnHecke.lean::QOU.Machinery.ResidueACompositeIdentification::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 119,
@@ -2084,7 +2084,7 @@
       "file_sha": "808fd4298b03",
       "agent_note": "Lean inhabits it, and that is not a defect: the field is an opaque `: True` marker behind the @marker opt-out §3b-tax sanctions for a genuinely-open field. lean-vacuity-axiom-audit already records it EXEMPT ('honestly framed; tracked not counted'). Inhabitability is settled; the disposition is that the carrier is honest about asserting nothing yet."
     },
-    "content/quantum-observable-universe/lean/QOU/Mass/BindingEigenfunctionTwoTier.lean::D4_habiro_factor::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Mass/BindingEigenfunctionTwoTier.lean::D4_habiro_factor::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 138,
@@ -2095,7 +2095,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean::binding_eq_bond_energy::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Mass/CoordinationBinding.lean::binding_eq_bond_energy::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 76,
@@ -2111,7 +2111,7 @@
         "agent_date": "2026-09-02"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Mass/HeckeTowerMackey.lean::level2_gram::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Mass/HeckeTowerMackey.lean::level2_gram::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 104,
@@ -2122,7 +2122,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Mass/HeckeTowerMackey.lean::mackey_level2::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Mass/HeckeTowerMackey.lean::mackey_level2::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 93,
@@ -2133,7 +2133,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/MassEndomorphism/ZHabiroCauchy.lean::truncSection_zHabiroLimit::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/MassEndomorphism/ZHabiroCauchy.lean::truncSection_zHabiroLimit::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 792,
@@ -2144,7 +2144,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/MassTheory/ExtremalPrincipleDoesNotDetermine.lean::two_costs_two_minimisers::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/MassTheory/ExtremalPrincipleDoesNotDetermine.lean::two_costs_two_minimisers::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 98,
@@ -2155,7 +2155,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/MassTheory/MilnorExactCoefficient.lean::cyclic_trace_kills_iterCommTower::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorExactCoefficient.lean::cyclic_trace_kills_iterCommTower::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 154,
@@ -2165,7 +2165,7 @@
       "evidence": "Genuine derivation: the top level of the tower is a ring commutator and the proof discharges via the structure's own `commutator` hypothesis field (`tau.commutator _ _`), which is the conditional-derivation shape the sibling detector explicitly excludes. Elementary but real.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/MassTheory/MilnorVassilievGrading.lean::qou_order_is_double_milnor_degree::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/MassTheory/MilnorVassilievGrading.lean::qou_order_is_double_milnor_degree::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 65,
@@ -2176,7 +2176,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/MassTheory/PnOffsetBarOddClass.lean::likeFlavour_bond_not_barInvariant::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/MassTheory/PnOffsetBarOddClass.lean::likeFlavour_bond_not_barInvariant::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 219,
@@ -2187,7 +2187,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/EllipticDivisorDegree.lean::elliptic_divisor_degree_zero::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Mathlib/EllipticDivisorDegree.lean::elliptic_divisor_degree_zero::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "exact-field-projection",
       "line": 234,
@@ -2204,7 +2204,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/PermutationEnumeration.lean::lengthFn4_for_h3_to_h4_at_six::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Mathlib/PermutationEnumeration.lean::lengthFn4_for_h3_to_h4_at_six::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 520,
@@ -2215,7 +2215,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dim_q_squares_sum_two::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dim_q_squares_sum_two::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 92,
@@ -2230,7 +2230,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dimqPartition31_eq_dimqPartition211::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dimqPartition31_eq_dimqPartition211::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 315,
@@ -2241,7 +2241,7 @@
       "tier": "kernel-cluster",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dimqPartition4_eq_dimqPartition1111::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/Mathlib/WenzlBridgeConcrete.lean::dimqPartition4_eq_dimqPartition1111::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 319,
@@ -2252,7 +2252,7 @@
       "tier": "kernel-cluster",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/MathlibExt/QIntegerFactorial.lean::qFactorial_succ::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/MathlibExt/QIntegerFactorial.lean::qFactorial_succ::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 84,
@@ -2267,7 +2267,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/MathlibExt/QIntegerFactorial.lean::qInt_eq_canonical::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/MathlibExt/QIntegerFactorial.lean::qInt_eq_canonical::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 45,
@@ -2278,7 +2278,7 @@
       "tier": "cross-detector",
       "source": "scripts/lean/BorrowedNameKernel.lean + scripts/lean-definition-collapsed-audit.py (beans qou-0avp, qou-k9yt)"
     },
-    "content/quantum-observable-universe/lean/QOU/MathlibExt/QPartitionCombinatorics.lean::qSchur_H2_content_bridge::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/MathlibExt/QPartitionCombinatorics.lean::qSchur_H2_content_bridge::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 829,
@@ -2288,7 +2288,7 @@
       "evidence": "Docstring: \"THEOREM (q-Schur weight at H2). The Markov weight of partition lam |- 2 is y_lam = q^{c(lam)}/[2]_q. This is the bridge between the content-sum formula and the explicitly-proved H2 weights.\" The STATEMENT is `contentSum [2] = 1 AND contentSum [1,1] = -1` -- no y_lam, no Markov weight, no [2]_q. The binders `(q : R) (hq : 1 < q)` do not occur in the conclusion. Two content-sum arithmetic facts under a name and docstring claiming a q-Schur/Wenzl bridge. RE-VERIFIED 2026-08-27 after the ledger's own staleness check flagged this entry (file_sha ae6ae88836a2 -> 613e7442cc8e). The FILE changed -- the declaration moved from line 327 to 786 as material was added above it -- but the DECLARATION is byte-identical: same docstring claiming the y_lam = q^{c(lam)}/[2]_q bridge, same statement `contentSum [2] = 1 AND contentSum [1,1] = -1`, same unused `(q : R) (hq : 1 < q)` binders, same proof. Verdict stands. RE-VERIFIED AGAIN 2026-08-27 at merge time, after main's Pieri/hook-length tranche touched this file (file_sha 613e7442cc8e -> c6828cc53f60). The DECLARATION is byte-identical -- same statement, same docstring, same one-line proof; it moved from line 786 to 829 as material was added above it. Verdict unchanged. This is the SECOND time this one entry has been flagged by the staleness gate for a file edit that did not touch the declaration, which is the gate working as designed: a whole-file sha cannot tell a move from an edit, so an agent has to look.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean::strong_duality::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean::strong_duality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 169,
@@ -2305,7 +2305,7 @@
         "agent_date": "2026-09-14"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean::shell_filling_rule::proof-docstring-sorry-mismatch": {
+    "folio/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean::shell_filling_rule::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 165,
@@ -2322,7 +2322,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean::exists_angleStructure_of_expansion::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Optimization/AngleStructureFeasibility.lean::exists_angleStructure_of_expansion::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 173,
@@ -2339,7 +2339,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/FrobeniusPositivityPredicate.lean::frobPos_zero::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/FrobeniusPositivityPredicate.lean::frobPos_zero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 104,
@@ -2354,7 +2354,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/MesonOperatorSelectionT3.lean::selectionInput_injective::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/MesonOperatorSelectionT3.lean::selectionInput_injective::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 127,
@@ -2369,7 +2369,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean::confinement_frobenius_reciprocity::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean::confinement_frobenius_reciprocity::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 105,
@@ -2386,7 +2386,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean::four_term_pair_nucleon::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean::four_term_pair_nucleon::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 118,
@@ -2403,7 +2403,7 @@
         "agent_model": "claude-opus-5"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean::lp_dual_stability::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean::lp_dual_stability::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 86,
@@ -2420,7 +2420,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean::parity_regime_selection::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean::parity_regime_selection::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 70,
@@ -2437,7 +2437,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean::decoy_premise_irrelevant::proof-no-trivial-true": {
+    "folio/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean::decoy_premise_irrelevant::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
       "line": 214,
@@ -2454,7 +2454,7 @@
       },
       "source": "agent adjudication, bean qou-metc item 3 (corpus-wide ledger seeding)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean::adjoint_palindromic::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean::adjoint_palindromic::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 105,
@@ -2469,7 +2469,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean::min_max_pair_reconstructs_datum::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/AdjointIndexSetM3.lean::min_max_pair_reconstructs_datum::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 205,
@@ -2484,7 +2484,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit41_amphichiral::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit41_amphichiral::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 157,
@@ -2499,7 +2499,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit41_eq::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit41_eq::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 161,
@@ -2514,7 +2514,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit52_chiral_grading::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/ChiralityGradedCount.lean::dtSplit52_chiral_grading::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 152,
@@ -2529,7 +2529,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean::wtNumer_eq_zero_iff::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/ConventionDAdmissibleRoots.lean::wtNumer_eq_zero_iff::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 79,
@@ -2544,7 +2544,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/DTBehrendParityObstruction.lean::dtCount_single::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/DTBehrendParityObstruction.lean::dtCount_single::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 145,
@@ -2559,7 +2559,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::dtDatum_fiveTwo_two_distinct::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::dtDatum_fiveTwo_two_distinct::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 152,
@@ -2574,7 +2574,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::dtVector_eq::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::dtVector_eq::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 127,
@@ -2589,7 +2589,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::no_menu_invariant_hits_dt_vector::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/Driver14CharacterVarietyDTMenu.lean::no_menu_invariant_hits_dt_vector::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 136,
@@ -2604,7 +2604,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean::TransferMatrixEigenphase::proof-claims-unencoded": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/EigenphaseCarrierVacuity.lean::TransferMatrixEigenphase::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "tautological-field",
       "line": 97,
@@ -2621,7 +2621,7 @@
         "agent_model": "claude-opus-5"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FMapC3ParityExclusion.lean::barOdd_ne_hopf_value_at_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FMapC3ParityExclusion.lean::barOdd_ne_hopf_value_at_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 47,
@@ -2632,7 +2632,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapCyclotomicDirect::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapCyclotomicDirect::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 60,
@@ -2640,7 +2640,7 @@
       "file_sha": "0e26fd9fed37",
       "agent_note": "Lean inhabits it, and that is not a defect: the field is an opaque `: True` marker behind the @marker opt-out §3b-tax sanctions for a genuinely-open field. lean-vacuity-axiom-audit already records it EXEMPT ('honestly framed; tracked not counted'). Inhabitability is settled; the disposition is that the carrier is honest about asserting nothing yet."
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapFaddeevModular::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapFaddeevModular::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 32,
@@ -2648,7 +2648,7 @@
       "file_sha": "0e26fd9fed37",
       "agent_note": "Lean inhabits it, and that is not a defect: the field is an opaque `: True` marker behind the @marker opt-out §3b-tax sanctions for a genuinely-open field. lean-vacuity-axiom-audit already records it EXEMPT ('honestly framed; tracked not counted'). Inhabitability is settled; the disposition is that the carrier is honest about asserting nothing yet."
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapHexagonCharacter::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean::QOU.QBeta.FMapHexagonCharacter::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 46,
@@ -2656,7 +2656,7 @@
       "file_sha": "0e26fd9fed37",
       "agent_note": "Lean inhabits it, and that is not a defect: the field is an opaque `: True` marker behind the @marker opt-out §3b-tax sanctions for a genuinely-open field. lean-vacuity-axiom-audit already records it EXEMPT ('honestly framed; tracked not counted'). Inhabitability is settled; the disposition is that the carrier is honest about asserting nothing yet."
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::Splus0::name-overload": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::Splus0::name-overload": {
       "category": "proof-borrowed-name",
       "pattern": "name-overload",
       "line": 90,
@@ -2667,7 +2667,7 @@
       "evidence": "`Splus0` is declared in at least TWO modules with DIFFERENT values and DIFFERENT types: here `Fin 3 -> Fin 3 -> Int` with entry (0,1) = 4, and in QOU/QBeta/StokesQZeroDTCount.lean as `M2 := ![![1, 3], ![0, 1]]` with entry (0,1) = 3. Both carry Stokes-matrix docstrings. A string-keyed reader will conflate them and read one module's constant as the other's; resolve to the DECLARATION. This is the hazard a sibling agent flagged on PR #5856 for hookDim/wenzlSchurElement, now confirmed independently in the Stokes modules.",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::chirality_sum_seven::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::chirality_sum_seven::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
@@ -2678,7 +2678,7 @@
       "tier": "major",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dtPair52_chiral::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dtPair52_chiral::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 245,
@@ -2689,7 +2689,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dtPair52_grading::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dtPair52_grading::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 240,
@@ -2704,7 +2704,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dt_spectrum_two_element::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::dt_spectrum_two_element::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 127,
@@ -2715,7 +2715,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::sminus0_carries_three::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::sminus0_carries_three::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 116,
@@ -2726,7 +2726,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::splus0_carries_four::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoDTSpectrumSplit.lean::splus0_carries_four::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "kernel-defeq",
       "line": 0,
@@ -2737,7 +2737,7 @@
       "tier": "major",
       "source": "scripts/lean/BorrowedNameKernel.lean (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/GZThirdKnotRankGrading.lean::trace_field_alone_fails_on_pretzel237::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/GZThirdKnotRankGrading.lean::trace_field_alone_fails_on_pretzel237::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 425,
@@ -2755,7 +2755,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/MarkovZClassicalCoincidence.lean::zCsub_eq_zDsub_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/MarkovZClassicalCoincidence.lean::zCsub_eq_zDsub_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 92,
@@ -2766,7 +2766,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::a41_full_L_degree_eq_three::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::a41_full_L_degree_eq_three::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 153,
@@ -2777,7 +2777,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::c1_slope_ne_a41_slope::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::c1_slope_ne_a41_slope::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 178,
@@ -2788,7 +2788,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::r1_connection_reading_survives::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::r1_connection_reading_survives::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 207,
@@ -2799,7 +2799,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::r2_slope_reading_refuted::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/RouteANewtonPolygonDT.lean::r2_slope_reading_refuted::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 201,
@@ -2810,7 +2810,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::dtOffDiagMax_fiveTwo::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::dtOffDiagMax_fiveTwo::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 158,
@@ -2825,7 +2825,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::dtOffDiagMax_fourOne::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::dtOffDiagMax_fourOne::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 157,
@@ -2840,7 +2840,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::euler_machinery_misses_dt_count::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesDTCountExceedsRecursionOrder.lean::euler_machinery_misses_dt_count::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 128,
@@ -2851,7 +2851,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::chirality_split_from_reconstruction::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::chirality_split_from_reconstruction::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 145,
@@ -2866,7 +2866,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::dt_spectrum_three_four::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::dt_spectrum_three_four::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 85,
@@ -2881,7 +2881,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::minus_nine_is_derived::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesMatrixProvenance.lean::minus_nine_is_derived::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 122,
@@ -2896,7 +2896,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/StokesQZeroDTCount.lean::ggm_sandwich_qzero::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesQZeroDTCount.lean::ggm_sandwich_qzero::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 94,
@@ -2911,7 +2911,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/StokesQZeroDTCount.lean::stokes_qzero_offdiagonal::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/StokesQZeroDTCount.lean::stokes_qzero_offdiagonal::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 100,
@@ -2922,7 +2922,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/lean/QOU/QBeta/YekutieliTrefoilDiscretization.lean::surface2Form_trefoil::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QBeta/YekutieliTrefoilDiscretization.lean::surface2Form_trefoil::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 94,
@@ -2937,7 +2937,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean::langlands_eigenvalue_swap::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean::langlands_eigenvalue_swap::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 226,
@@ -2952,7 +2952,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean::langlands_involution_involutive::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean::langlands_involution_involutive::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 522,
@@ -2967,7 +2967,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::categorical_dq_squared_nonvanishing::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::categorical_dq_squared_nonvanishing::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 355,
@@ -2984,7 +2984,7 @@
       "disposition": "circular-instance-removed-carrier-now-open",
       "evidence": "RE-VERIFIED 2026-09-14 by `scripts/lean-vacuity-ledger-reverify.py`: the DECLARATION is byte-identical to its text at 6401f805d, the revision whose file_sha this entry recorded. `file_sha` is a WHOLE-FILE hash, so the expiry was caused by an edit elsewhere in the file and was never about this declaration. The prior reading therefore applies unchanged and the verdict `genuine` is RESTORED, not re-decided. (Run: 14 rows, IDENTICAL=14, CHANGED=0, NOT-FOUND=0 across the three categories.)\n\n--- prior evidence, unchanged ---\nRe-review after this file changed on main. The change was elsewhere in the file -- main's `q : R_q` / `qinv` work on CategoricalQExtDeriv -- and this declaration appears NOWHERE in that diff (0 matching +/- lines, measured against 9a41a7ca574..origin/main). That is the basis for restoring the prior verdict rather than re-deriving it. Prior evidence stands: `hasDqSquaredNonvanishing_of_fact` produced the class from the conclusion itself while ignoring all three class hypotheses; the instance was removed 2026-08-23 and the carrier is now honestly open."
     },
-    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::categorical_jet_prolongation::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::categorical_jet_prolongation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 403,
@@ -3001,7 +3001,7 @@
       "disposition": "structure-field-accessor",
       "evidence": "RE-VERIFIED 2026-09-14 by `scripts/lean-vacuity-ledger-reverify.py`: the DECLARATION is byte-identical to its text at 6401f805d, the revision whose file_sha this entry recorded. `file_sha` is a WHOLE-FILE hash, so the expiry was caused by an edit elsewhere in the file and was never about this declaration. The prior reading therefore applies unchanged and the verdict `legit` is RESTORED, not re-decided. (Run: 14 rows, IDENTICAL=14, CHANGED=0, NOT-FOUND=0 across the three categories.)\n\n--- prior evidence, unchanged ---\nRe-review after this file changed on main. The change was elsewhere in the file -- main's `q : R_q` / `qinv` work on CategoricalQExtDeriv -- and this declaration appears NOWHERE in that diff (0 matching +/- lines, measured against 9a41a7ca574..origin/main). That is the basis for restoring the prior verdict rather than re-deriving it. Prior evidence stands: `CategoricalJetProlongation.commutes` is the defining compatibility square of a prolongation, and the theorem is an accessor universally quantified over `jp`."
     },
-    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::kernelIncl_exact::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::kernelIncl_exact::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 383,
@@ -3018,7 +3018,7 @@
       "disposition": "structure-field-accessor",
       "evidence": "RE-VERIFIED 2026-09-14 by `scripts/lean-vacuity-ledger-reverify.py`: the DECLARATION is byte-identical to its text at 6401f805d, the revision whose file_sha this entry recorded. `file_sha` is a WHOLE-FILE hash, so the expiry was caused by an edit elsewhere in the file and was never about this declaration. The prior reading therefore applies unchanged and the verdict `legit` is RESTORED, not re-decided. (Run: 14 rows, IDENTICAL=14, CHANGED=0, NOT-FOUND=0 across the three categories.)\n\n--- prior evidence, unchanged ---\nRe-review after this file changed on main. The change was elsewhere in the file -- main's `q : R_q` / `qinv` work on CategoricalQExtDeriv -- and this declaration appears NOWHERE in that diff (0 matching +/- lines, measured against 9a41a7ca574..origin/main). That is the basis for restoring the prior verdict rather than re-deriving it. Prior evidence stands: `CategoricalJet` is a STRUCTURE DEFINING an object, not a class carrying a claim, and `exact` is its defining exactness axiom. Universally quantified over `cj`, so this is Mathlib's `mul_assoc := Group.mul_assoc` idiom."
     },
-    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QSchurWeyl.lean::markov_add::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QSchurWeyl.lean::markov_add::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 92,
@@ -3033,7 +3033,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/StandardModel/ChiralFermionBraidWords.lean::leptonNumber_not_markov_invariant::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/StandardModel/ChiralFermionBraidWords.lean::leptonNumber_not_markov_invariant::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 211,
@@ -3048,7 +3048,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/StandardModel/WritheLevelParity.lean::leptonNumber_collapses_at_minimal_level::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/StandardModel/WritheLevelParity.lean::leptonNumber_collapses_at_minimal_level::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 371,
@@ -3063,7 +3063,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean::base_mass_is_norm_of_base_trace::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean::base_mass_is_norm_of_base_trace::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 103,
@@ -3080,7 +3080,7 @@
         "agent_model": "claude-opus-5"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean::descended_trace_is_base_trace::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/TopologicalMass/cat_descended_is_base_mass.lean::descended_trace_is_base_trace::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 89,
@@ -3097,7 +3097,7 @@
         "agent_model": "claude-opus-5"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean::transient_decomposition::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/TopologicalMass/cat_transient_localises_blowup.lean::transient_decomposition::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 83,
@@ -3114,7 +3114,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Torsion/JetProlongation.lean::jet_prolongation_C::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Torsion/JetProlongation.lean::jet_prolongation_C::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 80,
@@ -3131,7 +3131,7 @@
       "disposition": "accessor-for-a-defining-or-disclosed-field",
       "evidence": "RE-VERIFIED 2026-09-07. The declaration is BYTE-IDENTICAL to its text at 097603189, the revision whose file_sha this entry recorded; only the rest of the file moved, and `file_sha` is a whole-file hash, so the expiry was never about this declaration. The prior reading applies unchanged, so the verdict `legit` is restored rather than re-decided. Evidence: scripts/lean-vacuity-ledger-reverify.py, 14/14 IDENTICAL.\n\nFLAGGED, NOT OVERTURNED: this `legit` verdict sits on a carrier with ZERO builders, while qou-z9ws's discriminator is that a projection is the legitimate accessor idiom ONLY when something builds the bundle. Two of the corpus's own criteria disagree here. A re-verification restores what was decided; it does not re-decide it. See docs/audits/2026-09-07-self-assuming-projection-reaches-the-paper.md Addendum 5.\n\n--- prior evidence, unchanged ---\nJetProlongationQOU DEFINES an object -- a jet prolongation of a C QOU: base, instanton connection, prolonged universe, prolonged connection, plus two coherence conditions. `dim_preserved` is one of its defining conditions, so the accessor is Mathlib's `Group.mul_assoc := Group.mul_assoc` idiom (class (a) in scripts/vacuity-carrier-shape-triage.py's taxonomy). Measured: `prolonged` and `base` are INDEPENDENT fields, so nothing forces their `n` to agree except `dim_preserved` -- there is no derivation available from the other fields, and none is expected of a defining axiom. What WAS wrong is the label: it read \"Corollary\", which tells a reader the statement follows from something when it IS the something. Docstring corrected in this commit; the term is unchanged. Verdict changed from genuine to legit."
     },
-    "content/quantum-observable-universe/lean/QOU/Torsion/KnotParticleGeneration.lean::KnotParticleGenerationContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/Torsion/KnotParticleGeneration.lean::KnotParticleGenerationContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 17,
@@ -3146,7 +3146,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Torsion/MassGap.lean::HasYangMillsMassGap::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/Torsion/MassGap.lean::HasYangMillsMassGap::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 223,
@@ -3161,7 +3161,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Torsion/TopologicalMass.lean::topological_mass_decomposition::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/Torsion/TopologicalMass.lean::topological_mass_decomposition::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 89,
@@ -3178,7 +3178,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Torsion/antiparticle_crossing_reversal.lean::AntiparticleCrossingReversalContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/Torsion/antiparticle_crossing_reversal.lean::AntiparticleCrossingReversalContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 17,
@@ -3193,7 +3193,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Torsion/brane_boundary_structure.lean::BraneBoundaryContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/Torsion/brane_boundary_structure.lean::BraneBoundaryContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 33,
@@ -3208,7 +3208,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Torsion/mass_decomposition_categorical.lean::MassDecompositionCategoricalContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/Torsion/mass_decomposition_categorical.lean::MassDecompositionCategoricalContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 18,
@@ -3223,7 +3223,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/Torsion/weak_equiv_invariance.lean::WeakEquivInvarianceContext::proof-decoy-hypothesis": {
+    "folio/quantum-observable-universe/lean/QOU/Torsion/weak_equiv_invariance.lean::WeakEquivInvarianceContext::proof-decoy-hypothesis": {
       "category": "proof-decoy-hypothesis",
       "pattern": "decoy-hypothesis",
       "line": 18,
@@ -3238,7 +3238,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean::heckeStep_eq_transferMatrix_fst::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean::heckeStep_eq_transferMatrix_fst::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 104,
@@ -3253,7 +3253,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean::heckeStep_eq_transferMatrix_snd::proof-borrowed-name": {
+    "folio/quantum-observable-universe/lean/QOU/TransferMatrices/GSNormalForm.lean::heckeStep_eq_transferMatrix_snd::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 110,
@@ -3268,7 +3268,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/lean/QOU/emergence_to_quantum_flat.lean::emergence_to_quantum_flat::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/emergence_to_quantum_flat.lean::emergence_to_quantum_flat::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 50,
@@ -3285,7 +3285,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/frobenius_relation.lean::frobenius_relation::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/frobenius_relation.lean::frobenius_relation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 63,
@@ -3302,7 +3302,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/substrate_radial_coordinate.lean::substrate_radial_coordinate::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/substrate_radial_coordinate.lean::substrate_radial_coordinate::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 59,
@@ -3319,7 +3319,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lean/QOU/volume_from_rigidity.lean::volume_from_rigidity::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lean/QOU/volume_from_rigidity.lean::volume_from_rigidity::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 51,
@@ -3336,7 +3336,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean::ccg_cosimplicial_identities::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean::ccg_cosimplicial_identities::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 43,
@@ -3354,7 +3354,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean::ccg_crossed_module_structure::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean::ccg_crossed_module_structure::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-tuple-projection",
       "line": 35,
@@ -3372,7 +3372,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean::ordering_extends::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.lean::ordering_extends::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "binder-echo",
       "line": 164,
@@ -3389,7 +3389,7 @@
       },
       "source": "agent adjudication, bean qou-metc item 3 (corpus-wide ledger seeding)"
     },
-    "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean::qbeta_c_k_closed_forms_derived::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean::qbeta_c_k_closed_forms_derived::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-tuple-projection",
       "line": 131,
@@ -3407,7 +3407,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePowerB_two::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePowerB_two::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 142,
@@ -3418,7 +3418,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePower_recurrence_a::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePower_recurrence_a::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 127,
@@ -3429,7 +3429,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePower_recurrence_b::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.lean::heckePower_recurrence_b::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 131,
@@ -3440,7 +3440,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean::jonesBorromeanFlipped_eq_eight::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean::jonesBorromeanFlipped_eq_eight::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 73,
@@ -3451,7 +3451,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean::jonesDoubleHopfValue_eq_four::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.lean::jonesDoubleHopfValue_eq_four::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 80,
@@ -3462,7 +3462,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean::asymptotic_volume_of_vc::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean::asymptotic_volume_of_vc::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 158,
@@ -3473,7 +3473,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.lean::S_w0_at_k5_neg::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.lean::S_w0_at_k5_neg::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 111,
@@ -3484,7 +3484,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c1::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c1::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 165,
@@ -3495,7 +3495,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c2::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c2::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 171,
@@ -3506,7 +3506,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c3::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c3::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 178,
@@ -3517,7 +3517,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c4::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.lean::ckFromReduction_eq_c4::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 185,
@@ -3528,7 +3528,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean::complementary_slackness::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean::complementary_slackness::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 158,
@@ -3545,7 +3545,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean::strong_duality::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.lean::strong_duality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 144,
@@ -3563,7 +3563,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::conjugate_4_4_4_involutive::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::conjugate_4_4_4_involutive::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 489,
@@ -3574,7 +3574,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::helium4_dominant_pair_transpose_related::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::helium4_dominant_pair_transpose_related::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 505,
@@ -3589,7 +3589,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::helium4_lp_reduction::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean::helium4_lp_reduction::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 438,
@@ -3600,7 +3600,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching.lean::tau_xi_cross_mul::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/conj-lepton-tower-h-n-plus-1-branching.lean::tau_xi_cross_mul::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 141,
@@ -3615,7 +3615,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean::rho_eq_qdim_via_canonical_knot::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean::rho_eq_qdim_via_canonical_knot::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 275,
@@ -3626,7 +3626,7 @@
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
-    "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean::crystal_basis_reduction::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean::crystal_basis_reduction::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-tuple-projection",
       "line": 122,
@@ -3644,7 +3644,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/mass-theory/feynman-classical-limit.lean::QOU.FeynmanClassicalLimit.ConditionalAudit.ClassicalLimitStpart::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/mass-theory/feynman-classical-limit.lean::QOU.FeynmanClassicalLimit.ConditionalAudit.ClassicalLimitStpart::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 50,
@@ -3652,7 +3652,7 @@
       "file_sha": "d55f839624a9",
       "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
     },
-    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n2_frobenius_codim::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n2_frobenius_codim::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 229,
@@ -3663,7 +3663,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n3_frobenius_codim::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n3_frobenius_codim::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 194,
@@ -3673,7 +3673,7 @@
       "evidence": "Genuine symbolic identity over R: evaluates Sum_i 1/dim_q(lam_i) for the Hecke q-dimensions at this n to an explicit closed form, discharged by rw/simp/ring. Real content; merely named after Frobenius. Flagged because every symbol in the statement is defined in the same file -- the expected false-positive class for the LOCAL-ONLY signal.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n4_frobenius_codim::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n4_frobenius_codim::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 284,
@@ -3684,7 +3684,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n5_frobenius_codim::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n5_frobenius_codim::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 350,
@@ -3694,7 +3694,7 @@
       "evidence": "Genuine symbolic identity over R: evaluates Sum_i 1/dim_q(lam_i) for the Hecke q-dimensions at this n to an explicit closed form, discharged by rw/simp/ring. Real content; merely named after Frobenius. Flagged because every symbol in the statement is defined in the same file -- the expected false-positive class for the LOCAL-ONLY signal.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n6_frobenius_codim::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n6_frobenius_codim::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 469,
@@ -3704,7 +3704,7 @@
       "evidence": "Genuine symbolic identity over R: evaluates Sum_i 1/dim_q(lam_i) for the Hecke q-dimensions at this n to an explicit closed form, discharged by rw/simp/ring. Real content; merely named after Frobenius. Flagged because every symbol in the statement is defined in the same file -- the expected false-positive class for the LOCAL-ONLY signal.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n7_frobenius_codim::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n7_frobenius_codim::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 596,
@@ -3715,7 +3715,7 @@
       "tier": "CRITICAL",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n8_frobenius_codim::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean::hecke_n8_frobenius_codim::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 782,
@@ -3740,7 +3740,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean::habiro_terminates::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean::habiro_terminates::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 74,
@@ -3751,7 +3751,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean::he4_strong_duality_value::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.lean::he4_strong_duality_value::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 156,
@@ -3768,7 +3768,7 @@
         "agent_model": "claude-opus-5"
       }
     },
-    "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean::borromean_volume_from_vc::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean::borromean_volume_from_vc::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 154,
@@ -3785,7 +3785,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean::figure_eight_volume_from_vc::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean::figure_eight_volume_from_vc::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 144,
@@ -3802,7 +3802,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::UnifiedKnotMass::proof-vacuous-hypotheses": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::UnifiedKnotMass::proof-vacuous-hypotheses": {
       "category": "proof-vacuous-hypotheses",
       "pattern": "fields-pinned-to-zero-stubs",
       "line": 139,
@@ -3815,7 +3815,7 @@
       "reviewed_at": "2026-09-03",
       "tier": "critical"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::braneTower::proof-zero-placeholder": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::braneTower::proof-zero-placeholder": {
       "category": "proof-zero-placeholder",
       "pattern": "zero-placeholder",
       "line": 30,
@@ -3825,7 +3825,7 @@
       "evidence": "`0 * q`, identically zero; same disclosed-stub block as descendedMarkov.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::descendedMarkov::proof-zero-placeholder": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::descendedMarkov::proof-zero-placeholder": {
       "category": "proof-zero-placeholder",
       "pattern": "zero-placeholder",
       "line": 29,
@@ -3835,7 +3835,7 @@
       "evidence": "`0 * q`, identically zero. Docstring discloses (\"each component returns 0; the genuine constructions live downstream\"). Honest, but it sits in knot-mass-formula-unified under thm:knot-mass-formula-unified.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobeniusCoCasimirTraceFallback::proof-docstring-body-mismatch": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobeniusCoCasimirTraceFallback::proof-docstring-body-mismatch": {
       "category": "proof-docstring-body-mismatch",
       "pattern": "docstring-vs-body",
       "line": 41,
@@ -3846,7 +3846,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n2::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n2::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 135,
@@ -3857,7 +3857,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n3::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n3::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 122,
@@ -3868,7 +3868,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n4::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n4::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 148,
@@ -3879,7 +3879,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n5::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::frobenius_codim_trace_n5::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 165,
@@ -3890,7 +3890,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::trivial_vortex_vacuum_mass::proof-vacuous-hypotheses": {
+    "folio/quantum-observable-universe/mass-theory/knot-mass-formula-unified.lean::trivial_vortex_vacuum_mass::proof-vacuous-hypotheses": {
       "category": "proof-vacuous-hypotheses",
       "pattern": "contradictory-hypotheses",
       "line": 262,
@@ -3901,7 +3901,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/markov-trace-factorization.lean::markov_trace_factorization_mul::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/markov-trace-factorization.lean::markov_trace_factorization_mul::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 171,
@@ -3916,7 +3916,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_anchor_stable_forward::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_anchor_stable_forward::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 95,
@@ -3933,7 +3933,7 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "RE-VERIFIED 2026-09-07. The declaration is BYTE-IDENTICAL to its text at 34c110866, the revision whose file_sha this entry recorded; only the rest of the file moved, and `file_sha` is a whole-file hash, so the expiry was never about this declaration. The prior reading applies unchanged, so the verdict `genuine` is restored rather than re-decided. Evidence: scripts/lean-vacuity-ledger-reverify.py, 14/14 IDENTICAL.\n\n--- prior evidence, unchanged ---\nSelf-assuming projection. The conditional class `MassAnchorStableGateClass` carries field `swing_within_tolerance` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `swing_within_tolerance` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_direction_sanity_forward::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_direction_sanity_forward::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 177,
@@ -3950,7 +3950,7 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "RE-VERIFIED 2026-09-07. The declaration is BYTE-IDENTICAL to its text at 34c110866, the revision whose file_sha this entry recorded; only the rest of the file moved, and `file_sha` is a whole-file hash, so the expiry was never about this declaration. The prior reading applies unchanged, so the verdict `genuine` is restored rather than re-decided. Evidence: scripts/lean-vacuity-ledger-reverify.py, 14/14 IDENTICAL.\n\n--- prior evidence, unchanged ---\nSelf-assuming projection. The conditional class `MassDirectionSanityGateClass` carries field `magnitude_within_threshold` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `magnitude_within_threshold` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_q_one_shadow_forward::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_q_one_shadow_forward::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 137,
@@ -3967,7 +3967,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_side_kernel_implies_q_one_shadow::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_side_kernel_implies_q_one_shadow::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "applied-field-projection",
       "line": 247,
@@ -3984,7 +3984,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_direction_sanity::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_direction_sanity::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 133,
@@ -4001,7 +4001,7 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "RE-VERIFIED 2026-09-14 by `scripts/lean-vacuity-ledger-reverify.py`: the DECLARATION is byte-identical to its text at f9e9aabd6, the revision whose file_sha this entry recorded. `file_sha` is a WHOLE-FILE hash, so the expiry was caused by an edit elsewhere in the file and was never about this declaration. The prior reading therefore applies unchanged and the verdict `genuine` is RESTORED, not re-decided. (Run: 14 rows, IDENTICAL=14, CHANGED=0, NOT-FOUND=0 across the three categories.)\n\n--- prior evidence, unchanged ---\nRE-VERIFIED 2026-09-07. The declaration is BYTE-IDENTICAL to its text at 34c110866, the revision whose file_sha this entry recorded; only the rest of the file moved, and `file_sha` is a whole-file hash, so the expiry was never about this declaration. The prior reading applies unchanged, so the verdict `genuine` is restored rather than re-decided. Evidence: scripts/lean-vacuity-ledger-reverify.py, 14/14 IDENTICAL.\n\n--- prior evidence, unchanged ---\nSelf-assuming projection. The conditional class `BarEvenKernel` carries field `direction_match` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `direction_match` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_q_one_shadow::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_q_one_shadow::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 123,
@@ -4019,7 +4019,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_radius_of_convergence::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_radius_of_convergence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 106,
@@ -4036,7 +4036,7 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "RE-VERIFIED 2026-09-14 by `scripts/lean-vacuity-ledger-reverify.py`: the DECLARATION is byte-identical to its text at f9e9aabd6, the revision whose file_sha this entry recorded. `file_sha` is a WHOLE-FILE hash, so the expiry was caused by an edit elsewhere in the file and was never about this declaration. The prior reading therefore applies unchanged and the verdict `genuine` is RESTORED, not re-decided. (Run: 14 rows, IDENTICAL=14, CHANGED=0, NOT-FOUND=0 across the three categories.)\n\n--- prior evidence, unchanged ---\nRE-VERIFIED 2026-09-07. The declaration is BYTE-IDENTICAL to its text at 34c110866, the revision whose file_sha this entry recorded; only the rest of the file moved, and `file_sha` is a whole-file hash, so the expiry was never about this declaration. The prior reading applies unchanged, so the verdict `genuine` is restored rather than re-decided. Evidence: scripts/lean-vacuity-ledger-reverify.py, 14/14 IDENTICAL.\n\n--- prior evidence, unchanged ---\nSelf-assuming projection. The conditional class `BarEvenKernel` carries field `pole_at_u_substrate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pole_at_u_substrate` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean::qbeta_direction_sanity_magnitude_match::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean::qbeta_direction_sanity_magnitude_match::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 86,
@@ -4047,7 +4047,7 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Self-assuming projection. The conditional class `DirectionSanityGateClass` carries field `magnitude_match` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `magnitude_match` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean::qbeta_q_eq_one_shadow_anchors::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean::qbeta_q_eq_one_shadow_anchors::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
       "line": 86,
@@ -4065,7 +4065,7 @@
       },
       "source": "bean qou-vh1o (adjudicated 2026-09-13; second exemption arm migrated to `triage pending`)"
     },
-    "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean::qbeta_g_simple_pole_at_u_substrate::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean::qbeta_g_simple_pole_at_u_substrate::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 102,
@@ -4076,7 +4076,7 @@
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Self-assuming projection. The conditional class `RadiusOfConvergenceGateClass` carries field `pole_location_is_u_substrate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pole_location_is_u_substrate` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.lean::triple_identity::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/skein-polynomial-transfer-matrix.lean::triple_identity::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 180,
@@ -4087,7 +4087,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.lean::heckeH_mk0::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/three-halves-structural-factor.lean::heckeH_mk0::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 185,
@@ -4098,7 +4098,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/tower-binding-energy.lean::wedderburnWeightsSum::proof-borrowed-name": {
+    "folio/quantum-observable-universe/mass-theory/tower-binding-energy.lean::wedderburnWeightsSum::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 34,
@@ -4109,7 +4109,7 @@
       "tier": "major",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean::QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit.CrystalGraphRealization::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.lean::QOU.BraidKnot.TransferMatrixLevel.ConditionalAudit.CrystalGraphRealization::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 181,
@@ -4127,7 +4127,7 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)"
     },
-    "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean::QOU.BraidKnot.WignerCoefficient.ConditionalAudit.QIntegerMassFormula::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean::QOU.BraidKnot.WignerCoefficient.ConditionalAudit.QIntegerMassFormula::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 70,
@@ -4135,7 +4135,7 @@
       "file_sha": "b836131e5e60",
       "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
     },
-    "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean::jonesMarkovCoefficient::proof-zero-placeholder": {
+    "folio/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean::jonesMarkovCoefficient::proof-zero-placeholder": {
       "category": "proof-zero-placeholder",
       "pattern": "zero-placeholder",
       "line": 155,
@@ -4145,7 +4145,7 @@
       "evidence": "`0 * q`, identically zero; docstring says \"Content-bearing placeholder `0 * q`\". Same cluster.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean::jonesMarkovTrace::proof-zero-placeholder": {
+    "folio/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean::jonesMarkovTrace::proof-zero-placeholder": {
       "category": "proof-zero-placeholder",
       "pattern": "zero-placeholder",
       "line": 151,
@@ -4155,7 +4155,7 @@
       "evidence": "`0 * q`, identically zero, under the name of the Jones-Markov trace. Same file and cluster as wenzlSchurElement (bean qou-6a7w).",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean::wenzlSchurElement::proof-zero-placeholder": {
+    "folio/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.lean::wenzlSchurElement::proof-zero-placeholder": {
       "category": "proof-zero-placeholder",
       "pattern": "zero-placeholder",
       "line": 127,
@@ -4165,7 +4165,7 @@
       "evidence": "`0 * (Q + X + (lam.parts.length : R))` is identically zero while structurally mentioning all three arguments; the docstring confesses the idiom verbatim. NOT inert: it feeds wenzlNormalization and hence yLambdaWenzlBridge, making y_lambda identically zero. Reported by a sibling agent (bean qou-6a7w, PR #5857) and verified at source here.",
       "source": "scripts/lean-borrowed-name-audit.py (bean qou-0avp)"
     },
-    "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean::opening_eq_holonomy_of_conj::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean::opening_eq_holonomy_of_conj::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 39,
@@ -4176,7 +4176,7 @@
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `H2SChiralData` carries field `angleOpeningDeg` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `H2SChiralData` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `angleOpeningDeg` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.lean::cpt_boolean_eq_orbit_closure::proof-borrowed-name": {
+    "folio/quantum-observable-universe/nuclear-interactions/cpt-orbit-closure-density.lean::cpt_boolean_eq_orbit_closure::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 106,
@@ -4191,7 +4191,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/nuclear-interactions/geom-universality.lean::QOU.BraidKnot.PLCorrectnessHypotheses::proof-carrier-inhabited-by-probe": {
+    "folio/quantum-observable-universe/nuclear-interactions/geom-universality.lean::QOU.BraidKnot.PLCorrectnessHypotheses::proof-carrier-inhabited-by-probe": {
       "category": "proof-carrier-inhabited-by-probe",
       "pattern": "lean-inhabited-no-hypotheses",
       "line": 21,
@@ -4199,7 +4199,7 @@
       "file_sha": "267bc9129f2d",
       "agent_note": "Lean inhabits this carrier with no hypotheses, so it asserts nothing, and unlike the @marker cases it does not say so. Evidence per-carrier in docs/audits/vacuous-prop-carrier-baseline.json; the five in AlgebraicSubstrate/ConditionalClasses.lean are beaned individually under qou-rq9n. Fix is AUTHORIAL: encode the real statement. Demoting the instance alone leaves a carrier that still asserts nothing."
     },
-    "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean::q_beta_spectral_conditional::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean::q_beta_spectral_conditional::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 329,
@@ -4227,7 +4227,7 @@
       "reviewer": "claude-session-01CSQEiZ",
       "reviewed_at": "2026-09-04"
     },
-    "content/quantum-observable-universe/observations/building-block-knots.lean::jones_unknot_eq_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/observations/building-block-knots.lean::jones_unknot_eq_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 133,
@@ -4242,7 +4242,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean::first_order_transition::proof-borrowed-name": {
+    "folio/quantum-observable-universe/observations/color-superconductivity-borromean.lean::first_order_transition::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 17,
@@ -4257,7 +4257,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean::alexander_weight_diff_six::proof-borrowed-name": {
+    "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean::alexander_weight_diff_six::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 30,
@@ -4272,7 +4272,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/predicted-spectra/chebyshev-torus-coefficients.lean::chebyshev_base::proof-borrowed-name": {
+    "folio/quantum-observable-universe/predicted-spectra/chebyshev-torus-coefficients.lean::chebyshev_base::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 56,
@@ -4287,7 +4287,7 @@
         "agent_date": "2026-08-30"
       }
     },
-    "content/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean::chebyshev_crossing_one::proof-borrowed-name": {
+    "folio/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.lean::chebyshev_crossing_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 72,
@@ -4313,7 +4313,7 @@
       "reviewer": "claude-session-01CSQEiZ",
       "reviewed_at": "2026-09-04"
     },
-    "content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean::ContactAffineChart.affineCoord_welldefined::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean::ContactAffineChart.affineCoord_welldefined::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 66,
@@ -4324,7 +4324,7 @@
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `ContactAffineChart` carries field `reeb_contraction` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `ContactAffineChart` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `reeb_contraction` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean::fiber_adjoint_involution_exists::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean::fiber_adjoint_involution_exists::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 97,
@@ -4341,7 +4341,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean::QuantumObservableUniverse.exists_instance::proof-no-self-assuming-projection": {
+    "folio/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean::QuantumObservableUniverse.exists_instance::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 92,
@@ -4358,7 +4358,7 @@
         "kind": "agent"
       }
     },
-    "content/quantum-observable-universe/quantum-observable-universes/tannaka-krein-reconstruction.lean::TannakaKreinReconstruction::proof-claims-unencoded": {
+    "folio/quantum-observable-universe/quantum-observable-universes/tannaka-krein-reconstruction.lean::TannakaKreinReconstruction::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 76,
@@ -4386,7 +4386,7 @@
       "reviewer": "claude-session-01CSQEiZ",
       "reviewed_at": "2026-09-04"
     },
-    "content/unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.lean::spoly_count_decomposition_su2::proof-borrowed-name": {
+    "folio/unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.lean::spoly_count_decomposition_su2::proof-borrowed-name": {
       "category": "proof-borrowed-name",
       "pattern": "borrowed-name",
       "line": 62,
