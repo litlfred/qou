@@ -45,9 +45,3 @@ This fixes the **per-partition value**. It does **not** address the many-body bi
 extensive one, so the missing contribution is a separate additive extensive term rather than a
 different choice of $\Delta_\lambda$. Six closure ansätze have failed on the deuteron for
 exactly that reason. Nothing here should be read as narrowing that gap.
-
-### Consumers
-
-The per-isotope binding algorithm consumes $\Delta_\lambda$ through
-[$\Delta_\lambda$ per-partition value (PROVED $(-1)^{n(\lambda)}\dim V_\lambda$); many-body magnitude open](#alg:delta-lambda-closure), which computes the value above and
-hands it to Step 9b.

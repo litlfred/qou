@@ -79,9 +79,7 @@ where the **1-d backbone**
 ($y_{(n)} \chi^{(n)} + y_{(1^n)} \chi^{(1^n)}$) is fully closed-form
 substrate-derivable for any $n$ via the formulas above, and the
 $\dim \geq 2$ middle terms require the Hoefsmit seminormal matrix
-characters (per the [Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition))
-plus, for $\dim = 2$ irreps, the cos-resummation from
-[$\mathfrak{Q}_\beta$ cos-resummation in convention D](#prop:q-beta-cos-resummation).
+characters (per the [Hecke branching trace decomposition](#prop:hecke-branching-trace-decomposition)).
 
 ## Recursion to higher $n$
 

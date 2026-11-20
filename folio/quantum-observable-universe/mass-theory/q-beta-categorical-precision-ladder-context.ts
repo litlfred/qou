@@ -15,6 +15,7 @@ export default remark({
   ],
   uses: ["prop:q-beta-categorical-precision-ladder"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): — the same machinery that made the $\\alpha_{EM}$\nnext-order factor $[2]_q(1-h^2\\alpha)$ binomial-exact\n([additive Bring zero-mode form of $1/\\alpha_{EM}$](#prop:em-coupling-bring-zero-mode))" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Tables 2 and 3 above are computed by [`qbeta_precision_ladder_n5.py`](../../../computations/qbeta/qbeta_precision_ladder_n5.py) ... the block's previously declared producer, `probe_q_beta_operator_valued_N3.py`, stops at $N=3$" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): It is not **proved**: the Lean re-reads the $N{=}2$ factor rather than deriving it." },
     {

@@ -27,28 +27,3 @@ in
 [Table: $\alpha_{\mathrm{shift}}(T_{p,k})$ for 6 test pairs](#tbl:alpha-shift-torus-knot-table-data).
 All $14$ assertions in the witness pass.
 
-### Cross-link
-
-The two values $\alpha_{\mathrm{shift}}(T_{2,9}) = 9$ and
-$\alpha_{\mathrm{shift}}(T_{3,5}) = 10$ are precisely the
-$q$-integer indices appearing in
-[Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection)'s
-formula
-
-$$
-  \alpha_{EM}^{-1} \;=\; q \cdot [9]_q \cdot [10]_q.
-$$
-
-[Multiplicative-chain form](#prop:alpha-em-shift-multiplicative-chain)
-combines the two identities into the **shift-exponent form**
-
-$$
-  \alpha_{EM}^{-1}
-  \;=\;
-  q \cdot
-  \bigl[\alpha_{\mathrm{shift}}(T_{2,9})\bigr]_q \cdot
-  \bigl[\alpha_{\mathrm{shift}}(T_{3,5})\bigr]_q,
-$$
-
-recasting the $\delta_q$-trace identity in the same combinatorial
-terms as the atomic-shift formula.

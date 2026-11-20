@@ -114,9 +114,7 @@ place (step 1 of the algorithm). Within the present implementation:
 - A volume-match search that runs *backwards* from step 6 to a
  candidate knot, bypassing step 1 entirely, is excluded: it
  reverse-engineers the knot from the AME target rather than deriving
- it from the categorical pipeline. The principled atlas
- ([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))
- admits no such entry.
+ it from the categorical pipeline.
 
 The collapsing-spectral-sequence framing
 ([prop:gb-spectral-sequence](#prop:gb-spectral-sequence),
