@@ -42,19 +42,25 @@ Real SDPs in standard form, with the trace pairing `⟨X, Y⟩ = tr(XY)`
 
 * `exists_smul_one_add_smul_posSemidef` — for symmetric `E`, `L • 1 + c • E ⪰ 0` for all
   `|c| ≤ 1` (some `L ≥ 0`); with `exists_sub_smul_one_posSemidef` this gives
-  `exists_psd_preimage_near`: under primal Slater and an onto constraint map, every
-  right-hand side near `b` is attained by a PSD matrix with bounded objective.
+  `exists_psd_preimage_near_of_linearMap`: under primal Slater, for any linear `Q` with range
+  inside `range 𝒜`, every right-hand side `b + Q u` with `u` small is attained by a PSD matrix
+  with bounded objective (`exists_psd_preimage_near` is the case `Q = id`, onto `𝒜`).
 * `surjective_of_linearIndependent` — linearly independent `Aᵢ` make
   `X ↦ (⟨Aᵢ, X⟩)ᵢ` onto.
-* `strong_duality_of_primal_slater` — **second main theorem**: symmetric data, onto
-  constraint map, a positive-definite primal-feasible `X̄`, and a dual-feasible point ⇒
-  the **dual optimum is attained** at some `ys` and every `ε > 0` admits a primal-feasible
-  `X` with `⟨C, X⟩ < Σ bᵢ ysᵢ + ε` (no gap).  Proof: separate `(0,0)` from the interior of
-  `G = {(𝒜X - b, t) : X ⪰ 0, t > ⟨C, X⟩ - inf (P)}` (`geometric_hahn_banach_open_point`),
-  extend to `G` by `closure (interior G) = closure G`, use Slater to make the `t`-coefficient
-  negative, and read off a dual point by PSD self-duality.
-* `exists_optimal_pair` — under two-sided Slater (+ onto constraints): a primal optimum and a
+* `strong_duality_of_primal_slater'` — **second main theorem**, with **no rank hypothesis**
+  on the `Aᵢ`: symmetric data, a positive-definite primal-feasible `X̄`, and a dual-feasible
+  point ⇒ the **dual optimum is attained** at some `ys` and every `ε > 0` admits a
+  primal-feasible `X` with `⟨C, X⟩ < Σ bᵢ ysᵢ + ε` (no gap).  Proof: with `V = range 𝒜` and
+  `U` a linear complement of `V`, separate `(0,0)` from the interior of
+  `G = {(𝒜X - b + v, t) : X ⪰ 0, v ∈ U, t > ⟨C, X⟩ - inf (P)}`
+  (`geometric_hahn_banach_open_point`); `(0,0) ∉ G` because `b ∈ V` and `V ∩ U = 0`, and the
+  thickening by `U` gives `G` interior even when `𝒜` is not onto.  Extend to `G` by
+  `closure (interior G) = closure G`, use Slater to make the `t`-coefficient negative, and
+  read off a dual point by PSD self-duality.  `strong_duality_of_primal_slater` is the older
+  signature with an (unused) onto hypothesis, derived from it.
+* `exists_optimal_pair'` — under two-sided Slater (no rank hypothesis): a primal optimum and a
   dual optimum with equal objectives, and complementary slackness `⟨C - Σ ysᵢ Aᵢ, Xs⟩ = 0`.
+  `exists_optimal_pair` is the older signature with an (unused) onto hypothesis.
 
 ### The `QOU.MathlibExt.SDP.HasStrongDuality` carrier
 
@@ -62,17 +68,15 @@ Real SDPs in standard form, with the trace pairing `⟨X, Y⟩ = tr(XY)`
   as stated**: it asks for a primal-dual optimal pair from primal strict feasibility alone,
   and the `1 × 1` SDP "minimise `-x` over `x ⪰ 0`" is strictly feasible, unbounded below
   (`unboundedSDP_unbounded`) and has no dual-feasible point.
-* `hasStrongDuality_of_slater` — the class does hold for real SDPs with symmetric data,
-  linearly independent constraints and a positive-definite dual slack (a theorem, not an
-  `instance`, since these hypotheses are not classes).
+* `hasStrongDuality_of_slater'` — the class does hold for real SDPs with symmetric data and
+  a positive-definite dual slack, with no rank condition on the constraints (a theorem, not
+  an `instance`, since these hypotheses are not classes).  `hasStrongDuality_of_slater` is
+  the older signature with an (unused) linear-independence hypothesis.
 
 ## What is NOT proved here
 
 * **Dual attainment under dual Slater alone** and **primal attainment under primal Slater
   alone** are not claimed (both can fail).
-* `strong_duality_of_primal_slater` assumes the constraint map is onto (equivalently,
-  linearly independent `Aᵢ`).  The theorem remains true without it (drop redundant
-  constraints), but that reduction is not formalised.
 * The symmetry hypotheses `(Aᵢ).IsHermitian`, `C.IsHermitian` are genuinely used (PSD
   self-duality only sees the symmetric part); the non-symmetric case is not treated.
 * Nothing here discharges `QOU.Interactions.ConfinementSDP`'s `strong_duality` field.
@@ -505,18 +509,36 @@ lemma exists_symm_dual_basis (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
   · rw [traceInner_smul_right, traceInner_add_right, traceInner_transpose_right (hA i), hE' i]
     ring
 
-/-- **Primal Slater gives an interior point.** If the constraint map is onto and some
-feasible `X̄` is positive definite, then every right-hand side within `r` of `b = 𝒜(X̄)`
-(sup norm) is attained by a PSD matrix whose objective value is at most `M`. -/
-lemma exists_psd_preimage_near (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
+/-- A vector in the range of the constraint map has a *symmetric* preimage. -/
+lemma exists_symm_preimage (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
+    (hA : ∀ i, (A i).IsHermitian) (d : Fin m → ℝ)
+    (hd : ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = d i) :
+    ∃ E : Matrix (Fin n) (Fin n) ℝ, E.IsHermitian ∧ ∀ i, traceInner (A i) E = d i := by
+  obtain ⟨E', hE'⟩ := hd
+  refine ⟨(1/2 : ℝ) • (E' + E'ᵀ), ?_, fun i => ?_⟩
+  · unfold Matrix.IsHermitian
+    rw [conjTranspose_eq_transpose_of_trivial, transpose_smul, transpose_add,
+      transpose_transpose, add_comm]
+  · rw [traceInner_smul_right, traceInner_add_right, traceInner_transpose_right (hA i), hE' i]
+    ring
+
+/-- **Primal Slater gives an interior point, relative to a linear map `Q`.** Let
+`Q : ℝ^m → ℝ^m` be linear with range inside the range of the constraint map
+`X ↦ (⟨Aᵢ, X⟩)ᵢ`.  If some `X̄` is positive definite, then for every `u` within `r` of `0`
+(sup norm) the right-hand side `𝒜(X̄) + Q u` is attained by a PSD matrix whose objective value
+is at most `M`.  With `Q = id` this needs an onto constraint map
+(`exists_psd_preimage_near`); with `Q` a projection onto the range it needs nothing. -/
+lemma exists_psd_preimage_near_of_linearMap (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
     (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian)
-    (hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
+    (Q : (Fin m → ℝ) →ₗ[ℝ] (Fin m → ℝ))
+    (hQ : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = Q v i)
     {Xbar : Matrix (Fin n) (Fin n) ℝ} (hXbar : Xbar.PosDef) :
     ∃ r : ℝ, 0 < r ∧ ∃ M : ℝ, ∀ u : Fin m → ℝ, ‖u‖ < r →
       ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
-        (∀ i, traceInner (A i) X = traceInner (A i) Xbar + u i) ∧ traceInner C X ≤ M := by
+        (∀ i, traceInner (A i) X = traceInner (A i) Xbar + Q u i) ∧ traceInner C X ≤ M := by
   classical
-  choose E hEh hEA using exists_symm_dual_basis A hA hsurj
+  choose E hEh hEA using fun k : Fin m =>
+    exists_symm_preimage A hA (Q fun j => if k = j then 1 else 0) (hQ _)
   choose L hL0 hLpsd using fun k => exists_smul_one_add_smul_posSemidef (hEh k)
   obtain ⟨ε, hε, hXε⟩ := exists_sub_smul_one_posSemidef hXbar
   set w : ℝ := ε / (m + 1) with hw
@@ -562,9 +584,8 @@ lemma exists_psd_preimage_near (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
       abel
     rw [heq]
     exact (hXε.add hsum).add (PosSemidef.one.smul hmw)
-  · rw [traceInner_add_right, traceInner_sum_right]
-    simp only [traceInner_smul_right, hEA, mul_ite, mul_one, mul_zero]
-    simp
+  · rw [traceInner_add_right, traceInner_sum_right, LinearMap.pi_apply_eq_sum_univ Q u]
+    simp only [traceInner_smul_right, hEA, Finset.sum_apply, Pi.smul_apply, smul_eq_mul]
   · rw [traceInner_add_right, traceInner_sum_right, Finset.mul_sum]
     gcongr with k
     rw [traceInner_smul_right]
@@ -573,21 +594,35 @@ lemma exists_psd_preimage_near (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
       _ ≤ ρ * |traceInner C (E k)| :=
           mul_le_mul_of_nonneg_right (hu' k).le (abs_nonneg _)
 
-/-- **SDP strong duality under primal Slater.** For symmetric data, if the constraint map
-`X ↦ (⟨Aᵢ, X⟩)ᵢ` is onto (equivalently, the `Aᵢ` are linearly independent — see
-`surjective_of_linearIndependent`), some primal-feasible `X̄` is positive definite, and the
-dual is feasible, then the **dual optimum is attained** at some `ys` and there is **no
-duality gap**: every `ε > 0` admits a primal-feasible `X` with `⟨C, X⟩ < Σ bᵢ ysᵢ + ε`.
+/-- **Primal Slater gives an interior point.** If the constraint map is onto and some
+feasible `X̄` is positive definite, then every right-hand side within `r` of `b = 𝒜(X̄)`
+(sup norm) is attained by a PSD matrix whose objective value is at most `M`. -/
+lemma exists_psd_preimage_near (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
+    (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian)
+    (hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
+    {Xbar : Matrix (Fin n) (Fin n) ℝ} (hXbar : Xbar.PosDef) :
+    ∃ r : ℝ, 0 < r ∧ ∃ M : ℝ, ∀ u : Fin m → ℝ, ‖u‖ < r →
+      ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
+        (∀ i, traceInner (A i) X = traceInner (A i) Xbar + u i) ∧ traceInner C X ≤ M :=
+  exists_psd_preimage_near_of_linearMap A C hA LinearMap.id (fun v => hsurj v) hXbar
 
-Proof: with `p = inf (P)` (finite by weak duality), the convex set
-`G = {(𝒜X - b, t) : X ⪰ 0, t > ⟨C, X⟩ - p}` misses `(0, 0)` and, by primal Slater and
-surjectivity, has nonempty interior.  Separating `(0,0)` from `interior G` and passing to
+/-- **SDP strong duality under primal Slater (no rank hypothesis).** For symmetric data, if
+some primal-feasible `X̄` is positive definite and the dual is feasible, then the **dual
+optimum is attained** at some `ys` and there is **no duality gap**: every `ε > 0` admits a
+primal-feasible `X` with `⟨C, X⟩ < Σ bᵢ ysᵢ + ε`.  No linear independence of the `Aᵢ` and
+no surjectivity of `𝒜 : X ↦ (⟨Aᵢ, X⟩)ᵢ` is assumed.
+
+Proof: with `p = inf (P)` (finite by weak duality), let `V = range 𝒜` and `U` any linear
+complement of `V` in `ℝ^m`.  The convex set
+`G = {(𝒜X - b + v, t) : X ⪰ 0, v ∈ U, t > ⟨C, X⟩ - p}` misses `(0, 0)` (since `b = 𝒜X̄ ∈ V`
+and `V ∩ U = 0`) and, by primal Slater applied along the projection onto `V` along `U`, has
+nonempty interior.  Separating `(0,0)` from `interior G` and passing to
 `closure (interior G) = closure G` gives `f ≤ 0` on `G`; Slater forces the `t`-coefficient
 `σ` of `f` to be negative, and `ys = -z / σ` is dual feasible (PSD self-duality) with
-`Σ bᵢ ysᵢ ≥ p`. -/
-theorem strong_duality_of_primal_slater (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m → ℝ)
+`Σ bᵢ ysᵢ ≥ p`.  The thickening by `U` replaces the earlier onto-hypothesis: when `𝒜` is onto,
+`U = 0` and `G` is the set used before. -/
+theorem strong_duality_of_primal_slater' (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m → ℝ)
     (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian) (hC : C.IsHermitian)
-    (hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
     (hslater : ∃ Xbar : Matrix (Fin n) (Fin n) ℝ, Xbar.PosDef ∧ ∀ i, traceInner (A i) Xbar = b i)
     (hdual : ∃ y₀ : Fin m → ℝ, (C - ∑ i, y₀ i • A i).PosSemidef) :
     ∃ ys : Fin m → ℝ, (C - ∑ i, ys i • A i).PosSemidef ∧
@@ -607,12 +642,20 @@ theorem strong_duality_of_primal_slater (A : Fin m → Matrix (Fin n) (Fin n) �
   set p := sInf P with hp
   have hple : ∀ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef → (∀ i, traceInner (A i) X = b i) →
       p ≤ traceInner C X := fun X hX hXf => csInf_le hPbdd ⟨X, hX, hXf, rfl⟩
-  -- the convex set `G`
+  -- the range `V` of the constraint map, and a complement `U` of it
+  let T : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] (Fin m → ℝ) :=
+    LinearMap.fst ℝ (Fin m → ℝ) ℝ ∘ₗ constraintMap A 0
+  have hT : ∀ X i, T X i = traceInner (A i) X := fun X i => rfl
+  set V := LinearMap.range T with hV
+  obtain ⟨U, hVU⟩ := Submodule.exists_isCompl V
+  -- the convex set `G`, thickened by `U` so that it has interior even when `V ≠ ⊤`
   set G : Set ((Fin m → ℝ) × ℝ) := {w | ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
-    (∀ i, w.1 i = traceInner (A i) X - b i) ∧ traceInner C X - p < w.2} with hG
+    ∃ v ∈ U, (∀ i, w.1 i = traceInner (A i) X - b i + v i) ∧ traceInner C X - p < w.2}
+    with hG
   have hGcv : Convex ℝ G := by
-    rintro w₁ ⟨X₁, hX₁, hu₁, ht₁⟩ w₂ ⟨X₂, hX₂, hu₂, ht₂⟩ a c ha hc hac
-    refine ⟨a • X₁ + c • X₂, (hX₁.smul ha).add (hX₂.smul hc), fun i => ?_, ?_⟩
+    rintro w₁ ⟨X₁, hX₁, v₁, hv₁, hu₁, ht₁⟩ w₂ ⟨X₂, hX₂, v₂, hv₂, hu₂, ht₂⟩ a c ha hc hac
+    refine ⟨a • X₁ + c • X₂, (hX₁.smul ha).add (hX₂.smul hc), a • v₁ + c • v₂,
+      U.add_mem (U.smul_mem a hv₁) (U.smul_mem c hv₂), fun i => ?_, ?_⟩
     · simp only [Prod.fst_add, Prod.smul_fst, Pi.add_apply, Pi.smul_apply, smul_eq_mul, hu₁,
         hu₂, traceInner_add_right, traceInner_smul_right]
       have : b i = (a + c) * b i := by rw [hac, one_mul]
@@ -631,19 +674,39 @@ theorem strong_duality_of_primal_slater (A : Fin m → Matrix (Fin n) (Fin n) �
       have hp' : p = (a + c) * p := by rw [hac, one_mul]
       nlinarith
   have hnot0 : ((0 : Fin m → ℝ), (0 : ℝ)) ∉ G := by
-    rintro ⟨X, hX, hu, ht⟩
+    rintro ⟨X, hX, v, hv, hu, ht⟩
+    have hdiff : (fun i => traceInner (A i) X - b i) ∈ V := by
+      refine ⟨X - Xbar, ?_⟩
+      rw [map_sub]
+      funext i
+      show T X i - T Xbar i = _
+      rw [hT, hT, hXbarf]
+    have hneg : (fun i => traceInner (A i) X - b i) = -v := by
+      funext i
+      have := hu i
+      simp only [Pi.zero_apply, Pi.neg_apply] at this ⊢
+      linarith
+    have hzero := Submodule.disjoint_def.1 hVU.disjoint _ hdiff (hneg ▸ U.neg_mem hv)
     have hXf : ∀ i, traceInner (A i) X = b i := fun i => by
-      have := hu i; simp at this; linarith
+      have := congrFun hzero i; simp only [Pi.zero_apply] at this; linarith
     have := hple X hX hXf
     simp at ht
     linarith
   -- interior point from primal Slater
-  obtain ⟨r, hr, M, hM⟩ := exists_psd_preimage_near A C hA hsurj hXbar
+  -- (the projection onto `V` along `U` has range in `V`, so no surjectivity is needed)
+  obtain ⟨r, hr, M, hM⟩ := exists_psd_preimage_near_of_linearMap A C hA
+    (Submodule.IsCompl.projection hVU) (fun v => by
+      obtain ⟨X, hX⟩ := (V.linearProjOfIsCompl U hVU v).2
+      exact ⟨X, fun i => congrFun hX i⟩) hXbar
   have hball : ∀ u : Fin m → ℝ, ‖u‖ < r → ∀ t : ℝ, M - p < t → (u, t) ∈ G := by
     intro u hu t ht
     obtain ⟨X, hX, hXc, hXo⟩ := hM u hu
-    refine ⟨X, hX, fun i => ?_, by simp only; linarith⟩
-    simp only [hXc, hXbarf]; ring
+    have hsplit := Submodule.IsCompl.projection_add_projection_eq_self hVU u
+    refine ⟨X, hX, Submodule.IsCompl.projection hVU.symm u,
+      (U.linearProjOfIsCompl V hVU.symm u).2, fun i => ?_, by simp only; linarith⟩
+    have := congrFun hsplit i
+    simp only [Pi.add_apply] at this
+    simp only [hXc, hXbarf]; linarith
   have hOsub : Metric.ball (0 : Fin m → ℝ) r ×ˢ Set.Ioi (M - p) ⊆ interior G :=
     interior_maximal (fun w ⟨h1, h2⟩ => hball w.1 (mem_ball_zero_iff.1 h1) w.2 h2)
       (Metric.isOpen_ball.prod isOpen_Ioi)
@@ -680,7 +743,7 @@ theorem strong_duality_of_primal_slater (A : Fin m → Matrix (Fin n) (Fin n) �
       ∑ i, (traceInner (A i) X - b i) * z i + (traceInner C X - p + δ) * σ ≤ 0 := by
     intro X hX δ hδ
     have := hfG ((fun i => traceInner (A i) X - b i), traceInner C X - p + δ)
-      ⟨X, hX, fun i => rfl, by simp only; linarith⟩
+      ⟨X, hX, 0, U.zero_mem, fun i => by simp, by simp only; linarith⟩
     rwa [hfrep] at this
   have hσle : σ ≤ 0 := by
     have h := hkey Xbar hXbar.posSemidef 1 one_pos
@@ -783,6 +846,21 @@ theorem strong_duality_of_primal_slater (A : Fin m → Matrix (Fin n) (Fin n) �
   have := weak_duality A b C X y hX hXf _ hy (add_sub_cancel _ _)
   linarith
 
+/-- **SDP strong duality under primal Slater**, the form with an onto constraint map
+`X ↦ (⟨Aᵢ, X⟩)ᵢ` (equivalently, linearly independent `Aᵢ` — see
+`surjective_of_linearIndependent`).  The hypothesis `hsurj` is not needed: this is
+`strong_duality_of_primal_slater'`, kept for its existing signature. -/
+theorem strong_duality_of_primal_slater (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m → ℝ)
+    (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian) (hC : C.IsHermitian)
+    (_hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
+    (hslater : ∃ Xbar : Matrix (Fin n) (Fin n) ℝ, Xbar.PosDef ∧ ∀ i, traceInner (A i) Xbar = b i)
+    (hdual : ∃ y₀ : Fin m → ℝ, (C - ∑ i, y₀ i • A i).PosSemidef) :
+    ∃ ys : Fin m → ℝ, (C - ∑ i, ys i • A i).PosSemidef ∧
+      (∀ y : Fin m → ℝ, (C - ∑ i, y i • A i).PosSemidef → ∑ i, b i * y i ≤ ∑ i, b i * ys i) ∧
+      ∀ ε : ℝ, 0 < ε → ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
+        (∀ i, traceInner (A i) X = b i) ∧ traceInner C X < ∑ i, b i * ys i + ε :=
+  strong_duality_of_primal_slater' A b C hA hC hslater hdual
+
 /-- **Linear independence gives surjectivity of the constraint map.** If the `Aᵢ` are linearly
 independent, every `v : Fin m → ℝ` is `(⟨Aᵢ, X⟩)ᵢ` for some `X`.  (A nonzero functional
 `z` killing the range would give `⟨Σ zᵢ Aᵢ, X⟩ = 0` for all `X`; taking `X = (Σ zᵢ Aᵢ)ᵀ`
@@ -823,13 +901,12 @@ theorem surjective_of_linearIndependent (A : Fin m → Matrix (Fin n) (Fin n) �
   obtain ⟨X, hX⟩ := (LinearMap.range_eq_top.1 htop) v
   exact ⟨X, fun i => congrFun hX i⟩
 
-/-- **Primal-dual optimal pair under two-sided Slater.** For symmetric data with linearly
-independent (or, as stated, onto) constraints, a positive-definite primal-feasible point and
-a positive-definite dual slack, there are a primal optimum `Xs` and a dual optimum `ys` with
-equal objective values; complementary slackness `⟨C - Σ ysᵢ Aᵢ, Xs⟩ = 0` follows. -/
-theorem exists_optimal_pair (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m → ℝ)
+/-- **Primal-dual optimal pair under two-sided Slater.** For symmetric data, a
+positive-definite primal-feasible point and a positive-definite dual slack, there are a primal
+optimum `Xs` and a dual optimum `ys` with equal objective values; complementary slackness
+`⟨C - Σ ysᵢ Aᵢ, Xs⟩ = 0` follows.  No linear independence of the `Aᵢ` is assumed. -/
+theorem exists_optimal_pair' (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m → ℝ)
     (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian) (hC : C.IsHermitian)
-    (hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
     (hpslater : ∃ Xbar : Matrix (Fin n) (Fin n) ℝ, Xbar.PosDef ∧ ∀ i, traceInner (A i) Xbar = b i)
     (hdslater : ∃ ybar : Fin m → ℝ, (C - ∑ i, ybar i • A i).PosDef) :
     ∃ (Xs : Matrix (Fin n) (Fin n) ℝ) (ys : Fin m → ℝ),
@@ -844,7 +921,7 @@ theorem exists_optimal_pair (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin 
   obtain ⟨ybar, hyb⟩ := hdslater
   obtain ⟨Xs, hXs, hXsf, hopt⟩ :=
     exists_primal_optimum A b C ⟨Xbar, hXbar.posSemidef, hXbarf⟩ ⟨ybar, hyb⟩
-  obtain ⟨ys, hys, hysopt, hgap⟩ := strong_duality_of_primal_slater A b C hA hC hsurj
+  obtain ⟨ys, hys, hysopt, hgap⟩ := strong_duality_of_primal_slater' A b C hA hC
     ⟨Xbar, hXbar, hXbarf⟩ ⟨ybar, hyb.posSemidef⟩
   have heq : traceInner C Xs = ∑ i, b i * ys i := by
     refine le_antisymm ?_ (weak_duality A b C Xs ys hXs hXsf _ hys (add_sub_cancel _ _))
@@ -858,6 +935,24 @@ theorem exists_optimal_pair (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin 
   simp only [hXsf, sub_eq_zero]
   exact Finset.sum_congr rfl fun i _ => mul_comm _ _
 
+/-- **Primal-dual optimal pair under two-sided Slater**, the form with an onto constraint map.
+The hypothesis `hsurj` is not needed: this is `exists_optimal_pair'`, kept for its existing
+signature. -/
+theorem exists_optimal_pair (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m → ℝ)
+    (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian) (hC : C.IsHermitian)
+    (_hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
+    (hpslater : ∃ Xbar : Matrix (Fin n) (Fin n) ℝ, Xbar.PosDef ∧ ∀ i, traceInner (A i) Xbar = b i)
+    (hdslater : ∃ ybar : Fin m → ℝ, (C - ∑ i, ybar i • A i).PosDef) :
+    ∃ (Xs : Matrix (Fin n) (Fin n) ℝ) (ys : Fin m → ℝ),
+      Xs.PosSemidef ∧ (∀ i, traceInner (A i) Xs = b i) ∧
+      (C - ∑ i, ys i • A i).PosSemidef ∧
+      traceInner C Xs = ∑ i, b i * ys i ∧
+      traceInner (C - ∑ i, ys i • A i) Xs = 0 ∧
+      (∀ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef → (∀ i, traceInner (A i) X = b i) →
+        traceInner C Xs ≤ traceInner C X) ∧
+      (∀ y : Fin m → ℝ, (C - ∑ i, y i • A i).PosSemidef → ∑ i, b i * y i ≤ ∑ i, b i * ys i) :=
+  exists_optimal_pair' A b C hA hC hpslater hdslater
+
 /-! ## The `HasStrongDuality` carrier of `QOU.MathlibExt.SDP`
 
 `QOU.MathlibExt.SDP.HasStrongDuality sdp h` asks for a primal-dual optimal pair from
@@ -867,28 +962,36 @@ strictly feasible, unbounded below, and has no dual-feasible point, so it admits
 `StrongDualityPair` (`not_hasStrongDuality_unboundedSDP`).  The missing hypothesis is
 (at least) dual feasibility; and with dual feasibility but no dual Slater point the primal
 optimum may fail to be attained, so the honest sufficient condition proved here is
-two-sided Slater plus linearly independent constraints (`hasStrongDuality_of_slater`). -/
+two-sided Slater (`hasStrongDuality_of_slater'`; no rank condition on the constraints). -/
 
 section MathlibExtBridge
 open QOU.MathlibExt.SDP
 
 /-- **`HasStrongDuality` from two-sided Slater.** For a real SDP with symmetric cost and
-constraints, linearly independent constraints, a positive-definite feasible point `h`, and
-a positive-definite dual slack, the class `HasStrongDuality sdp h` holds.  (Not an
-`instance`: its extra hypotheses are not classes.) -/
-theorem hasStrongDuality_of_slater (sdp : SDPPrimal n ℝ (Fin m)) (h : sdp.IsStrictlyFeasible)
+constraints, a positive-definite feasible point `h`, and a positive-definite dual slack, the
+class `HasStrongDuality sdp h` holds.  No linear independence of the constraints is assumed.
+(Not an `instance`: its extra hypotheses are not classes.) -/
+theorem hasStrongDuality_of_slater' (sdp : SDPPrimal n ℝ (Fin m)) (h : sdp.IsStrictlyFeasible)
     (hA : ∀ i, (sdp.constraint i).IsHermitian) (hC : sdp.cost.IsHermitian)
-    (hli : LinearIndependent ℝ sdp.constraint)
     (hdslater : ∃ ybar : Fin m → ℝ, (sdp.dualSlack ybar).PosDef) :
     HasStrongDuality sdp h := by
   obtain ⟨Xbar, hXbar, hXbarf⟩ := id h
   obtain ⟨Xs, ys, hXs, hXsf, hys, heq, -, -, -⟩ :=
-    exists_optimal_pair sdp.constraint sdp.rhs sdp.cost hA hC
-      (surjective_of_linearIndependent _ hli) ⟨Xbar, hXbar, hXbarf⟩ hdslater
+    exists_optimal_pair' sdp.constraint sdp.rhs sdp.cost hA hC ⟨Xbar, hXbar, hXbarf⟩ hdslater
   refine ⟨⟨StrongDualityPair.mk Xs ys (And.intro hXs hXsf) hys ?_⟩⟩
   show traceInner sdp.cost Xs = ∑ i, ys i * sdp.rhs i
   rw [heq]
   exact Finset.sum_congr rfl fun i _ => mul_comm _ _
+
+/-- **`HasStrongDuality` from two-sided Slater**, the form with linearly independent
+constraints.  The hypothesis `hli` is not needed: this is `hasStrongDuality_of_slater'`, kept
+for its existing signature. -/
+theorem hasStrongDuality_of_slater (sdp : SDPPrimal n ℝ (Fin m)) (h : sdp.IsStrictlyFeasible)
+    (hA : ∀ i, (sdp.constraint i).IsHermitian) (hC : sdp.cost.IsHermitian)
+    (_hli : LinearIndependent ℝ sdp.constraint)
+    (hdslater : ∃ ybar : Fin m → ℝ, (sdp.dualSlack ybar).PosDef) :
+    HasStrongDuality sdp h :=
+  hasStrongDuality_of_slater' sdp h hA hC hdslater
 
 /-- Minimise `⟨-1, X⟩ = -x` over `1 × 1` PSD `X = (x)`, with no equality constraints. -/
 def unboundedSDP : SDPPrimal 1 ℝ (Fin 0) where
