@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-20T09:10:00Z
-updated_at: 2026-11-20T17:40:00Z
+updated_at: 2026-11-20T18:30:00Z
 parent: qou-ncxf
 ---
 
@@ -57,3 +57,7 @@ Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMass
     - `qbeta_level_k_binding_operator_probe` crashes on main: `TypeError: mpf from list` at line 396, plausibly the mpmath version.
     - Docstring-only `prop:three-calibration-inputs` mentions remain in `binding_canonical`, `isotope_record_schema` and `rho_k_full_via_wenzl_lr`. They were left so the scriptHash and import cone don't drift.
     - `prop:sl2-prolongation-recurrence` and `prop:electron-period-base` still reach `conj:wigner-axiom` through remark chains. That path was not examined.
+- **2026-11-20, later (PR #8611).**
+  - **Wigner entry edge.** 108 of the 109 Wigner-axiom reaches came through one edge, `def:archimedean-condition` → `rem:three-euler-characteristics`, which is a terminology pointer. Cutting it took §3b violators from 234 to 124.
+  - **Remark-only edges.** The owner chose to review them one by one. 28 blocks were reached only through remark, prose or example edges, and those came down to 15 distinct edges. All 15 were cut after reading each source block: 12 not cited, 3 cited only as pointers. Violators went from 124 to 99.
+  - **Total for #8611:** 237 → 99 violators, with 0 new.
