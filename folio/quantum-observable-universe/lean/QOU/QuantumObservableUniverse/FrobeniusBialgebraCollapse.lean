@@ -294,7 +294,7 @@ theorem scalar_id_eq_counit_unit_of_convolutionLeft (hconv : F.ConvolutionLeft) 
     `𝟙_C`; with the same hypothesis the other way round it is an isomorphism.
 
     **This needs no bimonoid comultiplication axiom.**  It is the antipode
-    axiom (added 2026-09-14, bean `qou-c64q`) plus the Frobenius relation. -/
+    axiom (added 2026-09-14, bean `qou-c64q`) plus the bimodule comultiplication relation. -/
 theorem counit_comp_unit_of_unital (hconv : F.ConvolutionLeft)
     (h : F.unit ≫ F.counit = 𝟙 (𝟙_ C)) :
     F.counit ≫ F.unit = 𝟙 F.obj := by
@@ -320,5 +320,40 @@ theorem counit_not_unital_of_nontrivial (hconv : F.ConvolutionLeft)
     (hnt : F.counit ≫ F.unit ≠ 𝟙 F.obj) :
     F.unit ≫ F.counit ≠ 𝟙 (𝟙_ C) :=
   fun h => hnt (F.counit_comp_unit_of_unital hconv h)
+
+/-! ## Anti-automorphism package vs `S = 𝟙_A` (`qou-c64q`)
+
+Bean `qou-c64q` records that replacing the convolution condition by the six-law
+anti-automorphism package repairs the `S = 𝟙_A` degeneracy **exactly where `A`
+is non-(braided-)commutative**: if `F.antipode = 𝟙 F.obj`, then `antipode_anti_mul`
+reduces to `(β_ A A).hom ≫ μ = μ` and `antipode_anti_comul` reduces to
+`Δ ≫ (β_ A A).hom = Δ`. Conversely, any non-braided-commutative (or
+non-braided-cocommutative) substrate refutes `F.antipode = 𝟙 F.obj`. -/
+
+/-- **If `S = 𝟙_A`, multiplication is braided-commutative (`qou-c64q`).** -/
+theorem braided_comm_of_antipode_eq_id (hS : F.antipode = 𝟙 F.obj) :
+    (β_ F.obj F.obj).hom ≫ F.mul = F.mul := by
+  have h := F.antipode_anti_mul
+  simp only [hS, Category.comp_id, Category.id_comp, tensorHom_id, id_whiskerRight] at h
+  exact h.symm
+
+/-- **If `S = 𝟙_A`, comultiplication is braided-cocommutative (`qou-c64q`).** -/
+theorem braided_cocomm_of_antipode_eq_id (hS : F.antipode = 𝟙 F.obj) :
+    F.comul ≫ (β_ F.obj F.obj).hom = F.comul := by
+  have h := F.antipode_anti_comul
+  simp only [hS, Category.id_comp, Category.comp_id, tensorHom_id, id_whiskerRight] at h
+  exact h.symm
+
+/-- **Non-braided-commutativity excludes `S = 𝟙_A` (`qou-c64q`).** -/
+theorem antipode_ne_id_of_not_braided_comm
+    (hnc : (β_ F.obj F.obj).hom ≫ F.mul ≠ F.mul) :
+    F.antipode ≠ 𝟙 F.obj :=
+  fun hS => hnc (F.braided_comm_of_antipode_eq_id hS)
+
+/-- **Non-braided-cocommutativity excludes `S = 𝟙_A` (`qou-c64q`).** -/
+theorem antipode_ne_id_of_not_braided_cocomm
+    (hncc : F.comul ≫ (β_ F.obj F.obj).hom ≠ F.comul) :
+    F.antipode ≠ 𝟙 F.obj :=
+  fun hS => hncc (F.braided_cocomm_of_antipode_eq_id hS)
 
 end QOU.FrobeniusHopfData
