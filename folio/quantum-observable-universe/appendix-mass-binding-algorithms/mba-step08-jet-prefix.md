@@ -30,7 +30,7 @@ at $q = q_0$ via the GS filtration of Step 7.*
 
 1. *[Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#prop:jet-prefix-gb-filtration)
    gives the length $\leftrightarrow$ jet-order correspondence used in step 3.*
-2. *[GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass](#prop:gb-spectral-sequence) ($E_2$
+2. *[Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence) ($E_2$
    collapse, Step 7) ensures the truncation does not mix orders.*
 
 ### Complexity
