@@ -1,0 +1,193 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T19:15:55.297813+00:00",
+  "commitSha": "2d2cf79744c9bc1f8badf2e2267f89943cd2e883",
+  "assertions": [
+    {
+      "name": "A1.T35_is_beta_vertex",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "T_{3,5} = (σ1σ2)^5 is the β-decay vertex (dictionary + beta-decay-skein)"
+    },
+    {
+      "name": "A2.W_is_T24_conjecture",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "W± ↔ T(2,4) appears only inside conj:electroweak-higgs-torus-link-triplet"
+    },
+    {
+      "name": "A3.WZ_slot_free_label",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the corpus itself records the W vs Z slot as a free label"
+    },
+    {
+      "name": "A4.volume_channel_hyperbolic_only",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "rem:pion-mass-hyperbolic-threshold: Vol = 0 ⇒ mass not derivable from volume"
+    },
+    {
+      "name": "B1.T35_genus4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "g(T_{3,5}) = (3-1)(5-1)/2 = 4 (saturating carrier)"
+    },
+    {
+      "name": "B2.no_mW_over_anchor_ratio",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "no m_W/m_e, m_W/m_π, m_W/m_p ratio in folio .md (0 hits)"
+    },
+    {
+      "name": "D1.QC_value",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Q_C = 0.588714739372 MeV"
+    },
+    {
+      "name": "E1.Nv_reproduces_corpus",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "N_v = 262.418168819231"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 125,
+  "computation": "weak-scale-w-mass",
+  "scriptFile": "weak_scale_w_mass_probe.py",
+  "scriptHash": "1825fdf6e83b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/weak_scale_w_mass/weak_scale_w_mass_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/weak_scale_w_mass/weak_scale_w_mass_probe.py"
+  },
+  "description": "qou-99qc: the corpus designates the beta vertex T_{3,5} and (conjecturally) W = T(2,4); both are torus (Vol = 0), so the canonical volume channel derives no m_W/m_e. g is not fixed by the strand-tracked crossing. Rate per G_F^2 on both Q_beta cells; N_v route conditional. Pre-registered at 2d2cf79744. Not wired to any scorecard.",
+  "parameters": {
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "dps": 70
+  },
+  "data": {
+    "designations": {
+      "beta_vertex": "T_{3,5} = (sigma1 sigma2)^5, torus knot 10_124",
+      "W_pm": "T(2,4), conjectural (conj:electroweak-higgs-torus-link-triplet; C1, C_sector open)",
+      "Z": "T(2,6), conjectural",
+      "H": "T(2,8), conjectural"
+    },
+    "channel_reach": {
+      "T(3,5)": {
+        "torus_type": "(3,5)",
+        "seifert_fibred": true,
+        "hyperbolic_volume": "0",
+        "mass_from_volume_channel": "not derivable (Vol = 0)"
+      },
+      "T(2,4)": {
+        "torus_type": "(2,4)",
+        "seifert_fibred": true,
+        "hyperbolic_volume": "0",
+        "mass_from_volume_channel": "not derivable (Vol = 0)"
+      },
+      "T(2,6)": {
+        "torus_type": "(2,6)",
+        "seifert_fibred": true,
+        "hyperbolic_volume": "0",
+        "mass_from_volume_channel": "not derivable (Vol = 0)"
+      },
+      "T(2,8)": {
+        "torus_type": "(2,8)",
+        "seifert_fibred": true,
+        "hyperbolic_volume": "0",
+        "mass_from_volume_channel": "not derivable (Vol = 0)"
+      }
+    },
+    "couplings_at_q0": {
+      "h": "0.209060298795639315430846213129674943859757495263024555381696",
+      "hq": "0.232052454166763931269804513535636184849681422916999801483287",
+      "h_over_q": "0.188346245634241941867785177858247875081467462203493692447336",
+      "h_sq": "0.0437062085325219894020193356773883097682139607135061090359508",
+      "alphaW_if_g_eq_h": "0.00347802956587802378890297608241351241934285949526989651061837",
+      "alphaW_if_g_eq_hq": "0.00428511486230458375726672043887412880134178505548948466536084"
+    },
+    "rate_cells": {
+      "label_C_Tplus_roundtrip": {
+        "Q_beta_MeV": "0.588714739371925542700627683847435819173281905491309015330405",
+        "f": "0.538159218785696111833713488496364020996932027421385280330986",
+        "normSq": "0.0538483414848180750075011557050012699214176636791556101540426",
+        "D_over_GF2_MeV5": "0.0000162818422937159860592294383690503303992242461281423869991550",
+        "GF_required_MeV-2": "0.000000000214528476303807179337553996989226698532222086046207257265084",
+        "GF_required_over_pdg": "18.3926933774694103954524891046739445651980373825559292800147",
+        "rate_with_pdg_GF_over_Dn": "0.00295603341036954692834580334668766806344185051088030074640052",
+        "rate_with_conditional_GF_over_Dn": "0.00295603325081649981973040399739875983018907206915870632720569",
+        "mW_required_if_g_eq_h_over_me": "11744.1500056750631712087607023493750698117247886471593211397",
+        "mW_required_if_g_eq_hq_over_me": "13035.7549789188274872805575883048720251980978630560451549352",
+        "mW_required_if_g_eq_h_over_q_over_me": "10580.5194696315896187063531251668048172557625364736334540499"
+      },
+      "owner_scored": {
+        "Q_beta_MeV": "0.325433929000000000000000000000000000000000000000000000000000",
+        "f": "0.0567863152690354276388854917551693335357493324376765013258686",
+        "normSq": "0.0538483414848180750075011557050012699214176636791556101540426",
+        "D_over_GF2_MeV5": "0.00000171805257138939072092086013914466840985726448321548619683876",
+        "GF_required_MeV-2": "0.000000000660417382644668907224042991656205229635353473689216698768098",
+        "GF_required_over_pdg": "56.6211750972041764840069959824548619741162539724844706340769",
+        "rate_with_pdg_GF_over_Dn": "0.000311919296980198325081340833273531724774174191686316339867003",
+        "rate_with_conditional_GF_over_Dn": "0.000311919280144233579017763229922928349375407051298291288245024",
+        "mW_required_if_g_eq_h_over_me": "6693.52386286970881350993697983971750551625457967819337356477",
+        "mW_required_if_g_eq_hq_over_me": "7429.66813092066720528981264633518196322572980802112559182841",
+        "mW_required_if_g_eq_h_over_q_over_me": "6030.31803215338400149051033192763393909878713259203238502197"
+      }
+    },
+    "conditional_Nv": {
+      "N_v": "262.418168819231088839164312077831262158199749994266344928081",
+      "v_over_m_e": "481839.822232986557493724462553400052999898337499296977411194",
+      "G_F_times_me2": "0.00000000000304564739598000799722468756477794771678181341755534793792797",
+      "status": "conditional: ElectroweakVevFixedPointClass has no instance; underived slots qou-rpt1 (q[2]/2 prefactor), qou-myxi (sign, alpha_loop)"
+    },
+    "comparison": {
+      "D_n_MeV": "7.49330552026411657559198542805100182149362477231329690346084e-25",
+      "G_F_MeV-2": "0.0000000000116637880000000000000000000000000000000000000000000000000000",
+      "m_W_MeV": "80370.0000000000000000000000000000000000000000000000000000000",
+      "m_W_over_m_e": "157280.166410276743576300982482160329463121935319917711434156",
+      "g_SM_from_GF_mW": "0.652831755597571855209347800771140829784020714374019764411842",
+      "alpha2_SM": "0.0339150669827941791530143321170777077314637977686621653570567",
+      "G_F_conditional_over_pdg": "0.999999973012306169832264818008085472776409509962079774951327"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
