@@ -46,6 +46,8 @@ Beans `qou-n4pv` / `qou-kp89`. The bookkeeping half of Hadamard's factorization 
   `hadamard_of_quotient_order`, NOT assumed anywhere else. It is also necessary: if
   `f = exp(g)·P` with `deg g ≤ ρ` then `q = exp ∘ g` satisfies it.
 * Consequently `HasHadamardFactorization` is still not instantiated.
+  (Update 2026-11-20: the remaining inputs are proved and the class is instantiated in
+  `QOU.Mathlib.HadamardAssembly.hadamard_factorization_unconditional`.)
 
 §7c: archimedean (norms, `Real.rpow`, complex analysis on `ℂ`).
 

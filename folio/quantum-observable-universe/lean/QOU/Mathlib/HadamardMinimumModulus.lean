@@ -56,6 +56,8 @@ the exclusion set chosen so that no Cartan/Boutroux lemma is needed.
   A finite zero set can be padded only by changing `P`, which this file does not do.
 * The class `HasHadamardFactorization` in `QOU.Mathlib.HadamardFactorization` is not
   discharged by this file.
+  (Update 2026-11-20: `QOU.Mathlib.HadamardAssembly` generalises this argument to any
+  countable index, finite or empty, and instantiates the class.)
 * The constants are explicit and far from sharp; the classical `log ‖P‖ ≥ -K r^{ρ+ε}` off
   small discs (Cartan) is replaced by the weaker statement on a sequence of circles, which
   is all the degree bound needs.
