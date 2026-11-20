@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-20T14:40:00Z
+updated_at: 2026-11-20T19:20:00Z
 parent: qou-qhcr
 ---
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
@@ -66,3 +66,16 @@ Open:
 - step 2: chi is even, i.e. the genus formula;
 - step 3: triangulation of a compact Riemann surface (Mathlib gap);
 - hX/hY remain hypotheses of the capstone.
+
+## 2026-11-20 — W9: step 2 parity done, PR #8650
+
+`QOU/RiemannSurface/CombinatorialMapEuler.lean`, sorry-free.
+- `euler_even` / `exists_genus`: chi = c(sigma) - c(alpha) + c(sigma alpha) is even, so chi = 2 - 2g with g : Z.
+- Proof: the sign homomorphism, via `sign_eq_neg_one_pow` (sign pi = (-1)^(|D| + c(pi))) and `card_cycles`.
+- No connectivity is needed.
+
+**Still open in step 2:** g >= 0 for a connected map. In permutation form: if <sigma, alpha> is transitive on D, then c(sigma) + c(alpha) + c(sigma alpha) <= |D| + 2. This is the Riemann–Hurwitz / Euler inequality for maps.
+- Triangle inequality plus connectivity gives only N(sigma) + N(alpha) >= n - 1, with N = n - c. That is not enough.
+- Needs an edge-deletion induction. Estimate: multi-session.
+
+**Step 3** (triangulation) is unchanged: a Mathlib gap.
