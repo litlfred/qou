@@ -14,15 +14,11 @@
   "kind": "remark",
   "title": "The spin-$2$ summand of $\\mathrm{Sym}^2(V_1)$ is gauge spin, not spacetime spin",
   "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sym2-adjoint-traceless-spin-two",
     "papers/quantum-observable-universe/blocks/thm-su2-emergence",
-    "papers/quantum-observable-universe/blocks/prop-spin-labels",
-    "papers/quantum-observable-universe/blocks/ex-spin-labels-su2",
-    "papers/quantum-observable-universe/blocks/thm-ew-triplet-charge-spin-from-involution"
+    "papers/quantum-observable-universe/blocks/prop-spin-labels"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-spin-labels",
-  "cites": [
-    "references/fulton-harris1991"
-  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-sym2-adjoint-traceless-spin-two",
   "tags": [
     "spin",
     "gauge-group",
@@ -30,7 +26,6 @@
     "symmetric-square",
     "scope"
   ],
-  "leanRef": "qou:QOU.Eightfold.Sym2AdjointSpinTwo.adjoint_sym2_traceless_is_spin_two",
   "text": "sym2-adjoint-spin-two-gauge-not-lorentz.md",
   "provenance": "authored"
 }

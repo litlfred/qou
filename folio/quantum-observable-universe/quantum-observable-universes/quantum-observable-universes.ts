@@ -81,6 +81,7 @@ export default chapter({
             "spin-labels",
             "spin-labels-proof",
             "spin-labels-su2",
+            "sym2-adjoint-traceless-spin-two",
             "spin-half-representation",
           ],
         }),
