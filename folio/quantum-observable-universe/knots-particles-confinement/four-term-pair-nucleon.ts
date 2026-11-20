@@ -42,6 +42,8 @@ export default proposition({
         "Symbolic γγ NF for the ruled photon: `tbl:trivial-knot-photon-interpretation-table5-data`, Lean `QOU.QuarkState.pairNFChiral_eq`.",
       see: "https://github.com/litlfred/qou/pull/8583",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([photon](#def:photon))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([confinement universality](#prop:confinement-universality))" },
   ],
 
 });
