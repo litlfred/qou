@@ -1,7 +1,3 @@
-<!-- Theorem (conditional on:
-       def:delta-q-decoration,
-       prop:force-carrier-intertwining-correspondence). -->
-
 **Proposition (torus-knot $\alpha_{\mathrm{shift}}$).**
 *Let $p \geq 1$, $k \geq 1$ with $\gcd(p, k) = 1$, and let
 $T_{p,k}$ be the $(p, k)$-torus knot, presented as the closure
