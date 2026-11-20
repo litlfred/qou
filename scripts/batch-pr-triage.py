@@ -68,7 +68,10 @@ GITDIR = os.environ.get("TRIAGE_GIT", str(ROOT))
 
 BATCH_PATTERNS = [
     r"^feat/round", r"^feat/qou-", r"^qou-10v9-", r"^qou-8lxd-", r"^qou-mub3-",
-    r"^cat/round", r"^claude/round\d+-devacuify", r"^claude/qou-rtxm-",
+    r"^cat/round", r"^claude/round\d+-devacuify", r"^claude/round\d+-trd0-9nnz-fixes",
+    r"^claude/round\d+-", r"^claude/qou-rtxm-",
+    # multi-bean feat/<topic>-xxxx-xxxx-xxxx-xxxx(-xxxx) (same generator, 2026-11-17)
+    r"^feat/[a-z0-9-]+?(?:-[a-z0-9]{4}){4,}$",
     r"^claude/r46-", r"^claude/qou-9634-", r"^claude/qou-3l2l-",
     r"^fix/qou-rtxm-", r"^fix/qou-wxhi-",
 ]
@@ -95,6 +98,8 @@ def git(*args, check=True):
 def family(head: str) -> str | None:
     for p in BATCH_PATTERNS:
         if re.match(p, head):
+            if "(?:" in p:
+                return "feat/<topic>-<4+ bean ids>"
             return p.strip("^").replace("\\d+", "N")
     return None
 
@@ -220,26 +225,82 @@ TRIV_BODY = re.compile(
     re.S)
 
 
+CORE_IDENTS = set("""Int Nat ℤ ℕ ℚ ℝ ℂ R S Type Prop Sort True False Bool true false fun let in if then else
+match with by at have show from this x y z a b c d e f g h k m n p q r s t u v w i j l o
+Int.ofNat Nat.succ Nat.zero id Fin List Prod Option HAdd HMul HSub HPow Neg Eq Ne Iff And Or Not
+abs max min Even Odd Int.natAbs Int.toNat List.sum List.length List.map List.range""".split())
+RING_AXIOM_FIELDS = {"add_assoc", "mul_assoc", "mul_comm", "left_distrib", "add_left_neg", "zero_add", "one_mul"}
+BIG_LIT = re.compile(r"(?<![\w.])\d{3,}(?![\w.])")
+
+
+def _namespaced(code: str):
+    """Yield (kind, fullname, text) with a light namespace/section stack."""
+    events = []
+    for m in re.finditer(r"^(namespace|section|end)\b[ \t]*([^\s]*)", code, re.M):
+        events.append((m.start(), m.group(1), m.group(2)))
+    decls = list(split_decls(code))
+    starts = [m.start() for m in DECL_RE.finditer(code)]
+    stack, ei, out = [], 0, []
+    for (kind, name, text), st in zip(decls, starts):
+        while ei < len(events) and events[ei][0] < st:
+            _, ev, nm = events[ei]; ei += 1
+            if ev in ("namespace", "section"):
+                stack.append((ev, nm))
+            elif stack:
+                stack.pop()
+        ns = ".".join(nm for ev, nm in stack if ev == "namespace" and nm)
+        full = name if (not ns or name.startswith("_root_.")) else f"{ns}.{name}"
+        out.append((kind, full.replace("_root_.", ""), text))
+    return out
+
+
 def scan_lean(text: str) -> dict:
     code = strip_comments(text)
     imports = re.findall(r"^import\s+(\S+)", code, re.M)
     r = collections.Counter()
     r["imports_qou_or_mathlib"] = int(any(i.startswith(("QOU", "Mathlib", "UGB")) for i in imports))
+    r["imports_qou"] = int(any(i.startswith("QOU") for i in imports))
     r["sorry"] = len(re.findall(r"\bsorry\b", code))
     r["native_decide"] = len(re.findall(r"\bnative_decide\b", code))
-    decls, flags = [], []
-    local_defs = set()
-    for kind, name, body in split_decls(code):
-        if kind in ("def", "abbrev"):
-            local_defs.add(name.split(".")[-1])
-    for kind, name, body in split_decls(code):
+    decls, local_defs, local_types = [], set(), set()
+    nd = _namespaced(code)
+    arith_defs = set()
+    for kind, name, body in nd:
+        short = name.split(".")[-1]
+        if kind in ("def", "abbrev", "opaque", "instance"):
+            local_defs.add(short)
+            dsig, _, dbody = body.partition(":=")
+            # a one-line integer/rational arithmetic expression named after a corpus object
+            if (dbody.strip() and len(dbody.strip().splitlines()) <= 2
+                    and re.fullmatch(r"[\w\s+\-*/^()0-9,.']*", dbody.strip())
+                    and not re.search(r"\b(match|fun|if|let)\b", dbody)
+                    and not re.search(r"[A-Za-z]", re.sub(r"\b(Int|Nat|ℤ|ℕ|ℚ|Rat)\b|[({\[][^:]*:", "", dsig.split(None, 2)[-1] if len(dsig.split()) > 2 else "").replace(short, ""))):
+                arith_defs.add(short)
+        if kind in ("structure", "class", "inductive"):
+            local_types.add(short)
+            fields = set(re.findall(r"^\s+(\w+)\s*:", body, re.M))
+            if len(fields & RING_AXIOM_FIELDS) >= 4:
+                r["reimplements_ring_axioms"] += 1
+        if kind in ("def", "abbrev", "structure") or (kind == "instance"):
+            r["big_literals_in_defs"] += len(BIG_LIT.findall(body))
+    for kind, name, body in nd:
         r[f"n_{kind}"] += 1
         sig, _, proof = body.partition(":=")
-        stmt = sig.split(":", 1)[1] if ":" in sig else ""
+        # statement = text after the first top-level ':' following the binders
+        head = re.sub(r"^\S+\s+\S+", "", sig, count=1)
+        depth, cut = 0, None
+        for i, ch in enumerate(head):
+            if ch in "([{⦃": depth += 1
+            elif ch in ")]}⦄": depth -= 1
+            elif ch == ":" and depth == 0:
+                cut = i; break
+        stmt = head[cut + 1:] if cut is not None else ""
+        binders = set(re.findall(r"[({⦃\[]\s*([\w' ]+?)\s*:", head[:cut] if cut else ""))
+        bnames = {w for b in binders for w in b.split()}
         fl = []
         if kind == "axiom":
             fl.append("axiom")
-        if re.search(r":\s*True\s*$", sig.strip()) or re.search(r"^\s*True\s*$", stmt.strip()):
+        if re.fullmatch(r"\s*True\s*", stmt or "x"):
             fl.append("true-conclusion")
         if kind in ("structure", "class") and re.search(r"\w+\s*:\s*True\b", body):
             fl.append("true-field")
@@ -247,9 +308,17 @@ def scan_lean(text: str) -> dict:
             m = re.fullmatch(r"\s*(.+?)\s*=\s*(.+?)\s*", stmt.replace("\n", " "))
             if m and m.group(1) == m.group(2):
                 fl.append("tautology")
+            idents = set(re.findall(r"[A-Za-z_][\w'.]*", stmt))
+            used_local = {w.split(".")[-1] for w in idents} & (local_defs | local_types)
+            if idents and not used_local and idents <= (CORE_IDENTS | bnames):
+                fl.append("generic-identity")
+            elif used_local and used_local <= arith_defs and \
+                    {w.split(".")[-1] for w in idents} <= (CORE_IDENTS | bnames | arith_defs):
+                fl.append("unfolds-int-arith-def")
             if TRIV_BODY.search(":=" + proof.rstrip()) and len(proof.strip().splitlines()) <= 3:
-                used = {w for w in re.findall(r"[A-Za-z_][\w']*", stmt)} & local_defs
-                fl.append("rfl-only-on-local-def" if used else "one-tactic")
+                fl.append("rfl-only-on-local-def" if used_local else "one-tactic")
+                if used_local and (BIG_LIT.search(stmt) or re.search(r"canonical|ledger|census|count|audit", stmt, re.I)):
+                    fl.append("ledger-literal")
             if re.search(r"\bsorry\b", proof):
                 fl.append("sorry")
         decls.append({"kind": kind, "name": name, "flags": fl})
@@ -269,8 +338,19 @@ def scan_pr(p: dict) -> dict:
                       capture_output=True).returncode:
         out["scan_error"] = "head not fetched"
         return out
+    base = p.get("base_sha")
+    out["conflict_candidates"] = []
+    out["missing_qou_imports"] = []
     for f in p["files"]:
         fn = f["filename"]
+        # a file the PR touches that ALSO changed on main since the PR's base
+        # is where a textual conflict can be (GitHub only says "dirty").
+        b = subprocess.run(["git", "-C", GITDIR, "rev-parse", f"{base}:{fn}"], capture_output=True, text=True)
+        mm = subprocess.run(["git", "-C", GITDIR, "rev-parse", f"origin/main:{fn}"], capture_output=True, text=True)
+        bid = b.stdout.strip() if b.returncode == 0 else "absent"   # rev-parse echoes the arg on failure
+        mid = mm.stdout.strip() if mm.returncode == 0 else "absent"
+        if base and bid != mid:
+            out["conflict_candidates"].append(fn)
         if f["status"] == "removed":
             continue
         try:
@@ -284,6 +364,14 @@ def scan_pr(p: dict) -> dict:
                                       capture_output=True, text=True)
             s["identical_on_main"] = main_txt.returncode == 0 and main_txt.stdout == txt
             s["exists_on_main"] = main_txt.returncode == 0
+            pr_paths = {x["filename"] for x in p["files"]}
+            for imp in s["imports"]:
+                if imp.startswith("QOU."):
+                    rel = "folio/quantum-observable-universe/lean/" + imp.replace(".", "/") + ".lean"
+                    on_main = subprocess.run(["git", "-C", GITDIR, "cat-file", "-e", f"origin/main:{rel}"],
+                                             capture_output=True).returncode == 0
+                    if not on_main and rel not in pr_paths:
+                        out["missing_qou_imports"].append(imp)
             out["lean_files"][fn] = s
         elif fn.endswith((".py", ".json")):
             for m in DPS_RE.finditer(txt):
@@ -303,7 +391,222 @@ def scan(args):
     print(f"scanned {len(res)}", flush=True)
 
 
+
+# ---------------------------------------------------------------------- lean
+STD_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
+QOU_LEAN = "folio/quantum-observable-universe/lean/"
+
+
+def _lean_env():
+    """PATH/LEAN_PATH exactly as scripts/lean-direct-env.sh sets them."""
+    out = subprocess.run(["bash", "-c", f"source {ROOT}/scripts/lean-direct-env.sh >/dev/null && "
+                          "printf '%s\\n%s' \"$PATH\" \"$LEAN_PATH\""], capture_output=True, text=True)
+    if out.returncode:
+        return None
+    path, lp = out.stdout.split("\n", 1)
+    return {**os.environ, "PATH": path, "LEAN_PATH": lp.strip()}
+
+
+def _module_of(fn: str):
+    for root in ("folio/quantum-observable-universe/lean/", "folio/unital-groebner-bases/lean/",
+                 "folio/fred2005-formal-groups/lean/"):
+        if fn.startswith(root) and re.match(r"[A-Z]", fn[len(root):]):
+            return fn[len(root):-5].replace("/", ".")
+    return None
+
+
+def lean_one(p: dict, env: dict, timeout: int) -> dict:
+    n, sha = p["number"], p["head_sha"]
+    work = CACHE / "lean" / str(n)
+    subprocess.run(["rm", "-rf", str(work)])
+    (work / "src").mkdir(parents=True)
+    files = [f["filename"] for f in p["files"] if f["filename"].endswith(".lean")
+             and f["status"] != "removed" and not f["filename"].endswith("lean/QOU.lean")]
+    if not files:
+        return {"status": "no-lean"}
+    texts = {fn: git("show", f"{sha}:{fn}") for fn in files}
+    mods = {_module_of(fn): fn for fn in files if _module_of(fn)}
+    # order: a changed module imported by another changed file compiles first, into a
+    # hard-linked shadow of the QOU olean tree (a partial root would SHADOW the full one).
+    deps = {fn: [m for m in re.findall(r"^import\s+(\S+)", strip_comments(texts[fn]), re.M) if m in mods]
+            for fn in files}
+    order, seen = [], set()
+
+    def visit(fn, stack=()):
+        if fn in seen or fn in stack:
+            return
+        for m in deps[fn]:
+            visit(mods[m], stack + (fn,))
+        seen.add(fn); order.append(fn)
+    for fn in files:
+        visit(fn)
+    lenv = dict(env)
+    need_shadow = any(deps[fn] for fn in files)
+    if need_shadow:
+        shadow = work / "olean"
+        src_tree = ROOT / QOU_LEAN / ".lake/build/lib/lean"
+        shadow.mkdir()
+        subprocess.run(["cp", "-al", str(src_tree / "QOU"), str(shadow / "QOU")], check=False)
+        if (src_tree / "QOU.olean").exists():
+            subprocess.run(["cp", "-al", str(src_tree / "QOU.olean"), str(shadow / "QOU.olean")])
+        lenv["LEAN_PATH"] = lenv["LEAN_PATH"].replace(str(src_tree), str(shadow))
+    res = {"status": "pass", "files": {}, "axioms": {}, "sorryAx": [], "nonstandard_axioms": {},
+           "compiled_against": "restored olean snapshot (see report caveat)"}
+    for fn in order:
+        code = texts[fn]
+        sc = scan_lean(code)
+        names = [d["name"] for d in sc["decls"] if d["kind"] in ("theorem", "lemma") and d["name"]
+                 and not d["name"].startswith("private")]
+        nlines = code.count("\n") + 1
+        aug = code.rstrip("\n") + "\n\n" + "".join(f"#print axioms {x}\n" for x in names)
+        dst = work / "src" / fn
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_text(aug)
+        cmd = ["lean", "-DautoImplicit=false", "-s", "65536", str(dst)]
+        m = _module_of(fn)
+        if need_shadow and m and any(m in deps[g] for g in files):
+            target = work / "olean" / (m.replace(".", "/") + ".olean")
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if target.exists():
+                target.unlink()  # never write through a hard link into the real tree
+            pkgroot = work / "src" / fn[: len(fn) - len(m.replace(".", "/") + ".lean")]
+            cmd[1:1] = [f"--root={pkgroot}", "-o", str(target)]
+        t0 = time.time()
+        try:
+            pr = subprocess.run(cmd, capture_output=True, text=True, env=lenv, timeout=timeout)
+            out, rc = pr.stdout + pr.stderr, pr.returncode
+        except subprocess.TimeoutExpired:
+            res["files"][fn] = {"status": "timeout", "secs": timeout}
+            res["status"] = "timeout"
+            continue
+        errs = [l for l in out.splitlines() if re.search(r":\d+:\d+: error", l)]
+        body_errs = [l for l in errs if int(re.search(r":(\d+):\d+: error", l).group(1)) <= nlines]
+        missing = re.findall(r"object file '?\S*?/([\w/]+)\.olean'? of module (\S+) does not exist", out)
+        st = "pass"
+        if missing and not [e for e in body_errs if "object file" not in e]:
+            st = "blocked"
+        elif body_errs or (rc and not errs):
+            st = "fail"
+        for mm in re.finditer(r"'([^']+)' depends on axioms: \[([^\]]*)\]", out):
+            ax = [a.strip() for a in mm.group(2).split(",") if a.strip()]
+            res["axioms"][mm.group(1)] = ax
+            if "sorryAx" in ax:
+                res["sorryAx"].append(mm.group(1))
+            ns = [a for a in ax if a not in STD_AXIOMS and a != "sorryAx"]
+            if ns:
+                res["nonstandard_axioms"][mm.group(1)] = ns
+        for mm in re.finditer(r"'([^']+)' does not depend on any axioms", out):
+            res["axioms"][mm.group(1)] = []
+        res["files"][fn] = {"status": st, "secs": round(time.time() - t0, 1), "rc": rc,
+                            "errors": body_errs[:5], "tail": "" if rc == 0 else out[-400:], "missing_olean": [x[1] for x in missing][:5],
+                            "print_axioms_unresolved": len(errs) - len(body_errs)}
+        if st != "pass" and res["status"] in ("pass", "timeout"):
+            res["status"] = st
+            if body_errs:
+                res["first_error"] = re.sub(r"^.*?/src/", "", body_errs[0])
+            elif missing:
+                res["first_error"] = "snapshot lacks olean: " + missing[0][1]
+            else:
+                res["first_error"] = out.strip().splitlines()[-1][:200] if out.strip() else f"rc={rc}"
+    if res["sorryAx"] and res["status"] == "pass":
+        res["status"] = "fail"
+        res["first_error"] = "sorryAx in " + res["sorryAx"][0]
+    res["theorems_checked"] = len(res["axioms"])
+    return res
+
+
+def lean_stage(args):
+    env = _lean_env()
+    if env is None:
+        print("lean: no toolchain (scripts/lean-direct-env.sh failed) -- nothing recorded", flush=True)
+        return
+    prs = {p["number"]: p for p in load_prs()}
+    lf = CACHE / "lean.json"
+    done = json.loads(lf.read_text()) if lf.exists() else {}
+    rows = classify(args)
+    order = sorted((r for r in rows if r["verdict"] in ("MERGE-CANDIDATE", "NEEDS-REWORK")),
+                   key=lambda r: (not r["mergeable"], r["created_at"]))
+    def stale(n):
+        c = done.get(str(n), {})
+        return (args.refresh or c.get("head_sha") != prs[n]["head_sha"]
+                or (args.retry_blocked and (c.get("status") == "blocked"
+                                            or any(v.get("status") == "blocked" for v in c.get("files", {}).values()))))
+    todo = [r["number"] for r in order if stale(r["number"])]
+    todo = todo[: args.max]
+    print(f"lean: {len(todo)} PRs to check (cached {len(done)})", flush=True)
+    t_end = time.time() + args.budget
+    with cf.ThreadPoolExecutor(args.jobs) as ex:
+        futs = {}
+        for n in todo:
+            futs[ex.submit(lean_one, prs[n], env, args.timeout)] = n
+        for i, fu in enumerate(cf.as_completed(futs)):
+            n = futs[fu]
+            try:
+                r = fu.result()
+            except Exception as e:  # recorded, never reported as a pass
+                r = {"status": "error", "first_error": str(e)[:200]}
+            r["head_sha"] = prs[n]["head_sha"]
+            done[str(n)] = r
+            lf.write_text(json.dumps(done))
+            print(f"  [{i+1}/{len(todo)}] #{n} {r['status']} thm={r.get('theorems_checked', 0)} "
+                  f"sorryAx={len(r.get('sorryAx', []))} {r.get('first_error', '')[:80]}", flush=True)
+            if time.time() > t_end:
+                print("  budget exhausted; remaining PRs left not-run", flush=True)
+                for f2 in futs:
+                    f2.cancel()
+                break
+
+
+
+def lean_control(args):
+    """For every file that FAILED, compile origin/main's version of the same path with
+    the same toolchain and olean snapshot. Main red too => the failure is not the PR's
+    (pre-existing on main, or an artifact of the snapshot); main green => the PR broke it."""
+    env = _lean_env()
+    lf = CACHE / "lean.json"
+    done = json.loads(lf.read_text())
+    jobs = []
+    for n, r in done.items():
+        for fn, v in r.get("files", {}).items():
+            if v["status"] == "fail" and "main_control" not in v:
+                jobs.append((n, fn))
+    print(f"control: {len(jobs)} failed files", flush=True)
+
+    def one(job):
+        n, fn = job
+        mt = subprocess.run(["git", "-C", GITDIR, "show", f"origin/main:{fn}"], capture_output=True, text=True)
+        if mt.returncode:
+            return job, "absent-on-main"
+        dst = CACHE / "lean" / "control" / fn
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_text(mt.stdout)
+        try:
+            pr = subprocess.run(["lean", "-DautoImplicit=false", "-s", "65536", str(dst)],
+                                capture_output=True, text=True, env=env, timeout=args.timeout)
+        except subprocess.TimeoutExpired:
+            return job, "timeout"
+        out = pr.stdout + pr.stderr
+        if "object file" in out and "does not exist" in out:
+            return job, "blocked"
+        return job, "pass" if pr.returncode == 0 and ": error" not in out else "fail"
+
+    cache = {}
+    with cf.ThreadPoolExecutor(args.jobs) as ex:
+        for (n, fn), st in ex.map(one, [j for j in jobs if j[1] not in cache]):
+            done[n]["files"][fn]["main_control"] = st
+            print(f"  #{n} {fn.rsplit('/', 1)[-1]}: main {st}", flush=True)
+    for n, r in done.items():
+        fails = [v for v in r.get("files", {}).values() if v["status"] == "fail"]
+        if fails and all(v.get("main_control") in ("fail", "blocked") for v in fails):
+            r["fail_also_on_main"] = True
+    lf.write_text(json.dumps(done))
+
 # --------------------------------------------------------------------- beans
+# A bean whose title is about tooling/QA/bookkeeping, not mathematics. A Lean
+# file "formalizing" such a bean can only restate the measured counts.
+INFRA_RE = re.compile(r"\b(gate|witness|sidecar|audit|census|script|CI\b|drift|stale|stamp|refresh|registry|hook|"
+                      r"ledger|detector|scanner|producer|AGENTS|doc(?:s|umentation)?\b|float64|regex|grep|"
+                      r"dashboard|harness|pipeline|validator|checker|backlog|queue|sweep|mirror|vendor|cache)", re.I)
 def load_beans():
     beans = {}
     for f in BEANS.glob("*.md"):
@@ -312,7 +615,10 @@ def load_beans():
         bid = m.group(1) if m else "qou-" + f.name[:4]
         st = re.search(r"^status:\s*(\S+)", head, re.M)
         pr = re.search(r"^pr:\s*(\d+)", head, re.M)
-        beans[bid] = {"status": st.group(1) if st else "?", "pr": int(pr.group(1)) if pr else None}
+        ti = re.search(r"^title:\s*(.+)$", head, re.M)
+        title = ti.group(1).strip().strip("'\"") if ti else ""
+        beans[bid] = {"status": st.group(1) if st else "?", "pr": int(pr.group(1)) if pr else None,
+                      "title": title[:140], "infra": bool(INFRA_RE.search(title))}
     return beans
 
 
@@ -335,10 +641,10 @@ def classify(args):
             if not SHARED_OK.search(f["filename"]):
                 file2[f["filename"]].add(n)
         for fn, s in scan_res.get(str(n), {}).get("lean_files", {}).items():
-            if s.get("identical_on_main"):
+            if s.get("identical_on_main") or fn.endswith("lean/QOU.lean"):
                 continue
             for d in s["decls"]:
-                if d["kind"] in ("theorem", "lemma", "def", "structure", "class", "abbrev") and d["name"]:
+                if d["kind"] in ("theorem", "lemma", "def", "structure", "class", "abbrev") and "." in d["name"]:
                     decl2[d["name"]].add(n)
     bean2 = collections.defaultdict(set)
     for p in prs:
@@ -347,54 +653,94 @@ def classify(args):
         for b in p["beans"]:
             bean2[b].add(p["number"])
 
+    # bean sets per PR, for "a newer PR re-does exactly these beans"
+    beanset = {p["number"]: frozenset(p["beans"]) for p in prs}
+    AGG = re.compile(r"(^|/)QOU\.lean$|(^|/)[A-Z]\w+\.lean$")  # aggregator import lists
     rows = []
     for p in prs:
         n = p["number"]
         s = scan_res.get(str(n), {})
-        lf = s.get("lean_files", {})
+        lf = {fn: x for fn, x in s.get("lean_files", {}).items() if not fn.endswith("lean/QOU.lean")}
         tot = collections.Counter()
-        flagged_decls, provable = 0, 0
-        for fn, x in lf.items():
-            if x.get("identical_on_main"):
-                continue
+        provable = generic = ledger = flagged = 0
+        new_lean = [fn for fn, x in lf.items() if not x.get("identical_on_main")]
+        same_lean = [fn for fn, x in lf.items() if x.get("identical_on_main")]
+        standalone = bool(new_lean)
+        for fn in new_lean:
+            x = lf[fn]
             for k, v in x["counts"].items():
                 tot[k] += v
-            tot["import_free_files"] += 0 if x["counts"].get("imports_qou_or_mathlib") else 1
+            if x["counts"].get("imports_qou_or_mathlib"):
+                standalone = False
+            else:
+                tot["import_free_files"] += 1
             for d in x["decls"]:
                 if d["kind"] in ("theorem", "lemma"):
                     provable += 1
-                    if set(d["flags"]) & {"true-conclusion", "tautology", "rfl-only-on-local-def"}:
-                        flagged_decls += 1
-        new_lean = [fn for fn, x in lf.items() if not x.get("identical_on_main")]
-        same_lean = [fn for fn, x in lf.items() if x.get("identical_on_main")]
-        bstat = {b: beans.get(b, {"status": "missing", "pr": None}) for b in p["beans"]}
+                    fs = set(d["flags"])
+                    if "generic-identity" in fs:
+                        generic += 1
+                    if fs & {"true-conclusion", "tautology", "rfl-only-on-local-def", "ledger-literal"}:
+                        ledger += 1
+                    if "unfolds-int-arith-def" in fs:
+                        tot["unfolds_arith"] += 1
+                    if fs & {"generic-identity", "true-conclusion", "tautology", "rfl-only-on-local-def",
+                             "unfolds-int-arith-def"}:
+                        flagged += 1
+        vac = flagged / provable if provable else 0.0
+        bstat = {b: beans.get(b, {"status": "missing", "pr": None, "title": "", "infra": False}) for b in p["beans"]}
+        infra_frac = (sum(1 for v in bstat.values() if v.get("infra")) / len(bstat)) if bstat else 0.0
         done_elsewhere = [b for b, v in bstat.items()
-                          if v["status"] in ("completed", "scrapped") and v.get("pr") not in (n,)]
-        # collisions with other OPEN batch PRs
+                          if v["status"] in ("completed", "scrapped") and v.get("pr") not in (n, None)]
         file_coll = sorted({m for f in p["files"] if f["filename"] in file2
                             for m in file2[f["filename"]] if m != n})
-        decl_coll = sorted({m for fn, x in lf.items() if not x.get("identical_on_main")
-                            for d in x["decls"] if d["name"] in decl2
+        decl_coll = sorted({m for fn in new_lean for d in lf[fn]["decls"] if d["name"] in decl2
                             for m in decl2[d["name"]] if m != n})
         bean_coll = sorted({m for b in p["beans"] for m in bean2[b] if m != n})
-        newer_dupe = [m for m in set(decl_coll) | set(bean_coll) if m > n]
+        newer_same_beans = sorted(m for m in bean_coll if m > n and beanset[n] and beanset[n] <= beanset[m])
         dps = s.get("dps", [])
-        lean = lean_res.get(str(n), {"status": "not-run", "reason": "no lean toolchain/oleans in this container"})
+        cc = s.get("conflict_candidates", [])
+        cc_code = [f for f in cc if not (AGG.search(f) and f.endswith(".lean") and f.count("/") <= 4)
+                   and not f.startswith("beans/")]
+        lean = lean_res.get(str(n), {"status": "not-run", "reason": "not reached in this run"})
+        dirty = p["mergeable"] is False or p["mergeable_state"] == "dirty"
 
-        reasons, verdict = [], None
-        nlean = len(new_lean)
-        vac_ratio = flagged_decls / provable if provable else 0.0
-        if p["files"] and nlean == 0 and same_lean:
+        signals = []
+        if standalone:
+            signals.append("standalone (no Mathlib/QOU import)")
+        if tot["reimplements_ring_axioms"]:
+            signals.append("re-implements ring axioms as a structure")
+        if provable and generic:
+            signals.append(f"{generic}/{provable} generic Int/R identities unrelated to the named objects")
+        if provable and ledger:
+            signals.append(f"{ledger}/{provable} rfl/decide on locally-defined literal ledgers")
+        if tot["big_literals_in_defs"] >= 5:
+            signals.append(f"{tot['big_literals_in_defs']} hardcoded >=3-digit literals in defs")
+        if tot["unfolds_arith"]:
+            signals.append(f"{tot['unfolds_arith']}/{provable} theorems unfold one-line Int arithmetic defs")
+        if infra_frac >= 0.5:
+            signals.append(f"{infra_frac:.0%} of cited beans are tooling/QA tasks"
+                           + (" -- bean attribution does not match the Lean content; do not close these beans on merge"
+                              if provable and not standalone else ""))
+
+        reasons, verdict, rework_kind = [], None, None
+        if p["files"] and not new_lean and same_lean and not any(
+                f["filename"].endswith((".py", ".json")) and f["status"] != "removed" for f in p["files"]):
             verdict = "CLOSE-SUPERSEDED"; reasons.append("all Lean files already byte-identical on main")
-        elif p["beans"] and len(done_elsewhere) == len(p["beans"]) and done_elsewhere:
+        elif p["beans"] and done_elsewhere and len(done_elsewhere) == len(p["beans"]):
             verdict = "CLOSE-SUPERSEDED"; reasons.append("every cited bean completed/scrapped via another PR: " + ",".join(done_elsewhere))
-        elif provable and (tot["true-conclusion"] + tot["tautology"]) and vac_ratio >= 0.5:
-            verdict = "CLOSE-VACUOUS"; reasons.append(f"{flagged_decls}/{provable} theorems True/tautology/rfl-on-local-def")
-        elif provable and vac_ratio >= 0.8:
-            verdict = "CLOSE-VACUOUS"; reasons.append(f"{flagged_decls}/{provable} theorems rfl-only on locally-defined defs")
+        elif newer_same_beans:
+            verdict = "CLOSE-SUPERSEDED"; reasons.append("a newer open PR cites the same bean set: " + ",".join(f"#{m}" for m in newer_same_beans[:4]))
+        elif provable and (tot["true-conclusion"] + tot["tautology"]) * 2 >= provable:
+            verdict = "CLOSE-VACUOUS"; reasons.append(f"{tot['true-conclusion'] + tot['tautology']}/{provable} theorems conclude True or X = X")
+        elif standalone and provable and vac >= 0.6:
+            verdict = "CLOSE-VACUOUS"; reasons.append(f"standalone file, {flagged}/{provable} theorems are generic Int identities, "
+                                                      "unfoldings of one-line Int arithmetic defs, or rfl on local literals")
+        elif standalone and infra_frac >= 0.5 and tot["big_literals_in_defs"] >= 5:
+            verdict = "CLOSE-VACUOUS"; reasons.append("standalone file restating tooling-bean audit counts as Int literals")
         if verdict is None:
-            if p["mergeable"] is False or p["mergeable_state"] == "dirty":
-                reasons.append("conflicts with main")
+            if dirty:
+                reasons.append("conflicts with main" + (f" ({', '.join(x.rsplit('/', 1)[-1] for x in cc_code[:3])})" if cc_code else " (aggregator/bean files only)"))
             if tot["sorry"]:
                 reasons.append(f"{tot['sorry']} real sorry")
             if tot["axiom"]:
@@ -402,35 +748,51 @@ def classify(args):
             if tot["native_decide"]:
                 reasons.append(f"{tot['native_decide']} native_decide")
             if tot["true-conclusion"] or tot["true-field"] or tot["tautology"]:
-                reasons.append(f"vacuity flags True/field/taut={tot['true-conclusion']}/{tot['true-field']}/{tot['tautology']}")
-            if provable and vac_ratio >= 0.5:
-                reasons.append(f"{flagged_decls}/{provable} rfl-only-on-local-def")
-            if tot["import_free_files"]:
-                reasons.append(f"{tot['import_free_files']} import-free .lean")
-            if dps and min(dps) < 80 and re.search(r"80[- ]dps", p["body"]):
+                reasons.append(f"vacuity True/field/taut={tot['true-conclusion']}/{tot['true-field']}/{tot['tautology']}")
+            if standalone:
+                reasons.append("standalone proxy: no Mathlib/QOU import, cannot reference the corpus objects it names")
+            elif provable and vac >= 0.5:
+                reasons.append(f"{flagged}/{provable} theorems generic-identity/arith-unfold/rfl-on-local-def")
+            if tot["reimplements_ring_axioms"]:
+                reasons.append("re-implements ring axioms (§7c: use [CommRing R])")
+            if s.get("missing_qou_imports"):
+                reasons.append("imports modules not on main (stacked): " + ",".join(s["missing_qou_imports"][:3]))
+            if dps and min(dps) < 80 and re.search(r"80[- ]dps", p["title"] + p["body"]):
                 reasons.append(f"claims 80-dps, min dps found {min(dps)}")
             if done_elsewhere:
                 reasons.append("partly superseded beans: " + ",".join(done_elsewhere))
             if decl_coll:
-                reasons.append("decl collision with " + ",".join(f"#{m}" for m in decl_coll[:6]))
+                reasons.append("same fully-qualified decl as " + ",".join(f"#{m}" for m in decl_coll[:6]))
+            if file_coll:
+                reasons.append("same file as " + ",".join(f"#{m}" for m in file_coll[:6]))
             if s.get("scan_error"):
                 reasons.append("scan: " + s["scan_error"][:60])
-            if not lf and not p["files"]:
+            if not p["files"]:
                 reasons.append("empty PR")
             if lean.get("status") == "fail":
-                reasons.append("lean-direct FAIL")
+                tag = " (same file also red on main: not this PR's regression)" if lean.get("fail_also_on_main") else ""
+                reasons.append("lean-direct FAIL" + tag + ": " + lean.get("first_error", "")[:100])
+            if lean.get("status") == "blocked":
+                reasons.append("lean-direct BLOCKED: olean snapshot lacks " + lean.get("first_error", "")[-60:])
+            if lean.get("sorryAx"):
+                reasons.append("#print axioms shows sorryAx")
             verdict = "NEEDS-REWORK" if reasons else "MERGE-CANDIDATE"
+            if verdict == "NEEDS-REWORK" and dirty and len(reasons) == 1 and not cc_code:
+                rework_kind = "rebase-only"
         rows.append({
             "number": n, "head": p["head"], "family": p["family"], "created_at": p["created_at"],
             "title": p["title"][:160], "beans": p["beans"], "bean_status": bstat,
             "mergeable": p["mergeable"], "mergeable_state": p["mergeable_state"],
+            "conflict_candidates": cc,
             "changed_files": p["changed_files"], "additions": p["additions"], "deletions": p["deletions"],
             "lean_files_new_or_changed": new_lean, "lean_files_identical_on_main": same_lean,
-            "provable_decls": provable, "vacuity_flagged_decls": flagged_decls,
-            "counts": dict(tot), "dps": sorted(set(dps)),
+            "provable_decls": provable, "generic_identity_decls": generic, "ledger_decls": ledger,
+            "vacuity_flagged_decls": flagged, "standalone": standalone, "signals": signals,
+            "counts": dict(tot), "dps": sorted(set(dps)), "py_float64_hits": s.get("py_float64_hits", 0),
+            "missing_qou_imports": s.get("missing_qou_imports", []),
             "file_collisions": file_coll, "decl_collisions": decl_coll, "bean_collisions": bean_coll,
-            "newer_duplicate_prs": sorted(newer_dupe),
-            "lean": lean, "verdict": verdict, "reasons": reasons,
+            "newer_same_bean_prs": newer_same_beans,
+            "lean": lean, "verdict": verdict, "rework_kind": rework_kind, "reasons": reasons,
         })
     return rows
 
@@ -495,7 +857,12 @@ def report(args):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("stage", choices=["gather", "fetch", "scan", "report", "all"])
+    ap.add_argument("stage", choices=["gather", "fetch", "scan", "lean", "control", "report", "all"])
+    ap.add_argument("--retry-blocked", action="store_true", help="lean: re-run PRs that were blocked on a missing olean")
+    ap.add_argument("--max", type=int, default=10000, help="lean: at most this many PRs")
+    ap.add_argument("--jobs", type=int, default=2, help="lean: parallel lean processes")
+    ap.add_argument("--timeout", type=int, default=900, help="lean: seconds per file")
+    ap.add_argument("--budget", type=int, default=6 * 3600, help="lean: wall-clock budget, seconds")
     ap.add_argument("--out", default=f"docs/coordination/{time.strftime('%Y-%m-%d')}-batch-pr-triage")
     ap.add_argument("--refresh", action="store_true")
     a = ap.parse_args()
@@ -505,6 +872,10 @@ def main():
         fetch(a)
     if a.stage in ("scan", "all"):
         scan(a)
+    if a.stage == "lean":
+        lean_stage(a)
+    if a.stage == "control":
+        lean_control(a)
     if a.stage in ("report", "all"):
         report(a)
 
