@@ -46,5 +46,6 @@ export default remark({
         "Re-homing the block beside rem:discrete-planck-step instead is the alternative and is " +
         "an owner call.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): After one Planck step, [the discrete Planck step](#rem:discrete-planck-step)\nrecords the displacement as" },
   ],
 });
