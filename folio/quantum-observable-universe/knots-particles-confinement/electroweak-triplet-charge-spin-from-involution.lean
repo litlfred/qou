@@ -255,8 +255,8 @@ This is a **recorded label table, not derived** from `σ`. `Z ↦ 0` rests on th
 Weinberg `(W³,B) → (Z,γ)` mixing (`weinberg-angle-categorical`), and `H ↦ 0` is
 the model's assignment (the Standard Model gives the neutral Higgs component
 `T₃ = −½`). The values `W± ↦ ±1` read as `2·T₃` give `T₃ = ±½`, the doublet
-values of `def:spin-involution`, not the triplet values `T₃ = ±1` quoted in the
-`.md`; the table is compared with `σ` in `IsospinFromSkew` / `OrderedSign`. -/
+values of `def:spin-involution`, not the triplet values `T₃ = ±1` (the `.md` now
+states the table as `2·T₃`); the table is compared with `σ` in `IsospinFromSkew` / `OrderedSign`. -/
 def ewT3Double : EWCarrier → ℤ
   | .Wp => 1
   | .Wm => -1
