@@ -83,3 +83,8 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 
 - Length filtration: filtered; d1 = 0, d2 rank 1 (deg1 wt0 -> deg2 wt2), d3 = 0, d4 rank 1 (deg1 wt-2 -> deg2 wt2), E5 = E_inf = Z(H3) in degree 0. Block prose 'd1 acts through the Hecke relation' is false here.
 - Confinement filtration: NOT a filtered complex (J1 J1 = J1 != 0 = J2; (dE00)(E01) = -E01). prop:gb-spectral-sequence proof step fails for it. Kind change of prop:gb-spectral-sequence = owner decision, open.
+
+## 2026-11-20 — prop:gb-spectral-sequence rewritten (PR #8652, merged 8406560e3f); probe #8628 merged
+- Owner chose option "rewrite on the length filtration". New statement + proof: length filtration multiplicative, Hochschild differential preserves it, E1 = weight-graded HH of nil-Coxeter algebra, E_inf = gr HH*(H_n,H_n). n=3: d2, d4 rank 1, E5 = E_inf, no E2 collapse.
+- Dropped: tr_M as 0-cochain of C(H_n,H_n); six-term mass pairing.
+- STILL OPEN (owner): four consumers now carry caveats, not demoted — mba-step07, mba-step08, prf:bond-order-eq-jet-degree (need E2 collapse), prf:curvature-rank-gb-stratification (needs E0 = J/J). Lean carrier GBSpectralSequence remains abstract (does not formalise the new statement).
