@@ -68,7 +68,7 @@ representation for any nucleus.
 ## Optimal normal form
 
 **Proof sketch.**
-We proceed by induction on $A$. Adding strand $A$ creates cross-terms $\sigma_i \cdot \sigma_{A-1}$ for all $i < A - 1$. We absorb these terms as follows:
+The proof is by induction on $A$. Adding strand $A$ creates cross-terms $\sigma_i \cdot \sigma_{A-1}$ for all $i < A - 1$. Absorb these terms as follows:
 
 - If $|i - (A-1)| \geq 2$: Far-commutativity gives $\sigma_{A-1} \cdot \sigma_i$. Then I$_{9}$ absorbs this term since the prefix $\sigma_i$ is present.
 - If $|i - (A-1)| = 1$: This forms an adjacency pair. I$_{8}$ absorbs this term since the prefix $\sigma_{A-1}$ is present.

@@ -16,7 +16,7 @@ The operator content is $T_\beta = S \cdot \mathbf{1}$, with $S$ pinned by the S
 
 The sequence $c_2, \ldots, c_8$ collapses to the proved seed $c_2 = -1$ and a kernel $R(q_0, \xi)$ of bounded degree $d$. The recursion generates $c_3, \ldots, c_8$ automatically.
 
-We write the recursion coefficients as elementary symmetric polynomials $a_j = e_j(\{r_\lambda\})$ of the per-mode rates $r_\lambda = (q-1)\mu_\lambda$. Under the bar involution $q \mapsto q^{-1}$, the rates are bar-odd. We formally prove that $a_j$ alternates bar-parity. The recursion step and the parity-alternation theorem form the structural law behind the ladder's parity bookkeeping.
+Write the recursion coefficients as elementary symmetric polynomials $a_j = e_j(\{r_\lambda\})$ of the per-mode rates $r_\lambda = (q-1)\mu_\lambda$. Under the bar involution $q \mapsto q^{-1}$, the rates are bar-odd. Consequently $a_j$ alternates bar-parity: $a_j$ is a sum of products of $j$ bar-odd rates, so it is bar-even for even $j$ and bar-odd for odd $j$. The recursion step and the parity-alternation theorem form the structural law behind the ladder's parity bookkeeping.
 
 The cyclotomic factors $\Phi_d$ for $d \in \{2,3,6\}$ and for all primes $p$ are self-reciprocal. Divisibility by $\Phi_n$ is invariant under the bar involution for every $n > 1$. The identity $\Phi_n(1/q)\,q^{\varphi(n)} = \Phi_n(q)$ guarantees period-3 closure.
 

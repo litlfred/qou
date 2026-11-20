@@ -29,4 +29,4 @@ $$
    \longrightarrow 
   \pi_0(\mathrm{Bun}^{\circ}).
 $$
-We call this the **recycling functor**. It maps each aeon to its successor. A fixed point of $\mathcal{R}$ represents a self-recycling aeon: one whose CMB regenerates itself.
+One calls this the **recycling functor**. It maps each aeon to its successor. A fixed point of $\mathcal{R}$ represents a self-recycling aeon: one whose CMB regenerates itself.

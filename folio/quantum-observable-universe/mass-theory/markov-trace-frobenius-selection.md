@@ -29,7 +29,7 @@ steps:
 
 ### Step 1: Cat-action of $\mathbf{C}$ on the state bundle
 
-A quantum observable universe specifies a rigid monoidal category $\mathbf{C}$ with a fibre functor $\tau \colon \mathbf{C} \to \mathbf{Vect}$. The category fixes the acting Frobenius–Hopf algebra $A$. We typically use $A = H_n(R, q)$.
+A quantum observable universe specifies a rigid monoidal category $\mathbf{C}$ with a fibre functor $\tau \colon \mathbf{C} \to \mathbf{Vect}$. The category fixes the acting Frobenius–Hopf algebra $A$. The typical case is $A = H_n(R, q)$.
 
 ### Step 2: Non-abelian Stokes at finite slice
 
@@ -98,7 +98,7 @@ where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every
 
 ## Discussion
 
-This proposition is a structural theorem about the representation theory of the Hecke algebra. We introduce no fitting or empirical input, and no numerical $q_0$: parts (i) and (iii) are unconditional, and part (ii) is division-free over a generic commutative domain. What it is **conditional** on is one named categorical premise — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — which is open. Conditional-proved is not premise-established.
+This proposition is a structural theorem about the representation theory of the Hecke algebra. No fitting or empirical input enters, and no numerical $q_0$: parts (i) and (iii) are unconditional, and part (ii) is division-free over a generic commutative domain. What it is **conditional** on is one named categorical premise — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — which is open. Conditional-proved is not premise-established.
 
 ## Computational consequence
 

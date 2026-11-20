@@ -77,4 +77,4 @@ Deriving the canonical $f_2$ yields four consequences:
 
 ## Archimedean specialization
 
-We state this conjecture on the archimedean side of the substrate wall. It asserts a real-mass sub-percent recovery bound: $\forall M \ge 0,\ \exists M_{\mathrm{rec}},\ |M_{\mathrm{rec}} - M| \le M/100$ over $\mathbb{R}$. The generic $q$-deformation functional $f_2(q, \hat V_i, \hat V_j)$ serves as input. The conjectural statement intrinsically addresses real masses; it does not constitute a separable archimedean specialization of an otherwise $\mathbb{R}$-free construction.
+One states this conjecture on the archimedean side of the substrate wall. It asserts a real-mass sub-percent recovery bound: $\forall M \ge 0,\ \exists M_{\mathrm{rec}},\ |M_{\mathrm{rec}} - M| \le M/100$ over $\mathbb{R}$. The generic $q$-deformation functional $f_2(q, \hat V_i, \hat V_j)$ serves as input. The conjectural statement intrinsically addresses real masses; it does not constitute a separable archimedean specialization of an otherwise $\mathbb{R}$-free construction.

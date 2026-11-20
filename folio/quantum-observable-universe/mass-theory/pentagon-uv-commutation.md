@@ -5,7 +5,7 @@ $$
   \Phi_q(v)\,\Phi_q(u) \;=\; \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)
 $$
 
-requires the quantum-torus relation $uv = q\,vu$ on its operator arguments. We establish where that relation lives in the brane-tower formalism and how it drives the jet-tower mass ascension.
+requires the quantum-torus relation $uv = q\,vu$ on its operator arguments. This remark places that relation in the brane-tower formalism and how it drives the jet-tower mass ascension.
 
 ## Within a single jet level — trivial commutation
 

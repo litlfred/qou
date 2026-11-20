@@ -108,7 +108,7 @@ $\mathrm{Vol}$-identity.
 is exactly computable for any specific knot (it is a rational
 function evaluated at named surreals). If a *general* formula
 exists for $\mathrm{st}(\log |J_K(\zeta_\omega, \omega)|/\omega)$
-in terms of knot data, we have a path to a proof of Kashaev.
+in terms of knot data, there is a path to a proof of Kashaev.
 
 **Might not help:** the standard-part identity is *itself* an
 analytic statement (it asserts an asymptotic relationship

@@ -13,9 +13,9 @@ $$
 
 ## Applicability of the correction
 
-We apply the offset $\delta_A$ differently across two regimes:
+The offset $\delta_A$ is applied differently across two regimes:
 
-1. **$A = 1$** and **Even $A$**: We add the correction explicitly, setting $\delta_A = 1$.
-2. **Odd $A \geq 3$**: We apply no explicit correction, setting $\delta_A = 0$.
+1. **$A = 1$** and **Even $A$**: The correction is added explicitly, setting $\delta_A = 1$.
+2. **Odd $A \geq 3$**: No explicit correction is applied, setting $\delta_A = 0$.
 
-> **Open Issue:** We currently rely on this parity-dependent $\delta_A$ to align the categorical evaluation with the kinematic Q-value. We lack a formal justification for why $\delta_A$ is absorbed for odd $A$ but required for even $A$.
+> **Open Issue:** The alignment of the categorical evaluation with the kinematic Q-value currently relies on this parity-dependent $\delta_A$. There is no formal justification yet for why $\delta_A$ is absorbed for odd $A$ but required for even $A$.

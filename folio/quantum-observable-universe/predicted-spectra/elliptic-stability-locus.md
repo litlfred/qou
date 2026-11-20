@@ -1,4 +1,4 @@
-The stability curve and the color fibration of Bring's surface share the same algebraic origin. We conjecture that the nuclear degeneracy locus — the curve in the $(p, A)$-plane where adjacent nuclei have equal energy — forms an elliptic curve isogenous to the color fiber $\mathcal{E}_z$.
+The stability curve and the color fibration of Bring's surface share the same algebraic origin. The conjecture is that the nuclear degeneracy locus — the curve in the $(p, A)$-plane where adjacent nuclei have equal energy — forms an elliptic curve isogenous to the color fiber $\mathcal{E}_z$.
 
 **The two cubics.**
 

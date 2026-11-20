@@ -1,7 +1,7 @@
 The global regularity theorem and the regularity breakdown conjecture reframe the Clay Millennium Problem as a degeneration problem within a one-parameter family of well-posed equations.
 
 **The quantum reformulation.**
-In a QOU with substrate parameter $q > 1$, the q-deformed Navier--Stokes system is globally regular. The classical problem is the limiting case $q \to 1$. We ask whether the family converges to a smooth solution of the classical Navier--Stokes equation, or develops singularities in the limit.
+In a QOU with substrate parameter $q > 1$, the q-deformed Navier--Stokes system is globally regular. The classical problem is the limiting case $q \to 1$. The question is whether the family converges to a smooth solution of the classical Navier--Stokes equation, or develops singularities in the limit.
 
 **Significance of the categorical formulation.**
 The mechanisms ensuring regularity for $q > 1$ are consequences of the categorical structure. The classical problem is hard because all mechanisms fail simultaneously at $q = 1$.

@@ -25,11 +25,11 @@ $$
   H_A(q_0)
 $$
 
-to have a dominant rank-1 component $V_{\lambda_A}$ that is self-conjugate and gapless. We combine this with the Bring-shell-binding picture ([Shell binding from the torus knot hierarchy: $T_{2,3} \to T_{2,5} \to T_{2,7} \to T_{2,9}$](#prop:torus-knot-shell-binding)).
+to have a dominant rank-1 component $V_{\lambda_A}$ that is self-conjugate and gapless. This combines with the Bring-shell-binding picture ([Shell binding from the torus knot hierarchy: $T_{2,3} \to T_{2,5} \to T_{2,7} \to T_{2,9}$](#prop:torus-knot-shell-binding)).
 
 See [Table 2](#tbl:double-magic-delta-i-bound-table2-data).
 
-We specify the mechanism. Let $\lambda_Z$ be a Bring shell-$i$ diagram and $\lambda_N$ be a Bring shell-$j$ diagram. The LR-tensor's structure depends on the relationship between $i$ and $j$:
+The mechanism is as follows. Let $\lambda_Z$ be a Bring shell-$i$ diagram and $\lambda_N$ be a Bring shell-$j$ diagram. The LR-tensor's structure depends on the relationship between $i$ and $j$:
 
 - $i = j$: $V_\lambda \otimes V_\lambda$ has a dominant self-conjugate component $\lambda_A$ matching the doubled diagram (compatible).
 - $j = i + 1$: $V_{\lambda_Z} \otimes V_{\lambda_N}$ has a dominant component obtained by extending $\lambda_Z$ by the new shell-$(i+1)$ cells of $\lambda_N$ (compatible).
@@ -39,7 +39,7 @@ The $\Delta i \leq 1$ rule forms the LR-fusion compatibility constraint between 
 
 ## Discussion
 
-We conjecture:
+Conjecture:
 
 - **Forward direction** ($\Delta i \leq 1 \Rightarrow$ LR-fusion compatible): Relies on the LR-rigidity of adjacent Bring shells.
 - **Reverse direction** ($\Delta i \geq 2 \Rightarrow$ LR-fusion shattered): Relies on a categorical shell-gap argument.

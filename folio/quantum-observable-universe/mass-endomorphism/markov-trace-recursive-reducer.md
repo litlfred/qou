@@ -67,7 +67,7 @@ By induction on $(n, \ell)$, the output equals $\mathrm{tr}_M(\beta)$ in $\mathb
 
 ## Disjoint-product property
 
-For $\alpha \in H_k$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}$ on strands $\{k+2, \ldots, n\}$ (no $\sigma_{k+1}$ appears in $\beta$), the words commute. We have $\alpha \beta = \beta \alpha$, and the Markov axiom plus cyclicity gives:
+For $\alpha \in H_k$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}$ on strands $\{k+2, \ldots, n\}$ (no $\sigma_{k+1}$ appears in $\beta$), the words commute. One has $\alpha \beta = \beta \alpha$, and the Markov axiom plus cyclicity gives:
 $$
   \mathrm{tr}_M(\alpha \beta) \;=\; \mathrm{tr}_M(\alpha) \cdot \mathrm{tr}_M(\beta)
 $$

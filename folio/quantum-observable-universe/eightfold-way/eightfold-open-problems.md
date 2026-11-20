@@ -317,6 +317,6 @@ Gell-Mann--Nishijima relation cannot be closed.
 9. **Ocneanu/Markov trace parameter.**
    The Markov trace $\tau$ on $H_n(q)$ involves a second parameter
    $z$ (the trace parameter).  In QOU, $q$ is the substrate parameter
-   (observed at our location as $q_0$, not derived from Bring topology).
+   (observed at the point of observation as $q_0$, not derived from Bring topology).
    Whether $z$ is similarly extracted from categorical data or must be
    chosen is open (T3f).

@@ -6,6 +6,7 @@ import QOU.AlgebraicSubstrate.TwistSignTorsor
 import QOU.BringsSurface.CoveringDegreeRamification
 import QOU.RiemannSurface.GermStabiliserCyclic
 import QOU.RiemannSurface.CombinatorialMapQuotient
+import QOU.BringsSurface.GenusFourFromGermStabilisers
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
 import QOU.Eightfold.ConnectedSumAnnihilator
@@ -656,6 +657,7 @@ import QOU.BraidKnot
 import QOU.BraidKnot.MesonFusionIndexSelection
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
+import QOU.BraidKnot.GBRewriteDifferential
 import QOU.BraidKnot.SpechtCrossDominance
 import QOU.BraidKnot.SpechtCrossKappa
 -- Absolute irreducibility (W2 of the Wedderburn epic): the commutant of every
@@ -1172,6 +1174,10 @@ import QOU.Mathlib.QGevreyOrder
 -- Liouville's third theorem (Σ ord = 0) stated open; f'/f-periodicity + divisor-
 -- lattice-periodicity bricks proved sorry-free.
 import QOU.Mathlib.EllipticDivisorDegree
+import QOU.Mathlib.EllipticAnnulusDescent
+import QOU.Mathlib.ArgumentPrincipleAnnulus
+import QOU.Mathlib.EllipticAnnulusWinding
+import QOU.Mathlib.LiouvilleThird
 import QOU.Mathlib.HadamardFactorization
 -- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
 -- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the

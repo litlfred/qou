@@ -10,7 +10,7 @@ C_n(a)\,(\bar q;\bar q)_n^{2}\,a^{-(5n^{2}+7n)}
         \sum_{k=0}^{n} \tilde q^{\,k(n+1)}\,[n,k]_{\tilde q}.
 $$
 
-We refer to this as the *Habiro-tail star identity*.
+This is the *Habiro-tail star identity*.
 
 ## What the identity does
 

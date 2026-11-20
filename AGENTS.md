@@ -9,6 +9,32 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 **Required Action:** Before executing any multi-step task or slash command, run `ls .claude/skills/local/` and `view_file` on the relevant `.md` file. Follow its instructions exactly. NEVER guess.
 
+## 🟥 THE PHOTON IS `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹` (owner ruling 2026-11-20) — STRICT
+
+**The fourth term is the chiral vertex `σ₀σ₁⁻¹`. The form with `σ₀σ₁` (`L₊`) as the
+fourth term is OLD AND WRONG.** Verbatim, owner 2026-11-20: *"1 + φ₀σ₀ + φ₁σ₁ +
+φ₀₁σ₀σ₁ is old and wrong. 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁^-1 is correct"*, and earlier the
+same day: *"That was already decided. Why did it get changed back to the wrong form?"*
+
+    γ(φ₀, φ₁, φ₀₁) = 1 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁⁻¹      ∈ H₃(R, q)
+
+- **This is a ruling, not a working assumption.** It was first recorded on
+  2026-11-18 as "a working assumption, not a ruling to edit def:photon"; that
+  classification was the recording agent's, and it is why the wrong form kept
+  coming back (bean `qou-99qc`, entry 2026-11-20T14:50:40Z).
+- **`def:photon` (`predicted-spectra/photon.md`) and `QOU/Photon.lean` state the
+  correct form as of PR #8583 (merged 2026-11-20).** Copies of the old `σ₀σ₁` form
+  survive in older branches, beans, audits and probes: do not copy from them, and do
+  not quote, compute, formalise or propose anything on the `σ₀σ₁` form. Do not call
+  the correct form "switched", "γ′" or "the qou-99qc variant" — it is simply *the
+  photon*.
+- **Every agent repeats this to its subagents.** A subagent does not see this file
+  if it was edited mid-session (see §Subagents); put the photon form in the
+  subagent's prompt whenever photons are in scope.
+- Worked consequence: the Borromean core factors as
+  `V³ = (σ₀σ₁⁻¹)³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)`, `h = q − q⁻¹`
+  (`borromeanV3A_eq_switched_photon_product` and its `B` twin, sorry-free).
+
 ## User accessibility
 
 The repo owner is physically disabled and types with difficulty.
@@ -1783,6 +1809,29 @@ corpus — run the **corpus-grep checklist**:
    corpus_search  query: "<topic>"        # 1 hop, both directions
    corpus_search  query: "<topic>", direction: "in"   # what depends on it
    ```
+
+   **If the MCP server is not connected, use the CLI. Never skip this step.**
+   `bun scripts/corpus-search.ts "<topic>" [--direction in|out] [--hops N]
+   [--limit N] [--search-text] [--provenance authored|ingested]` calls the same
+   function the MCP tool calls, over the same roots. It runs on the light
+   platform that the SessionStart hook installs.
+
+   The MCP server does not start by itself: call `mcp__paper-assistant__start`
+   first, then RefreshMcpTools (see §"MCP servers start on demand").
+
+   The MCP route reported "paper-assistant: Connection closed" in every
+   session from at least 2026-10-12 to 2026-11-20 (bean `qou-q261`). Two causes:
+   - `.mcp.json` named `folio-assistant/cat-harness/src/index.ts`, which the
+     platform restructure removed. The launcher is now
+     `scripts/paper-assistant-mcp.sh`.
+   - The MCP server needs the full platform (`scripts/setup-folio-assistant.sh`).
+     The light one has no `@modelcontextprotocol/sdk`.
+
+   A run that reports step 0 as "unavailable" has skipped it; the CLI was
+   available. The default `--limit` is 20 seeds. At that limit, "Plancherel" returned 20
+   authored seeds and 0 ingested; at `--limit 200` it returned 49 ingested
+   (measured 2026-11-20). Raise `--limit` before reading "no ingested hits" as
+   "not held".
 
    Read three things in its answer. **`why`** says whether a hit MATCHED
    or was REACHED, and by which edge — a `~` prefix means the edge ran
@@ -5566,7 +5615,35 @@ $$
 `` ```tex `` blocks is not escaped (it's a column separator in matrices
 and alignments). Only `&` in prose text causes LaTeX errors.
 
-## Lean MCP server (lean-lsp-mcp)
+## MCP servers start on demand (owner directive, 2026-11-20)
+
+Owner, verbatim: *"MCP should only start up if an agent needs the tools. The
+agent should look at the process and what it needs and then make a decision."*
+
+Every server in `.mcp.json` runs through
+[`scripts/mcp-lazy.py`](scripts/mcp-lazy.py). At session start it connects in
+under 0.1 s and exposes **one** tool, `start`; the real server is not running.
+Its description says what the server provides, when it is worth starting, what
+it costs, and the cheaper route that needs no MCP. The commands and those texts
+live in [`scripts/mcp-lazy.json`](scripts/mcp-lazy.json).
+
+**Decide before you start one.** Look at the task. If it needs the tools, call
+`mcp__<server>__start` (pass a one-line `reason`), then call `RefreshMcpTools`
+to load the real tools. If a cheaper route covers it, use that instead:
+
+| server | provides | cheaper route without MCP |
+|---|---|---|
+| `paper-assistant` | `corpus_search` and the platform tools (~74) | `bun scripts/corpus-search.ts "<topic>"` |
+| `lean-lsp` | goal states, diagnostics, Mathlib search | `lean -DautoImplicit=false -s 65536 <file>` (lean-direct) |
+| `paper-search-mcp` | external paper search and PDF download | `library/INDEX.md` and `library/*/sections` |
+| `openalex-paper-search` | OpenAlex author and work metadata | `folio/references/` for cited works |
+
+Why. Measured 2026-11-20 on a fresh container: all four eager servers hit the
+30 s connect timeout at session start. Run by hand, two of them could never
+start: `paper-search-mcp` was unpinned and broke on mcp 2.x (now pinned
+`mcp<2`), and `alex-mcp` needs `OPENALEX_MAILTO`, which is not set here. A
+failed `start` now returns the backend's stderr tail as the tool result.
+
 
 The [lean-lsp-mcp](https://github.com/oOo0oOo/lean-lsp-mcp) server is
 configured via `.mcp.json`. It provides Claude Code with:

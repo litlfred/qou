@@ -9,7 +9,7 @@ The Higgs is the bar-even, self-dual, real-volume carrier; the $W^\pm$ and $Z$ a
 
 ## The computed sector label and charge
 
-Let $v_c$ be the sector vector of the carrier $c$: the $\sigma$-even projection of $(a_c, a_c^{-1})$ if $c \in A_+$, and its $\sigma$-odd projection if $c \in A_-$. If $c \in A_+$, then $v_c$ is $\sigma$-fixed, so $2s(c) = 0$, and its skew value is $0$, so $Q(c) = 0$. If $c \in A_-$, then $\sigma v_c = -v_c$. Since $2$ is invertible and $a_c^2 \neq 1$, we have $v_c \neq 0$, hence $\sigma v_c \neq v_c$ and $2s(c) = 2$; its skew value is $a_c - a_c^{-1} \neq 0$, so $Q(c) \neq 0$. For $W^-$, the eigenvalue is $a_{W^+}^{-1}$, so $Q(W^-) = -Q(W^+)$. With $H \in A_+$ and $W^\pm, Z \in A_-$ this gives the statement.
+Let $v_c$ be the sector vector of the carrier $c$: the $\sigma$-even projection of $(a_c, a_c^{-1})$ if $c \in A_+$, and its $\sigma$-odd projection if $c \in A_-$. If $c \in A_+$, then $v_c$ is $\sigma$-fixed, so $2s(c) = 0$, and its skew value is $0$, so $Q(c) = 0$. If $c \in A_-$, then $\sigma v_c = -v_c$. Since $2$ is invertible and $a_c^2 \neq 1$, $v_c \neq 0$, hence $\sigma v_c \neq v_c$ and $2s(c) = 2$; its skew value is $a_c - a_c^{-1} \neq 0$, so $Q(c) \neq 0$. For $W^-$, the eigenvalue is $a_{W^+}^{-1}$, so $Q(W^-) = -Q(W^+)$. With $H \in A_+$ and $W^\pm, Z \in A_-$ this gives the statement.
 
 The postulated data are the sector map and the eigenvalues. The isospin table $T_3$ is recorded, not derived. The $\sigma$-parity alone makes $Z$ charged, since $Z \in A_-$; its neutrality is the $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing.
 

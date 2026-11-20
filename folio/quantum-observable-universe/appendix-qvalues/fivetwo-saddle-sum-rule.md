@@ -20,7 +20,7 @@ $$
 \;=\; -\frac{\pi^{2}}{6} - \frac{(\log t)^{2}}{2} + \frac{2}{3}\bigl(\arg a - \pi\bigr)^{2} .
 $$
 
-We call this the *$5_2$ saddle sum rule*.
+This is the *$5_2$ saddle sum rule*.
 
 ## What the statement says
 

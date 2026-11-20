@@ -8,7 +8,7 @@ Let $\mathcal{S}$ denote Bring's surface ([Bring's surface](#def:brings-surface)
 \end{equation}
 ```
 
-we define the **quaternionic spectral resolvents** $\omega_k\colon\mathcal{S}\to J^\infty E$ by
+define the **quaternionic spectral resolvents** $\omega_k\colon\mathcal{S}\to J^\infty E$ by
 
 ```tex
 \begin{align}

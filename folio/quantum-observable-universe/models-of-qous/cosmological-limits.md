@@ -14,4 +14,4 @@ At both limits, the quantum observable universe structure degenerates:
 
 - As $q \to 1$, the $q$-Hodge star $\star_q$ reduces to the classical Hodge star $\star_1$. The quantum gauge group $\mathrm{SU}_q(2)$ collapses to the classical Lie group $\mathrm{SU}(2)$. The deformation vanishes, and the substrate parameter carries no information.
 
-We conjecture the physically meaningful regime strictly satisfies $1 < q < \infty$, where quantum and classical features coexist. Rigorously analyzing these limits requires controlling the singular behavior of the Frobenius form as $q \to \infty$. This remains an open problem.
+The conjecture is that the physically meaningful regime strictly satisfies $1 < q < \infty$, where quantum and classical features coexist. Rigorously analyzing these limits requires controlling the singular behavior of the Frobenius form as $q \to \infty$. This remains an open problem.

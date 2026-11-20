@@ -404,6 +404,85 @@ try:
         finally:
             _mp.mp.dps = prev
 
+    # ── TWO-TERM proton pin: a NAMED COMPARISON, never the default ──
+    #
+    # Owner ruling 2026-11-20 (Carl): "Revert to 1-term default". The
+    # two-term re-pin of q_at() was tried on PR #8554 and reverted: at the
+    # two-term pin α_em⁻¹ (form B) moves +0.365 → +75.97 ppb (495σ), while
+    # covariant QED insertions give ZERO proton self-energy (PRs #8562,
+    # #8565); the μ–p residual points at the muon relation instead (bean
+    # qou-6gf9). q_at() above is the one-term proton pin, unchanged. The
+    # functions below exist ONLY for explicit one-term-vs-two-term
+    # comparison producers. Do not read q₀ from them anywhere else.
+
+    def _proton_identity_residual(q, vol, mp_me, two_term: bool):
+        """m_p/m_e(q) − (m_p/m_e)_CODATA for the proton substrate identity.
+
+        one-term : 2·(Vol(4₁)/ℏ_q²)·|tr_M(β_Bor)|·[3]_q!/q³ − 12   (q_at)
+        two-term : one-term + |tr_conn(p, V³)|(q),
+                   |tr_conn(p, V³)| = 2(q²−1)⁴(q⁴+q²+1)/(27 q⁶)
+        All mpmath; caller sets the working precision."""
+        h = q - 1 / q
+        hbar_sq = (1 - 1 / q) ** 2
+        trM = _mp.fabs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
+        qf3 = (q**2 + 1 + q**(-2)) * (q + q**(-1))
+        val = 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12
+        if two_term:
+            q2 = q * q
+            val += 2 * (q2 - 1) ** 4 * (q2 * q2 + q2 + 1) / (27 * q2 ** 3)
+        return val - mp_me
+
+    def q_proton_two_term_at(dps: int = _DPS_DEFAULT):
+        """COMPARISON pin (NOT the default): q solving the TWO-TERM proton
+        identity
+            m_p/m_e = 2·(Vol(4₁)/ℏ_q²)·|tr_M(β_Bor)|·[3]_q!/q³ − 12
+                      + |tr_conn(p, V³)|(q),
+            tr_conn(p, V³) = −2(q²−1)⁴(q⁴+q²+1)/(27 q⁶)
+        (Lean `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3`,
+        plain weighting). Exact mpmath findroot at dps+15 guard digits.
+        Sits +11.1709 ppb above q_at() (1.10997859515088…).
+
+        Scope: plain weighting at the m_e scale; adjacent insertion is
+        non-covariant and the covariant all-pairs projection gives b = 0.
+        The owner reverted the default to q_at() on 2026-11-20 (α_em⁻¹ form B
+        at 495σ at this pin; PRs #8562/#8565). Use only in labelled
+        one-term-vs-two-term comparisons."""
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            vol = vol_4_1_at(dps + 15)
+            mp_me = _mp.mpf(MASS_RATIO_P_E_STR)
+            q = _mp.findroot(
+                lambda x: _proton_identity_residual(x, vol, mp_me, True),
+                _mp.mpf("1.10997859"),
+            )
+            _mp.mp.dps = max(prev, dps)
+            return +q
+        finally:
+            _mp.mp.dps = prev
+
+    def check_proton_pin_self_consistency(dps: int = _DPS_DEFAULT) -> dict:
+        """Self-consistency of both derived proton pins: the one-term identity
+        residual at q_at(dps) and the two-term identity residual at the
+        comparison pin q_proton_two_term_at(dps) must vanish to the working
+        precision, and the independent Newton solver q_two_term_borromean_at
+        must agree with the comparison pin. Raises AssertionError on failure;
+        returns the measured figures."""
+        with _mp.workdps(dps + 20):
+            vol = vol_4_1_at(dps + 20)
+            mp_me = _mp.mpf(MASS_RATIO_P_E_STR)
+            tol = _mp.mpf(10) ** (-(dps))
+            q1 = q_at(dps + 10)
+            r1 = _proton_identity_residual(q1, vol, mp_me, False)
+            q2 = q_proton_two_term_at(dps + 10)
+            r2 = _proton_identity_residual(q2, vol, mp_me, True)
+            q_newton = q_two_term_borromean_at(dps + 10)
+            assert abs(r1) < tol, f"one-term pin residual {r1} ≥ {tol}"
+            assert abs(r2) < tol, f"two-term comparison pin residual {r2} ≥ {tol}"
+            assert abs(q2 - q_newton) < tol, f"two-term solvers disagree: {q2 - q_newton}"
+            return {"one_term_residual": r1, "two_term_residual": r2,
+                    "two_term_minus_newton": q2 - q_newton}
+
     def q_str(dps: int = _DPS_DEFAULT) -> str:
         """Return q as a decimal string at requested precision —
         the canonical witness-JSON / Clarabel-HP serialisation."""
@@ -446,6 +525,12 @@ try:
     # references `Q_50_DIGIT_STR` or an `_MP` constant, against 116 for the
     # `_MP` constants alone.  Bean `qou-5eg1`, still open on that half.
     Q_50_DIGIT_STR = _mp.nstr(Q_MP, 50, strip_zeros=False)
+    # The TWO-TERM proton pin, DERIVED (never typed), for explicit
+    # one-term-vs-two-term COMPARISON producers only. NOT a default: the
+    # owner reverted the default to the one-term pin on 2026-11-20.
+    with _mp.workdps(_DPS_DEFAULT):
+        Q_PROTON_TWO_TERM_50_DIGIT_STR = _mp.nstr(
+            q_proton_two_term_at(_DPS_DEFAULT), 50, strip_zeros=False)
 
     # ── THE MUON PIN'S ONE NAMED HOME (bean qou-5op4) ──────────────
     #
@@ -718,6 +803,12 @@ except ImportError:
 
     def q_at(dps: int = _DPS_DEFAULT):
         raise RuntimeError("q_at requires mpmath; install it with `pip install mpmath`")
+
+    def q_proton_two_term_at(dps: int = _DPS_DEFAULT):
+        raise RuntimeError("q_proton_two_term_at requires mpmath; install it with `pip install mpmath`")
+
+    def check_proton_pin_self_consistency(dps: int = _DPS_DEFAULT) -> dict:
+        raise RuntimeError("check_proton_pin_self_consistency requires mpmath")
 
     def q_str(dps: int = _DPS_DEFAULT) -> str:
         raise RuntimeError("q_str requires mpmath; install it with `pip install mpmath`")

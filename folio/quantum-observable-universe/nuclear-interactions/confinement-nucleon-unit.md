@@ -1,4 +1,4 @@
-The confinement LP proof and the Gram degeneracy theorem jointly justify treating nucleons as atomic units in the transfer matrix chain. The proof is purely algebraic. We use LP duality, Gram matrix eigenstructure, and braid group realizability. No physics assumptions enter.
+The confinement LP proof and the Gram degeneracy theorem jointly justify treating nucleons as atomic units in the transfer matrix chain. The proof is purely algebraic. The argument uses LP duality, Gram matrix eigenstructure, and braid group realizability. No physics assumptions enter.
 
 **Statement.** The inter-nucleon transfer matrix uses nucleon strand types $p, n$ with crossing coefficients $pp: (1,0)$, $nn: (1,-h_{\mathrm{A}})$, $pn: (1,-h_{\mathrm{A}}/2)$, without resolving the internal quark structure. This is exact because:
 

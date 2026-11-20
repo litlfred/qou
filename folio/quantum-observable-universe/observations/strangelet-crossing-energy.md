@@ -1,4 +1,4 @@
-*Let $\mathcal{S}_N$ be a composite of $N$ baryon-number units of strange quark matter. Each unit contains one up, one down, and one strange quark in a Borromean triple $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$ linked by the Hopf link $\mathcal{L}_H$. We have:*
+*Let $\mathcal{S}_N$ be a composite of $N$ baryon-number units of strange quark matter. Each unit contains one up, one down, and one strange quark in a Borromean triple $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$ linked by the Hopf link $\mathcal{L}_H$. Explicitly:*
 
 *1. Electromagnetic neutrality.*
 *The Coulomb charge ([Coulomb charge](#def:coulomb-charge)) of each baryon-number unit vanishes:*

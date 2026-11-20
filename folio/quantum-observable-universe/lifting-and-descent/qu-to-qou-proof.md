@@ -1,5 +1,5 @@
 [Yekutieli lifting](#prop:yekutieli-lifting) establishes that the constructed
-brane tower satisfies the Quantum lifting condition.  We prove each
+brane tower satisfies the Quantum lifting condition.  One proves each
 structural property in turn.
 
 *Item (1): :refterm[Descent]{#descent} terminates.*
