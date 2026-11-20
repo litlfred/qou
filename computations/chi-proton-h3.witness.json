@@ -7,9 +7,13 @@
   "n_partitions": 3,
   "n_partitions_total": 3,
   "partial": false,
-  "compute_time_sec_so_far": 0.23338103294372559,
-  "workers": 4,
+  "convention": "averaged-crossings",
+  "convention_fingerprint": "sigma:6+sigma_inv:3+averaged:2",
+  "compute_time_sec_so_far": "0.299",
+  "workers": 1,
   "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Symbolic in q. chi_lambda_symbolic returns q_character_on_braid_word(shape, crossings, Q) with Q a sympy Symbol, so chi_q_symbolic holds rational functions of a formal q, not values at a substrate anchor. convention and convention_fingerprint derive from the braid word; the remaining fields are partition counts, timings and worker count. No field in this payload is evaluated at q0.",
   "chi_lambda_symbolic": [
     {
       "partition": [
@@ -22,7 +26,7 @@
         2,
         1
       ],
-      "chi_q_symbolic": "(q**22 + q**20 + q**18 + q**14 - q**8 - q**4 - q**2 - 1)/(4*q**11)"
+      "chi_q_symbolic": "(q**22 - 3*q**20 + 7*q**18 - 13*q**16 + 15*q**14 - 19*q**12 + 19*q**10 - 15*q**8 + 13*q**6 - 7*q**4 + 3*q**2 - 1)/(4*q**11)"
     },
     {
       "partition": [
@@ -32,12 +36,5 @@
       ],
       "chi_q_symbolic": "(-q**4 - 2*q**2 - 1)/(4*q**5)"
     }
-  ],
-  "engine": "python",
-  "scriptFile": "per_irrep_pole_atom.py",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
-  "convention": "averaged-crossings",
-  "convention_inferred_by": "chi_convention_audit.py --fix (producer:delta_lambda_empirical_tabulation.py)",
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  ]
 }

@@ -9,9 +9,11 @@
   "partial": false,
   "convention": "averaged-crossings",
   "convention_fingerprint": "sigma:5+sigma_inv:4+averaged:2",
-  "compute_time_sec_so_far": "0.212",
-  "workers": 4,
+  "compute_time_sec_so_far": "0.353",
+  "workers": 1,
   "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Symbolic in q. chi_lambda_symbolic returns q_character_on_braid_word(shape, crossings, Q) with Q a sympy Symbol, so chi_q_symbolic holds rational functions of a formal q, not values at a substrate anchor. convention and convention_fingerprint derive from the braid word; the remaining fields are partition counts, timings and worker count. No field in this payload is evaluated at q0.",
   "chi_lambda_symbolic": [
     {
       "partition": [
@@ -24,7 +26,7 @@
         2,
         1
       ],
-      "chi_q_symbolic": "(q**22 + q**20 + q**18 + q**12 - q**10 - q**4 - q**2 - 1)/(4*q**11)"
+      "chi_q_symbolic": "(q**22 - q**20 - q**16 - 2*q**14 + q**12 - q**10 + 2*q**8 + q**6 + q**2 - 1)/(4*q**11)"
     },
     {
       "partition": [
