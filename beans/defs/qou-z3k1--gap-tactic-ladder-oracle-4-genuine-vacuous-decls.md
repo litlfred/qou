@@ -9,7 +9,7 @@ tags:
     - reorg-2026-10-04
     - lean
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-11-15T20:59:00Z
+updated_at: 2026-11-20T09:10:00Z
 parent: qou-6qbv
 ---
 
@@ -264,3 +264,7 @@ re-work item 1. The file is also candid about it in its own docstring
 
 - PR: https://github.com/litlfred/qou/pull/8001 (`claude/qou-z3k1-ajfl-z9fx-2026-11-15`, head `dc257cfe44475b4d418b26d8e48c2b5566459344`)
 - Replaced the standalone `axiom Hadron : ℕ → Type` and vacuous `∃ h', h' = op n h` conjuncts in `folio/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean` with a concrete carrier `HadronState n` (`Hadron n`) and proved braiding involution + alternating sign flip, Hopf-linking two-sided invertibility, skein idempotence + linear mass decomposition, and fusion associativity + mass additivity sorry-free.
+
+## W8 note 2026-11-20 (PR #8533)
+
+`LevelSufficiency` is still a self-assuming projection on main. It cannot be fixed by a cited sorry: `markovTrace` is free `HasMarkovTrace.value` data, so `markovTrace P q = markovTrace P' q` is false for arbitrary instances. The only honest fix is to define the trace from the Hecke character tower (Jones' Markov property). Ledger verdict: genuine, disposition gap-needs-real-markov-trace.

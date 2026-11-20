@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-07-11T18:40:54Z
-updated_at: 2026-11-18T11:45:08Z
+updated_at: 2026-11-20T09:10:00Z
 parent: qou-rtxm
 pr: 8189
 ---
@@ -53,3 +53,11 @@ Now the epic for P3.HON under Lean / Mathlib foundations.
 - Formalized in `QOU.Foundations.AxiomDischargedScopeUnencodedCarrierFilterDownstreamInstanceBindingDeLaunderedEnrichmentSiblingPreservationRebuild` (`folio/quantum-observable-universe/lean/QOU/Foundations/AxiomDischargedScopeUnencodedCarrierFilterDownstreamInstanceBindingDeLaunderedEnrichmentSiblingPreservationRebuild.lean`).
 - 80-dps `mpmath` probe & 2-commit witness (`849ef0b15f72606c848eb897a5fda003d289f504` -> `2fff5cb2db76633d952c403baec2a6519c2cf61d`, `scriptHash = scriptSha256 = 2a824ebc8929957fb1b4acfb6fc295d57631c4e806a1217ab45cd79c79b1902b`).
 - PR: https://github.com/litlfred/qou/pull/8474
+
+## W8 (2026-11-20, PR #8533, branch claude/devacuify-live-audit-2026-11-20)
+
+Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 skipped because open round-PRs #8180/#8189/#8218/#8225/#8304 touch them).
+- Proved: `proton_neutron_indistinguishable` (was `f 3 = f 3`; Borromean closure count now computed), `ordering_extends` (was P -> P; now StrictMono relabelling), `ordering_compatible` + `direct_limit_terminates` (axioms -> theorems), `ew_interface_knot` (free-N equations -> computed H_6 skeleton), `wenzl_qmn_synergy` (combined bound derived).
+- Cited sorry: `fiber_adjoint_involution_exists`, `QuantumObservableUniverse.exists_instance` (were self-assuming projections).
+- Ledger: all 325 keys and the probe baseline still named `content/` paths after #7485, so --check-ledger saw no verdicts and seeding was silently empty. Re-keyed; 7 verdicts recorded. Un-reviewed 96 -> 75.
+- Left for the owner (W8 ask on #8526): terms_2_6_higher_operations, spectral_sequence_h3_explicit, algebraic_quantum_volume_specialization. GAP: LevelSufficiency (see qou-z3k1), toffoli (qou-3j5m).

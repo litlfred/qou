@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T11:55:14Z
-updated_at: 2026-10-04T15:25:25Z
+updated_at: 2026-11-20T09:10:00Z
 parent: qou-6qbv
 ---
 
@@ -65,3 +65,7 @@ this bean records the measurement, not the drain. The drain is a per-entry judge
 - Formalized in `QOU.Foundations.VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene` (`folio/quantum-observable-universe/lean/QOU/Foundations/VacuityLedgerStalenessCuspedDualityAntiLaunderingCharacterParityPruneJetAlgebraicDependenceAutoImplicitHygiene.lean`).
 - 80-dps `mpmath` probe & 2-commit witness (`5ba819e89853dd16d98b7a750bedb3288386e5e6` -> `c6ba78e1f151ade6d4ae42cccb2d5eab6465b42f`, `scriptHash = scriptSha256 = af1cbee43424d4e7536db47834cc2df1049ef3dcaa3bf27b824e4d7f5424ee91`).
 - PR: https://github.com/litlfred/qou/pull/8469
+
+## W8 note 2026-11-20 (PR #8533)
+
+Root cause of most staleness found: after the content/ -> folio/ rename (#7485) every ledger key and every `vacuous-prop-carrier-baseline.json` key still named `content/`, so no verdict matched and probe seeding returned nothing. Both re-keyed in #8533 (verdicts and file_sha untouched). Un-reviewed candidates 96 -> 75. The 4 keys naming deleted files were left as they were.
