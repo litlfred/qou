@@ -383,3 +383,11 @@ range. Not fixed here.
 - **Status:** `in-progress` (opened `litlfred/qou#8316`, branch `claude/round59-devacuify-6qbv-b9cj`, HEAD `53b4a670e74a8018b8da97a71f572d818338e732`, C1 `76d4ce5f89f2c26a87c0da074bf6c76b37e0ea03`).
 - **Target:** `folio/quantum-observable-universe/lean/QOU/QBeta/QPochhammerPoles.lean` + 80-dps witness `computations/probes/round59-devacuify-6qbv-b9cj.witness.json` (`scriptHash = 80c9bce8d43a`, `allPassed = true`, `0` `float64`).
 - **Updated at:** `2026-11-17T10:55:34Z`.
+
+## 2026-11-20 — w16 note: Finding 1 appears already addressed on main
+
+`mass-theory/algebraic-geometric-dilog-equivalence.md` clause (1) now reads "in bijection
+with the **n ideal tetrahedra** of a hyperbolic triangulation of … K_S, the root of index
+k labelling the tetrahedron whose shape parameter it seeds", and `thurston-relaxation.md`
+matches. The n-set ↔ 4-set mismatch is gone (cardinalities agree). Whether such an
+n-tetrahedron triangulation exists for every n is the open conjecture itself. Not edited.

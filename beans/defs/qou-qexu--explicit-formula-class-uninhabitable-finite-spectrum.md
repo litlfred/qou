@@ -159,3 +159,20 @@ Re-close it when the work its body names is actually done.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+## 2026-11-20 — w16: the ordered-infinite-spectrum carrier, and what it forces (PR #8535)
+
+Added the repair this bean names, in `q-geometric-langlands/explicit-formula.lean`:
+`QZetaDatumSeq` (spectrum `ℕ → ReebEigenvalue`, order part of the data) and
+`class QExplicitFormulaSeq` (partial spectral sides converge to `ψ_q(X)` for every
+`X > 1`). **No instance** — open, §3b.
+
+Proved, sorry-free (`[propext, Classical.choice, Quot.sound]`, lean-direct exit 0):
+- `partialSpectral_unbounded` — conditional on the class, the ordered partial spectral
+  sums are unbounded on `(1, √2]`;
+- `not_qExplicitFormulaSeq_of_bounded` — uniformly bounded partial sums exclude a datum;
+- `not_qExplicitFormulaSeq_of_summable` — a summable majorant `√2^{|Re ρ_n|}/‖[ρ_n]_q‖`
+  excludes it. So conditional, order-dependent convergence near `X = 1` is **forced**.
+
+Still open: whether `QExplicitFormulaSeq` has any instance (needs the Mellin/contour
+route the docstring names). Bean stays open.

@@ -162,3 +162,19 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 - **Status**: `in-progress` (awaiting Merge Manager merge of `litlfred/qou#8235` at `83fd5b4cb41e61d75f72ddd82bda505e34bd92f4`).
 - **Lean Formalization**: `QOU.QBeta.ThimbleDecompositionAndSymmetricPolytopeBrick.symmetric_angle_polytope_barycenter_fixed_and_strict_concave_gap` (Swap invariance and exact quadratic concavity gap F_max - F(x, y) = (kappa/2)*(x - y)^2 >= 0 on the symmetric angle-structure hyperplane x + y = S.)
 - **80-dps Witness**: `computations/probes/thimble-decomposition-and-symmetric-polytope-brick.witness.json` (`scriptHash: e55db77fb2bb`, `scriptCommitSha: 6020aea5785046b552772c9a42fc52ac2db9f3a2`).
+
+## 2026-11-20 — w16: (iv) analytic half CLOSED for both anchors (PR #8535)
+
+This bean's "what remains is (iv)" was stale: single-tetrahedron Rivin concavity is in
+`Knot/RivinConcavity.lean` / `RivinConcavitySimplex.lean`, and `MultiTetVolumeConcave`
+gave m004 uniqueness. What was missing was **existence** — uniqueness alone is vacuous.
+
+- `Knot/M004VolumeMaximum.lean`: `regularPoint_isMax`, `isMax_iff_regular`,
+  `totalVol_regularPoint = 2·Cl₂(π/3)`. Per-tetrahedron Milnor; gluing equation unused.
+- `Knot/L6a4VolumeMaximum.lean`: `deriv_line_zero` (first-order condition = a linear
+  combination of the 8 tet equations and edges 1,2,5,6), `vol_le_regularOctahedron`,
+  `vol_lt_regularOctahedron`. Uses the edge equations.
+
+All sorry-free; QOU import cone rebuilt from current source, lean-direct
+`-DautoImplicit=false` exit 0. **Still open:** the volume functional is DEFINED as the
+Lobachevsky sum; that it is the hyperbolic volume is `qou-idvt` T2. Bean stays open on that.
