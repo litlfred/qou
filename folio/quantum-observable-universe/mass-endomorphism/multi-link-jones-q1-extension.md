@@ -21,10 +21,10 @@ Two combination values are recorded alongside: $J_{\mathrm{Hopf}} \cdot J_{\math
 
 ## Failure of the simple multi-link pattern
 
-We posit three structural hypotheses for the 50–3000$\times$ mismatch:
+One posits three structural hypotheses for the 50–3000$\times$ mismatch:
 
 1. **Precision-ladder normalisation revision**: the $b^k$ factor multiplying $c_k$ beyond $k = 4$ may carry an extra Wedderburn-weight or coupling-constant prefactor not captured by the $(b \cdot \hbar_q^2)^k$ expansion ansatz.
 2. **Sum-over-Wedderburn-blocks**: multi-link contributions enter via a non-trivial sum over $\lambda \vdash n$ rather than as a direct scalar multiple of a single Jones value. The $y_\lambda$ normalisation in the Wenzl bridge could redistribute weight in a way that magnifies single-Jones values into the empirical $c_5, c_6$ scale.
 3. **New categorical input at $k \geq 5$**: a higher-rank irrep coupling, a Mostow rigidity gap correction, or a non-trivial Habiro residue contribution may enter only at orders $k \geq 5$.
 
-We must test whether the per-Wedderburn-block contribution at $k = 5, 6$ matches the empirical values when properly weighted by the $q$-deformed dimensions $\dim_q(V_\lambda)$. This requires extending the Wenzl-bridge $y_\lambda$ infrastructure to $\varepsilon^{10}, \varepsilon^{12}$ evaluations of the $\mathrm{tr}_M$ expansion on $V_{(2,1)}, V_{(3)}, V_{(1,1,1)}$ separately.
+One must test whether the per-Wedderburn-block contribution at $k = 5, 6$ matches the empirical values when properly weighted by the $q$-deformed dimensions $\dim_q(V_\lambda)$. This requires extending the Wenzl-bridge $y_\lambda$ infrastructure to $\varepsilon^{10}, \varepsilon^{12}$ evaluations of the $\mathrm{tr}_M$ expansion on $V_{(2,1)}, V_{(3)}, V_{(1,1,1)}$ separately.

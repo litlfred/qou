@@ -12,7 +12,7 @@ The leading-order coefficients at $O(w)$ are $-2$ for the $(3)$ block, $-1$ for 
 
 The following extensions build the structural infrastructure for any future $\Delta\mathrm{tr}_M$ closure attack.
 
-**Extension 1: Surrogate closed form.** We define the non-canonical rational surrogate weights $y_\lambda^{\text{surr}}(q)$ matching the per-block dimension structure $\{q^2, q, 1\}/((1+q)(1+q+q^2))$. The resulting trace difference closed form is:
+**Extension 1: Surrogate closed form.** One defines the non-canonical rational surrogate weights $y_\lambda^{\text{surr}}(q)$ matching the per-block dimension structure $\{q^2, q, 1\}/((1+q)(1+q+q^2))$. The resulting trace difference closed form is:
 
 $$
   \Delta\mathrm{tr}_M^{\text{surr}}(q) =

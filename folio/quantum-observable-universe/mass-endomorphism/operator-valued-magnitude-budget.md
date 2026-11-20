@@ -20,4 +20,4 @@ Summing across all $35$ $(\lambda, \mu, \nu)$ blocks of the $H_6$ deuteron-inter
 
 The operator-valued residual magnitude **exceeds** the scalar approximation magnitude. Symmetric scalar substrate ansätze recover less than half of the structural Frobenius content of the $A^\lambda_{\mu,\nu}(I)$ family.
 
-This quantitative magnitude budget forces the structural conclusion. The symmetric scalar substrate cannot account for the empirical Z$\leftrightarrow$N-asymmetric mass-formula residuals ($\Delta_{\text{coupling}}$ +0.796 MeV; T5 −0.325 MeV). We construct these residuals to be operator-valued at the per-Wedderburn-block level.
+This quantitative magnitude budget forces the structural conclusion. The symmetric scalar substrate cannot account for the empirical Z$\leftrightarrow$N-asymmetric mass-formula residuals ($\Delta_{\text{coupling}}$ +0.796 MeV; T5 −0.325 MeV). One constructs these residuals to be operator-valued at the per-Wedderburn-block level.

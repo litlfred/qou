@@ -57,7 +57,7 @@ $$
 - The polynomial part has degree 5 in $q$. Its $\varepsilon^k$ coefficient at $q = 1 + \varepsilon$ vanishes for $k \geq 6$.
 - The geometric part $\frac{q^{-1}}{4} = \frac{1}{4(1 + \varepsilon)} = \frac{1}{4} \sum_{k \geq 0} (-1)^k \varepsilon^k$ contributes $\frac{(-1)^k}{4}$ at every order $k$.
 
-For $k \geq 6$, we therefore have:
+For $k \geq 6$, one therefore has:
 
 $$
   [\varepsilon^k]\;\bigl(\chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)\bigr)\big|_{q = 1 + \varepsilon}

@@ -96,7 +96,7 @@ same $\mathfrak{V}$.
   proven at $q=1$ via Plancherel duality
   ([Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product](../mass-theory/block-multiplicativity-v-free.md)).
   The $q$-deformed case remains class-axiomatized (conjectural).
-- **Conjectural (the unification itself).** We conjecture that the physical binding
+- **Conjectural (the unification itself).** It is conjectured that the physical binding
   and $\mathfrak{Q}_\beta$ construct the Re/Im of the **same** $\mathfrak{V}$
   at a single normalization.
 - **Literature.** Geometric complex volumes carry a quantum tower: the quantum
