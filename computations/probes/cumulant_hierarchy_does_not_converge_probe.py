@@ -133,6 +133,7 @@ dimensionless values.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys
 import time
 import warnings
@@ -170,7 +171,7 @@ _Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
 HF, DPN = float(_H), float(D_PN)
 _MEM = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
-ALPHA = float(_MEM / (_Q * (_Q - 1)))
+ALPHA = float(_qbeta_e0.order_zero_scaled(_MEM, _Q))
 B_P = (0.0, 0.5, 0.5)
 B_N = (0.5, 0.5, 1.0)
 ORDER = "pnpnn"          # 5He at production ordering

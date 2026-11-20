@@ -46,6 +46,7 @@ element at all (qou-99qc / PR #7212 -- the gamma-gamma ruling says braid words
 are gamma-gamma-selected, not census-selected), and whether the binding channel
 has been migrated off convention C at all (it has not -- qou-46ys).
 """
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys, pathlib, math
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -69,7 +70,7 @@ me = mpf(str(C.M_E_MEV))
 QEXP = mpf(str(C.Q_NEUTRON_MEV))
 h = q - 1 / q
 hbar = 1 - 1 / q
-E0 = me / (q * (q - 1))
+E0 = _qbeta_e0.order_zero_scaled(me, q)
 PPB = mpf(10) ** 9
 
 print("PART 1 - the 337,429x decomposes into ladder x functional")
