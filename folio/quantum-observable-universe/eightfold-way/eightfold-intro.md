@@ -23,7 +23,7 @@ Schur--Weyl duality \cite{jimbo1986}
 the partner acting
 on the *fibre* $V$, and which appears only when $\dim V = N = 3$.  The two
 $A_2$s coincide in name --- and in this chapter's diagrams --- solely
-because we have set $n = 3$ and would like $N = 3$.  Setting $n = 3$ does
+because $n = 3$ has been set and $N = 3$ is wanted.  Setting $n = 3$ does
 not make $N = 3$.
 
 This distinction is the chapter's central honesty constraint, and the
