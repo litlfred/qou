@@ -1,14 +1,14 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:01:08.074497+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T15:31:41.115703+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "sign_systematically_wrong_all_isotopes",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true
+      "passed": false
     },
     {
       "name": "magnitude_ratio_not_fixed",
@@ -17,12 +17,12 @@
       "passed": true
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 0,
   "computation": "rho-k-counit-isotope-systematics",
   "scriptFile": "rho_k_counit_isotope_systematics.py",
-  "scriptHash": "229b835ceac4",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "b4695a2940fd",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,14 +30,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -57,45 +58,45 @@
         "A": 2,
         "n_partitions": 11,
         "n_nucleon_pairs": 1,
-        "counit_sum_chi": "4.9292101409",
+        "counit_sum_chi": "-0.127063000499",
         "target_minus_B_over_me": "-4.35327704097",
-        "abs_ratio": "1.1322987",
-        "right_sign": false
+        "abs_ratio": "0.029187897",
+        "right_sign": true
       },
       {
         "atom": "T",
         "A": 3,
         "n_partitions": 30,
         "n_nucleon_pairs": 3,
-        "counit_sum_chi": "27.0629731823",
-        "target_minus_B_over_me": "-16.5984685263",
-        "abs_ratio": "1.63045",
-        "right_sign": false
+        "counit_sum_chi": "-2.1205612061",
+        "target_minus_B_over_me": "-16.5984610899",
+        "abs_ratio": "0.12775649",
+        "right_sign": true
       },
       {
         "atom": "3He",
         "A": 3,
         "n_partitions": 30,
         "n_nucleon_pairs": 3,
-        "counit_sum_chi": "44.9872064635",
+        "counit_sum_chi": "-0.682112142957",
         "target_minus_B_over_me": "-15.1038300755",
-        "abs_ratio": "2.9785297",
-        "right_sign": false
+        "abs_ratio": "0.045161534",
+        "right_sign": true
       },
       {
         "atom": "4He",
         "A": 4,
         "n_partitions": 77,
         "n_nucleon_pairs": 6,
-        "counit_sum_chi": "150.35839179",
+        "counit_sum_chi": "-4.36160273295",
         "target_minus_B_over_me": "-55.3732299485",
-        "abs_ratio": "2.7153625",
-        "right_sign": false
+        "abs_ratio": "0.078767353",
+        "right_sign": true
       }
     ],
     "magnitude_ratio_is_fixed": false,
-    "magnitude_ratio_spread_max_over_min": "2.6305158700614952",
-    "sign_systematically_wrong": true,
+    "magnitude_ratio_spread_max_over_min": "4.377036481936331",
+    "sign_systematically_wrong": false,
     "verdict": "The deuteron 13% match is COINCIDENTAL: |Σχ|/|target| grows with A (1.13, 1.63, 2.98, 2.72) — not a fixed missing factor — and the sign is systematically wrong (Σχ>0 vs target<0) for all four. Counit ALONE refuted across the mass range (scope-(a)). BUT the error scales with A alongside the inter-nucleon interface count (D:1, T/³He:3, ⁴He:6), consistent with a missing interface-vortex (Hopf/L±) contribution — the counit+vortex lead, now with an A-scaling signature."
   },
   "context": {

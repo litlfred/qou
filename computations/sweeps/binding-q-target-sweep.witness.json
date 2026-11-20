@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:01:09.071854+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T15:31:42.414584+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "binding_rows_count",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 3,
   "computation": "binding-q-target-sweep",
   "scriptFile": "binding_q_target_sweep.py",
-  "scriptHash": "a31b10e5f2c2",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "cf001373b0d1",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -87,7 +88,7 @@
         "Z": 2,
         "N": 1,
         "A": 3,
-        "B_AME_MeV": "7.718037510",
+        "B_AME_MeV": "7.718041320",
         "sigma_B_MeV": "1.000e-6",
         "sigma_rel_ppb": "129.6",
         "target_100x_ppb": "1.29567",
@@ -117,7 +118,7 @@
         "Z": 3,
         "N": 3,
         "A": 6,
-        "B_AME_MeV": "31.99404550",
+        "B_AME_MeV": "31.99398720",
         "sigma_B_MeV": "5.000e-6",
         "sigma_rel_ppb": "156.3",
         "target_100x_ppb": "1.56279",
@@ -238,11 +239,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-tr-m-via-chi-cache.witness.json",
-        "sha256": "e4dfeb1bac470020b70e46c8ce9c7e657e171f016194ac33cdab0dd32ffd5ac1",
-        "size_bytes": 50530,
-        "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
-        "scriptCommitSha": "ab8268c14522a812f28d3da419909e8321ed8c5f",
-        "computedAt": "2026-08-29T07:03:01.261181+00:00"
+        "sha256": "00755a10379b5c66cbb0830c8e7978ea100c0503a3e997703f4ab70e472e954e",
+        "size_bytes": 50656,
+        "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
+        "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+        "computedAt": "2026-09-07T10:19:50.564121+00:00"
       },
       {
         "path": "mass-table-ppb.witness.json",
