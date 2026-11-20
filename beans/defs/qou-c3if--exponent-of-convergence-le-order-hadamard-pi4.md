@@ -1,7 +1,7 @@
 ---
 # qou-c3if
 title: 'PROVE(lean): exponent of convergence <= order (Hadamard PI-4), from Mathlib Jensen + counting'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - paper-qou
     - reorg-2026-10-04
 created_at: 2026-08-08T03:30:00Z
-updated_at: 2026-10-04T15:22:27Z
+updated_at: 2026-11-20T19:12:45Z
 parent: qou-t5uj
 ---
 
@@ -150,3 +150,17 @@ quotient. Nothing here implies it does.
 - 80-dps mpmath probe: `computations/probes/dyadic_shell_summation_central_idempotent_fiber_adjoint_planar_transfer_pivotal_monoidality_probe.py`
 - Witness: `computations/probes/dyadic-shell-summation-central-idempotent-fiber-adjoint-planar-transfer-pivotal-monoidality.witness.json` (`scriptHash = 65da05b0114c`, `scriptCommitSha = e3073696f062c7ba6a16becdc35a768b99bba3c2`)
 - PR: https://github.com/litlfred/qou/pull/8382 (`eaf480ab4ed647b2e4dc199177fe5aeacf717fb8`)
+
+## 2026-11-20 — DONE (PR #8651)
+
+`QOU/Mathlib/ExponentOfConvergence.lean`, sorry-free, standard axioms:
+`summable_divisor_mul_rpow_neg` — for `IsEntireOfOrderLE f ρ`, `0 ≤ ρ`, `f 0 ≠ 0`, `σ > ρ`,
+`Σ_u ord_u(f)·‖u‖^{−σ}` is summable over ℂ (zeros encoded by Mathlib's `divisor f univ`).
+Route: `count_le_rpow` (n(r) ≤ K r^ρ for r ≥ 1, from Jensen via `zero_count_le`, bean qou-bp5n),
+then dyadic shells + geometric series. Eps-form corollary
+`summable_divisor_mul_rpow_neg_of_forall_gt` takes `IsEntireOfOrderLE f ρ'` for all ρ' > ρ;
+that classical "order ≤ ρ" implies this is NOT proved.
+
+Per the ROAST: this closes one of PI-5's three inputs, not PI-5. Still open: genus `p ≤ ρ`,
+canonical product of order ≤ ρ, quotient = exp(poly). The phiBProd applicability question
+(minimality on the two entire halves) is untouched.
