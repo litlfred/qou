@@ -149,3 +149,17 @@ Population: status `in-progress` and front-matter `updated_at` < 2026-11-13 on t
 5. Every bean not held by a PR or a live front (18) read by hand. A DONE verdict needs a work commit that is an ancestor of `origin/main`.
 
 **Not done, and why.** The 947 batch-held beans were not read one by one: their status is set by the PR, and reading them would duplicate the batch-PR review. `qou-bstl` measured that commit-subject heuristics for "done" are 2-in-12 precise, so no row here is marked DONE from a heuristic alone.
+
+## Addendum — platform/tooling triage (epics `qou-5vkl`, `qou-n4r9`)
+
+Measured 2026-11-20. **No fix was made.** None of the seven items has a change that increases precision or is fixed by a corpus artifact, so under the ask-owner rule each is reported here.
+
+| bean | state now (measured) | proposal |
+|---|---|---|
+| `qou-4jhp` qa-sweep cannot load at pin b61e856 | **Fixed on main:** `a3d3aec2c27` (2026-11-15) bumps the pin to `82b389982` on owner ruling P1 = B. `bun …/qa-sweep.ts --help` exits 0 here (lite platform mount). The `publish.yml` break the bean also records is the subject of `qou-w5av` / `qou-pwp9`. | DONE candidate (cite `a3d3aec2c27`). The open batch PR naming it decides the timing (batch D). |
+| `qou-cvx9` uploads→library key divergence | Part A merged (#6978, #7041). The INDEX damage the bean records is **gone**: 793 dirs − 769 index rows = 24 = 22 `duplicate_of` + 1 container (`ant-v14-n7-s`) + `codata-2022`, a dataset dir with no `structure.json`. What remains is the bean's own "claim mechanism" process proposal. | Close after the process proposal is either filed as its own bean or dropped (owner). Held by batch PR #8453. |
+| `qou-99fk` qa-sweep writes into tracked `test/attestations` | Owner decision 6a (2026-10-10): leave as is. | DONE-by-ruling candidate. Held by batch PR #8442. |
+| `qou-grph` qa-staleness never computes the `graph` hash | The fix is in `qa-staleness.ts` in `litlfred/folio-assistant`. The mount here (`folio-assistant-lite`) is not a git repo. | Needs that repo attached. Nothing to do in qou. |
+| `qou-r13s` root `lake build` evicts a restored cache | Still a deliberate non-measurement. Testing it means a root `lake build` against the **shared** cache six children use today. | Do not test this session. Keep `todo`. |
+| `qou-sogb` r5 solver: scriptHash matches but 733 fields move | A changed search result (winner L 4→6), not precision. This is research on a producer. | Not mechanical. Keep open. |
+| `qou-6cm9` setsid/nohup jobs die at session boundaries | A harness-behaviour finding; "survives a resume" is still unmeasured. | Keep open. The coordinator contract already says to use `run_in_background`. |
