@@ -5,12 +5,12 @@ import Mathlib.Algebra.BigOperators.Ring.Finset
 /-!
 # Explicit central idempotents on the real Hecke algebra (bean `qou-2150`, owner ruling D2)
 
-The carrier `ExplicitCentralIdempotentConjecture` in
-`QOU.BraidKnot.ExplicitCentralIdempotent` states the Murphy–Lagrange conjecture about an
-`opaque` element `centralIdempotent : R` of a **commutative** ring, with projectors valued in
-`R`. Idempotency and orthogonality there are statements about scalars, so no proof of the
-conjecture can be written against it. The owner ruled on 2026-11-20 (D2) to re-state it over the
-real Iwahori–Hecke algebra `QOU.SchurWeyl.Hecke`.
+The former carrier `ExplicitCentralIdempotentConjecture` stated the Murphy–Lagrange conjecture
+about an `opaque` element of a **commutative** ring, so no proof could be written against it. The
+owner ruled on 2026-11-20 (D2) to re-state it over the real Iwahori–Hecke algebra
+`QOU.SchurWeyl.Hecke`. The statement is now proved for every `n`
+(`ExplicitCentralIdempotentGeneral.explicit_central_idempotent_cross_checks`), and the carrier was
+retired the same day (owner, "2").
 
 This module is the first step:
 
