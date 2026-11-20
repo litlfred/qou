@@ -36,7 +36,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Crossing energy and Coulomb charge",
+      title: "Crossing energy, skein asymmetry, and the Coulomb–strong ratio",
       label: "sec:crossing-energy",
       blocks: [
         // def:crossing-energy and def:coulomb-charge relocated to

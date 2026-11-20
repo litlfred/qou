@@ -20,7 +20,7 @@ A function taking only the values $0$ and $1$ is visibly not Conway's birthday, 
 
 The average bound is documented in the corpus as "exactly Conway's $\{L \mid R\}$ recipe" and as "genuinely independent" of the sum bound. Under $\beta$ it holds for a reason that has nothing to do with either: the right-hand side is at least $0 + 1 = 1$ whatever $x$ and $y$ are, and the left-hand side is at most $1$ because $\beta$ is bounded by $1$. The inequality is satisfied by slack alone. Under a bounded birthday the axiom constrains nothing.
 
-That is the sharpest form of the defect. The axiom carrying the most design commentary is the one the unintended model satisfies most trivially, and no amount of reading the commentary would reveal that — only exhibiting the model does.
+That is the sharpest form of the defect. The axiom carrying the most design commentary is the one the unintended model satisfies by default, and no amount of reading the commentary would reveal that — only exhibiting the model does.
 
 ## What follows, and what does not
 

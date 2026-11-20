@@ -435,11 +435,10 @@ export default chapter({
         "moduli-symmetry-d4",
         "moduli-symmetry-d4-proof",
         "moduli-symmetry-d4-novelty",
-        "outro-predicted-spectra",
       ],
     }),
     section({
-      title: "JWST observations and aeon initiations",
+      title: "Spectrahedral Phase Collapse, Tilting Rigidity, and Conformal Invariance",
       label: "sec:jwst-aeon-initiations",
       blocks: [
         "jwst-aeon-initiations-intro",
@@ -452,6 +451,7 @@ export default chapter({
         "gauge-conformal-invariance",
         "gauge-conformal-invariance-proof",
         "gauge-conformal-invariance-interpretation",
+        "outro-predicted-spectra",
       ],
     }),
   ],

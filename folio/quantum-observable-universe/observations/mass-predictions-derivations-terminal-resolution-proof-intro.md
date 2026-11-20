@@ -1,8 +1,1 @@
-Continuation of the preceding sub-section.
-
-This sub-section specialises the methodology to per-particle derivations.
-The terminal-resolution proof closes the mass prediction at the per-particle
-level. The terminal-resolution parameter $c_z$ pins the chirality-dependent
-constant. Finally, the $W$-boson mass discrepancy analysis assembles the
-most precise substrate-level mass prediction and evaluates its empirical
-gap against PDG values.
+Completing the per-particle mass derivations requires linking the dimensionless baryonic bulk volume to the electroweak gauge sector. This section establishes the terminal-resolution proof and its chirality constant $c_z$, and evaluates the predicted $W$-boson mass $m_W$ and its seven diagnostic comparison tables against the PDG 2024 world average and high-precision collider measurements.

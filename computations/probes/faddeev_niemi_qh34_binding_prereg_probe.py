@@ -72,6 +72,7 @@ B_SYM_PER_A_FROM_AUDIT: dict[str, str] = {
 }
 
 # Pre-registered decision bounds.
+mp.mp.dps = max(DPS, mp.mp.dps)
 SUPPORT_MAX_REL = mp.mpf("0.10")
 REFUTE_MAX_REL = mp.mpf("0.25")
 P_WINDOW = (mp.mpf("0.70"), mp.mpf("0.80"))

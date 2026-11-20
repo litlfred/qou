@@ -27,9 +27,7 @@ $$
 
 ## Which weight this is, and why it changed
 
-**Restated over $\mathbb{M}_{n,q}$ on 2026-09-05.** This proposition previously pushed forward the $q$-deformed Wedderburn weight $w_\lambda^{(n)}(q) = \dim_q^2(\lambda)/[n]_q!$ and cited a variance bound for clause 2. That citation did not transfer: the cited asymptotics are proved for $\mathbb{M}_{n,q}$, and $\mathbb{M}_{n,q}$ is not $w_\lambda^{(n)}$ — the two disagree per partition by a relative $978$ at $n = 12$ at the substrate, so no rescaling connects them. The clause was disclaimed rather than dropped.
-
-**The repair is that the corpus already holds $\mathbb{M}_{n,q}$, under the name "Molien".** The Molien / fake-degree weight of `QOU.MathlibExt.MolienFakeDegreeGeneralN.molienSum` satisfies, *exactly*,
+**Identification of $\mathbb{M}_{n,q}$ with the Molien fake-degree measure.** Note that the Plancherel measure $\mathbb{M}_{n,q}$ governing clause 2 is distinct from the squared-quantum-dimension weight $w_\lambda^{(n)}(q) = \dim_q^2(\lambda)/[n]_q!$; rather, $\mathbb{M}_{n,q}$ coincides with the Molien fake-degree weight of `QOU.MathlibExt.MolienFakeDegreeGeneralN.molienSum`, which satisfies
 
 $$
   \frac{f^\lambda \, q^{-\kappa_\lambda} \, \dim_q(\lambda)}{[n]_q!}

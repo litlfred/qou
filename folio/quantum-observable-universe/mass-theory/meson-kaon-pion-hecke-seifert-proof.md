@@ -90,7 +90,7 @@ $m_K^2/m_\pi^2 = [3]_q\,[4]_q + (\alpha_{\mathrm{em}}/\pi)\bigl(1 + \log(1+\hbar
 ([`prop:meson-em-sinh-closed-form`](../braids-and-knots/meson-em-sinh-closed-form.md)),
 which is what the per-observable accuracy dashboard scores. The
 $(q_0^5 - q_0^{-5})(9/5)^2$ form here was formerly used there and was
-withdrawn from that role.
+excluded from that role.
 
 The two agree with each other only to about a part in $3\,400$: the form
 proved here sits at $290$ parts per million, which misses this

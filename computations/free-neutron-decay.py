@@ -579,8 +579,9 @@ _b_fnd = _mp.sqrt(1 - _q2_fnd / ((_q2_fnd + 1) ** 2))
 _qn1_fnd = _qa_fnd * _mp.cos(_alpha_fnd - _b_fnd * (_hbar_fnd ** 2) / 2)
 _qn2_fnd = _qn1_fnd * (1 - (_b_fnd ** 2) * (_hbar_fnd ** 4))
 _qn2_two_term_fnd = _qn2_fnd + _dm_qed_conn_fnd
-_err_qn2_ppm = float((_qn2_fnd - _qb_codata_fnd) / _qb_codata_fnd * _mp.mpf(10) ** 6)
-_err_qn2_two_term_ppm = float((_qn2_two_term_fnd - _qb_codata_fnd) / _qb_codata_fnd * _mp.mpf(10) ** 6)
+_err_qn2_ppm = (_qn2_fnd - _qb_codata_fnd) / _qb_codata_fnd * _mp.mpf(10) ** 6
+_err_qn2_two_term_ppm = (_qn2_two_term_fnd - _qb_codata_fnd) / _qb_codata_fnd * _mp.mpf(10) ** 6
+_err_red_pct = (1 - abs(_err_qn2_two_term_ppm) / abs(_err_qn2_ppm)) * _mp.mpf(100)
 
 witness["two_term_borromean_qed_dressing"] = {
     "lean_ref": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
@@ -593,9 +594,9 @@ witness["two_term_borromean_qed_dressing"] = {
     "Delta_m_QED_conn_q_MeV": str(_dm_qed_conn_q_fnd),
     "Q_N2_MeV": str(_qn2_fnd),
     "Q_N2_two_term_MeV": str(_qn2_two_term_fnd),
-    "Q_N2_vs_CODATA_ppm": _err_qn2_ppm,
-    "Q_N2_two_term_vs_CODATA_ppm": _err_qn2_two_term_ppm,
-    "error_reduction_pct": float((1 - abs(_err_qn2_two_term_ppm) / abs(_err_qn2_ppm)) * 100),
+    "Q_N2_vs_CODATA_ppm": str(_err_qn2_ppm),
+    "Q_N2_two_term_vs_CODATA_ppm": str(_err_qn2_two_term_ppm),
+    "error_reduction_pct": str(_err_red_pct),
 }
 
 # Write beside THIS FILE, not into the caller's cwd. As a bare relative path

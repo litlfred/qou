@@ -180,7 +180,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Hecke $\\chi$-character closed-forms (generation)",
+      title: "Cyclotomic $\\chi$-character closed forms and asymptotic representation theory",
       label: "sec:hecke-chi-closed-forms-chi-per-irrep",
       blocks: [
         "hecke-chi-closed-forms-chi-per-irrep-intro",

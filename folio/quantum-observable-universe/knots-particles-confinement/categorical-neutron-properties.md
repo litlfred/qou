@@ -12,7 +12,7 @@ Under the Markov trace used here, with $\mathrm{tr}_M(e^-) = h z^2 + z$ from the
 
 A crossing-depth mechanism for the neutron–proton mass split is therefore open; the [gluon ledger](#rem:gluon-stabiliser-ledger) carries the full measurement.
 
-What survives unchanged is the *scope* of the enumeration: every non-trivial braid word inside the crossing cap, the trefoil word $e^-$ included, admissible and simply losing the minimisation.
+What remains invariant is the *scope* of the enumeration: every non-trivial braid word inside the crossing cap, the trefoil word $e^-$ included, is admissible and is excluded only because it does not attain the minimum of the objective.
 
 **Step 3: Neutron NF (with Hopf gluon).**
 At $q_0 \approx 1.1100$:

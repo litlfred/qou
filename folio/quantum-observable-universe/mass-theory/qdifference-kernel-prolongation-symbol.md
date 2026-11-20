@@ -61,7 +61,7 @@ with the prolongation symbol remains. It is stated here as a precise,
 falsifiable structural claim — to be *derived* from the prolonged connection's
 local monodromy, not fitted numerically.
 
-> **Scope note (2026-08-26) — $\mathcal{K}$ is irreducible, so consequence 2 is
+> **Scope of Consequence 2 — $\mathcal{K}$ is irreducible, so the rank-1 claim is
 > wrong by exactly one initial condition.** The pure-isoclinic slope-$\tfrac12$
 > statement above has a consequence the conjecture did not draw. A rank-1
 > $q$-difference module over $\mathbb{Q}(q)(x)$ has *integer* slope, and Newton
@@ -102,7 +102,7 @@ local monodromy, not fitted numerically.
 > structural input, but it must be sought as a rank-$2$ symbol, and the closure
 > it would deliver needs a second base case.
 
-> **Scope note (2026-09-03) — what the prolongation operator must look like on
+> **Structure of the prolongation operator on
 > the ramified chart, before it is constructed.** The classical lift
 > $d/dz$ is excluded
 > ([`prop:sw-classical-jet-exactness`](#prop:sw-classical-jet-exactness)), and
@@ -235,7 +235,7 @@ local monodromy, not fitted numerically.
 > "$\sigma \leftrightarrow t$-shift dictionary" they posed as wall W2 is not a
 > question the conjecture asks.
 
-> **Scope note (2026-09-05) — an operator on the curve does not evade the
+> **Branch-locus obstruction on the curve — an operator on $\Sigma$ does not evade the
 > exclusion either, when its base map is a dilation.** The two preceding
 > exclusions constrain the *coefficient field*, so an operator living on
 > $\Sigma$ rather than on a coordinate line is not reached by them. It is
