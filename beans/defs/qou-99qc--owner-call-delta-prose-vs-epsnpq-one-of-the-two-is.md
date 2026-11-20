@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T14:44:09Z
+updated_at: 2026-11-20T14:50:40Z
 parent: qou-10v9
 ---
 
@@ -4075,3 +4075,6 @@ element_conflict_open (PR #8549). Not resolved — still the owner's call. γγ+
 PR #8564: under γγ words + reading 3 (whole word, every tower level) p and n share the survivor set {V³,V⁶,V⁹}; minimal cost p = n = V³ ⇒ Q_β = 0 on the ruled z_D base (Lean qbeta_delta_vanishes_of_frobeniusSelected, frobeniusSelected_ten_unique). Scope (a): the grammar carries no flavour index; the ruling is not excluded. Assigning different survivors to p and n by Q_β is a fit (not adopted). Next: T³-graded split of the trace on V³ (follow-up task opened). Scorecard unchanged. Bean stays open.
 
 **2026-11-20T14:44:09Z — CORRECTION to the entry above (owner, 15:43).** The "Q_β = 0" result of PR #8564 is for the OLD γγ reading only (GammaGammaWordSelection.GammaGammaWord = products of bare σᵢσᵢ₊₁⁻¹; no colour weights, no chirality). It is NOT the prediction of the canonical four-term coloured photon def:photon γ(φ)=1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁ (#8367), whose two-photon product carries independent chiral L₊/L₋ coefficients, nor of the bar-odd (sinh) channel where Q_β lives. "The grammar cannot separate n from p" was mis-stated. Selection is being redone with the four-term chiral photon + odd channel (branch claude/qbeta-flavour-weight-split-2026-11-20).
+
+## 2026-11-20T14:50:40Z — OWNER RULING (not a working assumption): photon last term is σ₀σ₁⁻¹
+Owner (Carl, 2026-11-20 15:47–15:48): "Use γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹ … That was already decided. Why did it get changed back to the wrong form? … Who overrode my decision". The 2026-11-18 19:05Z entry above recorded this as "a working assumption, not a ruling to edit def:photon" — that classification was the recording agent's, and it is why the merged def:photon (8fe7dbecf4, authored 11-17 before the decision; moved to the library e3c658a58b 11-20 07:44; merged in #8367 11-20 08:34) still carries σ₀σ₁. It is now a ruling: def:photon is being corrected (branch claude/photon-chiral-vertex-2026-11-20). All running agents told to use σ₀σ₁⁻¹.
