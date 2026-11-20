@@ -29,8 +29,9 @@
  *       (L4b) a `](#label)` link to a block later in reading order.
  *       Links to back matter and to the block's own table sibling are not
  *       counted.
- *       Both fail in EVERY chapter, the introduction included (owner
- *       ruling 2026-11-20: "All the chapters should be strict"). This
+ *       Both fail in EVERY chapter (owner ruling 2026-11-20: "All the
+ *       chapters should be strict"), except the introduction, which
+ *       previews the paper (PREVIEW_CHAPTERS, same ruling). This
  *       replaces the earlier scoping, in which L4a failed only in Chapter 1
  *       and L4b only in Chapters 1-2, and were advisory elsewhere.
  *
@@ -57,6 +58,8 @@ export interface LeakHit {
 export const Q_INTRO_SECTION = "sec:substrate-parameter";
 /** Back matter a forward link may always point to. */
 export const BACK_MATTER = new Set(["glossary", "notation", "index-of-definitions"]);
+/** Chapters that preview what follows, exempt from L4 (owner ruling 2026-11-20: exempt the introduction). */
+export const PREVIEW_CHAPTERS = new Set(["introduction"]);
 /**
  * Owner rulings 2026-11-20 (second [W14 ask] on #8526, answers 1b / 2a / 3a):
  * - CODE_BY_DESIGN: chapters whose subject IS the formalisation or the code.
@@ -228,13 +231,14 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
     scanned++;
     const src = readFileSync(b.md, "utf8");
     // An outro may name what the next chapter introduces.
-    const premature = b.idx < qIntro && !b.name.startsWith("outro-");
+    const preview = PREVIEW_CHAPTERS.has(b.chapter);
+    const premature = b.idx < qIntro && !b.name.startsWith("outro-") && !preview;
     const srcLines = src.split("\n");
     let hits = scanText(src, { premature, prematureAdvisory: false })
       .filter((h) => classes.has(h.cls))
       .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2")))
       .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")));
-    if (classes.has("L4"))
+    if (classes.has("L4") && !preview)
       unfence(src).forEach((raw, i) => {
         for (const m of raw.matchAll(LINK_RE)) {
           const t = labelIdx.get(m[1]!);

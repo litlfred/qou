@@ -88,5 +88,6 @@ describe("owner ruling 2026-11-20 (every chapter is strict)", () => {
     expect(advisory).toEqual([]);
     const chapters = new Set(reports.map((r: any) => r.chapter));
     expect(chapters.size).toBeGreaterThan(2);
+    expect(chapters.has("introduction")).toBe(false);
   });
 });
