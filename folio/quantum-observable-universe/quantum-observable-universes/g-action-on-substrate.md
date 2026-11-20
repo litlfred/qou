@@ -1,4 +1,4 @@
-We propose that the Frobenius–Hopf substrate $A$ in $\mathbf{Rep}(\mathrm{SU}_q(2))$ admits a unique $G$-equivariant structure under $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. This structure is governed by four constraints linking the categorical data to the electroweak sector. From these constraints, the symmetric-channel Frobenius trace $\mathcal{N}_{\rm sym}(q) = \mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ is computable in closed form.
+The proposal is that the Frobenius–Hopf substrate $A$ in $\mathbf{Rep}(\mathrm{SU}_q(2))$ admits a unique $G$-equivariant structure under $G = \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. This structure is governed by four constraints linking the categorical data to the electroweak sector. From these constraints, the symmetric-channel Frobenius trace $\mathcal{N}_{\rm sym}(q) = \mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ is computable in closed form.
 
 ### The four constraints
 
@@ -52,7 +52,7 @@ The idempotent factors through the monoidal unit: $e_H = \varrho_\Phi \circ \big
 
 ### Derivation of $\mathcal{N}_{\rm sym}(q)$
 
-We compose the traces over the components:
+Composing the traces over the components gives
 
 $$
   \mathrm{tr}_F\bigl(e_{\rm sym}^{\rm EW} \cdot e_H\bigr)
