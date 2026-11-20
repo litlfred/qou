@@ -156,6 +156,8 @@ export default chapter({
             "reidemeister-mass-invariance",
             "borromean-markov-trace-closed-form",
             "borromean-markov-trace-closed-form-proof",
+            "borromean-two-photon-factorisation",
+            "trace-flavour-no-go",
             "h3-markov-wenzl-weights",
             "h3-markov-wenzl-weights-proof",
             "h3-markov-wenzl-weights-context",
