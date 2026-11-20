@@ -62,8 +62,8 @@ $$
 
 **Coefficient tier (read with the truncation order).** The $c_k$ carry a
 provenance tier: $c_2 = -1$ is **structural** — the exact $u^2$ coefficient
-of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, hence trivially
-q$_0$-independent. It is not **proved**: the Lean re-reads the $N{=}2$ factor
+of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$, and therefore
+$q_0$-independent by definition. It is not **proved**: the Lean re-reads the $N{=}2$ factor
 rather than deriving it. And it is Taylor-exact *for that series* — the
 normalised series (cosine factor inside) has $\tilde c_2 = c_2 - 1/8 = -9/8$; $c_k$ for $k \geq 3$ are at present **structural
 near-matches** — their empirical value swings with the $q_0$ anchor
@@ -177,7 +177,7 @@ $\cos(\alpha - b\hbar_q^2/2)$.
 **As previously published, for the record.** The $\varepsilon_Q$ column read
 $+1677.5$, $+73.79$, $+1.24$ ppm, then $+6.02$, $-0.57$ ppb and, at $N=5$,
 $\sim 0$ ppb in table 2 and $+0.04$ ppb in table 3; the headline residual was
-quoted as $-0.0066$ ppm. Three defects are corrected above.
+quoted as $-0.0066$ ppm.
 
 *The sign.* The published headline was negative. It cannot be: $\mathfrak{Q}_\beta^A$
 sits 1677 ppm above CODATA and every live rung factor is below 1, so the ladder

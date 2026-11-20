@@ -1,3 +1,1 @@
-This section reconnects blocks separated during the restructuring of the mass derivation and $q$-hyperbolic geometry chapters. It resolves structural conjectures at the interface of the geometric and mass-endomorphism layers.
-
-The sequence covers the categorical linking operation, the crossed-module Euler characteristic governing substrate flow, and the master pentagon dimension identity. It then gathers the $\mathrm{Geom}(K)$ thread in reading order: the nuclear knot classification it rests on, the piecewise distinctions that define it, the rigid-dualizing alignment that reads it, and the scattering pipeline that consumes it on the way to the mass application chapter.
+The geometric and algebraic bridges developed across Arcs I–III connect the exceptional-divisor Reeb flow and the crossed-module Euler characteristic to the Ding–Iohara–Miki master pentagon and the rigid-dualizing evaluation of the piecewise geometric invariant $\mathrm{Geom}(K)$.

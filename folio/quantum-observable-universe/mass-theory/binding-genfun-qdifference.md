@@ -39,7 +39,7 @@ singularity structure of the Seiberg--Witten differential
 same $q$-difference machinery as the $\mathfrak{Q}_\beta$ precision ladder, applied to
 the binding series.
 
-> **Scope note (2026-08-26) — the rank-1 hypothesis is unsatisfiable on both
+> **Scope of the rank-1 hypothesis — unsatisfiable on both
 > proposed carriers; the proposition survives only in rank $2$.** The
 > supposition above is a *first-order* (rank-1) $q$-difference relation. Two
 > carriers have been proposed for $G$, and neither admits one.

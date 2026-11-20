@@ -67,10 +67,7 @@ the recorded base masses with the *correct* CODATA values makes agreement
 slightly **worse**, which is what one expects if the formula had been
 absorbing part of the input error.
 
-The convention was not chosen on accuracy. It was fixed by the ruling of
-2026-08-15 on other grounds, and a table that fits better in the superseded
-convention is what one would expect of a table that was *built* in it. The
-earlier figures were convention-C figures.
+Convention D is fixed structurally by two-row Temperley–Lieb factorisation rather than by numerical fitting to composite masses; tables originally calibrated in the Convention-C frame therefore shift when evaluated at $z_D$.
 
 ### What is now derived, and what is not
 

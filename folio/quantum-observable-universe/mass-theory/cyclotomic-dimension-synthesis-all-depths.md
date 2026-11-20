@@ -9,4 +9,4 @@ $$
   \end{cases}
 $$
 
-This structurally completes the cyclotomic framework at all depths. The Tate-rationality clears the wrong-parity parts. The orbit sum handles the classical $\zeta(n)$ contributions. The residual dimensions cleanly match Beilinson's predictions without relying on heuristic fits.
+This structurally completes the cyclotomic framework at all depths. The Tate-rationality clears the wrong-parity parts. The orbit sum handles the classical $\zeta(n)$ contributions. The residual dimensions match Beilinson's predictions without relying on heuristic fits.

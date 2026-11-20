@@ -72,7 +72,7 @@ $w_\lambda(q)$.  Compares $\alpha \cdot
 nuclear binding $B_\mathrm{nucl}$ from
 `coulomb-subtracted-binding.witness.json`.
 
-> **Gap (2026-08-16).** The step above reads a grading of the **centre** by
+> **Open step (centre grading versus word filtration).** The step above reads a grading of the **centre** by
 > *partition* depth off a proposition that stratifies $H_n(R,q)$ by the
 > curvature rank of **words**. That identification is not stated in the cited
 > proposition, and the three readings of $J^\bullet$ present in the corpus are

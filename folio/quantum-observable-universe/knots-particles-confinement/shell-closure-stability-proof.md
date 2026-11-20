@@ -1,6 +1,6 @@
 *Proof.*
 
-**Scope (2026-11-15).** Step 1 is an open gap. In the dual constraint $u_0 I + \sum_\lambda u_\lambda \pi_\lambda - T \preceq 0$ with $u_\lambda \ge 0$, raising a new $u_\lambda$ adds a positive semidefinite term and makes the constraint harder to satisfy. The best a new block admits is $u_\lambda = 0$, and then the lift is feasible only if $u_0 I \preceq T_{\mathrm{new}}$ on the new block, which is not shown. Claim 1 of the proposition, and the reading of claim 2 that relies on it, are therefore unproved. Step 3 compares against the archimedean quantity $\alpha \cdot m_e \cdot c_q^2$ without deriving that comparison from the categorical data.
+**Scope of the dual-lift argument.** Step 1 below contains an open gap: in the dual matrix inequality $u_0 I + \sum_\lambda u_\lambda \pi_\lambda - T \preceq 0$ with $u_\lambda \ge 0$, increasing a newly introduced multiplier $u_\lambda$ adds a positive semidefinite term and tightens the inequality rather than relaxing it. The least restrictive choice on a new block is $u_\lambda = 0$, for which the dual lift is feasible only when $u_0 I \preceq T_{\mathrm{new}}$ on that block—a domination bound not established here. Consequently, claim 1 of the proposition (and the monotonicity clause of claim 2 that rests on it) remains conditional on that block-domination bound, while step 3 compares the shell gap against the Archimedean quantity $\alpha \cdot m_e \cdot c_q^2$ across the evaluation wall.
 
 We establish three claims.
 

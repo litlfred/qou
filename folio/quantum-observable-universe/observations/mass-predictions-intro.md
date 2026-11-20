@@ -1,9 +1,3 @@
-We apply the mass formula, calibrated by $q_0$, to the hadron and nuclear spectrum. We compare these values against CODATA and PDG.
+With the energy unit $m_e$ ($\mathrm{CAL\text{-}1}$) and the substrate modulus $q_0$ ($\mathrm{CAL\text{-}2}$) fixed from the lepton sector, the six-term categorical mass formula generates parameter-free predictions across the hadron and nuclear chart.
 
-We examine the lattice geometry. The stability cubic bounds the stability surface. We tabulate neutron-number predictions for $p \leq 103$. We record prediction shifts under local perturbations of $q$.
-
-We analyze mass ratios. A full three-channel Hecke algebra calculation covers the first ten elements. We compare mass contributions against Feynman-diagram amplitudes. We detail the channel-counting reduction from four photon channels to three Wedderburn invariants. 
-
-We address neutron-proton splitting. We derive this mass splitting from the single crossing-change distinguishing the nucleons. We establish the Borromean link topology. A pair-skein mass formula provides the recursion for heavier states. We isolate the $u$--$d$ flavor split. We derive the deuteron binding energy.
-
-We conclude with terminal-resolution results and the $W$-boson anomaly. We analyze electroweak boson masses, establishing the boson-mass result used to match weak-vertex amplitudes with $\beta$-decay half-lives.
+This section evaluates the stability cubic bounding the nuclear valley of stability up to $Z = 103$, compares the predicted neutron number and local $q$-sensitivity intervals against AME 2020, and tabulates the resulting mass ratios and full three-channel Hecke atomic masses ($Z \le 10$) against CODATA 2022 and PDG 2024 benchmarks.

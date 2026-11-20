@@ -176,7 +176,7 @@ consequences are derived unconditionally from the class:
    `exists_pure_bar_even`, which take the flip as an explicit hypothesis).
    The premise is **not established by the data**: each anchor value
    $S(\text{muon}) \approx +0.00968$, $S(\text{proton}) \approx -0.03946$
-   carries a CAL-3 propagated uncertainty of $\pm 1.26$ (130× / 32× the
+   carries a CAL-3 propagated uncertainty of $\pm 1.26$ ($130\times$ / $32\times$ the
    value); only the swing $S(\text{muon}) - S(\text{proton})$ is resolved,
    and it is the cross-anchor $c_3$ difference with $\mathrm{Vol}(4_1)$
    cancelled. So the zero-crossing is a conditional structural statement,

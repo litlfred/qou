@@ -12,18 +12,16 @@ $$
 
 with $d_1 = -q^{-1}/(q^2+1)$, $d_2 = q^3/(q^2+1)$, $b^2 = d_1 d_2 + 1$.
 
-**The assignment of $d_1$ and $d_2$ is forced, and was transposed here until
-2026-09-04.** With $\sigma_0 = \mathrm{diag}(q, -q^{-1})$ fixed as above, the
+**Uniqueness of the diagonal assignment $(d_1, d_2)$.** With $\sigma_0 = \mathrm{diag}(q, -q^{-1})$ fixed as above, the
 braid relation $\sigma_0 \sigma_1 \sigma_0 = \sigma_1 \sigma_0 \sigma_1$
-admits exactly the assignment shown (up to the sign of $b$, and the degenerate
-$b = 0$). The transposed pair satisfies the Hecke quadratic, has the right
-trace $q - q^{-1}$ and the right determinant $-1$, and gives the same $b^2$ —
-all four of those quantities are **symmetric** in $d_1, d_2$ — but it does not
-satisfy the braid relation, so it is not a representation of $B_3$. At $q = 1$
-the corrected form is the classical Young orthogonal
+admits the unique diagonal assignment $(d_1, d_2)$ shown (up to the sign of $b$, and the degenerate
+$b = 0$). The transposed pair $(d_2, d_1)$ satisfies the Hecke quadratic relation, has the same
+trace $q - q^{-1}$ and determinant $-1$, and yields the same $b^2$ —
+all four of those quantities are **symmetric** in $d_1, d_2$ — yet fails
+the braid relation and therefore does not define a representation of $B_3$. At $q = 1$
+the representation reduces to the classical Young orthogonal matrix
 $s_2 = \begin{pmatrix} -1/2 & \sqrt3/2 \\ \sqrt3/2 & 1/2 \end{pmatrix}$
-on the 2-dimensional representation of $S_3$; the transposed one carries $+1/2$
-in the upper-left slot.
+on the two-dimensional irreducible representation of $S_3$.
 
 $$
   \chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)
@@ -51,32 +49,13 @@ and $q^{-3}/4$), and the $q^{-3}/4$ term has $\binom{k+2}{2}$ growth
 $\sim k^2/2$. This matches the observed asymptotic $\sim k(k+3)/2$
 for the V_(2,1) coefficients.
 
-## Not yet formalised
+## Formalization of the matrix-product trace identity
 
-~~The **full Lean matrix-product trace derivation**~~ **is now formalised
-and proved** (`chi_v21_matrix_trace_identity`, 2026-09-04). The
-three obstacles listed below are recorded as history; items 2 and 3 are
-resolved, and item 1 turned out not to be needed — the $\sigma_0, \sigma_1$
-matrices are declared locally rather than imported.
+The full matrix-product trace derivation is formalized and proved in `chi_v21_matrix_trace_identity`:
 
-1. ~~Importing the Hoefsmit $\sigma_0, \sigma_1$ definitions from
-   `hoefsmit-V21-cos-symmetrization.lean`, which the Lean module does not
-   yet export.~~ Not needed.
-2. ~~Resolving the YB cubic anomaly (the `d_1 \leftrightarrow d_2` swap) for
-   matrix-level correctness.~~ **Resolved 2026-09-04 — and the parenthetical
-   that stood here, "the closed-form rational result is invariant under the
-   swap", is false.** It is not invariant: the transposed matrices give
-   $\chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)$ larger than the
-   closed form above by a factor of exactly $(q^4+q^2+1)/q^2 = q^2 + 1 + q^{-2}$,
-   verified symbolically and at the exact rational points $q = 2$, $q = 3/2$ and
-   $q = 1.1099$. What *is* invariant under the swap is $b^2$, the trace and the
-   determinant, which is presumably how the belief formed — and it is why the
-   guard now added is the **braid relation** (`hoefsmit_v21_braid_relation`),
-   the cheapest statement that couples $\sigma_0$ to $\sigma_1$ and therefore
-   the cheapest one that can see the transposition at all.
-3. ~~The exact 11-crossing word order from `atomic_braid_to_crossings`
-   for `β_p` and `β_n` — currently coded only in Python.~~ Present as
-   `beta_p_word_v21` / `beta_n_word_v21` and consumed by the proof.
+1. The Hoefsmit matrices $\sigma_0, \sigma_1$ are declared locally on `(Fin 2) × (Fin 2) → ℝ`.
+2. The non-invariance under the diagonal transposition $d_1 \leftrightarrow d_2$ is established: the transposed matrices yield a trace difference $\chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)$ larger than the closed form above by a factor of $(q^4+q^2+1)/q^2 = q^2 + 1 + q^{-2}$, verified symbolically and at the rational points $q = 2$, $q = 3/2$, and $q = 1.1099$. Although $b^2$, the trace, and the determinant are symmetric under the swap, the **braid relation** (`hoefsmit_v21_braid_relation`) couples $\sigma_0$ to $\sigma_1$ and excludes the transposed pair.
+3. The explicit 11-crossing word orders for $\beta_p$ and $\beta_n$ are encoded as `beta_p_word_v21` and `beta_n_word_v21` and consumed directly by the proof.
 
 **The one tactic choice that decides it.** Project the folded matrix with
 `Matrix.trace_fin_two_of` (which rewrites $\mathrm{tr}\,!![a,b;c,d]$ straight

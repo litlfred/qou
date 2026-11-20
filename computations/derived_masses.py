@@ -856,15 +856,15 @@ def derivation_summary() -> dict:
         q_codata_str = str(w["observed"]["Q_decay_MeV"])
         q_codata_mp = mp.mpf(q_codata_str)
         e0_cal_str = str(e_0_calibrated_mev())
-        e0_n0_vs_cal = float(
+        e0_n0_vs_cal = str(
             (e_0_n0_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
         )
-        e0_full_vs_cal = float(
+        e0_full_vs_cal = str(
             (e_0_full_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
         )
         q_obs_str = str(q_beta_observable_mev())
         q_virt_str = str(q_beta_virtual_mev())
-        q_obs_frac = float(q_beta_observable_mev() / q_beta_predicted_mev())
+        q_obs_frac = str(q_beta_observable_mev() / q_beta_predicted_mev())
     else:
         q_codata_str = str(Q_BETA_MEV)
         q_codata_mp = mp.mpf(q_codata_str)
@@ -891,7 +891,7 @@ def derivation_summary() -> dict:
             "Q_beta_observable_MeV": q_obs_str,
             "Q_beta_virtual_MeV": q_virt_str,
             "Q_beta_codata_MeV": q_codata_str,
-            "Q_beta_pred_vs_codata_pct": float(
+            "Q_beta_pred_vs_codata_pct": str(
                 (q_beta_predicted_mev() - q_codata_mp) / q_codata_mp * 100
             ),
             "Q_beta_observable_fraction": q_obs_frac,

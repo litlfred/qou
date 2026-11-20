@@ -52,6 +52,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: F401, E402
+
 from decimal import Decimal, InvalidOperation, localcontext
 
 from mpmath import mp, mpf

@@ -3,33 +3,18 @@ import { chapter, section } from "../../schema/builders";
 /**
  * Mass Analysis.
  *
- * The detailed geometric, archimedean, and physical faces of the
- * mass endomorphism. Consumes the algebraic core (stated in "The
- * Mass Endomorphism" chapter, before Particles) and applies it to
- * specific knots, isotopes, and observables.
- *
- * Sections:
- *   - Algebraic: transfer matrices, mass-formula derivation,
- *     Hoefsmit construction, GS axiomatic backing
- *   - Geometric: vertex factorisation, Kashiwara-Jones, quantum
- *     dilogarithm, archimedean realization, Kashaev volume,
- *     mass-volume factorisation, crossing expansion
- *   - Archimedean: substrate binding, LP-dual, spectral sequence,
- *     Plancherel, α_k derivation, Wenzl bridge
- *   - Physical: parity classification, six-term formula,
- *     mass predictions, binding energy
- *   - Open problems: crystal basis, mass-tower directions
+ * The algebraic, geometric, archimedean, and physical faces of the
+ * mass functional along the five-step categorical pipeline:
+ *   Arc I   — Algebraic & Transfer-Matrix Foundations of the Mass Functional
+ *   Arc II  — Geometric & Archimedean Realization (τ_arch, Kashaev Volume & Quantum Dilogarithm)
+ *   Arc III — Many-Body Nuclear Binding, GPMT Cumulants & the Plancherel / Wenzl Bridge
+ *   Arc IV  — Elementary Particle & Gauge Coupling Derivations and the Six-Term Mass Formula
  */
 export default chapter({
   title: "Mass Analysis",
   label: "chap:mass-theory",
   sections: [
-
-
-    // ═══ ALGEBRAIC FACE ═════════════════════════════════════════
-    // Wedderburn, Frobenius pairing, transfer matrices, Hecke
-    // characters, Hoefsmit construction, GS axiomatic backing.
-    // ── §2 Algebraic face: Transfer Matrix and Topological Mass ────
+    // ═══ ARC I — ALGEBRAIC & TRANSFER-MATRIX FOUNDATIONS ═══════
     section({
       title: "Transfer Matrix and Topological Mass",
       label: "sec:transfer-matrix-mass",
@@ -54,11 +39,16 @@ export default chapter({
         "skein-decomposition",
         "topological-field-ansatz",
         "topological-field-ansatz-table-data",
+        "nuclear-knot-classification",
+        "nuclear-knot-classification-proof",
+        "geometric-invariant-piecewise",
+        "geom-yekutieli-alignment",
+        "hoefsmit-scattering-pipeline",
       ],
     }),
 
     section({
-      title: "Mass-formula derivation",
+      title: "Wedderburn Trace Decomposition and the Three-Calibration Discipline",
       label: "sec:mass-formula-derivation",
       blocks: [
         "calibration-algebraic-mass-intro",
@@ -73,6 +63,10 @@ export default chapter({
         "wedderburn-trace-identity",
         "wedderburn-trace-identity-context",
         "wedderburn-trace-identity-proof",
+        "symbolic-character-table",
+        "staircase-partition",
+        "staircase-corner-hook",
+        "staircase-corner-hook-proof",
         "binding-scale-catalan",
         "binding-scale-catalan-proof",
         "binding-error-amplification",
@@ -89,7 +83,7 @@ export default chapter({
     }),
 
     section({
-      title: "Mass-formula derivation (generation)",
+      title: "Chirality Vanishing, Hoefsmit Seminormal Form, and Light-Isotope Branching",
       label: "sec:mass-formula-derivation-commutative-chirality-vanishes",
       blocks: [
         "mass-formula-derivation-commutative-chirality-vanishes-intro",
@@ -112,17 +106,12 @@ export default chapter({
       ],
     }),
 
-    // §algebraic: transfer matrix, Skein mass, Markov trace corrections
     section({
-      title: "Algebraic face: transfer matrices, Skein mass, and Markov corrections",
+      title: "Transfer Matrices, Skein Mass, and Convention-D Markov Corrections",
       label: "sec:mass-algebraic-consolidated",
       blocks: [
         "mass-algebraic-consolidated-intro",
       ],
-      // Over-weight split (P4): 30-block algebraic-face section into 4
-      // reading-order sub-arcs (the compound title's three themes plus
-      // the Q_beta and filtration tails). Order preserved; parent keeps
-      // the intro.
       subsections: [
         section({
           title: "Transfer matrices and Skein mass",
@@ -147,7 +136,7 @@ export default chapter({
           ],
         }),
         section({
-          title: "Markov corrections and the Gram matrix",
+          title: "Markov corrections, the Temperley–Lieb radical, and the Gram matrix",
           label: "sec:mass-algebraic-markov-gram",
           blocks: [
             "corrected-markov-trace",
@@ -165,24 +154,13 @@ export default chapter({
             "em-spectral-completeness",
             "em-spectral-completeness-proof",
             "reidemeister-mass-invariance",
-            // Re-homed from the trace/operator collection: the Borromean
-            // Markov-trace closed form belongs with the Markov corrections.
             "borromean-markov-trace-closed-form",
             "borromean-markov-trace-closed-form-proof",
-            // Re-homed orphan: H_3 Jones/Temperley–Lieb Markov–Wenzl weights
-            // feed the Borromean trace; sit with the Markov corrections.
             "h3-markov-wenzl-weights",
             "h3-markov-wenzl-weights-proof",
             "h3-markov-wenzl-weights-context",
-            // Re-homed orphan (moved braids→mass-theory + thm:→prop: fix):
-            // unit-modulus eigenvalues on V_(2,1) and the Borromean −1
-            // fixed point; consumes the Borromean Markov-trace closed form.
             "unit-modulus-eigenvalue",
             "unit-modulus-eigenvalue-proof",
-            // Decision 7: convention D IS Temperley–Lieb. The characterisation
-            // comes first, then the metric consequence it explains — a reader
-            // who meets "the radical blocks the Connes sup" before "the radical
-            // is the TL ideal" reads the quotient as an ad-hoc amputation.
             "convention-d-kills-antisymmetriser",
             "convention-d-kills-antisymmetriser-proof",
             "markov-branching-three-term",
@@ -191,25 +169,9 @@ export default chapter({
             "markov-gram-bilinear-vs-star",
             "gram-degeneracy-blocks-connes",
             "finite-connes-forces-trivial-kernel",
-          ],
-        }),
-        section({
-          title:
-            "Complex-volume precision ladder: $\\operatorname{Re}(\\mathfrak{V})$ \\& $\\operatorname{Im}(\\mathfrak{V})$",
-          label: "sec:mass-algebraic-complex-volume-ladder",
-          blocks: [
-            "complex-volume-ladder-intro",
-            "phi-b-bar-parity-decomposition",
-            "phi-b-bar-parity-interpretation",
-            "phi-b-unitary-bar-odd",
-            "q-beta-categorical-precision-ladder",
-            "q-beta-categorical-precision-ladder-context",
-            "q-beta-c3-hopf-three-fold-markov",
-            "q-beta-c3-hopf-three-fold-markov-context",
-            "q-beta-c3-continuum-geometry",
-            "ck-extraction-from-algebraic-rules",
-            "typed-b3-sub-braid-extraction",
-            "cl3-zeta5-geometric-realization",
+            "interface-knot-markov-z",
+            "interface-knot-markov-z-proof",
+            "block-multiplicativity-v-free",
           ],
         }),
         section({
@@ -238,7 +200,7 @@ export default chapter({
     }),
 
     section({
-      title: "Hoefsmit convergence: construction",
+      title: "Hoefsmit Convergence and the $z$-Habiro Completion",
       label: "sec:hoefsmit-convergence-construction",
       blocks: [
         "intro-hoefsmit-convergence-atomic",
@@ -250,7 +212,10 @@ export default chapter({
         "sdp-degeneracy-at-metallic-coincidence",
         "universal-braid-branching",
         "universal-braid-branching-proof",
+        "eigenvalue-product-expansion",
+        "eigenvalue-product-expansion-proof",
         "hecke-convergence-bound",
+        "volume-perturbation-formula",
         "algebraic-quantum-volume",
         "algebraic-quantum-volume-structure",
         "habiro-ring",
@@ -261,8 +226,6 @@ export default chapter({
         "quantum-dilog-convergence-proof",
         "brane-tower-z-habiro",
         "brane-tower-z-habiro-table1-data",
-        // Re-homed from the trace/operator collection: the Hoefsmit extended-
-        // Wedderburn cell content belongs with the construction.
         "hoefsmit-ew-cell-content",
         "hoefsmit-ew-cell-content-context",
         "hoefsmit-ew-cell-content-table1-data",
@@ -271,7 +234,7 @@ export default chapter({
     }),
 
     section({
-      title: "Per-partition brane-tower convergence",
+      title: "Per-Partition Brane-Tower Convergence",
       label: "sec:hoefsmit-convergence-construction-per-partition-k",
       blocks: [
         "hoefsmit-convergence-construction-per-partition-k-intro",
@@ -282,13 +245,11 @@ export default chapter({
     }),
 
     section({
-      title: "Hoefsmit convergence: magic-shell consequences",
+      title: "Hoefsmit Convergence: Magic-Shell Consequences and $q$-Difference Prolongation",
       label: "sec:hoefsmit-convergence-magic-shells",
       blocks: [
         "hoefsmit-convergence-magic-shells-intro",
       ],
-      // Over-weight split (P4): 33-block magic-shell section into 4
-      // reading-order sub-arcs. Order preserved; parent keeps the intro.
       subsections: [
         section({
           title: "He-4 channel and magic-A binding",
@@ -298,17 +259,12 @@ export default chapter({
             "two-row-projection",
             "he4-channel-active-set",
             "he4-two-row-dominance",
-            // Ledger §5 orphan integration (2026-07-12): LR-fusion support
-            // bound conjecture explaining which Wedderburn blocks vanish.
             "active-set-trace-concentration",
             "markov-trace-frobenius-selection",
             "markov-trace-frobenius-selection-proof",
             "convention-d-chirality-side",
             "trace-ledger",
             "categorical-trace-is-the-markov-trace",
-            // Re-homed orphans: the min-Frobenius-norm collapse T_β = S·1
-            // (and its general unital-R-algebra lift) that selects the
-            // Markov-trace direction the Hoefsmit He-4 channel uses.
             "t-beta-markov-frobenius-collapse",
             "t-beta-markov-frobenius-collapse-proof",
             "t-beta-markov-frobenius-collapse-general",
@@ -384,6 +340,7 @@ export default chapter({
             "bar-parity-split",
             "deuteron-binding-dressing-proton-net",
             "lr-coefficient-hecke",
+            "wenzl-A-operator",
             "hecke-1d-irrep-closed-form-character",
             "hecke-1d-irrep-closed-form-character-proof",
             "hoefsmit-V21-cos-symmetrization",
@@ -393,8 +350,26 @@ export default chapter({
     }),
 
     section({
-      title:
-        "$\\mathfrak{Q}_\\beta$ precision ladder: formalize-first gates and the $c_k$ recursion",
+      title: "Complex-Volume Precision Ladder: $\operatorname{Re}(\mathfrak{V})$ and $\operatorname{Im}(\mathfrak{V})$",
+      label: "sec:mass-algebraic-complex-volume-ladder",
+      blocks: [
+        "complex-volume-ladder-intro",
+        "phi-b-bar-parity-decomposition",
+        "phi-b-bar-parity-interpretation",
+        "phi-b-unitary-bar-odd",
+        "q-beta-categorical-precision-ladder",
+        "q-beta-categorical-precision-ladder-context",
+        "q-beta-c3-hopf-three-fold-markov",
+        "q-beta-c3-hopf-three-fold-markov-context",
+        "q-beta-c3-continuum-geometry",
+        "ck-extraction-from-algebraic-rules",
+        "typed-b3-sub-braid-extraction",
+        "cl3-zeta5-geometric-realization",
+      ],
+    }),
+
+    section({
+      title: "$\mathfrak{Q}_\beta$ Precision Ladder: Formalize-First Gates and the $c_k$ Recursion",
       label: "sec:mass-algebraic-qbeta-formalize-first-gates",
       blocks: [
         "qbeta-formalize-first-gates-intro",
@@ -435,7 +410,7 @@ export default chapter({
     }),
 
     section({
-      title: "Gröbner-Shirshov axiomatic backing",
+      title: "Gröbner–Shirshov Axiomatic Backing",
       label: "sec:gs-axiomatic-backing",
       blocks: [
         "intro-gs-axiomatic-backing",
@@ -448,16 +423,9 @@ export default chapter({
       ],
     }),
 
-
-    // ═══ GEOMETRIC FACE ═════════════════════════════════════════
-    // Mass-volume factorisation, Bloch group, φ_q resummation,
-    // cyclotomic depth-3, Habiro identifications.
-    // Sections below consolidated from climax-volume-mass (2026-05-27):
-    // the mass-derivation chain (vertex factorisation → Feynman →
-    // Kashiwara-Jones → quantum dilogarithm → archimedean realization).
-
+    // ═══ ARC II — GEOMETRIC & ARCHIMEDEAN REALIZATION ═══════════
     section({
-      title: "Exceptional divisor, Reeb bundle, and vertex operators",
+      title: "Exceptional Divisor, Reeb Bundle, and Vertex Operators",
       label: "sec:exceptional-divisor-reeb",
       blocks: [
         "exceptional-divisor-reeb-intro",
@@ -480,8 +448,9 @@ export default chapter({
         "hyperbolic-knot-positive-volume-via-reeb",
       ],
     }),
+
     section({
-      title: "Vertex factorisation: Markov trace",
+      title: "Vertex Factorisation and the Markov Trace",
       label: "sec:vertex-factorisation-markov",
       blocks: [
         "vertex-factorisation-intro",
@@ -504,8 +473,9 @@ export default chapter({
         "markov-chain-fluctuations",
       ],
     }),
+
     section({
-      title: "Vertex factorisation: Feynman identifications",
+      title: "Vertex Factorisation and Feynman Amplitude Identifications",
       label: "sec:vertex-factorisation-feynman",
       blocks: [
         "vertex-factorisation-feynman-intro",
@@ -523,8 +493,9 @@ export default chapter({
         "feynman-classical-limit-interpretation",
       ],
     }),
+
     section({
-      title: "Kashiwara-Jones interpretations and quantum dilogarithm",
+      title: "Kashiwara–Jones Crystal Bridge and the Quantum Dilogarithm",
       label: "sec:kashiwara-jones-quantum-dilog",
       blocks: [
         "intro-kashiwara-jones-quantum-dilog",
@@ -545,8 +516,6 @@ export default chapter({
         "phi-q-categorical-truncation",
         "phi-q-categorical-truncation-interpretation",
         "phi-q-categorical-truncation-proof",
-        // Re-homed from the geometric-bridges collection: the pentagon
-        // identities belong with the quantum dilogarithm.
         "quantum-bloch-group",
         "quantum-bloch-group-framework-connection",
         "q-rogers-pentagon-archimedean",
@@ -554,8 +523,9 @@ export default chapter({
         "pachner-pentagon-borromean",
       ],
     }),
+
     section({
-      title: "Archimedean realization and Kashaev volume",
+      title: "Archimedean Realization ($\tau_{\mathrm{arch}}$) and Kashaev Hyperbolic Volume",
       label: "sec:archimedean-realization-kashaev",
       blocks: [
         "intro-archimedean-realization-kashaev",
@@ -576,54 +546,25 @@ export default chapter({
         "gb-depth-period-correspondence",
         "vc-as-depth-2-instance",
         "bring-figure-eight-depth-2-witness",
-        // Re-homed from the geometric-bridges collection: Kashaev density =
-        // SDP multiplicity belongs with the Kashaev-volume realization.
         "kashaev-density-equals-sdp-multiplicity",
-      ],
-    }),
-    section({
-      title: "Geometric face: pentagon and volume bridges",
-      label: "sec:mass-bridge-orphan-reconnect",
-      blocks: [
-        "mass-bridge-orphan-reconnect-intro",
-        "categorical-linking-operation",
-        "categorical-linking-operation-interpretation",
         "crossed-module-euler-characteristic",
         "crossed-module-euler-characteristic-proof",
         "geom-bridge-status",
         "tau-all-orders-bridge",
-        "dim-master-pentagon",
-        "nuclear-knot-classification",
-        "nuclear-knot-classification-proof",
-        "geometric-invariant-piecewise",
-        "geom-yekutieli-alignment",
-        "hoefsmit-scattering-pipeline",
-        "hopf-link-non-magic",
-        "p-from-braid-mirror",
-        "poincare-lefschetz-borromean",
-        "volume-perturbation-formula",
-        // Re-homed (high-confidence): kashaev-density-equals-sdp-multiplicity
-        // -> sec:archimedean-realization-kashaev; pachner-pentagon-borromean +
-        // q-rogers-pentagon-archimedean -> sec:kashiwara-jones-quantum-dilog.
+        "z-eq-n-rho-correction",
       ],
     }),
 
-    // Existing geometric-face sections (from particle-interactions consolidation)
     section({
-      title: "Geometric face: mass-volume factorisation and crossing expansion",
+      title: "Mass–Volume Factorisation and the Crossing-Graded Expansion",
       label: "sec:mass-geometric-face",
       blocks: [
-                "mass-geometric-face-intro",
-"thurston-volume-additivity",
+        "mass-geometric-face-intro",
+        "thurston-volume-additivity",
         "flat-tetrahedron-zero-volume",
         "gluing-equations-do-not-detect-hyperbolicity",
         "gluing-certification-mechanical-reach",
         "hyperbolic-knot-shape-fields",
-        // thm:five-two-saddle-sum-rule retired 2026-08-24 (bean qou-h1p7):
-        // it duplicated prop:fivetwo-saddle-sum-rule in appendix-qvalues,
-        // down to the same lean.ref, which lean-ref-owns-decl flags. The
-        // appendix block survives (three consumers to this one's none) and
-        // absorbed this one's cites, uses edge and two prose passages.
         "kummer-bloch-wigner-identity",
         "rivin-concavity-one-tetrahedron",
         "ideal-tetrahedron-relabelling-invariance",
@@ -655,7 +596,7 @@ export default chapter({
     }),
 
     section({
-      title: "Mutant Jones falsifiability and Bloch group closure",
+      title: "Mutant Knot Separation and Bloch-Group Closure",
       label: "sec:mutant-jones-bloch-group",
       blocks: [
         "intro-mutant-jones-bloch-group",
@@ -679,21 +620,18 @@ export default chapter({
         "shared-denominator-cusp-holonomy",
         "degree-two-baryon-weight",
         "degree-two-baryon-weight-proof",
-        // Re-homed from the weak-spectral/isospin collection: the Borromean
-        // Bloch-group (K3) element belongs with the Bloch group closure.
         "borromean-bloch-group-element",
+        "poincare-lefschetz-borromean",
+        "hopf-link-non-magic",
       ],
     }),
 
     section({
-      title: "$\\\\varphi_q$ resummation, Markov trace, Schur-Weyl: foundations",
+      title: "$\\varphi_q$ Resummation, the Lepton Mass Tower, and Schur–Weyl Positivity",
       label: "sec:phi-q-markov-schur-weyl-foundations",
       blocks: [
         "intro-phi-q-markov-schur-weyl-tower",
       ],
-      // Over-weight split (P4): 24-block foundations section into 3
-      // reading-order sub-arcs (matching the compound title). Order
-      // preserved; parent keeps the intro.
       subsections: [
         section({
           title: "Markov trace resummation",
@@ -701,7 +639,6 @@ export default chapter({
           blocks: [
             "markov-trace-factorization",
             "markov-trace-factorization-proof",
-            // Algebraic shortcut of KS Thm 8 (multiplicative invariant) via the Markov property.
             "ks-multiplicativity-via-markov",
             "markov-trace-ratio-exact",
             "markov-trace-ratio-exact-proof",
@@ -729,23 +666,14 @@ export default chapter({
             "rem-c3-s-imq-decay-projection",
             "rem-qstar-decay-sector-q0",
             "rem-ohtsuki-tower-bar-parity",
-            // Provenance of the 1-loop prefactor law c_sigma = k |tau|^p: the
-            // FORM is DGLZ eq (2.3) for a general M, the exponent -1/2 is
-            // normalisation-invariant and was already measured by the k_c
-            // checks, and the constant k -- which cannot be lifted out of
-            // DGLZ's conventions -- is instead DERIVED on the link side from
-            // van der Veen's colored-Jones asymptotic (bean qou-vdvS).
             "one-loop-prefactor-provenance",
-            // A_ω=3 closed-sector conditional adoption (bean qou-ujmw): the
-            // resurgent-Stokes = DT/BPS bridge (GGM Conj 3(d) + GPPV) and the
-            // conditional theorem deriving A_ω(4₁)=3 as a BPS/DT count.
             "stokes-dt-bps-bridge",
             "aomega-fourone-dt-count",
             "dt-spectrum-bar-eigenspace",
           ],
         }),
         section({
-          title: "Schur-Weyl decomposition and positivity",
+          title: "Schur–Weyl decomposition and positivity",
           label: "sec:phi-q-schur-weyl-positivity",
           blocks: [
             "schur-weyl-mass-decomposition",
@@ -762,7 +690,7 @@ export default chapter({
     }),
 
     section({
-      title: "$\\\\varphi_q$ resummation: residue and Habiro identifications",
+      title: "$\\varphi_q$ Resummation: Residue and Habiro Identifications",
       label: "sec:phi-q-markov-residue-habiro",
       blocks: [
         "phi-q-markov-residue-habiro-intro",
@@ -782,16 +710,9 @@ export default chapter({
         "full-pole-structure-mass-trace-interpretation",
         "habiro-residue-sum-equivalence",
         "habiro-residue-sum-equivalence-interpretation",
-        // Re-homed orphan: the Borromean h^4 = -3/4 categorical derivation
-        // (R-matrix character × Markov normalisation via Schur–Weyl)
-        // consumes the Habiro residue sum + the H_3 Markov–Wenzl weights.
         "borromean-h4-categorical-derivation",
         "borromean-h4-categorical-derivation-proof",
         "borromean-h4-categorical-derivation-context",
-        // Re-homed orphans (2026-06-28): the Habiro precision-ladder
-        // integrality statement + the Pochhammer normalisation bridge,
-        // authored 2026-06-26 but never wired into a manifest. The
-        // bridge consumes the precision-ladder equivalence.
         "habiro-precision-ladder-equivalence",
         "habiro-precision-ladder-equivalence-context",
         "habiro-pochhammer-bridge",
@@ -800,7 +721,7 @@ export default chapter({
     }),
 
     section({
-      title: "Cyclotomic depth-3 trilog identities",
+      title: "Cyclotomic Depth-3 Trilogarithm Identities",
       label: "sec:cyclotomic-depth-3-trilog",
       blocks: [
         "intro-cyclotomic-depth-3-trilog",
@@ -828,13 +749,6 @@ export default chapter({
         "cyclotomic-orbit-sum-all-depths-table1-data",
         "cyclotomic-dimension-synthesis-all-depths",
         "cyclotomic-dimension-synthesis-all-depths-proof",
-        // Re-homed orphans (2026-06-28): the cyclotomic doubling
-        // identity Φ₈(X)=Φ₄(X²) + the a₈ partition-function identity +
-        // the ζ₈ level-2 SU(2) Verlinde witness, authored 2026-06-26
-        // but never wired. Strict dependency order: a8 and ζ8 both
-        // consume the doubling identity. The doubling block's
-        // strand-doubling *interpretation* was refuted (the algebraic
-        // identity stands); see its historical-note section.
         "cyclotomic-strand-doubling",
         "cyclotomic-strand-doubling-habiro-observation",
         "cyclotomic-strand-doubling-proof",
@@ -845,12 +759,9 @@ export default chapter({
       ],
     }),
 
-
-    // ═══ ARCHIMEDEAN FACE ═══════════════════════════════════════
-    // Substrate binding, LP-dual, spectral sequence, Plancherel,
-    // α_k derivation, Wenzl bridge, derivation audit.
+    // ═══ ARC III — MANY-BODY NUCLEAR BINDING, GPMT CUMULANTS & PLANCHEREL / WENZL BRIDGE ═══
     section({
-      title: "Substrate binding setup",
+      title: "Substrate Binding Setup and Frobenius Self-Duality",
       label: "sec:substrate-binding-setup",
       blocks: [
         "nuclear-binding-beta-stability-intro",
@@ -861,9 +772,6 @@ export default chapter({
         "jet-convergence-classical-limit",
         "wigner-np-pairing",
         "wigner-np-pairing-proof",
-        // Reeb-flow pn-bond magnitude (2026-07-07): the proved
-        // exchange-criticality algebra + the open CWF linking postulate
-        // behind the ²H reeb-flow tier (owner ruling: NEAR-MATCH label).
         "reeb-pn-magnitude-criticality",
         "reeb-linking-cwf-normalization",
         "knot-factor-frobenius-pairing",
@@ -883,12 +791,8 @@ export default chapter({
       ],
     }),
 
-    // The canonical closure as a link (bean qou-m3sh, 2026-09-03): what the
-    // bond model's cumulants are, what the closure's topology forces, and
-    // which half of Călugăreanu the geometry can supply invariantly.
     section({
-      title:
-        "The canonical closure as a link: cumulants, the chain form, and what the trace can carry",
+      title: "The Canonical Closure as a Link: Cumulants, the Chain Form, and Trace Factorisation",
       label: "sec:canonical-closure-as-link",
       blocks: [
         "subset-cumulant-recursion",
@@ -903,30 +807,18 @@ export default chapter({
     }),
 
     section({
-      title: "LP-dual and Jucys-Murphy central elements",
+      title: "LP-Dual Invariance and Jucys–Murphy Central Elements",
       label: "sec:lp-dual-jucys-murphy",
       blocks: [
         "intro-lp-dual-jucys-murphy",
         "jucys-murphy-central-elements-qou",
         "jucys-murphy-central-elements-qou-proof",
         "jucys-murphy-central-elements-qou-interpretation",
-        // Piece A of Identity I, promoted 2026-08-24 from two unregistered
-        // .md drafts that had sat at the paper root since the 52c68267f2
-        // bulk import (bean qou-cauj listed them as "probably not blocks";
-        // the owner ruled otherwise). The Specht/JM trace pair reads the
-        // JM prop directly above; the corner induction is the alternative
-        // route to the same identity.
         "piece-a-hook-content-identity",
         "piece-a-specht-character-trace",
         "piece-a-specht-character-trace-proof",
         "piece-a-corner-removal-obligation",
         "piece-a-corner-removal-obligation-proof",
-        // def:spin-involution relocated to knots-particles-confinement §7
-        // (2026-08-09, decision 5): three of its four consumers are the
-        // EW-triplet charge/spin blocks there, and it has `uses: []` so it
-        // drags no dependency forward. The lp-dual-invariance arc below is
-        // the fourth consumer and now reads BACKWARD into Ch 8 for the
-        // definition.
         "spin-involution-lp-dual-invariance",
         "spin-involution-lp-dual-invariance-proof",
         "spin-involution-lp-dual-invariance-interpretation",
@@ -943,7 +835,7 @@ export default chapter({
     }),
 
     section({
-      title: "Spectral sequence, chirality, and confinement-NF structure",
+      title: "Spectral Sequence, Chirality, and Confinement Normal-Form Structure",
       label: "sec:spectral-sequence-chirality-confinement",
       blocks: [
         "intro-spectral-sequence-chirality-confinement",
@@ -958,7 +850,6 @@ export default chapter({
         "curvature-rank-gb-stratification-proof",
         "curvature-rank-gb-stratification-interpretation",
         "curvature-rank-gb-stratification-table-data",
-        // Algebraic shortcut of KS ind-constructibility via the Diamond Lemma.
         "ks-finiteness-via-diamond-lemma",
         "spectral-sequence-collapse",
         "spectral-sequence-collapse-proof",
@@ -971,11 +862,13 @@ export default chapter({
         "alpha-shift-torus-knot",
         "alpha-shift-torus-knot-proof",
         "alpha-shift-torus-knot-table-data",
+        "crystal-r-matrix-sub-lemma",
+        "operator-valued-combiner-convergence",
       ],
     }),
 
     section({
-      title: "Confinement-NF forcing and the per-nucleon shift",
+      title: "Confinement Normal-Form Forcing and the Per-Nucleon Shift",
       label: "sec:spectral-sequence-chirality-confinement-per-nucleon-shift",
       blocks: [
         "spectral-sequence-chirality-confinement-per-nucleon-shift-intro",
@@ -996,7 +889,7 @@ export default chapter({
     }),
 
     section({
-      title: "Plancherel-$\\\\alpha$ spectral foundations",
+      title: "Plancherel–$\\alpha$ Spectral Foundations",
       label: "sec:plancherel-alpha-spectral",
       blocks: [
         "intro-plancherel-alpha-ribbon",
@@ -1017,15 +910,16 @@ export default chapter({
         "e-infinity-page-identifications-table-data",
         "spectral-sequence-h3-explicit",
         "chirality-writhe-ribbon-derivation",
+        "p-from-braid-mirror",
         "gram-matrix-spectral-connection",
-        // Re-homed from the weak-spectral/isospin collection: weak-sector
-        // spectral completeness belongs with the Plancherel-alpha foundations.
         "weak-spectral-completeness",
+        "weak-symmetric-normalization",
+        "knot-operator-lp-selection",
       ],
     }),
 
     section({
-      title: "Plancherel: knot-factor and mass-tower closure",
+      title: "Plancherel Knot-Factor and Mass-Tower Closure",
       label: "sec:plancherel-knot-factor-mass-tower",
       blocks: [
         "plancherel-knot-factor-mass-tower-intro",
@@ -1045,14 +939,17 @@ export default chapter({
         "mass-tower-coefficient-stratification-table1-data",
         "mass-tower-coefficient-stratification-table2-data",
         "flavor-dressing-functor",
-        // Re-homed from the staircase/character collection: the staircase
-        // EW-residual (Weinberg angle) belongs with the mass-tower closure.
         "staircase-ew-residual",
+        "categorical-higgs-mechanism",
+        "categorical-linking-operation",
+        "categorical-linking-operation-interpretation",
+        "s4-s3-half-symmetric-projection",
+        "s4-s3-half-symmetric-projection-proof",
       ],
     }),
 
     section({
-      title: "$\\\\alpha_k$ derivation procedure",
+      title: "The $\\alpha_k$ Derivation Procedure",
       label: "sec:alpha-k-procedure",
       blocks: [
         "intro-alpha-k-procedure",
@@ -1070,7 +967,7 @@ export default chapter({
     }),
 
     section({
-      title: "Joint-tower SDP and closed-form weights",
+      title: "Joint-Tower SDP and Closed-Form Wenzl Weights",
       label: "sec:alpha-k-procedure-atom-knot-mass",
       blocks: [
         "alpha-k-procedure-atom-knot-mass-intro",
@@ -1085,11 +982,16 @@ export default chapter({
         "y-lambda-closed-form-wenzl-bridge-table1-data",
         "y-lambda-closed-form-wenzl-bridge-table2-data",
         "y-lambda-closed-form-wenzl-bridge-table3-data",
+        "rho-k-h3a-refinement",
+        "rho-k-h3a-refinement-interpretation",
+        "sigma-shell-from-beta-chain-derivation",
+        "sigma-shell-from-beta-chain-derivation-table-data",
+        "knot-operator-transition",
       ],
     }),
 
     section({
-      title: "Wenzl bridge, cyclotomic factorisation, and explicit $\\\\alpha_k$",
+      title: "Wenzl Bridge, Cyclotomic Factorisation, and Explicit $\\alpha_k$",
       label: "sec:wenzl-bridge-cyclotomic",
       blocks: [
         "intro-wenzl-bridge-cyclotomic",
@@ -1102,6 +1004,7 @@ export default chapter({
         "descent-rate-probe-sim",
         "multi-level-jet-sum-sim",
         "macdonald-hook-telescope",
+        "dim-master-pentagon",
         "demazure-fiber-markov-trace",
         "wenzl-bridge-applicability-qou",
         "wenzl-bridge-applicability-qou-proof",
@@ -1109,13 +1012,15 @@ export default chapter({
     }),
 
     section({
-      title: "The LR-tensor character bridge",
+      title: "The Littlewood–Richardson Tensor Character Bridge",
       label: "sec:wenzl-bridge-cyclotomic-lr-tensor-character",
       blocks: [
         "wenzl-bridge-cyclotomic-lr-tensor-character-intro",
         "lr-tensor-character-bridge",
         "lr-tensor-character-bridge-proof",
+        "depth-stratified-frobenius-reciprocity",
         "wenzl-qmn-synergy",
+        "qmn-recursive-memoized",
         "explicit-alpha-k-h3",
         "explicit-alpha-k-h3-proof",
         "explicit-alpha-k-h4",
@@ -1130,7 +1035,7 @@ export default chapter({
     }),
 
     section({
-      title: "Mass and Binding Derivation",
+      title: "Pre-Archimedean Mass and Binding Derivation Synthesis",
       label: "sec:derivation-audit",
       blocks: [
         "derivation-audit-intro",
@@ -1143,11 +1048,9 @@ export default chapter({
       ],
     }),
 
-
-    // ═══ PHYSICAL FACE ═════════════════════════════════════════
-    // Parity classification, six-term formula, mass predictions.
+    // ═══ ARC IV — ELEMENTARY PARTICLE & GAUGE COUPLING DERIVATIONS AND SIX-TERM MASS FORMULA ═══
     section({
-      title: "Parity classification, atomic atlas, and discrepancy resolution",
+      title: "Parity Classification, Atomic Atlas, and Discrepancy Resolution",
       label: "sec:parity-classification-discrepancy",
       blocks: [
         "intro-parity-classification-discrepancy",
@@ -1165,7 +1068,7 @@ export default chapter({
     }),
 
     section({
-      title: "The partition-sum proton residual",
+      title: "The Partition-Sum Proton Residual and Pair-Graph Regimes",
       label: "sec:parity-classification-discrepancy-partition-sum-proton",
       blocks: [
         "parity-classification-discrepancy-partition-sum-proton-intro",
@@ -1187,7 +1090,7 @@ export default chapter({
     }),
 
     section({
-      title: "Six-term mass formula and crystal isospin",
+      title: "Six-Term Mass Formula and Crystal Isospin",
       label: "sec:six-term-crystal-isospin-chirality",
       blocks: [
         "intro-six-term-crystal-isospin-chirality",
@@ -1202,14 +1105,12 @@ export default chapter({
         "crystal-isospin-degeneracy-proof",
         "crystal-isospin-degeneracy-table-data",
         "isospin-mass-split-em-localisation",
-        // Re-homed from the weak-spectral/isospin collection: isospin from the
-        // canonical bowtie belongs with crystal isospin.
         "isospin-from-canonical-bowtie",
       ],
     }),
 
     section({
-      title: "Option E: crystal bases and chirality duality",
+      title: "Crystal Bases and Chirality Duality",
       label: "sec:six-term-crystal-isospin-chirality-option-e-isospin",
       blocks: [
         "six-term-crystal-isospin-chirality-option-e-isospin-intro",
@@ -1228,16 +1129,12 @@ export default chapter({
       ],
     }),
 
-    // §physical: mass formulas, baryon/meson, binding energy, predictions
     section({
-      title:
-        "Physical face: mass, binding ($\\operatorname{Re}\\mathfrak{V}$), and decay ($\\operatorname{Im}\\mathfrak{V}$)",
+      title: "Physical Spectrum: Hadron Masses, Binding ($\operatorname{Re}\mathfrak{V}$), and Decay ($\operatorname{Im}\mathfrak{V}$)",
       label: "sec:mass-physical-face",
       blocks: [
-                "mass-physical-face-intro",
-"neutron-proton-splitting",
-        // Ledger §5 orphan integration (2026-07-12): H_4 alternating-
-        // channel Habiro-element conjecture for the Δ_pn residual.
+        "mass-physical-face-intro",
+        "neutron-proton-splitting",
         "flavor-split-habiro-derivation",
         "borromean-baryon-mass-formula",
         "borromean-baryon-interpretation",
@@ -1245,13 +1142,9 @@ export default chapter({
         "lambda-scale-substrate-form",
         "lambda-scale-substrate-form-proof",
         "topological-mass-trefoil",
-        // Re-homed orphan: kaon/pion mass ratio from Hecke χ^{(2,1)}(σ_1^5)
-        // + Seifert volumes (structured near-match, ~290 ppm vs PDG).
         "meson-kaon-pion-hecke-seifert",
         "meson-kaon-pion-hecke-seifert-comparison",
         "meson-kaon-pion-hecke-seifert-proof",
-        // Gen-3 extension: φ(1020) = T(2,7), m_φ/m_π ≈ 7.320 (2167 ppm vs
-        // PDG); the torus tower tracks the strange-vector line, not the η.
         "gen3-meson-phi-hecke-seifert",
         "gen3-meson-phi-hecke-seifert-identification",
         "tower-binding-energy",
@@ -1261,16 +1154,12 @@ export default chapter({
       ],
     }),
 
-
-    // ═══ OPEN PROBLEMS ═════════════════════════════════════════
-    // ── §open: mass-tower open problems and crystal-basis directions ──
-    // Consolidated from predicted-spectra (2026-05-27).
     section({
-      title: "Open problems: mass-tower structure and crystal basis",
+      title: "Open Problems: Mass-Tower Structure and Crystal Basis",
       label: "sec:mass-open-problems",
       blocks: [
-                "mass-open-problems-intro",
-"terminal-resolution",
+        "mass-open-problems-intro",
+        "terminal-resolution",
         "mass-from-generators",
         "volume-tower-decomposition",
         "mass-tower-open-problems-classes",
@@ -1278,80 +1167,11 @@ export default chapter({
         "crystal-basis-resolves-mass-tower-open-problems-context",
         "mass-tower-deeper-fillers",
         "complex-mass-constituent-functional",
-      ],
-    }),
-
-
-    // ═══ ORPHAN RECONNECTS ═════════════════════════════════════
-    section({
-      title: "Weak-spectral and isospin lemmas",
-      label: "sec:mass-theory-orphan-reconnect",
-      blocks: [
+        "mass-bridge-orphan-reconnect-intro",
         "mass-theory-orphan-reconnect-intro",
-        "categorical-higgs-mechanism",
-        "interface-knot-markov-z",
-        "interface-knot-markov-z-proof",
-        "rho-k-h3a-refinement",
-        "rho-k-h3a-refinement-interpretation",
-        "s4-s3-half-symmetric-projection",
-        "s4-s3-half-symmetric-projection-proof",
-        "weak-symmetric-normalization",
-        "z-eq-n-rho-correction",
-        // Re-homed (high-confidence): borromean-bloch-group-element ->
-        // sec:mutant-jones-bloch-group; isospin-from-canonical-bowtie ->
-        // sec:six-term-crystal-isospin-chirality; weak-spectral-completeness
-        // -> sec:plancherel-alpha-spectral.
-      ],
-    }),
-
-    section({
-      title: "Trace and staircase lemmas",
-      label: "sec:mass-application-orphan-reconnect",
-      blocks: [
         "mass-application-orphan-reconnect-intro",
-      ],
-      // De-dup + over-weight split: 19-block reconnected-orphan grab-bag
-      // retitled (was a second "Reconnected orphan blocks (Phase 7)",
-      // duplicating sec:mass-theory-orphan-reconnect) and split into 2
-      // reading-order sub-arcs. A deeper re-home of these blocks into
-      // thematic sections elsewhere is a follow-up.
-      subsections: [
-        section({
-          title: "Trace and operator lemmas",
-          label: "sec:mass-application-trace-operator-lemmas",
-          blocks: [
-            "block-multiplicativity-v-free",
-            "wenzl-A-operator",
-            "crystal-r-matrix-sub-lemma",
-            "operator-valued-combiner-convergence",
-            "depth-stratified-frobenius-reciprocity",
-            "eigenvalue-product-expansion",
-            "eigenvalue-product-expansion-proof",
-            "knot-operator-lp-selection",
-            // Re-homed: borromean-markov-trace-closed-form ->
-            // sec:mass-algebraic-markov-gram; hoefsmit-ew-cell-content (+2
-            // tables) -> sec:hoefsmit-convergence-construction.
-          ],
-        }),
-        section({
-          title: "Staircase and character lemmas",
-          label: "sec:mass-application-staircase-hoefsmit",
-          blocks: [
-            "knot-operator-transition",
-            "qmn-recursive-memoized",
-            "sigma-shell-from-beta-chain-derivation",
-            "sigma-shell-from-beta-chain-derivation-table-data",
-            "staircase-partition",
-            "staircase-corner-hook",
-            "staircase-corner-hook-proof",
-            "symbolic-character-table",
-            "outro-mass-theory",
-            // Re-homed: staircase-ew-residual ->
-            // sec:plancherel-knot-factor-mass-tower.
-          ],
-        }),
+        "outro-mass-theory",
       ],
     }),
-
   ],
 });
