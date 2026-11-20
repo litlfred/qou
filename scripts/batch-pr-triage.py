@@ -270,11 +270,13 @@ def scan_lean(text: str) -> dict:
         if kind in ("def", "abbrev", "opaque", "instance"):
             local_defs.add(short)
             dsig, _, dbody = body.partition(":=")
-            # a one-line integer/rational arithmetic expression named after a corpus object
+            # a one-line INTEGER arithmetic expression (ℤ/ℕ only: a real/rational one-liner such as
+            # z_D = q^3/(q^2+1) is often the genuine corpus formula, so it is NOT flagged)
             if (dbody.strip() and len(dbody.strip().splitlines()) <= 2
                     and re.fullmatch(r"[\w\s+\-*/^()0-9,.']*", dbody.strip())
                     and not re.search(r"\b(match|fun|if|let)\b", dbody)
-                    and not re.search(r"[A-Za-z]", re.sub(r"\b(Int|Nat|ℤ|ℕ|ℚ|Rat)\b|[({\[][^:]*:", "", dsig.split(None, 2)[-1] if len(dsig.split()) > 2 else "").replace(short, ""))):
+                    and not re.search(r"[ℝℚℂ]|\b(Real|Complex|Rat)\b", dsig)
+                    and not re.search(r"[A-Za-z]", re.sub(r"\b(Int|Nat|ℤ|ℕ)\b|[({\[][^:]*:", "", dsig.split(None, 2)[-1] if len(dsig.split()) > 2 else "").replace(short, ""))):
                 arith_defs.add(short)
         if kind in ("structure", "class", "inductive"):
             local_types.add(short)
@@ -483,7 +485,9 @@ def lean_one(p: dict, env: dict, timeout: int) -> dict:
         body_errs = [l for l in errs if int(re.search(r":(\d+):\d+: error", l).group(1)) <= nlines]
         missing = re.findall(r"object file '?\S*?/([\w/]+)\.olean'? of module (\S+) does not exist", out)
         st = "pass"
-        if missing and not [e for e in body_errs if "object file" not in e]:
+        if rc < 0:      # killed by a signal (OOM with two Mathlib-sized processes): not a verdict
+            st = "killed"
+        elif missing and not [e for e in body_errs if "object file" not in e]:
             st = "blocked"
         elif body_errs or (rc and not errs):
             st = "fail"
@@ -529,8 +533,9 @@ def lean_stage(args):
     def stale(n):
         c = done.get(str(n), {})
         return (args.refresh or c.get("head_sha") != prs[n]["head_sha"]
-                or (args.retry_blocked and (c.get("status") == "blocked"
-                                            or any(v.get("status") == "blocked" for v in c.get("files", {}).values()))))
+                or (args.retry_blocked and (c.get("status") in ("blocked", "killed")
+                                            or any(v.get("status") in ("blocked", "killed")
+                                                   for v in c.get("files", {}).values()))))
     todo = [r["number"] for r in order if stale(r["number"])]
     todo = todo[: args.max]
     print(f"lean: {len(todo)} PRs to check (cached {len(done)})", flush=True)
@@ -648,13 +653,15 @@ def classify(args):
                     decl2[d["name"]].add(n)
     bean2 = collections.defaultdict(set)
     for p in prs:
-        p["beans"] = sorted(set("qou-" + b for b in BEAN_RE.findall(p["title"] + " " + p["head"]))
-                            or set("qou-" + b for b in BEAN_RE.findall(p["body"][:3000])))
+        p["beans"] = sorted(set("qou-" + b for b in BEAN_RE.findall(p["title"] + " " + p["head"] + " " + p["body"][:4000])))
         for b in p["beans"]:
             bean2[b].add(p["number"])
 
     # bean sets per PR, for "a newer PR re-does exactly these beans"
-    beanset = {p["number"]: frozenset(p["beans"]) for p in prs}
+    # umbrella/epic beans (cited by many PRs, e.g. qou-6qbv, qou-10v9, qou-8lxd) say nothing
+    # about which leaf work a PR does; compare leaf sets only.
+    umbrella = {b for b, ns in bean2.items() if len(ns) >= 6}
+    beanset = {p["number"]: frozenset(set(p["beans"]) - umbrella) for p in prs}
     AGG = re.compile(r"(^|/)QOU\.lean$|(^|/)[A-Z]\w+\.lean$")  # aggregator import lists
     rows = []
     for p in prs:
@@ -662,7 +669,7 @@ def classify(args):
         s = scan_res.get(str(n), {})
         lf = {fn: x for fn, x in s.get("lean_files", {}).items() if not fn.endswith("lean/QOU.lean")}
         tot = collections.Counter()
-        provable = generic = ledger = flagged = 0
+        provable = generic = ledger = flagged = arith = 0
         new_lean = [fn for fn, x in lf.items() if not x.get("identical_on_main")]
         same_lean = [fn for fn, x in lf.items() if x.get("identical_on_main")]
         standalone = bool(new_lean)
@@ -684,10 +691,13 @@ def classify(args):
                         ledger += 1
                     if "unfolds-int-arith-def" in fs:
                         tot["unfolds_arith"] += 1
+                    if fs & {"true-conclusion", "tautology", "rfl-only-on-local-def", "unfolds-int-arith-def"}:
+                        arith += 1
                     if fs & {"generic-identity", "true-conclusion", "tautology", "rfl-only-on-local-def",
                              "unfolds-int-arith-def"}:
                         flagged += 1
-        vac = flagged / provable if provable else 0.0
+        vac = flagged / provable if provable else 0.0          # counts generic identities (standalone only)
+        arith_ratio = arith / provable if provable else 0.0    # named one-line arithmetic, rfl on local defs, True
         bstat = {b: beans.get(b, {"status": "missing", "pr": None, "title": "", "infra": False}) for b in p["beans"]}
         infra_frac = (sum(1 for v in bstat.values() if v.get("infra")) / len(bstat)) if bstat else 0.0
         done_elsewhere = [b for b, v in bstat.items()
@@ -696,7 +706,7 @@ def classify(args):
                             for m in file2[f["filename"]] if m != n})
         decl_coll = sorted({m for fn in new_lean for d in lf[fn]["decls"] if d["name"] in decl2
                             for m in decl2[d["name"]] if m != n})
-        bean_coll = sorted({m for b in p["beans"] for m in bean2[b] if m != n})
+        bean_coll = sorted({m for b in p["beans"] if b not in umbrella for m in bean2[b] if m != n})
         newer_same_beans = sorted(m for m in bean_coll if m > n and beanset[n] and beanset[n] <= beanset[m])
         dps = s.get("dps", [])
         cc = s.get("conflict_candidates", [])
@@ -705,7 +715,18 @@ def classify(args):
         lean = lean_res.get(str(n), {"status": "not-run", "reason": "not reached in this run"})
         dirty = p["mergeable"] is False or p["mergeable_state"] == "dirty"
 
+        # theorems ADDED by the diff (the per-file counts above include pre-existing ones)
+        added_thm = sub_restate = 0
+        for f in p["files"]:
+            if f["filename"].endswith(".lean") and not f["filename"].endswith("lean/QOU.lean"):
+                for l in f.get("patch", "").splitlines():
+                    if re.match(r"^\+\s*(?:@\[[^\]]*\]\s*)?(?:private\s+)?(theorem|lemma) ", l):
+                        added_thm += 1
+                        if re.search(r"_sub_eq_zero\b|_sub_self\b", l):
+                            sub_restate += 1
         signals = []
+        if sub_restate:
+            signals.append(f"{sub_restate}/{added_thm} added theorems are `_sub_eq_zero` restatements of existing equalities")
         if standalone:
             signals.append("standalone (no Mathlib/QOU import)")
         if tot["reimplements_ring_axioms"]:
@@ -733,6 +754,9 @@ def classify(args):
             verdict = "CLOSE-SUPERSEDED"; reasons.append("a newer open PR cites the same bean set: " + ",".join(f"#{m}" for m in newer_same_beans[:4]))
         elif provable and (tot["true-conclusion"] + tot["tautology"]) * 2 >= provable:
             verdict = "CLOSE-VACUOUS"; reasons.append(f"{tot['true-conclusion'] + tot['tautology']}/{provable} theorems conclude True or X = X")
+        elif provable and arith_ratio >= 0.6:
+            verdict = "CLOSE-VACUOUS"; reasons.append(f"{arith}/{provable} theorems unfold one-line arithmetic defs named after "
+                                                      "corpus objects (or rfl/True on local literals): restatement, not derivation")
         elif standalone and provable and vac >= 0.6:
             verdict = "CLOSE-VACUOUS"; reasons.append(f"standalone file, {flagged}/{provable} theorems are generic Int identities, "
                                                       "unfoldings of one-line Int arithmetic defs, or rfl on local literals")
@@ -751,20 +775,18 @@ def classify(args):
                 reasons.append(f"vacuity True/field/taut={tot['true-conclusion']}/{tot['true-field']}/{tot['tautology']}")
             if standalone:
                 reasons.append("standalone proxy: no Mathlib/QOU import, cannot reference the corpus objects it names")
-            elif provable and vac >= 0.5:
-                reasons.append(f"{flagged}/{provable} theorems generic-identity/arith-unfold/rfl-on-local-def")
+            if provable and arith_ratio >= 0.3:
+                reasons.append(f"{arith}/{provable} theorems unfold one-line arithmetic defs / rfl on local literals")
             if tot["reimplements_ring_axioms"]:
                 reasons.append("re-implements ring axioms (§7c: use [CommRing R])")
+            if added_thm and sub_restate * 5 >= added_thm * 3:
+                reasons.append(f"{sub_restate}/{added_thm} added theorems only restate an existing `a = b` as `a - b = 0`")
             if s.get("missing_qou_imports"):
                 reasons.append("imports modules not on main (stacked): " + ",".join(s["missing_qou_imports"][:3]))
             if dps and min(dps) < 80 and re.search(r"80[- ]dps", p["title"] + p["body"]):
                 reasons.append(f"claims 80-dps, min dps found {min(dps)}")
             if done_elsewhere:
                 reasons.append("partly superseded beans: " + ",".join(done_elsewhere))
-            if decl_coll:
-                reasons.append("same fully-qualified decl as " + ",".join(f"#{m}" for m in decl_coll[:6]))
-            if file_coll:
-                reasons.append("same file as " + ",".join(f"#{m}" for m in file_coll[:6]))
             if s.get("scan_error"):
                 reasons.append("scan: " + s["scan_error"][:60])
             if not p["files"]:
@@ -774,8 +796,8 @@ def classify(args):
                 reasons.append("lean-direct FAIL" + tag + ": " + lean.get("first_error", "")[:100])
             if lean.get("status") == "blocked":
                 reasons.append("lean-direct BLOCKED: olean snapshot lacks " + lean.get("first_error", "")[-60:])
-            if lean.get("sorryAx"):
-                reasons.append("#print axioms shows sorryAx")
+            if lean.get("sorryAx") and lean.get("status") not in ("blocked", "fail"):
+                reasons.append("#print axioms shows sorryAx")   # (in a failed/blocked file it is error recovery)
             verdict = "NEEDS-REWORK" if reasons else "MERGE-CANDIDATE"
             if verdict == "NEEDS-REWORK" and dirty and len(reasons) == 1 and not cc_code:
                 rework_kind = "rebase-only"
@@ -787,14 +809,51 @@ def classify(args):
             "changed_files": p["changed_files"], "additions": p["additions"], "deletions": p["deletions"],
             "lean_files_new_or_changed": new_lean, "lean_files_identical_on_main": same_lean,
             "provable_decls": provable, "generic_identity_decls": generic, "ledger_decls": ledger,
-            "vacuity_flagged_decls": flagged, "standalone": standalone, "signals": signals,
+            "added_theorems": added_thm, "sub_eq_zero_restatements": sub_restate,
+            "vacuity_flagged_decls": flagged, "arith_proxy_decls": arith, "standalone": standalone, "signals": signals,
             "counts": dict(tot), "dps": sorted(set(dps)), "py_float64_hits": s.get("py_float64_hits", 0),
             "missing_qou_imports": s.get("missing_qou_imports", []),
             "file_collisions": file_coll, "decl_collisions": decl_coll, "bean_collisions": bean_coll,
             "newer_same_bean_prs": newer_same_beans,
             "lean": lean, "verdict": verdict, "rework_kind": rework_kind, "reasons": reasons,
         })
+    # second pass: a PR that touches the same code file / declaration as an OLDER open PR
+    # which is itself not being closed must wait for that one and rebase (merge order =
+    # oldest first). Collisions only with newer PRs do not block this one.
+    verdict_of = {r["number"]: r["verdict"] for r in rows}
+    for r in rows:
+        if r["verdict"] not in ("MERGE-CANDIDATE", "NEEDS-REWORK"):
+            continue
+        older = sorted({m for m in r["file_collisions"] + r["decl_collisions"]
+                        if m < r["number"] and verdict_of.get(m) in ("MERGE-CANDIDATE", "NEEDS-REWORK")})
+        r["blocked_by_older"] = older
+        if older:
+            r["reasons"].append("touches the same file/declaration as older open PR " + ",".join(f"#{m}" for m in older[:6])
+                                + ": rebase after it lands")
+            if r["verdict"] == "MERGE-CANDIDATE":
+                r["verdict"] = "NEEDS-REWORK"
+            r["rework_kind"] = None
     return rows
+
+
+def _ev(r):
+    """One-line evidence string for a row."""
+    lean = r["lean"]
+    st = lean.get("status", "not-run")
+    if st in ("pass", "fail", "blocked", "timeout"):
+        ax = set()
+        for v in lean.get("axioms", {}).values():
+            ax |= set(v)
+        ev = f"lean-direct {st}, {lean.get('theorems_checked', 0)} thm `#print axioms`: {{{', '.join(sorted(ax)) or 'none'}}}"
+        if lean.get("nonstandard_axioms"):
+            ev += f", NON-STANDARD in {len(lean['nonstandard_axioms'])}"
+        if lean.get("sorryAx") and st == "pass":
+            ev += f", sorryAx in {len(lean['sorryAx'])}"
+    elif st == "no-lean":
+        ev = "no Lean in PR (compute/QA only: precision-gates owed)"
+    else:
+        ev = "lean not run"
+    return ev
 
 
 def report(args):
@@ -805,54 +864,64 @@ def report(args):
     fam = collections.defaultdict(collections.Counter)
     for r in rows:
         fam[r["family"]][r["verdict"]] += 1
+    lean_st = collections.Counter(r["lean"].get("status", "not-run") for r in rows)
     meta = {"generated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "main": git("rev-parse", "origin/main").strip(),
             "script": "scripts/batch-pr-triage.py", "n": len(rows), "verdicts": dict(agg),
+            "lean_status": dict(lean_st),
             "by_family": {k: dict(v) for k, v in fam.items()}}
     out.with_suffix(".json").write_text(json.dumps({"meta": meta, "rows": rows}, indent=1) + "\n")
-    cands = sorted([r for r in rows if r["verdict"] == "MERGE-CANDIDATE"], key=lambda r: r["created_at"])
+
+    def cand_key(r):  # merge order: Lean-verified first, then oldest
+        return (r["lean"].get("status") != "pass", r["created_at"])
+    cands = sorted([r for r in rows if r["verdict"] == "MERGE-CANDIDATE"], key=cand_key)
     L = []
     L.append(f"# Batch-formalization PR triage — {meta['generated'][:10]}\n")
-    L.append(f"Generated by `{meta['script']}` against `origin/main` = `{meta['main'][:10]}`. "
-             f"JSON twin: `{out.with_suffix('.json').name}`. **Read-only triage: no PR was merged, closed or commented on.**\n")
-    L.append("Verdicts are heuristic and STATIC unless the `lean` column says `pass`/`fail`; "
-             "a MERGE-CANDIDATE still owes the Phase-4 gate (`lean`-direct exit 0 against the real import cone + "
-             "`#print axioms` no `sorryAx`). Sorry-free is not derived (AGENTS.md); a `rfl`/`norm_num` "
-             "proof about a definition introduced in the same file is flagged `rfl-only-on-local-def` — it may be "
-             "honest notation-checking, but it is not a derivation.\n")
+    L.append(f"Generated by `{meta['script']}` against `origin/main` = `{meta['main'][:10]}` at {meta['generated']}. "
+             f"JSON twin: `{out.with_suffix('.json').name}` (one row per PR, every signal and reason). "
+             "**Read-only triage: no batch PR was merged, closed or commented on.** The coordinator decides.\n")
+    L.append("Rerun: `TRIAGE_CACHE=<dir> python3 scripts/batch-pr-triage.py gather && ... fetch && ... scan && "
+             "... lean && ... control && ... report --out docs/coordination/<date>-batch-pr-triage`.\n")
     L.append("## Aggregate\n")
     L.append("| verdict | count |\n|---|---:|")
     for k in ("MERGE-CANDIDATE", "NEEDS-REWORK", "CLOSE-SUPERSEDED", "CLOSE-VACUOUS"):
         L.append(f"| {k} | {agg.get(k, 0)} |")
     L.append(f"| **total** | **{len(rows)}** |\n")
-    L.append("| family | " + " | ".join(("MERGE", "REWORK", "SUPERSEDED", "VACUOUS")) + " |\n|---|---:|---:|---:|---:|")
-    for k, v in sorted(fam.items()):
-        L.append(f"| `{k}` | {v['MERGE-CANDIDATE']} | {v['NEEDS-REWORK']} | {v['CLOSE-SUPERSEDED']} | {v['CLOSE-VACUOUS']} |")
+    L.append("Lean-direct status over all rows: " + ", ".join(f"{k} {v}" for k, v in lean_st.most_common()) + ".\n")
+    L.append("| family | PRs | MERGE | REWORK | SUPERSEDED | VACUOUS |\n|---|---:|---:|---:|---:|---:|")
+    for k, v in sorted(fam.items(), key=lambda kv: -sum(kv[1].values())):
+        L.append(f"| `{k}` | {sum(v.values())} | {v['MERGE-CANDIDATE']} | {v['NEEDS-REWORK']} | "
+                 f"{v['CLOSE-SUPERSEDED']} | {v['CLOSE-VACUOUS']} |")
     rc = collections.Counter()
     for r in rows:
         for x in r["reasons"]:
-            rc[re.sub(r"[\d#,]+.*$", "", x).strip() or x[:30]] += 1
-    L.append("\n## Reason frequency (NEEDS-REWORK / CLOSE-*)\n")
-    L.append("| reason | PRs |\n|---|---:|")
-    for k, v in rc.most_common(25):
+            rc[re.sub(r"\s*\d+/\d+\s*", " N/M ", re.split(r"[:(]", x)[0]).strip()] += 1
+    L.append("\n## Reason frequency\n")
+    L.append("| reason (numbers normalised) | PRs |\n|---|---:|")
+    for k, v in rc.most_common(20):
         L.append(f"| {k} | {v} |")
-    L.append("\n## MERGE-CANDIDATEs (oldest first)\n")
-    L.append("| PR | created | beans | files | +/- | thm | flagged | dps | lean |\n|---|---|---|---:|---|---:|---:|---|---|")
-    for r in cands:
-        L.append(f"| #{r['number']} | {r['created_at'][:10]} | {' '.join(r['beans'][:5])} | {r['changed_files']} | "
-                 f"+{r['additions']}/-{r['deletions']} | {r['provable_decls']} | {r['vacuity_flagged_decls']} | "
-                 f"{','.join(map(str, r['dps'])) or '-'} | {r['lean']['status']} |")
+    L.append("\n## MERGE-CANDIDATEs (Lean-verified first, then oldest)\n")
+    L.append("A MERGE-CANDIDATE is clean against `main`, has no static vacuity/sorry/axiom/collision flag, and "
+             "(where `lean` = pass) its changed `.lean` files compile with `lean -DautoImplicit=false -s 65536` "
+             "against the restored olean snapshot, every theorem's `#print axioms` taken. It is NOT a claim "
+             "that the content is a derivation (sorry-free ≠ derived), and a dependent of a modified module "
+             "is not re-checked.\n")
+    L.append("| # | PR | created | Lean files | +thm | evidence | signals |\n|---:|---|---|---:|---:|---|---|")
+    for i, r in enumerate(cands, 1):
+        L.append(f"| {i} | #{r['number']} | {r['created_at'][:10]} | {len(r['lean_files_new_or_changed'])} | "
+                 f"{r['added_theorems']} | {_ev(r)} | {'; '.join(r['signals'])[:200]} |")
     L.append("\n## Full table\n")
-    L.append("| PR | family | mergeable | beans (status) | lean files | thm/flag | sorry/ax | collisions | verdict | why |\n"
-             "|---|---|---|---|---:|---|---|---|---|---|")
+    L.append("| PR | family | merge | thm/arith | lean | verdict | why |\n|---|---|---|---|---|---|---|")
     for r in sorted(rows, key=lambda r: r["number"]):
-        bs = " ".join(f"{b}({v['status'][:4]})" for b, v in list(r["bean_status"].items())[:6])
-        coll = ",".join(f"#{m}" for m in (r["decl_collisions"] or r["file_collisions"])[:4])
-        L.append(f"| #{r['number']} | `{r['family']}` | {r['mergeable_state']} | {bs} | {len(r['lean_files_new_or_changed'])} | "
-                 f"{r['provable_decls']}/{r['vacuity_flagged_decls']} | {r['counts'].get('sorry', 0)}/{r['counts'].get('axiom', 0)} | "
-                 f"{coll} | {r['verdict']} | {'; '.join(r['reasons'])[:180]} |")
-    out.with_suffix(".md").write_text("\n".join(L) + "\n")
-    print(json.dumps(meta, indent=1))
+        L.append(f"| #{r['number']} | `{r['family']}` | {r['mergeable_state']} | "
+                 f"{r['provable_decls']}/{r.get('arith_proxy_decls', 0)} | {r['lean'].get('status', '-')} | "
+                 f"{r['verdict']} | {'; '.join(r['reasons'])[:220]} |")
+    body = "\n".join(L) + "\n"
+    hdr = pathlib.Path(args.header) if getattr(args, "header", None) else None
+    if hdr and hdr.exists():
+        body = body.replace("## Aggregate\n", hdr.read_text().rstrip() + "\n\n## Aggregate\n", 1)
+    out.with_suffix(".md").write_text(body)
+    print(json.dumps({k: meta[k] for k in ("generated", "n", "verdicts", "lean_status")}, indent=1))
 
 
 def main():
@@ -865,6 +934,7 @@ def main():
     ap.add_argument("--budget", type=int, default=6 * 3600, help="lean: wall-clock budget, seconds")
     ap.add_argument("--out", default=f"docs/coordination/{time.strftime('%Y-%m-%d')}-batch-pr-triage")
     ap.add_argument("--refresh", action="store_true")
+    ap.add_argument("--header", help="report: markdown file inserted before ## Aggregate (findings prose)")
     a = ap.parse_args()
     if a.stage in ("gather", "all"):
         gather(a)
