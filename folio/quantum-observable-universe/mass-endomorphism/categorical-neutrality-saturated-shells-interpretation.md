@@ -8,11 +8,11 @@ For $n \notin \mathfrak{M}$, the constraint fails. Non-self-conjugate partitions
 
 The Hoefsmit seminormal form ([prop:hoefsmit-seminormal-form](#prop:hoefsmit-seminormal-form)) supplies explicit matrices for $\sigma_i$ on each $V_\lambda$. Direct multiplication recovers the full-twist eigenvalue $q^{c(\lambda)}$. Numerical verification at $k = 3, \dots, 10$ confirms the shell pattern at small magic values $n = 2, 8, 20$. At $k \geq 12$, combinatorial growth in $|\{\lambda \vdash n\}|$ blocks matrix evaluation.
 
-The conjecture reformulates this homologically. Instead of verifying $\Phi_n$ with matrices, we verify the self-conjugate-support condition via content-sum arithmetic. This approach accesses saturation at $n \in \{50, 82, 126\}$ without matrix multiplication.
+The conjecture reformulates this homologically. Instead of verifying $\Phi_n$ with matrices, one verifies the self-conjugate-support condition via content-sum arithmetic. This approach accesses saturation at $n \in \{50, 82, 126\}$ without matrix multiplication.
 
 ## Global topological neutrality
 
-Earlier models ([atom-knot-mass-derivation](#conj:atom-knot-mass-derivation)) treated $\Phi_n$ as a local object. They required "screening" or "local trivialisation" to explain shell closure. This refactor abandons the locality assumption. We identify $\Phi_n$ as the global section of the mass functor over $\mathbf{C}$ ([rem:phi-n-global-section](#rem:phi-n-global-section)). A non-trivial full-twist action propagates unbounded ribbon flux through the brane tower. Finite observable mass demands global topological neutrality at saturation.
+Earlier models ([atom-knot-mass-derivation](#conj:atom-knot-mass-derivation)) treated $\Phi_n$ as a local object. They required "screening" or "local trivialisation" to explain shell closure. This refactor abandons the locality assumption. It identifies $\Phi_n$ as the global section of the mass functor over $\mathbf{C}$ ([rem:phi-n-global-section](#rem:phi-n-global-section)). A non-trivial full-twist action propagates unbounded ribbon flux through the brane tower. Finite observable mass demands global topological neutrality at saturation.
 
 ## Operator-level support
 

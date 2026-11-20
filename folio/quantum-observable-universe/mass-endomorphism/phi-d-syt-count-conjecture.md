@@ -28,7 +28,7 @@ $$
   m_\lambda \cdot \varphi(d_\lambda) \;=\; 4
 $$
 
-This total cyclotomic degree is fixed at 4 by the typed-$B_3$ word length. We verify this for each representation:
+This total cyclotomic degree is fixed at 4 by the typed-$B_3$ word length. One verifies this for each representation:
 
 - $V_{(3)}$: $\varphi(4) = 2$, $m_{(3)} = 4/2 = 2$.
 - $V_{(2,1)}$: $\varphi(8) = 4$, $m_{(2,1)} = 4/4 = 1$.

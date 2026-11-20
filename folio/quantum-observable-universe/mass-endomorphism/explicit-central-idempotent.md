@@ -4,7 +4,7 @@ Lagrange-interpolation cross-checks, which are **open**. The four cross-checks
 (sum-to-identity, orthogonality, self-adjointness, bar-pairing) are the
 conjectural input; everything downstream of them is proved.
 
-*Let $H_n(q)$ be the Iwahori–Hecke algebra over $R$ at generic $q$. The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ ([Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block](#prop:jucys-murphy-central-elements-qou)) commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, we have $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
+*Let $H_n(q)$ be the Iwahori–Hecke algebra over $R$ at generic $q$. The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ ([Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block](#prop:jucys-murphy-central-elements-qou)) commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, one has $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
 
 $$
   c_T(k; q) \;=\; q^{\,2(j(k) - i(k))}
@@ -30,7 +30,7 @@ $$
 1. **Sum-to-identity.** $\sum_{\lambda \vdash n} e_\lambda = 1 \in H_n(q)$, confirming the completeness of the partition decomposition.
 2. **Orthogonality.** $e_\lambda e_\mu = \delta_{\lambda \mu} e_\lambda$ via Lagrange interpolation in commuting variables.
 3. **Self-adjointness.** For a self-conjugate partition $\lambda = \lambda'$, every box $\square \in \lambda$ has a transposed partner $\square'$ with $c(\square'; q) = c(\square; q^{-1}) = *(c(\square; q))$. The product remains bar-fixed term-by-term: $*(e_\lambda) = e_\lambda$.
-4. **Bar-pairing.** For a chiral partition $\lambda \neq \lambda'$, we have $*(e_\lambda) = e_{\lambda'}$. The sum $e_\lambda + e_{\lambda'}$ remains bar-fixed.
+4. **Bar-pairing.** For a chiral partition $\lambda \neq \lambda'$, one has $*(e_\lambda) = e_{\lambda'}$. The sum $e_\lambda + e_{\lambda'}$ remains bar-fixed.
 
 ## Small $n$ examples
 

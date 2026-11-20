@@ -1,6 +1,6 @@
 **Macdonald coordinate $u = q^2$ substantive discharges for $H_3 / V_{(2,1)}$ scalar invariants.**
 
-Many scalar invariants in the Hecke and Wenzl-bridge algebras are rational in the Macdonald coordinate $u = q^2$, even when their defining formulas involve square roots in $q$. We use this Macdonald substitution to eliminate square roots. This provides concrete closed-form identities that verify algebraically the explicit-residual discharges required in [$c_k$ extraction from four algebraic reduction rules](#rem:ck-extraction-from-algebraic-rules) and related proofs.
+Many scalar invariants in the Hecke and Wenzl-bridge algebras are rational in the Macdonald coordinate $u = q^2$, even when their defining formulas involve square roots in $q$. This Macdonald substitution eliminates the square roots. This provides concrete closed-form identities that verify algebraically the explicit-residual discharges required in [$c_k$ extraction from four algebraic reduction rules](#rem:ck-extraction-from-algebraic-rules) and related proofs.
 
 ## Substantive identities
 
