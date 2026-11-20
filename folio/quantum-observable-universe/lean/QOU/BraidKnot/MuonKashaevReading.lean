@@ -28,7 +28,8 @@ with twisted Reidemeister torsion `2/√−3` and Chern–Simons invariant
 
 with the corpus's exact identifications (`2026-07-12-ohtsuki-higher-rungs-exact`,
 numerically exact, 19–36 digits; **not** Lean-proved):
-`κ₁ = 11√3π/108`, `κ₂ = 2π²/27`, `κ₃ = 1081√3π³/21870`, `κ₄ = 98π⁴/729`.
+`κ₁ = 11√3π/108`, `κ₂ = 2π²/27`, `κ₃ = 1081√3π³/21870`, `κ₄ = 98π⁴/729`,
+`κ₅ = 110011√3π⁵/688905`.
 
 ## What this file proves (sorry-free)
 
@@ -41,7 +42,7 @@ numerically exact, 19–36 digits; **not** Lean-proved):
    `(3/2)·log N + c₀`.
 3. `one_loop_4_1_gt`: for the 4₁ constant `c₀ = −(1/4)·log 3` and `N ≥ 2`,
    the one-loop piece exceeds `log 2 > 0.693`; `two_thirds_lt_one_loop_4_1`.
-4. `kappa_4_1_nonneg`: the four identified Ohtsuki rungs are positive.
+4. `kappa_4_1_nonneg`: the five identified Ohtsuki rungs are positive.
 5. `kashaev_reading_excluded` (capstone): if the measured ratio `r` lies
    **below** `Vol/ℏ_q²` — which is the measured sign of the μ–p residual at
    the proton pin (+211 ppb high) — then **no** finite truncation of the 4₁
@@ -55,7 +56,8 @@ numerically exact, 19–36 digits; **not** Lean-proved):
 Named invariant: the sign of the one-loop term (`log 3 < 6·log 2`). The
 measured sign of the residual enters as the hypothesis `hr`, not as a fact
 proved here. For the actual 4₁ rungs the hypothesis `hκ` is discharged at
-`m ≤ 4` by `kappa_4_1_nonneg`; beyond `m = 4` it is carried.
+`m ≤ 5` by `kappa_4_1_nonneg`; beyond `m = 5` it is carried (κ₆ is measured
+positive, unproved).
 
 Not covered: readings in which the relation is *not* the Kashaev exponent
 (multiplicative-amplitude readings are covered by the monomial order window in
@@ -136,13 +138,16 @@ theorem two_thirds_lt_one_loop_4_1 {N : ℝ} (hN : 2 ≤ N) :
 
 /-! ## §3  The identified 4₁ Ohtsuki rungs are positive -/
 
-/-- The four identified 4₁ Ohtsuki rungs (corpus PSLQ identifications,
-19–36 confirmed digits; see the module docstring). Zero beyond `n = 4`. -/
+/-- The five identified 4₁ Ohtsuki rungs (corpus PSLQ identifications,
+19–40 confirmed digits: κ₁–κ₄ in `2026-07-12-ohtsuki-higher-rungs-exact`, κ₅ in
+`2026-07-12-kappa5-exact-identification`). Zero beyond `n = 5` (κ₆ ≈ 676.9 is
+measured positive but has no closed form; it is not entered here). -/
 noncomputable def kappa_4_1 : ℕ → ℝ
   | 1 => 11 * Real.sqrt 3 * π / 108
   | 2 => 2 * π ^ 2 / 27
   | 3 => 1081 * Real.sqrt 3 * π ^ 3 / 21870
   | 4 => 98 * π ^ 4 / 729
+  | 5 => 110011 * Real.sqrt 3 * π ^ 5 / 688905
   | _ => 0
 
 theorem kappa_4_1_nonneg (n : ℕ) : 0 ≤ kappa_4_1 n := by
@@ -154,7 +159,8 @@ theorem kappa_4_1_nonneg (n : ℕ) : 0 ≤ kappa_4_1 n := by
   | 2 => simp only [kappa_4_1]; positivity
   | 3 => simp only [kappa_4_1]; positivity
   | 4 => simp only [kappa_4_1]; positivity
-  | n + 5 => simp [kappa_4_1]
+  | 5 => simp only [kappa_4_1]; positivity
+  | n + 6 => simp [kappa_4_1]
 
 /-! ## §4  Capstone: the Kashaev reading of CAL-2 moves m_μ the wrong way -/
 
@@ -182,7 +188,9 @@ theorem kashaev_reading_excluded (V hq r : ℝ) (κ : ℕ → ℝ) (m : ℕ) (hq
   intro h
   linarith
 
-/-- The same, instantiated on the identified 4₁ rungs at any order `m`. -/
+/-- The same, instantiated on the identified 4₁ rungs `κ₁…κ₅` (the function is
+zero past `n = 5`, so larger `m` adds nothing — this is NOT a claim about the
+unidentified tail). -/
 theorem kashaev_reading_excluded_4_1 (V hq r : ℝ) (m : ℕ) (hq0 : hq ≠ 0)
     (hN : 2 ≤ 2 * π / hq ^ 2) (hr : r < V / hq ^ 2) :
     r ≠ kashaevTrunc V c0_4_1 kappa_4_1 m (2 * π / hq ^ 2) :=
