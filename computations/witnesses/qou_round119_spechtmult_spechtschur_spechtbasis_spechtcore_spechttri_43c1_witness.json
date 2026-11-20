@@ -1,0 +1,35 @@
+{
+  "round": 119,
+  "lane": "43c1",
+  "beans": [
+    "qou-w3dm",
+    "qou-wsha",
+    "qou-wumn",
+    "qou-x5mi",
+    "qou-xumu"
+  ],
+  "theorems": [
+    "QOU.BraidKnot.SpechtRegularMultiplicity.finrank_homG_regular_partitionIndex_sub_eq_zero",
+    "QOU.BraidKnot.SpechtSchurDiagonal.finrank_homG_specht_of_ne",
+    "QOU.BraidKnot.SpechtStandardBasis.specht_finrank_sub_numSYT_eq_zero",
+    "QOU.BraidKnot.SpechtStandardBasis.mem_span_standardPolytabloid_of_mem_specht",
+    "QOU.BraidKnot.SpechtTriangularCore.rowSet_card_sub_rowLen_eq_zero"
+  ],
+  "scriptPath": "computations/probes/qou_round119_spechtmult_spechtschur_spechtbasis_spechtcore_spechttri_43c1_probe.py",
+  "scriptCommitSha": "18750a7cf0a8ee7a6de3ded67febe3160a7f4594",
+  "scriptHash": "bc13ab9923f1a357a93260dccb8c5377e1bacf6cfa1f6ed8145fa8f5be1b0b9e",
+  "scriptSha256": "bc13ab9923f1a357a93260dccb8c5377e1bacf6cfa1f6ed8145fa8f5be1b0b9e",
+  "mpmathDps": 80,
+  "metrics": {
+    "regMultDiff221": "0.0",
+    "schurCrossS3": "0.0",
+    "sytCount221": "5.0",
+    "basisFinrankDiff221": "0.0",
+    "spanResidual": "5.271098971615261612174287025635009503855e-82",
+    "rowCardDiffs": [
+      0,
+      0
+    ],
+    "allChecksPass": true
+  }
+}
