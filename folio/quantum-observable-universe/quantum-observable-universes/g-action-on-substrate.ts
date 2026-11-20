@@ -6,6 +6,8 @@ export default conjecture({
     "Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate",
   lean: { ref: "qou:QOU.QuantumObservableUniverses.GActionOnSubstrate", validation: "stub" },
   uses: [
+    "thm:ew-triplet-charge-spin-from-involution",
+    "prop:weak-spectral-completeness",
     "def:frobenius-hopf-substrate",
     "rem:hecke-algebra-from-braiding",
     "prop:higgs-vacuum-residual-idempotent",
@@ -35,6 +37,11 @@ export default conjecture({
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): , Lean `VacuumPairing.tr_proj_eq_one`) | that `computations/n_sym_numerical_anchor.py` obtains by dividing" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3):  for a unit-normalised cyclic trace (Lean: `VacuumPairing.tr_proj_eq_one`)." },
+    {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body: "**Derivation attempts after the 'left open' ruling.** (1) Settled: the product in $\\mathrm{tr}_F(e_{\\rm sym}\\cdot e_H)$ must be a tensor product for the value to be a $q$-dimension; read as a composite it is a vacuum matrix element, $0$ or $1$ (`QOU.QuantumObservableUniverses.NSymTraceAlgebra`). (2) Not settled by the trace: whether the electroweak host is a direct sum or a tensor product. (3) The corpus structure elsewhere (Hoefsmit strand pairs, one $W$ slot with $W^-$ the swap-image of $W^+$) matches neither (a) nor (b) and gives $[4]_q[6]_q \\approx 26.25$, conditional on the torus-link identification (`NSymHostStructure`). The ruling stands: no reading is adopted. Audits: `docs/audits/2026-11-20-nsym-host-trace-route.md`, `docs/audits/2026-11-20-nsym-host-corpus-route.md`.",
+    },
     {
       kind: "note",
       date: "2026-11-20",
