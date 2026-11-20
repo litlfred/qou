@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-20T20:05:00Z
+updated_at: 2026-11-20T20:20:00Z
 parent: qou-v2om
 ---
 
@@ -3551,3 +3551,28 @@ The previous entry's *conclusion* stands (the cusp pole cannot distinguish the c
 **Convention is load-bearing.** `dim_q` is the **symmetric** convention, verified in-probe against `lw`'s recorded closed form (A0). The fake-degree convention gives `(1/4)Σ dim_q = 3q²/4 + q/2 + 5/4`, a different function, and would silently change every number here — cf. the AGENTS.md note that `dim_q` alone is ambiguous.
 
 **Still NOT a derivation.** The restatement sharpens the question; it does not answer it. The provenance asymmetry is the live open item, and this bean's TITLE claim (saturated fraction = ℏ_q²) is untouched and remains suspect numerology per AGENTS.md.
+
+### 2026-11-20 — the restatement is now FORMALIZED (Lean, sorry-free)
+
+`2615f1c746a`, [`QOU/Mass/LinkingWeightWedderburn.lean`](../../folio/quantum-observable-universe/lean/QOU/Mass/LinkingWeightWedderburn.lean) — 150 lines, 10 theorems, lean-direct **exit 0** against the real import cone with `-DautoImplicit=false -s 65536`; `#print axioms` on all six substantive theorems gives only `[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**. `check-sidecars` reports it `[library Lean — no ℝ, generic OK]`.
+
+**The gap it closes.** `QOU.Mass.BindingMassRung` carries the whole rung dichotomy with `lw` as an **opaque real parameter** — its docstring says only *"lw = linking_weight, O(1) at the classical point"*. Nothing in Lean said what `lw` is, even though `lw_is_framing_independent_probe.py` had established it is the normalised quantum-dimension sum. The new file is additive: it does not touch `BindingMassRung`.
+
+| theorem | content |
+|---|---|
+| `dimQ_eq_classical_add_defMult_mul_hSq` | `dim_q λ = dim V_λ + m_λ·h²`, `m = (0,1,1,1,0)` |
+| `defMult_eq_zero_iff` | `m_λ = 0 ↔ dim V_λ = 1` — only the one-dim irreps don't deform |
+| `defMult_sum_eq_card_nontrivial` | the identification: `Σ m_λ = #{λ : dim V_λ > 1}` |
+| `lw_eq_closed` | `lw = (10 + 3h²)/4`, i.e. the recorded closed form |
+| `lw_eq_dimSum_add_count` | **headline** — `lw = (Σ dim V_λ + #{dim>1}·h²)/4` |
+| `hDef_factors` | `h = ℏ_q·(q+1)` — why the split exists |
+| `mass_multiplier_split` | `lw/ℏ_q² = (10/4)/ℏ_q² + (3/4)(q+1)²`; also the **pole-purity** statement in closed form |
+| `lw_bar_even` | `lw(q) = lw(q⁻¹)` — why there is no `ℏ_q⁻¹` term |
+
+`defMult_sum_eq_card_nontrivial` is what makes the headline content-bearing rather than a restatement of `lw_eq_closed`: without it, `lw = (10 + 3h²)/4` says nothing about *why* 10 and 3.
+
+**Base ring (§7c).** Generic `{R : Type*} [Field R]` throughout — rational-function identities, no ordering, no `Real.sqrt`, no `ℝ`. `BindingMassRung` keeps the archimedean limit statements, which is the correct side of the substrate→archimedean wall. **No empirical input**: no CODATA, no anchor, no `q₀` anywhere in the file. `decide` is used only on finite claims over `Fin 5`, which AGENTS.md permits for "a genuinely decidable finite computation".
+
+**Self-audit against the anti-laundering rules.** No declaration concludes `: True`, none is `rfl` on a tautology, there is no `axiom`, no `native_decide`, and no conditional class. Each theorem is falsifiable: perturb any `m_λ`, either `10` or `3`, or the convention, and it fails.
+
+**What it still does NOT do.** It does not derive residual (ii) — the provenance asymmetry restated above is untouched — and it does not touch this bean's TITLE claim (saturated fraction = ℏ_q²). The `n ∈ {2,4}` trap is recorded in the docstring so the split is not carried up a tower.
