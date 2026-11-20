@@ -23,6 +23,19 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "status",
+      date: "2026-11-20",
+      body:
+        "**Re-statement on the real Hecke algebra started (owner ruling D2, 2026-11-20; bean qou-2150).** " +
+        "The current carrier `ExplicitCentralIdempotentConjecture` states the conjecture about an opaque scalar in a " +
+        "commutative ring, so no proof can be written against it. New module " +
+        "`QOU.BraidKnot.ExplicitCentralIdempotentHecke` builds the Murphy-Lagrange projectors in " +
+        "`QOU.SchurWeyl.Hecke` from the Murphy elements `qJM`. It proves the n = 2 case sorry-free " +
+        "(`murphyLagrangeComplete_two`): the projectors for shapes (2) and (1,1) are idempotent, orthogonal and sum to 1, " +
+        "for q*qi = 1 and q^2 != qi^2. The general statement over all standard Young tableaux is not yet written, so " +
+        "`lean.ref` still names the old carrier, and the conjecture stays open.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-09-04",
       body: "**This replaces an earlier encoding that violated AGENTS.md §3b-cond item 5.**\nUntil 2026-09-04 the class had a single field whose type *was*\n[`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)'s\nconclusion, discharged by a bare projection `exact hi.idempotent lam h` — so\nthe \"conditional theorem\" proved nothing modulo the class. Caught by the\n`--item5` mode of `scripts/conditional-on-class-hypothesis-audit.ts`; the fix\nwas to axiomatise what interpolation actually supplies and let the theorem\ncompose it.",
