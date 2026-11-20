@@ -1,7 +1,7 @@
 ---
 # qou-ycjd
 title: 'V3 [Part II-IV & Appendices Drain]: Drain Corpus-Wide L1 (671), L2 (2,513) & L3 (1,135) Fourth-Wall & Voice Leaks Outside Ch 1-2'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - exposition
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-20T15:30:00Z
 parent: qou-d4kh
 ---
 
@@ -59,3 +59,12 @@ Drain all remaining fourth-wall Lean prose mentions (Class L1: `671` hits outsid
 
 ## 2026-11-20 — W14 (https://claude.ai/code/session_01VQDpPgB5vPb2GEcGuZ9xxN)
 Hit list regenerated with `voice-leak-audit.ts` (see PR #8538 + audit doc). Drain NOT started: content sweep is ask-first; framed ask posted on #8526. 926 of the 1,052 L2 `block-id` hits (388 files) are mechanically fixable from target titles.
+
+## 2026-11-20 (afternoon) — W14: owner approved options 1, 2, 3, 5 live (not 4)
+- #8563 Part I (Ch 1–2): L1/L2/L3 to 0 in both chapters. L4 (69) left: premature-q is V0 (`qou-ig2d`) structural work; 40 forward links include ~13 proof dependency inversions needing block reordering.
+- #8566 mechanical: 914 raw-label link texts -> target titles (scripts/voice-drain-link-titles.ts).
+- #8567 gate: voice-leak-audit --check-baseline ratchet + /prepare-merge §3 step.
+- #8569 (stacked on #8566) option 3: mechanical slice + hand pass of stochastic-mechanics, eightfold-way, braids-and-knots, predicted-spectra. Paper-wide L1 672 -> 460, L2 2335 -> 1609.
+- Remaining option 3: mass-theory, mass-endomorphism, appendix-surreals, information-theory, observations, notation, glossary, etc. (~460 L1, ~1,230 L2 non-repo-file). 25 caveat-bearing '## Lean' sections left for hand restatement. predicted-spectra Mathlib-infrastructure blocks (mathlib-filler, upstream-mathlib-additions, *formalization-status*) need an owner call on whether they belong in the paper.
+- Option 4 (corpus first-person) NOT approved; L3 outside Part I untouched.
+
