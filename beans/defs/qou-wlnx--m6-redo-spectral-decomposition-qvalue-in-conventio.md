@@ -1,11 +1,11 @@
 ---
 # qou-wlnx
 title: 'M6: redo spectral-decomposition-qvalue in convention D'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:07Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-20T09:30:00Z
 parent: qou-d8c7
 ---
 
@@ -26,3 +26,7 @@ Still open, NOT closeable: (1) no replacement for the Pauli branch; (2) the q-we
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
+
+Claim released. The D redo and its producer landed (#7562, #7618, #7631 merged). Open: no replacement for the Pauli branch (y_(1³) = 0 under D), no D producer for the q-weighted method, and `tbl:qvalue-observation-table-data` still carries C-era rows. The last is a scoping edit and can be done from the witness `spectral-decomposition-qvalue-d.witness.json`. Not done here.

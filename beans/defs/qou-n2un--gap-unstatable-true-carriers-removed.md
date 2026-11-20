@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-16T20:00:34Z
+updated_at: 2026-11-20T09:30:00Z
 parent: qou-6qbv
 ---
 
@@ -98,3 +98,7 @@ Next: CategoricalQExtDeriv.exists_axiom and frobeniusForm_unique.
 - Formalized `SpinIsospinState := Fin 2 × Fin 2` (`spinIsospinState_card`), `AntisymSlaterState (k : ℕ)`, `wigner_a_four_antisymmetric_singlet : Fintype.card (AntisymSlaterState 4) = 1`, `wigner_pauli_exclusion_gt_four`, and `alpha_cluster_quadruplet_decomposition` in `folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean`.
 - Replaced deprecated `Mathlib.Algebra.GeomSum` import with `Mathlib.Algebra.Order.Ring.GeomSum` in `folio/quantum-observable-universe/lean/QOU/Machinery/QPochhammer.lean` and proved `qPochhammerFinite_dvd_of_le`, `qPochhammerDiag_dvd_of_le`, `qPochhammerDiag_eq_zero_of_pow_eq_one`, and `habiro_series_truncates_at_root_of_unity`.
 - Verified with `lean -DautoImplicit=false -s 65536` (`0` errors, `0` warnings, `0` `sorry`).
+
+## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
+
+Progress on the Baer-* row: PR #8534 (commit 98fa99ede6) proves `baerStarRing_matrix_rclike`: M_n(k) with conjugate transpose is Baer-* for every RCLike k. This is the positive-star matrix block. Sorry-free; axioms propext, Classical.choice, Quot.sound. The Hecke proposition still needs a *-isomorphism H_n(q) → ⊕ M_{d_λ}(k) carrying the bar involution to the conjugate transpose; not formalised.

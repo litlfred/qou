@@ -1,11 +1,11 @@
 ---
 # qou-fd2u
 title: 'M6: re-derive frobenius-s classification under convention D'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:52:03Z
-updated_at: 2026-10-10T18:34:17Z
+updated_at: 2026-11-20T09:30:00Z
 parent: qou-d8c7
 ---
 
@@ -62,3 +62,7 @@ CORRECTION 2026-10-10 (same session): item (a) above is wrong. The statement blo
 - nonspeakable **FAIL (minor)**. This sentence stalls when read aloud: "verifies the eigenvalue assignments canonical at $q_0$ and confirms that $\Phi_3 \approx 0$ for inter-nucleon-only chains in free $A=1$ nucleons".
 
 Separately, the `.ts` title "Proof of frobenius s classification" is a lowercased slug. None of this was fixed, because content edits are out of scope for this refresh task.
+
+## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
+
+Claim released (status line still said in-progress after the 2026-11-15 reset note). The convention-D re-derivation landed: #7562 merged, and the owner-pick branch and the Φ₃ generalisation are recorded above. Remaining: only the stale `.qa.json` sidecars, for which no sanctioned refresh route exists (entry above). Not closed by W1, since that residue is a tooling/owner question (`qou-99fk`).

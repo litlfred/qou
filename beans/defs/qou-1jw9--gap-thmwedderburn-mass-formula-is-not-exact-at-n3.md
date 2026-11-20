@@ -1,14 +1,14 @@
 ---
 # qou-1jw9
 title: 'GAP (closed): thm:wedderburn-mass-formula''s three invariants were carried — Phi_2/Phi_3 now derived, Phi_1 recomputed under convention D, D table adopted'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-11-16T18:04:00Z
+updated_at: 2026-11-20T09:30:00Z
 parent: qou-wp3h
 ---
 
@@ -1282,3 +1282,7 @@ Was in-progress with no bean update since 2026-09-12 and no main commit naming i
 - **Python probe & witness (`computations/wedderburn_Mi_constructor_test.py` -> `computations/wedderburn-mi-constructor-test.witness.json`, 4/4 assertions passed):**
   - Verifies the partition-exhaustion boundary (`n <= 3` vs `n >= 4`), the adjacent-chain vs all-pairs growth table (`A = 2..6`), the exact algebraic coefficient relation `2*beta_3 + beta_2 + 6 = 0` (`< 1.1e-50` at 50 dps), and the 8-cell constructor grid on deuterium.
 - Status kept `in-progress` (rule 13a / owner decision on `Phi_1` table adoption). PR #8145 (`ed78b60a0ffe233f132df45a37bb1456ec237832`).
+
+## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
+
+Claim released. Blocked on the owner decision about adopting the D Φ₁ table (entries above). Open batch PR #8145 (W4's queue) adds counting lemmas and a probe; not reviewed here. Stays open (rule 13a).

@@ -1,11 +1,11 @@
 ---
 # qou-nxjw
 title: 'M6: redo toroidal-harmonics-delta-lambda in convention D'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-10T08:58:08Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-20T09:30:00Z
 parent: qou-d8c7
 ---
 
@@ -19,3 +19,7 @@ mass-theory/toroidal-harmonics-delta-lambda.md:12 sets z = sqrt(q)/(1+q), w = z^
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
+
+Claim released. The D redo and cleanup landed (#7562, #7617 merged). Open: whether w = z_D·z_− is the right variable. That is a selection question no corpus artifact decides, so it is left for the owner.

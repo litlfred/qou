@@ -9,7 +9,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-10-10T15:04:08Z
+updated_at: 2026-11-20T09:30:00Z
 parent: qou-d8c7
 ---
 
@@ -105,3 +105,7 @@ Verdict: vacuous. `instance trivialVortex (vortex : Type*) : TopologicalDecompos
 Further finding, not fixed: `mass` is itself a field of TopologicalDecompositionMass, and `vortex` is a phantom parameter, so `decomp : mass = holonomy + Σ dilog` relates one instance's own fields. Any data with mass := holonomy + Σ dilog satisfies it. The carrier does not tie mass to an independently defined mass endomorphism, which is an under-specified-carrier issue (AGENTS.md §3b-tax). The docstring now says so. Fixing it needs the mass to be supplied from outside the class (e.g. a parameter `m : vortex → R`), and that is a statement-design call for the owner. The block's linear form is also contradicted by lem:topological-mass-cat-eigenspace (quadrature), per its qa.json. Also qou-hjf4 lists this file among its 11 candidates; that item is now resolved.
 
 Still open, NOT closeable: the transient norm-equality conjecture TransientLocalisationNormEquality (no instance) remains this bean's subject.
+
+## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
+
+No change. The vacuity fix and the owner picks landed 2026-10-10. The open subject is the conjecture class `TransientLocalisationNormEquality` (no instance), plus the under-specified `TopologicalDecompositionMass` carrier noted above. Stays open (rule 13a).

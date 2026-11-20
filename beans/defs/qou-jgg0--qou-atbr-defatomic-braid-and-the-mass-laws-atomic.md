@@ -1,13 +1,13 @@
 ---
 # qou-jgg0
 title: 'qou-atbr: def:atomic-braid and the mass law''s atomic braid are DIFFERENT objects sharing a name and a symbol'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T09:58:53Z
-updated_at: 2026-10-10T07:58:20Z
+updated_at: 2026-11-20T09:30:00Z
 parent: qou-d8c7
 ---
 
@@ -688,3 +688,7 @@ This bean is carrier M9 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent mov
 ## 2026-10-10 — 3A+Z cell resolved: owner choice B1
 
 `mass-endomorphism/atomic-mass-gb-nf.md` now states `𝓑_K` on `3A` strands (the electron-free core), naming `𝒜 ∈ H_{A+Z}` only as the object it is the core of. Corpus-consistent: its producer `canonical_mass_table_extended.py` uses `n = 3*A`, and its interpretation block already writes A=3 as n=9. `notation-collisions.md` updated from 'unresolved'. PR #7559. Bean STAYS OPEN (rule 13a): the SCOPE items of 2026-09-12 (colour-weighted 3A construction untested, qou-q6pp p–n sign, #6919 additivity) are untouched.
+
+## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
+
+Claim released. The 3A+Z cell was resolved 2026-10-10 (B1, #7559). The bean stays open on its own stated residue. No new work.
