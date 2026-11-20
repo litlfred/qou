@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T19:48:01Z
+updated_at: 2026-11-20T21:30:00Z
 parent: qou-10v9
 ---
 
@@ -4288,3 +4288,13 @@ Scope-(a) negative.
   - 531 MeV (Frobenius norm ⟨x,x⟩);
   - 100 MeV (mass channel).
 - Q_β needs a scale decoupled from the nucleon mass. Which m_e·ℚ(q₀) element that is, and why, is open.
+
+## 2026-11-20T21:30Z — up-quark (unknot) vs electron-knot ("shares trefoil") clash, investigate-and-propose (PR #8677)
+
+Owner asked to investigate the clash surfaced by #8673. Audit doc `docs/audits/2026-11-20-up-quark-electron-knot-clash.md`, no content changed.
+- 13 sites call the up quark an unknot in B3 (def:up-quark, def:down-quark, rem:knot-particle-dictionary, conj:borromean-quark, categorical-proton, particle-nf-table, ParticleKnots.lean); 14 call it T(2,3) (def:electron-knot + .lean docstring, torus-knot-prime-powers, generation/building-block tables, strangelet blocks, jet-planck spectrum, transfer-matrix appendix, TorusKnot.lean:74 docstring).
+- No owner ruling, no deriving Lean (knot-type theorems are rfl on structure defaults), no producer consumes a quark knot type.
+- Structural (b, given Borromean reading): B3=(s0 s1^-1)^3 is pure (borromean_perm_eq_one) => each closure component is an unknot, so a B3 quark cannot be a trefoil. Strand-deletion step not formalised.
+- "Lepton descent" (u <- T(2,3)) refterms the jet-level descent homomorphism; no derived knot->quark map. Undefined relation.
+- Options A (reword electron block: trefoil = up quark's lepton partner; 4 files), B (A + 13-site sweep, rescopes transfer-matrix appendix and strangelet), C (trefoil canonical, drops Borromean model), D no-op (default). Agent recommendation (judgement): A now, B separately.
+- OPEN, owner. Adjacent: sdp_gamma_gamma_to_qqbar.py:15,124 says s0s1s0 closes to a trefoil, contradicting perm_e_gg; unchanged.
