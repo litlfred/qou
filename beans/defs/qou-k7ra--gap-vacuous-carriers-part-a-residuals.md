@@ -21,7 +21,7 @@ each needing an object neither the corpus nor Mathlib has:
    Rebuild on Mathlib CosimplicialObject with [n] ↦ 𝔊_n, cofaces from jet prolongation.
 4. **QouObstructionReductionContext** — HH dims are free numbers; needs Hochschild (co)homology
    of an actual U_q(su₂) with adjoint coefficients; κ₀ = χ(A) currently assumed via hattori_stallings.
-5. **QCollatz** — cone  is free; pin Skein := LaurentPolynomial ℤ, define pos, port ~15
+5. **QCollatz** — cone `pos` is free; pin Skein := LaurentPolynomial ℤ, define pos, port ~15
    consumers off generic Skein.
 6. **DoubleMagicConjecture** — define LR coefficients (count of LR tableaux on YoungDiagram).
 7. **confinement-nf-partial-proof.lean** keeps its own vacuous copy of HasFiniteLPDuality.
