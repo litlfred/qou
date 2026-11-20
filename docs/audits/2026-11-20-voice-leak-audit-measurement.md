@@ -16,7 +16,7 @@ Beans: epic `qou-d4kh`, V1 `qou-9aar` (checkers), V3 `qou-ycjd` (drain).
 | L4 | `leak-reading-order` | (a) a `q` token (`$q$`, `[n]_q`, `\Phi_d`, `SU_q`, Hecke, "archimedean wall") before `sec:substrate-parameter`. This fails in Ch 1 and is advisory in Ch 2 §1–6. An `outro-*` block is exempt. (b) a `](#label)` link to a block later in reading order. This fails in Ch 1–2 and is advisory elsewhere. Links to back matter and to the block's own table sibling are exempt. |
 
 The audit uses one reading order, built by importing the paper and chapter
-manifests. The guard is `voice-leak-audit.test.ts` (16 tests).
+manifests. The guard is `voice-leak-audit.test.ts` (11 tests).
 `paper-commentary-audit.ts` is unchanged except for a header pointer to the new audit.
 
 ```
