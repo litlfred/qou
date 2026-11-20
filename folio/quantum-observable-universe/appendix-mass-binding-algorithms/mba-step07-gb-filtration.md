@@ -1,7 +1,6 @@
-**Algorithm (Gröbner–Shirshov filtration with $E_2$ collapse).**
-*Compute the length-graded filtration on $H_n(q)$ and assert
-$E_2$-collapse of the associated spectral sequence — every higher
-differential $d_r$ ($r \geq 2$) vanishes.*
+**Algorithm (Gröbner–Shirshov length filtration).**
+*Compute the length filtration on $H_n(q)$ and the length grade of
+each normal form.*
 
 ### Input
 
@@ -12,8 +11,8 @@ differential $d_r$ ($r \geq 2$) vanishes.*
 - *Length-graded decomposition
   $H_n(q) = \bigoplus_{\ell \geq 0} F_\ell / F_{\ell - 1}$ where
   $F_\ell$ is the span of basis elements $T_w$ with $\ell(w) \leq \ell$.*
-- *Boolean assertion that $d_r = 0$ for all $r \geq 2$ (i.e. the
-  spectral sequence collapses at the $E_2$ page).*
+- *For each input word, the length grades of the basis elements
+  $T_w$ in its normal form.*
 
 ### Algorithm
 
@@ -21,24 +20,26 @@ differential $d_r$ ($r \geq 2$) vanishes.*
 1. For each ℓ from 0 to ℓ_max:
      enumerate basis elements T_w with ℓ(w) = ℓ.
 2. Build the associated graded ⊕_ℓ gr_ℓ H_n(q).
-3. Verify d_2 = 0 by checking that the Markov trace pairs
-   gr_ℓ with gr_{ℓ + r} trivially for r > 0.
-4. Return the filtration and the collapse certificate.
+3. Reduce each input word to normal form and record the length
+   grade of every basis element in it.
+4. Return the filtration and the per-word grades.
 ```
 
 ### Correctness conditions
 
-*[Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence)
-asserts $E_2$-collapse for the GS filtration on $H_n(q)$ in the
-QOU rigid-monoidal setting. The proof uses the diamond-lemma /
-Gröbner basis structure of the Hecke relations and is standard
-modulo the QOU-specific Markov coefficient $z$.*
+*The standard basis $\{T_w\}$ of $H_n(q)$ splits the length
+filtration $F_\ell = \operatorname{span}\{T_w : \ell(w) \leq \ell\}$,
+so every element has a unique decomposition by length grade, and
+$F_a F_b \subseteq F_{a+b}$
+([Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence), part 1).
+No spectral-sequence collapse is used. None holds in general: for the
+Hochschild complex of $H_3$ filtered by length, $d_2$ and $d_4$ are
+nonzero.*
 
 ### Complexity
 
-*$O(\dim H_n(q))$ basis enumeration. The collapse check is
-quadratic in the number of basis elements but the result is
-cached per $(n, q)$ pair.*
+*$O(\dim H_n(q))$ basis enumeration, plus one normal-form
+reduction per input word.*
 
 ### Python API entry point
 
@@ -53,9 +54,10 @@ the filtered NF.*
 
 *Canonical witness:
 [`gb-filtration-jet-order.witness.json`](../../../computations/gb-filtration-jet-order.witness.json)
-records the per-level filtration dimensions and the $d_2 = 0$
-certificate.*
+records, for each test word, the normal form, its length grades and
+the reduction log.*
 
 ### Notes
 
-*$E_2$-collapse justifies treating the GS filtration as **exact**. Any higher differential would re-mix length levels and break the jet-order matching of Step 8.*
+*Step 8 uses the splitting of the length filtration by the
+standard basis; it does not need a spectral sequence.*
