@@ -9,7 +9,7 @@ $$
   \mathfrak{S}_q(\bar{\nu}_e),
 $$
 
-with $\mathfrak{S}_q(\bar{\nu}_e) = 0$ since the antineutrino is the unknot. This is the primary definition. It does not assume classical energy conservation, which is the $q = 1$ limit; the relation between $\mathcal{Q}_q$ and the kinetic energies of the products is the $q$-anomaly $\delta_q$ treated in [Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\mathcal{Q}_q$](q-value-transition-properties.md). When $q$ is fixed we write $Q$ for $\mathcal{Q}_q$.
+with $\mathfrak{S}_q(\bar{\nu}_e) = 0$ since the antineutrino is the unknot. This is the primary definition. It does not assume classical energy conservation, which is the $q = 1$ limit; the relation between $\mathcal{Q}_q$ and the kinetic energies of the products is the $q$-anomaly $\delta_q$ treated in [Crossing-level decomposition, the $q$-anomaly, and non-conservation of $\mathcal{Q}_q$](q-value-transition-properties.md). When $q$ is fixed, $Q$ denotes $\mathcal{Q}_q$.
 
 **Mass-difference form.** In the archimedean realisation the action of a nucleus is its mass, and the same transition is evaluated as the difference of neutral atomic masses,
 

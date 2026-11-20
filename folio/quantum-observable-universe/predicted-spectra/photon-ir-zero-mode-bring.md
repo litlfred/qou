@@ -9,4 +9,4 @@ $$
   \;=\; \frac{2g}{4\pi(g-1)}.
 $$
 
-*We have $b_1 = 2g$ and $\mathrm{Area} = -2\pi\chi = 4\pi(g-1)$. At the Bring genus $g=4$, this evaluates to $\tfrac{8}{12\pi} = \tfrac{2}{3\pi}$. This provides the additive correction of [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).*
+*Here $b_1 = 2g$ and $\mathrm{Area} = -2\pi\chi = 4\pi(g-1)$. At the Bring genus $g=4$, this evaluates to $\tfrac{8}{12\pi} = \tfrac{2}{3\pi}$. This provides the additive correction of [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).*
