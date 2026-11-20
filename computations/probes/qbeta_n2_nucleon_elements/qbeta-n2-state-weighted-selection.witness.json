@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T18:41:13.800741+00:00",
-  "commitSha": "eb81985791bea60f006def4dd7a2b24504795c57",
+  "computedAt": "2026-11-20T18:50:02.518452+00:00",
+  "commitSha": "46482f3a263ff2dfe9b6eca96ce74f20e5f7e500",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 29875,
+  "durationMs": 45861,
   "computation": "qbeta-n2-state-weighted-selection",
   "scriptFile": "n2_state_weighted_selection_probe.py",
-  "scriptHash": "265ee39cfaa1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "67057ad875cf",
+  "scriptCommitSha": "46482f3a263ff2dfe9b6eca96ce74f20e5f7e500",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -1640,6 +1640,18 @@
       },
       {
         "name": "sigma_3 mixes N and P (the charge-conserving quark-lepton crossing)",
+        "pass": true
+      },
+      {
+        "name": "Lean inputs: sigma_3 compressions diag(h,h,q) on N and diag(0,0,q) on P",
+        "pass": true
+      },
+      {
+        "name": "Lean input: D sigma_i|N = sigma_i|P D (NucleonStateWeightedSelection.D_s1/D_s2)",
+        "pass": true
+      },
+      {
+        "name": "V1 V2 = sigma_1 sigma_3^-1 (the sigma_2 pair cancels; Lean wN/wP)",
         "pass": true
       },
       {

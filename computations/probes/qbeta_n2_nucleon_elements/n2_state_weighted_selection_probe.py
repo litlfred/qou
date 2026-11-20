@@ -138,7 +138,15 @@ check("N block of sigma_1, sigma_2 = W_n matrices; P block = W_p matrices",
 check("sigma_3 mixes N and P (the charge-conserving quark-lepton crossing)",
       L6[3][3:6, 0:3] != sp.zeros(3, 3))
 
+check("Lean inputs: sigma_3 compressions diag(h,h,q) on N and diag(0,0,q) on P",
+      ex(L6[3][0:3, 0:3] - sp.diag(h, h, q)) == sp.zeros(3, 3)
+      and ex(L6[3][3:6, 3:6] - sp.diag(0, 0, q)) == sp.zeros(3, 3))
+DLEAN = sp.Matrix([[1, h, q * h], [0, 1, h], [0, 0, 1]])
+check("Lean input: D sigma_i|N = sigma_i|P D (NucleonStateWeightedSelection.D_s1/D_s2)",
+      ex(DLEAN * sm1 - sp1 * DLEAN) == sp.zeros(3, 3) and ex(DLEAN * sm2 - sp2 * DLEAN) == sp.zeros(3, 3))
 VERT = {1: ex(L6[1] * L6I[2]), 2: ex(L6[2] * L6I[3])}
+check("V1 V2 = sigma_1 sigma_3^-1 (the sigma_2 pair cancels; Lean wN/wP)",
+      ex(VERT[1] * VERT[2] - L6[1] * L6I[3]) == sp.zeros(6, 6))
 Z6 = ex((L6[1] * L6[2]) ** 3)
 I6 = sp.eye(6)
 
