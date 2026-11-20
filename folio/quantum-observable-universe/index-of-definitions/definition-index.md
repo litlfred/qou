@@ -680,7 +680,7 @@
 | [prop:markov-trace-frobenius-selection](#prop:markov-trace-frobenius-selection) | Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy | Ch 12 | `qou:QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical` |
 | [prop:photon-threading-mass](#prop:photon-threading-mass) | Mass as photon threading cost | Ch 20 | `qou:QOU.Information.photon_threading_mass` |
 | [conj:mass-formula-regime-switching](#conj:mass-formula-regime-switching) | Mass formula regime switch: an $A$-uniform evaluation whose dominant term changes at the pair-graph regime boundaries $A = 2 \mid 3$ and $4 \mid 5$ | Ch 12 | `qou:QOU.BraidKnot.mass_formula_regime_switching` |
-| [prop:hecke-mass-trace](#prop:hecke-mass-trace) | Mass via the Markov trace of the Hecke mass element | Ch 12 | `qou:QOU.Braiding.hecke_mass_trace` |
+| [conj:hecke-mass-trace](#conj:hecke-mass-trace) | Mass via the Markov trace of the Hecke mass element | Ch 12 | `qou:QOU.Braiding.HeckeMassTraceContext` |
 | [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price) | Mass-formula coefficients as shadow prices of the Frobenius positivity constraints | Ch 12 | `qou:QOU.BraidKnot.MassCoefficientShadowPrice` |
 | [prop:mass-side-kernel-formalize-first-gates](#prop:mass-side-kernel-formalize-first-gates) | Mass-side $\S 4$ formalize-first gates as parametric Lean classes — `MassSideKernel` bundles anchor-stability, q=1 shadow (open gap), and direction sanity for any `linking_weight` candidate $w(q)$; mirrors the $\mathfrak{Q}_\beta$ `BarEvenKernel` typeclass | Ch 12 | `qou:QOU.Mass.MassSideKernelFormalize.MassSideKernel` |
 | [prop:mass-tower-coefficient-stratification](#prop:mass-tower-coefficient-stratification) | Mass-tower coefficients $(\lambda_V, \lambda_S, \lambda_{\mathrm{pair}}, \alpha_k)$ as Wedderburn-block projections | Ch 12 | `qou:QOU.BraidKnot.mass_tower_coefficient_stratification` |
@@ -890,7 +890,7 @@
 | [prop:nuclear-operator-regimes](#prop:nuclear-operator-regimes) | Three operator regimes for nuclear binding | Ch 10 | `qou:QOU.Interactions.nuclearOperatorRegimes` |
 | [prop:thurston-volume-additivity](#prop:thurston-volume-additivity) | Thurston additivity of hyperbolic volume over ideal tetrahedra | Ch 12 | `qou:QOU.ParticleInteractions.thurstonVolumeAdditivity` |
 | [prop:topological-mass-formula-algebraic](#prop:topological-mass-formula-algebraic) | Topological mass formula (algebraic, $\mathbb{Q}(q)$-side) | Ch 12 | `qou:QOU.Torsion.AlgebraicMassFormula` |
-| [prop:topological-mass-formula](#prop:topological-mass-formula) | Topological mass formula (Archimedean) | Ch 12 | `qou:QOU.Torsion.ArchimedeanMassFormula` |
+| [conj:topological-mass-formula](#conj:topological-mass-formula) | Topological mass formula (Archimedean) | Ch 12 | `qou:QOU.Torsion.ArchimedeanMassFormula` |
 | [prop:hoefsmit-toroidal-ladder-locus](#prop:hoefsmit-toroidal-ladder-locus) | Toroidal locus of the Hoefsmit mixing ladder: $(n,\mu) = (d - \tfrac{1}{2}, \tfrac{1}{2})$ is forced | Ch 5 | `qou:QOU.BraidsAndKnots.toroidal_locus_forced` |
 | [prop:torus-hopf-stability](#prop:torus-hopf-stability) | Torus knot composites on Bring's surface are stable hadrons | Ch 14 | `qou:QOU.Archimedean.torus_hopf_stability` |
 | [prop:lepton-meson-torus-knot-dictionary](#prop:lepton-meson-torus-knot-dictionary) | Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$ | Ch 8 | `qou:QOU.ParticleInteractions.lepton_meson_crossing_match` |

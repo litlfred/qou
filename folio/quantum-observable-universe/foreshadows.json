@@ -288,10 +288,10 @@
         "def:hecke-mass-element",
         "def:z-habiro-ring",
         "prop:categorical-mass-markov",
-        "prop:hecke-mass-trace",
+        "conj:hecke-mass-trace",
         "prop:knot-operator-selection",
         "prop:rj-canonical-inner-product",
-        "prop:topological-mass-formula",
+        "conj:topological-mass-formula",
         "thm:knot-mass-formula-unified",
         "conj:topological-mass"
       ],
@@ -303,10 +303,10 @@
         "def:hecke-mass-element",
         "def:z-habiro-ring",
         "prop:categorical-mass-markov",
-        "prop:hecke-mass-trace",
+        "conj:hecke-mass-trace",
         "prop:knot-operator-selection",
         "prop:rj-canonical-inner-product",
-        "prop:topological-mass-formula",
+        "conj:topological-mass-formula",
         "thm:knot-mass-formula-unified",
         "conj:topological-mass"
       ]
@@ -3044,7 +3044,7 @@
         "tbl:toffoli-lp-stability-table2-data"
       ]
     },
-    "prop:topological-mass-formula": {
+    "conj:topological-mass-formula": {
       "derived": [
         "rem:kashaev-volume-density",
         "rem:topological-mass-formula-context"

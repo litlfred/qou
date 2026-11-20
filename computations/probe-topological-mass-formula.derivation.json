@@ -1,7 +1,7 @@
 {
-  "target": "the Step-3 combine behind prop:topological-mass-formula and its algebraic twin -- that baseline + exceptional reassembles to Vol(K)/hbar_q^2, and that the Q(q)-side restatement mass_alg = Phi_1/hbar_sq is the same identity",
+  "target": "the Step-3 combine behind conj:topological-mass-formula and its algebraic twin -- that baseline + exceptional reassembles to Vol(K)/hbar_q^2, and that the Q(q)-side restatement mass_alg = Phi_1/hbar_sq is the same identity",
   "target_value": "Vol(K) + Vol(K)(1/hbar_q^2 - 1) = Vol(K)/hbar_q^2, exact in Q(q) for ALL q and not merely at q_0; verified symbolically and, at the proton pin, numerically to <= 1e-25 across the sample knots",
-  "content_block": "prop:topological-mass-formula",
+  "content_block": "conj:topological-mass-formula",
   "description": "Derivation chain for probe-topological-mass-formula.witness.json and probe-topological-mass-formula-algebraic.witness.json. One producer emits both -- the second is the Q(q)-side subset of the first's assertions -- so one chain drains the pair.\n\nBE CLEAR ABOUT WHAT IS AND IS NOT PROVED HERE. The combine is the ring identity a + a(x - 1) = a x. It is true by expansion, for every a and every x, and it would be dishonest to present the probe as evidence FOR the mass formula. What the probe establishes is narrower and still worth having: that the Lean theorem ArchimedeanMassFormula is that identity and no more, that the Q(q) and archimedean statements coincide rather than being two claims, and that the numerical evaluation at q_0 does not silently disagree with the symbolic one -- which is the failure mode a 50-dps pipeline actually has.\n\nTwo consequences of it being volume-agnostic, both recorded on the steps: the sample knot volumes are multiplicative test INPUTS carrying no weight in the result, and no absolute mass is computed anywhere in this chain.",
   "steps": [
     {
