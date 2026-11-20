@@ -13,6 +13,18 @@ export default proposition({
     "def:rigid-monoidal-category",
   ],
   cites: [],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "The braided paragraph (the Frobenius handedness) is " +
+        "`QOU.Variational.nondegenerate_braided_massless` and " +
+        "`QOU.Variational.braided_contractionAction_massless` in the same " +
+        "Lean file as the `lean.ref`; the general invariance criterion is " +
+        "`QOU.Variational.QuadraticAction.isInvariantAlong_iff`.",
+    },
+  ],
   tags: [
     "pairing",
     "variational",
