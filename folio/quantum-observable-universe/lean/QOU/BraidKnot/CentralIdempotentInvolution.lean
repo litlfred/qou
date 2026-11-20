@@ -113,19 +113,17 @@ theorem lagrVal_eq_zero (n : ℕ) (f g : ℤ → K) (c e : ℕ → ℤ) (r : ℤ
 
 section Bar
 
-variable [CharZero K] (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ)
+variable (q : K) (hq0 : q ≠ 0) (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ)
 
 /-- `d ↦ q^{−2d}`, the eigenvalue of `L_k⁻¹` on a box of content `d`. -/
 noncomputable def gInv (d : ℤ) : K := q ^ (-(2 * d))
 
-omit [CharZero K] in
 include hq0 hq2 in
 theorem gInv_injective : Function.Injective (gInv q) := by
   intro a b h
   have := zpow_injective_of_not_root_of_unity hq0 hq2 h
   omega
 
-omit [CharZero K] in
 include hq0 hq2 in
 theorem seminormalRep_qJMInv_diag {μ : YoungDiagram} (hN : μ.cells.card = n + 1) (k : ℕ)
     (hk : k ≤ n) :
@@ -138,12 +136,12 @@ include hq0 hq2 in
 /-- The Lagrange product in the inverse Murphy elements is the matrix unit `E^λ_{TT}`. -/
 theorem heckeProduct_lagrInv (lam : Nat.Partition (n + 1))
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) :
-    heckeProduct q hq0 hq2 n (lagr n (qJMInv K q q⁻¹ n) (gInv q) (contentVec T))
+    AnyChar.heckeProductF q hq0 hq2 n (lagr n (qJMInv K q q⁻¹ n) (gInv q) (contentVec T))
       = Pi.single lam (Matrix.single T T 1) := by
   classical
   have hinj : Set.InjOn (gInv q) {d | d ∈ contentRange n} := (gInv_injective q hq0 hq2).injOn
   funext mu
-  rw [heckeProduct_apply, map_lagr]
+  rw [AnyChar.heckeProductF_apply, map_lagr]
   rw [lagr_diagonal n (gInv q) (gInv q) (contentVec T) (fun S => contentVec S) _
     (fun k hk => seminormalRep_qJMInv_diag q hq0 hq2 n (partitionShape_card_succ mu) k
       (by rw [List.mem_range] at hk; omega))]
@@ -190,9 +188,9 @@ include hq0 hq2 in
 theorem lagrInv_eq_proj (lam : Nat.Partition (n + 1))
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) :
     lagr n (qJMInv K q q⁻¹ n) (gInv q) (contentVec T) = proj q n T := by
-  apply heckeProduct_injective q hq0 hq2 n
+  apply AnyChar.heckeProductF_injective q hq0 hq2 n
   rw [heckeProduct_lagrInv q hq0 hq2 n lam T, proj_eq_symm q hq0 hq2 n]
-  exact ((heckeWedderburn q hq0 hq2 n).apply_symm_apply _).symm
+  exact ((AnyChar.heckeWedderburnF q hq0 hq2 n).apply_symm_apply _).symm
 
 /-- The hypotheses defining the bar involution of `H_{n+1}(q)`: a ring endomorphism `φ` that is
 `τ`-semilinear on scalars, where `τ` is a ring endomorphism of `K` with `τ q = q⁻¹`, and sends each
@@ -202,7 +200,6 @@ structure IsBar (τ : K →+* K) (φ : Hecke K q q⁻¹ n →+* Hecke K q q⁻¹
   map_scalar : ∀ a : K, φ (algebraMap K _ a) = algebraMap K _ (τ a)
   map_sigma : ∀ i : Fin n, φ (Hecke.σ K q q⁻¹ n i) = Hecke.σInv K q q⁻¹ n i
 
-omit [CharZero K] in
 theorem IsBar.map_qJM {τ : K →+* K} {φ : Hecke K q q⁻¹ n →+* Hecke K q q⁻¹ n}
     (hφ : IsBar q n τ φ) : ∀ k, φ (qJM K q q⁻¹ n k) = qJMInv K q q⁻¹ n k
   | 0 => by rw [qJM_zero, qJMInv_zero, map_one]
@@ -215,17 +212,14 @@ theorem IsBar.map_qJM {τ : K →+* K} {φ : Hecke K q q⁻¹ n →+* Hecke K q 
           simp only [qJMInv, dif_neg hk]
         rw [h1, h2, hφ.map_qJM k]
 
-omit [CharZero K] in
 theorem IsBar.map_smul {τ : K →+* K} {φ : Hecke K q q⁻¹ n →+* Hecke K q q⁻¹ n}
     (hφ : IsBar q n τ φ) (a : K) (x : Hecke K q q⁻¹ n) : φ (a • x) = τ a • φ x := by
   rw [Algebra.smul_def, map_mul, hφ.map_scalar, ← Algebra.smul_def]
 
-omit [CharZero K] in
 theorem IsBar.tau_zpow {τ : K →+* K} {φ : Hecke K q q⁻¹ n →+* Hecke K q q⁻¹ n}
     (hφ : IsBar q n τ φ) (d : ℤ) : τ (q ^ (2 * d)) = gInv q d := by
   rw [map_zpow₀, hφ.tau_q, inv_zpow', gInv]
 
-omit [CharZero K] in
 /-- The bar image of the `.md`'s projector is the Lagrange product in `L_k⁻¹`. -/
 theorem IsBar.map_mulProj {τ : K →+* K} {φ : Hecke K q q⁻¹ n →+* Hecke K q q⁻¹ n}
     (hφ : IsBar q n τ φ) {lam : Nat.Partition (n + 1)}

@@ -1,4 +1,4 @@
-import QOU.SchurWeyl.JMProjector
+import QOU.SchurWeyl.HeckeWedderburnAnyChar
 
 /-!
 # Explicit central idempotents `e_λ` of `H_{n+1}(q)` for every `n` (bean `qou-2150`, owner ruling D2)
@@ -17,9 +17,9 @@ as written. This module re-states it on the real Iwahori–Hecke algebra `QOU.Sc
 
 Nothing new is assumed. The corpus already proves (`QOU.SchurWeyl.JMProjector`):
 
-* `heckeWedderburn q : H_{n+1}(q) ≃ₐ ∏_λ M_{f^λ}(K)`, from faithfulness and surjectivity of the
+* `AnyChar.heckeWedderburnF q : H_{n+1}(q) ≃ₐ ∏_λ M_{f^λ}(K)`, from faithfulness and surjectivity of the
   seminormal representations (`HeckeProductInjective`, `HeckeProductSurjective`);
-* `heckeWedderburn_symm_single`: the Lagrange product in the **additive** Jucys–Murphy elements
+* `AnyChar.heckeWedderburnF_symm_single`: the Lagrange product in the **additive** Jucys–Murphy elements
   `Y_k` maps to the matrix unit `E^λ_{TT}`.
 
 So `π_T = W⁻¹(E^λ_{TT})` and `e_λ = W⁻¹(1_λ)`, and the cross-checks are matrix-unit identities
@@ -30,8 +30,9 @@ contents of all partitions of `n + 1`, as in the `.md`.
 
 ## Scope
 
-* Generic `q`: `q ≠ 0`, `NotRootOfUnity q`, over a field of characteristic zero — inherited from
-  `heckeWedderburn`. At a root of unity the algebra is not semisimple and the statement changes.
+* Generic `q`: `q ≠ 0`, `NotRootOfUnity q`, over a field of **any characteristic**. The
+  Wedderburn isomorphism used is `AnyChar.heckeWedderburnF`, which does not need `CharZero`
+  (it replaces the power-sum separation step with these very projectors).
 * **Proved:** each `π_T` is idempotent, distinct `π_T` are orthogonal, `e_λ` is central,
   idempotent, nonzero, pairwise orthogonal, and `Σ_λ e_λ = 1`.
 * **Not proved here:** primitivity of `e_λ` in the centre (true, since its image is the unit of a
@@ -43,7 +44,7 @@ namespace QOU.BraidKnot.ExplicitCentralIdempotentGeneral
 
 open QOU.SchurWeyl QOU.SchurWeyl.JMProjector
 
-variable {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0)
+variable {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0)
   (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ)
 
 /-- Shorthand for the Wedderburn blocks of `H_{n+1}(q)`. -/
@@ -53,7 +54,6 @@ abbrev Blocks (K : Type*) [Field K] (n : ℕ) :=
       (QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) K
 
 
-omit [CharZero K] in
 theorem sum_single_diag_one {ι : Type*} [Fintype ι] [DecidableEq ι] :
     ∑ i : ι, Matrix.single i i (1 : K) = 1 := by
   ext a b
@@ -82,17 +82,17 @@ noncomputable def centralIdem (lam : Nat.Partition (n + 1)) : Hecke K q q⁻¹ n
 
 theorem proj_eq_symm {lam : Nat.Partition (n + 1)}
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) :
-    proj q n T = (heckeWedderburn q hq0 hq2 n).symm (Pi.single lam (Matrix.single T T 1)) :=
-  (heckeWedderburn_symm_single q hq0 hq2 n lam T).symm
+    proj q n T = (AnyChar.heckeWedderburnF q hq0 hq2 n).symm (Pi.single lam (Matrix.single T T 1)) :=
+  (AnyChar.heckeWedderburnF_symm_single q hq0 hq2 n lam T).symm
 
 theorem centralIdem_eq_symm (lam : Nat.Partition (n + 1)) :
-    centralIdem q n lam = (heckeWedderburn q hq0 hq2 n).symm (Pi.single lam 1) := by
+    centralIdem q n lam = (AnyChar.heckeWedderburnF q hq0 hq2 n).symm (Pi.single lam 1) := by
   classical
   simp only [centralIdem, proj_eq_symm q hq0 hq2 n, ← map_sum]
   congr 1
   rw [pi_single_sum, sum_single_diag_one]
 
-local notation "W" => heckeWedderburn q hq0 hq2 n
+local notation "W" => AnyChar.heckeWedderburnF q hq0 hq2 n
 
 include hq0 hq2 in
 /-- **Idempotency** of each Murphy–Lagrange projector. -/
@@ -119,7 +119,6 @@ theorem proj_orth_same {lam : Nat.Partition (n + 1)}
   rw [proj_eq_symm q hq0 hq2 n, proj_eq_symm q hq0 hq2 n, ← map_mul, ← Pi.single_mul,
     show_zero, Pi.single_zero, map_zero]
 
-omit [CharZero K] in
 theorem pi_single_mul_of_ne {lam mu : Nat.Partition (n + 1)} (h : lam ≠ mu) (a : Matrix
     (QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam))
     (QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) K) (b : Matrix
@@ -205,7 +204,6 @@ noncomputable def mulProj {lam : Nat.Partition (n + 1)}
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) : Hecke K q q⁻¹ n :=
   ((List.range (n + 1)).map (fun k => mulFactor q n k (contentVec T k))).prod
 
-omit [CharZero K] in
 include hq0 hq2 in
 /-- **The multiplicative and additive forms agree.** -/
 theorem mulProj_eq_proj {lam : Nat.Partition (n + 1)}
@@ -244,12 +242,12 @@ include hq0 hq2 in
 /-- The `.md` boxed formula, in `L_k`, is the Wedderburn matrix unit `E^λ_{TT}`. -/
 theorem mulProj_eq_symm {lam : Nat.Partition (n + 1)}
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) :
-    mulProj q n T = (heckeWedderburn q hq0 hq2 n).symm (Pi.single lam (Matrix.single T T 1)) := by
+    mulProj q n T = (AnyChar.heckeWedderburnF q hq0 hq2 n).symm (Pi.single lam (Matrix.single T T 1)) := by
   rw [mulProj_eq_proj q hq0 hq2 n, proj_eq_symm q hq0 hq2 n]
 
 include hq0 hq2 in
 /-- **Cross-checks 1 and 2 of `conj:explicit-central-idempotent`, and centrality, for every `n`.**
-At generic `q` (`q ≠ 0`, not a root of unity) over a characteristic-zero field, the elements
+At generic `q` (`q ≠ 0`, not a root of unity) over a field of any characteristic, the elements
 `e_λ = Σ_{T ∈ SYT(λ)} π_T`, with `π_T` the Murphy–Lagrange product of the `.md` boxed formula,
 are central, idempotent, pairwise orthogonal, and sum to `1` in `H_{n+1}(q)`. -/
 theorem explicit_central_idempotent_cross_checks :
