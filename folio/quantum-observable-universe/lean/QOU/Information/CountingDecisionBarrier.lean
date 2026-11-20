@@ -74,4 +74,27 @@ theorem transfer_not_entailed_by_toda :
   intro htransfer
   exact htransfer (fun h => h) True.intro
 
+/-- In any `CountingDecisionWorld`, `W.Transfer` holds if and only if the
+    decision separation `¬ W.pEqNp` and counting separation `¬ W.fpEqSharpP`
+    are logically equivalent (combining Toda's contrapositive `fpNe_of_pNe`
+    with `W.Transfer`). -/
+theorem CountingDecisionWorld.transfer_iff_separation_iff (W : CountingDecisionWorld) :
+    W.Transfer ↔ (¬ W.pEqNp ↔ ¬ W.fpEqSharpP) :=
+  ⟨fun htr => ⟨W.fpNe_of_pNe, htr⟩, fun hiff => hiff.mpr⟩
+
+/-- Concrete separated `CountingDecisionWorld` in which both `P ≠ NP` and
+    `FP ≠ #P` hold, satisfying both Toda's implication and `Transfer`. -/
+def separatedCountingDecisionWorld : CountingDecisionWorld where
+  pEqNp := False
+  fpEqSharpP := False
+  toda := fun h => h
+
+/-- **Consistency of `Transfer` with Toda (`qou-gcwm`).** While `Transfer` is
+    not entailed by `toda` (`transfer_not_entailed_by_toda`), it is consistent
+    with `toda` in a separated world (`¬ pEqNp ∧ ¬ fpEqSharpP`), so `Transfer`
+    is logically independent of `toda`. -/
+theorem transfer_consistent_with_toda :
+    ∃ W : CountingDecisionWorld, W.Transfer ∧ ¬ W.pEqNp ∧ ¬ W.fpEqSharpP :=
+  ⟨separatedCountingDecisionWorld, fun _ hp => hp, fun hp => hp, fun hfp => hfp⟩
+
 end QOU.Information
