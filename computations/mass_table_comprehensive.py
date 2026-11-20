@@ -354,7 +354,8 @@ def try_binding_canonical(Z: int, N: int, q_str: str) -> dict | None:
         # double.
         import mpmath as _mp
         q_val = _mp.mpf(q_str)
-        E_0 = M_E_MEV / (q_val * (q_val - 1))
+        import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+        E_0 = _qbeta_e0.canonical(q=q_val, m_e=M_E_MEV)  # tower-summed E_0, canonical (owner ruling 2026-11-20, #8590); was order-zero m_e/(q(q-1))
         scale_ratio = E_0 / Q_BETA_MEV / q_val
         # `if B_qbeta` (the previous guard) also nulls a legitimately ZERO
         # binding; the question being asked is whether the value exists.

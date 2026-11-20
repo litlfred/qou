@@ -112,7 +112,8 @@ def _params(dps: int = 50):
     q = mp.mpf(str(Q0)); me = mp.mpf(str(M_E)); qi = 1 / q; h = q - qi
     # z: convention D (SU(2)/Temperley-Lieb), q³/(q²+1). Was C's
     # 1/(√q + √(1/q)) = 0.4993203342 against D's 0.6126880371 at the proton pin.
-    E0 = me / (q * (q - 1)); z = q**3 / (q**2 + 1)
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.canonical(q=q, m_e=me); z = q**3 / (q**2 + 1)  # tower-summed E_0, canonical (owner ruling 2026-11-20, #8590); was order-zero m_e/(q(q-1))
     tau = (4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4)          # Borromean H_3 trace
     return q, qi, h, E0, z, tau
 
@@ -165,8 +166,8 @@ if __name__ == "__main__":
     print(f"{'iso':5s}{'B_AME':>9s}{'B_can⁰':>9s}{'err⁰':>6s}{'B_tower':>9s}"
           f"{'errT':>6s}   {'m_can_T':>9s}{'M_meas':>9s}   err")
     for nm, Z, N, B_AME, B0, Bt, Mmeas, mcan in rows:
-        print(f"{nm:5s}{B_AME:9.3f}{B0:9.3f}{B_AME / B0:6.2f}{Bt:9.3f}"
-              f"{B_AME / Bt:6.2f}   {mcan:9.2f}{Mmeas:9.2f}  {(mcan / Mmeas - 1) * 1e6:+7.0f}ppm")
+        print(f"{nm:5s}{float(B_AME):9.3f}{float(B0):9.3f}{float(B_AME / B0):6.2f}{float(Bt):9.3f}"
+              f"{float(B_AME / Bt):6.2f}   {float(mcan):9.2f}{float(Mmeas):9.2f}  {float((mcan / Mmeas - 1) * 1e6):+7.0f}ppm")
     print("\n  CONVERGES ∀Z (atom-word tower diverged for Z≥2). Higher tower does "
           "real work (¹⁶O 31×→2.3×) but does NOT close to AME — the Δ_λ frontier.")
     # witness — production-grade record; Δ(K)=B_AME/B_tower is the scalar shadow

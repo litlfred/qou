@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T03:31:00.635419+00:00",
-  "commitSha": "1e84788ca2fd04fb151e12516e91698136cc6a0e",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-20T16:03:04.495961+00:00",
+  "commitSha": "a06009c1e8d5bc59f8881417772e0ae906b048b8",
   "assertions": [
     {
       "name": "charge_symm_plus_coulomb_fixes_mirror_split",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "charge-symm+Coulomb split +0.847 MeV is >2× closer to AME +0.764 than the broken kernel +1.747; the residual ~30% is the uniform-sphere Coulomb over-estimate. Absolute binding open (edge-set/connected magnitude → charge-symmetric #3548)."
+      "source": "charge-symm+Coulomb split +0.847 MeV is >2× closer to AME +0.764 than the broken kernel +1.764; the residual ~30% is the uniform-sphere Coulomb over-estimate. Absolute binding open (edge-set/connected magnitude → charge-symmetric #3548)."
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "charge-symmetric-coulomb-binding",
   "scriptFile": "charge_symmetric_coulomb_binding.py",
-  "scriptHash": "eb69a26451b6",
-  "scriptCommitSha": "6470b782c82298d5ae43894cf345ec37dca41c61",
+  "scriptHash": "9377ce26089c",
+  "scriptCommitSha": "0218c9ba9ad273ba5984b06c405cefcf6d2da644",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,52 +26,60 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
   },
-  "description": "Benchmarks the charge-symmetric strong bond + separate Coulomb light-nuclei binding vs AME (the #3564/#3570 diagnosis payoff). Charge-symm (all bonds = isoscalar f_pn) minus canonical Coulomb FIXES the ³H/³He mirror split — collapses to 0.85 MeV (Coulomb) from the broken kernel's 1.75–2.59 MeV vs AME 0.76 (~3× gain), exactly as predicted. Absolute binding NOT closed (D over-, ⁴He under-bound) — the edge-set/E₀/connected magnitude (#3548's connected-(2,1)/SU(4) mechanism, still on the charge-breaking kernel) must be re-run charge-symmetric. Verified split win, not a closure. Scope-(a), no wiring.",
+  "invocation": {
+    "argv": [
+      "computations/charge_symmetric_coulomb_binding.py"
+    ],
+    "reproduce": "python3 -u computations/charge_symmetric_coulomb_binding.py"
+  },
+  "description": "Benchmarks the charge-symmetric strong bond + separate Coulomb light-nuclei binding vs AME (the #3564/#3570 diagnosis payoff). Charge-symm (all bonds = isoscalar f_pn) minus canonical Coulomb FIXES the ³H/³He mirror split — collapses to 0.85 MeV (Coulomb) from the broken kernel's 1.76–2.61 MeV vs AME 0.76 (~3× gain), exactly as predicted. Absolute binding NOT closed (D over-, ⁴He under-bound) — the edge-set/E₀/connected magnitude (#3548's connected-(2,1)/SU(4) mechanism, still on the charge-breaking kernel) must be re-run charge-symmetric. Verified split win, not a closure. Scope-(a), no wiring.",
   "data": {
-    "E0_MeV": "4.185981363294475896945062158759008410143486890878720080600182548744485",
+    "E0_MeV": "4.227483355629030550268056026587211153615184198064735678243328690022651",
     "nuclei": {
       "D": {
         "ame": "2.2245662",
         "ec": "0.0",
-        "broken": "2.83375482411947010855370314674164655959009612888689733567572171626961",
-        "broken_c": "2.83375482411947010855370314674164655959009612888689733567572171626961",
-        "symm_c": "2.83375482411947010855370314674164655959009612888689733567572171626961"
+        "broken": "2.861252016543602867807197218584545688957660347932989089321077179767659",
+        "broken_c": "2.861252016543602867807197218584545688957660347932989089321077179767659",
+        "symm_c": "2.861252016543602867807197218584545688957660347932989089321077179767659"
       },
       "T": {
         "ame": "8.4817962",
         "ec": "0.0",
-        "broken": "9.465292583381293546231232278337089543427034096638259395315532820805556",
-        "broken_c": "9.465292583381293546231232278337089543427034096638259395315532820805556",
-        "symm_c": "8.50126447235841032566110944022493967877028838666069200702716514880883"
+        "broken": "9.557940159819149154994628881676601415458032417232817533248562546415546",
+        "broken_c": "9.557940159819149154994628881676601415458032417232817533248562546415546",
+        "symm_c": "8.583756049630808603421591655753637066872981043798967267963231539302976"
       },
       "3He": {
         "ame": "7.71804132",
-        "ec": "0.8474218392918697728311719915980025717402204757995986416600957346487021",
-        "broken": "7.718219340620373902738364128367946436070515264046318779372009844136136",
-        "broken_c": "6.870797501328504129907192136769943864330294788246720137711914109487434",
-        "symm_c": "7.653842633066540552829937448626937107030067910861093365367069414160128"
+        "ec": "0.8474218392918698241778962921671663655993492336362008994972820947418712",
+        "broken": "7.793545525958699072469972906500451042484852655929219304731442622700962",
+        "broken_c": "6.946123686666829248292076614333284676885503422293018405234160527959091",
+        "symm_c": "7.736334210338938779243695363586470701273631810162766368465949444561104"
       },
       "4He": {
         "ame": "28.2956624",
-        "ec": "0.7699338374964722913395922730580176828345690207755500476273655909677097",
-        "broken": "17.18351192400166744896959640670503597949754936068457817468754266494169",
-        "broken_c": "16.41357808650519515763000413364701829666298033990902812706017707397398",
-        "symm_c": "16.23259510722034835998262660739186167470600775254583396642696470664995"
+        "ec": "0.7699338374964723379911873235773529301840607824625801954161875511261843",
+        "broken": "17.35148568577784822746460178817705245794288507316203683798000516911651",
+        "broken_c": "16.58155184828137588947341446459969952775882429069945664256381761799032",
+        "symm_c": "16.39757826176514486885199598792992120356190130513535434051027552747977"
       }
     },
     "mirror_split": {
       "AME": "0.7637548799999999999999999999999999999999999999999999999999999999999999",
-      "broken": "1.74707324276091964349286814996914310735651883259194061594352297666942",
-      "broken_plus_coulomb": "2.594495082052789416324040141567145679096739308391539257603618711318122",
-      "charge_symm_plus_coulomb": "0.8474218392918697728311719915980025717402204757995986416600957346487021"
+      "broken": "1.764394633860450082524655975176150372973179761303598228517119923714584",
+      "broken_plus_coulomb": "2.611816473152319906702552267343316738572528994939799128014402018456455",
+      "charge_symm_plus_coulomb": "0.8474218392918698241778962921671663655993492336362008994972820947418713"
     }
   }
 }
