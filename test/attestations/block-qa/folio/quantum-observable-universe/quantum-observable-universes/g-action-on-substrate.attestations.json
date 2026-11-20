@@ -134,6 +134,23 @@
         "reviewed_at": "2026-11-20T17:44:25.307Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "A G-equivariant structure on the Frobenius–Hopf substrate defined in this chapter; the EW comparison is the stated empirical boundary."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:03.772Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "G-equivariant structure on the Frobenius-Hopf substrate, in the chapter that defines it; the two new sections (strand-pair slot value, anchor no-go) are about this block's own N_sym."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -841,6 +858,24 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md:55 'The previous version of this section wrote ...' and :101 'An earlier version of (G-4) gave ...' narrate the block's own history in scholarly prose; the open-identification section runs four bullets of argument before the comparison. Below 16/16."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:05.295Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md: the history narration flagged last round is gone. Remaining: (1) 'The value on the strand-pair slots' says the value is 'forced' under (H1), but step 3 ('The trace with tr_F(e_H)=1 is the unnormalised pivotal trace') presupposes that tr_F is a scalar multiple of the Rep_q pivotal trace; a general cyclic trace on End(V⊗V) takes independent values on e+ and e-, so tr_F(e_H)=1 fixes only the e- value. That assumption (audit H4) should be stated as part of (H1). (2) The last sentence of the anchor section points to Table 2 for 216.96 and 213.11, neither of which is a row of Table 2. (3) Four candidate values ((a), (b), [4][6], [3]^2) in four places make the block hard to follow. Math checked: [3]^2=9.26414748386 at proton q0; qtr S/qtr 1 = (q^3+q)/(q+1/q)^2 = q^3/(q^2+1); e- is the unique -q^-1 eigenline (alt_eigvec_unique); identity anchor = 3(m_p/m_e)(v/m_p)[2]^3/([4][6][8])^2 reproduces 213.1118 with factor 0.0386881."
       }
     ],
     "milnor-brevity": [
@@ -893,6 +928,24 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "minor",
         "evidence": "The argument that e_sym·e_H = 0 on orthogonal summands appears twice (point 2 at :60 and the 'What the trace algebra decides' bullet at :85) with different emphasis; not identical, so not deletable, but overlapping."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:06.166Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "severity": "minor",
+        "evidence": "The orthogonal-summand argument is made twice (point 2 of 'The closed form' and the 'What the trace algebra decides' bullet), and the [4][6] slot paragraph is superseded one section later by the (H1) derivation that says (G-2) fails on the same slots; the two slot paragraphs could merge."
       }
     ],
     "trap-negation-contrast": [
@@ -961,6 +1014,23 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "minor",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md: frequent ', not X' tails (8 by grep), e.g. :99 'a question about the categorical structure of the hosts, not about which value lies closer to 213.11'; several are the claim, the density is high."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:06.983Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern. ', not X' tails are down to 5 and each carries a distinction; the em-dashes are constraint-heading separators."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1013,6 +1083,24 @@
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "severity": "major",
         "evidence": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md:99 'The miss does not bear on which reading is correct: the choice between them is a question about the categorical structure of the hosts' and :85 'that is a question about the host object' — setup-then-reframe."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:07.718Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md: 'What the trace algebra decides' bullet ends 'so it cannot decide between (a) and (b): that is a question about the host object' — setup then reframe; less frequent than last round."
       }
     ],
     "trap-em-dash": [
@@ -1064,6 +1152,23 @@
         "reviewed_at": "2026-11-20T17:44:29.477Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern (em-dashes are in constraint headings)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:08.430Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern. ', not X' tails are down to 5 and each carries a distinction; the em-dashes are constraint-heading separators."
       }
     ],
     "trap-triples": [
@@ -1117,6 +1222,23 @@
         "reviewed_at": "2026-11-20T17:44:30.148Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern (em-dashes are in constraint headings)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:09.207Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern. ', not X' tails are down to 5 and each carries a distinction; the em-dashes are constraint-heading separators."
       }
     ],
     "trap-closing-aphorism": [
@@ -1168,6 +1290,23 @@
         "reviewed_at": "2026-11-20T17:44:30.827Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern (em-dashes are in constraint headings)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:09.992Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern. ', not X' tails are down to 5 and each carries a distinction; the em-dashes are constraint-heading separators."
       }
     ],
     "trap-meta-commentary": [
@@ -1222,6 +1361,24 @@
         "reviewed_at": "2026-11-20T17:44:31.503Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern (em-dashes are in constraint headings)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:10.668Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md: 'The corpus does not settle which object is meant. Two readings are recorded, and neither is selected.' and 'Call this hypothesis (H1).' describe the text rather than the mathematics."
       }
     ],
     "trap-thesis-restatement": [
@@ -1273,6 +1430,23 @@
         "reviewed_at": "2026-11-20T17:44:32.184Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern (em-dashes are in constraint headings)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:11.348Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern. ', not X' tails are down to 5 and each carries a distinction; the em-dashes are constraint-heading separators."
       }
     ],
     "trap-performed-warmth": [
@@ -1324,6 +1498,23 @@
         "reviewed_at": "2026-11-20T17:44:32.818Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern (em-dashes are in constraint headings)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:12.041Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern. ', not X' tails are down to 5 and each carries a distinction; the em-dashes are constraint-heading separators."
       }
     ],
     "trap-superlative": [
@@ -1375,6 +1566,23 @@
         "reviewed_at": "2026-11-20T17:44:33.516Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern (em-dashes are in constraint headings)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:12.757Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern. ', not X' tails are down to 5 and each carries a distinction; the em-dashes are constraint-heading separators."
       }
     ],
     "trap-nonspeakable": [
@@ -1427,6 +1635,23 @@
         "reviewed_at": "2026-11-20T17:44:34.186Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern (em-dashes are in constraint headings)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.555Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md in full; no instance of this pattern. ', not X' tails are down to 5 and each carries a distinction; the em-dashes are constraint-heading separators."
       }
     ],
     "does_not_default_to_float": [
@@ -1465,6 +1690,23 @@
         "reviewed_at": "2026-11-20T17:43:33.259Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py: all float(...) casts (:285-287, :323-325, :357, :391-407) feed print/f-string text fields only; q0 and its derivation are carried as mpf (50 dps). The 1e-15 literal at :286 is a display divisor."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:56.822Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "computations/q_pinning_50_digit.py (unchanged since f6656d78e5): float(...) casts feed print/f-string text only; q0 carried as mpf at 50 dps."
       }
     ],
     "compute_no_mpf_to_float_cast": [
@@ -1501,6 +1743,23 @@
         "reviewed_at": "2026-11-20T17:43:33.949Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py: no float(mp.*)/np.float64 on a value that re-enters computation; float(Q_ERR/Q) at :285 is display only."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:57.489Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "computations/q_pinning_50_digit.py: no float(mp.*) on a value that re-enters computation; display casts only."
       }
     ],
     "respects_archimedean_wall": [
@@ -1537,6 +1796,23 @@
         "reviewed_at": "2026-11-20T17:43:34.673Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py: no math.*/numpy calls; mpmath throughout."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:58.171Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "computations/q_pinning_50_digit.py: mpmath throughout, no math.*/numpy."
       }
     ],
     "code_is_commented": [
@@ -1573,6 +1849,23 @@
         "reviewed_at": "2026-11-20T17:43:35.369Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py:2-60 module docstring; dense inline comments."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:58.888Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "computations/q_pinning_50_digit.py: module docstring + inline comments."
       }
     ],
     "variables_typed": [
@@ -1609,6 +1902,23 @@
         "reviewed_at": "2026-11-20T17:43:36.082Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py:134-200 def signatures annotated (q_int(n: int), plancherel_weight(partition: tuple), bloch_wigner(z: mpc), ...)."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:51:59.633Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "computations/q_pinning_50_digit.py: def signatures annotated."
       }
     ],
     "has_references_to_paper": [
@@ -1648,6 +1958,24 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "minor",
         "evidence": "computations/q_pinning_50_digit.py: no '# Ref: [key]' comment line anywhere in the script."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:00.332Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "severity": "minor",
+        "evidence": "computations/q_pinning_50_digit.py: no '# Ref: [key]' comment line in the script (grep 'Ref:' empty)."
       }
     ],
     "connected_to_ci_pipeline": [
@@ -1687,6 +2015,24 @@
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "severity": "minor",
         "evidence": "computations/q_pinning_50_digit.py: basename absent from .github/workflows/*.yml and no sibling script imports it (grep 'import q_pinning_50_digit|from q_pinning_50_digit' over computations/ is empty); other scripts only mention its witness path."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:01.010Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "severity": "minor",
+        "evidence": "computations/q_pinning_50_digit.py: not named in .github/workflows and not imported by any sibling script; only its witness path is cited."
       }
     ],
     "deprecated": [
@@ -1722,6 +2068,23 @@
         },
         "reviewed_at": "2026-11-20T17:43:38.091Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Not under _deprecated/, no DEPRECATED marker."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:01.698Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
         "evidence": "Not under _deprecated/, no DEPRECATED marker."
       }
     ],
@@ -1759,6 +2122,23 @@
         "reviewed_at": "2026-11-20T17:43:38.852Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
         "evidence": "computations/q_pinning_50_digit.py:413-414 stamps provenance via WitnessBuilder.stamp_staleness_metadata; no hardcoded pi/e."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:02.402Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "computations/q_pinning_50_digit.py: witness provenance via WitnessBuilder.stamp_staleness_metadata; no hardcoded pi/e."
       }
     ],
     "assertions_are_falsifiable": [
@@ -1794,6 +2174,23 @@
         },
         "reviewed_at": "2026-11-20T17:43:39.521Z",
         "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "computations/q_pinning_50_digit.py makes no add_assertion(...) calls."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:03.089Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
         "evidence": "computations/q_pinning_50_digit.py makes no add_assertion(...) calls."
       }
     ],
@@ -1833,6 +2230,23 @@
         "reviewed_at": "2026-11-20T17:44:26.004Z",
         "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
         "evidence": "uses[] covers every block the .md argues from (ew triplet theorem, weak spectral completeness, Frobenius–Hopf substrate, Higgs vacuum-residual idempotent, torus-link triplet, Hoefsmit theorem); tables are its own children."
+      },
+      {
+        "field_hash": {
+          "md": "65dd0787b99c",
+          "ts": "633f89b2362f",
+          "lean": "e6f3b21af2dd",
+          "lean_statement": "1aad63217da8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:04.520Z",
+        "reviewed_sha": "5a075b4e261c66213d2fcfa3775cee2c85630898",
+        "evidence": "Every block linked in the .md (thm:hoefsmit-ew-cell-content, prop:weak-spectral-completeness, thm:ew-triplet-charge-spin-from-involution, prop:higgs-vacuum-residual-idempotent, conj:electroweak-higgs-torus-link-triplet, rem:building-block-knots) is in uses[]; \\cite{jimbo1986} resolves to folio/references/jimbo1986.json."
       }
     ]
   }

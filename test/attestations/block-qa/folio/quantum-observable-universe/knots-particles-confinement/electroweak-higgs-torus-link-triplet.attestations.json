@@ -1,0 +1,1354 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed, both leaks. \"The corpus map $Q = \\tfrac12\\,\\mathrm{writhe}$\" -> \"The crossing-to-charge map $Q = \\tfrac12\\,\\mathrm{writhe}$\", and the heading \"**The chain of conjectures (narrowed).**\" -> \"**The chain of conjectures.**\". The under-determination it reports is unchanged: $Q(T(2,2k)) = k > 0$ for all three carriers cannot single out the neutral slot, and both $W = \\sigma_1^4$ and the mirror $W = \\sigma_3^6$ satisfy every proved constraint.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq18"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.018Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "score=0.1: the sibling .lean declares conjecture classes (EWSelectionPrinciple, EWSectorEnumeration, EWSectorAssignment, EWHiggsTorusLinkTriplet) with no instance; the open part is the identification itself (C1 selection, C_sector), i.e. the gap restates the target and is a physics postulate rather than a closeable proof step."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "25387cfa1f0c",
+          "ts": "981f91775759",
+          "lean": "4adb224d5564"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "25387cfa1f0c",
+          "ts": "981f91775759",
+          "lean": "4adb224d5564"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.958Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "EW/Higgs torus-link identification sits with the knot-particle identifications in knots-particles-confinement."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.054Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Recomputed with mpmath at proton q0: fixed point N_v=262.4181688192 (cubic root of N=T-(1/N)H(1-hbar^2/N), T=q[2]/2[4][6][8]+1/pi=262.4184737069, H=[2]/(8pi)), v_exp/m_p=262.4181765267 (CODATA 2022 G_F), miss -29.371 ppb; v_pred=246.21964356 GeV; G_F,pred=1.16637876852e-5, +58.742 ppb. m_Z/m_W=(P3/P2)([2]/2)^2=1.1348070 vs 1.1346088, +174.7 ppm, m_W,pred=80.3552. Laurent identity (q+1/q)2P_2(h)=q^5+q^-5 checked. Seifert genera of T(2,2k) are k-1 = 1,2,3, sum 6 = 2g-2 at g=4; 12/(12pi)=1/pi. Slot-sensitivity figures (4.4 sigma ... 4e4 sigma, +2294 ppb, 0.15 ppb) match docs/audits/2026-11-20-ew-vev-fixed-point-derivation.md §2. PSD claim matches the witness (3/7 pass = the triplet)."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.093Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Sibling .lean classes carry content-bearing fields and no fabricated instance (file header and grep: no ': True' bodies, no sorry); the PSD test is weak but stated as necessary-not-sufficient."
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.123Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "major",
+        "evidence": "The -29.37 ppb agreement is the miss of a formula whose four discrete slots (tree prefactor q[2]/2, carrier-genus zero-mode rule, loop sign s=-1, loop coupling = m_p/v) are not derived; the audit records that the EM-analogue sign gives +2294 ppb, so the sign was chosen against the target. The new scope note discloses this, so it is a disclosed selection, not a hidden one."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.153Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md: item 1 still calls 1/pi 'the parameter-free zero-mode shift' and heads the paragraph '1-Loop Schwinger Fixed Point (-29.37 ppb on v)' before the scope note says the counting rule is a selection and the -29.37 ppb is 'the miss of one selected formula, not of a derivation'; item 2 'predicts m_Z/m_W' and 'reconciles' the Higgs anchors with no comparable scope note."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.180Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md item 2: the m_Z/m_W ratio uses the dressing ([2]_q/2)^2 while the N_v tree term in item 1 uses ([2]_q/2)^1 — a per-observable choice of dressing power, plus the choice P_3/P_2 for Z/W; neither is derived nor disclosed. The four N_v choices of item 1 are disclosed."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.206Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Sector-to-spin inversion, C1 -> C2 enumeration and the zero-mode arithmetic follow as stated; C1 'selects' is stated as the primary conjecture, not argued."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.267Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Lean names cited in the .md exist (ewSeifertGenusSum_eq_neg_bringTilingEuler, ewBringZeroMode_eq_one_div_pi, ewFixedPoint_iff_cubic, twoMulP2/3/4_laurent, qInt2_sq_eq_h_sq_add_four, higgs_W_Z_anchor_reconciliation in ElectroweakBringSchwingerBridge.lean; namespace QOU.StandardModel.EwVevDecomposition in ElectroweakVevFixedPointDecomposition.lean); the numeric fixed point is stated conditional on ElectroweakVevFixedPointClass, which has no instance, matching the .md."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.299Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "No bibliography cites; Lean and probe paths cited resolve to the stated content."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.330Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "Two readings of the Higgs on the sigma_5 slot now coexist: this block makes H the bar-even A+ part of sigma_5^8, while conj:g-action-on-substrate §'The value on the strand-pair slots' (rewritten today) makes e_H the -q^-1 eigenprojector e^-(sigma_5), the alt Hecke channel. These are different objects (bar-grading component vs spectral projector); docs/audits/2026-11-20-nsym-derivation.md flags the tension and neither block mentions it. Also 'sigma_{G_F}' is used without definition (it is the 257 ppb uncertainty on v/m_p propagated from G_F)."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.359Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "major",
+        "evidence": "The quoted -0.114 sigma is inside the G_F noise (sigma = 257 ppb on v/m_p), so the comparison cannot distinguish the published formula from any variant within +-257 ppb (e.g. c=h^2 moves it 0.15 ppb); with the selection disclosed this is a fit-noise match. The PSD 'discrimination' among the 7 registry entries is the parity of k in the B_2 closed form (alt eigenvalue (-1/q)^k), so it is a parity test, as the block half-concedes."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.388Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "Using alpha_v = m_p/v as a one-loop Schwinger coupling has no physical reading (the EW couplings are g, g'); the scope note says so. Q = 1/2 writhe makes all three carriers charged, which the block also records. Both are disclosed."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.419Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "Backing witness computations/probes/ew-higgs-sdp-probe.witness.json was computed 2026-05-02 at q_0_numeric = 1.1097 (not the proton pin 1.109978582751...) and carries no scriptHash/q0Anchor (the producer gained provenance stamping later; current script hash 99cb4276da09). The B_2 signs are q-independent for q>0, so the PSD verdicts survive; the -29.37 ppb and m_Z/m_W figures reproduce independently (recomputed this session) but come from electroweak_bring_schwinger_bridge_probe.py, not from the .ts-declared producer."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.455Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "major",
+        "evidence": "Strongest objection: the identification is a postulate supported by a mass-ordering coincidence and a parity-trivial PSD test, and the headline -29 ppb vev agreement is the noise-level miss of a formula with four selected discrete slots (EM-analogue sign gives +2294 ppb); the scope note now says this for N_v, but item 1's 'parameter-free' wording and item 2's m_Z/m_W 'prediction' (different dressing power) still read as derived results."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.488Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md: items 1-2 of 'Scope of the closure' are long Title-Case run-on headings carrying Lean identifiers inline ('ewSeifertGenusSum_eq_neg_bringTilingEuler' etc.), and item 1 says 'parameter-free' before the scope note retracts it; the reader meets the result before its status. Below the 16/16 standard."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:50:33.000Z",
+        "reviewed_sha": "02d186467a7012a9a67d014f08bd23e17a916fb6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.520Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "'Charge and spin are proved consequences of a single sector postulate' is stated at :12, again after the chain table ('rather than independent postulates'), and again in the C_sector section ('Given the sector assignment ... spin and charge follow')."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.670Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'is the Higgs mass mechanism, not the 125 GeV Higgs boson' (l.44); 'necessary but not sufficient' (l.55).",
+        "notes": "pass-with-note: load-bearing disambiguation (4_1 vs T(2,8) collision) and standard mathematical qualification."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.550Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.708Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no setup-then-reframe pivot."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.579Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md: 'There is no conflict: sigma_5^8 carries both, bar-graded by the spin involution.' — setup then resolve."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.744Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.608Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md:12 parenthetical em-dash pair in prose ('Its provable base — that these three links exist, ... — is proved'); the other em-dashes are heading separators or table placeholders."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.782Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no reflex three-item lists; enumerations are substantive."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.649Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.820Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; final line is factual/technical, not quotable closer."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.692Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.858Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.734Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.894Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'Charge and spin are proved consequences...' appears l.12 and l.23-24; each anchors its own section in a long block; closer (l.59) is factual scope.",
+        "notes": "pass-with-note: intra-block redundancy noted as exposition-duplication anomaly (sections duplicate sibling proof/slot blocks), not a trap closer."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.776Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "The charge-and-spin thesis is restated three times (:12, after the chain table, C_sector section)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.929Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; institutional register throughout, no personal warmth."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.807Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:06.964Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no unqualified maximum-strength claims."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.835Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f9c1b21c0512",
+          "ts": "981f91775759"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.000Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; prose parses aloud; no stalling noun chains."
+      },
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.865Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Read folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md in full; no instance of this pattern."
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.615Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "major",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py:170-190 B_2 branch computes sym_eig = q**k and alt_eig from q_0_NUMERIC, which is the float64 q_parameter.Q (joint_tower_sdp_solver_v2.py:45,49); writes float(sym_eig)/float(alt_eig) to the witness; PSD thresholds are bare float literals (-1e-9); alt_eig default 1.0."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.652Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py: no float(mpf) cast — q_0_NUMERIC is already float64, so the float(...) calls at :180-181 wrap floats (the float64 origin is covered under does_not_default_to_float)."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.684Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py: no math.* calls; numpy is imported in the B_2 branch but unused; sign checks of q^k are archimedean evaluations at q0 by design."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.723Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py: module docstring (:2-24), registry comments, branch comments."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.760Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py: solve_ew_entry(entry: dict) -> dict; main() takes no arguments."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.786Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py: no '# Ref: [key]' comment; 'ref' registry fields name .md files, not bibliography keys."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.816Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py: not named in .github/workflows and no other script imports it (grep over computations/ finds only itself)."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.844Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "Not under _deprecated/, no DEPRECATED marker."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.885Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py:274-276 stamps provenance via WitnessBuilder.stamp_staleness_metadata before json.dump."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.919Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "computations/probes/ew_higgs_sdp_probe.py makes no add_assertion(...) calls."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:13.989Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md argues from conj:weinberg-angle-categorical ('The Weinberg-angle block reads the Hoefsmit slot sigma_5^8 as ... B'), thm:hoefsmit-ew-cell-content ('Hoefsmit slot') and prop:self-dual-higgs-real-volume ('The self-dual figure-eight 4_1 is the Higgs mass mechanism'); none is in uses[] and the .md links none of them."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "045f2a3187ff",
+          "ts": "8445ea086b2e",
+          "lean": "8468d7726f73",
+          "lean_statement": "6c553f18e474"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20b",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T18:52:14.238Z",
+        "reviewed_sha": "cb166ca94c48797f29a3ac877b532128b906a4d5",
+        "evidence": "No family-vs-closure or pointwise-vs-universal reading; claims are about specific carriers."
+      }
+    ]
+  }
+}
