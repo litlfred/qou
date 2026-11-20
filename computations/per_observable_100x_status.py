@@ -1713,15 +1713,36 @@ def main() -> dict:
         proton_qed_self_energy_borromean_mev as _cm_mp_qed_mev,
         np_qed_splitting_borromean_conn_mev as _cm_np_qed_mev,
     )
-    _mp_qed_plain = mpf(str(_cm_mp_qed_mev(k_weighted=False)))
-    _mp_qed_Kp = mpf(str(_cm_mp_qed_mev(k_weighted=True)))
+    # WEIGHTING (2026-11-20, owner request; bean qou-99qc): the derived quantum trace
+    # Tr(K^{⊗3}·)/[2]_q³ is the canonical weighting (NucleonWeightSpaceQTrace). The #8518
+    # menu entries are kept below only as labelled historical comparisons.
+    from canonical_mass import delta_em_charge_insertion_mev as _cm_dem_mev
+    import two_term_qtrace_weighting as _ttq
+    _mp_qed_derived = mpf(str(_cm_mp_qed_mev()))
+    _dm_qed_derived = mpf(str(_cm_np_qed_mev()))
+    _mp_qed_plain = mpf(str(_cm_mp_qed_mev(weighting="plain")))
+    _mp_qed_Kp = mpf(str(_cm_mp_qed_mev(weighting="Kp")))
     _dm_qed_plain = mpf(str(_cm_np_qed_mev(weighting="plain")))
     _dm_qed_KnKp = mpf(str(_cm_np_qed_mev(weighting="KnKp")))
     _dm_qed_Kp3 = mpf(str(_cm_np_qed_mev(weighting="Kp3")))
     _dm_qed_q = mpf(str(_cm_np_qed_mev(weighting="q")))
 
+    # Labelled alternatives the corpus does not decide between (NOT scored):
+    #   preregistered_raw_adjacent : +m_e·[t(W_n) − t(W_p)], X = Q12+Q23, raw (2026-11-19 05:10Z)
+    #   preregistered_raw_all_pairs: same with X = Q12+Q23+Q13 (covariant projection, #8552 T6)
+    #   connected_all_pairs        : identically 0 (deltaT_allPairs_connected_eq_zero)
+    #   connected_adjacent_prereg_sign: the scored connected term with the pre-registered +m_e sign
+    _dem_adj = mpf(str(_cm_dem_mev("adjacent")))
+    _dem_all = mpf(str(_cm_dem_mev("all_pairs")))
+    _alt_dm = {
+        "preregistered_raw_adjacent": _dem_adj,
+        "preregistered_raw_all_pairs": _dem_all,
+        "connected_all_pairs": mpf(0),
+        "connected_adjacent_prereg_sign": -_dm_qed_derived,
+    }
     _mn_sub_1term = mpf(str(_cm_nucleon_mass_mev("n")))
-    _mn_sub_2term = _mn_sub_1term + _dm_qed_plain
+    _mn_sub_2term = _mn_sub_1term + _dm_qed_derived
+    _mn_sub_2term_plain = _mn_sub_1term + _dm_qed_plain
     _mn_codata = OBSERVABLES["m_n"][0]
     _mn_sub_1term_err_ppb = (_mn_sub_1term - _mn_codata) / _mn_codata * mpf("1e9")
     _mn_sub_2term_err_ppb = (_mn_sub_2term - _mn_codata) / _mn_codata * mpf("1e9")
@@ -1737,14 +1758,50 @@ def main() -> dict:
     _q0_1term = mpf(_q_1t_str)
     _dq_pin_ppb = (_q0_2term_plain - _q0_1term) / _q0_1term * mpf("1e9")
     _mmu_pred_2term_plain = _m_mu_pred_at(_q_2t_str)
+    # Linearised shift helper (PR #8591) for the derived / pre-registered
+    # proton-term variants; the PLAIN comparison pin above stays the exact
+    # findroot root from #8554.
+    _vol41 = 2 * mp.clsin(2, _pi / 3)
+    _dq_fd = q0 * mpf("1e-25")
+
+    def _mp_qcd_ratio_at(qq: mpf) -> mpf:
+        _h = qq - 1 / qq
+        _tr = abs((4 + _h ** 2 - 3 * (_h ** 4) - (_h ** 6)) / (_h ** 2 + 4))
+        _qint2 = (qq ** 2 - qq ** (-2)) / _h
+        _qint3 = (qq ** 3 - qq ** (-3)) / _h
+        _fbor = _tr * _qint2 * _qint3 / (qq ** 3)
+        return 2 * (_vol41 / (((qq - 1) / qq) ** 2)) * _fbor - 12
+
+    _dmp_dq = (_mp_qcd_ratio_at(q0 + _dq_fd) - _mp_qcd_ratio_at(q0 - _dq_fd)) / (2 * _dq_fd)
+    def _mmu_from_mp_qed(_mpq: mpf) -> tuple[mpf, mpf]:
+        _qq = q0 - (_mpq / m_e_mev) / _dmp_dq
+        return _qq, m_e_mev * _vol41 / (((_qq - 1) / _qq) ** 2)
+
     _mmu_codata = OBSERVABLES["m_mu"][0]
+    _q0_2term_derived, _mmu_pred_2term_derived = _mmu_from_mp_qed(_mp_qed_derived)
+    _mmu_err_2term_derived_ppb = rel_error_ppb(_mmu_pred_2term_derived, _mmu_codata)
     _mmu_err_2term_ppb = rel_error_ppb(_mmu_pred_2term_plain, _mmu_codata)
+    # proton term under the pre-registered sign (+m_e·t(W_p) < 0) and under all-pairs (0)
+    _q0_2term_prereg, _mmu_pred_2term_prereg = _mmu_from_mp_qed(-_mp_qed_derived)
 
     for _r in rows:
         _obs_name = _r.get("obs")
         if _obs_name == "m_mu" and "pred_MeV" in _r:
             _r["two_term_qed_diagnostics"] = {
                 "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3",
+                "lean_theorem_weighting": "QOU.BraidsAndKnots.NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD",
+                "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/Kp are historical",
+                "M_p_QED_conn_derived_MeV": fmt(_mp_qed_derived, 15),
+                "M_p_QED_conn_derived_keV": fmt(_mp_qed_derived * mpf(1000), 12),
+                "q0_two_term_derived": fmt(_q0_2term_derived, 25),
+                "m_mu_pred_two_term_derived_MeV": fmt(_mmu_pred_2term_derived, 12),
+                "m_mu_err_two_term_derived_ppb": fmt(_mmu_err_2term_derived_ppb, 4),
+                "alternatives_not_scored": {
+                    "connected_adjacent_prereg_sign_m_mu_err_ppb": fmt(
+                        rel_error_ppb(_mmu_pred_2term_prereg, _mmu_codata), 4),
+                    "all_pairs_M_p_QED_MeV": "0 (Q_pair = 0 on W_p)",
+                    "all_pairs_m_mu_err_ppb": "equals the one-term value",
+                },
                 "M_p_QED_conn_plain_MeV": fmt(_mp_qed_plain, 15),
                 "M_p_QED_conn_plain_keV": fmt(_mp_qed_plain * mpf(1000), 12),
                 "M_p_QED_conn_Kp_MeV": fmt(_mp_qed_Kp, 15),
@@ -1762,29 +1819,46 @@ def main() -> dict:
                     "the required m_p^QCD, and d(m_p^QCD/m_e)/dq < 0 here). The two-term "
                     "term is selection-scoped (plain weighting, m_e scale; covariant "
                     "all-pairs projection gives b = 0)."
+                    " The derived-weighting and pre-registered-sign variants (PR #8591) "
+                    "use the linearised shift of the same comparison pin."
                 ),
             }
         elif _obs_name in ("Q_beta", "m_n", "Delta_pn") and "pred_MeV" in _r:
             _pred_1t = mpf(str(_r["pred_MeV"]))
             _codata_val = OBSERVABLES[_obs_name][0]
-            _pred_2t = _pred_1t + _dm_qed_plain
+            _pred_2t = _pred_1t + _dm_qed_derived
             _err_2t_ppb = rel_error_ppb(_pred_2t, _codata_val)
+            _pred_2t_plain = _pred_1t + _dm_qed_plain
+            _alts = {}
+            for _k, _v in _alt_dm.items():
+                _pv = _pred_1t + _v
+                _alts[_k] = {"Delta_m_MeV": fmt(_v, 15), "pred_MeV": fmt(_pv, 12),
+                             "err_ppb": fmt(rel_error_ppb(_pv, _codata_val), 4)}
             _diag = {
+                "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/KnKp/Kp3/q are historical",
+                "Delta_m_QED_conn_derived_MeV": fmt(_dm_qed_derived, 15),
+                "Delta_m_QED_conn_derived_keV": fmt(_dm_qed_derived * mpf(1000), 12),
+                "pred_two_term_derived_MeV": fmt(_pred_2t, 12),
+                "err_two_term_derived_ppb": fmt(_err_2t_ppb, 4),
+                "alternatives_not_scored": _alts,
                 "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
                 "Delta_m_QED_conn_plain_MeV": fmt(_dm_qed_plain, 15),
                 "Delta_m_QED_conn_plain_keV": fmt(_dm_qed_plain * mpf(1000), 12),
                 "Delta_m_QED_conn_KnKp_MeV": fmt(_dm_qed_KnKp, 15),
                 "Delta_m_QED_conn_Kp3_MeV": fmt(_dm_qed_Kp3, 15),
                 "Delta_m_QED_conn_q_MeV": fmt(_dm_qed_q, 15),
-                "pred_two_term_plain_MeV": fmt(_pred_2t, 12),
-                "err_two_term_plain_ppb": fmt(_err_2t_ppb, 4),
+                "pred_two_term_plain_MeV": fmt(_pred_2t_plain, 12),
+                "err_two_term_plain_ppb": fmt(rel_error_ppb(_pred_2t_plain, _codata_val), 4),
                 "primary_ruled_zD_score_untouched": True,
             }
             if _obs_name == "m_n":
                 _diag["substrate_identity_m_n_1term_MeV"] = fmt(_mn_sub_1term, 12)
                 _diag["substrate_identity_m_n_1term_err_ppb"] = fmt(_mn_sub_1term_err_ppb, 4)
-                _diag["substrate_identity_m_n_2term_plain_MeV"] = fmt(_mn_sub_2term, 12)
-                _diag["substrate_identity_m_n_2term_plain_err_ppb"] = fmt(_mn_sub_2term_err_ppb, 4)
+                _diag["substrate_identity_m_n_2term_derived_MeV"] = fmt(_mn_sub_2term, 12)
+                _diag["substrate_identity_m_n_2term_derived_err_ppb"] = fmt(_mn_sub_2term_err_ppb, 4)
+                _diag["substrate_identity_m_n_2term_plain_MeV"] = fmt(_mn_sub_2term_plain, 12)
+                _diag["substrate_identity_m_n_2term_plain_err_ppb"] = fmt(
+                    (_mn_sub_2term_plain - _mn_codata) / _mn_codata * mpf("1e9"), 4)
                 _diag["substrate_identity_residual_reduction_pct"] = fmt(_mn_sub_reduction_pct, 4)
             _r["two_term_qed_diagnostics"] = _diag
 
@@ -1805,17 +1879,25 @@ def main() -> dict:
     #     1.613 keV, alpha_em*E0_tower 0.0133 keV. So the scale and the plain
     #     weighting are SELECTIONS. The four weightings stay in the diagnostics.
     # Do not read the two-term rows as derived until those are closed.
+    # 2026-11-20 16:00 (owner request, bean qou-99qc): the weighting is now DERIVED —
+    # Tr(K^{⊗3}·)/[2]_q³, convention D's Markov trace as the U_q(sl2) quantum trace — and
+    # replaces 'plain'. Insertion (adjacent), connected subtraction and the −m_e sign are kept
+    # as they were: the corpus does not fix them, and the alternatives are carried as
+    # labelled, unscored rows under `two_term_qed_diagnostics.alternatives_not_scored`.
     _TWO_TERM_SCOPE = (
-        "OWNER-RULED PRIMARY 2026-11-20 (two-term, plain weighting, m_e scale). "
+        "OWNER-RULED PRIMARY 2026-11-20 (two-term, m_e scale). WEIGHTING DERIVED 2026-11-20: "
+        "Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace), replacing the 1/3-normalised 'plain' "
+        "entry. Still selection-scoped in three respects the corpus does not fix: adjacent "
+        "insertion, connected subtraction, sign −m_e·t. "
         "Selection-scoped: non-covariant adjacent insertion (whole proton signal "
         "= dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/"
         "alpha_em*E0; covariant all-pairs projection gives b = 0. One-term "
         "value under `one_term`.")
-    _two_term_pred = {"m_mu": _mmu_pred_2term_plain}
+    _two_term_pred = {"m_mu": _mmu_pred_2term_derived}
     for _r in rows:
         _o = _r.get("obs")
         if _o in ("Q_beta", "m_n", "Delta_pn") and "pred_MeV" in _r:
-            _two_term_pred[_o] = mpf(str(_r["pred_MeV"])) + _dm_qed_plain
+            _two_term_pred[_o] = mpf(str(_r["pred_MeV"])) + _dm_qed_derived
     for _i, _r in enumerate(rows):
         _o = _r.get("obs")
         if _o not in _two_term_pred:
@@ -1829,7 +1911,8 @@ def main() -> dict:
                    "compute_truncation_ppb"):
             _r[_k] = _new[_k]
         _r["one_term"] = _one
-        _r["scored_form"] = "two_term_plain_me"
+        _r["scored_form"] = "two_term_derived_qtrace_me"
+        _r["scored_form_previous"] = "two_term_plain_me"
         _r["two_term_scope"] = _TWO_TERM_SCOPE
 
     return {
