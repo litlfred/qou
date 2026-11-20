@@ -1,0 +1,2195 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:type-b-folding-cpt",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.ts",
+    "md": "folio/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.md",
+    "lean": "folio/quantum-observable-universe/nuclear-interactions/type-b-folding-cpt.lean"
+  },
+  "source_hashes": {
+    "md": "bd1b56d94bd5",
+    "ts": "556fe52b9b20",
+    "lean": "455381f4eba0",
+    "lean_statement": "09de74b42419"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The bare tracker id is gone: the sentence now reads \"The Type-B folding view is more compact but requires more category theory.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "bbc03dd9670f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5a542b9ddb77",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dbe50250022f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "cf3d4ea0ab0a",
+          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "37b3fa59a3bc",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "bae39322458e",
+          "md": "bd1b56d94bd5",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"nuclear-interactions\",\"expected\":null}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "bae39322458e",
+          "md": "bd1b56d94bd5",
+          "lean": "7e70e0b36557"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "bae39322458e",
+          "md": "bd1b56d94bd5",
+          "lean": "7e70e0b36557"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "bae39322458e",
+          "md": "bd1b56d94bd5",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "bae39322458e",
+          "md": "bd1b56d94bd5",
+          "lean": "7e70e0b36557"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "bae39322458e",
+          "md": "bd1b56d94bd5",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "bae39322458e",
+          "md": "bd1b56d94bd5",
+          "lean": "7e70e0b36557"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c58bf6bca27b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "49e4352f8aa9",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3050ae1775d6",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "89bcd82bd3ff",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a065b3633f0f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "96a346415fd2",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:26.287Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-cal4-acknowledged": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "2ca3d3131a21",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5fb9d70acf54",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "47384e4fd1b4",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "772b3e8dc930",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "b020c503256e",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "316cc94d5aa5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:36:32.300Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "696ee4c80040",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b01f61430d2a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3edb7220507a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "b020c503256e",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7b9de841a5d5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:36:32.300Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8",
+        "metrics": {
+          "fwd_emitted": 1,
+          "fwd_received": 0,
+          "tanglement_score": 1,
+          "out_degree": 4,
+          "in_degree": 1,
+          "cone_size": 68,
+          "depth": 20,
+          "pagerank": 0.000137,
+          "edge_span_max": 3,
+          "edge_span_mean": 2.5,
+          "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: conj:p-from-braid-mirror"
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "b020c503256e",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "53f3fcf3f37b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:36:32.300Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "280aea9a61d8",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "b020c503256e",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8dda7ee9ac99",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:36:32.300Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9b284af269a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "dc662a208a3d"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a730f195e37d",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "dc662a208a3d"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b7cc0ee7d062",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "dc662a208a3d"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "d3202b194d13",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "dc662a208a3d"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "78239d5e66a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5f54e3f82f73",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "badf9b8e012f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' is unverified because the formal proof in folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean is incomplete (contains sorry).",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are non-vacuous as they make concrete conjectures about 'Hecke algebra $H_n(q)$ folds into a Type-B Cartan datum $\\mathrm{B}_{n/2}$ under the involution $\\iota: \\alpha_i \\lef...'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean is incomplete (has sorry).",
+        "severity": "minor",
+        "evidence": "The prose in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean is incomplete (has sorry)."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean uses a class-conjecture pattern, matching the conjectural nature of 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to kashiwara1991, khovanov-lauda2009, brundan-kleshchev2009, lecouvey2007 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "dd82f1b5a70b",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.185069Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.185069Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured relations in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' remain unproven and are represented only by sorry stubs in the formalization folio/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq24"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "1d50b09b0497",
+          "script_commit_sha": "f8585b0e839506a0b5745665e7480610a9093204",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
+        "metrics": {
+          "uses_count": 4,
+          "broken_edges": 0,
+          "redundant_edges": 1
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b7b208d4a0c4",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "3b16849c7b53"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8",
+        "metrics": {
+          "formal_only_count": 0,
+          "editorial_only_count": 4
+        }
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b1c323c3439c",
+          "script_commit_sha": "f8585b0e839506a0b5745665e7480610a9093204",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc",
+        "metrics": {
+          "decl_claimants": 1
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:07.861Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:07.941Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 131 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.010Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 131 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.084Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.170Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.262Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.342Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.420Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.490Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "bae39322458e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.392Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.577Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~1.0kB). The C/P/T bullet triple is the CPT decomposition itself, substantive. 'Stable matter = fixed points of the folded crystal; antimatter = the iota-orbit complement' restates AGENTS.md sec 7b's own authoring guidance verbatim in content form and is not manufactured contrast. The closing trade-off sentence ('more compact but requires more category theory') is an honest cost statement, not an aphorism. All ten categories clean."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "7e70e0b36557",
+          "lean_statement": "bf365a5bdbd3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-21T20:53:47.938Z",
+        "reviewed_sha": "5064547774cb9102ee4f3e7131d9f9a7556162dc"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419",
+          "graph": "aa0766bc401f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "782f89f534a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "bd1b56d94bd5",
+          "ts": "556fe52b9b20",
+          "lean": "455381f4eba0",
+          "lean_statement": "09de74b42419"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "7e311e463351",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-05T06:38:16.187Z",
+        "reviewed_sha": "efefef5f66ac353004393eae511d7b9b318d46e8"
+      }
+    ]
+  },
+  "updated_at": "2026-09-05T06:38:16.187Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}

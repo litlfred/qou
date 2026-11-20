@@ -1,0 +1,1763 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:quantum-dilogarithm-stratified",
+  "kind": "proof",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified-proof.ts",
+    "md": "folio/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified-proof.md"
+  },
+  "source_hashes": {
+    "md": "ab1886076546",
+    "ts": "4616b24a3750"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9b284af269a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "e6fa656b8dbd"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "bbc03dd9670f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5a542b9ddb77",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "39a9a01b2cd4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "7e311e463351",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dbe50250022f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "39a9a01b2cd4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "cf3d4ea0ab0a",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "37b3fa59a3bc",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "39a9a01b2cd4",
+          "md": "411e298ba888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "39a9a01b2cd4",
+          "md": "411e298ba888"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "39a9a01b2cd4",
+          "md": "411e298ba888"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "39a9a01b2cd4",
+          "md": "411e298ba888"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "39a9a01b2cd4",
+          "md": "411e298ba888"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "39a9a01b2cd4",
+          "md": "411e298ba888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "39a9a01b2cd4",
+          "md": "411e298ba888"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "3f483ac9f4a1",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "78239d5e66a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-26T07:20:06.659Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c58bf6bca27b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3050ae1775d6",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "89bcd82bd3ff",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a065b3633f0f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "96a346415fd2",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "47384e4fd1b4",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "772b3e8dc930",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "316cc94d5aa5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "696ee4c80040",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b01f61430d2a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3edb7220507a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7b9de841a5d5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 3,
+          "in_degree": 0,
+          "cone_size": 45,
+          "depth": 20,
+          "pagerank": 7.6e-05,
+          "edge_span_max": 1,
+          "edge_span_mean": 1,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "53f3fcf3f37b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "280aea9a61d8",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8dda7ee9ac99",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a730f195e37d",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "e6fa656b8dbd"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b7cc0ee7d062",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "e6fa656b8dbd"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "d3202b194d13",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "e6fa656b8dbd"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "1d50b09b0497",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "metrics": {
+          "uses_count": 3,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b7b208d4a0c4",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "3b16849c7b53"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b1c323c3439c",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "severity": "major",
+        "evidence": "1 negation-contrast construction(s): \", not a canonical identity.\" \u2014 state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.646Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.685Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (4 in 707 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.723Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 707 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.763Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.805Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.847Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.889Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.934Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.977Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.404Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.019Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "3f483ac9f4a1",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:20:06.659Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750",
+          "graph": "d71d81d0d810"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "782f89f534a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:30:24.694Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-08-26T07:25:02.088Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "ab1886076546",
+          "ts": "4616b24a3750"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-26T07:25:28.569Z",
+        "reviewed_sha": "ac012f564620af473dbd5022e2685862796585af"
+      }
+    ]
+  },
+  "updated_at": "2026-08-26T07:30:24.694Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}

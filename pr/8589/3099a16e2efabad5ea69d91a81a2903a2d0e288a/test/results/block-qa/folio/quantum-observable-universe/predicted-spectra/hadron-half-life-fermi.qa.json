@@ -1,0 +1,1343 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:hadron-half-life-fermi",
+  "kind": "remark",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/predicted-spectra/hadron-half-life-fermi.ts",
+    "md": "folio/quantum-observable-universe/predicted-spectra/hadron-half-life-fermi.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "bbc03dd9670f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d3230d986a2b",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "6d35011108e2",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "4dc9ee1f7d79",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "c35d809edf9a",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5a542b9ddb77",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "7e311e463351",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "dbe50250022f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "20fe4199458f",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "cf3d4ea0ab0a",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "37b3fa59a3bc",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "78239d5e66a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c58bf6bca27b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "49e4352f8aa9",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3050ae1775d6",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "89bcd82bd3ff",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a065b3633f0f",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "96a346415fd2",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5fb9d70acf54",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5c2b3e6cb87e",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "47384e4fd1b4",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "772b3e8dc930",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "316cc94d5aa5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "696ee4c80040",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b01f61430d2a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3edb7220507a",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "7b9de841a5d5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 0,
+          "cone_size": 177,
+          "depth": 41,
+          "pagerank": 0.000075,
+          "edge_span_max": 106,
+          "edge_span_mean": 54,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "53f3fcf3f37b",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "280aea9a61d8",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "8dda7ee9ac99",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "1d50b09b0497",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "metrics": {
+          "uses_count": 2,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b7b208d4a0c4",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "3b16849c7b53"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "b1c323c3439c",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "a86dfebb515f"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "9b284af269a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "dc662a208a3d"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "a730f195e37d",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "dc662a208a3d"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "b7cc0ee7d062",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "dc662a208a3d"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "d3202b194d13",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710",
+          "deps_hash": "dc662a208a3d"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "a1eb8b91b659",
+          "md": "4b3d52834251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-gt-1\",\"real-positive\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "a1eb8b91b659",
+          "md": "4b3d52834251"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "a1eb8b91b659",
+          "md": "4b3d52834251"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "a1eb8b91b659",
+          "md": "4b3d52834251"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "a1eb8b91b659",
+          "md": "4b3d52834251"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "a1eb8b91b659",
+          "md": "4b3d52834251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "a1eb8b91b659",
+          "md": "4b3d52834251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.553Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "'the Fermi constant is not an independent parameter' and 'rather than being independent' are substantive claims about parameter counting rather than emphasis-by-denial. Whether the first is TRUE is a separate matter reported to the batch - it is not, on the block's own account."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.118Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a four-section remark. No pivot, no load-bearing spaced em-dash (the only dash is the numeric range 10-17%), no reflex triple (the enumerations are four q-channels and two open computations), no aphoristic closer (it ends mid-technical on the W(q) open item), no narrated emphasis, no restatement closer, no warm register, no sustained noun-pile. THE ALGEBRA CHECKS OUT: G_F = 1/(sqrt2 v^2) gives G_F^2 m_e^5 = m_e^5/(2v^4) correctly; substituting m_e = 3 E_x mu_0 and v = N_v E_x mu_0 gives (3 E_x)^5 mu_0^5 / (2 (N_v E_x)^4 mu_0^4) = 243 E_x mu_0 / (2 N_v^4), and 3^5 = 243, so the whole displayed chain including the mu_0 power is right; v/m_e = 246000/0.510999 = 4.814e5, matching the quoted 4.8e5; [2]_1 = 2 at q = 1; and W(q) as the Markov trace of (sigma_1 sigma_2)^5 in H_3(q) is the correct braid word for T(3,5), whose crossing number is 10, matching the '10-crossing structure' the block cites."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (1 in 372 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.177Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a four-section remark. No pivot, no load-bearing spaced em-dash (the only dash is the numeric range 10-17%), no reflex triple (the enumerations are four q-channels and two open computations), no aphoristic closer (it ends mid-technical on the W(q) open item), no narrated emphasis, no restatement closer, no warm register, no sustained noun-pile. THE ALGEBRA CHECKS OUT: G_F = 1/(sqrt2 v^2) gives G_F^2 m_e^5 = m_e^5/(2v^4) correctly; substituting m_e = 3 E_x mu_0 and v = N_v E_x mu_0 gives (3 E_x)^5 mu_0^5 / (2 (N_v E_x)^4 mu_0^4) = 243 E_x mu_0 / (2 N_v^4), and 3^5 = 243, so the whole displayed chain including the mu_0 power is right; v/m_e = 246000/0.510999 = 4.814e5, matching the quoted 4.8e5; [2]_1 = 2 at q = 1; and W(q) as the Markov trace of (sigma_1 sigma_2)^5 in H_3(q) is the correct braid word for T(3,5), whose crossing number is 10, matching the '10-crossing structure' the block cites."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 372 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.228Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a four-section remark. No pivot, no load-bearing spaced em-dash (the only dash is the numeric range 10-17%), no reflex triple (the enumerations are four q-channels and two open computations), no aphoristic closer (it ends mid-technical on the W(q) open item), no narrated emphasis, no restatement closer, no warm register, no sustained noun-pile. THE ALGEBRA CHECKS OUT: G_F = 1/(sqrt2 v^2) gives G_F^2 m_e^5 = m_e^5/(2v^4) correctly; substituting m_e = 3 E_x mu_0 and v = N_v E_x mu_0 gives (3 E_x)^5 mu_0^5 / (2 (N_v E_x)^4 mu_0^4) = 243 E_x mu_0 / (2 N_v^4), and 3^5 = 243, so the whole displayed chain including the mu_0 power is right; v/m_e = 246000/0.510999 = 4.814e5, matching the quoted 4.8e5; [2]_1 = 2 at q = 1; and W(q) as the Markov trace of (sigma_1 sigma_2)^5 in H_3(q) is the correct braid word for T(3,5), whose crossing number is 10, matching the '10-crossing structure' the block cites."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.310Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a four-section remark. No pivot, no load-bearing spaced em-dash (the only dash is the numeric range 10-17%), no reflex triple (the enumerations are four q-channels and two open computations), no aphoristic closer (it ends mid-technical on the W(q) open item), no narrated emphasis, no restatement closer, no warm register, no sustained noun-pile. THE ALGEBRA CHECKS OUT: G_F = 1/(sqrt2 v^2) gives G_F^2 m_e^5 = m_e^5/(2v^4) correctly; substituting m_e = 3 E_x mu_0 and v = N_v E_x mu_0 gives (3 E_x)^5 mu_0^5 / (2 (N_v E_x)^4 mu_0^4) = 243 E_x mu_0 / (2 N_v^4), and 3^5 = 243, so the whole displayed chain including the mu_0 power is right; v/m_e = 246000/0.510999 = 4.814e5, matching the quoted 4.8e5; [2]_1 = 2 at q = 1; and W(q) as the Markov trace of (sigma_1 sigma_2)^5 in H_3(q) is the correct braid word for T(3,5), whose crossing number is 10, matching the '10-crossing structure' the block cites."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.361Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a four-section remark. No pivot, no load-bearing spaced em-dash (the only dash is the numeric range 10-17%), no reflex triple (the enumerations are four q-channels and two open computations), no aphoristic closer (it ends mid-technical on the W(q) open item), no narrated emphasis, no restatement closer, no warm register, no sustained noun-pile. THE ALGEBRA CHECKS OUT: G_F = 1/(sqrt2 v^2) gives G_F^2 m_e^5 = m_e^5/(2v^4) correctly; substituting m_e = 3 E_x mu_0 and v = N_v E_x mu_0 gives (3 E_x)^5 mu_0^5 / (2 (N_v E_x)^4 mu_0^4) = 243 E_x mu_0 / (2 N_v^4), and 3^5 = 243, so the whole displayed chain including the mu_0 power is right; v/m_e = 246000/0.510999 = 4.814e5, matching the quoted 4.8e5; [2]_1 = 2 at q = 1; and W(q) as the Markov trace of (sigma_1 sigma_2)^5 in H_3(q) is the correct braid word for T(3,5), whose crossing number is 10, matching the '10-crossing structure' the block cites."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.411Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a four-section remark. No pivot, no load-bearing spaced em-dash (the only dash is the numeric range 10-17%), no reflex triple (the enumerations are four q-channels and two open computations), no aphoristic closer (it ends mid-technical on the W(q) open item), no narrated emphasis, no restatement closer, no warm register, no sustained noun-pile. THE ALGEBRA CHECKS OUT: G_F = 1/(sqrt2 v^2) gives G_F^2 m_e^5 = m_e^5/(2v^4) correctly; substituting m_e = 3 E_x mu_0 and v = N_v E_x mu_0 gives (3 E_x)^5 mu_0^5 / (2 (N_v E_x)^4 mu_0^4) = 243 E_x mu_0 / (2 N_v^4), and 3^5 = 243, so the whole displayed chain including the mu_0 power is right; v/m_e = 246000/0.510999 = 4.814e5, matching the quoted 4.8e5; [2]_1 = 2 at q = 1; and W(q) as the Markov trace of (sigma_1 sigma_2)^5 in H_3(q) is the correct braid word for T(3,5), whose crossing number is 10, matching the '10-crossing structure' the block cites."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.461Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a four-section remark. No pivot, no load-bearing spaced em-dash (the only dash is the numeric range 10-17%), no reflex triple (the enumerations are four q-channels and two open computations), no aphoristic closer (it ends mid-technical on the W(q) open item), no narrated emphasis, no restatement closer, no warm register, no sustained noun-pile. THE ALGEBRA CHECKS OUT: G_F = 1/(sqrt2 v^2) gives G_F^2 m_e^5 = m_e^5/(2v^4) correctly; substituting m_e = 3 E_x mu_0 and v = N_v E_x mu_0 gives (3 E_x)^5 mu_0^5 / (2 (N_v E_x)^4 mu_0^4) = 243 E_x mu_0 / (2 N_v^4), and 3^5 = 243, so the whole displayed chain including the mu_0 power is right; v/m_e = 246000/0.510999 = 4.814e5, matching the quoted 4.8e5; [2]_1 = 2 at q = 1; and W(q) as the Markov trace of (sigma_1 sigma_2)^5 in H_3(q) is the correct braid word for T(3,5), whose crossing number is 10, matching the '10-crossing structure' the block cites."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.598Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "severity": "minor",
+        "evidence": "Two unqualified universals that the block's own text undercuts. (1) 'The pure number ratio $v/m_e \\approx 4.8\\times10^5$ derives strictly from topology.' - but v/m_e = N_v/3, and the block's own 'Open computations' section opens by saying N_v 'must be derived ... from the Skein algebra'. The ratio is asserted to be derived in one section and listed as underived two sections later. (2) 'Every standard-physics constant decomposes into $q$-dependent factors times $\\mu_0$' - a universal over all of physics, supported by three examples, one of which (v) is the open item above and another of which (alpha) is quoted with an error figure that matches no route in the chapter (see notes).",
+        "notes": "Structural (factual scoping), not edited. Proposed fix for (1): 'The pure number ratio v/m_e = N_v/3 is fixed once N_v is derived from the Skein algebra; that derivation is open (below).' For (2): 'The constants entering the half-life formula decompose into q-dependent factors times mu_0:' - drop 'Every standard-physics'. THREE NUMERIC/CONTENT ITEMS REPORTED SEPARATELY: (a) the '2.1 ppm deviation from CODATA' matches NOTHING - recomputed, the bare alpha = q^{-1}/([9]_q[10]_q) quoted in that very sentence is off by 1553 ppm, the Chern-Simons-corrected value by 0.399 ppm, the fixed-point cubic by 0.0007 ppm and the PSLQ form by 0.003-0.006 ppm; the nearest thing in the corpus is the additive Bring zero-mode residual of -4.2 ppm, of which 2.1 is exactly half. The same sentence also attributes the BARE formula to 'the Chern-Simons correction', which is a second mismatch. (b) PARAMETER RELABELLING: 'the Fermi constant is not an independent parameter' holds only because G_F is re-expressed through N_v = v/(E_x mu_0), and N_v is undetermined - so one free input has been renamed, not eliminated, and v approx 246 GeV is an experimental input outside CAL-1/2/3. (c) SYMBOL COLLISION: 's' is used here for a crossing asymmetry vanishing at q=1, while prop:golden-skew-dual-node and its proof use s = sqrt(q), which equals 1 at q=1. Also '10-17% overshoot in heavy-nucleus half-life predictions' carries no witness or citation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.158Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4b3d52834251",
+          "ts": "a1eb8b91b659"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:00:13.506Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a four-section remark. No pivot, no load-bearing spaced em-dash (the only dash is the numeric range 10-17%), no reflex triple (the enumerations are four q-channels and two open computations), no aphoristic closer (it ends mid-technical on the W(q) open item), no narrated emphasis, no restatement closer, no warm register, no sustained noun-pile. THE ALGEBRA CHECKS OUT: G_F = 1/(sqrt2 v^2) gives G_F^2 m_e^5 = m_e^5/(2v^4) correctly; substituting m_e = 3 E_x mu_0 and v = N_v E_x mu_0 gives (3 E_x)^5 mu_0^5 / (2 (N_v E_x)^4 mu_0^4) = 243 E_x mu_0 / (2 N_v^4), and 3^5 = 243, so the whole displayed chain including the mu_0 power is right; v/m_e = 246000/0.510999 = 4.814e5, matching the quoted 4.8e5; [2]_1 = 2 at q = 1; and W(q) as the Markov trace of (sigma_1 sigma_2)^5 in H_3(q) is the correct braid word for T(3,5), whose crossing number is 10, matching the '10-crossing structure' the block cites."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "fa8b78406bbb",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "b62d29db79a8",
+          "ts": "39209e4c31ae",
+          "graph": "8cb57c692bfe"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "782f89f534a5",
+          "script_commit_sha": "7ada7b4e23dc58e4c396761812b0b2231849c710"
+        },
+        "reviewed_at": "2026-09-04T20:54:24.289Z",
+        "reviewed_sha": "f1203ec24182b1dd325dfcfb5a579fc5c9ae3f8c"
+      }
+    ]
+  },
+  "source_hashes": {
+    "md": "b62d29db79a8",
+    "ts": "39209e4c31ae"
+  },
+  "updated_at": "2026-09-04T20:54:24.289Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}
