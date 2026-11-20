@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - mathlib
 created_at: 2026-08-24T06:35:58Z
-updated_at: 2026-11-20T08:27:17Z
+updated_at: 2026-11-20T14:43:42Z
 parent: qou-c8p8
 ---
 
@@ -31,3 +31,8 @@ Build theorem: finite-dim LP strong duality. Mathlib has Farkas (ProperCone.hype
 Stalled-claim takeover by W10 (session_01VQDpPeWFnvbDUN18UJ6CyC, PR #8530): prior claim's backing branch had no commit for >3 h (lane-e667 branches last pushed 2026-11-17). The lane-e667 'Progress Update' sections above refer to unmerged bundle PRs and are NOT the closure.
 
 Subject is proved on main (via qou-kl8z): `QOU.Optimization.lp_strong_duality_uncond` (MatrixFarkasInstance.lean), Farkas from `QOU.Mathlib.isClosed_coneSpan` / `farkas_alternative_real`. Re-checked 2026-11-20: lean-library-sweep --only-exact 4/4 ok; `#print axioms` = [propext, Classical.choice, Quot.sound]. The 6 consumer `strong_duality` fields are NOT discharged and cannot be by this theorem: each carrier stores objective values as free reals with no feasibility/optimality data. PR #8530 corrects the four library docstrings that said the infrastructure is missing; discharging the fields needs a carrier retype (owner ask on #8526). Two mass-theory content blocks carry the same stale sentence; left for W1.
+
+
+## 2026-11-20 — owner ruling implemented (PR #8579)
+
+ShellFillingRuleContext.strong_duality DISCHARGED: claim (iii) is now derived from lp_strong_duality_uncond via the explicit ElectronAssignmentLP. The other three library carriers stay honest assumptions per the ruling.

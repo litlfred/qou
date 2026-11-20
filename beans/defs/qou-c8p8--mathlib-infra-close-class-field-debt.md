@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: normal
 created_at: 2026-08-24T06:35:32Z
-updated_at: 2026-11-20T08:28:48Z
+updated_at: 2026-11-20T14:43:42Z
 parent: qou-rtxm
 ---
 
@@ -216,3 +216,8 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 ## 2026-11-20 — W10 pass (PR #8530, report on #8526)
 
 Uninhabited `Prop` classes in QOU/{Mathlib,MathlibExt,Machinery} (declaration-split scan, not the #6491 census): **14 classes / 21 fields, before and after** — no field newly discharged this session. Nine children closed because their subjects were already proved on main (argp, 9h4t, 322e, i0sr, xidi, ykt7, vvk7, 1wcu, mame; each re-checked, axioms clean). Remaining open children are multi-session builds or small items that discharge no class field (jbo8, bp5n, h2mb). `HasArgumentPrinciple` is hypothesis-free and false in general (owner ask 2 on #8526).
+
+
+## 2026-11-20 — after owner ruling (PR #8579)
+
+Uninhabited Prop class fields in Mathlib-shaped dirs: 14 / 21 -> 13 / 20 (HasArgumentPrinciple removed, its theorem now a cited sorry). Corpus-wide one more field discharged: ShellFillingRuleContext.strong_duality (derived from LP strong duality).
