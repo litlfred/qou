@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T18:40:57.029915+00:00",
-  "commitSha": "bae50290fb2e6752fd2bf7c2a70cef7e47f4a5a9",
+  "computedAt": "2026-11-20T19:32:44.645511+00:00",
+  "commitSha": "2aeebd4da5b56ee610402634a6434a1a171fec4d",
   "assertions": [
     {
       "name": "borromean_v3_connected_diff_matches_closed_form",
@@ -84,11 +84,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 15,
   "computation": "two-term-qed-isotope-and-nucleon-compute",
   "scriptFile": "two_term_qed_isotope_and_nucleon_compute.py",
-  "scriptHash": "02d2186e21ab",
-  "scriptCommitSha": "0d41dab7aedaed282ee1fee806846ac149b9104a",
+  "scriptHash": "940e75034bcc",
+  "scriptCommitSha": "056a00fc678a0c1d03d33d77c14f59479044eb86",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -225,18 +225,33 @@
         "m_n_2term_q_err_ppb": "109.59970"
       },
       "ruled_zD_qbeta_and_path_c_impact": {
-        "qbeta_ruled_1term_MeV": "0.651856310060338",
-        "qbeta_ruled_2term_MeV": "0.651856310060338",
-        "qbeta_ruled_1term_err_ppb": "166779563.1",
-        "qbeta_ruled_2term_err_ppb": "166779563.1",
-        "m_n_path_c_1term_MeV": "939.434944688075",
-        "m_n_path_c_2term_MeV": "939.434944688075",
-        "m_n_path_c_1term_err_ppb": "138869.7890",
-        "m_n_path_c_2term_err_ppb": "138869.7890",
-        "Delta_pn_path_c_1term_MeV": "1.16285526075034",
-        "Delta_pn_path_c_2term_MeV": "1.16285526075034",
-        "Delta_pn_path_c_1term_err_ppb": "100884535.3",
-        "Delta_pn_path_c_2term_err_ppb": "100884535.3",
+        "qbeta_ruled_cell": "V^3 = (sigma_0 sigma_1^-1)^3, T^3 weight split of the z_D trace: Q_beta = |eps_flavour(V^3)|*E0_tower (owner D1 = A, PR #8586; switched here 2026-11-20). CONDITIONAL on conjectures C1-C3 (QOU.QBeta.DecayConjectures), NOT a derived prediction.",
+        "qbeta_ruled_source": "per_observable_100x_status._qbeta_ruled_base (shared implementation)",
+        "eps_flavour_V3": "-0.0769805346013641724322626958124",
+        "E0_tower_MeV": "4.22748335562903055026805602659",
+        "qbeta_ruled_E0_crosscheck_gap_MeV": "1.5818e-61",
+        "unscored_history_nuc11_interleaved": {
+          "status": "unscored history (scored 2026-09-12 .. 2026-11-20; superseded by owner D1 = A)",
+          "qbeta_1term_MeV": "0.651856310060338",
+          "qbeta_2term_MeV": "0.651856310060338",
+          "qbeta_1term_err_ppb": "166779563.1",
+          "m_n_path_c_1term_MeV": "939.434944688075",
+          "m_n_path_c_1term_err_ppb": "138869.7890",
+          "Delta_pn_path_c_1term_MeV": "1.16285526075034",
+          "Delta_pn_path_c_1term_err_ppb": "100884535.3"
+        },
+        "qbeta_ruled_1term_MeV": "0.325433928734692",
+        "qbeta_ruled_2term_MeV": "0.325433928734692",
+        "qbeta_ruled_1term_err_ppb": "584021515.0",
+        "qbeta_ruled_2term_err_ppb": "584021515.0",
+        "m_n_path_c_1term_MeV": "939.108522306749",
+        "m_n_path_c_2term_MeV": "939.108522306749",
+        "m_n_path_c_1term_err_ppb": "486288.2590",
+        "m_n_path_c_2term_err_ppb": "486288.2590",
+        "Delta_pn_path_c_1term_MeV": "0.836432879424692",
+        "Delta_pn_path_c_2term_MeV": "0.836432879424692",
+        "Delta_pn_path_c_1term_err_ppb": "353273135.1",
+        "Delta_pn_path_c_2term_err_ppb": "353273135.1",
         "Q_N2_convD_1term_MeV": "0.782804713582602",
         "Q_N2_convD_2term_MeV": "0.782804713582602",
         "Q_N2_convD_1term_err_ppm": "602.24219",
@@ -385,11 +400,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "bfae1099d20e5898827c52d5f5eb21b4c54b1aaa8c0318b7f82c06224ecf1e01",
-        "size_bytes": 12082,
-        "commitSha": "bae50290fb2e6752fd2bf7c2a70cef7e47f4a5a9",
-        "scriptCommitSha": "0d41dab7aedaed282ee1fee806846ac149b9104a",
-        "computedAt": "2026-11-20T18:40:56.117807+00:00"
+        "sha256": "5f4ef497a9efed547416fdfb12567ff02e35b10b1eb0c0e02a63a2c697a39f81",
+        "size_bytes": 12083,
+        "commitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
+        "scriptCommitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
+        "computedAt": "2026-11-20T16:01:41.475202+00:00"
       },
       {
         "path": "codata-2022-validation-masses.witness.json",
