@@ -168,8 +168,7 @@ Gell-Mann--Nishijima relation cannot be closed.
    hypercharge $Y$ is not: the writhe map is falsified as a $Y$
    assignment (proton and neutron share $Y = +1$ while their writhes
    differ).  *Open:* identify a second crossing invariant
-   independent of the writhe.  Candidate: ribbon-framing twist
-   ([Definition](#def:strand-twist-datum)).
+   independent of the writhe.
    Battery (exploratory, not wired): of $10{,}000$ helon-style
    assignments, $4$ survive
  --- but that ratio
