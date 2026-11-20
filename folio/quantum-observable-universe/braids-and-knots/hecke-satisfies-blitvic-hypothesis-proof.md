@@ -1,4 +1,4 @@
-*Proof.* We reduce an arbitrary joint moment of centred generators
+*Proof.* Reduce an arbitrary joint moment of centred generators
 to a pair-partition sum by induction on word length.
 
 **Setup.** Let $\tilde\sigma_i := \sigma_i - z \cdot 1$ where
