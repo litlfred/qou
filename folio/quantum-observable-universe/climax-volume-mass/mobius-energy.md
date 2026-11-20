@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe ([Definition](#def:quantum-observable-universe)) with substrate parameter $q$ ([Definition](#def:substrate-parameter)), categorical action $\mathfrak{S}_q$ ([Definition](#def:categorical-action)), and $q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)).
 
-Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve (a knot embedding) and let $\mathfrak{m}(\varrho)$ denote the categorical mass ([Theorem](#thm:topological-mass)).
+Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve (a knot embedding) and let $\mathfrak{m}(\varrho)$ denote the categorical mass ([Definition](#def:mass-identity)).
 
 We define the *categorical Möbius energy* by
 

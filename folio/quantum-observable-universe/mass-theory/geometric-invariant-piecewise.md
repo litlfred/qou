@@ -1,5 +1,5 @@
 The categorical action $S = \mathrm{tr}(\Phi)$
-([topological mass](#thm:topological-mass)) evaluates differently
+([topological mass](#conj:topological-mass)) evaluates differently
 depending on the geometry of the knot complement $S^3 \setminus K$.
 The piecewise geometric invariant
 
