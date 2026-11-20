@@ -140,6 +140,7 @@ import QOU.MathlibExt.RepresentationCharacter
 import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.QPlancherelPartitionInstance
 import QOU.MathlibExt.MonoidalCalcVar
+import QOU.FrobeniusHopfData.PairingGaugeFluctuation
 import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.MathlibExt.DerivationRankNullity
 import QOU.MathlibExt.Dolbeault
