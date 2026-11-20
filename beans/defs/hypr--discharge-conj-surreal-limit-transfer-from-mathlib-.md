@@ -1,7 +1,7 @@
 ---
 # hypr
 title: Discharge conj:surreal-limit-transfer from Mathlib Hyperreal (ℝ* is a SurrealField)
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - conjecture-discharge
     - reorg-2026-10-04
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-10-04T15:10:55Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-3kkl
 ---
 
@@ -175,3 +175,6 @@ Surreal/standard-part machinery does not replace this corpus's ε–δ arguments
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-09 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).

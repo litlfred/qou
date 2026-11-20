@@ -1,11 +1,11 @@
 ---
 # qou-0ueg
 title: 'NS attack vectors: topological/geometric obstructions for unforced NS, mapped to QOU'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T20:50:47Z
-updated_at: 2026-10-12T20:50:47Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-vo9t
 ---
 
@@ -33,3 +33,6 @@ Two owner decisions are framed in audit §4: Q1, re-scope the Levi chain; Q2, sc
 - whether Tao's averaged nonlinearity preserves Kelvin circulation or helicity;
 - whether a Lamb-vector regularity criterion exists;
 - `corpus_search` was down, so the corpus negatives above are lexical only.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch B):** in-progress → todo. Stale claim (session ended); work not finished — see docs/coordination/2026-11-20-dangling-claims-proposal.md.

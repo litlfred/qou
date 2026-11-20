@@ -1,13 +1,13 @@
 ---
 # cj8c
 title: 'Conjecture carrier: jet_convergence_classical_limit (jet_convergence_classical_limit.lean) — §3b, framework/substrate §3b carrier'
-status: in-progress
+status: todo
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-05T13:20:00Z
-updated_at: 2026-10-04T15:14:30Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-j5ch
 ---
 
@@ -22,3 +22,6 @@ parent: qou-j5ch
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).

@@ -1,11 +1,11 @@
 ---
 # qou-533l
 title: Formalize Yekutieli central-extension-of-gerbes theorem for the brane tower (tiered)
-status: in-progress
+status: todo
 type: feature
 priority: high
 created_at: 2026-10-12T19:14:51Z
-updated_at: 2026-10-12T19:14:51Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-vo9t
 ---
 
@@ -25,3 +25,6 @@ Mathlib has no gerbes and no nonabelian H^2. Planned tiers, each sorry-free befo
 - No iff carried as a field.
 - Generic R, not Real (AGENTS.md section 7c).
 - Each gap gets its own bean.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch B):** in-progress → todo. Stale claim (session ended); work not finished — see docs/coordination/2026-11-20-dangling-claims-proposal.md.

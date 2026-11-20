@@ -1,11 +1,11 @@
 ---
 # qou-byzu
 title: 'NS vector 5: contact topology / Beltrami flows — the regular Reeb solution and its scope'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-12T20:57:49Z
-updated_at: 2026-10-13T12:00:00Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-vo9t
 ---
 
@@ -42,3 +42,6 @@ The audit section 5 draft is now a content block triple in `fluid-dynamics/`, li
 - `rem:reeb-beltrami-regular-flow-scope`: one family on one manifold, nothing about generic data, regularity on M as open as on `T^3`. Topology carries the solution, so no bundle invariant forces blow-up. The identification of `V` with the cone-link Boothby-Wang Reeb field is inherited, not re-derived. `s` is free and not fitted.
 - Gate: render preflight balanced; run-validate shows 8 issues, equal to the baseline; qa-sweep shows 0 fail and 0 warn on all three blocks.
 - The proposition is fully proved modulo standard [S] steps, with the identification moved to the remark. No conjecture is closed or introduced. The bean stays in-progress for the owner to close.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch A):** in-progress → completed. Work commits 4daa381f5c7, 258e9121366 are on main.

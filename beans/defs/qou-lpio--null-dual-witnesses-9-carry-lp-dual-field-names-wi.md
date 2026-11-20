@@ -1,13 +1,13 @@
 ---
 # qou-lpio
 title: 'Null-dual witnesses: 9 carry LP-dual field names with empty values — track the drain'
-status: in-progress
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:49:12Z
-updated_at: 2026-10-04T15:21:44Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-5vkl
 ---
 
@@ -123,3 +123,6 @@ not an idle drain.
 
 - **Ruling executed (`Q-WXHI-2 = 1`)**: Stripped the 9 null/STUB LP-dual keys (`dual_certified`, `dual_status`, `dual_variables_y`, `dual_slack`, `max_dual_slack`, `lp_primal_obj`, `lp_dual_obj`, `lp_duality_gap`, `solver_used`) from `computations/confinement-operator-selection.py` and regenerated `computations/confinement-operator-selection.witness.json` at Convention D / proton pin.
 - **PR**: [`litlfred/qou#8058`](https://github.com/litlfred/qou/pull/8058) (`cc8046889bb857a933d60f20c74e29d4c8739d8a`). Status kept `in-progress` pending PR merge.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch B):** in-progress → todo. Stale claim (session ended); work not finished — see docs/coordination/2026-11-20-dangling-claims-proposal.md.

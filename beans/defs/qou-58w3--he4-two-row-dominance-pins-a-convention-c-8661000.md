@@ -1,13 +1,13 @@
 ---
 # qou-58w3
 title: he4-two-row-dominance pins a convention-C 866/1000 that D makes exactly 1
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:41:43Z
-updated_at: 2026-10-04T15:20:44Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-cdx1
 ---
 
@@ -30,3 +30,6 @@ NOT done in #5242: needs qa-sweep, and folio-assistant is not set up in that san
   - Kept `HasHe4DominantBlock` (`[9, 3]` vs `[12]`).
   - Verified with `lean -DautoImplicit=false -s 65536` (`EXIT: 0`, `0` warnings, `0` `sorry`).
 - PR: [`litlfred/qou#7986`](https://github.com/litlfred/qou/pull/7986) (commit `fd12a6522e45d32a4855f0b4dd0db7ac856c2986`, signed `ready:` comment [`#issuecomment-6900782211`](https://github.com/litlfred/qou/pull/7986#issuecomment-6900782211)).
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch A):** in-progress → completed. Work commit fd12a6522e4 is on main.

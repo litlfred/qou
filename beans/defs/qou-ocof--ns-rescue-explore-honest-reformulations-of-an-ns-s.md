@@ -1,11 +1,11 @@
 ---
 # qou-ocof
 title: 'NS rescue: explore honest reformulations of an NS-singularity statement on Bring'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T20:26:55Z
-updated_at: 2026-10-12T22:00:00Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-vo9t
 ---
 
@@ -46,3 +46,6 @@ The owner relayed a report that OpenAI published a 166-page paper, "Finite Time 
 - No corpus block cites Fefferman's alternatives or makes a forced-regularity claim (grep: 0 hits).
 
 **Before any content cites it:** ingest the PDF into uploads/ -> library/, read the forcing construction and the Lean statement, and check that the formal statement matches the prose one.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch B):** in-progress → todo. Stale claim (session ended); work not finished — see docs/coordination/2026-11-20-dangling-claims-proposal.md.

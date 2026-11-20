@@ -1,11 +1,11 @@
 ---
 # qou-p6tm
 title: 'NS vector 2: vortex-line topology (helicity, linking, reconnection) via braid machinery'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T20:57:49Z
-updated_at: 2026-10-13T12:00:00Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-vo9t
 ---
 
@@ -27,3 +27,6 @@ The three content blocks are now scoped to Euler. Minimal edits, in the existing
 - New refs: `enciso2017` (DOI 10.1016/j.aim.2017.01.025, checked by web search), `ebin-marsden1970` (no DOI recorded).
 - Gate: render preflight balanced. One pre-existing defect is not mine and not fixed: the writhe/twist/linking display in `helicity-conservation.md` has `+` at the start of lines inside `$$`. run-validate shows no fluid-dynamics issue. qa-sweep run; the remaining fail/warn entries are pre-existing (dated 2026-07/08) and on unedited text.
 - Still open, so the bean stays open: Markov-I / non-pure component linking.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch B):** in-progress → todo. Stale claim (session ended); work not finished — see docs/coordination/2026-11-20-dangling-claims-proposal.md.

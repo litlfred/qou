@@ -1,11 +1,11 @@
 ---
 # qou-0xk8
 title: 'T3/D2: Čech-cocycle gerbes and cocycle-level Yekutieli Thm 4.17'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:55Z
-updated_at: 2026-10-12T22:00:00Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-533l
 ---
 
@@ -35,3 +35,6 @@ Classical.choice and Quot.sound, checked on 11 headline declarations.
 
 The status is left `in-progress` for the parent (`qou-533l`) to adjudicate
 against D1 and D3. The gerbe ≃ cocycle equivalence remains open.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).

@@ -1,11 +1,11 @@
 ---
 # qou-bvxd
 title: 'T3/D1: instantiate T2b on continuous-function sheaves + Čech first Chern class infrastructure'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-10-12T20:38:54Z
-updated_at: 2026-10-12T22:30:00Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-533l
 ---
 
@@ -34,3 +34,6 @@ Still open (item 4; detail in docs/audits/2026-10-12-t3-d1-chern.md):
 - (d) c₁ = e = χ, degree pairing, Poincaré–Hopf. Mathlib has no surface topology.
 
 thm:qu-to-qou item 2's "= χ" and item 3's "χ mod n" are NOT formalised. Only the cochain relation obsₙ = c₁ mod n is formalised, and it holds for any c₁. Status stays in-progress (the open identifications are its subject).
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).

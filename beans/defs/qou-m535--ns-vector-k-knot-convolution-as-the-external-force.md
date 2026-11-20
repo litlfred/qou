@@ -1,11 +1,11 @@
 ---
 # qou-m535
 title: 'NS vector K: knot convolution (#) as the external force — forced-NS reformulation via ILP/SDP operator selection'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-12T21:00:36Z
-updated_at: 2026-10-12T21:00:36Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-vo9t
 ---
 
@@ -20,3 +20,6 @@ Verdict: (d) as stated. A narrow conditional (a) can be stated but adds nothing 
 - **The analytic core, derived.** `f ∈ C^∞` with level-k pieces at frequency λ_k forces the amplitudes `a_k = O(λ_k^{-m})` for every m. The force can only seed the cascade; all the content is in amplification and error control. Choosing knot-labelled seeds because the flow blows up is selection against the target, unless the smoothness of `f` is proved, and a label neither adds nor discharges that obligation.
 - **Coexistence.** A forced (C)/(D) result neither implies nor is implied by (A)/(B). If ever added, it would go in a separate "forced problem" remark that leaves NS(A) untouched.
 - **Recommendation (judgement).** Do not add content now. Optional cheap step: a Lean lemma on the smooth-forcing amplitude budget (audit §5c). Stays open per rule 13a.
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch C):** in-progress → todo. Open conjecture: stale claim released; never to be completed while the conjecture is open (AGENTS rule 13a).

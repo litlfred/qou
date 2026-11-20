@@ -1,13 +1,13 @@
 ---
 # qou-4tui
 title: Pass the 50-digit q into the branching route; the D row is 16 digits, not 50
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T06:38:32Z
-updated_at: 2026-10-04T15:21:59Z
+updated_at: 2026-11-20T08:32:31Z
 parent: qou-cdx1
 ---
 
@@ -97,3 +97,6 @@ reproduce exactly (`+1.090306...`, `-0.155601...`, `-2.968654...`,
   - Removed the `float(...)` truncation on `nucleon_mass_mev(species)` (eliminating the I8 float64 leak in `canonical_mass_table_extended.py`) and formatted `prediction_MeV_50dps` on `p, n` at 50 dps via `fmt(pred, dps=50)`.
   - Repointed `ATLAS_MD` in `computations/atlas_render_canonical_table.py` to `recursive-atom-knot-atlas-registry.md`, stripped the obsolete `/folio-assistant/` URL prefix, updated the nucleon mass footer attribution to `canonical_mass.nucleon_mass_mev()`, and re-rendered the table.
 - PR: [`litlfred/qou#7995`](https://github.com/litlfred/qou/pull/7995) (commit `4552d3620d0f14bf058a5a7031606034f7a2a6be`, signed `ready:` comment [`#issuecomment-6901100726`](https://github.com/litlfred/qou/pull/7995#issuecomment-6901100726)).
+
+
+**2026-11-20T08:32:31Z — owner-approved status change (coordinator session_01VQDpPdnjTBLBcPi6D5gj61, PR #8542 batch A):** in-progress → completed. Work commit 4552d3620d0 is on main.
