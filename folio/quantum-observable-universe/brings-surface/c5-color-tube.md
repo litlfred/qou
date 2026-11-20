@@ -1,4 +1,4 @@
-The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$ ([Lagrange resolvents](#rem:lagrange-resolvents)) becomes, in color tube coordinates:
+The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$ ([Lagrange resolvent transform](#prop:lagrange-resolvent-transform)) becomes, in color tube coordinates:
 
 ```tex
 \begin{align}

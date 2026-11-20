@@ -3,7 +3,7 @@ $$
   \gamma
   = \mathbf{1} + \varphi_0 \sigma_0 + \varphi_1 \sigma_1 + \varphi_{01} \sigma_0\sigma_1^{-1}
 $$
-is called a photon with color content ([photon](#def:photon)). Its fourth term is the chiral vertex $\sigma_0\sigma_1^{-1} = \sigma_0\sigma_1 - h\sigma_0$. Setting $\varphi_{01} = 0$ yields a 3-term linear specialization. Given two such specializations $\gamma_1$ and $\gamma_2$, the Gröbner--Shirshov normal form of their product factors into:
+is called a photon with color content. Its fourth term is the chiral vertex $\sigma_0\sigma_1^{-1} = \sigma_0\sigma_1 - h\sigma_0$. Setting $\varphi_{01} = 0$ yields a 3-term linear specialization. Given two such specializations $\gamma_1$ and $\gamma_2$, the Gröbner--Shirshov normal form of their product factors into:
 $$
   \mathrm{NF}(\gamma_1 \cdot \gamma_2)
   = (1 + \varphi_0\psi_0 + \varphi_1\psi_1) \mathbf{1}
