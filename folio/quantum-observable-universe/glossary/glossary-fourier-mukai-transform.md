@@ -1,4 +1,1 @@
 **:defterm[Fourier–Mukai transform]{#fourier-mukai-transform}.** For smooth projective varieties $X$, $Y$ and an object $K$ of $D^{b}(X \times Y)$, the functor $\Phi_{K} \colon D^{b}(X) \to D^{b}(Y)$, $E \mapsto Rp_{Y*}\bigl(p_{X}^{*}E \otimes^{L} K\bigr)$: pull back along the projection to $X$, tensor with the kernel $K$, push forward along the projection to $Y$. By Orlov's theorem \cite{orlov1997} every fully faithful exact functor between such categories is a Fourier–Mukai transform with a unique kernel; the name records that the transform with kernel the Poincaré bundle on an abelian variety and its dual is the analogue of the Fourier transform.
-
-**Mathlib reference.**
-None. The derived categories involved are `DerivedCategory`; no pushforward or derived tensor product of sheaves is formalised.
