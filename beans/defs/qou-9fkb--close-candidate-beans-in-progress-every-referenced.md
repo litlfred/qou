@@ -5,7 +5,7 @@ status: scrapped
 type: task
 priority: normal
 created_at: 2026-11-20T08:00:00Z
-updated_at: 2026-11-20T08:10:00Z
+updated_at: 2026-11-20T08:50:00Z
 parent: qou-w3yy
 ---
 
@@ -21,3 +21,5 @@ Source: `docs/coordination/2026-11-20-session-review.json` (`items` with `ws == 
 Created by W6, https://claude.ai/code/session_01VQDpPgX3UVCddvq75ab4EV
 
 **Scrapped 2026-11-20 (W6 scheduled run):** duplicates `qou-w6tr`, created minutes earlier by the parallel W6 run (PR #8527). List appended there.
+
+**Correction 2026-11-20 (W6 scheduled run, https://claude.ai/code/session_01VQDpPgX3UVCddvq75ab4EV): the 72-bean list I appended above is NOT a close list — do not use it.** I claimed "every referenced PR merged, none open". Measured against `docs/coordination/2026-11-20-dangling-claims-proposal.json` (main `cffdacbaf7b`): 36 of the 72 are PR-PENDING-BATCH (an open batch PR names them in its body; my join only read `#N` mentions in the bean body, so it never saw those PRs), 1 is LIVE-WS, and the other 35 were touched on or after 2026-11-13 (32 still in-progress, 3 now todo), so not stale. Use the proposal's verdicts instead (3 DONE / 6 TODO / 8 CONJECTURE-OPEN). Same error is in `docs/coordination/2026-11-20-session-review-summer.md` §Beans; corrected there.
