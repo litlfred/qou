@@ -10,7 +10,7 @@ tags:
     - polylogarithm
     - bloch-suslin
 created_at: 2026-11-19T08:19:49Z
-updated_at: 2026-11-20T15:45:46Z
+updated_at: 2026-11-20T17:37:12Z
 parent: qou-dxbw
 ---
 
@@ -80,3 +80,13 @@ parent: qou-dxbw
 
 - `ComplexLiTwoUnitCircleClassical` is now inhabited: `Im Li₂(e^{iθ}) = Cl₂(θ)` is proved via `Complex.im_tsum`. `blochWigner_unit_circle_eq_Cl_2` is unconditional.
 - **Finding:** `Cl_2_PentagonHolds` (`ThreeSubstantiveMathlibFillers.lean:117`) is vacuous. Its `closure : (Fin 5 → ℝ) → Prop` is class *data*, so `closure := fun _ => False` inhabits it. Do not instantiate it that way. The real 5-term relation needs Li₂ off the unit disk (analytic continuation), which is the remaining M1 work.
+
+## 2026-11-20 (evening) — CORRECTION, and the pentagon is inhabited (PR pending, branch claude/cl2-pentagon-honest-2026-11-20)
+
+**I wrote above that "the real 5-term relation needs Li₂ off the unit disk (analytic continuation), which is the remaining M1 work". That was wrong, and I did not check before writing it.** The corpus already has:
+- `QOU.MathlibExt.cLiTwoExt`: Li₂ continued to ℂ ∖ [1,∞), agreeing with the series on the closed disc off the cut (`cLiTwoExt_eq_cLiTwo_of_norm_le_one`);
+- `QOU.Archimedean.FiveTermProof.blochD`, with the five-term relation **proved** (`fiveSum_eq_zero`, PR #7946), plus inversion, reflection and Bloch–Suslin rigidity (`DilogTheoryArchimedean`).
+
+The same wrong claim appears in my PR #8597 comment on #8526 and in my chat report. The epic `qou-dxbw` M1 build-plan items 1–2 (Li₂ continuation, D₂ five-term) are therefore already done. Only the Bloch-group items remain.
+
+**Now done:** `Cl_2_PentagonHolds` is restated with its closure condition as a definition (the five unit-circle points are Suslin's five arguments) rather than a free field. It is inhabited from `fiveSum_eq_zero` via the new `blochD_exp : D(e^{iθ}) = Cl₂(θ)`. Library sweep: 26 ok, 0 RED; axioms clean.
