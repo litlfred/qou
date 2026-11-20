@@ -1,7 +1,7 @@
 ---
 # qou-m1bg
 title: 'Bring M1b: finite groups of holomorphic germs fixing a point are cyclic (discharges hstabA/hstabS of genus_eq_four_of_cellular)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-20T08:48:00Z
 parent: qou-qhcr
 ---
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
@@ -57,3 +57,7 @@ Same recipe as qou-m3tr: GitHub-release Lean 4.24.0, Mathlib oleans from `cat/fo
 **Still hypotheses (M2):** (1) the chart step, i.e. a point stabiliser on a Riemann surface gives a `GermAction`; (2) germ-effectiveness `heff`, i.e. the identity theorem on a connected surface. Wiring into `genus_eq_four_of_cellular` waits for #8365 to merge.
 
 Status `in-progress` until #8532 merges.
+
+## 2026-11-20 — merged
+
+PR #8532 merged to main (`4a81d794d`). This completes the task as the bean scoped it. The chart step and germ-effectiveness stay hypotheses; they belong to M2 and are out of scope here. Parent `qou-qhcr` stays open.
