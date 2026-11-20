@@ -53,6 +53,10 @@ const FOREIGN_KEY =
 /** Same shape, but in a category this audit DOES own and cannot be flagging. */
 const OWNED_STALE_KEY =
   "folio/quantum-observable-universe/lean/QOU/Nonexistent.lean::QOU.Fake.Decl::proof-no-trivial-true";
+/** Owned category, in a file the run DOES scan, for a decl that does not
+ *  flag: a fixed finding, which must be retired. */
+const OWNED_FIXED_KEY =
+  "folio/quantum-observable-universe/lean/QOU/BraidKnot/algebraic_quantum_volume_specialization.lean::QOU.Fake.Decl::proof-no-trivial-true";
 
 // A full `--review-ledger` run scans the whole corpus (3269 `.lean` as of
 // 2026-08-30, ~60 s). Bun's 5 s default kills it mid-run, and the process then
@@ -80,6 +84,13 @@ test(
         verdict: "genuine",
         file_sha: "deadbeefcafe",
       },
+      [OWNED_FIXED_KEY]: {
+        category: "proof-no-trivial-true",
+        pattern: "placeholder-true",
+        line: 1,
+        verdict: "genuine",
+        file_sha: "deadbeefcafe",
+      },
     },
   };
   writeFileSync(TMP, JSON.stringify(seeded, null, 2) + "\n");
@@ -91,13 +102,17 @@ test(
   try {
     const r = spawnSync(
       "bun",
-      ["run", SCRIPT, "--quiet", "--review-ledger", TMP, "--json", TMP_REPORT],
+      ["run", SCRIPT, "--review-ledger", TMP, "--json", TMP_REPORT],
       {
         cwd: REPO_ROOT,
         encoding: "utf8",
       },
     );
     expect([0, 1]).toContain(r.status); // must still function, not crash
+    // Exit 1 is also what bun returns when SCRIPT does not exist, which is how
+    // this test passed its status check for months against the removed
+    // content/pipeline/ path. Require proof that the ledger pass actually ran.
+    expect(r.stdout + r.stderr).toContain("review ledger:");
 
     // `qou-9zh3`: the run must not have rewritten the committed corpus record.
     // This is the assertion the defect would have failed, and it is deliberately
@@ -114,12 +129,18 @@ test(
     expect(after.entries[FOREIGN_KEY]).toBeDefined();
     expect(after.entries[FOREIGN_KEY].verdict).toBe("genuine");
 
-    // The owned entry names a file that does not exist, so it cannot be among
-    // this run's candidates and IS correctly dropped as resolved. Asserting
-    // this keeps the guard honest: a version that simply stopped deleting
-    // anything would pass the check above while breaking the ledger's ability
-    // to retire fixed findings.
-    expect(after.entries[OWNED_STALE_KEY]).toBeUndefined();
+    // The owned entry names a file that does not exist. Since `qou-metc` the
+    // ledger loop only retires entries in files the run actually scanned, and
+    // a missing file is never scanned, so it is KEPT: a missing path cannot be
+    // told apart from a rename (the content/ -> folio/ move left every key
+    // pointing at a missing path). This assertion said `toBeUndefined()` until
+    // 2026-11-20 and had failed since that guard landed, unnoticed because
+    // SCRIPT pointed at the removed content/pipeline/ and the test never ran.
+    // That a FIXED finding is still retired is checked by OWNED_FIXED_KEY
+    // below, so a version that simply stopped deleting anything fails.
+    expect(after.entries[OWNED_STALE_KEY]).toBeDefined();
+    expect(after.entries[OWNED_STALE_KEY].verdict).toBe("genuine");
+    expect(after.entries[OWNED_FIXED_KEY]).toBeUndefined();
     } finally {
       for (const f of [TMP, TMP_REPORT]) {
         if (existsSync(f)) {
