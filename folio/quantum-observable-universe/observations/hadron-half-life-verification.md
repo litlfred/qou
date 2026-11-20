@@ -1,4 +1,4 @@
-We verify the beta-decay framework ([hadron half-life](#prop:hadron-half-life)) against measured lifetimes.
+The beta-decay framework ([hadron half-life](#prop:hadron-half-life)) is verified against measured lifetimes.
 
 ## Quantities from $q$ and $\mu_0$
 
@@ -6,7 +6,7 @@ The half-life formula depends only on $q$ and $\mu_0$. Every physical constant f
 
 See [Table 1](#tbl:hadron-half-life-verification-table1-data).
 
-From $q$ and $\mu_0$ alone, we determine:
+From $q$ and $\mu_0$ alone, the following are determined:
 
 1. **Skein polynomial**: $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$.
 2. **$Q$-value**: $Q = \mathfrak{S}_q(\mathrm{par}) - \mathfrak{S}_q(\mathrm{dau}) - \mathfrak{S}_q(e)$.
@@ -47,7 +47,7 @@ See [Table 4](#tbl:hadron-half-life-verification-table4-data).
 
 ## $Q$-value predictions from $q$
 
-We predict the $Q$-value entirely from $q$ via the knot operator product:
+The $Q$-value is predicted entirely from $q$ via the knot operator product:
 
 $$
   Q

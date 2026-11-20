@@ -19,7 +19,7 @@ The Hopf algebra becomes cocommutative. The [quantum Planck constant](#def:subst
 
 **Categorical picture (conjectural).**
 
-We require a category of QOU degenerations $\mathbf{QOU}_{\mathrm{deg}}$ with morphisms preserving structure while selectively degrading axioms:
+This requires a category of QOU degenerations $\mathbf{QOU}_{\mathrm{deg}}$ with morphisms preserving structure while selectively degrading axioms:
 
 - The **initial object** represents the Big Bang ($q = \infty$, degenerate Frobenius form).
 - The **terminal object** is [Bring's surface](#thm:descartes) ($q = 1$).
@@ -33,4 +33,4 @@ The $1 < q < \infty$ regime enforces chirality conservation:
 2. **Observable era**: Chirality is frozen.
 3. **Heat death**: The $q \to 1$ limit erases chirality distinctions.
 
-In a cyclic universe, exceptional divisors reset topology at the aeon boundary. We conjecture this transition as a morphism from the terminal object of one $\mathbf{QOU}_{\mathrm{deg}}$ to the initial object of the next.
+In a cyclic universe, exceptional divisors reset topology at the aeon boundary. The conjecture is that this transition is a morphism from the terminal object of one $\mathbf{QOU}_{\mathrm{deg}}$ to the initial object of the next.

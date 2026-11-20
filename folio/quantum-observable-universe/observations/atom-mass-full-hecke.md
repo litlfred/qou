@@ -1,6 +1,6 @@
 The semi-empirical mass formula $M_q$ uses the 2$\times$2 **standard** irrep of $H_3(q)$. This discards the symmetric and alternating channels, missing the dominant contribution for multi-nucleon systems.
 
-We compute the atomic mass for $Z = 1$--$10$ using the full regular representation of $H_3(q)$.
+Compute the atomic mass for $Z = 1$--$10$ using the full regular representation of $H_3(q)$.
 
 ## Three-channel decomposition
 
@@ -38,7 +38,7 @@ The mass integrand splits into:
 
 ## Results for $Z = 1$--$10$
 
-We evaluate the traces at $q = 111/100$.
+Evaluate the traces at $q = 111/100$.
 
 See [Table](#tbl:atom-mass-full-hecke-table-data).
 

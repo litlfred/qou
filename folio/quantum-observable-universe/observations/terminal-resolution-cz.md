@@ -4,7 +4,7 @@ $$
   \hbar_q(p) = 1 - q(p)^{-1}.
 $$
 
-We specialize the topological mass formula ([topological mass formula](#conj:topological-mass-formula)) to $q_0 \approx 1.10998$:
+The topological mass formula ([topological mass formula](#conj:topological-mass-formula)) specialises at $q_0 \approx 1.10998$ to:
 
 $$
   \hbar_{q_0} = 1 - q_0^{-1} \approx 0.09889,

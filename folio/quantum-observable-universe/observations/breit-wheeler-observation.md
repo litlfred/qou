@@ -13,7 +13,7 @@ $$
 
 where $h_{\mathrm{A}} = q - q^{-1} \approx 0.209$ at $q_0$ and $\mathrm{net}(e^+) \approx 0.451$ (the Gröbner--Shirshov NF coefficient at $q_0$).
 
-We evaluate the limits:
+Evaluate the limits:
 
 | Configuration | $S$ | $E_0$ | Character |
 |---|---|---|---|

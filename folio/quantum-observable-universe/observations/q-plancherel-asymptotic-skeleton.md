@@ -10,7 +10,7 @@ $$
   n(\lambda) \;=\; \sum_i (i-1)\lambda_i ,
 $$
 
-*with $f^\lambda$ the number of standard Young tableaux and $h(\square)$ the hook lengths. Here $n(\lambda)$ is Macdonald's partition statistic, not a function of the size $n$ — the two are distinct objects sharing a glyph, and the size is always the bare $n$. We write $\lambda'$ for the conjugate (transposed) partition and $c(\square) = j - i$ for the content of the box in row $i$, column $j$. The blackboard-bold $\mathbb{M}$ follows the $\mathbb{V}$ precedent in the notation register: it is the source literature's own symbol, raised out of plain $M$ and $\mathcal{M}$, both of which are claimed here (the latter by the mass endomorphism). We define a topological space $\mathcal{K}_q$ (the $q$-deformed Kerov limit-shape space) and pushforward maps*
+*with $f^\lambda$ the number of standard Young tableaux and $h(\square)$ the hook lengths. Here $n(\lambda)$ is Macdonald's partition statistic, not a function of the size $n$ — the two are distinct objects sharing a glyph, and the size is always the bare $n$. Write $\lambda'$ for the conjugate (transposed) partition and $c(\square) = j - i$ for the content of the box in row $i$, column $j$. The blackboard-bold $\mathbb{M}$ follows the $\mathbb{V}$ precedent in the notation register: it is the source literature's own symbol, raised out of plain $M$ and $\mathcal{M}$, both of which are claimed here (the latter by the mass endomorphism). Define a topological space $\mathcal{K}_q$ (the $q$-deformed Kerov limit-shape space) and pushforward maps*
 
 $$
   \iota_n \colon \{\lambda \vdash n\}
@@ -23,7 +23,7 @@ $$
 
 1. *(Existence at $q = 1$.) The sequence $\{\mu_n^{(1)}\}$ converges weakly to $\mu_\infty^{(1)}$* [`vershik-kerov1977`, `biane1998`].
 2. *(Asymptotics at generic $q$.) The row lengths obey a law of large numbers, $\lambda_i/n \to (1-q)q^{i-1}$ in probability, and their fluctuations are asymptotically Gaussian at scale $\sqrt{n}$* [`feray-meliot2012`].
-3. *(Limit identification, conjectural.) For $q \neq 1$, $\{\mu_n^{(q)}\}$ converges weakly to $\mu_\infty^{(q)}$. We identify $\mu_\infty^{(q)}$ with a measure on $\pi_{\mathrm{GNS}}(H_\infty(q))$.*
+3. *(Limit identification, conjectural.) For $q \neq 1$, $\{\mu_n^{(q)}\}$ converges weakly to $\mu_\infty^{(q)}$. Identify $\mu_\infty^{(q)}$ with a measure on $\pi_{\mathrm{GNS}}(H_\infty(q))$.*
 
 ## Which weight this is, and why it changed
 
@@ -44,7 +44,7 @@ This also explains a coincidence the corpus carried without comment: the proved 
 
 ## The substrate sits at $q > 1$, and that costs an orientation, not the theorem
 
-[`feray-meliot2012`] states its asymptotics for $q < 1$, while the substrate gives $Q = q_0^2 \approx 1.2321$. The paper's own duality $\mathbb{M}_{n,q^{-1}}(\lambda') = \mathbb{M}_{n,q}(\lambda)$ closes the gap: it is an *exact* identity, verified here over all partitions of $n \leq 9$ in exact arithmetic, so the $Q > 1$ results are the $Q^{-1} < 1$ results read on conjugate diagrams. Clause 2 at the substrate therefore describes the **columns** of $\lambda$ where the cited statement describes rows. Nothing is lost and nothing is approximated; the reader has to transpose.
+[`feray-meliot2012`] states its asymptotics for $q < 1$, while the substrate gives $Q = q_0^2 \approx 1.2321$. The paper's own duality $\mathbb{M}_{n,q^{-1}}(\lambda') = \mathbb{M}_{n,q}(\lambda)$ closes the gap: it is an *exact* identity, verified here over all partitions of $n \leq 9$ in exact arithmetic, so the $Q > 1$ results are the $Q^{-1} < 1$ results read on conjugate diagrams. Clause 2 at the substrate therefore describes the **columns** of $\lambda$ where the cited statement describes rows. Nothing is lost and nothing is approximated; only a transposition is needed.
 
 ## What is still open
 
