@@ -176,6 +176,28 @@ theorem not_of_subsingleton [Subsingleton X]
   rintro ⟨-, ⟨x, y, hxy⟩, -⟩
   exact hxy (congrArg ε (Subsingleton.elim x y))
 
+/-- **Distinct witness points exist**: any index type carrying a
+    `LocalInfinitesimalField` contains at least two distinct points `x ≠ y`. -/
+theorem exists_distinct_points [h : LocalInfinitesimalField X K ε leadingCoeff q₀] :
+    ∃ x y : X, x ≠ y := by
+  rcases h.local_variation with ⟨x, y, hxy⟩
+  exact ⟨x, y, fun heq => hxy (congrArg ε heq)⟩
+
+/-- **Pairwise fluctuations are infinitesimal**: for any two points `x, y : X`,
+    the difference `ε x - ε y` is infinitesimal in `K`. -/
+theorem sub_infinitesimal [h : LocalInfinitesimalField X K ε leadingCoeff q₀]
+    (x y : X) : IsInfinitesimal (ε x - ε y) := by
+  rw [sub_eq_add_neg]
+  exact (h.infinitesimal x).add (h.infinitesimal y).neg
+
+/-- **No constant surreal represents the local infinitesimal field**:
+    for every `c : K`, `ε` is not identically equal to `c`. -/
+theorem not_forall_eq_const [h : LocalInfinitesimalField X K ε leadingCoeff q₀]
+    (c : K) : ¬ (∀ x : X, ε x = c) := by
+  intro hconst
+  rcases h.local_variation with ⟨x, y, hxy⟩
+  exact hxy (by rw [hconst x, hconst y])
+
 end LocalInfinitesimalField
 
 end QOU.AppendixSurreals
