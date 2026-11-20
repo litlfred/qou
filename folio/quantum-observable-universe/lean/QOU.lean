@@ -1792,6 +1792,7 @@ import QOU.Eightfold.USpinColemanGlashowLambdaSigma
 import QOU.StandardModel.OctonionColourTripletSplitting
 import QOU.StandardModel.ElectroweakBringSchwingerBridge
 import QOU.StandardModel.ElectroweakVevFixedPointDecomposition
+import QOU.StandardModel.ElectroweakVevGaps
 import QOU.Archimedean.BringSchwingerNormalizationDerivation
 import QOU.QBeta.CoshHolonomyAndGPMTBaseBridge
 import QOU.ShellCondensation.SelectorPrune
