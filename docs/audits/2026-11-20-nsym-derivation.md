@@ -130,6 +130,7 @@ The probe checks this identity exactly in sympy. It is a rewriting, not a result
 | `v/m_p` used | value | `𝒩_sym^anchor` |
 |---|---|---|
 | experimental (`G_F = 1.1663788e-5 GeV⁻²`, the script's input) | 262.4181652782 | 213.111824847 |
+| experimental, CODATA 2022 (`G_F = 1.1663787e-5 GeV⁻²`, the script's input since 2026-11-20) | 262.4181765267 | 213.111833983 |
 | block fixed point (conj, `ElectroweakVevFixedPointClass`) | 262.418168819 | 213.111827723 |
 | block `T_EW` (tree + 1/π) | 262.418473707 | 213.112075324 |
 | block tree `q([2]/2)[4][6][8]` | 262.100163821 | 212.853573400 |
@@ -196,6 +197,15 @@ These are honest misses. Per Part B they also measure the wrong thing: the facto
    block fixed point is **+13.49 ppb** against the first input and **−29.37 ppb** (the
    block's quoted figure) against the second. The anchor's last digits depend on which
    input is used.
+
+   **Resolved 2026-11-20 (owner chose CODATA 2022).** The repo's CODATA 2022 table
+   (`library/codata-2022/values.json`) gives `1.1663787(6)e-5 GeV⁻²`, so the probe
+   was already on CODATA 2022 and the central constant (`1.1663788`, the PDG value)
+   was the outlier. The central constant is now `1.1663787e-11 MeV⁻²`; the anchor
+   witness was regenerated (`213.111833983`). The block's −29.37 ppb is the CODATA
+   2022 figure and is unchanged. The `+13.49 ppb` above was against the PDG value.
+   `computations/beta-decay-from-q.py:60` still carries `1.1663788e-11` labelled
+   "CODATA 2022" and is left for a separate fix.
 3. **The block's comparison table** (`g-action-on-substrate.md`, §Comparison with the
    anchor value) compares host `q`-dimensions with a quantity that Part B shows is not
    one. Changing the prose is an owner decision. Nothing was edited.
