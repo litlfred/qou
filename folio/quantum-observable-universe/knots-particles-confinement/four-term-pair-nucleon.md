@@ -7,10 +7,10 @@ Each photon carries the full color content:
 $$
   \gamma_k
   =
-  \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1
+  \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}
 $$
 
-where $\varphi_{01}\sigma_0\sigma_1 = \varphi_{01}L_+$ is the Hopf link dressing. When $\varphi_{01} \neq 0$, the trefoil channel opens directly in the $\gamma\gamma$ product.
+where $\varphi_{01}\sigma_0\sigma_1^{-1} = \varphi_{01}(L_+ - h\sigma_0)$ is the chiral pair-production vertex ([photon](#def:photon)). When $\varphi_{01} \neq 0$, the trefoil channel opens directly in the $\gamma\gamma$ product.
 
 ## Three pair productions
 

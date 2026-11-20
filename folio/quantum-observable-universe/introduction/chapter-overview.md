@@ -34,7 +34,7 @@ Here $R_{\int}$ denotes the **Frobenius–Ricci endomorphism**, $F_\nabla$ denot
 $$
   E_\times = q + q^{-1} = [2]_q.
 $$
-Specific knots map to particle identities: the unknot $0_1$ acts as the neutrino, the trefoil $3_1$ acts as the electron, and higher torus knots act as the muon and tau. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$. Two-photon products generate the massive spectrum. The figure-eight knot volume enters the muon-to-electron mass ratio through
+Specific knots map to particle identities: the unknot $0_1$ acts as the neutrino, the trefoil $3_1$ acts as the electron, and higher torus knots act as the muon and tau. The photon is a four-term Hecke element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$. Two-photon products generate the massive spectrum. The figure-eight knot volume enters the muon-to-electron mass ratio through
 $$
   \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^{2}}, \qquad \hbar_q = 1 - q^{-1}.
 $$
