@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T21:05:00Z
+updated_at: 2026-11-20T23:30:00Z
 parent: qou-10v9
 ---
 
@@ -4240,6 +4240,16 @@ Pre-registered at 5ab8166249. Lean `QOU/QuarkState/ChargedCurrentW.lean` (generi
 - The framed mass gives σ and σ⁻¹ the same value, 1/[2], so Δ vanishes under the braid-class mass definition. Q_β here is a writhe effect; this is a tension in the definitions.
 - The scale is not on the chain. On z_D, CODATA needs 1.7592 × E₀. The mass-channel scale sends Δ to 100.5 MeV.
 - So the gap points at the scale, not the functional. Still open.
+
+### 2026-11-20 ~21:00 — Q_β from U_q(gl₂) outside H_n (PR #8661, branch claude/beta-rate-qbeta-energy-beyond-hn-2026-11-20)
+
+Owner asked (~20:15): derive Q_β as an energy, consistent with the q-rate, with nothing chosen. **Result: not derived.**
+- Derived: the amplitude (q²−1)T⁺ = Ad_K(T⁺) − T⁺. So the rate's q-dependence is the Cartan charge 2 of T⁺ (e^{2λ}−1, λ = ln q). It contains no MeV scale.
+- Scope (b): twist, Casimir and anything central agree on n and p (`eigen_eq_of_commute`). n⊗ν and p⊗e⁻ lie in one K^{⊗4} weight space (`exchange_preserves_weight`). So any K-weighted 4-strand split, and any one-coefficient linear Cartan energy, gives Q_β = 0. The scored 0.3254 MeV (#8586) is the quark-only half of a conserved quantity, and is non-zero only because the lepton strand is kept out of the K-grading (a premise).
+- Scope (a) table at proton q₀: h·E₀^tow = 0.8838 MeV (+13.0 %), 2 ln q·E₀^tow = 0.8822 (+12.8 %), h·m_e = 0.1068 (−86.3 %). These are one cell, since h = 2 sinh λ. They need a scale, the log/linear choice, and the lepton strand dropped. **Not a lead.**
+- Lepton strand under the #8586 functional: |ε_ℓ|E₀ = m_e(q+1)/(q(q²+1)) = 0.4395 MeV, which is not m_e. The additive (ε_q − ε_ℓ)E₀ = 0.114 MeV needs m_n < m_p and m_e < m_ν.
+- E₀: E₀·g = m_e only for g = q(q−1), the K-gap between q² and q, which no doublet carries. Still posited (qou-mkm8).
+Lean `QOU/QuarkState/CartanEnergyTransport.lean` (generic Field, sorry-free). Probe `computations/probes/qbeta_uq_energy/` 14/14. Audit `docs/audits/2026-11-20-qbeta-energy-outside-hn.md`. Bean stays open (13a).
 
 ### 2026-11-20 ~21:00 — Q_β from U_q(gl₂) outside H_n (PR #8661, branch claude/beta-rate-qbeta-energy-beyond-hn-2026-11-20)
 
