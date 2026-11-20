@@ -77,3 +77,38 @@ E0 = m_e/(q*(q-1));  E0_tower = E0/(1-((q-1)/q)**2)
 S = 2*m_mu*(q+1/q)*(q**2+1+q**-2)/q**3   # mass-channel scale, m_mu = m_e*Vol(4_1)/hbar_q^2
 X = (q-1)**2*(1-q**-4)/3;  Q_fs = m_p*X/(1-X/2) - m_e
 ```
+
+## 7. Addendum: do γγ / Breit–Wheeler give u and d separately? (owner question, same day)
+
+Corpus search: content, computations (live and `fsh-guts/deprecated`) and witnesses for Breit–Wheeler and γγ, plus every witness carrying a Q_β value.
+
+**7.1 The April Breit–Wheeler nucleon run was calibrated on Q_β.** `fsh-guts/deprecated/computations/breit-wheeler-nucleon-nf.py`
+(witness computed 2026-04-15) builds p = B₃·(u,u,d) and n = B₃·(u,d,d) with typed crossings and gets
+net(p) = 0.999125, net(n) = 0.810835, Δnet = −0.188291. Its E₀ = 4.154925 MeV is read from
+`beta-decay-energy-scale.witness.json` field `E0_from_net_MeV`, and 0.78233341 / 0.18829062 = 4.1549250300084 — the same to
+1e-13. So E₀ there **is Q_β divided by Δnet**. The Q_β it reproduces (0.7823334100) is its input returned, not a prediction.
+Its u/d distinction is the typed-crossing definition, not something γγ produced.
+
+**7.2 In the corpus u and d are one representation with opposite orientation.** `up-quark.md`: the up quark "is not a
+distinct knot type … it is the unknot distinguished by its environment", ν|_{B₃,+}. `down-quark.md`: ν|_{B₃,−}, differing
+"only by crossing orientation". Its charge note records a proved obstruction (`QOU.Braiding.mirror_odd_neutral_neutron_forces_zero`):
+a mirror-odd charge gives Q(d) = −Q(u), so a neutral neutron forces every quark charge to zero. The Standard Model ratio
+|Q_u| = 2|Q_d| is an asymmetry that **a pure mirror cannot supply**. `quark-antiquark-production-reduction.md` derives a
+quark crossing from γγ (L₊·e⁻ → σ₁ + …) but states "the quark type is determined by the crossing orientation", i.e. again
+by the mirror.
+
+**7.3 What γγ-selected words do to Q_β (all ε = tr at z_D, tower E₀, proton pin):**
+
+| witness | finding |
+|---|---|
+| `qbeta-gamma-gamma-admissible-family-h3` | in H₃ every γγ word is (σ₀σ₁⁻¹)^k; the derived member k = 3 (Borromean) misses by +440 % |
+| `qbeta-gamma-gamma-qbeta-prediction` | n = 4: all five γγ + SDP admissible words +458 % to +620 %; the near-hit at 0.11 % appears only with the SDP dropped and is worse than chance |
+| `qbeta-gamma-gamma-ruling-selects-ordering` | the γγ-ruled interleaved 11-letter element: −16.68 % (the current scorecard) |
+| `qbeta-pn-asymmetry-has-one-home-under-the-ruling` | **the γγ core and the gluon pair are byte-identical between p and n**; the corpus separates the nucleons only in the 3-letter typed quark block, and every γγ word has alternating character exactly 1 (`altChar_eq_one`), so γγ cannot see the separation |
+| `qbeta-gamma-gamma-selected-delta` | at γγ level 1 the n − p difference vanishes identically (`GammaGammaSelectedDeltaVanishes`, Lean) |
+
+**7.4 Reading.** Nothing in the corpus derives u and d from γγ as distinct representations; the γγ words are proved blind
+to the p/n difference. The owner's position (u and d carry *separate representations*) is therefore not yet implemented
+anywhere, and it is exactly what the proved obstruction in 7.2 asks for: a u/d asymmetry that is not a mirror. That is the
+research target: assign u and d to distinct H_n(q) representations (or idempotents) whose γγ production differs, then
+re-run Q_β through energy conservation (§5, route 2).
