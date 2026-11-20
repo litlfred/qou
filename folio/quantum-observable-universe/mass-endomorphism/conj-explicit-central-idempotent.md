@@ -16,15 +16,15 @@ $$
 ## Why this is stated separately
 
 The cross-checks are what makes $e_\lambda$ *the* central primitive idempotent rather than merely an element of $Z(H_n(q))$, and they are the sole unproved input to
-[Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent). That proposition is proved in Lean *conditionally* on them, with the class carrying them as an explicit instance hypothesis. Naming the conjecture as its own block is what lets the proposition's `uses[]` record the dependency, so the conditional cone is auditable from the manifest and not only from the Lean signature.
+[Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent). That proposition is proved *conditionally* on them, with the cross-checks carried as an explicit hypothesis. Stating the conjecture as its own block records the dependency explicitly.
 
-## Status in Lean
+## Status
 
-All four cross-checks are proved, sorry-free, on the real Iwahori–Hecke algebra `QOU.SchurWeyl.Hecke`, for every $n$:
+All four cross-checks are proved on the Iwahori–Hecke algebra $H_n(q)$, for every $n$:
 
-- Cross-checks 1 and 2, and centrality: `explicit_central_idempotent_cross_checks` in `QOU.BraidKnot.ExplicitCentralIdempotentGeneral`. The Wedderburn isomorphism sends each Lagrange projector to a diagonal matrix unit (`JMProjector.heckeWedderburn_symm_single`). `mulProj_eq_proj` identifies the formula above, written in the multiplicative $J_k$, with that projector.
-- Cross-check 3: `IsBar.fixes_centralIdem` in `QOU.BraidKnot.CentralIdempotentInvolution`. Every map with the bar properties fixes every $e_\lambda$. No bar map is constructed; that needs a field automorphism with $q \mapsto q^{-1}$.
-- Cross-check 4: `hashMap_centralIdem` in `QOU.BraidKnot.CentralIdempotentSignTwist`. The sign twist is constructed from the universal property and sends $e_\lambda$ to $e_{\lambda'}$.
+- Cross-checks 1 and 2, and centrality. The Wedderburn isomorphism sends each Lagrange projector to a diagonal matrix unit, and the formula above, written in the multiplicative $J_k$, coincides with that projector.
+- Cross-check 3. Every map with the bar properties fixes every $e_\lambda$. No bar map is constructed; that needs a field automorphism with $q \mapsto q^{-1}$.
+- Cross-check 4. The sign twist is constructed from the universal property and sends $e_\lambda$ to $e_{\lambda'}$.
 
 **Which involution pairs $\lambda$ with $\lambda'$.** The bar involution does not: it fixes every $e_\lambda$, so an earlier form of cross-check 4, $\overline{e_\lambda} = e_{\lambda'}$, is false already at $n = 2$. The bar involution is the symmetry of the convention-D Markov trace and of non-abelian Stokes path reversal. The sign twist is not a symmetry of that trace: it relates the trace at $q$ to the trace at $-q^{-1}$.
 

@@ -82,11 +82,11 @@ $$
 
 taking $e_{\rm sym}^{\rm EW}$ to act as the identity on each host, as (G-2) assumes. Keeping the outer factor $\dim_q(e_H \cdot A^{(H)}) = \mathrm{tr}_F(e_H) = 1$ gives $\mathcal{N}_{\rm sym}^{(b)}(q) = 2\,[4]_q + [6]_q$. By point 2 this is not $\mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$. It is the $q$-dimension of the symmetric-channel image, and the composition rule that would turn it into the trace is not specified.
 
-The factor $1$ in both readings is (G-4): $e_H$ factors through $\mathbf{1}$ ([the Higgs vacuum-residual idempotent](#prop:higgs-vacuum-residual-idempotent), Lean `VacuumPairing.tr_proj_eq_one`). The host labels $T(2,4)$ and $T(2,6)$ of (G-2) come from [the electroweak/Higgs torus-link identification](#conj:electroweak-higgs-torus-link-triplet), which is itself a conjecture. See [Table 2](#tbl:g-action-on-substrate-table2-data).
+The factor $1$ in both readings is (G-4): $e_H$ factors through $\mathbf{1}$ ([the Higgs vacuum-residual idempotent](#prop:higgs-vacuum-residual-idempotent)). The host labels $T(2,4)$ and $T(2,6)$ of (G-2) come from [the electroweak/Higgs torus-link identification](#conj:electroweak-higgs-torus-link-triplet), which is itself a conjecture. See [Table 2](#tbl:g-action-on-substrate-table2-data).
 
 ### Comparison with the anchor value
 
-The comparison point is the value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ that `computations/n_sym_numerical_anchor.py` obtains by dividing the CODATA-derived crossing count $N_v$, fixed by $G_F$, by the host product $\prod_{k=2,3,4}[2k]_q^2/[2]_q$. It is a back-solve from an experimental input, so the comparison below is where this block makes an empirical claim. At $q_0 = {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 6 }}\ldots$, with $[n]_q = (q^n - q^{-n})/(q - q^{-1})$, $[4]_{q_0} \approx 4.1097$ and $[6]_{q_0} \approx 6.3881$:
+The comparison point is the value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ obtained by dividing the CODATA-derived crossing count $N_v$, fixed by $G_F$, by the host product $\prod_{k=2,3,4}[2k]_q^2/[2]_q$. It is a back-solve from an experimental input, so the comparison below is where this block makes an empirical claim. At $q_0 = {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 6 }}\ldots$, with $[n]_q = (q^n - q^{-n})/(q - q^{-1})$, $[4]_{q_0} \approx 4.1097$ and $[6]_{q_0} \approx 6.3881$:
 
 | reading | closed form | value at $q_0$ | relative to $213.11$ |
 |---------|-------------|---------------:|---------------------:|

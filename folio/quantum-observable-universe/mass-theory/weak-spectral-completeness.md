@@ -156,8 +156,7 @@ the duality.
 The Plancherel-weighted form
 $\mathcal{N}_{\rm sym}^{\rm Plancherel} = q^6 (1 + q^2 + q^4)/3$
 from
-the weak-sector symmetric-channel Plancherel normalization
-`prop:weak-symmetric-normalization` (a downstream block that itself uses this conjecture)
+the [weak-sector symmetric-channel Plancherel normalization](#prop:weak-symmetric-normalization) (a downstream block that itself uses this conjecture)
 is **not** bar-self-dual and differs from $\mathrm{tr}_{\rm pure}$
 by a factor of $\sim 22$ at $q_0$. It is retained only as a
 legacy/degenerate reference; the cell-content trace is operative.
