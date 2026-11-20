@@ -20,9 +20,22 @@ export default remark({
     "rem:knot-basis-color-content",
     "rem:physics-names-knot-operations",
     "prop:four-term-pair-nucleon",
+    "def:photon",
+    "prop:borromean-two-photon-factorisation",
+    "prop:gamma-gamma-generates-particles",
   ],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Witness:** `breit-wheeler-nucleon-nf.witness.json`" },
+    {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body:
+        "**Photon restated on def:photon (owner ruling, bean `qou-99qc`, 2026-11-18, confirmed 2026-11-20).** " +
+        "The photon's fourth term is the chiral vertex σ₀σ₁⁻¹. The bare photon is 𝟏, so the bare pair is 𝟏, not " +
+        "σ₀² (photon-usage audit 2026-11-17, C2). The three-term specialisation and its fitted weights are " +
+        "unchanged, because φ₀₁ = 0 gives the same element in both forms. Exact recomputation: " +
+        "computations/probes/photon_chiral (PR #8595).",
+    },
     {
       kind: "caveat",
       date: "2026-11-15",
