@@ -656,6 +656,7 @@ import QOU.BraidKnot
 import QOU.BraidKnot.MesonFusionIndexSelection
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
+import QOU.BraidKnot.GBRewriteDifferential
 import QOU.BraidKnot.SpechtCrossDominance
 import QOU.BraidKnot.SpechtCrossKappa
 -- Absolute irreducibility (W2 of the Wedderburn epic): the commutant of every
