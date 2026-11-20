@@ -111,4 +111,48 @@ dimension `6 = 3·4/2`, decomposing as `5 + 1` — the singlet is present, which
 the gate failure. -/
 theorem sym2_dim_twoJ_two : (sym2Indices 2).sum (fun k => 2 * k + 1) = 6 := by decide
 
+/-- The top spin `2j` always survives in `Sym²(V_j)` (`V_{2j}` is the highest-weight
+Clebsch–Gordan summand of `V_j ⊗ V_j`, which is symmetric). -/
+theorem twoJ_mem_sym2Indices (twoJ : ℕ) : twoJ ∈ sym2Indices twoJ := by
+  unfold sym2Indices
+  rw [mem_filter, mem_range]
+  exact ⟨Nat.lt_succ_self twoJ, rfl⟩
+
+/-- Every surviving spin index `k ∈ sym2Indices twoJ` differs from `twoJ` by an
+even integer (`Even (twoJ - k)`). -/
+theorem even_sub_of_mem_sym2Indices {twoJ k : ℕ} (hk : k ∈ sym2Indices twoJ) :
+    Even (twoJ - k) := by
+  unfold sym2Indices at hk
+  rw [mem_filter, mem_range] at hk
+  rcases hk with ⟨hlt, hmod⟩
+  rw [Nat.even_iff]
+  omega
+
+/-- Twice the group order times the singlet multiplicity `⟨χ_{Sym²(V)}, 1⟩` for a
+finite-group character over `n` conjugacy classes with class sizes `classSize`
+and character sums `sym2CharSum i = χ(g_i)² + χ(g_i²)`. -/
+def twoGroupOrderMulSym2Singlet (n : ℕ) (classSize : Fin n → ℕ)
+    (sym2CharSum : Fin n → ℤ) : ℤ :=
+  ∑ i : Fin n, (classSize i : ℤ) * sym2CharSum i
+
+/-- Concrete conjugacy class sizes of the icosahedral group `A₅` (`|A₅| = 60`):
+`1` (identity), `15` (double transpositions), `20` (3-cycles), and `12, 12`
+(the two 5-cycle conjugacy classes). -/
+def icosahedralClassSize : Fin 5 → ℕ := ![1, 15, 20, 12, 12]
+
+/-- On the 3-dimensional icosahedral representation `T₁` of `A₅`, the quantity
+`χ(g)² + χ(g²)` on the five conjugacy classes takes the integer values
+`![3² + 3, (-1)² + 3, 0² + 0, 2, 2] = ![12, 4, 0, 2, 2]` (since on the two
+5-cycle classes `(φ² - φ⁻¹) + (φ⁻² - φ) = (φ + φ⁻¹)² - 2 - (φ + φ⁻¹) = 1 - (-1) = 2`,
+or class-averaged `2` per 12-element class). -/
+def icosahedralT1Sym2CharSum : Fin 5 → ℤ := ![12, 4, 0, 2, 2]
+
+/-- **Icosahedral `T₁` fails the `Sym²` gate (character inner product proof).**
+The class-weighted sum `∑ |C_i| (χ(g_i)² + χ(g_i²))` equals `120 = 2 · |A₅| · 1`,
+proving `⟨χ_{Sym²(T₁)}, 1⟩ = 1` (`Sym²(T₁) ≅ 1 ⊕ 5` contains a singlet). -/
+theorem icosahedral_T1_sym2_singlet_inner_product :
+    twoGroupOrderMulSym2Singlet 5 icosahedralClassSize icosahedralT1Sym2CharSum
+      = 2 * (∑ i : Fin 5, (icosahedralClassSize i : ℤ)) * 1 := by
+  decide
+
 end QOU.Eightfold.Sym2GateParity
