@@ -6,10 +6,17 @@ import Mathlib.Data.Real.Basic
 
 The QOU substrate's GB-filtration argument relies on Yekutieli
 (2015), *Nonabelian Multiplicative Integration on Surfaces*
-(World Scientific, DOI 10.1142/9165).  Mathlib has differential
-forms (`Mathlib.Geometry.Manifold.MFDeriv`, etc.) but **not**
-Lie-algebra-valued forms or the multiplicative line / surface
-integral.
+(World Scientific, DOI 10.1142/9165).  Mathlib status (checked against
+the pinned Mathlib `f897ebcf`): Mathlib has differential forms and the
+exterior derivative on a **normed space**
+(`Mathlib.Analysis.Calculus.DifferentialForm.Basic`: `extDeriv`,
+`extDeriv_extDeriv`, i.e. `d ∘ d = 0`), for `ω : E → E [⋀^Fin n]→L[𝕜] F`
+with an **arbitrary** normed target `F` — so Lie-algebra-valued forms on a
+normed space are expressible there. It has **no** differential forms on
+**manifolds** (that file's own TODO says the manifold case is "not defined
+yet"; `Mathlib.Geometry.Manifold.MFDeriv` is the manifold *derivative*, not
+forms), **no** holonomy or parallel transport, and **no** multiplicative
+line / surface integral.
 
 This file is the **smallest §3b-cond class hypothesis** that
 abstracts away the genuine Mathlib infrastructure.  It supplies:
@@ -328,9 +335,11 @@ theorem yekutieli_finite_slice_substrate {G : Type u} [Group G] {z : G}
 
     A genuine Lie-valued form `α : Ω¹(M; 𝔤)` is a smooth section
     of the bundle `T*M ⊗ 𝔤` over a manifold `M` with values in
-    a Lie algebra `𝔤`.  Mathlib has `Mathlib.Analysis.NormedSpace.LieAlgebra`
-    and `Mathlib.Geometry.Manifold.MFDeriv`; combining them
-    requires building the bundle structure explicitly.
+    a Lie algebra `𝔤`.  Mathlib has Lie algebras (`Mathlib.Algebra.Lie`)
+    and normed-space forms (`Mathlib.Analysis.Calculus.DifferentialForm.Basic`,
+    arbitrary normed target), but no forms on manifolds and no
+    `Mathlib.Analysis.NormedSpace.LieAlgebra` module; the manifold
+    case requires building the bundle structure explicitly.
 
     This file supplies the **algebraic skeleton** — Lie algebras,
     Lie brackets, and the formal-grade-1 / grade-2 carriers —
