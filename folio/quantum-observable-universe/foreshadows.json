@@ -293,7 +293,7 @@
         "prop:rj-canonical-inner-product",
         "prop:topological-mass-formula",
         "thm:knot-mass-formula-unified",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ],
       "declared": [],
       "effective": [
@@ -308,7 +308,7 @@
         "prop:rj-canonical-inner-product",
         "prop:topological-mass-formula",
         "thm:knot-mass-formula-unified",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ]
     },
     "conj:on-p-modular-hecke": {
@@ -5335,12 +5335,12 @@
     "sec:mass-endomorphism-opener-intro": {
       "derived": [
         "def:mass-identity",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ],
       "declared": [],
       "effective": [
         "def:mass-identity",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ]
     },
     "sec:molecular-chains-rings-intro": {
@@ -5715,7 +5715,7 @@
         "rem:skein-filtration-trichotomy"
       ]
     },
-    "thm:topological-mass": {
+    "conj:topological-mass": {
       "derived": [
         "prf:topological-mass"
       ],

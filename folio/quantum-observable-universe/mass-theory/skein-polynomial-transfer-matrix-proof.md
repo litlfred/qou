@@ -89,7 +89,7 @@ The parameter $q$ plays three roles simultaneously:
 |------|-------------|
 | Algebraic | Deformation parameter of $H_A(q)$: $T^2 = (q - q^{-1})T + 1$ |
 | Topological | Variable of the Skein polynomial $P_{\mathcal{N}}(q)$ |
-| Physical | Substrate parameter $q$ from $\chi(A) = -6$ |
+| Physical | Substrate parameter $q$ from $\chi_{\mathrm{eu}}(M_0) = -6$ |
 
 These are not three different objects — they are the **same $q$**.
 The Hecke relation generates the polynomial; the Markov trace

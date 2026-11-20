@@ -103,4 +103,4 @@ $$
 
 where $\mathrm{lk}(\varrho_1, \varrho_2)$ tracks the explicit linking number separating the two filaments, and $e(\xi)|_\Sigma$ evaluates the Euler class of the Reeb bundle precisely on $\Sigma$.
 
-Mapped onto the Descartes universe ($\chi(A) = -6$, anchored on Bring's surface): $e(\xi) = -6 \cdot [\Sigma_4]$ evaluated inside $H^2(\Sigma_4, \mathbb{Z})$. The local restriction $e(\xi)|_\Sigma$ registers as nonzero strictly when $\Sigma$ behaves homologically nontrivially inside $\Sigma_4$. The anti-parallel pair (carrying linking number 1) satisfies this identically.
+Mapped onto the Descartes universe ($\chi_{\mathrm{eu}}(M_0) = -6$, anchored on Bring's surface): $e(\xi) = -6 \cdot [\Sigma_4]$ evaluated inside $H^2(\Sigma_4, \mathbb{Z})$. The local restriction $e(\xi)|_\Sigma$ registers as nonzero strictly when $\Sigma$ behaves homologically nontrivially inside $\Sigma_4$. The anti-parallel pair (carrying linking number 1) satisfies this identically.

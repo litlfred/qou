@@ -5,7 +5,7 @@ export default proposition({
   title: "Topological mass formula (Archimedean)",
   tags: ["mass", "archimedean", "knot-volume", "quantum-planck"],
   uses: [
-    "thm:topological-mass",
+    "conj:topological-mass",
     "def:quantum-planck-constant",
   ],
   lean: { ref: "qou:QOU.Torsion.ArchimedeanMassFormula",
