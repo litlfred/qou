@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-11-20T08:40:00Z
-updated_at: 2026-11-20T16:30:00Z
+updated_at: 2026-11-20T16:45:00Z
 parent: qou-ncxf
 ---
 
@@ -34,3 +34,6 @@ The owner answered "Y" to the [W11 ask] on #8526, choosing option 1: split. Bran
 - `norm_add_lt_of_inner_eq_zero`: two non-zero orthogonal vectors give STRICT triangle inequality. So the `.md` sentence "when the splitting remains orthogonal … the mass decomposes additively" is false if read about the norms of the algebra pieces (scope (b), invariant = Pythagoras + positivity); read about the scalar traces, orthogonality says nothing about their phases. Same applies to `lem:topological-mass-eigenspace-decomp` (kind `lemma`, `.md` states norm equality, Lean proves only the vector split) and to the "Pythagoras" framing in `QOU/TopologicalMass/cat_eigenspace_decomposition.lean` docstring.
 - Corpus data (probe `computations/probes/topological_mass_ray_alignment_probe.py`, mp.dps 60, proton pin q0 = 1.10997858275138…): the only producer with separate pieces, `mass_endomorphism.py::mass_from_tower`, gives all signed pieces POSITIVE for electron/proton/neutron (Π V̂_full = 0.673…, 1.0229…, 0.7594…; Φ_q values > 0), so the equality holds there. Scope (a), and weak: that producer DEFINES mass as the sum of norms (assumes the conjecture), and the sign of the transient trace value is not fixed by the corpus (`lem:topological-mass-dilogarithm` gives only its norm = Φ_q(z_i)).
 - Open gap, precise: show the categorical trace pieces tr_desc(ϱ), tr_trans(ϱ,p_i) share a phase (e.g. trace positive on each summand and the pieces positive elements). No corpus artifact currently computes them as signed scalars from τ̂ and a categorical trace.
+
+## 2026-11-20 tm follow-up (owner approved D1/D2/D3)
+Branch claude/topological-mass-ray-followup-2026-11-20: ray-alignment sentence and authorNotes on conj:topological-mass; lem:topological-mass-eigenspace-decomp restated as ≤ (equality tracked in qou-tmeq). Still open; not closed.
