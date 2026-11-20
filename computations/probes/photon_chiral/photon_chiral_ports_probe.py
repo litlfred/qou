@@ -216,10 +216,34 @@ def section_f():
     return out
 
 
+# ---------------------------------------------------------------- G
+TABLE_RECORD = {"1": "1.005", "s0": "0.099", "s1": "0.099", "L+": "0.043", "L-": "0.003", "e-": "0.002"}
+
+
+def section_g():
+    """tbl:four-term-pair-nucleon-table1-data has no recorded producer or weights. The six rounded
+    entries are reproduced by gamma_straight(a, a, b)^2 with a = 0.0487 (the Breit-Wheeler linear
+    FIT) and b = 0.02 (unsourced). Recompute the same weights with the ruled photon."""
+    print("G  tbl:four-term-pair-nucleon-table1-data reconstruction")
+    a, b = sp.Rational("0.0487"), sp.Rational("0.02")
+    old = H.mul(H.gamma_straight(a, a, b), H.gamma_straight(a, a, b))
+    new = H.mul(H.gamma(a, a, b), H.gamma(a, a, b))
+    row_old = {H.NAMES[w]: fmt(at_q0(old.get(w, 0))) for w in H.WORDS}
+    row_new = {H.NAMES[w]: fmt(at_q0(new.get(w, 0))) for w in H.WORDS}
+    repro = all(abs(mp.mpf(row_old[k]) - mp.mpf(v)) <= mp.mpf("0.0005") for k, v in TABLE_RECORD.items())
+    check("G_record_reproduced_by_straight_0.0487_0.02_to_rounding", repro)
+    for k in TABLE_RECORD:
+        print(f"    {k:>3}: record {TABLE_RECORD[k]}  straight {row_old[k][:9]}  ruled {row_new[k][:9]}")
+    return {"LABEL": "weights reconstructed, not recorded: a = 0.0487 is a labelled FIT, b = 0.02 unsourced",
+            "record_rounded": TABLE_RECORD, "straight_chart_q0": row_old, "ruled_photon_q0": row_new,
+            "tr_M_straight": tr_q0(old), "tr_M_ruled": tr_q0(new)}
+
+
 def main() -> int:
     res = {"A_knot_operator_key_table": section_a(), "B_gram_matrix_dual": section_b(),
            "C_borromean_as_photons": section_c(), "D_breit_wheeler_filtration": section_d(),
-           "E_sdp_wedderburn_blocks": section_e(), "F_gamma_gamma_unit": section_f()}
+           "E_sdp_wedderburn_blocks": section_e(), "F_gamma_gamma_unit": section_f(),
+           "G_four_term_pair_nucleon_table": section_g()}
     wb = WitnessBuilder("photon-chiral-ports", engine="sympy+mpmath", output_dir=HERE)
     for n, ok, d in CHECKS:
         wb.add_assertion(n, computed="1" if ok else "0", expected="1", source=d or "exact Q(q)")

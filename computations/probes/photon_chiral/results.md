@@ -75,3 +75,23 @@ So any nonzero chiral part moves the traces and the selection characters at firs
 value for φ₀, φ₁, and choosing one would be a fit. Both statements hold: the V-word results stand at the derived
 weights, and they are not robust to a chiral part. The Borromean Q_β case under these weights is #8586 arm γ
 (Q_β = 0 for every linear ε). It is cited here, not redone.
+
+## G. `tbl:four-term-pair-nucleon-table1-data` (producer and weights unrecorded)
+
+No producer or witness exists for this table. The witness it would cite, `breit-wheeler-nucleon-nf.witness.json`, is
+absent, and no script in `computations/` emits it. I reconstructed the weights instead: the straight-chart square
+γ_straight(a,a,b)² with **a = 0.0487** (the Breit–Wheeler linear *fit*) and **b = 0.02** (no source found)
+reproduces all six rounded entries to rounding (check G). The same weights with the ruled photon, at q₀:
+
+| | record | straight chart (reconstructed) | ruled photon, same weights |
+|---|---|---|---|
+| 1 | 1.005 | 1.0047433 | 1.0043536 |
+| σ₀ | 0.099 | 0.0988698 | **0.0904259** |
+| σ₁ | 0.099 | 0.0988698 | 0.0987862 |
+| L₊ | 0.043 | 0.0427789 | 0.0425578 |
+| L₋ | 0.003 | 0.0027716 | 0.0025680 |
+| e⁻ | 0.002 | 0.0020316 | 0.0019480 |
+
+The visible change is the σ₀ entry, which moves by −hφ₀₁ (the vertex's σ₀ part). The two σ coefficients are no longer
+equal. Both weights are a fit or unsourced, so neither column is a derived result. I have not edited the table. Whether to
+restate it, and with which weights, is an owner call.
