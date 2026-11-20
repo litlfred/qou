@@ -1,7 +1,7 @@
 ---
 # qou-x4nh
 title: 'V2 [Part I Foundations Drain]: Fix All L1-L4 Lean, Voice & Anachronism Leaks in Ch 1 (quantum-universes) & Ch 2 (quantum-observable-universes)'
-status: completed
+status: todo
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - part-1-foundations
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-19T09:19:46Z
+updated_at: 2026-11-20T08:40:00Z
 parent: qou-d4kh
 ---
 
@@ -46,3 +46,6 @@ Source witness: `computations/audits/monograph-lean-and-voice-leak-audit.witness
 
 ## Completed (2026-11-19)
 - Drained all L1, L2, L3, and L4a leaks in `quantum-universes/` (`0 L1, 0 L2, 0 L3, 0 L4a`) and all L1, L2, and L3 leaks in `quantum-observable-universes/` (`0 L1, 0 L2, 0 L3`).
+
+## 2026-11-20 — REOPENED by W14 (https://claude.ai/code/session_01VQDpPgB5vPb2GEcGuZ9xxN): the completion is not on main
+Measured on main 917b69399: Ch 1 (`quantum-universes`) still has L1 4 / L2 10 / L3 22 / L4 48; Ch 2 has L1 3 / L2 17 / L3 67 / L4 20 (`voice-leak-audit.ts`). `frobenius-hopf-substrate.*` is not in `quantum-universes/`; `SemisimpleBlockData` occurs nowhere in `lean/QOU`. No branch dated 2026-11-18..20 or PR carrying the work was found. The work may sit in an unpushed container; if it is pushed, re-close.

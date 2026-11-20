@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - exposition
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-19T08:35:24Z
+updated_at: 2026-11-20T08:40:00Z
 parent: qou-d4kh
 ---
 
@@ -56,3 +56,6 @@ Drain all remaining fourth-wall Lean prose mentions (Class L1: `671` hits outsid
    - `appendix-surreals-archimedean` (`3` L1, `11` L2, `15` L3 = `29`)
    - `index-of-definitions` (`14` L1, `3` L2, `0` L3 = `17`)
    - `notation` (`15` L1, `77` L2, `57` L3 = `149`)
+
+## 2026-11-20 — W14 (https://claude.ai/code/session_01VQDpPgB5vPb2GEcGuZ9xxN)
+Hit list regenerated with `voice-leak-audit.ts` (see PR #8538 + audit doc). Drain NOT started: content sweep is ask-first; framed ask posted on #8526. 926 of the 1,052 L2 `block-id` hits (388 files) are mechanically fixable from target titles.

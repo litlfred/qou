@@ -1,7 +1,7 @@
 ---
 # qou-9aar
 title: 'V1 [QA Checkers & Claude QA Gate]: Tighten paper-commentary-audit.ts, qa-checkers-voice.ts & claude-redteam-and-qa.ts for L1-L4 Leaks'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - qa-checkers
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-19T08:35:24Z
+updated_at: 2026-11-20T08:40:00Z
 parent: qou-d4kh
 ---
 
@@ -28,3 +28,9 @@ Close the four automated checker gaps identified by `computations/audits/monogra
    - Extend `QA_PROSE_SYSTEM_RUBRIC` in `scripts/claude-redteam-and-qa.ts` with explicit Class L1–L4 criteria so `bun run scripts/claude-redteam-and-qa.ts qa-prose` (`ANTHROPIC_API_KEY` verified present in environment) provides semantic review for out-of-place passages such as `**On the substrate parameter.**` in `quantum-universes/quantum-universe.md:28-38`.
 
 Cross-linked sibling bean: `qou-9iqh`.
+
+## 2026-11-20 — claimed by W14 (https://claude.ai/code/session_01VQDpPgB5vPb2GEcGuZ9xxN); no prior claim, no backing branch
+Branch `claude/voice-leak-checkers-2026-11-20`, PR #8538. Built `folio/pipeline/voice-leak-audit.ts` (L1–L4) + guard test; measured before/after in `docs/audits/2026-11-20-voice-leak-audit-measurement.md`.
+- The scanner this bean cites (`computations/audits/monograph_lean_and_voice_leak_audit.py` + witness) and `scripts/claude-redteam-and-qa.ts` do NOT exist on main or any branch found; counts above are not reproducible. Live counts (main 917b69399): L1 666 / L2 3,250 / L3 1,236 / L4 68 failing.
+- `qa-checkers-voice.ts` is platform code (litlfred/folio-assistant); not editable from qou. Its gap is measured (catches 0.9–1.4 % of L1–L3 lines, 0 % of L4); patch not made.
+- Item 3 (LLM gate) not done: the script does not exist.
