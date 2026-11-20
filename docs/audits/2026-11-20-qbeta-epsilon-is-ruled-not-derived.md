@@ -255,3 +255,16 @@ single-quark flip from the nucleon sends only ≈ 1/6 of its weight there, while
 
 The only construction near the measurement is the strand-4 (J₄) round trip. Its weight sits on the isospin-3/2 block,
 which Q_β alone sees. Every label-C construction tried so far weights that block at ≤ 1/3.
+
+## 12. Cross-reference: the sibling label-C work (PR #8632, open at time of writing)
+
+A parallel workstream reached the same label-C picture independently, and goes further on one point:
+
+* `QOU/QuarkState/IsospinRaisingRoundTrip.lean` (`Rc_comm_K`) **proves** every Hecke element preserves charge, so labels A and
+  B, being flips inside the Hecke algebra, **cannot be n ↔ p (scope b)**. §9's "label B is isospin multiplicity, not n↔p" is
+  therefore a theorem, not a scoping remark.
+* Its coproduct round trip ε_C(X) = tr_{W₋}(T⁻T⁺X)/tr_{W₋}(T⁻T⁺) gives y₃ = [2]²/([2]²+2) = 0.6691, i.e. Q_β −24.75 %
+  (order-zero E₀). It agrees with §§10–11 on z_D (whole space), 1/3 (weight space) and 0 (isospin ½); the single-quark flip of
+  §11 (−77 %) is the complementary construction.
+* Briefing to all workstreams: `docs/coordination/2026-11-20-w2-qbeta-ud-briefing.md`; posted on #8526 and on the open
+  qou-99qc / photon PRs.
