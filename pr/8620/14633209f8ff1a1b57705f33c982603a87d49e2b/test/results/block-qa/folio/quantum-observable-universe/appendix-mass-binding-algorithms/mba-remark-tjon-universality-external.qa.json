@@ -1,0 +1,1291 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:tjon-universality-external",
+  "kind": "remark",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-remark-tjon-universality-external.ts",
+    "md": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-remark-tjon-universality-external.md"
+  },
+  "source_hashes": {
+    "md": "e141f915e6f4",
+    "ts": "f20be12c0acb"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "ee07f0410f84",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:40:52.933Z",
+        "reviewed_sha": "9944d44d147e78459a11679c826d1011d3a33ffb"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "308bf5121143",
+          "script_commit_sha": "d285a5d6c6e1de182515048975c0f22276ea3da4"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "ee07f0410f84",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:40:52.933Z",
+        "reviewed_sha": "9944d44d147e78459a11679c826d1011d3a33ffb",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "md": "ee07f0410f84",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-08-15T21:40:52.933Z",
+        "reviewed_sha": "9944d44d147e78459a11679c826d1011d3a33ffb",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "66a4bccc2dc0",
+          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "ee07f0410f84",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-15T21:40:52.933Z",
+        "reviewed_sha": "9944d44d147e78459a11679c826d1011d3a33ffb",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "ee07f0410f84",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:40:52.933Z",
+        "reviewed_sha": "9944d44d147e78459a11679c826d1011d3a33ffb"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "ee07f0410f84",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:40:52.933Z",
+        "reviewed_sha": "9944d44d147e78459a11679c826d1011d3a33ffb"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "ee07f0410f84",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:40:52.933Z",
+        "reviewed_sha": "9944d44d147e78459a11679c826d1011d3a33ffb"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "ee07f0410f84",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:40:52.933Z",
+        "reviewed_sha": "9944d44d147e78459a11679c826d1011d3a33ffb",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "983f87fba298"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "983f87fba298"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "983f87fba298"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f8ed8072ea0b",
+          "script_commit_sha": "a285d6903e89fd7951b6c293ad21d2d869f685a9",
+          "deps_hash": "983f87fba298"
+        },
+        "reviewed_at": "2026-08-15T21:55:26.427Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "Every external figure traced to a locator rather than recalled: B_d=2.22, B_t=8.48, B_alpha=29.5 (26.9 on the alternative two-body input) and the Coulomb-corrected 29.0+/-0.1 from [platter2005tjon] p.5; B_4/B_3~5 verbatim from [hammer2007fourbody] Sect.III.B; the 4N-force scale from [jurgenson2009srg]. Corpus figures are computed, not asserted: AME 3.42 from library/mass_1.mas20.txt (sha256 recorded), mu_4=9.81 from the probe and cross-checked by Lean universal_ratio_forces_mu4.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "Falsifiable and non-trivial: the central claim fails if the mu_4=0 baseline can reach ratio 5. It cannot, and tjon_baseline_lt_four_ratio proves why (gap exactly -6*mu_2). A referee refutes the block by exhibiting mu_2>0 with M(4)>=4M(3) at mu_4=0.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "The conclusion that mu_4 is not four-body physics rests on an EXTERNAL ratio no corpus construction produced, then on an inequality proved independently of it. Neither step consumes the conclusion.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "PASS AFTER AMENDMENT; two found. (1) Pre-merge: 'a system that provably carries no four-body FORCE' conflated a fact about a calculation with a fact about nature -- retracted, reduced to the weak reading the argument needs. (2) This pass: 'the sharpest available statement' asserted an unverifiable superlative -- replaced with 'a direct statement'. No surviving claim exceeds what the Lean discharges.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "PASS AFTER AMENDMENT, and the finding runs the OTHER way. Three moments fitted to three anchors (A=2,3,4) leave the system exactly determined, so mu_4 := M(4)-4M(3)+6M(2) carries ZERO residual freedom. The block previously left that implicit while calling mu_4 'the four-body moment' -- the identification AGENTS.md 'Defined residual != derived decomposition' (STRICT) forbids smuggling. Now explicit in both the .md and the Lean module docstring. The absence of freedom strengthens the thesis: a quantity with no freedom cannot be measuring anything.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "Valid as stated: a system satisfying A ('no four-body parameter at LO') sits at a ratio where B ('mu_4=0') provably fails, so A does not entail B. The block claims non-entailment only, not the converse.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "PASS AFTER AMENDMENT. The residual-is-a-definition paragraph added to the .md would have left the Lean saying strictly less than its narrative twin. A matching 'On the name' paragraph was added to the TjonSimplexForm module docstring naming rem:tjon-universality-external. Both re-verified after the edit: lean-direct exit 0, zero sorry, render AST valid.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "Held to its own subject's standard. [platter2005tjon] is cited as MOTIVATION for the simplex baseline and explicitly not as a derivation, with the inequivalence proved rather than asserted. The Yamashita counter-position is taken from [hammer2007fourbody] Sect.I p.3 by reading the source -- which is what revealed the dispute EXEMPTS the nuclear case; a paraphrase would have inverted its relevance. [jurgenson2009srg] is cited for magnitude only, SRG-induced and N3LO figures kept distinct.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "PASS AFTER AMENDMENT. mu_4's status (coefficient vs measured moment vs defined residual) was the ambiguity; now resolved explicitly. Symbols introduced before first use after an earlier expository pass: a and l at the scattering-length clause, alpha at B(alpha), and B as binding energy -- the last replacing \\mathfrak{B}, which collides with information bandwidth in the notation register.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "The load-bearing claim is exact, not numerical: M(4)<4M(3) holds for ANY mu_2>0 with no data dependence. Only the illustrative figures (9.81, 2.6x, 3.42) depend on AME values, and the probe derives those from the source file with its sha256 recorded rather than from transcribed literals -- which is how it found rho_strong[4]=13.0316 is not an AME ratio at all.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "The block advances no physical prediction; it constrains what may be concluded from external results and proves one inequivalence. Its only physical assertions are quoted from cited literature with contested status recorded.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "Every corpus number reproducible from named artifacts: computations/deltalambda/tjon_external_cross_check_probe.py (7 assertions, AME source sha256 recorded, GAP-10 producer hash asserted against staleness) and QOU.MassTheory.TjonSimplexForm (sorry-free, axiom-clean). Every external number carries a section or page locator.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "notes": "A referee's fair objection is that the block is DEFENSIVE rather than novel: it establishes what cannot be concluded, not a new result. The block says so in its own closing ('a constraint on citation, not a new result'), so the objection is anticipated rather than papered over. The one substantive contribution -- that the EFT's 'no four-body parameter' and the simplex's mu_4=0 are provably different conditions -- is Lean-backed and was not previously stated anywhere in the corpus.",
+        "reviewed_at": "2026-08-15T21:59:44.333499Z",
+        "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_skill": "local/devils-advocate-watcher",
+          "version": "v1"
+        }
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.615Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "severity": "minor",
+        "evidence": "Block-final argument opens 'There is a blunter way to see the same thing, and it should be stated because the name invites the opposite reading.' The 'it should be stated because' clause narrates why the author is including the argument rather than simply making it - the construction category 6 targets.",
+        "notes": "PROPOSED, NOT APPLIED (the because-clause carries the specific hazard being guarded against, so removing it is a meaning judgement rather than a register fix): 'There is a blunter way to see the same thing, and it should be stated because the name invites the opposite reading.' -> 'There is a blunter way to see the same thing, and the name invites exactly the opposite reading.' Borderline: unlike a bare 'we emphasize', this clause names a real misreading risk, which is the documented load-bearing-disambiguation carve-out; it fails only because the risk is narrated rather than stated."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.658Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.696Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.734Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.773Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.811Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.851Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.890Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.929Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.968Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ]
+  },
+  "updated_at": "2026-08-22T04:26:09.968Z"
+}

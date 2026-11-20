@@ -1,0 +1,1968 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:q-ns-proof-details",
+  "kind": "remark",
+  "paths": {
+    "ts": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts",
+    "md": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md"
+  },
+  "source_hashes": {
+    "md": "db3a67a74fe9",
+    "ts": "b5b7956cb635"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "b5b7956cb635",
+          "md": "8b1d19252937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"fluid-dynamics\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "b5b7956cb635",
+          "md": "8b1d19252937"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "b5b7956cb635",
+          "md": "8b1d19252937"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "b5b7956cb635",
+          "md": "8b1d19252937"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b5b7956cb635",
+          "md": "8b1d19252937"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "b5b7956cb635",
+          "md": "8b1d19252937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "b5b7956cb635",
+          "md": "8b1d19252937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "canonical-calibration-count": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "canonical-dilogarithm-context": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "metrics": {
+          "fwd_emitted": 0,
+          "fwd_received": 0,
+          "tanglement_score": 0,
+          "out_degree": 2,
+          "in_degree": 0,
+          "cone_size": 41,
+          "depth": 17,
+          "pagerank": 7.8e-05,
+          "edge_span_max": 5,
+          "edge_span_mean": 3.5,
+          "worst_target": ""
+        }
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "metrics": {
+          "graph_energy": 0,
+          "fwd_edge_count": 0,
+          "worst_span": 0
+        }
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "d8230952a327"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-url": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "d8230952a327"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-metadata-ok": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "d8230952a327"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "bib-cited-ref-has-screenshot": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "d8230952a327"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:45.299Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Checked mathematical consistency of the claim '**Proof of (a): q-Ladyzhenskaya inequality.**' and found no counterexamples under the stated conditions.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No vacuous stubs or tautologies detected in the formulation of 'rem:q-ns-proof-details'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Traced dependencies ['prop:q-ns-nonlinear-uniqueness', 'thm:quantum-peter-weyl'] for 'rem:q-ns-proof-details' and confirmed no circular definitions or justifications.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Verified that the scope of 'rem:q-ns-proof-details' is appropriately restricted to the proven regime without overclaiming structural validity.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Logical transitions in the derivation of '**Proof of (a): q-Ladyzhenskaya inequality.**' are sound; no non-sequiturs detected.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No Lean sibling required; narrative matches specifications.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All references and uses ['prop:q-ns-nonlinear-uniqueness', 'thm:quantum-peter-weyl'] cited in 'rem:q-ns-proof-details' are used in accordance with their established mathematical definitions.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All terms and algebraic structures in 'rem:q-ns-proof-details' are uniquely defined or standard.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The algebraic statements in 'rem:q-ns-proof-details' do not rely on fragile empirical fits or numerical thresholds.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Physical dimensions and units in 'rem:q-ns-proof-details' are consistent with quantum observable universe models.",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "All backing computations and proofs are fully reproducible.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims are consistent.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:28Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic proof effectively leveraging the compact q-Sobolev constant to forcibly secure q-NS global uniqueness.",
+        "reviewed_at": "2026-07-08T13:19:46.000Z",
+        "reviewed_sha": "1ef20077354e24065288d6c28baf6779857c15fe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-probe-narrative": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "cite-named-theorem": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md:1: Ladyzhenskaya inequality \u2014 named result, no citation in block | folio/quantum-observable-universe/fluid-dynamics/q-ns-proof-details.md:22: Ladyzhenskaya inequality \u2014 named result, no citation in block"
+      }
+    ],
+    "voice-agent-speak": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "uses-editorial-hygiene": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "metrics": {
+          "uses_count": 2,
+          "broken_edges": 0,
+          "redundant_edges": 0
+        }
+      }
+    ],
+    "uses-formal-coverage": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "f9b547e15cfd"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "lean-ref-owns-decl": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-uses.ts",
+          "version": "v1",
+          "script_hash": "51e33f456ef9",
+          "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
+          "deps_hash": "c7f602946422"
+        },
+        "reviewed_at": "2026-08-15T11:59:38.371Z",
+        "reviewed_sha": "bbca04886ba3a1f9650a6b50ef7bd8e19b067e78"
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.332Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no negation-contrast constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.078Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'no finite-time blowup' and 'The bound gives no information' are factual statements of what the estimate does and does not give \u2014 the second is an honest scope limit at q = 1."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.377Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no rhetorical-pivot constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.128Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three proof parts (a)(b)(c); no reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (1 in 103 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.412Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no em-dash constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.176Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One em-dash appending the conclusion of the Gronwall step; 204 words."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 103 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.460Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no triples constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.225Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Parts (a)(b)(c) are the proposition's three clauses."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.508Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no closing-aphorism constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.283Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on 'Gronwall with w(0) = 0 gives w(t) = 0'."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.551Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no meta-commentary constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.367Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.590Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no thesis-restatement constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.438Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.637Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no performed-warmth constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.493Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.676Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no superlative constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.625Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No intensifiers; the q = 1 degeneration is stated as a loss of information rather than argued around."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:30:59.665Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8b1d19252937",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:10:27.719Z",
+        "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
+        "evidence": "Full block read in context; no nonspeakable constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.674Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Reads as spoken mathematics."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f20ae4311d21",
+          "script_commit_sha": "15e39e3189312d27900335c4b01fb643c030cedd"
+        },
+        "reviewed_at": "2026-08-15T21:15:41.696Z",
+        "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-08-19T21:38:03.674Z",
+  "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
+}
