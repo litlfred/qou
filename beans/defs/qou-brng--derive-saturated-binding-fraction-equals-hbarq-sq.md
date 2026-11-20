@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-19T00:40:00Z
+updated_at: 2026-11-20T18:05:00Z
 parent: qou-v2om
 ---
 
@@ -3440,3 +3440,52 @@ Recorded 2026-11-17 from the stale-sibling-session sweep (table: /mnt/project-fi
 ## 2026-11-19 — #7418 ported as #8522
 
 PR #7418 (single-crossing chain factorizes; R12 reduces the b₃ cross term to `TowerSpan`) was 2311 commits behind main and is closed as superseded by #8522, which carries its Lean file, two probes and audit onto main. Re-verified there: lean-direct exit 0, 18 theorems with no sorryAx, both probes 6/6. A scope note marks R11 as measured on the superseded `atom_braid_word_3A`. Residual (ii) is unchanged and still open; the bean stays open.
+
+## 2026-11-20 -- the 2026-11-17 hand-off is a DANGLING POINTER
+
+The 2026-11-17 sibling-sweep entry reads *"Residual (ii) work in
+CuspFactorBarAnomaly.lean from a sibling session. Left: verify, decide whether
+it closes residual (ii). Source session archived; work not lost."*
+
+**`CuspFactorBarAnomaly.lean` cannot be found.** Measured on `main`
+`3351b995222`:
+
+- absent from the tracked tree -- `git ls-files | grep -i cuspfactor` is empty,
+  and no file matching `CuspFactor*` exists under any path;
+- not added in any commit this clone can reach
+  (`git log --all --diff-filter=A -- '*CuspFactorBarAnomaly*'` empty);
+- referenced **nowhere in the corpus** -- across `*.md`, `*.lean`, `*.py` and
+  `*.json` the single hit is the bean line above, i.e. the pointer is its own
+  only citation.
+
+**What that does and does not establish.** This clone is SHALLOW, so the
+history walk is weak evidence; and the file could sit unpushed in a container
+that is now gone. So the honest claim is *not present on main, not referenced
+anywhere in the corpus, and not in this clone's fetched history* -- not "it
+never existed". But from here the hand-off is unactionable as written: there is
+nothing to verify. **"Work not lost" is not supported by anything checkable.**
+
+Whoever resumes this should either produce the branch the file is on, or treat
+residual (ii) as untouched since #8522 -- which is what the 2026-11-19 entry
+already says in its own last line ("Residual (ii) is unchanged and still
+open").
+
+### Residual (ii) restated, so the next agent does not have to reconstruct it
+
+From the sources' own words, two sides of ONE question (the bean says so
+explicitly at its "three open residuals" section):
+
+- `BrunnianBindingChannel`: *why does the surviving count channel enter as a
+  **bare integer** while the self/mass channel keeps the full q-dimension
+  self-trace `lw`?*
+- `BindingMassRung`: *why does binding lack the cusp factor?* CAL-2 puts
+  `1/hbar_q^2` in `m_mu/m_e = Vol(4_1)/hbar_q^2`; nothing derives that the
+  MUTUAL channel escapes it.
+
+Integer vs q-dimension is exactly cusp-factor-absent vs cusp-factor-present.
+AGENTS.md's extensive-term section names the same thing as this bean's open
+positive target -- *"the linking-vs-self-energy amplitude assignment"* -- while
+warning that the exact-`hbar_q^2` saturated-fraction VALUE in this bean's own
+TITLE is suspect numerology with the volume-defect route refuted. So the title
+and the live question point in different directions; the live one is the
+assignment, not the fraction.
