@@ -30,6 +30,8 @@ export default chapter({
         "upstream-mathlib-additions-detail",
         "upstream-mathlib-additions-table1-data",
         "upstream-mathlib-additions-table2-data",
+        "bloch-group-quotient-construction",
+        "bloch-group-quotient-construction-table-data",
         "cl2-pentagon-and-faddeev-partial-formalization-status",
         "cl2-pentagon-and-faddeev-partial-table1-data",
         "cl2-pentagon-and-faddeev-partial-table2-data",
@@ -44,6 +46,12 @@ export default chapter({
         "mass-side-kernel-formalize-first-gates",
         "mass-tower-deeper-fillers",
         "confinement-nf-structure-forcing-table-data",
+      ],
+    },
+    {
+      title: "Computation provenance of the knot atlas",
+      blocks: [
+        "recursive-atom-knot-atlas-interpretation",
       ],
     },
   ],

@@ -119,13 +119,7 @@ $c_5 = -(1 - 1/[2]_q^2) - 1/2 = -3/2 + 1/[2]_q^2$. $\square$
 ### Silver-ratio identity
 
 **Lemma.** $[2]_q^2 = 8$ at $q = 1 + \sqrt 2$.
-*Proof.* $[2]_{1+\sqrt 2} = (1+\sqrt 2) + 1/(1+\sqrt 2) = (1+\sqrt 2) + (\sqrt 2 - 1) = 2\sqrt 2$. So $[2]_q^2 = 8$. Lean tactic:
-
-```lean
-field_simp; ring_nf; linarith [Real.mul_self_sqrt (by norm_num : (2:ℝ) ≥ 0)]
-```
-
-$\square$
+*Proof.* $[2]_{1+\sqrt 2} = (1+\sqrt 2) + 1/(1+\sqrt 2) = (1+\sqrt 2) + (\sqrt 2 - 1) = 2\sqrt 2$. So $[2]_q^2 = 8$. $\square$
 
 **Theorem.** $b^2(1 + \sqrt 2) = 7/8$.
 *Proof.* From Hoefsmit–Quantum-2 + the lemma above: $b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8$. $\square$
