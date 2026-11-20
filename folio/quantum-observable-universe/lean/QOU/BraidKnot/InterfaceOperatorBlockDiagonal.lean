@@ -154,4 +154,14 @@ theorem trace_eq_sum_interfaceBlock
   simp only [interfaceBlock]
   exact trace_block_diagonal τ hcyc P horth hsum W I β hWP hβP
 
+/-- Additivity and zero-preservation of the diagonal isotypic compression
+`interfaceBlock P I i = P i * I * P i` in the bridge operator argument `I`. -/
+theorem interfaceBlock_zero_and_add (P : ι → A) (I J : A) (i : ι) :
+    interfaceBlock P 0 i = 0 ∧
+      interfaceBlock P (I + J) i = interfaceBlock P I i + interfaceBlock P J i := by
+  unfold interfaceBlock
+  constructor
+  · simp
+  · noncomm_ring
+
 end QOU.BraidKnot.InterfaceOperator
