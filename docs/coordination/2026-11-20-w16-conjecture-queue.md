@@ -52,3 +52,15 @@ links; numerics), `qou-2q85` (depth-0→2 bridge), `qou-uir6` (`[batch PR]` #835
   `#print axioms` on the three new theorems = `[propext, Classical.choice,
   Quot.sound]`. The new carrier is **not refuted** — the conjecture stays open;
   the bean stays open (§13a).
+- **#2 `qou-krvm` (iv) m004** — `lean/QOU/Knot/M004VolumeMaximum.lean`:
+  `regularPoint_isMax`, `isMax_iff_regular`, `totalVol_regularPoint`.
+- **#3 `qou-krvm` (iv) L6a4** — `lean/QOU/Knot/L6a4VolumeMaximum.lean`:
+  `deriv_line_zero`, `vol_le_regularOctahedron`, `vol_lt_regularOctahedron`.
+  Verification for both: the 14 QOU modules in their import cone were rebuilt
+  from current source into a private olean dir (the shared cache predates the
+  2026-09-27 move and the 2026-11-15 ref-key commit), all exit 0, then the new
+  files exit 0; axioms clean. Open on the bean: the hyperbolic-volume
+  identification (`qou-idvt` T2).
+- **#7 `qou-mfdq`** — on re-read, clause (1) on main already says "n ideal
+  tetrahedra", so the cardinality mismatch is gone; no owner decision needed
+  for it. Bean noted.
