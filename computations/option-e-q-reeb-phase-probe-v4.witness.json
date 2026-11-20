@@ -1,7 +1,7 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13",
-  "computedAt": "2026-11-20T15:27:03.585730+00:00",
+  "engineVersion": "python 3.11",
+  "computedAt": "2026-09-06T06:47:37.976872+00:00",
   "computation": "option-e-q-reeb-phase-probe-v4",
   "description": "Option E v4: canonical q-Reeb phase \u0394_\u03bb = arccos(\u03c7^\u03bb/d_\u03bb) per docs/canonical-derivation-cheat-sheet.md item 4 (A\u22653 binding campaign, PR #1417). Tests on D, T, \u00b3He.",
   "scriptFile": "option_e_q_reeb_phase_probe_v4.py",
@@ -21,9 +21,9 @@
         "variant": "Markov + \u03c7 + \u03b8_\u03bb",
         "atom": "deuteron",
         "B_pred_MeV": "-0.02725430299784937121638604756189297385036599602079137564487025245129266",
-        "B_target_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
-        "rel_err_positive_match_pct": "101.2251513575028412827807078774231566518616526683175986501191883836264",
-        "rel_err_negative_match_pct": "98.7748486424971587172192921225768433481383473316824013498808116163736",
+        "B_target_MeV": "2.224565999999999999999999999999999999999999999999997876499128890590928",
+        "rel_err_positive_match_pct": "101.2251514676502909428799166921499732464834037749741478410158359165307",
+        "rel_err_negative_match_pct": "98.77484853234970905712008330785002675351659622502585215898416408346927",
         "closes_within_2pct_positive": false,
         "closes_within_10pct_positive": false,
         "closes_within_2pct_negative": false,
@@ -75,9 +75,9 @@
         "variant": "Markov + \u03c7 + \u03b8_\u03bb",
         "atom": "tritium",
         "B_pred_MeV": "-0.006163191964078285311108609517282894420468124492706777539730916157456981",
-        "B_target_MeV": "8.481796200000000000000000000000000000000000000000009585209925309324894",
-        "rel_err_positive_match_pct": "100.0726637591702366688686602669996114080230803528703834050475895668074",
-        "rel_err_negative_match_pct": "99.92733624082976333113133973300038859197691964712961659495241043319259",
+        "B_target_MeV": "8.481797999999999999999999999999999999999999999999999419774854615505432",
+        "rel_err_positive_match_pct": "100.0726637437495951366810269416612243585672297842121066542889164416597",
+        "rel_err_negative_match_pct": "99.92733625625040486331897305833877564143277021578789334571108355834032",
         "closes_within_2pct_positive": false,
         "closes_within_10pct_positive": false,
         "closes_within_2pct_negative": false,
@@ -129,9 +129,9 @@
         "variant": "Markov + \u03c7 + \u03b8_\u03bb",
         "atom": "helium-3",
         "B_pred_MeV": "0.002901886207585115665864341944051310467161986422466511484205482075679664",
-        "B_target_MeV": "7.718041319999999999999999999999999999999999999999995711041411183331376",
-        "rel_err_positive_match_pct": "99.96240126105485639372212713232725592006597359830581325396687788981448",
-        "rel_err_negative_match_pct": "100.0375987389451436062778728676727440799340264016941867460331221101855",
+        "B_target_MeV": "7.71805999999999999999999999999999999999999999999999807731997814807814",
+        "rel_err_positive_match_pct": "99.96240135205498382150612534828633995502545994171506165788932484846005",
+        "rel_err_negative_match_pct": "100.0375986479450161784938746517136600449745400582849383421106751515399",
         "closes_within_2pct_positive": false,
         "closes_within_10pct_positive": false,
         "closes_within_2pct_negative": false,
@@ -185,9 +185,9 @@
         "variant": "y_\u03bb + \u03b8_\u03bb (no \u03c7)",
         "atom": "deuteron",
         "B_pred_MeV": "0.1160171931868463711607418440805333916711173692030125996628591011923812",
-        "B_target_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
-        "rel_err_positive_match_pct": "94.7847273240577704021241604731505229347134120259935290602115761954282",
-        "rel_err_negative_match_pct": "105.2152726759422295978758395268494770652865879740064709397884238045718",
+        "B_target_MeV": "2.224565999999999999999999999999999999999999999999997876499128890590928",
+        "rel_err_positive_match_pct": "94.7847268551777573171242460740417055879161432296001687336213103037726",
+        "rel_err_negative_match_pct": "105.2152731448222426828757539259582944120838567703998312663786896962274",
         "closes_within_2pct_positive": false,
         "closes_within_10pct_positive": false,
         "closes_within_2pct_negative": false,
@@ -239,9 +239,9 @@
         "variant": "y_\u03bb + \u03b8_\u03bb (no \u03c7)",
         "atom": "tritium",
         "B_pred_MeV": "0.03300754091936781121731360362312848426319285938943656022480237290573132",
-        "B_target_MeV": "8.481796200000000000000000000000000000000000000000009585209925309324894",
-        "rel_err_positive_match_pct": "99.61084256045473232170664978223446957776239825958755619566472426520814",
-        "rel_err_negative_match_pct": "100.3891574395452676782933502177655304222376017404124438043352757347919",
+        "B_target_MeV": "8.481797999999999999999999999999999999999999999999999419774854615505432",
+        "rel_err_positive_match_pct": "99.61084264304139510022151431072599837601422647191743351488928157575489",
+        "rel_err_negative_match_pct": "100.3891573569586048997784856892740016239857735280825664851107184242451",
         "closes_within_2pct_positive": false,
         "closes_within_10pct_positive": false,
         "closes_within_2pct_negative": false,
@@ -293,9 +293,9 @@
         "variant": "y_\u03bb + \u03b8_\u03bb (no \u03c7)",
         "atom": "helium-3",
         "B_pred_MeV": "0.03272567607560405471667770093891585817826024506084701055815433661752525",
-        "B_target_MeV": "7.718041319999999999999999999999999999999999999999995711041411183331376",
-        "rel_err_positive_match_pct": "99.57598469976053387186740662669948159621591342995236738711843312423608",
-        "rel_err_negative_match_pct": "100.4240153002394661281325933733005184037840865700476326128815668757639",
+        "B_target_MeV": "7.71805999999999999999999999999999999999999999999999807731997814807814",
+        "rel_err_positive_match_pct": "99.5759857260036323283742585450370189117697938981966061586643266242274",
+        "rel_err_negative_match_pct": "100.4240142739963676716257414549629810882302061018033938413356733757726",
         "closes_within_2pct_positive": false,
         "closes_within_10pct_positive": false,
         "closes_within_2pct_negative": false,
@@ -350,42 +350,42 @@
       "variant": "variant_A_with_chi",
       "atom": "deuteron",
       "sign_match": "-",
-      "rel_err_pct": "98.77484864249716"
+      "rel_err_pct": "98.77484853234971"
     },
     {
       "variant": "variant_A_with_chi",
       "atom": "tritium",
       "sign_match": "-",
-      "rel_err_pct": "99.92733624082976"
+      "rel_err_pct": "99.9273362562504"
     },
     {
       "variant": "variant_A_with_chi",
       "atom": "helium-3",
       "sign_match": "+",
-      "rel_err_pct": "99.96240126105485"
+      "rel_err_pct": "99.96240135205498"
     },
     {
       "variant": "variant_B_phase_only",
       "atom": "deuteron",
       "sign_match": "+",
-      "rel_err_pct": "94.78472732405777"
+      "rel_err_pct": "94.78472685517775"
     },
     {
       "variant": "variant_B_phase_only",
       "atom": "tritium",
       "sign_match": "+",
-      "rel_err_pct": "99.61084256045473"
+      "rel_err_pct": "99.6108426430414"
     },
     {
       "variant": "variant_B_phase_only",
       "atom": "helium-3",
       "sign_match": "+",
-      "rel_err_pct": "99.57598469976054"
+      "rel_err_pct": "99.57598572600364"
     }
   ],
-  "scriptHash": "23f65ea53a36",
-  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
-  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "scriptHash": "87061a941f06",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
