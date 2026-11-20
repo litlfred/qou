@@ -96,8 +96,11 @@
           (`QOU.Mathlib.HadamardZeroFree.exists_polynomial_of_zeroFree`). STILL OPEN:
           enumerating the zeros (divisor → sequence with multiplicity), showing f/P is
           entire and zero-free, and the lower bound on |P| off small discs that gives
-          f/P order ≤ ρ (minimum-modulus estimate). So `HasHadamardFactorization`
-          below is still an unproved class.
+          f/P order ≤ ρ (minimum-modulus estimate).
+          UPDATE (same day): all three are PROVED (`HadamardQuotient`,
+          `HadamardMinimumModulus`), and `HasHadamardFactorization` is instantiated,
+          sorry-free, by `QOU.Mathlib.HadamardAssembly.hadamard_factorization_unconditional`.
+          The class stays declared here only because this module cannot import the proof.
     PI-5  Jensen ⇒ zero-counting ⇒ the factorization (deepest; needs Nevanlinna).
 
   -- Ref: [leitner2026] standard complex analysis: Ahlfors, *Complex Analysis*,
