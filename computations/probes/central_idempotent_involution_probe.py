@@ -171,6 +171,25 @@ def main():
     check = sp.simplify((h - zD) - zD_at_minus_qinv)
     print(f"\nconvention D: h - z_D(q) - z_D(-1/q) = {check}  (0 => hash maps tr_D(q) to tr_D(-1/q))")
     failures += (check != 0)
+    # Downstream: the convention-D (Jones/TL) Ocneanu weights. Each two-row weight is
+    # d_lam/[2]^n with d_lam = prod_cells [2+c]/[hook] (bean qou-q425); rows >= 3 get 0.
+    # Since bar fixes every e_lam and tr_D(e_lam) = y_lam * f^lam, bar-equivariance of tr_D
+    # (markov_bar_equivariant_zD) predicts each y_lam is invariant under q -> 1/q.
+    def qint(k):
+        return (qs**k - qs**-k) / (qs - 1 / qs)
+    print("\nD weights y_lam(q) - y_lam(1/q):")
+    for n in (2, 3, 4, 5):
+        for lam in partitions(n):
+            if len(lam) > 2:
+                continue
+            cells = [(i, j) for i, r in enumerate(lam) for j in range(r)]
+            cl = conj(lam)
+            num = sp.prod([qint(2 + j - i) for i, j in cells])
+            den = sp.prod([qint(lam[i] - j + cl[j] - i - 1) for i, j in cells])
+            y = num / den / qint(2) ** n
+            diff = sp.simplify(y - y.subs(qs, 1 / qs))
+            print(f"   n={n} {lam!s:10} {diff}")
+            failures += (diff != 0)
     print(f"\n{failures} failures")
     return 1 if failures else 0
 
