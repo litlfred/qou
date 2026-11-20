@@ -1784,6 +1784,26 @@ corpus — run the **corpus-grep checklist**:
    corpus_search  query: "<topic>", direction: "in"   # what depends on it
    ```
 
+   **If the MCP server is not connected, use the CLI. Never skip this step.**
+   `bun scripts/corpus-search.ts "<topic>" [--direction in|out] [--hops N]
+   [--limit N] [--search-text] [--provenance authored|ingested]` calls the same
+   function the MCP tool calls, over the same roots. It runs on the light
+   platform that the SessionStart hook installs.
+
+   The MCP route reported "paper-assistant: Connection closed" in every
+   session from at least 2026-10-12 to 2026-11-20 (bean `qou-q261`). Two causes:
+   - `.mcp.json` named `folio-assistant/cat-harness/src/index.ts`, which the
+     platform restructure removed. The launcher is now
+     `scripts/paper-assistant-mcp.sh`.
+   - The MCP server needs the full platform (`scripts/setup-folio-assistant.sh`).
+     The light one has no `@modelcontextprotocol/sdk`.
+
+   A run that reports step 0 as "unavailable" has skipped it; the CLI was
+   available. The default `--limit` is 20 seeds. At that limit, "Plancherel" returned 20
+   authored seeds and 0 ingested; at `--limit 200` it returned 49 ingested
+   (measured 2026-11-20). Raise `--limit` before reading "no ingested hits" as
+   "not held".
+
    Read three things in its answer. **`why`** says whether a hit MATCHED
    or was REACHED, and by which edge — a `~` prefix means the edge ran
    backwards, so that node depends on the seed rather than the reverse.
