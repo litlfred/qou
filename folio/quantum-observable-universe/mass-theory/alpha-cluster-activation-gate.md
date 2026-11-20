@@ -39,6 +39,4 @@ binding **magnitudes** $B(\text{cluster})$, the light-spectator coefficient $b$,
 the gated pair coefficient $g$, and the resulting $\le 0.31\%$ multi-isotope
 closure ("Model G") are **not** part of this proposition. Those enter the
 cluster bindings at their *measured* AME values and calibrate $b$, $g$
-empirically; they are recorded — labelled as a structural/phenomenological
-model, **not** a parameter-free derivation — in the interpreting remark
-[Model G: a phenomenological $\alpha$-cluster binding closure](#rem:alpha-cluster-model-g-closure).
+empirically.

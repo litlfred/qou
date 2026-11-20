@@ -20,9 +20,7 @@ in the framework's knot-operator basis:
 The Hopf link lives entirely in the $E_\infty^{0, *}$ slot of the
 brane-tower spectral sequence
 ([conj:mass-endomorphism](#conj:mass-endomorphism)) — the
-*descended Markov-trace* piece. It contributes only the $E^{0, *}$
-component of the SDP optimum
-([prop:knot-operator-selection](#prop:knot-operator-selection)).
+*descended Markov-trace* piece.
 
 **Non-magic shells use the Hopf link.**
 At non-magic $n$ at substrate $q_0$, the SDP optimum

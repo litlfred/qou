@@ -86,8 +86,7 @@ $\square$
 **Claim.** $\dim_{\mathbb{Q}} \mathcal{V}_K \geq (K - 3)/2$, conditional
 on Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$.
 
-**Argument.** Borel's theorem
-([Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution)):
+**Argument.** Borel's theorem:
 for prime $K$, $\mathbb{Q}(\zeta_K)$ is totally complex with $r_2 = (K - 1)/2$.
 For $n = 3$ (odd):
 

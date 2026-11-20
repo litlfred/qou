@@ -24,8 +24,7 @@ The Volume Conjecture asserts that the asymptotic growth of the
 coloured Jones polynomial $J_K^{(N)}(q)$ at $q = e^{2\pi i / N}$ as
 $N \to \infty$ equals $\mathrm{Vol}(S^3 \setminus K)$. The
 algebraic side ($J_K \in \mathbb{Z}[q^{\pm 1}]$) is field-polymorphic
-and lives in the substrate
-([The algebraic core of QOU lifts to any real-closed field](#rem:algebraic-core-survives)). The
+and lives in the substrate. The
 geometric side is a real number, transcendental in general.
 
 In graded-Mikusiński terms:

@@ -11,6 +11,9 @@ export default remark({
     "prop:markov-trace-axiomatic-closed-form",
     "rem:kashaev-volume-density",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([three calibration discipline](#def:three-calibration-discipline))" },
+  ],
   tags: [
     "calibration",
     "mass-scale",

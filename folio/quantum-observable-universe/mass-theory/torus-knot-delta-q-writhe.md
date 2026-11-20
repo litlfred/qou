@@ -1,4 +1,4 @@
-*For the torus knot $T_{m,p}$ presented on the minimal number of strands — that is, with $m \leq p$, so that $m$ is the braid index (Morton–Williams; see [the box-braid irreducibility proof](#prop:box-braid-irreducibility)) — the [top-channel decoration](#def:torus-knot-top-channel-decoration) is $h$ times the quantum integer at the writhe $w = (m-1)p$:*
+*For the torus knot $T_{m,p}$ presented on the minimal number of strands — that is, with $m \leq p$, so that $m$ is the braid index (Morton–Williams) — the [top-channel decoration](#def:torus-knot-top-channel-decoration) is $h$ times the quantum integer at the writhe $w = (m-1)p$:*
 
 $$
   \delta^{\mathrm{top}}_q(T_{m,p}) \;=\; q^{w} - q^{-w} \;=\; h\,[w]_q.

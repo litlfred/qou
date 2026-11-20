@@ -18,6 +18,7 @@ export default proposition({
     // and into everything that cites it, CAL-1/2/3 included.
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This is\nthe reading already recorded downstream in\n[The depth-2 prolongation recurrence has a conserved first integral](#prop:sl2-period-conserved-quantity), which\nuses this block: a" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): is proved for every $n$ in the Lean sibling." },
     {
       kind: "refined-framing",
