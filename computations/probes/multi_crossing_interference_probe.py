@@ -61,6 +61,8 @@ def main():
                          "sum": str(total), "matches_prediction": ok})
     res = {"producer": "computations/probes/multi_crossing_interference_probe.py", "bean": "qou-g0jn",
            "arithmetic": "exact (sympy over Q(q)); no floats", "q0_anchor": "none (symbolic in q)",
+           "q0Anchor": "independent",
+           "q0AnchorReason": "probe never reads q0: every quantity is exact over Q(q) (sympy), with q a free symbol; its import cone (w_braid_reconcile_probe, flavour_vertex_chirality_probe) evaluates nothing at a substrate pin",
            "limitation": "local site amplitudes; dressing by the rest of the word not included",
            "rows": rows, "checks": {"prediction_constructive_and_mirror_same_magnitude": pred_ok}}
     print(json.dumps(res, indent=1, ensure_ascii=False))
