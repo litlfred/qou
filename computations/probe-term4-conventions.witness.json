@@ -1,12 +1,12 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T17:03:03.198834+00:00",
-  "commitSha": "d7e342a5cda351f9fdb00eb06db3e9dc0152a400",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:38:23.482046+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "A1_reproduces_legacy_frob_n3",
-      "computed": "0.0",
+      "computed": "-3.111507639e-61",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -30,7 +30,7 @@
     },
     {
       "name": "extreme_block_row_dim_q_is_one",
-      "computed": "-1.555753819e-61",
+      "computed": "0.0",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -38,7 +38,7 @@
     },
     {
       "name": "extreme_block_column_dim_q_is_one",
-      "computed": "-1.555753819e-61",
+      "computed": "0.0",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "probe-term4-conventions",
   "scriptFile": "probe_term4_conventions.py",
-  "scriptHash": "444e9303876f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "abf9fdd37683",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -93,8 +93,8 @@
     "sigma_inv_dim_q_at_q0": {
       "n=3": "2.4972905456049155559958392316648696318481907303285",
       "n=6": "3.2021340012217462447876888457263824407351830058928",
-      "n=9": "2.5438838469814623740414261832455538873537132874296",
-      "n=12": "2.2519340480390228235777192335579209844500138474823",
+      "n=9": "2.5438838469814623740414261832455538873537132874297",
+      "n=12": "2.2519340480390228235777192335579209844500138474824",
       "n=15": "2.1374409635616436274499753756981713684499574585723",
       "n=18": "2.088090699685484443231539650077323804881146011588",
       "n=21": "2.0598882980369414383627759210086421764077230314555",

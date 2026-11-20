@@ -108,7 +108,7 @@
     "J_at_q": "q**(-8) + q**(-12) - 1/q**20",
     "trace_closed_form": "q**2*(q**12 + q**8 - 1)/(q**2 + 1)**2",
     "numerator": "q**12 + q**8 - 1",
-    "W_at_q0": "1.1874806131459626461071158300792049240880255765818",
+    "W_at_q0": "1.1874806131459626461071158300792049240880255765815",
     "W_at_one": "1/4"
   },
   "coupling_factorisation": {
@@ -121,7 +121,7 @@
     "h_k_prime_at_one": "2*k",
     "leading_coefficient": "-96",
     "J_second_derivative_at_one": "-192",
-    "J_minus_one_at_q0": "-0.40418128376765787568996803918173354330317761349481"
+    "J_minus_one_at_q0": "-0.40418128376765787568996803918173354330317761349472"
   },
   "decay_coupling": {
     "identity": "s**2 == (q**(1/2) - q**(-1/2))**2 == h_(1/2)**2",
@@ -130,7 +130,7 @@
       "1/2"
     ],
     "leading_coefficient": "1",
-    "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484137",
+    "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484133",
     "honest_limit": "a Jones exponent is an integer, so s^2 is a FORMAL half-scale analogue and not itself any knot's V - 1"
   },
   "ratio": {
@@ -247,13 +247,13 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "605c10f31b26",
-  "scriptCommitSha": "c1a61ec8b2a3a7da7b7a24256494c7cff1e8f54f",
-  "commitSha": "4b3096d0677fa4e4dfe1f66cec240ffb02058795",
+  "scriptFile": "markov/weak_vertex_jones_markov_normalisation.py",
+  "scriptHash": "f40b9bce3d30",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T09:03:38.561354+00:00",
+  "computedAt": "2026-11-20T15:37:26.142599+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "markov/weak_vertex_jones_markov_normalisation.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

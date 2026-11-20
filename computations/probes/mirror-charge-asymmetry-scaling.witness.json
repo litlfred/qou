@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-08-30T12:37:31.572321+00:00",
+  "computedAt": "2026-11-20T15:43:59.868829+00:00",
   "description": "Level-3 charge asymmetry does not inherit level-4 symmetry. Under the Sec.10a log form the binding is additive over bonds, so a mirror pair's difference is exactly (n_pp - n_nn)(B_pp - B_nn) -- ONE constant fixed by the skein relation, times a bond count fixed by the assembly. The chain assembly gives A^0, the complete graph A^1, and the observed Coulomb displacement energy grows as measured here. Magic-number pairs are not fitted better than the rest, so the level-4 self-duality does not propagate down to the level-3 observable.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -300,12 +300,12 @@
     "qou-rvse"
   ],
   "allPassed": true,
-  "scriptHash": "336d08518e62",
-  "scriptCommitSha": "ca7777d72380e5350ec8d777505d37cd63279a45",
-  "commitSha": "fcc65c13805d7fae0f9490f8598582e19cb5d65c",
+  "scriptFile": "mirror_charge_asymmetry_scaling_probe.py",
+  "scriptHash": "a8e7bec20bd1",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "mirror_charge_asymmetry_scaling_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

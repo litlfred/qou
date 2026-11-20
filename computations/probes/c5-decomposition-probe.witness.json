@@ -1,48 +1,48 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:20:56.283051+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-20T15:39:12.355733+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "lean_quantum_two_squared_eq_skein_squared_plus_four",
-      "computed": "4.043706208532521989402019335677388309768213960713522216242847344641826",
-      "expected": "4.043706208532521989402019335677388309768213960713522216242847344641826",
+      "computed": "4.04370620853252198940201933567738830976821396071350610903595079685529",
+      "expected": "4.04370620853252198940201933567738830976821396071350610903595079685529",
       "passed": true,
       "tolerance": "1e-40",
       "source": "theorem quantum_two_squared_eq_skein_squared_plus_four"
     },
     {
       "name": "lean_hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared",
-      "computed": "0.7527021132519654015937793516202361378301755988749056663823160062595938",
-      "expected": "0.7527021132519654015937793516202361378301755988749056663823160062595938",
+      "computed": "0.7527021132519654015937793516202361378301755988749046813260281571023248",
+      "expected": "0.7527021132519654015937793516202361378301755988749046813260281571023248",
       "passed": true,
       "tolerance": "1e-40",
       "source": "theorem hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared"
     },
     {
       "name": "lean_c5_decomposition_via_quantum_two",
-      "computed": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
-      "expected": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
+      "computed": "-1.252702113251965401593779351620236137830175598874904681326028157102325",
+      "expected": "-1.252702113251965401593779351620236137830175598874904681326028157102325",
       "passed": true,
       "tolerance": "1e-40",
       "source": "theorem c5_decomposition_via_quantum_two"
     },
     {
       "name": "lean_c5RationalMap_at_skein_eq_c5Decomposition",
-      "computed": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
-      "expected": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
+      "computed": "-1.252702113251965401593779351620236137830175598874904681326028157102325",
+      "expected": "-1.252702113251965401593779351620236137830175598874904681326028157102325",
       "passed": true,
       "tolerance": "1e-40",
       "source": "theorem c5RationalMap_at_skein_eq_c5Decomposition"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "c5-decomposition-probe",
   "scriptFile": "c5_decomposition_probe.py",
-  "scriptHash": "380c9b6caeef",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3974c4632e6b",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,14 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -70,11 +70,11 @@
   "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",
   "parameters": {
     "precision_dps": 50,
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "hecke_h": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
-    "quantum_two": "2.010896866707122299752491978091862815889240748484136921744785303658322",
-    "b_sq_direct": "0.7527021132519654015937793516202361378301755988749056663823160062595938",
-    "c5_value_at_q_0": "-1.252702113251965401593779351620236137830175598874905666382316006259594"
+    "q_0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "hecke_h": "0.2090602987956393154308462131296749438597574952630245553816960544589759",
+    "quantum_two": "2.010896866707122299752491978091862815889240748484132916763932425904622",
+    "b_sq_direct": "0.7527021132519654015937793516202361378301755988749046813260281571023248",
+    "c5_value_at_q_0": "-1.252702113251965401593779351620236137830175598874904681326028157102325"
   },
   "caveats": [
     "The Lean identities are PROVED (sorry-free, field_simp; ring over generic [Field R]); this witness only verifies the canonical substrate-q_0 specialisation. The outer empirical claim 'c_5 matches Q_β data to 2.4%' is a separate downstream check, not asserted here."

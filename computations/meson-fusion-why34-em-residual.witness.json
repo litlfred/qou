@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:19:00.531048+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:37:54.881619+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "fusion_cg_identity",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 4,
   "computation": "meson-fusion-why34-em-residual",
   "scriptFile": "meson_fusion_why34_em_residual.py",
-  "scriptHash": "dbe78fe62453",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "bd56d9f43c4b",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_fusion_why34_em_residual.py"
+    ],
+    "reproduce": "python3 -u computations/meson_fusion_why34_em_residual.py"
   },
   "description": "Two open pieces of m_K²/m_π² = [3]_q[4]_q. #2: the squared ratio is structurally required (meson = 2-body qq̄ → mass² on the fusion product H⊗H; this is why the 1-body character ratio missed 71%); 'why 3,4' reduces to m_s/m_d = 2[3]_q[4]_q−1. #3: the 203 ppm residual (50 MeV²) sits at the EM scale (~4% of the π± EM splitting), supporting the EM-correction lead.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",

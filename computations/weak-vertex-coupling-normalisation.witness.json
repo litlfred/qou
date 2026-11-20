@@ -8,10 +8,10 @@
   },
   "q0": "1.1099785827513808075916690956107688798744991218736",
   "s_sq_identity": "(q**(1/2) - q**(-1/2))**2 == q + 1/q - 2 == [2]_q - [2]_1",
-  "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484137",
-  "W_at_q0": "1.1874806131459626461071158300792049240880255765818",
+  "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484133",
+  "W_at_q0": "1.1874806131459626461071158300792049240880255765815",
   "W_at_one": "1/4",
-  "W_residual_at_q0": "0.93748061314596264610711583007920492408802557658179",
+  "W_residual_at_q0": "0.93748061314596264610711583007920492408802557658151",
   "vanishing_orders": {
     "s_sq": 2,
     "W_minus_W_one": 1,
@@ -114,13 +114,13 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "cd4addf19269",
-  "scriptCommitSha": "e83afa708862b0b815bcd2ebe58ab8ad6b83c74d",
-  "commitSha": "4b3096d0677fa4e4dfe1f66cec240ffb02058795",
+  "scriptFile": "markov/weak_vertex_coupling_normalisation_probe.py",
+  "scriptHash": "60fa94ec52b1",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T09:06:32.205716+00:00",
+  "computedAt": "2026-11-20T15:37:14.198742+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "markov/weak_vertex_coupling_normalisation_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

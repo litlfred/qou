@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-09-05T18:03:26.930154+00:00",
+  "computedAt": "2026-11-20T15:48:56.996974+00:00",
   "description": "The corpus's 3-body cumulant is exactly minus the classical third Ursell function under the Boltzmann identification g = f - 1. The classical Ursell functions ALTERNATE in the repulsive class, (-1)^(n-1) phi^T_n >= 0, while the corpus carries a uniform minus at n=2 and n=3. The uniform minus is correct at n=2 and inverts the physical sign at n=3, so MayerThreeBodySign's b3 < 0 is a missing (-1)^(n-1) rather than a physical obstruction. The identity is low-order: it does not extend to n=4 under either sign.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -138,12 +138,12 @@
   "lean": "QOU/MassTheory/MayerThreeBodySign.lean, QOU/Mass/PairwiseCumulantVanishing.lean",
   "bean": "qou-rwhv",
   "allPassed": true,
-  "scriptHash": "3492d77a682c",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "scriptFile": "ursell_alternation_sign_identity_probe.py",
+  "scriptHash": "22de3843c263",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "ursell_alternation_sign_identity_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

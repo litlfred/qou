@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T00:23:53.515245+00:00",
-  "commitSha": "e50ca9c6e41e2fd0dccecc3a2d8bc1180515a65d",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:44:52.672054+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "deuteron_dressed_subpercent",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "source": "exact reduction check: C1 at D must reproduce the +0.29% of probe_d_qbeta_h_invariant"
     }
   ],
-  "allPassed": true,
-  "durationMs": 25,
+  "allPassed": false,
+  "durationMs": 17,
   "computation": "probe-d-dressing-cross-a",
   "scriptFile": "probe_d_dressing_cross_a.py",
-  "scriptHash": "157ab9bb15a6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "67b369525da0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,11 +25,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_d_dressing_cross_a.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_d_dressing_cross_a.py"
   },
   "description": "Cross-A discriminator for the (1−h/2) dressing on the trace-canonical transfer path: fixed a-priori candidates C0 undressed / C1 flat / C2 per-interface, evaluated at D, T, ³He, ⁴He vs AME2020. Derive-or-refute; nothing wired (Δ_λ gate).",
   "auditOnly": "docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md",
@@ -45,59 +54,59 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "Delta_tr": "0.5951688926223434865224082",
+        "Delta_tr": "0.1470466779804084691094947",
         "B_AME_MeV": "2.2245662",
-        "C0_undressed_MeV": "2.49136589252974",
-        "C0_err_rel": 0.11993335713261351,
-        "C1_flat_MeV": "2.23094304357897",
-        "C1_err_rel": 0.0028665559959396994,
-        "C2_per_interface_MeV": "2.23094304357897",
-        "C2_err_rel": 0.0028665559959396994
+        "C0_undressed_MeV": "0.615534653560354",
+        "C0_err_rel": -0.7233012649565771,
+        "C1_flat_MeV": "0.551192724264155",
+        "C1_err_rel": -0.7522246250688538,
+        "C2_per_interface_MeV": "0.551192724264155",
+        "C2_err_rel": -0.7522246250688538
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "Delta_tr": "0.803952844836068738644743",
+        "Delta_tr": "0.1129280144363327321132444",
         "B_AME_MeV": "8.4817962",
-        "C0_undressed_MeV": "3.36533162545136",
-        "C0_err_rel": -0.6032288979719461,
-        "C1_flat_MeV": "3.01355300786972",
-        "C1_err_rel": -0.6447034405436762,
-        "C2_per_interface_MeV": "2.69854586173885",
-        "C2_err_rel": -0.6818426429841771
+        "C0_undressed_MeV": "0.472714563824338",
+        "C0_err_rel": -0.9442671631482564,
+        "C1_flat_MeV": "0.423301639845255",
+        "C1_err_rel": -0.9500929249107335,
+        "C2_per_interface_MeV": "0.379053856191889",
+        "C2_err_rel": -0.9553097189258227
       },
       {
         "atom": "3He",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "Delta_tr": "0.8411778809672953402031262",
+        "Delta_tr": "0.1295823893450523990445223",
         "B_AME_MeV": "7.71804132",
-        "C0_undressed_MeV": "3.52115493294464",
-        "C0_err_rel": -0.5437760972048492,
-        "C1_flat_MeV": "3.15308808175106",
-        "C1_err_rel": -0.5914652499228826,
-        "C2_per_interface_MeV": "2.82349531350114",
-        "C2_err_rel": -0.6341694483826447
+        "C0_undressed_MeV": "0.542429466809558",
+        "C0_err_rel": -0.9297192844246709,
+        "C1_flat_MeV": "0.485729233606175",
+        "C1_err_rel": -0.9370657381235457,
+        "C2_per_interface_MeV": "0.434955884250433",
+        "C2_err_rel": -0.9436442659197329
       },
       {
         "atom": "4He",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "Delta_tr": "0.9119650143287085433291067",
+        "Delta_tr": "0.07817256284216317881784802",
         "B_AME_MeV": "28.2956624",
-        "C0_undressed_MeV": "3.81746855395655",
-        "C0_err_rel": -0.865086439752103,
-        "C1_flat_MeV": "3.41842799569",
-        "C1_err_rel": -0.8791889743606074,
-        "C2_per_interface_MeV": "2.74112204920793",
-        "C2_err_rel": -0.9031257155086807
+        "C0_undressed_MeV": "0.327228891178261",
+        "C0_err_rel": -0.9884353691193933,
+        "C1_flat_MeV": "0.293023606296115",
+        "C1_err_rel": -0.9896442217130738,
+        "C2_per_interface_MeV": "0.234965741320106",
+        "C2_err_rel": -0.9916960508646687
       }
     ],
-    "verdict": "D-SPECIFIC SCALE FIX: the (1−h/2) dressing closes D to +0.29% but the best A≥3 candidate error remains 59% — the A≥3 gap is the known saturating-Δtr (extensive) deficit, NOT the scale. Scope (a): constrains scalar dressings on this route only."
+    "verdict": "D-SPECIFIC SCALE FIX: the (1−h/2) dressing closes D to -75.22% but the best A≥3 candidate error remains 94% — the A≥3 gap is the known saturating-Δtr (extensive) deficit, NOT the scale. Scope (a): constrains scalar dressings on this route only."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

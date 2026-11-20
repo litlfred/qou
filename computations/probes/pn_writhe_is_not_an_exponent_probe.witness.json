@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T04:49:11.810952+00:00",
-  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
+  "computedAt": "2026-11-20T15:44:51.170137+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "A1_framed_ratio_is_exactly_a_two_crossing_sum",
@@ -18,7 +18,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "endpoint disagreement 0.0, pn disagreement 0.00878765"
+      "source": "endpoint disagreement 6.682e-52, pn disagreement 0.00878765"
     },
     {
       "name": "A3_true_effective_writhe_dwarfs_both_signs",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 16,
   "computation": "pn_writhe_is_not_an_exponent_probe",
   "scriptFile": "pn_writhe_is_not_an_exponent_probe.py",
-  "scriptHash": "323532fad92d",
-  "scriptCommitSha": "def46509f247511bae9f8a7f780e0014a37f0e90",
+  "scriptHash": "6b55ad86b33b",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -104,7 +104,7 @@
       "nn": {
         "averaged_exponent": "0.789995492926",
         "per_diagram": "0.789995492926",
-        "shift": "0.0"
+        "shift": "-1.336382355e-51"
       },
       "pn": {
         "averaged_exponent": "0.67690225497",
@@ -120,9 +120,9 @@
     },
     "invariance": {
       "L_pp_shift": "0.0",
-      "L_nn_shift": "0.0",
-      "spread_shift": "0.0",
-      "mirror_3H_minus_3He_shift": "0.0"
+      "L_nn_shift": "-1.33638e-51",
+      "spread_shift": "-1.33638e-51",
+      "mirror_3H_minus_3He_shift": "-2.13821e-50"
     },
     "isotope_table": {
       "2H": {

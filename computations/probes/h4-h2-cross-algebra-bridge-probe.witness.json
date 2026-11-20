@@ -1,20 +1,20 @@
 {
   "baseline_residuals": {
-    "WZ_asymmetry_percent": 1.1125771312791746,
-    "W_anchor_deviation_percent": -0.6696114526933682,
-    "Z_anchor_deviation_percent": 0.43551573469471355,
-    "required_factor_W": 1.0067412547407328,
-    "required_factor_Z": 0.9956637278007796
+    "WZ_asymmetry_percent": 1.062673912155157,
+    "W_anchor_deviation_percent": -0.5678027286899519,
+    "Z_anchor_deviation_percent": 0.4888372919949118,
+    "required_factor_W": 1.005710451385688,
+    "required_factor_Z": 0.9951354070246183
   },
   "candidates_within_0_5_percent": [],
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "compute": "h4_h2_cross_algebra_bridge_probe",
-  "computedAt": "2026-08-23T09:23:37.771553+00:00",
+  "computedAt": "2026-11-20T15:43:22.984184+00:00",
   "description": "Investigates the H_4(q) \u2194 H_2(q) cross-algebra bridge (Path D from the Higgs residual audit). Tabulates Wedderburn dimensions, branching multiplicities for S_2 \u21aa S_3 \u21aa S_4, and searches for a structural multiplicative factor that closes the ~0.5% residual without fitting.",
   "durationMs": 0,
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "fundamental_obstruction": "Higgs prediction consistency requires m_W/m_Z = P_2/P_3 (from PR #1159 theorem higgs_W_Z_predictions_consistent_hypothesis). Observed m_W/m_Z = 0.881469; predicted P_2/P_3 = 0.891276; relative gap = -1.1003%. This ~1.1% gap IS the W/Z anchor asymmetry seen as the Higgs residual \u2014 reflecting SM electroweak mixing not in the H_2(q) trace formula.",
+  "fundamental_obstruction": "Higgs prediction consistency requires m_W/m_Z = P_2/P_3 (from PR #1159 theorem higgs_W_Z_predictions_consistent_hypothesis). Observed m_W/m_Z = 0.881469; predicted P_2/P_3 = 0.890836; relative gap = -1.0515%. This ~1.1% gap IS the W/Z anchor asymmetry seen as the Higgs residual \u2014 reflecting SM electroweak mixing not in the H_2(q) trace formula.",
   "partition_counts": {
     "|partitions(2)|": 2,
     "|partitions(3)|": 3,
@@ -23,9 +23,9 @@
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "scriptFile": "h4_h2_cross_algebra_bridge_probe.py",
-  "scriptHash": "64311bcb1be2",
+  "scriptHash": "3b2933f786c1",
   "six_fifths_identification": {
     "denominator": "|partitions(4)| = 5",
     "numerator": "|S_3| = 6",

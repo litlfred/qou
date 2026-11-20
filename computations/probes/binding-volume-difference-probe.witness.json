@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T18:37:41.038691+00:00",
-  "commitSha": "564bb89411f78ac45deefad839c5ce04f4ce4a98",
+  "computedAt": "2026-11-20T15:38:49.767533+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "no_derived_volume_difference_closes_A3",
@@ -11,15 +11,15 @@
       "passed": true,
       "tolerance": 0,
       "unit": "observables",
-      "source": "Of the 3 of 3 observables that were actually EVALUATED, 0 close A≥3. (A) log|tr| volume: no derived ρ brings all four isotopes within a generous ±10% — the best is ~69% off on ⁴He; a generous window makes zero hits a stronger negative, not a weaker one. (B) cosh-inversion: 4/4 traces elliptic (|tr|<2), so no real length exists and the observable cannot close. (C) SnapPy: evaluated on 800 sign-branch closures; nucleon pieces hyperbolic=True; every branch a connected sum of its nucleon pieces=True; max|Vol(atom)−Vol(free)| over all branches = 2.00000e-63 ⇒ B_C = 0 for every ρ. Was computed=1/expected=1 (bean qou-26f2), which passed at the value that refutes the claim and hid C never having run."
+      "source": "Of the 2 of 3 observables that were actually EVALUATED, 0 close A≥3. (A) log|tr| volume: no derived ρ brings all four isotopes within a generous ±10% — the best is ~69% off on ⁴He; a generous window makes zero hits a stronger negative, not a weaker one. (B) cosh-inversion: 4/4 traces elliptic (|tr|<2), so no real length exists and the observable cannot close. (C) SnapPy: NOT EVALUATED — SnapPy is not importable, so this leg is absent from the count rather than counted as a refutation; see the caveat. Was computed=1/expected=1 (bean qou-26f2), which passed at the value that refutes the claim and hid C never having run."
     }
   ],
   "allPassed": true,
-  "durationMs": 117372,
+  "durationMs": 41,
   "computation": "binding-volume-difference-probe",
   "scriptFile": "binding_volume_difference_probe.py",
-  "scriptHash": "e9bbc4b02fbf",
-  "scriptCommitSha": "96c02b054475920b79b3fc5d765efa5c49c1b338",
+  "scriptHash": "f099923d7a80",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -88,758 +88,23 @@
     },
     "snappy_branch_closures": {
       "D": {
-        "status": "evaluated",
-        "snappy_version": "3.3.2",
-        "verified_volumes": false,
-        "volume_precision": "quad-double (ManifoldHP), serialized at 28 significant digits; NOT verified (SnapPy verified=True needs Sage)",
-        "n_branches": 32,
-        "n_averaged_letters": 5,
-        "free_word_is_shifted_concatenation_of_nucleon_words": true,
-        "pieces_total": 64,
-        "pieces_geometric": 64,
-        "pieces_matched_to_nucleon_table": 64,
-        "pieces_per_branch_all_equal_A": true,
-        "whole_closure_solution_types": {
-          "contains degenerate tetrahedra": 32
-        },
-        "whole_closure_geometric_count": 0,
-        "whole_closure_cusps": [
-          3
-        ],
-        "vol_free_min": "12.94520306446325832074898036",
-        "vol_free_max": "32.38228592793523713864633834",
-        "vol_free_weighted_mean": "22.78065455612850717807183019",
-        "vol_atom_min": "12.94520306446325832074898036",
-        "vol_atom_max": "32.38228592793523713864633834",
-        "vol_atom_weighted_mean": "22.78065455612850717807183019",
-        "delta_vol_weighted_mean": "0.0",
-        "delta_vol_max_abs_over_branches": "0.0",
-        "nucleon_pieces": {
-          "proton": [
-            {
-              "signs": [
-                1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "9.96651188369837",
-              "vol_hp": "9.966511883698373266679074294",
-              "identify": [
-                "9^2_58(0,0)(0,0)",
-                "L9n10(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "16.1911429639676",
-              "vol_hp": "16.19114296396761856932316917",
-              "identify": [
-                "L11a252(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 7,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "4.74949998187444",
-              "vol_hp": "4.749499981874438508498086556",
-              "identify": [
-                "m367(0,0)(0,0)",
-                "7^2_1(0,0)(0,0)",
-                "L7a6(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            }
-          ],
-          "neutron": [
-            {
-              "signs": [
-                1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "16.1911429639676",
-              "vol_hp": "16.19114296396761856932316917",
-              "identify": [
-                "L11a252(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "8.19570308258882",
-              "vol_hp": "8.195703082588819812250893803",
-              "identify": [
-                "o9_41647(0,0)(0,0)",
-                "L11n202(0,0)(0,0)"
-              ]
-            }
-          ]
-        },
-        "positive_projection_legacy": {
-          "free": {
-            "vol_f64": "6.71207957531061e-6",
-            "solution_type": "contains degenerate tetrahedra",
-            "cusps": 4,
-            "geometric": false
-          },
-          "atom": {
-            "vol_f64": "0.000499787443158725",
-            "solution_type": "contains degenerate tetrahedra",
-            "cusps": 3,
-            "geometric": false
-          }
-        }
+        "status": "unevaluated",
+        "reason": "SnapPy not importable: No module named 'snappy'"
       },
       "T": {
-        "status": "evaluated",
-        "snappy_version": "3.3.2",
-        "verified_volumes": false,
-        "volume_precision": "quad-double (ManifoldHP), serialized at 28 significant digits; NOT verified (SnapPy verified=True needs Sage)",
-        "n_branches": 128,
-        "n_averaged_letters": 7,
-        "free_word_is_shifted_concatenation_of_nucleon_words": true,
-        "pieces_total": 384,
-        "pieces_geometric": 384,
-        "pieces_matched_to_nucleon_table": 384,
-        "pieces_per_branch_all_equal_A": true,
-        "whole_closure_solution_types": {
-          "contains degenerate tetrahedra": 128
-        },
-        "whole_closure_geometric_count": 0,
-        "whole_closure_cusps": [
-          4
-        ],
-        "vol_free_min": "21.14090614705207813299987416",
-        "vol_free_max": "48.57342889190285570796950750",
-        "vol_free_weighted_mean": "34.84880229250381010450083389",
-        "vol_atom_min": "21.14090614705207813299987416",
-        "vol_atom_max": "48.57342889190285570796950750",
-        "vol_atom_weighted_mean": "34.84880229250381010450083389",
-        "delta_vol_weighted_mean": "-5.000000427942006654051955086e-64",
-        "delta_vol_max_abs_over_branches": "2.000000479069891341729002530e-63",
-        "nucleon_pieces": {
-          "proton": [
-            {
-              "signs": [
-                1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "9.96651188369837",
-              "vol_hp": "9.966511883698373266679074294",
-              "identify": [
-                "9^2_58(0,0)(0,0)",
-                "L9n10(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "16.1911429639676",
-              "vol_hp": "16.19114296396761856932316917",
-              "identify": [
-                "L11a252(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 7,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "4.74949998187444",
-              "vol_hp": "4.749499981874438508498086556",
-              "identify": [
-                "m367(0,0)(0,0)",
-                "7^2_1(0,0)(0,0)",
-                "L7a6(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            }
-          ],
-          "neutron": [
-            {
-              "signs": [
-                1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "16.1911429639676",
-              "vol_hp": "16.19114296396761856932316917",
-              "identify": [
-                "L11a252(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "8.19570308258882",
-              "vol_hp": "8.195703082588819812250893803",
-              "identify": [
-                "o9_41647(0,0)(0,0)",
-                "L11n202(0,0)(0,0)"
-              ]
-            }
-          ]
-        },
-        "positive_projection_legacy": {
-          "free": {
-            "vol_f64": "4.27200515806046e-6",
-            "solution_type": "contains degenerate tetrahedra",
-            "cusps": 6,
-            "geometric": false
-          },
-          "atom": {
-            "vol_f64": "0.0157987931357204",
-            "solution_type": "contains degenerate tetrahedra",
-            "cusps": 4,
-            "geometric": false
-          }
-        }
+        "status": "unevaluated",
+        "reason": "SnapPy not importable: No module named 'snappy'"
       },
       "3He": {
-        "status": "evaluated",
-        "snappy_version": "3.3.2",
-        "verified_volumes": false,
-        "volume_precision": "quad-double (ManifoldHP), serialized at 28 significant digits; NOT verified (SnapPy verified=True needs Sage)",
-        "n_branches": 128,
-        "n_averaged_letters": 7,
-        "free_word_is_shifted_concatenation_of_nucleon_words": true,
-        "pieces_total": 384,
-        "pieces_geometric": 384,
-        "pieces_matched_to_nucleon_table": 384,
-        "pieces_per_branch_all_equal_A": true,
-        "whole_closure_solution_types": {
-          "contains degenerate tetrahedra": 128
-        },
-        "whole_closure_geometric_count": 0,
-        "whole_closure_cusps": [
-          4
-        ],
-        "vol_free_min": "17.69470304633769682924706691",
-        "vol_free_max": "48.57342889190285570796950750",
-        "vol_free_weighted_mean": "33.49316137588171142971465667",
-        "vol_atom_min": "17.69470304633769682924706691",
-        "vol_atom_max": "48.57342889190285570796950750",
-        "vol_atom_weighted_mean": "33.49316137588171142971465667",
-        "delta_vol_weighted_mean": "1.811758715544028027793924800e-71",
-        "delta_vol_max_abs_over_branches": "1.000000239534945670864501265e-63",
-        "nucleon_pieces": {
-          "proton": [
-            {
-              "signs": [
-                1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "9.96651188369837",
-              "vol_hp": "9.966511883698373266679074294",
-              "identify": [
-                "9^2_58(0,0)(0,0)",
-                "L9n10(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "16.1911429639676",
-              "vol_hp": "16.19114296396761856932316917",
-              "identify": [
-                "L11a252(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 7,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "4.74949998187444",
-              "vol_hp": "4.749499981874438508498086556",
-              "identify": [
-                "m367(0,0)(0,0)",
-                "7^2_1(0,0)(0,0)",
-                "L7a6(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            }
-          ],
-          "neutron": [
-            {
-              "signs": [
-                1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "16.1911429639676",
-              "vol_hp": "16.19114296396761856932316917",
-              "identify": [
-                "L11a252(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "8.19570308258882",
-              "vol_hp": "8.195703082588819812250893803",
-              "identify": [
-                "o9_41647(0,0)(0,0)",
-                "L11n202(0,0)(0,0)"
-              ]
-            }
-          ]
-        },
-        "positive_projection_legacy": {
-          "free": {
-            "vol_f64": "17.8405074231156",
-            "solution_type": "contains degenerate tetrahedra",
-            "cusps": 6,
-            "geometric": false
-          },
-          "atom": {
-            "vol_f64": "0.000662140081277489",
-            "solution_type": "contains degenerate tetrahedra",
-            "cusps": 4,
-            "geometric": false
-          }
-        }
+        "status": "unevaluated",
+        "reason": "SnapPy not importable: No module named 'snappy'"
       },
       "4He": {
-        "status": "evaluated",
-        "snappy_version": "3.3.2",
-        "verified_volumes": false,
-        "volume_precision": "quad-double (ManifoldHP), serialized at 28 significant digits; NOT verified (SnapPy verified=True needs Sage)",
-        "n_branches": 512,
-        "n_averaged_letters": 9,
-        "free_word_is_shifted_concatenation_of_nucleon_words": true,
-        "pieces_total": 2048,
-        "pieces_geometric": 2048,
-        "pieces_matched_to_nucleon_table": 2048,
-        "pieces_per_branch_all_equal_A": true,
-        "whole_closure_solution_types": {
-          "contains degenerate tetrahedra": 512
-        },
-        "whole_closure_geometric_count": 0,
-        "whole_closure_cusps": [
-          5
-        ],
-        "vol_free_min": "25.89040612892651664149796072",
-        "vol_free_max": "64.76457185587047427729267667",
-        "vol_free_weighted_mean": "45.56130911225701435614366037",
-        "vol_atom_min": "25.89040612892651664149796072",
-        "vol_atom_max": "64.76457185587047427729267667",
-        "vol_atom_weighted_mean": "45.56130911225701435614366037",
-        "delta_vol_weighted_mean": "-4.999999397804007706878437281e-64",
-        "delta_vol_max_abs_over_branches": "2.000000479069891341729002530e-63",
-        "nucleon_pieces": {
-          "proton": [
-            {
-              "signs": [
-                1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "9.96651188369837",
-              "vol_hp": "9.966511883698373266679074294",
-              "identify": [
-                "9^2_58(0,0)(0,0)",
-                "L9n10(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "16.1911429639676",
-              "vol_hp": "16.19114296396761856932316917",
-              "identify": [
-                "L11a252(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 7,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "4.74949998187444",
-              "vol_hp": "4.749499981874438508498086556",
-              "identify": [
-                "m367(0,0)(0,0)",
-                "7^2_1(0,0)(0,0)",
-                "L7a6(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            }
-          ],
-          "neutron": [
-            {
-              "signs": [
-                1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "16.1911429639676",
-              "vol_hp": "16.19114296396761856932316917",
-              "identify": [
-                "L11a252(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 9,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "11.9428724494724",
-              "vol_hp": "11.94287244947238666207097592",
-              "identify": [
-                "9^2_34(0,0)(0,0)",
-                "L9a21(0,0)(0,0)"
-              ]
-            },
-            {
-              "signs": [
-                -1,
-                -1
-              ],
-              "weight": "0.2500000000000000000000000000",
-              "components": 2,
-              "crossings_simplified": 11,
-              "solution_type": "all tetrahedra positively oriented",
-              "geometric": true,
-              "vol_f64": "8.19570308258882",
-              "vol_hp": "8.195703082588819812250893803",
-              "identify": [
-                "o9_41647(0,0)(0,0)",
-                "L11n202(0,0)(0,0)"
-              ]
-            }
-          ]
-        },
-        "positive_projection_legacy": {
-          "free": {
-            "vol_f64": "0.000303989999938450",
-            "solution_type": "contains degenerate tetrahedra",
-            "cusps": 8,
-            "geometric": false
-          },
-          "atom": {
-            "vol_f64": "0.00117123494675414",
-            "solution_type": "contains degenerate tetrahedra",
-            "cusps": 5,
-            "geometric": false
-          }
-        }
+        "status": "unevaluated",
+        "reason": "SnapPy not importable: No module named 'snappy'"
       }
     },
-    "snappy_volume_diff_errs_pct": {
-      "m_e": {
-        "D": "-100.0000000000000000000000000",
-        "T": "-100.0000000000000000000000000",
-        "3He": "-100.0000000000000000000000000",
-        "4He": "-100.0000000000000000000000000"
-      },
-      "E_0": {
-        "D": "-100.0000000000000000000000000",
-        "T": "-100.0000000000000000000000000",
-        "3He": "-100.0000000000000000000000000",
-        "4He": "-100.0000000000000000000000000"
-      },
-      "m_e*8G": {
-        "D": "-100.0000000000000000000000000",
-        "T": "-100.0000000000000000000000000",
-        "3He": "-100.0000000000000000000000000",
-        "4He": "-100.0000000000000000000000000"
-      }
-    },
+    "snappy_volume_diff_errs_pct": {},
     "observables": {
       "log_volume": {
         "evaluated": true,
@@ -853,24 +118,24 @@
         "n_cases": 4
       },
       "snappy_braid_closure": {
-        "evaluated": true,
+        "evaluated": false,
         "closes_A3": false,
-        "pieces_hyperbolic": true,
-        "every_branch_is_connected_sum_of_nucleon_pieces": true,
-        "max_abs_delta_vol_over_all_branches": "2.000000479069891341729002530e-63"
+        "pieces_hyperbolic": false,
+        "every_branch_is_connected_sum_of_nucleon_pieces": false,
+        "max_abs_delta_vol_over_all_branches": null
       }
     },
-    "observables_evaluated": 3,
+    "observables_evaluated": 2,
     "observables_total": 3,
-    "snappy_available": true,
+    "snappy_available": false,
     "conclusion": {
       "log_volume": "refuted — no derived ρ closes (κ spans 313%)",
       "cosh_inversion": "degenerate — all |tr_M|<2 (elliptic regime)",
-      "snappy_braid_closure": "refuted, scope-(b) — Vol(atom) − Vol(free) ≡ 0 on every branch because each interface is one letter (closure = connected sum of nucleon pieces; simplicial volume additive). The pieces ARE hyperbolic; only the DIFFERENCE vanishes. Not excluded: an absolute-volume reading, a non-additive functional, a multi-letter interface.",
+      "snappy_braid_closure": "NOT EVALUATED — SnapPy not importable (distinct verdict, not a refutation)",
       "interpretation": "no derived real-q volume DIFFERENCE repairs the linear truncation: legs A/B fail numerically, leg C vanishes structurally (connected-sum additivity — the intensive/extensive gap in topological guise). The pre-2026-09-07 claim that the derived closures are non-hyperbolic is retracted for the live word."
     }
   },
   "caveats": [
-    "Observable C volumes are SnapPy ManifoldHP (quad-double) on geometric solutions, serialized at 28 significant digits; they are NOT verified (SnapPy verified=True requires Sage, absent). Piece identification is by (components, double-precision volume within 1e-8) against the per-nucleon table; the structural claim (atom branch = connected sum of nucleon pieces) is checked by `deconnect_sum` piece counts, not by the volumes."
+    "Observable C (SnapPy hyperbolic volume of the derived branch closures) was NOT EVALUATED in this run: SnapPy is not importable. `_snappy_leg_c` reports this as a distinct `unevaluated` status; it is not a refutation. The refutation recorded here rests on observables A and B only (beans qou-26f2, qou-m6gp)."
   ]
 }

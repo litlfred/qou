@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:23:08.190296+00:00",
-  "commitSha": "cfd5362382e0e03fa2d1cf969e0bb614ff179a62",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:38:14.471716+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "m_n_residual_within_5ppm",
-      "computed": "1.97183722026752394086376838327195478996357614458188278293109151375739",
+      "computed": "1.971837220267523940863768383271954789963576100338150322405369999265592",
       "expected": 0.0,
       "passed": true,
       "tolerance": 5.0,
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 24,
   "computation": "phase1e-neutron-cross-isotope-h-expansion",
   "scriptFile": "phase1e_neutron_and_cross_isotope_h_expansion.py",
-  "scriptHash": "93632cf48763",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "63c9dd4b4b07",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

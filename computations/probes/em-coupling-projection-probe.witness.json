@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-05T16:59:01.073665+00:00",
-  "commitSha": "21a8d76250d2c826430ebb0e65b697ccce0adbfd",
+  "computedAt": "2026-11-20T15:41:29.228806+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "alpha_em_matches_codata",
@@ -17,8 +17,8 @@
   "durationMs": 4,
   "computation": "em-coupling-projection-probe",
   "scriptFile": "em_coupling_projection_probe.py",
-  "scriptHash": "4123002d45f4",
-  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
+  "scriptHash": "cec08b90cc87",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T06:36:15.500847+00:00",
-  "commitSha": "31f7400b35f742f45a681175bbfb584fd8e51c01",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:50:21.343521+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "extracted_c3_reproduces_its_own_input_exactly",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "qbeta-c3-is-extraction-determined",
   "scriptFile": "qbeta_c3_is_extraction_determined_probe.py",
-  "scriptHash": "66e338170243",
-  "scriptCommitSha": "1de590f15140fcc3182c04efe9df9c92ff9fcff9",
+  "scriptHash": "2a18e99f432e",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,12 +53,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -68,12 +70,12 @@
   },
   "description": "c_3 is EXTRACTED by inverting the experimental Q_beta against the ansatz, not derived: feeding it back reproduces Q_exp with residual 0 by construction. The published N=3 residual is the -2-vs-extracted gap propagated through the rung. So 'the D-frame ladder must be re-derived' cannot mean redoing a derivation of c_3 -- there is none. Scope (a); nothing wired.",
   "data": {
-    "c3_extracted_protonC": "-1.76045485833244113729941248537926622785094899889109153352946",
+    "c3_extracted_protonC": "-1.76045485833244113729941248537926622785094908051041752971353",
     "c3_extracted_muonC": "-1.71097277973195176697774085810501554513190922357651101665482",
-    "c3_extracted_protonD": "-974.123185605431471747180033699578044796519124340201819250352",
+    "c3_extracted_protonD": "-974.123185605431471747180033699578044796519124422247372086775",
     "candidate_c3_J_Hopf_q1": "-2.00000000000000000000000000000000000000000000000000000000000",
-    "candidate_gap_pct": "11.9772570833779431350293757310366886074525500554454233235268",
-    "N3_residual_from_candidate_ppb": "-148.007478857013617458691389701651579323180601900291147005128"
+    "candidate_gap_pct": "11.9772570833779431350293757310366886074525459744791235143236",
+    "N3_residual_from_candidate_ppb": "-148.007478857013617458691389701651579323180551470105341713587"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

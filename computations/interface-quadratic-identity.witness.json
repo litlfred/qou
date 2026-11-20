@@ -1,8 +1,8 @@
 {
   "engine": "python3/mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:54:11.225290+00:00",
-  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:36:44.253308+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "scalar = [2]_q^2/4",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "interface-quadratic-identity",
   "scriptFile": "interface_quadratic_identity.py",
-  "scriptHash": "7291b5b55096",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "b00cb8dbd2fd",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,13 +30,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e114ae83ee1a611f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -46,7 +47,7 @@
   },
   "description": "PROVED: (sigma-h/2)^2 = 1+h^2/4 = [2]_q^2/4 (SCALAR). From Hecke relation sigma^2 = h*sigma + 1. Even powers are identity; odd powers are linear. 5 interface crossings = (1+h^2/4)^2 * (sigma-h/2). Lean-proved in TwoRoutesProtonMass.lean.",
   "identity": "(sigma - h/2)^2 = 1 + h^2/4",
-  "scalar_value": "1.010926552133130497350504833919347077442053490178380554060711836160456",
+  "scalar_value": "1.010926552133130497350504833919347077442053490178376527258987699213823",
   "equals_two_q_sq_over_4": true,
   "deuteron_5_crossings": {
     "scalar_factor": 1.021972493807779,

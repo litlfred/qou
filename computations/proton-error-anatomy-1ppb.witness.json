@@ -1,49 +1,65 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-26T16:41:08.024090+00:00",
-  "commitSha": "fbfd623e787efdc9ba050cf018732f798db1fe3b",
+  "computedAt": "2026-11-20T15:49:17.251217+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "gap_is_sub_ppm",
-      "computed": 0.2421845864520872,
+      "computed": 2.8517875211288857e-06,
       "expected": 0.24,
-      "passed": true,
+      "passed": false,
       "tolerance": "0.05",
       "unit": "ppm",
       "source": "m_p substrate identity gap"
     }
   ],
-  "allPassed": true,
-  "durationMs": 5,
+  "allPassed": false,
+  "durationMs": 3,
   "computation": "proton-error-anatomy-1ppb",
   "scriptFile": "proton_error_anatomy_1ppb.py",
-  "scriptHash": "61c02527d0ee",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9bc1ab04b121",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/proton_error_anatomy_1ppb.py"
+    ],
+    "reproduce": "python3 -u computations/proton_error_anatomy_1ppb.py"
   },
   "description": "Decompose the 0.24 ppm m_p gap. All sub-factors (|tr_M|, [3]_q!, q^3, dim V_{(2,1)}, |S_3|) are exact at given q_0. The gap lives in the formula structure itself. PSLQ finds no integer relation with standard dilogarithms. The correction is at the same scale as the Q_beta N=3 brane-tower rung (b^3 * hbar^6).",
   "data": {
     "gap": {
-      "gap_eV": "-227.2350376505659",
-      "gap_ppm": "-0.2421845864520872",
-      "dP_over_P": "2.4061214707415725e-07"
+      "gap_eV": "-0.00267575263606",
+      "gap_ppm": "-2.8517875211288857e-06",
+      "dP_over_P": "2.8332709501060082e-12"
     },
     "sub_factors_all_exact": {
-      "tr_M_abs": "0.9985621631975701",
-      "qfact_3": "6.120579304756191",
-      "F_Bor": "4.469138597860733",
-      "F_Bor_needed": "4.469139673189767",
-      "F_deficit_ppm": "0.24061214707415723",
-      "h_series_residual_at_5_terms": "0.0015303462364348874",
+      "tr_M_abs": "0.9985621638367873",
+      "qfact_3": "6.120579277915064",
+      "F_Bor": "4.4691387357675225",
+      "F_Bor_needed": "4.469138735780184",
+      "F_deficit_ppm": "2.833270950106008e-06",
+      "h_series_residual_at_5_terms": "0.001530345433575775",
       "h_series_exact_to_20_terms": true
     },
     "overdetermined_system": {
-      "eq1_proton_residual_ppm": "-0.2421845864520872",
+      "eq1_proton_residual_ppm": "-2.8517875211288857e-06",
       "eq2_muon_residual_ppm": "0 (exact by calibration)",
       "conclusion": "2 equations, 1 unknown; no single q satisfies both"
     },
@@ -76,6 +92,12 @@
         "Derive 2/5 from Wedderburn structure",
         "Apply to independent observable (m_n, isotope) without re-fitting"
       ]
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "proton",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }

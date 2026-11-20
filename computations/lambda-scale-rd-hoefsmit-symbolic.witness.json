@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-30T14:12:10.681363+00:00",
-  "commitSha": "eb9d0bea21f616b8b4b0c2399a0a3181489d4840",
+  "computedAt": "2026-11-20T15:37:07.252827+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "chi_at_q1_equals_classical_S3_dimensions",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1536,
+  "durationMs": 1470,
   "computation": "lambda-scale-rd-hoefsmit-symbolic",
   "scriptFile": "lambda_scale_rd_hoefsmit_symbolic.py",
-  "scriptHash": "d84a32e974f6",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "fb783024e884",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

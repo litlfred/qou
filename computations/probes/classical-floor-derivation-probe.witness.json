@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T15:07:39.469350+00:00",
-  "commitSha": "3708969e8368dc4f093ba5b16eaf5799a803cc42",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:40:04.865310+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "free_word_has_two_cycles_per_nucleon",
@@ -27,7 +27,7 @@
     },
     {
       "name": "markov_trace_at_q_one_is_two_to_the_cycle_count_minus_n",
-      "computed": "1.0451358e-8",
+      "computed": "3.2502394e-10",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-7",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1795,
+  "durationMs": 10686,
   "computation": "classical-floor-derivation-probe",
   "scriptFile": "classical_floor_derivation_probe.py",
-  "scriptHash": "adaf73fa8309",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ff8697cd15af",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,10 +54,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -239,51 +243,51 @@
         "isotope": "D",
         "A": 2,
         "n_strands": 6,
-        "tr_atom_limit": "0.1249999998703076",
+        "tr_atom_limit": "0.1249999999884368",
         "two_pow_c_atom_minus_n": "0.125",
-        "tr_free_limit": "0.249999999744366",
+        "tr_free_limit": "0.2499999999806237",
         "two_pow_c_free_minus_n": "0.25",
-        "worst_relative_error": "1.03754e-9"
+        "worst_relative_error": "9.25054e-11"
       },
       {
         "isotope": "T",
         "A": 3,
         "n_strands": 9,
-        "tr_atom_limit": "0.0312499999357002",
+        "tr_atom_limit": "0.03124999999617173",
         "two_pow_c_atom_minus_n": "0.03125",
-        "tr_free_limit": "0.1249999996790448",
+        "tr_free_limit": "0.1249999999884366",
         "two_pow_c_free_minus_n": "0.125",
-        "worst_relative_error": "2.56764e-9"
+        "worst_relative_error": "1.22505e-10"
       },
       {
         "isotope": "3He",
         "A": 3,
         "n_strands": 9,
-        "tr_atom_limit": "0.03124999988428884",
+        "tr_atom_limit": "0.03124999999257767",
         "two_pow_c_atom_minus_n": "0.03125",
-        "tr_free_limit": "0.1249999996146651",
+        "tr_free_limit": "0.1249999999803113",
         "two_pow_c_free_minus_n": "0.125",
-        "worst_relative_error": "3.70276e-9"
+        "worst_relative_error": "2.37515e-10"
       },
       {
         "isotope": "4He",
         "A": 4,
         "n_strands": 12,
-        "tr_atom_limit": "0.007812499957242413",
+        "tr_atom_limit": "0.00781249999873038",
         "two_pow_c_atom_minus_n": "0.0078125",
-        "tr_free_limit": "0.06249999965825193",
+        "tr_free_limit": "0.06249999999015554",
         "two_pow_c_free_minus_n": "0.0625",
-        "worst_relative_error": "5.47297e-9"
+        "worst_relative_error": "1.62511e-10"
       },
       {
         "isotope": "5Li",
         "A": 5,
         "n_strands": 15,
-        "tr_atom_limit": "0.001953124979587191",
+        "tr_atom_limit": "0.001953124999365188",
         "two_pow_c_atom_minus_n": "0.001953125",
-        "tr_free_limit": "0.03124999970402691",
+        "tr_free_limit": "0.0312499999923432",
         "two_pow_c_free_minus_n": "0.03125",
-        "worst_relative_error": "1.04514e-8"
+        "worst_relative_error": "3.25024e-10"
       }
     ],
     "derivation": {
@@ -297,37 +301,37 @@
         {
           "isotope": "D",
           "A": 2,
-          "delta_tr_at_q0": "0.55654466040444",
+          "delta_tr_at_q0": "0.14704667798041",
           "c0(A)": "0.125",
-          "classical_share_percent": "22.46"
+          "classical_share_percent": "85.007"
         },
         {
           "isotope": "T",
           "A": 3,
-          "delta_tr_at_q0": "0.88853612687367",
+          "delta_tr_at_q0": "0.11292801443633",
           "c0(A)": "0.09375",
-          "classical_share_percent": "10.5511"
+          "classical_share_percent": "83.0175"
         },
         {
           "isotope": "3He",
           "A": 3,
-          "delta_tr_at_q0": "0.89290857539352",
+          "delta_tr_at_q0": "0.12958238934505",
           "c0(A)": "0.09375",
-          "classical_share_percent": "10.4994"
+          "classical_share_percent": "72.3478"
         },
         {
           "isotope": "4He",
           "A": 4,
-          "delta_tr_at_q0": "1.1198090060862",
+          "delta_tr_at_q0": "0.078172562842163",
           "c0(A)": "0.0546875",
-          "classical_share_percent": "4.88365"
+          "classical_share_percent": "69.9574"
         },
         {
           "isotope": "5Li",
           "A": 5,
-          "delta_tr_at_q0": "1.3544669451459",
+          "delta_tr_at_q0": "0.051935294379983",
           "c0(A)": "0.029296875",
-          "classical_share_percent": "2.16298"
+          "classical_share_percent": "56.4103"
         }
       ],
       "asymptotics": "c0(A) ~ 2^-A, so the share falls by roughly a factor of 2 per nucleon while Delta_tr(q0) grows. Measured 22.46 % at the deuteron and 4.88 % at 4He.",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-15T22:51:29.716943+00:00",
-  "commitSha": "596dc8a545a68075d6e6803081fce3e0ec7bac5b",
+  "computedAt": "2026-11-20T15:38:50.035549+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "zD_classical_is_one_half",
@@ -114,8 +114,8 @@
   "durationMs": 4,
   "computation": "body-number-expansion-classical-floor",
   "scriptFile": "body_number_expansion_classical_floor_probe.py",
-  "scriptHash": "dcaae3e5c02a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "de8261c99a8d",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -123,10 +123,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -174,12 +178,12 @@
       "3": "3/32",
       "4": "7/128"
     },
-    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
-    "jet_remainder_ratio_q0_inv_sq": "0.811653754365758058132214822141752124918532537796475209752038",
+    "q0_proton": "1.10997858275138080759166909561076887987449912187357873607281",
+    "jet_remainder_ratio_q0_inv_sq": "0.811653754365758058132214822141752124918532537796506307552664",
     "bond_factors_at_q0": {
-      "pp (sigma)": "0.612688037146465251595829863945899248026308391545087014074774",
-      "pn (averaged_weighted)": "0.508757098727085602047393929492179580702150859256410517320179",
-      "nn (sigma_inv)": "0.404826160307705952498957995038459913377993326967734020565584"
+      "pp (sigma)": "0.612688037146465251595829863945899248026308391545064759724287",
+      "pn (averaged_weighted)": "0.508757098727085602047393929492179580702150859256407188320302",
+      "nn (sigma_inv)": "0.404826160307705952498957995038459913377993326967749616916317"
     }
   },
   "lean_twin": "QOU.MassTheory.b3corpus_classical (BondFactorClassicalFloor.lean)",

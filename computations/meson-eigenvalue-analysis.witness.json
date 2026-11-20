@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:05:23.578912+00:00",
-  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
+  "computedAt": "2026-11-20T15:37:53.785737+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "trace_ratio_computed",
-      "computed": "1.460935341988291934930693600237439510475484243776595488982008947102641",
+      "computed": "1.460935341988291934930693600237439510475484243776573226665164914134261",
       "expected": 1.461,
       "passed": true,
       "tolerance": "0.01",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "meson-eigenvalue-analysis",
   "scriptFile": "meson_eigenvalue_analysis.py",
-  "scriptHash": "5148bfed5fef",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "5484d6bc4bf7",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

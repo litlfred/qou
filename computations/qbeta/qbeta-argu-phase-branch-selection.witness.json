@@ -2,7 +2,7 @@
   "schema": "qou-probe/v1",
   "id": "qbeta-argu-phase-branch-selection",
   "description": "arg(u) phase branch-selection is FROZEN on the real substrate ray — the last seat of the c₃ bar-odd anchor-swing is a WALL. u=2·log q₀ is real for q₀≥1 ⇒ arg(u)=0 at both anchors ⇒ Δ(arg u)=0; the leading NZ Im 𝔙 = (√3/2)|u|²·sin(2·arg u) is identically 0 on the real ray (amphichirality, #3654) and its phase-channel anchor-swing is EXACTLY 0, despite a nonzero unbounded-by-#4288 phase-sensitivity √3|u|². Confirms QOU/QBeta/ArgUPhaseBranchSelection.lean. auditOnly; no c_k wired.",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "verdict": "WALL — phase channel supplies exactly zero anchor-swing at real q₀ (scope-(a)); c₃ anchor-dependence is non-categorical (#3636/#3654)",
   "anchors": {
     "muon": {
@@ -42,10 +42,10 @@
   },
   "all_pass": true,
   "scriptFile": "qbeta_argu_phase_branch_selection_probe.py",
-  "scriptHash": "0a816ee0796b",
-  "commitSha": "e8fadaea289f291a2286cdf6248e5286078c978f",
+  "scriptHash": "8d5c608f3c5a",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "python",
-  "computedAt": "2026-09-04T02:39:05.350667+00:00",
+  "computedAt": "2026-11-20T15:49:27.241086+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

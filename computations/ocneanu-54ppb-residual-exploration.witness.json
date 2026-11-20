@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T10:05:47.800310+00:00",
-  "commitSha": "3e7979d60e365b22d6b6192b31106291894ff96f",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:38:08.582514+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "q_brackets_reduce_to_classical_at_q_one",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 7,
   "computation": "ocneanu-54ppb-residual-exploration",
   "scriptFile": "ocneanu_54ppb_residual_exploration.py",
-  "scriptHash": "e5239271d393",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "7b3288b32dc5",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,14 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -70,17 +70,17 @@
     "q_70dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "f_target": "1.00809424248227736153444",
-    "f_minus_1": "0.008094242482277361534439933",
+    "f_target": "1.008094242364574655780851",
+    "f_minus_1": "0.008094242364574655780850562",
     "pslq_hits": 0,
-    "best_special_function_ppb": "-790491.48",
+    "best_special_function_ppb": "-790491.37",
     "verdict": "BEST candidate: '1 + α_em (1-loop natural)' at -790491.0 ppb — not below 10 ppb threshold.",
     "k_required": "11.99960972984508386212587",
-    "form_a_ppb": "207.114330482",
-    "form_b_ppb": "207.116614892"
+    "form_a_ppb": "207.114326709",
+    "form_b_ppb": "207.116611119"
   },
   "caveats": [
-    "Every figure this module's prose quotes has drifted from what it now computes, and the drain is what surfaced it. (a) The title and docstring say a '54 ppb residual'; after the plain (α_em/π)/dim H_3 correction the residual measures 261.13994 ppb. (b) The docstring sets the goal as identifying f(q_0) ≈ 1.001674; the computed f_target is 1.00809424248, so f−1 is 4.8× the stated value. (c) The 2026-06-01 comment block reports FORM A at 0.003 ppb and FORM B at 0.0008 ppb (17,584× and 68,576× over baseline); they measure 207.114 and 207.117 ppb — about five orders worse, and indistinguishable from each other. The computation is self-consistent; the prose predates a substrate or CODATA movement and was never re-derived. Reported, not silently corrected."
+    "Every figure this module's prose quotes has drifted from what it now computes, and the drain is what surfaced it. (a) The title and docstring say a '54 ppb residual'; after the plain (α_em/π)/dim H_3 correction the residual measures 261.13993 ppb. (b) The docstring sets the goal as identifying f(q_0) ≈ 1.001674; the computed f_target is 1.00809424236, so f−1 is 4.8× the stated value. (c) The 2026-06-01 comment block reports FORM A at 0.003 ppb and FORM B at 0.0008 ppb (17,584× and 68,576× over baseline); they measure 207.114 and 207.117 ppb — about five orders worse, and indistinguishable from each other. The computation is self-consistent; the prose predates a substrate or CODATA movement and was never re-derived. Reported, not silently corrected."
   ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

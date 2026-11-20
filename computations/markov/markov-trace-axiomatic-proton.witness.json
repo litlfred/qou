@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T19:35:45.855053+00:00",
-  "commitSha": "8af36859c4b7cf9a3efebf04978daaa92433fc66",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:37:10.491806+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "block_word_denominator_is_convention_D",
@@ -14,7 +14,7 @@
     },
     {
       "name": "block_word_tr_M_at_q0",
-      "computed": "1.88431946725497502509029472310815626347249744177191389544517",
+      "computed": "1.88431946725497502509029472310815626347249744177150663436123",
       "expected": "1.88432",
       "passed": true,
       "tolerance": "1e-5",
@@ -22,7 +22,7 @@
     },
     {
       "name": "block_word_rho_p",
-      "computed": "974.438095733764827809223931522313849460550185112633207505751",
+      "computed": "974.438095733764827809223931522313849460550185112843814423526",
       "expected": "974.44",
       "passed": true,
       "tolerance": "1e-2",
@@ -33,8 +33,8 @@
   "durationMs": 1,
   "computation": "markov-trace-axiomatic-proton",
   "scriptFile": "markov_trace_axiomatic_proton.py",
-  "scriptHash": "dbfe5bf4b8e7",
-  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "scriptHash": "1643efaec6d2",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -77,12 +77,12 @@
   "block_word": "sigma_1^7 sigma_2^4",
   "tr_M_block_word_symbolic": "(q**22 + 2*q**18 - 2*q**16 + 3*q**14 - 3*q**12 + 4*q**10 - 4*q**8 + 3*q**6 - 3*q**4 + 2*q**2 - 1)/(q**11 + 2*q**9 + q**7)",
   "tr_M_block_word_denominator": "q**7*(q**2 + 1)**2",
-  "tr_M_block_word_at_q0": "1.88431946725497502509029472310815626347249744177191389544517",
-  "rho_p_from_block_word": "974.438095733764827809223931522313849460550185112633207505751",
+  "tr_M_block_word_at_q0": "1.88431946725497502509029472310815626347249744177150663436123",
+  "rho_p_from_block_word": "974.438095733764827809223931522313849460550185112843814423526",
   "demo_word": "sigma_1 sigma_2 sigma_1",
-  "tr_M_demo_at_q0": "0.691166478358444526147719530979046206614241118678141951155491",
-  "tr_M_demo_at_inv_q0": "0.369568606357623072330408713830913380171509096426948791532523",
+  "tr_M_demo_at_q0": "0.691166478358444526147719530979046206614241118678099534769693",
+  "tr_M_demo_at_inv_q0": "0.369568606357623072330408713830913380171509096426968590464575",
   "bar_behaviour_note": "Under q -> 1/q the H_3 longest-element trace is NEITHER symmetric NOR anti-symmetric, in convention C or D. This witness asserted both `anti_self_reciprocal` and `symmetric_under_q_inv` with expected=1.0 until 2026-08-23. That pair is unsatisfiable by construction -- f(1/q)=f(q) together with f(1/q)=-f(q) forces f == 0 -- so the witness could never go green, and both cited sections of prop:markov-trace-axiomatic-closed-form that do not exist in that block. The ratio is reported here as data instead.",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181799"
 }

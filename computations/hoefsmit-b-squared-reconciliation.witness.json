@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:47:47.028016+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-11-20T15:36:41.433663+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "b2_formulas_agree",
-      "computed": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
+      "computed": "0.0",
       "expected": 0,
       "passed": true,
       "tolerance": "1e-40",
@@ -14,7 +14,7 @@
     },
     {
       "name": "hecke_relation_exact",
-      "computed": 1.8111358157653425e-71,
+      "computed": 0.0,
       "expected": 0,
       "passed": true,
       "tolerance": "1e-40",
@@ -22,7 +22,7 @@
     },
     {
       "name": "braid_relation_exact",
-      "computed": 3.622271631530685e-71,
+      "computed": 4.527839539413356e-71,
       "expected": 0,
       "passed": true,
       "tolerance": "1e-40",
@@ -30,7 +30,7 @@
     },
     {
       "name": "proton_trace_1994",
-      "computed": "1.994185812979964086728199368018716700089139582511810518467629733827297",
+      "computed": "1.994185812979964086728199368018716700089139582511814834682828948496677",
       "expected": 1.994,
       "passed": true,
       "tolerance": "0.001",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "hoefsmit-b-squared-reconciliation",
   "scriptFile": "hoefsmit_b_squared_reconciliation.py",
-  "scriptHash": "1c8eda5e0be3",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "f007384857d4",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,14 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -79,8 +79,8 @@
       "reconciliation": "All four formulas give b²≈0.753. PR #1331's '1.167' is a(a−h)+1 (sign error on the second factor). The correct formula a(h−a)+1 gives 0.753."
     },
     "matrix_verification": {
-      "hecke_residual": 1.8111358157653425e-71,
-      "braid_residual": 3.622271631530685e-71,
+      "hecke_residual": 0.0,
+      "braid_residual": 4.527839539413356e-71,
       "inverse_residual": 0.0
     },
     "proton_trace_crossval": {

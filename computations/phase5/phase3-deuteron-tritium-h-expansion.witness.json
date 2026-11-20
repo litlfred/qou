@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:46:12.262292+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:38:19.124421+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "h2_cancellation_extends",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4199,
+  "durationMs": 1914,
   "computation": "phase3-deuteron-tritium-h-expansion",
   "scriptFile": "phase3_deuteron_tritium_h_expansion.py",
-  "scriptHash": "a2f44ef6a7be",
-  "scriptCommitSha": "22a39d7206127865d9c5d52e3ca5295f51de8381",
+  "scriptHash": "b5c7f78ac635",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/phase5/phase3_deuteron_tritium_h_expansion.py"
+    ],
+    "reproduce": "python3 -u computations/phase5/phase3_deuteron_tritium_h_expansion.py"
   },
   "description": "Per-partition h-expansion for deuteron (H₆), tritium (H₉), and ³He (H₉). Tests whether the h²=0 cancellation proved at H₃ (proton) extends to heavier isotopes. Complete partition enumeration (not just trace-dominant).",
   "contentBlock": "prop:proton-mass-substrate-identity",
@@ -39,7 +48,7 @@
       "Z": 1,
       "N": 1,
       "n": 6,
-      "h2_total": "12.7030229395046",
+      "h2_total": "33.0914057649722",
       "h2_is_zero": false,
       "n_partitions": 11
     },
@@ -47,7 +56,7 @@
       "Z": 1,
       "N": 2,
       "n": 9,
-      "h2_total": "18.6630198491946",
+      "h2_total": "48.775131948333",
       "h2_is_zero": false,
       "n_partitions": 30
     },
@@ -55,15 +64,15 @@
       "Z": 2,
       "N": 1,
       "n": 9,
-      "h2_total": "36.5742285971405",
+      "h2_total": "83.5500120567887",
       "h2_is_zero": false,
       "n_partitions": 30
     },
     "cross_isotope_h2_cancellation": {
       "proton_H3": "0 (exact, Phase 1c)",
-      "deuteron_H6": "12.7030229395046",
-      "tritium_H9": "18.6630198491946",
-      "he3_H9": "36.5742285971405"
+      "deuteron_H6": "33.0914057649722",
+      "tritium_H9": "48.775131948333",
+      "he3_H9": "83.5500120567887"
     }
   }
 }

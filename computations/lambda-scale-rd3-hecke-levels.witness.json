@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T16:59:02.726211+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "computedAt": "2026-11-20T15:36:59.743274+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 2392,
+  "durationMs": 2541,
   "computation": "lambda-scale-rd3-hecke-levels",
   "scriptFile": "lambda_scale_rd3_hecke_levels.py",
-  "scriptHash": "9dbeb2ffb437",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "46cfe2462961",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,11 +17,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lambda_scale_rd3_hecke_levels.py"
+    ],
+    "reproduce": "python3 -u computations/lambda_scale_rd3_hecke_levels.py"
   },
   "description": "R&D 3: test natural categorical sum at H_3, H_5, H_6, H_7. For each H_n compute (1/?) · Σ_λ dim_q V_λ and extract its leading + h² coefficients. Find a level (and normalization) matching `5/2 − h²·G` empirically.",
   "contentBlock": "conj:lambda-scale-substrate-form",

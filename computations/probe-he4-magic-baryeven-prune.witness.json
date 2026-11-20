@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-28T15:45:19.821207+00:00",
-  "commitSha": "895ffb822720b0a5f1b50b54343fed14205eccf0",
+  "computedAt": "2026-11-20T15:38:20.056201+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "published_near_misses_1plusq_2sqrtq_are_bar_odd_excluded",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 3,
   "computation": "probe-he4-magic-baryeven-prune",
   "scriptFile": "probe_he4_magic_baryeven_prune.py",
-  "scriptHash": "2506325537de",
-  "scriptCommitSha": "9436374e9ec5ed5a2952575111671cd5496e2b4a",
+  "scriptHash": "d389d723a359",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -60,5 +60,5 @@
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "q0AnchorReason": "Resolves q0 through `q_parameter` -- `Q0 = mp.mpf(Q_50_DIGIT_STR)` at module scope -- and EVALUATES at it: `f(Q0)` is the bar-even predicate that decides the prune, and `f(Q0)` is tabulated. The stem is listed `physical_proton` in q0_anchor_manifest.json, so that is the anchor it computes at. CORRECTED 2026-08-28 (bean qou-324i). The previous disposition was `independent`, justified by: \"PROVED by running this producer under QOU_Q0_ANCHOR=muon and =proton ... every substantive field is byte-identical\". Re-running that experiment refutes it -- `/parameters/q0` moves -- so the stated proof does not hold even on its own terms, and the manifest already said proton. The SUBSTANTIVE outputs are indeed stable: the bar-even booleans survive the 11.54 ppb shift between the two anchors comfortably. That makes the old text right about the ROBUSTNESS and wrong about the DISPOSITION: a compute whose answer is insensitive to the pin still reads the pin, and `independent` asserts that it does not."
+  "q0AnchorReason": "Resolves q0 through `q_parameter` -- `Q0 = Q_MP` at module scope -- and EVALUATES at it: `f(Q0)` is the bar-even predicate that decides the prune, and `f(Q0)` is tabulated. The stem is listed `physical_proton` in q0_anchor_manifest.json, so that is the anchor it computes at. CORRECTED 2026-08-28 (bean qou-324i). The previous disposition was `independent`, justified by: \"PROVED by running this producer under QOU_Q0_ANCHOR=muon and =proton ... every substantive field is byte-identical\". Re-running that experiment refutes it -- `/parameters/q0` moves -- so the stated proof does not hold even on its own terms, and the manifest already said proton. The SUBSTANTIVE outputs are indeed stable: the bar-even booleans survive the 11.54 ppb shift between the two anchors comfortably. That makes the old text right about the ROBUSTNESS and wrong about the DISPOSITION: a compute whose answer is insensitive to the pin still reads the pin, and `independent` asserts that it does not."
 }

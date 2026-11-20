@@ -3,12 +3,12 @@
   "description": "The decisive 5\u2082-class test: the chiral \u03c33-pair carries a nonzero intrinsic bar-odd phase (CS(5\u2082)\u22600, #3930 target) but is anchor-smooth (|d\u03b9/dq|=O(1), ~7 orders below the swing) \u2014 so it cannot carry the c\u2083 swing. Closes the odd-channel geometric search; swing representational on every front. scope-(a).",
   "audit_only": true,
   "tier": "numerical (anchor-dependence; decisive geometric-search test)",
-  "computedAt": "2026-09-04T03:32:35.003197+00:00",
-  "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
+  "computedAt": "2026-11-20T15:46:02.469515+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "qbeta_5two_sigma3_anchor_test_probe.py",
-  "scriptHash": "1c9dc99e6d13",
+  "scriptHash": "fff3bf67c27f",
   "assertions": [
     {
       "name": "sigma3_carries_nonzero_intrinsic_phase",
@@ -40,12 +40,12 @@
     "compare": "5\u2082 \u03c31 quantum volume anchor-smooth (#3902); 4\u2081 odd-phase null (#3923)",
     "verdict_scope": "(a) scope-limited negative \u2014 \u03c33-pair alone does not carry the swing; not an ingredient exclusion"
   },
-  "scriptCommitSha": "d192dc7371c685b23be4141cb4791b7ee9ea0882",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0,
   "q0Anchor": "comparison",
   "q0Values": {
     "muon": "1.109978595642739046681795129380001752700065561029012",
-    "proton": "1.109978582751380807591669095610768879874499121873600"
+    "proton": "1.109978582751380807591669095610768879874499121873579"
   },
   "q0AnchorReason": "is an ANCHOR TEST: it evaluates sigma_3 at both pins and reports the difference; both pins are read on purpose"
 }

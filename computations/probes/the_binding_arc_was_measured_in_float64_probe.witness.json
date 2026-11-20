@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T18:02:47.566126+00:00",
-  "commitSha": "001de5c95dbc7fd59bf08f53110663e0f044c27a",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:48:05.782225+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "float(Q) loses q0 below ~1e-17 (the arc's real precision ceiling)",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "the_binding_arc_was_measured_in_float64_probe",
   "scriptFile": "the_binding_arc_was_measured_in_float64_probe.py",
-  "scriptHash": "b8754b5a48ca",
-  "scriptCommitSha": "942f2bcd78e9e3f230c5b4c6472f5c7fbeeae70c",
+  "scriptHash": "1b9e934859fc",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -90,11 +90,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -124,8 +127,8 @@
     "h_200bit": "0.20906029879563931543084621312967494385975749526306",
     "d_pn_200bit": "-0.10445824776972628901783406629000564412800000062852",
     "q_50_digits": "1.1099785827513808075916690956107688798744991218736",
-    "worst_identity_residual_200bit": "1.742444e-59",
-    "additivity_residual_200bit": "4.978412e-60",
+    "worst_identity_residual_200bit": "1.555754e-60",
+    "additivity_residual_200bit": "0.000000e+00",
     "float64_residuals_as_quoted_at_A5": "{'exchangeability nnnnn |S|=2': 3.33e-15, 'exchangeability nnnnn |S|=3': 5.77e-15, 'exchangeability nnnnn |S|=4': 6.22e-15, 'size-only vs Mobius': 7.55e-15, 'additivity / reconstruction': 0.0}",
     "bond_deltas_f64_minus_200bit": "{'pp': '-1.348e-13', 'pn': '-3.434e-13', 'nn': '-2.129e-13'}"
   },
@@ -134,5 +137,7 @@
     "200-bit precision tests ALGEBRAIC identities, which hold for every q. It buys nothing physical: Q_ERR = 9.2e-13 is q0's own stated uncertainty, so no quantity in this arc carries physical meaning below ~1e-12 at any working precision.",
     "The float64 route is not thereby shown harmless anywhere else. It was harmless HERE because every identity tested is exact and every magnitude is O(1); a cancellation-heavy quantity would not have survived, and the arc had no way to tell the difference.",
     "The seminormal off-diagonal uses b = sqrt(|a a' + 1|). The absolute value is a no-op: a a' = -1/[rho]^2 exactly, and a branching swap forces |rho| >= 2, so the radicand is non-negative. It is retained to mirror `build_seminormal_matrices_mp` letter for letter."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

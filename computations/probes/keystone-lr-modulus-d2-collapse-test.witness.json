@@ -3,12 +3,12 @@
   "description": "Decisive first gate of the LR modulus ID: does the SU(2)-colored \u03a3(2,3,5) order-5 fibre carry 4 independent components (needed for \u03bb\u22a25 classes) or collapse to D=2?",
   "audit_only": true,
   "tier": "numerical (structural gate)",
-  "computedAt": "2026-09-03T23:17:09.678745+00:00",
-  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
+  "computedAt": "2026-11-20T15:43:47.332525+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "keystone_lr_modulus_d2_collapse_test.py",
-  "scriptHash": "1befca83a6bc",
+  "scriptHash": "44498ec20404",
   "assertions": [
     {
       "name": "four_colors_evaluated",
@@ -61,8 +61,8 @@
     "psi_singular_values": [
       "9.066124e+00",
       "5.045008e-01",
-      "2.688097e-71",
-      "1.415410e-72"
+      "3.146780e-71",
+      "2.558493e-73"
     ],
     "psi_matrix_rank": 2,
     "d2_collapse": true,
@@ -74,7 +74,7 @@
     "on_survive": "amplitude-level |S_{0\u03bb}| test (separate step, not a closure)",
     "on_collapse": "route refuted; needs \u1e90/F_K knot-complement blocks"
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

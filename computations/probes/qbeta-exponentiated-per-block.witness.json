@@ -1,10 +1,10 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "mpmath 1.4.1; sympy 1.14.0",
-  "computedAt": "2026-09-04T03:32:37.379729+00:00",
+  "computedAt": "2026-11-20T15:46:44.828084+00:00",
   "computation": "qbeta-exponentiated-per-block",
   "scriptFile": "qbeta_exponentiated_per_block_probe.py",
-  "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "description": "PROBE 6a (U1, PR #1585 queue item 2, never previously run): seeds the Q_beta scaling map as F = exp(N*Sum_lambda g_lambda(u_L)) with the per-Wedderburn-block Delta tr_M closed forms (paper closed forms, PR #1764; leading eps-coefficients -2/-1/-2), even-in-hbar projection onto the integer u_L = b*hbar_q^2 ladder (C13 bridge change of variable), UNIFORM weights, scale fixed ONLY by the proved c_2 = -1. Reads off c_3, c_4 symbolically (constants over b) and numerically at both q0 anchors (proton-pinned from qou_substrate.constants; muon canonical). Records the anchor-stability diagnostic and two structural collapses: uniform-weight exp(Sum per-block) = exp(total), and exp-vs-linear seeding share c_3 when the seed starts at u_L^2. NOT a fit; no scan; no wiring.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -163,13 +163,13 @@
     "summary": "Exponentiated per-block seeding (U1) gives c_3 \u2248 -3.2494245 at both anchors \u2014 anchor-constant (swing 4.0e-10 vs empirical 2.38%) and 57.0% (proton) / 60.8% (muon) from the empirical c_3 \u2014 exactly the C13 failure mode. Two structural collapses make this unsurprising: (i) uniform weights collapse exp(\u03a3_\u03bb g_\u03bb) to exp(g_total); (ii) with the ladder-convention seed starting at u_L\u00b2, the exponentiated and linear seedings share c_3 identically \u2014 exponentiation only moves c_4 (by +\u00bd). Scope-limited refutation (a): the exponentiated per-block \u0394tr_M seeding, ALONE and with uniform weights, does not reproduce c_3; it does not exclude per-block data inside a non-linear or non-uniform closure (which would need a derived, not fitted, weight rule). Extends C13: 'linear / bar-even' \u2192 'linear, bar-even, AND exponentiated-uniform' \u0394tr_M-seeded f all refuted."
   },
   "allPassed": true,
-  "scriptHash": "5d6310623c0b",
-  "scriptCommitSha": "d192dc7371c685b23be4141cb4791b7ee9ea0882",
+  "scriptHash": "958e08cffa1c",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0,
   "q0Anchor": "comparison",
   "q0Values": {
     "muon": "1.109978595642739046681795129380001752700065561029012",
-    "proton": "1.109978582751380807591669095610768879874499121873600"
+    "proton": "1.109978582751380807591669095610768879874499121873579"
   },
   "q0AnchorReason": "compares the exponentiated per-block c_3 against the empirical target at BOTH pins; both pins are read on purpose and each has its own target"
 }

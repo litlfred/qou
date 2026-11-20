@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-09-05T18:03:20.458042+00:00",
+  "computedAt": "2026-11-20T15:43:58.676827+00:00",
   "description": "The multiplicative assembly W = 1 - PROD f cannot yield a positive 3-body Ursell cumulant while fpn <= 2/3. Bound b3 <= 3*fpn - 2 follows from P3 >= 0 alone, so it is independent of the edge set, the like-pair factors, and the energy scale.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -245,16 +245,16 @@
   "lean": "QOU/MassTheory/MayerThreeBodySign.lean (sorry-free)",
   "related": [
     "probes/he4-body-order-shortfall-location.witness.json",
-    "content/quantum-observable-universe/mass-theory/binding-closure-conditional.md"
+    "folio/quantum-observable-universe/mass-theory/binding-closure-conditional.md"
   ],
   "owner_ruling": "R1 2026-08-15 \u2014 convention D canonical, C excised",
   "allPassed": true,
-  "scriptHash": "c94d1fd7c054",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "scriptFile": "mayer_threebody_sign_threshold_probe.py",
+  "scriptHash": "5d732205b957",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "mayer_threebody_sign_threshold_probe.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

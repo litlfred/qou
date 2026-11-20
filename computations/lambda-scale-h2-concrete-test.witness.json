@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T16:58:58.806202+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:36:54.551896+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "h2_concrete_test_completed",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 35,
+  "durationMs": 24,
   "computation": "lambda-scale-h2-concrete-test",
   "scriptFile": "lambda_scale_h2_concrete_test.py",
-  "scriptHash": "b94d4cca9ca1",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "cacf1535c480",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,11 +25,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lambda_scale_h2_concrete_test.py"
+    ],
+    "reproduce": "python3 -u computations/lambda_scale_h2_concrete_test.py"
   },
   "description": "Concrete test per 2026-05-23-lambda-scale-canonical-unification.md §'Concrete test': symbolic h-expansion of `1/(1 − h_q · q_0^10)` around h = 0 (with q = (h + √(h²+4))/2). Compares h² coefficient to canonical Family A `3/4` and to canonical + Yekutieli additive `3/4 − G`. Reports h⁴ coefficient as concrete target for Option A h⁴ categorical derivation. Informs whether Path C (Bring color-tube) IS the resummed Path B (additive Yekutieli) at leading order.",
   "contentBlock": "conj:borromean-baryon-mass-formula",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T04:47:12.733266+00:00",
-  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
+  "computedAt": "2026-11-20T15:41:55.940510+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "A1_bond_is_convex_combination",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 15,
   "computation": "framed_vs_writhe_normalised_bonds_probe",
   "scriptFile": "framed_vs_writhe_normalised_bonds_probe.py",
-  "scriptHash": "8c099fc3aeef",
-  "scriptCommitSha": "def46509f247511bae9f8a7f780e0014a37f0e90",
+  "scriptHash": "6128cbe9fbba",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

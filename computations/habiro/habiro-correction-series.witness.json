@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:08:35.888853+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-20T15:36:11.021030+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "S_near_1_plus_hsq",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "S ≈ 1 + ℏ² to 3 decimal places"
     }
   ],
-  "allPassed": true,
-  "durationMs": 30,
+  "allPassed": false,
+  "durationMs": 142,
   "computation": "habiro-correction-series",
   "scriptFile": "habiro_h9_correction_series.py",
-  "scriptHash": "c005f54a6867",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3dfdb5dc10af",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -41,13 +41,13 @@
     ],
     "reproduce": "python3 -u computations/habiro/habiro_h9_correction_series.py"
   },
-  "description": "Habiro correction series S = 1 + c₂·ℏ² + c₄·ℏ⁴ + ... Product form: S ≈ (1+ℏ²)(1 + c_next·ℏ²) with c_next ≈ -0.032569. Best algebraic match: c_next ≈ −1/30 (miss 0.000764).",
+  "description": "Habiro correction series S = 1 + c₂·ℏ² + c₄·ℏ⁴ + ... Product form: S ≈ (1+ℏ²)(1 + c_next·ℏ²) with c_next ≈ 70.511604. Best algebraic match: c_next ≈ −1/30 (miss 70.544937).",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
   "data": {
-    "S_exact": "1.009494309259837381739023",
-    "c2_approx": 0.9671110255528366,
-    "c_next_after_1_plus_hsq": -0.032569236182882766,
+    "S_exact": "1.70883845642372694419793",
+    "c2_approx": 72.20382945004067,
+    "c_next_after_1_plus_hsq": 70.51160388748723,
     "best_algebraic_match": "-1/30",
-    "miss_vs_neg_1_over_30": 0.000764097150450564
+    "miss_vs_neg_1_over_30": 70.54493722082056
   }
 }

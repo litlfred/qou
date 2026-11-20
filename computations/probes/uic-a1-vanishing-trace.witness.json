@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-12T22:59:48.536016+00:00",
-  "commitSha": "07bd748fdc6e54b80f8c0bd75126f8197101847a",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:48:55.775381+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "q_hook is positive on every partition",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "uic-a1-vanishing-trace",
   "scriptFile": "uic_a1_vanishing_trace_probe.py",
-  "scriptHash": "c0f5dc7b76c3",
-  "scriptCommitSha": "bad597ca516561fd759f6bec5f6a5725fba37428",
+  "scriptHash": "f3c6ae945b6a",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -90,14 +90,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -108,7 +108,7 @@
   "description": "Gap qou-sv7h: the (2,1) Markov trace at A=1 is exactly zero (one such pair in 34 over k<=5), but the accumulator TELESCOPES and it cancels -- uic(1,1) is bit-identical at 50/100/150 dps, so term 1 is NOT divergent. RETRACTS the earlier conclusion in PR #6746 / commit 2cb02fb644. Measures the two proposed fixes: V1 (drop the A=1 step) is the DIVERGENT option, removing one half of the cancelling pair; V2 (free-nucleon reference) is finite. The wrong sign is NOT explained.",
   "auditOnly": "docs/audits/2026-09-05-uic-a1-vanishing-trace.md",
   "parameters": {
-    "q0": "1.10997858275138080759166909561076887987449912187360000000000"
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281"
   },
   "data": {
     "precision_scan_2_1_A1": [

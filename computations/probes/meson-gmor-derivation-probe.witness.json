@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T13:49:28.292602+00:00",
-  "commitSha": "837b5acb3b07d6cda32c950271818b04c01571c2",
+  "computedAt": "2026-11-20T15:43:58.892463+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "gmor_lo_reproduces_squared_ratio_within_chpt_lo",
@@ -15,7 +15,7 @@
     },
     {
       "name": "sweep_winner_is_the_spin1_spin3half_fusion_sum",
-      "computed": "2.89781730522454796e-70",
+      "computed": "5.79563461044909592e-70",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-30",
@@ -32,11 +32,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "meson-gmor-derivation-probe",
   "scriptFile": "meson_gmor_derivation_probe.py",
-  "scriptHash": "53b7f41560d0",
-  "scriptCommitSha": "ebc21d1ae73e13c7e8e15b6c6876350fc9b0086f",
+  "scriptHash": "e40580ad59c2",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,14 +44,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "9916510690677ea8"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

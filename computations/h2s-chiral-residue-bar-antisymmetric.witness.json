@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T20:21:24.942711+00:00",
-  "commitSha": "bf3ca365d155a36be2c535d53d00f336921b4c53",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:36:08.401613+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "residual_bracketed_by_consecutive_odd_powers_under_convention_D",
@@ -17,8 +17,8 @@
   "durationMs": 4,
   "computation": "h2s-chiral-residue-bar-antisymmetric",
   "scriptFile": "h2s_chiral_residue_bar_antisymmetric.py",
-  "scriptHash": "5a45384181cf",
-  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
+  "scriptHash": "a314cbf1af6f",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -44,32 +44,32 @@
   "description": "H2S +2.1 deg chiral-residue parity check, convention D. The block's identification of the residual as the bar-ANTI-symmetric (odd-in-h) channel rests on a bracket h*z^3 < 2.1 < h*z^2. That bracket is a CONVENTION-C fact: in C it is 1.49 < 2.1 < 2.99 (true), in the canonical D it is 2.75 < 2.1 < 4.50 (false, 2.1 is below the window). Worse, the parity premise itself fails under D — h*z^k is odd-in-h only if z is bar-even, and z_D(1/q)/z_D(q) = q^-4, so the classification is unavailable rather than merely unfavourable. And even under C the window is 71% of the target, so nearly any residual would have passed it. The assertion below is red and is correct to be red; do not relax it. The H2O-clean / H2S-residual dichotomy is untouched by this — only this bracket argument for it is.",
   "contentBlock": "prop:symmetric-block-domain-weight",
   "parameters": {
-    "q": "1.10997858275138080759166909561076887987449912187360000000000",
+    "q": "1.10997858275138080759166909561076887987449912187357873607281",
     "convention": "D",
-    "z_D": "0.612688037146465251595829863945899248026308391545087014074774",
-    "z_C_for_comparison": "0.499320334183694452413442680257666303751948164041531945276170",
-    "h_bar_antisymmetric": "0.209060298795639315430846213129674943859757495263063078255215",
-    "h_half_bar_antisymmetric": "0.104388058259181637833117159349806602633660861250261059593046"
+    "z_D": "0.612688037146465251595829863945899248026308391545064759724287",
+    "z_C_for_comparison": "0.499320334183694452413442680257666303751948164041532194568092",
+    "h_bar_antisymmetric": "0.209060298795639315430846213129674943859757495263024555381696",
+    "h_half_bar_antisymmetric": "0.104388058259181637833117159349806602633660861250241876456011"
   },
   "data": {
     "observed_opening_deg": "2.10000000000000000000000000000000000000000000000000000000000",
     "odd_candidates_deg_conventionD": {
-      "h*z^2": "4.49648346421195742314108482106593992282699795531145170500908",
-      "h*z^3": "2.75494162774956252739418262496745549755932413150732981030546",
-      "h_half*z": "3.66448419077758343123961036078368881218088698402753985512835"
+      "h*z^2": "4.49648346421195742314108482106593992282699795531029650547935",
+      "h*z^3": "2.75494162774956252739418262496745549755932413150652196705411",
+      "h_half*z": "3.66448419077758343123961036078368881218088698402673333870771"
     },
     "odd_candidates_deg_conventionC": {
-      "h*z^2": "2.98643250694401840736203816883105702372514612825544891583580",
-      "h*z^3": "1.49118647738433567449894727347931075546401267191649259090167",
-      "h_half*z": "2.98643250694401840736203816883105702372514612825544891583580"
+      "h*z^2": "2.98643250694401840736203816883105702372514612825490159748400",
+      "h*z^3": "1.49118647738433567449894727347931075546401267191622004821285",
+      "h_half*z": "2.98643250694401840736203816883105702372514612825490159748400"
     },
     "z_is_bar_even_conventionD": false,
     "z_is_bar_even_conventionC": true,
-    "z_bar_ratio_conventionD": "0.658781816976030318011303734540239501843453831996438870343403",
+    "z_bar_ratio_conventionD": "0.658781816976030318011303734540239501843453831996489351636665",
     "residual_is_odd_in_h_between_powers": false,
     "bracket_window_width_pct_of_target": {
-      "D": "82.9305636410664236069953426713564012032225630382915187954104",
-      "C": "71.2021918837944158506233759691307746791015931589979202349582"
+      "D": "82.9305636410664236069953426713564012032225630382749780202497",
+      "C": "71.2021918837944158506233759691307746791015931589848356795785"
     },
     "finding": "The H2O-clean / H2S-residual DICHOTOMY (two self-dual lone pairs vs a self-dual 3s^2 plus a chiral 3p_z) is a structural reading and is not touched here. What is retracted is the quantitative parity argument offered for it: (b) the bar-parity classification of h*z^k does not exist under convention D, since z_D(1/q)/z_D(q) = q^-4 exactly, so the product has no clean bar-parity; and (a) this particular bracket does not contain 2.1 deg under D. Even under C the bracket spanned 71% of the target, so it distinguished almost nothing. Neither point excludes the +2.1 deg being chiral by another route -- only this construction."
   },

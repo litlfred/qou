@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:15:30.931449+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:37:53.504524+00:00",
+  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
   "assertions": [
     {
       "name": "pion_l1",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 17,
   "computation": "meson-character-shortcut-l1",
   "scriptFile": "meson_character_shortcut_l1.py",
-  "scriptHash": "4d2e7592b214",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "81684e43c0cf",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -54,6 +54,6 @@
   "data": {
     "chi_pi_delta": 8.881784197001252e-16,
     "chi_K_delta": 6.661338147750939e-16,
-    "speedup_factor": 9.102740748109829
+    "speedup_factor": 9.697118155619597
   }
 }
