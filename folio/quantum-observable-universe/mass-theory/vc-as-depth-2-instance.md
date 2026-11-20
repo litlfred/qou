@@ -2,7 +2,7 @@
 period correspondence).**
 
 The Kashaev–Murakami–Murakami volume conjecture
-([`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture))
+([Kashaev volume conjecture](#conj:kashaev-volume-conjecture))
 admits a clean structural reading inside the graded-Mikusiński
 framework
 ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence)):

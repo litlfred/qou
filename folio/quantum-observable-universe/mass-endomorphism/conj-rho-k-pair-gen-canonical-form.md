@@ -41,7 +41,7 @@ The Kashaev-limit form (six-term $T_3$) provides the anticipated canonical form.
 
 ## Wedderburn-coupling structure
 
-Under [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen, the pair coupling expands as:
+Under [graded expansion of $\rho_K$](rho-k-graded-expansion.md) §pair-gen, the pair coupling expands as:
 
 $$
 |\hat V_i \hat V_j|_{\text{Wedderburn}}
@@ -71,7 +71,7 @@ The open requirement is the functional form $f_2$. The naive logarithmic form $\
 
 Deriving the canonical $f_2$ yields four consequences:
 1. This conjecture elevates to a theorem.
-2. The open status of [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen resolves to proved.
+2. The open status of [graded expansion of $\rho_K$](rho-k-graded-expansion.md) §pair-gen resolves to proved.
 3. Downstream conjectures become reachable, specifically [Canonical operator-level lepton-mass-tower formula](../mass-theory/lepton-mass-tower-canonical.md).
 4. The $\mathfrak{Q}_\beta$ residual closure direction becomes tractable.
 
