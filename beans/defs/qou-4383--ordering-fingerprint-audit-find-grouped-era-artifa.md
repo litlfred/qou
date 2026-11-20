@@ -899,3 +899,41 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 Status `in-progress` → `todo`. The claim came from batch PR(s) #8352, closed on the owner's instruction as vacuous or superseded (`docs/coordination/2026-11-20-batch-pr-triage.md`, PR #8531). `todo` is the status this bean had before that claim. Before the reset, nothing showed this bean completed: it is not completed or scrapped, no open PR outside those batches cites it, and no main commit since the claim names it with a closing word.
 
 **Review before closing:** a main commit subject names this bean with a closing word (2026-09-13: "fix(qou-4383): TR_M_AT_Q0 becomes a live view — the last hardcoded grouped registry, closed"). The work may be partly or fully done. Read the bean before you close it.
+
+## 2026-11-20 — the SYMBOLIC per-λ chi caches are a blind spot of the value audit, and two of them were wrong
+
+Found by the W3 precision-gate pass (PR #8627) while draining the q0-anchor refill.
+`intra_ordering_value_fingerprint_audit.py` keys on |tr_M| VALUES, so it cannot see
+the symbolic per-partition caches `chi-<atom>-h<n>.witness.json` written by
+`per_irrep_pole_atom.load_or_build_chi_atom` — they carry χ^λ_q as sympy strings,
+no tr_M number.
+
+Measured against a fresh `hoefsmit_symbolic.chi_lambda_symbolic` on today's
+`atom_canonical_crossings(Z, N)`:
+
+| cache | convention_fingerprint matches? | per-λ result |
+|---|---|---|
+| chi-proton-h3 | no | χ_(2,1) WRONG |
+| chi-neutron-h3 | **yes** | χ_(2,1) WRONG |
+| chi-deuteron-h6 | **yes** | (6) ok, (5,1) WRONG, (4,2) WRONG (stopped there) |
+| chi-tritium-h9 | yes | (9) ok (stopped there) |
+| chi-helium-3-h9 | no | (9) differs (stopped there) |
+
+The H_3 fresh values were confirmed by a third, independent route: a from-scratch
+sympy (2,1) rep (σ1 = diag(q,−1/q), σ2 solved from braid + Hecke relations,
+averaged = (σ+σ⁻¹)/2) reproduces the FRESH χ_(2,1) for both nucleons exactly.
+
+**The detector defect.** The resume guard compares `convention_fingerprint`, a ctype
+**multiset**. A reordering of the same letters (the 2026-09-05 grouped → alternating
+intra ruling, qou-hu1f) leaves the multiset unchanged, so the neutron and deuteron
+caches were served as current. That is an order-blind fingerprint, the same class as
+the value audit's own origin story.
+
+**Done in #8627:** chi-proton-h3 and chi-neutron-h3 regenerated (commit 09a1a5d27d).
+**NOT done, needs a decision:** deuteron-h6, tritium-h9, helium-3-h9, helium-4-h12
+regeneration (h9/h12 are long symbolic computes) and re-running their consumers
+(`delta_lambda_empirical_tabulation`, `chi_free_via_lr`, `aK_via_lp_dual`,
+`binding_depth_stratified_lr`, `mass_vol_density`, the perknot-rerun probes, …), whose
+committed numbers move. Fixing the guard (fingerprint the ORDERED word) is cheap and
+corpus-derived; it is not done here because it would also invalidate every cache on
+the next run.
