@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-20T19:20:00Z
+updated_at: 2026-11-20T19:15:00Z
 parent: qou-qhcr
 ---
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
@@ -79,3 +79,19 @@ Open:
 - Needs an edge-deletion induction. Estimate: multi-session.
 
 **Step 3** (triangulation) is unchanged: a Mathlib gap.
+
+## 2026-11-20 — W9: proof plan for g >= 0 (not formalised)
+
+**Target.** If σ, α ∈ Perm D, α is a fixed-point-free involution, and ⟨σ, α⟩ is transitive on D ≠ ∅, then c(σ) + c(α) + c(σα) ≤ |D| + 2.
+
+**Paper proof.**
+1. Write α = t₁⋯t_k as k = |D|/2 = c(α) disjoint transpositions, and let σⱼ = σ·t₁⋯tⱼ.
+2. **Lemma S:** multiplying by a transposition (a b) changes c by exactly ±1. It is +1 (a split) if a and b are in the same cycle, and −1 (a merge) otherwise.
+3. Track the orbit count of ⟨σ, t₁, …, tⱼ⟩:
+   - it starts at c(σ) and ends at 1 (transitivity);
+   - a split step does not change it, since a and b are already in one orbit;
+   - a merge step lowers it by at most 1.
+4. So the number of merges is m ≥ c(σ) − 1.
+5. Then c(σα) = c(σ) + k − 2m ≤ k − c(σ) + 2, which is the target.
+
+**Mathlib status (searched the olean name strings of `Perm/*`).** There is no Lemma S. The closest results are `card_support_swap_mul` and `support_swap_mul_eq`, which are about supports, not cycle counts. Lemma S must be built from SameCycle(π·swap a b) versus SameCycle π, which is the bulk of the work.
