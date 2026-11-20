@@ -4,8 +4,8 @@ protons, neutrons, and electrons via the three generation operations
 The knot formula for an atom with $Z$ protons and $N$ neutrons is
 
 $$
-  Z\mathfrak{p}  \oplus  N\mathfrak{n}
-   \oplus  Z \cdot T_{2,3}
+  Z\mathfrak{p} \oplus N\mathfrak{n}
+   \oplus Z \cdot T_{2,3}
 $$
 
 where $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p \oplus \mathcal{L}_H$ is the
@@ -20,11 +20,11 @@ their quark constituents).
 **Mass formula.**
 
 $$
-  \mathfrak{m}(Z, N) = 
+  \mathfrak{m}(Z, N) =
   Z \cdot m_{\mathfrak{p}}
-  +  N \cdot m_{\mathfrak{n}}
-  -  (Z + N) \cdot (B/A)
-  +  Z \cdot m_e
+  + N \cdot m_{\mathfrak{n}}
+  - (Z + N) \cdot (B/A)
+  + Z \cdot m_e
 $$
 
 where $m_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$
@@ -38,7 +38,7 @@ $m_e \approx 0.511$ MeV is the electron mass.
 All individual knot types satisfy the embeddability closure
 ([embeddability closure](#thm:embeddability-closure)): every
 constituent has Seifert genus $\leq 4$ and descends to the
-base manifold.  The generation completeness theorem
+base manifold. The generation completeness theorem
 ([generation completeness](#thm:generation-completeness)) guarantees
 that every knot with genus $\leq 4$ is reachable from the seven
 torus generators via Skein crossing changes, so the particle
@@ -52,13 +52,13 @@ $P_{\mathcal{N}}(q)$ are computed via transfer matrices
 Each nucleon pair $(i, j)$ contributes a $2 \times 2$ transfer
 matrix $T_{ij}(q)$ with crossing coefficients determined by the
 pair type ($\mathfrak{p}$-$\mathfrak{p}$,
-$\mathfrak{n}$-$\mathfrak{n}$, or mixed).  The nuclear Skein
+$\mathfrak{n}$-$\mathfrak{n}$, or mixed). The nuclear Skein
 polynomial in factored form
 ([Skein polynomial](#prop:skein-polynomial-transfer-matrix)) is:
 
 $$
   P_{\mathcal{N}}(q)
-  = 
+  =
   \prod_{i=0}^{A-2} \hat{V}_i(q)
 $$
 
@@ -66,7 +66,7 @@ computed by exactly $\binom{A}{2}$ transfer matrix multiplications
 (one per nucleon pair), with polynomial degree $\leq A^2 - 1$.
 The factored form is never expanded — each factor $\hat{V}_i(q)$ is
 a rational function in $q^{1/2}$ obtained from a chain of
-$2 \times 2$ matrix products.  The step count ranges from trivial
+$2 \times 2$ matrix products. The step count ranges from trivial
 (${}^{1}\mathrm{H}$: $0$ steps) to cheap at the heavy end:
 ${}^{56}\mathrm{Fe}$ takes $1540$ steps (degree $\leq 3135$) and
 ${}^{238}\mathrm{U}$ takes $28203$ steps (degree $\leq 56643$) —
@@ -81,7 +81,7 @@ At the substrate parameter $q$, the dominant eigenvalue
 $\lambda_+ = 1.1073$ governs shell energy scaling via the
 Chebyshev recurrence
 $\hat{V}(n+1, q) = (q - q^{-1}) \hat{V}(n, q) + \hat{V}(n-1, q)$,
-reproducing the Rydberg formula $\mathfrak{E}_{\mathrm{bind}} \propto \lambda_+^{-n} \approx 1/n^2$ for low shells.  Sub-shell
+reproducing the Rydberg formula $\mathfrak{E}_{\mathrm{bind}} \propto \lambda_+^{-n} \approx 1/n^2$ for low shells. Sub-shell
 structure ($s, p, d, f$ with capacities $2, 6, 10, 14$) emerges
 from tensor product eigenvalue degeneracies of multi-electron
 atoms.
@@ -92,7 +92,7 @@ Beta transitions between table entries are governed by a single
 universal matrix $\Delta_\beta(q)$
 ([beta decay matrix](#prop:beta-decay-transfer-matrix)):
 the same $2 \times 2$ perturbation for every nucleus, regardless
-of partner nucleon type.  The $Q$-value of any decay
+of partner nucleon type. The $Q$-value of any decay
 is the difference of parent and daughter Skein polynomials,
 concentrated at the converting nucleon's generators.
 
@@ -101,10 +101,10 @@ In the QOU framework, proton--proton Hopf crossings carry a
 repulsive Skein phase (electromagnetic charge), while
 proton--neutron and neutron--neutron crossings are purely attractive
 (strong force only), so heavy nuclei must acquire extra neutrons to
-stay bound.  The neutron count $N$ therefore exceeds $Z$ for all
+stay bound. The neutron count $N$ therefore exceeds $Z$ for all
 elements beyond calcium: the repulsive crossing penalty grows as
 $\sim Z^2$, requiring additional neutrons to stabilize the
-multi-nucleon link.  Elements marked $\diamond$ have a proton
+multi-nucleon link. Elements marked $\diamond$ have a proton
 stability pair; those marked $\star$ have a neutron stability pair.
 At these values the Skein polynomial has closed-shell structure
 with anomalously high $B/A$.
@@ -134,12 +134,9 @@ classified by the fermion--boson decomposition
 proton and neutron quarks are Borromean-linked trefoils
 ([Borromean baryon](#def:borromean-baryon)), electrons are trefoil
 fermions ($T_{2,3}$), and nuclear binding comes from Hopf link
-crossings.  The full building-block catalogue with Jones polynomials
+crossings. The full building-block catalogue with Jones polynomials
 and volumes is in
 ([building-block knots](#rem:building-block-knots)).
-
-**Per-element table.** The full $Z = 1$ to $92$ grid lives as the *Per-element stability summary* section of the [recursive atom-knot atlas](#prop:recursive-atom-knot-atlas), which also carries the per-isotope coverage table for all 3558 nuclides in AME 2020 (Z = 0 to 118).
-
 
 **Column key.** $N_{\mathrm{pred}}$ = predicted $N$ from beta-stability formula
 ([beta-stability](#prop:beta-stability)),
@@ -147,15 +144,15 @@ $\Delta$ = $|N - N_{\mathrm{pred}}|$,
 $k_\alpha$ = closed $\alpha$ sub-links ($= \min(\lfloor Z/2 \rfloor, \lfloor N/2 \rfloor)$),
 $M_q$ = QOU predicted mass, $M_o$ = observed mass.
 $\diamond$ = proton stability pair, $\star$ = neutron stability pair.
-All masses in MeV/$c^2$.  $M_q$ computed at
+All masses in MeV/$c^2$. $M_q$ computed at
 $q = q_0$; $M_o$ from AME2020 nuclear
-masses plus $Z \cdot m_e$.  $B/A$ (MeV) from AME2020.
+masses plus $Z \cdot m_e$. $B/A$ (MeV) from AME2020.
 The most stable (longest-lived) isotope is listed for each element.
 
 **Knot exhaustiveness.**
 Detection is complete: every irreducible summand is labeled by a
 knot via Alexander surjectivity and Markov non-degeneracy
-([knot exhaustiveness](#rem:knot-exhaustiveness)).  Generation is
+([knot exhaustiveness](#rem:knot-exhaustiveness)). Generation is
 complete: every knot with genus $\leq 4$ is reachable
 ([generation completeness](#thm:generation-completeness)).
 Faithfulness (whether distinct knots always give distinct Jones
