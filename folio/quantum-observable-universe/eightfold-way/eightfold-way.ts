@@ -40,6 +40,19 @@ export default chapter({
       ],
     }),
 
+    // ── §6. q-Deformation and the hyperbolic weight lattice ──────
+    // How the substrate parameter q deforms the hexagonal weight
+    // lattice: quantum Serre relations, effective angle deformation,
+    // compact/non-compact root split, Thurston relaxation.
+    section({
+      title: "$q$-Deformation and the hyperbolic weight lattice",
+      label: "sec:q-deformed-eightfold",
+      blocks: [
+        "q-deformation-weight-lattice",
+        // TODO: thurston-relaxation (from brings-surface)
+      ],
+    }),
+
     // ── §2. Flavor representations and charge assignments ────────
     // The fundamental triplet 3 from unknot variants, the conjugate
     // 3̄, and the charge assignments (isospin, hypercharge).
@@ -119,19 +132,6 @@ export default chapter({
         // Cross-chapter references (blocks live in SM appendix):
         // conj:sm-colour-stabilizer-action — faithfulness of SU(3) on state space
         // TODO: color-tube-coords-intro (new block, from brings-surface)
-      ],
-    }),
-
-    // ── §6. q-Deformation and the hyperbolic weight lattice ──────
-    // How the substrate parameter q deforms the hexagonal weight
-    // lattice: quantum Serre relations, effective angle deformation,
-    // compact/non-compact root split, Thurston relaxation.
-    section({
-      title: "$q$-Deformation and the hyperbolic weight lattice",
-      label: "sec:q-deformed-eightfold",
-      blocks: [
-        "q-deformation-weight-lattice",
-        // TODO: thurston-relaxation (from brings-surface)
       ],
     }),
 

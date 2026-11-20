@@ -35,10 +35,7 @@ $\omega$ is not the octet member at all, because the nonet is ideally mixed.
 
 [The GMO relation](#rem:meson-mass-splitting) is an **identity** of the
 first-order octet-breaking ansatz: it holds for every choice of the breaking
-parameters, so reproducing it is evidence for nothing.  The decuplet
-equal-spacing rule behind the $\Omega^-$ prediction is the same
-([established later in this
-chapter](#rem:decuplet-equal-spacing)).
+parameters, so reproducing it is evidence for nothing.
 
 The mixing is the opposite case, and this too is a theorem
 .  Holding fixed the

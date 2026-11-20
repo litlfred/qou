@@ -1,4 +1,4 @@
-Given a nucleus with $A$ nucleons and transfer matrix chains $\{M_i\}_{i=0}^{A-2}$, this describes how adding one nucleon produces the $A+1$ nucleus. This inductive step is the engine behind every Skein polynomial computation.
+Given a nucleus with $A$ nucleons and transfer matrix chains $\{M_i\}_{i=0}^{A-2}$, this describes how adding one nucleon produces the $A+1$ nucleus. This inductive step is the engine behind every Skein polynomial computation. 
 
 ## The inductive step: $A \to A+1$
 
@@ -46,7 +46,7 @@ The crossing product stratifies into jet orders. Jet order $r$ is the $(r+1)$-bo
 
 ## Gröbner--Shirshov normal form
 
-The inductive construction produces a canonical normal form at every step. By Rules 1 and 2 the crossings at a fixed generator are contiguous in the braid word and the blocks are ordered by increasing generator index, so the nucleus element is a block-ordered product of linear factors $c\,\sigma_i + d \in H_A(q)$.
+The inductive construction produces a canonical normal form at every step. By Rules 1 and 2 the crossings at a fixed generator are contiguous in the braid word and the blocks are ordered by increasing generator index, so the nucleus element is a block-ordered product of linear factors $c\,\sigma_i + d \in H_A(q)$. 
 
 ## Shell closure signatures
 
