@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-15T13:30:00Z
+updated_at: 2026-11-20T09:55:00Z
 parent: qou-9nnz
 ---
 
@@ -104,3 +104,72 @@ Was in-progress with no bean update since October 2026. Reset to todo by the own
 
 ## 2026-11-20 — W2: main still carries the float64 q_int; #7443 brought up to date
 Checked on main at `917b69399`: `qou_substrate/constants.py:190` and `substrate/q_parameter.py:169` are both still float64, and `_DPS_DEFAULT = 50`. #7443 now has main merged in (the one witness conflict was resolved by re-running its producer: gated_sum moves 1.8e-16 relative) and is ready for /prepare-merge. #7440's stage-1 content is already on main. (session_01VQDpPfkCTEiKEWdANj7rYB)
+
+## 2026-11-20 -- #7443 MERGED; the fix is on main, and the W2 note above is stale by hours
+
+The entry immediately above ("main still carries the float64 q_int ... #7443 is
+ready for /prepare-merge", session_01VQDpPfkCTEiKEWdANj7rYB, same day) was
+correct when written and is now **wrong in both halves**. #7443 merged at
+09:02Z. Verified on `origin/main` rather than taken from the PR state:
+
+- `tools/qou-substrate/python/qou_substrate/constants.py` -- the float64 `q_int`
+  is gone, replaced by the exact mpmath version carrying the `qou-oiz3` comment
+  block (including the correction that PR #7245 mis-attributed the leak to
+  `pyhecke/wedderburn.py`, and the n-growth table).
+- `computations/substrate/q_parameter.py` -- the second definition is gone too;
+  the old body survives only as a comment explaining why fixing one site alone
+  would have left the whole muon layer on float64.
+- `_DPS_DEFAULT = 70` (was 50).
+
+Landed commits: `83ede53aad7`, `14a9e822427`, `0218c9ba9ad`, `8d3d1af6a9a`,
+`cacbddcffb1`, `cbe26df665c`.
+
+## And the audit's section-3 residual -- the one bigger than the fix -- is CLOSED. Measured.
+
+`docs/audits/2026-09-12-uic-float64-excision.md` S3 records that
+`q_hook_product` / `q_factorial` / `wedderburn_weight` were left `mpf`-typed and
+float64-**valued**, worst relative **1.0212424e-15** at lambda = (2,2) against
+**2.4946976e-16** removed -- "the residual is 4x what was removed" -- and defers
+the root fix to the owner on the strength of a 124-file / 243-witness blast
+radius. **That paragraph is superseded.** The root `q_int` fix landed, and the
+same arc gave each primitive an explicit precision context with a floor
+(`_DPS_FLOOR = 50`, `mp.workdps(d + 10)`, return rounded to `d`), which is the
+other half: mpmath rounds to the CONTEXT's precision, so an exact `q_int` into
+an `mp.mpf("1.0")` accumulator under a bare-import ambient `mp.dps` of 15 would
+still have thrown the exactness away one multiplication at a time.
+
+Measured on main at `cacbddcffb1`, python3.13 / mpmath 1.4.1, over **125
+quantities** (every partition of n = 3, 6, 9, 12, plus the four `q_factorial`),
+as self-consistency across ambient precision -- which needs no reference `q` and
+so cannot be contaminated by the input question:
+
+    worst | f(ambient 15) - f(ambient 120) | / f(ambient 120)
+        = 1.1575853e-51   at lambda = (5,3,2,2), n = 12
+
+Had the ambient trap been live this would sit near 1e-16. So the arithmetic is
+ambient-independent to ~1e-51, and the cone is no longer float64-limited in
+three of its four factors.
+
+**A measurement of mine that was wrong, and how.** A first pass compared the
+module's output against a 120-dps product built from `Q_50_DIGIT_STR` and got
+**3.9873e-49**, ambient-independent across dps 15/50/70/100. That is not an
+arithmetic error: `q_int` resolves its `q` from `q_parameter` module globals at
+call time with its own cache, which is not `Q_50_DIGIT_STR`, so the figure
+measures a difference between two `q` values. Do not quote it. The
+ambient-sweep flatness is what exposed it -- a genuine floor artifact would have
+shrunk once ambient passed 50.
+
+**What the self-consistency test does NOT establish.** It bounds the arithmetic,
+not the absolute accuracy against the true `q`. The input ceiling is a separate
+and still-open fact, and it is this bean's line-60 item: `_Q_MP` is built from
+`Q_50_DIGIT_STR` and carries ~50 significant digits while `OUTPUT_DPS = 60`.
+`pyhecke.wedderburn._DPS_FLOOR = 50` is a second expression of the same ceiling
+in the same cone. So a value serialized at 60 digits out of these primitives
+still has ~10 digits nothing supplies.
+
+**`qou-5eg1` is NOT re-created as a separate bean, deliberately.** Its file is
+absent from the authoritative store (`cat/cat-harness/beans`) -- it existed only
+on the #7439 branch -- and its one surviving open item is exactly the line-60
+channel above. Minting a second bean for it would duplicate this one. The
+`_DPS_DEFAULT` half of `qou-5eg1` is landed and closed; the
+`mpf(Q_50_DIGIT_STR)` half lives here.
