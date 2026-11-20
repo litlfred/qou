@@ -29,9 +29,8 @@ condition of an
 on the free monoid; it uses only concatenation, not the Hecke or
 Yang--Baxter relations.  $\square$
 
-The Lean declaration `QOU.braiding_induced_ordering_holds` proves both
-parts: well-foundedness (`degLex_wellOrdered`) and compatibility with
-concatenation (`degLex_admissible`).  No braiding hypothesis is used.
+Both parts are proved: well-foundedness and compatibility with
+concatenation.  No braiding hypothesis is used.
 
 **Two faces of the arrow of time.**  The braiding $c_{V,V}$
 and the Reeb vector field $\xi$
