@@ -2,13 +2,18 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:spectral-sequence-collapse",
-  title: "GB spectral sequence collapses at E_1 (semisimple cohomology vanishing)",
+  title: "Limit page of the GB spectral sequence for semisimple $H_n(R, q)$",
   lean: {
     ref: "qou:QOU.WedderburnMass.centralIdempotent_idem",
     validation: "not_checked",
   },
-  uses: ["prop:curvature-rank-gb-stratification"],
+  uses: ["prop:gb-spectral-sequence"],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body: "`uses` repointed from the curvature-rank stratification (now `conj:curvature-rank-gb-stratification`) to `prop:gb-spectral-sequence` (bean `qou-6qbv`). The statement and its proof use only the spectral sequence of the filtered Hochschild complex and Hochschild's vanishing theorem for separable algebras; the stratification is cited only in the proof's corollary paragraph. With the length filtration the statement is consistent with the exact $n = 3$ computation: $E_\\infty$ is the rank-3 centre in degree $0$ while $d_2$ and $d_4$ are nonzero, so the sequence does not collapse at $E_1$ or $E_2$.",
+    },
     {
       kind: "caveat",
       date: "2026-11-16",

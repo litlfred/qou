@@ -24,7 +24,7 @@ $\sum w_\lambda(q) \neq 1$ at $q \neq 1$ in general (cf.
 [Plancherel weights define a probability distribution: $\sum_\lambda w_\lambda = 1$, $0 \leq w_\lambda \leq 1$](#prop:plancherel-weight-boundedness)
 for the classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$
 that does sum to $1$).  Binning by GB-depth
-([curvature-rank stratification](#prop:curvature-rank-gb-stratification))
+([curvature-rank stratification](#conj:curvature-rank-gb-stratification))
 gives the curvature-rank decomposition
 $\mathfrak{m}_{q,\mathcal{K}} = \sum_k \alpha_k \cdot
 \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1)$
