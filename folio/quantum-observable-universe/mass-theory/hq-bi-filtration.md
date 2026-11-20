@@ -3,8 +3,7 @@
 *Let $\mathcal{H}_q$ be the substrate convolution Hopf algebra
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)),
 filtered by iterated-integral depth
-$G^{(0)} \subseteq G^{(1)} \subseteq \cdots$
-([depth correspondence](#conj:gb-depth-period-correspondence)).
+$G^{(0)} \subseteq G^{(1)} \subseteq \cdots$.
 For each Bring-embeddable knot/link $K$ ([Bring-embeddable
 knots](#rem:bring-embeddable-knots)) with dominant cell
 $\lambda_K \vdash n_K$ and central primitive idempotent
@@ -26,8 +25,7 @@ $K$ (Hecke cell side).*
 
 ### Axes and refinements
 
-**Depth axis $n$ (horizontal).** Inherited from
-[GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence):
+**Depth axis $n$ (horizontal).**
 $G^{(0)}$ contains $\exp_q$ and scalars; $G^{(n)}$ adjoins the
 grouplikes $\log_q, \mathrm{Li}_2^q, \ldots, \mathrm{Li}_n^q$.
 Compatible with $\tau_{\mathrm{arch}}$ via
@@ -65,15 +63,4 @@ The bi-filtration interacts with the existing structures on $\mathcal{H}_q$:
 ### The bi-filtration as a tooling unification
 
 This is the **definition layer** for the framework the
-depth correspondence implies but does not name. Three downstream conjectures
-populate it:
-
-- [Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$](#conj:joint-galois-braid-action)
-  — the symmetry group acting on $\mathcal{H}_q^{(n, K)}$.
-- [Placement of paper's existing knot-indexed convolutions in the bi-filtration grid](#prop:knot-indexed-convolution-grid)
-  — placement of paper's existing knot-indexed convolutions
-  ($\mathrm{Lk}_R^{(k)}$, $\bowtie_K$, Markov trace, Hoefsmit pairing,
-  Higgs-vev coupling) into the $(n, K)$-grid.
-- [K-theory $\leftrightarrow$ depth filtration Rosetta](#rem:k-theory-period-rosetta)
-  — Beilinson regulator on $K_{2n-1}^{\mathrm{ind}}(\overline{\mathbb{Q}})$
-  matches the depth-$n$ axis.
+depth correspondence implies but does not name.

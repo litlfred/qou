@@ -26,6 +26,11 @@ export default remark({
     "falsifiability",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ; see [rem:breit-wheeler-vertex](#rem:breit-wheeler-vertex)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([RJ canonical inner product](#prop:rj-canonical-inner-product))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([symbolic Q-value](#prop:neutron-qvalue-symbolic))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([energy scale](#rem:energy-scale-planck))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Skein mass relation](#rem:skein-mass-relation))," },
     {
       kind: "caveat",
       date: "2026-09-05",

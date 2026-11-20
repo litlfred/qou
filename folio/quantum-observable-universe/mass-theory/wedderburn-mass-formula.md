@@ -61,8 +61,7 @@ trace.*
 *The coefficients are:*
 - *$\alpha = m_e \times 8G$
   ([binding scale](#conj:binding-scale-catalan)),*
-- *$[3]_q = (q^3 - q^{-3})/(q - q^{-1})$, the quantum 3-integer
-  ([degree-2 weight](#prop:degree-two-baryon-weight)),*
+- *$[3]_q = (q^3 - q^{-3})/(q - q^{-1})$, the quantum 3-integer,*
 - *$h_{\mathrm{A}} = q - q^{-1}$, the Hecke parameter, satisfying the exact
   algebraic dependency $h_{\mathrm{A}}^2 = [3]_q - 3$, i.e.
   $2\beta_3 + \beta_2 + 6 = 0$ where $\beta_2 = -2[3]_q$ and

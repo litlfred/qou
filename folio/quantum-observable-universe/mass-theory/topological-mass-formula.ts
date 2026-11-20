@@ -9,6 +9,7 @@ export default conjecture({
     "def:quantum-planck-constant",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ;\n[Kashaev volume density](#rem:kashaev-volume-density)" },
     {
       kind: "status",
       date: "2026-11-20",
