@@ -86,3 +86,9 @@ Merged on main: #8577/#8584/#8585 (W14b: Part I, link text, ratchet), #8610 (W14
 
 
 2026-11-20T18:45Z (W14): owner ruled option 2 — Ch 2 forward links advisory. Implemented in #8637 (FORWARD_LINK_STRICT = {Ch 1}; guard test). With #8633 + #8637 merged the voice-leak ratchet is green on main.
+
+2026-11-20T20:10Z (W14): owner ruled "All the chapters should be strict ... Fix the gates", then: fix all now, exempt the introduction. Gate: #8637 (L4 strict everywhere, intro exempt). Drains: #8664 mass-theory, #8665 mass-endomorphism+predicted-spectra, #8666 Ch1-2, #8667 fluid/brings/knots, #8668 info/lifting/climax/observations, #8669 16 smaller chapters. Integrated: strict L4 1,071 -> 192, no new hit; all removed text verbatim in authorNotes.
+STILL OPEN (192, each needs the block's later result; the ratchet on #8637 stays red until resolved):
+- ~136 cross-chapter links, mostly (a) "conditional on conj:X" banners where X is in a later chapter, (b) definitions used before the chapter that defines them (def:photon x6 in mass-theory, def:su2-generators x3 in braids-and-knots, def:mass-identity x6 in lifting-and-descent, def:standard-part-functor x2 in appendix-surreals), (c) 6 data tables cited from mass-theory but filed in other chapters.
+- 21 premature q: Ch1 (9: dim_q in the QU definition, the SU_q(2) example) and Ch2 (12: the existence-proof cluster built from U_q(g)/O_q(G)).
+- Cheap moves the drain agents proposed: the 6 cross-chapter tables into mass-theory; su2-characters-and-quantum-dimension into Ch2 after sec:substrate-parameter; the 10-block existence cluster after sec:substrate-parameter; the W-boson block to the end of its section; valuation-ring-finite-surreals into appendix-surreals-archimedean; the Einstein comparison remark next to prop:crossing-energy-decomposition.
