@@ -89,7 +89,7 @@ possible, with archimedean `ℝ` only for the MeV calibration constant.
 - `TrefoilVanishing` (e⁻ NF coefficient of B₃ is exactly zero)
 - `TrefoilColoringBarEven` (coloring deviation is bar-even)
 - `ProtonTrefoilSign` (proton/neutron trefoil demand < 0 at q₀)
-- `prop:three-calibration-inputs` (CAL-1/2/3 framework)
+- `conj:three-calibration-inputs` (CAL-1/2/3 framework)
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 

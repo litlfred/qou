@@ -6,7 +6,7 @@ export default remark({
     "Two-tier scaling of $P_K(q)$: quantum dimension $[N]_q$ (topological) and base mass $m_0$ (physical)",
   interprets: "rem:calibration-inputs",
   uses: [
-    "prop:three-calibration-inputs",
+    "conj:three-calibration-inputs",
     "def:three-calibration-discipline",
     "prop:markov-trace-axiomatic-closed-form",
     "rem:kashaev-volume-density",

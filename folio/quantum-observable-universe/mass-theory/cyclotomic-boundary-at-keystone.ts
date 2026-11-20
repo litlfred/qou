@@ -45,7 +45,7 @@ export default conjecture({
   uses: [
     "conj:binding-manybody-eq-jet-filtration",
     "prop:sw-period-residue-sum",
-    "prop:calibration-cohomology-alignment",
+    "conj:calibration-cohomology-alignment",
   ],
   computation: {
     engine: "python",

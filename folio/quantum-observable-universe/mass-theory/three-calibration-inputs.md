@@ -1,10 +1,9 @@
-*The QOU framework admits exactly three external calibration inputs.
-Beyond these three, no further empirical, fitting, or numerological
-input is permitted — every other mass, Q-value, binding energy,
-coupling constant, mixing angle, and dimensionless ratio in the paper
-is a prediction.*
-
-For every canonical observable $\mathcal{O}$ in the paper —
+**Conjecture.** *Beyond the three calibration inputs of the
+[three-calibration discipline](#def:three-calibration-discipline), no
+further empirical, fitting, or numerological input is needed: every
+other mass, Q-value, binding energy, coupling constant, mixing angle,
+and dimensionless ratio in the paper is a prediction.* Precisely, it is
+conjectured that for every canonical observable $\mathcal{O}$ in the paper —
 mass $\mathfrak{m}$, Q-value $\mathfrak{Q}_\beta$, binding $B(Z, N)$,
 crossing energy $E_{\mathfrak{H}}$, coupling $\alpha$, mixing angle,
 shell parameter — there exists a $\mathbb{Q}(q_0)$-element

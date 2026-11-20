@@ -1,7 +1,11 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:calibration-cohomology-alignment",
-  title: "Proof of the calibration–cohomology alignment",
-  uses: ["prop:calibration-cohomology-alignment", "prop:meson-scale-independence"],
+// Was prf:calibration-cohomology-alignment. The block it argued for is now the
+// conjecture conj:calibration-cohomology-alignment (owner choice 2026-11-20,
+// bean qou-tm3c), so the argument is recorded as a sketch (AGENTS.md §3b).
+export default remark({
+  label: "rem:calibration-cohomology-alignment-sketch",
+  title: "Why the calibrations match the cohomological data (sketch)",
+  interprets: "conj:calibration-cohomology-alignment",
+  uses: ["conj:calibration-cohomology-alignment", "prop:meson-scale-independence"],
 });

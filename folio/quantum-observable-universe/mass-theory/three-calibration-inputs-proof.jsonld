@@ -5,17 +5,18 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-three-calibration-inputs",
+  "@id": "papers/quantum-observable-universe/blocks/rem-three-calibration-inputs-sketch",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:three-calibration-inputs",
-  "kind": "proof",
-  "title": "Proof of three calibration inputs",
+  "label": "rem:three-calibration-inputs-sketch",
+  "kind": "remark",
+  "title": "Why three calibration inputs (sketch)",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-three-calibration-inputs"
+    "papers/quantum-observable-universe/blocks/conj-three-calibration-inputs"
   ],
   "text": "three-calibration-inputs-proof.md",
-  "provenance": "authored"
+  "provenance": "authored",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-three-calibration-inputs"
 }

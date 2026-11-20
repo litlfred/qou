@@ -1,4 +1,4 @@
-*The count.* $H^1(\text{Bring}) = 2W$ is a polarised weight-1 Hodge structure.
+*Argument sketch.* *The count.* $H^1(\text{Bring}) = 2W$ is a polarised weight-1 Hodge structure.
 The $W$-isotypic part is the tensor $W \otimes \mathbb{C}^2$, with the $\mathbb{C}^2$
 the Hodge multiplicity plane ($H^{1,0} \oplus H^{0,1}$). A polarised rank-2
 weight-1 Hodge structure has two real moduli — an overall **scale** and a
@@ -17,6 +17,6 @@ is $\tau$, fixed by $q_0$ (CAL-2,
 [Symplectic prolongation (det B = 1) gives a one-parameter recurrence](#prop:sl2-prolongation-recurrence)); the
 meson-sector scale is $m_\pi$ (CAL-3). The calibration triple
 $(m_e, q_0\text{-modulus}, m_\pi)$ therefore equals the cohomological triple
-$(\text{scale}, \text{modulus}, \text{meson scale})$ term by term
-([`QOU.Mass.calibrations_eq_cohomology`](#prop:calibration-cohomology-alignment)).
-$\qquad\blacksquare$
+$(\text{scale}, \text{modulus}, \text{meson scale})$ term by term. This is the content of the
+[conjecture](#conj:calibration-cohomology-alignment). Neither the count nor the
+term-by-term matching is formalised.

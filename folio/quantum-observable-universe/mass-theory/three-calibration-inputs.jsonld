@@ -5,14 +5,14 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-three-calibration-inputs",
+  "@id": "papers/quantum-observable-universe/blocks/conj-three-calibration-inputs",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:three-calibration-inputs",
-  "kind": "proposition",
-  "title": "Exactly three calibration inputs ($m_e$, $m_\\mu/m_e$, $\\mathfrak{Q}_\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$",
+  "label": "conj:three-calibration-inputs",
+  "kind": "conjecture",
+  "title": "Exactly three calibration inputs: every observable factors through $m_e$, $m_\\pi$ and $q_0$",
   "cites": [
     "references/codata2022"
   ],
@@ -27,7 +27,7 @@
     "no-fitting",
     "predictive-content"
   ],
-  "leanRef": "qou:QOU.BraidKnot.three_calibration_inputs",
+  "leanRef": "qou:QOU.BraidKnot.ThreeCalibrationFactorisation",
   "text": "three-calibration-inputs.md",
   "provenance": "authored"
 }

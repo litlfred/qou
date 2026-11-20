@@ -5,13 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-calibration-cohomology-alignment",
+  "@id": "papers/quantum-observable-universe/blocks/conj-calibration-cohomology-alignment",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:calibration-cohomology-alignment",
-  "kind": "proposition",
+  "label": "conj:calibration-cohomology-alignment",
+  "kind": "conjecture",
   "title": "The three calibrations are the three cohomological data of H¹(Bring)",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-prolonged-periods-fixed-depth",
@@ -19,10 +19,8 @@
     "papers/quantum-observable-universe/blocks/prop-electron-period-base"
   ],
   "proofs": [
-    "papers/quantum-observable-universe/blocks/prf-calibration-cohomology-alignment"
+    "papers/quantum-observable-universe/blocks/rem-calibration-cohomology-alignment-sketch"
   ],
-  "leanRef": "qou:QOU.Mass.calibrations_eq_cohomology",
   "text": "calibration-cohomology-alignment.md",
-  "leanSource": "calibration-cohomology-alignment.lean",
   "provenance": "authored"
 }
