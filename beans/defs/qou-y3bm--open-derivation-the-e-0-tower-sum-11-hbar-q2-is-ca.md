@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:04:21Z
-updated_at: 2026-11-20T16:01:07Z
+updated_at: 2026-11-20T16:07:16Z
 ---
 
 **What is wrong.** `E₀`, the Q_β energy scale, had **two live forms** in
@@ -163,3 +163,5 @@ W13 (2026-11-20, owner chose option (a) "define + derive E0^(n)"). Measured befo
 - Existing cumulative E0^(N) = E0^(0) Sum_{k<=N} hbar^{2k} (q_beta_form_a_n1_extension.py:29-50) is the same assumption truncated.
 - Sibling bean qou-mc6a (needs-owner): L_q choice moves E0 by -0.885% .. +9.9%.
 Next honest step for (a): derive E0^(0) itself (from the counit / Markov trace / archimedean functor) before any level-n definition. Stays todo.
+
+W13 (PR #8608): E0^(0) now has a structural reading, proved: E0/m_e = sum over one-generator words containing a reduction (outside GS normal forms {1,sigma}) of q^-length = c_q - q^-1. No parameter; a reading, not a categorical derivation. Negatives (scope a, proved): two-generator series diverges at q0; level grading by leading-ideal powers gives 1/(1-q^-2) ~5.31, not the tower 1/(1-hbar^2) ~1.0099 (equal only at q=2). Next: find a level grading on the reduction words with ratio hbar_q^2 = (1-q^-1)^2, or show none exists among natural gradings. Stays todo.
