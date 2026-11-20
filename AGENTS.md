@@ -43,6 +43,36 @@ Adapt ALL responses accordingly:
   with **Terse ≠ compressed** below: "short" cuts ceremony, never
   evidence, implications, or options.
 - **Offer choices as numbered lists** so the user can reply "1" or "2".
+- **🟥 ASK WITH A CARD. NEVER WITH PROSE THE USER HAS TO ANSWER BY TYPING
+  (STRICT, owner instruction 2026-11-20).** Verbatim: *"If you have questions
+  use cards"* / *"Please tell every sibling that you can access to only use
+  cards when asking questions. I am disabled and it is really hard to type all
+  of these things out"*.
+
+  **"Card" = an `AskUserQuestion` call with clickable options.** Every question
+  put to the owner goes through one. A question asked as a chat sentence — even
+  a numbered list, even a single yes/no — is a defect, because answering it
+  costs the owner keystrokes that a click would not. This is the whole reason
+  the rule exists; it is an accessibility requirement, not a formatting
+  preference.
+
+  This **does not** relax the mirror rule below: the card's question, every
+  option label and the full evidence still go into the chat prose immediately
+  above the call, because the chat is the durable record and the card is
+  ephemeral. The card is **in addition to** the prose, never instead of it —
+  and the prose is there to be *read*, not to be answered by typing.
+
+  **The failure mode is the trailing question.** Ending a turn with *"want me
+  to also do X?"*, *"should I use A or B?"*, or *"let me know if you would
+  rather…"* forces the owner to type. Put it in a card with `multiSelect: true`
+  so "all of them" or "1 and 3" is one click, and include the no-op as an
+  option so declining is also a click. §"NAMING A DECISION IS ASKING A
+  QUESTION" below applies in full: a card is owed wherever a decision is
+  handed over, not only where a question mark appears.
+
+  **Propagate it.** The owner asked that every reachable sibling be told. A
+  session that opens or comments on a PR should state the rule there; this
+  file is the durable channel for every later session.
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
 - **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
