@@ -1,7 +1,7 @@
 {
   "computation": "three-term-wedderburn",
   "description": "Canonical 3-term Wedderburn-decomposition mass formula. V_3term(g) = w_sym\u00b7lam_sym + w_alt\u00b7lam_alt + w_std\u00b7V_std with Wedderburn weights w_sym=w_alt=q^2/D, w_std=(q^2+1)^2/D, D=q^4+4q^2+1. The alt channel restores the chirality contribution (prop:chirality-dual-space-derivation) that the previous 2-term symmetrised blend dropped. No fitted mixing parameter, no n->p transition calibration constant, no numerical root-find anywhere in the path. Eliminates empirical constants #1 and #5 of docs/canonicalization-review.md \u00a73.1.",
-  "computedAt": "2026-08-25T00:53:21.104006+00:00",
+  "computedAt": "2026-11-20T15:18:11.482574+00:00",
   "q_0": 1.1099785827513808,
   "precision_dps": 50,
   "wedderburn_weights": {
@@ -14,9 +14,9 @@
     "proton": {
       "V_3term": 240469.2278841348,
       "pred_MeV": 938.27208943,
-      "codata_MeV": 938.27208943,
-      "err_pct": 0.0,
-      "err_ppb": 0.0,
+      "codata_MeV": "938.27208943",
+      "err_pct": "0.0000000000000054275000773934473181993135609241118786814311055628",
+      "err_ppb": "0.000000054275000773934473181993135609241118786814311055628",
       "channel_decomposition_g0": {
         "trv": 0.31113154928031994,
         "alt": -0.0889546924887588,
@@ -33,9 +33,9 @@
     "neutron": {
       "V_3term": 456694.4248164327,
       "pred_MeV": 1781.9478856979242,
-      "codata_MeV": 939.56542179,
-      "err_pct": 89.6566055297215,
-      "err_ppb": 896566055.297215,
+      "codata_MeV": "939.56542179",
+      "err_pct": "89.656605529721494216661081435734395201240478911814",
+      "err_ppb": "896566055.29721494216661081435734395201240478911814",
       "channel_decomposition_g0": {
         "trv": 0.2818313196776633,
         "alt": -0.09927576983959194,
@@ -55,13 +55,13 @@
     "forbidden_tokens_checked": [],
     "canonical_only": true
   },
-  "scriptHash": "eb9218fdad26",
-  "scriptCommitSha": "b9c590bd7231947fe6d671c84a7e1acadf817bdb",
-  "commitSha": "b9c590bd7231947fe6d671c84a7e1acadf817bdb",
+  "scriptFile": "alpha_blend_tower.py",
+  "scriptHash": "9e20bb4082f8",
+  "scriptCommitSha": "0218c9ba9ad273ba5984b06c405cefcf6d2da644",
+  "commitSha": "28ce5657194a9dafe0bbcd5e119705b92abc5dd1",
   "engine": "mpmath",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.4.1",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "alpha_blend_tower.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
