@@ -1,16 +1,16 @@
 {
  "description": "Axiom-field audit (qou-dx7g); syntactic, see script docstring",
- "commitSha": "3411686c48ea1651c9354e8ddd0a8a913308145f",
+ "commitSha": "375b0ba852210960197582b3c9aec451ce2be8e6",
  "counts": {
-  "uninhabited": 1040,
-  "inhabited": 517,
-  "toy_only": 3
+  "uninhabited": 1007,
+  "inhabited": 549,
+  "toy_only": 4
  },
  "carriers_total": 1560,
  "standalone": {
-  "sorry": 11,
+  "sorry": 12,
   "opaque": 118,
-  "axiom": 67
+  "axiom": 66
  },
  "calibration_failures": [],
  "carriers": [
@@ -935,8 +935,10 @@
    "fields": 8,
    "collision": false,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:87"
+   ]
   },
   {
    "name": "QOU.AlgebraicSubstrate.SubstrateClock.JetCompatibleOrder",
@@ -1358,8 +1360,11 @@
    "fields": 11,
    "collision": false,
    "consumers": 26,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/BirthdayFaithful.lean:151",
+    "folio/quantum-observable-universe/lean/QOU/AppendixSurreals/HyperrealLimitTransfer.lean:260"
+   ]
   },
   {
    "name": "QOU.AppendixSurreals.SurrealLimitTransfer",
@@ -1897,7 +1902,7 @@
    "short": "ColoredPhoton",
    "kind": "structure",
    "file": "folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean",
-   "line": 17,
+   "line": 20,
    "prop_fields": 1,
    "fields": 2,
    "collision": false,
@@ -3221,7 +3226,7 @@
    "prop_fields": 1,
    "fields": 2,
    "collision": true,
-   "consumers": 367,
+   "consumers": 395,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean:210",
@@ -3402,7 +3407,8 @@
    "consumers": 3,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/Archimedean/TauFunctorAssembly.lean:93"
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/TauFunctorAssembly.lean:93",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/TauFunctorTargetSpec.lean:78"
    ]
   },
   {
@@ -3432,7 +3438,7 @@
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Archimedean/HodgeGramLift.lean:72",
     "folio/quantum-observable-universe/lean/QOU/Archimedean/HodgeGramLift.lean:87",
-    "folio/quantum-observable-universe/lean/QOU/Archimedean/LiftFromReality.lean:99"
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/HodgeGramLift.lean:105"
    ]
   },
   {
@@ -3594,14 +3600,14 @@
    "short": "Cl_2_DoubleAngle",
    "kind": "class",
    "file": "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean",
-   "line": 286,
+   "line": 319,
    "prop_fields": 1,
    "fields": 1,
    "collision": false,
    "consumers": 1,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean:305"
+    "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean:338"
    ]
   },
   {
@@ -3622,13 +3628,15 @@
    "short": "ComplexLiTwoUnitCircleClassical",
    "kind": "class",
    "file": "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean",
-   "line": 234,
+   "line": 235,
    "prop_fields": 1,
    "fields": 1,
    "collision": false,
    "consumers": 1,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.lean:271"
+   ]
   },
   {
    "name": "QOU.Archimedean.VertexStar",
@@ -4054,15 +4062,15 @@
    "evidence": []
   },
   {
-   "name": "QOU.BraidKnot.AlgebraicQuantumVolumeSpecializationContext",
-   "short": "AlgebraicQuantumVolumeSpecializationContext",
+   "name": "QOU.BraidKnot.AlgebraicQuantumVolumeSpecialization",
+   "short": "AlgebraicQuantumVolumeSpecialization",
    "kind": "class",
    "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/algebraic_quantum_volume_specialization.lean",
-   "line": 19,
-   "prop_fields": 2,
-   "fields": 9,
+   "line": 54,
+   "prop_fields": 1,
+   "fields": 1,
    "collision": false,
-   "consumers": 1,
+   "consumers": 0,
    "status": "uninhabited",
    "evidence": []
   },
@@ -4332,8 +4340,10 @@
    "fields": 1,
    "collision": false,
    "consumers": 2,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/BringFigureEightDepth2Witness.lean:147"
+   ]
   },
   {
    "name": "QOU.BraidKnot.BringResidueAtOrder",
@@ -4419,7 +4429,8 @@
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCanonicalMarkovWeightsInstance.lean:52",
-    "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCanonicalMarkovWeightsInstance.lean:123"
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCanonicalMarkovWeightsInstance.lean:123",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCanonicalMarkovWeightsInstance.lean:144"
    ]
   },
   {
@@ -4448,6 +4459,34 @@
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/CemeteryGroupEmergence.lean:97"
+   ]
+  },
+  {
+   "name": "QOU.BraidKnot.CentralIdempotentInvolution.IsBar",
+   "short": "IsBar",
+   "kind": "structure",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/CentralIdempotentInvolution.lean",
+   "line": 200,
+   "prop_fields": 3,
+   "fields": 3,
+   "collision": false,
+   "consumers": 6,
+   "status": "uninhabited",
+   "evidence": []
+  },
+  {
+   "name": "QOU.BraidKnot.CentralIdempotentInvolution.IsHash",
+   "short": "IsHash",
+   "kind": "structure",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/CentralIdempotentSignTwist.lean",
+   "line": 133,
+   "prop_fields": 1,
+   "fields": 1,
+   "collision": false,
+   "consumers": 4,
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/CentralIdempotentSignTwist.lean:329"
    ]
   },
   {
@@ -4614,7 +4653,9 @@
    "consumers": 7,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean:79"
+    "folio/quantum-observable-universe/knots-particles-confinement/confinement-level-exists.lean:24",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean:79",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean:90"
    ]
   },
   {
@@ -4751,7 +4792,7 @@
    "prop_fields": 3,
    "fields": 4,
    "collision": true,
-   "consumers": 367,
+   "consumers": 395,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean:210",
@@ -5073,7 +5114,7 @@
    "prop_fields": 3,
    "fields": 4,
    "collision": true,
-   "consumers": 367,
+   "consumers": 395,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean:210",
@@ -5093,7 +5134,8 @@
    "consumers": 9,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:79"
+    "folio/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:79",
+    "folio/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:281"
    ]
   },
   {
@@ -5136,6 +5178,7 @@
    "consumers": 3,
    "status": "inhabited",
    "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/archimedean_agreement.lean:133",
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/protonExample/archimedean_agreement.lean:83"
    ]
   },
@@ -5151,6 +5194,7 @@
    "consumers": 3,
    "status": "inhabited",
    "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/archimedean_agreement.lean:133",
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/HabiroResidueSumEquivalence/protonExample/archimedean_agreement.lean:83"
    ]
   },
@@ -5290,7 +5334,7 @@
    "prop_fields": 3,
    "fields": 4,
    "collision": false,
-   "consumers": 68,
+   "consumers": 76,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/HeckeBoundedGenerators.lean:126",
@@ -5318,13 +5362,15 @@
    "short": "BaerStarRing",
    "kind": "class",
    "file": "folio/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.lean",
-   "line": 41,
+   "line": 45,
    "prop_fields": 1,
    "fields": 1,
    "collision": false,
    "consumers": 1,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic.lean:145"
+   ]
   },
   {
    "name": "QOU.BraidKnot.HeckeEigenvalues",
@@ -6069,7 +6115,8 @@
    "consumers": 1,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:61"
+    "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:61",
+    "folio/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:68"
    ]
   },
   {
@@ -6246,19 +6293,6 @@
    "evidence": []
   },
   {
-   "name": "QOU.BraidKnot.MarkovTraceAxioms",
-   "short": "MarkovTraceAxioms",
-   "kind": "class",
-   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/MarkovAxiomsPrimitive.lean",
-   "line": 146,
-   "prop_fields": 2,
-   "fields": 4,
-   "collision": true,
-   "consumers": 14,
-   "status": "uninhabited",
-   "evidence": []
-  },
-  {
    "name": "QOU.BraidKnot.MarkovTraceData",
    "short": "MarkovTraceData",
    "kind": "structure",
@@ -6291,7 +6325,7 @@
    "short": "MarkovTraceN",
    "kind": "class",
    "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/BraidGroupNStrand.lean",
-   "line": 240,
+   "line": 241,
    "prop_fields": 3,
    "fields": 6,
    "collision": false,
@@ -6907,6 +6941,7 @@
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean:151",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean:184",
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/RegularRepBlockTrace.lean:174"
    ]
   },
@@ -7098,10 +7133,10 @@
    "prop_fields": 1,
    "fields": 3,
    "collision": true,
-   "consumers": 818,
+   "consumers": 826,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:76",
+    "folio/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:88",
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/GarnirShape.lean:61",
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/MathlibBridge.lean:49"
    ]
@@ -7204,8 +7239,10 @@
    "fields": 6,
    "collision": false,
    "consumers": 1,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/SpechtDominanceCore.lean:791"
+   ]
   },
   {
    "name": "QOU.BraidKnot.SpechtStandardBasis.Triangular",
@@ -7221,15 +7258,15 @@
    "evidence": []
   },
   {
-   "name": "QOU.BraidKnot.SpectralSequenceH3ExplicitContext",
-   "short": "SpectralSequenceH3ExplicitContext",
+   "name": "QOU.BraidKnot.SpectralSequenceH3Explicit",
+   "short": "SpectralSequenceH3Explicit",
    "kind": "class",
    "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean",
-   "line": 47,
-   "prop_fields": 8,
-   "fields": 8,
+   "line": 42,
+   "prop_fields": 3,
+   "fields": 3,
    "collision": false,
-   "consumers": 1,
+   "consumers": 0,
    "status": "uninhabited",
    "evidence": []
   },
@@ -7270,7 +7307,7 @@
    "prop_fields": 5,
    "fields": 6,
    "collision": true,
-   "consumers": 367,
+   "consumers": 391,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/ColSuperstandardSYT.lean:71",
@@ -7387,6 +7424,19 @@
    "fields": 8,
    "collision": false,
    "consumers": 1,
+   "status": "uninhabited",
+   "evidence": []
+  },
+  {
+   "name": "QOU.BraidKnot.Terms26HigherOperations",
+   "short": "Terms26HigherOperations",
+   "kind": "class",
+   "file": "folio/quantum-observable-universe/lean/QOU/BraidKnot/terms_2_6_higher_operations.lean",
+   "line": 53,
+   "prop_fields": 2,
+   "fields": 2,
+   "collision": false,
+   "consumers": 2,
    "status": "uninhabited",
    "evidence": []
   },
@@ -7595,34 +7645,6 @@
    "consumers": 2,
    "status": "uninhabited",
    "evidence": []
-  },
-  {
-   "name": "QOU.BraidKnot.WeakSpectralCompleteness",
-   "short": "WeakSpectralCompleteness",
-   "kind": "class",
-   "file": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean",
-   "line": 44,
-   "prop_fields": 3,
-   "fields": 5,
-   "collision": false,
-   "consumers": 1,
-   "status": "uninhabited",
-   "evidence": []
-  },
-  {
-   "name": "QOU.BraidKnot.WeakSpectralCompletenessSkeleton",
-   "short": "WeakSpectralCompletenessSkeleton",
-   "kind": "class",
-   "file": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean",
-   "line": 65,
-   "prop_fields": 1,
-   "fields": 1,
-   "collision": false,
-   "consumers": 0,
-   "status": "inhabited",
-   "evidence": [
-    "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:69"
-   ]
   },
   {
    "name": "QOU.BraidKnot.WedderburnTraces",
@@ -7869,8 +7891,10 @@
    "fields": 7,
    "collision": false,
    "consumers": 1,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:201"
+   ]
   },
   {
    "name": "QOU.Braiding.HeckeMassElement",
@@ -7946,39 +7970,13 @@
    "prop_fields": 4,
    "fields": 7,
    "collision": true,
-   "consumers": 29,
+   "consumers": 35,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovBondLetterColimit.lean:96",
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceClassNotUnique.lean:69",
-    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:126"
+    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:137"
    ]
-  },
-  {
-   "name": "QOU.Braiding.MarkovTraceAxioms",
-   "short": "MarkovTraceAxioms",
-   "kind": "class",
-   "file": "folio/quantum-observable-universe/mass-theory/markov-trace-product.lean",
-   "line": 83,
-   "prop_fields": 2,
-   "fields": 3,
-   "collision": true,
-   "consumers": 14,
-   "status": "uninhabited",
-   "evidence": []
-  },
-  {
-   "name": "QOU.Braiding.MarkovTraceProduct",
-   "short": "MarkovTraceProduct",
-   "kind": "structure",
-   "file": "folio/quantum-observable-universe/mass-theory/markov-trace-product.lean",
-   "line": 109,
-   "prop_fields": 2,
-   "fields": 7,
-   "collision": true,
-   "consumers": 3,
-   "status": "uninhabited",
-   "evidence": []
   },
   {
    "name": "QOU.Braiding.MarkovTraceTower",
@@ -8195,8 +8193,10 @@
    "fields": 2,
    "collision": false,
    "consumers": 4,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/ColorFlavorIsospinSelection.lean:115"
+   ]
   },
   {
    "name": "QOU.BraidsAndKnots.DimMasterPentagon",
@@ -8420,7 +8420,7 @@
    "prop_fields": 3,
    "fields": 4,
    "collision": true,
-   "consumers": 367,
+   "consumers": 395,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean:210",
@@ -8693,7 +8693,8 @@
    "consumers": 2,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean:150"
+    "folio/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean:150",
+    "folio/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean:159"
    ]
   },
   {
@@ -9024,8 +9025,10 @@
    "fields": 2,
    "collision": false,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/BringsSurface.lean:272"
+   ]
   },
   {
    "name": "QOU.BringsSurface.YekutieliLiftingData",
@@ -9119,8 +9122,10 @@
    "fields": 2,
    "collision": false,
    "consumers": 4,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/quantum-universes/categorical-hodge-star-exists.lean:32"
+   ]
   },
   {
    "name": "QOU.CategoricalArchimedeanBridge",
@@ -9145,8 +9150,10 @@
    "fields": 4,
    "collision": false,
    "consumers": 3,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/quantum-universes/categorical-connection-exists.lean:29"
+   ]
   },
   {
    "name": "QOU.CategoricalDiracOperator",
@@ -9242,8 +9249,10 @@
    "fields": 4,
    "collision": true,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.lean:39"
+   ]
   },
   {
    "name": "QOU.CategoricalProton",
@@ -9255,8 +9264,10 @@
    "fields": 4,
    "collision": true,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean:39"
+   ]
   },
   {
    "name": "QOU.CategoricalQConnection",
@@ -9283,8 +9294,10 @@
    "fields": 7,
    "collision": false,
    "consumers": 22,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.lean:37"
+   ]
   },
   {
    "name": "QOU.CategoricalQLieBracket",
@@ -9483,8 +9496,12 @@
    "fields": 3,
    "collision": false,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/MathlibExt/CechCofinalCover.lean:118",
+    "folio/quantum-observable-universe/lean/QOU/MathlibExt/CechColimitConverse.lean:136",
+    "folio/quantum-observable-universe/lean/QOU/MathlibExt/CechNerveTetrahedron.lean:250"
+   ]
   },
   {
    "name": "QOU.CentralExtension.CechGerbe.Cover.Refines",
@@ -9676,6 +9693,19 @@
    ]
   },
   {
+   "name": "QOU.Conjectures.HeckeScalars",
+   "short": "HeckeScalars",
+   "kind": "structure",
+   "file": "folio/quantum-observable-universe/lean/QOU/Conjectures/WeakSpectralCompleteness.lean",
+   "line": 84,
+   "prop_fields": 2,
+   "fields": 5,
+   "collision": false,
+   "consumers": 10,
+   "status": "uninhabited",
+   "evidence": []
+  },
+  {
    "name": "QOU.Conjectures.KnotFactorFrobeniusPairing",
    "short": "KnotFactorFrobeniusPairing",
    "kind": "class",
@@ -9715,6 +9745,19 @@
    "evidence": []
   },
   {
+   "name": "QOU.Conjectures.WeakSpectralCompleteness",
+   "short": "WeakSpectralCompleteness",
+   "kind": "class",
+   "file": "folio/quantum-observable-universe/lean/QOU/Conjectures/WeakSpectralCompleteness.lean",
+   "line": 188,
+   "prop_fields": 1,
+   "fields": 1,
+   "collision": false,
+   "consumers": 0,
+   "status": "uninhabited",
+   "evidence": []
+  },
+  {
    "name": "QOU.ContactAffineChart",
    "short": "ContactAffineChart",
    "kind": "structure",
@@ -9737,8 +9780,11 @@
    "fields": 7,
    "collision": true,
    "consumers": 8,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean:96",
+    "folio/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean:153"
+   ]
   },
   {
    "name": "QOU.CrossedModule",
@@ -9752,7 +9798,8 @@
    "consumers": 1,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/SpatialDimensionBinder.lean:140"
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/SpatialDimensionBinder.lean:140",
+    "folio/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean:35"
    ]
   },
   {
@@ -10998,7 +11045,7 @@
    "prop_fields": 9,
    "fields": 23,
    "collision": false,
-   "consumers": 71,
+   "consumers": 69,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/FrobeniusHopfNilpotentAndNonFieldModel.lean:359",
@@ -11313,11 +11360,11 @@
    "prop_fields": 4,
    "fields": 5,
    "collision": true,
-   "consumers": 78,
+   "consumers": 84,
    "status": "inhabited",
    "evidence": [
     "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/AlgOps.lean:119",
-    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean:104",
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean:106",
     "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean:328"
    ]
   },
@@ -11330,7 +11377,7 @@
    "prop_fields": 1,
    "fields": 3,
    "collision": true,
-   "consumers": 60,
+   "consumers": 63,
    "status": "inhabited",
    "evidence": [
     "folio/unital-groebner-bases/lean/UGB/BuchbergerPBW/s_poly_decomposition.lean:54",
@@ -11433,9 +11480,9 @@
    "consumers": 26,
    "status": "inhabited",
    "evidence": [
+    "folio/quantum-observable-universe/knots-particles-confinement/hadron-exists.lean:36",
     "folio/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean:43",
-    "folio/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean:51",
-    "folio/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean:59"
+    "folio/quantum-observable-universe/knots-particles-confinement/hadron-operations-closure.lean:51"
    ]
   },
   {
@@ -11589,39 +11636,13 @@
    "prop_fields": 4,
    "fields": 6,
    "collision": true,
-   "consumers": 29,
+   "consumers": 35,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovBondLetterColimit.lean:96",
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceClassNotUnique.lean:69",
-    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:126"
+    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:137"
    ]
-  },
-  {
-   "name": "QOU.Hecke.MarkovTraceAxioms",
-   "short": "MarkovTraceAxioms",
-   "kind": "class",
-   "file": "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceProduct.lean",
-   "line": 63,
-   "prop_fields": 2,
-   "fields": 3,
-   "collision": true,
-   "consumers": 14,
-   "status": "uninhabited",
-   "evidence": []
-  },
-  {
-   "name": "QOU.Hecke.MarkovTraceProduct",
-   "short": "MarkovTraceProduct",
-   "kind": "structure",
-   "file": "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceProduct.lean",
-   "line": 79,
-   "prop_fields": 2,
-   "fields": 7,
-   "collision": true,
-   "consumers": 3,
-   "status": "uninhabited",
-   "evidence": []
   },
   {
    "name": "QOU.Hecke.OrbitalIndexCarrier.OrbitalMixingSpec",
@@ -11645,7 +11666,7 @@
    "prop_fields": 3,
    "fields": 4,
    "collision": true,
-   "consumers": 367,
+   "consumers": 395,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean:210",
@@ -11675,7 +11696,7 @@
    "prop_fields": 4,
    "fields": 5,
    "collision": true,
-   "consumers": 367,
+   "consumers": 391,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/NumSYTBridge.lean:151",
@@ -11695,7 +11716,8 @@
    "consumers": 3,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/Hecke/WedderburnRankDegeneracy.lean:179"
+    "folio/quantum-observable-universe/lean/QOU/Hecke/WedderburnRankDegeneracy.lean:179",
+    "folio/quantum-observable-universe/lean/QOU/Hecke/WedderburnRankDegeneracy.lean:224"
    ]
   },
   {
@@ -12523,12 +12545,12 @@
    "prop_fields": 7,
    "fields": 11,
    "collision": true,
-   "consumers": 29,
+   "consumers": 35,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovBondLetterColimit.lean:96",
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceClassNotUnique.lean:69",
-    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:126"
+    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:137"
    ]
   },
   {
@@ -12658,7 +12680,8 @@
    "consumers": 2,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean:127"
+    "folio/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean:127",
+    "folio/quantum-observable-universe/lean/QOU/IwahoriHecke/Hoefsmit.lean:137"
    ]
   },
   {
@@ -12740,8 +12763,10 @@
    "fields": 10,
    "collision": false,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/KZ/DrinfeldAssociator.lean:134"
+   ]
   },
   {
    "name": "QOU.KZ.KZ4.Chart",
@@ -12787,8 +12812,10 @@
    "fields": 5,
    "collision": false,
    "consumers": 2,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "toy_only",
+   "evidence": [
+    "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean:205"
+   ]
   },
   {
    "name": "QOU.Kashaev.PieceVolumeConjecture",
@@ -12930,7 +12957,7 @@
    "prop_fields": 16,
    "fields": 16,
    "collision": true,
-   "consumers": 15,
+   "consumers": 16,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Knot/L6a4AngleStructure.lean:182",
@@ -12947,7 +12974,7 @@
    "prop_fields": 4,
    "fields": 4,
    "collision": true,
-   "consumers": 15,
+   "consumers": 16,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Knot/L6a4AngleStructure.lean:182",
@@ -13317,8 +13344,11 @@
    "fields": 7,
    "collision": true,
    "consumers": 8,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean:96",
+    "folio/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean:153"
+   ]
   },
   {
    "name": "QOU.LiftingDescent.CrossedModule",
@@ -13332,7 +13362,8 @@
    "consumers": 1,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/SpatialDimensionBinder.lean:140"
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/SpatialDimensionBinder.lean:140",
+    "folio/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean:35"
    ]
   },
   {
@@ -13360,7 +13391,8 @@
    "consumers": 1,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/SpatialDimensionBinder.lean:140"
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/SpatialDimensionBinder.lean:140",
+    "folio/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.lean:35"
    ]
   },
   {
@@ -13535,9 +13567,9 @@
    "consumers": 30,
    "status": "inhabited",
    "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/MobiusEnergy.lean:322",
     "folio/quantum-observable-universe/lean/QOU/MobiusMutualChannel.lean:165",
-    "folio/quantum-observable-universe/lean/QOU/MobiusMutualChannel.lean:457",
-    "folio/quantum-observable-universe/lean/QOU/MobiusMutualChannel.lean:1025"
+    "folio/quantum-observable-universe/lean/QOU/MobiusMutualChannel.lean:457"
    ]
   },
   {
@@ -13563,8 +13595,10 @@
    "fields": 3,
    "collision": false,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/Machinery/KashiwaraCrystalBasic.lean:369"
+   ]
   },
   {
    "name": "QOU.Machinery.CoxeterParabolic.MarkedPair",
@@ -13902,12 +13936,12 @@
    "prop_fields": 3,
    "fields": 3,
    "collision": true,
-   "consumers": 29,
+   "consumers": 35,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovBondLetterColimit.lean:96",
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceClassNotUnique.lean:69",
-    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:126"
+    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:137"
    ]
   },
   {
@@ -14104,11 +14138,11 @@
    "short": "HeckeH3Rel",
    "kind": "structure",
    "file": "folio/quantum-observable-universe/lean/QOU/Mass/BorromeanPhotonFactorisation.lean",
-   "line": 50,
+   "line": 54,
    "prop_fields": 3,
    "fields": 3,
    "collision": false,
-   "consumers": 13,
+   "consumers": 21,
    "status": "uninhabited",
    "evidence": []
   },
@@ -14737,11 +14771,11 @@
    "short": "MassPositivityHyp",
    "kind": "structure",
    "file": "folio/quantum-observable-universe/mass-theory/mass-endomorphism-tower.lean",
-   "line": 99,
+   "line": 117,
    "prop_fields": 2,
    "fields": 2,
    "collision": false,
-   "consumers": 2,
+   "consumers": 3,
    "status": "uninhabited",
    "evidence": []
   },
@@ -14931,8 +14965,8 @@
    "line": 135,
    "prop_fields": 1,
    "fields": 2,
-   "collision": false,
-   "consumers": 4,
+   "collision": true,
+   "consumers": 6,
    "status": "uninhabited",
    "evidence": []
   },
@@ -15120,19 +15154,6 @@
    ]
   },
   {
-   "name": "QOU.Mathlib.EllipticDivisorDegree.HasArgumentPrinciple",
-   "short": "HasArgumentPrinciple",
-   "kind": "class",
-   "file": "folio/quantum-observable-universe/lean/QOU/Mathlib/EllipticDivisorDegree.lean",
-   "line": 217,
-   "prop_fields": 1,
-   "fields": 1,
-   "collision": false,
-   "consumers": 1,
-   "status": "uninhabited",
-   "evidence": []
-  },
-  {
    "name": "QOU.Mathlib.EllipticDivisorDegree.IsElliptic",
    "short": "IsElliptic",
    "kind": "structure",
@@ -15203,12 +15224,12 @@
    "prop_fields": 2,
    "fields": 3,
    "collision": true,
-   "consumers": 29,
+   "consumers": 35,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovBondLetterColimit.lean:96",
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceClassNotUnique.lean:69",
-    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:126"
+    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:137"
    ]
   },
   {
@@ -15412,8 +15433,10 @@
    "fields": 3,
    "collision": false,
    "consumers": 22,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/Mathlib/ConcentratedColumnCollapse.lean:162"
+   ]
   },
   {
    "name": "QOU.Mathlib.QAlienBridge.QBridgeSystem",
@@ -15520,12 +15543,12 @@
    "prop_fields": 1,
    "fields": 2,
    "collision": true,
-   "consumers": 367,
+   "consumers": 391,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/BraidKnot/NumSYTBridge.lean:93",
-    "folio/quantum-observable-universe/lean/QOU/BraidKnot/NumSYTBridge.lean:151",
-    "folio/quantum-observable-universe/lean/QOU/BraidKnot/NumSYTBridge.lean:188"
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/CentralIdempotentSignTwist.lean:37",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/CentralIdempotentSignTwist.lean:175",
+    "folio/quantum-observable-universe/lean/QOU/BraidKnot/NumSYTBridge.lean:93"
    ]
   },
   {
@@ -15887,12 +15910,12 @@
    "prop_fields": 8,
    "fields": 15,
    "collision": true,
-   "consumers": 29,
+   "consumers": 35,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovBondLetterColimit.lean:96",
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceClassNotUnique.lean:69",
-    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:126"
+    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:137"
    ]
   },
   {
@@ -16023,6 +16046,7 @@
    "consumers": 2,
    "status": "inhabited",
    "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean:205",
     "folio/quantum-observable-universe/lean/QOU/MathlibExt/SDPEmptyConstraints.lean:81"
    ]
   },
@@ -16388,6 +16412,19 @@
    ]
   },
   {
+   "name": "QOU.Molecular.ElectronAssignmentLP",
+   "short": "ElectronAssignmentLP",
+   "kind": "structure",
+   "file": "folio/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean",
+   "line": 148,
+   "prop_fields": 3,
+   "fields": 11,
+   "collision": false,
+   "consumers": 2,
+   "status": "uninhabited",
+   "evidence": []
+  },
+  {
    "name": "QOU.Molecular.ElectronShell",
    "short": "ElectronShell",
    "kind": "structure",
@@ -16517,9 +16554,9 @@
    "short": "ShellFillingLPDuality",
    "kind": "class",
    "file": "folio/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean",
-   "line": 207,
+   "line": 239,
    "prop_fields": 4,
-   "fields": 8,
+   "fields": 10,
    "collision": false,
    "consumers": 1,
    "status": "uninhabited",
@@ -16530,11 +16567,11 @@
    "short": "ShellFillingRuleContext",
    "kind": "class",
    "file": "folio/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean",
-   "line": 65,
-   "prop_fields": 7,
-   "fields": 19,
+   "line": 74,
+   "prop_fields": 5,
+   "fields": 14,
    "collision": false,
-   "consumers": 5,
+   "consumers": 4,
    "status": "uninhabited",
    "evidence": []
   },
@@ -17278,7 +17315,7 @@
    "short": "EWGroupAssignment",
    "kind": "class",
    "file": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean",
-   "line": 728,
+   "line": 841,
    "prop_fields": 1,
    "fields": 3,
    "collision": false,
@@ -17317,11 +17354,11 @@
    "short": "EWSectorSelection",
    "kind": "class",
    "file": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean",
-   "line": 200,
-   "prop_fields": 8,
-   "fields": 10,
+   "line": 212,
+   "prop_fields": 6,
+   "fields": 8,
    "collision": false,
-   "consumers": 0,
+   "consumers": 1,
    "status": "uninhabited",
    "evidence": []
   },
@@ -17343,16 +17380,16 @@
    "short": "EWVectorLabeling",
    "kind": "structure",
    "file": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean",
-   "line": 383,
+   "line": 496,
    "prop_fields": 1,
    "fields": 2,
    "collision": false,
    "consumers": 1,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:391",
-    "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:397",
-    "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:504"
+    "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:504",
+    "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:510",
+    "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution.lean:617"
    ]
   },
   {
@@ -17373,7 +17410,7 @@
    "short": "FourTermPairNucleonContext",
    "kind": "class",
    "file": "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean",
-   "line": 57,
+   "line": 58,
    "prop_fields": 2,
    "fields": 5,
    "collision": false,
@@ -17640,12 +17677,12 @@
    "prop_fields": 3,
    "fields": 6,
    "collision": true,
-   "consumers": 29,
+   "consumers": 35,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovBondLetterColimit.lean:96",
     "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceClassNotUnique.lean:69",
-    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:126"
+    "folio/quantum-observable-universe/lean/QOU/Hecke/MarkovTraceH2.lean:137"
    ]
   },
   {
@@ -17709,10 +17746,10 @@
    "prop_fields": 2,
    "fields": 3,
    "collision": true,
-   "consumers": 818,
+   "consumers": 826,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:76",
+    "folio/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean:88",
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/GarnirShape.lean:61",
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/PartitionHookProductBridge.lean:123"
    ]
@@ -17853,8 +17890,10 @@
    "fields": 3,
    "collision": false,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/JetHorizon.lean:226"
+   ]
   },
   {
    "name": "QOU.PoissonObject",
@@ -17918,8 +17957,11 @@
    "fields": 1,
    "collision": false,
    "consumers": 3,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean:232",
+    "folio/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean:253"
+   ]
   },
   {
    "name": "QOU.ProofHygiene.DecoyContext",
@@ -17933,6 +17975,7 @@
    "consumers": 5,
    "status": "inhabited",
    "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean:199",
     "folio/quantum-observable-universe/lean/QOU/ProofHygiene/SelfAssumingContexts.lean:214"
    ]
   },
@@ -18074,7 +18117,8 @@
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean:163",
-    "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean:243"
+    "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean:243",
+    "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean:258"
    ]
   },
   {
@@ -18383,7 +18427,8 @@
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/Knot/FiveTwoVolumeConstant.lean:92",
-    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoComplexPentagon.lean:1462"
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoComplexPentagon.lean:1462",
+    "folio/quantum-observable-universe/lean/QOU/QBeta/FiveTwoComplexPentagon.lean:1499"
    ]
   },
   {
@@ -18778,7 +18823,9 @@
    "consumers": 3,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QAnalysisUniquenessCounterexamples.lean:75"
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QAnalysisUniquenessCounterexamples.lean:75",
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QAnalysisUniquenessCounterexamples.lean:159",
+    "folio/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists.lean:60"
    ]
   },
   {
@@ -18793,7 +18840,8 @@
    "consumers": 1,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QAnalysisUniquenessCounterexamples.lean:87"
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QAnalysisUniquenessCounterexamples.lean:87",
+    "folio/quantum-observable-universe/quantum-observable-universes/q-exponential-exists.lean:65"
    ]
   },
   {
@@ -19001,8 +19049,10 @@
    "fields": 4,
    "collision": false,
    "consumers": 2,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/quantum-observable-universes/q-heat-equation-exists.lean:25"
+   ]
   },
   {
    "name": "QOU.QLogExpAdjoint",
@@ -19029,7 +19079,8 @@
    "consumers": 1,
    "status": "inhabited",
    "evidence": [
-    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QAnalysisUniquenessCounterexamples.lean:97"
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QAnalysisUniquenessCounterexamples.lean:97",
+    "folio/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists.lean:65"
    ]
   },
   {
@@ -19125,8 +19176,10 @@
    "fields": 4,
    "collision": false,
    "consumers": 1,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/quantum-observable-universes/q-resolvent-exists.lean:30"
+   ]
   },
   {
    "name": "QOU.QResolventAlg",
@@ -19285,8 +19338,10 @@
    "fields": 11,
    "collision": false,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean:91"
+   ]
   },
   {
    "name": "QOU.QuantumObservableUniverse.ExistsAxiom2ObservabilityContext",
@@ -19354,6 +19409,19 @@
    "evidence": []
   },
   {
+   "name": "QOU.QuantumObservableUniverses.CyclicTrace",
+   "short": "CyclicTrace",
+   "kind": "structure",
+   "file": "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/HiggsVacuumResidual.lean",
+   "line": 176,
+   "prop_fields": 4,
+   "fields": 4,
+   "collision": true,
+   "consumers": 6,
+   "status": "uninhabited",
+   "evidence": []
+  },
+  {
    "name": "QOU.QuantumObservableUniverses.GActionOnSubstrate",
    "short": "GActionOnSubstrate",
    "kind": "class",
@@ -19361,6 +19429,19 @@
    "line": 25,
    "prop_fields": 4,
    "fields": 8,
+   "collision": false,
+   "consumers": 0,
+   "status": "uninhabited",
+   "evidence": []
+  },
+  {
+   "name": "QOU.QuantumObservableUniverses.PointCopoint",
+   "short": "PointCopoint",
+   "kind": "structure",
+   "file": "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/HiggsVacuumResidual.lean",
+   "line": 77,
+   "prop_fields": 2,
+   "fields": 5,
    "collision": false,
    "consumers": 0,
    "status": "uninhabited",
@@ -19376,8 +19457,12 @@
    "fields": 9,
    "collision": false,
    "consumers": 28,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:40",
+    "folio/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:53",
+    "folio/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:73"
+   ]
   },
   {
    "name": "QOU.QuantumSu2Relations",
@@ -19402,8 +19487,12 @@
    "fields": 18,
    "collision": false,
    "consumers": 13,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/TrivialWitness.lean:101",
+    "folio/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/TrivialWitness.lean:130",
+    "folio/quantum-observable-universe/quantum-universes/quantum-universe-exists.lean:43"
+   ]
   },
   {
    "name": "QOU.QuaternionicSpectralResolvents",
@@ -19822,8 +19911,10 @@
    "fields": 2,
    "collision": false,
    "consumers": 1,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/Eightfold/Sym2AdjointSpinTwo.lean:48"
+   ]
   },
   {
    "name": "QOU.StaircaseCornerHook.StaircaseEWResidual",
@@ -20164,6 +20255,7 @@
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/lean/QOU/BringConeGauge.lean:87",
+    "folio/quantum-observable-universe/lean/QOU/BringConeGauge.lean:124",
     "folio/quantum-observable-universe/lean/QOU/BringConeGauge.lean:160"
    ]
   },
@@ -20335,8 +20427,10 @@
    "fields": 4,
    "collision": true,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/predicted-spectra/categorical-neutron-exists.lean:39"
+   ]
   },
   {
    "name": "QOU.Torsion.CategoricalProton",
@@ -20348,8 +20442,10 @@
    "fields": 4,
    "collision": true,
    "consumers": 0,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/predicted-spectra/categorical-proton-exists.lean:39"
+   ]
   },
   {
    "name": "QOU.Torsion.CategoricalTransferMatrix",
@@ -20402,8 +20498,11 @@
    "fields": 7,
    "collision": true,
    "consumers": 8,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean:96",
+    "folio/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean:153"
+   ]
   },
   {
    "name": "QOU.Torsion.Descent",
@@ -20855,8 +20954,10 @@
    "fields": 3,
    "collision": false,
    "consumers": 8,
-   "status": "uninhabited",
-   "evidence": []
+   "status": "inhabited",
+   "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/Torsion/BraneTower.lean:72"
+   ]
   },
   {
    "name": "QOU.Torsion.VanishingCondition",
@@ -21108,12 +21209,12 @@
    "prop_fields": 1,
    "fields": 4,
    "collision": false,
-   "consumers": 53,
+   "consumers": 54,
    "status": "inhabited",
    "evidence": [
+    "folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/NucleonIsospinExclusions.lean:71",
     "folio/quantum-observable-universe/lean/QOU/Mass/AltCharShiftMultiset.lean:244",
-    "folio/quantum-observable-universe/observations/virtual-subword.lean:202",
-    "folio/quantum-observable-universe/observations/virtual-subword.lean:204"
+    "folio/quantum-observable-universe/observations/virtual-subword.lean:202"
    ]
   },
   {
@@ -21476,11 +21577,11 @@
    "prop_fields": 4,
    "fields": 5,
    "collision": true,
-   "consumers": 78,
+   "consumers": 84,
    "status": "inhabited",
    "evidence": [
     "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/AlgOps.lean:119",
-    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean:104",
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean:106",
     "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean:328"
    ]
   },
@@ -21493,7 +21594,7 @@
    "prop_fields": 1,
    "fields": 3,
    "collision": true,
-   "consumers": 60,
+   "consumers": 63,
    "status": "inhabited",
    "evidence": [
     "folio/unital-groebner-bases/lean/UGB/BuchbergerPBW/s_poly_decomposition.lean:54",
@@ -21532,7 +21633,7 @@
    "short": "HeckeParams",
    "kind": "structure",
    "file": "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean",
-   "line": 110,
+   "line": 112,
    "prop_fields": 2,
    "fields": 3,
    "collision": false,
@@ -21651,12 +21752,12 @@
    "prop_fields": 1,
    "fields": 2,
    "collision": false,
-   "consumers": 58,
+   "consumers": 60,
    "status": "inhabited",
    "evidence": [
     "folio/quantum-observable-universe/climax-volume-mass/vertex-algebra-jet-relations.lean:47",
     "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeCompletion.lean:120",
-    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean:170"
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean:172"
    ]
   },
   {
@@ -21668,11 +21769,11 @@
    "prop_fields": 1,
    "fields": 1,
    "collision": false,
-   "consumers": 6,
+   "consumers": 7,
    "status": "inhabited",
    "evidence": [
-    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean:983",
-    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean:996",
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean:1164",
+    "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean:1177",
     "folio/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeCompletion.lean:267"
    ]
   }
