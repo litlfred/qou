@@ -71,3 +71,6 @@ Hit list regenerated with `voice-leak-audit.ts` (see PR #8538 + audit doc). Drai
 
 ## 2026-11-20 — W14b duplicate (https://claude.ai/code/session_01VQDpPc68uEsyxoN3soj6Ws)
 A scheduled sibling (W14b) redid options 2/1/5/3 as PRs #8577/#8584/#8585/#8588 without first seeing W14's #8563/#8566/#8567/#8569. All four W14b PRs are withdrawn to draft. Distinct W14b output: Part I L4 fixes and rem:q-generic-ground-ring (#8577); mass-theory '## Lean' restatements (12 sections #8569 leaves) and mass-theory L3 (#8588). Owner comparison and choice: #8526 comment 7042945374, which also flags that the two records of the ruling disagree on option 4. Child beans for the remaining waves: qou-t5iz, qou-a1k9, qou-rfp0, qou-e7ku, qou-qdf6, qou-tztx (counts from the W14b stack; re-measure on W14's). Content inconsistency found: qou-w14g.
+
+## 2026-11-20 (evening) — W14 option-3 waves done on #8569
+All chapters except Ch1-2 (in #8563) hand-drained. Paper-wide L1 672 -> 107, L2 2335 -> 457, failing blocks 1330 -> 764 (#8566 + #8569). What remains is blocks whose subject IS Lean/code: ~25 Mathlib-infrastructure blocks, appendix-mass-binding-algorithms (Python-API contract by design), notation/glossary/index-of-definitions, ~15 leftover sites. Framed as a second [W14 ask] on #8526 (groups 1-4; recommendation 1b, 2a, 3a, 4a; default leave).
