@@ -623,6 +623,7 @@ import QOU.Archimedean.LobMonotonicity
 import QOU.Archimedean.BlochWignerNonneg
 import QOU.Archimedean.BlochWignerPositive
 import QOU.Archimedean.HyperbolicVolumeMeasure
+import QOU.Archimedean.HyperbolicVolumeInversion
 import QOU.Archimedean.HyperbolicQuotient
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
@@ -1144,6 +1145,7 @@ import QOU.Archimedean.BalancedMomentConfluence
 import QOU.Archimedean.BalancedKernelTightness
 import QOU.Archimedean.BalancedCarrierJacobi
 import QOU.Archimedean.SWJacksonMomentFactorization
+import QOU.Archimedean.SWGaussianLogNormalMoments
 import QOU.Archimedean.SWCoreJacobi
 import QOU.Archimedean.TropicalClassTransport
 import QOU.Archimedean.AwZeroLocalization
@@ -1183,6 +1185,7 @@ import QOU.Mathlib.ArgumentPrincipleAnnulus
 import QOU.Mathlib.EllipticAnnulusWinding
 import QOU.Mathlib.LiouvilleThird
 import QOU.Mathlib.HadamardFactorization
+import QOU.Mathlib.JensenZeroCounting
 -- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
 -- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the
 -- Mathlib gap); #zeros−#poles=Σ ord counting brick + 2πi≠0 proved sorry-free.
