@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-meson-em-sinh-ratio-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:meson-em-sinh-ratio-reading",
+  "kind": "remark",
+  "title": "The meson mass ratio and its electromagnetic factor",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-meson-em-sinh-closed-form",
+  "tags": [
+    "meson",
+    "alpha-em",
+    "empirical-comparison",
+    "interpretation"
+  ],
+  "text": "meson-em-sinh-ratio-reading.md",
+  "provenance": "authored"
+}

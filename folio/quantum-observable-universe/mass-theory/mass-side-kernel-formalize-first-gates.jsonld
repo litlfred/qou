@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-mass-side-kernel-formalize-first-gates",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:mass-side-kernel-formalize-first-gates",
@@ -17,7 +18,7 @@
     "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-invariant",
     "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-typeclass",
     "papers/quantum-observable-universe/blocks/prop-q-beta-q-eq-one-shadow-gate",
-    "papers/quantum-observable-universe/blocks/prop-q-beta-direction-sanity-gate"
+    "papers/quantum-observable-universe/blocks/rem-q-beta-direction-sanity-gate"
   ],
   "cites": [
     "references/jones1987",

@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:alpha-em-categorical-trace-ratio",
   "kind": "proposition",
-  "title": "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta_q(T_{2,9}) \\cdot \\delta_q(T_{3,5})]$",
+  "title": "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta^{\\mathrm{top}}_q(T_{2,9}) \\cdot \\delta^{\\mathrm{top}}_q(T_{3,5})]$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-delta-q-decoration",
+    "papers/quantum-observable-universe/blocks/def-torus-knot-top-channel-decoration",
     "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
     "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness"
   ],

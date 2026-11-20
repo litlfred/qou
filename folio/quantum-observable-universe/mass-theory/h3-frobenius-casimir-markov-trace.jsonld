@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-h3-frobenius-casimir-markov-trace",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:h3-frobenius-casimir-markov-trace",
+  "kind": "proposition",
+  "title": "Frobenius Casimir of $H_3(q)$: Schur elements, Markov weights, its Markov trace, and $\\sum_{\\lambda\\vdash3}1/\\dim_q\\lambda = 2+1/[2]_q$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-frobenius-codim-universal"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/geckpfeiffer2000"
+  ],
+  "tags": [
+    "frobenius",
+    "casimir",
+    "schur-elements",
+    "markov-trace",
+    "convention-D",
+    "hecke-algebra"
+  ],
+  "leanRef": "qou:QOU.MassCore.H3FrobeniusCasimir.tr_casimir_D",
+  "text": "h3-frobenius-casimir-markov-trace.md",
+  "leanSource": "h3-frobenius-casimir-markov-trace.lean",
+  "provenance": "authored"
+}

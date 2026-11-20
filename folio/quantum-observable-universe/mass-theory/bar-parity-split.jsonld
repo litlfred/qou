@@ -2,27 +2,30 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-bar-parity-split",
+  "@id": "papers/quantum-observable-universe/blocks/conj-bar-parity-split",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:bar-parity-split",
-  "kind": "proposition",
-  "title": "Binding (cosh) and β-decay (sinh) are the two bar-parities of one element",
+  "label": "conj:bar-parity-split",
+  "kind": "conjecture",
+  "title": "The binding trace and the $\\mathfrak{Q}_\\beta$ residue are the bar-even and bar-odd parts of one fibre element",
   "uses": [
+    "papers/quantum-observable-universe/blocks/lem-bar-involution-parity-decomposition",
     "papers/quantum-observable-universe/blocks/prop-sl2-prolongation-recurrence",
     "papers/quantum-observable-universe/blocks/def-bar-involution",
     "papers/quantum-observable-universe/blocks/conj-binding-qbeta-complex-volume"
   ],
-  "proofs": [
-    "papers/quantum-observable-universe/blocks/prf-bar-parity-split"
+  "tags": [
+    "bar-parity",
+    "beta-decay",
+    "binding-energy",
+    "fibre-level"
   ],
-  "leanRef": "qou:QOU.Mass.evenPart_add_oddPart",
   "text": "bar-parity-split.md",
-  "leanSource": "bar-parity-split.lean",
   "provenance": "authored"
 }
