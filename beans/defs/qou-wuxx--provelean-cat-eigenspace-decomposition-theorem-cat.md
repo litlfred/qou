@@ -11,7 +11,7 @@ tags:
     - repo-infra
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:09Z
-updated_at: 2026-10-10T07:01:01Z
+updated_at: 2026-11-20T15:40:00Z
 parent: qou-l2vh
 ---
 
@@ -42,3 +42,16 @@ Tracked under carrier M2 (`tmvac`) of epic `qou-d8c7`. Stays open (rule 13a).
   - Witness: `computations/probes/qou_w49j_wjw8_wuxx_wy2h_xs2c_magnitude_and_frame_probe.witness.json` (Commit 2 / HEAD: `687a015fcc42c84733dfecead6ca9f6e13e3d31d`, `allPassed = true`, `rawFloatCount = 0`).
 - **PR**: `litlfred/qou#8360` (`feat/qou-b9cj-w49j-wjw8-wuxx-wy2h-xs2c`).
 
+
+## 2026-11-20 W11: equality reduced to a common-ray condition (branch claude/topological-mass-alignment-2026-11-20)
+- The common-ray iff is `mass_decomposition_eq_iff` (PR #8581, a parallel child of the coordinator). W11's duplicate lemmas were dropped in its favour.
+- Kept from W11: `transient_trace_eq_zero_of_global_compat` in `mass-endomorphism/topological-mass-upper-bound.lean` (sorry-free, axiom propext only). If tr_{n+1} = tr_n ∘ 𝔡 holds on the whole algebra, every transient trace is 0.
+
+The corpus-grep, six paths, with corpus_search unavailable, finds co-directionality open:
+- `norm_additivity_of_nonneg_traces` is never discharged.
+- `*_nonneg` structure fields hold norms, not raw traces.
+- `norm_additivity_not_forced` (`LiftingDescent/tm_transient_localisation.lean:91`) is a scope-(a) counterexample.
+- Tension, not a refutation: the unproved orthogonality in `lem:topological-mass-cat-eigenspace`, and the negative baryon Markov trace.
+- Unattempted route: `trM_nonneg_of_reading3` applied to τ̂α and to the localised transient pieces.
+
+The equality stays an open conjecture. Do not close this bean.

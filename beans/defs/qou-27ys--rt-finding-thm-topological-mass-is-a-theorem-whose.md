@@ -37,3 +37,6 @@ The owner answered "Y" to the [W11 ask] on #8526, choosing option 1: split. Bran
 
 ## 2026-11-20 tm follow-up (owner approved D1/D2/D3)
 Branch claude/topological-mass-ray-followup-2026-11-20: ray-alignment sentence and authorNotes on conj:topological-mass; lem:topological-mass-eigenspace-decomp restated as ≤ (equality tracked in qou-tmeq). Still open; not closed.
+
+## 2026-11-20 W11 note: converged with PR #8581
+W11 independently reached the same reduction, then dropped its duplicate equality lemmas in favour of `mass_decomposition_eq_iff` (#8581), which is stronger: pairwise and necessary-and-sufficient. One new piece is kept, on branch `claude/topological-mass-alignment-2026-11-20`: `QOU.Torsion.transient_trace_eq_zero_of_global_compat` (sorry-free, axiom propext only). If tr_{n+1} = tr_n ∘ 𝔡 holds on the WHOLE algebra, every transient trace is 0. The sibling `topological-mass.lean::descended_trace_is_base_level` assumes exactly that global form. The narrative proof of `lem:topological-mass-cat-descended`, and `CatDescendedInputs.trace_compat`, use the honest image-only form. So, under the global form, the equality holds trivially and there are no Φ_q contributions. The producer `mass_from_tower` reports positive transient pieces, which is consistent only with the image-only form.
