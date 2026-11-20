@@ -1,11 +1,11 @@
 ---
 # qou-9fkb
 title: 'Close-candidate beans: in-progress, every referenced PR merged, none open (W6 list)'
-status: todo
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-11-20T08:00:00Z
-updated_at: 2026-11-20T08:00:00Z
+updated_at: 2026-11-20T08:10:00Z
 parent: qou-w3yy
 ---
 
@@ -19,3 +19,5 @@ Beans: `qou-1inh`, `qou-21oc`, `qou-3nva`, `qou-4jhp`, `qou-6p3b`, `qou-6tdg`, `
 
 Source: `docs/coordination/2026-11-20-session-review.json` (`items` with `ws == "NEW-H"`). Detection is via `#N` mentions in bean bodies, so some links may be loose.
 Created by W6, https://claude.ai/code/session_01VQDpPgX3UVCddvq75ab4EV
+
+**Scrapped 2026-11-20 (W6 scheduled run):** duplicates `qou-w6tr`, created minutes earlier by the parallel W6 run (PR #8527). List appended there.
