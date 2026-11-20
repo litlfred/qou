@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-eigenbasis-complete-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-eigenbasis-complete-reading",
+  "kind": "remark",
+  "title": "Knot types as a basis for the tensor tower",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete",
+  "tags": [
+    "knot-invariant",
+    "interpretation"
+  ],
+  "text": "knot-eigenbasis-complete-reading.md",
+  "provenance": "authored"
+}

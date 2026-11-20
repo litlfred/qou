@@ -63,7 +63,8 @@ This file asks the first question one asks of a fluctuation `δλ` of a pairing:
 * The handedness caveat of `PairingVariationalDerivative` persists: §3 needs
   `ExactPairing d.dual d.obj` (coevaluation `𝟙 ⟶ dual ⊗ obj`), whereas
   `FrobeniusPairingData.Nondegenerate` produces `ExactPairing d.obj d.dual`.
-  No braiding is assumed, so the two are not identified here.
+  §3 does not identify the two; §4 does, under a braiding (co-pairing
+  `η_ obj dual ≫ β`). The non-braided case remains open.
 * Nothing about a symmetric/traceless (`V₂`) projection of the fluctuations.
 
 ## Base ring (§7c)

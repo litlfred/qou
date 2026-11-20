@@ -1,0 +1,526 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-endomorphism/pairing-gauge-fluctuation-massless",
+    "path": "folio/quantum-observable-universe/mass-endomorphism/pairing-gauge-fluctuation-massless"
+  },
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:52.426Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:56.000Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:48:59.764Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:03.059Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:07.367Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:11.183Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:14.409Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:17.801Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:21.327Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:24.577Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:39.372Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Statement + one-line argument + scope note only; physical reading lives in rem:pairing-gauge-fluctuation-massless-interpretation (interprets:)."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:42.410Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Placed in sec:mass-endomorphism-mass-identity right after conj:mass-endomorphism, whose graviton clause its companion remark reads; no sibling carries the claim."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:45.902Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Generic commutative ring R, preadditive R-linear monoidal C; no ordering, Real.*, numeric q. Matches Lean ({R} [CommRing R], no ℝ)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:50.021Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Argument is the mate identity (Mathlib coevaluation_comp_rightAdjointMate) plus braiding naturality; purely algebraic, no archimedean step."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:53.193Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "uses def:frobenius-pairing and def:rigid-monoidal-category (mates, exact pairing); braided/monoidal category via :refterm glossary; contraction action is defined in-block."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:56.347Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:1 'Let C be a monoidal category that is preadditive and R-linear' (score 14/16): no concrete anchor (H2); 4-clause opening sentence (H1).",
+        "notes": "Add one concrete case before the Proposition: in finite-dim Vect with eta = sum_i e^i (x) e_i, (f (x) 1)eta = sum f(e^i)(x)e_i = sum e^i (x) f^T e_i = (1 (x) f^vee)eta, so delta_f lambda o eta = 0. Split md:1 into two sentences (setting; then field space + contraction action)."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:00.969Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No repeated content: definitions, proposition, general iff, braided paragraph and scope note each state distinct material."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:04.403Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "md:33 'among the zero modes, not that they exhaust them' is the mathematical scope claim itself (rank-one radical); passes with note."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:07.822Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:11.456Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:14.002Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:16.324Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:18.594Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:20.889Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:23.187Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:25.728Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9b635607dd97",
+          "ts": "069862cce844",
+          "lean": "c9821b435b7d",
+          "lean_statement": "6250d0090467"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.202Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: none of this trap's patterns present; the three displayed conclusions are a substantive enumeration; block ends on the uncovered non-braided case (content)."
+      }
+    ]
+  }
+}

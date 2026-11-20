@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-molecular-hbond-phase-transition",
@@ -19,7 +20,7 @@
     "papers/quantum-observable-universe/blocks/prop-symmetric-block-domain-weight",
     "papers/quantum-observable-universe/blocks/def-covalent-bond-shared-trefoil",
     "papers/quantum-observable-universe/blocks/prop-tetrahedral-hbond-directions",
-    "papers/quantum-observable-universe/blocks/prop-boltzmann-constant",
+    "papers/quantum-observable-universe/blocks/def-boltzmann-constant",
     "papers/quantum-observable-universe/blocks/def-quantum-temperature",
     "papers/quantum-observable-universe/blocks/def-van-der-waals-hopf-channel"
   ],
