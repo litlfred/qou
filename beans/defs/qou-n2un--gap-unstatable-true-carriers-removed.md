@@ -7,7 +7,7 @@ tags:
     - lean-foundations
     - devacuify
 created_at: 2026-11-15T14:05:00Z
-updated_at: 2026-11-20T09:30:00Z
+updated_at: 2026-11-20T20:22:43Z
 parent: qou-6qbv
 ---
 
@@ -102,3 +102,6 @@ Next: CategoricalQExtDeriv.exists_axiom and frobeniusForm_unique.
 ## 2026-11-20 — W1 survey (session_01VQDpPcT9hCf4RF1bQwk66r, epic PR #8534)
 
 Progress on the Baer-* row: PR #8534 (commit 98fa99ede6) proves `baerStarRing_matrix_rclike`: M_n(k) with conjugate transpose is Baer-* for every RCLike k. This is the positive-star matrix block. Sorry-free; axioms propext, Classical.choice, Quot.sound. The Hecke proposition still needs a *-isomorphism H_n(q) → ⊕ M_{d_λ}(k) carrying the bar involution to the conjugate transpose; not formalised.
+
+## 2026-11-20 (qou-99qc P3, PR #8682): H₃ case of `energy_path_independent` repair
+`QOU/QBeta/NormalFormLengthInvariants.lean`: `eval_quad` / `eval_braid` prove that quadratic and braid rewrites at any position preserve the T_w coefficient vector in H₃(q) (generic CommRing), so E_gs = Σ|c_w|ℓ(w) is a function of the element (`gsEnergy_quad`). General n still open. `beta_decay_energy_negative` intended content measured on the nucleon alone: true in the short typed model (ΔE = −0.209 at q₀), false in the 11-letter model (+0.064), equal (0) on V³. Bean stays open.

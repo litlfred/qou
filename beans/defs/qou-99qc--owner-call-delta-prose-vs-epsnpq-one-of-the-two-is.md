@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T22:30:00Z
+updated_at: 2026-11-20T20:22:43Z
 parent: qou-10v9
 ---
 
@@ -4322,3 +4322,12 @@ Owner 20:52 local: "a beta decay is not standalone … a Gröbner basis calculat
 - Energy E_N=m_μ|tr|[N]!/q^N: S₆=47391 MeV/unit; E(e⁻_BW)=327, E(e⁻_K σ³)=146 MeV ≫ m_e. Q principal = −30 GeV … +28 GeV; S₆·C = 9.85 (W3), 3.12 (W4/W6), −940 (W7) MeV. None near 0.782, none selected.
 - P4 (Jimbo, lepton=second doublet, #8638 assumption): K-weighted sector trace (sums to the z_D trace, Lean `qtr_markov`) gives n⊗ν = p⊗e⁻ for the split word and ≠ for EVERY entangled word (incl. a single σ₂); kernel `secDiff_H2`: separation = h × σ-coefficient = the strand-tracked W term. Q₄ = S₆·Δ̂ = 180 MeV … 6.7 GeV. Escape from the factorisation no-gos is real in states, not in elements; no MeV-scale functional emerges.
 - OPEN: what energy functional is additive across subsystems (trace is multiplicative, so "same functional on initial and final" is not an energy balance); whether the lepton strand count/scale S_N is admissible at all.
+
+## 2026-11-20 P3: energy as Δ of a normal-form invariant (PR #8682, draft)
+Owner 20:52 ("higher q power"?). Pre-reg `7f9016bf4e`. Lean `QOU/QBeta/NormalFormLengthInvariants.lean` (sorry-free, generic ring): GS rewrites at any position preserve the T_w coefficient vector in H₃ (`eval_quad`, `eval_braid`), so leading Bruhat length, χ = Σc_w q^{ℓ(w)} (index character = q^{writhe}) and corpus E_gs = Σ|c_w|ℓ(w) are rewrite-order independent; the R3 step count (25 vs 30) is not.
+- χ(p) = q²·χ(n) in both typed models (Lean short model): proton two q-powers higher; = Cartan charge 2 of T⁺ (#8661).
+- V³ (γγ base, n = p): Δ = 0 for every invariant. Leading length never separates n, p.
+- Decay Δ: Δℓ_lead = 1 (e⁻ = σ₁³) or 3 (σ₁σ₂σ₁); Δlog_q χ = 5 (typed) / 3 (V³).
+- Required κ/m_e (comparison only): 1.53099 (Δℓ=1), 0.51033 (Δ=3), 0.30620 (Δ=5) vs Q 0.78233; no corpus scale per unit exists.
+- One linear scale on χ-degree has a sign conflict (p higher but lighter; e⁻ at +3, massive). Scope (a).
+- Side: `beta_decay_energy_negative` (E_gs daughter < parent) holds in the short model (−0.209), fails in the 11-letter model (+0.064), equal on V³.
