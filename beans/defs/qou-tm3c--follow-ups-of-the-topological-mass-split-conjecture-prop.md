@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-20T09:10:00Z
-updated_at: 2026-11-20T16:30:00Z
+updated_at: 2026-11-20T16:40:00Z
 parent: qou-ncxf
 ---
 
@@ -38,3 +38,9 @@ Claimed by W11b. The stalled-claim check passed: the bean was `todo` with no bac
 
 ## 2026-11-20 tm (PR #8581, branch claude/topological-mass-equality-2026-11-20)
 Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMassEquality.lean`) that `conj:topological-mass` ⟺ all trace pieces pairwise on a common ray (`mass_decomposition_eq_iff`), with strict inequality under anti-alignment. Full note on qou-27ys. Consequence for this bean's §3b dependents: anything that *uses* the equality inherits exactly the open alignment condition; a dependent can be restated conditionally on a ray-alignment hypothesis (non-degenerate: it is a hypothesis on the pieces, not the conclusion).
+- **2026-11-20, later:** the owner chose option 2 live, then "retarget to CAL-2" for the q₀ pair. Both are done on #8575.
+  - Edges cut: `volume-tower-decomposition` (also clears `cs-evaluation-faithfulness`) and `tower-binding-energy`.
+  - `local-substrate-q` and `terminal-resolution` now point at `def:three-calibration-discipline`.
+  - §3b audit: `origin/main` 247 → branch 237, 0 new. No sole-mass dependents remain.
+  - **Still open:** the CAL-2 block itself reaches `conj:wigner-axiom` plus 3 others, through `prop:substrate-consistency-window` and `prop:calibration-cohomology-alignment`. Pre-existing and not framed yet.
+  - Also still open: the leftover `thm:topological-mass` mentions from item 2.
