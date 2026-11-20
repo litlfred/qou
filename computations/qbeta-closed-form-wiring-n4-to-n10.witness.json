@@ -100,6 +100,6 @@
   "engineVersion": "mpmath 1.3.0",
   "scriptFile": "qbeta_closed_form_wiring_n4_to_n10.py",
   "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-  "q0Note": "Pin recovered 2026-10-10 by inverting the recorded hbar_q_squared_at_q0 (q = 1/(1 - sqrt(hbar_q^2)) agrees with this value to 1.8e-17): the RETIRED self-certified muon pin, not CODATA 2018 (2.8e-12 off) or 2022 (7.7e-11 off). Historical convention-C run; the producer now refuses (qou-5wuz)."
+  "q0Value_retired_pin_A": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "q0Note": "Pin recovered 2026-10-10 by inverting the recorded hbar_q_squared_at_q0 (q = 1/(1 - sqrt(hbar_q^2)) agrees with this value to 1.8e-17): the RETIRED self-certified muon pin, not CODATA 2018 (2.8e-12 off) or 2022 (7.7e-11 off). Historical convention-C run; the producer now refuses (qou-5wuz). Recorded under q0Value_retired_pin_A, not q0Value, because it is a deliberate record of the retired pin (the q0-value drift audit's labelled-retired class), not a live anchor value."
 }
