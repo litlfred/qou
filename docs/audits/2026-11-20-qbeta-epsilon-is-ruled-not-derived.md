@@ -362,3 +362,38 @@ own scale for a unit of trace, `2 m_μ [3]_q!/q³ = 945.76` MeV, sends the same 
   derive the functional and leave the scale unexplained, which points at the scale.
 
 Probe: `computations/qbeta/qbeta_quantum_trace_rank_family_probe.py` (5/5 exact checks).
+
+## 14. Option 1 attempted: is the scale `E₀` on the chain? (owner "Try", same day)
+
+Scope-(a) negative. The chain does not produce `E₀`, and it cannot produce `Q_β` with any
+scale that it also uses for the nucleon mass.
+
+**(a) `E₀` is the chain's conversion times one `ℏ_q`.** The corpus converts mass to energy by
+`𝔈 = 𝔪·c_q²`, `c_q = 1/(q−1)` (`def:information-speed-of-light`). Exactly,
+
+$$
+  E_0 = \frac{m_e}{q(q-1)} = m_e\,c_q^2\,\hbar_q, \qquad \hbar_q = \frac{q-1}{q}.
+$$
+
+`m_e c_q² = 42.248` MeV. The extra `ℏ_q` is the "per Planck tick" factor of
+`beta-decay-energy-scale`. No step of the action or the mass identity supplies it. CODATA
+needs `0.17431 · m_e c_q² = 1.7592 ℏ_q · m_e c_q²` on the ruled trace.
+
+**(b) Δ is too large relative to the nucleon.** On the single wrap at `z_D` (Hopf factor
+read as `z_D²`; the census of readings is in `qbeta_delta_candidate_census_probe.py`), the proton
+trace is `t_p = 0.31134` and `Δt/t_p = −0.3412`. The physical ratio is
+`(Q_β + m_e)/m_p = 0.0013784`, which is 248× smaller. Any normalisation that sets the
+nucleon mass and the difference from the same trace overshoots:
+
+| normalisation | `Q_β + m_e` |
+|---|---|
+| linear, scaled so `t_p ↦ m_p` | 320.2 MeV |
+| quadratic, the mass identity's Frobenius norm `⟨x,x⟩` | 531.1 MeV |
+| mass channel `2m_μ[3]!/q³` per unit trace | 100.5 MeV (`Q_β` alone) |
+| `m_e c_q²` | 4.49 MeV |
+
+**Conclusion.** `Q_β` is right only if its scale is decoupled from the nucleon-mass scale.
+`E₀` does that decoupling, and its `ℏ_q` is an extra factor, not something derived. Writing
+`E₀` with CAL-1 and CAL-2 alone makes it fit-free in form. It does not make it a step of the
+chain. The open question is now which element of `m_e·ℚ(q₀)` the decay channel's scale is,
+and why. That is a gap, not a closure. Probe: same file, last block.
