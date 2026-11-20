@@ -80,6 +80,7 @@ from codata_constants import (  # noqa: E402
 )
 from derived_masses import q_beta_kashiwara_n2_mev  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
+from _precision import fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -116,19 +117,37 @@ def part_ii_exactness_refutation(q: mp.mpf) -> dict:
     Qb_prod = q_beta_kashiwara_n2_mev()
     Qb_proxy = m_e * abs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     plateau = m_e * 8 * mp.mpf(str(CATALAN_G))
-    gap_prod = float(Qb_prod / (plateau * h) - 1)
-    gap_proxy = float(Qb_proxy / (plateau * h) - 1)
+    # mpf end to end: float() here capped the gap measurement at ~1e-16
+    # and put two raw float64 fields in the witness (AGENTS.md NO-FLOAT64).
+    gap_prod = Qb_prod / (plateau * h) - 1
+    gap_proxy = Qb_proxy / (plateau * h) - 1
+    # The refutation criterion is "many orders above the arithmetic floor",
+    # NOT a hardcoded absolute gap: the old assertion threshold was 1e-4,
+    # sized to the then-observed 6e-4 gap, so when the gap moved to
+    # 1.68e-5 it reported "not refuted" while the refutation was in fact
+    # intact (1.68e-5 is still ~40 orders above the floor). A tolerance
+    # sized to its own miss is a fit; this one is sized to the floor.
+    floor = mp.mpf("1e-45")
+    margin_orders = (mp.log(abs(gap_prod) / floor, 10)
+                     if gap_prod != 0 else mp.mpf(0))
     return {
-        "gap_rel_production_Qbeta": gap_prod,
-        "gap_rel_proxy_Qbeta": gap_proxy,
-        "precision_floor": 1e-45,
+        "gap_rel_production_Qbeta": fmt(gap_prod),
+        "gap_rel_proxy_Qbeta": fmt(gap_proxy),
+        "gap_production_orders_above_floor": fmt(margin_orders),
+        "refuted_at_floor": bool(margin_orders > 9),
+        "precision_floor": "1e-45",
         "verdict": (
-            "REFUTED-as-exact, scope (b) for the EXACT claim only: with "
-            "exact 50-dps inputs the gap (≈6e-4 production / ≈1e-3 "
-            "proxy) is 40+ orders above the floor — Q_β = m_e·8G·h is "
-            "not an identity at q₀. The 0.06% near-match survives as an "
-            "observation: E₀·(2−h)/2 ≈ m_e·8G, an algebraic-vs-Catalan "
-            "transcendental near-coincidence (Weinberg-cosh class)"
+            f"REFUTED-as-exact, scope (b) for the EXACT claim only: "
+            f"with exact inputs the gap ({mp.nstr(gap_prod, 4)} "
+            f"production / {mp.nstr(gap_proxy, 4)} proxy) is "
+            f"{mp.nstr(margin_orders, 3)} orders above the "
+            f"{mp.nstr(floor, 2)} floor — Q_β = m_e·8G·h is not an "
+            f"identity at q₀. The {mp.nstr(abs(gap_prod) * 100, 3)}% "
+            f"near-match survives as an observation: E₀·(2−h)/2 ≈ "
+            f"m_e·8G, an algebraic-vs-Catalan transcendental near-"
+            f"coincidence (Weinberg-cosh class). Figures derived, not "
+            f"hardcoded: the previous text quoted ≈6e-4 / 0.06%, which "
+            f"had gone stale by ~37x."
         ),
     }
 
@@ -147,18 +166,29 @@ def part_iii_candidate(q: mp.mpf) -> dict:
     return {
         "Delta_tr": mp.nstr(dtr, 30),
         "B_E0_undressed_MeV": mp.nstr(E0 * dtr, 20),
-        "B_E0_undressed_err_rel": float(E0 * dtr / B_AME - 1),
+        # fmt on the mpf, NOT fmt(mpf(str(float(x)))): the latter pads 16
+        # real significant digits out to 60, asserting precision that is
+        # not there (AGENTS.md float64-padding).
+        "B_E0_undressed_err_rel": fmt(E0 * dtr / B_AME - 1),
         "B_dressed_1_minus_h2_MeV": mp.nstr(B_dressed, 20),
-        "B_dressed_err_rel": float(B_dressed / B_AME - 1),
+        "B_dressed_err_rel": fmt(B_dressed / B_AME - 1),
         "B_production_Qbeta_over_h_MeV": mp.nstr(B_prod, 20),
-        "B_production_Qbeta_over_h_err_rel": float(B_prod / B_AME - 1),
-        "consistency_dressed_eq_proxy_over_h": float(
+        "B_production_Qbeta_over_h_err_rel": fmt(B_prod / B_AME - 1),
+        "consistency_dressed_eq_proxy_over_h": fmt(
             B_dressed / (Qb_proxy * dtr / h) - 1),
+        # Derived, not hardcoded. The previous text asserted "+11.99% to
+        # +0.30% (proxy) / +0.12% (Kashiwara)"; those figures predate a
+        # 4.047x move in Delta_tr through tr_m_atom_via_transfer and were
+        # badly stale. The percentages below are whatever the live chain
+        # gives, so they cannot drift again.
         "tier": (
-            "observation-tier candidate, NOT wired (Δ_λ gate): the "
-            "(1−h/2) dressing takes the E₀ route from +11.99% to "
-            "+0.30% (proxy Q_β) / +0.12% (Kashiwara Q_β); wiring "
-            "requires deriving the dressing from the binding functional"
+            f"observation-tier candidate, NOT wired (Δ_λ gate): the "
+            f"(1−h/2) dressing takes the E₀ route from "
+            f"{mp.nstr((E0 * dtr / B_AME - 1) * 100, 4)}% to "
+            f"{mp.nstr((B_dressed / B_AME - 1) * 100, 4)}% (proxy Q_β) / "
+            f"{mp.nstr((B_prod / B_AME - 1) * 100, 4)}% (Kashiwara Q_β) "
+            f"against AME2020; wiring requires deriving the dressing "
+            f"from the binding functional"
         ),
     }
 
@@ -177,18 +207,21 @@ def main() -> int:
 
     p_ii = part_ii_exactness_refutation(q)
     print("\n(ii) exactness of Q_β = m_e·8G·h:")
-    print(f"  gap: {p_ii['gap_rel_production_Qbeta']:+.3e} (production) / "
-          f"{p_ii['gap_rel_proxy_Qbeta']:+.3e} (proxy)  → REFUTED-as-exact")
+    print(f"  gap: {p_ii['gap_rel_production_Qbeta'][:12]} (production) / "
+          f"{p_ii['gap_rel_proxy_Qbeta'][:12]} (proxy)  → "
+          f"{'REFUTED-as-exact' if p_ii['refuted_at_floor'] else 'NOT refuted'}"
+          f" ({p_ii['gap_production_orders_above_floor'][:5]} orders above "
+          f"the floor)")
 
     p_iii = part_iii_candidate(q)
     print("\n(iii) zero-fit candidate at D (B_AME = "
           f"{str(AME_B_DEUTERON_MEV_VALIDATION)[:10]} MeV):")
     print(f"  E₀·Δtr (undressed)      = {p_iii['B_E0_undressed_MeV'][:10]}  "
-          f"err {p_iii['B_E0_undressed_err_rel']*100:+.2f}%")
+          f"err {mp.nstr(mp.mpf(p_iii['B_E0_undressed_err_rel']) * 100, 4)}%")
     print(f"  E₀·(1−h/2)·Δtr          = {p_iii['B_dressed_1_minus_h2_MeV'][:10]}  "
-          f"err {p_iii['B_dressed_err_rel']*100:+.2f}%")
+          f"err {mp.nstr(mp.mpf(p_iii['B_dressed_err_rel']) * 100, 4)}%")
     print(f"  Q_β(Kashiwara)·Δtr/h    = {p_iii['B_production_Qbeta_over_h_MeV'][:10]}  "
-          f"err {p_iii['B_production_Qbeta_over_h_err_rel']*100:+.2f}%")
+          f"err {mp.nstr(mp.mpf(p_iii['B_production_Qbeta_over_h_err_rel']) * 100, 4)}%")
 
     wb = (WitnessBuilder("probe-d-qbeta-h-invariant", engine="mpmath+sympy")
           .set_description(
@@ -213,14 +246,19 @@ def main() -> int:
         source="sympy simplify(Q_β_proxy − E₀·h·(2−h)/2) == 0 in ℚ(q)")
     wb.add_assertion(
         "me8Gh_not_exact",
-        computed=float(abs(p_ii["gap_rel_production_Qbeta"]) > 1e-4),
-        expected=1.0,
-        source="precision-floor refutation of exactness (gap ≈ 6e-4 ≫ "
-               "1e-45 with exact inputs)")
+        computed="1" if p_ii["refuted_at_floor"] else "0",
+        expected="1",
+        source="precision-floor refutation of exactness: the gap must "
+               "exceed the 1e-45 arithmetic floor by >9 orders. The "
+               "criterion is the MARGIN over the floor, not a hardcoded "
+               "gap — the old 1e-4 threshold was sized to the then-"
+               "observed 6e-4 and reported a FALSE failure once the gap "
+               "reached 1.68e-5, which is still ~40 orders above floor")
     wb.add_assertion(
         "dressed_equals_proxy_over_h",
-        computed=abs(p_iii["consistency_dressed_eq_proxy_over_h"]),
-        expected=0.0, tolerance=1e-45,
+        computed=fmt(abs(mp.mpf(str(
+            p_iii["consistency_dressed_eq_proxy_over_h"])))),
+        expected="0", tolerance="1e-45",
         source="numerical cross-check of the exact reduction at q₀")
     wb.save()
     print("\nwitness → probe-d-qbeta-h-invariant.witness.json (audit-only)")
