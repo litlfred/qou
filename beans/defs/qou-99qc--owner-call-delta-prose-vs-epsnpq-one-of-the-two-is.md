@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T23:55:00Z
+updated_at: 2026-11-20T23:40:00Z
 parent: qou-10v9
 ---
 
@@ -4269,3 +4269,12 @@ Owner ask (~20:15): derive the rate as a function of q, nothing chosen. #8638 gi
 - (W) Unfactorised U_q(gl₄), u labels ranked first: quark-level block h·P_spin = (h/2)(1+σ⃗·σ⃗), so λ_q = 1 exactly. Lean: `beta_block_isoMajor`, `swap_fierz`, `beta_block_zero_of_lt`. The other 20 orderings give no block in σ (4) or a partial, rotation-violating one (16).
 - (W) nucleon level, CONDITIONAL on the C-SU6 nucleon choice: |λ| → 5/3 at q → 1. At q₀ the u↑u↓d↑d↓ ordering gives λ_⊥ = 1.66744, λ_z = 1.66295 and R = 9.328; anisotropic, with a (σ_N×σ_ℓ)_z term at O((q−1)²). The u↑/u↓ order changes λ (not pre-registered). Against PDG (comparison only): +30.6 % in λ_eff, +58.6 % in R.
 - Choices still open, each with no derivation: (1) where spin lives, (A) or (W); (2) the gl₄ label ordering; (3) the N/Δ separation inside the q-symmetric 20; (4) the lepton premise inherited from #8638. Bean stays open.
+
+## 2026-11-20T23:40Z — the lepton-strand premise of N1 (PR #8673, `LeptonStrandPremise.lean`, 28 decls, sorry-free)
+- Given L (the lepton is a V-strand in the same K-grading), ν=u and e⁻=d are DERIVED by total-T³ conservation and by GMN with one Y (Y=−1). Swapped labels and a singlet lepton are EXCLUDED, scope (b).
+- L itself is UNDERDETERMINED. The corpus defines leptons as knots (trefoil, unknot) and β⁻ as the L₀⁻ smoothing.
+- The left line does NOT select the passage. σ and σ⁻¹ are scalars on the same line. W_L flips flavour in both strand orientations. W_R = q²·W_L.
+- Only left+ ((q²−1)T⁺) and right− (−((q²−1)/q²)T⁺) carry a β block. The corpus positive electron braid σ₁³ selects left+ (C-lep), via a bridge that is not proved.
+- γγ e⁻ = σ₀σ₁σ₀ closes to ≥2 components, T(2,3) to 1. These are different objects.
+- With #8661: L ⇒ the K-weighted Q_β = 0. Without L, the 0.3254 cell stands, but #8638/#8636 lose their derived labels.
+- OPEN, owner: adopt L or reject it (framed in the #8673 body). Bean stays open.
