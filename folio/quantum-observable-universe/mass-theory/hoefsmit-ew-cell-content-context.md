@@ -1,3 +1,17 @@
+### Naming: the electroweak carriers
+
+The three carrier powers of [the Hoefsmit cell content](#thm:hoefsmit-ew-cell-content) are named after the electroweak force-carriers:
+
+$$
+  W \;\longleftrightarrow\; \sigma_1^{\,4} \;\;(\text{strands 1--2}),
+  \quad
+  Z \;\longleftrightarrow\; \sigma_3^{\,6} \;\;(\text{strands 3--4}),
+  \quad
+  H \;\longleftrightarrow\; \sigma_5^{\,8} \;\;(\text{strands 5--6}),
+$$
+
+and the six patterns other than $(s,s,s)$ and $(a,a,a)$ are named the $W^\pm, Z^\pm, H^\pm$ projectors. On its own strand pair the carrier $\sigma^{2k}$, $k = 2, 3, 4$, closes to a two-component link of writhe $2k$, and in the standard braid presentation of torus links that closure is the torus link $T(2, 2k)$; so the carriers are read as $T(2,4), T(2,6), T(2,8)$ on Bring's surface. This is a naming of constructions. That these links are the physical $W^\pm, Z$ and $H$ is [the electroweak/Higgs torus-link identification](#conj:electroweak-higgs-torus-link-triplet), and the boson-to-strand-pair assignment is part of [the categorical Higgs mechanism](#conj:categorical-higgs-mechanism). Neither is used by the theorem.
+
 ### Minimality of $n = 6$
 
 Each EW carrier acts on a single strand-pair. Three carriers need three disjoint strand-pairs. For $n < 6$, carriers share strand-pairs, their generators no longer commute, and the simultaneous-eigenspace decomposition degenerates.
