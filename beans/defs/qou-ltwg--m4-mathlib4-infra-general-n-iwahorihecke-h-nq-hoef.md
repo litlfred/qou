@@ -10,7 +10,7 @@ tags:
     - hecke-algebra
     - representation-theory
 created_at: 2026-11-19T08:19:50Z
-updated_at: 2026-11-20T08:12:14Z
+updated_at: 2026-11-20T15:45:46Z
 parent: qou-dxbw
 ---
 
@@ -83,3 +83,8 @@ parent: qou-dxbw
 - **Done:** `QOU/MathlibExt/QPlancherelPartitionInstance.lean` is the first non-toy inhabitant of `QDimension` and `HasPartitionFunction`: the hook-length `d_q` on `Σ n, Nat.Partition n`, and `Z_q(k) = Σ_{p ⊢ k} d_q²`. `Z_pos` is derived from `molienSum_eq_qFactorial`, and total mass one is proved. Sorry-free; the library sweep passed (120 ok).
 - **Not done:** `HasQPlancherelCLT` (Féray–Méliot) is still uninstantiated. The general-n Hecke algebra and Ocneanu tower were not attempted.
 - **Audit misclassification (likely):** `SkewStandardYoungTableau` is listed `TOY_ONLY` with 27 consumers. Its only explicit term is the containment counterexample `skewSYT_nonempty_of_not_le`, but genuine skew tableaux are counted in `QOU.Mathlib.SkewBranchingSum` / `SkewSYTBranchingBijection`, and `RSKIdentitiesContext` is inhabited (`SkewBranchingTwoOne`). The carrier is a data structure, not an axiom-field. I could not re-check against the scanner because the scanner is not on main (see GAP bean `qou-dx7g`).
+
+## 2026-11-20 (later) — MarkovTraceAxioms restated (PR #8596, owner options 2 + 3)
+
+- All three `MarkovTraceAxioms` classes (`BraidKnot`, `Hecke`, `Braiding`) could be filled in one line and carried no trace. They are removed. The factorisation theorems keep their names and are proved over any genuine `OcneanuTrace.MarkovTrace`, for ascending affine words (`tr_chainWord`). The general-word version is false, and the scope is stated. The `QOU.Braiding` duplicate is deleted. At n = 2 the result is proved on the concrete `H₂(q)`.
+- **Still the M4 gap:** no genuine `OcneanuTrace.MarkovTrace` exists on `H_∞(q)` at `q ≠ 1`.

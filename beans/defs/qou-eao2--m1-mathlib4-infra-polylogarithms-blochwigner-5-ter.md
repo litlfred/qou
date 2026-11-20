@@ -10,7 +10,7 @@ tags:
     - polylogarithm
     - bloch-suslin
 created_at: 2026-11-19T08:19:49Z
-updated_at: 2026-11-20T08:12:14Z
+updated_at: 2026-11-20T15:45:46Z
 parent: qou-dxbw
 ---
 
@@ -75,3 +75,8 @@ parent: qou-dxbw
 
 - **Done:** `Cl_2_DoubleAngle` is inhabited. `QOU/Archimedean/ClausenDoubleAngleSeries.lean` proves `Cl₂(2θ) = 2Cl₂(θ) − 2Cl₂(π−θ)` for **every** real θ, from the series by an odd/even split, with no dilogarithm. The interval version `QOU.Knot.Cl_2_duplication` only covered (0, π). The class docstring that called a tsum proof "blocked" is corrected.
 - **Still open:** `ComplexLiTwoUnitCircleClassical` (Im Li₂(e^{iθ}) = Cl₂(θ)), the pentagon / Bloch–Wigner 5-term relation, and the Bloch group. The bean stays `todo`.
+
+## 2026-11-20 (later) — Li₂ on the unit circle (PR #8597)
+
+- `ComplexLiTwoUnitCircleClassical` is now inhabited: `Im Li₂(e^{iθ}) = Cl₂(θ)` is proved via `Complex.im_tsum`. `blochWigner_unit_circle_eq_Cl_2` is unconditional.
+- **Finding:** `Cl_2_PentagonHolds` (`ThreeSubstantiveMathlibFillers.lean:117`) is vacuous. Its `closure : (Fin 5 → ℝ) → Prop` is class *data*, so `closure := fun _ => False` inhabits it. Do not instantiate it that way. The real 5-term relation needs Li₂ off the unit disk (analytic continuation), which is the remaining M1 work.
