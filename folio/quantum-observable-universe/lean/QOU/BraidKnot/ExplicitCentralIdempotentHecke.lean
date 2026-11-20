@@ -21,12 +21,13 @@ This module is the first step:
   vectors: idempotent, pairwise orthogonal, summing to `1`.
 * `murphyLagrangeComplete_two` — **proved** for `H_2(q)` with the two tableaux of shapes `(2)` and
   `(1,1)`, for `q·qi = 1` and `q² ≠ qi²`. Sorry-free.
+* `bar_fixes_eTriv` — cross-check 4 (bar-pairing) is **false at `n = 2`** for the bar involution
+  `σ ↦ σ⁻¹`, `q ↦ q⁻¹`: it fixes `e_(2)`, and `e_(2) ≠ e_(1,1)`. `hash_swaps_eTriv`: the linear
+  `#`-involution `σ ↦ −σ⁻¹` is the one that sends `e_(2)` to `e_(1,1)`.
 
-**Not yet done:** the general statement for `n ≥ 3`, with the family taken to be the q-content
-vectors `k ↦ q^{2·content(T(k))}` of all standard Young tableaux of size `n+1`. That needs a choice
-among the corpus's several SYT types and a `Fintype` on it. Until then the conjecture block's
-`lean.ref` still names the old carrier. Self-adjointness and bar-pairing (cross-checks 3–4) are also
-not stated here.
+The general-`n` statement of cross-checks 1–2 and centrality is proved in
+`QOU.BraidKnot.ExplicitCentralIdempotentGeneral`.
+
 
 Base ring: a `Field K` (§7c: the Lagrange denominators `t − c` are inverted), with `qi` the
 intended inverse of `q` as in `QOU.SchurWeyl.HeckeAlgebra`.
@@ -165,7 +166,134 @@ theorem lagrangeProj_two_comm (α β : K) :
       = s0 q qi * (α • s0 q qi + β • (1 : Hecke K q qi 1)) := by
   simp only [add_mul, mul_add, smul_mul_assoc, mul_smul_comm, one_mul, mul_one]
 
+/-! ### Cross-check 4 fails at `n = 2`
+
+The `.md` bar involution is `σ_i ↦ σ_i⁻¹`, `q ↦ q⁻¹`, extended antilinearly. It fixes the
+trivial-block idempotent `e_(2)` instead of sending it to `e_(1,1)`. Since `(2)` is chiral
+(`(2)' = (1,1)`), cross-check 4 (`*(e_λ) = e_{λ'}` for `λ ≠ λ'`) is false at `n = 2`. -/
+
+/-- `e_(2)`, written in the basis `{σ₀, 1}`. -/
+noncomputable def eTriv (q qi : K) : Hecke K q qi 1 :=
+  ((q ^ 2 - qi ^ 2)⁻¹ * (q - qi)) • s0 q qi + ((q ^ 2 - qi ^ 2)⁻¹ * (1 - qi ^ 2)) • 1
+
+/-- `e_(1,1)`, written in the basis `{σ₀, 1}`. -/
+noncomputable def eSign (q qi : K) : Hecke K q qi 1 :=
+  ((qi ^ 2 - q ^ 2)⁻¹ * (q - qi)) • s0 q qi + ((qi ^ 2 - q ^ 2)⁻¹ * (1 - q ^ 2)) • 1
+
+theorem lagrangeProj_tTriv (hqi : q * qi = 1) (hne : q ^ 2 ≠ qi ^ 2) :
+    lagrangeProj q qi 1 (specTwo q qi) (tTriv q) = eTriv q qi :=
+  lagrangeProj_two hqi (q ^ 2) (qi ^ 2) hne (tTriv q) (by simp [tTriv]) (by simp [tTriv]) rfl
+
+theorem lagrangeProj_tSign (hqi : q * qi = 1) (hne : q ^ 2 ≠ qi ^ 2) :
+    lagrangeProj q qi 1 (specTwo q qi) (tSign qi) = eSign q qi :=
+  lagrangeProj_two hqi (qi ^ 2) (q ^ 2) (Ne.symm hne) (tSign qi) (by simp [tSign])
+    (by simp [tSign]) (Finset.pair_comm _ _)
+
+omit [DecidableEq K] in
+/-- The trivial representation `σ₀ ↦ q` of `H_2(q)`. -/
+noncomputable def trivRep (q qi : K) : Hecke K q qi 1 →ₐ[K] K :=
+  Hecke.lift K q qi 1 (fun _ => q) (fun _ => by simp only [smul_eq_mul, mul_one]; ring)
+    (fun i hi => absurd hi (by omega)) (fun i j h => absurd h (by omega))
+
+omit [DecidableEq K] in
+theorem trivRep_s0 : trivRep q qi (s0 q qi) = q := by
+  simp [trivRep, s0]
+
+omit [DecidableEq K] in
+/-- `e_(2) ≠ e_(1,1)`: the trivial representation sends them to `1` and `0`. -/
+theorem eTriv_ne_eSign (hqi : q * qi = 1) (hne : q ^ 2 ≠ qi ^ 2) : eTriv q qi ≠ eSign q qi := by
+  intro h
+  have hq0 : q ≠ 0 := left_ne_zero_of_mul_eq_one hqi
+  have hqi' : qi = q⁻¹ := eq_inv_of_mul_eq_one_right hqi
+  have h1 := congrArg (trivRep q qi) h
+  simp only [eTriv, eSign, map_add, map_smul, map_one, trivRep_s0, smul_eq_mul, mul_one] at h1
+  subst hqi'
+  have hd : q ^ 2 - q⁻¹ ^ 2 ≠ 0 := sub_ne_zero.mpr hne
+  have hd' : q⁻¹ ^ 2 - q ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm hne)
+  have h4 : q ^ 4 - 1 ≠ 0 := by
+    intro h; apply hd
+    have : q ^ 2 - q⁻¹ ^ 2 = (q ^ 4 - 1) / q ^ 2 := by field_simp
+    rw [this, h, zero_div]
+  have h4' : -1 + q ^ 4 ≠ 0 := fun h => h4 (by linear_combination h)
+  have h4'' : 1 - q ^ 4 ≠ 0 := fun h => h4 (by linear_combination -h)
+  have e1 : (q ^ 2 - q⁻¹ ^ 2)⁻¹ * (q - q⁻¹) * q + (q ^ 2 - q⁻¹ ^ 2)⁻¹ * (1 - q⁻¹ ^ 2) = 1 := by
+    field_simp; ring
+  have e2 : (q⁻¹ ^ 2 - q ^ 2)⁻¹ * (q - q⁻¹) * q + (q⁻¹ ^ 2 - q ^ 2)⁻¹ * (1 - q ^ 2) = 0 := by
+    field_simp; ring
+  rw [e1, e2] at h1
+  exact one_ne_zero h1
+
+omit [DecidableEq K] in
+/-- **Any bar involution of the `.md`'s kind fixes `e_(2)`.** Let `τ` be a ring endomorphism of
+`K` with `τ q = qi` and `τ qi = q`, and `φ` a ring endomorphism of `H_2(q)` that is `τ`-semilinear
+on scalars and sends `σ₀ ↦ σ₀⁻¹`. Then `φ(e_(2)) = e_(2)`, and `e_(2) ≠ e_(1,1)`, so `φ` does not
+pair the chiral block `(2)` with `(1,1)`. -/
+theorem bar_fixes_eTriv (hqi : q * qi = 1) (hne : q ^ 2 ≠ qi ^ 2) (τ : K →+* K)
+    (hτq : τ q = qi) (hτqi : τ qi = q) (φ : Hecke K q qi 1 →+* Hecke K q qi 1)
+    (hφσ : φ (s0 q qi) = Hecke.σInv K q qi 1 ⟨0, Nat.one_pos⟩)
+    (hφs : ∀ a : K, φ (a • (1 : Hecke K q qi 1)) = τ a • (1 : Hecke K q qi 1)) :
+    φ (eTriv q qi) = eTriv q qi ∧ φ (eTriv q qi) ≠ eSign q qi := by
+  have hfix : φ (eTriv q qi) = eTriv q qi := by
+    have hq0 : q ≠ 0 := left_ne_zero_of_mul_eq_one hqi
+    have hqi' : qi = q⁻¹ := eq_inv_of_mul_eq_one_right hqi
+    have hsm : ∀ (a : K) (x : Hecke K q qi 1), a • x = (a • (1 : Hecke K q qi 1)) * x :=
+      fun a x => (smul_one_mul a x).symm
+    have hL : φ (eTriv q qi)
+        = (τ ((q ^ 2 - qi ^ 2)⁻¹ * (q - qi))) • s0 q qi
+          + (τ ((q ^ 2 - qi ^ 2)⁻¹ * (1 - qi ^ 2)) - (q - qi) * τ ((q ^ 2 - qi ^ 2)⁻¹ * (q - qi)))
+            • (1 : Hecke K q qi 1) := by
+      unfold eTriv
+      rw [hsm _ (s0 q qi), map_add, map_mul, hφs, hφs, hφσ, Hecke.σInv]
+      rw [mul_sub, smul_mul_assoc, one_mul, mul_smul_comm, mul_one, smul_smul, sub_smul]
+      abel
+    rw [hL]
+    simp only [map_mul, map_sub, map_inv₀, map_pow, map_one, hτq, hτqi]
+    unfold eTriv
+    subst hqi'
+    have hd : q ^ 2 - q⁻¹ ^ 2 ≠ 0 := sub_ne_zero.mpr hne
+    have hd' : q⁻¹ ^ 2 - q ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm hne)
+    have h4 : q ^ 4 - 1 ≠ 0 := by
+      intro h; apply hd
+      have : q ^ 2 - q⁻¹ ^ 2 = (q ^ 4 - 1) / q ^ 2 := by field_simp
+      rw [this, h, zero_div]
+    have h4' : -1 + q ^ 4 ≠ 0 := fun h => h4 (by linear_combination h)
+    have h4'' : 1 - q ^ 4 ≠ 0 := fun h => h4 (by linear_combination -h)
+    apply pair_congr <;> (field_simp; ring)
+  exact ⟨hfix, by rw [hfix]; exact eTriv_ne_eSign hqi hne⟩
+
+omit [DecidableEq K] in
+/-- **The `#`-involution does pair the chiral blocks.** A `K`-linear algebra endomorphism with
+`σ₀ ↦ −σ₀⁻¹` (scalars fixed) sends `e_(2)` to `e_(1,1)`. So the pairing `λ ↔ λ'` of
+cross-check 4 holds for `σ ↦ −σ⁻¹`, not for the bar involution `σ ↦ σ⁻¹, q ↦ q⁻¹`. -/
+theorem hash_swaps_eTriv (hqi : q * qi = 1) (hne : q ^ 2 ≠ qi ^ 2)
+    (φ : Hecke K q qi 1 →ₐ[K] Hecke K q qi 1)
+    (hφσ : φ (s0 q qi) = -Hecke.σInv K q qi 1 ⟨0, Nat.one_pos⟩) :
+    φ (eTriv q qi) = eSign q qi := by
+  have hL : φ (eTriv q qi)
+      = (-((q ^ 2 - qi ^ 2)⁻¹ * (q - qi))) • s0 q qi
+        + ((q ^ 2 - qi ^ 2)⁻¹ * (1 - qi ^ 2) + (q - qi) * ((q ^ 2 - qi ^ 2)⁻¹ * (q - qi)))
+          • (1 : Hecke K q qi 1) := by
+    unfold eTriv
+    rw [map_add, map_smul, map_smul, map_one, hφσ, Hecke.σInv, neg_sub, smul_sub, smul_smul,
+      add_smul, neg_smul]
+    module
+  rw [hL]
+  unfold eSign
+  have hq0 : q ≠ 0 := left_ne_zero_of_mul_eq_one hqi
+  have hqi' : qi = q⁻¹ := eq_inv_of_mul_eq_one_right hqi
+  subst hqi'
+  have hd : q ^ 2 - q⁻¹ ^ 2 ≠ 0 := sub_ne_zero.mpr hne
+  have hd' : q⁻¹ ^ 2 - q ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm hne)
+  have h4 : q ^ 4 - 1 ≠ 0 := by
+    intro h; apply hd
+    have : q ^ 2 - q⁻¹ ^ 2 = (q ^ 4 - 1) / q ^ 2 := by field_simp
+    rw [this, h, zero_div]
+  have h4' : -1 + q ^ 4 ≠ 0 := fun h => h4 (by linear_combination h)
+  have h4'' : 1 - q ^ 4 ≠ 0 := fun h => h4 (by linear_combination -h)
+  apply pair_congr <;> (field_simp; ring)
+
 end NTwo
 
 end QOU.BraidKnot.ExplicitCentralIdempotentHecke
+
 
