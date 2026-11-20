@@ -24,4 +24,10 @@ theorem orbit_sum_identity (zeta3 : ℝ) :
   field_simp
   ring
 
+/-- Adding the scaled constant to the predicted value at five cancels to zero (`qou-fjcd`). -/
+theorem orbit_sum_identity_add_eq_zero (zeta3 : ℝ) :
+    cl3OrbitSumPredicted 5 zeta3 + (24 / 25) * zeta3 = 0 := by
+  rw [orbit_sum_identity zeta3]
+  ring
+
 end QOU.BraidKnot.Cl3Zeta5OrbitSum
