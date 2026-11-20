@@ -50,4 +50,3 @@ $\delta$, making $pn$ its near-null vector.
 Together with the $A \ge 3$ ill-posedness of the jet word
 ([measured](#conj:jet-filtered-knot-factor)), the three-level product is not
 evaluable as written. Either obstruction alone suffices.
-`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`.

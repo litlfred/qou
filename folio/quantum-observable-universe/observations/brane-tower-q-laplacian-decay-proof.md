@@ -47,7 +47,7 @@ $$
   \;=\;
   \sum_{n=2}^{\infty} \hbar_q^{2n} \, \Delta^{(n)}(\rho).
 $$
-On the leading mode Step 3 is an equality, $\langle e_1, \Delta^{(n)} e_1\rangle = \lambda_1^n$ with $\lambda_1 = \lambda_1^{(q)} = \hbar_q / L_q^2$. The [uniform bound on $\Delta^{(n)}$](#prop:delta-max-uniform-bound) makes $\lambda_1^n$ bounded in $n$, and a bounded sequence of powers has $\lambda_1 \leq 1$ (Lean `QOU.QBeta.lam_le_one_of_pow_bounded`). Therefore
+On the leading mode Step 3 is an equality, $\langle e_1, \Delta^{(n)} e_1\rangle = \lambda_1^n$ with $\lambda_1 = \lambda_1^{(q)} = \hbar_q / L_q^2$. The [uniform bound on $\Delta^{(n)}$](#prop:delta-max-uniform-bound) makes $\lambda_1^n$ bounded in $n$, and a bounded sequence of powers has $\lambda_1 \leq 1$. Therefore
 $$
   \bigl| T(\rho) - \hbar_q^2 \,\Delta^{(1)}(\rho) \bigr|
   \;\leq\;

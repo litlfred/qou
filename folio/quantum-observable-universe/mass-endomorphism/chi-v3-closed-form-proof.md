@@ -63,7 +63,3 @@ $$
   [\varepsilon^k]\;\bigl(\chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)\bigr)\big|_{q = 1 + \varepsilon}
    \;=\; \frac{(-1)^k}{4}.
 $$
-
-## Lean theorems exported
-
-See [Table 1](#tbl:chi-v3-closed-form-proof-table-data). All theorems close unconditionally under `field_simp + ring` after unfolding.

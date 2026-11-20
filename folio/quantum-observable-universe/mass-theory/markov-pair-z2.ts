@@ -28,6 +28,7 @@ export default proposition({
     status: "verified",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Proved in\n[`JonesNormalisation.lean`](../lean/QOU/QBeta/JonesNormalisation.lean) —\n`tl_generator_sq`, `sigma_inv`, `stab_pos_iff_conventionD`,\n`stab_neg_iff_conventionD`, `jonesV_stabilise_pos`, `jonesV_stabilise_neg`,\n`conventionD_iff_markov_invariant`, plus the four closure values\n(`unknot_two_strand`, `unknot_three_strand`, `hopf_link`,\n`two_component_unlink`) and `kauffman_loop`. Every hypothesis is\n`IsConventionD` plus $q \\neq 0$, and $q^2+1 \\neq 0$ is *derived* rather than\nassumed — in a general field it can vanish, so assuming\nit would have been a hidden hypothesis." },
     {
       kind: "caveat",
       date: "2026-08-09",

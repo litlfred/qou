@@ -21,10 +21,10 @@ $$
   \gamma
   = 
   \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-  + \varphi_{01}\sigma_0\sigma_1,
+  + \varphi_{01}\sigma_0\sigma_1^{-1},
 $$
 
-where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$. The generator $\sigma_0$ acts on the $(\sigma, r)$ plane. The generator $\sigma_1$ acts on the $(r, g)$ plane. The product $\sigma_0\sigma_1 = L_+$ provides Hopf-link dressing. 
+where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$. The generator $\sigma_0$ acts on the $(\sigma, r)$ plane. The generator $\sigma_1$ acts on the $(r, g)$ plane. The fourth term is the chiral pair-production vertex $\sigma_0\sigma_1^{-1} = L_+ - h\sigma_0$ ([photon](#def:photon)). 
 
 This derivation treats the 3-term specialization $\varphi_{01} = 0$.
 
@@ -92,5 +92,3 @@ Both fits close the $1.6\%$ energy gap by construction, so closing it is not evi
 #### Four-term extension
 
 Activating $\varphi_{01} \neq 0$ recovers the general 4-term photon. The $\gamma\gamma$ product directly opens the $e^-$ (trefoil) channel. The 6-term normal form and the derivation of nucleons from pair production follow from these operations.
-
-**Witness:** `breit-wheeler-nucleon-nf.witness.json`

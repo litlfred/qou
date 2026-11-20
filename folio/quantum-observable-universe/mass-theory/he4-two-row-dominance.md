@@ -9,7 +9,7 @@ $$
   \sum_{\lambda \vdash 12} c_\lambda(q_0) \;=\; \mathrm{tr}_M\!\bigl(\beta_{{}^4\mathrm{He}}\bigr)(q_0).
 $$
 
-**Proposition (conditional on [`he4-canonical-tr-m-block-fingerprint.witness.json`](../../../computations/he4-canonical-tr-m-block-fingerprint.witness.json)).**
+**Proposition (conditional on the recorded canonical ${}^{4}\mathrm{He}$ block fingerprint of $\mathrm{tr}_M$).**
 The two-row stratum $\Lambda^2(12)$ ([Two-row Wedderburn stratum $\Lambda^2(n) := \{\lambda \vdash n : \ell(\lambda) \le 2\}$](#def:two-row-stratum)) carries at least $80\,\%$ of the canonical Markov trace at the substrate parameter:
 $$
   \frac{\bigl|\sum_{\lambda \in \Lambda^2(12)} c_\lambda(q_0)\bigr|}

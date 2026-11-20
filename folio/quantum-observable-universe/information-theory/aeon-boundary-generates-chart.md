@@ -13,7 +13,7 @@ $$
 
 **Content of the conjecture.**
 
-1. **The CMB regenerates particles.** Iterating the degree-$1$ transport data (winding modes) in $\mathrm{CMB}(\mathcal{A})$ once by the Reeb flow $f_q$ produces non-trivial degree-$0$ fibre data. This formalises the "condensation" of thermal radiation into particle states.
+1. **The CMB regenerates particles.** Iterating the degree-$1$ transport data (winding modes) in $\mathrm{CMB}(\mathcal{A})$ once by the Reeb flow $f_q$ produces non-trivial degree-$0$ fibre data. This makes precise the "condensation" of thermal radiation into particle states.
 2. **The recycling map lands in a new aeon.** The output $\Phi_1^q(\mathrm{CMB}(\mathcal{A}))$ lies in $\mathrm{Bun}^{\circ}$. It inhabits some connected component—a (possibly new) aeon $\mathcal{A}'$.
 3. **Adjacent aeons connect via the recycling map.** If $\mathcal{A}$ and $\mathcal{A}'$ are adjacent , then $\Phi_1^q(\mathrm{CMB}(\mathcal{A})) \in \mathcal{A}'$.
 

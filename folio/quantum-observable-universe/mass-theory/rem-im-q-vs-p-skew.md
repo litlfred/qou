@@ -19,7 +19,7 @@ real number, and $P_{\mathrm{skew}}$ content is **real-valued**.
 For torus knots this is explicit:
 $Q_m(\eta) = \sinh((2m+1)\eta) / (2 \cosh \eta)$ is real at real $q_0$.
 Per
-[`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md),
+[the physical interpretation of strong binding and Coulomb repulsion](../observations/crossing-energy-interpretation.md),
 $\sinh(\log q)$ is the **EM / Coulomb channel**. So the EM /
 P_skew content **exists** for real $q$ and is discarded by the
 canonical projection.
@@ -84,5 +84,5 @@ Quantitative consequences differ between the two mechanisms:
 - [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
 - [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
 - [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
-- [`bar-involution.md`](../braids-and-knots/bar-involution.md) — bar projection definition
-- [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification
+- [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) — bar projection definition
+- [Physical interpretation: strong binding and Coulomb repulsion](../observations/crossing-energy-interpretation.md) — $\sinh(\log q)$ = Coulomb channel identification

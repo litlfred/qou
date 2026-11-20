@@ -6,6 +6,7 @@ export default remark({
   title: "The meson mass ratio and its electromagnetic factor",
   tags: ["meson","alpha-em","empirical-comparison","interpretation"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): is framework-derived and Lean-proved;" },
     {
       kind: "refined-framing",
       date: "2026-11-15",

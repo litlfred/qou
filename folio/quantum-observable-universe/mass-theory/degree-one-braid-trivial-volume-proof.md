@@ -19,8 +19,8 @@ six positive permutation braids $\mathbf{1}, \sigma_1, \sigma_2, \sigma_1\sigma_
 (unlinks, the unknot, the Hopf link) all have volume $0$. A linear map that
 agreed with $\mathrm{Vol}$ on them would vanish on all of $H_3(q)$, including on
 $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1}$, whose closure is $4_1$ with
-$\mathrm{Vol}(4_1) = 2.0299\ldots \neq 0$. The Lean sibling proves the first
-half of this argument: a linear map that vanishes on a set vanishes on its span.
+$\mathrm{Vol}(4_1) = 2.0299\ldots \neq 0$. The first
+half of this argument is proved: a linear map that vanishes on a set vanishes on its span.
 
 **Scope.** The lemma establishes only the *archimedean shadow* — the
 real-valued volume image. It does **not** identify $\gamma$ with the

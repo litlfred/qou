@@ -22,11 +22,11 @@ asks for is a single $\mathrm{frobenius\_at} \colon \mathrm{Primes} \to
 \widehat{M}$, so the content of the claim is that these per-prime
 evaluations *cohere* into one $\widehat{M}$-valued function. The
 follow-on remark argues that coherence structurally from the Habiro
-theorem; it is neither proved nor formalised. Calling this a definition
+theorem; it is not proved. Calling this a definition
 would assert the construction was already in hand.
 
-**Lean status.** There is no Lean formalization of this instance. The
-module `QOU.LiftingDescent.MotivicPerpetualObstructionFromTrace`
-(prime-ideal collapse, $C = a_0(-1) + 2 a_1(-1)$) proves statements
-about the perpetual obstruction and constructs no
-`MotivicGaloisCharacter`; it is a different result.
+**Status.** No construction of this instance is available. The
+derivation of the perpetual obstruction from the prime-ideal collapse
+($C = a_0(-1) + 2 a_1(-1)$) proves statements about the perpetual
+obstruction and constructs no motivic Galois character; it is a
+different result.

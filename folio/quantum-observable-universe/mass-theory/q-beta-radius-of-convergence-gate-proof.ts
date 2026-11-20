@@ -9,4 +9,7 @@ export default remark({
     "conj:q-beta-radius-of-convergence-gate",
     "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (canonical SDP extraction,\n`qbeta-decay-sdp-extended-ck.witness.json`)," },
+  ],
 });

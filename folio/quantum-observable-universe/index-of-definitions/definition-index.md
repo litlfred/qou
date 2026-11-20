@@ -427,7 +427,7 @@
 | [prop:qbeta-c4-from-c3-c8-product-identity](#prop:qbeta-c4-from-c3-c8-product-identity) | c_4 = c_8 / c_3 via the structural product identity c_3 · c_4 = c_8 | Ch 12 | `qou:QOU.QBeta.c4_eq_c8_div_c3_at_silver` |
 | [prop:electron-period-base](#prop:electron-period-base) | CAL-1 (m_e) is the n=0 base period of the prolongation tower | Ch 12 | `qou:QOU.Mass.second_period_contains_me` |
 | [prop:qou-canonical-action](#prop:qou-canonical-action) | Canonical action of a quantum observable universe | Ch 2 | `qou:QOU.qou_canonical_action` |
-| [prop:braiding-induced-ordering](#prop:braiding-induced-ordering) | Canonical admissible ordering on the Hecke basis induced by braiding | Ch 2 | `qou:QOU.braiding_induced_ordering` |
+| [prop:braiding-induced-ordering](#prop:braiding-induced-ordering) | Degree-lexicographic well-ordering on braid words | Ch 2 | `qou:QOU.braiding_induced_ordering_holds` |
 | [prop:rj-canonical-inner-product](#prop:rj-canonical-inner-product) | Canonical inner product on $R(H_r(q))$ via Schur orthogonality | Ch 14 | `qou:QOU.Archimedean.rj_canonical_inner_product` |
 | [prop:pn-averaging-uniqueness](#prop:pn-averaging-uniqueness) | Bar-invariant p-n interface averagings | Ch 12 | `qou:QOU.BraidKnot.pn_averaging_unique` |
 | [prop:wedderburn-weight-canonical](#prop:wedderburn-weight-canonical) | Canonical q-deformed Wedderburn-block weight $\tilde w_\lambda$ and named scalings (BW, LP for all $\lambda$) | Ch 12 | `qou:QOU.BraidKnot.wedderburnWeightCanonical` |

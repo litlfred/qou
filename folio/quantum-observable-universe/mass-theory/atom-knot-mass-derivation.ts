@@ -38,6 +38,8 @@ export default conjecture({
     status: "not_run",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Two hypotheses that appear in the Lean statement are shown there to be free rather than load-bearing: the $E_2$-collapse condition unfolds to $2 = 2$ and is discharged by reflexivity, and the Yekutieli condition is inhabitation of the braid-element type, which the mass identity does not mention." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean sibling carries one condition the display above leaves implicit: that the certificate under discussion is one the pipeline actually emitted. A `MassDerivationCertificate` is a tuple of numbers, and its type records no provenance — a tuple with a negative $B_{\\mathrm{pred}}$ is well-typed. Stated for *every* certificate, the mass identity is false, so the conditional class carries an `IsPipelineDerived` predicate and the theorem takes it as a hypothesis. The ten AME-validated atoms below are proved to satisfy the identity directly, without the class." },
     {
       kind: "status",
       date: "2026-11-20",

@@ -24,9 +24,7 @@ $e_{\mu \to \lambda}$.  $\square$
 
 ## Empirical extraction at generic $q_0$
 
-The witness file
-[`y-lambda-jones-markov-witness.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-jones-markov-witness.json)
-tabulates all 270 weights for $n = 2, \ldots, 12$ at
+A numerical tabulation lists all 270 weights for $n = 2, \ldots, 12$ at
 $q_0 \approx 1.110$.  Per-edge ratios
 $y_\lambda^{(n+1)} / (z \cdot y_\mu^{(n)})$ extracted from the witness
 exhibit the following **structural regularities** (computed in
@@ -65,7 +63,6 @@ consistency condition** for any candidate closed form $F_q$.
 
 The $q$-rational function $F_q$ is now **explicit in closed form** via
 the symbolic linear-system solve in
-`y-lambda-symbolic-witness.json` — produced by sympy in
 $\mathbb{Q}(q^{1/2})$.  Per-edge factors
 
 $$

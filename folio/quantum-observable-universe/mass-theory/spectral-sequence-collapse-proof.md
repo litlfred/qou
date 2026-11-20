@@ -57,8 +57,7 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 > Measured exactly in $\mathbb{Q}(q)$ at $n = 3$ on the corpus's own
 > idempotents — all six off-diagonal entries identically $0$, diagonal
 > $\mathrm{diag}(\tau(e_\lambda))$ nonzero, completeness self-test
-> $\sum_\lambda \tau(e_\lambda) = 1$
-> ([`centre_frobenius_pairing_is_diagonal_probe.py`](../../../computations/probes/centre_frobenius_pairing_is_diagonal_probe.py)).
+> $\sum_\lambda \tau(e_\lambda) = 1$.
 > So each stratum is **self**-dual and the annihilator of a stratum
 > within $Z$ is the span of the *complementary* idempotents — a set
 > complement, not a rank-reindexed stratum. The asserted pairing is
@@ -94,9 +93,9 @@ is not shown.*
 > curvature rank of **words**. That identification is not stated in the cited
 > proposition, and the three readings of $J^\bullet$ present in the corpus are
 > each excluded: the ideal-power reading is provably $\bot$ above degree $0$
-> (`QOU.BraidKnot.WordFiltration.map_pow_eq_bot`); the Coxeter-length reading
+>; the Coxeter-length reading
 > fails a dimension count at $n \leq 3$; and the rewrite-depth reading is
-> identically zero once `def:hecke-normal-form` fixes $T_w$ as the unique
+> identically zero once the [Hecke normal form](#def:hecke-normal-form) fixes $T_w$ as the unique
 > normal-form basis indexed by $S_n$.
 > **Not claimed:** that this block's conclusion is false — only that the step
 > it rests on is unestablished, and that the obvious ways to establish it do

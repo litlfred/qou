@@ -39,7 +39,7 @@ Hoefsmit pole-order analysis:
 - **Proton ($A = 1$, $H_3$):**
   the canonical formalism
   (witness:
-  [`per-irrep-pole-proton-h3.witness.json`](../../../computations/per-irrep-pole-proton-h3.witness.json))
+  [proton $H_3$ pole record](../../../computations/per-irrep-pole-proton-h3.witness.json))
   computes $\chi^\lambda_q(\mathcal{B}_p)$ for each $\lambda \vdash 3$
   via the Hoefsmit seminormal, sums
   $\mathrm{tr}_M(\mathcal{B}_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\mathcal{B}_p)$
@@ -51,13 +51,13 @@ Hoefsmit pole-order analysis:
 - **Deuteron ($A = 2$, $H_6$):**
   the canonical formalism
   (witness:
-  [`per-irrep-pole-deuteron-h6.witness.json`](../../../computations/per-irrep-pole-deuteron-h6.witness.json))
+  [deuteron $H_6$ pole record](../../../computations/per-irrep-pole-deuteron-h6.witness.json))
   uses three optimisations to make the symbolic $H_6$ analysis
   tractable: (a) cached symbolic $y_\lambda(q)$ from
-  `y-lambda-wenzl-bridge-symbolic-witness.json` (skips the >5 min
-  `solve_y_lambda(6)` bottleneck), (b) cached symbolic
+  the symbolic Wenzl-bridge weights (skipping the >5 min
+  symbolic solve at $n = 6$), (b) cached symbolic
   $\chi^\lambda_q(\beta_D)$ in
-  [`chi-deuteron-h6.witness.json`](../../../computations/chi-deuteron-h6.witness.json)
+  [the deuteron $H_6$ character record](../../../computations/chi-deuteron-h6.witness.json)
   (first-run ~131 s, then <1 s), (c) per-term
   $\mathrm{ord}_{u=0}(y_\lambda \cdot \chi^\lambda)$ analysis. The
   per-term maximum is **uniquely $40$ at $\lambda = (4, 1, 1)$**

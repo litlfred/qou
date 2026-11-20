@@ -16,17 +16,15 @@ Axioms 1–2 with an unspecified stabilisation parameter admit a **one-parameter
 family**; axiom 3 selects one member of it, and which member is *not* free. The
 selection is forced by the dimension of the mass fibre:
 
-- `lem:feynman-eigenbasis-decomposition` already writes the row cap
+- The [eigenbasis decomposition for the Feynman amplitude](#lem:feynman-eigenbasis-decomposition) already writes the row cap
   $\ell(\lambda) \leq 2$ into the mass channel's own decomposition — $V$ is the
   fundamental of $\mathrm{SU}_q(2)$, and the summand count $\lfloor n/2 \rfloor + 1$
   is the two-row count and no other. So $y_{(1^3)} = 0$ is a restatement of the
   decomposition the mass chapter uses, not an extra assumption.
-- Given $y_{(1^3)} = 0$, `markovWeights_eq_jones_of_threeRow_eq_zero`
-  ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean))
-  shows the faithful normalised Markov trace is **unique** and equals
+- Given $y_{(1^3)} = 0$, the faithful normalised Markov trace is **unique** and equals
   $z = q^3/(q^2+1)$ — **convention D**. The competing root $z = q$ is real but
   degenerate ($y_{(2,1)} = 0$, not faithful on $\mathrm{TL}_3$), which is why the
-  faithfulness hypothesis is load-bearing (`markovWeights_degenerate_root`).
+  faithfulness hypothesis is load-bearing.
 
 So the loop value is a **consequence** of the fibre being two-dimensional, not a
 stipulation.

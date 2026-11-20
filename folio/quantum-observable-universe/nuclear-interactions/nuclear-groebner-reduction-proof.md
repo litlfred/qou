@@ -8,5 +8,5 @@ Uniqueness of the normal form relies on the confluence half of the Gröbner--Shi
 
 3. **Termination.** Length-lexicographic order well-orders positive braid monomials. Each rule strictly decreases this order, guaranteeing termination. Combined with confluence, this establishes both existence and uniqueness.
 
-The Lean sibling states `nuclear_groebner_reduction` and defers the confluence certificate via `sorry` (`-- Ref: [leitner2026]`). This certificate reduces to the admissible-system machinery already formalised in the unital-Gröbner-bases paper ([admissible system](#unital-groebner-bases:def:admissible-system)).
+A complete confluence certificate is not supplied here; it is deferred \cite{leitner2026} and reduces to the admissible-system machinery of the unital-Gröbner-bases paper ([admissible system](#unital-groebner-bases:def:admissible-system)).
 $\square$

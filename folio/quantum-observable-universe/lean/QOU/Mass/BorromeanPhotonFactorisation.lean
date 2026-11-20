@@ -17,15 +17,19 @@
 
     (`borromean_eq_two_photons`).
 
-  Each factor is a photon `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` in the sense of
-  `def:photon` (`QOU.Photon.photon`, imported, not redefined here) with
-  `φ₁ = 0`:
+  Each factor is a photon `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` in the sense of
+  `def:photon` (`QOU.Photon.photon`, imported, not redefined here), with
+  `σ₁` promoted to the unit `HeckeH3Rel.unitB` (inverse `b − h`), and with
+  only its last term:
 
-      1 + q h V    = 1 − q h²·a + q h·ab,
-      1 − q⁻¹ h V  = 1 + q⁻¹ h²·a − q⁻¹ h·ab
+      1 + q h V    = γ(0, 0, q h),
+      1 − q⁻¹ h V  = γ(0, 0, −q⁻¹ h)
 
   (`photonPlus_eq`, `photonMinus_eq`), and the two factors commute
-  (`photonPlus_photonMinus_comm`).
+  (`photonPlus_photonMinus_comm`). Before the 2026-11-18 owner ruling on the
+  photon's last term (bean `qou-99qc`), the photon's last term was `σ₀σ₁` and
+  the same two elements carried the weights `(−q h², 0, q h)` and
+  `(q⁻¹ h², 0, −q⁻¹ h)`; the elements are unchanged, only their coordinates.
 
   The statement is about any algebra satisfying the relations, so it holds in
   `H₃(q)` itself and in every representation of it. No division, no ordering,
@@ -60,6 +64,14 @@ theorem HeckeH3Rel.mul_inv (H : HeckeH3Rel h a b) : b * (b - h • 1) = 1 := by
 
 theorem HeckeH3Rel.inv_mul (H : HeckeH3Rel h a b) : (b - h • 1) * b = 1 := by
   rw [sub_mul, smul_mul_assoc, one_mul, H.quad_b]; abel
+
+/-- `b` as a unit of `A`, with inverse `b − h`. -/
+def HeckeH3Rel.unitB (H : HeckeH3Rel h a b) : Aˣ := ⟨b, b - h • 1, H.mul_inv, H.inv_mul⟩
+
+@[simp] theorem HeckeH3Rel.unitB_val (H : HeckeH3Rel h a b) : (H.unitB : A) = b := rfl
+
+@[simp] theorem HeckeH3Rel.unitB_inv (H : HeckeH3Rel h a b) : ((H.unitB⁻¹ : Aˣ) : A) = b - h • 1 :=
+  rfl
 
 /-- `V = σ₀σ₁⁻¹ = ab − h·a`. -/
 def vertex (h : R) (a b : A) : A := a * (b - h • 1)
@@ -135,15 +147,18 @@ def photonPlus (q h : R) (a b : A) : A := 1 + (q * h) • vertex h a b
 /-- `1 − q⁻¹ h V`, with `q' = q⁻¹` supplied as an element. -/
 def photonMinus (q' h : R) (a b : A) : A := 1 - (q' * h) • vertex h a b
 
-theorem photonPlus_eq (q h : R) (a b : A) :
-    photonPlus q h a b = photon a b (⟨-(q * h ^ 2), 0, q * h⟩ : Colour R) := by
-  simp only [photonPlus, photon, vertex_eq, zero_smul, add_zero, smul_sub, smul_smul]
-  module
+/-- The photon's last term is this file's vertex: `σ₀ · (unitB)⁻¹ = V`. -/
+theorem photon_vertex_eq (H : HeckeH3Rel h a b) :
+    QOU.Photon.vertex a H.unitB = vertex h a b := rfl
 
-theorem photonMinus_eq (q' h : R) (a b : A) :
-    photonMinus q' h a b = photon a b (⟨q' * h ^ 2, 0, -(q' * h)⟩ : Colour R) := by
-  simp only [photonMinus, photon, vertex_eq, zero_smul, add_zero, smul_sub, smul_smul]
-  module
+theorem photonPlus_eq (H : HeckeH3Rel h a b) (q : R) :
+    photonPlus q h a b = photon a H.unitB (⟨0, 0, q * h⟩ : Colour R) := by
+  simp only [photonPlus, photon, photon_vertex_eq H, zero_smul, add_zero]
+
+theorem photonMinus_eq (H : HeckeH3Rel h a b) (q' : R) :
+    photonMinus q' h a b = photon a H.unitB (⟨0, 0, -(q' * h)⟩ : Colour R) := by
+  simp only [photonMinus, photon, photon_vertex_eq H, zero_smul, add_zero, neg_smul,
+    sub_eq_add_neg]
 
 /-- The two photons commute (both are polynomials in `V`). -/
 theorem photonPlus_photonMinus_comm (q q' h : R) (a b : A) :
@@ -169,12 +184,14 @@ theorem borromean_eq_two_photons (H : HeckeH3Rel h a b) {q q' : R}
   rw [e2, ← e1]
   abel
 
-/-- The same statement with the photons written in the four-term form. -/
+/-- The same statement with the photons written as `def:photon`:
+    `β_Bor = γ(0, 0, q h) · γ(0, 0, −q⁻¹ h)`, each photon carrying only its
+    vertex term. -/
 theorem borromean_eq_photon_product (H : HeckeH3Rel h a b) {q q' : R}
     (hh : q - q' = h) (hq : q * q' = 1) :
     vertex h a b * vertex h a b * vertex h a b
-      = photon a b (⟨-(q * h ^ 2), 0, q * h⟩ : Colour R)
-        * photon a b (⟨q' * h ^ 2, 0, -(q' * h)⟩ : Colour R) := by
-  rw [← photonPlus_eq, ← photonMinus_eq, borromean_eq_two_photons H hh hq]
+      = photon a H.unitB (⟨0, 0, q * h⟩ : Colour R)
+        * photon a H.unitB (⟨0, 0, -(q' * h)⟩ : Colour R) := by
+  rw [← photonPlus_eq H, ← photonMinus_eq H, borromean_eq_two_photons H hh hq]
 
 end QOU.Mass.BorromeanPhotonFactorisation

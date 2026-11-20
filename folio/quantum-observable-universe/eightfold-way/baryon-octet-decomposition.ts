@@ -63,4 +63,7 @@ export default proposition({
   // downstream of a conjecture.
   uses: [],
   cites: ["gellmann1962", "jimbo1986"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and the difference is machine-checked\nin `QOU/Eightfold/OctetWeightDegeneracy.lean`:" },
+  ],
 });

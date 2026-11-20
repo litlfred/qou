@@ -27,4 +27,4 @@ $$
 
 This bounds what the empirical bullets can mean; it does not touch the conjecture. The conjecture is a statement about Specht modules of $H_{n_k}(q)$, which exist for every partition whatever $N$ is, and the eigenvalue ratio is unaffected. What the row cap removes is the reading. Every route from a block with $\ell(\lambda) > N$ to a physical number is either a Markov trace, which the row cap sends to zero, or a spectrum, which has no states to act on. Subtraction does not open a third: a quantity recovered as a difference of Markov traces is itself a Markov trace, by linearity, and inherits the same vanishing.
 
-**Lean status.** We axiomatise the conjecture as a hypothesis-only `class`. We state the spectral content explicitly using `HoefsmitRepresentation.HasEigenvalueRatio`. Downstream Lean theorems take this class as an instance hypothesis and remain rigorous-conditional results.
+**Status.** The statement is a conjecture; results that use it are conditional on it.

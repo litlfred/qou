@@ -789,6 +789,29 @@ except ImportError:
 _E_MEV  = _codata("electron mass energy equivalent in MeV")
 _P_MEV  = _codata("proton mass energy equivalent in MeV")
 
+# NO-FLOAT64 (2026-09-12). `CodataEntry.value` is ALREADY an `mpmath.mpf`, so
+# `float(...)` here is an active DOWNCAST of an exact table value, and the
+# derived Q_NEUTRON_MEV below then did its arithmetic in binary64 across a
+# catastrophic cancellation (0.78 MeV out of 939.57 — three digits gone).
+#
+# The `_STR` companions are the file's own established convention for exactly
+# this, from MASS_RATIO_P_E_STR / MASS_RATIO_MU_E_STR above: carry the digits
+# exactly as the NIST table prints them, so an mpmath consumer can reach full
+# precision without a transcription step. `value_str` is a plain `str`, so the
+# companions cost nothing and cannot themselves lose precision.
+#
+# The float names KEEP THEIR TYPE — 309 in-repo importers read them and a type
+# change is not a precision fix. What changes is that the DERIVED quantities
+# below are now computed in `mpf` and downcast once at the end, instead of
+# accumulating three binary64 subtractions. Measured gain on Q_NEUTRON_MEV:
+# 9.15e-14 MeV = 1.17e-4 ppb, which is 117x the framework's own L1 target of
+# 1 ppQ (1e-6 ppb). Far below the 780 ppb experimental sigma, so no recorded
+# comparison moves; it is an L1 compute-precision repair, not an L2 one.
+M_E_MEV_STR     = _E_MEV.value_str
+M_E_MEV_ERR_STR = _E_MEV.uncertainty_str
+M_P_MEV_STR     = _P_MEV.value_str
+M_P_MEV_ERR_STR = _P_MEV.uncertainty_str
+
 M_E_MEV     = float(_E_MEV.value)
 M_E_MEV_ERR = float(_E_MEV.uncertainty)
 M_P_MEV     = float(_P_MEV.value)
@@ -811,14 +834,41 @@ M_P_MEV_ERR = float(_P_MEV.uncertainty)
 # Excluded from codata_table_vintage_audit by design: AME-derived quantities
 # are not CODATA-adjustment outputs and checking them against the table is a
 # category error (AGENTS.md).
-M_N_MEV     = 939.56542179    # noqa: P31 - AME-derived, NOT CODATA; mirrors codata_2022_source.M_N_MEV
-M_N_MEV_ERR = 0.00000060
+M_N_MEV_STR     = "939.56542179"   # noqa: P31 - AME-derived, NOT CODATA; mirrors codata_2022_source.M_N_MEV
+M_N_MEV_ERR_STR = "0.00000060"
+M_N_MEV     = float(M_N_MEV_STR)
+M_N_MEV_ERR = float(M_N_MEV_ERR_STR)
+
 # β-decay endpoint Q-value (n → p + e⁻ + ν̄):
 #   Q_β = m_n − m_p − m_e   (m_ν ≈ 0 in the rest mass budget)
-Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV         # ≈ 0.78233341 MeV
-Q_NEUTRON_MEV_ERR = math.sqrt(
-    M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2,
-)
+#
+# Computed in mpf and downcast ONCE, not accumulated in binary64. This is a
+# catastrophic cancellation — 0.78 MeV as the difference of numbers near 939 —
+# so the old `M_N_MEV - M_P_MEV - M_E_MEV` lost about three decimal digits.
+# The exposed float is unchanged in type and now correctly rounded; the `_STR`
+# companions carry the full-precision value for mpmath consumers.
+#
+# `workdps` is load-bearing, not decoration. Module import happens at the
+# mpmath default of dps=15, so a bare `_mp.mpf("939.56542179")` here builds a
+# binary53 value and `nstr(..., 50)` then prints ITS expansion — a float64
+# number wearing 50 digits. Caught while writing this: the first version
+# emitted `Q_NEUTRON_MEV_STR = 0.78233340930990846739945254739723168313503...`
+# (the binary64 tail `...380859`) instead of the exact `0.78233340931`. That
+# is the `mp.dps` no-op that scripts/precision-gates.sh gates on, reproduced
+# inside the fix meant to remove a float64 path.
+with _mp.workdps(_DPS_DEFAULT):
+    _q_n_mp = (
+        _mp.mpf(M_N_MEV_STR) - _mp.mpf(M_P_MEV_STR) - _mp.mpf(M_E_MEV_STR)
+    )
+    _q_n_err_mp = _mp.sqrt(
+        _mp.mpf(M_N_MEV_ERR_STR) ** 2
+        + _mp.mpf(M_P_MEV_ERR_STR) ** 2
+        + _mp.mpf(M_E_MEV_ERR_STR) ** 2
+    )
+    Q_NEUTRON_MEV_STR     = _mp.nstr(_q_n_mp, _DPS_DEFAULT, strip_zeros=False)
+    Q_NEUTRON_MEV_ERR_STR = _mp.nstr(_q_n_err_mp, _DPS_DEFAULT, strip_zeros=False)
+Q_NEUTRON_MEV     = float(_q_n_mp)                      # ≈ 0.78233341 MeV
+Q_NEUTRON_MEV_ERR = float(_q_n_err_mp)
 
 # ── Knot-volume constants (math; SnapPy-verified) ─────────────
 # Catalan's constant G = Σ (-1)^k / (2k+1)², used in figure-8 and

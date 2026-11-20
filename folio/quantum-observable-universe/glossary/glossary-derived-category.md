@@ -1,5 +1,1 @@
 **:defterm[Derived category]{#derived-category}.** For an abelian category $\mathbf{A}$, the derived category $D(\mathbf{A})$ is the localisation of the category of cochain complexes in $\mathbf{A}$ at the quasi-isomorphisms (the maps inducing isomorphisms on cohomology); equivalently, the localisation of the homotopy category of complexes at the same class. It is a triangulated category whose distinguished triangles come from short exact sequences of complexes. The bounded derived category $D^{b}(\mathbf{A})$ is the full subcategory of complexes with bounded cohomology, and $D^{b}(X)$ for a variety $X$ means $D^{b}$ of coherent sheaves on $X$.
-
-**Mathlib reference.**
-`DerivedCategory C` (the localisation of `HomotopyCategory C (ComplexShape.up ℤ)` at quasi-isomorphisms).
-Import: `Mathlib.Algebra.Homology.DerivedCategory.Basic`.

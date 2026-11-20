@@ -29,7 +29,7 @@ At $q = 1$ (the classical limit), all $[\rho]_q \to \rho$, $w_\lambda \to \dim(\
 
 ## Witness
 
-The file `shell-closure.witness.json` records $\delta^2 \Phi(Z)$ for $Z = 1\ldots 30$ at $K = 10$. The block-diagonal optimised computation resides in `shell_closure_compute.py`.
+The second difference $\delta^2 \Phi(Z)$ is computed for $Z = 1\ldots 30$ at $K = 10$ by a block-diagonal optimised computation.
 
 ## Cross-link: homological route past the $K = 12$ barrier
 

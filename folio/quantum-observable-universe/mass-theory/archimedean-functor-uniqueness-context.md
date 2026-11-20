@@ -1,8 +1,8 @@
-The two classes taken as `[Instance]` hypotheses by the Lean theorem
-[`QOU.Archimedean.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)
-are the only unproved inputs; both are well-established results
-awaiting Mathlib formalisation (`Real.dilog`, `BlochGroup`, the
-Suslin map).
+The two hypotheses of the
+[archimedean functor uniqueness theorem](#prop:archimedean-functor-uniqueness)
+are its only unproved inputs; both are well-established results in the
+literature (on the dilogarithm, the Bloch group and the Suslin map) and
+enter as cited inputs.
 
 ## Pre-archimedean / archimedean separation
 
@@ -99,10 +99,9 @@ transcendental continuum required for geometric measurement. See
    $D_n$ at $n \geq 3$ is open in the literature (Goncharov 1995
    conjectures); the QOU framework can take it as input where
    needed.
-3. **Lean formalisation of Suslin1991.** Mathlib has neither
-   `Real.dilog` nor `BlochGroup`. The Lean stub records this as
-   a sorry keyed to [`suslin1991`]; closure depends on upstream
-   Mathlib work.
+3. **Suslin's theorem as a cited input.** The result of
+   \cite{suslin1991} is used as a cited input and is not proved
+   here.
 
 ## Witness
 

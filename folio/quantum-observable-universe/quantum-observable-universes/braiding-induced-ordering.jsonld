@@ -13,9 +13,12 @@
   ],
   "label": "prop:braiding-induced-ordering",
   "kind": "proposition",
-  "title": "Canonical admissible ordering on the Hecke basis induced by braiding",
+  "title": "Degree-lexicographic well-ordering on braid words",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor"
+    "papers/quantum-observable-universe/blocks/prop-braid-action-tensor",
+    "papers/quantum-observable-universe/blocks/def-braid-group",
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding",
+    "papers/unital-groebner-bases/blocks/def-admissible-system"
   ],
   "tags": [
     "braiding",
@@ -26,7 +29,7 @@
     "temporal",
     "groebner"
   ],
-  "leanRef": "qou:QOU.braiding_induced_ordering",
+  "leanRef": "qou:QOU.braiding_induced_ordering_holds",
   "text": "braiding-induced-ordering.md",
   "leanSource": "braiding-induced-ordering.lean",
   "provenance": "authored"

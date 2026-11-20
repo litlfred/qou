@@ -12,5 +12,5 @@ the Gram factor $\kappa$ set to $1$; the $-2.1\;\mathrm{ppm}$ is that form at th
 muon pin ($-2.128\;\mathrm{ppm}$). The derived $\kappa$ is the Witten
 Gram-determinant ratio $\approx 1.722$, not $1$, and at the standing proton pin
 the resummed residual is $-468\;\mathrm{ppb}$. That correction remains
-conjectural: $\kappa$ is carried as an unproved Lean `sorry`
+conjectural: $\kappa$ rests on an unproved step
 ([Chern-Simons correction](#rem:em-coupling-chern-simons)).

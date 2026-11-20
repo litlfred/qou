@@ -30,6 +30,18 @@ export default proposition({
         "chosen, so the block sits on the archimedean side of the §7c wall " +
         "by construction.",
     },
+    {
+      kind: "caveat",
+      date: "2026-11-20",
+      body:
+        "**Photon last term changed by owner ruling (qou-99qc, 2026-11-18, confirmed 2026-11-20).** " +
+        "`def:photon` now has fourth term σ₀σ₁⁻¹ instead of σ₀σ₁; the narrative above follows it. " +
+        "The numeric six-term γγ NF in `tbl:four-term-pair-nucleon-table1-data` was computed with the old σ₀σ₁ term, " +
+        "and neither its producer nor its colour weights are recorded in the block, so it has NOT been recomputed. " +
+        "The proton/neutron nets 0.999 / 0.811 do not depend on the photon (confinement universality: flavours supplied as input) and are unaffected. " +
+        "Symbolic γγ NF for the ruled photon: `tbl:trivial-knot-photon-interpretation-table5-data`, Lean `QOU.QuarkState.pairNFChiral_eq`.",
+      see: "https://github.com/litlfred/qou/pull/8583",
+    },
   ],
 
 });

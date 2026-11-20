@@ -73,8 +73,7 @@ local monodromy, not fitted numerically.
 > associated $q$-Riccati $(q^2x-1)a(qx)a(x) - (q-1)a(x) - (q-1) = 0$ has no
 > solution in $K(x)$, because the three terms of its cleared form have degrees
 > $1+2p$, $p+u$, $2u$ and the odd/even parity of the outer two forces the
-> maximum to be attained exactly once. Formalized in
-> [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean);
+> maximum to be attained exactly once. This is
 > corroborated by the van der Put--Reversat classification
 > \cite{vanderput-reversat2007,vanderput2006} of pure modules of non-integral
 > slope $d/r$ — the normal form $E(r,d,b)$ in Bugeaud's notation
@@ -115,7 +114,7 @@ local monodromy, not fitted numerically.
 > (shift $k$, multiplier $c$), which *is* its symbol on the punctured $t$-disk,
 > and symbols compose by adding shifts and multiplying multipliers along the
 > shift. Two exact facts then constrain any single-shift candidate $D_q$
-> (`QOU.Mathlib.RamifiedShiftCalculus`, over a generic commutative
+> (over a generic commutative
 > ring):
 >
 > 1. **Residue.** If $D_q$ annihilates constants, $c(-k) = 0$ — as every
@@ -147,7 +146,7 @@ local monodromy, not fitted numerically.
 > $1$ and $2$ — classical $d/dt + (1/t)\,d/dt$, or Jackson $[e+1]_q$ with
 > $[e+2]_q$ — **do** reach the residue slot: at level $n+2$ it is
 > $c_1(-2)\,c_2(-1)$ times the $t^{1}$ coefficient of the level-$n$ jet, weight
-> $-1$ in both cases (`QOU.Mathlib.RamifiedShiftCalculusSum`). The
+> $-1$ in both cases. The
 > non-derivative clause is therefore a single-shift statement. What restores it
 > for sums is the residual: an operator with even part $E$ and odd part $O$
 > satisfies $\mathrm{mono}(Df) = E(\mathrm{mono}\,f) - O(\mathrm{mono}\,f)$, and
@@ -156,11 +155,11 @@ local monodromy, not fitted numerically.
 > residue again. For derivative-like sums of shifts $\le 2$ the residue and the
 > residual are mutually exclusive **level by level**: alternation demanded from
 > a level $n_0$ on kills the residue from level $n_0+2$ on and leaves levels
-> $2,\dots,n_0+1$ alive (`twoOp_residual_from_level_kills_residue_beyond`). The
+> $2,\dots,n_0+1$ alive. The
 > distinction matters, because the Door-v alternation of the carrier
 > $\mathcal{G}$ in [The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces](#conj:c1-ggm-bar-parity-faces)
 > cannot hold at every level — while $2-q^{m+1}>0$ no solution flips at two
-> consecutive pairs (`QOU.Mass.GGMAlternationOnset`), so at the substrate value
+> consecutive pairs, so at the substrate value
 > the alternation is absent for $m \le 5$ and persistent only from
 > $m \approx 11$ on. The conclusion above therefore stands for sums only
 > *above* that window; at the low body orders a mixed-shift $D_q$ built from
@@ -188,7 +187,7 @@ local monodromy, not fitted numerically.
 > $[m+4]_{q}\,s_{m+2} = s_{m+1} + s_{m}$ on the tower's $t^{1}$-coefficients
 > $s_{m} = (D_{q}^{m}X)_{t^{1}}$, since $r_{m+2} = c_{1}(-2)c_{2}(-1)\,s_{m}$;
 > each level's constraint reaches one new seed coefficient and none of them
-> reads the branch value $a_{0}$ (`QOU.Mass.C1KernelLevelReading`,
+> reads the branch value $a_{0}$ (for
 > $q$ not a root of unity). On the actual seed — the branch-point
 > expansion of the colour cubic at its simple ramification point — neither
 > the Jackson nor the $q$-derivative tower, in either $q$-integer convention
@@ -201,7 +200,7 @@ local monodromy, not fitted numerically.
 > and the two-term derivative-only class, respectively. The weights cannot be
 > supplied by a $q$-connection on the base either: the colour cubic is
 > irreducible over $K(z)$ for every field $K$ of characteristic zero
-> (`QOU.Mass.ColorCubicIrreducible`), so no sheet is a rational
+>, so no sheet is a rational
 > function of $z$; each sheet is algebraic, hence D-finite; and a rational
 > rank-$3$ $q$-difference system in $z \mapsto \lambda z$ with the sheets as
 > solutions would make a sheet $q$-holonomic, which together with D-finiteness
@@ -212,7 +211,7 @@ local monodromy, not fitted numerically.
 > $z = z_{c} + t^{2}$, the sheets are power series algebraic over $K(t)$ and so
 > still D-finite; and they are still not rational, because $t^{2} = z - z_{c}$
 > makes $K(t)/K(z)$ quadratic while an irreducible cubic has no root of degree
-> at most two (`QOU.Mass.IrreducibleCubicNoQuadraticRoot`). The
+> at most two. The
 > same theorem therefore excludes the local $q$-dilation as well, and what
 > survives is an operator whose coefficients are not rational in a coordinate,
 > or one defined on the curve rather than on a coordinate line.
@@ -225,12 +224,12 @@ local monodromy, not fitted numerically.
 > stands as mathematics about those $t$-operators: neither can be written as a
 > sum of derivative-like terms, because each carries a zeroth-order term
 > $-(q-1)$ that does not annihilate the constant seed
-> (`QOU.Mass.C1KernelAsShiftSum`), and neither can carry the $(-1)^{m}$
+>, and neither can carry the $(-1)^{m}$
 > alternation of the preceding note on a nonzero tower — on the double cover
 > because a monodromy-commuting operator transports the character unchanged,
 > under the unit shift because the even part would have to annihilate both a
 > jet and its odd image, and those two recurrences differ by
-> $q^{e+1}(q-1)Y_{e+2}$ (`QOU.Mass.C1KernelDictionaryParity`). Read on the
+> $q^{e+1}(q-1)Y_{e+2}$. Read on the
 > correct axis those facts say nothing about $D_{q}$, and the
 > "$\sigma \leftrightarrow t$-shift dictionary" they posed as wall W2 is not a
 > question the conjecture asks.
@@ -247,7 +246,7 @@ local monodromy, not fitted numerically.
 > which is squarefree with $D(0) = 16 \neq 0$. Equal root multisets means
 > $D(\lambda z) = c\,D(z)$, and then two coefficients settle it: the constant
 > term gives $16 = 16c$, so $c = 1$, and the linear term gives $24\lambda = 24$,
-> so $\lambda = 1$ (`QOU.Mass.DilationBranchLocusRigidity`, generic
+> so $\lambda = 1$ (over a generic
 > characteristic-zero field). **Only the identity dilation lifts to $\Sigma$**,
 > for every $\lambda$ and at every $q$ — scope (b), the invariant being the
 > sextic's own coefficients rather than a cited analytic theorem, so this

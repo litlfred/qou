@@ -51,6 +51,7 @@ export default proposition({
     "wedderburn-coupling",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The script `rho-k-markov-multiplicativity.witness.json` numerically verifies the\n\n (see `atomic-braid-mass-paper-formula.witness.json` and the `rho-k-pair-gen-extension.witness.json` table)." },
     {
       kind: "note",
       date: "2026-08-08",

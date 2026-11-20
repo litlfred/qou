@@ -246,7 +246,7 @@ $$
   \beta = \varnothing  \text{(empty braid)}.
 $$
 
-Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)).
+Equivalently, the Gram matrix $G_{ij} = \mathrm{tr}_M(T_{\beta_i} \cdot T_{\beta_j})$ over any normal-form basis $\{T_{\beta_i}\}$ of $H_n(R, q)$ is invertible (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical).
 
 ### QUO-2: Observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$)
 

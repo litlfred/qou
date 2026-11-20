@@ -52,8 +52,8 @@ $\mathfrak{m}(X) = m_e^a m_\pi^c \cdot Q_X(q_0)$ with
 $Q_X \in \mathbb{Q}(q_0)$ and $a, c \in \mathbb{Z}_{\geq 0}$.
 
 The discipline is a **structural assumption**, not a derived result — its
-content is the class field `mass_factorisation` of
-`qou:QOU.Observations.ThreeCalibrationDiscipline`. What the walk above shows is
+content is the mass-factorisation hypothesis of the three-calibration
+discipline, which is assumed, not proved. What the walk above shows is
 that the assumption is **consistent with** the chain as far as the chain is
 realised.
 Remaining open conjectures along the chain

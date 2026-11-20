@@ -70,3 +70,12 @@ describe("L4 premature q (Chapter 1 only)", () => {
     expect(failing("$a \\quad b \\equiv c$", { premature: true })).toEqual([]);
   });
 });
+
+describe("owner rulings 2a/3a/1b (exemption sets)", () => {
+  const { CODE_BY_DESIGN, REFERENCE_TABLES } = require("./voice-leak-audit");
+  it("names the code-by-design and reference chapters", () => {
+    expect(CODE_BY_DESIGN.has("appendix-mass-binding-algorithms")).toBe(true);
+    expect(CODE_BY_DESIGN.has("appendix-formalisation-notes")).toBe(true);
+    for (const c of ["glossary", "notation", "index-of-definitions"]) expect(REFERENCE_TABLES.has(c)).toBe(true);
+  });
+});

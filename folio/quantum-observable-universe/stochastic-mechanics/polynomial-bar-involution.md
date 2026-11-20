@@ -20,20 +20,20 @@ $$h \;=\; q - q^{-1},$$
 
 with the correct bar-action $h \mapsto -h$ matching the general definition ([Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution)).
 
-We work in $R[X]$ rather than directly with the Hecke skein for three reasons. First, algebraic decidability: `Polynomial.comp` lemmas give the four ring-involution axioms for free. Second, no analysis is needed: unlike $\mathbb{C}$ with conjugation, the bar map is defined by formal substitution. Third, concrete bar-symmetric subring identification: when $2$ is not a zero divisor in $R$, the bar-symmetric subring is exactly $R[X^2]$, providing a concrete model of "$P_{\mathrm{avg}}$ kills odd powers".
+We work in $R[X]$ rather than directly with the Hecke skein for three reasons. First, algebraic decidability: the substitution identities for polynomial composition give the four ring-involution axioms directly. Second, no analysis is needed: unlike $\mathbb{C}$ with conjugation, the bar map is defined by formal substitution. Third, concrete bar-symmetric subring identification: when $2$ is not a zero divisor in $R$, the bar-symmetric subring is exactly $R[X^2]$, providing a concrete model of "$P_{\mathrm{avg}}$ kills odd powers".
 
-## Proved theorems (Lean)
+## Proved identities
 
-The Lean sibling [`polynomial-bar-involution.lean`](polynomial-bar-involution.lean) proves the following (see [Table](#tbl:polynomial-bar-involution-table-data)). All proofs use only `Polynomial.comp` lemmas from Mathlib.
+The identities established for the polynomial bar are collected in [Table](#tbl:polynomial-bar-involution-table-data). All proofs use only the substitution identities for polynomial composition.
 
 ## Connection to the three-layer synthesis
 
-In `prop:bar-symmetric-three-layer-synthesis`, the universal kernel is bar-anti-symmetric. The polynomial indeterminate $X$ is the canonical such kernel. The series, phase, and gain layers are all even-power polynomials in $X$, hence in $R[X^2]$. Each layer functor is concretely realised as a `BarHeckeFunctor R[X]` sending bar-anti-symmetric inputs to bar-symmetric outputs. The synthesis-class fields become explicit elements of $R[X^2]$.
+In the bar-symmetric three-layer synthesis, the universal kernel is bar-anti-symmetric. The polynomial indeterminate $X$ is the canonical such kernel. The series, phase, and gain layers are all even-power polynomials in $X$, hence in $R[X^2]$. Each layer functor is concretely realised as a bar-Hecke functor on $R[X]$ sending bar-anti-symmetric inputs to bar-symmetric outputs. The data of the synthesis become explicit elements of $R[X^2]$.
 
-## Proofs (Lean $\leftrightarrow$ paper bridge)
+## Proofs
 
-Every Lean theorem below has both a narrative proof here and a fully formalised Lean proof in [`polynomial-bar-involution.lean`](polynomial-bar-involution.lean). The core bar-involution proofs use only the four ring-involution axioms plus Mathlib's `Polynomial.comp` lemmas.
+The core bar-involution proofs use only the four ring-involution axioms plus the substitution identities for polynomial composition.
 
 ### Core bar-involution axioms
 
-**Proposition (Lean: `barPoly_X`).** $\overline X = -X$.
+**Proposition.** $\overline X = -X$.

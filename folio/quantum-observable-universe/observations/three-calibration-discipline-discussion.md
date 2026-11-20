@@ -8,7 +8,7 @@ The three canonical inputs are weak-sector observables: a leptonic mass scale an
 
 ## Discussion
 
-This proposition formalizes the calibration discipline.
+This proposition makes the calibration discipline precise.
 
 1. **Three calibration inputs.** The QOU framework reads three experimental values ($m_e$, the lepton ratio $m_\mu/m_e$, and $m_\pi$). It assigns them to three distinct (co)homological data of the substrate. Every other physical prediction is the product of these three with a $\mathbb{Q}(q_0)$-valued algebraic expression.
 2. **(Co)homological alignment.** The three calibrations correspond exactly to the three real degrees of freedom of the Bring Hodge structure $H^1 = 2W$ ([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md)). The rank-2 $W$-Hodge plane carries a scale (pinned by $m_e$) and a modulus (pinned by $q_0$ via $m_\mu/m_e$). The meson sector contributes a third, orthogonal scale (pinned by $m_\pi$).
