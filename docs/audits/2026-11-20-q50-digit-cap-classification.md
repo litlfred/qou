@@ -1,7 +1,8 @@
 # The input ceiling: `mpf(Q_50_DIGIT_STR)`, and why it cannot be swept
 
 Owner-selected 2026-11-20 (option 3 of four). Bean `qou-oiz3`.
-**The sweep was NOT run. The classification was, and it is the reason.**
+**The classification is why the sweep could not be blind. The sweep then ran,
+over the 588 non-deliberate consumers, with the 207 deliberate ones left alone.**
 
 ## 1. The defect is real and the fix direction is proved
 
@@ -28,12 +29,16 @@ This is the finding, and it is why a `sed` over the pattern is wrong.
 
 | | count |
 |---|---:|
-| files whose raw text contains `mpf(Q_50_DIGIT_STR)` | 809 |
+| files whose raw text contains `mpf(Q_50_DIGIT_STR)` | 810 |
 | -- of those, **prose only** (mention it, never call it) | 6 |
-| **real call sites** | **803** |
-| -- **DELIBERATE 50-digit pin, must not change** | **206** |
+| **real call sites** | **804** |
+| -- **DELIBERATE 50-digit pin, must not change** | **207** |
 | -- FIXABLE | 589 |
 | -- unpatchable (no import to extend) | 8 |
+
+(809/803/206 before the alias-prefix fix in S4a; the pattern had been matching
+the `mpf(...)` suffix of `mp.mpf(...)`, which found the file either way but
+under-counted by one.)
 
 The deliberate signal is never in the call, which is identical either way. It is
 in the file's name, in the name of the artifact it emits, or in a pin comment on
@@ -65,7 +70,7 @@ over-matched **6x** (1519 candidates) because a one-hop import rule flagged
 every producer importing `q_parameter`, which *defines* `q_int`. Direct calls
 only. Recorded in `2026-11-20-exposed-witness-identification.md`.
 
-## 4. The mover rate is NOT established, and the first figure was contaminated
+## 4. The mover rate is 50 %, and TWO earlier figures of mine were wrong
 
 A first A/B reported **6 of 6 MOVED** and that figure is **withdrawn**. It
 compared a patched run against the **committed** witness, so it attributed
@@ -82,9 +87,58 @@ patched run -> B, compare A vs B), the sample that completed both arms is
 `$`-anchored import regex, which fails on a parenthesised multi-line import --
 a limitation of the patcher, not a fact about the corpus.
 
-So: **n = 2.** No rate is claimed. Establishing one needs a patcher that handles
-multi-line imports and a sample large enough to mean something, both of which
-are tractable and neither of which is done.
+**Settled with a working patcher: 20 of 20 candidates completed both arms,
+10 MOVED / 10 IDENTICAL -- a 50 % mover rate.** Applied to the 322 fine
+witnesses behind fixable producers, that is ~160 expected to move.
+
+So two figures of mine were wrong in sequence: 6/6 (environment contamination)
+and then n = 2 (a broken patcher, below). The measured rate is 50 %.
+
+## 4a. The patcher: two bugs, and the reason I gave for the first was invented
+
+**Bug 1 -- the `$` anchor.** A `^...$`-anchored regex with `[^\n#]*` before the
+anchor missed **535 of 589** import lines (91 %), every one of them ending in
+`# noqa: E402`, which the character class cannot cross. I attributed this in
+writing to *parenthesised multi-line imports*. Measured afterwards: **588 of
+589 imports are SINGLE-line**. The reason was invented rather than observed,
+and the real one is a trailing comment.
+
+**Bug 2 -- the module alias, which actively corrupted files.** The call prefix
+must be CONSUMED. A pattern allowing only `mpmath.` or bare matches the
+`mpf(...)` *suffix* of `mp.mpf(...)`, so substituting yields `mp.Q_MP` -- an
+`AttributeError: module 'mpmath' has no attribute 'Q_MP'` at import time.
+Measured distribution of the 871 sites:
+
+| prefix | count |
+|---|---:|
+| `mp.` | 661 |
+| bare | 197 |
+| `mpmath.` | 10 |
+| `_mp.` | 3 |
+
+so the bug corrupted **76 %** of sites. It surfaced as 14 of 20 A/B candidates
+failing their PATCHED arm while their CONTROL arm passed -- which is exactly
+what a control arm is for, and is why that design is worth the extra run.
+
+The patcher is now AST-based: it locates the `ImportFrom` node that brings in
+`Q_50_DIGIT_STR` and inserts `, Q_MP` after the alias token, preserving the
+trailing comment; and it finds call sites in `code_only()` output and applies
+those spans to the raw text, which `_source_normalise` preserves offsets for.
+**588 of 589 patch cleanly, AST-valid before and after.**
+
+## 4b. The three gates on the sweep
+
+Any failure reverts the batch:
+
+1. every patched file parses (`ast.parse`);
+2. no patched file carries the mangling signature `<alias>.Q_MP` in code;
+3. no patched file retains a residual `mpf(Q_50_DIGIT_STR)` call in code.
+
+All three green on 588/588. Checked through `code_only()`, so a docstring
+mentioning the call is not read as one. The 64 other `.Q_MP` occurrences in
+`computations/` are legitimate module accesses -- `q_parameter.Q_MP` 48,
+`C.Q_MP` 9, `qp.Q_MP` 4, `QP.Q_MP` 2, `constants.Q_MP` 1 -- and none is in the
+batch.
 
 ## 5. Environment findings, recorded because they gate everything above
 
