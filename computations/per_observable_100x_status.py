@@ -109,11 +109,31 @@ _MU_QUOTED = (
 # m_e·Vol(4_1)/ℏ_q² value carried by the committed
 # per-observable-100x-status.witness.json (2026-05-28 re-pin).
 # AGENTS.md §"q₀ anchor convention" STRICT rule 1.
-_M_MU_PRED_PROTON_MEV = mpf("105.658397811")
+#
+# 2026-11-20: the frozen literal mpf("105.658397811") that stood here is
+# replaced by a DERIVATION at the package's default (one-term proton) pin,
+# read from qou_substrate.constants directly so no manifest rebinding can
+# turn it into the muon tautology. Precision fix only: at the one-term pin
+# the derived value rounds to the old literal (checked when this landed).
+def _m_mu_pred_at(q_str: str) -> mpf:
+    from qou_substrate.constants import vol_4_1_at as _vol
+    with mp.workdps(max(70, mp.dps)):
+        q = mpf(q_str)
+        return mpf(str(M_E_MEV)) * _vol(70) / ((q - 1) / q) ** 2
+
+
+def _proton_pin_strings() -> tuple[str, str]:
+    """(one-term DEFAULT pin, two-term COMPARISON pin), both 50 digits."""
+    from qou_substrate import constants as _qc
+    return _qc.Q_50_DIGIT_STR, _qc.Q_PROTON_TWO_TERM_50_DIGIT_STR
+
+
+_M_MU_PRED_PROTON_MEV = _m_mu_pred_at(_proton_pin_strings()[0])
 _M_MU_PRED_SOURCE = (
-    "PINNED proton-anchored prediction (m_e·Vol(4_1)/ℏ_q² at the m_p/m_e "
-    "re-pinned q₀, 2026-05-28); decoupled from the muon-flipped Borromean "
-    "muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1"
+    "DERIVED proton-anchored prediction m_e·Vol(4_1)/ℏ_q² at the package "
+    "default one-term proton pin (m_p/m_e re-pin 2026-05-28); never read from "
+    "the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md "
+    "§q₀-anchor STRICT rule 1"
 )
 
 # Observable registry: (codata_value, codata_err, role, source_label)
@@ -1528,22 +1548,16 @@ def main() -> dict:
     _mn_sub_2term_err_ppb = (_mn_sub_2term - _mn_codata) / _mn_codata * mpf("1e9")
     _mn_sub_reduction_pct = (1 - abs(_mn_sub_2term_err_ppb) / abs(_mn_sub_1term_err_ppb)) * 100
 
-    # Linearised 2-term proton-pin shift on m_mu from d(m_p^QCD/m_e)/dq and d(m_mu/m_e)/dq at q0:
-    _vol41 = 2 * mp.clsin(2, _pi / 3)
-    _dq_fd = q0 * mpf("1e-25")
-
-    def _mp_qcd_ratio_at(qq: mpf) -> mpf:
-        _h = qq - 1 / qq
-        _tr = abs((4 + _h ** 2 - 3 * (_h ** 4) - (_h ** 6)) / (_h ** 2 + 4))
-        _qint2 = (qq ** 2 - qq ** (-2)) / _h
-        _qint3 = (qq ** 3 - qq ** (-3)) / _h
-        _fbor = _tr * _qint2 * _qint3 / (qq ** 3)
-        return 2 * (_vol41 / (((qq - 1) / qq) ** 2)) * _fbor - 12
-
-    _dmp_dq = (_mp_qcd_ratio_at(q0 + _dq_fd) - _mp_qcd_ratio_at(q0 - _dq_fd)) / (2 * _dq_fd)
-    _dq_2term_plain = -(_mp_qed_plain / m_e_mev) / _dmp_dq
-    _q0_2term_plain = q0 + _dq_2term_plain
-    _mmu_pred_2term_plain = m_e_mev * _vol41 / (((_q0_2term_plain - 1) / _q0_2term_plain) ** 2)
+    # Two-term proton pin as a named COMPARISON (owner ruling 2026-11-20:
+    # one-term stays the default). EXACT findroot root
+    # (qou_substrate.constants.q_proton_two_term_at), replacing a linearised
+    # finite-difference shift that was 7.5e-15 low and whose note had the
+    # sign of the shift wrong.
+    _q_1t_str, _q_2t_str = _proton_pin_strings()
+    _q0_2term_plain = mpf(_q_2t_str)
+    _q0_1term = mpf(_q_1t_str)
+    _dq_pin_ppb = (_q0_2term_plain - _q0_1term) / _q0_1term * mpf("1e9")
+    _mmu_pred_2term_plain = _m_mu_pred_at(_q_2t_str)
     _mmu_codata = OBSERVABLES["m_mu"][0]
     _mmu_err_2term_ppb = rel_error_ppb(_mmu_pred_2term_plain, _mmu_codata)
 
@@ -1558,11 +1572,17 @@ def main() -> dict:
                 "q0_two_term_plain": fmt(_q0_2term_plain, 25),
                 "m_mu_pred_two_term_plain_MeV": fmt(_mmu_pred_2term_plain, 12),
                 "m_mu_err_two_term_plain_ppb": fmt(_mmu_err_2term_ppb, 4),
+                "dq_two_term_minus_one_term_ppb": fmt(_dq_pin_ppb, 12),
                 "note": (
-                    "Diagnostic only — primary m_mu score remains pinned to the 1-term proton anchor "
-                    "(+209.8 ppb). Because d(m_p^QCD/m_e)/dq > 0 while d(m_mu/m_e)/dq < 0 at q0, "
-                    "subtracting a repulsive M_p^QED > 0 from m_p^exp lowers m_p^QCD(q_new) and "
-                    "decreases q_new by -2.23e-7, shifting m_mu(q_new) toward CODATA."
+                    "Diagnostic only — the primary m_mu score stays at the one-term proton "
+                    "pin (owner ruling 2026-11-20: 'Revert to 1-term default'; at the "
+                    "two-term pin alpha_em^-1 form B is at 495 sigma, PRs #8562/#8565). "
+                    "The two-term comparison pin is the exact root of m_p^QCD + M_p^QED "
+                    "= m_p^exp and sits +"
+                    f"{fmt(_dq_pin_ppb, 6)} ppb ABOVE the one-term pin (M_p^QED > 0 lowers "
+                    "the required m_p^QCD, and d(m_p^QCD/m_e)/dq < 0 here). The two-term "
+                    "term is selection-scoped (plain weighting, m_e scale; covariant "
+                    "all-pairs projection gives b = 0)."
                 ),
             }
         elif _obs_name in ("Q_beta", "m_n", "Delta_pn") and "pred_MeV" in _r:

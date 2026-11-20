@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T17:21:15.893389+00:00",
-  "commitSha": "bef5a5b03ce3532801dff4f80e524476289dac1a",
+  "computedAt": "2026-11-20T17:30:28.964884+00:00",
+  "commitSha": "435480d66e7c13c09d817e7e296c9f41393d2405",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 298,
+  "durationMs": 6,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "16dca40d3b34",
-  "scriptCommitSha": "134510f16375bb5c3bd055dc6bf55a95d7fb7466",
+  "scriptHash": "51e9543fb96c",
+  "scriptCommitSha": "a97ce8a6b6321832670f7d1fc2bda47e04a0069b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "ae1028699afd20c5"
   },
   "invocation": {
     "argv": [
@@ -81,7 +81,7 @@
         "note": null,
         "beats_1x_experimental": true,
         "beats_100x_experimental": false,
-        "source_witness": "PINNED proton-anchored prediction (m_e·Vol(4_1)/ℏ_q² at the m_p/m_e re-pinned q₀, 2026-05-28); decoupled from the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1",
+        "source_witness": "DERIVED proton-anchored prediction m_e·Vol(4_1)/ℏ_q² at the package default one-term proton pin (m_p/m_e re-pin 2026-05-28); never read from the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1",
         "sigma_source": "COMPARISON TARGET (codata_MeV), NOT the prediction: m_e × (m_μ/m_e)_CODATA = 0.5109989506900000000000000000000000000000000000000005654434719000544678 × 206.7682827000000000000000000000000000000000000000000223638476790838774 (ratio-derived; independently-quoted 105.6583755(23) MeV). The PREDICTION (pred_MeV) is the INDEPENDENT categorical value m_μ = m_e·Vol(4_1)/ℏ_q² from the Borromean witness — post the 2026-05-29 q₀ re-pin it is a genuine 9.5σ PREDICTION, NOT ratio-derived. The ~210 ppb pred-vs-codata gap (963.6× the 100× target) is the real μ-p tension; m_μ does NOT meet L2. Do not read 'ratio-derived' as 'm_μ trivially meets' (the error PR #1556 made).",
         "compute_truncation_ppb": "9.464e-54",
         "compute_output_dps": 60,
@@ -90,10 +90,11 @@
           "M_p_QED_conn_plain_MeV": "0.000220077293803983",
           "M_p_QED_conn_plain_keV": "0.220077293804",
           "M_p_QED_conn_Kp_MeV": "0.000244281082672304",
-          "q0_two_term_plain": "1.109978595150878501566165",
+          "q0_two_term_plain": "1.109978595150885999087565",
           "m_mu_pred_two_term_plain_MeV": "105.658376347",
           "m_mu_err_two_term_plain_ppb": "8.058",
-          "note": "Diagnostic only — primary m_mu score remains pinned to the 1-term proton anchor (+209.8 ppb). Because d(m_p^QCD/m_e)/dq > 0 while d(m_mu/m_e)/dq < 0 at q0, subtracting a repulsive M_p^QED > 0 from m_p^exp lowers m_p^QCD(q_new) and decreases q_new by -2.23e-7, shifting m_mu(q_new) toward CODATA."
+          "dq_two_term_minus_one_term_ppb": "11.1709409390",
+          "note": "Diagnostic only — the primary m_mu score stays at the one-term proton pin (owner ruling 2026-11-20: 'Revert to 1-term default'; at the two-term pin alpha_em^-1 form B is at 495 sigma, PRs #8562/#8565). The two-term comparison pin is the exact root of m_p^QCD + M_p^QED = m_p^exp and sits +11.1709 ppb ABOVE the one-term pin (M_p^QED > 0 lowers the required m_p^QCD, and d(m_p^QCD/m_e)/dq < 0 here). The two-term term is selection-scoped (plain weighting, m_e scale; covariant all-pairs projection gives b = 0)."
         },
         "one_term": {
           "pred_MeV": "105.658397811",
