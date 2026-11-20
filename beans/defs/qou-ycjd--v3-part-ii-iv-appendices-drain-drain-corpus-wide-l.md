@@ -83,3 +83,6 @@ Merged on main: #8577/#8584/#8585 (W14b: Part I, link text, ratchet), #8610 (W14
 
 
 2026-11-20T18:20Z (W14): #8598's conflict merge reintroduced one L1 ("machine-checked", nuclear-groebner-reduction-proof). Drained in #8633 (ready-to-merge). Ratchet on main after it: 4 NEW, all Ch 2 L4 forward links (sym2-adjoint-traceless-spin-two, g-action-on-substrate x2 entries, higgs-vacuum-residual-graviton). Owner decision framed in session chat.
+
+
+2026-11-20T18:45Z (W14): owner ruled option 2 — Ch 2 forward links advisory. Implemented in #8637 (FORWARD_LINK_STRICT = {Ch 1}; guard test). With #8633 + #8637 merged the voice-leak ratchet is green on main.
