@@ -6,6 +6,12 @@ Alphabet (a) {V, V^-1, L+, L-}, V = s0 s1^-1, L+ = s0 s1, L- = s1 s0 (the order 
 gives, not the inverse), lengths 1..6. Alphabet (b) adds e- = s0 s1 s0, lengths 1..5.
 mpmath 40 dps, convention D, proton pin. Nothing fitted, selected or compared with measurement.
 
+Scope note (2026-11-20). "Four-term photon" in this stage meant 1 + phi0 s0 + phi1 s1 + phi01 s0 s1.
+By owner ruling (bean qou-99qc, 2026-11-18, confirmed 2026-11-20) def:photon's fourth term is the
+chiral vertex s0 s1^-1 = V. The two forms are one family (gamma(phi0, phi1, phi01) =
+gamma_straight(phi0 - h phi01, phi1, phi01)) and gamma*gamma reaches L+, L- and e- under both, so the
+alphabets below are unaffected; e- is a two-photon-product letter, not a one-photon letter.
+
 -- Ref: [leitner2026] bean qou-a1hh; bean qou-99qc
 """
 from __future__ import annotations
@@ -125,7 +131,9 @@ def main() -> int:
         "q0Anchor": "proton",
         "q0AnchorReason": "via h2_one_rule (cf.Q, proton pin)",
         "description": "PROBE stage 1b (beans qou-a1hh, qou-99qc): stage 1 re-run with L- = s1 s0 (order, not "
-                       "inverse) and the four-term photon letter e- = s0 s1 s0. Pre-registered. Nothing selected.",
+                       "inverse) and the gamma-gamma product letter e- = s0 s1 s0 (called 'the four-term photon letter' "
+                       "when run; scoped 2026-11-20: def:photon's fourth term is s0 s1^-1 by owner ruling, "
+                       "alphabets unaffected). Pre-registered. Nothing selected.",
         "results": res,
     })
     return 0
