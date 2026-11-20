@@ -90,8 +90,8 @@ theorem accPt_of_sphere_subset {ρ : ℝ} (hρ : 0 < ρ) {K : Set ℂ}
 open QOU.Mathlib.ArgumentPrinciple in
 /-- **The argument principle on an annulus, with integer orders.** For `f`
 meromorphic on the closed annulus `K = {r ≤ ‖z‖ ≤ R}`, analytic and nonvanishing
-on `K` off a finite set `S` of points strictly inside, with `S` exactly the
-interior points where the divisor is nonzero,
+on the two boundary circles, and `S` exactly the interior points where the
+divisor is nonzero,
 
 `(2πi)⁻¹ (∮_{|z|=R} f'/f − ∮_{|z|=r} f'/f) = Σ_{w∈S} ord_w f`.
 
@@ -100,12 +100,13 @@ global factorisation `f = (∏_{u∈S} (·-u)^{ord_u f})·g` on `K`
 (`MeromorphicOn.extract_zeros_poles`); on each boundary circle
 `f'/f = Σ ord_u (z-u)⁻¹ + g'/g`; every `u ∈ S` lies inside the outer circle
 (each term gives `2πi`) and outside the inner one (each term gives `0`); and the
-two integrals of `g'/g` agree by the annulus Cauchy theorem. -/
+two integrals of `g'/g` agree by the annulus Cauchy theorem. Nothing is assumed
+about `f` at interior points beyond meromorphy, so `f` need not be in normal form
+there. -/
 theorem argument_principle_annulus {f : ℂ → ℂ} {r R : ℝ} (hr : 0 < r) (hrR : r < R)
     (hf : MeromorphicOn f (closedAnnulus r R))
     (S : Finset ℂ)
-    (hfU : AnalyticOnNhd ℂ f (closedAnnulus r R \ (S : Set ℂ)))
-    (hfne : ∀ z ∈ closedAnnulus r R, z ∉ S → f z ≠ 0)
+    (hbd : ∀ z, (‖z‖ = r ∨ ‖z‖ = R) → AnalyticAt ℂ f z ∧ f z ≠ 0)
     (hS : (S : Set ℂ) = {z | (r < ‖z‖ ∧ ‖z‖ < R) ∧
         (MeromorphicOn.divisor f (closedAnnulus r R)) z ≠ 0}) :
     (2 * (Real.pi : ℂ) * Complex.I)⁻¹ *
@@ -133,8 +134,17 @@ theorem argument_principle_annulus {f : ℂ → ℂ} {r R : ℝ} (hr : 0 < r) (h
     have := (hSin z h).1; linarith
   have hD0 : ∀ z ∈ U, z ∉ S → D z = 0 := by
     intro z hzU hznS
-    have haz : AnalyticAt ℂ f z := hfU z ⟨hzU, by simpa using hznS⟩
-    have hne : f z ≠ 0 := hfne z hzU hznS
+    have hzr := mem_closedAnnulus.mp hzU
+    by_cases hint : r < ‖z‖ ∧ ‖z‖ < R
+    · by_contra hD
+      apply hznS
+      have : z ∈ {z | (r < ‖z‖ ∧ ‖z‖ < R) ∧ (MeromorphicOn.divisor f U) z ≠ 0} := ⟨hint, hD⟩
+      rw [← hS] at this; exact this
+    have hbdz : ‖z‖ = r ∨ ‖z‖ = R := by
+      by_contra h
+      push_neg at h
+      exact hint ⟨lt_of_le_of_ne hzr.1 (Ne.symm h.1), lt_of_le_of_ne hzr.2 h.2⟩
+    obtain ⟨haz, hne⟩ := hbd z hbdz
     have hord : meromorphicOrderAt f z = 0 := by
       rw [haz.meromorphicOrderAt_eq, analyticOrderAt_eq_zero.mpr (Or.inr hne)]; rfl
     show (MeromorphicOn.divisor f U) z = 0
@@ -144,8 +154,7 @@ theorem argument_principle_annulus {f : ℂ → ℂ} {r R : ℝ} (hr : 0 < r) (h
       rw [Complex.norm_real, Real.norm_eq_abs, abs_of_pos hR]
     obtain ⟨hz0U, hz0nS⟩ := hsphR _ hz0
     have hz0order : meromorphicOrderAt f ((R : ℝ) : ℂ) ≠ ⊤ := by
-      have haz : AnalyticAt ℂ f ((R : ℝ) : ℂ) := hfU _ ⟨hz0U, by simpa using hz0nS⟩
-      have hne : f ((R : ℝ) : ℂ) ≠ 0 := hfne _ hz0U hz0nS
+      obtain ⟨haz, hne⟩ := hbd _ (Or.inr hz0)
       rw [haz.meromorphicOrderAt_eq, analyticOrderAt_eq_zero.mpr (Or.inr hne)]
       simp
     exact (hf.exists_meromorphicOrderAt_ne_top_iff_forall hUconn).mp ⟨⟨_, hz0U⟩, hz0order⟩
@@ -174,9 +183,9 @@ theorem argument_principle_annulus {f : ℂ → ℂ} {r R : ℝ} (hr : 0 < r) (h
     rw [← hRHS]; exact hfeq
   -- on either boundary circle, `logDeriv f` is the pole sum plus `logDeriv g`
   have hEq : ∀ ρ, 0 < ρ → (∀ z, ‖z‖ = ρ → z ∈ U ∧ z ∉ S) →
-      Set.EqOn (logDeriv f)
+      (∀ z, ‖z‖ = ρ → AnalyticAt ℂ f z) → Set.EqOn (logDeriv f)
         (fun z => (∑ u ∈ S, (D u : ℂ) * (z - u)⁻¹) + logDeriv g z) (sphere 0 ρ) := by
-    intro ρ hρ hsph z hz
+    intro ρ hρ hsph hρan z hz
     have hzn : ‖z‖ = ρ := by simpa using hz
     obtain ⟨hzU, hznS⟩ := hsph z hzn
     have hzu : ∀ u ∈ S, z ≠ u := fun u hu h => hznS (h ▸ hu)
@@ -202,7 +211,7 @@ theorem argument_principle_annulus {f : ℂ → ℂ} {r R : ℝ} (hr : 0 < r) (h
       hfmero.eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin hFmero hzU hacc hFeq
     have hval : f z = F z := by
       have hfcont : ContinuousAt f z :=
-        (hfU z ⟨hzU, by simpa using hznS⟩).continuousAt
+        (hρan z hzn).continuousAt
       have h1 : Filter.Tendsto f (nhdsWithin z {z}ᶜ) (nhds (f z)) := hfcont.continuousWithinAt
       have h2 : Filter.Tendsto F (nhdsWithin z {z}ᶜ) (nhds (F z)) :=
         hFana.continuousAt.continuousWithinAt
@@ -270,8 +279,8 @@ theorem argument_principle_annulus {f : ℂ → ℂ} {r R : ℝ} (hr : 0 < r) (h
       Set.countable_empty hlogA.continuousOn
       (fun z hz => (hlogA z ⟨ball_subset_closedBall hz.1.1,
         fun h => hz.1.2 (ball_subset_closedBall h)⟩).differentiableAt)
-  rw [circleIntegral.integral_congr hR.le (hEq R hR hsphR),
-    circleIntegral.integral_congr hr.le (hEq r hr hsphr),
+  rw [circleIntegral.integral_congr hR.le (hEq R hR hsphR (fun z hz => (hbd z (Or.inr hz)).1)),
+    circleIntegral.integral_congr hr.le (hEq r hr hsphr (fun z hz => (hbd z (Or.inl hz)).1)),
     circleIntegral.integral_add hIntSumR (hIntLog R hR.le hsphR),
     circleIntegral.integral_add hIntSumr (hIntLog r hr.le hsphr),
     circleIntegral_sum_simple_poles hR.le S (fun u => (D u : ℂ)) hSballR,
