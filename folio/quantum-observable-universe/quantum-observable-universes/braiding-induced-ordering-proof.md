@@ -29,7 +29,7 @@ the Hecke relation is quadratic.
 
 **Two faces of the arrow of time.**  The braiding $c_{V,V}$
 and the Reeb vector field $\xi$
-([categorical Reeb](#def:categorical-reeb)) express the same
+(the categorical Reeb derivation, defined later in this chapter) express the same
 arrow of time from two complementary viewpoints:
 
 - **Categorical arrow** ($c_{V,V}$): which strand crosses

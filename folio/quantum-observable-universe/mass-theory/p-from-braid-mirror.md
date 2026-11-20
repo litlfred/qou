@@ -6,13 +6,13 @@ of the braid diagram** — each positive crossing $\sigma_i \mapsto
 the signed writhe $w(K) \mapsto -w(K)$ of every braid word.  $P$ is
 an involution ($P^2 = \mathrm{id}$) and is **distinct from**:*
 
-- *the bar-involution [`def:bar-involution`](#def:bar-involution),
+- *the bar-involution [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution),
   which acts as $q \mapsto q^{-1}$ AND $\sigma_i \mapsto \sigma_i^{-1}$
   simultaneously (= composite CPT);*
-- *charge conjugation [`conj:c-from-color-flavor-swap`](#conj:c-from-color-flavor-swap),
+- *charge conjugation [Charge conjugation $C$ as the color-sheet flavor-swap $u \leftrightarrow \bar u$, $d \leftrightarrow \bar d$](#conj:c-from-color-flavor-swap),
   which acts on color-sheet flavor labels with no Hecke-
   generator action;*
-- *time-reversal [`conj:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity),
+- *time-reversal [Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)](#conj:t-from-trace-cyclicity),
   which reverses the braid word at the Markov-trace level.*
 
 ## The action
@@ -92,11 +92,11 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 ## Consumers / downstream
 
-- [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
+- [CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density)
   becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once all
   three factors are established.
 - The writhe-based chirality classification
-  [`prop:chirality-writhe-ribbon-derivation`](#prop:chirality-writhe-ribbon-derivation)
+  [Chirality factor $1 + w \cdot h$ from ribbon-twist framing (writhe $w$)](#prop:chirality-writhe-ribbon-derivation)
   gets a categorical home: chirality measures the P-anti-symmetric
   part of a knot, separately from C and T.
 
@@ -115,7 +115,7 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 
 - The sibling $\mathbb{Z}/2$ factors of CPT — charge conjugation and time
   reversal, this conjecture supplying parity:
-  [`conj:c-from-color-flavor-swap`](../brings-surface/c-from-color-flavor-swap.md),
-  [`conj:t-from-trace-cyclicity`](../nuclear-interactions/t-from-trace-cyclicity.md)
-- Composite CPT: [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
+  [Charge conjugation $C$ as the color-sheet flavor-swap $u \leftrightarrow \bar u$, $d \leftrightarrow \bar d$](../brings-surface/c-from-color-flavor-swap.md),
+  [Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)](../nuclear-interactions/t-from-trace-cyclicity.md)
+- Composite CPT: [CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure](#conj:cpt-orbit-closure-density)
 - Bar-involution: [`bar-involution.md`](../braids-and-knots/bar-involution.md) Tables 1-4

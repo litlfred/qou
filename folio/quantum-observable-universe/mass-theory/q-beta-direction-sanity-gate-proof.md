@@ -33,7 +33,7 @@ $|F(q_0) - F_{\text{target}}(q_0)|/F_{\text{target}}(q_0) > 10$ is
 negative: $F_{\text{target}}=1$, $F(q_0)=-19/2$ passes the window but
 fails the additive test. For $F(q_0)\ge0$ it is sufficient, but it
 never rejects a too-small magnitude
-([`prop:order-of-magnitude-screen`](#prop:order-of-magnitude-screen), item 6).
+([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 6).
 
 **Step 1 — the target has order of magnitude one.** Every ladder
 factor satisfies $|c_k u_0^k| \le |c_2|\,u_0^2 \approx 7.3\times
@@ -67,7 +67,7 @@ decade threshold), to $F_{\text{target}}(q_0)$. Its window ratio is
 $\approx 1 \ll 10$: *granted that ladder comparison*, the true kernel
 passes at any decade threshold, so the screen raises no false refutation. Contrapositively, *if* the true kernel passes, a candidate whose
 magnitude falls outside the decade window has $F(q_0) \ne
-F_{\text{true}}(q_0)$ ([`prop:order-of-magnitude-screen`](#prop:order-of-magnitude-screen), item 2).
+F_{\text{true}}(q_0)$ ([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 2).
 That premise rests on the comparison of the ladder with
 $\mathfrak{Q}_\beta^{\text{CODATA}}$ and on the infinite ladder
 bound, whose convergence is not proved, so rejection is conditional,
@@ -120,7 +120,7 @@ $m = 4$ at the convention-D target $\approx 1.76$. Repeated stabilisation can on
 shrink the magnitude — it can never climb to a target of order unity,
 let alone to the linking-weight scale $\approx 2.5$ of the precedent —
 and, at that target, the gate screens out every member with $m \ge 5$
-([`prop:order-of-magnitude-screen`](#prop:order-of-magnitude-screen), item 5). The members with
+([The order-of-magnitude screen $\mathrm{Scr}_\lambda(t,x)$](#prop:order-of-magnitude-screen), item 5). The members with
 $m \le 4$ are not caught by the decade threshold; their exclusion
 rests on the direction argument itself, not on this gate.
 $\blacksquare$

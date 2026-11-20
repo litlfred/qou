@@ -1,1 +1,1 @@
-We identify the three categorical special functions that pair with the resolvent: the $q$-exponential $\exp_q \in G(\mathcal{H}_q)$, its primitive inverse $\log_q$, and the level-2 iterated primitive $\mathrm{Li}_2^q$. Each is defined Hopf-algebraically, circumventing analytic representations.
+Three categorical special functions pair with the resolvent: the $q$-exponential $\exp_q \in G(\mathcal{H}_q)$, its primitive inverse $\log_q$, and the level-2 iterated primitive $\mathrm{Li}_2^q$. Each is defined Hopf-algebraically, circumventing analytic representations.

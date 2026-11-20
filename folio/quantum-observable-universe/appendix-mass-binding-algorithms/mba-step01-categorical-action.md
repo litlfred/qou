@@ -33,14 +33,14 @@ $V^{\otimes n}$ in $\mathbf{C}$.*
 *Correctness rests on three upstream results.*
 
 1. *The categorical action is **well-defined** by
-   [`def:categorical-action`](#def:categorical-action) — the
+   [Categorical action](#def:categorical-action) — the
    braiding $c_{V,V}$ in a rigid monoidal category satisfies the
    braid (Yang–Baxter) relations on $V^{\otimes n}$ by naturality
    of the hexagon axioms.*
 2. *It **exists** under the QOU rigid-monoidal premise by
-   [`prop:categorical-action-exists`](#prop:categorical-action-exists).*
+   [Existence of the categorical action](#prop:categorical-action-exists).*
 3. *It is **unique** up to natural isomorphism by
-   [`prop:categorical-action-unique`](#prop:categorical-action-unique).*
+   [Uniqueness of the categorical action (given $\Phi$)](#prop:categorical-action-unique).*
 
 ### Complexity
 

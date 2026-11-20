@@ -11,7 +11,7 @@ Standard $S_n$ character theory gives:
   (odd permutation).
 
 **Step 2 — per-irrep closed forms at $H_3(q)$.** By
-[`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms),
+[All three $V_\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**](#rem:chi-per-irrep-cyclotomic-closed-forms),
 the three character-difference closed forms are
 
 $$
@@ -26,7 +26,7 @@ $$
 conjugate-partition relation
 $\chi_{(1,1,1)}\text{-diff}(q) = \chi_{(3)}\text{-diff}(q) / q^4$
 proved as `chi_V111_eq_V3_div_q4`
-([`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms)
+([All three $V_\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**](#rem:chi-per-irrep-cyclotomic-closed-forms)
 "Lean theorems exported") implies, expanding both at $q = 1 + \varepsilon$,
 that **every** $\varepsilon^m$ coefficient (odd and even alike) of
 the $V_{(1,1,1)}$ difference is a $q^{-4} = (1+\varepsilon)^{-4}$

@@ -4,7 +4,7 @@ example).**
 The figure-8 knot $4_1$ is the smallest hyperbolic knot
 [`thurston1978`] and serves as the cleanest illustration of the
 dual existence forced by
-[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
+[Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)](#prop:archimedean-functor-uniqueness):
 *algebraic / motivic in the substrate, transcendental in the
 laboratory*.
 
@@ -33,7 +33,7 @@ $$
 
 with the $\hat{V}_i(q)$ explicitly determined by the four-strand
 braid word above (cf.
-[`thm:markov-trace-factorization`](#thm:markov-trace-factorization)).
+[Exact factorization of the nuclear Markov trace](#thm:markov-trace-factorization)).
 At this level no $\pi$, no $\zeta$-values, no real-analytic
 transcendentals appear: the entire object is a Laurent polynomial
 in $q^{\pm 1/2}$ and lives strictly in the substrate ring $R$.
@@ -81,7 +81,7 @@ measurement. Both pictures are needed:
 | Archimedean | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ | $\mathbb{R}$ (transcendental) | Laboratory mass-scale, Higgs-like amphichiral mechanism |
 
 The bridge between the two columns is uniquely determined by
-[`prop:archimedean-functor-uniqueness`](#prop:archimedean-functor-uniqueness):
+[Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)](#prop:archimedean-functor-uniqueness):
 no other archimedean image is admissible.
 
 **Cross-reference: $\alpha_{EM}$.** The same dichotomy underlies

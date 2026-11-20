@@ -2,7 +2,7 @@
 
 The Markov trace $\mathrm{tr}_M$ is uniquely characterised by its
 cyclicity and Markov property
-([`thm:jones-markov-trace`](#thm:jones-markov-trace)).  The GS
+([Existence and non-degeneracy of the Markov trace (Jones, 1987)](#thm:jones-markov-trace)).  The GS
 filtration $J^\bullet$ is two-sided
 \cite{geckpfeiffer2000, mathas1999}, so for $T_1 \in J^a$,
 $T_2 \in J^b$, $T_1 T_2 \in J^{a+b}$.  Cyclicity then implies that
@@ -17,7 +17,7 @@ property of the quotient.
 The construction is purely algebraic — it makes no reference to
 analytic continuation, complex evaluation, or roots of unity. The
 companion block
-[`prop:residue-at-root`](#prop:residue-at-root) supplies the
+[Cyclotomic residues of $\Phi_q \cdot \mathrm{tr}_{M, \ell}$ — algebraic definition](#prop:residue-at-root) supplies the
 algebraic definition of the residues required to assemble the
 GB-residue spectral sum
-([`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence)).
+([GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass](#prop:gb-spectral-sequence)).

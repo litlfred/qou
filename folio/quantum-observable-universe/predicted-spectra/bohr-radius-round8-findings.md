@@ -37,7 +37,7 @@ The relative shell spacing $E_n / E_1 = 1/n^2$ emerges from the Hecke spectral-g
 
 The Grothendieck-Brieskorn curvature-rank stratification gives $y_{\mathrm{cov}}^{*} \sim \alpha_{EM}^{(\text{rank})}$. The rank counts independent electromagnetic force-carrier insertions. A covalent bond shares two electrons, mediated by one exchange. This gives rank 2. It produces the $\alpha^{2}$ scaling.
 
-Atomic spectra (single electron) also scale as $\alpha^{2}$. The rank interpretation predicts the covalent scale. It does not explain the atomic scale. The atomic scale still requires the virial-balance argument of [`conj:bohr-radius-categorical`](#conj:bohr-radius-categorical).
+Atomic spectra (single electron) also scale as $\alpha^{2}$. The rank interpretation predicts the covalent scale. It does not explain the atomic scale. The atomic scale still requires the virial-balance argument of [Categorical Bohr radius $a_0^{\mathrm{cat}} = \hbar/(m_e c\,\alpha_{EM})$](#conj:bohr-radius-categorical).
 
 #### Transport dependence
 

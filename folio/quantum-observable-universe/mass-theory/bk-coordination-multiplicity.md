@@ -77,7 +77,7 @@ $$
 For a **simplex** cluster ($n_\alpha \le 4$, complete $\alpha$-graph realisable up to the
 tetrahedron) $N_{\mathrm{bonds}} = C(n_\alpha, 2)$, and the residual per bond is a
 near-constant $b_{\alpha\alpha} \approx 2.41\,\text{MeV}$ (${}^{12}\mathrm{C}$: $2.425$;
-${}^{16}\mathrm{O}$: $2.406$). These per-bond $b_{\alpha\alpha}$ values are empirical near-constants read off the AME data (not derived — the same data-selected $\alpha$-$\alpha$ coefficient honestly labelled in [`rem:alpha-cluster-model-g-closure`](#rem:alpha-cluster-model-g-closure)). The closed-shell factor $M_{\mathrm{need}}/z = 2.5189$ is likewise an AME read; the Schur–Weyl period $a_D^{(4)} = 2.5328$ it is compared against is derived, but the identification of the two is not, as recorded above. The single $\alpha$–$\alpha$ pair ${}^8\mathrm{Be}$ gives
+${}^{16}\mathrm{O}$: $2.406$). These per-bond $b_{\alpha\alpha}$ values are empirical near-constants read off the AME data (not derived — the same data-selected $\alpha$-$\alpha$ coefficient honestly labelled in [Model G: a phenomenological $\alpha$-cluster binding closure](#rem:alpha-cluster-model-g-closure)). The closed-shell factor $M_{\mathrm{need}}/z = 2.5189$ is likewise an AME read; the Schur–Weyl period $a_D^{(4)} = 2.5328$ it is compared against is derived, but the identification of the two is not, as recorded above. The single $\alpha$–$\alpha$ pair ${}^8\mathrm{Be}$ gives
 $\approx 0$, consistent with its being unbound relative to two $\alpha$-particles. For
 $n_\alpha \ge 5$ the complete graph over-counts — not all pairs can be nearest neighbours
 in three dimensions — and the per-bond residual falls, so the coordination number

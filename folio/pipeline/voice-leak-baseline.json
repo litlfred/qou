@@ -1,0 +1,5061 @@
+{
+ "schema": "voice-leak-baseline/v1",
+ "note": "Draining ratchet: counts may only go down. Edit only with `voice-leak-ratchet.ts --shrink`.",
+ "counts": {
+  "folio/quantum-observable-universe/appendix-knot-operations-archimedean/gluon-model-comparison.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-knot-operations/hadron-level-knot-table.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table-table2-data.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.md": {
+   "L2:repo-file": 3
+  },
+  "folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-interpretation.md": {
+   "L2:repo-file": 8
+  },
+  "folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md": {
+   "L2:block-id": 4,
+   "L2:decl-name": 6,
+   "L2:repo-file": 9,
+   "L2:typeclass": 2,
+   "L3:we": 8
+  },
+  "folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-sdp-uniqueness-wiring.md": {
+   "L1:lean-word": 4,
+   "L2:decl-name": 1,
+   "L2:lean-file": 5,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md": {
+   "L2:fqn": 3,
+   "L2:repo-file": 22,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md": {
+   "L1:lean-word": 1,
+   "L2:repo-file": 1,
+   "L2:typeclass": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-remark-tjon-universality-external.md": {
+   "L2:decl-name": 3,
+   "L2:fqn": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 4,
+   "L2:repo-file": 6
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.md": {
+   "L2:block-id": 3,
+   "L2:decl-name": 1,
+   "L2:fqn": 2,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-isovector-chiral-residue.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-lp-sdp-dual-emission.md": {
+   "L2:block-id": 1,
+   "L2:decl-name": 9,
+   "L2:repo-file": 4
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-witness-json-pipeline.md": {
+   "L2:block-id": 3,
+   "L2:decl-name": 3,
+   "L2:fqn": 1,
+   "L2:repo-file": 3,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step01-categorical-action.md": {
+   "L2:block-id": 3,
+   "L2:fqn": 2,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step02-gs-reduction.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 3
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step03-markov-trace.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 3,
+   "L2:fqn": 1,
+   "L2:repo-file": 6,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step04-bring-brane.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step05-wedderburn.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 4,
+   "L2:fqn": 2,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step06-frobenius-pairing.md": {
+   "L2:block-id": 3,
+   "L2:decl-name": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step07-gb-filtration.md": {
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:repo-file": 3
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step08-jet-prefix.md": {
+   "L2:block-id": 2,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09a-mass-identity.md": {
+   "L2:block-id": 5,
+   "L2:decl-name": 2,
+   "L2:repo-file": 5
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09b-per-isotope-binding.md": {
+   "L1:lean-word": 2,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:lean-file": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step10-confinement-sdp.md": {
+   "L2:block-id": 1,
+   "L2:decl-name": 8,
+   "L2:repo-file": 5
+  },
+  "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step11-q-beta-truncation.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:fqn": 1,
+   "L2:repo-file": 6
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/fivetwo-bar-odd-arithmetic-home.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/fivetwo-discriminant-vanishes.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/fivetwo-level-seven-ladder.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/fivetwo-saddle-sum-rule.md": {
+   "L2:typeclass": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/fivetwo-stokes-unimodular.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/fivetwo-three-sevens.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/habiro-tail-star-identity.md": {
+   "L1:lean-word": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/per-observable-100x-status-dashboard.md": {
+   "L2:decl-name": 7,
+   "L2:fqn": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/proton-borromean-assembly.md": {
+   "L1:lean-word": 2,
+   "L2:block-id": 3,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity-derivation.md": {
+   "L2:block-id": 6,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md": {
+   "L2:block-id": 1,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-qvalues/qvalue-derivation-chain.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/a5-orbital-degeneracy-fracture.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/gauge-hecke-realization.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/sm-colour-stabilizer-action.md": {
+   "L1:lean-word": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/sm-gating-objects.md": {
+   "L1:proof-assistant": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/sm-gauge-truncation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.md": {
+   "L1:lean-word": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/sm-intro.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/sm-lagrangian-selection-rules.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 2,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/sm-open-problems.md": {
+   "L1:lean-word": 3,
+   "L2:lean-file": 2
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/sm-results-index.md": {
+   "L1:lean-word": 1,
+   "L1:proof-assistant": 2,
+   "L2:lean-file": 5,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-standard-model/strand-twist-datum.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/algebraic-core-survives.md": {
+   "L3:our": 1,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/analytic-obstructions-table1-data.md": {
+   "L2:repo-file": 7
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/analytic-obstructions.md": {
+   "L2:repo-file": 2,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/archimedean-functor-trace-commutativity.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/diophantine-birthday.md": {
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/ecalle-borel-resummation.md": {
+   "L1:formalised-in": 1,
+   "L1:lean-word": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/on-p-modular-hecke.md": {
+   "L3:we": 2,
+   "L3:you": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/standard-part-classical-limit.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/surreal-limit-transfer.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity.md": {
+   "L2:block-id": 8
+  },
+  "folio/quantum-observable-universe/appendix-surreals/archimedean-stpart.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-current-status-table1-data.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 14
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-current-status-table2-data.md": {
+   "L2:repo-file": 4
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-current-status.md": {
+   "L2:block-id": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem-proof.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem-table1-data.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-soft-sharpness-significance.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-soft-sharpness-theorem.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/b1-torus-knot-rows-theorem.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/bigbang-heatdeath.md": {
+   "L1:lean-word": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/birthday-axioms-do-not-pin-the-birthday.md": {
+   "L1:mathlib": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/body-asymptotics-catalog.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/borel-partial-resolution.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/bsd-surreal-bound.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/calculus-up-to-epsilon.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/categorical-mordell-weil.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/collatz-contact-boundary-defn.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/collatz-surreal-bound.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/conway-normal-form.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin-proof.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction-context.md": {
+   "L2:block-id": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/hoefsmit-is-surreal-construction-proof.md": {
+   "L1:lean-word": 1,
+   "L1:mathlib": 2,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/hyperreal-limit-transfer.md": {
+   "L1:mathlib": 3,
+   "L2:decl-name": 1,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/jones-birthday.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/k-theory-period-rosetta.md": {
+   "L2:block-id": 3,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/kashaev-surreal.md": {
+   "L1:lean-word": 4,
+   "L1:proof-assistant": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/millennium-bounds-via-surreals-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/millennium-unification.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/os-reflection-positivity-from-reeb.md": {
+   "L1:formalised-in": 1,
+   "L1:mathlib": 1,
+   "L2:block-id": 4,
+   "L2:fqn": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/p-vs-np-conjecture.md": {
+   "L1:lean-word": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/p-vs-np-surreal-bound.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/q-bsd-classical-limit.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/q-bsd-rank-zero.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:lean-file": 2,
+   "L2:typeclass": 3,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/q-collatz-interpretation.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 6
+  },
+  "folio/quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5-table1-data.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5-table2-data.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.md": {
+   "L2:block-id": 1,
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/appendix-surreals/rh-surreal-bound.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/sign-sequence-of-braid.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/spectral-normal-form.md": {
+   "L1:lean-word": 3,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/surreal-appendix-conclusion.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 1,
+   "L3:we": 9
+  },
+  "folio/quantum-observable-universe/appendix-surreals/surreal-appendix-intro.md": {
+   "L3:our": 1,
+   "L3:us": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/surreal-blowup-examples.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/appendix-surreals/surreal-bounds-graded-mikusinski.md": {
+   "L2:block-id": 13,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/surreal-rate-calculus-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/surreal-rate-calculus-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.md": {
+   "L2:block-id": 5
+  },
+  "folio/quantum-observable-universe/appendix-surreals/transcendental-accounting-table-data.md": {
+   "L2:block-id": 16
+  },
+  "folio/quantum-observable-universe/appendix-surreals/transcendental-accounting.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/appendix-surreals/two-q-adic-valuation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/valuation-ring-finite-surreals.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-surreals/yang-mills-surreal-bound.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-transfer-matrices/tm-inductive-construction.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/appendix-transfer-matrices/tm-worked-examples-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/bar-involution-grading-lean-proofs.md": {
+   "L1:lean-word": 32,
+   "L2:decl-name": 19,
+   "L2:fqn": 11,
+   "L2:lean-file": 2,
+   "L2:typeclass": 5
+  },
+  "folio/quantum-observable-universe/braids-and-knots/bar-involution-properties.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/braid-group-n-strand.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/braid-group-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/braid-link-types.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/cusp-shape-bar-parity.md": {
+   "L1:formalised-in": 1,
+   "L2:decl-name": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/dark-vision-strand-bandwidth.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/eigenbasis-structural-lemmas.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/enveloping-algebras-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/figure-eight-reeb-theta-value.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/hecke-blitvic-pair-partition-mechanism.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis-proof.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/hoefsmit-binding-amplitude.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/holonomy-trefoil.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace-formalization-note.md": {
+   "L1:lean-word": 1,
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/jones-markov-trace.md": {
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:lean-file": 2
+  },
+  "folio/quantum-observable-universe/braids-and-knots/knot-exhaustiveness.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/knot-notation-convention.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md": {
+   "L2:block-id": 1,
+   "L2:decl-name": 2,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/markov-disambiguation.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/braids-and-knots/markov-trace-ambient-s3.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/markov-trace-inductive-limit.md": {
+   "L1:lean-word": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/meridian-holonomy-boost.md": {
+   "L2:decl-name": 3
+  },
+  "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-ratio-reading.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/outro-braids-and-knots.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/substrate-massive-regime.md": {
+   "L1:lean-heading": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.md": {
+   "L1:lean-word": 2
+  },
+  "folio/quantum-observable-universe/braids-and-knots/tl-is-the-xxz-chain.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/trace-locality-gs-reconciliation.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form-proof.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/braids-and-knots/winding-lattice-norm-form.md": {
+   "L1:formalised-in": 1,
+   "L2:block-id": 3,
+   "L2:fqn": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/braids-and-knots/winding-parity-sign-transport.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/brings-surface/archimedean-condition.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/archimedean-preamble.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/braid-group-action.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/bring-algebraic-substructure-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/bring-cone-reeb-quaternionic-twist-proof.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/bring-fibre-q0-figure.md": {
+   "L2:decl-name": 1,
+   "L2:repo-file": 2,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.md": {
+   "L2:repo-file": 2,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/brings-surface/brings-is-qou-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/brings-q-hyperbolic-geometry.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/brings-qou-4tuple.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/brings-qou-axiom-map.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/brings-surface-qou-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/c-from-color-flavor-swap.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 15,
+   "L2:repo-file": 4
+  },
+  "folio/quantum-observable-universe/brings-surface/chebyshev-degree-genus-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/chi-minus-six-chain.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/brings-surface/chirality-trefoil.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/color-elliptic.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/color-sector-coords.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/color-tube-constraints.md": {
+   "L1:proof-assistant": 2,
+   "L2:decl-name": 10,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/brings-surface/color-tube-fibers.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/cyclotomic-reduction.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/descartes-elliptic-curve-interpretation.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/descent-one-dim.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/descent-to-zero.md": {
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/hyperelliptic-quintic.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md": {
+   "L1:formalised-in": 1,
+   "L1:lean-heading": 1,
+   "L1:lean-word": 1,
+   "L2:block-id": 10,
+   "L2:decl-name": 2,
+   "L2:lean-file": 2,
+   "L2:repo-file": 18
+  },
+  "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/radial-projection.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/spectral-dynamics.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/sw-classical-jet-exactness-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 3,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/sw-classical-jet-exactness.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 4
+  },
+  "folio/quantum-observable-universe/brings-surface/sw-period-residue-sum-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/brings-surface/sw-period-residue-sum.md": {
+   "L2:block-id": 2,
+   "L2:fqn": 3
+  },
+  "folio/quantum-observable-universe/brings-surface/t-duality-color-tube.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/t-duality-elliptic.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/terminal-morphism-brings.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/brings-surface/thurston-relaxation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/torus-embeddable-complete-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/trivial-knot-photon-interpretation.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/brings-surface/x5-bring-weight-identification.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/branch-phase-mass-tower-witness.md": {
+   "L2:repo-file": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/categorical-coordinate-ring-dedup.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/commutative-crossing-energy.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/coulomb-strong-ratio-q-rational-proof.md": {
+   "L1:lean-word": 1,
+   "L1:mathlib": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 5,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/crossing-energy-categorical-origin.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/jones-mobius-diagonal.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/local-shadow-ordering.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/mobius-energy-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/mobius-energy.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/q-momentum.md": {
+   "L2:decl-name": 2,
+   "L2:lean-file": 2
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/selection-rule-anchors-c1-c3.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 5,
+   "L2:fqn": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/selection-rule-c2-prediction.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/shadow-ordering-compute-shortcut.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/climax-volume-mass/vertex-algebra-relations.md": {
+   "L2:lean-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/baryon-octet-decomposition.md": {
+   "L1:proof-assistant": 1,
+   "L2:decl-name": 9,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/color-su3-from-g2.md": {
+   "L2:repo-file": 7
+  },
+  "folio/quantum-observable-universe/eightfold-way/decuplet-equal-spacing.md": {
+   "L1:proof-assistant": 1,
+   "L2:decl-name": 5,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/delta-quartet-isospin-ladder.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 6,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/eightfold-intro.md": {
+   "L1:lean-word": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/eightfold-open-problems.md": {
+   "L1:lean-word": 7,
+   "L1:mathlib": 2,
+   "L1:proof-assistant": 1,
+   "L2:decl-name": 5,
+   "L2:fqn": 7,
+   "L2:lean-file": 16,
+   "L2:repo-file": 7,
+   "L2:typeclass": 1,
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/flavor-charge-assignments.md": {
+   "L2:lean-file": 1,
+   "L2:repo-file": 3
+  },
+  "folio/quantum-observable-universe/eightfold-way/meson-mass-splitting.md": {
+   "L2:decl-name": 3,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/meson-octet-decomposition.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/octonion-algebra.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/q-deformation-weight-lattice.md": {
+   "L1:formalised-in": 1,
+   "L1:lean-word": 1,
+   "L1:proof-assistant": 3,
+   "L2:decl-name": 8,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/schur-weyl-eightfold.md": {
+   "L1:lean-word": 2,
+   "L1:proof-assistant": 6,
+   "L2:decl-name": 11,
+   "L2:fqn": 1,
+   "L2:lean-file": 4
+  },
+  "folio/quantum-observable-universe/eightfold-way/sl-n-color-framing.md": {
+   "L1:proof-assistant": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/u-spin-coleman-glashow.md": {
+   "L1:proof-assistant": 1,
+   "L2:decl-name": 4,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/eightfold-way/vector-meson-nonet.md": {
+   "L2:lean-file": 3,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/core-levi-form.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/core-levi-interpretation.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/crow-approach-amplification.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/fluid-dynamics-intro.md": {
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/hyperbolic-overlap-saturation.md": {
+   "L2:block-id": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/leray-profile-construction.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-approaches-intro.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md": {
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-intro.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower-summary.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md": {
+   "L2:block-id": 5
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-obstruction.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-regular-qou.md": {
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-singularity-descartes-proof.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/ns-surreal-bound.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/observability-in-fluid-context.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/observability-independent-motivation.md": {
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/p4-universality.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/p5-counterexample.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/q-aubin-lions.md": {
+   "L3:we": 6
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md": {
+   "L2:decl-name": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/q-navier-stokes.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/q-ns-regularity-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/q-ns-research-programme.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/qns-shell-tail-collapse-interpretation.md": {
+   "L2:repo-file": 5
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/qns-shell-tail-collapse.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 7,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/qns-unit-layers.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/quantum-peter-weyl-proof.md": {
+   "L2:decl-name": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/reeb-beltrami-regular-flow-proof.md": {
+   "L1:lean-word": 1,
+   "L1:mathlib": 1,
+   "L2:decl-name": 3,
+   "L2:fqn": 14,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/reeb-beltrami-regular-flow-scope.md": {
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/regularity-breakdown.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md": {
+   "L2:block-id": 6
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/townsend-biot-savart-strain.md": {
+   "L2:block-id": 2,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/turbulence-acoustics-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/two-vortex-channel-algebra.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/vortex-reconnection.md": {
+   "L2:decl-name": 3,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/glossary/glossary-braided-monoidal-category.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-compact-closed-category.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-derived-category.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/glossary/glossary-descent.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/glossary/glossary-dg-category.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-distinguished-triangle.md": {
+   "L1:mathlib": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 3
+  },
+  "folio/quantum-observable-universe/glossary/glossary-exact-pairing.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-fourier-mukai-transform.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/glossary/glossary-geometry-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/glossary/glossary-hom-set.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 5,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-left-dual.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-monoidal-category.md": {
+   "L1:mathlib": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-monoidal-functor.md": {
+   "L1:mathlib": 2,
+   "L2:fqn": 3
+  },
+  "folio/quantum-observable-universe/glossary/glossary-monoidal-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/glossary/glossary-no-quasi-zeros.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/glossary/glossary-pivotal-category.md": {
+   "L1:mathlib": 1,
+   "L2:decl-name": 4,
+   "L2:fqn": 2,
+   "L2:lean-file": 1,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/glossary/glossary-q-bit.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/glossary/glossary-r-linear-category.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-right-dual.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-rigid-category.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-rigidity-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/glossary/glossary-symmetric-monoidal-category.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/glossary/glossary-weierstrass-projection.md": {
+   "L3:our": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/gravity-spacetime/gravity-spacetime-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/gravity-spacetime/intro-gravity-spacetime-lqg-comparison.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/gravity-spacetime/lqg-adm-ashtekar-comparison.md": {
+   "L3:our": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/gravity-spacetime/outro-gravity-spacetime.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/index-of-definitions/definition-index.md": {
+   "L1:lean-word": 10,
+   "L1:mathlib": 3,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:repo-file": 1,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/aeon-boundary.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/aeon.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/big-bang-info.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/boltzmann-constant-motivation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/cmb-boundary-datum.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/cmb-functor.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/information-theory/cmb-photon-color-content.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/composite-crossing-sublimation-criteria.md": {
+   "L2:block-id": 3,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/discrete-planck-step.md": {
+   "L3:our": 2,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/emergent-gravity-info.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/gas-constant-derivation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/geometry-of-incompleteness.md": {
+   "L1:lean-heading": 1,
+   "L2:decl-name": 3,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/information-theory/golden-julia-dynamics-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/golden-ratio-transport.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/hausdorff-dimension-classical-comparison.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/hausdorff-dimension-recurrence-table1-data.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/information-theory/hausdorff-dimension-recurrence.md": {
+   "L3:our": 2
+  },
+  "folio/quantum-observable-universe/information-theory/horizons-aeons-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/hydrogen-partition-function.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/incompleteness-horizon-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/incompleteness-horizon-nontriviality.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/information-theory/information-causality.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/information-theory/information-paradox-incompleteness.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/information-theory/information-theoretic-time-arrow.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/information-theoretic-time-julia-microscopic.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/information-theoretic-time-properties.md": {
+   "L3:our": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/information-theory/information-theory-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/julia-hausdorff-dimension-prediction.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/information-theory/mass-energy-equivalence-interpretation.md": {
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md": {
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/information-theory/observable-subcategory.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/one-dim-qou-channel.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/information-theory/operational-entropy-properties.md": {
+   "L3:our": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/information-theory/operational-entropy-self-consistency.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/operational-entropy.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/optical-fibre-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/p-bandwidth-bound-proof.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/information-theory/p-vs-np-event-horizon.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/parallel-fibre-noninteraction-proof.md": {
+   "L1:lean-word": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/parallel-fibre-noninteraction.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/information-theory/phase-transition-boundary.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/information-theory/phase-transition-interpretation.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/information-theory/phase-transitions-intro.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/information-theory/photon-threading-mass-interpretation.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/planck-computation.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/information-theory/planck-scale-computation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/planck-step-arithmetic-realisations.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/planck-time-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/planck-time.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/q-exponential-taylor-proof.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/q-game-of-life-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/q-heat-kernel-analysis-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 3,
+   "L2:fqn": 1,
+   "L2:lean-file": 2,
+   "L2:repo-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/qou-p-neq-np.md": {
+   "L1:formalised-in": 2,
+   "L1:lean-word": 3,
+   "L2:block-id": 1,
+   "L2:decl-name": 20,
+   "L2:fqn": 2,
+   "L2:typeclass": 12
+  },
+  "folio/quantum-observable-universe/information-theory/quantum-ideal-gas-law-interpretation.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/reeb-operations-per-planck-physical.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/information-theory/reeb-operations-per-planck-proof.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/information-theory/reeb-turing-completeness.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/regime-table.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/information-theory/skein-filtration-trichotomy.md": {
+   "L1:proof-assistant": 1,
+   "L2:decl-name": 3,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/information-theory/skein-turing-machine.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/speed-of-light-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/speed-of-light-regimes-lieb-robinson.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/information-theory/stat-mech-computational-horizon.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/statistical-mechanical-time.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/substrate-computation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/swampland-connections-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/information-theory/swampland-distance-conjecture.md": {
+   "L1:lean-word": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/information-theory/swampland-island-of-consistency.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/information-theory/swampland-no-global-symmetry.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/information-theory/time-info.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/information-theory/toffoli-lp-stability-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/information-theory/toffoli-lp-stability.md": {
+   "L1:formalised-in": 3,
+   "L1:lean-word": 1,
+   "L2:decl-name": 13,
+   "L2:fqn": 8,
+   "L2:repo-file": 6
+  },
+  "folio/quantum-observable-universe/introduction/authors-note.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/introduction/intro-structure-to-numbers.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/introduction/intro-substrate-parameter.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/introduction/intro.md": {
+   "L3:our": 2,
+   "L3:we": 21
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/atom-knot-exists-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/binding-knots-visual-inventory.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/c-equals-bar-iff-all-1dim-proof.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/categorical-meson.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/categorical-neutron-properties.md": {
+   "L2:fqn": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/categorical-proton-properties.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/cemetery-group.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/confined-particle.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/confinement-category.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional-witness.md": {
+   "L2:repo-file": 3,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/confinement-level-unique.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/confinement-level.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/confinement-phase-stratification-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/coulomb-charge.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/crossing-energy.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/crystal-graph-realization.md": {
+   "L3:our": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/delta-skein-substrate-identity.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/derived-atom.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/down-quark.md": {
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.md": {
+   "L2:block-id": 2,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table2-data.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet.md": {
+   "L1:formalised-in": 1,
+   "L2:decl-name": 8,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-slot.md": {
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/figure-8-muon-mass-cross-check.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/four-term-pair-nucleon.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/fusion-process.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/hadron-operations.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/hadron-proton-example.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/interaction-sector-taxonomy.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/intro-confined-particles-shells.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/knot-particle-generation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/lepton-meson-torus-knot-dictionary.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/magic-shell-coupling-kappa.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/nucleon-derivation-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/nucleon-hecke-element-normal-form.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/pairwise-interaction-decomposition-proof.md": {
+   "L1:lean-heading": 1,
+   "L1:mathlib": 1,
+   "L2:decl-name": 10,
+   "L2:fqn": 4,
+   "L2:lean-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/quantum-dilogarithm-disambiguation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/shell-closure-stability-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/shell-schur-weyl-self-duality-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 3
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/skein-particle-generation-knot-particle-generation-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/stable-atom-properties.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-phase.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/betti-harmonic-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/blowup-local-cohomology-origin.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/blowup-topological-selection.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/brane-boundary-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/brane-tower-terminology.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/cosimplicial-intro.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/descent-eigenspaces-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/descent-intro.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/descent-involution-su2.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/descent-involution.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/descent-lemma-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/descent-lemma-su2.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/direct-limit-algebra-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/direct-limit-intro.md": {
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/direct-limit-lusztig.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/distributional-connection.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/hkr-theorem.md": {
+   "L3:the reader": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-C.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/jet-prolongation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/kummer-tower-motivic-galois.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/localized-knot-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/mass-brane-intro.md": {
+   "L3:we": 8
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.md": {
+   "L2:block-id": 4,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/motivic-substrate-canonicity.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/motivic-substrate.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/ordering-jet-compatibility.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/qu-to-qou-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 3,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/qu-to-qou-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-su2.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/recursive-brane-tower-su2.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/sdescent-prelim-intro.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/vacuum-state-su2.md": {
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-condition-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-condition.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-intro.md": {
+   "L3:we": 10
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-kummer-motivic-intro.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf-interpretation.md": {
+   "L2:repo-file": 6
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md": {
+   "L1:lean-word": 3,
+   "L2:block-id": 4,
+   "L2:decl-name": 21,
+   "L2:fqn": 7,
+   "L2:typeclass": 4,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots-table-data.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/bring-embeddable-knots.md": {
+   "L2:block-id": 5,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/categorical-mass-foundations-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/categorical-mass-markov-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 5,
+   "L2:fqn": 9
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells-interpretation.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/channel-rotation-askey-lit.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 2,
+   "L2:typeclass": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms-table2-data.md": {
+   "L2:decl-name": 10
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/chi-v111-via-sign-substitution.md": {
+   "L1:lean-heading": 1,
+   "L2:decl-name": 7
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.md": {
+   "L1:formalised-in": 1,
+   "L1:lean-word": 1,
+   "L2:decl-name": 17,
+   "L2:fqn": 4,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof-table-data.md": {
+   "L2:decl-name": 9
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/chi-v3-closed-form-proof.md": {
+   "L1:lean-heading": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/chirality-period-pairing.md": {
+   "L2:block-id": 5,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization-derivation.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 3,
+   "L2:decl-name": 5,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/complex-volume-character-variety-path.md": {
+   "L1:formalised-in": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/complex-volume-intro.md": {
+   "L1:lean-word": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/conj-explicit-central-idempotent.md": {
+   "L1:lean-word": 3,
+   "L2:block-id": 3,
+   "L2:decl-name": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms-derivation.md": {
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:lean-file": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 8,
+   "L2:repo-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.md": {
+   "L1:lean-word": 1,
+   "L1:proof-assistant": 1,
+   "L2:block-id": 7,
+   "L2:typeclass": 2,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/gb-spectral-sequence-interpretation.md": {
+   "L2:block-id": 3,
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/gb-spectral-sequence.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/hecke-algebra-type-scaffold.md": {
+   "L1:lean-word": 1,
+   "L2:typeclass": 6
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-corollary.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-interpretation.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/hecke-baer-star-generic-proof.md": {
+   "L2:block-id": 4,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/hecke-chi-closed-forms-chi-per-irrep-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/homological-shell-condensation-interpretation.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/kz-connection-sl2.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry-proof.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form-interpretation.md": {
+   "L2:block-id": 3,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form-proof.md": {
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-gibbs-free-energy.md": {
+   "L2:fqn": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-operator-construction.md": {
+   "L1:lean-word": 1,
+   "L2:typeclass": 3,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer-interpretation.md": {
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.md": {
+   "L2:decl-name": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/markov-z-reconciliation.md": {
+   "L1:formalised-in": 2,
+   "L2:decl-name": 8,
+   "L2:fqn": 4,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/mass-endomorphism-conjecture.md": {
+   "L2:block-id": 2,
+   "L3:we": 6
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/mass-identity-C.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/mass-identity-exists.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/mass-identity-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/mass-identity-unique.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/mass-identity.md": {
+   "L2:decl-name": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/mass-modulus-em-phase-color-grading.md": {
+   "L2:block-id": 5,
+   "L3:our": 3,
+   "L3:ours": 1,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/multi-link-jones-q1-extension.md": {
+   "L1:lean-word": 2,
+   "L2:block-id": 2,
+   "L2:decl-name": 3,
+   "L2:fqn": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/operator-valued-magnitude-budget.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.md": {
+   "L2:block-id": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/phi-d-syt-count-conjecture.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 3,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/phi-n-global-section.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/q-hecke-seminormal-character-closure.md": {
+   "L2:block-id": 3,
+   "L2:decl-name": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance-proof.md": {
+   "L1:lean-word": 3,
+   "L2:block-id": 2,
+   "L2:decl-name": 19,
+   "L2:fqn": 3,
+   "L2:repo-file": 1,
+   "L2:typeclass": 6
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 3,
+   "L2:typeclass": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qbeta-delta-tau-surrogate-taylor-coefficients.md": {
+   "L1:formally": 1,
+   "L1:lean-word": 2,
+   "L2:block-id": 1,
+   "L2:decl-name": 10,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms-proof.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 4,
+   "L2:block-id": 1,
+   "L2:decl-name": 4,
+   "L2:fqn": 3,
+   "L2:typeclass": 1,
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qbeta-per-block-delta-tau-intro.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance-per-cell.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance-verification.md": {
+   "L1:lean-word": 3,
+   "L2:block-id": 3,
+   "L2:decl-name": 2,
+   "L2:fqn": 1,
+   "L2:typeclass": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/qou-motivic-galois-instance.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:fqn": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/recomputed-low-isotope-mass-table.md": {
+   "L2:block-id": 6,
+   "L2:repo-file": 2,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/rho-k-graded-expansion.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 3,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory-interpretation.md": {
+   "L2:block-id": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 4,
+   "L2:decl-name": 2,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory.md": {
+   "L2:block-id": 5
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/topological-mass-categorical-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/topological-mass-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md": {
+   "L1:lean-word": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges.md": {
+   "L1:lean-word": 2,
+   "L2:block-id": 4,
+   "L2:decl-name": 4,
+   "L2:fqn": 1,
+   "L2:typeclass": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-endomorphism/whipple-rotation-intertwining.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 5,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/a8-partition-function-identity.md": {
+   "L1:lean-word": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.md": {
+   "L1:lean-word": 7,
+   "L1:mathlib": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 14,
+   "L2:fqn": 5,
+   "L2:repo-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/alpha-cluster-activation-gate.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 4,
+   "L2:fqn": 4,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/alpha-cluster-model-g-closure.md": {
+   "L1:lean-word": 4,
+   "L2:block-id": 2,
+   "L2:repo-file": 3,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/alpha-k-derivation-procedure-proof.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/alpha-shift-torus-knot-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/alpha-shift-torus-knot.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/aomega-fourone-dt-count.md": {
+   "L2:block-id": 3,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.md": {
+   "L1:lean-word": 3,
+   "L1:mathlib": 2,
+   "L2:block-id": 3,
+   "L2:fqn": 3,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.md": {
+   "L1:lean-word": 2,
+   "L2:block-id": 4,
+   "L2:fqn": 4,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-proof.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-table2-data.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.md": {
+   "L1:lean-word": 2,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/averaging-resonance-rule.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/bar-involution-parity-decomposition-proof.md": {
+   "L2:decl-name": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/bar-involution-parity-decomposition.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/bar-parity-split.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-alpha-shift-extension-context.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 2,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-alpha-shift-extension.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-closure-conditional-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 3,
+   "L2:fqn": 3,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-closure-conditional.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 4,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-genfun-qdifference-proof.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-genfun-qdifference.md": {
+   "L1:formalised-in": 1,
+   "L2:block-id": 4,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.md": {
+   "L1:formalised-in": 1,
+   "L2:block-id": 3,
+   "L2:fqn": 2,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-period-involution-statistic-proof.md": {
+   "L1:lean-word": 1,
+   "L1:proof-assistant": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/binding-period-statistic-reading.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/birthday-axioms-underdetermine.md": {
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/bk-coordination-multiplicity.md": {
+   "L2:block-id": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/block-multiplicativity-v-free.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/bond-log-ratio-is-a-free-energy.md": {
+   "L2:decl-name": 6,
+   "L2:fqn": 3,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree-context.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/borromean-bloch-group-element.md": {
+   "L1:lean-heading": 1,
+   "L1:mathlib": 2,
+   "L2:block-id": 12,
+   "L2:decl-name": 2,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation-context.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 2,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation-proof.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form-proof.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/borromean-two-photon-factorisation.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/bring-figure-eight-depth-2-witness.md": {
+   "L2:block-id": 5,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.md": {
+   "L1:lean-heading": 2,
+   "L1:lean-word": 1,
+   "L1:mathlib": 4,
+   "L2:decl-name": 4,
+   "L2:fqn": 2,
+   "L2:lean-file": 1,
+   "L2:typeclass": 6
+  },
+  "folio/quantum-observable-universe/mass-theory/bring-residue-resolvent.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/brunnian-binding-channel.md": {
+   "L2:decl-name": 1,
+   "L2:fqn": 6
+  },
+  "folio/quantum-observable-universe/mass-theory/c1-ggm-bar-parity-faces.md": {
+   "L2:block-id": 1,
+   "L2:fqn": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment-proof.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/canonical-braid-interface-composition.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/canonical-closure-torus-chain.md": {
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/canonical-trace-factorises-over-chain.md": {
+   "L1:formalised-in": 1,
+   "L1:lean-word": 2,
+   "L2:decl-name": 8,
+   "L2:fqn": 2,
+   "L2:repo-file": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/categorical-trace-is-the-markov-trace.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/cell-depth-truncation-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 7
+  },
+  "folio/quantum-observable-universe/mass-theory/cell-depth-truncation.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/cellular-depth-filtration-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 17
+  },
+  "folio/quantum-observable-universe/mass-theory/cellular-depth-filtration.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/centre-cocentre-descent-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 14
+  },
+  "folio/quantum-observable-universe/mass-theory/centre-cocentre-descent.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 3,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/chirality-dual-space-derivation-table3-data.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.md": {
+   "L1:lean-word": 3,
+   "L1:mathlib": 2,
+   "L2:block-id": 2,
+   "L2:decl-name": 7,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/complex-mass-constituent-functional.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/confined-knot-binding-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/confined-knot-binding.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/confinement-nf-partial-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 5,
+   "L2:typeclass": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/confinement-nf-structure-forcing-table-data.md": {
+   "L2:decl-name": 6
+  },
+  "folio/quantum-observable-universe/mass-theory/confinement-sdp-proof.md": {
+   "L1:lean-word": 1,
+   "L1:mathlib": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/conj-im-q-physical-role.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 7,
+   "L2:decl-name": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/content-genfun-palindromic-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 4,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/content-genfun-palindromic.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/crystal-bases-path-a-table3-data.md": {
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/crystal-bases-path-a.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/crystal-isospin-degeneracy-proof.md": {
+   "L2:decl-name": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/cs-gram-determinant-ratio.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-proof.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/cyclotomic-boundary-at-keystone.md": {
+   "L1:lean-word": 1,
+   "L1:mathlib": 2,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/cyclotomic-cl3-orbit-sum-general-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis-proof.md": {
+   "L2:block-id": 3,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/cyclotomic-dimension-synthesis-all-depths-proof.md": {
+   "L2:block-id": 5
+  },
+  "folio/quantum-observable-universe/mass-theory/cyclotomic-orbit-sum-all-depths-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/cyclotomic-trilog-imaginary-closed-form-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/degree-one-braid-trivial-volume-proof.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/delta-lambda-dt-index-unification.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 3,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/delta-max-uniform-bound.md": {
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/delta-q-decoration.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/demazure-fiber-markov-trace.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/depth-stratified-frobenius-reciprocity.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes-context.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/derived-mass-formula-light-isotopes-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md": {
+   "L1:formalised-in": 1,
+   "L2:block-id": 4,
+   "L2:fqn": 1,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/deuteron-fusion-frame.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/dilog-saddle-regime.md": {
+   "L1:mathlib": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/dilogarithm-archimedean-limit.md": {
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/dt-spectrum-bar-eigenspace.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 9,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/e-infinity-page-identifications-table-data.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/eigenvalue-product-expansion-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/electron-period-base-proof.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/electron-period-base.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h3-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h4-proof.md": {
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/feynman-classical-limit.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/flavor-dressed-mass-from-substrate-split.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/flavor-dressing-functor.md": {
+   "L3:our": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/flavor-mass-splitting-bound-proof.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/flavor-mass-splitting-bound.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frakD-energy-decomposition.md": {
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frenet-framing-is-not-an-invariant.md": {
+   "L2:decl-name": 5,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal-interpretation.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/frobenius-codim-universal-proof.md": {
+   "L1:lean-word": 4,
+   "L1:mathlib": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 4,
+   "L2:fqn": 2,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frobenius-dual-h3.md": {
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frobenius-gram-matrix-context.md": {
+   "L2:decl-name": 4,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frobenius-gram-matrix-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frobenius-gram-matrix.md": {
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frobenius-s-classification-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 4,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/frobenius-self-duality-forces-lp-dual-extraction-proof.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace-interpretation.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/gb-depth-period-correspondence.md": {
+   "L2:block-id": 5,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/graded-markov-trace-from-gs-filtration-proof.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/gram-matrix-spectral-connection.md": {
+   "L2:decl-name": 4,
+   "L2:fqn": 1,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/ground-state-ordering-derivation.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/gs-archimedean-agreement-residue.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/gs-graded-markov-trace-existence.md": {
+   "L1:lean-word": 2,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/gs-residue-at-root-existence.md": {
+   "L1:lean-word": 2,
+   "L2:block-id": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/gs-spectral-decomposition-existence.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/h3-frobenius-casimir-markov-trace-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 21
+  },
+  "folio/quantum-observable-universe/mass-theory/h3-frobenius-casimir-markov-trace.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md": {
+   "L2:block-id": 6,
+   "L2:decl-name": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-proof.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence-context.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 4,
+   "L2:repo-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/he4-channel-active-set.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 2,
+   "L3:we": 6
+  },
+  "folio/quantum-observable-universe/mass-theory/he4-two-row-dominance.md": {
+   "L2:block-id": 2,
+   "L2:repo-file": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character-proof.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/hecke-monodromy-step-two.md": {
+   "L1:lean-heading": 1,
+   "L2:decl-name": 10,
+   "L2:fqn": 13
+  },
+  "folio/quantum-observable-universe/mass-theory/hecke-radical-is-temperley-lieb.md": {
+   "L1:lean-word": 3,
+   "L2:decl-name": 12,
+   "L2:fqn": 2,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/hoefsmit-V21-cos-symmetrization.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/hook-weight-derivation.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/hopf-link-non-magic.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/hq-bi-filtration.md": {
+   "L2:block-id": 6
+  },
+  "folio/quantum-observable-universe/mass-theory/ideal-tetrahedron-law-of-sines.md": {
+   "L1:mathlib": 2,
+   "L1:proof-assistant": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/interface-knot-markov-z-proof.md": {
+   "L2:block-id": 5,
+   "L2:decl-name": 2,
+   "L2:fqn": 2,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/isospin-mass-split-em-localisation.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 4,
+   "L2:decl-name": 10,
+   "L2:fqn": 7
+  },
+  "folio/quantum-observable-universe/mass-theory/jackson-q-bessel-contiguity.md": {
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/jet-filtration-binding-extensive.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/jet-tower-convergence-context.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/joint-galois-braid-action.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/jonquiere-cyclotomic-tate-rationality-proof.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou-proof.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md": {
+   "L1:lean-word": 3,
+   "L2:block-id": 1,
+   "L2:decl-name": 6,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 2,
+   "L1:mathlib": 1,
+   "L1:proof-assistant": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid-table1-data.md": {
+   "L2:block-id": 8
+  },
+  "folio/quantum-observable-universe/mass-theory/knot-indexed-convolution-grid-table2-data.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/knot-operator-transition.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/level-selection-not-linear.md": {
+   "L1:lean-heading": 1,
+   "L1:mathlib": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 4,
+   "L2:fqn": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/lifted-crossing-locality.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/linear-chain-bond-count.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.md": {
+   "L1:lean-word": 1,
+   "L1:mathlib": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/lr-coefficient-hecke.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/lr-tensor-character-bridge-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/lr-tensor-character-bridge.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/lusztig-vs-hermitian-bar-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/lusztig-vs-hermitian-bar.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/magic-A-binding-formula-context.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/magic-A-binding-formula.md": {
+   "L2:block-id": 5
+  },
+  "folio/quantum-observable-universe/mass-theory/markov-pair-z2.md": {
+   "L2:decl-name": 13,
+   "L2:lean-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 4,
+   "L2:fqn": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 6,
+   "L2:fqn": 4,
+   "L2:lean-file": 2,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/markov-trace-ratio-exact-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-categorical-descent-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-categorical-descent.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-element-nf.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-endomorphism-tower-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-formula-regime-switching.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-table-z1-20.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.md": {
+   "L1:mathlib": 2,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/mass-tower-open-problems-classes.md": {
+   "L1:lean-word": 1,
+   "L2:typeclass": 3,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 1,
+   "L2:typeclass": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert-proof.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 7,
+   "L2:block-id": 2,
+   "L2:decl-name": 7,
+   "L2:repo-file": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/neutron-proton-splitting.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 10
+  },
+  "folio/quantum-observable-universe/mass-theory/operator-selection-lp-interpretation.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/operator-selection-lp-proof.md": {
+   "L2:decl-name": 1,
+   "L2:lean-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/option-e-isospin-test.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/order-of-magnitude-screen-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 19
+  },
+  "folio/quantum-observable-universe/mass-theory/order-of-magnitude-screen.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/p-from-braid-mirror.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 8,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/pair-graph-regime-trichotomy-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 6
+  },
+  "folio/quantum-observable-universe/mass-theory/pair-graph-regime-trichotomy.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/partition-sum-proton-residual-table4-data.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/partition-sum-proton-residual.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/pentagon-uv-commutation.md": {
+   "L2:block-id": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/per-nucleon-shift-additive-linearity-proof.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/phi-b-bar-parity-interpretation.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/phi-b-unitary-bar-odd.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/phi-q-categorical-truncation-interpretation.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/phi-q-categorical-truncation-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/phi-q-categorical-truncation.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/pieri-photon-shift-proof.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/plancherel-term-7-formulation-proof.md": {
+   "L2:block-id": 1,
+   "L2:fqn": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/plancherel-term-7-formulation.md": {
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 7,
+   "L2:repo-file": 8
+  },
+  "folio/quantum-observable-universe/mass-theory/pn-averaging-uniqueness.md": {
+   "L1:lean-heading": 1,
+   "L2:decl-name": 5,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/pn-bond-cannot-be-extremal.md": {
+   "L2:decl-name": 5,
+   "L2:fqn": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/poincare-lefschetz-borromean.md": {
+   "L1:lean-word": 2,
+   "L1:mathlib": 2,
+   "L2:block-id": 4,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth-proof.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/prop-rigid-monoidal-structural-gap-invariance-proof.md": {
+   "L2:block-id": 2,
+   "L2:decl-name": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.md": {
+   "L1:lean-word": 2,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity-extraction-check.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-c-k-leading-bias-correction-identity-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md": {
+   "L2:block-id": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-context.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate-proof.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-over-e0-classical-vanishing.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-clt-jsj-mass-scaling.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 2,
+   "L2:repo-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-integer-mass-formula.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-rogers-pentagon-archimedean-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/q-zero-complex-extension-proof.md": {
+   "L1:lean-word": 1,
+   "L2:lean-file": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/qbeta-c4-from-c3-c8-product-identity.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.md": {
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/qbeta-formalize-first-gates-intro.md": {
+   "L2:block-id": 11
+  },
+  "folio/quantum-observable-universe/mass-theory/qbeta-z-recursion-to-ck-recursion-bridge-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 3,
+   "L2:decl-name": 2,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol.md": {
+   "L1:formalised-in": 1,
+   "L2:block-id": 11,
+   "L2:decl-name": 1,
+   "L2:fqn": 10
+  },
+  "folio/quantum-observable-universe/mass-theory/quantum-bloch-group-framework-connection.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified-partial-argument.md": {
+   "L2:block-id": 3,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/rem-c3-s-imq-decay-projection.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/rem-im-q-vs-p-skew.md": {
+   "L2:block-id": 5,
+   "L2:repo-file": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 5,
+   "L2:lean-file": 2,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 2,
+   "L2:repo-file": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/residue-at-root-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/residue-at-root.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/rho-k-h3a-refinement.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 3,
+   "L2:fqn": 3,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/six-canonical-knot-operators-context.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/six-canonical-knot-operators.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/six-term-mass-formula-complete-table-data.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/six-term-per-derivation-weights-proof.md": {
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 3,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence-proof.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/spectral-sequence-chirality-confinement-per-nucleon-shift-intro.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/spectral-sequence-collapse-proof.md": {
+   "L2:block-id": 3,
+   "L2:fqn": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance-proof.md": {
+   "L2:block-id": 2,
+   "L2:repo-file": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/staircase-ew-residual.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/stokes-dt-bps-bridge.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 2,
+   "L1:proof-assistant": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 2,
+   "L2:typeclass": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/subset-cumulant-recursion.md": {
+   "L2:decl-name": 3,
+   "L2:fqn": 1,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/substrate-cohomology-calibration-story.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse-general-proof.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse-general.md": {
+   "L2:block-id": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/three-calibration-inputs-proof.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/three-halves-structural-factor.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 3,
+   "L2:decl-name": 6,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/topological-mass-formula.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/topological-mass-trefoil.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/torus-chain-pages-on-bring.md": {
+   "L1:proof-assistant": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.md": {
+   "L2:lean-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/torus-knot-top-channel-decoration.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/tower-geometric-lower-bound.md": {
+   "L1:lean-heading": 1,
+   "L2:fqn": 5,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level-proof.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/trace-flavour-no-go.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/trace-ledger.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/transfer-matrix-level-independence.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/two-filtration-bridge-general-proof.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/two-filtration-bridge-general.md": {
+   "L2:block-id": 15
+  },
+  "folio/quantum-observable-universe/mass-theory/two-filtration-bridge.md": {
+   "L2:block-id": 5
+  },
+  "folio/quantum-observable-universe/mass-theory/two-row-projection.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/two-row-stratum.md": {
+   "L2:block-id": 3,
+   "L3:we": 6
+  },
+  "folio/quantum-observable-universe/mass-theory/two-tier-scaling-pq.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/typed-b3-sub-braid-extraction.md": {
+   "L1:lean-word": 8,
+   "L2:block-id": 1,
+   "L2:decl-name": 6,
+   "L2:fqn": 1,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md": {
+   "L2:decl-name": 5,
+   "L2:fqn": 4,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/unified-iterative-correction.md": {
+   "L2:decl-name": 3,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/unit-modulus-eigenvalue-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/universal-binding-architecture.md": {
+   "L1:formalised-in": 1,
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/vc-as-depth-2-instance.md": {
+   "L2:block-id": 5
+  },
+  "folio/quantum-observable-universe/mass-theory/vhat-pair-commutation-trace-proof.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/mass-theory/vol-through-tau.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion-proof.md": {
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.md": {
+   "L1:lean-word": 3,
+   "L2:block-id": 1,
+   "L2:decl-name": 6,
+   "L2:fqn": 2,
+   "L2:repo-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou-proof.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/wigner-np-pairing-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/mass-theory/y-lambda-sign-pattern.md": {
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/measurement-observation/bundle-category.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/measurement-observation/bundle-observation-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/measurement-observation/quarks-borromean-picture.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/measurement-observation/sorting-color-energy-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/ale.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/archimedean-encounter-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/c-substrate-via-levi.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/models-of-qous/categorical-archimedean-bridge-proof.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/models-of-qous/cosmological-limits.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/enveloping-algebras.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/headline-conjectures-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/instanton.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/models-of-qous-intro.md": {
+   "L3:our": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/models-of-qous/non-archimedean-models-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/models-of-qous/p-adic-realisation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/physical-units-gap-linear-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/q-yang-mills-levi.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/skew-poisson-integration.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/spatial-realization-base-generality.md": {
+   "L3:the reader": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/step-algebraic.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/models-of-qous/step-archimedean.md": {
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/step-categorical.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/models-of-qous/step-geometric.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/step-physical.md": {
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/models-of-qous/symmetric-point-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/symmetric-point-resolution-loss.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/models-of-qous/webster-inner-product.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/benzene-bond-equalization.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/benzene-computation-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/benzene-threading-emergence.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/benzene-threading-selection.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/ch4-computation-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co-computation-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co-lp-dual-binding.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co-lp-dual-orthogonal-channels.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co-triple-bond-energy.md": {
+   "L2:repo-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co2-computation-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co2-linear-geometry-and-d0.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co2-lp-dual-shadow-prices.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/co2-vsepr-and-per-bond-energy.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/domain-weight-vsepr-angles.md": {
+   "L2:block-id": 1,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/molecular-construction/electron-shell-2n2-capacity.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/electron-shells-intro.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/molecular-construction/h2-computation-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/h2o-bent-geometry.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/h2o-bond-angle-shift-proof.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/h2o-molecular-braid.md": {
+   "L1:lean-word": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.md": {
+   "L2:block-id": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/ice-pauling-residual-proof.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/molecular-assembly-projector-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/molecular-hecke-algebra-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/molecular-strand-partition.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/outro-molecular-construction.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/shell-capacity-self-square.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md": {
+   "L2:repo-file": 1,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/molecular-construction/shell-filling-electronegativity-ilp.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/shell-filling-rule-aufbau-hund.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/molecular-construction/shell-space-is-self-square.md": {
+   "L1:lean-word": 2,
+   "L2:block-id": 3,
+   "L2:decl-name": 3
+  },
+  "folio/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 2,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/molecular-construction/tetrahedral-hbond-directions.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/notation/notation-collisions.md": {
+   "L1:lean-word": 10,
+   "L2:block-id": 33,
+   "L2:decl-name": 6,
+   "L2:fqn": 12,
+   "L2:lean-file": 1,
+   "L2:repo-file": 22,
+   "L2:typeclass": 6,
+   "L3:our": 1,
+   "L3:the reader": 1,
+   "L3:we": 53,
+   "L3:you": 1
+  },
+  "folio/quantum-observable-universe/notation/notation-register-table10-data.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/notation/notation-register-table3-data.md": {
+   "L1:formalised-in": 1,
+   "L1:lean-word": 1,
+   "L2:block-id": 7,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/notation/notation-register-table4-data.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/notation/notation-register-table7-data.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/notation/notation-register-table9-data.md": {
+   "L1:lean-word": 2,
+   "L2:fqn": 5,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/notation/notation-register.md": {
+   "L1:lean-heading": 1,
+   "L2:lean-file": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/algebraic-primality.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/alpha-wigner-supermultiplet-context.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/anyon-observation-collapse.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/atomic-braid-mass-intro.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/b3-local-minimum.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/beta-decay-energy-scale.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/beta-stability-interpretation.md": {
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/branching-qvalue-factorization.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/confinement-frobenius-reciprocity-interpretation.md": {
+   "L2:lean-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/confinement-lp.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/confinement-misdp.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/confinement-nucleon-unit.md": {
+   "L2:decl-name": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/confinement-operator-selection-proof.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/confinement-topological-proof.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.md": {
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/delta-pre-archimedean.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/demand-stability.md": {
+   "L2:decl-name": 2,
+   "L2:repo-file": 3
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/derived-atoms-intro.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/garside-gram-intro.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/generator-volume-decomposition-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 6
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/geom-universality.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/gram-weighted-qvalue.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/groebner-reduction-methods.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/helium4-derived-nf.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification-proof.md": {
+   "L3:our": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/inductive-gb-reduction.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/kazhdan-lusztig-classical-limit.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/neutron-qvalue-symbolic.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:lean-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/nuclear-groebner-reduction-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/nuclear-reduction-algorithm.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/nucleon-nf-observability.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/nucleon-ordering-factorization.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/o16-derived-nf.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/outro-particle-interactions.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/parity-regime-selection.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/periodic-table-demand-conjecture.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/positron-correction.md": {
+   "L3:we": 5
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge-proof.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 2,
+   "L2:decl-name": 3,
+   "L2:fqn": 2,
+   "L2:repo-file": 2,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/q-holonomy-locality-derivation.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/qbeta-counit-closed-form.md": {
+   "L1:formalised-in": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/qbeta-trace-counit-convergence.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/root-of-unity-mtc-truncation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/step-lp-verification.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/symmetric-crystal-pair-production.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/two-photon-pair-production.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/universal-ilp-algorithm.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/nuclear-interactions/weight-identification-consequences.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/algebraic-gns-embedding-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/atom-mass-full-hecke.md": {
+   "L2:fqn": 1,
+   "L2:repo-file": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/observations/borromean-hopf-energy-crossover.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/brane-tower-q-laplacian-decay-proof.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 1,
+   "L3:we": 7
+  },
+  "folio/quantum-observable-universe/observations/breit-wheeler-observation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/brings-surface-simulator.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/building-block-knots.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.md": {
+   "L2:block-id": 1,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/observations/centered-hecke-variance-positive.md": {
+   "L1:formalised-in": 1,
+   "L2:block-id": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/observations/confinement-curvature-rank.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/observations/cosmological-chirality-flip.md": {
+   "L2:fqn": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/cp-violation-evidence.md": {
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion-context.md": {
+   "L2:block-id": 6,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/observations/double-magic-Ca40-diagram.md": {
+   "L2:block-id": 2,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/double-magic-delta-i-bound.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:repo-file": 2,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/observations/double-slit-analytical.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/double-slit-intro.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/observations/double-slit-massive-pattern.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/double-slit-two-modes.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/observations/einstein-ether-substrate.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/observations/entropic-gravity-data.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/observations/eos-borromean-cfl.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/epistemic-status-of-calibrations.md": {
+   "L2:block-id": 4,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/observations/fermion-boson-chart-localization.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/feynman-qou-comparison.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/observations/fine-structure-data.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/fine-structure-observation-table1-data.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/observations/flavor-split-substrate-proof.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/flavor-split-substrate.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/observations/g-q-closed-form.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/golden-ratio-degeneration.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/observations/hadron-half-life-verification.md": {
+   "L2:lean-file": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/observations/higgs-t28.md": {
+   "L2:decl-name": 1,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/observations/hydrogen-knot-structure.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/observations/k12-barrier-bypass.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/observations/knot-volumes-verification.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/lattice-layout.md": {
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/local-substrate-q-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/observations/m-tau-knot-prediction.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/magic-numbers-from-q-computation.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/magic-numbers-from-q.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/observations/magnetic-friction.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/mass-comparison-table.md": {
+   "L2:block-id": 1,
+   "L2:repo-file": 4,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/observations/mass-formula-validation.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/mu-p-residual-two-readings.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/n-v-bring-action.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/n-v-leading-order-derivation.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/observations/n-v-tower-depth-ninety.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/neutron-prediction-comparison.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/neutron-proton-mass-splitting-proof.md": {
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/observations/neutron-proton-mass-splitting.md": {
+   "L2:decl-name": 5,
+   "L2:fqn": 3,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/observations/non-commutative-probability-dictionary.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/ns-blowup-physical-evidence.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/observations-intro.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/observations/pair-skein-mass-formula-proof.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/observations/physics-names-knot-operations.md": {
+   "L2:block-id": 3,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/observations/proton-radius-puzzle.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/q-deformed-nuclear-models-comparison.md": {
+   "L3:our": 5,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/q-double-slit.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:repo-file": 1,
+   "L3:the reader": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/observations/quantum-brings-surface.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/shell-threading-conjecture.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/observations/single-magic-O18-diagram.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/observations/skein-mass-relation-proof.md": {
+   "L2:block-id": 1,
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/observations/strangelet-crossing-energy.md": {
+   "L2:decl-name": 1,
+   "L2:lean-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/strangelet-double-beta-minimal-path.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/observations/strangelet-witten-stability.md": {
+   "L3:ours": 1
+  },
+  "folio/quantum-observable-universe/observations/substrate-consistency-window-table1-data.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/observations/substrate-consistency-window-table2-data.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/observations/substrate-consistency-window.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/terminal-resolution-cz.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/terminal-resolution-proof.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/observations/three-calibration-discipline-discussion.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:fqn": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/observations/three-calibration-discipline-remark.md": {
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/observations/time-reversal-energy-barrier.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/trace-ratio-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/tritium-qvalue-audit.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/vacuum-polarization-virtual-pairs.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/observations/virtual-subword.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/observations/w-boson-mass-discrepancy.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/organic-chemistry/carbon-chains-benzene-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/organic-chemistry/covalent-bonding-intro.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/organic-chemistry/molecular-chains-rings-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/organic-chemistry/organic-chain-taxonomy.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/organic-chemistry/organic-taxonomy-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio-interpretation.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.md": {
+   "L2:block-id": 5
+  },
+  "folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-exploration-options.md": {
+   "L2:block-id": 8
+  },
+  "folio/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md": {
+   "L1:lean-word": 3,
+   "L2:block-id": 2,
+   "L2:lean-file": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain-proof.md": {
+   "L2:block-id": 5,
+   "L2:repo-file": 2,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain-significance.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/antineutrino-knot.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/archimedean-hartree-crystal-mass-tower-deeper-intro.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bar-apply-transfer-proof.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bar-self-dual-confinement-band-proof.md": {
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bar-t-duality-substrate-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/baryon-product-from-alt-proof.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bloch-group-quotient-construction-table-data.md": {
+   "L1:mathlib": 1,
+   "L2:decl-name": 6,
+   "L2:fqn": 2,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bloch-group-quotient-construction.md": {
+   "L1:lean-word": 3,
+   "L1:mathlib": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 3,
+   "L2:fqn": 1,
+   "L2:typeclass": 10
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler-table2-data.md": {
+   "L2:decl-name": 6
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler-table3-data.md": {
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler.md": {
+   "L1:lean-word": 3,
+   "L1:mathlib": 1,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bohr-radius-round8-findings.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production-derivation.md": {
+   "L2:repo-file": 1,
+   "L3:we": 10
+  },
+  "folio/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:decl-name": 13,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/categorical-neutron-exists-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-formalization-status.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 3,
+   "L1:mathlib": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 3,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-table1-data.md": {
+   "L2:decl-name": 8
+  },
+  "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-table2-data.md": {
+   "L1:mathlib": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-table3-data.md": {
+   "L1:mathlib": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/clausen-function-mathlib-filler-table1-data.md": {
+   "L2:decl-name": 6
+  },
+  "folio/quantum-observable-universe/predicted-spectra/clausen-function-mathlib-filler-table2-data.md": {
+   "L1:mathlib": 1,
+   "L2:fqn": 2,
+   "L2:typeclass": 5
+  },
+  "folio/quantum-observable-universe/predicted-spectra/clausen-function-mathlib-filler.md": {
+   "L1:lean-word": 2,
+   "L1:mathlib": 5,
+   "L2:decl-name": 2,
+   "L2:fqn": 2,
+   "L2:lean-file": 3,
+   "L2:typeclass": 7
+  },
+  "folio/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.md": {
+   "L2:block-id": 2,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/predicted-spectra/electron-knot.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/electron-shells-hopf.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/elliptic-stability-locus.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md": {
+   "L1:lean-word": 2,
+   "L2:block-id": 3,
+   "L2:fqn": 7,
+   "L2:repo-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 1,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point-derivation-status.md": {
+   "L1:lean-word": 3,
+   "L2:block-id": 4,
+   "L2:decl-name": 2,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/em-coupling-fixed-point.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/em-coupling-projection-discussion.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/predicted-spectra/em-coupling-projection-table1-data.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/fundamental-particles-intro.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/gauge-conformal-invariance.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/golden-quartet-galois-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/golden-skew-dual-node-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/gram-kappa-spectral-interpretation.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/groebner-nf-computation.md": {
+   "L3:we": 10
+  },
+  "folio/quantum-observable-universe/predicted-spectra/hadron-half-life-fermi.md": {
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/hydrogen-orbitals.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md": {
+   "L1:lean-word": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/implications-algebraic-dependence.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/implications-algebraic-independence.md": {
+   "L1:lean-word": 1,
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/intro-archimedean-hartree-crystal.md": {
+   "L1:mathlib": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/knot-formula-table.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/knot-operator-selection-proof.md": {
+   "L2:lean-file": 1,
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/kummer-shell-closure.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/lepton-number-categorical-properties.md": {
+   "L2:decl-name": 2,
+   "L2:fqn": 1,
+   "L2:lean-file": 4,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/meson-to-proton-via-borromean.md": {
+   "L2:repo-file": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/metallic-character-knot-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/neutrino-knot.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/nf-computation-strategy.md": {
+   "L3:we": 13
+  },
+  "folio/quantum-observable-universe/predicted-spectra/nuclear-spin-parity-proof.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/outro-predicted-spectra.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/parity-violation-skein-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring-mechanism.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:fqn": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/positron-knot.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/q-value-transition-properties.md": {
+   "L3:our": 1,
+   "L3:we": 8
+  },
+  "folio/quantum-observable-universe/predicted-spectra/q-value-transition.md": {
+   "L2:block-id": 3,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/quantum-dilogarithm-volume-consequences.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.md": {
+   "L1:lean-word": 6,
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/predicted-spectra/schwinger-measure-unit.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/shell-closure-normal-form-proof.md": {
+   "L1:lean-word": 1,
+   "L2:lean-file": 1,
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/predicted-spectra/shell-construction-rules.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/shell-eigenvalue-properties.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues-proof.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.md": {
+   "L2:block-id": 1,
+   "L2:fqn": 1,
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/skein-coulomb-enhancement-interpretation.md": {
+   "L3:we": 7
+  },
+  "folio/quantum-observable-universe/predicted-spectra/skein-coulomb-enhancement.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/predicted-spectra/skein-finiteness-bound-interpretation.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/skein-shell-correction.md": {
+   "L3:we": 8
+  },
+  "folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse-melt.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md": {
+   "L2:fqn": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue-proof.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/stable-nucleus.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/tau-branching-ratio-witness.md": {
+   "L2:repo-file": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/three-knot-jet-order-independence.md": {
+   "L1:lean-word": 3,
+   "L2:decl-name": 5
+  },
+  "folio/quantum-observable-universe/predicted-spectra/three-substantive-mathlib-fillers.md": {
+   "L1:lean-word": 2,
+   "L1:mathlib": 2,
+   "L2:block-id": 1,
+   "L2:decl-name": 8,
+   "L2:lean-file": 1,
+   "L2:typeclass": 17
+  },
+  "folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity-context.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding-proof.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/torus-knot-shell-binding.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics-table-data.md": {
+   "L2:fqn": 9,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail.md": {
+   "L1:lean-word": 2,
+   "L1:mathlib": 2,
+   "L2:decl-name": 10,
+   "L2:fqn": 5,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-table1-data.md": {
+   "L1:mathlib": 2,
+   "L2:decl-name": 4,
+   "L2:fqn": 4
+  },
+  "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-table2-data.md": {
+   "L1:lean-word": 1,
+   "L1:mathlib": 1,
+   "L2:decl-name": 4,
+   "L2:fqn": 2
+  },
+  "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 4,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/predicted-spectra/weak-vertex-left-projector-proof.md": {
+   "L1:lean-word": 2,
+   "L2:decl-name": 6,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition-details.md": {
+   "L2:block-id": 7,
+   "L2:repo-file": 1,
+   "L3:our": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/geometric-rh-exposition.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.md": {
+   "L2:block-id": 8
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-chebyshev-function.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-gl-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-classical-compatibility.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-gl-physical-interpretation.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-hecke-correspondences-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-local-system.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-local-systems-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-oper-hecke.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-oper.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-opers-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/q-von-mangoldt-function.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/spectral-half-line.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/spectral-trace-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md": {
+   "L1:lean-word": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/q-geometric-langlands/tannaka-krein-su2.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/adjoint-trace.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/algebraic-substrate-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/archimedean-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/braiding-conventions-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction-novelty.md": {
+   "L4:forward-link-cross-chapter": 2,
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering-proof.md": {
+   "L4:forward-link-later-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-action-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-exists-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-unique-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists-proof.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-exists-proof.md": {
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-instanton-unique-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-unique-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists-proof.md": {
+   "L4:forward-link-later-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique-proof.md": {
+   "L4:forward-link-later-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-lichnerowicz-proof.md": {
+   "L4:forward-link-later-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-q-ext-deriv-exists.md": {
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-brings.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/connection-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/differential-structures-fiber-adjoint-intro.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/differential-structures-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/dilog-pentagon-is-associator.md": {
+   "L1:lean-heading": 1,
+   "L2:block-id": 2,
+   "L2:fqn": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-elaboration-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/emergence-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution-proof.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/frobenius-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/geometric-interpretations-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/germ-commutator-q-curvature.md": {
+   "L4:forward-link-cross-chapter": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/instanton-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/intro-heisenberg-commutator.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/intro-q-resolvent-wick.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/intro-q-special-functions.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/notation-special-cases.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/particles-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-basis-construction.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/photon-wavefront-example.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/physical-elaborations-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/q-deformed-operators-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists.md": {
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-pentagon-associator.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/q-exponential-exists-proof.md": {
+   "L4:forward-link-cross-chapter": 1,
+   "L4:forward-link-same-section": 2
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/q-harmonic-analysis-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/q-heat-equation-exists-proof.md": {
+   "L4:forward-link-cross-chapter": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/q-special-functions-dilog-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/qou-definition-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists-proof.md": {
+   "L3:we": 1,
+   "L4:forward-link-later-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.md": {
+   "L1:formally": 1,
+   "L2:decl-name": 2
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-brings.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity-proof.md": {
+   "L3:we": 1,
+   "L4:forward-link-later-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/su2-emergence.md": {
+   "L1:lean-heading": 1,
+   "L2:fqn": 5,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-brings.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-intro.md": {
+   "L3:we": 3
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/substrate-parameter-unique.md": {
+   "L3:our": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/substrate-preamble.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate-proof.md": {
+   "L4:forward-link-later-section": 2
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/u1-equivariant-reduction-proof.md": {
+   "L4:forward-link-cross-chapter": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/variational-equations-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/vector-calculus-bridge.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/vectors-hadrons-intro.md": {
+   "L3:we": 4
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/weight-decomposition-intro.md": {
+   "L3:us": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-observable-universes/weight-decomposition.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/axiom-independence.md": {
+   "L3:us": 1,
+   "L3:we": 1,
+   "L4:forward-link-cross-chapter": 1,
+   "L4:premature-q-symbol": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/categorical-connection-exists.md": {
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/categorical-connection-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/categorical-connection-unique-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/categorical-hodge-star-exists.md": {
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/chern-character.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L4:premature-q-symbol": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists-proof.md": {
+   "L4:forward-link-cross-chapter": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md": {
+   "L4:forward-link-later-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-su2.md": {
+   "L3:we": 2,
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/frobenius-pairing-unique-proof.md": {
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/frobenius-pairing.md": {
+   "L4:premature-su_q": 2
+  },
+  "folio/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/fundamental-object-explication.md": {
+   "L3:we": 1,
+   "L4:forward-link-same-section": 2
+  },
+  "folio/quantum-observable-universe/quantum-universes/fundamental-object.md": {
+   "L4:forward-link-same-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/grothendieck-group-of-a-qou.md": {
+   "L4:premature-q-integer": 1,
+   "L4:premature-q-symbol": 2
+  },
+  "folio/quantum-observable-universe/quantum-universes/hochschild-homology.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 2,
+   "L2:typeclass": 1,
+   "L4:premature-hecke": 1,
+   "L4:premature-q-symbol": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/poisson-hkr-connection.md": {
+   "L4:forward-link-cross-chapter": 2,
+   "L4:premature-q-symbol": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/poisson-object.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/positive-dagger-su2.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/qu-consequences-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/qu-structures-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/quantum-universe-axiom-motivation.md": {
+   "L3:we": 2,
+   "L4:forward-link-cross-chapter": 1,
+   "L4:premature-q-symbol": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/quantum-universe-exists-proof.md": {
+   "L4:forward-link-later-section": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/quantum-universe-su2.md": {
+   "L3:we": 1,
+   "L4:premature-su_q": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/quantum-universe.md": {
+   "L1:discharges-axiom": 1,
+   "L2:block-id": 1,
+   "L2:fqn": 1,
+   "L2:typeclass": 1,
+   "L4:forward-link-cross-chapter": 2,
+   "L4:premature-cyclotomic": 2,
+   "L4:premature-hecke": 1,
+   "L4:premature-q-integer": 2,
+   "L4:premature-q-symbol": 3
+  },
+  "folio/quantum-observable-universe/quantum-universes/quantum-universes-intro.md": {
+   "L3:we": 1,
+   "L4:premature-q-symbol": 1,
+   "L4:premature-su_q": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/rigid-monoidal-category.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/rigid-monoidal-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/quantum-universes/scheme-notation.md": {
+   "L3:we": 1,
+   "L4:forward-link-cross-chapter": 1,
+   "L4:forward-link-later-section": 1,
+   "L4:premature-q-symbol": 1,
+   "L4:premature-su_q": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/su2-characters-and-quantum-dimension.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 3,
+   "L4:premature-q-integer": 3,
+   "L4:premature-su_q": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/tannaka-krein-overview.md": {
+   "L4:premature-su_q": 1
+  },
+  "folio/quantum-observable-universe/quantum-universes/tau-notation.md": {
+   "L3:we": 1,
+   "L4:forward-link-cross-chapter": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/F3-eps6-leading-eq-neg-2b-cubed.md": {
+   "L1:lean-word": 4,
+   "L2:block-id": 3,
+   "L2:lean-file": 1,
+   "L2:repo-file": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/adelic-reeb-restricted-product-proof.md": {
+   "L1:formally": 1,
+   "L1:lean-word": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 1,
+   "L2:lean-file": 1,
+   "L2:typeclass": 3
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/bar-involution-table3-data.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/bar-involution-table5-data.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 9
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/bar-involution-table8-data.md": {
+   "L1:lean-word": 2,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/braid-group-n-strand-table1-data.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 1,
+   "L2:fqn": 1,
+   "L2:typeclass": 5
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/braid-group-n-strand-table2-data.md": {
+   "L2:block-id": 2,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/braid-group-n-strand-table3-data.md": {
+   "L1:lean-word": 1,
+   "L2:decl-name": 2,
+   "L2:fqn": 4,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition-interpretation.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition-proof.md": {
+   "L1:lean-word": 24,
+   "L2:block-id": 2,
+   "L2:decl-name": 16,
+   "L2:fqn": 1,
+   "L2:lean-file": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/ck-extraction-from-algebraic-rules-table1-data.md": {
+   "L1:lean-word": 1,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/ck-extraction-from-algebraic-rules-table2-data.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-implications-intro.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.md": {
+   "L3:we": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/intro-markov-axioms-braid-link.md": {
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged-proof.md": {
+   "L2:block-id": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md": {
+   "L2:block-id": 3
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md": {
+   "L1:lean-word": 3,
+   "L1:proof-assistant": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 2,
+   "L2:block-id": 1,
+   "L2:decl-name": 1,
+   "L2:lean-file": 2,
+   "L2:typeclass": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification-details.md": {
+   "L1:lean-heading": 1,
+   "L1:lean-word": 1,
+   "L2:block-id": 2,
+   "L2:lean-file": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution-proof.md": {
+   "L1:lean-word": 23,
+   "L1:mathlib": 2,
+   "L2:decl-name": 37,
+   "L2:fqn": 2,
+   "L2:typeclass": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution-table-data.md": {
+   "L2:decl-name": 8
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.md": {
+   "L1:lean-word": 5,
+   "L2:block-id": 2,
+   "L2:decl-name": 1,
+   "L2:fqn": 3,
+   "L2:lean-file": 2,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/q-beta-gamma-gamma-canonical-derivation.md": {
+   "L1:lean-word": 1,
+   "L2:block-id": 4,
+   "L2:repo-file": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/qou-obstruction-millennium-specializations.md": {
+   "L1:proof-assistant": 1,
+   "L2:lean-file": 1,
+   "L2:typeclass": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/reverse-limit-q-to-infinity.md": {
+   "L2:block-id": 4
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/surreal-notation-cheat-sheet-table-data.md": {
+   "L2:block-id": 2
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/surreal-notation-cheat-sheet.md": {
+   "L2:block-id": 1,
+   "L3:we": 1
+  },
+  "folio/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.md": {
+   "L2:block-id": 2,
+   "L3:we": 1
+  }
+ }
+}

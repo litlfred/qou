@@ -60,7 +60,7 @@ $\sigma_i^2$ to a lower-degree word. This produces a tree of
 reductions whose leaves are square-free generator products; each
 leaf evaluates under $\mathrm{tr}_M$ via Wenzl's product
 factorisation
-([`prop:trace-locality-meets-gs-non-locality`](#prop:trace-locality-meets-gs-non-locality)).
+([Markov locality of single Hecke crossings](#prop:trace-locality-meets-gs-non-locality)).
 The factorisation pairs each $\tilde\sigma_i$ with another
 $\tilde\sigma_j$ of the same index (Kronecker $\delta_{i=j}$) — any
 unmatched generator gives zero by Markov property as above.

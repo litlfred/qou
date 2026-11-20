@@ -25,7 +25,7 @@ every downstream step.*
 
 ### Correctness conditions
 
-*Settled by [`def:brings-surface`](#def:brings-surface): the
+*Settled by [Bring's surface](#def:brings-surface): the
 Bring surface is uniquely characterised (up to isomorphism) by
 its Euler characteristic and the six-fold $S_5$-symmetric
 embedding. No upstream calibration; the values are categorical

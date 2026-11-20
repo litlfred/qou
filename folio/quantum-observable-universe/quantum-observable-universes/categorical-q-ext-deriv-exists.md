@@ -12,4 +12,4 @@ $$
 exists as a morphism in $\mathbf{C}$ for every $k$.
 
 Uniqueness is established separately in
-[uniqueness of categorical $q$-exterior derivative](#prop:categorical-q-ext-deriv-unique).
+the uniqueness of the categorical $q$-exterior derivative (next proposition).

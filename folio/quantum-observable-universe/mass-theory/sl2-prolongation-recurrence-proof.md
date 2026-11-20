@@ -1,4 +1,4 @@
-By [`prop:prolonged-periods-fixed-depth`](#prop:prolonged-periods-fixed-depth)
+By [A fixed-depth recurrence for the prolonged periods exists (Cayley–Hamilton)](#prop:prolonged-periods-fixed-depth)
 the prolongation acts through a $2\times 2$ operator $B$ on the $W$-Hodge plane,
 and Cayley--Hamilton gives $B^2 = \mathrm{tr}(B)\,B - \det(B)\,\mathbf 1$.
 

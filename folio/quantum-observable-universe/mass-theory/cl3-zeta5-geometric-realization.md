@@ -2,7 +2,7 @@
 $\mathrm{Cl}_3(2\pi/5)$ — candidates list).**
 
 The depth-3 canonical witness
-[`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
+[Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)](#conj:bring-trilog-depth-3-witness)
 established that
 
 $$
@@ -102,7 +102,7 @@ Candidate 3 is most general.
 
 Identifying *any one* of the three candidates explicitly would:
 
-1. **Close the depth-3 row of the depth correspondence.** The correspondence ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
+1. **Close the depth-3 row of the depth correspondence.** The correspondence ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence))
    currently has the figure-8 row at depth 2 verified and the trilog
    canonical witness at depth 3, but no geometric image for the
    trilog value. Identification would make the depth-3 prediction
@@ -111,7 +111,7 @@ Identifying *any one* of the three candidates explicitly would:
    on $\mathrm{Cl}_3(2\pi/5)$ via $\zeta_5 \mapsto \zeta_5^a$ should
    match the action on the geometric side (4-mfd cusps, knot CS,
    or marked-point permutations) — a sharp test of
-   [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action).
+   [Joint motivic-Galois $\times$ braid-group action on the bi-filtration $\mathcal{H}_q^{(n, K)}$](#conj:joint-galois-braid-action).
 3. **Provide the Bring-natural depth-3 witness target.** The witness
    formalism
    (the canonical formalism)

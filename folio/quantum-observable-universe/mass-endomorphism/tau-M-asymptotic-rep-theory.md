@@ -1,6 +1,6 @@
 **$\mathrm{tr}_M$ ladder — representation-theoretic structure.**
 
-**Proposition (conditional on the open recursion kernel of [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference); "$\mathrm{tr}_M$ ladder").**
+**Proposition (conditional on the open recursion kernel of [$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation](#prop:q-beta-c-k-recursion-from-habiro-q-difference); "$\mathrm{tr}_M$ ladder").**
 
 For a typed braid $\beta$ and a Hecke irreducible representation $V_\lambda$ of $H_n(q)$, the Markov-traced character at single wrap admits a canonical factorisation in the substrate ladder variable $u_\lambda = b_\lambda\,\hbar_q^2$ (where $\hbar_q = (q-1)/q$):
 
@@ -14,16 +14,16 @@ $$
 }
 $$
 
-This matches the canonical $\mathfrak{Q}_\beta$ precision ladder ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)), where:
+This matches the canonical $\mathfrak{Q}_\beta$ precision ladder ([$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)), where:
 
 - $\rho_\lambda$ is the Hoefsmit seminormal representation of $H_n(q)$ on $V_\lambda$.
-- $b_\lambda$ is the off-diagonal coupling of $\rho_\lambda(\sigma_i)$ in the standard-tableau basis. For $V_{(2,1)}$ of $H_3$, the scalar $b = \sqrt{q^4+q^2+1}/(q^2+1) = \sqrt{d_1 d_2 + 1}$ from [`prop:hoefsmit-V21-cos-symmetrization`](#prop:hoefsmit-V21-cos-symmetrization).
+- $b_\lambda$ is the off-diagonal coupling of $\rho_\lambda(\sigma_i)$ in the standard-tableau basis. For $V_{(2,1)}$ of $H_3$, the scalar $b = \sqrt{q^4+q^2+1}/(q^2+1) = \sqrt{d_1 d_2 + 1}$ from [Hoefsmit seminormal matrix for $V_{(2,1)}$ + Markov-symmetrized cos character](#prop:hoefsmit-V21-cos-symmetrization).
 - $\alpha_\lambda$ is the single-wrap eigenphase on $V_\lambda$. The $\cos(\alpha_\lambda - b_\lambda\hbar_q^2/2)$ envelope carries the $N=1$ coupling $b_\lambda$.
 - $c_k^{(\lambda)}$ are the rung coefficients of the ladder, representing the higher Ohtsuki invariants of the correction factor.
 
 The factorisation defines the correction factor $F_\lambda := \mathrm{tr}_M^{V_\lambda}(\beta) / \mathrm{Tr}\,\rho_\lambda(\beta)$, which is valid wherever $\mathrm{Tr}\,\rho_\lambda(\beta) \neq 0$. The right-hand side depends on $\hbar_q$ only through $\hbar_q^2$, so the factorisation is even in $\hbar_q$ by construction. This evenness is a property of the ansatz, not a consequence of the bar involution: under $q \mapsto q^{-1}$ one has $\hbar_q \mapsto 1 - q = -q\,\hbar_q$, not $-\hbar_q$.
 
-The rung coefficients are conjectured to be determined by the proved second-order $q$-difference (Hahn–Exton $q$-Bessel) recursion of [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference). The entire product forms the Taylor expansion of the exact finite Habiro sum, which the production system evaluates without truncation ([`prop:habiro-precision-ladder-equivalence`](#prop:habiro-precision-ladder-equivalence)).
+The rung coefficients are conjectured to be determined by the proved second-order $q$-difference (Hahn–Exton $q$-Bessel) recursion of [$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation](#prop:q-beta-c-k-recursion-from-habiro-q-difference). The entire product forms the Taylor expansion of the exact finite Habiro sum, which the production system evaluates without truncation ([Precision-ladder coefficients are Habiro integer evaluations](#prop:habiro-precision-ladder-equivalence)).
 
 | order | datum | status |
 |------:|:---:|:---|

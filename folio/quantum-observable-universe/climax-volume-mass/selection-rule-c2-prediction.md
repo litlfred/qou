@@ -1,4 +1,4 @@
-*Let $q \in \mathbb{R}_{>0}$. The per-component selection rule ([`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3)) applied at $c=2$ yields the closed form:*
+*Let $q \in \mathbb{R}_{>0}$. The per-component selection rule ([Per-component selection rule $\frac{1}{c+1}\sum_{\lambda\vdash c+1} \dim_q V_\lambda$ at c=1, c=3](#prop:selection-rule-anchors-c1-c3)) applied at $c=2$ yields the closed form:*
 
 $$
   \mathrm{lw}(2)(q) \;:=\; \frac{1}{3} \sum_{\lambda \vdash 3} \dim_q V_\lambda
@@ -38,4 +38,4 @@ This holds over real $q > 0$ (substrate-anchor regime). The closed form $(q+1)^2
 
 ## Cross-references
 
-- [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) — the two known anchors that establish the rule's existence.
+- [Per-component selection rule $\frac{1}{c+1}\sum_{\lambda\vdash c+1} \dim_q V_\lambda$ at c=1, c=3](#prop:selection-rule-anchors-c1-c3) — the two known anchors that establish the rule's existence.

@@ -98,7 +98,7 @@ $$
 | $+ \alpha/(4\pi)$ | 137.036007 | $+5.7 \times 10^{-8}$ |
 | CODATA 2022 | $137.035999177(21)$ | — |
 
-The first correction is derived ([`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring)). It is the photon infrared zero-mode on the 2-surface $M_{\text{Bring}}$. The harmonic $1$-form sector $b_1(M_g) = 2g$ normalises by the Gauss–Bonnet area $4\pi(g-1)$:
+The first correction is derived ([Photon IR zero-mode on Bring's surface](#prop:photon-ir-zero-mode-bring)). It is the photon infrared zero-mode on the 2-surface $M_{\text{Bring}}$. The harmonic $1$-form sector $b_1(M_g) = 2g$ normalises by the Gauss–Bonnet area $4\pi(g-1)$:
 
 $$
   \frac{2}{3\pi}

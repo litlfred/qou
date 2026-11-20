@@ -16,6 +16,6 @@ $$
 
 The absolute value operation isolates the bar-even ($\cosh$, real-$q$) component of the Markov trace. This provides the mass or binding channel. The discarded bar-odd ($\sinh$, root-of-unity-$q$) component provides the imaginary part of the complex fibre observable $\mathfrak{V}$, where $\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}} + i\,\mathfrak{Q}_\beta$. This imaginary part equals the $\beta$-decay $Q$-value, $\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$.
 
-Mass and $\mathfrak{Q}_\beta$ construct the two parities of a single object ([`conj:binding-qbeta-complex-volume`](binding-qbeta-complex-volume.md)). We take the modulus only when the mass magnitude alone is required. Any computation tying binding to decay must retain the bar-odd shadow. This requires the root-of-unity evaluation, rather than collapsing to the modulus.
+Mass and $\mathfrak{Q}_\beta$ construct the two parities of a single object ([Complex-volume unification](binding-qbeta-complex-volume.md)). We take the modulus only when the mass magnitude alone is required. Any computation tying binding to decay must retain the bar-odd shadow. This requires the root-of-unity evaluation, rather than collapsing to the modulus.
 
 The parameter $q_0$ is not complex. At the observable level, $\mathrm{Im}(q_0) = 0$. The imaginary part forms the fibre-level shadow, which constitutes a separate real observable.

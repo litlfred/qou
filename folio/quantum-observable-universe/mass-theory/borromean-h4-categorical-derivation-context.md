@@ -25,7 +25,7 @@ framework after the initial derivation:
 - **Step 2 (the Markov normalisation `y_{(2,1)}(q=1) = 1/4`)**
   is the $q = 1$ evaluation of the exact closed-form Wenzl weight
   $y_{(2,1)}(q) = 1/[2]_q^2$ established in
-  [`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md).
+  [Closed-form Jones/Temperley–Lieb weights on $H_3(q)$ (Borromean Jones polynomial)](h3-markov-wenzl-weights.md).
   The full $\mathrm{H}_3$ weight vector is
   $\bigl([4]_q/[2]_q^3,\ 1/[2]_q^2,\ 0\bigr)$, evaluating at $q = 1$
   to the non-uniform $(\tfrac12, \tfrac14, 0)$ — the sign channel

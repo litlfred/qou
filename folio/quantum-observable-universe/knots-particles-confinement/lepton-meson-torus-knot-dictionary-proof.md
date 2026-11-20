@@ -7,7 +7,7 @@ The meson assignment follows from the quark flavor–torus-knot identification. 
 - $K$: $\bar{u}s = 3 + 5 = 8$ crossings
 - $\phi$: $s\bar{s} = 5 + 5 = 10$ crossings; $\eta$ sits at the same rung but is an $\mathrm{SU}(3)_{\mathrm{f}}$-octet mixture of $u\bar{u}$, $d\bar{d}$ and $s\bar{s}$ rather than pure $s\bar{s}$
 
-The normal form in $H_3(q)$ is determined by the Hecke reduction of the meson braid word $\mathfrak{M}_+$ ([`def:categorical-meson`](categorical-meson.md)). $\square$
+The normal form in $H_3(q)$ is determined by the Hecke reduction of the meson braid word $\mathfrak{M}_+$ ([Meson (categorical)](categorical-meson.md)). $\square$
 
 ## The structural duality
 

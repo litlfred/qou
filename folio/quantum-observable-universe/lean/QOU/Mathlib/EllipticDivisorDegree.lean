@@ -210,12 +210,15 @@ theorem divisor_translate {f : ℂ → ℂ} {c : ℂ}
       MeromorphicOn.divisor_apply hf (Set.mem_univ _),
       meromorphicOrderAt_translate hper z]
 
-/-! ### The degree-zero theorem (deep analytic core — stated open) -/
+/-! ### The degree-zero theorem (deep analytic core — stated open, cited `sorry`) -/
 
-/-- **The argument principle for a fundamental parallelogram.**
-Carried as a class since Mathlib lacks contour integrals over parallelograms. -/
-class HasArgumentPrinciple (f : ℂ → ℂ) (ω₁ ω₂ : ℂ) (S : Finset ℂ) : Prop where
-  argument_principle_parallelogram : ∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z = 0
+/-! The class `HasArgumentPrinciple` that used to sit here was removed on
+2026-11-20 (owner ruling on #8526, bean `qou-z4jb`). Its only field was the
+conclusion of `elliptic_divisor_degree_zero`, with no hypotheses at all (`f`
+need not be elliptic, `S` any finite set), so it was false in general, could
+never be honestly instanced, and the theorem below merely read it back out —
+the self-assuming projection AGENTS.md §3b-cond item 5 forbids. The theorem
+is now stated honestly with a cited `sorry`. -/
 
 /-- **Liouville's third theorem: the degree of an elliptic divisor is zero.**
 For a nonconstant elliptic function `f` with `ℝ`-independent periods, the sum of
@@ -236,14 +239,15 @@ theorem elliptic_divisor_degree_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
     (_hindep : LinearIndependent ℝ ![ω₁, ω₂])
     (_hnc : ¬ ∃ c, ∀ z, f z = c)
     (S : Finset ℂ)
-    [hArg : HasArgumentPrinciple f ω₁ ω₂ S]
     (_hS : (S : Set ℂ) =
       {z | z ∈ fundamentalParallelogram ω₁ ω₂ ∧
         (MeromorphicOn.divisor f Set.univ) z ≠ 0}) :
     ∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z = 0 := by
-  -- Ref: [leitner2026] Liouville's third theorem; argument principle absent from
-  --   Mathlib v4.24.0. See docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md.
-  -- Proved via the class HasArgumentPrinciple (approach B).
-  exact hArg.argument_principle_parallelogram
+  -- Ref: [leitner2026] Liouville's third theorem (stated, not yet proved). The
+  --   argument principle over a parallelogram is absent from Mathlib v4.24.0.
+  --   Planned route (bean qou-z4jb): pull back along w = exp(2πi z/ω₁) to an
+  --   annulus and use `argumentPrinciple_annulus_finset` (QOU.QBeta.C1ConnectionPoles)
+  --   with ℤ multiplicities. See docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md.
+  sorry
 
 end QOU.Mathlib.EllipticDivisorDegree
