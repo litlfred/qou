@@ -197,8 +197,8 @@ structure StrongDualityPair (sdp : SDPPrimal n R ι) where
 --      `QOU.Mathlib.SDPStrongDuality.not_forall_hasStrongDuality` proves a
 --      1×1 counterexample (cost −1, no constraints: strictly feasible,
 --      unbounded below). For `R = ℝ` the class is proved under the extra
---      hypotheses symmetric data, linearly independent constraints and dual
---      Slater: `QOU.Mathlib.SDPStrongDuality.hasStrongDuality_of_slater`.
+--      hypotheses symmetric data and dual Slater:
+--      `QOU.Mathlib.SDPStrongDuality.hasStrongDuality_of_slater'`.
 class HasStrongDuality (sdp : SDPPrimal n R ι)
     (_h : sdp.IsStrictlyFeasible) : Prop where
   /-- A strong-duality pair exists. -/
