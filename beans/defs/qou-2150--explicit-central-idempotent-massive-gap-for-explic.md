@@ -94,3 +94,7 @@ Left open, both owner calls:
 
 Status stays in-progress until the owner rules on those.
 
+
+
+## 2026-11-20T18:55Z — #8625 merged (969c4aa9fe)
+Cross-checks promoted to thm:explicit-central-idempotent-cross-checks; char-0 hypothesis removed (QOU.SchurWeyl.HeckeWedderburnAnyChar); instance over Frac R[q,q^-1] (cross_checks_laurent: Q(q), F_p(q)). Axioms clean. Left: regenerate renamed .jsonld; owner call on retiring scalar carrier ExplicitCentralIdempotentConjecture.
