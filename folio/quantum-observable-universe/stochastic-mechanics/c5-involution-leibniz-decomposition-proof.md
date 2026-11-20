@@ -9,7 +9,7 @@ $$
 $$
 
 Using the Hecke quadratic $\sigma_i^2 = h\sigma_i + 1$ (where $h = q - q^{-1}$),
-we have $\sigma_i^{-1} = \sigma_i - h$.
+$\sigma_i^{-1} = \sigma_i - h$.
 
 The **bar-invariant projector** is $P_{\text{avg}} = (1 + \overline{\,\,})/2$.
 Its action on $\sigma_i$ gives:
