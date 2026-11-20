@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-12T10:22:30Z
-updated_at: 2026-11-20T16:00:00Z
+updated_at: 2026-11-20T17:30:00Z
 parent: qou-d8c7
 ---
 
@@ -32,3 +32,26 @@ Claim released. Rule 13a: open conjecture, stays open. Finding: the carrier cann
 ## 2026-11-20 — owner ruling D2: re-state on the real Hecke algebra; n = 2 proved (PR #8587, commit d4db59e2b1)
 
 Owner chose 'Re-state on Hecke' (live, structured choice). New module `QOU.BraidKnot.ExplicitCentralIdempotentHecke` adds `lagrangeProj`, built from the Murphy elements `qJM` in `QOU.SchurWeyl.Hecke`, and `MurphyLagrangeComplete`. `murphyLagrangeComplete_two` is proved sorry-free: in H_2(q) the projectors for (2) and (1,1) are idempotent, orthogonal and sum to 1, for q·qi = 1 and q² ≠ qi². NEXT: state the general conjecture with the family = q-content vectors of all SYT of size n+1. That needs a choice among the corpus SYT types (`QOU.SchurWeyl` TableauCells `cellOf` is the natural one, since it is what `QJucysMurphyEigen` uses) plus a Fintype. Then re-point the conj block's lean.ref and retire the scalar carrier. Stays open (rule 13a). Claimed by this session.
+
+## 2026-11-20 — general n: cross-checks 1–2 and centrality PROVED; cross-check 4 FALSE at n = 2 (PR #8587)
+
+Owner: "Work at the conjecture for all n".
+
+- **`ef932e8ebc`, `QOU.BraidKnot.ExplicitCentralIdempotentGeneral`, sorry-free.** At generic q (q ≠ 0, not a root of unity, char 0), `e_λ = Σ_{T∈SYT(λ)} π_T` in `H_{n+1}(q)` is central, idempotent, nonzero, pairwise orthogonal, and Σ_λ e_λ = 1. Each π_T is idempotent, and distinct π_T are orthogonal. Capstone: `explicit_central_idempotent_cross_checks`.
+  - It rests only on existing corpus results: `heckeWedderburn` and `JMProjector.heckeWedderburn_symm_single`.
+  - `mulProj_eq_proj`: the .md formula in the multiplicative J_k = L_k equals the additive-JM projector.
+  - This connection had not been made: no prior file links JMProjector to this conjecture.
+- **`6381686552`, cross-check 4 (bar-pairing) is FALSE at n = 2** for the bar involution σ ↦ σ⁻¹, q ↦ q⁻¹.
+  - `bar_fixes_eTriv`: any such semilinear endomorphism fixes e_(2), and `eTriv_ne_eSign` gives e_(2) ≠ e_(1,1).
+  - `hash_swaps_eTriv`: the linear σ ↦ −σ⁻¹ is the involution that pairs λ with λ′.
+  - Scope: the conj block never defines ⋆, so which involution was meant is an OWNER call.
+- **Finding:** the conj block's product over the boxes of λ can divide by zero (diagonal boxes share a content). The prop block's formula is the well-defined one.
+
+**Still open:**
+- cross-check 3 (no self-conjugate λ at n = 2; general n needs a bar involution in Lean);
+- a general-n statement of cross-check 4 for whichever involution is chosen;
+- primitivity is not stated;
+- re-pointing the two blocks' `lean.ref` and retiring the scalar carrier (owner).
+
+Stays open (rule 13a).
+
