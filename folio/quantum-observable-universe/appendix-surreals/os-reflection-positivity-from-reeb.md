@@ -57,6 +57,4 @@ The status of OS reflection positivity in the QOU framework is equal to the stat
 - Verification that one of these candidate norms makes the Frobenius pairing positive in the sense above.
 - Compatibility of the chosen norm with the antipode $S$.
 
-This follow-up programme is stated as [Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity](#conj:wenzl-positivity-implies-substrate-positivity). Closing that bridge conjecture makes the substrate axiom derived from Wenzl's classical result, discharging the OS-reflection-positivity-as-axiom assumption.
-
 The Wightman-axiom portion of the Yang–Mills millennium statement reduces to the structural positivity of the antipode-twisted Frobenius pairing. The reflection involved is the antipodal $\mathbb{Z}_2$ subgroup of the Reeb $U(1)$, made visible by the [chart-swap–Reeb identification](#prop:reeb-u1-chart-swap). The categorical infrastructure already houses every OS ingredient except this positivity.

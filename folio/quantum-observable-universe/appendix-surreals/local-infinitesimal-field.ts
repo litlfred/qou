@@ -28,5 +28,6 @@ export default conjecture({
       kind: "status",
       body: "**Open and speculative.** This is the most strongly\nconjectural of the appendix's conjectures: it assumes a\ngeometric-scheme picture of $X$ that the main paper does not\nrequire, and interprets the substrate parameter in a way that\ngoes beyond the main-paper physics. Included here to record the\nnatural connection between the paper's points-and-topology\nframework and the surreal lift.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): up to the\n $\\varepsilon$-relaxations of\n [infinitesimal-frobenius](#conj:infinitesimal-frobenius) etc" },
   ],
 });

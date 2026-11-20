@@ -15,8 +15,7 @@ volume.
 The conjecture has two awkward features when viewed through QOU:
 
 1. The **left-hand side** is hyperbolic volume — pure analytic
- geometry, broken under surreal replacement (see
- [analytic obstructions](#rem:analytic-obstructions)).
+ geometry, broken under surreal replacement.
 2. The **right-hand side** uses an asymptotic-$n$ limit at a root
  of unity — a *singular* limit in $\mathbb{C}$.
 
@@ -152,12 +151,7 @@ For the figure-eight knot the two question marks collapse:
    holomorphic on cut planes, whose functional equation holds
    *exactly* — the factorially divergent perturbative series
    $\Phi(\hbar)$ is the asymptotic expansion of an actual analytic
-   object satisfying an equality, not merely an estimate. Read
-   through [$\mathrm{st}$ as median resummation](#rem:st-is-median-resummation),
-   the cocycle supplies precisely the real-single-valued function
-   whose surreal evaluation $\mathrm{st}$ selects: the
-   quantum-modular functional equation is the inequality-free form of
-   the asymptotic statement.
+   object satisfying an equality, not merely an estimate.
 
 3. **Stokes data as integer counts.** The resurgent structure of the
    $4_1$ Kashaev series is completely described in
@@ -195,11 +189,7 @@ $$
 
 with $\langle 4_1 \rangle_N$ the Kashaev invariant, so that the discharge
 of the previous section is the statement $\mathrm{st}(\delta) = 0$ at
-$N = \omega$. Here $\delta$ is the blow-up calculus's remainder symbol; it
-is unrelated to the alien derivative $\Delta_\omega$ of
-[Écalle--Borel resummation](#def:ecalle-borel-resummation) and to the
-per-partition binding weight $\Delta_\lambda$, both of which carry the
-capital.
+$N = \omega$. Here $\delta$ is the blow-up calculus's remainder symbol.
 
 ### The grade, derived
 
@@ -302,7 +292,7 @@ evaluation, which Kashaev relates to hyperbolic volume.
 Under the surreal lift:
 
 - Hoefsmit/Markov-trace side lifts to $\mathbf{No}$ exactly
- (algebraic — see [algebraic core survives](#rem:algebraic-core-survives)).
+ (algebraic).
 - Jones polynomial at $q = q_0 \in \mathbb{R}$ lifts by definition
  ($q_0 \in \mathbb{R} \subset \mathbf{No}$).
 - Hyperbolic volume side stays in $\mathbb{R}$ (external anchor).

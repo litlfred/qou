@@ -34,5 +34,6 @@ export default remark({
       kind: "status",
       body: "**Tabulation block.** Aggregates existing paper content under a\nsingle Goncharov-depth ledger. Adds two new structural observations:\n(1) the Jones-faithfulness $\\Rightarrow$ Vol-injectivity implication,\n(2) the $S_5$-equivariant 4-dim depth-3 period space at $\\zeta_5$.\nNeither is a new theorem; both are open structural claims awaiting\na sharp formulation.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This is the dual ledger to [The algebraic core of QOU lifts to any real-closed field](#rem:algebraic-core-survives). That ledger enumerates the algebra that survives the archimedean wall; this one enumerates the transcendentals that appear on the other side." },
   ],
 });
