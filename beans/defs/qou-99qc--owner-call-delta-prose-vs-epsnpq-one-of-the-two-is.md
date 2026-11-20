@@ -4189,3 +4189,10 @@ Pre-registered at 3e41aab22b. Lean `QOU/QuarkState/DecayGammaGammaFourStrand.lea
 - **Rows moved** (scored = two-term primary, one-term + Δm_QED −0.3317 keV): Q_β 0.65152 → 0.32510 MeV (1.672e8 → 5.844e8 ppb); m_n 939.43461 → 939.10819 (1.392e5 → 4.866e5 ppb); Δ_pn 1.16252 → 0.83610 MeV (1.011e8 → 3.535e8 ppb). HEADLINE 1/6 unchanged.
 - **D2 = Q_β (owner, 18:27).** Not m_n − m_p; implied m_n − m_p = 0.8364 MeV (−35.3 %). Recorded in np-splitting audit §23 and in `neutron-qvalue-symbolic` / `mass-comparison-table`.
 - **Still open (rule 13a, bean stays todo):** the mass-ordering sign (neutron sector smaller under mass ∝ trace); F_required ≈ 2.40 is outside the cos-ladder cap, so no c_k ladder of that form closes the 58 % gap.
+
+## 2026-11-20T19:25 — OWNER RULING (Carl): the premise "the bar image of a photon is a photon" is REJECTED
+Answers the OWNER DECISION of the PR #8634 entry above. Verbatim intent (relayed by coordinator, 19:25): reject the premise.
+- Consequence: `borromean_of_barClosed` (#8634) stays a proved conditional, but its hypothesis φ₀+φ₁=0 is NOT a corpus premise. φ₀, φ₁ are NOT fixed to 0; they stay underived inside the 8-point factorisation set of β_Bor (2 Borromean-pair points + 6 with φ₀,φ₁≠0). Selecting a point by residual is a fit and is forbidden.
+- `eChannel_barClosed` (determinant form of the e⁻ channel) is therefore not the e⁻ channel of the corpus photon.
+- Owner direction in the same message: pursue N1 — derive the W as a CHARGED element and the β-decay electron channel, so Q_β (re-aimed 19:33: the decay AMPLITUDE M(q) and RATE 𝔇_n(q)) is derived from γγ / gauge-boson production, not chosen. Branch `claude/qbeta-n1-charged-w-element-2026-11-20`.
+- Per owner rulings-are-conjectures preference: the rejection is recorded as a ruling about admissible premises, not as a derived statement. Bean stays open (rule 13a).
