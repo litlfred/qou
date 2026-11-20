@@ -11,9 +11,9 @@ Both saturate the Seifert genus limit of Bring's surface. Their crossing numbers
 The mapping uses:
 
 - $T_{1,0}$: neutrino $\nu$ (genus 0)
-- $T_{2,3}$: electron $e^-$, up quark $\mathfrak{u}$ (genus 1)
-- $T_{2,5}$: muon $\mu$, charm quark $\mathfrak{c}$ (genus 2)
-- $T_{2,7}$: tau lepton $\tau$, bottom quark $\mathfrak{b}^{\sigma}$ (genus 3)
+- $T_{2,3}$: electron $e^-$; lepton partner of the up quark $\mathfrak{u}$ (genus 1)
+- $T_{2,5}$: muon $\mu$; lepton partner of the charm quark $\mathfrak{c}$ (genus 2)
+- $T_{2,7}$: tau lepton $\tau$; lepton partner of $\mathfrak{b}^{\sigma}$ (genus 3)
 - $T_{3,4}$: Hopf${}^2$ color binding (genus 3, force carrier)
 
 Standard Model fermions exhaust at genus 3. Bring's surface supplies two additional genus-4 generators. Known matter particles do not require them.
@@ -24,9 +24,9 @@ The longitudinal winding number of $T_{2,9}$ factors as $9 = 3 \times 3$. This f
 
 | Generator | $n$ | $n/3$ | Role |
 |-----------|-----|-------|------|
-| $T_{2,3}$ | $3$ | $1$ | Matter (electron, up quark) |
-| $T_{2,5}$ | $5$ | — | Matter (muon, charm) |
-| $T_{2,7}$ | $7$ | — | Matter (tau, bottom) |
+| $T_{2,3}$ | $3$ | $1$ | Matter (electron; partner of the up quark) |
+| $T_{2,5}$ | $5$ | — | Matter (muon; partner of charm) |
+| $T_{2,7}$ | $7$ | — | Matter (tau; partner of bottom) |
 | $T_{2,9}$ | $9$ | $\mathbf{3}$ | **Three-fold cover of $T_{2,3}$** |
 
 On the torus, $T_{2,9}$ traces the trefoil pattern three times around the longitude. It is the unique three-fold cover of $T_{2,3}$ within $\mathcal{G}$. The knot group relation $x^2 = y^9 = (y^3)^3$ reflects this factorization: the longitudinal generator $y$ completes three $T_{2,3}$ periods before closing.

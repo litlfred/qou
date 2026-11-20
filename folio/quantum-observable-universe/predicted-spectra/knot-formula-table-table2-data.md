@@ -5,9 +5,9 @@
 | Electron | $e^-$ | $T_{2,3}$ | $1$ | $3$ |
 | Muon | $\mu^-$ | $T_{2,5}$ | $2$ | $5$ |
 | Tau | $\tau^-$ | $T_{2,7}$ | $3$ | $7$ |
-| Up quark | $\mathfrak{u}$ | $T_{2,3}$ | $1$ | $3$ |
-| Down quark | $\mathfrak{d}$ | $T_{2,3}^{\sigma}$ | $1$ | $3$ |
-| Strange quark | $\mathfrak{s}$ | $T_{2,5}^{\sigma}$ | $2$ | $5$ |
-| Charm quark | $\mathfrak{c}$ | $T_{2,5}$ | $2$ | $5$ |
-| Bottom quark | $\mathfrak{b}$ | $T_{2,7}^{\sigma}$ | $3$ | $7$ |
+| Up quark | $\mathfrak{u}$ | unknot strand, $\sigma_i$ (partner $T_{2,3}$) | $0$ | $0$ |
+| Down quark | $\mathfrak{d}$ | unknot strand, $\sigma_i^{-1}$ (partner $T_{2,3}^{\sigma}$) | $0$ | $0$ |
+| Strange quark | $\mathfrak{s}$ | unknot strand, $\sigma_i^{-1}$ (partner $T_{2,5}^{\sigma}$) | $0$ | $0$ |
+| Charm quark | $\mathfrak{c}$ | unknot strand, $\sigma_i$ (partner $T_{2,5}$) | $0$ | $0$ |
+| Bottom quark | $\mathfrak{b}$ | unknot strand, $\sigma_i^{-1}$ (partner $T_{2,7}^{\sigma}$) | $0$ | $0$ |
 | Hopf${}^2$ color binding *(force carrier sector $H^{0,1}$; "top quark" label deprecated)* | $\mathfrak{t}$ | $T_{3,4}$ | $3$ | $8$ |
