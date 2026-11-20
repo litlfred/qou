@@ -87,4 +87,12 @@ theorem zSL3_ne_zD (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) (h3 : q ^ 4 + q
   have hq3 : q ^ 3 = 0 := by linear_combination -h
   exact pow_ne_zero 3 hq hq3
 
+
+/-- **Non-equality of `zSL3` and `zSL2` (`qou-8du0`).**
+For `q ≠ 0`, `q ^ 2 + 1 ≠ 0`, and `q ^ 4 + q ^ 2 + 1 ≠ 0`, `zSL3 q ≠ zSL2 q`. -/
+theorem zSL3_ne_zSL2 (q : K) (hq : q ≠ 0) (h2 : q ^ 2 + 1 ≠ 0) (h3 : q ^ 4 + q ^ 2 + 1 ≠ 0) :
+    zSL3 q ≠ zSL2 q := by
+  rw [zSL2_eq_zD q hq h2]
+  exact zSL3_ne_zD q hq h2 h3
+
 end QOU.Mass.SL2QuantumTraceIsZD
