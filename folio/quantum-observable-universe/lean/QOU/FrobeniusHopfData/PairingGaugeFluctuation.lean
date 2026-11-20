@@ -1,5 +1,6 @@
 import Mathlib.Tactic.LinearCombination
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
+import Mathlib.CategoryTheory.Monoidal.Braided.Basic
 import QOU.FrobeniusHopfData.PairingVariationalDerivative
 
 /-!
@@ -39,6 +40,14 @@ This file asks the first question one asks of a fluctuation `δλ` of a pairing:
   coevaluation co-pairing, every pure-gauge fluctuation `(f ▷ obj − dual ◁ fᘁ) ≫ λ`
   of every background pairing `λ` is a zero mode of the contraction action
   (`coevaluation_contractionAction_massless`).
+* **§4 (the handedness of the Frobenius pairing, braided).**  A non-degenerate
+  Frobenius pairing gives `ExactPairing d.obj d.dual`, whose coevaluation lands
+  in `obj ⊗ dual`, not in `dual ⊗ obj`.  In a **braided** category the braiding
+  carries it to a co-pairing `η_ obj dual ≫ β : 𝟙 ⟶ dual ⊗ obj`, and this
+  co-pairing annihilates `f ▷ obj − dual ◁ ᘁf` for every `f : dual ⟶ dual`, with
+  `ᘁf` the left adjoint mate (`braidedCoevaluation_comp_leftMateGenerator`).
+  So the masslessness statement holds for the co-pairing a non-degenerate
+  Frobenius pairing actually supplies (`nondegenerate_braided_massless`).
 
 ## What is NOT claimed
 
@@ -202,8 +211,10 @@ theorem contractionAction_massless (η : 𝟙_ C ⟶ d.dual ⊗ d.obj)
 @[reducible] def rightDualOfExact [ExactPairing d.dual d.obj] : HasRightDual d.dual :=
   ⟨d.obj⟩
 
-/-- The **mate generator** of `f : dual ⟶ dual`: the Leibniz generator of the
-    pair `(f, −fᘁ)`, with `fᘁ : obj ⟶ obj` the right adjoint mate. -/
+/-- The **mate generator** of `f : dual ⟶ dual`: the difference
+    `f ▷ obj − dual ◁ fᘁ`, with `fᘁ : obj ⟶ obj` the right adjoint mate.  It
+    agrees with `leibnizGenerator d f (−fᘁ)` when whiskering is additive
+    (`MonoidalPreadditive`), which is not assumed here. -/
 def mateGenerator [ExactPairing d.dual d.obj] (f : d.dual ⟶ d.dual) :
     d.dual ⊗ d.obj ⟶ d.dual ⊗ d.obj :=
   letI := rightDualOfExact d
@@ -241,6 +252,90 @@ theorem mateGenerator_mem_invariantSubmodule [ExactPairing d.dual d.obj]
     mateGenerator d f ≫ lam ∈
       (contractionAction (R := R) d (η_ d.dual d.obj) ε).invariantSubmodule :=
   contractionAction_isInvariantAlong d _ ε _ (coevaluation_comp_mateGenerator d f) lam
+
+/-! ## §4  The Frobenius handedness, in a braided category -/
+
+section Braided
+
+variable [BraidedCategory C]
+
+/-- An exact pairing `obj ⊣ dual` (the handedness a non-degenerate Frobenius
+    pairing supplies) makes `obj` the left dual of `dual`.  Registered only
+    locally, for the left mate `ᘁf`. -/
+@[reducible] def leftDualOfExact [ExactPairing d.obj d.dual] : HasLeftDual d.dual :=
+  ⟨d.obj⟩
+
+/-- The **braided co-pairing**: the coevaluation `𝟙_ C ⟶ obj ⊗ dual` of the
+    exact pairing `obj ⊣ dual`, followed by the braiding into `dual ⊗ obj`, so
+    that it can be contracted against pairings `dual ⊗ obj ⟶ 𝟙_ C`. -/
+def braidedCoevaluation [ExactPairing d.obj d.dual] : 𝟙_ C ⟶ d.dual ⊗ d.obj :=
+  η_ d.obj d.dual ≫ (β_ d.obj d.dual).hom
+
+/-- The **left-mate generator** of `f : dual ⟶ dual`: the difference
+    `f ▷ obj − dual ◁ ᘁf`, with `ᘁf : obj ⟶ obj` the left adjoint mate for the
+    exact pairing `obj ⊣ dual`. -/
+def leftMateGenerator [ExactPairing d.obj d.dual] (f : d.dual ⟶ d.dual) :
+    d.dual ⊗ d.obj ⟶ d.dual ⊗ d.obj :=
+  letI := leftDualOfExact d
+  f ▷ d.obj - d.dual ◁ (ᘁf : d.obj ⟶ d.obj)
+
+/-- The braided co-pairing annihilates every left-mate generator: Mathlib's
+    `coevaluation_comp_leftAdjointMate`, transported through the naturality of
+    the braiding. -/
+theorem braidedCoevaluation_comp_leftMateGenerator [ExactPairing d.obj d.dual]
+    (f : d.dual ⟶ d.dual) :
+    braidedCoevaluation d ≫ leftMateGenerator d f = 0 := by
+  letI := leftDualOfExact d
+  have h : η_ d.obj d.dual ≫ (ᘁf : d.obj ⟶ d.obj) ▷ d.dual
+      = η_ d.obj d.dual ≫ d.obj ◁ f :=
+    coevaluation_comp_leftAdjointMate (C := C) f
+  unfold braidedCoevaluation leftMateGenerator
+  rw [Preadditive.comp_sub, sub_eq_zero, Category.assoc, Category.assoc,
+    ← BraidedCategory.braiding_naturality_right,
+    ← BraidedCategory.braiding_naturality_left, ← Category.assoc,
+    ← Category.assoc, h]
+  rfl
+
+/-- **Masslessness, braided form.**  With the braided co-pairing of an exact
+    pairing `obj ⊣ dual`, every pure-gauge fluctuation
+    `leftMateGenerator d f ≫ λ` of every background pairing `λ` has zero action
+    and lies in the radical of the variational derivative of the contraction
+    action at every field. -/
+theorem braided_contractionAction_massless [ExactPairing d.obj d.dual]
+    (ε : (𝟙_ C ⟶ 𝟙_ C) →ₗ[R] R) (f : d.dual ⟶ d.dual) (lam : fieldSpace d) :
+    (contractionAction (R := R) d (braidedCoevaluation d) ε).value
+        (leftMateGenerator d f ≫ lam) = 0 ∧
+      ∀ T : fieldSpace d,
+        (contractionAction (R := R) d (braidedCoevaluation d) ε).variation T
+          (leftMateGenerator d f ≫ lam) = 0 :=
+  contractionAction_massless d _ ε _
+    (braidedCoevaluation_comp_leftMateGenerator d f) lam
+
+/-- **The statement for the Frobenius pairing itself.**  If `d` is
+    non-degenerate, there is an exact pairing `obj ⊣ dual` whose evaluation is
+    the Frobenius pairing `d.eval`, and for it every pure-gauge fluctuation
+    (built from its left mates) is massless for the braided contraction action.
+    The evaluation is pinned to `d.eval`, so the co-pairing is the one `d`
+    determines, not an arbitrary (e.g. zero) one. -/
+theorem nondegenerate_braided_massless (h : d.Nondegenerate) :
+    ∃ E : ExactPairing d.obj d.dual,
+      E.evaluation' = d.eval ∧
+      ∀ (ε : (𝟙_ C ⟶ 𝟙_ C) →ₗ[R] R) (f : d.dual ⟶ d.dual) (lam : fieldSpace d),
+        letI := E
+        (contractionAction (R := R) d (braidedCoevaluation d) ε).value
+            (leftMateGenerator d f ≫ lam) = 0 ∧
+          ∀ T : fieldSpace d,
+            (contractionAction (R := R) d (braidedCoevaluation d) ε).variation
+              T (leftMateGenerator d f ≫ lam) = 0 := by
+  obtain ⟨coev, h₁, h₂⟩ := h
+  let E : ExactPairing d.obj d.dual :=
+    { coevaluation' := coev
+      evaluation' := d.eval
+      coevaluation_evaluation' := h₁
+      evaluation_coevaluation' := h₂ }
+  exact ⟨E, rfl, fun ε f lam => braided_contractionAction_massless (R := R) d ε f lam⟩
+
+end Braided
 
 end Categorical
 
