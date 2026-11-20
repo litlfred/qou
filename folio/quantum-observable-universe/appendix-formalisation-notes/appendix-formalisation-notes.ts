@@ -16,6 +16,12 @@ export default chapter({
   title: "Formalisation notes",
   sections: [
     {
+      title: "Coverage",
+      blocks: [
+        "formalisation-coverage",
+      ],
+    },
+    {
       title: "Mathlib infrastructure for the dilogarithm chain",
       blocks: [
         "three-substantive-mathlib-fillers",
