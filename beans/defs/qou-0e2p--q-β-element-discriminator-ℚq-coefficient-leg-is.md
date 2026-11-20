@@ -39,3 +39,7 @@ Evidence: Re-ran `computations/qbeta/qbeta_bar_odd_qq_coefficient_leg_probe.py`:
 
 Status: `todo` → `completed`.
 Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+## 2026-11-20 — owner ruled "CODATA 2022"; implemented in PR #8572
+
+Owner, 2026-11-20, answering PR #7205: "CODATA 2022". Re-derived on main in PR #8572 (supersedes #7205): Q_β = 0.78233355931(38) MeV from the CODATA-2022 registry, CAL-3 label corrected to CAL-2. Also fixed: the "routes agree to 7.4e-17" figure was binary53 rounding at import-time 15 dps; now ~1e-49. Still open: the codata_constants Q_β consistency check is circular under this route (re-point or retire); 64 witnesses carry the AME value; qou_substrate Q_NEUTRON_MEV is still AME-based.
