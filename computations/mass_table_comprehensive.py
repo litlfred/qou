@@ -109,7 +109,14 @@ def _dp(x, places: int = 6):
     `mpf` implements `__format__`, so `f"{x:.6f}"` is exact-then-round on the
     full-precision value rather than round-of-a-double.
     """
-    return None if x is None else f"{x:.{places}f}"
+    if x is None:
+        return None
+    # mpf.__format__ exists only from mpmath 1.4; the declared range is
+    # >=1.3, where f"{x:.6f}" raises. Round the full-precision decimal
+    # string instead, so this stays exact-then-round on every version.
+    from decimal import Decimal, ROUND_HALF_EVEN
+    d = Decimal(mp.nstr(mp.mpf(x), mp.mp.dps, min_fixed=-mp.inf, max_fixed=mp.inf))
+    return str(d.quantize(Decimal(1).scaleb(-places), rounding=ROUND_HALF_EVEN))
 
 
 def _fmt_or_none(x):
@@ -486,9 +493,9 @@ def main() -> int:
     print("COMPREHENSIVE MASS TABLE — QOU framework at current production tier")
     print(f"  q₀ = {Q_50_DIGIT_STR[:25]}...")
     print(f"  source: {nucleon.get('source', 'Family A')}")
-    print(f"  linking_weight (Family A, PROVED) = {nucleon['linking_weight_family_a']:.10f}")
-    print(f"  m_p^pred = {m_p_pred:.6f} MeV   (CODATA: {float(M_P_MEV_VALIDATION):.6f})")
-    print(f"  m_n^pred = {m_n_pred:.6f} MeV   (CODATA: {float(M_N_MEV_VALIDATION):.6f})")
+    print(f"  linking_weight (Family A, PROVED) = {float(nucleon['linking_weight_family_a']):.10f}")
+    print(f"  m_p^pred = {float(m_p_pred):.6f} MeV   (CODATA: {float(M_P_MEV_VALIDATION):.6f})")
+    print(f"  m_n^pred = {float(m_n_pred):.6f} MeV   (CODATA: {float(M_N_MEV_VALIDATION):.6f})")
     print("=" * 120)
     print()
     print(f"\n{'Atom':>5s} {'Z':>2s} {'N':>2s} {'A':>2s}  "
@@ -602,11 +609,11 @@ def main() -> int:
         rows.append(row)
 
         # Print row
-        m_sym_s = f"{m_symbolic:14.6f}" if m_symbolic else "           n/a"
-        m_app_s = f"{m_approx:14.6f}" if m_approx else "           n/a"
-        m_obs_s = f"{m_observed:14.6f}" if m_observed else "           n/a"
-        B_pred_s = f"{B_pred:12.6f}" if B_pred else "         n/a"
-        B_qCLT_s = f"{B_qCLT:12.6f}" if B_qCLT else "         n/a"
+        m_sym_s = f"{float(m_symbolic):14.6f}" if m_symbolic else "           n/a"
+        m_app_s = f"{float(m_approx):14.6f}" if m_approx else "           n/a"
+        m_obs_s = f"{float(m_observed):14.6f}" if m_observed else "           n/a"
+        B_pred_s = f"{float(B_pred):12.6f}" if B_pred else "         n/a"
+        B_qCLT_s = f"{float(B_qCLT):12.6f}" if B_qCLT else "         n/a"
         B_AME_s = f"{B_AME:11.6f}"
 
         elapsed = time.monotonic() - t0
