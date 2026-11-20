@@ -117,6 +117,32 @@ theorem standardPart_evalOmega_of_tendstoReal (a : ℕ → ℝ) (L : ℝ)
   have hst := standardPart_eq_of_isClose hfin (ofReal_isFinite L) hc
   rwa [standardPart_ofReal] at hst
 
+/-- The zero sequence evaluates to `0` at `ω`. -/
+@[simp]
+theorem evalOmega_zero : evalOmega (K := K) (fun _ => 0) = 0 := by
+  rw [evalOmega_const, map_zero]
+
+/-- The unit constant sequence evaluates to `1` at `ω`. -/
+@[simp]
+theorem evalOmega_one : evalOmega (K := K) (fun _ => 1) = 1 := by
+  rw [evalOmega_const, map_one]
+
+/-- Pointwise negation commutes with `evalOmega`. -/
+theorem evalOmega_neg (a : ℕ → ℝ) :
+    evalOmega (K := K) (fun n => -a n) = -evalOmega (K := K) a := by
+  apply eq_neg_of_add_eq_zero_left
+  have h := evalOmega_add (K := K) (fun n => -a n) a
+  simp only [neg_add_cancel] at h
+  rw [← h, evalOmega_zero]
+
+/-- Pointwise subtraction commutes with `evalOmega`. -/
+theorem evalOmega_sub (a b : ℕ → ℝ) :
+    evalOmega (K := K) (fun n => a n - b n) =
+      evalOmega (K := K) a - evalOmega (K := K) b := by
+  have h := evalOmega_add (K := K) a (fun n => -b n)
+  simp only [← sub_eq_add_neg] at h
+  rw [h, evalOmega_neg, sub_eq_add_neg]
+
 end SurrealLimitTransfer
 
 /-- **Limit comparison through the surreal order.**  If `aₙ ≤ bₙ`
@@ -141,5 +167,24 @@ theorem tendstoReal_le_of_eventuallyLE (K : Type u) [SurrealField K]
   rwa [SurrealLimitTransfer.standardPart_evalOmega_of_tendstoReal a L ha,
        SurrealLimitTransfer.standardPart_evalOmega_of_tendstoReal b M hb]
     at hst
+
+/-- **Uniqueness of sequential limits via `st ∘ evalOmega`**: if `a` converges
+    to both `L` and `M`, both equal `standardPart (evalOmega a)` and hence
+    `L = M`. -/
+theorem tendstoReal_unique (K : Type u) [SurrealField K]
+    [SurrealLimitTransfer K] (a : ℕ → ℝ) (L M : ℝ)
+    (hL : TendstoReal a L) (hM : TendstoReal a M) : L = M := by
+  rw [← SurrealLimitTransfer.standardPart_evalOmega_of_tendstoReal (K := K) a L hL,
+      SurrealLimitTransfer.standardPart_evalOmega_of_tendstoReal (K := K) a M hM]
+
+/-- **Squeeze comparison through the surreal order at `ω`**: if `a ≤ b` and
+    `b ≤ c` eventually, `a → L`, `c → L`, and `b → M`, then `M = L`. -/
+theorem tendstoReal_squeeze (K : Type u) [SurrealField K]
+    [SurrealLimitTransfer K] (a b c : ℕ → ℝ) (L M : ℝ)
+    (ha : TendstoReal a L) (hb : TendstoReal b M) (hc : TendstoReal c L)
+    (hab : EventuallyLE a b) (hbc : EventuallyLE b c) : M = L :=
+  le_antisymm
+    (tendstoReal_le_of_eventuallyLE K b c M L hb hc hbc)
+    (tendstoReal_le_of_eventuallyLE K a b L M ha hb hab)
 
 end QOU.AppendixSurreals
