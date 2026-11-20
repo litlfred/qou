@@ -1,11 +1,11 @@
 ---
 # qou-lc7q
 title: 'Prove UGB local_confluence (Bergman diamond lemma), the last Diamond-Lemma axiom'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-11-20T17:00:00Z
-updated_at: 2026-11-20T17:30:00Z
+updated_at: 2026-11-20T19:00:00Z
 parent: qou-uhx0
 ---
 
@@ -32,3 +32,9 @@ Estimate: several sessions, ~1–2k Lean lines. Not started in code.
 `local_confluence` demands a structurally equal common reduct, but steps fix their target only up to CoeffEq (free `support` superset). Counterexample (axiom-free, `LocalConfluenceSupportRefutation.lean`): monic one-letter rule `K` over ℤ, `K → 0` with support ∅ and with support {K}; both normal, unequal. `example : False` compiles from the axiom. `normal_form_unique` (structural `=`) is false for the same reason. Repair: Diamond Lemma up to CoeffEq, then restate consumers.
 
 Also: k must be commutative for the proof: the S-polynomial is `lc₂·rel₁C − lc₁·A·rel₂`; it is a unit multiple of the monic composition only if lc₁lc₂ = lc₂lc₁.
+
+## Resolution (W12, 2026-11-20) — PR #8612 @ 02d6e886030 (ready-to-merge)
+- `DiamondLemma.lean`: `Diamond.reductionUnique` — GS basis + unit lc + CommRing ⇒ all normal forms CoeffEq. Bergman Thm 1.2 (operators, Lemma 1.1 additivity, JM ideal below v, disjoint/overlap/inclusion, WF induction). ~1000 lines, sorry-free, axioms = propext/Classical.choice/Quot.sound.
+- `local_confluence` axiom deleted (it was false: `LocalConfluenceSupportRefutation`, axiom proved False); now a theorem up to CoeffEq. `confluence`, `normal_form_unique` and 8 consumers restated up to CoeffEq; `composition_lemma` needs no uniqueness.
+- UGB now has no Diamond-Lemma axiom. Remaining UGB axioms elsewhere (not this bean): `qSerre_is_gs_basis` (NormalForms.lean), JetOrder's three, StrongMultiplicativity's `tensorOrder`.
+- Follow-up after #8598 merges: one sentence each in `hecke-normal-form.ts` authorNote and `nuclear-groebner-reduction-proof.md` (both still say local_confluence is an axiom).
