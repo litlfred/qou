@@ -3,9 +3,12 @@ import Mathlib.Analysis.NormedSpace.HahnBanach.Separation
 import Mathlib.Topology.Instances.Matrix
 import Mathlib.Data.Real.StarOrdered
 import Mathlib.Topology.Algebra.Module.FiniteDimension
+import Mathlib.Analysis.Convex.Topology
+import Mathlib.LinearAlgebra.Dual.Lemmas
+import QOU.MathlibExt.SDP
 
 /-!
-# SDP strong duality under (dual) Slater
+# SDP strong duality under dual Slater and under primal Slater
 
 Real SDPs in standard form, with the trace pairing `⟨X, Y⟩ = tr(XY)`
 (`QOU.Mathlib.SDPDuality.traceInner`):
@@ -35,16 +38,44 @@ Real SDPs in standard form, with the trace pairing `⟨X, Y⟩ = tr(XY)`
 * `no_duality_gap` — the same result as `IsLeast` (primal) / `IsLUB` (dual) of one common
   value `p`, combining the main theorem with `SDPDuality.weak_duality`.
 
+### Primal-Slater direction
+
+* `exists_smul_one_add_smul_posSemidef` — for symmetric `E`, `L • 1 + c • E ⪰ 0` for all
+  `|c| ≤ 1` (some `L ≥ 0`); with `exists_sub_smul_one_posSemidef` this gives
+  `exists_psd_preimage_near`: under primal Slater and an onto constraint map, every
+  right-hand side near `b` is attained by a PSD matrix with bounded objective.
+* `surjective_of_linearIndependent` — linearly independent `Aᵢ` make
+  `X ↦ (⟨Aᵢ, X⟩)ᵢ` onto.
+* `strong_duality_of_primal_slater` — **second main theorem**: symmetric data, onto
+  constraint map, a positive-definite primal-feasible `X̄`, and a dual-feasible point ⇒
+  the **dual optimum is attained** at some `ys` and every `ε > 0` admits a primal-feasible
+  `X` with `⟨C, X⟩ < Σ bᵢ ysᵢ + ε` (no gap).  Proof: separate `(0,0)` from the interior of
+  `G = {(𝒜X - b, t) : X ⪰ 0, t > ⟨C, X⟩ - inf (P)}` (`geometric_hahn_banach_open_point`),
+  extend to `G` by `closure (interior G) = closure G`, use Slater to make the `t`-coefficient
+  negative, and read off a dual point by PSD self-duality.
+* `exists_optimal_pair` — under two-sided Slater (+ onto constraints): a primal optimum and a
+  dual optimum with equal objectives, and complementary slackness `⟨C - Σ ysᵢ Aᵢ, Xs⟩ = 0`.
+
+### The `QOU.MathlibExt.SDP.HasStrongDuality` carrier
+
+* `not_hasStrongDuality_unboundedSDP`, `not_forall_hasStrongDuality` — **the class is false
+  as stated**: it asks for a primal-dual optimal pair from primal strict feasibility alone,
+  and the `1 × 1` SDP "minimise `-x` over `x ⪰ 0`" is strictly feasible, unbounded below
+  (`unboundedSDP_unbounded`) and has no dual-feasible point.
+* `hasStrongDuality_of_slater` — the class does hold for real SDPs with symmetric data,
+  linearly independent constraints and a positive-definite dual slack (a theorem, not an
+  `instance`, since these hypotheses are not classes).
+
 ## What is NOT proved here
 
-* **Dual attainment.** Under dual Slater the dual supremum need not be attained, and it is
-  not claimed.  The symmetric statement (primal Slater ⇒ dual attained, zero gap) is
-  not proved in this file.
+* **Dual attainment under dual Slater alone** and **primal attainment under primal Slater
+  alone** are not claimed (both can fail).
+* `strong_duality_of_primal_slater` assumes the constraint map is onto (equivalently,
+  linearly independent `Aᵢ`).  The theorem remains true without it (drop redundant
+  constraints), but that reduction is not formalised.
 * The symmetry hypotheses `(Aᵢ).IsHermitian`, `C.IsHermitian` are genuinely used (PSD
   self-duality only sees the symmetric part); the non-symmetric case is not treated.
-* Nothing here discharges `QOU.Interactions.ConfinementSDP`'s `strong_duality` field or
-  `QOU.MathlibExt.SDP.HasStrongDuality` (which is stated for the *primal*-Slater direction
-  over a general ring); wiring this theorem to those carriers is separate work.
+* Nothing here discharges `QOU.Interactions.ConfinementSDP`'s `strong_duality` field.
 -/
 -- Ref: [leitner2026] Boyd–Vandenberghe, Convex Optimization, §5.9; Ben-Tal–Nemirovski, Lectures on Modern Convex Optimization, Thm 1.4.2
 
@@ -406,5 +437,492 @@ theorem no_duality_gap (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m →
     obtain ⟨y, hy, hyv⟩ := hgap (traceInner C Xs - B) (sub_pos.2 hlt)
     have := hB ⟨y, hy, rfl⟩
     linarith
+
+/-- For a symmetric `E` there is `L ≥ 0` with `L • 1 + c • E ⪰ 0` whenever `|c| ≤ 1`
+(take `L = Σ |λᵢ|` over the eigenvalues of `E`). -/
+lemma exists_smul_one_add_smul_posSemidef {E : Matrix (Fin n) (Fin n) ℝ} (hE : E.IsHermitian) :
+    ∃ L : ℝ, 0 ≤ L ∧ ∀ c : ℝ, |c| ≤ 1 →
+      (L • (1 : Matrix (Fin n) (Fin n) ℝ) + c • E).PosSemidef := by
+  classical
+  set ev := hE.eigenvalues with hev
+  set L : ℝ := ∑ i, |ev i| with hL
+  have hL0 : 0 ≤ L := Finset.sum_nonneg fun i _ => abs_nonneg _
+  refine ⟨L, hL0, fun c hc => ?_⟩
+  let U : Matrix (Fin n) (Fin n) ℝ := hE.eigenvectorUnitary
+  have hspec : E = U * diagonal ev * star U := by
+    have := hE.spectral_theorem
+    rw [show RCLike.ofReal ∘ ev = ev from funext fun _ => rfl] at this
+    exact this
+  have hU : U * star U = 1 := unitary.mul_star_self_of_mem hE.eigenvectorUnitary.2
+  have hle : ∀ i, 0 ≤ L + c * ev i := by
+    intro i
+    have h1 : |ev i| ≤ L :=
+      Finset.single_le_sum (f := fun j => |ev j|) (fun j _ => abs_nonneg _) (Finset.mem_univ i)
+    have h2 : |c * ev i| ≤ |ev i| := by
+      rw [abs_mul]; exact mul_le_of_le_one_left (abs_nonneg _) hc
+    have h3 := neg_abs_le (c * ev i)
+    linarith
+  have hD : (diagonal fun i => L + c * ev i).PosSemidef := PosSemidef.diagonal hle
+  have hdiag : (diagonal fun i => L + c * ev i) =
+      L • (1 : Matrix (Fin n) (Fin n) ℝ) + c • diagonal ev := by
+    ext a d
+    by_cases h : a = d
+    · subst h; simp
+    · simp [diagonal_apply_ne _ h, one_apply_ne h]
+  have key : L • (1 : Matrix (Fin n) (Fin n) ℝ) + c • E =
+      U * (diagonal fun i => L + c * ev i) * Uᴴ := by
+    rw [hdiag, ← star_eq_conjTranspose, Matrix.mul_add, Matrix.add_mul, Matrix.mul_smul,
+      Matrix.mul_smul, Matrix.mul_one, Matrix.smul_mul, Matrix.smul_mul, hU, ← hspec]
+  rw [key]
+  exact hD.mul_mul_conjTranspose_same U
+
+lemma traceInner_sum_right {ι : Type*} (s : Finset ι) (A : Matrix (Fin n) (Fin n) ℝ)
+    (f : ι → Matrix (Fin n) (Fin n) ℝ) :
+    traceInner A (∑ k ∈ s, f k) = ∑ k ∈ s, traceInner A (f k) := by
+  simp only [traceInner, Matrix.mul_sum, trace_sum]
+
+/-- For symmetric `A`, `⟨A, Xᵀ⟩ = ⟨A, X⟩`. -/
+lemma traceInner_transpose_right {A : Matrix (Fin n) (Fin n) ℝ} (hA : A.IsHermitian)
+    (X : Matrix (Fin n) (Fin n) ℝ) : traceInner A Xᵀ = traceInner A X := by
+  have hAT : Aᵀ = A := by
+    have := hA.eq
+    rwa [conjTranspose_eq_transpose_of_trivial] at this
+  unfold traceInner
+  rw [← trace_transpose, transpose_mul, transpose_transpose, hAT, trace_mul_comm]
+
+/-- If the constraint map is onto, each coordinate vector has a *symmetric* preimage. -/
+lemma exists_symm_dual_basis (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
+    (hA : ∀ i, (A i).IsHermitian)
+    (hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
+    (k : Fin m) :
+    ∃ E : Matrix (Fin n) (Fin n) ℝ, E.IsHermitian ∧
+      ∀ i, traceInner (A i) E = if i = k then 1 else 0 := by
+  obtain ⟨E', hE'⟩ := hsurj fun i => if i = k then 1 else 0
+  refine ⟨(1/2 : ℝ) • (E' + E'ᵀ), ?_, fun i => ?_⟩
+  · unfold Matrix.IsHermitian
+    rw [conjTranspose_eq_transpose_of_trivial, transpose_smul, transpose_add,
+      transpose_transpose, add_comm]
+  · rw [traceInner_smul_right, traceInner_add_right, traceInner_transpose_right (hA i), hE' i]
+    ring
+
+/-- **Primal Slater gives an interior point.** If the constraint map is onto and some
+feasible `X̄` is positive definite, then every right-hand side within `r` of `b = 𝒜(X̄)`
+(sup norm) is attained by a PSD matrix whose objective value is at most `M`. -/
+lemma exists_psd_preimage_near (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
+    (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian)
+    (hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
+    {Xbar : Matrix (Fin n) (Fin n) ℝ} (hXbar : Xbar.PosDef) :
+    ∃ r : ℝ, 0 < r ∧ ∃ M : ℝ, ∀ u : Fin m → ℝ, ‖u‖ < r →
+      ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
+        (∀ i, traceInner (A i) X = traceInner (A i) Xbar + u i) ∧ traceInner C X ≤ M := by
+  classical
+  choose E hEh hEA using exists_symm_dual_basis A hA hsurj
+  choose L hL0 hLpsd using fun k => exists_smul_one_add_smul_posSemidef (hEh k)
+  obtain ⟨ε, hε, hXε⟩ := exists_sub_smul_one_posSemidef hXbar
+  set w : ℝ := ε / (m + 1) with hw
+  have hw0 : 0 < w := by positivity
+  set SL : ℝ := ∑ k, L k with hSL
+  have hSL0 : 0 ≤ SL := Finset.sum_nonneg fun k _ => hL0 k
+  set ρ : ℝ := w / (1 + SL) with hρ
+  have hρ0 : 0 < ρ := by positivity
+  have hρL : ∀ k, ρ * L k ≤ w := by
+    intro k
+    have h1 : L k ≤ SL := Finset.single_le_sum (f := L) (fun j _ => hL0 j) (Finset.mem_univ k)
+    have h2 : ρ * (1 + SL) = w := by rw [hρ]; field_simp
+    nlinarith
+  refine ⟨ρ, hρ0, traceInner C Xbar + ρ * ∑ k, |traceInner C (E k)|, fun u hu => ?_⟩
+  have hu' : ∀ k, |u k| < ρ := fun k =>
+    lt_of_le_of_lt (by simpa [Real.norm_eq_abs] using norm_le_pi_norm u k) hu
+  refine ⟨Xbar + ∑ k, u k • E k, ?_, fun i => ?_, ?_⟩
+  · -- PSD: split into `(X̄ - ε 1) + Σ_k (w 1 + u_k E_k) + (ε - m w) 1`
+    have hk : ∀ k, (w • (1 : Matrix (Fin n) (Fin n) ℝ) + u k • E k).PosSemidef := by
+      intro k
+      have hc : |u k / ρ| ≤ 1 := by
+        rw [abs_div, abs_of_pos hρ0, div_le_one hρ0]; exact (hu' k).le
+      have h1 := (hLpsd k (u k / ρ) hc).smul hρ0.le
+      have heq : w • (1 : Matrix (Fin n) (Fin n) ℝ) + u k • E k =
+          ρ • (L k • (1 : Matrix (Fin n) (Fin n) ℝ) + (u k / ρ) • E k) +
+            (w - ρ * L k) • (1 : Matrix (Fin n) (Fin n) ℝ) := by
+        rw [smul_add, smul_smul, smul_smul, mul_div_cancel₀ _ hρ0.ne', sub_smul]
+        abel
+      rw [heq]
+      exact h1.add (PosSemidef.one.smul (sub_nonneg.2 (hρL k)))
+    have hsum : (∑ k, (w • (1 : Matrix (Fin n) (Fin n) ℝ) + u k • E k)).PosSemidef := by
+      refine Finset.sum_induction _ (fun M : Matrix (Fin n) (Fin n) ℝ => M.PosSemidef)
+        (fun a b ha hb => ha.add hb) PosSemidef.zero fun k _ => hk k
+    have hmw : (0 : ℝ) ≤ ε - m * w := by
+      rw [hw, mul_div_assoc', sub_nonneg, div_le_iff₀ (by positivity)]
+      nlinarith
+    have heq : Xbar + ∑ k, u k • E k =
+        (Xbar - ε • (1 : Matrix (Fin n) (Fin n) ℝ)) +
+          (∑ k, (w • (1 : Matrix (Fin n) (Fin n) ℝ) + u k • E k)) +
+          (ε - m * w) • (1 : Matrix (Fin n) (Fin n) ℝ) := by
+      rw [Finset.sum_add_distrib, Finset.sum_const, Finset.card_univ, Fintype.card_fin,
+        ← Nat.cast_smul_eq_nsmul ℝ, smul_smul, sub_smul]
+      abel
+    rw [heq]
+    exact (hXε.add hsum).add (PosSemidef.one.smul hmw)
+  · rw [traceInner_add_right, traceInner_sum_right]
+    simp only [traceInner_smul_right, hEA, mul_ite, mul_one, mul_zero]
+    simp
+  · rw [traceInner_add_right, traceInner_sum_right, Finset.mul_sum]
+    gcongr with k
+    rw [traceInner_smul_right]
+    calc u k * traceInner C (E k) ≤ |u k * traceInner C (E k)| := le_abs_self _
+      _ = |u k| * |traceInner C (E k)| := abs_mul _ _
+      _ ≤ ρ * |traceInner C (E k)| :=
+          mul_le_mul_of_nonneg_right (hu' k).le (abs_nonneg _)
+
+/-- **SDP strong duality under primal Slater.** For symmetric data, if the constraint map
+`X ↦ (⟨Aᵢ, X⟩)ᵢ` is onto (equivalently, the `Aᵢ` are linearly independent — see
+`surjective_of_linearIndependent`), some primal-feasible `X̄` is positive definite, and the
+dual is feasible, then the **dual optimum is attained** at some `ys` and there is **no
+duality gap**: every `ε > 0` admits a primal-feasible `X` with `⟨C, X⟩ < Σ bᵢ ysᵢ + ε`.
+
+Proof: with `p = inf (P)` (finite by weak duality), the convex set
+`G = {(𝒜X - b, t) : X ⪰ 0, t > ⟨C, X⟩ - p}` misses `(0, 0)` and, by primal Slater and
+surjectivity, has nonempty interior.  Separating `(0,0)` from `interior G` and passing to
+`closure (interior G) = closure G` gives `f ≤ 0` on `G`; Slater forces the `t`-coefficient
+`σ` of `f` to be negative, and `ys = -z / σ` is dual feasible (PSD self-duality) with
+`Σ bᵢ ysᵢ ≥ p`. -/
+theorem strong_duality_of_primal_slater (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m → ℝ)
+    (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian) (hC : C.IsHermitian)
+    (hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
+    (hslater : ∃ Xbar : Matrix (Fin n) (Fin n) ℝ, Xbar.PosDef ∧ ∀ i, traceInner (A i) Xbar = b i)
+    (hdual : ∃ y₀ : Fin m → ℝ, (C - ∑ i, y₀ i • A i).PosSemidef) :
+    ∃ ys : Fin m → ℝ, (C - ∑ i, ys i • A i).PosSemidef ∧
+      (∀ y : Fin m → ℝ, (C - ∑ i, y i • A i).PosSemidef → ∑ i, b i * y i ≤ ∑ i, b i * ys i) ∧
+      ∀ ε : ℝ, 0 < ε → ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
+        (∀ i, traceInner (A i) X = b i) ∧ traceInner C X < ∑ i, b i * ys i + ε := by
+  obtain ⟨Xbar, hXbar, hXbarf⟩ := hslater
+  obtain ⟨y₀, hy₀⟩ := hdual
+  -- the primal value `p`
+  set P := {v : ℝ | ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
+    (∀ i, traceInner (A i) X = b i) ∧ v = traceInner C X} with hP
+  have hPne : P.Nonempty := ⟨_, Xbar, hXbar.posSemidef, hXbarf, rfl⟩
+  have hPbdd : BddBelow P := by
+    refine ⟨∑ i, b i * y₀ i, ?_⟩
+    rintro v ⟨X, hX, hXf, rfl⟩
+    exact weak_duality A b C X y₀ hX hXf _ hy₀ (add_sub_cancel _ _)
+  set p := sInf P with hp
+  have hple : ∀ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef → (∀ i, traceInner (A i) X = b i) →
+      p ≤ traceInner C X := fun X hX hXf => csInf_le hPbdd ⟨X, hX, hXf, rfl⟩
+  -- the convex set `G`
+  set G : Set ((Fin m → ℝ) × ℝ) := {w | ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
+    (∀ i, w.1 i = traceInner (A i) X - b i) ∧ traceInner C X - p < w.2} with hG
+  have hGcv : Convex ℝ G := by
+    rintro w₁ ⟨X₁, hX₁, hu₁, ht₁⟩ w₂ ⟨X₂, hX₂, hu₂, ht₂⟩ a c ha hc hac
+    refine ⟨a • X₁ + c • X₂, (hX₁.smul ha).add (hX₂.smul hc), fun i => ?_, ?_⟩
+    · simp only [Prod.fst_add, Prod.smul_fst, Pi.add_apply, Pi.smul_apply, smul_eq_mul, hu₁,
+        hu₂, traceInner_add_right, traceInner_smul_right]
+      have : b i = (a + c) * b i := by rw [hac, one_mul]
+      linarith
+    · simp only [Prod.snd_add, Prod.smul_snd, smul_eq_mul, traceInner_add_right,
+        traceInner_smul_right]
+      have hpos : 0 < a * (w₁.2 - (traceInner C X₁ - p)) + c * (w₂.2 - (traceInner C X₂ - p)) := by
+        rcases ha.lt_or_eq with ha' | ha'
+        · have := mul_pos ha' (sub_pos.2 ht₁)
+          have := mul_nonneg hc (sub_pos.2 ht₂).le
+          linarith
+        · subst ha'
+          have hc1 : c = 1 := by linarith
+          subst hc1
+          simpa using sub_pos.2 ht₂
+      have hp' : p = (a + c) * p := by rw [hac, one_mul]
+      nlinarith
+  have hnot0 : ((0 : Fin m → ℝ), (0 : ℝ)) ∉ G := by
+    rintro ⟨X, hX, hu, ht⟩
+    have hXf : ∀ i, traceInner (A i) X = b i := fun i => by
+      have := hu i; simp at this; linarith
+    have := hple X hX hXf
+    simp at ht
+    linarith
+  -- interior point from primal Slater
+  obtain ⟨r, hr, M, hM⟩ := exists_psd_preimage_near A C hA hsurj hXbar
+  have hball : ∀ u : Fin m → ℝ, ‖u‖ < r → ∀ t : ℝ, M - p < t → (u, t) ∈ G := by
+    intro u hu t ht
+    obtain ⟨X, hX, hXc, hXo⟩ := hM u hu
+    refine ⟨X, hX, fun i => ?_, by simp only; linarith⟩
+    simp only [hXc, hXbarf]; ring
+  have hOsub : Metric.ball (0 : Fin m → ℝ) r ×ˢ Set.Ioi (M - p) ⊆ interior G :=
+    interior_maximal (fun w ⟨h1, h2⟩ => hball w.1 (mem_ball_zero_iff.1 h1) w.2 h2)
+      (Metric.isOpen_ball.prod isOpen_Ioi)
+  have hint : ((0 : Fin m → ℝ), M - p + 1) ∈ interior G :=
+    hOsub ⟨Metric.mem_ball_self hr, by simp⟩
+  -- separation
+  obtain ⟨f, hf⟩ := geometric_hahn_banach_open_point (hGcv.interior) isOpen_interior
+    (fun h => hnot0 (interior_subset h))
+  have hf0 : f ((0 : Fin m → ℝ), (0 : ℝ)) = 0 := by
+    rw [show ((0 : Fin m → ℝ), (0 : ℝ)) = (0 : (Fin m → ℝ) × ℝ) from rfl, map_zero]
+  have hfG : ∀ w ∈ G, f w ≤ 0 := by
+    intro w hw
+    have hcl : w ∈ closure (interior G) := by
+      rw [hGcv.closure_interior_eq_closure_of_nonempty_interior ⟨_, hint⟩]
+      exact subset_closure hw
+    have : closure (interior G) ⊆ {x | f x ≤ 0} :=
+      closure_minimal (fun x hx => by have := hf x hx; rw [hf0] at this; exact this.le)
+        (isClosed_le f.continuous continuous_const)
+    exact this hcl
+  -- coefficients of the separating functional
+  let z : Fin m → ℝ := fun i => f ((fun j => if i = j then 1 else 0), 0)
+  let σ : ℝ := f (0, 1)
+  have hfrep : ∀ (v : Fin m → ℝ) (s : ℝ), f (v, s) = ∑ i, v i * z i + s * σ := by
+    intro v s
+    have hsplit : (v, s) = (v, (0:ℝ)) + s • ((0 : Fin m → ℝ), (1:ℝ)) := by
+      ext <;> simp
+    rw [hsplit, map_add, map_smul, smul_eq_mul]
+    congr 1
+    have := LinearMap.pi_apply_eq_sum_univ
+      ((f : (Fin m → ℝ) × ℝ →L[ℝ] ℝ).toLinearMap.comp (LinearMap.inl ℝ (Fin m → ℝ) ℝ)) v
+    simpa [z, smul_eq_mul] using this
+  -- the key inequality on `G`
+  have hkey : ∀ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef → ∀ δ : ℝ, 0 < δ →
+      ∑ i, (traceInner (A i) X - b i) * z i + (traceInner C X - p + δ) * σ ≤ 0 := by
+    intro X hX δ hδ
+    have := hfG ((fun i => traceInner (A i) X - b i), traceInner C X - p + δ)
+      ⟨X, hX, fun i => rfl, by simp only; linarith⟩
+    rwa [hfrep] at this
+  have hσle : σ ≤ 0 := by
+    have h := hkey Xbar hXbar.posSemidef 1 one_pos
+    simp only [hXbarf, sub_self, zero_mul, Finset.sum_const_zero, zero_add] at h
+    have := hple Xbar hXbar.posSemidef hXbarf
+    by_contra hσ
+    push_neg at hσ
+    have : 0 < (traceInner C Xbar - p + 1) * σ := mul_pos (by linarith) hσ
+    linarith
+  have hσ : σ < 0 := by
+    refine lt_of_le_of_ne hσle fun hσ0 => ?_
+    have hz : ∀ u : Fin m → ℝ, ‖u‖ < r → ∑ i, u i * z i ≤ 0 := by
+      intro u hu
+      have := hfG _ (hball u hu (M - p + 1) (by linarith))
+      rwa [hfrep, hσ0, mul_zero, add_zero] at this
+    set s : ℝ := r / (2 * (‖z‖ + 1)) with hs
+    have hs0 : 0 < s := by positivity
+    have hsz : ‖s • z‖ < r := by
+      rw [norm_smul, Real.norm_eq_abs, abs_of_pos hs0, hs]
+      rw [div_mul_eq_mul_div, div_lt_iff₀ (by positivity)]
+      nlinarith [norm_nonneg z]
+    have h1 := hz _ hsz
+    simp only [Pi.smul_apply, smul_eq_mul, mul_assoc, ← Finset.mul_sum] at h1
+    have h2 : ∑ i, z i * z i ≤ 0 := by
+      by_contra h; push_neg at h; nlinarith [mul_pos hs0 h]
+    have hzz : ∀ i, z i = 0 := by
+      intro i
+      have h3 : ∑ j, z j * z j = 0 :=
+        le_antisymm h2 (Finset.sum_nonneg fun j _ => mul_self_nonneg _)
+      have := (Finset.sum_eq_zero_iff_of_nonneg fun j _ => mul_self_nonneg (z j)).1 h3 i
+        (Finset.mem_univ i)
+      exact mul_self_eq_zero.1 this
+    have := hf _ hint
+    rw [hf0, hfrep, hσ0] at this
+    simp [hzz] at this
+  -- the dual point
+  set ys : Fin m → ℝ := fun i => -z i / σ with hys
+  have hysum : ∀ v : Fin m → ℝ, ∑ i, v i * ys i = -(∑ i, v i * z i) / σ := by
+    intro v
+    rw [← Finset.sum_neg_distrib, Finset.sum_div]
+    refine Finset.sum_congr rfl fun i _ => ?_
+    simp only [hys]; ring
+  have hineq : ∀ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef →
+      p - ∑ i, b i * ys i ≤ traceInner (C - ∑ i, ys i • A i) X := by
+    intro X hX
+    set a := ∑ i, traceInner (A i) X * z i
+    set β := ∑ i, b i * z i
+    have hsplit : ∑ i, (traceInner (A i) X - b i) * z i = a - β := by
+      simp only [a, β, sub_mul, Finset.sum_sub_distrib]
+    have hQ : a - β + (traceInner C X - p) * σ ≤ 0 := by
+      by_contra hQ
+      push_neg at hQ
+      have hδ : 0 < (a - β + (traceInner C X - p) * σ) / (-2 * σ) :=
+        div_pos hQ (by linarith)
+      have := hkey X hX _ hδ
+      rw [hsplit] at this
+      have hσne : σ ≠ 0 := hσ.ne
+      have e : (a - β + (traceInner C X - p) * σ) / (-2 * σ) * σ =
+          -(a - β + (traceInner C X - p) * σ) / 2 := by
+        field_simp
+      rw [add_mul, e] at this
+      linarith
+    have h0 : 0 ≤ (a - β + (traceInner C X - p) * σ) / σ := div_nonneg_of_nonpos hQ hσ.le
+    rw [add_div, mul_div_cancel_right₀ _ hσ.ne, sub_div] at h0
+    rw [traceInner_slack]
+    have e1 : ∑ i, ys i * traceInner (A i) X = -a / σ := by
+      have := hysum fun i => traceInner (A i) X
+      rw [show -a / σ = ∑ i, traceInner (A i) X * ys i from this.symm]
+      exact Finset.sum_congr rfl fun i _ => mul_comm _ _
+    have e2 : ∑ i, b i * ys i = -β / σ := by rw [hysum, neg_div]
+    rw [e1, e2, neg_div, neg_div]
+    linarith
+  have hpys : p ≤ ∑ i, b i * ys i := by
+    have := hineq 0 PosSemidef.zero
+    simp [traceInner] at this
+    linarith
+  have hysfeas : (C - ∑ i, ys i • A i).PosSemidef := by
+    refine posSemidef_of_traceInner_nonneg (isHermitian_slack hA hC ys) fun X hX => ?_
+    by_contra hneg
+    push_neg at hneg
+    set d := p - ∑ i, b i * ys i
+    set sX := traceInner (C - ∑ i, ys i • A i) X
+    have hc : 0 < (|d| + 1) / (-sX) := div_pos (by positivity) (by linarith)
+    have := hineq _ (hX.smul hc.le)
+    rw [traceInner_smul_right] at this
+    have e : (|d| + 1) / (-sX) * sX = -(|d| + 1) := by
+      field_simp [hneg.ne]
+    rw [e] at this
+    have := neg_abs_le d
+    linarith
+  have hgap : ∀ ε : ℝ, 0 < ε → ∃ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef ∧
+      (∀ i, traceInner (A i) X = b i) ∧ traceInner C X < ∑ i, b i * ys i + ε := by
+    intro ε hε
+    obtain ⟨v, ⟨X, hX, hXf, rfl⟩, hv⟩ := exists_lt_of_csInf_lt hPne (lt_add_of_pos_right p hε)
+    exact ⟨X, hX, hXf, by linarith⟩
+  refine ⟨ys, hysfeas, fun y hy => ?_, hgap⟩
+  by_contra hlt
+  push_neg at hlt
+  obtain ⟨X, hX, hXf, hXv⟩ := hgap _ (sub_pos.2 hlt)
+  have := weak_duality A b C X y hX hXf _ hy (add_sub_cancel _ _)
+  linarith
+
+/-- **Linear independence gives surjectivity of the constraint map.** If the `Aᵢ` are linearly
+independent, every `v : Fin m → ℝ` is `(⟨Aᵢ, X⟩)ᵢ` for some `X`.  (A nonzero functional
+`z` killing the range would give `⟨Σ zᵢ Aᵢ, X⟩ = 0` for all `X`; taking `X = (Σ zᵢ Aᵢ)ᵀ`
+forces `Σ zᵢ Aᵢ = 0`, hence `z = 0`.) -/
+theorem surjective_of_linearIndependent (A : Fin m → Matrix (Fin n) (Fin n) ℝ)
+    (hli : LinearIndependent ℝ A) :
+    ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i := by
+  let T : Matrix (Fin n) (Fin n) ℝ →ₗ[ℝ] (Fin m → ℝ) :=
+    LinearMap.fst ℝ (Fin m → ℝ) ℝ ∘ₗ constraintMap A 0
+  have htop : LinearMap.range T = ⊤ := by
+    by_contra hne
+    obtain ⟨f, hf0, hf⟩ :=
+      Submodule.exists_dual_map_eq_bot_of_lt_top (lt_top_iff_ne_top.2 hne) inferInstance
+    let z : Fin m → ℝ := fun i => f (fun j => if i = j then 1 else 0)
+    have hfrep : ∀ v : Fin m → ℝ, f v = ∑ i, v i * z i := by
+      intro v
+      simpa [z, smul_eq_mul] using LinearMap.pi_apply_eq_sum_univ f v
+    have hzero : ∀ X : Matrix (Fin n) (Fin n) ℝ, ∑ i, traceInner (A i) X * z i = 0 := by
+      intro X
+      have hmem : f (T X) ∈ (LinearMap.range T).map f := ⟨T X, ⟨X, rfl⟩, rfl⟩
+      rw [hf, Submodule.mem_bot, hfrep] at hmem
+      exact hmem
+    set N := ∑ i, z i • A i with hNdef
+    have hN : (N * Nᴴ).trace = 0 := by
+      have h1 : traceInner N Nᵀ = 0 := by
+        rw [hNdef, traceInner_finset_sum_left]
+        simp only [traceInner_smul_left]
+        rw [← hzero (∑ i, z i • A i)ᵀ]
+        exact Finset.sum_congr rfl fun i _ => mul_comm _ _
+      simpa [traceInner, conjTranspose_eq_transpose_of_trivial] using h1
+    have hN0 : N = 0 := trace_mul_conjTranspose_self_eq_zero_iff.1 hN
+    have hz := Fintype.linearIndependent_iff.1 hli z hN0
+    apply hf0
+    refine LinearMap.ext fun v => ?_
+    rw [hfrep]
+    simp [hz]
+  intro v
+  obtain ⟨X, hX⟩ := (LinearMap.range_eq_top.1 htop) v
+  exact ⟨X, fun i => congrFun hX i⟩
+
+/-- **Primal-dual optimal pair under two-sided Slater.** For symmetric data with linearly
+independent (or, as stated, onto) constraints, a positive-definite primal-feasible point and
+a positive-definite dual slack, there are a primal optimum `Xs` and a dual optimum `ys` with
+equal objective values; complementary slackness `⟨C - Σ ysᵢ Aᵢ, Xs⟩ = 0` follows. -/
+theorem exists_optimal_pair (A : Fin m → Matrix (Fin n) (Fin n) ℝ) (b : Fin m → ℝ)
+    (C : Matrix (Fin n) (Fin n) ℝ) (hA : ∀ i, (A i).IsHermitian) (hC : C.IsHermitian)
+    (hsurj : ∀ v : Fin m → ℝ, ∃ X : Matrix (Fin n) (Fin n) ℝ, ∀ i, traceInner (A i) X = v i)
+    (hpslater : ∃ Xbar : Matrix (Fin n) (Fin n) ℝ, Xbar.PosDef ∧ ∀ i, traceInner (A i) Xbar = b i)
+    (hdslater : ∃ ybar : Fin m → ℝ, (C - ∑ i, ybar i • A i).PosDef) :
+    ∃ (Xs : Matrix (Fin n) (Fin n) ℝ) (ys : Fin m → ℝ),
+      Xs.PosSemidef ∧ (∀ i, traceInner (A i) Xs = b i) ∧
+      (C - ∑ i, ys i • A i).PosSemidef ∧
+      traceInner C Xs = ∑ i, b i * ys i ∧
+      traceInner (C - ∑ i, ys i • A i) Xs = 0 ∧
+      (∀ X : Matrix (Fin n) (Fin n) ℝ, X.PosSemidef → (∀ i, traceInner (A i) X = b i) →
+        traceInner C Xs ≤ traceInner C X) ∧
+      (∀ y : Fin m → ℝ, (C - ∑ i, y i • A i).PosSemidef → ∑ i, b i * y i ≤ ∑ i, b i * ys i) := by
+  obtain ⟨Xbar, hXbar, hXbarf⟩ := hpslater
+  obtain ⟨ybar, hyb⟩ := hdslater
+  obtain ⟨Xs, hXs, hXsf, hopt⟩ :=
+    exists_primal_optimum A b C ⟨Xbar, hXbar.posSemidef, hXbarf⟩ ⟨ybar, hyb⟩
+  obtain ⟨ys, hys, hysopt, hgap⟩ := strong_duality_of_primal_slater A b C hA hC hsurj
+    ⟨Xbar, hXbar, hXbarf⟩ ⟨ybar, hyb.posSemidef⟩
+  have heq : traceInner C Xs = ∑ i, b i * ys i := by
+    refine le_antisymm ?_ (weak_duality A b C Xs ys hXs hXsf _ hys (add_sub_cancel _ _))
+    by_contra h
+    push_neg at h
+    obtain ⟨X, hX, hXf, hXv⟩ := hgap _ (sub_pos.2 h)
+    have := hopt X hX hXf
+    linarith
+  refine ⟨Xs, ys, hXs, hXsf, hys, heq, ?_, hopt, hysopt⟩
+  rw [traceInner_slack, heq]
+  simp only [hXsf, sub_eq_zero]
+  exact Finset.sum_congr rfl fun i _ => mul_comm _ _
+
+/-! ## The `HasStrongDuality` carrier of `QOU.MathlibExt.SDP`
+
+`QOU.MathlibExt.SDP.HasStrongDuality sdp h` asks for a primal-dual optimal pair from
+primal strict feasibility `h` **alone**.  That is false in general, already at `R = ℝ`:
+`unboundedSDP` below (minimise `-x` over `x ⪰ 0`, `1 × 1`, no constraints) is primally
+strictly feasible, unbounded below, and has no dual-feasible point, so it admits no
+`StrongDualityPair` (`not_hasStrongDuality_unboundedSDP`).  The missing hypothesis is
+(at least) dual feasibility; and with dual feasibility but no dual Slater point the primal
+optimum may fail to be attained, so the honest sufficient condition proved here is
+two-sided Slater plus linearly independent constraints (`hasStrongDuality_of_slater`). -/
+
+section MathlibExtBridge
+open QOU.MathlibExt.SDP
+
+/-- **`HasStrongDuality` from two-sided Slater.** For a real SDP with symmetric cost and
+constraints, linearly independent constraints, a positive-definite feasible point `h`, and
+a positive-definite dual slack, the class `HasStrongDuality sdp h` holds.  (Not an
+`instance`: its extra hypotheses are not classes.) -/
+theorem hasStrongDuality_of_slater (sdp : SDPPrimal n ℝ (Fin m)) (h : sdp.IsStrictlyFeasible)
+    (hA : ∀ i, (sdp.constraint i).IsHermitian) (hC : sdp.cost.IsHermitian)
+    (hli : LinearIndependent ℝ sdp.constraint)
+    (hdslater : ∃ ybar : Fin m → ℝ, (sdp.dualSlack ybar).PosDef) :
+    HasStrongDuality sdp h := by
+  obtain ⟨Xbar, hXbar, hXbarf⟩ := id h
+  obtain ⟨Xs, ys, hXs, hXsf, hys, heq, -, -, -⟩ :=
+    exists_optimal_pair sdp.constraint sdp.rhs sdp.cost hA hC
+      (surjective_of_linearIndependent _ hli) ⟨Xbar, hXbar, hXbarf⟩ hdslater
+  refine ⟨⟨StrongDualityPair.mk Xs ys (And.intro hXs hXsf) hys ?_⟩⟩
+  show traceInner sdp.cost Xs = ∑ i, ys i * sdp.rhs i
+  rw [heq]
+  exact Finset.sum_congr rfl fun i _ => mul_comm _ _
+
+/-- Minimise `⟨-1, X⟩ = -x` over `1 × 1` PSD `X = (x)`, with no equality constraints. -/
+def unboundedSDP : SDPPrimal 1 ℝ (Fin 0) where
+  cost := -1
+  constraint := fun i => i.elim0
+  rhs := fun i => i.elim0
+
+theorem unboundedSDP_strictlyFeasible : unboundedSDP.IsStrictlyFeasible :=
+  ⟨1, PosDef.one, fun i => i.elim0⟩
+
+/-- `unboundedSDP` is unbounded below. -/
+theorem unboundedSDP_unbounded (t : ℝ) :
+    ∃ Φ : Matrix (Fin 1) (Fin 1) ℝ, unboundedSDP.IsFeasible Φ ∧ unboundedSDP.objAt Φ < t := by
+  refine ⟨(|t| + 1) • (1 : Matrix (Fin 1) (Fin 1) ℝ),
+    ⟨PosSemidef.one.smul (by positivity), fun i => i.elim0⟩, ?_⟩
+  simp only [SDPPrimal.objAt, unboundedSDP, neg_mul, one_mul, trace_neg, trace_smul,
+    trace_one, Fintype.card_fin, Nat.cast_one, smul_eq_mul, mul_one]
+  linarith [neg_abs_le t]
+
+/-- **`HasStrongDuality` is false as stated**: primal strict feasibility alone does not
+yield a strong-duality pair. -/
+theorem not_hasStrongDuality_unboundedSDP :
+    ¬ HasStrongDuality unboundedSDP unboundedSDP_strictlyFeasible := by
+  intro H
+  obtain ⟨p⟩ := H.pair
+  have h := p.dual_feas.2 (fun _ => 1)
+  simp [SDPPrimal.dualSlack, unboundedSDP] at h
+  simp [dotProduct, Matrix.neg_mulVec, Matrix.one_mulVec] at h
+  linarith
+
+theorem not_forall_hasStrongDuality :
+    ¬ ∀ (sdp : SDPPrimal 1 ℝ (Fin 0)) (h : sdp.IsStrictlyFeasible), HasStrongDuality sdp h :=
+  fun H => not_hasStrongDuality_unboundedSDP (H _ _)
+
+end MathlibExtBridge
 
 end QOU.Mathlib.SDPStrongDuality
