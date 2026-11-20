@@ -95,6 +95,26 @@
       "tension_reduction_pct": "0.0"
     },
     {
+      "candidate": "RULED covariant all-pairs, derived qtrace weighting: M_p^QED = 0",
+      "M_p_QED_MeV": "0.0",
+      "M_p_QED_over_me": "0.0",
+      "q_proton_new": "1.1099785827513808076",
+      "dq_vs_qmuon_ppb": "-11.61406",
+      "m_mu_pred_err_ppb": "211.20586",
+      "m_mu_pred_err_sigma": "9.49362",
+      "tension_reduction_pct": "0.0"
+    },
+    {
+      "candidate": "Option 1 (unscored): adjacent, derived qtrace weighting: +m_e*|q tr_adj(p)/[2]^3| [= +0.090124 keV]",
+      "M_p_QED_MeV": "9.012425727e-5",
+      "M_p_QED_over_me": "0.0001763687717",
+      "q_proton_new": "1.1099785878291222658",
+      "dq_vs_qmuon_ppb": "-7.0394301",
+      "m_mu_pred_err_ppb": "128.01456",
+      "m_mu_pred_err_sigma": "5.75421",
+      "tension_reduction_pct": "39.3887"
+    },
+    {
       "candidate": "Exact gap target -(m_p^QCD(q_mu) - m_p^exp) [reference only]",
       "M_p_QED_MeV": "0.0002288072306",
       "M_p_QED_over_me": "0.0004477645801",
@@ -267,6 +287,30 @@
       "c3_emp_convD_proton": "-971.49743",
       "c3_emp_convD_muon": "-971.44769",
       "c3_swing_pct": "0.00511982"
+    },
+    {
+      "qed_candidate": "RULED covariant all-pairs, derived qtrace: Delta m = 0",
+      "dm_QED_MeV": "0.0",
+      "Q_N2_plus_QED_MeV": "0.78280471",
+      "Q_N2_plus_QED_err_ppm": "600.618",
+      "Q_QCD_target_MeV": "0.78233483",
+      "c2_emp_convD_proton": "-9.2738712",
+      "c2_swing_pct": "0.00454887",
+      "c3_emp_convD_proton": "-971.49743",
+      "c3_emp_convD_muon": "-971.44769",
+      "c3_swing_pct": "0.00511982"
+    },
+    {
+      "qed_candidate": "Option 1 (unscored): adjacent conn, derived qtrace: -m_e*(q^-1 tr_n - q tr_p)_conn/[2]^3",
+      "dm_QED_MeV": "-0.0001272243",
+      "Q_N2_plus_QED_MeV": "0.78267749",
+      "Q_N2_plus_QED_err_ppm": "437.997",
+      "Q_QCD_target_MeV": "0.78246205",
+      "c2_emp_convD_proton": "-7.0336654",
+      "c2_swing_pct": "0.00599957",
+      "c3_emp_convD_proton": "-708.45802",
+      "c3_emp_convD_muon": "-708.40832",
+      "c3_swing_pct": "0.00701507"
     },
     {
       "qed_candidate": "DERIVED-Bor-V3-Conn (plain): -m_e * Delta tr_conn(V^3)",
