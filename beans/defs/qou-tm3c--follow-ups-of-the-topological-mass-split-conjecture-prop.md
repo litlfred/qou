@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-20T09:10:00Z
-updated_at: 2026-11-20T18:00:00Z
+updated_at: 2026-11-20T19:00:00Z
 parent: qou-ncxf
 ---
 
@@ -67,3 +67,8 @@ Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMass
     - docstring mentions of the old label in 3 compute files;
     - the leftover `thm:topological-mass` mentions from item 2;
     - 99 remaining §3b violators with real conjecture dependencies; 47 of them go through `conj:nuclear-knot-classification`.
+- **2026-11-20 19:00, PR #8647.** The one provable edge into `conj:nuclear-knot-classification` (from `prop:confined-knot-binding`) was not used by the block's text. Cutting it took §3b violators on main from 99 to 79, with 0 new.
+  - **The conjecture itself has two problems, noted for the owner and not acted on:**
+    - its `.md` (a pair-product modifier of the Bethe–Weizsäcker energy) and its `.lean` (knot type by `A`, a theorem that only unfolds a definition) state different things;
+    - modifying the semi-empirical formula is fit-adjacent under the NO-FITTING rule.
+  - **Remaining direct conjecture edges, read:** most are real dependencies stated in each block's `.ts` comments, for example "conditional on conj:crystal-graph-realization" and "reframing of conj:e-hartree". So the remaining 79 are mostly genuine. Clearing them means a per-conjecture owner decision: demote the dependent, or use a §3b-cond class.
