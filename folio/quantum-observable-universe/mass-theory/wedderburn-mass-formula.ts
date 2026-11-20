@@ -3,6 +3,7 @@ import { theorem } from "../../schema/builders";
 export default theorem({
   label: "thm:wedderburn-mass-formula",
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): the quantum 3-integer   ([degree-2 weight](#prop:degree-two-baryon-weight)),*" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([degree-2 weight](#prop:degree-two-baryon-weight))" },
   ],
   title: "Three-invariant atomic mass formula",

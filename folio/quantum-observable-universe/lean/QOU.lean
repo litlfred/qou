@@ -454,6 +454,7 @@ import QOU.Mass.WStdSuperExponential
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
+import QOU.Mass.WedderburnMassFormulaCoefficients
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
 import QOU.Mass.MilnorSignRepObstruction
@@ -1765,6 +1766,7 @@ import QOU.Mass.BridgeADeligneKZ
 import QOU.QBeta.BorromeanThreeCuspNZHessian
 import QOU.QBeta.McPhailSnyderBridgeExclusion
 import QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm
+import QOU.BraidsAndKnots.NucleonWeightSpaceQTrace
 import QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace
 import QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge
 import QOU.MassTheory.GPMTThreeRowCumulantBridge

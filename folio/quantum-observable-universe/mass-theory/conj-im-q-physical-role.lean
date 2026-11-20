@@ -43,8 +43,9 @@ so the class is not satisfied by everything.
 
 namespace QOU.BraidKnot
 
-/-- The default substrate convention sets `Im(q) = 0`. -/
-noncomputable def default_q_real (q_real : ℝ) : ℂ := (q_real : ℂ)
+/-- The default real-axis projection of the complex substrate parameter `q : ℂ`,
+    discarding `Im(q)` so that `Im(default_q_real q) = 0` (bean `qreal`). -/
+noncomputable def default_q_real (q : ℂ) : ℂ := ((q.re : ℝ) : ℂ)
 
 /-- Under modulus projection (categorical mass formula), a mass observable
     `m(q) = |F(q)|` is invariant under `q ↦ q̄` for any conjugation-equivariant

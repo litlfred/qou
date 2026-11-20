@@ -93,6 +93,8 @@ from alpha_blend_tower import (  # noqa: E402
 )
 from experimental_constants import M_P_MEV, M_N_MEV, M_E_MEV  # noqa: E402
 from codata_constants import M_D_ATOMIC_MEV_VALIDATION  # noqa: E402  (AME registry)
+from per_irrep_pole_atom import parts_of  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 H = Q0 - QI  # h = q - q^-1, the Hecke parameter of Table 1
 
@@ -250,6 +252,101 @@ def main() -> int:
         print("     It does NOT license a closure ansatz for the residual;")
         print("     the many-body magnitude is the documented Delta_lambda gap")
         print("     (AGENTS.md: no seventh fit-based ansatz).")
+
+    # Structural domain-constraint checks (bean qou-1jw9 / Lean
+    # QOU.WedderburnMass & QOU.Mass.WedderburnMassFormulaCoefficients):
+    # (1) Extremal blocks {[n], [n-1,1], [1^n]} exhaust p(n) iff n <= 3.
+    partition_domain_table = {}
+    for n_val in range(1, 7):
+        parts = [tuple(p) for p in parts_of(n_val)]
+        extremal_set = {
+            (n_val,),
+            (n_val - 1, 1) if n_val >= 2 else (1,),
+            tuple([1] * n_val),
+        }
+        non_extremal = [list(p) for p in parts if p not in extremal_set]
+        partition_domain_table[str(n_val)] = {
+            "p_n": len(parts),
+            "extremal_count": len(extremal_set),
+            "non_extremal_count": len(non_extremal),
+            "non_extremal_partitions": non_extremal,
+            "exhausted_by_extremal": len(non_extremal) == 0,
+        }
+
+    # (2) Adjacent-chain bridge count (A - 1) vs all-pairs count A*(A - 1)//2.
+    pair_growth_table = {}
+    for A_val in range(2, 7):
+        adj = A_val - 1
+        all_p = A_val * (A_val - 1) // 2
+        pair_growth_table[str(A_val)] = {
+            "adjacent_chain_pairs": adj,
+            "all_pairs": all_p,
+            "deficit": all_p - adj,
+        }
+
+    # (3) Exact algebraic identity 2*beta_3 + beta_2 + 6 == 0.
+    beta2_canonical = -2 * BRACKET_3Q
+    beta3_canonical = H_A ** 2
+    coeff_identity_residual = abs(2 * beta3_canonical + beta2_canonical + 6)
+
+    wb = WitnessBuilder("wedderburn-mi-constructor-test", engine="python+mpmath")
+    wb.set_description(
+        "Bean qou-1jw9 diagnostic & domain-constraint probe for "
+        "thm:wedderburn-mass-formula: evaluates all 8 (ordering x reading) "
+        "cells of the 2x2 transfer-matrix constructor M_i on deuterium (n=3), "
+        "verifies the Lean-proved domain constraints (extremal blocks exhaust "
+        "p(n) iff n <= 3; adjacent-chain A-1 < A(A-1)/2 for A >= 3; "
+        "2*beta_3 + beta_2 + 6 == 0), and records the spec-selected residual."
+    )
+    wb.add_assertion(
+        "extremal_blocks_exhaust_partitions_iff_n_le_3",
+        computed=(
+            all(partition_domain_table[str(k)]["exhausted_by_extremal"] for k in (1, 2, 3))
+            and all(not partition_domain_table[str(k)]["exhausted_by_extremal"] for k in (4, 5, 6))
+            and partition_domain_table["4"]["non_extremal_count"] == 2
+        ),
+        expected=True,
+        source="p(1)=1, p(2)=2, p(3)=3 exhausted; p(4)=5 has 2 non-extremal blocks [2,2], [2,1,1]",
+    )
+    wb.add_assertion(
+        "adjacent_chain_vs_all_pairs_growth_constraint",
+        computed=(
+            pair_growth_table["2"]["deficit"] == 0
+            and all(pair_growth_table[str(A_val)]["deficit"] > 0 for A_val in range(3, 7))
+        ),
+        expected=True,
+        source="A-1 == A(A-1)/2 at A=2 and A-1 < A(A-1)/2 for all A >= 3",
+    )
+    wb.add_assertion(
+        "beta2_beta3_linear_dependency_identity_holds",
+        computed=(coeff_identity_residual < mp.mpf("1e-48")),
+        expected=True,
+        source=f"|2*beta_3 + beta_2 + 6| = {mp.nstr(coeff_identity_residual, 6)}",
+    )
+    wb.add_assertion(
+        "deuterium_n3_all_8_constructor_readings_miss_target_by_gt_50_pct",
+        computed=(lo[7] > mp.mpf("50") and rel > mp.mpf("200") and sign_ok and not exact),
+        expected=True,
+        source=(
+            f"spec-selected residual={mp.nstr(rel, 6)}%, "
+            f"grid range=[{mp.nstr(lo[7], 6)}%, {mp.nstr(hi[7], 6)}%]"
+        ),
+    )
+    wb.add_data("q_0_50dps", mp.nstr(Q0, 50))
+    wb.add_data("spec_selected", {
+        "ordering": "-".join(strands),
+        "reading": reading,
+        "Phi_1": mp.nstr(p1, 30),
+        "Phi_2": mp.nstr(p2, 30),
+        "Phi_3": mp.nstr(p3, 30),
+        "predicted_corr_MeV": mp.nstr(corr, 30),
+        "target_corr_MeV": mp.nstr(target_corr, 30),
+        "residual_MeV": mp.nstr(resid, 30),
+        "relative_error_pct": mp.nstr(rel, 15),
+    })
+    wb.add_data("partition_domain_table", partition_domain_table)
+    wb.add_data("pair_growth_table", pair_growth_table)
+    wb.save()
     return 0
 
 

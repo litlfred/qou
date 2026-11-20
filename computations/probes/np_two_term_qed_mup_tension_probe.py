@@ -23,6 +23,11 @@ for Bean qou-eas4 (Epic qou-9pl8):
 from __future__ import annotations
 
 import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
+import sys as _sys_tt
+from pathlib import Path as _Path_tt
+_sys_tt.path.insert(0, str(_Path_tt(__file__).resolve().parents[1]))
+import two_term_qtrace_weighting as _ttq  # noqa: E402  (derived weighting, PR #8591)
+
 import json
 import sys
 from pathlib import Path
@@ -646,6 +651,12 @@ def main() -> int:
 
     mp_qed_candidates = [
         ("Baseline (no QED correction, M_p^QED = 0)", mp.mpf(0)),
+        # RULED 2026-11-20 16:44 (owner): covariant all-pairs insertion, derived quantum-trace weighting.
+        # Q12+Q23+Q13 = 0 on W_p, so M_p^QED = 0 (= the baseline row). Lean deltaT_allPairs_connected_eq_zero.
+        ("RULED covariant all-pairs, derived qtrace weighting: M_p^QED = 0",
+         _ttq.m_p_qed_conn_mev(q_proton, m_e_mev)),
+        ("Option 1 (unscored): adjacent, derived qtrace weighting: +m_e*|q tr_adj(p)/[2]^3| [= +0.090124 keV]",
+         _ttq.m_p_qed_conn_mev(q_proton, m_e_mev, "derived", "adjacent")),
         ("Exact gap target -(m_p^QCD(q_mu) - m_p^exp) [reference only]", -delta_mp_mev),
         # PRIMARY BORROMEAN (selection, not derived; issue #8524) V^3 CONNECTED 4TH-ORDER TRACE (NucleonWeightSpaceTwoTerm.lean)
         ("DERIVED-Bor-V3 (plain): +m_e * |tr_conn(p, V^3)| [= +0.220077 keV]", +m_e_mev * abs(tr_conn_Bor_p_val)),
@@ -798,6 +809,10 @@ def main() -> int:
 
         qed_cands = {
             "QED-0 (none = 0)": mp.mpf(0),
+            # RULED 2026-11-20 16:44: covariant all-pairs, derived weighting; connected part 0 on V^3.
+            "RULED covariant all-pairs, derived qtrace: Delta m = 0": _ttq.delta_m_qed_conn_mev(q, m_e_mev),
+            "Option 1 (unscored): adjacent conn, derived qtrace: -m_e*(q^-1 tr_n - q tr_p)_conn/[2]^3":
+                _ttq.delta_m_qed_conn_mev(q, m_e_mev, "derived", "adjacent"),
             # PRIMARY BORROMEAN (selection, not derived; issue #8524) V^3 TRACES (NucleonWeightSpaceTwoTerm.lean)
             "DERIVED-Bor-V3-Conn (plain): -m_e * Delta tr_conn(V^3)": -m_e_mev * diff_conn_V3_norm,
             "DERIVED-Bor-V3-Conn (K_n/K_p-wt): -m_e * (q^-1 tr_n - q tr_p)_conn": -m_e_mev * diff_conn_V3_KnKp_norm,

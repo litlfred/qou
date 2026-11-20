@@ -97,20 +97,35 @@ class DressedMassSubstrateSplit
       `lem:pair-skein-mass-formula`, pending Lean formalisations of both. -/
   split : F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q
 
+/-- **Classical limit at `q = 1` (proved):** the substrate splitting factor
+    `substrate_split_factor q` vanishes identically at `q = 1` because of the
+    `(q - 1)^2` prefactor. -/
+theorem substrate_split_factor_at_one :
+    substrate_split_factor 1 = 0 := by
+  unfold substrate_split_factor
+  norm_num
+
+/-- **Rearranged dressed down-quark mass identity (proved):** under
+    `[DressedMassSubstrateSplit F M_N q]`, the down-quark dressed mass equals
+    the up-quark dressed mass plus `M_N * substrate_split_factor q`. -/
+theorem dressed_mass_down_eq_up_add_split
+    (F : FlavorDressingFunctor) (M_N q : ℝ)
+    [h : DressedMassSubstrateSplit F M_N q] :
+    F.μ Flavor.down = F.μ Flavor.up + M_N * substrate_split_factor q := by
+  linarith [h.split]
+
 /-- **Substrate-pure derivation of the dressed-quark mass
     splitting.**  Combines `prop:flavor-split-substrate` (substrate
     side) with `lem:pair-skein-mass-formula` (Skein side) to
-    express `μ_d − μ_u` in terms of `M_N` and `q` alone.
+    express `μ_d − μ_u` and `μ_d` in terms of `M_N` and `q` alone.
 
-    Statement: under positive nucleon-mass scale `M_N` and substrate
-    parameter `q > 1`, the equality
-
-      `μ_d − μ_u = M_N · substrate_split_factor q`
-
-    holds (up to the `O((Δm/M_N)²)` correction absorbed in the
-    Skein-side identity), **conditional on** the named hypothesis
-    `DressedMassSubstrateSplit F M_N q`, which is where the two
-    unformalised upstream lemmas enter.
+    **Assumed, not derived here:** the closed-form splitting
+    `F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q` is
+    carried as the `split` field of the explicit `[DressedMassSubstrateSplit F M_N q]`
+    hypothesis class (pending Lean formalisations of `prop:flavor-split-substrate`
+    and `lem:pair-skein-mass-formula`); this theorem pairs `h.split` with the
+    derived additive decomposition `dressed_mass_down_eq_up_add_split`
+    (bean `qou-bvo3`).
 
     Not a tautology (the original Gemini #696 finding): the conclusion
     is a substantive equality drawn from the hypothesis class. Not
@@ -122,9 +137,9 @@ class DressedMassSubstrateSplit
 theorem dressed_mass_from_substrate_split
     (F : FlavorDressingFunctor) (M_N q : ℝ)
     [h : DressedMassSubstrateSplit F M_N q] :
-    F.μ Flavor.down - F.μ Flavor.up
-      = M_N * substrate_split_factor q :=
-  h.split
+    F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q ∧
+    F.μ Flavor.down = F.μ Flavor.up + M_N * substrate_split_factor q := by
+  exact ⟨h.split, dressed_mass_down_eq_up_add_split F M_N q⟩
 
 
 /-! ### Removed 2026-08-30 — self-assuming projections

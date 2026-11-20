@@ -61,6 +61,16 @@ def conn(s, pairs, subtract_static=True):
     return sp.factor(sp.simplify((O * V3[s]).trace() / 3))
 
 
+def conn_derived(s, pairs):
+    """Derived quantum-trace weighting (PR #8591): K^{⊗3} = q on W_p, q⁻¹ on W_n, normalised by [2]_q³."""
+    O = sp.zeros(3)
+    for k in pairs:
+        O += Q[s][k]
+    O = O - (O.trace() / 3) * sp.eye(3)
+    k = q if s == "p" else 1 / q
+    return sp.factor(sp.simplify(k * (O * V3[s]).trace() / (q + 1 / q) ** 3))
+
+
 def at_q0(expr):
     return mp.mpf(sp.N(expr.subs(q, sp.Float(str(Q_MP), 70)), 70))
 
@@ -75,6 +85,15 @@ def main():
         rows[name] = {"t_p": str(tp), "t_n": str(tn), "M_p_keV": mp.nstr(Mp_keV, 25),
                       "Delta_m_keV": mp.nstr(dm_keV, 25)}
         print(f"{name:26s} M_p = {mp.nstr(Mp_keV, 8):>12s} keV   Delta_m = {mp.nstr(dm_keV, 8):>12s} keV", flush=True)
+
+    derived = {}
+    for name, pairs in CHOICES:
+        tp, tn = conn_derived("p", pairs), conn_derived("n", pairs)
+        derived[name] = {"t_p": str(tp), "t_n": str(tn),
+                         "M_p_keV": mp.nstr(me * abs(at_q0(tp)) * 1000, 25),
+                         "Delta_m_keV": mp.nstr(-me * at_q0(sp.simplify(tn - tp)) * 1000, 25)}
+        print(f"{'[derived] ' + name:36s} M_p = {derived[name]['M_p_keV'][:12]:>12s} keV   "
+              f"Delta_m = {derived[name]['Delta_m_keV'][:12]:>12s} keV", flush=True)
 
     tp_raw, tn_raw = conn("p", CHOICES[1][1], False), conn("n", CHOICES[1][1], False)
     dm_raw = -me * at_q0(sp.simplify(tn_raw - tp_raw)) * 1000
@@ -93,8 +112,8 @@ def main():
     checks.append(("C2_published_choice_matches_Lean_closed_forms",
                    sp.simplify(tp - lean_p) == 0 and sp.simplify(tn - tp - lean_d) == 0,
                    "trace_QAdjp_borromeanV3, trace_QAdj_connected_diff_borromeanV3"))
-    cm_Mp = mp.mpf(str(proton_qed_self_energy_borromean_mev())) * 1000
-    cm_dm = mp.mpf(str(np_qed_splitting_borromean_conn_mev("plain"))) * 1000
+    cm_Mp = mp.mpf(str(proton_qed_self_energy_borromean_mev("plain", insertion="adjacent"))) * 1000
+    cm_dm = mp.mpf(str(np_qed_splitting_borromean_conn_mev("plain", insertion="adjacent"))) * 1000
     checks.append(("C3_reproduces_canonical_mass_figures",
                    abs(cm_Mp - mp.mpf(rows[pub]["M_p_keV"])) < mp.mpf("1e-18")
                    and abs(cm_dm - mp.mpf(rows[pub]["Delta_m_keV"])) < mp.mpf("1e-18"),
@@ -107,6 +126,17 @@ def main():
     checks.append(("C5_M_p_spread_over_left_out_pair", max(mps) / min(mps) > 5,
                    f"max/min = {mp.nstr(max(mps) / min(mps), 6)}"))
 
+    checks.append(("C6_derived_weighting_all_pairs_connected_is_zero",
+                   derived[none]["t_p"] == "0" and derived[none]["t_n"] == "0",
+                   "ruled scored object (owner 2026-11-20 16:44) is 0 on V^3"))
+    cmd_Mp = mp.mpf(str(proton_qed_self_energy_borromean_mev(insertion="adjacent"))) * 1000
+    cmd_dm = mp.mpf(str(np_qed_splitting_borromean_conn_mev(insertion="adjacent"))) * 1000
+    cmc = (mp.mpf(str(proton_qed_self_energy_borromean_mev())), mp.mpf(str(np_qed_splitting_borromean_conn_mev())))
+    checks.append(("C7_derived_adjacent_and_ruled_match_canonical_mass",
+                   abs(cmd_Mp - mp.mpf(derived[pub]["M_p_keV"])) < mp.mpf("1e-18")
+                   and abs(cmd_dm - mp.mpf(derived[pub]["Delta_m_keV"])) < mp.mpf("1e-18")
+                   and cmc == (0, 0),
+                   f"adjacent derived M_p {mp.nstr(cmd_Mp, 12)} keV, Delta_m {mp.nstr(cmd_dm, 12)} keV; ruled (0, 0)"))
     ok = all(c[1] for c in checks)
     for n, g, s in checks:
         print(("PASS " if g else "FAIL ") + n + ": " + s)
@@ -118,8 +148,12 @@ def main():
         "q0AnchorReason": "same q_parameter.Q_MP as canonical_mass",
         "description": "PROBE (issue #8524, bean qou-99qc): the 'connected' two-term QED term evaluated for each "
                        "choice of left-out quark pair. With no pair left out it is identically zero; the published "
-                       "+0.220 keV / -0.332 keV come from leaving out pair 1-3. Nothing fitted or scored.",
+                       "+0.220 keV / -0.332 keV come from leaving out pair 1-3 under the 1/3-normalised "
+                       "'plain' weighting. `results_derived_qtrace_weighting` repeats every choice with the "
+                       "derived Tr(K^{⊗3}·)/[2]_q³ weighting (PR #8591). Nothing fitted or scored.",
         "results": rows,
+        "results_derived_qtrace_weighting": derived,
+        "scored": "owner ruling 2026-11-20 16:44: covariant all-pairs ('none left out'), derived weighting = 0",
     })
     return 0 if ok else 1
 
