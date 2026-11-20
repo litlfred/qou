@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-11-20T18:00:00Z
+updated_at: 2026-11-20T19:30:00Z
 parent: qou-v2om
 ---
 
@@ -1040,3 +1040,7 @@ Was in-progress with no bean update since 2026-09-13 and no main commit naming i
 - Naive photon-exchange double sum D is not braid-covariant (shifts by −(Q0Q1)² under σ1σ1⁻¹); its completion S²/2 = 0 on V³.
 - No degree≤2 (order-α) charge weight couples to μ̄₁₂₃ (`quad_alternating_eq_zero`). The even degree-4 c₃ μ̄² term remains the only braid-dependent survivor; c₃ still underived.
 - Joint pin (scope (a), conditional on α_em form B): α_em pins q0 +0.053 ppb from the proton identity, the muon identity +11.614 ppb. A proton-only term reaching m_μ sends α⁻¹ to +79.00 ppb. So no proton-side term (derived or not) satisfies m_μ and α_em together; the evidence points at the muon carrier (qou-6gf9).
+
+---
+
+**2026-11-20 (PR #8565). DERIVED within the central-U(1) colouring class with blackboard framing, so k1 = k2 = 0.** The U(1)-coloured V³ trace is charge-independent (u1Trace_borromean). Self-writhe is 0 per component (selfW_borromean), which kills the ribbon twist θ^{Q²w}, and the q-dimension of a 1-dim U(1) irrep is 1. A nonzero k1 needs a framing choice (a choice, not a derivation) or a self-energy from outside this class (non-central coupling). Status kept todo.

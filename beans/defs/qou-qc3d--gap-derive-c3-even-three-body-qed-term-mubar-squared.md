@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T09:05:12Z
-updated_at: 2026-11-20T18:00:00Z
+updated_at: 2026-11-20T19:30:00Z
 parent: qou-7xl8
 ---
 
@@ -29,3 +29,7 @@ Also open: the wide-class classification is measured at q = 2 only.
 - Naive photon-exchange double sum D is not braid-covariant (shifts by −(Q0Q1)² under σ1σ1⁻¹); its completion S²/2 = 0 on V³.
 - No degree≤2 (order-α) charge weight couples to μ̄₁₂₃ (`quad_alternating_eq_zero`). The even degree-4 c₃ μ̄² term remains the only braid-dependent survivor; c₃ still underived.
 - Joint pin (scope (a), conditional on α_em form B): α_em pins q0 +0.053 ppb from the proton identity, the muon identity +11.614 ppb. A proton-only term reaching m_μ sends α⁻¹ to +79.00 ppb. So no proton-side term (derived or not) satisfies m_μ and α_em together; the evidence points at the muon carrier (qou-6gf9).
+
+---
+
+**2026-11-20 (PR #8565, commits c965b8d070..405cec8b92). DERIVED within the central-U(1) colouring class, so c3 = 0.** QEDHigherOrderCovariance §U: the U(1)-coloured trace of V³ (per-letter t^{eQaQb}, ribbon twist θ^{Q²w}) equals tr(V³) for every t, θ and integer charge assignment (u1Trace_borromean, sorry-free). V³ is pure and every self-writhe is 0. §K: for an invariant form, a trivalent vertex with a central leg, or with all three legs along one direction, has weight 0, so U(1) charges reach the Kontsevich integral only via struts. §P: with the ruled photon, γ(0,0,qh)γ(0,0,−q⁻¹h) = V³ on the weight space (photon_product_eq_borWord). STILL OPEN: (b) holds only within the class. c3 from a NON-central photon coupling (electroweak-mixed u(2)), which needs mixed-leg structure constants, is not excluded. Status kept todo.
