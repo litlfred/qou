@@ -814,7 +814,7 @@
 | [prop:tannaka-krein-reconstruction](#prop:tannaka-krein-reconstruction) | Tannaka--Krein reconstruction of the quantum gauge group | Ch 2 | `qou:QOU.tannaka_krein_reconstruction` |
 | [prop:q-exponential-taylor](#prop:q-exponential-taylor) | Taylor series of $\exp_q$ (archimedean) | Ch 20 | `qou:QOU.qExponentialTaylor` |
 | [prop:terminal-resolution](#prop:terminal-resolution) | Terminal Resolution of Hadronic Mass | Ch 12 | `qou:QOU.Experimental.TerminalResolution` |
-| [conj:terms-2-6-higher-operations](#conj:terms-2-6-higher-operations) | Terms 2 and 6: infinite Wedderburn / Habiro-cyclotomic sum and GB root-of-unity residue sum | Ch 12 | `qou:QOU.BraidKnot.terms_2_6_higher_operations` |
+| [conj:terms-2-6-higher-operations](#conj:terms-2-6-higher-operations) | Terms 2 and 6: infinite Wedderburn / Habiro-cyclotomic sum and GB root-of-unity residue sum | Ch 12 | `qou:QOU.BraidKnot.Terms26HigherOperations` |
 | [prop:collatz-contact-boundary](#prop:collatz-contact-boundary) | The $[2]_q$-contact boundary on the Reeb bundle | Ch 25 | `qou:QOU.AlgebraicSubstrate.collatz_contact_boundary` |
 | [prop:alpha-em-habiro-bar-involution](#prop:alpha-em-habiro-bar-involution) | The $\alpha_{EM}$ Habiro element $[2]_q(1-h^2\alpha)$ is a bar-involution fixed point, with $H(1)=2$, $H(-1)=-2$ | Ch 5 | `qou:QOU.BraidKnot.alphaEmHabiro_bar_invariant` |
 | [prop:alpha-cluster-activation-gate](#prop:alpha-cluster-activation-gate) | The $\alpha$-cluster activation gate: Milnor indeterminacy, sign-rep obstruction, and $\mathrm{Vol}=0$ annihilation | Ch 12 | `qou:QOU.Mass.MilnorIndeterminacyGate.gate_open_iff_brunnian` |
