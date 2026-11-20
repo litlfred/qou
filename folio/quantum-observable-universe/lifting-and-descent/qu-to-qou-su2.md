@@ -1,4 +1,4 @@
-We verify the structural properties of the main theorem for $G = \mathrm{SU}(2)$, extending [Yekutieli lifting for SU(2)](#ex:yekutieli-lifting-su2).
+One verifies the structural properties of the main theorem for $G = \mathrm{SU}(2)$, extending [Yekutieli lifting for SU(2)](#ex:yekutieli-lifting-su2).
 
 **Hypotheses.** The quantum universe is $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with substrate parameter $q$ ([SU(2) QOU](#ex:qou-su2)). Observability holds: $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ because $\mathrm{Ad}(\mathrm{SU}(2)) \cong \mathfrak{su}(2)$ has no trivial sub-representation. The adjoint representation is irreducible.
 

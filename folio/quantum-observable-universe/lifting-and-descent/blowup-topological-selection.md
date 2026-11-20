@@ -14,4 +14,4 @@ $$
    \to 
   H^2(\Sigma, \mathcal{B}).
 $$
-This restricts the possible values of $\kappa_{n^*}$ to a discrete lattice. This forms a **topological selection rule** on the blowup. We permit only vorticity concentrations with cohomological charges compatible with the categorical structure.
+This restricts the possible values of $\kappa_{n^*}$ to a discrete lattice. This forms a **topological selection rule** on the blowup. One permits only vorticity concentrations with cohomological charges compatible with the categorical structure.
