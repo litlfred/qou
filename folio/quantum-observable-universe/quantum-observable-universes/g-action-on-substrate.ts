@@ -13,6 +13,7 @@ export default conjecture({
     "prop:higgs-vacuum-residual-idempotent",
     "conj:electroweak-higgs-torus-link-triplet",
     "thm:hoefsmit-ew-cell-content",
+    "rem:building-block-knots",
   ],
   tags: [
     "tier:S",
@@ -35,6 +36,12 @@ export default conjecture({
     status: "not_run",
   },
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body: "**Owner ruling 2026-11-20 (option A): record the slot value and the anchor no-go.** Under (H1), the hosts of (G-1) are the Hoefsmit strand pairs (conditional on `conj:electroweak-higgs-torus-link-triplet`), and (G-3), (G-4) force $\\mathcal{N}_{\\rm sym} = [3]_q^2 \\approx 9.2641$; (G-2) fails under (H1) (each symmetric image is the adjoint, $\\dim_q = [3]_q$). The 213.11 anchor equals $3(m_p/m_e)(v/m_p)[2]^3/([4][6][8])^2$ and, with $m_p/m_e$ the proton-pin model function, has a double pole at $q = 1$, so it is not a host trace. This supersedes the earlier 'left open' ruling for the value under (H1); whether (H1) is the intended reading of (G-1), and the repair of (G-2), remain open. Lean: `NSymSlotDerivation`; audit: `docs/audits/2026-11-20-nsym-derivation.md`.",
+      see: "docs/audits/2026-11-20-nsym-derivation.md",
+    },
     {
       kind: "caveat",
       date: "2026-11-20",

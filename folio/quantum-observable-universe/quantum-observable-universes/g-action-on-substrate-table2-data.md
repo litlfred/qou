@@ -7,3 +7,4 @@
 | $[4]_q^2\,[6]_q \approx 107.89$ | reading (a) | product of the factors: tensor product of hosts (not stated by (G-1)) |
 | $2\,[4]_q + [6]_q \approx 14.607$ | reading (b) | sum over the direct summands of (G-1) |
 | $[4]_q\,[6]_q \approx 26.25$ | corpus slot structure | one $W$ slot $\otimes$ $Z$ slot (Hoefsmit strand pairs); $\mathrm{tr}_F(e_H) = 1$ |
+| $[3]_q^2 \approx 9.2641$ | strand-pair slots (H1) | $e^{+} \otimes e^{+} \otimes e^{-}$ on $V^{\otimes 6}$; forced by (G-3), (G-4) under (H1); (G-2) fails under (H1) |
