@@ -506,7 +506,8 @@ def main() -> int:
             "observables — which is precisely the indirect route the corpus "
             "intends, and is why they carry higher-order information — but no "
             "graded piece is computed here and none is claimed.")
-        out = wb.save()
+        out = wb.save(extra={"q0Anchor": "proton", "q0Value": mp.nstr(_Q, 50),
+                             "q0AnchorReason": "q is q_parameter.q_at(), the proton pin"})
         print(f"\nWitness: {out}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
