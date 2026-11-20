@@ -51,6 +51,43 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b4e7dcdda575",
+          "ts": "09ca76d12cbe",
+          "lean": "ba9e38397d1f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:13.644Z",
+        "reviewed_sha": "2ddd93430a21609842c768a1e983ab7fda5cf639",
+        "severity": "major",
+        "evidence": "The ref is a `def … : Prop` that is never asserted. The proof shows that deg-lex is a well-order, which is fine, but it never uses c, so \"canonical\" and \"supplied by the braiding\" are unproved. The \"arrow of time\" and CPT claims are physical and untouched.",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.049Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.lean:218 'def braiding_induced_ordering : Prop := ∀ n, WellFounded (DegLex ...)'",
+        "notes": "The .md claims: given c^2 != id, a canonical ADMISSIBLE well-ordering on the monomial basis of H_n(q). The Lean ref is a Prop def (not a proof) about all words over Fin n, with no braiding, no non-symmetry hypothesis and no admissibility. Fix: point lean.ref at a theorem 'braiding_induced_ordering_holds : braiding_induced_ordering := degLex_wellOrdered' plus degLex_admissible, and restate the .md on words (free monoid on sigma_i), dropping the hypothesis or saying it only fixes which letters are positive."
       }
     ],
     "proof-statement-integrity": [
@@ -66,6 +103,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.184Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.lean:218 lean.ref resolves to 'def braiding_induced_ordering : Prop' with no proof.",
+        "notes": "No sorry/axiom in the file, so no injection. But the referenced decl only STATES the claim; the proof is degLex_wellOrdered (line 100). Prior-commit signature diff could not be checked (shallow history: 2 commits). lean_verify not run this session. Fix as in proof-narrative-lean-equiv."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -81,6 +137,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.220Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "degLex_wellOrdered derives WF via InvImage into Nat x_lex Nat with encode_lt_of_lex; no field projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -96,6 +169,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.250Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Conclusions are WellFounded / DegLex / not TransGen; none is True or x = x."
       }
     ],
     "proof-no-false-premise": [
@@ -111,6 +201,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.281Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No False/0=1/uninhabited hypotheses in braiding-induced-ordering.lean."
       }
     ],
     "proof-no-decide-masking": [
@@ -126,6 +233,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.347Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No decide/native_decide/trivial in braiding-induced-ordering.lean; omega/simp close arithmetic side goals only."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -141,6 +265,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.316Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.md:5 'Well-foundedness holds for any braiding.' The c^2 != id hypothesis is unused.",
+        "notes": "The narrative hypothesis (non-symmetric braiding) plays no role in the proof or the Lean; it only names which letters count as positive. Either drop it from the statement or state what it is used for as a separate definition."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -159,6 +302,25 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.080Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "braiding-induced-ordering-proof.md:32 'because degree-lex is compatible with any associative multiplication whose defining relations'",
+        "notes": "Score ~0.6: the well-ordering plan (min length, then lex-min of a finite set) is clear; the admissibility step has no legible plan and does not follow. Restate admissibility as concatenation-compatibility in the free monoid (Lean degLex_admissible)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -177,6 +339,24 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.121Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Score 1.0: no sorry in braiding-induced-ordering.lean; degLex_wellOrdered and degLex_admissible are complete proofs.",
+        "notes": "Not machine-verified this session (no lean run)."
       }
     ],
     "proof-rater-novelty": [
@@ -195,6 +375,24 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.155Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Score 0.5: standard deg-lex well-foundedness (via base-n encoding), not duplicated by a sibling.",
+        "notes": "The proof's last paragraph claims a 'novel conceptual contribution'; that is an interpretive overclaim, not proof novelty."
       }
     ],
     "da-false-claim": [
@@ -223,6 +421,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.416Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Deg-lex on words over a finite ordered alphabet is a well-ordering compatible with concatenation; the core claim is true."
       }
     ],
     "da-vacuous": [
@@ -251,6 +466,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.448Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "braiding-induced-ordering.md:1 'well-ordering on the monomial basis of ... H_n(q)'",
+        "notes": "The monomial basis {T_w : w in S_n} is finite (n! elements), so any total order on it is a well-ordering. The content is on all words (the proof's B, line 16 of the proof), which the statement should say."
       }
     ],
     "da-circular": [
@@ -279,6 +513,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.486Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No calibration or target enters; WF proved from encode embedding."
       }
     ],
     "da-overclaim": [
@@ -307,6 +558,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.522Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.md:1 'it supplies a canonical admissible well-ordering' yet line 5 says it holds 'for any braiding'.",
+        "notes": "The order does not depend on c, and the lex part depends on a chosen order sigma_1 < ... < sigma_{n-1}. Restate: 'Deg-lex on words in sigma_1..sigma_{n-1}, for a fixed order on the letters, is an admissible well-ordering; a non-symmetric braiding singles out sigma_i over sigma_i^{-1}.' Drop 'canonical' and 'induced by braiding' unless the letter order is derived."
       }
     ],
     "da-hidden-dof": [
@@ -335,6 +605,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.552Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "braiding-induced-ordering-proof.md:19 'Let w_0 be the lex-minimum of S_d.' Letter order is unstated.",
+        "notes": "The lex order on {1,...,n-1} is a choice; the P-symmetry in the proof (sigma_i -> sigma_{n-i}) reverses it. Disclose the choice in the statement."
       }
     ],
     "da-non-sequitur": [
@@ -363,6 +652,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.586Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering-proof.md:32 'because degree-lex is compatible with any associative multiplication whose defining relations'",
+        "notes": "Admissibility of deg-lex is concatenation compatibility in the free monoid (Lean degLex_admissible); it does not follow from leading-term degree of Hecke relations, and 'whenever both products are non-zero' has no meaning for basis words in H_n(q). Replace with the free-monoid argument."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -391,6 +699,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.651Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.lean:218 statement lacks braiding, non-symmetry hypothesis and admissibility claimed in .md:1.",
+        "notes": "Same divergence as proof-narrative-lean-equiv; fix there."
       }
     ],
     "da-citation-misuse": [
@@ -419,6 +746,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.683Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Lean '-- Ref: [leitner2026]' self-citations and the proof's admissible-system cross-ref are appropriate."
       }
     ],
     "da-definitional-ambiguity": [
@@ -447,6 +791,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.713Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "braiding-induced-ordering.md:1-3 'monomial basis' vs 'reduced positive braid monomials'; proof uses all words.",
+        "notes": "Three readings of the ordered set: the n! basis T_w, reduced positive braid monomials, and all words of any length (proof line 16). Fix one: words in the free monoid on sigma_1..sigma_{n-1}. Also define ≺_c in the statement."
       }
     ],
     "da-empirical-fragility": [
@@ -475,6 +838,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.742Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Purely mathematical block; no numerical comparison."
       }
     ],
     "da-physical-implausibility": [
@@ -503,6 +883,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.772Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "'categorical arrow of time' is a model term (AGENTS.md model ruling); no physical number or law asserted.",
+        "notes": "The proof block's 'macroscopic thermodynamic arrow' / CPT sentences are stated as fact and deserve review on that block."
       }
     ],
     "da-reproducibility": [
@@ -531,6 +929,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.805Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No backing compute or witness."
       }
     ],
     "da-referee-verdict": [
@@ -559,6 +974,25 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.836Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.md:5 'Well-foundedness holds for any braiding.' versus title 'induced by braiding'.",
+        "notes": "Verdict: revise. Strongest objection: the ordering is independent of c (a free-monoid deg-lex fact), the Lean ref is an unproved Prop def, and the admissibility argument in the proof is a non sequitur."
       }
     ],
     "voice-scholarly-default": [
@@ -622,6 +1056,23 @@
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.957Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Ordering on the Hecke basis belongs in the QOU-definition section; no sibling restates it."
       }
     ],
     "expo-milnor-clarity": [
@@ -637,6 +1088,60 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b4e7dcdda575",
+          "ts": "09ca76d12cbe",
+          "lean": "cfec0f0ec0c3",
+          "lean_statement": "de703a29c587"
+        },
+        "result": "fail",
+        "severity": "major",
+        "score": {
+          "value": 11,
+          "max": 16,
+          "rubric": {
+            "H1": 2,
+            "H2": 1,
+            "H3": 1,
+            "H4": 2,
+            "H5": 1,
+            "H6": 2,
+            "H7": 1,
+            "H8": 1
+          }
+        },
+        "evidence": "H5: L1 defines $\\prec_c$ from the braiding, then L1's last sentence asserts well-foundedness of 'the degree-lexicographic order on reduced positive braid monomials' without saying this is $\\prec_c$. H8: 'thereby identifying the categorical arrow of time' is a physical reading stated as part of a proposition.",
+        "notes": "Milnor H1-H8 = [2, 1, 1, 2, 1, 2, 1, 1] (T=11/16, fail); weakest: H2, H3, H5, H7, H8. Suggested rewrite (not applied; owner rule 'ask before changing'): 'If $c_{V,V}^2\\ne\\mathrm{id}$, ordering reduced positive braid monomials by degree and then lexicographically defines a well-ordering $\\prec_c$ on the basis of $H_n(q)$.' Move 'arrow of time' to a remark. Audit doc: docs/audits/2026-10-10-milnor-voice-audit-ch1-ch2.md",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/expo-milnor-rater",
+          "version": "1.0",
+          "agent_model": "claude-opus-5-5",
+          "agent_date": "2026-10-10"
+        },
+        "reviewed_at": "2026-10-10T12:00:00.000Z",
+        "reviewed_sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd"
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.877Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.md:1 '≺_c on the monomial basis' then 'reduced positive braid monomials' — set undefined.",
+        "notes": "Below 16/16 on economy, notation and linear argument: ≺_c never defined, ordered set shifts between three objects, interpretation mixed into a statement. Rewrite: define words, define deg-lex for a fixed letter order, state WF + admissibility; move arrow-of-time to a remark."
       }
     ],
     "milnor-brevity": [
@@ -652,6 +1157,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-13"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.920Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No sentence repeats another in braiding-induced-ordering.md."
       }
     ],
     "trap-negation-contrast": [
@@ -669,6 +1191,23 @@
         "reviewed_at": "2026-08-22T00:55:25.987Z",
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Three-sentence proposition; 'non-symmetric' and 'no infinite strictly descending chains' are technical predicates, not assert-by-denial."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.031Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read braiding-induced-ordering.md:1 in full; no instance of this pattern."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -686,6 +1225,25 @@
         "reviewed_at": "2026-08-22T00:55:26.029Z",
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "No reframe."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.959Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "braiding-induced-ordering.md:1 'The non-symmetry hypothesis is what makes c_{V,V} and c_{V,V}^{-1} different'",
+        "notes": "State directly: 'Non-symmetry means c_{V,V} != c_{V,V}^{-1}, so the positive crossing is well defined.'"
       }
     ],
     "trap-em-dash": [
@@ -703,6 +1261,23 @@
         "reviewed_at": "2026-08-22T00:55:26.072Z",
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Zero em-dashes."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.059Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read braiding-induced-ordering.md:1 in full; no instance of this pattern."
       }
     ],
     "trap-triples": [
@@ -720,6 +1295,23 @@
         "reviewed_at": "2026-08-22T00:55:26.109Z",
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "No three-item list."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.092Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read braiding-induced-ordering.md:1 in full; no instance of this pattern."
       }
     ],
     "trap-closing-aphorism": [
@@ -737,6 +1329,23 @@
         "reviewed_at": "2026-08-22T00:55:26.145Z",
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Ends on the descending-chain condition, i.e. part of the claim."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.123Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read braiding-induced-ordering.md:1 in full; no instance of this pattern."
       }
     ],
     "trap-meta-commentary": [
@@ -754,6 +1363,23 @@
         "reviewed_at": "2026-08-22T00:55:26.182Z",
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "No narrated emphasis."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.153Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read braiding-induced-ordering.md:1 in full; no instance of this pattern."
       }
     ],
     "trap-thesis-restatement": [
@@ -772,6 +1398,23 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Sentence 3 (no infinite descending chains) is implied by sentence 1 (well-ordering), so it is redundant, but as part of a proposition statement it spells out the operative consequence rather than restating a thesis for effect.",
         "notes": "Non-trap: the middle sentence 'The braiding strictly defines the positive crossing, thereby identifying the categorical arrow of time' is interpretation inside a proposition statement (clarity-stmt-pure); it belongs in the companion remark. 'strictly defines' also reads like a de-hedged 'uniquely determines' - worth checking against the sweep-damage ledger."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.182Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read braiding-induced-ordering.md:1 in full; no instance of this pattern."
       }
     ],
     "trap-performed-warmth": [
@@ -789,6 +1432,23 @@
         "reviewed_at": "2026-08-22T00:55:26.259Z",
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "No affective register."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.209Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read braiding-induced-ordering.md:1 in full; no instance of this pattern."
       }
     ],
     "trap-superlative": [
@@ -806,6 +1466,25 @@
         "reviewed_at": "2026-08-22T00:55:26.295Z",
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "'canonical' is used technically; 'strictly' is the only intensifier, noted above."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.996Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "braiding-induced-ordering.md:1 'The braiding c_{V,V} strictly defines the positive crossing'",
+        "notes": "'strictly' is an intensifier; drop it."
       }
     ],
     "trap-nonspeakable": [
@@ -824,6 +1503,313 @@
         "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
         "evidence": "Three short declaratives.",
         "notes": "MATH FINDING to report (not edited): the hypothesis 'If the braiding c_{V,V} is non-symmetric (c^2 != id)' is never used by prf:braiding-induced-ordering, whose argument is a pure degree-lex well-ordering on words over the finite alphabet {1..n-1} and goes through for any braiding. Either the hypothesis is inert and should be dropped, or the proof is missing the step where non-symmetry is needed (presumably to make the positive/negative crossing distinction well-defined)."
+      },
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:55.239Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read braiding-induced-ordering.md:1 in full; no instance of this pattern."
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.631Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.664Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.694Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.722Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.752Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.780Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.809Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.843Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.872Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.899Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Script-quality criterion; block .ts has no computation field, so there is no script to audit."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.928Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "braiding-induced-ordering.md:1 'thereby identifying the categorical arrow of time.'",
+        "notes": "Interpretive clause sits in the proposition statement. Move 'The braiding c_{V,V} strictly defines the positive crossing, thereby identifying the categorical arrow of time.' to a remark that interprets this proposition (rem:no-goedel-closed-chains already does so)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:53.986Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Statement is combinatorial on words over Fin n; no archimedean construct or numeric q."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.017Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "prf:braiding-induced-ordering argues by min-length then lex-min on a finite set; no linarith/IVT/Real.* or numeric q.",
+        "notes": "The proof's 'Planck step' / Reeb-flow paragraph is interpretation, not proof method; recorded on the proof block's own review, not here."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.380Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "major",
+        "evidence": "braiding-induced-ordering.md:1 'monomial basis of the Iwahori--Hecke algebra H_n(q)' with uses = [prop:braid-action-tensor].",
+        "notes": "Reader needs the Hecke algebra / its monomial basis and the admissible-system notion (cited by the proof as unital-groebner-bases:def:admissible-system). Add those labels to uses[]."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "a3f82aff69cb",
+          "ts": "09ca76d12cbe",
+          "lean": "4b2b25010d38",
+          "lean_statement": "d29b90ed5426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-A",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:51:54.620Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Lean family over n matches the narrative's fixed-but-arbitrary n; no pointwise/universal confusion."
       }
     ]
   }

@@ -1,0 +1,421 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-endomorphism/pairing-gauge-fluctuation-massless-interpretation",
+    "path": "folio/quantum-observable-universe/mass-endomorphism/pairing-gauge-fluctuation-massless-interpretation"
+  },
+  "criteria": {
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:24.637Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:24.719Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:24.782Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:24.837Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:24.890Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:24.955Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:25.028Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:25.140Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:25.184Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:49:25.239Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Content block with no computation/script field; script-quality criteria apply to Python producers only."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.253Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Directly follows the proposition it interprets, in the section holding conj:mass-endomorphism whose graviton sentence it reads."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.284Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "uses the interpreted prop, conj:mass-endomorphism (quoted graviton sentence) and def:frobenius-pairing (read as metric); all three are leaned on."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.319Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "severity": "minor",
+        "evidence": "md:8 'transform as a spin-2 isotypic piece, i.e. the symmetric traceless part' (score 15/16, H8): omits the corpus's partial result.",
+        "notes": "In item 2 add: 'for the gauge SU(2), [prop:sym2-adjoint-traceless-spin-two] identifies Sym^2(V_1) minus V_0 with V_2; see [rem:sym2-adjoint-spin-two-gauge-not-lorentz] for why that is gauge spin only.' and add both labels to uses[]."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.355Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "No within-block repetition; the four not-shown items are distinct."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.389Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.421Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.446Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.469Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.492Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.515Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.537Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.560Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.582Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ab96b5d29455",
+          "ts": "f9855202802a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qa-adjudicator-B",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T15:50:28.604Z",
+        "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
+        "evidence": "Read md in full: no instance; the 'not shown' list and closing scope line ('No physical constant, dimension or signature') are content, matching the Lean docstring's non-claims."
+      }
+    ]
+  }
+}
