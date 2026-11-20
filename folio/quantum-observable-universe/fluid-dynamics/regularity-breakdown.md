@@ -18,7 +18,7 @@ There exist smooth, finite-energy initial data $v_0$ such that the classical Nav
 **Obstruction 3: Cascade becomes continuous.** The $q$-turbulence spectrum has discrete transfer rates with exponentially decreasing amplitude. At $q = 1$, the cascade becomes continuous and the transfer rate $T_{k \to k+1} \to \varepsilon_k^{-1/3}$, allowing energy to reach arbitrarily high wavenumbers in finite time.
 
 **Critical exponents.**
-The transition at $q = 1$ has the structure of a second-order phase transition. We define:
+The transition at $q = 1$ has the structure of a second-order phase transition. Define:
 - **Enstrophy order parameter**: $\Omega(q) = \sup_{t \geq 0} \sum_k [k]_q^2|\hat{v}_k(t)|^2$. For $q > 1$, $\Omega(q) < \infty$. At $q = 1$, $\Omega(1) = +\infty$.
 - **Critical exponent**: $\Omega(q) \sim (q - 1)^{-\alpha}$ as $q \to 1^+$.
 - **Correlation length**: The maximum active wavenumber $k_{\max}(q) \sim \log_q(\mathrm{Re}_q^{3/4}) \to \infty$ as $q \to 1^+$.
