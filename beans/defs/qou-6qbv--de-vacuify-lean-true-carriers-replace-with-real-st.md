@@ -97,3 +97,5 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 ## 2026-11-20 — remaining E2-collapse prose (PR #8656, merged 2d317625f8)
 - atom-knot proof sketch: E2 claims removed (finiteness from Wedderburn). jet-tower-uniform-delta-max: E2 route closed. homological-shell-condensation: own BB sequence, caveat for wrong citation.
 - STILL OPEN (owner): prop:homological-shell-condensation is typed proposition but states a conjecture.
+
+## 2026-11-20 — conj:homological-shell-condensation (PR #8658, merged a139605781). No provable consumers, no cascade. The gb-spectral-sequence downstream thread is closed.
