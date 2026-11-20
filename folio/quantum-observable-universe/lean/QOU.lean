@@ -140,6 +140,7 @@ import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
 import QOU.MathlibExt.QPlancherel
+import QOU.MathlibExt.OcneanuChainFactorisation
 import QOU.MathlibExt.QPlancherelPartitionInstance
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.FrobeniusHopfData.PairingGaugeFluctuation
