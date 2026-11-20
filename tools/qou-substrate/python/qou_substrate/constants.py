@@ -476,7 +476,10 @@ try:
             r1 = _proton_identity_residual(q1, vol, mp_me, False)
             q2 = q_proton_two_term_at(dps + 10)
             r2 = _proton_identity_residual(q2, vol, mp_me, True)
-            q_newton = q_two_term_borromean_at(dps + 10)
+            # plain adjacent weighting: the comparison pin's own definition. Since
+            # #8591 the solver's DEFAULT is the derived covariant all-pairs pin,
+            # which coincides with the one-term pin, so it must be named here.
+            q_newton = q_two_term_borromean_at(dps + 10, weighting="plain")
             assert abs(r1) < tol, f"one-term pin residual {r1} ≥ {tol}"
             assert abs(r2) < tol, f"two-term comparison pin residual {r2} ≥ {tol}"
             assert abs(q2 - q_newton) < tol, f"two-term solvers disagree: {q2 - q_newton}"
