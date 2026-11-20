@@ -5,6 +5,7 @@ import QOU.AlgebraicSubstrate.QGenericBaseReal
 import QOU.AlgebraicSubstrate.TwistSignTorsor
 import QOU.BringsSurface.CoveringDegreeRamification
 import QOU.RiemannSurface.GermStabiliserCyclic
+import QOU.RiemannSurface.CombinatorialMapQuotient
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
 import QOU.Eightfold.ConnectedSumAnnihilator
