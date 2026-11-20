@@ -222,11 +222,12 @@ class ComplexLiTwoSummable (z : ℂ) : Prop where
     has imaginary part `Cl_2(θ)`.**
 
     This is the classical identity
-    `Im(Li_2(e^{iθ})) = Cl_2(θ)` from Zagier 1986. The Lean
-    proof requires Mathlib's `Summable` / absolute-convergence
-    infrastructure for the term-by-term imaginary-part extraction.
-    We record the statement as a typeclass hypothesis, parallel
-    to the rest of the §3b-cond pattern. Per AGENTS.md §3b-tax the
+    `Im(Li_2(e^{iθ})) = Cl_2(θ)` from Zagier 1986. **Inhabited 2026-11-20** by
+    `instComplexLiTwoUnitCircleClassical` below, from the sorry-free
+    `complexLiTwo_unit_circle_im` (term-by-term imaginary part via
+    `Complex.im_tsum`). This docstring used to say the proof was blocked
+    on missing summability infrastructure; it was not. The class is kept
+    so that existing `[ComplexLiTwoUnitCircleClassical]` binders resolve. Per AGENTS.md §3b-tax the
     class field carries the **content** of the conjecture — the
     parameter-quantified identity in the shape of the claim — not a
     bare `True` marker. -/
@@ -237,6 +238,38 @@ class ComplexLiTwoUnitCircleClassical : Prop where
       dilogarithm on the unit circle is the Clausen function). -/
   unit_circle_identity :
     ∀ θ : ℝ, (complexLiTwo (Complex.exp (θ * Complex.I))).im = Cl_2 θ
+
+/-- **`Im Li₂(e^{iθ}) = Cl₂(θ)`, for every real `θ`** (sorry-free; bean
+    `qou-eao2`, 2026-11-20). On the unit circle both sides are the same
+    absolutely convergent series: the `k`-th term of `Li₂` is
+    `e^{i(k+1)θ}/(k+1)²`, whose imaginary part is `sin((k+1)θ)/(k+1)²`, and
+    `Im` commutes with a summable `tsum`. The docstring of the class above said
+    this was blocked on Mathlib's summability infrastructure. It was not:
+    `Complex.im_tsum` is the needed lemma. -/
+-- Ref: [zagier1986]
+theorem complexLiTwo_unit_circle_im (θ : ℝ) :
+    (complexLiTwo (Complex.exp (θ * Complex.I))).im = Cl_2 θ := by
+  have hcast : ∀ k : ℕ, ((k : ℂ) + 1) ^ 2 = (((((k : ℝ) + 1) ^ 2 : ℝ)) : ℂ) := by
+    intro k; push_cast; ring
+  have hs : Summable (fun k : ℕ =>
+      Complex.exp (θ * Complex.I) ^ (k + 1) / ((k : ℂ) + 1) ^ 2) := by
+    refine Summable.of_norm_bounded
+      (QOU.Archimedean.ClausenDoubleAngleSeries.summable_bounded_div_sq (fun _ => 1)
+        (fun _ => by simp)) (fun k => ?_)
+    rw [hcast, norm_div, norm_pow, Complex.norm_exp_ofReal_mul_I, one_pow,
+      Complex.norm_real, Real.norm_eq_abs, abs_of_pos (by positivity)]
+  unfold complexLiTwo
+  rw [Complex.im_tsum hs]
+  unfold Cl_2
+  refine tsum_congr (fun k => ?_)
+  rw [hcast, Complex.div_ofReal_im, ← Complex.exp_nat_mul,
+    show ((k + 1 : ℕ) : ℂ) * (θ * Complex.I) = (((((k : ℝ) + 1) * θ : ℝ)) : ℂ) * Complex.I by
+      push_cast; ring,
+    Complex.exp_ofReal_mul_I_im]
+
+/-- **The genuine instance** of `ComplexLiTwoUnitCircleClassical`. -/
+instance instComplexLiTwoUnitCircleClassical : ComplexLiTwoUnitCircleClassical :=
+  ⟨complexLiTwo_unit_circle_im⟩
 
 /-- **Conditional theorem: with the classical identity class in
     scope, the Bloch-Wigner dilogarithm on the unit circle equals
