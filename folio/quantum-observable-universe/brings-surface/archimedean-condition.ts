@@ -14,5 +14,11 @@ export default definition({
   lean: { ref: "qou:QOU.ArchimedeanCondition", validation: "not_checked" },
   title: "Descartes condition",
   tags: ["archimedean-universe", "euler-characteristic"],
-  uses: ["thm:qu-to-qou", "rem:three-euler-characteristics"],
+  // rem:three-euler-characteristics dropped from uses[] 2026-11-20 (bean
+  // qou-tm3c, owner rule "cut edges the text does not use"). The text links it
+  // only to say which Euler characteristic chi_eu(M_0) is meant (the
+  // topological one of a curve); the link stays in the .md. Through that
+  // remark's mention of conj:wigner-axiom, this one edge put 92 provable
+  // blocks downstream of the Wigner axiom, thm:descartes among them.
+  uses: ["thm:qu-to-qou"],
 });
