@@ -22,7 +22,7 @@ Three colour primaries reside on Bring's surface ([Three colors and $q$-chromati
 
 ### 3. Filtration with confinement levels
 
-A depth filtration structures $H_n(R,q)$ via [Confinement level via shadow-price filtration](#def:confinement-level) and [Curvature-rank stratification of the GB spectral sequence](#prop:curvature-rank-gb-stratification). For $H_3$, depths $\ell = 0,1,2,3$ yield a four-step filtration. The maximum depth of 3 correlates with the denominator $3$.
+A depth filtration structures $H_n(R,q)$ via [Confinement level via shadow-price filtration](#def:confinement-level) and [Curvature-rank stratification of the GB spectral sequence](#conj:curvature-rank-gb-stratification). For $H_3$, depths $\ell = 0,1,2,3$ yield a four-step filtration. The maximum depth of 3 correlates with the denominator $3$.
 
 ### 4. Spectral sequence collapse
 

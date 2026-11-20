@@ -31,7 +31,7 @@ This sum is intrinsically finite (over partitions $\lambda \vdash n$)
 and supported on $\mathrm{supp}(T_w) = \{\lambda : \chi_\lambda(\rho(\beta)) \neq 0\}$.
 
 *Step 3 (curvature-rank stratification).*
-[Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+[Curvature-rank stratification](#conj:curvature-rank-gb-stratification)
 supplies the filtration of $H_n(R, q)$ by the curvature rank $r(T_w)$ of
 **words**. The grading of the centre by *partition* depth used below is a
 further step, not stated there and assumed here.
