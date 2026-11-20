@@ -22,6 +22,7 @@ for Bean qou-eas4 (Epic qou-9pl8):
 
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import sys
 from pathlib import Path
@@ -288,7 +289,7 @@ def run_symbolic_charge_operator_checks() -> dict:
 
     # `hadronicScaleE0_mul_hbar_eq_me`: E_0(m_e, q) * q^2 * (1 - q^-1) == m_e
     me_sym = sp.Symbol("m_e", positive=True)
-    E0_sym = me_sym / (q * (q - 1))
+    E0_sym = _qbeta_e0.order_zero_scaled(me_sym, q)
     assert sp.simplify(E0_sym * (q**2 * (1 - 1 / q)) - me_sym) == 0
 
     # (f) Section 8 of NucleonWeightSpaceTwoTerm.lean:
@@ -618,7 +619,7 @@ def main() -> int:
     hbar_p = (q_proton - 1) / q_proton
     h_p = q_proton - 1 / q_proton
     zD_p = q_proton**3 / (q_proton**2 + 1)
-    E0_p = m_e_mev / (q_proton * (q_proton - 1))
+    E0_p = _qbeta_e0.order_zero_scaled(m_e_mev, q_proton)
     E0_full_p = E0_p / (1 - hbar_p**2)
 
     # =========================================================================
@@ -696,7 +697,7 @@ def main() -> int:
         h = q - 1 / q
         hbar = (q - 1) / q
         zD = q**3 / (q**2 + 1)
-        E0 = m_e_mev / (q * (q - 1))
+        E0 = _qbeta_e0.order_zero_scaled(m_e_mev, q)
         E0_full = E0 / (1 - hbar**2)
         a_em = alpha_em_qou(q)
 

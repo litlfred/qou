@@ -74,6 +74,7 @@ from __future__ import annotations
 # working from the `probes/` cluster subdirectory. The bridge
 # module also puts every other cluster subdir on sys.path so
 # cross-cluster bare-name imports resolve. Idempotent.
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
@@ -234,7 +235,7 @@ def E0_from_substrate(q, m_e):
     """
     h = q - 1 / q
     return {
-        "E0_A_me_over_q_qminus1": m_e / (q * (q - 1)),
+        "E0_A_me_over_q_qminus1": _qbeta_e0.order_zero_scaled(m_e, q),
         "E0_B_me_over_h_sq": m_e / h ** 2,
         "E0_C_me_FBor": m_e * F_Bor(q),
         "E0_D_me_qfact_qminus1": m_e * qfact_three(q) * (q - 1),

@@ -125,7 +125,8 @@ def main() -> int:
     t0 = time.monotonic()
     q, qi, z = load_q_50dps()
     m_e = mp.mpf(str(M_E_MEV))
-    E0 = m_e / (q * (q - 1))                       # substrate energy unit (MeV)
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(m_e, q)                       # substrate energy unit (MeV)
 
     # ── the two parameter-free per-pair magnitudes (fixed FIRST, no tuning) ──
     z_naive = z                                    # 1/[2]_v Markov bond factor

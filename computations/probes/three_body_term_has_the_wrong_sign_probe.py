@@ -156,6 +156,7 @@ does not was withdrawn as a convention artifact.)
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys
 import warnings
 from pathlib import Path
@@ -197,7 +198,7 @@ _H = _Q - 1 / _Q
 HF = float(_H)
 DPN = float(D_PN)
 _ME_M = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
-ALPHA = float(_ME_M / (_Q * (_Q - 1)))
+ALPHA = float(_qbeta_e0.order_zero_scaled(_ME_M, _Q))
 B_P = (0.0, 0.5, 0.5)
 B_N = (0.5, 0.5, 1.0)
 AME = {"2H": AME_B_DEUTERON_MEV_VALIDATION, "3H": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}

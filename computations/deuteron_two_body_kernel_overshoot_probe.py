@@ -117,7 +117,8 @@ def bond_L(q, t):
 
 def E_0(me, q):
     """CAL-1 x CAL-2 energy unit E_0 = m_e/(q(q-1))."""
-    return me / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    return _qbeta_e0.order_zero_scaled(me, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
 
 
 def t_derived(q):
