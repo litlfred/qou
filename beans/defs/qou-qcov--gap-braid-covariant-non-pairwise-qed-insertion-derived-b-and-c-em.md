@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-20T08:45:45Z
-updated_at: 2026-11-20T09:05:12Z
+updated_at: 2026-11-20T14:39:28Z
 parent: qou-7xl8
 ---
 
@@ -36,3 +36,8 @@ strand-label-dependent coefficients are braid-covariant only as the charge-weigh
 Central insertions also vanish on V³. Fixed-position insertion not covariant (defect ∝ (q−q⁻¹)(q²+1)).
 μ̄ survives only as the even term c₃·Q₁Q₂Q₃·μ̄² (n−p split (2/9)c₃) — c₃ underived (bean qou-qc3d).
 Scope (a) only for non-local / second-order operators. Bean stays open.
+
+
+## 2026-11-20T14:39:28Z W13 — owner asked "if derived+proved, update compute; if not, work on it"
+
+Measured status for the q_2t pin: NOT derived. The +220 eV is the adjacent-pair insertion, = minus the dropped pair (NucleonQEDCovariance.lean T3); covariant all-pairs gives b=0 and a proton term +3.09e-6 vs -4.31e-4 (opposite sign, ~0.7%); scale m_e selected among four. So q_2t is NOT adopted as a pin. This bean is the open premise; owner asked it to be worked on.

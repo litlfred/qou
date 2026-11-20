@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T16:32:49Z
-updated_at: 2026-11-20T14:28:57Z
+updated_at: 2026-11-20T14:45:00Z
 parent: qou-3l2l
 ---
 
@@ -416,3 +416,7 @@ Form B (q[9][10] + 8/(12π) + αH(1−h²α); scorecard α_em⁻¹ row, −0.365
 (meson_em_sinh_closed_form.alpha_em_inv_derived; m_K/m_π and c_em, −467.6 ppb) are structurally
 different functions of q (PR #8562), so no truncation choice reconciles them. Each consumer keeps its
 own, labelled, until one is derived. Bean stays open.
+
+## 2026-11-20T14:39:28Z W13 — owner asked "if derived+proved, update compute; if not, work on it"
+
+Form-B status for the default question: conditional + selected. Uses only q0 and Bring data (not circular), but H=[2]_q/(8pi) is 'empirical' in its own docstring; AlphaEmFixedPointNormalization carries codata_consistent as a field, no instance; the solver keeps the form with the smallest CODATA residual (alpha_em_4pi_fixed_point_solve.py:188); residual is +76 ppb at the q_2t pin. Not switched to default. Note: that witness compares against the Cs-recoil 137.035999084 (experimental_constants.py keeps it deliberately) — PR #8574 now names this in sm-params-gauge-couplings.

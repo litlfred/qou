@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-11-15T11:48:07Z
+updated_at: 2026-11-20T14:39:28Z
 parent: qou-avtq
 ---
 
@@ -3431,3 +3431,8 @@ rather than closing one.
 
 This bean stays **OPEN** (rule 13a — the conjecture is unclosed) and at **lower
 priority** than #7252 claimed: α is off the L2 critical path.
+
+
+## 2026-11-20T14:39:28Z W13 — owner asked "if derived+proved, update compute; if not, work on it"
+
+Mirror projection alpha_D - h^2/4: algebra proved (LadderPhaseMirrorCovariance.lean, phaseTwiceD_sub_hsq_bar_odd, sorry-free). Open premise: that the ladder phase must be bar-odd (docstring analogy to writhe only); u is not bar-even so the projection is incomplete (qou-cds1 ~:258). Not wired by default; owner asked it to be worked on.
