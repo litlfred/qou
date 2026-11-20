@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-04T01:39:43Z
-updated_at: 2026-11-20T16:19:39Z
+updated_at: 2026-11-20T20:37:12Z
 parent: qou-c8p8
 ---
 
@@ -29,3 +29,7 @@ Blocks: EllipticDivisorDegree (1 — argument principle), HadamardFactorization 
 ## 2026-11-20 — W10
 
 Argument-principle half DONE: annulus argument principle with ℤ orders (`QOU/Mathlib/ArgumentPrincipleAnnulus.lean`) and Liouville third theorem proved (PR #8604). Hadamard factorization (`HasHadamardFactorization`) remains open — multi-session.
+
+## 2026-11-20 — PI-5 ingredients proved (PR #8651); Hadamard itself still OPEN
+
+Proved, sorry-free: exponent of convergence ≤ order (`ExponentOfConvergence`), Jensen zero-count (`JensenZeroCounting`), canonical product entire + order ≤ σ (`CanonicalProductGrowth`, Borel), zero-free finite-order ⇒ exp(poly) (`HadamardZeroFree`). REMAINING for `HasHadamardFactorization`: divisor → zero sequence with multiplicity; f/P entire and zero-free; minimum-modulus lower bound on |P| giving f/P order ≤ ρ (the hard step).
