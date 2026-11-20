@@ -30,6 +30,7 @@ export default conjecture({
     status: "not_run",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3):  for a unit-normalised cyclic trace (Lean: `VacuumPairing.tr_proj_eq_one`)." },
     {
       kind: "status",
       body: "**Open at the closure level.** The four axioms above are a\n**concrete framework extension** that takes the QOU substrate\nfrom \"$\\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\" to\n\"$G \\times \\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\". With\n$\\mathrm{tr}_F(e_H) = 1$ (see the 2026-11-20 note below) they give\n$\\mathcal{N}_{\\rm sym}(q) = [4]_q^2 \\cdot [6]_q \\approx 107.89$ at $q_0$,\n49.4% below the CODATA-derived target 213.11. No factor has been\nre-tuned to recover a match.\n\n**To promote to `proposition`:**\n1. Account for the gap to the target (the former 1.81% agreement\n   rested on a $[2]_q$ factor that (G-4) does not supply)\n2. Provide the unique-existence argument for the four axioms\n3. Author the Lean formalization",

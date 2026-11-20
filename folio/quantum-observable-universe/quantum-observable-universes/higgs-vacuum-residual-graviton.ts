@@ -11,6 +11,7 @@ export default remark({
   ],
   tags: ["graviton", "categorical-higgs", "residual", "interpretation", "open-problem"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The present Lean development does not use one." },
     {
       kind: "refined-framing",
       date: "2026-11-20",
