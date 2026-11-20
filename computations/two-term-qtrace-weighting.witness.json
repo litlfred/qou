@@ -2,12 +2,14 @@
   "computation": "two-term-qtrace-weighting",
   "description": "Two-term charge insertion on the nucleon weight spaces under the DERIVED weighting t(W) = Tr_W(K^{⊗3} X V³)/[2]_q³ (convention D's Markov trace = U_q(sl2) quantum trace). Closes the #8518 weighting menu. Insertion (adjacent vs all-pairs), raw vs connected and the overall sign are NOT fixed by the corpus and are reported side by side.",
   "script": "computations/two_term_qtrace_weighting.py",
-  "lean_module": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm",
+  "lean_module": "QOU.BraidsAndKnots.NucleonWeightSpaceQTrace",
   "lean_theorems": [
+    "qtrace_crossing_eq_zD",
     "deltaT_adjacent_raw_eq",
     "deltaT_adjacent_connected_eq",
     "deltaT_allPairs_raw_eq",
-    "knkp_eq_qdim_div_three_mul_deltaT_connected"
+    "knkp_eq_qdim_div_three_mul_deltaT_connected",
+    "deltaT_allPairs_connected_eq_zero"
   ],
   "bean": "qou-99qc",
   "q0Anchor": "proton",
