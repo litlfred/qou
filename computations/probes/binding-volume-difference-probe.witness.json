@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T15:38:49.767533+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "computedAt": "2026-11-20T18:53:32.849337+00:00",
+  "commitSha": "e75c8e69bf13ae3c8e6f2299c6c6e211e9969bf9",
   "assertions": [
     {
       "name": "no_derived_volume_difference_closes_A3",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 41,
+  "durationMs": 57,
   "computation": "binding-volume-difference-probe",
   "scriptFile": "binding_volume_difference_probe.py",
-  "scriptHash": "f099923d7a80",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "4ae27aa3d93d",
+  "scriptCommitSha": "8a51be2e1185d397db5b6dafc674326efda41dce",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,6 +33,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
     "pyhecke_native_build": "930c010e26215e56"
   },
