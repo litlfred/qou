@@ -48,7 +48,23 @@ namespace QOU.AlgebraicSubstrate
 
 Fields are the genuine *hypotheses / data* of the reduction — the
 downstream conclusion `dim HH² = 1` is derived from them, never carried
-as a field. -/
+as a field.
+
+**🛑 Vacuity status (audited 2026-11-20, bean `qou-dx7g`; triage rank 18).**
+The derivations below are valid, but what they are derived *from* is not tied
+to `U_q(su₂)`.  `hhCohDim` and `hhHomDim` are free `ℕ`-valued functions, not
+the Hochschild (co)homology dimensions of any algebra, so `vdb_duality` and
+`drinfeld_rigidity` are satisfied by `hhCohDim = hhHomDim = fun _ => 1` and
+"`dim HH² = 1`" is a fact about that chosen function.  Likewise `chi_A`,
+`kappa0` and `phi_1_image` are free numbers, and `hattori_stallings` together
+with `trace_pairing_cast` simply *asserts* `κ₀ = χ(A)` (the instance
+`chi_A = kappa0 = 0` works); the "trace gap" is therefore assumed, not
+bridged.  A faithful encoding needs Hochschild (co)homology of an actual
+`U_q(su₂)` with adjoint coefficients (as `R`-modules, with `hhCohDim i :=
+Module.finrank` of them) and `χ(A)`, `κ₀` as definitions; neither Mathlib nor
+the corpus has Hochschild (co)homology or a quantum-group type, so these
+fields stay free.  Read every consequence below as "for any dimension
+function satisfying CY-3 duality and `dim HH₁ = 1`". -/
 class QouObstructionReductionContext where
   /-- `dim_k HH^i(U_q, Ad)`, the Hochschild cohomology dimensions. -/
   hhCohDim : ℕ → ℕ
