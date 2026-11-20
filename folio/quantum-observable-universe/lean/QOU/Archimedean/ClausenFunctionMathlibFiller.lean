@@ -30,8 +30,11 @@ This file provides:
 * `Cl_2 : ℝ → ℝ` as the explicit `tsum` definition — no longer
   opaque, no longer requiring `Complex.dilog`.
 * Unconditional boundary lemmas (`Cl_2_zero`, `Cl_2_two_pi`).
-* Periodicity / antisymmetry lemmas (sketch — full proofs awaiting
-  Fourier-series infrastructure in Mathlib).
+* Periodicity / antisymmetry: proved termwise, with no Fourier theory,
+  as `Cl_2_add_two_pi` and `Cl_2_neg` in
+  `QOU.Archimedean.BlochWignerLobachevsky` (each term inherits `2π`-periodicity
+  and oddness from `Real.sin`). Mathlib's Fourier-series API
+  (`Mathlib.Analysis.Fourier.AddCircle`) exists but is not needed for them.
 * The carrier `Catalan_constant := Cl_2 (π/2)` recording the
   Catalan constant identity G = Cl_2(π/2).
 
