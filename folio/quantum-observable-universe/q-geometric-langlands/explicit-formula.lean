@@ -541,4 +541,144 @@ theorem not_qExplicitFormula (D : QZetaDatum) : ¬ QExplicitFormula D := by
   have hTre' := abs_le.mp hTre
   linarith [hXb, hbdd.2, hX1, le_abs_self c, hTre'.1, hTre'.2]
 
+/-! ### Toward a faithful carrier: an ordered infinite spectrum (bean `qou-qexu`)
+
+`not_qExplicitFormula` names the repair: the spectral side must be an **infinite**
+sum with a **specified summation order**, read as the limit of its ordered
+partial sums. `QExplicitFormulaSeq` below is that carrier, with the spectrum an
+`ℕ`-indexed sequence and the identity asserted as convergence of the partial
+spectral sides. **No instance is provided — the honest open state (§3b).**
+
+What *is* proved is a necessary condition any instance must meet, and it is the
+precise form of the classical cancellation mechanism. On `X ∈ (1, √2]` the
+ordered partial spectral sums must be **unbounded** (`partialSpectral_unbounded`):
+the tail term `−½·ln_q(1 − X^{−2})` blows up as `X → 1⁺` while `ψ_q` stays
+bounded, so the spectral sum has to blow up with it. A uniformly bounded ordered
+spectrum is therefore excluded (`not_qExplicitFormulaSeq_of_bounded`), and in
+particular any spectrum dominated by the summable majorant
+`√2^{|Re ρ_n|}/‖[ρ_n]_q‖` is excluded (`not_qExplicitFormulaSeq_of_summable`).
+So an instance, if one exists, needs a spectrum whose sum converges for each
+fixed `X > 1` but **not uniformly** near `X = 1` — conditional, order-dependent
+convergence is forced, not merely permitted. This constrains the carrier; it
+does not decide whether it is inhabited. -/
+
+/-- A q-zeta datum whose Reeb spectrum is an ordered sequence rather than a
+    finite list. The order is part of the data: the identity below is a limit of
+    partial sums taken in this order. -/
+structure QZetaDatumSeq where
+  /-- The deformation parameter. -/
+  q : ℝ
+  /-- `q > 1`. -/
+  hq : 1 < q
+  /-- The infinitesimal `ℏ_q`. -/
+  hbar_q : ℝ
+  /-- `ℏ_q > 0`. -/
+  hbar_pos : 0 < hbar_q
+  /-- The maximal ideals (the geometric side). -/
+  ideals : List MaxIdeal
+  /-- The Reeb spectrum, in its summation order. -/
+  spectrum : ℕ → ReebEigenvalue
+  /-- The constant `Ω_q`. -/
+  Omega_q : ℝ
+  /-- `Ω_q > 0`. -/
+  Omega_pos : 0 < Omega_q
+
+/-- The `N`-th ordered partial spectral side: the finite spectral side of the
+    first `N` eigenvalues, in the datum's order. -/
+noncomputable def QZetaDatumSeq.partialSide (D : QZetaDatumSeq) (N : ℕ) (X : ℝ) : ℂ :=
+  spectralSide D.q D.hq ((List.range N).map D.spectrum) D.Omega_q X
+
+/-- The `N`-th ordered partial spectral sum `Σ_{n<N} X^{ρ_n}/[ρ_n]_q`. -/
+noncomputable def QZetaDatumSeq.partialSum (D : QZetaDatumSeq) (N : ℕ) (X : ℝ) : ℂ :=
+  (((List.range N).map D.spectrum).map
+    fun ρ => (X : ℂ) ^ ρ.val / qInteger D.q D.hq ρ.val).sum
+
+/-- **Conjecture (q-explicit formula, ordered-infinite-spectrum carrier).** For
+    every `X > 1` the ordered partial spectral sides converge to `ψ_q(X)`.
+
+    No instance is provided. Unlike `QExplicitFormula`, this class is not refuted
+    by any theorem in this file; what is proved is the necessary condition
+    `partialSpectral_unbounded`. -/
+-- Ref: [leitner2026] Ch. 8 §explicit-formula
+class QExplicitFormulaSeq (D : QZetaDatumSeq) : Prop where
+  /-- The identity, as a limit of ordered partial sums, at every `X > 1`. -/
+  formula : ∀ X : ℝ, 1 < X →
+    Filter.Tendsto (fun N => D.partialSide N X) Filter.atTop
+      (nhds ((QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X : ℝ) : ℂ))
+
+/-- **Necessary condition.** If the ordered-spectrum explicit formula holds for
+    `D`, then the ordered partial spectral sums are unbounded on `(1, √2]`: for
+    every `C` there are `X ∈ (1, √2]` and `N` with `‖Σ_{n<N} X^{ρ_n}/[ρ_n]_q‖ > C`.
+
+    Conditional on `[QExplicitFormulaSeq D]` (§3b-cond). The proof is the
+    bounded-versus-unbounded argument of `not_qExplicitFormula`, run against the
+    limit: if every partial sum were bounded by `C`, the real part of every
+    partial side would exceed `ψ_q`'s bound at the `X` supplied by
+    `tail_term_unbounded`, and so would the limit. -/
+theorem partialSpectral_unbounded (D : QZetaDatumSeq) [hinst : QExplicitFormulaSeq D]
+    (C : ℝ) : ∃ X : ℝ, 1 < X ∧ X ≤ Real.sqrt 2 ∧ ∃ N : ℕ, C < ‖D.partialSum N X‖ := by
+  by_contra hcon
+  push_neg at hcon
+  set M : ℝ := (D.ideals.map fun m => |QVonMangoldtFunction D.hbar_q D.hbar_pos m|).sum
+    with hM
+  set c : ℝ := qLog D.q (2 * Real.pi * D.Omega_q) with hc
+  obtain ⟨X, hX1, hX2, hXb⟩ := tail_term_unbounded D.q D.hq (M + C + |c| + 2)
+  have hlim := (Complex.continuous_re.tendsto _).comp (hinst.formula X hX1)
+  have hbdd := abs_le.mp (qChebyshev_abs_le D.hbar_q D.hbar_pos D.ideals X)
+  -- every partial side has real part at least `M + 1`
+  have hlow : ∀ N : ℕ, M + 1 ≤ (D.partialSide N X).re := by
+    intro N
+    have hTb : ‖D.partialSum N X‖ ≤ C := hcon X hX1 hX2 N
+    have hTre := abs_le.mp (le_trans (Complex.abs_re_le_norm (D.partialSum N X)) hTb)
+    have hre : (D.partialSide N X).re
+        = X - (D.partialSum N X).re - c - (1 / 2) * qLog D.q (1 - X ^ (-2 : ℝ)) := by
+      simp [QZetaDatumSeq.partialSide, QZetaDatumSeq.partialSum, spectralSide, hc,
+        Complex.sub_re, Complex.ofReal_re, Complex.mul_re, Complex.ofReal_im]
+    rw [hre]
+    linarith [hXb, hX1, le_abs_self c, hTre.1]
+  have hge : M + 1 ≤ (((QChebyshevFunction D.hbar_q D.hbar_pos D.ideals X : ℝ) : ℂ)).re :=
+    ge_of_tendsto hlim (Filter.Eventually.of_forall hlow)
+  rw [Complex.ofReal_re] at hge
+  linarith [hbdd.2]
+
+/-- A datum whose ordered partial spectral sums are uniformly bounded on
+    `(1, √2]` satisfies no ordered-spectrum explicit formula. -/
+theorem not_qExplicitFormulaSeq_of_bounded (D : QZetaDatumSeq) (C : ℝ)
+    (hC : ∀ X : ℝ, 1 < X → X ≤ Real.sqrt 2 → ∀ N : ℕ, ‖D.partialSum N X‖ ≤ C) :
+    ¬ QExplicitFormulaSeq D := by
+  intro hinst
+  obtain ⟨X, hX1, hX2, N, hN⟩ := partialSpectral_unbounded D C
+  linarith [hC X hX1 hX2 N]
+
+/-- **Absolute summability of the majorant is excluded.** If
+    `Σ_n √2^{|Re ρ_n|}/‖[ρ_n]_q‖` converges, `D` satisfies no ordered-spectrum
+    explicit formula. So an instance needs genuinely conditional convergence
+    near `X = 1`, matching the classical mechanism. -/
+theorem not_qExplicitFormulaSeq_of_summable (D : QZetaDatumSeq)
+    (hs : Summable fun n => Real.sqrt 2 ^ |(D.spectrum n).val.re|
+      / ‖qInteger D.q D.hq (D.spectrum n).val‖) :
+    ¬ QExplicitFormulaSeq D := by
+  set a : ℕ → ℝ := fun n => Real.sqrt 2 ^ |(D.spectrum n).val.re|
+      / ‖qInteger D.q D.hq (D.spectrum n).val‖ with ha
+  have hnn : ∀ n, 0 ≤ a n := fun n => by
+    simp only [ha]; exact div_nonneg (Real.rpow_nonneg (Real.sqrt_nonneg 2) _) (norm_nonneg _)
+  refine not_qExplicitFormulaSeq_of_bounded D (∑' n, a n) ?_
+  intro X hX1 hX2 N
+  have h1 := spectralSum_norm_le D.q D.hq ((List.range N).map D.spectrum) X hX1 hX2
+  have h2 : (((List.range N).map D.spectrum).map fun ρ =>
+        Real.sqrt 2 ^ |ρ.val.re| / ‖qInteger D.q D.hq ρ.val‖).sum
+      = ∑ n ∈ Finset.range N, a n := by
+    clear h1
+    induction N with
+    | zero => simp
+    | succ k ih =>
+      rw [List.range_succ, List.map_append, List.map_append, List.sum_append, ih,
+        Finset.sum_range_succ]
+      simp [ha]
+  have h3 : ∑ n ∈ Finset.range N, a n ≤ ∑' n, a n :=
+    hs.sum_le_tsum _ (fun n _ => hnn n)
+  calc ‖D.partialSum N X‖ ≤ _ := h1
+    _ = ∑ n ∈ Finset.range N, a n := h2
+    _ ≤ ∑' n, a n := h3
+
 end QOU.AlgebraicSubstrate
