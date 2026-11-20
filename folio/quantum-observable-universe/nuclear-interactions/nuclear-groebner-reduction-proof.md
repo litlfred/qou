@@ -8,5 +8,5 @@ Uniqueness of the normal form relies on the confluence half of the Gröbner--Shi
 
 3. **Termination.** Length-lexicographic order well-orders the monomials. Each reduction step removes its leading monomial and introduces only smaller ones, so every reduction sequence terminates. Combined with confluence, this establishes both existence and uniqueness.
 
-The three steps are machine-checked in the unital-Gröbner-bases development. The three defining families fail to be a Gröbner--Shirshov basis at $A = 4$. The completed system is a Gröbner--Shirshov basis for every $A$ (for real $q > 0$, $q \neq 1$). Termination is proved. The Diamond Lemma \cite{bergman1978} is proved, with uniqueness of normal forms holding up to coefficient-wise equality. The block's own statement asserts only the existence of a reduced form.
+The three defining families fail to be a Gröbner--Shirshov basis at $A = 4$. The completed system is a Gröbner--Shirshov basis for every $A$ (for real $q > 0$, $q \neq 1$). Termination is proved. The Diamond Lemma \cite{bergman1978} is proved, with uniqueness of normal forms holding up to coefficient-wise equality. The block's own statement asserts only the existence of a reduced form.
 $\square$
