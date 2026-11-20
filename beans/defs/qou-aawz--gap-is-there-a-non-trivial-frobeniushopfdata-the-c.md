@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-14T19:59:47Z
-updated_at: 2026-10-04T15:14:53Z
+updated_at: 2026-11-20T09:00:00Z
 parent: qou-ddmn
 ---
 
@@ -189,3 +189,6 @@ entirely on the trivial object, exactly as when this bean was opened.
 ## Progress (PR #8448)
 - Formalized in `folio/quantum-observable-universe/lean/QOU/Eightfold/CuspLatticeUncertaintyTruncationDigitSlopeJetHorizonProjectionSubstrateModelScalarTrace.lean` (wired in `QOU.lean`).
 - 80-dps numerical witness stamped in `computations/probes/qou_10v9_4kgh_5u0i_a2d7_aawz_nnyn_probe.witness.json` (`Commit 1` = `03aab630aaf498438c097ced372d1b9624239334`, `HEAD` = `9712a8a7c54237632ba55faa0a1e31fdd3332e05`).
+
+## Note from W12 (2026-11-20, PR #8537) — informational, status untouched
+`QOU.IdemLine.model` (in `FrobeniusHopfNilpotentAndNonFieldModel.lean`) is a sorry-free `FrobeniusHopfData` — all six antipode laws, Frobenius relation, snakes — on an object A = eR that is NOT isomorphic to 𝟙 and not zero (any commutative ring with an idempotent e ∉ {0,1}, e.g. S × S). So "the corpus only exhibits A = 1" no longer holds literally. It does not close this bean's intent: A is a proper summand of 𝟙, and `retract_of_unit` proves every model satisfying `ConvolutionLeft` is a retract of 𝟙. The `k[G]` question (anti-automorphism package without ConvolutionLeft) is untouched.
