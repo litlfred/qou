@@ -200,6 +200,19 @@ theorem degLex_append_singleton {n : ℕ} (w : List (Fin n)) (i : Fin n) :
     DegLex w (w ++ [i]) :=
   Or.inl (by simp)
 
+/-- One tick on words: append one generator. -/
+def WordTick {n : ℕ} (w w' : List (Fin n)) : Prop := ∃ i, w' = w ++ [i]
+
+/-- **No word lies on a closed chain of ticks**, for any braiding: every tick
+    is a `DegLex` step, and `DegLex` has no closed chains. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem word_no_closedChainAt (n : ℕ) (w : List (Fin n)) :
+    ¬ Relation.TransGen (WordTick (n := n)) w w := fun h =>
+  degLex_no_closedChain n w
+    (Relation.TransGen.mono (fun a b hab => by
+      obtain ⟨i, rfl⟩ := hab
+      exact degLex_append_singleton a i) h)
+
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [leitner2026] §2/braiding-induced-ordering
 def braiding_induced_ordering : Prop :=

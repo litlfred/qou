@@ -1,27 +1,23 @@
 import { remark } from "../../schema/builders";
 
 /**
- * Why a Gödel-type universe is excluded once time order is defined as
- * crossing application.
- *
- * Words: every tick is a ≺_c-step, and a well-founded relation has no closed
- * chains, for any braiding. States: the writhe forbids closed chains in the
- * braid group, while a crossing of finite order (c² = id is order two) puts
- * every state on one. This is where the non-symmetry hypothesis of
- * prop:braiding-induced-ordering does real work.
+ * The Gödel reading of lem:crossing-application-chains. The mathematics is
+ * in the lemma; this block only interprets it, under the stated modelling
+ * choice that one tick is one crossing application.
  */
 export default remark({
   interprets: "prop:braiding-induced-ordering",
   label: "rem:no-goedel-closed-chains",
-  title: "No closed causal chains: why a Gödel universe is excluded",
+  title: "No closed causal chains under the tick definition: the Gödel universe",
   lean: {
-    ref: "qou:QOU.Chronology.braid_no_closedChainAt",
+    ref: "qou:QOU.word_no_closedChainAt",
     sorryFree: true,
     validation: "not_checked",
   },
   uses: [
     "prop:braiding-induced-ordering",
     "prf:braiding-induced-ordering",
+    "lem:crossing-application-chains",
   ],
   cites: ["goedel1949"],
   tags: [
