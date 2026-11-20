@@ -453,6 +453,7 @@ import QOU.Mass.WStdSuperExponential
 import QOU.Mathlib.YoungLatticeExchange
 import QOU.Mathlib.YoungLatticeCornerCount
 import QOU.Mass.LinearChainBondCount
+import QOU.Mass.WedderburnMassFormulaCoefficients
 import QOU.Mass.KappaWritheAsymptote
 import QOU.Mass.LinearChainBondFactorization
 import QOU.Mass.MilnorSignRepObstruction
