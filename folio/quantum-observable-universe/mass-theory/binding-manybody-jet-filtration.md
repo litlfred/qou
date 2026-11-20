@@ -104,17 +104,6 @@ the unknown weights, it does not remove them, and "$\rho\cdot A$ is an output of
 the recursion" is false unless $R$ is independently pinned. All of the ansatz's
 content therefore lies in the **finiteness** of the Laurent window.
 
-That finiteness is unattainable in the scalar form. The $q$-Borel-normalized
-carrier is the rank-$2$ module $\mathcal{K}$ of
-[The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module](#conj:qdifference-kernel-prolongation-symbol),
-which is **irreducible** — its Newton slope $\tfrac12$ is not an integer, while
-every rank-1 $q$-difference module has integer slope — so no scalar
-$R(q,x)\in K(x)$ acts on it at all, at any depth. The kernel that closes this
-conjecture must be a $2\times2$ **matrix**, and a rank-$2$ recursion needs two
-base cases, so the $n=3$ term is required as an independent input rather than
-produced by the recursion. This is consistent with, and independent of, the
-one-free-parameter count recorded above.
-
 A multi-anchor test (D$\to{}^{12}$C, Coulomb-corrected) further shows that the
 full-tower reading — summing $B(K)=\sum_{n=2}^{A} m_e\,a_D^{(n)}\,w_n$ to the
 nucleon count $A$ — is **refuted for $A\geq 5$**: the na-Stokes period $a_D^{(n)}$

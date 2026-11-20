@@ -58,8 +58,7 @@ the full partition sum gives the exact Markov trace.*
 *The coefficients are:*
 - *$\alpha = m_e \times 8G$
   ([binding scale](#conj:binding-scale-catalan)),*
-- *$[3]_q = (q^3 - q^{-3})/(q - q^{-1})$, the quantum 3-integer
-  ([degree-2 weight](#prop:degree-two-baryon-weight)),*
+- *$[3]_q = (q^3 - q^{-3})/(q - q^{-1})$, the quantum 3-integer,*
 - *$h_{\mathrm{A}} = q - q^{-1}$, the Hecke parameter.*
 
 *All quantities are derived from $q_0$ and $m_e$.  The formula has
