@@ -1020,3 +1020,7 @@ Closed 2026-10-04 in the work-plan reorganisation: the work has landed on main. 
 ## Verify by build (2026-10-04)
 
 Closed on 'sorry-free on main' evidence, but the cited declaration could not be matched automatically to a file that a CI Lake target is known to compile (orphan census 2026-10-04: only 654 of 1,309 lean.refs resolve into the compiled library; ugb and fred2005 are separate required packages). Confirm with a build and `#print axioms`; reopen if it does not compile.
+
+## 2026-11-20 — W5 (legacy PR triage): the Lean never reached main
+
+This bean is `completed`, but the six Lean files of PR #7136 (TauDualBasis, CasimirBasisIndependence, CasimirBlockScalar, CasimirTransport, CasimirBlockValue, WenzlCandidateNormalisation) were not on main at `917b69399` (`TwDual` occurs nowhere). Ported in PR #8559 (content/→folio/ move only), verified lean-direct against a 142-module -B cone, 46 decls, no sorryAx. Not re-opened: the work is done once #8559 merges.
