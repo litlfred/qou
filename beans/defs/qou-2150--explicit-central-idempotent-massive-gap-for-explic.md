@@ -1,7 +1,7 @@
 ---
 # qou-2150
 title: 'explicit-central-idempotent: Massive gap for explicit_central_idempotent_via_murphy'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
@@ -102,3 +102,7 @@ Cross-checks promoted to thm:explicit-central-idempotent-cross-checks; char-0 hy
 
 ## 2026-11-20T19:20Z — owner "1 2": PR #8660
 jsonld regenerated for both e_lambda blocks; scalar carrier ExplicitCentralIdempotentConjecture + its library module + the prop sibling .lean retired. Cone 113/113 ok. Awaiting merge permission.
+
+
+## 2026-11-20T19:55Z — #8660 merged (eccebd47a5)
+Carrier retired, jsonld regenerated. All four cross-checks proved for every n, any characteristic (#8587, #8625). Nothing open: completing.
