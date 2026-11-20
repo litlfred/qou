@@ -1173,6 +1173,7 @@ import QOU.Mathlib.QGevreyOrder
 -- Liouville's third theorem (Σ ord = 0) stated open; f'/f-periodicity + divisor-
 -- lattice-periodicity bricks proved sorry-free.
 import QOU.Mathlib.EllipticDivisorDegree
+import QOU.Mathlib.EllipticAnnulusDescent
 import QOU.Mathlib.HadamardFactorization
 -- Argument-principle scaffold (epic qou-lbth / bean qou-bmyx, brick PI-3):
 -- (1/2πi)∮ f'/f = #zeros − #poles stated open (residue-of-logDeriv = order is the
