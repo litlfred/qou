@@ -626,3 +626,21 @@ The 45 MERGE-CANDIDATEs were ported onto current `main` and checked again agains
 | Conflict with files `main` changed since triage | 3: #8189 #8218 #8225 |
 | Add a red precision gate (collapsed witness / float64 padding) | 4: #8152 #8170 #8186 #8226 |
 | Cannot be verified in an 8 GB container (an import, `YoungDiagramKernel`, is OOM-killed at 5.8 GB; `lean` itself killed) | 2: #8153 #8274 |
+
+## Merge round 2 — Lean only (owner chose option 1, 2026-11-20)
+
+The 26 PRs whose Lean compiled but whose probe/witness files broke convention were merged **Lean only**. Their probe scripts and witness JSON were dropped; no ported Lean cites a dropped file. Each group was rebased onto the then-current `main` and re-verified before merging:
+- `lean-direct-cone.sh` on every changed module;
+- `lean -DautoImplicit=false` with `#print axioms` on every changed file.
+
+All files passed, with only the standard axioms. Dependents of the modified modules were verified on the full 26-port branch: 202 files, 1,580 theorems. Each merge's replay was verified, and the originals were closed.
+
+| group | PR | ports | files / theorems |
+|---|---|---|---|
+| 3 | #8683 | #8187 #8243 #8244 #8259 #8263 | 24 / 287 |
+| 4 | #8684 | #8267 #8271 #8304 #8311 #8316 | 26 / 234 |
+| 5 | #8686 | #8318 #8322 #8342 #8354 #8358 | 25 / 162 |
+| 6 | #8687 | #8361 #8379 #8389 #8400 #8405 | 25 / 128 |
+| 7 | #8688 | #8454 #8461 #8468 #8482 #8494 #8496 | 30 / 253 |
+
+**Totals:** 36 of the 45 MERGE-CANDIDATEs are on `main` (10 in round 1, 26 here). The remaining 9 need individual rework: #8189, #8218, #8225 (conflict with main); #8152, #8170, #8186, #8226 (red precision gate); #8153, #8274 (need a machine with more than 8 GB).
