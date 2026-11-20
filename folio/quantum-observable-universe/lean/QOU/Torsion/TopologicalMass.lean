@@ -58,8 +58,26 @@ theorem qNumber_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hn : 0 < n) :
         linarith
       · linarith
 
-/-- **Topological Decomposition of Mass** (data).
-    LaTeX: `\label{thm:topological-mass}` -/
+/-- **Topological Decomposition of Mass** (conjecture carrier).
+    LaTeX: `\label{conj:topological-mass}` (demoted from `thm:` 2026-11-20,
+    bean `qou-27ys`; the label in this docstring read `thm:` until bean
+    `qou-dx7g`).
+
+    **Vacuity status (bean `qou-dx7g`, 2026-11-20).**  `decomposition` carries
+    the open equality `m = baseline + Σ exceptional` as a hypothesis, and every
+    quantity in it — `totalMass`, `baselineHolonomy`, `exceptionalContribution`
+    — is a free real supplied with the instance.  So `numBlowups := 0`,
+    `totalMass = baselineHolonomy := 0` inhabits it (given any
+    `ArchimedeanMassIdentity` / `BraneBoundary`), and the structure does not
+    say which mass decomposes.  The content block
+    (`mass-endomorphism/topological-mass.md`) states the intended objects:
+    `m(γ) = ‖tr(γ)‖`, `baseline = ‖tr_desc(γ)‖ = ‖tr(τγ)‖`, transient terms
+    `‖tr_trans(γ, pᵢ)‖`, and records why the equality is open — the idempotent
+    splitting makes the *traces* add (`idempotent_gives_mass_decomposition`),
+    not their norms.  Tying these reals to norms of traces of a vortex morphism
+    needs the trace on `End_𝒞(A_{n+1})` and the vortex `γ` as data of this
+    structure; neither is available on the bare type `M`, so the fields are
+    left as they are and the gap is recorded here rather than papered over. -/
 structure TopologicalMassDecomposition (M : Type*) where
   mi : ArchimedeanMassIdentity M
   di : DescentInvolution (M → ℝ)
