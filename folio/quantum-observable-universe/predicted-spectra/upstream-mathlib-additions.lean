@@ -4,6 +4,7 @@ import Mathlib.Analysis.PSeries
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Tactic
 import QOU.Archimedean.ClausenFunctionMathlibFiller
+import QOU.Archimedean.ClausenDoubleAngleSeries
 
 
 /-!
@@ -268,18 +269,19 @@ theorem blochWigner_unit_circle_eq_Cl_2
     after the standard substitution `Li_2(-z) = π²/6 - Li_2(1+z)`
     and taking imaginary parts on the unit circle.
 
-    Direct `tsum` proof is blocked: `sin(2kθ) = 2 sin(kθ) cos(kθ)`
-    doesn't decompose into a *linear* combination of `sin(kθ)`
-    terms (it's a cross-product), so termwise rearrangement of
-    the `tsum` defining `Cl_2(2θ)` does not produce
-    `2·Cl_2(θ) - 2·Cl_2(π-θ)`. The proof requires Mathlib's
-    `Real.dilog` (or `Complex.dilog`) infrastructure plus the
-    Spence-Lewin functional equation for `Re(Li_2)` and
-    `Im(Li_2)`.
+    **The class is now inhabited** (2026-11-20, bean `qou-eao2`): the instance
+    `instCl_2_DoubleAngle` below is supplied by the sorry-free series proof
+    `QOU.Archimedean.ClausenDoubleAngleSeries.Cl_2_double_angle`, valid for
+    every real `θ`. This docstring used to say a direct `tsum` proof was
+    blocked because `sin(2kθ) = 2 sin(kθ) cos(kθ)` is not linear in the
+    `sin(kθ)`. That was a mis-diagnosis. The proof does not expand `sin(2kθ)`.
+    It uses `sin((k+1)(π − θ)) = (−1)^k sin((k+1)θ)`, so that
+    `Cl_2(θ) − Cl_2(π − θ)` keeps only the odd-`k` terms, and those terms are
+    `Cl_2(2θ)/4` re-indexed. No dilogarithm is needed. (The interval version
+    on `(0, π)` was already proved as `QOU.Knot.Cl_2_duplication`.)
 
-    We axiomatise the identity as a typeclass hypothesis with
-    one field; downstream callers that need the double-angle
-    formula take `[Cl_2_DoubleAngle]` as `[Instance]`. -/
+    The class is kept so that existing `[Cl_2_DoubleAngle]` binders still
+    resolve; with the instance in scope they are discharged automatically. -/
 -- Ref: [zagier1986], [bloch2000]
 class Cl_2_DoubleAngle : Prop where
   /-- The Spence-Lewin double-angle identity for Cl_2. -/
@@ -296,6 +298,12 @@ class Cl_2_DoubleAngle : Prop where
 theorem Cl_2_double_angle [hC : Cl_2_DoubleAngle] (θ : ℝ) :
     Cl_2 (2 * θ) = 2 * Cl_2 θ - 2 * Cl_2 (Real.pi - θ) :=
   hC.double_angle θ
+
+/-- **The genuine instance** of `Cl_2_DoubleAngle`, from the series proof for
+    every real `θ` (`ClausenDoubleAngleSeries.Cl_2_double_angle`, sorry-free). -/
+-- Ref: [lewin1981] §4.2
+instance instCl_2_DoubleAngle : Cl_2_DoubleAngle :=
+  ⟨QOU.Archimedean.ClausenDoubleAngleSeries.Cl_2_double_angle⟩
 
 /-- **Boundary unconditional check:** at `θ = 0`, the double-angle
     identity reduces to `Cl_2(0) = 0` on both sides (using
