@@ -1,18 +1,22 @@
 /-
-  Knot-operator LP selection via the Frobenius Gram-inverse.
+  Knot-operator LP selection via the Frobenius Gram pseudo-inverse.
 
   Companion: knot-operator-lp-selection.md
   Path: folio/quantum-observable-universe/mass-theory/
 
   The block's LP (primal, MINIMISED):
 
-      min  Σ_o t(o) x(o)   s.t.   x ≥ 0,   (G⁻¹ S) x ≥ n_T
+      min  Σ_o t(o) x(o)   s.t.   x ≥ 0,   (G⁺ S) x ≥ n_T
 
-  with `G` the Frobenius Gram matrix on a basis `{b_i}` of `H_n(q)`,
+  with `G` the Frobenius Gram matrix on a basis `{b_i}` of `H_n(q)` and
+  `G⁺` its Moore–Penrose pseudo-inverse, i.e. the inverse of the trace form
+  on the quotient `H_n(q)/rad` (`IsMoorePenrose`, carried as a field of the
+  LP data; in code `pyhecke.gram.G_PINV` / `gram_quotient_inverse`). When
+  `det G` is a unit, `G⁺ = G⁻¹` (`gramPinv_eq_inv_of_isUnit_det`);
   `S` the supply matrix (column `o` = NF profile of knot operator `o`),
   `t` the crossing energies, `n_T` the demand of target `T`. The dual is
 
-      max  Σ_i n_T(i) y(i)   s.t.   y ≥ 0,   (G⁻¹ S)ᵀ y ≤ t.
+      max  Σ_i n_T(i) y(i)   s.t.   y ≥ 0,   (G⁺ S)ᵀ y ≤ t.
 
   PROVED here, sorry-free, over any ordered commutative ring `R` (§7c):
   * `weak_duality`: every dual-feasible `y` bounds every primal-feasible `x`;
@@ -22,7 +26,12 @@
     `x(o) · reduced-cost_o = 0`, i.e. a constraint with nonzero shadow
     price is tight and an operator in the support has zero reduced cost
     (the "active set");
-  * `knot_operator_lp_selection` bundles the three.
+  * `knot_operator_lp_selection` bundles the three;
+  * `gramPinv_eq_inv_of_isUnit_det`: on a non-degenerate Gram matrix the
+    pseudo-inverse is the inverse.
+
+  The LP lemmas use nothing about `G⁺` beyond `M = G⁺ S`; the pseudo-inverse
+  property fixes which matrix `M` is built from.
 
   NOT proved here: strong duality (that an optimal pair with equal
   objectives EXISTS whenever the primal is feasible and bounded). Mathlib
@@ -32,7 +41,7 @@
   (complementary slackness).
 
   RETIRED (QA re-adjudication 2026-11-20): the previous Lean `Optimal`
-  MAXIMISED the objective and dropped `G⁻¹`, contradicting the .md, and
+  MAXIMISED the objective and dropped the Gram factor, contradicting the .md, and
   its class `KnotOperatorLPSelection` was uninhabitable — at `n_T = 0`
   strong duality forces the zero selection to be optimal, and
   complementary slackness then demands its empty support be a singleton.
@@ -51,7 +60,27 @@ namespace QOU.BraidsAndKnots
 
 open Finset
 
-/-! ### The block's LP (minimisation with `G⁻¹ S`) -/
+/-! ### The block's LP (minimisation with `G⁺ S`) -/
+
+/-- `P` is the Moore–Penrose pseudo-inverse of `G` (the four Penrose
+    conditions, with transpose as the adjoint). For a symmetric Gram matrix
+    with radical, this is the inverse of the form on the quotient by the
+    radical, extended by `0`. -/
+def IsMoorePenrose {R : Type*} [CommRing R] {n : Type*} [Fintype n]
+    (G P : Matrix n n R) : Prop :=
+  G * P * G = G ∧ P * G * P = P ∧
+    Matrix.transpose (G * P) = G * P ∧ Matrix.transpose (P * G) = P * G
+
+/-- On a non-degenerate matrix (`det G` a unit), any matrix satisfying the
+    first Penrose condition is the inverse. -/
+theorem eq_inv_of_mul_mul_eq {R : Type*} [CommRing R] {n : Type*} [Fintype n]
+    [DecidableEq n] {G P : Matrix n n R} (hG : IsUnit G.det) (h : G * P * G = G) :
+    P = G⁻¹ := by
+  calc P = (G⁻¹ * G) * P * (G * G⁻¹) := by
+        rw [Matrix.nonsing_inv_mul _ hG, Matrix.mul_nonsing_inv _ hG, Matrix.one_mul,
+          Matrix.mul_one]
+    _ = G⁻¹ * (G * P * G) * G⁻¹ := by simp only [Matrix.mul_assoc]
+    _ = G⁻¹ := by rw [h, Matrix.nonsing_inv_mul _ hG, Matrix.one_mul]
 
 /-- LP data for knot-operator selection in an `R`-algebra `H`: a finite
     operator set `Op`, a finite Frobenius basis `Basis`, the Gram matrix,
@@ -63,6 +92,10 @@ structure KnotOperatorLP (R : Type*) [CommRing R]
   toH : Op → H
   /-- Frobenius Gram matrix `G_{ij} = tr(b_i b_j)` on the basis. -/
   gram : Matrix Basis Basis R
+  /-- The pseudo-inverse `G⁺` (the inverse on `H_n(q)/rad`). -/
+  gramPinv : Matrix Basis Basis R
+  /-- `G⁺` is the Moore–Penrose pseudo-inverse of `G`. -/
+  gramPinv_spec : IsMoorePenrose gram gramPinv
   /-- Supply matrix: column `o` is the NF profile of operator `o`. -/
   supply : Matrix Basis Op R
   /-- Crossing-energy cost `t(o)` of each operator. -/
@@ -75,12 +108,17 @@ variable {R : Type*} [CommRing R] [PartialOrder R] [IsOrderedRing R]
   {Op Basis : Type*} [Fintype Op] [Fintype Basis] [DecidableEq Basis]
   (lp : KnotOperatorLP R H Op Basis)
 
-/-- The constraint matrix `M = G⁻¹ S`. `⁻¹` is Mathlib's `Matrix.inv`, which
-    is `0` when `det G` is not a unit. Under convention D the Frobenius Gram
+/-- The constraint matrix `M = G⁺ S`. Under convention D the Frobenius Gram
     matrix on `H_3(q)` has a radical (see `prop:knot-operator-selection`'s
-    notes), so there `M = 0` and the LP is degenerate; every theorem below
-    holds for any `gram`, but says nothing useful in that case. -/
-noncomputable def M : Matrix Basis Op R := lp.gram⁻¹ * lp.supply
+    notes), so `G⁻¹` does not exist and `G⁺` is the inverse on the quotient. -/
+def M : Matrix Basis Op R := lp.gramPinv * lp.supply
+
+omit [PartialOrder R] [IsOrderedRing R] in
+/-- On a non-degenerate Gram matrix the pseudo-inverse is the inverse, so the
+    constraint matrix is `G⁻¹ S`. -/
+theorem gramPinv_eq_inv_of_isUnit_det (hG : IsUnit lp.gram.det) :
+    lp.gramPinv = lp.gram⁻¹ :=
+  eq_inv_of_mul_mul_eq hG lp.gramPinv_spec.1
 
 /-- Primal objective `Σ_o t(o) x(o)`. -/
 def primalObj (x : Op → R) : R := ∑ o, lp.cost o * x o
@@ -91,13 +129,13 @@ def primalObj (x : Op → R) : R := ∑ o, lp.cost o * x o
 def dualObj (_lp : KnotOperatorLP R H Op Basis) (n_T : Basis → R) (y : Basis → R) : R :=
   ∑ i, n_T i * y i
 
-/-- `(G⁻¹ S x)_i`. -/
-noncomputable def supplyOf (x : Op → R) (i : Basis) : R := ∑ o, lp.M i o * x o
+/-- `(G⁺ S x)_i`. -/
+def supplyOf (x : Op → R) (i : Basis) : R := ∑ o, lp.M i o * x o
 
-/-- `((G⁻¹ S)ᵀ y)_o`. -/
-noncomputable def priceOf (y : Basis → R) (o : Op) : R := ∑ i, y i * lp.M i o
+/-- `((G⁺ S)ᵀ y)_o`. -/
+def priceOf (y : Basis → R) (o : Op) : R := ∑ i, y i * lp.M i o
 
-/-- Primal feasibility: `x ≥ 0` and `G⁻¹ S x ≥ n_T`. -/
+/-- Primal feasibility: `x ≥ 0` and `G⁺ S x ≥ n_T`. -/
 def Feasible (n_T : Basis → R) (x : Op → R) : Prop :=
   (∀ o, 0 ≤ x o) ∧ ∀ i, n_T i ≤ lp.supplyOf x i
 
@@ -105,7 +143,7 @@ def Feasible (n_T : Basis → R) (x : Op → R) : Prop :=
 def Optimal (n_T : Basis → R) (x : Op → R) : Prop :=
   lp.Feasible n_T x ∧ ∀ x', lp.Feasible n_T x' → lp.primalObj x ≤ lp.primalObj x'
 
-/-- Dual feasibility: `y ≥ 0` and `(G⁻¹ S)ᵀ y ≤ t`. -/
+/-- Dual feasibility: `y ≥ 0` and `(G⁺ S)ᵀ y ≤ t`. -/
 def DualFeasible (y : Basis → R) : Prop :=
   (∀ i, 0 ≤ y i) ∧ ∀ o, lp.priceOf y o ≤ lp.cost o
 
@@ -183,7 +221,7 @@ end KnotOperatorLP
 /--
   **Knot-operator LP selection** (`prop:knot-operator-lp-selection`).
   Given a feasible selection `x` and dual prices `y` of the
-  `G⁻¹ S`-constrained minimisation LP whose objectives agree, `x` is an
+  `G⁺ S`-constrained minimisation LP whose objectives agree, `x` is an
   optimal (minimum-crossing-energy) selection, `y` is dual-optimal, every
   constraint with a nonzero shadow price is tight, and every operator in
   the support of `x` has zero reduced cost.
@@ -210,7 +248,7 @@ theorem knot_operator_lp_selection
 /-! ### Retired formulation, and why
 
 The previous Lean statement (kept here only to record the defect) maximised
-the objective, dropped `G⁻¹`, and asserted via a class that every optimum
+the objective, dropped the Gram factor, and asserted via a class that every optimum
 is supported on exactly one operator. That class has no instance. -/
 
 /-- The previous LP data, verbatim except for the name (was
