@@ -1491,6 +1491,90 @@ def main() -> dict:
         "docs/audits/2026-08-22-mK-mpi-l2-red-team.md",
     ))
 
+    # ── Two-Term Borromean V³ QED Diagnostics (m_mu, Q_beta, m_n, Delta_pn) ──
+    # Attach parameter-free connected 4th-order Borromean V³ QED diagnostics
+    # (`QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm`) at 50 dps without altering
+    # any primary ruled z_D scores (respecting owner ruling 2026-09-12).
+    from canonical_mass import (
+        nucleon_mass_mev as _cm_nucleon_mass_mev,
+        proton_qed_self_energy_borromean_mev as _cm_mp_qed_mev,
+        np_qed_splitting_borromean_conn_mev as _cm_np_qed_mev,
+    )
+    _mp_qed_plain = mpf(str(_cm_mp_qed_mev(k_weighted=False)))
+    _mp_qed_Kp = mpf(str(_cm_mp_qed_mev(k_weighted=True)))
+    _dm_qed_plain = mpf(str(_cm_np_qed_mev(weighting="plain")))
+    _dm_qed_KnKp = mpf(str(_cm_np_qed_mev(weighting="KnKp")))
+    _dm_qed_Kp3 = mpf(str(_cm_np_qed_mev(weighting="Kp3")))
+    _dm_qed_q = mpf(str(_cm_np_qed_mev(weighting="q")))
+
+    _mn_sub_1term = mpf(str(_cm_nucleon_mass_mev("n")))
+    _mn_sub_2term = _mn_sub_1term + _dm_qed_plain
+    _mn_codata = OBSERVABLES["m_n"][0]
+    _mn_sub_1term_err_ppb = (_mn_sub_1term - _mn_codata) / _mn_codata * mpf("1e9")
+    _mn_sub_2term_err_ppb = (_mn_sub_2term - _mn_codata) / _mn_codata * mpf("1e9")
+    _mn_sub_reduction_pct = (1 - abs(_mn_sub_2term_err_ppb) / abs(_mn_sub_1term_err_ppb)) * 100
+
+    # Linearised 2-term proton-pin shift on m_mu from d(m_p^QCD/m_e)/dq and d(m_mu/m_e)/dq at q0:
+    _vol41 = 2 * mp.clsin(2, _pi / 3)
+    _dq_fd = q0 * mpf("1e-25")
+
+    def _mp_qcd_ratio_at(qq: mpf) -> mpf:
+        _h = qq - 1 / qq
+        _tr = abs((4 + _h ** 2 - 3 * (_h ** 4) - (_h ** 6)) / (_h ** 2 + 4))
+        _qint2 = (qq ** 2 - qq ** (-2)) / _h
+        _qint3 = (qq ** 3 - qq ** (-3)) / _h
+        _fbor = _tr * _qint2 * _qint3 / (qq ** 3)
+        return 2 * (_vol41 / (((qq - 1) / qq) ** 2)) * _fbor - 12
+
+    _dmp_dq = (_mp_qcd_ratio_at(q0 + _dq_fd) - _mp_qcd_ratio_at(q0 - _dq_fd)) / (2 * _dq_fd)
+    _dq_2term_plain = -(_mp_qed_plain / m_e_mev) / _dmp_dq
+    _q0_2term_plain = q0 + _dq_2term_plain
+    _mmu_pred_2term_plain = m_e_mev * _vol41 / (((_q0_2term_plain - 1) / _q0_2term_plain) ** 2)
+    _mmu_codata = OBSERVABLES["m_mu"][0]
+    _mmu_err_2term_ppb = rel_error_ppb(_mmu_pred_2term_plain, _mmu_codata)
+
+    for _r in rows:
+        _obs_name = _r.get("obs")
+        if _obs_name == "m_mu" and "pred_MeV" in _r:
+            _r["two_term_qed_diagnostics"] = {
+                "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3",
+                "M_p_QED_conn_plain_MeV": fmt(_mp_qed_plain, 15),
+                "M_p_QED_conn_plain_keV": fmt(_mp_qed_plain * mpf(1000), 12),
+                "M_p_QED_conn_Kp_MeV": fmt(_mp_qed_Kp, 15),
+                "q0_two_term_plain": fmt(_q0_2term_plain, 25),
+                "m_mu_pred_two_term_plain_MeV": fmt(_mmu_pred_2term_plain, 12),
+                "m_mu_err_two_term_plain_ppb": fmt(_mmu_err_2term_ppb, 4),
+                "note": (
+                    "Diagnostic only — primary m_mu score remains pinned to the 1-term proton anchor "
+                    "(+209.8 ppb). Because d(m_p^QCD/m_e)/dq > 0 while d(m_mu/m_e)/dq < 0 at q0, "
+                    "subtracting a repulsive M_p^QED > 0 from m_p^exp lowers m_p^QCD(q_new) and "
+                    "decreases q_new by -2.23e-7, shifting m_mu(q_new) toward CODATA."
+                ),
+            }
+        elif _obs_name in ("Q_beta", "m_n", "Delta_pn") and "pred_MeV" in _r:
+            _pred_1t = mpf(str(_r["pred_MeV"]))
+            _codata_val = OBSERVABLES[_obs_name][0]
+            _pred_2t = _pred_1t + _dm_qed_plain
+            _err_2t_ppb = rel_error_ppb(_pred_2t, _codata_val)
+            _diag = {
+                "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
+                "Delta_m_QED_conn_plain_MeV": fmt(_dm_qed_plain, 15),
+                "Delta_m_QED_conn_plain_keV": fmt(_dm_qed_plain * mpf(1000), 12),
+                "Delta_m_QED_conn_KnKp_MeV": fmt(_dm_qed_KnKp, 15),
+                "Delta_m_QED_conn_Kp3_MeV": fmt(_dm_qed_Kp3, 15),
+                "Delta_m_QED_conn_q_MeV": fmt(_dm_qed_q, 15),
+                "pred_two_term_plain_MeV": fmt(_pred_2t, 12),
+                "err_two_term_plain_ppb": fmt(_err_2t_ppb, 4),
+                "primary_ruled_zD_score_untouched": True,
+            }
+            if _obs_name == "m_n":
+                _diag["substrate_identity_m_n_1term_MeV"] = fmt(_mn_sub_1term, 12)
+                _diag["substrate_identity_m_n_1term_err_ppb"] = fmt(_mn_sub_1term_err_ppb, 4)
+                _diag["substrate_identity_m_n_2term_plain_MeV"] = fmt(_mn_sub_2term, 12)
+                _diag["substrate_identity_m_n_2term_plain_err_ppb"] = fmt(_mn_sub_2term_err_ppb, 4)
+                _diag["substrate_identity_residual_reduction_pct"] = fmt(_mn_sub_reduction_pct, 4)
+            _r["two_term_qed_diagnostics"] = _diag
+
     return {
         "computation": "per-observable-100x-experimental-status",
         "description": (

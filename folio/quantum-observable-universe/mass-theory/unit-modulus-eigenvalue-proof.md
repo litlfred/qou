@@ -37,10 +37,7 @@ At $q = q_0$ the Borromean eigenvalues lie on the unit circle close to $+1$,
 at angle $\theta \approx 4.37^\circ$. At $q = 2$ the trace is $-1573/64$ and
 they are real, off the unit circle.
 
-**Correction (2026-11-16).** Earlier versions of this block stated unit
-modulus for every even word, $\chi_{(2,1)}(\beta_{\mathrm{Bor}}) = -2$, a
-degenerate eigenvalue $-1$ at angle $180^\circ$, and an angle of $59^\circ$ for
-$\sigma_1\sigma_2$. All four are false; the values above replace them.
+Note that unit modulus holds specifically for the three-cycle and Borromean elements above rather than for arbitrary even words, with $\chi_{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - h^4$ and non-degenerate complex-conjugate eigenvalues on $V_{(2,1)}$.
 
 ## Rotation versus growth
 

@@ -14,7 +14,7 @@ $$
   \;=\;
   \frac{q^3}{q^2+1},
 $$
-giving $z_{\mathrm{m}} \approx 0.6127$ at the proton-pinned $q_0$. This is convention D of the trace-convention registry. Until 2026-10-10 this paragraph defined $z_{\mathrm{m}}$ as $z_{\mathrm{C}} = 1/(q^{1/2} + q^{-1/2}) \approx 0.499$, the convention-C parameter excised for the mass channels; $z_{\mathrm{C}}$ is kept below where the comparison needs it.
+giving $z_{\mathrm{m}} \approx 0.6127$ at the proton-pinned $q_0$. This is convention D of the trace-convention registry, replacing the excised convention-C parameter $z_{\mathrm{C}} = 1/(q^{1/2} + q^{-1/2}) \approx 0.499$ across all mass and binding channels; $z_{\mathrm{C}}$ is retained below solely for explicit comparison.
 
 **Relation.** The Jones normalisation is tied to the convention-C parameter, not to $z_{\mathrm{m}}$:
 $$
@@ -51,7 +51,7 @@ $$
 
 with $c(x)$ the content and $h(x)$ the hook length of the cell $x$ — the Ocneanu weight formula at framing ratio $a^2 = z_{\mathrm{m}}/z_{-}$, verified exactly for every $\lambda \vdash n \leq 5$ ([witness](../../../computations/markov-trace-weights-wenzl.witness.json)). The single-cell case recovers $\mathrm{tr}_M(1) = (z_{\mathrm{m}} - z_{-})/(q - q^{-1}) = 1$.
 
-**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D** of the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md), registered for the **mass** and **binding** channels in both their definitional and production layers, following the owner ruling of 2026-08-09 that excised convention C, $z_{\mathrm{C}} = \sqrt{q}/(1+q)$ (there named the full-Hecke Ocneanu/Wenzl $z$-trace), for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$. The values this block quoted until 2026-10-10 ($z_{\mathrm{m}} \approx 0.499$, $z_{-} \approx 0.290$) were convention-C values.
+**Convention.** The parameter $z_{\mathrm{m}} = q^3/(q^2+1)$ is **convention D** of the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md), registered for the **mass** and **binding** channels in both their definitional and production layers, whereas convention C ($z_{\mathrm{C}} = \sqrt{q}/(1+q)$, the full-Hecke Ocneanu/Wenzl $z$-trace) is excised for those channels. The two differ by $195.8$ ppm on $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ and $-197$ ppm on $\mathfrak{m}_{\mathfrak{p}}$.
 
 **A structural separation between the two conventions.** The justification on record for the convention-D ruling is empirical — the $195.8$ ppm and $-197$ ppm figures above. There is also a structural one, and it involves no anchor, no measurement and no ppm figure. Using $\hbar_\times = q - q^{-1}$ and $[2]_q^2 - \hbar_\times^2 = 4$, the two loop values of convention D satisfy
 

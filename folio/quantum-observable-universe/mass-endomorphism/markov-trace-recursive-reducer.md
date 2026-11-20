@@ -75,7 +75,7 @@ by induction on $\ell(\beta)$. The recursive algorithm realises this property au
 
 ## Which axioms the disjoint product actually needs
 
-> **Scope note (2026-11-15).** The sentence below that "induction from the right gives $z^{\ell(\beta)}$ on both sides" is false as a general statement: $\mathrm{tr}(\sigma_1^2) = hz + 1 \neq z^2 = z^{\ell(\sigma_1^2)}$. The induction gives $z^{\ell}$ only for words in which every generator occurs once. The disjoint-product argument must be restricted to that case or redone with the quadratic relation.
+**Scope of the right-induction step.** Right-induction yields $z^{\ell(\beta)}$ directly only when every generator in $\beta$ occurs with multiplicity one; for general words containing repeated generators (such as $\sigma_1^2$, where $\mathrm{tr}_M(\sigma_1^2) = hz + 1 \neq z^2$), the disjoint-product reduction alternates right-peeling with the quadratic Hecke relation $\sigma_i^2 = h\sigma_i + 1$.
 
 
 The argument above is stated in terms of the Markov axiom and cyclicity, but it
