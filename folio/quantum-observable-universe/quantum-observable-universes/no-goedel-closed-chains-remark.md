@@ -2,4 +2,4 @@ Take time order to be the order of crossing applications, so one tick is one app
 
 Gödel's rotating solution \cite{goedel1949} is homogeneous, and a closed timelike curve passes through every event. Since Gödel's spacetime is connected, this is equivalent to saying that the chronological future $I^{+}(p)$ is all of spacetime for every $p$. Under the tick definition, nothing of this kind occurs on words, for any braiding. It also does not occur on any state monoid that carries a writhe-type degree, such as $B_n$ itself. It does occur when a crossing has finite order, for example for a symmetric braiding, where every state lies on a closed chain of length two.
 
-So under the tick definition, no model of this kind has a closed chain. This is not a statement about general relativity: Gödel's metric remains an exact solution of the Einstein equations.
+So, under the tick definition, closed chains are excluded on words and on any state monoid with a writhe-type degree, and they are forced when a crossing has finite order. The statement concerns the tick model only; Gödel's metric remains an exact solution of the Einstein equations.
