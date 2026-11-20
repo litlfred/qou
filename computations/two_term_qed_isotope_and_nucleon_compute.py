@@ -77,6 +77,23 @@ from canonical_mass import (  # noqa: E402
 )
 
 
+def _scorecard_qbeta_ruled_base() -> dict:
+    """The scored Q_β cell, from the L2 scorecard's own implementation.
+
+    `per_observable_100x_status` calls `set_compute_dps()` at import, which would
+    silently lower this producer's 80-dps working precision. The import is done
+    lazily and the caller's dps is restored, and the cell is then evaluated at that
+    dps, so this producer's precision is unchanged.
+    """
+    saved = mp.mp.dps
+    try:
+        import per_observable_100x_status as _p100x  # noqa: E402
+    finally:
+        mp.mp.dps = saved
+    with mp.workdps(saved):
+        return _p100x._qbeta_ruled_base()
+
+
 def vol_4_1_80dps() -> mp.mpf:
     """Hyperbolic volume of the figure-eight knot complement Vol(4₁) = 2 Im Li₂(e^{iπ/3})."""
     with mp.workdps(90):
@@ -294,12 +311,47 @@ def compute_all() -> dict:
         mn_2term_q_err_ppb = (m_n_can_2term_q - m_n_exp) / m_n_exp * mp.mpf("1e9")
         mn_plain_improvement_pct = (1 - abs(mn_2term_plain_err_ppb) / abs(mn_1term_err_ppb)) * 100
 
-        # 2b. Impact on ruled Convention-D Q_β base (`nuc11_interleaved` at z_D) and Path-C m_n, Δ_pn:
+        # 2b. Impact on the SCORED Convention-D Q_β cell and Path-C m_n, Δ_pn.
+        # OWNER 2026-11-20 ("Yes, switch it"; D1 = A, PR #8586): the scored cell is the
+        # T³ weight split of the z_D trace on the γγ base V³ = (σ₀σ₁⁻¹)³,
+        #     Q_β = |ε_flavour(V³)|·E₀^tower,
+        #     ε_flavour = (q²−1)P(q)/(q⁴(q²+1)³), P = q¹²−3q¹⁰+3q⁸−5q⁶+3q⁴−3q²+1.
+        # The value is taken from the L2 scorecard's own implementation
+        # (`per_observable_100x_status._qbeta_ruled_base`), not re-typed here, so the
+        # two witnesses cannot drift apart. The scorecard labels it CONDITIONAL on
+        # conjectures C1–C3 (`QOU.QBeta.DecayConjectures`, #8595); so does this one.
+        # The previous element `nuc11_interleaved` stays below as an unscored history cell.
+        _ruled = _scorecard_qbeta_ruled_base()
+        if not _ruled["calibrated_against_probe_witness"]:
+            raise RuntimeError(
+                "scorecard _qbeta_ruled_base is not calibrated against the flavour-split "
+                "probe witness; refusing to publish an uncalibrated Q_beta cell"
+            )
+        eps_flavour_V3 = mp.mpf(_ruled["eps_flavour_V3"])
+        qbeta_ruled_1term = mp.mpf(_ruled["Q_beta_MeV"])
+        # Cross-check: the scorecard's E0 (qbeta_e0.canonical) and this producer's
+        # E0_tower are the same tower-summed scale; the two products must agree.
+        _qbeta_check = abs(eps_flavour_V3) * E0_tower
+        qbeta_ruled_E0_crosscheck_gap = abs(_qbeta_check - qbeta_ruled_1term)
+        if qbeta_ruled_E0_crosscheck_gap > mp.mpf(10) ** -40:
+            raise RuntimeError(
+                f"|eps_flavour(V^3)|*E0_tower disagrees with the scorecard cell by "
+                f"{mp.nstr(qbeta_ruled_E0_crosscheck_gap, 5)} MeV"
+            )
+        # Unscored history: the element scored 2026-09-12 .. 2026-11-20.
         _census = json.loads(
             (COMPUTE_DIR / "qbeta" / "qbeta-option-e-required-level.witness.json").read_text()
         )
         tr_nuc11_D = mp.mpf(str(_census["data"]["per_candidate"]["nuc11_interleaved"]["tr_conv_D"]))
-        qbeta_ruled_1term = abs(tr_nuc11_D) * E0_tower
+        qbeta_nuc11_1term = abs(tr_nuc11_D) * E0_tower
+        qbeta_nuc11_2term = qbeta_nuc11_1term + dm_qed_scored
+        qbeta_nuc11_1term_err_ppb = abs(qbeta_nuc11_1term - q_beta_exp) / q_beta_exp * mp.mpf("1e9")
+        mn_path_c_nuc11_1term = m_p_can + qbeta_nuc11_1term + m_e
+        dpn_path_c_nuc11_1term = qbeta_nuc11_1term + m_e
+        mn_path_c_nuc11_1term_err_ppb = abs(mn_path_c_nuc11_1term - m_n_exp) / m_n_exp * mp.mpf("1e9")
+        dpn_path_c_nuc11_1term_err_ppb = (
+            abs(dpn_path_c_nuc11_1term - dm_np_exp_from_masses) / dm_np_exp_from_masses * mp.mpf("1e9")
+        )
         qbeta_ruled_2term = qbeta_ruled_1term + dm_qed_scored
         qbeta_ruled_1term_err_ppb = abs(qbeta_ruled_1term - q_beta_exp) / q_beta_exp * mp.mpf("1e9")
         qbeta_ruled_2term_err_ppb = abs(qbeta_ruled_2term - q_beta_exp) / q_beta_exp * mp.mpf("1e9")
@@ -368,6 +420,26 @@ def compute_all() -> dict:
                 "m_n_2term_q_err_ppb": fmt(mn_2term_q_err_ppb, 8),
             },
             "ruled_zD_qbeta_and_path_c_impact": {
+                "qbeta_ruled_cell": (
+                    "V^3 = (sigma_0 sigma_1^-1)^3, T^3 weight split of the z_D trace: "
+                    "Q_beta = |eps_flavour(V^3)|*E0_tower (owner D1 = A, PR #8586; "
+                    "switched here 2026-11-20). CONDITIONAL on conjectures C1-C3 "
+                    "(QOU.QBeta.DecayConjectures), NOT a derived prediction."
+                ),
+                "qbeta_ruled_source": "per_observable_100x_status._qbeta_ruled_base (shared implementation)",
+                "eps_flavour_V3": fmt(eps_flavour_V3, 30),
+                "E0_tower_MeV": fmt(E0_tower, 30),
+                "qbeta_ruled_E0_crosscheck_gap_MeV": fmt(qbeta_ruled_E0_crosscheck_gap, 5),
+                "unscored_history_nuc11_interleaved": {
+                    "status": "unscored history (scored 2026-09-12 .. 2026-11-20; superseded by owner D1 = A)",
+                    "qbeta_1term_MeV": fmt(qbeta_nuc11_1term, 15),
+                    "qbeta_2term_MeV": fmt(qbeta_nuc11_2term, 15),
+                    "qbeta_1term_err_ppb": fmt(qbeta_nuc11_1term_err_ppb, 10),
+                    "m_n_path_c_1term_MeV": fmt(mn_path_c_nuc11_1term, 15),
+                    "m_n_path_c_1term_err_ppb": fmt(mn_path_c_nuc11_1term_err_ppb, 10),
+                    "Delta_pn_path_c_1term_MeV": fmt(dpn_path_c_nuc11_1term, 15),
+                    "Delta_pn_path_c_1term_err_ppb": fmt(dpn_path_c_nuc11_1term_err_ppb, 10),
+                },
                 "qbeta_ruled_1term_MeV": fmt(qbeta_ruled_1term, 15),
                 "qbeta_ruled_2term_MeV": fmt(qbeta_ruled_2term, 15),
                 "qbeta_ruled_1term_err_ppb": fmt(qbeta_ruled_1term_err_ppb, 10),
