@@ -104,7 +104,13 @@ class ShellFillingRuleContext (R : Type*) [Semiring R] where
   /-- Definition of dual objective. -/
   dual_obj_def : dual_obj = (Z : R) * y_0
   /-- Strong duality equates primal and dual objectives.
-      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
+      (Still an assumption, but not for the reason once given here: finite LP strong
+      duality IS proved in-repo, unconditionally, as
+      `QOU.Optimization.lp_strong_duality_uncond` (via Farkas from
+      `QOU.Mathlib.isClosed_coneSpan`). It cannot discharge this field because the
+      carrier records the objective values as free reals with no feasibility or
+      optimality data; discharging it needs the carrier to carry `(A, a, c, x)` with
+      `PrimalOptimal`. Bean `qou-9h4t`.) -/
   strong_duality : primal_obj = dual_obj
 
 /-- **Pauli occupancy bound — derived sorry-free.**  Every shell obeys
