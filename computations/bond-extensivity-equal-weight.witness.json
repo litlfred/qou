@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T15:08:46.389594+00:00",
-  "commitSha": "a1019fbc334e971d44b685eba0ce16487a7237d4",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:04:15.724178+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "coordination_multiplier_is_equal_weight_limit_exact_alpha_coincidence_nucleon",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 3,
   "computation": "bond-extensivity-equal-weight",
   "scriptFile": "bond_extensivity_equal_weight.py",
-  "scriptHash": "971b33c85bef",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptHash": "f5279c9d4063",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

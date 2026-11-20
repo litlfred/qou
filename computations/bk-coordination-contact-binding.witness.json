@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T17:20:26.721521+00:00",
-  "commitSha": "d65f27dc6849c0da7d7a59a7a698a162782e8864",
+  "computedAt": "2026-11-20T15:04:15.065325+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "nucleon_coordination_z_matches_A3_multiplier",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "bk-coordination-contact-binding",
   "scriptFile": "bk_coordination_contact_binding.py",
-  "scriptHash": "dd318d0ac5f6",
-  "scriptCommitSha": "36d4b5c55d0f4807a8d4348d2270d8215f6edafc",
+  "scriptHash": "b35d94defe6f",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +34,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/bk_coordination_contact_binding.py"
+    ],
+    "reproduce": "python3 -u computations/bk_coordination_contact_binding.py"
   },
   "description": "The binding multiplicity is the coordination number of 𝓑_K at two levels: the nucleon coordination z=A−1 (single-link multiplier, A≤4) and the α-cluster CONTACT-graph coordination number (A>4). Forward test: one b_αα fixed from ¹²C/¹⁶O predicts ²⁰Ne/²⁴Mg/⁴⁰Ca binding to <0.5% from standard Brink deltahedral contact counts (tetrahedron 6, octahedron 12, …). z=A−1 exact graph fact; 'multiplier=coordination' is bond-extensive (conditional); b_αα empirical. Scope-limited (a), no production wiring.",
   "data": {
@@ -82,16 +94,16 @@
         "N_contacts": 8,
         "geometry": "square pyramid",
         "B_pred": 160.80241973333332,
-        "B_ame": 160.64482400000003,
-        "err": 0.0009810196768824206
+        "B_ame": 160.644824,
+        "err": 0.000981019676882545
       },
       "24Mg": {
         "n_alpha": 6,
         "N_contacts": 12,
         "geometry": "octahedron",
         "B_pred": 198.760136,
-        "B_ame": 198.25704720000002,
-        "err": 0.002537558221032407
+        "B_ame": 198.2570472,
+        "err": 0.0025375582210325587
       },
       "40Ca": {
         "n_alpha": 10,
@@ -103,5 +115,7 @@
       }
     },
     "b_alpha_alpha_MeV": 2.415513466666667
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

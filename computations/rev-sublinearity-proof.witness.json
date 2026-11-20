@@ -3,7 +3,7 @@
   "checks": [
     {
       "check": "R1_identity_E_R_lambda_is_a_hook_multiset_sum",
-      "detail": "R_lambda = sum_c eps_h(c) - sum_{i<=n} eps_i verified against the q-integer definition for all 4507 partitions with n <= 22; worst |difference| 1.929e-59 vs tolerance 1.0e-45. R_lambda therefore depends on lambda only through its hook MULTISET -- no polynomial algebra, no transfer operator.",
+      "detail": "R_lambda = sum_c eps_h(c) - sum_{i<=n} eps_i verified against the q-integer definition for all 4507 partitions with n <= 22; worst |difference| 2.489e-59 vs tolerance 1.0e-45. R_lambda therefore depends on lambda only through its hook MULTISET -- no polynomial algebra, no transfer operator.",
       "pass": true
     },
     {
@@ -39,7 +39,7 @@
   ],
   "checks_passed": 7,
   "checks_total": 7,
-  "computedAt": "2026-10-13T15:21:27.094424+00:00",
+  "computedAt": "2026-11-20T15:20:33.816872+00:00",
   "constants": {
     "A_sqrt2_predicted_REV_over_sqrt_n": "5.0959456500661407443",
     "A_sum_eps_odd": "3.6033777257198572643",

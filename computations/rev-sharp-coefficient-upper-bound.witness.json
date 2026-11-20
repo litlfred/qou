@@ -7,12 +7,12 @@
   "checks": [
     {
       "check": "S1_constants_A_plus_E2_is_C_and_c_finite",
-      "detail": "A + E2 - C = -1.31e-59; c = sum_k |eps'(2k)| sqrt(2k) = 1.5317990660658 (tail term k=1099: 6.13e-199); S2 = sum k eps(2k) = 6.66246903314632; coefficient A sqrt2 = 5.09594565007 against #7185's (C + L/2) sqrt2 = 8.80146569913.",
+      "detail": "A + E2 - C = -7.47e-60; c = sum_k |eps'(2k)| sqrt(2k) = 1.5317990660658 (tail term k=1099: 6.13e-199); S2 = sum k eps(2k) = 6.66246903314632; coefficient A sqrt2 = 5.09594565007 against #7185's (C + L/2) sqrt2 = 8.80146569913.",
       "pass": true
     },
     {
       "check": "S2_identities_a_I_prime_and_b_completed_square",
-      "detail": "28628 shapes n <= 30: |sum_c eps(h) - (sum F(beta) - P)| <= 3.86e-59; 2H = sum t^2 - sum m^2 exact, violations 0.",
+      "detail": "28628 shapes n <= 30: |sum_c eps(h) - (sum F(beta) - P)| <= 3.24e-59; 2H = sum t^2 - sum m^2 exact, violations 0.",
       "pass": true
     },
     {
@@ -48,7 +48,7 @@
   ],
   "checks_passed": 8,
   "checks_total": 8,
-  "computedAt": "2026-10-13T15:20:28.211248+00:00",
+  "computedAt": "2026-11-20T15:19:46.438795+00:00",
   "constants": {
     "A": "3.603377725719857264313303015738948753938",
     "A_sqrt2": "5.09594565006614074432446001423",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:23:03.465215+00:00",
-  "commitSha": "cfd5362382e0e03fa2d1cf969e0bb614ff179a62",
+  "computedAt": "2026-11-20T15:08:05.358553+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "mu_sign_representation_6_of_6",
@@ -30,7 +30,7 @@
     },
     {
       "name": "N1_prediction_within_half_percent_guarded_datum",
-      "computed": "0.92890227894281256092049596221625682725783082608534",
+      "computed": "0.1896068098639002092321860884265374211680365843942114544394039511903314",
       "expected": 1.0,
       "passed": false,
       "tolerance": "0.005",
@@ -38,19 +38,19 @@
     },
     {
       "name": "N1_and_tanh_routes_competing_not_additive",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "N1 (99.8%) + derived tanh route (31.1%) sum > 100%: a closure via N1 must REPLACE tanh(ln q0) at the triple channel — the unchanged S3 gate"
     }
   ],
   "allPassed": false,
-  "durationMs": 19,
+  "durationMs": 27,
   "computation": "mirror-split-s3-em-functional",
   "scriptFile": "mirror_split_s3_em_functional_probe.py",
-  "scriptHash": "5f1f447c6f0d",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "bb547699fe86",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -76,7 +76,7 @@
   "description": "S3 attack: defines the S₃-equivariant link-level EM coupling functional E(L,c) = Σ_{i<j} w_ij(L)·q_iq_j on the ³He link L6a4 = Borromean. DERIVED: a=0 (self-terms cancel in binding energy by definition); w_12=w_13=w_23 from S₃ equivariance + component-transitivity of L6a4 (SnapPy-verified identical cusps) — the equal 1/3 per-pair-channel weight, closing S2 of the predecessor audit; NEW sign-rep obstruction: μ̄∘g = sgn(g)·μ̄ (verified 6/6 exact Magnus), so by Schur any linear-in-μ̄ coupling vanishes and w ∝ |μ̄| (mirror-insensitive). E(³H)=0 for any link (charge bilinear vanishes). REMAINING: one scalar κ in w = κ·|μ̄|·B_pp (S3 re-scoped). N1 unit-capacity sum rule κ=1/3 predicts split = B_pp/3 = 0.762 MeV (−0.23% vs AME) but is UNDERIVED (M_2/Hopf anchor cannot distinguish sum-rule from per-channel; and why B_pp at coefficient 1 rather than the derived pairwise tanh(ln q₀) = 0.104 is the unchanged gate). N1 and the derived tanh route are COMPETING (sum > 100%): N1 would REPLACE tanh at the triple channel. CLASSIFICATION: PARTIAL — S2 closed, S3 open re-scoped to one scalar. No fit, no wiring.",
   "auditOnly": "docs/audits/2026-07-13-mirror-split-s3-em-functional-attempt.md",
   "parameters": {
-    "compute_dps": 50,
+    "compute_dps": 70,
     "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
@@ -105,16 +105,16 @@
       "H3_pnn": 0,
       "orbit_average_He3": 0.3333333333333333
     },
-    "B_pp_strong_MeV": 2.128360945757083,
+    "B_pp_strong_MeV": 0.43443937894435775,
     "B_pp_provenance": "per-block H6 diproton free-interacting, imported from the predecessor probe mirror_split_milnor_one_third_probe.per_block (itself the exact code path of charge_coulomb_tn3he_derived.py)",
     "ame_split_MeV": 0.76375488,
-    "N1_split_pred_MeV": 0.7094536485856944,
-    "N1_error_vs_AME": -0.07109772105718744,
+    "N1_split_pred_MeV": 0.14481312631478593,
+    "N1_error_vs_AME": -0.8103931901360998,
     "N1_status": "UNDERIVED unit-capacity sum rule Sum w_ij = |mu|·B_pp; the M_2 (Hopf) anchor is consistent but cannot distinguish sum-rule vs per-channel normalization (differ only at n>=3)",
     "N2_tanh_ln_q0": 0.10396371005241015,
-    "N2_split_pred_unshared_MeV": 0.2212723002515628,
-    "N2_split_pred_shared_MeV": 0.0737574334171876,
-    "tension_coverage_sum_N1_plus_N2": 1.2186186605279132,
+    "N2_split_pred_unshared_MeV": 0.04516592962792035,
+    "N2_split_pred_shared_MeV": 0.01505530987597345,
+    "tension_coverage_sum_N1_plus_N2": 0.24874349207785915,
     "classification": "PARTIAL (ii): S2 CLOSED (equal 1/3 per-pair weight derived from S3 equivariance + link symmetry; a=0 derived; |mu| support derived via sign-rep Schur obstruction). S3 OPEN, re-scoped to ONE scalar kappa; kappa=1/3 is a guarded near-match resting on the underived unit-capacity sum rule, which would have to REPLACE the derived pairwise tanh(ln q0)"
   },
   "q0Anchor": "proton",

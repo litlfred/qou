@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:31:14.716805+00:00",
-  "commitSha": "51c09a755fb1d8c7cb19825303c4ca6a7b537b8c",
+  "computedAt": "2026-11-20T15:03:42.401646+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "N_proton_near_integer_12",
-      "computed": "0.0003902701549161378741312838594632249789359015606802399384531671163139336",
+      "computed": "0.0003902701549161378741312838594632249789359014659610235805311728084019827",
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.001",
@@ -25,8 +25,8 @@
   "durationMs": 4,
   "computation": "proton-identity-extension-audit",
   "scriptFile": "proton_identity_extension_audit.py",
-  "scriptHash": "d1e97c46b6db",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptHash": "9c79411e7f8d",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -58,7 +58,7 @@
     "N_proton": "11.99960972984508386212587",
     "N_neutron": "9.468621147082598972687475",
     "Delta_npn_over_m_e": "2.530988582762484889438394",
-    "N_diff_minus_Delta_pn": "-1.448908652612273978801459e-70",
+    "N_diff_minus_Delta_pn": "0.0",
     "identity_is_proton_specific": true,
     "neutron_via_flavor_split_not_own_identity": true
   },

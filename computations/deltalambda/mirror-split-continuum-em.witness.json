@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T10:41:09.679551+00:00",
-  "commitSha": "af31a017f02ab6c47d0711fa1847deb395c3af3f",
+  "computedAt": "2026-11-20T15:08:02.033794+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "pair_combinatorics_exact",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 17,
   "computation": "mirror-split-continuum-em",
   "scriptFile": "mirror_split_continuum_em_probe.py",
-  "scriptHash": "b6f3ad7eeddf",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptHash": "8a24812c717b",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,14 +58,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -82,7 +82,7 @@
         "split_AME_MeV": 0.76375488,
         "pred_MeV": 0.8487393706040641,
         "ratio": 0.8998697438253878,
-        "ratio_canonical_r0": 0.9012688186537837
+        "ratio_canonical_r0": 0.9012688186537836
       },
       {
         "pair": "7Li/7Be",
@@ -90,7 +90,7 @@
         "split_AME_MeV": 1.6442398,
         "pred_MeV": 1.919714629957508,
         "ratio": 0.8565021979524083,
-        "ratio_canonical_r0": 0.8578338469758848
+        "ratio_canonical_r0": 0.8578338469758847
       },
       {
         "pair": "11B/11C",
@@ -106,7 +106,7 @@
         "split_AME_MeV": 3.0028193,
         "pred_MeV": 3.123572324133715,
         "ratio": 0.9613413708398109,
-        "ratio_canonical_r0": 0.9628360188404427
+        "ratio_canonical_r0": 0.9628360188404426
       },
       {
         "pair": "15N/15O",
@@ -130,7 +130,7 @@
         "split_AME_MeV": 5.5947051,
         "pred_MeV": 5.304407301078998,
         "ratio": 1.0547276599332693,
-        "ratio_canonical_r0": 1.056367500510143
+        "ratio_canonical_r0": 1.0563675005101427
       },
       {
         "pair": "39K/39Ca",

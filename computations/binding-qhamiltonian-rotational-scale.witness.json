@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:28:21.862976+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:04:14.288260+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "deuteron_rotational_energy_derived_within_10pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 4,
   "computation": "binding-qhamiltonian-rotational-scale",
   "scriptFile": "binding_qhamiltonian_rotational_scale.py",
-  "scriptHash": "2f553c5f5686",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "c229cf66dcd1",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_qhamiltonian_rotational_scale.py"
+    ],
+    "reproduce": "python3 -u computations/binding_qhamiltonian_rotational_scale.py"
   },
   "description": "Derive-or-refute: is binding the q-Hamiltonian rotational energy E_rot = μ₀·ℏ_q·J_q²(j=n/2) with all factors derived? μ₀ = m_e/(3(q−q⁻¹)/2) ≈ 1.63 MeV (DERIVED, per-crossing scale; the earlier 249 MeV used the wrong spin-½ quantum). Result: D −9% (deuteron reproduced from fully-derived quantities, 0 free params), but T/³He/⁴He undershoot 44–72% — the same per-rep A≥3 deficit. So the gate is NOT the scale (μ₀ is derived) but the per-rep A≥3 structure: highest-weight j=n/2 collapses the per-block phase like the scalar trace. No fit.",
   "data": {
@@ -82,7 +91,7 @@
     },
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }

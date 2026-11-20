@@ -1,328 +1,330 @@
 {
-  "computation": "alpha-activation-brunnian-derive-or-refute",
-  "description": "R6-a derive-or-refute of the k>=3 activation of the alpha.alpha inter-cluster pair term via the Brunnian/Milnor mechanism: (I1) k=2 structural zero (8Be), (I2) k>=3 triple activation, (I3) Milnor-indeterminacy alpha-only gate (9Be adjudication), counting-rule adjudication (Boolean-gated C(k,2) flat vs C(k,3)/spectator-additive ~2x non-flat), the 3*b unification check, and Model G (gated pairs + 0.78*A_light linear term, zero new constants) across all nine witness isotopes. All inputs from committed witnesses; nothing recomputed, nothing tuned.",
-  "audit_only": true,
-  "computedAt": "2026-07-18T17:58:38.137074+00:00",
-  "engine": "mpmath",
-  "inputs": {
-    "deficit_source": "alpha-cluster-volume-additivity.witness.json (committed; consistency-checked to 1e-9 MeV)",
-    "b_linear_MeV_per_nucleon": {
-      "value": 0.7819231499999993,
-      "source": "inter-cluster-bond-term.witness.json characterization.linear_in_A_light_mean_MeV_per_nucleon (committed R5-a; GUARDED 3-point mean, reused not re-fit)"
-    },
-    "milnor_machinery": "binding_mn_milnor_linking.py (validated integer Magnus, imported)",
-    "m_e_MeV": {
-      "value": 0.51099895069,
-      "source": "codata_constants.M_E_MEV (CODATA 2022, CAL-1)"
-    },
-    "q0": {
-      "value": "1.109978582751380807...",
-      "source": "q_parameter.Q_50_DIGIT_STR"
-    },
-    "m_pi_MeV": {
-      "value": 139.57039,
-      "source": "codata_constants.M_PI_PM_MEV_VALIDATION (CAL-3)"
-    },
-    "volumes": {
-      "L6a4": 7.327724753417752,
-      "8_11": 8.286316817806593,
-      "4_1": 2.0298832128193074,
-      "source": "additivity witness inputs (deprecated volume-search IDs, stated as such) + Vol(4_1) = 2*Lobachevsky(pi/3)"
-    }
+ "computation": "alpha-activation-brunnian-derive-or-refute",
+ "description": "R6-a derive-or-refute of the k>=3 activation of the alpha.alpha inter-cluster pair term via the Brunnian/Milnor mechanism: (I1) k=2 structural zero (8Be), (I2) k>=3 triple activation, (I3) Milnor-indeterminacy alpha-only gate (9Be adjudication), counting-rule adjudication (Boolean-gated C(k,2) flat vs C(k,3)/spectator-additive ~2x non-flat), the 3*b unification check, and Model G (gated pairs + 0.78*A_light linear term, zero new constants) across all nine witness isotopes. All inputs from committed witnesses; nothing recomputed, nothing tuned.",
+ "audit_only": true,
+ "computedAt": "2026-11-20T15:06:28.989996+00:00",
+ "engine": "mpmath",
+ "inputs": {
+  "deficit_source": "alpha-cluster-volume-additivity.witness.json (committed; consistency-checked to 1e-9 MeV)",
+  "b_linear_MeV_per_nucleon": {
+   "value": 0.7819231499999993,
+   "source": "inter-cluster-bond-term.witness.json characterization.linear_in_A_light_mean_MeV_per_nucleon (committed R5-a; GUARDED 3-point mean, reused not re-fit)"
   },
-  "milnor_anchors": {
-    "borromean_pairwise_lk": [
-      0,
-      0,
-      0
-    ],
-    "borromean_mu_bar_123": 1,
-    "chain_pairwise_lk": [
-      1,
-      1,
-      0
-    ],
-    "chain_mu_bar_123": 0,
-    "indeterminacy_gate": "mu_bar(ijs) well-defined mod gcd(pairwise lk) [Milnor 1954]; Hopf-linked light spectator -> gcd 1 -> no triple content; alpha spectator (all pairwise lk 0) -> gcd 0 -> mu_bar in Z"
+  "milnor_machinery": "binding_mn_milnor_linking.py (validated integer Magnus, imported)",
+  "m_e_MeV": {
+   "value": 0.51099895069,
+   "source": "codata_constants.M_E_MEV (CODATA 2022, CAL-1)"
   },
-  "counting_rule_adjudication": {
-    "per_unit_12C_over_16O_ratio": {
-      "C-a triple-sum C(k,3)": 2.015631088663576,
-      "C-b spectator-additive 3*C(k,3)": 2.015631088663576,
-      "C-c Boolean-gated pairs C(k,2)": 1.007815544331788
-    },
-    "verdict": "C-a (triple-sum) and C-b (spectator-additive) ~2x non-flat: REFUTED; C-c (Boolean-gated pairs) flat to 0.8%: SELECTED (saturation data-selected, not derived; |mu_bar| idempotency is a consistent reading per Lean QOU.Mass.MilnorSignRepObstruction)"
+  "q0": {
+   "value": "1.109978582751380807...",
+   "source": "q_parameter.Q_50_DIGIT_STR"
   },
-  "structural_zero_8Be": {
-    "deficit_MeV": -0.09184,
-    "prediction_MeV": 0.0,
-    "universal_pair_quantum_would_give_MeV": 2.415513466666667,
-    "discrimination_factor": 26.301322590011615,
-    "note": "sign of the -92 keV threshold residual NOT derived"
+  "m_pi_MeV": {
+   "value": 139.57039,
+   "source": "codata_constants.M_PI_PM_MEV_VALIDATION (CAL-3)"
   },
-  "gate_adjudication_9Be": {
-    "gate_any_forced_alpha_n_MeV": -0.38653527499999896,
-    "gate_any_verdict": "REFUTED (negative alpha.n, sign-inconsistent)",
-    "gate_alpha_only_pred_MeV": 1.5638462999999987,
-    "gate_alpha_only_resid": -0.005628922357611746,
-    "note": "I3 predicted alpha-only BEFORE the check (Milnor indeterminacy)"
-  },
-  "unification_3b": {
-    "flat_per_pair_MeV": 2.415513466666667,
-    "three_b_MeV": 2.345769449999998,
-    "deviation": -0.028873371077874112,
-    "per_pair_over_b": 3.089195487646924,
-    "one_bond_scatter_band": 0.058,
-    "guard": "channel count '3' post-hoc (one per cluster of the mediating triple is a reading, not a derivation); b in-sample for 6Li/7Li/9Be, out-of-sample for 8Be/12C/16O"
-  },
-  "model_G_per_isotope": {
-    "6Li": {
-      "pieces": [
-        "4He",
-        "d"
-      ],
-      "n_alpha": 1,
-      "n_alpha_alpha_pairs": 0,
-      "gate_on": false,
-      "pred_deficit_MeV": 1.5638462999999987,
-      "pred_deficit_chain_variant_MeV": 1.5638462999999987,
-      "deficit_MeV": 1.473758599999996,
-      "resid_MeV": 0.0900877000000026,
-      "resid_over_deficit": 0.06112785363899002,
-      "resid_over_B_AME": 0.002815769708128239,
-      "additivity_rel_err": -0.046063611602620014
-    },
-    "7Li": {
-      "pieces": [
-        "4He",
-        "t"
-      ],
-      "n_alpha": 1,
-      "n_alpha_alpha_pairs": 0,
-      "gate_on": false,
-      "pred_deficit_MeV": 2.345769449999998,
-      "pred_deficit_chain_variant_MeV": 2.345769449999998,
-      "deficit_MeV": 2.4676221,
-      "resid_MeV": -0.1218526500000021,
-      "resid_over_deficit": -0.04938059599968816,
-      "resid_over_B_AME": -0.003104915261392292,
-      "additivity_rel_err": -0.06287723342609919
-    },
-    "8Be": {
-      "pieces": [
-        "4He",
-        "4He"
-      ],
-      "n_alpha": 2,
-      "n_alpha_alpha_pairs": 1,
-      "gate_on": false,
-      "pred_deficit_MeV": 0.0,
-      "pred_deficit_chain_variant_MeV": 0.0,
-      "deficit_MeV": -0.09184,
-      "resid_MeV": 0.09184,
-      "resid_over_deficit": -1.0,
-      "resid_over_B_AME": 0.0016255015479362388,
-      "additivity_rel_err": 0.0016255015479362388
-    },
-    "9Be": {
-      "pieces": [
-        "4He",
-        "4He",
-        "n"
-      ],
-      "n_alpha": 2,
-      "n_alpha_alpha_pairs": 1,
-      "gate_on": false,
-      "pred_deficit_MeV": 1.5638462999999987,
-      "pred_deficit_chain_variant_MeV": 0.7819231499999993,
-      "deficit_MeV": 1.5726989,
-      "resid_MeV": -0.0088526000000014,
-      "resid_over_deficit": -0.005628922357611746,
-      "resid_over_B_AME": -0.0001522006119394625,
-      "additivity_rel_err": -0.02703903203312944
-    },
-    "11B": {
-      "pieces": [
-        "4He",
-        "4He",
-        "t"
-      ],
-      "n_alpha": 2,
-      "n_alpha_alpha_pairs": 1,
-      "gate_on": false,
-      "pred_deficit_MeV": 4.691538899999996,
-      "pred_deficit_chain_variant_MeV": 2.345769449999998,
-      "deficit_MeV": 11.13193429999999,
-      "resid_MeV": -6.4403953999999946,
-      "resid_over_deficit": -0.5785513304727283,
-      "resid_over_B_AME": -0.08451401779902647,
-      "additivity_rel_err": -0.1460786854123573
-    },
-    "12C": {
-      "pieces": [
-        "4He",
-        "4He",
-        "4He"
-      ],
-      "n_alpha": 3,
-      "n_alpha_alpha_pairs": 3,
-      "gate_on": true,
-      "pred_deficit_MeV": 7.037308349999994,
-      "pred_deficit_chain_variant_MeV": 7.037308349999994,
-      "deficit_MeV": 7.274748,
-      "resid_MeV": -0.2374396500000063,
-      "resid_over_deficit": -0.0326388831613145,
-      "resid_over_B_AME": -0.0025763365835586643,
-      "additivity_rel_err": -0.07893458151816568
-    },
-    "14N": {
-      "pieces": [
-        "4He",
-        "4He",
-        "4He",
-        "d"
-      ],
-      "n_alpha": 3,
-      "n_alpha_alpha_pairs": 3,
-      "gate_on": true,
-      "pred_deficit_MeV": 11.728847249999989,
-      "pred_deficit_chain_variant_MeV": 8.601154649999993,
-      "deficit_MeV": 17.5470538,
-      "resid_MeV": -5.818206550000011,
-      "resid_over_deficit": -0.3315774041793848,
-      "resid_over_B_AME": -0.0555922413421914,
-      "additivity_rel_err": -0.16765992085551087
-    },
-    "16O": {
-      "pieces": [
-        "4He",
-        "4He",
-        "4He",
-        "4He"
-      ],
-      "n_alpha": 4,
-      "n_alpha_alpha_pairs": 6,
-      "gate_on": true,
-      "pred_deficit_MeV": 14.074616699999988,
-      "pred_deficit_chain_variant_MeV": 14.074616699999988,
-      "deficit_MeV": 14.4366656,
-      "resid_MeV": -0.3620489000000126,
-      "resid_over_deficit": -0.025078429467813718,
-      "resid_over_B_AME": -0.0028369443875531203,
-      "additivity_rel_err": -0.1131228887835311
-    },
-    "19F": {
-      "pieces": [
-        "4He",
-        "4He",
-        "4He",
-        "4He",
-        "t"
-      ],
-      "n_alpha": 4,
-      "n_alpha_alpha_pairs": 6,
-      "gate_on": true,
-      "pred_deficit_MeV": 23.457694499999977,
-      "pred_deficit_chain_variant_MeV": 16.420386149999985,
-      "deficit_MeV": 26.13691899999998,
-      "resid_MeV": -2.679224500000001,
-      "resid_over_deficit": -0.10250728098441914,
-      "resid_over_B_AME": -0.018127197293647732,
-      "additivity_rel_err": -0.17683814378417692
-    }
-  },
-  "closed_below_half_percent_B": [
-    "6Li",
-    "7Li",
-    "8Be",
-    "9Be",
-    "12C",
-    "16O"
+  "volumes": {
+   "L6a4": 7.327724753417752,
+   "8_11": 8.286316817806593,
+   "4_1": 2.0298832128193074,
+   "source": "additivity witness inputs (deprecated volume-search IDs, stated as such) + Vol(4_1) = 2*Lobachevsky(pi/3)"
+  }
+ },
+ "milnor_anchors": {
+  "borromean_pairwise_lk": [
+   0,
+   0,
+   0
   ],
-  "not_closed": [
-    "11B",
-    "14N",
-    "19F"
+  "borromean_mu_bar_123": 1,
+  "chain_pairwise_lk": [
+   1,
+   1,
+   0
   ],
-  "magnitude_candidates_vs_flat_per_pair": {
-    "3*b (unification)": {
-      "value_MeV": 2.345769449999998,
-      "dev": -0.028873371077874112
-    },
-    "B_D (AME)": {
-      "value_MeV": 2.2245662,
-      "dev": -0.07905038382177515
-    },
-    "deuteron rotor mu0*hbar_q*Jq2(3)": {
-      "value_MeV": 2.0195829431320913,
-      "dev": -0.16391153640759742
-    },
-    "m_e*Vol(L6a4)": {
-      "value_MeV": 3.7444596599416102,
-      "dev": 0.5501713037886093
-    },
-    "m_e*Vol(4_1)": {
-      "value_MeV": 1.037268191773912,
-      "dev": -0.5705806628330209
-    },
-    "m_e*Vol(8_11)/2": {
-      "value_MeV": 2.1171495994920346,
-      "dev": -0.12351985252492301
-    },
-    "m_pi*hbar_q^2": {
-      "value_MeV": 1.3701885421258893,
-      "dev": -0.43275474923486695
-    },
-    "alpha_der*m_pi": {
-      "value_MeV": 1.0200783271305764,
-      "dev": -0.5776971061402308
-    }
+  "chain_mu_bar_123": 0,
+  "indeterminacy_gate": "mu_bar(ijs) well-defined mod gcd(pairwise lk) [Milnor 1954]; Hopf-linked light spectator -> gcd 1 -> no triple content; alpha spectator (all pairwise lk 0) -> gcd 0 -> mu_bar in Z"
+ },
+ "counting_rule_adjudication": {
+  "per_unit_12C_over_16O_ratio": {
+   "C-a triple-sum C(k,3)": 2.015631088663576,
+   "C-b spectator-additive 3*C(k,3)": 2.015631088663576,
+   "C-c Boolean-gated pairs C(k,2)": 1.007815544331788
   },
-  "verdict": "PARTIAL DERIVATION (scope-(a) elsewhere). The Brunnian/Milnor mechanism DERIVES three of the four structural features of the alpha.alpha pair term: (I1) the k=2 zero \u2014 pairwise-unlinked alphas carry no pair channel, so 8Be sits at 0 (measured -0.092 MeV, 0.16% of B, x26 below the 2.42 a universal pair quantum would force; the sign of the -92 keV threshold residual is NOT derived); (I2) the k>=3 activation \u2014 mu_bar(a,b,c) = \u00b11 opens the triple channel; (I3) the alpha-only gate \u2014 mu_bar(i j s) is defined only mod gcd(pairwise lk), so a light spectator (Hopf-linked, gcd 1: its own always-on 0.78*A_light channel) kills the triple content, and 9Be then closes at -0.6% where gate=any would force a negative alpha.n term (pre-registered adjudication, passed). The fourth feature \u2014 SATURATION (per-pair value independent of spectator count) \u2014 is data-SELECTED, not derived: triple-sum C(k,3) and spectator-additive 3*C(k,3) counting are ~2x non-flat across 12C/16O (refuted), the Boolean-gated C(k,2) is flat to 0.8%; idempotent |mu_bar| coupling (mu_bar^2 in {0,1}; Lean D2 sign-rep obstruction) is a consistent reading, not a derivation. UNIFICATION: the flat per-pair value 2.4155 MeV equals 3*b = 2.3458 to -2.9% (inside the one-bond family's 5.8% scatter), with b calibrated on the mixed one-bond family only \u2014 12C (-3.3% deficit-level, -0.26% of B) and 16O (-2.5%, -0.28% of B) are genuine out-of-sample predictions with zero new constants; the channel count '3' remains a post-hoc reading (GUARDED). NOT closed: the mixed multi-bond composites 11B (-58% deficit-level), 14N (-33%), 19F (-10%; -1.8% of B) \u2014 the gated rule + linear term is not the whole interface theory there (scope-(a): constrains Model G as sole mechanism for mixed multi-bond composites; no ingredient excluded). Nothing tuned; b reused from the committed R5-a witness; no production wiring.",
-  "scope": "(a) for the mixed multi-bond failures \u2014 Model G constrained as sole mechanism there; no ingredient excluded. I1/I2/I3 are structural derivations conditional on the Brunnian cluster-arrangement model input.",
-  "assertions": [
-    {
-      "label": "committed witness deficits reproduce from vendored AME2020 to 1e-9 MeV",
-      "passed": true
-    },
-    {
-      "label": "Milnor anchors: Borromean lk=0/mu=\u00b11; Hopf-linked-spectator chain mu=0 (I1/I2/I3 computational content)",
-      "passed": true
-    },
-    {
-      "label": "counting: Boolean-gated C(k,2) flat to <2% while C(k,3) and spectator-additive are >1.9x non-flat (12C vs 16O)",
-      "passed": true
-    },
-    {
-      "label": "8Be structural zero: |deficit| < 0.1 MeV, i.e. x20+ below the universal-pair value (I1 passes)",
-      "passed": true
-    },
-    {
-      "label": "9Be gate=any forces alpha.n < -0.3 MeV (refuted); gate=alpha-only closes to |resid| < 1%",
-      "passed": true
-    },
-    {
-      "label": "unification: |3b/flat-per-pair - 1| < 5% (inside the 5.8% one-bond scatter)",
-      "passed": true
-    },
-    {
-      "label": "out-of-sample closures: 12C and 16O deficit predictions within 5% (B-level < 0.5%)",
-      "passed": true
-    },
-    {
-      "label": "honest negative: mixed multi-bond 11B and 14N NOT closed (deficit-level residual > 25%)",
-      "passed": true
-    },
-    {
-      "label": "no non-3b magnitude candidate within 5% of the flat per-pair value",
-      "passed": true
-    }
-  ],
-  "allPassed": true,
-  "scriptHash": "dcd175c50fd7",
-  "scriptCommitSha": "8c1e7bc7e4992efac8e861c9ece815cdd5fdf5a7",
-  "commitSha": "af6ce13124b1a2d61b203aa42f60ee4bc9c8ea12",
-  "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "alpha_activation_brunnian_probe.py"
+  "verdict": "C-a (triple-sum) and C-b (spectator-additive) ~2x non-flat: REFUTED; C-c (Boolean-gated pairs) flat to 0.8%: SELECTED (saturation data-selected, not derived; |mu_bar| idempotency is a consistent reading per Lean QOU.Mass.MilnorSignRepObstruction)"
+ },
+ "structural_zero_8Be": {
+  "deficit_MeV": -0.09184,
+  "prediction_MeV": 0.0,
+  "universal_pair_quantum_would_give_MeV": 2.415513466666667,
+  "discrimination_factor": 26.301322590011615,
+  "note": "sign of the -92 keV threshold residual NOT derived"
+ },
+ "gate_adjudication_9Be": {
+  "gate_any_forced_alpha_n_MeV": -0.38653527499999896,
+  "gate_any_verdict": "REFUTED (negative alpha.n, sign-inconsistent)",
+  "gate_alpha_only_pred_MeV": 1.5638462999999987,
+  "gate_alpha_only_resid": -0.005628922357611746,
+  "note": "I3 predicted alpha-only BEFORE the check (Milnor indeterminacy)"
+ },
+ "unification_3b": {
+  "flat_per_pair_MeV": 2.415513466666667,
+  "three_b_MeV": 2.345769449999998,
+  "deviation": -0.028873371077874112,
+  "per_pair_over_b": 3.089195487646924,
+  "one_bond_scatter_band": 0.058,
+  "guard": "channel count '3' post-hoc (one per cluster of the mediating triple is a reading, not a derivation); b in-sample for 6Li/7Li/9Be, out-of-sample for 8Be/12C/16O"
+ },
+ "model_G_per_isotope": {
+  "6Li": {
+   "pieces": [
+    "4He",
+    "d"
+   ],
+   "n_alpha": 1,
+   "n_alpha_alpha_pairs": 0,
+   "gate_on": false,
+   "pred_deficit_MeV": 1.5638462999999987,
+   "pred_deficit_chain_variant_MeV": 1.5638462999999987,
+   "deficit_MeV": 1.4737586,
+   "resid_MeV": 0.0900876999999986,
+   "resid_over_deficit": 0.061127853638987144,
+   "resid_over_B_AME": 0.0028157697081281135,
+   "additivity_rel_err": -0.04606361160262013
+  },
+  "7Li": {
+   "pieces": [
+    "4He",
+    "t"
+   ],
+   "n_alpha": 1,
+   "n_alpha_alpha_pairs": 0,
+   "gate_on": false,
+   "pred_deficit_MeV": 2.345769449999998,
+   "pred_deficit_chain_variant_MeV": 2.345769449999998,
+   "deficit_MeV": 2.4676221,
+   "resid_MeV": -0.1218526500000021,
+   "resid_over_deficit": -0.04938059599968816,
+   "resid_over_B_AME": -0.003104915261392292,
+   "additivity_rel_err": -0.06287723342609919
+  },
+  "8Be": {
+   "pieces": [
+    "4He",
+    "4He"
+   ],
+   "n_alpha": 2,
+   "n_alpha_alpha_pairs": 1,
+   "gate_on": false,
+   "pred_deficit_MeV": 0.0,
+   "pred_deficit_chain_variant_MeV": 0.0,
+   "deficit_MeV": -0.09184,
+   "resid_MeV": 0.09184,
+   "resid_over_deficit": -1.0,
+   "resid_over_B_AME": 0.0016255015479362388,
+   "additivity_rel_err": 0.0016255015479362388
+  },
+  "9Be": {
+   "pieces": [
+    "4He",
+    "4He",
+    "n"
+   ],
+   "n_alpha": 2,
+   "n_alpha_alpha_pairs": 1,
+   "gate_on": false,
+   "pred_deficit_MeV": 1.5638462999999987,
+   "pred_deficit_chain_variant_MeV": 0.7819231499999993,
+   "deficit_MeV": 1.5726989,
+   "resid_MeV": -0.0088526000000014,
+   "resid_over_deficit": -0.005628922357611746,
+   "resid_over_B_AME": -0.0001522006119394625,
+   "additivity_rel_err": -0.02703903203312944
+  },
+  "11B": {
+   "pieces": [
+    "4He",
+    "4He",
+    "t"
+   ],
+   "n_alpha": 2,
+   "n_alpha_alpha_pairs": 1,
+   "gate_on": false,
+   "pred_deficit_MeV": 4.691538899999996,
+   "pred_deficit_chain_variant_MeV": 2.345769449999998,
+   "deficit_MeV": 11.1319343,
+   "resid_MeV": -6.440395400000004,
+   "resid_over_deficit": -0.5785513304727288,
+   "resid_over_B_AME": -0.08451401779902658,
+   "additivity_rel_err": -0.1460786854123574
+  },
+  "12C": {
+   "pieces": [
+    "4He",
+    "4He",
+    "4He"
+   ],
+   "n_alpha": 3,
+   "n_alpha_alpha_pairs": 3,
+   "gate_on": true,
+   "pred_deficit_MeV": 7.037308349999994,
+   "pred_deficit_chain_variant_MeV": 7.037308349999994,
+   "deficit_MeV": 7.274748,
+   "resid_MeV": -0.2374396500000063,
+   "resid_over_deficit": -0.0326388831613145,
+   "resid_over_B_AME": -0.0025763365835586643,
+   "additivity_rel_err": -0.07893458151816568
+  },
+  "14N": {
+   "pieces": [
+    "4He",
+    "4He",
+    "4He",
+    "d"
+   ],
+   "n_alpha": 3,
+   "n_alpha_alpha_pairs": 3,
+   "gate_on": true,
+   "pred_deficit_MeV": 11.728847249999989,
+   "pred_deficit_chain_variant_MeV": 8.601154649999993,
+   "deficit_MeV": 17.5470538,
+   "resid_MeV": -5.818206550000011,
+   "resid_over_deficit": -0.3315774041793848,
+   "resid_over_B_AME": -0.0555922413421914,
+   "additivity_rel_err": -0.16765992085551087
+  },
+  "16O": {
+   "pieces": [
+    "4He",
+    "4He",
+    "4He",
+    "4He"
+   ],
+   "n_alpha": 4,
+   "n_alpha_alpha_pairs": 6,
+   "gate_on": true,
+   "pred_deficit_MeV": 14.074616699999988,
+   "pred_deficit_chain_variant_MeV": 14.074616699999988,
+   "deficit_MeV": 14.4366656,
+   "resid_MeV": -0.3620489000000126,
+   "resid_over_deficit": -0.025078429467813718,
+   "resid_over_B_AME": -0.0028369443875531203,
+   "additivity_rel_err": -0.1131228887835311
+  },
+  "19F": {
+   "pieces": [
+    "4He",
+    "4He",
+    "4He",
+    "4He",
+    "t"
+   ],
+   "n_alpha": 4,
+   "n_alpha_alpha_pairs": 6,
+   "gate_on": true,
+   "pred_deficit_MeV": 23.457694499999977,
+   "pred_deficit_chain_variant_MeV": 16.420386149999985,
+   "deficit_MeV": 26.136919,
+   "resid_MeV": -2.679224500000021,
+   "resid_over_deficit": -0.10250728098441982,
+   "resid_over_B_AME": -0.018127197293647868,
+   "additivity_rel_err": -0.17683814378417703
+  }
+ },
+ "closed_below_half_percent_B": [
+  "6Li",
+  "7Li",
+  "8Be",
+  "9Be",
+  "12C",
+  "16O"
+ ],
+ "not_closed": [
+  "11B",
+  "14N",
+  "19F"
+ ],
+ "magnitude_candidates_vs_flat_per_pair": {
+  "3*b (unification)": {
+   "value_MeV": 2.345769449999998,
+   "dev": -0.028873371077874112
+  },
+  "B_D (AME)": {
+   "value_MeV": 2.2245662,
+   "dev": -0.07905038382177515
+  },
+  "deuteron rotor mu0*hbar_q*Jq2(3)": {
+   "value_MeV": 2.0195829431320913,
+   "dev": -0.16391153640759742
+  },
+  "m_e*Vol(L6a4)": {
+   "value_MeV": 3.7444596599416102,
+   "dev": 0.5501713037886093
+  },
+  "m_e*Vol(4_1)": {
+   "value_MeV": 1.037268191773912,
+   "dev": -0.5705806628330209
+  },
+  "m_e*Vol(8_11)/2": {
+   "value_MeV": 2.1171495994920346,
+   "dev": -0.12351985252492301
+  },
+  "m_pi*hbar_q^2": {
+   "value_MeV": 1.3701885421258893,
+   "dev": -0.43275474923486695
+  },
+  "alpha_der*m_pi": {
+   "value_MeV": 1.0200783271305764,
+   "dev": -0.5776971061402308
+  }
+ },
+ "verdict": "PARTIAL DERIVATION (scope-(a) elsewhere). The Brunnian/Milnor mechanism DERIVES three of the four structural features of the alpha.alpha pair term: (I1) the k=2 zero \u2014 pairwise-unlinked alphas carry no pair channel, so 8Be sits at 0 (measured -0.092 MeV, 0.16% of B, x26 below the 2.42 a universal pair quantum would force; the sign of the -92 keV threshold residual is NOT derived); (I2) the k>=3 activation \u2014 mu_bar(a,b,c) = \u00b11 opens the triple channel; (I3) the alpha-only gate \u2014 mu_bar(i j s) is defined only mod gcd(pairwise lk), so a light spectator (Hopf-linked, gcd 1: its own always-on 0.78*A_light channel) kills the triple content, and 9Be then closes at -0.6% where gate=any would force a negative alpha.n term (pre-registered adjudication, passed). The fourth feature \u2014 SATURATION (per-pair value independent of spectator count) \u2014 is data-SELECTED, not derived: triple-sum C(k,3) and spectator-additive 3*C(k,3) counting are ~2x non-flat across 12C/16O (refuted), the Boolean-gated C(k,2) is flat to 0.8%; idempotent |mu_bar| coupling (mu_bar^2 in {0,1}; Lean D2 sign-rep obstruction) is a consistent reading, not a derivation. UNIFICATION: the flat per-pair value 2.4155 MeV equals 3*b = 2.3458 to -2.9% (inside the one-bond family's 5.8% scatter), with b calibrated on the mixed one-bond family only \u2014 12C (-3.3% deficit-level, -0.26% of B) and 16O (-2.5%, -0.28% of B) are genuine out-of-sample predictions with zero new constants; the channel count '3' remains a post-hoc reading (GUARDED). NOT closed: the mixed multi-bond composites 11B (-58% deficit-level), 14N (-33%), 19F (-10%; -1.8% of B) \u2014 the gated rule + linear term is not the whole interface theory there (scope-(a): constrains Model G as sole mechanism for mixed multi-bond composites; no ingredient excluded). Nothing tuned; b reused from the committed R5-a witness; no production wiring.",
+ "scope": "(a) for the mixed multi-bond failures \u2014 Model G constrained as sole mechanism there; no ingredient excluded. I1/I2/I3 are structural derivations conditional on the Brunnian cluster-arrangement model input.",
+ "assertions": [
+  {
+   "label": "committed witness deficits reproduce from vendored AME2020 to 1e-9 MeV",
+   "passed": true
+  },
+  {
+   "label": "Milnor anchors: Borromean lk=0/mu=\u00b11; Hopf-linked-spectator chain mu=0 (I1/I2/I3 computational content)",
+   "passed": true
+  },
+  {
+   "label": "counting: Boolean-gated C(k,2) flat to <2% while C(k,3) and spectator-additive are >1.9x non-flat (12C vs 16O)",
+   "passed": true
+  },
+  {
+   "label": "8Be structural zero: |deficit| < 0.1 MeV, i.e. x20+ below the universal-pair value (I1 passes)",
+   "passed": true
+  },
+  {
+   "label": "9Be gate=any forces alpha.n < -0.3 MeV (refuted); gate=alpha-only closes to |resid| < 1%",
+   "passed": true
+  },
+  {
+   "label": "unification: |3b/flat-per-pair - 1| < 5% (inside the 5.8% one-bond scatter)",
+   "passed": true
+  },
+  {
+   "label": "out-of-sample closures: 12C and 16O deficit predictions within 5% (B-level < 0.5%)",
+   "passed": true
+  },
+  {
+   "label": "honest negative: mixed multi-bond 11B and 14N NOT closed (deficit-level residual > 25%)",
+   "passed": true
+  },
+  {
+   "label": "no non-3b magnitude candidate within 5% of the flat per-pair value",
+   "passed": true
+  }
+ ],
+ "allPassed": true,
+ "scriptFile": "alpha_activation_brunnian_probe.py",
+ "scriptHash": "34ee0f9c2b38",
+ "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+ "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+ "durationMs": 0,
+ "engineVersion": "mpmath 1.4.1",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

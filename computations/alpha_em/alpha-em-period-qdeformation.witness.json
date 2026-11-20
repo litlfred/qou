@@ -3,12 +3,12 @@
   "description": "Bean qou-tq20 tranche 5: period-side q-deformation check via the #3934 theta machinery. Geometric heat family of the (3,1) isotypic weights spans [3,15] exactly (endpoints exact); the categorical Markov ratio covers the same range on [q15, 1]; the dictionary endpoint q15 = 0.62556... matches NO pre-stated distinguished constant (nearest 1/phi at 1.22%). Structured null: endpoint dictionaries killed; identification neither refuted nor doubly-confirmed; wall stays open, dictionary-gated. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-18-alpha-em-period-qdeformation.md",
   "tier": "symbolic-exact (Markov ratio) + 40-dps theta numerics (geometric family); pre-stated decision rules; structured null",
-  "computedAt": "2026-09-03T16:25:45.006108+00:00",
-  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
+  "computedAt": "2026-11-20T15:01:09.162101+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "engine": "sympy+mpmath",
   "engineVersion": "1.14.0/1.4.1",
   "scriptFile": "alpha_em_period_qdeformation_probe.py",
-  "scriptHash": "71998fd5e6f1",
+  "scriptHash": "9809e6af483a",
   "assertions": [
     {
       "name": "geometric_heat_family_endpoints",
@@ -55,7 +55,7 @@
     "theta_source": "per-factor 2-D lattice thetas after the #3934 front (bring_genus4_epstein_theta_factorized_probe)",
     "scope_guard": "pre-stated candidates only; no post-hoc scoring; no fit; nothing wired; 1/(8pi) stays phase-4"
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0,
   "q0Anchor": "proton"
 }

@@ -1,6 +1,6 @@
 {
   "schema": "qou-witness/v1",
-  "computedAt": "2026-10-13T14:11:07.184236+00:00",
+  "computedAt": "2026-11-20T15:10:01.456232+00:00",
   "computation": "rev_coefficient_slack_is_the_pair_term_probe.py",
   "bean": "qou-hok7",
   "anchor": "physical_proton",
@@ -131,7 +131,7 @@
     {
       "name": "R1 C = A + E_2 to the precision the arithmetic can deliver",
       "ok": true,
-      "detail": "residual 0.0 against a derived rounding bound 3.6e-75; the series tail has underflowed to exactly 0, so truncation is not the binding error"
+      "detail": "residual 3.795e-80 against a derived rounding bound 3.6e-75; the series tail has underflowed to exactly 0, so truncation is not the binding error"
     },
     {
       "name": "R2 ratio = C/A = 1 + E_2/A",
@@ -146,17 +146,17 @@
     {
       "name": "R3 one-body/k -> C",
       "ok": true,
-      "detail": "6.17140572 vs 6.17140572, rel 7.926e-80"
+      "detail": "6.17140572 vs 6.17140572, rel 3.28e-80"
     },
     {
       "name": "R3 pair/k -> E_2 (the term the bound discards)",
       "ok": true,
-      "detail": "2.568027994 vs 2.568027994, rel 5.911e-80"
+      "detail": "2.568027994 vs 2.568027994, rel 5.255e-80"
     },
     {
       "name": "R3 R/k -> A = C - E_2",
       "ok": true,
-      "detail": "3.603377726 vs 3.603377726, rel 9.479e-80"
+      "detail": "3.603377726 vs 3.603377726, rel 1.053e-80"
     },
     {
       "name": "R4 staircase attains H_min at every triangular n tested",

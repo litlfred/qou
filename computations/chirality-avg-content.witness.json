@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T08:58:07.637441+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-11-20T15:04:47.500831+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "chirality-avg-content",
   "scriptFile": "chirality_avg_content.py",
-  "scriptHash": "8258beae916b",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3ddc9c07d337",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -36,7 +36,7 @@
   "contentBlock": "prop:chirality-writhe-ribbon-derivation",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "precision_dps": 50,
-  "q_0": "1.1099785827513808075916690956107688798744991218736",
+  "q_0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
   "q0_anchor": "muon",
   "q0_anchor_note": "IDEAL / canonical 3-CAL pin (CAL-2 = P_skew^β, proxy m_μ/m_e), q_0 = 1.10997859555733471... .  This is NOT a free choice made here: `q_parameter` auto-selects the anchor from `q0_anchor_manifest.json` by the running producer's stem, and `chirality_avg_content` is listed under `ideal_muon`.  The 2026-08-07 owner directive (touched compute defaults to the proton anchor) is not applied by hand here: retagging a manifest-tagged ideal producer is part of the tracked ~840-witness migration (bean tnjb), which is explicitly not authorised as an idle-time drain.  No number in this witness moves as a result of the 2026-08-10 corrections.",
   "cross_script_anchor_note": "ANCHOR ASYMMETRY, stated so no reader mixes the two layers.  This producer is manifest-tagged `ideal_muon`. Its companion `chirality_avg_content_chiral.py` is in NEITHER manifest list, so it falls through to the experimental/proton default, and its committed witness moved by ~1e-7 relative when re-run on 2026-08-10.  Neither producer straddles the two layers internally — each evaluates q_0, the Wedderburn weights and the Hecke characters at one and the same anchor — but ⟨c⟩ values must not be compared ACROSS the two witnesses below the 1e-7 level.",

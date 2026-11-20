@@ -1,8 +1,8 @@
 {
   "engine": "numpy+scipy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T16:28:31.641508+00:00",
-  "commitSha": "4e03604e68b897786166db895935d0baa468c84a",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:01:02.363847+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "lp_feasibility_at_q0_two_row",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1646,
+  "durationMs": 1729,
   "computation": "alpha-5-lp-dual-crystal",
   "scriptFile": "alpha_5_lp_dual_crystal.py",
-  "scriptHash": "76a09f4f33e4",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptHash": "290ea2c2ec7e",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,14 +39,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -57,7 +57,7 @@
   "description": "α_5 derivation via the operator-selection LP-dual restricted to the 2-row Wedderburn stratum (per PR #619 empirical finding that mass concentrates ≤ 2 rows). Cost vector from Murphy central element P_5 = e_5(J_1,…,J_n).  Tests atom-independence of the binding-energy shadow price y_0* across {D, T, ³He, ⁴He} at q_0 (and at q ↘ 1 for the crystal-limit follow-up (H) of PR #619).",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",
   "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "ell": 5,
     "cherry_pick_source": "litlfred/qou#619@1e023055d"
   },

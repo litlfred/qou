@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-10-13T14:18:30.661829+00:00",
-  "commitSha": "d3fc1984798d417519e0e0a4d07c80a6e62169b6",
+  "computedAt": "2026-11-20T15:06:42.255943+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "control_classical_gevrey_d2_falls",
@@ -76,11 +76,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 9,
   "computation": "deuteron-qborel-kernel-level",
   "scriptFile": "deuteron_qborel_kernel_level_probe.py",
-  "scriptHash": "f3f8aabac0c2",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptHash": "533a2b059917",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,14 +88,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.16",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -232,7 +232,7 @@
       "29": "-0.022471535060213615526"
     },
     "log_T2_squared_kernel_last": "7.99771666118947790572582134273",
-    "durationMs": 8812
+    "durationMs": 6962
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

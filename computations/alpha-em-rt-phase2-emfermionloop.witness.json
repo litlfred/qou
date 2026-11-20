@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T21:20:24.383937+00:00",
-  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:01:11.403695+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "EmFermionLoop_equals_qbracket2_symbolically",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 206,
+  "durationMs": 257,
   "computation": "alpha-em-rt-phase2-emfermionloop",
   "scriptFile": "alpha_em_rt_phase2_emfermionloop.py",
-  "scriptHash": "c7d485de5e17",
-  "scriptCommitSha": "940b3e118c9cbb5470f89a9779210687afad4127",
+  "scriptHash": "57c172efa3cd",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_rt_phase2_emfermionloop.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_rt_phase2_emfermionloop.py"
   },
   "description": "Phase 2 of the RT 2-loop derivation plan (#1495): defines EmFermionLoop categorical primitive (closed strand in fundamental SU_q(2) rep, Markov-closed = unknot with q-dim [2]_q per PR #1521 identification) and explains structurally why the H_3 Hecke-word candidates from PR #1466 were all refuted (wrong H_n level: matter strand is in H_1 with NO crossings, not in H_3). Symbolic verification via sympy shows EmFermionLoop_{V_F}(q) = [2]_q exactly.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

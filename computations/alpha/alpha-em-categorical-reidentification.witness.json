@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T19:37:05.234968+00:00",
-  "commitSha": "757490e9367c738533bf2a8b64d17a3c4dc97438",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:01:02.615561+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "bring_shift_closes_bare_to_4ppm",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "alpha-em-categorical-reidentification",
   "scriptFile": "alpha_em_categorical_reidentification.py",
-  "scriptHash": "e5e57f192ecf",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptHash": "1f0cf4d92981",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,10 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_categorical_reidentification.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_categorical_reidentification.py"
   },
   "description": "Categorical re-identification of the framework's α_EM⁻¹ formula. The bare q·[9]_q·[10]_q is the TREE term; the framework's em-coupling-bring-zero-mode proposition adds a derived Bring zero-mode shift 2g/(4π(g−1)) = 2/(3π) at genus g=4 (Hodge/Gauss-Bonnet ratio), closing the residual from −1553 ppm to ~−4 ppm. A tentative α/(4π) next term reaches ~57 ppb but its derived form is open (the candidate 1/(2π·[2]_q) is 1.4% off — not it).",
   "data": {

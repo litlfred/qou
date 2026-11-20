@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T20:02:37.937446+00:00",
-  "commitSha": "f4c71acf7c3105424c468b3b30651d77dcfd24fe",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:21:28.581521+00:00",
+  "commitSha": "f603607f097ad30e397038d5345d39e2fe740ba0",
   "assertions": [
     {
       "name": "bare_knot_ratio_does_not_match",
@@ -22,25 +22,41 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 7,
   "computation": "derive-ms-md-torus-knot",
   "scriptFile": "derive_ms_md_torus_knot.py",
-  "scriptHash": "db00814ba983",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a22945b95dce",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/derive_ms_md_torus_knot.py"
+    ],
+    "reproduce": "python3 -u computations/derive_ms_md_torus_knot.py"
   },
   "description": "Tests whether m_s/m_d = 2[3]_q[4]_q−1 (≈24) derives from a bare torus-knot ratio T(2,5)/T(2,3). It does NOT (best candidate 34% off). Informative negative: the lepton gen-2/gen-1 ratio is Vol(4₁)/ℏ²≈207 (bare knot) but the quark ratio is ~20 — quark masses are confinement-dressed, so 2[3]_q[4]_q−1 is a qq̄ meson-fusion (H₃) property, not an isolated-quark-knot invariant. The [3]_q[4]_q fusion (#1436) already encodes the confined sector.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
   "data": {
-    "target_2x3q4q_minus1": 24.017331968606424,
-    "lepton_gen2_gen1_ratio": 206.768283,
+    "target_2x3q4q_minus1": 24.01733174018103,
+    "lepton_gen2_gen1_ratio": 206.7683263706739,
     "quark_ms_md_pdg": 20.0,
     "best_torus_knot_candidate": "[5]_q·[3]_q",
-    "best_torus_knot_miss_pct": 33.84157015209436,
+    "best_torus_knot_miss_pct": 33.84157035892218,
     "conclusion": "m_s/m_d is confinement-dressed (meson sector), not a bare-knot ratio"
   }
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T17:21:13.397106+00:00",
-  "commitSha": "e31e89d1b1180bc329079a8f7adb8eb3d5c1a782",
+  "computedAt": "2026-11-20T15:04:09.977415+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "no_derived_scale_closes_A3",
@@ -17,8 +17,8 @@
   "durationMs": 28,
   "computation": "binding-log-scale-investigation",
   "scriptFile": "binding_log_scale_investigation.py",
-  "scriptHash": "fa326e099f9d",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "086cb2be5a2d",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_log_scale_investigation.py"
+    ],
+    "reproduce": "python3 -u computations/binding_log_scale_investigation.py"
   },
   "description": "Tests whether a DERIVED scale κ closes A≥3 binding with the log-observable B = κ·log(tr_free/tr_atom). Negative for this SCALAR observable: κ_needed spans 3.29–13.64 MeV (315% spread), tracking B/A. Refinement (2026-05-29 shell review): the shell structure is NOT missing — it is recoverable per-λ (χ^λ Wedderburn, self-conjugate/magic, staircase λ_shell, torus-knot q^{2n_s} gap); the scalar log-ratio collapses it. A ~4 MeV scale (E₀ / m_e·Vol(𝓑₃)) closes the deuteron (sibling PR #1416). A≥3 needs the per-λ / inter-shell object the scalar trace discards — open, not a missing observable.",
   "data": {
@@ -39,54 +47,54 @@
       "E0": {
         "kappa_MeV": "4.1859814",
         "err_pct": {
-          "D": 27.38460307989351,
-          "T": -21.814464732578415,
-          "3He": -36.71367755127665,
-          "4He": -69.31597737876864
+          "D": 27.357979816672742,
+          "T": -21.82144735867531,
+          "3He": -36.72135115770594,
+          "4He": -69.3180704632371
         }
       },
       "m_e*Vol(B3)": {
         "kappa_MeV": "3.7444597",
         "err_pct": {
-          "D": 13.948550204469688,
-          "T": -30.061183414015378,
-          "3He": -43.388882828470656,
-          "4He": -72.55241365443842
+          "D": 13.924735063766885,
+          "T": -30.067429538751995,
+          "3He": -43.39574705151108,
+          "4He": -72.55428596816294
         }
       },
       "m_e*Vol(4_1)": {
         "kappa_MeV": "1.0372682",
         "err_pct": {
-          "D": -68.43464281634371,
-          "T": -80.62596037792999,
-          "3He": -84.31792128220471,
-          "4He": -92.39663106487761
+          "D": -68.44123994655128,
+          "T": -80.62769064266764,
+          "3He": -84.31982276889912,
+          "4He": -92.39714972221347
         }
       }
     },
     "kappa_needed": {
       "D": {
-        "kappa_needed_MeV": "3.2860968",
+        "kappa_needed_MeV": "3.2867837",
         "B_per_A_MeV": "1.11228",
-        "log_per_A": "0.338482"
+        "log_per_A": "0.338411"
       },
       "T": {
-        "kappa_needed_MeV": "5.3539077",
+        "kappa_needed_MeV": "5.3543859",
         "B_per_A_MeV": "2.82727",
-        "log_per_A": "0.528075"
+        "log_per_A": "0.528028"
       },
       "3He": {
-        "kappa_needed_MeV": "6.6143539",
+        "kappa_needed_MeV": "6.615156",
         "B_per_A_MeV": "2.57268",
-        "log_per_A": "0.388954"
+        "log_per_A": "0.388907"
       },
       "4He": {
-        "kappa_needed_MeV": "13.642218",
+        "kappa_needed_MeV": "13.643149",
         "B_per_A_MeV": "7.07392",
-        "log_per_A": "0.518531"
+        "log_per_A": "0.518496"
       }
     },
-    "kappa_spread_pct": 315.1496192410951,
+    "kappa_spread_pct": 315.091168448429,
     "conclusion": {
       "scalar_log_scale_derivable": false,
       "reason": "no single κ closes the SCALAR log-observable (313% spread); κ tracks B/A",
@@ -95,7 +103,7 @@
     },
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
-      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "framework_doc": "folio/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }

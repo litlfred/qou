@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:06:15.418231+00:00",
-  "commitSha": "766a531446726071965fd29785f076e1780bc036",
+  "computedAt": "2026-11-20T15:08:03.706375+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "s1_borromean_pairwise_zero_triple_one",
@@ -14,7 +14,7 @@
     },
     {
       "name": "one_third_datum_within_0p3pct",
-      "computed": "1.0765395054667150164086928341464151161289879412265",
+      "computed": "5.27407217450575809721487860615221684259788234936537869271588272218683",
       "expected": 1.0,
       "passed": false,
       "tolerance": "0.005",
@@ -22,15 +22,15 @@
     },
     {
       "name": "tanh_and_one_third_routes_competing_not_additive",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "derived tanh(ln q₀) route covers 31.1%, 1/3 route 99.77%; sum 130.9% > 100% ⇒ they cannot both be the full story — the 1/3 route would have to SUPERSEDE the derived ratio"
     },
     {
       "name": "tanh_ln_sqrt2_equals_one_third_exactly",
-      "computed": "6.6819117752304891153513411678787046970379922002626e-52",
+      "computed": "4.527839539413356183754559645443895890341265599069569094791307444967751e-72",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 20,
+  "durationMs": 16,
   "computation": "mirror-split-milnor-one-third",
   "scriptFile": "mirror_split_milnor_one_third_probe.py",
-  "scriptHash": "4a73d3df84ae",
-  "scriptCommitSha": "b837f3a51209897a3628c287c7fb5ab6c30d1708",
+  "scriptHash": "56e3f071913e",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -50,14 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -68,7 +68,7 @@
   "description": "Formalize-first test of the candidate mechanism split=B_pp/3 for the ³H–³He mirror split ('one active pair among three Borromean components'). S1 PROVED exact: Borromean pairwise lk=(0,0,0), μ̄(123)=±1 — pairwise EM-linking structurally zero, coupling must be triple-channel. S2 structural-conditional: the 1/3 multiplicity can come only from the S₃ symmetry of L6a4 itself; the equal-weight coordination witness does NOT supply it (nucleon bond spread 1.78×, and the equal-weight limit gives ZERO split). S3 UNPROVED (the gate): split=B_pp/3 needs a derived UNIT Coulomb/strong coefficient at the triple channel; the only derived ratio is tanh(ln q₀)=0.10396 covering 31.1%, vs the 1/3 route's 99.77% — COMPETING, not additive (sum 130.9%). Numerology-guard datum: tanh(ln √2)=1/3 exactly (√2=1/x*, the target-2 Borel coupling) — reported, not identified. VERDICT scope-(a): DATUM ONLY, mechanism step S3 missing; no fit, no wiring, no tier change.",
   "auditOnly": "docs/audits/2026-07-13-mirror-split-one-third-mechanism-probe.md",
   "parameters": {
-    "compute_dps": 50,
+    "compute_dps": 70,
     "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
@@ -82,20 +82,20 @@
     },
     "S2_equal_weight_check": {
       "eps_nn_over_eps_pp": 1.8519359172346286,
-      "equal_weight_limit_split_MeV": -1.3583518618240069e-71,
+      "equal_weight_limit_split_MeV": -9.055679078826712e-72,
       "note": "equal-weight fails at nucleon level (spread ≠ 1) and its limit gives zero split; the 1/3 source is S₃ link symmetry, not bond-extensivity-equal-weight"
     },
-    "B_pp_strong_MeV": 2.128360945757083,
+    "B_pp_strong_MeV": 0.43443937894435775,
     "B_pp_provenance": "per-block H₆ diproton, free−interacting, the exact code path of charge_coulomb_tn3he_derived.py (charge-coulomb-tn3he-derived.witness.json)",
     "ame_split_MeV": 0.76375488,
-    "split_over_Bpp": 0.3588465018222383,
-    "split_times_3_over_Bpp": 1.076539505466715,
-    "one_third_deviation": 0.07653950546671502,
+    "split_over_Bpp": 1.758024058168586,
+    "split_times_3_over_Bpp": 5.274072174505758,
+    "one_third_deviation": 4.274072174505758,
     "tanh_ln_q0": 0.10396371005241015,
-    "coverage_tanh_route": 0.2897163815851007,
-    "coverage_one_third_route": 0.9289022789428125,
-    "coverage_sum_if_additive": 1.2186186605279132,
-    "tanh_ln_sqrt2_minus_one_third": 6.681911775230489e-52,
+    "coverage_tanh_route": 0.059136682213958944,
+    "coverage_one_third_route": 0.18960680986390022,
+    "coverage_sum_if_additive": 0.24874349207785915,
+    "tanh_ln_sqrt2_minus_one_third": 4.527839539413356e-72,
     "classification": "DATUM ONLY (scope-(a)): S1 proved, S2 structural-conditional, S3 (derived unit Coulomb/strong coefficient at the triple channel) missing and in tension with derived tanh(ln q₀)"
   },
   "q0Anchor": "proton",

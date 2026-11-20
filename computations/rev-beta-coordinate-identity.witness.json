@@ -147,7 +147,7 @@
   "checks": [
     {
       "check": "R1_beta_identity_for_the_eps_weighted_hook_sum",
-      "detail": "sum_c eps_h(c) == sum_i F(beta_i) - sum_{i<j} eps_(beta_i-beta_j) on all 372 partitions of n <= 13; worst residual 3.314e-49 at (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1). So R_lambda is exactly one-body + two-body in the beta-coordinates, which is the structure C*r discards.",
+      "detail": "sum_c eps_h(c) == sum_i F(beta_i) - sum_{i<j} eps_(beta_i-beta_j) on all 372 partitions of n <= 13; worst residual 2.138e-49 at (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1). So R_lambda is exactly one-body + two-body in the beta-coordinates, which is the structure C*r discards.",
       "pass": true
     },
     {
@@ -183,7 +183,7 @@
   ],
   "checks_passed": 7,
   "checks_total": 7,
-  "computedAt": "2026-10-13T15:17:56.220917+00:00",
+  "computedAt": "2026-11-20T15:09:16.093232+00:00",
   "dps": 50,
   "identity": "R_lambda = sum_i F(beta_i) - sum_{i<j} eps_(beta_i-beta_j) - F(n); H = sum_i beta_i(beta_i+1)/2 - sum_{i<j}(beta_i-beta_j); n = sum_i beta_i - l(l-1)/2",
   "pair_deficit_C_minus_A": "2.568027994359277855909882",

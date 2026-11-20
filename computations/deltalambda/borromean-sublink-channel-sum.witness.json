@@ -2,7 +2,7 @@
   "schema": "witness/v1",
   "name": "borromean-sublink-channel-sum",
   "description": "A=3 magnitude ROUTE 3: multi-sub-link channel sum. Brunnian sub-link triviality collapses every 2-sub-link deficit to 0; both channel closures = the single 3-body Borromean deficit c\u2083 (factor 1); r*\u22481.585 NOT supplied.",
-  "created": "2026-08-23T09:01:09.250952+00:00",
+  "created": "2026-11-20T15:06:30.841564+00:00",
   "parameters": {
     "borromean_band_word": [
       [
@@ -90,5 +90,14 @@
   "lean": "QOU.MassTheory.BorromeanSubLinkChannelSum (brunnian_channelClosureMul_eq_triple, brunnian_channel_no_magnitude, borromean_channel_ne_r_star) \u2014 sorry-free, lean-direct exit 0",
   "invariant_cited": "Brunnian sub-link triviality: every proper 2-sub-link of the Borromean rings is the unlink \u21d2 its trace deficit against the unlink baseline is exactly 0.",
   "anti_fit": "\u03bc\u2083/c\u2083 reported as target context only; no free parameter tuned; nothing wired.",
-  "wall_seconds": "0.53"
+  "wall_seconds": "0.50",
+  "scriptFile": "borromean_sublink_channel_sum_probe.py",
+  "scriptHash": "7aee8a048a2d",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "engine": "python",
+  "computedAt": "2026-11-20T15:06:30.851594+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

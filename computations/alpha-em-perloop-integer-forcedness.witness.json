@@ -3,12 +3,12 @@
   "description": "Scope-(a) forcedness measurement of the \u03b1_EM per-loop-measure denominator: solve D from the fixed-point cubic against CODATA, test whether 8=dim H\u00b9(Bring) is uniquely data-selected. NOT a derivation of 1/(8\u03c0).",
   "audit_only": true,
   "tier": "numerical (forcedness measurement)",
-  "computedAt": "2026-09-03T16:20:58.994437+00:00",
-  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
+  "computedAt": "2026-11-20T15:01:10.749194+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "alpha_em_perloop_integer_forcedness_probe.py",
-  "scriptHash": "0245869b87f0",
+  "scriptHash": "89c77abc4f4b",
   "assertions": [
     {
       "name": "neighbours_excluded_gt3sigma",
@@ -54,9 +54,9 @@
   "q0Anchor": "comparison",
   "q0Values": {
     "muon": "1.109978595642739046681795129380001752700065561029012",
-    "proton": "1.109978582751380807591669095610768879874499121873600"
+    "proton": "1.109978582751380807591669095610768879874499121873579"
   },
   "q0AnchorReason": "per-loop-measure integer forcedness measured at both pins on purpose; the proton (default) leg carries the verdict",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0
 }

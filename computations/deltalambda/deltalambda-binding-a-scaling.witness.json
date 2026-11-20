@@ -3,29 +3,29 @@
   "description": "A-stability criterion selects the irrep dimension (\u0394_\u03bb=sgn\u00b7dim, p=1, min cross-isotope spread ~2.8x, ratios 0.11-0.30) over the block dim\u00b2 (p=2, spread ~119x, blows up). Uses the classical q=1 dim (#3542), not the q\u2080 quantum dim. Vindicates the #3542 irrep trace as the correct A-scaling; residual is an O(1) factor (~3-9), same power. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-a-scaling.md",
   "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
-  "computedAt": "2026-09-04T02:47:21.492854+00:00",
-  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
+  "computedAt": "2026-11-20T15:06:32.270008+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
   "scriptFile": "deltalambda_binding_a_scaling_probe.py",
-  "scriptHash": "a1a61e471973",
+  "scriptHash": "3940de92e97a",
   "q0": "1.1099785827513808076",
   "q0_source": "qou_substrate.q_at(30)",
   "assertions": [
     {
       "name": "irrep_dim_p1_is_A_stable",
       "passed": false,
-      "detail": "\u0394_\u03bb=sgn\u00b7dim (p=1, classical q=1 dim): ratios d:0.16, t:0.15, 3he:0.20, 4he:0.00 \u2014 cross-isotope spread 59.1x (A-STABLE), no blow-up"
+      "detail": "\u0394_\u03bb=sgn\u00b7dim (p=1, classical q=1 dim): ratios d:-0.12, t:0.04, 3he:0.05, 4he:0.03 \u2014 cross-isotope spread 3.5x (A-STABLE), no blow-up"
     },
     {
       "name": "block_dim2_p2_blows_up",
       "passed": false,
-      "detail": "\u0394_\u03bb=sgn\u00b7dim\u00b2 (p=2, classical dim\u00b2): ratios d:0.4, t:7.6, 3he:11.5, 4he:-7.5 \u2014 spread 33x, blows up with A"
+      "detail": "\u0394_\u03bb=sgn\u00b7dim\u00b2 (p=2, classical dim\u00b2): ratios d:-0.6, t:2.3, 3he:3.2, 4he:8.0 \u2014 spread 14x, blows up with A"
     },
     {
       "name": "spread_minimized_at_p1",
       "passed": false,
-      "detail": "cross-isotope spread over p={0,1,1.5,2} = 0:74.0x, 1:59.1x, 1.5:6.8x, 2:32.7x \u2014 MINIMIZED at p=1 (monotone away on both sides); p=1 is the unique A-stable power"
+      "detail": "cross-isotope spread over p={0,1,1.5,2} = 0:565.0x, 1:3.5x, 1.5:2.2x, 2:14.1x \u2014 MINIMIZED at p=1 (monotone away on both sides); p=1 is the unique A-stable power"
     },
     {
       "name": "A_stability_selects_irrep_dim",
@@ -38,47 +38,47 @@
     "magnitude": "classical q=1 dim(\u03bb) (hook-length integer), NOT q\u2080 quantum dim (#3542)",
     "ratio_by_p": {
       "0": {
-        "d": 0.01406701635047399,
-        "t": 0.003049581213554398,
-        "3he": 0.004000599470565931,
-        "4he": 0.0001901395634396847
+        "d": -0.05469673555608589,
+        "t": -0.002192162138479273,
+        "3he": -0.0033673203750215334,
+        "4he": -9.680757421769547e-05
       },
       "1": {
-        "d": 0.16480582648819336,
-        "t": 0.14911859435010735,
-        "3he": 0.20385503082500636,
-        "4he": 0.00344819542313951
+        "d": -0.12211040166404884,
+        "t": 0.03782950362101329,
+        "3he": 0.05211126680248346,
+        "4he": 0.034724263431224915
       },
       "1.5": {
-        "d": 0.29786370344311,
-        "t": 1.0481511816981177,
-        "3he": 1.510083341084801,
-        "4he": -0.22075300648908613
+        "d": -0.2458937383165483,
+        "t": 0.3120539406880681,
+        "3he": 0.4318617201291927,
+        "4he": 0.5310792188286743
       },
       "2": {
-        "d": 0.35192723063982234,
-        "t": 7.602868764379677,
-        "3he": 11.490709247769614,
-        "4he": -7.5191424962469675
+        "d": -0.5705311276963739,
+        "t": 2.279730073490414,
+        "3he": 3.1846002329024268,
+        "4he": 8.046006672938724
       }
     },
     "ratio_p1_irrep": {
-      "d": 0.16480582648819336,
-      "t": 0.14911859435010735,
-      "3he": 0.20385503082500636,
-      "4he": 0.00344819542313951
+      "d": -0.12211040166404884,
+      "t": 0.03782950362101329,
+      "3he": 0.05211126680248346,
+      "4he": 0.034724263431224915
     },
     "ratio_p2_block": {
-      "d": 0.35192723063982234,
-      "t": 7.602868764379677,
-      "3he": 11.490709247769614,
-      "4he": -7.5191424962469675
+      "d": -0.5705311276963739,
+      "t": 2.279730073490414,
+      "3he": 3.1846002329024268,
+      "4he": 8.046006672938724
     },
     "residual_O1_factor_p1": {
-      "d": 6.0677466404480525,
-      "t": 6.706071797137216,
-      "3he": 4.905446757693324,
-      "4he": 290.00676507177803
+      "d": -8.189310544987055,
+      "t": 26.43439390636166,
+      "3he": 19.18970812569736,
+      "4he": 28.79830703912859
     },
     "verdict": "INCONCLUSIVE \u2014 an assertion failed; re-derive before citing."
   },
@@ -89,7 +89,7 @@
     "open": "the O(1) multiplicative factor (~3-9) \u2014 same power \u2014 DERIVE, do not fit",
     "gate": "\u0394_\u03bb gate \u2014 A-stability is a structural criterion, not a fit; nothing wired"
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T16:20:58.724683+00:00",
-  "commitSha": "157d6b22130e25f17aaa880e4084235600c9d02f",
+  "computedAt": "2026-11-20T15:01:10.559131+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "measures_differ",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "alpha-em-loop-measure-consistency",
   "scriptFile": "alpha_em_loop_measure_consistency_probe.py",
-  "scriptHash": "5991aae379b8",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "7866c4536bf2",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -106,7 +106,7 @@
   "q0Anchor": "comparison",
   "q0Values": {
     "muon": "1.109978595642739046681795129380001752700065561029012",
-    "proton": "1.109978582751380807591669095610768879874499121873600"
+    "proton": "1.109978582751380807591669095610768879874499121873579"
   },
   "q0AnchorReason": "per-loop-measure consistency ladder evaluated at both pins on purpose; the proton (default) leg carries the verdict, the muon leg the anchor-stability check"
 }

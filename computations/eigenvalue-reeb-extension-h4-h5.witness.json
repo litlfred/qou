@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:29:45.512560+00:00",
-  "commitSha": "be0795b0c101cbaab51379ce1d07aa3c2dee6815",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:22:02.882185+00:00",
+  "commitSha": "f603607f097ad30e397038d5345d39e2fe740ba0",
   "assertions": [
     {
       "name": "extends_beyond_h3",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "eigenvalue-reeb-extension-h4-h5",
   "scriptFile": "eigenvalue_reeb_extension_h4_h5.py",
-  "scriptHash": "85fef2c72157",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "27f489b89c9e",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,14 +27,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

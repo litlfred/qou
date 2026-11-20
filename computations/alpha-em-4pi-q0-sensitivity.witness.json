@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-19T21:20:23.304037+00:00",
-  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:01:09.723500+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "sensitivity_computed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 24,
   "computation": "alpha-em-4pi-q0-sensitivity",
   "scriptFile": "alpha_em_4pi_q0_sensitivity.py",
-  "scriptHash": "12bca1f6d41b",
-  "scriptCommitSha": "940b3e118c9cbb5470f89a9779210687afad4127",
+  "scriptHash": "71b6e0dffe50",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_4pi_q0_sensitivity.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_4pi_q0_sensitivity.py"
   },
   "description": "Q_0 sensitivity analysis for the empirical form from #1484. Computes dα/dq_0 at q_0 via finite differences (50 dps); tests whether the 22 ppb CAL-2 uncertainty on q_0 (from m_μ/m_e) propagates to ≥0.31 ppb on α_EM, which would mean the residual in #1484 is upstream calibration noise, NOT a missing structural piece.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

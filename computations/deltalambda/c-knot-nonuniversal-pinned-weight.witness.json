@@ -2,10 +2,10 @@
   "schema": "witness/v1",
   "producer": "computations/deltalambda/c_knot_nonuniversal_pinned_weight_probe.py",
   "computation": "c-knot-nonuniversal-pinned-weight",
-  "description": "The clean cross-isotope C_knot universality test, run with the NOW-PINNED Markov weight y_\u03bb (PR #4543, \u03a3 y_\u03bb f^\u03bb = 1 verified). Master-formula conventions (binding_energy_categorical_deuteron): B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u03c7^\u03bb(\u03b2_K) sgn f^\u03bb|, \u03c7^\u03bb from the interface-inclusive Rust Hoefsmit caches. Result: C_knot = 6.0678734/6.7060686/4.9054474/290.00684 for D/T/\u00b3He/\u2074He \u2192 spread 59.119\u00d7, NON-UNIVERSAL. f^\u03bb (hook SYT) is the tightest dim convention (59.119\u00d7 vs dim_q 219.83\u00d7, none 73.981\u00d7); no global/A-power scale fixes it (log C/log A non-constant); a deuteron-pinned 0-fit scale mispredicts T/\u00b3He/\u2074He by -9.517%/23.7%/-97.91% (\u226b isospin \u00b18%). Mirror pair T & \u00b3He at the SAME H\u2089 need C_knot differing by a factor 1.3671 (robust across dim conventions: 1.3671/1.3216/1.3119) \u21d2 C_knot is NOT a function of (n,q\u2080); it is per-knot \u0394_\u03bb. scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale g(n,q\u2080) excluded by the mirror inequality (Lean no_level_only_closure). \u0394_\u03bb magnitude stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41\u00d7 was right-vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing wired; exact mpmath. NOTE: every figure in this description is INTERPOLATED from the values computed in this run \u2014 it cannot go stale against its own payload.",
+  "description": "The clean cross-isotope C_knot universality test, run with the NOW-PINNED Markov weight y_\u03bb (PR #4543, \u03a3 y_\u03bb f^\u03bb = 1 verified). Master-formula conventions (binding_energy_categorical_deuteron): B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u03c7^\u03bb(\u03b2_K) sgn f^\u03bb|, \u03c7^\u03bb from the interface-inclusive Rust Hoefsmit caches. Result: C_knot = 8.1894806/26.434382/19.189711/28.798299 for D/T/\u00b3He/\u2074He \u2192 spread 3.5165\u00d7, NON-UNIVERSAL. f^\u03bb (hook SYT) is the tightest dim convention (3.5165\u00d7 vs dim_q 1139.4\u00d7, none 564.99\u00d7); no global/A-power scale fixes it (log C/log A non-constant); a deuteron-pinned 0-fit scale mispredicts T/\u00b3He/\u2074He by -69.02%/-57.32%/-71.56% (\u226b isospin \u00b18%). Mirror pair T & \u00b3He at the SAME H\u2089 need C_knot differing by a factor 1.3775 (robust across dim conventions: 1.3775/1.0306/1.5361) \u21d2 C_knot is NOT a function of (n,q\u2080); it is per-knot \u0394_\u03bb. scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale g(n,q\u2080) excluded by the mirror inequality (Lean no_level_only_closure). \u0394_\u03bb magnitude stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41\u00d7 was right-vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing wired; exact mpmath. NOTE: every figure in this description is INTERPOLATED from the values computed in this run \u2014 it cannot go stale against its own payload.",
   "audit_only": true,
   "tier": "scope-(a) refutation of single-universal-C_knot + scope-(b) level-only exclusion; no fit",
-  "scriptHash": "26715c3d65c6c591",
+  "scriptHash": "cd831024041a",
   "result": {
     "master_formula": "B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb'}}) \u00b7 f^\u03bb|,  \u03a3_\u03bb y_\u03bb f^\u03bb = 1",
     "weight": "Wenzl Schur-principal y_\u03bb (pinned, PR #4543) \u2014 recomputed, \u03a3 y_\u03bb f^\u03bb = 1 asserted",
@@ -13,78 +13,78 @@
       "D": {
         "A": 2,
         "n_strands": 6,
-        "absS": "0.71744534",
+        "absS": "0.53158041",
         "markov_norm_sum_yf": "1.0",
-        "B_naive_MeV": "0.36661381",
+        "B_naive_MeV": "0.27163703",
         "B_AME_MeV": "2.2245662",
-        "C_knot": "6.0678734"
+        "C_knot": "8.1894806"
       },
       "T": {
         "A": 3,
         "n_strands": 9,
-        "absS": "2.4751404",
+        "absS": "0.62791183",
         "markov_norm_sum_yf": "1.0",
-        "B_naive_MeV": "1.2647941",
+        "B_naive_MeV": "0.32086228",
         "B_AME_MeV": "8.4817962",
-        "C_knot": "6.7060686"
+        "C_knot": "26.434382"
       },
       "3He": {
         "A": 3,
         "n_strands": 9,
-        "absS": "3.0789913",
+        "absS": "0.78707959",
         "markov_norm_sum_yf": "1.0",
-        "B_naive_MeV": "1.5733613",
+        "B_naive_MeV": "0.40219684",
         "B_AME_MeV": "7.7180413",
-        "C_knot": "4.9054474"
+        "C_knot": "19.189711"
       },
       "4He": {
         "A": 4,
         "n_strands": 12,
-        "absS": "0.19093767",
+        "absS": "1.9227951",
         "markov_norm_sum_yf": "1.0",
-        "B_naive_MeV": "0.097568947",
+        "B_naive_MeV": "0.9825463",
         "B_AME_MeV": "28.295662",
-        "C_knot": "290.00684"
+        "C_knot": "28.798299"
       }
     },
-    "spread_factor": "59.119",
+    "spread_factor": "3.5165",
     "mirror_pair_T_3He": {
       "same_strand_count_H9": true,
-      "C_knot_T": "6.70607",
-      "C_knot_3He": "4.90545",
-      "ratio": "1.3671",
-      "note": "same H\u2089 \u21d2 any g(n,q\u2080) closure would force C_knot(T)=C_knot(\u00b3He); they differ by a factor 1.3671."
+      "C_knot_T": "26.4344",
+      "C_knot_3He": "19.1897",
+      "ratio": "1.3775",
+      "note": "same H\u2089 \u21d2 any g(n,q\u2080) closure would force C_knot(T)=C_knot(\u00b3He); they differ by a factor 1.3775."
     },
     "dim_convention_scan": {
       "f": {
         "C_knot": {
-          "D": "6.06787",
-          "T": "6.70607",
-          "3He": "4.90545",
-          "4He": "290.007"
+          "D": "8.18948",
+          "T": "26.4344",
+          "3He": "19.1897",
+          "4He": "28.7983"
         },
-        "spread": "59.119",
-        "T_over_3He_sameH9": "1.3671"
+        "spread": "3.5165",
+        "T_over_3He_sameH9": "1.3775"
       },
       "dimq": {
         "C_knot": {
-          "D": "15.5951",
-          "T": "121.388",
-          "3He": "91.8522",
-          "4He": "3428.31"
+          "D": "12.9379",
+          "T": "14741.4",
+          "3He": "14303.2",
+          "4He": "3837.42"
         },
-        "spread": "219.83",
-        "T_over_3He_sameH9": "1.3216"
+        "spread": "1139.4",
+        "T_over_3He_sameH9": "1.0306"
       },
       "none": {
         "C_knot": {
-          "D": "71.0898",
-          "T": "327.914",
-          "3He": "249.963",
-          "4He": "5259.29"
+          "D": "18.283",
+          "T": "456.17",
+          "3He": "296.972",
+          "4He": "10329.8"
         },
-        "spread": "73.981",
-        "T_over_3He_sameH9": "1.3119"
+        "spread": "564.99",
+        "T_over_3He_sameH9": "1.5361"
       }
     },
     "framing_writhe_test": {
@@ -93,37 +93,37 @@
           "writhe": 4,
           "n_sigma": 11,
           "n_sigma_inv": 7,
-          "C_knot": "6.0678734",
-          "framing_c": "4.32"
+          "C_knot": "8.1894806",
+          "framing_c": "5.03842"
         },
         "T": {
           "writhe": 4,
           "n_sigma": 16,
           "n_sigma_inv": 12,
-          "C_knot": "6.7060686",
-          "framing_c": "4.55961"
+          "C_knot": "26.434382",
+          "framing_c": "7.84609"
         },
         "3He": {
           "writhe": 8,
           "n_sigma": 18,
           "n_sigma_inv": 10,
-          "C_knot": "4.9054474",
-          "framing_c": "1.90523"
+          "C_knot": "19.189711",
+          "framing_c": "3.53934"
         },
         "4He": {
           "writhe": 8,
           "n_sigma": 23,
           "n_sigma_inv": 15,
-          "C_knot": "290.00684",
-          "framing_c": "6.79254"
+          "C_knot": "28.798299",
+          "framing_c": "4.02565"
         }
       },
       "framing_excluded": true,
       "note": "Writhe w(K)=#\u03c3\u2212#\u03c3\u207b\u00b9 of the canonical word (averaged interface crossings writhe-neutral): w(D)=w(T)=4, w(\u00b3He)=w(\u2074He)=8. The omitted Jones/HOMFLY framing factor q\u2080^{c\u00b7w} would need CONSTANT c to close C_knot. The per-isotope c is recorded in `per_isotope.framing_c` above and is not constant; and \u2014 decisively, and independently of those values \u2014 D&T (same writhe 4) and \u00b3He&\u2074He (same writhe 8) have DIFFERENT C_knot, so no writhe-only factor closes it. That pair argument is what carries the exclusion; the c-spread is corroboration. Framing RULED OUT (scope-b)."
     },
     "deuteron_pinned_scale_prediction": {
-      "alpha_MeV": "3.10068",
-      "alpha_over_m_e": "6.06787",
+      "alpha_MeV": "4.18482",
+      "alpha_over_m_e": "8.18948",
       "predictions": {
         "D": {
           "B_pred_MeV": "2.2245662",
@@ -131,27 +131,27 @@
           "err_pct": "0.0"
         },
         "T": {
-          "B_pred_MeV": "7.6746107",
+          "B_pred_MeV": "2.6276955",
           "B_AME_MeV": "8.4817962",
-          "err_pct": "-9.517"
+          "err_pct": "-69.02"
         },
         "3He": {
-          "B_pred_MeV": "9.5469574",
+          "B_pred_MeV": "3.2937832",
           "B_AME_MeV": "7.7180413",
-          "err_pct": "23.7"
+          "err_pct": "-57.32"
         },
         "4He": {
-          "B_pred_MeV": "0.59203601",
+          "B_pred_MeV": "8.0465439",
           "B_AME_MeV": "28.295662",
-          "err_pct": "-97.91"
+          "err_pct": "-71.56"
         }
       },
-      "note": "0-fit CAL on B(\u00b2H); errors -9.517/23.7/-97.91% \u226b isospin \u00b18% \u21d2 single scale fails."
+      "note": "0-fit CAL on B(\u00b2H); errors -69.02/-57.32/-71.56% \u226b isospin \u00b18% \u21d2 single scale fails."
     },
     "verdict": {
       "single_universal_C_knot_refuted": true,
       "level_only_rescale_excluded": true,
-      "classification": "scope-(a): C_knot is non-universal (59.119\u00d7 with the pinned weight + best dim), so 'derive C_knot as one geometric/scale factor' is refuted. scope-(b): the level-only rescale class g(n,q\u2080)\u00b7m_e\u00b7S(K) is structurally excluded by the T/\u00b3He mirror inequality (cited invariant no_level_only_closure). NOT an exclusion of a per-knot \u0394_\u03bb derivation \u2014 that remains OPEN (bean qou-3q7t).",
+      "classification": "scope-(a): C_knot is non-universal (3.5165\u00d7 with the pinned weight + best dim), so 'derive C_knot as one geometric/scale factor' is refuted. scope-(b): the level-only rescale class g(n,q\u2080)\u00b7m_e\u00b7S(K) is structurally excluded by the T/\u00b3He mirror inequality (cited invariant no_level_only_closure). NOT an exclusion of a per-knot \u0394_\u03bb derivation \u2014 that remains OPEN (bean qou-3q7t).",
       "anti_fit": "y_\u03bb derived (Wenzl, \u03a3 y_\u03bb f^\u03bb = 1 asserted); \u03c7^\u03bb from committed caches; B_AME used only as a diagnostic ratio, never inverted into a weight; free_parameters = 0."
     },
     "free_parameters": 0
@@ -163,5 +163,12 @@
     "builds_on": "PR #4491 (C_knot gate), PR #4543 (weight pinned), docs/audits/2026-06-01-e0-lambda-substrate-derivation-options.md",
     "no_fit": true
   },
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2"
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptFile": "c_knot_nonuniversal_pinned_weight_probe.py",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "engine": "python",
+  "computedAt": "2026-11-20T15:06:31.646710+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

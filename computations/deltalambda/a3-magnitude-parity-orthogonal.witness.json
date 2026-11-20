@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T03:11:10.690388+00:00",
-  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:06:23.057332+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "n9_structure_14pairs_2selfconj",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "a3-magnitude-parity-orthogonal",
   "scriptFile": "a3_magnitude_parity_orthogonal_probe.py",
-  "scriptHash": "f1569e5d7b7b",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "b693b11c28b9",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,14 +30,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [

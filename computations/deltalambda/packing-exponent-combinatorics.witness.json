@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-13T20:30:20.985969+00:00",
-  "commitSha": "0da5917d5674840e3eb9dbe70f0e82fda453d6da",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:08:07.905786+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "equipartition_class_refuted_integer_exponents",
@@ -70,11 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 15,
   "computation": "packing-exponent-combinatorics",
   "scriptFile": "packing_exponent_combinatorics_probe.py",
-  "scriptHash": "20eeee735df7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "498ca70a126a",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -82,10 +82,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/packing_exponent_combinatorics_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/packing_exponent_combinatorics_probe.py"
   },
   "description": "R4-a derive-or-refute: can any corpus combinatorial object produce the A^(-1/3) packing-energy exponent of E_pair = (3/5)·alpha·m_pi·A^(-1/3)? Symbolic prune (formalize-first): (a) equipartition over the Lean-proved chain counts gives integer exponents 1/2/3 only; (b) the Milnor/LCS Witt tower has harmonic (1/n) and factorial normalizations, no cube root; (c) [A]_q is exponential at q0 and reduces to A only at q=1 — all three REFUTED as producers of -1/3. Numerical shape test on the 8 T_z mirror pairs: p = 1/3 scatter 0.077 coeff 0.983; measured effective exponent p* = 0.252 ± 0.020 (1/3 at 4.1 sigma, 1/4 at 0.1 sigma — OLS-internal, correlated systematics not included); the coefficient-1 pion-Compton property holds only at p = 1/3. VERDICT: null hypothesis (d) stands — the exponent is an empirical import (nuclear saturation-radius law), now precisely located. Scope-(a); exploratory; nothing wired.",
   "data": {
@@ -115,44 +125,44 @@
     },
     "shape_test": {
       "A^(-1/3) [empirical saturation law]": {
-        "scatter_ln": 0.07737185869002546,
-        "coefficient": 0.9827209565093635
+        "scatter_ln": 0.07737185869002577,
+        "coefficient": 0.9827209565093643
       },
       "A^(-1/4)": {
-        "scatter_ln": 0.03972669494477394,
-        "coefficient": 0.7912002910047289
+        "scatter_ln": 0.03972669494477471,
+        "coefficient": 0.7912002910047296
       },
       "A^(-2/5)": {
-        "scatter_ln": 0.12703718984791504,
-        "coefficient": 1.1688135582991435
+        "scatter_ln": 0.1270371898479152,
+        "coefficient": 1.1688135582991444
       },
       "A^(-1/2)": {
-        "scatter_ln": 0.2059344355526094,
-        "coefficient": 1.51606483967378
+        "scatter_ln": 0.20593443555260948,
+        "coefficient": 1.5160648396737813
       },
       "1/(A-1) [chain-bond equipartition]": {
         "scatter_ln": 0.7245758808245942,
-        "coefficient": 4.9666535874403674
+        "coefficient": 4.966653587440372
       },
       "2/(A(A-1)) [sub-chain equipartition]": {
         "scatter_ln": 1.5375699430532201,
-        "coefficient": 33.47797834917436
+        "coefficient": 33.477978349174386
       },
       "[A]_q0^(-1/3) [q-dimension route]": {
-        "scatter_ln": 0.28292216777863366,
-        "coefficient": 1.2027521570664927
+        "scatter_ln": 0.28292216777863344,
+        "coefficient": 1.2027521570664939
       },
       "A^0 [no dilution]": {
-        "scatter_ln": 0.20872475935614654,
-        "coefficient": 0.4129097147458859
+        "scatter_ln": 0.20872475935614676,
+        "coefficient": 0.4129097147458862
       }
     },
-    "p_star": 0.25174633698400994,
-    "p_star_sigma_ols": 0.01991222055539592,
+    "p_star": 0.25174633698401006,
+    "p_star_sigma_ols": 0.019912220555396307,
     "p_star_sigmas_to": {
-      "1/3": 4.097332897772394,
-      "1/4": 0.08770176983283312,
-      "2/5": 7.445360631856575
+      "1/3": 4.09733289777231,
+      "1/4": 0.08770176983283612,
+      "2/5": 7.445360631856427
     },
     "pairs_used": [
       "3H/3He",

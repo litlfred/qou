@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T17:59:17.427540+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:06:29.345912+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "guard_fourthdiff_kills_1body_linear",
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "b4-multiplicative-cumulant",
   "scriptFile": "b4_multiplicative_cumulant_probe.py",
-  "scriptHash": "02247f47b65d",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "92ee0c764730",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -60,12 +60,12 @@
   "description": "Option-E front 4 (interface-operator / 4-body route): the MULTIPLICATIVE connected 4-body Ursell cumulant b₄ of the canonical binding B = E₀·τ_vac·(1 − ∏ fᵢ), evaluated 0-fit at the substrate q₀ on the complete-graph K_A topology, reported as a fraction of the ⁴He AME target b₄ ≈ 9.243 MeV. DISTINCT from the sibling A4InterfaceMagnitude (−ln det(I+G) writhe-determinant surjectivity gate). b₄ = fourthDiff(B(A)) with B(3) isospin-symmetric. RESULT (scope-(a) undershoot): production pn=z → b₄=0.583 MeV = 6.30% of target; bar-invariant pn=z−h/2 → 3.369 MeV = 36.4%. Cause: (1−∏f) saturates. NOT scope-(b): the multiplicative form carries connected 4-body content the additive forms cannot (Lean multBinding_b4_nonvacuous vs BodyOrderCumulant orthogonality). I-par refined: pn factor z−h/2 is bar-mixed; retained = bar-even projection z. B_AME DIAGNOSTIC-ONLY (forms target, never fits framework). free_parameters=0, nothing wired. MULTIPLICATIVE connected 4-body cumulant undershoots: production pn=z gives b₄=-0.3035 MeV = -3.28% of the ⁴He target (9.243 MeV); bar-invariant pn=z−h/2 gives 17.3%. scope-(a): the multiplicative 4-body cumulant, ALONE, reaches only ~6% (production) / ~36% (bar-invariant) of the target. Cause: (1−∏f) saturates, so extra bonds barely grow B; the residual A-growth is the weak τ_p^Z τ_n^N. NOT scope-(b) excluded — the multiplicative form DOES carry connected 4-body content (Lean multBinding_b4_nonvacuous), unlike the additive forms (b₄=0). No fit, nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",
   "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "E0_MeV": "4.185981363294475896945062158759008410143486890878715448622304367024271",
-    "z_markov": "0.6126880371464652515958298639458992480263083915450870140747738279321425",
-    "h_hecke": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
+    "q_0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "E0_MeV": "4.185981363294475896945062158759008410143486890879604982783672079638251",
+    "z_markov": "0.6126880371464652515958298639458992480263083915450647597242866851041912",
+    "h_hecke": "0.2090602987956393154308462131296749438597574952630245553816960544589759",
     "tau_p": "1.22036288908669305595736107223",
-    "tau_n": "0.9737730613113362084881579823528874976463453528120243986016520337301526",
+    "tau_n": "0.9737730613113362084881579823528874976463453528120597684565985895792883",
     "free_parameters": 0
   },
   "data": {

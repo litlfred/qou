@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T11:52:26.060757+00:00",
-  "commitSha": "73f8fafac4a8a7369e0d1c7e4996e13e6270e50e",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:04:46.499328+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [
     {
       "name": "the fixed float64 path agrees with the mpmath reference to better than 1e-14 on every partition — the cast changes speed, not value",
@@ -13,18 +13,18 @@
     },
     {
       "name": "the pre-fix path is strictly slower on every partition — the leak cost real time rather than being a theoretical concern",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "source": "same process, same machine, same inputs; the only difference between the two callers is the float() cast"
     }
   ],
-  "allPassed": true,
-  "durationMs": 408402,
+  "allPassed": false,
+  "durationMs": 29005,
   "computation": "chi-numpy-dtype-fix-benchmark",
   "scriptFile": "chi_numpy_dtype_fix_benchmark.py",
-  "scriptHash": "41e443db69f6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "14257acee3e4",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,49 +32,61 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.11.18",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
+  },
+  "invocation": {
+    "argv": [
+      "computations/chi_numpy_dtype_fix_benchmark.py"
+    ],
+    "reproduce": "python3 -u computations/chi_numpy_dtype_fix_benchmark.py"
   },
   "description": "P28 benchmark witness for the chi_numpy dtype-leak fix (0bfb2a48ab). d_for_ctype returns mpf for 'averaged_weighted' and float otherwise; one mpf promotes the accumulating numpy product to dtype=object, which drops the remaining matmuls out of BLAS into pure Python permanently. Measures fixed vs pre-fix vs mpmath reference on tritium partitions, caller-vs-caller in one process. Value is unchanged; only speed moves.",
   "data": {
     "atom": "tritium",
     "n_crossings": 35,
-    "first_non_float_crossing_index": 11,
+    "first_non_float_crossing_index": null,
     "per_partition": [
       {
         "partition": "(5, 2, 2)",
-        "t_fixed_sec": "0.004297494888305664",
-        "t_prefix_sec": "66.0659441947937",
-        "speedup": "15373.129209431345",
-        "t_mpmath_reference_sec": "41.711801528930664",
-        "rel_diff_vs_mpmath": "5.3013e-15",
+        "t_fixed_sec": "0.012658834457397461",
+        "t_prefix_sec": "0.0029764175415039062",
+        "speedup": "0.2351257180525473",
+        "t_mpmath_reference_sec": "8.05903434753418",
+        "rel_diff_vs_mpmath": "5.23227e-15",
         "rel_diff_fixed_vs_prefix": "0.0",
         "within_1e-14": true
       },
       {
         "partition": "(3, 3, 3)",
-        "t_fixed_sec": "0.002095937728881836",
-        "t_prefix_sec": "2.86191987991333",
-        "speedup": "1365.4603571834832",
-        "t_mpmath_reference_sec": "2.1039438247680664",
-        "rel_diff_vs_mpmath": "3.97375e-15",
-        "rel_diff_fixed_vs_prefix": "1.87944e-16",
+        "t_fixed_sec": "0.0016605854034423828",
+        "t_prefix_sec": "0.0002636909484863281",
+        "speedup": "0.15879396984924624",
+        "t_mpmath_reference_sec": "0.7140450477600098",
+        "rel_diff_vs_mpmath": "3.35998e-15",
+        "rel_diff_fixed_vs_prefix": "0.0",
         "within_1e-14": true
       },
       {
         "partition": "(4, 3, 2)",
-        "t_fixed_sec": "0.02530670166015625",
-        "t_prefix_sec": "183.92356872558594",
-        "speedup": "7267.781127524872",
-        "t_mpmath_reference_sec": "111.67164778709412",
-        "rel_diff_vs_mpmath": "5.15103e-16",
-        "rel_diff_fixed_vs_prefix": "1.26392e-16",
+        "t_fixed_sec": "0.022565126419067383",
+        "t_prefix_sec": "0.011122703552246094",
+        "speedup": "0.4929156320988959",
+        "t_mpmath_reference_sec": "20.15808367729187",
+        "rel_diff_vs_mpmath": "3.74817e-15",
+        "rel_diff_fixed_vs_prefix": "0.0",
         "within_1e-14": true
       }
     ],
     "commit_fixed": "0bfb2a48ab",
     "tier": "benchmark"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

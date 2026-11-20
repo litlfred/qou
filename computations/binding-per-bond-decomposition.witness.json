@@ -1,15 +1,15 @@
 {
   "engine": "numpy+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-08-30T05:02:39.469328+00:00",
-  "commitSha": "7ca5e2beca4ae776137bcfeaa2b6506285e13b86",
+  "engineVersion": "python 3.11.18",
+  "computedAt": "2026-11-20T15:04:13.971165+00:00",
+  "commitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1232,
+  "durationMs": 825,
   "computation": "binding-per-bond-decomposition",
   "scriptFile": "binding_per_bond_decomposition.py",
-  "scriptHash": "5b11a20ff4a6",
-  "scriptCommitSha": "cf540b0a1a39f95ffc1fd0a765a7939580f85b06",
+  "scriptHash": "39d13c52f185",
+  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,13 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "ac75fea5c01de435"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "930c010e26215e56"
   },
   "invocation": {
     "argv": [
@@ -31,54 +32,54 @@
     ],
     "reproduce": "python3 -u computations/binding_per_bond_decomposition.py"
   },
-  "description": "Per-inter-nucleon-bond decomposition of the H_{3A} binding trace for ²H/³H/³He. FINDING: the H_{3A}-direct Wedderburn trace disagrees with binding_canonical (Wenzl bridge) by 24% on the deuteron Δtr, with BOTH sides now read under trace convention D (the earlier +0.19% figure quoted here was convention C, excised by owner ruling 2026-08-09; bean qou-jdhm). Reconciling the two routes is the prerequisite for the open A≥3 binding problem.",
+  "description": "Per-inter-nucleon-bond decomposition of the H_{3A} binding trace for ²H/³H/³He. FINDING: the H_{3A}-direct Wedderburn trace disagrees with binding_canonical (Wenzl bridge) by 100% on the deuteron Δtr, with BOTH sides now read under trace convention D (the earlier +0.19% figure quoted here was convention C, excised by owner ruling 2026-08-09; bean qou-jdhm). Reconciling the two routes is the prerequisite for the open A≥3 binding problem.",
   "data": {
     "per_bond": {
       "2H": {
         "A": 2,
         "n_bonds": 1,
-        "tr_free": "0.4295013888407211",
-        "tr_bound": "0.00541804540787257",
-        "delta_tr": "0.4240833434328485",
-        "delta_tr_per_bond": "0.4240833434328485",
-        "B_single_link_MeV": "1.587962971937465",
+        "tr_free": "0.0011008019540354682",
+        "tr_bound": "0.000656529151762847",
+        "delta_tr": "0.0004442728022726213",
+        "delta_tr_per_bond": "0.0004442728022726213",
+        "B_single_link_MeV": "0.0016635615861190457",
         "B_AME_MeV": "2.22452",
-        "single_link_err_pct": -28.615477858708168,
+        "single_link_err_pct": -99.92521705419061,
         "scale_needed_per_bond_MeV": "2.22452"
       },
       "3H": {
         "A": 3,
         "n_bonds": 2,
-        "tr_free": "0.2593575148350424",
-        "tr_bound": "0.0003722526008956944",
-        "delta_tr": "0.25898526223414664",
-        "delta_tr_per_bond": "0.12949263111707332",
-        "B_single_link_MeV": "0.9697598669551616",
+        "tr_free": "9.695417788956317e-05",
+        "tr_bound": "1.8725253863019872e-06",
+        "delta_tr": "9.508165250326119e-05",
+        "delta_tr_per_bond": "4.754082625163059e-05",
+        "B_single_link_MeV": "0.00035602941219904774",
         "B_AME_MeV": "8.4817962",
-        "single_link_err_pct": -88.56657429525174,
+        "single_link_err_pct": -99.99580242906333,
         "scale_needed_per_bond_MeV": "4.2408981"
       },
       "3He": {
         "A": 3,
         "n_bonds": 2,
-        "tr_free": "0.3054051382311985",
-        "tr_bound": "0.00035474323559311075",
-        "delta_tr": "0.3050503949956054",
-        "delta_tr_per_bond": "0.1525251974978027",
-        "B_single_link_MeV": "1.1422488983102985",
+        "tr_free": "1.592837996085465e-05",
+        "tr_bound": "3.6544634718990523e-06",
+        "delta_tr": "1.2273916488955596e-05",
+        "delta_tr_per_bond": "6.136958244477798e-06",
+        "B_single_link_MeV": "4.59591851623864e-05",
         "B_AME_MeV": "7.71804132",
-        "single_link_err_pct": -85.20027490199679,
+        "single_link_err_pct": -99.99940452268578,
         "scale_needed_per_bond_MeV": "3.85902066"
       }
     },
     "method_discrepancy_2H": {
       "delta_tr_binding_canonical": "0.5565446604044382",
-      "delta_tr_h3a_direct": "0.4240833434328485",
-      "gap_pct": 23.800662623432725,
+      "delta_tr_h3a_direct": "0.0004442728022726213",
+      "gap_pct": 99.92017301864871,
       "note": "Two production trace conventions disagree; reconcile before A≥3."
     },
     "method_discrepancy_recorded": {
-      "value": "23.8006626234327246207112042561982234633122076498667298798616",
+      "value": "99.9201730186487153638298661535395979612289876787512621784339",
       "source": "Diagnostic: records the binding_canonical vs H_{3A} Δtr gap"
     }
   }
