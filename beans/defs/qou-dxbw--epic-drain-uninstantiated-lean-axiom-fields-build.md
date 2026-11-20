@@ -72,4 +72,4 @@ Zero `sorry` and zero `axiom` in `#print axioms` does **not** certify that a the
 
 ## 2026-11-20 — W7 (session_01VQDpPfKSC33hwjyKMw3EHV, PR #8541)
 
-Two slices landed for review: M4 (a genuine q-Plancherel instance) and M1 (`Cl_2_DoubleAngle` inhabited). **The scanner and witness this epic cites (`computations/audits/lean_axiom_field_and_mathlib_gap_audit.py`, `…witness.json`) are not on main or on any branch.** So the counts above cannot be reproduced and the per-feature ranking cannot be re-measured. GAP bean `qou-w7sc`.
+Two slices landed for review: M4 (a genuine q-Plancherel instance) and M1 (`Cl_2_DoubleAngle` inhabited). **The scanner and witness this epic cites (`computations/audits/lean_axiom_field_and_mathlib_gap_audit.py`, `…witness.json`) are not on main or on any branch.** So the counts above cannot be reproduced and the per-feature ranking cannot be re-measured. GAP bean `qou-dx7g`.
