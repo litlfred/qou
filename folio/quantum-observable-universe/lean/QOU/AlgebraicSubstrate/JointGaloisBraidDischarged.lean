@@ -103,14 +103,49 @@ theorem joint_action_discharged [ctx : JointGaloisBraidDecomposition] :
   -- the `Prod` projection reductions, to `(galoisA g a, braidB b b')`.
   simp only [ctx.galois_on_A, ctx.braid_on_B]
 
--- Concrete-realization obligation (the genuinely-unwritten domain math):
--- constructing an instance
---   `instance : JointGaloisBraidDecomposition` for the actual
---   `𝓗_q^{(n,K)}` — proving its motivic-Galois and braid actions factor
--- through disjoint tensor factors — is the open categorical input. Per
--- §3b-tax it is represented by the ABSENCE of an instance (open
--- primary), not by a fabricated `sorry` (which would assert a false
--- unconditional claim).
+/-- Iterated braid-word action on a bi-filtration cell `ctx.Cell`. -/
+def braidWordAction [ctx : JointGaloisBraidDecomposition]
+    (w : List ctx.BraidAction) (x : ctx.Cell) : ctx.Cell :=
+  w.foldr (fun b acc => ctx.braid b acc) x
+
+/-- **Word-level joint Galois × braid commutation.**
+    For any motivic-Galois element `g` and any braid word `w`, the Galois
+    action commutes with the iterated braid-word action `braidWordAction w`. -/
+theorem joint_word_action_discharged [ctx : JointGaloisBraidDecomposition]
+    (g : ctx.GaloisAction) (w : List ctx.BraidAction) (x : ctx.Cell) :
+    ctx.galois g (braidWordAction w x) = braidWordAction w (ctx.galois g x) := by
+  induction w with
+  | nil => rfl
+  | cons b rest ih =>
+      show ctx.galois g (ctx.braid b (braidWordAction rest x))
+          = ctx.braid b (braidWordAction rest (ctx.galois g x))
+      rw [joint_action_discharged g b, ih]
+
+/-- Canonical cartesian-product model of `JointGaloisBraidDecomposition` for
+    any pair of factor types `(A₀, B₀)`: the cell is `A₀ × B₀`, `galois` acts
+    by endomorphisms on the left coordinate `A₀`, and `braid` acts by
+    endomorphisms on the right coordinate `B₀`. -/
+def productJointGaloisBraidDecomposition (A₀ B₀ : Type) :
+    JointGaloisBraidDecomposition where
+  Cell := A₀ × B₀
+  A := A₀
+  B := B₀
+  GaloisAction := A₀ → A₀
+  BraidAction := B₀ → B₀
+  decomp := id
+  decomp_inj := Function.injective_id
+  galois := fun g p => (g p.1, p.2)
+  braid := fun b p => (p.1, b p.2)
+  galoisA := fun g a => g a
+  braidB := fun b b' => b b'
+  galois_on_A := fun _ _ => rfl
+  braid_on_B := fun _ _ => rfl
+
+/-- `JointGaloisBraidDecomposition` is non-vacuously inhabitable. -/
+theorem nonempty_jointGaloisBraidDecomposition :
+    Nonempty JointGaloisBraidDecomposition :=
+  ⟨productJointGaloisBraidDecomposition ℤ ℤ⟩
+
 -- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/joint-galois-braid-discharged.md
 
 end QOU.AlgebraicSubstrate.JointGaloisBraidDischarged
