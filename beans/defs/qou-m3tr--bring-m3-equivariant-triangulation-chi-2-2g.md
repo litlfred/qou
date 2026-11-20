@@ -1,7 +1,7 @@
 ---
 # qou-m3tr
 title: 'Bring M3: G-equivariant cell structure of a compact Riemann surface, with chi = 2 - 2g (discharges hX/hY of genus_eq_four_of_cellular)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-20T14:40:00Z
 parent: qou-qhcr
 ---
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
@@ -55,3 +55,14 @@ Session time went to M1b (#8532). No M3 progress. Sizing for the next agent:
 - Step 1 (the quotient of a combinatorial map / rotation system by a dart-free action is a map whose cells are the orbits) is medium-sized.
 - Step 2 (`χ` even for a connected orientable map) is the genus formula and is hard.
 - Step 3 (triangulation) is a Mathlib gap. Keep it as a §3b-cond class, never an axiom.
+
+## 2026-11-20 — W9: step 1 done, PR #8570
+
+`QOU/RiemannSurface/CombinatorialMapQuotient.lean`, sorry-free; `lean -DautoImplicit=false -s 65536` exit 0.
+- `cycleOrbitsEquiv`: the G-orbits of the cycles of an equivariant dart permutation are in bijection with the cycles of the induced permutation on D/G. Applied to sigma, alpha and sigma*alpha, this gives the V/E/F of the quotient map.
+- `quotPerm_involutive` and `quotAlpha_fixedPointFree`: the quotient is again a map when G acts freely on edges.
+
+Open:
+- step 2: chi is even, i.e. the genus formula;
+- step 3: triangulation of a compact Riemann surface (Mathlib gap);
+- hX/hY remain hypotheses of the capstone.
