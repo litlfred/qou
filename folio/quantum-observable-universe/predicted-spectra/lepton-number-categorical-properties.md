@@ -20,7 +20,7 @@ Every process expressed as a sequence of Skein relations and Hecke reductions co
 **Lepton number is not a $\mathbb{Z}$-grading (proved).**
 The Skein module $\mathcal{K}(S^3; q)$ admits no $\mathbb{Z}$-grading by the
 smoothing count with the nuclear sector in grade $0$ and each smoothing shifting
-the grade by $+1$ (`QOU.StandardModel.LeptonNumberGradingObstruction`).
+the grade by $+1$.
 
 The skein relation is *inhomogeneous* for such a grading. Writing it as
 $$
@@ -71,7 +71,7 @@ $u_R$) is not yet represented.
 *Markov II.* Stabilisation raises the writhe by $1$ without changing the link,
 so $L$ jumps from $0$ to $1$ on the baryon --- violating conservation clause 3
 above, which requires $\Delta L = 0$ under Markov moves
-(`leptonNumber_not_markov_invariant`).
+.
 
 *The minimal-level ruling.* The escape from the first refutation was that
 states are Gröbner--Shirshov normal forms, with the observable evaluated at the

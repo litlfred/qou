@@ -62,12 +62,12 @@ $$
 $$
 This is proved over any commutative ring in
 `QOU/Eightfold/GellMannOkuboIdentity.lean`
-(`gmo_identity`), together with the sharper consequence
+, together with the sharper consequence
 `gmo_cannot_discriminate`: two arbitrarily different breaking
 patterns give the *same* value of the combination, namely zero.  In
 particular $b$ --- the entire hypercharge dependence, which is the whole
 content of a breaking mechanism --- cancels
-(`gmo_independent_of_breaking_strength`).
+.
 
 Two consequences.  First, if the QOU crossing-energy splitting is
 first-order octet then it reproduces Gell-Mann--Okubo automatically and

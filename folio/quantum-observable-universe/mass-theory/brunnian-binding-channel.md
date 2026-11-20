@@ -56,12 +56,12 @@ coordination count is therefore a parity fact, not a modelling choice.
 ## Scope
 
 The channel structure, the Brunnian reduction, the coordination-unit map for minimal bonds, and the
-bar-parity orthogonality are proved (`QOU.Mass.BrunnianBindingChannel`). The two further
+bar-parity orthogonality are proved. The two further
 residuals are now also settled. The mass $\leftrightarrow$ self, binding $\leftrightarrow$ mutual
 assignment is a theorem of the crossing partition plus the mass-deficit definition of binding
 ($B = \sum_i m_i^{\text{isolated}} - m^{\text{assembly}} = -(\text{mutual energy})$; the self
 energies cancel), so binding is exactly the inter-component pairing
-(`QOU.Mass.SelfMutualPartition`); and the crossing-count $\to$ coordination coefficient
+; and the crossing-count $\to$ coordination coefficient
 is $\tfrac{1}{2}\lvert\text{inter-crossings}\rvert$ in general, giving $\binom{A}{2}$ units and
 per-nucleon $z = A-1$ for a complete graph of minimal single clasps. This is the discrete
 counterpart of the unsigned-invariant resolution reached independently on the electromagnetic-linking
@@ -69,13 +69,13 @@ side. The additive partition lifts to the mass observable — whose self carrier
 q-dimension Markov self-trace $\mathrm{lw}$ — through the archimedean functor
 $\tau = \log$: a multiplicative amplitude has an additive free energy $E = \log T$, so the
 mass-deficit binding equals the connected (interaction) free energy $-\log I$, which is positive
-exactly when the assembly amplitude is suppressed (`QOU.Mass.ArchimedeanTraceBridge`).
+exactly when the assembly amplitude is suppressed.
 
 **Two multiplicative structures must be kept apart here.** For the normalised Jones polynomial the *connected sum* is exactly multiplicative,
 $J(K_1 \# K_2) = J(K_1)\,J(K_2)$, whereas the *disjoint union* carries the loop value,
 $J(K_1 \sqcup K_2) = \delta\,J(K_1)\,J(K_2)$ with $\delta = [2]_q = q + q^{-1}$. The matrix result
 that is actually proved — the Kronecker-product multiplicativity of the trace
-(`QOU.MathlibExt.MarkovTraceMultiplicative`) — models the **disjoint union**, not the connected sum.
+ — models the **disjoint union**, not the connected sum.
 Consequently a genuinely independent assembly has $I = \delta$, not $I = 1$: adding an unlinked
 component costs $\log \delta \approx 0.699$ of free energy at the proton pin, and a Markov closure of
 an $n$-strand braid is normalised by $\delta^{\,n-1}$. The additivity therefore holds only up to that

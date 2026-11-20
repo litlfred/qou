@@ -54,7 +54,7 @@ for the V_(2,1) coefficients.
 The full matrix-product trace derivation is formalized and proved in `chi_v21_matrix_trace_identity`:
 
 1. The Hoefsmit matrices $\sigma_0, \sigma_1$ are declared locally on `(Fin 2) × (Fin 2) → ℝ`.
-2. The non-invariance under the diagonal transposition $d_1 \leftrightarrow d_2$ is established: the transposed matrices yield a trace difference $\chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)$ larger than the closed form above by a factor of $(q^4+q^2+1)/q^2 = q^2 + 1 + q^{-2}$, verified symbolically and at the rational points $q = 2$, $q = 3/2$, and $q = 1.1099$. Although $b^2$, the trace, and the determinant are symmetric under the swap, the **braid relation** (`hoefsmit_v21_braid_relation`) couples $\sigma_0$ to $\sigma_1$ and excludes the transposed pair.
+2. The non-invariance under the diagonal transposition $d_1 \leftrightarrow d_2$ is established: the transposed matrices yield a trace difference $\chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)$ larger than the closed form above by a factor of $(q^4+q^2+1)/q^2 = q^2 + 1 + q^{-2}$, verified symbolically and at the rational points $q = 2$, $q = 3/2$, and $q = 1.1099$. Although $b^2$, the trace, and the determinant are symmetric under the swap, the **braid relation** couples $\sigma_0$ to $\sigma_1$ and excludes the transposed pair.
 3. The explicit 11-crossing word orders for $\beta_p$ and $\beta_n$ are encoded as `beta_p_word_v21` and `beta_n_word_v21` and consumed directly by the proof.
 
 **The one tactic choice that decides it.** Project the folded matrix with

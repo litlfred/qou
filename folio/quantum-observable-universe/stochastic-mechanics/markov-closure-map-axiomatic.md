@@ -14,10 +14,6 @@ We factorise that content into two atomic axioms:
    $$J_{\text{Hopf}}(q{=}1) \;=\; -2$$
    Already proved in Lean ([`F3-eps6-leading-eq-neg-2b-cubed.lean`](F3-eps6-leading-eq-neg-2b-cubed.lean)) via `unfold + norm_num`.
 
-## Lean encoding
-
-The companion file [`markov-closure-map-axiomatic.lean`](markov-closure-map-axiomatic.lean) defines `class MarkovClosureMap2Strand` with explicit fields mapping crossing-count to closure type and tracking the classical-limit Jones value. It defines `class TrackCReducedAxiom` carrying the single axiomatic statement that $c_3$ factors through the Hopf identification. It proves `track_C_c_3_eq_neg_two`: under both classes, $c_3 = -2$.
-
 ## Result
 
 The previous `ThreeFoldMarkovHopfExtraction` class had a single broad axiomatic field. Now, that content is split into two atomic axioms, each representing a recorded knot-theoretic result:

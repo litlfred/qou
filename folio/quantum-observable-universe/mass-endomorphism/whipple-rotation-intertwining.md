@@ -48,7 +48,7 @@ recurrence to the bar-odd one — descends to the toroidal family *as* the
 Whipple exchange, i.e. that the two winding oscillations of a bound vortex
 pair are swapped by the substrate bar involution. The Lean sibling
 axiomatises exactly this as a primary conjecture class
-(`WhippleRotationIntertwining`): the rotation swaps the two winding
+: the rotation swaps the two winding
 gradings and is involutive on ladder data. Both fields are
 parameter-quantified in the shape of the claim; no instance is provided
 (the conjecture is open).
@@ -75,7 +75,7 @@ the symbolic-exact shadow the intertwining must carry.
 The grading-swap field is moreover *not primitive*: `channelIndexed_swaps_windings`
 **derives** it from the even$\leftrightarrow$odd channel flip that
 [prop on the channel rotation](binding-qbeta-complex-volume.md)
-(`rotation_step`) proves. A `ChannelIndexedLadder` carries the two
+ proves. A `ChannelIndexedLadder` carries the two
 recurrence-channel indices, the rotation that flips them, and a single shared
 winding function $\mathrm{windOf}$; the swap
 $\mathrm{windOf}(\mathrm{evenIdx}(\mathrm{rot}\,x)) =

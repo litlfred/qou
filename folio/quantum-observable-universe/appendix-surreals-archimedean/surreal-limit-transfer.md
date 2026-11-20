@@ -24,10 +24,10 @@ equality. Two consequences are **derived, fully proved**, from the
 class fields in the Lean sibling:
 
 1. *Limits are computed by* $\mathrm{st} \circ \mathrm{ev}_\omega$
-   (`standardPart_evalOmega_of_tendstoReal`).
+.
 2. *Limit comparison*: if $a_n \le b_n$ eventually and both converge,
    then $\lim a_n \le \lim b_n$
-   (`tendstoReal_le_of_eventuallyLE`) — the eventual inequality is
+ — the eventual inequality is
    transferred to a single surreal inequality at $\omega$ and the
    archimedean conclusion recovered by the proved monotonicity of
    $\mathrm{st}$. The classical strict-inequality collapse is visible

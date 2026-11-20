@@ -109,11 +109,11 @@ dimensions cannot tell the two apart. Measured at $n = 3,4,5$ in
 Both halves of that trap are now theorems, at every $n$, in
 [`QOU.MassTheory.TwoRowTwoColumn`](../lean/QOU/MassTheory/TwoRowTwoColumnCollision.lean):
 transposition is an explicit bijection between the two families
-(`transposeEquiv`), so they are equinumerous; the families are nevertheless
+, so they are equinumerous; the families are nevertheless
 different sets (`atMostTwoRows_iff_atMostTwoCols_false`, witnessed by the single
 row $(3)$); and their squared-dimension totals agree
-(`dimHLF_two_col_sq_sum`). The equality $\dim \lambda = \dim \lambda'$ used
-above is proved there for this family (`dimHLF_two_col_eq_two_row`) rather than
+. The equality $\dim \lambda = \dim \lambda'$ used
+above is proved there for this family rather than
 assumed --- it had been asserted here as though standard, and while it *is*
 standard for general partitions, nothing in this corpus had it.
 

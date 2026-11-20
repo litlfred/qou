@@ -108,10 +108,10 @@ exclusion, and the invariant justifying it is the Schur--Weyl row cap.
 `QOU/SchurWeyl/JimboActionKernel.lean` builds the Jimbo action of $H_n(q)$ on
 $V^{\otimes n}$ with $\dim V = 2$ and proves over an ordered field
 at generic $q$: the induced trace is the Markov trace with
-$z = q^3/(q^2+1)$ (`jimboTrace_eq_wtrace`); the kernel of the action is
+$z = q^3/(q^2+1)$; the kernel of the action is
 exactly the trace radical, i.e. the blocks with three or more rows
-(`ker_jimbo_eq_traceRadicalIdeal`); and the image has dimension the Catalan
-number (`finrank_range_jimbo_eq_catalan`). Surjectivity onto the
+; and the image has dimension the Catalan
+number. Surjectivity onto the
 $\mathcal{U}_q(\mathfrak{sl}_2)$ commutant is not claimed, and no $N \geq 3$
 action is formalised, so the $N = 3$ statement above remains cited.
 
@@ -135,10 +135,10 @@ construction directions are:
 requirement that $\mathrm{Sym}^2(W)$ contain no singlet.  Its
 representation-theoretic content is machine-checked in
 `QOU/Eightfold/Sym2GateFSTrichotomy.lean`: at dimension three, passing
-the gate forces a complex-type summand (`gate_forces_complex_of_dim_three`),
+the gate forces a complex-type summand,
 so the icosahedral triple $T_1$ --- a rotation representation of
 $A_5 \subset \mathrm{SO}(3)$, hence real --- fails
-(`real_triple_fails_gate`), while the octonionic $\mathbf{3}$ is *not
+, while the octonionic $\mathbf{3}$ is *not
 excluded*, on the decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}
 \oplus \mathbb{C}^3$ taken from the literature \cite{gunaydin-gursey1973}.
 That the Günaydin--Gürsey triple is complex type is the cited input, not a

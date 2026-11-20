@@ -84,9 +84,9 @@ entire content.
 ## What is formalised
 
 `QOU.Mass.ChainTraceFactor`: the convex-combination identity
-(`dPN_eq_convex`, `convex_weights_sum`), the strict betweenness of the offsets
-for $0 < \delta < 2$ (`dPN_strict_between`), its transport through the affine
-trace (`factors_strict_mono`), and the ordering $L_{pp} < L_{pn} < L_{nn}$
-itself (`L_strict_mono`). Not formalised, because it is empirical input: that
+, the strict betweenness of the offsets
+for $0 < \delta < 2$, its transport through the affine
+trace, and the ordering $L_{pp} < L_{pn} < L_{nn}$
+itself. Not formalised, because it is empirical input: that
 only $pn$ binds. The measurement, the $\delta$ bound and the Wigner reading are
 `the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py`.

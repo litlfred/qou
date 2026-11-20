@@ -30,4 +30,4 @@ $\square$
 
 The arithmetic of items 1--4 is machine-checked. The value $q^2$ of the monodromy
 is computed on explicit Jimbo matrices for $N = 2, 3$ and from contents for all
-$N$ (`sl_n_framing_colour_factor_probe.py`).
+$N$.

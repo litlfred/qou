@@ -27,7 +27,7 @@ the RSK identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as the named
 hypothesis `RSKDimIdentity` and discharged by nothing here.
 
 That objection is now a **theorem**, not a remark
-(`QOU/HeckeAlgebra/WedderburnTrace.lean`).  The naive form — "three
+.  The naive form — "three
 independent coefficients cannot come from one scalar" — is false, since
 one real encodes three set-theoretically.  Under **linearity**, which
 this corpus already assumes for the Markov trace, it is true: that trace
@@ -35,7 +35,7 @@ factors through the block *traces*, so a functional of that form
 supported at a single $\lambda$ is exactly $c_\lambda \cdot
 \operatorname{tr}(x_\lambda)$ — one coefficient against one number — and
 any three such are linearly dependent, with an explicit witness
-(`three_supported_traceFunctionals_dependent`).
+.
 
 This does not make the clause false; it rules out the route the clause
 names, whenever that route is linear, factors through the Markov trace,

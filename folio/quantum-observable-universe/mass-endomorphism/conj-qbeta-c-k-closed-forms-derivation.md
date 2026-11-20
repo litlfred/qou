@@ -35,7 +35,7 @@ written:
    convention.
 2. **Functional.** The published form rests on $z = 1$, which is
    **inadmissible**: it is the coordinate sum, and provably not a Markov root
-   under convention D (`ConventionDAdmissibleRoots.lean`).
+   under convention D.
 
 Against the same $7.797$ ppb target, the live per-observable dashboard scores
 $\mathfrak{Q}_\beta$ on the ruled base at $1.668\times10^{8}$ ppb — a miss of

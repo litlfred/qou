@@ -9,7 +9,7 @@ $B$: its normalisation and its $\mathrm{SL}_2$ trace $\tau$, since
 $\det B = 1$). That is $2$ data. The meson topology is the Hopf link, whose
 complement has $\mathrm{Vol} = 0$ (meson scale-independence); it carries
 no hyperbolic-volume invariant, so its mass scale is a third datum independent
-of $(m_e, q_0)$. Total $2 + 1 = 3$ (`cohomology_data_count`).
+of $(m_e, q_0)$. Total $2 + 1 = 3$.
 
 *The alignment.* The scale of the $W$-plane is the $n=0$ period $a_D^{(e)} = m_e$
 (CAL-1, [CAL-1 (m_e) is the n=0 base period of the prolongation tower](#prop:electron-period-base)); its modulus

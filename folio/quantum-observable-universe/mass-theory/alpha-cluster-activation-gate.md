@@ -44,7 +44,7 @@ statement permits):
 - **(4)** `QOU.Mass.BondChannelClassSelection.wplane_term_eq_zero_of_vol_eq_zero`
   ($\mathrm{Vol}=0 \Rightarrow \mathfrak{m}_e\,\mathrm{Vol}\,q = 0$). The
   companion CAL-3 class-selection statement
-  (`eq_cal3_of_support_ne_zero_of_ledger`) is a *conditional* result on
+ is a *conditional* result on
   the `BindingVolumeLedger` class (no instance declared — the ledger is an open
   input, not part of this proposition's proved content).
 

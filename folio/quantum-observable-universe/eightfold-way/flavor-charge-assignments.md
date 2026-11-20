@@ -103,6 +103,6 @@ integer. Taking $Q = c(\lambda)/3$ is parameter-free. It does not work: at
 $n = 3$ the content sums are $\{3, 0, -3\}$, giving the *integer*
 charges $\{+1, 0, -1\}$ with no third-integer charge at all, and no
 $n \le 8$ yields both quark charges $\{+2/3, -1/3\}$
-(`ribbon_twist_charge_quantum_probe.py`). This is scope-(a) for
+. This is scope-(a) for
 the plain content-sum reading, not an exclusion of the ribbon route: other
 normalisations remain untested.

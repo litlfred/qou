@@ -82,7 +82,7 @@ it.
 
 Three narrow obstructions do bite:
 
-1. **Möbius energy integral** (`mobius-energy-proof.md`).
+1. **Möbius energy integral**.
    Requires Lebesgue on $S^1 \times S^1$ plus diagonal
    regularisation. A surreal Loeb-measure replacement is
    possible in principle (see

@@ -58,7 +58,7 @@ recurrence exists at low depth. Note in particular that the falling factorial
 $(1/2)_n$ is **not** a closed form for $\mathrm{lw}$ — it outgrows it, and no
 constant geometric factor absorbs the difference. Item (3) is excluded rather than
 open: $w_3$ is a required boundary condition of a rank-2 problem, a scope-(b)
-result with its invariant cited (`no_scalar_kernel_on_carrier`).
+result with its invariant cited.
 
 The magnitude that matches experiment therefore depends on (1)–(3) as *inputs*, of
 which (2) is the one still to be derived. See

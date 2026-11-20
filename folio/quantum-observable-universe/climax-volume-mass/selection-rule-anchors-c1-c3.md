@@ -24,10 +24,10 @@ The zero-parameter selection rule reads $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\la
 
 We provide two purely algebraic identities at the symbolic level, each closed by `field_simp; ring`:
 
-1. **c=1 anchor** (`selection_rule_c1_eq_one`):
+1. **c=1 anchor**:
    $\frac{1}{2}\bigl( \dim_q V_{(2)} + \dim_q V_{(1,1)} \bigr) = 1$.
    Both q-dimensions equal $1$ (each partition of 2 has a hook product equal to the q-factorial), so the average is exactly 1.
-2. **c=3 anchor** (`selection_rule_c3_eq_family_a`):
+2. **c=3 anchor**:
    $\frac{1}{4} \bigl( \dim_q V_{(4)} + \dim_q V_{(3,1)} + \dim_q V_{(2,2)} + \dim_q V_{(2,1,1)} + \dim_q V_{(1,1,1,1)} \bigr) = (3q^2 + 4 + 3q^{-2})/4$.
 
    Using the explicit q-hook formula:

@@ -96,5 +96,5 @@ formalised as `so3_adjoint_eq_chebyshev` in [`MassVolDensity.lean`](../lean/QOU/
 
 - Existing color-tube infrastructure: [`color-tube-coordinates.md`](color-tube-coordinates.md), [`color-tube-fibers.md`](color-tube-fibers.md), [`color-tube-cubic.md`](color-tube-cubic.md)
 - Supplier class: `conj:s5-so3-fiber-action`
-- $\mathrm{SO}(3)_q = \mathrm{SU}(2)_q/\mathbb{Z}_2$ level structure: [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6 (`so3_adjoint_eq_chebyshev`)
+- $\mathrm{SO}(3)_q = \mathrm{SU}(2)_q/\mathbb{Z}_2$ level structure: [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6
 - Empirical probe scripts: [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py), [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py)

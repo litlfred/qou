@@ -11,4 +11,4 @@ The reflection identity `Cl_2(-θ) = -Cl_2(θ)` is an unconditional Lean theorem
 
 ## Target translation
 
-The conditional-class chain provides unconditional functional identities (`Cl_2_neg`, `complexLiTwo_zero`, `blochWigner_zero`) alongside concrete Lean definitions for `complexLiTwo` and `blochWigner`. This translates a prior axiomatic gap into specific, named Lean targets ready for upstreaming.
+The conditional-class chain provides unconditional functional identities alongside concrete Lean definitions for `complexLiTwo` and `blochWigner`. This translates a prior axiomatic gap into specific, named Lean targets ready for upstreaming.

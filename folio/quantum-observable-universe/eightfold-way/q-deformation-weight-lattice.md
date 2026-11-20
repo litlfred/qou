@@ -33,21 +33,21 @@ The following are proved in
 `QOU/Eightfold/WeylInvarianceQDeformation.lean`:
 
 - The off-diagonal entry $a_{12} = -1$ and the Serre exponent
-  $1 - a_{12} = 2$ (`cartan_A2_offdiag`, `serre_exponent_A2`).
+  $1 - a_{12} = 2$.
 - The $q$-Serre coefficient $[2]_q$ genuinely *moves* with $q$ ---
   witnessed at $q = 2$, where the framed binomial is $5$ and the framed
-  Cartan diagonal is $4$ (`qSerre_not_constant`) --- while the
-  Cartan datum does not (`cartanMatrixAt_const`).  The conjunction
+  Cartan diagonal is $4$ --- while the
+  Cartan datum does not.  The conjunction
   of the two is the "two $2$s" separation
-  (`cartan_fixed_while_qSerre_moves`), and it is the conjunction,
+, and it is the conjunction,
   not either half alone, that carries the content: constancy of the Cartan
   datum is true *by construction* and is compatible with both sides
   being constant, which is exactly the confusion at issue.
 - For $(q-1)^2 \neq 0$ the two differ
-  (`qSerre_neq_cartan_diag`); they agree at $q = 1$
-  (`qSerre_eq_cartan_at_classical`).
+; they agree at $q = 1$
+.
 - The root-angle ratio $\cos\theta = a_{ij}/a_{ii} = -1/2$
-  (`root_angle_ratio_A2`).
+.
 
 **What the Lean does not establish.**
 That Drinfeld--Jimbo quantisation leaves the root datum invariant is a

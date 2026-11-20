@@ -100,7 +100,7 @@ $$
   4P_S^3 + 27Q_S^2 = \frac{4p^2(54c^3p^2 + 729)}{27},
 $$
 
-so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at any real $z$; equality of $J$ requires complex $z$. Matching "up to a Möbius transformation" would add nothing, since any three distinct points of $\mathbb{P}^1$ map to any other three. The isogeny in item 2 is therefore the whole content of that item. The obstruction is proved in the Lean sibling (`no_affine_match`).
+so $J_S < 0$ whenever $c > 0$ and $p \neq 0$. Therefore no substitution $X \mapsto \alpha X + \beta$ carries (S) to (C) at any real $z$; equality of $J$ requires complex $z$. Matching "up to a Möbius transformation" would add nothing, since any three distinct points of $\mathbb{P}^1$ map to any other three. The isogeny in item 2 is therefore the whole content of that item. The obstruction is proved in the Lean sibling.
 
 **Physical interpretation.**
 
