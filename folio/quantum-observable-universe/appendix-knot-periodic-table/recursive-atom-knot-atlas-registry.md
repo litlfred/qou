@@ -1,6 +1,6 @@
 This registry records the full derivation of [Recursive atom-knot atlas at $q_0$ — particles to atoms via Markov-NF braids and hyperbolic-knot closures](#prop:recursive-atom-knot-atlas): the methodology classification, notation legend, braid-closure gallery, the per-level atlas, and the per-element AME 2020 cross-reference. It carries no logical content beyond the proposition it supports.
 
-This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (CAL-1, set by fiat), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. We detail the precise identification mechanics below; a layered extension then applies this machinery to every isotope.
+This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (CAL-1, set by fiat), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. The precise identification mechanics are detailed below; a layered extension then applies this machinery to every isotope.
 
 ## Methodology classification (STRICT)
 
@@ -16,7 +16,7 @@ Every entry carries a **methodology tag** recording its derivation method.
 
 The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's `Link(braid_closure=...).exterior.high_precision` and `mpmath.workdps(50)`. The Wenzl bridge supplies symbolic-in-$q$ Markov-trace coefficients $y_\lambda$.
 
-For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and SnapPea limits fail. We sidestep this by computing the exact symbolic trace restricted to active block-partitions. We show this exact trace $B_{sym} = -\alpha \ln |\mathrm{tr}_M|$ alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
+For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and SnapPea limits fail. This is sidestepped by computing the exact symbolic trace restricted to active block-partitions. This exact trace $B_{sym} = -\alpha \ln |\mathrm{tr}_M|$ is shown alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
 
 ## Notation legend (auto-included)
 
@@ -250,7 +250,7 @@ forms differ by $h\delta/4 \approx 7.190 \times 10^{-5}$ at the substrate anchor
 | $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (${}^{8}$Be, ${}^{12}$C, $\ldots$, ${}^{40}$Ca) |
 | $\alpha$–N attachment | Layer 3: $^4$He cluster + valence nucleon (for non-magic $A$) |
 
-For an atom with mass number $A$, we build the canonical braid word in $B_{3A}$ sequentially per nucleon. At each $k \in \{0, \dots, A-1\}$, we apply the intra block at base $3k$ and $3k+1$. For $k < A-1$, we then apply the inter-nucleon interface at $3k+2$ between nucleon $k$ and $k+1$. The [`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) function enumerates this sequence.
+For an atom with mass number $A$, build the canonical braid word in $B_{3A}$ sequentially per nucleon. At each $k \in \{0, \dots, A-1\}$, apply the intra block at base $3k$ and $3k+1$. For $k < A-1$, then apply the inter-nucleon interface at $3k+2$ between nucleon $k$ and $k+1$. The [`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) function enumerates this sequence.
 
 ### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
 
