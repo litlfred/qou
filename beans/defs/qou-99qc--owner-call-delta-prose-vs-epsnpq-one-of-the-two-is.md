@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T21:30:00Z
+updated_at: 2026-11-20T22:30:00Z
 parent: qou-10v9
 ---
 
@@ -4298,3 +4298,12 @@ Owner asked to investigate the clash surfaced by #8673. Audit doc `docs/audits/2
 - "Lepton descent" (u <- T(2,3)) refterms the jet-level descent homomorphism; no derived knot->quark map. Undefined relation.
 - Options A (reword electron block: trefoil = up quark's lepton partner; 4 files), B (A + 13-site sweep, rescopes transfer-matrix appendix and strangelet), C (trefoil canonical, drops Borromean model), D no-op (default). Agent recommendation (judgement): A now, B separately.
 - OPEN, owner. Adjacent: sdp_gamma_gamma_to_qqbar.py:15,124 says s0s1s0 closes to a trefoil, contradicting perm_e_gg; unchanged.
+
+## 2026-11-20T22:30Z — hypercharge as a second strand grading (PR #8676, `HyperchargeGradingNoGo.lean`, sorry-free)
+- Owner Q: under L, is ν "the same as u" or at a higher q power? Test: dress strands by q^{cY} (Y_q=1/3, Y_ℓ=−1). Coordinator redirect recorded in PREREGISTRATION.md.
+- No-go, scope (b), invariant = separability (T³ on flavour, Y on type): `total_eq_iff`, `T3_Y_conserved`, `split_zero_of_total`, `grouplike_weight_eq` — every grading that is a function of conserved totals gives split 0 for EVERY c. Y(nν)=Y(pe)=0.
+- Matrices: `EF_commutes_dressed`, `EF_commutes_charge` (total Q conserved), `Rc_intertwines_dressed`, `weight_transport`.
+- Ruled functional blind to c: `normalised_trace_dressing_cancels` (per-strand scalar cancels in Tr(K·)/Tr K).
+- Only a per-strand UNnormalised additive energy separates: `split_eq` (g_ℓ−g_q)(q−q⁻¹); `split_hyper_eq_zero_iff` zero iff c=0; q=e^λ: −(8c/3)λ²+O(λ³). This is NOT the ruled ε; it is a new premise.
+- Forced c: none (Y open in eightfold-open-problems; gl₂ centre K₁K₂ = q on every fundamental strand). c=1 = electric-charge grading, a premise. No Q_β number computed (pre-registered).
+- Candidates not conserved by the vertex: Higgs vacuum idempotent e_H (HiggsVacuumResidual.lean, no strand action defined); colour (no colour action on strands; ColourBridge only q=1). OPEN.
