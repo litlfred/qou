@@ -59,6 +59,19 @@ export const Q_STRICT_CHAPTER = "quantum-universes";
 export const Q_INTRO_SECTION = "sec:substrate-parameter";
 /** Back matter a forward link may always point to. */
 export const BACK_MATTER = new Set(["glossary", "notation", "index-of-definitions"]);
+/**
+ * Owner rulings 2026-11-20 (second [W14 ask] on #8526, answers 1b / 2a / 3a):
+ * - CODE_BY_DESIGN: chapters whose subject IS the formalisation or the code.
+ *   `appendix-mass-binding-algorithms` is the propositions <-> Python-API
+ *   contract (AGENTS.md); `appendix-formalisation-notes` holds the Lean and
+ *   Mathlib infrastructure blocks moved out of the chapters. L1 and L2 are not
+ *   checked there; L3 and L4 still are.
+ * - REFERENCE_TABLES: in the reference chapters, a Mathlib name or a
+ *   declaration in a TABLE ROW is the reference content and is exempt from
+ *   L2; their prose is still checked.
+ */
+export const CODE_BY_DESIGN = new Set(["appendix-mass-binding-algorithms", "appendix-formalisation-notes"]);
+export const REFERENCE_TABLES = new Set(["glossary", "notation", "index-of-definitions"]);
 
 // ── line preparation ────────────────────────────────────────────────
 /** Fenced code blanked; returns raw (math kept) lines. */
@@ -218,7 +231,11 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
     const src = readFileSync(b.md, "utf8");
     // An outro may name what the next chapter introduces.
     const premature = b.idx < qIntro && PART_I_STRICT.has(b.chapter) && !b.name.startsWith("outro-");
-    let hits = scanText(src, { premature, prematureAdvisory: b.chapter !== Q_STRICT_CHAPTER }).filter((h) => classes.has(h.cls));
+    const srcLines = src.split("\n");
+    let hits = scanText(src, { premature, prematureAdvisory: b.chapter !== Q_STRICT_CHAPTER })
+      .filter((h) => classes.has(h.cls))
+      .filter((h) => !(CODE_BY_DESIGN.has(b.chapter) && (h.cls === "L1" || h.cls === "L2")))
+      .filter((h) => !(REFERENCE_TABLES.has(b.chapter) && h.cls === "L2" && /^\s*\|/.test(srcLines[h.line - 1] ?? "")));
     if (classes.has("L4"))
       unfence(src).forEach((raw, i) => {
         for (const m of raw.matchAll(LINK_RE)) {

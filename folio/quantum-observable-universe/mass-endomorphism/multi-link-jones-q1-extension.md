@@ -1,4 +1,4 @@
-**Multi-link Jones values at $q = 1$ — Lean infrastructure for the $c_5 / c_6$ candidate investigation.**
+**Multi-link Jones values at $q = 1$ — infrastructure for the $c_5 / c_6$ candidate investigation.**
 
 The $\mathfrak{Q}_\beta$ precision ladder ([$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)) closed $c_1, c_2$ from Kashiwara ($b, b^2$), $c_3$ from $J_{\mathrm{Hopf}}(q{=}1) = -2$ at the 3-fold Markov closure, and $c_4$ from the mixed Kashiwara-plus-Hopf-half $b^2 + 1/2$. The simple alternating Kashiwara $\times$ Jones pattern at odd $k = 3$ suggests trying multi-link Jones values for $c_5, c_7, \ldots$ (e.g., Borromean rings, double-Hopf).
 
@@ -9,18 +9,15 @@ The $\mathfrak{Q}_\beta$ precision ladder ([$\mathfrak{Q}_\beta$ categorical-der
 
 ## Contents
 
-What follows is **infrastructure, not closure**. The Lean module `QOU.BraidKnot.multi_link_jones_q1_extension` exports:
+What follows is **infrastructure, not closure**. Three further links are adjoined to [the concrete braid and link types](#rem:braid-link-types) (the trefoil, the Borromean rings and the double Hopf link), with Jones values at $q = 1$:
 
-1. **Three new `Link` constructors** (extending the `Link` inductive in [`rem:braid-link-types`](#rem:braid-link-types)): `trefoil`, `borromean`, `doubleHopf`.
-2. **Three new `jonesAtOne` cases**, each proved by `rfl`:
+| link | $J_L(q{=}1)$ | source |
+|---|---:|---|
+| trefoil | $+1$ | Jones 1985, $T(2,3)$ 1-component unnormalised |
+| Borromean rings | $-8$ | Jones 1985 / Habiro 2002, 3-component Brunnian |
+| double Hopf link | $+4$ | $J_{\mathrm{Hopf}}^2$ by disjoint-union multiplicativity |
 
-   | constructor | $J_L(q{=}1)$ | source |
-   |---|---:|---|
-   | `trefoil` | $+1$ | Jones 1985, $T(2,3)$ 1-component unnormalised |
-   | `borromean` | $-8$ | Jones 1985 / Habiro 2002, 3-component Brunnian |
-   | `doubleHopf` | $+4$ | $J_{\mathrm{Hopf}}^2$ by disjoint-union multiplicativity |
-
-3. **Two combination values**: `jonesHopfTimesBorromean = 16`, `jonesBorromeanFlipped = 8`. Both candidates carry **explicit docstrings noting the empirical mismatch**. They are not closures.
+Two combination values are recorded alongside: $J_{\mathrm{Hopf}} \cdot J_{\mathrm{Borromean}} = 16$ and $-J_{\mathrm{Borromean}} = 8$. Both are recorded together with the empirical mismatch. They are not closures.
 
 ## Failure of the simple multi-link pattern
 

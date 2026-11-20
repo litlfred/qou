@@ -45,7 +45,7 @@ never integrates.
 ## 2. Hilbert-space completion: stylistic, not load-bearing
 
 Only one place in this paper writes down a Hilbert-
-space completion: `knot-eigenbasis-complete-proof.md` (part 3 of
+space completion: [Proof of Completeness of the knot-type eigenbasis](#prf:knot-eigenbasis-complete) (part 3 of
 the proof). The passage reads:
 
 > The direct limit $\varinjlim V^{\otimes n}$ is a pre-Hilbert
@@ -82,7 +82,7 @@ it.
 
 Three narrow obstructions do bite:
 
-1. **Möbius energy integral** (`mobius-energy-proof.md`).
+1. **Möbius energy integral**.
    Requires Lebesgue on $S^1 \times S^1$ plus diagonal
    regularisation. A surreal Loeb-measure replacement is
    possible in principle (see

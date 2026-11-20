@@ -37,7 +37,7 @@ $$
 
 ### Numerical verification
 
-The composition holds exactly at the symbolic level. Numerical re-evaluation at $q_0$ ([`alpha-em-shift-multiplicative-chain.witness.json`](../../../computations/alpha/alpha-em-shift-multiplicative-chain.witness.json), mpmath 50-dps) reads $\alpha_{\mathrm{shift}}(T_{2,9})$ and $\alpha_{\mathrm{shift}}(T_{3,5})$ from the upstream witness [`alpha-shift-torus.witness.json`](../../../computations/alpha/alpha-shift-torus.witness.json). It compares the chain expression to the bare expression:
+The composition holds exactly at the symbolic level. Numerical re-evaluation at $q_0$ (50-digit arithmetic) takes the upstream values $\alpha_{\mathrm{shift}}(T_{2,9})$ and $\alpha_{\mathrm{shift}}(T_{3,5})$. It compares the chain expression to the bare expression:
 
 $$
   |\,\text{chain} - \text{bare}\,| \;=\; 0

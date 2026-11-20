@@ -33,6 +33,7 @@ export default conjecture({
     status: "not_run",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3):  for a unit-normalised cyclic trace (Lean: `VacuumPairing.tr_proj_eq_one`)." },
     {
       kind: "note",
       date: "2026-11-20",

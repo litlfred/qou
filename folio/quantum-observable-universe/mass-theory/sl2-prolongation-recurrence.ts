@@ -13,6 +13,7 @@ export default proposition({
     "prop:sl2-period-conserved-quantity",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): is proved for every $n$ in the Lean sibling." },
     {
       kind: "refined-framing",
       date: "2026-08-29",

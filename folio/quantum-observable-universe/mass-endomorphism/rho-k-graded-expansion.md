@@ -43,7 +43,7 @@ $$
   \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|}.
 $$
 
-The script `rho-k-markov-multiplicativity.witness.json` numerically verifies the [Wenzl 1988] branching identity $\chi^\lambda(\mathcal{B}_p \otimes \mathcal{B}_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\mathcal{B}_p) \chi^\nu(\mathcal{B}_n)$ to machine precision ($3.2 \times 10^{-14}$) for all $\lambda \vdash 6$ in the deuteron case.
+Numerical computation verifies the [Wenzl 1988] branching identity $\chi^\lambda(\mathcal{B}_p \otimes \mathcal{B}_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\mathcal{B}_p) \chi^\nu(\mathcal{B}_n)$ to machine precision ($3.2 \times 10^{-14}$) for all $\lambda \vdash 6$ in the deuteron case.
 
 ### Single-generator piece (fitted)
 
@@ -53,7 +53,7 @@ $$
   \tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)
 $$
 
-The overline denotes the Hecke bar-involution $q \leftrightarrow q^{-1}$. At real $q_0$ and real $\hat V_i$, this reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$. Using $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean binding scale, [Catalan binding](#conj:binding-scale-catalan)), this captures the leading binding correction. The mean error is $0.18\%$, with a $0.35\%$ maximum across $Z = 1..20$ (see `atomic-braid-mass-paper-formula.witness.json` and the `rho-k-pair-gen-extension.witness.json` table).
+The overline denotes the Hecke bar-involution $q \leftrightarrow q^{-1}$. At real $q_0$ and real $\hat V_i$, this reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$. Using $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean binding scale, [Catalan binding](#conj:binding-scale-catalan)), this captures the leading binding correction. The mean error is $0.18\%$, with a $0.35\%$ maximum across $Z = 1..20$.
 
 ### Pair-generator piece (open)
 
@@ -84,7 +84,7 @@ Each piece of the graded expansion corresponds to a term in the Kashaev limit of
 
 See [Table 2](#tbl:rho-k-graded-expansion-table2-data).
 
-The graded $\rho_K$ expansion supplies the Kashaev specialisation of the six-term theorem (`thm:knot-mass-formula-unified`) expressed at the GB-NF level. The constituent-mass piece is explicitly factored out via the Markov-multiplicativity rewriting.
+The graded $\rho_K$ expansion supplies the Kashaev specialisation of the six-term theorem expressed at the GB-NF level. The constituent-mass piece is explicitly factored out via the Markov-multiplicativity rewriting.
 
 ## References
 

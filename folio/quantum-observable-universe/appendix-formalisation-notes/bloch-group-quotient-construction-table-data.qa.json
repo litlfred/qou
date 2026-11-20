@@ -1,9 +1,10 @@
 {
   "$schema": "block-qa/v1",
+  "label": "tbl:bloch-group-quotient-construction-table-data",
   "kind": "table",
   "paths": {
-    "ts": "folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler-table3-data.ts",
-    "md": "folio/quantum-observable-universe/predicted-spectra/bloch-wigner-mathlib-filler-table3-data.md"
+    "ts": "folio/quantum-observable-universe/appendix-formalisation-notes/bloch-group-quotient-construction-table-data.ts",
+    "md": "folio/quantum-observable-universe/appendix-formalisation-notes/bloch-group-quotient-construction-table-data.md"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -21,8 +22,8 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -39,8 +40,8 @@
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -57,8 +58,8 @@
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -75,8 +76,8 @@
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -93,8 +94,8 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -111,8 +112,8 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -129,8 +130,8 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -147,8 +148,8 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -165,8 +166,8 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -183,8 +184,8 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -201,8 +202,8 @@
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -219,8 +220,8 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -237,8 +238,8 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -255,8 +256,8 @@
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -273,8 +274,8 @@
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -291,8 +292,8 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -310,8 +311,8 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -330,8 +331,8 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -348,8 +349,8 @@
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -366,8 +367,8 @@
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -384,8 +385,8 @@
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -402,8 +403,8 @@
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -420,8 +421,8 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -438,8 +439,8 @@
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -456,8 +457,8 @@
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -474,8 +475,8 @@
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -492,8 +493,8 @@
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -510,8 +511,8 @@
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -529,8 +530,8 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -548,8 +549,8 @@
           "tanglement_score": 0,
           "out_degree": 1,
           "in_degree": 0,
-          "cone_size": 134,
-          "depth": 33,
+          "cone_size": 302,
+          "depth": 55,
           "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
@@ -560,8 +561,8 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -583,8 +584,8 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -601,8 +602,8 @@
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -619,8 +620,8 @@
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "pass",
         "reviewer": {
@@ -643,8 +644,8 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -663,8 +664,8 @@
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -682,8 +683,8 @@
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -702,8 +703,8 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -722,8 +723,8 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -742,8 +743,8 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -762,8 +763,8 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "ts": "4cd80911bf02",
-          "md": "a45d2e51c32d"
+          "ts": "c78fa44e2e3a",
+          "md": "33e42e0b6729"
         },
         "result": "pass",
         "reviewer": {
@@ -779,8 +780,8 @@
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "ts": "4cd80911bf02",
-          "md": "a45d2e51c32d"
+          "ts": "c78fa44e2e3a",
+          "md": "33e42e0b6729"
         },
         "result": "n/a",
         "reviewer": {
@@ -795,8 +796,8 @@
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "ts": "4cd80911bf02",
-          "md": "a45d2e51c32d"
+          "ts": "c78fa44e2e3a",
+          "md": "33e42e0b6729"
         },
         "result": "n/a",
         "reviewer": {
@@ -811,8 +812,8 @@
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "ts": "4cd80911bf02",
-          "md": "a45d2e51c32d"
+          "ts": "c78fa44e2e3a",
+          "md": "33e42e0b6729"
         },
         "result": "n/a",
         "reviewer": {
@@ -827,8 +828,8 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "ts": "4cd80911bf02",
-          "md": "a45d2e51c32d"
+          "ts": "c78fa44e2e3a",
+          "md": "33e42e0b6729"
         },
         "result": "n/a",
         "reviewer": {
@@ -843,8 +844,8 @@
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "ts": "4cd80911bf02",
-          "md": "a45d2e51c32d"
+          "ts": "c78fa44e2e3a",
+          "md": "33e42e0b6729"
         },
         "result": "pass",
         "reviewer": {
@@ -859,8 +860,8 @@
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "ts": "4cd80911bf02",
-          "md": "a45d2e51c32d"
+          "ts": "c78fa44e2e3a",
+          "md": "33e42e0b6729"
         },
         "result": "pass",
         "reviewer": {
@@ -875,8 +876,8 @@
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -894,8 +895,8 @@
     "trap-negation-contrast": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -903,31 +904,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:42.402Z",
+        "reviewed_at": "2026-08-22T01:36:39.546Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
-      },
-      {
-        "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:e00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-22T01:36:43.606Z",
-        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block listing three unformalised components with their dependents. No numerics to recompute; the three rows correspond one-for-one to the 'remaining work' list in prop:bloch-group-quotient-construction, and are consistent with it."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-rhetorical-pivot": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -935,16 +921,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:42.479Z",
+        "reviewed_at": "2026-08-22T01:36:39.605Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-em-dash": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -952,16 +938,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:42.597Z",
+        "reviewed_at": "2026-08-22T01:36:39.656Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-triples": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -969,16 +955,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:42.706Z",
+        "reviewed_at": "2026-08-22T01:36:39.706Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-closing-aphorism": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -986,16 +972,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:42.777Z",
+        "reviewed_at": "2026-08-22T01:36:39.769Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-meta-commentary": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -1003,16 +989,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:42.937Z",
+        "reviewed_at": "2026-08-22T01:36:39.840Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-thesis-restatement": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -1020,16 +1006,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:43.017Z",
+        "reviewed_at": "2026-08-22T01:36:39.931Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-performed-warmth": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -1037,16 +1023,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:43.137Z",
+        "reviewed_at": "2026-08-22T01:36:39.988Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-superlative": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -1054,16 +1040,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:43.226Z",
+        "reviewed_at": "2026-08-22T01:36:40.050Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ],
     "trap-nonspeakable": [
       {
         "field_hash": {
-          "md": "a45d2e51c32d",
-          "ts": "4cd80911bf02"
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
         },
         "result": "n/a",
         "reviewer": {
@@ -1071,17 +1057,16 @@
           "id": "agent:e00",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T01:36:43.295Z",
+        "reviewed_at": "2026-08-22T01:36:40.102Z",
         "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
-        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
       }
     ]
   },
-  "label": "tbl:bloch-wigner-mathlib-filler-table3-data",
   "source_hashes": {
-    "md": "a45d2e51c32d",
-    "ts": "4cd80911bf02"
+    "md": "33e42e0b6729",
+    "ts": "c78fa44e2e3a"
   },
-  "updated_at": "2026-08-22T01:36:43.606Z",
+  "updated_at": "2026-08-22T01:36:40.102Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

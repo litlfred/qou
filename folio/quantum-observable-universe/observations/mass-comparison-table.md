@@ -18,7 +18,7 @@ The electron mass is an input. It fixes $\mu_{\mathfrak{u}}$ through the pair Sk
 
 *Hadrons (from pair Skein masses).*
 
-The proton and neutron rows derive from the LO $\rho_K$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)). This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula does not yet extend to the nucleon scale. The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV under the ruled convention-D base, against CODATA $1.2933$ MeV).
+The proton and neutron rows derive from the LO $\rho_K$ assembly. This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula does not yet extend to the nucleon scale. The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV under the ruled convention-D base, against CODATA $1.2933$ MeV).
 
 See [Table 2](#tbl:mass-comparison-table-table2-data).
 
@@ -38,7 +38,7 @@ with $h = q_0 - q_0^{-1}$, $\hbar_q = 1 - q_0^{-1}$ and $z_D = q_0^3/(q_0^2+1)$.
 
 The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 0.9557$ MeV. This compares to the CODATA value of $1.2933$ MeV ($-26.11\%$ error, no CODATA $m_n - m_p$ input).
 
-*Retired Form A (historical cross-check only).* The earlier closed form $m_e\,|q_0^2 - 2q_0 - 1|\,(q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$, giving $m_n - m_p \approx 1.295$ MeV) evaluates $\varepsilon$ at $z = 1$, which is not an admissible Markov parameter under convention D. It is kept for comparison and is not the prediction. Witness: [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
+*Retired Form A (historical cross-check only).* The earlier closed form $m_e\,|q_0^2 - 2q_0 - 1|\,(q_0 + 1)/(2 q_0^3) \approx 0.7836$ MeV ($+0.168\%$, giving $m_n - m_p \approx 1.295$ MeV) evaluates $\varepsilon$ at $z = 1$, which is not an admissible Markov parameter under convention D. It is kept for comparison and is not the prediction.
 
 *Light nuclei (from multi-body Skein).* 
 
@@ -46,7 +46,7 @@ All rows below come from the LO $\rho_K$ assembly using CODATA $m_p, m_n$ inputs
 
 See [Table 3](#tbl:mass-comparison-table-table3-data).
 
-† **LO output is constituent sum only.** The full prediction (beyond the constituent sum) is not yet available. Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
+† **LO output is constituent sum only.** The full prediction (beyond the constituent sum) is not yet available.
 
 **Notes.** The muon--electron mass ratio fixes the substrate parameter $q$. Hadronic masses follow from the pair Skein formula ([terminal resolution](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. We evaluate the multi-body Skein polynomials up to ${}^4\mathrm{He}$. Polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) but remain unevaluated.
 
@@ -58,5 +58,5 @@ The hecke-engine provides exact Skein polynomial evaluations at $q_0$ for 47 iso
 
 See [Table 4](#tbl:mass-comparison-table-table4-data).
 
-The $F_{\mathrm{Pauli}}$ factor remains $O(1)$ across all isotopes and encodes the Pauli exclusion statistical weight. The $\ln|P|$ column records the transfer matrix Skein polynomial evaluated at $q_0$. Neither field maps linearly to $B/A$ or mass in MeV. See `certificate-to-mass.witness.json` for validation.
+The $F_{\mathrm{Pauli}}$ factor remains $O(1)$ across all isotopes and encodes the Pauli exclusion statistical weight. The $\ln|P|$ column records the transfer matrix Skein polynomial evaluated at $q_0$. Neither field maps linearly to $B/A$ or mass in MeV.
 

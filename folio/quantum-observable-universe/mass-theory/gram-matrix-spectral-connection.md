@@ -18,18 +18,15 @@ Frobenius framework).**
 > $G^{-1}_{\lambda\mu} = \delta_{\lambda\mu}\,[n]_q!/(\dim_q(\lambda)\dim(\lambda))$,
 > which for that block is a division by zero.
 >
-> Nothing structural is lost, only relocated. The radical is a two-sided ideal
-> ([`TemperleyLiebTower.traceRadical_two_sided`](../lean/QOU/QBeta/TemperleyLiebTower.lean)),
+> Nothing structural is lost, only relocated. The radical is a two-sided ideal,
 > so $\mathrm{tr}_M$ descends and the induced pairing on the quotient **is**
 > non-degenerate. Ranks: $\mathrm{corank}\,G = 1$ at $n = 3$, $10 = 3^2 + 1^2$ at
 > $n = 4$, $78 = 6^2+5^2+4^2+1^2$ at $n = 5$; what survives is
 > $\sum \dim^2 = C_n$ — the Catalan numbers $5, 14, 42$.
 >
-> Proved in
-> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean):
-> `block_mem_radical` `$\to$` `gram_det_eq_zero_of_radical_combination` for the
-> vanishing, `pairing_descends` and `mem_radical_of_pairing_zero` for the
-> descent.
+> Both halves are proved: the vanishing (the $(1^3)$ block lies in the radical,
+> hence $\det G = 0$) and the descent of the pairing to a non-degenerate pairing
+> on the quotient.
 
 **Role of the Gram matrix.**
 *The **Gram matrix** $G$ of the Markov pairing is the common

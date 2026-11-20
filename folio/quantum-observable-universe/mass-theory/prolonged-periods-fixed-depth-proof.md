@@ -17,12 +17,11 @@ M^{n+d} = M^n\!\cdot\!\Big(\sum_{j<d} c_j M^j\Big)
         = \sum_{j<d} c_j\,(M^n\!\cdot M^j)
         = \sum_{j<d} c_j\,M^{n+j},
 $$
-where the middle step is `mul_smul_comm` (scalars commute past the operator
-product) and the last is $M^n\!\cdot M^j = M^{n+j}$.
+where the middle step uses that scalars commute past the operator
+product and the last is $M^n\!\cdot M^j = M^{n+j}$.
 
 *Period recurrence.* Applying the linear functional $T \mapsto \varphi(T v_0)$
-to both sides and using its additivity and $R$-homogeneity (`map_sum`,
-`map_smul`),
+to both sides and using its additivity and $R$-homogeneity,
 $$
 a_D^{(n+d)} = \sum_{j<d} c_j\,a_D^{(n+j)},
 $$

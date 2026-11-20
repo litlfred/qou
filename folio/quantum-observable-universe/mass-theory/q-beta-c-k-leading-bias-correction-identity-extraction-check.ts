@@ -10,6 +10,7 @@ export default remark({
   interprets: "prop:q-beta-c-k-leading-bias-correction-identity",
   uses: ["prop:q-beta-c-k-leading-bias-correction-identity"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The proposition mechanically inverts the bias in Lean." },
     {
       kind: "note",
       date: "2026-11-15",

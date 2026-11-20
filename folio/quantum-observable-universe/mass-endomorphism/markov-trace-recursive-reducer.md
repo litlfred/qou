@@ -52,7 +52,7 @@ def tr_M(perm, n):
 
 ## Correctness
 
-**Termination.** Each invocation of the recursive `tr_M` call either:
+**Termination.** Each invocation of the recursive $\mathrm{tr}_M$ call either:
 (i) truncates the ambient algebra ($n \to \text{max\_gen} + 2$ where $\text{max\_gen} + 2 < n$), strictly decreasing the integer $n$; or
 (ii) peels one $\sigma_{n-2}$ from the word and recurses on basis elements $w'$ with $\ell(w') \leq \ell(\text{rotated}) = \ell(w) - 1$, strictly decreasing the Coxeter length.
 

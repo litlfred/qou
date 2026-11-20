@@ -42,13 +42,12 @@ the canonical formalism
 entry `2·m_e·4·Vol(L6a4)`. The categorical derivation of the integer
 $2$ — vs. $[2]_q$, $2\cos(\pi/3)$, or another natural candidate — is
 not closed in this proposition; the value is consumed as an input
-hypothesis on the
-[`MagicABindingFormula`](#prop:magic-A-binding-formula) instance.
+hypothesis of the
+[doubly-magic light-nucleus binding formula](#prop:magic-A-binding-formula).
 ## canonical witness
 
 the canonical formalism
 emits a comparison witness showing the alpha-shift vs.
 magic-A predictions side-by-side for $A \in \{2, 3, 4\}$. The
-output JSON
-[`binding-alpha-shift-witness.witness.json`](../../../computations/binding-alpha-shift-witness.witness.json)
+comparison
 quantifies the 80$\times$ gap closure for $^4_2\mathrm{He}$.

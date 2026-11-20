@@ -220,14 +220,12 @@ $z$, so the $n = 3$ system already pins the parameter for the whole
 tower, and the Ocneanu formula then returns
 $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$.
 
-*Formal status.* The elimination above is
-`QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero`
-(division-free, over a commutative domain), the spurious
-branch is `markovWeights_degenerate_root`, and the fibre-side
-antecedent is `markovWeights_eq_jones_of_fibre_categorical`. The
-general-$n$ closed form is *not* proved by induction in Lean: what is
+*Status.* The elimination above is proved division-free, over a
+commutative domain, together with the spurious branch and the
+fibre-side antecedent. The
+general-$n$ closed form is *not* proved by induction: what is
 proved is the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$ behind it
-(`qint_three_term_pair`, `markov_branching_general`) plus fixed-$n$
+ plus fixed-$n$
 instances at $n = 3, 4$; the closed form itself is verified against
 every partition of $n \leq 7$ to a worst residual of
 $1.34 \times 10^{-51}$.

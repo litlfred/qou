@@ -48,7 +48,7 @@ $$
   \mathrm{tr}_F(e_H) \;=\; 1.
 $$
 
-The idempotent factors through the monoidal unit: $e_H = \varrho_\Phi \circ \bigl(t^{-1}\varrho_\Phi^*\bigr)$ with $t = \mathrm{tr}_F(\varrho_\Phi^* \cdot \varrho_\Phi)$, and $\varrho_\Phi^* \cdot \varrho_\Phi = t \cdot \mathrm{id}_{\mathbf{1}}$. Cyclicity of the trace gives $\mathrm{tr}_F(e_H) = \mathrm{tr}_F(\mathrm{id}_{\mathbf{1}})$, which is $1$ for a unit-normalised cyclic trace (Lean: `VacuumPairing.tr_proj_eq_one`). The value $[2]_q$ of (G-2) is the $q$-dimension of all of $A^{(H)}$, not the trace of its rank-one image.
+The idempotent factors through the monoidal unit: $e_H = \varrho_\Phi \circ \bigl(t^{-1}\varrho_\Phi^*\bigr)$ with $t = \mathrm{tr}_F(\varrho_\Phi^* \cdot \varrho_\Phi)$, and $\varrho_\Phi^* \cdot \varrho_\Phi = t \cdot \mathrm{id}_{\mathbf{1}}$. Cyclicity of the trace gives $\mathrm{tr}_F(e_H) = \mathrm{tr}_F(\mathrm{id}_{\mathbf{1}})$, which is $1$ for a unit-normalised cyclic trace. The value $[2]_q$ of (G-2) is the $q$-dimension of all of $A^{(H)}$, not the trace of its rank-one image.
 
 ### The closed form for $\mathcal{N}_{\rm sym}(q)$: an open identification
 

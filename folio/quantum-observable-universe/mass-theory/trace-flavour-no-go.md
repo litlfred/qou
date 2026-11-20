@@ -12,7 +12,7 @@ For reversal, every product of factors reduces to a combination of the six eleme
 
 **Consequence.** Every typed nucleon word whose flavour assignment is carried to another one by $\theta$ has the same trace as that word. In particular this holds for the six placements of the odd quark on $(\sigma_0\sigma_1^{-1})^3$. A difference between proton and neutron therefore requires an ingredient that is not a cyclic trace of such a product.
 
-The same Lean file also records three smaller statements:
+Three smaller statements also hold:
 - the [photon](#def:photon) $\gamma(\varphi_0, \varphi_1, \varphi_{01}) = 1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$ equals $1 + (\varphi_0 - h\varphi_{01})\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$, so the earlier form with last term $\sigma_0\sigma_1$ is the same family of elements in other coordinates, and the two factors of [the two-photon factorisation](#prop:borromean-two-photon-factorisation) are photons with only their last term;
 - commuting separators can be moved past a photon;
 - on a $2 \times 2$ representation in which $\sigma_0\sigma_1^{-1}$ has no fixed vector and is not a scalar, its trace is $-(1 + h^2)$ and its determinant is $1$.

@@ -27,6 +27,8 @@ export default remark({
     "prop:descartes-elliptic-curve",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (proved in Lean, `no_affine_match`)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The obstruction is proved in the Lean sibling." },
     {
       kind: "caveat",
       date: "2026-10-11",

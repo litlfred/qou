@@ -18,4 +18,7 @@ export default remark({
     "analytic-number-theory-bridge",
     "numerical-verification",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): [`cl_n_l_value_decomposition.py`](https://github.com/litlfred/qou/blob/main/computations/cl_n_l_value_decomposition.py), [witness](https://github.com/litlfred/qou/blob/main/computations/cl-n-l-value-decomposition.witness.json)" },
+  ],
 });

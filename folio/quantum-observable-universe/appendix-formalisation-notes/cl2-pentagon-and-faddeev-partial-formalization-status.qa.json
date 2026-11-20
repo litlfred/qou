@@ -1,16 +1,16 @@
 {
   "$schema": "block-qa/v1",
-  "label": "rem:upstream-mathlib-additions-detail",
+  "label": "rem:cl2-pentagon-and-faddeev-partial-formalization-status",
   "kind": "remark",
   "paths": {
-    "ts": "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail.ts",
-    "md": "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail.md"
+    "ts": "folio/quantum-observable-universe/appendix-formalisation-notes/cl2-pentagon-and-faddeev-partial-formalization-status.ts",
+    "md": "folio/quantum-observable-universe/appendix-formalisation-notes/cl2-pentagon-and-faddeev-partial-formalization-status.md"
   },
   "criteria": {
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: \"The \u00a73b-cond chain provides unconditional functional identities\" now reads \"The conditional-class chain provides unconditional functional identities.\"",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: \"The \u00a73b-cond scaffolding is structurally complete\" now reads \"The conditional-class scaffolding is structurally complete.\" The remaining \"## Closed content\" / \"## Remaining content\" / \"## Status\" headings report which Lean theorems are proved and which are open, which is the mathematics this block is about.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
@@ -22,8 +22,8 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -40,8 +40,8 @@
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -58,8 +58,8 @@
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -76,8 +76,8 @@
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -94,8 +94,8 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -112,8 +112,8 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -130,8 +130,8 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -148,8 +148,8 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -166,8 +166,8 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -184,8 +184,8 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -202,8 +202,8 @@
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -220,8 +220,8 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -238,8 +238,8 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -256,10 +256,10 @@
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
@@ -268,14 +268,16 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
         "reviewed_at": "2026-08-09T11:33:51.153Z",
-        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
+        "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/appendix-formalisation-notes/cl2-pentagon-and-faddeev-partial-formalization-status.md:19: status-section-header: ## Status"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -292,8 +294,8 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -311,8 +313,8 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -331,8 +333,8 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -349,8 +351,8 @@
     "canonical-no-numerology": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -367,8 +369,8 @@
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -385,8 +387,8 @@
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -403,8 +405,8 @@
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -421,8 +423,8 @@
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -439,8 +441,8 @@
     "canonical-ck-tiered-not-binary": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -457,8 +459,8 @@
     "canonical-no-negative-result-in-paper": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -475,8 +477,8 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -493,8 +495,8 @@
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -511,8 +513,8 @@
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -529,8 +531,8 @@
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -547,8 +549,8 @@
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -565,8 +567,8 @@
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -584,8 +586,8 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -615,8 +617,8 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -638,8 +640,8 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -656,8 +658,8 @@
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -674,8 +676,8 @@
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -698,8 +700,8 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -718,8 +720,8 @@
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -737,8 +739,8 @@
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -757,8 +759,8 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -777,8 +779,8 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -797,8 +799,8 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -817,8 +819,8 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "ts": "eed1b43fd3a0",
-          "md": "4a8f0f1133f5"
+          "ts": "cfa1f353effa",
+          "md": "ca50d83fab09"
         },
         "result": "pass",
         "reviewer": {
@@ -834,8 +836,8 @@
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "ts": "eed1b43fd3a0",
-          "md": "4a8f0f1133f5"
+          "ts": "cfa1f353effa",
+          "md": "ca50d83fab09"
         },
         "result": "n/a",
         "reviewer": {
@@ -850,8 +852,8 @@
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "ts": "eed1b43fd3a0",
-          "md": "4a8f0f1133f5"
+          "ts": "cfa1f353effa",
+          "md": "ca50d83fab09"
         },
         "result": "n/a",
         "reviewer": {
@@ -866,8 +868,8 @@
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "ts": "eed1b43fd3a0",
-          "md": "4a8f0f1133f5"
+          "ts": "cfa1f353effa",
+          "md": "ca50d83fab09"
         },
         "result": "n/a",
         "reviewer": {
@@ -882,8 +884,8 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "ts": "eed1b43fd3a0",
-          "md": "4a8f0f1133f5"
+          "ts": "cfa1f353effa",
+          "md": "ca50d83fab09"
         },
         "result": "n/a",
         "reviewer": {
@@ -898,8 +900,8 @@
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "ts": "eed1b43fd3a0",
-          "md": "4a8f0f1133f5"
+          "ts": "cfa1f353effa",
+          "md": "ca50d83fab09"
         },
         "result": "pass",
         "reviewer": {
@@ -914,8 +916,8 @@
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "ts": "eed1b43fd3a0",
-          "md": "4a8f0f1133f5"
+          "ts": "cfa1f353effa",
+          "md": "ca50d83fab09"
         },
         "result": "pass",
         "reviewer": {
@@ -930,8 +932,8 @@
     "trap-negation-contrast": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -941,31 +943,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.471Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.207Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
       }
     ],
     "trap-rhetorical-pivot": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -975,31 +977,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.508Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.246Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
       }
     ],
     "trap-em-dash": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -1009,31 +1011,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "dash density acceptable (0 in 168 words)"
+        "evidence": "dash density acceptable (0 in 129 words)"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.546Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.286Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
       }
     ],
     "trap-triples": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -1043,31 +1045,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "triple density acceptable (0 in 168 words)"
+        "evidence": "triple density acceptable (0 in 129 words)"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.586Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.324Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
       }
     ],
     "trap-closing-aphorism": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -1077,31 +1079,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.623Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.476Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Final line 'This represents the maximum formalization achievable without upstream Lean analysis infrastructure.' has the shape of a placed quotable closer, but it carries a substantive scope claim rather than decoration, so it is adjudicated under trap-superlative instead (recorded fail there)."
       }
     ],
     "trap-meta-commentary": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -1111,31 +1113,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.661Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.361Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
       }
     ],
     "trap-thesis-restatement": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -1145,33 +1147,33 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.697Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "severity": "major",
-        "evidence": "The '## Target translation' section exists only to restate the three advances just listed, and closes on 'This translates a prior axiomatic gap into specific, named Lean targets ready for upstreaming.' - which is also an overclaim, since the sibling Table 2 lists the absolute convergence of complexLiTwo as open and Table 1 records its convergence as merely 'implicit'.",
-        "notes": "proposed: delete the section, or reduce it to the one fact not already stated - which named declarations are unconditional - and drop 'ready for upstreaming'."
+        "reviewed_at": "2026-08-22T01:28:24.569Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The four-sentence recap closing '## Remaining content' - 'Both remain isolated tasks. The conditional-class scaffolding is structurally complete. The boundary-case identities are closed in Lean. The open content isolates the upstream Mathlib gap.' - restates material already established: sentence 3 repeats '## Closed content' sentence 1 ('The boundary-case identities are proven Lean theorems.') almost verbatim, and sentence 2 repeats its 'This discharges the consistency requirements for the classes ...'. Sentence 4 repeats the section heading. The paragraph adds no new content after Table 2.",
+        "notes": "Structural - four sentences, so not fixed inline. Proposed: delete sentences 2 and 3 and merge the rest into the lead: 'Both remain isolated tasks that turn on the upstream Mathlib gap.' That leaves the section stating the open content once."
       }
     ],
     "trap-performed-warmth": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -1181,31 +1183,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.732Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.400Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
       }
     ],
     "trap-superlative": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -1215,31 +1217,33 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.768Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.515Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Final line: 'This represents the maximum formalization achievable without upstream Lean analysis infrastructure.' - an unqualified maximal claim with no supporting argument, and the block's own Table 3 contradicts it: gap (1) 'BlochGroup F quotient' is listed '(pending) pentagon generators wiring', which is a wiring task, not blocked on Mathlib analysis infrastructure.",
+        "notes": "Not fixed inline: removing the superlative weakens a claim, i.e. it is a meaning change, not a mechanical construction fix. Proposed: 'The remaining content is blocked on upstream Mathlib analysis infrastructure (Fourier-series rearrangement and a uniform Tauberian theorem for q-series); the pentagon-generator wiring of gap (1) is not.' Alternatively keep a maximality claim only if an argument for it is supplied."
       }
     ],
     "trap-nonspeakable": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
@@ -1249,31 +1253,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_at": "2026-08-15T10:31:01.116Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       },
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:pq_06",
+          "id": "agent:e01",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-22T06:33:41.803Z",
-        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
-        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+        "reviewed_at": "2026-08-22T01:28:24.438Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
       }
     ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "4a8f0f1133f5",
-          "ts": "eed1b43fd3a0"
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
         },
         "result": "n/a",
         "reviewer": {
@@ -1290,9 +1294,9 @@
     ]
   },
   "source_hashes": {
-    "md": "4a8f0f1133f5",
-    "ts": "eed1b43fd3a0"
+    "md": "ca50d83fab09",
+    "ts": "cfa1f353effa"
   },
-  "updated_at": "2026-08-22T06:33:41.803Z",
+  "updated_at": "2026-08-22T01:28:24.569Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

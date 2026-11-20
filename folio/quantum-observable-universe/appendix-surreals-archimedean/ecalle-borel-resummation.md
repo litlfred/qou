@@ -18,8 +18,7 @@ $$
   \mathcal{B}\tilde f(\xi) = \sum_{n \geq 0} \frac{a_n}{n!} \, \xi^n ,
 $$
 
-the coefficient-wise division $a_n \mapsto a_n / n!$ (formalised as
-`borelCoeff` in the Lean sibling). When $\tilde f$ is **Gevrey-1** —
+the coefficient-wise division $a_n \mapsto a_n / n!$. When $\tilde f$ is **Gevrey-1** —
 $|a_n| \leq C \, n! \, A^{-n}$ for some $C, A > 0$ and
 $K \subseteq \mathbb{C}$ — its coefficients grow at most
 geometrically, so $\mathcal{B}\tilde f$ is a germ analytic on the

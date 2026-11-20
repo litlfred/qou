@@ -4,7 +4,7 @@ This proposition provides the master formula for computing numerical predictions
 
 **Three distinct ingredients are required.**
 
-1. **The Frobenius Gram inverse $G^{-1}$** (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean))**.** The naïve Markov trace $\mathrm{tr}_M(O \cdot \rho(\beta_T))$ is not the physical expectation value of $O$. The Markov form is non-orthonormal on the NF basis, so dualisation requires the Gram inverse.
+1. **The Frobenius Gram inverse $G^{-1}$** (**convention D**: read on the quotient $H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, where the induced pairing is non-degenerate; on $H_n$ itself $\det G = 0$ exactly, the $(1^3)$ block being the radical)**.** The naïve Markov trace $\mathrm{tr}_M(O \cdot \rho(\beta_T))$ is not the physical expectation value of $O$. The Markov form is non-orthonormal on the NF basis, so dualisation requires the Gram inverse.
 2. **The LP-active set $A^*(T)$.** Most of the $d = n!$ NF basis elements have zero shadow price ($y_i^* = 0$). Including them in the dual pairing pollutes the observable with off-shell contributions. Only the active channels carry physical weight.
 3. **The shadow prices $u_i^* = y_i^*$.** By LP duality, the shadow price on channel $i$ is the marginal cost of saturating the Frobenius positivity constraint. These prices are exactly the weights that make $\langle O\rangle_T$ coincide with the physical expectation.
 

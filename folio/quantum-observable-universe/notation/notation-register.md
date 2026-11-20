@@ -36,8 +36,8 @@ See [Table 8](#tbl:notation-register-table8-data).
 
 See [Table 10](#tbl:notation-register-table10-data).
 
-### Lean source convention (cross-chapter)
+### Base-ring convention (cross-chapter)
 
-This convention applies to every `.lean` file in the paper.
+This convention fixes the ground ring of every statement in the paper.
 
 See [Table 9](#tbl:notation-register-table9-data).

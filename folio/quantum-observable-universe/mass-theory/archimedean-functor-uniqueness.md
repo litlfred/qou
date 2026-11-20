@@ -23,8 +23,7 @@ $z \in \mathbb{C} \setminus \{0,1\}$, where:*
    functional on $B(\mathbb{C})$ — the structural content provided by
    the cosimplicial / Yekutieli triple machinery
    ([Cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid))
-   together with the archimedean-limit class
-   `QOU.QPochhammer.ArchimedeanLimit`
+   together with the archimedean limit
    ([$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)).*
 - *(C2) Bloch-Suslin pentagon-uniqueness [`suslin1991`,
    `bloch2000`]: any continuous antisymmetric pentagon-coherent
@@ -44,14 +43,10 @@ $$
 $$
 
 > **Theorem (conditional on [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)).**
-> The upstream conjecture is axiomatised in Lean as the typeclass
-> [`QOU.QPochhammer.ArchimedeanLimit`](dilogarithm-archimedean-limit.lean);
+> The upstream archimedean-limit conjecture is taken as a hypothesis, and
 > the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,
-> `bloch2000`] is similarly axiomatised as
-> [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean).
-> The Lean theorem
-> [`QOU.Archimedean.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)
-> takes both classes as `[Instance]` hypotheses and is proved
-> **without `sorry`**; the uniqueness statement therefore qualifies as a
+> `bloch2000`] is likewise taken as a hypothesis (cited, not re-proved).
+> The uniqueness statement is proved from these two hypotheses alone,
+> and therefore qualifies as a
 > *rigorous conditional result* rather than an unproved
 > conjecture.

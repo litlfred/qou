@@ -20,4 +20,7 @@ export default proposition({
     "bar-even",
     "no-second-su2",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The $q=1$ integer identities above are proved in Lean (sum of the first $n$ odd numbers, by induction). The full $q$-deformed self-square, cleared of the denominator $(q - q^{-1})$, is the polynomial identity `qCG_self_square`, proved for every $n$ in the sibling of" },
+  ],
 });

@@ -15,6 +15,7 @@ export default remark({
     "convergence-mechanism",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - `lem:feynman-eigenbasis-decomposition` already writes the row cap\n\n- Given $y_{(1^3)} = 0$, `markovWeights_eq_jones_of_threeRow_eq_zero`\n  ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean))\n  shows the faithful" },
     {
       kind: "refined-framing",
       date: "2026-08-09",

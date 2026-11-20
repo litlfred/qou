@@ -26,4 +26,7 @@ export default conjecture({
     "axiom-class",
     "open-problem",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): 1. Verify that the Borromean volume $8G$ arises as a Poincaré–\n   Lefschetz pairing in Lean — partial Mathlib infrastructure\n   exists (Mathlib's `Topology.Manifold` library).\n\n3. Closing the conjecture needs a Lean class for manifold-with-cusps\n   Poincaré–Lefschetz (partial in Mathlib)." },
+  ],
 });

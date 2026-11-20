@@ -11,6 +11,7 @@ export default remark({
     "convention",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): All of the above is formalized in `QOU.Information.markovZNeg_eq`, `markov_loop_value_product`, `markov_framing_ratio_eq`, `markovZ_eq_qsq_div_qDimTwo` and `qDimTwo_sq_sub_hbar_sq`, with the symbolic cross-check in [`markov_loop_value_product_and_framing_ratio.py`](https://github.com/litlfred/qou/blob/main/computations/probes/markov_loop_value_product_and_framing_ratio.py) (13/13). It was found\n\nFormalized in `QOU.Information.markovZAt_framing`, `markovZAt_two_eq_markovZ`, `ocneanu_numerator_collapse` and `qIntSym_two`. The same classification is formalized independently: `QOU.QBeta.WenzlWeight.wenzlLevel_conventionD` and `level_eq_two_of_conventionD` prove that D is Wenzl level $r = 2$, and `QOU.SchurWeyl.OcneanuWeight` proves the $z_D$ row cap from the general-$n$ cell product." },
     {
       kind: "note",
       date: "2026-09-03",

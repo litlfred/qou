@@ -1,20 +1,20 @@
 {
   "$schema": "block-qa/v1",
-  "label": "tbl:confinement-nf-structure-forcing-table-data",
-  "kind": "table",
+  "label": "rem:upstream-mathlib-additions-detail",
+  "kind": "remark",
   "paths": {
-    "ts": "folio/quantum-observable-universe/mass-theory/confinement-nf-structure-forcing-table-data.ts",
-    "md": "folio/quantum-observable-universe/mass-theory/confinement-nf-structure-forcing-table-data.md"
+    "ts": "folio/quantum-observable-universe/appendix-formalisation-notes/upstream-mathlib-additions-detail.ts",
+    "md": "folio/quantum-observable-universe/appendix-formalisation-notes/upstream-mathlib-additions-detail.md"
   },
   "criteria": {
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: \"The \u00a73b-cond chain provides unconditional functional identities\" now reads \"The conditional-class chain provides unconditional functional identities.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }
@@ -22,8 +22,8 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -33,15 +33,15 @@
           "script_hash": "bbc03dd9670f",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -51,15 +51,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -69,15 +69,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -87,15 +87,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -105,15 +105,15 @@
           "script_hash": "d3230d986a2b",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -123,15 +123,15 @@
           "script_hash": "6d35011108e2",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -141,15 +141,15 @@
           "script_hash": "4dc9ee1f7d79",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -159,15 +159,15 @@
           "script_hash": "c35d809edf9a",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -177,15 +177,15 @@
           "script_hash": "5a542b9ddb77",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -195,15 +195,15 @@
           "script_hash": "7e311e463351",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -213,15 +213,15 @@
           "script_hash": "dbe50250022f",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -231,15 +231,15 @@
           "script_hash": "20fe4199458f",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -249,15 +249,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -267,15 +267,15 @@
           "script_hash": "c43b7731faf9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T11:33:08.299Z",
+        "reviewed_at": "2026-08-09T11:33:51.153Z",
         "reviewed_sha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -285,15 +285,15 @@
           "script_hash": "cf3d4ea0ab0a",
           "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -311,8 +311,8 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -323,7 +323,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "21d9ff417741"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -331,8 +331,8 @@
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -342,15 +342,33 @@
           "script_hash": "c58bf6bca27b",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-no-numerology": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "3871b924cf65",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -360,15 +378,15 @@
           "script_hash": "3050ae1775d6",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -378,15 +396,15 @@
           "script_hash": "89bcd82bd3ff",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -396,15 +414,15 @@
           "script_hash": "a065b3633f0f",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -414,15 +432,51 @@
           "script_hash": "96a346415fd2",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-ck-tiered-not-binary": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5fb9d70acf54",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
+        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+      }
+    ],
+    "canonical-no-negative-result-in-paper": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "5c2b3e6cb87e",
+          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+        },
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -432,15 +486,15 @@
           "script_hash": "47384e4fd1b4",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -450,15 +504,15 @@
           "script_hash": "772b3e8dc930",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -468,15 +522,15 @@
           "script_hash": "f6f0b2cd1afb",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -486,15 +540,15 @@
           "script_hash": "696ee4c80040",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -504,15 +558,15 @@
           "script_hash": "b01f61430d2a",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -522,7 +576,7 @@
           "script_hash": "3edb7220507a",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -530,8 +584,8 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -541,7 +595,7 @@
           "script_hash": "ac7512959351",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "metrics": {
           "fwd_emitted": 0,
@@ -549,8 +603,8 @@
           "tanglement_score": 0,
           "out_degree": 1,
           "in_degree": 0,
-          "cone_size": 164,
-          "depth": 31,
+          "cone_size": 302,
+          "depth": 55,
           "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
@@ -561,8 +615,8 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -572,7 +626,7 @@
           "script_hash": "aacb0bf5d4b9",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "metrics": {
           "graph_energy": 0,
@@ -584,8 +638,8 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -595,15 +649,15 @@
           "script_hash": "280aea9a61d8",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -613,15 +667,15 @@
           "script_hash": "39dfc0abf653",
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "pass",
         "reviewer": {
@@ -632,7 +686,7 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "metrics": {
           "uses_count": 1,
@@ -644,8 +698,8 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -656,7 +710,7 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "f9b547e15cfd"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -664,8 +718,8 @@
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -676,15 +730,15 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
     ],
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -695,7 +749,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -703,8 +757,8 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -715,7 +769,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -723,8 +777,8 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -735,7 +789,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -743,8 +797,8 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -755,7 +809,7 @@
           "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
           "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
+        "reviewed_at": "2026-08-09T13:01:38.623Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "notes": "block has no .lean sibling"
       }
@@ -763,8 +817,8 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "ts": "9713f0396460",
-          "md": "a60299f6ceeb"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "pass",
         "reviewer": {
@@ -774,14 +828,14 @@
         },
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"predicted-spectra\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "ts": "9713f0396460",
-          "md": "a60299f6ceeb"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "n/a",
         "reviewer": {
@@ -796,8 +850,8 @@
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "ts": "9713f0396460",
-          "md": "a60299f6ceeb"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "n/a",
         "reviewer": {
@@ -812,8 +866,8 @@
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "ts": "9713f0396460",
-          "md": "a60299f6ceeb"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "n/a",
         "reviewer": {
@@ -828,8 +882,8 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "ts": "9713f0396460",
-          "md": "a60299f6ceeb"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "n/a",
         "reviewer": {
@@ -844,8 +898,8 @@
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "ts": "9713f0396460",
-          "md": "a60299f6ceeb"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "pass",
         "reviewer": {
@@ -860,8 +914,8 @@
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "ts": "9713f0396460",
-          "md": "a60299f6ceeb"
+          "ts": "eed1b43fd3a0",
+          "md": "4a8f0f1133f5"
         },
         "result": "pass",
         "reviewer": {
@@ -873,11 +927,353 @@
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.471Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.508Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 168 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.546Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 168 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.586Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.623Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.661Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.697Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "The '## Target translation' section exists only to restate the three advances just listed, and closes on 'This translates a prior axiomatic gap into specific, named Lean targets ready for upstreaming.' - which is also an overclaim, since the sibling Table 2 lists the absolute convergence of complexLiTwo as open and Table 1 records its convergence as merely 'implicit'.",
+        "notes": "proposed: delete the section, or reduce it to the one fact not already stated - which named declarations are unconditional - and drop 'ready for upstreaming'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.732Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.768Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.130Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.803Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
         },
         "result": "n/a",
         "reviewer": {
@@ -891,182 +1287,12 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
-    ],
-    "trap-negation-contrast": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:06.969Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-rhetorical-pivot": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.008Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-em-dash": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.042Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-triples": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.079Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-closing-aphorism": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.115Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-meta-commentary": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.153Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-thesis-restatement": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.189Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-performed-warmth": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.225Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-superlative": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.261Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
-    ],
-    "trap-nonspeakable": [
-      {
-        "field_hash": {
-          "md": "a60299f6ceeb",
-          "ts": "9713f0396460"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:w00",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-08-21T16:08:07.299Z",
-        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
-        "evidence": "Pure extracted data table (kind=table, 6 compound rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the Delta column is internally consistent as ell(beta) - alpha_shift(I) on all 6 rows (2-2=0, 4-2=2, 6-4=2, 3-3=0, 5-3=2, 6-3=3); pole(beta)=ell(beta) on all 6; |A|/n! is 2/6 for every n=3 row and 4/24 for every n=4 row."
-      }
     ]
   },
   "source_hashes": {
-    "md": "a60299f6ceeb",
-    "ts": "9713f0396460"
+    "md": "4a8f0f1133f5",
+    "ts": "eed1b43fd3a0"
   },
-  "updated_at": "2026-08-21T16:08:07.299Z",
+  "updated_at": "2026-08-22T06:33:41.803Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

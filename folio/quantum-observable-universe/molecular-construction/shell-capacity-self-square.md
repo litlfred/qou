@@ -23,7 +23,7 @@ $$
 
 since $[2\ell+1]_q\big|_{q=1} = 2\ell+1$. The $\mathrm{SO}(4)=\mathrm{SU}(2)\times\mathrm{SU}(2)$ "$(j,j)$ doubling" of the hydrogenic shell is here the self-square $V\otimes V$ of one object. The second factor is a copy of the first, tied by the coproduct. We require no second compact $\mathrm{SU}(2)$. The compact ($\cos/\sin$, root of unity) and non-compact ($\cosh/\sinh$, real $q$) forms are the two real forms of one $\mathfrak{sl}(2,\mathbb{C})$.
 
-The $q=1$ integer identities above are proved in Lean (sum of the first $n$ odd numbers, by induction). The full $q$-deformed self-square, cleared of the denominator $(q - q^{-1})$, is the polynomial identity `qCG_self_square`, proved for every $n$ in the sibling of [The shell state space is the self-square of the angular object](#conj:shell-space-is-self-square). The residual modeling assumption — that the electron shell space is this self-square, rather than the count merely agreeing with it — is recorded as structural input.
+The $q=1$ integer identities above are proved (sum of the first $n$ odd numbers, by induction). The full $q$-deformed self-square, cleared of the denominator $(q - q^{-1})$, is a polynomial identity proved for every $n$; see [The shell state space is the self-square of the angular object](#conj:shell-space-is-self-square). The residual modeling assumption — that the electron shell space is this self-square, rather than the count merely agreeing with it — is recorded as structural input.
 
 | Shell $n$ | $n^2$ | Capacity $2n^2$ | Sub-shells $[2\ell+1]_{q=1}$ |
 |:----------|:------|:----------------|:-----------------------------|

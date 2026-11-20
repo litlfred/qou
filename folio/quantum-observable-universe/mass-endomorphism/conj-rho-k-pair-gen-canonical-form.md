@@ -35,7 +35,7 @@ The Kashaev-limit form (six-term $T_3$) provides the anticipated canonical form.
 |---|---|---|
 | Existence of $f_2$ (any form) | Conjectural | Follows from evaluating mass formula at finite truncation |
 | $f_2 = -\text{Li}_2^q(-\|V_i V_j\|) \cdot z^2$ | Conjectural | Matches six-term $T_3$; derivation pending |
-| Naive log-additive form | Refuted | `rho-k-pair-gen-extension.witness.json` |
+| Naive log-additive form | Refuted | Numerical pair-generator extension |
 | Wedderburn-coupled form | Partial | Correct Wedderburn weights, wrong functional form |
 | Six-term theorem [Unified mass formula: tower + Frobenius co-Casimir correction](../mass-theory/knot-mass-formula-unified.md) | Theorem | Proved independently |
 
@@ -66,49 +66,6 @@ The open requirement is the functional form $f_2$. The naive logarithmic form $\
 
 - [Canonical operator-level lepton-mass-tower formula](../mass-theory/lepton-mass-tower-canonical.md): The lepton-sector variant. It depends on the graded-expansion formalism but evaluates at $Z = N = 0$, nullifying the atomic LO piece. It requires its own dimensional factor $\xi_\ell(q)$.
 - [Mass endomorphism conjecture](mass-endomorphism-conjecture.md): The unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$. The present conjecture restricts this to the pair level.
-
-## Lean formalization
-
-```lean
-namespace QOU.BraidKnot.RhoKPairGenCanonicalForm
-
-/-- The quantum dilogarithm `Li₂^q` as a concrete real function — the
-    Faddeev–Kashaev series, evaluated over `ℝ`. -/
-noncomputable def qDilog (q x : ℝ) : ℝ :=
-  ∑' n : ℕ, x ^ (n + 1) / ((n + 1 : ℝ) * (1 - q ^ (n + 1)))
-
-/-- Markov datum for one atomic braid: the Wedderburn-traced
-    per-generator volumes `|V̂_i|`. -/
-structure AtomicBraid where
-  vols : List ℝ
-
-/-- The measured (CODATA) pair-gen contribution — an external empirical
-    datum, hence an opaque *function* of the braid's Markov data. -/
-axiom physMass : AtomicBraid → ℝ
-
-/-- Pairwise sum `Σ_{i<j} f (vᵢ) (vⱼ)`. -/
-def pairSum (f : ℝ → ℝ → ℝ) : List ℝ → ℝ
-  | [] => 0
-  | v :: vs => (vs.map (f v)).sum + pairSum f vs
-
-/-- The six-term theorem's `T₃` Kashaev-limit functional
-    `f(x, y) = -z² · Li₂^q(-|x·y|)`. -/
-def kashaevT3 (Li2q : ℝ → ℝ) (z x y : ℝ) : ℝ :=
-  -z ^ 2 * Li2q (-(|x * y|))
-
-/-- Conjecture axiomatisation (§3b class, content-bearing). One concrete
-    `T₃` functional recovers every atomic braid's measured pair-gen mass
-    to sub-percent accuracy, uniformly in the braid. **No instance is
-    provided** — that is the open Kashaev-limit derivation. -/
-class PairGenCanonical : Prop where
-  content :
-    ∃ (q z : ℝ), 1 < q ∧
-      ∀ K : AtomicBraid, 0 < physMass K →
-        |pairSum (kashaevT3 (qDilog q) z) K.vols - physMass K| ≤ physMass K / 100
-
-end QOU.BraidKnot.RhoKPairGenCanonicalForm
-```
-
 
 ## Resolution path
 

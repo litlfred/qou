@@ -2,7 +2,7 @@ The mass endomorphism $\mathcal{M}$ carries more information than its real trace
 
 The framework's two nuclear observables serve as the two real shadows of $\mathfrak{V}$. Binding energy forms the real part ($\mathfrak{E}_{\mathrm{bind}} = \mathrm{Re}\mathfrak{V}$). This is the bar-even, $\cosh$, strong channel representing stable binding. The $\beta$-decay $Q$-value forms the imaginary part ($\mathfrak{Q}_\beta = \mathrm{Im}\mathfrak{V}$). This is the bar-odd, $\sinh$, weak channel representing unstable decay.
 
-The unified reconstruction $\mathfrak{E}_{\mathrm{bind}} + i\,\mathfrak{Q}_\beta = \mathfrak{V}$ is formalized in Lean without `sorry`. The physical conjecture asserts that the measured binding and $Q$-value precisely equal these real and imaginary components under a shared normalization.
+The unified reconstruction $\mathfrak{E}_{\mathrm{bind}} + i\,\mathfrak{Q}_\beta = \mathfrak{V}$ is proved. The physical conjecture asserts that the measured binding and $Q$-value precisely equal these real and imaginary components under a shared normalization.
 
 ## Fibre-level caveat
 

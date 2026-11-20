@@ -19,6 +19,7 @@ export default proof({
     requires: ["mpmath", "sympy"],
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Step 1 in `QOU.Torsion.MassTraceIdentity`, Step 2 in `QOU.Torsion.MassTraceMarkov`, on top of the Markov-trace arc `QOU.IwahoriHecke.{QTraceCyclic, MarkovPeel, NegativePeel, MarkovNormalized}`. The descent to braid classes is proved in `QOU.Torsion.MassTraceMarkovClass`: on\n\n (`QOU.QBeta.TemperleyLiebTower`, §T4). That\n\n (`QOU.Mass.KZUnitModulusPrune.exp_I_ne_real_gt_one`, proved). The real" },
     {
       kind: "refined-framing",
       date: "2026-08-09",

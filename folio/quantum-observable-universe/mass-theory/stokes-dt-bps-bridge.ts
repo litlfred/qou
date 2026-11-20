@@ -39,6 +39,7 @@ export default conjecture({
     "open-problem",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): and the field `dt_eq_bps` below stays an assumption\nrather than a citation.\n\n$S^+(0)_{01} = 3$ is machine-checked\nunconditionally.\n\n### Lean axiomatisation\n\nThe bridge is a Lean typeclass `QOU.QBeta.StokesDTBPSBridge` carrying the two\nidentifications as fields:\n\n```lean\nclass StokesDTBPSBridge (Knot : Type*) where\n  stokesConstant : Knot → ℤ\n  dtInvariant    : Knot → ℤ\n  bpsDim         : Knot → ℤ\n  stokes_eq_dt : ∀ K, stokesConstant K = dtInvariant K   -- GGM Conj 3(d)\n  dt_eq_bps    : ∀ K, dtInvariant K   = bpsDim K          -- GPPV\n```\n\nThe fields are the conjecture's *inputs*; no field asserts a value of $A_\\omega$.\nAny instance is the conjecture holding; none is supplied (the general statement is\nopen for every knot, $4_1$ included). Downstream results take\n`[StokesDTBPSBridge Knot]` as an explicit hypothesis and are then fully verified\nby Lean modulo that class instance, following the same pattern as\n[`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)." },
     {
       kind: "status",
       date: "2026-08-02",

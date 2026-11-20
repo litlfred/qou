@@ -1,6 +1,6 @@
 ## Proof (conditional on [Existence of the cyclotomic residue at each filtration level](#conj:gs-residue-at-root-existence))
 
-The conjectural hypothesis, assumed throughout, is the existence of the cyclotomic projections $\pi_n$ on the Habiro completion (the class `ResidueAtRoot` in the Lean encoding); every remaining step is unconditional.
+The conjectural hypothesis, assumed throughout, is the existence of the cyclotomic projections $\pi_n$ on the Habiro completion; every remaining step is unconditional.
 
 The graded Markov trace
 $\mathrm{tr}_{M, \ell}(T_w) \in \mathbb{Q}(q)$ has, by

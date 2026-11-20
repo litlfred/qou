@@ -30,4 +30,7 @@ export default proof({
       "computations/term7-alpha5-crystal-derivation.witness.json",
     ],
   },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (the `abs(i)` reduction in `term7_alpha5_crystal_derivation.py`),\n\n*matching the witness\n[`term7-alpha5-crystal-derivation.witness.json`](\n\ndisjoint-product witness used by `term7_alpha5_crystal_derivation`\nartificially" },
+  ],
 });

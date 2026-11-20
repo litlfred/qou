@@ -8,4 +8,4 @@ $$
 
 *namely $\Phi_q$ is its root-of-unity saddle ($q = e^{2\pi i / N}$) and $\mathrm{Li}_2^q$ its real saddle ($q \in (0, 1)$). The identification is algebraic over $\mathbb{Z}[q^{\pm 1}]$ on both sides; the two contexts differ only by the choice of archimedean saddle.*
 
-The full AJ-conjecture statement, the significance of the unified context-sorting, and the Lean structure are recorded in the [details note](#rem:phi-q-aj-machinery-identification-details).
+The full AJ-conjecture statement, the significance of the unified context-sorting, and the logical structure of the conditional proposition are recorded in the [details note](#rem:phi-q-aj-machinery-identification-details).

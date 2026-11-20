@@ -31,6 +31,3 @@ are small and they act in the same direction:
 | ------ | ---------------------- |
 | order-$\delta_{\mathrm{CS}}^2$ $\to$ all orders | $11.06$ ppb (at either pin) |
 | muon pin $\to$ proton pin | $79.17$ ppb (for either form) |
-
-Reproduce with
-[`alpha_em_form_comparison_probe.py`](../../../computations/alpha/alpha_em_form_comparison_probe.py).

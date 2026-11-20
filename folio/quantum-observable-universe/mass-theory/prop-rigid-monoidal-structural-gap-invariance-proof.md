@@ -94,8 +94,8 @@ $\square$
 
 1. **Convention-independence of $\Delta_{\mathrm{cat}}({}^3\mathrm{He})$.**
    Compute $|\tau(\beta_{{}^3\mathrm{He}})|$ via Hoefsmit seminormal
-   (per-eigenvalue), via `markov_peel` (recursive symbolic), and via
-   `tr_M_via_wenzl_bridge_mpfr` (50 dps Wenzl bridge).  All three
+   (per-eigenvalue), via the recursive symbolic Markov peel, and via
+   the Wenzl bridge at 50 dps.  All three
    should give the same $|\tau|$ to 50 dps; the resulting
    $\Delta_{\mathrm{cat}}$ should be atom-dependent but
    convention-independent.
@@ -113,4 +113,4 @@ $\square$
    $\Delta_{\mathrm{cat}}(Z, N) = \Delta_0(A) + \mathbb{1}_{Z \in \mathrm{magic}} \cdot \Delta_p + \mathbb{1}_{N \in \mathrm{magic}} \cdot \Delta_n$
    with $\Delta_p = \Delta_n$ (the Z$\leftrightarrow$N symmetry constraint).  This
    is the precise content of
-   `conj:magic-shell-stabilization`.
+   the magic-shell stabilization conjecture.

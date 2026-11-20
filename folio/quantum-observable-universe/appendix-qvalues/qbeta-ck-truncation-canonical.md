@@ -49,7 +49,7 @@ change. It is the *value-level* near-matches that do not.
 
 Re-deriving the ladder under D is **not** a substitution of $z_D$ into the
 existing expressions — that is proved invalid
-(`QOU.QBeta.decayLadder_zC_threeRow_ne_zero`). It requires deriving the D-frame
+. It requires deriving the D-frame
 eigenphase first, after which the ansatz above is reusable as it stands and the
 five values are re-extracted from it.
 

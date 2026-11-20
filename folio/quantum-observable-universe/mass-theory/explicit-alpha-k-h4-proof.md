@@ -34,8 +34,7 @@ uniquely determined.
 **canonical evaluation at $q_0$.**  Hoefsmit characters computed via
 [seminormal matrices](#prop:hoefsmit-seminormal-form) (see
 the formal derivation); the $5 \times 5$
-character matrix at $q_0$ is recorded in
-[`wedderburn-orthogonal-r-3-h4.witness.json`](https://github.com/litlfred/qou/blob/main/computations/wedderburn-orthogonal-r-3-h4.witness.json).
+character matrix at $q_0$ is computed numerically.
 
 **Sanity verification** — central character identity at every class:
 
@@ -62,8 +61,7 @@ $\chi_\lambda(r_\lambda) \ne 0$, as identities of rational functions in
 $q$. So the five rows are the basis of class functions dual to the
 irreducible characters, normalised by $c_{(1234)} = 1$ (for $(2,2)$, where
 $c_{(1234)} = 0$, by $c_{(123)} = 1$). The $(1^4)$ row is the $r_3$ of this
-proof; at $q_0$ it reproduces the numerical solution. The check is
-`computations/probes/explicit_alpha_k_h4_exact_check.py`.
+proof; at $q_0$ it reproduces the numerical solution.
 
 **Markov pairing on $r_3$.**  Markov-trace values on the 5 class
 representatives are universal (Markov reduction):

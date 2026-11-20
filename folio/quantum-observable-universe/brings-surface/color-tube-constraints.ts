@@ -15,5 +15,7 @@ export default remark({
     { mime: "image/svg+xml", url: "rendered/color-tube-constraints-2.svg", blockIndex: 2, hash: "8f4af1d0c75c" },
     { mime: "image/svg+xml", url: "rendered/color-tube-constraints-3.svg", blockIndex: 3, hash: "5d19e432fe21" },
   ],
-
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The three shift laws and this transport are machine-checked (`QOU.Mass.ColorTubeSpectralBridge`: `psum1_shift`, `psum2_shift`, `psum3_shift`, `tube_psum1_of_bring`, `tube_psum2_of_bring`, `tube_psum3_of_bring`), as is the corresponding shift for the color tube cubic. Each identity is machine-checked in `QOU.Mass.ColorTubeSpectralBridge` (`shifted_quadric_eq_H2`, `shifted_cubic_eq_H3`, `spacetime_recovery_eq`, packaged as `constraints_spectral_form`)." },
+  ],
 });
