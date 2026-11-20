@@ -28,7 +28,7 @@ $$
   \ln(1 + z\,h) + O(h^3).
 $$
 
-*Ratio.* We form the dimensionless ratio $\mathfrak{Q}_\beta^{\mathrm{A}} / \mathfrak{Q}_\beta^{\mathrm{B}}$ and divide by $E_0$ to cancel $h$ in the leading term:
+*Ratio.* Form the dimensionless ratio $\mathfrak{Q}_\beta^{\mathrm{A}} / \mathfrak{Q}_\beta^{\mathrm{B}}$ and divide by $E_0$ to cancel $h$ in the leading term:
 $$
 \begin{aligned}
 \frac{\mathfrak{Q}_\beta^{\mathrm{A}}}{\mathfrak{Q}_\beta^{\mathrm{B}}}

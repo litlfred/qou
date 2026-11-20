@@ -7,4 +7,4 @@ $$
   \mathrm{rank}\text{-content}(\Phi) \in \mathbb{Z}_{\ge 0}^{|\mathcal{S}|}.
 $$
 
-*We solve this Mixed-Integer Semidefinite Program (MISDP) via continuous SDP relaxation combined with branch-and-cut. This strictly matches the confinement framework at every level of the hierarchy.*
+*Solve this Mixed-Integer Semidefinite Program (MISDP) via continuous SDP relaxation combined with branch-and-cut. This strictly matches the confinement framework at every level of the hierarchy.*

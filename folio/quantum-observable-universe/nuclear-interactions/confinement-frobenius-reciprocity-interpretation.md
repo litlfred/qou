@@ -11,7 +11,7 @@ This proposition provides the master formula for computing numerical predictions
 ## Corollaries
 
 - **Corollary (g_A as an instance).** The axial coupling $g_A = \langle \sigma_A\rangle_{\mathfrak{p}} / \langle \sigma_V\rangle_{\mathfrak{p}}$ of the proton bound state is the ratio of two instances of the master formula at the LP-active set $A^*(\mathcal{B}_3)$.
-- **Corollary (raw conjugation traces are zero-information).** The pattern $\mathrm{tr}_M(\beta \cdot X \cdot \beta^{-1})$ is cyclically equal to $\mathrm{tr}_M(X)$ and independent of $\beta$. We must replace the conjugation pattern with the master formula.
+- **Corollary (raw conjugation traces are zero-information).** The pattern $\mathrm{tr}_M(\beta \cdot X \cdot \beta^{-1})$ is cyclically equal to $\mathrm{tr}_M(X)$ and independent of $\beta$. The conjugation pattern must be replaced with the master formula.
 
 ## Evaluation Protocol
 
