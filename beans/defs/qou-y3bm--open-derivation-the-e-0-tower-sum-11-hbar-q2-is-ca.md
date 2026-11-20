@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:04:21Z
-updated_at: 2026-11-20T15:54:00Z
+updated_at: 2026-11-20T16:01:07Z
 ---
 
 **What is wrong.** `E₀`, the Q_β energy scale, had **two live forms** in
@@ -155,3 +155,11 @@ W13 (2026-11-20, after #8580 merged): the premise is TWO steps, not one.
 1. Ratio: lambda_1 = 1. #8580 proves the fibre operator has [1]_q^2 = 1; open is placement (P), fibre iterate vs archimedean image.
 2. Amplitude (newly isolated): qbeta_e0.tower_summed = Sum_{k>=0} hbar_q^{2k} * E0^(0), i.e. every level contributes E0^(0) itself (k=0 included, weight 1). prop:jet-tower-convergence instead writes m = m^(0) + Sum_{n>=1} hbar_q^{2n} Delta^(n) with Delta^(n) = m^(n)(free) - m^(n)(atom), a BINDING DIFFERENCE. E0 is a single energy scale, not a free-minus-atom difference, so "Delta^(n) for E0" has no definition in the corpus. tower_summed needs Delta^(n) * (mode amplitude) = E0^(0) for every n; that is a definition of E0^(n), not a lemma, and nothing in the corpus supplies it.
 So y3bm cannot be closed by proof until E0^(n) is DEFINED. Options for the owner: (a) define E0^(n) as the level-n jet prolongation of the order-zero formula m_e/(q(q-1)) and derive its level dependence; (b) keep tower_summed canonical by ruling, scoped as such (current state); (c) revert to order-zero. Stays todo.
+
+W13 (2026-11-20, owner chose option (a) "define + derive E0^(n)"). Measured before building:
+- E0^(0) = m_e/(q(q-1)) is itself NOT derived from a categorical object. It is a dimensional ansatz in remarks only: rem:energy-scale-planck (nuclear-interactions/energy-scale-planck.md:5-15, "rest energy per Planck time") interpreting rem:beta-decay-energy-scale; Lean QOU.Interactions.QBetaEnergyScale.E0 (qbeta_energy_scale.lean:64) and hadronicScaleE0 (NucleonWeightSpaceTwoTerm.lean:682) are bare defs. So there is no categorical E0 object to jet-prolong; a "derived" E0^(n) needs E0^(0) derived first.
+- m^(n) (the level-n mass the jet-tower sums differences of) is never defined anywhere.
+- Inconsistency: jet-tower-uniform-delta-max.md:9 says the measured Delta^(n) decays by exactly hbar_q^2 per level, which would make the tower Sum hbar^{4n} — contradicting lambda_1 = 1.
+- Existing cumulative E0^(N) = E0^(0) Sum_{k<=N} hbar^{2k} (q_beta_form_a_n1_extension.py:29-50) is the same assumption truncated.
+- Sibling bean qou-mc6a (needs-owner): L_q choice moves E0 by -0.885% .. +9.9%.
+Next honest step for (a): derive E0^(0) itself (from the counit / Markov trace / archimedean functor) before any level-n definition. Stays todo.
