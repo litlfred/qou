@@ -80,7 +80,8 @@ class WeakSpectralCompleteness (R : Type*) [Field R] where
   EWAlgebra : Type*
   /-- `EWAlgebra` is a (possibly non-commutative) ring. -/
   ring_EWAlgebra : Ring EWAlgebra
-  /-- The six per-link block projectors `e_W^±, e_Z^±, e_H^±`. -/
+  /-- The six per-link block projectors `e_W^±, e_Z^±, e_{T(2,8)}^±`
+      (the `T(2,8)` pair is not the Higgs idempotent `e_H` of (G-4)). -/
   projector : Fin 6 → EWAlgebra
   /-- **Conjectural categorical completeness.**  Each projector is
       idempotent and distinct projectors are orthogonal — the
