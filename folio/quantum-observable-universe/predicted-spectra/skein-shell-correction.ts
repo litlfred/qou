@@ -18,4 +18,7 @@ export default remark({
     "binding-energy",
   ],
   uses: ["rem:elliptic-stability-locus"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This establishes a connection to the [elliptic stability conjecture](#rem:elliptic-stability-locus)." },
+  ],
 });
