@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-11-17T11:01:49Z
+updated_at: 2026-11-20T08:27:17Z
 parent: qou-c8p8
 ---
 
@@ -62,3 +62,9 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F3, §H2,
 - Verified with 80-dps `mpmath` probe and 2-commit witness stamp (`COMMIT1 = b0bb4be019c48c6d750a29bf091882a789b109a9`, `COMMIT2 = 74c1cf2230253f7a4d2cbdca2850c03f0413149f`, `scriptHash = a7de56fcc07c`, `allPassed = true`).
 - Opened PR https://github.com/litlfred/qou/pull/8320 (`ready-to-merge`, `release`, `ready: 74c1cf2230253f7a4d2cbdca2850c03f0413149f`).
 - Keeping bean at `status: in-progress` pending merge and verification.
+
+## 2026-11-20 — W10 (qou-c8p8 workstream)
+
+Stalled-claim takeover by W10 (session_01VQDpPeWFnvbDUN18UJ6CyC, PR #8530): prior claim's backing branch had no commit for >3 h (lane-e667 branches last pushed 2026-11-17). The lane-e667 'Progress Update' sections above refer to unmerged bundle PRs and are NOT the closure.
+
+Fix landed on branch in PR #8530 (`5dc586ac0`): both false citations corrected (:10 MFDeriv, and :332 `Mathlib.Analysis.NormedSpace.LieAlgebra`, which does not exist at the pin). Complete on merge.

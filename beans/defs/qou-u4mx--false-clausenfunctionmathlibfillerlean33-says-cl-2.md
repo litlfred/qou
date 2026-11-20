@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-11-17T10:33:06Z
+updated_at: 2026-11-20T08:27:17Z
 parent: qou-c8p8
 ---
 
@@ -56,3 +56,9 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F4, §H9.
 - **80-dps Probe & 2-Commit Witness:** `computations/probes/alternating_three_form_primary_factor_upper_half_plane_catalan_clausen_symmetry_probe.py` + `computations/probes/alternating-three-form-primary-factor-upper-half-plane-catalan-clausen-symmetry.witness.json` (`scriptHash = 0ee532c9f9a2`, `scriptCommitSha = 0caff4971a8a2c0d7aec04c9a5a8e20f7218d2b3`, `allPassed = True`).
 - **Adversarial Cross-Review (Round 61):** Verified `litlfred/qou#8285` (`250465c60a6cea44d9f569e88cc79ee2c8d8051b`, `0` advisories on all 5 added theorems, valid witness `39a564805d3e`) and `litlfred/qou#8299` (`7794a07bbdcd4212b670d7ed777098efe60dc9a4`, `0` advisories, valid witness `001b12183bba`).
 - **Status:** Kept at `in-progress` pending Merge Manager verification and merge.
+
+## 2026-11-20 — W10 (qou-c8p8 workstream)
+
+Stalled-claim takeover by W10 (session_01VQDpPeWFnvbDUN18UJ6CyC, PR #8530): prior claim's backing branch had no commit for >3 h (lane-e667 branches last pushed 2026-11-17). The lane-e667 'Progress Update' sections above refer to unmerged bundle PRs and are NOT the closure.
+
+Fix in PR #8530 (`3f760c059`): header now cites the termwise proofs `Cl_2_add_two_pi` / `Cl_2_neg` (BlochWignerLobachevsky.lean:135,144). Complete on merge.

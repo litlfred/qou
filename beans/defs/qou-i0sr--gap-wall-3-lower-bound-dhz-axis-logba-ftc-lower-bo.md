@@ -1,13 +1,13 @@
 ---
 # qou-i0sr
 title: 'GAP WALL-3 lower bound: dH(z-axis) ≥ |log(b/a)| (FTC lower bound)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:02:37Z
-updated_at: 2026-11-17T10:22:29Z
+updated_at: 2026-11-20T08:27:17Z
 parent: qou-c8p8
 ---
 
@@ -76,3 +76,9 @@ Was in-progress with no bean update since 2026-08-16 and no main commit naming i
 - **80-dps Probe & 2-Commit Witness:** `computations/probes/annulus_winding_log_counting_lie_curvature_hemisphere_inversion_z_axis_bound_probe.py` + `computations/probes/annulus-winding-log-counting-lie-curvature-hemisphere-inversion-z-axis-bound.witness.json` (`scriptHash = 001b12183bba`, `scriptCommitSha = a21b136d3f122bac6df50bab417b7232ca55064f`, `allPassed = True`).
 - **Adversarial Cross-Review (Round 60):** Verified `litlfred/qou#8291` (`97f9ffaed50b1b3971470d9bc651293cd4f935e3`, `0` advisories) and remediated `1 major, 1 advisory` borrowed-name findings on sibling PR `litlfred/qou#8277`, pushing `845c943537ff3112ef1cadf49f54381fb96fcb38` and posting `ready: 845c943537ff3112ef1cadf49f54381fb96fcb38` (`https://github.com/litlfred/qou/pull/8277#issuecomment-6945121466`).
 - **Status:** Kept at `in-progress` pending Merge Manager verification and merge.
+
+## 2026-11-20 — W10 (qou-c8p8 workstream)
+
+Stalled-claim takeover by W10 (session_01VQDpPeWFnvbDUN18UJ6CyC, PR #8530): prior claim's backing branch had no commit for >3 h (lane-e667 branches last pushed 2026-11-17). The lane-e667 'Progress Update' sections above refer to unmerged bundle PRs and are NOT the closure.
+
+Subject proved on main: `dH_zpt_ge` (HyperbolicGeodesicZAxis.lean:163). Re-checked 2026-11-20, axioms clean.
