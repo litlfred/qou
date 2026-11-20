@@ -2,22 +2,24 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-atom-knot-mass-derivation",
+  "@id": "papers/quantum-observable-universe/blocks/rem-atom-knot-mass-derivation-proof-sketch",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:atom-knot-mass-derivation-proof-sketch",
-  "kind": "proof",
-  "title": "Proof of the end-to-end mass derivation $B = \\rho \\cdot m_e \\cdot \\mathrm{Vol}_{\\mathrm{hyp}}(\\widehat{T_w})$",
+  "kind": "remark",
+  "title": "Proof sketch: the end-to-end mass derivation $B = \\rho \\cdot m_e \\cdot \\mathrm{Vol}_{\\mathrm{hyp}}(\\widehat{T_w})$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-atom-knot-mass-derivation",
+    "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation",
     "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
     "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation",
   "cites": [
     "references/gromov1982",
     "references/kashaev1997",

@@ -22,4 +22,7 @@ export default proposition({
     "gs-filtration",
     "narrative-replacement",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): axiomatised as the Lean class `ResidueAtRoot` (fields: the target ring family and the projection ring homomorphism). Conditional on an instance of that class, ..." },
+  ],
 });

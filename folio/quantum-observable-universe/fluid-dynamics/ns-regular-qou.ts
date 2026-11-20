@@ -28,6 +28,7 @@ export default definition({
     "categorical",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The global-surface definition $\\deg e(\\xi) = \\chi(A)$ is (matching `QOU.FluidDynamics.qou_ns_in_qou`)." },
     {
       kind: "refined-framing",
       date: "2026-11-15",

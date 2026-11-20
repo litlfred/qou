@@ -23,7 +23,8 @@ DEFINITIONS (all syntactic; this is a text scanner, not Lean elaboration)
   `example` or `theorem` whose RESULT TYPE head is the carrier's name (short or
   qualified). The result type is the text after the last depth-0 `:` of the
   declaration header (the header ends at `:=` or a trailing `where`).
-  `instance : Nonempty X` does not count: the head is `Nonempty`.
+  A result type `Nonempty (X ...)` also counts: such a declaration is proved
+  by exhibiting a term. Universe annotations (`X.{0, 0}`) are stripped.
 * **toy-only** — inhabited, but every inhabiting header names `Unit`, `PUnit`,
   `Fin 1`, `Empty` or `PEmpty` as an argument.
 * **consumer** — a declaration header (in any file) that mentions the carrier
@@ -78,6 +79,9 @@ CALIBRATION = {
     "QOU.Archimedean.UpstreamAdditions.Cl_2_DoubleAngle": "inhabited",  # instCl_2_DoubleAngle
     "QOU.MathlibExt.QPlancherel.HasQPlancherelCLT": "uninhabited",  # no instance anywhere
     "QOU.BraidKnot.YoungTableauStandard.SkewStandardYoungTableau": "inhabited",  # SkewSYTBranchingBijection
+    # the two blind spots the 2026-11-20 top-80 triage found:
+    "QOU.AppendixSurreals.SurrealField": "inhabited",   # def ... : SurrealField.{0, 0} R*
+    "QOU.Torsion.VacuumState": "inhabited",             # vacuum_state_exists : Nonempty ...
 }
 
 
@@ -182,10 +186,18 @@ def scan():
                                   "line": i + 1, "prop_fields": n_prop, "fields": len(fields)}
             elif kw in ("instance", "def", "abbrev", "theorem", "lemma", "example"):
                 rt = result_type(hdr)
+                # `Nonempty (X ...)` proved by construction is inhabitation evidence
+                # (blind spot 2, found by the 2026-11-20 top-80 triage).
+                nm2 = re.match(r"Nonempty\s*\(?\s*", rt)
+                if nm2:
+                    rt = rt[nm2.end():]
                 hm = IDENT.match(rt)
                 if hm:
-                    evidence[hm.group(0).split(".")[-1]].append(
-                        {"file": rel, "line": i + 1, "toy": bool(TOY.search(rt)), "head": hm.group(0)})
+                    # strip a trailing `.` left by a universe annotation such as
+                    # `SurrealField.{0, 0}` (blind spot 1).
+                    head = hm.group(0).rstrip(".")
+                    evidence[head.split(".")[-1]].append(
+                        {"file": rel, "line": i + 1, "toy": bool(TOY.search(rt)), "head": head})
     for rel, line, hdr in headers_all:
         for nm in set(re.findall(r"[\[(\{]\s*(?:[\w'’]+\s*:\s*)?([A-Za-z_][\w.'’]*)", hdr)):
             consumer_hits[nm.split(".")[-1]] += 1

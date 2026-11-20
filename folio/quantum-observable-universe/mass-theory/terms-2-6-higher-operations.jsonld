@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-terms-2-6-higher-operations",
+  "@id": "papers/quantum-observable-universe/blocks/conj-terms-2-6-higher-operations",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:terms-2-6-higher-operations",
-  "kind": "proposition",
+  "kind": "conjecture",
   "title": "Terms 2 and 6: infinite Wedderburn / Habiro-cyclotomic sum and GB root-of-unity residue sum",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-spectral-sequence-h3-explicit"
+    "papers/quantum-observable-universe/blocks/conj-spectral-sequence-h3-explicit"
   ],
   "tags": [
     "spectral-sequence",
@@ -28,7 +29,7 @@
     "term-2",
     "term-6"
   ],
-  "leanRef": "qou:QOU.BraidKnot.terms_2_6_higher_operations",
+  "leanRef": "qou:QOU.BraidKnot.Terms26HigherOperations",
   "text": "terms-2-6-higher-operations.md",
   "provenance": "authored"
 }

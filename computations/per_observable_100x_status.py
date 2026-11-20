@@ -109,11 +109,31 @@ _MU_QUOTED = (
 # m_e·Vol(4_1)/ℏ_q² value carried by the committed
 # per-observable-100x-status.witness.json (2026-05-28 re-pin).
 # AGENTS.md §"q₀ anchor convention" STRICT rule 1.
-_M_MU_PRED_PROTON_MEV = mpf("105.658397811")
+#
+# 2026-11-20: the frozen literal mpf("105.658397811") that stood here is
+# replaced by a DERIVATION at the package's default (one-term proton) pin,
+# read from qou_substrate.constants directly so no manifest rebinding can
+# turn it into the muon tautology. Precision fix only: at the one-term pin
+# the derived value rounds to the old literal (checked when this landed).
+def _m_mu_pred_at(q_str: str) -> mpf:
+    from qou_substrate.constants import vol_4_1_at as _vol
+    with mp.workdps(max(70, mp.dps)):
+        q = mpf(q_str)
+        return mpf(str(M_E_MEV)) * _vol(70) / ((q - 1) / q) ** 2
+
+
+def _proton_pin_strings() -> tuple[str, str]:
+    """(one-term DEFAULT pin, two-term COMPARISON pin), both 50 digits."""
+    from qou_substrate import constants as _qc
+    return _qc.Q_50_DIGIT_STR, _qc.Q_PROTON_TWO_TERM_50_DIGIT_STR
+
+
+_M_MU_PRED_PROTON_MEV = _m_mu_pred_at(_proton_pin_strings()[0])
 _M_MU_PRED_SOURCE = (
-    "PINNED proton-anchored prediction (m_e·Vol(4_1)/ℏ_q² at the m_p/m_e "
-    "re-pinned q₀, 2026-05-28); decoupled from the muon-flipped Borromean "
-    "muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1"
+    "DERIVED proton-anchored prediction m_e·Vol(4_1)/ℏ_q² at the package "
+    "default one-term proton pin (m_p/m_e re-pin 2026-05-28); never read from "
+    "the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md "
+    "§q₀-anchor STRICT rule 1"
 )
 
 # Observable registry: (codata_value, codata_err, role, source_label)
@@ -661,8 +681,28 @@ def _qbeta_ruled_base() -> dict:
         (COMPUTE_DIR / "qbeta" / "qbeta-option-e-required-level.witness.json"
          ).read_text())
     _cand = _CENSUS["data"]["per_candidate"]
-    _ELEMENT = "nuc11_interleaved"
-    tr_M = mpf(_cand[_ELEMENT]["tr_conv_D"])
+    # 🟧 OWNER RULING 2026-11-20 (Carl, D1 = A, PR #8586): the SCORED Q_beta is
+    # the T^3 weight split of the z_D trace on the gamma-gamma + reading-3 base
+    # V^3, V = sigma_0 sigma_1^{-1}:
+    #     eps_flavour(V^3) = Tr(K^{(x)3} V^3)|_{W_n} - ...|_{W_p}, / [2]^3
+    #                      = (q^2 - 1) P(q) / (q^4 (q^2 + 1)^3),
+    #     P(q) = q^12 - 3q^10 + 3q^8 - 5q^6 + 3q^4 - 3q^2 + 1
+    # (global [2]^3 normalisation; Lean QOU.QBeta.FlavourWeightSplit, exactly
+    # bar-odd), Q_beta = |eps_flavour(V^3)| * E0_tower at the proton q0.
+    # This RESOLVES the element conflict recorded below (nuc11_interleaved
+    # 0.6519 MeV on this row vs delta_S 0.4491 MeV in the content blocks):
+    # both stay as labelled UNSCORED history cells. NOT chosen by residual --
+    # it undershoots CODATA by 58 %, further than either superseded cell; it is
+    # scored because the owner ruled the functional and the element.
+    # The element V^3 is the cost-minimal gamma-gamma word surviving reading 3
+    # (PR #8564, GammaGammaSdpQBetaBase.frobeniusSelected_ten_unique).
+    _ELEMENT = "V^3"
+    _P = (q ** 12 - 3 * q ** 10 + 3 * q ** 8 - 5 * q ** 6 + 3 * q ** 4
+          - 3 * q ** 2 + 1)
+    eps_flavour = (q ** 2 - 1) * _P / (q ** 4 * (q ** 2 + 1) ** 3)
+    tr_M = eps_flavour
+    _HIST = "nuc11_interleaved"
+    _tr_M_nuc11 = mpf(_cand[_HIST]["tr_conv_D"])
     # tr^{z_D}(Delta_S) = h^2/2 - z_D*h exactly (h = q - 1/q), kept so the
     # superseded cell stays reproducible and the delta is measurable.
     _tr_M_delta_S = q ** 2 / 2 - q * z_D - 1 + z_D / q + 1 / (2 * q ** 2)
@@ -685,16 +725,21 @@ def _qbeta_ruled_base() -> dict:
     # So: calibrate the TRACE against the recorded cell at the E_0 that cell was
     # computed with, then publish at the CANONICAL E_0. One check per claim.
     adm = _functional_admissibility_check()
-    # Calibrate against the CENSUS witness's own recorded pct for the element
-    # actually scored -- not against the Delta_S cell, which is a different
-    # element. Both are at order-zero E_0, so the trace/E_0 separation below
-    # still holds.
-    recorded = _cand[_ELEMENT]["pct_D"]
+    # Calibrate against the flavour-split probe witness's own recorded V^3
+    # cell (computed there at the canonical tower E_0, same q0). Since
+    # 2026-11-20 the scored element is V^3 (owner D1 = A); the nuc11 census
+    # cell is history and no longer the calibration target.
+    _FW = json.loads(
+        (COMPUTE_DIR / "probes" / "qbeta_flavour_weight_split"
+         / "qbeta-flavour-weight-split.witness.json").read_text())
+    _fw_v3 = next(r for r in _FW["data"]["qbeta_table"] if r["element"] == "V^3")
+    recorded = _fw_v3["vs_codata_pct"]
+    recorded_Q = mpf(_fw_v3["Q_beta_MeV"])
     err_pct = (pred - Q_BETA_MEV) / Q_BETA_MEV * 100
     err_pct_order_zero = (pred_order_zero - Q_BETA_MEV) / Q_BETA_MEV * 100
-    calibrated = False
-    if recorded is not None:
-        calibrated = abs(err_pct_order_zero - mpf(str(recorded))) < mpf("1e-4")
+    calibrated = (abs(pred / recorded_Q - 1) < mpf("1e-20")
+                  and abs(eps_flavour - mpf(_fw_v3["eps_flavour"]))
+                  < mpf("1e-30"))
     return {
         "Q_beta_MeV": fmt(pred),
         "markov_parameter": "z_D = q^3/(q^2+1)",
@@ -708,11 +753,38 @@ def _qbeta_ruled_base() -> dict:
         "err_pct": fmt(err_pct),
         "err_pct_at_order_zero_E0": fmt(err_pct_order_zero),
         "recorded_err_pct_in_probe_witness": recorded,
-        "calibration_compares": "err_pct_at_order_zero_E0 vs the recorded cell -- "
-                                "the cell was computed at order-zero E_0, so "
-                                "calibrating the published (tower-E_0) value "
-                                "against it would conflate the trace with the "
-                                "E_0 choice and fail by ~0.56 points",
+        "calibration_compares": "Q_beta_MeV (tower E_0) and eps_flavour(V^3) "
+                                "vs the V^3 cell of "
+                                "probes/qbeta_flavour_weight_split/"
+                                "qbeta-flavour-weight-split.witness.json "
+                                "(same q0, same E_0 form)",
+        "functional": "eps_flavour(V^3) = T^3 weight split of the z_D trace "
+                      "Tr(K^{(x)3} .)/[2]^3 on W_n - W_p (global [2]^3 "
+                      "normalisation) = (q^2-1)P(q)/(q^4(q^2+1)^3)",
+        "eps_flavour_V3": fmt(eps_flavour),
+        "ruling_D1": "owner 2026-11-20 (Carl), D1 = A: adopt the T^3 weight "
+                     "split as the SCORED Q_beta (PR #8586)",
+        "ruling_D2": "owner 2026-11-20, D2 = Q_beta: |eps_flavour(V^3)|*E0 is "
+                     "Q_beta, not m_n - m_p; the m_n - m_p sign (neutron "
+                     "sector smaller under mass ~ trace) stays OPEN",
+        "unscored_history_cells": {
+            "nuc11_interleaved (scored 2026-09-12 .. 2026-11-20)": {
+                "Q_beta_MeV": fmt(abs(_tr_M_nuc11)
+                                  * _e0_canonical(q=q, m_e=M_E_MEV)),
+                "err_pct": fmt((abs(_tr_M_nuc11)
+                                * _e0_canonical(q=q, m_e=M_E_MEV)
+                                - Q_BETA_MEV) / Q_BETA_MEV * 100),
+                "status": "unscored history (superseded by owner D1 = A)",
+            },
+            "delta_S (content blocks until 2026-11-20)": {
+                "Q_beta_MeV": fmt(abs(_tr_M_delta_S)
+                                  * _e0_canonical(q=q, m_e=M_E_MEV)),
+                "err_pct": fmt((abs(_tr_M_delta_S)
+                                * _e0_canonical(q=q, m_e=M_E_MEV)
+                                - Q_BETA_MEV) / Q_BETA_MEV * 100),
+                "status": "unscored history (superseded by owner D1 = A)",
+            },
+        },
         "calibrated_against_probe_witness": bool(calibrated),
         "ck_rungs_applied": 0,
         "ladder_on_admissible_base_exists": False,
@@ -783,8 +855,12 @@ def _qbeta_ruled_base() -> dict:
         # So the figure is scoped twice over, not once: no ladder (above), AND
         # an element whose 5 free letters have no derived constraint. Do not read
         # it as the framework's Q_beta.
-        "element_scored": _ELEMENT + " (gamma-gamma-selected nucleon word)",
-        "element_is_ruled": False,
+        "element_scored": _ELEMENT + " = (sigma_0 sigma_1^-1)^3 (gamma-gamma + "
+                                     "reading-3 cost-minimal word, PR #8564)",
+        "element_is_ruled": True,
+        "element_is_ruled_since": "2026-11-20 (owner D1 = A, PR #8586); was "
+                                  "False for nuc11_interleaved 2026-10-11 .. "
+                                  "2026-11-20",
         # Corpus-derived cross-reference (2026-11-20): the CONTENT BLOCKS score a
         # DIFFERENT element on the same ruled base. `mass-comparison-table.md:33`
         # and `neutron-qvalue-symbolic.md:53` state Q_beta^{z_D} =
@@ -793,9 +869,14 @@ def _qbeta_ruled_base() -> dict:
         # Both are on main at once. Recorded, NOT resolved: which element is
         # canonical is an owner decision (bean qou-99qc), and choosing by
         # residual is forbidden.
-        "content_blocks_element": "delta_S (0.4491 MeV, tower E0; mass-comparison-table.md, neutron-qvalue-symbolic.md)",
-        "element_conflict_open": "qou-99qc",
-        "element_ruled_status": "partial",
+        "content_blocks_element": "V^3 since 2026-11-20 (were delta_S 0.4491 MeV, tower E0; mass-comparison-table.md, neutron-qvalue-symbolic.md)",
+        "element_conflict_open": None,
+        "element_conflict_resolved": "resolved by owner ruling 2026-11-20 (D1 = A): "
+                                     "scored element V^3 with eps = T^3 weight "
+                                     "split; nuc11_interleaved and delta_S kept "
+                                     "as unscored history cells",
+        "element_ruled_status": "ruled (V^3, owner D1 = A 2026-11-20)",
+        "element_ruled_status_history": "partial",
         "element_ruled_status_rationale": (
             "6/11 letters (the core (sigma_0 sigma_1^-1)^3) are gamma-gamma-"
             "reachable, and even those are conditional on the provisional "
@@ -810,9 +891,13 @@ def _qbeta_ruled_base() -> dict:
         # they are what the parity bound in the comment above measures. Kept
         # ALONGSIDE the boolean so no consumer breaks. 6 + 5 = 11 letters.
         "element_ruled_letters": 6,
-        "element_census_letters": 5,
+        "element_census_letters": 0,
+        "element_letters_history_nuc11": {"ruled": 6, "census": 5},
         "element_ruled_scope": (
-            "the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma "
+            "V^3 = (sigma_0 sigma_1^-1)^3: all 6 letters are three "
+            "gamma-gamma vertices, selected by confinement reading 3 as the "
+            "cost-minimal survivor (PR #8564). HISTORY (nuc11_interleaved, "
+            "scored until 2026-11-20): the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma "
             "vertices. The 3-letter quark block is odd and the 2-letter gluon "
             "pair has both letters positive, so neither is gamma-gamma "
             "reachable -- gammaGamma_length_even, sorry-free. qou-ales says "
@@ -824,9 +909,11 @@ def _qbeta_ruled_base() -> dict:
                              "GammaGammaWordSelection.vertex on main (a "
                              "gamma-gamma word's 2nd letter is negative, which "
                              "excludes the gen-grouped core)",
-        "element_superseded": "delta_S (short NF) -- census-derived, "
-                              "inadmissible under the gamma-gamma ruling; its "
-                              "cell was -43.157175%",
+        "element_superseded": "nuc11_interleaved (scored 2026-09-12 .. "
+                              "2026-11-20) and delta_S (short NF, "
+                              "census-derived; cell -43.157175% at "
+                              "order-zero E_0) -- both unscored history "
+                              "since owner D1 = A 2026-11-20",
         "Q_beta_MeV_on_superseded_delta_S": fmt(
             abs(_tr_M_delta_S) * _e0_canonical(q=q, m_e=M_E_MEV)),
         "element_ordering_proof_open_in": "PR #7212 (Lean lemma for the "
@@ -838,8 +925,9 @@ def _qbeta_ruled_base() -> dict:
             "nuc11 interleaved (gamma-gamma-selected per PR #7212, OPEN)": "-17.496",
             "nuc11 gen-grouped": "-15.451",
         },
-        "element_tracked_by": "qou-99qc (the Delta/eps fork, open); "
-                              "PR #7212 narrows the nucleon-word branch",
+        "element_tracked_by": "qou-99qc (eps question stays open per rule "
+                              "13a: 58 % miss, beyond the ladder cap, and a "
+                              "sign problem under mass ~ trace)",
     }
 
 
@@ -903,9 +991,10 @@ def _inherited_qbeta_scope(conv: dict, adm: dict,
         parts.append(
             f"INHERITS THE RULED Q_beta BASE: this value is "
             f"m_p(substrate) + Q_beta + m_e, and the Q_beta term is now "
-            f"|tr_M(Delta_S)(z_D)|*E0 at z_D = q^3/(q^2+1) -- the functional the "
-            f"owner ruled on 2026-09-08 (convention D, two-row truncation, D7), "
-            f"re-scored here on the 2026-09-12 authorisation. IT CARRIES ZERO "
+            f"|eps_flavour(V^3)|*E0, the T^3 weight split of the z_D = "
+            f"q^3/(q^2+1) trace on the gamma-gamma base V^3 (owner ruling "
+            f"2026-11-20, D1 = A; z_D itself ruled 2026-09-08, D7). It "
+            f"replaced the nuc11_interleaved cell on 2026-11-20. IT CARRIES ZERO "
             f"c_k RUNGS: no ladder has been derived on an admissible base "
             f"(qou-cds1, blocked on the phase qou-pdix), and on the retired "
             f"z = 1 base the five rungs bought ~4.5 orders. So this row is NOT "
@@ -1198,51 +1287,29 @@ def main() -> dict:
             _adm_note = ""
             if _ruled["calibrated_against_probe_witness"]:
                 _adm_note = (
-                    f" 🟧 SCORED ON THE RULED BASE, ZERO c_k RUNGS. The owner "
-                    f"ruled 2026-09-08 that eps in Q_beta = |eps(Delta)|*E0 is the "
-                    f"Markov trace at z_D = q^3/(q^2+1) (convention D, the two-row "
-                    f"truncation -- D7), and authorised this re-score 2026-09-12 "
-                    f"with the price measured first "
-                    f"({_ruled['price_witness']}). This row is now "
-                    f"|tr_M(Delta_S)(z_D)|*E0 evaluated from q0 alone -- no CODATA "
-                    f"in the value -- and calibrated against "
-                    f"{_adm.get('source_witness')} (recorded cell "
-                    f"{_ruled['recorded_err_pct_in_probe_witness']}%). "
-                    f"🛑 IT IS A BASE: no c_k ladder has been derived on an "
-                    f"admissible base (qou-cds1, blocked on the phase qou-pdix), so "
-                    f"do NOT read this as convention D's accuracy. WHAT IT REPLACED, "
-                    f"for comparison only: the laddered value on the RETIRED z = 1 "
-                    f"cell was {fmt(Q_pred_laddered_z1, 12)} MeV (err 0.16776% base, "
-                    f"~1279 ppb after five rungs) -- z = 1 is the coordinate sum and "
-                    f"is provably NOT an admissible root under D (roots: "
-                    f"{', '.join(_adm.get('admissible_roots_under_D') or [])}; "
-                    f"ConventionDAdmissibleRoots.lean, sorry-free). On the retired "
-                    f"base the ladder bought ~4.5 orders, so a z_D ladder could move "
-                    f"this row a long way; a SECOND re-score is authorised once "
-                    f"qou-pdix closes (bean qou-iagg). The ruled cell is also "
-                    f"3.4609x farther from CODATA than the augmentation (z = q), "
-                    f"which is admissible but is the finer one-row truncation and is "
-                    f"NOT convention D -- recorded because a referee will notice, "
-                    f"not as an argument: ranking cells by residual is the "
-                    f"selection-against-the-target the anti-fit directive forbids. "
-                    f"🛑 AND THE ELEMENT IS RULED IN "
-                    f"{_ruled['element_ruled_letters']} OF ITS "
-                    f"{_ruled['element_ruled_letters'] + _ruled['element_census_letters']} "
-                    f"LETTERS, NOT IN ALL OF THEM: this row scores Delta = "
-                    f"{_ruled['element_scored']}, selected over nuc11 gen-grouped "
-                    f"by the gamma-gamma word-selection ruling (qou-ales). But "
-                    f"that word is ELEVEN letters and every gamma-gamma word has "
-                    f"EVEN length (gammaGamma_length_even, sorry-free), so the "
-                    f"ruling reaches only the 6-letter core and provably cannot "
-                    f"reach the 3-letter quark block (odd) or the 2-letter gluon "
-                    f"pair (both letters positive). 5 of 11 letters are still "
-                    f"census-derived, which is what qou-ales asks not to use. The "
-                    f"corpus carries FOUR candidate Delta, all undershooting at "
-                    f"z_D (order-zero E_0) -- delta_S -43.157%, nuc9 -30.936%, "
-                    f"nuc11 interleaved -17.496% (this row, -16.678% on the "
-                    f"canonical tower E_0), nuc11 gen-grouped -15.451%. So the "
-                    f"figure is scoped TWICE: no ladder, and 5 element letters "
-                    f"with no derived constraint ({_ruled['element_tracked_by']})."
+                    f" 🟧 SCORED ON THE OWNER-RULED T^3 WEIGHT SPLIT (D1 = A, "
+                    f"2026-11-20), ZERO c_k RUNGS. Q_beta = |eps_flavour(V^3)|*E0, "
+                    f"eps_flavour = T^3 weight split of the z_D = q^3/(q^2+1) "
+                    f"trace Tr(K^(x)3 .)/[2]^3 on W_n - W_p (global [2]^3 "
+                    f"normalisation) = (q^2-1)P(q)/(q^4(q^2+1)^3), element "
+                    f"V^3 = (sigma_0 sigma_1^-1)^3 (gamma-gamma + reading 3, "
+                    f"PR #8564), tower E_0, proton q0 -- evaluated from q0 alone, "
+                    f"no CODATA in the value, calibrated against "
+                    f"probes/qbeta_flavour_weight_split (recorded "
+                    f"{_ruled['recorded_err_pct_in_probe_witness']}%). Lean: "
+                    f"QOU.QBeta.FlavourWeightSplit (exactly bar-odd). "
+                    f"🛑 SCOPE: this is a BASE with no ladder, and it is "
+                    f"OUTSIDE the ladder cap (F_required ~ 2.40 > 1, "
+                    f"LadderFactorBound), so no c_k ladder of the cos-form can "
+                    f"close it. The value was NOT blind (np-splitting audit "
+                    f"2026-11-15 §18/§21 already recorded 0.3254 MeV). "
+                    f"D2 (owner 2026-11-20): this number is Q_beta, not "
+                    f"m_n - m_p. UNSCORED HISTORY: nuc11_interleaved "
+                    f"(scored 2026-09-12 .. 2026-11-20, 0.6519 MeV) and delta_S "
+                    f"(content blocks, 0.4491 MeV) -- see "
+                    f"qbeta_ruled_base.unscored_history_cells. The retired "
+                    f"z = 1 laddered value was {fmt(Q_pred_laddered_z1, 12)} MeV. "
+                    f"eps itself stays open ({_ruled['element_tracked_by']})."
                 )
             elif _adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
                 _adm_note = (
@@ -1528,22 +1595,16 @@ def main() -> dict:
     _mn_sub_2term_err_ppb = (_mn_sub_2term - _mn_codata) / _mn_codata * mpf("1e9")
     _mn_sub_reduction_pct = (1 - abs(_mn_sub_2term_err_ppb) / abs(_mn_sub_1term_err_ppb)) * 100
 
-    # Linearised 2-term proton-pin shift on m_mu from d(m_p^QCD/m_e)/dq and d(m_mu/m_e)/dq at q0:
-    _vol41 = 2 * mp.clsin(2, _pi / 3)
-    _dq_fd = q0 * mpf("1e-25")
-
-    def _mp_qcd_ratio_at(qq: mpf) -> mpf:
-        _h = qq - 1 / qq
-        _tr = abs((4 + _h ** 2 - 3 * (_h ** 4) - (_h ** 6)) / (_h ** 2 + 4))
-        _qint2 = (qq ** 2 - qq ** (-2)) / _h
-        _qint3 = (qq ** 3 - qq ** (-3)) / _h
-        _fbor = _tr * _qint2 * _qint3 / (qq ** 3)
-        return 2 * (_vol41 / (((qq - 1) / qq) ** 2)) * _fbor - 12
-
-    _dmp_dq = (_mp_qcd_ratio_at(q0 + _dq_fd) - _mp_qcd_ratio_at(q0 - _dq_fd)) / (2 * _dq_fd)
-    _dq_2term_plain = -(_mp_qed_plain / m_e_mev) / _dmp_dq
-    _q0_2term_plain = q0 + _dq_2term_plain
-    _mmu_pred_2term_plain = m_e_mev * _vol41 / (((_q0_2term_plain - 1) / _q0_2term_plain) ** 2)
+    # Two-term proton pin as a named COMPARISON (owner ruling 2026-11-20:
+    # one-term stays the default). EXACT findroot root
+    # (qou_substrate.constants.q_proton_two_term_at), replacing a linearised
+    # finite-difference shift that was 7.5e-15 low and whose note had the
+    # sign of the shift wrong.
+    _q_1t_str, _q_2t_str = _proton_pin_strings()
+    _q0_2term_plain = mpf(_q_2t_str)
+    _q0_1term = mpf(_q_1t_str)
+    _dq_pin_ppb = (_q0_2term_plain - _q0_1term) / _q0_1term * mpf("1e9")
+    _mmu_pred_2term_plain = _m_mu_pred_at(_q_2t_str)
     _mmu_codata = OBSERVABLES["m_mu"][0]
     _mmu_err_2term_ppb = rel_error_ppb(_mmu_pred_2term_plain, _mmu_codata)
 
@@ -1558,11 +1619,17 @@ def main() -> dict:
                 "q0_two_term_plain": fmt(_q0_2term_plain, 25),
                 "m_mu_pred_two_term_plain_MeV": fmt(_mmu_pred_2term_plain, 12),
                 "m_mu_err_two_term_plain_ppb": fmt(_mmu_err_2term_ppb, 4),
+                "dq_two_term_minus_one_term_ppb": fmt(_dq_pin_ppb, 12),
                 "note": (
-                    "Diagnostic only — primary m_mu score remains pinned to the 1-term proton anchor "
-                    "(+209.8 ppb). Because d(m_p^QCD/m_e)/dq > 0 while d(m_mu/m_e)/dq < 0 at q0, "
-                    "subtracting a repulsive M_p^QED > 0 from m_p^exp lowers m_p^QCD(q_new) and "
-                    "decreases q_new by -2.23e-7, shifting m_mu(q_new) toward CODATA."
+                    "Diagnostic only — the primary m_mu score stays at the one-term proton "
+                    "pin (owner ruling 2026-11-20: 'Revert to 1-term default'; at the "
+                    "two-term pin alpha_em^-1 form B is at 495 sigma, PRs #8562/#8565). "
+                    "The two-term comparison pin is the exact root of m_p^QCD + M_p^QED "
+                    "= m_p^exp and sits +"
+                    f"{fmt(_dq_pin_ppb, 6)} ppb ABOVE the one-term pin (M_p^QED > 0 lowers "
+                    "the required m_p^QCD, and d(m_p^QCD/m_e)/dq < 0 here). The two-term "
+                    "term is selection-scoped (plain weighting, m_e scale; covariant "
+                    "all-pairs projection gives b = 0)."
                 ),
             }
         elif _obs_name in ("Q_beta", "m_n", "Delta_pn") and "pred_MeV" in _r:

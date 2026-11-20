@@ -48,6 +48,7 @@ is the wrong object -- only that this identification is not established.
 
 Exact mpmath at 50 dps; no float64; emits no witness (it audits a claim).
 """
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import pathlib
 import sys
@@ -108,7 +109,7 @@ def ladder_N3(q, c3):
     # leaving the re-derivation to the arc that owns it.
     z = mp.sqrt(q) / (q + 1)
     eps = (q - 1 / q) / 2 * h - h
-    QA = abs(eps * ME / (q * (q - 1)))
+    QA = abs(_qbeta_e0.order_zero_scaled(eps * ME, q))
     al = (z - 1) * h / 2
     return (QA * mp.cos(al - b * hb**2 / 2)
             * (1 - b**2 * hb**4)

@@ -2,8 +2,13 @@
 """Exact check of the gamma-gamma pair-production table (bean qou-qs2u, PR #7825).
 
 Recomputes gamma(phi) * gamma(psi) in H_3(q) with h = q - q^{-1} kept symbolic, where
-gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1, and compares the six channel
-coefficients with brings-surface/trivial-knot-photon-interpretation-table5-data.md.
+gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^{-1} (def:photon; the last term is
+the chiral vertex by owner ruling 2026-11-18, bean qou-99qc, confirmed 2026-11-20),
+and compares the six channel coefficients with
+brings-surface/trivial-knot-photon-interpretation-table5-data.md. The superseded
+straight form 1 + phi0 s0 + phi1 s1 + phi01 s0 s1 is kept as gamma_straight and its
+table is re-checked too, together with the coordinate change
+gamma(phi0, phi1, phi01) = gamma_straight(phi0 - h phi01, phi1, phi01).
 Exact sympy arithmetic only: no floats, no q0, no witness. The script's assertions
 are the gate.
 """
@@ -47,12 +52,39 @@ def mul(a, b):
     return out
 
 
+def add(*xs):
+    out = {}
+    for x in xs:
+        for w, c in x.items():
+            out[w] = sp.expand(out.get(w, 0) + c)
+    return out
+def scale(c, x):
+    return {w: c * v for w, v in x.items()}
+S0, S1, ONE = {(0,): 1}, {(1,): 1}, {(): 1}
+S1INV = {(1,): 1, (): -h}  # s1^{-1} = s1 - h
+assert {w: c for w, c in mul(S1, S1INV).items() if c != 0} == {(): 1}
+assert {w: c for w, c in mul(S1INV, S1).items() if c != 0} == {(): 1}
+VERTEX = mul(S0, S1INV)  # the chiral pair-production vertex s0 s1^{-1}
 def gamma(a0, a1, a01):
+    """def:photon, built with the algebra product."""
+    return add(ONE, scale(a0, S0), scale(a1, S1), scale(a01, VERTEX))
+def gamma_straight(a0, a1, a01):
     return {(): 1, (0,): a0, (1,): a1, (0, 1): a01}
-
-
+# coordinate change: same family of elements
+for w, c in add(gamma(f0, f1, f01), scale(-1, gamma_straight(f0 - h * f01, f1, f01))).items():
+    assert sp.expand(c) == 0, (w, c)
 prod = mul(gamma(f0, f1, f01), gamma(p0, p1, p01))
 table5 = {
+    (): 1 + f0 * p0 + f1 * p1 - h * (f0 * p01 + f01 * p0) + h**2 * f01 * p01,
+    (0,): f0 + p0 + f0 * p0 * h + f01 * p1 - h * (f01 + p01)
+          - h**2 * (f0 * p01 + f01 * p0) + h**3 * f01 * p01,
+    (1,): f1 + p1 + f1 * p1 * h + f0 * p01 - h * f01 * p01,
+    (0, 1): f01 + p01 + f0 * p1 + h * f0 * p01 - h**2 * f01 * p01,
+    (1, 0): f1 * p0 + f01 * p01 - h * f1 * p01,
+    (0, 1, 0): f01 * p0 + f1 * p01,
+}
+prod_straight = mul(gamma_straight(f0, f1, f01), gamma_straight(p0, p1, p01))
+table5_straight = {
     (): 1 + f0 * p0 + f1 * p1,
     (0,): f0 + p0 + f0 * p0 * h + f01 * p1,
     (1,): f1 + p1 + f1 * p1 * h + f0 * p01,
@@ -60,7 +92,8 @@ table5 = {
     (1, 0): f1 * p0 + f01 * p01,
     (0, 1, 0): f01 * p0 + f1 * p01 + f01 * p01 * h,
 }
-
+for w in NAMES:
+    assert sp.expand(prod_straight.get(w, 0) - table5_straight[w]) == 0, ("straight", w)
 ok = True
 for w in NAMES:
     got = sp.expand(prod.get(w, 0))

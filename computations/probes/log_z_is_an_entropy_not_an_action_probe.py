@@ -125,6 +125,7 @@ Usage:
 from __future__ import annotations
 
 # Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
@@ -286,7 +287,7 @@ def main() -> int:
     kt_required = SEMF_A_V / (STRANDS_PER_NUCLEON * log_loop)
     candidates = {
         "m_e": M_E_MEV,
-        "E_0 = m_e/(q(q-1))": M_E_MEV / (q * (q - 1)),
+        "E_0 = m_e/(q(q-1))": _qbeta_e0.order_zero_scaled(M_E_MEV, q),
         "m_e/hbar_q": M_E_MEV / hbar_q,
         "m_e c_q^2 = m_e/hbar_q^2": M_E_MEV / hbar_q ** 2,
         "E_0 c_q^2": M_E_MEV / (q * (q - 1)) / hbar_q ** 2,

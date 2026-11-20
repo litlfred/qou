@@ -58,6 +58,8 @@ from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 try:  # P30 provenance stamp; optional so a bare container still runs
     from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
@@ -66,7 +68,7 @@ except ImportError:  # pragma: no cover
 
 set_compute_dps()
 
-AME = {"D": F("2.224566"), "3H": F("8.481798"), "3He": F("7.718043")}
+AME = {"D": F(_ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), "3H": F(_ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)), "3He": F(_ame_nstr(AME_B_HE3_MEV_VALIDATION, 30))}
 
 # Canonical carrier crossing data (n_plus, n_minus) for the INTER-component
 # crossings, per QOU.Mass.BrunnianBindingChannel and the 2026-08-29 owner ruling

@@ -17,4 +17,7 @@ export default definition({
     "bar-involution",
     "sector",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): All of this is proved over any field in the library module `QOU.Interactions.EmCouplingBarParity`." },
+  ],
 });

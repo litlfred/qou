@@ -1,5 +1,5 @@
 Continuing the [:refterm[descent]{#descent} eigenspaces for SU(2)](#ex:descent-eigenspaces-su2),
-we verify the [topological mass conjecture](#conj:topological-mass) for
+one verifies the [topological mass conjecture](#conj:topological-mass) for
 $G = \mathrm{SU}(2)$.
 
 **The decomposition.** By the topological mass theorem, the mass of a

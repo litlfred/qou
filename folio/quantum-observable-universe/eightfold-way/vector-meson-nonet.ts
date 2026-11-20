@@ -44,4 +44,7 @@ export default remark({
     "rem:meson-mass-splitting",
   ],
   cites: ["gellmann1962"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Values from\n[`nonet-mixing-purity.witness.json`](../../../computations/nonet-mixing-purity.witness.json);\nPDG central values\n\n(`QOU/Eightfold/DecupletEqualSpacing.lean`, established later in this\nchapter)" },
+  ],
 });

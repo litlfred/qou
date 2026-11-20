@@ -6,7 +6,7 @@ The rank $r_q$ of the categorical Mordell--Weil group ([categorical Mordell--Wei
 | QOU (+ observability) | semisimple ($\mathfrak{g}^G = 0$) | non-trivial if color-charged | $= 0$ |
 | Descartes QOU ($\chi = -6$) | $\mathrm{SU}(2)$ | $V_{1/2} \cong \mathbb{C}^2$ (fundamental) | $= 0$ |
 
-We now show that $r_q = 0$ in the Descartes QOU. The Descartes elliptic curve $\mathcal{E}_q$ is a color fiber of the color fibration ([color elliptic](#prop:color-elliptic)), so $\mathrm{SU}(2)$ acts non-trivially on it. The first cohomology $H^1(\mathcal{E}_q) \cong \mathbb{C}^2$ is two-dimensional (genus $1$). The only two-dimensional irreducible representation of $\mathrm{SU}(2)$ is the fundamental $V_{1/2}$. Since no nonzero vector in $\mathbb{C}^2$ is fixed by all of $\mathrm{SU}(2)$, we have
+It is now shown that $r_q = 0$ in the Descartes QOU. The Descartes elliptic curve $\mathcal{E}_q$ is a color fiber of the color fibration ([color elliptic](#prop:color-elliptic)), so $\mathrm{SU}(2)$ acts non-trivially on it. The first cohomology $H^1(\mathcal{E}_q) \cong \mathbb{C}^2$ is two-dimensional (genus $1$). The only two-dimensional irreducible representation of $\mathrm{SU}(2)$ is the fundamental $V_{1/2}$. Since no nonzero vector in $\mathbb{C}^2$ is fixed by all of $\mathrm{SU}(2)$,
 
 $$
 V_{1/2}^{\mathrm{SU}(2)} = 0.

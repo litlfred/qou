@@ -24,6 +24,7 @@ export default proposition({
   ],
   uses: ["prop:wedderburn-weight-canonical", "prop:algebraic-gns-embedding"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Molien fake-degree weight is that of `QOU.MathlibExt.MolienFakeDegreeGeneralN.molienSum`; exact-rational verification for $n = 1,\\dots,9$ ([`probes/molien_feray_meliot_bridge_probe.py`](../../../computations/probes/molien_feray_meliot_bridge_probe.py)); `molienSum_eq_qFactorial` (Lean) says $\\sum_\\lambda f^\\lambda q^{-\\kappa_\\lambda}\\dim_q(\\lambda) = [n]_q!$, and" },
     {
       kind: "refined-framing",
       date: "2026-11-15",

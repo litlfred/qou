@@ -1,12 +1,15 @@
 **Theorem (conditional on the electroweak sector-selection postulate).**
-*Fix the categorical coefficient ring $R$ (a field with $\tfrac{1}{2} \in R$) and the sector-selection postulate: each electroweak carrier is assigned to the spin-singlet sector $A_+$ ($\sigma$-fixed, bar-even) or the spin-doublet sector $A_-$ ($\sigma$-negated, bar-odd) of the spin involution $\sigma$, with $H$ the singlet and $W^\pm, Z$ the doublets, together with the isospin label map $T_3(W^\pm) = \pm 1$, $T_3(Z) = T_3(H) = 0$. Then the spin and charge of the triplet are determined:*
+*Let $R$ be a field with $\tfrac{1}{2} \in R$, and let $\sigma$ be the [spin involution](#def:spin-involution), acting on the two-dimensional sym/alt block of the [electroweak Hoefsmit cells](#thm:hoefsmit-ew-cell-content) as the swap $\sigma(x, y) = (y, x)$. Assume the sector-selection postulate: each electroweak carrier $c$ lies in the $\sigma$-even sector $A_+$ or the $\sigma$-odd sector $A_-$, with $H \in A_+$ (the [self-dual Higgs carrier](#prop:self-dual-higgs-real-volume)) and $W^\pm, Z \in A_-$; $c$ has carrier eigenvalue $a_c = q^{2k} \in R^\times$ with $a_c^2 \neq 1$; and $a_{W^-} = a_{W^+}^{-1}$, so that $W^-$ carries the $\sigma$-image of $W^+$. Let $v_c$ be the $\sigma$-even projection of $(a_c, a_c^{-1})$ if $c \in A_+$ and its $\sigma$-odd projection if $c \in A_-$. Define the sector label $2s(c) = 0$ if $\sigma v_c = v_c$ and $2s(c) = 2$ otherwise, and the charge $Q(c) = \mathrm{skew}(v_c)$, where $\mathrm{skew}(x, y) = x - y$ is the [$P_{\mathrm{skew}}$ functional](#prop:vdw-pskew-isolation). Then*
 
 $$
-  \mathrm{spin}(H) = 0 \ (\text{scalar, neutral}), \qquad
-  \mathrm{spin}(W^\pm) = \mathrm{spin}(Z) = 1 \ (\text{vector}),
+  2s(H) = 0, \qquad 2s(W^\pm) = 2s(Z) = 2,
 $$
 $$
-  T_3(W^\pm) = \pm 1 \ (\text{charged}), \qquad T_3(Z) = 0 \ (\text{neutral}).
+  Q(H) = 0, \qquad Q(W^+) \neq 0, \qquad Q(W^-) = -Q(W^+).
 $$
 
-*Charge and spin are not independent open conjectures: both follow from the one physics selection postulate through the spin involution.*
+*Both the sector label and the charge are computed from the action of $\sigma$ on the sector vectors $v_c$.*
+
+The label $2s$ is a two-valued sector label of the model, named "spin" because $A_+$ is read as scalar and $A_-$ as vector; it is not a computation of Lorentz spin. The sectors $A_\pm$ are the two one-dimensional $\mathbb{Z}/2$-sectors of $\sigma$, not spin multiplets.
+
+The theorem does not assign isospin. The paper's table $T_3(W^\pm) = \pm 1$, $T_3(Z) = T_3(H) = 0$ is recorded, not derived from $\sigma$. The $\sigma$-parity alone gives $Q(Z) \neq 0$, since $Z \in A_-$; the neutrality of $Z$ rests on the $(W^3, B) \to (Z, \gamma)$ Weinberg mixing. The model's $T_3(H) = 0$ differs from the Standard Model, where the neutral component of the Higgs doublet has $T_3 = -\tfrac{1}{2}$.

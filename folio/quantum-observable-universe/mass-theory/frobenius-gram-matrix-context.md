@@ -23,11 +23,8 @@ $K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j$.
 > that $5$-dimensional quotient ($\sum \dim^2 = C_3 = 5$), not on the
 > $6$-dimensional $H_3$.
 >
-> Proved in
-> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean):
-> `block_mem_radical` (a zero-weight block lies in the radical) `$\to$`
-> `gram_det_eq_zero_of_radical_combination` ($\det G = 0$), with
-> `pairing_descends` and `mem_radical_of_pairing_zero` giving the descent.
+> Proved: a zero-weight block lies in the radical, hence $\det G = 0$, and
+> the pairing descends to the quotient by the radical.
 
 ## Markov trace of NF basis elements
 

@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-typeclass",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-beta-bar-even-kernel-typeclass",
+  "kind": "proposition",
+  "title": "$\\mathfrak{Q}_\\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-invariant",
+    "papers/quantum-observable-universe/blocks/conj-q-beta-radius-of-convergence-gate",
+    "papers/quantum-observable-universe/blocks/prop-q-beta-q-eq-one-shadow-gate",
+    "papers/quantum-observable-universe/blocks/rem-q-beta-direction-sanity-gate",
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988",
+    "references/habiro2004"
+  ],
+  "tags": [
+    "q-beta",
+    "precision-ladder",
+    "structural",
+    "formalize-first",
+    "unified-typeclass",
+    "kernel-invariant",
+    "no-fit"
+  ],
+  "leanRef": "qou:QOU.QBeta.BarEvenKernelTypeclass.BarEvenKernel",
+  "text": "q-beta-bar-even-kernel-typeclass.md",
+  "leanSource": "q-beta-bar-even-kernel-typeclass.lean",
+  "provenance": "authored"
+}

@@ -123,6 +123,8 @@ import importlib.util  # noqa: E402
 
 import _exact_trace_engine as E  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 _spec = importlib.util.spec_from_file_location(
     "tc", HERE / "total_curvature_is_the_computable_half_probe.py")
@@ -285,8 +287,8 @@ def main() -> int:
           f"{fmt(2 * gmpy2.log(E.Q + 1 / E.Q), 20)}")
     check("L_pp + L_nn = 2 log[2]_q — the pp and nn bond constants are not independent",
           abs(Lc["pp"] + Lc["nn"] - 2 * gmpy2.log(E.Q + 1 / E.Q)) < mpfr(2) ** (-(E.BITS - 12)))
-    AME = {"2H": (1, 1, "2.22452"), "3H": (1, 2, "8.48182"), "3He": (2, 1, "7.71804"),
-           "4He": (2, 2, "28.2957"), "6Li": (3, 3, "31.9946")}
+    AME = {"2H": (1, 1, "2.22452"), "3H": (1, 2, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)), "3He": (2, 1, _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)),
+           "4He": (2, 2, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)), "6Li": (3, 3, "31.9946")}
     print(f"\n  {'iso':>5} {'B_chain':>9} {'B_allpairs':>11} {'B_AME':>9} {'chain/AME':>10} {'allpr/AME':>10}")
     frac = {}
     for name, (Z, N, B) in AME.items():
@@ -299,7 +301,7 @@ def main() -> int:
     check("the chain delivers 31 % of 4He's AME binding (so 69 % is missing by theorem)",
           abs(frac["4He"] - mpfr("0.3068")) < mpfr("0.0005"))
 
-    B4, need = mpfr("28.2957"), mpfr("28.2957") / alpha
+    B4, need = mpfr(_ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)), mpfr(_ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)) / alpha
     per = need / 3
     d_req = gmpy2.exp(-per) - (wp * lp + wm * lm)
     print(f"\n  Inversion on 4He: a COMMON interface offset closing the chain needs")

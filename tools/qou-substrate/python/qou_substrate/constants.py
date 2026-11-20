@@ -404,6 +404,85 @@ try:
         finally:
             _mp.mp.dps = prev
 
+    # ── TWO-TERM proton pin: a NAMED COMPARISON, never the default ──
+    #
+    # Owner ruling 2026-11-20 (Carl): "Revert to 1-term default". The
+    # two-term re-pin of q_at() was tried on PR #8554 and reverted: at the
+    # two-term pin α_em⁻¹ (form B) moves +0.365 → +75.97 ppb (495σ), while
+    # covariant QED insertions give ZERO proton self-energy (PRs #8562,
+    # #8565); the μ–p residual points at the muon relation instead (bean
+    # qou-6gf9). q_at() above is the one-term proton pin, unchanged. The
+    # functions below exist ONLY for explicit one-term-vs-two-term
+    # comparison producers. Do not read q₀ from them anywhere else.
+
+    def _proton_identity_residual(q, vol, mp_me, two_term: bool):
+        """m_p/m_e(q) − (m_p/m_e)_CODATA for the proton substrate identity.
+
+        one-term : 2·(Vol(4₁)/ℏ_q²)·|tr_M(β_Bor)|·[3]_q!/q³ − 12   (q_at)
+        two-term : one-term + |tr_conn(p, V³)|(q),
+                   |tr_conn(p, V³)| = 2(q²−1)⁴(q⁴+q²+1)/(27 q⁶)
+        All mpmath; caller sets the working precision."""
+        h = q - 1 / q
+        hbar_sq = (1 - 1 / q) ** 2
+        trM = _mp.fabs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
+        qf3 = (q**2 + 1 + q**(-2)) * (q + q**(-1))
+        val = 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12
+        if two_term:
+            q2 = q * q
+            val += 2 * (q2 - 1) ** 4 * (q2 * q2 + q2 + 1) / (27 * q2 ** 3)
+        return val - mp_me
+
+    def q_proton_two_term_at(dps: int = _DPS_DEFAULT):
+        """COMPARISON pin (NOT the default): q solving the TWO-TERM proton
+        identity
+            m_p/m_e = 2·(Vol(4₁)/ℏ_q²)·|tr_M(β_Bor)|·[3]_q!/q³ − 12
+                      + |tr_conn(p, V³)|(q),
+            tr_conn(p, V³) = −2(q²−1)⁴(q⁴+q²+1)/(27 q⁶)
+        (Lean `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3`,
+        plain weighting). Exact mpmath findroot at dps+15 guard digits.
+        Sits +11.1709 ppb above q_at() (1.10997859515088…).
+
+        Scope: plain weighting at the m_e scale; adjacent insertion is
+        non-covariant and the covariant all-pairs projection gives b = 0.
+        The owner reverted the default to q_at() on 2026-11-20 (α_em⁻¹ form B
+        at 495σ at this pin; PRs #8562/#8565). Use only in labelled
+        one-term-vs-two-term comparisons."""
+        prev = _mp.mp.dps
+        try:
+            _mp.mp.dps = max(prev, dps + 15)
+            vol = vol_4_1_at(dps + 15)
+            mp_me = _mp.mpf(MASS_RATIO_P_E_STR)
+            q = _mp.findroot(
+                lambda x: _proton_identity_residual(x, vol, mp_me, True),
+                _mp.mpf("1.10997859"),
+            )
+            _mp.mp.dps = max(prev, dps)
+            return +q
+        finally:
+            _mp.mp.dps = prev
+
+    def check_proton_pin_self_consistency(dps: int = _DPS_DEFAULT) -> dict:
+        """Self-consistency of both derived proton pins: the one-term identity
+        residual at q_at(dps) and the two-term identity residual at the
+        comparison pin q_proton_two_term_at(dps) must vanish to the working
+        precision, and the independent Newton solver q_two_term_borromean_at
+        must agree with the comparison pin. Raises AssertionError on failure;
+        returns the measured figures."""
+        with _mp.workdps(dps + 20):
+            vol = vol_4_1_at(dps + 20)
+            mp_me = _mp.mpf(MASS_RATIO_P_E_STR)
+            tol = _mp.mpf(10) ** (-(dps))
+            q1 = q_at(dps + 10)
+            r1 = _proton_identity_residual(q1, vol, mp_me, False)
+            q2 = q_proton_two_term_at(dps + 10)
+            r2 = _proton_identity_residual(q2, vol, mp_me, True)
+            q_newton = q_two_term_borromean_at(dps + 10)
+            assert abs(r1) < tol, f"one-term pin residual {r1} ≥ {tol}"
+            assert abs(r2) < tol, f"two-term comparison pin residual {r2} ≥ {tol}"
+            assert abs(q2 - q_newton) < tol, f"two-term solvers disagree: {q2 - q_newton}"
+            return {"one_term_residual": r1, "two_term_residual": r2,
+                    "two_term_minus_newton": q2 - q_newton}
+
     def q_str(dps: int = _DPS_DEFAULT) -> str:
         """Return q as a decimal string at requested precision —
         the canonical witness-JSON / Clarabel-HP serialisation."""
@@ -446,6 +525,12 @@ try:
     # references `Q_50_DIGIT_STR` or an `_MP` constant, against 116 for the
     # `_MP` constants alone.  Bean `qou-5eg1`, still open on that half.
     Q_50_DIGIT_STR = _mp.nstr(Q_MP, 50, strip_zeros=False)
+    # The TWO-TERM proton pin, DERIVED (never typed), for explicit
+    # one-term-vs-two-term COMPARISON producers only. NOT a default: the
+    # owner reverted the default to the one-term pin on 2026-11-20.
+    with _mp.workdps(_DPS_DEFAULT):
+        Q_PROTON_TWO_TERM_50_DIGIT_STR = _mp.nstr(
+            q_proton_two_term_at(_DPS_DEFAULT), 50, strip_zeros=False)
 
     # ── THE MUON PIN'S ONE NAMED HOME (bean qou-5op4) ──────────────
     #
@@ -719,6 +804,12 @@ except ImportError:
     def q_at(dps: int = _DPS_DEFAULT):
         raise RuntimeError("q_at requires mpmath; install it with `pip install mpmath`")
 
+    def q_proton_two_term_at(dps: int = _DPS_DEFAULT):
+        raise RuntimeError("q_proton_two_term_at requires mpmath; install it with `pip install mpmath`")
+
+    def check_proton_pin_self_consistency(dps: int = _DPS_DEFAULT) -> dict:
+        raise RuntimeError("check_proton_pin_self_consistency requires mpmath")
+
     def q_str(dps: int = _DPS_DEFAULT) -> str:
         raise RuntimeError("q_str requires mpmath; install it with `pip install mpmath`")
 
@@ -789,6 +880,29 @@ except ImportError:
 _E_MEV  = _codata("electron mass energy equivalent in MeV")
 _P_MEV  = _codata("proton mass energy equivalent in MeV")
 
+# NO-FLOAT64 (2026-09-12). `CodataEntry.value` is ALREADY an `mpmath.mpf`, so
+# `float(...)` here is an active DOWNCAST of an exact table value, and the
+# derived Q_NEUTRON_MEV below then did its arithmetic in binary64 across a
+# catastrophic cancellation (0.78 MeV out of 939.57 — three digits gone).
+#
+# The `_STR` companions are the file's own established convention for exactly
+# this, from MASS_RATIO_P_E_STR / MASS_RATIO_MU_E_STR above: carry the digits
+# exactly as the NIST table prints them, so an mpmath consumer can reach full
+# precision without a transcription step. `value_str` is a plain `str`, so the
+# companions cost nothing and cannot themselves lose precision.
+#
+# The float names KEEP THEIR TYPE — 309 in-repo importers read them and a type
+# change is not a precision fix. What changes is that the DERIVED quantities
+# below are now computed in `mpf` and downcast once at the end, instead of
+# accumulating three binary64 subtractions. Measured gain on Q_NEUTRON_MEV:
+# 9.15e-14 MeV = 1.17e-4 ppb, which is 117x the framework's own L1 target of
+# 1 ppQ (1e-6 ppb). Far below the 780 ppb experimental sigma, so no recorded
+# comparison moves; it is an L1 compute-precision repair, not an L2 one.
+M_E_MEV_STR     = _E_MEV.value_str
+M_E_MEV_ERR_STR = _E_MEV.uncertainty_str
+M_P_MEV_STR     = _P_MEV.value_str
+M_P_MEV_ERR_STR = _P_MEV.uncertainty_str
+
 M_E_MEV     = float(_E_MEV.value)
 M_E_MEV_ERR = float(_E_MEV.uncertainty)
 M_P_MEV     = float(_P_MEV.value)
@@ -811,14 +925,41 @@ M_P_MEV_ERR = float(_P_MEV.uncertainty)
 # Excluded from codata_table_vintage_audit by design: AME-derived quantities
 # are not CODATA-adjustment outputs and checking them against the table is a
 # category error (AGENTS.md).
-M_N_MEV     = 939.56542179    # noqa: P31 - AME-derived, NOT CODATA; mirrors codata_2022_source.M_N_MEV
-M_N_MEV_ERR = 0.00000060
+M_N_MEV_STR     = "939.56542179"   # noqa: P31 - AME-derived, NOT CODATA; mirrors codata_2022_source.M_N_MEV
+M_N_MEV_ERR_STR = "0.00000060"
+M_N_MEV     = float(M_N_MEV_STR)
+M_N_MEV_ERR = float(M_N_MEV_ERR_STR)
+
 # β-decay endpoint Q-value (n → p + e⁻ + ν̄):
 #   Q_β = m_n − m_p − m_e   (m_ν ≈ 0 in the rest mass budget)
-Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV         # ≈ 0.78233341 MeV
-Q_NEUTRON_MEV_ERR = math.sqrt(
-    M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2,
-)
+#
+# Computed in mpf and downcast ONCE, not accumulated in binary64. This is a
+# catastrophic cancellation — 0.78 MeV as the difference of numbers near 939 —
+# so the old `M_N_MEV - M_P_MEV - M_E_MEV` lost about three decimal digits.
+# The exposed float is unchanged in type and now correctly rounded; the `_STR`
+# companions carry the full-precision value for mpmath consumers.
+#
+# `workdps` is load-bearing, not decoration. Module import happens at the
+# mpmath default of dps=15, so a bare `_mp.mpf("939.56542179")` here builds a
+# binary53 value and `nstr(..., 50)` then prints ITS expansion — a float64
+# number wearing 50 digits. Caught while writing this: the first version
+# emitted `Q_NEUTRON_MEV_STR = 0.78233340930990846739945254739723168313503...`
+# (the binary64 tail `...380859`) instead of the exact `0.78233340931`. That
+# is the `mp.dps` no-op that scripts/precision-gates.sh gates on, reproduced
+# inside the fix meant to remove a float64 path.
+with _mp.workdps(_DPS_DEFAULT):
+    _q_n_mp = (
+        _mp.mpf(M_N_MEV_STR) - _mp.mpf(M_P_MEV_STR) - _mp.mpf(M_E_MEV_STR)
+    )
+    _q_n_err_mp = _mp.sqrt(
+        _mp.mpf(M_N_MEV_ERR_STR) ** 2
+        + _mp.mpf(M_P_MEV_ERR_STR) ** 2
+        + _mp.mpf(M_E_MEV_ERR_STR) ** 2
+    )
+    Q_NEUTRON_MEV_STR     = _mp.nstr(_q_n_mp, _DPS_DEFAULT, strip_zeros=False)
+    Q_NEUTRON_MEV_ERR_STR = _mp.nstr(_q_n_err_mp, _DPS_DEFAULT, strip_zeros=False)
+Q_NEUTRON_MEV     = float(_q_n_mp)                      # ≈ 0.78233341 MeV
+Q_NEUTRON_MEV_ERR = float(_q_n_err_mp)
 
 # ── Knot-volume constants (math; SnapPy-verified) ─────────────
 # Catalan's constant G = Σ (-1)^k / (2k+1)², used in figure-8 and

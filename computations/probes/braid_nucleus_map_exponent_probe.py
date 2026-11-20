@@ -83,6 +83,7 @@ Usage:
 from __future__ import annotations
 
 # Path bridge (subdirectory refactor — Phase 1, 2026-06-02).
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
@@ -103,6 +104,8 @@ if str(HERE) not in sys.path:
 import markov.markov_weights_symbolic as M  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 mp.dps = 40
 
@@ -121,8 +124,8 @@ STRANDS_PER_NUCLEON = 3
 SEMF_VOLUME_EXPONENT = 1
 
 # CODATA binding energies, as carried by binding-K-direct.witness.json.
-EMPIRICAL_B = [("D", 2, "2.22456637"), ("T", 3, "8.48179663"),
-               ("3He", 3, "7.71799"), ("4He", 4, "28.29561")]
+EMPIRICAL_B = [("D", 2, _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)), ("T", 3, _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+               ("3He", 3, "7.71799"), ("4He", 4, _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30))]
 
 
 def rebuild_normaliser(n: int) -> sp.Expr:
@@ -254,7 +257,7 @@ def main() -> int:
         "what_is_wrong": "Every MeV figure in this witness uses m_e = 0.511 MeV as the "
                          "energy scale, with no justification given. The corpus's binding "
                          "machinery uses E_0 = m_e/(q_0(q_0-1)) = 4.18598 MeV.",
-        "scale_ratio_E0_over_me": mp.nstr(1 / (q0 * (q0 - 1)), 20),
+        "scale_ratio_E0_over_me": mp.nstr(_qbeta_e0.order_zero_scaled(1, q0), 20),
         "corrected_extensive_coefficient_MeV_per_nucleon":
             mp.nstr(per_nucleon / (q0 * (q0 - 1)), 12),
         "corrected_vs_plateau": mp.nstr(

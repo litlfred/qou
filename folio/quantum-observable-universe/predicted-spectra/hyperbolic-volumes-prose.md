@@ -10,7 +10,7 @@ $$
 
 where $\mathrm{Cl}_2$ denotes the Clausen function and $\Lambda(\theta) = \mathrm{Cl}_2(2\theta)/2$ the Lobachevsky function. The complement $S^3 \setminus 4_1$ decomposes into two regular ideal tetrahedra, each of volume $\mathrm{Cl}_2(\pi/3) = 3\,\Lambda(\pi/3) \approx 1.01494$.
 
-The [topological mass formula](#prop:topological-mass-formula) defines the mass $\mathfrak{m}(K)$ of a particle with knot type $K$ as
+The [topological mass formula](#conj:topological-mass-formula) defines the mass $\mathfrak{m}(K)$ of a particle with knot type $K$ as
 
 $$
   \mathfrak{m}(K) =  \frac{\mathrm{Vol}(K)}{\hbar_q^{2}},

@@ -8,7 +8,7 @@ $$
 h_n(x \mid q) \;=\; i^{-n}\, H_n(ix \mid q^{-1}).
 $$
 
-The two channel recurrences are identical up to this rotation. We formalize this generically over a commutative ring $R$ equipped with a bar involution $\sigma$ and a formal rotation element $\iota$ satisfying $\iota^2 = -1$. The Lean declaration `rotation_step` (sibling to [Complex-volume unification](#conj:binding-qbeta-complex-volume)) encodes this: a sequence satisfies the odd-channel step at $(q, x)$ if and only if its $\iota$-rotation satisfies the even-channel step at $(\sigma q, \iota x)$. The archimedean $i$ emerges only downstream of the functor $\tau$.
+The two channel recurrences are identical up to this rotation. This is proved generically over a commutative ring $R$ equipped with a bar involution $\sigma$ and a formal rotation element $\iota$ satisfying $\iota^2 = -1$: a sequence satisfies the odd-channel step at $(q, x)$ if and only if its $\iota$-rotation satisfies the even-channel step at $(\sigma q, \iota x)$. The archimedean $i$ emerges only downstream of the functor $\tau$.
 
 ## Orthogonality measures
 
@@ -31,7 +31,7 @@ At the substrate anchor $q_0 > 1$, the even channel has no Bożejko–Speicher $
 
 ## Leonard pairs
 
-Zhedanov's $AW(3)$ algebra \cite{zhedanov1991} embeds the rotation as an operator identity. It pairs two operators, each tridiagonal in the other's eigenbasis, with Askey–Wilson polynomials forming the overlap matrix. The generic statement—that any eigencolumn of the channel tridiagonal operator has orthogonal-polynomial entries—is proved as `eigencolumn_eq_overlap`. The self-duality that places the channel overlap into the Askey–Wilson family via Terwilliger's classification \cite{terwilliger2001} is axiomatized by the conjecture class `ChannelLeonardDuality`.
+Zhedanov's $AW(3)$ algebra \cite{zhedanov1991} embeds the rotation as an operator identity. It pairs two operators, each tridiagonal in the other's eigenbasis, with Askey–Wilson polynomials forming the overlap matrix. The generic statement—that any eigencolumn of the channel tridiagonal operator has orthogonal-polynomial entries—is proved. The self-duality that places the channel overlap into the Askey–Wilson family via Terwilliger's classification \cite{terwilliger2001} remains a conjectural hypothesis.
 
 ## Vertex-algebra shadow
 

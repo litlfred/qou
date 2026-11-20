@@ -33,8 +33,6 @@ only at second order.
 Both statements are instances of a single structural fact — partition conjugation
 $\lambda \mapsto \lambda'$ is an anti-invariant involution, $f^{\lambda'} = f^\lambda$
 and $\mathrm{content}(\lambda') = -\mathrm{content}(\lambda)$ — which is proved for
-every $n$ in the library module `QOU.AntiInvolutionPalindrome`
-(`palindromic_sum_of_antiInvolution` for the palindromy, and
-`first_moment_zero_of_antiInvolution`, $\sum_\lambda f^\lambda\,\mathrm{content}(\lambda) = 0$,
-for the vanishing linear term). The Lean sibling here records the fully machine-checked
-$n=4$ instance, $C_4(q) = q^6 + 3q^2 + 2 + 3q^{-2} + q^{-6}$.
+every $n$; it gives the palindromy and the vanishing linear term
+$\sum_\lambda f^\lambda\,\mathrm{content}(\lambda) = 0$. The
+$n=4$ instance is proved directly: $C_4(q) = q^6 + 3q^2 + 2 + 3q^{-2} + q^{-6}$.

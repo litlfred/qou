@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-10-13T11:57:03.495606+00:00",
-  "commitSha": "8f1b70555159d7e170bef87c379448651b822c55",
+  "computedAt": "2026-11-20T15:28:42.957626+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "deuteron_delta_tr_changes_under_D",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "binding-production-route-c-vs-d-deut",
   "scriptFile": "binding_production_route_C_vs_D_probe.py",
-  "scriptHash": "1de6ba5f0c7d",
-  "scriptCommitSha": "7d0e674f048ca0bef947651d51e3c7c4a5049eaf",
+  "scriptHash": "74bb07769783",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.16",
+    "python": "3.13.18",
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -70,9 +71,9 @@
       "delta_tr_D_over_C": "1.48919273925",
       "B_MeV_C": "0.0772495902510884",
       "B_MeV_D": "0.115039528912123",
-      "B_AME2020_MeV": "2.224566",
-      "rel_err_C": "-0.9652743096",
-      "rel_err_D": "-0.948286754",
+      "B_AME2020_MeV": "2.2245662",
+      "rel_err_C": "-0.9652743127",
+      "rel_err_D": "-0.9482867586",
       "two_row_share_of_delta_tr_C": "1.17116573809"
     }
   },

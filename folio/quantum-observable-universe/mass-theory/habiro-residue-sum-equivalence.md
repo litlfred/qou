@@ -44,21 +44,5 @@ between the two paths.  The current run achieves:
 
 All differences fall within the relative tolerance $10^{-9}$ — the
 two paths agree to machine epsilon.  This is numerical evidence for the
-analytic identity stated above, not a proof; the Lean formalization does
-not take it as a premise, and the proton case remains the open conjecture
-`conj:gs-archimedean-agreement-residue`.
-
-**Cross-validation infrastructure.** The check is run by
-the formal derivation; output witness
-`markov-pipeline-cross-validation.witness.json` records:
-
-- Per-atom assertion `tr_M_at_q0_archimedean[atom]` with a relative
-  tolerance proportional to `AGREEMENT_RTOL = 1e-9`.
-- Diagnostic fields `realizer_value`, `term6_value`, `abs_diff`,
-  `rel_diff` for each common atom.
-- Asymmetric atom coverage (atoms present in only one input pipeline).
-
-The validator skips when one of its inputs is absent (forward
-compatibility), and uses the standard `WitnessBuilder` so
-the formal derivation automatically reruns it whenever either input
-witness changes.
+analytic identity stated above, not a proof; it is not used as a premise, and the proton case remains the
+open conjecture [Archimedean agreement (proton instance)](#conj:gs-archimedean-agreement-residue).

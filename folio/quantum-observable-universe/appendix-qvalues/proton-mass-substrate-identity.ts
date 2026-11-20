@@ -65,4 +65,7 @@ export default proposition({
     "0.24ppm",
     "two-calibration-baryon",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Verification script: [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)." },
+  ],
 });

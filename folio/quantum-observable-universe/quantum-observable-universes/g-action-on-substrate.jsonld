@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-g-action-on-substrate",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:g-action-on-substrate",
@@ -15,7 +16,10 @@
   "title": "Categorical $G = \\mathrm{SU}(2)_L \\times \\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
-    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+    "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding",
+    "papers/quantum-observable-universe/blocks/prop-higgs-vacuum-residual-idempotent",
+    "papers/quantum-observable-universe/blocks/conj-electroweak-higgs-torus-link-triplet",
+    "papers/quantum-observable-universe/blocks/thm-hoefsmit-ew-cell-content"
   ],
   "tags": [
     "tier:S",

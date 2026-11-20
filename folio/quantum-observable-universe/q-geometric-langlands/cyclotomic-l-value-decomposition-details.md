@@ -2,9 +2,6 @@ This note records the numerical verification, the $N = 5$ instance, the analytic
 
 ### Numerical verification at 50 dps
 
-[`cl_n_l_value_decomposition.py`](https://github.com/litlfred/qou/blob/main/computations/cl_n_l_value_decomposition.py),
-[witness](https://github.com/litlfred/qou/blob/main/computations/cl-n-l-value-decomposition.witness.json):
-
 | Quantity | Value (50 dps) |
 |---|---|
 | $\mathrm{Im}\,\mathrm{Li}_3(i)$ (closed form $\pi^3/32$) | $0.96894614625937036181867968128\ldots$ |
@@ -30,10 +27,10 @@ The graded-Mikusiński framework's depth-$n$ cyclotomic content
 **IS** the Dirichlet $L$-value content at integer $n$, up to
 $\mathbb{Q}(\zeta_K)$-linear combinations.  Three consequences follow:
 
-1. **Classical L-value identities are theorems of our framework**:
+1. **Classical L-value identities are theorems of the framework**:
    $\beta(3) = \pi^3/32$, $\beta(5) = 5\pi^5/1536$,
    etc., all follow from Theorem A as instances.
-2. **Conversely**: any new theorem we prove about cyclotomic depth-$n$
+2. **Conversely**: any new theorem proved about cyclotomic depth-$n$
    structure (e.g., Theorem D dimension) gives a corresponding
    statement about Dirichlet L-values.
 3. **Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$ depth $n$** is

@@ -64,7 +64,8 @@ HERE = Path(__file__).resolve().parent
 # hardcoded MUON literal (…9555573347…), i.e. the ideal/CAL-2 layer.
 Q0 = Q_MP
 M_E_MEV = mp.mpf("0.51099895069")          # CAL-1
-E0 = M_E_MEV / (Q0 * (Q0 - 1))             # ≈ 4.186 MeV (calibration-fixed)
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.order_zero_scaled(M_E_MEV, Q0)             # ≈ 4.186 MeV (calibration-fixed)
 
 h = Q0 - 1 / Q0
 # Convention D via the canonical helper.  This was `mp.sqrt(Q0)/(Q0+1)`

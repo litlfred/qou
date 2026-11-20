@@ -9,7 +9,7 @@ $\prod_{k \ge 2}\bigl(1 + c_k(q)\,u^k\bigr)$ with
 $u = b(q)\,\hbar_q^2$ the ladder variable. The gate asserts two
 classical shadows of the canonical ladder,
 $\lim_{q \to 1} c_2(q) = -1$ and $\lim_{q \to 1} c_3(q) = -2$, and
-refutes any candidate failing either. We establish the two anchor
+refutes any candidate failing either. The proof establishes the two anchor
 values, then the rejection.
 
 **Step 1 — the $c_2$ shadow is exact at every $q$.** By the

@@ -1,6 +1,6 @@
 **Remark (the depth correspondence: what is theorem-level and what is open).**
 
-We collect the current status of the depth correspondence ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence)) in one place.
+The current status of the depth correspondence ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence)) is collected here in one place.
 
 **Summary:** the correspondence is theorem-level at depths 1, 2 over every Bring-natural number field and at the figure-8 / 7 torus-knot / Borromean / Whitehead rows; conditionally theorem-level at depth 3 over $\mathbb{Q}(\zeta_5)$ modulo a single specific real number; conjectural at depth $\ge$ 3 over arbitrary $F$ via Beilinson/Goncharov.
 

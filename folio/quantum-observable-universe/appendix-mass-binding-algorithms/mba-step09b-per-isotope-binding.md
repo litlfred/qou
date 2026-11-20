@@ -72,4 +72,4 @@ from qou_mass.api import predict          # the .ts manifest's declared entry po
 
 ### Tier note: experimental generating-function model
 
-*The $w_n$ values and the $\sim 3$ keV $^4$He fit residual come from the discrete $q$-difference recurrence with calibrated seeds — a phenomenological reproduction, not a structural bound. A kernel-constraints Lean file for the $q$-difference recurrence exists on the $Q_\beta$ side (`QBetaCKRecursionKernelConstraints.lean`); a binding-sector analogue that would formalize any derived (non-calibrated) constant is not yet written.*
+*The $w_n$ values and the $\sim 3$ keV $^4$He fit residual come from the discrete $q$-difference recurrence with calibrated seeds — a phenomenological reproduction, not a structural bound. A kernel-constraints Lean file for the $q$-difference recurrence exists on the $Q_\beta$ side; a binding-sector analogue that would formalize any derived (non-calibrated) constant is not yet written.*

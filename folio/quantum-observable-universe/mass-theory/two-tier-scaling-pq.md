@@ -1,5 +1,5 @@
 **Remark (two-tier scaling of the confined Laurent polynomial $P_K(q)$).**
-*The map from a braid word to a physical mass passes through two logically separate scaling factors. We separate topological constants (intrinsic to the Hecke trace) from dimensional constants (set by the choice of physical anchor).*
+*The map from a braid word to a physical mass passes through two logically separate scaling factors. Topological constants are separated (intrinsic to the Hecke trace) from dimensional constants (set by the choice of physical anchor).*
 
 ## Tier 1: topological scaling — quantum dimension $[N]_q$
 
@@ -50,7 +50,7 @@ QOU selects $m_0 = m_e$ on empirical grounds: $m_e$ is the most
 precisely measured particle mass in the Standard Model, and the
 leptonic brane tower is fully computable from $q_0$ alone via
 $m_e(\text{natural}) = \mathrm{Li}_2(q^{-2})/\hbar_q^2$
-([three calibration inputs](#prop:three-calibration-inputs)). The
+([three calibration inputs](#conj:three-calibration-inputs)). The
 electroweak ($v$) and Planck ($M_{\mathrm{Pl}}$) choices correspond to
 different fibre-functor normalisations and produce algebraically
 equivalent predictions for dimensionless ratios such as
@@ -69,7 +69,7 @@ The two tiers commute with disjoint operations:
 
 Mixing the two — for instance, by absorbing a power of $[N]_q$ into
 $m_0$ — would make $m_0$ depend on the local Wedderburn channel and
-break the parameter count of [three calibration inputs](#prop:three-calibration-inputs).
+break the parameter count of [three calibration inputs](#conj:three-calibration-inputs).
 The volume-density factorisation
 $\mathfrak{m}(K) = \mathrm{Vol}(K) \cdot \rho_q$
 ([Kashaev volume density](#rem:kashaev-volume-density)) inherits the

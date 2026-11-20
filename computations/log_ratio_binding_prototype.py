@@ -56,6 +56,7 @@ Output: log-ratio-binding-prototype.witness.json
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import sys
 import time
@@ -98,7 +99,7 @@ def _energy_scales():
     q0 = Q_MP
     me = me if isinstance(me, mp.mpf) else mp.mpf(str(me))
     Qb = Qb if isinstance(Qb, mp.mpf) else mp.mpf(str(Qb))
-    return me, Qb, me / (q0 * (q0 - 1))
+    return me, Qb, _qbeta_e0.order_zero_scaled(me, q0)
 
 
 def main() -> int:

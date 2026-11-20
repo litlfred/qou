@@ -105,6 +105,7 @@ export default proposition({
     "verified-empirically",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Proposition (conditional on [`he4-canonical-tr-m-block-fingerprint.witness.json`](../../../computations/he4-canonical-tr-m-block-fingerprint.witness.json)).**" },
     {
       kind: "caveat",
       date: "2026-09-06",

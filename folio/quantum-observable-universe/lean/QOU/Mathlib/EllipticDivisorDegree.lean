@@ -26,7 +26,7 @@ the divisor of the ratio `Ψ/Φ` doubly-periodic
 degree-zero + a sign input is what forces that periodic divisor to vanish
 identically, killing the elliptic-freedom obstruction.
 
-## What is proved here (sorry-free) vs. open
+## What is proved here (sorry-free)
 
 **Proved now (elementary bricks, Mathlib-only cone):**
 
@@ -44,22 +44,14 @@ identically, killing the elliptic-freedom obstruction.
   to keep this file's dependency cone Mathlib-only and `lean`-direct verifiable;
   the un-namespaced original lives in `QOU.QBeta.MeromorphicSameOrder`.)
 
-**Stated open (the deep analytic core — a genuine Mathlib gap):**
-
-* `elliptic_divisor_degree_zero` — the degree-zero theorem itself, carried as a
-  cited `sorry`. Mathlib v4.24.0 has Liouville, Cauchy estimates,
-  `meromorphicOrderAt`, `MeromorphicOn.divisor`, `Complex.CauchyIntegral` and
-  `circleIntegral`, but it has **no elliptic-function theory, no argument
-  principle / residue theorem** (`Σ ord = (1/2πi)∮ f'/f`), and no
-  Hadamard-factorization. The proof route
-  `Σ ord = (1/2πi)∮_{∂P} f'/f = 0` (boundary integrals cancel by the periodicity
-  of `logDeriv f` proved above) needs the argument principle to identify the sum
-  of orders with the contour integral of `logDeriv f`; that identification is the
-  absent theorem. The boundary *cancellation* half is formalizable now (it is
-  `isElliptic_logDeriv`); the *argument principle* half is not.
-
-This is honest scaffolding of a known gap: **not** vacuous `True`, **not**
-axiomatized-as-proved. See `docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md`.
+**Proved elsewhere (the analytic core):** `elliptic_divisor_degree_zero`, the
+degree-zero theorem itself, is proved sorry-free in `QOU.Mathlib.LiouvilleThird`.
+Mathlib v4.24.0 has no argument principle, so the proof builds one on an annulus
+(`QOU.Mathlib.ArgumentPrincipleAnnulus`, integer orders) and reaches it by pulling
+`f` back along `w = exp (2πi z/ω₁)`: `ω₁`-periodicity makes the pull-back
+single-valued on `ℂ*`, and `ω₂`-periodicity becomes invariance under `w ↦ p w`,
+which forces the two circle integrals of the annulus argument principle to agree.
+Nonconstancy of `f` is not needed.
 
 -- Ref: [leitner2026] Liouville's third theorem (degree of an elliptic divisor is
 --   zero); docs/audits/2026-07-20-pentagon-entire-leg.md (§"exact residual analytic fact").
@@ -210,44 +202,15 @@ theorem divisor_translate {f : ℂ → ℂ} {c : ℂ}
       MeromorphicOn.divisor_apply hf (Set.mem_univ _),
       meromorphicOrderAt_translate hper z]
 
-/-! ### The degree-zero theorem (deep analytic core — stated open, cited `sorry`) -/
+/-! ### The degree-zero theorem — PROVED in `QOU.Mathlib.LiouvilleThird`
 
-/-! The class `HasArgumentPrinciple` that used to sit here was removed on
-2026-11-20 (owner ruling on #8526, bean `qou-z4jb`). Its only field was the
-conclusion of `elliptic_divisor_degree_zero`, with no hypotheses at all (`f`
-need not be elliptic, `S` any finite set), so it was false in general, could
-never be honestly instanced, and the theorem below merely read it back out —
-the self-assuming projection AGENTS.md §3b-cond item 5 forbids. The theorem
-is now stated honestly with a cited `sorry`. -/
-
-/-- **Liouville's third theorem: the degree of an elliptic divisor is zero.**
-For a nonconstant elliptic function `f` with `ℝ`-independent periods, the sum of
-the local orders (zeros minus poles, with multiplicity) over one fundamental
-parallelogram vanishes. `S` enumerates the finitely many divisor points inside the
-cell (the finiteness — support locally finite ∩ compact cell — is a separate,
-tractable brick; it is passed as `hS` so that the analytic core is isolated).
-
-**OPEN.** The classical proof is
-`Σ_{p∈P} ord_p f = (1/2πi) ∮_{∂P} logDeriv f = 0`, where the contour integral
-vanishes because `logDeriv f` is elliptic (`isElliptic_logDeriv`, proved above) so
-opposite edges cancel. The first equality is the **argument principle**, which is
-absent from Mathlib v4.24.0 (no elliptic-function theory, no residue theorem). The
-boundary-cancellation half is formalized here; the argument-principle half is the
-genuine gap. -/
-theorem elliptic_divisor_degree_zero {f : ℂ → ℂ} {ω₁ ω₂ : ℂ}
-    (_hf : IsElliptic f ω₁ ω₂)
-    (_hindep : LinearIndependent ℝ ![ω₁, ω₂])
-    (_hnc : ¬ ∃ c, ∀ z, f z = c)
-    (S : Finset ℂ)
-    (_hS : (S : Set ℂ) =
-      {z | z ∈ fundamentalParallelogram ω₁ ω₂ ∧
-        (MeromorphicOn.divisor f Set.univ) z ≠ 0}) :
-    ∑ z ∈ S, (MeromorphicOn.divisor f Set.univ) z = 0 := by
-  -- Ref: [leitner2026] Liouville's third theorem (stated, not yet proved). The
-  --   argument principle over a parallelogram is absent from Mathlib v4.24.0.
-  --   Planned route (bean qou-z4jb): pull back along w = exp(2πi z/ω₁) to an
-  --   annulus and use `argumentPrinciple_annulus_finset` (QOU.QBeta.C1ConnectionPoles)
-  --   with ℤ multiplicities. See docs/audits/2026-07-20-pi2-elliptic-divisor-scaffold.md.
-  sorry
+`elliptic_divisor_degree_zero` is stated and proved sorry-free in
+`QOU.Mathlib.LiouvilleThird` (same namespace), which imports this file. It lives
+there because its proof needs the annulus argument principle
+(`QOU.Mathlib.ArgumentPrincipleAnnulus`) and the exponential pull-back
+(`QOU.Mathlib.EllipticAnnulusDescent`, `QOU.Mathlib.EllipticAnnulusWinding`),
+whose cones this file deliberately does not import. History: it was a class
+projection (`HasArgumentPrinciple`, removed 2026-11-20 as self-assuming), then a
+cited `sorry`, then proved (bean `qou-z4jb`). -/
 
 end QOU.Mathlib.EllipticDivisorDegree

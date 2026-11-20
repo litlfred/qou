@@ -22,4 +22,7 @@ export default diagram({
     witness: "computations/bring-chiral-fibre-figure.witness.json",
     workplan: "docs/workplans/2026-05-24-pr31-affine-light-cone-redo.md",
   },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): We generate this via [`bring_chiral_fibre_figure.py`](../../../computations/bring_chiral_fibre_figure.py), witnessed by [`bring-chiral-fibre-figure.witness.json`](../../../computations/bring-chiral-fibre-figure.witness.json)." },
+  ],
 });

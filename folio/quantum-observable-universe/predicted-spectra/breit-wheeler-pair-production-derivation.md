@@ -1,10 +1,10 @@
 **Derivation (Breit--Wheeler categorical pair production).**
 
-We derive the Breit--Wheeler categorical pair production. We introduce the bare and colored photon. We compute the normal-form reduction of the pair product. We evaluate linear and circular polarization limits. We identify the four-term extension.
+This derives the Breit--Wheeler categorical pair production. Introduce the bare and colored photon. Compute the normal-form reduction of the pair product. Evaluate linear and circular polarization limits. Identify the four-term extension.
 
 #### Bare photon pair
 
-Two identical bare photons yield the product $\gamma\gamma = \sigma_0^2$. We apply the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + \mathbf{1}$:
+Two identical bare photons yield the product $\gamma\gamma = \sigma_0^2$. Apply the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + \mathbf{1}$:
 
 $$
   \mathrm{NF}(\gamma\gamma)
@@ -21,16 +21,16 @@ $$
   \gamma
   = 
   \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-  + \varphi_{01}\sigma_0\sigma_1,
+  + \varphi_{01}\sigma_0\sigma_1^{-1},
 $$
 
-where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$. The generator $\sigma_0$ acts on the $(\sigma, r)$ plane. The generator $\sigma_1$ acts on the $(r, g)$ plane. The product $\sigma_0\sigma_1 = L_+$ provides Hopf-link dressing. 
+where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$. The generator $\sigma_0$ acts on the $(\sigma, r)$ plane. The generator $\sigma_1$ acts on the $(r, g)$ plane. The fourth term is the chiral pair-production vertex $\sigma_0\sigma_1^{-1} = L_+ - h\sigma_0$ ([photon](#def:photon)). 
 
 This derivation treats the 3-term specialization $\varphi_{01} = 0$.
 
 #### Normal-form pair product
 
-We expand the product $\gamma_1 \cdot \gamma_2$ for two 3-term colored photons $\gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$ and $\gamma_2 = \mathbf{1} + \psi_0\sigma_0 + \psi_1\sigma_1$. We reduce via $\sigma_i^2 = h\sigma_i + \mathbf{1}$, where $h = q - q^{-1}$.
+Expand the product $\gamma_1 \cdot \gamma_2$ for two 3-term colored photons $\gamma_1 = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1$ and $\gamma_2 = \mathbf{1} + \psi_0\sigma_0 + \psi_1\sigma_1$. Reduce via $\sigma_i^2 = h\sigma_i + \mathbf{1}$, where $h = q - q^{-1}$.
 
 Collecting by basis element yields:
 
@@ -68,7 +68,7 @@ $$
 #### Polarization limits
 
 **Linear (symmetric) polarization:** 
-We take equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = \phi$.
+Take equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = \phi$.
 - $\gamma$: $1 + 2\phi^2$
 - $\sigma_0$: $2\phi + \phi^2 h$
 - $\sigma_1$: $2\phi + \phi^2 h$
@@ -78,7 +78,7 @@ We take equal color in both generators, $\varphi_0 = \varphi_1 = \psi_0 = \psi_1
 The equal Hopf link content ($L_+ = L_- = \phi^2$) implies zero chirality. The net valuation is $(1 + 2\phi)^2 + 2\phi^2 h$. Fitting this to $E_{\mathrm{pair}} = 2m_e$ gives $\phi = 0.0487$. This value is a fit to the measured electron mass, not a derivation.
 
 **Circular (orthogonal) polarization:**
-We take orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$.
+Take orthogonal polarization, $\varphi_0 = s$, $\varphi_1 = 0$, $\psi_0 = 0$, $\psi_1 = s$.
 - $\gamma$: $1$
 - $\sigma_0$: $s$
 - $\sigma_1$: $s$
@@ -92,5 +92,3 @@ Both fits close the $1.6\%$ energy gap by construction, so closing it is not evi
 #### Four-term extension
 
 Activating $\varphi_{01} \neq 0$ recovers the general 4-term photon. The $\gamma\gamma$ product directly opens the $e^-$ (trefoil) channel. The 6-term normal form and the derivation of nucleons from pair production follow from these operations.
-
-**Witness:** `breit-wheeler-nucleon-nf.witness.json`

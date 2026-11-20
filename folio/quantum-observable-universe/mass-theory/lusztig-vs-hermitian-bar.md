@@ -14,7 +14,6 @@ $$
 *coincide on the parameter $q$ if and only if
 $\mathrm{Im}(q) = 0$, equivalently $q \in \mathbb{R}$.*
 
-The Lean formalization specialises to $\mathbb{R}$ for the archimedean evaluation at the substrate $q_0$.
 ## Significance
 
 The framework's existing bar-symmetric / bar-anti-symmetric decomposition is built around $\beta_L$ alone. On the real axis this is the only available involution structure. On general complex $q$ with $\lvert q \rvert > 1$ and $\mathrm{Im}(q) \neq 0$, the algebra admits a finer decomposition by simultaneous $\beta_L$- and $\beta_H$-eigenvalues, producing four channels:

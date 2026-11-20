@@ -1,7 +1,7 @@
-The [neutron definition](#def:categorical-neutron) establishes the $\mathcal{B}_3(\mathfrak{u},\mathfrak{d},\mathfrak{d})$ baryon. We derive its normal form, mass, $\beta$-decay transition, and Coulomb charge.
+The [neutron definition](#def:categorical-neutron) establishes the $\mathcal{B}_3(\mathfrak{u},\mathfrak{d},\mathfrak{d})$ baryon. One derives its normal form, mass, $\beta$-decay transition, and Coulomb charge.
 
 **Step 1: Borromean braid NF.**
-As in the [proton](#def:categorical-proton) construction, we find $\mathrm{net}(\mathcal{B}_3) = +1.000$, establishing intrinsic Hopf link content without an independent $\mathcal{L}_H$ factor.
+As in the [proton](#def:categorical-proton) construction, one finds $\mathrm{net}(\mathcal{B}_3) = +1.000$, establishing intrinsic Hopf link content without an independent $\mathcal{L}_H$ factor.
 
 **Step 2: Typed crossings + Hopf gluon stabilisation.**
 The two down quarks induce stronger $-h_{\mathrm{A}}$ shifts than the single down quark of the proton. The crossing pairs appear in [Table: Neutron crossing pairs](#tbl:categorical-neutron-table-data).
@@ -59,4 +59,4 @@ $$
   1 \cdot (+\tfrac{2}{3}) + 2 \cdot (-\tfrac{1}{3}) = 0.
 $$
 
-The sum vanishes, and the arithmetic is the Standard Model's. What it is **not** is a consequence of the crossing-orientation mechanism. A single positive-orientation unknot $\mathfrak{u}$ cannot cancel two negative-orientation unknots $\mathfrak{d}$ of equal magnitude. The cancellation above works only because $|Q_{\mathfrak{u}}| = 2|Q_{\mathfrak{d}}|$, and orientation reversal is a mirror, so it forces the two magnitudes to be *equal* ([down quark](#def:down-quark)). Writing $Q(\mathfrak{u}) = a$ and hence $Q(\mathfrak{d}) = -a$, the neutron carries $a - 2a = -a$ and the proton $2a - a = +a$: the mechanism makes the neutron the proton's exact opposite, and a neutral neutron forces every quark charge to vanish (`QOU.Braiding.mirror_odd_neutral_neutron_forces_zero`). The quark charges are therefore an adopted input here, not a derived one. The inter-neutron Hopf crossings acquire the $q^{-1}$ coefficient associated with negative crossings.
+The sum vanishes, and the arithmetic is the Standard Model's. What it is **not** is a consequence of the crossing-orientation mechanism. A single positive-orientation unknot $\mathfrak{u}$ cannot cancel two negative-orientation unknots $\mathfrak{d}$ of equal magnitude. The cancellation above works only because $|Q_{\mathfrak{u}}| = 2|Q_{\mathfrak{d}}|$, and orientation reversal is a mirror, so it forces the two magnitudes to be *equal* ([down quark](#def:down-quark)). Writing $Q(\mathfrak{u}) = a$ and hence $Q(\mathfrak{d}) = -a$, the neutron carries $a - 2a = -a$ and the proton $2a - a = +a$: the mechanism makes the neutron the proton's exact opposite, and a neutral neutron forces every quark charge to vanish. The quark charges are therefore an adopted input here, not a derived one. The inter-neutron Hopf crossings acquire the $q^{-1}$ coefficient associated with negative crossings.

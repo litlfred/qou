@@ -44,7 +44,7 @@ $$
 
 These are the Hecke generator's eigenvalues: $\lambda^2 = h\lambda + 1$,
 i.e. $(\lambda-q)(\lambda+q^{-1}) = 0$, which identifies this operator as
-$\sigma_i$ (`JonesNormalisation.tl_generator_sq`).
+$\sigma_i$.
 
 **At the substrate parameter $q_0$:**
 
@@ -59,7 +59,7 @@ $$
 
 Shell $n$ of an atom is the $n$-th power of the transfer matrix at the electron-nucleus junction. Each power corresponds to one **R-I move** (Reidemeister I). This adds one curl to the electron trefoil, increasing the writhe by $1$ without altering the knot type.
 
-We diagonalize $T_{\gamma e} = S \Lambda S^{-1}$:
+Diagonalize $T_{\gamma e} = S \Lambda S^{-1}$:
 
 $$
   T_{\gamma e}^n
@@ -115,7 +115,7 @@ $$
 
 where $z = q^{3}/(q^{2}+1)$ is the Markov parameter (**convention D**).
 
-We define:
+Define:
 
 $$
   \alpha =  z\lambda_+ + 1, \qquad

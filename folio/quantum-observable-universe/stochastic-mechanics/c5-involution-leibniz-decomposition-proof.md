@@ -9,7 +9,7 @@ $$
 $$
 
 Using the Hecke quadratic $\sigma_i^2 = h\sigma_i + 1$ (where $h = q - q^{-1}$),
-we have $\sigma_i^{-1} = \sigma_i - h$.
+$\sigma_i^{-1} = \sigma_i - h$.
 
 The **bar-invariant projector** is $P_{\text{avg}} = (1 + \overline{\,\,})/2$.
 Its action on $\sigma_i$ gives:
@@ -93,93 +93,83 @@ contributions at rung $5$ are dominant — at all other rungs in
 $[3, 7]$, the pure-$\sigma$ contributions dominate and the
 averaging contributions are subdominant. □
 
-## Proofs (Lean $\leftrightarrow$ paper bridge)
-
-Every substantive Lean theorem in [`c5-involution-leibniz-decomposition.lean`](c5-involution-leibniz-decomposition.lean) has both a narrative proof here and a `sorry`-free Lean proof.
+## Proofs
 
 ### Hoefsmit–Quantum-2 identity
 
-**Theorem (Lean: `hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared`).** For all $q \neq 0$ in $\mathbb{R}$,
+**Theorem.** For all $q \neq 0$ in $\mathbb{R}$,
 
 $$b^2(q) \;=\; \frac{q^4 + q^2 + 1}{(q^2 + 1)^2} \;=\; 1 - \frac{1}{[2]_q^2}.$$
 
 *Proof.* Multiply both sides by $[2]_q^2 = (q + q^{-1})^2$:
-$(q^2 + 1)^2 = q^2 \cdot (q + q^{-1})^2$ since $(q+q^{-1})^2 = (q^2+1)^2/q^2$. So $b^2 = (q^4+q^2+1)/(q^2[2]_q^2)$. Multiply numerator and denominator of $b^2$ by $1/q^2$: $b^2 = (q^2 + 1 + q^{-2})/[2]_q^2 = ([2]_q^2 - 1)/[2]_q^2 = 1 - 1/[2]_q^2$ since $q^2 + 1 + q^{-2} = (q+q^{-1})^2 - 1 = [2]_q^2 - 1$. Lean tactic: `field_simp; ring`. $\square$
+$(q^2 + 1)^2 = q^2 \cdot (q + q^{-1})^2$ since $(q+q^{-1})^2 = (q^2+1)^2/q^2$. So $b^2 = (q^4+q^2+1)/(q^2[2]_q^2)$. Multiply numerator and denominator of $b^2$ by $1/q^2$: $b^2 = (q^2 + 1 + q^{-2})/[2]_q^2 = ([2]_q^2 - 1)/[2]_q^2 = 1 - 1/[2]_q^2$ since $q^2 + 1 + q^{-2} = (q+q^{-1})^2 - 1 = [2]_q^2 - 1$. $\square$
 
-**Corollary (Lean: `c5_decomposition_via_quantum_two`).** $c_5(q) = -3/2 + 1/[2]_q^2$.
+**Corollary.** $c_5(q) = -3/2 + 1/[2]_q^2$.
 *Proof.* Substitute $b^2 = 1 - 1/[2]_q^2$ into $c_5 = -b^2 - 1/2$:
 $c_5 = -(1 - 1/[2]_q^2) - 1/2 = -3/2 + 1/[2]_q^2$. $\square$
 
 ### Classical-QOU limit + Wedderburn identification
 
-**Theorem (Lean: `c5_classical_limit_eq_neg_five_quarters`).** $c_5(q = 1) = -5/4$.
-*Proof.* At $q = 1$: $[2]_q = 2$, so $[2]_q^2 = 4$, $1/[2]_q^2 = 1/4$, $c_5(1) = -3/2 + 1/4 = -5/4$. By `norm_num`. $\square$
+**Theorem.** $c_5(q = 1) = -5/4$.
+*Proof.* At $q = 1$: $[2]_q = 2$, so $[2]_q^2 = 4$, $1/[2]_q^2 = 1/4$, $c_5(1) = -3/2 + 1/4 = -5/4$. $\square$
 
-**Theorem (Lean: `c5_classical_eq_wedderburn_nonsign_dim_half`).** $c_5(1) = -(\dim V_{(3)} + \dim V_{(2,1)})/2 + 1/4 = -5/4$.
+**Theorem.** $c_5(1) = -(\dim V_{(3)} + \dim V_{(2,1)})/2 + 1/4 = -5/4$.
 *Proof.* The Wedderburn decomposition of $\mathbb{C}[S_3]$ has three irreps with dimensions $1$ ($V_{(3)}$), $2$ ($V_{(2,1)}$), $1$ ($V_{(1,1,1)}$). The non-sign sum is $1 + 2 = 3$; half is $3/2$. So $-3/2 = -(\dim V_{(3)} + \dim V_{(2,1)})/2$. Combine with $1/4 = 1/[2]_q^2$ at $q=1$ to get $-5/4$. $\square$
 
 ### Silver-ratio identity
 
-**Lemma (Lean: `quantumTwo_at_silver_ratio_squared`).** $[2]_q^2 = 8$ at $q = 1 + \sqrt 2$.
-*Proof.* $[2]_{1+\sqrt 2} = (1+\sqrt 2) + 1/(1+\sqrt 2) = (1+\sqrt 2) + (\sqrt 2 - 1) = 2\sqrt 2$. So $[2]_q^2 = 8$. Lean tactic:
+**Lemma.** $[2]_q^2 = 8$ at $q = 1 + \sqrt 2$.
+*Proof.* $[2]_{1+\sqrt 2} = (1+\sqrt 2) + 1/(1+\sqrt 2) = (1+\sqrt 2) + (\sqrt 2 - 1) = 2\sqrt 2$. So $[2]_q^2 = 8$. $\square$
 
-```lean
-field_simp; ring_nf; linarith [Real.mul_self_sqrt (by norm_num : (2:ℝ) ≥ 0)]
-```
-
-$\square$
-
-**Theorem (Lean: `b_squared_at_silver_ratio`).** $b^2(1 + \sqrt 2) = 7/8$.
+**Theorem.** $b^2(1 + \sqrt 2) = 7/8$.
 *Proof.* From Hoefsmit–Quantum-2 + the lemma above: $b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8$. $\square$
 
-**Corollary (Lean: `c5_at_silver_ratio_is_minus_11_over_8`).** $c_5(\mathrm{silver}) = -11/8$.
+**Corollary.** $c_5(\mathrm{silver}) = -11/8$.
 *Proof.* From the c_5 closed form + the silver-ratio identity: $c_5 = -3/2 + 1/8 = -12/8 + 1/8 = -11/8$. Numerator $11$ is **inert** in $\mathbb{Z}[1+\sqrt 2]$ (not in Pell-Lucas closure) — the c_5 outlier fingerprint. $\square$
 
 ### c_5 in terms of Hecke skein h
 
-**Lemma (Lean: `quantum_two_squared_eq_skein_squared_plus_four`).** For all $q \neq 0$:
+**Lemma.** For all $q \neq 0$:
 $[2]_q^2 = h^2 + 4$ where $h = q - q^{-1}$.
 *Proof.* $(q + q^{-1})^2 = q^2 + 2 + q^{-2}$ and $(q - q^{-1})^2 + 4 = (q^2 - 2 + q^{-2}) + 4 = q^2 + 2 + q^{-2}$. Equal. $\square$
 
-**Theorem (Lean: `c5_as_function_of_skein`).** $c_5(q) = -3/2 + 1/(h^2 + 4)$ where $h = q - q^{-1}$.
+**Theorem.** $c_5(q) = -3/2 + 1/(h^2 + 4)$ where $h = q - q^{-1}$.
 *Proof.* Substitute the previous lemma into the closed form $c_5 = -3/2 + 1/[2]_q^2$. $\square$
 
 ### c_5 as a rational map over $\mathbb{R}$
 
-**Proposition (Lean: `c5RationalMap_at_skein_eq_c5Decomposition`).** `c5RationalMap(h(q)) = c5Decomposition(q)`.
-*Proof.* Direct rewrite via `c5_as_function_of_skein`. $\square$
+**Proposition.** The rational map $h \mapsto -3/2 + 1/(h^2 + 4)$, evaluated at $h = q - q^{-1}$, equals $c_5(q)$.
+*Proof.* Direct rewrite via the preceding theorem. $\square$
 
-**Proposition (Lean: `h_sq_plus_four_pos`, `h_sq_plus_four_ne_zero`).** $h^2 + 4 > 0$ over $\mathbb{R}$.
+**Proposition.** $h^2 + 4 > 0$ over $\mathbb{R}$.
 *Proof.* $h^2 \geq 0$; add $4$ to get $\geq 4 > 0$. $\square$
 
-**Proposition (Lean: `c5RationalMap_zero/two/one`).** Three concrete evaluations: $c_5(h{=}0) = -5/4$, $c_5(h{=}2) = -11/8$, $c_5(h{=}1) = -13/10$.
-*Proof.* Direct numerical computation via `norm_num`. $\square$
+**Proposition.** Three concrete evaluations: $c_5(h{=}0) = -5/4$, $c_5(h{=}2) = -11/8$, $c_5(h{=}1) = -13/10$.
+*Proof.* Direct numerical computation. $\square$
 
-**Theorem (Lean: `c5RationalMap_even h`).** $c_5(-h) = c_5(h)$ (even function).
+**Theorem.** $c_5(-h) = c_5(h)$ (even function).
 *Proof.* $(-h)^2 = h^2$; substitute. The categorical content of bar-symmetry: $c_5$ is invariant under bar acting as $h \to -h$. $\square$
 
-**Theorem (Lean: `c5RationalMap_le_neg_five_quarters h`).** $c_5(h) \leq -5/4$ for all real $h$, with equality at $h = 0$.
+**Theorem.** $c_5(h) \leq -5/4$ for all real $h$, with equality at $h = 0$.
 *Proof.* $h^2 + 4 \geq 4$, so $1/(h^2 + 4) \leq 1/4$, hence $c_5 = -3/2 + 1/(h^2+4) \leq -3/2 + 1/4 = -5/4$. $\square$
 
-**Theorem (Lean: `c5RationalMap_gt_neg_three_halves h`).** $c_5(h) > -3/2$ for all real $h$.
+**Theorem.** $c_5(h) > -3/2$ for all real $h$.
 *Proof.* $1/(h^2 + 4) > 0$, so $c_5 > -3/2$. The bound is approached asymptotically as $|h| \to \infty$ but never reached. $\square$
 
-**Theorem (Lean: `c5RationalMap_strict_neg h`).** $c_5(h) < 0$ for all real $h$.
+**Theorem.** $c_5(h) < 0$ for all real $h$.
 *Proof.* From the upper bound: $c_5 \leq -5/4 < 0$. $\square$
 
-**Theorem (Lean: `c5RationalMap_max_at_zero h`).** $h = 0$ achieves the maximum of $c_5$.
+**Theorem.** $h = 0$ achieves the maximum of $c_5$.
 *Proof.* Combine $c_5(h) \leq -5/4$ with $c_5(0) = -5/4$. $\square$
 
-**Theorem (Lean: `c5OfHSquared_antitone_on_nonneg`).** $c_5$ is monotonically decreasing in $h^2$ on the nonneg domain.
+**Theorem.** $c_5$ is monotonically decreasing in $h^2$ on the nonneg domain.
 *Proof.* For $0 \leq x \leq y$: both $x+4$ and $y+4$ are positive, $y + 4 \geq x + 4$, so $1/(y+4) \leq 1/(x+4)$, hence $c_5(y) \leq c_5(x)$. $\square$
 
 ### Factorization through $h^2$
 
-**Theorem (Lean: `c5RationalMap_factor h`).** $c_5(h) = c_5\text{OfHSquared}(h^2)$.
+**Theorem.** $c_5(h) = c_5\text{OfHSquared}(h^2)$.
 *Proof.* By definition both unfold to $-3/2 + 1/(h^2 + 4)$. $\square$
 
 Categorical reading: $c_5$ factors as
 $$h \xrightarrow{\text{squaring}} h^2 \xrightarrow{\text{rational fn}} c_5$$
-where the first arrow is the canonical anti-sym $\to$ sym projection (`IsBarSymmetric.of_mul_antisym`) and the second is a bar-symmetric-preserving function. This makes the bar-symmetric structure of $c_5$ explicit at the level of function composition.
-
-All 24 substantive Lean theorems / definitions in the sibling have narrative proofs above. The Lean file is `sorry`-free.
+where the first arrow is the canonical anti-sym $\to$ sym projection and the second is a bar-symmetric-preserving function. This makes the bar-symmetric structure of $c_5$ explicit at the level of function composition.

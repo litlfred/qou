@@ -20,7 +20,7 @@ $$
 *The standard-channel state emerges from a $2 \times 2$ matrix product.*
 
 *(iii) Jet-descended nucleon blocks.*
-*Intra-nucleon crossings yield fixed $2 \times 2$ transfer matrices $T_\mathfrak{p}^{\mathrm{std}}$ and $T_\mathfrak{n}^{\mathrm{std}}$. We precompute these once.*
+*Intra-nucleon crossings yield fixed $2 \times 2$ transfer matrices $T_\mathfrak{p}^{\mathrm{std}}$ and $T_\mathfrak{n}^{\mathrm{std}}$. Precompute these once.*
 
 *(iv) Inter-nucleon crossings (transient).*
 *Each inter-nucleon crossing carries a $2 \times 2$ matrix dictated by the pair type.*

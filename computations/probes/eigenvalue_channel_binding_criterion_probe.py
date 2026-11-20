@@ -155,7 +155,8 @@ def main() -> int:
     h = q - 1 / q
     z = q**3 / (q**2 + 1)
     me = _me if isinstance(_me, mp.mpf) else mp.mpf(str(_me))
-    al = me / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    al = _qbeta_e0.order_zero_scaled(me, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     _d = flavor_split_leading(q)
 
     print("eigenvalue_channel_binding_criterion_probe")

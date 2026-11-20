@@ -24,6 +24,7 @@ export default proposition({
     "derivation",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean sibling records that refutation as `not_rhoKH3ARefinementNaive`." },
     {
       kind: "note",
       date: "2026-09-04",

@@ -34,11 +34,11 @@ Each Goncharov period class $\mathcal{P}_n / \mathcal{P}_{n-1}$ inherits a bar-g
 
 ## Provenance
 
-This categorifies the amphichirality construction introduced in the figure-$8$ block ([Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy](#rem:figure-8-archimedean-illustration)). We recast it as a period-theoretic structure on $\mathcal{P}_\bullet$. The bar involution's role remains structural. It organises period classes by the orientation-reversal symmetry of the motivic substrate.
+This categorifies the amphichirality construction introduced in the figure-$8$ block ([Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy](#rem:figure-8-archimedean-illustration)). One recasts it as a period-theoretic structure on $\mathcal{P}_\bullet$. The bar involution's role remains structural. It organises period classes by the orientation-reversal symmetry of the motivic substrate.
 
 ## Falsifiability
 
-We propose a test using a chiral hyperbolic knot $K$ with known $\mathrm{CS}(K) \neq 0$. The simplest such knot is $5_2$, which has $\mathrm{Vol} \approx 2.8281$ and $\mathrm{CS} \approx -0.1530\,\pi^2 \pmod{\pi^2}$. We verify three points:
+One proposes a test using a chiral hyperbolic knot $K$ with known $\mathrm{CS}(K) \neq 0$. The simplest such knot is $5_2$, which has $\mathrm{Vol} \approx 2.8281$ and $\mathrm{CS} \approx -0.1530\,\pi^2 \pmod{\pi^2}$. One verifies three points:
 
 1. The dominant cell of $5_2$ in $H_4(q)$ (or $H_5(q)$) forms a chiral pair, rather than a self-conjugate cell.
 2. The depth-$2$ pairing produces the real $\mathrm{Vol}(5_2)$.

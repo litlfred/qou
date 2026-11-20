@@ -1,4 +1,4 @@
-We derive the electron configuration of atoms from the **closed sub-Hopf link structure** of the multi-electron trefoil chain. This yields the shell capacities $2, 8, 18, 32, \ldots = 2n^2$.
+The electron configuration of atoms is derived from the **closed sub-Hopf link structure** of the multi-electron trefoil chain. This yields the shell capacities $2, 8, 18, 32, \ldots = 2n^2$.
 
 **The electron link.**
 
@@ -22,7 +22,7 @@ Topological closure makes helium a noble gas. A third electron (lithium) forces 
 
 **Shell capacities from sub-link closure.**
 
-We conjecture that the maximum number of trefoils in a closed sub-Hopf link at level $n$ fixes the shell capacity at $2n^2$. A rigorous derivation remains open:
+The conjecture is that the maximum number of trefoils in a closed sub-Hopf link at level $n$ fixes the shell capacity at $2n^2$. A rigorous derivation remains open:
 
 | Shell $n$ | Capacity $2n^2$ | Cumulative | Pure-$2n^2$ closure | Closed sub-link |
 |----------:|----------------:|-----------:|---------------------|----------------|
@@ -32,7 +32,7 @@ We conjecture that the maximum number of trefoils in a closed sub-Hopf link at l
 | 4 | 32 | 60 | Nd (**not** noble) | $32 \cdot T_{2,3}$ |
 
 **Caveat — the pure-$2n^2$ closures are not the chemical noble gases.**
-The cumulative pure-$2n^2$ count $[2, 10, 28, 60, \ldots]$ maps the closed-shell sequence of a pure-Coulomb atom. The chemical noble gases $[2, 10, 18, 36, 54, 86]$ follow the **Madelung / $n+\ell$ (Aufbau)** ordering driven by electron–electron screening. The two sequences match only at He and Ne. They diverge at $n = 3$. Reproducing the physical noble gases requires both the $2n^2$ derivation and a categorical screening mechanism. We state the noble-gas identifications as a target.
+The cumulative pure-$2n^2$ count $[2, 10, 28, 60, \ldots]$ maps the closed-shell sequence of a pure-Coulomb atom. The chemical noble gases $[2, 10, 18, 36, 54, 86]$ follow the **Madelung / $n+\ell$ (Aufbau)** ordering driven by electron–electron screening. The two sequences match only at He and Ne. They diverge at $n = 3$. Reproducing the physical noble gases requires both the $2n^2$ derivation and a categorical screening mechanism. The noble-gas identifications are stated as a target.
 
 The noble gases (He, Ne, Ar, Kr, Xe, Rn) define atoms whose electron cloud reduces to a **union of closed sub-links**. Every electron belongs to a complete shell.
 

@@ -142,7 +142,7 @@ for name, Z, N in [('proton', 1, 0), ('neutron', 0, 1),
 m_p_cat = next(p['total'] for p in particle_data if p['particle']=='proton')
 from experimental_constants import M_P_MEV, M_N_MEV
 calib = M_P_MEV / m_p_cat
-print(f"  Calibration: E_0 = m_p_CODATA / proton_total_cat = {calib:.6e} MeV/cat")
+print(f"  Calibration: E_0 = m_p_CODATA / proton_total_cat = {float(calib):.6e} MeV/cat")
 print()
 print(f"  Predicted masses (all orders, MeV):")
 for p in particle_data:
@@ -151,9 +151,9 @@ for p in particle_data:
     ref = M_P_MEV if name == 'proton' else M_N_MEV if name == 'neutron' else None
     if ref:
         err = (m_MeV - ref) / ref * 100
-        print(f"    {name:<8}: {m_MeV:.4f} MeV  (CODATA {ref}, err {err:+.3f}%)")
+        print(f"    {name:<8}: {float(m_MeV):.4f} MeV  (CODATA {ref}, err {float(err):+.3f}%)")
     else:
-        print(f"    {name:<8}: {m_MeV:.4f} MeV  (atomic, not direct comparison)")
+        print(f"    {name:<8}: {float(m_MeV):.4f} MeV  (atomic, not direct comparison)")
 
 # Save witness
 witness = {

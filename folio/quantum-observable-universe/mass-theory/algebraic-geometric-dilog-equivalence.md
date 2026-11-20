@@ -61,8 +61,8 @@ $$
 **Note — what $n$ is, and it is not pinned.** Clause (1) counts $n$ ideal
 tetrahedra because that is what the carrier of the bijection
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy),
-table row 4) and the compute both count: `snappy_cusp_seeding.py` takes
-$n$ from `num_tetrahedra()` and emits one algebraic seed per tetrahedron, eight
+table row 4) and the cusp-seeding computation both count: it takes
+$n$ to be the number of tetrahedra and emits one algebraic seed per tetrahedron, eight
 for the eight-tetrahedron $\mathtt{L6a4}$. But the same symbol is the Hecke
 index and GB-depth $k_\star(T_w) = n$ in that carrier's own hypothesis, a free
 truncation order swept over $1, \dots, 4$ in
@@ -106,34 +106,28 @@ This result is downstream of
 necessarily a **conjecture** — propagation of conjectural backing
 forbids promotion to `proposition`/`theorem`.
 
-The Lean formalization follows the hypothesis-carrying conditional-class
-pattern: the class `QOU.QPochhammer.AlgebraicGeometricEquivalence` carries
-the open inputs — the matched shape parameter $z(x)$, the volume-conjecture
-saddle asymptotic (a theorem for $4_1$ by Ohtsuki / Andersen–Hansen), and the
-matched-cusp volume identification supplied by
-([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)) —
-and the statement bundle `QOU.QPochhammer.algebraic_geometric_equivalence`
-*derives* both halves: item 1 (pole side) unconditionally, as the
-theorem `denomPolyLocal_roots_explicit` (each $x = q^{-k}$ is a genuine root of
-$(x;q)_n$), and item 2 (Bloch–Wigner asymptotic) from the class fields.
-The class asserts nothing provable-outright; no instance is fabricated. This
-matches the conjectural-class pattern used for
+The conjecture is stated conditionally on its open inputs — the matched shape
+parameter $z(x)$, the volume-conjecture saddle asymptotic (a theorem for $4_1$
+by Ohtsuki / Andersen–Hansen), and the matched-cusp volume identification
+supplied by
+([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
+From these inputs both halves are *derived*: item 1 (pole side)
+unconditionally (each $x = q^{-k}$ is a genuine root of $(x;q)_n$), and item 2
+(Bloch–Wigner asymptotic) from the open inputs. None of the open inputs is
+asserted to hold. This matches the conditional pattern used for
 [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge).
 
-**The shape parameter is a field, on the upper half plane.** Item 2 above
+**The shape parameter lies in the upper half plane.** Item 2 above
 states the asymptotic at $D(z(x))$, with $z(x)$ the shape of the ideal
-tetrahedron; an earlier Lean revision typed the Bloch–Wigner function
-$D \colon \mathbb{R} \to \mathbb{R}$ and applied it to the state variable $x$
-itself, on the grounds that the matching map had been composed away. That
-diverged from the statement above, and it was not a harmless simplification:
-$D$ is conjugation-antisymmetric, $D(\bar z) = -D(z)$, so $D$ vanishes
-identically on the reals and every volume the class could name was forced to
-zero — a *flat* tetrahedron, which is the negation of the conjecture rather
-than a weak form of it. The map is now un-composed: `shape` is a class field
-typed `UpperHalfPlane`, so a degenerate shape is not expressible, and $x$
-keeps its own role as the $q$-Pochhammer state variable. The sibling
+tetrahedron, and not at the real state variable $x$ itself. The distinction is
+essential: $D$ is conjugation-antisymmetric, $D(\bar z) = -D(z)$, so $D$
+vanishes identically on the reals, and evaluating it at a real argument would
+force every volume to zero — a *flat* tetrahedron, which is the negation of the
+conjecture rather than a weak form of it. The shape $z(x)$ is therefore taken
+in the upper half plane, so a degenerate shape is excluded, and $x$ keeps its
+own role as the $q$-Pochhammer state variable. The sibling
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy))
-had already made the same repair on its own shape assignment.
+imposes the same requirement on its own shape assignment.
 
 ## The bar-odd open item: argument identification to $S$
 
@@ -155,13 +149,12 @@ $$
   b(q_0) \;=\; \sqrt{\tfrac{\ln q_0}{2\pi}}.
 $$
 
-The Lean carrier is the hypothesis class
-`QOU.QBeta.PhiBSArgumentIdentification.SArgumentIdentification`,
-parametrized by the argument map itself: a bare existence claim
-($\forall q_0\, \exists z$) would be near-vacuous by pointwise choice
-against the unbounded continuous phase, so the class carries the
-structural map as a parameter and no instance is fabricated. Two
-consequences are derived unconditionally from the class:
+The identification is taken as a hypothesis parametrized by the argument
+map itself: a bare existence claim ($\forall q_0\, \exists z$) would be
+near-vacuous by pointwise choice against the unbounded continuous phase, so
+the hypothesis carries the structural map as a parameter, and it is not
+asserted to hold. Two consequences are derived unconditionally from the
+hypothesis:
 
 1. (**Unimodular readout.**) At the identified argument the $\Phi_b$
    value is the pure phase $e^{i S(q_0)}$ — the leak is the argument of
@@ -172,8 +165,7 @@ consequences are derived unconditionally from the class:
    establish.**) *If* $S$ changes sign between the anchors, continuity of
    $S$ on $q_0 > 1$ forces by the intermediate value theorem a substrate
    $q^{*}$ where $S(q^{*}) = 0$: there $c_3 = -\mathrm{Vol}(4_1)$ and the
-   $\Phi_b$ readout is $1$ (Lean: `exists_zero_crossing`,
-   `exists_pure_bar_even`, which take the flip as an explicit hypothesis).
+   $\Phi_b$ readout is $1$ (the flip enters as an explicit hypothesis).
    The premise is **not established by the data**: each anchor value
    $S(\text{muon}) \approx +0.00968$, $S(\text{proton}) \approx -0.03946$
    carries a CAL-3 propagated uncertainty of $\pm 1.26$ ($130\times$ / $32\times$ the
@@ -189,10 +181,9 @@ consequences are derived unconditionally from the class:
 The physical regime of the bar-odd face is the **fibre branch**: real
 $b$, where the modular parameter $q_b = e^{i\pi b^2}$ satisfies
 $\lvert q_b \rvert = 1$ and equals the pure phase $e^{i \ln q_0 / 2}$ at
-the substrate map (Lean: `norm_fibreQParam`, `fibreQParam_fibreB`). On
+the substrate map. On
 this branch the modular-double product diverges and the construction is
-the real single integral `phiB`
-(`QOU.MathlibExt.FaddeevPhiBRealIntegral`), whose structural laws —
+the real single integral defining $\Phi_b$, whose structural laws —
 self-duality $\Phi_{b^{-1}} = \Phi_b$, unitarity
 $\lvert \Phi_b \rvert = 1$, the inversion relation, and
 $\sigma$-unitarity $\Phi_b \cdot \overline{\Phi_b} = 1$ — hold for the
@@ -202,20 +193,19 @@ fibre-branch $\Phi_b$ is an intrinsically bar-odd carrier.
 
 Of the two analytic identifications behind the construction, the
 **integrability** of the Faddeev kernel is now a fully unconditional
-theorem: the near-$0$ piece (`integrableOn_kernel_Ioc_zero_one` — the
+theorem: the near-$0$ piece (the
 $-2z/t^2$ subtraction cancels the pole, via the two-sided cubic $\sinh$
 estimates and a global $\lvert \sin y - y \rvert \le 2\lvert y \rvert^3$
 bound), the exponential-domination tail on $[1, \infty)$
-(`integrableOn_kernel_Ioi_one`), and hence integrability on all of
-$(0, \infty)$ (`integrableOn_kernel_Ioi_zero`) are all hypothesis-free —
+, and hence integrability on all of
+$(0, \infty)$ are all hypothesis-free —
 the two standard majorant facts ($e^{-bt}$ and $t^{-2}$ integrable on
-$[1, \infty)$) are discharged from Mathlib, not carried. The
-**definition-to-contour identity** — that the real-integral `phiB`
+$[1, \infty)$) are standard facts, not assumptions. The
+**definition-to-contour identity** — that the real-integral definition
 equals the Faddeev contour integral — remains a numerical pin
 ($8 \times 10^{-29}$ against the validated contour evaluator) and is
-assumed nowhere in the Lean; its honest carrier is
-`QOU.MathlibExt.PhiBFibreExtension` (the constructed `phiB` extends to a
-full Faddeev $\Phi_b$; no instance).
+assumed nowhere above; the statement that the constructed integral extends
+to a full Faddeev $\Phi_b$ is open.
 
 ## Binding channel: conditional only
 
@@ -225,13 +215,13 @@ $\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$ — and with it any
 on the complex-volume unification
 ([binding–$Q_\beta$ complex volume](#conj:binding-qbeta-complex-volume)).
 $\Phi_b$ touches binding **only** through that unproven channel
-identity; no statement here or in the Lean carriers above
-assumes it. The channel is carried explicitly as the class
-`SDeformedVolumeChannel` ($u(q_0)$ map + deformed volume + the identity
-$S = \mathrm{Im}\,\mathfrak{V}(u(q_0))$), and the composition with the
-argument-identification map is derived, not assumed: `phase_eq_im_deformed_volume`,
-`phiB_eq_cs_phase`, and `exists_cs_vanishing` (the sign flip of $S$
-forces a substrate point with vanishing deformed Chern–Simons part).
+identity; no statement here assumes it. The channel is taken as an
+explicit hypothesis ($u(q_0)$ map + deformed volume + the identity
+$S = \mathrm{Im}\,\mathfrak{V}(u(q_0))$), and its composition with the
+argument-identification map is derived, not assumed: the $\Phi_b$ phase then
+equals the imaginary part of the deformed volume, equivalently a deformed
+Chern–Simons phase, and the sign flip of $S$ forces a substrate point with
+vanishing deformed Chern–Simons part.
 
 ## Witness
 

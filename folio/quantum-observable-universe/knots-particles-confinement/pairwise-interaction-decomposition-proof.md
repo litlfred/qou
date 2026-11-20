@@ -13,7 +13,7 @@ proposition should be read.
 
 | part | epistemic tier | rests on |
 |---|---|---|
-| 1. composite reduction | the hexagon axiom, solved for $c_{X \otimes Y, Z}$ | axiom of `BraidedCategory` |
+| 1. composite reduction | the hexagon axiom, solved for $c_{X \otimes Y, Z}$ | axiom of a braided category |
 | 2. route independence | theorem | hexagon + naturality of the braiding |
 | 3. crossing count | theorem, proved here | the locality of an elementary crossing |
 
@@ -27,13 +27,3 @@ both and is the only part whose argument is not classical.
 Neither part 1 nor part 2 is derivable from the remaining quantum-universe
 axioms, nor from the observability conditions; the hexagon identities enter
 only as part of the braided structure.
-
-## Lean structure
-
-The formalization is [`pairwise-interaction-decomposition.lean`](pairwise-interaction-decomposition.lean), namespace `QOU.Braiding`. The declaration `pairwise_interaction_decomposition` is the conjunction of all three parts, each proved separately.
-
-Parts 1 and 2 are inherited from Mathlib's braided-category library: `composite_crossing_eq_two_elementary` is `braiding_tensor_left_hom`, and `triple_crossing_route_independent` is `yang_baxter`.
-
-Part 3 is proved from scratch. The locality step is `AdjSwap.eq_of_reverses`, the per-letter bound is `card_crossedPairs_step`, the induction is `card_crossedPairs_le_length`, and the conclusion is `card_allPairs_le_length`; the pair count $|P| = \binom{n}{2}$ is `card_allPairs`. The three-strand instance is `three_crossings_needed`.
-
-Every declaration depends only on `propext`, `Classical.choice`, and `Quot.sound`.

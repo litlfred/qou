@@ -1,4 +1,4 @@
-The [topological mass formula](#prop:topological-mass-formula) assigns mass
+The [topological mass formula](#conj:topological-mass-formula) assigns mass
 $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$. Here $q$ denotes the
 [substrate parameter](#def:substrate-parameter). Three non-zero
 hyperbolic volumes drive the Descartes universe mass spectrum:
@@ -65,13 +65,12 @@ executes this computation natively. This pairs with a single QOU-native surreal 
 research target natively structured on the framework's jet-order filtration. The second reduction is the [transcendence shadow](#rem:yekutieli-transcendence-shadow). It
 reduces algebraic independence to the non-collapse of the brane tower
 and Nesterenko-type arithmetic control of the quantum dilogarithm.
-Both paths relocate the difficulty. The Lean
-formalisation proves the structural half: the tower
+Both paths relocate the difficulty. The structural half is
+proved: the tower
 decomposition, Chern--Simons faithfulness, and the downstream
 implications (algebraic independence $\Rightarrow$ Borel--Zagier
 $\Rightarrow$ irrationality). The transcendence core is
-axiomatised as the Lean class `HyperbolicVolumeIndependence`. Following
-the conditional-class convention, the downstream results remain conditionally rigorous.
+taken as an explicit hypothesis, and the downstream results are rigorous conditional on it.
 
 The conjecture serves as an ideal statement. It guarantees the predicted spectrum arises from no
 algebraic coincidence. As the [formal-chain

@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/def-virtual-subword",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "label": "def:virtual-subword",
+  "kind": "definition",
+  "title": "Virtual subword, entanglement across a cut, and connected parts",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-virtual-particles-exceptional-divisor",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "cites": [
+    "references/jones1985"
+  ],
+  "tags": [
+    "virtual-particles",
+    "entanglement",
+    "observable",
+    "class-function",
+    "conjugation",
+    "linking-number",
+    "borromean",
+    "braid-word",
+    "cumulant",
+    "mobius-inversion",
+    "connected-part",
+    "jones-polynomial"
+  ],
+  "leanRef": "qou:QOU.VirtualSubword.IsVirtual",
+  "text": "virtual-subword.md",
+  "leanSource": "virtual-subword.lean",
+  "provenance": "authored"
+}

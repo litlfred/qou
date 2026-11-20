@@ -163,5 +163,3 @@ numerically verified rather than symbolically derived.
   — categorical observable $F_{\mathrm{Bor}}$ (closed form, $h$-expansion, structural integers)
 - [Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md)
   — canonical Hecke-skein $\Delta m / M_N$ derivation
-- [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)
-  — production-grade compute script (50-dps MPFR)

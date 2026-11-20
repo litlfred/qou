@@ -64,13 +64,13 @@ $D$-meson mass, hypercharge on strange states, and thereby the normalisation of
 $\sin^2\theta_W$.
 
 No third flavour grade is missing. The winding together with weak isospin
-separates all six quarks, and that is machine-checked. The residual collision
+separates all six quarks, and that is proved. The residual collision
 between the two neutral mesons $\bar D^0$ and $K^0$ is an artefact of reading
 the graded content as a multiset: as ordered pairs, $(-5, +3)$ and $(+3, -5)$
 are distinct, and the ordering is the quark–antiquark strand orientation — the
 same signed-writhe datum that supplies weak isospin. The map from mesons to
-ordered content is injective (`orderedContent_injective`, decided in the
-formalisation), and the statement that the mass cannot be a function of
+ordered content is injective (a finite check, decided by
+computation), and the statement that the mass cannot be a function of
 the grading quantifies only over symmetric functions of the *unordered* content;
 it does not constrain a function of the ordered content. So this object does
 not reduce into the first. What remains is a canonical, parameter-free map from

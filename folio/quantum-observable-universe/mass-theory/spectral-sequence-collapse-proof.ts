@@ -4,6 +4,8 @@ export default proof({
   label: "prf:spectral-sequence-collapse",
   title: "Proof of spectral sequence collapse",
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): once `def:hecke-normal-form` fixes" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): $\\sum_\\lambda \\tau(e_\\lambda) = 1$\n> ([`centre_frobenius_pairing_is_diagonal_probe.py`](../../../computations/probes/centre_frobenius_pairing_is_diagonal_probe.py))." },
     {
       kind: "note",
       date: "2026-08-16",

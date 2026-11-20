@@ -1,6 +1,6 @@
 The route from the axioms to a number that can be compared with
 experiment passes through a short sequence of steps, each of them a
-standard construction applied to the structure above. We state them
+standard construction applied to the structure above. They are stated
 here in words; the mass-analysis chapter records each step with its
 algorithm ([derivation chain](#prose:pre-archimedean-derivation-chain)).
 

@@ -10,7 +10,7 @@ export default remark({
     "def:q-energy",
     "def:crossing-energy",
     "prop:categorical-mass-markov",
-    "prop:topological-mass-formula",
+    "conj:topological-mass-formula",
     "conj:mass-endomorphism",
   ],
   tags: [

@@ -2,7 +2,7 @@
 (Yekutieli at finite slices replaces any geometric-leg construction
 with finite-categorical Markov trace), the proof is a single
 pre-Archimedean categorical pipeline, terminated by the Archimedean
-realization functor. We treat the algebraic content first and then
+realization functor. The algebraic content is treated first and then
 the functor.
 
 ### Categorical (pre-Archimedean) leg
@@ -14,8 +14,7 @@ Hecke element $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form.
 The GB-NF carries a length filtration $\ell$ and a jet-order grading
 ($\ell$ from Coxeter length on $S_{n_0}$; jet-order from the temporal
 sequence of reductions; both certificate components verified for
-small cases by the canonical formalism
-and locked in [`gb-filtration-jet-order.witness.json`](../../../computations/gb-filtration-jet-order.witness.json)).
+small cases by the canonical formalism).
 
 **Yekutieli at finite slice** (multiplicative integration on surfaces,
 restricted to finite slicing depth = filtration grade $\leq k$):

@@ -1,4 +1,4 @@
-We record how each axiom of a quantum observable universe ([quantum observable universe](#def:quantum-observable-universe)) is realised on Bring's surface.
+Each axiom of a quantum observable universe ([quantum observable universe](#def:quantum-observable-universe)) is realised on Bring's surface as follows.
 
 **(i) Non-degeneracy.**
 The Frobenius form $\int_A = h_q$ is the Haar state on $A = \mathcal{O}_q(\mathrm{SU}(2))$. Faithfulness of $h_q$ for compact quantum groups supplies the isomorphism $A \xrightarrow{ \sim } A^{\vee}$. The antipode $S$ and $h_q$ define the dagger $f^{\dagger} = h_q \circ \mu(S(f) \otimes -)$. This dagger is positive-definite ([positive definite dagger](#prop:positive-definite-dagger)) because the Haar state satisfies $h_q(a^* a) > 0$ for $a \neq 0$.

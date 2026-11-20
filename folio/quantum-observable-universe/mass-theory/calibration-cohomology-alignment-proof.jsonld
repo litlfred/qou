@@ -2,21 +2,23 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-calibration-cohomology-alignment",
+  "@id": "papers/quantum-observable-universe/blocks/rem-calibration-cohomology-alignment-sketch",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:calibration-cohomology-alignment",
-  "kind": "proof",
-  "title": "Proof of the calibration–cohomology alignment",
+  "label": "rem:calibration-cohomology-alignment-sketch",
+  "kind": "remark",
+  "title": "Why the calibrations match the cohomological data (sketch)",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-calibration-cohomology-alignment",
+    "papers/quantum-observable-universe/blocks/conj-calibration-cohomology-alignment",
     "papers/quantum-observable-universe/blocks/prop-meson-scale-independence"
   ],
   "text": "calibration-cohomology-alignment-proof.md",
-  "provenance": "authored"
+  "provenance": "authored",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-calibration-cohomology-alignment"
 }

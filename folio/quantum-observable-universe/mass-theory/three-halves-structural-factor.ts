@@ -13,6 +13,7 @@ export default proposition({
   ],
   cites: [],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Lean\n\nAll five identities are proved in\n[`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)\nover a generic commutative ring `[CommRing R]` with the modulus carried\nas a unit `q : Units R`, each by a single `linear_combination` against\n`↑q * ↑q⁻¹ = 1` — no `field_simp`, no division, no ordering. A field is\nused only in the `RatioForm` section, where the two quotient\npresentations are recovered from the cross-multiplied identities by\n`div_eq_div_iff`. Generic-ring proofs apply at the substrate\n$q_0 \\approx 1.110$ by specialisation; numerical cross-checks at\n50-dps mpmath verify each identity to $\\leq 10^{-40}$ in the\n[`tau-amphichiral-sdp-probe.witness.json`](../../../computations/probes/tau-amphichiral-sdp-probe.witness.json)\nwitness (assertions `lean_three_plus_h_sq_eq_bracket3`,\n`lean_two_plus_h_sq_times_bracket2_eq_bracket4`,\n`lean_bracket6_eq_bracket2_bracket3_times_one_plus_h_sq`)." },
     {
       kind: "status",
       date: "2026-05-25",

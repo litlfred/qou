@@ -137,6 +137,7 @@ with the statement it carried and the command to recover its content.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import json
@@ -280,7 +281,7 @@ def e_0_n0_mev() -> mp.mpf:
     `e_0_n_mev(n)` for an explicit truncation depth.
     """
     q0 = _q_0()
-    return M_E_MEV / (q0 * (q0 - 1))
+    return _qbeta_e0.order_zero_scaled(M_E_MEV, q0)
 
 
 @lru_cache(maxsize=None)
@@ -476,7 +477,7 @@ def e_0_scale_hierarchy_matter_mev(q=None) -> mp.mpf:
     """
     with mp.workdps(max(50, mp.mp.dps)):
         q0 = _resolve_q(q)
-        e0_q = M_E_MEV / (q0 * (q0 - 1))
+        e0_q = _qbeta_e0.order_zero_scaled(M_E_MEV, q0)
         return e0_q * (q0 ** 2) * (1 - 1 / q0)
 
 
@@ -499,7 +500,7 @@ def borromean_v3_e21_strong_qcd_diff_mev(q=None, scale: str = "E0_full") -> mp.m
         q2 = q0 ** 2
         tr_e21 = -(q2 ** 2 - q2 + 1) * (q2 ** 4 - 2 * q2 ** 3 - 2 * q2 + 1) / (q2 ** 3)
         d_qcd = (q0 - 1 / q0) * tr_e21
-        e0_n0 = M_E_MEV / (q0 * (q0 - 1))
+        e0_n0 = _qbeta_e0.order_zero_scaled(M_E_MEV, q0)
         hbar_q = (q0 - 1) / q0
         if scale is True or scale in ("E0_full", "full"):
             scale_mev = e0_n0 / (1 - hbar_q ** 2)

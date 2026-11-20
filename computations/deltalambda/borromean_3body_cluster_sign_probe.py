@@ -94,7 +94,8 @@ sys.path.insert(0, str(COMP))
 # ── derived substrate (0 params) ──────────────────────────────────────────────
 Q0 = Q_MP
 M_E = mp.mpf("0.51099895069")
-E0 = M_E / (Q0 * (Q0 - 1))                       # interface energy scale (MeV)
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.order_zero_scaled(M_E, Q0)                       # interface energy scale (MeV)
 H = Q0 - 1 / Q0
 Z = Q0**3 / (Q0**2 + 1)          # Markov z (for the g-channel)
 

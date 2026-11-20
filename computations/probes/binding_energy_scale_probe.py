@@ -37,6 +37,7 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from codata_constants import AME_B_HE3_MEV_VALIDATION, M_E_MEV  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 
 def main():
@@ -45,16 +46,17 @@ def main():
     q = Q_MP
     h = q - 1 / q
 
-    E_0 = M_E_MEV / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E_0 = _qbeta_e0.order_zero_scaled(M_E_MEV, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     Q_beta = M_E_MEV * fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     scale_ratio = E_0 / Q_beta
 
     # Binding values from mass_table_comprehensive (Q_β scale)
     isotopes = {
         "D":   {"B_qbeta": 0.465676, "B_AME": 2.22452, "A": 2, "Z": 1, "N": 1},
-        "T":   {"B_qbeta": 0.628974, "B_AME": 8.48182, "A": 3, "Z": 1, "N": 2},
+        "T":   {"B_qbeta": 0.628974, "B_AME": float(AME_B_TRITIUM_MEV_VALIDATION), "A": 3, "Z": 1, "N": 2},
         "3He": {"B_qbeta": 0.658111, "B_AME": AME_B_HE3_MEV_VALIDATION, "A": 3, "Z": 2, "N": 1},
-        "4He": {"B_qbeta": 0.713469, "B_AME": 28.2957, "A": 4, "Z": 2, "N": 2},
+        "4He": {"B_qbeta": 0.713469, "B_AME": float(AME_B_HE4_MEV_VALIDATION), "A": 4, "Z": 2, "N": 2},
     }
 
     # Correction candidates for the +12% deuteron residual

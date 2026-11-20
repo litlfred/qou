@@ -33,8 +33,7 @@ $$
 Markov trace). It is **degenerate**: under the production convention D the
 $(1^3)$ Wedderburn block carries $y_{(1^3)} = 0$ symbolically, so that block
 lies in the radical of the form and $\det G = 0$ identically — measured
-$2.89\times10^{-51}$ at 50 dps
-([`GramSignature.lean`](../lean/QOU/QBeta/GramSignature.lean)), against
+$2.89\times10^{-51}$ at 50 dps, against
 $\det G = -0.18920521914403668$ under the excised convention C. $G^{-1}$ does
 not exist. Any statement about the **signature** must name its pairing. On the
 bilinear pairing $\mathrm{tr}_M(b_i b_j)$ that this table builds, the spectrum

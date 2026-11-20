@@ -353,7 +353,8 @@ def main() -> int:
     hbar_q = 1 - qi
     c_q = 1 / (q - 1)
     E0 = me * c_q ** 2 * hbar_q / (1 - hbar_q ** 2)
-    E0_n0 = me / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0_n0 = _qbeta_e0.order_zero_scaled(me, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     print(f"\n  E_0 = E_0^full (ruled 2026-09-05) = {mp.nstr(E0, 12)} MeV   [NOT the Q_beta base E_0^(N=0) = m_e/(q(q-1)) = {mp.nstr(E0_n0, 10)}]")
 
     w_free = nucleon_block("p", h, 0) + nucleon_block("p", h, 3)

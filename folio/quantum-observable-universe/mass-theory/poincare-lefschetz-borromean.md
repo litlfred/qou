@@ -43,13 +43,12 @@ topological-cohomological route, the Bloch group the K-theoretic one.
 ## What remains open
 
 1. Verify that the Borromean volume $8G$ arises as a Poincaré–
-   Lefschetz pairing in Lean — partial Mathlib infrastructure
-   exists (Mathlib's `Topology.Manifold` library).
+   Lefschetz pairing.
 2. Connect to the Bloch-group route: show the regulator $r_2$ and the
    Poincaré–Lefschetz pairing both produce $8G$ via the
    `vol-as-motivic-period` framing.
-3. Closing the conjecture needs a Lean class for manifold-with-cusps
-   Poincaré–Lefschetz (partial in Mathlib).
+3. Closing the conjecture needs Poincaré–Lefschetz duality for
+   manifolds with cusps, in the form used above.
 
 ## Cross-references
 

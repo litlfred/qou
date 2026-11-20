@@ -1,10 +1,10 @@
-Bring's curve has first cohomology
+**Conjecture.** Bring's curve has first cohomology
 
 $$
   H^1 = 2W, \qquad \mathrm{rank}\,H^1 = 8, \qquad \dim_{\mathbb{C}} W = 4,
 $$
 
-two copies of the irreducible $4$-dimensional $S_5$ representation $W$ ([A fixed-depth recurrence for the prolonged periods exists (Cayley–Hamilton)](#prop:prolonged-periods-fixed-depth)). Applying the archimedean realisation $\tau$ leaves exactly three real degrees of freedom in its polarised Hodge structure:
+two copies of the irreducible $4$-dimensional $S_5$ representation $W$ ([A fixed-depth recurrence for the prolonged periods exists (Cayley–Hamilton)](#prop:prolonged-periods-fixed-depth)). It is conjectured that applying the archimedean realisation $\tau$ leaves exactly three real degrees of freedom in its polarised Hodge structure:
 
 | cohomological datum | calibration | channel |
 |---|---|---|

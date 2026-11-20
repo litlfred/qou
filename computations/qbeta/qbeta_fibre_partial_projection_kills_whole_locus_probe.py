@@ -74,6 +74,7 @@ float64: no `float(`, no `statistics`, no `math.`.
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import pathlib as _pl
 import sys as _sys
@@ -239,7 +240,7 @@ probe_pts = [mpm.exp(1j * mp.mpf(1) / 7), mpm.exp(1j * mp.mpf(2)), mpm.mpf(q0)]
 full_all_real = True
 for qv in probe_pts:
     hv = h_of(qv)
-    val = abs(hv * (hv - 2) / 2 * (1 / (qv * (qv - 1))))
+    val = abs(hv * (hv - 2) / 2 * (_qbeta_e0.order_zero_scaled(1, qv)))
     if abs(mpm.im(mpm.mpmathify(val))) > mp.mpf(10) ** (-40):
         full_all_real = False
 record(

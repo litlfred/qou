@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.18",
-  "computedAt": "2026-11-20T15:39:11.786627+00:00",
-  "commitSha": "3351b995222117d4c8a43e2adfc8f52893a0b094",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T15:28:46.338008+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "normaliser_equals_two_Q_pow_n",
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 957,
+  "durationMs": 827,
   "computation": "braid-nucleus-map-exponent-probe",
   "scriptFile": "braid_nucleus_map_exponent_probe.py",
-  "scriptHash": "1cc0a36d2a02",
-  "scriptCommitSha": "e925b93b8fb64546ed02af9b80325d9eae83f8cd",
+  "scriptHash": "46d717089bc8",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,14 +33,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.18",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "930c010e26215e56"
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -61,16 +62,16 @@
       {
         "atom": "D",
         "A": 2,
-        "B_empirical_MeV": "2.22456637",
+        "B_empirical_MeV": "2.2245662",
         "E_framework_MeV": "2.46175240254",
-        "ratio_empirical_over_framework": "0.90365155"
+        "ratio_empirical_over_framework": "0.90365148"
       },
       {
         "atom": "T",
         "A": 3,
-        "B_empirical_MeV": "8.48179663",
+        "B_empirical_MeV": "8.4817962",
         "E_framework_MeV": "3.69262860382",
-        "ratio_empirical_over_framework": "2.2969536"
+        "ratio_empirical_over_framework": "2.2969535"
       },
       {
         "atom": "3He",
@@ -82,9 +83,9 @@
       {
         "atom": "4He",
         "A": 4,
-        "B_empirical_MeV": "28.29561",
+        "B_empirical_MeV": "28.2956624",
         "E_framework_MeV": "4.92350480509",
-        "ratio_empirical_over_framework": "5.7470463"
+        "ratio_empirical_over_framework": "5.7470569"
       }
     ],
     "plateau_shortfall": {

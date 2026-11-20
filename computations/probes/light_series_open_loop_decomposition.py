@@ -58,14 +58,15 @@ from codata_constants import (
     AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 set_compute_dps()
 
 # (name, Z, N, B_AME MeV)
 ISOTOPES = [
-    ("2H", 1, 1, mp.mpf("2.2245662")),
+    ("2H", 1, 1, AME_B_DEUTERON_MEV_VALIDATION),
     ("3H", 1, 2, AME_B_TRITIUM_MEV_VALIDATION),
-    ("3He", 2, 1, mp.mpf("7.7180213")),
+    ("3He", 2, 1, AME_B_HE3_MEV_VALIDATION),
     ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
 ]
 SIGN = {"pp": mp.mpf(1), "nn": mp.mpf(-1), "pn": mp.mpf(1)}
@@ -135,7 +136,8 @@ def main() -> int:
     q, _, z = load_q_50dps()
     g = z / mp.sqrt(1 + z * z)
     m_e = mp.mpf(str(M_E_MEV))
-    E0 = m_e / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.order_zero_scaled(m_e, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     five_g = 5 * g
 
     # calibrate E_unit on the deuteron (1 open pn bond, no loops)

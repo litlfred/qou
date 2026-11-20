@@ -51,6 +51,7 @@ from codata_constants import (
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
 )
+from codata_constants import AME_B_LI6_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 
 def main():
@@ -92,7 +93,7 @@ def main():
     a567 = [
         ("⁵He", 2, 3, None, "unbound (resonance, T½ ≈ 7e-22 s)"),
         ("⁵Li", 3, 2, None, "unbound (resonance, T½ ≈ 3e-22 s)"),
-        ("⁶Li", 3, 3, 31.99405, None),
+        ("⁶Li", 3, 3, float(AME_B_LI6_MEV_VALIDATION), None),
         ("⁶He", 2, 4, 29.26836, None),
         ("⁶Be", 4, 2, 26.92274, None),
         ("⁷Li", 3, 4, 39.24451, None),
@@ -166,7 +167,7 @@ def main():
     B_d = AME_B_DEUTERON_MEV_VALIDATION    # AME D
     B_t = mp.mpf("8.481821")    # AME T
     B_he3 = AME_B_HE3_MEV_VALIDATION  # AME ³He
-    B_li6_ame = mp.mpf("31.99405")
+    B_li6_ame = AME_B_LI6_MEV_VALIDATION
     B_li7_ame = mp.mpf("39.24451")
     B_be7_ame = mp.mpf("37.60040")
 

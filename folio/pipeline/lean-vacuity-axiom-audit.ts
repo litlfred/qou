@@ -3669,6 +3669,22 @@ function main() {
             file_sha: c.file_sha,
           };
           stale++;
+        } else if (prev) {
+          // Already `needs-agent`: refresh the location fields only. Earlier
+          // agents' notes on the entry (`evidence`, `reviewer`, `disposition`,
+          // `stale_prev_verdict`, `reviewed_at`, `source`, `agent_note`) are
+          // adjudication history and must survive the run. Re-seeding a bare
+          // record here stripped 374 such fields from 75 entries in #8568
+          // (restored in #8576; owner-approved fix, #8526 [W8b ask]).
+          led.entries[c.key] = {
+            ...prev,
+            category: c.category,
+            pattern: c.pattern,
+            line: c.line,
+            verdict: "needs-agent",
+            file_sha: c.file_sha,
+          };
+          kept++;
         } else {
           led.entries[c.key] = {
             category: c.category,
@@ -3730,6 +3746,7 @@ function main() {
       const scannedRel = new Set(files.map((f) => relative(REPO_ROOT, f)));
       let foreign = 0;
       let unscanned = 0;
+      let missingOnDisk = 0;
       for (const k of Object.keys(led.entries)) {
         if (seen.has(k)) continue;
         const cat = k.slice(k.lastIndexOf("::") + 2);
@@ -3739,6 +3756,13 @@ function main() {
         }
         if (!scannedRel.has(k.slice(0, k.indexOf("::")))) {
           unscanned++;
+          // A key naming a file that no longer exists is kept too: it cannot
+          // be told apart from a rename (the content/ -> folio/ move left all
+          // 325 keys pointing at missing paths, and deleting them would have
+          // destroyed their verdicts). Count it so a human can re-key or
+          // retire it; this loop never deletes it.
+          if (!existsSync(resolve(REPO_ROOT, k.slice(0, k.indexOf("::")))))
+            missingOnDisk++;
           continue; // this run never opened that file — absence is not evidence
         }
         delete led.entries[k];
@@ -3750,6 +3774,10 @@ function main() {
       if (unscanned && !quiet)
         console.log(
           `  (preserved ${unscanned} entr(ies) in files this run did not scan)`,
+        );
+      if (missingOnDisk && !quiet)
+        console.log(
+          `  (${missingOnDisk} of those name a file that does not exist: renamed or deleted — re-key or retire by hand)`,
         );
       led.updated_at = nowIso;
       writeFileSync(p, JSON.stringify(led, null, 2) + "\n");

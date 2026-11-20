@@ -1,6 +1,6 @@
 **Remark (K-theory $\leftrightarrow$ depth filtration — known at depths 1–2, conjectural at depths $\geq 3$).**
 
-The graded-Mikusiński depth filtration ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence)) on the substrate convolution algebra $\mathcal{H}_q$ admits a K-theoretic description. The depth axis matches the Beilinson–Borel regulator on the algebraic K-theory of the algebraic-number field of definition. This correspondence is a theorem at depths 1 and 2, and Beilinson's conjecture at depths $\geq 3$. We record it to provide the standard period-theoretic language for the framework.
+The graded-Mikusiński depth filtration ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence)) on the substrate convolution algebra $\mathcal{H}_q$ admits a K-theoretic description. The depth axis matches the Beilinson–Borel regulator on the algebraic K-theory of the algebraic-number field of definition. This correspondence is a theorem at depths 1 and 2, and Beilinson's conjecture at depths $\geq 3$. It is recorded to provide the standard period-theoretic language for the framework.
 
 | Depth $n$ | Status | Reason |
 |---|---|---|
@@ -36,10 +36,10 @@ For a Bring-embeddable knot $K$ with shape parameter $z_K$, the field of definit
 | $\mathrm{Cl}_3(2\pi/5)$, $S_3(2\pi/5)$ | $K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5)) \otimes \mathbb{Q}$ | open ([Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$ as a Bring-natural depth-3 invariant](#conj:cl3-zeta5-geometric-realization)) |
 | $\zeta(3)$ | $K_5^{\mathrm{ind}}(\mathbb{Q}) \otimes \mathbb{Q}$ | Borel regulator on $\mathbb{Q}$ |
 
-We introduce K-theory to provide the standard period-theoretic language. The two languages (Goncharov-Hopf-algebra vs Beilinson-K-theory) are fully equivalent modulo Beilinson's conjectures. The Hopf-algebra language is cleaner for structural relations between grouplikes. The K-theory language is cleaner for citing external results.
+K-theory is introduced to provide the standard period-theoretic language. The two languages (Goncharov-Hopf-algebra vs Beilinson-K-theory) are fully equivalent modulo Beilinson's conjectures. The Hopf-algebra language is cleaner for structural relations between grouplikes. The K-theory language is cleaner for citing external results.
 
 What the correspondence requires, in K-theoretic language:
-1. **Inclusion target**: $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$. We identify $G^{(n)}$ with a subspace of $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K)) \otimes \mathbb{Q}$ so that $\tau_{\mathrm{arch}}$ is the Beilinson regulator. The content is this identification.
+1. **Inclusion target**: $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$. Identify $G^{(n)}$ with a subspace of $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K)) \otimes \mathbb{Q}$ so that $\tau_{\mathrm{arch}}$ is the Beilinson regulator. The content is this identification.
 2. **Sharpness target**: The image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$. Borel's theorem (1977) proves $K_{2n-1}^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ has known explicit rank for $n \geq 2$. Beilinson's conjecture asserts this image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$.
 
 The K-theoretic language partially reduces the correspondence's discharge. Borel pins down dimensions; Beilinson remains the open piece.

@@ -25,7 +25,6 @@ and $\mathrm{ord}_{q=0}^{(-)}$ denotes the pole order at $q = 0$
 ### Witness summary
 
 The canonical evidence
-([`alpha-shift-torus.witness.json`](../../../computations/alpha/alpha-shift-torus.witness.json))
 records the full per-irrep symbolic $\chi_\lambda \in \mathbb{Q}(q)$
 together with the pole order at $q = 0$ for every test pair, summarised
 in

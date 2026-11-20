@@ -7,9 +7,14 @@
 
   The photon `γ` is `def:photon` (`QOU.Photon.photon`), imported, not redefined.
 
-  1. **Switched photon.** `γ′(φ₀,φ₁,φ₀₁) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` equals
-     `γ(φ₀ − hφ₀₁, φ₁, φ₀₁)`, so the two photon families are the same set, and
-     `β_Bor = γ′(0,0,qh)·γ′(0,0,−q⁻¹h)` (`borromean_eq_switched_photons`).
+  1. **The photon's chiral vertex.** By the owner ruling of 2026-11-18 (bean
+     `qou-99qc`, confirmed 2026-11-20) `def:photon` is
+     `γ(φ₀,φ₁,φ₀₁) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`; the expression `photonSwitched`
+     below is that photon written with `σ₁⁻¹ = σ₁ − h` (`photon_eq_switched`). In
+     the straight coordinates of the superseded form `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁`
+     it reads `1 + (φ₀ − hφ₀₁)σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` (`photon_eq_straight`), so the
+     two forms are the same set of elements in different coordinates, and
+     `β_Bor = γ(0,0,qh)·γ(0,0,−q⁻¹h)` (`borromean_eq_switched_photons`).
   2. **Commuting separators.** A photon built on generators that commute with
      an element `s` commutes with `s` (`commute_photon`); a separator commuting
      with the second photon can be moved past it (`separator_commute`); and for
@@ -51,14 +56,19 @@ variable {h : R} {a b : A}
 def photonSwitched (h φ₀ φ₁ φ₀₁ : R) (a b : A) : A :=
   1 + φ₀ • a + φ₁ • b + φ₀₁ • vertex h a b
 
-theorem photonSwitched_eq (h φ₀ φ₁ φ₀₁ : R) (a b : A) :
-    photonSwitched h φ₀ φ₁ φ₀₁ a b = photon a b (⟨φ₀ - h * φ₀₁, φ₁, φ₀₁⟩ : Colour R) := by
-  simp only [photonSwitched, photon, vertex_eq, smul_sub, smul_smul]
-  module
+/-- `def:photon` on `H₃(q)` is the switched expression: `σ₁⁻¹ = σ₁ − h`. -/
+theorem photon_eq_switched (H : HeckeH3Rel h a b) (φ₀ φ₁ φ₀₁ : R) :
+    photon a H.unitB (⟨φ₀, φ₁, φ₀₁⟩ : Colour R) = photonSwitched h φ₀ φ₁ φ₀₁ a b := by
+  simp only [photon, photonSwitched, photon_vertex_eq H, HeckeH3Rel.unitB_val]
 
-theorem photon_eq_switched (h φ₀ φ₁ φ₀₁ : R) (a b : A) :
-    photon a b (⟨φ₀, φ₁, φ₀₁⟩ : Colour R) = photonSwitched h (φ₀ + h * φ₀₁) φ₁ φ₀₁ a b := by
-  rw [photonSwitched_eq, add_sub_cancel_right]
+/-- **Coordinate change.** In the straight basis `1, σ₀, σ₁, σ₀σ₁` the photon
+    `γ(φ₀, φ₁, φ₀₁)` has `σ₀`-weight `φ₀ − hφ₀₁`. -/
+theorem photon_eq_straight (H : HeckeH3Rel h a b) (φ₀ φ₁ φ₀₁ : R) :
+    photon a H.unitB (⟨φ₀, φ₁, φ₀₁⟩ : Colour R)
+      = 1 + (φ₀ - h * φ₀₁) • a + φ₁ • b + φ₀₁ • (a * b) := by
+  rw [photon_eq_switched H]
+  simp only [photonSwitched, vertex_eq, smul_sub, smul_smul, sub_smul]
+  module
 
 theorem photonPlus_eq_switched (q h : R) (a b : A) :
     photonPlus q h a b = photonSwitched h 0 0 (q * h) a b := by
@@ -79,12 +89,13 @@ theorem borromean_eq_switched_photons (H : HeckeH3Rel h a b) {q q' : R}
 
 /-! ### 2. Commuting separators -/
 
-/-- A photon on generators `c, d` commutes with anything commuting with `c` and `d`. -/
-theorem commute_photon {s c d : A} (hc : Commute s c) (hd : Commute s d) (φ : Colour R) :
-    Commute s (photon c d φ) := by
-  unfold photon
+/-- A photon on generators `c, d` commutes with anything commuting with `c` and `d`
+    (and hence with `d⁻¹`, so with the vertex `c d⁻¹`). -/
+theorem commute_photon {s c : A} {d : Aˣ} (hc : Commute s c) (hd : Commute s (d : A))
+    (φ : Colour R) : Commute s (photon c d φ) := by
+  unfold photon QOU.Photon.vertex
   exact (((Commute.one_right s).add_right (hc.smul_right φ.phi0)).add_right
-    (hd.smul_right φ.phi1)).add_right ((hc.mul_right hd).smul_right φ.phi01)
+    (hd.smul_right φ.phi1)).add_right ((hc.mul_right hd.units_inv_right).smul_right φ.phi01)
 
 /-- A separator commuting with the second photon moves past it. -/
 theorem separator_commute (u g s g' w : A) (hs : Commute s g') :

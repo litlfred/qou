@@ -36,4 +36,7 @@ export default remark({
     "lean-formalised",
     "draft",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## What is formalised\n\n`QOU.Mass.ChainTraceFactor`: the convex-combination identity\n, the strict betweenness of the offsets\nfor $0 < \\delta < 2$, its transport through the affine\ntrace, and the ordering $L_{pp} < L_{pn} < L_{nn}$\nitself. Not formalised, because it is empirical input: that\nonly $pn$ binds. The measurement, the $\\delta$ bound and the Wigner reading are\n`the_pn_bond_is_an_average_and_cannot_be_extremal_probe.py`." },
+  ],
 });
