@@ -30,4 +30,12 @@ export default conjecture({
     "open-problem",
     "conditional-on-class",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): sketched as `class PFromBraidMirror (M) [BrCategory M] [Hecke M]` with fields `p_action`, `p_involution`, `p_on_generator`, `p_preserves_q`, `bar_eq_p_c_t`.",
+    },
+  ],
 });

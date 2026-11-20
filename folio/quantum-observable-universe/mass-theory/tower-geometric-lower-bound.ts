@@ -10,6 +10,12 @@ export default proposition({
   tags: ["binding", "brane-tower", "level-selection", "gap-a-3", "plancherel"],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the bound is `QOU.Mass.WStd.wStd_geometric_from_three`, the vanishing `QOU.Mass.WStd.wStd_eq_zero_of_lt_three` (both in `lean/QOU/Mass/WStdSuperExponential.lean`); the class `QOU.Mass.LevelSelection.TowerGeometricLowerBound` is inhabited at k0 = 3 by `towerGeometricLowerBound_wStd`; necessity is `not_towerGeometricLowerBound_wStd_of_lt_three`. `#print axioms` on each: `propext / Classical.choice / Quot.sound`.",
+    },
+    {
       kind: "refined-framing",
       body: "This block previously asserted the lower bound for every k; it is false below k = 3, so the statement now carries the threshold.",
     },

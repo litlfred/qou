@@ -72,20 +72,11 @@ This is the $A\ge3$ analogue of:
 - the T(2, k) tower for lepton + electroweak masses
   (W k=4, Z k=6, τ k=7, H k=8).
 
-## Lean structure
+## Structure of the argument
 
-- `class BindingPerRepReebPhase B m_e ρ_0` — substrate axiom: per-rep
-  Reeb phase factorisation, with field `αShiftAt : ℕ → ℕ` recording
-  the per-A pole order and `factors` axiomatising
-  $B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(A)$.
-- `class BindingForceCarrierKnot αShiftAt p k` — substrate axiom:
-  the per-A pole order $\alpha_{\text{shift}}(A)$ is realised by
-  the proved formula $k(A) \cdot (p(A) - 1)$ at a substrate-identified
-  torus knot.
-- `theorem binding_unique_via_alpha_shift` — conditional
-  on the two classes: two binding evaluators sharing $(m_e, \rho_0,
-  \alpha_{\text{shift}})$ agree pointwise.
-- `theorem binding_subsingleton` — Subsingleton companion.
+- **Hypothesis 1 (per-representation Reeb phase).** There is a per-$A$ pole order $\alpha_{\text{shift}}(A) \in \mathbb{N}$ with $B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(A)$.
+- **Hypothesis 2 (force-carrier knot).** The per-$A$ pole order is realised by the proved formula $k(A) \cdot (p(A) - 1)$ at a substrate-identified torus knot.
+- **Consequence.** Under both hypotheses, two binding evaluators sharing $(m_e, \rho_0, \alpha_{\text{shift}})$ agree pointwise; the evaluator is unique.
 
 ### Concrete light-nuclei candidate instance
 

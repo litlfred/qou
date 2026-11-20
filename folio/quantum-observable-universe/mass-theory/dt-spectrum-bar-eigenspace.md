@@ -49,12 +49,6 @@ the count stays open; this proposition fixes only the structural target. The onw
 bar-odd decay leak $S$ has no literature support and is not derivable; it is not
 carried here.
 
-## Lean structure
+## Status
 
-`QOU.QBeta.FiveTwoDTSpectrumSplit` (core integers, no archimedean structure)
-carries the certified matrices `Splus0`/`Sminus0`, the split
-`dt_spectrum_two_element`, and the M0 capstone: `barSwap` with
-`barSwap_involutive`; the eigenspace laws `barEvenPair_fixed`,
-`barOddPair_negated`; the faithful reconstruction `barGrading_faithful`; the
-chirality witness `dtPair52_chiral` and grading `dtPair52_grading` $=(7,1)$; and
-`symmetric_scalar_blind_to_chirality`.
+Proved over the integers, with no archimedean structure: the certified matrices $S_0^{\pm}$; the two-element split of the DT spectrum; the bar swap and that it is an involution; the eigenspace laws (the bar-even pair is fixed, the bar-odd pair is negated); the faithful reconstruction from the bar grading; that the $5_2$ DT pair is chiral, with grading $(7,1)$; and that a symmetric scalar cannot detect the chirality.

@@ -49,12 +49,10 @@ The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from B
 - $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$. For $T(3,5)$, $\alpha_{\text{shift}}(T(3,5)) = 10$. This specifies the pole order of $\sigma$.
 - The Bring color-tube weight inherits this derived pole order $q^{10}$.
 
-## Lean structure
+## What is proved
 
-- `pnZD_inv`: $\overline{z} = z - h$ under convention D.
-- `pn_averaging_bar_iff`: the bar-invariance criterion $(c + \overline{c} - 1)h = 0$.
-- `pn_averaging_unique`: constant $c$ and $h \neq 0$ force $2c = 1$.
-- `pn_averaging_uniform_bar`: $z - h/2$ is bar-invariant.
-- `pn_averaging_unique_via_weight`: two averagings with the same 9-pair colour weight agree. Choosing that weight is open.
-
-All are sorry-free.
+- Under convention D, $\overline{z} = z - h$.
+- The bar-invariance criterion: an averaging with constant $c$ is bar-invariant iff $(c + \overline{c} - 1)h = 0$.
+- A constant $c$ with $h \neq 0$ forces $2c = 1$.
+- $z - h/2$ is bar-invariant.
+- Two averagings with the same 9-pair colour weight agree. Choosing that weight is open.

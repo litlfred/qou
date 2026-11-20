@@ -40,6 +40,12 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the bridge is `class QOU.QBeta.StokesDTBPSBridge (Knot)` with fields `stokesConstant`, `dtInvariant`, `bpsDim`, `stokes_eq_dt`, `dt_eq_bps`; no instance is supplied; downstream results take `[StokesDTBPSBridge Knot]`.",
+    },
+    {
       kind: "status",
       date: "2026-08-02",
       body:

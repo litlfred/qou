@@ -36,4 +36,12 @@ export default conjecture({
     "conditional-on-class",
     "quantum-dilogarithm",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): sketched as `class BorromeanBlochGroupElement (M) [BrCategory M] [QuantumDilogarithm M]` with fields `borromean_bloch_class`, `borromean_bloch_eq_eight_xi`, `regulator_eq_eight_G`, `regulator_h2_correction`, `borromean_h4_coefficient_from_regulator`.",
+    },
+  ],
 });

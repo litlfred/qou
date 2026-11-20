@@ -21,6 +21,12 @@ export default proposition({
   tags: ["binding", "level-selection", "logarithmic", "gap-a-3", "brane-tower"],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the contradiction is `QOU.Mass.LevelSelection.no_linear_selection` under `[TowerGeometricLowerBound w r c k₀]`; the exponential-beats-linear step is Mathlib `isLittleO_coe_const_pow_of_one_lt`; companion `linear_selection_bound`; the instance is `QOU.Mass.WStd.towerGeometricLowerBound_wStd`; the concrete exclusions are `no_linear_selection_wStd` and `no_superlinear_selection_wStd`. `#print axioms`: `propext / Classical.choice / Quot.sound`.",
+    },
+    {
       kind: "refined-framing",
       body: "This paragraph previously justified the A ≥ 1 restriction by saying the tower bound forces w(0) ≥ c > 0 while M·0 = 0. That reading was backwards: w_std(0) = 0, and the A = 0 case exhibited a false antecedent.",
     },

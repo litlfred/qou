@@ -24,6 +24,12 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the conjecture is `class VolumeConjecture (q : ℝ)` with fields `hypVolume`, `kashaevLimit`, `kvc_holds`, `hypVolume_nonneg`; downstream results take `[VolumeConjecture q]`; the same pattern is `MassEvaluation`.",
+    },
+    {
       kind: "status",
       date: "2026-08-02",
       body:

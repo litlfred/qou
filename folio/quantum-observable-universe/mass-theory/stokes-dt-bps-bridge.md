@@ -84,23 +84,6 @@ conditional on it downstream
 ([The figure-eight Stokes integer $A_\omega(4_1) = 3$ is a BPS/DT count](#thm:aomega-fourone-dt-count)) — conditional for
 every knot, $4_1$ included, since GGM's Conjecture 3(d) is not proved for $4_1$. It is *not* the open-HOMFLY bridge.
 
-### Lean axiomatisation
+### Status of the bridge
 
-The bridge is a Lean typeclass `QOU.QBeta.StokesDTBPSBridge` carrying the two
-identifications as fields:
-
-```lean
-class StokesDTBPSBridge (Knot : Type*) where
-  stokesConstant : Knot → ℤ
-  dtInvariant    : Knot → ℤ
-  bpsDim         : Knot → ℤ
-  stokes_eq_dt : ∀ K, stokesConstant K = dtInvariant K   -- GGM Conj 3(d)
-  dt_eq_bps    : ∀ K, dtInvariant K   = bpsDim K          -- GPPV
-```
-
-The fields are the conjecture's *inputs*; no field asserts a value of $A_\omega$.
-Any instance is the conjecture holding; none is supplied (the general statement is
-open for every knot, $4_1$ included). Downstream results take
-`[StokesDTBPSBridge Knot]` as an explicit hypothesis and are then fully verified
-by Lean modulo that class instance, following the same pattern as
-[`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md).
+The bridge consists of two identifications, for every knot $K$: the Stokes constant equals the DT invariant (Garoufalidis–Gu–Mariño, Conjecture 3(d)), and the DT invariant equals the BPS dimension (Gukov–Putrov–Pei–Vafa). These are the conjecture's *inputs*; neither asserts a value of $A_\omega$. Neither is proved here, and the general statement is open for every knot, $4_1$ included. Results that use the bridge assume both identifications and are proved from them, as for the [Kashaev volume conjecture](#conj:kashaev-volume-conjecture).

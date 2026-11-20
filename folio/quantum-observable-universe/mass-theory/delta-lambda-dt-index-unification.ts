@@ -35,4 +35,12 @@ export default proposition({
     "value-proved",
     "magnitude-open",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the conjunction is `QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`; the value leg is `dtEulerG_eq_deltaLambdaG`; the chirality leg is `parity_eq_w0_sign_general`, via `aStat_eq_sumChoose2_conjugate`.",
+    },
+  ],
 });

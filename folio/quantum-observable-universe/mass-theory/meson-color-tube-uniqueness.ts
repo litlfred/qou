@@ -13,6 +13,12 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.meson_ratio_via_alpha_shift" },
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the factorisation hypothesis is the class `MesonGMORFactorization R mK2_over_mpi2 qChar m n`; the index assertion is `MesonForceCarrierPair`; the conditional theorem is `meson_ratio_via_alpha_shift`.",
+    },
+    {
       kind: "status",
       body: "This proposition is **proved conditional on the\n`MesonGMORFactorization` class instance** (the GMOR fusion form\nitself — established empirically in #1396 to 203 ppm, awaiting\nthe resolvent derivation).  The α_shift indexing is fully derived\nvia the default `MesonForceCarrierPair` instance, which\ndischarges sorry-free from `prop:alpha-shift-torus-knot`.\n\nCloses the meson row of the post-#1422 fitting-gap table\n(audit doc Item 4 of the α_shift universal chain), converting\nthe $1098\\times$ $m_K/m_\\pi$ miss from \"open audit finding\" to \"derived\nmodulo shared residue normalisation\".",
     },

@@ -33,31 +33,11 @@ recovers the hyperbolic volume; this is the content of the per-block
 [Kashaev as archimedean realization](#rem:kashaev-as-archimedean-realization)
 remark.
 
-### Lean axiomatisation
+### Status of the conjecture in the argument
 
-KVC is
-encoded in Lean as a **typeclass**
+The volume conjecture is carried as a hypothesis: for each braid closure, the hyperbolic volume equals the Kashaev limit (the volume is also assumed non-negative). Results that depend on it assume this identification and are proved from it; the identification itself is the only unproved input, and it is not proved here.
 
-```
-class VolumeConjecture (q : ℝ) where
-  hypVolume       : Braid → ℝ
-  kashaevLimit    : Braid → ℝ
-  kvc_holds       : ∀ β, hypVolume β = kashaevLimit β
-  hypVolume_nonneg : ∀ β, 0 ≤ hypVolume β
-```
-
-The class fields encode the conjectural identification of hyperbolic
-volume with the Kashaev limit. Any instance of `VolumeConjecture` is
-**conjecture-bearing**: the `kvc_holds` field plays the role of
-`sorry`, but as an axiomatised class field rather than a tactic
-failure. Downstream results that depend on KVC take it as an
-`[VolumeConjecture q]` typeclass argument and are then **fully
-verified** by Lean — the only unproved input is the class instance.
-
-This is the same pattern used for `MassEvaluation` in
-[mass endomorphism tower](#prop:mass-endomorphism-tower): the
-canonical computation is axiomatised so that the algebraic tower
-identities are machine-checked.
+This is the same pattern as the mass evaluation in the [mass endomorphism tower](#prop:mass-endomorphism-tower): the canonical computation is assumed, so that the algebraic tower identities can be proved from it.
 
 ### Rationale for a class rather than an axiom
 

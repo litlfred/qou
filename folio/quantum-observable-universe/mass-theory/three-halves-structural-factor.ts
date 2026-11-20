@@ -14,6 +14,12 @@ export default proposition({
   cites: [],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): proved in `three-halves-structural-factor.lean` over `[CommRing R]`, `q : Units R`, each by `linear_combination` against `↑q * ↑q⁻¹ = 1`; `RatioForm` section uses `div_eq_div_iff`. Numerical cross-check: `computations/probes/tau-amphichiral-sdp-probe.witness.json`, assertions `lean_three_plus_h_sq_eq_bracket3`, `lean_two_plus_h_sq_times_bracket2_eq_bracket4`, `lean_bracket6_eq_bracket2_bracket3_times_one_plus_h_sq`.",
+    },
+    {
       kind: "status",
       date: "2026-05-25",
       body:

@@ -38,4 +38,12 @@ export default proposition({
     "activation-gate",
     "sign-rep-obstruction",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): (1)–(2) `QOU.Mass.MilnorIndeterminacyGate`: `gate_kills_hopf_spectator`, `gate_open_iff_brunnian`, `ClusterTriple.residue_nontrivial_of_brunnian`; (3) `QOU.Mass.MilnorSignRepObstruction.equivariant_linearMap_eq_zero`, `coupling_vanishes_on_charge_bilinears`; (4) `QOU.Mass.BondChannelClassSelection.wplane_term_eq_zero_of_vol_eq_zero`; the conditional CAL-3 selection is `eq_cal3_of_support_ne_zero_of_ledger` on class `BindingVolumeLedger` (no instance).",
+    },
+  ],
 });

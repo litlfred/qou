@@ -11,26 +11,15 @@ This proposition scaffolds that derivation as a single Lean class
 + theorem, then specialises to the three concrete pole orders used
 downstream.
 
-## Lean structure
+## Structure of the argument
 
-- `class BringResidueAtOrder {R} [Field R] (n : ℕ) (q : R)` — the
-  contour-integral / Schwarz-integral axiomatisation.  Its sole field
-  `pole_nonzero : 1 - h_q · q^n ≠ 0` records the **pole
-  non-vanishing** — the substantive output any concrete contour route
-  must establish.
-- `theorem bring_residue_equation`: given the class, the
-  canonical resolvent $F_n(q) = (1 - h_q \cdot q^n)^{-1}$ satisfies the
-  **resolvent equation** $(1 - h_q \cdot q^n) \cdot F_n(q) = 1$ (proof:
-  `mul_inv_cancel₀ h.pole_nonzero`).
-- Three specialisations:
-  - `bring_residue_at_T_3_5` — pole order 10, used by p-n averaging
-    ([p-n averaging uniqueness](#prop:pn-averaging-uniqueness));
-  - `bring_residue_at_T_2_9` — pole order 9, used by 1/α_EM
-    ([fine-structure observation](#rem:fine-structure-observation));
-  - `bring_residue_meson_pair` — pole orders 3 and 4, used by
-    $m_K^2/m_\pi^2$
-    ([meson color-tube uniqueness](#prop:meson-color-tube-uniqueness)).
-- `bring_residue_subsingleton` — Subsingleton companion.
+- **Hypothesis (Bring residue at order $n$).** Over a field, for the given $n$ and $q$, the pole does not vanish: $1 - h_q \cdot q^n \neq 0$. This is the substantive output any concrete contour-integral or Schwarz-integral route must establish.
+- **Consequence.** Given the hypothesis, the canonical resolvent $F_n(q) = (1 - h_q \cdot q^n)^{-1}$ satisfies the resolvent equation $(1 - h_q \cdot q^n) \cdot F_n(q) = 1$.
+- **Three specialisations:**
+  - pole order 10, at $T(3,5)$, used by [p-n averaging uniqueness](#prop:pn-averaging-uniqueness);
+  - pole order 9, at $T(2,9)$, used by $1/\alpha_{\mathrm{EM}}$ ([fine-structure observation](#rem:fine-structure-observation));
+  - pole orders 3 and 4, used by $m_K^2/m_\pi^2$ ([meson color-tube uniqueness](#prop:meson-color-tube-uniqueness)).
+- The resolvent is unique.
 
 ## Closing the class instance
 

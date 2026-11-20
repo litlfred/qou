@@ -31,22 +31,9 @@ the quotient presentations*
 $\frac{3 + h^2}{2 + h^2} = \frac{[3]_q \cdot [2]_q}{[4]_q}$ *and*
 $\frac{[5]_q \cdot [3]_q}{[6]_q} = \frac{[5]_q}{[2]_q \cdot (1 + h^2)}$.
 
-## Lean
+## Status
 
-All five identities are proved in
-[`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
-over a generic commutative ring `[CommRing R]` with the modulus carried
-as a unit `q : Units R`, each by a single `linear_combination` against
-`↑q * ↑q⁻¹ = 1` — no `field_simp`, no division, no ordering. A field is
-used only in the `RatioForm` section, where the two quotient
-presentations are recovered from the cross-multiplied identities by
-`div_eq_div_iff`. Generic-ring proofs apply at the substrate
-$q_0 \approx 1.110$ by specialisation; numerical cross-checks at
-50-dps mpmath verify each identity to $\leq 10^{-40}$ in the
-[`tau-amphichiral-sdp-probe.witness.json`](../../../computations/probes/tau-amphichiral-sdp-probe.witness.json)
-witness (assertions `lean_three_plus_h_sq_eq_bracket3`,
-`lean_two_plus_h_sq_times_bracket2_eq_bracket4`,
-`lean_bracket6_eq_bracket2_bracket3_times_one_plus_h_sq`).
+All five identities hold over any commutative ring in which $q$ is a unit, each by a single polynomial identity using only $q \cdot q^{-1} = 1$: no division and no ordering. A field is used only to recover the two quotient presentations from the cross-multiplied identities. The identities therefore hold at the substrate $q_0 \approx 1.110$ by specialisation; numerical cross-checks at 50 digits agree to within $10^{-40}$.
 
 ## Role in the framework
 

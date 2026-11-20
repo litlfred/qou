@@ -74,21 +74,9 @@ as bar-anti-symmetric, consistent: bar reverses writhe via the
 composite $P \cdot C \cdot T$, of which P is the writhe-acting
 factor.
 
-## Lean axiomatisation (sketch)
+## The conjectured structure
 
-```lean
-class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
-  /-- The braid-mirror involution on braid-group elements. -/
-  p_action : Braid n → Braid n
-  /-- P^2 = id. -/
-  p_involution : ∀ β, p_action (p_action β) = β
-  /-- P flips the sign of every Hecke generator. -/
-  p_on_generator : ∀ i, p_action (Hecke.sigma i) = Hecke.sigma_inv i
-  /-- P fixes q (no bar-action). -/
-  p_preserves_q : ∀ q, p_q_action q = q
-  /-- Bar-involution factorisation: bar = P · C · T. -/
-  bar_eq_p_c_t : bar_involution = p_action ∘ c_action ∘ t_action
-```
+A braid-mirror involution $P$ on braid-group elements with $P^2 = \mathrm{id}$, sending every Hecke generator $\sigma_i$ to $\sigma_i^{-1}$ and fixing $q$ (no bar action), such that the bar involution factorises as $\overline{\,\cdot\,} = P \circ C \circ T$.
 
 ## Consumers / downstream
 

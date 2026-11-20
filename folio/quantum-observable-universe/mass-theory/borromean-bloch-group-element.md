@@ -144,24 +144,14 @@ also closes the loop:
   q-dilog is bar-symmetric, Faddeev's $\Phi_q$ alone is bar-anti-
   symmetric).
 
-## Lean axiomatisation (sketch)
+## The conjectured statement
 
-```lean
-class BorromeanBlochGroupElement
-    (M : Type*) [BrCategory M] [QuantumDilogarithm M] where
-  /-- The Bloch-group element of the Borromean complement. -/
-  borromean_bloch_class : BlochGroup (Complex)
-  /-- It equals 8 · [i], the ζ₄ (octahedral) class. -/
-  borromean_bloch_eq_eight_xi :
-    borromean_bloch_class = 8 • bloch_symbol Complex.I
-  /-- The Beilinson regulator of the class equals 8G. -/
-  regulator_eq_eight_G : r_2 borromean_bloch_class = 8 * catalan_G
-  /-- The order-h² regulator correction equals -6G. -/
-  regulator_h2_correction : r_2_h2_correction borromean_bloch_class = -6 * catalan_G
-  /-- Equivalently, the h^4 Markov-trace coefficient = -3/4. -/
-  borromean_h4_coefficient_from_regulator :
-    markov_trace_h4_coefficient borromean_complement = -3/4
-```
+The Borromean complement carries a Bloch-group element $\beta_{\mathrm{Bor}} \in \mathcal{B}(\mathbb{C})$ with
+
+1. $\beta_{\mathrm{Bor}} = 8\,[i]$, the $\zeta_4$ (octahedral) class;
+2. Beilinson regulator $r_2(\beta_{\mathrm{Bor}}) = 8G$, with $G$ Catalan's constant;
+3. order-$h^2$ regulator correction $-6G$;
+4. equivalently, the $h^4$ Markov-trace coefficient of the Borromean complement is $-3/4$.
 
 ## What remains open
 

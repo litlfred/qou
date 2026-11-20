@@ -18,4 +18,12 @@ export default proposition({
     "chirality",
     "stokes-constant",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): module `QOU.QBeta.FiveTwoDTSpectrumSplit`: `Splus0`/`Sminus0`, `dt_spectrum_two_element`, `barSwap`, `barSwap_involutive`, `barEvenPair_fixed`, `barOddPair_negated`, `barGrading_faithful`, `dtPair52_chiral`, `dtPair52_grading`, `symmetric_scalar_blind_to_chirality`.",
+    },
+  ],
 });
