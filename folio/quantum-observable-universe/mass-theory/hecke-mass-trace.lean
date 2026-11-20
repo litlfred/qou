@@ -26,7 +26,7 @@ maps into the Laurent ring; the Frobenius norm is `R`-valued, not
     Kashaev/dilog bridge `Vol(K)/ℏ²`, and the explicit positivity
     hypotheses on `vol, ℏ`.
 
-LaTeX label: `prop:hecke-mass-trace`
+LaTeX label: `conj:hecke-mass-trace`
 
 ## References
 
@@ -107,18 +107,19 @@ structure MarkovMassData where
   /-- Linearity of tr_M: tr_M(Φ_mass) = tr_M(Φ^desc) + tr_M(Φ^trans). -/
   trace_decomposition : markovTrace = descendedTrace + transientTrace
 
-/-- **Mass via the Markov trace** (Proposition):
+/-- **Trace-side mass** for `conj:hecke-mass-trace`.
 
-    The categorical mass equals the absolute value of the Markov trace
-    of the Hecke mass element:
+    This is the absolute value of the Markov trace of the Hecke mass
+    element, |tr_M(Φ_mass(β))|. The conjecture is that it equals the
+    categorical mass m(ϱ_β). This definition does not prove that; it names
+    the trace side. The theorems below are statements about this quantity.
 
-      m(ϱ_β) = |tr_M(Φ_mass(β))|
-
-    This follows from:
+    The heuristic argument for the conjecture:
     1. The fibre functor τ is exact and monoidal
     2. τ sends the categorical trace to the Markov trace (Jones)
     3. τ sends the mass integrand to the Hecke mass element (Schur–Weyl)
-    4. The norm over ℝ is the absolute value -/
+    4. The norm over ℝ is the absolute value (step 4 of the sketch
+       `rem:hecke-mass-trace-sketch`; asserted, not proved) -/
 -- Ref: [leitner2026] §4/hecke-mass-trace
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link

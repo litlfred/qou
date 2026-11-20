@@ -52,7 +52,7 @@ export default proposition({
   ],
   uses: [
     "prop:cosimplicial-crossed-groupoid",
-    "prop:topological-mass-formula",
+    "conj:topological-mass-formula",
   ],
   lean: { ref: "qou:QOU.Archimedean.VolumeTowerDecomposition",
     validation: "not_checked",

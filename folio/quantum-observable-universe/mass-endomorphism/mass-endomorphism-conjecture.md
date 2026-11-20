@@ -1,6 +1,6 @@
 In the unified six-term formula ([unified knot mass](#thm:knot-mass-formula-unified)), $|\mathrm{tr}_M(\rho(\beta))|$ forms **Term 1** ($E_\infty^{0,*}$, vortex-specific). The brane tower $\sum \Phi_q(z_i)$ supplies **Terms 2–3** ($E_\infty^{1,*}$ and $E_\infty^{2,*}$). In the archimedean realisation, these three terms together evaluate to $\mathrm{Vol}(K)/\hbar_q^2$ ([topological decomposition](#conj:topological-mass)). Terms 4–6 (Frobenius co-Casimir, chirality, jet prefix) form separate structural pieces handled elsewhere. This conjecture concerns only the tower piece.
 
-We define the **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ ([Hecke mass element](#def:hecke-mass-element)) categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. Its Markov trace gives the full categorical mass ([mass via Markov trace](#prop:hecke-mass-trace)). The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
+We define the **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ ([Hecke mass element](#def:hecke-mass-element)) categorically: it is the fibre functor image of the mass integrand $(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$. Its Markov trace gives the full categorical mass ([mass via Markov trace](#conj:hecke-mass-trace)). The open problem consists of computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly—expressing its NF decomposition in the basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific braid words.
 
 ## Scope: convenience target, not load-bearing
 
@@ -59,7 +59,7 @@ The tower converges in $\sim 20$ terms. This rate is consistent with $t_P = 1/\h
 
 **Step 1 (Categorical $\to$ Markov, proved).** We have $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$. This is [categorical mass as Markov trace](#prop:categorical-mass-markov). The Nakayama automorphism is $S^2 = \mathrm{id}$, so the mass reduces to the Markov trace of the braid word.
 
-**Step 2 (Tower sum $\to$ Vol, archimedean).** We have $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$. This is the [archimedean mass formula](#prop:topological-mass-formula). The descended trace gives $\mathrm{Vol}(K)$, each transient trace gives $\Phi_q(z_i)$, and their sum is $\mathrm{Vol}(K)/\hbar_q^2$.
+**Step 2 (Tower sum $\to$ Vol, archimedean).** We have $\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$. This is the [archimedean mass formula](#conj:topological-mass-formula). The descended trace gives $\mathrm{Vol}(K)$, each transient trace gives $\Phi_q(z_i)$, and their sum is $\mathrm{Vol}(K)/\hbar_q^2$.
 
 **Step 3 (Markov trace $\neq$ Vol, the gap).** The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is the Jones polynomial $J(K; q)$—a Laurent polynomial in $q^{1/2}$. The hyperbolic volume $\mathrm{Vol}(K)$ is a transcendental number. They are different knot invariants: $J(\text{trefoil}; q) = -q^{-4} + q^{-3} + q^{-1}$ while $\mathrm{Vol}(\text{trefoil}) = 0$.
 

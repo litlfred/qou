@@ -15,7 +15,7 @@ export default proof({
   title: "Knot volume verification (SnapPy)",
   tags: ["computation", "snappea", "hyperbolic", "verification"],
   uses: [
-    "prop:topological-mass-formula",
+    "conj:topological-mass-formula",
     "sec:hyperbolic-volumes-prose",
   ],
   computation: {
