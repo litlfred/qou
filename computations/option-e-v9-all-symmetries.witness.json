@@ -1,146 +1,139 @@
 {
   "engine": "python",
-  "computedAt": "2026-11-20T15:27:04.379900+00:00",
+  "computedAt": "2026-08-23T09:15:46.253335+00:00",
   "computation": "option-e-v9-all-symmetries",
   "description": "Option E v9: tries all remaining symmetries on top of v8's 6.15% closure baseline. Tests 9 scales \u00d7 9 input combinations = 81 candidates. Goal: close mirror pair below 2%.",
-  "mirror_target_MeV": "0.7637548800000000000000000000000000000000000000000138741685141259935181",
+  "mirror_target_MeV": "0.7637380000000000000000000000000000000000000000000013424548764674272916",
   "base_quantities": {
-    "v8 base (y M_sym)": "0.003458430214477018858638764441884286963807398161387149172402267002674178",
-    "v8 alt (y M_asym)": "0.02568561214649504649861545434998555710203140540335262805180506503279527",
-    "dim M_sym": "0.2117118460428641128756781832754438296318393625004680000000000000000007",
-    "dim M_asym": "0.4771391914314481994363884580191331113072085493362480000000000000000042",
-    "y\u00b2 M_sym": "0.0001336935634181715423908938402081583174067042560449147786130149364007188",
-    "phase M_sym": "0.08538074409503093713064023854023243890202204409894181727880377169167654",
-    "self-conj y M_sym": "-5.089684569994546791795907145387903483546369444731130291354571371222893e-74",
-    "chiral-only y M_sym": "-5.560685405069007287239249955418412547998187188498771974640583702098778e-75",
-    "chiral-only y M_asym": "7.186138698913633178949872685215351504816679166173521018877880209847438e-74"
+    "v8 base (y M_sym)": "0.1146331273911092739707187874855925562169325919535446355688061886575514",
+    "v8 alt (y M_asym)": "0.1146770062694767847553834198974260673285715290288624288888740488821204",
+    "dim M_sym": "-2.022674876930280771646554525311567796732902617645340000000000000000021",
+    "dim M_asym": "67.68885649402486061135387292100940136710682610927372999999999999999999",
+    "y\u00b2 M_sym": "0.001437939514002490078625218291132266870624101658131233079781151225228224",
+    "phase M_sym": "0.07686249071005220225014505275600097931603564731924889921163621248777758",
+    "self-conj y M_sym": "0.0",
+    "chiral-only y M_sym": "0.0",
+    "chiral-only y M_asym": "0.0"
   },
   "results_top15": [
     {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (dim M_asym)",
-      "value_MeV": 0.6508858890921991,
-      "err_pct": -14.77816952315916
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7\u221a[2]_q \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.5025807746659842,
-      "err_pct": -34.19606370750991
-    },
-    {
       "formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (phase M_sym)",
-      "value_MeV": 1.0616401786635483,
-      "err_pct": 39.002735886093234
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h) \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.4283403053680096,
-      "err_pct": -43.9165213100819
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7q \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.3933014680662727,
-      "err_pct": -48.50422846839648
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h/2) \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.39137942972927103,
-      "err_pct": -48.7558849078292
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+\u210f_q) \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.38945739139226937,
-      "err_pct": -49.00754134726191
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(q+q\u207b\u00b9)/2 \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.3563405924275341,
-      "err_pct": -53.34359206614377
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.35441855409053247,
-      "err_pct": -53.59524850557649
+      "value_MeV": 0.9557226191320367,
+      "err_pct": 25.137497300387917
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (phase M_sym)",
-      "value_MeV": 1.178111687459388,
-      "err_pct": 54.25259049858876
+      "value_MeV": 1.0605740157518866,
+      "err_pct": 38.86621010763986
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7(q+q\u207b\u00b9)/2 \u00b7 (phase M_sym)",
-      "value_MeV": 1.1845006752886997,
-      "err_pct": 55.08911383829058
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (v8 alt (y M_asym))",
-      "value_MeV": 0.3193797167887955,
-      "err_pct": -58.18295566389107
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (dim M_sym)",
-      "value_MeV": 0.2888051445314119,
-      "err_pct": -62.186147402238284
+      "value_MeV": 1.06632558799317,
+      "err_pct": 39.61929195524773
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+\u210f_q) \u00b7 (phase M_sym)",
-      "value_MeV": 1.2945831962552277,
-      "err_pct": 69.50244511108428
+      "value_MeV": 1.1654254123717362,
+      "err_pct": 52.5949229148918
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h/2) \u00b7 (phase M_sym)",
-      "value_MeV": 1.3009721840845394,
-      "err_pct": 70.33896845078611
+      "value_MeV": 1.1711769846130198,
+      "err_pct": 53.34800476249967
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b7q \u00b7 (phase M_sym)",
+      "value_MeV": 1.176928556854303,
+      "err_pct": 54.10108661010755
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h) \u00b7 (phase M_sym)",
+      "value_MeV": 1.281779953474153,
+      "err_pct": 67.8297994173595
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (v8 alt (y M_asym))",
+      "value_MeV": 0.15643578755333507,
+      "err_pct": -79.51708733186838
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (v8 base (y M_sym))",
+      "value_MeV": 0.15637593050685575,
+      "err_pct": -79.52492471150372
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (phase M_sym)",
+      "value_MeV": 0.10485139661984982,
+      "err_pct": -86.27128719274806
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (v8 base (y M_sym))",
+      "value_MeV": 1.425369796599621,
+      "err_pct": 86.63072894102703
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (v8 alt (y M_asym))",
+      "value_MeV": 1.4259153947993486,
+      "err_pct": 86.70216681628366
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b7\u221a[2]_q \u00b7 (y\u00b2 M_sym)",
+      "value_MeV": 0.028135625140972717,
+      "err_pct": -96.3160632126498
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b7(1+h) \u00b7 (y\u00b2 M_sym)",
+      "value_MeV": 0.02397947329484226,
+      "err_pct": -96.86024876399469
+    },
+    {
+      "formula": "m_\u03c0\u00b7\u210f_q\u00b7\u221a[2]_q \u00b7 (phase M_sym)",
+      "value_MeV": 1.5039396337332878,
+      "err_pct": 96.91826696239912
     }
   ],
-  "best_formula": "m_\u03c0\u00b7\u210f_q\u00b2 \u00b7 (dim M_asym)",
-  "best_err_pct": -14.77816952315916,
+  "best_formula": "m_\u03c0\u00b7\u210f_q/q \u00b7 (phase M_sym)",
+  "best_err_pct": 25.137497300387917,
   "correction_factor_search": {
-    "v8_base_MeV": 0.04772056157537259,
-    "target_factor": 16.004733699407158,
+    "v8_base_MeV": 1.5817457271064768,
+    "target_factor": 0.48284499013449095,
     "candidates": {
       "1 + h_q\u00b2": {
         "value": 1.0097738681040356,
-        "err_vs_target_pct": -93.69077994630152
+        "err_vs_target_pct": 109.13002904364289
       },
       "1 + h": {
         "value": 1.2085719001567694,
-        "err_vs_target_pct": -92.44865973495368
+        "err_vs_target_pct": 150.3022553511709
       },
       "1 + h/2": {
         "value": 1.1042859500783848,
-        "err_vs_target_pct": -93.10025414468915
+        "err_vs_target_pct": 128.7040297903471
       },
       "(1 + q)/2": {
         "value": 1.05485451245,
-        "err_vs_target_pct": -93.4091092531638
+        "err_vs_target_pct": 118.46649214609897
       },
       "q/[2]_q": {
         "value": 0.5518617250240091,
-        "err_vs_target_pct": -96.5518843650335
+        "err_vs_target_pct": 14.293766384589464
       },
       "[2]_q/2": {
         "value": 1.0054230748216153,
-        "err_vs_target_pct": -93.71796436163847
+        "err_vs_target_pct": 108.22895450185082
       },
       "(q\u00b2+1)/(q\u00b2)": {
         "value": 1.8120481175904966,
-        "err_vs_target_pct": -88.67804893462477
+        "err_vs_target_pct": 275.28568269617364
       },
       "(q+1)\u00b2/4q": {
         "value": 1.0027115374108075,
-        "err_vs_target_pct": -93.73490645803155
+        "err_vs_target_pct": 107.66737936568707
       },
       "1 + h_q + h_q\u00b2": {
         "value": 1.108636743360805,
-        "err_vs_target_pct": -93.0730697293522
+        "err_vs_target_pct": 129.60510433213918
       }
     }
-  },
-  "scriptFile": "option_e_v9_all_symmetries.py",
-  "scriptHash": "e62c99df30c3",
-  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
-  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
-  "durationMs": 0,
-  "q0Anchor": "independent",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+  }
 }

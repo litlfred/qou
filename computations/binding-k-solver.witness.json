@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T15:21:05.899646+00:00",
-  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-13T13:06:06.494849+00:00",
+  "commitSha": "f3ea881d9bc1109ad30a94896c94bc1fa5c65877",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1630,
+  "durationMs": 1794,
   "computation": "binding-k-solver",
   "scriptFile": "binding_k_solver.py",
-  "scriptHash": "43959abdc6b6",
-  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "scriptHash": "70c862913cfc",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,15 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -116,7 +115,7 @@
         ],
         "binding_link_name": "L6a4 (3-component link)",
         "observed_rho": 2,
-        "B_AME_MeV": 7.71804132
+        "B_AME_MeV": 7.71806
       }
     ],
     "per_atom_results": [
@@ -759,26 +758,26 @@
           },
           "(4, 3, 2)": {
             "chi": 2.989788130003192,
-            "det": 0.002899896193739902,
+            "det": 0.0028998961937399047,
             "min_eig_sym": -1.4116864287954831,
             "psd_within_tol": false
           },
           "(4, 3, 1, 1)": {
             "chi": 2.008849150475243,
-            "det": 0.08174282115588521,
-            "min_eig_sym": -1.3787014484882245,
+            "det": 0.08174282115588502,
+            "min_eig_sym": -1.378701448488217,
             "psd_within_tol": false
           },
           "(4, 2, 2, 1)": {
             "chi": -1.135966068206601,
-            "det": 12.233490181293382,
-            "min_eig_sym": -1.4116864287954787,
+            "det": 12.233490181293392,
+            "min_eig_sym": -1.4116864287954782,
             "psd_within_tol": false
           },
           "(4, 2, 1, 1, 1)": {
             "chi": 0.7839369532182348,
-            "det": 6403.631349775173,
-            "min_eig_sym": -1.378701448488217,
+            "det": 6403.63134977515,
+            "min_eig_sym": -1.378701448488218,
             "psd_within_tol": false
           },
           "(4, 1, 1, 1, 1, 1)": {
@@ -795,7 +794,7 @@
           },
           "(3, 3, 2, 1)": {
             "chi": -0.2477773716825009,
-            "det": 344.83992984301716,
+            "det": 344.83992984301744,
             "min_eig_sym": -1.4116864287954798,
             "psd_within_tol": false
           },
@@ -1736,7 +1735,7 @@
         "n_0": 9,
         "binding_link_name": "L6a4 (3-component link)",
         "observed_rho": 2,
-        "B_AME_MeV": 7.71804132,
+        "B_AME_MeV": 7.71806,
         "atom_braid_word": [
           -1,
           2,
@@ -1856,7 +1855,7 @@
           },
           "(5, 2, 1, 1)": {
             "chi": 188.36638809428436,
-            "det": 1.000000000000624,
+            "det": 1.0000000000006237,
             "min_eig_sym": 0.930597513422878,
             "psd_within_tol": true
           },
@@ -1874,25 +1873,25 @@
           },
           "(4, 3, 2)": {
             "chi": 167.35588555560338,
-            "det": 1.0000000000004674,
+            "det": 1.0000000000004672,
             "min_eig_sym": 0.9305975134228777,
             "psd_within_tol": true
           },
           "(4, 3, 1, 1)": {
             "chi": 215.20803346274826,
-            "det": 1.0000000000006641,
+            "det": 1.0000000000006661,
             "min_eig_sym": 0.9305975134228777,
             "psd_within_tol": true
           },
           "(4, 2, 2, 1)": {
             "chi": 215.2080334627483,
-            "det": 1.0000000000006954,
+            "det": 1.0000000000006948,
             "min_eig_sym": 0.9305975134228777,
             "psd_within_tol": true
           },
           "(4, 2, 1, 1, 1)": {
             "chi": 188.36638809428445,
-            "det": 1.0000000000007105,
+            "det": 1.00000000000071,
             "min_eig_sym": 0.930597513422879,
             "psd_within_tol": true
           },
@@ -1910,7 +1909,7 @@
           },
           "(3, 3, 2, 1)": {
             "chi": 167.35588555560344,
-            "det": 1.0000000000005245,
+            "det": 1.0000000000005247,
             "min_eig_sym": 0.9305975134228782,
             "psd_within_tol": true
           },
@@ -1928,7 +1927,7 @@
           },
           "(3, 2, 2, 1, 1)": {
             "chi": 161.42976862281313,
-            "det": 1.0000000000006055,
+            "det": 1.000000000000606,
             "min_eig_sym": 0.9305975134228786,
             "psd_within_tol": true
           },

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T15:21:06.715015+00:00",
-  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "computedAt": "2026-08-08T23:31:50.662603+00:00",
+  "commitSha": "fb8844fcc2738e086751aa0117d79a88e1e5239e",
   "assertions": [
     {
       "name": "a3_perblock_does_not_close",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 17,
   "computation": "binding-per-block-magnitude-a3",
   "scriptFile": "binding_per_block_magnitude_a3_probe.py",
-  "scriptHash": "a991a45a7417",
-  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "scriptHash": "c252ca3e7121",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,48 +25,40 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
-  },
-  "invocation": {
-    "argv": [
-      "computations/binding_per_block_magnitude_a3_probe.py"
-    ],
-    "reproduce": "python3 -u computations/binding_per_block_magnitude_a3_probe.py"
+    "clarabel": "0.11.1"
   },
   "data": {
     "q_0": "1.10997858275138080759166909561",
     "E0_MeV": 4.185981363294476,
     "results": {
       "d": {
-        "B_perblock_MeV": 0.16455022397738905,
-        "B_scalar_MeV": 0.6155346535603541,
+        "B_perblock_MeV": 2.30409906109532,
+        "B_scalar_MeV": 2.491365598664674,
         "AME_MeV": 2.2245662,
-        "err_perblock": -0.9260304215817946,
-        "err_scalar": -0.7233012649565771,
+        "err_perblock": 0.03575207656005921,
+        "err_scalar": 0.11993322503267095,
         "n_strands": 6
       },
       "t": {
-        "B_perblock_MeV": 0.2820208732316124,
-        "B_scalar_MeV": 0.47271456382433835,
+        "B_perblock_MeV": 3.2524733758781292,
+        "B_scalar_MeV": 3.3653316044171513,
         "AME_MeV": 8.4818,
-        "err_perblock": -0.966749879361502,
-        "err_scalar": -0.9442671881175767,
+        "err_perblock": -0.6165350072062381,
+        "err_scalar": -0.6032290782125078,
         "n_strands": 9
       },
       "3he": {
-        "B_perblock_MeV": 0.36305967363898684,
-        "B_scalar_MeV": 0.5424294668095581,
+        "B_perblock_MeV": 3.466548817158364,
+        "B_scalar_MeV": 3.521154825311812,
         "AME_MeV": 7.718,
-        "err_perblock": -0.9529593581706418,
-        "err_scalar": -0.929718908161498,
+        "err_perblock": -0.5508488187149049,
+        "err_scalar": -0.5437736686561528,
         "n_strands": 9
       }
     },

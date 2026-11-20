@@ -2,7 +2,7 @@
   "q0Anchor": "proton",
   "q0AnchorReason": "Evaluates at the PROTON pin. q0 enters through q_parameter.Q_50_DIGIT_STR, which resolves to the proton anchor (1.1099785827513808075...) because this stem is not listed under ideal_muon; proton is the standing default for compute per the 2026-08-07 owner directive. The stem IS declared physical_proton in computations/q0_anchor_manifest.json, and that declaration cannot stamp this witness: the manifest is read inside WitnessBuilder.build(), and this producer hand-rolls its witness and never enters build(). Hence the declaration here, which is the only route that reaches the file.",
   "schema": "witness/v1",
-  "computedAt": "2026-11-20T15:28:46.685670+00:00",
+  "computedAt": "2026-09-04T02:58:23.718073+00:00",
   "description": "The count channel of QOU.Mass.BrunnianBindingChannel, evaluated on the framework's own carriers, predicts b3 = 0. The Borromean L6a4 count multiplicity (3) is exactly three times the Hopf clasp's (1), which is the pair-local condition, so b3 vanishes identically against a measured b3/b2 = 0.6411239316. The MeV scale and the substrate factor h both cancel, so no reparametrisation rescues it. The channel itself is NOT obstructed -- small half-integer multiplicities reach the measured ratio to 0.27% -- so the failure is the carrier assignment, and any carrier that reaches b3 does so as a fit unless its crossing numbers are derived.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -25,11 +25,11 @@
   "model_b3_over_b2_reading_a_count_only": "0",
   "model_b3_over_b2_reading_b_full_energy": "-2.7174806315486",
   "reading_b_closed_form": "-3(q+1/q)/(2q), negative for every q>0",
-  "measured_b3_over_b2": "0.641122822059",
-  "required_multiplicity_ratio": "3.641122822059",
+  "measured_b3_over_b2": "0.641123931589",
+  "required_multiplicity_ratio": "3.641123931589",
   "exact_match_counts": {
-    "n_pair": 55614155,
-    "n_triple": 202497969,
+    "n_pair": 1483044,
+    "n_triple": 5399947,
     "note": "artifact of the quoted AME digits; not a physical statement"
   },
   "exploratory_small_carriers_THIS_IS_A_FIT": [
@@ -39,7 +39,7 @@
       "mu_pair": "7",
       "mu_triple": "51/2",
       "b3_over_b2": "0.64285714",
-      "rel_err": "0.002705"
+      "rel_err": "0.002703"
     },
     {
       "n_pair": 11,
@@ -47,7 +47,7 @@
       "mu_pair": "11/2",
       "mu_triple": "20",
       "b3_over_b2": "0.63636364",
-      "rel_err": "0.007423"
+      "rel_err": "0.007425"
     },
     {
       "n_pair": 22,
@@ -55,7 +55,7 @@
       "mu_pair": "11",
       "mu_triple": "40",
       "b3_over_b2": "0.63636364",
-      "rel_err": "0.007423"
+      "rel_err": "0.007425"
     },
     {
       "n_pair": 17,
@@ -63,7 +63,7 @@
       "mu_pair": "17/2",
       "mu_triple": "31",
       "b3_over_b2": "0.64705882",
-      "rel_err": "0.009259"
+      "rel_err": "0.009257"
     },
     {
       "n_pair": 20,
@@ -71,7 +71,7 @@
       "mu_pair": "10",
       "mu_triple": "73/2",
       "b3_over_b2": "0.65000000",
-      "rel_err": "0.013846"
+      "rel_err": "0.013845"
     }
   ],
   "assertions": [
@@ -117,10 +117,9 @@
     "probes/aggregator-convexity-divided-difference.witness.json"
   ],
   "source": "AME2020 total nuclear binding energies; carrier crossing data from QOU.Mass.BrunnianBindingChannel",
-  "scriptFile": "count_channel_carrier_locus_probe.py",
-  "scriptHash": "945f4e947d66",
-  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
-  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "scriptHash": "32f7e02fb61d",
+  "scriptCommitSha": "d98c675e77f92d294d2e8a4d1d0477925d210f3e",
+  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
   "engine": "python",
   "durationMs": 0,
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

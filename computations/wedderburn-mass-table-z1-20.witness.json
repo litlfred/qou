@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-11-20T15:34:31.891152+00:00",
-  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:01:17.098650+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "coefficient_lock_holds",
-      "computed": "1.06911e-50",
+      "computed": "2.13821e-50",
       "expected": "0.0",
       "passed": true,
       "tolerance": "1e-40",
@@ -14,7 +14,7 @@
     },
     {
       "name": "mean_abs_error_under_one_tenth_percent",
-      "computed": "0.074592479",
+      "computed": "0.074592501",
       "expected": "0.0",
       "passed": true,
       "tolerance": "0.1",
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 30,
   "computation": "wedderburn-mass-table-z1-20",
   "scriptFile": "wedderburn_mass_table_z1_20.py",
-  "scriptHash": "97fa1bfb021f",
-  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "scriptHash": "04ef40a8bf3f",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,15 +35,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.18",
-    "numpy": "2.5.3",
-    "scipy": "1.18.1",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "cvxpy": "absent",
-    "pyhecke_native_build": "832ce4e14a00d523"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -85,8 +84,8 @@
         "N": 2,
         "A": 4,
         "M_pred_MeV": "3734.63852011",
-        "M_obs_MeV": "3728.4013307525797383636",
-        "delta_MeV": "6.2371894",
+        "M_obs_MeV": "3728.4013",
+        "delta_MeV": "6.2372201",
         "delta_pct": "0.167289",
         "M_published_superseded": "3734.624",
         "shift_from_published_MeV": "0.014520110"
@@ -133,9 +132,9 @@
         "N": 6,
         "A": 12,
         "M_pred_MeV": "11168.9752231",
-        "M_obs_MeV": "11177.92924464",
-        "delta_MeV": "-8.9540216",
-        "delta_pct": "-0.0801045",
+        "M_obs_MeV": "11177.9292",
+        "delta_MeV": "-8.9539769",
+        "delta_pct": "-0.0801041",
         "M_published_superseded": "11168.874",
         "shift_from_published_MeV": "0.10122308"
       },
@@ -310,13 +309,13 @@
     ],
     "summary": {
       "n_atoms": 20,
-      "mean_abs_pct": "0.074592479",
+      "mean_abs_pct": "0.074592501",
       "max_abs_pct": "0.19085354",
       "max_shift_from_published_MeV": "1.2056583"
     },
     "coefficient_lock": {
       "identity": "[3]_q - 3 == (q - 1/q)^2, hence beta2 == -6 - 2*h_A^2",
-      "residual": "1.06911e-50",
+      "residual": "2.13821e-50",
       "superseded_beta3": "0.0499",
       "beta2_that_0.0499_would_force": "-6.09980000000",
       "beta2_recorded_by_producer": "-6.087415",
