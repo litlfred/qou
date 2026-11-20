@@ -1,6 +1,6 @@
 **Remark (branch-phase localisation and the mass-tower falsifiability witness).**
 
-**Branch-phase localisation on $\mathcal{X}_5$.** The five finite branch points $\zeta_5^k$ of the hyperelliptic quintic ([def:hyperelliptic-quintic](#def:hyperelliptic-quintic)) lie on the unit circle. They pick out five preferred phase values $\varphi_k = 2\pi k/5$ on the $\mathrm{U}(1)$ tube ([rem:u1-phase-tube](#rem:u1-phase-tube)). At these phases, the commutative crossing weight ([crossing energy](#def:crossing-energy)) takes only two distinct magnitudes:
+**Branch-phase localisation on $\mathcal{X}_5$.** The five finite branch points $\zeta_5^k$ of the hyperelliptic quintic ([def:hyperelliptic-quintic](#def:hyperelliptic-quintic)) lie on the unit circle. They pick out five preferred phase values $\varphi_k = 2\pi k/5$ on the $\mathrm{U}(1)$ tube. At these phases, the commutative crossing weight ([crossing energy](#def:crossing-energy)) takes only two distinct magnitudes:
 
 $$
   2\lvert\sin(2\pi/5)\rvert  \approx 1.902,
