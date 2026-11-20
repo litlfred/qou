@@ -3,6 +3,7 @@ import Mathlib.Order.WellFounded
 import Mathlib.Data.List.Lex
 import Mathlib.Data.Fin.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Logic.Relation
 
 
 /-!
@@ -167,6 +168,28 @@ theorem degLex_admissible {n : ℕ} (u v w w' : List (Fin n))
   · right
     exact ⟨by simp [List.length_append]; omega,
            degLex_admissible_lex u v w w' h_lex h_eq⟩
+
+/-- **No closed `≺_c`-chains.** No word returns to itself through a finite
+    chain of strict `DegLex` steps. This is the fact used by
+    `rem:no-goedel-closed-chains`: it follows from well-foundedness alone.
+    The general statement is `QOU.Chronology.not_closedChainAt_of_wellFounded`
+    in the library; it is repeated here so this file stays self-contained. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_no_closedChain (n : ℕ) (w : List (Fin n)) :
+    ¬ Relation.TransGen (DegLex (α := Fin n)) w w := by
+  have h' : WellFounded (Relation.TransGen (DegLex (α := Fin n))) :=
+    (degLex_wellOrdered n).transGen
+  exact h'.induction (C := fun x => ¬ Relation.TransGen DegLex x x) w
+    (fun x ih hx => ih x hx hx)
+
+/-- **No total chronology for `≺_c`.** It is false that every word reaches
+    every word (itself included) by a finite `DegLex` chain. This is the
+    order-theoretic form of excluding a Gödel-type universe, where
+    `I⁺(p) = M` for every event `p`. -/
+-- Ref: [leitner2026] §2/no-goedel-closed-chains
+theorem degLex_not_totalChronology (n : ℕ) :
+    ¬ ∀ w w' : List (Fin n), Relation.TransGen (DegLex (α := Fin n)) w w' :=
+  fun h => degLex_no_closedChain n [] (h [] [])
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [leitner2026] §2/braiding-induced-ordering

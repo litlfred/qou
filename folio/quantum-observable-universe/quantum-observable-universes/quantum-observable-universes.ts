@@ -36,6 +36,7 @@ export default chapter({
         "quantum-observable-universe-exists-proof",
         "braiding-induced-ordering",
         "braiding-induced-ordering-proof",
+        "no-goedel-closed-chains-remark",
         "frobenius-integration",
         "yekutieli-stokes-remark",
         "fibre-functor-rigidity",
