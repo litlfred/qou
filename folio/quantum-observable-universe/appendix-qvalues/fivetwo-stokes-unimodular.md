@@ -33,7 +33,7 @@ Note that the inversion relation constrains the pair without collapsing it.
 Transposition is not the chirality involution: it relates the blocks while
 leaving the ordered pair of off-diagonal constants genuinely ordered, which is
 why the split recorded in
-[`prop:fivetwo-dt-spectrum-split`](#prop:fivetwo-dt-spectrum-split) survives.
+[The $5_2$ DT spectrum $\{3,4\}$ splits across chirality](#prop:fivetwo-dt-spectrum-split) survives.
 
 **The $W_{-1}$ determinant.** The magnitude $2$ is the "$\det \pm 2$"
 phenomenon of the $W_{-1}$ block. The sign matters and is easy to get wrong:

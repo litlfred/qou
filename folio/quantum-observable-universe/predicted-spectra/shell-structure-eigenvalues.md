@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — shell-structure eigenvalues from photon-electron transfer matrix).**
+**Proposition (conditional on [Quarks as Borromean-linked unknots in the exceptional divisor](#conj:borromean-quark) — shell-structure eigenvalues from photon-electron transfer matrix).**
 The **eigenvalues** of the photon-electron transfer matrix $T_{\gamma e}(q)$ determine the orbital shell structure of an atom. Shell $n$ corresponds to the $n$-th power $T_{\gamma e}^n$. The shell energies satisfy a **Chebyshev recurrence** in $q$.
 
 ## The characteristic polynomial

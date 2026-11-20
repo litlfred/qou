@@ -26,7 +26,7 @@ See [Table 2](#tbl:mass-comparison-table-table2-data).
 
 #### FULL $\mathfrak{Q}_\beta$ prediction (framework, no CODATA mass injection)
 
-Per [`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md), the framework predicts the $\beta$-decay Q-value using only CAL-1 ($m_e$) and CAL-2 ($q_0$):
+Per [Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md), the framework predicts the $\beta$-decay Q-value using only CAL-1 ($m_e$) and CAL-2 ($q_0$):
 
 $$
 \boxed{

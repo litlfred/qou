@@ -9,7 +9,7 @@ gate).**
 > near-match ($\approx 3b$, $-2.9\%$); the saturation count $\binom{k}{2}$ is
 > data-selected. Model G derives the *composite structure* — **which** $\alpha
 > \cdot \alpha$ pairs activate, via the proved gate
-> [`prop:alpha-cluster-activation-gate`](#prop:alpha-cluster-activation-gate) —
+> [The $\alpha$-cluster activation gate](#prop:alpha-cluster-activation-gate) —
 > **not** the absolute cluster base. It is recorded here for its structural
 > content alone, and must not be cited as an ab-initio prediction.
 

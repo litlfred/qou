@@ -37,14 +37,14 @@ All $14$ assertions in the witness pass.
 The two values $\alpha_{\mathrm{shift}}(T_{2,9}) = 9$ and
 $\alpha_{\mathrm{shift}}(T_{3,5}) = 10$ are precisely the
 $q$-integer indices appearing in
-[`prop:em-coupling-projection`](#prop:em-coupling-projection)'s
+[Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection)'s
 formula
 
 $$
   \alpha_{EM}^{-1} \;=\; q \cdot [9]_q \cdot [10]_q.
 $$
 
-[`prop:alpha-em-shift-multiplicative-chain`](#prop:alpha-em-shift-multiplicative-chain)
+[Multiplicative-chain form](#prop:alpha-em-shift-multiplicative-chain)
 combines the two identities into the **shift-exponent form**
 
 $$

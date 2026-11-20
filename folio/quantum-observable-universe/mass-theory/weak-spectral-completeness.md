@@ -14,7 +14,7 @@ $$
   H \leftrightarrow \sigma_5^8
 $$
 
-*([`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)).
+*([Hoefsmit cell-content identification of the EW triplet inside $\mathrm{End}_R(V^{\otimes 6})$](#thm:hoefsmit-ew-cell-content)).
 Eight pairwise-orthogonal pure-eigenspace projectors of
 $(\sigma_1, \sigma_3, \sigma_5)$ — labelled by sym/alt patterns —
 exhaust the EW Wedderburn content with cell-content
@@ -65,7 +65,7 @@ Bring's surface.
 ### Proof sketch (parallels EM spectral completeness)
 
 The argument mirrors
-[`thm:em-spectral-completeness`](#thm:em-spectral-completeness)
+[Two-strand spectral completeness over a commutative ring $R$](#thm:em-spectral-completeness)
 applied to the two-strand idempotent decomposition $w_+ + w_- = 1$
 on the EM sector:
 
@@ -118,7 +118,7 @@ and disjoint products preserve the duality.
 The Plancherel-weighted form
 $\mathcal{N}_{\rm sym}^{\rm Plancherel} = q^6 (1 + q^2 + q^4)/3$
 from
-[`prop:weak-symmetric-normalization`](#prop:weak-symmetric-normalization)
+[Weak-sector symmetric-channel Plancherel normalization $\mathcal{N}_{\rm sym}(q)$](#prop:weak-symmetric-normalization)
 is **not** bar-self-dual and differs from $\mathrm{tr}_{\rm pure}$
 by a factor of $\sim 22$ at $q_0$. It is retained only as a
 legacy/degenerate reference; the cell-content trace is operative.

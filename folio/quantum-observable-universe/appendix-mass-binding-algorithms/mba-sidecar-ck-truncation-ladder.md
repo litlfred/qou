@@ -41,7 +41,7 @@ reported as a tier, never collapsed to a binary keep-or-discard verdict.*
 
 ### Correctness conditions
 
-*[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
+*[$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)
 establishes the convergent ladder, the truncation-order
 inequality, and that $c_2$ is the exact $u^2$ coefficient of the
 explicit-factor product. That is a re-reading of the $N{=}2$ factor's

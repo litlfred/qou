@@ -1,6 +1,6 @@
 **Proof.** Algebraic rearrangement of the 3-term recursion
 `4(n+1) · a_{n+1} + 6n · a_n + (2n-1) · a_{n-1} = 0` from
-[`prop:qbeta-per-block-chi-closed-forms`](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
+[Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
 §Extension #5, dividing through by $4(n+1)$ (positive for $n \geq 0$).
 The Lean proof is `field_simp` + `linarith` on the recursion equation.
 $\square$
@@ -8,7 +8,7 @@ $\square$
 ## Structural relationship to `CKRecursion`
 
 The `QOU.QBeta.CKRecursion.CKRecursion ℝ` structure defined in
-[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
+[$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
 captures the **constant-kernel** depth-$d$ linear recursion
 
 $$
@@ -51,7 +51,7 @@ shapes differ). However:
 2. The $z$-recursion's role in this picture is **upstream auxiliary
    data**: the Markov parameter $z(q)$ enters $\Delta\mathrm{tr}_M(q)$
    through the canonical Wenzl weights $y_\lambda(q)$
-   (see [`prop:qbeta-per-block-chi-closed-forms`](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
+   (see [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
    §Extension #4), and the $z$-Taylor expansion is what one would
    eventually convolve against the per-block characters to recover
    the f-map. The $z$-recursion is a structural input to the f-map

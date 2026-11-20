@@ -1,10 +1,10 @@
 **Remark (transcendental-accounting ledger — every period in the paper, indexed by Goncharov depth).**
 
-We provide the dual ledger to [`rem:algebraic-core-survives`](#rem:algebraic-core-survives). That ledger enumerates the algebra that survives the archimedean wall; this one enumerates the transcendentals that appear on the other side. We record which periods appear, where, how they relate, and whether their post-archimedean relations are forced by pre-archimedean $q$-rational structure or are archimedean accidents.
+We provide the dual ledger to [The algebraic core of QOU lifts to any real-closed field](#rem:algebraic-core-survives). That ledger enumerates the algebra that survives the archimedean wall; this one enumerates the transcendentals that appear on the other side. We record which periods appear, where, how they relate, and whether their post-archimedean relations are forced by pre-archimedean $q$-rational structure or are archimedean accidents.
 
 A relation $R(\alpha_1, \ldots, \alpha_m) = 0$ in $\mathbb{Z}[q^{\pm 1}]$ on the algebraic side survives under the archimedean realization functor $\tau_{\mathrm{arch}}$ if and only if it is a $q$-polynomial identity. A relation that holds only among the archimedean values $\tau_{\mathrm{arch}}(\alpha_i) \in \mathbb{R}$ but not among the $\alpha_i \in \mathbb{Z}[q^{\pm 1}]$ is an archimedean accident. The 5-term Bloch–Wigner relation among hyperbolic volumes is a typical example.
 
-The graded-Mikusiński correspondence ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) predicts the origin of each relation by depth. The table below operationalises this for every period in the QOU paper.
+The graded-Mikusiński correspondence ([GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence)) predicts the origin of each relation by depth. The table below operationalises this for every period in the QOU paper.
 
 See [Table](#tbl:transcendental-accounting-table-data).
 
@@ -14,7 +14,7 @@ The table makes two structural facts visible:
 Every hyperbolic 3-manifold volume in the paper occurs at depth 2 (one $\mathrm{Li}_2$ factor). The Bloch–Wigner formula $\mathrm{Vol}(M) = \sum_i D(z_i)$ over an ideal-tetrahedron triangulation forces this. Escaping depth 2 requires a different invariant: $\mathrm{CS}$, hyperbolic 4-manifolds, or the trilogarithm at algebraic points (the `bring-trilog-zeta5` route).
 
 **Fact 2: pre-archimedean $q$-rational relations imply post-archimedean equalities.**
-For any two Bring-embeddable knots $K, K'$, if $J_K(q) = J_{K'}(q)$ in $\mathbb{Z}[q^{\pm 1}]$, then $\mathrm{Vol}(K) = \mathrm{Vol}(K')$. The volume $\mathrm{Vol}$ is computed from $J_K^{(N)}$ via a limit depending only on the polynomial. Whether this implication is vacuous (whether there are no Jones-coincident pairs among Bring-embeddable knots) remains open ([`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Question 3). A single Jones-coincident pair yields a non-trivial post-archimedean equality forced by $q$-rational structure—exactly the wall-crossing prediction the correspondence makes explicit.
+For any two Bring-embeddable knots $K, K'$, if $J_K(q) = J_{K'}(q)$ in $\mathbb{Z}[q^{\pm 1}]$, then $\mathrm{Vol}(K) = \mathrm{Vol}(K')$. The volume $\mathrm{Vol}$ is computed from $J_K^{(N)}$ via a limit depending only on the polynomial. Whether this implication is vacuous (whether there are no Jones-coincident pairs among Bring-embeddable knots) remains open ([Exhaustiveness of the QOU knots in the Descartes space (open)](#rem:knot-exhaustiveness) Question 3). A single Jones-coincident pair yields a non-trivial post-archimedean equality forced by $q$-rational structure—exactly the wall-crossing prediction the correspondence makes explicit.
 
 **Non-surviving relations: archimedean accidents.**
 The 5-term Bloch–Wigner relation

@@ -17,7 +17,7 @@ $$
 
 the right-hand side being a finite sum of local residues. Identifying the
 left-hand side with the prolonged period $a_D^{(n)}$ of
-[`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation) gives the residue-sum
+[Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation) gives the residue-sum
 shape: the period is computed by collecting residues, with no contour
 integration — *once $E$ is known*.
 
@@ -36,7 +36,7 @@ and its contrapositive
 residue-sum shape as an explicit hypothesis; it does not derive it.
 
 A second, independent route reaches the same vanishing under the classical-jet
-rule: [`prop:sw-classical-jet-exactness`](#prop:sw-classical-jet-exactness) shows
+rule: [The classical-jet prolongation of $\lambda_{\mathrm{SW}}$ is exact for $n \ge 1$](#prop:sw-classical-jet-exactness) shows
 $\lambda_{\mathrm{SW}}^{(n)} = d\bigl(X^{(n-1)}\bigr)$ is exact, so each residue
 vanishes on its own. That argument is stronger where it applies and is scoped to
 the classical-jet reading; the one here assumes only that the *total* vanishes,

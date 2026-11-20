@@ -1,7 +1,7 @@
 **$c_k$ extraction from four algebraic reduction rules on the typed-$\mathbf{B}_3$ word.**
 
 The $\mathfrak{Q}_\beta$ categorical precision ladder
-([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
+([$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder))
 displays per-rung coefficients
 
 $$
@@ -72,7 +72,7 @@ rather than a single open conjecture.
   case-analysis on the typed-$\mathbf{B}_3$ word structure).
 - Extend the extraction to $k \geq 5$ — the simple alternating
   Kashiwara $\times$ Jones pattern breaks at $c_5, c_6$, an open point recorded
-  in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder);
+  in [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder);
   the four-rule reframing may identify which rule's discharge needs
   enrichment (likely Rule 2 + Rule 4) to capture multi-link Jones
   contributions.

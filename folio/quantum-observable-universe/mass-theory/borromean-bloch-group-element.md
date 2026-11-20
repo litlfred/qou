@@ -45,7 +45,7 @@ $$
 
 where $\Lambda$ is the **Lobachevsky function**.  So hyperbolic volume
 IS a regulator evaluation, per
-[`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period).  The two
+[$\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\tau_{\mathrm{arch}}$](#rem:vol-as-motivic-period).  The two
 normalisations differ by both an argument doubling and a factor $2$;
 keeping one function's coefficient while writing the other's name is
 a recurring slip.
@@ -53,7 +53,7 @@ a recurring slip.
 ## The Borromean Bloch-group element
 
 Per
-[`def:quantum-bloch-group`](#def:quantum-bloch-group) and the
+[Quantum Bloch group and the pentagon identity](#def:quantum-bloch-group) and the
 classical Bloch-Suslin construction:
 
 - The Borromean complement decomposes into **two** regular ideal
@@ -75,7 +75,7 @@ $$
 
 with regulator $r_2[\mathcal{B}_3] = 8 \cdot D(i) = 8\,\mathrm{Cl}_2(\pi/2)
 = 8G$ (Catalan's constant; see
-[`conj:binding-scale-catalan`](#conj:binding-scale-catalan)).  This is
+[Binding energy scale $\alpha = m_e \times 8G$](#conj:binding-scale-catalan)).  This is
 the $\zeta_4$ row of the
 [transcendental-accounting table](../appendix-surreals/transcendental-accounting-table-data.md);
 the figure-eight sits in the $\zeta_6$ row with
@@ -85,7 +85,7 @@ $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.
 
 The Beilinson regulator extends to higher orders via the formal
 $q$-expansion of $\Phi_q$ around $q = 1$ (the archimedean limit per
-[`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)):
+[$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)):
 
 $$
   \log \Phi_q(z)
@@ -116,7 +116,7 @@ categorically:
 
 1. **Direct Borromean Markov trace** — already done
 2. **Pachner-Pentagon state-sum** —
-   [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md)
+   [Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition](pachner-pentagon-borromean.md)
 3. **K-theoretic / Bloch group regulator** (this conjecture)
 4. **DIM-master Pentagon** — research-grade
 
@@ -183,15 +183,15 @@ class BorromeanBlochGroupElement
 ## Cross-references
 
 - The sibling pentagon-validation conjecture:
-  [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md)
+  [Pachner $2$–$3$ move = Pentagon identity at Borromean ideal-tetrahedron decomposition](pachner-pentagon-borromean.md)
 - The quantum Bloch group:
-  [`def:quantum-bloch-group`](#def:quantum-bloch-group)
+  [Quantum Bloch group and the pentagon identity](#def:quantum-bloch-group)
 - The motivic-period framing:
-  [`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period)
+  [$\mathrm{Vol}(K)$ as a motivic period: the Bloch--Wigner regulator reading of $\tau_{\mathrm{arch}}$](#rem:vol-as-motivic-period)
 - The volume = regulator identity:
-  [`prop:vol-through-tau`](#prop:vol-through-tau),
-  [`conj:binding-scale-catalan`](#conj:binding-scale-catalan)
+  [$\mathrm{Vol}(K)$ factors strictly through the fibre functor $\tau$](#prop:vol-through-tau),
+  [Binding energy scale $\alpha = m_e \times 8G$](#conj:binding-scale-catalan)
 - The archimedean dilog limit:
-  [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
+  [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit)
 - The Kashaev volume conjecture (upstream):
   [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)

@@ -12,9 +12,9 @@ $$
   c_T(k; q) \;=\; q^{\,2(j(k) - i(k))}
 $$
 
-*is the $q$-content of the box containing $k$ at row $i(k)$ and column $j(k)$ ([`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form)).*
+*is the $q$-content of the box containing $k$ at row $i(k)$ and column $j(k)$ ([Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$](#prop:hoefsmit-seminormal-form)).*
 
-*The central primitive idempotent $e_\lambda \in Z(H_n(q))$ projecting onto the $\lambda$-Wedderburn block ([`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical)) carries the explicit formula:*
+*The central primitive idempotent $e_\lambda \in Z(H_n(q))$ projecting onto the $\lambda$-Wedderburn block ([Canonical q-deformed Wedderburn-block weight $\tilde w_\lambda$ and named scalings (BW, LP for all $\lambda$)](#prop:wedderburn-weight-canonical)) carries the explicit formula:*
 
 $$
   \boxed{\;
@@ -46,7 +46,7 @@ $$
 
 ## Significance
 
-The element $e_\lambda$ serves as the explicit, computable generator of the period class assigned to cell $\lambda$. Under [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) and [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic), the class
+The element $e_\lambda$ serves as the explicit, computable generator of the period class assigned to cell $\lambda$. Under [GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) and [Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic), the class
 
 $$
   \tau_{\mathrm{arch}}\bigl( e_\lambda \cdot \mathrm{Li}_2^q(z) \bigr)
@@ -62,7 +62,7 @@ $$
   \;=\; \mathrm{Vol}(S^3 \setminus 4_1).
 $$
 
-This is numerically verified in [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
+This is numerically verified in [Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness).
 
 ## Provenance
 

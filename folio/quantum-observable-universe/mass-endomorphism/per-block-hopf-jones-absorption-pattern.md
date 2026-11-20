@@ -1,6 +1,6 @@
 # Per-Wedderburn-block leading-order pattern: dimension-scaled Hopf-Jones absorption
 
-Expanding the per-block character closed forms (from [`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms)) around $q = 1$ in $\varepsilon = q - 1$ exposes a structural pattern in the $\varepsilon^1$ leading-order coefficients.
+Expanding the per-block character closed forms (from [All three $V_\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**](#rem:chi-per-irrep-cyclotomic-closed-forms)) around $q = 1$ in $\varepsilon = q - 1$ exposes a structural pattern in the $\varepsilon^1$ leading-order coefficients.
 
 | Irrep $\lambda$ | $\chi_\lambda(\mathcal{B}_n - \mathcal{B}_p)$ closed form | LO $\varepsilon^1$ coeff | Hopf-Jones absorption |
 |:---:|:---:|:---:|:---|

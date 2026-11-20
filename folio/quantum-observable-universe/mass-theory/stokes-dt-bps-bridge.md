@@ -81,7 +81,7 @@ unconditionally (`QOU.QBeta.StokesQZeroDTCount`).
 
 We therefore adopt the **closed**-sector bridge, and A_ω=3 is made
 conditional on it downstream
-([`thm:aomega-fourone-dt-count`](#thm:aomega-fourone-dt-count)) — conditional for
+([The figure-eight Stokes integer $A_\omega(4_1) = 3$ is a BPS/DT count](#thm:aomega-fourone-dt-count)) — conditional for
 every knot, $4_1$ included, since GGM's Conjecture 3(d) is not proved for $4_1$. It is *not* the open-HOMFLY bridge.
 
 ### Lean axiomatisation

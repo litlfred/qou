@@ -78,7 +78,7 @@ $$
 $$
 
 This is the special case $n = 3$ — recovers
-[`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form).
+[Trilogarithm imaginary part at $\zeta_n$: closed form $(n - 1)(n - 2)\pi^3 / (3 n^3)$ for every root of unity](#prop:cyclotomic-trilog-imaginary-closed-form).
 
 **$n = 4$ (even, Re part):** $B_4(x) = x^4 - 2x^3 + x^2 - 1/30$.
 

@@ -28,7 +28,7 @@ differential $d_r$ ($r \geq 2$) vanishes.*
 
 ### Correctness conditions
 
-*[`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence)
+*[GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass](#prop:gb-spectral-sequence)
 asserts $E_2$-collapse for the GS filtration on $H_n(q)$ in the
 QOU rigid-monoidal setting. The proof uses the diamond-lemma /
 Gröbner basis structure of the Hecke relations and is standard

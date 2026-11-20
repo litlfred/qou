@@ -31,7 +31,7 @@ mass trace.
 
 What remains is a **definitional erratum, not a production defect**: the $z$
 stipulated in `rem:markov-axioms-primitive` selects C, while that block and
-[`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md)
+[Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md)
 both *name* the Jones–Markov trace, which is D. The stipulated value
 $1/(q^{1/2}+q^{-1/2})$ is the Temperley–Lieb loop reciprocal $1/\delta$ —
 correct for the TL generator $e_i$, but applied there to the Hecke generator
@@ -114,10 +114,10 @@ independent data:
 - $\chi^\lambda(g)$ — character: trace of the $V_\lambda$-representation
   on a specific element $g$ (e.g. a braid).
 - $\mu_\lambda(q)$ — $q$-Laplacian eigenvalue on $V_\lambda$
-  ([`prop:q-heat-kernel-peter-weyl`](../information-theory/q-heat-kernel-peter-weyl.md)):
+  ([Peter--Weyl decomposition of the $q$-heat kernel (archimedean)](../information-theory/q-heat-kernel-peter-weyl.md)):
   the heat-kernel decay rate, *not* a Markov-trace ingredient.
 - $w_\lambda(q) = [n]_q! / H_q(\lambda)^2$ — Plancherel measure
-  ([`rem:symmetric-point-resolution-loss`](../models-of-qous/symmetric-point-resolution-loss.md)):
+  ([The symmetric point loses resolution, not spectrum](../models-of-qous/symmetric-point-resolution-loss.md)):
   normalised by $\sum_\lambda w_\lambda(1) = 1$ at $q = 1$ only — the $q$-deformed sum $\sum_\lambda w_\lambda(q)$ is **not** $1$ (0.987 at $n = 3$, 1.051 at $n = 8$); at $q = 1$ it is
   non-uniform in a *different* pattern ($\tfrac16, \tfrac23, \tfrac16$
   for $n = 3$) from the Wenzl weights of this proposition

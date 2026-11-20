@@ -21,7 +21,7 @@ $$
 
 *The $q$-deformed Wedderburn weights $w_\lambda(q)$ are bounded, but
 $\sum w_\lambda(q) \neq 1$ at $q \neq 1$ in general (cf.
-[`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)
+[Plancherel weights define a probability distribution: $\sum_\lambda w_\lambda = 1$, $0 \leq w_\lambda \leq 1$](#prop:plancherel-weight-boundedness)
 for the classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$
 that does sum to $1$).  Binning by GB-depth
 ([curvature-rank stratification](#prop:curvature-rank-gb-stratification))
@@ -76,7 +76,7 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 > the filtration of $A$ itself, which is a different claim and is
 > untouched here; and the *Practical consequence* below, which uses the
 > Wedderburn sum and not this duality. Same defect as
-> [`rem:quantum-dilogarithm-stratified-partial-argument`](#rem:quantum-dilogarithm-stratified-partial-argument)
+> [Partial argument for the stratified quantum dilogarithm](#rem:quantum-dilogarithm-stratified-partial-argument)
 > Step 1.
 
 **Practical consequence.**
