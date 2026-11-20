@@ -1,26 +1,26 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:q-beta-bar-even-kernel-typeclass",
+  "label": "prop:mass-side-kernel-formalize-first-gates",
   "kind": "proposition",
   "paths": {
-    "ts": "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.ts",
-    "md": "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.md",
-    "lean": "folio/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean"
+    "ts": "folio/quantum-observable-universe/appendix-formalisation-notes/mass-side-kernel-formalize-first-gates.ts",
+    "md": "folio/quantum-observable-universe/appendix-formalisation-notes/mass-side-kernel-formalize-first-gates.md",
+    "lean": "folio/quantum-observable-universe/appendix-formalisation-notes/mass-side-kernel-formalize-first-gates.lean"
   },
   "source_hashes": {
-    "md": "e6f5cb7a5d21",
-    "ts": "ee7e010b8d9b",
-    "lean": "aef8d4c64cbc",
-    "lean_statement": "15fa1e348d0e"
+    "md": "a32aac12fbf4",
+    "ts": "18b8baec9bdf",
+    "lean": "ed6947a2fe36",
+    "lean_statement": "484ed0409587"
   },
   "criteria": {
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -51,10 +51,10 @@
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "bb22a40806b1",
-          "lean_statement": "15fa1e348d0e"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed006a6a5e6e",
+          "lean_statement": "decdb9f698eb"
         },
         "result": "fail",
         "reviewer": {
@@ -62,46 +62,28 @@
           "id": "agent:sidecar-review-2026-11-15",
           "version": "v1"
         },
-        "reviewed_at": "2026-11-15T21:57:27.638Z",
+        "reviewed_at": "2026-11-15T21:57:35.507Z",
         "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
-        "evidence": "S↔L: the ref names the class `BarEvenKernel` (lean:83), a `Prop` structure, not an assertion. The md's equivalence claim is carried by `barEvenKernel_iff` (lean:159-169), a field-for-field repackaging. The md claims the class \"bundles all four formalize-first invariants\" with bar-even explicitly included (md:1, md:3 \"This bundles the anchor-stable, bar-even, …\"). The Lean deliberately omits bar-even: \"§4(b), the bar-even invariant, is deliberately **not** a field of `BarEvenKernel`\" (lean:154-155; also lean:17-20). So the \"equivalent to clearing all four gates\" claim (md:1) is unformalised for the fourth gate (missing hypothesis). The \"gates\" are ℝ decimal literals, `uSubstrate : ℝ := 0.008517234550156142` (lean:44) and `directionTarget : ℝ := 0.99824` (lean:57), with a 10× tolerance (lean:97-98): numerical proximity checks, not structure. The md's \"structural identity in `CommRing R`\" (md:3) has no counterpart in the file. No proof block.",
+        "evidence": "mass-side-kernel-formalize-first-gates.lean:219-223 extends three classes; md:1 'all four mass-side gates'",
         "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
-      },
-      {
-        "field_hash": {
-          "md": "40bf8fd8abee",
-          "ts": "71bdc436b4ed",
-          "lean": "bb22a40806b1",
-          "lean_statement": "15fa1e348d0e"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:sidecar-review-2026-11-15",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-11-16T07:08:54.699Z",
-        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
-        "severity": "minor",
-        "evidence": "The md claim (instantiating the class is the same as clearing four gates) is true by construction and the Lean lifting lemmas match. But the gates hard-code decimals: uSubstrate = 0.008517..., directionTarget = 0.99824 (a CODATA-derived target), so an empirical value sits inside a formal object."
       }
     ],
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice. Grouped logical steps for clarity, removing repetitive transitional filler. Emphasized 'why before what'. Maintained mathematical and technical accuracy.",
-        "reviewed_at": "2026-07-07T14:26:56.952278Z",
+        "reviewed_at": "2026-07-07T14:26:56.812839Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
           "version": "v1",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.952278Z"
+          "agent_date": "2026-07-07T14:26:56.812839Z"
         },
         "field_hash": {
-          "md": "706dad70e4f4",
-          "ts": "b0d392778b8d",
-          "lean": "d14041c3d75e"
+          "md": "f3da376bf4df",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
         }
       }
     ],
@@ -121,9 +103,9 @@
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "b4470b4cb092"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ddbcf9767f27"
         },
         "result": "pass",
         "reviewer": {
@@ -131,25 +113,9 @@
           "id": "agent:qou-z9ws-vacuity-drain",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-31T12:11:21.355Z",
+        "reviewed_at": "2026-08-31T12:11:21.394Z",
         "reviewed_sha": "2536d930fb364494915dc71f124a19f65bf473b0",
         "notes": "The block's own claim is an EQUIVALENCE ('instantiating BarEvenKernel is equivalent to clearing all four gates simultaneously' / 'requires clearing all four mass-side gates simultaneously'), and only the forward half had Lean. The three lifting lemmas each return the class field their type restates -- the accessor idiom (Group.mul_assoc), one direction of the equivalence, not a derivation. The converse was never stated. Added barEvenKernel_iff / massSideKernel_iff, so the equivalence the .md asserts is now in the Lean and the accessors are one half of it. RETRACTION of a hypothesis of mine: I suspected the theorem->def conversion in 7e9230d39a9 ('remediate 310 lean vacuity findings', 82 conversions across 69 files) had HIDDEN bar_even_kernel_implies_q_one_shadow from the detector, on the evidence that its two neighbours have vacuity-ledger entries and it has none. Measured: FALSE. A fresh lean-vacuity-axiom-audit run flags it at L122 as proof-no-self-assuming-projection despite being a def; it is absent from the ledger because it is EXEMPT ('canonical 3b placeholder projection (tracked; derivation pending)'), and exempt findings get no ledger entry. The kind change does not evade the detector. Bean qou-z9ws."
-      },
-      {
-        "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "aef8d4c64cbc"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "agent:qou-z9ws-acceptance-witness",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-09-07T18:10:00.000Z",
-        "reviewed_sha": "e14d064a258443cd14dede248171c520e6b22cce",
-        "notes": "Re-verified after adding barEvenKernelAtIntendedPoint + barEvenKernel_nonempty. The 2026-08-31 pass STANDS and this entry does not revise it: its finding -- that the block claims an EQUIVALENCE, that the three lifting lemmas are the accessor idiom giving one direction, and that barEvenKernel_iff supplies the other -- is still exactly what the Lean says. Re-adjudicated only because the .lean hash drifted (b4470b4cb092 -> aef8d4c64cbc); nothing in the prior verdict is withdrawn. What this change adds is orthogonal to the equivalence and to proof-statement-integrity: an ACCEPTANCE witness. The file proved the gate can reject (bar_even_kernel_reject_wrong_c2_shadow) and never that it can accept, and those are not the same evidence. Under the qou-z9ws inhabitation discriminator a projection is the legitimate accessor idiom ONLY when something builds the bundle; the witness existed but lived in docs/audits/2026-08-30-gate-classes-admit-zero.lean, which has no imports and is imported by nothing (these classes are content-block siblings, not library modules), so it was unreachable from the class it certifies. Reproduced at the class as a def, not an instance. Verified lean-direct exit 0 with -DautoImplicit=false -s 65536. NOT claimed: the three projections are still projections and the detector still flags them -- correctly; what changed is that their legitimacy is now checkable from this file rather than from an unimported probe."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -285,8 +251,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -312,8 +278,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -327,8 +293,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -342,8 +308,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -357,8 +323,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -372,8 +338,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -387,8 +353,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -402,8 +368,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -417,8 +383,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -432,8 +398,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -447,8 +413,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -462,8 +428,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -477,8 +443,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -492,8 +458,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -522,8 +488,8 @@
       {
         "result": "pass",
         "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
-        "reviewed_at": "2026-07-08T18:53:56.000Z",
-        "reviewed_sha": "53631e271c429ab8d57862a118dceb1fa3f09a53",
+        "reviewed_at": "2026-07-08T18:29:08.000Z",
+        "reviewed_sha": "731093fef5a4194d318c36d8b5e6b27ba52ffecc",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
@@ -536,10 +502,10 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -556,10 +522,10 @@
     "voice-probe-narrative": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -576,10 +542,10 @@
     "cite-named-theorem": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -596,10 +562,10 @@
     "voice-agent-speak": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -616,10 +582,10 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -636,10 +602,10 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -656,10 +622,10 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -676,10 +642,10 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -696,10 +662,10 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -716,9 +682,9 @@
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "b0d392778b8d",
-          "lean": "d14041c3d75e"
+          "md": "a32aac12fbf4",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
@@ -733,9 +699,9 @@
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "b0d392778b8d",
-          "lean": "d14041c3d75e"
+          "md": "a32aac12fbf4",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "notes": "Agentic heuristic check: pass.",
@@ -751,10 +717,10 @@
     "voice-title-scholarly": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -771,9 +737,9 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "b0d392778b8d",
-          "lean": "d14041c3d75e"
+          "md": "a32aac12fbf4",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
@@ -788,9 +754,9 @@
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "b0d392778b8d",
-          "lean": "d14041c3d75e"
+          "md": "a32aac12fbf4",
+          "ts": "31803b06c884",
+          "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "notes": "Agentic heuristic check: pass.",
@@ -806,10 +772,10 @@
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -826,10 +792,10 @@
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -846,10 +812,10 @@
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -866,10 +832,10 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -886,9 +852,9 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "ts": "ee7e010b8d9b",
-          "md": "e6f5cb7a5d21",
-          "lean": "d14041c3d75e"
+          "ts": "18b8baec9bdf",
+          "md": "a32aac12fbf4",
+          "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
@@ -904,9 +870,9 @@
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "ts": "ee7e010b8d9b",
-          "md": "e6f5cb7a5d21",
-          "lean": "d14041c3d75e"
+          "ts": "18b8baec9bdf",
+          "md": "a32aac12fbf4",
+          "lean": "ed6947a2fe36"
         },
         "result": "n/a",
         "reviewer": {
@@ -921,9 +887,9 @@
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "ts": "ee7e010b8d9b",
-          "md": "e6f5cb7a5d21",
-          "lean": "d14041c3d75e"
+          "ts": "18b8baec9bdf",
+          "md": "a32aac12fbf4",
+          "lean": "ed6947a2fe36"
         },
         "result": "n/a",
         "reviewer": {
@@ -938,9 +904,9 @@
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "ts": "ee7e010b8d9b",
-          "md": "e6f5cb7a5d21",
-          "lean": "d14041c3d75e"
+          "ts": "18b8baec9bdf",
+          "md": "a32aac12fbf4",
+          "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
@@ -955,9 +921,9 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "ts": "ee7e010b8d9b",
-          "md": "e6f5cb7a5d21",
-          "lean": "d14041c3d75e"
+          "ts": "18b8baec9bdf",
+          "md": "a32aac12fbf4",
+          "lean": "ed6947a2fe36"
         },
         "result": "n/a",
         "reviewer": {
@@ -972,9 +938,9 @@
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "ts": "ee7e010b8d9b",
-          "md": "e6f5cb7a5d21",
-          "lean": "d14041c3d75e"
+          "ts": "18b8baec9bdf",
+          "md": "a32aac12fbf4",
+          "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
@@ -989,9 +955,9 @@
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "ts": "ee7e010b8d9b",
-          "md": "e6f5cb7a5d21",
-          "lean": "d14041c3d75e"
+          "ts": "18b8baec9bdf",
+          "md": "a32aac12fbf4",
+          "lean": "ed6947a2fe36"
         },
         "result": "pass",
         "reviewer": {
@@ -1006,10 +972,10 @@
     "proof-no-bare-sorries": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1026,10 +992,10 @@
     "proof-no-axiom-growth": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1046,10 +1012,10 @@
     "proof-build-green": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1066,10 +1032,10 @@
     "proof-substantive": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1086,10 +1052,10 @@
     "proof-no-conj-propagation-violation": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1107,10 +1073,10 @@
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1128,10 +1094,10 @@
     "proof-conditional-class-banner": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1149,10 +1115,10 @@
     "proof-lean-compiles": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1165,16 +1131,16 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "stale: cached lean_sha d1db19956156 != current d14041c3d75e; re-run content/pipeline/lean-compile-audit.ts to refresh"
+        "notes": "stale: cached lean_sha 96fa19fb1585 != current ed6947a2fe36; re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1191,10 +1157,10 @@
     "canonical-no-numerology": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1211,10 +1177,10 @@
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1231,10 +1197,10 @@
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1251,10 +1217,10 @@
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1271,10 +1237,10 @@
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1291,10 +1257,10 @@
     "canonical-cal4-acknowledged": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1311,10 +1277,10 @@
     "canonical-ck-tiered-not-binary": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1331,10 +1297,10 @@
     "canonical-no-negative-result-in-paper": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1351,10 +1317,10 @@
     "compute-prop-has-probe": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1371,10 +1337,10 @@
     "compute-prop-has-consumer": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1391,10 +1357,10 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1411,10 +1377,10 @@
     "compute-lp-dual-present": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1431,10 +1397,10 @@
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1451,10 +1417,10 @@
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1471,10 +1437,10 @@
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1491,10 +1457,10 @@
     "detangler-archimedean-wall": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1511,10 +1477,10 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1531,12 +1497,12 @@
           "fwd_received": 0,
           "tanglement_score": 0,
           "out_degree": 5,
-          "in_degree": 1,
-          "cone_size": 135,
-          "depth": 49,
-          "pagerank": 0.000086,
-          "edge_span_max": 23,
-          "edge_span_mean": 10.2,
+          "in_degree": 0,
+          "cone_size": 136,
+          "depth": 50,
+          "pagerank": 0.000074,
+          "edge_span_max": 11,
+          "edge_span_mean": 6.6,
           "worst_target": ""
         }
       }
@@ -1544,10 +1510,10 @@
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1569,10 +1535,10 @@
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1589,10 +1555,10 @@
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1609,10 +1575,10 @@
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1630,10 +1596,10 @@
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1651,10 +1617,10 @@
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1672,11 +1638,11 @@
     "voice-branch-jargon": [
       {
         "result": "pass",
-        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the work-status phrase \"sanity check\" no longer stands alone — the text now names the invariant, \"the direction-sanity invariants for the mass side. The direction-sanity check uses an additive threshold.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }
@@ -1684,12 +1650,12 @@
     "proof-not-machine-trivial": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-triviality.ts",
@@ -1700,19 +1666,16 @@
         },
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "metrics": {
-          "oracle": "lean-tactic-ladder(trivial|rfl|simp|decide|omega|aesop)",
-          "oracle_closed": 0
-        }
+        "notes": "no oracle run for QOU.Mass.MassSideKernelFormalize.MassSideKernel"
       }
     ],
     "proof-compile-cost": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1731,10 +1694,10 @@
     "proof-no-cost-regression": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "n/a",
         "reviewer": {
@@ -1753,10 +1716,10 @@
     "uses-editorial-hygiene": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "warn",
         "reviewer": {
@@ -1779,10 +1742,10 @@
     "uses-formal-coverage": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1804,10 +1767,10 @@
     "lean-ref-owns-decl": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "d14041c3d75e",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -1828,8 +1791,8 @@
     "trap-negation-contrast": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -1839,31 +1802,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:36.592Z",
+        "reviewed_at": "2026-08-21T21:43:36.380Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Two short paragraphs describing a Lean bundle; no assert-by-denial."
+        "evidence": "Full read (78 words). No denials."
       }
     ],
     "trap-rhetorical-pivot": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -1873,22 +1836,22 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:36.650Z",
+        "reviewed_at": "2026-08-21T21:43:36.443Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "No pivot."
       }
@@ -1896,8 +1859,8 @@
     "trap-em-dash": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -1907,31 +1870,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "dash density acceptable (0 in 68 words)"
+        "evidence": "dash density acceptable (0 in 78 words)"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:36.699Z",
+        "reviewed_at": "2026-08-21T21:43:36.510Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "No em-dashes."
+        "evidence": "None."
       }
     ],
     "trap-triples": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -1941,31 +1904,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
-        "evidence": "triple density acceptable (0 in 68 words)"
+        "evidence": "triple density acceptable (0 in 78 words)"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:36.765Z",
+        "reviewed_at": "2026-08-21T21:43:36.566Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Lists of four, matching the four gates."
+        "evidence": "The enumeration has four items (anchor-stable, bar-even, q=1 shadow, direction-sanity), matching the four gates the typeclass bundles."
       }
     ],
     "trap-closing-aphorism": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -1975,31 +1938,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:36.836Z",
+        "reviewed_at": "2026-08-21T21:43:36.625Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "Ends on the composition theorem, a technical statement."
+        "evidence": "Closes on what the infrastructure does."
       }
     ],
     "trap-meta-commentary": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -2009,32 +1972,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:36.905Z",
+        "reviewed_at": "2026-08-21T21:43:36.671Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "severity": "minor",
-        "evidence": "'It operationalises the pre-flight checklist' describes the class's purpose; placement, not narrated emphasis."
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -2044,32 +2006,31 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:36.965Z",
+        "reviewed_at": "2026-08-21T21:43:36.716Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "severity": "minor",
-        "evidence": "The second paragraph re-lists what the statement already said (the bundle and its equivalence), but adds the CommRing scope and the composition theorem."
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -2079,22 +2040,22 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:37.024Z",
+        "reviewed_at": "2026-08-21T21:43:36.770Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Institutional register."
       }
@@ -2102,8 +2063,8 @@
     "trap-superlative": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -2113,31 +2074,32 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:37.088Z",
+        "reviewed_at": "2026-08-21T21:43:36.843Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "No inflation."
+        "evidence": "No inflation; the block is explicit that the q=1 shadow is an open categorical gap, which is the honest disposition.",
+        "notes": "Anti-laundering check CLEAN: the block presents MassSideKernel as a gate-bundling typeclass for EVALUATING candidate linking_weight functions, not as evidence that any candidate passes — consistent with the 'Axiomatization is NOT a Proof' rule. 'Instantiating requires clearing all four gates simultaneously' states the burden rather than discharging it."
       }
     ],
     "trap-nonspeakable": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
         "result": "pass",
         "reviewer": {
@@ -2147,35 +2109,33 @@
           "script_hash": "86b27c0abb9a",
           "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
         },
-        "reviewed_at": "2026-08-15T10:31:00.709Z",
+        "reviewed_at": "2026-08-15T10:31:00.325Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
       },
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "agent:v04",
+          "id": "agent:v02",
           "version": "v1"
         },
-        "reviewed_at": "2026-08-21T22:17:37.145Z",
+        "reviewed_at": "2026-08-21T21:43:36.917Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "severity": "minor",
-        "evidence": "The body's list of the four bundled gates disagrees with the block's own title and uses[]. Body: 'the anchor-stable, bar-even, q=1 shadow, and direction-sanity checks'. Title: 'bar-even, radius-of-convergence, q=1 shadow, direction sanity'. uses[] names prop:q-beta-radius-of-convergence-gate and no anchor-stability gate. So the body substitutes a fourth gate that does not exist in the corpus for the one that does, and a reader taking the body at face value would look for an anchor-stability instance that is not there.",
-        "notes": "PROPOSED (not applied - this changes which propositions the block claims to bundle, so it needs author confirmation of which list is right): make the body match the title and uses[], i.e. 'the bar-even, radius-of-convergence, q=1 shadow, and direction-sanity checks'. If 'anchor-stable' is a real fifth gate, it needs its own uses[] entry and its own block."
+        "evidence": "Speakable, though 'evaluates future candidates through a unified Lean class-instance attempt' is noun-heavy; 'by attempting to instantiate the class' would read aloud better."
       }
     ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "e6f5cb7a5d21",
-          "ts": "ee7e010b8d9b",
-          "lean": "c227b32fac9a",
-          "lean_statement": "a86daf5ab2e8"
+          "md": "a32aac12fbf4",
+          "ts": "18b8baec9bdf",
+          "lean": "ed6947a2fe36",
+          "lean_statement": "484ed0409587"
         },
         "result": "pass",
         "reviewer": {
@@ -2190,6 +2150,6 @@
       }
     ]
   },
-  "updated_at": "2026-11-16T07:08:54.699Z",
+  "updated_at": "2026-11-15T21:57:35.507Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
