@@ -79,3 +79,12 @@ describe("owner rulings 2a/3a/1b (exemption sets)", () => {
     for (const c of ["glossary", "notation", "index-of-definitions"]) expect(REFERENCE_TABLES.has(c)).toBe(true);
   });
 });
+
+describe("owner ruling 2026-11-20 (forward links fail in Chapter 1 only)", () => {
+  const { FORWARD_LINK_STRICT, Q_STRICT_CHAPTER } = require("./voice-leak-audit");
+  it("Chapter 1 is strict and Chapter 2 is advisory", () => {
+    expect(FORWARD_LINK_STRICT.has(Q_STRICT_CHAPTER)).toBe(true);
+    expect(FORWARD_LINK_STRICT.has("quantum-observable-universes")).toBe(false);
+    expect(FORWARD_LINK_STRICT.size).toBe(1);
+  });
+});

@@ -28,10 +28,12 @@
  *       `q` appears as the parameter of the q-operators; an `outro-*`
  *       block and the introduction may preview);
  *       (L4b) a `](#label)` link to a block later in reading
- *       order. L4b is failing only in the Part I chapters listed in
- *       PART_I_STRICT and ADVISORY elsewhere: a forward reference is
- *       ordinary in a monograph; the owner's audit asked for none in the
- *       foundations.
+ *       order. L4b fails only in Chapter 1 (FORWARD_LINK_STRICT) and is
+ *       ADVISORY elsewhere, Chapter 2 included: a forward reference is
+ *       ordinary in a monograph. Chapter 2 was strict until owner ruling
+ *       2026-11-20 ("2"): its four remaining forward links each carry a
+ *       real dependency on a later result, so Chapter 2 is treated like
+ *       its premature-`q` rule, advisory.
  *
  * High-recall / agent-confirmed: a hit is a candidate. Fenced code is
  * skipped everywhere; inline math is removed for L1-L3 (L4a reads math).
@@ -56,6 +58,8 @@ export interface LeakHit {
 export const PART_I_STRICT = new Set(["quantum-universes", "quantum-observable-universes"]);
 /** Chapter where a premature `q` token fails; elsewhere before the intro it is advisory. */
 export const Q_STRICT_CHAPTER = "quantum-universes";
+/** Chapters where a forward `](#label)` link fails (owner ruling 2026-11-20: Chapter 1 only). */
+export const FORWARD_LINK_STRICT = new Set([Q_STRICT_CHAPTER]);
 export const Q_INTRO_SECTION = "sec:substrate-parameter";
 /** Back matter a forward link may always point to. */
 export const BACK_MATTER = new Set(["glossary", "notation", "index-of-definitions"]);
@@ -249,7 +253,7 @@ export async function audit(paperDir: string, classes: Set<LeakClass>): Promise<
             sub: tb.chapter !== b.chapter ? "forward-link-cross-chapter"
               : tb.section !== b.section ? "forward-link-later-section" : "forward-link-same-section",
             line: i + 1, text: m[1]!,
-            advisory: !PART_I_STRICT.has(b.chapter),
+            advisory: !FORWARD_LINK_STRICT.has(b.chapter),
           });
         }
       });
