@@ -20,4 +20,4 @@ companion block
 [Cyclotomic residues of $\Phi_q \cdot \mathrm{tr}_{M, \ell}$ — algebraic definition](#prop:residue-at-root) supplies the
 algebraic definition of the residues required to assemble the
 GB-residue spectral sum
-([GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass](#prop:gb-spectral-sequence)).
+([Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence)).

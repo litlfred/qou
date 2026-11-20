@@ -3,7 +3,7 @@ atomic braid word builds $\mathcal{B}_K$ by concatenating one
 $3$-strand block per nucleon and inserting the inter-nucleon crossings. Adding
 a nucleon to an $(n-1)$-cluster appends its block and the crossings binding it
 to the cluster, raising the Gröbner--Shirshov normal-form length by a fixed
-increment ([GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass](#prop:gb-spectral-sequence)). Reading
+increment ([Length-filtration spectral sequence of the Hochschild complex of $H_n(R, q)$](#prop:gb-spectral-sequence)). Reading
 this length through the jet-prefix order
 ([Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#prop:jet-prefix-gb-filtration)) places the
 $n$-nucleon cluster sub-word at jet vertical degree $n$.
