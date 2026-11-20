@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-20T09:10:00Z
-updated_at: 2026-11-20T18:30:00Z
+updated_at: 2026-11-20T18:00:00Z
 parent: qou-ncxf
 ---
 
@@ -61,3 +61,9 @@ Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMass
   - **Wigner entry edge.** 108 of the 109 Wigner-axiom reaches came through one edge, `def:archimedean-condition` → `rem:three-euler-characteristics`, which is a terminology pointer. Cutting it took §3b violators from 234 to 124.
   - **Remark-only edges.** The owner chose to review them one by one. 28 blocks were reached only through remark, prose or example edges, and those came down to 15 distinct edges. All 15 were cut after reading each source block: 12 not cited, 3 cited only as pointers. Violators went from 124 to 99.
   - **Total for #8611:** 237 → 99 violators, with 0 new.
+- **2026-11-20 18:00:** #8575 and #8611 are both merged.
+  - **Still open:**
+    - the `qbeta_level_k_binding_operator_probe` crash and the two qbeta probes failing on main (handed to W2 on #8526);
+    - docstring mentions of the old label in 3 compute files;
+    - the leftover `thm:topological-mass` mentions from item 2;
+    - 99 remaining §3b violators with real conjecture dependencies; 47 of them go through `conj:nuclear-knot-classification`.
