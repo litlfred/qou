@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-20T14:17:09.649909+00:00",
-  "commitSha": "717b69d172ce808fe5135307b0988722251b8d6c",
+  "computedAt": "2026-11-20T14:37:14.451686+00:00",
+  "commitSha": "806c7a91d0bf1e4b8cced058f0ba55e0ebe5d0af",
   "assertions": [
     {
       "name": "alpha_pin_near_proton_pin",
@@ -27,14 +27,30 @@
       "passed": true,
       "tolerance": "0.5",
       "source": "exact Fraction"
+    },
+    {
+      "name": "u1_coloured_charge_independent_on_V3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact Fraction; QEDHigherOrderCovariance.u1Trace_borromean"
+    },
+    {
+      "name": "u1_controls_see_charges",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "negative controls (Hopf, sigma1^3)"
     }
   ],
   "allPassed": true,
-  "durationMs": 111,
+  "durationMs": 75,
   "computation": "two-term-qed-derivation-joint-pin",
   "scriptFile": "two_term_qed_derivation_joint_pin_probe.py",
-  "scriptHash": "cdecce9e5475",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4e72e4239add",
+  "scriptCommitSha": "68a3c7fcf80eb92b38e05a9d42ee864f49fa1f48",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -165,6 +181,91 @@
         "neutron_sumQ2": "2/3",
         "neutron_sumQaQb": "-1/3"
       }
+    },
+    "u1_coloured_invariant_exact": {
+      "proton_V3": {
+        "t_exponent": "0",
+        "theta_exponent": "0",
+        "self_writhe": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "final_perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "proton_hopf_control": {
+        "t_exponent": "8/9",
+        "theta_exponent": "0",
+        "self_writhe": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "final_perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "proton_sigma1_cubed_control": {
+        "t_exponent": "4/3",
+        "theta_exponent": "4/3",
+        "self_writhe": {
+          "0": 3,
+          "2": 0
+        },
+        "final_perm": [
+          1,
+          0,
+          2
+        ]
+      },
+      "neutron_V3": {
+        "t_exponent": "0",
+        "theta_exponent": "0",
+        "self_writhe": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "final_perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "neutron_hopf_control": {
+        "t_exponent": "-4/9",
+        "theta_exponent": "0",
+        "self_writhe": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "final_perm": [
+          0,
+          1,
+          2
+        ]
+      },
+      "neutron_sigma1_cubed_control": {
+        "t_exponent": "-2/3",
+        "theta_exponent": "4/3",
+        "self_writhe": {
+          "0": 3,
+          "2": 0
+        },
+        "final_perm": [
+          1,
+          0,
+          2
+        ]
+      },
+      "verdict": "On V3 both exponents are exactly 0 for proton and neutron, so the U(1)-coloured trace equals the uncoloured trace for every t, theta: the coefficient of every charge monomial (Q0Q1Q2*mubar^2, sumQ^2, sumQaQb) is 0 in this class. Controls (Hopf, sigma1^3) are nonzero."
     },
     "pins": {
       "proton_identity": {
