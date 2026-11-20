@@ -7,5 +7,3 @@ $$
   \sum_{i=1}^{N}
   \bigl\lVert \mathrm{tr}_{\mathrm{trans}}(\varrho, p_i) \bigr\rVert .
 $$
-
-Equality is the [topological decomposition of mass](#conj:topological-mass), which is open.

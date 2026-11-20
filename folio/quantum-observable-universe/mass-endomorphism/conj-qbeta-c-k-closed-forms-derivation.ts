@@ -8,5 +8,6 @@ export default remark({
   uses: ["conj:qbeta-c-k-closed-forms"],
   authorNotes: [
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The empirical $c_k$ from `binding_q_target_sweep` are **fits**" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The Hecke–KLR bridge supplies scaffolding ([Kazhdan–Lusztig classical limit](#conj:kazhdan-lusztig-classical-limit))." },
   ],
 });

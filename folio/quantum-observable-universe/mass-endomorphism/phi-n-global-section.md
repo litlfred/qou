@@ -22,8 +22,7 @@ trivialises the full-twist action. That picture carries two flaws:
    brane level $A_{n+1} = A_n \otimes \Omega^1(A_n)$ inherits the
    framing flux. Without a global cancellation mechanism, the
    accumulated flux at the :refterm[descent]{#descent} limit diverges.
-2. **Finite observable mass.** The categorical mass identity
-   ([def:hecke-mass-element](#def:hecke-mass-element)) is finite:
+2. **Finite observable mass.** The categorical mass identity is finite:
    $\mathfrak{m}(\varrho) \in \mathbb{R}$ for every observed
    hadron. Finite observable mass remains incompatible with
    unbounded framing flux.

@@ -25,5 +25,8 @@ export default remark({
       kind: "status",
       body: "**All theorems sorry-free.** Six concrete scalar identities backed\nby `field_simp + ring` proofs. This addresses the reviewer's repeated\n\"vacuous True / concrete mathematical statement\" critiques at the\n**scalar-invariant** level. The full matrix-level proofs (Yang-Baxter\ncubic on the V_(2,1) Hoefsmit matrices, etc.) remain open R&D, but\nthe scalar discharges are now substantive.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This provides concrete closed-form identities that verify algebraically the explicit-residual discharges required in [$c_k$ extraction from four algebraic reduction rules](#rem:ck-extraction-from-algebraic-rules) and related proofs." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): - [$c_k$ extraction from four algebraic reduction rules](#rem:ck-extraction-from-algebraic-rules) rests on these identities for its explicit-residual discharges." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): - [Hoefsmit seminormal matrix for $V_{(2,1)}$ and the Markov-symmetrized cos character](#prop:hoefsmit-V21-cos-symmetrization) gives a square-root-free closed form for the Hoefsmit coupling $b^2$ as a rational function of $u$." },
   ],
 });

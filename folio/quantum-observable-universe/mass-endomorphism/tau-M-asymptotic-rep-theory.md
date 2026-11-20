@@ -17,7 +17,7 @@ $$
 This matches the canonical $\mathfrak{Q}_\beta$ precision ladder ([$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)), where:
 
 - $\rho_\lambda$ is the Hoefsmit seminormal representation of $H_n(q)$ on $V_\lambda$.
-- $b_\lambda$ is the off-diagonal coupling of $\rho_\lambda(\sigma_i)$ in the standard-tableau basis. For $V_{(2,1)}$ of $H_3$, the scalar $b = \sqrt{q^4+q^2+1}/(q^2+1) = \sqrt{d_1 d_2 + 1}$ from [Hoefsmit seminormal matrix for $V_{(2,1)}$ + Markov-symmetrized cos character](#prop:hoefsmit-V21-cos-symmetrization).
+- $b_\lambda$ is the off-diagonal coupling of $\rho_\lambda(\sigma_i)$ in the standard-tableau basis. For $V_{(2,1)}$ of $H_3$, the scalar $b = \sqrt{q^4+q^2+1}/(q^2+1) = \sqrt{d_1 d_2 + 1}$.
 - $\alpha_\lambda$ is the single-wrap eigenphase on $V_\lambda$. The $\cos(\alpha_\lambda - b_\lambda\hbar_q^2/2)$ envelope carries the $N=1$ coupling $b_\lambda$.
 - $c_k^{(\lambda)}$ are the rung coefficients of the ladder, representing the higher Ohtsuki invariants of the correction factor.
 

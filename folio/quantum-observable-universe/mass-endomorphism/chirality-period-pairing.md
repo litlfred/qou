@@ -15,7 +15,7 @@ The knot $4_1$ is amphichiral: $4_1 \cong \overline{4_1}$. Its dominant cell in 
 
 ## A chiral example: trefoil
 
-The knot $3_1$ is chiral: $3_1 \neq \overline{3_1}$. Its dominant cell $\lambda = (3)$ pairs with $\lambda' = (1, 1, 1)$ under the bar involution: $*(e_{(3)}) = e_{(1, 1, 1)}$. The volume vanishes (the trefoil is not hyperbolic), but the Chern–Simons invariant $\mathrm{CS}(3_1) = \pm \pi^2 / 6$ flips sign under the bar involution. This yields the chirality-twisted depth-$3$ period in $\mathcal{P}_3 / \mathcal{P}_2$. It manifests the same chirality structure at depth $3$. See [Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)](#conj:bring-trilog-depth-3-witness) for a Bring-natural depth-$3$ witness.
+The knot $3_1$ is chiral: $3_1 \neq \overline{3_1}$. Its dominant cell $\lambda = (3)$ pairs with $\lambda' = (1, 1, 1)$ under the bar involution: $*(e_{(3)}) = e_{(1, 1, 1)}$. The volume vanishes (the trefoil is not hyperbolic), but the Chern–Simons invariant $\mathrm{CS}(3_1) = \pm \pi^2 / 6$ flips sign under the bar involution. This yields the chirality-twisted depth-$3$ period in $\mathcal{P}_3 / \mathcal{P}_2$. It manifests the same chirality structure at depth $3$.
 
 ## Compatibility with the depth filtration
 
@@ -34,7 +34,7 @@ Each Goncharov period class $\mathcal{P}_n / \mathcal{P}_{n-1}$ inherits a bar-g
 
 ## Provenance
 
-This categorifies the amphichirality construction introduced in the figure-$8$ block ([Figure-8 knot $4_1$ as illustration of the algebraic / archimedean dichotomy](#rem:figure-8-archimedean-illustration)). One recasts it as a period-theoretic structure on $\mathcal{P}_\bullet$. The bar involution's role remains structural. It organises period classes by the orientation-reversal symmetry of the motivic substrate.
+The bar involution's role remains structural. It organises period classes by the orientation-reversal symmetry of the motivic substrate.
 
 ## Falsifiability
 
