@@ -6,7 +6,7 @@ export default proposition({
   lean: {
     ref: "qou:QOU.Mass.PhotonTraceLemmas.trace_flip_reverse",
   },
-  uses: ["prop:borromean-two-photon-factorisation", "def:typed-crossing-operator"],
+  uses: ["def:photon", "prop:borromean-two-photon-factorisation", "def:typed-crossing-operator"],
   cites: ["iwahori1964", "kassel2008"],
   tags: ["borromean", "hecke-algebra", "nucleon-element", "markov-trace", "flavour"],
 });

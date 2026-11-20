@@ -5,6 +5,8 @@
   elements `a, b` (the images of `σ₀, σ₁`) satisfying the relations of `H₃(q)`
   (`HeckeH3Rel`, with `h = q − q⁻¹`). Nothing numerical is used.
 
+  The photon `γ` is `def:photon` (`QOU.Photon.photon`), imported, not redefined.
+
   1. **Switched photon.** `γ′(φ₀,φ₁,φ₀₁) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` equals
      `γ(φ₀ − hφ₀₁, φ₁, φ₀₁)`, so the two photon families are the same set, and
      `β_Bor = γ′(0,0,qh)·γ′(0,0,−q⁻¹h)` (`borromean_eq_switched_photons`).
@@ -38,6 +40,7 @@ import Mathlib.Tactic.LinearCombination
 namespace QOU.Mass.PhotonTraceLemmas
 
 open QOU.Mass.BorromeanPhotonFactorisation
+open QOU.Photon (photon Colour)
 
 variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
 variable {h : R} {a b : A}
@@ -49,13 +52,13 @@ def photonSwitched (h φ₀ φ₁ φ₀₁ : R) (a b : A) : A :=
   1 + φ₀ • a + φ₁ • b + φ₀₁ • vertex h a b
 
 theorem photonSwitched_eq (h φ₀ φ₁ φ₀₁ : R) (a b : A) :
-    photonSwitched h φ₀ φ₁ φ₀₁ a b = photon (φ₀ - h * φ₀₁) φ₁ φ₀₁ a b := by
+    photonSwitched h φ₀ φ₁ φ₀₁ a b = photon a b (⟨φ₀ - h * φ₀₁, φ₁, φ₀₁⟩ : Colour R) := by
   simp only [photonSwitched, photon, vertex_eq, smul_sub, smul_smul]
   module
 
 theorem photon_eq_switched (h φ₀ φ₁ φ₀₁ : R) (a b : A) :
-    photon φ₀ φ₁ φ₀₁ a b = photonSwitched h (φ₀ + h * φ₀₁) φ₁ φ₀₁ a b := by
-  rw [photonSwitched_eq]; congr 1; ring
+    photon a b (⟨φ₀, φ₁, φ₀₁⟩ : Colour R) = photonSwitched h (φ₀ + h * φ₀₁) φ₁ φ₀₁ a b := by
+  rw [photonSwitched_eq, add_sub_cancel_right]
 
 theorem photonPlus_eq_switched (q h : R) (a b : A) :
     photonPlus q h a b = photonSwitched h 0 0 (q * h) a b := by
@@ -77,11 +80,11 @@ theorem borromean_eq_switched_photons (H : HeckeH3Rel h a b) {q q' : R}
 /-! ### 2. Commuting separators -/
 
 /-- A photon on generators `c, d` commutes with anything commuting with `c` and `d`. -/
-theorem commute_photon {s c d : A} (hc : Commute s c) (hd : Commute s d) (φ₀ φ₁ φ₀₁ : R) :
-    Commute s (photon φ₀ φ₁ φ₀₁ c d) := by
+theorem commute_photon {s c d : A} (hc : Commute s c) (hd : Commute s d) (φ : Colour R) :
+    Commute s (photon c d φ) := by
   unfold photon
-  exact (((Commute.one_right s).add_right (hc.smul_right φ₀)).add_right
-    (hd.smul_right φ₁)).add_right ((hc.mul_right hd).smul_right φ₀₁)
+  exact (((Commute.one_right s).add_right (hc.smul_right φ.phi0)).add_right
+    (hd.smul_right φ.phi1)).add_right ((hc.mul_right hd).smul_right φ.phi01)
 
 /-- A separator commuting with the second photon moves past it. -/
 theorem separator_commute (u g s g' w : A) (hs : Commute s g') :
