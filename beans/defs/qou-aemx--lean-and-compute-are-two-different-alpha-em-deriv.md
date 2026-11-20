@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-28T16:32:49Z
-updated_at: 2026-11-16T17:58:00Z
+updated_at: 2026-11-20T16:00:00Z
 parent: qou-3l2l
 ---
 
@@ -398,3 +398,15 @@ Was in-progress with no bean update since 2026-08-29 and no main commit naming i
     - States `ChernSimonsCorrectionConjecture` with `Gq : Matrix (Fin 2) (Fin 2) ℝ` carried as an explicit parameter and **no instance** (and no CODATA literal in any statement; the superseded `alphaEmInvGluonOctet` is retained only as a plain provenance definition).
   - Companion epic `qou-3l2l` formalization of the $(4,1)$ standard block Hoefsmit/Markov Gram and Schur reduction landed in `folio/quantum-observable-universe/lean/QOU/AlphaEM/StdBlockHoefsmitMarkovSchur.lean` (`qou-mxnu`, `qou-vbz4`, commit `593cd323f3c15de52fd2e46e8f2346c6fd815c68`, PR `https://github.com/litlfred/qou/pull/8141`).
 - Kept at `status: in-progress` per owner governance (structural derivation of the $q$-deformed CS pairing `Gq` / $\kappa$ remains open).
+
+## 2026-11-20 (PR #8562, bean qou-q0pl)
+Four alpha functionals measured side by side at the one-term proton / two-term
+(#8554) / muon pins (docs/audits/2026-11-20-alpha-em-two-term-q0-pull.md):
+form B -0.365/+75.970/+78.998 ppb; form A +0.994/+77.329/+80.357; CS tower
+-467.636/-390.982/-387.942; ruled-out 45[3]_q +2.588/+5.885/+6.016. Form B and
+the CS tower are different functions of q (additive term 8/(12 pi) constant vs
+pi^2(98/45)[2]_q/2 hbar_q^2), coincident only at q0 — not truncations of one
+another. The gram_kappa_numerical_value sorry was a false statement and is
+replaced by a sorry-free refutation; kappa = 1.7216 is det G_cl/det G_q and
+never used gramKappa (bean qou-wkgp). Status unchanged: the CS-tower conjecture
+class still has no instance.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T20:56:46Z
-updated_at: 2026-11-16T19:56:51Z
+updated_at: 2026-11-20T16:00:00Z
 parent: qou-3l2l
 ---
 
@@ -31,3 +31,15 @@ Corpus already honest on the -467.6 ppb structural gap (beans qou-gwio, qou-93ap
 - **50-dps Witness:** `computations/probes/round50-zeta4-bridge-and-alpha-em-cs-tower.witness.json` (`scriptHash: e7bf4a93b887`, `scriptCommitSha: cf283b8e199f4643fb9e0259ec0a2702096bdd9b`).
 - **PR:** `litlfred/qou#8177` (`https://github.com/litlfred/qou/pull/8177`, head SHA `3fdbeeb87a6b1821ff8d57a95f95d4d20cf72628`).
 - **Status:** Kept at `status: in-progress` per reviewer-separated closure discipline.
+
+## 2026-11-20 (PR #8562, bean qou-q0pl)
+Four alpha functionals measured side by side at the one-term proton / two-term
+(#8554) / muon pins (docs/audits/2026-11-20-alpha-em-two-term-q0-pull.md):
+form B -0.365/+75.970/+78.998 ppb; form A +0.994/+77.329/+80.357; CS tower
+-467.636/-390.982/-387.942; ruled-out 45[3]_q +2.588/+5.885/+6.016. Form B and
+the CS tower are different functions of q (additive term 8/(12 pi) constant vs
+pi^2(98/45)[2]_q/2 hbar_q^2), coincident only at q0 — not truncations of one
+another. The gram_kappa_numerical_value sorry was a false statement and is
+replaced by a sorry-free refutation; kappa = 1.7216 is det G_cl/det G_q and
+never used gramKappa (bean qou-wkgp). Status unchanged: the CS-tower conjecture
+class still has no instance.
