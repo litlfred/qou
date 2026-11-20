@@ -70,7 +70,7 @@ $$
   [4]_q^2 \, [6]_q.
 $$
 
-This reading needs a tensor structure on the hosts that (G-1) does not state. The nearest corpus object is the disjoint-strand-pair realisation of [the Hoefsmit cell-content theorem](#thm:hoefsmit-ew-cell-content), where $W$, $Z$ and $H$ act on separate strand pairs of $V^{\otimes 6}$. That object has a single $W$ slot rather than separate $W^+$ and $W^-$ hosts, and it assigns $H$ the link $T(2,8)$, not the $q$-dimension $[2]_q$ of (G-2). So it does not establish reading (a).
+This reading needs a tensor structure on the hosts that (G-1) does not state.
 
 - **Reading (b), direct sum, as (G-1) states.** The $q$-dimension of the symmetric-channel image is additive over the summands:
 
