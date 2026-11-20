@@ -20,7 +20,7 @@ Route: `#` is linear and sends `L_k ↦ L_k⁻¹`, so `#(π_T)` is the Lagrange 
 targets `q^{2d}`. On a seminormal vector `S` that product is `1` exactly when the content vector
 of `S` is the negation of `T`'s, i.e. `S = T'`, and `0` otherwise.
 
-Scope: generic `q` (`q ≠ 0`, not a root of unity), characteristic zero. `#` is not a symmetry of
+Scope: generic `q` (`q ≠ 0`, not a root of unity), any characteristic. `#` is not a symmetry of
 the convention-D mass trace (it relates the trace at `q` to the trace at `−1/q`; see the probe
 `computations/probes/central_idempotent_involution_probe.py`).
 -/
@@ -114,7 +114,7 @@ theorem lagrVal_one {K : Type*} [Field K] (n : ℕ) (f g : ℤ → K)
 
 section Hash
 
-variable {K : Type*} [Field K] [CharZero K] (q : K) (hq0 : q ≠ 0)
+variable {K : Type*} [Field K] (q : K) (hq0 : q ≠ 0)
   (hq2 : GenericParameter.NotRootOfUnity q) (n : ℕ)
 
 open QOU.BraidKnot.ExplicitCentralIdempotentGeneral QOU.SchurWeyl.SeminormalRep
@@ -122,7 +122,6 @@ open QOU.BraidKnot.ExplicitCentralIdempotentGeneral QOU.SchurWeyl.SeminormalRep
 /-- `d ↦ q^{2d}`, the eigenvalue of `L_k` on a box of content `d`. -/
 noncomputable def gPos (d : ℤ) : K := q ^ (2 * d)
 
-omit [CharZero K] in
 include hq0 hq2 in
 theorem gPos_injective : Function.Injective (gPos q) := by
   intro a b h
@@ -133,7 +132,6 @@ theorem gPos_injective : Function.Injective (gPos q) := by
 structure IsHash (φ : Hecke K q q⁻¹ n →ₐ[K] Hecke K q q⁻¹ n) : Prop where
   map_sigma : ∀ i : Fin n, φ (Hecke.σ K q q⁻¹ n i) = -Hecke.σInv K q q⁻¹ n i
 
-omit [CharZero K] in
 theorem IsHash.map_qJM {φ : Hecke K q q⁻¹ n →ₐ[K] Hecke K q q⁻¹ n} (hφ : IsHash q n φ) :
     ∀ k, φ (qJM K q q⁻¹ n k) = qJMInv K q q⁻¹ n k
   | 0 => by rw [qJM_zero, qJMInv_zero, map_one]
@@ -146,12 +144,10 @@ theorem IsHash.map_qJM {φ : Hecke K q q⁻¹ n →ₐ[K] Hecke K q q⁻¹ n} (h
           simp only [qJMInv, dif_neg hk]
         rw [h1, h2, hφ.map_qJM k]
 
-omit [CharZero K] in
 theorem mulProj_eq_lagr {lam : Nat.Partition (n + 1)}
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) :
     mulProj q n T = lagr n (qJM K q q⁻¹ n) (gPos q) (contentVec T) := rfl
 
-omit [CharZero K] in
 theorem IsHash.map_mulProj {φ : Hecke K q q⁻¹ n →ₐ[K] Hecke K q q⁻¹ n} (hφ : IsHash q n φ)
     {lam : Nat.Partition (n + 1)}
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) :
@@ -185,7 +181,7 @@ theorem contentVec_tr {lam : Nat.Partition (n + 1)}
 include hq0 hq2 in
 theorem heckeProduct_lagrHash (lam : Nat.Partition (n + 1))
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) :
-    heckeProduct q hq0 hq2 n (lagr n (qJMInv K q q⁻¹ n) (gPos q) (contentVec T))
+    AnyChar.heckeProductF q hq0 hq2 n (lagr n (qJMInv K q q⁻¹ n) (gPos q) (contentVec T))
       = Pi.single (conjPart n lam) (Matrix.single (tr n T) (tr n T) 1) := by
   classical
   have hinj : Set.InjOn (gPos q) {d | d ∈ contentRange n} := (gPos_injective q hq0 hq2).injOn
@@ -193,7 +189,7 @@ theorem heckeProduct_lagrHash (lam : Nat.Partition (n + 1))
   have hTr : ∀ k ∈ Finset.range (n + 1), contentVec T k ∈ contentRange n :=
     fun k hk => contentVec_mem (partitionShape_card_succ lam) T hk
   funext mu
-  rw [heckeProduct_apply, map_lagr]
+  rw [AnyChar.heckeProductF_apply, map_lagr]
   rw [lagr_diagonal n (gInv q) (gPos q) (contentVec T) (fun S => contentVec S) _
     (fun k hk => seminormalRep_qJMInv_diag q hq0 hq2 n (partitionShape_card_succ mu) k
       (by rw [List.mem_range] at hk; omega))]
@@ -239,9 +235,9 @@ theorem IsHash.map_proj {φ : Hecke K q q⁻¹ n →ₐ[K] Hecke K q q⁻¹ n} (
     (T : QOU.Mathlib.StandardYoungTableau (QOU.Mathlib.partitionShape lam)) :
     φ (proj q n T) = proj q n (tr n T) := by
   rw [← mulProj_eq_proj q hq0 hq2 n T, hφ.map_mulProj]
-  apply heckeProduct_injective q hq0 hq2 n
+  apply AnyChar.heckeProductF_injective q hq0 hq2 n
   rw [heckeProduct_lagrHash q hq0 hq2 n lam T, proj_eq_symm q hq0 hq2 n]
-  exact ((heckeWedderburn q hq0 hq2 n).apply_symm_apply _).symm
+  exact ((AnyChar.heckeWedderburnF q hq0 hq2 n).apply_symm_apply _).symm
 
 theorem tr_bijective (lam : Nat.Partition (n + 1)) :
     Function.Bijective (tr n (lam := lam)) := by
@@ -275,7 +271,6 @@ theorem IsHash.map_centralIdem {φ : Hecke K q q⁻¹ n →ₐ[K] Hecke K q q⁻
   rw [Finset.sum_congr rfl (fun T _ => IsHash.map_proj q hq0 hq2 n hφ T)]
   exact Fintype.sum_bijective _ (tr_bijective n lam) _ _ (fun _ => rfl)
 
-omit [CharZero K] in
 include hq0 in
 /-- The braid relation for the inverse generators `σ_i⁻¹ = σ_i − h`. -/
 theorem σInv_braid (i : Fin n) (hi : (i : ℕ) + 1 < n) :
@@ -306,7 +301,6 @@ theorem σInv_braid (i : Fin n) (hi : (i : ℕ) + 1 < n) :
   rw [e1, e2, ha, hb, hab, add_comm (b * a) (a * b)]
   module
 
-omit [CharZero K] in
 include hq0 in
 /-- **The sign twist exists**: `σ_i ↦ −σ_i⁻¹` extends to a `K`-algebra endomorphism. -/
 noncomputable def hashMap : Hecke K q q⁻¹ n →ₐ[K] Hecke K q q⁻¹ n :=
@@ -331,7 +325,7 @@ theorem isHash_hashMap : IsHash q n (hashMap q hq0 n) :=
 
 include hq0 hq2 in
 /-- **Unconditional: the sign twist `σ_i ↦ −σ_i⁻¹` sends `e_λ` to `e_λ'`** for every `λ ⊢ n+1`,
-at generic `q` in characteristic zero. -/
+at generic `q`, in any characteristic. -/
 theorem hashMap_centralIdem (lam : Nat.Partition (n + 1)) :
     hashMap q hq0 n (centralIdem q n lam) = centralIdem q n (conjPart n lam) :=
   IsHash.map_centralIdem q hq0 hq2 n (isHash_hashMap q hq0 n) lam
