@@ -19,6 +19,25 @@ export default proposition({
   },
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "**Which trace and which weights (bean qou-j11h, from #2481).** " +
+        "Read from the producer `computations/habiro/habiro_exact_mass_endomorphism.py`: " +
+        "the descended term is the regular-representation reading (each V_i^full is a " +
+        "Wedderburn-weighted sum over the three n=3 blocks), not the Jones-Markov trace. " +
+        "The weights are q-deformed `dim_q(lambda)^2/[3]_q!` with the symmetric " +
+        "q-dimension (`dim_q((2,1)) = [2]_q`), then divided by their sum so they add to 1. " +
+        "They are not the classical `d_lambda^2/|S_3|` that item (1) of the 2026-06-22 note " +
+        "names; item (3) of that note is the one that matches the code. This is a record of " +
+        "what the producer does, not a ruling on which weights the proposition should use " +
+        "(the Molien ruling covers Phi_k only). The Lean sibling is trace- and weight-agnostic: " +
+        "V_i is data. On 2026-11-20 its pair sum was changed from adjacent pairs to all pairs " +
+        "i<j, to match this block's boxed formula and the producer; the two agree for at most " +
+        "two generators. lean-direct exit 0; both theorems use only propext, Classical.choice " +
+        "and Quot.sound.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-08-29",
       body:
