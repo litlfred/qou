@@ -37,6 +37,7 @@ export default proposition({
     status: "verified",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Proposition (conditional on [`conj:explicit-central-idempotent`](#conj:explicit-central-idempotent)).**\n\nThe statement below is proved in Lean *conditionally* on the\nLagrange-interpolation cross-checks, which are axiomatised as the class\n`ExplicitCentralIdempotentConjecture q` and are **open**: no instance of\nthat class exists anywhere in the corpus. The four cross-checks\n(sum-to-identity, orthogonality, self-adjointness, bar-pairing) are the\nconjectural input; everything downstream of them is machine-checked.\n\n([`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou))\n\nIt is standard in implementations like SageMath's `IwahoriHeckeAlgebra` and the local `pyhecke-native` module." },
     {
       kind: "note",
       date: "2026-09-04",

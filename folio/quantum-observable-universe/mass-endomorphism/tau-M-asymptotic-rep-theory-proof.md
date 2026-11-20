@@ -2,7 +2,7 @@
 
 *Proof.* The factorisation defines $F_\lambda$; the substance lies in the parity and the proved rungs.
 
-**Parity (even in $\hbar_q$).** The cosine envelope and every rung factor depend on $\hbar_q$ only through $\hbar_q^2$, since $u_\lambda = b_\lambda\hbar_q^2$. So $F_\lambda$, in the factorised form, is even in $\hbar_q$ by construction. The bar involution does not supply this: it sends $\hbar_q = (q-1)/q$ to $1 - q = -q\,\hbar_q$. The bar-parity alternation $\overline{c_k} = (-1)^k c_k$ is a separate statement, the `esymm_bar_parity` of [$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation](#prop:q-beta-c-k-recursion-from-habiro-q-difference). $\square$
+**Parity (even in $\hbar_q$).** The cosine envelope and every rung factor depend on $\hbar_q$ only through $\hbar_q^2$, since $u_\lambda = b_\lambda\hbar_q^2$. So $F_\lambda$, in the factorised form, is even in $\hbar_q$ by construction. The bar involution does not supply this: it sends $\hbar_q = (q-1)/q$ to $1 - q = -q\,\hbar_q$. The bar-parity alternation $\overline{c_k} = (-1)^k c_k$ is a separate statement, proved in [$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation](#prop:q-beta-c-k-recursion-from-habiro-q-difference). $\square$
 
 **Baseline $F_\lambda = 1$ at $q = 1$.** At $q = 1$, we have $\hbar_q = 0$, and $\rho_\lambda(\sigma_i)$ maps to the symmetric-group permutation matrix. Therefore, $\mathrm{tr}_M^{V_\lambda} = \mathrm{Tr}\,\rho_\lambda(\beta)$ and $F_\lambda(0) = 1$. $\square$
 

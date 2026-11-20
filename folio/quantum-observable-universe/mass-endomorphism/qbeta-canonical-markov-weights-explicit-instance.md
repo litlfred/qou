@@ -1,6 +1,6 @@
 # Explicit instance of canonical Markov weights
 
-The Lean class `CanonicalMarkovWeightsH3` (declared in [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](qbeta-per-block-chi-closed-forms.md) §Extension #4) is inhabited. We construct an explicit $\sqrt q$-bearing instance:
+The canonical Markov-weight hypothesis (stated in [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](qbeta-per-block-chi-closed-forms.md) §Extension #4) is satisfiable. An explicit $\sqrt q$-bearing instance is:
 
 $$
   y_{(3)}(q) = z(q), \qquad
