@@ -209,7 +209,7 @@ sym/alt pattern and its complement agree, so disjoint products preserve
 the duality.
 
 The Plancherel-weighted form
-$\mathcal{N}_{\rm sym}^{\rm Plancherel} = q^6 (1 + q^2 + q^4)/3$
+$\mathcal{N}_{\rm sym}^{\rm Plancherel} = q^4 (1 + q^2 + q^4)/3$
 from
 the [weak-sector symmetric-channel Plancherel normalization](#prop:weak-symmetric-normalization) (a downstream block that uses this proposition)
 is **not** bar-self-dual and differs from $\mathrm{tr}_{\rm pure}$
