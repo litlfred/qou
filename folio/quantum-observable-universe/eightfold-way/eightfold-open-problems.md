@@ -81,7 +81,7 @@ Gell-Mann--Nishijima relation cannot be closed.
    structure" with a single checkable condition.
 
    **The same condition is reachable from the row cap, independently.**
-   The Descartes characteristic $\chi(A) = -6$ forces $\mathrm{SU}(2)$,
+   The Descartes characteristic $\chi_{\mathrm{eu}}(M_0) = -6$ forces $\mathrm{SU}(2)$,
    hence $\dim V = 2$, hence partitions of at most two rows, so the
    $(1^3)$ block drops at $n = 3$ and a three-dimensional object cannot
    be a tensor power of the single fibre.  That argument reaches

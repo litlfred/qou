@@ -92,4 +92,4 @@ Unlike the massless $T_{2,9}$, $T_{3,5}$ gives nonzero mass to the weak bosons. 
 | **Strong** | $T_{2,9}$: three-fold cover of trefoil | Genus $4$, vol $= 0$ | Massless (color-averaged crossings cancel) | Conserved |
 | **Weak** | $T_{3,5}$: cross-family mediator | Genus $4$, vol $= 0$ | Massive (net crossing energy $\neq 0$) | Violated ($q \neq 1$) |
 
-The genus-$4$ constraint $\chi(A) = -6$ specifies all three forces.
+The genus-$4$ constraint $\chi_{\mathrm{eu}}(M_0) = -6$ specifies all three forces.

@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/cor-quantum-dilogarithm",
   "@type": [
-    "folio-assistant-core:Corollary",
+    "folio-assistant-sci:Corollary",
     "doco:Section"
   ],
   "label": "cor:quantum-dilogarithm",
   "kind": "corollary",
   "title": "Quantum Dilogarithm as Localized Torsion Volume",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-topological-mass",
+    "papers/quantum-observable-universe/blocks/conj-topological-mass",
     "papers/quantum-observable-universe/blocks/def-briggs-klein-chart"
   ],
   "proofs": [
