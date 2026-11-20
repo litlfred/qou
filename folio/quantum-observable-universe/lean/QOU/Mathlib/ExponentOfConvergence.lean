@@ -226,4 +226,13 @@ theorem summable_divisor_mul_rpow_neg_of_forall_gt {f : ℂ → ℂ} {ρ σ : �
   summable_divisor_mul_rpow_neg (hf ((ρ + σ) / 2) (by linarith)) hf0 (by linarith)
     (by linarith)
 
+/-- **Genus bound.** With `p = ⌊ρ⌋₊ ≤ ρ`, the series `∑_u ord_u(f)·‖u‖^{−(p+1)}` converges.
+So the least `p` for which this series converges (the genus of the zero sequence) is at
+most `⌊ρ⌋₊ ≤ ρ`. -/
+theorem summable_divisor_floor_genus {f : ℂ → ℂ} {ρ : ℝ} (hf : IsEntireOfOrderLE f ρ)
+    (hf0 : f 0 ≠ 0) (hρ : 0 ≤ ρ) :
+    ((⌊ρ⌋₊ : ℕ) : ℝ) ≤ ρ ∧
+      Summable fun u : ℂ => (zeroDivisor f u : ℝ) * ‖u‖ ^ (-((⌊ρ⌋₊ : ℝ) + 1)) :=
+  ⟨Nat.floor_le hρ, summable_divisor_mul_rpow_neg hf hf0 hρ (Nat.lt_floor_add_one ρ)⟩
+
 end QOU.Mathlib.ExponentOfConvergence
