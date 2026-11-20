@@ -61,11 +61,15 @@ def barOdd (x : R) : R := x - x⁻¹
 
 /-- `barEven` is invariant under the bar involution `x ↦ x⁻¹`. -/
 theorem barEven_bar (x : R) : barEven x⁻¹ = barEven x := by
-  simp [barEven, add_comm]
+  change x⁻¹ + (x⁻¹)⁻¹ = x + x⁻¹
+  rw [inv_inv]
+  exact add_comm x⁻¹ x
 
 /-- `barOdd` is negated by the bar involution `x ↦ x⁻¹`. -/
 theorem barOdd_bar (x : R) : barOdd x⁻¹ = -barOdd x := by
-  simp [barOdd]
+  change x⁻¹ - (x⁻¹)⁻¹ = -(x - x⁻¹)
+  rw [inv_inv]
+  exact (neg_sub x x⁻¹).symm
 
 /-- The inverse of a primitive fourth root of unity is its negative: `ζ⁻¹ = -ζ`. -/
 theorem inv_eq_neg_of_sq_eq_neg_one {ζ : R} (hζ : ζ ^ 2 = -1) : ζ⁻¹ = -ζ := by
@@ -101,14 +105,78 @@ bar-even (mass / `cosh`) shape obeys the addition formula. Generic bar-involutio
 multiplicativity — lives with `barEven`/`barOdd` (moved here from the cusp module). -/
 theorem barEven_mul (x y : R) :
     2 * barEven (x * y) = barEven x * barEven y + barOdd x * barOdd y := by
-  simp only [barEven, barOdd, mul_inv]
+  change 2 * (x * y + (x * y)⁻¹) = (x + x⁻¹) * (y + y⁻¹) + (x - x⁻¹) * (y - y⁻¹)
+  rw [mul_inv]
   ring
 
 /-- **Rapidities add (sinh law).** The bar-odd (decay–binding / `sinh`) companion
 of `barEven_mul`. -/
 theorem barOdd_mul (x y : R) :
     2 * barOdd (x * y) = barOdd x * barEven y + barEven x * barOdd y := by
-  simp only [barEven, barOdd, mul_inv]
+  change 2 * (x * y - (x * y)⁻¹) = (x - x⁻¹) * (y + y⁻¹) + (x + x⁻¹) * (y - y⁻¹)
+  rw [mul_inv]
   ring
+
+/-- **Universal bar-parity hyperbola (`qou-rutm`).**
+    For any `x ≠ 0` in `R`, `(barEven x)² − (barOdd x)² = 4`. -/
+theorem barEven_sq_sub_barOdd_sq {x : R} (hx : x ≠ 0) :
+    (barEven x) ^ 2 - (barOdd x) ^ 2 = 4 := by
+  have hmul : x * x⁻¹ = 1 := mul_inv_cancel₀ hx
+  change (x + x⁻¹) ^ 2 - (x - x⁻¹) ^ 2 = 4
+  linear_combination 4 * hmul
+
+/-- **Sum of squares of bar-parity coordinates (`qou-rutm`).**
+    `(barEven x)² + (barOdd x)² = 2 · barEven(x²)`. -/
+theorem barEven_sq_add_barOdd_sq (x : R) :
+    (barEven x) ^ 2 + (barOdd x) ^ 2 = 2 * barEven (x ^ 2) := by
+  change (x + x⁻¹) ^ 2 + (x - x⁻¹) ^ 2 = 2 * (x ^ 2 + (x ^ 2)⁻¹)
+  rw [← inv_pow]
+  ring
+
+/-- **Quarter-turn `ζ₄` exchanges `(barEven)²` and `-(barOdd)²` while preserving
+    the hyperbola `(barEven)² − (barOdd)²` (`qou-rutm`).** -/
+theorem barParity_sq_zeta_swap {ζ x : R} (hζ : ζ ^ 2 = -1) :
+    (barEven (ζ * x)) ^ 2 = -(barOdd x) ^ 2 ∧
+    (barOdd (ζ * x)) ^ 2 = -(barEven x) ^ 2 ∧
+    (barEven (ζ * x)) ^ 2 - (barOdd (ζ * x)) ^ 2 =
+      (barEven x) ^ 2 - (barOdd x) ^ 2 := by
+  rw [barEven_zeta_mul hζ, barOdd_zeta_mul hζ]
+  refine ⟨by linear_combination (barOdd x) ^ 2 * hζ,
+          by linear_combination (barEven x) ^ 2 * hζ,
+          by linear_combination ((barOdd x) ^ 2 - (barEven x) ^ 2) * hζ⟩
+
+/-! ## GGM eq. (100) mirror-symmetric radical of a 3×3 antisymmetric pairing (`qou-rutm`)
+
+Bean `qou-rutm` proves that any 3×3 antisymmetric matrix
+`M(a, b, c) = [[0, c, -b], [-c, 0, a], [b, -a, 0]]` annihilates its axis vector
+`(a, b, c)`, and that imposing GGM eq. (100) (`M_{1,3} = -M_{2,3}`, i.e. `-b = -a`
+under `φ = (1 2)`) forces `a = b`, making the null direction `(a, a, c)`
+fixed by the mirror involution `φ(x, y, z) = (y, x, z)` (instantiated by
+eq. (98)'s axis `(-3, -3, 4)`). -/
+
+/-- Action of the 3×3 antisymmetric matrix `M(a, b, c)` on `v ∈ R³`. -/
+def antisymCrossApply (a b c : R) (v : R × R × R) : R × R × R :=
+  (c * v.2.1 - b * v.2.2, -c * v.1 + a * v.2.2, b * v.1 - a * v.2.1)
+
+/-- The mirror involution `φ = (1 2)` swapping the first two coordinates of `R³`. -/
+def mirrorSwap12 (v : R × R × R) : R × R × R :=
+  (v.2.1, v.1, v.2.2)
+
+/-- **The axis vector `(a, b, c)` always lies in the kernel of `M(a, b, c)` (`qou-rutm`).** -/
+theorem antisymCrossApply_axis_eq_zero (a b c : R) :
+    antisymCrossApply a b c (a, b, c) = (0, 0, 0) := by
+  change (c * b - b * c, -c * a + a * c, b * a - a * b) = (0, 0, 0)
+  ext <;> dsimp <;> ring
+
+/-- **GGM eq. (100) (`-b = -a`) forces the null axis `(a, b, c)` to be fixed by
+    `mirrorSwap12` and to annihilate `M(a, b, c)` (`qou-rutm`).** -/
+theorem ggm_eq100_axis_mirror_invariant {a b : R} (c : R) (h100 : -b = -a) :
+    a = b ∧
+    mirrorSwap12 (a, b, c) = (a, b, c) ∧
+    antisymCrossApply a b c (a, b, c) = (0, 0, 0) := by
+  have hab : a = b := neg_inj.mp h100.symm
+  refine ⟨hab, ?_, antisymCrossApply_axis_eq_zero a b c⟩
+  subst hab
+  rfl
 
 end QOU.QBeta.BarParityZeta4Swap
