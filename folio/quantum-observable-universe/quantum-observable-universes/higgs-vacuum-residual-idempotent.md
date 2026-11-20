@@ -5,7 +5,7 @@ $$
   \varrho^{*} \circ \varrho \;=\; t \cdot \mathrm{id}_U, \quad t \in K^{\times}
 $$
 
-be a point / copoint pair with invertible pairing. When $\mathbf{C}$ is monoidal and $U = \mathbf{1}$, this is the vacuum datum $(\varrho_\Phi, \varrho_\Phi^{*})$ of Constraints (G-3)–(G-4) of [the $G$-action conjecture](#conj:g-action-on-substrate), where $t$ is the endomorphism $\varrho_\Phi^{*} \circ \varrho_\Phi$ of $\mathbf{1}$ read as a scalar; it equals the normalisation $\mathrm{tr}_F(\varrho_\Phi^{*}\varrho_\Phi)$ of (G-3) when the trace satisfies $\mathrm{tr}_F(\mathrm{id}_{\mathbf{1}}) = 1$. Define
+be a point / copoint pair with invertible pairing. Define
 
 $$
   e \;:=\; t^{-1}\, \varrho \circ \varrho^{*} \colon X \to X,

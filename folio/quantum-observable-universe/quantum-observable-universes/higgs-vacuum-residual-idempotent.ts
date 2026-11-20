@@ -17,6 +17,7 @@ export default proposition({
     "frobenius-hopf-substrate",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): When $\\mathbf{C}$ is monoidal and $U = \\mathbf{1}$, this is the vacuum datum $(\\varrho_\\Phi, \\varrho_\\Phi^{*})$ of Constraints (G-3)–(G-4) of [the $G$-action conjecture](#conj:g-action-on-substrate), where $t$ is the endomorphism $\\varrho_\\Phi^{*} \\circ \\varrho_\\Phi$ of $\\mathbf{1}$ read as a scalar; it equals the normalisation $\\mathrm{tr}_F(\\varrho_\\Phi^{*}\\varrho_\\Phi)$ of (G-3) when the trace satisfies $\\mathrm{tr}_F(\\mathrm{id}_{\\mathbf{1}}) = 1$." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3):  All items are checked in Lean, without `sorry`." },
     {
       kind: "note",
