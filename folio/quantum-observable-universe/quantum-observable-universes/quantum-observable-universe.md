@@ -30,8 +30,7 @@ framework asks of condition 5:
 | epimorphism onto $\mathbf{1}$ | $\binom{N}{2} \neq 0$ | $N \geq 2$ — admits the colour fibre $N = 3$ |
 | **isomorphism** $\Lambda^2 V \cong \mathbf{1}$ | $\binom{N}{2} = 1$ | $\mathbf{N = 2}$ |
 
-Both rows are proved formally
-(`exteriorSquareDim_ne_zero_iff`, `exteriorSquareDim_eq_one_iff`). The
+Both rows follow from $\dim \Lambda^2 V = \binom{N}{2}$. The
 isomorphism is the intended reading: $\det(g)$ is the scalar by which $g$ acts
 on the **top** exterior power $\Lambda^N V$, so a constraint imposed on
 $\Lambda^2 V$ is a determinant constraint exactly when $2 = N$. Under the weak
