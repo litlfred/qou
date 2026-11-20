@@ -43,4 +43,15 @@ theorem additive_correction_zero_of_exact (m_pred m_obs δ : K)
     (h1 : m_pred = m_obs) (h2 : m_pred + δ = m_obs) : δ = 0 := by
   linarith
 
+/-- **Symmetric confinement difference bound (`qou-lhsb`).**
+If two modified predictions `m_pred + δ₁` and `m_pred + δ₂` both agree with `m_obs`
+within tolerance `ε`, then their shift difference satisfies `|δ₁ - δ₂| ≤ 2 * ε`. -/
+theorem additive_correction_diff_confined (m_pred m_obs δ₁ δ₂ ε : K)
+    (h1 : |m_pred + δ₁ - m_obs| ≤ ε) (h2 : |m_pred + δ₂ - m_obs| ≤ ε) :
+    |δ₁ - δ₂| ≤ 2 * ε := by
+  have h1' := abs_le.mp h1
+  have h2' := abs_le.mp h2
+  exact abs_le.mpr ⟨by linarith [h1'.1, h1'.2, h2'.1, h2'.2],
+    by linarith [h1'.1, h1'.2, h2'.1, h2'.2]⟩
+
 end QOU.Mass.AdditiveCorrectionConfinement

@@ -68,4 +68,15 @@ theorem a3_near_miss_is_scale_ambiguous :
     ((2.224566 : ℝ) / 0.380132 > 5) :=
   ⟨gap_A_undershoot_gt_three, gap_B_overshoot_between_one_two, c_knot_gt_five⟩
 
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **Transitive chain rule for three binding scale normalizations (`qou-j0j8`).**
+For any nonzero cluster energy `c` and three nonzero normalization scales `b1, b2, b3 : R`,
+the product of the pairwise relative normalization ratios equals `b1 / b3`. -/
+theorem normalizations_chain_rule (c b1 b2 b3 : R)
+    (hc : c ≠ 0) (hb1 : b1 ≠ 0) (hb2 : b2 ≠ 0) (hb3 : b3 ≠ 0) :
+    ((c / b2) / (c / b1)) * ((c / b3) / (c / b2)) = b1 / b3 := by
+  rw [normalizations_differ_by_c_knot c b1 b2 hc hb1 hb2,
+    normalizations_differ_by_c_knot c b2 b3 hc hb2 hb3]
+  field_simp
+
 end QOU.MassTheory.A3UnitsConsistency
