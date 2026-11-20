@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-20T19:18:37Z
+updated_at: 2026-11-20T20:05:00Z
 parent: qou-v2om
 ---
 
@@ -3515,3 +3515,39 @@ Precision note on the bean's own wording: it describes `lw/ℏ_q²` as *"an orde
 Also noticed while gating the refresh and not pursued: `computations/probes/framed_vs_writhe_normalised_bonds_probe.py` exists and refreshed provenance-only. It is on the framed-vs-writhe axis and may already bound part of the above; not read.
 
 **The §8 author decision is now in trigger range.** `docs/audits/2026-08-30-self-crossing-invariance-gate.md` §8 frames rename `lw` / restate this bean's question / do nothing, recommending *"do nothing now, restate when the arc is next worked"*. The arc is being worked, so the trigger is met — but the restatement is an author call about research framing and is being put to the owner with a card rather than taken.
+
+## 2026-11-20 — OWNER-SELECTED RESTATEMENT of residual (ii): the provenance asymmetry. D collapses into B.
+
+`cd202d5190c`, same probe extended, **11/11** exact checks over ℚ(q), exit 0. The owner was offered the §8 fork and selected **both** B (*restate as Wedderburn-vs-topology*) and D (*restate to the regular part*), asking what separates them. The measurement answers that: **they are not alternatives — D is evidence for B.**
+
+**What the two options located differently.** B puts the question on *provenance*: why does the mass multiplier come from the Wedderburn spectrum while the binding multiplier comes from crossing topology? D puts it on *location inside one object*: given the pole is classical, the asymmetry must live in the regular tail `3 + 3ℏ + (15/4)ℏ²`. D presupposes the cusp factor's attachment is the thing to explain; B says the attachment is not the issue.
+
+**The measurement. Both pieces of the split count partitions of 4:**
+
+    lw/ℏ_q²  =  (Σ_{λ⊢4} dim V_λ)/4 · ℏ_q⁻²  +  (#{λ⊢4 : dim V_λ > 1})/4 · (q+1)²
+             =  (10/4)·ℏ_q⁻²                 +  (3/4)·(q+1)²
+
+Mechanism, per partition and derived here from the hook-length formula rather than asserted:
+
+    dim_q(λ) = dim V_λ + m_λ·h²,    m = (0, 1, 1, 1, 0)
+
+and `m_λ = 0` **exactly** for the one-dimensional irreps `(4)` and `(1⁴)`, whose `dim_q = 1` identically. Those two contribute **pole only**; the three higher-dimensional irreps carry the whole regular tail, and carry it *identically* (`0, 1, 1, 5/4` each). So the corpus's bare rational **3/4 is a quarter of the COUNT of deforming partitions**, and **5/2 a quarter of the dimension SUM** — the pole is the sum of all five dimensions, the regular tail is the number of non-abelian ones.
+
+**Hence D collapses.** The regular part is not a different *kind* of object from the pole — it is the non-abelian part of the same Wedderburn spectrum, counted instead of summed. Relocating (ii) to the regular part relocates it *within* the Wedderburn side; it does not move it toward topology, which is what (ii) needs. **So the open item is restated per B**, with the above as evidence for it:
+
+> **Residual (ii), restated (B).** Why does the mass multiplier `lw` come from the Wedderburn spectrum of `H_4(q)` — a q-dimension sum, with its pole a dimension sum and its regular tail a partition count — while the binding multiplier `M` is a topological coordination count of crossings? The asymmetry is one of **provenance**, not of where in the ℏ-expansion to look: `lw/ℏ_q²` is representation-theoretic in *both* its singular and regular parts, and `M` is topological in the only part it has.
+
+The earlier wording — *"why the surviving count channel enters as a bare integer while the self/mass channel keeps the full q-dimension self-trace `lw`"* — is superseded by the above, and the §8 "integer vs q-dimension is exactly cusp-factor-absent vs cusp-factor-present" equation is now measurably wrong: at the pole the mass channel keeps no q-dimension, and in the regular part it keeps a *count*, not a dimension.
+
+**A CORRECTION to the 2026-11-20 entry immediately above, which was mine.** It headlined *"the pole coefficient is classical and q-free"* and reported the empty-`free_symbols` check as the finding. **The q-freeness of the LEADING Laurent coefficient is automatic**: for any `g` regular at `ℏ = 0`, the leading coefficient of `g/ℏ²` is `g(0)` — the classical value, whatever `g` is. Stated as a result it is a tautology. What is substantive, and is what the probe now separates out:
+
+- the pole is **pure** (no `ℏ⁻¹` term), and that purity **IS** `lw`'s bar-evenness — `h²` is bar-even under `q ↦ q⁻¹`, `h` is bar-odd — not a separate fact about the cusp factor;
+- the two coefficient identifications above, now derived in-probe.
+
+The previous entry's *conclusion* stands (the cusp pole cannot distinguish the channels); only its stated *reason* was partly empty.
+
+**A TRAP, recorded — n = 4 is NOT generic.** The constant-`m` structure `dim_q(λ) = dim V_λ + m_λ h²` holds at **n = 2 and n = 4** and **FAILS at n = 3, 5, 6**, where some `dim_q` needs `h⁴` or higher. So at other `n` the regular part of `lw_n/ℏ_q²` is *not* a multiple of `(q+1)²` and the two-term split does not exist at all. Do not carry this split up a tower on the strength of `n = 4`; check A10 in the probe measures exactly that.
+
+**Convention is load-bearing.** `dim_q` is the **symmetric** convention, verified in-probe against `lw`'s recorded closed form (A0). The fake-degree convention gives `(1/4)Σ dim_q = 3q²/4 + q/2 + 5/4`, a different function, and would silently change every number here — cf. the AGENTS.md note that `dim_q` alone is ambiguous.
+
+**Still NOT a derivation.** The restatement sharpens the question; it does not answer it. The provenance asymmetry is the live open item, and this bean's TITLE claim (saturated fraction = ℏ_q²) is untouched and remains suspect numerology per AGENTS.md.
