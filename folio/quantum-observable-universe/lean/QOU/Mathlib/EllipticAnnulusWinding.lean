@@ -1,4 +1,5 @@
 import Mathlib.MeasureTheory.Integral.CircleIntegral
+import QOU.Mathlib.ArgumentPrincipleAnnulus
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 import Mathlib.Analysis.Calculus.LogDeriv
 import Mathlib.Analysis.Calculus.Deriv.CompMul
@@ -74,5 +75,33 @@ theorem circleIntegral_logDeriv_dilation {g : ℂ → ℂ} {p : ℂ} (hp : p ≠
   have hz0 : z ≠ 0 := by
     intro h; rw [h] at hz; simp at hz; linarith
   exact logDeriv_dilation hinv hz0
+
+open QOU.Mathlib.ArgumentPrincipleAnnulus in
+/-- **Degree zero on a fundamental annulus.** If `g` is meromorphic on `ℂ*` and
+invariant under `w ↦ p w` with `‖p‖ > 1`, and the two circles `|w| = ρ`,
+`|w| = ‖p‖ρ` carry no zero, pole or removable irregularity of `g`, then the
+divisor of `g` sums to `0` over the open annulus `ρ < |w| < ‖p‖ρ`:
+the annulus argument principle turns the sum into the difference of the two
+circle integrals of `g'/g`, which `circleIntegral_logDeriv_dilation` makes `0`. -/
+theorem annulus_divisor_sum_eq_zero {g : ℂ → ℂ} {p : ℂ} (hp : 1 < ‖p‖) {ρ : ℝ} (hρ : 0 < ρ)
+    (hmero : ∀ w, w ≠ 0 → MeromorphicAt g w)
+    (hinv : ∀ w, w ≠ 0 → g (p * w) = g w)
+    (S : Finset ℂ)
+    (hbd : ∀ z, (‖z‖ = ρ ∨ ‖z‖ = ‖p‖ * ρ) → AnalyticAt ℂ g z ∧ g z ≠ 0)
+    (hS : (S : Set ℂ) = {z | (ρ < ‖z‖ ∧ ‖z‖ < ‖p‖ * ρ) ∧
+        (MeromorphicOn.divisor g (closedAnnulus ρ (‖p‖ * ρ))) z ≠ 0}) :
+    ∑ w ∈ S, (MeromorphicOn.divisor g (closedAnnulus ρ (‖p‖ * ρ))) w = 0 := by
+  have hp0 : p ≠ 0 := by
+    intro h; rw [h, norm_zero] at hp; linarith
+  have hlt : ρ < ‖p‖ * ρ := by nlinarith
+  have hK : MeromorphicOn g (closedAnnulus ρ (‖p‖ * ρ)) := by
+    intro z hz
+    apply hmero z
+    intro h0
+    have := (mem_closedAnnulus.mp hz).1
+    rw [h0, norm_zero] at this; linarith
+  have hAP := argument_principle_annulus hρ hlt hK S hbd hS
+  rw [circleIntegral_logDeriv_dilation hp0 hinv hρ, sub_self, mul_zero] at hAP
+  exact_mod_cast hAP.symm
 
 end QOU.Mathlib.EllipticAnnulusWinding
