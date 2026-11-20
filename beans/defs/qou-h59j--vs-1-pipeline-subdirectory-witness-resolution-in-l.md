@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-19T07:06:02Z
+updated_at: 2026-11-20T08:30:00Z
 parent: qou-v6so
 ---
 
@@ -31,3 +31,8 @@ Grounded in `computations/audits/paper-status-variable-substitution-and-stalenes
 1. Update `liquid-values.ts` so `{{ qou.computations.<subdir>.<entry>... }}` (or slash/dot-separated subdirectory paths under `computations/`) resolves witnesses inside `computations/qbeta/`, `computations/probes/`, `computations/deltalambda/`, and `computations/audits/`.
 2. Wire `:val[...]` resolution (`substituteValuesInMath` / `renderValue`) into `render-markdown.ts` (or migrate the remaining 2 `.md` files from `:val[...]` to `{{ qou.computations... }}`).
 3. Fix `rho_q` and the 5 `needsReview: true` entries (`inv_alpha`, `c_q`, `eta_q`, `chi_q`, `d_H`) in `folio/values/registry.ts` to point to their true derived Wave-2 witness fields.
+
+
+## 2026-11-20 W13 (#8526, PR #8539)
+
+Deliverables 1+2 are PLATFORM code (cat-harness-tools); patch written + tested (32 pass) and committed as docs/audits/2026-11-20-vs1-liquid-subdir-and-markdown-val.platform.diff — needs landing in the platform repo, then a pin bump. Benzene :val migrated to Liquid (fixed a doubled 'kcal/mol kcal/mol' in the PDF); 1 :val .md remains (confinement table, keys not Liquid-legal). Deliverable 3 (registry): no reader for rho_q/c_q/eta_q/chi_q/d_H; owner ask on #8526. Stays todo.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-19T07:06:02Z
+updated_at: 2026-11-20T08:30:00Z
 parent: qou-v6so
 ---
 
@@ -30,3 +30,8 @@ Grounded in `computations/audits/paper-status-variable-substitution-and-stalenes
 1. Upgrade P2/P3 table producers (`borromean_binding_recompute.py`, `atom_electron_mass.py`, `canonical_isotope_witness.py`, `canonical_mass_table_extended.py`, `atlas_render_canonical_table.py`, `mass_table_ppb.py`, `level1-qvalues.py`, `free-neutron-decay.py`, `b_over_a_evaluator.py`, `coulomb_mirror_killswitch_probe.py`, `wlambda_binding_a3_mirror_selection.py`) to the Wave-2 P0 facade (`q_2t`, Form-B $\alpha_{\mathrm{EM}}^{-1}$, 2-term QED + Coulomb/mirror splittings, $E_0^{(\infty)}$, GPMT, and 4-row Hankel $Z_{3A}^{(4)}(q_0)$).
 2. Regenerate `canonical-isotope-witness-Z00..Z118.witness.json` and the `368` scriptHash-drifted / `254` upstream-drifted witnesses.
 3. Wire `sm-params-gauge-couplings.md`, `em-coupling-bring-zero-mode.md`, `neutron-proton-splitting.md`, and the `*-table*-data.md` files to Liquid `{{ qou.computations... }}` variable substitution.
+
+
+## 2026-11-20 W13 (#8526, PR #8539)
+
+Correction: 2/443 table-data files use Liquid (not 3; wired ones are recomputed-low-isotope-mass-table-table1-data and sigma-shell-from-beta-chain-derivation-table-data). 119 Z-witnesses confirmed. Blocked on the facade owner ask on #8526. Not touched.

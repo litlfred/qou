@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-19T07:06:02Z
+updated_at: 2026-11-20T08:30:00Z
 parent: qou-v6so
 ---
 
@@ -31,3 +31,8 @@ Grounded in `computations/audits/paper-status-variable-substitution-and-stalenes
 
 1. Upgrade `per_observable_100x_status.py`, `onepb_status_dashboard.py`, `mass_binding_dashboard.py`, `two_term_qed_isotope_and_nucleon_compute.py`, and `electroweak_bring_schwinger_bridge_probe.py` to live Wave-2 compute (Form-B Bring–Schwinger $\alpha_{\mathrm{EM}}^{-1}$ at `-0.365 ppb`, 2-term QED nucleon/Coulomb/mirror splittings at $q_{2\mathrm{t}}$, mirror-projected $\alpha_D^{\mathrm{proj}}$, $E_0^{(\infty)}$, GPMT $d_{\mathrm{mod}}$, and 4-row Hankel $Z_{3A}^{(4)}(q_0)$) and record all `upstream_witness_hashes` via `WitnessBuilder`.
 2. Replace `:::observable-dashboard` in `appendix-qvalues/per-observable-100x-status-dashboard.md` and hardcoded table cells in `docs/precision-goals.md`, `docs/observable-sector-tracker.md`, and `docs/prediction-validation-status.md` with Liquid `{{ qou.computations... }}` variable substitution.
+
+
+## 2026-11-20 W13 (#8526, PR #8539)
+
+Corrections: docs/prediction-validation-status.md does not exist; the :::observable-dashboard fence is already gone. Producer upgrade = same owner decision as jdrx (framed ask on #8526). Not touched.

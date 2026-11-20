@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-19T07:06:02Z
-updated_at: 2026-11-19T07:06:02Z
+updated_at: 2026-11-20T08:30:00Z
 parent: qou-v6so
 ---
 
@@ -32,3 +32,8 @@ Grounded in `computations/audits/paper-status-variable-substitution-and-stalenes
 
 1. Export 50-dps `Q_2T_50_DIGIT_STR` and `q_two_term_at(dps)` in `substrate/q_parameter.py`, and regenerate `q-pinning-50-digit.witness.json` with explicit `proton_1term`, `proton_2term_borromean`, and `muon_codata2022` blocks so downstream Liquid bindings are anchor-unambiguous and fresh.
 2. Upgrade `canonical_mass.py`, `coulomb_energy.py`, `derived_masses.py`, and `substrate/hecke_core.py` to pure `mpmath.mpf`, accepting `q: mpf | None = None`, exposing `E0_tower_mev(q)`, `alpha_D_mirror_projected(q)`, Form-B Bring–Schwinger $\alpha_{\mathrm{EM}}^{-1}(q)$, and 4-row Hankel-normalized $Z_{3A}^{(4)}(q)$.
+
+
+## 2026-11-20 W13 (#8526, PR #8539)
+
+Measured float64 surface: derived_masses 0, coulomb_energy 0, hecke_core 2 (inf sentinels), canonical_mass 1 real (_from_witness line 56; 20 importers; W2 scope, offered on #8526, not touched). q_2t pin + default changes = owner decision, framed ask on #8526. Stays todo.
