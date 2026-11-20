@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-11-20T18:05:00Z
+updated_at: 2026-11-20T19:18:37Z
 parent: qou-v2om
 ---
 
@@ -3489,3 +3489,29 @@ warning that the exact-`hbar_q^2` saturated-fraction VALUE in this bean's own
 TITLE is suspect numerology with the volume-defect route refuted. So the title
 and the live question point in different directions; the live one is the
 assignment, not the fraction.
+
+## 2026-11-20 — residual (ii): the cusp pole is CLASSICAL, so the contrast (ii) rests on is absent there
+
+`c7b86194191`, `computations/probes/lw_cusp_pole_is_classical_probe.py`, 7/7 exact checks over ℚ. Scope (a); no witness, wires nothing, moves no number, **no empirical input of any kind**.
+
+Writing ℏ = ℏ_q = 1 − q⁻¹ and expanding the mass multiplier as a Laurent series in ℏ about 0:
+
+    lw/ℏ_q² = (5/2)·ℏ⁻² + 0·ℏ⁻¹ + 3 + 3ℏ + (15/4)ℏ² + …
+
+and the pole coefficient is **exactly the classical, undeformed dimension sum**:
+
+    5/2 = lw(q=1) = (1/4)·Σ_{λ⊢4} dim V_λ = 10/4,   dims 1,3,2,3,1 (sum 10).
+
+It carries **no q at all** (checked: the ℏ⁻² coefficient has empty `free_symbols`), and the pole is **pure** — the ℏ⁻¹ coefficient vanishes. All of `lw`'s q-dependence sits in the regular part. The split that makes this visible is `h = ℏ_q·(q+1)`, hence `lw/ℏ_q² = (5/2)/ℏ_q² + (3/4)(q+1)²`.
+
+**Why this bears on (ii), and it runs AGAINST its premise.** (ii) asks why the count channel is a bare integer *while the self/mass channel keeps the full q-dimension*. At the pole the mass channel does **not** keep a q-dimension — it keeps a quarter of the ordinary integer **10**. So at the pole the two channels are *more* alike than (ii) presumes, not less: an integer coordination count against a rational multiple of an integer dimension count. **Whatever distinguishes the channels cannot be read off the cusp pole, because the pole is classical on both sides.**
+
+Precision note on the bean's own wording: it describes `lw/ℏ_q²` as *"an order-2 pole with residue `lw`"*. The ℏ⁻² coefficient is **lw(1)**, not lw(q), and there is no ℏ⁻¹ term. Both readings of "residue" are defensible in loose usage; the precise statement is the one above.
+
+**NOT a derivation of (ii).** Why binding is a count while mass is a q-dimension sum is untouched and remains the live half. Does not touch this bean's TITLE claim (saturated fraction = ℏ_q²), which AGENTS.md records as suspect numerology with the volume-defect route refuted.
+
+**A hypothesis the corpus-grep killed before any work went into it — recorded so it is not retried.** *Self-linking requires a framing while mutual linking does not, so the self channel might carry a framing anomaly and the mutual one cannot.* `lw_is_framing_independent_probe.py` already refutes it: `lw` is not writhe-valued, not self-linking-valued, **not diagrammatic at all** — signature `(q, q_inv=None) -> mpf`, no knot, no diagram, no framing. This is the §4 reframing this bean already records as *"A reframing, NOT an answer"*; the probe above is the next step on the same object, asking what the cusp factor actually multiplies given that `lw` is a q-dimension sum.
+
+Also noticed while gating the refresh and not pursued: `computations/probes/framed_vs_writhe_normalised_bonds_probe.py` exists and refreshed provenance-only. It is on the framed-vs-writhe axis and may already bound part of the above; not read.
+
+**The §8 author decision is now in trigger range.** `docs/audits/2026-08-30-self-crossing-invariance-gate.md` §8 frames rename `lw` / restate this bean's question / do nothing, recommending *"do nothing now, restate when the arc is next worked"*. The arc is being worked, so the trigger is met — but the restatement is an author call about research framing and is being put to the owner with a card rather than taken.
