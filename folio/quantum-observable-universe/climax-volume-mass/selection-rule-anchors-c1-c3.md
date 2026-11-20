@@ -18,7 +18,7 @@ $$
 
 ## Significance
 
-The zero-parameter selection rule reads $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\lambda\vdash(c+1)} \dim_q V_\lambda$, where $c$ is the number of link components. The c=1 case must equal 1 for all $q$ (muon, a knot, framework `linking_weight = 1`). The c=3 case must equal the Family-A formula $\frac{5}{2} + \frac{3}{4}h^2$ (proton). This proposition Lean-formalises both identities *from the hook-length formula itself*: [`QOU.Mass.selection_rule_c1_real`](../lean/QOU/Mass/QHookDimension.lean) and `QOU.Mass.selection_rule_c3_real` state the sums over `dimQ` of the actual partitions, where `dimQ` is built as shape → conjugate → hook lengths → `[n]_q!` over the hooks' q-integers, and the hook multiset of each shape is settled by `decide`. So the anchors are derivation-tight in the sense claimed: not a fit, and not a hand-substituted value either.
+The zero-parameter selection rule reads $\mathrm{lw}(L) = \frac{1}{c+1}\sum_{\lambda\vdash(c+1)} \dim_q V_\lambda$, where $c$ is the number of link components. The $c=1$ case equals $1$ for all $q$ (muon, a single-component knot with `linking_weight = 1`), and the $c=3$ case equals the Family-A formula $\frac{5}{2} + \frac{3}{4}h^2$ (proton, a three-component Borromean link). This proposition formalizes both identities directly from the hook-length formula: [`QOU.Mass.selection_rule_c1_real`](../lean/QOU/Mass/QHookDimension.lean) and `QOU.Mass.selection_rule_c3_real` evaluate the sums over `dimQ` of the partitions of $2$ and $4$, where `dimQ` maps each partition shape through its conjugate and hook lengths to $[n]_q!$ divided by the hook $q$-integer product, and the hook multiset of each shape is discharged by `decide`.
 
 ## Lean proof structure
 

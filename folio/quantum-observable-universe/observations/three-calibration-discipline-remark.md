@@ -28,7 +28,7 @@ Induction along the 19-link derivation chain. At each step:
   $(m_e, q_0)$ (the Hopf-link complement has zero hyperbolic volume).
   $\mathfrak{Q}_\beta$, the CAL-2 proxy, is itself computed from $m_e$ and
   the already-pinned $q_0$ via the ruled convention-D base
-  ($\varepsilon$ is the Markov trace at $z_D = q^3/(q^2+1)$, owner ruling 2026-09-08)
+  ($\varepsilon$ evaluated as the canonical Convention-D Markov trace at $z_D = q^3/(q^2+1)$)
   $$
     \mathfrak{Q}_\beta^{z_D} \;=\; \Bigl\lvert \tfrac{h^2}{2} - h\,z_D \Bigr\rvert\,\frac{m_e}{q_0(q_0-1)(1-\hbar_q^2)}
     \;\approx\; 0.4491\ \text{MeV}\quad(-42.59\%\text{ vs CODATA}),

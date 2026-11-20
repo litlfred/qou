@@ -18,8 +18,7 @@ $p_p$ is ([`habiro-coefficients-atomic.witness.json`](../../../computations/habi
 | 7 | $-16u^7 - 23u^6 - 31u^5 - 33u^4 - 47u^3 - 62u^2 - 77u - 114$ |
 | 8 | $u^8 + u^7 + 2u^6 + 3u^5 + 2u^4 + 4u^3 + 5u^2 + 6u + 15$ |
 
-The table that stood here until 2026-11-15 ($a_0 = 4$, $a_1 = -74u - 74$, …)
-was the convention-C expansion.
+In contrast, the Convention-C expansion yields non-monic coefficients ($a_0 = 4$, $a_1 = -74u - 74$, ...).
 
 The neutron has the same structure with $M = 8$ and different integer
 coefficients. The deuteron has $M = 13$ under convention D (it was $12$ under C).

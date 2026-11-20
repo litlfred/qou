@@ -1,3 +1,6 @@
-The three operator regimes of §4 are abstract. We instantiate them on five concrete light nuclei to confirm that the regime predictions match the empirical normal forms and binding energies. Hydrogen represents the base case: a single proton with no internucleon crossings. Deuterium provides the simplest two-nucleon braid. 
+To verify how the three operator regimes of `sec:nuclear-binding` operate on concrete braid words, this section computes the explicit Gröbner–Shirshov normal forms and Markov-trace binding energies for five benchmark light nuclei:
 
-The structural binding energy for Deuterium is extracted from the Markov trace volume integral as a zero-parameter prediction against AME2020. Helium-4 realises the first doubly magic closure. Lithium-6 exhibits the post-magic operator transition. Oxygen-16 is the second doubly magic point. These five examples fix the data that §6 reorganises through the typed Garside element.
+- **Hydrogen ($^1\mathrm{H}$):** The single-nucleon base case with zero inter-nucleon crossings.
+- **Deuterium ($^2\mathrm{H}$):** The minimal two-nucleon bound braid in the $T = 0$ isospin-singlet channel, whose Markov-trace volume integral yields a zero-parameter binding prediction against AME 2020.
+- **Helium-4 ($^4\mathrm{He}$):** The first doubly magic closure ($Z = N = 2$), where the two-row Wedderburn stratum saturates.
+- **Lithium-6 ($^6\mathrm{Li}$) and Oxygen-16 ($^{16}\mathrm{O}$):** The post-magic transition at $A = 6$ and the second doubly magic closure at $Z = N = 8$, providing the normal-form data consumed by the typed Garside staircase construction in `sec:garside-gram`.

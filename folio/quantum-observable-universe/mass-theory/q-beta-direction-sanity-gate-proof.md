@@ -125,7 +125,7 @@ $m \le 4$ are not caught by the decade threshold; their exclusion
 rests on the direction argument itself, not on this gate.
 $\blacksquare$
 
-Until 2026-10-10 this step used the excised convention-C weight
+Under the alternative Convention-C weight
 $z = 1/(q^{1/2} + q^{-1/2})$. That weight satisfies $0 < z < 1/2$ for
 every $q > 1$ by AM–GM, which made the obstruction hold at all $q > 1$
 with first exceedance at $m = 4$ (ratio $\approx 16$). Neither holds

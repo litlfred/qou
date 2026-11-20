@@ -75,7 +75,7 @@ This quantity eludes the $2 \times 2$ transfer matrix. The per-generator transfe
 
 ## The $6 \times 6$ transfer matrix provides no shortcut
 
-One might expect an enlarged $6 \times 6$ transfer matrix acting on the $H_3(q)$ basis to separate the irreps.
+An enlarged $6 \times 6$ transfer matrix acting on the $H_3(q)$ basis might appear sufficient to separate the irreducible representations.
 
 Symbolic proof shows otherwise. The matrix $T_6(c, d) = c \cdot R(\sigma_0) + d \cdot I_6$ possesses exactly two distinct eigenvalues, each with multiplicity $3$:
 

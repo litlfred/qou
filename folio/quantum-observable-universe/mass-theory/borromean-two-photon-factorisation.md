@@ -15,13 +15,15 @@ $$
   (\sigma_0\sigma_1^{-1})^3 = (1 + q h V)\,(1 - q^{-1} h V).
 $$
 
-*Each factor has the four-term form $1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$
+*Each factor is a [photon](#def:photon) $\gamma(\varphi_0, \varphi_1, \varphi_{01}) = 1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$
 with $\varphi_1 = 0$:*
 
 $$
-  1 + q h V = 1 - q h^2\,\sigma_0 + q h\,\sigma_0\sigma_1,
-  \qquad
-  1 - q^{-1} h V = 1 + q^{-1} h^2\,\sigma_0 - q^{-1} h\,\sigma_0\sigma_1 .
+  1 + q h V = 1 - q h^2\,\sigma_0 + q h\,\sigma_0\sigma_1 = \gamma(-q h^2,\, 0,\, q h),
+$$
+
+$$
+  1 - q^{-1} h V = 1 + q^{-1} h^2\,\sigma_0 - q^{-1} h\,\sigma_0\sigma_1 = \gamma(q^{-1} h^2,\, 0,\, -q^{-1} h).
 $$
 
 *The two factors commute.*

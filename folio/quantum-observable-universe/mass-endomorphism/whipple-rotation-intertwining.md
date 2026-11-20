@@ -73,7 +73,7 @@ $C(\nu,\mu) = \sqrt{2/\pi}\,e^{-i\pi\nu}/\Gamma(\nu+\mu+\tfrac{1}{2})$ above is
 the symbolic-exact shadow the intertwining must carry.
 
 The grading-swap field is moreover *not primitive*: `channelIndexed_swaps_windings`
-**derives** it from the even↔odd channel flip that
+**derives** it from the even$\leftrightarrow$odd channel flip that
 [prop on the channel rotation](binding-qbeta-complex-volume.md)
 (`rotation_step`) proves. A `ChannelIndexedLadder` carries the two
 recurrence-channel indices, the rotation that flips them, and a single shared
@@ -85,4 +85,4 @@ moves the open content off the swap and onto (i) identifying the abstract
 channel flip with `rotation_step`'s $\mathrm{oddStep} \leftrightarrow
 \mathrm{evenStep}$ carry, and (ii) the residual involutivity — the order-2
 Whipple $\cosh\eta \leftrightarrow \coth\eta$ exchange, a *different* map from
-the order-4 ζ₄ recurrence rotation, hence genuinely open.
+the order-4 $\zeta_4$ recurrence rotation, hence genuinely open.

@@ -2,7 +2,7 @@
   "computation": "free-neutron-decay",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "description": "Free neutron decay n → p + e⁻ + ν̄ₑ with B₃ Borromean binding. All Gröbner--Shirshov relations traced verbosely.",
-  "timestamp": "2026-11-18T21:28:08.144588+00:00",
+  "timestamp": "2026-11-18T23:38:10.106768+00:00",
   "commit_sha": "unknown",
   "q0": 1.1099785827513808,
   "relations": {
@@ -194,16 +194,16 @@
     "Delta_m_QED_conn_q_MeV": "-0.00036817550549509520906887290587424751665536074095424428339052",
     "Q_N2_MeV": "0.782804713582601608047366699594231456515048200356441279100805",
     "Q_N2_two_term_MeV": "0.782473017537996429199691897047275817255137708803140424997279",
-    "Q_N2_vs_CODATA_ppm": 602.4331526396246,
-    "Q_N2_two_term_vs_CODATA_ppm": 178.4501802069647,
-    "error_reduction_pct": 70.37842631583831
+    "Q_N2_vs_CODATA_ppm": "602.433152639624642090511760492826856324850496212183532772398",
+    "Q_N2_two_term_vs_CODATA_ppm": "178.450180206964700244486615081180356515400260281630146654083",
+    "error_reduction_pct": "70.3784263158383063909487232525452736853863215973191645936863"
   },
   "scriptFile": "free-neutron-decay.py",
-  "scriptHash": "ef4acae7cf32",
-  "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
-  "commitSha": "2dbd0b5cde411a3d35c971f05af3cd21549e56a4",
+  "scriptHash": "67b60c778a40",
+  "scriptCommitSha": "dbbda13e9feb9f7ece8365033b12502cc8e2e16d",
+  "commitSha": "f41c91cb7eacfa3c40bd2d7c8c97d88055f1a1c6",
   "engine": "python",
-  "computedAt": "2026-11-18T21:28:08.501287+00:00",
+  "computedAt": "2026-11-18T23:38:10.502271+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

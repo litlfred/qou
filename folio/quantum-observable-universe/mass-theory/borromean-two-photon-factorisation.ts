@@ -6,7 +6,7 @@ export default proposition({
   lean: {
     ref: "qou:QOU.Mass.BorromeanPhotonFactorisation.borromean_eq_photon_product",
   },
-  uses: ["prop:borromean-markov-trace-closed-form"],
+  uses: ["def:photon", "prop:borromean-markov-trace-closed-form"],
   cites: ["iwahori1964", "kassel2008"],
   tags: ["borromean", "hecke-algebra", "photon", "gamma-gamma", "nucleon-element"],
 });

@@ -1,4 +1,4 @@
-> **Scope note (2026-11-15).** Three claims in this block are stated without proof: that $\Delta_k > 0$, that the Gram weights favour boundary neutrons, and that $G$ is indefinite. Treat them as open.
+> **Scope.** Three auxiliary properties in this block are stated as open hypotheses: that $\Delta_k > 0$, that the Gram weights favour boundary neutrons, and that $G$ is indefinite. Treat them as open.
 
 *Let $\mathcal{G}_{\mathrm{par}} = \mathcal{G}(t_0, \ldots, t_{A-1})$ be the typed Garside element of the parent nucleus in $H_A(q)$. Let $G$ be the Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$ restricted to the NF subspace spanned by $\mathcal{G}_{\mathrm{par}}$ and all conversion daughters. The $Q$-value for $\beta^-$ decay is:*
 
