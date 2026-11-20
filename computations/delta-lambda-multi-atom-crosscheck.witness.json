@@ -1,7 +1,7 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T18:02:46.113945+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-20T15:21:57.277377+00:00",
   "computation": "delta-lambda-multi-atom-crosscheck",
   "scriptFile": "delta_lambda_multi_atom_crosscheck.py",
   "description": "Multi-atom cross-validation of the signed-dim_q \u0394_\u03bb ansatz. Tests whether \u0394_\u03bb = C \u00d7 (-1)^{n(\u03bb)} \u00d7 dim_q(\u03bb) gives consistent C_knot across D, T, \u00b3He. Uses q-Schur y_\u03bb closed form.",
@@ -9,32 +9,32 @@
     "D": {
       "n_strands": 6,
       "n_partitions": 11,
-      "sum_signed_dimq": -0.018121896092952696,
-      "sum_dimq": 0.03967472908197183,
-      "sum_yc": 0.022654970408742234,
-      "B_naive_MeV": 0.009260269888012039,
+      "sum_signed_dimq": 0.01948025671891073,
+      "sum_dimq": 0.0046802781248362554,
+      "sum_yc": 0.006628323940786251,
+      "B_naive_MeV": 0.009954390742535207,
       "B_AME_MeV": 2.22452,
-      "C_knot_needed": 240.22194027841147
+      "C_knot_needed": 223.47123571255895
     },
     "T": {
       "n_strands": 9,
       "n_partitions": 30,
-      "sum_signed_dimq": -0.0004076541098329084,
-      "sum_dimq": 0.00027493024282159443,
-      "sum_yc": 0.0003200597866399356,
-      "B_naive_MeV": 0.00020831082236908222,
-      "B_AME_MeV": 8.4818,
-      "C_knot_needed": 40717.039583147845
+      "sum_signed_dimq": 2.3301597982966268e-05,
+      "sum_dimq": 1.446272746135935e-05,
+      "sum_yc": 8.55843224163997e-05,
+      "B_naive_MeV": 1.1907092118695984e-05,
+      "B_AME_MeV": 8.4817962,
+      "C_knot_needed": 712331.4504875848
     },
     "3He": {
       "n_strands": 9,
       "n_partitions": 30,
-      "sum_signed_dimq": -0.000479863427424848,
-      "sum_dimq": 0.0008023166921285049,
-      "sum_yc": 0.0006318035663497674,
-      "B_naive_MeV": 0.0002452097078886043,
+      "sum_signed_dimq": 5.4696872393995923e-05,
+      "sum_dimq": 3.424269501834161e-05,
+      "sum_yc": 0.0001429103491481259,
+      "B_naive_MeV": 2.7950044399356745e-05,
       "B_AME_MeV": 7.71804132,
-      "C_knot_needed": 31475.268195769022
+      "C_knot_needed": 276136.99676905083
     }
   },
   "assertions": [
@@ -44,9 +44,9 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "f39ce6f10cc2",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "scriptHash": "3bfc6d577652",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

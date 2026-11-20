@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:58:14.933004+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T15:31:42.116111+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "deuteron_sign_correct",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 72,
+  "durationMs": 48,
   "computation": "shell-binding-transfer-matrix",
   "scriptFile": "shell_binding_transfer_matrix.py",
-  "scriptHash": "faa250bb530b",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "828c83087e54",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,14 +25,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -81,7 +82,7 @@
         "Z": 3,
         "N": 3,
         "B_pred_MeV": 22.6274,
-        "B_AME_MeV": 31.994,
+        "B_AME_MeV": 31.9939872,
         "err_pct": -29.28
       },
       {
@@ -89,7 +90,7 @@
         "Z": 3,
         "N": 4,
         "B_pred_MeV": 18.7737,
-        "B_AME_MeV": 39.245,
+        "B_AME_MeV": 39.2450807,
         "err_pct": -52.16
       },
       {

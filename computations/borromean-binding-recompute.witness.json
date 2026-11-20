@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T01:19:55.168022+00:00",
-  "commitSha": "105774c17e58621f1ddc5181478533454bc1281e",
+  "computedAt": "2026-11-20T15:21:10.764529+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "borromean-binding-recompute",
   "scriptFile": "borromean_binding_recompute.py",
-  "scriptHash": "bffacadcc257",
-  "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
+  "scriptHash": "13b02e10b25e",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -41,37 +42,37 @@
       "iso": "2H",
       "Z": 1,
       "N": 1,
-      "B_AME": 2.224573,
+      "B_AME": 2.2245662,
       "B_can0": 1.6166217381550836,
       "B_tower": 2.063076949816325,
-      "delta_K_residual": 1.0782792179409755
+      "delta_K_residual": 1.0782759218932927
     },
     {
       "iso": "3H",
       "Z": 1,
       "N": 2,
-      "B_AME": 8.481821,
+      "B_AME": 8.4817962,
       "B_can0": 3.137225560748612,
       "B_tower": 4.741966424926435,
-      "delta_K_residual": 1.7886716690811626
+      "delta_K_residual": 1.7886664391833147
     },
     {
       "iso": "3He",
       "Z": 2,
       "N": 1,
-      "B_AME": 7.718058,
+      "B_AME": 7.71804132,
       "B_can0": 2.6033579456523555,
       "B_tower": 3.94272358063608,
-      "delta_K_residual": 1.9575447890655435
+      "delta_K_residual": 1.9575405584874523
     },
     {
       "iso": "4He",
       "Z": 2,
       "N": 2,
-      "B_AME": 28.295673,
+      "B_AME": "28.2956624",
       "B_can0": 3.531353053597401,
       "B_tower": 6.475459552758949,
-      "delta_K_residual": 4.3696779772092444
+      "delta_K_residual": "4.3696763402597869967178920066115702021528875769462"
     },
     {
       "iso": "6Li",

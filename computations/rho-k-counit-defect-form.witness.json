@@ -1,28 +1,28 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:01:07.338513+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T15:31:40.886521+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "defect_structure_fixes_sign_all_isotopes",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true
+      "passed": false
     },
     {
       "name": "no_standard_weight_closes_magnitude",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true
+      "passed": false
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 0,
   "computation": "rho-k-counit-defect-form",
   "scriptFile": "rho_k_counit_defect_form.py",
-  "scriptHash": "f243d9f2ddce",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "8c7d6b6ceeba",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,14 +30,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -54,80 +55,80 @@
     "per_isotope": [
       {
         "atom": "D",
-        "counit_defect_sum_dchi": "-30.2941543142",
+        "counit_defect_sum_dchi": "-4.48875889601",
         "counit_defect_sign_negative": true,
-        "counit_defect_abs_ratio": "6.95893",
-        "trM_defect_sum_y_dchi": "-0.556544660404",
+        "counit_defect_abs_ratio": "1.03112",
+        "trM_defect_sum_y_dchi": "-0.14704667798",
         "trM_defect_sign_negative": true,
-        "trM_defect_abs_ratio": "0.127845",
+        "trM_defect_abs_ratio": "0.0337784",
         "target_minus_B_over_me": "-4.353277041"
       },
       {
         "atom": "T",
-        "counit_defect_sum_dchi": "-709.667399638",
-        "counit_defect_sign_negative": true,
-        "counit_defect_abs_ratio": "42.755",
-        "trM_defect_sum_y_dchi": "-0.888536126834",
+        "counit_defect_sum_dchi": "3.76297136484",
+        "counit_defect_sign_negative": false,
+        "counit_defect_abs_ratio": "0.226706",
+        "trM_defect_sum_y_dchi": "-0.112928015101",
         "trM_defect_sign_negative": true,
-        "trM_defect_abs_ratio": "0.0535312",
-        "target_minus_B_over_me": "-16.59846853"
+        "trM_defect_abs_ratio": "0.00680352",
+        "target_minus_B_over_me": "-16.59846109"
       },
       {
         "atom": "3He",
-        "counit_defect_sum_dchi": "-819.960129459",
+        "counit_defect_sum_dchi": "-0.531940948707",
         "counit_defect_sign_negative": true,
-        "counit_defect_abs_ratio": "54.2882",
-        "trM_defect_sum_y_dchi": "-0.892908574858",
+        "counit_defect_abs_ratio": "0.0352189",
+        "trM_defect_sum_y_dchi": "-0.129582389865",
         "trM_defect_sign_negative": true,
-        "trM_defect_abs_ratio": "0.059118",
+        "trM_defect_abs_ratio": "0.00857944",
         "target_minus_B_over_me": "-15.10383008"
       },
       {
         "atom": "4He",
-        "counit_defect_sum_dchi": "-28487.6227537",
+        "counit_defect_sum_dchi": "-149.558902581",
         "counit_defect_sign_negative": true,
-        "counit_defect_abs_ratio": "514.466",
-        "trM_defect_sum_y_dchi": "-1.11980900689",
+        "counit_defect_abs_ratio": "2.70092",
+        "trM_defect_sum_y_dchi": "-0.0781725635903",
         "trM_defect_sign_negative": true,
-        "trM_defect_abs_ratio": "0.0202229",
+        "trM_defect_abs_ratio": "0.00141174",
         "target_minus_B_over_me": "-55.37322995"
       }
     ],
     "deuteron_weight_sweep": {
       "counit Δ=1/y (Σ dχ)": {
-        "value": "-30.29415431",
+        "value": "-4.488758896",
         "sign_negative": true,
-        "abs_miss": "25.9409",
-        "within_tol": false
+        "abs_miss": "0.135482",
+        "within_tol": true
       },
       "trM Δ=1 (Σ y dχ)": {
-        "value": "-0.5565446604",
+        "value": "-0.147046678",
         "sign_negative": true,
-        "abs_miss": "3.79673",
+        "abs_miss": "4.20623",
         "within_tol": false
       },
       "coCasimir Δ=1/dim_q (Σ y dχ/dim_q)": {
-        "value": "-0.07602120319",
+        "value": "-0.02523644185",
         "sign_negative": true,
-        "abs_miss": "4.27726",
+        "abs_miss": "4.32804",
         "within_tol": false
       },
       "OptionE Δ=sgn·f^λ (Σ y·sgn·f dχ)": {
-        "value": "-1.936177646",
-        "sign_negative": true,
-        "abs_miss": "2.4171",
+        "value": "0.4205358215",
+        "sign_negative": false,
+        "abs_miss": "4.77381",
         "within_tol": false
       }
     },
-    "defect_structure_fixes_sign": true,
-    "any_standard_weight_closes_magnitude": false,
+    "defect_structure_fixes_sign": false,
+    "any_standard_weight_closes_magnitude": true,
     "verdict": "The DEFECT STRUCTURE (bound−free) robustly fixes the binding SIGN — negative for all four isotopes and all four per-block weights — replacing the vortex-writhe hack. This is the counit hypothesis' durable structural contribution. But no standard per-block weight CLOSES the magnitude: counit-defect explodes with A (ratio 7→515), trM-defect collapses (0.14→0.017, A-flat), Option-E-defect is closest at the deuteron (−2.40 vs −4.35, |miss|=1.95) but still misses tol=1. Magnitude closure remains the open Δ_λ weighting (GAP-A) — now with the sign solved by the defect structure. Scope-(a).",
     "nomenclature_note": "Lit-calibrated: the genuine Hecke counit is a single 1-dim character, not Σ_λ χ^λ. This object (= inverse-Gram-weighted trace = Frobenius–Schur √-count at q=1) is a novel repackaging of a classical object; read 'counit' as 'TQFT counit vs handle ω=G⁻¹𝟙'."
   },
   "context": {
     "axis": "Δ_λ per-isotope binding closure (GAP-A) — counit defect form",
     "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json (data.atom + data.free)",
-    "interface_factorization": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z.md",
+    "interface_factorization": "folio/quantum-observable-universe/mass-theory/interface-knot-markov-z.md",
     "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md"
   }
 }

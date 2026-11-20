@@ -1,7 +1,7 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11",
-  "computedAt": "2026-08-23T09:15:45.936075+00:00",
+  "engineVersion": "python 3.13",
+  "computedAt": "2026-11-20T15:27:03.975709+00:00",
   "computation": "option-e-v7-involution-aware",
   "description": "Option E v7: involution-aware \u0394_\u03bb probe. Tests partition-transpose \u03bb \u2194 \u03bb\u1d40 symmetry (self-conjugate + bar-(anti)symmetric combinations) with 5 scale candidates (m_e, \u03bc\u2080, \u03bc\u2080\u00b7\u210f_q, m_\u03c0, m_\u03c0\u00b7\u210f_q) \u00d7 7 involution sums. Addresses user question 'are we using involution / bar / skew symmetry appropriately?'",
   "scriptFile": "option_e_v7_involution_aware.py",
@@ -43,220 +43,226 @@
   },
   "absolute_energy_results_top10": [
     {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 pair_phase_sum",
       "D": {
-        "B_pred": 1.9892110996650085,
-        "err_pct": -10.579811987371539
+        "B_pred": 1.5107915291128122,
+        "err_pct": -32.08601618091598
       },
       "T": {
-        "B_pred": 0.7911483693293548,
-        "err_pct": -90.67239788863924
+        "B_pred": 0.4341842958014637,
+        "err_pct": -94.88098646131743
       },
       "3He": {
-        "B_pred": 1.3926765379227664,
-        "err_pct": -81.95561400244665
+        "B_pred": 0.43555833071943545,
+        "err_pct": -94.3566209008138
       },
-      "max_err_pct": 90.67239788863924
+      "max_err_pct": 94.88098646131743
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 bar_asym_sum_atom",
       "D": {
-        "B_pred": 1.9789976767566866,
-        "err_pct": -11.038931784595887
+        "B_pred": 0.9530416554656417,
+        "err_pct": -57.158314485509955
       },
       "T": {
-        "B_pred": 0.7909000854002254,
-        "err_pct": -90.6753251445009
+        "B_pred": 0.24563683911363135,
+        "err_pct": -97.10395259068319
       },
       "3He": {
-        "B_pred": 1.39297926554587,
-        "err_pct": -81.95169167451574
+        "B_pred": 0.27880711012263415,
+        "err_pct": -96.38759241415107
       },
-      "max_err_pct": 90.6753251445009
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 pair_phase_sum",
-      "D": {
-        "B_pred": 1.3238700925403075,
-        "err_pct": -40.48861249608654
-      },
-      "T": {
-        "B_pred": 0.40984438349926566,
-        "err_pct": -95.16795397038145
-      },
-      "3He": {
-        "B_pred": 0.3730849656553402,
-        "err_pct": -95.16607844904885
-      },
-      "max_err_pct": 95.16795397038145
-    },
-    {
-      "formula": "\u03bc\u2080 \u00b7 bar_sym_sum_atom",
-      "D": {
-        "B_pred": 0.23546550669782432,
-        "err_pct": -89.41521597031401
-      },
-      "T": {
-        "B_pred": 0.09364926210630219,
-        "err_pct": -98.8958795988032
-      },
-      "3He": {
-        "B_pred": 0.16485293427297903,
-        "err_pct": -97.86406254586024
-      },
-      "max_err_pct": 98.8958795988032
-    },
-    {
-      "formula": "\u03bc\u2080 \u00b7 bar_asym_sum_atom",
-      "D": {
-        "B_pred": 0.2342565305360524,
-        "err_pct": -89.46956257822639
-      },
-      "T": {
-        "B_pred": 0.09361987241448555,
-        "err_pct": -98.89622610188918
-      },
-      "3He": {
-        "B_pred": 0.16488876853570633,
-        "err_pct": -97.8635982547984
-      },
-      "max_err_pct": 98.89622610188918
+      "max_err_pct": 97.10395259068319
     },
     {
       "formula": "\u03bc\u2080 \u00b7 pair_phase_sum",
       "D": {
-        "B_pred": 0.1567082257858882,
-        "err_pct": -92.9555596109134
+        "B_pred": 0.17883435949921914,
+        "err_pct": -91.96093334964726
       },
       "T": {
-        "B_pred": 0.0485138130609485,
-        "err_pct": -99.42802442287652
+        "B_pred": 0.05139496015699217,
+        "err_pct": -99.39405570535882
       },
       "3He": {
-        "B_pred": 0.04416255293074182,
-        "err_pct": -99.4278024149755
+        "B_pred": 0.05155760645845068,
+        "err_pct": -99.33198587153392
       },
-      "max_err_pct": 99.42802442287652
+      "max_err_pct": 99.39405570535882
     },
     {
-      "formula": "m_e \u00b7 bar_sym_sum_atom",
+      "formula": "\u03bc\u2080 \u00b7 bar_asym_sum_atom",
       "D": {
-        "B_pred": 0.07366723223001263,
-        "err_pct": -96.68846722326904
+        "B_pred": 0.11281278107996782,
+        "err_pct": -94.92877392994788
       },
       "T": {
-        "B_pred": 0.029298906818686195,
-        "err_pct": -99.6545672648808
+        "B_pred": 0.02907635232644916,
+        "err_pct": -99.65719109913948
       },
       "3He": {
-        "B_pred": 0.051575534621601395,
-        "err_pct": -99.33175519986109
+        "B_pred": 0.033002760474761986,
+        "err_pct": -99.57239461274662
       },
-      "max_err_pct": 99.6545672648808
-    },
-    {
-      "formula": "m_e \u00b7 bar_asym_sum_atom",
-      "D": {
-        "B_pred": 0.0732889945470551,
-        "err_pct": -96.70546998618809
-      },
-      "T": {
-        "B_pred": 0.029289712022885366,
-        "err_pct": -99.65467567109137
-      },
-      "3He": {
-        "B_pred": 0.05158674565200302,
-        "err_pct": -99.3316099427576
-      },
-      "max_err_pct": 99.65467567109137
+      "max_err_pct": 99.65719109913948
     },
     {
       "formula": "m_e \u00b7 pair_phase_sum",
       "D": {
-        "B_pred": 0.04902739863353814,
-        "err_pct": -97.79609152376068
+        "B_pred": 0.05594973326110643,
+        "err_pct": -97.48491488987352
       },
       "T": {
-        "B_pred": 0.015177927260958495,
-        "err_pct": -99.82105295055413
+        "B_pred": 0.016079316747637976,
+        "err_pct": -99.8104255706163
       },
       "3He": {
-        "B_pred": 0.013816601370808096,
-        "err_pct": -99.82098349363949
+        "B_pred": 0.016130201919860983,
+        "err_pct": -99.79100653584139
       },
-      "max_err_pct": 99.82105295055413
+      "max_err_pct": 99.8104255706163
     },
     {
-      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
+      "formula": "m_e \u00b7 bar_asym_sum_atom",
       "D": {
-        "B_pred": 0.023278797015939025,
-        "err_pct": -98.9535578168533
+        "B_pred": 0.03529436416772781,
+        "err_pct": -98.41342711366703
       },
       "T": {
-        "B_pred": 0.009258435317503862,
-        "err_pct": -99.89084348250803
+        "B_pred": 0.00909676508153281,
+        "err_pct": -99.8927495442353
       },
       "3He": {
-        "B_pred": 0.016297835076741943,
-        "err_pct": -99.78883508191512
+        "B_pred": 0.010325172693959751,
+        "err_pct": -99.86622029779494
       },
-      "max_err_pct": 99.89084348250803
+      "max_err_pct": 99.8927495442353
+    },
+    {
+      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 pair_phase_sum",
+      "D": {
+        "B_pred": 0.01768007897479557,
+        "err_pct": -99.20523475656532
+      },
+      "T": {
+        "B_pred": 0.005081053534827355,
+        "err_pct": -99.94009460478634
+      },
+      "3He": {
+        "B_pred": 0.005097133215839422,
+        "err_pct": -99.9339582025477
+      },
+      "max_err_pct": 99.94009460478634
+    },
+    {
+      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 bar_asym_sum_atom",
+      "D": {
+        "B_pred": 0.011152995903278102,
+        "err_pct": -99.49864400963756
+      },
+      "T": {
+        "B_pred": 0.002874571792971622,
+        "err_pct": -99.96610892639731
+      },
+      "3He": {
+        "B_pred": 0.003262747791945436,
+        "err_pct": -99.95772570194084
+      },
+      "max_err_pct": 99.96610892639731
+    },
+    {
+      "formula": "m_e \u00b7 sc_sum_y_chi_atom",
+      "D": {
+        "B_pred": 2.6960726502275096e-73,
+        "err_pct": -100.0
+      },
+      "T": {
+        "B_pred": -3.470308831276509e-74,
+        "err_pct": -100.0
+      },
+      "3He": {
+        "B_pred": -1.7313381179440856e-74,
+        "err_pct": -100.0
+      },
+      "max_err_pct": 100.0
+    },
+    {
+      "formula": "m_e \u00b7 sc_sum_y_chi_diff",
+      "D": {
+        "B_pred": 3.325111566596523e-73,
+        "err_pct": -100.0
+      },
+      "T": {
+        "B_pred": -1.0571924734931656e-73,
+        "err_pct": -100.0
+      },
+      "3He": {
+        "B_pred": -7.250609299848423e-74,
+        "err_pct": -100.0
+      },
+      "max_err_pct": 100.0
     }
   ],
   "mirror_pair_results_top10": [
     {
-      "formula": "m_\u03c0 \u00b7 (pair_phase_sum)",
-      "diff_MeV": 0.3718222613741792,
-      "err_pct": -51.31546926116297
+      "formula": "m_\u03c0 \u00b7 (bar_sym_sum_diff)",
+      "diff_MeV": 0.8219650269004162,
+      "err_pct": 7.621574463840568
     },
     {
       "formula": "m_\u03c0 \u00b7 (bar_asym_sum_diff)",
-      "diff_MeV": 0.16127795269643094,
-      "err_pct": -78.88307866095036
-    },
-    {
-      "formula": "m_\u03c0 \u00b7 (bar_sym_sum_diff)",
-      "diff_MeV": 0.14385254451859983,
-      "err_pct": -81.16467368147194
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (pair_phase_sum)",
-      "diff_MeV": 0.03675941784392542,
-      "err_pct": -95.186907310632
-    },
-    {
-      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (bar_asym_sum_diff)",
-      "diff_MeV": 0.01594440211909442,
-      "err_pct": -97.91232043985052
+      "diff_MeV": 0.340263773707693,
+      "err_pct": -55.44856306414788
     },
     {
       "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (bar_sym_sum_diff)",
-      "diff_MeV": 0.014221676164111213,
-      "err_pct": -98.13788548375081
+      "diff_MeV": 0.08126182591988301,
+      "err_pct": -89.36022170884421
     },
     {
-      "formula": "\u03bc\u2080 \u00b7 (pair_phase_sum)",
-      "diff_MeV": 0.004351260130206682,
-      "err_pct": -99.43026795442853
-    },
-    {
-      "formula": "\u03bc\u2080 \u00b7 (bar_asym_sum_diff)",
-      "diff_MeV": 0.0018873596294524406,
-      "err_pct": -99.75287865348425
+      "formula": "m_\u03c0\u00b7\u210f_q \u00b7 (bar_asym_sum_diff)",
+      "diff_MeV": 0.03363945501446129,
+      "err_pct": -95.59551684770102
     },
     {
       "formula": "\u03bc\u2080 \u00b7 (bar_sym_sum_diff)",
-      "diff_MeV": 0.0016834383161439001,
-      "err_pct": -99.77957908128914
+      "diff_MeV": 0.009619068091183462,
+      "err_pct": -98.74055559668784
     },
     {
-      "formula": "m_e \u00b7 (pair_phase_sum)",
-      "diff_MeV": 0.0013613258901504,
-      "err_pct": -99.82175485701244
+      "formula": "\u03bc\u2080 \u00b7 (bar_asym_sum_diff)",
+      "diff_MeV": 0.00398194606965179,
+      "err_pct": -99.47863559711045
+    },
+    {
+      "formula": "m_e \u00b7 (bar_sym_sum_diff)",
+      "diff_MeV": 0.0030094009642732266,
+      "err_pct": -99.60597293148906
+    },
+    {
+      "formula": "m_e \u00b7 (bar_asym_sum_diff)",
+      "diff_MeV": 0.0012457830871035807,
+      "err_pct": -99.83688705372285
+    },
+    {
+      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 (bar_sym_sum_diff)",
+      "diff_MeV": 0.0009509687287850424,
+      "err_pct": -99.87548770506251
+    },
+    {
+      "formula": "\u03bc\u2080\u00b7\u210f_q \u00b7 (bar_asym_sum_diff)",
+      "diff_MeV": 0.0003936666375631684,
+      "err_pct": -99.94845641607381
     }
   ],
-  "best_absolute": "m_\u03c0\u00b7\u210f_q \u00b7 bar_sym_sum_atom",
-  "best_absolute_max_err": 90.67239788863924,
-  "best_mirror": "m_\u03c0 \u00b7 (pair_phase_sum)",
-  "best_mirror_err": -51.31546926116297
+  "best_absolute": "m_\u03c0\u00b7\u210f_q \u00b7 pair_phase_sum",
+  "best_absolute_max_err": 94.88098646131743,
+  "best_mirror": "m_\u03c0 \u00b7 (bar_sym_sum_diff)",
+  "best_mirror_err": 7.621574463840568,
+  "scriptHash": "f6e8569e1be0",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
