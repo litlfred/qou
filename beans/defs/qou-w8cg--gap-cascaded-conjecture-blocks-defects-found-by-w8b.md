@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T18:30:00Z
-updated_at: 2026-11-20T19:10:00Z
+updated_at: 2026-11-20T19:06:52Z
 parent: qou-6qbv
 ---
 
@@ -27,3 +27,15 @@ Read-only audit (W8b, 2026-11-20) of the 9 blocks demoted by the #8568 cascade. 
 - explicit-alpha-k-h4: floats replaced by the exact H4 table; proved dual basis χ_μ(r_λ) = δ κ_λ and tr(r_λ) = y_λ κ_λ. So α_3(H4) = 0 under convention D; the old +0.003463 was convention C.
 - wedderburn-bratteli-recursion: degenerate predicate + unusable axiom removed; convention-D Jones weights proved to satisfy the Bratteli sum rule and single-edge relations. .md's summed form would double-count (authorNote). Normalisation Σ f^λ y_λ = 1 not encoded.
 - Still open: atom-knot tolerance-as-fit, joint-tower hypothesis=conclusion, baryon-product claim mismatch, general-n invertibility, spectral-sequence carrier encoding.
+
+## 2026-11-20 W8b (PR #8655)
+
+#8635 merged (9949299). #8655 fixes: stale prop:/link in six-term + frobenius Lean docstrings; joint-tower placeholders renamed to well-formedness, tautological joint_tower_sdp_feasible removed, lean.ref -> JointTowerSdp; baryonProductFromAlt over CommRing; alpha-k proof .md y_λ pin now matches its witness.
+
+Still open:
+1. y-lambda-jones-markov-witness.json is at the CODATA-2018 muon pin and its producer is not listed ideal_muon, so by the proton default it should be re-run at proton; consumer binding_a3plus_joint_ji_combiner.py moves.
+2. atom-knot MassIdentity = within 25% of AME, worst case 19.5% (tolerance sized to its miss).
+3. baryon .md says the product of the three dc_k/dz is the sign-isotype projection; a product of commuting scalars is S3-symmetric. The Lean proves Vandermonde.
+4. wedderburn .md sums the edge rule over all parents; each single edge already gives y_λ (checked at (3,1)), so the sum double-counts.
+
+Items 2-4 put to the owner on cards.
