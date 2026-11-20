@@ -8,7 +8,7 @@ tags:
     - mathlib
     - reorg-2026-10-04
 created_at: 2026-08-24T06:35:58Z
-updated_at: 2026-11-20T20:06:34Z
+updated_at: 2026-11-20T20:22:26Z
 parent: qou-c8p8
 ---
 
@@ -23,3 +23,7 @@ Build theorem: SDP strong duality for PSD cone. Mathlib has Hahn-Banach but not 
 ## 2026-11-20 — dual-Slater direction PROVED (PR #8678); bean stays open
 
 `QOU/Mathlib/SDPStrongDuality.lean`, sorry-free, standard axioms: PSD self-duality, closedness/convexity, compact sublevels; `strong_duality_of_dual_slater` (primal feasible + dual strictly feasible ⇒ primal optimum attained, zero gap) and `no_duality_gap`. Symmetric data. STILL OPEN: primal-Slater direction (dual attainment); discharging `ConfinementSDP.strong_duality` (LP-style data field) and `MathlibExt/SDP.HasStrongDuality` (primal-Slater, over a CommRing).
+
+## 2026-11-20 (later) — primal-Slater direction PROVED (PR #8678)
+
+`strong_duality_of_primal_slater` (needs linearly independent constraints), `exists_optimal_pair` (both Slater ⇒ optimal pair + complementary slackness). `MathlibExt/SDP.HasStrongDuality` is FALSE as stated: `not_forall_hasStrongDuality` (1×1 cost −1, no constraints). `hasStrongDuality_of_slater` proves it for ℝ under symmetric data + independent constraints + dual Slater. STILL OPEN: dropping linear independence; wiring `ConfinementSDP.strong_duality` (LP-style data field).
