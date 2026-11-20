@@ -111,8 +111,16 @@ def main() -> int:
     # If absent, fall back to direct computation with conjugate-pairing.
     chi_cache_path = _pb.witness_path("chi-deuteron-h6.witness.json", HERE)
     cached_chi: dict[tuple, sp.Expr] = {}
+    from canonical_braid_crossings import word_fingerprint  # noqa: E402
     if chi_cache_path.exists():
         cache_doc = json.loads(chi_cache_path.read_text())
+        # Serve the cache only if it was built from THIS ordered word. A
+        # multiset match is not enough (bean qou-4383): chi-deuteron-h6 kept
+        # the superseded intra ordering's characters with a matching multiset.
+        if cache_doc.get("word_fingerprint") != word_fingerprint(deut):
+            print("  chi-deuteron-h6 cache was built from a different word "
+                  "(word_fingerprint mismatch or untagged) — recomputing")
+            cache_doc = {}
         for entry in cache_doc.get("chi_lambda_symbolic", []):
             shape_tup = tuple(entry["partition"])
             cached_chi[shape_tup] = sp.sympify(entry["chi_q_symbolic"], locals={"q": Q})
