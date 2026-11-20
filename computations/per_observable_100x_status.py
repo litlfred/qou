@@ -785,6 +785,16 @@ def _qbeta_ruled_base() -> dict:
         # it as the framework's Q_beta.
         "element_scored": _ELEMENT + " (gamma-gamma-selected nucleon word)",
         "element_is_ruled": False,
+        # Corpus-derived cross-reference (2026-11-20): the CONTENT BLOCKS score a
+        # DIFFERENT element on the same ruled base. `mass-comparison-table.md:33`
+        # and `neutron-qvalue-symbolic.md:53` state Q_beta^{z_D} =
+        # |h^2/2 - h z_D| E0_tower = 0.4491 MeV, i.e. element Delta_S (commit
+        # 72a589b57b), while this row scores nuc11_interleaved (0.6519 MeV).
+        # Both are on main at once. Recorded, NOT resolved: which element is
+        # canonical is an owner decision (bean qou-99qc), and choosing by
+        # residual is forbidden.
+        "content_blocks_element": "delta_S (0.4491 MeV, tower E0; mass-comparison-table.md, neutron-qvalue-symbolic.md)",
+        "element_conflict_open": "qou-99qc",
         "element_ruled_status": "partial",
         "element_ruled_status_rationale": (
             "6/11 letters (the core (sigma_0 sigma_1^-1)^3) are gamma-gamma-"
