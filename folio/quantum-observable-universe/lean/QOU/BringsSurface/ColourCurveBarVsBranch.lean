@@ -53,12 +53,12 @@ def branchSwap (s : K) : K := -s
 
 /-- `barLift` really does invert `q = s²`. -/
 theorem barLift_sq (s : K) (hs : s ≠ 0) : (barLift s) ^ 2 = (s ^ 2)⁻¹ := by
-  unfold barLift
+  change (-s⁻¹) ^ 2 = (s ^ 2)⁻¹
   field_simp
 
 /-- `branchSwap` fixes `q = s²` — it is the other root of the SAME `q`. -/
 theorem branchSwap_sq (s : K) : (branchSwap s) ^ 2 = s ^ 2 := by
-  unfold branchSwap
+  change (-s) ^ 2 = s ^ 2
   ring
 
 /-- **The bar FIXES `z`.**  This is the load-bearing fact.
@@ -98,7 +98,42 @@ quantity is a difference between the two square roots of one `q`, not between
 `q` and `1/q`. -/
 theorem colourCurve_branch_defect (z : K) :
     colourCurve z - colourCurve (-z) = (10 / 27) * z * (4 * z ^ 2 + 3) := by
-  unfold colourCurve
+  change (5 / 27) * (4 * z ^ 3 + 3 * z ^ 2 + 3 * z + 4) -
+      (5 / 27) * (4 * (-z) ^ 3 + 3 * (-z) ^ 2 + 3 * (-z) + 4) =
+    (10 / 27) * z * (4 * z ^ 2 + 3)
   ring
+
+/-- **Branch-even sum of the colour curve (`qou-ndt5`).**
+The sum across the two square-root branches is the even polynomial
+`(10/27) · (3z² + 4)`. -/
+theorem colourCurve_branch_sum (z : K) :
+    colourCurve z + colourCurve (-z) = (10 / 27) * (3 * z ^ 2 + 4) := by
+  change (5 / 27) * (4 * z ^ 3 + 3 * z ^ 2 + 3 * z + 4) +
+      (5 / 27) * (4 * (-z) ^ 3 + 3 * (-z) ^ 2 + 3 * (-z) + 4) =
+    (10 / 27) * (3 * z ^ 2 + 4)
+  ring
+
+/-- **Square-root bar-odd × bar-even identity (`qou-ndt5`).**
+The product of `z(s) = s − s⁻¹` and `s + s⁻¹` is the $q$-variable bar-odd
+factor `s² − (s⁻¹)² = q − q⁻¹`. -/
+theorem zOf_mul_barEven_eq_q_barOdd (s : K) :
+    zOf s * (s + s⁻¹) = s ^ 2 - (s⁻¹) ^ 2 := by
+  change (s - s⁻¹) * (s + s⁻¹) = s ^ 2 - (s⁻¹) ^ 2
+  ring
+
+/-- **Action of `barLift` on the golden-ratio degeneration polynomial (`qou-ndt5`).**
+Under `barLift s = −s⁻¹`, the polynomial `s² + s − 1` transforms by `-s⁻²`. -/
+theorem degeneration_poly_barLift (s : K) (hs : s ≠ 0) :
+    (barLift s) ^ 2 + barLift s - 1 = -(s ^ 2 + s - 1) / s ^ 2 := by
+  unfold barLift
+  field_simp
+  ring
+
+/-- **`barLift` preserves the golden-ratio degeneration locus `s² + s − 1 = 0` (`qou-ndt5`).** -/
+theorem degeneration_locus_barLift_iff (s : K) (hs : s ≠ 0) :
+    (barLift s) ^ 2 + barLift s - 1 = 0 ↔ s ^ 2 + s - 1 = 0 := by
+  rw [degeneration_poly_barLift s hs, div_eq_zero_iff, neg_eq_zero]
+  have hs2 : s ^ 2 ≠ 0 := pow_ne_zero 2 hs
+  exact or_iff_left hs2
 
 end QOU.BringsSurface.ColourCurveBarVsBranch

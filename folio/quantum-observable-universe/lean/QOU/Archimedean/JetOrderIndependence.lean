@@ -189,6 +189,32 @@ theorem not_bound_of_physical_ne_zero {N : ℕ} (h : E.physical N ≠ 0) :
     ¬ Nonempty (SurrealParallelTransportBound E) :=
   fun ⟨PT⟩ => h (PT.physical_archimedean_zero N)
 
+/-- **Non-vacuity on the monodromy channel (`qou-ufm1`).**
+Any non-zero monodromy shadow `E.monodromy N ≠ 0` refutes
+`SurrealParallelTransportBound E`. -/
+theorem not_bound_of_monodromy_ne_zero {N : ℕ} (h : E.monodromy N ≠ 0) :
+    ¬ Nonempty (SurrealParallelTransportBound E) :=
+  fun ⟨PT⟩ => h (PT.monodromy_archimedean_zero N)
+
+/-- **Non-vacuity on the total shadow (`qou-ufm1`).**
+Because `E.shadow N = E.physical N + E.monodromy N`, any non-zero total shadow
+`E.shadow N ≠ 0` refutes `SurrealParallelTransportBound E`. -/
+theorem not_bound_of_shadow_ne_zero {N : ℕ} (h : E.shadow N ≠ 0) :
+    ¬ Nonempty (SurrealParallelTransportBound E) :=
+  fun ⟨PT⟩ => h (@transport_shadow_vanishes E PT N)
+
+/-- **Exact characterisation of `SurrealParallelTransportBound E` (`qou-ufm1`).**
+The parameterised class is inhabited if and only if both the physical and
+monodromy shadows of `E` vanish at every jet order `N`. -/
+theorem surrealParallelTransportBound_iff :
+    Nonempty (SurrealParallelTransportBound E) ↔
+      (∀ N, E.physical N = 0) ∧ (∀ N, E.monodromy N = 0) := by
+  constructor
+  · rintro ⟨PT⟩
+    exact ⟨PT.physical_archimedean_zero, PT.monodromy_archimedean_zero⟩
+  · rintro ⟨hphys, hmono⟩
+    exact ⟨⟨hphys, hmono⟩⟩
+
 end SurrealParallelTransportBound
 
 /-- **Gap-closing reduction — the bridge step (§3b conjectural class).**
@@ -306,7 +332,7 @@ def jetPivots : ℕ → ℚ × ℚ × ℚ := fun _ => (1/4, 2, 1/8)
 
 /-- **GB-elimination certificate at the Reid-1991 base order (PROVED,
     witnessed).**  `∏ pivots = (1/4)·2·(1/8) = 1/16 ≠ 0` — the actual
-    elimination determinant of the canonical Markov-trace jet-Jacobian — so
+    elimination determinant of the canonical trace jet-Jacobian — so
     the order-3 Jacobian has full rank `3` and the three series are
     jet-order independent at the base order. -/
 theorem jetOrder3_certificate : eliminationDet (jetPivots 3) ≠ 0 := by
@@ -340,7 +366,10 @@ def jetJacobianBase : Matrix (Fin 3) (Fin 3) ℚ :=
 /-- The witnessed elimination determinant `det = 1/16 ≠ 0` (matches
     `jetOrder3_certificate`'s `∏ pivots = 1/16`). -/
 theorem jetJacobianBase_det : jetJacobianBase.det = 1 / 16 := by
-  simp [jetJacobianBase, Matrix.det_fin_three]
+  have _ : jetJacobianBase 0 0 = 1 / 4 := rfl
+  have _ : jetJacobianBase 0 1 = -1 := rfl
+  rw [Matrix.det_fin_three]
+  simp [jetJacobianBase]
   norm_num
 
 /-- The base minor is invertible (`det = 1/16 ≠ 0`). -/
@@ -351,7 +380,10 @@ theorem jetJacobianBase_isUnit : IsUnit jetJacobianBase := by
 /-- **Base-order full rank (PROVED, witnessed).**  The base minor is
     invertible, hence has rank `3`. -/
 theorem jetJacobianBase_rank : jetJacobianBase.rank = 3 := by
-  simpa using Matrix.rank_of_isUnit jetJacobianBase jetJacobianBase_isUnit
+  have hu : IsUnit jetJacobianBase := jetJacobianBase_isUnit
+  have hr := Matrix.rank_of_isUnit jetJacobianBase hu
+  have hc : Fintype.card (Fin 3) = 3 := rfl
+  exact hr.trans hc
 
 /-- **Rank-monotonicity principle.**  A rank function that is monotone
     (rank cannot drop when columns are added), bounded by the row count
