@@ -16,7 +16,7 @@ $$
 $$
 
 Moreover, the topological decomposition
-([topological mass](#thm:topological-mass)) descends to $H_n(R, q)$:
+([topological mass](#conj:topological-mass)) descends to $H_n(R, q)$:
 
 $$
   \mathrm{tr}_M\!\bigl(\Phi_{\mathrm{mass}}(\beta)\bigr)
