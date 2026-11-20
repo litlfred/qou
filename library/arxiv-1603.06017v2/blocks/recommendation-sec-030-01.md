@@ -1,1 +1,0 @@
-The number of arguments when calling an automaton should match the number of inputs of that automaton: \begin{lstlisting}[style=cmd] eval invalid "(*\textcolor{blue}{$\$\text{sum10}(x,y,z)$}*)"; \end{lstlisting} \vspace*{-\baselineskip} \begin{lstlisting}[style=err] function sum10 requires 2 arguments : char at 1 : eval invalid "(*$\$\text{sum10}(x,y,z)$*)"; \end{lstlisting}

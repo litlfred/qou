@@ -1,0 +1,1 @@
+Let f : Y −→X be a map of ﬁbered categories. Then fp is a right adjoint of f ∗and, if Y′ Y X ′ X g′ g f f ′ is a 2-cartesian diagram of ﬁbered categories, there is an isomorphism of functors g∗fp −→f ′ pg′∗: Mod OY −→Mod OX ′ If f is aﬃne then fp(QCoh Y) ⊆QCoh X and (fp)| QCoh Y : QCoh Y −→QCoh X is right adjoint to f ∗: QCoh X −→QCoh Y.

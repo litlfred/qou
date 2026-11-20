@@ -1,0 +1,1 @@
+Let M be an abelian category, and let M′ ⊆M be a thick abelian subcategory that has enough projectives relative to M. Let M ∈C(M) be a complex with bounded above cohomology, such that Hi(M) ∈M′ for all i. Then there is a quasi-isomorphism ρ : P →M in Cstr(M), where P ∈C−(M′), each P i is projective in M, and sup(P) = sup(H(M)). Derived Categories | Amnon Yekutieli |

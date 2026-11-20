@@ -1,1 +1,0 @@
-Over thirty years ago Faddeev suggested [@Fa2] that in three-dimensional space the $O(3)$ sigma model, modified by the addition of a Skyrme term, should have interesting string-like topological solitons stabilized by the integer-valued Hopf charge.

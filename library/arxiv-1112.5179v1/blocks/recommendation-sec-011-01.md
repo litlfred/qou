@@ -1,1 +1,0 @@
-Just as the SCFT $T_M$ is independent of any chosen triangulation of $M$ by virtue of 3d mirror symmetry --- with different triangulations leading to equivalent UV Lagrangian descriptions --- the index $\mathcal{I}_M$ must also be a topological invariant of $M$.

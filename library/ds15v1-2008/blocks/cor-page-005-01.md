@@ -1,0 +1,1 @@
+lee) 1 lee) So 2"q" Pale, a) = Sead (cx, q) (1.2.8) n=0 £4) oo r=0 . n mc . 2) 8 (a 2) _ (= £9; vi fo} > ag’ (-4 Pry (x 2) (1 2 9) da 1 (4. 0)nBal@.@) = Toray Caney rea 2. =0 , r=0 , ’ oe _» OO nt gt (r+1)/2 1 an n(n+1 2 (_ ( XQ) oo vg (— )r aq xq a,(x,q) (1.2.10) dX UYnBu(a, 4) = (XQ) oo dX (—2q)r (

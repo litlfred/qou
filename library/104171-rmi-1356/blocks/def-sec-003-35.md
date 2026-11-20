@@ -1,0 +1,1 @@
+Retain the notation and conventions from Definition 4.29. We let the topological handlebody blob algebra (in n strands and of genus g) Bltop g;n.c/ be the subal- gebra of TLtop g;n.c/ spanned by all elements containing only positive coils.

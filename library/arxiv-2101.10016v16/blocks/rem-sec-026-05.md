@@ -1,0 +1,1 @@
+The construction of generalised cobounderies on Rep(A) of 27.4 extends to the case where A is a discrete weak quasi bialgebra, and the twist between A and Aop satisfies Q ∈ M(A ⊗ A). In this case, we also see that all generalised coboundaries of Rep(A) are of this form, via Tannaka-Krein duality. We introduce twist deformation of generalised coboundaries.

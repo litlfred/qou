@@ -1,1 +1,0 @@
-These two-singularity tiles arise naturally during the change of ﬁbration of Figure 20 in the following way: as we perform the change of ﬁbration in Figure 20 we must pass through a tile having six sides and a two-singularity singular leaf.

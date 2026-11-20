@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1203.6551v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a8e84f8ed63dbccaa746be61f166bedf3f49ac9e57743dbea492c5cfdd606b9f",
   "file": "1203.6551v1.pdf"
  },
  "provenance": {
-  "title": "On the number of hyperbolic 3 -manifolds of a given volume Craig Hodgson and Hidetoshi Masai",
+  "title": "On the number of hyperbolic 3-manifolds of a given volume",
   "authors": "Craig Hodgson and Hidetoshi Masai",
   "arxiv": {
    "id": "1203.6551",
@@ -16,46 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "recommendation": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "(Note that any symmetry of $m003$ must preserve the homologically trivial longitude $(-1,2)$, hence must also preserve the orthogonal $(1,0)$ curve.)",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-3-dehn-filling-on-the-figure-eight-knot-compleme.md",
-   "section_title": "Dehn filling on the figure eight knot complement and its sister",
-   "pages": "8-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This question also arises in the subject of \"Quantum Chaos\", and it is conjectured that the successive gaps should be randomly distributed according to a Poisson distribution (see [@sarnak], [@rudnick], [@EMM]).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-008-9-some-open-questions.md",
-   "section_title": "Some Open Questions",
-   "pages": "23-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

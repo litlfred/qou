@@ -1,1 +1,0 @@
-Since fermions and complex Higgs mesons in the quaternionic Weinberg-Salam theory are assumed to belong to them, the extra fields should be promoted to a single Abelian gauge field which couples to U(1) charge a of the quaternionic fields.

@@ -1,1 +1,0 @@
-Grad [ u [ x , y ] , {x , y } ] , {x , 0 , 2^(1/4) −1} , {y , Sqrt [ q^2 −x ^2] , Sqrt [ Csc [ Pi /8]^2 −( x + Cot [ Pi / 8 ] ) ^ 2 ] } ] adg [x_] = Abs [D[ g [ x ] , {x , 4 } ] ] ; ((10^6) ( adg [2^(1/4) −1] (2^(1/4) −1)^5)/180)^(1/4) This time we ﬁnd that we must take n = 150 in Simpson’s formula.

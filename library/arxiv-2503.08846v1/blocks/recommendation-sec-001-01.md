@@ -1,1 +1,0 @@
-The same knot or link can give origin to a pair of apparently distinct knot diagrams, so one could be interested in introducing an equivalence relation on the diagrams, namely any two diagrams should be equivalent if they come from projections of two homeomorphic (3D-equivalent) knots or links.

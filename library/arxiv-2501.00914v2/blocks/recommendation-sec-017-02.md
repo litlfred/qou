@@ -1,1 +1,0 @@
-\begin{proof} Since the companion torus $\partial \nu(C)$ in $S^3 \setminus \nu(K)$ compresses in $S^3_r(K)$, the result $Z$ of $r$-surgery on the pattern $P \subset S^1\times D^2$ must have compressible boundary.

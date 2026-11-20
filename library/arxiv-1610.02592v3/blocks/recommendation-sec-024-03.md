@@ -1,1 +1,0 @@
-If $\varphi$ is parabolic, it acts on each horosphere centred at $p$ like a Euclidean fixed-point-free orientation-preserving isometry on $\matR^{n-1}$: this must be a translation when $n\leqslant 3$.

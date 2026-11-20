@@ -1,0 +1,1 @@
+Notice that the work in this section uses the braid foliation of Ri. If we had braid foliations on hand as a tool, during the basic construction, we could have arranged at that time for each Ri to be a tab. ♦

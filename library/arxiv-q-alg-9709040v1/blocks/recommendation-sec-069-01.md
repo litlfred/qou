@@ -1,1 +1,0 @@
-In order to multiply several (say, m, where m ≥2) elements of the quantized algebra we should put these elements at m ﬁxed points in increasing order on R and take the sum over all possible graphs with m vertices of the second type of corresponding expressions with appropriate weights.

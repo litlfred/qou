@@ -1,1 +1,0 @@
-The pair of vectors, iϵ1 and iϵ2, form the generating space (1-vectors) of the Clifford algebra, and ϵ3 = ϵ1ϵ2 is a bi-vector However, readers should note that these objects behave more symmetrically than do the Pauli matrices under complex con- jugation.

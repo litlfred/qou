@@ -1,1 +1,0 @@
-Firstly, we have diamond operators ⟨w⟩for every w ∈(OK/n)×, which deﬁne an action of (OK/n)× on YK,1(n); this even extends to an action of the narrow ray class group modulo n, although we shall not use this.

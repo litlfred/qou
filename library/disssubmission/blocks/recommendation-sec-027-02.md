@@ -1,1 +1,0 @@
-Then from the formula for the specialization in corollary 4.10 one deduces that the semisimpliﬁcation of the nearby cycles must have the form Ψ(δΘη)ss = δΘs ⊕γ for some perverse skyscraper sheaf γ supported on the singular point e of the special ﬁbre.

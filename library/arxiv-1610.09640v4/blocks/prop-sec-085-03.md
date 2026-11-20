@@ -1,0 +1,1 @@
+Suppose A u−→B v−→C are homomorphisms of DG rings, L ∈ D(A), M ∈D(B) and N ∈D(C) are DG modules, λ : L →M is a nondegenerate forward morphism in D(A) over u, and µ : M →N is a nondegenerate forward morphism in D(B) over v. Then µ ◦λ : L →N is a nondegenerate forward morphism in D(A) over v ◦u.

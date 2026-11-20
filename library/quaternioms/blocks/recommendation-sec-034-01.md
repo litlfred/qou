@@ -1,1 +1,0 @@
-Any complex, non-associative operation must be decomposed into a sequence of smaller, elementary steps, where each step occurs entirely within a single, well-behaved associative (quaternionic) subalgebra.

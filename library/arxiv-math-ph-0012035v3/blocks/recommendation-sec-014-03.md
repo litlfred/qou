@@ -1,1 +1,0 @@
-Now we should decompose $C$ and next $S$ into pieces so that one can put from the pieces the slices of that are topologically trivial, and this way they are subject to the standard non-Abelian Stokes theorem.

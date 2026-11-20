@@ -1,0 +1,1 @@
+(a) The function B1 ˆf (0)(ξ, q) has simple poles at ξ ∈qZ with residue R(m, q) := Resξ=q−mB1 ˆf (0)(ξ, q) dξ 2πiξ = −(q; q)2 ∞ m X ℓ=0 qm (q; q)ℓ(q; q)m−ℓ . (270) (b) The function f (0)(t, q) has simple poles at t ∈λ−1 2 qZ with residue Rest=q−mλ−1 2 f (0)(t, λ2, q) dt 2πit = f (−1)(q−mλ−1 2 , q) . (271)

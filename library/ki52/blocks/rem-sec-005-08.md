@@ -1,0 +1,1 @@
+Similarly as in Remark 4.4, Proposition 4.6 can naturally be extended to the case where the holomorphic function ψ(z) depends on N, if ψ(z) uniformly converges to ψ0(z) as N →∞, and ψ0(z) satisﬁes the assumption of the proposition, and |Ψ(z)| is bounded by a constant which is independent of N. Similarly as in Remark 4.4, we can also choose ε independently of N in this case.

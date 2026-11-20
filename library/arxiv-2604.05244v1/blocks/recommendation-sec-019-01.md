@@ -1,1 +1,0 @@
-For a drive frequency $\Omega/2\pi=10\;\mathrm{GHz}$ and $A=50$, one has $hf/k_B\approx 0.48\;\mathrm{K}$ and $\kappa_{50}=(50/2)^{1/3}\approx 2.9$, giving $T_{\rm cross}\sim hf\kappa_A/k_B\approx 1.4\;\mathrm{K}$---well above typical dilution-fridge base temperatures, confirming that the Airy edge should be experimentally accessible.

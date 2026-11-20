@@ -1,1 +1,0 @@
-We shall assume that the transmission efficiency is the same for all fiber connections and can be written under the form $\eta_{t}=\exp\left(-L_{0}/L_{att}\right)$ where $L_{att}$ is the attenuation length, typically of the order of $22$km (corresponding to losses of $0.2$dB/km).

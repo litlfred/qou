@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1208.3475v2/blocks/prop-sec-007-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "prop-sec-007-01.md",
+  "derivedFrom": "library/arxiv-1208.3475v2/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1208.3475v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "computational-claim",
+    "claim_domain": "science",
+    "evidence_kind": "computational-simulation",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper computational simulation in sections/sec-007-41-localization-length.md (p. 6-7)",
+    "claim_id": "arxiv-1208.3475v2#prop-sec-007-01"
+  }
+}

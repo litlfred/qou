@@ -1,0 +1,1 @@
+In the Temperley-Lieb theory we obtain unitary (in fact real orthogonal) recoupling transformations when the bracket variable A has the form A = eiπ/2r for r a positive integer. Thus we obtain families of unitary representations of the Artin braid group from the recoupling theory at these roots of unity.

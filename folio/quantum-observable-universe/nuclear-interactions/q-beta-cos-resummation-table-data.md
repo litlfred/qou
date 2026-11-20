@@ -14,4 +14,4 @@
 | residual (Form A) | $+1677.6$ ppm | — |
 | residual (Form A, cos, D) | $+856.8$ ppm | $1.96\times$ tighter |
 
-*Until 2026-10-10 this table was convention C: $z \approx 0.49932$, $\alpha \approx -0.05234$, $\cos\alpha \approx 0.99863$, $\mathfrak{Q}_\beta^{A,\cos} \approx 0.78257$ MeV, residual $+1677.5 \to +305.7$ ppm ($5.49\times$).*
+*For comparison, under the alternative Convention-C parameter $z_C \approx 0.49932$, the angle is $\alpha \approx -0.05234$ ($\cos\alpha \approx 0.99863$), yielding $\mathfrak{Q}_\beta^{A,\cos} \approx 0.78257$ MeV ($+305.7$ ppm).*

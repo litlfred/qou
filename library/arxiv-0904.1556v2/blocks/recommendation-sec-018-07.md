@@ -1,1 +1,0 @@
-Next, we should use this unitary operator for right-isospin states: $$\begin{array}{ccl} {\mathbb C}\otimes {\mathbb C}^2 & \stackrel{\sim}{\longrightarrow} & \Lambda^{\rm ev}{\mathbb C}^2 \\ u_R & \mapsto & u \wedge d \\ d_R & \mapsto & 1 . \end{array}$$ Why?

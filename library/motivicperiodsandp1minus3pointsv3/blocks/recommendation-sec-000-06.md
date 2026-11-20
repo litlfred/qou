@@ -1,1 +1,0 @@
-Identifying Tx(P1(C)) with C, one obtains natural tangent vectors → 10 and − → 11 at the points 0 and 1 respectively, and a canonical path, or ‘droit chemin’ dch ∈πtop 1 (X, → 10, − → 11) 4It shall also be written πdR 1 (X, x, y) but does not depend on the choice of base points.

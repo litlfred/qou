@@ -13,9 +13,12 @@
   "pageStart": 30,
   "pageEnd": 30,
   "contains": [
-    "library/m4-24/blocks/prose-page-030"
+    "library/m4-24/blocks/prose-page-030",
+    "library/m4-24/blocks/rem-page-030-01",
+    "library/m4-24/blocks/rem-page-030-02",
+    "library/m4-24/blocks/rem-page-030-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/m4-24",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/m4-24",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/m4-24/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/m4-24/manifest.jsonld",
   "provenance": "ingested"
 }

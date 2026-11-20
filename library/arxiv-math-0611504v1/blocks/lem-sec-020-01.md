@@ -1,0 +1,1 @@
+(See [25], p. 469) Let z′ be a small deformation of z0 producing (W, L), and mj be a meridian of each link component Lj. Then there exist ﬂattenings f ′′ for the deformed trian- gulation (T, b, w′) such that the weight γ(f ′′) associated to the collection of log-branches of T ′′ = (T, H, b, w′, f ′′, c) satisﬁes γ(f ′′)(mj) = 0 for all j. QUANTUM HYPERBOLIC GEOMETRY

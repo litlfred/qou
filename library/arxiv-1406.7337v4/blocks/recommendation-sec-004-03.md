@@ -1,1 +1,0 @@
-Since $\beta$ contains two disjoint complete subwords, then it must be that each of the generators $\sigma_{1}, \ldots, \sigma_{n-1}$ of $B_{n}$ must occur at least twice in (two distinct syllables of) the braid word.

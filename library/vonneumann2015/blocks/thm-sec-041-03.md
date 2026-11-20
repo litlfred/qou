@@ -1,0 +1,1 @@
+With notation as above, if the function γ 7→xγ ∈L∞(X, µ) is such that P γ xγuγ, interpreted as a matrix of operators as in section 11.2, deﬁnes a bounded operator, then that operator is in M = L∞(X, µ) ⋊Γ.

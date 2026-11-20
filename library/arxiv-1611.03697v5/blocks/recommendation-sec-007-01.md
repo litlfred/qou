@@ -1,1 +1,0 @@
-The Poisson bracket on $\bC[\bT_-]$ is given on twisted characters by \begin{equation} \label{poisson2}\{x_{\alpha}, x_{\beta}\}= \<\alpha,\beta\>\cdot x_{\alpha}\cdot x_{\beta}.\end{equation} From now on we shall denote the twisted torus $\bT_-$ simply by $\bT$.

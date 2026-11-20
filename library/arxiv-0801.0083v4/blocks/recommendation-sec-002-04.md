@@ -1,1 +1,0 @@
-Another convention that we shall adopt from here on is that we denote the composition in the local categories $\gerbe{G}(U)$ of a prestack $\gerbe{G}$ by ``$\circ$'', and not by ``$*$'' as we did up to here.

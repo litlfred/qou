@@ -1,0 +1,1 @@
+We call a path γ : (−t, t) →C∗admissible if there exists an ϵ > 0 such that (1) γ(x) = x for x ∈(−t, −ϵ) ∪(ϵ, t), (2) image of γ|(−t+ϵ,t−ϵ) lies in the disc D(t −ϵ) of radius t −ϵ , (3) γ lies completely inside the upper half plane. FLOER COHOMOLOGY AND HIGHER MUTATIONS γ Tγ Cn C πm Figure 2. Torus segment Tγ over a path γ R γ Figure 3. Admissible path γ

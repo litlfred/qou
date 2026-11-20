@@ -1,1 +1,0 @@
-The 2022 CODATA least-squares adjustment (LSA) of the fundamental physical constants by the Task Group on Fundamental Constants (TGFC) is the most recent in a series of compilations of recommended values that arguably began over 90 years ago by Birge (1929).

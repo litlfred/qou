@@ -1,1 +1,0 @@
-In the dumbbell channel, the handlebody sum \eqref{eq:handlebody sum statistics} should include the contribution from the mapping class $\gamma = \mathbb{S}\circ \mathbb{S}\circ \mathbb{F}\circ \mathbb{B}^2 \circ \mathbb{F}$, whose VTQFT diagram is the linked dumbbell shown in figure \ref{fig:twopartitionfunctions} (right).

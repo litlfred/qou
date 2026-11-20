@@ -1,0 +1,1 @@
+The relationship between the multiplier discrete algebra associated to the forgetful functor of Rep(Uq(g)) and Uq(g) has been considered in detail by Neshveyev and Tuset in Sect. 2 in [141] for q > 0, and it beautifully gives a connection between two

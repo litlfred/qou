@@ -1,1 +1,0 @@
-SUq(2) symmetry in exited collective bands In the case of excited bands one needs an appropriately formulated q-rotator deﬁnition which should take into account the circumstance that the rotational en- ergy levels are built on a given excited vibrational state16.

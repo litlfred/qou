@@ -1,0 +1,107 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0408078v2",
+ "source_sha256": "b632eb5e9b7a1753",
+ "brief": "A basis for the full Homfly skein of the annulus — A basis, denoted {Qλ,µ}, for the full Homﬂy skein of the annulus C was introduced in [18], where λ and µ are partitions of integers n and p into k",
+ "extended": "**A basis for the full Homfly skein of the annulus**\n\n*RICHARD J. HADJI 1 and HUGH R. MORTON*\n\n27 pp, 17 sections.\n\n**Abstract.** A basis, denoted {Qλ,µ}, for the full Homﬂy skein of the annulus C was introduced in [18], where λ and µ are partitions of integers n and p into k and k∗parts respectively. The basis consists of eigenvectors of the two meridian maps on C; these maps are the linear endomorphisms of C induced by the insertion of a meridian loop with either orientation around a diagram in the annulus. In this paper we give an explicit expression for each Qλ,µ as the determinant of a (k∗+ k) × (k∗+ k) matrix whose entries are simple elements hn, h∗ n in the skein C. In the case p = 0 (µ = φ) the deter- minant gives the Jacobi-Trudy formula for the Schur function sλ of N variables as a polynomial in the complete symmetric functions hn of the variables, [12].\n\n**Outline.** Front matter; The skein models; The plane; The Hecke algebras and extended variants; The annulus; The annulus with two boundary points; Skein involutions; Some basic elements in the annulus; The meridian maps of the skein C; Relations between C and A; Matrix-based calculations; Notation; Calculations; Eigenvectors of the meridian maps; Construction of Q,; Properties of the basis elements Q,; (1,1)-tangle invariants\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.1: Let w be any index vector. Then Aw = det \u0012 h∗ ⊣ h ⊣ \u0013 w ∈C satisﬁes ¯ϕ(Aw) = cwAw, and hence also ϕ(Aw) = cwAw, for some cw ∈Λ.\n- Theorem 3.4: The element Qλ,µ ∈C deﬁned above is an eigenvector of the meridian map ϕ, with eigenvalue sλ,µ.\n- Theorem 3.5: The basis elements Qλ,µ of C have the property that the prod- uct of any two is an integer linear combination of basis elements with non- negative coeﬃcients.\n- Corollary 1.3: We can write sn−1[n]hn = hn−1gn, where hn = an/ϕs(an) is the true idempotent.\n- Corollary 2.2: For each j ≥1 we have det\n- Corollary 2.5: We have k∗+k−1 X j=1 s2j det \u0012 L ⊣ l ⊣ \u0013 + det \u0012 R ⊣ r ⊣ \u0013 = k+k∗ X j=1 s2j−2 det",
+ "tokens": {
+  "brief": 49,
+  "extended": 505
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-000-the-skein-models",
+   "title": "The skein models",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-001-the-plane",
+   "title": "The plane",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-the-hecke-algebras-and-extended-variants",
+   "title": "The Hecke algebras and extended variants",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-the-annulus",
+   "title": "The annulus",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-the-annulus-with-two-boundary-points",
+   "title": "The annulus with two boundary points",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-skein-involutions",
+   "title": "Skein involutions",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-006-some-basic-elements-in-the-annulus",
+   "title": "Some basic elements in the annulus",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-007-the-meridian-maps-of-the-skein-c",
+   "title": "The meridian maps of the skein C",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-008-relations-between-c-and-a",
+   "title": "Relations between C and A",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-009-matrix-based-calculations",
+   "title": "Matrix-based calculations",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-notation",
+   "title": "Notation",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-011-calculations",
+   "title": "Calculations",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-012-eigenvectors-of-the-meridian-maps",
+   "title": "Eigenvectors of the meridian maps",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-013-construction-of-q",
+   "title": "Construction of Q,",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-014-properties-of-the-basis-elements-q",
+   "title": "Properties of the basis elements Q,",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-015-11-tangle-invariants",
+   "title": "(1,1)-tangle invariants",
+   "pages": "25-27"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

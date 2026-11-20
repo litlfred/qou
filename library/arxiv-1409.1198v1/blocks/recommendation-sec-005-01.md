@@ -1,1 +1,0 @@
-By thinking of a quantum group $\mathbf{U}_q(\mf{g})$ as a linear category in this way, we are naturally led to consider a categorification of $\mathbf{U}_q(\mf{g})$ given by the structure of a 2-category and our decategorification map must reduce a linear 2-category to a linear 1-category.

@@ -1,1 +1,1 @@
-Let (A,∗, S) be a discrete C
+Let (A,∗, S) be a discrete C ∗ -algebra. Then every representation is equivalent to a C ∗ -representation. In particular if A has the structure of a Ω-involutive (unitary) weak quasi-Hopf algebra then Reph (A) (Rep+(A)) is rigid and the forgetful functor Reph(A) → Rep(A) (Rep+(A) → Rep(A)) is a tensor equivalence.

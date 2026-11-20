@@ -79,6 +79,7 @@ def get_ground_state_partition(Z, N, S):
     return valid_partitions[0] if valid_partitions else None
 
 # E0 universal scale factor (MeV) - extracted from H_3 / Q_beta normalization
+mp.mp.dps = max(50, mp.mp.dps)
 E0 = mp.mpf('4.2045')
 
 def evaluate_occupancy_gap(isotope, Z, N, S, ame_mev):

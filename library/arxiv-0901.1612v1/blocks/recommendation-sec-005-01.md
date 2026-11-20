@@ -1,1 +1,0 @@
-Our job is to find the preimage $\mathbb L'$ in $S^1 \times S^1 \times S^1$ of the regular value $i$ of the map $g_{L'}$, which means we must find the points where the vector from the green $\mathrm{\wp}_1(zx^{-1})$ to the red $\mathrm{\wp}_1(yx^{-1})$ points straight up.

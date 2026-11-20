@@ -1,1 +1,1 @@
-LetA be a noetherian locally ﬁnite N-gradedk-algebra. If A is
+LetA be a noetherian locally ﬁnite N-gradedk-algebra. If A is graded FBN, or A has enough normal elements, then GKdimM = Kdim M ∈ N for every ﬁnitely generated left or right graded A-moduleM . Here are some other results we prove: 1. Gabber’s Maximality Principle (Theorem 2.19). 2. Existence of double-Ext spectral sequence (Proposition 1.7).

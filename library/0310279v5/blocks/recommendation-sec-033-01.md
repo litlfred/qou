@@ -1,1 +1,0 @@
-If the foliation of PA contains only essential b–arcs, then the closed braid must wrap around the braid axis (perhaps with many strands traveling along together, say t strands in all) in between the two pierce-points v and w.

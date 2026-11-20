@@ -1,0 +1,1 @@
+There exist R > 0, s0 ∈(0, 1 2), and σ > 0 such that for any Λ > 2, s ∈[0, s0), BΛr ⊂( 5 10, 6 10), r ∈(0, Λ−1R) and ϕ ∈C∞ 0 (Br) we have Z g′ iωi j|D| 2 g′ j |D| 2 ϕ ≲∥Is|D| 2 ϕ∥( 1−2s ,1) rσ + ∥|D| 2 g′∥ (2,∞),BΛr + Λ−θ∥|D| 2 g′∥(2,∞),R ∞ X k=1 2−θk ∥|D| 2 g′∥(2,∞),B2kΛr .

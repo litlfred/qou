@@ -1,1 +1,0 @@
-In this case there are necessarily relations: | 〉A1 = a| 〉A1 | 〉A1 = b| 〉A1 + c| 〉A1 If we assume that the bracket is invariant under the ﬁrst of the regular isotopy moves, we can compute: | 〉A1 = bc| 〉A1 + (b 2+c 2)| 〉A1 + bc| 〉A1 to obtain the consistency equations: bc = 1 abc + b2 + c2 = 0 We must also check the second regular isotopy move.

@@ -1,0 +1,1 @@
+If (Qt)t≥0 is a smooth family of ideal tetrahedra with dihedral angles xt, yt, zt such that x0, y0 ∈(0, π); z0 = 0 and dzt dt |t=0 > 0, then dV dt |t=0 = +∞. Proof Simply check that the right hand side of (5) goes to 0 as t goes to 0. We call this situation simple degeneracy because the limiting triangle has only one vanishing angle (two of its vertices are therefore collapsed).

@@ -1,1 +1,0 @@
-That said, we shall assume in the following that Theorem [\[thomatheorem\]](#thomatheorem){reference-type="ref" reference="thomatheorem"} is already known, and use it as the starting point of our new results.

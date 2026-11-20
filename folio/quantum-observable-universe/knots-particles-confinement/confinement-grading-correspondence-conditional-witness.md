@@ -1,4 +1,4 @@
-## Single-conjecture status of the upstream class
+## Conditional dependence on the upstream grading identification
 
 The Brundan–Kleshchev isomorphism is proved in \cite{brundankleshchev2009} for abstract algebras over a field. What remains conjectural is the identification of the QOU shadow-price ordering on knot-operator energies with the KLR $\mathbb{Z}$-grading on the cyclotomic quotient. This identification is precisely the content of the upstream conjecture.
 

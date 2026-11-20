@@ -1,0 +1,363 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1904.05612v3",
+ "source": {
+  "file": "1904.05612v3.pdf",
+  "sha256": "49de771ab5b79489a1ad2a6dec647bf257c3305864c7c6c9457a467b85ce0103",
+  "bytes": 253633,
+  "pages": 15,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1904.05612",
+   "version": "3",
+   "primary_class": "math.OA",
+   "stamp_date": "27 Jul 2020"
+  },
+  "doi": null,
+  "title": "ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS",
+  "authors_raw": "KESHAB CHANDRA BAKSHI AND VED PRAKASH GUPTA",
+  "title_lines": [
+   "ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR",
+   "SUBFACTORS"
+  ],
+  "abstract": "We prove that a regular subfactor of type II1 with \ufb01nite Jones index always admits a two-sided Pimsner-Popa basis. This is preceded by a pragmatic revisit of Popa\u2019s notion of orthogonal systems.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20200727213437-04'00'"
+  },
+  "title_raw": "ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS 1. Introduction Let N \u2282M be a unital inclusion of von Neumann algebras equipped with a faithful normal conditional expectation E from M onto N . Then, a \ufb01nite set B := { \u03bb 1 , . . . , \u03bb n } \u2282 M is called a left Pimsner-Popa basis for M ov",
+   "outline": "1. Introduction",
+   "text": "ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Pimsner-Popa bases and systems",
+   "page": 3,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Pimsner-Popa systems",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Examples of Pimsner-Popa systems",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Generalized Weyl group and orthonormal systems",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "Some useful properties related to Pimsner-Popa systems",
+   "page": 9,
+   "source": "outline",
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Regular subfactor and two-sided basis",
+   "page": 10,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 15,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 353,
+   "n_words": 53,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 7131,
+   "n_words": 1258,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-2-pimsner-popa-bases-and-systems",
+   "number": "2",
+   "title": "Pimsner-Popa bases and systems",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 361,
+   "n_words": 69,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-21-pimsner-popa-systems",
+   "number": "2.1",
+   "title": "Pimsner-Popa systems",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 7753,
+   "n_words": 1653,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-22-examples-of-pimsner-popa-systems",
+   "number": "2.2",
+   "title": "Examples of Pimsner-Popa systems",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3674,
+   "n_words": 713,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-23-generalized-weyl-group-and-orthonormal-system",
+   "number": "2.3",
+   "title": "Generalized Weyl group and orthonormal systems",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2583,
+   "n_words": 454,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-24-some-useful-properties-related-to-pimsner-pop",
+   "number": "2.4",
+   "title": "Some useful properties related to Pimsner-Popa systems",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3107,
+   "n_words": 688,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-3-regular-subfactor-and-two-sided-basis",
+   "number": "3",
+   "title": "Regular subfactor and two-sided basis",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 12367,
+   "n_words": 2604,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 2854,
+   "n_words": 426,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 40183,
+  "furniture_lines_stripped": 0
+ }
+}

@@ -1,1 +1,0 @@
-4: The new decomposition is in terms of untwisted and unbraided trinions and braids connecting them. pointed out in [3], a noiseless subsystem (or nearly noiseless) in a background independent theory means that there are degrees of freedom that are noiseless un- der the Planckian evolution A evol and therefore should appear in the low energy theory.

@@ -1,1 +1,0 @@
-We cannot impose local invariance on ${\cal{L}}_{ext}$ and ${\cal{L}}^0_{QCD}$ separately : it must be done on ${\cal{L}}_{ext}+{\cal{L}}^0_{QCD}$, being the $\ell_\mu=v_\mu+a_\mu$ and $r_\mu=v_\mu-a_\mu$ the analogs of gauge fields.

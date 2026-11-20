@@ -1,1 +1,0 @@
-Another way of thinking about this is that FZ is trying to be the power series K/Q but, since Q vanishes at the origin, one must subtract some terms from K to cancel whatever factor of Q vanishes at the origin.

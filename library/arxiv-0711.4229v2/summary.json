@@ -1,0 +1,62 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0711.4229v2",
+ "source_sha256": "2e6cc61069016627",
+ "brief": "MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK INVARIANTS — In this paper we give a re-normalization of the Reshetikhin-Turaev quantum invariants of links, by modiﬁed quantum dimensions.",
+ "extended": "**MODIFIED QUANTUM DIMENSIONS AND RE-NORMALIZED LINK INVARIANTS**\n\n*NATHAN GEER, BERTRAND PATUREAU-MIRAND, AND VLADIMIR TURAEV*\n\n15 pp, 8 sections.\n\n**Abstract.** In this paper we give a re-normalization of the Reshetikhin-Turaev quantum invariants of links, by modiﬁed quantum dimensions. In the case of simple Lie algebras these modiﬁed quantum dimensions are proportional to the usual quantum dimensions. More interestingly we will give two examples where the usual quantum dimensions vanish but the modiﬁed quantum dimensions are non-zero and lead to non-trivial link invariants. The ﬁrst of these examples is a class of invariants arising from Lie superalgebras previously deﬁned by the ﬁrst two authors. These link invariants are multivariable and generalize the multivariable Alexander polynomial. The second example, is a hierarchy of link invariants arising from nilpotent representations of quantized sl(2) at a root of unity. These invariants contain Kashaev’s quantum dilogarithm invariants of knots.\n\n**Outline.** Front matter; 1 Introduction; 2 Ribbon Ab-categories; 3 The invariant F' of closed ribbon graphs; 4 The quasi-functor F'; 5 Properties of dJ and F'; 6 Examples; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: Let L ∈LA(J) and V be the color of an edge of L belonging to A(J). Cutting this edge, we obtain a colored (1,1)-ribbon graph TV whose closure is L.\n- Theorem 10: The invariant F ′ : LA →F extends naturally to a F-bilinear monoidal quasi- functor F ′ : RibA →HC by the formula F ′(T )(g) = F ′(trRibC(T ◦cg)) where T ∈RibA(V, W), g\n- Theorem 36: The invariant F ′ restricted to framed links colored with typical modules is equal to the colored Alexander invariant ΦN L .\n- Proposition 18: Let U, V, W ∈Ob(C) be such that W ∼= U ⊗V . Let L be a C-colored link, such that a component of L is colored by W.\n- Proposition 19: Let L be an element of LA(J) with a circle component colored by W ∈Ob(C). If W is the only color of L in A(J), then we additionally assume that W ∗∈A(J) and S′(W, W ∗)̸ = 0.\n- Proposition 20: If L ∈LA(J), L+ ∈LOb(C), then the disjoint union L ⊔L+ belongs to LA(J) and F ′(L ⊔L+) = F ′(L) F(L+).",
+ "tokens": {
+  "brief": 47,
+  "extended": 544
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-ribbon-ab-categories",
+   "title": "Ribbon Ab-categories",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-3-the-invariant-f-of-closed-ribbon-graphs",
+   "title": "The invariant F' of closed ribbon graphs",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-003-4-the-quasi-functor-f",
+   "title": "The quasi-functor F'",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-004-5-properties-of-dj-and-f",
+   "title": "Properties of dJ and F'",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-005-6-examples",
+   "title": "Examples",
+   "pages": "11-15"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "15-15"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

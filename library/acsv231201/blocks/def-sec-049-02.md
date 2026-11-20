@@ -1,0 +1,1 @@
+For any branch y(x) = Cxα(1+o(1)) of Q(x, y) = 0 as x →0 we have α , −ˆr ˆs and for any branch x(y) = C′yβ(1 + o(1)) of Q(x, y) = 0 as y →0 we have β , −ˆs ˆr. When Assumption 9.2 holds we can be very explicit about the behavior of the height function near the coordinate axes.

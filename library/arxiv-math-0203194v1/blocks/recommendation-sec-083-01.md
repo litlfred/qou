@@ -1,1 +1,0 @@
-Any element $a+bi+cj+dij$ of finite order in the congruence subgroup $SL_1(\mathcal{B})(2)$ of level two must have reduced trace $2a=\pm 2$ and reduced norm $a^2+b^2-3c^2-3d^2=1$; it is easy to see that the only such elements are $\pm 1$, which implies the first assertion.

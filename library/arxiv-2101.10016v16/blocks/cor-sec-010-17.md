@@ -1,1 +1,1 @@
-The following are equivalent for an antipode (S, α, β),
+The following are equivalent for an antipode (S, α, β), a) S commutes with ∗, b) S −1 commutes with ∗, c) S (a) = ωaω−1, a ∈ A. If these conditions hold then ω ∗ω and S(ω)ω are central. We study the dependence of the element ω introduced in Prop. 11.16 on twisting.

@@ -1,0 +1,1 @@
+The cycle of events does not begin with any of the follow- ing, or with any other sequences equivalent to these under symmetries: (6.2.1) ( l - 4 Γ , ( l - 4 ) - \ (6.2.2) (2-3Γ,(2-3Γ, (6.2.3) (δiΓMftiΓ 1, (6.2.4) bx,{bxY x orψxy\bx.

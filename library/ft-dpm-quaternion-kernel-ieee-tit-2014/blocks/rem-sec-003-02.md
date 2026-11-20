@@ -1,0 +1,1 @@
+The quaternion product deﬁned in (2) distributes over the sum, i.e. ∀p, q,r ∈H p(q + r) = pq + pr (p + q)r = pr + qr. It is also possible to express the quaternion multiplication using the basis expansion representation, that is, (a11 + b1i + c1 j + d1k)(a21 + b2i + c2 j + d2k), and applying the multiplication rule i2 = j2 = k2 = i jk = −1.

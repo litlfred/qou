@@ -1,1 +1,0 @@
-Since x is an odd element, we must deﬁne the graded ring structure by K(C; c) := C ⊗K[x], where K[x] is the strongly commutative graded polynomial ring from Example 3.1.23, on the graded set X = X−1 := {x}; i.e. x2 = 0.

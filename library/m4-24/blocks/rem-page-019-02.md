@@ -1,0 +1,1 @@
+The maximal point of |Qx(e2"”—")| for t € [0,1) is statistically concentrated around t = 11/50. This was revealed by an exper- iment in an attempt to estimate the asymptotical growth of the coefficients of the Q polynomial. There seems no difference in the behaviour of alternating and non-alternating knots.

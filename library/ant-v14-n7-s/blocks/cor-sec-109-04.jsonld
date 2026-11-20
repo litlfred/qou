@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/blocks/cor-sec-109-04",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 175,
+  "pageEnd": 181,
+  "text": "cor-sec-109-04.md",
+  "derivedFrom": "library/ant-v14-n7-s/sections/sec-109",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "8.8",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-109-8d-hermitian-k-theory-and-witt-theory.md (p. 175-181)",
+    "claim_id": "ant-v14-n7-s#corollary:8.8",
+    "lean_status": "unformalized"
+  }
+}

@@ -7,9 +7,7 @@ Temperley–Lieb quotient annihilates the three-row partition. In the
 [trace-convention registry](../../../docs/coordination/trace-convention-registry.md)
 this is **convention D**, with Ocneanu parameter $z = q^3/(q^2+1)$.
 
-The **binding channel uses convention D** as well, since the owner ruling of
-2026-08-09 excised convention C. There is now **one** trace in the framework's
-compute, not two.
+Both the mass and binding channels use the canonical Convention-D trace uniformly across the framework.
 
 The mass and binding channels use convention D, and the choice is forced: `lem:feynman-eigenbasis-decomposition` puts the row cap $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero` then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace. The full-Hecke Ocneanu trace of convention C, $z = 1/(q^{1/2}+q^{-1/2})$, has $y_{(1^3)}(q) \neq 0$ for $q \neq 1$ and is not used.
 
@@ -28,7 +26,7 @@ Independently, the Ocneanu parameter determines the fibre dimension through
 $z \cdot [N]_q = q^N$, which is injective in $N$: convention D gives $N = 2$
 exactly, while convention C gives $N \approx 2.5995$ — **no integer fibre
 dimension at all.** Convention C is a legitimate Markov trace on
-$\mathrm{H}_3(q)$; it is simply not the trace of any fibre, so it cannot be the
+$\mathrm{H}_3(q)$; it is not the trace of any fibre, so it cannot be the
 mass trace.
 
 What remains is a **definitional erratum, not a production defect**: the $z$

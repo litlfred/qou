@@ -3,6 +3,7 @@
  "doc_id": "arxiv-1304.2705v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "cb07e66e418e11f235fe5368f3d882048d43a8a19f0fa53c219db88ce78260cb",
   "file": "1304.2705v1.pdf"
@@ -20,92 +21,74 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 2,
   "by_kind": {
-   "remark": 4,
    "corollary": 1,
-   "lemma": 1
+   "remark": 1
   },
-  "formalization_candidates": 2
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1,
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "ably, this function admits an extension to all values of b with b2 \u2044\u2208R\u22640. \u03a6 b(x) is a",
-   "section_file": "sections/sec-001-11-state-integrals-and-their-q-series.md",
-   "section_title": "State-integrals and their q-series",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1.3",
-   "name": null,
-   "statement": "The left hand side of Equation (",
-   "section_file": "sections/sec-001-11-state-integrals-and-their-q-series.md",
-   "section_title": "State-integrals and their q-series",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1.4",
-   "name": null,
-   "statement": "PA,B, as a polynomial in the variables e2, e4, . . . has degree B \u2212 1, where",
-   "section_file": "sections/sec-001-11-state-integrals-and-their-q-series.md",
-   "section_title": "State-integrals and their q-series",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
    "kind": "corollary",
    "source_kind": "corollary",
-   "number": "1.6",
+   "number": "1.8",
    "name": null,
-   "statement": "(a) If we de\ufb01ne \u03c9(q, x) = FA,B(q, qx)/FA,B(q, x) and \u03c9(q, x)n =\u220f n",
-   "section_file": "sections/sec-001-11-state-integrals-and-their-q-series.md",
-   "section_title": "State-integrals and their q-series",
-   "pages": "1-4",
+   "statement": "(a) We have: I2,3(q) = \u2212e 3\u03c0i ( q \u02dcq ) 1 8 \u221e\u2211 m,n=0 Rm,n(q, \u02dcq)tm(q)Tn(\u02dcq) (21) = \u2212e 3\u03c0i ( q \u02dcq ) 1 ( \u2212b2 2 g1(q)G1(\u02dcq) \u2212 1 2\u03c0i g3(q)G1(\u02dcq) + 1 2g2(q)G2(\u02dcq) + b\u22122 2 g3(q)G3(\u02dcq) ) (b) F and ~F satisfy the linear q-di\ufb00erence equations F (q, q3x) \u2212 (3 \u2212 q2x)F (q, q2x) + 3F (q, qx) \u2212 F (q, x) = 0 ~F (q, q3x) \u2212 3~F (q, q2x) + (3 \u2212 q2x)~F (q, qx) \u2212 ~F (q, x) = 0 .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-003-14-the-case-of-the-52-knot.md (p. 5-6)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-003-14-the-case-of-the-52-knot.md",
+   "section_title": "The case of the 52 knot",
+   "pages": "5-6",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-003-14-the-case-of-the-52-knot.md (p. 5-6)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "cor-sec-003-01",
+   "block_iri": "library/arxiv-1304.2705v1/blocks/cor-sec-003-01",
+   "claim_id": "arxiv-1304.2705v1#corollary:1.8",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
    "kind": "remark",
    "source_kind": "remark",
    "number": "1.9",
    "name": null,
-   "statement": "A computation gives that P (A, B) = P (B \u2212 A, B) for ( A, B) = (1 , 2) and",
+   "statement": "A computation gives that P (A, B) = P (B \u2212 A, B) for ( A, B) = (1 , 2) and (A, B) = (2 , 3) corresponding to the invariants of the 4 1 and 5 2 knots. In all other cases that we tried, we found that P (A, B) is not equal to P (B \u2212 A, B).",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-003-14-the-case-of-the-52-knot.md (p. 5-6)",
+   "external_refs": [],
+   "proof_excerpt": null,
    "section_file": "sections/sec-003-14-the-case-of-the-52-knot.md",
    "section_title": "The case of the 52 knot",
    "pages": "5-6",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.6",
-   "name": null,
-   "statement": "For part (b), we will use the series",
-   "section_file": "sections/sec-006-25-some-auxiliary-power-series.md",
-   "section_title": "Some auxiliary power series",
-   "pages": "10-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "route_to": null,
+   "block_id": "rem-sec-003-02",
+   "block_iri": "library/arxiv-1304.2705v1/blocks/rem-sec-003-02",
+   "claim_id": "arxiv-1304.2705v1#remark:1.9"
   }
  ]
 }

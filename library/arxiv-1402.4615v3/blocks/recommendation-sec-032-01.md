@@ -1,1 +1,0 @@
-We shall prove now, that for any $d \in \mathbb{N}$, the pair $(\tilde{W}_d, \tilde{W}_d^*)$ of random vectors satisfies conditions of Theorem [\[theo:MultivariateStein\]](#theo:MultivariateStein){reference-type="ref" reference="theo:MultivariateStein"}.

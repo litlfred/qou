@@ -1,1 +1,0 @@
-Informally, that a family of random variables {Ya, a ∈A} admits a weighted graph G as weighted dependency graph means the following: • G has vertex-set A, i.e. we have one vertex in G per variable in {Ya, a ∈A}; • the smaller the weight of an edge {a, b} is, the closer to independent Ya and Yb should be.

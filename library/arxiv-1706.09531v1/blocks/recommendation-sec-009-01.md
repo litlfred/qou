@@ -1,1 +1,0 @@
-Subject to suitable restrictions on the Higgs system, the observed parity violation could then be interpreted as being a low-energy phenomenon arising entirely through a sponta- neous breaking of the L ↔R discrete symmetry, which should disappear at appropriately high energies.

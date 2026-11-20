@@ -1,0 +1,1 @@
+Let ˜s ∈F3, s ∈S4 be such that p4(˜s) = s, and let σ be any colored 3-simplex, then ˜s(σ)[s(i)] = Ls(i) ˜s (σ[i]), i = 0, 1, 2, 3, (4.16) where Li (−) : F3 −→F2 is a map such that p3(Ls(i) ˜s ) = sˆi. In particular, if p4(˜s) = p4(˜s′), then p3(Li ˜s) = p3(Li ˜s′).

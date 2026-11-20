@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-048",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Type II1 factors without property Γ.",
+  "pageStart": 114,
+  "pageEnd": 120,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-048",
+    "library/vonneumann2015/blocks/thm-sec-048-01",
+    "library/vonneumann2015/blocks/thm-sec-048-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

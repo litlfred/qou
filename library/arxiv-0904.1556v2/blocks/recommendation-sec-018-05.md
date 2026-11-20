@@ -1,1 +1,0 @@
-Passing to Lie algebras, this gives a homomorphism $$d\rho_{\rm{ev}}\colon{\mathfrak{so}}(4) \to {\mathfrak{u}}(\Lambda^{\rm ev}{\mathbb C}^2) \cong{\mathfrak{u}}(2) \cong{\mathfrak{u}}(1) \oplus {\mathfrak{su}}(2)$$ Homomorphic images of semisimple Lie algebras are semisimple, so the image of ${\mathfrak{so}}(4)$ must lie entirely in ${\mathfrak{su}}(2)$.

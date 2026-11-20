@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0405126v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0405126v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0405126v1",
+  "title": "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT",
   "contains": [
     "library/arxiv-math-0405126v1/sections/sec-front-matter",
     "library/arxiv-math-0405126v1/sections/sec-000",
@@ -32,7 +32,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0405126v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0405126v1.pdf",
     "source_sha256": "713498dbe80f731940968055c95f50b654de89a60dbd183cb5010e2103a83979",
     "pages": 7,
@@ -43,8 +45,8 @@
       "stamp_date": "7 May 2004"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

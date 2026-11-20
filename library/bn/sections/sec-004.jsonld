@@ -13,9 +13,13 @@
   "pageStart": 22,
   "pageEnd": 27,
   "contains": [
-    "library/bn/blocks/prose-sec-004"
+    "library/bn/blocks/prose-sec-004",
+    "library/bn/blocks/prop-sec-004-01",
+    "library/bn/blocks/thm-sec-004-02",
+    "library/bn/blocks/thm-sec-004-03",
+    "library/bn/blocks/thm-sec-004-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
   "provenance": "ingested"
 }

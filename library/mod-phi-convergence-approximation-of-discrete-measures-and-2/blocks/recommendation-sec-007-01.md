@@ -1,1 +1,0 @@
-We shall use the following property of A (T), which is akin to Poincaré’s inequality for Sobolev spaces (see [39, Section 6.2]): Proposition 2.1. — There is a constant CH = π √ 3 = 1.814 . . . such that ∥f∥A ⩽|c0(f)| + CH∥f ′∥L 2 for all f ∈A .

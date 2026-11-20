@@ -1,1 +1,0 @@
-By working directly with the oscillatory variational integrals to derive nontrivial necessary conditions, we will see that while screw-like critical points are abundant, ribbon-like solutions are strongly constrained: they must have high-frequency (low pitch), thin width and remain close to the axis.

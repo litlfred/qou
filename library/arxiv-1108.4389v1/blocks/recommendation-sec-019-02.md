@@ -1,1 +1,0 @@
-In the the case where $v_i$ is the twisted mass in a background $U(1)$ gauge field, the coordinate $u_i$ should be thought of as the background FI parameter for this field; then it is clear that [\[uidef\]](#uidef){reference-type="eqref" reference="uidef"} is the condition for unbroken supersymmetry.

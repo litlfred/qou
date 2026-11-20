@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-math-0005038v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "db0b9b7a8534f16157041fbe8f6a4351064ed97839efb9ef6856774d89eb5072",
   "file": "0005038v1.pdf"
  },
  "provenance": {
-  "title": "arXiv:math/0005038v1 [math.GR] 4 May 2000",
+  "title": "Braid groups are linear",
   "authors": "STEPHEN J. BIGELOW",
   "arxiv": {
    "id": "math/0005038",
@@ -16,196 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 12,
-  "by_kind": {
-   "recommendation": 12
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We use this to show that a braid in the kernel of the Lawrence-Krammer representation must be trivial.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-002-12-outline.md",
-   "section_title": "Outline",
-   "pages": "2-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A proof that $B_n$ acts faithfully on $H_2(\\tilde{C})$ should refer to an element of $H_2(\\tilde{C})$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-22-alternative-proofs.md",
-   "section_title": "Alternative proofs",
-   "pages": "6-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "One must check that this pairing respects the relations between forks.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-22-alternative-proofs.md",
-   "section_title": "Alternative proofs",
-   "pages": "6-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Now $\\tilde{\\delta}'$ is a simple closed curve in $\\tilde{D}_1$, so by the Jordan curve theorem it must bound a disc $\\tilde{B}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-32-proof-of-the-key-lemma.md",
-   "section_title": "Proof of the Key Lemma",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Since $\\gamma$ passes clockwise around $z_i$, there is a non-compact region to the right of $\\tilde{\\delta}'$, so $\\tilde{\\delta}'$ must pass counterclockwise around $\\tilde{B}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-32-proof-of-the-key-lemma.md",
-   "section_title": "Proof of the Key Lemma",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This must be greater than zero, since otherwise we could isotope $T(F')$ so as to have fewer points of intersection with $N$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-32-proof-of-the-key-lemma.md",
-   "section_title": "Proof of the Key Lemma",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Therefore our assumption that $b_{i,j} > b_{i,i}$ must have been false, so $b_{i,j} = b_{i,i}$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-009-32-proof-of-the-key-lemma.md",
-   "section_title": "Proof of the Key Lemma",
-   "pages": "8-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It follows that $\\sigma$ must be isotopic relative to $\\partial D \\cup P$ to $(\\Delta^2)^k$ for some $k \\in {\\bf{Z}}$, where $\\Delta^2$ is a Dehn twist about the boundary of a collar neighborhood of $\\partial D$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-33-proof-of-the-theorem.md",
-   "section_title": "Proof of the Theorem",
-   "pages": "9-10",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The surface $\\tilde{\\Sigma}_2(F_{j,k})$ lies in $\\tilde{C}'$, so must represent the homology class $\\lambda v_{j,k}$ for some $\\lambda \\in \\Lambda$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-4-matrices-for-the-lawrence-krammer-representati.md",
-   "section_title": "Matrices for the Lawrence-Krammer representation",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To write $\\sigma_i(v_{j,k})$ in terms of basis vectors, we must find a $\\Lambda$-linear combination of standard forks which represents the same element of $H_2(\\tilde{C})$ as the fork $\\sigma_i(F_{j,k})$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-4-matrices-for-the-lawrence-krammer-representati.md",
-   "section_title": "Matrices for the Lawrence-Krammer representation",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "But $\\sigma(v_{j,k})$ can be considered as an element of $H_2(\\tilde{C}')$, so must be a linear combination of these basis vectors. \u25fb :::",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-4-matrices-for-the-lawrence-krammer-representati.md",
-   "section_title": "Matrices for the Lawrence-Krammer representation",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "He asserted that the two representations should be the same after some renormalization.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-011-4-matrices-for-the-lawrence-krammer-representati.md",
-   "section_title": "Matrices for the Lawrence-Krammer representation",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

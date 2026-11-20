@@ -1,1 +1,0 @@
-Now $\End^{\mathrm{fs}}_{\Uq}(\Tn{\bbin})$ should be the (non-unital) subalgebra of $\End_{\Uq}(\Tn{\bbin})$ of all matrices with only finitely many non-zero rows, i.e. \[ \End^{\mathrm{fs}}_{\Uq}(\Tn{\bbin})\cong \bigoplus_{i,i^{\prime}=0}^{\infty} \Hom_{\Uq}(\Tn{\bbi},\Tn{\bbi^{\prime}}). \] Similarly, of course, in the ``trivial'' case.

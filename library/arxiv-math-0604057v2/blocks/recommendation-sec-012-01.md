@@ -1,1 +1,0 @@
-In fact, for the figure-eight knot, by Proposition [\[8cha-1\]](#8cha-1){reference-type="ref" reference="8cha-1"}, if $\rho$ satisfies the condition of the conjecture, then it must be the discrete faithful representation of the hyperbolic structure.

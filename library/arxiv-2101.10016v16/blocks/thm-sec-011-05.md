@@ -1,1 +1,1 @@
-Let A be an Ω-involutive weak quasi bialgebra. For every pair of ∗–
+Let A be an Ω-involutive weak quasi bialgebra. For every pair of ∗– representations ρ, ρ ′ , the form (·, ·)Ω on Vρ⊗V ′ ρ makes ρ⊗ρ ′ into a ∗–representation. In this way Reph(A) becomes a tensor ∗–category with unitary associativity morphisms. This category is strict if A is a bialgebra.

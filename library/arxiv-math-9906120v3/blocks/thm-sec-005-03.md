@@ -1,0 +1,1 @@
+If µ(x, y) is given by (5.2), σ(x, y) = (pq)1/6 (xy)1/6 (√px + √qy)2/3(√qx −√py)2/3 ENSEMBLES AND THE PLANCHEREL MEASURE and py < qx, then lim n→∞P T([nx], [ny]) −nµ(x, y) σ(x, y)n1/3 ≤ξ  = 1 −F(−ξ), where F(t) is the Tracy-Widom distribution (1.5).

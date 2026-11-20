@@ -454,6 +454,159 @@ def e_0_calibrated_mev() -> mp.mpf:
     return q_beta_codata / abs(delta_net)
 
 
+def _resolve_q(q=None) -> mp.mpf:
+    """Resolve optional q argument to an mpf at ≥50 dps (defaults to _q_0())."""
+    if q is None:
+        return _q_0()
+    if isinstance(q, mp.mpf):
+        return q
+    with mp.workdps(max(50, mp.mp.dps)):
+        return mp.mpf(str(q))
+
+
+def e_0_scale_hierarchy_matter_mev(q=None) -> mp.mpf:
+    """Route 3 scale-hierarchy identity: E_0^{(N=0)}(q) · q² · (1 − q⁻¹) = m_e.
+
+    Implements Lean theorem
+    `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge.hadronicScale_mul_q_sq_hbar_eq_me`
+    (and `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.hadronicScaleE0_mul_hbar_eq_me`):
+    multiplying the O(ℏ_q^{-1}) single-tick hadronic scale E_0(q) = m_e / (q(q−1))
+    by q² ℏ_q = q(q−1) recovers the O(1) matter/electromagnetic scale m_e identically.
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        q0 = _resolve_q(q)
+        e0_q = M_E_MEV / (q0 * (q0 - 1))
+        return e0_q * (q0 ** 2) * (1 - 1 / q0)
+
+
+def borromean_v3_e21_strong_qcd_diff_mev(q=None, scale: str = "E0_full") -> mp.mpf:
+    """e_{(2,1)}-projected Borromean V³ strong Cartan mass splitting Δm_QCD(e_{(2,1)} V³) in MeV.
+
+    Implements Lean theorem
+    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21_strong_cartan_diff_borromeanV3`:
+        Δtr_QCD(e_{(2,1)} V³) = (q − q⁻¹) · tr(e_{(2,1)} V³)
+        tr(e_{(2,1)} V³) = −(q⁴ − q² + 1)(q⁸ − 2q⁶ − 2q² + 1) / q⁶ = 2 − 3h⁴ − h⁶.
+
+    Parameters
+    ----------
+    q : optional substrate parameter (defaults to `_q_0()`).
+    scale : {'E0_full', 'E0_N0', 'alpha_bind'} (or bool True/False for E0_full/E0_N0)
+        Energy scale multiplying the dimensionless trace difference.
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        q0 = _resolve_q(q)
+        q2 = q0 ** 2
+        tr_e21 = -(q2 ** 2 - q2 + 1) * (q2 ** 4 - 2 * q2 ** 3 - 2 * q2 + 1) / (q2 ** 3)
+        d_qcd = (q0 - 1 / q0) * tr_e21
+        e0_n0 = M_E_MEV / (q0 * (q0 - 1))
+        hbar_q = (q0 - 1) / q0
+        if scale is True or scale in ("E0_full", "full"):
+            scale_mev = e0_n0 / (1 - hbar_q ** 2)
+        elif scale is False or scale in ("E0_N0", "E0", "N0"):
+            scale_mev = e0_n0
+        elif scale in ("alpha", "alpha_bind"):
+            scale_mev = M_E_MEV * 8 * mp.catalan
+        else:
+            raise ValueError(
+                f"borromean_v3_e21_strong_qcd_diff_mev: unknown scale {scale!r} "
+                "(use 'E0_full', 'E0_N0', or 'alpha_bind')"
+            )
+        return scale_mev * d_qcd
+
+
+def borromean_v3_connected_qed_proton_mev(q=None, k_weighted: bool = False) -> mp.mpf:
+    """Proton connected 4th-order Borromean V³ electromagnetic self-energy M_p^{QED,conn} in MeV.
+
+    Implements Lean theorem
+    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3`:
+        tr((Q_{12}^{(p)} + Q_{23}^{(p)}) V_p³) = −2(q − 1)⁴(q + 1)⁴(q⁴ + q² + 1) / (9 q⁶)
+        tr_conn(p, V³) = (1/3) tr((Q_{12}^{(p)} + Q_{23}^{(p)}) V_p³)
+                       = −2(q² − 1)⁴(q⁴ + q² + 1) / (27 q⁶)
+        M_p^{QED,conn} = m_e · w(q) · |tr_conn(p, V³)|,
+    where w(q) = q if `k_weighted=True` (K_p^{⊗3} weight q) and 1 otherwise.
+    At q_0, M_p^{QED,conn} ≈ +0.000220077 MeV (+0.22008 keV), closing 96.2% of the
+    211 ppb (+0.22881 keV) μ–p substrate tension to +8.06 ppb (+0.36σ).
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        q0 = _resolve_q(q)
+        q2 = q0 ** 2
+        tr_conn_p = -2 * ((q2 - 1) ** 4) * (q2 ** 2 + q2 + 1) / (27 * (q2 ** 3))
+        w = q0 if k_weighted else mp.mpf(1)
+        return M_E_MEV * w * abs(tr_conn_p)
+
+
+def borromean_v3_connected_qed_diff_mev(q=None, weighting: str = "plain") -> mp.mpf:
+    """(n − p) connected 4th-order Borromean V³ QED mass splitting Δm_QED^{conn} in MeV.
+
+    Implements Lean theorems
+    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjn_borromeanV3_connected` and
+    `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3`:
+        tr_conn(p, V³) = −2(q² − 1)⁴(q⁴ + q² + 1) / (27 q⁶)
+        tr_conn(n, V³) = +(q² − 1)⁴(2q⁴ − q² + 2) / (27 q⁶)
+        Δtr_conn(V³)   = tr_conn(n, V³) − tr_conn(p, V³)
+                       = +(q² − 1)⁴(4q⁴ + q² + 4) / (27 q⁶)
+        Δm_QED^{conn}  = −m_e · Δtr_conn^{(w)}(V³) < 0.
+
+    Parameters
+    ----------
+    q : optional substrate parameter (defaults to `_q_0()`).
+    weighting : {'plain', 'KnKp', 'Kp3', 'q'}
+        Cartan weight factor on the (n, p) connected traces:
+        - 'plain' : tr_conn(n) − tr_conn(p)                 (≈ −0.000331696 MeV)
+        - 'KnKp'  : q⁻¹ tr_conn(n) − q tr_conn(p)           (≈ −0.000344840 MeV)
+        - 'Kp3'   : tr_conn(n) − q tr_conn(p)               (≈ −0.000355900 MeV)
+        - 'q'     : q (tr_conn(n) − tr_conn(p))             (≈ −0.000368176 MeV)
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        q0 = _resolve_q(q)
+        q2 = q0 ** 2
+        q2_m1_4 = (q2 - 1) ** 4
+        denom = 27 * (q2 ** 3)
+        tr_conn_p = -2 * q2_m1_4 * (q2 ** 2 + q2 + 1) / denom
+        tr_conn_n = q2_m1_4 * (2 * (q2 ** 2) - q2 + 2) / denom
+        if weighting == "plain":
+            delta_tr = tr_conn_n - tr_conn_p
+        elif weighting == "KnKp":
+            delta_tr = (tr_conn_n / q0) - (q0 * tr_conn_p)
+        elif weighting == "Kp3":
+            delta_tr = tr_conn_n - (q0 * tr_conn_p)
+        elif weighting == "q":
+            delta_tr = q0 * (tr_conn_n - tr_conn_p)
+        else:
+            raise ValueError(
+                f"borromean_v3_connected_qed_diff_mev: unknown weighting {weighting!r} "
+                "(use 'plain', 'KnKp', 'Kp3', or 'q')"
+            )
+        return -M_E_MEV * delta_tr
+
+
+def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "plain") -> mp.mpf:
+    """Two-term (strong Kashiwara N=2 + connected 4th-order Borromean QED) Q_β prediction in MeV.
+
+    Combines the Convention-D Kashiwara N=2 strong β-decay Q-value `q_beta_kashiwara_n2_mev`
+    with the zero-parameter connected 4th-order Borromean QED dressing
+    `borromean_v3_connected_qed_diff_mev(q, weighting)`:
+        Q_β^{two-term} = Q_{N2}^D + Δm_QED^{conn}(V³).
+    Reduces the Convention-D Q_{N2}^D residual from +600.6 ppm to +176.6 ppm ('plain')
+    or +130.0 ppm ('q'), closing 70.6%–78.4% of the Convention-D residual without free parameters.
+    """
+    with mp.workdps(max(50, mp.mp.dps)):
+        if q is None:
+            q_n2 = q_beta_kashiwara_n2_mev()
+        else:
+            q0 = _resolve_q(q)
+            q_a = M_E_MEV * abs(q0 ** 2 - 2 * q0 - 1) * (q0 + 1) / (2 * q0 ** 3)
+            h = q0 - 1 / q0
+            z = q0 ** 3 / (q0 ** 2 + 1)
+            hbar_q = (q0 - 1) / q0
+            alpha = (z - 1) * h / 2
+            q_sq = q0 ** 2
+            b = mp.sqrt(1 - q_sq / (q_sq + 1) ** 2)
+            q_n1 = q_a * mp.cos(alpha - b * hbar_q ** 2 / 2)
+            q_n2 = q_n1 * (1 - b ** 2 * hbar_q ** 4)
+        return q_n2 + borromean_v3_connected_qed_diff_mev(q=q, weighting=weighting)
+
+
 # ── Q_β predictions (FULL framework chain) ──────────────────────
 
 @lru_cache(maxsize=None)
@@ -698,7 +851,29 @@ def helium4_mass_mev() -> mp.mpf:
 
 def derivation_summary() -> dict:
     """Document the current state for sibling-agent / consumer use."""
-    w = _beta_witness()
+    if _BETA_DECAY_WITNESS.exists():
+        w = _beta_witness()
+        q_codata_str = str(w["observed"]["Q_decay_MeV"])
+        q_codata_mp = mp.mpf(q_codata_str)
+        e0_cal_str = str(e_0_calibrated_mev())
+        e0_n0_vs_cal = str(
+            (e_0_n0_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
+        )
+        e0_full_vs_cal = str(
+            (e_0_full_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
+        )
+        q_obs_str = str(q_beta_observable_mev())
+        q_virt_str = str(q_beta_virtual_mev())
+        q_obs_frac = str(q_beta_observable_mev() / q_beta_predicted_mev())
+    else:
+        q_codata_str = str(Q_BETA_MEV)
+        q_codata_mp = mp.mpf(q_codata_str)
+        e0_cal_str = "unmounted (beta-decay-energy-scale.witness.json in fsh-guts)"
+        e0_n0_vs_cal = None
+        e0_full_vs_cal = None
+        q_obs_str = "unmounted (beta-decay-energy-scale.witness.json in fsh-guts)"
+        q_virt_str = "unmounted (beta-decay-energy-scale.witness.json in fsh-guts)"
+        q_obs_frac = None
     return {
         "phase": "0b.4 (FULL Q_β chain wired; nucleon + light-nucleus masses stubbed)",
         "calibration_inputs_loaded": {
@@ -709,24 +884,35 @@ def derivation_summary() -> dict:
         "wired_predictions": {
             "E_0_N0_MeV": str(e_0_n0_mev()),
             "E_0_full_MeV": str(e_0_full_mev()),
-            "E_0_calibrated_MeV": str(e_0_calibrated_mev()),
-            "E_0_N0_vs_calibrated_pct": float(
-                (e_0_n0_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
-            ),
-            "E_0_full_vs_calibrated_pct": float(
-                (e_0_full_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
-            ),
+            "E_0_calibrated_MeV": e0_cal_str,
+            "E_0_N0_vs_calibrated_pct": e0_n0_vs_cal,
+            "E_0_full_vs_calibrated_pct": e0_full_vs_cal,
             "Q_beta_predicted_MeV": str(q_beta_predicted_mev()),
-            "Q_beta_observable_MeV": str(q_beta_observable_mev()),
-            "Q_beta_virtual_MeV": str(q_beta_virtual_mev()),
-            "Q_beta_codata_MeV": str(w["observed"]["Q_decay_MeV"]),
-            "Q_beta_pred_vs_codata_pct": float(
-                (q_beta_predicted_mev() - mp.mpf(str(w["observed"]["Q_decay_MeV"])))
-                / mp.mpf(str(w["observed"]["Q_decay_MeV"])) * 100
+            "Q_beta_observable_MeV": q_obs_str,
+            "Q_beta_virtual_MeV": q_virt_str,
+            "Q_beta_codata_MeV": q_codata_str,
+            "Q_beta_pred_vs_codata_pct": str(
+                (q_beta_predicted_mev() - q_codata_mp) / q_codata_mp * 100
             ),
-            "Q_beta_observable_fraction": float(
-                q_beta_observable_mev() / q_beta_predicted_mev()
-            ),
+            "Q_beta_observable_fraction": q_obs_frac,
+        },
+        "two_term_borromean_diagnostics": {
+            "lean_ref": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm",
+            "E_0_scale_hierarchy_matter_MeV": str(e_0_scale_hierarchy_matter_mev()),
+            "Delta_m_QCD_e21_E0_full_MeV": str(borromean_v3_e21_strong_qcd_diff_mev(scale="E0_full")),
+            "Delta_m_QCD_e21_E0_N0_MeV": str(borromean_v3_e21_strong_qcd_diff_mev(scale="E0_N0")),
+            "Delta_m_QCD_e21_alpha_bind_MeV": str(borromean_v3_e21_strong_qcd_diff_mev(scale="alpha_bind")),
+            "M_p_QED_conn_plain_MeV": str(borromean_v3_connected_qed_proton_mev(k_weighted=False)),
+            "M_p_QED_conn_Kp_MeV": str(borromean_v3_connected_qed_proton_mev(k_weighted=True)),
+            "Delta_m_QED_conn_plain_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="plain")),
+            "Delta_m_QED_conn_KnKp_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="KnKp")),
+            "Delta_m_QED_conn_Kp3_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="Kp3")),
+            "Delta_m_QED_conn_q_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="q")),
+            "Q_beta_kashiwara_n2_MeV": str(q_beta_kashiwara_n2_mev()),
+            "Q_beta_kashiwara_n2_two_term_plain_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="plain")),
+            "Q_beta_kashiwara_n2_two_term_KnKp_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="KnKp")),
+            "Q_beta_kashiwara_n2_two_term_Kp3_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="Kp3")),
+            "Q_beta_kashiwara_n2_two_term_q_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="q")),
         },
         "stubbed_predictions": [
             "proton_mass_mev", "neutron_mass_mev",
@@ -752,8 +938,13 @@ def derivation_summary() -> dict:
 __all__ = [
     "e_0_n0_mev", "e_0_n_mev", "e_0_full_mev", "e_0_full_li2q_mev",
     "e_0_calibrated_mev",
+    "e_0_scale_hierarchy_matter_mev",
+    "borromean_v3_e21_strong_qcd_diff_mev",
+    "borromean_v3_connected_qed_proton_mev",
+    "borromean_v3_connected_qed_diff_mev",
     "q_beta_predicted_mev", "q_beta_observable_mev", "q_beta_virtual_mev",
-    "q_beta_kashiwara_n2_mev", "q_beta_toroidal_mev",
+    "q_beta_kashiwara_n2_mev", "q_beta_kashiwara_n2_two_term_mev",
+    "q_beta_toroidal_mev",
     "proton_mass_mev", "neutron_mass_mev",
     "deuteron_mass_mev", "triton_mass_mev",
     "helium3_mass_mev", "helium4_mass_mev",

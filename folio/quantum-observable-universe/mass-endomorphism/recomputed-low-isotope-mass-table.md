@@ -31,7 +31,7 @@ See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
 The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md)). We inject no CODATA nucleon masses and do not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
 
-The ruled convention-D base at single wrap (owner ruling 2026-09-08: $\varepsilon$ is the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
+The Convention-D base evaluation at single wrap ($\varepsilon$ evaluated via the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
 
 $$
 \boxed{

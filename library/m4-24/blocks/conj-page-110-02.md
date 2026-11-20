@@ -1,0 +1,1 @@
+Can we justify it in mathematics? There is an approach, by using knotted trivalent graphs (see Conjecture 12.7), to justify the Chern- Simons path integral mathematically, which might be helpful to apply the saddle point method to it rigorously.

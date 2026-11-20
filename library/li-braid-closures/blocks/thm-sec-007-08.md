@@ -1,0 +1,1 @@
+For m, k ∈Z, let γm,k denote the braid σk 2∆4m 3 , so that ˆγm,k denotes its oriented link closure. (a) The link ˆγm,k is split if and only if m = 0. (b) For m1, m2, k1, k2 ∈Z, the links ˆγm1,k1 and ˆγm2,k2 are equivalent iff (m1, k1) = (m2, k2).

@@ -1,0 +1,1 @@
+1. Let P ∈P(X) be a semisimple perverse sheaf, G = G(P) the associated Tannaka group and H = G0 its connected component. Then the group π = G/H of connected components is a ﬁnite abelian group whose conjugation action is trivial on the torus Hab = H/[H,H].

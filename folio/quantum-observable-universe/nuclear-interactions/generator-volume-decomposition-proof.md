@@ -1,6 +1,6 @@
 ## Proof
 
-> **Scope note (2026-11-15).** Step 2 gives the wrong reason. The Markov trace does not factorize across generators in general: $\mathrm{tr}(\sigma_1^2) = hz + 1 \neq z^2$ and $\mathrm{tr}(\sigma_0\sigma_1\sigma_0) = hz^2 + z \neq z^3$. The additive form in step 2 holds only where the word splits into commuting, disjoint-support factors. For a general normal form it is an assumption, not a consequence of far commutativity.
+> **Scope of Step 2 (disjoint-support factorisation).** The Markov trace does not factorize across generators in general: $\mathrm{tr}(\sigma_1^2) = hz + 1 \neq z^2$ and $\mathrm{tr}(\sigma_0\sigma_1\sigma_0) = hz^2 + z \neq z^3$. The additive form in step 2 holds only where the word splits into commuting, disjoint-support factors. For a general normal form it is an assumption, not a consequence of far commutativity.
 
 
 The three claims—exact transfer-matrix reduction, additive energy decomposition, and the $\binom{A}{2}$ step count—follow from the Hecke relation and far commutativity.

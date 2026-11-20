@@ -1,1 +1,0 @@
-Here, we should mention the connection to the matrix/tensor model of \cite{Belin:2023efa,Jafferis:2025vyp} (and its BCFT incarnation \cite{Jafferis:2025yxt}), which was proposed as a non-perturbative definition of the 3d gravity path integral including the sum over topologies.

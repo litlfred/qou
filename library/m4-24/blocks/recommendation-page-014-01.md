@@ -1,1 +1,0 @@
-(This is the one place where the HOMFLY and not the Jones polynomial is essential!) The importance of this connection can hardly be overestimated, as it should allow the exchange of powerful techniques between the two subjects.

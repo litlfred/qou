@@ -1,0 +1,1 @@
+As for the moments of the random variables η(n) k+1, their asymp- totics has been evaluated in the proof of Theorem 6.1. This concludes the proof. □ §8. The central limit theorem for transition measures of Young diagrams Let M denote the set of probability measures on R with compact support, and let M0 ⊂M be the subset of measures with the ﬁrst moment equal to 0.

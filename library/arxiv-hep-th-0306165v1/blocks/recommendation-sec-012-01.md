@@ -1,1 +1,0 @@
-In order for the semi-classical expression (3.19) to be unambiguously deﬁned, all the periods of θ must be integer multiples of 2π¯h, for some value of ¯h: 1 2π¯h I C θ ∈ZZ , ∀C ∈π1(L) (3.25) A Lagrangian submanifolds L֒ →P which obeys this condition is called quantizable, and the corresponding values of ¯h for which (3.25) holds are called admissible for L.

@@ -1,0 +1,1 @@
+For an aﬃnoid algebra A and an element f ∈A, there exists a point x ∈Spm(A) such that |f(x)| = |f|sup. We refer [BGR84, 6.2.1] for the proof. Given an aﬃnoid algebra A over K, we introduce the following notation: A◦ = {f ∈A | |f|sup ≤1}, A◦◦ = {f ∈A | |f|sup < 1}, A = A◦/A◦◦; A◦is a R-subalgebra of A, and A◦◦is an ideal of it. For instance, K◦= R, K◦◦= m, and K = k.

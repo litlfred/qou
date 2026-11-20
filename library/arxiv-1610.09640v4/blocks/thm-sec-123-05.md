@@ -1,0 +1,1 @@
+Let A be a ring that admits some noetherian connected ﬁltra- tion F, such that the graded ring GrF (A) is AS regular of dimension n. Then A is a noetherian twisted CY ring of dimension n, with a Nakayama automorphism ν that respects the ﬁltration F.

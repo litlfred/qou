@@ -1,1 +1,0 @@
-Smaller lattice spacings should minimize the lattice errors such as the broken rotational invariance and make it possible to increase the accuracy especially for higher momenta in the partial wave decomposition.

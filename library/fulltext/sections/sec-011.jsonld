@@ -13,13 +13,9 @@
   "pageStart": 56,
   "pageEnd": 61,
   "contains": [
-    "library/fulltext/blocks/prose-sec-011",
-    "library/fulltext/blocks/recommendation-sec-011-01",
-    "library/fulltext/blocks/recommendation-sec-011-02",
-    "library/fulltext/blocks/recommendation-sec-011-03",
-    "library/fulltext/blocks/recommendation-sec-011-04"
+    "library/fulltext/blocks/prose-sec-011"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
   "provenance": "ingested"
 }

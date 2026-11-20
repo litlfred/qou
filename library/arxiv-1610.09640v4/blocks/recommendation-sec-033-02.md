@@ -1,1 +1,0 @@
-We shall only discuss strictly unital A∞categories, giving very few details (full details can be found in [83] and [37]), and our notation deviates somewhat from 73 Derived Categories | Amnon Yekutieli | 14 Apr 2019 the references (because we want it to be compatible with the rest of the book).

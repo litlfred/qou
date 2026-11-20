@@ -1,1 +1,0 @@
-2 Strictly speaking the summation over W in the ﬁrst line of (4.7), which is rather a summation over orbits, should contain an additional factor for weights µ with nontrivial stationary subgroup of W; the same remark applies to the summation in the last line before (4.5).

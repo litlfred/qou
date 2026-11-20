@@ -103,7 +103,7 @@ one, on its own, **forces** it, needing only $q \neq 0$. Hence:
 That the two stabilisations independently pin the *same* $z$ is a genuine
 consistency check on the normalisation, not a restatement — and it passes.
 
-Under this statement the retracted prefactor $q^{1/2}+q^{-1/2}$ is not a
+Under this statement the alternative prefactor $q^{1/2}+q^{-1/2}$ is not a
 near-miss. With it the quantity fails to survive a stabilisation move, so it is
 not an invariant of anything at all.
 

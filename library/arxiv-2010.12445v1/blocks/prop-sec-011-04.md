@@ -1,0 +1,1 @@
+Let X be a quasi-compact ﬁbered category over R and Y a quasi-compact fpqc stack with quasi-aﬃne diagonal and with the resolution property. Then any map f : X →Y has a canonical factorization X →FibX ,Vect(X ) →Y.

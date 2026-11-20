@@ -1,1 +1,0 @@
-- The coefficients of $\phi^+_{K,\zeta}(\hbar)=\phi_{K,\zeta}(\hbar)/\phi_{K,\zeta}(0)$ should be elements of the field $F_K(\zeta)$, where $F_K$ is the trace field of $K$.

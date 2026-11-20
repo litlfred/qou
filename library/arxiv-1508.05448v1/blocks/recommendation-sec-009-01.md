@@ -1,1 +1,0 @@
-We will notate the eigenvalues of $\Pi$ in decreasing order by $$1=\eta_1>\eta_2\geq\dots\geq \eta_{|X|}\geq -1$$ Notice that $1$ must be an eigenvalue of $\Pi$, since (letting $\bf{e}$ temporarily represent a vector of all $1$'s) $$\Pi\bf{e}=\bf{e}$$ using the fact that the sum along each row and column of $\Pi$ is $1$.

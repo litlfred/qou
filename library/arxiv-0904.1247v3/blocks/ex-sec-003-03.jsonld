@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-0904.1247v3/blocks/ex-sec-003-03",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "title": "Fusion categories and 3-dimensional Dijkgraaf-Witten theory",
+  "pageStart": 9,
+  "pageEnd": 12,
+  "text": "ex-sec-003-03.md",
+  "derivedFrom": "library/arxiv-0904.1247v3/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0904.1247v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.19",
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-003-13-topological-field-theory.md (p. 9-12)",
+    "claim_id": "arxiv-0904.1247v3#example:1.19"
+  }
+}

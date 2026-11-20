@@ -1,1 +1,0 @@
-Now we used the fact that δ12b11 = b21, δ12b12 = b22, b11b22 −b12b21 = 1, from which we conclude that b11b21ζ12 ∼0, b11b22ζ12 ∼1 2ζ12. and as a result 2b11(a−1)2iζ12 ∼(c−1)2iζ12 which means that we should simply replace (a−1)2i with (c−1)2i in the formulas (11.43).

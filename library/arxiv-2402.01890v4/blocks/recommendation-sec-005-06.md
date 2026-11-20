@@ -1,1 +1,0 @@
-We then define the function \begin{equation} \Psi: \Par_i \rightarrow \Par, \Psi(\nu) = \ord(a_1, a_2, \ldots, a_p ) \end{equation} which may be considered as a variation of the function $ \Phi$ defined in \eqref{weobtainafunction}.

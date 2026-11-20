@@ -1,1 +1,1 @@
-Assume that A is symmetric and that Qi,j(u,v ) is a poly-
+Assume that A is symmetric and that Qi,j(u,v ) is a poly- nomial in u−v. Assume further that k is a ﬁeld of characteristic 0. Then under the isomorphism in Theorem 1.2.2, the lower global basis (respectively, upper global ba- sis) corresponds to the set of isomorphism classes of indecompos able projective modules (respectively, the set of isomorphism classes of simple modu les).

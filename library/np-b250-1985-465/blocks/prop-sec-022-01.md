@@ -1,0 +1,1 @@
+(10.12) Eliminating the constants K6 and K7 in (10.7) we obtain the following sum rule expressing F, in terms of F~ and FK: /'FK\4/3f M 2 , 2 ] +~(3M:ln',~2-M-~lnM~-~.K,~+O(At2) (10.13) F,= F,,~-TJ ]1 96zr Fo\ MK M~/ With the experimental value [33] F--K-K = 1,22 ~- 0.01, (10.14) F. .I.

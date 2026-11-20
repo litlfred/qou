@@ -1,1 +1,0 @@
-This leaves only qk+1, for which we note that b2 k+1d2 k+1 = qk −1 dk 2 qk + 1 bk 2 ≡(b2 kd2 k)−1 (mod qk), and by (A.2) the right side is 1 (mod qk), so that qk+1 = b2 k+1d2 k+1−1 qk is a polynomial as well, which must then also have leading coefficient 1 and degree 4(k + 2) −(2k + 3) = 2(k + 1) + 3.

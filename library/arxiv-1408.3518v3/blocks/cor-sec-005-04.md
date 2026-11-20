@@ -1,0 +1,1 @@
+For discrete steepest descent, no direction from G(A) is chosen twice as an augmenting direction. Therefore, the number of steepest-descent augmentations needed to reach an optimal solution is bounded by |G(A)| and thus is independent of b, c and the initial solution z0.

@@ -1,1 +1,0 @@
-The consistency with the prediction ([\[qi\]](#qi){reference-type="ref" reference="qi"}) for $u=0$ and the approximate validity of chRMTcorrelations in the level spacing statistics above $T_c$ suggest that the Airy-density ([\[AiDens\]](#AiDens){reference-type="ref" reference="AiDens"}) corresponding to the value $u=0$ should fit the spectral density.

@@ -1,1 +1,0 @@
-Note also that the $ \Si_k $-actions on $ \SetPar_{2k}^l $, under this bijection, correspond to the natural $ \Si_k $-actions on $ \s $ and $ \T $, as explained in \eqref{dib17}, although the action on $ \T $ should be chosen as a right action.

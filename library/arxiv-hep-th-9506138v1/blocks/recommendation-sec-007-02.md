@@ -1,1 +1,0 @@
-On the one hand, we need to show that the commutator is signiﬁcantly diﬀerent from zero for spacelike separated ﬁelds on a nice slice, while at the same time this eﬀect should be very much suppressed under the kinematic conditions found in everyday experiments at low energies.

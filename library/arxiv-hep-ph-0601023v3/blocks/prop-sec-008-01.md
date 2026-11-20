@@ -1,0 +1,1 @@
+The electroweak symmetry breaking constraint (a) can be used to fix $\mu$ using the experimental value of the Z boson mass $M_Z$, and the constraint (b) can be utilized to eliminates $B_0$ in favor of $\tan\beta$.

@@ -1,1 +1,0 @@
-These lifetimes are within factors of 5–10 above the current limits on proton lifetimes coming from Super–Kamiokande[76,77], raising hopes that proton decay should most likely be discovered in the planned DUNE and/or HyperKamiokande experiments.

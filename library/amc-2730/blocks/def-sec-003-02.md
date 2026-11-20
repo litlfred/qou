@@ -1,0 +1,1 @@
+The Markov moves include conjugation and stabilization (see Figure 4). Given a braid β P Bm, conjugation involves replacing it with αβα´1 for some α P Bm. Stabilization involves replacing β with either βσm or βσ´1 m . Note that conjugation pre- serves the braid width and stabilization increases it by one. The next result is attributed to Markov. For a proof, see [5, Theorem 2.3].

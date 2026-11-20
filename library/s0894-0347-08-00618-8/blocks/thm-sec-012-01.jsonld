@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/s0894-0347-08-00618-8/blocks/thm-sec-012-01",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Exchangeable Strongly Rayleigh Case",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "thm-sec-012-01.md",
+  "derivedFrom": "library/s0894-0347-08-00618-8/sections/sec-012",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0894-0347-08-00618-8/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.8",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-012-35-interacting-particle-systems-and-exclusion-ev.md (p. 20-21) citing [1]",
+    "claim_id": "s0894-0347-08-00618-8#theorem:3.8",
+    "lean_status": "unformalized"
+  }
+}

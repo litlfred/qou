@@ -1,0 +1,285 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1210.7777v1",
+ "source": {
+  "file": "1210.7777v1.pdf",
+  "sha256": "5643300d6b571a0a28652b401ef596d03b89eafa202f34588fe6fd399b32b726",
+  "bytes": 219415,
+  "pages": 7,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1210.7777",
+   "version": "1",
+   "primary_class": "hep-lat",
+   "stamp_date": "29 Oct 2012"
+  },
+  "doi": null,
+  "title": "Cottingham formula for the electromagnetic self-energy contribution to Mp − Mn",
+  "authors_raw": "André Walker-Loud∗",
+  "title_lines": [
+   "Cottingham formula for the electromagnetic",
+   "self-energy contribution to Mp −Mn"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "TeX",
+   "CreationDate": "D:20180422011531Z"
+  },
+  "title_raw": "Cottingham formula for the electromagnetic self-energy contribution to Mp −Mn",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Cottingham formula for the electromagnetic self-energy contribution to M p − M n",
+   "text": "Cottingham formula for the electromagnetic self-energy contribution to Mp −Mn",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Cottingham formula for the electromagnetic self-energy contribution to Mp − Mn",
+   "basis": "Printed title on page 1 (Walker-Loud, Carlson and Miller); the extracted title split the subscripts in Mp and Mn",
+   "extracted_title": "Cottingham formula for the electromagnetic self-energy contribution to M p − M n",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.85,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Cottingham Formula",
+   "page": 2,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "2"
+  },
+  {
+   "level": 1,
+   "title": "Concluding Remarks",
+   "page": 6,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 7,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "7"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Cottingham Formula intuitively relates the forward Compton Scattering (a) to the O(αf.s.) electromagnetic self-energy (b)",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Analytic structure of scalar functions Ti(ν,Q2) in the complex ν plane for ﬁxed Q2, and the contour used to evaluate them",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1577,
+   "n_words": 213,
+   "label_start": null,
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1645,
+   "n_words": 262,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-2-the-cottingham-formula",
+   "number": "2",
+   "title": "The Cottingham Formula",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 8810,
+   "n_words": 1565,
+   "label_start": "2",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-002-4-concluding-remarks",
+   "number": "4",
+   "title": "Concluding Remarks",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 838,
+   "n_words": 121,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 3028,
+   "n_words": 506,
+   "label_start": "7",
+   "label_end": "7"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 15898,
+  "furniture_lines_stripped": 0
+ }
+}

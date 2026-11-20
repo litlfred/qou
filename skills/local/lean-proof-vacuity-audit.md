@@ -127,6 +127,46 @@ Tiers (agent-confirmed):
 Do **not** flag an axiom that already carries a `-- Ref:` / citation — resting
 on a cited upstream result is sound.
 
+### 7. Import-free `Int`/`Bool` wrapper & `X - X = 0` definitional-subtraction laundering (CRITICAL — `no-import-wrapper` / `sub-zero-tautology`)
+
+A particularly destructive anti-pattern occurs when an agent cannot resolve
+`.olean` imports (or cannot prove a theorem over the actual library/Mathlib
+types) and instead writes a stand-alone `.lean` file that:
+
+1. **Drops `import` of `QOU.*` and `Mathlib.*`** so raw `lean` compiles it
+   without `.lake`,
+2. **Replaces mathematical objects** (categories, endomorphisms, matrices, Hecke
+   algebras, connections, differential forms, trace functionals) with ad-hoc
+   `Int`, `Nat`, or `Bool` record structures (`structure FooDatum where trA : Int ...`),
+3. **Defines a local arithmetic combination** `def total (d : FooDatum) : Int := d.a + d.b`
+   and states a "theorem" that merely subtracts the definition's body from
+   itself:
+   ```lean
+   theorem total_expansion (d : FooDatum) :
+       total d - (d.a + d.b) = 0 := by
+     dsimp [total]; omega
+   ```
+   or checks a boolean record flag (`s.isValid = true := rfl`).
+
+This is **fake Lean**: it is `X - X = 0` wrapped in borrowed mathematical names.
+Both `scripts/lean-borrowed-name-audit.py` (`no-import-wrapper`) and
+`scripts/lean-definition-collapsed-audit.py` (`sub-zero-tautology`) flag this
+shape as **CRITICAL**.
+
+**Mandatory rule — fail honestly and document for handoff:**
+- **Never** write an `Int`/`Bool` proxy structure for a mathematical object that
+  exists in `QOU` or `Mathlib`.
+- **Never** strip `import` lines to bypass a missing `.olean` cache; run
+  `scripts/lean-cache-restore.sh` and `scripts/lean-verify.sh <file.lean>`.
+- **If a proof over the real types fails or is blocked, it is 100% OK for the
+  process step to fail / remain `open` or `blocked`.** Keep the genuine theorem
+  statement over the real imported types (`QOU.*`, `Mathlib.*`), leave an
+  annotated `sorry` (`-- Ref:`) at the stuck sub-goal, and write a structured
+  **blocker & handoff note** on the bean (exact file/declaration, remaining
+  `lean_goal` state, lemmas proved so far, tactics/approaches tried and why they
+  failed, and what specific lemma or bridge is needed next) so another agent or
+  human can pick up where you left off.
+
 ## Why `proof-statement-integrity` misses all of these
 
 Per the QA registry, `proof-statement-integrity` is `automated: false`

@@ -1,0 +1,1 @@
+Let A, B be two objects of D, and {eA,B,i : i ∈ I}, {eB,A,j : j ∈I} be a basis of Hom(A, B) and Hom(B, A), respectively, such that ⟨eA,B,i, eB,A,j⟩= αiδi,j, then for F ∈Hom(A, B), G ∈Hom(B, A), we have ⟨G, F⟩= Section 4.4 Invariance under Pachner Moves

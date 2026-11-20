@@ -1,1 +1,0 @@
-Inspection of the discussion of coherent orientation in [@fukaya-oh-ohta-ono] suggests that at least when $L_0,L_1$ are spin, the exact sequence should exist with $\Z$-coefficients (with the $\otimes$ replaced by the cohomology of the underlying tensor product of cochain groups, to avoid Künneth terms).

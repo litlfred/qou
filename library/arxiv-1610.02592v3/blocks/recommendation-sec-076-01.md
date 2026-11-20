@@ -1,1 +1,0 @@
-As we have seen, for every edge $e$ in $\calT$ we obtain an equation of type $$w_1\cdots w_h = 1$$ (to which we must add the condition that the sum of the arguments is $2\pi$), where each $w_j$ equals $z_i$, $\frac{z_i-1}{z_i}$, or $\frac 1{1-z_i}$ for some $i$.

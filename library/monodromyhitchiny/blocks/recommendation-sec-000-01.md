@@ -1,1 +1,0 @@
-As both, the above Conformal Field Theory and the above Topological Quantum Field Theory are predicted to be equivalent by work in progress of Andersen and Ueno ([AU1], [AU2] and [AU3]), the above theorem should follow from the work of Funar and Masbaum.

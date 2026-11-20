@@ -1,1 +1,0 @@
-Although values of the root-mean-square (rms) charge radius of the proton rp and of the deuteron rd obtained from such experi- ments are included in the 2018 adjustment, after due consideration the Task Group decided that the scattering values of rp and rd should not be included in the 2022 adjustment.

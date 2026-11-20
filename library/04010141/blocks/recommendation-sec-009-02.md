@@ -1,1 +1,0 @@
-The various definitions agree only up to equivalence in the Grothendieck group r(~(q)) of finite dimensional ~(q)-modules, Cellular algebras and diagram algebras 161 which suffices for our purpose, since we shall be discussing composition factors.

@@ -1,1 +1,0 @@
-Since any non-zero vector in $\D(\LA) \otimes OS^-[0]$ generates all of $\bar\Delta(\LA)$, any proper submodule of $\bar\Delta(\LA)$ must be a subspace of $\bigoplus_{d < 0} \D(\LA) \otimes_\K OS^-[d]$.

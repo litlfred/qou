@@ -1,1 +1,0 @@
-The lassos coming from the different loops $C_i'$ but covering the same connected region $S_\alpha$ should necessarily be arranged in such a way to enter the region $S_\alpha$ at the same base point $O_\alpha$.

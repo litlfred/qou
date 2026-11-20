@@ -1,1 +1,0 @@
-Using this new presentation, we can establish the existence of $\beta$: it is the identity on objects, and must send the generating morphisms $1_\a \otimes S \otimes 1_\b, 1_\a \otimes T \otimes 1_\b, 1_\a \otimes C \otimes 1_\b$ and $1_\a \otimes D \otimes 1_\b$ to the same morphisms in $\OS(z,t)$ since we want $\beta\circ\alpha = \operatorname{Id_{\OS(z,t)}}$.

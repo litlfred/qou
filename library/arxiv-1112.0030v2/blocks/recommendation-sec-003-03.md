@@ -1,1 +1,0 @@
-Since colored differentials are universal in the triply-graded theory --- {\it i.e.} they relate colored triply-graded homologies without even specializing to doubly-graded $sl(N)$ theories --- they should have zero $\a$-degree.

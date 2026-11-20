@@ -1,0 +1,1 @@
+In the situation of Deﬁ- nition 8.3.28, assume there is a full subcategory P ⊆K such the following three conditions hold: (a) The multiplicatively closed set S is a right denominator set in K. Derived Categories | Amnon Yekutieli |

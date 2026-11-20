@@ -1,1 +1,0 @@
-Therefore, wavefunctions obtained via a symplectic gluing procedure --- the procedure outlined in Section [\[sec:rules\]](#sec:rules){reference-type="ref" reference="sec:rules"} --- should be unambiguously defined.

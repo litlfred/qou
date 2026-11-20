@@ -1,0 +1,1 @@
+The resulting prediction (D’Ambrosio and Espriu 1986, Goity 1987) is in very good agreement with the experimental measurement (Burkhardt et al 1987): Br(KS →γγ) = ( 2.0 × 10−6 (theory) (2.4 ± 1.2) × 10−6 (experiment) .

@@ -1,1 +1,0 @@
-In particular we must have c1,ζ(A, B) = C for all roots of unity ζ with the same constant C, so we get inﬁnitely many constraints on A and B without having to calculate any of the Taylor expansions further than their O(ε) term.

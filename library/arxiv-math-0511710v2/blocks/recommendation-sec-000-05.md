@@ -1,1 +1,0 @@
-Next, assume that we can parallel transport an element $g \in G$ along a 1-parameter family of paths to get a new element $g' \in G$: \[ \xymatrix{ \bullet \ar@/^1pc/[rr]^{g}_{}="0" \ar@/_1pc/[rr]_{g'}_{}="1" \ar@{=>}"0";"1"^{h} && \bullet } \] This picture suggests that we should think of $h$ as a kind of `arrow' or `morphism' going from $g$ to $g'$.

@@ -1,1 +1,0 @@
-Generalizing their findings, they come to the conclusion that, for any attractive $1/r^n$ potential (with $n\geq 2$), partial waves with low angular momentum $L$ must be summed to all orders and one contact term is needed for each $L$ to renormalize the LO contribution.

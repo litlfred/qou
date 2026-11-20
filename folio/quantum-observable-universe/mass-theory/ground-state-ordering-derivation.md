@@ -73,7 +73,7 @@ in disguise: $\lambda_+(T_{pp}) = q$ and $\lambda_+(T_{nn}) = q^{-1}$
 are the braiding eigenvalues from the Hecke relation
 $(T - q)(T + q^{-1}) = 0$.  That identification is unaffected by the
 refutation; only the claim that a particular arrangement extremises
-$\Phi_q$ has been withdrawn.
+$\Phi_q$ does not apply.
 
 ## Scalability
 

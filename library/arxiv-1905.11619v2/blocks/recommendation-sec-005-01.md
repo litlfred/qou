@@ -1,1 +1,0 @@
-We shall assume that there exists a $\sigma$-weakly dense $\ast$-subalgebra $\mathcal{A}$ of $M$ such that $\mathcal{A}\Omega_\tau$ is contained in the domain of $\Delta$ and moreover $\Delta(\mathcal{A}\Omega_\tau) \subseteq \mathcal{A}\Omega_\tau$.

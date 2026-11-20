@@ -156,7 +156,7 @@ $k_\star(T_w)=n$; neither is $\le 2$ at the relevant $n$. The witness value
 $k_{\max}=9$ for tritium is a Coxeter-length quantity and is not compared with
 $k_\star$ here.
 
-*Status (2026-11-16).* Steps 4–5 together assert that the level-$K$ partial
+*Scope of Steps 4–5.* Steps 4–5 together assert that the level-$K$ partial
 sum equals $\sum_i\Phi_q^{[\le K]}(z_i)$ for every $K$ and is constant for
 $K\ge k_\star$. These cannot both hold, since
 $\Phi_q^{[\le K+1]}(z)\ne\Phi_q^{[\le K]}(z)$ for $z\ne0$

@@ -1,0 +1,1 @@
+Let f ∈Hm(R/Z, Rn) for m > 1 2. Then ˆf := ( ˆf (k))k∈Z ∈ ℓ1 and there exists a positive constant C0 < ∞such that ∥ˆf ∥ℓ1 ≤C0∥f ∥Hm. Proof Simply by the deﬁnition of the ℓ1-norm and by Hölder’s inequality we yield ∥ˆf ∥ℓ1 =

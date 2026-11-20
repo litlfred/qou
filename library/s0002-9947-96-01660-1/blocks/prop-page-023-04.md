@@ -1,0 +1,1 @@
+The category of representations of a spherical Hopf algebra, A, is equivalent to a canonical strict spherical category. In this category, the objects are lists of left A-modules and the morphisms A- linear maps of the modules formed by tensor product over the list. The trace

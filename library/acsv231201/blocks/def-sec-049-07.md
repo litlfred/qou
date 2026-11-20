@@ -1,0 +1,1 @@
+Let X be a smooth, oriented real 2k-manifold, and let y, and Y2 be two smooth, oriented k-cycles on X, intersecting transversely at finitely many points %;,...,Z,,. The signed intersection number of y, and y2 is the integer

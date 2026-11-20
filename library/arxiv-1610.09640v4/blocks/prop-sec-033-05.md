@@ -1,0 +1,1 @@
+Let {Mx}x∈X be a collection of objects of C(A, M), indexed by a set X. Assume that for every i ∈Z the direct sum M i := L x∈X M i x exists in M. Then the graded object M := {M i}i∈Z ∈G(M) has a canonical structure of DG A-module in M, and M is a direct sum of the collection {Mx}x∈X in Cstr(A, M). Derived Categories | Amnon Yekutieli |

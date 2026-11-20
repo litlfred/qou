@@ -1,1 +1,0 @@
-If there are k tiles on T+, then after k iterations—ﬁnger move 1 followed by ﬁnger move 2 followed by the second change in foliation, or as we shall call it, the FFF move, we will have created a tab neighborhood on PA for γ−.

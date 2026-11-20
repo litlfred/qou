@@ -1,1 +1,0 @@
-In this sense, our invariant Zγ(M) for M with complete hyperbolic structure can be regarded as a non-compact Uq(sl(2; R)) analogue of the Kashaev invariant, and an asymptotic behavior of Zγ(S 3 \ K) in the limit γ →0 should coincide with that of the Kashaev invariant JK  N; e2πi/N in the limit N →∞.

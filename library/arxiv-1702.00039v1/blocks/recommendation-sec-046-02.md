@@ -1,1 +1,0 @@
-Nonetheless, in [@li2.5] the author proves an analogue of the Forking path conjecture for "extra-large Coxeter groups", i.e. groups in which $m(s,r)>3$ for all $s,r\in S,$ so it is quite mysterious for what groups this should be true. :::

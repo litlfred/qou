@@ -1,1 +1,0 @@
-However, now notice that after we sketch in part of the axis we can see that block P must be non-empty because if it were empty the braid would be reducible, since the axis loops once about the braid between the points 4 and 6.

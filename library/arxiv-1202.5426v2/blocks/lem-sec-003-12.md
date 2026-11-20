@@ -1,0 +1,1 @@
+8 (Iteration lemma). Let C < ∞and θ > 0 be given. If bk ≥0, k ∈N0, satisfy bk+m ≤εbk + C 2−θ(k+m) + 2−θm k X l=1 2−θlbk−l  (A.4) for all k ∈N0 and ε > 0 is small enough, m is big enough, then bk ≲2−˜θk for all k ∈N0 with ˜θ = θ/2.

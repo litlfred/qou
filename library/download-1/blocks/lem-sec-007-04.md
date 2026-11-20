@@ -1,0 +1,1 @@
+A sequence fng1 n¼1  P1ðXÞ con- verges to  2 P1ðXÞ with respect to the distance function dW if and only if the sequence fng1 n¼1 converges weakly to the measure  and lim n!1 Z X dXðx; yÞdnðyÞ ¼ Z X dXðx; yÞdðyÞ for some (and then any) x 2 X.

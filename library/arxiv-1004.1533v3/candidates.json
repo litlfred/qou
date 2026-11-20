@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-1004.1533v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "95c1544431e6bf37e7dae3806a24bea3d6ea51480583a1b0b44fbda6a7f900d9",
   "file": "1004.1533v3.pdf"
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "This extension satisfies $Z_{TV}(S^1)=Z(\\C)$: boundary circles of 2-surfaces should be colored by objects of $Z(\\C)$.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Note that both boundary edges must be labeled by $\\one$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-4-tv-invariants-from-polytope-decompositions.md",
-   "section_title": "TV invariants from polytope decompositions",
-   "pages": "15-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Recall that according to general ideas of extended field theory (see \\ocite{lurie}), an extended 3d TQFT should assign to a closed 1-manifold a 2-vector space, or an abelian category, and to a 2-cobordism between two 1-manifolds, a functor between corresponding categories (which in the special case of cobordism between two empty 1-manifolds gives a functor $\\Vect\\to \\Vect$, i.e. a vector space).",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-6-surfaces-with-boundary.md",
-   "section_title": "Surfaces with boundary",
-   "pages": "22-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The map $\\ph$ should satisfy: \\begin{enumerate} \\item $\\ph$ is a homeomorphism onto its image \\item $T\\cap \\del M=\\ph(\\{0\\}\\times D^2) \\cup \\ph(\\{1\\} \\times D^2)$ \\end{enumerate}",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-6-surfaces-with-boundary.md",
-   "section_title": "Surfaces with boundary",
-   "pages": "22-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The map $\\ph$ should satisfy: \\begin{enumerate} \\item $\\ph$ is a homeomorphism onto its image \\item $T\\cap \\del M=\\varnothing$ \\end{enumerate}",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-6-surfaces-with-boundary.md",
-   "section_title": "Surfaces with boundary",
-   "pages": "22-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

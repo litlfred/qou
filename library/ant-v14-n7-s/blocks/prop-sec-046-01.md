@@ -1,0 +1,1 @@
+B.4. (i) Let (λ, g) ∈Gm(K) × 51,0(K) such that |λ|p < 1. The map (λ, g)◦∫1,0 is a λ-contraction. More precisely, the inequality (1-14) is an equality if κ = λ. (ii) For all (λ, g) ∈Gm(K) × 51,0(K), the Ihara action of g weighted by λ is an automorphism of the scheme 51,0 ×Spec Q Spec K, whose inverse is f 7→τ(λ−1)(g−1∫1,0 ◦∫1,0 f ).

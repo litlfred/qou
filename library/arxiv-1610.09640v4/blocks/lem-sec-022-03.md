@@ -1,0 +1,1 @@
+Let M be an abelian category. Consider a diagram (D) M1 × M2 p2 / p1  M2 φ2  M1 φ1 / N in M, where pi are the projections. Deﬁne the object L := Ker(φ1 ◦p1 −φ2 ◦p2) ⊆M1 × M2, with inclusion morphism e : L →M1 ×M2. Next deﬁne the morphisms ψi := pi ◦e : L →Mi. Derived Categories | Amnon Yekutieli |

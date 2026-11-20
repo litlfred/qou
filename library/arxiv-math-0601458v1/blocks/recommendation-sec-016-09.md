@@ -1,1 +1,0 @@
-A consideration of what morphisms of Z0-coloured M-sets must be reveals how to deﬁne this: 5Since we are already thinking of sets as special kinds of categories here, this raises the question of what happens if we categorify M.

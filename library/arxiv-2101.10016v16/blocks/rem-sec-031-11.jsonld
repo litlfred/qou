@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/blocks/rem-sec-031-11",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 194,
+  "pageEnd": 204,
+  "text": "rem-sec-031-11.md",
+  "derivedFrom": "library/arxiv-2101.10016v16/sections/sec-031",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "32.11",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-031-32-compatible-unitary-coboundary-weak-hopf-algebra.md (p. 194-204)",
+    "claim_id": "arxiv-2101.10016v16#remark:32.11"
+  }
+}

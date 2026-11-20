@@ -1,1 +1,1 @@
-B.1.4. LetA be an abelian tensor category such that ⊗ is an exact
+1.4. LetA be an abelian tensor category such that ⊗ is an exact bifunctor and let S be a Serre subcategory of A. Assume the following condition: for any X∈A and Y∈S , X⊗Y and Y⊗X belong toS.(B.1.1) ThenA/S has a structure of a tensor category such that Q :A→A /S is a tensor functor.

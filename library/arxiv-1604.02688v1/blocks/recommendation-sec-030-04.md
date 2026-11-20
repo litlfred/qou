@@ -1,1 +1,0 @@
-If no annuli of the form $(q_{C01:23}+q_{D01:23}+q_{E01:23})$ exist in $S_{n+1}\cap \BThree$, then again there must be at least one piece of the form: $q_{C01:23}+q_{D01:23}+t_{E2}+t_{E3}$, $q_{D01:23}+q_{E01:23}+t_{C2}+t_{C3}$, and $q_{E01:23}+q_{C01:23}+t_{D2}+t_{D3}$, which completes the proof. \end{proof}

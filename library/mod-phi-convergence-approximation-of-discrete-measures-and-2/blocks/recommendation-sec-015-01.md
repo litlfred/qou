@@ -1,1 +1,0 @@
-ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES 1153 This last estimate should be compared with the unconditional bound dTV(Xn, Yn) ⩽2 p2,n λn = 2 Pn j=1(pj)2 Pn j=1 pj stemming from the Chen–Stein method.

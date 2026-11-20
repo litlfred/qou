@@ -1,0 +1,1 @@
+1 (Projective Limit State). If {φn}n∈N0 satisfies the Kolmogorov compatibility condi- tion, then there exists a unique state φ on AN0 such that φ|A[0,n] = φn for all n. Moreover, for any A ∈AN0, φ(A) = limn→∞φn(An) whenever An ∈A[0,n] converges to A in norm.

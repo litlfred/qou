@@ -1,1 +1,0 @@
-We shall use heavily the theta function of Jacobi defined by the following equality: $$\theta_{q}(z) = \sum_{n \in {\mathbf Z}} q^{-n(n+1)/2} z^{n}.$$ This function is holomorphic in ${\mathbf C}^{*}$ with simple zeroes, all located on the discrete $q$-spiral $[-1;q]$, where we write $[a;q] = a q^{{\mathbf Z}} \;,\; (a \in {\mathbf C}^{*})$.

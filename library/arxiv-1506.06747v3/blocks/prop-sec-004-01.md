@@ -1,0 +1,1 @@
+We discuss the renormalization of the Cottingham formula, in particular the role of the sub- traction function in the evaluation of the self-energy and provide a comparison with recent work on the is- sue.

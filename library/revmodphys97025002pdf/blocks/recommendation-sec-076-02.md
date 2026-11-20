@@ -1,1 +1,0 @@
-Nevertheless, we believe that emphasizing the changes in this way is useful, and of course, ideally most changes should be smaller than the 1-standard-deviation uncertainty assigned to the value from the previous adjustment.

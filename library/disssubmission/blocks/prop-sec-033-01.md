@@ -1,0 +1,1 @@
+The smooth projective surfaces Y and Y + have the following integral cohomology groups. n Hn(Y,Z) Z Z8 Z86 Z8 Z Hn(Y +,Z) Z Z34 ⊕(Z/2Z)9 (Z/2Z)9 Z Moreover, the quotient morphism q : Y −→Y + induces an epimorphism onto the σ-invariants q∗: H2(Y +,Z) ↠H2(Y,Z)+ ⊂H2(Y,Z) and the kernel of this epimorphism is the torsion subgroup of H2(Y +,Z).

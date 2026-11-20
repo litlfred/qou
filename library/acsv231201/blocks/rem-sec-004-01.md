@@ -1,0 +1,1 @@
+An alternative deﬁnition is that f = O(g) when there exists C > 0 and an open neighborhood N of x such that f(x) ≤Cg(x) for all x ∈N. In this case C is called an implied constant. One may increase C and decrease N and still maintain the inequality, so implied constants are not unique, even if they are chosen to give a tight inequality.

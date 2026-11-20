@@ -1,0 +1,1 @@
+Let φ and ψ be faithful normal states on a von Neumann algebra M. Then there is a strongly continous map t →ut from R to the unitary group of M so that σφ t = Adutσψ t ∀t ∈R. Morevoer ut satisﬁes the cocycle condition utσψ t (us) = ut+s.

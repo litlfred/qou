@@ -1,1 +1,0 @@
-On the theoretical side, it is but natural to dream that a deeper fundamental theory should provide a unity of all the forces of nature including gravity, together with a good quantum theory of gravity, while providing a predictive and realistic description of the phys- ical world.

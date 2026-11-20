@@ -1,0 +1,1 @@
+1. Let C ∈Uq(su(2)) invariant under the adjoint action, then C commutes with the generators Jσ, σ = +, −, z. Conversely, if C ∈Uq(su(2)) commutes with Jσ, then it is invariant under the adjoint action. B.

@@ -1,12 +1,15 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2006.02042v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9de75ced3a3360bb7cff8b7d51183eae135606c3a267221a370915288ee45571",
   "file": "2006.02042v1.pdf"
  },
  "provenance": {
-  "title": "THE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT",
+  "title": "The Strong AJ Conjecture for the Figure 8 Knot",
   "authors": "HOANG-AN NGUYEN AND ANH T. TRAN",
   "arxiv": {
    "id": "2006.02042",
@@ -16,61 +19,79 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
+  "candidates": 2,
   "by_kind": {
-   "recommendation": 3
+   "conjecture": 1,
+   "lemma": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "conjectural": 1,
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "none": 1,
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "proved-here": 1
+  },
+  "needs_lean_proof": 0
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1",
    "name": null,
-   "statement": "We also note that $p_i$'s must be polynomials in $t, M, L$, and we call these conditions the \\textit{polynomial conditions}.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-13-main-result.md",
-   "section_title": "Main result",
-   "pages": "2-3",
+   "statement": "(AJ conjecture) For every knot K in S3, \u03b5(\u03b1K) is equal to the A- polynomial AK(M, L), up to multiplication by a polynomial depending on M only. The A-polynomial of a knot was introduced by Cooper et al. [CCGLS]; it describes the SL2(C)-character variety of the knot complement as viewed from the boundary torus. The A-polynomial always contains the factor L \u22121 coming from the abelian component of the character variety, so we can write AK = (L \u22121)A\u2032 K where A\u2032 K \u2208Z[M, L]. The AJ conjecture has been con\ufb01rmed for the trefoil knot and \ufb01gure eight knot [Ga], all torus knots [Hi, Tr1], some classes of two-bridge knots and pretzel knots [Le, LT, LZ], ",
+   "claim_domain": "math",
+   "evidence_kind": "conjectural",
+   "evidence_location": "none",
+   "evidence_locator": "Open conjecture stated in sections/sec-002-11-the-colored-jones-polynomial-and-recurrence-i.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-002-11-the-colored-jones-polynomial-and-recurrence-i.md",
+   "section_title": "The colored Jones polynomial and recurrence ideal",
+   "pages": "1-2",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "conj-sec-002-01",
+   "block_iri": "library/arxiv-2006.02042v1/blocks/conj-sec-002-01",
+   "claim_id": "arxiv-2006.02042v1#conjecture:1"
   },
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
    "name": null,
-   "statement": "We also note that pi\u2019s must be polynomials in t, M, L, and we call these conditions the polynomial conditions.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
+   "statement": "Suppose there exists P \u2208R[M\u00b11, L\u00b11] such that PJK \u2208R[M\u00b11], \u03c3(P) = P and \u03b5(P) = MkLl(A\u2032 K)2m for some integers k, l, m. Then pK \u2282 p \u03b5(A\u03c3 K).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-004-2-proof-of-theorem.md (p. 3-4)",
+   "external_refs": [],
+   "proof_excerpt": "Since PJK \u2208R[M\u00b11], by [Tr4, Lemma 3.3] there exists R \u2208R[L\u00b11] such that \u03c3(R) = R, \u03b5(R) = (L + L\u22121 \u22122)r and RPJK = 0 for some integer r \u22651. Let Q = RmP r \u2208R[M\u00b11, L\u00b11]. Then QJK = 0, \u03c3(Q) = Q and \u03b5(Q) = \u03b5(R)m\u03b5(P)r = MkrLlr\u2212mr((L \u22121)A\u2032 K)2mr. Hence, by [Tr4, Lemma 3.2] we obtain pK ",
    "section_file": "sections/sec-004-2-proof-of-theorem.md",
    "section_title": "Proof of Theorem ??",
    "pages": "3-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "We now use the fact that $p_i$'s must be Laurent polynomials.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-22-step-2-applying-polynomial-conditions.md",
-   "section_title": "Step 2: Applying polynomial conditions",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-004-2-proof-of-theorem.md (p. 3-4)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-004-01",
+   "block_iri": "library/arxiv-2006.02042v1/blocks/lem-sec-004-01",
+   "claim_id": "arxiv-2006.02042v1#lemma:2.1",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Machinery/AJMinimality.lean:hc3_eq"
+   ],
+   "needs_lean_proof": false
   }
  ]
 }

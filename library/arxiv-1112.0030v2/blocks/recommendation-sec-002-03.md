@@ -1,1 +1,0 @@
-Indeed, it implies that \eqref{W22} should be identical to the well known potential \be W_{so(3), V} \; = \; x^2 + xy^2 \label{Wso3} \ee in the $so(3)$ homology theory, {\it cf.} \cite{GWalcher,KRso}.

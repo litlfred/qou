@@ -1,0 +1,1 @@
+— There exists an explicit pair (F, φ) of an algebraically closed ﬁeld F and an automorphism φ, such that F ⊃K and φ extends the given automorphism of K. The pair (F, φ) induces automorphisms of the algebraic closures of K and K extending the given φ.

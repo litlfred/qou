@@ -1,1 +1,0 @@
-What Pontryagin observed is that $f_0$ and $f_1$ differ by an automorphism of $S^1\times S^2$, and so there is no natural way to choose which one should serve as the base map for the homology class $[S^1\times S^2,S^2]_1$.

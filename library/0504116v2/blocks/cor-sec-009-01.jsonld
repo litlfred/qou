@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/0504116v2/blocks/cor-sec-009-01",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "cor-sec-009-01.md",
+  "derivedFrom": "library/0504116v2/sections/sec-009",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0504116v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.3",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-009-2-smoothness-at-the-complete-structure.md (p. 12-13)",
+    "claim_id": "0504116v2#corollary:2.3",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,1 +1,0 @@
-The couplings $t,\tilde{t}$ can be split as \begin{equation} t = \frac{1}{2}(k+\ri s),\quad \tilde{t} =\frac{1}{2}(k-\ri s). \end{equation} In a consistent quantum theory, the level $k$ must be an integer so that the partition function of the Chern-Simons theory is invariant under large gauge transformations.

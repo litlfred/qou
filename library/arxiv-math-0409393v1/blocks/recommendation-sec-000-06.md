@@ -1,1 +1,0 @@
-Then, for a divisor $D = \sum n_{i} [\alpha_{i}]$ over ${\mathbf{E}_{q}}$ (*i.e.*, the $n_{i} \in {\mathbf Z}$, the $\alpha_{i} \in {\mathbf{E}_{q}}$), we shall write $ev_{{\mathbf{E}_{q}}}(D) = \sum n_{i} \alpha_{i} \in {\mathbf{E}_{q}}$ for its evaluation, computed with the group law on ${\mathbf{E}_{q}}$.\ Let $K$ denote any one of the forementioned fields of functions.

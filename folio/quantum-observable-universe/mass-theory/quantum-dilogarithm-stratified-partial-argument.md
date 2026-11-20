@@ -110,7 +110,7 @@ and $u_n(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is a unit. The exponent
 $c_k(n)$ counts depth-exactly-$k$ partitions; the factor
 $(1 - q^{-k} z)^{-c_k(n)}$ contributes the depth-$k$ stratum of $Z(A)$.
 
-> **Status (2026-11-16): the product expansion in (d) is false as written.** Every $\lambda \vdash n$ has $|\lambda| = n$, so $F_n(z) = \bigl(\sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda)\bigr)\, z^n$ is a single monomial in $z$. A product $\prod_{k \geq 1}(1-q^{-k}z)^{-c_k(n)}\, u_n(q)$ with some $c_k(n) > 0$ has the nonzero $z^1$ coefficient $u_n(q)\sum_k c_k(n)\, q^{-k}$ when $n \geq 2$, so the two sides cannot agree. Steps (e)–(f) inherit this. The proved truncation statement is [`prop:cell-depth-truncation`](#prop:cell-depth-truncation).
+> **Scope of (d): the multi-factor product expansion does not hold for a homogeneous monomial.** Every $\lambda \vdash n$ has $|\lambda| = n$, so $F_n(z) = \bigl(\sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda)\bigr)\, z^n$ is a single monomial in $z$. A product $\prod_{k \geq 1}(1-q^{-k}z)^{-c_k(n)}\, u_n(q)$ with some $c_k(n) > 0$ has the nonzero $z^1$ coefficient $u_n(q)\sum_k c_k(n)\, q^{-k}$ when $n \geq 2$, so the two sides cannot agree. Steps (e)–(f) inherit this. The proved truncation statement is [`prop:cell-depth-truncation`](#prop:cell-depth-truncation).
 
 (e) The single-stratum factor $(1 - q^{-k}z)^{-1}$ in $\Phi_q$ is
 the $c_k = 1$ specialisation of (d) — applicable when each depth-$k$

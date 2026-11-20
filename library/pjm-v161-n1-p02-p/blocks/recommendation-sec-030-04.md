@@ -1,1 +1,0 @@
-The proof for (2 - 3)~* is identical, with one small modification: the pierce points 1, 2 and 3, 4 on <9T must be changed from their positions in Figure 6.2 to their positions in Figure 6.4 (next page).

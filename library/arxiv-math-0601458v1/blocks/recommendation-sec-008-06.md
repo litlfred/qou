@@ -1,1 +1,0 @@
-For simplicity, we will replace $\underline{\boldsymbol{\operatorname{{FinSet_0}}}}$ with $\mathbbm{N}$, but we should remember that it derives from the original groupoid $\boldsymbol{\operatorname{{FinSet_0}}}$.

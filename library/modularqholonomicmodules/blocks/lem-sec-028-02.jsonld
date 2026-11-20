@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/modularqholonomicmodules/blocks/lem-sec-028-02",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 52,
+  "pageEnd": 62,
+  "text": "lem-sec-028-02.md",
+  "derivedFrom": "library/modularqholonomicmodules/sections/sec-028",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.9",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-028-57-the-x-deformation.md (p. 52-62)",
+    "claim_id": "modularqholonomicmodules#lemma:5.9",
+    "lean_status": "unformalized"
+  }
+}

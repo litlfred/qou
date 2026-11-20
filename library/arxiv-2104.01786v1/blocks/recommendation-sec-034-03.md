@@ -1,1 +1,0 @@
-There is no such simple description in the split case ${\rm Spin}(7,7)$, and so it must be concluded that from the two pseudo-orthogonal groups in 14 dimensions that have real semi-spinor representations, it is the ${\rm Spin}(11,3)$ case that is relevant for the purpose of describing the elementary particles, not ${\rm Spin}(7,7)$.

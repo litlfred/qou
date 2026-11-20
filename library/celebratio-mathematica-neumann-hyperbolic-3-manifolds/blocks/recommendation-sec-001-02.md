@@ -1,1 +1,0 @@
-We should mention that and can be defined invariantly, without us‐ ing any triangulation, as follows: the deformed hyperbolic structure on corres‐ ponds to a homomorphism near to the inclusion map, and then and are simply the logarithms of the ratios of the eigenvalues of the images un‐ der of the meridians and longitudes, respectively.

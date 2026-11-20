@@ -1,0 +1,1 @@
+Let χ ∈X a reducible character, v ∈ˆX the associated va- luation, and ρ : Γ →SL2(Ov) a choice of convergent tautological representation. Then the character χ¯ρ is not central, and in particular the representation ρ is not residually central. Moreover, one can choose the tautological representation ρ such that it is not residually abelian.

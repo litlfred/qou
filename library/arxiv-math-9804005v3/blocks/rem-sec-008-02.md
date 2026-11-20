@@ -1,0 +1,1 @@
+Miyachi proved a converse to Proposition 1.3(2): if there are con- travariant triangle functors D(ModA) → D(ModB◦) and D(ModB◦) → D(ModA) which send⨁ to∏ , preserve Db and induce duality on Db f , then there is a dualizing complex in D(Mod(A ⊗B◦)) (see [Mi2] Theorem 3.3).

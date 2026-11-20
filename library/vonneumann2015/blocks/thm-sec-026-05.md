@@ -1,0 +1,1 @@
+Let Γ act freely and ergodically on the countably sepa- rated σ-ﬁnite measure space (X, µ) so that there is no σ-ﬁnite Γ-invariant measure on X absolutely continuous with respect to µ. Then L∞(X, µ) ⋊Γ is a factor not of type I or II.

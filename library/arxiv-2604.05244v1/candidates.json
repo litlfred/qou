@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-2604.05244v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a5097e763dd89d06ccdddc79920f425d30d320a8f8ac6e1dc4150be11d5f7314",
   "file": "2604.05244v1.pdf"
@@ -16,181 +19,45 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 11,
+  "candidates": 1,
   "by_kind": {
-   "recommendation": 11
+   "proposition": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "1. *Non-interacting (free) fermions.* The outgoing state must be a Slater determinant [@FetterWalecka].",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
+   "statement": "The cleanest experimental test is therefore the collapse plot: define $$\\mathcal S_A(s) := \\frac{h}{4e^3\\mathcal T(1-\\mathcal T)}\\;\\kappa_A\\,\\Delta_I(V), \\qquad s = \\frac{|eV|/\\hbar\\Omega - A}{\\kappa_A}. \\label{eq:collapse-obs}$$ The prediction is $\\mathcal S_A(s)\\to K_{\\mathop{\\mathrm{Ai}}}(s,s)$, independently of $A$.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-018-the-plateau-deficit.md (p. 20-23)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-018-the-plateau-deficit.md",
+   "section_title": "The plateau deficit",
+   "pages": "20-23",
    "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Section [\\[sec:measurement\\]](#sec:measurement){reference-type=\"ref\" reference=\"sec:measurement\"} defines the detection kernel and explains why it must be specified.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-000-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Any theory intended to predict what is actually reported by the experiment must include $K_{\\rm phys}$ at the point where the operator $\\hat Y(t)$ is converted into the measured complex amplitude $\\hat u_0$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-003-why-the-detection-kernel-must-appear-in-the-theo.md",
-   "section_title": "Why the detection kernel must appear in the theory",
-   "pages": "5-6",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For a multi-channel device with a non-scalar $\\mathcal U^{\\alpha\\beta}(E)$, the full matrix form $C=S^*NS^T$ must be retained, and the correlator acquires a channel-dependent prefactor (see Sec. [\\[sec:discrete-bessel\\]](#sec:discrete-bessel){reference-type=\"ref\" reference=\"sec:discrete-bessel\"} for the conditions under which it reduces to a Bessel kernel).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-005-sideband-operators-and-the-floquet-scattering-ma.md",
-   "section_title": "Sideband operators and the Floquet scattering matrix",
-   "pages": "6-7",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For off-diagonal blocks ($k\\neq 0$, inter-sideband coherences), one must either maintain a stable LO--drive phase reference to access the complex amplitude through the first moment, or work with the noise power (quadratic observable) which accesses weighted quadratic functionals of $C$ without phase sensitivity.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-connecting-the-measurement-to-the-correlator.md",
-   "section_title": "Connecting the measurement to the correlator",
-   "pages": "7-9",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "They should not be read as rigorous error bounds on a physical observable, since the actual error depends on the observable, the window, and the $E$-integration.",
-   "strength": "should-not",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-soft-edge-and-the-airy-kernel.md",
-   "section_title": "Soft edge and the Airy kernel",
-   "pages": "12-14",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "To produce a cusp---where three saddle points coalesce simultaneously---one must fine-tune an additional external parameter (such as adding a deterministic source to the random matrix [@BleherKuijlaars2007]).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-015-why-floquet-edges-are-richer-than-standard-rmt-e.md",
-   "section_title": "Why Floquet edges are richer than standard RMT edges",
-   "pages": "16-18",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "It serves as the benchmark against which practical measurement schemes should be compared.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-what-the-measurement-sees-at-the-soft-edge.md",
-   "section_title": "What the measurement sees at the soft edge",
-   "pages": "18-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "A key limitation of the windowed-heterodyne readout (Sec. [\\[sec:measurement\\]](#sec:measurement){reference-type=\"ref\" reference=\"sec:measurement\"}) must be stated clearly.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-016-what-the-measurement-sees-at-the-soft-edge.md",
-   "section_title": "What the measurement sees at the soft edge",
-   "pages": "18-20",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "For a drive frequency $\\Omega/2\\pi=10\\;\\mathrm{GHz}$ and $A=50$, one has $hf/k_B\\approx 0.48\\;\\mathrm{K}$ and $\\kappa_{50}=(50/2)^{1/3}\\approx 2.9$, giving $T_{\\rm cross}\\sim hf\\kappa_A/k_B\\approx 1.4\\;\\mathrm{K}$---well above typical dilution-fridge base temperatures, confirming that the Airy edge should be experimentally accessible.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-019-finite-temperature-and-the-crossover-scale.md",
-   "section_title": "Finite temperature and the crossover scale",
-   "pages": "23-24",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Condition (6), $A=eV_{\\rm ac}/hf\\gg 1$, requires $V_{\\rm ac}\\sim 0.8$--$8\\;\\mathrm{mV}$ at $10\\;\\mathrm{GHz}$ for $A\\sim 20$--$200$, which is accessible though large enough that drive-induced heating must be monitored.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-022-experimental-platforms.md",
-   "section_title": "Experimental platforms",
-   "pages": "25-26",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-018-the-plateau-deficit.md (p. 20-23)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-018-01",
+   "block_iri": "library/arxiv-2604.05244v1/blocks/prop-sec-018-01",
+   "claim_id": "arxiv-2604.05244v1#prop-sec-018-01"
   }
  ]
 }

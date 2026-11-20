@@ -1,1 +1,0 @@
-We should point out that, dually, every finite ribbon category $\calC$ also admits an \textit{end} \[ \calE = \int_{X \in \calC} X \otimes X^*, \] which is similarly defined as a universal dinatural transformation, see Appendix \ref{A:end} for details.

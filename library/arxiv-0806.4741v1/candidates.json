@@ -1,6 +1,9 @@
 {
  "_schema": "ingest-candidates/v1",
  "doc_id": "arxiv-0806.4741v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5e7ad85a99fb355293d35eb086cb3b6b761482e01a4afac313a2e33d7067692f",
   "file": "0806.4741v1.pdf"
@@ -16,91 +19,11 @@
   },
   "doi": null
  },
- "aspects": [
-  "requirements"
- ],
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "recommendation": 5
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Thus any finite dimensional limit of such a theory must contains some remanent of this structure.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-001-motivations.md",
-   "section_title": "Motivations",
-   "pages": "1-3",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "In particular, since by construction $S^{(\\DD)}_{\\mbox{\\rm can}}$ is smooth it must differ from $S^{(\\DD)}_W$.",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-admissible-functions-on-symplectic-symmetric-sur.md",
-   "section_title": "Admissible functions on symplectic symmetric surfaces",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "Nevertheless, as proven above, they should locally be odd functions of each other.",
-   "strength": "should",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-006-admissible-functions-on-symplectic-symmetric-sur.md",
-   "section_title": "Admissible functions on symplectic symmetric surfaces",
-   "pages": "8-11",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "The equivalence $U$ between $\\star$ and $\\sharp=U(\\star)$ must therefore be a convolution operator by a (formal) distribution $u\\in\\cd'(\\SS)$ on $\\SS$ i.e. of the form: \\begin{equation}\\label{conv} (U f)(x) = \\int_{\\SS\\,} u(y^{-1}x)\\,f(y) \\,{\\rm d}^Ly\\;, \\end{equation} where ${\\rm d}^Ly$ denotes a left-invariant Haar measure on $\\SS$ (remark that it coincides with the Liouville area form on $\\SS=\\DD=\\MM$).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-the-de-contraction-procedure-evolution-of-the-da.md",
-   "section_title": "The de-contraction procedure: evolution of the Dalembert operator",
-   "pages": "13-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  },
-  {
-   "kind": "recommendation",
-   "source_kind": "normative-statement",
-   "number": null,
-   "name": null,
-   "statement": "On the other hand the above subsection provides us an explicit expression for $D$, the identity \\begin{equation}\\label{UMOINS1} D\\circ U^{-1}\\;=\\;U^{-1}\\circ F^\\star \\end{equation} may then be interpreted as an equation that must be satisfied by the intertwiner $U$ (or rather $U^{-1}$).",
-   "strength": "must",
-   "strength_list": "rfc2119-requirement-level",
-   "section_file": "sections/sec-010-the-de-contraction-procedure-evolution-of-the-da.md",
-   "section_title": "The de-contraction procedure: evolution of the Dalembert operator",
-   "pages": "13-15",
-   "formalization_candidate": false,
-   "route_to": "l2-dak-authoring",
-   "aspect": "requirements"
-  }
- ]
+ "candidates": []
 }

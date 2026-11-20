@@ -1,1 +1,0 @@
-Furthermore, the 1-form θσ should be exact, when restricted to the Lagrangian submanifold L֒ →P, I C θσ = 0 , ∀C ∈π1(L) There is a similar set of constraints that follows from the rationality of the periods of θk, cf.

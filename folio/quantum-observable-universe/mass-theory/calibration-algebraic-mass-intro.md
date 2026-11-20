@@ -1,26 +1,7 @@
-The previous section produced a categorical mass functor that is dimensionless and unfixed in scale. We now anchor it to physical units. The three inputs align with the three Wedderburn channels of $H_3(R, q)$. The calibration is structural: each channel takes one anchor, forcing the rest of the formula. From the anchored mass we derive the algebraic mass formula, the Hoefsmit seminormal $R$-matrix, the Habiro brane tower, and the quantum-dilogarithm $\Phi_q$ that compiles the chapter's canonical witnesses.
+The categorical mass trace is a dimensionless element of the base ring $\mathbb{Q}(q)$; comparing its archimedean image with physical measurements requires fixing the units of the state space's first cohomology. On Bring's curve, the first cohomology $H^1 = 2W$ carries a polarised weight-one Hodge structure with exactly three real degrees of freedom invisible to purely topological braid invariants. These three degrees of freedom correspond one-to-one with the three Wedderburn channels of the three-strand Hecke algebra $H_3(q)$ and fix the framework's three calibration anchors:
 
-The Normal form of the Hecke mass element conjecture identifies the canonical element whose Markov trace carries the mass. The Calibration inputs and predictive content remark establishes the no-fitting rule. The Exactly three calibration inputs proposition ($m_e$, $m_\mu/m_e$, $\mathfrak{Q}_\beta(n)$) proves that exactly three anchors are needed—one per Wedderburn channel. The Two-tier scaling $(p, q)$ remark and Three parameters aligned to Wedderburn channels proposition track how the channels carry the scaling. The Three-invariant atomic mass formula theorem establishes the algebraic mass formula, and the Derived-only mass formula proposition verifies it against the light isotopes.
+- **Scale ($\mathrm{CAL\text{-}1}$, $m_e$):** The electron mass fixes the overall energy unit of the rank-two Hodge plane $W$ at order $h^0$.
+- **Modulus ($\mathrm{CAL\text{-}2}$, $q_0$):** The dimensionless lepton mass ratio $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ (or equivalently the bar-odd neutron $\beta$-decay channel $\mathfrak{Q}_\beta$ at order $h^2$) pins the Hodge monodromy modulus $q_0 \approx 1.1100$.
+- **Orthogonal Meson Scale ($\mathrm{CAL\text{-}3}$, $m_\pi$):** The pion scale fixes the single cohomologically orthogonal class whose Hopf-link complement has vanishing hyperbolic volume at order $h^3$.
 
-The remainder of the section develops the seminormal and convergence machinery. The Hoefsmit seminormal matrices proposition supplies the explicit seminormal forms via the figure-eight branching rule. The convergence sequence runs through the Hecke convergence bound, the Markov-trace inductive limit, and the $\mathfrak{Q}_\beta$ categorical-derivation precision ladder. The Habiro ring, $\widehat{Z}$ ring, Algebraic quantum volume, Quantum dilogarithm stratified, and Q-Pochhammer partial product definitions establish the brane-tower layer. The realisation functor packages the bridge from the algebraic substrate to canonical evaluation.
-
-The section closes with structural witnesses: depth-2 and depth-3 base-surface witnesses, Tate-rational and orbit-sum cyclotomic theorems, Baer-* and central-idempotent foundations of the Hecke algebra, and the bi-filtration grid mapping knot convolutions to the joint Galois/braid grading. The falsifiability targets and volume-injectivity probes restrict the base-surface embedding. The Quantum Bloch group and pentagon identity anchors the algebra in Bloch-group terms. The next section uses the three-input calibration and the quantum dilogarithm to ascend the confinement ladder.
-
-**Calibration.**
-The internal symmetry and the rigid topology of the state space leave
-only a handful of free parameters: **exactly three** weak-sector
-inputs fix the framework — a leptonic mass scale and two decay
-widths, entering at successive orders $h^0$, $h^2$, $h^3$ — and they
-are not chosen freely: they match, one for one, the three real
-degrees of freedom of the state space's first cohomology.  The
-leptonic mass scale ($m_e$) sets the unit, the *scale* of that
-cohomology; the neutron $\beta$-sector bar-skew channel ($P_{\mathrm{skew}}^{\beta}$)
-fixes the substrate parameter $q_0$, its *modulus*; and the pion
-decay width ($P_{\mathrm{avg}}^{\pi}$) fixes the one remaining *orthogonal*
-class, the meson sector whose Hopf-link complement has zero volume.
-Each is read off its most precisely measured proxy — $m_e$, the
-$Q$-value $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$, and the
-pion mass $m_\pi$; the modulus is overdetermined, so it is pinned
-numerically by the lepton ratio $m_\mu/m_e$ through the Skein
-relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.  Every other
-mass, Q-value, binding energy, and coupling constant is a prediction.
+Once these three anchors are fixed, every remaining particle mass, binding energy, reaction $Q$-value, and gauge coupling is a zero-parameter prediction. This section establishes the normal form of the Hecke mass element, proves that the three calibration inputs exhaust the cohomological freedom of the three Wedderburn channels of $H_3(q)$, and derives the Wedderburn trace identity together with its symbolic character tables and staircase hook invariants. Because the single-bond binding scale is suppressed by the Catalan factor relative to the nucleon rest mass, the error-amplification analysis quantifies how uncertainty in $q_0$ propagates into composite binding energies, leading directly to the three-invariant Wedderburn mass formula and the Frobenius-$S$ classification.

@@ -1,1 +1,0 @@
-Because symplectic parallel transport takes the $\Sigma^E_z$ into each other, the ball $B_c$ from Lemma [\[th:vanishing-ball\]](#th:vanishing-ball){reference-type="ref" reference="th:vanishing-ball"} must be the union of $\Sigma^E_z$ for all $z \in [0;r]$, and the vanishing cycle is $V_c = \Sigma^E_r = L \subset M$, with the same framing as before.
