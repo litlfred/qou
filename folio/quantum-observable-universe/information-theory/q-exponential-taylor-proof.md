@@ -1,4 +1,4 @@
-*Proof.* The categorical defining equation $D_q\, \exp_q = \exp_q$, joined with the boundary condition $\exp_q(0) = 1$, determines a unique formal power series $\exp_q(x) = \sum_{n\ge 0} a_n x^n$ in $R[\![x]\!]$. The Jackson derivative acts on monomials via $D_q(x^n) = [n]_q\, x^{n-1}$. We substitute this into the equation:
+*Proof.* The categorical defining equation $D_q\, \exp_q = \exp_q$, joined with the boundary condition $\exp_q(0) = 1$, determines a unique formal power series $\exp_q(x) = \sum_{n\ge 0} a_n x^n$ in $R[\![x]\!]$. The Jackson derivative acts on monomials via $D_q(x^n) = [n]_q\, x^{n-1}$. One substitutes this into the equation:
 
 $$
   D_q\,\sum_n a_n x^n
@@ -6,7 +6,7 @@ $$
   \;=\; \sum_{m \ge 0} a_{m+1} [m+1]_q x^m.
 $$
 
-Equating this to $\sum_m a_m x^m$ forces the recursion $a_{m+1} = a_m / [m+1]_q$. With $a_0 = 1$, we obtain:
+Equating this to $\sum_m a_m x^m$ forces the recursion $a_{m+1} = a_m / [m+1]_q$. With $a_0 = 1$, one obtains:
 
 $$
   a_n \;=\; \prod_{k=1}^{n} \frac{1}{[k]_q} \;=\; \frac{1}{[n]_q!}.
