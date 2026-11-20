@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-11-20T09:00:00Z
-updated_at: 2026-11-20T18:46:07Z
+updated_at: 2026-11-20T18:58:48Z
 parent: qou-uhx0
 ---
 
@@ -53,3 +53,5 @@ Still open:
 - **Every reduction path is Hecke-only: proved.** `chainXi_every_reduction_heckeOnly` (`HeckeChainEveryPath.lean`): any reduction sequence of Ξ in the completed system is a Hecke-only sequence.
 - **The C(A−1,2) step count is false as a bound on rewriting steps.** `chainXi_L3_needs_two_steps`: at A = 3 with every crossing σ+1, no single step reaches normal form, while C(2,2) = 1. The count is true for block multiplications (`heckeStepBound`).
 - Open: whether to reword statement 1 of `prop:tm-gs-normal-form`. That is an owner decision, asked on #8526. The authorNote records the caveat.
+
+- 2026-11-20 19:00: the owner chose the rewording. Statement 1 and the proof Conclusion now count block multiplications (#8641, 12306db6a65).
