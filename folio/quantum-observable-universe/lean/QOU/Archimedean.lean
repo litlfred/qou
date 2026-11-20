@@ -33,7 +33,7 @@ import QOU.Archimedean.BlochWignerUnitCircle
 -- docs/audits/2026-06-01-sibling-import-cluster-wire-in-plan.md).
 -- COMPILE-PENDING — these files have never been in the build.
 import QOU.Archimedean.ClausenFunctionMathlibFiller
--- import QOU.Archimedean.BlochWignerMathlibFiller
+import QOU.Archimedean.BlochWignerMathlibFiller
 import QOU.Archimedean.TorusKnotGenusFourUnique
 import QOU.Archimedean.ForceCarrierBringUniqueness
 import QOU.Archimedean.EmCouplingProjection
