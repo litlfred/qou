@@ -11,6 +11,7 @@ export default remark({
     "conj:qou-p-neq-np",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ([`collatz_obstruction_link.lean`](../lean/QOU/AlgebraicSubstrate/collatz_obstruction_link.lean))\n\nmachine-checked in [`ObstructionVerdictCap`](../lean/QOU/Information/ObstructionVerdictCap.lean)." },
     {
       kind: "refined-framing",
       date: "2026-08-15",

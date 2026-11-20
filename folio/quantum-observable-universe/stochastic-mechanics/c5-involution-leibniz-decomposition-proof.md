@@ -93,9 +93,7 @@ contributions at rung $5$ are dominant — at all other rungs in
 $[3, 7]$, the pure-$\sigma$ contributions dominate and the
 averaging contributions are subdominant. □
 
-## Proofs (Lean $\leftrightarrow$ paper bridge)
-
-Every substantive Lean theorem in [`c5-involution-leibniz-decomposition.lean`](c5-involution-leibniz-decomposition.lean) has both a narrative proof here and a `sorry`-free Lean proof.
+## Proofs
 
 ### Hoefsmit–Quantum-2 identity
 
@@ -104,7 +102,7 @@ Every substantive Lean theorem in [`c5-involution-leibniz-decomposition.lean`](c
 $$b^2(q) \;=\; \frac{q^4 + q^2 + 1}{(q^2 + 1)^2} \;=\; 1 - \frac{1}{[2]_q^2}.$$
 
 *Proof.* Multiply both sides by $[2]_q^2 = (q + q^{-1})^2$:
-$(q^2 + 1)^2 = q^2 \cdot (q + q^{-1})^2$ since $(q+q^{-1})^2 = (q^2+1)^2/q^2$. So $b^2 = (q^4+q^2+1)/(q^2[2]_q^2)$. Multiply numerator and denominator of $b^2$ by $1/q^2$: $b^2 = (q^2 + 1 + q^{-2})/[2]_q^2 = ([2]_q^2 - 1)/[2]_q^2 = 1 - 1/[2]_q^2$ since $q^2 + 1 + q^{-2} = (q+q^{-1})^2 - 1 = [2]_q^2 - 1$. Lean tactic: `field_simp; ring`. $\square$
+$(q^2 + 1)^2 = q^2 \cdot (q + q^{-1})^2$ since $(q+q^{-1})^2 = (q^2+1)^2/q^2$. So $b^2 = (q^4+q^2+1)/(q^2[2]_q^2)$. Multiply numerator and denominator of $b^2$ by $1/q^2$: $b^2 = (q^2 + 1 + q^{-2})/[2]_q^2 = ([2]_q^2 - 1)/[2]_q^2 = 1 - 1/[2]_q^2$ since $q^2 + 1 + q^{-2} = (q+q^{-1})^2 - 1 = [2]_q^2 - 1$. $\square$
 
 **Corollary.** $c_5(q) = -3/2 + 1/[2]_q^2$.
 *Proof.* Substitute $b^2 = 1 - 1/[2]_q^2$ into $c_5 = -b^2 - 1/2$:
@@ -113,7 +111,7 @@ $c_5 = -(1 - 1/[2]_q^2) - 1/2 = -3/2 + 1/[2]_q^2$. $\square$
 ### Classical-QOU limit + Wedderburn identification
 
 **Theorem.** $c_5(q = 1) = -5/4$.
-*Proof.* At $q = 1$: $[2]_q = 2$, so $[2]_q^2 = 4$, $1/[2]_q^2 = 1/4$, $c_5(1) = -3/2 + 1/4 = -5/4$. By `norm_num`. $\square$
+*Proof.* At $q = 1$: $[2]_q = 2$, so $[2]_q^2 = 4$, $1/[2]_q^2 = 1/4$, $c_5(1) = -3/2 + 1/4 = -5/4$. $\square$
 
 **Theorem.** $c_5(1) = -(\dim V_{(3)} + \dim V_{(2,1)})/2 + 1/4 = -5/4$.
 *Proof.* The Wedderburn decomposition of $\mathbb{C}[S_3]$ has three irreps with dimensions $1$ ($V_{(3)}$), $2$ ($V_{(2,1)}$), $1$ ($V_{(1,1,1)}$). The non-sign sum is $1 + 2 = 3$; half is $3/2$. So $-3/2 = -(\dim V_{(3)} + \dim V_{(2,1)})/2$. Combine with $1/4 = 1/[2]_q^2$ at $q=1$ to get $-5/4$. $\square$
@@ -146,14 +144,14 @@ $[2]_q^2 = h^2 + 4$ where $h = q - q^{-1}$.
 
 ### c_5 as a rational map over $\mathbb{R}$
 
-**Proposition.** `c5RationalMap(h(q)) = c5Decomposition(q)`.
-*Proof.* Direct rewrite via `c5_as_function_of_skein`. $\square$
+**Proposition.** The rational map $h \mapsto -3/2 + 1/(h^2 + 4)$, evaluated at $h = q - q^{-1}$, equals $c_5(q)$.
+*Proof.* Direct rewrite via the preceding theorem. $\square$
 
 **Proposition.** $h^2 + 4 > 0$ over $\mathbb{R}$.
 *Proof.* $h^2 \geq 0$; add $4$ to get $\geq 4 > 0$. $\square$
 
 **Proposition.** Three concrete evaluations: $c_5(h{=}0) = -5/4$, $c_5(h{=}2) = -11/8$, $c_5(h{=}1) = -13/10$.
-*Proof.* Direct numerical computation via `norm_num`. $\square$
+*Proof.* Direct numerical computation. $\square$
 
 **Theorem.** $c_5(-h) = c_5(h)$ (even function).
 *Proof.* $(-h)^2 = h^2$; substitute. The categorical content of bar-symmetry: $c_5$ is invariant under bar acting as $h \to -h$. $\square$
@@ -181,5 +179,3 @@ $[2]_q^2 = h^2 + 4$ where $h = q - q^{-1}$.
 Categorical reading: $c_5$ factors as
 $$h \xrightarrow{\text{squaring}} h^2 \xrightarrow{\text{rational fn}} c_5$$
 where the first arrow is the canonical anti-sym $\to$ sym projection and the second is a bar-symmetric-preserving function. This makes the bar-symmetric structure of $c_5$ explicit at the level of function composition.
-
-All 24 substantive Lean theorems / definitions in the sibling have narrative proofs above. The Lean file is `sorry`-free.

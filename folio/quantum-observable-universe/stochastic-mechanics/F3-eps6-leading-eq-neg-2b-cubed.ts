@@ -20,6 +20,7 @@ export default remark({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is verified at sympy precision in [`probe_q_beta_cat_per_factor_decomposition.py`](../../computations/probe_q_beta_cat_per_factor_decomposition.py) and in Lean [`F3-eps6-leading-eq-neg-2b-cubed.lean`](F3-eps6-leading-eq-neg-2b-cubed.lean).\n\nThe Lean stub proves all steps directly.\n\nThe categorical content remains class-axiomatic via `ThreeFoldMarkovHopfExtraction`, but its arithmetic discharge at the $\\varepsilon^6$ level is Lean-proved.\n\ntwo previously-axiomatic class hypotheses have been replaced by purely algebraic/arithmetic theorems. The substantive open content of `ThreeFoldMarkovHopfExtraction` reduces" },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
