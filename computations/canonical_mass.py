@@ -225,6 +225,12 @@ def nucleon_mass_mev(species: str):
 def proton_qed_self_energy_borromean_mev(k_weighted: bool = False):
     """Proton connected 4th-order Borromean V³ electromagnetic self-energy M_p^{QED,conn} (MeV).
 
+    NOT A DERIVED PREDICTION (2026-11-19, bean qou-99qc). The word dependence of the
+    "connected" trace comes only from keeping quark pairs 1-2 and 2-3 and dropping 1-3; summed
+    over all three pairs the insertion is word-independent (`trace_QPair_diff_word`). The m_e
+    scale and the weighting options were chosen against targets. Do not cite as a derived split;
+    the canonical masses are `proton_neutron_mass_mev`.
+
     Implements Lean theorem
     `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3`:
         tr_conn(p, V³) = (1/3) tr((Q_{12}^{(p)} + Q_{23}^{(p)}) V_p³)
@@ -257,6 +263,12 @@ def proton_qed_self_energy_borromean_mev(k_weighted: bool = False):
 
 def np_qed_splitting_borromean_conn_mev(weighting: str = "plain"):
     """(n − p) connected 4th-order Borromean V³ QED mass splitting Δm_QED^{conn} (MeV).
+
+    NOT A DERIVED PREDICTION (2026-11-19, bean qou-99qc). The word dependence of the
+    "connected" trace comes only from keeping quark pairs 1-2 and 2-3 and dropping 1-3; summed
+    over all three pairs the insertion is word-independent (`trace_QPair_diff_word`). The m_e
+    scale and the weighting options were chosen against targets. Do not cite as a derived split;
+    the canonical masses are `proton_neutron_mass_mev`.
 
     Implements Lean theorems
     `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjn_borromeanV3_connected` and
@@ -310,6 +322,12 @@ def np_qed_splitting_borromean_conn_mev(weighting: str = "plain"):
 
 def neutron_mass_two_term_mev(weighting: str = "plain"):
     """Two-term neutron mass m_n^{two-term} = m_n + Δm_QED^{conn}(V³) in MeV.
+
+    NOT A DERIVED PREDICTION (2026-11-19, bean qou-99qc). The word dependence of the
+    "connected" trace comes only from keeping quark pairs 1-2 and 2-3 and dropping 1-3; summed
+    over all three pairs the insertion is word-independent (`trace_QPair_diff_word`). The m_e
+    scale and the weighting options were chosen against targets. Do not cite as a derived split;
+    the canonical masses are `proton_neutron_mass_mev`.
 
     Combines the canonical neutron mass `neutron_mass_mev()` with the connected
     4th-order Borromean V³ QED splitting `np_qed_splitting_borromean_conn_mev(weighting)`.
