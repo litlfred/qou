@@ -147,8 +147,9 @@ theorem newman
     reduct.
 
     Was an axiom. It is not one: it is `newman` applied to `local_confluence`
-    (§2) and `reduction_well_founded` (§1), and those two are the only
-    assumptions it ever needed. The previous docstring's reason for
+    (§2, still an axiom) and `reduction_well_founded` (a theorem since
+    2026-11-20, `Basic.lean`), and those two are the only inputs it ever
+    needed. The previous docstring's reason for
     axiomatising — that an explicit derivation-height measure on
     `MultiStepReduction` was missing — is not in fact what the argument induct
     on; it inducts on the accessibility of the *source*, which §1 already
