@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T09:31:00Z
-updated_at: 2026-11-20T14:28:57Z
+updated_at: 2026-11-20T16:00:00Z
 parent: qou-2002
 ---
 
@@ -340,3 +340,11 @@ re-pin puts α 495σ off; covariant QED insertions give zero proton self-energy 
 degree 3 (#8552, #8557, #8565). So the μ–p residual points at the muon carrier Vol(4₁)/ℏ_q². Needed size
 (diagnostic only, not a target to tune to): δ_μ = −211.2058 ppb (−9.09e-5·α/π, −3.97e-3·α²). Owner
 reverted #8554 to the one-term default pin (two-term kept as a named comparison).
+
+---
+
+**2026-11-20 (later) — PR #8573 (`claude/lepton-self-energy-2026-11-20`): the Kashaev-saddle reading, closed on SIGN.**
+- Lean `QOU/BraidKnot/MuonKashaevReading.lean` (sorry-free, lean-direct `-DautoImplicit=false` exit 0, axioms clean). Reading CAL-2 as the leading term of the 4_1 Kashaev log-series forces N = 2 pi/hbar_q^2 (`leading_match_forces_hbar_sq`, generic field). Every finite truncation with non-negative rungs exceeds the carrier by > 2/3 (`kashaev_reading_gap`; one-loop sign from log 3 < 6 log 2); kappa_1..kappa_5 closed forms proved >= 0. Capstone `kashaev_reading_excluded`: if the measured ratio is below the carrier (hypothesis = measured sign) no truncation equals it.
+- Probe `computations/probes/mu_kashaev_reading_probe.py` (70 dps): N_eff = 640.018944; derived terms on m_mu: (3/2)log N +4.687e7 ppb, -(1/4)log3 -1.328e6, kappa1/N +4188, kappa2/N^2 +8.63, kappa3/N^3 +0.049 ppb; total +4.555e7 ppb. Needed -211.21 ppb. Exact log<4_1>_N at N = 640, 641 matches the series through kappa_5 to 1.0e-14 (kappa_6 scale), sitting 9.42 above its leading term. Muon pin would move +2.58e6 ppb if CAL-2 were the truncation (reported; CAL-2 unchanged).
+- Scope (b) for the class "finite truncation of the 4_1 Kashaev log-series at the forced N, rungs >= 0". NOT covered: the Murakami real deformation xi = 2 pi i + u (filed as GAP qou-mk7u), non-Kashaev origins of the hbar_q^2 power (the corpus never derives it), non-integer N.
+- GAP of this bean unchanged: no derived correction of size -211 ppb and the right sign exists in any class examined. Bean stays in-progress (open conjecture).
