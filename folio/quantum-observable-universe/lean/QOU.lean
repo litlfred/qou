@@ -23,6 +23,7 @@ import QOU.Eightfold.PointwiseAgreementOnReduced
 import QOU.Eightfold.GaugeAnsatzNesting
 import QOU.Eightfold.PtolemyTwist
 import QOU.Eightfold.SubgroupExtensionObstruction
+import QOU.Eightfold.Sym2AdjointSpinTwo
 -- This project formalizes the mathematical content of the QOU manuscript.
 -- Each chapter has a corresponding Lean file.
 --
