@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-07-11T18:40:54Z
-updated_at: 2026-11-20T15:40:00Z
+updated_at: 2026-11-20T16:45:00Z
 parent: qou-rtxm
 pr: 8189
 ---
@@ -72,3 +72,9 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 - Dispatched to apply the W8 rulings (a)/(b); implemented and verified, then found #8568 had already merged them (wider "full cascade" scope, including spectral_sequence_h3_explicit, which the dispatcher's relay of the ruling said to leave). Dropped as redundant; reported on #8526.
 - Finding: #8568's `--review-ledger` run stripped 374 agent-note fields (evidence, reviewer, disposition, stale_prev_verdict, ...) from 75 needs-agent ledger entries. Restored verbatim from 67d54e99f in #8576 (ready-to-merge). The tool path itself still strips; not changed.
 - Small gaps in the merged carriers, not acted on: term6_residue_sum sums residue(l+2) without the 1/(q0 - zeta_l) denominator the .md states; a new `markovZD` was defined instead of reusing MarkovBondRule.markovZ (qou-961o overload concern).
+
+## W8 round 3 (2026-11-20, PR #8613) — d∘d check on prop:gb-spectral-sequence
+
+- The rewriting map d = d_H + d_F + d_YB is NOT a differential: d(d(sigma^3)) = h^2 sigma + h (leftmost) / 2h^2 sigma + 2h (all occurrences), proved sorry-free in QOU.BraidKnot.GBRewriteDifferential. Scope (a); the proof uses the Hochschild differential instead, where d o d = 0 is classical.
+- Block inconsistencies: statement abutment gr H_n (dim 6 at n=3) vs proof gr HH* = Z(H_3) (dim 3); J^• defined increasing, used decreasing.
+- Explicit d1/d2 on H_3 NOT computed: needs the owner to fix which filtration of the Hochschild complex is meant. Open, owner decision.
