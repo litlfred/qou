@@ -6,7 +6,7 @@ $$
 
 *be the block-ordered nucleus element (blocks ordered by increasing generator index; the inner product taken in decreasing $j$, matching the transfer-matrix order). Then the Gröbner--Shirshov reduction of $\Xi_A$:*
 
-1. *uses only the Hecke rule $\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$ — zero Yang--Baxter and zero far-commutativity steps, with at most $\binom{A-1}{2}$ Hecke steps in total;*
+1. *uses only the Hecke rule $\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$ — zero Yang--Baxter and zero far-commutativity steps along every reduction path, and the block computation takes at most $\binom{A-1}{2}$ block multiplications, each one use of the Hecke relation;*
 2. *terminates in the chain form*
    $$
    \bar{\mathcal{N}}(A) \;=\; \prod_{i=0}^{A-2} \bigl(a_i\,\sigma_i + b_i\bigr),
