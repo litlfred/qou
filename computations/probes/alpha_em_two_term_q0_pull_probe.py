@@ -21,6 +21,7 @@ the numbers are recorded in docs/audits/2026-11-20-alpha-em-two-term-q0-pull.md.
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -183,8 +184,14 @@ def main() -> int:
     # one-term re-derivation must reproduce the substrate pin to its 50 digits
     ok = abs(q1 - q_ref) < mp.mpf("1e-48")
     checks.append(("one_term_pin_reproduces_substrate", ok))
-    q2_pr = mp.mpf("1.10997859515088599908756520359868262121410348054121621148890")
-    checks.append(("two_term_pin_reproduces_PR8554", abs(q2 - q2_pr) < mp.mpf("1e-55")))
+    # PR #8554's two-term pin, read from the witness that records it (50 digits), not
+    # retyped: the reference-literal ratchet flags a hand-copied 60-digit q0. The
+    # tolerance is the recorded value's own resolution.
+    _w = json.loads((Path(__file__).resolve().parents[1]
+                     / "m-p-substrate-identity-50dps.witness.json").read_text())
+    q2_pr = mp.mpf(_w["data"]["two_term_borromean_qed_diagnostics"]
+                   ["q_two_term_borromean_plain"])
+    checks.append(("two_term_pin_reproduces_PR8554", abs(q2 - q2_pr) < mp.mpf("1e-48")))
 
     # sigma on q from each mass determination
     sl_mp1 = dlog(mp_one_term, q1)

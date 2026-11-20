@@ -53,8 +53,13 @@ import mpmath as mp  # noqa: E402
 
 import qbeta_e0  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 DPS = AH.DPS
+# AH's exec_module already set dps 60; restating it here at module scope makes the
+# precision visible to the static dps audits and keeps TOL below from depending on
+# import order. Idempotent: the dps is unchanged, so no published value moves.
+set_compute_dps(DPS)
 Q0, H0 = AH.Q0, AH.H0
 ZD = Q0 ** 3 / (Q0 ** 2 + 1)
 TOL = mp.mpf("1e-40")
