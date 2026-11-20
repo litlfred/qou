@@ -10,7 +10,7 @@ tags:
     - axiom-field-audit
     - de-vacuification
 created_at: 2026-11-19T08:19:49Z
-updated_at: 2026-11-19T08:19:49Z
+updated_at: 2026-11-20T08:12:14Z
 parent: qou-rtxm
 ---
 
@@ -69,3 +69,7 @@ Zero `sorry` and zero `axiom` in `#print axioms` does **not** certify that a the
 | `qou-2eum` | `M6_SIEGEL_THETA_MODULAR_CURVES` | M6 [Mathlib4 Infra]: Siegel Upper Half-Space H_g, Theta Characteristics, Bring's Curve S₅ & X₀(15) Period Isogeny | 12 | 4 |
 | `qou-0yxl` | `M7_HOCHSCHILD_GERBES_STOKES_QBOREL_SDP` | M7 [Mathlib4 Infra]: Hochschild HKR, O^×-Gerbes, Non-Abelian 2-Stokes, Surreal Transfer, q-Borel & Conic SDP Duality | 138 | 328 |
 | `qou-6f4w` | `P1_QOU_PHYSICS_BRIDGE` | P1 [QOU Bridge Drain]: Discharge QOU Physics-Bridge Axiom-Field Classes, Shim Guards & Toy Instances | 866 | 1394 |
+
+## 2026-11-20 — W7 (session_01VQDpPfKSC33hwjyKMw3EHV, PR #8541)
+
+Two slices landed for review: M4 (a genuine q-Plancherel instance) and M1 (`Cl_2_DoubleAngle` inhabited). **The scanner and witness this epic cites (`computations/audits/lean_axiom_field_and_mathlib_gap_audit.py`, `…witness.json`) are not on main or on any branch.** So the counts above cannot be reproduced and the per-feature ranking cannot be re-measured. GAP bean `qou-w7sc`.

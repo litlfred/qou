@@ -10,7 +10,7 @@ tags:
     - hecke-algebra
     - representation-theory
 created_at: 2026-11-19T08:19:50Z
-updated_at: 2026-11-19T08:19:50Z
+updated_at: 2026-11-20T08:12:14Z
 parent: qou-dxbw
 ---
 
@@ -77,3 +77,9 @@ parent: qou-dxbw
 - `axiom QOU.BraidKnot.IwahoriHeckeAPI.IwahoriHeckeAlgebra.bar_centralIdempotent_transpose_axiom` (`lean/QOU/BraidKnot/IwahoriHeckeAPI.lean:372`)
 - `opaque QOU.BraidKnot.PSDFeasibilityProxy.braidWordEval` (`lean/QOU/BraidKnot/PSDFeasibilityProxy.lean:74`)
 - `opaque QOU.BraidKnot.S5bbGeometricIndex.EquivariantIndex` (`lean/QOU/BraidKnot/S5bbGeometricIndex.lean:34`)
+
+## 2026-11-20 — W7 slice (PR #8541, session_01VQDpPfKSC33hwjyKMw3EHV)
+
+- **Done:** `QOU/MathlibExt/QPlancherelPartitionInstance.lean` is the first non-toy inhabitant of `QDimension` and `HasPartitionFunction`: the hook-length `d_q` on `Σ n, Nat.Partition n`, and `Z_q(k) = Σ_{p ⊢ k} d_q²`. `Z_pos` is derived from `molienSum_eq_qFactorial`, and total mass one is proved. Sorry-free; the library sweep passed (120 ok).
+- **Not done:** `HasQPlancherelCLT` (Féray–Méliot) is still uninstantiated. The general-n Hecke algebra and Ocneanu tower were not attempted.
+- **Audit misclassification (likely):** `SkewStandardYoungTableau` is listed `TOY_ONLY` with 27 consumers. Its only explicit term is the containment counterexample `skewSYT_nonempty_of_not_le`, but genuine skew tableaux are counted in `QOU.Mathlib.SkewBranchingSum` / `SkewSYTBranchingBijection`, and `RSKIdentitiesContext` is inhabited (`SkewBranchingTwoOne`). The carrier is a data structure, not an axiom-field. I could not re-check against the scanner because the scanner is not on main (see GAP bean `qou-w7sc`).

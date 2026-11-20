@@ -10,7 +10,7 @@ tags:
     - polylogarithm
     - bloch-suslin
 created_at: 2026-11-19T08:19:49Z
-updated_at: 2026-11-19T08:19:49Z
+updated_at: 2026-11-20T08:12:14Z
 parent: qou-dxbw
 ---
 
@@ -70,3 +70,8 @@ parent: qou-dxbw
 - `opaque QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence.GroupLikeDepth` (`mass-theory/gb-depth-period-correspondence.lean:31`)
 - `opaque QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence.GoncharovPeriodFiltration` (`mass-theory/gb-depth-period-correspondence.lean:36`)
 - `opaque QOU.AlgebraicSubstrate.HqBiFiltration.BiFiltration` (`mass-theory/hq-bi-filtration.lean:50`)
+
+## 2026-11-20 — W7 slice (PR #8541, session_01VQDpPfKSC33hwjyKMw3EHV)
+
+- **Done:** `Cl_2_DoubleAngle` is inhabited. `QOU/Archimedean/ClausenDoubleAngleSeries.lean` proves `Cl₂(2θ) = 2Cl₂(θ) − 2Cl₂(π−θ)` for **every** real θ, from the series by an odd/even split, with no dilogarithm. The interval version `QOU.Knot.Cl_2_duplication` only covered (0, π). The class docstring that called a tsum proof "blocked" is corrected.
+- **Still open:** `ComplexLiTwoUnitCircleClassical` (Im Li₂(e^{iθ}) = Cl₂(θ)), the pentagon / Bloch–Wigner 5-term relation, and the Bloch group. The bean stays `todo`.
