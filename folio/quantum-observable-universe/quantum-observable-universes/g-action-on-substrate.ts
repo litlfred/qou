@@ -34,6 +34,11 @@ export default conjecture({
   },
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body: "**Owner ruling (2026-11-20): the host of $\\mathcal{N}_{\\rm sym}$ is left open.** Both readings stay recorded: (a) tensor product, $[4]_q^2[6]_q \\approx 107.89$; (b) direct sum as (G-1) states, $2[4]_q + [6]_q \\approx 14.61$, under which the composite trace of idempotents on orthogonal summands is $0$. Neither is to be selected by closeness to the back-solved target $213.11$ (no-fitting rule). Choosing (a) needs a structural reason for the tensor reading.",
+    },
+    {
       kind: "status",
       body: "**Open at the closure level.** The four axioms are a\n**concrete framework extension** that takes the QOU substrate\nfrom \"$\\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\" to\n\"$G \\times \\mathbf{Rep}(\\mathrm{SU}_q(2))$-equivariant\". The closed form of\n$\\mathcal{N}_{\\rm sym}$ is an open identification (2026-11-20 QA): reading (a), a tensor\nproduct of hosts, gives $[4]_q^2[6]_q \\approx 107.89$ at $q_0$ ($-49.4\\%$ against the\nCODATA-derived anchor 213.11); reading (b), the direct sum that (G-1) states, gives\n$2[4]_q + [6]_q \\approx 14.607$ ($-93.1\\%$). Neither is selected, and no factor has been\nre-tuned to recover a match.\n\n**To promote to `proposition`:**\n1. Fix the composition rule for $\\mathrm{tr}_F(e_{\\rm sym}^{\\rm EW}\\cdot e_H)$ across the hosts (tensor vs direct sum), from structure, not from the anchor value\n2. Account for the gap to the anchor under that rule\n3. Provide the unique-existence argument for the four axioms\n4. Author the Lean formalization",
     },
