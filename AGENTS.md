@@ -22,11 +22,12 @@ same day: *"That was already decided. Why did it get changed back to the wrong f
   2026-11-18 as "a working assumption, not a ruling to edit def:photon"; that
   classification was the recording agent's, and it is why the wrong form kept
   coming back (bean `qou-99qc`, entry 2026-11-20T14:50:40Z).
-- **Until PR #8583 merges, `predicted-spectra/photon.md` and `QOU/Photon.lean` on
-  `main` still state the OLD `σ₀σ₁` form.** Do not copy the definition from them.
-  Do not quote, compute, formalise or propose anything on the `σ₀σ₁` form, and do
-  not call the correct form "switched", "γ′" or "the qou-99qc variant" — it is
-  simply *the photon*.
+- **`def:photon` (`predicted-spectra/photon.md`) and `QOU/Photon.lean` state the
+  correct form as of PR #8583 (merged 2026-11-20).** Copies of the old `σ₀σ₁` form
+  survive in older branches, beans, audits and probes: do not copy from them, and do
+  not quote, compute, formalise or propose anything on the `σ₀σ₁` form. Do not call
+  the correct form "switched", "γ′" or "the qou-99qc variant" — it is simply *the
+  photon*.
 - **Every agent repeats this to its subagents.** A subagent does not see this file
   if it was edited mid-session (see §Subagents); put the photon form in the
   subagent's prompt whenever photons are in scope.
