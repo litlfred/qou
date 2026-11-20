@@ -1,13 +1,13 @@
 ---
 # qou-qhcr
 title: 'GAP: derive the branch-point count 6 from the five QOU axioms (the ONE missing step in the chi = -6 chain)'
-status: completed
+status: in-progress
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-19T16:48:41Z
+updated_at: 2026-11-20T08:40:00Z
 parent: qou-6qbv
 ---
 
@@ -513,3 +513,9 @@ M4 is done. Still open: M3 (qou-m3tr), M1b/M2 (qou-m1bg), G2, G3. This bean stay
 
 ## Completed (2026-11-19)
 Completed & Red-Team PASSED (`0` blockers): `folio/quantum-observable-universe/lean/QOU/Brings/BringTranspositionSixFixedPointsAndEllipticQuotient.lean` (`526` lines) + 80-dps probe `computations/probes/bring_transposition_weierstrass_sixty_probe.py` (`scriptHash = 55e5625d224d`, all 60 Weierstrass points, `P_tau(t)=t^3+2t^2+3t+4`, `j(E_tau)=-25/2`, `chi(B)=-6`).
+
+## 2026-11-20 — reopened (W9, session_01VQDpPcjxVSqN8ELUBjiBHk)
+
+**Status was `completed` (set 2026-11-19); reopened to `in-progress`.** The children `qou-m1bg` and `qou-m3tr` say *"Parent bean `qou-qhcr` must never be closed"*. AGENTS.md §13a forbids closing a bean whose subject is an open derivation. The 6 is still not derived from the axioms, and the "Completed & Red-Team PASSED" entry above is a Bring read-off: transposition fixed points on Bring's curve, the route this bean's §3 already scoped as non-derivational.
+
+**M1b advanced:** PR #8532 (`claude/bring-germ-stabiliser-cyclic-2026-11-20`). It proves sorry-free that an effective finite germ action fixing a point is cyclic, and supplies the `hstabA`/`hstabS` disjunctions for groups `≅ A₅`/`S₅`. Open: the chart step and germ-effectiveness (M2), M3 (`qou-m3tr`), G2, G3.

@@ -9,7 +9,7 @@ tags:
     - bring-foundations
     - lean
 created_at: 2026-11-18T19:26:09Z
-updated_at: 2026-11-18T19:26:09Z
+updated_at: 2026-11-20T08:40:00Z
 parent: qou-qhcr
 ---
 **For agy.** Written 2026-11-18 by the Bring-foundations thread at ofri's request ("bean up for agy to do: C + A"). Parent bean `qou-qhcr` must never be closed.
@@ -48,3 +48,10 @@ This is a large Mathlib gap: Mathlib has no compact Riemann surfaces, no triangu
 
 Lean is not installable via elan here (release.lean-lang.org 403). Download the GitHub release `lean-4.24.0-linux.tar.zst`, decompress it with python `zstandard`, restore Mathlib oleans from branch `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`, and run
 `lean -DautoImplicit=false -s 65536 <file>` with LEAN_PATH set to the restored olean dirs. Then run `#print axioms` on new declarations. Do not run `lake build`: it evicts the restored cache.
+
+## 2026-11-20 — W9 (session_01VQDpPcjxVSqN8ELUBjiBHk): not attempted this session
+
+Session time went to M1b (#8532). No M3 progress. Sizing for the next agent:
+- Step 1 (the quotient of a combinatorial map / rotation system by a dart-free action is a map whose cells are the orbits) is medium-sized.
+- Step 2 (`χ` even for a connected orientable map) is the genus formula and is hard.
+- Step 3 (triangulation) is a Mathlib gap. Keep it as a §3b-cond class, never an axiom.
