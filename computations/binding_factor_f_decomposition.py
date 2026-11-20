@@ -61,6 +61,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
+from mpmath import nstr as _ame_nstr  # noqa: E402  (AME registry, string form)
 
 # Canonical tr_M (free constituents, bound atom): borromean word, convention
 # D, proton pin. Read at run time; never hardcoded (the previous hardcoded
@@ -68,10 +70,10 @@ from codata_constants import M_E_MEV  # noqa: E402
 # AME binding energies are validation inputs (compared against, not fed in).
 AME_B_MEV = {
     # name: (Z, N, canonical-atom-key, B_AME_MeV)
-    "D":   (1, 1, "deuteron", "2.224566"),
-    "T":   (1, 2, "tritium", "8.481798"),
-    "3He": (2, 1, "helium-3", "7.718043"),
-    "4He": (2, 2, "helium-4", "28.295673"),
+    "D":   (1, 1, "deuteron", _ame_nstr(AME_B_DEUTERON_MEV_VALIDATION, 30)),
+    "T":   (1, 2, "tritium", _ame_nstr(AME_B_TRITIUM_MEV_VALIDATION, 30)),
+    "3He": (2, 1, "helium-3", _ame_nstr(AME_B_HE3_MEV_VALIDATION, 30)),
+    "4He": (2, 2, "helium-4", _ame_nstr(AME_B_HE4_MEV_VALIDATION, 30)),
 }
 _HERE = Path(__file__).resolve().parent
 

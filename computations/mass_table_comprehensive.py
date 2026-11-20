@@ -70,6 +70,7 @@ from _li_2_q_util import (  # noqa: E402
 )
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402  (canonical facade)
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
@@ -127,8 +128,8 @@ def _fmt_or_none(x):
 # Source: Wang et al., Chinese Physics C 45 (2021) 030003.
 AME_BINDING = {
     "p": 0.0, "n": 0.0,
-    "D": 2.22452, "T": 8.481821, "3He": 7.71804,
-    "4He": 28.2957, "6Li": 31.994, "7Li": 39.2445,
+    "D": 2.22452, "T": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION),
+    "4He": float(AME_B_HE4_MEV_VALIDATION), "6Li": float(AME_B_LI6_MEV_VALIDATION), "7Li": 39.2445,
     "9Be": 58.165, "10B": 64.751, "11B": 76.205,
     "12C": 92.162, "13C": 97.108, "14N": 104.659, "15N": 115.492,
     "16O": 127.619, "17O": 131.763, "18O": 139.808,

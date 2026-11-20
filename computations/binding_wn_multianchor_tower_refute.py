@@ -76,9 +76,10 @@ from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 M_E = mp.mpf(str(_M_E_MEV))  # CODATA-2022 m_e (full precision; prior literal was 8 sig figs)
 # AME2020 total binding (MeV), Z, A
-ISO = {"D": (AME_B_DEUTERON_MEV_VALIDATION, 1, 2), "T": (8.481821, 1, 3), "3He": (7.718058, 2, 3),
+ISO = {"D": (AME_B_DEUTERON_MEV_VALIDATION, 1, 2), "T": (float(AME_B_TRITIUM_MEV_VALIDATION), 1, 3), "3He": (float(AME_B_HE3_MEV_VALIDATION), 2, 3),
        "4He": (AME_B_HE4_MEV_VALIDATION, 2, 4), "6Li": (31.99464, 3, 6), "7Li": (39.24454, 3, 7),
        "9Be": (58.16497, 4, 9), "12C": (92.16172, 6, 12)}
 

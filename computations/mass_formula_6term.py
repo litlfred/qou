@@ -58,6 +58,7 @@ from q_parameter import Q as _Q_CANONICAL
 from experimental_constants import (
     M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV,
 )
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 Q0 = _Q_CANONICAL
 m_e = M_E_MEV
@@ -313,7 +314,7 @@ if __name__ == "__main__":
     # Unified AME 2020 values (matches `B_AME_REFERENCE` in
     # categorical_q_decay_ba_low_isotopes.py — fewer-digit truncations
     # caused a 0.0002% discrepancy in err_pct previously).
-    B_AME = {"D": 2.22456612, "T": 8.4817984, "3He": 7.7180375}
+    B_AME = {"D": float(AME_B_DEUTERON_MEV_VALIDATION), "T": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION)}
     rows = {}
     for iso in ["D", "T", "3He"]:
         Z, N = {"D": (1, 1), "T": (1, 2), "3He": (2, 1)}[iso]

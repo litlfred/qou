@@ -81,9 +81,10 @@ import mpmath as mp  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # AME2020 deuteron binding, MeV.  COMPARISON TARGET ONLY — never inverted.
-B_AME_2H = mp.mpf("2.2245662")
+B_AME_2H = AME_B_DEUTERON_MEV_VALIDATION
 
 
 # ---------------------------------------------------------------- the kernel

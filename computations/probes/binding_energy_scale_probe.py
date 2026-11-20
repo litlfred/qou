@@ -37,6 +37,7 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import AME_B_HE3_MEV_VALIDATION, M_E_MEV  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 
 def main():
@@ -52,9 +53,9 @@ def main():
     # Binding values from mass_table_comprehensive (Q_β scale)
     isotopes = {
         "D":   {"B_qbeta": 0.465676, "B_AME": 2.22452, "A": 2, "Z": 1, "N": 1},
-        "T":   {"B_qbeta": 0.628974, "B_AME": 8.48182, "A": 3, "Z": 1, "N": 2},
+        "T":   {"B_qbeta": 0.628974, "B_AME": float(AME_B_TRITIUM_MEV_VALIDATION), "A": 3, "Z": 1, "N": 2},
         "3He": {"B_qbeta": 0.658111, "B_AME": AME_B_HE3_MEV_VALIDATION, "A": 3, "Z": 2, "N": 1},
-        "4He": {"B_qbeta": 0.713469, "B_AME": 28.2957, "A": 4, "Z": 2, "N": 2},
+        "4He": {"B_qbeta": 0.713469, "B_AME": float(AME_B_HE4_MEV_VALIDATION), "A": 4, "Z": 2, "N": 2},
     }
 
     # Correction candidates for the +12% deuteron residual

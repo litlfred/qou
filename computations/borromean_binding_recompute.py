@@ -88,9 +88,10 @@ from codata_constants import (
 )
 from _li_2_q_util import li_2_q  # noqa: E402
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # AME2020 totals (MeV) — comparison target only.
-ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821), ("3He", 2, 1, 7.718058),
+ISO = [("2H", 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)), ("3H", 1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)), ("3He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)),
        ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION), ("6Li", 3, 3, 31.994564), ("7Li", 3, 4, 39.244533),
        ("12C", 6, 6, 92.161728), ("16O", 8, 8, 127.619), ("56Fe", 26, 30, 492.254)]
 

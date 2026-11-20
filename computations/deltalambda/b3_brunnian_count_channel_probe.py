@@ -109,6 +109,7 @@ mp.dps = 50
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV as _M_E_MEV_REGISTRY  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # Substrate q0, proton pin (AGENTS.md owner directive 2026-08-07: proton is the default).
 # Read BY NAME (reference-literal ratchet): the 17-digit literal truncated the pin.
@@ -120,7 +121,7 @@ M_E_MEV = _M_E_MEV_REGISTRY
 
 # Both cumulants, MeV, from computations/probes/pair-locality-shortfall.witness.json.
 # b_2 is the one that refutes T4; b_3 is the A=3 shortfall.
-AME_B2 = mpf("2.2245662")
+AME_B2 = AME_B_DEUTERON_MEV_VALIDATION
 AME_B3 = mpf("1.42622016")
 AME_B_A3 = mpf("8.09991876")            # B_AME(A=3) = b_3 + 3 b_2, checked below
 
