@@ -26,7 +26,7 @@ The archimedean-realisation framing of this closed form is described in
 ## Proof
 
 The derivation proceeds from the categorical decomposition
-([topological mass](#thm:topological-mass)) via three identifications,
+([topological mass](#conj:topological-mass)) via three identifications,
 each following from the archimedean bridge.
 
 **Step 1 — baseline holonomy $\mapsto$ hyperbolic volume.**

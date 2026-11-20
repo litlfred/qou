@@ -439,7 +439,7 @@ The translation operator $L_{-1}$ preserves the Euler characteristic: $\chi(A_{n
 **Descartes constraint** (C-4b): For the physical universe,
 
 $$
-  \chi(A) =  -6
+  \chi_{\mathrm{eu}}(M_0) =  -6
   \qquad\Longleftrightarrow\qquad
   \mathrm{tr}_M(\mathrm{id}) =  -6.
 $$
@@ -462,7 +462,7 @@ $$
 
 where $\check{R}_{(n)}$ is the $R$-matrix at brane level $n$. The class $\kappa_n = 0$ if and only if jet prolongation determines the level-$(n+1)$ braiding entirely from the level-$n$ braiding.
 
-**Kummer persistence** (C-5a): When $\chi(A) = -6$, item 3 of the [QU-to-QOU theorem](#thm:qu-to-qou) gives
+**Kummer persistence** (C-5a): When $\chi_{\mathrm{eu}}(M_0) = -6$, item 3 of the [QU-to-QOU theorem](#thm:qu-to-qou) gives
 
 $$
   \kappa_n = 0 \iff n \mid 6,

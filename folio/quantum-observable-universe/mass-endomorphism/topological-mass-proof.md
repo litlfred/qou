@@ -6,13 +6,13 @@ exceptional divisors, and evaluation via the quantum dilogarithm.
 By
 ([eigenspace decomposition of the mass integrand](#lem:topological-mass-eigenspace-decomp)),
 the :refterm[descent]{#descent} involution $\hat{\tau}_n$ produces an orthogonal
-Killing-form decomposition of the multiplicative integral
+Killing-form decomposition of the multiplicative integral. Orthogonality makes
+squared norms add, not norms; for the norms themselves the triangle inequality gives
 
 $$
   \mathfrak{m}(\varrho)
-  =
-  \bigl\lVert \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha) \bigr\rVert
-  +
+  \le
+  \bigl\lVert \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha) \bigr\rVert +
   \bigl\lVert \mathrm{MI}\!\!\int_\Sigma (\alpha - \hat{\tau}_n(\alpha)) \bigr\rVert.
 $$
 
@@ -28,17 +28,15 @@ Combining these yields
 $$
   \mathfrak{m}(\varrho)
   \le
-  \bigl\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \bigr\rVert
-  +
+  \bigl\lVert \mathrm{Hol}_{\nabla_A}(\varrho_0; \mathfrak{G}) \bigr\rVert +
   \sum_{i=1}^{N}
   \bigl\lVert \mathrm{MI}\!\!\int_{E_i} (\nabla_A q, L \wedge F^+) \bigr\rVert,
 $$
 
-an upper bound for the claimed decomposition
-[eq:topological-mass-decomp](#eq:topological-mass-decomp).  This route
-gives equality, and hence the decomposition itself, only conditionally on
-equality in the transient bound, which is open (it is not forced by the
-disc splitting and support hypotheses).  Each
+the upper bound of [prop:topological-mass-upper-bound](#prop:topological-mass-upper-bound) in its archimedean form, and an upper bound for the conjectured decomposition
+[eq:topological-mass-decomp](#eq:topological-mass-decomp).  Equality, and hence the conjectured decomposition itself, would need equality
+in both inequalities above. Both are open: neither is forced by the disc
+splitting and support hypotheses.  Each
 exceptional-divisor summand equals the quantum dilogarithm
 $\Phi_q(z_i)$ by
 ([quantum dilogarithm evaluation](#lem:topological-mass-dilogarithm)),

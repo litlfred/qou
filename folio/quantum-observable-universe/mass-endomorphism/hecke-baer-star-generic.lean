@@ -6,6 +6,10 @@ import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Matrix.ToLin
 import Mathlib.LinearAlgebra.Basis.VectorSpace
 import Mathlib.LinearAlgebra.Projection
+import Mathlib.Analysis.InnerProductSpace.Projection.Basic
+import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
+import Mathlib.Analysis.InnerProductSpace.PiL2
+import Mathlib.LinearAlgebra.Matrix.Hermitian
 
 
 /-!
@@ -93,6 +97,99 @@ theorem matrix_algebra_baer_right
     exact LinearMap.ext hPU
   · -- x kills W iff x kills S
     have kill : ∀ x : Matrix (Fin n) (Fin n) K, (∀ s ∈ S, x * s = 0) →
+        ∀ w ∈ W, x *ᵥ w = 0 := by
+      intro x hx w hw
+      induction hw using Submodule.span_induction with
+      | mem v hv =>
+        obtain ⟨s, hs, j, rfl⟩ := hv
+        funext i
+        have := congrFun (congrFun (hx s hs) i) j
+        simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
+      | zero => simp
+      | add a b _ _ ha hb => rw [Matrix.mulVec_add, ha, hb, add_zero]
+      | smul c a _ ha => rw [Matrix.mulVec_smul, ha, smul_zero]
+    intro x
+    constructor
+    · intro hx
+      refine ⟨x, ?_⟩
+      ext i k
+      have h := congrFun (kill x hx _ (hsubW (Pi.single k 1))) i
+      rw [Matrix.mulVec_sub, ← LinearMap.toMatrix'_mulVec P, Matrix.mulVec_mulVec,
+        Matrix.mulVec_single_one, Matrix.mulVec_single_one] at h
+      simpa [sub_eq_zero] using h
+    · rintro ⟨y, rfl⟩ s hs
+      have hps : LinearMap.toMatrix' P * s = 0 := by
+        ext i j
+        have := congrFun (LinearMap.toMatrix'_mulVec P (fun i => s i j)) i
+        rw [hPW _ (Submodule.subset_span ⟨s, hs, j, rfl⟩)] at this
+        simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
+      rw [Matrix.mul_assoc, hps, Matrix.mul_zero]
+
+/-! ## Step 1′: with a positive star, matrix algebras ARE Baer-*
+
+The refutation above is about the star. Over `𝕜 = ℝ` or `ℂ` (any `RCLike`
+field) with the conjugate transpose, the projection in
+`matrix_algebra_baer_right` can be chosen self-adjoint: take the orthogonal
+projection onto the orthogonal complement of the column span `W` of `S`,
+instead of a projection along an arbitrary complement. Proved 2026-11-20
+(bean `qou-n2un`, carrier M3 `qou-jgp2` of epic `qou-d8c7`).
+
+This is the matrix-block half of the prose proof only. The Hecke statement
+still needs a `*`-isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(𝕜)` carrying the bar
+involution to the conjugate transpose on every block, which is not
+formalised here; the proposition stays open. -/
+
+open Matrix in
+/-- **`M_n(𝕜)` with the conjugate transpose is a Baer-*-ring** for every
+    `RCLike` field `𝕜`. -/
+theorem baerStarRing_matrix_rclike {𝕜 : Type*} [RCLike 𝕜] (n : ℕ) :
+    BaerStarRing (Matrix (Fin n) (Fin n) 𝕜) := by
+  classical
+  refine ⟨fun S => ?_⟩
+  let e : EuclideanSpace 𝕜 (Fin n) ≃ₗ[𝕜] (Fin n → 𝕜) := WithLp.linearEquiv 2 𝕜 (Fin n → 𝕜)
+  let W : Submodule 𝕜 (Fin n → 𝕜) :=
+    Submodule.span 𝕜 {v | ∃ s ∈ S, ∃ j, v = fun i => s i j}
+  let W' : Submodule 𝕜 (EuclideanSpace 𝕜 (Fin n)) := W.map e.symm.toLinearMap
+  let K : Submodule 𝕜 (EuclideanSpace 𝕜 (Fin n)) := W'ᗮ
+  let Pr := K.starProjection
+  let P : (Fin n → 𝕜) →ₗ[𝕜] (Fin n → 𝕜) :=
+    e.toLinearMap ∘ₗ (Pr : EuclideanSpace 𝕜 (Fin n) →ₗ[𝕜] EuclideanSpace 𝕜 (Fin n)) ∘ₗ
+      e.symm.toLinearMap
+  have hPr_idem : ∀ v, Pr (Pr v) = Pr v := fun v =>
+    Submodule.starProjection_eq_self_iff.mpr (Submodule.starProjection_apply_mem K v)
+  have hPU : ∀ v, P (P v) = P v := fun v => by
+    simp only [P, LinearMap.comp_apply, LinearEquiv.coe_coe, LinearEquiv.symm_apply_apply,
+      ContinuousLinearMap.coe_coe, hPr_idem]
+  have hmemW' : ∀ w ∈ W, e.symm w ∈ W' := fun w hw => Submodule.mem_map_of_mem hw
+  have hPW : ∀ w ∈ W, P w = 0 := fun w hw => by
+    have h1 : e.symm w ∈ Kᗮ := Submodule.le_orthogonal_orthogonal W' (hmemW' w hw)
+    have h2 : Pr (e.symm w) = 0 := (Submodule.starProjection_apply_eq_zero_iff K).mpr h1
+    simp only [P, LinearMap.comp_apply, LinearEquiv.coe_coe, ContinuousLinearMap.coe_coe, h2,
+      map_zero]
+  have hsubW : ∀ v, v - P v ∈ W := fun v => by
+    have h1 : e.symm v - Pr (e.symm v) ∈ Kᗮ := Submodule.sub_starProjection_mem_orthogonal _
+    have hKK : Kᗮ = W' := Submodule.orthogonal_orthogonal W'
+    rw [hKK] at h1
+    obtain ⟨u, hu, hu'⟩ := Submodule.mem_map.mp h1
+    have : u = v - P v := by
+      have := congrArg e hu'
+      simpa [P] using this
+    rw [← this]; exact hu
+  have hPsym : (Matrix.toEuclideanLin (LinearMap.toMatrix' P)) =
+      (Pr : EuclideanSpace 𝕜 (Fin n) →ₗ[𝕜] EuclideanSpace 𝕜 (Fin n)) := by
+    ext1 x
+    have hx : x = WithLp.toLp 2 (WithLp.ofLp x) := rfl
+    rw [hx, Matrix.toEuclideanLin_toLp, Matrix.toLin'_toMatrix']
+    rfl
+  refine ⟨LinearMap.toMatrix' P, ?_, ?_, ?_⟩
+  · rw [IsIdempotentElem, ← LinearMap.toMatrix'_comp]
+    congr 1
+    exact LinearMap.ext hPU
+  · have hH : (LinearMap.toMatrix' P).IsHermitian := by
+      rw [Matrix.isHermitian_iff_isSymmetric, hPsym]
+      exact Submodule.starProjection_isSymmetric K
+    exact hH
+  · have kill : ∀ x : Matrix (Fin n) (Fin n) 𝕜, (∀ s ∈ S, x * s = 0) →
         ∀ w ∈ W, x *ᵥ w = 0 := by
       intro x hx w hw
       induction hw using Submodule.span_induction with

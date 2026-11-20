@@ -324,7 +324,8 @@
 | [thm:ideal-tetrahedron-law-of-sines](#thm:ideal-tetrahedron-law-of-sines) | The law of sines for an ideal tetrahedron: $\lVert z \rVert = \sin\theta_2 / \sin\theta_3$ | Ch 12 | `qou:QOU.Knot.IdealTet.norm_eq_sin_div_sin` |
 | [thm:birthday-axioms-do-not-pin-the-birthday](#thm:birthday-axioms-do-not-pin-the-birthday) | The six birthday axioms admit a two-valued model, so they bound birthday only from above | Ch 25 | `qou:QOU.AppendixSurreals.birthdayFaithful_independent_witnessed` |
 | [thm:wedderburn-mass-formula](#thm:wedderburn-mass-formula) | Three-invariant atomic mass formula | Ch 12 | `qou:QOU.WedderburnMass.atomicMass` |
-| [thm:topological-mass](#thm:topological-mass) | Topological Decomposition of Mass | Ch 7 | `qou:QOU.Torsion.mass_decomposition_categorical` |
+| [conj:topological-mass](#conj:topological-mass) | Topological Decomposition of Mass | Ch 7 | — |
+| [prop:topological-mass-upper-bound](#prop:topological-mass-upper-bound) | Upper bound for the topological decomposition of mass | Ch 7 | `qou:QOU.Torsion.mass_upper_bound_localised` |
 | [thm:flavor-mass-splitting-bound](#thm:flavor-mass-splitting-bound) | Two-sided substrate bound on the dressed-quark splitting | Ch 12 | `qou:QOU.FlavorDressing.flavor_mass_splitting_bound` |
 | [thm:em-spectral-completeness](#thm:em-spectral-completeness) | Two-strand spectral completeness over a commutative ring $R$ | Ch 12 | `qou:QOU.Archimedean.em_spectral_completeness` |
 | [thm:knot-mass-formula-unified](#thm:knot-mass-formula-unified) | Unified mass formula: tower + Frobenius co-Casimir correction | Ch 12 | `qou:QOU.BraidKnot.knot_mass_unified` |
