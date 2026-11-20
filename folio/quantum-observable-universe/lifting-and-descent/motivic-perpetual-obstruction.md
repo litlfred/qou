@@ -14,7 +14,5 @@ $\square$
 **Subsumption of prior arguments.**
 This theorem subsumes every prior argument for the non-vanishing of $\kappa_n$ at the Kummer levels $n \nmid \chi(A)$; it does not give non-vanishing at every level, and at $n \mid \chi(A)$ the obstruction vanishes (item 3 of [QU-to-QOU](#thm:qu-to-qou)). In particular:
 - [The Kummer tower and persistence of the obstruction](#rem:kummer-tower) summary item 6
-- [Bring's surface and $q$-flatness obstructions](#ex:archimedean-yekutieli) "Motivic-Galois reading"
-- [$\chi_{\mathrm{eu}}(M_0) = -6$: the derivation chain](#ex:chi-minus-six-derivation) Step 8
 - [The Hochschild--Kummer connection](#rem:hochschild-kummer-connection) "Motivic-Galois interpretation"
 These all reduce to corollaries of this motivic perpetual obstruction.
