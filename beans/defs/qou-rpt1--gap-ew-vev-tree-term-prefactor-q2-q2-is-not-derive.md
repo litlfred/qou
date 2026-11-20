@@ -7,7 +7,7 @@ priority: normal
 tags:
     - 8f-ew
 created_at: 2026-11-20T17:51:02Z
-updated_at: 2026-11-20T17:51:02Z
+updated_at: 2026-11-20T20:10:00Z
 parent: qou-20sx
 ---
 
@@ -39,3 +39,21 @@ dressing by matching v/m_p.
 
 Audit: `docs/audits/2026-11-20-ew-vev-fixed-point-derivation.md`.
 Probe: `computations/probes/ew_vev_fixed_point_slot_sensitivity_probe.py`.
+
+## 2026-11-20 derivation attempt (branch claude/ew-vev-gaps-2026-11-20, commit 0966480389)
+
+Not derived. The bean stays open. Lean: `QOU/StandardModel/ElectroweakVevGaps.lean`, sorry-free.
+Audit: `docs/audits/2026-11-20-ew-vev-gaps.md` §1.
+
+- **Factor q (scope b, bar invariant).** `ewTreeF_bar`: T(1/q)·q² = T(q). `ewTreeF_bar_invariant_imp`:
+  T bar-invariant implies q²=1. So q cannot come from quantum integers or quantum dimensions.
+  It needs a bar-breaking source (framing, z_D). None found. The EM tree q[9][10] has the same
+  factor (`emTreeF_bar`), so this is one item shared by both sectors.
+- **Exponent k on [2]/2.** T_k is strictly increasing in k (`treeK_strictMono`). Two rules were found:
+  - the EM rule q·∏[n_i] forces k=0: N_v = 260.997870278523, −5.41e6 ppb, −2.1e4σ;
+  - one [2]/2 per extra link component forces k=3: +1.09e7 ppb, +4.2e4σ.
+  No rule gives k=1 (the published value).
+- **Markov trace, conv-D, carrier word** (asked for above): ∏(b_n + a_n z_D) = 3.70244669186027,
+  against 262.10 needed. Scope (a).
+
+Remaining hypothesis: `EwVevReducedHypotheses.dressing_exponent : k = 1`, plus the shared q.
