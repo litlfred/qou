@@ -603,7 +603,7 @@ def main() -> int:
 
     m_e_mev = mp.mpf("0.51099895069")
     m_p_exp_mev = mp.mpf(str(M_P_MEV_VALIDATION))  # CODATA 2022, codata_constants
-    m_n_exp_mev = mp.mpf(str(M_N_MEV_VALIDATION))  # (was the CODATA 2018 938.27208816 / 939.56542052)
+    m_n_exp_mev = mp.mpf(str(M_N_MEV_VALIDATION))  # (these two previously carried CODATA 2018 literals)
     dm_np_exp_mev = m_n_exp_mev - m_p_exp_mev  # 1.29333236 MeV (or 1.29333378 from mass difference)
     dm_np_codata_direct = mp.mpf("1.29333378")
     q_beta_exp_mev = dm_np_codata_direct - m_e_mev  # 0.78233482931 MeV
