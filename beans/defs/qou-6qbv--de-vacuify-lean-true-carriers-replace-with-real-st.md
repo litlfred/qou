@@ -104,3 +104,5 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 - 5 definitional gaps; Lean carrier satisfiable by PUnit; every precise reading (R1 Hecke+length+Hochschild, R2 affine sheaf, R3 End+tau-hat) gives vanishing for ALL n. Conjecture stays open; waiting on owner to pick the algebra/grading/cohomology.
 
 ## 2026-11-20 — cor:hecke-length-limit-page-vanishing (PR #8675): Hecke reading proved for all n. Conjecture stays OPEN pending owner-named reading (option 1).
+
+## 2026-11-20 — formalize-first derivation (PR #8679, SelectorPrune.lean): conjecture == purity; no monotone-in-n selector matches the magic set; root-of-unity semisimplicity excluded. OPEN: coefficient-module reading, Bring-lattice reading.
