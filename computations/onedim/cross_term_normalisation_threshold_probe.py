@@ -165,8 +165,12 @@ def main():
         print(f"    {label}:  tr_M(p) = {mp.nstr(trp, 18)}   tr_M(n) = {mp.nstr(trn, 18)}")
 
     trp_p = results["proton pin"][2]
-    check("tr_M(p) matches the LIVE post-beta_Bor value 0.629328402202921918",
-          abs(abs(trp_p) - mp.mpf("0.629328402202921918")) < mp.mpf("1e-15"),
+    import json as _json
+    _live = mp.mpf(_json.loads((_ROOT / "computations" / "qbeta"
+                                / "qbeta-qbeta-scores-a-difference.witness.json").read_text())
+                   ["data"]["calibration"]["tr_proton_word"])
+    check(f"tr_M(p) matches the LIVE post-beta_Bor value {mp.nstr(_live, 18)}",
+          abs(abs(trp_p) - _live) < mp.mpf("1e-15"),
           f"|tr_M(p)| = {mp.nstr(abs(trp_p), 18)}  "
           "(the RETIRED literal is 1.145759692; AGENTS.md records a live producer "
           "still carrying it)")
