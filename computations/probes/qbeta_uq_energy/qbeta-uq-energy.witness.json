@@ -1,0 +1,249 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T19:18:49.464581+00:00",
+  "commitSha": "6ba59063456d9d21437cd80da69aaf965d3226c7",
+  "assertions": [
+    {
+      "name": "C1.adK_three_strand",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "K^(x)3 T+ K^(x)-3 - T+ = (q^2-1) T+ : the derived amplitude is Ad_K(T+) - T+"
+    },
+    {
+      "name": "C1b.uq_relation",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "[E,F] = (K-K^-1)/(q-q^-1) on V^(x)3 (coproduct is a homomorphism)"
+    },
+    {
+      "name": "C4.casimir_commutes_Tplus",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "[C, T+] = 0"
+    },
+    {
+      "name": "C4b.p_half_eigen",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "C p_1/2 = c p_1/2, c = (q**4 + 1)/(q**2 - 1)**2"
+    },
+    {
+      "name": "C4c.n_half_same_eigen",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "C n_1/2 = c n_1/2 with the same c (eigenvalue transport, Lean eigen_eq_of_commute)"
+    },
+    {
+      "name": "C4d.Tplus_n_nonzero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "T+ n_1/2 != 0, so transport applies"
+    },
+    {
+      "name": "C4e.lepton_casimir_scalar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "C on the doublet is a scalar: e- and nu carry the same Casimir (so the same twist)"
+    },
+    {
+      "name": "C2.exchange_commutes_K4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "(K^(x)4)(T+ (x) F) = (T+ (x) F)(K^(x)4): grouplike charges q^2 * q^-2 = 1"
+    },
+    {
+      "name": "C3.same_weight_space",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "n(x)nu (u-count 1+1) and p(x)e- (2+0) share K^(x)4 eigenvalue 1: one weight space (2,2)"
+    },
+    {
+      "name": "C5.lepton_split",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "eps_lepton = (q^-1 - q)/[2] = (1 - q**2)/(q**2 + 1)"
+    },
+    {
+      "name": "C5b.lepton_split_E0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "|eps_lepton| E0 = m_e (q+1)/(q(q^2+1)) (Lean epsLepton_E0); = m_e only at q = 1"
+    },
+    {
+      "name": "D1.only_qq-1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "E0 g = m_e identically only for g = q(q-1) = K-gap between q^2 and q (no doublet carries it)"
+    },
+    {
+      "name": "N2.additive_sign_conflict",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "eps_q < 0 and eps_l < 0: under mass = +trace*E0 (the only sign giving Q > 0) the neutron is lighter than the proton AND the electron lighter than the neutrino"
+    },
+    {
+      "name": "N1.lepton_E0_not_me",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "lepton-strand split x E0 differs from m_e at q0 (electron mass not reproduced)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 725,
+  "computation": "qbeta-uq-energy",
+  "scriptFile": "qbeta_uq_energy_probe.py",
+  "scriptHash": "ac2dc3b72f4d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_uq_energy/qbeta_uq_energy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_uq_energy/qbeta_uq_energy_probe.py"
+  },
+  "description": "qou-99qc: Q_beta as an energy from U_q(gl2) outside H_n (Cartan, twist, four strands, E0). Pre-registered in PREREGISTRATION.md.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 70,
+    "convention": "D (z = q^3/(q^2+1)) = Tr(K^n .)/[2]^n"
+  },
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "closed_forms": {
+      "eps_lepton": "(1 - q**2)/(q**2 + 1)",
+      "eps_quark_V3_8586": "(q**2 - 1)*(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)",
+      "lepton_split_times_E0": "m_e (q+1)/(q(q^2+1))",
+      "additive_released_over_E0": "(q**14 - 4*q**12 + 7*q**10 - 7*q**8 + 7*q**6 - 7*q**4 + 4*q**2 - 1)/(q**10 + 3*q**8 + 3*q**6 + q**4)",
+      "Ad_K": "K T+ K^-1 - T+ = (q^2-1) T+",
+      "casimir_p_half": "(q**4 + 1)/(q**2 - 1)**2"
+    },
+    "E0_gap_ratios_over_me": {
+      "h": "1.712572038321499550293038",
+      "q-1": "0.9009182839557414921608229",
+      "q^2-1": "1.900918283955741492160823",
+      "q(q-1)": "1.0",
+      "2ln q": "1.709468522784492103213"
+    },
+    "table": [
+      {
+        "cell": "a1 h*m_e",
+        "MeV": "0.106829593315509560932872340168",
+        "vs_codata_pct": "-86.344751"
+      },
+      {
+        "cell": "a2 2ln(q)*m_e",
+        "MeV": "0.106635997195026464636817281725",
+        "vs_codata_pct": "-86.369497"
+      },
+      {
+        "cell": "a1 h*E0_order_zero",
+        "MeV": "0.875122514563320739067049149075",
+        "vs_codata_pct": "11.860536"
+      },
+      {
+        "cell": "a2 2ln(q)*E0_order_zero",
+        "MeV": "0.873536621380459821746434074985",
+        "vs_codata_pct": "11.657823"
+      },
+      {
+        "cell": "a1 h*E0_tower",
+        "MeV": "0.88379893348139706735812222877",
+        "vs_codata_pct": "12.96958"
+      },
+      {
+        "cell": "a2 2ln(q)*E0_tower",
+        "MeV": "0.882197316930225041262327987588",
+        "vs_codata_pct": "12.764857"
+      },
+      {
+        "cell": "ref #8586 |eps_flavour(V^3)|*E0_tower (scored)",
+        "MeV": "0.3254339287346917072909656439",
+        "vs_codata_pct": "-58.402152"
+      },
+      {
+        "cell": "c lepton |eps_l|*E0_order_zero",
+        "MeV": "0.435190152738339429802003742916",
+        "vs_codata_pct": "-44.372813"
+      },
+      {
+        "cell": "c additive (eps_q - eps_l)*E0_order_zero, mass=+trace",
+        "MeV": "0.112951069560583457650586610613",
+        "vs_codata_pct": "-85.562288"
+      },
+      {
+        "cell": "c lepton |eps_l|*E0_tower",
+        "MeV": "0.439504853836006418223351353362",
+        "vs_codata_pct": "-43.821296"
+      },
+      {
+        "cell": "c additive (eps_q - eps_l)*E0_tower, mass=+trace",
+        "MeV": "0.114070925101314710932385709463",
+        "vs_codata_pct": "-85.419145"
+      },
+      {
+        "cell": "c four-strand K-weighted split (any X)",
+        "MeV": "0.0",
+        "vs_codata_pct": "-100"
+      },
+      {
+        "cell": "b twist / Casimir n vs p",
+        "MeV": "0.0",
+        "vs_codata_pct": "-100"
+      },
+      {
+        "cell": "c linear Cartan energy, one coefficient",
+        "MeV": "0.0",
+        "vs_codata_pct": "-100"
+      }
+    ],
+    "scope": "(b) for the zero rows: invariants centrality (twist/Casimir), grouplike K with E(x)F of charge 1 (four strands), linearity of a one-coefficient Cartan energy; (a) for the nonzero rows, which all carry an unforced scale and log/linear choice",
+    "selected": "none"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
