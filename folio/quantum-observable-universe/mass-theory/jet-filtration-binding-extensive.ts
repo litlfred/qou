@@ -14,7 +14,9 @@ export default proposition({
     ref: "qou:QOU.Mass.jetBinding_mono",
     validation: "not_checked",
   },
-  uses: ["conj:binding-manybody-eq-jet-filtration"],
+  uses: [
+    // conj:binding-manybody-eq-jet-filtration removed (qou-tm3c): the claim is monotonicity of a finite non-negative sum; the conjecture only names B.
+  ],
   tags: [
     "binding",
     "jet-filtration",
