@@ -9,6 +9,31 @@ When the user asks you to perform a task (e.g., "run prepare-merge", "set up lea
 
 **Required Action:** Before executing any multi-step task or slash command, run `ls .claude/skills/local/` and `view_file` on the relevant `.md` file. Follow its instructions exactly. NEVER guess.
 
+## 🟥 THE PHOTON IS `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹` (owner ruling 2026-11-20) — STRICT
+
+**The fourth term is the chiral vertex `σ₀σ₁⁻¹`. The form with `σ₀σ₁` (`L₊`) as the
+fourth term is OLD AND WRONG.** Verbatim, owner 2026-11-20: *"1 + φ₀σ₀ + φ₁σ₁ +
+φ₀₁σ₀σ₁ is old and wrong. 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁^-1 is correct"*, and earlier the
+same day: *"That was already decided. Why did it get changed back to the wrong form?"*
+
+    γ(φ₀, φ₁, φ₀₁) = 1 + φ₀·σ₀ + φ₁·σ₁ + φ₀₁·σ₀σ₁⁻¹      ∈ H₃(R, q)
+
+- **This is a ruling, not a working assumption.** It was first recorded on
+  2026-11-18 as "a working assumption, not a ruling to edit def:photon"; that
+  classification was the recording agent's, and it is why the wrong form kept
+  coming back (bean `qou-99qc`, entry 2026-11-20T14:50:40Z).
+- **Until PR #8583 merges, `predicted-spectra/photon.md` and `QOU/Photon.lean` on
+  `main` still state the OLD `σ₀σ₁` form.** Do not copy the definition from them.
+  Do not quote, compute, formalise or propose anything on the `σ₀σ₁` form, and do
+  not call the correct form "switched", "γ′" or "the qou-99qc variant" — it is
+  simply *the photon*.
+- **Every agent repeats this to its subagents.** A subagent does not see this file
+  if it was edited mid-session (see §Subagents); put the photon form in the
+  subagent's prompt whenever photons are in scope.
+- Worked consequence: the Borromean core factors as
+  `V³ = (σ₀σ₁⁻¹)³ = γ(0,0,qh)·γ(0,0,−q⁻¹h)`, `h = q − q⁻¹`
+  (`borromeanV3A_eq_switched_photon_product` and its `B` twin, sorry-free).
+
 ## User accessibility
 
 The repo owner is physically disabled and types with difficulty.
