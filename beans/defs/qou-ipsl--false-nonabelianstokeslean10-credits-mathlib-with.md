@@ -1,13 +1,13 @@
 ---
 # qou-ipsl
 title: 'FALSE: NonAbelianStokes.lean:10 credits Mathlib with manifold differential forms via MFDeriv — wrong module, and misses Analysis/Calculus/DifferentialForm'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:24Z
-updated_at: 2026-11-20T08:27:17Z
+updated_at: 2026-11-20T08:55:27Z
 parent: qou-c8p8
 ---
 
@@ -68,3 +68,6 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F3, §H2,
 Stalled-claim takeover by W10 (session_01VQDpPeWFnvbDUN18UJ6CyC, PR #8530): prior claim's backing branch had no commit for >3 h (lane-e667 branches last pushed 2026-11-17). The lane-e667 'Progress Update' sections above refer to unmerged bundle PRs and are NOT the closure.
 
 Fix landed on branch in PR #8530 (`5dc586ac0`): both false citations corrected (:10 MFDeriv, and :332 `Mathlib.Analysis.NormedSpace.LieAlgebra`, which does not exist at the pin). Complete on merge.
+
+
+Merged in #8530 (2026-11-20, main `e678dba920d` / `6872e6c56d6`). Completed by W10.

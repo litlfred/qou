@@ -1,13 +1,13 @@
 ---
 # qou-4tsl
 title: 'HALF-FALSE: ContactDistributionRank.lean:97 says Mathlib has no exterior-power-of-an-object API — it has ⋀[R]^n M and ModuleCat; the abstract-monoidal case is the real gap'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T09:08:25Z
-updated_at: 2026-11-20T08:27:17Z
+updated_at: 2026-11-20T08:55:27Z
 parent: qou-c8p8
 ---
 
@@ -75,3 +75,6 @@ Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F7, §H2,
 Stalled-claim takeover by W10 (session_01VQDpPeWFnvbDUN18UJ6CyC, PR #8530): prior claim's backing branch had no commit for >3 h (lane-e667 branches last pushed 2026-11-17). The lane-e667 'Progress Update' sections above refer to unmerged bundle PRs and are NOT the closure.
 
 Fix in PR #8530 (`3f760c059`), using this bean's corrected wording. Sibling HyperbolicVolumeFormType already corrected. Complete on merge.
+
+
+Merged in #8530 (2026-11-20, main `e678dba920d` / `6872e6c56d6`). Completed by W10.
