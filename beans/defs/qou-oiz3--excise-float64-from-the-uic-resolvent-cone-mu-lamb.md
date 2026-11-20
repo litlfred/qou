@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-20T17:18:37Z
+updated_at: 2026-11-20T17:26:36Z
 parent: qou-9nnz
 ---
 
@@ -412,3 +412,29 @@ So the pre-2026-09-05 Delta_tr was computed on the **wrong object**, not merely 
 Render-QA preflight battery GREEN (11 checks). The pipeline render is **unavailable** here — the platform is a mounted copy, not a checkout — so the .md is NOT machine-render-validated; stated rather than implied. qa-sweep loads at pin `82b3899` (contra `qou-4jhp`, which reports it failing at `b61e856`) but cannot write sidecars in this container; the committed sidecar is now legitimately stale against the edit, and the attestations file it extracted carries only the OLD field hashes, so nothing attests the new prose.
 
 **next** (D) refreshing the 62 sweep producers still stale by scriptHash — background, ~3.8 h ETA. Scope correction: I told the owner '~100'; the measured figure is **62**. Corpus-wide staleness is far larger (511 distinct stale producers, 472 of them outside the sweep) and is NOT in scope here.
+
+## 2026-11-20 (D) — ENVIRONMENT PROVENANCE: a refreshed witness can move 8 orders unattributably
+
+`759b857c454` reverts `computations/fusion-process-joint-h15-lp.witness.json`, committed in `5428c9c053e`. This changes how the rest of D must be committed, so it is the entry to read.
+
+**What happened.** Three assertions flipped and my commit message said only 'gates green':
+
+    initial_split_multiplicativity   4.24682e-10 (tol 1e-8)  ->  0.127464
+    final_split_multiplicativity     2.51527e-9  (tol 1e-8)  ->  0.509668
+    active_support_invariant         7, expected 7           ->  6, expected 8
+
+Eight orders on a multiplicativity residual is not a precision effect.
+
+**The sweep is NOT the cause** — control arm byte-identical (0.127464 / 0.509668, both failing). That is **8 of 8** control arms this session exonerating the q patch. The pattern is strong enough to state as a rule: *on this branch, assume a moved witness is NOT the patch until a control arm says otherwise.*
+
+**RETRACTED diagnosis (mine).** The producer tries clarabel (pyhecke_native) and falls back to scipy when absent, and clarabel was not importable — a textbook 'producer branches on what is installed'. I took that for the cause. Installed clarabel 0.11.1 and re-ran with the backend genuinely recorded `clarabel`/`clarabel-mpfr`: **results UNCHANGED**. Not the solver.
+
+**TRAP worth keeping:** in this container `pip` is **python3.13**'s while `python3` is **3.11.18**. `pip install X` reports success and `python3 -c 'import X'` still fails; it also resolves cp313 wheels. Use `python3 -m pip`. This cost me a wrong 'not installable' conclusion on SnapPy too.
+
+**The residual cause is environment provenance.** This container is python 3.11.18 / mpmath 1.4.1 against the witness's 3.11.15 / 1.3.0, and `pyhecke_native_build` moved `110b330d42788fa0` -> `930c010e26215e56` because I rebuilt the extension this session. mpmath cannot be downgraded to test while the refresh is mid-run and using it.
+
+**Consequence for how D finishes — the commit gate.** A refreshed value I cannot attribute, that moves a result materially, does not belong in the corpus. The remaining ~50 are to be committed only when the move is EITHER (a) below 1e-9 — the intended precision gain — OR (b) attributable, as probe_d's 4.047x was to the 2026-09-05 word ruling and cross-validated against the independent Hoefsmit witness. Anything else is flagged for a canonical-environment re-run, not committed. Bulk-committing D's output is no longer appropriate.
+
+**Scope, measured not assumed:** exactly **1** of the 221 in `da44c4efb5a` carries LP/SDP dual fields — `probes/collision-gradient-lagrangian-probe` — and it is **sound**: every assertion passes both ways and its `primal_obj`/`dual_obj`/`y0_star` moved only at the ~50th digit (`…089723648607` -> `…088136197499`). No other committed witness is implicated.
+
+Known D skips: `atomic_chirality_residue` (timeout 420s), `fitted_ideal_low_isotope_calibration` (rc=1, 'cannot create mpf from None' — real producer defect, pre-existing), `m_tau_complex_volume_search` (SnapPy absent).
