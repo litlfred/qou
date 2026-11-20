@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T20:47:33Z
-updated_at: 2026-11-20T14:30:00Z
+updated_at: 2026-11-20T16:10:00Z
 parent: qou-9nnz
 ---
 
@@ -258,3 +258,47 @@ both of the above were caught by that assertion or by use.
 Bounded scope gap, stated because it is checkable: a second computations tree
 exists at `folio/quantum-observable-universe/computations/`, measured at **2**
 .py files and **2** witnesses. A gap, not a tree.
+
+## 2026-11-20 -- option 3 CLASSIFIED, deliberately NOT swept
+
+`docs/audits/2026-11-20-q50-digit-cap-classification.md`,
+`computations/audits/q50_digit_cap_classify.py`.
+
+**The fix direction is proved.** At mp.dps 120 against an independent
+`q_at(110)` solve: `mpf(Q_50_DIGIT_STR)` sits 1.91571e-50 away, `Q_MP` sits
+6.97057e-72 away -- strictly more correct by 2.75e21, so ASK-OWNER exemption 1.
+`Q_50_DIGIT_STR` must NOT change (its name is its spec; 1216 importers); the fix
+is at the consumer.
+
+**Why the sweep did not run.** 809 files contain the text; 6 are prose-only;
+**803** are real call sites; and **206 of those want 50 digits DELIBERATELY** --
+**159 emit an artifact whose own NAME says `50dps`**, so re-pinning their q to
+70 digits makes the name a lie while the run still exits 0. A sed would have
+corrupted them silently. 589 fixable, 8 with no import to extend; of the 589,
+**322** back a witness fine enough for the change to show.
+
+**A figure of mine is WITHDRAWN: the "6 of 6 MOVED".** It compared
+patched-vs-committed, so it charged environment churn to the patch -- installing
+`pyhecke_native` strengthens the recorded `environment` block and the producer
+announces it on stdout. The tell: one of the six, `chi_at_q0_via_matrix_m_mpfr`,
+is **prose-only** and never calls the pattern, so it could not have moved from
+the substitution. With a control arm in the SAME environment (unpatched -> A,
+patched -> B, compare A vs B) the sample completing both arms is **1 MOVED /
+1 IDENTICAL**. n = 2. No rate is claimed, and the earlier one should not be
+quoted.
+
+**Environment, because it gates every measurement here.** A bare container runs
+none of these producers: `sympy`/`numpy`/`scipy` absent (the first sample's five
+"IDENTICAL" were rc=1 `ModuleNotFoundError` in 0 s, reported as agreement by a
+verdict that never required a successful run -- a verdict must be unreachable
+when the run failed); `mpmath` 1.3.0 under `python3` against a corpus needing
+1.4.x; `pyhecke_native` not on PyPI, but `maturin build --release` in
+`tools/pyhecke-native/` works and gives a cp311 wheel. **171** capped producers
+reference it.
+
+**Next, in order:** (1) fix the patcher for parenthesised multi-line imports --
+it is why 7 of 10 A/B candidates read UNPATCHABLE, a harness limit not a corpus
+fact; (2) A/B a real sample of the 322 with the control arm; (3) sweep the
+fixable set EXCLUDING the 206, in reviewable batches, each with its witnesses
+refreshed in the same commit. The 206 keep their pin; any one of them being an
+accident is a per-file judgement, never a sweep.
