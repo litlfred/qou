@@ -14,7 +14,7 @@ The hypothesis carries only the $B_3(\mathbb{C})$ normalization, and the conclus
 
 ## Numerical context
 
-At $q_0$, the tree term and zero-mode reproduce $1/\alpha$ to $-4.2\times 10^{-6}$ ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)). The $\mathcal{O}(\alpha^2)$ self-consistency term supplies the residual $\mathcal{O}(\alpha)$ correction. The conjectural $B_3(\mathbb{C})$ Bloch-class content supplies its exact form. The cubic $P$ features a real root near $1/137.036$. CODATA-consistency provides the empirical foundation of the conjecture.
+At $q_0$, the tree term and zero-mode reproduce $1/\alpha$ to $-4.2\times 10^{-6}$ ([additive Bring zero-mode form of $1/\alpha_{EM}$](#prop:em-coupling-bring-zero-mode)). The $\mathcal{O}(\alpha^2)$ self-consistency term supplies the residual $\mathcal{O}(\alpha)$ correction. The conjectural $B_3(\mathbb{C})$ Bloch-class content supplies its exact form. The cubic $P$ features a real root near $1/137.036$. CODATA-consistency provides the empirical foundation of the conjecture.
 
 ## Status
 

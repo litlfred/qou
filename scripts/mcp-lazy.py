@@ -20,6 +20,12 @@ call to `start` launches the backend. The stub then performs the backend's
 then on lists the backend's tools and forwards every message both ways. The
 agent calls RefreshMcpTools after `start` to see the new tools.
 
+A required variable that is unset can be filled by a resolver named in the
+registry's `env_fallback` (see ENV_FALLBACKS). The only one today is
+`repo_owner_email`, used for OPENALEX_MAILTO. It reads git history at start time
+and the address is passed only to the backend's environment; it is never written
+to a file or returned in the tool result.
+
 A failed start returns the backend's stderr tail as the tool result rather than
 a silent dropped connection. That is where the two defects above surfaced.
 
@@ -31,6 +37,7 @@ from __future__ import annotations
 import atexit
 import json
 import os
+import re
 import signal
 import subprocess
 import sys
@@ -55,6 +62,41 @@ def send(msg: dict) -> None:
 def log(text: str) -> None:
     sys.stderr.write(f"[mcp-lazy] {text}\n")
     sys.stderr.flush()
+
+
+def repo_owner_email() -> str | None:
+    """The repo owner's email, read from git history at call time, never stored.
+
+    Owner, 2026-11-20: "If you need it, you can use the repo owner's email but pull
+    it dynamically." The owner login is the first path segment of the `origin` URL.
+    Among commit author emails whose local part equals that login, take the most
+    frequent one, skipping noreply addresses and hostnames that are not on the
+    public internet (.local, .home, .lan). Returns None if nothing qualifies, and
+    the caller then refuses to start as before.
+    """
+    try:
+        url = subprocess.run(["git", "remote", "get-url", "origin"], cwd=ROOT,
+                             capture_output=True, text=True, timeout=10).stdout.strip()
+        m = re.search(r"github\.com[:/]([^/]+)/", url)
+        if not m:
+            return None
+        login = m.group(1).lower()
+        emails = subprocess.run(["git", "log", "--all", "--format=%ae"], cwd=ROOT,
+                                capture_output=True, text=True, timeout=60).stdout.split()
+    except (OSError, subprocess.SubprocessError):
+        return None
+    counts: dict = {}
+    for e in emails:
+        local, _, host = e.lower().partition("@")
+        if local != login or "noreply" in host or "." not in host:
+            continue
+        if host.rsplit(".", 1)[-1] in ("local", "home", "lan", "localdomain"):
+            continue
+        counts[e] = counts.get(e, 0) + 1
+    return max(counts, key=counts.get) if counts else None
+
+
+ENV_FALLBACKS = {"repo_owner_email": repo_owner_email}
 
 
 class Backend:
@@ -121,17 +163,27 @@ class Backend:
     def start(self, client_init_params: dict) -> str:
         if self.ready:
             return f"{self.name} is already running ({len(self.tools)} tools)."
-        missing = [v for v in self.spec.get("requires_env", []) if not os.environ.get(v)]
+        env = dict(os.environ)
+        notes = []
+        for var, source in self.spec.get("env_fallback", {}).items():
+            if env.get(var):
+                continue
+            value = ENV_FALLBACKS[source]()
+            if value:
+                env[var] = value
+                notes.append(f"{var} taken from {source}")
+        missing = [v for v in self.spec.get("requires_env", []) if not env.get(v)]
         if missing:
             raise RuntimeError(
                 f"{self.name} needs environment variable(s) {', '.join(missing)}, which are not "
-                "set in this session. The backend exits immediately without them, so it was not launched."
+                "set in this session and could not be derived. The backend exits immediately "
+                "without them, so it was not launched."
             )
         cmd = [self.spec["command"], *self.spec.get("args", [])]
         timeout = float(self.spec.get("start_timeout_s", 120))
         t0 = time.monotonic()
         self.proc = subprocess.Popen(
-            cmd, cwd=ROOT, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+            cmd, cwd=ROOT, env=env, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
             stderr=subprocess.PIPE, text=True, bufsize=1,
         )
         threading.Thread(target=self._read_stdout, daemon=True).start()
@@ -155,8 +207,9 @@ class Backend:
         dt = time.monotonic() - t0
         log(f"{self.name}: started in {dt:.1f} s with {len(self.tools)} tools")
         return (
-            f"{self.name} started in {dt:.1f} s with {len(self.tools)} tools. "
-            "Call RefreshMcpTools to load them into this session."
+            f"{self.name} started in {dt:.1f} s with {len(self.tools)} tools"
+            + (f" ({'; '.join(notes)})" if notes else "")
+            + ". Call RefreshMcpTools to load them into this session."
         )
 
     def stop(self) -> None:

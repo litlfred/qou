@@ -126,7 +126,8 @@ def transfer_matrix_trace(Z, N):
 def main():
     t0 = time.perf_counter()
 
-    E0 = m_e / (q0 * (q0 - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.canonical(q=q0, m_e=m_e)  # tower-summed E_0, canonical (owner ruling 2026-11-20, #8590); was order-zero m_e/(q(q-1))
 
     atoms = [
         ("D", 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),

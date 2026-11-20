@@ -54,7 +54,7 @@ import numpy as np
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as _Q_CANONICAL
+from q_parameter import Q_MP as _Q_CANONICAL  # mpf, 70 dps (was float64 Q)
 from experimental_constants import (
     M_E_MEV, M_P_MEV, M_N_MEV, Q_NEUTRON_MEV,
 )
@@ -62,7 +62,6 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDA
 
 Q0 = _Q_CANONICAL
 m_e = M_E_MEV
-FROB_N3 = m_e * (2.0 + 1.0 / (Q0 + 1.0 / Q0))  # m_e · (2 + 1/[2]_q)
 
 
 def _mpf_from_witness_value(key: str, val) -> "mp.mpf":
@@ -125,7 +124,6 @@ def _load_sigma_3A_table():
         return {}
 
 
-_SIGMA_3A_AT_Q0 = _load_sigma_3A_table()
 
 
 def term_1_descended(Z, N, include_inter):
@@ -141,6 +139,12 @@ def term_1_descended(Z, N, include_inter):
 # early, so the padding / raw-float64 / import-time gates all pass it.
 # Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
 set_compute_dps()
+# Built after set_compute_dps(): at import-time dps it was a 53-bit value
+# serialised with 50 manufactured digits.
+FROB_N3 = m_e * (2 + 1 / (Q0 + 1 / Q0))  # m_e · (2 + 1/[2]_q)
+# Also after set_compute_dps(): parsed at import-time dps the 50-digit
+# strings were cut to 53 bits (precision-gates fake-precision red).
+_SIGMA_3A_AT_Q0 = _load_sigma_3A_table()
 
 def term_23_brane_tower(Z, N, include_inter):
     """Terms 2 + 3: Σ_i Φ_q(|V̂_i|) + z²·Σ_{i<j} Φ_q(|V̂_i V̂_j|).
@@ -293,7 +297,7 @@ if __name__ == "__main__":
     print("INTEGRATED 6-TERM MASS FORMULA — light isotopes")
     print("=" * 96)
     print(f"q_0 = {Q0}, m_e = {m_e} MeV")
-    print(f"Universal Frobenius (n=3) = {FROB_N3:.6f} MeV per vortex")
+    print(f"Universal Frobenius (n=3) = {mp.nstr(FROB_N3, 7)} MeV per vortex")
     print()
 
     # A=1 β-decay calibration (same as light_isotope_sweep.py).

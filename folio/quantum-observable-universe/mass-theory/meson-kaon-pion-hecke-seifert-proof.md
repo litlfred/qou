@@ -3,7 +3,7 @@ The algebraic factor arises from the Hecke representation theory
 of $H_3(q_0)$.  On the standard $(2,1)$ irreducible representation,
 $\sigma_1$ acts diagonally in the Hoefsmit seminormal basis with
 eigenvalues $q$ and $-q^{-1}$
-(cf. [`prop:hoefsmit-binding-amplitude`](../braids-and-knots/hoefsmit-binding-amplitude.md)).
+(cf. [Hoefsmit binding amplitude $b^2 = [3]_q/[2]_q^2$](../braids-and-knots/hoefsmit-binding-amplitude.md)).
 The character of $\sigma_1^n$ for odd $n$ is therefore
 
 $$

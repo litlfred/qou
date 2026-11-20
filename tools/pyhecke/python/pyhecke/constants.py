@@ -230,9 +230,11 @@ ALPHA = ALPHA_BORROMEAN                             # default (backward compat)
 
 # ── Electron traced volume V̂_e (mass-tower formula) ──
 # Trefoil σ³ on 2 strands (1 generator), 3 crossings (c=1, d=0).
-# V̂_e = W_SYM×q³ + W_STD×V_std + W_ALT×(-1/q)³
-# where V_std = z·a+b from transfer matrix T(1,0)³.
-# This is the SAME V̂ that gives m_p/m_e = 1870 in the mass-tower.
+# V̂_e = V_std = z·a+b, the convention-D Markov trace of the transfer-matrix
+# word T(1,0)³ (owner ruling 2026-11-18, #8520/#8521). It was the mixture
+# W_SYM×q³ + W_STD×V_std + W_ALT×(-1/q)³. The mass tower in
+# computations/mass_endomorphism.py still uses that mixture, so this V̂_e is
+# NO LONGER the V̂ behind m_p/m_e there (open: see PR #8590).
 # B(D) = α × V̂_e (deuteron binding = Borromean scale × electron action).
 # Reference: prop:mass-endomorphism-tower
 _a_e, _b_e = 0.0, 1.0

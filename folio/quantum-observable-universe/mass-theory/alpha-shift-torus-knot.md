@@ -16,7 +16,7 @@ $$
 $$
 
 *where $\chi_\lambda$ is the seminormal Hecke character on
-$V_\lambda$ ([`def:delta-q-decoration`](#def:delta-q-decoration))
+$V_\lambda$ ([$q$-dimension decoration $\delta_q$](#def:delta-q-decoration))
 and $\mathrm{ord}_{q=0}^{(-)}$ denotes the pole order at $q = 0$
 (i.e. the negative of the Laurent valuation). Then:*
 

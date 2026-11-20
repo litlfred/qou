@@ -86,7 +86,7 @@ no other archimedean image is admissible.
 
 **Cross-reference: $\alpha_{EM}$.** The same dichotomy underlies
 the additive Bring zero-mode candidate
-[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode):
+[additive Bring zero-mode form of $1/\alpha_{EM}$](#prop:em-coupling-bring-zero-mode):
 the $\pi$ in $4_1$'s archimedean image
 $2\,\mathrm{Cl}_2(\pi/3)$ and the $\pi$ in $1/\alpha_{EM}$'s
 correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ share a single

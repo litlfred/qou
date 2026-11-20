@@ -127,7 +127,8 @@ QB = mp.mpf(str(C.Q_BETA_MEV))
 MP_V = mp.mpf(str(C.M_P_MEV_VALIDATION))
 MN_V = mp.mpf(str(C.M_N_MEV_VALIDATION))
 
-E0 = ME / (Q0 * (Q0 - 1))                                    # canonical, derived
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E0 = _qbeta_e0.order_zero_scaled(ME, Q0)                                    # canonical, derived
 QA = ME * mp.fabs(Q0 ** 2 - 2 * Q0 - 1) * (Q0 + 1) / (2 * Q0 ** 3)
 
 # TARGETS, fixed by protium physics and DECLARED BEFORE anything is solved.

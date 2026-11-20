@@ -33,6 +33,7 @@ Run:
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import json
 import sys
 from pathlib import Path
@@ -164,7 +165,7 @@ def compute_all() -> dict:
         hbar_q0 = (q0 - 1) / q0
         h_q0 = q0 - 1 / q0
         z_D = (q0 ** 3) / (q0 ** 2 + 1)
-        E0_order0 = m_e / (q0 * (q0 - 1))
+        E0_order0 = _qbeta_e0.order_zero_scaled(m_e, q0)
         E0_tower = E0_order0 / (1 - hbar_q0 ** 2)
         alpha_bind = m_e * 8 * mp.catalan
         alpha_em_inv = alpha_em_inv_derived(q0)

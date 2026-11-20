@@ -100,7 +100,8 @@ def main() -> int:
     from _li_2_q_util import li_2_q as _li
     _mp.mp.dps = 50
     _q = _mp.mpf(str(_Q)); _me = _mp.mpf(str(_ME)); _qi = 1 / _q; _hh = _q - _qi
-    _E0 = _me / (_q * (_q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    _E0 = _qbeta_e0.order_zero_scaled(_me, _q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
     #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + sqrt(1/q)) = sqrt q/(q+1), excised.
     # The swap ratio z/(z-h) that _fp/_fn carries is exactly q^4 under D
