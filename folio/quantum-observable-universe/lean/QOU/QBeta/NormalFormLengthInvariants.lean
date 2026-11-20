@@ -250,6 +250,17 @@ theorem lenWeighted_nucN_sub_nucP {K : Type*} [Field K] (q qi : K) (h2 : (2 : K)
   field_simp
   ring
 
+/-- **The proton sits two q-powers above the neutron**: `χ(p) = q² · χ(n)` in the short
+typed model (`h = q − q⁻¹`, `q q⁻¹ = 1`). The flavour flip `d → u` moves the
+index-character degree by `+2`, the Cartan charge of `T⁺`. -/
+theorem lenWeighted_nucP_eq_sq_mul {K : Type*} [Field K] (q qi : K) (hq : q * qi = 1)
+    (h2 : (2 : K) ≠ 0) :
+    lenWeighted q (nucP (q - qi)) = q ^ 2 * lenWeighted q (nucN (q - qi)) := by
+  simp only [lenWeighted, Fin.sum_univ_six, len, nucN, nucP]
+  simp
+  field_simp
+  linear_combination (-(q ^ 2 + q * qi)) * hq
+
 /-- Corpus `thm:groebner-shirshov-energy`: `E(ξ) = Σ_w |c_w| ℓ(w)` on the normal form. -/
 noncomputable def gsEnergy (v : Fin 6 → ℝ) : ℝ := ∑ k, |v k| * (len k : ℝ)
 
