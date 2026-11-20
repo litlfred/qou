@@ -6,10 +6,14 @@ $$
 $$
 The sum ranges over irreducible Wedderburn blocks of the Hecke algebra $H_n(q)$, equivalently indexed by partitions $\lambda \vdash n$. The dimension $d_\lambda(q)$ is the Steinberg $q$-hook dimension, $\pi_\lambda$ projects onto the $V_\lambda$-isotypic component, and $\mu_\lambda(q)$ denotes the $q$-Laplacian eigenvalue.
 
-2. **Explicit content-Casimir formula.** Given a partition $\lambda \vdash n$ with cell contents $c(\square) = j - i$, the Reeb-spin eigenvalue of $\Delta_\xi$ on $V_\lambda$ is
+2. **Explicit content-Casimir formula.** Given a partition $\lambda \vdash n$ with cell contents $c(\square) = j - i$, the Reeb-spin eigenvalue on $V_\lambda$ is
 $$
-  \mu_\lambda(q) = \hbar_q^2  \sum_{\square \in \lambda}  [c(\square)]_q \, [c(\square) + 1]_q.
+  \mu_\lambda(q) = \sum_{\square \in \lambda}  [c(\square)]_q \, [c(\square) + 1]_q,
 $$
-The factor $\hbar_q = (q - 1)/q$ is the quantum Planck constant, and $[k]_q = (1 - q^k)/(1 - q)$ is the Jackson integer. This formula computes the eigenvalue of the pure-spin piece $(1 - q^{-1})^2 \Delta_\xi$ from the three-term expansion. The classical-core piece $q^{-2}\Delta$ acts exclusively on spatial modes of the base manifold $M$, contributing a separate eigenvalue $q^{-2}|\mathbf{k}|^2$ dependent on the spatial wavenumber $\mathbf{k}$. Coriolis cross-terms vanish identically on Hecke-representation spaces by Schur's lemma.
+where $[k]_q = (q^k - q^{-k})/(q - q^{-1})$ is the symmetric quantum integer. It is the eigenvalue on $V_\lambda$ of the Reeb-holonomy Laplacian
+$$
+  \Delta_\xi^{(q)} = (q - q^{-1})^{-2} \sum_{k=0}^{n-1} \bigl( q\,H_k + q^{-1} H_k^{-1} - (q + q^{-1}) \bigr), \qquad H_k = (\Delta^2_{k-1})^{-1}\Delta^2_k,
+$$
+where $\Delta^2_k$ is the full twist of the first $k+1$ strands. Each $H_k$ is the $k$-th Jucys--Murphy element of $H_n(q)$, and $\Delta_\xi^{(q)}$ is central. Writing $q = e^{h}$, each summand is a symmetric second difference of step $h$, and as $h \to 0$ the operator tends to $\sum_k X_k(X_k+1)$, where $X_k$ are the classical Jucys--Murphy elements. So $\Delta_\xi^{(q)}$ is the finite-step form of the Reeb Laplacian $\mathcal{L}_\xi^*\mathcal{L}_\xi$, with a half-integer shift. The Reeb part of $\Delta_q$ enters with weight $1$, not $\hbar_q^2$: on a mode with no horizontal derivative, $d_q$ and $\delta_q$ reduce to $d$ and $\delta$, because $q^{-1} + \hbar_q = 1$. The classical-core and cross-coupling terms of rem:q-laplacian-expansion act on such modes as well, and the three coefficients sum to $(q^{-1} + \hbar_q)^2 = 1$. The spatial part contributes a separate eigenvalue $q^{-2}|\mathbf{k}|^2$, dependent on the spatial wavenumber $\mathbf{k}$.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

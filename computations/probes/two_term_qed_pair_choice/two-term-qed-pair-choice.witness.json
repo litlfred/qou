@@ -1,0 +1,106 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-20T08:43:16.365095+00:00",
+  "commitSha": "1cd940df00e52d76e57d51471bfda29c627db6bc",
+  "assertions": [
+    {
+      "name": "C1_all_pairs_connected_term_is_zero_p_and_n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "both t_p and t_n simplify to 0"
+    },
+    {
+      "name": "C2_published_choice_matches_Lean_closed_forms",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "trace_QAdjp_borromeanV3, trace_QAdj_connected_diff_borromeanV3"
+    },
+    {
+      "name": "C3_reproduces_canonical_mass_figures",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical_mass: M_p 0.220077293804 keV, Delta_m -0.331696044605 keV"
+    },
+    {
+      "name": "C4_sign_of_Delta_m_depends_on_which_pair_is_left_out",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "-0.3316960, 0.73306116, -0.4013651"
+    },
+    {
+      "name": "C5_M_p_spread_over_left_out_pair",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "max/min = 5.44749"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "two-term-qed-pair-choice",
+  "scriptFile": "two_term_qed_pair_choice_probe.py",
+  "scriptHash": "c9f63cb01f66",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/two_term_qed_pair_choice/two_term_qed_pair_choice_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/two_term_qed_pair_choice/two_term_qed_pair_choice_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "same q_parameter.Q_MP as canonical_mass",
+  "description": "PROBE (issue #8524, bean qou-99qc): the 'connected' two-term QED term evaluated for each choice of left-out quark pair. With no pair left out it is identically zero; the published +0.220 keV / -0.332 keV come from leaving out pair 1-3. Nothing fitted or scored.",
+  "results": {
+    "none left out": {
+      "t_p": "0",
+      "t_n": "0",
+      "M_p_keV": "0.0",
+      "Delta_m_keV": "0.0"
+    },
+    "1-3 left out (published)": {
+      "t_p": "-2*(q - 1)**4*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/(27*q**6)",
+      "t_n": "(q - 1)**4*(q + 1)**4*(2*q**4 - q**2 + 2)/(27*q**6)",
+      "M_p_keV": "0.2200772938039829398522939",
+      "Delta_m_keV": "-0.3316960446051788476748025"
+    },
+    "1-2 left out": {
+      "t_p": "2*(q - 1)**3*(q + 1)**3*(2*q**6 + 1)/(27*q**6)",
+      "t_n": "-(q - 1)**3*(q + 1)**3*(q**6 - 3*q**4 - 1)/(27*q**6)",
+      "M_p_keV": "1.198869111333614605160849",
+      "Delta_m_keV": "0.7330611697487425672430381"
+    },
+    "2-3 left out": {
+      "t_p": "-2*(q - 1)**3*(q + 1)**3*(q**6 + 2)/(27*q**6)",
+      "t_n": "-(q - 1)**3*(q + 1)**3*(q**6 + 3*q**2 - 1)/(27*q**6)",
+      "M_p_keV": "0.9787918175296316653085554",
+      "Delta_m_keV": "-0.4013651251435637195682355"
+    },
+    "1-3 left out, static part kept": {
+      "t_p": "-2*(q - 1)**4*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/(27*q**6)",
+      "t_n": "(4*q**12 - 15*q**10 + 24*q**8 - 32*q**6 + 24*q**4 - 15*q**2 + 4)/(27*q**6)",
+      "M_p_keV": "0.2200772938039829398522939",
+      "Delta_m_keV": "113.0035490371463937680285"
+    }
+  }
+}

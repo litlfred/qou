@@ -1,7 +1,8 @@
-import { proof } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proof({
-  label: "prf:wedderburn-bratteli-recursion",
-  title: "Proof of wedderburn bratteli recursion",
-  uses: ["prop:wedderburn-bratteli-recursion"],
+export default remark({
+  interprets: "conj:wedderburn-bratteli-recursion",
+  label: "rem:wedderburn-bratteli-recursion-proof-sketch",
+  title: "Proof sketch: wedderburn bratteli recursion",
+  uses: ["conj:wedderburn-bratteli-recursion"],
 });

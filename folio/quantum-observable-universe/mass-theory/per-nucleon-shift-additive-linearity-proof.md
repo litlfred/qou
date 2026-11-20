@@ -15,7 +15,7 @@ The base-case $+1$ originates from the **single mixed (p, n)
 interface** in pppnnn ordering, contributing
 $\alpha((\sigma+\sigma^{-1})/2) = 1$ from the compound-shift theorem.
 This matches
-[`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot)'s
+[Pole order at $q=0$ of the torus-knot character: $\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ on $V_{(1^p)}$](#prop:alpha-shift-torus-knot)'s
 simplest interface case $\alpha = 1$ for the Hecke-symmetric
 average. $\square$
 

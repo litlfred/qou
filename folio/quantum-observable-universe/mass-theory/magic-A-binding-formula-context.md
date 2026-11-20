@@ -9,7 +9,7 @@ regimes**:
 | Doubly-magic | $\mathfrak{B} = \rho_F \cdot \mathfrak{m}_e \cdot A \cdot 8G$ | Borromean residue prefactor $\times$ nucleon count, no per-knot evaluation |
 
 The dispatch is determined by the substrate:
-[`conj:diagrammatic-double-magic-lr-fusion`](../observations/diagrammatic-double-magic-lr-fusion.md)
+[Conjecture (diagrammatic double-magic): LR-fusion rigidity at $Z, N \in \mathfrak{M}$](../observations/diagrammatic-double-magic-lr-fusion.md)
 proves that at a doubly-magic level $A = Z + N$ with both $Z, N \in
 \mathfrak{M}$, the Littlewood–Richardson fusion of the $Z$-block and
 $N$-block collapses to a **single** self-conjugate Specht module —
@@ -19,7 +19,7 @@ $\alpha_{\mathrm{shift}}$ vanishes (no hyperbolic knot), and the
 binding is set by the universal Borromean residue $8G$ scaled by
 nucleon count.
 
-[`rem:strutinsky-from-graded-trace`](../observations/strutinsky-from-graded-trace.md)
+[Strutinsky's shell correction as the categorical residue sum](../observations/strutinsky-from-graded-trace.md)
 makes the regime split forced by the filtered-algebra structure: the
 decomposition
 
@@ -31,7 +31,7 @@ identifies the Strutinsky shell correction $\delta E_{\mathrm{shell}}$
 with the Gröbner–Shirshov residue sum, and *"Magic-number enhancements
 arise algebraically when $\lambda$ reaches a rectangular shape and
 $H_q(\lambda)$ factorises"*
-([`prop:shell-schur-weyl-self-duality`](../knots-particles-confinement/shell-schur-weyl-self-duality.md)).
+([Schur-Weyl justification of shell-operator self-duality](../knots-particles-confinement/shell-schur-weyl-self-duality.md)).
 The doubly-magic case is exactly this rectangular-spike limit.
 
 ## $\rho_F$ for $^4_2\mathrm{He}$

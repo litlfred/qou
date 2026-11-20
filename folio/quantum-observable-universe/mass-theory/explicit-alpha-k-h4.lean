@@ -16,8 +16,8 @@
   gives the concrete numerical value of the depth-3 stratum
   coefficient at the second nucleon level.
 
-  Refs: prop:explicit-alpha-k-h4, prop:explicit-alpha-k-h3,
-        prop:alpha-k-derivation-procedure,
+  Refs: conj:explicit-alpha-k-h4, conj:explicit-alpha-k-h3,
+        conj:alpha-k-derivation-procedure,
         prop:hoefsmit-seminormal-form
 -/
 

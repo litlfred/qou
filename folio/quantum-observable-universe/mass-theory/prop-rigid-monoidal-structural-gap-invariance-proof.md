@@ -39,7 +39,7 @@ $\beta$, and in particular the same magnitude $|\tau(\beta)|$.
 **Step 2: every probed convention factors through the same
 categorical trace.**  Each of the six brane-tower convention
 families probed in
-[`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)
+[Brane tower lives in the $z$-Habiro ring](#conj:brane-tower-z-habiro)
 §"Surviving claims after closure attempts" is, by its defining
 prescription, a regularization of the divergent analytic $\Phi_q$
 tower. Case by case:

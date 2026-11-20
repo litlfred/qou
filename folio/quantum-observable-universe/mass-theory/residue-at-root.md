@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:gs-residue-at-root-existence`](#conj:gs-residue-at-root-existence)).**
+**Proposition (conditional on [Existence of the cyclotomic residue at each filtration level](#conj:gs-residue-at-root-existence)).**
 *Let $T_w \in J^\ell / J^{\ell+1}$ have $\mathrm{tr}_{M, \ell}(T_w) \in \mathbb{Q}(q)$. The cyclotomic residue*
 
 $$
@@ -19,4 +19,4 @@ $$
 
 The cyclotomic residue is defined purely algebraically within the Habiro completion of $\mathbb{Z}[q^{\pm 1}]$. It avoids complex-analytic limits entirely. The formulation keeps the algebraic sector strictly within $\mathbb{Q}$-coefficients, fulfilling the three-calibration discipline.
 
-The conjectural hypothesis is the existence of the cyclotomic projection $\pi_{n_\ell}$ on the Habiro completion — the content of [`conj:gs-residue-at-root-existence`](#conj:gs-residue-at-root-existence), axiomatised as the Lean class `ResidueAtRoot` (fields: the target ring family and the projection ring homomorphism). Conditional on an instance of that class, the statement above is derived: the residue is the image of $\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)$ under $\pi_{n_\ell}$, realised by a ring homomorphism into $\mathbb{Z}[q]/\Phi_{n_\ell}(q)$.
+The conjectural hypothesis is the existence of the cyclotomic projection $\pi_{n_\ell}$ on the Habiro completion — the content of [Existence of the cyclotomic residue at each filtration level](#conj:gs-residue-at-root-existence), axiomatised as the Lean class `ResidueAtRoot` (fields: the target ring family and the projection ring homomorphism). Conditional on an instance of that class, the statement above is derived: the residue is the image of $\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)$ under $\pi_{n_\ell}$, realised by a ring homomorphism into $\mathbb{Z}[q]/\Phi_{n_\ell}(q)$.

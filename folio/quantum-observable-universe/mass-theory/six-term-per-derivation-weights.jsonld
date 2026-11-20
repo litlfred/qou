@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-six-term-per-derivation-weights",
+  "@id": "papers/quantum-observable-universe/blocks/conj-six-term-per-derivation-weights",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:six-term-per-derivation-weights",
-  "kind": "proposition",
+  "kind": "conjecture",
   "title": "Per-derivation weights for the six-term mass formula",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-six-term-mass-formula-complete",
+    "papers/quantum-observable-universe/blocks/conj-six-term-mass-formula-complete",
     "papers/quantum-observable-universe/blocks/prop-chirality-dual-space-derivation",
     "papers/quantum-observable-universe/blocks/prop-full-pole-structure-mass-trace"
   ],

@@ -1,4 +1,4 @@
-This note records the numerical verification, the $N = 5$ instance, the analytic-number-theory bridge, the Catalan-constant $(n=2)$ instance, and cross-references for [`prop:cyclotomic-l-value-decomposition`](#prop:cyclotomic-l-value-decomposition).
+This note records the numerical verification, the $N = 5$ instance, the analytic-number-theory bridge, the Catalan-constant $(n=2)$ instance, and cross-references for [Cyclotomic depth-$n$ generators decompose into Dirichlet $L$-values: $\beta(3) = \pi^3/32$ as a corollary](#prop:cyclotomic-l-value-decomposition).
 
 ### Numerical verification at 50 dps
 
@@ -54,10 +54,10 @@ dim 1 = $\mathrm{Cl}_2(2\pi/3)$ (Gieseking).
 
 ### Cross-references
 
-- Theorem A: [`prop:jonquiere-cyclotomic-tate-rationality`](#prop:jonquiere-cyclotomic-tate-rationality)
-- Theorem G: [`prop:cyclotomic-dimension-synthesis-all-depths`](#prop:cyclotomic-dimension-synthesis-all-depths)
+- Theorem A: [General Jonquière Tate-rationality](#prop:jonquiere-cyclotomic-tate-rationality)
+- Theorem G: [Cyclotomic dimension synthesis at every depth: $(K - 3)/2$ for $n$ odd, $(K - 1)/2$ for $n$ even](#prop:cyclotomic-dimension-synthesis-all-depths)
 - Bloch–Suslin (depth-2 theorem):
-  [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin)
-- Borel partial discharge: [`prop:borel-partial-resolution`](#prop:borel-partial-resolution)
-- K-theory $\leftrightarrow$ depth filtration: [`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)
-- Period ledger: [`rem:transcendental-accounting`](#rem:transcendental-accounting)
+  [Depth-2 identification of $G^{(2)}(\mathcal{H}_q)$ with $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$](#prop:depth-2-identification-bloch-suslin)
+- Borel partial discharge: [Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution)
+- K-theory $\leftrightarrow$ depth filtration: [K-theory $\leftrightarrow$ depth filtration Rosetta](#rem:k-theory-period-rosetta)
+- Period ledger: [Transcendental-accounting ledger: every period in the paper, indexed by Goncharov depth](#rem:transcendental-accounting)

@@ -1,6 +1,6 @@
-## Proof
+## Proof sketch
 
-By [α_k derivation procedure](#prop:alpha-k-derivation-procedure),
+By [α_k derivation procedure](#conj:alpha-k-derivation-procedure),
 the depth-$k$ stratum coefficient $\alpha_k(H_n)$ is the Markov pairing
 of $\mathrm{tr}_M$ with a class-function representative $r_k$ that is
 **Wedderburn-orthogonal** to every lower-depth irrep — i.e.\

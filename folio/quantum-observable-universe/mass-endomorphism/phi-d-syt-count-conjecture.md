@@ -1,6 +1,6 @@
 # Conjecture: per-irrep character differences factor via $\Phi_{4 f_\lambda}(q)$
 
-The closed-form data from [`rem:chi-per-irrep-cyclotomic-closed-forms`](#rem:chi-per-irrep-cyclotomic-closed-forms) exposes a specific pattern for the per-irrep character differences:
+The closed-form data from [All three $V_\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**](#rem:chi-per-irrep-cyclotomic-closed-forms) exposes a specific pattern for the per-irrep character differences:
 
 $$
   \boxed{\,

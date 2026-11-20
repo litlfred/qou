@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-11-20T09:00:00Z",
+  "updated_at": "2026-11-20T14:24:17.319Z",
   "entries": {
     "folio/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -1012,23 +1012,6 @@
         "agent_date": "2026-08-30"
       }
     },
-    "folio/quantum-observable-universe/lean/QOU/BraidKnot/algebraic_quantum_volume_specialization.lean::algebraic_quantum_volume_specialization::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "tuple-projection",
-      "line": 56,
-      "verdict": "genuine",
-      "file_sha": "9303950dcade",
-      "disposition": "owner-ask",
-      "evidence": "Class fields are free (`Vol_q_at_q0`, `J_K`, `Δ_K`, `z_0`) and the def projects them. Claim (i) fixes `z_0 = 1/(√q₀+1/√q₀)`, which is convention C (excised by the 2026-08-15 ruling). Claims (ii)/(iii) `∀ β, ∃ c, Vol β = c * J β` let `c` depend on `β`, so they hold whenever `J β ≠ 0` and say almost nothing. Disposition needs the owner (W8 ask on #8526).",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      },
-      "source": "agent:W8-session_01VQDpPeHYJSSw93f8BpmnnY 2026-11-20T09:00:00Z PR #8533"
-    },
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean::e_infinity_identifications::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
@@ -1064,40 +1047,6 @@
       },
       "source": "agent adjudication, bean qou-metc (PR follow-up to #7332 / issue #7329)",
       "stale_prev_verdict": "genuine"
-    },
-    "folio/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean::spectral_sequence_h3_explicit::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "tuple-projection",
-      "line": 81,
-      "verdict": "genuine",
-      "file_sha": "90f39f1d31ca",
-      "disposition": "owner-ask",
-      "evidence": "Parameterised 2026-09-13: the three sub-claims are Prop parameters carried by an instance with no instance supplied, and the def projects them. The file deliberately refuses to choose an encoding of the explicit d1/d2 formulas. Honest options are demotion to a conjecture carrier or encoding the explicit differentials; both are author calls (W8 ask on #8526).",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-5",
-        "agent_date": "2026-09-14"
-      },
-      "source": "agent:W8-session_01VQDpPeHYJSSw93f8BpmnnY 2026-11-20T09:00:00Z PR #8533"
-    },
-    "folio/quantum-observable-universe/lean/QOU/BraidKnot/terms_2_6_higher_operations.lean::terms_2_6_higher_operations::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "tuple-projection",
-      "line": 60,
-      "verdict": "genuine",
-      "file_sha": "0e2ccf0c79f8",
-      "disposition": "owner-ask",
-      "evidence": "Fields are bare equations on free ℕ fields (`target_page_term_2 = 1 ∧ hochschild_arity_term_2 = 2`, ...), satisfiable by choosing the numbers, so the class asserts nothing. Worse, the block's own authorNote records the Hochschild higher-operation route as CLOSED (HH^1(H_3) = 0 at generic q), so the encoding formalises a closed route. Disposition needs the owner (W8 ask on #8526).",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/lean-proof-vacuity-audit",
-        "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_model": "claude-opus-4-8",
-        "agent_date": "2026-08-21"
-      },
-      "source": "agent:W8-session_01VQDpPeHYJSSw93f8BpmnnY 2026-11-20T09:00:00Z PR #8533"
     },
     "folio/quantum-observable-universe/lean/QOU/BraidKnot/three_parameters_wedderburn.lean::three_parameters_wedderburn::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -2213,9 +2162,9 @@
     "folio/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean::shell_filling_rule::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
-      "line": 165,
+      "line": 171,
       "verdict": "needs-agent",
-      "file_sha": "0e5dc84fc221",
+      "file_sha": "55299e9d3f23",
       "disposition": "clarify-docstring-scope",
       "evidence": "Re-review after 15a65de4d15 'Document gaps in RSK infrastructure' touched this file. The change is DOCSTRING-ONLY on the class fields -- each gained \"(Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates)\". The declaration itself is unchanged, so the prior verdict stands, and the added note strengthens rather than weakens it: the author is labelling the assumption as an assumption.\n\nMethod note: my usual check is `git show <sha> | grep '^[-+].*<decl>'`, and for these three files it returned 2 hits each and looked like a change. Those were the `---`/`+++` FILE HEADERS -- these files are named after their declarations, so the header lines match the decl name. Excluding headers shows the real hunks are three docstring edits. Prior evidence stands and remains the right call: this docstring is ACCURATE -- it says the unproved conjuncts \"carry honest `sorry`s in their named sub-theorems ..., not projected conclusion fields\" -- and the body composes three named sub-theorems with no `ctx.` field, consistent with its absence from the projection list. The detector fires only because this declaration's docstring mentions `sorry` while this declaration's own body has none; the sorries are upstream, which is what the docstring says.",
       "reviewed_at": "2026-08-24T13:15:51.000Z",
@@ -2278,9 +2227,9 @@
     "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_frobenius_reciprocity.lean::confinement_frobenius_reciprocity::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
-      "line": 105,
+      "line": 111,
       "verdict": "needs-agent",
-      "file_sha": "7465a9105089",
+      "file_sha": "19800c142934",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Re-review after 15a65de4d15 'Document gaps in RSK infrastructure' touched this file. The change is DOCSTRING-ONLY on the class fields -- each gained \"(Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates)\". The declaration itself is unchanged, so the prior verdict stands, and the added note strengthens rather than weakens it: the author is labelling the assumption as an assumption.\n\nMethod note: my usual check is `git show <sha> | grep '^[-+].*<decl>'`, and for these three files it returned 2 hits each and looked like a change. Those were the `---`/`+++` FILE HEADERS -- these files are named after their declarations, so the header lines match the decl name. Excluding headers shows the real hunks are three docstring edits. Prior evidence stands: a five-field tuple projection assembling the whole conclusion -- the reciprocity formula plus the four LP supporting facts (nontrivial primal optimum, positive net dual, nonempty active set, active-iff-positive-shadow-price, strong duality). Nothing is derived.",
       "reviewed_at": "2026-08-24T13:15:51.000Z",
@@ -2314,9 +2263,9 @@
     "folio/quantum-observable-universe/lean/QOU/ParticleInteractions/lp_dual_stability.lean::lp_dual_stability::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "tuple-projection",
-      "line": 86,
+      "line": 92,
       "verdict": "needs-agent",
-      "file_sha": "88f48e999f37",
+      "file_sha": "733acbcf8932",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Re-review after 15a65de4d15 'Document gaps in RSK infrastructure' touched this file. The change is DOCSTRING-ONLY on the class fields -- each gained \"(Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates)\". The declaration itself is unchanged, so the prior verdict stands, and the added note strengthens rather than weakens it: the author is labelling the assumption as an assumption.\n\nMethod note: my usual check is `git show <sha> | grep '^[-+].*<decl>'`, and for these three files it returned 2 hits each and looked like a change. Those were the `---`/`+++` FILE HEADERS -- these files are named after their declarations, so the header lines match the decl name. Excluding headers shows the real hunks are three docstring edits. Prior evidence stands: a four-field tuple projection, one field per conjunct of the stated four-part claim, including a `strong_duality` that is assumed rather than derived from the primal/dual pair. Worth noting against `he4_strong_duality_value` in this same pass, which I ruled `legit` precisely because ITS strong-duality field is discharged `by norm_num` over concrete rationals. Here there is no certificate to check, which is what the new docstring note now says explicitly: \"kept as an honest assumption for models without certificates\".",
       "reviewed_at": "2026-08-24T13:15:51.000Z",
@@ -3487,7 +3436,7 @@
       "pattern": "field-projection",
       "line": 275,
       "verdict": "needs-agent",
-      "file_sha": "5fd6c1a52db9",
+      "file_sha": "91fec55918e9",
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "UNINHABITED carrier, self-disclosed. `[h : RhoPrefactorStructural Z N q] : |h.rho - h.q_int h.d_lambda_star| ≤ 1/2` with the inline comment `The class instance directly carries the inequality as a field (rho_eq_qdim). This lemma is a thin wrapper exposing it` — the author states the projection plainly, which is honest, but no `RhoPrefactorStructural` instance exists, so the wrapper wraps nothing. The `-- Ref:` to `conj:rho-prefactor-structural` and to a witness JSON (PR #608 r5-full-canonical-knot-solver) means the numerical support exists outside Lean. Fix: build the instance from that solver output, or demote to `conjecture` matching the `conj:` label it cites.",
       "reviewed_at": "2026-08-09T22:30:00Z",

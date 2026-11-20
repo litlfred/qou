@@ -5,6 +5,7 @@ import QOU.AlgebraicSubstrate.QGenericBaseReal
 import QOU.AlgebraicSubstrate.TwistSignTorsor
 import QOU.BringsSurface.CoveringDegreeRamification
 import QOU.RiemannSurface.GermStabiliserCyclic
+import QOU.RiemannSurface.CombinatorialMapQuotient
 import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
 import QOU.Eightfold.CommutativeImageDegeneration
 import QOU.Eightfold.ConnectedSumAnnihilator
@@ -23,6 +24,7 @@ import QOU.Eightfold.PointwiseAgreementOnReduced
 import QOU.Eightfold.GaugeAnsatzNesting
 import QOU.Eightfold.PtolemyTwist
 import QOU.Eightfold.SubgroupExtensionObstruction
+import QOU.Eightfold.Sym2AdjointSpinTwo
 -- This project formalizes the mathematical content of the QOU manuscript.
 -- Each chapter has a corresponding Lean file.
 --
@@ -138,8 +140,10 @@ import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
 import QOU.MathlibExt.QPlancherel
+import QOU.MathlibExt.OcneanuChainFactorisation
 import QOU.MathlibExt.QPlancherelPartitionInstance
 import QOU.MathlibExt.MonoidalCalcVar
+import QOU.FrobeniusHopfData.PairingGaugeFluctuation
 import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.MathlibExt.DerivationRankNullity
 import QOU.MathlibExt.Dolbeault
@@ -468,6 +472,7 @@ import QOU.AtomicMass
 import QOU.QuantumObservableUniverse
 import QOU.QuantumObservableUniverses.DilogPentagonAssociator
 import QOU.QuantumObservableUniverses.NoClosedCausalChains
+import QOU.QuantumObservableUniverses.HiggsVacuumResidual
 import QOU.QuantumObservableUniverses.QAnalysis
 import QOU.QuantumObservableUniverses.QBetaEnergyDictionary
 import QOU.QuantumObservableUniverses.QExpEntire
@@ -684,6 +689,10 @@ import QOU.BraidKnot.SpechtCentralC2Scalar
 import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
 import QOU.BraidKnot.WedderburnUnconditional
 import QOU.BraidKnot.ExplicitCentralIdempotent
+import QOU.BraidKnot.ExplicitCentralIdempotentHecke
+import QOU.BraidKnot.ExplicitCentralIdempotentGeneral
+import QOU.BraidKnot.CentralIdempotentInvolution
+import QOU.BraidKnot.CentralIdempotentSignTwist
 import QOU.BraidKnot.ContentSqSumBridge
 import QOU.BraidKnot.PlancherelSnDataGeneral
 import QOU.BraidKnot.KeystoneDefectGeneral

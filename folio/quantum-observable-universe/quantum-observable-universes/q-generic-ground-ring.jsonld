@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-generic-ground-ring",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-generic-ground-ring",
+  "kind": "remark",
+  "title": "The q-generic ground ring",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-universe",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-universe",
+  "tags": [
+    "substrate",
+    "ground-ring",
+    "cyclotomic",
+    "hecke"
+  ],
+  "leanRef": "qou:QOU.AlgebraicSubstrate.IsQGeneric",
+  "text": "q-generic-ground-ring.md",
+  "provenance": "authored"
+}

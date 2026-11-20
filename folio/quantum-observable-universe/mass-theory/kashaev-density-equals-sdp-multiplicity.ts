@@ -16,7 +16,7 @@ export default conjecture({
   },
   uses: [
     "rem:kashaev-as-archimedean-realization",
-    "prop:atom-knot-mass-derivation",
+    "conj:atom-knot-mass-derivation",
     "def:archimedean-realization-functor",
   ],
   cites: [
@@ -48,7 +48,7 @@ export default conjecture({
         "*\"pending formal justification\"*, with no derivation behind it. With the " +
         "conditional adoption, $\\rho_F$ is: (1) **named canonically** (`nu_sdp` in the " +
         "code), connecting to the existing $\\nu_{\\mathrm{SDP}}$ notation in " +
-        "`prop:atom-knot-mass-derivation`; (2) **identified as a partition-algebra " +
+        "`conj:atom-knot-mass-derivation`; (2) **identified as a partition-algebra " +
         "count** (MacMahon type); (3) **conditional on a class** that the full SDP solver " +
         "will eventually inhabit — replacing the open-ended \"pending formal " +
         "justification\" with an explicit conjectural dependency.",

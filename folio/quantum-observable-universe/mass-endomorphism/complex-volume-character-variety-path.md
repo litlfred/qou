@@ -1,4 +1,4 @@
-The interpolation between the bound and free projections of [`conj:binding-qbeta-complex-volume`](#conj:binding-qbeta-complex-volume) constitutes a path. The bar-odd channel provides its holonomy. No structure beyond the deformation itself is required to rotate between the bound and free states.
+The interpolation between the bound and free projections of [Complex-volume unification](#conj:binding-qbeta-complex-volume) constitutes a path. The bar-odd channel provides its holonomy. No structure beyond the deformation itself is required to rotate between the bound and free states.
 
 ## Endpoints as representations
 

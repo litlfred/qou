@@ -16,7 +16,7 @@ import { proposition } from "../../schema/builders";
  * ⟨Φ, π_λ⟩_F ≥ 0.  The factorisation y_λ^* = C_λ · S_λ(Z,N,A)
  * with q-integer C_λ and content-sum-driven S_λ gives every
  * QOU mass coefficient (across all six terms of
- * thm:six-term-mass-formula-complete) as an algebraic q-rational
+ * conj:six-term-mass-formula-complete) as an algebraic q-rational
  * — no AME-style fitted parameters.
  *
  * History: the block was originally titled

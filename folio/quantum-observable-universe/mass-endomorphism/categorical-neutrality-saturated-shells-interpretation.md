@@ -12,7 +12,7 @@ The conjecture reformulates this homologically. Instead of verifying $\Phi_n$ wi
 
 ## Global topological neutrality
 
-Earlier models ([atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)) treated $\Phi_n$ as a local object. They required "screening" or "local trivialisation" to explain shell closure. This refactor abandons the locality assumption. We identify $\Phi_n$ as the global section of the mass functor over $\mathbf{C}$ ([rem:phi-n-global-section](#rem:phi-n-global-section)). A non-trivial full-twist action propagates unbounded ribbon flux through the brane tower. Finite observable mass demands global topological neutrality at saturation.
+Earlier models ([atom-knot-mass-derivation](#conj:atom-knot-mass-derivation)) treated $\Phi_n$ as a local object. They required "screening" or "local trivialisation" to explain shell closure. This refactor abandons the locality assumption. We identify $\Phi_n$ as the global section of the mass functor over $\mathbf{C}$ ([rem:phi-n-global-section](#rem:phi-n-global-section)). A non-trivial full-twist action propagates unbounded ribbon flux through the brane tower. Finite observable mass demands global topological neutrality at saturation.
 
 ## Operator-level support
 
@@ -30,4 +30,4 @@ The character sum vanishes identically at certain atomic-braid cycle types. The 
 
 Numerical witnesses at $k = 3, \dots, 10$ support the saturation condition. The conjecture extends this to all $n \in \mathfrak{M}$, including the high-mass region $\{50, 82, 126\}$.
 
-The downstream cone includes [`conj:magic-numbers-from-q`](#conj:magic-numbers-from-q) and the shell-closure portion of the BW formula ([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.
+The downstream cone includes [Some functional of the Wedderburn-weighted Hoefsmit character data at $q_0$ carries nuclear shell structure](#conj:magic-numbers-from-q) and the shell-closure portion of the BW formula ([Three-invariant atomic mass formula](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.

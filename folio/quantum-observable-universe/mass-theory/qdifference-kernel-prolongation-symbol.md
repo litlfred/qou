@@ -1,10 +1,10 @@
 **Conjecture (the q-difference kernel is the prolongation symbol).**
 
 The $q$-difference kernel $R(q,x)$ of the binding generating function
-([`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)) **is
+([The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference)) **is
 the symbol of the jet-prolongation operator** $J^{n}E\to J^{n+1}E$ of the
 Seiberg--Witten connection
-([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)).
+([Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation)).
 
 For jet spaces, their prolongations and the Cartan distribution, see \cite[\S1.1--1.2]{pugliese2023}. For linear $q$-difference modules, fundamental solution matrices at $0$ and $\infty$, the $q$-Borel and $q$-Laplace transforms and the resulting connection matrices, see \cite[\S2.2--2.3]{garoufalidis-wheeler-modular}.
 
@@ -35,7 +35,7 @@ $\tfrac12$.
 > isomorphism of $q$-difference modules $\mathcal{K}\cong\mathcal{G}$ exists.
 > The surviving — and genuinely non-trivial — relationship between the two is
 > stated separately as
-> [`conj:c1-ggm-bar-parity-faces`](#conj:c1-ggm-bar-parity-faces).
+> [The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces](#conj:c1-ggm-bar-parity-faces).
 
 Two consequences follow:
 
@@ -46,12 +46,12 @@ Two consequences follow:
    beyond low order), and it is the same fibre-level / root-of-unity
    singularity structure that governs the $\mathfrak{Q}_\beta$ ladder.
 2. **It closes the binding program.** Given $R$, the recurrence of
-   [`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)
+   [The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference)
    determines every body term from the deuteron base case (fixing the
    $\rho\cdot A$ growth law), which is precisely the per-term mass identity. Feeding it into
-   [`thm:binding-closure-conditional`](#thm:binding-closure-conditional)
+   [Binding closure, conditional on the per-term mass identity](#thm:binding-closure-conditional)
    discharges its one conditional input, promoting
-   [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)
+   [Binding many-body series equals the jet-order filtration: $B(K)=\sum_n m_e\,a_D^{(n)}$](#conj:binding-manybody-eq-jet-filtration)
    from conditional to unconditional.
 
 This conjecture is therefore the **single remaining input** to the binding
@@ -89,7 +89,7 @@ local monodromy, not fitted numerically.
 >    the symbol is structurally fixed rather than fitted is untouched; only its
 >    *shape* changes. This is the natural reading of the Dirac-type
 >    $\tau$-image asserted in
->    [`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference),
+>    [The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference),
 >    since a Dirac operator is first-order on a two-component object.
 > 2. **Consequence 2 is falsified as stated.** "Given $R$, the recurrence
 >    determines every body term from the deuteron base case" is wrong by exactly
@@ -105,7 +105,7 @@ local monodromy, not fitted numerically.
 > **Structure of the prolongation operator on
 > the ramified chart, before it is constructed.** The classical lift
 > $d/dz$ is excluded
-> ([`prop:sw-classical-jet-exactness`](#prop:sw-classical-jet-exactness)), and
+> ([The classical-jet prolongation of $\lambda_{\mathrm{SW}}$ is exact for $n \ge 1$](#prop:sw-classical-jet-exactness)), and
 > the residue that a period needs vanishes for it *locally*, at every branch
 > point, because at $z = z_c + t^2$ the operator $d/dz = (1/2t)\,d/dt$ reads the
 > $t^{-2}$ residue slot from the constant term with multiplier $(-2)+2 = 0$.
@@ -130,7 +130,7 @@ local monodromy, not fitted numerically.
 > 2. **Parity.** An even shift commutes with the covering monodromy
 >    $t \mapsto -t$; an odd shift anti-commutes, so its jet tower's monodromy
 >    eigenvalue alternates as $(-1)^n$ — the Door-v residual of
->    [`conj:c1-ggm-bar-parity-faces`](#conj:c1-ggm-bar-parity-faces). Carrying
+>    [The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces](#conj:c1-ggm-bar-parity-faces). Carrying
 >    that residual needs an **odd** shift.
 >
 > So $D_q$ must have an odd shift and a non-derivative component. Both
@@ -158,7 +158,7 @@ local monodromy, not fitted numerically.
 > a level $n_0$ on kills the residue from level $n_0+2$ on and leaves levels
 > $2,\dots,n_0+1$ alive (`twoOp_residual_from_level_kills_residue_beyond`). The
 > distinction matters, because the Door-v alternation of the carrier
-> $\mathcal{G}$ in [`conj:c1-ggm-bar-parity-faces`](#conj:c1-ggm-bar-parity-faces)
+> $\mathcal{G}$ in [The binding q-lift module and the resurgent Stokes carrier are bar-parity conjugate faces](#conj:c1-ggm-bar-parity-faces)
 > cannot hold at every level — while $2-q^{m+1}>0$ no solution flips at two
 > consecutive pairs (`QOU.Mass.GGMAlternationOnset`), so at the substrate value
 > the alternation is absent for $m \le 5$ and persistent only from
@@ -170,7 +170,7 @@ local monodromy, not fitted numerically.
 > **The kernel is a recurrence across jet levels, and on that axis it forces
 > the non-derivative clause too.** In $L_{\mathcal{K}}$ the variable is
 > $x = q^{m}$ with $m$ the body order, which
-> [`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum) identifies with
+> [The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum) identifies with
 > the jet degree; so $\sigma$ is the step from one jet level to the next, and
 > $L_{\mathcal{K}}$ is the second-order recurrence that the level-indexed
 > residues $r_{n} = (D_{q}^{n}X)_{t^{-2}}$ of the prolongation tower must

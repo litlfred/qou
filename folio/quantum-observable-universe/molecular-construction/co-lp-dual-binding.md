@@ -1,2 +1,2 @@
-**Proposition (conditional on [`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)).**
+**Proposition (conditional on [Seven-term atomic mass formula with $q$-integer coefficients](#conj:q-integer-mass-formula)).**
 *For $CO$ the covalent-bond-selection LP selects an active set of cardinality $2$ — two **orthogonal orbital channels** $\sigma \perp \pi$, each an independent covalent channel rather than one accumulating chain of shared pairs. The observed triple bond is completed by a third, **dative** channel (an oxygen lone pair donated to carbon), giving total bond order $3$ and making $CO$ isoelectronic with $\mathrm{N_2}$.*

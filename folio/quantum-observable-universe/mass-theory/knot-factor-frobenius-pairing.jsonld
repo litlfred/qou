@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-knot-factor-frobenius-pairing",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:knot-factor-frobenius-pairing",
   "kind": "conjecture",
   "title": "Knot factor as Frobenius self-pairing ratio",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-nuclear-knot-classification",
+    "papers/quantum-observable-universe/blocks/conj-nuclear-knot-classification",
     "papers/quantum-observable-universe/blocks/rem-fibre-functor-rigidity",
     "papers/quantum-observable-universe/blocks/prop-confinement-frobenius-reciprocity",
     "papers/quantum-observable-universe/blocks/def-q-casimir",

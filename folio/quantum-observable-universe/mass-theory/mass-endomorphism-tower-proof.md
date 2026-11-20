@@ -3,7 +3,7 @@ The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 ([Hecke mass element](#def:hecke-mass-element)) decomposes via the
 :refterm[descent]{#descent} involution into descended and transient contributions.  The
 transient trace localises to blow-up centres $p$ in the brane tower
-([topological decomposition](#thm:topological-mass)); integrating the
+([topological decomposition](#conj:topological-mass)); integrating the
 $q$-deformed expansion flow $\ln_q(1+t)/t$ along the radial
 coordinate of the Briggs--Klein chart
 ([Briggs--Klein chart](#def:briggs-klein-chart)) over each resolved

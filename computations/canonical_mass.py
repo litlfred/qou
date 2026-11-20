@@ -352,7 +352,8 @@ def neutron_mass_two_term_mev(weighting: str = "plain"):
     Combines the canonical neutron mass `neutron_mass_mev()` with the connected
     4th-order Borromean V³ QED splitting `np_qed_splitting_borromean_conn_mev(weighting)`.
     At `weighting='plain'`, m_n^{two-term} ≈ 939.5655543 MeV (+147.0 ppb vs CODATA,
-    reducing the +501.3 ppb Convention-D residual by 70.7% without free parameters).
+    a selected combination, not a derived prediction; see the note above and
+    computations/probes/two_term_qed_pair_choice/).
     Preserves full ≥50-dps mpmath precision via `_as_formattable_mpf`.
     """
     import mpmath as mp

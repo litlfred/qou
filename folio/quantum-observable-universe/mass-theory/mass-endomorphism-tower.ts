@@ -20,6 +20,38 @@ export default proposition({
   authorNotes: [
     {
       kind: "refined-framing",
+      date: "2026-11-20",
+      body:
+        "**Positivity is now stated on a bounded domain (owner ruling D1, 2026-11-20).** " +
+        "`MassPositivityHyp` used to assume Li_2^q(-x) <= 0 for every x >= 0. This block's " +
+        "own series sum z^n/(n [n]_q) has a finite radius, so no function equal to it can " +
+        "satisfy that. The hypothesis now carries a bound rho and assumes the sign only on " +
+        "[0, rho). Both theorems add `ArgumentsBelow`: every single and pair norm fed to " +
+        "Li_2^q is below rho. The radius and the sign on [0, rho) remain hypotheses; neither " +
+        "is computed or proved here. lean-direct exit 0; axioms propext, Classical.choice, " +
+        "Quot.sound.",
+    },
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "**Which trace and which weights (bean qou-j11h, from #2481).** " +
+        "Read from the producer `computations/habiro/habiro_exact_mass_endomorphism.py`: " +
+        "the descended term is the regular-representation reading (each V_i^full is a " +
+        "Wedderburn-weighted sum over the three n=3 blocks), not the Jones-Markov trace. " +
+        "The weights are q-deformed `dim_q(lambda)^2/[3]_q!` with the symmetric " +
+        "q-dimension (`dim_q((2,1)) = [2]_q`), then divided by their sum so they add to 1. " +
+        "They are not the classical `d_lambda^2/|S_3|` that item (1) of the 2026-06-22 note " +
+        "names; item (3) of that note is the one that matches the code. This is a record of " +
+        "what the producer does, not a ruling on which weights the proposition should use " +
+        "(the Molien ruling covers Phi_k only). The Lean sibling is trace- and weight-agnostic: " +
+        "V_i is data. On 2026-11-20 its pair sum was changed from adjacent pairs to all pairs " +
+        "i<j, to match this block's boxed formula and the producer; the two agree for at most " +
+        "two generators. lean-direct exit 0; both theorems use only propext, Classical.choice " +
+        "and Quot.sound.",
+    },
+    {
+      kind: "refined-framing",
       date: "2026-08-29",
       body:
         "**Re-formalized (convention D + Li_2^q; bean qou-p046).** The prior " +

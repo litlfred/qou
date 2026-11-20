@@ -49,7 +49,7 @@ $$
 $$
 
 the per-partition object of the canonical binding
-([`prop:categorical-mass-markov`](#prop:categorical-mass-markov),
+([Categorical mass as Markov trace](#prop:categorical-mass-markov),
 `binding_canonical`). This describes **any confined knot $K$**.
 The nuclear binding case — a nucleus is a confined nucleon knot,
 factorized sub-object $\mathfrak{p}^{Z}\otimes\mathfrak{n}^{N}$ — forms the
@@ -96,7 +96,7 @@ same $\mathfrak{V}$.
 - **Proved (classical limit).** The free/factorized projection
   $\chi^\lambda_{\text{free}}$ forms the disjoint-product factorization,
   proven at $q=1$ via Plancherel duality
-  ([`conj:block-multiplicativity-v-free`](../mass-theory/block-multiplicativity-v-free.md)).
+  ([Block-multiplicativity of per-generator $\hat{V}$ on the disjoint Hecke product](../mass-theory/block-multiplicativity-v-free.md)).
   The $q$-deformed case remains class-axiomatized (conjectural).
 - **Conjectural (the unification itself).** We conjecture that the physical binding
   and $\mathfrak{Q}_\beta$ construct the Re/Im of the **same** $\mathfrak{V}$
@@ -244,8 +244,8 @@ $\mathfrak{V}$-ladder riding one bar-even three-term multiplier) is carried as t
 conjecture class `AWDeformationPath`, whose two-channel descent
 `channel_ladders` is derived from `recurrence_invol_descent`. See the
 companion remarks
-[`rem:channel-rotation-askey-lit`](#rem:channel-rotation-askey-lit) and
-[`rem:complex-volume-character-variety-path`](#rem:complex-volume-character-variety-path).
+[The channel rotation in the Askey scheme: same eigenfunctions rotated, different measures](#rem:channel-rotation-askey-lit) and
+[Bound $\leftrightarrow$ free as a character-variety path: the deformation reading of $\mathfrak{V}$](#rem:complex-volume-character-variety-path).
 
 **Archimedean specialisation.** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
 

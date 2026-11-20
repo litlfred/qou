@@ -1,4 +1,4 @@
-This remark records the computation, interpretation, $q$-dependence, witness, and homological cross-link for [`conj:magic-numbers-from-q`](#conj:magic-numbers-from-q).
+This remark records the computation, interpretation, $q$-dependence, witness, and homological cross-link for [Some functional of the Wedderburn-weighted Hoefsmit character data at $q_0$ carries nuclear shell structure](#conj:magic-numbers-from-q).
 
 ## Computation
 

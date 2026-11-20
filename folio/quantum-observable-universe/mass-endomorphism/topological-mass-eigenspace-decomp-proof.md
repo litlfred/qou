@@ -28,8 +28,7 @@ decomposition:
 $$
   \lVert \alpha \rVert^2
   = 
-  \lVert \hat{\tau}_n(\alpha) \rVert^2
-  + 
+  \lVert \hat{\tau}_n(\alpha) \rVert^2 +
   \lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2
 $$
 
@@ -48,21 +47,21 @@ orthogonal direct sums:
 \end{equation}
 ```
 
-where the product is in the group $\mathrm{SU}_{q}(2)$.  Taking norms
-and using the submultiplicativity of $\lVert\cdot\rVert$ (which is an
-equality for the orthogonal decomposition of an idempotent):
+where the product is in the group $\mathrm{SU}_{q}(2)$.  Taking norms,
+the triangle inequality for the norm on $\mathrm{SU}_{q}(2)$ gives
 
 $$
   \mathfrak{m}(\varrho)
-  = 
+  \le
   \bigl\lVert
   \mathrm{MI}\!\!\int_\Sigma \hat{\tau}_n(\alpha)
-  \bigr\rVert
-  + 
+  \bigr\rVert +
   \bigl\lVert
   \mathrm{MI}\!\!\int_\Sigma
   \bigl(\alpha - \hat{\tau}_n(\alpha)\bigr)
   \bigr\rVert.
 $$
 
-$\square$
+The orthogonality above gives additivity of squared norms only. It does not
+make this inequality an equality: for two non-zero orthogonal vectors the
+triangle inequality is strict.  $\square$

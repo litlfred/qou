@@ -595,11 +595,12 @@ def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "plain") -> mp.mpf
     """Two-term (strong Kashiwara N=2 + connected 4th-order Borromean QED) Q_β prediction in MeV.
 
     Combines the Convention-D Kashiwara N=2 strong β-decay Q-value `q_beta_kashiwara_n2_mev`
-    with the zero-parameter connected 4th-order Borromean QED dressing
+    with the connected 4th-order Borromean QED dressing (a selection, not derived:
+    pair 1-3 left out and the m_e scale chosen; issue #8524, probes/two_term_qed_pair_choice)
     `borromean_v3_connected_qed_diff_mev(q, weighting)`:
         Q_β^{two-term} = Q_{N2}^D + Δm_QED^{conn}(V³).
     Reduces the Convention-D Q_{N2}^D residual from +600.6 ppm to +176.6 ppm ('plain')
-    or +130.0 ppm ('q'), closing 70.6%–78.4% of the Convention-D residual without free parameters.
+    or +130.0 ppm ('q'). These are records of selected combinations, not predictions.
     """
     with mp.workdps(max(50, mp.mp.dps)):
         if q is None:

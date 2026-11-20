@@ -6,18 +6,19 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
 /-!
-# Proposition: Archimedean Topological Mass Formula
+# Conjecture: Archimedean Topological Mass Formula
 
-Formalizes Proposition `prop:topological-mass-formula`: in the archimedean
+Formalizes Proposition `conj:topological-mass-formula`: in the archimedean
 (ℂ) realisation, the general topological mass decomposition
-(Theorem `thm:topological-mass`) specialises to the closed-form
+(`conj:topological-mass`, open since 2026-11-20) specialises to the closed-form
 mass formula `m(K) = Vol(K) / ℏ_q²`.
 
 ## Logical structure
 
 The proposition derives the closed form from the categorical decomposition
-via two evaluation identities on top of the proved
-`TopologicalMassDecomposition`:
+via two evaluation identities on top of `TopologicalMassDecomposition`,
+whose `decomposition` field carries the equality of `conj:topological-mass`
+as a hypothesis:
 
 1. **Baseline = Volume**: the holonomy term evaluates to `Vol(K)`
    via the Chern–Simons/volume correspondence.
@@ -40,7 +41,7 @@ namespace QOU.Torsion
 
 /-! ## The Archimedean Mass Formula -/
 
-/-- **Proposition (Topological Mass Formula — Archimedean).**
+/-- **Conjecture carrier (Topological Mass Formula — Archimedean).**
 
     In the ℂ-quantum observable universe, the mass of a particle
     associated with a hyperbolic knot K satisfies `m(K) = Vol(K) / ℏ_q²`,
@@ -52,7 +53,7 @@ namespace QOU.Torsion
     Briggs–Klein dilogarithm evaluation) that specialise the general
     decomposition to the archimedean closed form.
 
-    LaTeX: `\label{prop:topological-mass-formula}` -/
+    LaTeX: `\label{conj:topological-mass-formula}` -/
 structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecomposition M where
   /-- The substrate parameter `q > 1` at the evaluation point. -/
   q : ℝ

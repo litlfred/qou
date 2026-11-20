@@ -18,7 +18,7 @@ $H_3(q)$ acts on the three irreps $V_{(3)}, V_{(2,1)}, V_{(1,1,1)}$ via the Hoef
 
 ### Step 2 — Frobenius pairing
 
-Per [`prop:markov-trace-frobenius-selection`](#prop:markov-trace-frobenius-selection), the unique non-degenerate Markov trace on $H_n(R, q)$ is the Jones-Markov $\mathrm{tr}_M$. The non-degeneracy is forced by the Frobenius co-Casimir construction.
+Per [Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy](#prop:markov-trace-frobenius-selection), the unique non-degenerate Markov trace on $H_n(R, q)$ is the Jones-Markov $\mathrm{tr}_M$. The non-degeneracy is forced by the Frobenius co-Casimir construction.
 
 ### Step 3 — Wedderburn decomposition
 
@@ -30,7 +30,7 @@ The $y_\lambda$ weights solve the Markov-axiom system on $H_3$.
 
 ### Step 5 — Canonical typed braids
 
-From [`def:categorical-proton`](#def:categorical-proton) and [`def:categorical-neutron`](#def:categorical-neutron), $\mathcal{B}_p$ and $\mathcal{B}_n$ have 11 typed crossings each.
+From [Proton (categorical)](#def:categorical-proton) and [Neutron (categorical)](#def:categorical-neutron), $\mathcal{B}_p$ and $\mathcal{B}_n$ have 11 typed crossings each.
 
 ### Step 6 — $\mathrm{tr}_M$ values
 
@@ -38,7 +38,7 @@ At $q_0$, $\Delta\mathrm{tr}_M(n{-}p) = +0.0445860283$.
 
 ### Step 7-9 — Precision-ladder identifications
 
-Categorical-chain reading of the $c_k$ coefficients from [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder):
+Categorical-chain reading of the $c_k$ coefficients from [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder):
 
 | $k$ | $c_k$ | categorical source |
 |:---:|:---|:---|

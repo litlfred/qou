@@ -62,6 +62,8 @@ These are hand-written into PR bodies or trailers (wrong length or not base-58).
 
 This run created seven `Triage PR #N` beans for non-batch open PRs that no bean named or cited: `qou-pq2p` (#8519), `qou-l2rx` (#8374), `qou-oomz` (#8134), `qou-5jhf` (#8110), `qou-x9xc` (#8064), `qou-o201` (#8054), `qou-dx8j` (#7909); parents `qou-c20n` / `qou-5vkl`. It also created `qou-9fkb` (72 in-progress beans whose referenced PRs are all merged); that duplicates #8527's `qou-w6tr`, so it is scrapped and its list appended to `qou-w6tr`.
 
+> **Correction (same day): that 72-bean list is not a close list.** It claimed every PR those beans reference is merged and none open. Checked against `2026-11-20-dangling-claims-proposal.json`: 36 of the 72 are named in the body of an open batch PR (my join read only `#N` mentions in the bean body, so it never saw those PRs), 1 sits under a live workstream, and the other 35 were touched on or after 2026-11-13 (32 still `in-progress`, 3 now `todo`). Use the proposal's per-bean verdicts instead. The same correction is appended to `qou-w6tr` and `qou-9fkb`. Nothing else in this addendum used that list.
+
 ## KEEP OPEN
 
 - [session_0151ZZJzCWMYcwqpYVZci9h6](https://claude.ai/code/session_0151ZZJzCWMYcwqpYVZci9h6) — differs by one character from `0151ZZJzC6MY…`, the id #8527 lists as author of #8522/#8523 (first-target W1 PRs). One of the two is a copying error; keep both until the owner sees which link opens.

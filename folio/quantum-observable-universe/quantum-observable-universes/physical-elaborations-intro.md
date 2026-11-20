@@ -1,1 +1,1 @@
-The deformed operators carry direct physical readings. We extract the $q$-torsion leaves, the properties of $q$-harmonic forms, the linearisation conventions, and the Schrödinger equation on the jet coaction.
+The deformed operators carry direct physical readings. This section extracts the $q$-torsion leaves, the properties of $q$-harmonic forms, the linearisation conventions, and the Schrödinger equation on the jet coaction.

@@ -1,6 +1,6 @@
 # Explicit instance of canonical Markov weights
 
-The Lean class `CanonicalMarkovWeightsH3` (declared in [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md) §Extension #4) is inhabited. We construct an explicit $\sqrt q$-bearing instance:
+The Lean class `CanonicalMarkovWeightsH3` (declared in [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](qbeta-per-block-chi-closed-forms.md) §Extension #4) is inhabited. We construct an explicit $\sqrt q$-bearing instance:
 
 $$
   y_{(3)}(q) = z(q), \qquad
@@ -12,5 +12,5 @@ where $z(q) = \sqrt q / (1 + q) = 1/(q^{1/2}+q^{-1/2})$ is the parameter *this i
 
 ## Cross-references
 
-- Class declaration: [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md) §Extension #4.
-- Conditional theorems consuming this class: [`prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor`](qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md).
+- Class declaration: [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](qbeta-per-block-chi-closed-forms.md) §Extension #4.
+- Conditional theorems consuming this class: [Conditional on canonical Markov weights: $\Delta\mathrm{tr}_M^{\text{can}}(q)$ factors $(q^2 - 1)$](qbeta-delta-tau-canonical-conditional-q2-minus-1-factor.md).

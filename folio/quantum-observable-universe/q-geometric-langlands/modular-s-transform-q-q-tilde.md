@@ -53,7 +53,7 @@ small-$q_0$ $\leftrightarrow$ root-of-unity duality.
 ## Relationship to the complex-$q$ lift
 
 The complex-$q$ extension
-([`prop:q-zero-complex-extension`](#prop:q-zero-complex-extension)
+([The pre-Archimedean substrate is polymorphic in its base ring](#prop:q-zero-complex-extension)
 + [`prop:lusztig-vs-hermitian-bar`](#prop:lusztig-vs-hermitian-bar))
 extends the framework's substrate to complex $q$ with $|q| > 1$.
 The modular $S$-transform of this conjecture is the natural
@@ -98,7 +98,7 @@ parameter manifold:
    evaluation.
 3. **Do not conflate with the named elliptic curves.** The modular
    $\tau$ here is **not** the period $\tau$ of the Descartes/color curve
-   $\mathcal{E}_q$ ([`prop:descartes-elliptic-curve`](../brings-surface/descartes-elliptic-curve.md)):
+   $\mathcal{E}_q$ ([The Descartes elliptic curve $\mathcal{E}_q$](../brings-surface/descartes-elliptic-curve.md)):
    the modular nome is $q_0^{-1} \approx 0.90$ (near the cusp) while
    $\mathcal{E}_q$'s period nome is $\approx 0.0029$ (deep in the
    fundamental domain) — a $\sim\!312\times$ mismatch.
@@ -114,6 +114,6 @@ parameter manifold:
 - The complex-$q$ lift: blocks `prop:q-zero-complex-extension` +
   `prop:lusztig-vs-hermitian-bar`
 - Volume Conjecture: [`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)
-- The Bloch-group route: [`conj:borromean-bloch-group-element`](../mass-theory/borromean-bloch-group-element.md)
+- The Bloch-group route: [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](../mass-theory/borromean-bloch-group-element.md)
 
 **Archimedean specialisation.** Modular convergence is an archimedean statement: the estimates use $\mathrm{Im}\,\tau$ and $\exp$ over $\mathbb{R}$, so it sits on the archimedean side of the substrate wall.

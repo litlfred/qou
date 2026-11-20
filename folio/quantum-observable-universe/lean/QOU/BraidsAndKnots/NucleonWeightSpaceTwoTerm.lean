@@ -775,8 +775,11 @@ theorem borromeanV3B_nf_expansion (q : R) (hq : q ≠ 0) :
 
 /-! ## Section 9: Switched Four-Term Photon Factorisation `γ'(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁(σ₀σ₁⁻¹)` (`qou-99qc`)
 
-Under the `qou-99qc` working assumption where the fourth photon term is switched from
-`L₊ = σ₀σ₁` to the elementary Borromean step `V = σ₀σ₁⁻¹`:
+Recorded as a `qou-99qc` working assumption on 2026-11-18; it is an owner RULING
+(dated 2026-11-18, confirmed 2026-11-20): `def:photon`'s fourth term is the
+elementary Borromean step / chiral vertex `V = σ₀σ₁⁻¹`, not `L₊ = σ₀σ₁`. So the
+"switched photon" of this section IS `def:photon` (`QOU.Photon.photon`) on the
+weight space:
 1. The Borromean nucleon `V³ = (σ₀σ₁⁻¹)³` is the exact product of two pure fourth-term
    switched photons (`φ₀ = φ₁ = 0`, `φ₀₁⁺ = +q h`, `φ₀₁⁻ = -q⁻¹ h`, `h = q - q⁻¹`):
    `V³ = (1 + q h V) (1 - q⁻¹ h V) = 1 + h² V - h² V²`

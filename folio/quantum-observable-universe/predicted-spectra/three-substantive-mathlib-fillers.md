@@ -37,7 +37,7 @@ for $(\alpha, \beta, \gamma, \delta, \varepsilon)$ satisfying the pentagon closu
 
 ## (3) Faddeev-Kashaev quasi-classical limit
 
-The relation [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit) specifies the convergence
+The relation [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit) specifies the convergence
 
 $$
   (1 - q) \cdot \log \Phi_n(x; q) \;\to\; \mathrm{Li}_2(x)

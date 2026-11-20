@@ -18,19 +18,19 @@ The projection $\pi_H$ is the Hopf fibration. The base $\mathcal{S}_p \cong \mat
 
 ### 2. Three color tubes on Bring's surface
 
-Three colour primaries reside on Bring's surface ([`rem:q-chromaticity`](#rem:q-chromaticity)). These are the three $S_3$ subgroups of the Bring automorphism group. This provides the natural source of the denominator $3$ in $2/(3\pi)$. It represents photon coupling averaged over three independent chromaticity channels.
+Three colour primaries reside on Bring's surface ([Three colors and $q$-chromaticity: why negative coefficients require confinement](#rem:q-chromaticity)). These are the three $S_3$ subgroups of the Bring automorphism group. This provides the natural source of the denominator $3$ in $2/(3\pi)$. It represents photon coupling averaged over three independent chromaticity channels.
 
 ### 3. Filtration with confinement levels
 
-A depth filtration structures $H_n(R,q)$ via [`def:confinement-level`](#def:confinement-level) and [`prop:curvature-rank-gb-stratification`](#prop:curvature-rank-gb-stratification). For $H_3$, depths $\ell = 0,1,2,3$ yield a four-step filtration. The maximum depth of 3 correlates with the denominator $3$.
+A depth filtration structures $H_n(R,q)$ via [Confinement level via shadow-price filtration](#def:confinement-level) and [Curvature-rank stratification of the GB spectral sequence](#prop:curvature-rank-gb-stratification). For $H_3$, depths $\ell = 0,1,2,3$ yield a four-step filtration. The maximum depth of 3 correlates with the denominator $3$.
 
 ### 4. Spectral sequence collapse
 
-Hochschild cohomology vanishes ($\mathrm{HH}^k = 0$ for $k \ge 1$) ([`prop:spectral-sequence-collapse`](#prop:spectral-sequence-collapse)). The spectral sequence collapses at $E_1$. All contributions reside in $E_\infty^{0,0} = Z(H_n) = \bigoplus_\lambda R\cdot e_\lambda$. This mechanism yields the closed-form mass-formula $\alpha_k$ via Plancherel-weighted Markov pairings on the centre.
+Hochschild cohomology vanishes ($\mathrm{HH}^k = 0$ for $k \ge 1$) ([GB spectral sequence collapses at E_1 (semisimple cohomology vanishing)](#prop:spectral-sequence-collapse)). The spectral sequence collapses at $E_1$. All contributions reside in $E_\infty^{0,0} = Z(H_n) = \bigoplus_\lambda R\cdot e_\lambda$. This mechanism yields the closed-form mass-formula $\alpha_k$ via Plancherel-weighted Markov pairings on the centre.
 
 ### 5. Wenzl-bridge closed form for stratum prefactors
 
-An explicit $q$-rational expression gives the Markov-trace coefficients $y_\lambda$ in the mass-formula $\alpha_k$ ([`prop:y-lambda-closed-form-wenzl-bridge`](#prop:y-lambda-closed-form-wenzl-bridge)). This machinery applies to the coupling side.
+An explicit $q$-rational expression gives the Markov-trace coefficients $y_\lambda$ in the mass-formula $\alpha_k$ ([Closed form for Jones-Markov $y_\lambda$ via Wenzl Schur-element bridge ($Q = q^2$, $z_{\mathrm{GL}} = q z$)](#prop:y-lambda-closed-form-wenzl-bridge)). This machinery applies to the coupling side.
 
 ## Four exploration options
 
@@ -52,7 +52,7 @@ The factor $1/3$ arises from chromaticity averaging.
 
 ### Option B — Stratum-prefactor approach via spectral sequence collapse
 
-**Claim:** The mass-formula spectral-sequence machinery ([`prop:unified-curvature-rank-mass-formula`](#prop:unified-curvature-rank-mass-formula)) applies to the coupling side. The $\alpha_{EM}$ correction equals the depth-$\ell$ stratum prefactor of the filtration.
+**Claim:** The mass-formula spectral-sequence machinery ([Unified curvature-rank mass formula (clarifies six terms + Term 7)](#prop:unified-curvature-rank-mass-formula)) applies to the coupling side. The $\alpha_{EM}$ correction equals the depth-$\ell$ stratum prefactor of the filtration.
 
 **Concretely:** The bare formula $1/\alpha = q\cdot[9]_q\cdot[10]_q$ is the depth-$0$ centre contribution. The $2/(3\pi)$ correction expresses a Plancherel-weighted Markov pairing on the depth-$\ell$ stratum for $\ell \ge 1$.
 
@@ -83,7 +83,7 @@ The constant emerges from the universal $k \to \infty$ asymptotics.
 Option B utilises existing infrastructure and clarifies the relationship between the mass and coupling formulas.
 
 A practical execution follows:
-1. Implement Option B in $H_3$ ([`prop:spectral-sequence-h3-explicit`](#prop:spectral-sequence-h3-explicit)).
+1. Implement Option B in $H_3$ ([`conj:spectral-sequence-h3-explicit`](#conj:spectral-sequence-h3-explicit)).
 2. Define the depth-$\ell$ coupling functional.
 3. Compute the value at $q_0$ for each $\ell$ to isolate $2/(3\pi)$.
 4. Generalise to higher $H_n$ and verify consistency.

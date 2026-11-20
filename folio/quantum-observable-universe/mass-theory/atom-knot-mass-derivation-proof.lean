@@ -9,7 +9,7 @@
   No asymptotic content (no Reeb density, no Mostow + Gromov, no
   volume-conjecture identification) enters the derivation.
 
-  Refs: prop:atom-knot-mass-derivation, prop:gb-spectral-sequence,
+  Refs: conj:atom-knot-mass-derivation, prop:gb-spectral-sequence,
         prop:spectral-sequence-collapse, prop:wedderburn-trace-identity,
         thm:jones-markov-trace, prop:archimedean-realization-functor.
 -/
@@ -111,7 +111,7 @@ def post_archimedean_naming_borrowed {K : Type*}
     (A : ArchimedeanRealization K) (volName : ℝ) : Prop :=
   volName * ((A.ρ : ℝ) * A.m_e) = A.B
 
-/-- **The full proof of `prop:atom-knot-mass-derivation`.**
+/-- **The full proof of `conj:atom-knot-mass-derivation`.**
 
     The end-to-end claim is the conjunction of the two derivation legs:
     the categorical leg (finite-sum Markov trace) and the Archimedean

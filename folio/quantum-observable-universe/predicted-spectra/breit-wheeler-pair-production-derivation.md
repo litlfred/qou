@@ -21,10 +21,10 @@ $$
   \gamma
   = 
   \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-  + \varphi_{01}\sigma_0\sigma_1,
+  + \varphi_{01}\sigma_0\sigma_1^{-1},
 $$
 
-where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$. The generator $\sigma_0$ acts on the $(\sigma, r)$ plane. The generator $\sigma_1$ acts on the $(r, g)$ plane. The product $\sigma_0\sigma_1 = L_+$ provides Hopf-link dressing. 
+where $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$. The generator $\sigma_0$ acts on the $(\sigma, r)$ plane. The generator $\sigma_1$ acts on the $(r, g)$ plane. The fourth term is the chiral pair-production vertex $\sigma_0\sigma_1^{-1} = L_+ - h\sigma_0$ ([photon](#def:photon)). 
 
 This derivation treats the 3-term specialization $\varphi_{01} = 0$.
 

@@ -39,6 +39,8 @@ export default chapter({
           label: "sec:mass-endomorphism-mass-identity",
           blocks: [
             "mass-endomorphism-conjecture",
+            "pairing-gauge-fluctuation-massless",
+            "pairing-gauge-fluctuation-massless-interpretation",
             "mass-identity",
             "mass-identity-exists",
             "mass-identity-exists-proof",
@@ -55,6 +57,7 @@ export default chapter({
           title: "Topological mass",
           label: "sec:mass-endomorphism-topological-mass",
           blocks: [
+            "topological-mass-upper-bound",
             "topological-mass",
             "topological-mass-conjecture",
             "topological-mass-conjecture-proof",

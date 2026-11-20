@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:shell-transition-knot`](#conj:shell-transition-knot)).**
+**Proposition (conditional on [Stability pairs from Borromean spin-orbit shell-transition knots](#conj:shell-transition-knot)).**
 *The coefficient of the hook invariant $\Phi_4$ in the
 four-channel mass formula is*
 

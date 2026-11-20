@@ -2,19 +2,20 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-cyclotomic-depth3-dimension-synthesis",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:cyclotomic-depth3-dimension-synthesis",
   "kind": "proposition",
   "title": "Cyclotomic depth-3 dimension synthesis: $(K - 3)/2$ at every prime $K \\geq 5$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-two-filtration-bridge-general"
+    "papers/quantum-observable-universe/blocks/conj-two-filtration-bridge-general"
   ],
   "cites": [
     "references/bloch2000",

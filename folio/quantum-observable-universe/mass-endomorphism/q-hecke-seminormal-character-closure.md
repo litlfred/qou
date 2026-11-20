@@ -6,7 +6,7 @@ $$
   \sum_{\lambda \vdash 3A} y_\lambda(q) \cdot \mathrm{tr}_{V_\lambda}\!\bigl(\rho_\lambda^q(\mathcal{B}_K)\bigr),
 $$
 
-This partition-sum form equals the canonical Markov-axiom reducer $\mathrm{tr}_M(\mathcal{B}_K)$ ([`prop:markov-trace-recursive-reducer`](#prop:markov-trace-recursive-reducer)) to numerical precision at $q = q_0$.
+This partition-sum form equals the canonical Markov-axiom reducer $\mathrm{tr}_M(\mathcal{B}_K)$ ([Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property](#prop:markov-trace-recursive-reducer)) to numerical precision at $q = q_0$.
 
 ## Significance
 

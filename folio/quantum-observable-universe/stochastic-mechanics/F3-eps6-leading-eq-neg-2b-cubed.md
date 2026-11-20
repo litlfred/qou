@@ -2,7 +2,7 @@
 
 ## Statement
 
-For the $F_3 = 1 - 2 b^3 \hbar_q^6$ factor in the [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) precision ladder, the leading $\varepsilon^6$ contribution of $(F_3 - 1)$ at $q = 1+\varepsilon$ is the exact algebraic value:
+For the $F_3 = 1 - 2 b^3 \hbar_q^6$ factor in the [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder) precision ladder, the leading $\varepsilon^6$ contribution of $(F_3 - 1)$ at $q = 1+\varepsilon$ is the exact algebraic value:
 
 $$
 \boxed{
@@ -21,4 +21,4 @@ The Hoefsmit off-diagonal coupling is $b = \sqrt{q^4+q^2+1}/(q^2+1)$. At $q = 1$
 
 This lemma is the purely-arithmetic component of the $c_3 = -2$ identification in [`prop:q-beta-c3-hopf-three-fold-markov`](#prop:q-beta-c3-hopf-three-fold-markov). The categorical content remains class-axiomatic via `ThreeFoldMarkovHopfExtraction`, but its arithmetic discharge at the $\varepsilon^6$ level is Lean-proved.
 
-Combined with [`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive), two previously-axiomatic class hypotheses have been replaced by purely algebraic/arithmetic theorems. The substantive open content of `ThreeFoldMarkovHopfExtraction` reduces to the categorical identification that the perturbative $\hbar_q^6$ piece of the $\mathrm{tr}_M$-expansion factors through Hopf-link Jones values.
+Combined with [Primitive Markov-trace axioms](#rem:markov-axioms-primitive), two previously-axiomatic class hypotheses have been replaced by purely algebraic/arithmetic theorems. The substantive open content of `ThreeFoldMarkovHopfExtraction` reduces to the categorical identification that the perturbative $\hbar_q^6$ piece of the $\mathrm{tr}_M$-expansion factors through Hopf-link Jones values.

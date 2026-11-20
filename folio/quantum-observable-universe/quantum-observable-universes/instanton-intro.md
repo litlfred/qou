@@ -1,1 +1,1 @@
-The gauge term of the canonical action takes its extremal value when the curvature is $\star_q$-self-dual. We define the categorical instanton and read off its consequences for the categorical Lagrangian on-shell.
+The gauge term of the canonical action takes its extremal value when the curvature is $\star_q$-self-dual. This section defines the categorical instanton and reads off its consequences for the categorical Lagrangian on-shell.

@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.BraidKnot.frobenius_antipode_unifies — `S(σᵢ) = σᵢ⁻¹` unifies Term-5 + neutron tower
 
 Canonical Lean for content block
-[`thm:frobenius-antipode-unifies-chirality-and-tower`](../../../quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md).
+[`conj:frobenius-antipode-unifies-chirality-and-tower`](../../../quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.md).
 
 *The Term-5 chirality factor and the neutron-tower closure both use
 the **Frobenius antipode** `S : σ ↦ σ⁻¹` on `H_n(R, q)`.  `S` is an
@@ -35,14 +35,14 @@ def frobeniusAntipode {G : Type*} [Group G] : G → G := fun g => g⁻¹
 For the braid generators `σ : ℕ → G` (units of the Hecke algebra),
 the antipode sends `σᵢ` to `σᵢ⁻¹` — true by definition of
 `frobeniusAntipode`. -/
--- Ref: [leitner2026] thm:frobenius-antipode-unifies-chirality-and-tower (S(σᵢ) = σᵢ⁻¹)
+-- Ref: [leitner2026] conj:frobenius-antipode-unifies-chirality-and-tower (S(σᵢ) = σᵢ⁻¹)
 theorem frobeniusAntipode_generator {G : Type*} [Group G] (σ : ℕ → G) (i : ℕ) :
     frobeniusAntipode (σ i) = (σ i)⁻¹ := rfl
 
 /-- **Antipode is an anti-homomorphism** `S(a·b) = S(b)·S(a)`.
 
 This is the standard group identity `(a·b)⁻¹ = b⁻¹·a⁻¹`. -/
--- Ref: [leitner2026] thm:frobenius-antipode-unifies-chirality-and-tower (S(ab) = S(b)S(a))
+-- Ref: [leitner2026] conj:frobenius-antipode-unifies-chirality-and-tower (S(ab) = S(b)S(a))
 theorem frobeniusAntipode_antihom {G : Type*} [Group G] (a b : G) :
     frobeniusAntipode (a * b) = frobeniusAntipode b * frobeniusAntipode a := by
   unfold frobeniusAntipode
@@ -55,7 +55,7 @@ The manuscript notes `S` fixes the "averaged" pair
 the antipode is an **involution** (`S∘S = id`), so the symmetric
 combination `½(g + S g)` is `S`-invariant: applying `S` swaps `g` and
 `S g`, and `S(S g) = g`. -/
--- Ref: [leitner2026] thm:frobenius-antipode-unifies-chirality-and-tower (S fixes ½(σ + σ⁻¹))
+-- Ref: [leitner2026] conj:frobenius-antipode-unifies-chirality-and-tower (S fixes ½(σ + σ⁻¹))
 theorem frobeniusAntipode_involutive {G : Type*} [Group G] (g : G) :
     frobeniusAntipode (frobeniusAntipode g) = g := by
   unfold frobeniusAntipode
@@ -65,7 +65,7 @@ theorem frobeniusAntipode_involutive {G : Type*} [Group G] (g : G) :
 the antipode `S = (·)⁻¹` simultaneously satisfies the
 generator identity and the anti-homomorphism law that the chirality
 (Term 5) and neutron-tower derivations both invoke. -/
--- Ref: [leitner2026] thm:frobenius-antipode-unifies-chirality-and-tower
+-- Ref: [leitner2026] conj:frobenius-antipode-unifies-chirality-and-tower
 theorem frobenius_antipode_unifies {G : Type*} [Group G] (σ : ℕ → G) :
     (∀ i, frobeniusAntipode (σ i) = (σ i)⁻¹) ∧
     (∀ a b : G, frobeniusAntipode (a * b)

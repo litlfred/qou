@@ -28,9 +28,9 @@ at $q = q_0$ via the GS filtration of Step 7.*
 
 ### Correctness conditions
 
-1. *[`prop:jet-prefix-gb-filtration`](#prop:jet-prefix-gb-filtration)
+1. *[Jet-level prefix formula via Gröbner–Shirshov filtration (candidate Term 6)](#prop:jet-prefix-gb-filtration)
    gives the length $\leftrightarrow$ jet-order correspondence used in step 3.*
-2. *[`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence) ($E_2$
+2. *[GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass](#prop:gb-spectral-sequence) ($E_2$
    collapse, Step 7) ensures the truncation does not mix orders.*
 
 ### Complexity

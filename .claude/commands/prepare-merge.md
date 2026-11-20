@@ -627,6 +627,28 @@ is resolved.
   count) or only `computedAt`/`commitSha`/`durationMs`/`scriptHash` (drift —
   revert it).
 
+## 4c. Voice-leak ratchet (BLOCKING on growth)
+
+- Run `bun run folio/pipeline/voice-leak-ratchet.ts`. It runs
+  [`voice-leak-audit.ts`](../../folio/pipeline/voice-leak-audit.ts) (Lean talk
+  in prose, backticked Lean or repository identifiers, first/second person,
+  reading-order anachronisms in Part I) and compares the failing-hit count per
+  file and per leak kind against
+  [`voice-leak-baseline.json`](../../folio/pipeline/voice-leak-baseline.json).
+  Exit 1 means this branch **added** a leak.
+- **Fix the leak, never the baseline.** Restate the sentence in mathematical
+  terms; move Lean declaration names to the block's `.ts` `lean` /
+  `authorNotes`; replace a raw-label link text by the target's title. A
+  sentence that carries a real scope caveat ("Lean checks this only
+  through …") is restated, not deleted.
+- **The baseline only drains.** If the run reports counts below baseline, run
+  it again with `--shrink` and commit the smaller baseline with the drain. That
+  is the only supported edit: `--shrink` lowers counts and drops entries, and
+  cannot add or raise one. Never hand-edit the file to go green.
+- Owner ruling 2026-11-20 (#8526 comment 7041693067, W14 option 5): a
+  draining ratchet rather than a hard gate, so that a PR touching a leaky
+  block is not made to fix that block's older leaks.
+
 ## 5. Final rebase pass
 
 - After all fixes above, rebase once more onto the current `origin/main`

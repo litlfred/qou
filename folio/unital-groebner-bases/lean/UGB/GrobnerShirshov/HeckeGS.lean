@@ -39,9 +39,10 @@ Everything downstream that used it — `heckeCost_well_defined`,
 with no hypothesis and no `sorry`. So the two theorems below are not merely
 conditional-and-parked: their completed-system counterparts,
 `heckeCompleted_normalForm_unique` and `heckeCompleted_threading_cost_unique`
-(§4bx there), hold outright — modulo the two Diamond-Lemma axioms
-`local_confluence` and `reduction_well_founded`, which `normal_form_unique`
-carries and which are not this file's to discharge.
+(§4bx there), hold outright — modulo the Diamond-Lemma axiom
+`local_confluence`, which `normal_form_unique` carries and which is not this
+file's to discharge. (`reduction_well_founded`, the other input, has been a
+theorem since 2026-11-20.)
 
 ## Axiom budget
 
@@ -56,10 +57,11 @@ carries and which are not this file's to discharge.
 | `hecke_not_gs_basis_four` | **theorem** | the refutation (§4e) |
 | `embedGenerator`, `braidLettersToAlg`, `braidToAlg`, `augmentedBraidElement`, `heckeCost` | **def** | σ⁻¹ and photon-sign corrected 2026-11-15 (§5) |
 
-No axiom is declared in this file. The framework axioms it *uses* live in
-`Basic.lean` (`normal_form_exists`) and `CompositionLemma.lean`
-(`reduction_well_founded`, `local_confluence`, `confluence`,
-`normal_form_unique`); the refutation above depends on none of them.
+No axiom is declared in this file. The framework results it *uses* live in
+`Basic.lean` (`normal_form_exists`, `reduction_well_founded` — both theorems)
+and `CompositionLemma.lean` (`local_confluence`, the one remaining axiom, and
+`confluence`, `normal_form_unique`, proved from it); the refutation above
+depends on none of them.
 
 ## References
 

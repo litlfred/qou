@@ -8,8 +8,9 @@ import QOU.MathlibExt.QIntegerCanonical
 # QOU.Torsion.quantum_dilogarithm — Quantum dilogarithm
 
 In the archimedean realisation, the transient trace contribution
-from the topological decomposition of mass evaluates to the
-quantum dilogarithm Φ_q(z_i), where z_i is the spectral coordinate.
+tr_trans(ϱ, p_i) at the blow-up centre p_i (defined in
+`prop:topological-mass-upper-bound`) evaluates to the quantum
+dilogarithm Φ_q(z_i), where z_i is the spectral coordinate.
 
   Φ_q(z) = ∫₀ᶻ (ln_q(1+t)/t) dt = Σ_{n≥1} (-1)^{n+1} z^n / (n [n]_q)
 

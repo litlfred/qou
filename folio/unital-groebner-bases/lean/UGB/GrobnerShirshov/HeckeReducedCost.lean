@@ -21,8 +21,9 @@ satisfies against it.
 
 * `IsReducedCost hn hp f c` — `c` is `heckeCost` of a normal form of `f`.
 * `IsReducedCost.unique` — two reduced costs of one element agree.
-  Inherits the Diamond-Lemma axioms `local_confluence` and
-  `reduction_well_founded` through `heckeCompleted_normalForm_unique`.
+  Inherits the Diamond-Lemma axiom `local_confluence` through
+  `heckeCompleted_normalForm_unique` (`reduction_well_founded`, the other
+  input, is a theorem since 2026-11-20).
 * `linearFunctional` — `f ↦ Σ_m f.coeff m · t m` for a weight `t` on monomials.
   A Markov trace evaluated on a normal form has this shape, with `t w = tr(T_w)`.
 * `abs_linearFunctional_le` — **the cost bound.** If every weight on the

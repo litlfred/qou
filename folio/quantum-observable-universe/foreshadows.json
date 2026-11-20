@@ -168,12 +168,12 @@
     "conj:geom-yekutieli-alignment": {
       "derived": [
         "rem:chern-simons-as-knot-invariant",
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ],
       "declared": [],
       "effective": [
         "rem:chern-simons-as-knot-invariant",
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ]
     },
     "conj:gs-residue-at-root-existence": {
@@ -288,12 +288,12 @@
         "def:hecke-mass-element",
         "def:z-habiro-ring",
         "prop:categorical-mass-markov",
-        "prop:hecke-mass-trace",
+        "conj:hecke-mass-trace",
         "prop:knot-operator-selection",
         "prop:rj-canonical-inner-product",
-        "prop:topological-mass-formula",
+        "conj:topological-mass-formula",
         "thm:knot-mass-formula-unified",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ],
       "declared": [],
       "effective": [
@@ -303,12 +303,12 @@
         "def:hecke-mass-element",
         "def:z-habiro-ring",
         "prop:categorical-mass-markov",
-        "prop:hecke-mass-trace",
+        "conj:hecke-mass-trace",
         "prop:knot-operator-selection",
         "prop:rj-canonical-inner-product",
-        "prop:topological-mass-formula",
+        "conj:topological-mass-formula",
         "thm:knot-mass-formula-unified",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ]
     },
     "conj:on-p-modular-hecke": {
@@ -1026,7 +1026,7 @@
         "rem:bsd-surreal-bound"
       ]
     },
-    "prf:alpha-k-derivation-procedure": {
+    "rem:alpha-k-derivation-procedure-proof-sketch": {
       "derived": [
         "prop:y-lambda-closed-form-wenzl-bridge",
         "prop:y-lambda-recipe-from-partition"
@@ -1046,7 +1046,7 @@
         "conj:dilogarithm-archimedean-limit"
       ]
     },
-    "prf:atom-knot-mass-derivation": {
+    "rem:atom-knot-mass-derivation-proof-sketch": {
       "derived": [
         "prop:recursive-atom-knot-atlas"
       ],
@@ -1345,12 +1345,12 @@
     "prf:frobenius-codim-universal": {
       "derived": [
         "thm:knot-mass-formula-unified",
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ],
       "declared": [],
       "effective": [
         "thm:knot-mass-formula-unified",
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ]
     },
     "prf:frobenius-pairing-exists": {
@@ -2684,11 +2684,11 @@
     },
     "prop:mass-coefficient-shadow-price": {
       "derived": [
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ],
       "declared": [],
       "effective": [
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ]
     },
     "prop:mass-identity-exists": {
@@ -3044,7 +3044,7 @@
         "tbl:toffoli-lp-stability-table2-data"
       ]
     },
-    "prop:topological-mass-formula": {
+    "conj:topological-mass-formula": {
       "derived": [
         "rem:kashaev-volume-density",
         "rem:topological-mass-formula-context"
@@ -3952,11 +3952,11 @@
     },
     "rem:geometric-invariant-piecewise": {
       "derived": [
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ],
       "declared": [],
       "effective": [
-        "thm:six-term-mass-formula-complete"
+        "conj:six-term-mass-formula-complete"
       ]
     },
     "rem:gluon-stabiliser-ledger": {
@@ -5335,12 +5335,12 @@
     "sec:mass-endomorphism-opener-intro": {
       "derived": [
         "def:mass-identity",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ],
       "declared": [],
       "effective": [
         "def:mass-identity",
-        "thm:topological-mass"
+        "conj:topological-mass"
       ]
     },
     "sec:molecular-chains-rings-intro": {
@@ -5479,14 +5479,14 @@
     "tbl:binding-knots-visual-inventory-table1-data": {
       "derived": [
         "cor:spectral-decomposition-qvalue",
-        "prop:atom-knot-mass-derivation",
+        "conj:atom-knot-mass-derivation",
         "conj:binding-scale-catalan",
         "rem:figure-8-archimedean-illustration"
       ],
       "declared": [],
       "effective": [
         "cor:spectral-decomposition-qvalue",
-        "prop:atom-knot-mass-derivation",
+        "conj:atom-knot-mass-derivation",
         "conj:binding-scale-catalan",
         "rem:figure-8-archimedean-illustration"
       ]
@@ -5715,7 +5715,7 @@
         "rem:skein-filtration-trichotomy"
       ]
     },
-    "thm:topological-mass": {
+    "conj:topological-mass": {
       "derived": [
         "prf:topological-mass"
       ],

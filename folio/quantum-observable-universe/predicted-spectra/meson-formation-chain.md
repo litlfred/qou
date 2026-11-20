@@ -1,7 +1,7 @@
 The meson arises through a three-step formation chain.
 
 **Step 1: Pair production.**
-A $1.6\%$ energy gap separates the bare photon pair from the threshold $2\mathfrak{m}_e$. The color weights $\varphi_0, \varphi_1$ close this gap by supplying Hopf link terms. Two colored photons $\gamma_i = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ thus fuse into an electron--positron pair:
+A $1.6\%$ energy gap separates the bare photon pair from the threshold $2\mathfrak{m}_e$. The color weights $\varphi_0, \varphi_1$ close this gap by supplying Hopf link terms. Two colored photons $\gamma_i = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$ thus fuse into an electron--positron pair:
 
 $$
   \gamma_1 \cdot \gamma_2

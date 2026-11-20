@@ -15,16 +15,18 @@ $$
   (\sigma_0\sigma_1^{-1})^3 = (1 + q h V)\,(1 - q^{-1} h V).
 $$
 
-*Each factor is a [photon](#def:photon) $\gamma(\varphi_0, \varphi_1, \varphi_{01}) = 1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$
-with $\varphi_1 = 0$:*
+*Each factor is a [photon](#def:photon) $\gamma(\varphi_0, \varphi_1, \varphi_{01}) = 1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$
+that carries only its vertex term:*
 
 $$
-  1 + q h V = 1 - q h^2\,\sigma_0 + q h\,\sigma_0\sigma_1 = \gamma(-q h^2,\, 0,\, q h),
+  1 + q h V = \gamma(0,\, 0,\, q h),
+  \qquad
+  1 - q^{-1} h V = \gamma(0,\, 0,\, -q^{-1} h),
 $$
 
-$$
-  1 - q^{-1} h V = 1 + q^{-1} h^2\,\sigma_0 - q^{-1} h\,\sigma_0\sigma_1 = \gamma(q^{-1} h^2,\, 0,\, -q^{-1} h).
-$$
+*so $(\sigma_0\sigma_1^{-1})^3 = \gamma(0,0,qh)\,\gamma(0,0,-q^{-1}h)$. In the normal-form basis
+these are $1 - q h^2\,\sigma_0 + q h\,\sigma_0\sigma_1$ and
+$1 + q^{-1} h^2\,\sigma_0 - q^{-1} h\,\sigma_0\sigma_1$.*
 
 *The two factors commute.*
 
@@ -58,7 +60,7 @@ braids are conjugate and have the same Markov trace. The identity above is for
 $(\sigma_0\sigma_1^{-1})^3$.
 
 **Scope.** The identity says that $\beta_{\mathrm{Bor}}$, read as a Hecke element,
-is a product of two four-term photons with weights set by the two eigenvalues
+is a product of two photons, each reduced to its vertex term, with weights set by the two eigenvalues
 $q$ and $-q^{-1}$ of $\sigma_i$. It does not select $\beta_{\mathrm{Bor}}$: products of
 two such photons reach almost every element of $H_3(q)$. It changes no number. Because the two
 factors commute, the order of the photons cannot distinguish the proton from the

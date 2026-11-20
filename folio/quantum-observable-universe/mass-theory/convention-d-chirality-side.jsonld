@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-convention-d-chirality-side",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:convention-d-chirality-side",
+  "kind": "remark",
+  "title": "Convention D weighs the two eigenlines of a crossing unequally",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-convention-d-kills-antisymmetriser"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection",
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "trace-convention",
+    "chirality",
+    "observation",
+    "scope-a"
+  ],
+  "text": "convention-d-chirality-side.md",
+  "provenance": "authored"
+}

@@ -1,4 +1,4 @@
-This note expands [`prop:phi-q-aj-machinery-identification`](#prop:phi-q-aj-machinery-identification): the full AJ-conjecture statement, the significance of the unified context-sorting, and the Lean structure of the conditional proposition.
+This note expands [$\Phi_q$ / $\mathrm{Li}_2^q$ machinery is the AJ-conjecture machinery](#prop:phi-q-aj-machinery-identification): the full AJ-conjecture statement, the significance of the unified context-sorting, and the Lean structure of the conditional proposition.
 
 ## Statement
 
