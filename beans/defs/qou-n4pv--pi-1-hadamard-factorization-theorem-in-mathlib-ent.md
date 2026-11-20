@@ -1,13 +1,13 @@
 ---
 # qou-n4pv
 title: 'PI-1: Hadamard factorization theorem in Mathlib — entire function of finite order = (∏ over zeros, Weierstrass primary factors)·exp(poly). The theorem that pins phiBProd among its elliptic multiples. Hard multi-week complex-analysis build.'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-20T05:12:52Z
-updated_at: 2026-11-20T20:37:12Z
+updated_at: 2026-11-20T20:55:32Z
 parent: qou-c8p8
 ---
 
@@ -74,3 +74,7 @@ Status `in-progress` → `todo`. The claim came from batch PR(s) #8320, closed o
 ## 2026-11-20 — PI-5 ingredients proved (PR #8651); Hadamard itself still OPEN
 
 Proved, sorry-free: exponent of convergence ≤ order (`ExponentOfConvergence`), Jensen zero-count (`JensenZeroCounting`), canonical product entire + order ≤ σ (`CanonicalProductGrowth`, Borel), zero-free finite-order ⇒ exp(poly) (`HadamardZeroFree`). REMAINING for `HasHadamardFactorization`: divisor → zero sequence with multiplicity; f/P entire and zero-free; minimum-modulus lower bound on |P| giving f/P order ≤ ρ (the hard step).
+
+## 2026-11-20 — DONE: Hadamard factorization PROVED (PR #8651)
+
+`QOU.Mathlib.HadamardAssembly.hadamard_factorization_unconditional : HasHadamardFactorization`, sorry-free, standard axioms. Chain: ExponentOfConvergence, CanonicalProductGrowth, HadamardZeroFree, HadamardQuotient (enumeration with multiplicity, f/P entire zero-free), HadamardMinimumModulus (lower bound on |P| on separated circles), HadamardAssembly (countable index incl. finite/empty). The argument principle half was closed earlier (qou-z4jb / qou-nuxb). NOT addressed: genus minimality; applicability to phiBProd (a ratio; see qou-c3if).
