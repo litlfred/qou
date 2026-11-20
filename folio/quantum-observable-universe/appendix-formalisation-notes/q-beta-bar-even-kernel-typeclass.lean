@@ -104,7 +104,13 @@ class BarEvenKernel
 /-! ## Lifting lemmas — composition with the parametric gate classes -/
 
 /-- **§4(a) lifting**: from the bundle, the radius-of-convergence
-    pole-location invariant. -/
+    pole-location invariant.
+
+    **Assumed, not derived here** — "from the bundle" means projected from
+    it: the body is `hK.pole_at_u_substrate`, carried verbatim as a
+    `BarEvenKernel` field (§3b-conditional, derivation pending). `pole`,
+    `c2`, `c3`, and `magnitude` are arbitrary parameters, so the statement is
+    genuinely conditional and may not be strengthened to a global `axiom`. -/
 -- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 -- Ref: [pr1889] https://github.com/litlfred/qou/pull/1889
 theorem bar_even_kernel_implies_radius_of_convergence
@@ -131,7 +137,13 @@ def bar_even_kernel_implies_q_one_shadow
   ⟨hK.c2_shadow, hK.c3_shadow⟩
 
 /-- **§4(d) lifting**: from the bundle, the direction-sanity
-    magnitude-match invariant. -/
+    magnitude-match invariant.
+
+    **Assumed, not derived here** — "from the bundle" means projected from
+    it: the body is `hK.direction_match`, carried verbatim as a
+    `BarEvenKernel` field (§3b-conditional, derivation pending). Because the
+    bundle parameters are arbitrary, this projection may not be converted to a
+    global `axiom`. -/
 -- Ref: [leitner2026] prop:q-beta-bar-even-kernel-typeclass
 -- Ref: [pr1890] https://github.com/litlfred/qou/pull/1890 (Track B)
 theorem bar_even_kernel_implies_direction_sanity
