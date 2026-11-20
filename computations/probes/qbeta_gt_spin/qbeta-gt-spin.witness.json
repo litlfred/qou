@@ -1,0 +1,228 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T19:19:30.235239+00:00",
+  "commitSha": "43739c0575f306ed84bdcc8392ad46726a39337f",
+  "assertions": [
+    {
+      "name": "PA1_fermi_only",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "under (A) every σ^μ⊗σ^ν coefficient except c00 vanishes: λ ≡ 0"
+    },
+    {
+      "name": "PA1_c0_fermi_limit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "c00 = -(q - 1)*(q + 1)*(q**2 + 4*q + 1)/(6*q); c00/h → -1 at q → 1 (classical M_F = 1, sign = state phase)"
+    },
+    {
+      "name": "PW2_counts",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "full/none/partial = 4/4/16"
+    },
+    {
+      "name": "PW2_full_is_u_first",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "the 4 full orderings are exactly those with both u states first"
+    },
+    {
+      "name": "PW1_quark_lambda_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "quark level: c0 = c_x = c_y = c_z = h/2, i.e. h·P_spin = (h/2)(1 + σ⃗·σ⃗), λ_q = 1 for all q"
+    },
+    {
+      "name": "PW1_c0_half_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "c0 = h/2"
+    },
+    {
+      "name": "PW3_su6_limit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "q → 1: λ_⊥ = 5/3, λ_z = 5/3 (SU(6) |g_A| = 5/3, isotropic)"
+    },
+    {
+      "name": "PW3_anisotropic_at_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "at generic q the C-SU6 nucleon block is NOT rotation-invariant: λ_⊥ ≠ λ_z and an antisymmetric c12 = −c21 term (σ_N × σ_ℓ)_z appears at O((q−1)²)"
+    },
+    {
+      "name": "PW3_all_orderings_su6_limit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "every iso-major ordering gives |λ| → 5/3 at q → 1"
+    },
+    {
+      "name": "PW3_ordering_dependence_recorded",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "NOT predicted: the within-u / within-d order changes λ at q ≠ 1 (2 distinct λ_⊥(q)); a remaining choice, recorded"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13798,
+  "computation": "qbeta-gt-spin",
+  "scriptFile": "qbeta_gt_spin_probe.py",
+  "scriptHash": "1b7d6d825aab",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_gt_spin/qbeta_gt_spin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_gt_spin/qbeta_gt_spin_probe.py"
+  },
+  "description": "qou-99qc: Gamow–Teller (spin) sector of the β block. (A) factorised spin: λ ≡ 0. (W) U_q(gl4) iso-major: quark-level λ = 1 for all q; nucleon level under the labelled C-SU6 nucleon choice. Pre-registered at 43739c0575. Not wired to any scorecard.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 70,
+    "lepton_assumption": "fourth strand, copy of the strand space, nu = u, e- = d",
+    "nucleon_choice_PW3": "C-SU6: classical S=1/2 vector in the symmetric weight space"
+  },
+  "data": {
+    "premise_A": {
+      "c00": "(-q**4 - 4*q**3 + 4*q + 1)/(6*q)",
+      "all_other_coefficients_zero": true,
+      "lambda": "0",
+      "one_plus_3lambda2": "1"
+    },
+    "premise_W_single_crossing": {
+      "orderings_full_positive": [
+        "u↑u↓d↑d↓",
+        "u↑u↓d↓d↑",
+        "u↓u↑d↑d↓",
+        "u↓u↑d↓d↑"
+      ],
+      "orderings_none_positive": [
+        "d↑d↓u↑u↓",
+        "d↑d↓u↓u↑",
+        "d↓d↑u↑u↓",
+        "d↓d↑u↓u↑"
+      ],
+      "orderings_partial": [
+        "u↑d↑u↓d↓",
+        "u↑d↑d↓u↓",
+        "u↑d↓u↓d↑",
+        "u↑d↓d↑u↓",
+        "u↓d↑u↑d↓",
+        "u↓d↑d↓u↑",
+        "u↓d↓u↑d↑",
+        "u↓d↓d↑u↑",
+        "d↑u↑u↓d↓",
+        "d↑u↑d↓u↓",
+        "d↑u↓u↑d↓",
+        "d↑u↓d↓u↑",
+        "d↓u↑u↓d↑",
+        "d↓u↑d↑u↓",
+        "d↓u↓u↑d↑",
+        "d↓u↓d↑u↑"
+      ],
+      "quark_lambda": "1",
+      "c00": "h/2",
+      "spin_major_example": {
+        "c00": "(q**2 - 1)/(2*q)",
+        "c11": "(q**2 - 1)/(4*q)",
+        "c12": "I*(1 - q**2)/(4*q)",
+        "c21": "I*(q**2 - 1)/(4*q)",
+        "c22": "(q**2 - 1)/(4*q)",
+        "c33": "(q**2 - 1)/(2*q)"
+      }
+    },
+    "premise_W_nucleon_C_SU6": {
+      "coefficients_q": {
+        "c00": "-(q - 1)*(q + 1)*(2*q + 1)*(q**2 + 6*q - 1)/(36*q**2)",
+        "c11": "-(q - 1)*(q + 1)*(9*q**4 + 38*q**3 + 18*q**2 - 6*q + 1)/(72*q**3)",
+        "c12": "I*(q - 1)**2*(q + 1)**2*(q**2 + 6*q - 1)/(72*q**3)",
+        "c21": "-I*(q - 1)**2*(q + 1)**2*(q**2 + 6*q - 1)/(72*q**3)",
+        "c22": "-(q - 1)*(q + 1)*(9*q**4 + 38*q**3 + 18*q**2 - 6*q + 1)/(72*q**3)",
+        "c33": "-(q - 1)*(q + 1)*(2*q**3 + 19*q**2 + 16*q - 7)/(36*q**2)"
+      },
+      "lambda_perp_q": "(9*q**4 + 38*q**3 + 18*q**2 - 6*q + 1)/(2*q*(2*q + 1)*(q**2 + 6*q - 1))",
+      "lambda_z_q": "(2*q**3 + 19*q**2 + 16*q - 7)/((2*q + 1)*(q**2 + 6*q - 1))",
+      "lambda_q_to_1": "5/3",
+      "lambda_perp_q0": "1.66743631329729812093395659014478626182014885941321084568897",
+      "lambda_z_q0": "1.66295316619706277517960858065893250377382111257354004790194",
+      "Im_c12_over_c00_q0": "-0.0324632111624684924146631228605354391509674100881529506146229",
+      "rate_factor_R_q0": "9.32820867092776459436796592703093525956916515408856116917595",
+      "lambda_eff_q0": "1.66615412161538091351553154836401685058526995123134742229681",
+      "ordering": "u↑u↓d↑d↓",
+      "per_iso_major_ordering": {
+        "u↑u↓d↑d↓": {
+          "lambda_perp_q": "(9*q**4 + 38*q**3 + 18*q**2 - 6*q + 1)/(2*q*(2*q + 1)*(q**2 + 6*q - 1))",
+          "lambda_z_q": "(2*q**3 + 19*q**2 + 16*q - 7)/((2*q + 1)*(q**2 + 6*q - 1))",
+          "lambda_perp_q0": "1.66743631329729812093395659014478626182014885941321084568897",
+          "lambda_z_q0": "1.66295316619706277517960858065893250377382111257354004790194"
+        },
+        "u↑u↓d↓d↑": {
+          "lambda_perp_q": "2*q*(4*q**3 + 19*q**2 + 10*q - 3)/(3*q**4 + 26*q**3 + 10*q**2 - 2*q - 1)",
+          "lambda_z_q": "(5*q**4 + 38*q**3 + 30*q**2 - 14*q + 1)/(3*q**4 + 26*q**3 + 10*q**2 - 2*q - 1)",
+          "lambda_perp_q0": "1.66816664803802917311321055801033567578227697743208942009849",
+          "lambda_z_q0": "1.66586707299455997298430982746348457706651107098121877009127"
+        },
+        "u↓u↑d↑d↓": {
+          "lambda_perp_q": "2*q*(4*q**3 + 19*q**2 + 10*q - 3)/(3*q**4 + 26*q**3 + 10*q**2 - 2*q - 1)",
+          "lambda_z_q": "(5*q**4 + 38*q**3 + 30*q**2 - 14*q + 1)/(3*q**4 + 26*q**3 + 10*q**2 - 2*q - 1)",
+          "lambda_perp_q0": "1.66816664803802917311321055801033567578227697743208942009849",
+          "lambda_z_q0": "1.66586707299455997298430982746348457706651107098121877009127"
+        },
+        "u↓u↑d↓d↑": {
+          "lambda_perp_q": "(9*q**4 + 38*q**3 + 18*q**2 - 6*q + 1)/(2*q*(2*q + 1)*(q**2 + 6*q - 1))",
+          "lambda_z_q": "(2*q**3 + 19*q**2 + 16*q - 7)/((2*q + 1)*(q**2 + 6*q - 1))",
+          "lambda_perp_q0": "1.66743631329729812093395659014478626182014885941321084568897",
+          "lambda_z_q0": "1.66295316619706277517960858065893250377382111257354004790194"
+        }
+      }
+    },
+    "comparison": {
+      "lambda_pdg_abs": "1.27540000000000000000000000000000000000000000000000000000000",
+      "one_plus_3lambda2_pdg": "5.87993548000000000000000000000000000000000000000000000000000",
+      "lambda_eff_q0_vs_pdg_pct": "30.6377702379944263380532811952341893198423985597732023127494",
+      "lambda_N_q1_vs_pdg_pct": "30.6779572421723903611938738173644869583398672311954419528514",
+      "R_q0_vs_pdg_pct": "58.6447453829504366324775714551026886364604319448852382505386"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
