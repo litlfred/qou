@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T14:05:50.071063+00:00",
-  "commitSha": "bb2c9f45fedcb461cad5d7ce9019a086e037e563",
+  "computedAt": "2026-11-20T14:18:42.881854+00:00",
+  "commitSha": "f35d59159f04529065d19bd0e1a9d598977691c1",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 326,
+  "durationMs": 4,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "7e9a9466db63",
-  "scriptCommitSha": "bb2c9f45fedcb461cad5d7ce9019a086e037e563",
+  "scriptHash": "16dca40d3b34",
+  "scriptCommitSha": "f35d59159f04529065d19bd0e1a9d598977691c1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "ae1028699afd20c5"
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
