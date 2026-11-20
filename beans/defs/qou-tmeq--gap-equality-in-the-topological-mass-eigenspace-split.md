@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T16:45:00Z
-updated_at: 2026-11-20T16:45:00Z
+updated_at: 2026-11-20T16:40:00Z
 parent: qou-27ys
 ---
 
@@ -20,3 +20,12 @@ Known facts:
 - The factorisation `MI∫(x+y) = MI∫x · MI∫y` itself is also unproved for non-commuting pieces. It is a hypothesis of the ≤ form.
 
 Next honest step: decide whether the two multiplicative integrals share a ray (a phase) for the actual integrand, or show that they generically do not (scope (a), numerical) or provably cannot (scope (b), needs an invariant).
+
+## 2026-11-20 W11, option 2 (attack co-directionality): a fork on WHAT the descent map is
+Step 0 now runs: `scripts/corpus-search.ts`, PR #8603. Queries "conditional expectation", "descent homomorphism", "transient trace", "Frobenius positivity", plus "descent" with `--search-text`. None returned a positivity result for the descended or transient pieces; this adds to the six-path grep (see qou-wuxx).
+
+The corpus fixes two different descent maps, and the transient trace behaves oppositely under them:
+1. **Trace-preserving conditional expectation**, the Hecke/Markov reading. `hecke-markov-interpretation-table-data.md:7` calls the vertex volume a "one-step conditional expectation", and the Markov property tr(xσ_n) = z·tr(x) makes tr_{n+1} = tr_n ∘ E hold on the WHOLE algebra by construction. Then `transient_trace_eq_zero_of_global_compat` (PR #8593) gives tr_trans ≡ 0. The equality of conj:topological-mass holds TRIVIALLY, but then no Φ_q(z_i) transient term can come from a trace. That contradicts `lem:topological-mass-dilogarithm` / `cor:quantum-dilogarithm` as written.
+2. **Surjective algebra homomorphism**, the categorical reading: `lem:descent`, `def:descent-involution`. Trace-compatibility holds only on the image, so the transient trace can be nonzero. But no concrete realisation of τ̂ in H_n is given, so the reading-3 positivity route (`trM_nonneg_of_reading3`) has no element to act on. It cannot be attempted until τ̂ is made concrete.
+
+Next honest step: decide or derive which map 𝔡_{n+1} is in the Hecke realisation. If it is (1), the conjecture is trivially true and the dilogarithm identification must move off the trace. If it is (2), construct τ̂ in H_n and test reading 3 on τ̂α and α − τ̂α. Stays open.
