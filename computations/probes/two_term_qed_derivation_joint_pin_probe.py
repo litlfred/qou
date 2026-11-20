@@ -74,6 +74,30 @@ def crossing_data(Q, word):
             "S_colored_writhe": S, "Sq": Sq, "D_double_sum": D, "check_2D_plus_Sq_eq_S2": 2 * D + Sq == S * S}
 
 
+def u1_coloured_exponents(Q, word):
+    """U(1)-coloured invariant (QEDHigherOrderCovariance §U), exact.
+
+    The central U(1) R-matrix rescales each letter by t^(e·Q_a·Q_b); the closure adds a
+    ribbon-twist factor θ^(Q_c²·w_c) per component c, w_c the self-writhe.  Returns the exact
+    exponent of t (= coloured writhe S) and the per-component self-writhes, so the full
+    charge dependence is t^S · Π θ^(Q_c² w_c)."""
+    ls, perm = letters(word, [0, 1, 2])
+    # components of the closure: orbits of the strand permutation (label at slot i -> perm[i])
+    comp = {}
+    for start in range(3):
+        if start in comp:
+            continue
+        x = start
+        while x not in comp:
+            comp[x] = start
+            x = perm.index(x) if perm.count(x) else x
+    t_exp = sum((e * Q[a] * Q[b] for a, b, e in ls), Fr(0))
+    selfw = {c: sum(e for a, b, e in ls if comp[a] == c and comp[b] == c) for c in set(comp.values())}
+    theta_exp = sum((Q[c] ** 2 * w for c, w in selfw.items()), Fr(0))
+    return {"final_perm": perm, "components": sorted(set(comp.values())),
+            "t_exponent": t_exp, "self_writhe": selfw, "theta_exponent": theta_exp}
+
+
 # ── (b) the three q-pins ──────────────────────────────────────────────────
 R_PE = mf(C.codata("proton-electron mass ratio").value_str)
 R_MUE = mf(C.codata("muon-electron mass ratio").value_str)
@@ -155,6 +179,24 @@ def main() -> int:
     }
     wb.add_data("v3_crossing_data_exact", data_a)
 
+    # (c) U(1)-coloured invariant: charge dependence on V3 (all orders) and controls
+    data_c = {}
+    for name, Q in (("proton", PROTON), ("neutron", NEUTRON)):
+        for wname, word in (("V3", BOR), ("hopf_control", [(0, 1), (0, 1)]),
+                            ("sigma1_cubed_control", [(0, 1), (0, 1), (0, 1)])):
+            d = u1_coloured_exponents(Q, word)
+            print(f"U(1) {name} {wname}: t^{d['t_exponent']} theta^{d['theta_exponent']} "
+                  f"selfW={d['self_writhe']} perm={d['final_perm']}")
+            data_c[f"{name}_{wname}"] = {"t_exponent": str(d["t_exponent"]),
+                                         "theta_exponent": str(d["theta_exponent"]),
+                                         "self_writhe": {str(k): v for k, v in d["self_writhe"].items()},
+                                         "final_perm": d["final_perm"]}
+    data_c["verdict"] = ("On V3 both exponents are exactly 0 for proton and neutron, so the "
+                         "U(1)-coloured trace equals the uncoloured trace for every t, theta: the "
+                         "coefficient of every charge monomial (Q0Q1Q2*mubar^2, sumQ^2, sumQaQb) "
+                         "is 0 in this class. Controls (Hopf, sigma1^3) are nonzero.")
+    wb.add_data("u1_coloured_invariant_exact", data_c)
+
     q_p = mp.findroot(lambda q: mp_ratio(q) - R_PE, mf(Q_50_DIGIT_STR))
     q_mu = mp.findroot(lambda q: mu_ratio(q) - R_MUE, q_p)
     q_al = mp.findroot(lambda q: ainv_formB(q) - AINV, q_p)
@@ -197,6 +239,15 @@ def main() -> int:
                      computed=("1" if data_a["proton"]["S_colored_writhe"] == "0"
                                and data_a["neutron"]["S_colored_writhe"] == "0" else "0"),
                      expected="1", tolerance="0.5", source="exact Fraction")
+    wb.add_assertion("u1_coloured_charge_independent_on_V3",
+                     computed=("1" if all(data_c[f"{n}_V3"]["t_exponent"] == "0"
+                                          and data_c[f"{n}_V3"]["theta_exponent"] == "0"
+                                          for n in ("proton", "neutron")) else "0"),
+                     expected="1", tolerance="0.5", source="exact Fraction; QEDHigherOrderCovariance.u1Trace_borromean")
+    wb.add_assertion("u1_controls_see_charges",
+                     computed=("1" if data_c["proton_hopf_control"]["t_exponent"] != "0"
+                               and data_c["proton_sigma1_cubed_control"]["theta_exponent"] != "0" else "0"),
+                     expected="1", tolerance="0.5", source="negative controls (Hopf, sigma1^3)")
     wb.save()
     return 0
 
