@@ -5,7 +5,7 @@ The file [`three-substantive-mathlib-fillers.lean`](three-substantive-mathlib-fi
 | # | Gap | Lean piece | Status |
 |---|---|---|---|
 | (1) | `BlochGroup F` quotient | `PreBlochElement F`, `PreBlochGroup F` (FreeAbelianGroup), `HasPentagonRelation F`, `HasBlochGroup F` | structural carrier + class hooks |
-| (2) | Pentagon identity for $\mathrm{Cl}_2$ | `Cl_2_PentagonHolds`, `Cl_2_pentagon_at_zero` | class hook + boundary theorem |
+| (2) | Pentagon identity for $\mathrm{Cl}_2$ | `Cl_2_PentagonHolds`, `Cl_2_pentagon_at_zero` | definition + class + instance (from Bloch–Wigner five-term) |
 | (3) | Faddeev-Kashaev quasi-classical limit | `FaddeevKashaevQuasiClassicalLimit x`, `faddeev_kashaev_at_zero` | class hook + boundary theorem |
 
 A synthesis class `HasAllSubstantiveFillers F` collects all three into a single hypothesis. A consistency theorem `three_substantive_fillers_synthesis_consistent` shows this synthesis is structurally well-formed.
@@ -30,9 +30,10 @@ $$
    - \mathrm{Cl}_2(\delta) + \mathrm{Cl}_2(\varepsilon) = 0
 $$
 
-for $(\alpha, \beta, \gamma, \delta, \varepsilon)$ satisfying the pentagon closure relation. The file provides:
+for $(\alpha, \beta, \gamma, \delta, \varepsilon)$ satisfying the pentagon closure relation: the five points $e^{i\alpha}, \dots, e^{i\varepsilon}$ are the five arguments $x,\ y,\ y/x,\ (1-x^{-1})/(1-y^{-1}),\ (1-x)/(1-y)$ of Suslin's five-term relation. The file provides:
 
-- `Cl_2_PentagonHolds`, a typeclass with two boolean fields. One field asserts the general pentagon. The other asserts the specific instance at $\pi/3$.
+- `cl2PentagonClosure`, that closure condition as a definition.
+- `Cl_2_PentagonHolds`, a typeclass with one field asserting the pentagon on that condition. It is inhabited by `instCl_2_PentagonHolds` (`Cl2PentagonFromBlochWigner.lean`). That instance restricts the proved five-term relation of the Bloch–Wigner function $D$ to the unit circle, where $D(e^{i\theta}) = \mathrm{Cl}_2(\theta)$.
 - `Cl_2_pentagon_at_zero`, a theorem showing the pentagon holds at the boundary $\mathrm{Cl}_2(0) = 0$.
 
 ## (3) Faddeev-Kashaev quasi-classical limit
@@ -54,10 +55,9 @@ The three class hooks provide named carrier infrastructure. The synthesis class 
 
 ## Remaining content
 
-The open content comprises three tasks:
+The open content comprises two tasks:
 
 1. **An explicit `HasBlochGroup F` instance.** This requires the full `FreeAbelianGroup` quotient construction.
-2. **An explicit `Cl_2_PentagonHolds` instance.** This requires a proof via Fourier-series rearrangements.
-3. **An explicit `FaddeevKashaevQuasiClassicalLimit x` instance for $x \in (0, 1)$.** This requires a uniform Tauberian theorem proof.
+2. **An explicit `FaddeevKashaevQuasiClassicalLimit x` instance for $x \in (0, 1)$.** This requires a uniform Tauberian theorem proof.
 
 The structural scaffolding for these tasks is complete.
