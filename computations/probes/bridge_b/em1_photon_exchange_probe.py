@@ -39,7 +39,8 @@ def E(word, w):
                 M = prefix(0,t1)*Qat(pos[t1][a])*prefix(t1,t2)*Qat(pos[t2][b])*prefix(t2,nL)
                 tot += trw(M, w)
     return sp.simplify(tot/npairs/base)
-q0 = sp.Rational('1.1099785827513808')
+from qou_substrate.constants import Q_50_DIGIT_STR  # proton pin, 50 digits
+q0 = sp.Rational(Q_50_DIGIT_STR)
 V3 = [(1,+1),(2,-1)]*3
 for name, word in [("V^3", V3), ("V^6", V3*2), ("identity (V^0)", [])]:
     if not word:
