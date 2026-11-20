@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T17:30:00Z
+updated_at: 2026-11-20T18:40:00Z
 parent: qou-10v9
 ---
 
@@ -4138,3 +4138,5 @@ Open: derive C1 (weak-vertex amplitude → weight-trace difference), C2 (transpo
 
 ## 2026-11-20 — owner choice "3 2" (W2)
 No label ruling: labels A and B stay side by side, and the round-trip theorem is merged (#8615). Label C research, first result (PR #8618, exact probe): quantum-trace restrictions give tau(J) = z_D (whole space), 1/3 (a T3 charge sector), 0 (the nucleon isospin-1/2 block) or 1 (the isospin-3/2 block). Q_beta reads only the weight on the isospin-3/2 block (chi_21(Delta_S) = 0). CODATA needs ~0.889. Next: derive why the decay functional weights the isospin-3/2 channel that way. Bean stays open (rule 13a).
+
+**2026-11-20T18:40Z — OWNER RULING (Carl, 18:27): #8586's T³ weight-split Q_β (|ε|·E₀ = 0.3254 MeV, −58.40 % vs CODATA) is the SCORED Q_β cell.** Applied by the merge queue on PR #8586. PR #8591 (derived weighting, covariant all-pairs two-term rows) keeps both on rebase: the Q_β cell from #8586, the two-term rows covariant (connected part 0 on V³, so two-term = one-term; m_μ +211.2 ppb / 970.2×). Options 1, 3, 4 remain unscored labelled rows. The ruling selects the scored cell only; it does not close this bean (rule 13a: the T³ split's derivation and F_required 2.404 stay open).
