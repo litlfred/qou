@@ -209,7 +209,7 @@ theorem decoy_contentless (C : Prop) : Contentless (DecoyContext C) C :=
   decoy_nonempty_iff C
 
 /-- **The named premise carries no logical weight.** Given the conclusion, a decoy context
-exists with premise `True` — so `bloch_suslin`, `peter_weyl_holds` and the rest are decor.
+exists with premise `True` — so `named_premise_a`, `named_premise_b` and the rest are decor.
 The apparent content of these declarations lives in the *name*, not in the Lean. -/
 theorem decoy_premise_irrelevant {C : Prop} (hC : C) :
     ∃ ctx : DecoyContext C, ctx.premise = True :=
@@ -290,5 +290,66 @@ already followed it.
 
 The criterion above still covers the pattern: such a carrier is `Contentless` for `True`,
 which is the degenerate case of `Contentless K C`. -/
+
+/-! ## The underdetermined-product pattern (`qou-qcy6`)
+
+A conditional class carrying two free fields `weight : ι → R` and `char : ι → X → R`
+that appear only as a product `∑ i, weight i * char i x` pins neither factor:
+rescaling `weight i` by any unit `u i : Rˣ` and `char i x` by `(u i)⁻¹` preserves
+the sum identically. Pinning `weight i` requires an independent normalisation on
+`char i` (such as an `AlgHom` identity trace `char i x₀ = d i` with `d i` a
+non-zero-divisor) together with block isolation (`weight i * d i = b i`). -/
+
+open BigOperators
+
+/-- Abstract shape of a class whose weight and character fields enter only through
+their bilinear pairing sum (`qou-qcy6`, `WenzlBridge`). -/
+structure UnderdeterminedProductContext (R : Type*) [CommRing R]
+    (ι : Type*) [Fintype ι] (X : Type*) (tr : X → R) where
+  /-- Per-block central weight `y_i`. -/
+  weight : ι → R
+  /-- Per-block character functional `χ_i`. -/
+  char : ι → X → R
+  /-- Bilinear decomposition `tr(x) = ∑_i y_i · χ_i(x)`. -/
+  pairing : ∀ x : X, tr x = ∑ i : ι, weight i * char i x
+
+/-- Unit-gauge rescaling of an `UnderdeterminedProductContext`: multiplying
+`weight i` by `u i` and `char i x` by `(u i)⁻¹` preserves every product term
+and hence satisfies `pairing`. -/
+def UnderdeterminedProductContext.rescale {R : Type*} [CommRing R]
+    {ι : Type*} [Fintype ι] {X : Type*} {tr : X → R}
+    (u : ι → Rˣ) (ctx : UnderdeterminedProductContext R ι X tr) :
+    UnderdeterminedProductContext R ι X tr where
+  weight i := (u i : R) * ctx.weight i
+  char i x := ((u i)⁻¹ : Rˣ) * ctx.char i x
+  pairing x := by
+    rw [ctx.pairing x]
+    refine Finset.sum_congr rfl (fun i _ => ?_)
+    have hu : (u i : R) * (((u i)⁻¹ : Rˣ) : R) = 1 := Units.mul_inv (u i)
+    calc
+      ctx.weight i * ctx.char i x
+          = ((u i : R) * (((u i)⁻¹ : Rˣ) : R)) * (ctx.weight i * ctx.char i x) := by
+            rw [hu, one_mul]
+      _ = ((u i : R) * ctx.weight i) * ((((u i)⁻¹ : Rˣ) : R) * ctx.char i x) := by
+            ring
+
+/-- **Gauge freedom of `UnderdeterminedProductContext` (`qou-qcy6`).**
+For any family of units `u : ι → Rˣ`, any witness `ctx` produces a witness `ctx'`
+whose weights are scaled by `u i` at every index `i`. -/
+theorem underdeterminedProduct_gauge_freedom {R : Type*} [CommRing R]
+    {ι : Type*} [Fintype ι] {X : Type*} {tr : X → R}
+    (u : ι → Rˣ) (ctx : UnderdeterminedProductContext R ι X tr) :
+    ∃ ctx' : UnderdeterminedProductContext R ι X tr,
+      ∀ i : ι, ctx'.weight i = (u i : R) * ctx.weight i :=
+  ⟨ctx.rescale u, fun _ => rfl⟩
+
+/-- **Pinning the weight by character normalisation (`qou-qcy6`).**
+Once each block's character at the unit is fixed to a non-zero-divisor `d` and
+block projection isolates `w * d = b`, the gauge freedom collapses and `w` is
+uniquely determined. -/
+theorem underdeterminedProduct_pinned_of_eval_one {R : Type*} [CommRing R]
+    [NoZeroDivisors R] {w₁ w₂ d b : R} (hd : d ≠ 0)
+    (h₁ : w₁ * d = b) (h₂ : w₂ * d = b) : w₁ = w₂ :=
+  mul_right_cancel₀ hd (h₁.trans h₂.symm)
 
 end QOU.ProofHygiene
