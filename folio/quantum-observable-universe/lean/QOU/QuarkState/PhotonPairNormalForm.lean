@@ -7,7 +7,9 @@ hypothesis — NOT a finding, and NOT adopted —
   quark state := the degree ≥ 1 part of `NF(γ(φ)·γ(ψ))` in `H₃(q)`,
                  projected to the `(2,1)` Wedderburn channel,
 
-with `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` (`rem:knot-basis-color-content`).
+with `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` (`rem:knot-basis-color-content`, as written before the
+owner ruling of 2026-11-18 that made the last term `σ₀σ₁⁻¹`; that photon is the
+**straight chart** `photonStraight` below, and `def:photon` is `photon`).
 
 The hypothesis needs three things to be non-vacuous. This file proves what
 holds and records, as theorems, where it fails.

@@ -1,5 +1,5 @@
 **Step 0: two colored photons collide.**
-Each photon is the Hecke algebra element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$. The derivation uses the 3-term specialization $\varphi_{01} = 0$.
+Each photon is the Hecke algebra element $\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1^{-1}$ ([photon](#def:photon)). The derivation uses the 3-term specialization $\varphi_{01} = 0$.
 
 **Step 1: expand the product $\gamma_1 \cdot \gamma_2$.**
 Their product NF in $H_3(q)$ yields Hopf link terms $L_+$ and $L_-$ exclusively from cross-color products.
