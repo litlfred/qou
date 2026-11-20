@@ -1140,6 +1140,7 @@ import QOU.Archimedean.TauFunctorTargetSpec
 import QOU.Archimedean.DeckRealityEquivariance
 import QOU.Archimedean.BorelProperTimeMoment
 import QOU.MathlibExt.FrechetShohat
+import QOU.MathlibExt.StieltjesCompactDeterminacy
 import QOU.Archimedean.BalancedKernelConfluence
 import QOU.Archimedean.BalancedMomentConfluence
 import QOU.Archimedean.BalancedKernelTightness
@@ -1610,6 +1611,7 @@ import QOU.Mathlib.RothInductionHypothesis
 import QOU.Mathlib.KazhdanLusztigBasis
 import QOU.Mathlib.ConcentratedColumnCollapse
 import QOU.Mathlib.StandardYoungCountInstance
+import QOU.Mathlib.LieValuedForms
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
 -- carries the convention-D factors f_pp = z, f_nn = z - h, f_pn and their q-bar
