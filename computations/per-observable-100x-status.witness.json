@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T16:00:15.591647+00:00",
-  "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
+  "computedAt": "2026-11-20T18:39:52.354940+00:00",
+  "commitSha": "af42e6060f4785902cd34d3e5978a591a337bd2a",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "a599300af349",
-  "scriptCommitSha": "f7cdac9eecf2d18a32ce3f3154d9283e339b52e8",
+  "scriptHash": "7155e7fc866b",
+  "scriptCommitSha": "0d41dab7aedaed282ee1fee806846ac149b9104a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
         "note": null,
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "PINNED proton-anchored prediction (m_e·Vol(4_1)/ℏ_q² at the m_p/m_e re-pinned q₀, 2026-05-28); decoupled from the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1",
+        "source_witness": "DERIVED proton-anchored prediction m_e·Vol(4_1)/ℏ_q² at the package default one-term proton pin (m_p/m_e re-pin 2026-05-28); never read from the muon-flipped Borromean muon_check per bean tnjb / AGENTS.md §q₀-anchor STRICT rule 1",
         "sigma_source": "COMPARISON TARGET (codata_MeV), NOT the prediction: m_e × (m_μ/m_e)_CODATA = 0.5109989506900000000000000000000000000000000000000005654434719000544678 × 206.7682827000000000000000000000000000000000000000000223638476790838774 (ratio-derived; independently-quoted 105.6583755(23) MeV). The PREDICTION (pred_MeV) is the INDEPENDENT categorical value m_μ = m_e·Vol(4_1)/ℏ_q² from the Borromean witness — post the 2026-05-29 q₀ re-pin it is a genuine 9.5σ PREDICTION, NOT ratio-derived. The ~210 ppb pred-vs-codata gap (963.6× the 100× target) is the real μ-p tension; m_μ does NOT meet L2. Do not read 'ratio-derived' as 'm_μ trivially meets' (the error PR #1556 made).",
         "compute_truncation_ppb": "9.464e-54",
         "compute_output_dps": 60,
@@ -106,10 +106,11 @@
           "M_p_QED_conn_plain_MeV": "0.000220077293803983",
           "M_p_QED_conn_plain_keV": "0.220077293804",
           "M_p_QED_conn_Kp_MeV": "0.000244281082672304",
-          "q0_two_term_plain": "1.109978595150878501566165",
+          "q0_two_term_plain": "1.109978595150885999087565",
           "m_mu_pred_two_term_plain_MeV": "105.658376347",
           "m_mu_err_two_term_plain_ppb": "8.058",
-          "note": "q0 is not re-pinned (one-term pin stays default, #8554); the two-term m_mu is the linearised shift of a comparison pin. Because d(m_p^QCD/m_e)/dq > 0 while d(m_mu/m_e)/dq < 0 at q0, subtracting a repulsive M_p^QED > 0 from m_p^exp lowers m_p^QCD(q_new) and decreases q_new by -2.23e-7, shifting m_mu(q_new) toward CODATA."
+          "dq_two_term_minus_one_term_ppb": "11.1709409390",
+          "note": "Diagnostic only — the primary m_mu score stays at the one-term proton pin (owner ruling 2026-11-20: 'Revert to 1-term default'; at the two-term pin alpha_em^-1 form B is at 495 sigma, PRs #8562/#8565). The two-term comparison pin is the exact root of m_p^QCD + M_p^QED = m_p^exp and sits +11.1709 ppb ABOVE the one-term pin (M_p^QED > 0 lowers the required m_p^QCD, and d(m_p^QCD/m_e)/dq < 0 here). The two-term term is selection-scoped (plain weighting, m_e scale; covariant all-pairs projection gives b = 0). The derived-weighting and pre-registered-sign variants (PR #8591) use the linearised shift of the same comparison pin."
         },
         "one_term": {
           "pred_MeV": "105.658397811",
@@ -128,52 +129,52 @@
       {
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
-        "pred_MeV": "0.651856310060",
-        "codata_MeV": "0.782333410000",
-        "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "1.668e+8",
-        "sigma_exp_ppb": "779.7",
-        "target_100x_ppb": "7.797",
-        "miss_factor": "2.139e+7",
+        "pred_MeV": "0.325433928735",
+        "codata_MeV": "0.782333559310",
+        "sigma_exp_MeV": "3.80000e-7",
+        "err_ppb": "5.840e+8",
+        "sigma_exp_ppb": "485.7",
+        "target_100x_ppb": "4.857",
+        "miss_factor": "1.202e+8",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": null,
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. 🟧 SCORED ON THE RULED BASE, ZERO c_k RUNGS. The owner ruled 2026-09-08 that eps in Q_beta = |eps(Delta)|*E0 is the Markov trace at z_D = q^3/(q^2+1) (convention D, the two-row truncation -- D7), and authorised this re-score 2026-09-12 with the price measured first (qbeta/qbeta-zd-rescore-price.witness.json). This row is now |tr_M(Delta_S)(z_D)|*E0 evaluated from q0 alone -- no CODATA in the value -- and calibrated against qbeta-published-form-is-the-inadmissible-z1.witness.json (recorded cell -17.495929%). 🛑 IT IS A BASE: no c_k ladder has been derived on an admissible base (qou-cds1, blocked on the phase qou-pdix), so do NOT read this as convention D's accuracy. WHAT IT REPLACED, for comparison only: the laddered value on the RETIRED z = 1 cell was 0.782334410278 MeV (err 0.16776% base, ~1279 ppb after five rungs) -- z = 1 is the coordinate sum and is provably NOT an admissible root under D (roots: q, q**3/(q**2 + 1); ConventionDAdmissibleRoots.lean, sorry-free). On the retired base the ladder bought ~4.5 orders, so a z_D ladder could move this row a long way; a SECOND re-score is authorised once qou-pdix closes (bean qou-iagg). The ruled cell is also 3.4609x farther from CODATA than the augmentation (z = q), which is admissible but is the finer one-row truncation and is NOT convention D -- recorded because a referee will notice, not as an argument: ranking cells by residual is the selection-against-the-target the anti-fit directive forbids. 🛑 AND THE ELEMENT IS RULED IN 6 OF ITS 11 LETTERS, NOT IN ALL OF THEM: this row scores Delta = nuc11_interleaved (gamma-gamma-selected nucleon word), selected over nuc11 gen-grouped by the gamma-gamma word-selection ruling (qou-ales). But that word is ELEVEN letters and every gamma-gamma word has EVEN length (gammaGamma_length_even, sorry-free), so the ruling reaches only the 6-letter core and provably cannot reach the 3-letter quark block (odd) or the 2-letter gluon pair (both letters positive). 5 of 11 letters are still census-derived, which is what qou-ales asks not to use. The corpus carries FOUR candidate Delta, all undershooting at z_D (order-zero E_0) -- delta_S -43.157%, nuc9 -30.936%, nuc11 interleaved -17.496% (this row, -16.678% on the canonical tower E_0), nuc11 gen-grouped -15.451%. So the figure is scoped TWICE: no ladder, and 5 element letters with no derived constraint (qou-99qc (the Delta/eps fork, open); PR #7212 narrows the nucleon-word branch).",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. 🟧 SCORED ON THE OWNER-RULED T^3 WEIGHT SPLIT (D1 = A, 2026-11-20), ZERO c_k RUNGS. Q_beta = |eps_flavour(V^3)|*E0, eps_flavour = T^3 weight split of the z_D = q^3/(q^2+1) trace Tr(K^(x)3 .)/[2]^3 on W_n - W_p (global [2]^3 normalisation) = (q^2-1)P(q)/(q^4(q^2+1)^3), element V^3 = (sigma_0 sigma_1^-1)^3 (gamma-gamma + reading 3, PR #8564), tower E_0, proton q0 -- evaluated from q0 alone, no CODATA in the value, calibrated against probes/qbeta_flavour_weight_split (recorded -58.4021515%). Lean: QOU.QBeta.FlavourWeightSplit (exactly bar-odd). 🛑 SCOPE: this is a BASE with no ladder, and it is OUTSIDE the ladder cap (F_required ~ 2.40 > 1, LadderFactorBound), so no c_k ladder of the cos-form can close it. The value was NOT blind (np-splitting audit 2026-11-15 §18/§21 already recorded 0.3254 MeV). D2 (owner 2026-11-20): this number is Q_beta, not m_n - m_p. UNSCORED HISTORY: nuc11_interleaved (scored 2026-09-12 .. 2026-11-20, 0.6519 MeV) and delta_S (content blocks, 0.4491 MeV) -- see qbeta_ruled_base.unscored_history_cells. The retired z = 1 laddered value was 0.782334410278 MeV. eps itself stays open (qou-99qc (eps question stays open per rule 13a: 58 % miss, beyond the ladder cap, and a sign problem under mass ~ trace)).",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
-        "compute_truncation_ppb": "1.534e-51",
+        "compute_truncation_ppb": "3.073e-51",
         "compute_output_dps": 60,
         "two_term_qed_diagnostics": {
           "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; Delta_m = 0",
           "Delta_m_QED_scored_MeV": "0.0",
-          "pred_two_term_scored_MeV": "0.651856310060",
-          "err_two_term_scored_ppb": "1.668e+8",
+          "pred_two_term_scored_MeV": "0.325433928735",
+          "err_two_term_scored_ppb": "5.840e+8",
           "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/KnKp/Kp3/q are historical",
           "Delta_m_QED_conn_derived_adjacent_MeV": "-0.000127224300963902",
           "Delta_m_QED_conn_derived_adjacent_keV": "-0.127224300964",
-          "pred_two_term_derived_adjacent_MeV": "0.651729085759",
-          "err_two_term_derived_adjacent_ppb": "1.669e+8",
+          "pred_two_term_derived_adjacent_MeV": "0.325306704434",
+          "err_two_term_derived_adjacent_ppb": "5.842e+8",
           "alternatives_not_scored": {
             "preregistered_raw_adjacent_option3": {
               "Delta_m_MeV": "-0.0375433508915675",
-              "pred_MeV": "0.614312959168",
-              "err_ppb": "2.148e+8"
+              "pred_MeV": "0.287890577843",
+              "err_ppb": "6.320e+8"
             },
             "preregistered_raw_all_pairs": {
               "Delta_m_MeV": "-0.0565058627887970",
-              "pred_MeV": "0.595350447271",
-              "err_ppb": "2.390e+8"
+              "pred_MeV": "0.268928065946",
+              "err_ppb": "6.562e+8"
             },
             "connected_adjacent_derived_option1": {
               "Delta_m_MeV": "-0.000127224300963902",
-              "pred_MeV": "0.651729085759",
-              "err_ppb": "1.669e+8"
+              "pred_MeV": "0.325306704434",
+              "err_ppb": "5.842e+8"
             },
             "connected_adjacent_prereg_sign_option4": {
               "Delta_m_MeV": "0.000127224300963902",
-              "pred_MeV": "0.651983534361",
-              "err_ppb": "1.666e+8"
+              "pred_MeV": "0.325561153036",
+              "err_ppb": "5.839e+8"
             }
           },
           "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
@@ -182,14 +183,14 @@
           "Delta_m_QED_conn_KnKp_MeV": "-0.000344840456101401",
           "Delta_m_QED_conn_Kp3_MeV": "-0.000355899833473500",
           "Delta_m_QED_conn_q_MeV": "-0.000368175505495095",
-          "pred_two_term_plain_MeV": "0.651524614015",
-          "err_two_term_plain_ppb": "1.672e+8",
+          "pred_two_term_plain_MeV": "0.325102232690",
+          "err_two_term_plain_ppb": "5.844e+8",
           "primary_ruled_zD_score_untouched": true
         },
         "one_term": {
-          "pred_MeV": "0.651856310060",
-          "err_ppb": "1.668e+8",
-          "miss_factor": "2.139e+7",
+          "pred_MeV": "0.325433928735",
+          "err_ppb": "5.840e+8",
+          "miss_factor": "1.202e+8",
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
@@ -203,52 +204,52 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.434944688",
+        "pred_MeV": "939.108522307",
         "codata_MeV": "939.565421940",
         "sigma_exp_MeV": "4.80000e-7",
-        "err_ppb": "1.389e+5",
+        "err_ppb": "4.863e+5",
         "sigma_exp_ppb": "0.5109",
         "target_100x_ppb": "0.005109",
-        "miss_factor": "2.718e+7",
+        "miss_factor": "9.519e+7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
-        "note": "INHERITS THE RULED Q_beta BASE: this value is m_p(substrate) + Q_beta + m_e, and the Q_beta term is now |tr_M(Delta_S)(z_D)|*E0 at z_D = q^3/(q^2+1) -- the functional the owner ruled on 2026-09-08 (convention D, two-row truncation, D7), re-scored here on the 2026-09-12 authorisation. IT CARRIES ZERO c_k RUNGS: no ladder has been derived on an admissible base (qou-cds1, blocked on the phase qou-pdix), and on the retired z = 1 base the five rungs bought ~4.5 orders. So this row is NOT convention D's accuracy -- it is the ruled base before any ladder exists, and a second re-score is authorised once qou-pdix closes (bean qou-iagg). Price of the move: qbeta/qbeta-zd-rescore-price.witness.json.",
+        "note": "INHERITS THE RULED Q_beta BASE: this value is m_p(substrate) + Q_beta + m_e, and the Q_beta term is now |eps_flavour(V^3)|*E0, the T^3 weight split of the z_D = q^3/(q^2+1) trace on the gamma-gamma base V^3 (owner ruling 2026-11-20, D1 = A; z_D itself ruled 2026-09-08, D7). It replaced the nuc11_interleaved cell on 2026-11-20. IT CARRIES ZERO c_k RUNGS: no ladder has been derived on an admissible base (qou-cds1, blocked on the phase qou-pdix), and on the retired z = 1 base the five rungs bought ~4.5 orders. So this row is NOT convention D's accuracy -- it is the ruled base before any ladder exists, and a second re-score is authorised once qou-pdix closes (bean qou-iagg). Price of the move: qbeta/qbeta-zd-rescore-price.witness.json.",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
-        "compute_truncation_ppb": "1.064e-54",
+        "compute_truncation_ppb": "1.065e-54",
         "compute_output_dps": 60,
         "two_term_qed_diagnostics": {
           "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; Delta_m = 0",
           "Delta_m_QED_scored_MeV": "0.0",
-          "pred_two_term_scored_MeV": "939.434944688",
-          "err_two_term_scored_ppb": "1.389e+5",
+          "pred_two_term_scored_MeV": "939.108522307",
+          "err_two_term_scored_ppb": "4.863e+5",
           "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/KnKp/Kp3/q are historical",
           "Delta_m_QED_conn_derived_adjacent_MeV": "-0.000127224300963902",
           "Delta_m_QED_conn_derived_adjacent_keV": "-0.127224300964",
-          "pred_two_term_derived_adjacent_MeV": "939.434817464",
-          "err_two_term_derived_adjacent_ppb": "1.390e+5",
+          "pred_two_term_derived_adjacent_MeV": "939.108395083",
+          "err_two_term_derived_adjacent_ppb": "4.864e+5",
           "alternatives_not_scored": {
             "preregistered_raw_adjacent_option3": {
               "Delta_m_MeV": "-0.0375433508915675",
-              "pred_MeV": "939.397401337",
-              "err_ppb": "1.788e+5"
+              "pred_MeV": "939.070978956",
+              "err_ppb": "5.262e+5"
             },
             "preregistered_raw_all_pairs": {
               "Delta_m_MeV": "-0.0565058627887970",
-              "pred_MeV": "939.378438825",
-              "err_ppb": "1.990e+5"
+              "pred_MeV": "939.052016444",
+              "err_ppb": "5.464e+5"
             },
             "connected_adjacent_derived_option1": {
               "Delta_m_MeV": "-0.000127224300963902",
-              "pred_MeV": "939.434817464",
-              "err_ppb": "1.390e+5"
+              "pred_MeV": "939.108395083",
+              "err_ppb": "4.864e+5"
             },
             "connected_adjacent_prereg_sign_option4": {
               "Delta_m_MeV": "0.000127224300963902",
-              "pred_MeV": "939.435071912",
-              "err_ppb": "1.387e+5"
+              "pred_MeV": "939.108649531",
+              "err_ppb": "4.862e+5"
             }
           },
           "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
@@ -257,22 +258,22 @@
           "Delta_m_QED_conn_KnKp_MeV": "-0.000344840456101401",
           "Delta_m_QED_conn_Kp3_MeV": "-0.000355899833473500",
           "Delta_m_QED_conn_q_MeV": "-0.000368175505495095",
-          "pred_two_term_plain_MeV": "939.434612992",
-          "err_two_term_plain_ppb": "1.392e+5",
+          "pred_two_term_plain_MeV": "939.108190611",
+          "err_two_term_plain_ppb": "4.866e+5",
           "primary_ruled_zD_score_untouched": true,
-          "substrate_identity_m_n_1term_MeV": "939.565893068",
-          "substrate_identity_m_n_1term_err_ppb": "501.4",
-          "substrate_identity_m_n_2term_scored_MeV": "939.565893068",
-          "substrate_identity_m_n_2term_scored_err_ppb": "501.4",
+          "substrate_identity_m_n_1term_MeV": "939.565893092",
+          "substrate_identity_m_n_1term_err_ppb": "501.5",
+          "substrate_identity_m_n_2term_scored_MeV": "939.565893092",
+          "substrate_identity_m_n_2term_scored_err_ppb": "501.5",
           "substrate_identity_m_n_2term_derived_adjacent_err_ppb": "366.0",
-          "substrate_identity_m_n_2term_plain_MeV": "939.565561372",
+          "substrate_identity_m_n_2term_plain_MeV": "939.565561396",
           "substrate_identity_m_n_2term_plain_err_ppb": "148.4",
           "substrate_identity_residual_reduction_pct": "0.0"
         },
         "one_term": {
-          "pred_MeV": "939.434944688",
-          "err_ppb": "1.389e+5",
-          "miss_factor": "2.718e+7",
+          "pred_MeV": "939.108522307",
+          "err_ppb": "4.863e+5",
+          "miss_factor": "9.519e+7",
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
@@ -286,52 +287,52 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.16285526075",
+        "pred_MeV": "0.836432879425",
         "codata_MeV": "1.29333251000",
         "sigma_exp_MeV": "5.60803e-7",
-        "err_ppb": "1.009e+8",
+        "err_ppb": "3.533e+8",
         "sigma_exp_ppb": "433.6",
         "target_100x_ppb": "4.336",
-        "miss_factor": "2.327e+7",
+        "miss_factor": "8.147e+7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
-        "note": "INHERITS THE RULED Q_beta BASE: this value is m_p(substrate) + Q_beta + m_e, and the Q_beta term is now |tr_M(Delta_S)(z_D)|*E0 at z_D = q^3/(q^2+1) -- the functional the owner ruled on 2026-09-08 (convention D, two-row truncation, D7), re-scored here on the 2026-09-12 authorisation. IT CARRIES ZERO c_k RUNGS: no ladder has been derived on an admissible base (qou-cds1, blocked on the phase qou-pdix), and on the retired z = 1 base the five rungs bought ~4.5 orders. So this row is NOT convention D's accuracy -- it is the ruled base before any ladder exists, and a second re-score is authorised once qou-pdix closes (bean qou-iagg). Price of the move: qbeta/qbeta-zd-rescore-price.witness.json.",
+        "note": "INHERITS THE RULED Q_beta BASE: this value is m_p(substrate) + Q_beta + m_e, and the Q_beta term is now |eps_flavour(V^3)|*E0, the T^3 weight split of the z_D = q^3/(q^2+1) trace on the gamma-gamma base V^3 (owner ruling 2026-11-20, D1 = A; z_D itself ruled 2026-09-08, D7). It replaced the nuc11_interleaved cell on 2026-11-20. IT CARRIES ZERO c_k RUNGS: no ladder has been derived on an admissible base (qou-cds1, blocked on the phase qou-pdix), and on the retired z = 1 base the five rungs bought ~4.5 orders. So this row is NOT convention D's accuracy -- it is the ruled base before any ladder exists, and a second re-score is authorised once qou-pdix closes (bean qou-iagg). Price of the move: qbeta/qbeta-zd-rescore-price.witness.json.",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
-        "compute_truncation_ppb": "8.600e-52",
+        "compute_truncation_ppb": "1.196e-51",
         "compute_output_dps": 60,
         "two_term_qed_diagnostics": {
           "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; Delta_m = 0",
           "Delta_m_QED_scored_MeV": "0.0",
-          "pred_two_term_scored_MeV": "1.16285526075",
-          "err_two_term_scored_ppb": "1.009e+8",
+          "pred_two_term_scored_MeV": "0.836432879425",
+          "err_two_term_scored_ppb": "3.533e+8",
           "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/KnKp/Kp3/q are historical",
           "Delta_m_QED_conn_derived_adjacent_MeV": "-0.000127224300963902",
           "Delta_m_QED_conn_derived_adjacent_keV": "-0.127224300964",
-          "pred_two_term_derived_adjacent_MeV": "1.16272803645",
-          "err_two_term_derived_adjacent_ppb": "1.010e+8",
+          "pred_two_term_derived_adjacent_MeV": "0.836305655124",
+          "err_two_term_derived_adjacent_ppb": "3.534e+8",
           "alternatives_not_scored": {
             "preregistered_raw_adjacent_option3": {
               "Delta_m_MeV": "-0.0375433508915675",
-              "pred_MeV": "1.12531190986",
-              "err_ppb": "1.299e+8"
+              "pred_MeV": "0.798889528533",
+              "err_ppb": "3.823e+8"
             },
             "preregistered_raw_all_pairs": {
               "Delta_m_MeV": "-0.0565058627887970",
-              "pred_MeV": "1.10634939796",
-              "err_ppb": "1.446e+8"
+              "pred_MeV": "0.779927016636",
+              "err_ppb": "3.970e+8"
             },
             "connected_adjacent_derived_option1": {
               "Delta_m_MeV": "-0.000127224300963902",
-              "pred_MeV": "1.16272803645",
-              "err_ppb": "1.010e+8"
+              "pred_MeV": "0.836305655124",
+              "err_ppb": "3.534e+8"
             },
             "connected_adjacent_prereg_sign_option4": {
               "Delta_m_MeV": "0.000127224300963902",
-              "pred_MeV": "1.16298248505",
-              "err_ppb": "1.008e+8"
+              "pred_MeV": "0.836560103726",
+              "err_ppb": "3.532e+8"
             }
           },
           "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
@@ -340,14 +341,14 @@
           "Delta_m_QED_conn_KnKp_MeV": "-0.000344840456101401",
           "Delta_m_QED_conn_Kp3_MeV": "-0.000355899833473500",
           "Delta_m_QED_conn_q_MeV": "-0.000368175505495095",
-          "pred_two_term_plain_MeV": "1.16252356471",
-          "err_two_term_plain_ppb": "1.011e+8",
+          "pred_two_term_plain_MeV": "0.836101183380",
+          "err_two_term_plain_ppb": "3.535e+8",
           "primary_ruled_zD_score_untouched": true
         },
         "one_term": {
-          "pred_MeV": "1.16285526075",
-          "err_ppb": "1.009e+8",
-          "miss_factor": "2.327e+7",
+          "pred_MeV": "0.836432879425",
+          "err_ppb": "3.533e+8",
+          "miss_factor": "8.147e+7",
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
@@ -473,34 +474,57 @@
       "note": "STRONGER THAN THE CONVENTION-FRAME NOTE, AND SEPARATE FROM IT. That note says the c_k LADDER is convention-C. This says the BASE the ladder sits on uses a functional convention D provably excludes: the published closed form solves to z = 1, which is not a root of the (1^3) weight numerator. The best ADMISSIBLE cell is +12.47% (the augmentation on Delta_S) against the published 0.16776%, and the RULED cell is -43.157% -- the ruled cell is the FARTHEST of the three from CODATA, which is the anti-fit directive working as designed, not a defect in the ruling. WHICH FUNCTIONAL TO ADOPT IS NO LONGER OPEN: the owner ruled 2026-09-08 that eps is the Markov trace at z_D = q^3/(q^2+1) (convention D, two-row truncation, D7), and authorised the dashboard re-score on 2026-09-12 with its price measured first (qbeta/qbeta-zd-rescore-price.witness.json). The Q_beta row is scored on the ruled base from that date, so this field records the admissibility EVIDENCE rather than a live defect -- it becomes the live warning again only if the re-score's calibration against this witness fails. Do NOT relate any cell to the ~1279 ppb the retired row used to show: that was post-ladder, and no ladder has been derived on an admissible base (qou-cds1, blocked on the phase qou-pdix), so what the ruled base would become with one is UNKNOWN. Applies to the m_n and Delta_pn rows, which are derived from this value -- and unlike the convention note, it is written ONTO those rows rather than cross-referenced from this one."
     },
     "qbeta_ruled_base": {
-      "Q_beta_MeV": "0.651856310060337537759386764180716953854105083179665308181522",
+      "Q_beta_MeV": "0.325433928734691707290965643899700432308723967574530731531258",
       "markov_parameter": "z_D = q^3/(q^2+1)",
       "E0_form": "tower_summed (canonical, qbeta_e0.canonical)",
       "E0_MeV": "4.22748335562903055026805602658721115361518419806473567824333",
       "E0_tower_series_is_open": "qou-y3bm -- canonical by the 2026-09-03 full-tower ruling, series not derived",
-      "Q_beta_MeV_at_order_zero_E0": "0.645456915123079459561875817038373536781011944029498589105163",
+      "Q_beta_MeV_at_order_zero_E0": "0.322239083177755972151417132303108697054889325413393465816932",
       "E0_choice_moves_row_pct": "0.991452",
-      "err_pct": "-16.6779404115775219468913178358678362139608631593957108486967",
-      "err_pct_at_order_zero_E0": "-17.4959286063112836300988581021519281937592382729124305173458",
-      "recorded_err_pct_in_probe_witness": "-17.495929",
-      "calibration_compares": "err_pct_at_order_zero_E0 vs the recorded cell -- the cell was computed at order-zero E_0, so calibrating the published (tower-E_0) value against it would conflate the trace with the E_0 choice and fail by ~0.56 points",
+      "err_pct": "-58.4021515040570595088657665039287534294686822701052522144697",
+      "err_pct_at_order_zero_E0": "-58.8105253388384172969095109566265990872019101786071625378851",
+      "recorded_err_pct_in_probe_witness": "-58.4021515",
+      "calibration_compares": "Q_beta_MeV (tower E_0) and eps_flavour(V^3) vs the V^3 cell of probes/qbeta_flavour_weight_split/qbeta-flavour-weight-split.witness.json (same q0, same E_0 form)",
+      "functional": "eps_flavour(V^3) = T^3 weight split of the z_D trace Tr(K^{(x)3} .)/[2]^3 on W_n - W_p (global [2]^3 normalisation) = (q^2-1)P(q)/(q^4(q^2+1)^3)",
+      "eps_flavour_V3": "-0.0769805346013641724322626958124447513637075921354867324288828",
+      "ruling_D1": "owner 2026-11-20 (Carl), D1 = A: adopt the T^3 weight split as the SCORED Q_beta (PR #8586)",
+      "ruling_D2": "owner 2026-11-20, D2 = Q_beta: |eps_flavour(V^3)|*E0 is Q_beta, not m_n - m_p; the m_n - m_p sign (neutron sector smaller under mass ~ trace) stays OPEN",
+      "unscored_history_cells": {
+        "nuc11_interleaved (scored 2026-09-12 .. 2026-11-20)": {
+          "Q_beta_MeV": "0.651856310060337537759386764180716953854105083179665308181522",
+          "err_pct": "-16.6779563137672837153512235184192390293198806558473583891470",
+          "status": "unscored history (superseded by owner D1 = A)"
+        },
+        "delta_S (content blocks until 2026-11-20)": {
+          "Q_beta_MeV": "0.449109399232412464983750679223405660884816350858914282123437",
+          "err_pct": "-42.5936170207863117184535547259309528692732066791396403535128",
+          "status": "unscored history (superseded by owner D1 = A)"
+        }
+      },
       "calibrated_against_probe_witness": true,
       "ck_rungs_applied": 0,
       "ladder_on_admissible_base_exists": false,
       "ruling": "owner 2026-09-08 (eps := Markov trace at z_D, D7); re-score authorised 2026-09-12",
       "price_witness": "qbeta/qbeta-zd-rescore-price.witness.json",
       "second_rescore_due_after": "qou-pdix (phase) -> qou-cds1 (ladder); bean qou-iagg",
-      "element_scored": "nuc11_interleaved (gamma-gamma-selected nucleon word)",
-      "element_is_ruled": false,
-      "content_blocks_element": "delta_S (0.4491 MeV, tower E0; mass-comparison-table.md, neutron-qvalue-symbolic.md)",
-      "element_conflict_open": "qou-99qc",
-      "element_ruled_status": "partial",
+      "element_scored": "V^3 = (sigma_0 sigma_1^-1)^3 (gamma-gamma + reading-3 cost-minimal word, PR #8564)",
+      "element_is_ruled": true,
+      "element_is_ruled_since": "2026-11-20 (owner D1 = A, PR #8586); was False for nuc11_interleaved 2026-10-11 .. 2026-11-20",
+      "content_blocks_element": "V^3 since 2026-11-20 (were delta_S 0.4491 MeV, tower E0; mass-comparison-table.md, neutron-qvalue-symbolic.md)",
+      "element_conflict_open": null,
+      "element_conflict_resolved": "resolved by owner ruling 2026-11-20 (D1 = A): scored element V^3 with eps = T^3 weight split; nuc11_interleaved and delta_S kept as unscored history cells",
+      "element_ruled_status": "ruled (V^3, owner D1 = A 2026-11-20)",
+      "element_ruled_status_history": "partial",
       "element_ruled_status_rationale": "6/11 letters (the core (sigma_0 sigma_1^-1)^3) are gamma-gamma-reachable, and even those are conditional on the provisional confinement reading 3 and on excluding the empty word (frobeniusSelected_borromean / frobeniusSelected_nil); the other 5 letters (3-letter quark template + sigma_0 sigma_0 gluon pair) are chosen -- the gluon pair's 'ILP-derived' citation is dead and it fails reading 3 (qou-99qc). Source: word-provenance audit 2026-10-11; False set at owner request 2026-10-11",
       "element_ruled_letters": 6,
-      "element_census_letters": 5,
-      "element_ruled_scope": "the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma vertices. The 3-letter quark block is odd and the 2-letter gluon pair has both letters positive, so neither is gamma-gamma reachable -- gammaGamma_length_even, sorry-free. qou-ales says 'shouldn't use census' and 5 of 11 letters are still census-derived; those 5 have no derived constraint and are where a closing Delta would have to come from (bean qou-99qc, 2026-09-12)",
+      "element_census_letters": 0,
+      "element_letters_history_nuc11": {
+        "ruled": 6,
+        "census": 5
+      },
+      "element_ruled_scope": "V^3 = (sigma_0 sigma_1^-1)^3: all 6 letters are three gamma-gamma vertices, selected by confinement reading 3 as the cost-minimal survivor (PR #8564). HISTORY (nuc11_interleaved, scored until 2026-11-20): the 6-letter core (sigma_0, sigma_1)^3 = three gamma-gamma vertices. The 3-letter quark block is odd and the 2-letter gluon pair has both letters positive, so neither is gamma-gamma reachable -- gammaGamma_length_even, sorry-free. qou-ales says 'shouldn't use census' and 5 of 11 letters are still census-derived; those 5 have no derived constraint and are where a closing Delta would have to come from (bean qou-99qc, 2026-09-12)",
       "element_authority": "owner gamma-gamma ruling qou-ales 2026-09-08 + GammaGammaWordSelection.vertex on main (a gamma-gamma word's 2nd letter is negative, which excludes the gen-grouped core)",
-      "element_superseded": "delta_S (short NF) -- census-derived, inadmissible under the gamma-gamma ruling; its cell was -43.157175%",
+      "element_superseded": "nuc11_interleaved (scored 2026-09-12 .. 2026-11-20) and delta_S (short NF, census-derived; cell -43.157175% at order-zero E_0) -- both unscored history since owner D1 = A 2026-11-20",
       "Q_beta_MeV_on_superseded_delta_S": "0.449109399232412464983750679223405660884816350858914282123437",
       "element_ordering_proof_open_in": "PR #7212 (Lean lemma for the 2nd-letter exclusion; corroboration, not the authority)",
       "element_candidates_level2_pct": {
@@ -509,16 +533,16 @@
         "nuc11 interleaved (gamma-gamma-selected per PR #7212, OPEN)": "-17.496",
         "nuc11 gen-grouped": "-15.451"
       },
-      "element_tracked_by": "qou-99qc (the Delta/eps fork, open); PR #7212 narrows the nucleon-word branch"
+      "element_tracked_by": "qou-99qc (eps question stays open per rule 13a: 58 % miss, beyond the ladder cap, and a sign problem under mass ~ trace)"
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "c896a40dc008c9efff240954a425ff2efe43cb34e839d210ff4a93a6c57684db",
-        "size_bytes": 12078,
-        "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
-        "scriptCommitSha": "2ceff396f35f5d3184fd8aa883672347bb49ab05",
-        "computedAt": "2026-11-20T16:00:10.951584+00:00"
+        "sha256": "5f4ef497a9efed547416fdfb12567ff02e35b10b1eb0c0e02a63a2c697a39f81",
+        "size_bytes": 12083,
+        "commitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
+        "scriptCommitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
+        "computedAt": "2026-11-20T16:01:41.475202+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
@@ -538,19 +562,19 @@
       },
       {
         "path": "codata-2022-validation-masses.witness.json",
-        "sha256": "f34a799ef9f673449532d859dee6c4f026f6e769284a918e69dceb1a1ef2bf2f",
-        "size_bytes": 4821,
+        "sha256": "7b7f7c217bd9e874b1ae3b04e5b57e045788df3af00735f2183e50da08b771a2",
+        "size_bytes": 4824,
         "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
         "scriptCommitSha": null,
         "computedAt": "2026-05-10T07:21:00+00:00"
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "30b2e42b3cf4b32de981e78f131aded9c1f946499ef91d3a52cd3e359b0a8cf7",
-        "size_bytes": 2720,
-        "commitSha": "9455db71d5fc8f322e8f199ad62dead1427cca4b",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-03T01:10:37.092327+00:00"
+        "sha256": "0b754e3a300e7a1640eef296a2f7e565fc1f5773fa328af29f5247a5e154e27d",
+        "size_bytes": 4675,
+        "commitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
+        "scriptCommitSha": "585d753f1d883ae7b3a9b70fc3c447985ded526c",
+        "computedAt": "2026-11-20T17:25:27.522062+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
