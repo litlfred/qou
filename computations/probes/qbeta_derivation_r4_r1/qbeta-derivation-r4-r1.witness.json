@@ -1,0 +1,301 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T17:41:57.035266+00:00",
+  "commitSha": "3e41aab22b76ca6df0159760021573ac7fd89b8e",
+  "assertions": [
+    {
+      "name": "R1.1.flip_functional",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "λ_A on (1, σ0, σ1, L-, L+, e-) = [0, 0, 1, q, q, q**2]"
+    },
+    {
+      "name": "R1.1.nf_reconstructs_pair",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Σ NF_w·ρ(w) = ρ(γ(φ)γ(ψ)) in the (3,1) of H4"
+    },
+    {
+      "name": "R1.1.flip_pair",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lu·Γ·Ld = (c_σ1 + q(c_L- + c_L+) + q² c_e-)·eS"
+    },
+    {
+      "name": "R1.4.pair_is_V3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "γ(0,0,qh)γ(0,0,−q⁻¹h) = V³ in the (3,1) of H4"
+    },
+    {
+      "name": "R1.4.e_minus_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "e⁻ coordinate φ01ψ0 + φ1ψ01 = 0 at derived weights"
+    },
+    {
+      "name": "R1.4.flip_V3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "flip coefficient of V³ = (q - 1)**3*(q + 1)**3/q = q²h³"
+    },
+    {
+      "name": "R1.4.flip_V3_back",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Ld·V³·Lu = q²h³·fS"
+    },
+    {
+      "name": "R1.5.roundTrip_V3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tr(Lu V³ Ld V³) = (q²h³)²·y_D = (q - 1)**6*(q + 1)**6*(q**4 + 1)/(q**2*(q**2 + 1)**2)"
+    },
+    {
+      "name": "R1.2.pair_no_flip_B",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Ja·Γ·Jb = 0 (no H3 word flips the J4 label)"
+    },
+    {
+      "name": "R1.2.Ja_photon",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Ja·γ(φ) = t(φ)·Ja"
+    },
+    {
+      "name": "R1.2.pair_flip_B",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Ja·Γ·V4·Jb = t(φ)t(ψ)q·eJ"
+    },
+    {
+      "name": "R1.2.t_derived",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "t(φ)t(ψ) = 1 at derived weights"
+    },
+    {
+      "name": "R1.2.roundTrip_B_V3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "label-B round trip through V³ and V4 = cJ/2 = (q**2 + 1)**2*(q**4 + 1)/((q**2 - q + 1)**2*(q**2 + q + 1)**2)"
+    },
+    {
+      "name": "R1.3.weak_left",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Lu·(σ0 − h·P_L) = q⁻¹·Lu"
+    },
+    {
+      "name": "R4.0.equal_plain_traces",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "tr_Wp(V³) = tr_Wn(V³) = -(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/q**6"
+    },
+    {
+      "name": "R4.0.full_trace_is_pin_trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "full z_D trace of V³ = ±(4+h²−3h⁴−h⁶)/(h²+4), the closed form that pins q0"
+    },
+    {
+      "name": "R4.1.sector_ratio",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "τ_n = q⁻²·τ_p"
+    },
+    {
+      "name": "R4.2.dimnorm_equal",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "dimension-normalised sectors equal"
+    },
+    {
+      "name": "R4.3.full_flip_invariant",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "full trace u↔d invariant"
+    },
+    {
+      "name": "P0.pinned_mp_roundtrip",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "mass channel with the full trace returns m_p: 938.27208942732424736"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 49164,
+  "computation": "qbeta-derivation-r4-r1",
+  "scriptFile": "qbeta_derivation_r4_r1_probe.py",
+  "scriptHash": "c8f5e2c8db17",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_derivation_r4_r1/qbeta_derivation_r4_r1_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_derivation_r4_r1/qbeta_derivation_r4_r1_probe.py"
+  },
+  "description": "qou-99qc: Q_beta by energy conservation in the mass channel (R4) and as a four-strand gamma-gamma process (R1). Pre-registered at 3e41aab22b. Not wired to any scorecard.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 70,
+    "photon": "gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1 (ruled)"
+  },
+  "data": {
+    "exact": {
+      "R1_flip_coefficient": "-(-phi0*psi01*q**3 - phi0*psi1*q**2 - phi01*psi0*q**3 + phi01*psi01*q**4 - 2*phi01*psi01*q**2 - phi01*q**2 - phi1*psi0*q**2 - phi1*psi01*q - phi1*psi1*q**2 + phi1*psi1 - phi1*q - psi01*q**2 - psi1*q)/q",
+      "R1_flip_functional": "lambda_A(w) = q^(#sigma0) on words containing sigma1, 0 otherwise",
+      "R1_V3_flip_by_channel": {
+        "sigma1": "(q - 1)**3*(q + 1)**3/q**3",
+        "L-": "-(q - 1)**2*(q + 1)**2/q",
+        "L+": "(q - 1)**2*(q + 1)**2*(q**4 - q**2 + 1)/q**3",
+        "e-": "0"
+      },
+      "R1_roundtrips_labelA": {
+        "bare_letter_sigma1 (ruled y_D)": "(q**4 + 1)/(q**2 + 1)**2",
+        "V3_then_V3": "(q - 1)**6*(q + 1)**6*(q**4 + 1)/(q**2*(q**2 + 1)**2)",
+        "V3_then_V^-3": "-(q - 1)**6*(q + 1)**6*(q**4 + 1)/(q**6*(q**2 + 1)**2)"
+      },
+      "R1_e_minus_channel_roundtrip_symbolic": "q**4*(q**4 + 1)*(phi01*psi0 + phi1*psi01)**2/(q**2 + 1)**2",
+      "R1_roundtrip_labelB": "(q**2 + 1)**2*(q**4 + 1)/((q**2 - q + 1)**2*(q**2 + q + 1)**2)",
+      "R1_labelC": "no Hecke element changes T3 (Schur-Weyl, bean qou-0whz C2): amplitude identically 0",
+      "R4_sector_traces": {
+        "tau_p": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**2*(q**2 + 1)**3)",
+        "tau_n": "-(q**12 - 3*q**10 + 3*q**8 - 5*q**6 + 3*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**3)",
+        "tau_full": "-(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**2)"
+      },
+      "R4_partial_characters_V3": {
+        "Lu": "-(q**10 - 3*q**8 + 4*q**6 - 5*q**4 + 2*q**2 - 1)/(q**2*(q**2 + 1))",
+        "Ld": "-(q**6 - 3*q**4 + 2*q**2 - 2)/(q**2 + 1)",
+        "Ja": "1",
+        "Jb": "-(q**10 - 2*q**8 + q**6 - 2*q**4 + q**2 - 1)/(q**2*(q**2 + 1))"
+      }
+    },
+    "table": {
+      "R4.1_T3_sectors_[2]^3": {
+        "rel_diff": "-0.188346245634241941867785177858",
+        "Q_beta": "-73.3164119208487529677851807711",
+        "m_p_model": "380.418924318109618671065177961",
+        "Q_beta_vs_codata_pct": "-9471.50466135814589986082627868"
+      },
+      "R4.2_T3_sectors_dimnorm": {
+        "rel_diff": "0.0",
+        "Q_beta": "-0.51099895069",
+        "Q_beta_vs_codata_pct": "-165.317286032906260979836359125"
+      },
+      "R4.3_full_trace_flip": {
+        "rel_diff": "0.0",
+        "Q_beta": "-0.51099895069",
+        "m_p_model": "938.27208942732424736394",
+        "Q_beta_vs_codata_pct": "-165.317286032906260979836359125"
+      },
+      "R4.4_labelA_lines": {
+        "rel_diff": "0.00591057691023261388480838612536",
+        "Q_beta": "5.01505492592588058376037490884",
+        "Q_beta_vs_codata_pct": "541.038062064745926165561790258"
+      },
+      "R4.5_labelB_lines": {
+        "rel_diff": "-0.0170394993857272895983921334246",
+        "Q_beta": "-16.6263428620670146019023578732",
+        "Q_beta_vs_codata_pct": "-2225.22470141356548247836682602"
+      },
+      "R1.A_bare_letter (ruled y_D)": {
+        "y3": "0.50540422650393080318755870324",
+        "Q_beta_DeltaS_E0_order_zero": "0.444700408521780409100962213025",
+        "Q_beta_DeltaS_E0_tower": "0.449109399232412464983750679223",
+        "Q_beta_massScale_minus_me": "477.482088756839000223388167592",
+        "Q_beta_DeltaS_E0_order_zero_vs_codata_pct": "-43.1571752874524559014371804337",
+        "Q_beta_DeltaS_E0_tower_vs_codata_pct": "-42.5936060140245597478725576908",
+        "Q_beta_massScale_minus_me_vs_codata_pct": "60933.0689031888815352256846841"
+      },
+      "R1.A_V3_process": {
+        "y3": "0.0000640511108710063521289290895696",
+        "Q_beta_DeltaS_E0_order_zero": "0.0000563579678936239424506091447201",
+        "Q_beta_DeltaS_E0_tower": "0.0000569167300448417944292718095672",
+        "Q_beta_massScale_minus_me": "-0.450421720325086369191128102359",
+        "Q_beta_DeltaS_E0_order_zero_vs_codata_pct": "-99.9927961701209551604582477773",
+        "Q_beta_DeltaS_E0_tower_vs_codata_pct": "-99.9927247476117578775130998873",
+        "Q_beta_massScale_minus_me_vs_codata_pct": "-157.574138463848543115611418137"
+      },
+      "R1.B_V3_through_V4": {
+        "y3": "0.892056986167128402811723239245",
+        "Q_beta_DeltaS_E0_order_zero": "0.784912522234605569643099908689",
+        "Q_beta_DeltaS_E0_tower": "0.792694552457367681570270737539",
+        "Q_beta_massScale_minus_me": "843.164322442337308029201677043",
+        "Q_beta_DeltaS_E0_order_zero_vs_codata_pct": "0.329669280886302386244171158921",
+        "Q_beta_DeltaS_E0_tower_vs_codata_pct": "1.32438970700560654166737205777",
+        "Q_beta_massScale_minus_me_vs_codata_pct": "107675.573995489821737011263143"
+      }
+    },
+    "scales_MeV": {
+      "S_mass_channel": "945.763930416619474690974853077",
+      "E0_order_zero": "4.18598136329447589694506215876",
+      "E0_tower": "4.22748335562903055026805602659"
+    },
+    "comparison": {
+      "Q_beta_codata_MeV": "0.78233340931",
+      "diag_mn_minus_mp_over_mp": "0.0013784193034940419074"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
