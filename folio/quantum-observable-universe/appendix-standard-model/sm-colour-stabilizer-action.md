@@ -1,4 +1,4 @@
-We conjecture that the colour algebra acts faithfully and linearly on the framework's state space: writing $\mathfrak{g}$ for the colour algebra — the intended realisation is the stabilizer $\mathfrak{su}(3) = \ker(\mathrm{ev}_e) \subset \mathrm{Der}(\mathbb{O})$ of a unit imaginary octonion, the Günaydin–Gürsey colour subalgebra, carried here with the proved gate $\dim \mathfrak{su}(3) = 8 \iff \mathrm{rank}(\mathrm{ev}_e) = 6$ — there is an injective $\mathbb{Q}$-linear map
+The conjecture is that the colour algebra acts faithfully and linearly on the framework's state space: writing $\mathfrak{g}$ for the colour algebra — the intended realisation is the stabilizer $\mathfrak{su}(3) = \ker(\mathrm{ev}_e) \subset \mathrm{Der}(\mathbb{O})$ of a unit imaginary octonion, the Günaydin–Gürsey colour subalgebra, carried here with the proved gate $\dim \mathfrak{su}(3) = 8 \iff \mathrm{rank}(\mathrm{ev}_e) = 6$ — there is an injective $\mathbb{Q}$-linear map
 
 $$
   \Phi \colon \mathfrak{g} \longrightarrow \mathrm{End}(V)
