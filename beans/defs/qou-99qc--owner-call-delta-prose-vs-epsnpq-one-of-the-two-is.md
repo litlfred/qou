@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-11-20T14:40:21Z
+updated_at: 2026-11-20T14:44:09Z
 parent: qou-10v9
 ---
 
@@ -4073,3 +4073,5 @@ element_conflict_open (PR #8549). Not resolved — still the owner's call. γγ+
 
 **2026-11-20T14:40:21Z — OWNER RULING (Carl, session 01VQDpPd): record Q_β = 0 as the γγ base's scope-(a) prediction; derive flavour on the U_q / weight side.**
 PR #8564: under γγ words + reading 3 (whole word, every tower level) p and n share the survivor set {V³,V⁶,V⁹}; minimal cost p = n = V³ ⇒ Q_β = 0 on the ruled z_D base (Lean qbeta_delta_vanishes_of_frobeniusSelected, frobeniusSelected_ten_unique). Scope (a): the grammar carries no flavour index; the ruling is not excluded. Assigning different survivors to p and n by Q_β is a fit (not adopted). Next: T³-graded split of the trace on V³ (follow-up task opened). Scorecard unchanged. Bean stays open.
+
+**2026-11-20T14:44:09Z — CORRECTION to the entry above (owner, 15:43).** The "Q_β = 0" result of PR #8564 is for the OLD γγ reading only (GammaGammaWordSelection.GammaGammaWord = products of bare σᵢσᵢ₊₁⁻¹; no colour weights, no chirality). It is NOT the prediction of the canonical four-term coloured photon def:photon γ(φ)=1+φ₀σ₀+φ₁σ₁+φ₀₁σ₀σ₁ (#8367), whose two-photon product carries independent chiral L₊/L₋ coefficients, nor of the bar-odd (sinh) channel where Q_β lives. "The grammar cannot separate n from p" was mis-stated. Selection is being redone with the four-term chiral photon + odd channel (branch claude/qbeta-flavour-weight-split-2026-11-20).
