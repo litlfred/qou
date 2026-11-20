@@ -20,6 +20,11 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-20",
+      body: "Under the Hecke reading (algebra $H_n(R, q)$ with $n$ the nucleon count, Coxeter-length filtration, Hochschild cohomology) the vanishing is proved for every $n$: `cor:hecke-length-limit-page-vanishing`. That reading does not single out the magic numbers, so this conjecture stays open until a reading is named under which some non-magic $n$ fails (owner, option 1; bean `qou-6qbv`; `docs/audits/2026-11-20-homological-shell-condensation-well-posedness.md`).",
+    },
+    {
       kind: "caveat",
       date: "2026-11-20",
       body: "**Citation mismatch (bean `qou-6qbv`).** The Setup cites `prop:gb-spectral-sequence` for a spectral sequence on the Białynicki-Birula filtration of the jet algebra $A_n$. That proposition is about the Hochschild complex of $H_n(R, q)$ filtered by Coxeter length, a different filtration on a different algebra, so it does not supply the sequence used here. This block's own $E_2$ statement is about its BB sequence and is not affected by the $H_3$ result ($d_2, d_4 \\neq 0$ for the length-filtered Hochschild sequence). The block was typed `proposition` while its statement is a conjecture; retyped to `conj:` on owner instruction the same day.",
