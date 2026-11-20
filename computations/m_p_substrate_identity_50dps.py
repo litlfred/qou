@@ -627,10 +627,13 @@ def main():
             "Tier A non-breaking diagnostic block (bean qou-7ph7): evaluates the "
             "connected 4th-order Borromean V³ = (σ₁σ₂⁻¹)³ quark charge traces proved "
             "sorry-free in QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean. "
-            "M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| = +0.220077 keV closes 96.2% of "
-            "the 211 ppb μ–p tension (to +8.06 ppb = +0.36σ), and Δm_QED^conn = "
-            "-m_e·Δtr_bar_conn(V³) = -0.331696 keV reduces the Convention-D Q_β "
-            "residual from +602 ppm to +178 ppm (+148 ppb on m_n)."
+            "With the m_e scale, M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| = +0.220077 keV "
+            "and Δm_QED^conn = -m_e·Δtr_bar_conn(V³) = -0.331696 keV. NOT DERIVED "
+            "PREDICTIONS (bean qou-99qc, 2026-11-19): the word dependence comes only "
+            "from dropping quark pair 1-3 (summed over all pairs the insertion is "
+            "word-independent, trace_QPair_diff_word), and the scale/weighting were "
+            "chosen against the μ–p and Q_β targets. Records of selected combinations; "
+            "they do not close either residual."
         ),
     })
 
@@ -679,11 +682,13 @@ def main():
         tolerance=mpf("1"),
         unit="sigma",
         source=(
-            "Zero-parameter connected 4th-order Borromean proton QED self-energy "
-            "M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| (+0.220077 keV, "
-            "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3) "
-            "brings the μ–p mass-prediction residual from 9.5σ (211.2 ppb) inside 1σ "
-            "(+8.06 ppb = +0.36σ)."
+            "RECORD OF A SELECTED COMBINATION, not a zero-parameter prediction "
+            "(bean qou-99qc, 2026-11-19): connected 4th-order Borromean proton QED "
+            "term M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| (+0.220077 keV, "
+            "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3), "
+            "with the m_e scale and the adjacent-pair restriction both chosen. "
+            "Checks that the recorded combination reproduces +8.06 ppb = +0.36σ; it "
+            "is not evidence that the μ–p tension (9.5σ on the ratio) is closed."
         ),
     )
 
