@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-12T19:04:21Z
-updated_at: 2026-11-20T14:39:28Z
+updated_at: 2026-11-20T14:50:15Z
 ---
 
 **What is wrong.** `E₀`, the Q_β energy scale, had **two live forms** in
@@ -147,3 +147,6 @@ Audit doc §6c.
 ## 2026-11-20T14:39:28Z W13 — owner asked "if derived+proved, update compute; if not, work on it"
 
 REOPENED (rule 13a: the open premise is unclosed). Tower E0 is canonical BY RULING (2026-09-12, 2026-11-20) but the series is conditional: towerSum_of_const assumes a level-independent residual; the decay proof gives lambda^n, equal only at lambda_1 = 1 (L_q = sqrt(hbar_q)), argued in TowerGeometricSum.lean prose only; the uniform bound is a structure field (DeltaMaxUniformBound.lean:93 projects b.per_level_bound). Still on order-zero E0: two_term_qed_isotope_and_nucleon_compute.py:166 (b_pp/pn/nn, b_sym, c_em at 415-506), qbeta/qbeta_counit_substrate_consistency.py:110. Open: prove lambda_1 = 1 or derive L_q.
+
+
+W13 progress (PR #8580): the prose argument "Delta_q z^k = -[k]_q^2 z^k, no length occurs" is now a sorry-free theorem (TowerFibreLaplacian.lean, generic Field). lambda_1 = 1 reduces to ONE placement premise (P): the E0 tower residual is the iterate of the FIBRE operator, not its archimedean image [k]_q^2 hbar_q/L_q^2. Still open: (P); that E0s residual is this iterate at all (second Delta^(n) definition, free - atom binding); the uniform bound (structure field per_level_bound). Stays todo.
