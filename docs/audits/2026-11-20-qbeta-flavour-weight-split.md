@@ -132,7 +132,17 @@ were all fixed by the corpus before any of these numbers.
 
 ## 6. Owner decisions
 
-**D1. Adopt ε_flavour as the ruled ε for Q_β on the γγ base?**
+> **RULED 2026-11-20 (owner, Carl, 18:25–18:27).** **D1 = A**: adopt ε_flavour (global [2]³
+> normalisation) as the **scored** Q_β, 0.325433929 MeV (−58.402 %), element V³, tower E₀, proton
+> q₀. This overrules the recommendation below (diagnostic row only). The scorecard's conflicting
+> cells — 0.6519 MeV (nuc11_interleaved, scored until this date) and 0.4491 MeV (Δ_S, quoted by
+> `mass-comparison-table.md` and `neutron-qvalue-symbolic.md`) — are kept as labelled unscored
+> history; `element_conflict_open` is resolved. **D2 = Q_β**: the number is Q_β, not m_n − m_p;
+> the implied m_n − m_p = 0.8364 MeV (−35.3 %), appended to the np-splitting audit as §23. The
+> sign of the mass ordering stays open. Applied in this PR by the merge coordinator; the
+> scorecard row moves are listed in the PR body.
+
+**D1. Adopt ε_flavour as the ruled ε for Q_β on the γγ base?** — **RULED: A (adopt, scored).**
 - *Adopt (global [2]³ normalisation).* Means: Q_β is scored as 0.3254 MeV (−58.4 %) on the
   scorecard. Costs: one witness re-score (`per-observable-100x-status`), the content blocks that
   quote the ruled base. Risks: the L2 Q_β row moves from the conflicting 0.449 / 0.652 cells to
@@ -146,7 +156,7 @@ were all fixed by the corpus before any of these numbers.
   the first derived non-zero Q_β on an SDP-admissible element. But it is 58 % short and outside
   the ladder cap, so scoring it would display a gap that no admissible ladder can close.
 
-**D2. Is |ε_flavour(V³)|·E₀ Q_β or m_n − m_p?**
+**D2. Is |ε_flavour(V³)|·E₀ Q_β or m_n − m_p?** — **RULED: Q_β.**
 - *Q_β (this ruling):* then m_n − m_p = 0.836 MeV (−35.3 %), and np-splitting §18's D1 row is
   wrong by m_e. Costs: one append to that audit.
 - *m_n − m_p (np-splitting §18):* then Q_β = −0.186 MeV, which is negative. That is impossible
