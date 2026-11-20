@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - qa-checkers
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-20T17:50:00Z
 parent: qou-d4kh
 ---
 
@@ -34,3 +34,6 @@ Branch `claude/voice-leak-checkers-2026-11-20`, PR #8538. Built `folio/pipeline/
 - The scanner this bean cites (`computations/audits/monograph_lean_and_voice_leak_audit.py` + witness) and `scripts/claude-redteam-and-qa.ts` do NOT exist on main or any branch found; counts above are not reproducible. Live counts (main 917b69399): L1 666 / L2 3,250 / L3 1,236 / L4 68 failing.
 - `qa-checkers-voice.ts` is platform code (litlfred/folio-assistant); not editable from qou. Its gap is measured (catches 0.9–1.4 % of L1–L3 lines, 0 % of L4); patch not made.
 - Item 3 (LLM gate) not done: the script does not exist.
+
+## 2026-11-20 (late) — W14
+Checker shipped: voice-leak-audit.ts (#8538), 2a/3a/1b exemptions (#8610); W14b's voice-leak-ratchet.ts is the merge gate (#8585). Item 3 (LLM qa-prose gate) still blocked: scripts/claude-redteam-and-qa.ts does not exist. Platform qa-checkers-voice.ts not patched (other repo).

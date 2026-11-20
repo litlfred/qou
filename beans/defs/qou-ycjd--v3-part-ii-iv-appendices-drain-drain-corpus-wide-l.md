@@ -9,7 +9,7 @@ tags:
     - fourth-wall-lean
     - exposition
 created_at: 2026-11-19T08:35:24Z
-updated_at: 2026-11-20T17:45:00Z
+updated_at: 2026-11-20T17:50:00Z
 parent: qou-d4kh
 ---
 
@@ -78,3 +78,5 @@ All chapters except Ch1-2 (in #8563) hand-drained. Paper-wide L1 672 -> 107, L2 
 ## 2026-11-20 — CORRECTION (W14): option 4 IS approved
 W14's earlier notes say "1, 2, 3, 5 (not 4)". Wrong: W14's AskUserQuestion omitted option 4 (4-option limit), so the owner never declined it. The dispatcher's record (#8526 comment 7041693067: "2, 1, 5 and 3+4, all of them") is authoritative. Proposed split (#8526): W14b ports #8577 L4 + #8588 L3 and takes option 4 across remaining chapters on top of #8569; W14 handles the second [W14 ask] groups.
 
+## 2026-11-20 (late) — W14 final state
+Merged on main: #8577/#8584/#8585 (W14b: Part I, link text, ratchet), #8610 (W14: option 3 across all chapters, Formalisation-notes appendix 1b, 3a, 4a, 2a/3a/1b exemptions), #8607 (W14b: option 4 first person; L3 ~1,100 -> 7 quotations). Open: #8621 (W14: L1/L2 that four blocks gained after the ratchet baseline; Bengali 'five' fix). Remaining after #8621: 4 L4 Ch 2 forward links on main (sym2-adjoint-traceless-spin-two, g-action-on-substrate x3, higgs-vacuum-residual-graviton) carrying their blocks' dependencies — owner decision; introduction/authors-note.md kept on purpose. W14 duplicated option 4 briefly (not pushed).
