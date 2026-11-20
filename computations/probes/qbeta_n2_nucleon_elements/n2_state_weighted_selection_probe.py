@@ -320,7 +320,16 @@ for wname in union:
     while num.eval(1) == 0:
         num = sp.Poly(sp.quo(num.as_expr(), q - 1), q)
         order += 1
-    amp_rows.append({"word": wname, "amplitude_P_from_N": A, "frob_sq": fro,
+    iso = {}
+    for lp in ("(3)", "(2,1)"):
+        for ln in ("(3)", "(2,1)"):
+            B = (PRJ["P"][lp] * A * PRJ["N"][ln]).applyfunc(sp.cancel)
+            f2 = sp.factor(sp.cancel((B.T * B).trace()))
+            iso[f"{lp}<-{ln}"] = {"frob_sq": f2, "q0": at_q0(f2) if f2 != 0 else mp.mpf(0),
+                                 "at_q1": sp.simplify(f2.subs(q, 1))}
+    print(f"    isotypic blocks of <P|{wname}|N>: "
+          f"{ {k: (str(v['frob_sq']), mp.nstr(v['q0'], 12)) for k, v in iso.items()} }")
+    amp_rows.append({"iso": iso, "word": wname, "amplitude_P_from_N": A, "frob_sq": fro,
                      "frob_sq_q0": at_q0(fro), "vanishing_order_q_to_1_of_frob_sq": order})
     print(f"  <P|{wname}|N> = {A.tolist()}  |.|^2 = {fro}  order at q=1: {order}")
 
@@ -367,7 +376,9 @@ if __name__ == "__main__":
     w.add_data("amplitudes", [{
         "word": a["word"], "P_from_N": [[str(x) for x in row] for row in a["amplitude_P_from_N"].tolist()],
         "frob_sq": str(a["frob_sq"]), "frob_sq_q0": fmt(a["frob_sq_q0"]),
-        "vanishing_order_q_to_1_of_frob_sq": a["vanishing_order_q_to_1_of_frob_sq"]}
+        "vanishing_order_q_to_1_of_frob_sq": a["vanishing_order_q_to_1_of_frob_sq"],
+        "isotypic_frob_sq": {k: {"expr": str(v["frob_sq"]), "q0": fmt(v["q0"]), "at_q1": str(v["at_q1"])}
+                             for k, v in a["iso"].items()}}
         for a in amp_rows])
     w.add_data("difference", [{"n": d["n"], "p": d["p"], "epsC": str(d["epsC"]),
                                "isospin_half": str(d["isospin_half"]),
