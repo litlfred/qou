@@ -74,3 +74,7 @@ A scheduled sibling (W14b) redid options 2/1/5/3 as PRs #8577/#8584/#8585/#8588 
 
 ## 2026-11-20 (evening) — W14 option-3 waves done on #8569
 All chapters except Ch1-2 (in #8563) hand-drained. Paper-wide L1 672 -> 107, L2 2335 -> 457, failing blocks 1330 -> 764 (#8566 + #8569). What remains is blocks whose subject IS Lean/code: ~25 Mathlib-infrastructure blocks, appendix-mass-binding-algorithms (Python-API contract by design), notation/glossary/index-of-definitions, ~15 leftover sites. Framed as a second [W14 ask] on #8526 (groups 1-4; recommendation 1b, 2a, 3a, 4a; default leave).
+
+## 2026-11-20 — CORRECTION (W14): option 4 IS approved
+W14's earlier notes say "1, 2, 3, 5 (not 4)". Wrong: W14's AskUserQuestion omitted option 4 (4-option limit), so the owner never declined it. The dispatcher's record (#8526 comment 7041693067: "2, 1, 5 and 3+4, all of them") is authoritative. Proposed split (#8526): W14b ports #8577 L4 + #8588 L3 and takes option 4 across remaining chapters on top of #8569; W14 handles the second [W14 ask] groups.
+
