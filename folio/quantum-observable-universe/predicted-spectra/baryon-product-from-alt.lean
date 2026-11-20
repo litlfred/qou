@@ -6,10 +6,12 @@ import Mathlib.Tactic.Ring
 /-!
 # QOU.Archimedean.baryonProductFromAlt — Alt-isotype identification of the baryon integrand
 
-The product `∏_k dc_k/dz` of the three colour-tube prolongations equals the
-projection of `(dc_1/dz) ⊗ (dc_2/dz) ⊗ (dc_3/dz)` onto the sign isotype of
-`R[S_3]`.  In determinantal form this is the `3×3` Vandermonde determinant in the
-colour-sheet velocities, which factors as the discriminant product.  This is
+The baryon integrand is the Vandermonde `∏_{i<j} (v_j − v_i)` in the colour-sheet
+velocities `v_k = dc_k/dz`, the lowest-degree sign-isotypic polynomial under the
+`S_3` action permuting the sheets. In determinantal form it is the `3×3`
+Vandermonde determinant, which factors as the discriminant product. (Until
+2026-11-20 this docstring and the `.md` called the plain product `∏_k v_k` the
+sign-isotype projection; that product is symmetric. Owner ruling, bean `qou-w8cg`.)  This is
 purely algebraic — it lives over the categorical base ring `R` and does not
 invoke the archimedean embedding `R ↪ ℂ`.
 
@@ -23,9 +25,9 @@ LaTeX label: `conj:baryon-product-from-alt`
 
 ## Witness
 
-- [baryon-product-from-alt.witness.json](../../../computations/baryon-product-from-alt.witness.json)
-  — pointwise + thimble-period numerical certificate of the Alt^3
-  isotype identification.
+None. A `baryon-product-from-alt.witness.json` was cited here but does not exist.
+The monodromy of the colour-tube cubic is certified by
+`computations/probes/bring-cubic-monodromy-probe.witness.json`.
 -/
 
 namespace QOU.Archimedean
