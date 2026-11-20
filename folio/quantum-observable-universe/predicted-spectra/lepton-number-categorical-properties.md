@@ -40,15 +40,14 @@ touch lepton number itself, the Skein module, or the $Y = B - L$ route.
 
 **What this leaves, and where $L$ does live.**
 An inhomogeneous relation is what a *filtration* tolerates rather than a
-grading, but the corpus's Vassiliev filtration
-(`QOU/KnotTheory/Vassiliev/`) grades **invariants** $v : K \to R$, not states,
+grading, but the Vassiliev filtration grades **invariants** $v : K \to R$, not states,
 so it does not by itself supply a state-valued $L$.
 
 The carrier is the **braid word**, not the knot type. This is forced:
-`QOU/StandardModel/LeptonNumberCarrierChirality.lean` proves $L$ cannot factor
+$L$ cannot factor
 through the unframed knot type, since the mirror must move the carrier and the
-unknot is amphichiral. It is also what the corpus already does --
-`AntiparticleCrossingReversalContext` takes the mirror to be
+unknot is amphichiral. It is also the convention of
+[Antiparticles from crossing reversal](#prop:antiparticle-crossing-reversal), which takes the mirror to be
 $\sigma_i \mapsto \sigma_i^{-1}$ on braid words and records that it
 *preserves the knot type*.
 
@@ -56,8 +55,8 @@ The braid words are fixed by the $\chi = -6$ constraint below: $T(2,n)$ is the
 closure of $\sigma_1^n$, so $\nu_e = \sigma_1$, $e^- = \sigma_1^3$, and the
 antiparticles are $\sigma_1^{-1}, \sigma_1^{-3}$ --- distinct braid words that
 both close to the unknot, which is exactly how the mirror acts freely.
-`QOU/StandardModel/ChiralFermionBraidWords.lean` proves the writhes from the
-words and shows the candidate
+The writhes follow from the
+words, and the candidate
 $$
   L(\beta) = \mathrm{sign}\bigl(\mathrm{writhe}(\beta)\bigr)
 $$
@@ -81,9 +80,8 @@ braid index is $1$: its minimal-level normal form is the *empty* word, and so is
 its mirror's. At the level where the framework says observables live, $\nu_e$
 and $\nu_e^{\sigma}$ are the **same state**, and no function of the state can
 give them $+1$ and $-1$ --- quite apart from $\mathrm{sign}(0) = 0 \neq +1$.
-This is `QOU/StandardModel/WritheLevelParity.lean`'s
-`leptonNumber_collapses_at_minimal_level`, and it is the same obstruction
-`LeptonNumberCarrierChirality.lean` proved for the unframed knot type,
+This is proved, and it is the same obstruction
+established above for the unframed knot type,
 reappearing once the canonical representative is pinned.
 
 So the "carrier is the braid word, not the knot type" escape is unavailable at

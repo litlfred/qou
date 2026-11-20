@@ -28,9 +28,8 @@ These are two different mathematical objects that coincide numerically
 at $q = 1$: one is a binomial coefficient, the other is a normalization
 constant.
 
-**What is $q$-independent — machine-checked.**
-The following are proved in
-`QOU/Eightfold/WeylInvarianceQDeformation.lean`:
+**What is $q$-independent — proved here.**
+The following are proved:
 
 - The off-diagonal entry $a_{12} = -1$ and the Serre exponent
   $1 - a_{12} = 2$.
@@ -49,17 +48,17 @@ The following are proved in
 - The root-angle ratio $\cos\theta = a_{ij}/a_{ii} = -1/2$
 .
 
-**What the Lean does not establish.**
+**What is not established here.**
 That Drinfeld--Jimbo quantisation leaves the root datum invariant is a
-theorem of Lusztig/Kashiwara, cited here and *not* formalised in this
-corpus; it belongs to the "standard, but not formalised" list below, not
-to the machine-checked list above.  What is machine-checked is the
+theorem of Lusztig/Kashiwara, cited here and *not* proved in this
+work; it belongs to the "standard, but not proved here" list below, not
+to the proved list above.  What is proved is the
 *arithmetic* of the separation on the $A_2$ datum, which is a weaker
 statement and should not be cited for the stronger one.
 
-**What is $q$-independent — standard, but not formalised here.**
+**What is $q$-independent — standard, but not proved here.**
 These follow from the Drinfeld--Jimbo construction and are cited here, not
-machine-checked:
+proved:
 
 - The root lattice $\Lambda_R = \mathbb{Z}\alpha_1 \oplus
   \mathbb{Z}\alpha_2$ and the weight lattice $\Lambda_W =

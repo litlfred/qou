@@ -18,8 +18,7 @@ which experiment satisfies to $-0.064$ MeV against splittings of $1.3$ to $8.1$
 MeV --- about $0.8\%$ of the largest.
 
 **The relation carries no information about the breaking mechanism.**  This is
-a theorem, machine-checked in
-`QOU/Eightfold/ColemanGlashowIdentity.lean`: the combination vanishes for
+a theorem: the combination vanishes for
 *every* choice of the six first-order parameters, over any commutative ring
 , so two arbitrarily different breaking patterns
 give the same answer.

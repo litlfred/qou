@@ -1,1 +1,1 @@
-**Mathematical Novelty:** Formalising the relationship between meson decay energies and the lepton mass ratio (figure-eight volume) via the algebraic squaring relation $4_1 = (\sigma_1\sigma_2^{-1})^2$.
+**Mathematical Novelty:** The relationship between meson decay energies and the lepton mass ratio (figure-eight volume) is expressed through the algebraic squaring relation $4_1 = (\sigma_1\sigma_2^{-1})^2$.

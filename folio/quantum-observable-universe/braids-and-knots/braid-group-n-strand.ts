@@ -23,6 +23,7 @@ export default remark({
     "scaffolding",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean class system enables per-$n$ extensibility, allowing downstream theorems to auto-specialise as higher dimensions are analysed." },
     {
       kind: "status",
       body: "**Scaffolding only.** This block defines the n-strand types and\nclasses; substantive theorems (specific closures, sub-braid\nextractions at higher $n$) plug in as separate per-$n$ blocks.\n\n`Braid2_writhe_eq` is **closed** by structural recursion mirroring\nthe `toBraidWord` construction — no `sorry`s remain in this module.",

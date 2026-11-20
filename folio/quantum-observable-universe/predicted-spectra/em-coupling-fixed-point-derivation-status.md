@@ -4,13 +4,13 @@ The fine-structure constant emerges as the symbolic root of a self-consistent fi
 
 The equation integrates three components. Only the third remains open:
 
-1. **Tree term $q\cdot[9]_q\cdot[10]_q$**: The bare inverse coupling from [Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection). Lean verifies its categorical-trace refactoring ([Algebraic identity](#prop:alpha-em-categorical-trace-ratio)).
-2. **Zero-mode shift $2/(3\pi) = 2g/(4\pi(g-1))\big|_{g=4}$**: The photon infrared harmonic-$1$-form contribution on Bring's surface. Lean proves this in [Photon IR zero-mode on Bring's surface](#prop:photon-ir-zero-mode-bring). The normalization $8\pi = \pi b_1 = \pi\dim H^1(M_{\text{Bring}})$ maintains the harmonic count.
-3. **$\mathcal{O}(\alpha^2)$ normalization $H\cdot(1-h^2\alpha)$**: The Habiro deformation $(1-h^2\alpha)$ with coefficient $H = [2]_q/(8\pi)$. Identifying the exact $\mathcal{O}(\alpha^2)$ correction to $H$ with a class in $B_3(\mathbb{C})$ is the single open input. The `b3_normalization` class field axiomatises this.
+1. **Tree term $q\cdot[9]_q\cdot[10]_q$**: The bare inverse coupling from [Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection). Its categorical-trace refactoring is proved ([Algebraic identity](#prop:alpha-em-categorical-trace-ratio)).
+2. **Zero-mode shift $2/(3\pi) = 2g/(4\pi(g-1))\big|_{g=4}$**: The photon infrared harmonic-$1$-form contribution on Bring's surface. This is proved in [Photon IR zero-mode on Bring's surface](#prop:photon-ir-zero-mode-bring). The normalization $8\pi = \pi b_1 = \pi\dim H^1(M_{\text{Bring}})$ maintains the harmonic count.
+3. **$\mathcal{O}(\alpha^2)$ normalization $H\cdot(1-h^2\alpha)$**: The Habiro deformation $(1-h^2\alpha)$ with coefficient $H = [2]_q/(8\pi)$. Identifying the exact $\mathcal{O}(\alpha^2)$ correction to $H$ with a class in $B_3(\mathbb{C})$ is the single open input. It enters as an explicit hypothesis.
 
 ## Genuine derivation, not projection
 
-The class carries the hypothesis, and the theorem derives the conclusion. The lemma [`QOU.ArchimedeanUniverse.fixedPoint_iff_cubic`](em-coupling-fixed-point.lean) establishes the equivalence between the fixed-point equation and the cubic root for $\alpha \neq 0$. The main theorem [`QOU.ArchimedeanUniverse.alpha_em_is_fixed_point_root`](em-coupling-fixed-point.lean) composes this equivalence with the `b3_normalization` field. The proof is a genuine derivation.
+The hypothesis carries only the $B_3(\mathbb{C})$ normalization, and the conclusion is derived from it. For $\alpha \neq 0$ the fixed-point equation is equivalent to the cubic root condition. The main result composes this equivalence with the normalization hypothesis. The proof is a genuine derivation.
 
 ## Numerical context
 
@@ -18,4 +18,4 @@ At $q_0$, the tree term and zero-mode reproduce $1/\alpha$ to $-4.2\times 10^{-6
 
 ## Status
 
-The sole open element remains the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization. Lean proves the tree/zero-mode assembly of $T$, the algebraic equivalence of the fixed-point, and the derivation of $P(\alpha)=0$. The class remains uninhabited. No fabricated instance attempts to close the primary conjecture.
+The sole open element remains the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization. The tree/zero-mode assembly of $T$, the algebraic equivalence of the fixed point, and the derivation of $P(\alpha)=0$ are proved. The normalization hypothesis remains unestablished, and the primary conjecture is not closed.

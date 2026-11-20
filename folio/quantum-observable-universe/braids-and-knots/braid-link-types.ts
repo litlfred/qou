@@ -17,6 +17,7 @@ export default remark({
     "class-discharge",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The infrastructure provides explicit Lean types for generic braids and links." },
     {
       kind: "status",
       body: "Lean stub: **no `sorry`s**. The 2-strand case is fully closed.\nThe n-strand generalisation is enumerated as concrete combinatorial\ntheorems to be added in follow-up files.",

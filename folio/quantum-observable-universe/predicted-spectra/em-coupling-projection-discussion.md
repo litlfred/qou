@@ -47,7 +47,7 @@ This yields $\mathrm{CS}(T_{2,9}) = \pi^2 \cdot \tfrac{10}{9}$ and $\mathrm{CS}(
 
 See [Table 1](#tbl:em-coupling-projection-table1-data).
 
-The Chern-Simons correction reduces the discrepancy from $0.155\%$ (bare formula) to $399\;\mathrm{ppb}$. However, the $\kappa \approx 1.722$ value was admitted as `sorry` in the Lean formalisation and never closed. Exact matching with CODATA requires $\kappa \approx 1.8878$. See [Conjectured Chern-Simons correction form $1/\alpha = q[9]_q[10]_q\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ (Gram-determinant $\kappa$ unproved)](#rem:em-coupling-chern-simons) for the demoted statement and [open problems](#rem:alpha-em-derivation-open-problems) for the path forward.
+The Chern-Simons correction reduces the discrepancy from $0.155\%$ (bare formula) to $399\;\mathrm{ppb}$. However, the $\kappa \approx 1.722$ value rests on a Gram-determinant computation that has never been completed. Exact matching with CODATA requires $\kappa \approx 1.8878$. See [Conjectured Chern-Simons correction form $1/\alpha = q[9]_q[10]_q\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ (Gram-determinant $\kappa$ unproved)](#rem:em-coupling-chern-simons) for the demoted statement and [open problems](#rem:alpha-em-derivation-open-problems) for the path forward.
 
 **Open problem: closing the $0.155\%$ bare residual.**
 The bare formula $1/\alpha_{\text{bare}} = q\cdot[9]_q\cdot[10]_q$ has a complete categorical derivation. It accounts for $\alpha_{\text{EM}}$ to $-0.155\%$ at $q_0$. The remaining $\sim 1.55 \times 10^{-3}$ relative gap lacks a closed structural derivation:

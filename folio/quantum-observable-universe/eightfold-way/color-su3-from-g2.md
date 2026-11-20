@@ -56,8 +56,8 @@ A stronger negative than the Hurwitz error: the $S_4$ datum has no
 separating power at all.  The Fermat quartic $x^4 + y^4 + z^4 = 0$ is a
 genus-3 curve whose automorphism group $(\mathbb{Z}/4)^2 \rtimes S_3$ of
 order $96$ *also* contains $S_4$ --- exhibited as $V_4 \rtimes S_3$
-and machine-verified in exact $\mathbb{Z}[i]$ arithmetic
-(`s4_genus3_competitor_fermat.py`: element-order profile
+and verified by exact computation in $\mathbb{Z}[i]$ arithmetic
+(element-order profile
 $\{1{:}1,\, 2{:}9,\, 3{:}8,\, 4{:}6\}$, $V_4$ normal, $S_3$ inducing the
 full symmetric action on $V_4 \setminus \{1\}$).  So even a fully correct
 argument that the normalization has genus $3$ and inherits $S_4$ stops

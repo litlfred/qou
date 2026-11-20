@@ -29,6 +29,9 @@ export default proposition({
     validation: "not_checked",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Witness\n\nSee `alpha-em-correction-derivation-attempts.witness.json` for the full attempt log." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): > **Conditional theorem.** Lean axiomatises the upstream conjectures as typeclasses [`QOU.QPochhammer.ArchimedeanLimit`](../mass-theory/dilogarithm-archimedean-limit.lean), [`QOU.Archimedean.BlochSuslinUniqueness`](../mass-theory/archimedean-functor-uniqueness.lean), and [`QOU.Archimedean.BringZeroModeBlochClass`](em-coupling-bring-zero-mode.lean). The Lean theorem [`QOU.Archimedean.bring_zero_mode_additive_form`](em-coupling-bring-zero-mode.lean) takes `BringZeroModeBlochClass` as an instance and concludes unconditionally. The algebraic identity $2g/(4\\pi(g-1)) = 2/(3\\pi)$ at $g=4$ closes via `field_simp; ring`. The remaining structural input is the explicit Bloch-group class realising $2/(3\\pi)$ on Bring's surface." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Assume the upstream typeclasses `QOU.QPochhammer.ArchimedeanLimit`, `QOU.Archimedean.BlochSuslinUniqueness`, and `QOU.Archimedean.BringZeroModeBlochClass` are inhabited" },
     {
       kind: "note",
       date: "2026-09-05",

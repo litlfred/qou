@@ -23,9 +23,7 @@ $s\bar{s}$ probability of the heavy state is convention-independent, and
 
 The vector nonet is **ideally mixed** --- the $\phi$ is $s\bar{s}$ to within
 half a percentage point --- while the pseudoscalar nonet sits about as far
-from ideal as it can.  Values from
-[`nonet-mixing-purity.witness.json`](../../../computations/nonet-mixing-purity.witness.json);
-PDG central values are comparators, and nothing here is fitted.
+from ideal as it can.  PDG central values are comparators, and nothing here is fitted.
 
 This is also why Gell-Mann--Okubo appears to *fail* on the vector nonet.
 Applied to the physical states, the relation deviates by $\approx 6\%$ for the
@@ -39,8 +37,8 @@ $\omega$ is not the octet member at all, because the nonet is ideally mixed.
 first-order octet-breaking ansatz: it holds for every choice of the breaking
 parameters, so reproducing it is evidence for nothing.  The decuplet
 equal-spacing rule behind the $\Omega^-$ prediction is the same
-(`QOU/Eightfold/DecupletEqualSpacing.lean`, established later in this
-chapter).
+([established later in this
+chapter](#rem:decuplet-equal-spacing)).
 
 The mixing is the opposite case, and this too is a theorem
 .  Holding fixed the

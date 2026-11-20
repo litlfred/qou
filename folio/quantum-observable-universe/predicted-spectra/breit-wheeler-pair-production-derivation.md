@@ -92,5 +92,3 @@ Both fits close the $1.6\%$ energy gap by construction, so closing it is not evi
 #### Four-term extension
 
 Activating $\varphi_{01} \neq 0$ recovers the general 4-term photon. The $\gamma\gamma$ product directly opens the $e^-$ (trefoil) channel. The 6-term normal form and the derivation of nucleons from pair production follow from these operations.
-
-**Witness:** `breit-wheeler-nucleon-nf.witness.json`

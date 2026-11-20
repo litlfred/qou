@@ -1,5 +1,5 @@
 **Proposition (additive Bring-surface zero-mode form for $1/\alpha_{EM}$, conditional on [$(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$](#conj:dilogarithm-archimedean-limit) and Bloch-Suslin pentagon-uniqueness [`suslin1991`]).**
-*Let $g = 4$ denote the genus of Bring's surface. This is the unique Riemann surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Assume the upstream typeclasses `QOU.QPochhammer.ArchimedeanLimit`, `QOU.Archimedean.BlochSuslinUniqueness`, and `QOU.Archimedean.BringZeroModeBlochClass` are inhabited ([Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)](#prop:archimedean-functor-uniqueness)). Then*
+*Let $g = 4$ denote the genus of Bring's surface. This is the unique Riemann surface supporting the genus-$4$ torus knots $T_{2,9}$ and $T_{3,5}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). Assume three upstream hypotheses hold: the archimedean limit of the $q$-dilogarithm, Bloch–Suslin pentagon uniqueness, and the existence of a Bloch-group class on Bring's surface realising the zero mode ([Uniqueness of the archimedean realization functor (Bloch-Suslin pentagon, conditional)](#prop:archimedean-functor-uniqueness)). Then*
 
 $$
   \frac{1}{\alpha_{EM}}
@@ -51,16 +51,12 @@ $$
 
 The $g = 4$ structure of Bring's surface appears in both main terms. The tree-level coefficient $[9]_q[10]_q$ derives from the unique pair of genus-$4$ torus knots $\{T_{2,9}, T_{3,5}\}$ ([force-carrier uniqueness](#prop:force-carrier-bring-uniqueness)). The infrared shift $2g/(4\pi(g-1))$ emerges from the Hodge data of the same Bring's surface. This double appearance of $g = 4$ is structurally consistent. It matches the expectations for a categorical-Lagrangian quantum field theory with a UV completion on Bring's curve.
 
-> **Conditional theorem.** Lean axiomatises the upstream conjectures as typeclasses [`QOU.QPochhammer.ArchimedeanLimit`](../mass-theory/dilogarithm-archimedean-limit.lean), [`QOU.Archimedean.BlochSuslinUniqueness`](../mass-theory/archimedean-functor-uniqueness.lean), and [`QOU.Archimedean.BringZeroModeBlochClass`](em-coupling-bring-zero-mode.lean). The Lean theorem [`QOU.Archimedean.bring_zero_mode_additive_form`](em-coupling-bring-zero-mode.lean) takes `BringZeroModeBlochClass` as an instance and concludes unconditionally. The algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g=4$ closes via `field_simp; ring`. The remaining structural input is the explicit Bloch-group class realising $2/(3\pi)$ on Bring's surface.
+> **Conditional theorem.** The result is conditional on three upstream conjectures: the archimedean limit of the $q$-dilogarithm, Bloch–Suslin pentagon uniqueness, and the existence of a Bloch-group class on Bring's surface realising the zero mode. Given the last of these, the additive form follows with no further hypothesis. The algebraic identity $2g/(4\pi(g-1)) = 2/(3\pi)$ at $g=4$ is an elementary rational-function identity. The remaining structural input is the explicit Bloch-group class realising $2/(3\pi)$ on Bring's surface.
 
 | Form | Type | Residual at $q_0$ | Structural status |
 |------|------|-------------------|-------------------|
 | Bare $q[9]_q[10]_q$ | multiplicative tree | $-1.55\times 10^{-3}$ | Derived |
-| [Conjectured Chern-Simons correction form $1/\alpha = q[9]_q[10]_q\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ (Gram-determinant $\kappa$ unproved)](#rem:em-coupling-chern-simons) | multiplicative + Gram-det $\kappa$ | $-4\times 10^{-7}$ | $\kappa$ unproved (Lean `sorry`) |
+| [Conjectured Chern-Simons correction form $1/\alpha = q[9]_q[10]_q\cdot\bigl(1+\delta_{CS}/(1-\delta_{CS}\kappa)\bigr)$ (Gram-determinant $\kappa$ unproved)](#rem:em-coupling-chern-simons) | multiplicative + Gram-det $\kappa$ | $-4\times 10^{-7}$ | $\kappa$ unproved |
 | **This conjecture (additive Bring zero-mode)** | $q[9]_q[10]_q + 2g/(4\pi(g-1))$ | $-4.2\times 10^{-6}$ | **Geometrically clean; one Bring-genus-4 quantity in each term** |
 
 The additive form provides the cleanest structure. It avoids fitted coefficients. Every factor maps to a known geometric or topological invariant of Bring's surface.
-
-## Witness
-
-See `alpha-em-correction-derivation-attempts.witness.json` for the full attempt log.
