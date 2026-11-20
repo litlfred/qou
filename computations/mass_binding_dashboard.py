@@ -310,6 +310,9 @@ def _electron_binding_mev_ame_fit(Z):
     return 1.44381e-5 * Z ** 2.39 + 1.55468e-12 * Z ** 5.35
 
 
+_E0_FORM = "tower"   # set from --e0 in main()
+
+
 def _constants():
     # NO FLOAT64 (owner directive): source the 50-dps q0 and form E0 exactly.
     # `q_parameter.Q` is the f64 value; doing `me / (q0 * (q0 - 1))` in f64
@@ -329,7 +332,17 @@ def _constants():
     with _mp.workdps(60):
         q0x = _mp.mpf(str(_Q50))
         mex = _mp.mpf(str(me))
+        # TOWER-SUMMED E0 (owner, 2026-11-20: "Also the tower summed. Do all").
+        # `qbeta_e0.canonical` is `tower_summed` = m_e/(q(q-1)) / (1 - hbar_q^2),
+        # canonical by the 2026-09-03 full-tower ruling (series itself open,
+        # bean qou-y3bm). Until 2026-11-20 this dashboard used the order-zero
+        # m_e/(q(q-1)) = 4.18598 MeV; the tower factor is 1/(1-hbar_q^2) =
+        # 1.0099145, so every alpha-proportional binding column moves +0.991 %.
+        # `--e0 order0` reproduces the historical numbers.
         e0x = mex / (q0x * (q0x - 1))
+        if _E0_FORM == "tower":
+            hbar = 1 - 1 / q0x
+            e0x = e0x / (1 - hbar ** 2)
     from canonical_mass import _as_formattable_mpf
     return _as_formattable_mpf(mex), _as_formattable_mpf(q0x), _as_formattable_mpf(e0x)  # me, q0, E0 — all mpf
 
@@ -884,6 +897,10 @@ def _lean_status() -> str:
         age = (datetime.now(timezone.utc)
                - datetime.fromisoformat(gen.replace("Z", "+00:00"))).days
         age_s = f", {age}d old" if age > 7 else ""
+        if age > 30:
+            age_s += (" — STALE: this file has not been regenerated in "
+                      f"{age} days; it is NOT evidence about the current tree "
+                      "(run scripts/lean-library-sweep.py for a live check)")
     except Exception:  # noqa: BLE001
         age_s = ""
     parts = []
@@ -1044,7 +1061,13 @@ def main(argv=None) -> int:
     ap.add_argument("--max-strands", type=int, default=21,
                     help="trace forms (B_sym/B_qCLT) computed only when "
                          "n=3A ≤ this (default 21 = A≤7; raise for more rows, slower)")
+    ap.add_argument("--e0", choices=["tower", "order0"], default="tower",
+                    help="alpha = E0 form: 'tower' (canonical, tower-summed "
+                         "m_e/(q(q-1))/(1-hbar_q^2)) or 'order0' (historical "
+                         "m_e/(q(q-1)), the pre-2026-11-20 dashboard)")
     args = ap.parse_args(argv)
+    global _E0_FORM
+    _E0_FORM = args.e0
 
     # resolve the isotope list
     by_name = {nm: (nm, Z, N) for grp in GROUPS.values() for (nm, Z, N) in grp}
@@ -1079,7 +1102,9 @@ def main(argv=None) -> int:
             for (nm, Z, N) in sel]
 
     title = (args.group or ("custom" if args.isotopes else "low")).upper()
-    print(f"\n  MASS-BINDING DASHBOARD [{title}]   α = E₀ = {_disp(E0):.4f} MeV"
+    _e0_lbl = ("tower-summed, canonical" if _E0_FORM == "tower"
+               else "ORDER-ZERO, historical")
+    print(f"\n  MASS-BINDING DASHBOARD [{title}]   α = E₀ = {_disp(E0):.4f} MeV ({_e0_lbl})"
           f"   (bond-type L: pp={_disp(Lbond['pp']):.3f} pn={_disp(Lbond['pn']):.3f} "
           f"nn={_disp(Lbond['nn']):.3f})")
     print(f"  B_sym/m_sym_atom: EXACT closed-form linear chain → all A; the "
@@ -1108,6 +1133,14 @@ def main(argv=None) -> int:
     print("### Mass  M + error (MeV; err auto-scaled %/ppm/ppb/ppq)   "
           "[canonical = Hecke energy 2(m_μ·F_Bor−6m_e) at the PROTON pin; "
           "m_μ there is derived from q₀, not an anchor; m_X = m_unbnd,can − B_X]")
+    print("  ⚠ m_n,can provenance: m_n = m_p + Q_β + m_e with Q_β from "
+          "derived_masses.q_beta_kashiwara_n2_mev — the RETIRED mixed base "
+          "(published z = 1 functional, convention-C c_k ladder; inadmissible "
+          "under convention D, ConventionDAdmissibleRoots.lean). Its +501 ppb is "
+          "NOT the L2 scorecard's m_n row, which is scored on the RULED base "
+          "(ε = Markov trace at z_D, element nuc11_interleaved, tower E₀): "
+          "+1.389e5 ppb. Which element is canonical is an open owner decision "
+          "(bean qou-99qc); see PR #8100 for the retired-base label.")
     print(f"  canonical constituents (λ_A fit + naive Vol·tr_M both EXCISED): "
           f"m_p,can = {_disp(mp_can):.3f} MeV ({_disp((mp_can/mp_-1)*100):+.3f}%), "
           f"m_n,can = {_disp(mn_can):.3f} MeV ({_disp((mn_can/mn_-1)*100):+.3f}%) — "
