@@ -11,7 +11,7 @@ The pair $\{T(2, 3), T(2, 4)\}$ is the smallest non-trivial torus-knot pair on t
 
 ## Lean structure
 
-We stage the uniqueness via the conditional-class pattern:
+The uniqueness is staged in two steps:
 - `MesonGMORFactorization R mK2_over_mpi2 qChar m n`: the substrate factorisation axiom.
 - `MesonForceCarrierPair`: the derived index assertion $\alpha_{\text{shift}}(T(2, 3)) = 3$ and $\alpha_{\text{shift}}(T(2, 4)) = 4$.
 - `theorem meson_ratio_via_alpha_shift`: proves the factorisation using the specific indices.

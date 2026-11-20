@@ -8,7 +8,7 @@ $$
 
 ## Proof
 
-Under the bar involution $q \mapsto q^{-1}$ we have $\overline{h} = -h$ and $\overline{z} = z - h$, since $q^{-3}/(q^{-2}+1) = 1/(q(q^{2}+1)) = z - h$. Hence $\overline{\sigma_c} = z - h + \overline{c}\,h$, and $\sigma_c - \overline{\sigma_c} = (c + \overline{c} - 1)\,h$. For constant $c$ this is $(2c-1)\,h$, which vanishes with $h \neq 0$ only when $2c = 1$. $\square$
+Under the bar involution $q \mapsto q^{-1}$ one has $\overline{h} = -h$ and $\overline{z} = z - h$, since $q^{-3}/(q^{-2}+1) = 1/(q(q^{2}+1)) = z - h$. Hence $\overline{\sigma_c} = z - h + \overline{c}\,h$, and $\sigma_c - \overline{\sigma_c} = (c + \overline{c} - 1)\,h$. For constant $c$ this is $(2c-1)\,h$, which vanishes with $h \neq 0$ only when $2c = 1$. $\square$
 
 The result does not single out a canonical averaging. A $q$-dependent coefficient with $c + \overline{c} = 1$ is also bar-invariant, so uniqueness holds only among constant coefficients.
 
@@ -46,7 +46,7 @@ The QOU mass identity at $A \geq 2$ contracts a per-interface averaging function
 The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from Bring's surface geometry:
 - Bring's surface has genus $g = 4$.
 - The genus-4 force-carrier pair is $\{T(2,9), T(3,5)\}$.
-- We prove $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$. For $T(3,5)$, $\alpha_{\text{shift}}(T(3,5)) = 10$. This specifies the pole order of $\sigma$.
+- $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$. For $T(3,5)$, $\alpha_{\text{shift}}(T(3,5)) = 10$. This specifies the pole order of $\sigma$.
 - The Bring color-tube weight inherits this derived pole order $q^{10}$.
 
 ## Lean structure

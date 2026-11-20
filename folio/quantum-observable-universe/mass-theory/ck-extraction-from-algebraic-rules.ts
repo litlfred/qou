@@ -25,6 +25,12 @@ export default remark({
     "synthesis",
   ],
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the extraction is `noncomputable def ckFromReduction (q : ℝ) : ℕ → ℝ`; the per-order agreements are `ckFromReduction_eq_c1` … `ckFromReduction_eq_c4`, each proved by `rfl` against `N1_factor` … `N4_factor`; the synthesis is `ckFromReduction_matches_ladder` under the four class instances. Open items in Lean terms: replace the `True` fields `yb_cubic`, `hecke_quad` (from `hoefsmit_sigma{0,1}_hecke_quadratic`); discharge `QYoungSymmetrizers 3 q`.",
+    },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "note",

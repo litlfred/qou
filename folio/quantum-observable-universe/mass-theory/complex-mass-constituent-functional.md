@@ -8,7 +8,7 @@ The quark masses are not hyperbolic volumes of independent per-quark knots: the
 Standard-Model appendix records that no carrier knot exists for
 $\mathfrak{s}, \mathfrak{c}, \mathfrak{b}, \mathfrak{t}$. Each quark is instead a
 constituent of a composite braid, and its mass is a functional of that
-composite. We generalise the real volume reading
+composite. This generalises the real volume reading
 $m(K) = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ in two ways.
 
 1. **Real volume $\to$ complex volume.**

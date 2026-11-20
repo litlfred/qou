@@ -4,7 +4,7 @@ $$
 \mathfrak{m}_{\text{qCLT,lead}}(Z, N) = Z\,\mathfrak{m}_{\mathfrak{p}} + N\,\mathfrak{m}_{\mathfrak{n}}.
 $$
 
-Accordingly we partition the absolute mass prediction into two computational channels:
+Accordingly the absolute mass prediction splits into two computational channels:
 
 1. **`m_symbolic`**: the exact closed-form evaluation of the Hecke matrix traces, computationally constrained to light isotopes ($A \le 8$).
 2. **`m_qCLT_approx`**: the JSJ-additive estimator $Z\,\mathfrak{m}_{\mathfrak{p}} + N\,\mathfrak{m}_{\mathfrak{n}} - B(Z,N)$, where $B$ is the binding energy (the $\Delta_\lambda$ correction).

@@ -49,7 +49,7 @@ $$
   = \tau(\sigma(\beta)^* \sigma(\beta) \cdot x),
 $$
 
-where we used $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$
+using $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$
 (anti-multiplicativity preserves the involutive form $a^*a$
 when $\sigma$ is a $*$-involution; for the Hecke / Markov case
 this is the bar involution). Hence $\sigma$ is a bijection

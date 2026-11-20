@@ -1,6 +1,6 @@
 ## Proof
 
-Let $R$, $A$, $\tau$, $S$, and $X$ be as in the statement: $R$ an ordered field, $A$ a unital $R$-algebra with unit $1_A$, $\tau : A \to R$ an $R$-linear map with $\tau(1_A) = 1$ and $\tau(xy) = \tau(yx)$, positive-semi-definite on squares, and $X \in A$ an element satisfying the constraint $\tau(X) = S$. For $Y \in A$ we abbreviate $Y^2 = Y \cdot Y$.
+Let $R$, $A$, $\tau$, $S$, and $X$ be as in the statement: $R$ an ordered field, $A$ a unital $R$-algebra with unit $1_A$, $\tau : A \to R$ an $R$-linear map with $\tau(1_A) = 1$ and $\tau(xy) = \tau(yx)$, positive-semi-definite on squares, and $X \in A$ an element satisfying the constraint $\tau(X) = S$. For $Y \in A$ write $Y^2 = Y \cdot Y$.
 
 **Step 1 — centrality of scalars.** For any $S \in R$ the element $S \cdot 1_A$ is central in $A$: the compatibility of the $R$-action with the multiplication gives $(S \cdot 1_A)\,Y = S \cdot Y = Y\,(S \cdot 1_A)$ for every $Y \in A$. In particular $S \cdot 1_A$ commutes with $X$ even when $A$ is non-commutative, and $(S \cdot 1_A)(S \cdot 1_A) = S^2 \cdot 1_A$.
 

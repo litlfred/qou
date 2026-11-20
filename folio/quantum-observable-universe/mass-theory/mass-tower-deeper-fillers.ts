@@ -4,6 +4,12 @@ export default remark({
   authorNotes: [
     {
       kind: "note",
+      date: "2026-11-20",
+      body:
+        "Prose restated without Lean vocabulary (voice drain, epic `qou-d4kh`). The previous text called the five items \"Mathlib extensions\" consolidated \"into a single synthesis class\"; the five are the fields (A)–(E) of that class, named in the note below.",
+    },
+    {
+      kind: "note",
       date: "2026-08-09",
       body:
         "Lean sibling: archimedean specialisation over $\\mathbb{R}$ " +

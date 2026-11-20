@@ -11,7 +11,7 @@ $$
 $$
 
 with $b = \sqrt{q^4+q^2+1}/(q^2+1)$ (Hoefsmit $V_{(2,1)}$ off-diagonal
-coupling). We formalise the claim that these closed forms
+coupling). The claim made here is that these closed forms
 are **derivable outputs** of four algebraic reduction rules, not
 phenomenological identifications.
 
@@ -21,11 +21,8 @@ See [Table 1](#tbl:ck-extraction-from-algebraic-rules-table1-data).
 
 ## The extraction function
 
-The Lean module exports
-```
-noncomputable def ckFromReduction (q : ℝ) : ℕ → ℝ
-```
-returning the closed-form scalar value that Rules 1-4 jointly
+The extraction is a function $k \mapsto c_k(q)$, real-valued at real
+$q$, returning the closed-form scalar value that Rules 1-4 jointly
 determine at order $\varepsilon^{2k}$ on the canonical typed-$\mathbf{B}_3$
 word:
 
@@ -33,13 +30,13 @@ See [Table 2](#tbl:ck-extraction-from-algebraic-rules-table2-data).
 
 ## Per-order agreement
 
-The Lean theorems
-`ckFromReduction_eq_c1`, $\ldots$, `ckFromReduction_eq_c4` discharge each
-agreement equality by `rfl` against the inline coefficients used in
-`N1_factor`, $\ldots$, `N4_factor` of the precision ladder.
-
-The synthesis theorem `ckFromReduction_matches_ladder` records the
-joint statement under all four class instances.
+For $k = 1, \ldots, 4$ the extracted value equals the coefficient the
+precision ladder uses at order $k$. **That agreement holds by
+definition:** the extraction returns, at each order, the same
+expression the ladder writes inline, so the four equalities are
+identities of definitions and are not an independent derivation of
+$c_1, \ldots, c_4$. The joint statement assumes all four reduction
+rules as hypotheses.
 
 ## Significance of the reframing
 
@@ -51,23 +48,26 @@ determine the unique normal form"** — which is checkable rule by rule:
 
 - Rules 1, 3 are already discharged for $V_{(2,1)}$ at $H_3(q)$ by the
   Hoefsmit matrix theorems.
-- Rule 2 (Hecke idempotents) is largely Mathlib-able via the standard
+- Rule 2 (Hecke idempotents) reduces to the standard
   Iwahori-Hecke decomposition.
 - Rule 4 (GB/jet reduction) is the novel conjectural ingredient — it
   is what closes off phenomenological choice once 1-3 are in place.
 
-The class skeleton makes each rule a **separate instance** to discharge,
-turning the c_k extraction into a structured Lean-engineering programme
-rather than a single open conjecture.
+Stating each rule as a separate hypothesis makes each one a separate
+statement to prove, which turns the $c_k$ extraction into a list of
+four checkable steps rather than a single open conjecture.
 
 ## What remains open
 
-- Replace the `True` ansatz fields with the substantive matrix
-  identities they encode (`yb_cubic` $\leftarrow$ Hoefsmit YB cubic; `hecke_quad`
-  $\leftarrow$ `hoefsmit_sigma{0,1}_hecke_quadratic`).
-- Discharge `QYoungSymmetrizers 3 q` via the Mathlib Iwahori-Hecke
-  module (when complete) or via the explicit $H_3$ idempotent table.
-- Formalise the GB/jet normal-form procedure for $k = 1, 2$
+- State the content of Rules 1 and 3, which are at present carried as
+  hypotheses with no content: the Yang–Baxter cubic and the Hecke
+  quadratic of the Hoefsmit matrices of $\sigma_1, \sigma_2$ on
+  $V_{(2,1)}$. The matrix identities themselves are proved; the
+  hypotheses of the extraction do not yet say them.
+- Prove Rule 2, the existence of the $q$-Young symmetrisers of
+  $H_3(q)$, from the Iwahori–Hecke decomposition or from the explicit
+  $H_3$ idempotent table.
+- Prove the GB/jet normal-form procedure for $k = 1, 2$
   (where the reduction is short enough to discharge by
   case-analysis on the typed-$\mathbf{B}_3$ word structure).
 - Extend the extraction to $k \geq 5$ — the simple alternating

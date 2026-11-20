@@ -32,4 +32,12 @@ export default conjecture({
     "open-conjecture",
     "tier-a",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the conjecture is a hypothesis-only `class` whose spectral content uses `HoefsmitRepresentation.HasEigenvalueRatio`; downstream theorems take it as an instance hypothesis.",
+    },
+  ],
 });

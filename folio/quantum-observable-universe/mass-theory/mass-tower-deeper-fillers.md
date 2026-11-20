@@ -1,6 +1,6 @@
-**Remark (deeper Mathlib fillers).**
-*We consolidate the five required Mathlib extensions into a single synthesis class.*
+**Remark (mathematics the mass-tower derivation still assumes).**
+*Five pieces of standard mathematics enter the conditional mass-tower results as hypotheses, not as proved inputs.*
 
-We require finite-type enumeration for height-6 partitions and a Demazure sub-crystal predicate for resonance tracking. We require the Kazhdan-Lusztig functor to map elements to the symmetric group. Finally, we require the Bloch group formal quotient and the associated 5-term pentagon identity. 
+They are: a finite enumeration of the partitions of height 6; a criterion recognising a Demazure sub-crystal, used to track resonances; the Kazhdan–Lusztig specialisation $H_n(R,q) \to \mathbb{Z}[S_n]$ at $q = 1$; the Bloch group as a formal quotient; and the five-term pentagon identity of the Clausen function $\mathrm{Cl}_2$, which holds modulo $2\pi$.
 
-These extensions demand substantial upstream formalisation. The current scaffolding successfully isolates them, allowing the mass-tower derivation to proceed conditionally.
+None of the five is proved here. Every mass-tower result that uses them is conditional on them, and the derivation proceeds only in that conditional form.

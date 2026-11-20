@@ -63,7 +63,7 @@ as the depth-$k$ projection of the Frobenius dual.
 
 *Step 3 (cyclotomic factors $\leftrightarrow$ depth-$k$ partitions).*
 The cyclotomic factor $(1 - q^{-k} z_i)^{-1}$ in $\Phi_q(z_i)$ has its
-pole locus at $z_i = q^k$. We identify this locus with the
+pole locus at $z_i = q^k$. This locus is identified with the
 depth-$k$ centre stratum $Z^{(k)}(A)$ via the $q$-content / hook-length
 structure:
 

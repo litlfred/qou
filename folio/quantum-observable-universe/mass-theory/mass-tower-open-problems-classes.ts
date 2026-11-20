@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:mass-tower-open-problems-classes",
   title:
-    "Lean classes carrying the four remaining mass-tower open problems as hypotheses",
+    "The four remaining mass-tower open problems, carried as hypotheses",
   interprets: "prop:em-coupling-bring-zero-mode",
   tags: [
     "mass-tower",
@@ -21,4 +21,12 @@ export default remark({
   ],
   uses: ["prop:em-coupling-bring-zero-mode"],
   cites: ["borel1974", "bloch2000", "suslin1991", "kashaev1997"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-11-20",
+      body:
+        "Lean names moved out of the prose (voice drain, epic `qou-d4kh`): the four hypotheses are the classes `Term7ShellCorrectionClass`, `ChiralityFactorClass`, `ZHabiroConvergenceClass` and `AlphaOver4PiClass`.",
+    },
+  ],
 });
