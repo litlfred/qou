@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-15T06:16:39Z
-updated_at: 2026-11-20T08:40:00Z
+updated_at: 2026-11-20T17:50:00Z
 parent: qou-6qbv
 ---
 
@@ -519,3 +519,14 @@ Completed & Red-Team PASSED (`0` blockers): `folio/quantum-observable-universe/l
 **Status was `completed` (set 2026-11-19); reopened to `in-progress`.** The children `qou-m1bg` and `qou-m3tr` say *"Parent bean `qou-qhcr` must never be closed"*. AGENTS.md §13a forbids closing a bean whose subject is an open derivation. The 6 is still not derived from the axioms, and the "Completed & Red-Team PASSED" entry above is a Bring read-off: transposition fixed points on Bring's curve, the route this bean's §3 already scoped as non-derivational.
 
 **M1b advanced:** PR #8532 (`claude/bring-germ-stabiliser-cyclic-2026-11-20`). It proves sorry-free that an effective finite germ action fixing a point is cyclic, and supplies the `hstabA`/`hstabS` disjunctions for groups `≅ A₅`/`S₅`. Open: the chart step and germ-effectiveness (M2), M3 (`qou-m3tr`), G2, G3.
+
+## 2026-11-20 — W9 wiring merged
+
+Merged: #8532 (M1b, `GermStabiliserCyclic`), #8570 (M3 step 1, `CombinatorialMapQuotient`), #8600 (`GenusFourFromGermStabilisers`, main `f1d778d28f`). `genus_eq_four_of_germ_stabilisers` now derives `hA60`/`hS120`/`hstabA`/`hstabS`.
+
+Still hypotheses:
+- M2: the chart step and effectiveness on germs;
+- M3 steps 2–3: chi even, and the triangulation;
+- G2/G3: H^1 = 2W with W irreducible.
+
+The 6 is still not derived. W9 is parked.
