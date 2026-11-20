@@ -478,6 +478,7 @@ import QOU.QuantumObservableUniverses.DilogPentagonAssociator
 import QOU.QuantumObservableUniverses.NoClosedCausalChains
 import QOU.QuantumObservableUniverses.HiggsVacuumResidual
 import QOU.QuantumObservableUniverses.NSymHostStructure
+import QOU.QuantumObservableUniverses.NSymSlotDerivation
 import QOU.QuantumObservableUniverses.NSymTraceAlgebra
 import QOU.QuantumObservableUniverses.QAnalysis
 import QOU.QuantumObservableUniverses.QBetaEnergyDictionary
