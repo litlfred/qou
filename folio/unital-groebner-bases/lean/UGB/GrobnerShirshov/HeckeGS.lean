@@ -39,10 +39,8 @@ Everything downstream that used it — `heckeCost_well_defined`,
 with no hypothesis and no `sorry`. So the two theorems below are not merely
 conditional-and-parked: their completed-system counterparts,
 `heckeCompleted_normalForm_unique` and `heckeCompleted_threading_cost_unique`
-(§4bx there), hold outright — modulo the Diamond-Lemma axiom
-`local_confluence`, which `normal_form_unique` carries and which is not this
-file's to discharge. (`reduction_well_founded`, the other input, has been a
-theorem since 2026-11-20.)
+(§4bx there), hold outright, up to `CoeffEq`, with no axiom beyond Lean's
+three: the Diamond Lemma is proved in `DiamondLemma.lean` (2026-11-20).
 
 ## Axiom budget
 
@@ -59,9 +57,9 @@ theorem since 2026-11-20.)
 
 No axiom is declared in this file. The framework results it *uses* live in
 `Basic.lean` (`normal_form_exists`, `reduction_well_founded` — both theorems)
-and `CompositionLemma.lean` (`local_confluence`, the one remaining axiom, and
-`confluence`, `normal_form_unique`, proved from it); the refutation above
-depends on none of them.
+and `CompositionLemma.lean` (`local_confluence`, `confluence`,
+`normal_form_unique` — theorems up to `CoeffEq` since 2026-11-20); the
+refutation above depends on none of them.
 
 ## References
 
@@ -824,6 +822,23 @@ theorem heckeCost_nonneg {n : ℕ} (f : AlgElement (HeckeGen n) ℝ) :
   unfold heckeCost
   exact Finset.sum_nonneg (fun m _ => abs_nonneg _)
 
+/-- The Hecke cost depends only on the coefficients, not on the (superset)
+    `support` field. -/
+theorem heckeCost_congr {n : ℕ} {f g : AlgElement (HeckeGen n) ℝ}
+    (h : AlgElement.CoeffEq f g) : heckeCost f = heckeCost g := by
+  classical
+  unfold heckeCost
+  have hf : f.support.sum (fun m => |f.coeff m|) =
+      (f.support ∪ g.support).sum (fun m => |f.coeff m|) :=
+    Finset.sum_subset Finset.subset_union_left
+      (fun m _ hm => by rw [f.support_spec m hm, abs_zero])
+  have hg : g.support.sum (fun m => |g.coeff m|) =
+      (f.support ∪ g.support).sum (fun m => |g.coeff m|) :=
+    Finset.sum_subset Finset.subset_union_right
+      (fun m _ hm => by rw [g.support_spec m hm, abs_zero])
+  rw [hf, hg]
+  exact Finset.sum_congr rfl (fun m _ => by rw [h m])
+
 /-! ## §7  Normal Form Uniqueness -/
 
 /-- Normal forms of a Hecke algebra element are unique — **conditionally on
@@ -847,7 +862,7 @@ theorem heckeCost_well_defined (n : ℕ) (hn : 0 < n) (hp : HeckeParams)
     (nf₁ nf₂ : AlgElement (HeckeGen n) ℝ)
     (hred₁ : ReducesToNF (heckeOrder n) (heckeRewritingSystem n hn hp) f nf₁)
     (hred₂ : ReducesToNF (heckeOrder n) (heckeRewritingSystem n hn hp) f nf₂) :
-    nf₁ = nf₂ :=
+    AlgElement.CoeffEq nf₁ nf₂ :=
   normal_form_unique (heckeOrder n) (heckeRewritingSystem n hn hp) hgs hnqz hlc
     f nf₁ nf₂ hred₁ hred₂
 
@@ -869,7 +884,7 @@ theorem threading_cost_unique (n : ℕ) (hp : HeckeParams)
         (augmentedBraidElement hp hadron) nf₁ →
       ReducesToNF (heckeOrder (n + 1)) (heckeRewritingSystem (n + 1) (Nat.succ_pos n) hp)
         (augmentedBraidElement hp hadron) nf₂ →
-      nf₁ = nf₂ := by
+      AlgElement.CoeffEq nf₁ nf₂ := by
   intro nf₁ nf₂ h₁ h₂
   exact heckeCost_well_defined (n + 1) (Nat.succ_pos n) hp hgs
     (noQuasiZerosFree_of_generator ⟨0, Nat.succ_pos n⟩) hlc
