@@ -470,6 +470,7 @@ import QOU.AtomicMass
 import QOU.QuantumObservableUniverse
 import QOU.QuantumObservableUniverses.DilogPentagonAssociator
 import QOU.QuantumObservableUniverses.NoClosedCausalChains
+import QOU.QuantumObservableUniverses.HiggsVacuumResidual
 import QOU.QuantumObservableUniverses.QAnalysis
 import QOU.QuantumObservableUniverses.QBetaEnergyDictionary
 import QOU.QuantumObservableUniverses.QExpEntire
