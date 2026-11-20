@@ -85,8 +85,7 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 >    $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
 >    $y_{(1^3)} = 0$ identically
 >    ([Closed-form Jones/Temperley–Lieb weights on $H_3(q)$ (Borromean Jones polynomial): $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$, $y_{(1^3)} = 0$](h3-markov-wenzl-weights.md));
-> 2. the **Wenzl-bridge / Ocneanu** normalisation (producer
->    `y-lambda-wenzl-bridge-symbolic-witness.json`, used by
+> 2. the **Wenzl-bridge / Ocneanu** normalisation (used by
 >    the formal derivation), whose
 >    weights are all non-zero and whose trace value on
 >    $\beta_{\mathrm{Bor}}$ **differs** from the closed form above

@@ -30,4 +30,7 @@ export default conjecture({
     "noncomputable-opaque",
     "audit-flag-13a",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean encoding.** The conjecture is axiomatised as the class `QOU.BraidKnot.ResidueAtRoot` (fields: the target ring family `target : ℕ → Type` and the cyclotomic projection `project : (n : ℕ) → R →+* target n`); an instance supplies the Habiro-completion projection whose existence is the conjectural content, and [Cyclotomic residues of $\\Phi_q \\cdot \\mathrm{tr}_{M, \\ell}$](#prop:residue-at-root) is stated conditionally on it per the conditional-class convention. The archimedean per-level residue values enter downstream as the class field `residue : Fin levelBound → ℝ` of `GBResidueSpectralSum`. A fully constructive definition requires Mathlib infrastructure for meromorphic functions and the Habiro completion as a topological ring.\n\n**Conjectural status.** The analytic literature guarantees the existence and reality of the residue. A Lean proof awaits the meromorphic-function infrastructure. Instances supply the value directly." },
+  ],
 });

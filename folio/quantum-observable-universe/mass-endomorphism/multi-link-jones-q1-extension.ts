@@ -27,6 +27,7 @@ export default remark({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): $q = 1$ — Lean infrastructure for the $c_5 / c_6$ candidate investigation.**\n\nThe Lean module `QOU.BraidKnot.multi_link_jones_q1_extension` exports:\n\n1. **Three new `Link` constructors** (extending the `Link` inductive in [Concrete Lean braid and link types](#rem:braid-link-types)): `trefoil`, `borromean`, `doubleHopf`.\n2. **Three new `jonesAtOne` cases**, each proved by `rfl`:\n\n3. **Two combination values**: `jonesHopfTimesBorromean = 16`, `jonesBorromeanFlipped = 8`. Both candidates carry **explicit docstrings noting the empirical mismatch**. They are not closures." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

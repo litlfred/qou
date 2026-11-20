@@ -21,7 +21,7 @@ the formal derivation.
 For each partition $\lambda$ the witness records:
 
 - $\dim V_\lambda$ (classical Hecke irrep dim, integer)
-- $\dim_q V_\lambda$ at $q_0 = 1.1099785955541805\ldots$ (50 dps, categorical $q$-dim; the CODATA-2018 muon pin recorded in `wedderburn-strata-witness.json`)
+- $\dim_q V_\lambda$ at $q_0 = 1.1099785955541805\ldots$ (50 dps, categorical $q$-dim; the CODATA-2018 muon pin)
 - $\mathrm{depth}(\lambda)$, $\mathrm{height}(\lambda)$
 - $\mathrm{signed\_content}(\lambda) = \sum_{(i, j) \in \lambda}
   (j - i)$ (chirality marker; $= 0$ marks chirality cells)

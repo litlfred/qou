@@ -31,7 +31,7 @@ Gauss linking number, is the correct binding carrier for a Brunnian nuclear link
 bond ($n_+ = n_- = 1$, the pairwise pattern inside $\mathrm{L6a4}$) contributes exactly one
 coordination unit, so a fully coordinated cluster carries $\binom{A}{2}$ units and per-nucleon
 $z = A - 1$; which pairs bond is the coordination-graph question, saturation-limited for heavy $A$
-(the complete graph is excluded there, `QOU.Mass.CoordinationSaturation`).
+(the complete graph is excluded there).
 
 The deuteron sits at the boundary. What coincides there is the two *multiplicities* — the writhe
 $n_+ - n_- = 2\,\mathrm{lk}$ and the crossing count $n_+ + n_-$, which are what play the role of the
@@ -79,8 +79,8 @@ that is actually proved — the Kronecker-product multiplicativity of the trace
 Consequently a genuinely independent assembly has $I = \delta$, not $I = 1$: adding an unlinked
 component costs $\log \delta \approx 0.699$ of free energy at the proton pin, and a Markov closure of
 an $n$-strand braid is normalised by $\delta^{\,n-1}$. The additivity therefore holds only up to that
-loop factor, which is exactly what `QOU.Mass.ClosureNormalisationDefect` makes precise
-(`freeEnergy_closureNorm_additive_iff`: additivity holds iff $\delta = 1$, excluded for $q > 1$). Two modelling inputs remain named rather than
+loop factor; precisely,
+additivity holds iff $\delta = 1$, which is excluded for $q > 1$. Two modelling inputs remain named rather than
 derived: that the substrate assembly amplitude is the Markov trace (a citable Jones theorem, carried
 as a hypothesis), and the dimensional dressing
 $\mathfrak{m} = \mathfrak{m}_e\,\mathrm{Vol}\,\mathrm{lw}/\hbar_q^2$ (CAL-1 scale, geometric volume,

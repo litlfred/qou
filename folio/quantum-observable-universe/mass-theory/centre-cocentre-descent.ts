@@ -11,6 +11,7 @@ export default theorem({
   cites: ["geckpfeiffer2000", "dipper-james1986"],
   tags: ["mass-endomorphism", "centre", "cocentre", "trace", "descent", "hecke-algebra"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): that the matrices satisfy the Hecke presentation is verified by hand, not in Lean." },
     {
       kind: "status",
       date: "2026-11-16",

@@ -9,7 +9,7 @@ remaining inputs.
 The grading rests on the Gröbner--Shirshov filtration (step 7, derived) read
 through the jet-prefix order (step 8); the exhaustiveness of the cluster
 decomposition — every contribution lives in some finite cluster degree — is
-the structural property of the `atom_braid_word_3A` construction (each added
+the structural property of the atomic braid-word construction (each added
 nucleon raises the normal-form length by its block, so an $n$-cluster
 sub-word sits at degree $n$).
 

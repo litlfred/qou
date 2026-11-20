@@ -16,6 +16,8 @@ export default proposition({
     validation: "not_checked",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): this composition is the Lean-derived step, with the Kashaev identification consumed as the class hypothesis rather than asserted." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): , Lean class `VolumeConjecture`, field `kvc_holds`)" },
     {
       kind: "refined-framing",
       date: "2026-08-25",

@@ -1,23 +1,23 @@
 **Macdonald coordinate $u = q^2$ substantive discharges for $H_3 / V_{(2,1)}$ scalar invariants.**
 
-Many scalar invariants in the Hecke and Wenzl-bridge algebras are rational in the Macdonald coordinate $u = q^2$, even when their defining formulas require `Real.sqrt` over $q$. We use this Macdonald substitution to eliminate square roots. This provides concrete, closed-form Lean identities that algebraically verify the explicit-residual discharges required in [$c_k$ extraction from four algebraic reduction rules (Yang-Baxter](#rem:ck-extraction-from-algebraic-rules) and related proofs.
+Many scalar invariants in the Hecke and Wenzl-bridge algebras are rational in the Macdonald coordinate $u = q^2$, even when their defining formulas involve square roots of expressions in $q$. The Macdonald substitution eliminates the square roots and yields concrete, closed-form rational identities that algebraically verify the explicit-residual discharges required in [$c_k$ extraction from four algebraic reduction rules (Yang-Baxter](#rem:ck-extraction-from-algebraic-rules) and related proofs.
 
 ## Substantive identities
 
 See [Table](#tbl:u-coordinate-discharges-table-data).
 
-We export each scalar identity as a Lean theorem. Because the substitution removes square roots, the `field_simp + ring` tactic closes every proof without opaque axioms.
+Because the substitution removes square roots, each scalar identity reduces to an identity of rational functions in $u$ and is proved by clearing denominators.
 
 ## Significance
 
-Previously, explicit-residual discharges at the class level (such as `⟨0, rfl⟩`) appeared abstractly trivial: the residual evaluates to $0$, but no concrete computation connects this to the underlying substrate arithmetic. The $u$-coordinate identities express the underlying scalars as rational functions in a single variable $u$. This enables `ring` and `field_simp` to verify the equalities mechanically.
+A residual that is merely asserted to vanish carries no computation connecting it to the underlying substrate arithmetic. The $u$-coordinate identities express the underlying scalars as rational functions in a single variable $u$, so the equalities reduce to identities of rational functions.
 
-For example, the abstract class field `HeckeQuadraticAllGenerators 3 q .hecke_quad_residual_eq_zero` mandates that the residual vanishes. The substantive reason for this vanishing lies in the identity `hecke_root_sum_times_q`: the relation $q \cdot (q - q^{-1}) = u - 1$ constitutes a non-trivial rational identity closed by `field_simp + ring`.
+For example, the Hecke quadratic residual vanishes for all generators of $H_3$. The substantive reason for this vanishing is the relation $q \cdot (q - q^{-1}) = u - 1$, a non-trivial rational identity.
 
 ## Downstream dependencies
 
-These $u$-coordinate identities act as the computational backing for several downstream files:
+These $u$-coordinate identities act as the computational backing for several downstream results:
 
-- `rem:ck-extraction-from-algebraic-rules` references these identities to justify its instances.
-- `rem:h3-hecke-idempotents` links its `dimQ_V21^2` computation to `dimQ_V21_sq_in_u`.
-- `prop:hoefsmit-V21-cos-symmetrization` establishes a no-sqrt closed form for the Hoefsmit coupling $b^2$ via `hoefsmit_b_sq_in_u`.
+- [$c_k$ extraction from four algebraic reduction rules](#rem:ck-extraction-from-algebraic-rules) uses these identities to justify its residual discharges.
+- [$H_3(q)$ Hecke idempotents](#rem:h3-hecke-idempotents) uses the $u$-form of $\dim_q(V_{(2,1)})^2$.
+- [The Hoefsmit seminormal matrix for $V_{(2,1)}$](#prop:hoefsmit-V21-cos-symmetrization) has a square-root-free closed form in $u$ for the Hoefsmit coupling $b^2$.

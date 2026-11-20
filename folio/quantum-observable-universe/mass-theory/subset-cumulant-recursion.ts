@@ -34,4 +34,7 @@ export default proposition({
     "lean-formalised",
     "draft",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): are proved as `sum_powerset_cum`, `cum_eq_sizeCum` and `cum_eq_zero_of_additive_split` in `QOU.Mass.SubsetCumulantRecursion`. ... they are **not** formalised: the corpus's `MarkovTrace.lean` carries cyclicity and single-generator conjugation, not the split-link tensor rule" },
+  ],
 });

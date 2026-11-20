@@ -15,12 +15,11 @@ framework after the initial derivation:
   from direct substitution on the closed-form trace.
   The categorical projector onto the (2,1) channel is the
   $\mathbf{e}_-$ minus-eigenspace idempotent of the Hecke quadratic
-  relation $q\sigma^2 = (q^2 − 1)\sigma + q$, formalised
-  in `QOU.Hecke.SpectralProjector` (`eminus_idem`,
-  `eplus_eminus_orthogonal`, `eplus_add_eminus = 1`).
+  relation $q\sigma^2 = (q^2 − 1)\sigma + q$: $\mathbf{e}_\pm$ are
+  orthogonal idempotents with $\mathbf{e}_+ + \mathbf{e}_- = 1$.
   Closed-form trace computation on $V^{\otimes 3}$ can be done via
-  the Cayley–Hamilton block reduction
-  `QOU.Braiding.HeckeGenPolyReduction.hecke_gen_poly_reduction`.
+  the Cayley–Hamilton block reduction of polynomials in a Hecke
+  generator.
 
 - **Step 2 (the Markov normalisation `y_{(2,1)}(q=1) = 1/4`)**
   is the $q = 1$ evaluation of the exact closed-form Wenzl weight
@@ -38,7 +37,7 @@ be reformulated equivalently as: extract the $\mathbf{e}_-$ component
 of $\sigma_1^{-1}\sigma_2$ on $V_{1/2}^{\otimes 3}$, take the $h^4$
 coefficient of its trace.  The $\mathbf{e}_-$ idempotent is the
 categorical replacement for the explicit $8 \times 8$ R-matrix
-computation; both are now valid Lean entry points to the same
+computation; both lead to the same
 `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶` identity.
 
 ## Significance
@@ -64,6 +63,6 @@ the framework's existing structure.
 > chain (the 3-strand side of the Borromean story). It does **not**
 > resolve the *cross-algebra* obstruction linking 5-strand $A_5$ fiber
 > action to 3-strand $\mathrm{H}_3$ — that is the question posed by
-> (`conj:s5-so3-fiber-action`), and it remains open: eight candidate
+> the $S_5 \leftrightarrow \mathrm{SO}(3)$ fibre-action conjecture, and it remains open: eight candidate
 > cross-algebra functors have been refuted.
 

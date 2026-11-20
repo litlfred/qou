@@ -24,9 +24,9 @@ where the second equality is the residue form
 growth law is fixed by the $q$-difference recurrence
 ([The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference)).
 
-This is a **rigorous-conditional** result: it is fully verified by Lean
-modulo the single named input (B) — the per-term mass identity — which is
-axiomatised as the class `BindingClosureInput`. Obligation (C) (the
+This is a **rigorous-conditional** result: it is proved modulo the single
+named input (B) — the per-term mass identity — which is taken as a
+hypothesis. Obligation (C) (the
 grading coincidence) and the residue form (D) are discharged outright; the
 remaining open input is (B), equivalently the existence of the $q$-difference
 kernel $R$ realising the prolongation symbol. When (B) is derived, this

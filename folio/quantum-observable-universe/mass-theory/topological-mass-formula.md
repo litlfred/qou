@@ -56,17 +56,15 @@ on the curvature-rank stratification.  Summing over the $N$ blow-ups
 and using the dilogarithm identity
 $\sum_{i=1}^N \Phi_q(z_i) = (1/\hbar_q^{2} - 1)\,\mathrm{Vol}(K)$
 (Kashaev–Murakami volume conjecture restricted to the
-$q$-deformation; this is `Hypothesis 2 (Dilogarithm evaluation)`
-on the Lean structure
-[`qou:QOU.ArchimedeanMassFormula`](https://github.com/litlfred/qou/blob/main/folio/quantum-observable-universe/lean/QOU/ArchimedeanMassFormula.lean),
-field `exceptional_sum_eq`):
+$q$-deformation; this is the dilogarithm-evaluation hypothesis
+of the archimedean mass formula):
 
 $$
   \sum_{i=1}^{N} \Phi_q(z_i)
   \;=\; \mathrm{Vol}(K)\bigl(\hbar_q^{-2} - 1\bigr).
 $$
 
-The Lean formalisation isolates this identity as a hypothesis on
+This identity is a hypothesis on
 the archimedean structure rather than a derived theorem; the
 evaluation in Briggs–Klein coordinates is the categorical content
 the formula imports from the geometric side.

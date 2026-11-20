@@ -70,7 +70,7 @@ characters at $q_0$ and summing with the q-deformed Wedderburn weights
 $w_\lambda(q)$.  Compares $\alpha \cdot
 \mathfrak{m}^{\geq 4}_{q,\mathcal{K}}$ to the Coulomb-corrected
 nuclear binding $B_\mathrm{nucl}$ from
-`coulomb-subtracted-binding.witness.json`.
+the Coulomb-subtracted binding computation.
 
 > **Open step (centre grading versus word filtration).** The step above reads a grading of the **centre** by
 > *partition* depth off a proposition that stratifies $H_n(R,q)$ by the
@@ -79,7 +79,7 @@ nuclear binding $B_\mathrm{nucl}$ from
 > each excluded: the ideal-power reading is provably $\bot$ above degree $0$
 >; the Coxeter-length reading
 > fails a dimension count at $n \leq 3$; and the rewrite-depth reading is
-> identically zero once `def:hecke-normal-form` fixes $T_w$ as the unique
+> identically zero once the [Hecke normal form](#def:hecke-normal-form) fixes $T_w$ as the unique
 > normal-form basis indexed by $S_n$.
 > **Not claimed:** that this block's conclusion is false — only that the step
 > it rests on is unestablished, and that the obvious ways to establish it do

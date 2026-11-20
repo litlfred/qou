@@ -140,28 +140,9 @@ also closes the loop:
 - **Bar-symmetry status**: bar-symmetric.  The Beilinson regulator
   $r_2[z] = \mathrm{Im}\,\mathrm{Li}_2(z) + \ldots$ is bar-symmetric
   under $q \mapsto q^{-1}$ because $\mathrm{Li}_2^q$ is bar-symmetric
-  (per [`bar-involution.md`](../braids-and-knots/bar-involution.md) Table 2 — Rogers
+  (per [the bar involution](../braids-and-knots/bar-involution.md), Table 2 — Rogers
   q-dilog is bar-symmetric, Faddeev's $\Phi_q$ alone is bar-anti-
   symmetric).
-
-## Lean axiomatisation (sketch)
-
-```lean
-class BorromeanBlochGroupElement
-    (M : Type*) [BrCategory M] [QuantumDilogarithm M] where
-  /-- The Bloch-group element of the Borromean complement. -/
-  borromean_bloch_class : BlochGroup (Complex)
-  /-- It equals 8 · [i], the ζ₄ (octahedral) class. -/
-  borromean_bloch_eq_eight_xi :
-    borromean_bloch_class = 8 • bloch_symbol Complex.I
-  /-- The Beilinson regulator of the class equals 8G. -/
-  regulator_eq_eight_G : r_2 borromean_bloch_class = 8 * catalan_G
-  /-- The order-h² regulator correction equals -6G. -/
-  regulator_h2_correction : r_2_h2_correction borromean_bloch_class = -6 * catalan_G
-  /-- Equivalently, the h^4 Markov-trace coefficient = -3/4. -/
-  borromean_h4_coefficient_from_regulator :
-    markov_trace_h4_coefficient borromean_complement = -3/4
-```
 
 ## What remains open
 
@@ -170,12 +151,12 @@ class BorromeanBlochGroupElement
    $r_2^{(2)}[\mathcal{B}_3] = -6G$.  The left side requires
    extending the Bloch-Wigner regulator to order $h^2$ via the
    $\Phi_q$ formal expansion; the right side is already in
-   [`borromean-markov-trace-closed-form.md`](#prop:borromean-markov-trace-closed-form).
-2. Closing the conjecture needs an instance of the class above, and the
-   `borromean_h4_coefficient_from_regulator` proof (which would
-   import a Bloch-Suslin lemma from Mathlib once available; per
-   `lean_loogle` search, $K_3$ formalisation is currently partial in
-   Mathlib).
+   [the Borromean Markov-trace closed form](#prop:borromean-markov-trace-closed-form).
+2. Closing the conjecture needs a proof of the regulator identities
+   above ($[\mathcal{B}_3] = 8 \cdot [i]$, $r_2[\mathcal{B}_3] = 8G$,
+   $r_2^{(2)}[\mathcal{B}_3] = -6G$) and of the resulting $h^4$
+   coefficient $-3/4$ from the regulator, which would rest on the
+   Bloch–Suslin theorem.
 3. **Cross-validation.** The Pachner–Pentagon state-sum
    and the K-theoretic regulator should both give $h^4 = -3/4$ —
    a triple cross-validation of the topological coefficient.

@@ -12,7 +12,7 @@ The **channel binding residual** is the excess binding beyond the free constitue
 $$
   t_i \;:=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) \;-\; \sum_{j \in \mathrm{channel}\, i} \Delta_\mathrm{cat}(j).
 $$
-This measures the binding that the magic-shell coupling must explain beyond the free constituents. We load the empirical anchors from [`magic-shell-empirical-instantiation.witness.json`](computations/magic-shell-empirical-instantiation.witness.json).
+This measures the binding that the magic-shell coupling must explain beyond the free constituents. The empirical anchors are those of the magic-shell empirical instantiation.
 
 ## LP formulation
 
@@ -40,7 +40,7 @@ $$
 
 ## Proposition
 
-**(Conditional on [`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**
+**(Conditional on the compositional $^4\mathrm{He}$ SDP evaluation.)**
 For the $^4\mathrm{He}$ operator-selection LP:
 1. **Unique primal optimum:** The system selects the $\mathrm{T} \oplus p$ channel with $x^\star_{\mathrm{T} \oplus p} > 0$ and $x^\star_i = 0$ for all $i \neq \mathrm{T} \oplus p$.
 2. **Active set:** The dual-tight constraints are $\mathcal{A}({}^4\mathrm{He}) = \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}$.
@@ -50,4 +50,4 @@ For the $^4\mathrm{He}$ operator-selection LP:
 
 The LP selects the $\mathrm{T} \oplus p$ decomposition to satisfy the binding constraint because it has the smallest residual. However, the shadow prices identify $\mathrm{D} \oplus \mathrm{D}$ as the most binding-receptive sub-braid. A unit perturbation of the deuteron-pairing channel changes the primal binding cost by $3.778$ MeV. This is five times the effect of the ${}^3\mathrm{He} \oplus n$ channel.
 
-This two-tier fingerprint mirrors the Wedderburn-block fingerprint of [Two-row stratum carries $\ge 80\%$ of $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ at $q_0$ (exactly $1$ empirically)](#prop:he4-two-row-dominance). Both identify a $q$-symmetric deuteron-pairing structure as the load-bearing geometry of the magic-shell coupling. The $\mathrm{T} \oplus p$ channel provides the energetic accounting. We make this connection explicit in `rem:he4-magic-shell-fingerprint`.
+This two-tier fingerprint mirrors the Wedderburn-block fingerprint of [Two-row stratum carries $\ge 80\%$ of $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ at $q_0$ (exactly $1$ empirically)](#prop:he4-two-row-dominance). Both identify a $q$-symmetric deuteron-pairing structure as the load-bearing geometry of the magic-shell coupling. The $\mathrm{T} \oplus p$ channel provides the energetic accounting.

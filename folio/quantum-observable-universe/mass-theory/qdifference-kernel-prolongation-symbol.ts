@@ -10,6 +10,7 @@ export default conjecture({
     "The q-difference kernel R is the jet-prolongation symbol, carried by the " +
     "binding q-lift module",
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Formalized in [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean); (`QOU.Mathlib.RamifiedShiftCalculus`, over a generic commutative ring); (`QOU.Mass.C1KernelLevelReading`, $q$ not a root of unity); (`QOU.Mass.DilationBranchLocusRigidity`, generic characteristic-zero field)" },
     {
       kind: "status",
       date: "2026-07-20",

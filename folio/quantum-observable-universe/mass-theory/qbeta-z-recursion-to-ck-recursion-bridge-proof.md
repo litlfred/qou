@@ -2,12 +2,11 @@
 `4(n+1) · a_{n+1} + 6n · a_n + (2n-1) · a_{n-1} = 0` from
 [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$](../mass-endomorphism/qbeta-per-block-chi-closed-forms.md)
 §Extension #5, dividing through by $4(n+1)$ (positive for $n \geq 0$).
-The Lean proof is `field_simp` + `linarith` on the recursion equation.
 $\square$
 
 ## Structural relationship to `CKRecursion`
 
-The `QOU.QBeta.CKRecursion.CKRecursion ℝ` structure defined in
+The constant-kernel recursion defined in
 [$c_k$ precision-ladder recursion induced by the fibre-level Habiro $q$-difference equation — depth-$d$ linear recursion on $c_k$ from the $q$-shift kernel $R(q,\xi)$ acting on $F(\xi)$](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
 captures the **constant-kernel** depth-$d$ linear recursion
 
@@ -24,7 +23,7 @@ but its kernel coefficients depend on $n$:
 |---|---|---|
 | **Depth** | $d$ (fixed) | 2 |
 | **Kernel** | `Fin d → R` (constant) | $n \mapsto (\text{Fin 2} \to \mathbb{R})$ (variable) |
-| **Linear in history** | Yes (proven, `applyRecursion_linear`) | Yes (state-dependent linear) |
+| **Linear in history** | Yes (proven) | Yes (state-dependent linear) |
 
 **Origin of the kernel difference.** The constant-kernel structure of
 `CKRecursion` reflects a fibre-level Habiro element whose

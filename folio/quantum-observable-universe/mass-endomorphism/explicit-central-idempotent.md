@@ -1,10 +1,9 @@
 **Proposition (conditional on [The four Murphy–Lagrange cross-checks for $e_\lambda$ follow from Lagrange interpolation in commuting variables](#conj:explicit-central-idempotent)).**
-The statement below is proved in Lean *conditionally* on the
-Lagrange-interpolation cross-checks, which are axiomatised as the class
-`ExplicitCentralIdempotentConjecture q` and are **open**: no instance of
-that class exists anywhere in the corpus. The four cross-checks
-(sum-to-identity, orthogonality, self-adjointness, bar-pairing) are the
-conjectural input; everything downstream of them is machine-checked.
+The statement below is proved *conditionally* on the
+Lagrange-interpolation cross-checks, which are **open**. The four
+cross-checks (sum-to-identity, orthogonality, self-adjointness,
+bar-pairing) are the conjectural input; everything downstream of them is
+proved.
 
 *Let $H_n(q)$ be the Iwahori–Hecke algebra over $R$ at generic $q$. The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ ([Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block](#prop:jucys-murphy-central-elements-qou)) commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, we have $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
 
@@ -66,4 +65,4 @@ This is numerically verified in [Bring figure-8 volume as depth-2 grouplike valu
 
 ## Provenance
 
-The Murphy-element diagonalization of $Z(H_n(q))$ originates with Murphy (1981, symmetric group) and Dipper–James (1986, Hecke algebra). The Lagrange-interpolation form offers the cleanest computable expression. It is standard in implementations like SageMath's `IwahoriHeckeAlgebra` and the local `pyhecke-native` module.
+The Murphy-element diagonalization of $Z(H_n(q))$ originates with Murphy (1981, symmetric group) and Dipper–James (1986, Hecke algebra). The Lagrange-interpolation form offers the cleanest computable expression. It is standard in computer-algebra implementations such as SageMath.

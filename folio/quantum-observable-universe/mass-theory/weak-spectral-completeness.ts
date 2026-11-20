@@ -17,6 +17,7 @@ export default conjecture({
     "open-problem",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): each $\\sigma_i^{2k}$ is bar-self-dual on its own (`prop:even-twist-torus-link-psd-feasibility`) [label does not resolve to any block]" },
     {
       kind: "refined-framing",
       body: "**Demoted.** Earlier drafts of this proof used\nPlancherel weights $w_X = 1/[2]_q$ as a \"uniform completeness\nsignature.\" That uniform-weight expression was a degenerate\nartifact of the dimensionally-collapsed $H_2(q)$-only\nformulation (six rank-1 projectors cannot fit in a 2-dim\nalgebra). The Hoefsmit $n=6$ formulation supersedes it.",

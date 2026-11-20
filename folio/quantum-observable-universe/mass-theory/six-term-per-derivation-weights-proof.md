@@ -83,7 +83,7 @@ total mass, not on binding.
 **Open questions.**
 
 1. *$T_4$ binding contribution vanishes empirically.* The
-   `term4_frobenius_codim` evaluation gives the same value for
+   evaluation of $T_4$ gives the same value for
    bound and free configurations, so the differential
    $T_4^{\rm atom} - T_4^{\rm free} = 0$ identically.  Either
    $T_4$ is independent of inter-nucleon crossings by

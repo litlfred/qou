@@ -27,7 +27,7 @@ The formulation bypasses special-case branching entirely. Each atomic step compu
 
 The sum above is unrestricted. Restricting it to those $\lambda$ with $\mathrm{tr}\, \mathbf{M}_\lambda^{(0..A)} \le 0$ is not a consequence of the Frobenius positivity constraint, as the following shows.
 
-Complementary slackness for a Frobenius positivity constraint $\langle \Phi, \pi_\lambda \rangle \ge 0$ makes *tight* mean $\mathrm{tr} = 0$, not $\mathrm{tr} \le 0$. Under that reading every selected block contributes the same constant and the total reads nothing about the nucleus; the selected set also meets the domain of $\ln|\cdot|$ nowhere. Both are recorded in `QOU.MassTheory.UICFunctionalSelection`.
+Complementary slackness for a Frobenius positivity constraint $\langle \Phi, \pi_\lambda \rangle \ge 0$ makes *tight* mean $\mathrm{tr} = 0$, not $\mathrm{tr} \le 0$. Under that reading every selected block contributes the same constant and the total reads nothing about the nucleus; the selected set also meets the domain of $\ln|\cdot|$ nowhere.
 
 The [operator-selection programme](#prop:operator-selection-lp) is degenerate as well: its net-constraint dual vanishes identically and its minimiser set is a positive-dimensional face, so complementary slackness on that programme cannot single out a partition set at all.
 

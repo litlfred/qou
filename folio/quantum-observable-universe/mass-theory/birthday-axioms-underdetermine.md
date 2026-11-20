@@ -1,6 +1,6 @@
 ## An axiom set that admits a model it was not meant to admit
 
-The corpus's `SurrealField` class asks for more than an ordered field. It also demands Conway's birthday — a map $\mathrm{birthday} : K \to \mathrm{Ordinal}$ — constrained by six axioms: its values at $0$ and $1$, its invariance under negation, a bound for sums, a bound for averages, and a bound of $\omega$ on the birthdays of real numbers.
+The surreal-field axiom system used in this corpus asks for more than an ordered field. It also demands Conway's birthday — a map $\mathrm{birthday} : K \to \mathrm{Ordinal}$ — constrained by six axioms: its values at $0$ and $1$, its invariance under negation, a bound for sums, a bound for averages, and a bound of $\omega$ on the birthdays of real numbers.
 
 Those six do not pin down the intended object.
 
@@ -28,7 +28,7 @@ That is the sharpest form of the defect. The axiom carrying the most design comm
 
 **What does not follow.** The axioms are not *inconsistent*, and nothing here says the surreal material built on them is wrong. It says that material is weaker than its vocabulary suggests, and that the gap is invisible from inside.
 
-The practical consequence is recorded in the formalisation: the resulting `SurrealField` structure on $\mathbb{R}^*$ is a plain definition and deliberately **never** a global instance. Registering it globally would silently apply every `SurrealField`-generic theorem to the hyperreals under a birthday that is not Conway's — turning a documented defect into a silent one.
+The practical consequence: the structure on $\mathbb{R}^*$ given by $\beta$ must **never** be treated as the intended one. Doing so would silently apply every theorem proved from these axioms to the hyperreals under a birthday that is not Conway's — turning a documented defect into a silent one.
 
 ## The limit-transfer conjecture, and why this does not rescue it
 

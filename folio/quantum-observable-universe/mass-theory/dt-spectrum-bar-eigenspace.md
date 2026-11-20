@@ -34,7 +34,7 @@ therefore the categorification of that involution's eigenspaces, not a generic
 cohomological-Hall computation. Milestone M2 supplies a *structural
 characterization* of the putative closed-sector BPS spectrum — **not** a
 construction of it: taking the certified eq-(98) constants as Donaldson–Thomas
-invariants (conditional on the DT/BPS bridge `conj:stokes-dt-bps-bridge`), every
+invariants (conditional on the [DT/BPS bridge](#conj:stokes-dt-bps-bridge)), every
 Borel ray is distinct, so the Davison–Meinhardt plethystic log is trivial and
 $\dim \mathrm{BPS}_d = |\Omega_d|$ with no superpotential and no motivic
 $q$-correction — the spectrum would be *abelian*, which is why $A_\omega$ and the

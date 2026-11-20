@@ -21,6 +21,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean class `CanonicalMarkovWeightsH3` (declared in [\n\n§Extension #4) is inhabited. We construct an explicit $\\sqrt q$-bearing instance:\n\nthe instance is a formal inhabitant of the class, constructed to show the class is non-empty, and nothing" },
     {
       kind: "note",
       date: "2026-08-09",

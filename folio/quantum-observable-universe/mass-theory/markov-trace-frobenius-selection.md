@@ -16,7 +16,7 @@ $$
 
 **(iii) What the pairing then is.** *Consequently $\langle x, y \rangle_\tau := \mathrm{tr}_M(xy)$ is **degenerate** on $H_n(R,q)$ for $n \geq 3$, and the radical of the form (not the Jacobson radical — $H_n$ is split semisimple at generic $q$) is exactly the Temperley–Lieb ideal $I_n = \ker\bigl(H_n(q) \twoheadrightarrow \mathrm{TL}_n(q)\bigr)$, neither larger nor smaller. $\mathrm{tr}_M$ vanishes identically on $I_n$, so it is still determined on all of $H_n(R,q)$ — uniqueness is on the nose, not merely modulo the radical — and it descends to a non-degenerate pairing on the quotient. It is $(\mathrm{TL}_n(q), \mathrm{tr}_M)$, not $(H_n(R,q), \mathrm{tr}_M)$, that is a symmetric Frobenius algebra.*
 
-**Status.** *(i) and (iii) are unconditional. (ii) is an implication whose antecedent — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — is **open**; the implication itself is proved at $n = 3$. Its extension to $n > 3$ rests on the restriction property together with the closed form above, which is verified against every partition of $n \leq 7$ to a worst residual of $1.34 \times 10^{-51}$ and proved in Lean only as fixed-$n$ instances of the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$, not by a general-$n$ induction.*
+**Status.** *(i) and (iii) are unconditional. (ii) is an implication whose antecedent — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — is **open**; the implication itself is proved at $n = 3$. Its extension to $n > 3$ rests on the restriction property together with the closed form above, which is verified against every partition of $n \leq 7$ to a worst residual of $1.34 \times 10^{-51}$ and proved only as fixed-$n$ instances of the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$, not by a general-$n$ induction.*
 
 | form | $\tau(1)$ | $z = \tau(\sigma_i)$ | $y_\lambda$ | radical of $\langle \cdot, \cdot \rangle_\tau$ | non-degenerate? |
 |---|---:|---:|---|---|---|
@@ -94,7 +94,7 @@ where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every
 
 *Both hypotheses are load-bearing and neither is redundant. Dropping 1 leaves $z$ free (the full Ocneanu family, convention C among it). Dropping 2 admits the trivial character $y = (1, 0, 0)$ at $z = q$, which satisfies M1–M3 and the row cap and makes the conclusion **false**, not merely unprovable. Dropping M1 / M3 admits, at $n = 3$, the entire two-parameter family $\{(y_{(3)}, y_{(2,1)}, 0) : y_{(2,1)} \neq 0\}$ — so hypotheses 1 and 2 alone do **not** single out $\mathrm{tr}_M$; the Markov axioms are still required.*
 
-*Formalised at $n = 3$, division-free, over a generic commutative domain: `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero` ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean)), with the fibre-side antecedent in `markovWeights_eq_jones_of_fibre_categorical` ([`FibreCategoricalTraceForcesJones.lean`](../lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean)).*
+*Proved at $n = 3$, division-free, over a generic commutative domain, together with the corresponding statement from the fibre-side antecedent.*
 
 ## Discussion
 

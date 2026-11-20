@@ -74,21 +74,15 @@ as bar-anti-symmetric, consistent: bar reverses writhe via the
 composite $P \cdot C \cdot T$, of which P is the writhe-acting
 factor.
 
-## Lean axiomatisation (sketch)
+## Structure of the conjecture
 
-```lean
-class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
-  /-- The braid-mirror involution on braid-group elements. -/
-  p_action : Braid n → Braid n
-  /-- P^2 = id. -/
-  p_involution : ∀ β, p_action (p_action β) = β
-  /-- P flips the sign of every Hecke generator. -/
-  p_on_generator : ∀ i, p_action (Hecke.sigma i) = Hecke.sigma_inv i
-  /-- P fixes q (no bar-action). -/
-  p_preserves_q : ∀ q, p_q_action q = q
-  /-- Bar-involution factorisation: bar = P · C · T. -/
-  bar_eq_p_c_t : bar_involution = p_action ∘ c_action ∘ t_action
-```
+The conjecture posits a braid-mirror involution $P$ on braid-group
+elements with:
+
+- $P^2 = \mathrm{id}$;
+- $P(\sigma_i) = \sigma_i^{-1}$ for every Hecke generator;
+- $P$ fixes $q$ (no bar-action);
+- the bar-involution factorises as $\mathrm{bar} = P \cdot C \cdot T$.
 
 ## Consumers / downstream
 
@@ -108,7 +102,7 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
    $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ is invariant under P
    because $(\sigma_i^{-1} - q)(\sigma_i^{-1} + q^{-1}) = 0$ also
    holds (multiply the original by $\sigma_i^{-2}$).
-2. Closing the conjecture needs an instance of the class above, and a
+2. Closing the conjecture needs a construction of such a $P$, and a
    derivation of bar $= P \cdot C \cdot T$ as an identity rather than an axiom.
 
 ## Cross-references
@@ -118,4 +112,4 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
   [Charge conjugation $C$ as the color-sheet flavor-swap $u \leftrightarrow \bar u$, $d \leftrightarrow \bar d$](../brings-surface/c-from-color-flavor-swap.md),
   [Time-reversal $T$ as Markov-trace word reversal (trace cyclicity dual)](../nuclear-interactions/t-from-trace-cyclicity.md)
 - Composite CPT: [CPT-saturation as Type-B fold-orbit closure](#conj:cpt-orbit-closure-density)
-- Bar-involution: [`bar-involution.md`](../braids-and-knots/bar-involution.md) Tables 1-4
+- Bar-involution: [Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](../braids-and-knots/bar-involution.md) Tables 1-4

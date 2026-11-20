@@ -18,5 +18,5 @@ is $\tau$, fixed by $q_0$ (CAL-2,
 meson-sector scale is $m_\pi$ (CAL-3). The calibration triple
 $(m_e, q_0\text{-modulus}, m_\pi)$ therefore equals the cohomological triple
 $(\text{scale}, \text{modulus}, \text{meson scale})$ term by term
-([`QOU.Mass.calibrations_eq_cohomology`](#prop:calibration-cohomology-alignment)).
+([The three calibrations are the three cohomological data of $H^1(\mathrm{Bring})$](#prop:calibration-cohomology-alignment)).
 $\qquad\blacksquare$

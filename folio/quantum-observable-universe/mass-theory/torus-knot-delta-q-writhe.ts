@@ -30,4 +30,7 @@ export default proposition({
     "writhe",
     "pre-archimedean",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): the level-pair invariant of `QOU/StandardModel/WritheLevelParity.lean` —" },
+  ],
 });

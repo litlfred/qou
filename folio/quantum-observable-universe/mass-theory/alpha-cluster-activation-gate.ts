@@ -38,4 +38,7 @@ export default proposition({
     "activation-gate",
     "sign-rep-obstruction",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Lean structure\n\nAll four parts are formalized (generic commutative ring where the\nstatement permits):\n\n- **(1)–(2)** `QOU.Mass.MilnorIndeterminacyGate` —\n  `gate_kills_hopf_spectator` ($|\\ell_{ij}|=1 \\Rightarrow\n  \\mathrm{Subsingleton}\\,(\\mathbb{Z}/\\Delta\\mathbb{Z})$) and\n  `gate_open_iff_brunnian` ($\\Delta = 0 \\iff$ all $\\ell_{ij}=0$), with the\n  structure-level `ClusterTriple.residue_nontrivial_of_brunnian`.\n- **(3)** `QOU.Mass.MilnorSignRepObstruction.equivariant_linearMap_eq_zero`\n  (Schur-lemma vanishing of the $\\Sigma_3$ sign-rep coupling over any\n  `CommRing`), with `coupling_vanishes_on_charge_bilinears`.\n- **(4)** `QOU.Mass.BondChannelClassSelection.wplane_term_eq_zero_of_vol_eq_zero`\n  ($\\mathrm{Vol}=0 \\Rightarrow \\mathfrak{m}_e\\,\\mathrm{Vol}\\,q = 0$). The\n  companion CAL-3 class-selection statement\n is a *conditional* result on\n  the `BindingVolumeLedger` class (no instance declared — the ledger is an open\n  input, not part of this proposition's proved content)." },
+  ],
 });

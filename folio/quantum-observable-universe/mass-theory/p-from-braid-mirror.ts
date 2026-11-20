@@ -30,4 +30,9 @@ export default conjecture({
     "open-problem",
     "conditional-on-class",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - Bar-involution: [`bar-involution.md`](../braids-and-knots/bar-involution.md) Tables 1-4" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Closing the conjecture needs an instance of the class above, and a" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Lean axiomatisation (sketch)\n\n```lean\nclass PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where\n  /-- The braid-mirror involution on braid-group elements. -/\n  p_action : Braid n → Braid n\n  /-- P^2 = id. -/\n  p_involution : ∀ β, p_action (p_action β) = β\n  /-- P flips the sign of every Hecke generator. -/\n  p_on_generator : ∀ i, p_action (Hecke.sigma i) = Hecke.sigma_inv i\n  /-- P fixes q (no bar-action). -/\n  p_preserves_q : ∀ q, p_q_action q = q\n  /-- Bar-involution factorisation: bar = P · C · T. -/\n  bar_eq_p_c_t : bar_involution = p_action ∘ c_action ∘ t_action\n```" },
+  ],
 });

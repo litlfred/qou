@@ -14,4 +14,4 @@ G_1=\begin{pmatrix}q&1\\0&-q^{-1}\end{pmatrix},\qquad G_2=\begin{pmatrix}-q^{-1}
 $$
 satisfy $G_i^2=(q-q^{-1})G_i+1$ and $G_1G_2G_1=G_2G_1G_2$, so they define a representation of $H_3(q)$. The $(1,1)$ entry of $G_1G_2-G_2G_1$ is $1$. So $g_1g_2\ne g_2g_1$ in $H_3(q)\subseteq H_{n+1}(q)$, and $g_1$ is not central.
 
-**Lean.** The sibling file proves items 1–5 over a generic commutative ring (`decomp`, `decomp_unique`, `desc_idem`, `desc_mul_central`, `trace_eq_trace_desc`, `desc_map_auto`, `desc_map_anti`, `refl_involutive`). For item 7 it proves the retraction step and the matrix relations and non-commutation. The step "the relations define a map out of $H_3(q)$" is the presentation of $H_3(q)$, which is not formalised. `isCompl_of_comm` shows the splitting hypothesis is not vacuous. Item 6 is not formalised. $\blacksquare$
+Items 1–5 hold over a generic commutative ring, and item 7 uses the standard presentation of $H_3(q)$. The splitting hypothesis is not vacuous: it holds, for instance, for every commutative algebra. $\blacksquare$

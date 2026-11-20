@@ -59,7 +59,7 @@ inverted, an extraction; the *derived* single $p$–$n$ bond gives
 $\alpha L_{pn} \approx 2.833\ \mathrm{MeV}$, $+27.3\%$ above the measured
 $2.2246\ \mathrm{MeV}$, hence $w_2 \approx 5.544$ instead. Rigidity for $w_3$
 would have to come from the *derived* kernel $R(q,x)$, which is open. Measured in
-[`binding_n3_forcing_probe.py`](../../../computations/binding_n3_forcing_probe.py);
+[the $n=3$ forcing probe](../../../computations/binding_n3_forcing_probe.py);
 scope-(a) analysis in
 [the n=3 forcing audit](../../../docs/audits/2026-08-26-n3-body-order-forcing.md).
 
@@ -77,7 +77,7 @@ almost entirely **Coulomb** — on the Coulomb-corrected strong binding
 $B_{\mathrm{strong}}$ the mirror pair agrees to $\sim 2.7\%$ (charge-symmetry
 breaking), so a $K$-independent $w_n$ is *not* excluded. That $2.7\%$ is
 geometry-dependent: at the canonical *derived* $r_0 = \hbar c/m_\pi$ of
-`coulomb_energy.py` the correction overshoots and the residual is $\approx -1\%$
+the Coulomb-energy computation the correction overshoots and the residual is $\approx -1\%$
 with $^{3}\mathrm{He}$ the more bound partner, while the measured-charge-radius
 geometry gives $+1\%$; the spread across geometries is $0.16\ \mathrm{MeV}$,
 which does not affect the admissibility conclusion. But no parameter-free
@@ -88,8 +88,7 @@ $K$-dependent kernel is underdetermined by the anchors ($A-1$ unknowns against
 one equation per isotope) — extraction is a fit. Closure therefore requires the
 *derived* $R(q,x)$. The eigenfunction relation of the na-Stokes period
 $a_D^{(n)}=S(n)/n$ (the seed $c_3=[2]_q$ exact, and the Habiro
-$(q-1)^2\Phi_3$ deviation, formalized in
-[`QOU.Mass.BindingEigenfunctionTwoTier`](../lean/QOU/Mass/BindingEigenfunctionTwoTier.lean))
+$(q-1)^2\Phi_3$ deviation, both proved)
 supplies a *derived target* for $R(q,x)$ but does not determine it — the binding
 deviation and the $Q_\beta$ $c_k$ ladder share the Habiro *ring*, not the same
 element.
@@ -99,7 +98,7 @@ element.
 unconstrained formal power series the shift relation determines exactly one
 kernel coefficient per body order, and conversely: for any body sequence with
 $B_2 \neq 0$ the map $\{r_k\} \leftrightarrow \{B_n\}$ is a **bijection**
-([`QOU.Mass.BindingScalarKernelParityExclusion.kernel_coeff_existsUnique`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean)).
+(proved).
 So the unconstrained ansatz constrains *nothing*: it reparametrises
 the unknown weights, it does not remove them, and "$\rho\cdot A$ is an output of
 the recursion" is false unless $R$ is independently pinned. All of the ansatz's

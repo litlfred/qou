@@ -5,11 +5,10 @@ $(a_D^{(0)}, a_D^{(1)})$. By
 period is the unprolonged Seiberg--Witten period, i.e. the electron period
 $a_D^{(e)}$; the calibration $a_D^{(0)} = m_e$ sets the leptonic scale (CAL-1).
 The base value is then $a_D^{(0)} = m_e$
-([`QOU.Mass.electron_period_is_base`](#prop:electron-period-base), the structure
-projection `base0`). Evaluating the recurrence at $n=0$,
+([CAL-1 ($m_e$) is the $n=0$ base period of the prolongation tower](#prop:electron-period-base)). Evaluating the recurrence at $n=0$,
 $$
 a_D^{(2)} = \tau\,a_D^{(1)} - a_D^{(0)} = \tau\,a_D^{(1)} - m_e,
 $$
 so $m_e$ enters the higher periods through the recurrence rather than as a
-prefactor (`second_period_contains_me`, by `T.recurrence 0` and `base0`).
+prefactor.
 $\qquad\blacksquare$

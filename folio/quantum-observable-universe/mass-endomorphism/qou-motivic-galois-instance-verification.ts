@@ -11,6 +11,7 @@ export default remark({
   ],
   cites: ["habiro2002", "yekutieli2010"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - **Lean status: there is no instance.** `MotivicGaloisCharacter` carries a single field, `frobenius_at`, and nothing in the Lake tree supplies it for the QOU substrate, so [Motivic Galois character $\\chi^{\\mathrm{mot}}_A$ of the Frobenius--Hopf substrate](#def:motivic-galois-character) is not discharged here. The class once also carried `almost_everywhere_nontrivial`; that field was removed precisely because encoding it as a class field forced every instance either to prove it or to launder the perpetual obstruction through a bare `axiom`.\n\nthe Lean module `QOU.LiftingDescent.MotivicPerpetualObstructionFromTrace`\nderives the obstruction from the prime-ideal-collapse invariant\n$C = a_0(-1) + 2 a_1(-1)$, without going through a\n`MotivicGaloisCharacter` instance at all." },
     {
       kind: "note",
       date: "2026-08-08",

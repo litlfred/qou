@@ -16,7 +16,7 @@ Because $\mathrm{tr}(T_{2,n})|_{q=1} \propto n$, the $q=1$ values above are exac
 
 Let $G(x; q)$ be the generating function for the binding hierarchy, satisfying a $q$-difference equation
 $$ G(qx) = R(q,x)\,G(x) $$
-whose boundary kernel $R(q,x)$ is built from the ratios of §1. Unrolling $G$ into a power series induces a depth-$2$ linear recurrence, formalized as the `CKRecursion` operator; the bar-even parity of the kernel fixes the base prior $a_0 = 1/2$.
+whose boundary kernel $R(q,x)$ is built from the ratios of §1. Unrolling $G$ into a power series induces a depth-$2$ linear recurrence, the $c_k$ recursion operator; the bar-even parity of the kernel fixes the base prior $a_0 = 1/2$.
 
 **Organizing ansatz.** The same depth-$2$ operator, seeded per channel, is used to compactly represent both the weak precision coefficients and the strong multi-body binding weights $w_n$.
 
@@ -28,4 +28,4 @@ For the $^4$He cluster it gives $w_4 \approx 15.6016$; with a fixed constituent-
 
 ## 3. The A=3 Isospin Splitting — an Empirical Input, Not a Derivation
 
-The $\sim 0.76$ MeV binding difference between $^3$H and $^3$He is inserted, not derived. In $m_e$ units the difference is $B(^3\mathrm{H}) - B(^3\mathrm{He}) = 0.7638\ \text{MeV} = 1.4946\, m_e$ — i.e. the "$1.4947\,m_e$ $S_3$/SU(4) representation differential" is exactly the *measured* split relabeled. The accompanying Lean is explicitly marked **vacuous**: `doublet_degeneracy_split` proves $(\text{base}+\text{diff})-\text{base}=\text{diff}$ by `ring`, a universal tautology with `diff` an unconstrained free parameter. Per the standing anti-fit discipline (a fitted number relabeled in categorical language is not a derivation) this splitting is recorded as an **open empirical input**; the physical $^3$H/$^3$He difference is moreover Coulomb-dominated. A derived replacement — an isospin split obtained without reference to the measured value — is the open item here.
+The $\sim 0.76$ MeV binding difference between $^3$H and $^3$He is inserted, not derived. In $m_e$ units the difference is $B(^3\mathrm{H}) - B(^3\mathrm{He}) = 0.7638\ \text{MeV} = 1.4946\, m_e$ — i.e. the "$1.4947\,m_e$ $S_3$/SU(4) representation differential" is exactly the *measured* split relabeled. The only accompanying identity is **vacuous**: $(\text{base}+\text{diff})-\text{base}=\text{diff}$ is a universal tautology with $\text{diff}$ an unconstrained free parameter. Per the standing anti-fit discipline (a fitted number relabeled in categorical language is not a derivation) this splitting is recorded as an **open empirical input**; the physical $^3$H/$^3$He difference is moreover Coulomb-dominated. A derived replacement — an isospin split obtained without reference to the measured value — is the open item here.

@@ -22,6 +22,7 @@ export default conjecture({
     "primary-conjecture",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3):  That proposition is proved in Lean *conditionally* on them, with the class carrying them as an explicit instance hypothesis. Naming the conjecture as its own block is what lets the proposition's `uses[]` record the dependency, so the conditional cone is auditable from the manifest and not only from the Lean signature.\n\nThe conjecture remains open. The carrier is the class `QOU.BraidKnot.ExplicitCentralIdempotent.ExplicitCentralIdempotentConjecture`, whose field states cross-check 2 — the one downstream Lean consumes — quantified over every partition of every $n$, so it is a claim about the whole construction and not about one $\\lambda$. **No instance of the class exists anywhere in the corpus**, which is the correct representation of an unproved primary conjecture: an instance would assert the statement, not prove it.\n\n## Scope of the Lean carrier\n\nThe class carries the **interpolation-theoretic inputs**,\n\nstated above but are still not encoded — they have no downstream consumer yet.\nOrthogonality is now encoded, at the projector level, because idempotency needs\nit. The class has **no instance**: the conjecture is open." },
     {
       kind: "refined-framing",
       date: "2026-09-04",

@@ -19,7 +19,7 @@ Specialise to $K = 4_1$ and feed the **bridge-independent, certified** Stokes
 datum: the Garoufalidis--Gu--Mariño eq-(60) $q \to 0$ off-diagonal of the $4_1$
 Stokes matrix is $\mathfrak{S}(4_1) = S^+(0)_{01} = 3$, proved unconditionally by
 decidable integer-matrix algebra from the certified GGM/DGG $q$-series
-$W_{-1}(0)$ in [`QOU.QBeta.StokesQZeroDTCount`](#conj:im-q-physical-role). Composing,
+$W_{-1}(0)$ (see [the physical role of $\mathrm{Im}\,q$](#conj:im-q-physical-role)). Composing,
 
 $$
   \dim \mathcal{H}_{\mathrm{BPS}}(T[4_1])

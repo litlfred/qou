@@ -1,6 +1,6 @@
 **Catalogue (Taylor coefficients of the surrogate $\Delta\mathrm{tr}_M$).**
 *The Taylor coefficients $c_n$ of*
-[`delta_tau_M_surrogate`](qbeta-per-block-chi-closed-forms.md)
+[the surrogate trace difference $\Delta\mathrm{tr}_M^{\text{surr}}$](qbeta-per-block-chi-closed-forms.md)
 *expanded around the classical point $q = 1$ in the variable
 $w = q - 1$, to order 7, are read off the closed form*
 
@@ -14,7 +14,7 @@ $$
 
 *by substituting $q = 1 + w$ and extracting the coefficient of $w^n$:*
 
-| Order $n$ | Coefficient $c_n$ | Status in Lean |
+| Order $n$ | Coefficient $c_n$ | Status |
 |---|---|---|
 | 0 | $0$ | proved |
 | 1 | $-5/6$ | proved |
@@ -25,11 +25,10 @@ $$
 | 6 | $-191/4$ | proved |
 | 7 | $26285/162$ | proved |
 
-Every order is now formally proved, orders 2 and 3 by explicit quotient-rule
+Every order is now proved, orders 2 and 3 by explicit quotient-rule
 derivative towers and orders 4 to 7 by an iterated-Leibniz recurrence on the
-polynomial identity $f \cdot D = N$. The witness independently reproduces all
-eight coefficients by direct series expansion, which shares no machinery with
-the Lean route.
+polynomial identity $f \cdot D = N$. An independent direct series expansion, which shares no
+machinery with the proof, reproduces all eight coefficients.
 
 **Dependence on the intra-nucleon ordering.** The closed form above is the one
 induced by the canonical borromean $\chi_{(2,1)}$; the grouped ordering gives
@@ -44,6 +43,4 @@ above move.
 
 - Parent block:
   [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$, antipode pairing, and vanishing at $q = 1$](qbeta-per-block-chi-closed-forms.md)
-  (`delta_tau_M_surrogate` definition + order-0/order-1 proofs).
-- Witness JSON:
-  [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).
+  (definition of the surrogate and the order-0/order-1 proofs).

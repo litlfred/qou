@@ -36,6 +36,7 @@ export default conjecture({
     "keystone",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): the max-hook statistic is `QOU.BraidKnot.gbDepth`, a definition" },
     {
       kind: "caveat",
       date: "2026-10-13",

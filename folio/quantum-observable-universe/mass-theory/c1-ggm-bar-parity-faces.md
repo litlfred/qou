@@ -50,7 +50,7 @@ $\mathcal{G}$ does: for $m+1<\log 2/\log q$ the coefficient $2-q^{m+1}$ is
 positive, and while it is positive a sign flip is always followed by a
 same-sign pair, since $y_{m+2}y_{m+1} = (2-q^{m+1})\,y_{m+1}^2 - y_m y_{m+1} > 0$
 whenever $y_m y_{m+1} < 0$
-(`QOU.Mass.GGMAlternationOnset.ggm_solution_no_double_flip`, over an
+(this holds over any
 ordered field). The recurrence *is* oscillatory there — its solutions do change
 sign inside the window — but never
 at two consecutive pairs, and that is what the argument needs. So the untwisted
@@ -58,8 +58,7 @@ sequence has same-sign consecutive pairs in that window, the twisted sequence
 acquires flips exactly there, and the obstruction fires on it too. At the
 substrate value the window is $m \le 5$, and the strict alternation of the
 growing solution becomes persistent only later, at an index that depends on the
-initial data ($m \approx 11$–$14$ across six generic choices, measured in
-[`door_v_residual_scope_probe.py`](../../../computations/probes/door_v_residual_scope_probe.py)).
+initial data ($m \approx 11$–$14$ across six generic choices, measured numerically).
 
 Consequently the residual claim must be read **at the level of modules**, up to
 a gauge transformation over the $q$-difference field — not as the assertion that

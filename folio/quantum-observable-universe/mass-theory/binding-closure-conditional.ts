@@ -14,4 +14,7 @@ export default theorem({
     "prop:binding-genfun-qdifference",
   ],
   proofs: ["prf:binding-closure-conditional"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is a **rigorous-conditional** result: it is fully verified by Lean\nmodulo the single named input (B) — the per-term mass identity — which is\naxiomatised as the class `BindingClosureInput`." },
+  ],
 });

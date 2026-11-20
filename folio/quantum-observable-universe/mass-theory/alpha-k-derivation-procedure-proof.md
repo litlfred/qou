@@ -129,8 +129,8 @@ $\partial y_\lambda/\partial q$ near $q_0$, (ii) consistency
 checks against any analytically derived closed form.
 
 *Symbolic linear-system solve.*
-For exact rational forms, replace numeric `numpy.linalg.solve` with
-`sympy` over a symbolic $q$.  Cost grows rapidly with $p(n)$, but the
+For exact rational forms, replace the floating-point linear solve with
+an exact symbolic solve over $q$.  Cost grows rapidly with $p(n)$, but the
 output is the exact $q$-rational $y_\lambda$.  Tractable in pure
 Python for $n \leq 5$; larger $n$ needs a compiled character kernel.
 

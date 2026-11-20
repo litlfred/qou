@@ -1,6 +1,6 @@
 **Closed-form conjectures for the $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.**
 
-We formalize these coefficients as conjectures. This permits downstream claims to use the conditional-class exception, as implemented in [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder) via the Lean class `QBetaPrecisionLadderCoefficients`. In terms of the Hopf–Jones seed $c_3 = -2$ and the Kashiwara coupling $b$, the conjectured closed forms are
+These coefficients are stated as conjectures, so downstream claims such as the [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder) hold conditionally on them. In terms of the Hopf–Jones seed $c_3 = -2$ and the Kashiwara coupling $b$, the conjectured closed forms are
 
 $$
   c_4 = c_3\, b^4 = -2 b^4, \qquad

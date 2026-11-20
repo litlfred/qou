@@ -32,7 +32,7 @@ The only consistent reconciliation requires global topological
 neutrality at saturation: at $n \in \mathfrak{M}$, the ribbon
 action on $\Phi_n$ evaluates globally to zero (in the centre-of-the-braid-group sense), not locally trivialised by some spectator structure.
 This forms precisely the
-`prop:categorical-neutrality-saturated-shells`
+[categorical neutrality of saturated shells](#prop:categorical-neutrality-saturated-shells)
 statement. It provides the structural reason a non-trivial action
 cannot coexist with finite mass at saturated $n$.
 
@@ -69,7 +69,7 @@ global section that satisfies the saturated-shell global-neutrality
 constraint". The reframing constructs the magic-number ladder as a
 structural prediction rather than a numerical phenomenon.
 
-This remark interprets `conj:mass-endomorphism` only. It makes no
+This remark interprets the [mass endomorphism conjecture](#conj:mass-endomorphism) only. It makes no
 new logical claim. The mathematical content resides in the
 saturated-shell
 and [shell-condensation](./homological-shell-condensation.md)
