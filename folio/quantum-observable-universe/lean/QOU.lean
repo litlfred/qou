@@ -1613,6 +1613,7 @@ import QOU.Mathlib.ConcentratedColumnCollapse
 import QOU.Mathlib.StandardYoungCountInstance
 import QOU.Mathlib.LieValuedForms
 import QOU.Mathlib.ManifoldForms
+import QOU.Mathlib.ContactForms
 import QOU.Mathlib.SDPStrongDuality
 
 -- The p-n interface bar structure, in three files.  `ClosedFormInterfaceFactors`
