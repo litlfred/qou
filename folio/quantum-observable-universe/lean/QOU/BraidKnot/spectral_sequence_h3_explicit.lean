@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.BraidKnot.spectral_sequence_h3_explicit
 
 **Canonical declaration** for content block
-[`prop:spectral-sequence-h3-explicit`](../../../quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.md): *QOU.BraidKnot.spectral_sequence_h3_explicit*.
+[`conj:spectral-sequence-h3-explicit`](../../../quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.md): *QOU.BraidKnot.spectral_sequence_h3_explicit*.
 
 This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/

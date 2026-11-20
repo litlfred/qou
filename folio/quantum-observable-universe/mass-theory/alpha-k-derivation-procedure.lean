@@ -27,7 +27,7 @@ of the generic ring `R` at the substrate `q_0`); the existence witness
 is `A⁻¹ · b`, and uniqueness follows from injectivity of `v ↦ A · v`
 for invertible `A`.
 
-LaTeX label: `prop:alpha-k-derivation-procedure`
+LaTeX label: `conj:alpha-k-derivation-procedure`
 
 ## References
 
@@ -65,7 +65,7 @@ theorem alpha_k_derivation_procedure {p : ℕ}
     rw [Matrix.mulVec_mulVec] at h1
     rw [Matrix.inv_mul_of_invertible] at h1
     rw [Matrix.one_mulVec] at h1
-    -- Ref: [leitner2026] prop:alpha-k-derivation-procedure
+    -- Ref: [leitner2026] conj:alpha-k-derivation-procedure
     exact h1
 
 end QOU.BraidKnot

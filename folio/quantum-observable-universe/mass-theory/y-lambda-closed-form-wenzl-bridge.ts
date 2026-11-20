@@ -12,7 +12,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:alpha-k-derivation-procedure",
+    "conj:alpha-k-derivation-procedure",
   ],
   cites: ["wenzl1988", "orellana1998", "chlouveraki2016"],
   tags: [

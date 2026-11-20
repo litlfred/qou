@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:atom-knot-mass-derivation",
+export default conjecture({
+  label: "conj:atom-knot-mass-derivation",
   title:
     "End-to-end derivation of atomic binding energies $B = \\nu_{\\mathrm{SDP}} \\cdot m_e \\cdot \\mathrm{Vol}_{\\mathrm{hyp}}(\\widehat{T_w})$ from the categorical action",
   lean: {
@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:alpha-k-derivation-procedure",
+    "conj:alpha-k-derivation-procedure",
     "prop:recursive-atom-knot-atlas",
   ],
   tags: [
@@ -38,6 +38,11 @@ export default proposition({
     status: "not_run",
   },
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-20",
+      body: "**Demoted to `conjecture` (owner, 2026-11-20, bean `qou-6qbv`; W8, full cascade).** `terms-2-6-higher-operations` and `spectral-sequence-h3-explicit` (formerly `prop:`) state open research claims (the Term 2/6 Wedderburn/residue identifications; the explicit $d_1, d_2$ on $H_3$) whose Lean siblings carried them on context-class fields any instance could satisfy. Both were demoted, and by the conjectural-propagation rule (AGENTS.md §3b) so was every provable block whose `uses[]` cone reaches them. The owner chose the full cascade over dropping citational edges. Label prefix changed to `conj:`. Nothing in the mathematics or the Lean of this block changed.",
+    },
     {
       kind: "note",
       body: "**Notation.** The prefactor previously written $\\rho$ in this block is the **SDP-solution multiplicity** in the Wedderburn decomposition, an integer $\\in \\mathbb{Z}_{>0}$. To disambiguate from the distinct **categorical density** $\\rho_K \\in \\mathbb{R}_{>0}$ used in `prop:atomic-mass-gb-nf` (CODATA-fit scalar, e.g. $\\rho_K^{\\mathfrak{p}} \\approx 1723.6$), this block uses **$\\nu_{\\mathrm{SDP}} \\in \\mathbb{Z}_{>0}$** throughout. The old symbol $\\rho$ is reserved (i) for the Hoefsmit irrep representation $\\rho_\\lambda \\colon H_n(q) \\to \\mathrm{GL}_{d_\\lambda}$ and (ii) for $\\rho_K$ in `prop:atomic-mass-gb-nf`. See `docs/audits/-rho-notation-fix-recommendation.md` for the full notation audit.",

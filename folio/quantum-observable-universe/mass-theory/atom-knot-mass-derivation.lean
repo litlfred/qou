@@ -27,16 +27,16 @@
   post-Archimedean naming convention: for hyperbolic K = ^T_w the
   same number is conventionally written ν_SDP · m_e · Vol_hyp(K).
 
-  Refs: prop:atom-knot-mass-derivation, prf:atom-knot-mass-derivation,
+  Refs: conj:atom-knot-mass-derivation, rem:atom-knot-mass-derivation-proof-sketch,
         def:quantum-observable-universe, def:rigid-monoidal-category,
         rem:adjoint-trace, def:confined-particle, prop:confinement-sdp,
         prop:wedderburn-trace-identity, thm:jones-markov-trace,
-        prop:alpha-k-derivation-procedure,
+        conj:alpha-k-derivation-procedure,
         prop:archimedean-realization-functor,
         prop:recursive-atom-knot-atlas,
         prop:gb-spectral-sequence,
         prop:spectral-sequence-collapse,
-        prop:spectral-sequence-h3-explicit,
+        conj:spectral-sequence-h3-explicit,
         prop:e-infinity-page-identifications.
 -/
 
@@ -121,7 +121,7 @@ def CategoricalMassInvariantFinite (T_w : Type*) : Prop := Nonempty T_w
     (prop:e-infinity-page-identifications); a Markov trace on a
     finite-rank module is a finite sum over Wedderburn blocks;
     Wenzl's bridge gives the y_λ coefficients
-    (prop:alpha-k-derivation-procedure).
+    (conj:alpha-k-derivation-procedure).
 
     Ref: \cite{yekutieli2015} (non-abelian Stokes),
     \cite{wenzl1988} (Markov-trace formula on Hecke),
@@ -195,7 +195,7 @@ def MassIdentity (cert : MassDerivationCertificate) : Prop :=
 -- (symmetric Li_2^q per 2026-05-03 paper canon, replacing the
 -- retired compact q-dilog Φ_q form).
 --
--- Ref: [leitner2026] prop:atom-knot-mass-derivation §"Mass identity";
+-- Ref: [leitner2026] conj:atom-knot-mass-derivation §"Mass identity";
 -- prop:archimedean-realization-functor;
 -- prop:wedderburn-trace-identity (ν_SDP-multiplicity);
 -- thm:knot-mass-formula-unified (multi-term M(𝔥)).
@@ -256,7 +256,7 @@ theorem atom_knot_mass_derivation [h : AtomKnotMassDerivationConjecture]
     YekutieliFiniteSliceMultiplicativeTrace T_w →
     GbSpectralSequenceCollapseAtE2 →
     MassIdentity cert :=
-  -- Ref: [leitner2026] prop:atom-knot-mass-derivation
+  -- Ref: [leitner2026] conj:atom-knot-mass-derivation
   fun _ _ => ⟨h.pred_nonneg cert hcert, h.residual_bound cert hcert⟩
 
 /-- The GB-collapse hypothesis is discharged by `rfl`: `gbSpectralCollapsePage`

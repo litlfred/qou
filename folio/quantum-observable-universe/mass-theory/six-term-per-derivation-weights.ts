@@ -8,7 +8,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "thm:six-term-mass-formula-complete",
+    "conj:six-term-mass-formula-complete",
     "prop:chirality-dual-space-derivation",
     "prop:full-pole-structure-mass-trace",
   ],

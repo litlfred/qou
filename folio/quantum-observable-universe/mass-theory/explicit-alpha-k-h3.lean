@@ -56,7 +56,7 @@ Markov parameter `z` is pinned by its defining *multiplicative* relation
 pre-Archimedean home is `ℤ[q, q⁻¹]` — no square root is adjoined.  The
 Archimedean evaluation `R = ℝ`, `q = q₀` is the post-τ realisation.
 
-LaTeX label: `prop:explicit-alpha-k-h3`
+LaTeX label: `conj:explicit-alpha-k-h3`
 
 ## References
 

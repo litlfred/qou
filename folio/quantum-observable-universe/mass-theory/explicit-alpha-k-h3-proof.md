@@ -1,9 +1,9 @@
-## Proof
+## Proof sketch
 
 By [spectral sequence collapse](#prop:spectral-sequence-collapse),
 $\mathrm{HH}^k(H_3(R, q)) = 0$ for $k \geq 1$ at generic $q$, so only
 $\mathrm{HH}^0 = Z(H_3) = \bigoplus_\lambda R \cdot e_\lambda$ survives.
-Per [explicit $H_3$ pages](#prop:spectral-sequence-h3-explicit), the
+Per [explicit $H_3$ pages](#conj:spectral-sequence-h3-explicit), the
 four surviving $E_\infty^{p, *}$ classes are:
 
 | $p$ | $E_\infty^{p, *}$ representative |

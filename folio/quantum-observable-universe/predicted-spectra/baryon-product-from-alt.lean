@@ -13,7 +13,7 @@ colour-sheet velocities, which factors as the discriminant product.  This is
 purely algebraic — it lives over the categorical base ring `R` and does not
 invoke the archimedean embedding `R ↪ ℂ`.
 
-LaTeX label: `prop:baryon-product-from-alt`
+LaTeX label: `conj:baryon-product-from-alt`
 
 ## References
 
