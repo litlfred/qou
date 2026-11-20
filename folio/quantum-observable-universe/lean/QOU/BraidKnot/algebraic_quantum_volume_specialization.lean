@@ -1,3 +1,4 @@
+import QOU.MathlibExt.MarkovBondRule
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
@@ -15,7 +16,11 @@ Two defects besides the projection:
 
 * claim (i) pinned the Markov parameter to `1/(√q₀ + 1/√q₀)`, which is
   **convention C**, excised on 2026-08-15. Convention D, `z = q³/(q² + 1)`, is
-  now used (`markovZD` below), stated over a generic field per §7c;
+  now used, stated over a generic field per §7c. The parameter is
+  `QOU.MathlibExt.MarkovBondRule.markovZ`, reused rather than restated: a local
+  `QOU.BraidKnot.markovZD` here collided by name with the `ℝ`-valued one in
+  `MarkovConventionSeparation` and `QBetaCanonicalMarkovWeightsDerived`, so no
+  module could import this file together with either (bean `qou-961o`);
 * claims (ii)/(iii) read `∀ β, ∃ c, Vol β = c · J β`, letting `c` depend on
   `β`, which holds whenever `J β ≠ 0` and says almost nothing.
 
@@ -27,7 +32,7 @@ supplied.
 
 ## What is proved
 
-* `markovZD_mul_qtwo`: the convention-D defining relation `z · (q + q⁻¹) = q²`.
+* `markovZ_mul_qtwo`: the convention-D defining relation `z · (q + q⁻¹) = q²`.
 * `jones_alexander_proportional`: the old file asserted a Jones route and an
   Alexander route side by side. If both held β-uniformly, the Jones and
   Alexander values would be proportional on every braid, so the two invariants
@@ -37,13 +42,12 @@ supplied.
 
 namespace QOU.BraidKnot
 
-/-- Convention-D Markov parameter `z = q³/(q² + 1)`. -/
-def markovZD {R : Type*} [Field R] (q : R) : R := q ^ 3 / (q ^ 2 + 1)
-
-/-- The convention-D defining relation `z · (q + q⁻¹) = q²`. -/
-theorem markovZD_mul_qtwo {R : Type*} [Field R] {q : R} (hq : q ≠ 0)
-    (hq2 : q ^ 2 + 1 ≠ 0) : markovZD q * (q + q⁻¹) = q ^ 2 := by
-  unfold markovZD
+/-- The convention-D defining relation `z · (q + q⁻¹) = q²`, for the shared
+convention-D parameter `QOU.MathlibExt.MarkovBondRule.markovZ`. -/
+theorem markovZ_mul_qtwo {R : Type*} [Field R] {q : R} (hq : q ≠ 0)
+    (hq2 : q ^ 2 + 1 ≠ 0) :
+    QOU.MathlibExt.MarkovBondRule.markovZ q * (q + q⁻¹) = q ^ 2 := by
+  unfold QOU.MathlibExt.MarkovBondRule.markovZ
   field_simp
 
 /-- **Conjecture (Jones route).** The substrate evaluation `Vol β` of the
