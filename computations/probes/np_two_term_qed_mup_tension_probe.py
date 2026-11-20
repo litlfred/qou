@@ -34,6 +34,15 @@ from pathlib import Path
 import mpmath as mp
 import sympy as sp
 
+for _p in Path(__file__).resolve().parents:
+    if (_p / "computations" / "_path_bridge.py").exists():
+        sys.path.insert(0, str(_p / "computations"))
+        break
+import _path_bridge  # noqa: E402,F401
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
+from substrate.q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
+
 # Ensure 50-dps working precision (+30 guard digits during internal solves)
 DPS = 50
 mp.mp.dps = DPS + 30
@@ -569,7 +578,7 @@ def alpha_em_qou(q: mp.mpf) -> mp.mpf:
 
 def solve_q_for_mp_target(target_mp_over_me: mp.mpf, vol: mp.mpf) -> mp.mpf:
     """Newton solve for q > 1 such that mp_over_me_qcd(q, vol) == target_mp_over_me."""
-    q = mp.mpf("1.1099785827513808")
+    q = mp.mpf(Q_50_DIGIT_STR)  # Newton seed: the proton pin, from the substrate
     for _ in range(40):
         f = mp_over_me_qcd(q, vol) - target_mp_over_me
         dq = q * mp.mpf("1e-35")
@@ -593,8 +602,8 @@ def main() -> int:
     mmu_me_err = mp.mpf("0.0000046")
 
     m_e_mev = mp.mpf("0.51099895069")
-    m_p_exp_mev = mp.mpf("938.27208816")
-    m_n_exp_mev = mp.mpf("939.56542052")
+    m_p_exp_mev = mp.mpf(str(M_P_MEV_VALIDATION))  # CODATA 2022, codata_constants
+    m_n_exp_mev = mp.mpf(str(M_N_MEV_VALIDATION))  # (was the CODATA 2018 938.27208816 / 939.56542052)
     dm_np_exp_mev = m_n_exp_mev - m_p_exp_mev  # 1.29333236 MeV (or 1.29333378 from mass difference)
     dm_np_codata_direct = mp.mpf("1.29333378")
     q_beta_exp_mev = dm_np_codata_direct - m_e_mev  # 0.78233482931 MeV
@@ -1193,6 +1202,10 @@ def main() -> int:
         "test1_mup_tension_rows": test1_rows,
         "test2b_qbeta_ladder_rows": qbeta_ladder_rows,
     }
+    witness_payload.update(q0_comparison(
+        muon=q_muon, proton=q_proton,
+        reason="measures the mu-p substrate tension: the probe solves both pins itself "
+               "(q_proton from m_p/m_e, q_muon from m_mu/m_e) and reports each under its own key"))
     witness_out = Path(__file__).with_name("np-two-term-qed-mup-tension-probe.witness.json")
     witness_out.write_text(json.dumps(witness_payload, indent=2, ensure_ascii=False) + "\n")
 

@@ -186,9 +186,9 @@
     },
     {
       "candidate": "QOU-Macro-1 (+): +alpha_EM * m_p * (sum Q_i^2 = 1) / (2*pi)",
-      "M_p_QED_MeV": "1.089718332",
-      "M_p_QED_over_me": "2.132525576",
-      "q_proton_new": "1.1100400314508352091",
+      "M_p_QED_MeV": "1.089718333",
+      "M_p_QED_over_me": "2.132525579",
+      "q_proton_new": "1.110040031450918454",
       "dq_vs_qmuon_ppb": "55348.642",
       "m_mu_pred_err_ppb": "-1005719.9",
       "m_mu_pred_err_sigma": "-45206.7",
@@ -196,9 +196,9 @@
     },
     {
       "candidate": "QOU-Macro-2 (+): +alpha_EM * m_p * hbar_q * (sum Q_i^2 = 1)",
-      "M_p_QED_MeV": "0.6784028206",
-      "M_p_QED_over_me": "1.327601201",
-      "q_proton_new": "1.1100168252745356628",
+      "M_p_QED_MeV": "0.6784028216",
+      "M_p_QED_over_me": "1.327601203",
+      "q_proton_new": "1.1100168252745874534",
       "dq_vs_qmuon_ppb": "34441.774",
       "m_mu_pred_err_ppb": "-626020.3",
       "m_mu_pred_err_sigma": "-28139.4",
@@ -256,10 +256,10 @@
     },
     {
       "candidate": "Control-Neg-2 (-): -alpha_EM * m_p * hbar_q",
-      "M_p_QED_MeV": "-0.6784028206",
-      "M_p_QED_over_me": "-1.327601201",
-      "q_proton_new": "1.1099403807063745304",
-      "dq_vs_qmuon_ppb": "-34428.534",
+      "M_p_QED_MeV": "-0.6784028216",
+      "M_p_QED_over_me": "-1.327601203",
+      "q_proton_new": "1.1099403807063228493",
+      "dq_vs_qmuon_ppb": "-34428.535",
       "m_mu_pred_err_ppb": "626410.88",
       "m_mu_pred_err_sigma": "28156.9",
       "tension_reduction_pct": "-296488.0"
@@ -624,5 +624,11 @@
       "c3_emp_convD_muon": "108.93092",
       "c3_swing_pct": "0.0451905"
     }
-  ]
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029011",
+    "proton": "1.109978582751380807591669095610768879874499121873578"
+  },
+  "q0AnchorReason": "measures the mu-p substrate tension: the probe solves both pins itself (q_proton from m_p/m_e, q_muon from m_mu/m_e) and reports each under its own key"
 }
