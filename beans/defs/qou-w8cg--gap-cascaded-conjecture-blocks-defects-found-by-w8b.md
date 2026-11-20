@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-11-20T18:30:00Z
-updated_at: 2026-11-20T19:06:52Z
+updated_at: 2026-11-20T19:12:04Z
 parent: qou-6qbv
 ---
 
@@ -39,3 +39,5 @@ Still open:
 4. wedderburn .md sums the edge rule over all parents; each single edge already gives y_λ (checked at (3,1)), so the sum double-counts.
 
 Items 2-4 put to the owner on cards.
+
+Owner ruled 2026-11-20 on items 2-4 (all recommended options) and they are applied in #8655: atom-knot 25 % bound dropped (class now states B = m_e·M); baryon integrand restated as the velocity Vandermonde (false proof steps removed); wedderburn statement restated to the proved forms. Item 1 (re-run the y_λ Jones-Markov witness at the proton pin) remains open.
