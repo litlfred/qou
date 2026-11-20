@@ -20,7 +20,7 @@ $$h \;=\; q - q^{-1},$$
 
 with the correct bar-action $h \mapsto -h$ matching the general definition ([Bar-involution and its $P_{\mathrm{avg}}$ / $P_{\mathrm{skew}}$ projections](#def:bar-involution)).
 
-We work in $R[X]$ rather than directly with the Hecke skein for three reasons. First, algebraic decidability: the substitution identities for polynomial composition give the four ring-involution axioms directly. Second, no analysis is needed: unlike $\mathbb{C}$ with conjugation, the bar map is defined by formal substitution. Third, concrete bar-symmetric subring identification: when $2$ is not a zero divisor in $R$, the bar-symmetric subring is exactly $R[X^2]$, providing a concrete model of "$P_{\mathrm{avg}}$ kills odd powers".
+The work is in $R[X]$ rather than directly with the Hecke skein for three reasons. First, algebraic decidability: the substitution identities for polynomial composition give the four ring-involution axioms directly. Second, no analysis is needed: unlike $\mathbb{C}$ with conjugation, the bar map is defined by formal substitution. Third, concrete bar-symmetric subring identification: when $2$ is not a zero divisor in $R$, the bar-symmetric subring is exactly $R[X^2]$, providing a concrete model of "$P_{\mathrm{avg}}$ kills odd powers".
 
 ## Proved identities
 

@@ -2,7 +2,7 @@
 
 As set out in [the exact-arithmetic lemma for the leading $\varepsilon^6$ coefficient of $F_3$](#rem:F3-eps6-leading-eq-neg-2b-cubed), the substantive open content of $c_3 = J_{\text{Hopf}}(q=1) = -2$ lives in the 3-fold Markov closure $\to$ Hopf-link substructure identification.
 
-We factorise that content into two atomic axioms:
+That content factorises into two atomic axioms:
 
 ## The two atomic axioms
 
