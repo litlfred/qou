@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-11-20T09:10:00Z
-updated_at: 2026-11-20T15:20:00Z
+updated_at: 2026-11-20T16:30:00Z
 parent: qou-ncxf
 ---
 
@@ -35,3 +35,6 @@ Claimed by W11b. The stalled-claim check passed: the bean was `todo` with no bac
 - §3b audit: violators went 257 → 250, with 0 new. Four more blocks cleared through the corollary: quantum-dilog-convergence, topological-decomposition-mass, recursive-atom-knot-atlas and rigid-monoidal-structural-gap-invariance.
 - **Open: the five remaining dependents.** They are volume-tower-decomposition, cs-evaluation-faithfulness, local-substrate-q, terminal-resolution and tower-binding-energy. The framed ask is [W11b ask] on #8526, comment 7042623275. The recommendation is to cut the edges their text does not use. Not acted on.
 - Item 2 partly done: the `thm:` mention in `lean/QOU/ArchimedeanMassFormula.lean` is fixed. The `topological-mass.ts` authorNote now says "Demoted from thm:".
+
+## 2026-11-20 tm (PR #8581, branch claude/topological-mass-equality-2026-11-20)
+Not a closure of anything here. Proved (sorry-free, `QOU/Torsion/TopologicalMassEquality.lean`) that `conj:topological-mass` ⟺ all trace pieces pairwise on a common ray (`mass_decomposition_eq_iff`), with strict inequality under anti-alignment. Full note on qou-27ys. Consequence for this bean's §3b dependents: anything that *uses* the equality inherits exactly the open alignment condition; a dependent can be restated conditionally on a ray-alignment hypothesis (non-degenerate: it is a hypothesis on the pieces, not the conclusion).
