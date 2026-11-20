@@ -691,6 +691,7 @@ import QOU.BraidKnot.ExplicitCentralIdempotent
 import QOU.BraidKnot.ExplicitCentralIdempotentHecke
 import QOU.BraidKnot.ExplicitCentralIdempotentGeneral
 import QOU.BraidKnot.CentralIdempotentInvolution
+import QOU.BraidKnot.CentralIdempotentSignTwist
 import QOU.BraidKnot.ContentSqSumBridge
 import QOU.BraidKnot.PlancherelSnDataGeneral
 import QOU.BraidKnot.KeystoneDefectGeneral

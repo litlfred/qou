@@ -23,6 +23,18 @@ export default conjecture({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body:
+        "**Owner ruling (option C, live structured choice, 2026-11-20): the star is named as two involutions, and all " +
+        "four cross-checks are now proved for every n (bean qou-2150).** Cross-check 3 now reads: the bar involution " +
+        "(sigma -> sigma^-1, q -> q^-1) fixes every e_lambda (`IsBar.fixes_centralIdem`). Cross-check 4 now reads: the " +
+        "sign twist (sigma -> -sigma^-1) sends e_lambda to e_lambda' (`hashMap_centralIdem`, a constructed map). The " +
+        "statement now takes the inner product over all contents |d| <= n-1, the well-defined form of the prop block; " +
+        "it had read 'over the boxes of lambda'. Ground field: characteristic 0, generic q. The block kind is still " +
+        "`conjecture`, and `lean.ref` still names the old scalar carrier; promotion is an owner call.",
+    },
+    {
       kind: "caveat",
       date: "2026-11-20",
       body:
