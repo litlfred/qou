@@ -238,7 +238,9 @@ def main():
         "bean": "qou-99qc", "preregistration": "ε-L1V (PREREGISTRATION.md, commit bc02ecd75c)",
         "photon": "gamma(phi) = 1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1 (QOU/Photon.lean)",
         "arithmetic": "exact sympy over Q(q); q0 values mpmath 70 dps via _precision.fmt",
-        "q0_anchor": "proton", "q0": Q_50_DIGIT_STR,
+        "q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR,
+        "lean": ("QOU.BraidsAndKnots.HeckeWeightSpaceSymmetry: trace_ρn_eq_trace_ρp, photon_symmetric, "
+                 "vertex_symmetric, trace_vertex, flavour_split (F2, generic CommRing, sorry-free)"),
         "verdict": ("u<->d SYMMETRIC: no element of H3(q) breaks it in F1 or F2 (basis proof, scope b)"
                     if all(c["ok"] for c in CHECKS) else "SEE FAILED CHECKS"),
         "checks": CHECKS, "basis_rows": basis_rows, "rows": rows, "phi_arm": phi_rows,
