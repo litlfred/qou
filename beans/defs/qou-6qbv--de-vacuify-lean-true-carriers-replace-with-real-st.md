@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-07-11T18:40:54Z
-updated_at: 2026-11-20T16:45:00Z
+updated_at: 2026-11-20T18:10:00Z
 parent: qou-rtxm
 pr: 8189
 ---
@@ -78,3 +78,8 @@ Took ~10 from a fresh audit run on main 917b69399 (22 non-exempt candidates; 7 s
 - The rewriting map d = d_H + d_F + d_YB is NOT a differential: d(d(sigma^3)) = h^2 sigma + h (leftmost) / 2h^2 sigma + 2h (all occurrences), proved sorry-free in QOU.BraidKnot.GBRewriteDifferential. Scope (a); the proof uses the Hochschild differential instead, where d o d = 0 is classical.
 - Block inconsistencies: statement abutment gr H_n (dim 6 at n=3) vs proof gr HH* = Z(H_3) (dim 3); J^• defined increasing, used decreasing.
 - Explicit d1/d2 on H_3 NOT computed: needs the owner to fix which filtration of the Hochschild complex is meant. Open, owner decision.
+
+## W8 round 4 (2026-11-20) — both filtrations computed exactly (#8613 merged)
+
+- Length filtration: filtered; d1 = 0, d2 rank 1 (deg1 wt0 -> deg2 wt2), d3 = 0, d4 rank 1 (deg1 wt-2 -> deg2 wt2), E5 = E_inf = Z(H3) in degree 0. Block prose 'd1 acts through the Hecke relation' is false here.
+- Confinement filtration: NOT a filtered complex (J1 J1 = J1 != 0 = J2; (dE00)(E01) = -E01). prop:gb-spectral-sequence proof step fails for it. Kind change of prop:gb-spectral-sequence = owner decision, open.
