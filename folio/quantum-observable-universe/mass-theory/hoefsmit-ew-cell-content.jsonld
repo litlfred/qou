@@ -14,6 +14,10 @@
   "label": "thm:hoefsmit-ew-cell-content",
   "kind": "theorem",
   "title": "Hoefsmit cell-content identification of the EW triplet inside $\\mathrm{End}_R(V^{\\otimes 6})$ (categorical existence)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-braid-group",
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form"
+  ],
   "tags": [
     "hoefsmit",
     "cell-content",
@@ -27,7 +31,7 @@
     "closure-tier-b",
     "phase-2-sprint-5-discharge"
   ],
-  "leanRef": "qou:QOU.IwahoriHecke.Hoefsmit.HoefsmitSeminormalBasis",
+  "leanRef": "qou:QOU.BraidsAndKnots.hoefsmit_ew_cell_content",
   "text": "hoefsmit-ew-cell-content.md",
   "leanSource": "hoefsmit-ew-cell-content.lean",
   "provenance": "authored"
