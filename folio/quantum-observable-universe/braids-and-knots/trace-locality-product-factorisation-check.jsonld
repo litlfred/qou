@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-trace-locality-product-factorisation-check",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:trace-locality-product-factorisation-check",
+  "kind": "remark",
+  "title": "Product factorisation over the normal form: what has been checked",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-trace-locality-meets-gs-non-locality",
+  "cites": [
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "markov-trace",
+    "groebner-shirshov",
+    "wedderburn",
+    "locality"
+  ],
+  "text": "trace-locality-product-factorisation-check.md",
+  "provenance": "authored"
+}

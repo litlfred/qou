@@ -40,11 +40,11 @@ The photon stands apart. It is not a knot but a blend of the four
 simplest operations,
 
 $$
-  \gamma = 1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\,\sigma_0\sigma_1,
+  \gamma = 1 + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\,\sigma_0\sigma_1^{-1},
 $$
 
 the identity together with the elementary crossings $\sigma_0$,
-$\sigma_1$ and their product. This is what lets light build matter:
+$\sigma_1$ and the pair-production vertex $\sigma_0\sigma_1^{-1}$. This is what lets light build matter:
 when two photons meet, their terms multiply out under the quadratic
 relation and reach every operator of a six-element basis of
 $H_3(q)$ ([pair production](#prop:gamma-gamma-generates-particles)).

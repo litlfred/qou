@@ -22,7 +22,7 @@ $G \cdot x \geq 0$ at all six basis channels is consistent with this
 reading but does not establish it.
 
 The binding scale follows from the topological mass formula
-([topological mass formula](#prop:topological-mass-formula)):
+([topological mass formula](#conj:topological-mass-formula)):
 $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$.  The volume
 determines the energy scale at which the nuclear braid binds.
 

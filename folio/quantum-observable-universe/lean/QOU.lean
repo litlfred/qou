@@ -140,6 +140,7 @@ import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
 import QOU.MathlibExt.RepresentationCharacter
 import QOU.MathlibExt.QPlancherel
+import QOU.MathlibExt.OcneanuChainFactorisation
 import QOU.MathlibExt.QPlancherelPartitionInstance
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.FrobeniusHopfData.PairingGaugeFluctuation
@@ -688,6 +689,10 @@ import QOU.BraidKnot.SpechtCentralC2Scalar
 import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
 import QOU.BraidKnot.WedderburnUnconditional
 import QOU.BraidKnot.ExplicitCentralIdempotent
+import QOU.BraidKnot.ExplicitCentralIdempotentHecke
+import QOU.BraidKnot.ExplicitCentralIdempotentGeneral
+import QOU.BraidKnot.CentralIdempotentInvolution
+import QOU.BraidKnot.CentralIdempotentSignTwist
 import QOU.BraidKnot.ContentSqSumBridge
 import QOU.BraidKnot.PlancherelSnDataGeneral
 import QOU.BraidKnot.KeystoneDefectGeneral

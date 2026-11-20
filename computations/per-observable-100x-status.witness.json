@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T14:18:42.881854+00:00",
-  "commitSha": "f35d59159f04529065d19bd0e1a9d598977691c1",
+  "computedAt": "2026-11-20T17:21:15.893389+00:00",
+  "commitSha": "bef5a5b03ce3532801dff4f80e524476289dac1a",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 298,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "16dca40d3b34",
-  "scriptCommitSha": "f35d59159f04529065d19bd0e1a9d598977691c1",
+  "scriptCommitSha": "134510f16375bb5c3bd055dc6bf55a95d7fb7466",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -109,12 +109,12 @@
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
         "pred_MeV": "0.651524614015",
-        "codata_MeV": "0.782333410000",
-        "sigma_exp_MeV": "6.10000e-7",
+        "codata_MeV": "0.782333559310",
+        "sigma_exp_MeV": "3.80000e-7",
         "err_ppb": "1.672e+8",
-        "sigma_exp_ppb": "779.7",
-        "target_100x_ppb": "7.797",
-        "miss_factor": "2.144e+7",
+        "sigma_exp_ppb": "485.7",
+        "target_100x_ppb": "4.857",
+        "miss_factor": "3.442e+7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": null,
@@ -138,7 +138,7 @@
         "one_term": {
           "pred_MeV": "0.651856310060",
           "err_ppb": "1.668e+8",
-          "miss_factor": "2.139e+7",
+          "miss_factor": "3.434e+7",
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
@@ -352,8 +352,8 @@
       "E0_tower_series_is_open": "qou-y3bm -- canonical by the 2026-09-03 full-tower ruling, series not derived",
       "Q_beta_MeV_at_order_zero_E0": "0.645456915123079459561875817038373536781011944029498589105163",
       "E0_choice_moves_row_pct": "0.991452",
-      "err_pct": "-16.6779404115775219468913178358678362139608631593957108486967",
-      "err_pct_at_order_zero_E0": "-17.4959286063112836300988581021519281937592382729124305173458",
+      "err_pct": "-16.6779563137672837153512235184192390293198806558473583891470",
+      "err_pct_at_order_zero_E0": "-17.4959443523862834760136761800325718944247773343677717270040",
       "recorded_err_pct_in_probe_witness": "-17.495929",
       "calibration_compares": "err_pct_at_order_zero_E0 vs the recorded cell -- the cell was computed at order-zero E_0, so calibrating the published (tower-E_0) value against it would conflate the trace with the E_0 choice and fail by ~0.56 points",
       "calibrated_against_probe_witness": true,
@@ -418,11 +418,11 @@
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "30b2e42b3cf4b32de981e78f131aded9c1f946499ef91d3a52cd3e359b0a8cf7",
-        "size_bytes": 2720,
-        "commitSha": "9455db71d5fc8f322e8f199ad62dead1427cca4b",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-03T01:10:37.092327+00:00"
+        "sha256": "36f8dcfc1411f259e4c732a513a3cfa73f9123826d8e9cfedfb6469044df5cf0",
+        "size_bytes": 4698,
+        "commitSha": "a887b738d50de18b183f19bda31380997368a24c",
+        "scriptCommitSha": "a887b738d50de18b183f19bda31380997368a24c",
+        "computedAt": "2026-11-20T14:24:41.681299+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",

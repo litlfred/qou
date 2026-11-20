@@ -5,4 +5,4 @@
 | writhe | Net signed crossing count (algebraic) |
 | Markov closure | Closure of an $n$-strand braid word to a link, **specified only axiomatically at general $n$**, concrete at $n=2$ via the 2-strand closure |
 | Hecke quotient | The Hecke quadratic relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ |
-| Markov trace on $n$ strands | Generalised Markov-trace axioms M1-M4 (Jones 1985), extending the 2-strand Markov-trace axioms |
+| Markov trace on $n$ strands | Generalised Markov-trace axioms M1-M4 (Jones 1985), extending the 2-strand Markov-trace axioms; the genuine trace structure is the Ocneanu Markov trace |

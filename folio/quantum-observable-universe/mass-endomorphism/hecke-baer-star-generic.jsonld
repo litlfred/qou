@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-hecke-baer-star-generic",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:hecke-baer-star-generic",
@@ -25,7 +26,7 @@
     "annihilator-structure",
     "graded-mikusinski-foundation"
   ],
-  "leanRef": "qou:QOU.BraidKnot.HeckeBaerStarGeneric.hecke_baer_star_generic",
+  "leanRef": "qou:QOU.BraidKnot.HeckeBaerStarGeneric.not_hecke_baer_star_generic_sketch",
   "text": "hecke-baer-star-generic.md",
   "leanSource": "hecke-baer-star-generic.lean",
   "provenance": "authored"

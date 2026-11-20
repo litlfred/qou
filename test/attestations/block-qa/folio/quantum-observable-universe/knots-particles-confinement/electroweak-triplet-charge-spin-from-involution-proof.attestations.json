@@ -1,0 +1,201 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-charge-spin-from-involution-proof"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.399Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'Its neutrality is not bar-even membership but the Weinberg mixing' — the two mechanisms are technically distinct.",
+        "notes": "pass-with-note: substantive mathematical contrast class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.434Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no setup-then-reframe pivot."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.469Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.504Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'bar-even / self-dual / real-volume carrier' — three genuine equivalent characterizations of the Higgs slot.",
+        "notes": "pass-with-note: substantive enumeration."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.541Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; final line is factual/technical, not quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.578Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.612Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no block-final restatement of established content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.646Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; institutional register throughout, no personal warmth."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.678Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:07.715Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; prose parses aloud; no stalling noun chains."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cca13c54c673",
+          "ts": "567c7f6b44e4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:04.697Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "(S↔P column of thm:ew-triplet-charge-spin-from-involution row) Class `EWSectorSelection` carries the T₃ values as fields, and `ew_charge_spin_forced` returns them; spin is *defined* from the sector. So the conclusion is a field or a definition, not derived. The statement says charge \"follows\" from the postulate, but T₃ *is* the postulate. Proof: \"neutrality is forced by bar-parity\" is contradicted by its own Z case (bar-odd yet neutral). §3 uses the measured spins of H and B as \"independent physical inputs\" (empirical content in a proof)"
+      }
+    ]
+  }
+}

@@ -67,6 +67,15 @@ it is not q₀.
 
 ## Stage 3 — full-photon γγ words (pre-registered in 3df55fdc6d7)
 
+> **Scope note (2026-11-20, added after the fact; the record above is unchanged).**
+> This stage was written with the photon's last term `σ₀σ₁`. By owner ruling
+> (bean `qou-99qc`, 2026-11-18, confirmed 2026-11-20) `def:photon` is
+> `γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹`. The two forms are the same family of elements
+> (`γ(φ₀,φ₁,φ₀₁) = 1 + (φ₀ − hφ₀₁)σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁`), so the span statement and
+> the word set B₃ used here are unaffected; only the colour-weight coordinates differ.
+> PR #8583.
+
+
 **Word set.** The photon is γ = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁, and two-photon products span H₃(q)
 (`gamma-gamma-generates-particles`, theorems `gamma_gamma_chirality_surjective`,
 `gamma_gamma_reaches_Lminus`). With γ and γ̄ the words are all of B₃, so L± = σ₀σ₁, σ₀⁻¹σ₁⁻¹ are

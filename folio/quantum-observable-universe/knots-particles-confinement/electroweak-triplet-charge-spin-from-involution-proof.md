@@ -5,16 +5,16 @@ The even-twist carrier $T(2,2k)$ occupies the two-dimensional sym/alt Hecke bloc
 1. **bar-even part** $a_+ \in A_+$, $\sigma$-fixed, with neutral (Markov-trace) value $q^{2k} + q^{-2k}$.
 2. **bar-odd part** $a_- \in A_-$, $\sigma$-negated, traceless with nonzero skew value $q^{2k} - q^{-2k}$.
 
-The Higgs is the bar-even / self-dual / real-volume carrier. The $W^\pm, Z$ are bar-odd.
+The Higgs is the bar-even, self-dual, real-volume carrier; the $W^\pm$ and $Z$ are bar-odd.
 
-## The forced quantum numbers
+## The computed sector label and charge
 
-Given the sector assignment, spin is defined by $2s(c) = 0$ if $c$ is a singlet and $2s(c) = 2$ if $c$ is a doublet. Then $\mathrm{spin}(H) = 0$ (scalar) and $\mathrm{spin}(W^\pm) = \mathrm{spin}(Z) = 1$ (vector) are theorems. Neutrality is forced by bar-parity: a singlet carrier realises the bar-even part, a doublet the bar-odd part.
+Let $v_c$ be the sector vector of the carrier $c$: the $\sigma$-even projection of $(a_c, a_c^{-1})$ if $c \in A_+$, and its $\sigma$-odd projection if $c \in A_-$. If $c \in A_+$, then $v_c$ is $\sigma$-fixed, so $2s(c) = 0$, and its skew value is $0$, so $Q(c) = 0$. If $c \in A_-$, then $\sigma v_c = -v_c$. Since $2$ is invertible and $a_c^2 \neq 1$, we have $v_c \neq 0$, hence $\sigma v_c \neq v_c$ and $2s(c) = 2$; its skew value is $a_c - a_c^{-1} \neq 0$, so $Q(c) \neq 0$. For $W^-$, the eigenvalue is $a_{W^+}^{-1}$, so $Q(W^-) = -Q(W^+)$. With $H \in A_+$ and $W^\pm, Z \in A_-$ this gives the statement.
 
-The genuinely postulated data are the sector map itself and the $T_3$ label. In particular $Z$ is a doublet (vector) yet neutral ($T_3 = 0$). Its neutrality is not bar-even membership but the $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing.
+The postulated data are the sector map and the eigenvalues. The isospin table $T_3$ is recorded, not derived. The $\sigma$-parity alone makes $Z$ charged, since $Z \in A_-$; its neutrality is the $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing.
 
 ## The $\sigma_5^8$ bar-grading is derived from spin
 
 The Weinberg-angle block reads the Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ hypercharge gauge boson $B$. The triplet block reads $\sigma_5^8$ ($= T(2,8)$, strands $5$–$6$) as the Higgs. There is no conflict: $\sigma_5^8$ carries both, bar-graded by the spin involution. The Higgs boson $H$ is the $A_+$ (bar-even, scalar) part; the hypercharge gauge boson $B$ is the $A_-$ (bar-odd, vector) part.
 
-This bar-grading is derived from the two carriers' spins. The sector$\to$spin map is injective and inverts, so spin determines the sector. The Higgs is a scalar and $B$ is a vector as independent physical inputs, so $H \in A_+$ and $B \in A_-$ are forced. The residual postulate is that both $H$ and $B$ inhabit the one $\sigma_5^8$ slot.
+This bar-grading follows from the two carriers' sector labels. The map from sector to label is injective and inverts, so the label determines the sector. Reading the Higgs as scalar and $B$ as vector, as independent inputs, forces $H \in A_+$ and $B \in A_-$. The residual postulate is that both $H$ and $B$ inhabit the one $\sigma_5^8$ slot.

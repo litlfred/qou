@@ -5,7 +5,7 @@ import Mathlib.Data.Real.Basic
 /-!
 # Proposition: Archimedean Topological Mass Formula
 
-Formalizes Proposition `prop:topological-mass-formula`: in the archimedean
+Formalizes Proposition `conj:topological-mass-formula`: in the archimedean
 (ℂ) realisation, the general topological mass decomposition
 (Theorem `thm:topological-mass`) specialises to the closed-form
 mass formula `m(K) = Vol(K) / ℏ_q²`.
@@ -58,7 +58,7 @@ namespace QOU.Torsion
     Briggs–Klein dilogarithm evaluation) that specialise the general
     decomposition to the archimedean closed form.
 
-    LaTeX: `\label{prop:topological-mass-formula}` -/
+    LaTeX: `\label{conj:topological-mass-formula}` -/
 structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecomposition M where
   /-- The substrate parameter `q` at the evaluation point. -/
   q : ℝ

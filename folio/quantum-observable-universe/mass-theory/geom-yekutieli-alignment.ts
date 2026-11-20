@@ -12,7 +12,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
-    "prop:topological-mass-formula",
+    "conj:topological-mass-formula",
     "prop:yekutieli-lifting",
     "conj:hyperbolic-volume-transcendence",
   ],

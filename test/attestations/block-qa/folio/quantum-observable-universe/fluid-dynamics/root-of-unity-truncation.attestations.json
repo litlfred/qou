@@ -1,0 +1,684 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation",
+    "path": "folio/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation"
+  },
+  "criteria": {
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote fluid-dynamics_seq5.md. Enforced Economy, Concrete before Abstract, Why precedes What. Preserved markers.",
+        "reviewed_at": "2026-07-07T14:26:56.240406Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.240406Z"
+        },
+        "field_hash": {
+          "md": "37e7ec0e9648",
+          "ts": "ea773e908ce2",
+          "lean": "67894ace6ffa"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7035bbc7e79f",
+          "ts": "3ef2e86ec364",
+          "lean": "f9c61048dac4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:10.911Z",
+        "reviewed_sha": "dd3595d7dc1ecd1099ddcb695fb47671676c4ba6",
+        "severity": "major",
+        "evidence": "Lean: a `def` returning two fields of `RootOfUnityTruncationContext` (self-assuming context). Inline proof: Verlinde written as ∫₀¹ S_ik S_jk/S_0k dk (it is a finite sum Σ_k S_ik S_jk S̄_lk/S_0k, and the output index is missing); κ is used both for the truncation level and the aspect ratio κ(t); mode count (κ−1)/2 vs (κ−2)/2 inconsistent; Bernstein's inequality applied in t to spatial Fourier modes; the boxed NS equivalence is never derived. Checked: [κ]_q = 0 at q = e^{iπ/κ} ✓, so the simple objects are j ≤ (κ−2)/2 ✓",
+        "notes": "Hand review 2026-11-15 (statement vs Lean); issue #8020. "
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound categorical extraction proving the modular cutoff bounds the Levi non-degeneracy condition number tightly.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "37e7ec0e9648",
+          "ts": "ea773e908ce2",
+          "lean": "67894ace6ffa"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "37e7ec0e9648",
+          "ts": "ea773e908ce2",
+          "lean": "67894ace6ffa"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the AGENTS.md tag \"§7c\" was dropped and \"This block sits on the archimedean side\" was rewritten to \"What follows sits on the archimedean side of the substrate wall.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.580Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'not merely as well-posed, but absolutely finite-dimensional' is a genuine strengthening; wording covered under trap-superlative",
+        "notes": "pass-with-note: substantive strengthening"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.623Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no setup-then-reframe pivots"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.776Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: spaced-dash density low; none load-bearing"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.825Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no reflex three-item lists"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.873Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no quotable-sounding closer"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.925Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: no narration of own emphasis"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:43.973Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "'This establishes the boxed equivalence stated above.' is a cross-reference closer to the displayed statement",
+        "notes": "pass-with-note: cross-reference closer class"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:44.017Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "evidence": "full read: institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:44.080Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "severity": "minor",
+        "evidence": "pervasive maximal adverbs, ~40 sites: 'rigorously demands', 'forcibly', 'flawlessly approaches', 'effortlessly can', 'definitively blows up', 'perfectly equating', 'completely outlaws', 'absolutely finite-dimensional'",
+        "notes": "proposed: block-wide adverb strip, meaning unchanged: 'rigorously demands'->'requires', 'flawlessly holds'->'holds', 'mechanically guarantees'->'guarantees', delete filler 'cleanly/strictly/exactly/safely' where non-mathematical; structural (>2 sentences), not edited"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "194cac5235e0",
+          "ts": "ea773e908ce2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:fd-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:11:44.133Z",
+        "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
+        "severity": "minor",
+        "evidence": "adverb-stacked chains stall aloud, e.g. 'The strict mathematical sequence traversing these rigidly finite-dimensional systems flawlessly approaches the pure infinite-dimensional classical baseline.'",
+        "notes": "proposed: same rewrite as trap-superlative; short declaratives ('As kappa->inf these finite-dimensional systems approach the classical limit.')"
+      }
+    ]
+  }
+}

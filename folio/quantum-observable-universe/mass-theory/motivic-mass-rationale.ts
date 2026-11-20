@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "def:motivic-mass-measure",
     "prop:mass-endomorphism-tower",
-    "prop:topological-mass-formula",
+    "conj:topological-mass-formula",
     "def:archimedean-realization-functor",
   ],
 });

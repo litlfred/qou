@@ -16,7 +16,7 @@ specialises to:
 where Vol(K) is the hyperbolic volume of S³ \ K and
 ℏ_q = 1 - 1/q is the quantum Planck constant.
 
-LaTeX label: `prop:topological-mass-formula`
+LaTeX label: `conj:topological-mass-formula`
 
 ## References
 
@@ -46,7 +46,7 @@ theorem quantumPlanck_pos (q : ℝ) (hq : 1 < q) : 0 < quantumPlanck q := by
 noncomputable def archimedeanMass (q : ℝ) (vol : ℝ) : ℝ :=
   vol / (quantumPlanck q) ^ 2
 
-/-- **Archimedean Mass Formula** (Proposition):
+/-- **Archimedean Mass Formula, Step 3** (for `conj:topological-mass-formula`):
 
     Let (C, A, τ) be the C-quantum observable universe and let K be a
     hyperbolic knot. The descent involution induces the idempotent
@@ -57,8 +57,10 @@ noncomputable def archimedeanMass (q : ℝ) (vol : ℝ) : ℝ :=
 
     Summing: m(K) = Vol(K) + Vol(K)(1/ℏ_q² - 1) = Vol(K)/ℏ_q².
 
-    The derivation proceeds via three identifications from the categorical
-    decomposition (topological mass theorem):
+    This theorem proves only Step 3: given the two evaluations as the
+    hypotheses `h_baseline` and `h_exceptional`, the sum is Vol(K)/ℏ_q².
+    The conjecture rests on the categorical decomposition
+    (`conj:topological-mass`, open) and on the two evaluations:
     1. Baseline holonomy → Vol(K) via Chern-Simons/volume correspondence
     2. Exceptional divisor contributions → Vol(K) · (1/ℏ_q² - 1)
     3. Total: m = Vol(K)/ℏ_q² -/

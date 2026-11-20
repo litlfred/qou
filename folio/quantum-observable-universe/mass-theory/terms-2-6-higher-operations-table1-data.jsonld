@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/tbl-terms-2-6-higher-operations-table1-data",
@@ -14,7 +15,7 @@
   "kind": "table",
   "title": "Table 1 from conj:terms-2-6-higher-operations",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-terms-2-6-higher-operations"
+    "papers/quantum-observable-universe/blocks/conj-terms-2-6-higher-operations"
   ],
   "tags": [
     "extracted-table"

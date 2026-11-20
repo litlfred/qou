@@ -2,33 +2,28 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/thm-mass-energy-equivalence",
+  "@id": "papers/quantum-observable-universe/blocks/def-mass-energy",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Definition",
     "doco:Section"
   ],
-  "label": "thm:mass-energy-equivalence",
-  "kind": "theorem",
-  "title": "Mass--energy equivalence ($E_{\\mathfrak{H}} = \\mathfrak{m}_{\\mathfrak{H}} \\cdot c_q^2$)",
+  "label": "def:mass-energy",
+  "kind": "definition",
+  "title": "Energy of a braid class ($\\mathfrak{E} = \\mathfrak{m} \\cdot c_q^2$)",
   "uses": [
-    "papers/quantum-observable-universe/blocks/def-information-speed-of-light"
-  ],
-  "cites": [
-    "references/reshetikhin1991",
-    "references/yekutieli2015"
+    "papers/quantum-observable-universe/blocks/def-information-speed-of-light",
+    "papers/quantum-observable-universe/blocks/def-mass-identity"
   ],
   "tags": [
     "mass-energy",
     "speed-of-light",
-    "crossing-energy",
-    "categorical-trace",
-    "ribbon-category",
     "information-theory"
   ],
-  "leanRef": "qou:QOU.Information.massEnergyEquivalence",
+  "leanRef": "qou:QOU.Information.energy",
   "text": "mass-energy-equivalence.md",
   "leanSource": "mass-energy-equivalence.lean",
   "provenance": "authored"

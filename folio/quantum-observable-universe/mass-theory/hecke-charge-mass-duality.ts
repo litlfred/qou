@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:hecke-mass-trace",
+  interprets: "conj:hecke-mass-trace",
   label: "rem:hecke-charge-mass-duality",
   title: "Charge--mass duality via the Frobenius pairing",
   tags: [
@@ -14,7 +14,7 @@ export default remark({
   ],
   uses: [
     "def:crossing-energy",
-    "prop:hecke-mass-trace",
+    "conj:hecke-mass-trace",
     "def:frobenius-pairing",
   ],
 });

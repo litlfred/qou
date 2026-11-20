@@ -8,10 +8,12 @@ See [Table 3](#tbl:trivial-knot-photon-interpretation-table3-data).
 See [Table 4](#tbl:trivial-knot-photon-interpretation-table4-data).
 See [Table 5](#tbl:trivial-knot-photon-interpretation-table5-data).
 
-**Vacuum channel ($\gamma$):** Co-polarized photons amplify the vacuum channel. The Hopf dressing $\varphi_{01}$ does not feed the vacuum.
-**Linear polarization channels ($\sigma_0, \sigma_1$):** Receive symmetric additive and Hecke contributions, plus asymmetric twist-rotation terms where Hopf dressing converts into orthogonal polarization.
-**Positive Hopf link ($L_+$):** Fed preferentially because the photon's internal twist is inherently positive ($L_+$).
-**Negative Hopf link ($L_-$):** Restricted to cross-polarization and Hopf self-products, demonstrating a clear chirality signature.
-**Electron channel ($e^-$):** Opens only when at least one photon carries Hopf dressing, supplying the necessary crossings to form a trefoil.
+Each photon is the [photon](#def:photon) $\gamma(\varphi) = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}V$, whose fourth term is the chiral vertex $V = \sigma_0\sigma_1^{-1} = L_+ - h\sigma_0$, with $h = q - q^{-1}$.
 
-If all polarizations vanish, $\gamma_1 \cdot \gamma_2 = \mathbf{1}$. $L_+$ and $L_-$ vanish when photons are co-polarized on a single axis. Electrons cannot emerge from photons lacking twist content. The Hopf link functions as a $90^\circ$ polarization rotator: combining Hopf dressing with linear polarization absorbs the crossing and emits orthogonal polarization.
+**Vacuum channel ($\gamma$):** Co-polarized photons amplify the vacuum channel. The vertex weight $\varphi_{01}$ feeds the vacuum only at order $h$, through the remainders of terms (8), (14) and (16).
+**Linear polarization channels ($\sigma_0, \sigma_1$):** Receive symmetric additive and Hecke contributions, plus rotation terms where a vertex meets a linear polarization. In term (15) the vertical crossing cancels the vertex's inverse crossing and $\sigma_0$ is emitted exactly.
+**Positive Hopf link ($L_+$):** Fed by cross-polarization (term 7) and by the vertex itself, whose normal form contains $L_+$.
+**Negative Hopf link ($L_-$):** Fed by reversed cross-polarization (term 10), by the vertex self-product (term 16), and at order $h$ by term (12).
+**Electron channel ($e^-$):** Opens only when at least one photon carries a vertex weight. Its coefficient is $\varphi_{01}\psi_0 + \varphi_1\psi_{01}$, from terms (12) and (14).
+
+If all polarizations vanish, $\gamma_1 \cdot \gamma_2 = \mathbf{1}$. $L_+$ and $L_-$ vanish when photons are co-polarized on a single axis. Electrons cannot emerge from photons without a vertex weight. The vertex acts as a polarization rotator: $V\sigma_1 = \sigma_0$ and $\sigma_0 V = \sigma_1^{-1} + hV$.

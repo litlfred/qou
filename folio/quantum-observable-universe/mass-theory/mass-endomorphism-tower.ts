@@ -19,6 +19,19 @@ export default proposition({
   },
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-11-20",
+      body:
+        "**Positivity is now stated on a bounded domain (owner ruling D1, 2026-11-20).** " +
+        "`MassPositivityHyp` used to assume Li_2^q(-x) <= 0 for every x >= 0. This block's " +
+        "own series sum z^n/(n [n]_q) has a finite radius, so no function equal to it can " +
+        "satisfy that. The hypothesis now carries a bound rho and assumes the sign only on " +
+        "[0, rho). Both theorems add `ArgumentsBelow`: every single and pair norm fed to " +
+        "Li_2^q is below rho. The radius and the sign on [0, rho) remain hypotheses; neither " +
+        "is computed or proved here. lean-direct exit 0; axioms propext, Classical.choice, " +
+        "Quot.sound.",
+    },
+    {
       kind: "note",
       date: "2026-11-20",
       body:
