@@ -107,4 +107,11 @@ theorem conventions_scale_ratio_two :
   have h : kappaCV ≠ 0 := kappaCV_pos.ne'
   field_simp
 
+/-- Sign-inversion invariance of the order-`b^2` matching condition: `OrderTwoMatch κA (-c)`
+holds if and only if `OrderTwoMatch κA c` holds. -/
+theorem orderTwoMatch_neg (κA : ℝ) (c : ℂ) :
+    OrderTwoMatch κA (-c) ↔ OrderTwoMatch κA c := by
+  dsimp [OrderTwoMatch]
+  rw [neg_sq]
+
 end QOU.QBeta.OhtsukiNZBridgeScale
