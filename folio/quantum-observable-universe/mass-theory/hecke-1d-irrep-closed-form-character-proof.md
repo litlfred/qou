@@ -82,7 +82,7 @@ substrate-derivable for any $n$ via the formulas above, and the
 $\dim \geq 2$ middle terms require the Hoefsmit seminormal matrix
 characters (per `prop:hecke-branching-trace-decomposition`)
 plus, for $\dim = 2$ irreps, the cos-resummation from
-[`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation).
+[$\mathfrak{Q}_\beta$ cos-resummation in convention D](#prop:q-beta-cos-resummation).
 
 ## Recursion to higher $n$
 

@@ -1,4 +1,4 @@
-*Let $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ be the base ring. Let $h = q - q^{-1}$ denote the skein parameter. Let $T_{2,9}$ and $T_{3,5}$ be the two genus-$4$-saturating torus knots ([`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness)). Let $\delta^{\mathrm{top}}_q$ denote the top-channel decoration of a torus knot ([`def:torus-knot-top-channel-decoration`](#def:torus-knot-top-channel-decoration)). The bare electromagnetic fine-structure constant $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ ([`prop:em-coupling-projection`](#prop:em-coupling-projection)) admits the categorical-trace-ratio decomposition:*
+*Let $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ be the base ring. Let $h = q - q^{-1}$ denote the skein parameter. Let $T_{2,9}$ and $T_{3,5}$ be the two genus-$4$-saturating torus knots ([$(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots](#prop:force-carrier-bring-uniqueness)). Let $\delta^{\mathrm{top}}_q$ denote the top-channel decoration of a torus knot ([Top-channel decoration $\delta^{\mathrm{top}}_q(T_{m,p}) = q^{w} - q^{-w}$ of a torus knot](#def:torus-knot-top-channel-decoration)). The bare electromagnetic fine-structure constant $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ ([Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection)) admits the categorical-trace-ratio decomposition:*
 
 $$
   \boxed{\;\;
@@ -10,7 +10,7 @@ $$
 
 ### Derivation
 
-By [`def:torus-knot-top-channel-decoration`](#def:torus-knot-top-channel-decoration), $\delta^{\mathrm{top}}_q(T_{m,p}) = q^{w} - q^{-w}$ with $w = (m-1)p$, the bar-odd part of the eigenvalue $q^{w}$ by which the braid $(\sigma_1\cdots\sigma_{m-1})^{p}$ acts in the trivial representation of $H_m(q)$. Both knots here are presented on their braid index ($2 \le 9$ and $3 \le 5$).
+By [Top-channel decoration $\delta^{\mathrm{top}}_q(T_{m,p}) = q^{w} - q^{-w}$ of a torus knot](#def:torus-knot-top-channel-decoration), $\delta^{\mathrm{top}}_q(T_{m,p}) = q^{w} - q^{-w}$ with $w = (m-1)p$, the bar-odd part of the eigenvalue $q^{w}$ by which the braid $(\sigma_1\cdots\sigma_{m-1})^{p}$ acts in the trivial representation of $H_m(q)$. Both knots here are presented on their braid index ($2 \le 9$ and $3 \le 5$).
 
 For $T_{2,9}$, $w = 9$, so $\delta^{\mathrm{top}}_q(T_{2,9}) = q^{9} - q^{-9} = h\,[9]_q$. For $2$-strand knots this agrees with the sum of the two Hecke characters, $q^{9} + (-q^{-1})^{9}$.
 
@@ -43,7 +43,7 @@ Evaluation at $q_0 \approx 1.1099786$ yields an exact match to within $10^{-12}$
 > | side | block | pin | $\alpha_{EM} \times 10^{3}$ |
 > |---|---|---|---|
 > | $h^2/(q\,\delta_9\,\delta_{10})$ | this block | **muon** | $7.30870098$ |
-> | $1/(q[9]_q[10]_q)$ | [`prop:em-coupling-projection`](#prop:em-coupling-projection) | **proton** | $7.30870156$ |
+> | $1/(q[9]_q[10]_q)$ | [Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection) | **proton** | $7.30870156$ |
 >
 > A $7.94 \times 10^{-8}$ relative disagreement between two quantities this
 > block proves equal. Determined by rounding every registered $q_0$ against all

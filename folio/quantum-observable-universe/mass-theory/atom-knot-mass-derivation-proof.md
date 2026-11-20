@@ -54,7 +54,7 @@ Reeb-density integral on the cover, etc.) is needed. $\nu_{\mathrm{SDP}} \in \ma
 is read off as the multiplicity of $T_w$'s SDP solution in the
 Wedderburn decomposition (renamed from $\rho$ to
 disambiguate from the categorical density $\rho_K$ of
-[`prop:atomic-mass-gb-nf`](../mass-endomorphism/atomic-mass-gb-nf.md) and the Hoefsmit
+[Atomic mass as Markov trace of the Gröbner–Shirshov normal form](../mass-endomorphism/atomic-mass-gb-nf.md) and the Hoefsmit
 irrep $\rho_\lambda$).
 
 ### Archimedean realization

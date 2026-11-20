@@ -1,7 +1,7 @@
 Let $V$ be the Gauss--Manin period space of the Seiberg--Witten family over
 Bring's surface — the de Rham cohomology of the family, a finitely generated
 free $R$-module of rank $r = \dim V \leq 2g = 8$. Let $M : V \to V$ be the
-jet-prolongation operator ([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)),
+jet-prolongation operator ([Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation)),
 $v_0 \in V$ the base period vector, and $\varphi : V \to R$ the period functional,
 so $a_D^{(n)} = \varphi(M^n v_0)$.
 
@@ -30,5 +30,5 @@ a depth-$d$ linear recurrence with $n$-independent kernel $c$. Hence a fixed-dep
 recurrence on the prolonged periods exists, with depth bounded by
 $\mathrm{rank}\, V$. Identifying $d$ and $c$ with the Bring Picard--Fuchs
 operator is the remaining (identification) half of
-[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol).
+[The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module](#conj:qdifference-kernel-prolongation-symbol).
 $\qquad\blacksquare$

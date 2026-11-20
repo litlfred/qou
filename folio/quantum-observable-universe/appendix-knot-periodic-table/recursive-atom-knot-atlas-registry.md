@@ -1,4 +1,4 @@
-This registry records the full derivation of [`prop:recursive-atom-knot-atlas`](#prop:recursive-atom-knot-atlas): the methodology classification, notation legend, braid-closure gallery, the per-level atlas, and the per-element AME 2020 cross-reference. It carries no logical content beyond the proposition it supports.
+This registry records the full derivation of [Recursive atom-knot atlas at $q_0$ — particles to atoms via Markov-NF braids and hyperbolic-knot closures](#prop:recursive-atom-knot-atlas): the methodology classification, notation legend, braid-closure gallery, the per-level atlas, and the per-element AME 2020 cross-reference. It carries no logical content beyond the proposition it supports.
 
 This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (CAL-1, set by fiat), not an independent absolute-mass prediction; the framework's predictive content is the ratio, the binding energy, and the mass splitting. We detail the precise identification mechanics below; a layered extension then applies this machinery to every isotope.
 
@@ -8,7 +8,7 @@ Every entry carries a **methodology tag** recording its derivation method.
 
 | Tag | Definition | Examples |
 |---|---|---|
-| `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [`def:confined-particle`](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ $\to$ $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ $\to$ $\mathcal{B}_3$. |
+| `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [Confined particle](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ $\to$ $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ $\to$ $\mathcal{B}_3$. |
 | `principled-gb-nf` | Trivial-NF entries: a single strand (unknot $0_1$) or the pure identity $\mathbf{1}$. | neutrino ($0_1$), quark; the bare photon (identity $\mathbf{1}$, not the unknot). |
 | `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed. **⚠ This tier is AME-inverted**: the producer states it outright — *"that IS a form of AME-driven fitting (we picked the knot whose volume is closest to $B_\mathrm{AME}/\rho$)"* ([`mass_table_ppb.py` L18–21](../../../computations/mass_table_ppb.py)) — so binding figures quoted from these volumes are **circular, not predictions**. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
 | `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ${}^{4}$He. |
@@ -225,7 +225,7 @@ Each per-isotope record lists the knot operators used to build its canonical bra
 | `pn` | $\sigma + \bigl(-h(1/2 - \delta/4)\bigr)\cdot\mathbf{1}$ (colour-tube-weighted average) | `averaged_weighted` |
 
 where $h = q_0 - q_0^{-1}$ and $\delta$ is the substrate flavour split of
-[`prop:flavor-split-substrate`](#prop:flavor-split-substrate).
+[Substrate-pure derivation of the $u$--$d$ flavor split](#prop:flavor-split-substrate).
 
 The $\delta = 0$ form $\sigma + (-h/2)\cdot\mathbf{1}$ (wire-format
 `averaged`) is **not** the `pn` interface. Both `ctype`s occur in

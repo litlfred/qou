@@ -14,9 +14,9 @@ $$
 
 in which the **body order $n$ is the vertical (jet) degree** of the prolonged
 Seiberg--Witten differential
-([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)), the $n$-body term is
+([Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation)), the $n$-body term is
 $m_e$ times the $n$-th prolonged SW period, and that period is the algebraic
-residue sum of [`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum) taken
+residue sum of [The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum) taken
 over the **hyperbolic** components only (non-hyperbolic components contribute
 $\mathrm{Vol}=0$). Equivalently: the many-body binding series **coincides
 with the jet-order filtration** of $\mathcal{B}_K$, term by term.
@@ -107,7 +107,7 @@ content therefore lies in the **finiteness** of the Laurent window.
 
 That finiteness is unattainable in the scalar form. The $q$-Borel-normalized
 carrier is the rank-$2$ module $\mathcal{K}$ of
-[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol),
+[The q-difference kernel R is the jet-prolongation symbol, carried by the binding q-lift module](#conj:qdifference-kernel-prolongation-symbol),
 which is **irreducible** — its Newton slope $\tfrac12$ is not an integer, while
 every rank-1 $q$-difference module has integer slope — so no scalar
 $R(q,x)\in K(x)$ acts on it at all, at any depth. The kernel that closes this

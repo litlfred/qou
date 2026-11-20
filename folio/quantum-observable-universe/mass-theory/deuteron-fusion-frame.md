@@ -21,7 +21,7 @@ of the deuteron binding magnitude is fixed by three exact identities:*
 
 The bond factor $z = 1/[2]_v$ is the Ocneanu–Markov normalization of the
 Hecke trace $\mathrm{tr}_M$ (the same $z$ that
-[`prop:three-strand-color-winding-rigidity`](../braids-and-knots/three-strand-color-winding-rigidity.md)
+[Rigidity of the three-strand color winding](../braids-and-knots/three-strand-color-winding-rigidity.md)
 and the reeb-flow magnitude use), not a modeling parameter. The quantity
 $1 + [2]_v^2$ is the total quantum dimension of the two-nucleon channels
 $\{V_0\ (\text{direct}),\ V_0 \oplus V_1\ (\text{fused})\}$; by the fusion

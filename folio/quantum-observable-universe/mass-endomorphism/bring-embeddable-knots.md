@@ -1,6 +1,6 @@
 **Remark (Bring-embeddable knot table).**
 
-The QOU substrate selects the knots whose Seifert genus is bounded by Bring's surface genus ([`prop:knot-eigenbasis-complete`](#prop:knot-eigenbasis-complete), [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness)):
+The QOU substrate selects the knots whose Seifert genus is bounded by Bring's surface genus ([Complete decomposition of the tensor tower](#prop:knot-eigenbasis-complete), [Exhaustiveness of the QOU knots in the Descartes space (open)](#rem:knot-exhaustiveness)):
 
 $$
   \mathrm{Knots}_{\mathrm{Bring}}
@@ -29,11 +29,11 @@ $$
   \cdot \mathrm{Li}_2^q(z_K) \bigr) \;\in\; \mathcal{P}_2 / \mathcal{P}_1.
 $$
 
-If [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) holds, every entry in the principled atlas must satisfy:
+If [GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) holds, every entry in the principled atlas must satisfy:
 
 $$
   \mathrm{Vol}(K) \;\stackrel{!}{=}\; \tau_{\mathrm{arch}}\bigl(
   e_{\lambda_K} \cdot \mathrm{Li}_2^q(z_K) \bigr).
 $$
 
-A single counter-example falsifies the depth correspondence. We verified the figure-$8$ row ([`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)), but confirming nodes like $5_2$, $6_2$, and $6_3$ remains necessary. This verification entails identifying $\lambda_K$ and $z_K$, and computing the projection $e_{\lambda_K}$ as the explicit Goncharov-period witness ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)).
+A single counter-example falsifies the depth correspondence. We verified the figure-$8$ row ([Bring figure-8 volume as depth-2 grouplike value (50-digit numerical witness)](#conj:bring-figure-eight-depth-2-witness)), but confirming nodes like $5_2$, $6_2$, and $6_3$ remains necessary. This verification entails identifying $\lambda_K$ and $z_K$, and computing the projection $e_{\lambda_K}$ as the explicit Goncharov-period witness ([Explicit central primitive idempotents $e_\lambda$ via Murphy elements](#prop:explicit-central-idempotent)).

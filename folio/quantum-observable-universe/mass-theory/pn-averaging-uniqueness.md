@@ -30,7 +30,7 @@ The QOU mass identity at $A \geq 2$ contracts a per-interface averaging function
 > about $1.67 \times 10^{-5}$ at the substrate anchor, whereas the uniform form
 > is bar-invariant exactly — it is the bar-symmetriser $\tfrac12(z + \overline{z})$
 > of the p-p factor, since $\overline{z} = z - h$
-> ([`prf:interface-knot-markov-z`](#prf:interface-knot-markov-z)).
+> ([Proof of interface knot markov z](#prf:interface-knot-markov-z)).
 >
 > The colour-weighted coefficient $c = 1/2 - \delta/4$ depends on $q$ and has
 > $c + \overline{c} - 1 = -\delta(1-q^{2})/4 \neq 0$, which is the computation above.

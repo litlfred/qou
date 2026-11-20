@@ -25,7 +25,7 @@ in the typed-$\mathbf{B}_3$ braid recipe.
 
 ### Step 2: averaged crossings in the typed braid
 
-From [`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic),
+From [Symbolic $Q$-value of free neutron decay](#prop:neutron-qvalue-symbolic),
 the typed-$\mathbf{B}_3$ proton braid uses ONE averaged $\sigma_1$:
 $$
 \mathcal{B}_p \;=\; \sigma_0 \cdot (\sigma_1 - \tfrac{h}{2}\mathbf{1})
@@ -67,7 +67,7 @@ coefficients with two distinct categorical origins:
   the braid. These factor through $\sigma^p \cdot b^{2m}$
   combinatorics. At the silver ratio ($\sigma$-eigenvalues
   $= 1 \pm \sqrt{2}$ via the Hecke quadratic
-  [`prop:silver-ratio-beta-decay-null`](#prop:silver-ratio-beta-decay-null)),
+  [**Silver-ratio trace degeneracy**](#prop:silver-ratio-beta-decay-null)),
   these reduce to **Pell-Lucas-clean** rationals.
 
 - **Averaged-crossing contributions**: from positions where $\sigma_{\text{avg}}$

@@ -1,5 +1,5 @@
 The recurrence on the prolonged Seiberg--Witten periods has depth $2$
-([`prop:prolonged-periods-fixed-depth`](#prop:prolonged-periods-fixed-depth)
+([A fixed-depth recurrence for the prolonged periods exists (Cayley–Hamilton)](#prop:prolonged-periods-fixed-depth)
 together with the $S_5$-Hodge count $H^1 = 2W$): the $2\times 2$ prolongation
 operator $B$ on the Hodge multiplicity plane carries the whole kernel,
 $R = x^2 - \mathrm{tr}(B)\,x + \det(B)$.
@@ -43,7 +43,7 @@ a_D^{(n)} = \frac{S(n)}{n},
 \qquad S(n) = \sum_{\lambda \vdash n} \dim_q \lambda ,
 $$
 
-([`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum)), with no free
+([The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum)), with no free
 parameter and no anchor input. That object grows **super-exponentially**, while any
 depth-$2$ recurrence with $\det = 1$ grows geometrically, at a ratio tending to the
 larger root of $R$. The two cannot agree for large $n$. Evaluated at the proton pin
@@ -60,7 +60,7 @@ with $\tau \approx 2.6423863$, iterating from the true $a_D^{(2)}, a_D^{(3)}$:
 The depth-$2$ form is therefore an **$n \le 4$ effective germ**, and the
 prolongation law carrying the true growth is the residue-sum object itself. This is
 the reading already recorded downstream in
-[`prop:sl2-period-conserved-quantity`](#prop:sl2-period-conserved-quantity), which
+[The depth-2 prolongation recurrence has a conserved first integral](#prop:sl2-period-conserved-quantity), which
 uses this block: a factorial sequence has unbounded ratio $a_D^{(n+1)}/a_D^{(n)}$, so
 it satisfies no depth-$2$ recurrence, and the exact prolongation kernel is of
 q-Bessel class.

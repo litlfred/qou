@@ -1,4 +1,4 @@
-These notes accompany [`def:three-calibration-discipline`](#def:three-calibration-discipline): the cohomological alignment of the three inputs, how their proxies are read off, and what the discipline rules out.
+These notes accompany [Three-calibration discipline ($m_e$, $m_\mu$, $m_\pi$) aligned to (co)homological data](#def:three-calibration-discipline): the cohomological alignment of the three inputs, how their proxies are read off, and what the discipline rules out.
 
 ## Cohomological alignment
 

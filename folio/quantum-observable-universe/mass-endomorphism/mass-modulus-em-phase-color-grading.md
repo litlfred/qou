@@ -1,4 +1,4 @@
-The factorization of [`prop:color-spacetime-s5-factorization`](#prop:color-spacetime-s5-factorization) fixes how the three observables of a Bring-embeddable knot sit on the single trace scalar $\mathrm{tr}_M$ and its trace algebra $H_2(q)\oplus H_3(q)$.
+The factorization of [Color and spacetime are orthogonal $S_2\times S_3$ factors of the Bring Galois group $S_5$](#prop:color-spacetime-s5-factorization) fixes how the three observables of a Bring-embeddable knot sit on the single trace scalar $\mathrm{tr}_M$ and its trace algebra $H_2(q)\oplus H_3(q)$.
 
 ## Three readings of one trace
 
@@ -6,7 +6,7 @@ We write the trace scalar in polar form:
 $$
   \mathrm{tr}_M \;=\; \lVert\mathrm{tr}_M\rVert\,\exp\!\big(i\,\arg\mathrm{tr}_M\big).
 $$
-This forms the multiplicative companion of the additive complex-volume reconstruction $\mathrm{Re}\mathfrak{V}+i\mathrm{Im}\mathfrak{V}=\mathfrak{V}$ ([`conj:binding-qbeta-complex-volume`](#conj:binding-qbeta-complex-volume)). We then have:
+This forms the multiplicative companion of the additive complex-volume reconstruction $\mathrm{Re}\mathfrak{V}+i\mathrm{Im}\mathfrak{V}=\mathfrak{V}$ ([Complex-volume unification](#conj:binding-qbeta-complex-volume)). We then have:
 
 | reading | quantity | sector | character |
 |---|---|---|---|
@@ -14,17 +14,17 @@ This forms the multiplicative companion of the additive complex-volume reconstru
 | **electromagnetism** | argument $\arg\mathrm{tr}_M$ | spacetime / $S_2$ | continuous $U(1)$ |
 | **color** | $S_3$ irrep grading | color / $S_3$ | discrete |
 
-Mass evaluates the magnitude that survives both sectors. The argument evaluates the continuous $U(1)$ framing/Chern–Simons phase. This provides the $\mathrm{Im}\mathfrak{V}$ channel, picked up as the ribbon twist $q^{2w\,c(\lambda)}$ on a framed knot of writhe $w$. The identification of this channel with a bar-odd part is conjectural ([`conj:bar-parity-split`](../mass-theory/bar-parity-split.md)). It lives in the spacetime block, where we read it as the electromagnetic phase. Color provides the discrete grading of the algebra element across the $H_3(q)$ representations, before the trace collapses it to a scalar.
+Mass evaluates the magnitude that survives both sectors. The argument evaluates the continuous $U(1)$ framing/Chern–Simons phase. This provides the $\mathrm{Im}\mathfrak{V}$ channel, picked up as the ribbon twist $q^{2w\,c(\lambda)}$ on a framed knot of writhe $w$. The identification of this channel with a bar-odd part is conjectural ([The binding trace and the $\mathfrak{Q}_\beta$ residue are the bar-even and bar-odd parts of one fibre element](../mass-theory/bar-parity-split.md)). It lives in the spacetime block, where we read it as the electromagnetic phase. Color provides the discrete grading of the algebra element across the $H_3(q)$ representations, before the trace collapses it to a scalar.
 
 ## Color is not the phase
 
-The color factor $S_3$ fixes the spacetime coordinates. The spacetime factor $S_2$ fixes the color coordinates ([`prop:color-spacetime-s5-factorization`](#prop:color-spacetime-s5-factorization), parts 1–2). Therefore, color and electromagnetism form independent coordinates. The discrete color charge is not a function of the continuous phase, and conversely. The rigidity in part $3$ of that proposition makes this non-coincidence sharp. A continuous winding argument cannot factor through a finite group such as $\mu_5$. Thus, $\arg\mathrm{tr}_M$ remains structurally barred from being a color character.
+The color factor $S_3$ fixes the spacetime coordinates. The spacetime factor $S_2$ fixes the color coordinates ([Color and spacetime are orthogonal $S_2\times S_3$ factors of the Bring Galois group $S_5$](#prop:color-spacetime-s5-factorization), parts 1–2). Therefore, color and electromagnetism form independent coordinates. The discrete color charge is not a function of the continuous phase, and conversely. The rigidity in part $3$ of that proposition makes this non-coincidence sharp. A continuous winding argument cannot factor through a finite group such as $\mu_5$. Thus, $\arg\mathrm{tr}_M$ remains structurally barred from being a color character.
 
 The two remain nonetheless faces of one substrate. The Galois group $S_5$ properly contains $S_2\times S_3$. Its remaining generators carry spacetime indices into color indices. An electromagnetic-to-color relation therefore forms an $S_5$ statement, realized by those off-block generators, not a relation internal to the $U(1)$ phase.
 
 ## Archimedean realization
 
-The polar split provides the archimedean reading. The modulus and argument require the realization of the trace over $\mathbb{C}$, on the far side of the substrate-to-archimedean wall. The structural content of [`prop:color-spacetime-s5-factorization`](#prop:color-spacetime-s5-factorization)—the faithful $S_2\times S_3\hookrightarrow S_5$ embedding, the orthogonality of the two sectors, and the divisibility rigidity—is generic and requires no such realization.
+The polar split provides the archimedean reading. The modulus and argument require the realization of the trace over $\mathbb{C}$, on the far side of the substrate-to-archimedean wall. The structural content of [Color and spacetime are orthogonal $S_2\times S_3$ factors of the Bring Galois group $S_5$](#prop:color-spacetime-s5-factorization)—the faithful $S_2\times S_3\hookrightarrow S_5$ embedding, the orthogonality of the two sectors, and the divisibility rigidity—is generic and requires no such realization.
 
 ## Relation to the literature
 

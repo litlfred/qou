@@ -43,7 +43,7 @@ above move.
 ## Cross-references
 
 - Parent block:
-  [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
+  [Per-block character closed forms for $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$](qbeta-per-block-chi-closed-forms.md)
   (`delta_tau_M_surrogate` definition + order-0/order-1 proofs).
 - Witness JSON:
   [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).

@@ -56,4 +56,4 @@ closure ("Model G") are **not** part of this proposition. Those enter the
 cluster bindings at their *measured* AME values and calibrate $b$, $g$
 empirically; they are recorded — labelled as a structural/phenomenological
 model, **not** a parameter-free derivation — in the interpreting remark
-[`rem:alpha-cluster-model-g-closure`](#rem:alpha-cluster-model-g-closure).
+[Model G: a phenomenological $\alpha$-cluster binding closure](#rem:alpha-cluster-model-g-closure).

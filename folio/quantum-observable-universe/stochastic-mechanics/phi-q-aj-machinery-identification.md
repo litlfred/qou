@@ -1,4 +1,4 @@
-**Proposition (conditional on [`conj:quantum-langlands-dual`](../q-geometric-langlands/quantum-langlands-dual.md) + [`conj:dim-master-pentagon`](../mass-theory/dim-master-pentagon.md)).**
+**Proposition (conditional on [Quantum Langlands duality — $H_n(q)$ ↔ $H_n(q^{-1})$ via Cartan folding (Type $A_{n-1}$ ↔ ${}^L\!A_{n-1}$)](../q-geometric-langlands/quantum-langlands-dual.md) + [Ding–Iohara–Miki master Pentagon as unified ancestor of Macdonald + $q$-dilog Pentagons](../mass-theory/dim-master-pentagon.md)).**
 
 *Let $K$ be a hyperbolic knot or link with quantum A-polynomial $\hat{A}_K \in \mathcal{A}_q$ (the $q$-Weyl algebra over $\mathbb{Z}[q^{\pm 1}]$). The $\Phi_q$ (Faddeev) and $\mathrm{Li}_2^q$ (Rogers) asymptotic regulators appearing in the framework are specific saddle-point regimes of the AJ machinery*
 

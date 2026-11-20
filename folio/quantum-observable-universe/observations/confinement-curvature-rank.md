@@ -20,7 +20,7 @@ $$
   \;=\; \sum_{k = 0}^{n - 1} \alpha_k \cdot \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1).
 $$
 
-Each layer contributes its q-deformed Wedderburn-weighted log-character content (cf. $w_\lambda(q)$ in [`prop:plancherel-term-7-formulation`](../mass-theory/plancherel-term-7-formulation.md)).
+Each layer contributes its q-deformed Wedderburn-weighted log-character content (cf. $w_\lambda(q)$ in [Universal residue at curvature-rank $k \geq 4$ (Molien-weighted log functional)](../mass-theory/plancherel-term-7-formulation.md)).
 
 | Stratum | Confinement layer | Physical content |
 |---|---|---|

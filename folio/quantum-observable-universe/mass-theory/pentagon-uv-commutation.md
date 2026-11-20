@@ -21,7 +21,7 @@ $$
 $$
 
 without any $q$-factor. This is the level-internal lemma
-[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace); it
+[Pair commutation at the traced-volume level](#lem:vhat-pair-commutation-trace); it
 settles the level-internal half of the commutation question.
 
 ## Between adjacent jet levels — the pentagon q-factor
@@ -99,5 +99,5 @@ triples** appear at any level — every triple at level $n$ is
 absorbed into a pair plus singleton at level $n$ plus a
 residual that lives at level $n+1$. Iterating gives the jet
 ascension; the geometric tail bound from
-[`prop:jet-tower-convergence`](#prop:jet-tower-convergence)
+[Geometric-series tail bound for the $\hbar_q^2$ brane-tower sum](#prop:jet-tower-convergence)
 controls $R_N$.
