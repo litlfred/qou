@@ -73,8 +73,7 @@ local monodromy, not fitted numerically.
 > associated $q$-Riccati $(q^2x-1)a(qx)a(x) - (q-1)a(x) - (q-1) = 0$ has no
 > solution in $K(x)$, because the three terms of its cleared form have degrees
 > $1+2p$, $p+u$, $2u$ and the odd/even parity of the outer two forces the
-> maximum to be attained exactly once. Formalized in
-> [`QOU.Mass.BindingScalarKernelParityExclusion`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean);
+> maximum to be attained exactly once. This is
 > corroborated by the van der Put--Reversat classification
 > \cite{vanderput-reversat2007,vanderput2006} of pure modules of non-integral
 > slope $d/r$ — the normal form $E(r,d,b)$ in Bugeaud's notation
@@ -115,7 +114,7 @@ local monodromy, not fitted numerically.
 > (shift $k$, multiplier $c$), which *is* its symbol on the punctured $t$-disk,
 > and symbols compose by adding shifts and multiplying multipliers along the
 > shift. Two exact facts then constrain any single-shift candidate $D_q$
-> (`QOU.Mathlib.RamifiedShiftCalculus`, over a generic commutative
+> (over a generic commutative
 > ring):
 >
 > 1. **Residue.** If $D_q$ annihilates constants, $c(-k) = 0$ — as every
@@ -188,7 +187,7 @@ local monodromy, not fitted numerically.
 > $[m+4]_{q}\,s_{m+2} = s_{m+1} + s_{m}$ on the tower's $t^{1}$-coefficients
 > $s_{m} = (D_{q}^{m}X)_{t^{1}}$, since $r_{m+2} = c_{1}(-2)c_{2}(-1)\,s_{m}$;
 > each level's constraint reaches one new seed coefficient and none of them
-> reads the branch value $a_{0}$ (`QOU.Mass.C1KernelLevelReading`,
+> reads the branch value $a_{0}$ (for
 > $q$ not a root of unity). On the actual seed — the branch-point
 > expansion of the colour cubic at its simple ramification point — neither
 > the Jackson nor the $q$-derivative tower, in either $q$-integer convention
@@ -247,7 +246,7 @@ local monodromy, not fitted numerically.
 > which is squarefree with $D(0) = 16 \neq 0$. Equal root multisets means
 > $D(\lambda z) = c\,D(z)$, and then two coefficients settle it: the constant
 > term gives $16 = 16c$, so $c = 1$, and the linear term gives $24\lambda = 24$,
-> so $\lambda = 1$ (`QOU.Mass.DilationBranchLocusRigidity`, generic
+> so $\lambda = 1$ (over a generic
 > characteristic-zero field). **Only the identity dilation lifts to $\Sigma$**,
 > for every $\lambda$ and at every $q$ — scope (b), the invariant being the
 > sextic's own coefficients rather than a cited analytic theorem, so this

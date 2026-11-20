@@ -9,14 +9,14 @@ this is **convention D**, with Ocneanu parameter $z = q^3/(q^2+1)$.
 
 Both the mass and binding channels use the canonical Convention-D trace uniformly across the framework.
 
-The mass and binding channels use convention D, and the choice is forced: `lem:feynman-eigenbasis-decomposition` puts the row cap $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero` then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace. The full-Hecke Ocneanu trace of convention C, $z = 1/(q^{1/2}+q^{-1/2})$, has $y_{(1^3)}(q) \neq 0$ for $q \neq 1$ and is not used.
+The mass and binding channels use convention D, and the choice is forced: the [eigenbasis decomposition for the Feynman amplitude](#lem:feynman-eigenbasis-decomposition) puts the row cap $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving $y_{(1^3)} = 0$, and the [Markov-trace selection theorem](#prop:markov-trace-frobenius-selection) then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace. The full-Hecke Ocneanu trace of convention C, $z = 1/(q^{1/2}+q^{-1/2})$, has $y_{(1^3)}(q) \neq 0$ for $q \neq 1$ and is not used.
 
 By contrast, **the production mass channel uses convention D** — the closed form
-of this proposition, entering as `trM_borromean` $\to$ `F_Bor` $\to$
-`canonical_mass`.
+of this proposition, entering through the Borromean Markov trace and the
+dressing factor $F_{\mathrm{Bor}}$ into the canonical nucleon mass.
 
 **The mass channel is convention D.** The two blocks that *define* the mass channel already
-fix its fibre: `lem:feynman-eigenbasis-decomposition` carries the row cap
+fix its fibre: the [eigenbasis decomposition for the Feynman amplitude](#lem:feynman-eigenbasis-decomposition) carries the row cap
 $\ell(\lambda) \leq 2$ inside the index set of
 $V^{\otimes n} \cong \bigoplus V_\lambda \otimes S_\lambda$, and
 `feynman-markov-identification` carries it inside $\mathrm{tr}_M$ itself, with
@@ -30,7 +30,7 @@ $\mathrm{H}_3(q)$; it is not the trace of any fibre, so it cannot be the
 mass trace.
 
 What remains is a **definitional erratum, not a production defect**: the $z$
-stipulated in `rem:markov-axioms-primitive` selects C, while that block and
+stipulated in the [primitive Markov-trace axioms (M1–M4)](#rem:markov-axioms-primitive) selects C, while that block and
 [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md)
 both *name* the Jones–Markov trace, which is D. The stipulated value
 $1/(q^{1/2}+q^{-1/2})$ is the Temperley–Lieb loop reciprocal $1/\delta$ —

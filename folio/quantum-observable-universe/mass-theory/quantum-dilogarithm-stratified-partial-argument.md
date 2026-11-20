@@ -81,8 +81,8 @@ integer
 (b) The hook lengths $h(\square)$ for $\square \in \lambda$ encode
 the partition's depth in the GB filtration. Here
 $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_{\square \in \lambda} h(\square)$
-(the partition's **maximum hook length**) is a *definition* — it is
-`QOU.BraidKnot.gbDepth`, the supremum of the hook length over the
+(the partition's **maximum hook length**) is a *definition* — the
+supremum of the hook length over the
 cells of $\lambda$ — not a consequence of
 [curvature-rank stratification](#prop:curvature-rank-gb-stratification),
 which stratifies $J^{\,r}/J^{\,r+1}$ by the curvature rank $r(T_w)$ of

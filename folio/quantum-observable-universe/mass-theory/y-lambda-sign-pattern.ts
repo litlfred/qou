@@ -18,4 +18,7 @@ export default remark({
     "structural-observation",
     "alternating-block",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3):  identically for $\\ell(\\lambda) \\geq 3$ ([`TemperleyLiebTower.lean`](../lean/QOU/QBeta/TemperleyLiebTower.lean))." },
+  ],
 });

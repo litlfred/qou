@@ -21,8 +21,7 @@ $$
 
 which satisfies the braid relation, with $\sigma_2^{-1} = \sigma_2 - h$.
 Multiplying out $(\sigma_1\sigma_2^{-1})^3$ and taking the trace gives the
-displayed formula. Both facts are proved in the Lean sibling
-. $\square$
+displayed formula. $\square$
 
 ## Values
 

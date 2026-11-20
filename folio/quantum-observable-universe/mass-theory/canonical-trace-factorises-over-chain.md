@@ -49,8 +49,8 @@ digits.
 ## What it means for the binding gap
 
 The [linear-chain closed form](#thm:markov-trace-factorization)
-$B_{\mathrm{sym}} = a\,[(Z-1)L_{pp} + L_{pn} + (N-1)L_{nn}]$, which the Lean
-formalisation of that result took as its *named structural input*, is a
+$B_{\mathrm{sym}} = a\,[(Z-1)L_{pp} + L_{pn} + (N-1)L_{nn}]$, which the proof
+of that result took as its *named structural input*, is a
 corollary of the topology: connected sum $\Rightarrow$ multiplicative trace
 $\Rightarrow$ additive $L$. The canonical closure therefore carries **no
 many-body binding at all** -- not by measurement, by theorem. The many-body
@@ -83,13 +83,13 @@ sum; that it is the binding energy is a separate and open claim, recorded in
 
 Writing the word as $\prod_i p_i(\sigma_i)$ — one polynomial per generator —
 requires each generator's letters to be **contiguous**. That is a property of
-how the word is assembled, not of the chain topology. The corpus's live builder
-`atom_braid_word_3A` does assemble it that way (all of the $\sigma_0$ chain,
+how the word is assembled, not of the chain topology. The canonical atom
+word is assembled that way (all of the $\sigma_0$ chain,
 then all of the $\sigma_1$ chain), which is why the identity measures exact
 above. In contrast, the alternating Borromean builder lays each nucleon's six
 **confinement letters** down alternating, as the $(\sigma_0\sigma_1^{-1})^3$ its
 own source comment always named — the Borromean braid $\beta_{\mathrm{Bor}}$,
-identified against its Lean closed form to $5\times10^{-60}$. Same letter
+identified against its closed form to $5\times10^{-60}$. Same letter
 multiset, different order, and it does **not** satisfy the per-generator form:
 that fails by $2.8\times$ at $A = 2$, rising to $13.3\times$ at $A = 4$.
 
@@ -135,7 +135,7 @@ carrying the difference-based
 $B = Q_\beta\bigl(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}})\bigr)$
 route with it by the same factor.
 
-`QOU.Mass.IntraOrderingInvariance` proves the split. Given the
+The split is proved. Given the
 connected-sum input — $\mathrm{tr}_M(W_{\text{atom}}) = F \prod_i (z + d_i)$ and
 $\mathrm{tr}_M(W_{\text{free}}) = F$ — the ratio is
 $\prod_i (z+d_i)$ for **any** intra factor $F \neq 0$, so two orderings with
@@ -148,22 +148,21 @@ whenever $F_1 \neq F_2$ and $P \neq 1$. And the two
 confinement words are different objects: at $q = 1$, where both are elementary,
 the per-generator product is $1/4$ and the Borromean closed form is $1$
 , so the $82\,\%$ gap at $q_0$ is not a deformation
-artefact. Not formalised, as ever, is the connected-sum multiplicativity itself.
-Measured in
-`the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`; which
-word is $\beta_{\mathrm{Bor}}$ is measured in
-`nf_vs_canonical_word_order_probe.py`.
+artefact. The connected-sum multiplicativity itself is taken as input
+(classical, cited below), not proved here. The effect of the reordering on the
+absolute traces, and which word is $\beta_{\mathrm{Bor}}$, are numerical
+measurements.
 
-## What is formalised, what is checked, what is cited
+## What is proved, what is checked, what is cited
 
-`QOU.Mass.ChainTraceFactor` proves the factor algebra: the
-affine law $\mathrm{tr}_2(\sigma + d) = z + d$ from the level-2 Wenzl weights
-; the mirror factor $z - h = 1/(q(q^2+1))$ and
+The factor algebra is proved: the
+affine law $\mathrm{tr}_2(\sigma + d) = z + d$ from the level-2 Wenzl weights;
+the mirror factor $z - h = 1/(q(q^2+1))$ and
 $\mathrm{tr}_2(\sigma)\,\mathrm{tr}_2(\sigma^{-1}) = 1/[2]_q^2$, hence
 $L_{pp} + L_{nn} = 2\log(q + q^{-1})$; positivity of all three factors for
 $q \ge 1$; and that $-\log$ of a product of positive factors is the sum of the
 $-\log$s. The factorisation of the $H_{3A}$ trace is checked at $A \le 4$ and
 rests on the chain form (verified through $A = 12$) plus the connected-sum
 multiplicativity of the Markov trace, which is classical \cite{birman1974}
-and not formalised. Nothing here says which prime closure would carry
+and is cited rather than proved here. Nothing here says which prime closure would carry
 many-body binding, or that one exists in the framework.

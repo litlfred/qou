@@ -17,6 +17,7 @@ export default remark({
     "consolidation-home",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ([Clausen function Mathlib filler](#rem:clausen-function-mathlib-filler))" },
     {
       kind: "status",
       date: "2026-07-26",

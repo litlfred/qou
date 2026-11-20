@@ -12,6 +12,15 @@ export default proposition({
     "prop:spectral-sequence-collapse",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **One caution on citing the identity.** `molienSum_eq_qFactorial` is $" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): it remains valid within a single $n$, by `QOU.BraidKnot.WLambdaNormalizationInvariance.ratio_invariant`." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Measurements: [`2026-09-04-plancherel-convention-gap.md`](../../../docs/audits/2026-09-04-plancherel-convention-gap.md); producers [`probes/molien_feray_meliot_bridge_probe.py`](../../../computations/probes/molien_feray_meliot_bridge_probe.py), [`probes/plancherel_deformation_uniqueness_probe.py`](../../../computations/probes/plancherel_deformation_uniqueness_probe.py), [`audits/w_lambda_family_consumer_audit.py`](../../../computations/audits/w_lambda_family_consumer_audit.py); registry [§B-norm](../../../docs/coordination/trace-convention-registry.md)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): So [`fr_pullback_k3_test.py`](../../../computations/fr_pullback_k3_test.py) computes and reports **both arms**, Molien primary." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): All six candidates in [`beta_ew_delta_I_321_and_wedderburn.py`](../../../computations/beta_ew_delta_I_321_and_wedderburn.py) are ratios" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Measured instances: [`probes/deuteron_fpn_wlambda_wiring.py`](../../../computations/probes/deuteron_fpn_wlambda_wiring.py) and [`yekutieli_volume_join.py`](../../../computations/yekutieli_volume_join.py)." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): $\\tau(T_w) = \\delta_{w,1}$: `QOU.SchurWeyl.ocneanuWeight_zero_eq_molienWeight` identifies the Ocneanu weight at $z = 0$ with the Molien weight, and `QOU.SchurWeyl.sum_dim_molienWeight_eq_one` is the normalisation $\\tau(1) = 1$." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): (at $n = 4$, `QOU.QBeta.MolienJonesMarkovN4.n4_markov_normalisation`)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): of `QOU.QBeta.MolienJonesMarkovN3` and `QOU.QBeta.MolienJonesMarkovN4`, a generating function" },
     {
       kind: "refined-framing",
       date: "2026-11-15",

@@ -32,4 +32,7 @@ export default conjecture({
     "open-conjecture",
     "tier-a",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean status.** We axiomatise the conjecture as a hypothesis-only `class`. We state the spectral content explicitly using `HoefsmitRepresentation.HasEigenvalueRatio`. Downstream Lean theorems take this class as an instance hypothesis and remain rigorous-conditional results." },
+  ],
 });

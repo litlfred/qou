@@ -39,8 +39,7 @@ never rejects a too-small magnitude
 factor satisfies $|c_k u_0^k| \le |c_2|\,u_0^2 \approx 7.3\times
 10^{-5}$, with the sequence $|c_k|\,u_0^k$ decreasing to the flat
 asymptote $\approx 2.1\times 10^{-13}$ measured on the window
-$c_2, \ldots, c_{10}$ (witness
-`computations/qbeta/qbeta-radius-of-convergence-gate-probe.witness.json`).
+$c_2, \ldots, c_{10}$ (radius-of-convergence gate computation).
 Hence
 
 $$

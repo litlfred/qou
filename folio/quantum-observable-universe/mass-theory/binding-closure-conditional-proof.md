@@ -12,8 +12,8 @@ Rewriting each period through the residue form
 ([The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum)) gives the second
 displayed equality of the statement; the growth law of the $a_D^{(n)}$ is the
 solution of the $q$-difference recurrence
-([The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference)). The
-Lean witness [`QOU.Mass.binding_closure_conditional`](#thm:binding-closure-conditional)
-carries (C) and (B) as the fields of the class `BindingClosureInput` and
-derives the closed form by `Finset.mul_sum` and `Finset.sum_congr` — fully
-verified modulo the class instance, which is exactly input (B). $\qquad\blacksquare$
+([The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference)). Given
+(C) and (B), the closed form of
+[Binding closure, conditional on the per-term mass identity](#thm:binding-closure-conditional)
+follows by distributing the factor over the finite sum and comparing the
+sums termwise; the result is conditional exactly on input (B). $\qquad\blacksquare$

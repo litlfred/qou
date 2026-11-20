@@ -4,7 +4,7 @@ While the existence of the Habiro expansion for quantum invariants with integer 
 The denominator-cleared numerator of the proton's Markov trace has
 $M = 8$ (series terminates). Under convention D the proton trace is
 $p_p(u)/d_p(u)$ with $d_p = 4u^{18}(u^4+1)^2$, and the expansion of
-$p_p$ is ([`habiro-coefficients-atomic.witness.json`](../../../computations/habiro/habiro-coefficients-atomic.witness.json)):
+$p_p$ is:
 
 | $m$ | $a_m(u) \in \mathbb{Z}[u]$ |
 |-----|---------------------------|
@@ -47,7 +47,7 @@ data. An observable such as $\mathfrak{Q}_\beta$ is
 $m_e \cdot f(\mathrm{tr}_M(\beta_n), \mathrm{tr}_M(\beta_p),
 q_0)$, and the exact Habiro evaluation of that map lands at the
 substrate's *intrinsic* accuracy (improving once the derived low-order
-$\mathrm{tr}_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
+$\mathrm{tr}_M$ corrections of the [asymptotic representation-theoretic $\mathrm{tr}_M$ expansion](#prop:tau-M-asymptotic-rep-theory) are
 included; specific intrinsic-accuracy and ladder-correction figures
 live in the archimedean witness ledger, not here).
 Reaching experiment-grade precision requires higher-order

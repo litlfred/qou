@@ -58,14 +58,14 @@ acts as a 2$\times$2 matrix on the SYT basis $\{v_{T_1}, v_{T_2}\}$:
 
 The character $\chi_{(2,1)}(\beta) = \mathrm{Tr}\bigl(\prod_{c \in \beta} M_c\bigr)$
 where $M_c$ is the matrix for each crossing in the canonical word order
-from `atomic_braid_to_crossings`.
+of the atomic braid.
 
 ## Literature pointers
 
 The canonical values are rigorously evaluated via formal trace definitions.
 
-## Lean theorems exported
+## Proved identities
 
-All proved by `field_simp + ring` after unfolding:
+All are proved by clearing denominators after unfolding the definitions:
 
 See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).

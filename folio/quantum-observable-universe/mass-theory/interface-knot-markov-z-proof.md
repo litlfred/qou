@@ -60,7 +60,7 @@ $z(z-h)$.
 
 The same single Markov input fixes a **third** interface factor. The
 canonical p-n boundary (`closed_form_tau_M.canonical_interface_kinds`,
-`prop:averaging-resonance-rule`) carries no preferred chirality, so it is
+the averaging-resonance rule) carries no preferred chirality, so it is
 the **bar-invariant** ($q \leftrightarrow q^{-1}$ symmetric) crossing
 $$
   \sigma_{\mathrm{bar}} \;:=\; \tfrac{1}{2}\bigl(\sigma_g + \sigma_g^{-1}\bigr)
@@ -78,9 +78,8 @@ Thus **all three** per-interface factors — $z$ (positive), $z-h$
 trace-linearity from the *single* Markov axiom $\mathrm{tr}_M(\alpha\sigma_g) =
 z\,\mathrm{tr}_M(\alpha)$ plus the skein $\sigma_g^{-1}=\sigma_g-h$; none is an
 independent input or a fit. The division-free form
-$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ is
-formalised over a generic commutative ring as
-`interface_knot_markov_z_bar_symmetric` (the $\tfrac12$ normalisation is
+$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ holds
+over any commutative ring (the $\tfrac12$ normalisation is
 deferred to the archimedean realisation, per the base-ring convention).
 
 ### The three factors are one bar-orbit
@@ -172,14 +171,11 @@ by order $8 \times 10^{-6}$ in $f_{pn}$.
 leaves a whole bar-even function $E$ free, so it does not by itself determine
 the weighting; selecting $E$ requires re-deriving the colour weighting from the
 colour-tube geometry, and no particular $E$ is asserted here. All of the above
-is checked exactly in
-[`pn_interface_bar_structure_probe.py`](../../../computations/probes/pn_interface_bar_structure_probe.py)
+is checked in exact arithmetic
 (17 assertions), and the four identities that are field-theoretic rather than
 substrate-specific — $\overline{z} = z - h$, the bar-symmetriser form, the bar
 defect $-(\overline{\varepsilon} + \varepsilon)h$, and the bar-even-iff-offset-bar-odd
-equivalence — are formalised over an arbitrary characteristic-zero field in
-[`QOU/MassTheory/PnInterfaceBarStructure.lean`](../lean/QOU/MassTheory/PnInterfaceBarStructure.lean),
-using only the axioms `propext`, `Classical.choice` and `Quot.sound`.
+equivalence — are proved over an arbitrary characteristic-zero field.
 
 ### Full-trace verification at convention D (4 atoms)
 
@@ -203,7 +199,7 @@ $0.12568415$, again equal to the predicted product to $\le 5\times10^{-50}$ (and
 likewise for the colour-blind $\sigma_g - h/2$). The identity ($\star$) therefore holds
 at convention D on every word tested, at the $10^{-50}$ floor of the arithmetic.
 
-Per-atom interface census (from `atom_braid_word_3A`):
+Per-atom interface census (from the canonical atom braid word):
 
 - **D**: $p \cdot \sigma_3 \cdot n$ — 1 positive (p-n).
 - **T**: $p \cdot \sigma_3 \cdot n \cdot \sigma_6^{-1} \cdot n$ — 1 positive (p-n) + 1 negative (n-n).
@@ -245,7 +241,7 @@ $$
   \quad\text{at }q_0.
 $$
 This is the content of
-`conj:constit-factor-2q-minus-1`, whose $0.033\%$ agreement was measured at the
+the conjectured constituent factor $2q - 1$, whose $0.033\%$ agreement was measured at the
 excised convention-C weight on the earlier grouped intra-nucleon word.
 
 **The step does not survive at convention D.** The constituent product is

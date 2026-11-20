@@ -2,9 +2,9 @@
 |---|---|---|---|---|
 | Markov trace $\mathrm{tr}_M$ | [Existence and non-degeneracy of the Markov trace (Jones, 1987)](#thm:jones-markov-trace) | 0 | trivial (closed braid) | Laurent in $q$ — algebraic $\mathcal{P}_0$ |
 | Hoefsmit pairing $\langle \cdot, \chi_\lambda \rangle$ | [Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$](#prop:hoefsmit-seminormal-form) | 0 | partition $\lambda$ | $y_\lambda(q) \in \mathbb{Z}[q^{\pm 1}]$ |
-| EW interface knot $\bowtie_K$ | `def:ew-interface-knot` | 0 | EW braid in $B_6$ with interface $I$ | element of $H_6(q)$ |
-| Higgs-vev mechanism $\mathrm{Lk}_R^{(1)}$ | `conj:categorical-higgs-mechanism`, Step C | 0 | linking $k = 1$ | $\mathrm{End}_R(A)$ |
-| Categorical linking $\mathrm{Lk}_R^{(k)}$ | `conj:categorical-linking-operation` | 0 | linking integer $k$ | $\mathrm{End}_R(A)$ |
+| EW interface knot $\bowtie_K$ | EW interface-knot definition | 0 | EW braid in $B_6$ with interface $I$ | element of $H_6(q)$ |
+| Higgs-vev mechanism $\mathrm{Lk}_R^{(1)}$ | [Categorical Higgs mechanism: Goldstone-eating as topological linking](#conj:categorical-higgs-mechanism), Step C | 0 | linking $k = 1$ | $\mathrm{End}_R(A)$ |
+| Categorical linking $\mathrm{Lk}_R^{(k)}$ | [Categorical linking operation $\mathrm{Lk}_R$](#conj:categorical-linking-operation) | 0 | linking integer $k$ | $\mathrm{End}_R(A)$ |
 | $q$-shuffle convolution $*_q$ | [The quantum vacuum as a Frobenius--Hopf algebra](#def:frobenius-hopf-substrate) | preserves $n$ | preserves $K$ (or merges) | $\mathcal{H}_q^{(n_1 + n_2, K \cdot K')}$ |
 | Volume functor $\mathrm{Vol}$ | [$\mathrm{Vol}(K)$ factors strictly through the fibre functor $\tau$](#prop:vol-through-tau) | **2** | hyperbolic knot | $\mathcal{P}_2 / \mathcal{P}_1$ (real) |
 | Chern–Simons $\mathrm{CS}$ | (open in paper) | **3** | hyperbolic knot | $\mathcal{P}_3 / \mathcal{P}_2$ (Tate-twisted) |

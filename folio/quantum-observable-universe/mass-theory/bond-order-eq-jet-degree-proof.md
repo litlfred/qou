@@ -1,5 +1,5 @@
 *Step 1 — the cluster sub-braid sits at its jet degree.* The canonical
-atomic braid `atom_braid_word_3A` builds $\mathcal{B}_K$ by concatenating one
+atomic braid word builds $\mathcal{B}_K$ by concatenating one
 $3$-strand block per nucleon and inserting the inter-nucleon crossings. Adding
 a nucleon to an $(n-1)$-cluster appends its block and the crossings binding it
 to the cluster, raising the Gröbner--Shirshov normal-form length by a fixed
@@ -17,7 +17,7 @@ length), so the filtration is exhaustive.
 
 *Conclusion.* Summing the graded components reconstructs the binding, and by
 Steps 1--2 the degree-$n$ component equals the $n$-body term:
-$\sum_n(\text{$n$-body term})=\sum_n\mathrm{gr}_n$. The Lean witness
-[`QOU.Mass.bodyorder_eq_jet_total`](#lem:bond-order-eq-jet-degree) packages the
-graded-match (Step 1--2) and exhaustiveness as the structure hypothesis and
-extracts the body-order = jet-graded sum identity. $\qquad\blacksquare$
+$\sum_n(\text{$n$-body term})=\sum_n\mathrm{gr}_n$. In
+[Body order equals jet degree](#lem:bond-order-eq-jet-degree) the
+graded match (Steps 1--2) and exhaustiveness are the hypotheses, and
+the body-order = jet-graded sum identity follows from them. $\qquad\blacksquare$

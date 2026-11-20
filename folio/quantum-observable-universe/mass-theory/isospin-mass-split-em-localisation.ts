@@ -15,4 +15,7 @@ export default remark({
     "localisation",
     "structural-impossibility",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ([`frobenius-s-classification`](frobenius-s-classification.md), `mass_S_difference`); the Lean files above carry explicit, sorry-free operators for both non-invariant pieces. ... (see the scope note in `prop:neutron-proton-mass-splitting`); (`BextGPMT q 3 = -dMod111 q > 0`, ...; `gpmt_threeRow_cumulant_signs`)" },
+  ],
 });

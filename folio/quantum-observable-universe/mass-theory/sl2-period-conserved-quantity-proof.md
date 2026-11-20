@@ -15,12 +15,10 @@ H_{n+1}
 \end{aligned}
 $$
 
-This is the Lean theorem
-[`QOU.Mass.sl2Invariant_succ`](#prop:sl2-period-conserved-quantity): after
-`unfold sl2Invariant; rw [hrec n]`, the goal is the polynomial identity above,
-discharged by `ring`. A straightforward induction on $n$ (base $H_0 = H_0$, step
-$H_{k+1} = H_k = H_0$) then gives $H_n = H_0$ for all $n$
-([`QOU.Mass.sl2Invariant_eq_zeroth`](#prop:sl2-period-conserved-quantity)).
+This is the one-step invariance $H_{n+1} = H_n$: after substituting the
+recurrence, it is the polynomial identity above. A straightforward induction on
+$n$ (base $H_0 = H_0$, step $H_{k+1} = H_k = H_0$) then gives $H_n = H_0$ for
+all $n$.
 
 The first integral is exactly the quadratic form preserved by
 $B \in \mathrm{Sp}(2) = \mathrm{SL}_2$: in the basis $(a_n, a_{n+1})$ the map

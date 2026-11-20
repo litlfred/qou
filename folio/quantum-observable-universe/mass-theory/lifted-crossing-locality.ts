@@ -18,4 +18,7 @@ export default conjecture({
   },
   uses: ["conj:crossing-graded-mass-expansion"],
   cites: ["kohno1987"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ([`QOU.Mass.KZFlatnessLevelIndependent`](#conj:hecke-monodromy-step-two))" },
+  ],
 });

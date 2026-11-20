@@ -113,8 +113,7 @@ This expression is **bar-self-dual** under
 $\iota \colon q \mapsto q^{-1}$ — the substrate-level
 [bar T-duality](#prop:bar-t-duality-substrate) at the trace level.
 The duality is automatic from the disjoint-strand-pair
-construction: each $\sigma_i^{2k}$ is bar-self-dual on its own
-(`prop:even-twist-torus-link-psd-feasibility`),
+construction: each $\sigma_i^{2k}$ is bar-self-dual on its own,
 and disjoint products preserve the duality.
 
 The Plancherel-weighted form

@@ -2,7 +2,7 @@
 
 The full-twist $\Delta_n^2$ acts on each Wedderburn block $V_\lambda$ of $H_n(q)$ by the central scalar $q^{c(\lambda)}$, where $c(\lambda) = \sum_{x \in \lambda}(j_x - i_x)$ provides the content sum of the partition $\lambda \vdash n$ \cite{geckpfeiffer2000, mathas1999}. Trivial action of the full-twist on $\Phi_n$ restricts the partitions in the Wedderburn decomposition of $\Phi_n$ to those with content sum zero. These form the self-conjugate partitions $\lambda = \lambda'$ on Young's lattice. At saturated $n$, $\Phi_n$ finds support strictly on self-conjugate partitions.
 
-For $n \notin \mathfrak{M}$, the constraint fails. Non-self-conjugate partitions enter $\Phi_n$, and the full-twist acts by a non-trivial scalar. This transition formalizes shell closure, replacing ad hoc selection rules with categorical constraints.
+For $n \notin \mathfrak{M}$, the constraint fails. Non-self-conjugate partitions enter $\Phi_n$, and the full-twist acts by a non-trivial scalar. This transition makes shell closure precise, replacing ad hoc selection rules with categorical constraints.
 
 ## Homological reformulation
 
@@ -24,7 +24,7 @@ $$
 \sum_{\lambda = \lambda'} w_\lambda \cdot \chi^\lambda(\beta_{\mathrm{atom}}).
 $$
 
-The character sum vanishes identically at certain atomic-braid cycle types. The binding-energy enhancement at magic shells derives from the non-vanishing of $\Phi_n$ on the self-conjugate isotypical operator blocks. Empirically, the GS-filtration Term 6 plus an `is_magic_pair` operator-correction captures the magic-shell signal, correlating at $+0.74$ to the AME residual.
+The character sum vanishes identically at certain atomic-braid cycle types. The binding-energy enhancement at magic shells derives from the non-vanishing of $\Phi_n$ on the self-conjugate isotypical operator blocks. Empirically, the GS-filtration Term 6 plus a magic-pair operator correction captures the magic-shell signal, correlating at $+0.74$ to the AME residual.
 
 ## Discussion
 

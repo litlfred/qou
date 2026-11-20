@@ -9,6 +9,7 @@ export default proposition({
   tags: ["normalization", "no-fitting", "uniqueness", "bring", "residue"],
   lean: { ref: "qou:QOU.BraidKnot.bring_residue_equation" },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The scaffolded open math, the Lean structure, the class-instance\nclosure, and the downstream consequence" },
     {
       kind: "note",
       date: "2026-05-30",

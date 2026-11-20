@@ -9,4 +9,7 @@ export default proposition({
   uses: ["def:photon", "prop:borromean-markov-trace-closed-form"],
   cites: ["iwahori1964", "kassel2008"],
   tags: ["borromean", "hecke-algebra", "photon", "gamma-gamma", "nucleon-element"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The Lean statement holds in every algebra that satisfies the relations," },
+  ],
 });

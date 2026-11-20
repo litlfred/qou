@@ -34,9 +34,9 @@ carried into a convention-D discussion; re-deriving $q^{*}$ under $D$ with the
 canonical producer is separate work. Second, **the skeptical conclusion of this
 remark is unaffected, and is strengthened.** Its argument is that the
 $80.3\%$ is a reading of $\mathrm{Vol}(4_1)$'s own value rather than evidence —
-under $D$ the position falls outside the anchor interval entirely. The Lean is likewise untouched: `qstarRootStrictMonoInAnchor` and
-`qstarRootUniqueInAnchor` are stated about an abstract $\Phi$ with a
-`StrictMonoOn` hypothesis and never mention $z$ or $\alpha$, and the numerical
+under $D$ the position falls outside the anchor interval entirely. The exclusion argument is likewise untouched: its root-monotonicity and
+root-uniqueness statements concern an abstract $\Phi$ assumed strictly
+monotone on the anchor interval and never mention $z$ or $\alpha$, and the numerical
 premise still holds under $D$ ($\Phi(q^{*}) \approx -3.606$ versus $-3.631$ under
 $C$ — nonzero, same sign), so the exclusion result is convention-independent.
 
@@ -45,5 +45,3 @@ The residual empirical content must be stated with its error bar, because the er
 The same arithmetic denies the converse: $0.031\sigma$ is no evidence *against* a $4_1$-volume ingredient either. Whether the identification is structural remains the open question of [Physical role of $\mathrm{Im}(q)$](conj-im-q-physical-role.md), which this remark interprets; it is settled neither by $q^{*}$ nor by the present precision.
 
 Two calibrating facts sharpen how $q^{*}$ may be used. First, the famous hypersensitivity $dc_3/dq \approx 4.7 \times 10^{6}$ is not a singularity of the underlying object: $S'(q^{*}) \approx 2.37 \times (1/u^3)$, a smooth $O(1)$ prefactor magnified by the $1/u^3$ ladder inversion. Second, the precision of $q^{*}$ is limited by the experimental neutron $Q$-value, $dq^{*}/d\mathfrak{Q}_\beta \approx -0.539$. A sharper $\mathfrak{Q}_\beta$ measurement directly sharpens $q^{*}$, a concrete falsifiable lever that additional mass anchors at the same $\mathfrak{Q}_\beta$ would not provide.
-
-The computation is recorded in [`qbeta_c3_imq_qstar_ladder_amplification_probe.py`](../../../computations/qbeta/qbeta_c3_imq_qstar_ladder_amplification_probe.py) (witness [`qbeta-c3-imq-qstar-ladder-amplification.witness.json`](../../../computations/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json)).

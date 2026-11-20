@@ -17,4 +17,7 @@ export default remark({
     "deuteron-binding",
     "wedderburn-conjugation",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Both statements are proved over $\\mathbb{C}$ in the Lean file `OhtsukiTowerBarParity.lean` ... the resummation is recorded in [`qbeta_c3_borel_pade_resummation_probe.py`](../../../computations/qbeta/qbeta_c3_borel_pade_resummation_probe.py) ... The parity backbone is proved over a generic commutative ring in [`ConjugationParitySplit.lean`](../../../folio/quantum-observable-universe/lean/QOU/MassTheory/ConjugationParitySplit.lean)" },
+  ],
 });

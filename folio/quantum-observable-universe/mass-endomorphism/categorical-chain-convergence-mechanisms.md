@@ -4,7 +4,7 @@ The categorical-derivation precision ladder $\mathfrak{Q}_\beta^{\text{cat}}$ fr
 
 ## Mechanism 1: Per-knot c(K) brane-tower bound
 
-Per `conj:archimedean-remainder-exponential-decay`, the truncation residual at depth $N$ satisfies:
+Per the [exponential decay of the archimedean brane-tower truncation remainder](#conj:archimedean-remainder-exponential-decay), the truncation residual at depth $N$ satisfies:
 
 $$
   \lvert R_N \rvert \;\le\; \frac{\hbar_q^{2(N+1)}}{1 - \hbar_q^2},

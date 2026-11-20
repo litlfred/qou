@@ -117,7 +117,7 @@ period theory:
   [Curvature-rank stratification of the GB spectral sequence](#prop:curvature-rank-gb-stratification),
   though **that proposition stratifies by the curvature rank of *words* and
   mentions no partition**; the max-hook statistic is
-  `QOU.BraidKnot.gbDepth`, a definition, and the step joining them is
+  a definition, and the step joining them is
   unestablished
   — (max hook of partition) is a **separate** filtration from the
   iterated-integral depth used here. Their precise relationship —

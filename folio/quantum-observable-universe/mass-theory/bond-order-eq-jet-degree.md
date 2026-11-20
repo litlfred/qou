@@ -1,6 +1,6 @@
 Let $\mathcal{B}_K$ be the canonical atomic braid of a nucleus with $A$
 nucleons — each nucleon a $3$-strand block, assembled by
-`atom_braid_word_3A` — and equip $H_{3A}(q)$ with the Gröbner--Shirshov
+the canonical atomic braid word — and equip $H_{3A}(q)$ with the Gröbner--Shirshov
 filtration by Coxeter length $\ell(w)$
 ([GB-filtration spectral sequence and $E_\infty$ convergence of the 6-term mass](#prop:gb-spectral-sequence)) read off through
 the jet-prefix order

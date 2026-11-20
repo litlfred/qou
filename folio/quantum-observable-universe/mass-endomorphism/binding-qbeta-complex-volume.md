@@ -1,4 +1,4 @@
-**Conjecture (complex-volume unification of mass-binding and decay).** [Lean classes: `ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`]
+**Conjecture (complex-volume unification of mass-binding and decay).**
 *Binding and the $\beta$-decay $Q$-value form
 the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
@@ -49,12 +49,11 @@ $$
 $$
 
 the per-partition object of the canonical binding
-([Categorical mass as Markov trace](#prop:categorical-mass-markov),
-`binding_canonical`). This describes **any confined knot $K$**.
+([Categorical mass as Markov trace](#prop:categorical-mass-markov)). This describes **any confined knot $K$**.
 The nuclear binding case — a nucleus is a confined nucleon knot,
 factorized sub-object $\mathfrak{p}^{Z}\otimes\mathfrak{n}^{N}$ — forms the
 physical instance $\mathrm{tr}_M(\mathcal{M}) = \mathrm{tr}_M(W_{\text{atom}})$
-of `binding_canonical`. Read over $\mathbb{C}$ the defect carries **one
+of the canonical binding. Read over $\mathbb{C}$ the defect carries **one
 bit more information than either observable alone**: its two
 bar-parities.
 
@@ -91,8 +90,7 @@ same $\mathfrak{V}$.
   $\tfrac{q+q^{-1}}{2}\pm\tfrac{q-q^{-1}}{2} = q^{\pm1}$ holds over any
   field. The complex reconstruction $\mathfrak{E}_{\mathrm{bind}}+i\,\mathfrak{Q}_\beta
   = \mathfrak{V}$ follows from the two projection
-  hypotheses ([Lean](#conj:binding-qbeta-complex-volume),
-  `QOU.MassEndomorphism.ComplexVolumeUnification`, 0 sorries).
+  hypotheses.
 - **Proved (classical limit).** The free/factorized projection
   $\chi^\lambda_{\text{free}}$ forms the disjoint-product factorization,
   proven at $q=1$ via Plancherel duality
@@ -139,13 +137,11 @@ $S(q_0) = \mathrm{Im}\,\mathfrak{V}\bigl(u(q_0)\bigr)$: the Chern–Simons
 part of the **deformed** complex volume at the substrate deformation
 $u(q_0)$ (log meridian holonomy). The deformed volume itself is a
 theorem for $4_1$ and explicitly computable via Neumann–Zagier; the two
-open inputs — the map $u(q_0)$ and the channel identity — are carried by
-the class `QOU.QBeta.PhiBSArgumentIdentification.SDeformedVolumeChannel`.
+open inputs — the map $u(q_0)$ and the channel identity — are taken as a
+hypothesis, the deformed-volume channel hypothesis.
 Composed with the argument identification of
 ([algebraic-geometric dilogarithm equivalence](../mass-theory/algebraic-geometric-dilog-equivalence.md)),
-three statements are derived unconditionally from the two classes
-(`phase_eq_im_deformed_volume`, `phiB_eq_cs_phase`,
-`exists_cs_vanishing`): the fibre-branch $\Phi_b$ phase at the
+three statements are derived from these two hypotheses: the fibre-branch $\Phi_b$ phase at the
 identified argument **is** the deformed Chern–Simons part; the $\Phi_b$
 readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$; and *if* $S$ flips
 sign between the anchors, that forces a substrate point $q^{*}$
@@ -156,7 +152,7 @@ uncertainty of $\pm 1.26$ ($130\times$ / $32\times$ the value); only the swing
 $S(\text{muon}) - S(\text{proton})$ is resolved (the cross-anchor $c_3$
 difference, with $\mathrm{Vol}(4_1)$ cancelled). So it is a conditional
 structural statement, not an established prediction. This makes precise that $\Phi_b$ touches binding **only**
-through this channel: remove the `SDeformedVolumeChannel` hypothesis and
+through this channel: remove the deformed-volume channel hypothesis and
 no binding statement about $\Phi_b$ survives. On the open map $u(q_0)$
 itself, the Neumann–Zagier leading-form family laws are proved
  over the corrected harmonic form
@@ -171,8 +167,7 @@ sign on both sides of $q^{*}$, so none can produce a sign flip
 $S(\text{muon}) > 0 > S(\text{proton})$ *were one present*. The surviving
 necessary condition is that $u(q_0)$ must cross the diagonal
 $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$ between the anchors; $u(q_0)$ itself
-stays open. The measured values live in the probe witness, never in the
-Lean, and the individual anchor signs are not resolved by the data; the resolved
+stays open. The measured values enter none of these derivations, and the individual anchor signs are not resolved by the data; the resolved
 target is the swing $S(\text{muon}) - S(\text{proton})$, and the onward
 identification of this channel with the resurgent monodromy datum
 $A_\omega$ is unsupported (no literature; integrality) and not carried.
@@ -183,8 +178,7 @@ The two channels construct distinct real components of one object: the
 $E_0\cdot|\Delta(\mathrm{net})|$ **net-route** (the bar-even, binding-like
 $E_0\cdot\Delta(\mathrm{tr})$) provides a precision-ladder $c_2 \approx -8.0$,
 whereas the canonical $c_2 = -1$ lives in the bar-odd $\mathrm{tr}_M$
-**brane-tower** ladder
-(witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
+**brane-tower** ladder. Two different real $c_2$'s for
 the two parities align with Re/Im components of one complex
 $c_2$.
 
@@ -202,12 +196,11 @@ independent open problems.
 ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
 *not* $\mathbb{C}$) descends to **both** the bar-even
 (binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a single proof,
-because the projections $x \mapsto x\pm\sigma x$ act additively. Formalised
-in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
-`invol_descent` (one ring identity $\Rightarrow$ both parity identities)
-and `recurrence_invol_descent` (a three-term $\mathfrak{V}$-recurrence with
-a bar-even multiplier $c$, $\sigma c = c$, yields the binding and
-$\mathfrak{Q}_\beta$ recurrences at once — the `c_k`-ladder mechanism). The
+because the projections $x \mapsto x\pm\sigma x$ act additively. Two descent
+statements are proved: one ring identity implies both parity identities,
+and a three-term $\mathfrak{V}$-recurrence with a bar-even multiplier $c$,
+$\sigma c = c$, yields the binding and $\mathfrak{Q}_\beta$ recurrences at
+once (the $c_k$-ladder mechanism). The
 $\mathbb{C}$/Re–Im picture forms the archimedean instance ($\sigma=$ complex
 conjugation).
 
@@ -225,7 +218,7 @@ $\mathbb{R}$ or $\mathbb{C}$; division-free via $\sigma q \cdot q = 1$):
 
 The **channel rotation** is proved. With a
 formal rotation element $\iota \in R$, $\iota^2 = -1$ (the fibre-level
-stand-in for $i$; `Complex.I` is only the archimedean instance downstream
+stand-in for $i$; the complex unit $i$ is only the archimedean instance downstream
 of $\tau$), a sequence satisfies the odd step at $(q, x)$ **iff** its
 $\iota$-rotation $n \mapsto \iota^n h_n$ satisfies the even step at the
 bar-conjugated data $(\sigma q, \iota x)$ — the categorical form of the
@@ -234,15 +227,15 @@ Askey/Ismail–Masson identity $h_n(x \mid q) = i^{-n} H_n(ix \mid q^{-1})$
 one recurrence, two channels.
 
 The operator ("rotation matrix") statement is split by provability.
-`eigencolumn_eq_overlap` proves generically that any eigencolumn of the
+It is proved generically that any eigencolumn of the
 channel tridiagonal operator has orthogonal-polynomial entries. The
 Leonard self-duality that would force those entries into the Askey–Wilson
-family \cite{zhedanov1991,terwilliger2001} is carried as the conjecture
-class `ChannelLeonardDuality`. The bound $\leftrightarrow$ free
+family \cite{zhedanov1991,terwilliger2001} remains a conjectural
+hypothesis. The bound $\leftrightarrow$ free
 deformation-path reading (endpoints of one Askey–Wilson family, with the
-$\mathfrak{V}$-ladder riding one bar-even three-term multiplier) is carried as the
-conjecture class `AWDeformationPath`, whose two-channel descent
-`channel_ladders` is derived from `recurrence_invol_descent`. See the
+$\mathfrak{V}$-ladder riding one bar-even three-term multiplier) is likewise a
+conjectural hypothesis, whose two-channel descent is derived from the
+recurrence descent statement above. See the
 companion remarks
 [The channel rotation in the Askey scheme: same eigenfunctions rotated, different measures](#rem:channel-rotation-askey-lit) and
 [Bound $\leftrightarrow$ free as a character-variety path: the deformation reading of $\mathfrak{V}$](#rem:complex-volume-character-variety-path).
@@ -260,7 +253,7 @@ Q R = q\,(R Q), \qquad L Q = q\,(Q L), \qquad L R - R L = (1 - q)\,Q,
 $$
 
 proved coordinatewise over generic $R$,
-with `chM_eigencolumn_iff` identifying the eigencolumns of $L + R$ with the
+with the eigencolumns of $L + R$ identified with the
 $q$-Hermite three-term rows; the odd channel satisfies the same relations at
 $\sigma q$ by instantiation. Second, the **Casoratian mechanism** of the
 $W$-sign test: two solutions of one three-term step transport their Casoratian
@@ -268,5 +261,5 @@ by $W' = -B\,W$, and along a bar-even constant-multiplier
 ladder the channel Casoratian is *invariant* — so
 a measured drift of the physical channel Casoratian reads directly as the
 $k$-dependence of the Askey–Wilson coefficient $B_k$. With $c_3^{\text{even}}$
-now measured exactly (witness `qbeta-c3even-exact-sseries`), the decisive
+now measured exactly, the decisive
 $W_3$ sign test awaits only the $c_4$ rung pair.

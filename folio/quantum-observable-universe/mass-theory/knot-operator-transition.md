@@ -17,7 +17,7 @@ five operators under both conventions returns the same dominant basis element in
 every case, with dominance margins of $4.7\times$ to $9.6\times$ against a
 relative perturbation of only $\delta/2 \approx 6.9 \times 10^{-4}$ on the p-n
 shift — four orders of magnitude of headroom
-([`knot_operator_transition_convention_robustness_probe.py`](../../../computations/probes/knot_operator_transition_convention_robustness_probe.py),
+([convention-robustness check](../../../computations/probes/knot_operator_transition_convention_robustness_probe.py),
 8 assertions). The convention is recorded because the operators are written in
 it, not because the conclusion depends on it.
 

@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The analytic input ... is now formalised, but not yet *connected*: the Lean statements above still assume the saddle as hypotheses and prove the algebra downstream, which is where the rigidity lives. Both inputs are machine-checked separately. `kashaev_log_sum_asymptotic` gives the expansion with an explicit remainder ...; `hasSum_gaussian_theta` gives Laplace's method for the sum as an *exact* Jacobi-theta identity ... What is still assumed is the step from those two theorems to the hypotheses `hc` and `hτ`" },
     {
       kind: "note",
       date: "2026-08-09",

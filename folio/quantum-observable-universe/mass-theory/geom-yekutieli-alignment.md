@@ -1,7 +1,7 @@
 **Proposition (conditional on
 [Algebraic independence of QOU hyperbolic volumes](#conj:hyperbolic-volume-transcendence)
 and
-`rem:baryon-period-ratio`).**
+the baryon period-ratio remark).**
 *The piecewise geometric invariant
 $\mathrm{Geom}(K)$
 ([topological mass formula](#prop:topological-mass-formula))

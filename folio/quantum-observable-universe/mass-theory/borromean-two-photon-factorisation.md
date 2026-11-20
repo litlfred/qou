@@ -44,7 +44,7 @@ and comparing the two gives the cubic relation. The product of the two factors i
 $1 + (q - q^{-1}) h V - h^2 V^2 = 1 + h^2 V - h^2 V^2$. The factors are polynomials
 in $V$, so they commute. $\square$
 
-The Lean statement holds in every algebra that satisfies the relations, so it holds
+The statement and its proof hold in every algebra that satisfies the relations, so it holds
 in $H_3(q)$ itself and in each of its representations. It uses no division, no
 ordering and no value of $q$.
 

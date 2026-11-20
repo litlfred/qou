@@ -88,7 +88,7 @@ extracting a rung by inverting the target drives the next residual to exactly
 zero. They are retained as the calibration record they were, and should not be
 cited as current extractions.
 
-The empirical $c_k$ from `binding_q_target_sweep` are **fits**: each is extracted
+The empirical $c_k$ are **fits**: each is extracted
 by matching the truncated product to the measured CODATA $\mathfrak{Q}_\beta$
 value, so it encodes the datum it is matched against. That is a calibration
 tautology, not a derivation, and it is why the rungs carry no predictive content.
