@@ -162,37 +162,26 @@ _NET_COEFF_DPS = 30
 
 @lru_cache(maxsize=None)
 def _q_0() -> mp.mpf:
-    """Substrate parameter q_0 at 50-dps from the q-pinning witness.
+    """Substrate parameter q_0: the EXPERIMENTAL (proton) pin, 60 dps.
 
-    Pulled from `q-pinning-50-digit.witness.json:derived_50_digit.q`, which is
-    the **ideal / CAL-2 (muon) anchor** -- that field is what
-    `qou_substrate.witness._q0_value_for_anchor("muon")` returns, so this
-    module computes at the muon pin regardless of what `q_parameter` would
-    resolve for it.
+    CHANGED 2026-11-20 (owner, on PR #8591; AGENTS.md: "all agents and all production code
+    default to the experimental (proton) anchor", "never straddle the two layers"). Until this
+    date `_q_0` read the ideal/CAL-2 MUON anchor out of `q-pinning-50-digit.witness.json`, while
+    callers such as `m_p_substrate_identity_50dps` combined the result with proton-pinned
+    quantities: a layer straddle of −11.54 ppb in q (bean `qou-aj91`, triage
+    `docs/audits/2026-08-24-mech5-producer-layer-triage.md` bucket E). The muon pin is still
+    available, but only on explicit request: `_q_0_muon()` or `_resolve_q(anchor="muon")`.
+    """
+    from qou_substrate.constants import q_at
+    return q_at(60)
 
-    CORRECTED 2026-08-24 (bean `qou-aj91`).  This docstring previously called
-    `q_parameter.Q_50_DIGIT_STR` a "legacy float64 fallback" that is
-    "identical to ~50 digits".  Both clauses are wrong, and the second one is
-    a false all-clear on a production module -- `derived_masses` predicts MASS
-    and BINDING observables, so "the two pins agree" is exactly the statement
-    that stops a reader from investigating.  Measured:
 
-        pin  (muon) : 1.1099785955573347198997632204...
-        q_parameter : 1.1099785827513808075916690956...
-        first differing digit : index 9
-        separation            : -1.1537118e-8  =  -11.5371 ppb
+@lru_cache(maxsize=None)
+def _q_0_muon() -> mp.mpf:
+    """The ideal / CAL-2 (muon) anchor, `q-pinning-50-digit.witness.json:derived_50_digit.q`.
 
-    They agree to **9** digits, not ~50, and the separation *is* the mu-p
-    substrate tension.  Nor is `Q_50_DIGIT_STR` a legacy fallback: it is the
-    **experimental (proton) pin**, the standing default for all production
-    code since the 2026-08-07 owner directive.
-
-    The layer question -- whether these mass/binding quantities belong on the
-    proton pin -- is triaged in
-    `docs/audits/2026-08-24-mech5-producer-layer-triage.md` (bucket `E`) and
-    is NOT decided here; only the false equivalence is removed.  Changing the
-    read would move every number this module emits by ~11.54 ppb, which is
-    the `qou-1c4y` sweep.
+    Explicit opt-in only (comparison / CAL-2 producers). It differs from `_q_0()` by
+    −11.54 ppb in q at the 9th digit, which IS the μ–p substrate tension.
     """
     with _Q_PINNING_WITNESS.open() as fh:
         d = json.load(fh)
@@ -456,9 +445,13 @@ def e_0_calibrated_mev() -> mp.mpf:
     return q_beta_codata / abs(delta_net)
 
 
-def _resolve_q(q=None) -> mp.mpf:
-    """Resolve optional q argument to an mpf at ≥50 dps (defaults to _q_0())."""
+def _resolve_q(q=None, anchor: str = "proton") -> mp.mpf:
+    """Resolve optional q to an mpf at ≥50 dps (default: the proton pin; anchor='muon' opts in)."""
     if q is None:
+        if anchor == "muon":
+            return _q_0_muon()
+        if anchor != "proton":
+            raise ValueError(f"unknown anchor {anchor!r} (use 'proton' or 'muon')")
         return _q_0()
     if isinstance(q, mp.mpf):
         return q
@@ -884,7 +877,7 @@ def derivation_summary() -> dict:
         "phase": "0b.4 (FULL Q_β chain wired; nucleon + light-nucleus masses stubbed)",
         "calibration_inputs_loaded": {
             "CAL-1_m_e_MeV": str(M_E_MEV),
-            "CAL-2_q_0": str(_q_0()),
+            "q_0_proton_pin": str(_q_0()),
             "CAL-3_Q_beta_MeV": str(Q_BETA_MEV) + " (cross-check only; predicted by framework below)",
         },
         "wired_predictions": {

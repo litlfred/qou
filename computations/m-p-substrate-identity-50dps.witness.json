@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-20T16:00:10.951584+00:00",
-  "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
+  "computedAt": "2026-11-20T16:01:41.475202+00:00",
+  "commitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -15,7 +15,7 @@
     },
     {
       "name": "m_n_matches_codata_within_10ppb",
-      "computed": "501.4316327877401803316635910708273218008129439157289562765830380455309",
+      "computed": "501.4569351393812824617363059782341515404278357807621566341538281253553",
       "expected": 0.0,
       "passed": false,
       "tolerance": 10.0,
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 13,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
   "scriptHash": "300238e140fe",
-  "scriptCommitSha": "2ceff396f35f5d3184fd8aa883672347bb49ab05",
+  "scriptCommitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,17 +89,17 @@
     },
     "predictions": {
       "m_p_MeV": "938.27208942732424736394",
-      "m_n_MeV": "939.565893067823634276241",
-      "M_N_MeV": "938.9189912475739408200905",
-      "Q_beta_MeV": "0.7828046898093869123009924",
-      "Delta_m_pn_MeV": "1.293803640499386912300992"
+      "m_n_MeV": "939.5658930915968489719874",
+      "M_N_MeV": "938.9189912594605481679637",
+      "Q_beta_MeV": "0.7828047135826016080473667",
+      "Delta_m_pn_MeV": "1.293803664272601608047367"
     },
     "predictions_pathC": {
-      "m_n_MeV": "939.565893067823634276241",
-      "m_n_residual_ppm": "0.501431632788",
-      "Delta_m_pn_MeV": "1.293803640499386912300992",
-      "Delta_m_pn_ppb": "364276.3912173771",
-      "Q_beta_N3_MeV": "0.7828046898093869123009924",
+      "m_n_MeV": "939.5658930915968489719874",
+      "m_n_residual_ppm": "0.501456935139",
+      "Delta_m_pn_MeV": "1.293803664272601608047367",
+      "Delta_m_pn_ppb": "364294.77258064755",
+      "Q_beta_N3_MeV": "0.7828047135826016080473667",
       "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e"
     },
     "neutron_diagnostics": {
@@ -114,11 +114,11 @@
       "m_p_codata_MeV": "938.27208943",
       "m_p_residual_ppm": "-2.85178752113e-6",
       "m_n_codata_MeV": "939.56542194",
-      "m_n_residual_ppm": "0.501431632788",
+      "m_n_residual_ppm": "0.501456935139",
       "M_N_codata_MeV": "938.918755685",
-      "M_N_residual_ppm": "0.250887068252",
+      "M_N_residual_ppm": "0.250899728141",
       "Q_beta_codata_MeV": "0.78233355931",
-      "Q_beta_residual_ppm": "602.211797999"
+      "Q_beta_residual_ppm": "602.242185567"
     },
     "lean_uniqueness_ref": {
       "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
@@ -143,7 +143,7 @@
       "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): connected part 0 on V³; *_derived_* = adjacent (option 1), labelled",
       "M_p_QED_conn_scored_MeV": "0.0",
       "Delta_m_QED_conn_scored_MeV": "0.0",
-      "Q_beta_two_term_derived_adjacent_MeV": "0.7826774655084230101662889",
+      "Q_beta_two_term_derived_adjacent_MeV": "0.7826774892816377059126632",
       "q_two_term_borromean_scored": "1.1099785827513808075916690956107688798744991218736",
       "M_p_QED_conn_derived_MeV": "0.0000901242572668167005355174",
       "Delta_m_QED_conn_derived_MeV": "-0.0001272243009639021347035417",
@@ -151,16 +151,16 @@
       "M_p_QED_conn_Kp_MeV": "0.0002442810826723042242804662",
       "Delta_m_QED_conn_MeV": "-0.0003316960446051788476748025",
       "Delta_m_QED_conn_KnKp_MeV": "-0.000344840456101401187346409",
-      "Q_beta_two_term_plain_MeV": "0.7824729937647817334533176",
-      "Q_beta_two_term_MeV": "0.7828046898093869123009924",
-      "Q_beta_two_term_residual_ppm": "602.211797999",
-      "m_n_two_term_MeV": "939.565893067823634276241",
-      "m_n_two_term_derived_adjacent_MeV": "939.5657658435226703741063",
+      "Q_beta_two_term_plain_MeV": "0.7824730175379964291996919",
+      "Q_beta_two_term_MeV": "0.7828047135826016080473667",
+      "Q_beta_two_term_residual_ppm": "602.242185567",
+      "m_n_two_term_MeV": "939.5658930915968489719874",
+      "m_n_two_term_derived_adjacent_MeV": "939.5657658672958850698527",
       "q_two_term_borromean_derived": "1.1099785878291231819349164390040016027877615118272",
       "dq_two_term_derived_vs_muon_ppb": "-7.0394293146",
       "mup_tension_two_term_derived_ppb": "128.01454681",
       "mup_tension_two_term_derived_sigma": "5.75420608795",
-      "m_n_two_term_residual_ppb": "501.431632788",
+      "m_n_two_term_residual_ppb": "501.456935139",
       "q_two_term_borromean_plain": "1.1099785951508859990875652035986826212141034805412",
       "q_two_term_borromean_k_weighted": "1.1099785965145670927758217612084780842969279530571",
       "dq_two_term_plain_vs_muon_ppb": "-0.443119398451",
