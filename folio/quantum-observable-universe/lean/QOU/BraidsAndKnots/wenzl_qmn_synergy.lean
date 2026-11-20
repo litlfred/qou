@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Linarith
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -30,8 +31,6 @@ class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
   wenzl_speedup : ℝ
   /-- Speedup factor of q-MN vs Hoefsmit characters. -/
   qmn_speedup : ℝ
-  /-- Combined speedup factor (`= wenzl_speedup · qmn_speedup`). -/
-  combined_speedup : ℝ
   /-- Manuscript sub-claim (i) — Wenzl-bridge speedup `≥ 10⁴×`. -/
   claim_i_direct_verification_wenzl : 10000 ≤ wenzl_speedup
   /-- Manuscript sub-claim (ii) — q-MN speedup `≥ 10²×`. -/
@@ -65,11 +64,10 @@ class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
   -- `wenzl_qmn_synergy` below.  The five surviving sub-claims are the
   -- speedup bounds and the two trace identities, none of which selects
   -- anything.  Nothing else in this file changes and no number moves.
-  /-- Manuscript boxed identity — Combined speedup is the product of
-      orthogonal speedups, bounded below by `10⁶×`. -/
-  claim_combined_speedup_bound :
-    combined_speedup = wenzl_speedup * qmn_speedup ∧
-    1000000 ≤ combined_speedup
+  -- The boxed combined bound is NOT a field (bean qou-6qbv, 2026-11-20): it
+  -- was carried as `combined_speedup = wenzl_speedup * qmn_speedup ∧
+  -- 1000000 ≤ combined_speedup` on a free `combined_speedup` field, so the
+  -- conclusion was assumed. It is now derived below from (i) and (ii).
   -- 🛑 SUB-CLAIMS (iv) AND (v) REMOVED 2026-11-15: they were false.
   --
   -- They read `trM_Tw = z ^ lengthW` and `wenzlSum = z ^ lengthW`, "on any
@@ -81,6 +79,10 @@ class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
   -- (`prop:corrected-markov-trace`, `frobenius-gram-matrix.md`).  Carrying it
   -- as a class field made every instance assert a false identity, so the
   -- fields and the matching conjuncts of `wenzl_qmn_synergy` are dropped.
+/-- The combined speedup of the two orthogonal improvements. -/
+def WenzlQmnSynergyContext.combined_speedup (ctx : WenzlQmnSynergyContext) : ℝ :=
+  ctx.wenzl_speedup * ctx.qmn_speedup
+
 /-- **Proposition statement** (from manuscript):
 
 The Wenzl-bridge ([y-lambda-closed-form](#prop:y-lambda-closed-form-wenzl-bridge))
@@ -113,14 +115,19 @@ Three orthogonal speedups combine:
 For atom-knot identification at $n = 18$ ($p(n) = 385$, $\max\dim_\lambda \approx 1000$) or $n = 21$ ($p(n) = 792$, $\max\dim_\lambda \approx 5000$),
 this drops the per-isotope compute time from
 
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
+    The two measured speedups (i), (ii) are carried as class fields: they are
+    wall-clock measurements, i.e. empirical inputs, not mathematics. The
+    boxed combined bound is derived from them: the combined factor is the
+    product, and `10⁴ · 10² = 10⁶`. -/
 -- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
-def wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
+theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
     10000 ≤ ctx.wenzl_speedup ∧
     100 ≤ ctx.qmn_speedup ∧
-    (ctx.combined_speedup = ctx.wenzl_speedup * ctx.qmn_speedup ∧
-     1000000 ≤ ctx.combined_speedup) :=
-  ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
-   ctx.claim_combined_speedup_bound⟩
+    1000000 ≤ ctx.combined_speedup := by
+  have h1 := ctx.claim_i_direct_verification_wenzl
+  have h2 := ctx.claim_ii_mass_formula_compute
+  refine ⟨h1, h2, ?_⟩
+  unfold WenzlQmnSynergyContext.combined_speedup
+  nlinarith [mul_le_mul h1 h2 (by norm_num) (by linarith)]
 
 end QOU.BraidsAndKnots
