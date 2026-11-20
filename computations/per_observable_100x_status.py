@@ -931,8 +931,90 @@ def _qbeta_ruled_base() -> dict:
     }
 
 
+def _qbeta_conditional_t3_split() -> dict:
+    """Q_β on the γγ base with the T³ split of the z_D trace -- CONDITIONAL.
+
+    Owner choice 2026-11-20 (bean qou-99qc, option B), followed the same hour by
+    the directive *"Rulings are only temporary conjectures. We need to formalize
+    first always and then try to Lean prove and derive."* So this row is NOT
+    published as a derived prediction. It is the value of Q_β **conditional on
+    three named Lean conjectures** (`QOU.QBeta.DecayConjectures`, PR #8617):
+
+      C1 DecayFunctionalIsWeightTrace     ε = ε_n − ε_p, the T³ components of
+                                          Tr(K^{⊗3}·)/[2]³ (= the z_D trace)
+      C2 NucleonElementsAreGammaGammaBase both nucleon elements are V³
+      C3 DecayEnergyScale                 Q_β = |ε|·E₀, E₀ the canonical
+                                          tower-summed scale (posited)
+
+    and `qbeta_eq_of_conjectures` proves Q_β = |f(q)|·E₀ from them, with
+    f(q) = (q²−1)P(q)/(q⁴(q²+1)³) (`FlavourWeightSplit.epsFlavour_V3_eq`).
+
+    CALIBRATION, NOT A LITERAL. The value is computed twice from q₀ alone and
+    must agree: (a) the closed form f(q); (b) the explicit weight-space traces
+    of V³ = (σ₁σ₂⁻¹)³ built from the 3×3 matrices of
+    `NucleonWeightSpaceTraces` (A₁, A₂ on W_p; B₁, B₂ on W_n). If they disagree
+    the caller keeps the previous row.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+    sys.path.insert(0, str(COMPUTE_DIR / "qbeta"))
+    from qbeta_e0 import canonical as _e0_canonical
+    from mpmath import matrix as _mx
+    q = mpf(Q_50_DIGIT_STR)
+    qi = 1 / q
+    h = q - qi
+    P = (q ** 12 - 3 * q ** 10 + 3 * q ** 8 - 5 * q ** 6 + 3 * q ** 4
+         - 3 * q ** 2 + 1)
+    f_closed = (q ** 2 - 1) * P / (q ** 4 * (q ** 2 + 1) ** 3)
+
+    def _tr(M):
+        return M[0, 0] + M[1, 1] + M[2, 2]
+
+    A1 = _mx([[q, 0, 0], [0, 0, 1], [0, 1, h]])
+    A2 = _mx([[0, 1, 0], [1, h, 0], [0, 0, q]])
+    B1 = _mx([[0, 1, 0], [1, h, 0], [0, 0, q]])
+    B2 = _mx([[q, 0, 0], [0, 0, 1], [0, 1, h]])
+    VA = A1 * A2 ** -1
+    VB = B1 * B2 ** -1
+    d2 = q + qi
+    eps_p = q * _tr(VA * VA * VA) / d2 ** 3
+    eps_n = qi * _tr(VB * VB * VB) / d2 ** 3
+    f_explicit = eps_n - eps_p
+    calibrated = abs(f_explicit - f_closed) < mpf(10) ** -40
+    E0 = _e0_canonical(q=q, m_e=M_E_MEV)
+    pred = abs(f_closed) * E0
+    return {
+        "_pred": pred,
+        "Q_beta_MeV": fmt(pred),
+        "err_pct": fmt((pred - Q_BETA_MEV) / Q_BETA_MEV * 100),
+        "element": "V^3 = (sigma_1 sigma_2^-1)^3 for both nucleons (gamma-gamma "
+                   "+ reading 3, PR #8564)",
+        "functional": "eps_n - eps_p, T^3 components of Tr(K^{x3} .)/[2]^3 "
+                      "(= the z_D Markov trace), PR #8586",
+        "epsilon_flavour_V3": fmt(f_closed),
+        "E0_MeV": fmt(E0),
+        "E0_form": "tower_summed (canonical, qbeta_e0.canonical) -- posited, C3",
+        "status": "CONDITIONAL on conjectures C1-C3, NOT a derived prediction",
+        "conjectures": [
+            "C1 QOU.QBeta.DecayConjectures.DecayFunctionalIsWeightTrace",
+            "C2 QOU.QBeta.DecayConjectures.NucleonElementsAreGammaGammaBase",
+            "C3 QOU.QBeta.DecayConjectures.DecayEnergyScale",
+        ],
+        "conditional_theorem": "QOU.QBeta.DecayConjectures.qbeta_eq_of_conjectures (PR #8617)",
+        "owner_choice": "qou-99qc option B, 2026-11-20; directive same day: "
+                        "rulings are temporary conjectures",
+        "calibration": "closed form vs explicit weight-space traces of V^3",
+        "calibration_gap": fmt(abs(f_explicit - f_closed)),
+        "calibrated": bool(calibrated),
+        "ladder_on_admissible_base_exists": False,
+        "sign_is_convention_dependent": "the sign of eps flips with K <-> K^-1; "
+                                        "|eps| and Q_beta do not (independent "
+                                        "check 2026-11-20)",
+    }
+
+
 def _inherited_qbeta_scope(conv: dict, adm: dict,
-                           ruled: dict | None = None) -> str | None:
+                           ruled: dict | None = None,
+                           cond: dict | None = None) -> str | None:
     """The scope `m_n` and `Δ_pn` inherit from `Q_β`, written onto their own rows.
 
     `m_n = m_p + Q_β + m_e` and `Δ_pn = Q_β + m_e`, so every caveat on `Q_β`
@@ -971,6 +1053,17 @@ def _inherited_qbeta_scope(conv: dict, adm: dict,
     RULED-base note. Bean ``qou-zzwm``.
     """
     parts = []
+    if cond is not None and cond.get("calibrated"):
+        # 2026-11-20 (qou-99qc option B + "rulings are conjectures"): the scored
+        # Q_beta is conditional on C1-C3, and so is everything built from it.
+        return (
+            f"INHERITS A CONDITIONAL Q_beta: this value is m_p(substrate) + "
+            f"Q_beta + m_e, and the Q_beta term ({cond.get('Q_beta_MeV', '')[:12]} "
+            f"MeV) is |eps_n - eps_p|*E0 on the gamma-gamma base V^3, which holds "
+            f"only IF conjectures C1-C3 of QOU.QBeta.DecayConjectures hold "
+            f"(PR #8617). None is proved; zero c_k rungs (qou-cds1). Not a "
+            f"derived prediction."
+        )
     _on_ruled_base = bool(ruled is not None
                           and ruled.get("calibrated_against_probe_witness"))
     if conv.get("status") == "INHERITED_C" and not _on_ruled_base:
@@ -1246,7 +1339,14 @@ def main() -> dict:
             # how much. Dropping it would make this look like a regression of
             # unknown origin.
             _ruled = _qbeta_ruled_base()
-            if _ruled["calibrated_against_probe_witness"]:
+            _cond = _qbeta_conditional_t3_split()
+            if _cond["calibrated"]:
+                # 2026-11-20: owner chose option B (qou-99qc) and directed that
+                # rulings are conjectures. The scored value is now Q_beta
+                # CONDITIONAL on C1-C3; the nuc11_interleaved value stays in
+                # qbeta_ruled_base as the superseded element.
+                Q_pred = _cond["_pred"]
+            elif _ruled["calibrated_against_probe_witness"]:
                 Q_pred = _ruled["_pred"]
             else:
                 # The functional evaluated here does not reproduce the committed
@@ -1329,6 +1429,37 @@ def main() -> dict:
                     f"cell is {_adm['ruled_cell_err_pct']}% on Delta_S. Fix the "
                     f"calibration; do not read this row as the ruled position."
                 )
+            if _cond["calibrated"]:
+                _adm_note = (
+                    f" 🟧 CONDITIONAL ON CONJECTURES, NOT A DERIVED PREDICTION "
+                    f"(owner 2026-11-20, qou-99qc option B; and: rulings are "
+                    f"temporary conjectures). Q_beta = |eps_n - eps_p|*E0 on the "
+                    f"gamma-gamma base V^3 (same word for both nucleons, PR #8564), "
+                    f"with eps the T^3 components of Tr(K^x3 .)/[2]^3 = the z_D "
+                    f"Markov trace (PR #8586): eps_flavour(V^3) = "
+                    f"{_cond['epsilon_flavour_V3'][:16]}, E0 = "
+                    f"{_cond['E0_MeV'][:12]} MeV (tower-summed, posited). The value "
+                    f"holds IF conjectures C1 (decay functional = weight-trace "
+                    f"difference), C2 (both elements V^3) and C3 (Q_beta = |eps|*E0) "
+                    f"hold; QOU.QBeta.DecayConjectures.qbeta_eq_of_conjectures "
+                    f"derives it from them (PR #8617). None of C1-C3 is proved. "
+                    f"Calibrated: closed form vs explicit weight-space traces, gap "
+                    f"{_cond['calibration_gap']}. Zero c_k rungs (qou-cds1). "
+                    f"Same value as the ruled-base cell "
+                    f"({_ruled['Q_beta_MeV'][:12]} MeV): the change is the label, "
+                    f"not the number. The photon is the owner-ruled "
+                    f"1 + phi0 s0 + phi1 s1 + phi01 s0 s1^-1, and "
+                    f"V^3 = gamma(0,0,qh) gamma(0,0,-q^-1 h) for both nucleons "
+                    f"(photon_product_eq_borWord), so the plain trace "
+                    f"difference is 0 and the non-zero value comes from the "
+                    f"T^3 split alone. 🛑 SCOPE: a BASE with no ladder, "
+                    f"OUTSIDE the ladder cap (F_required ~ 2.40 > 1, "
+                    f"LadderFactorBound). The value was NOT blind (np-splitting "
+                    f"audit 2026-11-15 §18/§21 already recorded 0.3254 MeV). "
+                    f"UNSCORED HISTORY: nuc11_interleaved (0.6519 MeV), delta_S "
+                    f"(0.4491 MeV); retired z = 1 laddered value "
+                    f"{fmt(Q_pred_laddered_z1, 12)} MeV."
+                )
             if qbeta_anchor.get("status") == "STRADDLE":
                 _anchor_note = (
                     f" ⚠ ANCHOR STRADDLE: this prediction was built at the "
@@ -1408,7 +1539,8 @@ def main() -> dict:
         # the inherited scope onto the derived rows themselves.
         _inherited = _inherited_qbeta_scope(qbeta_convention,
                                             _functional_admissibility_check(),
-                                            _qbeta_ruled_base())
+                                            _qbeta_ruled_base(),
+                                            _qbeta_conditional_t3_split())
         for _obs, _val in (("m_n", m_n_path_c), ("Delta_pn", delta_pn_path_c)):
             _r = _row_for(_obs, _val, path_c_source)
             if _inherited:
@@ -1749,6 +1881,9 @@ def main() -> dict:
         # prose only. A field a consumer cannot read is not a record.
         "qbeta_ruled_base": {k: v for k, v in _qbeta_ruled_base().items()
                              if not k.startswith("_")},
+        "qbeta_conditional_t3_split": {
+            k: v for k, v in _qbeta_conditional_t3_split().items()
+            if not k.startswith("_")},
         "summary": {
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
@@ -1864,6 +1999,7 @@ if __name__ == "__main__":
     w.add_data("convention_frame_qbeta", out["convention_frame_qbeta"])
     w.add_data("functional_admissibility_qbeta", out["functional_admissibility_qbeta"])
     w.add_data("qbeta_ruled_base", out["qbeta_ruled_base"])
+    w.add_data("qbeta_conditional_t3_split", out["qbeta_conditional_t3_split"])
     # Third and last site of the same repair (see `_inherited_qbeta_scope`).
     # This caveat asserted that the three published rows "were built in Markov
     # convention C" and are "UNREPRODUCIBLE under the canonical convention".
