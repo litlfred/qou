@@ -1,0 +1,214 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-20T17:33:23.399223+00:00",
+  "commitSha": "b96f695de4e6e6ff209222cfb9ea7108880f1e77",
+  "assertions": [
+    {
+      "name": "R commutes with Delta(E) on VxV",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "R commutes with Delta(F) on VxV",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "R commutes with Delta(K) on VxV",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "R quadratic (R-q)(R+1/q)=0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "s1 commutes with Delta2(E)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "s2 commutes with Delta2(E)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "s1 commutes with Delta2(F)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "s2 commutes with Delta2(F)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "s1 commutes with Delta2(K)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "s2 commutes with Delta2(K)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "(FE-[2]^2)(FE-1)=0 on W-",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "y3C = (q^2+1)^2/(q^4+4q^2+1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "eps_C(Delta_S) = -(h[2]/2) y3C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "from p: tr_W+(EF J)/tr(EF) = y3C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "isospin-1/2 part: tr(P12 FE Delta_S) = 0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    },
+    {
+      "name": "quantum trace of J = convention-D y3 (Jones)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy exact Q(q)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 43,
+  "computation": "qbeta-r2-isospin-raising-round-trip",
+  "scriptFile": "r2_r5_isospin_round_trip_probe.py",
+  "scriptHash": "aef724e88cb5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "ae1028699afd20c5"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_r253/r2_r5_isospin_round_trip_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_r253/r2_r5_isospin_round_trip_probe.py"
+  },
+  "description": "R2/R5 of bean qou-99qc. The n<->p flip is the U_q(gl2) raising operator T+ = Delta^2(E) on V^(x)3, which commutes with the H3 action (Schur-Weyl). eps_C(X) = tr_W-(F E X)/tr_W-(F E) gives y3 = (q^2+1)^2/(q^4+4q^2+1) = [2]^2/([2]^2+2). The full quantum trace (closure of every strand by pair creation/annihilation) gives the convention-D y3 (q^4+1)/(q^2+1)^2. The isospin-1/2 projection gives 0: Delta_S lives in the (3) block only.",
+  "data": {
+    "q0_anchor": "proton",
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "E0_order0_MeV": "4.18598136329447589694506215875900841014348689087960498278367",
+    "E0_tower_MeV": "4.22748335562903055026805602658721115361518419806561475207637",
+    "variants": {
+      "C_round_trip_T+ (pre-registered)": {
+        "y3_exact": "(q**2 + 1)**2/(q**4 + 4*q**2 + 1)",
+        "y3_q0": "0.669077229932786245034930672901613641531742645408206776903072",
+        "Qbeta_E0_order0_MeV": "0.588714739371925542700627683847435819173281905491309015330405",
+        "Qbeta_E0_tower_MeV": "0.594551562921809606191692533046161091057670632655017467426493",
+        "vs_codata_order0_pct": "-24.748869",
+        "vs_codata_tower_pct": "-24.002790"
+      },
+      "C_isospin_half_projection": {
+        "y3_exact": "0",
+        "y3_q0": "0.0",
+        "Qbeta_E0_order0_MeV": "0.0",
+        "Qbeta_E0_tower_MeV": "0.0",
+        "vs_codata_order0_pct": "-100.00000",
+        "vs_codata_tower_pct": "-100.00000"
+      },
+      "weight_restricted_no_flip": {
+        "y3_exact": "1/3",
+        "y3_q0": "0.333333333333333333333333333333333333333333333333333333333333",
+        "Qbeta_E0_order0_MeV": "0.293296853753373279634321985313765525418096170827218840749697",
+        "Qbeta_E0_tower_MeV": "0.296204751022806294402367344195214552009162354158638767761842",
+        "vs_codata_order0_pct": "-62.509993",
+        "vs_codata_tower_pct": "-62.138297"
+      },
+      "quantum_trace_all_weights (= z_D, label A)": {
+        "y3_exact": "(q**4 + 1)/(q**2 + 1)**2",
+        "y3_q0": "0.505404226503930803187558703240472275660351197749809362652056",
+        "Qbeta_E0_order0_MeV": "0.444700408521780409100962213024942779024902777364463898692091",
+        "Qbeta_E0_tower_MeV": "0.449109399232412464983750679223405660884816350858922270006066",
+        "vs_codata_order0_pct": "-43.157175",
+        "vs_codata_tower_pct": "-42.593606"
+      }
+    },
+    "codata_comparison_only_MeV": "0.78233341"
+  },
+  "caveats": [
+    "Normalisation eps_C(1)=1 is a remaining choice (same convention as D), not derived.",
+    "The identification 'n->p = T+' is the physical posit of label C; E0 is posited (bean qou-mkm8).",
+    "Not wired to the scorecard. CODATA is a comparison row only."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
