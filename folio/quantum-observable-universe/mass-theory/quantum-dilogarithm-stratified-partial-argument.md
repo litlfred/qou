@@ -70,8 +70,7 @@ structure:
 (a) The q-deformed Wedderburn-block weight is
 $w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
 classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$ —
-the two coincide at $q = 1$; see
-[Plancherel weights define a probability distribution: $\sum_\lambda w_\lambda = 1$, $0 \leq w_\lambda \leq 1$](#prop:plancherel-weight-boundedness)),
+the two coincide at $q = 1$),
 where
 $\dim_q V_\lambda = [n]_q! \,/\, \prod_{\square \in \lambda} [h(\square)]_q$
 and $[h]_q = (q^h - q^{-h})/(q - q^{-1})$ is the symmetric quantum

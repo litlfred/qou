@@ -23,6 +23,8 @@ export default conjecture({
     "open-problem",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): from\nthe [weak-sector symmetric-channel Plancherel normalization](#prop:weak-symmetric-normalization) (a downstream block that itself uses this conjecture)" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): — the substrate-level\n[bar T-duality](#prop:bar-t-duality-substrate) at the trace level" },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): each $\\sigma_i^{2k}$ is bar-self-dual on its own (`prop:even-twist-torus-link-psd-feasibility`) [label does not resolve to any block]" },
     {
       kind: "refined-framing",

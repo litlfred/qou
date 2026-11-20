@@ -44,8 +44,7 @@ $$
   \mathfrak{m}^{\neg\mathrm{chir}}_{q,\mathcal{K}}(\mathcal{T}).
 $$
 
-*The chirality part is the gauge-invariant background contribution
-([rem:confinement-curvature-rank](#rem:confinement-curvature-rank));
+*The chirality part is the gauge-invariant background contribution;
 empirically it accounts for $\sim 3\%$ of the binding energy of $^4$He
 (the formal derivation witness) and dominates the deepest
 curvature-rank strata.*

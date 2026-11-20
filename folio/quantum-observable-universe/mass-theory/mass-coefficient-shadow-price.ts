@@ -48,6 +48,7 @@ export default proposition({
     "derived-coefficient",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([six-term mass formula](#conj:six-term-mass-formula-complete))" },
     { kind: "caveat", date: "2026-10-11", body: "Two inconsistent definitions of $C_\\lambda$ (bean `qou-wg3c`). `prf:unified-iterative-correction` states $C_\\lambda = m_e\\,H_q(\\lambda)$ (the $q$-hook product), while `prop:mass-coefficient-shadow-price` carries $C_\\lambda = w_\\lambda\\,h/2$ as the class field `C_eq`. At $(2,2)$ these give $6.2893$ MeV and $m_e w h/2 = 0.00887$ MeV; no stated map relates them. Neither is derived: the hook value is asserted universal and fails for six of the seven mass-formula coefficients (`qou-orjl`), and the factorisation $u^*_\\lambda = C_\\lambda S_\\lambda(Z,N,A)$ is a class field the stated LP cannot produce, since its dual constraints carry no $(Z,N)$." },
     {
       kind: "refined-framing",

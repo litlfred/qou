@@ -26,6 +26,7 @@ export default proposition({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): Together with the $A \\ge 3$ ill-posedness of the jet word\n([measured](#conj:jet-filtered-knot-factor)), the three-level product is not\nevaluable as written. Either obstruction alone suffices." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Either obstruction alone suffices.\n`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`." },
   ],
 });

@@ -43,18 +43,15 @@ $z_i \to z_j$.
 
 **Interaction filtration.**
 The configuration space algebra carries a **bi-filtration** reflecting
-the two sources of structure in the Reeb flow
-([observation braid](#rem:observation-braid)):
+the two sources of structure in the Reeb flow:
 
 1. **Ascending (jet prolongation).**  The brane tower
    $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$
    ([jet prolongation](#prop:jet-prolongation)) grows with each
    Planck step.  At step $k$, the configuration space lifts to
    the $k$-th jet: insertion points acquire $k$-th order Taylor data,
-   and knots with crossing number $\leq k$ become encodable
-   ([jet-Planck steps](#rem:jet-planck-steps)).  A configuration
+   and knots with crossing number $\leq k$ become encodable.  A configuration
    $\mathcal{S}_0 = \sum_i (p_i, H_i)$
-   ([bundle initial conditions](#def:bundle-initial-conditions))
    at any reference point in the affine chart may contain
    arbitrarily many constituents --- including hadrons and photons
    ($K = \varnothing$) --- each carrying only zeroth-order fibre data.
@@ -75,11 +72,7 @@ the two sources of structure in the Reeb flow
 The two directions are complementary: jet prolongation **opens** new
 degrees of freedom (higher-order Taylor coefficients, heavier knot
 types), while Hecke relations **close** them (correlating the
-insertion points that have interacted).  The information-theoretic
-content of a hadron is the balance between these two: $\eta_q$
-$q$-bits of information per step
-([operational entropy](#def:operational-entropy)) measures the net
-rate at which the ascending tower outruns the descending constraints.
+insertion points that have interacted).
 
 **Two levels of braiding operation.**
 A braiding operation on $\mathfrak{H}$ can be described at two levels:

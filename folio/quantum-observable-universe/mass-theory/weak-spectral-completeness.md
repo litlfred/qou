@@ -145,8 +145,7 @@ $$
 $$
 
 This expression is **bar-self-dual** under
-$\iota \colon q \mapsto q^{-1}$ — the substrate-level
-[bar T-duality](#prop:bar-t-duality-substrate) at the trace level.
+$\iota \colon q \mapsto q^{-1}$.
 The duality is automatic from the disjoint-strand-pair
 construction: the two eigenvalues $q^{2k}, q^{-2k}$ of each
 $\sigma_i^{2k}$ are exchanged by $\iota$, and the multiplicities of a
@@ -155,8 +154,6 @@ the duality.
 
 The Plancherel-weighted form
 $\mathcal{N}_{\rm sym}^{\rm Plancherel} = q^6 (1 + q^2 + q^4)/3$
-from
-the [weak-sector symmetric-channel Plancherel normalization](#prop:weak-symmetric-normalization) (a downstream block that itself uses this conjecture)
 is **not** bar-self-dual and differs from $\mathrm{tr}_{\rm pure}$
 by a factor of $\sim 22$ at $q_0$. It is retained only as a
 legacy/degenerate reference; the cell-content trace is operative.

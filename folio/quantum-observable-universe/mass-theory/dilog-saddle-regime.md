@@ -6,8 +6,7 @@ $$
   V(\theta) \;=\; \mathrm{Im}\,\mathrm{Li}_2(e^{i\theta}),
 $$
 
-the Clausen function $\mathrm{Cl}_2(\theta)$
-([Clausen function $\mathrm{Cl}_2$](#rem:clausen-function-mathlib-filler)).
+the Clausen function $\mathrm{Cl}_2(\theta)$.
 Its critical points solve
 
 $$
@@ -36,9 +35,4 @@ $$
 
 This saddle computation is the concrete $4_1$ instance of the
 [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
-asymptotics. Blocks that invoke the dilog saddle regime — the
-continuum $c_3$ geometry discussion, the
-[$\Phi_q$/AJ machinery identification](#prop:phi-q-aj-machinery-identification),
-and the
-[$q_0$ Stokes-region identification](#conj:q-zero-stokes-region-identification)
-— reference this derivation rather than repeating it.
+asymptotics.

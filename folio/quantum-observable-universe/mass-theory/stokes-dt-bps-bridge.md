@@ -79,10 +79,7 @@ $A_\omega = 3$. Only the **closed**-sector bridge stated above relates to that
 integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ is proved
 unconditionally.
 
-The **closed**-sector bridge is therefore adopted, and A_ω=3 is made
-conditional on it downstream
-([The figure-eight Stokes integer $A_\omega(4_1) = 3$ is a BPS/DT count](#thm:aomega-fourone-dt-count)) — conditional for
-every knot, $4_1$ included, since GGM's Conjecture 3(d) is not proved for $4_1$. It is *not* the open-HOMFLY bridge.
+The **closed**-sector bridge is therefore adopted. It is *not* the open-HOMFLY bridge.
 
 ### The hypothesis
 

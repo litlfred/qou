@@ -17,6 +17,7 @@ export default remark({
     "thurston1978",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The principled atlas\n ([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))\n admits no such entry." },
     { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): by the canonical formalism\nand locked in [`gb-filtration-jet-order.witness.json`](../../../computations/gb-filtration-jet-order.witness.json))." },
   ],
 });
