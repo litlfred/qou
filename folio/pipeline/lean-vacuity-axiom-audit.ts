@@ -3730,6 +3730,7 @@ function main() {
       const scannedRel = new Set(files.map((f) => relative(REPO_ROOT, f)));
       let foreign = 0;
       let unscanned = 0;
+      let missingOnDisk = 0;
       for (const k of Object.keys(led.entries)) {
         if (seen.has(k)) continue;
         const cat = k.slice(k.lastIndexOf("::") + 2);
@@ -3739,6 +3740,13 @@ function main() {
         }
         if (!scannedRel.has(k.slice(0, k.indexOf("::")))) {
           unscanned++;
+          // A key naming a file that no longer exists is kept too: it cannot
+          // be told apart from a rename (the content/ -> folio/ move left all
+          // 325 keys pointing at missing paths, and deleting them would have
+          // destroyed their verdicts). Count it so a human can re-key or
+          // retire it; this loop never deletes it.
+          if (!existsSync(resolve(REPO_ROOT, k.slice(0, k.indexOf("::")))))
+            missingOnDisk++;
           continue; // this run never opened that file — absence is not evidence
         }
         delete led.entries[k];
@@ -3750,6 +3758,10 @@ function main() {
       if (unscanned && !quiet)
         console.log(
           `  (preserved ${unscanned} entr(ies) in files this run did not scan)`,
+        );
+      if (missingOnDisk && !quiet)
+        console.log(
+          `  (${missingOnDisk} of those name a file that does not exist: renamed or deleted — re-key or retire by hand)`,
         );
       led.updated_at = nowIso;
       writeFileSync(p, JSON.stringify(led, null, 2) + "\n");
