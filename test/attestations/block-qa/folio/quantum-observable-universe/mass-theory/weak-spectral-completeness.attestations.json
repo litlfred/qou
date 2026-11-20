@@ -107,6 +107,23 @@
         "reviewed_at": "2026-11-20T15:51:54.960Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "mass-theory hosts thm:em-spectral-completeness, thm:hoefsmit-ew-cell-content and prop:weak-symmetric-normalization, its direct context; no sibling restates it."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:52.232Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "EW idempotent decomposition feeding the N_sym/N_v blocks of mass-theory; no sibling carries the same claim."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1023,6 +1040,24 @@
         "severity": "major",
         "evidence": "md:3-9 one italic sentence stacks ring, genericity, sector, End_R(V^{x6}) and Hoefsmit assignment before any purpose.",
         "notes": "Score H1=0 H2=1 H3=1 H4=0 H5=0 H6=1 H7=1 H8=1 = 5/16. Statement given twice in different hosts; md:162 banner dangles; symbols E_x, mu_0, h undefined. Needs a full exposition pass after the mathematical fix."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:01.483Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md: :139 Step 1 still speaks of 'the k-th host's natural representation V_k' from the superseded per-host formulation; :241 boilerplate archimedean banner with nothing after it; the tr_pure display appears twice. Below 16/16."
       }
     ],
     "milnor-brevity": [
@@ -1057,6 +1092,24 @@
         "severity": "major",
         "evidence": "md:26-34 tr_pure display repeated verbatim at md:102-110; 'q generic (not a root of unity)' at md:3-4 and md:41-42.",
         "notes": "k>=3: (1) tr_pure display exact-dup (math: keep one, re-reference the other, do not delete math), (2) genericity exact-dup, (3) conjecture stated in header and in 'Statement (formal)' (differs: 8 vs 6 projectors) - merge into one statement in End_R(V^{x6}), (4) 'without Plancherel' md:36 vs md:120-126 (differs). Consider splitting the N_v consequence into its own remark."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:03.817Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "severity": "major",
+        "evidence": "The tr_pure display (:41-47 and :193-199) is reproduced verbatim in the statement and again in Step 3; the 20-pure-vector/multiplicity sentence is likewise restated. Semantically identical repeat."
       }
     ],
     "voice-branch-jargon": [
@@ -1105,6 +1158,23 @@
         "severity": "minor",
         "evidence": "md:36-37 'derivable directly from cell-content multiplicities, **without invoking Plancherel weights**.'",
         "notes": "State the positive claim; the Plancherel contrast belongs in Step 3 only. md:124 'is **not** bar-self-dual' is a mathematical claim and passes."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:05.764Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1139,6 +1209,23 @@
         "reviewed_at": "2026-11-20T15:52:26.644Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "No setup-then-reframe constructions in md:1-162."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:07.937Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "trap-em-dash": [
@@ -1174,6 +1261,23 @@
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Two stylistic spaced dashes (md:36, md:113) in 162 lines; Step headers use dashes as labels. Low density.",
         "notes": "md:36 '*— derivable ...' could become a sentence."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:09.975Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "trap-triples": [
@@ -1208,6 +1312,23 @@
         "reviewed_at": "2026-11-20T15:52:26.703Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Enumerations (three carriers, three steps) are substantive."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:11.957Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1242,6 +1363,23 @@
         "reviewed_at": "2026-11-20T15:52:26.731Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Block ends on the archimedean boilerplate md:162, not an aphorism (that banner dangles; recorded under da-referee-verdict)."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:14.066Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "trap-meta-commentary": [
@@ -1277,6 +1415,24 @@
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "md:4 'note q = 1 IS excluded' is a plain 'note'; no announced emphasis.",
         "notes": "Drop the shouted 'IS'."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:16.134Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md:241 'What follows sits on the archimedean side of the substrate wall ...' narrates the block's regime, and nothing follows it."
       }
     ],
     "trap-thesis-restatement": [
@@ -1311,6 +1467,23 @@
         "reviewed_at": "2026-11-20T15:52:26.797Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Block-final sentence is the archimedean banner, not a restatement of the result."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:18.146Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "trap-performed-warmth": [
@@ -1345,6 +1518,23 @@
         "reviewed_at": "2026-11-20T15:52:26.827Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "No personal register in md:1-162."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:20.380Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "trap-superlative": [
@@ -1381,6 +1571,23 @@
         "severity": "minor",
         "evidence": "md:159-160 'closing every beta-decay half-life prediction simultaneously'",
         "notes": "Remove 'every ... simultaneously'; also md:141 'a strong structural constraint' -> 'a constraint'."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:22.534Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "trap-nonspeakable": [
@@ -1417,6 +1624,23 @@
         "severity": "minor",
         "evidence": "md:7-9 'categorically complete idempotent decomposition in End_R(V^{x6}) via the disjoint-strand-pair Hoefsmit assignment'",
         "notes": "Break into clauses: 'the six-strand Hecke action splits into orthogonal idempotents, one triple of strand pairs per carrier'. Also 'bar-self-dual cell-content trace' (md:24)."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:44:24.631Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md in full; no instance of this pattern (em-dashes at :1,134-182,220 are in headings; ', not open' at :73 is the claim)."
       }
     ],
     "does_not_default_to_float": [
@@ -1436,6 +1660,23 @@
         "reviewed_at": "2026-11-20T15:51:54.616Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:50.918Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "compute_no_mpf_to_float_cast": [
@@ -1455,6 +1696,23 @@
         "reviewed_at": "2026-11-20T15:51:54.651Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:53.057Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "respects_archimedean_wall": [
@@ -1474,6 +1732,23 @@
         "reviewed_at": "2026-11-20T15:51:54.685Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:55.140Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "code_is_commented": [
@@ -1493,6 +1768,23 @@
         "reviewed_at": "2026-11-20T15:51:54.716Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:57.484Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "variables_typed": [
@@ -1512,6 +1804,23 @@
         "reviewed_at": "2026-11-20T15:51:54.745Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:42:59.886Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "has_references_to_paper": [
@@ -1531,6 +1840,23 @@
         "reviewed_at": "2026-11-20T15:51:54.776Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:02.069Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "connected_to_ci_pipeline": [
@@ -1550,6 +1876,23 @@
         "reviewed_at": "2026-11-20T15:51:54.804Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:04.225Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "deprecated": [
@@ -1569,6 +1912,23 @@
         "reviewed_at": "2026-11-20T15:51:54.836Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:06.241Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "uses_library_framework_appropriately": [
@@ -1588,6 +1948,23 @@
         "reviewed_at": "2026-11-20T15:51:54.879Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:08.410Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "assertions_are_falsifiable": [
@@ -1607,6 +1984,23 @@
         "reviewed_at": "2026-11-20T15:51:54.919Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "Script-quality criterion: block .ts has no computation field and no Python script; nothing to audit."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:10.513Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion."
       }
     ],
     "uses-editorial-completeness": [
@@ -1628,6 +2022,24 @@
         "severity": "major",
         "evidence": "md:17 links thm:hoefsmit-ew-cell-content; uses[] lists only thm:em-spectral-completeness.",
         "notes": "Add thm:hoefsmit-ew-cell-content, prop:torus-embeddable-complete (md:58), prop:bar-t-duality-substrate (md:114), prop:weak-symmetric-normalization (md:123), conj:g-action-on-substrate (md:54). md:47/md:117 cite prop:even-twist-torus-link-psd-feasibility, which has no block: replace with the real label or remove."
+      },
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:59.260Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md:70 relies on prop:ew-slot-far-commutation-obstruction ('proves that two elements with a nonzero bracket cannot both lie in it') to scope item 1, but it is not in uses[]; the four listed entries are all used."
       }
     ],
     "da-arity-conflation": [
@@ -1647,6 +2059,65 @@
         "reviewed_at": "2026-11-20T15:52:13.566Z",
         "reviewed_sha": "9e5f5d771b9d330e27c4c4734650331ad8cf39dc",
         "evidence": "No universal-closure or cross-instance conflation found; claims are per fixed q-generic algebra."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:50.038Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md:220-239 '### Open downstream question — the weak-scale crossing count' (N_v as a function of tr_pure, the G_F formula, PSLQ remarks) is downstream motivation inside the proposition block, and no remark has interprets: prop:weak-spectral-completeness."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:54.407Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "evidence": "Items 1-3 over a commutative ring with q, [2]_q invertible; item 4 explicitly over Q(q)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "69908504c931",
+          "ts": "d45f7d738ae1",
+          "lean": "ae13004704b8",
+          "lean_statement": "7592c24dc550"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:56.628Z",
+        "reviewed_sha": "b2ab2c9bbad7b32b2102111af88e705a806615f2",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/weak-spectral-completeness.md:216 Step 3 quotes 'a factor of ~22 at q_0' inside the proof of an algebraic statement, and the closing banner :241 ('What follows sits on the archimedean side ...') announces a specialisation after which nothing follows. Proof is algebraic; the regime marking is misplaced."
       }
     ]
   }
