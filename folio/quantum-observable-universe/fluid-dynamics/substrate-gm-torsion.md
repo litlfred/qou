@@ -50,7 +50,7 @@ $$
 $$
 
 **Connection to the NS obstruction.**
-The [NS obstruction class](#prop:ns-obstruction-tower) $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ is bound to the banding sheaf $\mathcal{B} = \mathcal{O}_M^\times$. Consequently,
+The [obstruction class](#def:quantum-characteristic-classes) $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ is bound to the banding sheaf $\mathcal{B} = \mathcal{O}_M^\times$. Consequently,
 
 $$
   \kappa_n \in H^2(\mathcal{S}, \mathbb{G}_m).
@@ -70,4 +70,4 @@ The specialisation map factors precisely through the Kummer sequence. The obstru
 
 On the Descartes universe ($\chi_{\mathrm{eu}}(M_0) = -6$), the [motivic perpetual obstruction theorem](#thm:motivic-perpetual-obstruction) commands that the specialisation $\kappa_0|_{q = \zeta_n}$ registers as non-zero at every primitive root avoiding $\gcd(n, 6) = 1$. The NS obstruction categorically cannot collapse.
 
-*Scope.* On a closed surface $H^2(\mathcal{S}, \mathbb{G}_m) = 0$, so the class cannot live there. The Kummer obstruction is the image of the Reeb bundle's class $[\xi] \in H^1(\mathcal{S}, \mathbb{G}_m)$ under the connecting map to $H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$, namely $\chi(A) \bmod n$ ([Kummer specialisation](#prop:ns-kummer-specialisation); [QU-to-QOU](#thm:qu-to-qou), item 3). It is non-zero for $n \nmid 6$. It is a global class and does not by itself determine the NS verdict.
+*Scope.* On a closed surface $H^2(\mathcal{S}, \mathbb{G}_m) = 0$, so the class cannot live there. The Kummer obstruction is the image of the Reeb bundle's class $[\xi] \in H^1(\mathcal{S}, \mathbb{G}_m)$ under the connecting map to $H^2(\mathcal{S}, \mu_n) \cong \mathbb{Z}/n$, namely $\chi(A) \bmod n$ ([QU-to-QOU](#thm:qu-to-qou), item 3). It is non-zero for $n \nmid 6$. It is a global class and does not by itself determine the NS verdict.
