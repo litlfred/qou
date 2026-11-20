@@ -319,17 +319,20 @@ def li2_q_sym(z: mp.mpf, max_n: int = 300) -> mp.mpf:
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
 
     Identity: ∫_0^V (ln_q(1+t)/t) dt = -Li_2^q(-V).
+
+    Delegates to the corpus implementation ``_li_2_q_util.li_2_q`` (bean
+    qou-cw27). The power series has radius |z| < q, but the FUNCTION is
+    analytic on the whole negative axis:
+        -Li_2^q(-V) = (q - q^{-1}) · Σ_{k≥0} log(1 + V·q^{-(2k+1)}),
+    finite and positive for every V > 0. This module previously summed the
+    series to a fixed 300 terms with no radius check, so for |V| > q it
+    returned a truncated DIVERGENT partial sum: -2.43e15 at the proton's
+    convention-D volume V = 1.2824 (and a different value at 301 terms).
+    That number was never a pole of the formula. ``max_n`` is kept only for
+    call-site compatibility and is ignored.
     """
-    total = mp.mpf(0)
-    for n in range(1, max_n + 1):
-        nq = _q_int(n)
-        if abs(nq) < mp.mpf("1e-300"):
-            continue
-        term = z ** n / (n * nq)
-        total += term
-        if abs(term) < mp.mpf("1e-50"):
-            break
-    return total
+    from _li_2_q_util import li_2_q
+    return li_2_q(mp.mpf(z), Q_MP, Q_INV_MP)
 
 
 # ── Canonical Term 6 from Habiro residue witness ────────────────────
