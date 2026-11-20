@@ -17,11 +17,11 @@ $$
 where:
 
 - $\mathfrak{Q}_\beta^A = m_e \cdot |q^2 - 2q - 1| (q+1) / (2 q^3)$
-  is the single-wrap Form A baseline from [`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic);
+  is the single-wrap Form A baseline from [Symbolic $Q$-value of free neutron decay](#prop:neutron-qvalue-symbolic);
 - $\alpha = (z-1)h/2$ is the single-wrap eigenphase on $V_{(2,1)}$
-  (per [`prop:q-beta-spectral-bridge`](#prop:q-beta-spectral-bridge));
+  (per [$\mathfrak{Q}_\beta$ spectral bridge](#prop:q-beta-spectral-bridge));
 - $b = \sqrt{q^4+q^2+1}/(q^2+1)$ is the Hoefsmit off-diagonal coupling
-  on $V_{(2,1)}$ (per [`prop:hoefsmit-V21-cos-symmetrization`](#prop:hoefsmit-V21-cos-symmetrization));
+  on $V_{(2,1)}$ (per [Hoefsmit seminormal matrix for $V_{(2,1)}$ + Markov-symmetrized cos character: $\chi^{(2,1),\mathrm{symm}}_q(\beta) = \mathrm{tr}\,\rho_{(2,1)}(\beta) \cdot \cos((z-1)h/2)$](#prop:hoefsmit-V21-cos-symmetrization));
 - $\hbar_q = (q-1)/q$ is the substrate quantum Planck constant.
 
 The per-rung categorical sources, the truncation-order and error

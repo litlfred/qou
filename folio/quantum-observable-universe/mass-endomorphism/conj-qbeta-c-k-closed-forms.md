@@ -1,6 +1,6 @@
 **Closed-form conjectures for the $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.**
 
-We formalize these coefficients as conjectures. This permits downstream claims to use the conditional-class exception, as implemented in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) via the Lean class `QBetaPrecisionLadderCoefficients`. In terms of the Hopf–Jones seed $c_3 = -2$ and the Kashiwara coupling $b$, the conjectured closed forms are
+We formalize these coefficients as conjectures. This permits downstream claims to use the conditional-class exception, as implemented in [$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder) via the Lean class `QBetaPrecisionLadderCoefficients`. In terms of the Hopf–Jones seed $c_3 = -2$ and the Kashiwara coupling $b$, the conjectured closed forms are
 
 $$
   c_4 = c_3\, b^4 = -2 b^4, \qquad
@@ -11,4 +11,4 @@ $$
 
 **Scope.** The ladder these coefficients belong to is stated in the convention-C frame, with Markov parameter $z_C = \sqrt q/(q+1)$. Convention D, $z_D = q^3/(q^2+1)$, is canonical, and no convention-D counterpart of the ladder has been derived. The conjecture is therefore a statement about the convention-C ladder only.
 
-The comparison of these forms with extracted values, the open derivation paths, and the precision record are in [`rem:qbeta-c-k-closed-forms-derivation`](conj-qbeta-c-k-closed-forms-derivation.md).
+The comparison of these forms with extracted values, the open derivation paths, and the precision record are in [Open derivation paths](conj-qbeta-c-k-closed-forms-derivation.md).

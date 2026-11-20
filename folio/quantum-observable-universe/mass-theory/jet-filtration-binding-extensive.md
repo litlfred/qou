@@ -1,7 +1,7 @@
 *Stated over $\mathbb{R}$ (archimedean regime); the combinatorial content is a finite non-negative sum.*
 
 **Proposition (extensivity of the body-order binding).**
-*Write the jet-filtration binding of [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration) as*
+*Write the jet-filtration binding of [Binding many-body series equals the jet-order filtration](#conj:binding-manybody-eq-jet-filtration) as*
 
 $$
   B(A) \;=\; \sum_{n=2}^{A} \mathfrak{m}_e \, a_D^{(n)} \, w_n ,

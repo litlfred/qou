@@ -1,10 +1,10 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
+[q-deformed Aubin--Lions lemma](#conj:q-aubin-lions),
+[Counter-example to Navier--Stokes regularity via $q \to 1$ degeneration](#conj:ns-counterexample),
+[Critical exponent of the enstrophy divergence at $q = 1$](#conj:critical-exponent),
+[Blowup mechanism as Yekutieli lifting obstruction in the brane tower](#prop:blowup-yekutieli),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[Regularity breakdown at $q = 1$](#conj:regularity-breakdown);
 "Surreal rate calculus").**
 
 *Let $\varepsilon = 1/\omega > 0$ be the Reeb infinitesimal, $q = 1 + \varepsilon$, and let $\Delta_q \asymp \tfrac{1}{2}\varepsilon^3$ (mass gap) and $\Omega_q \asymp \varepsilon^{-1}$ (Reeb period) be the classical-limit scalings of [collapse of the quantum gap](#thm:quantum-gap-collapse). In $\mathbb{R}(\varepsilon)$ the following strict inequalities hold:*

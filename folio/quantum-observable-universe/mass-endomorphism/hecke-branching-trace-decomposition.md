@@ -17,7 +17,7 @@ Taking $\beta_1 = \beta_2 = 1$ recovers the simpler sum:
 $$
 \chi^\lambda(I) \;=\; \sum_{\mu, \nu} \mathrm{tr}\,A^\lambda_{\mu,\nu}(I),
 $$
-This form supplies the scalar-vs-operator Frobenius budget in [`rem:operator-valued-magnitude-budget`](operator-valued-magnitude-budget.md). The Pythagorean orthogonality:
+This form supplies the scalar-vs-operator Frobenius budget in [Magnitude budget](operator-valued-magnitude-budget.md). The Pythagorean orthogonality:
 $$
 \bigl\| A^\lambda_{\mu,\nu}(I) - A^{\lambda,\mu,\nu}_{\mathrm{scalar}} \bigr\|_F^2
 \;=\;

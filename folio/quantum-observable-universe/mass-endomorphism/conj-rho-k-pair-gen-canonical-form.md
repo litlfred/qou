@@ -25,7 +25,7 @@ $$
 |---|---|---|
 | Naive log-additive | $\alpha z^2 \sum \ln\|V_i V_j\|$ | Degrades vs LO + single-gen |
 | Wedderburn-decomposed | $\alpha z^2 \sum \|V_i V_j\|_{\text{Wedderburn}}$ (with $w_{sym}, w_{std}, w_{alt}$) | Degrades (wrong functional form) |
-| Six-term theorem $T_3$ | $-z^2 \sum \text{Li}_2^q(-\|V_i V_j\|)$ | Expected per [`thm:knot-mass-formula-unified`](../mass-theory/knot-mass-formula-unified.md); wiring pending |
+| Six-term theorem $T_3$ | $-z^2 \sum \text{Li}_2^q(-\|V_i V_j\|)$ | Expected per [Unified mass formula: tower + Frobenius co-Casimir correction](../mass-theory/knot-mass-formula-unified.md); wiring pending |
 
 The Kashaev-limit form (six-term $T_3$) provides the anticipated canonical form. Its derivation as a leading-order expansion in $\hbar_q$ remains incomplete. This must parallel the single-generator Kashaev derivation $\alpha \sum \ln|V_i|$.
 
@@ -37,11 +37,11 @@ The Kashaev-limit form (six-term $T_3$) provides the anticipated canonical form.
 | $f_2 = -\text{Li}_2^q(-\|V_i V_j\|) \cdot z^2$ | Conjectural | Matches six-term $T_3$; derivation pending |
 | Naive log-additive form | Refuted | `rho-k-pair-gen-extension.witness.json` |
 | Wedderburn-coupled form | Partial | Correct Wedderburn weights, wrong functional form |
-| Six-term theorem [`thm:knot-mass-formula-unified`](../mass-theory/knot-mass-formula-unified.md) | Theorem | Proved independently |
+| Six-term theorem [Unified mass formula: tower + Frobenius co-Casimir correction](../mass-theory/knot-mass-formula-unified.md) | Theorem | Proved independently |
 
 ## Wedderburn-coupling structure
 
-Under [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen, the pair coupling expands as:
+Under [Graded expansion of the categorical density $\rho_K = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$](rho-k-graded-expansion.md) §pair-gen, the pair coupling expands as:
 
 $$
 |\hat V_i \hat V_j|_{\text{Wedderburn}}
@@ -54,7 +54,7 @@ w_{\text{alt}}\, \lambda_i^{\text{alt}} \lambda_j^{\text{alt}},
 $$
 
 where:
-- $w_{\text{sym}}, w_{\text{std}}, w_{\text{alt}}$ denote Wedderburn–Markov weights from [`thm:wedderburn-mass-formula`](../mass-theory/wedderburn-mass-formula.md).
+- $w_{\text{sym}}, w_{\text{std}}, w_{\text{alt}}$ denote Wedderburn–Markov weights from [Three-invariant atomic mass formula](../mass-theory/wedderburn-mass-formula.md).
 - $\lambda_i^\bullet$ denote per-generator eigenvalues within each Wedderburn channel.
 - $M_i$ denotes the per-generator $2 \times 2$ standard-representation transfer matrix.
 
@@ -64,8 +64,8 @@ The open requirement is the functional form $f_2$. The naive logarithmic form $\
 
 ## Dependencies
 
-- [`conj:lepton-mass-tower-canonical`](../mass-theory/lepton-mass-tower-canonical.md): The lepton-sector variant. It depends on the graded-expansion formalism but evaluates at $Z = N = 0$, nullifying the atomic LO piece. It requires its own dimensional factor $\xi_\ell(q)$.
-- [`conj:mass-endomorphism`](mass-endomorphism-conjecture.md): The unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$. The present conjecture restricts this to the pair level.
+- [Canonical operator-level lepton-mass-tower formula](../mass-theory/lepton-mass-tower-canonical.md): The lepton-sector variant. It depends on the graded-expansion formalism but evaluates at $Z = N = 0$, nullifying the atomic LO piece. It requires its own dimensional factor $\xi_\ell(q)$.
+- [Mass endomorphism conjecture](mass-endomorphism-conjecture.md): The unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$. The present conjecture restricts this to the pair level.
 
 ## Lean formalization
 
@@ -114,8 +114,8 @@ end QOU.BraidKnot.RhoKPairGenCanonicalForm
 
 Deriving the canonical $f_2$ yields four consequences:
 1. This conjecture elevates to a theorem.
-2. The open status of [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen resolves to proved.
-3. Downstream conjectures become reachable, specifically [`conj:lepton-mass-tower-canonical`](../mass-theory/lepton-mass-tower-canonical.md).
+2. The open status of [Graded expansion of the categorical density $\rho_K = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$](rho-k-graded-expansion.md) §pair-gen resolves to proved.
+3. Downstream conjectures become reachable, specifically [Canonical operator-level lepton-mass-tower formula](../mass-theory/lepton-mass-tower-canonical.md).
 4. The $\mathfrak{Q}_\beta$ residual closure direction becomes tractable.
 
 ## Archimedean specialization

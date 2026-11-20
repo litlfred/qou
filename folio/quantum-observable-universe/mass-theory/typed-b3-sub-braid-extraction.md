@@ -26,7 +26,7 @@ $$
 
 The composed theorem `composed_track_C_c_3_eq_neg_two` is closed by
 `closure2_jones_at_one_sigma_sq_eq_neg_two` (already proved in
-[`rem:braid-link-types`](#rem:braid-link-types)).
+[Concrete Lean braid and link types](#rem:braid-link-types)).
 
 ## The remaining axiom
 

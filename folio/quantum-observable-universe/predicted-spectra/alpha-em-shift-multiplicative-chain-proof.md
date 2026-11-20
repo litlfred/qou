@@ -2,15 +2,15 @@
 
 The identity composes two named identities:
 
-1. [`prop:em-coupling-projection`](#prop:em-coupling-projection) establishes the bare combinatorial form:
+1. [Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection) establishes the bare combinatorial form:
 
    $$
      \alpha_{EM}^{-1} \;=\; q \cdot [9]_q \cdot [10]_q.
    $$
 
-   We derive this from the antisymmetric eigenvalue $-q^{-1}$ of the $R$-matrix and the $q$-deformed crossing numbers of the force-carrier generators $T_{2,9}$ and $T_{3,5}$. By [`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness), this basis consists exactly of the genus-$4$ saturating torus-knot set on $\Sigma_4$.
+   We derive this from the antisymmetric eigenvalue $-q^{-1}$ of the $R$-matrix and the $q$-deformed crossing numbers of the force-carrier generators $T_{2,9}$ and $T_{3,5}$. By [$(T_{2,9}, T_{3,5})$ is the unique pair of genus-$4$ torus knots](#prop:force-carrier-bring-uniqueness), this basis consists exactly of the genus-$4$ saturating torus-knot set on $\Sigma_4$.
 
-2. [`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot) establishes the closed-form identity:
+2. [Pole order at $q=0$ of the torus-knot character](#prop:alpha-shift-torus-knot) establishes the closed-form identity:
 
    $$
      \alpha_{\mathrm{shift}}(T_{p,k}) \;=\; k(p-1)
@@ -43,6 +43,6 @@ $$
   |\,\text{chain} - \text{bare}\,| \;=\; 0
 $$
 
-identically to mpmath precision, with both equalling $\alpha_{EM}^{-1}(q_0) \approx 136.823$. The gap $|\,\text{chain} - \text{CODATA}\,| \approx 0.213$ is the $\mathcal{O}(10^{-3})$ precision gap inherited from [`prop:em-coupling-projection`](#prop:em-coupling-projection). This refactoring leaves it unchanged. Closing this gap requires [`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation) and higher-order $C_5$-invariant corrections.
+identically to mpmath precision, with both equalling $\alpha_{EM}^{-1}(q_0) \approx 136.823$. The gap $|\,\text{chain} - \text{CODATA}\,| \approx 0.213$ is the $\mathcal{O}(10^{-3})$ precision gap inherited from [Electromagnetic coupling from the antisymmetric braiding and force-carrier crossings](#prop:em-coupling-projection). This refactoring leaves it unchanged. Closing this gap requires [Conjectured categorical derivation of $E_h = m_e c_q^2 \alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual](#conj:e-hartree-categorical-derivation) and higher-order $C_5$-invariant corrections.
 
 All $3$ assertions in the witness pass.

@@ -1,7 +1,7 @@
 **Algorithm (Nucleon mass ratio at $q = q_0$).**
 
 > The name *mass identity* is deliberately not used here. It is already taken by
-> [`def:mass-identity`](#def:mass-identity), which is a different object — inertial mass as a
+> [Mass (Frobenius form of the mass integrand)](#def:mass-identity), which is a different object — inertial mass as a
 > nonabelian multiplicative integral around a vortex filament. This step computes the
 > dimensionless nucleon ratio from the muon-anchored Hecke energy.
 *Evaluate the nucleon mass ratio via the muon-anchored Hecke energy — the
@@ -67,11 +67,11 @@ predictions.*
 
 ### Correctness conditions
 
-1. *[`prop:mass-identity-exists`](#prop:mass-identity-exists) gives
+1. *[Existence of the inertial mass identity](#prop:mass-identity-exists) gives
    existence of the nucleon mass ratio in the QOU premise.*
-2. *[`prop:mass-identity-unique`](#prop:mass-identity-unique) makes
+2. *[Uniqueness of the inertial mass identity](#prop:mass-identity-unique) makes
    the identity unique modulo the calibration choice.*
-3. *[`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
+3. *[Unified mass formula: tower + Frobenius co-Casimir correction](#thm:knot-mass-formula-unified)
    ties the categorical scalar to the archimedean MeV observable.*
 
 ### Complexity
@@ -126,7 +126,7 @@ reproduces $\mathrm{lw}(1)=1$ (muon) and
 $\mathrm{lw}(3) = (3q^2+4+3q^{-2})/4$ (Family-A — bit-for-bit equal to
 `linking_weight_family_a`, now deprecated for absolute mass), and gives
 $\mathrm{lw}(2) = (q+1)^2/(3q)$
-([`prop:selection-rule-c2-prediction`](../climax-volume-mass/selection-rule-c2-prediction.md)).
+([Per-component selection rule at c=2: $\mathrm{lw}(2) = (q+1)^2/(3q)$](../climax-volume-mass/selection-rule-c2-prediction.md)).
 Regression-tied to production by
 [`binding_selection_rule_tau_closure.py`](../../../computations/binding_selection_rule_tau_closure.py)
 $\to$ [witness](../../../computations/binding-selection-rule-tau-closure.witness.json).

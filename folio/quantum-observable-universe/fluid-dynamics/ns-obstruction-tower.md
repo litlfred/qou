@@ -1,10 +1,10 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
+[q-deformed Aubin--Lions lemma](#conj:q-aubin-lions),
+[Counter-example to Navier--Stokes regularity via $q \to 1$ degeneration](#conj:ns-counterexample),
+[Critical exponent of the enstrophy divergence at $q = 1$](#conj:critical-exponent),
+[Blowup mechanism as Yekutieli lifting obstruction in the brane tower](#prop:blowup-yekutieli),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[Regularity breakdown at $q = 1$](#conj:regularity-breakdown);
 "NS obstruction tower").**
 
 Let $(\mathbf{C}, A, \tau)$ define a QOU carrying Euler characteristic $\chi(A)$ and [obstruction classes](#def:quantum-characteristic-classes) $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$. Let $\Sigma \subset \mathcal{S}$ denote the precise collision locus of two anti-parallel vortex filaments.

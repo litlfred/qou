@@ -61,7 +61,7 @@ saturated $n$.
 
 ## Implications for the conjecture
 
-[`conj:mass-endomorphism`](#conj:mass-endomorphism) (the open
+[Mass endomorphism conjecture](#conj:mass-endomorphism) (the open
 problem of finding a closed-form NF for $\Phi_{\mathrm{mass}}$) is
 correspondingly reframed. The conjecture is no longer "find the
 local NF generators and combine". It becomes "find the categorical

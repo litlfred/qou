@@ -1,5 +1,5 @@
 **Proposition (conditional on
-[`conj:hyperbolic-volume-transcendence`](#conj:hyperbolic-volume-transcendence)
+[Algebraic independence of QOU hyperbolic volumes](#conj:hyperbolic-volume-transcendence)
 and
 `rem:baryon-period-ratio`).**
 *The piecewise geometric invariant

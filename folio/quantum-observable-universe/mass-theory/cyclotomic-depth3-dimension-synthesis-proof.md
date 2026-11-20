@@ -17,7 +17,7 @@ Total: $(K - 1)/2$ real parts $+$ $(K - 1)/2$ imaginary parts =
 $K - 1$ candidate generators.
 
 *Step 2 (eliminate imaginary parts via Theorem A).* By
-[`prop:cyclotomic-trilog-imaginary-closed-form`](#prop:cyclotomic-trilog-imaginary-closed-form):
+[Trilogarithm imaginary part at $\zeta_n$](#prop:cyclotomic-trilog-imaginary-closed-form):
 
 $$
   \mathrm{Im}\,\mathrm{Li}_3(\zeta_K^j)
@@ -53,7 +53,7 @@ Under the Beilinson regulator quotient $\mathcal{P}_3 \to \mathcal{P}_3 / \mathr
 parts $\{\mathrm{Cl}_3(2\pi j/K) : 1 \leq j \leq (K - 1)/2\}$ satisfy:
 
 - **Orbit-sum relation** by
-  [`prop:cyclotomic-cl3-orbit-sum-general`](#prop:cyclotomic-cl3-orbit-sum-general):
+  [General orbit-sum identity](#prop:cyclotomic-cl3-orbit-sum-general):
 
   $$
     \sum_{j=1}^{(K - 1)/2} \mathrm{Cl}_3(2\pi j/K)
@@ -87,7 +87,7 @@ $\square$
 on Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$.
 
 **Argument.** Borel's theorem
-([`prop:borel-partial-resolution`](#prop:borel-partial-resolution)):
+([Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution)):
 for prime $K$, $\mathbb{Q}(\zeta_K)$ is totally complex with $r_2 = (K - 1)/2$.
 For $n = 3$ (odd):
 

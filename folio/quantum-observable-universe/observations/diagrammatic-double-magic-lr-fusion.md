@@ -1,5 +1,5 @@
 **Conjecture (diagrammatic double-magic LR-fusion rigidity).**
-*Let $Z, N \in \mathfrak{M}$. By [`prop:categorical-neutrality-saturated-shells`](../mass-endomorphism/categorical-neutrality-saturated-shells.md), the categorical mass at level $Z$ is supported on a single self-conjugate partition $\lambda_Z \vdash Z$, and $\Phi_N$ is similarly supported on $\mu_N \vdash N$ with $\mu_N = \mu_N'$. The LR-fusion at level $A = Z + N$ is **rigid**:*
+*Let $Z, N \in \mathfrak{M}$. By [Categorical neutrality of saturated shells](../mass-endomorphism/categorical-neutrality-saturated-shells.md), the categorical mass at level $Z$ is supported on a single self-conjugate partition $\lambda_Z \vdash Z$, and $\Phi_N$ is similarly supported on $\mu_N \vdash N$ with $\mu_N = \mu_N'$. The LR-fusion at level $A = Z + N$ is **rigid**:*
 
 $$
   V_{\lambda_Z} \otimes V_{\mu_N}

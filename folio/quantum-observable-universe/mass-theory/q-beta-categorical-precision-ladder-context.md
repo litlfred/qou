@@ -74,7 +74,7 @@ derivation. The permanent
 upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
 coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
 next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
-([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
+([Additive Bring zero-mode form $1/\alpha_{EM} = q\cdot[9]_q\cdot[10]_q + 2g/(4\pi(g-1))$ (conditional)](#prop:em-coupling-bring-zero-mode)).
 
 ## canonical precision ladder
 

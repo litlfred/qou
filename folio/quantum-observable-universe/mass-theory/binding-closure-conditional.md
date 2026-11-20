@@ -1,11 +1,11 @@
-**Theorem (binding closure, conditional on [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)).**
+**Theorem (binding closure, conditional on [Binding many-body series equals the jet-order filtration](#conj:binding-manybody-eq-jet-filtration)).**
 
 Suppose the per-isotope binding of the canonical braid $\mathcal{B}_K$ admits
 the two structural inputs of the many-body conjecture:
 
 1. **(C, proved)** the binding is the body-order series — the cluster
    filtration coincides with the jet-graded filtration
-   ([`lem:bond-order-eq-jet-degree`](#lem:bond-order-eq-jet-degree)):
+   ([Body order equals jet degree](#lem:bond-order-eq-jet-degree)):
    $B(K)=\sum_{n}\,(\text{$n$-body term})$; and
 2. **(B, conditional)** each body term is $m_e$ times the corresponding
    prolonged Seiberg--Witten period, $B_n = m_e\,a_D^{(n)}$ (the mass
@@ -20,9 +20,9 @@ B(K) \;=\; m_e\sum_{n} a_D^{(n)}
 $$
 
 where the second equality is the residue form
-([`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum), proved) and the
+([The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum), proved) and the
 growth law is fixed by the $q$-difference recurrence
-([`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)).
+([The binding generating function's q-difference equation gives a depth-d recurrence](#prop:binding-genfun-qdifference)).
 
 This is a **rigorous-conditional** result: it is fully verified by Lean
 modulo the single named input (B) — the per-term mass identity — which is

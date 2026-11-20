@@ -26,7 +26,7 @@ canonical projection.
 
 ### Mechanism 2 — modulus projection (complex-q phenomenon)
 
-Per [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md),
+Per [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md),
 the categorical mass formula is
 
 $$\mathfrak{m}_{q, \mathcal{K}} = \mathrm{tr}_M(\rho(\beta_\mathcal{K})).$$
@@ -66,7 +66,7 @@ Quantitative consequences differ between the two mechanisms:
      content given above.
 
 2. **Resolving the canonical lepton-mass formula** $F_\ell(q)$
-   ([`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)):
+   ([Canonical operator-level lepton-mass-tower formula](lepton-mass-tower-canonical.md)):
    the ratio $|\mathrm{tr}_M(K_\mu)| / |\mathrm{tr}_M(K_e)|$ is
    robust against $\mathrm{Im}(q)$ at leading order (modulus
    projection invariance), but **NOT** robust against the
@@ -81,8 +81,8 @@ Quantitative consequences differ between the two mechanisms:
 
 ## Cross-references
 
-- [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
-- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
-- [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
+- [Lusztig bar ($q \mapsto q^{-1}$) vs Hermitian-$\ast$ ($q \mapsto \overline{q}^{-1}$) on the complex Hecke algebra: the two anti-involutions coincide on the parameter iff $q \in \mathbb{R}$. On the unit circle $|q| = 1$, Lusztig coincides with complex conjugation ($\overline{q} = q^{-1}$) while Hermitian becomes the identity on $q$; on general $|q| > 1$ with $\mathrm{Im}(q) \neq 0$ the three involutions (Lusztig, Hermitian, complex conjugation) are pairwise distinct. The split is the categorical home for any future $\mathrm{Im}(q_0)$ contribution](lusztig-vs-hermitian-bar.md) — bar vs Hermitian * involutions; this remark interprets/refines its complex-q discussion
+- [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
+- [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection definition
 - [`bar-involution.md`](../braids-and-knots/bar-involution.md) — bar projection definition
 - [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification

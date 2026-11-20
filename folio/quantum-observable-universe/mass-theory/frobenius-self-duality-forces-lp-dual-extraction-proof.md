@@ -68,11 +68,11 @@ identified with the dual objective $u \mapsto \langle u, \Theta
 dimensional LP regularity conditions are met** — primal
 feasibility and primal boundedness (or, equivalently for the
 canonical operator-selection LP of
-[`prop:operator-selection-lp`](#prop:operator-selection-lp),
+[Knot operator selection as linear program with LP duality](#prop:operator-selection-lp),
 existence of a strictly feasible point, i.e. Slater's
 condition). For the per-atom operator-selection LP these
 hypotheses are verified by direct construction in
-[`prop:operator-selection-lp`](#prop:operator-selection-lp);
+[Knot operator selection as linear program with LP duality](#prop:operator-selection-lp);
 the proposition above adds *structurally* that the primal-
 dual identification itself does not require additional
 analytic argument because the Frobenius pairing is non-

@@ -18,6 +18,6 @@ $$
 
 *In particular the deltahedral max-contact count $\kappa(A)$ ($\kappa(2)=1$, $\kappa(A)=3A-6$ for $A\ge3$) equals $\binom A2$ if and only if $A\le4$.*
 
-The statement is integer arithmetic. It shows that the boundaries $2\mid3$ and $4\mid5$ used in [`conj:mass-formula-regime-switching`](#conj:mass-formula-regime-switching) are determined by $A$ alone. It does not say which evaluation belongs to which regime; that assignment remains a selection against the measured target. The criterion was identified after the selected cut-offs were known, and is recorded as such.
+The statement is integer arithmetic. It shows that the boundaries $2\mid3$ and $4\mid5$ used in [Mass formula regime switch](#conj:mass-formula-regime-switching) are determined by $A$ alone. It does not say which evaluation belongs to which regime; that assignment remains a selection against the measured target. The criterion was identified after the selected cut-offs were known, and is recorded as such.
 
 Geometrically (classical, not used above): for $A\ge3$, $\binom A2\le3A-6$ says $K_A$ is the 1-skeleton of a triangulated 2-sphere (the doubled triangle at $A=3$, the tetrahedron at $A=4$); for $A\ge5$, $K_A\supseteq K_5$ is not planar. Equivalently, $A$ equal spheres in $\mathbb{R}^3$ can be pairwise tangent if and only if $A\le4$.

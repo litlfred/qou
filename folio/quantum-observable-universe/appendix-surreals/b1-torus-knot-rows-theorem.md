@@ -1,6 +1,6 @@
-Every torus-knot row of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) is theorem-level, requiring no part of Goncharov's or Beilinson's conjectures.
+Every torus-knot row of [GS-depth $\leftrightarrow$ Goncharov period-depth correspondence](#conj:gb-depth-period-correspondence) is theorem-level, requiring no part of Goncharov's or Beilinson's conjectures.
 
-Among the seven Bring-natural torus-knot generators of [`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots):
+Among the seven Bring-natural torus-knot generators of [Bring-embeddable knots](#rem:bring-embeddable-knots):
 
 $$
   \{T(2, 3),\; T(2, 5),\; T(2, 7),\; T(2, 9),\; T(3, 4),\; T(3, 5),\; T(5, 2)\}

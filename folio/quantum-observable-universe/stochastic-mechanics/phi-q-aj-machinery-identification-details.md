@@ -1,4 +1,4 @@
-This note expands [`prop:phi-q-aj-machinery-identification`](#prop:phi-q-aj-machinery-identification): the full AJ-conjecture statement, the significance of the unified context-sorting, and the Lean structure of the conditional proposition.
+This note expands [$\Phi_q$ / $\mathrm{Li}_2^q$ machinery is the AJ-conjecture machinery](#prop:phi-q-aj-machinery-identification): the full AJ-conjecture statement, the significance of the unified context-sorting, and the Lean structure of the conditional proposition.
 
 ## Statement
 
@@ -14,7 +14,7 @@ The dilogarithm regulators that appear in the substrate-evaluation chain are exa
 - $\Phi_q$: saddle-point regime of $\hat{A}_K \cdot J_N = 0$ at $q = e^{2\pi i / N}$ (root-of-unity asymptotic).
 - $\mathrm{Li}_2^q$: saddle-point regime of $\hat{A}_K \cdot J_N = 0$ at $q \in (0, 1)$ (real asymptotic, via Stokes).
 
-The two regimes are related by the modular S-transform $q \leftrightarrow \tilde{q} = e^{2\pi i / \tau}$ ([`conj:modular-s-transform-q-q-tilde`](../q-geometric-langlands/modular-s-transform-q-q-tilde.md)).
+The two regimes are related by the modular S-transform $q \leftrightarrow \tilde{q} = e^{2\pi i / \tau}$ ([Modular $S$-transform $q \leftrightarrow \tilde q = \exp(-2\pi i / \tau)$ for Hecke parameter analytic continuation](../q-geometric-langlands/modular-s-transform-q-q-tilde.md)).
 
 ## Significance
 

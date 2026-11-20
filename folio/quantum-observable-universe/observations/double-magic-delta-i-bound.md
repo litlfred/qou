@@ -17,7 +17,7 @@ All nine observed doubly-magic isotopes have $\Delta i \in \{0, 1\}$. No empiric
 
 ## Categorical interpretation
 
-Per [`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion), double-magic stability requires the LR-fusion
+Per [Conjecture (diagrammatic double-magic)](#conj:diagrammatic-double-magic-lr-fusion), double-magic stability requires the LR-fusion
 
 $$
   V_{\lambda_Z} \otimes V_{\lambda_N}
@@ -25,7 +25,7 @@ $$
   H_A(q_0)
 $$
 
-to have a dominant rank-1 component $V_{\lambda_A}$ that is self-conjugate and gapless. We combine this with the Bring-shell-binding picture ([`prop:torus-knot-shell-binding`](#prop:torus-knot-shell-binding)).
+to have a dominant rank-1 component $V_{\lambda_A}$ that is self-conjugate and gapless. We combine this with the Bring-shell-binding picture ([Shell binding from the torus knot hierarchy](#prop:torus-knot-shell-binding)).
 
 See [Table 2](#tbl:double-magic-delta-i-bound-table2-data).
 

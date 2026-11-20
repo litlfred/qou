@@ -1,6 +1,6 @@
 The prolonged Seiberg--Witten periods $a_D^{(n)} = \varphi(M^n v_0)$ are orbits of
 the jet-prolongation operator $M$
-([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)) acting on the
+([Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation)) acting on the
 Gauss--Manin period space $V$ of the SW family over Bring's surface. Since $V$
 is **finite-rank** — it is the de Rham cohomology of the family, $\dim V \leq 2g
 = 8$ for the genus-$4$ Bring curve — the operator $M$ satisfies its
@@ -18,7 +18,7 @@ $$
 with **$n$-independent** kernel $c$, for every $n$.
 
 This **proves the existence half** of
-[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol):
+[The q-difference kernel R is the jet-prolongation symbol](#conj:qdifference-kernel-prolongation-symbol):
 a fixed-depth recurrence on the prolonged periods *necessarily* exists, with
 depth bounded by the rank of the Gauss--Manin local system. What remains is the
 **identification half** — that $d$ and the kernel $c$ are *exactly* the Bring

@@ -22,4 +22,4 @@ Three free consequences follow if discharged:
 
 ### Reduction to known structure
 
-At depth 0: Baer-* is trivial, $G^{(0)}$ is a field. At depth 1: corresponds to the linear independence of logarithms of multiplicatively independent algebraics (Baker). At depth 2: reduces to the Hecke algebra Baer-* result ([`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic)). At depth $\geq 3$: open.
+At depth 0: Baer-* is trivial, $G^{(0)}$ is a field. At depth 1: corresponds to the linear independence of logarithms of multiplicatively independent algebraics (Baker). At depth 2: reduces to the Hecke algebra Baer-* result ([Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$](#prop:hecke-baer-star-generic)). At depth $\geq 3$: open.

@@ -18,7 +18,7 @@ Both remain isolated tasks. The conditional-class scaffolding is structurally co
 
 ## Status
 
-Combined with [`prop:bloch-group-quotient-construction`](#prop:bloch-group-quotient-construction), the three Mathlib gaps have the following status:
+Combined with [Concrete construction of $B(F)$ as `FreeAbelianGroup ⧸ pentagonSubgroup`](#prop:bloch-group-quotient-construction), the three Mathlib gaps have the following status:
 
 See [Table 3](#tbl:cl2-pentagon-and-faddeev-partial-table3-data).
 

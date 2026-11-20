@@ -2,7 +2,7 @@
 > below is the structurally-wrong leading-order ansatz; the operator-valued
 > form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](../mass-endomorphism/rho-k-graded-expansion.md).
+> graded expansion [Graded expansion of the categorical density $\rho_K = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$](../mass-endomorphism/rho-k-graded-expansion.md).
 
 **Conjecture (Algebraic-geometric dilogarithm equivalence).**
 *The categorical Markov trace of the nonabelian multiplicative integral

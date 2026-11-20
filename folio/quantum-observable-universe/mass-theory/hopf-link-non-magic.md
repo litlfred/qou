@@ -29,12 +29,12 @@ At non-magic $n$ at substrate $q_0$, the SDP optimum
 $T^*(n, q_0)$ is **Hopf-decomposable**, expressible as a tensor
 product of Hopf links and trivial ribbons. It lives entirely in
 $E_\infty^{0, *}$ (the descended Markov-trace piece per
-[`conj:mass-endomorphism`](#conj:mass-endomorphism)).
+[Mass endomorphism conjecture](#conj:mass-endomorphism)).
 
 **Magic shells require higher-cohomology operators.**
 At magic $n$, the SDP optimum requires non-trivial contribution
 from $E_\infty^{p, q \geq 1}$ — operators NOT Hopf-decomposable.
-By [`prop:torus-knot-shell-binding`](#prop:torus-knot-shell-binding),
+By [Shell binding from the torus knot hierarchy](#prop:torus-knot-shell-binding),
 the active operator at each magic $n$ is one of the six
 Bring-embeddable torus knots
 $\{T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}\}$, none of

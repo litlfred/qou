@@ -1,6 +1,6 @@
 **Multi-link Jones values at $q = 1$ — Lean infrastructure for the $c_5 / c_6$ candidate investigation.**
 
-The $\mathfrak{Q}_\beta$ precision ladder ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)) closed $c_1, c_2$ from Kashiwara ($b, b^2$), $c_3$ from $J_{\mathrm{Hopf}}(q{=}1) = -2$ at the 3-fold Markov closure, and $c_4$ from the mixed Kashiwara-plus-Hopf-half $b^2 + 1/2$. The simple alternating Kashiwara $\times$ Jones pattern at odd $k = 3$ suggests trying multi-link Jones values for $c_5, c_7, \ldots$ (e.g., Borromean rings, double-Hopf).
+The $\mathfrak{Q}_\beta$ precision ladder ([$\mathfrak{Q}_\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)) closed $c_1, c_2$ from Kashiwara ($b, b^2$), $c_3$ from $J_{\mathrm{Hopf}}(q{=}1) = -2$ at the 3-fold Markov closure, and $c_4$ from the mixed Kashiwara-plus-Hopf-half $b^2 + 1/2$. The simple alternating Kashiwara $\times$ Jones pattern at odd $k = 3$ suggests trying multi-link Jones values for $c_5, c_7, \ldots$ (e.g., Borromean rings, double-Hopf).
 
 | coefficient | empirical | closest simple multi-link Jones candidate |
 |:---:|---:|---:|
@@ -11,7 +11,7 @@ The $\mathfrak{Q}_\beta$ precision ladder ([`prop:q-beta-categorical-precision-l
 
 What follows is **infrastructure, not closure**. The Lean module `QOU.BraidKnot.multi_link_jones_q1_extension` exports:
 
-1. **Three new `Link` constructors** (extending the `Link` inductive in [`rem:braid-link-types`](#rem:braid-link-types)): `trefoil`, `borromean`, `doubleHopf`.
+1. **Three new `Link` constructors** (extending the `Link` inductive in [Concrete Lean braid and link types](#rem:braid-link-types)): `trefoil`, `borromean`, `doubleHopf`.
 2. **Three new `jonesAtOne` cases**, each proved by `rfl`:
 
    | constructor | $J_L(q{=}1)$ | source |

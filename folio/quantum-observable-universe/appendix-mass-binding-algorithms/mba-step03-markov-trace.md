@@ -37,14 +37,14 @@ $w \in B_n$ in Hecke normal form.*
 
 1. *Existence and uniqueness of the trace is established by the
    axiomatic closed form
-   ([`prop:markov-trace-axiomatic-closed-form`](#prop:markov-trace-axiomatic-closed-form)):
+   ([Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$](#prop:markov-trace-axiomatic-closed-form)):
    $\mathrm{tr}_M$ is the unique $R$-linear functional on $H_n(q)$
    satisfying (i) cyclicity, (ii) the Markov axiom
    $\mathrm{tr}_M(a\sigma_n) = z \cdot \mathrm{tr}_M(a)$ for
    $a \in H_n(q)$, and (iii) normalisation
    $\mathrm{tr}_M(1) = 1$.*
 2. *The recursive-reducer formula
-   ([`prop:markov-trace-recursive-reducer`](#prop:markov-trace-recursive-reducer))
+   ([Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property](#prop:markov-trace-recursive-reducer))
    gives a terminating reduction strategy by descent on braid index,
    so step 1 always terminates.*
 3. *The Frobenius pairing in step 4 is justified by the Wedderburn

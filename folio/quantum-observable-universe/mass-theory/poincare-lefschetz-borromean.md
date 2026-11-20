@@ -20,7 +20,7 @@ pairing.*
 ## Relationship to the Bloch-group route
 
 The K-theoretic Bloch-group element
-([`conj:borromean-bloch-group-element`](#conj:borromean-bloch-group-element))
+([Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](#conj:borromean-bloch-group-element))
 provides the **regulator** side of the Borromean structure
 ($r_2[\mathcal{B}_3] = 8G$).  Poincaré–Lefschetz provides the
 **topological** side: the volume form $\in$ $H^3$ pairs with the
@@ -53,10 +53,10 @@ topological-cohomological route, the Bloch group the K-theoretic one.
 
 ## Cross-references
 
-- [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](borromean-bloch-group-element.md)
   — K-theoretic regulator route to the same $8G$
-- [`prop:reeb-bundle-complement-equals-volume`](#prop:reeb-bundle-complement-equals-volume)
+- [Reeb-bundle complement is the JSJ-graded volume sum (Reeb-bundle face of mass-volume)](#prop:reeb-bundle-complement-equals-volume)
   — Reeb-pairing volume route (third route to $8G$)
-- [`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period)
+- [$\mathrm{Vol}(K)$ as a motivic period](#rem:vol-as-motivic-period)
   — motivic framing tying all three routes together
 - [Lefschetz 1926; Neumann–Zagier 1985 for cusped 3-manifolds]

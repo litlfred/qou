@@ -1,4 +1,4 @@
-**Theorem (conditional on [`conj:stokes-dt-bps-bridge`](#conj:stokes-dt-bps-bridge)).**
+**Theorem (conditional on [Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies (the closed-sector state-integral bridge, GGM Conjecture 3(d) + GPPV)](#conj:stokes-dt-bps-bridge)).**
 Under the closed-sector Stokes--DT--BPS bridge, the G3 Stokes integer of the
 figure-eight $4_1$ is a BPS/DT count:
 
@@ -36,7 +36,7 @@ equals $3$ — it does not assume it (the non-degeneracy requirement of the brid
 ### Scope
 
 The result is **conditional** on the adopted bridge
-[`conj:stokes-dt-bps-bridge`](#conj:stokes-dt-bps-bridge) **for $4_1$ as well as
+[Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies (the closed-sector state-integral bridge, GGM Conjecture 3(d) + GPPV)](#conj:stokes-dt-bps-bridge) **for $4_1$ as well as
 in general**. Garoufalidis--Gu--Mariño state Conjecture 3(d) as a conjecture and do
 not prove it for any knot. What they prove is their Conjecture 5 for $4_1$ and
 $5_2$ (their Theorem 6), and they verify Conjecture 4 by computation. So no
@@ -51,4 +51,4 @@ Gukov--Stošić bridge gives the $4_1$ count $\det(4_1) = 5$ (five HOMFLY-homolo
 generators / five quiver nodes) and does *not* reproduce the $4_1$ Stokes integer
 $3$ — see the
 non-degeneracy discussion in
-[`conj:stokes-dt-bps-bridge`](#conj:stokes-dt-bps-bridge).
+[Resurgent Stokes constants are Donaldson--Thomas / BPS degeneracies (the closed-sector state-integral bridge, GGM Conjecture 3(d) + GPPV)](#conj:stokes-dt-bps-bridge).

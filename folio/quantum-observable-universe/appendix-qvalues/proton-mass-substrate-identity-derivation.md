@@ -1,4 +1,4 @@
-This note collects the numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier for [`prop:proton-mass-substrate-identity`](#prop:proton-mass-substrate-identity).
+This note collects the numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier for [Substrate evaluation](#prop:proton-mass-substrate-identity).
 
 The predictive content throughout is the dimensionless ratio $m_p/m_e$ (equivalently $2(m_\mu/m_e)F_{\mathrm{Bor}} - 12$): since $m_e$ (CAL-1) sets the MeV scale by fiat, the absolute proton mass in MeV is not an independent framework prediction. The MeV figures below are that ratio rendered against the $m_e$ unit — a rendering that lets the ratio be read off against CODATA, not an absolute-mass claim.
 
@@ -22,7 +22,7 @@ At $q_0 = 1.10997859555\ldots$ (muon pin, 12 dps):
 
 At $h_0 = q_0 - q_0^{-1} \approx 0.2091$, using the exact rational
 $h$-expansion of $F_{\mathrm{Bor}}$ (categorical,
-[`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md))
+[Borromean categorical observable](../braids-and-knots/f-bor-borromean-observable.md))
 the per-order MeV contributions to
 $m_p = 2 m_\mu F_{\mathrm{Bor}} - 12 m_e$ are:
 
@@ -39,7 +39,7 @@ The series converges to $0.017\,\mathrm{ppm}$ accuracy at order $h^9$.
 
 ## Combined with the canonical flavor-split
 
-[`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
+[Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md)
 gives the canonical Hecke-skein derivation
 
 $$
@@ -103,7 +103,7 @@ The ratio $\mathfrak{D}_\mu / \mathfrak{D}_n$ eliminates $G_F$ and provides a $\
 
 The categorical structure of $F_{\mathrm{Bor}}$ + its rational
 $h$-expansion are completed in
-[`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md).
+[Borromean categorical observable](../braids-and-knots/f-bor-borromean-observable.md).
 What remains specific to this archimedean evaluation:
 
 1. **Bridge from $\dim V_{(2,1)}$ to linear factor in mass formula.**
@@ -159,9 +159,9 @@ numerically verified rather than symbolically derived.
 
 ## See also
 
-- [`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md)
+- [Borromean categorical observable](../braids-and-knots/f-bor-borromean-observable.md)
   — categorical observable $F_{\mathrm{Bor}}$ (closed form, $h$-expansion, structural integers)
-- [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
+- [Substrate-pure derivation of the $u$--$d$ flavor split](../observations/flavor-split-substrate.md)
   — canonical Hecke-skein $\Delta m / M_N$ derivation
 - [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)
   — production-grade compute script (50-dps MPFR)

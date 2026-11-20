@@ -1,4 +1,4 @@
-We examine $^{6}\mathrm{Li}$ ($Z = N = 3$, $A = 6$) to illustrate the partition-level diagrammatic content of the double-magic LR-fusion conjecture ([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion)) in a non-magic regime. When neither proton nor neutron count lies in $\mathfrak{M}$, both blocks fray. The categorical mass at each level spreads over multiple non-self-conjugate partitions. The LR fusion produces non-zero full-twist flux vectors in both the $Z$ and $N$ tensor factors.
+We examine $^{6}\mathrm{Li}$ ($Z = N = 3$, $A = 6$) to illustrate the partition-level diagrammatic content of the double-magic LR-fusion conjecture ([Conjecture (diagrammatic double-magic)](#conj:diagrammatic-double-magic-lr-fusion)) in a non-magic regime. When neither proton nor neutron count lies in $\mathfrak{M}$, both blocks fray. The categorical mass at each level spreads over multiple non-self-conjugate partitions. The LR fusion produces non-zero full-twist flux vectors in both the $Z$ and $N$ tensor factors.
 
 ## $Z$-block (frayed)
 

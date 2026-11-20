@@ -1,6 +1,6 @@
 # Recomputed low-isotope mass table
 
-Following the $q$-Hecke character closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths are convention D on the borromean word at the proton pin, so the agreement certifies the character closure, not the choice of convention.
+Following the $q$-Hecke character closure ([Partition-sum form of $\mathrm{tr}_M$ via Wenzl $y_\lambda$ and Hoefsmit $\chi^\lambda_q$ agrees with the canonical Markov-axiom reducer](#prop:q-hecke-seminormal-character-closure)) and the $\rho_K$ refinement, three independent production paths to the Markov trace $\mathrm{tr}_M(\mathcal{B}_K)$ at $q = q_0$ agree to the 60-digit serialization floor (relative residual $\lesssim 10^{-49}$) across the proton, neutron, deuteron, tritium, and ${}^{3}\mathrm{He}$. Both tabulated paths are convention D on the borromean word at the proton pin, so the agreement certifies the character closure, not the choice of convention.
 
 ## Cross-check
 
@@ -29,7 +29,7 @@ See [Table 2](#tbl:recomputed-low-isotope-mass-table-table2-data).
 
 ### Full $\mathfrak{Q}_\beta$ prediction
 
-The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([`prop:neutron-qvalue-symbolic`](../nuclear-interactions/neutron-qvalue-symbolic.md)). We inject no CODATA nucleon masses and do not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
+The framework predicts the $\beta$-decay $Q$-value using only the electron mass (CAL-1) and the substrate parameter $q_0$ (CAL-2) ([Symbolic $Q$-value of free neutron decay](../nuclear-interactions/neutron-qvalue-symbolic.md)). We inject no CODATA nucleon masses and do not use $\mathfrak{Q}_\beta$ as an input. Rather, $\mathfrak{Q}_\beta$ becomes an output.
 
 The Convention-D base evaluation at single wrap ($\varepsilon$ evaluated via the Markov trace at $z_D = q_0^3/(q_0^2+1)$) is:
 
@@ -87,7 +87,7 @@ These orders are rigorously exact, as lower-order poles cannot cancel a strict m
 
 ## Cross-references
 
-- [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md): The master mass formula $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M|$.
-- [`prop:q-hecke-seminormal-character-closure`](q-hecke-seminormal-character-closure.md): Partition-sum and canonical-reducer agreement.
-- [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md): Operator-valued Littlewood-Richardson block formula.
-- [`prop:per-nucleon-shift-additive-linearity`](../mass-theory/per-nucleon-shift-additive-linearity.md): the categorical verification.
+- [Atomic mass as Markov trace of the Gröbner–Shirshov normal form](atomic-mass-gb-nf.md): The master mass formula $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M|$.
+- [Partition-sum form of $\mathrm{tr}_M$ via Wenzl $y_\lambda$ and Hoefsmit $\chi^\lambda_q$ agrees with the canonical Markov-axiom reducer](q-hecke-seminormal-character-closure.md): Partition-sum and canonical-reducer agreement.
+- [Hecke branching trace decomposition](hecke-branching-trace-decomposition.md): Operator-valued Littlewood-Richardson block formula.
+- [Per-new-nucleon additive linearity](../mass-theory/per-nucleon-shift-additive-linearity.md): the categorical verification.

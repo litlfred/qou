@@ -3,7 +3,7 @@ The algebraic factor arises from the Hecke representation theory
 of $H_3(q_0)$.  On the standard $(2,1)$ irreducible representation,
 $\sigma_1$ acts diagonally in the Hoefsmit seminormal basis with
 eigenvalues $q$ and $-q^{-1}$
-(cf. [`prop:hoefsmit-binding-amplitude`](../braids-and-knots/hoefsmit-binding-amplitude.md)).
+(cf. [Hoefsmit binding amplitude $b^2 = [3]_q / [2]_q^2$](../braids-and-knots/hoefsmit-binding-amplitude.md)).
 The character of $\sigma_1^n$ for odd $n$ is therefore
 
 $$
@@ -87,7 +87,7 @@ canonical closure of the meson ratio, and the two must not be conflated.
 The canonical route is the $q$-Clebsch--Gordan fusion together with the
 electromagnetic term,
 $m_K^2/m_\pi^2 = [3]_q\,[4]_q + (\alpha_{\mathrm{em}}/\pi)\bigl(1 + \log(1+\hbar_q)\bigr)$
-([`prop:meson-em-sinh-closed-form`](../braids-and-knots/meson-em-sinh-closed-form.md)),
+([Meson EM sinh-channel closed-form $1 + \hbar_q - \hbar_q^2/2 = (3q^2 - 1)/(2q^2)$](../braids-and-knots/meson-em-sinh-closed-form.md)),
 which is what the per-observable accuracy dashboard scores. The
 $(q_0^5 - q_0^{-5})(9/5)^2$ form here was formerly used there and was
 excluded from that role.

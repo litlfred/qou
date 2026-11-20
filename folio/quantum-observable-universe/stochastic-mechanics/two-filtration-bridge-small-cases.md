@@ -1,4 +1,4 @@
-The two-filtration bridge conjecture ([`conj:two-filtration-bridge`](#conj:two-filtration-bridge)) predicts an iterated-integral depth $d_{\mathrm{II}}(\lambda)$ for each partition $\lambda$:
+The two-filtration bridge conjecture ([Two-filtration bridge](#conj:two-filtration-bridge)) predicts an iterated-integral depth $d_{\mathrm{II}}(\lambda)$ for each partition $\lambda$:
 
 $$
   d_{\mathrm{II}}(\lambda) =
@@ -15,7 +15,7 @@ knots is defined, so the knot attached to each cell below is chosen, not
 derived. At $n=1,2$ both periods vanish and nothing is witnessed; the trefoil
 $\sigma_1^3$ is a 2-strand closure, not an $H_3$ object; and the $(2,1)$ row has
 no witness. The proved part of the bridge is item 4 of
-[`prop:cellular-depth-filtration`](#prop:cellular-depth-filtration), which is
+[Cell-depth filtration of $Z(H_n(q))$](#prop:cellular-depth-filtration), which is
 conditional on two named hypotheses and does not give the depth values.
 
 ### Detailed verifications

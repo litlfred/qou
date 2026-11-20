@@ -1,6 +1,6 @@
 **Axiomatic Markov-closure map**, reducing the open content to two atomic axioms.
 
-As set out in [`rem:F3-eps6-leading-eq-neg-2b-cubed`](#rem:F3-eps6-leading-eq-neg-2b-cubed), the substantive open content of $c_3 = J_{\text{Hopf}}(q=1) = -2$ lives in the 3-fold Markov closure $\to$ Hopf-link substructure identification.
+As set out in [Lean exact-arithmetic lemma](#rem:F3-eps6-leading-eq-neg-2b-cubed), the substantive open content of $c_3 = J_{\text{Hopf}}(q=1) = -2$ lives in the 3-fold Markov closure $\to$ Hopf-link substructure identification.
 
 We factorise that content into two atomic axioms:
 

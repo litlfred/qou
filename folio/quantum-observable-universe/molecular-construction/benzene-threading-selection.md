@@ -1,4 +1,4 @@
-After the $\sigma$-bond framework is assembled, there remain 6 unpaired electrons — one from each carbon's $2p_z$ orbital. The LP dual of [`prop:benzene-threading-emergence`](#prop:benzene-threading-emergence) optimises their placement.
+After the $\sigma$-bond framework is assembled, there remain 6 unpaired electrons — one from each carbon's $2p_z$ orbital. The LP dual of [Threading link $T(2,6)$ emerges as the LP-optimal $\pi$ configuration](#prop:benzene-threading-emergence) optimises their placement.
 
 **Candidate configurations:**
 

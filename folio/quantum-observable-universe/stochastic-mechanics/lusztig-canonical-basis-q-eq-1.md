@@ -1,8 +1,8 @@
-**Conjecture (Lusztig canonical basis closure, conditional on [`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)).**
+**Conjecture (Lusztig canonical basis closure, conditional on [As $q \to 1$, the KLR canonical basis flattens to the Kazhdan–Lusztig basis of $S_n$, recovering Pauli/Bose statistics](#conj:kazhdan-lusztig-classical-limit)).**
 
-*At the classical limit $q = 1$, the Kashiwara crystal of $H_n(q)$ ([`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy), at $q \to 0$) **decategorifies** to the Lusztig canonical basis of the group algebra $\mathbb{Z}[S_n]$. The Kazhdan–Lusztig basis polynomials $\{P_{y, w}(q)\}$ are the structure constants of this decategorification. At $q = 1$, they reduce to integer multiplicities of canonical-basis elements.*
+*At the classical limit $q = 1$, the Kashiwara crystal of $H_n(q)$ ([Crystal-limit isospin degeneracy](#prop:crystal-isospin-degeneracy), at $q \to 0$) **decategorifies** to the Lusztig canonical basis of the group algebra $\mathbb{Z}[S_n]$. The Kazhdan–Lusztig basis polynomials $\{P_{y, w}(q)\}$ are the structure constants of this decategorification. At $q = 1$, they reduce to integer multiplicities of canonical-basis elements.*
 
-*Combined with the $q \to 0$ Kashiwara limit and the $q \to \infty$ reverse limit ([`conj:reverse-limit-q-to-infinity`](reverse-limit-q-to-infinity.md)), this completes the limit-duality picture for $H_n(q)$:*
+*Combined with the $q \to 0$ Kashiwara limit and the $q \to \infty$ reverse limit ([Reverse limit $q \to \infty$](reverse-limit-q-to-infinity.md)), this completes the limit-duality picture for $H_n(q)$:*
 
 $$
   \begin{array}{c}

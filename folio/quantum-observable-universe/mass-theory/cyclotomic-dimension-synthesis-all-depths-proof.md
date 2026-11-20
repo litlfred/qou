@@ -7,7 +7,7 @@ and $\mathrm{Im}\,\mathrm{Li}_n(\zeta_K^j)$. Total: $K - 1$ candidate
 generators per depth.
 
 **Step 2 (eliminate wrong-parity via Jonquière).** By
-[`prop:jonquiere-cyclotomic-tate-rationality`](#prop:jonquiere-cyclotomic-tate-rationality):
+[General Jonquière Tate-rationality](#prop:jonquiere-cyclotomic-tate-rationality):
 
 - *$n$ odd:* All $(K - 1)/2$ imaginary parts are Tate-rational
   ($\in \pi^n \mathbb{Q}$) $\to$ collapse to 0 in
@@ -20,7 +20,7 @@ generators per depth.
 After this step: $(K - 1)/2$ candidate generators in either case.
 
 **Step 3 (apply orbit-sum relation).** By
-[`prop:cyclotomic-orbit-sum-all-depths`](#prop:cyclotomic-orbit-sum-all-depths):
+[General orbit-sum at every depth](#prop:cyclotomic-orbit-sum-all-depths):
 
 - *$n$ odd:* $\sum_{k} \mathrm{Cl}_n(2\pi k/N) = (N^{1 - n} - 1)\,\zeta(n)$.
   This is **one linear relation** pulling 1 dim into the
@@ -43,7 +43,7 @@ $\square$
 ### Lower bound — Beilinson-conditional
 
 Borel's theorem
-([`prop:borel-partial-resolution`](#prop:borel-partial-resolution)):
+([Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution)):
 for prime $K$, $\mathbb{Q}(\zeta_K)$ is totally complex with $r_2 =
 (K - 1)/2$.
 
@@ -60,7 +60,7 @@ as stated.
 ### Depth-2 case is theorem-level (no Beilinson)
 
 For $n = 2$: Bloch–Suslin
-([`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin))
+([Depth-2 identification of $G^{(2)}(\mathcal{H}_q)$ with $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ — provable via Bloch--Suslin](#prop:depth-2-identification-bloch-suslin))
 proves the regulator image is precisely $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
 without invoking Beilinson. So:
 
@@ -92,7 +92,7 @@ Beilinson-conditional:
 
 ### Generalises Theorem D
 
-Theorem D ([`prop:cyclotomic-depth3-dimension-synthesis`](#prop:cyclotomic-depth3-dimension-synthesis))
+Theorem D ([Cyclotomic depth-3 dimension synthesis](#prop:cyclotomic-depth3-dimension-synthesis))
 gave $(K - 3)/2$ at $n = 3$.  This proposition extends to:
 
 - All odd $n$: same $(K - 3)/2$ formula.

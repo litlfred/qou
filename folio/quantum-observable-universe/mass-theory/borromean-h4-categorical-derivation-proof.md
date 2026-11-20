@@ -81,7 +81,7 @@ $$
 
 i.e. the $h^4$ coefficient is $-3$. (This polynomial form is also
 derivable directly from the closed form of
-[`prop:borromean-markov-trace-closed-form`](borromean-markov-trace-closed-form.md)
+[Borromean Markov trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}}) = (4 + h^2 - 3h^4 - h^6)/(h^2 + 4)$](borromean-markov-trace-closed-form.md)
 via the substitution $u = q^2 + q^{-2} = h^2 + 2$; the R-matrix
 derivation provides the categorical confirmation.)
 
@@ -139,7 +139,7 @@ $\mathrm{H}_3(q)$ is $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
 $y_{(1^3)} = 0$ (identically — the Temperley–Lieb quotient kills the
 3-row partition), evaluating at $q = 1$ to the **non-uniform** vector
 $(\tfrac12, \tfrac14, 0)$. See
-[`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md) for the
+[Closed-form Jones/Temperley–Lieb weights on $H_3(q)$ (Borromean Jones polynomial): $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$, $y_{(1^3)} = 0$](h3-markov-wenzl-weights.md) for the
 derivation and for why a bar-involution uniformity argument fails (the
 Jones-normalised trace is chiral — not invariant under the sign-twist
 automorphism $\sigma \mapsto -q\,\sigma^{-1}$).

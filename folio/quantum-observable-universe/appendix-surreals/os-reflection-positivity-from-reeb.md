@@ -43,11 +43,11 @@ factors through the positive cone of $A \otimes A^*$. The missing input is exact
 
 > **Axiom (substrate $C^*$-Frobenius positivity).** At the archimedean substrate value $q = q_0 \in \mathbb{R}_{>1}$, the [Frobenius–Hopf substrate](#def:frobenius-hopf-substrate) $A$ admits a $C^*$-completion in which the unit map $\eta : \mathbf{1} \to A$ is positive in the categorical sense above. Equivalently, $(A, \mu, \eta, \Delta, \varepsilon)$ is a *positive* Frobenius algebra in the $C^*$-tensor category $\mathbf{C}$ at $q_0$.
 
-Granting the substrate $C^*$-Frobenius positivity axiom, along with [`prop:reeb-u1-chart-swap`](#prop:reeb-u1-chart-swap) and [`def:archimedean-realization-functor`](#def:archimedean-realization-functor), OS axiom (OS2) holds: $\langle\theta(\phi), \phi\rangle_F \geq 0$ for every state $\phi$ in the positive-time Reeb half.
+Granting the substrate $C^*$-Frobenius positivity axiom, along with [Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\mathrm{Aut}(\mathbb{P}(V))$](#prop:reeb-u1-chart-swap) and [Archimedean realization functor $\mathcal{R}_{\mathrm{top}}$](#def:archimedean-realization-functor), OS axiom (OS2) holds: $\langle\theta(\phi), \phi\rangle_F \geq 0$ for every state $\phi$ in the positive-time Reeb half.
 
 The proof sketch involves three steps:
 
-1. **Categorical reflection = Reeb $\mathbb{Z}_2$.** By [`prop:reeb-u1-chart-swap`](#prop:reeb-u1-chart-swap), $\theta$ is the antipodal $\mathbb{Z}_2 \subset T_q$ subgroup acting on the contact-affine chart $\mathbb{P}(V)$ via $z \mapsto -z$. On the substrate Hopf algebra $A$, the action $\theta_A : A \to A$ factors through the antipode $S$ via the $T_q$-grading: $\theta_A = S \circ (\mathrm{sign}\,\text{of}\,\xi\text{-grading})$.
+1. **Categorical reflection = Reeb $\mathbb{Z}_2$.** By [Chart-swap $U(1)$ equals the Reeb $U(1)$ as subgroups of $\mathrm{Aut}(\mathbb{P}(V))$](#prop:reeb-u1-chart-swap), $\theta$ is the antipodal $\mathbb{Z}_2 \subset T_q$ subgroup acting on the contact-affine chart $\mathbb{P}(V)$ via $z \mapsto -z$. On the substrate Hopf algebra $A$, the action $\theta_A : A \to A$ factors through the antipode $S$ via the $T_q$-grading: $\theta_A = S \circ (\mathrm{sign}\,\text{of}\,\xi\text{-grading})$.
 2. **Antipode-twisted pairing = state-positive form.** The substrate Frobenius pairing factors through the antipode by $\langle a, b \rangle_F = \varepsilon(\mu(a, S(b)))$. Composing with $\theta_A$: $\langle \theta(\phi), \phi \rangle_F = \varepsilon(\mu(\theta(\phi), S(\phi))) = \varepsilon(\mu(S(\phi^*), S(\phi)))$ where $\phi^*$ is the $C^*$-conjugate. By the substrate positivity axiom, this evaluates to a non-negative element of $\mathrm{End}_{\mathbf{C}}(\mathbf{1}) = k$.
 3. **Stability under $\tau_{\mathrm{arch}}$.** $\tau_{\mathrm{arch}}$ sends the categorical $C^*$-norm to the standard $L^2$-norm on $\mathbb{R}^4$ by construction. Positivity is preserved.
 
@@ -57,6 +57,6 @@ The status of OS reflection positivity in the QOU framework is equal to the stat
 - Verification that one of these candidate norms makes the Frobenius pairing positive in the sense above.
 - Compatibility of the chosen norm with the antipode $S$.
 
-This follow-up programme is formalised as [`conj:wenzl-positivity-implies-substrate-positivity`](#conj:wenzl-positivity-implies-substrate-positivity). Closing that bridge conjecture makes the substrate axiom derived from Wenzl's classical result, discharging the OS-reflection-positivity-as-axiom assumption.
+This follow-up programme is formalised as [Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity](#conj:wenzl-positivity-implies-substrate-positivity). Closing that bridge conjecture makes the substrate axiom derived from Wenzl's classical result, discharging the OS-reflection-positivity-as-axiom assumption.
 
 The Wightman-axiom portion of the Yang–Mills millennium statement reduces to the structural positivity of the antipode-twisted Frobenius pairing. The reflection involved is the antipodal $\mathbb{Z}_2$ subgroup of the Reeb $U(1)$, made visible by the [chart-swap–Reeb identification](#prop:reeb-u1-chart-swap). The categorical infrastructure already houses every OS ingredient except this positivity.

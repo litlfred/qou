@@ -3,7 +3,7 @@
 Let $\mathcal{K}$ be the rank-$2$ $q$-difference module of the binding $q$-lift
 recurrence
 $[m+2]_q\,b_{m+2}=b_{m+1}+b_m$
-([`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol)),
+([The q-difference kernel R is the jet-prolongation symbol](#conj:qdifference-kernel-prolongation-symbol)),
 and let $\mathcal{G}$ be the module of
 $$
 y_{m+2}-(2-q^{m+1})\,y_{m+1}+y_m \;=\; 0,

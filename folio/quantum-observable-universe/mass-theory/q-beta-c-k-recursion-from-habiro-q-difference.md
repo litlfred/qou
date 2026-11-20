@@ -1,4 +1,4 @@
-*Let $F(q) \in \mathbb{Z}[q, q^{-1}]^\wedge$ be a fibre-level Habiro element associated to the operator-valued $T_\beta$ selection ([`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-frobenius-collapse.md)). Let $F(q)$ satisfy a $q$-difference equation of depth $d$:*
+*Let $F(q) \in \mathbb{Z}[q, q^{-1}]^\wedge$ be a fibre-level Habiro element associated to the operator-valued $T_\beta$ selection ([Min-Frobenius-norm collapse](t-beta-markov-frobenius-collapse.md)). Let $F(q)$ satisfy a $q$-difference equation of depth $d$:*
 
 $$
 F(q\xi) \;=\; R(q,\xi)\cdot F(\xi), \qquad R(q,\xi) \in \mathbb{Q}(q)[\xi, \xi^{-1}] \text{ of degree} \le d.

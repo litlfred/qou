@@ -22,7 +22,7 @@ below.*
 
 ## Exclusions for Im(q)
 
-Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
+Per [Im(q) is not the EM / P_skew channel — distinct mechanisms](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
 - The EM / $P_{\mathrm{skew}}$ channel (this is a real-q mechanism)
 - A fourth calibration input (the 3-CAL count is cohomologically forced)
 - An observable in the current framework (mass formula uses $|\cdot|$)
@@ -213,7 +213,7 @@ directly. The candidate roles are all in **non-mass observables**.
 
 ## Connection to other conjectures
 
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) F_ℓ
+- [Canonical operator-level lepton-mass-tower formula](lepton-mass-tower-canonical.md) F_ℓ
   — the canonical lepton-mass formula is Im(q)-robust (modulus projection
   invariance); F_ℓ does NOT distinguish the three candidate Im(q) roles.
   Hence the F_ℓ conjecture is consistent with ALL three candidates.
@@ -244,9 +244,9 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 
 ## Cross-references
 
-- [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism
-- [`prop:lusztig-vs-hermitian-bar`](lusztig-vs-hermitian-bar.md) — involution split for complex q
-- [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md) — the distinction from P_skew
-- [`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md) — modulus projection
+- [The pre-Archimedean substrate is polymorphic in its base ring](q-zero-complex-extension.md) — substrate polymorphism
+- [Lusztig bar ($q \mapsto q^{-1}$) vs Hermitian-$\ast$ ($q \mapsto \overline{q}^{-1}$) on the complex Hecke algebra: the two anti-involutions coincide on the parameter iff $q \in \mathbb{R}$. On the unit circle $|q| = 1$, Lusztig coincides with complex conjugation ($\overline{q} = q^{-1}$) while Hermitian becomes the identity on $q$; on general $|q| > 1$ with $\mathrm{Im}(q) \neq 0$ the three involutions (Lusztig, Hermitian, complex conjugation) are pairwise distinct. The split is the categorical home for any future $\mathrm{Im}(q_0)$ contribution](lusztig-vs-hermitian-bar.md) — involution split for complex q
+- [Im(q) is not the EM / P_skew channel — distinct mechanisms](rem-im-q-vs-p-skew.md) — the distinction from P_skew
+- [Categorical mass as Markov trace](../mass-endomorphism/categorical-mass-markov.md) — modulus projection
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -18,7 +18,7 @@ The scope of this conjecture is as follows:
     \Bigr).
   $$
 
-  This follows from [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) and [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
+  This follows from [Unified mass formula: tower + Frobenius co-Casimir correction](#thm:knot-mass-formula-unified) and [Proton--electron mass endomorphism tower (convention D](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
 
 - **Convenience target** (the conjectural content here): We conjecture the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
 

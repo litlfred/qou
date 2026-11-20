@@ -56,5 +56,5 @@ exactly that reason. Nothing here should be read as narrowing that gap.
 ### Consumers
 
 The per-isotope binding algorithm consumes $\Delta_\lambda$ through
-[`alg:delta-lambda-closure`](#alg:delta-lambda-closure), which computes the value above and
+[$\Delta_\lambda$ per-partition value (PROVED $(-1)^{n(\lambda)}\dim V_\lambda$); many-body magnitude open](#alg:delta-lambda-closure), which computes the value above and
 hands it to Step 9b.
