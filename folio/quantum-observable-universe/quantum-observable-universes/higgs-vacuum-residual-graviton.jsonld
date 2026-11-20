@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-higgs-vacuum-residual-graviton",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:higgs-vacuum-residual-graviton",
+  "kind": "remark",
+  "title": "Graviton candidate 3: the symmetric square of the Higgs-vacuum residual",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-higgs-vacuum-residual-idempotent",
+    "papers/quantum-observable-universe/blocks/conj-mass-endomorphism",
+    "papers/quantum-observable-universe/blocks/conj-g-action-on-substrate"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-higgs-vacuum-residual-idempotent",
+  "tags": [
+    "graviton",
+    "categorical-higgs",
+    "residual",
+    "interpretation",
+    "open-problem"
+  ],
+  "text": "higgs-vacuum-residual-graviton.md",
+  "provenance": "authored"
+}

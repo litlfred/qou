@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-jet-tower-splitting-bring",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:jet-tower-splitting-bring",
+  "kind": "remark",
+  "title": "Splitting of the holomorphic jet tower on Bring's surface",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-qu-to-qou",
+  "tags": [
+    "jet-bundle",
+    "atiyah-class",
+    "brings-surface",
+    "obstruction"
+  ],
+  "text": "jet-tower-splitting-bring.md",
+  "provenance": "authored"
+}

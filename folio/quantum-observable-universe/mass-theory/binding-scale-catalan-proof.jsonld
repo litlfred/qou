@@ -2,20 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-binding-scale-catalan",
+  "@id": "papers/quantum-observable-universe/blocks/rem-binding-scale-catalan-argument",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
   "label": "rem:binding-scale-catalan-argument",
-  "kind": "proof",
-  "title": "Proof of binding scale catalan",
+  "kind": "remark",
+  "title": "Argument for the Borromean–Catalan binding scale (not a proof)",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-binding-scale-catalan"
+    "papers/quantum-observable-universe/blocks/conj-binding-scale-catalan"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-binding-scale-catalan",
   "text": "binding-scale-catalan-proof.md",
   "provenance": "authored"
 }

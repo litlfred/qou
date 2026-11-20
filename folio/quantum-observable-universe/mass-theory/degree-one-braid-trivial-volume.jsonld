@@ -2,19 +2,19 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/lem-degree-one-braid-trivial-volume",
   "@type": [
-    "folio-assistant-core:Lemma",
+    "folio-assistant-sci:Lemma",
     "doco:Section"
   ],
   "label": "lem:degree-one-braid-trivial-volume",
   "kind": "lemma",
-  "title": "Degree-one Hecke elements have vanishing archimedean volume: $\\mathrm{Vol}\\bigl(\\overline{1 + \\sum_i \\phi_i \\sigma_i}\\bigr) = 0$",
+  "title": "Braid words of a degree-one element have non-hyperbolic closures",
   "cites": [
-    "references/jones1987",
     "references/kashaev1997"
   ],
   "tags": [
@@ -22,10 +22,9 @@
     "masslessness",
     "degree-one",
     "archimedean",
-    "linearity",
     "unknot"
   ],
-  "leanRef": "qou:QOU.Photon.geom_degree_one_zero",
+  "leanRef": "qou:QOU.Photon.linearVol_eq_zero_of_mem_span",
   "text": "degree-one-braid-trivial-volume.md",
   "leanSource": "degree-one-braid-trivial-volume.lean",
   "provenance": "authored"

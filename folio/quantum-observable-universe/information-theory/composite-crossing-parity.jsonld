@@ -2,16 +2,17 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-composite-crossing-parity",
+  "@id": "papers/quantum-observable-universe/blocks/conj-composite-crossing-parity",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:composite-crossing-parity",
-  "kind": "proposition",
+  "label": "conj:composite-crossing-parity",
+  "kind": "conjecture",
   "title": "Sublimation from shell-filling representation theory",
   "uses": [
     "papers/quantum-observable-universe/blocks/conj-borromean-quark",

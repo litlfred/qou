@@ -2,19 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-two-filtration-bridge-general",
+  "@id": "papers/quantum-observable-universe/blocks/conj-two-filtration-bridge-general",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:two-filtration-bridge-general",
-  "kind": "proposition",
+  "kind": "conjecture",
   "title": "Two-filtration bridge map in full generality: bar-class determines iterated-integral depth (self-conj $\\to$ 2, chiral pair $\\to$ 3) for all partitions",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-cyclotomic-cl3-orbit-sum-general"
+    "papers/quantum-observable-universe/blocks/prop-cyclotomic-cl3-orbit-sum-general",
+    "papers/quantum-observable-universe/blocks/prop-cellular-depth-filtration"
   ],
   "cites": [
     "references/bloch2000"
@@ -26,7 +28,7 @@
     "self-conjugate",
     "chiral-pair",
     "graded-mikusinski",
-    "theorem-level"
+    "conditional"
   ],
   "leanRef": "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral.bridge_map_general",
   "text": "two-filtration-bridge-general.md",
