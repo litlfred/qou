@@ -43,6 +43,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import fmt, set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.witness import q0_comparison  # noqa: E402
 
 set_compute_dps()
 
@@ -158,7 +159,16 @@ def main() -> int:
                      tolerance="1e-20",
                      source="tr_{z_D}(Delta_S) closed form vs census tr_conv_D")
     wb.add_upstream(CENSUS)
-    wb.save()
+    # Both pins are read ON PURPOSE: the d_cells are at the proton pin, the
+    # production value is derived_masses' muon pin, and delta_S_pin_effect /
+    # production_q0_straddle measure the difference. Stamp the values this run
+    # actually computed with, so the audit re-checks each leg.
+    wb.save(q0_comparison(
+        muon=q_muon, proton=q_prot,
+        reason="records the production m_n (Q_beta at derived_masses._q_0, the "
+               "muon pin) beside every convention-D cell at the proton pin "
+               "(q_parameter.Q_50_DIGIT_STR), and measures the muon-vs-proton "
+               "shift of both; both pins are read on purpose"))
 
     print(f"production m_n  {mp.nstr(m_n_prod, 15)}  err {mp.nstr(_ppb(m_n_prod), 6)} ppb  (retired mixed base)")
     for r in rows:

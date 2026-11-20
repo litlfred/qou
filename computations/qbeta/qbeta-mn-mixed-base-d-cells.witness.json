@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T16:01:44.799652+00:00",
-  "commitSha": "764f905a1cafb87fc71a00bd896a2adf4ae306fb",
+  "computedAt": "2026-11-20T17:13:51.536161+00:00",
+  "commitSha": "56d67348ae080d7a84919285f95f39c2788ea17d",
   "assertions": [
     {
       "name": "delta_S_closed_form_matches_census",
@@ -17,8 +17,8 @@
   "durationMs": 7,
   "computation": "qbeta-mn-mixed-base-d-cells",
   "scriptFile": "qbeta_mn_mixed_base_d_cells_probe.py",
-  "scriptHash": "c96db0f2ee78",
-  "scriptCommitSha": "0218c9ba9ad273ba5984b06c405cefcf6d2da644",
+  "scriptHash": "c688e9902c90",
+  "scriptCommitSha": "b23fc625c56534acb3547d21599969a9a784b6ab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,11 +30,11 @@
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "cvxpy": "absent",
-    "pyhecke_native_build": "ae1028699afd20c5"
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -46,12 +46,12 @@
   "data": {
     "production": {
       "status": "retired-mixed-base",
-      "Q_beta_MeV": "0.782804713582601608047366699594231456515048200356438384329965",
-      "Q_A_form_A_MeV": "0.783645827374621213074939751341396890525736441030294010156470",
+      "Q_beta_MeV": "0.782804689809386912300992411191086597489032661350230106937576",
+      "Q_A_form_A_MeV": "0.783645803740748837458177007581843905419000234584921918127373",
       "m_p_MeV": "938.272089427324247363940000000000000000000000000000000000000",
-      "m_n_MeV": "939.565893091596848971987400000000000000000000000000000000000",
-      "m_n_err_ppb": "501.45694",
-      "Q_beta_pin": "proton (derived_masses._q_0; muon straddle removed 2026-11-20, PR #8591, bean qou-aj91)",
+      "m_n_MeV": "939.565893067823634276241000000000000000000000000000000000000",
+      "m_n_err_ppb": "501.43163",
+      "Q_beta_pin": "muon (derived_masses._q_0, bean qou-aj91)",
       "why_mixed": "base Q_A is the z=1 cell retired 2026-09-08; the phase alpha=(z-1)h/2 uses z_D"
     },
     "d_cells": [
@@ -62,7 +62,7 @@
         "Q_beta_MeV": "0.545664266485548807494141631709228340519309693377549042611816",
         "m_n_MeV": "939.328752644499796171434141631709228340519309693377549042612",
         "m_n_err_ppb": "-251892.30",
-        "shift_from_production_ppb": "-252393.76"
+        "shift_from_production_ppb": "-252393.73"
       },
       {
         "element": "nuc9_build_nucleon_nf",
@@ -71,7 +71,7 @@
         "Q_beta_MeV": "0.540307378640024933605380741409161413809181892759474027809229",
         "m_n_MeV": "939.323395756654272297545380741409161413809181892759474027809",
         "m_n_err_ppb": "-257593.75",
-        "shift_from_production_ppb": "-258095.21"
+        "shift_from_production_ppb": "-258095.18"
       },
       {
         "element": "nuc11_interleaved",
@@ -80,7 +80,7 @@
         "Q_beta_MeV": "0.651856310060337537759386764180716953854105083179664586873005",
         "m_n_MeV": "939.434944688074584901699386764180716953854105083179664586873",
         "m_n_err_ppb": "-138869.79",
-        "shift_from_production_ppb": "-139371.25"
+        "shift_from_production_ppb": "-139371.22"
       },
       {
         "element": "nuc11_interleaved",
@@ -89,7 +89,7 @@
         "Q_beta_MeV": "0.645456915123079459561875817038373536781011944029497874877867",
         "m_n_MeV": "939.428545293137326823501875817038373536781011944029497874878",
         "m_n_err_ppb": "-145680.80",
-        "shift_from_production_ppb": "-146182.26"
+        "shift_from_production_ppb": "-146182.24"
       },
       {
         "element": "nuc11_gen_grouped",
@@ -98,7 +98,7 @@
         "Q_beta_MeV": "0.668010028276659092567203743299753867195020347852589038528786",
         "m_n_MeV": "939.451098406290906456507203743299753867195020347852589038529",
         "m_n_err_ppb": "-121677.03",
-        "shift_from_production_ppb": "-122178.49"
+        "shift_from_production_ppb": "-122178.47"
       },
       {
         "element": "nuc11_gen_grouped",
@@ -107,7 +107,7 @@
         "Q_beta_MeV": "0.661452049275741565895300654373098074410613561844147634130795",
         "m_n_MeV": "939.444540427289988929835300654373098074410613561844147634131",
         "m_n_err_ppb": "-128656.83",
-        "shift_from_production_ppb": "-129158.29"
+        "shift_from_production_ppb": "-129158.27"
       },
       {
         "element": "delta_S_short_normal_form",
@@ -116,7 +116,7 @@
         "Q_beta_MeV": "0.449109399232412464983750733501958822774142378644297147093589",
         "m_n_MeV": "939.232197777246659828923750733501958822774142378644297147094",
         "m_n_err_ppb": "-354657.75",
-        "shift_from_production_ppb": "-355159.21"
+        "shift_from_production_ppb": "-355159.19"
       },
       {
         "element": "delta_S_short_normal_form",
@@ -125,7 +125,7 @@
         "Q_beta_MeV": "0.444700408521780409100962266770633264055679436172256985839548",
         "m_n_MeV": "939.227788786536027773040962266770633264055679436172256985840",
         "m_n_err_ppb": "-359350.34",
-        "shift_from_production_ppb": "-359851.80"
+        "shift_from_production_ppb": "-359851.77"
       }
     ],
     "delta_S_pin_effect": {
@@ -136,7 +136,7 @@
     "production_q0_straddle": {
       "Q_beta_production_formula_muon_pin_MeV": "0.782804689809386912300992411191086597489032661350230106937576",
       "Q_beta_production_formula_proton_pin_MeV": "0.782804713582601608047366699594231456515048200356399171090669",
-      "matches_derived_masses_at_muon": "2.37732e-8",
+      "matches_derived_masses_at_muon": "0.0",
       "Q_beta_relative_shift": "3.0369280e-8",
       "m_n_shift_ppb": "0.025302352"
     },
@@ -158,5 +158,11 @@
   },
   "caveats": [
     "Rows are not ranked by residual. Choosing an element by its m_n error would be selection against the target."
-  ]
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029012",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
+  },
+  "q0AnchorReason": "records the production m_n (Q_beta at derived_masses._q_0, the muon pin) beside every convention-D cell at the proton pin (q_parameter.Q_50_DIGIT_STR), and measures the muon-vs-proton shift of both; both pins are read on purpose"
 }
