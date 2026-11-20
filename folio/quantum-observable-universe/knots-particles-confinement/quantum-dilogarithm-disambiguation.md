@@ -1,5 +1,5 @@
 **Definition (Quantum dilogarithm disambiguation).**
-*Two distinct functions appear in the QOU mass formulae. We must not conflate them:*
+*Two distinct functions appear in the QOU mass formulae. One must not conflate them:*
 
 | Name | Symbol | Closed form | Behaviour near $z = 1$ |
 |---|---|---|---|
