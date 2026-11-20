@@ -4128,3 +4128,10 @@ Decision put to the owner in the session chat (options: strict γγ+reading-3 ba
 - Functionals: F1 = ε-L1's multiplicity-trace ε_tr (verbatim); F2 = z_D trace Tr(K^{⊗3}·)/[2]³ split over W_p, W_n (plain-sector difference D = tr_Wn − tr_Wp is the channel's u↔d asymmetry).
 - Arms: V-words (V, V⁻¹, V·V³, V³·V, VV⁻¹, V·σ₀); four-term photon at the eigenvalue pair γ(0,0,qh), γ(0,0,−q⁻¹h) and products; symbolic φ₀,φ₁ first-order coefficients.
 - Prediction: symmetric everywhere (Hecke image commutes with U_q(sl₂); Δ = σ₀σ₁σ₀ swaps σ₀↔σ₁). No physical target compared.
+
+## 2026-11-20 ~17:40Z — owner picked option B, then: "rulings are only temporary conjectures; formalize first, Lean-prove, derive" (W5, session 01VQDpPf)
+
+Owner chose **B** (γγ + reading-3 base V³ with the T³ weight split of the z_D trace, 0.3254 MeV, −58.4 %), and in the next message said rulings are temporary conjectures. Accordingly the three inputs of Q_β = |ε(Δ)|·E₀ are now Lean conjecture classes, with Q_β derived from them (PR #8617, stacked on #8586; `QOU/QBeta/DecayConjectures.lean`, lean-direct exit 0, no sorryAx):
+- C1 `DecayFunctionalIsWeightTrace` (was rulings 09-08 + 11-20), C2 `NucleonElementsAreGammaGammaBase` (V³ for both), C3 `DecayEnergyScale` (posited E₀).
+- `qbeta_eq_of_conjectures`: Q_β = |(q²−1)P(q)/(q⁴(q²+1)³)|·E₀; `qbeta_pos_of_conjectures`: Q_β > 0 on 1 < q ≤ 23/20.
+Open: derive C1 (weak-vertex amplitude → weight-trace difference), C2 (transport #8564's selection to the weight-space rep; derive per-nucleon photon weights φ₀, φ₁ — only the eigenvalue pair is derived, and it gives V³ for both), C3 (E₀ from the mass channel; scale mismatch 945.76 vs ~4.2 MeV). Dashboard re-score not done: proposed as a row labelled conditional on C1–C3, after #8572. Bean stays todo (rule 13a).
