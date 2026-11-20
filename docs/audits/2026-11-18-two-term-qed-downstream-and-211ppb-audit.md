@@ -10,6 +10,17 @@
 
 ## 1. Executive Summary
 
+> **🛑 Pin label corrected 2026-11-20 (PR #8552).** The values quoted below "at
+> $q_0$" — $\overline{\mathrm{tr}}_{\mathrm{conn}}(p,V^3) = -0.00043068071$ and
+> $\Delta\overline{\mathrm{tr}}_{\mathrm{conn}} = +0.00064911326$ (§1, §4.2) — are evaluated at the
+> **muon** pin $q_\mu = 1.10997859564\ldots$, not the proton pin. At the proton pin
+> $q_p = 1.10997858275\ldots$ they are $-0.000430680520$ and $+0.000649112966$
+> (relative shift $4.5\times10^{-7}$; recomputed at 40 dps). No conclusion here moves.
+> Separately, #8552 proves the adjacent insertion $Q_{12}+Q_{23}$ is not braid-covariant and
+> that on $W_p$ its trace equals $-\mathrm{tr}(Q_{13}\,\cdot)$ for every word, so the
+> "zero-parameter derived" label on the figures below is scoped there (bean `qou-qcov`).
+> The values are left as recorded.
+
 This audit executes the two pre-registered 50-dps `mpmath` + exact `sympy` tests required by `qou-eas4` and compiles a complete, file-by-file downstream impact inventory and formalize-first workplan for Epic `qou-9pl8` (upgrading QOU's one-term nucleon mass and $n\text{--}p$ splitting architecture to a two-term strong + electromagnetic decomposition $m_N = m_N^{\mathrm{QCD}} + m_N^{\mathrm{QED}}$ and $\Delta m_{np} = \Delta m_{\mathrm{QCD}} + \Delta m_{\mathrm{QED}}$).
 
 Crucially, following our **Adversarial Anti-Fitting & Single-Functional Operator Consistency Gate** ($\Delta m_{\mathrm{QED}} \equiv M^{\mathrm{QED}}(n) - M^{\mathrm{QED}}(p)$ from a single braid-trace operator on $W_p = (2,1)$ and $W_n = (1,2)$), all post-hoc combinatorial `[2]_q/[3]_q` grid fits (`QOU-P13`, `QED-Q14`, and the $\alpha_{\mathrm{EM}}$-free `QED-Q6b`) are **rejected and excised from derived claims**. In their place, the exact zero-parameter **Borromean $V^3 = (\sigma_1\sigma_2^{-1})^3$ Two-Term & Connected 4th-Order Trace Decomposition** proved in [`NucleonWeightSpaceTwoTerm.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean) provides the single-operator derived prediction across both tests.
