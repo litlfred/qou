@@ -6,7 +6,9 @@ Today the two-term QED correction is primary on the L2 scorecard only because th
 
 **Verdict.** No derived two-term exists in the classes formalised here. Every covariant term through Vassiliev degree 3 vanishes on `V³` or does not depend on the braid at all. Separately, and whatever the term is: a correction that acts only on the proton identity cannot fix `m_μ` without breaking `α_em⁻¹`, because the `α_em` form-B tower pins `q₀` within 0.053 ppb of the proton pin. That evidence puts the μ–p residual in the **muon** relation, not the proton one. So two-term cannot be made primary as a derivation on the proton side. A derived term, if one exists, has to correct the muon carrier (bean `qou-6gf9`).
 
-Lean: [`QEDHigherOrderCovariance.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/QEDHigherOrderCovariance.lean), 17 theorems. Probe: [`two_term_qed_derivation_joint_pin_probe.py`](../../computations/probes/two_term_qed_derivation_joint_pin_probe.py), witness `two-term-qed-derivation-joint-pin.witness.json` (3/3 assertions pass).
+**Update (same day, owner: *"Keep trying to derive and lean prove"*).** §7 derives `c₃` and the degree-0 coefficients `k₁, k₂` along the route the owner named: colour the three strands by `U(1)` charges and expand the coloured invariant. In that class all three are **exactly 0**, at every order, for proton and neutron. So the derivation produces no two-term correction; the scorecard is the one-term scorecard (§7.3).
+
+Lean: [`QEDHigherOrderCovariance.lean`](../../folio/quantum-observable-universe/lean/QOU/BraidsAndKnots/QEDHigherOrderCovariance.lean), 27 theorems. Probe: [`two_term_qed_derivation_joint_pin_probe.py`](../../computations/probes/two_term_qed_derivation_joint_pin_probe.py), witness `two-term-qed-derivation-joint-pin.witness.json` (5/5 assertions pass).
 
 This builds on PR #8552 (`NucleonQEDCovariance`, the commutant of the crossing action) and PR #8557 (`CrossingCovariantQED`, the first-order local insertion). Neither is on `main`, so this file imports only `NucleonWeightSpaceTwoTerm` and `BorromeanPairwiseLinking` and redefines the small amount of shared vocabulary it needs.
 
@@ -86,17 +88,76 @@ Sensitivities at the proton pin: `d ln m_p/d ln q = −20.997`, `d ln m_μ/d ln 
 - §2: about the specific double sum written. Not every bilinear non-local functional is excluded.
 - §3: structural (b) for polynomial charge weights of degree ≤ 2.
 - §5: (a), conditional on `α_em` form B.
-- Not excluded: the even degree-4 `c₃ μ̄²` term; non-local insertions outside §2; a correction to the muon carrier `Vol(4₁)/ℏ_q²`, which is where §5 points.
+- §7: structural (b) within the central-`U(1)` colouring class (`c₃ = k₁ = k₂ = 0`).
+- Not excluded: the even degree-4 `c₃ μ̄²` term from a non-central photon coupling; non-local insertions outside §2; a correction to the muon carrier `Vol(4₁)/ℏ_q²`, which is where §5 points.
+
+## 7. Deriving `c₃` and `k₁, k₂` from the `U(1)`-coloured invariant
+
+**Setting.** Give strand `a` the charge `Q_a` of a central `U(1)` (the photon direction of `𝔲(1) ⊕ 𝔤`). On `V_{Q_a} ⊗ V_{Q_b}` the `U(1)` R-matrix is the scalar `t^{Q_aQ_b}`, so each letter `σ^e` becomes `t^{eQ_aQ_b} σ^e`. The closure adds the ribbon twist `θ^{Q_c² w_c}` for each component `c`, where `w_c` is the self-writhe of `c`. `t` and `θ` are arbitrary units; expanding them as `e^{ε·…}` gives every order of the coupling at once.
+
+### 7.1 The result (Lean §U, sorry-free)
+
+- `finalPos_borromean`: `V³` is a pure braid, so each strand closes on itself and the three components are the three labels.
+- `selfW_borromean`: each component has self-writhe `0`. Every crossing of `V³` is between two different components.
+- `u1Trace_borromean`: the coloured trace equals `tr(V³)` for every `t`, `θ` and every integer charge assignment. `u1Trace_borromean_charge_independent` says the same thing as a statement of independence from the charges.
+
+So the coloured value is a constant function of `(Q₀, Q₁, Q₂)`. Every charge monomial therefore has coefficient `0`. That includes the cubic `Q₀Q₁Q₂` multiplying `μ̄²` (this is `c₃`, bean `qou-qc3d`) and the self-energy `ΣQ²` and `ΣQ_aQ_b` (these are `k₁`, `k₂`, bean `qou-bn8e`).
+
+**Why `k₁ = 0` here.** In this class a single charged strand contributes through two things only. The ribbon twist is `θ^{Q²w}` with `w = 0` on `V³`. The quantum dimension of a one-dimensional `U(1)` representation is `1`. So neither produces a self-energy. A nonzero `k₁` would have to come from a framing other than the blackboard framing of the braid closure, and choosing that framing would be a choice, not a derivation.
+
+**Controls**, both of which fail as required (negative-control `decide` runs are rejected by Lean):
+
+| word | proton `t`-exponent | proton `θ`-exponent | neutron `t`-exponent | neutron `θ`-exponent |
+|---|---|---|---|---|
+| `V³` | **0** | **0** | **0** | **0** |
+| Hopf `σ₁²` | 8/9 | 0 | −4/9 | 0 |
+| `σ₁³` (two strands merge; self-writhe 3) | 4/3 | 4/3 | −2/3 | 4/3 |
+
+(The `σ₁³` row is a mechanism check only. Its merged component carries two different charges in the neutron labelling, so it is not a physical neutron.)
+
+### 7.2 The reason (Lean §K)
+
+In the Kontsevich-integral picture, `log Z` is a sum of struts, which are weighted by linking numbers and framings, and connected trivalent graphs. The tree `Y` among these carries `μ̄₁₂₃` (Habegger–Masbaum). A trivalent vertex is weighted by `B(x, ⁅y, z⁆)`.
+
+- `tripod_central_leg_zero`: for an invariant form `B`, any vertex with a central leg has weight `0`.
+- `tripod_single_direction_zero`: a vertex with all three legs along one direction has weight `0` for every Lie algebra, central or not.
+- Negative control `tripod_noncentral_nonzero`: the `𝔰𝔩₂` vertex `tr(H⁅E,F⁆) = 2 ≠ 0`.
+
+So a central `U(1)` reaches the invariant only through struts, which on `V³` are all `0`. The full factorisation `Z^{𝔲(1)⊕𝔤} = exp(½ħ QᵀLQ) · Z^𝔤`, with `L` the framed linking matrix, is cited (Bar-Natan 1995; Habegger–Masbaum 2000). It is not formalised here; §U proves its consequence on `V³` directly at the Hecke level.
+
+### 7.3 Joint check at the derived value
+
+The derived correction is `0`, so the derived two-term pin is the proton-identity pin and every row is unchanged. From the probe (70 dps):
+
+| row | value at the derived pin |
+|---|---|
+| `m_p` | 0 ppb (this is the pin) |
+| `m_μ` | +211.206 ppb (970× the 100× target) |
+| `α⁻¹` form B | −0.365 ppb |
+| `Q_β`, `m_n`, `Δ_pn` | unchanged (the dashboard values, which miss by ~10⁸ ppb) |
+
+Nothing was tuned. The μ–p residual is untouched, which is consistent with §5: it is not a proton-side term.
+
+### 7.4 Scope
+
+This is (b) **within the class** "central `U(1)` colouring": a charge-diagonal R-matrix together with the ribbon twist. The invariants cited are that `V³` is a pure braid, that its self-writhes are `0`, and that a central leg kills a vertex. Two things are outside the class and are not excluded:
+
+- a **non-central** photon coupling, where the photon direction does not commute with the algebra the strands carry (an electroweak-mixed `𝔲(2)` is the standard example);
+- non-local functionals outside §2.
+
+Only these can give `c₃ ≠ 0`. The tripod lemma already rules out the pure `Q₀Q₁Q₂` vertex along a single direction even there. A nonzero `c₃` would need mixed legs, and so a non-abelian structure constant pairing the photon direction with another generator.
+
+**Can two-term now be primary as a derivation?** No. The route the owner named derives the two-term correction to be exactly `0`.
 
 ## Open gaps
 
-- `qou-qc3d`: derive `c₃` of the even `Q₁Q₂Q₃ μ̄²` term (the only surviving braid-dependent channel; degree 4).
-- `qou-bn8e`: the magnitude of the degree-0 self-energy `k₁`, `k₂`.
+- `qou-qc3d`: `c₃ = 0` is now **derived** in the central-`U(1)` class (§7). It stays open for a non-central photon coupling, which is the only class left that could give a nonzero `c₃`.
+- `qou-bn8e`: `k₁ = k₂ = 0` is **derived** in the central-`U(1)` class with blackboard framing (§7). A nonzero value needs a self-energy from outside that class.
 - `qou-6gf9`: a correction to `m_μ/m_e = Vol(4₁)/ℏ_q²`. §5 is new evidence that the μ–p residual belongs here rather than on the proton.
 
 ## Verification
 
 - `lean -DautoImplicit=false -s 65536` on the file: exit 0. The olean cone was `NucleonWeightSpaceTwoTerm` and `BorromeanPairwiseLinking`, restored read-only.
-- `#print axioms` on all 17 declarations: `[propext, Classical.choice, Quot.sound]`, with no `sorryAx`.
+- `#print axioms` on all declarations checked (the 17 original and the 10 added in §U and §K), with the four combinatorial ones axiom-free: `[propext, Classical.choice, Quot.sound]`, with no `sorryAx`.
 - Negative controls, both of which fail as required: the Hopf factor is not `1`, and the Vandermonde cubic is not identically `0`.
 - Probe: mpmath at 70 dps and exact `Fraction`, with no float on any value path.
