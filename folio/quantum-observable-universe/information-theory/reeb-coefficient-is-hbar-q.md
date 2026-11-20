@@ -30,10 +30,7 @@ directions at every $q$ strictly between the classical and Big Bang limits.
 Reading $\hbar_q$ as a step cost rather than as a distance settles the relation to the
 Planck step. Since $t_P = 1/\hbar_q$ counts Reeb operations per unit of time, the
 product $\hbar_q \cdot t_P$ is the whole circuit, and the two symbols measure a
-fraction and its reciprocal rather than two competing scales. That reading is made
-explicit in [share versus total](#rem:planck-length-share-vs-total); the finite-$q$
-consequence for the induced metric is
-[the Reeb-step-count qualification](#rem:connes-distance-not-reeb-step-count).
+fraction and its reciprocal rather than two competing scales.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the
 substrate wall: it invokes real- or complex-analytic constructs --- real-valued

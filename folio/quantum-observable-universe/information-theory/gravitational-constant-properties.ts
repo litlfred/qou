@@ -20,6 +20,9 @@ export default remark({
     "prop:descent-eigenspaces",
     "rem:julia-hausdorff-dimension-prediction",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The associated Julia-set\nHausdorff-dimension prediction is recorded separately\n([Hausdorff-dimension prediction](#rem:julia-hausdorff-dimension-prediction))." },
+  ],
   foreshadows: ["rem:julia-hausdorff-dimension-prediction"],
   cites: [
     "jacobson1995",

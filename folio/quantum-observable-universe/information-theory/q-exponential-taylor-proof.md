@@ -24,4 +24,4 @@ This verifies the claimed coefficient. Convergence on a neighbourhood of $0$ hol
 | $q \to \infty$ | $q^{\binom{n}{2}}$ | entire, type $\log q$ |
 
 **Relation to physical constants.**
-Evaluating at the QOU substrate value $q_0$ ([local substrate $q$](#prop:local-substrate-q)) yields $e_{q_0}(x) = \sum x^n / [n]_{q_0}!$. This series generates the moments of the Reeb-flow distribution on $\mathcal{S}$. Because $[n]_{q_0}! \sim q_0^{\binom{n}{2}} n!_{q_0^{-1}}$ grows super-exponentially at $q_0 \approx 1.11$, the series **converges for all $x \in \mathbb{C}$**. The $q$-heat kernel and its Gaussian core ([$q$-Gaussian solves the $q$-heat equation](#prop:q-gaussian-solves-q-heat)) are therefore well-defined at the physical value of $q$, avoiding any $|q| \le 1$ restriction.
+Evaluating at the QOU substrate value $q_0$ ([local substrate $q$](#prop:local-substrate-q)) yields $e_{q_0}(x) = \sum x^n / [n]_{q_0}!$. This series generates the moments of the Reeb-flow distribution on $\mathcal{S}$. Because $[n]_{q_0}! \sim q_0^{\binom{n}{2}} n!_{q_0^{-1}}$ grows super-exponentially at $q_0 \approx 1.11$, the series **converges for all $x \in \mathbb{C}$**.

@@ -1,4 +1,4 @@
-The information-theoretic time $\mathcal{T}(q)$ ([information-theoretic time](#def:information-theoretic-time)) rescales to the continuous Reeb time coordinate. It passes through three regimes—discrete, statistical, and continuous—acting as a statistical-mechanical coarse-graining. One treats its microscopic Julia-set dynamics ([Julia-set iteration as the microscopic theory](#rem:information-theoretic-time-julia-microscopic)) and its arrow of time ([arrow of time from the braiding order](#rem:information-theoretic-time-arrow)) separately.
+The information-theoretic time $\mathcal{T}(q)$ ([information-theoretic time](#def:information-theoretic-time)) rescales to the continuous Reeb time coordinate. It passes through three regimes—discrete, statistical, and continuous—acting as a statistical-mechanical coarse-graining.
 
 **Reeb time coordinate.**
 The continuous time coordinate $t$ of the $q$-Reeb flow ([$q$-Reeb flow](#ex:q-reeb-flow)) is the rescaled operation count:
