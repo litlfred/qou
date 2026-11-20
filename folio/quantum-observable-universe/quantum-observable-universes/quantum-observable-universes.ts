@@ -181,6 +181,7 @@ export default chapter({
         "tannaka-krein-reconstruction",
         "substrate-parameter",
         "substrate-parameter-limits-and-lusztig",
+        "q-generic-ground-ring",
         "substrate-parameter-exists",
         "substrate-parameter-exists-proof",
         "substrate-parameter-unique",
