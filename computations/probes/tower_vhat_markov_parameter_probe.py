@@ -192,7 +192,10 @@ def analyse(Z_num: int, N_num: int, label: str) -> dict:
                for s in ("normalized_plancherel", "plancherel")}
 
     # The producer's own V̂, to check the affine form reproduces it.
-    prod = M3A.per_generator_V_hat_3A(Z_num, N_num)
+    # Pinned to the scheme this probe analyses: #8521 moved the default to
+    # "jones_wenzl" (convention D, owner 2026-11-18); the affine-form check below
+    # is a statement about normalized_plancherel and is kept as one.
+    prod = M3A.per_generator_V_hat_3A(Z_num, N_num, weight_scheme="normalized_plancherel")
     prod_V = [mpf(str(float(d["full"]))) for d in prod]
 
     gens = []
