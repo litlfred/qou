@@ -516,7 +516,7 @@ def borromean_v3_e21_strong_qcd_diff_mev(q=None, scale: str = "E0_full") -> mp.m
         return scale_mev * d_qcd
 
 
-def borromean_v3_connected_qed_proton_mev(q=None, weighting: str = "derived") -> mp.mpf:
+def borromean_v3_connected_qed_proton_mev(q=None, weighting: str = "derived", insertion=None) -> mp.mpf:
     """Proton connected 4th-order Borromean V³ electromagnetic term M_p^{QED,conn} in MeV.
 
         M_p^{QED,conn} = −m_e · t_conn(W_p),  t_conn(W_p) = q·tr((Q₁₂+Q₂₃)_p V_p³)/[2]_q³
@@ -524,16 +524,17 @@ def borromean_v3_connected_qed_proton_mev(q=None, weighting: str = "derived") ->
     `NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD`). ≈ +0.0901243 keV at the proton q₀.
     weighting='plain' (1/3) and 'Kp' (q/3) are historical comparisons only.
 
-    NOT A DERIVED PREDICTION: the adjacent insertion (pair 1-3 dropped), the connected
-    subtraction, the sign and the m_e scale are not fixed by the corpus; see
+    INSERTION (owner ruling 2026-11-20 16:44): default (None, derived weighting) is the covariant
+    all-pairs insertion, whose connected part is 0 on V³ — so the canonical value is 0. The
+    figures above are `insertion='adjacent'`, a labelled comparison. See
     `canonical_mass._TWO_TERM_SCOPE_NOTE`.
     """
     from two_term_qtrace_weighting import m_p_qed_conn_mev
     with mp.workdps(max(50, mp.mp.dps)):
-        return m_p_qed_conn_mev(_resolve_q(q), M_E_MEV, weighting)
+        return m_p_qed_conn_mev(_resolve_q(q), M_E_MEV, weighting, insertion)
 
 
-def borromean_v3_connected_qed_diff_mev(q=None, weighting: str = "derived") -> mp.mpf:
+def borromean_v3_connected_qed_diff_mev(q=None, weighting: str = "derived", insertion=None) -> mp.mpf:
     """(n − p) connected 4th-order Borromean V³ QED mass splitting Δm_QED^{conn} in MeV.
 
         Δm_QED^{conn} = −m_e · [t_conn(W_n) − t_conn(W_p)]
@@ -548,10 +549,10 @@ def borromean_v3_connected_qed_diff_mev(q=None, weighting: str = "derived") -> m
     """
     from two_term_qtrace_weighting import delta_m_qed_conn_mev
     with mp.workdps(max(50, mp.mp.dps)):
-        return delta_m_qed_conn_mev(_resolve_q(q), M_E_MEV, weighting)
+        return delta_m_qed_conn_mev(_resolve_q(q), M_E_MEV, weighting, insertion)
 
 
-def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "derived") -> mp.mpf:
+def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "derived", insertion=None) -> mp.mpf:
     """Two-term (strong Kashiwara N=2 + connected 4th-order Borromean QED) Q_β prediction in MeV.
 
     Combines the Convention-D Kashiwara N=2 strong β-decay Q-value `q_beta_kashiwara_n2_mev`
@@ -577,7 +578,7 @@ def q_beta_kashiwara_n2_two_term_mev(q=None, weighting: str = "derived") -> mp.m
             b = mp.sqrt(1 - q_sq / (q_sq + 1) ** 2)
             q_n1 = q_a * mp.cos(alpha - b * hbar_q ** 2 / 2)
             q_n2 = q_n1 * (1 - b ** 2 * hbar_q ** 4)
-        return q_n2 + borromean_v3_connected_qed_diff_mev(q=q, weighting=weighting)
+        return q_n2 + borromean_v3_connected_qed_diff_mev(q=q, weighting=weighting, insertion=insertion)
 
 
 # ── Q_β predictions (FULL framework chain) ──────────────────────
@@ -908,16 +909,20 @@ def derivation_summary() -> dict:
             "Delta_m_QCD_e21_E0_N0_MeV": str(borromean_v3_e21_strong_qcd_diff_mev(scale="E0_N0")),
             "Delta_m_QCD_e21_alpha_bind_MeV": str(borromean_v3_e21_strong_qcd_diff_mev(scale="alpha_bind")),
             "weighting_canonical": "derived quantum trace Tr(K^{⊗3}·)/[2]_q³ (qou-99qc)",
-            "M_p_QED_conn_derived_MeV": str(borromean_v3_connected_qed_proton_mev()),
+            "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): M_p and Delta_m are 0 on V³",
+            "M_p_QED_conn_scored_MeV": str(borromean_v3_connected_qed_proton_mev()),
+            "Delta_m_QED_conn_scored_MeV": str(borromean_v3_connected_qed_diff_mev()),
+            "M_p_QED_conn_derived_adjacent_MeV": str(borromean_v3_connected_qed_proton_mev(insertion="adjacent")),
             "M_p_QED_conn_plain_MeV": str(borromean_v3_connected_qed_proton_mev(weighting="plain")),
             "M_p_QED_conn_Kp_MeV": str(borromean_v3_connected_qed_proton_mev(weighting="Kp")),
-            "Delta_m_QED_conn_derived_MeV": str(borromean_v3_connected_qed_diff_mev()),
+            "Delta_m_QED_conn_derived_adjacent_MeV": str(borromean_v3_connected_qed_diff_mev(insertion="adjacent")),
             "Delta_m_QED_conn_plain_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="plain")),
             "Delta_m_QED_conn_KnKp_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="KnKp")),
             "Delta_m_QED_conn_Kp3_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="Kp3")),
             "Delta_m_QED_conn_q_MeV": str(borromean_v3_connected_qed_diff_mev(weighting="q")),
             "Q_beta_kashiwara_n2_MeV": str(q_beta_kashiwara_n2_mev()),
-            "Q_beta_kashiwara_n2_two_term_derived_MeV": str(q_beta_kashiwara_n2_two_term_mev()),
+            "Q_beta_kashiwara_n2_two_term_scored_MeV": str(q_beta_kashiwara_n2_two_term_mev()),
+            "Q_beta_kashiwara_n2_two_term_derived_adjacent_MeV": str(q_beta_kashiwara_n2_two_term_mev(insertion="adjacent")),
             "Q_beta_kashiwara_n2_two_term_plain_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="plain")),
             "Q_beta_kashiwara_n2_two_term_KnKp_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="KnKp")),
             "Q_beta_kashiwara_n2_two_term_Kp3_MeV": str(q_beta_kashiwara_n2_two_term_mev(weighting="Kp3")),

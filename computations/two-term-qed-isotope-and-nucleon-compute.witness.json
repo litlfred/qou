@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T15:18:31.283451+00:00",
-  "commitSha": "2ceff396f35f5d3184fd8aa883672347bb49ab05",
+  "computedAt": "2026-11-20T16:00:15.154793+00:00",
+  "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
   "assertions": [
     {
       "name": "borromean_v3_connected_diff_matches_closed_form",
@@ -84,11 +84,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 8,
   "computation": "two-term-qed-isotope-and-nucleon-compute",
   "scriptFile": "two_term_qed_isotope_and_nucleon_compute.py",
-  "scriptHash": "fd32399aa7d1",
-  "scriptCommitSha": "a97ce8a6b6321832670f7d1fc2bda47e04a0069b",
+  "scriptHash": "0e1611b801ae",
+  "scriptCommitSha": "f7cdac9eecf2d18a32ce3f3154d9283e339b52e8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -131,7 +131,16 @@
       "delta_mp_qmuon_minus_qproton_ppb": "-243.8602119",
       "tr_conn_Bor_p_at_q0": "-0.000430680520002660242355602368984",
       "candidates": {
-        "borromean_V3_qtrace_derived_weighting": {
+        "borromean_V3_covariant_all_pairs_SCORED": {
+          "M_p_QED_MeV": "0.0",
+          "M_p_QED_keV": "0.0",
+          "q_proton_two_term": "1.10997858275138080759166909561",
+          "dq_vs_qmuon_ppb": "-11.614060",
+          "m_mu_pred_MeV": "105.658397811342",
+          "m_mu_err_ppb": "211.20586",
+          "m_mu_shift_from_1term_ppb": "0.0"
+        },
+        "borromean_V3_qtrace_derived_weighting_adjacent": {
           "M_p_QED_MeV": "9.01242572668167e-5",
           "M_p_QED_keV": "0.0901242572668",
           "q_proton_two_term": "1.10997858782912226580711769446",
@@ -192,7 +201,9 @@
       "tr_conn_Bor_p": "-0.000430680520002660242355602368984",
       "tr_conn_Bor_n": "0.000218432446192849358984871857100",
       "delta_tr_conn_n_minus_p": "0.000649112966195509601340474226083",
-      "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); the *_2term rows below use it; plain/KnKp/Kp3/q are historical",
+      "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); plain/KnKp/Kp3/q are historical",
+      "scored_insertion": "OWNER RULING 2026-11-20 16:44: covariant all-pairs; connected part 0 on V³, so the *_2term rows below equal the 1term rows; the *_derived_* rows are the adjacent insertion (option 1), labelled",
+      "Delta_m_QED_scored_MeV": "0.0",
       "Delta_m_QED_conn_derived_MeV": "-0.0001272243009639021347035417",
       "Delta_m_QED_conn_derived_keV": "-0.127224300963902",
       "Delta_m_QED_conn_plain_MeV": "-0.0003316960446051788476748025",
@@ -215,21 +226,21 @@
       },
       "ruled_zD_qbeta_and_path_c_impact": {
         "qbeta_ruled_1term_MeV": "0.651856310060338",
-        "qbeta_ruled_2term_MeV": "0.651729085759374",
+        "qbeta_ruled_2term_MeV": "0.651856310060338",
         "qbeta_ruled_1term_err_ppb": "166779404.1",
-        "qbeta_ruled_2term_err_ppb": "166942025.7",
+        "qbeta_ruled_2term_err_ppb": "166779404.1",
         "m_n_path_c_1term_MeV": "939.434944688075",
-        "m_n_path_c_2term_MeV": "939.434817463774",
+        "m_n_path_c_2term_MeV": "939.434944688075",
         "m_n_path_c_1term_err_ppb": "138869.7890",
-        "m_n_path_c_2term_err_ppb": "139005.1966",
+        "m_n_path_c_2term_err_ppb": "138869.7890",
         "Delta_pn_path_c_1term_MeV": "1.16285526075034",
-        "Delta_pn_path_c_2term_MeV": "1.16272803644937",
+        "Delta_pn_path_c_2term_MeV": "1.16285526075034",
         "Delta_pn_path_c_1term_err_ppb": "100884535.3",
-        "Delta_pn_path_c_2term_err_ppb": "100982904.7",
+        "Delta_pn_path_c_2term_err_ppb": "100884535.3",
         "Q_N2_convD_1term_MeV": "0.782804713582602",
-        "Q_N2_convD_2term_MeV": "0.782677489281638",
+        "Q_N2_convD_2term_MeV": "0.782804713582602",
         "Q_N2_convD_1term_err_ppm": "602.43315",
-        "Q_N2_convD_2term_err_ppm": "439.81157"
+        "Q_N2_convD_2term_err_ppm": "602.43315"
       },
       "uspin_coleman_glashow_baryon_octet_qed": {
         "lean_theorem": "QOU.Eightfold.USpinColemanGlashowLambdaSigma.coleman_glashow_borromean_qed_mev",
@@ -374,11 +385,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "ec8da6239ed5ab52672264e7649eaf3c3ecd87b49a277f7f07deb6246aa1ceda",
-        "size_bytes": 11562,
-        "commitSha": "48703ab6a34c02b154e4022e0a8b70c187f29478",
-        "scriptCommitSha": "134510f16375bb5c3bd055dc6bf55a95d7fb7466",
-        "computedAt": "2026-11-20T15:14:49.015907+00:00"
+        "sha256": "c896a40dc008c9efff240954a425ff2efe43cb34e839d210ff4a93a6c57684db",
+        "size_bytes": 12078,
+        "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
+        "scriptCommitSha": "2ceff396f35f5d3184fd8aa883672347bb49ab05",
+        "computedAt": "2026-11-20T16:00:10.951584+00:00"
       },
       {
         "path": "codata-2022-validation-masses.witness.json",

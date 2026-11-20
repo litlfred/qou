@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T15:18:46.019434+00:00",
-  "commitSha": "2ceff396f35f5d3184fd8aa883672347bb49ab05",
+  "computedAt": "2026-11-20T16:00:15.591647+00:00",
+  "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 4,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "ef8922f75c74",
-  "scriptCommitSha": "a97ce8a6b6321832670f7d1fc2bda47e04a0069b",
+  "scriptHash": "a599300af349",
+  "scriptCommitSha": "f7cdac9eecf2d18a32ce3f3154d9283e339b52e8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -69,13 +69,13 @@
       {
         "obs": "m_mu",
         "role": "validation",
-        "pred_MeV": "105.658389021",
+        "pred_MeV": "105.658397811",
         "codata_MeV": "105.658375496",
         "sigma_exp_MeV": "2.30000e-6",
-        "err_ppb": "128.0",
+        "err_ppb": "211.2",
         "sigma_exp_ppb": "21.77",
         "target_100x_ppb": "0.2177",
-        "miss_factor": "588.1",
+        "miss_factor": "970.2",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": null,
@@ -88,16 +88,20 @@
         "two_term_qed_diagnostics": {
           "lean_theorem": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3",
           "lean_theorem_weighting": "QOU.BraidsAndKnots.NucleonWeightSpaceQTrace.qtrace_crossing_eq_zD",
+          "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; M_p^QED = 0",
+          "M_p_QED_scored_MeV": "0.0",
+          "m_mu_err_two_term_scored_ppb": "211.2",
           "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/Kp are historical",
+          "option1_adjacent_note": "the *_derived_* fields below are option 1 (adjacent), unscored",
           "M_p_QED_conn_derived_MeV": "9.01242572668167e-5",
           "M_p_QED_conn_derived_keV": "0.0901242572668",
           "q0_two_term_derived": "1.109978587829121908617665",
           "m_mu_pred_two_term_derived_MeV": "105.658389021",
           "m_mu_err_two_term_derived_ppb": "128.0",
           "alternatives_not_scored": {
-            "connected_adjacent_prereg_sign_m_mu_err_ppb": "294.4",
-            "all_pairs_M_p_QED_MeV": "0 (Q_pair = 0 on W_p)",
-            "all_pairs_m_mu_err_ppb": "equals the one-term value"
+            "option1_connected_adjacent_derived_m_mu_err_ppb": "128.0",
+            "option3_4_prereg_sign_m_mu_err_ppb": "294.4",
+            "historical_plain_m_mu_err_ppb": "8.058"
           },
           "M_p_QED_conn_plain_MeV": "0.000220077293803983",
           "M_p_QED_conn_plain_keV": "0.220077293804",
@@ -114,20 +118,23 @@
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
-        "scored_form": "two_term_derived_qtrace_me",
-        "scored_form_previous": "two_term_plain_me",
-        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term, m_e scale). WEIGHTING DERIVED 2026-11-20: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace), replacing the 1/3-normalised 'plain' entry. Still selection-scoped in three respects the corpus does not fix: adjacent insertion, connected subtraction, sign −m_e·t. Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
+        "scored_form": "two_term_covariant_all_pairs_qtrace",
+        "scored_form_previous": [
+          "two_term_plain_me",
+          "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"
+        ],
+        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
       },
       {
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
-        "pred_MeV": "0.651729085759",
+        "pred_MeV": "0.651856310060",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "1.669e+8",
+        "err_ppb": "1.668e+8",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "2.141e+7",
+        "miss_factor": "2.139e+7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": null,
@@ -138,13 +145,17 @@
         "compute_truncation_ppb": "1.534e-51",
         "compute_output_dps": 60,
         "two_term_qed_diagnostics": {
+          "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; Delta_m = 0",
+          "Delta_m_QED_scored_MeV": "0.0",
+          "pred_two_term_scored_MeV": "0.651856310060",
+          "err_two_term_scored_ppb": "1.668e+8",
           "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/KnKp/Kp3/q are historical",
-          "Delta_m_QED_conn_derived_MeV": "-0.000127224300963902",
-          "Delta_m_QED_conn_derived_keV": "-0.127224300964",
-          "pred_two_term_derived_MeV": "0.651729085759",
-          "err_two_term_derived_ppb": "1.669e+8",
+          "Delta_m_QED_conn_derived_adjacent_MeV": "-0.000127224300963902",
+          "Delta_m_QED_conn_derived_adjacent_keV": "-0.127224300964",
+          "pred_two_term_derived_adjacent_MeV": "0.651729085759",
+          "err_two_term_derived_adjacent_ppb": "1.669e+8",
           "alternatives_not_scored": {
-            "preregistered_raw_adjacent": {
+            "preregistered_raw_adjacent_option3": {
               "Delta_m_MeV": "-0.0375433508915675",
               "pred_MeV": "0.614312959168",
               "err_ppb": "2.148e+8"
@@ -154,12 +165,12 @@
               "pred_MeV": "0.595350447271",
               "err_ppb": "2.390e+8"
             },
-            "connected_all_pairs": {
-              "Delta_m_MeV": "0.0",
-              "pred_MeV": "0.651856310060",
-              "err_ppb": "1.668e+8"
+            "connected_adjacent_derived_option1": {
+              "Delta_m_MeV": "-0.000127224300963902",
+              "pred_MeV": "0.651729085759",
+              "err_ppb": "1.669e+8"
             },
-            "connected_adjacent_prereg_sign": {
+            "connected_adjacent_prereg_sign_option4": {
               "Delta_m_MeV": "0.000127224300963902",
               "pred_MeV": "0.651983534361",
               "err_ppb": "1.666e+8"
@@ -182,20 +193,23 @@
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
-        "scored_form": "two_term_derived_qtrace_me",
-        "scored_form_previous": "two_term_plain_me",
-        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term, m_e scale). WEIGHTING DERIVED 2026-11-20: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace), replacing the 1/3-normalised 'plain' entry. Still selection-scoped in three respects the corpus does not fix: adjacent insertion, connected subtraction, sign −m_e·t. Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
+        "scored_form": "two_term_covariant_all_pairs_qtrace",
+        "scored_form_previous": [
+          "two_term_plain_me",
+          "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"
+        ],
+        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
       },
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.434817464",
+        "pred_MeV": "939.434944688",
         "codata_MeV": "939.565421940",
         "sigma_exp_MeV": "4.80000e-7",
-        "err_ppb": "1.390e+5",
+        "err_ppb": "1.389e+5",
         "sigma_exp_ppb": "0.5109",
         "target_100x_ppb": "0.005109",
-        "miss_factor": "2.721e+7",
+        "miss_factor": "2.718e+7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": "INHERITS THE RULED Q_beta BASE: this value is m_p(substrate) + Q_beta + m_e, and the Q_beta term is now |tr_M(Delta_S)(z_D)|*E0 at z_D = q^3/(q^2+1) -- the functional the owner ruled on 2026-09-08 (convention D, two-row truncation, D7), re-scored here on the 2026-09-12 authorisation. IT CARRIES ZERO c_k RUNGS: no ladder has been derived on an admissible base (qou-cds1, blocked on the phase qou-pdix), and on the retired z = 1 base the five rungs bought ~4.5 orders. So this row is NOT convention D's accuracy -- it is the ruled base before any ladder exists, and a second re-score is authorised once qou-pdix closes (bean qou-iagg). Price of the move: qbeta/qbeta-zd-rescore-price.witness.json.",
@@ -206,13 +220,17 @@
         "compute_truncation_ppb": "1.064e-54",
         "compute_output_dps": 60,
         "two_term_qed_diagnostics": {
+          "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; Delta_m = 0",
+          "Delta_m_QED_scored_MeV": "0.0",
+          "pred_two_term_scored_MeV": "939.434944688",
+          "err_two_term_scored_ppb": "1.389e+5",
           "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/KnKp/Kp3/q are historical",
-          "Delta_m_QED_conn_derived_MeV": "-0.000127224300963902",
-          "Delta_m_QED_conn_derived_keV": "-0.127224300964",
-          "pred_two_term_derived_MeV": "939.434817464",
-          "err_two_term_derived_ppb": "1.390e+5",
+          "Delta_m_QED_conn_derived_adjacent_MeV": "-0.000127224300963902",
+          "Delta_m_QED_conn_derived_adjacent_keV": "-0.127224300964",
+          "pred_two_term_derived_adjacent_MeV": "939.434817464",
+          "err_two_term_derived_adjacent_ppb": "1.390e+5",
           "alternatives_not_scored": {
-            "preregistered_raw_adjacent": {
+            "preregistered_raw_adjacent_option3": {
               "Delta_m_MeV": "-0.0375433508915675",
               "pred_MeV": "939.397401337",
               "err_ppb": "1.788e+5"
@@ -222,12 +240,12 @@
               "pred_MeV": "939.378438825",
               "err_ppb": "1.990e+5"
             },
-            "connected_all_pairs": {
-              "Delta_m_MeV": "0.0",
-              "pred_MeV": "939.434944688",
-              "err_ppb": "1.389e+5"
+            "connected_adjacent_derived_option1": {
+              "Delta_m_MeV": "-0.000127224300963902",
+              "pred_MeV": "939.434817464",
+              "err_ppb": "1.390e+5"
             },
-            "connected_adjacent_prereg_sign": {
+            "connected_adjacent_prereg_sign_option4": {
               "Delta_m_MeV": "0.000127224300963902",
               "pred_MeV": "939.435071912",
               "err_ppb": "1.387e+5"
@@ -244,11 +262,12 @@
           "primary_ruled_zD_score_untouched": true,
           "substrate_identity_m_n_1term_MeV": "939.565893068",
           "substrate_identity_m_n_1term_err_ppb": "501.4",
-          "substrate_identity_m_n_2term_derived_MeV": "939.565765844",
-          "substrate_identity_m_n_2term_derived_err_ppb": "366.0",
+          "substrate_identity_m_n_2term_scored_MeV": "939.565893068",
+          "substrate_identity_m_n_2term_scored_err_ppb": "501.4",
+          "substrate_identity_m_n_2term_derived_adjacent_err_ppb": "366.0",
           "substrate_identity_m_n_2term_plain_MeV": "939.565561372",
           "substrate_identity_m_n_2term_plain_err_ppb": "148.4",
-          "substrate_identity_residual_reduction_pct": "27.00"
+          "substrate_identity_residual_reduction_pct": "0.0"
         },
         "one_term": {
           "pred_MeV": "939.434944688",
@@ -257,20 +276,23 @@
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
-        "scored_form": "two_term_derived_qtrace_me",
-        "scored_form_previous": "two_term_plain_me",
-        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term, m_e scale). WEIGHTING DERIVED 2026-11-20: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace), replacing the 1/3-normalised 'plain' entry. Still selection-scoped in three respects the corpus does not fix: adjacent insertion, connected subtraction, sign −m_e·t. Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
+        "scored_form": "two_term_covariant_all_pairs_qtrace",
+        "scored_form_previous": [
+          "two_term_plain_me",
+          "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"
+        ],
+        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
       },
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.16272803645",
+        "pred_MeV": "1.16285526075",
         "codata_MeV": "1.29333251000",
         "sigma_exp_MeV": "5.60803e-7",
-        "err_ppb": "1.010e+8",
+        "err_ppb": "1.009e+8",
         "sigma_exp_ppb": "433.6",
         "target_100x_ppb": "4.336",
-        "miss_factor": "2.329e+7",
+        "miss_factor": "2.327e+7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
         "note": "INHERITS THE RULED Q_beta BASE: this value is m_p(substrate) + Q_beta + m_e, and the Q_beta term is now |tr_M(Delta_S)(z_D)|*E0 at z_D = q^3/(q^2+1) -- the functional the owner ruled on 2026-09-08 (convention D, two-row truncation, D7), re-scored here on the 2026-09-12 authorisation. IT CARRIES ZERO c_k RUNGS: no ladder has been derived on an admissible base (qou-cds1, blocked on the phase qou-pdix), and on the retired z = 1 base the five rungs bought ~4.5 orders. So this row is NOT convention D's accuracy -- it is the ruled base before any ladder exists, and a second re-score is authorised once qou-pdix closes (bean qou-iagg). Price of the move: qbeta/qbeta-zd-rescore-price.witness.json.",
@@ -281,13 +303,17 @@
         "compute_truncation_ppb": "8.600e-52",
         "compute_output_dps": 60,
         "two_term_qed_diagnostics": {
+          "scored": "OWNER RULING 2026-11-20 16:44: covariant all-pairs, derived weighting; Delta_m = 0",
+          "Delta_m_QED_scored_MeV": "0.0",
+          "pred_two_term_scored_MeV": "1.16285526075",
+          "err_two_term_scored_ppb": "1.009e+8",
           "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³; plain/KnKp/Kp3/q are historical",
-          "Delta_m_QED_conn_derived_MeV": "-0.000127224300963902",
-          "Delta_m_QED_conn_derived_keV": "-0.127224300964",
-          "pred_two_term_derived_MeV": "1.16272803645",
-          "err_two_term_derived_ppb": "1.010e+8",
+          "Delta_m_QED_conn_derived_adjacent_MeV": "-0.000127224300963902",
+          "Delta_m_QED_conn_derived_adjacent_keV": "-0.127224300964",
+          "pred_two_term_derived_adjacent_MeV": "1.16272803645",
+          "err_two_term_derived_adjacent_ppb": "1.010e+8",
           "alternatives_not_scored": {
-            "preregistered_raw_adjacent": {
+            "preregistered_raw_adjacent_option3": {
               "Delta_m_MeV": "-0.0375433508915675",
               "pred_MeV": "1.12531190986",
               "err_ppb": "1.299e+8"
@@ -297,12 +323,12 @@
               "pred_MeV": "1.10634939796",
               "err_ppb": "1.446e+8"
             },
-            "connected_all_pairs": {
-              "Delta_m_MeV": "0.0",
-              "pred_MeV": "1.16285526075",
-              "err_ppb": "1.009e+8"
+            "connected_adjacent_derived_option1": {
+              "Delta_m_MeV": "-0.000127224300963902",
+              "pred_MeV": "1.16272803645",
+              "err_ppb": "1.010e+8"
             },
-            "connected_adjacent_prereg_sign": {
+            "connected_adjacent_prereg_sign_option4": {
               "Delta_m_MeV": "0.000127224300963902",
               "pred_MeV": "1.16298248505",
               "err_ppb": "1.008e+8"
@@ -325,9 +351,12 @@
           "beats_1x_experimental": false,
           "beats_100x_experimental": false
         },
-        "scored_form": "two_term_derived_qtrace_me",
-        "scored_form_previous": "two_term_plain_me",
-        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term, m_e scale). WEIGHTING DERIVED 2026-11-20: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace), replacing the 1/3-normalised 'plain' entry. Still selection-scoped in three respects the corpus does not fix: adjacent insertion, connected subtraction, sign −m_e·t. Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
+        "scored_form": "two_term_covariant_all_pairs_qtrace",
+        "scored_form_previous": [
+          "two_term_plain_me",
+          "two_term_derived_qtrace_me (adjacent, PR #8591 first pass)"
+        ],
+        "two_term_scope": "OWNER-RULED PRIMARY 2026-11-20 (two-term). WEIGHTING DERIVED: Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs Q12+Q23+Q13, whose connected part is 0 on V³ (deltaT_allPairs_connected_eq_zero), so the scored two-term value EQUALS the one-term value. Options 1 (adjacent), 3 and 4 are unscored labelled rows. Historical record follows: Selection-scoped: non-covariant adjacent insertion (whole proton signal = dropped pair 1-3), scale m_e chosen among m_e/E0/alpha_bind/alpha_em*E0; covariant all-pairs projection gives b = 0. One-term value under `one_term`."
       },
       {
         "obs": "alpha_em_inv",
@@ -485,11 +514,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "ec8da6239ed5ab52672264e7649eaf3c3ecd87b49a277f7f07deb6246aa1ceda",
-        "size_bytes": 11562,
-        "commitSha": "48703ab6a34c02b154e4022e0a8b70c187f29478",
-        "scriptCommitSha": "134510f16375bb5c3bd055dc6bf55a95d7fb7466",
-        "computedAt": "2026-11-20T15:14:49.015907+00:00"
+        "sha256": "c896a40dc008c9efff240954a425ff2efe43cb34e839d210ff4a93a6c57684db",
+        "size_bytes": 12078,
+        "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
+        "scriptCommitSha": "2ceff396f35f5d3184fd8aa883672347bb49ab05",
+        "computedAt": "2026-11-20T16:00:10.951584+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",

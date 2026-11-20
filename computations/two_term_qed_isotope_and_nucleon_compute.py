@@ -195,7 +195,7 @@ def compute_all() -> dict:
         mp_qed_bor_Kp = q0 * m_e * abs(tr_conn_Bor_p)
         # DERIVED weighting Tr(K^{⊗3}·)/[2]_q³ (bean qou-99qc); plain / Kp kept as comparisons.
         from two_term_qtrace_weighting import m_p_qed_conn_mev, delta_m_qed_conn_mev
-        mp_qed_bor_derived = m_p_qed_conn_mev(q0, m_e, "derived")
+        mp_qed_bor_derived = m_p_qed_conn_mev(q0, m_e, "derived", "adjacent")
 
         # Re-solve q_proton under two-term proton mass m_p^exp = m_p^QCD(q) + M_p^QED:
         #   m_p^QCD(q_new)/m_e = m_p^exp/m_e - M_p^QED/m_e
@@ -233,7 +233,8 @@ def compute_all() -> dict:
             "delta_mp_qmuon_minus_qproton_ppb": fmt(delta_mp_qmu_minus_qp_ppb, 10),
             "tr_conn_Bor_p_at_q0": fmt(tr_conn_Bor_p, 30),
             "candidates": {
-                "borromean_V3_qtrace_derived_weighting": _eval_mup_shift(mp_qed_bor_derived),
+                "borromean_V3_covariant_all_pairs_SCORED": _eval_mup_shift(m_p_qed_conn_mev(q0, m_e)),
+                "borromean_V3_qtrace_derived_weighting_adjacent": _eval_mup_shift(mp_qed_bor_derived),
                 "derived_borromean_V3_plain": _eval_mup_shift(mp_qed_bor_plain),
                 "derived_borromean_V3_Kp_weighted": _eval_mup_shift(mp_qed_bor_Kp),
                 "derived_single_crossing_hecke_trace": _eval_mup_shift(mp_qed_hecke_1crossing),
@@ -267,12 +268,14 @@ def compute_all() -> dict:
         dm_qed_KnKp = -m_e * delta_tr_conn_KnKp
         dm_qed_Kp3 = -m_e * delta_tr_conn_Kp3
         dm_qed_q = -m_e * delta_tr_conn_q
-        dm_qed_derived = delta_m_qed_conn_mev(q0, m_e, "derived")
+        dm_qed_derived = delta_m_qed_conn_mev(q0, m_e, "derived", "adjacent")  # option 1, labelled
+        dm_qed_scored = delta_m_qed_conn_mev(q0, m_e)  # ruled covariant all-pairs: 0 on V³
 
         # Verify canonical_mass.py helpers match 80-dps direct computation to 50 digits
-        cm_mp_qed = proton_qed_self_energy_borromean_mev(weighting="plain")
-        cm_dm_qed = np_qed_splitting_borromean_conn_mev(weighting="plain")
-        cm_dm_qed_derived = np_qed_splitting_borromean_conn_mev()
+        cm_mp_qed = proton_qed_self_energy_borromean_mev(weighting="plain", insertion="adjacent")
+        cm_dm_qed = np_qed_splitting_borromean_conn_mev(weighting="plain", insertion="adjacent")
+        cm_dm_qed_derived = np_qed_splitting_borromean_conn_mev(insertion="adjacent")
+        cm_dm_qed_scored = np_qed_splitting_borromean_conn_mev()  # ruled covariant all-pairs: 0
 
         # 2a. Impact on substrate-identity canonical neutron mass (Convention-D 2-strand skein):
         m_p_can = mp.mpf(str(nucleon_mass_mev("p")))
@@ -297,17 +300,17 @@ def compute_all() -> dict:
         )
         tr_nuc11_D = mp.mpf(str(_census["data"]["per_candidate"]["nuc11_interleaved"]["tr_conv_D"]))
         qbeta_ruled_1term = abs(tr_nuc11_D) * E0_tower
-        qbeta_ruled_2term = qbeta_ruled_1term + dm_qed_derived
+        qbeta_ruled_2term = qbeta_ruled_1term + dm_qed_scored
         qbeta_ruled_1term_err_ppb = abs(qbeta_ruled_1term - q_beta_exp) / q_beta_exp * mp.mpf("1e9")
         qbeta_ruled_2term_err_ppb = abs(qbeta_ruled_2term - q_beta_exp) / q_beta_exp * mp.mpf("1e9")
 
         mn_path_c_1term = m_p_can + qbeta_ruled_1term + m_e
-        mn_path_c_2term = mn_path_c_1term + dm_qed_derived
+        mn_path_c_2term = mn_path_c_1term + dm_qed_scored
         mn_path_c_1term_err_ppb = abs(mn_path_c_1term - m_n_exp) / m_n_exp * mp.mpf("1e9")
         mn_path_c_2term_err_ppb = abs(mn_path_c_2term - m_n_exp) / m_n_exp * mp.mpf("1e9")
 
         dpn_path_c_1term = qbeta_ruled_1term + m_e
-        dpn_path_c_2term = dpn_path_c_1term + dm_qed_derived
+        dpn_path_c_2term = dpn_path_c_1term + dm_qed_scored
         dpn_path_c_1term_err_ppb = abs(dpn_path_c_1term - dm_np_exp_from_masses) / dm_np_exp_from_masses * mp.mpf("1e9")
         dpn_path_c_2term_err_ppb = abs(dpn_path_c_2term - dm_np_exp_from_masses) / dm_np_exp_from_masses * mp.mpf("1e9")
 
@@ -318,7 +321,7 @@ def compute_all() -> dict:
         u_kash = b_kash * (hbar_q0 ** 2)
         Q_N1_D = Q_A * mp.cos(alpha_phase - u_kash / 2)
         Q_N2_D = Q_N1_D * (1 - u_kash ** 2)
-        Q_N2_D_2term = Q_N2_D + dm_qed_derived
+        Q_N2_D_2term = Q_N2_D + dm_qed_scored
         Q_N2_D_1term_err_ppm = (Q_N2_D - q_beta_exp) / q_beta_exp * mp.mpf("1e6")
         Q_N2_D_2term_err_ppm = (Q_N2_D_2term - q_beta_exp) / q_beta_exp * mp.mpf("1e6")
 
@@ -341,7 +344,9 @@ def compute_all() -> dict:
             "tr_conn_Bor_p": fmt(tr_conn_Bor_p, 30),
             "tr_conn_Bor_n": fmt(tr_conn_Bor_n, 30),
             "delta_tr_conn_n_minus_p": fmt(delta_tr_conn_plain, 30),
-            "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); the *_2term rows below use it; plain/KnKp/Kp3/q are historical",
+            "weighting_canonical": "derived Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); plain/KnKp/Kp3/q are historical",
+            "scored_insertion": "OWNER RULING 2026-11-20 16:44: covariant all-pairs; connected part 0 on V³, so the *_2term rows below equal the 1term rows; the *_derived_* rows are the adjacent insertion (option 1), labelled",
+            "Delta_m_QED_scored_MeV": fmt(dm_qed_scored, 25),
             "Delta_m_QED_conn_derived_MeV": fmt(dm_qed_derived, 25),
             "Delta_m_QED_conn_derived_keV": fmt(dm_qed_derived * mp.mpf(1000), 15),
             "Delta_m_QED_conn_plain_MeV": fmt(dm_qed_plain, 25),

@@ -47,6 +47,14 @@
     "Delta_EM_all_pairs_MeV": "-0.0565058627887970393970933845337",
     "lattice_comparison_only": "EM part of m_n − m_p ≈ −0.6 to −1.0 MeV (not a target)"
   },
+  "canonical_scored": {
+    "ruling": "OWNER 2026-11-20 16:44: score option 2 (covariant all-pairs, derived weighting)",
+    "insertion": "all_pairs",
+    "M_p_QED_conn_MeV": "0.0",
+    "Delta_m_QED_conn_MeV": "0.0",
+    "consequence": "two-term rows equal the one-term rows on V³",
+    "static_word_independent_part_not_scored_MeV": "-0.0565058627887970393970933845337"
+  },
   "by_insertion": {
     "adjacent_raw": {
       "t_W_p": "-0.0001763687716875391780572452588956552861891",
@@ -88,7 +96,7 @@
   "connected_adjacent_Delta_m_by_weighting": {
     "derived": {
       "Delta_m_QED_conn_keV": "-0.127224300963902134703541684538",
-      "label": "CANONICAL (derived quantum trace)"
+      "label": "derived weighting, ADJACENT insertion: labelled comparison (option 1)"
     },
     "plain": {
       "Delta_m_QED_conn_keV": "-0.331696044605178847674802546956",
@@ -112,7 +120,7 @@
     "plain": "0.220077293803982939852293904394",
     "Kp": "0.244281082672304224280466211996"
   },
-  "not_fixed_by_corpus": [
+  "not_fixed_by_corpus_before_ruling": [
     "insertion: adjacent Q12+Q23 (pre-registered, not braid-covariant #8552) vs all-pairs",
     "raw (pre-registered) vs connected (the compute's scored object)",
     "overall sign: +m_e·t (pre-registered) vs −m_e·t (compute connected rows, selected)"

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-11-20T15:14:49.015907+00:00",
-  "commitSha": "48703ab6a34c02b154e4022e0a8b70c187f29478",
+  "computedAt": "2026-11-20T16:00:10.951584+00:00",
+  "commitSha": "e91fbecea025081a656f69f751df1678ec0da598",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 8,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "b9bbba7cdebc",
-  "scriptCommitSha": "134510f16375bb5c3bd055dc6bf55a95d7fb7466",
+  "scriptHash": "300238e140fe",
+  "scriptCommitSha": "2ceff396f35f5d3184fd8aa883672347bb49ab05",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -140,6 +140,11 @@
       "tr_e21_QAdjn": "-0.4440926095333612989858128672900247129230645474682",
       "tr_e21_QAdj_diff": "-0.43960955999834655156796636913541155543689843220422",
       "weighting_canonical": "derived: Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); *_MeV without suffix, *_Kp, *_KnKp, *_plain are historical",
+      "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): connected part 0 on V³; *_derived_* = adjacent (option 1), labelled",
+      "M_p_QED_conn_scored_MeV": "0.0",
+      "Delta_m_QED_conn_scored_MeV": "0.0",
+      "Q_beta_two_term_derived_adjacent_MeV": "0.7826774655084230101662889",
+      "q_two_term_borromean_scored": "1.1099785827513808075916690956107688798744991218736",
       "M_p_QED_conn_derived_MeV": "0.0000901242572668167005355174",
       "Delta_m_QED_conn_derived_MeV": "-0.0001272243009639021347035417",
       "M_p_QED_conn_MeV": "0.0002200772938039829398522939",
@@ -147,15 +152,15 @@
       "Delta_m_QED_conn_MeV": "-0.0003316960446051788476748025",
       "Delta_m_QED_conn_KnKp_MeV": "-0.000344840456101401187346409",
       "Q_beta_two_term_plain_MeV": "0.7824729937647817334533176",
-      "Q_beta_two_term_MeV": "0.7826774655084230101662889",
-      "Q_beta_two_term_residual_ppm": "439.590241695",
-      "m_n_two_term_MeV": "939.5657658435226703741063",
-      "m_n_two_term_derived_MeV": "939.5657658435226703741063",
+      "Q_beta_two_term_MeV": "0.7828046898093869123009924",
+      "Q_beta_two_term_residual_ppm": "602.211797999",
+      "m_n_two_term_MeV": "939.565893067823634276241",
+      "m_n_two_term_derived_adjacent_MeV": "939.5657658435226703741063",
       "q_two_term_borromean_derived": "1.1099785878291231819349164390040016027877615118272",
       "dq_two_term_derived_vs_muon_ppb": "-7.0394293146",
       "mup_tension_two_term_derived_ppb": "128.01454681",
       "mup_tension_two_term_derived_sigma": "5.75420608795",
-      "m_n_two_term_residual_ppb": "366.024030514",
+      "m_n_two_term_residual_ppb": "501.431632788",
       "q_two_term_borromean_plain": "1.1099785951508859990875652035986826212141034805412",
       "q_two_term_borromean_k_weighted": "1.1099785965145670927758217612084780842969279530571",
       "dq_two_term_plain_vs_muon_ppb": "-0.443119398451",
@@ -175,7 +180,7 @@
         "trace_QAdj_connected_diff_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3",
         "trace_e21_QAdj_diff_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21_QAdj_diff_borromeanV3"
       },
-      "note": "Tier A non-breaking diagnostic block (bean qou-7ph7): evaluates the connected 4th-order Borromean V³ = (σ₁σ₂⁻¹)³ quark charge traces proved sorry-free in QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean. WEIGHTING DERIVED 2026-11-20 (qou-99qc): Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace), giving M_p^QED,conn = +0.0901243 keV and Δm_QED^conn = -0.1272243 keV (m_e scale); m_n_two_term / Q_beta_two_term use it. Historical 1/3-normalised 'plain': +0.220077 / -0.331696 keV. NOT DERIVED PREDICTIONS (bean qou-99qc, 2026-11-19): the word dependence comes only from dropping quark pair 1-3 (summed over all pairs the insertion is word-independent, trace_QPair_diff_word), and the scale/weighting were chosen against the μ–p and Q_β targets. Records of selected combinations; they do not close either residual."
+      "note": "Tier A non-breaking diagnostic block (bean qou-7ph7): evaluates the connected 4th-order Borromean V³ = (σ₁σ₂⁻¹)³ quark charge traces proved sorry-free in QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean. WEIGHTING DERIVED 2026-11-20 (qou-99qc): Tr(K^{⊗3}·)/[2]_q³ (NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs, connected part 0 on V³, so m_n_two_term / Q_beta_two_term equal the one-term values. Adjacent comparison (option 1): M_p^QED,conn = +0.0901243 keV, Δm = -0.1272243 keV. Historical 1/3-normalised adjacent 'plain': +0.220077 / -0.331696 keV. NOT DERIVED PREDICTIONS (bean qou-99qc, 2026-11-19): the word dependence comes only from dropping quark pair 1-3 (summed over all pairs the insertion is word-independent, trace_QPair_diff_word), and the scale/weighting were chosen against the μ–p and Q_β targets. Records of selected combinations; they do not close either residual."
     },
     "upstream_witness_hashes": [
       {

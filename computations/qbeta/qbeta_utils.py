@@ -548,10 +548,13 @@ def _load_default_q_codata_me(dps: int) -> tuple[mpf, mpf, mpf]:
 
 
 def borromean_v3_connected_qed_diff_over_me(
-    q: mpf, weighting: str = "derived"
+    q: mpf, weighting: str = "derived", insertion: str | None = None
 ) -> mpf:
     """Dimensionless connected 4th-order Borromean V³ QED splitting Δm_QED^{conn} / m_e.
 
+    Default (derived weighting, insertion None): the ruled covariant all-pairs insertion (owner
+    2026-11-20 16:44), whose connected part is 0 on V³, so this returns 0. With
+    insertion='adjacent' (labelled comparison):
     = −[t_conn(W_n) − t_conn(W_p)] with the DERIVED quantum-trace weighting Tr(K^{⊗3}·)/[2]_q³
     (`NucleonWeightSpaceQTrace.deltaT_adjacent_connected_eq`, bean qou-99qc):
         −(q−1)⁴(q+1)⁴(q²+2)(2q⁴+1)/(9q⁴(q²+1)³).
@@ -570,7 +573,8 @@ def borromean_v3_connected_qed_diff_over_me(
             f"expected one of {_VALID_QED_WEIGHTINGS}"
         )
     from two_term_qtrace_weighting import connected_trace_diff
-    return -connected_trace_diff(q, weighting)
+    # insertion None + derived -> the ruled covariant all-pairs (owner 2026-11-20 16:44): 0 on V³.
+    return -connected_trace_diff(q, weighting, insertion)
 
 
 def borromean_v3_connected_qed_diff_mev(

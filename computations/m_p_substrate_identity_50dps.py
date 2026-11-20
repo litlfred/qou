@@ -412,14 +412,18 @@ def main():
     # Weighting: DERIVED quantum trace Tr(K^{⊗3}·)/[2]_q³ (bean qou-99qc). The 1/3-normalised
     # entries below ('plain', 'Kp', 'KnKp') are kept as labelled historical comparisons.
     from two_term_qtrace_weighting import m_p_qed_conn_mev, delta_m_qed_conn_mev
-    M_p_QED_conn_derived_MeV = m_p_qed_conn_mev(q, m_e, "derived")
-    Delta_m_QED_conn_derived_MeV = delta_m_qed_conn_mev(q, m_e, "derived")
+    # Scored: covariant all-pairs (owner 2026-11-20 16:44) -> 0 on V³. Adjacent = option 1, labelled.
+    M_p_QED_conn_scored_MeV = m_p_qed_conn_mev(q, m_e)
+    Delta_m_QED_conn_scored_MeV = delta_m_qed_conn_mev(q, m_e)
+    M_p_QED_conn_derived_MeV = m_p_qed_conn_mev(q, m_e, "derived", "adjacent")
+    Delta_m_QED_conn_derived_MeV = delta_m_qed_conn_mev(q, m_e, "derived", "adjacent")
     M_p_QED_conn_MeV = m_e * abs(tr_conn_p)
     M_p_QED_conn_Kp_MeV = m_e * q * abs(tr_conn_p)
     Delta_m_QED_conn_MeV = -m_e * tr_conn_diff
     Delta_m_QED_conn_KnKp_MeV = -m_e * (tr_conn_n / q - q * tr_conn_p)
     Q_beta_two_term_plain_MeV = Q_beta_pred + Delta_m_QED_conn_MeV
-    Q_beta_two_term_MeV = Q_beta_pred + Delta_m_QED_conn_derived_MeV
+    Q_beta_two_term_MeV = Q_beta_pred + Delta_m_QED_conn_scored_MeV
+    Q_beta_two_term_derived_adjacent_MeV = Q_beta_pred + Delta_m_QED_conn_derived_MeV
     m_n_two_term_MeV = m_p_pred + Q_beta_two_term_MeV + m_e
     res_Q_beta_two_term_ppm = (Q_beta_two_term_MeV - Q_beta_codata) / Q_beta_codata * mpf("1e6")
     res_m_n_two_term_ppb = (m_n_two_term_MeV - m_n_codata) / m_n_codata * mpf("1e9")
@@ -427,7 +431,8 @@ def main():
     # Two-term proton pin & μ–p tension diagnostics
     vol50 = vol_4_1_at(50)
     q_muon_50 = q_muon_at(50)
-    q_two_term_derived = q_two_term_borromean_at(50, weighting="derived")
+    q_two_term_scored = q_two_term_borromean_at(50)
+    q_two_term_derived = q_two_term_borromean_at(50, weighting="derived", insertion="adjacent")
     q_two_term_plain = q_two_term_borromean_at(50, weighting="plain")
     q_two_term_kwt = q_two_term_borromean_at(50, weighting="Kp")
     mmu_me_two_term_derived = vol_4_1_at(50) / (((q_two_term_derived - 1) / q_two_term_derived) ** 2)
@@ -600,6 +605,11 @@ def main():
         "tr_e21_QAdjn": mp.nstr(tr_e21_QAdjn, 50),
         "tr_e21_QAdj_diff": mp.nstr(tr_e21_QAdj_diff, 50),
         "weighting_canonical": "derived: Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); *_MeV without suffix, *_Kp, *_KnKp, *_plain are historical",
+        "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): connected part 0 on V³; *_derived_* = adjacent (option 1), labelled",
+        "M_p_QED_conn_scored_MeV": mp.nstr(M_p_QED_conn_scored_MeV, 25),
+        "Delta_m_QED_conn_scored_MeV": mp.nstr(Delta_m_QED_conn_scored_MeV, 25),
+        "Q_beta_two_term_derived_adjacent_MeV": mp.nstr(Q_beta_two_term_derived_adjacent_MeV, 25),
+        "q_two_term_borromean_scored": mp.nstr(q_two_term_scored, 50),
         "M_p_QED_conn_derived_MeV": mp.nstr(M_p_QED_conn_derived_MeV, 25),
         "Delta_m_QED_conn_derived_MeV": mp.nstr(Delta_m_QED_conn_derived_MeV, 25),
         "M_p_QED_conn_MeV": mp.nstr(M_p_QED_conn_MeV, 25),
@@ -610,7 +620,7 @@ def main():
         "Q_beta_two_term_MeV": mp.nstr(Q_beta_two_term_MeV, 25),
         "Q_beta_two_term_residual_ppm": mp.nstr(res_Q_beta_two_term_ppm, 12),
         "m_n_two_term_MeV": mp.nstr(m_n_two_term_MeV, 25),
-        "m_n_two_term_derived_MeV": mp.nstr(m_n_two_term_MeV, 25),
+        "m_n_two_term_derived_adjacent_MeV": mp.nstr(m_p_pred + Q_beta_two_term_derived_adjacent_MeV + m_e, 25),
         "q_two_term_borromean_derived": mp.nstr(q_two_term_derived, 50),
         "dq_two_term_derived_vs_muon_ppb": mp.nstr(dq_two_term_derived_vs_muon_ppb, 12),
         "mup_tension_two_term_derived_ppb": mp.nstr(mup_tension_two_term_derived_ppb, 12),
@@ -648,9 +658,10 @@ def main():
             "connected 4th-order Borromean V³ = (σ₁σ₂⁻¹)³ quark charge traces proved "
             "sorry-free in QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean. "
             "WEIGHTING DERIVED 2026-11-20 (qou-99qc): Tr(K^{⊗3}·)/[2]_q³ "
-            "(NucleonWeightSpaceQTrace), giving M_p^QED,conn = +0.0901243 keV and "
-            "Δm_QED^conn = -0.1272243 keV (m_e scale); m_n_two_term / Q_beta_two_term use "
-            "it. Historical 1/3-normalised 'plain': +0.220077 / -0.331696 keV. NOT DERIVED "
+            "(NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs, "
+            "connected part 0 on V³, so m_n_two_term / Q_beta_two_term equal the one-term values. "
+            "Adjacent comparison (option 1): M_p^QED,conn = +0.0901243 keV, Δm = -0.1272243 keV. "
+            "Historical 1/3-normalised adjacent 'plain': +0.220077 / -0.331696 keV. NOT DERIVED "
             "PREDICTIONS (bean qou-99qc, 2026-11-19): the word dependence comes only "
             "from dropping quark pair 1-3 (summed over all pairs the insertion is "
             "word-independent, trace_QPair_diff_word), and the scale/weighting were "
