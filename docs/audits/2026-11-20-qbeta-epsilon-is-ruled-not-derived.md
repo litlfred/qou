@@ -268,3 +268,97 @@ A parallel workstream reached the same label-C picture independently, and goes f
   §11 (−77 %) is the complementary construction.
 * Briefing to all workstreams: `docs/coordination/2026-11-20-w2-qbeta-ud-briefing.md`; posted on #8526 and on the open
   qou-99qc / photon PRs.
+
+## 13. Walking the chain from the fundamentals (owner request, same day)
+
+Owner: *"start from the fundamentals of the pairing and the categorical lagrangian and the
+non-abelian Stokes and see where it comes out if you walk through the whole thing."*
+
+### 13.1 The chain, as the corpus states it
+
+1. **Frobenius pairing** (`def:frobenius-pairing`): `∫_A ∘ μ`, non-degenerate. For
+   `O(SU(2))` it is the Haar pairing, spin-`j` weight `1/(2j+1)`.
+2. **Categorical Lagrangian and action** (`def:categorical-lagrangian`,
+   `prop:qou-canonical-action`): `𝔖_q = tr(𝓛_q)`, `tr = ∫_A ∘ tr_A`. Nothing in these
+   blocks names a functional on Hecke elements or an energy scale. They reach `Q_β` only
+   through the mass identity.
+3. **Mass identity and non-abelian holonomy** (`def:mass-identity`): the mass of a cycle is
+   `‖∫_A(u · hol(w))‖`, with `hol(w)` the ordered (multiplicative-integral) product of the
+   segment transports. On `V^{⊗n}` each crossing is `T(σ^{±1}) = q^{±1} − e`. This is the
+   non-abelian Stokes step: the cycle's value is the ordered product, and a single crossing
+   flip changes it by `σ − σ⁻¹ = h·1`, the skein.
+4. **Trace on braids** (`prop:feynman-categorical-trace`): for `C = Rep(SU_q(2))`,
+   `∫_A ρ(β)` is the quantum trace on `V^{⊗n}` normalised by `dim_q V^{⊗n}`. Its block
+   weights are `dim_q(V_λ)/[2]^n`, i.e. the Markov trace at `z_D = q³/(q²+1)`.
+5. **Braid classes**: the mass of a braid class is the framing-corrected form
+   `(1+q²)^n q^{−n−2w(β)} ∫_A ρ(β)`, not the raw trace.
+
+### 13.2 What comes out
+
+**(a) The walk lands on the ruled `z_D`.** Steps 1–4 give `ε` = the quantum trace of
+`Rep(SU_q(2))` on `V^{⊗3}`. That is `z_D`: `Q_β = 0.44470` MeV (−43.157 %) with the
+order-zero `E₀`, `0.44911` MeV (−42.594 %) with the tower `E₀`. The ruling of 2026-09-08 is
+therefore *derivable* from the corpus's own chain once `C = Rep(SU_q(2))` and `V` the
+fundamental are granted. It was recorded as a ruling; the chain supplies the derivation.
+
+**(b) One closed form covers every rank.** Replace `SU_q(2)` by `SU_q(N)` and write
+`a = q^N`, `q = e^λ`. On `Δ_S` the quantum-trace functional is
+
+$$
+  |\varepsilon_N(\Delta_S)| = \frac{h^2}{2}\,\frac{a^2+1}{a^2-1} = \frac{h^2}{2}\coth(N\lambda).
+$$
+
+`QOU/QBeta/QuantumTraceFamilyCoth.lean`, sorry-free over a generic field of characteristic
+≠ 2 (`qtrace_family_closed_form`, `_rank_one`, `_rank_two`). Every row of the table was
+already on record under another name:
+
+| rank `N` | what it is | `Q_β`, order-zero `E₀` | tower `E₀` |
+|---|---|---|---|
+| 1 | augmentation (`z = q`) | 0.87989 (+12.47 %) | +13.59 % |
+| 2 | **`z_D`, the ruling** | 0.44470 (−43.16 %) | −42.59 % |
+| 3 | colour `SU_q(3)` | 0.30172 (−61.43 %) | −61.05 % |
+| ∞ | standard trace `τ(σ_w) = δ_{w,e}` | 0.09148 (−88.31 %) | −88.19 % |
+
+The `N → ∞` limit is the **canonical symmetrising form of `H_n`**, the actual Frobenius form
+of the Hecke algebra as a symmetric algebra (the Haar analogue of step 1). It is the
+furthest from CODATA. `coth` is decreasing, so **no integer rank lands**: CODATA sits
+between `N = 1` and `N = 2`. As a diagnostic only, the real rank that would land is
+`N* = 1.1258` (order zero) / `1.1371` (tower). It is not a natural value and is not adopted.
+
+Scope note: the `z_D` trace is degenerate on `H_3` (it kills the sign block), so it is a
+Frobenius form only on the Temperley–Lieb quotient `TL_3`, where `Δ_S` is unaffected
+(`neutron-qvalue-symbolic`, sign-block paragraph).
+
+**(c) The framing-corrected mass does not see the crossing sign.** At `z_D`, `σ` (writhe 1)
+and `σ⁻¹` (writhe −1) both have framed trace `q/(q²+1) = 1/[2]`
+(`framed_sigma_eq_framed_sigmaInv`). On three strands their closures are the same
+two-component unlink, so this is isotopy, not an accident. Consequence: under step 5's
+definition of mass, a `uu` crossing and a `dd` crossing are equal, and the typed-crossing
+`Δ` is zero. It is nonzero only under the *raw* (blackboard-framed) trace, which is what
+`neutron-qvalue-symbolic` uses. So in this construction **`Q_β` is entirely a writhe
+effect**. The framed form also does not extend to a linear functional consistent with the
+rewrite `σ⁻¹ = σ − h` (framed value of `σ − h·1` is `1/[2] − h ≠ 1/[2]`). The corpus uses
+the framed form for masses and the raw form for `Q_β`; this is a tension in the
+definitions, recorded here, not resolved.
+
+**(d) The energy scale is not on the chain.** No step above produces `E₀ =
+m_e/(q(q−1))`. On the ruled trace CODATA needs `7.3641` MeV `= 1.7592 × E₀` — the same
+`F_required = 1.75924` already in AGENTS.md §Canonical derivation chain. The mass channel's
+own scale for a unit of trace, `2 m_μ [3]_q!/q³ = 945.76` MeV, sends the same `Δ` to
+`100.47` MeV. The canonical neutron mass does not use it either: `canonical_mass` sets
+`m_n = m_p + Q_β + m_e` with `Q_β` from the retired mixed base, so the mass channel has no
+`n − p` mechanism of its own.
+
+### 13.3 Where this leaves `qou-99qc`
+
+- Derived: `ε = z_D` follows from the chain given `C = Rep(SU_q(2))`. This is the ruled
+  value, −43 %.
+- Not derived, and the chain does not supply it: the scale `E₀`, and the choice between the
+  raw and the framed trace for a crossing-sign difference.
+- Excluded by the closed form, scope (b) (invariant: `coth` is monotone in `N`): every
+  quantum-trace functional of a rank-`N` fundamental, for integer `N ≥ 2`, lies at or below
+  −43 %. Changing the gauge rank cannot close the gap; only `N = 1` lies above CODATA.
+- Open: whether the 1.759 belongs to the scale or to the functional. The fundamentals
+  derive the functional and leave the scale unexplained, which points at the scale.
+
+Probe: `computations/qbeta/qbeta_quantum_trace_rank_family_probe.py` (5/5 exact checks).
