@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.18",
-  "computedAt": "2026-11-20T08:32:13.132795+00:00",
-  "commitSha": "1bbb417cdbc95eeb76d74e44fa098b049bcadf06",
+  "computedAt": "2026-11-20T14:05:50.071063+00:00",
+  "commitSha": "bb2c9f45fedcb461cad5d7ce9019a086e037e563",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 326,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "7e9a9466db63",
-  "scriptCommitSha": "dbd3107ccc097bf4f591fadc2e1edc0340e24a58",
+  "scriptCommitSha": "bb2c9f45fedcb461cad5d7ce9019a086e037e563",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -386,11 +386,11 @@
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "b1ca46c2f55f3bc2718a147f34914fbaa0109d9c12157eac2777d132111d9899",
-        "size_bytes": 10332,
-        "commitSha": "2dbd0b5cde411a3d35c971f05af3cd21549e56a4",
-        "scriptCommitSha": "dc12b128ccc4bb1cccf496d04e3d548db0c4501a",
-        "computedAt": "2026-11-18T21:28:32.729499+00:00"
+        "sha256": "19f3384f0a2de6b276fbddad5d68b68d5c272d0ef17b7dc9a962ebf976f47526",
+        "size_bytes": 10747,
+        "commitSha": "bf8dbcbd4a72c4020f9192b91b13cf72de8e916e",
+        "scriptCommitSha": "bf8dbcbd4a72c4020f9192b91b13cf72de8e916e",
+        "computedAt": "2026-11-20T07:43:41.568552+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
