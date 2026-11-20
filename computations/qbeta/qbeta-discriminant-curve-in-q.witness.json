@@ -2,7 +2,7 @@
   "computation": "qbeta-discriminant-curve-in-q",
   "engine": "sympy+mpmath",
   "description": "qou-cds1 Step 26. CORRECTS a method error running through Steps 21-25: all of them evaluated spectra at the single point q = q_0, which cannot distinguish a perfect-square discriminant from an irreducible degree-18 one. Carrying q symbolically (`hm_sym`, mirroring `build_nucleon_nf`'s 11-crossing braid-order word, validated to 1e-16) gives the exact spectral curves. ALSO CORRECTS Step 25's claim that Delta_L could not be asked this question: there was no gap, only a function not looked for. Results: tr is bar-odd, det and disc bar-even as exact identities, so there is NO q^-n twist and disc is a polynomial in x = q + 1/q. disc_S(x) = x^2 - 4 = h^2 is a perfect square (genus 0) and is >= 0 for every real q, so the short model is hyperbolic everywhere, not just at q_0. disc_L(x) has degree 18, is squarefree with four irreducible factors, and y^2 = disc_L is hyperelliptic of GENUS 8 (genus 4 on the x^2 quotient) — not genus 1, so there is no elliptic curve and no tower of them. The Hecke tower adds no eigenvalue by branching, verified on all five H_4 shapes. The classical limit is EXACTLY 2 pi / 3, because the leading direction of Delta_L at q = 1 is -(1 + T_1 T_0) and T_1 T_0 is the S_3 3-cycle; the trefoil word e^- enters only at second order. Delta_L is elliptic exactly for q in (1, 1.3797326616) with q_0 29 % of the way up, and theta sweeps to 0 at the wall, so the required ladder phase IS attained — at q* = 1.3781 (z_C) / 1.3796 (z_D), both ~3e11 sigma_q0 from the calibrated q_0. The avenue is closed by the CODATA proton pin. The cyclotomic tower q = zeta_N is a genuine tower with phi_3 = phi_6 = 2 pi / 3 exactly, but its minimum over N <= 120 still exceeds the required phase by 24x.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "symbolic_nucleon_nf_mirrors_the_canonical_builder",
@@ -726,13 +726,13 @@
     "corrects": "Steps 21-25 evaluated every spectrum at q = q_0 alone; and Step 25's write-up wrongly said Delta_L could not be carried symbolically.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted. q* is recorded as a fact about the curve, never as a candidate q."
   },
-  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "durationMs": 0,
   "scriptFile": "qbeta_discriminant_curve_in_q_probe.py",
-  "scriptHash": "c28c0b2406af",
-  "scriptCommitSha": "8831b57c83f7bea30d19f8fd25392170fc402070",
-  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
-  "computedAt": "2026-09-03T05:10:57.634921+00:00",
+  "scriptHash": "823035b1428a",
+  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "computedAt": "2026-11-20T16:19:15.455247+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561"
 }

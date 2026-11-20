@@ -2,7 +2,7 @@
   "name": "qbeta-c3-muon-anchor-codata-edition-attribution",
   "engine": "mpmath",
   "description": "qou-cds1 Finding B: the 3.4e-4 muon c_3 disagreement is the CODATA-2018 -> 2022 m_mu/m_e edition change (206.7682830 -> 206.7682827) amplified by the extractor's 1/u^3 = 1.6e6 lever, not a third value or a computation error. Residual after the edition is 5.0e-9, the corpus literal's own 9-sig-fig rounding. Prices the whole c_3 target against the CAL-1/2/3 published uncertainties.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "inputs_are_full_published_precision_no_float_truncation",
@@ -169,14 +169,14 @@
     "opens": "(i) the registry's 9-figure c_3 literals exceed what the CAL inputs support by ~8 figures; (ii) the corpus muon c_3 is on a superseded CODATA edition, as are the 336 files carrying the 17-digit ancestor q in this channel. Both are re-pin work sequenced behind PR #5500 and qou-1c4y; NOT done here.",
     "scope": "Scope-(a), convention C only -- the frame the corpus values were extracted in. No convention adjudicated, no c_k value changed, no constant re-pinned."
   },
-  "gitCommit": "82b2535ce8fd55fc989eeb275e2885337e252006",
+  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "durationMs": 0,
   "scriptFile": "qbeta_c3_muon_anchor_codata_edition_attribution_probe.py",
-  "scriptHash": "7649b69ad624",
-  "scriptCommitSha": "636c1541c0f0c980125232760388498d6bfe0b18",
-  "commitSha": "82b2535ce8fd55fc989eeb275e2885337e252006",
-  "computedAt": "2026-09-03T15:49:04.806129+00:00",
-  "engineVersion": "mpmath 1.4.1",
+  "scriptHash": "1919d9f1a470",
+  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "computedAt": "2026-11-20T16:19:09.307548+00:00",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "ambiguous",
   "q0Value": "1.10997859564273904668179512938",
   "q0AnchorReason": "reads BOTH pins on purpose: proton q_at() + muon q_muon_at() @ CODATA 2022"

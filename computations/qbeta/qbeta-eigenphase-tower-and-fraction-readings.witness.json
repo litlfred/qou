@@ -2,7 +2,7 @@
   "computation": "qbeta-eigenphase-tower-and-fraction-readings",
   "engine": "mpmath",
   "description": "qou-cds1 Step 24: both readings of the 0.0566-vs-2.0204 gap are CLOSED. CHECK A -- across k=3..6 and every partition, the ONLY distinct |arg| of a complex eigenvalue of rho_lambda(Delta_L) is 2.02044502, in blocks of dimension 1..16. The reason is structural and is standard representation theory: an H_3 element acts block-diagonally on the H_3-isotypic decomposition of lambda|H_3, so the tower REPEATS the H_3 spectrum and cannot add to it -- closing this reading for every H_3-induced operator, not just Delta_L. CHECK B -- theta_eig/theta_req = 35.700, not an integer; seven pre-declared fraction candidates all miss, the closest (theta/22) by 62 %. The non-numerological version settles it: theta_req is (z-1)h/2 - u/2, a function of z, so reading theta_eig as a ladder phase requires z = 20.37 or -18.29 against admissible z_D = 0.6127, z_C = 0.4993 -- different ranges, not a rational factor. What remains open is the one thing Step 22's correction opened: a genuinely level-k operator not induced from H_3.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "one_eigenphase_only_across_the_whole_tower",
@@ -46,7 +46,7 @@
     "anti_fit": "candidate list fixed before computing; all reported"
   },
   "data": {
-    "q0": "1.1099785827513808",
+    "q0": "1.1099785827513808076",
     "theta_eig": "2.02044502",
     "theta_required": "0.056594737543307",
     "ratio": "35.7002277545",
@@ -240,14 +240,14 @@
     "leaves_open": "a genuinely level-k operator not induced from H_3 \u2014 the one thing Step 22's correction opened, and by Check A the only place in the tower a different phase could come from.",
     "scope": "Scope-(a). The block-diagonal argument is standard rep theory, cited not proved; what is verified is that the measured spectra agree with it at every block k=3..6. Nothing derived, proposed or wired."
   },
-  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "durationMs": 0,
   "scriptFile": "qbeta_eigenphase_tower_and_fraction_readings_probe.py",
-  "scriptHash": "8b4e02ea78df",
-  "scriptCommitSha": "c2611a1c3af9abf793b57bb1d855d7a1d015eea5",
-  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
-  "computedAt": "2026-09-03T05:10:58.108248+00:00",
-  "engineVersion": "mpmath 1.4.1",
+  "scriptHash": "3379fd0b264d",
+  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "computedAt": "2026-11-20T16:19:19.253299+00:00",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808"
+  "q0Value": "1.10997858275138080759166909561"
 }

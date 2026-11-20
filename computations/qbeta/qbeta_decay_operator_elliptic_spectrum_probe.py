@@ -279,7 +279,7 @@ def main() -> int:
             "coincidence is flagged and not pursued: theta sits 0.012 % from |c_3(muon)| at "
             "the SUPERSEDED CODATA-2018 anchor, with no mechanism and a documented precedent "
             "for the trap. Lean: QOU/QBeta/TraceRealSpectrumComplex.lean, sorry-free."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": all_passed,
         "parameters": {

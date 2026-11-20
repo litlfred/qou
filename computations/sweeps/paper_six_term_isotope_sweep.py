@@ -1547,7 +1547,7 @@ if __name__ == "__main__":
             "prop:y-lambda-closed-form-wenzl-bridge",
             "prop:y-lambda-recipe-from-partition",
             # Fix #4 (S1) — CAL-3 calibration inputs (Q_β, CODATA masses).
-            "prop:three-calibration-inputs",
+            "def:three-calibration-discipline",
             # Fix #6 (S2) — per-nucleon shift additive linearity threaded
             # into the multi-isotope sweep's per-nucleon term assembly.
             "prop:per-nucleon-shift-additive-linearity",

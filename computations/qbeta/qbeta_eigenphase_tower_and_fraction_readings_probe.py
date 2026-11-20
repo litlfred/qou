@@ -263,7 +263,7 @@ def main() -> int:
             "against admissible z_D = 0.6127, z_C = 0.4993 -- different ranges, not a "
             "rational factor. What remains open is the one thing Step 22's correction "
             "opened: a genuinely level-k operator not induced from H_3."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 30,

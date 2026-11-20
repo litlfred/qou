@@ -2,7 +2,7 @@
   "computation": "qbeta-bond-decay-rates-from-transfer-spectrum",
   "engine": "sympy+mpmath",
   "description": "qou-cds1 Step 28. Step 27 stopped because an all-pairs coupling needs a falloff rate per bond type and three fitted rates would be three free parameters. They are not free. The math-ideal CAL triple is (m_e, D_beta, D_pi) at orders h^0/h^2/h^3 — CAL-2 and CAL-3 are the neutron beta-decay and pion decay WIDTHS, i.e. two of the three calibration points are decay rates by definition. And `chi_monotone_transfer._alpha_beta` reduces each fine-Bratteli transfer step to O_g = alpha.sigma_g + beta.I with spectrum E_1 = Prod(q+d_j), E_2 = Prod(-1/q+d_j), so the falloff across one bond is the spectral ratio E_2/E_1. In closed form: -1/q^2 for p-p, -q^2 for n-n, EXACTLY -1 for the averaged p-n. THEY ARE NOT INDEPENDENT: r_pp.r_nn = 1 = r_pn^2 and r_nn/r_pp = q^4, so three rates carry one degree of freedom. AND THEY ARE SECTOR-INDEXED: under the bar involution p-p and n-n exchange while p-n is fixed; their product is bar-even (the taxonomy's STRONG cosh channel) and their ratio bar-odd (its WEAK sinh channel). The colour-weighted p-n bond's departure from -1 is tanh(ln q).delta + O(delta^2), and tanh(ln q_0) = 0.103963710 is exactly the odd-to-even ratio the taxonomy also quotes for its EM coupling — but that match is FORMAL and is WITHDRAWN (qou-i9gk, 2026-09-01): `q` alone has the same odd/even ratio. Predicted 1.4302400e-4 against measured 1.4301377e-4, agreeing to 7.2e-5. delta vanishes to order h^3, CAL-3's order. What this does NOT do: supply the coupling word — a non-adjacent nucleon pair still has no single generator to sit on.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "bond_rates_are_closed_forms_and_like_nucleon_bonds_coincide",
@@ -74,13 +74,13 @@
     "does_not_close": "The coupling WORD. A non-adjacent nucleon pair has no single generator to sit on, so building the all-pairs braid remains a construction.",
     "scope": "Scope-(a). Nothing wired, proposed or readmitted."
   },
-  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "durationMs": 0,
   "scriptFile": "qbeta_bond_decay_rates_from_transfer_spectrum_probe.py",
-  "scriptHash": "f3e8bbd2ab83",
-  "scriptCommitSha": "8831b57c83f7bea30d19f8fd25392170fc402070",
-  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
-  "computedAt": "2026-09-03T05:10:51.139937+00:00",
+  "scriptHash": "80c08bcef6d9",
+  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "computedAt": "2026-11-20T16:19:09.038219+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561"
 }

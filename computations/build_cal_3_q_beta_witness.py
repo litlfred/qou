@@ -48,7 +48,7 @@ def main() -> int:
         "m_n - m_p - m_e computed from the validation witness, but that "
         "identity is a CONSISTENCY CHECK, not the definition."
     )
-    w.set_content_block("prop:three-calibration-inputs")
+    w.set_content_block("def:three-calibration-discipline")
     w.set_audit_only("docs/audits/2026-05-10-1ppb-workplan-update.md")
 
     w.add_parameter("calibration_id", "CAL-3")

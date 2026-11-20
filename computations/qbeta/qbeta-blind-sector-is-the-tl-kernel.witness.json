@@ -1,8 +1,8 @@
 {
   "computation": "qbeta-blind-sector-is-the-tl-kernel",
   "engine": "mpmath",
-  "description": "qou-i9gk hole 1, settling Step 27's headline. The 'trace-blind sector' is the KERNEL of H_n(q) -> TL_n(q): omega_lambda = 0 <=> l(lambda) > 2 exactly at n = 3..8, and sum d^2 over <=2-row blocks = Catalan(n) at every n. Since TL_n = End_{U_q(sl2)}(V^(x)n), that kernel acts as ZERO on the N = 2 physical space — it IS the Schur-Weyl row cap, not a separate vanishing. Consequence: Step 27's 'hidden information' reading contradicts the convention it was measured in, because FibreCategoricalTraceForcesJones shows convention D is forced by exactly the premise (MassTraceIsFibreCategorical, open, bean qou-n1dj) that empties the blind sector. Under the premise there are no states there; under its negation D is not forced. Also: N_min(lambda) = l(lambda), so Step 27's 0.0252506 (in (3,2,1)) needs N >= 3 and its 0.0195531 (in (2,2,1,1)) needs N >= 4 — the 0.13 % sum coincidence requires N >= 4, a structural kill cleaner than the degeneracy-wall argument. What survives is that (3,2,1) is an l = 3 block carrying the largest binding character, so Step 27 measured what an N = 3 extension would carry — which is what qou-fvzm says the super-pairwise term requires.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "description": "qou-i9gk hole 1, settling Step 27's headline. The 'trace-blind sector' is the KERNEL of H_n(q) -> TL_n(q): omega_lambda = 0 <=> l(lambda) > 2 exactly at n = 3..8, and sum d^2 over <=2-row blocks = Catalan(n) at every n. Since TL_n = End_{U_q(sl2)}(V^(x)n), that kernel acts as ZERO on the N = 2 physical space — it IS the Schur-Weyl row cap, not a separate vanishing. Consequence: Step 27's 'hidden information' reading contradicts the convention it was measured in, because FibreCategoricalTraceForcesJones shows convention D is forced by exactly the premise (MassTraceIsFibreCategorical, open, bean qou-n1dj) that empties the blind sector. Under the premise there are no states there; under its negation D is not forced. Also: N_min(lambda) = l(lambda), so Step 27's 0.0252506 (in (3,2,1)) needs N >= 3 and its 0.0195531 (in (2,2,1,1)) needs N >= 4 — the 0.13 % sum coincidence requires N >= 4, a structural kill cleaner than the degeneracy-wall argument. What survives is that (3,2,1) is an l = 3 block carrying the largest binding character, so AND the N = 3 reading is withdrawn too (same-day correction): it cited qou-fvzm's REOPENED paragraph, which that COMPLETED bean's line 18 closes — the N>=3 route is UNAVAILABLE, not merely hard, and the missing additive term is NOT A HECKE-TRACE OBJECT AT ALL. Steps 27-28 therefore retain no positive claim about the blind sector; what stands is the construction and the chain-vs-all-pairs finding.",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "blind_sector_is_the_TL_kernel_at_every_n",
@@ -12,7 +12,7 @@
     {
       "name": "step27_reading_contradicts_the_convention_it_used",
       "passed": true,
-      "detail": "`FibreCategoricalTraceForcesJones.lean` (bean qou-n1dj) proves that the l > 2 channels are absent at N = 2 and that y_(1^3) = 0 forces JONES, with one open premise between them: that the mass trace IS the categorical trace of the fibre action on V^(x)n. Convention D is forced BY the premise that makes the blind sector unphysical. Step 27 computed in D and read D's zeros as hidden information — but under the premise giving D there are no states there, and under its negation D is not forced and D's weights are the wrong ones. The reading fails either way as stated; what it reduces to is qou-n1dj"
+      "detail": "`FibreCategoricalTraceForcesJones.lean` (bean qou-n1dj, RESOLVED — `todo` only because closing a bean is a human action) proves that the l > 2 channels are absent at N = 2 and that y_(1^3) = 0 forces JONES, with a class between them asserting the mass trace IS the categorical trace of the fibre action on V^(x)n — a class only because no quantum Schur-Weyl development exists in the tree; its CONTENT is already asserted by the mass chapter. Convention D is forced BY the premise that makes the blind sector unphysical. Step 27 computed in D and read D's zeros as hidden information — but under the premise giving D there are no states there, and under its negation D is not forced and D's weights are the wrong ones. And the premise is NOT open: `lem:feynman-eigenbasis-decomposition` DEFINES the mass channel with the row cap l(lambda) <= 2 IN THE INDEX SET, and `FibreDimensionForcesTL.lean` (sorry-free) proves z.[N]_q = q^N so a 2-dim fibre leaves no residual trace freedom. The blind sector is unphysical FULL STOP — Step 27's headline is false, not conditional"
     },
     {
       "name": "the_two_small_phases_need_N3_and_N4_respectively",
@@ -20,9 +20,9 @@
       "detail": "a block acquires states exactly when N reaches l(lambda). Step 27's 0.0252506 sits in (3,2,1) (l = 3, needs N >= 3) and its 0.0195531 in (2,2,1,1) (l = 4, needs N >= 4), so the 0.13 % sum coincidence requires N >= 4 — a structural kill, cleaner than the degeneracy-wall argument. The corpus has dim V = 2, N = 3 open (qou-8pl3), and nothing motivating N = 4"
     },
     {
-      "name": "what_survives_is_a_measurement_of_an_N3_extension",
+      "name": "the_N3_extension_reading_is_withdrawn_too",
       "passed": true,
-      "detail": "qou-fvzm says the super-pairwise binding term REQUIRES N >= 3 for row-cap reasons, and (3,2,1) — carrying both the largest binding character (-9.598) and the smaller of the two phases — is an l = 3 block. So Step 27 measured what an N = 3 extension would carry. That is weaker and different from what Step 27 claimed, and it is the part that survives"
+      "detail": "this probe first claimed Step 27's blind-sector characters measure \"what an N = 3 extension would carry\", citing qou-fvzm. WITHDRAWN: qou-fvzm is COMPLETED and its line 18 CLOSES the paragraph that claim rests on: \"my reopened form ('N>=3 is necessary for the >=3-body term, making the N=3-route load-bearing for binding') is closed -- the route is UNAVAILABLE, not merely hard\", and \"THE MISSING ADDITIVE TERM IS NOT A HECKE-TRACE OBJECT AT ALL\". Moving to N=3 re-weights channels the mass pipeline already evaluates (y_(2,1)/y_(3) = q[2]_q[N-1]_q/[N+2]_q differs at every q), so it is a regression risk, not an opening. So Steps 27-28 retain NO positive claim about the blind sector. What stands from that arc is the construction (Delta_bind = P.(I-1).N, validated to 5.4e-15, genuinely H_6-valued) and the chain-vs-all-pairs structural finding"
     }
   ],
   "allPassed": true,
@@ -276,22 +276,22 @@
       ]
     ],
     "sum_coincidence_requires_N": 4,
-    "open_premise": "MassTraceIsFibreCategorical (bean qou-n1dj)"
+    "premise_status": "NOT open — qou-n1dj resolved; the mass chapter's lem:feynman-eigenbasis-decomposition carries the row cap in its index set, and FibreDimensionForcesTL.lean (sorry-free) proves z.[N]_q = q^N"
   },
   "context": {
     "axis": "qou-i9gk hole 1: is Step 27's trace-blind sector physical?",
-    "answer": "It is the TL kernel, so at N = 2 it acts as zero on the physical space. Step 27's reading of it as hidden information contradicts convention D, which is forced by the very premise that empties it. The headline reduces to the open premise qou-n1dj, and the 0.13 % sum coincidence separately requires N >= 4.",
+    "answer": "It is the TL kernel, so at N = 2 it acts as zero on the physical space. Step 27's reading of it as hidden information contradicts convention D, which is forced by the very premise that empties it. The headline is NOT open — qou-n1dj is resolved (`todo` only because closing a bean is a human action), the mass chapter's lem:feynman-eigenbasis-decomposition DEFINES the decomposition with the row cap in its index set, and FibreDimensionForcesTL.lean (sorry-free) proves z.[N]_q = q^N. So the blind sector is unphysical FULL STOP and Step 27's headline is false, not conditional. The 0.13 % sum coincidence separately requires N >= 4.",
     "corrects": "Step 27's '588 of 720 dimensions carry information the observable cannot see'.",
     "scope": "Scope-(a). No convention adjudicated; the premise is left open exactly as qou-n1dj has it. No N >= 3 extension proposed."
   },
-  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "durationMs": 0,
   "scriptFile": "qbeta_blind_sector_is_the_tl_kernel_probe.py",
-  "scriptHash": "da699d8623a6",
-  "scriptCommitSha": "8831b57c83f7bea30d19f8fd25392170fc402070",
-  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
-  "computedAt": "2026-09-03T05:10:50.426210+00:00",
-  "engineVersion": "mpmath 1.4.1",
+  "scriptHash": "a539ad1f5c92",
+  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "computedAt": "2026-11-20T16:19:08.306826+00:00",
+  "engineVersion": "mpmath 1.3.0",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561"
 }

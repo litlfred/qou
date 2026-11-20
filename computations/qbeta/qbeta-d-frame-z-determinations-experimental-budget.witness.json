@@ -2,7 +2,7 @@
   "computation": "qbeta-d-frame-z-determinations-experimental-budget",
   "engine": "sympy+mpmath",
   "description": "qou-cds1: the four determinations of the Markov parameter z, each priced against the CAL-1/2/3 CODATA-2022 published uncertainties by recomputing both ends of every gap together (so the q0 correlation survives). The mass channel does NOT confirm the derived cap -- the quoted 0.0203 % is 9.49 sigma -- and that 9.49 is the mu-p substrate tension and the c_3 cross-anchor swing in different coordinates: three corpus facts, one measurement. c_2 = -1 is a 1.6-sigma empirical statement at z_C (not a theorem, and not a 1.76 % miss) and is excluded at 773 sigma under D. Solving implied-c_2 = -1 for z gives a FOURTH determination, 0.499110 +- 0.000132, which is 1.60 sigma from z_C and 863 sigma from the cap: the ladder's anchor independently measures z and selects C. Hence there is no D-frame anchor and the ladder's FORM must change, not its parameter. Scope-(a); nothing derived, wired or readmitted.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "control_reproduces_the_committed_determinations",
@@ -153,13 +153,13 @@
     "corrects": "the standing reading that mass 'essentially confirms' the cap and so localises the anomaly to decay: mass-vs-cap is 9.49 sigma. Both channels disagree with the derived cap; decay disagrees 5.8e4 times harder.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted; no convention adjudicated; no c_k value changed. A z landing near an inadmissible point is TENSION, not permission -- one_not_root stands, as does the derived two-row cap."
   },
-  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "durationMs": 0,
   "scriptFile": "qbeta_d_frame_z_determinations_experimental_budget_probe.py",
-  "scriptHash": "56cabae1b367",
-  "scriptCommitSha": "c6b88d78ea567ed81a3615e09d2d3920603e5db4",
-  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
-  "computedAt": "2026-09-03T05:10:31.133255+00:00",
+  "scriptHash": "d9eb4117d7aa",
+  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "computedAt": "2026-11-20T16:19:10.306086+00:00",
   "q0Anchor": "muon",
   "q0Value": "1.10997859564273904668179512938"
 }

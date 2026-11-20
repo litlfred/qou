@@ -2,7 +2,7 @@
   "computation": "qbeta-tanh-em-match-is-formal",
   "engine": "sympy+mpmath",
   "description": "qou-i9gk residual, settling Step 28's last surviving positive. The claim was that the colour-weighted p-n bond's departure, tanh(ln q).delta, links it to the electromagnetic sector because tanh(ln q_0) = 0.103963710 is the taxonomy's EM odd-to-even ratio. It does not. (1) CENSUS: 5 of 14 swept q-quantities have that ratio exactly, and `q` ALONE is one of them — every quantum integer is bar-even so [9]_q[10]_q divides out, and the matched number is a property of the bare prefactor with zero electromagnetic content. (2) LEMMA: X = q.B with B bar-even gives the ratio identically for ANY B; and tanh(ln q) IS h/(q+1/q), the ratio of the most basic bar-odd and bar-even quantities, which is exactly how it arises in the p-n departure — so the two 'matching' expressions are one expression written twice. (3) DISCRIMINATOR: the taxonomy documents a bare ratio 0.10396 and a Chern-Simons-dressed 0.10356, differing by 3.9e-3 relative = 54x Step 28's 7.2e-5 residual; the match lands on the BARE value, i.e. the algebraic form rather than the physical coupling. Downgraded: the closed form is kept, the EM link is withdrawn.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "assertions": [
     {
       "name": "the_tanh_ratio_is_generic_and_q_alone_produces_it",
@@ -116,13 +116,13 @@
     "corrects": "Step 28's 'the p-n bond sits at the intertwiner point, which is where the taxonomy independently puts the EM sector'.",
     "scope": "Scope-(a). Nothing derived, proposed, wired or readmitted."
   },
-  "gitCommit": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
+  "gitCommit": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "durationMs": 0,
   "scriptFile": "qbeta_tanh_em_match_is_formal_probe.py",
-  "scriptHash": "7e9ca9dce45d",
-  "scriptCommitSha": "8831b57c83f7bea30d19f8fd25392170fc402070",
-  "commitSha": "62c0f17dead69a805e2f18539311eaf01dde1cfc",
-  "computedAt": "2026-09-03T05:11:31.448557+00:00",
+  "scriptHash": "a3c96475d186",
+  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
+  "computedAt": "2026-11-20T16:19:30.404619+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.10997858275138080759166909561"
 }

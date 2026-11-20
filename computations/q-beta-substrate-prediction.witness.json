@@ -1,15 +1,15 @@
 {
   "engine": "q_beta_substrate_prediction.py",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:00:48.586772+00:00",
-  "commitSha": "ef7c2d823cb06587390dc971ae44e66c40eb2906",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T16:19:06.572572+00:00",
+  "commitSha": "405f11ca0d80f01302cc5e62af156114e8cc74cd",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "q-beta-substrate-prediction",
   "scriptFile": "q_beta_substrate_prediction.py",
-  "scriptHash": "1b1bf6beffd8",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "8ef93cc896a8",
+  "scriptCommitSha": "46d534455d1773a9ad007852dcd3c2d45e7967de",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,15 +17,23 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
+  },
+  "invocation": {
+    "argv": [
+      "computations/q_beta_substrate_prediction.py"
+    ],
+    "reproduce": "python3 -u computations/q_beta_substrate_prediction.py"
   },
   "description": "Substrate-only prediction of Q_β(n) from CAL-1 (m_e) and CAL-2 (q_0), via the single-wrap closed form Q_β = m_e · |q_0² - 2 q_0 - 1| · (q_0 + 1) / (2 q_0³). This is a PREDICTION witness (companion to the CAL-3 calibration witness cal-3-q-beta.witness.json); the substrate value is NOT yet wired as a CAL replacement. Per the cohomological audit (docs/audits/2026-05-24-q-beta-droppability-cohomology.md), the framework can in principle drop CAL-3 once the tower-summation closure lands (Workplan 2 Phase 2); until then the +0.18% residual vs CODATA is recorded here for L2 dashboard visibility and audit-trail purposes.",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "def:three-calibration-discipline",
   "auditOnly": "docs/audits/2026-05-24-q-beta-droppability-cohomology.md",
   "parameters": {
     "calibration_id": "CAL-3 (substrate prediction)",
