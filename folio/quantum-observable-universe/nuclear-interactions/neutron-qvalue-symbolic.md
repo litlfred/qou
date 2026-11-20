@@ -5,7 +5,7 @@
 
 A single wrap of typed crossings in $H_3(q)$ represents the proton and neutron. Let $h = q - q^{-1}$. A $uu$ crossing is $\sigma$, a $dd$ crossing is $\sigma^{-1} = \sigma - h$, and a mixed $ud$ crossing is the average $\tfrac12(\sigma + \sigma^{-1}) = \sigma - \tfrac h2$.
 
-This typed-crossing assignment is the only input in the construction that tells $u$ from $d$. It is a definition, not a derived result. No weight-preserving operator that commutes with the isospin lowering operator $F_3$ separates $uud$ from $udd$ beyond the pivot factor (Lean `commutant_trace_eq` in `QOU/BraidsAndKnots/NucleonIsospinExclusions.lean`).
+This typed-crossing assignment is the only input in the construction that tells $u$ from $d$. It is a definition, not a derived result. No weight-preserving operator that commutes with the isospin lowering operator $F_3$ separates $uud$ from $udd$ beyond the pivot factor.
 
 **Proton** $[u, u, d]$: the typed crossing operators give:
 $$

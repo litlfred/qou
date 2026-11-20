@@ -137,8 +137,8 @@ Hahn-substrate)**:
    etc.).
 
 **Required infrastructure**:
-- Rational-function arithmetic in Lean at $q = 1 + \varepsilon$
-  (partial; via specialising `Polynomial (R_q)` at surreal values).
+- Rational-function arithmetic at $q = 1 + \varepsilon$
+  (partial; via specialising polynomials over $R_q$ at surreal values).
 - Hahn-series substrate (pending).
 - Normal-form computation for eigenvalues (pending).
 
@@ -149,8 +149,8 @@ surreal-normal-form interpretation, likely indicating a subtle
 multi-scale behaviour that the surreal lift does not capture.
 
 **Provability assessment**: algebraic case mostly tractable with
-current Lean + surreal infrastructure. Transcendental case
-requires Berarducci–Mantova in Lean. The overall conjecture is
+current surreal infrastructure. Transcendental case
+requires Berarducci–Mantova. The overall conjecture is
 a *dictionary*, more testable than deep-research-open.
 
 ## Open problem

@@ -26,13 +26,10 @@ over a generating cycle of $\mathcal{S}_c$. $\mathbb{P}^1(\mathbb{C})$ has
 $H_1 = 0$, so there is no generating cycle; and the residue theorem on a compact
 Riemann surface states that the residues over *all* poles **sum to zero**, which
 would give $a_D^{(n)} = 0$ at every level rather than the positive binding period
-the keystone requires. The Lean records this as a derived consequence rather than
-a claim:
-[`QOU.Brings.period_eq_zero_of_total_residue_vanishes`](#prop:sw-period-residue-sum)
-and its contrapositive
-`total_residue_ne_zero_of_period_ne_zero`, which is what forces $E$ to be a
-*proper* subset. The companion witness
-[`QOU.Brings.sw_period_eq_residue_sum`](#prop:sw-period-residue-sum) carries the
+the keystone requires. This vanishing is a derived consequence rather than a
+claim, and its contrapositive — a nonzero period forces a nonzero total
+residue — is what forces $E$ to be a *proper* subset. The companion statement
+[The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum) carries the
 residue-sum shape as an explicit hypothesis; it does not derive it.
 
 A second, independent route reaches the same vanishing under the classical-jet

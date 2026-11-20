@@ -19,7 +19,5 @@ $$
 
 Rewriting each period as its residue sum
 ([The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum)) gives the second
-equality. The Lean witness
-[`QOU.Brings.jet_sw_tau_decomposition`](#prop:jet-sw-tau-decomposition) packages
-the exhaustiveness and additivity as the structure hypothesis and extracts the
-graded-sum identity. $\qquad\blacksquare$
+equality. Exhaustiveness and additivity of the decomposition enter as hypotheses, from
+which the graded-sum identity follows. $\qquad\blacksquare$

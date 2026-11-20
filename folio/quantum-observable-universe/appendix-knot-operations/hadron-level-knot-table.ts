@@ -24,4 +24,7 @@ export default remark({
     // "failed" = script ran, witness does NOT match expected values.
     // Nothing compared the two until scripts/check-computation-status.py.,
   },
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The NF coefficients for each atom (6 values) are in the computation witness `hadron-knot-table.witness.json`." },
+  ],
 });

@@ -1,6 +1,6 @@
 The trivial (identity) operator $\mathbf{1}$ implies a photon pair collision without inserted crossings. Every resulting structure derives strictly from the photons' inherent color content. The 16 cross-terms from the full expansion reduce to normal form via the Hecke and Yang--Baxter relations.
 
-Here "trivial" means the **trivial Hecke representation** — the identity element $\mathbf{1} = T_e \in H_n(R, q)$, carrying no crossings and no closed strand. It is *not* the unknot $0_1 = T_{1,0}$, which is a closed strand and denotes the neutrino ([building-block knots](#tbl:building-block-knots-table1-data), [torus-knot generators](#prop:torus-knot-generators)). See the photon-vs-unknot rule in [`notation-collisions.md`](../notation/notation-collisions.md).
+Here "trivial" means the **trivial Hecke representation** — the identity element $\mathbf{1} = T_e \in H_n(R, q)$, carrying no crossings and no closed strand. It is *not* the unknot $0_1 = T_{1,0}$, which is a closed strand and denotes the neutrino ([building-block knots](#tbl:building-block-knots-table1-data), [torus-knot generators](#prop:torus-knot-generators)). See the photon-vs-unknot rule in the [notation collisions](../notation/notation-collisions.md).
 
 See [Table 1](#tbl:trivial-knot-photon-interpretation-table1-data).
 See [Table 2](#tbl:trivial-knot-photon-interpretation-table2-data).

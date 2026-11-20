@@ -21,6 +21,7 @@ export default conjecture({
     "def:coulomb-charge",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): As formalized in [`QOU/StandardModel/ElectroweakBringSchwingerBridge.lean`](../lean/QOU/StandardModel/ElectroweakBringSchwingerBridge.lean) and verified at 50 dps in [`electroweak_bring_schwinger_bridge_probe.py`](../../../computations/probes/electroweak_bring_schwinger_bridge_probe.py): | `ewFixedPoint_iff_cubic` | conditional on `ElectroweakVevFixedPointClass` | the first-principles derivation of `ElectroweakVevFixedPointClass`" },
     {
       kind: "status",
       date: "2026-07-05",

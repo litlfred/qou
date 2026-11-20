@@ -1,6 +1,6 @@
 **Proof.**
 
-> **Scope of the asymptotic expansion.** Two sub-steps in the Taylor comparison are conditional: First, the order-$h^2$ term of $\ln(V_{\mathrm{pp}}/V_{\mathrm{nn}})$: the step $z h + O(h^2) = \ln(1 + zh) + O(h^3)$ needs the $h^2$ coefficient to be $-z^2/2$, which is not computed. Second, the exponential remainder rests on conj:archimedean-remainder-exponential-decay, a conjecture, so the remainder bound is conditional. The $+1.31$ keV residual and the CODATA $7\%$ agreement are empirical comparisons, not proof steps. No `sorry` exists in the companion Lean for the `Real.log` steps; the Lean section's sentence about deferring them is out of date.
+> **Scope of the asymptotic expansion.** Two sub-steps in the Taylor comparison are conditional: First, the order-$h^2$ term of $\ln(V_{\mathrm{pp}}/V_{\mathrm{nn}})$: the step $z h + O(h^2) = \ln(1 + zh) + O(h^3)$ needs the $h^2$ coefficient to be $-z^2/2$, which is not computed. Second, the exponential remainder rests on conj:archimedean-remainder-exponential-decay, a conjecture, so the remainder bound is conditional. The $+1.31$ keV residual and the CODATA $7\%$ agreement are empirical comparisons, not proof steps.
 
 
 *Form A side.* The normal form counit reads $\lvert\Delta(\mathrm{net})\rvert = h(2 - h)/2 = h - h^2/2 + O(h^3)$, obtained via direct expansion of the single-wrap symbolic closed form ([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)).
@@ -61,7 +61,7 @@ The exponential-remainder bound dampens the eigenfunction (conj:archimedean-rema
 
 ## Provenance
 
-We verified this proposition numerically at 50 decimal places via [`q_beta_spectral_bridge_witness.py`](https://github.com/litlfred/qou/blob/main/computations/q_beta_spectral_bridge_witness.py) ([`q-beta-spectral-bridge.witness.json`](https://github.com/litlfred/qou/blob/main/computations/q-beta-spectral-bridge.witness.json)):
+This proposition is verified numerically at 50 decimal places:
 
 See [Table](#tbl:q-beta-spectral-bridge-table-data).
 

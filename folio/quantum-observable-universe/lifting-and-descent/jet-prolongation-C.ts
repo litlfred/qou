@@ -9,4 +9,7 @@ export default corollary({
   tags: ["archimedean", "jet-bundle"],
   uses: ["prop:jet-prolongation", "ex:c-quantum-observable-universe"],
   proofs: ["prf:jet-prolongation-C"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The formal backing `QOU.Torsion.jet_prolongation_C` returns that condition under a readable name — the Mathlib accessor idiom — and derives nothing." },
+  ],
 });

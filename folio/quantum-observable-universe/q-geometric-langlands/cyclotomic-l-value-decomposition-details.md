@@ -2,9 +2,6 @@ This note records the numerical verification, the $N = 5$ instance, the analytic
 
 ### Numerical verification at 50 dps
 
-[`cl_n_l_value_decomposition.py`](https://github.com/litlfred/qou/blob/main/computations/cl_n_l_value_decomposition.py),
-[witness](https://github.com/litlfred/qou/blob/main/computations/cl-n-l-value-decomposition.witness.json):
-
 | Quantity | Value (50 dps) |
 |---|---|
 | $\mathrm{Im}\,\mathrm{Li}_3(i)$ (closed form $\pi^3/32$) | $0.96894614625937036181867968128\ldots$ |

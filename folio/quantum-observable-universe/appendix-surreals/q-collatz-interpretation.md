@@ -32,7 +32,7 @@ At the classical boundary $p_1^{k_1} = p_2^{k_2} + 1$, the $q$-gap polynomial ma
 
 Collatz $(2^2, 3^1)$ is the unique critical case where the $q$-gap is a monomial. The identity $[2]_q^2 - [3]_q = q$ produces a gap with a single term $q$, positive for all $q > 0$. Every other critical case produces a gap polynomial with negative terms that dominate for large $q$.
 
-Proved results (in Lean):
+Proved results:
 - $[3]_q = q[2]_q + 1$
 - $[2]_q^2 - [3]_q = q$
 - $[3]_q < [2]_q^2$ for $q > 0$

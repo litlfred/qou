@@ -2,6 +2,7 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The files `QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm`, `QOU.BraidsAndKnots.NucleonIdempotentModifiedTrace` and `QOU.QuantumObservableUniverses.CategoricalLagrangianTwoTermBridge` prove, sorry-free, facts about the 3-strand weight spaces $W_p = (2,1)$ and $W_n = (1,2)$: the quark-charge operators $Q_iQ_j$ break the intertwiner $P(q)$ of `NucleonWeightSpaceTraces`; … $E_0 = m_e/(q(q-1))$ (a definition; `hadronicScale_mul_q_sq_hbar_eq_me` unfolds it)." },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "caveat",

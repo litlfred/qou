@@ -26,5 +26,3 @@ Among the $4^6 = 4096$ braid words of length exactly $6$ over the generators $\{
 - $\mathcal{B}_3 = \sigma_0\sigma_1^{-1}\sigma_0\sigma_1^{-1}\sigma_0\sigma_1^{-1}$ achieves $|\Delta\mathrm{net}| = 0.000$ for both proton and neutron.
 - The mirror $\mathcal{B}_3^{\sigma} = \sigma_0^{-1}\sigma_1\sigma_0^{-1}\sigma_1\sigma_0^{-1}\sigma_1$ achieves $|\Delta\mathrm{net}| = 0.004$, an order of magnitude worse.
 - All other words have $|\Delta\mathrm{net}| > 0.01$.
-
-**Witness:** `confinement-lp.witness.json`.

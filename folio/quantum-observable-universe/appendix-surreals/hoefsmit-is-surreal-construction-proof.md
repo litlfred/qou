@@ -36,14 +36,13 @@ sign-sequence interpretation.
 
 A full proof requires:
 
-- formalising the YJM-tableau tree structure (in Mathlib:
-  `Combinatorics.YoungTableau` plus a `successor` relation);
-- formalising Gonshor's sign-sequence-to-surreal map (open in
-  Mathlib's `SetTheory.Game.Surreal` development);
+- making the YJM-tableau tree structure precise (Young tableaux
+  together with a successor relation);
+- a precise treatment of Gonshor's sign-sequence-to-surreal map;
 - checking the eigenvalue conventions (Hoefsmit uses
   $q$ and $-q^{-1}$; Conway's construction uses left/right of
   midpoint).
 
-The Lean stub axiomatises the embedding
-([sign sequence functor](#def:sign-sequence-of-braid)) pending
+The embedding ([sign sequence functor](#def:sign-sequence-of-braid))
+is therefore taken as a hypothesis pending
 these prerequisites.

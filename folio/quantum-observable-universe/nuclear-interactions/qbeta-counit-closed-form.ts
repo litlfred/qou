@@ -21,6 +21,7 @@ export default proposition({
     "lean-verified",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Formalized as `QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one`." },
     {
       kind: "note",
       date: "2026-11-15",

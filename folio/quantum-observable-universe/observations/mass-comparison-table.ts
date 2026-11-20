@@ -20,4 +20,7 @@ export default remark({
     "experimental",
   ],
   uses: ["rem:mass-from-generators"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Proton/neutron LO rows (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)). Retired Form A: Witness: [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json). LO footnote: Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json). See `certificate-to-mass.witness.json` for validation." },
+  ],
 });

@@ -10,13 +10,13 @@ Every entry carries a **methodology tag** recording its derivation method.
 |---|---|---|
 | `principled-derivation` | Knot is the closure of an explicit $\sigma$-braid word in $H_{n_0}(q_0)$ from [Confined particle](#def:confined-particle); $\mathrm{Vol}_{\mathrm{hyp}}$ computed at $\geq 50$ decimal digits via `hp_volume_of_link_closure(braid_word, digits=50)`. | electron $\sigma_1^3$ $\to$ $3_1$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ $\to$ $\mathcal{B}_3$. |
 | `principled-gb-nf` | Trivial-NF entries: a single strand (unknot $0_1$) or the pure identity $\mathbf{1}$. | neutrino ($0_1$), quark; the bare photon (identity $\mathbf{1}$, not the unknot). |
-| `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed. **⚠ This tier is AME-inverted**: the producer states it outright — *"that IS a form of AME-driven fitting (we picked the knot whose volume is closest to $B_\mathrm{AME}/\rho$)"* ([`mass_table_ppb.py` L18–21](../../../computations/mass_table_ppb.py)) — so binding figures quoted from these volumes are **circular, not predictions**. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
+| `manual-historical-volume-match` | Knot was identified in earlier work via volume-match against AME; the GB-NF derivation in $H_{n_0}(q_0)$ has not been computed. **⚠ This tier is AME-inverted**: the knot was chosen as the one whose volume is closest to $B_\mathrm{AME}/\rho$, which is a form of AME-driven fitting — so binding figures quoted from these volumes are **circular, not predictions**. | ${}^2$H = $6_2$, ${}^{3}$H = $8_{11}$, ${}^{3}$He = $L_{6a4}$. |
 | `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ${}^{4}$He. |
 | `recursive-on-⁴He` | Built from $n \cdot {}^{4}\mathrm{He} + n_{\alpha\alpha} \cdot c_{\alpha\alpha}$ recursion; principled given ${}^{4}$He. | ${}^{8}$Be–${}^{40}$Ca. |
 
-The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's `Link(braid_closure=...).exterior.high_precision` and `mpmath.workdps(50)`. The Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](../../../computations/y_lambda_wenzl_bridge_extended.py)) supplies symbolic-in-$q$ Markov-trace coefficients $y_\lambda$.
+The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's `Link(braid_closure=...).exterior.high_precision` and `mpmath.workdps(50)`. The Wenzl bridge supplies symbolic-in-$q$ Markov-trace coefficients $y_\lambda$.
 
-For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and `SnapPea` limits fail. We sidestep this by computing the exact symbolic trace restricted to active block-partitions. We show this exact trace $B_{sym} = -\alpha \ln |\mathrm{tr}_M|$ alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
+For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and SnapPea limits fail. We sidestep this by computing the exact symbolic trace restricted to active block-partitions. We show this exact trace $B_{sym} = -\alpha \ln |\mathrm{tr}_M|$ alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
 
 ## Notation legend (auto-included)
 
@@ -134,7 +134,7 @@ This inventory lists hyperbolic-knot identifications and their methodology tags.
 |--:|---|
 | Braid (NF) | $T_w = (\mathfrak{p}\text{-braid}) \oplus (\mathfrak{n}\text{-braid}) \oplus L_H$ in $H_6(q_0)$. Closure recorded as $\widehat{T_w} = K_{6_2}$ (hyperbolic, $\mathrm{Vol} = 4.4008$) — **asserted, not computed**; see Provenance. |
 | Prediction | $B_\mathrm{pred} = 1 \cdot m_e \cdot \mathrm{Vol}(K_{6_2}) = 2.249$ MeV vs $B_\mathrm{AME} = 2.225$, **err = +1.09%** — **not a prediction**; the knot was selected by matching this quantity (see Provenance). |
-| **Provenance ⚠** | **$6_2$ is AME-inverted and the deuteron assignment is UNDETERMINED.** (i) The producer states the inversion outright — *"that IS a form of AME-driven fitting (we picked the knot whose volume is closest to $B_\mathrm{AME}/\rho$)"* ([`mass_table_ppb.py` L18–21](../../../computations/mass_table_ppb.py)) — so the $+1.09\%$ agreement is circular and inadmissible as a derivation. (ii) The closure claim is not a computation: the canonical mass word is **not a braid word** (five of its letters are averaged crossings, $\mathbb{C}$-linear combinations in $H_6(q)$), and every live construction of it closes to a **3-component link**, whereas $6_2$ is a knot — an arity mismatch fixed by the underlying permutation, so no crossing convention resolves it. Adjudication: [`2026-08-21-deuteron-knot-assignment-adjudication.md`](../../../docs/audits/2026-08-21-deuteron-knot-assignment-adjudication.md) (verdict **UNDETERMINED** — all three candidates $6_2$ / trefoil / Hopf inadmissible). **This row flags the entry; it does not retarget it** — no alternative assignment is established either. |
+| **Provenance ⚠** | **$6_2$ is AME-inverted and the deuteron assignment is UNDETERMINED.** (i) The knot was chosen as the one whose volume is closest to $B_\mathrm{AME}/\rho$, which is a form of AME-driven fitting — so the $+1.09\%$ agreement is circular and inadmissible as a derivation. (ii) The closure claim is not a computation: the canonical mass word is **not a braid word** (five of its letters are averaged crossings, $\mathbb{C}$-linear combinations in $H_6(q)$), and every live construction of it closes to a **3-component link**, whereas $6_2$ is a knot — an arity mismatch fixed by the underlying permutation, so no crossing convention resolves it. Verdict: **UNDETERMINED** — all three candidates $6_2$ / trefoil / Hopf are inadmissible. **This row flags the entry; it does not retarget it** — no alternative assignment is established either. |
 
 **Tritium ${}^{3}$H = T = $[\mathfrak{p}, \mathfrak{n}, \mathfrak{n}]_{L_H \oplus T_{2, 3}}$**
 
@@ -202,7 +202,7 @@ A layered framework extends the atlas to all isotopes under a single registry:
 | **Layer 4** | Heavy nuclei ($A > 40$) | Brane-tower asymptotic + LP-active-set ansatz |
 | **Layer 5** | Theoretical / hypothetical isotopes | Same Layer-1/3 machinery; flagged `prediction-only` |
 
-Per-isotope records follow the [`IsotopeRecord`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) schema with an explicit knot-operator catalogue. The Layer-1 pipeline is implemented in [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py).
+Each per-isotope record carries an explicit knot-operator catalogue.
 
 ### Knot-operator catalogue — per-step primitives
 
