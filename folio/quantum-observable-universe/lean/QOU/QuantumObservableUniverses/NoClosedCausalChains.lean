@@ -1,6 +1,7 @@
 import Mathlib.Logic.Relation
 import Mathlib.Order.WellFounded
 import QOU.MathlibExt.BraidGroup
+import Mathlib.GroupTheory.Perm.Sign
 
 /-!
 # No closed chains under a well-founded precedence relation
@@ -69,9 +70,12 @@ closure.
   (`s i ^ (k+1) = 1`), every state lies on a closed chain. A symmetric
   braiding (`c² = id`) is the case `k = 1`: `closedChainAt_of_sq_eq_one`.
 
-So the hypothesis `c² ≠ id` is exactly what separates the two regimes at
-the level of states, while at the level of words (`DegLex`) closed chains
-are absent in every case. -/
+A degree `χ` is a sufficient obstruction to closed chains, and a crossing
+of finite order is a sufficient cause. A symmetric braiding (`c² = id`) is
+one such cause; it is not the only one (a crossing of order `≥ 3`, e.g. a
+Hecke generator at a root of unity `q ≠ -1`, also has finite order), and the
+two conditions need not cover every state monoid. On words (`DegLex`),
+closed chains are absent for every braiding. -/
 
 section Ticks
 
@@ -130,5 +134,13 @@ theorem braid_no_closedChainAt (n : ℕ) (g : QOU.MathlibExt.Braid.BraidGroup n)
     ¬ ClosedChainAt (Tick (QOU.MathlibExt.Braid.σ (n := n))) g :=
   not_closedChainAt_tick _ (χ := QOU.MathlibExt.Braid.exponentSum n)
     (fun i => QOU.MathlibExt.Braid.exponentSum_σ i) g
+
+/-- **Symmetric group.** On `S_{n+2}` with the adjacent transpositions as
+crossings (at least one generator), every permutation lies on a closed chain
+of length two: transpositions square to the identity. -/
+theorem perm_closedChainAt (n : ℕ) (g : Equiv.Perm (Fin (n + 2))) :
+    ClosedChainAt (Tick (fun i : Fin (n + 1) => Equiv.swap i.castSucc i.succ)) g :=
+  closedChainAt_of_sq_eq_one (fun i : Fin (n + 1) => Equiv.swap i.castSucc i.succ)
+    (i := 0) (Equiv.swap_mul_self (0 : Fin (n + 1)).castSucc (0 : Fin (n + 1)).succ) g
 
 end QOU.Chronology
