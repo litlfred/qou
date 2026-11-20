@@ -238,3 +238,6 @@ Actively draining float64 downcasts in `computations/mass_binding_dashboard.py` 
 ## Resolution (2026-11-19)
 
 Completed: Excised float64 from `computations/canonical_mass.py` and `computations/mass_binding_dashboard.py` (`40Ca = 2.456e74`, `56Fe = 8.141e192` finite in arbitrary-precision `mpmath`, `B_sym` exactness `1.4e-49 MeV`, `probe-float64-guard.py --strict` exit 0).
+
+## 2026-11-20 — W2: #8082 (the dashboard and canonical_mass half) updated to main and verified
+main had already drained the _scalars() casts. #8082 removes the remaining _row q0 float and the main() mp_/mn_ float, and makes canonical_mass return mpf. Conflict resolved onto main's single _as_formattable_mpf. /dashboard-low on the merged tree: proton err m_can moves -2851.888 -> -2851.788 ppq (the float64 floor); nothing else moves at the printed precision. (session_01VQDpPfkCTEiKEWdANj7rYB)

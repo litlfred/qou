@@ -101,3 +101,6 @@ Verify against the API, not the walk.
 ## Claim reset 2026-11-15
 
 Was in-progress with no bean update since October 2026. Reset to todo by the owner-approved bean triage (same rule as the 2026-10-04 reset). Nothing in the work was judged. Re-claim it if you pick it up.
+
+## 2026-11-20 — W2: main still carries the float64 q_int; #7443 brought up to date
+Checked on main at `917b69399`: `qou_substrate/constants.py:190` and `substrate/q_parameter.py:169` are both still float64, and `_DPS_DEFAULT = 50`. #7443 now has main merged in (the one witness conflict was resolved by re-running its producer: gated_sum moves 1.8e-16 relative) and is ready for /prepare-merge. #7440's stage-1 content is already on main. (session_01VQDpPfkCTEiKEWdANj7rYB)

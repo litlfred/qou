@@ -8791,3 +8791,6 @@ The owner chose route 2 next. Measured with the census normal forms from `qbeta_
 ## 2026-11-16 — derived D rungs recover none of the gap (PR #8098, issue #8097)
 
 Probe `qbeta_d_ladder_gap_recovery_probe.py` (60 dps, 6/6 PASS). The only derived D rung (c_2 = −1, b² = [3]_q/[2]_q², factor 1 − u² = 0.99992746) applied to all 4 census elements × both E₀ forms: recovery −0.013 % to −0.046 % of the log-gap on every cell, i.e. it moves every cell away by 72.5 ppm. Closing the 12–43 % gap with any ladder needs uniform |c_k| ≥ 1997..5898 (LadderUniformBound). c_3, c_k≥4 and the N=1 phase are not derived under D and were not applied. Scope (a). The gap is in the base (element qou-99qc / meaning of ε); the one ladder-side lever that can exceed 1 is an imaginary eigenphase (cosh route), still underived. Bean stays open.
+
+## 2026-11-20 — W2: Q_beta ladder threads consolidated in #8540
+#7610 (wiring producer refuses; four D probes on chi_all_lambda_any), #8098 (the derived c2 rung recovers ~0 % of the gap) and #8100 (production Q_beta labelled as the retired mixed base) are cherry-picked onto current main as PR #8540. All probes re-run and reproduce their witnesses. No element was chosen, no rung was fitted, and nothing was re-scored. Still open: the base (F_required > 1 on every ruled cell) and the element (qou-99qc). (session_01VQDpPfkCTEiKEWdANj7rYB)
