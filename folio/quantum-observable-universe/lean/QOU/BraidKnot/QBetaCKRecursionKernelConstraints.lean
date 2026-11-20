@@ -139,4 +139,9 @@ theorem bridge_cannot_reach_c3_target (b : ℝ) (hb : b ≠ 0)
   have h2 := bridge_c3_bareven_requires_b b hb hbar
   rw [h1] at h2; norm_num at h2
 
+/-- Subtracting fifty over seventy-seven from a nonzero parameter satisfying the raw seeding equation yields zero. -/
+theorem bridge_c3_raw_requires_b_sub_eq_zero (b : ℝ) (hb : b ≠ 0)
+    (h : -100 / (77 * b) = -2) : b - 50 / 77 = 0 := by
+  rw [bridge_c3_raw_requires_b b hb h, sub_self]
+
 end QOU.BraidKnot
