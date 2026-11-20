@@ -7,10 +7,10 @@ export default proposition({
   lean: { ref: "qou:QOU.MassEndomorphism.mass_endomorphism_positive",
     validation: "validated",
   },
-  uses: [
-    "rem:kashaev-volume-density",
-    "rem:photon-channel-wedderburn-chain",
-  ],
+  // rem:kashaev-volume-density dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: ["rem:photon-channel-wedderburn-chain"],
   computation: {
     engine: "mpmath",
     script: "computations/habiro/habiro_exact_mass_endomorphism.py",

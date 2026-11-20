@@ -4,7 +4,10 @@ export default proposition({
   label: "prop:upstream-mathlib-additions",
   title:
     "Upstream Mathlib additions: complex dilogarithm via tsum + BW formula + Cl_2 oddness",
-  uses: ["rem:three-substantive-mathlib-fillers"],
+  // rem:three-substantive-mathlib-fillers dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: [],
   cites: ["zagier1986", "bloch2000"],
   tags: [
     "mathlib-filler",

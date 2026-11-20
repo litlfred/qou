@@ -58,8 +58,9 @@ export default proposition({
   //   borromean-decuplet     -> schur-weyl-eightfold
   // The .md still hyperlinks all five; a \hyperref is a cross-reference for
   // the reader, not a dependency edge, and the two are deliberately distinct.
-  uses: [
-    "rem:u-spin-coleman-glashow",
-  ],
+  // rem:u-spin-coleman-glashow dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // cited only as a parallel example of another null result. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: [],
   cites: ["gellmann1962", "jimbo1986"],
 });

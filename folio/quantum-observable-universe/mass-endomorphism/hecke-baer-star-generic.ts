@@ -28,9 +28,10 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.HeckeBaerStarGeneric.not_hecke_baer_star_generic_sketch",
     validation: "not_checked",
   },
-  uses: [
-    "rem:vc-as-depth-2-instance",
-  ],
+  // rem:vc-as-depth-2-instance dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: [],
   cites: [],
   tags: [
     "baer-star",
