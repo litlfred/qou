@@ -138,23 +138,10 @@ def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50) -> mp.mpf:
     O(p(n)²) recomputation; this drops `markov_trace_numerical(D, q_0)`
     from O(11²)=121 schur_principal calls to O(11)=11 calls.
 
-    ⚠ SIDE EFFECT — THIS SETS GLOBAL mpmath PRECISION AND DOES NOT RESTORE IT.
-    The implementation assigns `mp.mp.dps = dps`, so calling this with a
-    literal `dps=50` from a context working at higher precision silently
-    lowers the working precision for everything that follows. **Pass
-    `dps=mp.mp.dps` unless you specifically want the change**, or wrap the
-    call in `with mp.workdps(...)`.
-
-    Not hypothetical: `magnus_omega2_markov_stabilisation_probe.py` was first
-    written with `dps=50` while working at 140, which destroyed its
-    EPS = 1e-50 finite-difference germ. It failed loudly only because that
-    probe validates the differentiated-Hecke identity per generator — a caller
-    without such a check would have got quietly wrong digits. Of the 15
-    call sites passing a literal 50, exactly one works above 50
-    (`y_lambda_at_q0_cache.py`) and it already guards with `mp.workdps(60)`,
-    so there is no live victim; making the function restore precision is bean
-    `qou-p4fr`. Removed here would be a behaviour change for 200+ callers,
-    which is why this is a warning and not a fix.
+    Precision restoration (bean `qou-p4fr`): all numeric entry points in this
+    module use `with mp.workdps(dps):` so calling them with a literal `dps=50`
+    from a higher-precision context (e.g. `mp.mp.dps = 140`) restores the
+    caller's ambient working precision on exit.
     """
     return _y_lambda_wenzl_bridge_numeric_impl(
         tuple(partition), str(q_val), int(dps)
@@ -197,11 +184,11 @@ def _wenzl_X_Q(q):
 @functools.lru_cache(maxsize=None)
 def _wenzl_norm_numeric_cached(n: int, q_str: str, dps: int):
     """Cached Wenzl normalization Σ_µ d_µ · s_{µ,r}(Q) at numerical q."""
-    mp.mp.dps = dps
-    q = mp.mpf(q_str)
-    X, Q = _wenzl_X_Q(q)
-    parts = partitions_of(n)
-    return sum(classical_dim(mu) * schur_principal(mu, X, Q) for mu in parts)
+    with mp.workdps(dps):
+        q = mp.mpf(q_str)
+        X, Q = _wenzl_X_Q(q)
+        parts = partitions_of(n)
+        return sum(classical_dim(mu) * schur_principal(mu, X, Q) for mu in parts)
 
 
 @functools.lru_cache(maxsize=None)
@@ -213,12 +200,12 @@ def _y_lambda_wenzl_bridge_numeric_impl(partition: tuple, q_str: str, dps: int):
     same H_n level. Caching avoids recomputing schur_principal + the
     norm division for each atom.
     """
-    mp.mp.dps = dps
-    q = mp.mpf(q_str)
-    X, Q = _wenzl_X_Q(q)
-    s_self = schur_principal(list(partition), X, Q)
-    norm = _wenzl_norm_numeric_cached(sum(partition), q_str, dps)
-    return s_self / norm
+    with mp.workdps(dps):
+        q = mp.mpf(q_str)
+        X, Q = _wenzl_X_Q(q)
+        s_self = schur_principal(list(partition), X, Q)
+        norm = _wenzl_norm_numeric_cached(sum(partition), q_str, dps)
+        return s_self / norm
 
 
 def y_lambda_wenzl_bridge_symbolic(partition):
@@ -528,24 +515,24 @@ def chi_lambda_mpmath(partition, word, q_val, dps: int = 50):
     Cost is O(dim · 2^len(word)) mpmath ops, which is tractable up to
     n = 12 for the extreme cycle classes (word length ≤ n-1).
     """
-    mp.mp.dps = dps
-    q = mp.mpf(str(q_val))
-    blocks_per_gen, dim, _ = _seminormal_block_data(partition, q)
-    if dim == 0:
-        return mp.mpf(0)
-    # Empty word → identity → trace = dim.  Return as mpf for type
-    # consistency with the non-empty case.
-    if len(word) == 0:
-        return mp.mpf(dim)
-    trace = mp.mpf(0)
-    for i in range(dim):
-        vec = {i: mp.mpf(1)}
-        for idx in word:
-            vec = _apply_generator_sparse(vec, blocks_per_gen[idx - 1])
-            if not vec:
-                break
-        trace += vec.get(i, mp.mpf(0))
-    return trace
+    with mp.workdps(dps):
+        q = mp.mpf(str(q_val))
+        blocks_per_gen, dim, _ = _seminormal_block_data(partition, q)
+        if dim == 0:
+            return mp.mpf(0)
+        # Empty word → identity → trace = dim.  Return as mpf for type
+        # consistency with the non-empty case.
+        if len(word) == 0:
+            return mp.mpf(dim)
+        trace = mp.mpf(0)
+        for i in range(dim):
+            vec = {i: mp.mpf(1)}
+            for idx in word:
+                vec = _apply_generator_sparse(vec, blocks_per_gen[idx - 1])
+                if not vec:
+                    break
+            trace += vec.get(i, mp.mpf(0))
+        return trace
 
 
 def cycle_type_word(mu):
@@ -564,13 +551,13 @@ def markov_m3_sum_numeric(n: int, q_val, dps: int = 50):
     the Markov axiom (M3) tr_M(1) = 1 — *not* the Plancherel identity
     Σ_λ d_λ²/n! = 1.  See docs/audits/2026-05-11-plancherel-usage-audit.md
     (Finding D)."""
-    mp.mp.dps = dps
-    parts = partitions_of(n)
-    total = mp.mpf(0)
-    for lam in parts:
-        y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps)
-        total += y * classical_dim(lam)
-    return total
+    with mp.workdps(dps):
+        parts = partitions_of(n)
+        total = mp.mpf(0)
+        for lam in parts:
+            y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps)
+            total += y * classical_dim(lam)
+        return total
 
 
 # Backward-compat alias; remove after downstream callers are updated.
@@ -579,23 +566,23 @@ plancherel_sum_numeric = markov_m3_sum_numeric
 
 def markov_trace_lhs_numeric(n: int, mu, q_val, dps: int = 50):
     """Σ_λ y_λ(q_val) · χ_λ(σ_w_μ) at mpmath precision."""
-    mp.mp.dps = dps
-    word = cycle_type_word(tuple(mu))
-    parts = partitions_of(n)
-    total = mp.mpf(0)
-    for lam in parts:
-        y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps)
-        chi = chi_lambda_mpmath(lam, word, q_val, dps)
-        total += y * chi
-    return total
+    with mp.workdps(dps):
+        word = cycle_type_word(tuple(mu))
+        parts = partitions_of(n)
+        total = mp.mpf(0)
+        for lam in parts:
+            y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps)
+            chi = chi_lambda_mpmath(lam, word, q_val, dps)
+            total += y * chi
+        return total
 
 
 def markov_trace_target_numeric(n: int, mu, q_val, dps: int = 50):
     """z^{n-len(μ)} at mpmath precision (the RHS of the defining identity)."""
-    mp.mp.dps = dps
-    q = mp.mpf(str(q_val))
-    z = markov_z_numeric(q)   # convention D
-    return z ** (n - len(tuple(mu)))
+    with mp.workdps(dps):
+        q = mp.mpf(str(q_val))
+        z = markov_z_numeric(q)   # convention D
+        return z ** (n - len(tuple(mu)))
 
 
 def main(ns: list[int], dps: int = 100, do_symbolic: bool = True) -> None:
@@ -668,8 +655,29 @@ def main(ns: list[int], dps: int = 100, do_symbolic: bool = True) -> None:
     print(f"Wrote {out_path}")
 
 
+def _selftest() -> int:
+    _wenzl_norm_numeric_cached.cache_clear()
+    _y_lambda_wenzl_bridge_numeric_impl.cache_clear()
+    with mp.workdps(140):
+        assert mp.mp.dps == 140
+        _ = y_lambda_wenzl_bridge_numeric((2, 1), Q0_50DPS, dps=50)
+        assert mp.mp.dps == 140, f"y_lambda_wenzl_bridge_numeric leaked dps={mp.mp.dps}"
+        _ = chi_lambda_mpmath((2, 1), [1], Q0_50DPS, dps=50)  # word-source: single generator self-test
+        assert mp.mp.dps == 140, f"chi_lambda_mpmath leaked dps={mp.mp.dps}"
+        _ = markov_m3_sum_numeric(3, Q0_50DPS, dps=50)
+        assert mp.mp.dps == 140, f"markov_m3_sum_numeric leaked dps={mp.mp.dps}"
+        _ = markov_trace_lhs_numeric(3, (2, 1), Q0_50DPS, dps=50)
+        assert mp.mp.dps == 140, f"markov_trace_lhs_numeric leaked dps={mp.mp.dps}"
+        _ = markov_trace_target_numeric(3, (2, 1), Q0_50DPS, dps=50)
+        assert mp.mp.dps == 140, f"markov_trace_target_numeric leaked dps={mp.mp.dps}"
+    print("self-test: ok (all 5 numeric entry points preserve caller mp.mp.dps=140 across dps=50 calls)")
+    return 0
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
+    if "--self-test" in args or "--selftest" in args:
+        raise SystemExit(_selftest())
     dps = 100
     if args and args[0] == "--dps":
         dps = int(args[1])
